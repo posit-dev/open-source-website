@@ -15,3 +15,6 @@ resources/
 .idea/
 *.swp
 *.swo
+
+/.quarto/
+**/*.quarto_ipynb

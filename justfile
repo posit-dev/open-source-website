@@ -2,7 +2,9 @@
 default:
     @just --list
 
-# Start Hugo development server with live reload
+quarto-preview:
+    uv run quarto preview
+
 hugo-serve:
     @echo "Starting Hugo development server..."
     hugo server --buildDrafts --disableFastRender

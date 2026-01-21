@@ -1,4 +1,7 @@
 project:
   type: hugo
+  render:
+    - "content/**/*.qmd"
+    - "content/**/*.ipynb"
 
 format: hugo-md

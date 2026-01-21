@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'Posit Open Source'
 theme = 'hugo-theme-tailwind'
 showAuthor = true
+ignoreFiles = ['\.qmd$', '\.ipynb$']
 
 [markup]
 [markup.highlight]
