@@ -5,6 +5,9 @@ theme = 'hugo-theme-tailwind'
 showAuthor = true
 ignoreFiles = ['\.qmd$', '\.ipynb$']
 
+[params]
+subtitle = ""
+
 [markup]
 [markup.highlight]
   # lineNos = true
