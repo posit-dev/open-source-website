@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Hugo build output
+public/
+resources/
+
+# OS files
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo

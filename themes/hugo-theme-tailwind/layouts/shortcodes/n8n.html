@@ -1,0 +1,11 @@
+<!-- prettier-ignore -->
+{{ $src := .Get "src" }}
+
+{{ with .Page.Resources.Get $src }}
+<n8n-demo workflow="{{ .Content }}" frame="true" theme="light"></n8n-demo>
+<blockquote><p>
+  <a href="{{.Permalink}}" target="_blank" rel="noopener">
+  {{.Permalink}}
+  </a>
+</p></blockquote>
+{{ end}}

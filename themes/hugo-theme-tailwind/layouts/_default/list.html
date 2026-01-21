@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+  {{ $isntDefault := not (or (eq (trim $.Site.Params.contentTypeName " ") "posts") (eq (trim $.Site.Params.contentTypeName " ") "")) }}
+  {{ $contentTypeName := cond $isntDefault (string $.Site.Params.contentTypeName) "posts" }}
+
+  {{ $PageContext := . }}
+  {{/* Once either .Paginator or .Paginate is called while generating a page,
+    its result is cached, and any subsequent similar call will reuse the cached result.
+    So we define $pages instead of $paginator (using .Paginate) to avoid confusion. */}}
+  {{ $pages := $PageContext.RegularPages }}
+  {{ if .IsHome }}
+    {{ $PageContext = .Site }}
+    {{ $pages = where $PageContext.RegularPages "Type" $contentTypeName }}
+  {{ end }}
+
+  <div class="flex flex-col w-full max-w-4xl lg:max-w-5xl relative">
+    <div class="flex flex-row">
+      <section class="flex flex-col w-full md:w-2/3">
+        {{ range (.Paginate $pages).Pages }}
+          <article class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
+            <div>
+              <a href="{{ .RelPermalink }}">
+                {{ partial "block/image.html" . }}
+              </a>
+            </div>
+            <div class="flex flex-col gap-y-3 p-6">
+              <h2 class="text-4xl font-semibold text-slate-800 dark:text-slate-200">
+                <a href="{{ .RelPermalink }}">{{ .Title | .RenderString }}</a>
+              </h2>
+
+              {{ partial "block/desc.html" . }}
+              {{ partial "block/taxonomies.html" .}}
+
+              {{ partial "block/time.html" . }}
+              {{ partial "block/author.html" . }}
+            </div>
+          </article>
+        {{ end }}
+      </section>
+      <aside class="hidden md:flex flex-col md:w-1/3 ml-3 {{- if .Site.Params.header.sticky }} top-10 {{ else }} top-0 {{ end -}} sticky self-start">
+        {{ partial "sidebar.html" . }}
+      </aside>
+    </div>
+
+    {{ partial "pagination.html" . }}
+  </div>
+{{ end }}

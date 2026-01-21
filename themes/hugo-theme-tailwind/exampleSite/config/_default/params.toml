@@ -1,0 +1,86 @@
+# SEO keywords and description for your site.
+keywords = "hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+subtitle = "Example site for hugo-theme-tailwind"
+
+# dir name of your blog content (default is `content/posts`).
+# the list of set content will show up on your index page (baseurl).
+contentTypeName = "post"
+
+jsonLD = true
+
+showAuthor = true
+
+[author]
+  name = "Xiaoliang Wang"
+  email = "user@example.com"
+
+[header]
+  logo = "logo.svg"
+  title = "Hugo Theme Tailwind"
+
+[footer]
+  since = 2022
+  poweredby = true
+
+# giscus is comments system powered by GitHub Discussions
+# generate configurations from https://giscus.app/
+[giscus]
+  enabled = true
+  repo = "tomowang/hugo-theme-tailwind"
+  repoID = "R_kgDOKjVJHA"
+  category = "Announcements"
+  categoryID = "DIC_kwDOKjVJHM4CafqS"
+  mapping = "pathname"
+  strict = "0"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "bottom"
+  lang = "en"
+
+[social_media]
+  [[social_media.items]]
+    enabled = true
+    title = 'Facebook'
+    icon = 'brand-facebook'
+    link = 'https://www.facebook.com/'
+
+  [[social_media.items]]
+    enabled = true
+    title = 'X'
+    icon = 'brand-x'
+    link = 'https://x.com/tomo_wang_'
+
+  [[social_media.items]]
+    enabled = true
+    title = 'Instagram'
+    icon = 'brand-instagram'
+    link = 'https://www.instagram.com/'
+
+  [[social_media.items]]
+    enabled = true
+    title = 'LinkedIn'
+    icon = 'brand-linkedin'
+    link = 'https://www.linkedin.com/'
+
+  [[social_media.items]]
+    enabled = true
+    title = 'Github'
+    icon = 'brand-github'
+    link = 'https://github.com/tomowang'
+
+  [[social_media.items]]
+    enabled = true
+    title = 'Bluesky'
+    icon = 'brand-bluesky'
+    link = 'https://bsky.app/'
+
+[pwa]
+  enabled = true
+  icon = "logo.png" # should be in assets
+  icon_sizes = [192, 512]
+
+  # will be used as the manifest.json file and merge the default one
+  # https://developer.mozilla.org/en-US/docs/Web/Manifest
+  # https://web.dev/add-manifest/
+  [manifest]
+  description = "Example site for hugo-theme-tailwind"
