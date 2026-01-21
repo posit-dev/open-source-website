@@ -4,6 +4,7 @@ node_modules/
 # Hugo build output
 public/
 resources/
+.hugo_build.lock
 
 # OS files
 .DS_Store
