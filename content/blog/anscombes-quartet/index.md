@@ -6,6 +6,11 @@ image: ruthson-zimmerman-FVwG5OzPuzo-unsplash.jpg
 ---
 
 
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous" data-relocate-top="true"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
 <img align="right" width="320" height="240" src="anscombes-quartet.png">
 
 In 1973, statistician Francis Anscombe challenged the commonly held belief that "numerical calculations are exact, but graphs are rough" (Anscombe, 1973).
@@ -51,6 +56,32 @@ anscombe_quartet = pl.concat([
 anscombe_quartet
 ```
 
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (44, 3)</small>
+
+| dataset | x    | y    |
+|---------|------|------|
+| str     | f64  | f64  |
+| \"I\"   | 10.0 | 8.04 |
+| \"I\"   | 8.0  | 6.95 |
+| \"I\"   | 13.0 | 7.58 |
+| \"I\"   | 9.0  | 8.81 |
+| \"I\"   | 11.0 | 8.33 |
+| ...     | ...  | ...  |
+| \"IV\"  | 8.0  | 5.25 |
+| \"IV\"  | 19.0 | 12.5 |
+| \"IV\"  | 8.0  | 5.56 |
+| \"IV\"  | 8.0  | 7.91 |
+| \"IV\"  | 8.0  | 6.89 |
+
+</div>
+
 ## Compute Descriptive Statistics
 
 To verify that the four datasets have identical descriptive statistics, we use Polars to compute the mean and the variance of both `x` and `y`. We also compute the correlation between `x` and `y`:
@@ -65,6 +96,25 @@ anscombe_quartet.group_by("dataset", maintain_order=True).agg(
 )
 ```
 
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (4, 6)</small>
+
+| dataset | mean_x | mean_y | variance_x | variance_y | correlation_xy |
+|---------|--------|--------|------------|------------|----------------|
+| str     | f64    | f64    | f64        | f64        | f64            |
+| \"I\"   | 9.00   | 7.50   | 11.00      | 4.13       | 0.82           |
+| \"II\"  | 9.00   | 7.50   | 11.00      | 4.13       | 0.82           |
+| \"III\" | 9.00   | 7.50   | 11.00      | 4.12       | 0.82           |
+| \"IV\"  | 9.00   | 7.50   | 11.00      | 4.12       | 0.82           |
+
+</div>
+
 As you can see, the descriptive statistics are nearly identical.
 At the end of this notebook there's a bonus section where we use scikit-learn to fit a linear regression line to each dataset and verify that the intercept, slope, and $R^2$ are also identical. (Spoiler alert: they are!)
 
@@ -78,6 +128,8 @@ We have two continuous variables `x` and `y`, so a scatter plot might work:
 ggplot(anscombe_quartet, aes("x", "y")) + geom_point()
 ```
 
+<img src="index_files/figure-markdown_strict/cell-5-output-1.png" width="768" height="480" />
+
 That doesn't make much sense yet.
 We need a way to distinguish between the datasets.
 Let's color each point according to the dataset it belongs to:
@@ -85,6 +137,8 @@ Let's color each point according to the dataset it belongs to:
 ``` python
 ggplot(anscombe_quartet, aes("x", "y", color="dataset")) + geom_point()
 ```
+
+<img src="index_files/figure-markdown_strict/cell-6-output-1.png" width="768" height="480" />
 
 Well, that's rather messy. Let's create a panel for each dataset using the `facet_wrap()` function instead. To make the code easier to read and to edit, we'll put each function on its own line:
 
@@ -95,6 +149,8 @@ Well, that's rather messy. Let's create a panel for each dataset using the `face
     geom_point()
 )
 ```
+
+<img src="index_files/figure-markdown_strict/cell-7-output-1.png" width="768" height="480" />
 
 That's better.
 The panels make the use of color redundant, so we'll make each point black again.
@@ -108,6 +164,8 @@ Let's also add a regression line using the `geom_smooth()` function, to visualiz
     facet_wrap("dataset")
 )
 ```
+
+<img src="index_files/figure-markdown_strict/cell-8-output-1.png" width="768" height="480" />
 
 This data visualization clearly supports Anscombe's point: that datasets with different distributions can have the same descriptive statistics.
 
@@ -146,46 +204,10 @@ Luckily, because of its composable API, Plotnine allows you to gradually move fr
 )
 ```
 
+<img src="index_files/figure-markdown_strict/cell-9-output-1.png" width="1152" height="720" />
+
 ``` python
 _.save("anscombes-quartet.png")
-```
-
-## Bonus: Apply Linear Regression
-
-In this bonus section, we use scikit-learn to fit a linear regression line to each dataset and confirm that the intercept, slope, and $R^2$ are also identical.
-The `geom_smooth()` function added regression lines to our scatter plots, but now we get to see the raw values as well.
-
-``` python
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
-
-def fit_lr(s):
-    lr = LinearRegression()
-    X = s.struct.field("x").to_numpy().reshape(-1, 1)
-    y = s.struct.field("y").to_numpy()
-
-    # Compute intercept and coefficient
-    lr.fit(X, y)
-    intercept = lr.intercept_
-    slope = lr.coef_[0]
-
-    # Compute R^2
-    r2 = r2_score(y, intercept + slope * X)
-    
-    return {"intercept": intercept, "slope": slope, "r2": r2}
-
-anscombe_quartet.group_by("dataset", maintain_order=True).agg(
-    pl.col("x", "y").mean().name.prefix("mean_"),
-    pl.col("x", "y").var().name.prefix("variance_"),
-    pl.corr("x", "y").alias("correlation_xy"),
-    (
-        pl.struct("x", "y")
-        .map_elements(fit_lr, return_dtype=pl.Struct({"intercept": pl.Float64,
-                                                      "slope": pl.Float64,
-                                                      "r2": pl.Float64}))
-        .alias("lr")
-    )
-).unnest("lr")
 ```
 
 ## References
