@@ -1,0 +1,4 @@
+project:
+  type: hugo
+
+format: hugo-md

@@ -1,10 +1,8 @@
-{{- if .Site.Params.showAuthor -}}
 {{- $author := "" -}}
-
 {{- if .Params.author -}}
-  {{- $author = .Params.author -}}
+{{- $author = .Params.author -}}
 {{- else if and .Site.Params.Author .Site.Params.Author.name -}}
-  {{- $author = .Site.Params.Author.name -}}
+{{- $author = .Site.Params.Author.name -}}
 {{- end -}}
 
 {{- if $author -}}
@@ -16,6 +14,4 @@
     <span>{{ $author }}</span>
   </div>
 </div>
-{{- end -}}
-
 {{- end -}}
