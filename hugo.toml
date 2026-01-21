@@ -1,4 +1,4 @@
-baseURL = 'https://posit.co/open-source'
+baseURL = 'https://positopensource.netlify.app'
 languageCode = 'en-us'
 title = 'Posit Open Source'
 theme = 'hugo-theme-tailwind'
