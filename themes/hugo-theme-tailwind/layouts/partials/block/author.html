@@ -2,14 +2,23 @@
 {{- if $people -}}
 <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
   <div class="flex flex-row text-base gap-x-1 flex-wrap">
-    <i class="h-6 w-6 flex-none">
-      {{ partial "icon.html" "user" }}
-    </i>
     {{- range $index, $person := $people -}}
-      {{- if $index -}}, {{ end -}}
-      <a href="{{ $person.RelPermalink }}" class="hover:text-slate-700 dark:hover:text-slate-100">
-        {{- $person.LinkTitle -}}
-      </a>
+    {{ if $person.Params.image }}
+    {{ $image := .Resources.Get $person.Params.image }}
+    {{ if $image }}
+    <div class="flex-shrink-0 -mr-3">
+      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-6 h-6 rounded-full object-cover shadow-md">
+    </div>
+    {{ end }}
+    {{ end }}
+    {{- end -}}
+    <div class="w-3"></div>
+
+    {{- range $index, $person := $people -}}
+    {{- if $index -}}<span class="-ml-1">, </span>{{ end -}}
+    <a href="{{ $person.RelPermalink }}" class="hover:text-slate-700 dark:hover:text-slate-100">
+      {{- $person.LinkTitle -}}
+    </a>
     {{- end -}}
   </div>
 </div>
