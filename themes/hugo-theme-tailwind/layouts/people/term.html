@@ -1,0 +1,92 @@
+{{ define "main" }}
+<div class="flex flex-col w-full max-w-4xl lg:max-w-5xl">
+  <!-- Person Profile Section -->
+  <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
+    <div class="flex flex-col md:flex-row gap-6 p-6">
+      {{ if .Params.image }}
+        {{ $image := .Resources.Get .Params.image }}
+        {{ if $image }}
+          <div class="flex-shrink-0">
+            <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-48 h-48 rounded-lg object-cover shadow-md">
+          </div>
+        {{ end }}
+      {{ end }}
+
+      <div class="flex flex-col gap-y-3 flex-grow">
+        <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+          {{ .Title }}
+        </h1>
+
+        {{ with .Params.role }}
+          <p class="text-lg text-slate-600 dark:text-slate-400">
+            {{ . }}
+          </p>
+        {{ end }}
+
+        <!-- Social Links -->
+        {{ if or .Params.github .Params.linkedin .Params.bluesky .Params.website }}
+          <div class="flex flex-row gap-3 mt-2">
+            {{ with .Params.github }}
+              <a href="https://github.com/{{ . }}" target="_blank" title="GitHub" class="text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+                <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-github" }}</i>
+              </a>
+            {{ end }}
+            {{ with .Params.linkedin }}
+              <a href="https://linkedin.com/in/{{ . }}" target="_blank" title="LinkedIn" class="text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+                <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-linkedin" }}</i>
+              </a>
+            {{ end }}
+            {{ with .Params.bluesky }}
+              <a href="https://bsky.app/profile/{{ . }}" target="_blank" title="Bluesky" class="text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+                <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-bluesky" }}</i>
+              </a>
+            {{ end }}
+            {{ with .Params.website }}
+              <a href="{{ . }}" target="_blank" title="Website" class="text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+                <i class="h-6 w-6 flex-none">{{ partial "icon.html" "world" }}</i>
+              </a>
+            {{ end }}
+          </div>
+        {{ end }}
+
+        {{ if .Content }}
+          <div class="prose prose-slate dark:prose-invert max-w-none">
+            {{ .Content }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Content by this Person -->
+  {{ $pages := .Pages }}
+  {{ if gt (len $pages) 0 }}
+    <div class="mt-8 mb-6 mx-2 md:mx-0">
+      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+        Posts by {{ .Title }}
+      </h2>
+    </div>
+
+    <div class="flex flex-col">
+      {{ range $pages }}
+        <article class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
+          <div>
+            <a href="{{ .RelPermalink }}">
+              {{ partial "block/image.html" . }}
+            </a>
+          </div>
+          <div class="flex flex-col gap-y-3 p-6">
+            <h3 class="text-3xl font-semibold text-slate-800 dark:text-slate-200">
+              <a href="{{ .RelPermalink }}">{{ .Title | .RenderString }}</a>
+            </h3>
+
+            {{ partial "block/desc.html" . }}
+            {{ partial "block/taxonomies.html" . }}
+            {{ partial "block/time.html" . }}
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  {{ end }}
+</div>
+{{ end }}
