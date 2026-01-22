@@ -3,7 +3,9 @@ title: "Great Tables"
 description: "Make awesome display tables in Python"
 website: "https://posit-dev.github.io/great-tables/"
 github: "posit-dev/great-tables"
-people: []
+people:
+- Rich Iannone
+- Michael Chow
 image: "great-tables.svg"
 languages: ["Python"]
 ---
