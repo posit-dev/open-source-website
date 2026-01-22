@@ -2,7 +2,7 @@
 title: "Lionel Henry"
 image: "lionel-henry.png"
 role: "Senior Software Engineer"
-github: ""
+github: "lionel-"
 linkedin: ""
 bluesky: ""
 website: ""

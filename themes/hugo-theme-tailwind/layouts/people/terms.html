@@ -6,33 +6,9 @@
     </h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {{ range .Data.Terms.Alphabetical }}
-      {{ $term := .Term }}
-      {{ with $.Site.GetPage (printf "/people/%s" $term) }}
-      <a href="{{ .RelPermalink }}"
-        class="flex flex-col items-center rounded-lg shadow-md bg-slate-50 dark:bg-gray-800 hover:shadow-lg transition-shadow p-6">
-        {{ if .Params.image }}
-        {{ $image := .Resources.Get .Params.image }}
-        {{ if $image }}
-        <div class="w-36 h-36 mb-4 overflow-hidden rounded-full bg-slate-200 dark:bg-gray-700">
-          <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
-        </div>
-        {{ end }}
-        {{ end }}
-
-        <div class="flex flex-col gap-y-2 text-center">
-          <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100">
-            {{ .Title }}
-          </h2>
-
-          {{ with .Params.role }}
-          <p class="text-sm text-slate-600 dark:text-slate-400">
-            {{ . }}
-          </p>
-          {{ end }}
-        </div>
-      </a>
-      {{ end }}
+      {{ $peopleSection := site.GetPage "/people" }}
+      {{ range $peopleSection.Pages.ByTitle }}
+        {{ partial "card_person.html" . }}
       {{ end }}
     </div>
   </div>
