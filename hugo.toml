@@ -12,6 +12,8 @@ subtitle = ""
   tag = 'tags'
   category = 'categories'
   person = 'people'
+  package = 'packages'
+  language = 'languages'
 
 [markup]
 [markup.highlight]

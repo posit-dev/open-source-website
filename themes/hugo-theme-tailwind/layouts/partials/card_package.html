@@ -1,0 +1,37 @@
+{{/*
+  Renders a package card
+  Context: A package page (from .Site.GetPage or .GetTerms "packages")
+*/}}
+<a href="{{ .RelPermalink }}"
+  class="flex flex-col rounded-lg shadow-md bg-slate-50 dark:bg-gray-800 hover:shadow-lg transition-shadow overflow-hidden">
+  {{ if .Params.image }}
+  {{ $image := .Resources.Get .Params.image }}
+  {{ if $image }}
+  <div class="w-full h-32 flex items-center justify-center bg-white dark:bg-gray-900 p-4">
+    <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="max-h-full max-w-full object-contain">
+  </div>
+  {{ end }}
+  {{ end }}
+
+  <div class="flex flex-col gap-y-2 p-4">
+    <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100">
+      {{ .Title }}
+    </h2>
+
+    {{ with .Params.description }}
+    <p class="text-sm text-slate-600 dark:text-slate-300">
+      {{ . | plainify | truncate 100 }}
+    </p>
+    {{ end }}
+
+    {{ with .Params.languages }}
+    <div class="flex flex-row flex-wrap gap-2 mt-2">
+      {{ range . }}
+      <span class="text-xs px-2 py-1 rounded-full bg-slate-200 dark:bg-gray-700 text-slate-700 dark:text-slate-300">
+        {{ . }}
+      </span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</a>
