@@ -3,10 +3,11 @@
   {{- $ld = merge $ld (dict "name" .Title "url" .Permalink) -}}
   {{- $ld = merge $ld (dict "description" (.Summary | plainify)) -}}
   {{- $ld = merge $ld (dict "datePublished" .Date "dateModified" .Lastmod) -}}
-  {{- $author := default $.Site.Params.Author.Name $.Params.author -}}
+  {{- $people := .GetTerms "people" -}}
 
-  {{- with $author -}}
-    {{- $ld = merge $ld (dict "author" (dict "@type" "Person" "name" .)) -}}
+  {{- if $people -}}
+    {{- $author := (index $people 0).LinkTitle -}}
+    {{- $ld = merge $ld (dict "author" (dict "@type" "Person" "name" $author)) -}}
   {{- end -}}
 
   {{- if .Params.image -}}

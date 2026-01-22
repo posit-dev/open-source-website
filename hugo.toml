@@ -2,11 +2,16 @@ baseURL = 'https://positopensource.netlify.app'
 languageCode = 'en-us'
 title = 'Posit Open Source'
 theme = 'hugo-theme-tailwind'
-showAuthor = true
 ignoreFiles = ['\.qmd$', '\.ipynb$']
 
 [params]
 subtitle = ""
+
+# Taxonomies
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+  person = 'people'
 
 [markup]
 [markup.highlight]
