@@ -6,4 +6,6 @@ github: "jennybc"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

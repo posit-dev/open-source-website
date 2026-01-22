@@ -6,4 +6,6 @@ github: "juliasilge"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

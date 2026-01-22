@@ -6,4 +6,6 @@ github: "kgathani"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

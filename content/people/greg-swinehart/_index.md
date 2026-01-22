@@ -6,4 +6,6 @@ github: "gregswinehart"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

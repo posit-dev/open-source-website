@@ -6,4 +6,6 @@ github: "schloerke"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

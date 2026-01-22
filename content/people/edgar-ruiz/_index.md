@@ -6,4 +6,6 @@ github: "edgararuiz"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

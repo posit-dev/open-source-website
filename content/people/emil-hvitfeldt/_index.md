@@ -6,4 +6,6 @@ github: "EmilHvitfeldt"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

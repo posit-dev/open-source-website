@@ -6,4 +6,6 @@ github: "elnelson575"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

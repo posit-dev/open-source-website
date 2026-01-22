@@ -6,4 +6,6 @@ github: "rich-iannone"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

@@ -6,4 +6,6 @@ github: "machow"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

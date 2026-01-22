@@ -6,4 +6,6 @@ github: "juleswg23"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

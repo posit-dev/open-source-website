@@ -24,7 +24,7 @@
         {{ end }}
 
         <!-- Social Links -->
-        {{ if or .Params.github .Params.linkedin .Params.bluesky .Params.website }}
+        {{ if or .Params.github .Params.linkedin .Params.bluesky .Params.mastodon .Params.orcid .Params.website }}
           <div class="flex flex-row gap-3 mt-2">
             {{ with .Params.github }}
               <a href="https://github.com/{{ . }}" target="_blank" title="GitHub" class="text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
@@ -39,6 +39,16 @@
             {{ with .Params.bluesky }}
               <a href="https://bsky.app/profile/{{ . }}" target="_blank" title="Bluesky" class="text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
                 <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-bluesky" }}</i>
+              </a>
+            {{ end }}
+            {{ with .Params.mastodon }}
+              <a href="{{ . }}" target="_blank" title="Mastodon" class="text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+                <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-mastodon" }}</i>
+              </a>
+            {{ end }}
+            {{ with .Params.orcid }}
+              <a href="https://orcid.org/{{ . }}" target="_blank" title="ORCID" class="text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+                <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-orcid" }}</i>
               </a>
             {{ end }}
             {{ with .Params.website }}

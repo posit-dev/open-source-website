@@ -6,4 +6,6 @@ github: "jjallaire"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

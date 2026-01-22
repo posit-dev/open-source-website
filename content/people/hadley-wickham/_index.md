@@ -6,4 +6,6 @@ github: "hadley"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

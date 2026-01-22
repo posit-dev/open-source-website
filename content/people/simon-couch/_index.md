@@ -6,4 +6,6 @@ github: "simonpcouch"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

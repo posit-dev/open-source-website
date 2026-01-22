@@ -6,4 +6,6 @@ github: "t-kalinowski"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

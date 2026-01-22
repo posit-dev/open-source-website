@@ -6,4 +6,6 @@ github: "aholz"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

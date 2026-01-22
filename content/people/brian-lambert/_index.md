@@ -6,4 +6,6 @@ github: "LambdaBrian"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

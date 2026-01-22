@@ -6,4 +6,6 @@ github: "cpsievert"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

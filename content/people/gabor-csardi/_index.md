@@ -6,4 +6,6 @@ github: "gaborcsardi"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

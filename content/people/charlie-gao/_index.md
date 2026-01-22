@@ -6,4 +6,6 @@ github: "shikokuchuo"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

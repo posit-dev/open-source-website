@@ -6,4 +6,6 @@ github: "gordonwoodhull"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

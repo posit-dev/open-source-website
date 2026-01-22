@@ -6,4 +6,6 @@ github: "dfalbel"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

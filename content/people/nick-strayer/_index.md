@@ -6,4 +6,6 @@ github: "nstrayer"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

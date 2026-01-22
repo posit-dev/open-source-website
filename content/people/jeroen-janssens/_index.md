@@ -6,6 +6,8 @@ github: "jeroenjanssens"
 linkedin: ""
 bluesky: "jeroenjanssens.com"
 website: "https://jeroenjanssens.com"
+mastodon: ""
+orcid: ""
 ---
 
 Jeroen Janssens, PhD, is Head of Developer Relations at Posit, PBC.

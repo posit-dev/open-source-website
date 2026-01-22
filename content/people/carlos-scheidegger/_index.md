@@ -6,4 +6,6 @@ github: "cscheid"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

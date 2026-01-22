@@ -6,4 +6,6 @@ github: "isabelizimm"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

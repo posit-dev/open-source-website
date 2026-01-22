@@ -6,4 +6,6 @@ github: "tarleb"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

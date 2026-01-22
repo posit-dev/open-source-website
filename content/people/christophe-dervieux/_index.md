@@ -6,4 +6,6 @@ github: "cderv"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

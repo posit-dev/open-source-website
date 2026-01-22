@@ -6,4 +6,6 @@ github: "thomasp85"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

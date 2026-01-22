@@ -6,4 +6,6 @@ github: "EvaMaeRey"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

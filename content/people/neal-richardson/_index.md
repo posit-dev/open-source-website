@@ -6,4 +6,6 @@ github: "nealrichardson"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

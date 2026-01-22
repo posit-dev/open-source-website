@@ -6,4 +6,6 @@ github: "gadenbuie"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---

@@ -6,5 +6,7 @@ github: "lionel-"
 linkedin: ""
 bluesky: ""
 website: ""
+mastodon: ""
+orcid: ""
 ---
 
