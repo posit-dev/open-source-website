@@ -2,6 +2,10 @@
 title: "Jeroen Janssens"
 image: "jeroenjanssens-headshot-2021.png"
 role: "Head of Developer Relations"
+github: "jeroenjanssens"
+linkedin: ""
+bluesky: "jeroenjanssens.com"
+website: "https://jeroenjanssens.com"
 ---
 
 Jeroen Janssens, PhD, is Head of Developer Relations at Posit, PBC.
