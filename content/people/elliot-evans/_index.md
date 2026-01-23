@@ -1,6 +1,6 @@
 ---
 title: "Elliot Evans"
-image: ""
+image: "elliot.jpeg"
 role: "Senior Software Engineer"
 github: ""
 linkedin: ""
