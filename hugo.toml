@@ -7,7 +7,6 @@ ignoreFiles = ['\.qmd$', '\.ipynb$']
 [params]
 subtitle = ""
 
-# Taxonomies
 [taxonomies]
   tag = 'tags'
   category = 'categories'
@@ -18,15 +17,14 @@ subtitle = ""
   resource = 'resources'
 
 [markup]
+
 [markup.highlight]
-  # lineNos = true
+  lineNos = true
   noClasses = false
-# Markup configuration
+
 [markup.goldmark.renderer]
 unsafe = true
 
-
-# Main navigation menu
 [menu]
   [[menu.main]]
     name = 'Home'
