@@ -3,7 +3,8 @@ title: "Positron"
 description: "A next-generation data science IDE built on VS Code"
 website: "https://positron.posit.co/"
 github: "posit-dev/positron"
-people: []
+people:
+- Isabel Zimmerman
 image: "positron.png"
 languages: ["TypeScript", "JavaScript", "Python", "Rust"]
 ---
