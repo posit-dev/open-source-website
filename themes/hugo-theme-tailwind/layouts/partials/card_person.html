@@ -3,7 +3,7 @@
   Context: A person page (from .Site.GetPage or .GetTerms "people")
 */}}
 <a href="{{ .RelPermalink }}"
-  class="flex flex-col items-center rounded-lg shadow-md bg-slate-50 dark:bg-gray-800 hover:shadow-lg transition-shadow p-6">
+  class="flex flex-col items-center rounded-lg shadow-md bg-white dark:bg-gray-700 hover:shadow-lg transition-shadow p-6">
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}

@@ -1,88 +1,86 @@
 {{ define "main" }}
-<div class="flex flex-col w-full max-w-4xl lg:max-w-5xl">
-  <div class="flex flex-col gap-y-8 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
-    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-200">
-      Events
-    </h1>
+<div class="flex flex-col w-full max-w-4xl lg:max-w-5xl gap-y-8">
+  <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-200 mt-6 mx-2 md:mx-0">
+    Events
+  </h1>
 
-    {{ $eventsSection := site.GetPage "/events" }}
-    {{ $now := now }}
-    {{ $currentEvents := slice }}
-    {{ $upcomingEvents := slice }}
-    {{ $pastEvents := slice }}
+  {{ $eventsSection := site.GetPage "/events" }}
+  {{ $now := now }}
+  {{ $currentEvents := slice }}
+  {{ $upcomingEvents := slice }}
+  {{ $pastEvents := slice }}
 
-    {{ range $eventsSection.Pages }}
-      {{ $startDate := .Params.start_date }}
-      {{ $endDate := .Params.end_date }}
+  {{ range $eventsSection.Pages }}
+    {{ $startDate := .Params.start_date }}
+    {{ $endDate := .Params.end_date }}
 
-      {{ if and $startDate $endDate }}
-        {{ $start := time $startDate }}
-        {{ $end := time $endDate }}
+    {{ if and $startDate $endDate }}
+      {{ $start := time $startDate }}
+      {{ $end := time $endDate }}
 
-        {{ if and (le $start $now) (ge $end $now) }}
-          {{ $currentEvents = $currentEvents | append . }}
-        {{ else if gt $start $now }}
-          {{ $upcomingEvents = $upcomingEvents | append . }}
-        {{ else }}
-          {{ $pastEvents = $pastEvents | append . }}
-        {{ end }}
-      {{ else if $startDate }}
-        {{ $start := time $startDate }}
-        {{ if gt $start $now }}
-          {{ $upcomingEvents = $upcomingEvents | append . }}
-        {{ else }}
-          {{ $pastEvents = $pastEvents | append . }}
-        {{ end }}
+      {{ if and (le $start $now) (ge $end $now) }}
+        {{ $currentEvents = $currentEvents | append . }}
+      {{ else if gt $start $now }}
+        {{ $upcomingEvents = $upcomingEvents | append . }}
       {{ else }}
         {{ $pastEvents = $pastEvents | append . }}
       {{ end }}
+    {{ else if $startDate }}
+      {{ $start := time $startDate }}
+      {{ if gt $start $now }}
+        {{ $upcomingEvents = $upcomingEvents | append . }}
+      {{ else }}
+        {{ $pastEvents = $pastEvents | append . }}
+      {{ end }}
+    {{ else }}
+      {{ $pastEvents = $pastEvents | append . }}
     {{ end }}
+  {{ end }}
 
-    <!-- Current Events Section -->
-    {{ if gt (len $currentEvents) 0 }}
-      <div class="flex flex-col gap-y-4">
-        <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
-          Current Events
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {{ range $currentEvents }}
-            {{ partial "card_event.html" . }}
-          {{ end }}
-        </div>
+  <!-- Current Events Section -->
+  {{ if gt (len $currentEvents) 0 }}
+    <div class="flex flex-col gap-y-4 mx-2 md:mx-0">
+      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+        Current Events
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ range $currentEvents }}
+          {{ partial "card_event.html" . }}
+        {{ end }}
       </div>
-    {{ end }}
+    </div>
+  {{ end }}
 
-    <!-- Upcoming Events Section -->
-    {{ if gt (len $upcomingEvents) 0 }}
-      <div class="flex flex-col gap-y-4">
-        <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
-          Upcoming Events
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {{ range $upcomingEvents.ByParam "start_date" }}
-            {{ partial "card_event.html" . }}
-          {{ end }}
-        </div>
+  <!-- Upcoming Events Section -->
+  {{ if gt (len $upcomingEvents) 0 }}
+    <div class="flex flex-col gap-y-4 mx-2 md:mx-0">
+      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+        Upcoming Events
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ range $upcomingEvents.ByParam "start_date" }}
+          {{ partial "card_event.html" . }}
+        {{ end }}
       </div>
-    {{ end }}
+    </div>
+  {{ end }}
 
-    <!-- Past Events Section -->
-    {{ if gt (len $pastEvents) 0 }}
-      <div class="flex flex-col gap-y-4">
-        <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
-          Past Events
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {{ range ($pastEvents.ByParam "start_date").Reverse }}
-            {{ partial "card_event.html" . }}
-          {{ end }}
-        </div>
+  <!-- Past Events Section -->
+  {{ if gt (len $pastEvents) 0 }}
+    <div class="flex flex-col gap-y-4 mx-2 md:mx-0">
+      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+        Past Events
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ range ($pastEvents.ByParam "start_date").Reverse }}
+          {{ partial "card_event.html" . }}
+        {{ end }}
       </div>
-    {{ end }}
+    </div>
+  {{ end }}
 
-    {{ if eq (add (len $currentEvents) (len $upcomingEvents) (len $pastEvents)) 0 }}
-      <p class="text-slate-600 dark:text-slate-400">No events found.</p>
-    {{ end }}
-  </div>
+  {{ if eq (add (len $currentEvents) (len $upcomingEvents) (len $pastEvents)) 0 }}
+    <p class="text-slate-600 dark:text-slate-400 mx-2 md:mx-0">No events found.</p>
+  {{ end }}
 </div>
 {{ end }}

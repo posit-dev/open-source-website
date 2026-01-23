@@ -3,7 +3,7 @@
   Context: An event page (from .Site.GetPage or .GetTerms "events")
 */}}
 <a href="{{ .RelPermalink }}"
-  class="flex flex-col rounded-lg shadow-md bg-slate-50 dark:bg-gray-800 hover:shadow-lg transition-shadow overflow-hidden">
+  class="flex flex-col rounded-lg shadow-md bg-white dark:bg-gray-700 hover:shadow-lg transition-shadow overflow-hidden">
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}
