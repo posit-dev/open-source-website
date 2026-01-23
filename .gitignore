@@ -4,7 +4,7 @@ themes/hugo-theme-tailwind/package-lock.json
 
 # Hugo build output
 public/
-resources/
+/resources/
 .hugo_build.lock
 
 # OS files
