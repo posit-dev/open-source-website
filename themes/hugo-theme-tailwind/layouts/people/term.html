@@ -84,17 +84,35 @@
     </div>
   {{ end }}
 
-  <!-- Blog Posts by this Person -->
-  {{ $posts := where .Pages "Section" "blog" }}
-  {{ if gt (len $posts) 0 }}
+  <!-- Events attended by this Person -->
+  {{ $events := where .Pages "Section" "events" }}
+  {{ if gt (len $events) 0 }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
       <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-        Posts by {{ .Title }}
+        Events attended by {{ .Title }}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+      {{ range $events }}
+        {{ partial "card_event.html" . }}
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <!-- Blog Posts and Resources by this Person -->
+  {{ $posts := where .Pages "Section" "blog" }}
+  {{ $resources := where .Pages "Section" "resources" }}
+  {{ $combined := union $posts $resources }}
+  {{ if gt (len $combined) 0 }}
+    <div class="mt-8 mb-6 mx-2 md:mx-0">
+      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+        Posts and Resources by {{ .Title }}
       </h2>
     </div>
 
     <div class="flex flex-col">
-      {{ range $posts }}
+      {{ range $combined.ByDate.Reverse }}
         <article class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
           <div>
             <a href="{{ .RelPermalink }}">

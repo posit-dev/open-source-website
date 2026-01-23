@@ -73,9 +73,41 @@
     </div>
   {{ end }}
 
-  <!-- Content tagged with this Package -->
-  {{ $pages := .Pages }}
-  {{ if gt (len $pages) 0 }}
+  <!-- Events featuring this Package -->
+  {{ $events := where .Pages "Section" "events" }}
+  {{ if gt (len $events) 0 }}
+    <div class="mt-8 mb-6 mx-2 md:mx-0">
+      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+        Events featuring {{ .Title }}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+      {{ range $events }}
+        {{ partial "card_event.html" . }}
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <!-- Resources using this Package -->
+  {{ $resources := where .Pages "Section" "resources" }}
+  {{ if gt (len $resources) 0 }}
+    <div class="mt-8 mb-6 mx-2 md:mx-0">
+      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+        Resources using {{ .Title }}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+      {{ range $resources }}
+        {{ partial "card_resource.html" . }}
+      {{ end }}
+    </div>
+  {{ end }}
+
+  <!-- Blog Posts about this Package -->
+  {{ $posts := where .Pages "Section" "blog" }}
+  {{ if gt (len $posts) 0 }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
       <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
         Posts about {{ .Title }}
@@ -83,7 +115,7 @@
     </div>
 
     <div class="flex flex-col">
-      {{ range $pages }}
+      {{ range $posts }}
         <article class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
           <div>
             <a href="{{ .RelPermalink }}">
