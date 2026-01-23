@@ -1,8 +1,6 @@
 ---
-title: "Posit Open Source"
+title: "Welcome to Posit Open Source"
 ---
-
-## Welcome to Posit Open Source
 
 This will become Posit's new Open Source website.
 
