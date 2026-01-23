@@ -1,0 +1,27 @@
+{{ $start := .Params.start_date }}
+{{ $end   := .Params.end_date }}
+
+{{ if and $start $end (ne $start $end) }}
+  {{ $start_day := time.Format "2" $start }}
+  {{ $start_month := time.Format "Jan" $start }}
+  {{ $start_month_n := time.Format "1" $start }}
+  {{ $start_year := time.Format "2006" $start }}
+  {{ $end_day := time.Format "2" $end }}
+  {{ $end_month := time.Format "Jan" $end }}
+  {{ $end_month_n := time.Format "1" $end }}
+  {{ $end_year := time.Format "2006" $end }}
+
+  {{ if gt $end_year $start_year }}
+    {{ $start_month}} {{ $start_day }}, {{ $start_year }} - {{ $end_month }} {{ $end_day }}, {{ $end_year }}
+  {{ else }}
+      {{ if gt $end_month_n $start_month_n }}
+          {{ $start_month}} {{ $start_day }} - {{ $end_month }} {{ $end_day }}, {{ $end_year }}
+      {{ else }}
+          {{ $start_month }} {{ $start_day }}-{{ $end_day }}, {{ $start_year }}
+      {{ end }}
+  {{end}}
+{{ else if $start }}
+  {{ time.Format "Jan 2, 2006" $start }}
+{{ else if $end }}
+  {{ time.Format "Jan 2, 2006" $end }}
+{{ end }}
