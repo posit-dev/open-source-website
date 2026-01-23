@@ -1,0 +1,54 @@
+{{/*
+  Renders a resource card
+  Context: A resource page (from .Site.GetPage or .GetTerms "resources")
+*/}}
+<a href="{{ .RelPermalink }}"
+  class="flex flex-col rounded-lg shadow-md bg-slate-50 dark:bg-gray-800 hover:shadow-lg transition-shadow overflow-hidden">
+  {{ if .Params.image }}
+  {{ $image := .Resources.Get .Params.image }}
+  {{ if $image }}
+  <div class="w-full h-40 bg-slate-200 dark:bg-gray-700">
+    <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+  </div>
+  {{ end }}
+  {{ end }}
+
+  <div class="flex flex-col gap-y-2 p-4">
+    <div class="flex items-start justify-between gap-2">
+      <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 flex-1">
+        {{ .Title }}
+      </h2>
+      {{ with .Params.resource_type }}
+      <span class="text-xs px-2 py-1 rounded-full {{ if eq . "video" }}bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300{{ else if eq . "cheatsheet" }}bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300{{ else if eq . "demo" }}bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300{{ else if eq . "tutorial" }}bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300{{ else }}bg-slate-200 dark:bg-gray-700 text-slate-700 dark:text-slate-300{{ end }} capitalize whitespace-nowrap">
+        {{ . }}
+      </span>
+      {{ end }}
+    </div>
+
+    {{ with .Params.description }}
+    <p class="text-sm text-slate-600 dark:text-slate-300">
+      {{ . | plainify | truncate 120 }}
+    </p>
+    {{ end }}
+
+    <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mt-2">
+      {{ with .Params.date }}
+      <span class="flex items-center gap-1">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        {{ . | time.Format "Jan 2, 2006" }}
+      </span>
+      {{ end }}
+
+      {{ with .Params.duration }}
+      <span class="flex items-center gap-1">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        {{ . }}
+      </span>
+      {{ end }}
+    </div>
+  </div>
+</a>
