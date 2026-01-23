@@ -1,6 +1,5 @@
 ---
 title: "Posit Open Source"
-layout: "single"
 ---
 
 ## Welcome to Posit Open Source
