@@ -1,7 +1,9 @@
 <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
-  <div class="flex-none ml-2 md:ml-0">
+  <div class="flex-none ml-2 md:ml-0 content-center">
     <a href="{{ relLangURL "" }}" class="">
-      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="{{ .Site.Params.header.logo | relURL }}" alt="logo">
+      <img class="h-6 lg:h-8 dark:hidden" src='{{ "images/posit-open-source-logo-light.png" | relURL }}' alt="logo">
+      <img class="h-6 lg:h-8 hidden dark:block" src='{{ "images/posit-open-source-logo-dark.png" | relURL }}'
+        alt="logo">
     </a>
   </div>
   {{ if .Site.Params.header.title }}
@@ -18,26 +20,29 @@
   {{ if (gt .Site.Home.AllTranslations.Len 1) }}
   <div class="flex-none">
     <div class="h-full static">
-      <button id="navbar-lang-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg cursor-pointer" aria-controls="navbar-menu" aria-expanded="false">
+      <button id="navbar-lang-toggle" type="button"
+        class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg cursor-pointer"
+        aria-controls="navbar-menu" aria-expanded="false">
         <span class="sr-only">{{ T "open_lang_switcher" }}</span>
         <i class="w-8 h-8">
           {{ partial "icon.html" "language" }}
         </i>
       </button>
       <div class="absolute hidden top-16 z-50" id="navbar-lang">
-        <ul class="flex flex-col rounded-xs px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
-        {{- $page := . -}}
-        {{ range .AllTranslations }}
+        <ul
+          class="flex flex-col rounded-xs px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+          {{- $page := . -}}
+          {{ range .AllTranslations }}
           <li class="">
             {{- if (ne $page.Language.LanguageCode .Language.LanguageCode) }}
-            <a class="block px-3 py-3 hover:text-emerald-600 cursor-pointer"
-              href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}
+            <a class="block px-3 py-3 hover:text-emerald-600 cursor-pointer" href="{{ .RelPermalink }}"
+              title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}
             </a>
             {{- else }}
             <span class="block px-3 py-3 cursor-default text-emerald-600">{{ .Language.LanguageName }}</span>
             {{ end -}}
           </li>
-        {{ end }}
+          {{ end }}
         </ul>
       </div>
     </div>
@@ -46,7 +51,9 @@
   <div class="flex-none mx-1"></div>
   {{ end }}
   <div class="flex-none md:hidden">
-    <a href={{ relLangURL "search/" }} class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+    <a href={{ relLangURL "search/" }}
+      class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg"
+      aria-controls="navbar-menu" aria-expanded="false">
       <span class="sr-only">{{ T "search.title" }}</span>
       <i class="w-8 h-8">
         {{ partial "icon.html" "search" }}
@@ -54,8 +61,11 @@
     </a>
   </div>
   <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
-    <label for="darkmode-toggle" class="relative flex items-center gap-1 px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="{{ T "header.darkmode_toggle" }}">
-      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="{{ T "header.darkmode_toggle" }}">
+    <label for="darkmode-toggle"
+      class="relative flex items-center gap-1 px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600"
+      title="{{ T " header.darkmode_toggle" }}">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer"
+        aria-label='{{ T "header.darkmode_toggle" }}'>
       <div class="absolute z-10 w-15 h-8 rounded-full bg-white dark:bg-gray-700"></div>
       <i class="h-6 w-6 z-20 ml-1 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:invisible">
         {{ partial "icon.html" "brightness-down" }}
