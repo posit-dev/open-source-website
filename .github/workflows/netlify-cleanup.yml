@@ -1,0 +1,55 @@
+name: Cleanup Netlify Deploys
+
+on:
+  # Trigger when a branch is deleted
+  delete:
+  # Trigger when a PR is closed (merged or dismissed)
+  pull_request:
+    types: [closed]
+
+jobs:
+  delete-netlify-deploys:
+    # Run only if it's a PR close event OR a Branch delete event (ignore tag deletions)
+    if: >
+      github.event_name == 'pull_request' || 
+      (github.event_name == 'delete' && github.event.ref_type == 'branch')
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Delete Deploys
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          # 1. Determine the Branch Name based on the event type
+          if [ "${{ github.event_name }}" == "delete" ]; then
+            TARGET_BRANCH="${{ github.event.ref }}"
+            echo "Event: Branch Deletion. Target: $TARGET_BRANCH"
+          else
+            # For PRs, we target the 'head' (source) branch of the PR
+            TARGET_BRANCH="${{ github.event.pull_request.head.ref }}"
+            echo "Event: PR Closed. Target: $TARGET_BRANCH"
+          fi
+
+          # 2. Fetch all deploys matching this branch name
+          # This catches both "Branch Deploys" AND "Deploy Previews" because 
+          # Netlify indexes Deploy Previews by their source branch.
+          RESPONSE=$(curl -s -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys?branch=$TARGET_BRANCH&per_page=100")
+
+          # 3. Parse IDs
+          DEPLOY_IDS=$(echo "$RESPONSE" | jq -r '.[].id')
+
+          if [ -z "$DEPLOY_IDS" ] || [ "$DEPLOY_IDS" == "null" ]; then
+            echo "No deploys found for branch: $TARGET_BRANCH"
+            exit 0
+          fi
+
+          # 4. Delete them
+          for ID in $DEPLOY_IDS; do
+            echo "Deleting deploy ID: $ID"
+            curl -s -X DELETE -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+              "https://api.netlify.com/api/v1/deploys/$ID"
+          done
+
+          echo "All deploys for $TARGET_BRANCH have been nuked."
