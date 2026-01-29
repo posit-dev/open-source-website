@@ -1,14 +1,12 @@
 # Netlify configuration
-# Note: Build happens in GitHub Actions, not Netlify
 
 [build]
-  # Disable Netlify's build - we build in GitHub Actions
   publish = "public"
-  command = "echo 'Build happens in GitHub Actions'"
+  command = "npm ci && npm run build-tailwind && hugo --minify"
 
 [build.environment]
-  # Hugo version (for reference, actual build in GitHub Actions)
   HUGO_VERSION = "0.153.2"
+  NODE_VERSION = "20"
 
 # Redirects and headers
 [[headers]]
