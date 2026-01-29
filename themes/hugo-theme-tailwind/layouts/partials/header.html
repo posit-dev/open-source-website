@@ -60,19 +60,4 @@
       </i>
     </a>
   </div>
-  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
-    <label for="darkmode-toggle"
-      class="relative flex items-center gap-1 px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600"
-      title="{{ T " header.darkmode_toggle" }}">
-      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer"
-        aria-label='{{ T "header.darkmode_toggle" }}'>
-      <div class="absolute z-10 w-15 h-8 rounded-full bg-white dark:bg-gray-700"></div>
-      <i class="h-6 w-6 z-20 ml-1 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:invisible">
-        {{ partial "icon.html" "brightness-down" }}
-      </i>
-      <i class="h-6 w-6 z-20 mr-1 flex-none rounded-full place-self-center invisible peer-checked:visible">
-        {{ partial "icon.html" "moon-stars" }}
-      </i>
-    </label>
-  </div>
 </div>
