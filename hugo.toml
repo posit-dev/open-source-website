@@ -35,7 +35,7 @@ unsafe = true
     url = '/people/'
     weight = 2
   [[menu.main]]
-    name = 'Packages'
+    name = 'Software'
     url = '/packages/'
     weight = 3
   [[menu.main]]
