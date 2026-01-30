@@ -3,13 +3,26 @@
   Context: A resource page (from .Site.GetPage or .GetTerms "resources")
 */}}
 <div class="flex flex-col rounded-lg shadow-md bg-white dark:bg-gray-700 hover:shadow-lg transition-shadow overflow-hidden">
+  {{ $image := "" }}
+  {{ $imageAlt := .Title }}
+
   {{ if .Params.image }}
-  {{ $image := .Resources.Get .Params.image }}
-  {{ if $image }}
-  <a href="{{ .RelPermalink }}" class="w-full h-40 bg-slate-200 dark:bg-gray-700">
-    <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
-  </a>
+    {{ $image = .Resources.Get .Params.image }}
+  {{ else }}
+    {{ $software := .GetTerms "software" }}
+    {{ if $software }}
+      {{ $firstSoftware := index $software 0 }}
+      {{ if $firstSoftware.Params.image }}
+        {{ $image = $firstSoftware.Resources.Get $firstSoftware.Params.image }}
+        {{ $imageAlt = $firstSoftware.Title }}
+      {{ end }}
+    {{ end }}
   {{ end }}
+
+  {{ if $image }}
+  <a href="{{ .RelPermalink }}" class="w-full h-32 flex items-center justify-center bg-white dark:bg-gray-900 p-4">
+    <img src="{{ $image.RelPermalink }}" alt="{{ $imageAlt }}" class="max-h-full max-w-full object-contain">
+  </a>
   {{ end }}
 
   <div class="flex flex-col gap-y-2 p-4">
@@ -65,13 +78,14 @@
       </div>
 
       {{ with .Params.download_url }}
+      {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
       <a href="{{ . }}"
          target="_blank"
          class="flex items-center gap-1 px-3 py-1.5 rounded bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
-        Download
+        Download{{ if $ext }} {{ $ext }}{{ end }}
       </a>
       {{ end }}
     </div>
