@@ -11,10 +11,8 @@ subtitle = ""
   tag = 'tags'
   category = 'categories'
   person = 'people'
-  author  = "people"
-  authors = "people"
   software = 'software'
-  language = 'languages'
+  languages = 'languages'
   event = 'events'
   resource = 'resources'
 
