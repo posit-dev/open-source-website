@@ -30,7 +30,7 @@ from plotnine import *
 import polars as pl
 ```
 
-## Create a Long DataFrame
+## Create a long DataFrame
 
 First, we turn the original four datasets into one Polars DataFrame.
 With 3 columns and 44 rows, the DataFrame is in long format, making it convenient for Polars to compute descriptive statistics and for Plotnine to visualize each row as a point.
@@ -82,7 +82,7 @@ anscombe_quartet
 
 </div>
 
-## Compute Descriptive Statistics
+## Compute descriptive statistics
 
 To verify that the four datasets have identical descriptive statistics, we use Polars to compute the mean and the variance of both `x` and `y`. We also compute the correlation between `x` and `y`:
 
@@ -118,7 +118,7 @@ anscombe_quartet.group_by("dataset", maintain_order=True).agg(
 As you can see, the descriptive statistics are nearly identical.
 At the end of this notebook there's a bonus section where we use scikit-learn to fit a linear regression line to each dataset and verify that the intercept, slope, and $R^2$ are also identical. (Spoiler alert: they are!)
 
-## Exploratory Data Visualization
+## Exploratory data visualization
 
 Let's create a few basic data visualizations to get a better feeling for the data.
 What's great about Plotnine is that you can get a first plot with relatively little code.
@@ -169,7 +169,7 @@ Let's also add a regression line using the `geom_smooth()` function, to visualiz
 
 This data visualization clearly supports Anscombe's point: that datasets with different distributions can have the same descriptive statistics.
 
-## A Fine-Tuned Data Visualization
+## A fine-tuned data visualization
 
 Our final exploratory data visualization gets the job done, but it doesn't hurt to make it more visually appealing.
 In the following code snippet, we:

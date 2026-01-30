@@ -68,17 +68,17 @@
     </div>
   </div>
 
-  <!-- Packages by this Person -->
-  {{ $packages := where .Pages "Section" "packages" }}
-  {{ if gt (len $packages) 0 }}
+  <!-- Software by this Person -->
+  {{ $software := where .Pages "Section" "software" }}
+  {{ if gt (len $software) 0 }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
       <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-        Packages by {{ .Title }}
+        Software by {{ .Title }}
       </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
-      {{ range $packages }}
+      {{ range $software }}
         {{ partial "card_software.html" . }}
       {{ end }}
     </div>
@@ -107,7 +107,7 @@
   {{ if gt (len $combined) 0 }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
       <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-        Posts and Resources by {{ .Title }}
+        Posts and resources by {{ .Title }}
       </h2>
     </div>
 
