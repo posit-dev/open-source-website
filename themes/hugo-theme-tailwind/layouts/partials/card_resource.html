@@ -2,19 +2,18 @@
   Renders a resource card
   Context: A resource page (from .Site.GetPage or .GetTerms "resources")
 */}}
-<a href="{{ .RelPermalink }}"
-  class="flex flex-col rounded-lg shadow-md bg-white dark:bg-gray-700 hover:shadow-lg transition-shadow overflow-hidden">
+<div class="flex flex-col rounded-lg shadow-md bg-white dark:bg-gray-700 hover:shadow-lg transition-shadow overflow-hidden">
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}
-  <div class="w-full h-40 bg-slate-200 dark:bg-gray-700">
+  <a href="{{ .RelPermalink }}" class="w-full h-40 bg-slate-200 dark:bg-gray-700">
     <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
-  </div>
+  </a>
   {{ end }}
   {{ end }}
 
   <div class="flex flex-col gap-y-2 p-4">
-    <div class="flex items-start justify-between gap-2">
+    <a href="{{ .RelPermalink }}" class="flex items-start justify-between gap-2">
       <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 flex-1">
         {{ .Title }}
       </h2>
@@ -23,32 +22,58 @@
         {{ . }}
       </span>
       {{ end }}
-    </div>
+    </a>
 
-    {{ with .Params.description }}
-    <p class="text-sm text-slate-600 dark:text-slate-300">
-      {{ . | plainify | truncate 120 }}
-    </p>
-    {{ end }}
+    <a href="{{ .RelPermalink }}">
+      {{ with .Params.description }}
+      <p class="text-sm text-slate-600 dark:text-slate-300">
+        {{ . | plainify | truncate 120 }}
+      </p>
+      {{ end }}
+    </a>
 
-    <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400 mt-2">
-      {{ with .Params.date }}
-      <span class="flex items-center gap-1">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-        </svg>
-        {{ . | time.Format "Jan 2, 2006" }}
+    {{ $packages := .GetTerms "packages" }}
+    {{ if $packages }}
+    <div class="flex flex-wrap gap-2 mt-2">
+      {{ range $packages }}
+      <span class="text-xs px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
+        {{ .LinkTitle }}
       </span>
       {{ end }}
+    </div>
+    {{ end }}
 
-      {{ with .Params.duration }}
-      <span class="flex items-center gap-1">
+    <div class="flex items-center justify-between gap-3 text-sm text-slate-600 dark:text-slate-400 mt-2">
+      <div class="flex items-center gap-3">
+        {{ with .Params.date }}
+        <span class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          {{ . | time.Format "Jan 2, 2006" }}
+        </span>
+        {{ end }}
+
+        {{ with .Params.duration }}
+        <span class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          {{ . }}
+        </span>
+        {{ end }}
+      </div>
+
+      {{ with .Params.download_url }}
+      <a href="{{ . }}"
+         target="_blank"
+         class="flex items-center gap-1 px-3 py-1.5 rounded bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
-        {{ . }}
-      </span>
+        Download
+      </a>
       {{ end }}
     </div>
   </div>
-</a>
+</div>
