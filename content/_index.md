@@ -10,7 +10,7 @@ We believe powerful data science tools should be open, accessible, and community
 
 ## Explore
 
-**[Software](/packages/)** - Discover the packages and tools we maintain. From data manipulation and visualization to publishing and deployment, these projects power data science workflows for millions of users.
+**[Software](/software/)** - Discover the packages and tools we maintain. From data manipulation and visualization to publishing and deployment, these projects power data science workflows for millions of users.
 
 **[People](/people/)** - Meet the team building these tools. Our contributors come from diverse backgrounds and bring expertise in statistics, software engineering, design, and scientific computing.
 

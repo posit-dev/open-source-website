@@ -36,7 +36,7 @@ unsafe = true
     weight = 2
   [[menu.main]]
     name = 'Software'
-    url = '/packages/'
+    url = '/software/'
     weight = 3
   [[menu.main]]
     name = 'Events'
