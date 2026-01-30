@@ -7,7 +7,8 @@ people:
 - Rich Iannone
 - Michael Chow
 image: "great-tables.svg"
-languages: ["Python"]
+languages:
+  - Python
 ---
 
 Great Tables is a Python package that enables users to make awesome display tables with cohesive table components and flexible formatting options. It provides an intuitive API for creating publication-ready tables.

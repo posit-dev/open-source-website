@@ -6,7 +6,11 @@ github: "posit-dev/positron"
 people:
 - Isabel Zimmerman
 image: "positron.png"
-languages: ["TypeScript", "JavaScript", "Python", "Rust"]
+languages:
+  - TypeScript
+  - JavaScript
+  - Python
+  - Rust
 ---
 
 Positron is a next-generation data science IDE built by Posit PBC that serves as an extensible, polyglot tool for writing code and exploring data. Built on Code OSS (VS Code foundation), it supports reproducible authoring and publishing.

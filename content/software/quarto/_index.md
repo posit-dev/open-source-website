@@ -5,7 +5,11 @@ website: "https://quarto.org"
 github: "quarto-dev/quarto-cli"
 people: []
 image: "quarto.png"
-languages: ["Python", "R", "Julia", "JavaScript"]
+languages:
+  - Python
+  - R
+  - Julia
+  - JavaScript
 ---
 
 Quarto is an open-source scientific and technical publishing system that enables authoring with Jupyter notebooks or markdown, creating dynamic content with multiple languages, and publishing reproducible documents in various formats.

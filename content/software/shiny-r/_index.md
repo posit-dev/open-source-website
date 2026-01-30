@@ -5,7 +5,10 @@ website: "https://shiny.posit.co/r/"
 github: "rstudio/shiny"
 people: []
 image: "shiny-r.png"
-languages: ["R", "JavaScript", "TypeScript"]
+languages:
+  - R
+  - JavaScript
+  - TypeScript
 ---
 
 Easily build rich and productive interactive web apps in R with no HTML/CSS/JavaScript required. Shiny makes it incredibly simple to build interactive web applications directly from R.

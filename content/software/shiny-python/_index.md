@@ -5,7 +5,9 @@ website: "https://shiny.posit.co/py/"
 github: "posit-dev/py-shiny"
 people: []
 image: "shiny-python.svg"
-languages: ["Python", "JavaScript"]
+languages:
+  - Python
+  - JavaScript
 ---
 
 Shiny for Python is a web development framework designed to help developers build elegant, efficient interactive web applications that are ready for production. Create reactive data and AI apps in pure Python with no HTML/CSS/JavaScript required.
