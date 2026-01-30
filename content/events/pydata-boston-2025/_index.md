@@ -10,7 +10,7 @@ description: "A three-day in-person gathering for the international community of
 people:
   - Isabel Zimmerman
   - Andrew Holz
-packages:
+software:
   - Positron
 resources:
   - videos/isabel-zimmerman-pydata-boston-2025-keynote

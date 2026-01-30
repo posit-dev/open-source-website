@@ -6,7 +6,7 @@ video_url: https://www.youtube.com/watch?v=0i-r3gl4WLU
 description: "Isabel Zimmerman's keynote presentation at PyData Boston 2025, exploring the future of data science development environments."
 people:
   - Isabel Zimmerman
-packages:
+software:
   - Positron
 events:
   - PyData Boston 2025

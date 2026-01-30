@@ -4,7 +4,7 @@ resource_type: cheatsheet
 date: 2024-06-15
 description: "Quick reference guide for data manipulation with dplyr. Covers select, filter, mutate, summarize, and more."
 download_url: "https://rstudio.github.io/cheatsheets/data-transformation.pdf"
-packages:
+software:
   - dplyr
 languages:
   - R

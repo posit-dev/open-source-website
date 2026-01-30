@@ -3,7 +3,7 @@ blogs: [tidyverse]
 title: Air, an extremely fast R formatter
 date: 2025-02-21
 people: ["Davis Vaughan", "Lionel Henry"]
-packages: ["Air"]
+software: ["Air"]
 description: >
     We are thrilled to announce Air, a new R formatter.
 

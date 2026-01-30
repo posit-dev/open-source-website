@@ -32,10 +32,10 @@
       {{ end }}
     </a>
 
-    {{ $packages := .GetTerms "packages" }}
-    {{ if $packages }}
+    {{ $software := .GetTerms "software" }}
+    {{ if $software }}
     <div class="flex flex-wrap gap-2 mt-2">
-      {{ range $packages }}
+      {{ range $software }}
       <span class="text-xs px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
         {{ .LinkTitle }}
       </span>
