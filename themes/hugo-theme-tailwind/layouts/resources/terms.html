@@ -4,15 +4,31 @@
     Resources
   </h1>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0">
-    {{ $resourcesSection := site.GetPage "/resources" }}
-    {{ range $resourcesSection.Pages.ByDate.Reverse }}
-      {{ partial "card_resource.html" . }}
-    {{ end }}
-  </div>
+  <!-- Resource Type Buttons -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mx-2 md:mx-0">
+    <a href="/resources/cheatsheets/"
+       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
+      <i class="h-12 w-12">{{ partial "icon.html" "file-text" }}</i>
+      <span class="text-2xl font-semibold">Cheatsheets</span>
+    </a>
 
-  {{ if eq (len $resourcesSection.Pages) 0 }}
-    <p class="text-slate-600 dark:text-slate-400 mt-6 mx-2 md:mx-0">No resources found.</p>
-  {{ end }}
+    <a href="/resources/tutorials/"
+       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
+      <i class="h-12 w-12">{{ partial "icon.html" "book" }}</i>
+      <span class="text-2xl font-semibold">Tutorials</span>
+    </a>
+
+    <a href="/resources/videos/"
+       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
+      <i class="h-12 w-12">{{ partial "icon.html" "play" }}</i>
+      <span class="text-2xl font-semibold">Videos</span>
+    </a>
+
+    <a href="/resources/webinars/"
+       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
+      <i class="h-12 w-12">{{ partial "icon.html" "presentation" }}</i>
+      <span class="text-2xl font-semibold">Webinars</span>
+    </a>
+  </div>
 </div>
 {{ end }}
