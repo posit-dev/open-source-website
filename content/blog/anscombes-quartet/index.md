@@ -1,7 +1,6 @@
 ---
 title: 'Seeing Beyond Statistics: Anscombe''s Quartet and the Power of Graphs'
-people:
-  - Jeroen Janssens
+people: Jeroen Janssens
 date: 2024-07-02T00:00:00.000Z
 image: ruthson-zimmerman-FVwG5OzPuzo-unsplash.jpg
 ---
