@@ -2,6 +2,139 @@
 
 @config '../../tailwind.config.js';
 
+@theme {
+  /* Posit Brand Colors */
+  --color-blue: #447099;
+  --color-gray: #404041;
+  --color-red: #d44000;
+  --color-orange: #ee6331;
+  --color-yellow: #e7b10a;
+  --color-green: #72994e;
+  --color-teal: #419599;
+  --color-burgundy: #9a4665;
+
+  /* Posit Blue Color Palette */
+  --color-blue-50: #f8fafb;
+  --color-blue-100: #e8edf2;
+  --color-blue-200: #d1dbe5;
+  --color-blue-300: #a2b8cb;
+  --color-blue-400: #7494b1;
+  --color-blue-500: #447099;
+  --color-blue-600: #305775;
+  --color-blue-700: #294a62;
+  --color-blue-800: #213d4f;
+  --color-blue-900: #1c2f3d;
+  --color-blue-950: #17212b;
+  --color-blue-1000: #0E1013;
+
+  /* Posit Gray Color Palette */
+  --color-gray-50: #f6f6f6;
+  --color-gray-100: #e1e1e1;
+  --color-gray-200: #c2c2c4;
+  --color-gray-300: #949494;
+  --color-gray-400: #707073;
+  --color-gray-500: #404041;
+  --color-gray-600: #333333;
+  --color-gray-700: #2c2c2d;
+  --color-gray-800: #242426;
+  --color-gray-900: #1d1d1e;
+  --color-gray-950: #151515;
+
+  /* Posit Red Color Palette */
+  --color-red-50: #fef1ef;
+  --color-red-100: #fcd1c9;
+  --color-red-200: #f9a395;
+  --color-red-300: #e57366;
+  --color-red-400: #db593b;
+  --color-red-500: #d44000;
+  --color-red-600: #a62103;
+  --color-red-700: #921e03;
+  --color-red-800: #7d1a03;
+  --color-red-900: #6b1402;
+  --color-red-950: #590e02;
+
+  /* Posit Orange Color Palette */
+  --color-orange-50: #fcf7f5;
+  --color-orange-100: #f6e6df;
+  --color-orange-200: #edccbf;
+  --color-orange-300: #eba38c;
+  --color-orange-400: #e58066;
+  --color-orange-500: #ee6331;
+  --color-orange-600: #ab4d26;
+  --color-orange-700: #964221;
+  --color-orange-800: #80361c;
+  --color-orange-900: #632b17;
+  --color-orange-950: #451f12;
+
+  /* Posit Yellow Color Palette */
+  --color-yellow-50: #fefaf6;
+  --color-yellow-100: #f7efdc;
+  --color-yellow-200: #efdeb9;
+  --color-yellow-300: #f5d487;
+  --color-yellow-400: #f4c540;
+  --color-yellow-500: #e7b10a;
+  --color-yellow-600: #c48f0a;
+  --color-yellow-700: #b07e07;
+  --color-yellow-800: #9b6c04;
+  --color-yellow-900: #845b04;
+  --color-yellow-950: #6d4a03;
+
+  /* Posit Green Color Palette */
+  --color-green-50: #f8faf7;
+  --color-green-100: #e8ece3;
+  --color-green-200: #cfd9c7;
+  --color-green-300: #adbf99;
+  --color-green-400: #8aa67a;
+  --color-green-500: #72994e;
+  --color-green-600: #57733d;
+  --color-green-700: #496331;
+  --color-green-800: #3b4f29;
+  --color-green-900: #2e3d23;
+  --color-green-950: #212b1c;
+
+  /* Posit Teal Color Palette */
+  --color-teal-50: #f6fafa;
+  --color-teal-100: #e9ecec;
+  --color-teal-200: #c2d9d9;
+  --color-teal-300: #94bdbf;
+  --color-teal-400: #70a3a6;
+  --color-teal-500: #419599;
+  --color-teal-600: #297075;
+  --color-teal-700: #246060;
+  --color-teal-800: #1f4f4f;
+  --color-teal-900: #193d3d;
+  --color-teal-950: #122b2b;
+
+  /* Posit Burgundy Color Palette */
+  --color-burgundy-50: #faf6f7;
+  --color-burgundy-100: #ece1e5;
+  --color-burgundy-200: #d9c4cc;
+  --color-burgundy-300: #bf96a3;
+  --color-burgundy-400: #a67380;
+  --color-burgundy-500: #9a4665;
+  --color-burgundy-600: #78384f;
+  --color-burgundy-700: #663144;
+  --color-burgundy-800: #542938;
+  --color-burgundy-900: #41202c;
+  --color-burgundy-950: #2e171f;
+
+  /* Disable unused Tailwind colors */
+  --color-indigo-*: initial;
+  --color-violet-*: initial;
+  --color-purple-*: initial;
+  --color-fuchsia-*: initial;
+  --color-pink-*: initial;
+  --color-rose-*: initial;
+  --color-slate-*: initial;
+  --color-zinc-*: initial;
+  --color-neutral-*: initial;
+  --color-stone-*: initial;
+  --color-emerald-*: initial;
+  --color-amber-*: initial;
+  --color-cyan-*: initial;
+  --color-sky-*: initial;
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -17,6 +150,21 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+
+  /* Default text color and font weight */
+  body {
+    color: var(--color-gray-500);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.2px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-gray-500);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.2px;
   }
 }
 
@@ -262,4 +410,23 @@
 
 .highlight .lntable tr .lntd:last-child {
   flex-grow: 1;
+}
+
+/* Tailwind Typography (prose) custom colors - Posit brand */
+.prose {
+  --tw-prose-body: var(--color-gray-500) !important;
+  --tw-prose-headings: var(--color-gray-500) !important;
+  --tw-prose-links: var(--color-blue-600) !important;
+  --tw-prose-bold: var(--color-gray-700) !important;
+  --tw-prose-code: var(--color-gray-700) !important;
+  --tw-prose-quotes: var(--color-gray-700) !important;
+}
+
+.dark .prose {
+  --tw-prose-body: var(--color-gray-300) !important;
+  --tw-prose-headings: var(--color-gray-100) !important;
+  --tw-prose-links: var(--color-blue-400) !important;
+  --tw-prose-bold: var(--color-gray-200) !important;
+  --tw-prose-code: var(--color-gray-200) !important;
+  --tw-prose-quotes: var(--color-gray-200) !important;
 }
