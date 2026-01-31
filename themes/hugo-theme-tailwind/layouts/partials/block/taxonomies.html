@@ -1,10 +1,10 @@
 {{ if (or .Params.categories .Params.tags) }}
-  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+  <ul class="flex flex-row flex-wrap text-gray-500 dark:text-gray-300">
     {{ if .Params.categories }}
       {{ range (.GetTerms "categories") }}
       <li>
         <a href="{{ .RelPermalink }}"
-          class="text-sm mr-2 px-2 py-1 rounded-sm border border-emerald-800 bg-emerald-800 text-slate-50">
+          class="text-sm mr-2 px-2 py-1 rounded-sm border border-green-800 bg-green-800 text-gray-50 dark:border-green-600 dark:bg-green-600 dark:text-gray-100">
           {{ .LinkTitle }}
         </a>
       </li>

@@ -3,23 +3,23 @@
   Context: A software page (from .Site.GetPage or .GetTerms "software")
 */}}
 <a href="{{ .RelPermalink }}"
-  class="flex flex-col rounded-lg shadow-md bg-white dark:bg-gray-700 hover:shadow-lg transition-shadow overflow-hidden">
+  class="flex flex-col rounded-lg shadow-md bg-white dark:bg-blue-950 border border-gray-200 dark:border-blue-900 hover:shadow-lg transition-shadow overflow-hidden">
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}
-  <div class="w-full h-32 flex items-center justify-center bg-white dark:bg-gray-900 p-4">
+  <div class="w-full h-32 flex items-center justify-center bg-white dark:bg-blue-950 p-4">
     <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="max-h-full max-w-full object-contain">
   </div>
   {{ end }}
   {{ end }}
 
   <div class="flex flex-col gap-y-2 p-4">
-    <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100">
+    <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-100">
       {{ .Title }}
     </h2>
 
     {{ with .Params.description }}
-    <p class="text-sm text-slate-600 dark:text-slate-300">
+    <p class="text-sm text-gray-600 dark:text-gray-300">
       {{ . | plainify | truncate 100 }}
     </p>
     {{ end }}
@@ -27,7 +27,7 @@
     {{ with .Params.languages }}
     <div class="flex flex-row flex-wrap gap-2 mt-2">
       {{ range . }}
-      <span class="text-xs px-2 py-1 rounded-full bg-slate-200 dark:bg-gray-600 text-slate-700 dark:text-slate-200">
+      <span class="text-xs px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200">
         {{ . }}
       </span>
       {{ end }}

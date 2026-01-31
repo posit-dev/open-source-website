@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div class="flex flex-col w-full max-w-4xl lg:max-w-5xl gap-y-8">
-  <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-200 mt-6 mx-2 md:mx-0">
+<div class="flex flex-col w-full gap-y-8">
+  <h1 class="text-4xl font-semibold text-gray-800 dark:text-gray-200 mt-6">
     Events
   </h1>
 
@@ -39,8 +39,8 @@
 
   <!-- Current Events Section -->
   {{ if gt (len $currentEvents) 0 }}
-    <div class="flex flex-col gap-y-4 mx-2 md:mx-0">
-      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+    <div class="flex flex-col gap-y-4">
+      <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">
         Current Events
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -53,8 +53,8 @@
 
   <!-- Upcoming Events Section -->
   {{ if gt (len $upcomingEvents) 0 }}
-    <div class="flex flex-col gap-y-4 mx-2 md:mx-0">
-      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+    <div class="flex flex-col gap-y-4">
+      <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">
         Upcoming Events
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -67,8 +67,8 @@
 
   <!-- Past Events Section -->
   {{ if gt (len $pastEvents) 0 }}
-    <div class="flex flex-col gap-y-4 mx-2 md:mx-0">
-      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+    <div class="flex flex-col gap-y-4">
+      <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">
         Past Events
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -80,7 +80,7 @@
   {{ end }}
 
   {{ if eq (add (len $currentEvents) (len $upcomingEvents) (len $pastEvents)) 0 }}
-    <p class="text-slate-600 dark:text-slate-400 mx-2 md:mx-0">No events found.</p>
+    <p class="text-gray-600 dark:text-gray-300">No events found.</p>
   {{ end }}
 </div>
 {{ end }}

@@ -2,7 +2,7 @@
   Renders a resource card
   Context: A resource page (from .Site.GetPage or .GetTerms "resources")
 */}}
-<div class="flex flex-col rounded-lg shadow-md bg-white dark:bg-gray-700 hover:shadow-lg transition-shadow overflow-hidden">
+<div class="flex flex-col rounded-lg shadow-md bg-white dark:bg-blue-950 border border-gray-200 dark:border-blue-900 hover:shadow-lg transition-shadow overflow-hidden">
   {{ $image := "" }}
   {{ $imageAlt := .Title }}
 
@@ -20,18 +20,18 @@
   {{ end }}
 
   {{ if $image }}
-  <a href="{{ .RelPermalink }}" class="w-full h-32 flex items-center justify-center bg-white dark:bg-gray-900 p-4">
+  <a href="{{ .RelPermalink }}" class="w-full h-32 flex items-center justify-center bg-white dark:bg-blue-950 p-4">
     <img src="{{ $image.RelPermalink }}" alt="{{ $imageAlt }}" class="max-h-full max-w-full object-contain">
   </a>
   {{ end }}
 
   <div class="flex flex-col gap-y-2 p-4">
     <a href="{{ .RelPermalink }}" class="flex items-start justify-between gap-2">
-      <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 flex-1">
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-100 flex-1">
         {{ .Title }}
       </h2>
       {{ with .Params.resource_type }}
-      <span class="text-xs px-2 py-1 rounded-full {{ if eq . "video" }}bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300{{ else if eq . "cheatsheet" }}bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300{{ else if eq . "demo" }}bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300{{ else if eq . "tutorial" }}bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300{{ else }}bg-slate-200 dark:bg-gray-700 text-slate-700 dark:text-slate-300{{ end }} capitalize whitespace-nowrap">
+      <span class="text-xs px-2 py-1 rounded-full {{ if eq . "video" }}bg-red-700 dark:bg-red-800 text-white{{ else if eq . "cheatsheet" }}bg-green-700 dark:bg-green-800 text-white{{ else if eq . "demo" }}bg-burgundy-700 dark:bg-burgundy-800 text-white{{ else if eq . "tutorial" }}bg-orange-700 dark:bg-orange-800 text-white{{ else }}bg-gray-700 dark:bg-gray-600 text-white{{ end }} capitalize whitespace-nowrap">
         {{ . }}
       </span>
       {{ end }}
@@ -39,7 +39,7 @@
 
     <a href="{{ .RelPermalink }}">
       {{ with .Params.description }}
-      <p class="text-sm text-slate-600 dark:text-slate-300">
+      <p class="text-sm text-gray-600 dark:text-gray-300">
         {{ . | plainify | truncate 120 }}
       </p>
       {{ end }}
@@ -49,14 +49,14 @@
     {{ if $software }}
     <div class="flex flex-wrap gap-2 mt-2">
       {{ range $software }}
-      <span class="text-xs px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
+      <span class="text-xs px-2 py-1 rounded-full bg-blue-600 dark:bg-blue-700 text-white">
         {{ .LinkTitle }}
       </span>
       {{ end }}
     </div>
     {{ end }}
 
-    <div class="flex items-center justify-between gap-3 text-sm text-slate-600 dark:text-slate-400 mt-2">
+    <div class="flex items-center justify-between gap-3 text-sm text-gray-600 dark:text-gray-300 mt-2">
       <div class="flex items-center gap-3">
         {{ with .Params.date }}
         <span class="flex items-center gap-1">
