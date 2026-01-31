@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Open Sans"', 'sans-serif'],
+        mono: ['"Source Code Pro"', 'monospace'],
+      },
       typography: {
         quoteless: {
           css: {
