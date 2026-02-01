@@ -27,7 +27,7 @@
   <header class="flex flex-none justify-center z-10 {{- if $.Site.Params.header.sticky }} bg-white dark:bg-blue-1000 sticky top-0{{ end -}}">
     {{ partial "header.html" . }}
   </header>
-  <main class="flex flex-auto justify-center">
+  <main class="flex flex-auto justify-center pt-10">
     <div class="w-full max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       {{ block "main" . }}{{ end }}
     </div>

@@ -13,7 +13,7 @@
       {{ end }}
 
       <div class="flex flex-col gap-y-3 flex-grow">
-        <h1 class="text-4xl font-semibold text-gray-800 dark:text-gray-100">
+        <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100">
           {{ .Title }}
         </h1>
 
@@ -61,7 +61,7 @@
   {{ $people := .GetTerms "people" }}
   {{ if $people }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+      <h2 class="text-2xl font-medium dark:text-gray-200 mb-4">
         Contributors
       </h2>
     </div>
@@ -77,7 +77,7 @@
   {{ $events := where .Pages "Section" "events" }}
   {{ if gt (len $events) 0 }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+      <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
         Events featuring {{ .Title }}
       </h2>
     </div>
@@ -93,7 +93,7 @@
   {{ $resources := where .Pages "Section" "resources" }}
   {{ if gt (len $resources) 0 }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+      <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
         Resources using {{ .Title }}
       </h2>
     </div>
@@ -109,7 +109,7 @@
   {{ $posts := where .Pages "Section" "blog" }}
   {{ if gt (len $posts) 0 }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+      <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
         Posts about {{ .Title }}
       </h2>
     </div>
@@ -123,7 +123,7 @@
             </a>
           </div>
           <div class="flex flex-col gap-y-3 p-6">
-            <h3 class="text-3xl font-semibold text-gray-800 dark:text-gray-200">
+            <h3 class="text-3xl font-medium text-gray-800 dark:text-gray-200">
               <a href="{{ .RelPermalink }}">{{ .Title | .RenderString }}</a>
             </h3>
 

@@ -1,8 +1,8 @@
-<div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-12 mt-3">
+<div class="flex flex-row gap justify-between w-full max-w-[1344px] mx-auto px-4 sm:px-6 lg:px-8 h-12 my-4">
   <div class="flex-none content-center">
     <a href="{{ relLangURL "" }}" class="">
-      <img class="h-6 lg:h-8 dark:hidden" src='{{ "images/posit-open-source-logo-light.png" | relURL }}' alt="logo">
-      <img class="h-6 lg:h-8 hidden dark:block" src='{{ "images/posit-open-source-logo-dark.png" | relURL }}'
+      <img class="h-6.5 dark:hidden" src='{{ "images/posit-open-source-logo-light.png" | relURL }}' alt="logo">
+      <img class="h-6.5 hidden dark:block" src='{{ "images/posit-open-source-logo-dark.png" | relURL }}'
         alt="logo">
     </a>
   </div>
@@ -21,7 +21,7 @@
   <div class="flex-none">
     <div class="h-full static">
       <button id="navbar-lang-toggle" type="button"
-        class="inline-flex items-center p-2 text-sm text-gray-800 dark:text-gray-200 rounded-lg cursor-pointer"
+        class="inline-flex items-center p-2 text-sm text-gray-800 dark:text-gray-200 cursor-pointer"
         aria-controls="navbar-menu" aria-expanded="false">
         <span class="sr-only">{{ T "open_lang_switcher" }}</span>
         <i class="w-8 h-8">
@@ -30,12 +30,12 @@
       </button>
       <div class="absolute hidden top-16 z-50" id="navbar-lang">
         <ul
-          class="flex flex-col rounded-xs px-3 text-base font-medium text-gray-800 dark:text-gray-200 shadow-lg bg-white dark:bg-gray-600 shadow-gray-800/5 dark:shadow-gray-200/5 ring-1 ring-gray-900/5 dark:ring-gray-100/5">
+          class="flex flex-col px-3 text-base font-medium text-gray-800 dark:text-gray-200 shadow-lg bg-white dark:bg-gray-600 shadow-gray-800/5 dark:shadow-gray-200/5 ring-1 ring-gray-900/5 dark:ring-gray-100/5">
           {{- $page := . -}}
           {{ range .AllTranslations }}
           <li class="">
             {{- if (ne $page.Language.LanguageCode .Language.LanguageCode) }}
-            <a class="block px-3 py-3 hover:text-green-600 cursor-pointer" href="{{ .RelPermalink }}"
+            <a class="block py-3 hover:text-blue-500 cursor-pointer" href="{{ .RelPermalink }}"
               title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}
             </a>
             {{- else }}

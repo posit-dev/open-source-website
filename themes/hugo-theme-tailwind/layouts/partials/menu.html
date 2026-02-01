@@ -14,13 +14,13 @@
   </button>
   <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
     <ul
-      class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 px-3 text-base font-medium text-gray-800 dark:text-gray-200 bg-white dark:bg-blue-950 md:bg-transparent shadow-lg md:shadow-none rounded-lg md:rounded-none border border-gray-200 dark:border-blue-800 md:border-0">
+      class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 px-3 text-base font-medium text-gray-800 dark:text-gray-200 bg-white md:bg-transparent md:dark:bg-transparent shadow-lg md:shadow-none rounded-lg md:rounded-none border border-gray-200 dark:border-blue-800 md:border-0">
       {{ range . }}
       {{- $isCurrent := or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .) (and $page.IsHome (and .Page (eq
       $contentTypeName .Page.Type))) -}}
       {{ if not .HasChildren }}
       <li id="{{ .Identifier }}" class="">
-        <a class="block px-2 lg:px-3 py-3 hover:text-green-600 {{- if $isCurrent }} text-green-600{{ end -}}"
+        <a class="block px-2 lg:px-3 py-3 font-medium hover:text-blue-500 dark:hover:text-white {{- if $isCurrent }} text-green-600{{ end -}}"
           href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
       </li>
       {{ end }}

@@ -13,7 +13,7 @@
 
     <div class="flex flex-col gap-y-4 p-6">
       <div class="flex items-start justify-between gap-4 flex-wrap">
-        <h1 class="text-4xl font-semibold text-gray-800 dark:text-gray-100 flex-1">
+        <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100 flex-1">
           {{ .Title }}
         </h1>
         {{ with .Params.resource_type }}
@@ -153,7 +153,7 @@
   {{ $software := .GetTerms "software" }}
   {{ if $software }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
       Featured software
     </h2>
   </div>
@@ -169,7 +169,7 @@
   {{ $resources := .GetTerms "resources" }}
   {{ if $resources }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
       Related resources
     </h2>
   </div>
@@ -185,7 +185,7 @@
   {{ $events := .GetTerms "events" }}
   {{ if $events }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
       Related events
     </h2>
   </div>

@@ -13,7 +13,7 @@
     {{ $pages = where $PageContext.RegularPages "Type" $contentTypeName }}
   {{ end }}
 
-  <div class="flex flex-col w-full relative">
+  <div class="flex flex-col w-full relative mt-6">
     <div class="flex flex-row">
       <section class="flex flex-col w-full md:w-2/3">
         {{ range (.Paginate $pages).Pages }}
