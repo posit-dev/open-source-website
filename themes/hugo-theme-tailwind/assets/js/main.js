@@ -19,6 +19,8 @@
       if (navbarMenuContent) navbarMenuContent.style.opacity = '0';
       if (menuIconHamburger) menuIconHamburger.classList.remove('hidden');
       if (menuIconClose) menuIconClose.classList.add('hidden');
+      // Re-enable body scroll
+      document.body.style.overflow = '';
     }
   }
 
@@ -31,6 +33,8 @@
       }, 100);
       if (menuIconHamburger) menuIconHamburger.classList.add('hidden');
       if (menuIconClose) menuIconClose.classList.remove('hidden');
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden';
     }
   }
 
@@ -48,6 +52,7 @@
     if (!isMobile() && navbarMenu) {
       navbarMenu.style.height = '';
       if (navbarMenuContent) navbarMenuContent.style.opacity = '';
+      document.body.style.overflow = '';
     }
   });
 
