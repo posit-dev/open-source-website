@@ -9,8 +9,12 @@
     document.createElement("div"); // fix #56
   const navbarLang = document.getElementById('navbar-lang');
 
+  function isMobile() {
+    return window.innerWidth < 768; // 768px is Tailwind's md breakpoint
+  }
+
   function closeMenu() {
-    if (navbarMenu) {
+    if (navbarMenu && isMobile()) {
       navbarMenu.style.height = '0';
       if (navbarMenuContent) navbarMenuContent.style.opacity = '0';
       if (menuIconHamburger) menuIconHamburger.classList.remove('hidden');
@@ -19,7 +23,7 @@
   }
 
   function openMenu() {
-    if (navbarMenu) {
+    if (navbarMenu && isMobile()) {
       navbarMenu.style.height = 'calc(100vh - 5rem)';
       // Delay content fade-in slightly so background animates first
       setTimeout(() => {
@@ -39,7 +43,17 @@
     }
   }
 
+  // Clear inline styles when resizing to desktop
+  window.addEventListener('resize', function() {
+    if (!isMobile() && navbarMenu) {
+      navbarMenu.style.height = '';
+      if (navbarMenuContent) navbarMenuContent.style.opacity = '';
+    }
+  });
+
   document.addEventListener('click', function (event) {
+    if (!isMobile()) return; // Only handle clicks on mobile
+
     const target = event.target;
     if (navbarMenuToggle && navbarMenuToggle.contains(target)) {
       navbarLang && navbarLang.classList.add('hidden');
