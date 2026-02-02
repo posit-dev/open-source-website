@@ -31,12 +31,12 @@ unsafe = true
     url = '/'
     weight = 1
   [[menu.main]]
-    name = 'People'
-    url = '/people/'
-    weight = 2
-  [[menu.main]]
     name = 'Software'
     url = '/software/'
+    weight = 2
+  [[menu.main]]
+    name = 'People'
+    url = '/people/'
     weight = 3
   [[menu.main]]
     name = 'Events'
