@@ -40,23 +40,4 @@
 ></script>
 {{ end -}}
 
-<!-- Dark mode: automatically follow system preferences -->
-<script>
-  // Apply dark mode based on system preference
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-
-  // Listen for system preference changes
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (e.matches) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  });
-</script>
-
 {{- partial "custom_head.html" . -}}
