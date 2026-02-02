@@ -1,9 +1,13 @@
 ---
-blogs: [tidyverse]
+blogs:
+  - tidyverse
 title: Air, an extremely fast R formatter
 date: 2025-02-21
-people: ["Davis Vaughan", "Lionel Henry"]
-packages: ["Air"]
+people:
+  - Davis Vaughan
+  - Lionel Henry
+software:
+  - Air
 description: >
     We are thrilled to announce Air, a new R formatter.
 
@@ -14,8 +18,11 @@ photo:
   author: Taylor Van Riper
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: ["programming", "tidyverse"]
-tags: ["announcement"]
+categories:
+  - programming
+  - tidyverse
+tags:
+  - announcement
 editor:
   markdown:
     wrap: sentence

@@ -3,23 +3,23 @@
   Context: A person page (from .Site.GetPage or .GetTerms "people")
 */}}
 <a href="{{ .RelPermalink }}"
-  class="flex flex-col items-center rounded-lg shadow-md bg-white dark:bg-gray-700 hover:shadow-lg transition-shadow p-6">
+  class="flex flex-col items-center rounded-xl bg-white dark:bg-blue-950 border border-blue-300 dark:border-blue-800 hover:border-blue-200 hover:border-[3px] hover:-m-[2px] dark:hover:border-blue-700 transition-all p-6">
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}
-  <div class="w-36 h-36 mb-4 overflow-hidden rounded-full bg-slate-200 dark:bg-gray-700">
+  <div class="w-36 h-36 mb-4 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
     <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
   </div>
   {{ end }}
   {{ end }}
 
   <div class="flex flex-col gap-y-2 text-center">
-    <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100">
+    <h2 class="text-xl font-medium text-gray-500 dark:text-gray-100">
       {{ .Title }}
     </h2>
 
     {{ with .Params.role }}
-    <p class="text-sm text-slate-600 dark:text-slate-400">
+    <p class="text-sm text-gray-600 dark:text-gray-300">
       {{ . }}
     </p>
     {{ end }}

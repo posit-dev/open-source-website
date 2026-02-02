@@ -11,8 +11,8 @@ subtitle = ""
   tag = 'tags'
   category = 'categories'
   person = 'people'
-  package = 'packages'
-  language = 'languages'
+  software = 'software'
+  languages = 'languages'
   event = 'events'
   resource = 'resources'
 
@@ -35,8 +35,8 @@ unsafe = true
     url = '/people/'
     weight = 2
   [[menu.main]]
-    name = 'Packages'
-    url = '/packages/'
+    name = 'Software'
+    url = '/software/'
     weight = 3
   [[menu.main]]
     name = 'Events'

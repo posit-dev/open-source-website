@@ -5,22 +5,26 @@
 {{ with site.Menus.main }}
 <nav class="h-full static">
   <button id="navbar-menu-toggle" type="button"
-    class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden"
+    class="inline-flex items-center p-2 text-sm text-gray-800 dark:text-gray-200 rounded-lg md:hidden z-[60] relative"
     aria-controls="navbar-menu" aria-expanded="false">
     <span class="sr-only">{{ T "open_main_menu" }}</span>
-    <i class="w-8 h-8">
+    <i class="w-8 h-8" id="menu-icon-hamburger">
       {{ partial "icon.html" "menu-2" }}
     </i>
+    <i class="w-8 h-8 hidden" id="menu-icon-close">
+      {{ partial "icon.html" "x" }}
+    </i>
   </button>
-  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+  <div class="fixed md:static top-20 md:top-auto left-0 right-0 bottom-0 md:bottom-auto z-40 w-full h-0 md:h-auto md:w-auto md:opacity-100 md:visible transition-all duration-300 ease-in-out overflow-hidden md:overflow-visible" id="navbar-menu" style="transition-property: height, opacity;">
+    <div class="absolute inset-0 bg-white dark:bg-blue-1000 md:bg-transparent md:dark:bg-transparent"></div>
     <ul
-      class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-xs md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+      class="absolute top-4/9 -translate-y-1/2 left-0 right-0 flex flex-col mx-2 md:static md:top-auto md:translate-y-0 md:mx-0 md:flex-row md:border-0 px-3 text-base font-regular text-gray-800 dark:text-gray-200 opacity-0 md:opacity-100 transition-opacity duration-300 md:bg-transparent md:dark:bg-transparent md:shadow-none md:rounded-none md:border-0" id="navbar-menu-content">
       {{ range . }}
       {{- $isCurrent := or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .) (and $page.IsHome (and .Page (eq
       $contentTypeName .Page.Type))) -}}
       {{ if not .HasChildren }}
       <li id="{{ .Identifier }}" class="">
-        <a class="block px-2 lg:px-3 py-3 hover:text-emerald-600 {{- if $isCurrent }} text-emerald-600{{ end -}}"
+        <a class="block text-center md:text-left text-2xl md:text-base px-2 lg:px-3 py-5 md:py-3 font-medium hover:text-blue-500 dark:hover:text-white {{- if $isCurrent }} text-green-600{{ end -}}"
           href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
       </li>
       {{ end }}

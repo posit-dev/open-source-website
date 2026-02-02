@@ -1,18 +1,34 @@
 {{ define "main" }}
-<div class="flex flex-col w-full max-w-4xl lg:max-w-5xl">
-  <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-200 mt-6 mx-2 md:mx-0 mb-6">
+<div class="flex flex-col w-full mt-6">
+  <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200 mb-6">
     Resources
   </h1>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0">
-    {{ $resourcesSection := site.GetPage "/resources" }}
-    {{ range $resourcesSection.Pages.ByDate.Reverse }}
-      {{ partial "card_resource.html" . }}
-    {{ end }}
-  </div>
+  <!-- Resource Type Buttons -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <a href="/resources/cheatsheets/"
+       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
+      <i class="h-12 w-12">{{ partial "icon.html" "file-text" }}</i>
+      <span class="text-2xl font-medium">Cheatsheets</span>
+    </a>
 
-  {{ if eq (len $resourcesSection.Pages) 0 }}
-    <p class="text-slate-600 dark:text-slate-400 mt-6 mx-2 md:mx-0">No resources found.</p>
-  {{ end }}
+    <a href="/resources/tutorials/"
+       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
+      <i class="h-12 w-12">{{ partial "icon.html" "book" }}</i>
+      <span class="text-2xl font-medium">Tutorials</span>
+    </a>
+
+    <a href="/resources/videos/"
+       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
+      <i class="h-12 w-12">{{ partial "icon.html" "play" }}</i>
+      <span class="text-2xl font-medium">Videos</span>
+    </a>
+
+    <a href="/resources/webinars/"
+       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
+      <i class="h-12 w-12">{{ partial "icon.html" "presentation" }}</i>
+      <span class="text-2xl font-medium">Webinars</span>
+    </a>
+  </div>
 </div>
 {{ end }}

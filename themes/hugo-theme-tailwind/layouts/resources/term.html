@@ -1,52 +1,54 @@
 {{ define "main" }}
 <div class="flex flex-col w-full max-w-4xl lg:max-w-5xl">
   <!-- Resource Profile Section -->
-  <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
+  <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-blue-950">
     {{ if .Params.image }}
-      {{ $image := .Resources.Get .Params.image }}
-      {{ if $image }}
-        <div class="w-full h-64 bg-slate-200 dark:bg-gray-900">
-          <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
-        </div>
-      {{ end }}
+    {{ $image := .Resources.Get .Params.image }}
+    {{ if $image }}
+    <div class="w-full h-64 bg-gray-200 dark:bg-blue-900">
+      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+    </div>
+    {{ end }}
     {{ end }}
 
     <div class="flex flex-col gap-y-4 p-6">
       <div class="flex items-start justify-between gap-4 flex-wrap">
-        <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100 flex-1">
+        <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100 flex-1">
           {{ .Title }}
         </h1>
         {{ with .Params.resource_type }}
-          <span class="text-sm px-3 py-1 rounded-full {{ if eq . "video" }}bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300{{ else if eq . "cheatsheet" }}bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300{{ else if eq . "demo" }}bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300{{ else if eq . "tutorial" }}bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300{{ else }}bg-slate-200 dark:bg-gray-700 text-slate-700 dark:text-slate-300{{ end }} capitalize font-medium whitespace-nowrap">
-            {{ . }}
-          </span>
+        <span class="text-sm px-3 py-1 rounded-full {{ if eq . "video" }}bg-red-700 dark:bg-red-800 text-white{{ else if eq . "cheatsheet" }}bg-green-700 dark:bg-green-800 text-white{{ else if eq . "demo" }}bg-burgundy-700 dark:bg-burgundy-800 text-white{{ else if eq . "tutorial" }}bg-orange-700 dark:bg-orange-800 text-white{{ else }}bg-gray-700 dark:bg-gray-600 text-white{{ end }} capitalize font-medium whitespace-nowrap">
+          {{ . }}
+        </span>
         {{ end }}
       </div>
 
       {{ with .Params.description }}
-        <p class="text-lg text-slate-600 dark:text-slate-300">
-          {{ . }}
-        </p>
+      <p class="text-lg text-gray-600 dark:text-gray-300">
+        {{ . }}
+      </p>
       {{ end }}
 
       <!-- Resource Metadata -->
-      <div class="flex flex-wrap gap-4 text-sm text-slate-600 dark:text-slate-400">
+      <div class="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-300">
         {{ with .Params.date }}
-          <div class="flex items-center gap-1">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
-            {{ . | time.Format "Jan 2, 2006" }}
-          </div>
+        <div class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          {{ . | time.Format "Jan 2, 2006" }}
+        </div>
         {{ end }}
 
         {{ with .Params.duration }}
-          <div class="flex items-center gap-1">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            {{ . }}
-          </div>
+        <div class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {{ . }}
+        </div>
         {{ end }}
       </div>
 
@@ -57,21 +59,37 @@
       <div class="flex flex-wrap gap-3">
         {{ $resourceUrl := or .Params.video_url .Params.url }}
         {{ with $resourceUrl }}
-          <a href="{{ . }}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-            </svg>
-            View Resource
-          </a>
+        <a href="{{ . }}" target="_blank"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+          View Resource
+        </a>
+        {{ end }}
+
+        {{ with .Params.download_url }}
+        {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
+        <a href="{{ . }}" target="_blank"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Download{{ if $ext }} {{ $ext }}{{ end }}
+        </a>
         {{ end }}
 
         {{ with .Params.source_url }}
-          <a href="{{ . }}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-600 hover:bg-slate-700 dark:bg-slate-500 dark:hover:bg-slate-600 text-white font-medium transition-colors">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-            </svg>
-            Source Code
-          </a>
+        <a href="{{ . }}" target="_blank"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 dark:bg-gray-500 dark:hover:bg-gray-600 text-white font-medium transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          Source Code
+        </a>
         {{ end }}
       </div>
     </div>
@@ -79,100 +97,104 @@
 
   <!-- Video Section (if resource_type is video) -->
   {{ if eq .Params.resource_type "video" }}
-    {{ $videoUrl := or .Params.video_url .Params.url }}
-    {{ with $videoUrl }}
-      <div class="mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
-        <div class="aspect-video w-full">
-          {{ if or (in . "youtube.com") (in . "youtu.be") }}
-            <!-- YouTube embed -->
-            {{ $videoId := "" }}
-            {{ if in . "youtu.be" }}
-              {{ $videoId = index (split . "youtu.be/") 1 }}
-              {{ $videoId = index (split $videoId "?") 0 }}
-            {{ else if in . "youtube.com" }}
-              {{ $videoId = index (split . "v=") 1 }}
-              {{ $videoId = index (split $videoId "&") 0 }}
-            {{ end }}
-            {{ if $videoId }}
-              <iframe class="w-full h-full" src="https://www.youtube.com/embed/{{ $videoId }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            {{ else }}
-              <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
-            {{ end }}
-          {{ else if in . "vimeo.com" }}
-            <!-- Vimeo embed -->
-            {{ $videoId := index (split . "vimeo.com/") 1 }}
-            {{ $videoId = index (split $videoId "?") 0 }}
-            <iframe class="w-full h-full" src="https://player.vimeo.com/video/{{ $videoId }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-          {{ else if or (strings.HasSuffix . ".mp4") (strings.HasSuffix . ".webm") (strings.HasSuffix . ".ogg") }}
-            <!-- Direct video file -->
-            <video class="w-full h-full" controls>
-              <source src="{{ . }}" type="video/{{ if strings.HasSuffix . ".mp4" }}mp4{{ else if strings.HasSuffix . ".webm" }}webm{{ else }}ogg{{ end }}">
-              Your browser does not support the video tag.
-            </video>
-          {{ else }}
-            <!-- Generic iframe embed -->
-            <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
-          {{ end }}
-        </div>
-      </div>
-    {{ end }}
+  {{ $videoUrl := or .Params.video_url .Params.url }}
+  {{ with $videoUrl }}
+  <div class="mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-blue-950">
+    <div class="aspect-video w-full">
+      {{ if or (in . "youtube.com") (in . "youtu.be") }}
+      <!-- YouTube embed -->
+      {{ $videoId := "" }}
+      {{ if in . "youtu.be" }}
+      {{ $videoId = index (split . "youtu.be/") 1 }}
+      {{ $videoId = index (split $videoId "?") 0 }}
+      {{ else if in . "youtube.com" }}
+      {{ $videoId = index (split . "v=") 1 }}
+      {{ $videoId = index (split $videoId "&") 0 }}
+      {{ end }}
+      {{ if $videoId }}
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/{{ $videoId }}" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      {{ else }}
+      <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
+      {{ end }}
+      {{ else if in . "vimeo.com" }}
+      <!-- Vimeo embed -->
+      {{ $videoId := index (split . "vimeo.com/") 1 }}
+      {{ $videoId = index (split $videoId "?") 0 }}
+      <iframe class="w-full h-full" src="https://player.vimeo.com/video/{{ $videoId }}" frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      {{ else if or (strings.HasSuffix . ".mp4") (strings.HasSuffix . ".webm") (strings.HasSuffix . ".ogg") }}
+      <!-- Direct video file -->
+      <video class="w-full h-full" controls>
+        <source src="{{ . }}" type="video/{{ if strings.HasSuffix . " .mp4" }}mp4{{ else if strings.HasSuffix . ".webm"
+          }}webm{{ else }}ogg{{ end }}">
+        Your browser does not support the video tag.
+      </video>
+      {{ else }}
+      <!-- Generic iframe embed -->
+      <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
   {{ end }}
 
   <!-- Content Section -->
   {{ if .Content }}
-    <div class="mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700 p-6">
-      <div class="prose prose-slate dark:prose-invert max-w-none">
-        {{ .Content }}
-      </div>
+  <div class="mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-blue-950 p-6">
+    <div class="prose prose dark:prose-invert max-w-none">
+      {{ .Content }}
     </div>
+  </div>
   {{ end }}
 
-  <!-- Packages used in this Resource -->
-  {{ $packages := .GetTerms "packages" }}
-  {{ if $packages }}
-    <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-        Packages Used
-      </h2>
-    </div>
+  <!-- Software used in this Resource -->
+  {{ $software := .GetTerms "software" }}
+  {{ if $software }}
+  <div class="mt-8 mb-6 mx-2 md:mx-0">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      Featured software
+    </h2>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
-      {{ range $packages }}
-        {{ partial "card_package.html" . }}
-      {{ end }}
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+    {{ range $software }}
+    {{ partial "card_software.html" . }}
+    {{ end }}
+  </div>
   {{ end }}
 
   <!-- Related Resources -->
   {{ $resources := .GetTerms "resources" }}
   {{ if $resources }}
-    <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-        Related Resources
-      </h2>
-    </div>
+  <div class="mt-8 mb-6 mx-2 md:mx-0">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      Related resources
+    </h2>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
-      {{ range $resources }}
-        {{ partial "card_resource.html" . }}
-      {{ end }}
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+    {{ range $resources }}
+    {{ partial "card_resource.html" . }}
+    {{ end }}
+  </div>
   {{ end }}
 
   <!-- Events related to this Resource -->
   {{ $events := .GetTerms "events" }}
   {{ if $events }}
-    <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-        Related Events
-      </h2>
-    </div>
+  <div class="mt-8 mb-6 mx-2 md:mx-0">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      Related events
+    </h2>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
-      {{ range $events }}
-        {{ partial "card_event.html" . }}
-      {{ end }}
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+    {{ range $events }}
+    {{ partial "card_event.html" . }}
+    {{ end }}
+  </div>
   {{ end }}
 </div>
 {{ end }}

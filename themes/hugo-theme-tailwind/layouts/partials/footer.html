@@ -1,39 +1,101 @@
-<section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
-  <div class="flex flex-row">
-    {{ partial "social_media.html" . }}
-  </div>
-  <div class="grow"></div>
-  <div class="flex flex-row">
-    {{- $CopyrightSign := (printf `<i class="h-6 w-6 flex-none">%s</i>` (partial "icon.html" "copyright")) -}}
-    {{- $SinceYear := .Site.Params.footer.since -}}
-    {{- $CurrentYear := now.Format "2006" -}}
-    {{- $Copyright := .Site.Copyright -}}
+<footer class="w-full bg-white dark:bg-blue-1000 text-gray-700 dark:text-gray-300 mt-12 border-t border-blue-200 dark:border-blue-800">
+  <div class="flex flex-col w-full max-w-[1344px] mx-auto px-4 sm:px-6 lg:px-8 pt-18 pb-10">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-14">
+      <!-- Brand Column -->
+      <div class="col-span-1 md:col-span-2">
+        <a href="{{ relLangURL "" }}" class="inline-block mb-4">
+          <img class="h-6.5 dark:hidden" src='{{ "images/posit-open-source-logo-light.png" | relURL }}' alt="Posit Open Source">
+          <img class="h-6.5 hidden dark:block" src='{{ "images/posit-open-source-logo-dark.png" | relURL }}' alt="Posit Open Source">
+        </a>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Open source software and tools for data science.
+        </p>
+      </div>
 
-    {{ if and (.Site.Params.footer.since)
-      (ne .Site.Params.footer.since (int (now.Format "2006")))
-    }}
-    {{ T "footer.copyright_with_since"  (dict
-      "CopyrightSign" $CopyrightSign
-      "SinceYear" $SinceYear
-      "CurrentYear" $CurrentYear
-      "Copyright" $Copyright
-    ) | safeHTML }}
-    {{ else }}
-    {{ T "footer.copyright_wo_since"  (dict
-      "CopyrightSign" $CopyrightSign
-      "CurrentYear" $CurrentYear
-      "Copyright" $Copyright
-    ) | safeHTML }}
-    {{ end }}
+      <!-- Navigation Column -->
+      <div class="col-span-1">
+        <h3 class="text-gray-900 dark:text-white font-semibold mb-4">Navigate</h3>
+        <ul class="space-y-2 text-sm">
+          {{ range site.Menus.main }}
+          <li>
+            <a href="{{ .URL }}" class="font-medium hover:text-blue-500 dark:hover:text-white transition-colors">
+              {{ .Name }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <!-- Resources Column -->
+      <div class="col-span-1">
+        <h3 class="text-gray-900 dark:text-white font-semibold mb-4">Resources</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="https://posit.co" target="_blank" rel="noopener" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+              Posit.co
+            </a>
+          </li>
+          <li>
+            <a href="https://posit.co/about/" target="_blank" rel="noopener" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+              About Posit
+            </a>
+          </li>
+          <li>
+            <a href="https://posit.co/support/" target="_blank" rel="noopener" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+              Support
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/posit-dev" target="_blank" rel="noopener" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Column -->
+      <div class="col-span-">
+        <h3 class="text-gray-900 dark:text-white font-semibold mb-4">Socials</h3>
+        <div class="flex flex-row gap-4">
+          <a href="https://github.com/posit-dev" target="_blank" rel="noopener" title="GitHub" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-github" }}</i>
+            <span class="sr-only">GitHub</span>
+          </a>
+          <a href="https://fosstodon.org/@posit" target="_blank" rel="noopener me" title="Mastodon" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-mastodon" }}</i>
+            <span class="sr-only">Mastodon</span>
+          </a>
+          <a href="https://bsky.app/profile/posit.bsky.social" target="_blank" rel="noopener" title="Bluesky" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-bluesky" }}</i>
+            <span class="sr-only">Bluesky</span>
+          </a>
+          <a href="https://linkedin.com/company/posit-pbc" target="_blank" rel="noopener" title="LinkedIn" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-linkedin" }}</i>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+          <a href="https://youtube.com/@PositPBC" target="_blank" rel="noopener" title="YouTube" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-youtube" }}</i>
+            <span class="sr-only">YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-blue-200 dark:border-blue-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
+      <div class="flex items-center gap-2">
+        <i class="h-4 w-4 flex-none">{{ partial "icon.html" "copyright" }}</i>
+        <span>{{ now.Format "2006" }} Posit Software, PBC. All rights reserved.</span>
+      </div>
+      <div class="flex flex-row gap-4">
+        <a href="https://posit.co/about/privacy-policy/" target="_blank" rel="noopener" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+          Privacy
+        </a>
+        <a href="https://posit.co/about/code-of-conduct/" target="_blank" rel="noopener" class="hover:text-gray-900 dark:hover:text-white transition-colors">
+          Code of Conduct
+        </a>
+      </div>
+    </div>
   </div>
-  {{ if .Site.Params.footer.poweredby }}
-  <div class="flex flex-row">
-    {{- $Generator := `<a href="https://gohugo.io" target="_blank" rel="noopener" class="underline">Hugo</a>` -}}
-    {{- $Theme := `<a href="https://github.com/tomowang/hugo-theme-tailwind" target="_blank" rel="noopener" class="underline">Tailwind</a>` -}}
-    {{- $Heart := `<span class="text-red-600">&hearts;</span>` }}
-    <span class="ml-0 pl-0 md:ml-2 md:pl-2 border-l-0 md:border-l border-slate-300 dark:border-slate-400">
-      {{ T "footer.powered_by" (dict "Generator" $Generator "Theme" $Theme "Heart" $Heart ) | safeHTML }}
-    </span>
-  </div>
-  {{ end }}
-</section>
+</footer>

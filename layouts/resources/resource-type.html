@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="flex flex-col w-full max-w-4xl lg:max-w-5xl mt-6">
+  <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200 mx-2 md:mx-0 mb-2">{{ .Title }}</h1>
+
+  {{ if .Description }}
+  <p class="text-lg text-gray-600 dark:text-gray-400 mx-2 md:mx-0 mb-8">{{ .Description }}</p>
+  {{ end }}
+
+  <!-- Back to Resources Link -->
+  <div class="mb-8 mx-2 md:mx-0">
+    <a href="/resources/" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+      ← Back to all resources
+    </a>
+  </div>
+
+  <!-- Filtered Resources -->
+  {{ $resourceType := .Params.resource_type_filter }}
+  {{ $resources := where (site.GetPage "/resources").Pages "Params.resource_type" $resourceType }}
+
+  {{ if $resources }}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0">
+    {{ range $resources.ByTitle }}
+      {{ partial "card_resource.html" . }}
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="text-center py-12 mx-2 md:mx-0">
+    <p class="text-xl text-gray-600 dark:text-gray-400">No {{ lower .Title }} found yet. Check back soon!</p>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

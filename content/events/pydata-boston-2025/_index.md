@@ -10,10 +10,10 @@ description: "A three-day in-person gathering for the international community of
 people:
   - Isabel Zimmerman
   - Andrew Holz
-packages:
+software:
   - Positron
 resources:
-  - isabel-zimmerman-pydata-boston-2025-keynote
+  - videos/isabel-zimmerman-pydata-boston-2025-keynote
 ---
 
 PyData Boston 2025 is a three-day conference bringing together the international community of data scientists, engineers, and developers working with Python and data analysis tools. The event takes place December 8-10, 2025 at the Microsoft NERD Center in Cambridge, Massachusetts.
