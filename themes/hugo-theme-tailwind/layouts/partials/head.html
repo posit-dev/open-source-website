@@ -10,6 +10,33 @@
 />
 <meta name="robots" content="noodp" />
 {{- if $.Site.Params.pwa.enabled }}<link rel="manifest" href="/manifest.json" />{{ end -}}
+
+{{- /* Custom Open Graph and Twitter images for blog posts */ -}}
+{{- if eq .Section "blog" -}}
+  {{- $blogImg := partial "blog/thumbnail.html" . -}}
+  {{- $imgURL := "" -}}
+  {{- $imgType := printf "%T" $blogImg -}}
+  {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
+    {{- /* It's a resource - get absolute URL */ -}}
+    {{- $imgURL = $blogImg.Permalink -}}
+  {{- else -}}
+    {{- /* It's a URL string - make it absolute if relative */ -}}
+    {{- if hasPrefix $blogImg "http" -}}
+      {{- $imgURL = $blogImg -}}
+    {{- else -}}
+      {{- $imgURL = absURL $blogImg -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $imgURL -}}
+    <meta property="og:image" content="{{ . }}" />
+    <meta name="twitter:image" content="{{ . }}" />
+    {{- with $.Params.alttext -}}
+      <meta property="og:image:alt" content="{{ . }}" />
+      <meta name="twitter:image:alt" content="{{ . }}" />
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
 

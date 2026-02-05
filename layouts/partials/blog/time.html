@@ -1,10 +1,8 @@
+{{- /* Blog-specific time partial with custom styling */ -}}
 <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-gray-500 dark:text-gray-300">
 {{- if or .Params.start_date .Params.end_date }}
   {{/* Use date range for events */}}
   <div class="flex flex-row text-base gap-x-1">
-    <i class="h-6 w-6 flex-none">
-      {{ partial "icon.html" "calendar" }}
-    </i>
     <span>
       {{ partial "block/date_range.html" . }}
     </span>
@@ -19,14 +17,14 @@
   {{ else }}
     {{ $dateHuman = .Date.Format "Jan 2, 2006" }}
   {{ end }}
-  <div class="flex flex-row text-xs font-semibold font-mono uppercase text-gray-400 gap-x-1">
+  <div class="flex flex-row text-sm font-semibold font-mono uppercase text-gray-400 gap-x-1">
     <time datetime="{{ $dateMachine }}">
       {{ $dateHuman }}
     </time>
   </div>
 {{ end -}}
 {{- if $.Site.Params.showReadingTime }}
-  <div class="flex flex-row text-xs font-semibold font-mono uppercase text-gray-400 gap-x-1">
+  <div class="flex flex-row text-sm font-semibold font-mono uppercase text-gray-400 gap-x-1">
     <span>
       {{ T "reading_time" .ReadingTime }}
     </span>

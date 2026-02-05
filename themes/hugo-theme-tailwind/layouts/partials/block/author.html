@@ -16,7 +16,7 @@
 
     {{- range $index, $person := $people -}}
     {{- if $index -}}<span class="-ml-1">, </span>{{ end -}}
-    <a href="{{ $person.RelPermalink }}" class="hover:text-gray-700 dark:hover:text-gray-100">
+    <a href="{{ $person.RelPermalink }}" class="text-sm font-medium text-gray-400 hover:text-gray-700 dark:hover:text-gray-100">
       {{- $person.LinkTitle -}}
     </a>
     {{- end -}}

@@ -430,3 +430,24 @@
   --tw-prose-code: var(--color-gray-200) !important;
   --tw-prose-quotes: var(--color-gray-200) !important;
 }
+
+/* Blog-specific styles */
+@layer components {
+  /* Blog card hover effect */
+  .blog-card-hover {
+    @apply transition-all duration-200 hover:shadow-lg;
+  }
+
+  /* Line clamping for descriptions */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Featured post gradient overlay (optional) */
+  .blog-featured-gradient {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+  }
+}

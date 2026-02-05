@@ -3,7 +3,7 @@ open_main_menu = "Open main menu"
 open_lang_switcher = "Open language switcher"
 [reading_time]
   one = "One minute to read"
-  other = "{{ .Count }} minutes to read"
+  other = "{{ .Count }} mins"
 
 [search]
 title = "Search"

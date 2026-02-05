@@ -1,0 +1,104 @@
+{{- /*
+  Related posts section for blog single pages
+  Shows 3 posts from the same category
+*/ -}}
+
+{{- $related := slice -}}
+{{- $primaryCategory := "" -}}
+
+{{- /* Get primary category (first in list) */ -}}
+{{- with .Params.categories -}}
+  {{- $primaryCategory = index . 0 -}}
+{{- end -}}
+
+{{- if $primaryCategory -}}
+  {{- /* Find posts in same category, exclude current post */ -}}
+  {{- $site := .Site -}}
+  {{- range $site.Taxonomies.categories -}}
+    {{- $termKey := .Page.Title -}}
+    {{- if eq $termKey $primaryCategory -}}
+      {{- range .Pages -}}
+        {{- if ne .RelPermalink $.RelPermalink -}}
+          {{- $related = $related | append . -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Fallback: if < 3 related posts, add recent posts */ -}}
+{{- if lt (len $related) 3 -}}
+  {{- $needed := sub 3 (len $related) -}}
+  {{- $recentPosts := where .Site.RegularPages "Section" "blog" | first (add (len $related) $needed 1) -}}
+  {{- range $recentPosts -}}
+    {{- if and (ne .RelPermalink $.RelPermalink) (lt (len $related) 3) -}}
+      {{- $found := false -}}
+      {{- range $related -}}
+        {{- if eq .RelPermalink $.RelPermalink -}}
+          {{- $found = true -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $found -}}
+        {{- $related = $related | append . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Only show section if we have related posts */ -}}
+{{- if gt (len $related) 0 -}}
+<section class="w-full bg-gray-50 dark:bg-gray-900 py-12 mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-semibold mb-8 text-gray-800 dark:text-gray-100">
+      {{- if $primaryCategory -}}
+        More On {{ $primaryCategory | title }}
+      {{- else -}}
+        Related Posts
+      {{- end -}}
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{- range first 3 $related -}}
+        <article class="blog-card-hover rounded-lg overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex flex-col">
+          {{- /* Related post image */ -}}
+          <div class="w-full aspect-[1200/630] overflow-hidden">
+            <a href="{{ .RelPermalink }}" class="block w-full h-full">
+              {{- $relatedImg := partial "blog/thumbnail.html" . -}}
+              {{- $imgType := printf "%T" $relatedImg -}}
+              {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
+                {{- if eq $relatedImg.MediaType.SubType "svg" -}}
+                  <img class="w-full h-full object-cover" src="{{ $relatedImg.RelPermalink }}" alt="{{ .Params.alttext | default .Title }}" loading="lazy" />
+                {{- else -}}
+                  {{- $img := $relatedImg.Resize "640x jpg box" -}}
+                  <img class="w-full h-full object-cover" src="{{ $img.RelPermalink }}" alt="{{ .Params.alttext | default .Title }}" loading="lazy" />
+                {{- end -}}
+              {{- else -}}
+                <img class="w-full h-full object-cover" src="{{ $relatedImg }}" alt="{{ .Params.alttext | default .Title }}" loading="lazy" />
+              {{- end -}}
+            </a>
+          </div>
+
+          {{- /* Related post content */ -}}
+          <div class="flex flex-col gap-y-3 p-4 flex-grow">
+            {{ partial "block/time.html" . }}
+
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">
+              <a href="{{ .RelPermalink }}" class="hover:text-blue-600 dark:hover:text-blue-400">{{ .Title | .RenderString }}</a>
+            </h3>
+
+            {{- with .Description -}}
+              <div class="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+                {{ . | $.RenderString }}
+              </div>
+            {{- else with .Summary -}}
+              <div class="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+                {{ . | plainify }}
+              </div>
+            {{- end -}}
+          </div>
+        </article>
+      {{- end -}}
+    </div>
+  </div>
+</section>
+{{- end -}}

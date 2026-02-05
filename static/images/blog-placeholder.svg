@@ -1,0 +1,10 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#447099;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d4a63;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  <text x="600" y="315" font-family="Open Sans, sans-serif" font-size="48" fill="white" text-anchor="middle" opacity="0.8">Posit Open Source</text>
+</svg>

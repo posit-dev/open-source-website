@@ -1,0 +1,41 @@
+{{- /*
+  Hero image partial for blog single pages
+  Full-width hero image at top of post
+*/ -}}
+
+{{- $heroImg := partial "blog/thumbnail.html" . -}}
+{{- $alt := .Params.alttext | default .Title -}}
+
+<div class="w-full h-64 md:h-96 lg:h-[32rem] rounded-xl">
+  {{- $imgType := printf "%T" $heroImg -}}
+  {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
+    {{- /* It's a resource */ -}}
+    {{- if eq $heroImg.MediaType.SubType "svg" -}}
+      <img class="w-full h-full object-cover rounded-xl" src="{{ $heroImg.RelPermalink }}" alt="{{ $alt }}" />
+    {{- else -}}
+      {{- $respSizes := slice "640" "960" "1280" "1600" "1920" -}}
+      <picture>
+        <source type="image/webp" srcset="
+          {{- range $i, $size := $respSizes -}}
+            {{- if ge $heroImg.Width $size -}}
+              {{- if $i }}, {{ end -}}
+              {{- ($heroImg.Resize (print $size "x webp photo box")).RelPermalink }} {{ $size }}w
+            {{- end -}}
+          {{- end -}}" sizes="100vw" /> 
+        <source type="image/jpeg" srcset="
+          {{- range $i, $size := $respSizes -}}
+            {{- if ge $heroImg.Width $size -}}
+              {{- if $i }}, {{ end -}}
+              {{- ($heroImg.Resize (print $size "x jpg box")).RelPermalink }} {{ $size }}w
+            {{- end -}}
+          {{- end -}}" sizes="100vw" />
+        <img class="w-full h-full object-cover rounded-xl"
+             src="{{ ($heroImg.Resize "1280x jpg box").RelPermalink }}"
+             alt="{{ $alt }}" />
+      </picture>
+    {{- end -}}
+  {{- else -}}
+    {{- /* It's a URL string */ -}}
+    <img class="w-full h-full object-cover rounded-xl" src="{{ $heroImg }}" alt="{{ $alt }}" />
+  {{- end -}}
+</div>

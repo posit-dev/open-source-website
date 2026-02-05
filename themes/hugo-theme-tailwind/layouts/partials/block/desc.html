@@ -1,10 +1,10 @@
 {{ with .Description }}
-  <div class="my-4 text-large text-gray-600 dark:text-gray-300">
+  <div class="text-large text-gray-500 dark:text-gray-300">
     {{ . | $.Page.RenderString }}
   </div>
 {{ else }}
   {{ with .Summary }}
-  <div class="my-4 text-large text-gray-600 dark:text-gray-300">
+  <div class="text-large text-gray-500 dark:text-gray-300">
     {{ . | plainify }}
   </div>
   {{ end }}

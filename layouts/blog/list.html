@@ -1,0 +1,174 @@
+{{ define "main" }}
+<div class="flex flex-col w-full relative mt-6 max-w-7xl mx-auto">
+
+  {{- /* Categories filter section */ -}}
+  {{- $categories := .Site.Taxonomies.categories -}}
+  {{- if gt (len $categories) 0 -}}
+  <section class="mb-8">
+    <div class="flex flex-wrap gap-2">
+      <a href="/blog/" class="px-4 py-2 rounded-full border text-sm font-medium transition-colors bg-blue-500 border-blue-500 text-white">
+        All Posts
+      </a>
+      {{- range $name, $taxonomy := $categories -}}
+      <a href="/categories/{{ $name | urlize }}/" class="px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-blue-50 hover:border-blue-200 dark:hover:bg-gray-800 dark:hover:border-gray-600 transition-colors">
+        {{ $name | title }} <span class="text-gray-500 dark:text-gray-400">({{ len $taxonomy.Pages }})</span>
+      </a>
+      {{- end -}}
+    </div>
+  </section>
+  {{- end -}}
+
+  {{- $paginator := .Paginate .RegularPages -}}
+  {{- $posts := $paginator.Pages -}}
+
+  {{- /* Featured "Most Recent" section - only on page 1 */ -}}
+  {{- if eq $paginator.PageNumber 1 -}} 
+    {{- with (index $posts 0) -}}
+      <section class="mb-12">
+        <h2 class="text-sm font-semibold mb-6 text-gray-600 dark:text-gray-400 uppercase tracking-wider">Most Recent</h2>
+        <article class="rounded-lg overflow-hidden bg-transparent transition-colors duration-200 border border-transparent hover:bg-blue-50 hover:border-blue-50 cursor-pointer hover:border-[4px] hover:-m-[3px] dark:border-gray-800 bg-blue-50 relative">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+            {{- /* Featured image */ -}}
+            <div class="w-full aspect-[1200/630] overflow-hidden">
+              <div class="block w-full h-full">
+                {{- $featuredImg := partial "blog/thumbnail.html" . -}}
+                {{- /* Check if it's a string (URL) or resource */ -}}
+                {{- $imgType := printf "%T" $featuredImg -}}
+                {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
+                  {{- /* It's a resource */ -}}
+                  {{- if eq $featuredImg.MediaType.SubType "svg" -}}
+                    <img class="w-full h-full object-cover" src="{{ $featuredImg.RelPermalink }}" alt="{{ $.Params.alttext | default .Title }}" loading="lazy" />
+                  {{- else -}}
+                    {{- $respSizes := slice "640" "960" "1280" -}}
+                    <picture>
+                      <source type="image/webp" srcset="
+                        {{- range $i, $size := $respSizes -}}
+                          {{- if ge $featuredImg.Width $size -}}
+                            {{- if $i }}, {{ end -}}
+                            {{- ($featuredImg.Resize (print $size "x webp photo box")).RelPermalink }} {{ $size }}w
+                          {{- end -}}
+                        {{- end -}}" sizes="(min-width: 1024px) 50vw, 100vw" />
+                      <source type="image/jpeg" srcset="
+                        {{- range $i, $size := $respSizes -}}
+                          {{- if ge $featuredImg.Width $size -}}
+                            {{- if $i }}, {{ end -}}
+                            {{- ($featuredImg.Resize (print $size "x jpg box")).RelPermalink }} {{ $size }}w
+                          {{- end -}}
+                        {{- end -}}" sizes="(min-width: 1024px) 50vw, 100vw" />
+                      <img class="w-full h-full object-cover" src="{{ ($featuredImg.Resize "640x jpg box").RelPermalink }}" alt="{{ $.Params.alttext | default .Title }}" loading="lazy" />
+                    </picture>
+                  {{- end -}}
+                {{- else -}}
+                  {{- /* It's a URL string */ -}}
+                  <img class="w-full h-full object-cover" src="{{ $featuredImg }}" alt="{{ $.Params.alttext | default .Title }}" loading="lazy" />
+                {{- end -}}
+              </div>
+            </div>
+
+            {{- /* Featured content */ -}}
+            <div class="flex flex-col gap-y-2 p-6 lg:p-8">
+              <div class="flex flex-col">
+                {{ partial "block/time.html" . }}
+                </div>
+              <h3 class="text-2xl font-medium text-gray-500 dark:text-gray-100">
+                <a href="{{ .RelPermalink }}" class="hover:text-blue-500 dark:hover:text-blue-400 after:absolute after:inset-0">{{ .Title | .RenderString }}</a>
+              </h3>
+
+              {{- partial "block/desc.html" . -}}
+
+              <div class="flex flex-col mt-6 gap-y-4 relative z-10">
+                {{ partial "block/author.html" . }}
+                {{ partial "block/taxonomies.html" . }}
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* "Latest" section header */ -}}
+  <section>
+    <h2 class="text-sm font-semibold mb-6 text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+      {{- if eq $paginator.PageNumber 1 -}}Latest{{- else -}}All Posts{{- end -}}
+    </h2>
+
+    {{- /* 3-column grid */ -}}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{- $start := 0 -}}
+      {{- if eq $paginator.PageNumber 1 -}}
+        {{- $start = 1 -}} {{- /* Skip first post on page 1 (already featured) */ -}}
+      {{- end -}}
+
+      {{- range $index, $post := $posts -}}
+        {{- if ge $index $start -}}
+          <article class="rounded-lg overflow-hidden bg-transparent transition-colors duration-200 border border-transparent hover:bg-blue-50 hover:border-blue-50 cursor-pointer hover:border-[4px] hover:-m-[3px] dark:border-gray-800 bg-blue-50 relative">
+            {{- /* Grid card image */ -}}
+            <div class="w-full aspect-[1200/630] overflow-hidden">
+              <div class="block w-full h-full">
+                {{- $gridImg := partial "blog/thumbnail.html" $post -}}
+                {{- $imgType := printf "%T" $gridImg -}}
+                {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
+                  {{- if eq $gridImg.MediaType.SubType "svg" -}}
+                    <img class="w-full h-full object-cover" src="{{ $gridImg.RelPermalink }}" alt="{{ $post.Params.alttext | default $post.Title }}" loading="lazy" />
+                  {{- else -}}
+                    {{- $respSizes := slice "320" "640" -}}
+                    <picture>
+                      <source type="image/webp" srcset="
+                        {{- range $i, $size := $respSizes -}}
+                          {{- if ge $gridImg.Width $size -}}
+                            {{- if $i }}, {{ end -}}
+                            {{- ($gridImg.Resize (print $size "x webp photo box")).RelPermalink }} {{ $size }}w
+                          {{- end -}}
+                        {{- end -}}" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+                      <source type="image/jpeg" srcset="
+                        {{- range $i, $size := $respSizes -}}
+                          {{- if ge $gridImg.Width $size -}}
+                            {{- if $i }}, {{ end -}}
+                            {{- ($gridImg.Resize (print $size "x jpg box")).RelPermalink }} {{ $size }}w
+                          {{- end -}}
+                        {{- end -}}" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+                      <img class="w-full h-full object-cover" src="{{ ($gridImg.Resize "640x jpg box").RelPermalink }}" alt="{{ $post.Params.alttext | default $post.Title }}" loading="lazy" />
+                    </picture>
+                  {{- end -}}
+                {{- else -}}
+                  <img class="w-full h-full object-cover" src="{{ $gridImg }}" alt="{{ $post.Params.alttext | default $post.Title }}" loading="lazy" />
+                {{- end -}}
+              </div>
+            </div>
+
+            {{- /* Grid card content */ -}}
+            <div class="flex flex-col gap-y-1 p-6 pb-8 flex-grow">
+              {{ partial "block/time.html" $post }}
+
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">
+                <a href="{{ $post.RelPermalink }}" class="hover:text-blue-600 dark:hover:text-blue-400 after:absolute after:inset-0">{{ $post.Title | $post.RenderString }}</a>
+              </h3>
+
+              {{- with $post.Description -}}
+                <div class="text-gray-600 dark:text-gray-300 line-clamp-3 mt-2">
+                  {{ . | $post.RenderString }}
+                </div>
+              {{- else -}}
+                {{- with $post.Summary -}}
+                  <div class="text-gray-600 dark:text-gray-300 line-clamp-3 mt-2">
+                    {{ . | plainify }}
+                  </div>
+                {{- end -}}
+              {{- end -}}
+
+              <div class="mt-3 flex flex-col gap-y-2 relative z-10">
+                {{ partial "block/author.html" $post }}
+                {{ partial "block/taxonomies.html" $post }}
+              </div>
+            </div>
+          </article>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  </section>
+
+  {{- /* Pagination */ -}}
+  {{ partial "pagination.html" . }}
+</div>
+{{ end }}

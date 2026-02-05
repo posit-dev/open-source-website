@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Posit Open Source Website",
   "scripts": {
-    "dev-hugo": "hugo server -D",
+    "dev-hugo": "hugo server -D --disableFastRender",
     "dev-tailwind": "npx @tailwindcss/cli -i assets/css/main.css -o assets/css/index.css --watch",
     "build-tailwind": "npx @tailwindcss/cli -i assets/css/main.css -o assets/css/index.css --minify",
     "dev": "npm-run-all --parallel dev-hugo dev-tailwind"

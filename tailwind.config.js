@@ -4,7 +4,8 @@ module.exports = {
   content: [
     "./themes/**/layouts/**/*.html",
     "./layouts/**/*.html",
-    "./content/**/*.md"
+    "./content/**/*.md",
+    "./safelist.txt"
   ],
   theme: {
     extend: {

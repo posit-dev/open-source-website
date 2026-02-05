@@ -1,0 +1,64 @@
+{{- /*
+  Smart thumbnail partial for blog posts
+  Implements fallback chain:
+  1. Explicit .Params.image
+  2. Search for "thumbnail" in filename
+  3. First image alphabetically
+  4. Extract from .Content
+  5. Placeholder SVG
+
+  Returns: image resource or URL string
+*/ -}}
+
+{{- $image := "" -}}
+{{- $alt := .Params.alttext | default .Title -}}
+
+{{- /* 1. Check for explicit image parameter */ -}}
+{{- if .Params.image -}}
+  {{- $dest := .Params.image | safeURL -}}
+  {{- $dest = path.Join (path.Dir $dest) (path.Base $dest) -}}
+  {{- /* Try to get as page resource */ -}}
+  {{- with .Resources.Get $dest -}}
+    {{- $image = . -}}
+  {{- else -}}
+    {{- /* Check if it's an external URL (starts with http) */ -}}
+    {{- if hasPrefix $.Params.image "http" -}}
+      {{- $image = $.Params.image -}}
+    {{- end -}}
+    {{- /* Otherwise it's a local file that wasn't found as a resource */ -}}
+    {{- /* Fall through to search methods below */ -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 2. Search for files with "thumbnail" in name */ -}}
+{{- if not $image -}}
+  {{- range .Resources.Match "**/*thumbnail*" -}}
+    {{- if not $image -}}
+      {{- $image = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 3. Get first image alphabetically */ -}}
+{{- if not $image -}}
+  {{- range .Resources.ByType "image" -}}
+    {{- if not $image -}}
+      {{- $image = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 4. Extract first img from content */ -}}
+{{- if not $image -}}
+  {{- $content := .Content | plainify -}}
+  {{- /* This is a fallback; actual image extraction from HTML is complex */ -}}
+  {{- /* We'll skip this for now and go to placeholder */ -}}
+{{- end -}}
+
+{{- /* 5. Fallback to placeholder */ -}}
+{{- if not $image -}}
+  {{- $image = "/images/blog-placeholder.svg" -}}
+{{- end -}}
+
+{{- /* Return the image */ -}}
+{{- return $image -}}

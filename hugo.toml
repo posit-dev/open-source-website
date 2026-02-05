@@ -6,6 +6,7 @@ ignoreFiles = ['\.qmd$', '\.ipynb$']
 
 [params]
 subtitle = ""
+showReadingTime = true
 
 [taxonomies]
   tag = 'tags'
