@@ -7,7 +7,38 @@
         {{ $image := .Resources.Get .Params.image }}
         {{ if $image }}
           <div class="flex-shrink-0">
-            <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-48 h-48 rounded-lg object-cover shadow-md">
+            {{ if eq $image.MediaType.SubType "svg" }}
+            <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-48 h-48 rounded-lg object-cover shadow-md" loading="lazy">
+            {{ else }}
+            {{ $baseSize := mul 48 4 }}
+            {{ $size1x := $baseSize }}
+            {{ $size2x := mul $baseSize 2 }}
+            {{ $size3x := mul $baseSize 3 }}
+            {{ $dimensions1x := printf "%dx%d" $size1x $size1x }}
+            {{ $dimensions2x := printf "%dx%d" $size2x $size2x }}
+            {{ $dimensions3x := printf "%dx%d" $size3x $size3x }}
+            {{ $img1x := $image.Fill $dimensions1x }}
+            {{ $img2x := $image.Fill $dimensions2x }}
+            {{ $img3x := $image.Fill $dimensions3x }}
+            {{ $img1xWebp := $img1x.Process "webp" }}
+            {{ $img2xWebp := $img2x.Process "webp" }}
+            {{ $img3xWebp := $img3x.Process "webp" }}
+            <picture>
+              <source
+                type="image/webp"
+                srcset="{{ $img1xWebp.RelPermalink }} 1x,
+                        {{ $img2xWebp.RelPermalink }} 2x,
+                        {{ $img3xWebp.RelPermalink }} 3x" />
+              <img
+                src="{{ $img1x.RelPermalink }}"
+                srcset="{{ $img1x.RelPermalink }} 1x,
+                        {{ $img2x.RelPermalink }} 2x,
+                        {{ $img3x.RelPermalink }} 3x"
+                alt="{{ .Title }}"
+                class="w-48 h-48 rounded-lg object-cover shadow-md"
+                loading="lazy" />
+            </picture>
+            {{ end }}
           </div>
         {{ end }}
       {{ end }}

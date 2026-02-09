@@ -8,7 +8,34 @@
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}
   <div class="w-full h-48 bg-gray-200 dark:bg-gray-700">
-    <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+    {{ if eq $image.MediaType.SubType "svg" }}
+    <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy">
+    {{ else }}
+    {{ $height := mul 48 4 }}
+    {{ $widths := slice 400 600 800 1200 }}
+    {{ $images := dict }}
+    {{ $imagesWebp := dict }}
+    {{ range $widths }}
+      {{ $w := . }}
+      {{ $dimensions := printf "%dx%d" $w $height }}
+      {{ $resized := $image.Fill $dimensions }}
+      {{ $images = merge $images (dict (string $w) $resized) }}
+      {{ $imagesWebp = merge $imagesWebp (dict (string $w) ($resized.Process "webp")) }}
+    {{ end }}
+    <picture>
+      <source
+        type="image/webp"
+        srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $imagesWebp (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
+        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+      <img
+        src="{{ (index $images "800").RelPermalink }}"
+        srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $images (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
+        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+        alt="{{ .Title }}"
+        class="w-full h-full object-cover"
+        loading="lazy" />
+    </picture>
+    {{ end }}
   </div>
   {{ end }}
   {{ end }}

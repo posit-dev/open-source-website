@@ -6,7 +6,34 @@
     {{ $image := .Resources.Get .Params.image }}
     {{ if $image }}
     <div class="w-full h-64 bg-gray-200 dark:bg-blue-900">
-      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+      {{ if eq $image.MediaType.SubType "svg" }}
+      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy">
+      {{ else }}
+      {{ $height := mul 64 4 }}
+      {{ $widths := slice 600 800 1200 1600 }}
+      {{ $images := dict }}
+      {{ $imagesWebp := dict }}
+      {{ range $widths }}
+        {{ $w := . }}
+        {{ $dimensions := printf "%dx%d" $w $height }}
+        {{ $resized := $image.Fill $dimensions }}
+        {{ $images = merge $images (dict (string $w) $resized) }}
+        {{ $imagesWebp = merge $imagesWebp (dict (string $w) ($resized.Process "webp")) }}
+      {{ end }}
+      <picture>
+        <source
+          type="image/webp"
+          srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $imagesWebp (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
+          sizes="(min-width: 1024px) 1024px, 100vw" />
+        <img
+          src="{{ (index $images "1200").RelPermalink }}"
+          srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $images (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
+          sizes="(min-width: 1024px) 1024px, 100vw"
+          alt="{{ .Title }}"
+          class="w-full h-full object-cover"
+          loading="lazy" />
+      </picture>
+      {{ end }}
     </div>
     {{ end }}
     {{ end }}
@@ -127,7 +154,7 @@
       {{ else if or (strings.HasSuffix . ".mp4") (strings.HasSuffix . ".webm") (strings.HasSuffix . ".ogg") }}
       <!-- Direct video file -->
       <video class="w-full h-full" controls>
-        <source src="{{ . }}" type="video/{{ if strings.HasSuffix . " .mp4" }}mp4{{ else if strings.HasSuffix . ".webm"
+        <source src="{{ . }}" type="video/{{ if strings.HasSuffix . ".mp4" }}mp4{{ else if strings.HasSuffix . ".webm"
           }}webm{{ else }}ogg{{ end }}">
         Your browser does not support the video tag.
       </video>
