@@ -7,38 +7,8 @@
         {{ $image := .Resources.Get .Params.image }}
         {{ if $image }}
           <div class="flex-shrink-0 w-48 h-48 flex items-center justify-center bg-white dark:bg-blue-900 rounded-lg p-4">
-            {{ if eq $image.MediaType.SubType "svg" }}
-            <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="max-h-full max-w-full object-contain" loading="lazy">
-            {{ else }}
             {{ $baseSize := mul 48 4 }}
-            {{ $size1x := $baseSize }}
-            {{ $size2x := mul $baseSize 2 }}
-            {{ $size3x := mul $baseSize 3 }}
-            {{ $dimensions1x := printf "%dx%d fit" $size1x $size1x }}
-            {{ $dimensions2x := printf "%dx%d fit" $size2x $size2x }}
-            {{ $dimensions3x := printf "%dx%d fit" $size3x $size3x }}
-            {{ $img1x := $image.Process $dimensions1x }}
-            {{ $img2x := $image.Process $dimensions2x }}
-            {{ $img3x := $image.Process $dimensions3x }}
-            {{ $img1xWebp := $img1x.Process "webp" }}
-            {{ $img2xWebp := $img2x.Process "webp" }}
-            {{ $img3xWebp := $img3x.Process "webp" }}
-            <picture>
-              <source
-                type="image/webp"
-                srcset="{{ $img1xWebp.RelPermalink }} 1x,
-                        {{ $img2xWebp.RelPermalink }} 2x,
-                        {{ $img3xWebp.RelPermalink }} 3x" />
-              <img
-                src="{{ $img1x.RelPermalink }}"
-                srcset="{{ $img1x.RelPermalink }} 1x,
-                        {{ $img2x.RelPermalink }} 2x,
-                        {{ $img3x.RelPermalink }} 3x"
-                alt="{{ .Title }}"
-                class="max-h-full max-w-full object-contain"
-                loading="lazy" />
-            </picture>
-            {{ end }}
+            {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt" .Title "class" "max-h-full max-w-full object-contain" "method" "fit") }}
           </div>
         {{ end }}
       {{ end }}

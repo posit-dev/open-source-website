@@ -8,34 +8,8 @@
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}
   {{ $baseSize := mul 36 4 }}
-  {{ $size1x := $baseSize }}
-  {{ $size2x := mul $baseSize 2 }}
-  {{ $size3x := mul $baseSize 3 }}
-  {{ $dimensions1x := printf "%dx%d" $size1x $size1x }}
-  {{ $dimensions2x := printf "%dx%d" $size2x $size2x }}
-  {{ $dimensions3x := printf "%dx%d" $size3x $size3x }}
-  {{ $img1x := $image.Fit $dimensions1x }}
-  {{ $img2x := $image.Fit $dimensions2x }}
-  {{ $img3x := $image.Fit $dimensions3x }}
-  {{ $img1xWebp := $img1x.Process "webp" }}
-  {{ $img2xWebp := $img2x.Process "webp" }}
-  {{ $img3xWebp := $img3x.Process "webp" }}
   <div class="w-36 h-36 mb-4 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
-    <picture>
-      <source
-        type="image/webp"
-        srcset="{{ $img1xWebp.RelPermalink }} 1x,
-                {{ $img2xWebp.RelPermalink }} 2x,
-                {{ $img3xWebp.RelPermalink }} 3x" />
-      <img
-        src="{{ $img1x.RelPermalink }}"
-        srcset="{{ $img1x.RelPermalink }} 1x,
-                {{ $img2x.RelPermalink }} 2x,
-                {{ $img3x.RelPermalink }} 3x"
-        alt="{{ .Title }}"
-        class="w-full h-full object-cover"
-        loading="lazy" />
-    </picture>
+    {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt" .Title "class" "w-full h-full object-cover" "method" "fit") }}
   </div>
   {{ end }}
   {{ end }}

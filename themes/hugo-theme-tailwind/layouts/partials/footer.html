@@ -5,8 +5,12 @@
       <!-- Brand Column -->
       <div class="col-span-1 md:col-span-2">
         <a href="{{ relLangURL "" }}" class="inline-block mb-4">
-          <img class="h-6.5 dark:hidden" src='{{ "images/posit-open-source-logo-light.png" | relURL }}' alt="Posit Open Source">
-          <img class="h-6.5 hidden dark:block" src='{{ "images/posit-open-source-logo-dark.png" | relURL }}' alt="Posit Open Source">
+          <span class="dark:hidden">
+            {{ partial "responsive_image_fixed.html" (dict "imagePath" "posit-open-source-logo-light.png" "baseHeight" 26 "alt" "Posit Open Source" "class" "h-6.5") }}
+          </span>
+          <span class="hidden dark:block">
+            {{ partial "responsive_image_fixed.html" (dict "imagePath" "posit-open-source-logo-dark.png" "baseHeight" 26 "alt" "Posit Open Source" "class" "h-6.5") }}
+          </span>
         </a>
         <p class="text-sm text-gray-600 dark:text-gray-300">
           Open source software and tools for data science.

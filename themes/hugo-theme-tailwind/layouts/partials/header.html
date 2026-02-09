@@ -1,9 +1,10 @@
 <div class="flex flex-row gap justify-between w-full max-w-[1344px] mx-auto px-4 sm:px-6 lg:px-8 h-12 my-4 relative z-50">
   <div class="flex-none content-center relative z-50">
-    <a href="{{ relLangURL "" }}" class="">
-      <img class="h-6.5 dark:hidden" src='{{ "images/posit-open-source-logo-light.png" | relURL }}' alt="logo">
-      <img class="h-6.5 hidden dark:block" src='{{ "images/posit-open-source-logo-dark.png" | relURL }}'
-        alt="logo">
+    <a href="{{ relLangURL "" }}" class="block dark:hidden">
+      {{ partial "responsive_image_fixed.html" (dict "imagePath" "posit-open-source-logo-light.png" "baseHeight" 26 "alt" "Posit Open Source" "class" "h-6.5") }}
+    </a>
+    <a href="{{ relLangURL "" }}" class="hidden dark:block">
+      {{ partial "responsive_image_fixed.html" (dict "imagePath" "posit-open-source-logo-dark.png" "baseHeight" 26 "alt" "Posit Open Source" "class" "h-6.5") }}
     </a>
   </div>
   {{ if .Site.Params.header.title }}

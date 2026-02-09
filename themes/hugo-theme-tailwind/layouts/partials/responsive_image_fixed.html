@@ -1,0 +1,71 @@
+{{/*
+  Renders a responsive image with fixed dimensions (1x/2x/3x DPI variants)
+
+  Parameters:
+  - image: Hugo resource object OR imagePath string (required)
+  - imagePath: Path to image in assets/ directory (optional, if image not provided)
+  - baseHeight: Base height in pixels (required)
+  - baseWidth: Base width in pixels (optional - if omitted, width scales proportionally)
+  - alt: Alt text (required)
+  - class: CSS classes (optional)
+  - method: "fit" or "fill" - default "fit" (optional, only used if baseWidth is provided)
+*/}}
+{{ $image := .image }}
+{{ $imagePath := .imagePath }}
+{{ $baseHeight := .baseHeight }}
+{{ $baseWidth := .baseWidth }}
+{{ $alt := .alt }}
+{{ $class := .class }}
+{{ $method := default "fit" .method }}
+
+{{ if not $image }}
+  {{ $image = resources.Get $imagePath }}
+{{ end }}
+{{ if $image }}
+  {{ if eq $image.MediaType.SubType "svg" }}
+    <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
+  {{ else }}
+    {{ $size1x := $baseHeight }}
+    {{ $size2x := mul $baseHeight 2 }}
+    {{ $size3x := mul $baseHeight 3 }}
+    {{ $img1x := "" }}
+    {{ $img2x := "" }}
+    {{ $img3x := "" }}
+    {{ if $baseWidth }}
+      {{ $width1x := $baseWidth }}
+      {{ $width2x := mul $baseWidth 2 }}
+      {{ $width3x := mul $baseWidth 3 }}
+      {{ $dimensions1x := printf "%dx%d %s" $width1x $size1x $method }}
+      {{ $dimensions2x := printf "%dx%d %s" $width2x $size2x $method }}
+      {{ $dimensions3x := printf "%dx%d %s" $width3x $size3x $method }}
+      {{ $img1x = $image.Process $dimensions1x }}
+      {{ $img2x = $image.Process $dimensions2x }}
+      {{ $img3x = $image.Process $dimensions3x }}
+    {{ else }}
+      {{ $dimensions1x := printf "x%d" $size1x }}
+      {{ $dimensions2x := printf "x%d" $size2x }}
+      {{ $dimensions3x := printf "x%d" $size3x }}
+      {{ $img1x = $image.Resize $dimensions1x }}
+      {{ $img2x = $image.Resize $dimensions2x }}
+      {{ $img3x = $image.Resize $dimensions3x }}
+    {{ end }}
+    {{ $img1xWebp := $img1x.Process "webp" }}
+    {{ $img2xWebp := $img2x.Process "webp" }}
+    {{ $img3xWebp := $img3x.Process "webp" }}
+    <picture>
+      <source
+        type="image/webp"
+        srcset="{{ $img1xWebp.RelPermalink }} 1x,
+                {{ $img2xWebp.RelPermalink }} 2x,
+                {{ $img3xWebp.RelPermalink }} 3x" />
+      <img
+        src="{{ $img1x.RelPermalink }}"
+        srcset="{{ $img1x.RelPermalink }} 1x,
+                {{ $img2x.RelPermalink }} 2x,
+                {{ $img3x.RelPermalink }} 3x"
+        alt="{{ $alt }}"
+        class="{{ $class }}"
+        loading="lazy" />
+    </picture>
+  {{ end }}
+{{ end }}
