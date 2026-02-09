@@ -17,9 +17,9 @@
             {{ $dimensions1x := printf "%dx%d" $size1x $size1x }}
             {{ $dimensions2x := printf "%dx%d" $size2x $size2x }}
             {{ $dimensions3x := printf "%dx%d" $size3x $size3x }}
-            {{ $img1x := $image.Fill $dimensions1x }}
-            {{ $img2x := $image.Fill $dimensions2x }}
-            {{ $img3x := $image.Fill $dimensions3x }}
+            {{ $img1x := $image.Fit $dimensions1x }}
+            {{ $img2x := $image.Fit $dimensions2x }}
+            {{ $img3x := $image.Fit $dimensions3x }}
             {{ $img1xWebp := $img1x.Process "webp" }}
             {{ $img2xWebp := $img2x.Process "webp" }}
             {{ $img3xWebp := $img3x.Process "webp" }}
