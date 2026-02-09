@@ -7,7 +7,8 @@
         {{ $image := .Resources.Get .Params.image }}
         {{ if $image }}
           <div class="flex-shrink-0 w-48 h-48 flex items-center justify-center bg-white dark:bg-blue-900 rounded-lg p-4">
-            <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="max-h-full max-w-full object-contain">
+            {{ $baseSize := mul 40 4 }}
+            {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt" .Title "class" "max-h-full max-w-full object-contain" "method" "fit") }}
           </div>
         {{ end }}
       {{ end }}

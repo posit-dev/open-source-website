@@ -2,7 +2,7 @@
 {{- if not hugo.IsDevelopment }}
   {{- $built = $built | minify | fingerprint -}}
 {{ end -}}
-<script src="{{ $built.RelPermalink }}"></script>
+<script src="{{ $built.RelPermalink }}" defer></script>
 
 {{- if (findRE "<pre" .Content 1) }}
 <!-- hidden element for JS to get inner element and tailwind to output related CSS classes -->
@@ -20,7 +20,7 @@
 {{- if not hugo.IsDevelopment }}
   {{- $jsCopy = $jsCopy | minify | fingerprint -}}
 {{ end -}}
-<script src="{{ $jsCopy.RelPermalink }}"></script>
+<script src="{{ $jsCopy.RelPermalink }}" defer></script>
 {{ end -}}
 
 {{ if .Params.asciinema }}{{ partial "asciinema.html" . }}{{ end }}

@@ -7,8 +7,9 @@
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}
+  {{ $baseSize := mul 36 4 }}
   <div class="w-36 h-36 mb-4 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
-    <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+    {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt" .Title "class" "w-full h-full object-cover" "method" "fit") }}
   </div>
   {{ end }}
   {{ end }}

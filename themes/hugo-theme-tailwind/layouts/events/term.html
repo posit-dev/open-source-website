@@ -6,7 +6,46 @@
       {{ $image := .Resources.Get .Params.image }}
       {{ if $image }}
         <div class="w-full h-64 md:h-96 bg-gray-200 dark:bg-blue-900">
-          <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+          {{ if eq $image.MediaType.SubType "svg" }}
+          <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy">
+          {{ else }}
+          {{ $heightMobile := mul 64 4 }}
+          {{ $heightDesktop := mul 96 4 }}
+          {{ $widths := slice 600 800 1200 1600 }}
+          {{ $imagesMobile := dict }}
+          {{ $imagesDesktop := dict }}
+          {{ $imagesMobileWebp := dict }}
+          {{ $imagesDesktopWebp := dict }}
+          {{ range $widths }}
+            {{ $w := . }}
+            {{ $dimensionsMobile := printf "%dx%d" $w $heightMobile }}
+            {{ $dimensionsDesktop := printf "%dx%d" $w $heightDesktop }}
+            {{ $resizedMobile := $image.Fill $dimensionsMobile }}
+            {{ $resizedDesktop := $image.Fill $dimensionsDesktop }}
+            {{ $imagesMobile = merge $imagesMobile (dict (string $w) $resizedMobile) }}
+            {{ $imagesDesktop = merge $imagesDesktop (dict (string $w) $resizedDesktop) }}
+            {{ $imagesMobileWebp = merge $imagesMobileWebp (dict (string $w) ($resizedMobile.Process "webp")) }}
+            {{ $imagesDesktopWebp = merge $imagesDesktopWebp (dict (string $w) ($resizedDesktop.Process "webp")) }}
+          {{ end }}
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              type="image/webp"
+              srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $imagesDesktopWebp (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
+              sizes="(min-width: 1024px) 1024px, 100vw" />
+            <source
+              type="image/webp"
+              srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $imagesMobileWebp (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
+              sizes="100vw" />
+            <img
+              src="{{ (index $imagesDesktop "1200").RelPermalink }}"
+              srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $imagesDesktop (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              alt="{{ .Title }}"
+              class="w-full h-full object-cover"
+              loading="lazy" />
+          </picture>
+          {{ end }}
         </div>
       {{ end }}
     {{ end }}
