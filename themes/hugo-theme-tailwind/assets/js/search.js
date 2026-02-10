@@ -157,10 +157,10 @@
     const items = searchResultsList.querySelectorAll('.search-result-item');
     items.forEach((item, index) => {
       if (index === selectedIndex) {
-        item.querySelector('a').classList.add('bg-gray-50', 'dark:bg-gray-700');
+        item.querySelector('a').classList.add('bg-gray-100', 'dark:bg-gray-600');
         item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       } else {
-        item.querySelector('a').classList.remove('bg-gray-50', 'dark:bg-gray-700');
+        item.querySelector('a').classList.remove('bg-gray-100', 'dark:bg-gray-600');
       }
     });
   }
