@@ -2,7 +2,7 @@
 
 [build]
   publish = "public"
-  command = "npm ci && npm run build-tailwind && hugo --minify"
+  command = "npm ci && npm run build-tailwind && hugo --minify && npm run build-search"
 
 [build.environment]
   HUGO_VERSION = "0.153.2"

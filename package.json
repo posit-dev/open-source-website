@@ -6,12 +6,14 @@
     "dev-hugo": "hugo server -D --disableFastRender",
     "dev-tailwind": "npx @tailwindcss/cli -i assets/css/main.css -o assets/css/index.css --watch",
     "build-tailwind": "npx @tailwindcss/cli -i assets/css/main.css -o assets/css/index.css --minify",
+    "build-search": "npx pagefind --site public",
     "dev": "npm-run-all --parallel dev-hugo dev-tailwind"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.17",
     "@tailwindcss/typography": "^0.5.13",
     "npm-run-all": "^4.1.5",
+    "pagefind": "^1.4.0",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.0.17"
