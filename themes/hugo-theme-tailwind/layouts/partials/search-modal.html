@@ -1,0 +1,64 @@
+<!-- Search Modal -->
+<div id="search-modal" class="hidden fixed inset-0 z-[100] overflow-y-auto" aria-labelledby="search-modal-title" role="dialog" aria-modal="true">
+  <!-- Backdrop -->
+  <div class="fixed inset-0 bg-gray-900/75 dark:bg-black/80 transition-opacity" id="search-backdrop"></div>
+
+  <!-- Modal Content -->
+  <div class="flex min-h-full items-start justify-center p-4 sm:p-6 md:p-20">
+    <div class="relative w-full max-w-2xl transform overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
+      <!-- Search Input -->
+      <div class="relative">
+        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+          <i class="h-5 w-5 text-gray-400">
+            {{ partial "icon.html" "search" }}
+          </i>
+        </div>
+        <input
+          type="text"
+          id="search-input"
+          class="block w-full border-0 bg-transparent py-4 pl-11 pr-4 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-0 text-base sm:text-lg outline-none"
+          placeholder="Search..."
+          autocomplete="off"
+          spellcheck="false"
+        >
+      </div>
+
+      <!-- Results Container -->
+      <div id="search-results" class="max-h-96 scroll-py-2 overflow-y-auto border-t border-gray-200 dark:border-gray-700">
+        <!-- Loading state -->
+        <div id="search-loading" class="hidden py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+          Searching...
+        </div>
+
+        <!-- Empty state -->
+        <div id="search-empty" class="py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+          Type to search
+        </div>
+
+        <!-- No results state -->
+        <div id="search-no-results" class="hidden py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+          No results found
+        </div>
+
+        <!-- Results list -->
+        <ul id="search-results-list" class="divide-y divide-gray-200 dark:divide-gray-700"></ul>
+      </div>
+
+      <!-- Footer -->
+      <div class="flex items-center justify-between border-t border-gray-200 dark:border-gray-700 px-4 py-3 text-xs text-gray-500 dark:text-gray-400">
+        <div class="flex items-center gap-3">
+          <kbd class="rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 px-2 py-1 font-mono">↑↓</kbd>
+          <span>Navigate</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <kbd class="rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 px-2 py-1 font-mono">↵</kbd>
+          <span>Select</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <kbd class="rounded border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 px-2 py-1 font-mono">ESC</kbd>
+          <span>Close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

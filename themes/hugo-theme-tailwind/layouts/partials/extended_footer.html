@@ -25,4 +25,6 @@
 
 {{ if .Params.asciinema }}{{ partial "asciinema.html" . }}{{ end }}
 
+{{- partial "search-modal.html" . -}}
+
 {{- partial "custom_footer.html" . -}}
