@@ -39,6 +39,9 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: hugo --minify
 
+      - name: Build search index
+        run: npm run build-search
+
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v3.0
         with:
