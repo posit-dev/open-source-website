@@ -18,6 +18,10 @@ build-tailwind:
 build: build-tailwind
     hugo
 
+# Build the search index with Pagefind
+build-search:
+    npm run build-search
+
 quarto-preview:
     uv run quarto preview
 
