@@ -1,89 +1,230 @@
 (function() {
-  const searchParams = new URLSearchParams(window.location.search);
-  const keywords = searchParams.get('search').trim();
-  const searchInput = document.getElementById('search-input');
-  const resultContainer = document.getElementById('search-result');
-  const emptyResult = document.getElementById('search-result-empty');
+  let pagefind = null;
+  let selectedIndex = -1;
 
-  if (keywords) {
-    searchInput.value = keywords;
-    search(keywords);
-  } else {
-    return;
+  // Modal elements
+  const modal = document.getElementById('search-modal');
+  const backdrop = document.getElementById('search-backdrop');
+  const searchInput = document.getElementById('search-input');
+  const searchLoading = document.getElementById('search-loading');
+  const searchEmpty = document.getElementById('search-empty');
+  const searchNoResults = document.getElementById('search-no-results');
+  const searchResultsList = document.getElementById('search-results-list');
+
+  // Toggle buttons
+  const searchToggle = document.getElementById('search-toggle');
+  const searchToggleMobile = document.getElementById('search-toggle-mobile');
+
+  // Initialize Pagefind
+  async function initPagefind() {
+    if (!pagefind) {
+      pagefind = await import('/pagefind/pagefind.js');
+    }
+    return pagefind;
   }
 
-  const fuseOptions = {
-    ignoreLocation: true,
-    includeScore: true,
-    includeMatches: true,
-    minMatchCharLength: searchOptions.minMatchCharLength,
-    threshold: searchOptions.threshold,
-    // refer layouts/search/search.json
-    keys: [
-      {name: "title", weight: 0.8},
-      {name: "content", weight: 0.5},
-      {name: "tags", weight: 0.2},
-      {name: "categories", weight: 0.2},
-    ],
-  };
+  // Open modal
+  function openModal() {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      searchInput.focus();
+    }, 100);
+  }
 
-  function search(keywords) {
-    fetch('./index.json').then(response => response.json()).then(data => {
-      const fuse = new Fuse(data, fuseOptions);
-      const result = fuse.search(keywords);
-      if (result.length > 0) {
-        showResult(keywords, result);
-        emptyResult.classList.add('hidden');
+  // Close modal
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+    searchInput.value = '';
+    clearResults();
+    selectedIndex = -1;
+  }
+
+  // Clear results
+  function clearResults() {
+    searchResultsList.innerHTML = '';
+    searchLoading.classList.add('hidden');
+    searchEmpty.classList.remove('hidden');
+    searchNoResults.classList.add('hidden');
+  }
+
+  // Show loading state
+  function showLoading() {
+    searchEmpty.classList.add('hidden');
+    searchNoResults.classList.add('hidden');
+    searchLoading.classList.remove('hidden');
+  }
+
+  // Show no results
+  function showNoResults() {
+    searchLoading.classList.add('hidden');
+    searchEmpty.classList.add('hidden');
+    searchNoResults.classList.remove('hidden');
+    searchResultsList.innerHTML = '';
+  }
+
+  // Create result item HTML
+  function createResultItem(result, index) {
+    const li = document.createElement('li');
+    li.className = 'search-result-item cursor-pointer';
+    li.dataset.index = index;
+    li.dataset.url = result.url;
+
+    const link = document.createElement('a');
+    link.href = result.url;
+    link.className = 'block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors';
+
+    // Title
+    const title = document.createElement('div');
+    title.className = 'text-sm font-medium text-gray-900 dark:text-gray-100';
+    title.innerHTML = result.meta.title || 'Untitled';
+
+    // Excerpt
+    const excerpt = document.createElement('div');
+    excerpt.className = 'mt-1 text-sm text-gray-600 dark:text-gray-400 line-clamp-2';
+    excerpt.innerHTML = result.excerpt || '';
+
+    link.appendChild(title);
+    link.appendChild(excerpt);
+    li.appendChild(link);
+
+    return li;
+  }
+
+  // Perform search
+  async function performSearch(query) {
+    if (!query || query.trim() === '') {
+      clearResults();
+      return;
+    }
+
+    showLoading();
+
+    try {
+      const pf = await initPagefind();
+      const search = await pf.search(query);
+
+      if (search.results.length === 0) {
+        showNoResults();
+        return;
+      }
+
+      // Load and display results
+      searchLoading.classList.add('hidden');
+      searchEmpty.classList.add('hidden');
+      searchNoResults.classList.add('hidden');
+      searchResultsList.innerHTML = '';
+
+      // Limit to first 10 results
+      const resultsToShow = search.results.slice(0, 10);
+
+      for (const [index, result] of resultsToShow.entries()) {
+        const data = await result.data();
+        const resultItem = createResultItem(data, index);
+        searchResultsList.appendChild(resultItem);
+      }
+
+      selectedIndex = -1;
+    } catch (error) {
+      console.error('Search error:', error);
+      showNoResults();
+    }
+  }
+
+  // Update selected result
+  function updateSelection() {
+    const items = searchResultsList.querySelectorAll('.search-result-item');
+    items.forEach((item, index) => {
+      if (index === selectedIndex) {
+        item.querySelector('a').classList.add('bg-gray-50', 'dark:bg-gray-700');
+        item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       } else {
-        resultContainer.innerHTML = '';
-        emptyResult.classList.remove('hidden');
+        item.querySelector('a').classList.remove('bg-gray-50', 'dark:bg-gray-700');
       }
     });
   }
 
-  const resultTemplate = `
-  <article class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700" id="result-{{= it.index }}">
-    <h2 class="text-4xl font-semibold text-slate-800 dark:text-slate-200">
-      <a href="{{= it.permalink }}">{{! it.title }}</a>
-    </h2>
-    <h3 class="my-4 text-large text-slate-600 dark:text-slate-300">
-      {{! it.snippet }}
-    </h3>
-    <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
-      {{~ it.categories :v }}
-      <li>
-        <a href="{{! v.RelPermalink }}"
-          class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
-          {{! v.LinkTitle }}
-        </a>
-      </li>
-      {{~}}
-      {{~ it.tags :v }}
-      <li>
-        <a href="{{! v.RelPermalink }}"
-          class="flex flex-row text-sm mr-2 py-1">
-          {{= it.tagIcon }}
-          <span class="ml-0">{{! v.LinkTitle }}</span>
-        </a>
-      </li>
-      {{~}}
-    </ul>
-  </article>
-  `;
-
-  function showResult(keywords, result) {
-    const templateFn = doT.template(resultTemplate);
-    const tagIcon = document.getElementById('tag-icon').innerHTML;
-    resultContainer.innerHTML = '';
-    for (const [index, entry] of result.entries()) {
-      const item = entry.item;
-      const content = entry.item.content;
-      item.snippet = content.substring(0, searchOptions.summaryInclude * 2) + '&hellip;';
-      item.tagIcon = tagIcon;
-      item.index = index;
-      resultContainer.innerHTML += templateFn(item);
+  // Navigate to selected result
+  function navigateToSelected() {
+    const items = searchResultsList.querySelectorAll('.search-result-item');
+    if (selectedIndex >= 0 && selectedIndex < items.length) {
+      const url = items[selectedIndex].dataset.url;
+      window.location.href = url;
     }
-    const instance = new Mark(resultContainer);
-    instance.mark(keywords);
   }
-})()
+
+  // Event Listeners
+
+  // Open modal on button click
+  if (searchToggle) {
+    searchToggle.addEventListener('click', openModal);
+  }
+  if (searchToggleMobile) {
+    searchToggleMobile.addEventListener('click', openModal);
+  }
+
+  // Close modal on backdrop click
+  if (backdrop) {
+    backdrop.addEventListener('click', closeModal);
+  }
+
+  // Handle search input
+  let searchTimeout;
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        performSearch(e.target.value);
+      }, 300); // Debounce 300ms
+    });
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    // ESC to close modal
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      e.preventDefault();
+      closeModal();
+      return;
+    }
+
+    // Only handle other keys if modal is open
+    if (modal.classList.contains('hidden')) {
+      return;
+    }
+
+    const items = searchResultsList.querySelectorAll('.search-result-item');
+    const maxIndex = items.length - 1;
+
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        selectedIndex = Math.min(selectedIndex + 1, maxIndex);
+        updateSelection();
+        break;
+
+      case 'ArrowUp':
+        e.preventDefault();
+        selectedIndex = Math.max(selectedIndex - 1, -1);
+        updateSelection();
+        break;
+
+      case 'Enter':
+        e.preventDefault();
+        navigateToSelected();
+        break;
+    }
+  });
+
+  // Click on result
+  if (searchResultsList) {
+    searchResultsList.addEventListener('click', (e) => {
+      const resultItem = e.target.closest('.search-result-item');
+      if (resultItem) {
+        const url = resultItem.dataset.url;
+        window.location.href = url;
+      }
+    });
+  }
+})();

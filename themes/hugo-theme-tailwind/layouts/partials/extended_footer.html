@@ -26,5 +26,10 @@
 {{ if .Params.asciinema }}{{ partial "asciinema.html" . }}{{ end }}
 
 {{- partial "search-modal.html" . -}}
+{{- $jsSearch := resources.Get "js/search.js" | js.Build "search.js" -}}
+{{- if not hugo.IsDevelopment }}
+  {{- $jsSearch = $jsSearch | minify | fingerprint -}}
+{{ end -}}
+<script src="{{ $jsSearch.RelPermalink }}" defer></script>
 
 {{- partial "custom_footer.html" . -}}
