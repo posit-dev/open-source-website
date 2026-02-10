@@ -83,7 +83,7 @@
       const img = document.createElement('img');
       img.src = result.meta.image;
       img.alt = result.meta.title || '';
-      img.className = 'w-full h-full object-cover';
+      img.className = 'w-full h-full object-contain';
       img.loading = 'lazy';
 
       imageContainer.appendChild(img);
