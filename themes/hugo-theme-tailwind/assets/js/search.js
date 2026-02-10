@@ -217,6 +217,11 @@
     const items = searchResultsList.querySelectorAll('.search-result-item');
     const maxIndex = items.length - 1;
 
+    // Only handle arrow keys and enter if there are results
+    if (items.length === 0) {
+      return;
+    }
+
     switch (e.key) {
       case 'ArrowDown':
         e.preventDefault();
