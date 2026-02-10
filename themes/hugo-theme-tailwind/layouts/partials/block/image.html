@@ -13,6 +13,7 @@
     <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ .RelPermalink }}"
       alt="{{ $alt }}" title="{{ $alt }}"
       loading="lazy"
+      data-pagefind-meta="image[src]"
     >
   </figure>
   {{- else -}}
@@ -36,7 +37,7 @@
         {{- end -}}
       {{- end -}}
     {{- end -}}" sizes="{{ $dataSzes }}" />
-    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ $actualImg.RelPermalink }}" width="{{ $src.Width }}" height="{{ $src.Height }}" alt="{{ $alt }}" title="{{ $alt }}" loading="lazy" />
+    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ $actualImg.RelPermalink }}" width="{{ $src.Width }}" height="{{ $src.Height }}" alt="{{ $alt }}" title="{{ $alt }}" loading="lazy" data-pagefind-meta="image[src]" />
   </picture>
   {{- end -}}
   <!-- or otherwise simply load the URL -->
@@ -45,6 +46,7 @@
     <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ .Params.image | safeURL }}"
       alt="{{ $alt }}" title="{{ $alt }}"
       loading="lazy"
+      data-pagefind-meta="image[src]"
     >
   </figure>
   {{- end -}}

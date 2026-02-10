@@ -73,7 +73,26 @@
 
     const link = document.createElement('a');
     link.href = result.url;
-    link.className = 'block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors';
+    link.className = 'flex gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors';
+
+    // Image (if available)
+    if (result.meta.image) {
+      const imageContainer = document.createElement('div');
+      imageContainer.className = 'flex-none w-16 h-16 rounded overflow-hidden bg-gray-100 dark:bg-gray-700';
+
+      const img = document.createElement('img');
+      img.src = result.meta.image;
+      img.alt = result.meta.title || '';
+      img.className = 'w-full h-full object-cover';
+      img.loading = 'lazy';
+
+      imageContainer.appendChild(img);
+      link.appendChild(imageContainer);
+    }
+
+    // Content container
+    const contentContainer = document.createElement('div');
+    contentContainer.className = 'flex-1 min-w-0';
 
     // Title
     const title = document.createElement('div');
@@ -85,8 +104,9 @@
     excerpt.className = 'mt-1 text-sm text-gray-600 dark:text-gray-400 line-clamp-2';
     excerpt.innerHTML = result.excerpt || '';
 
-    link.appendChild(title);
-    link.appendChild(excerpt);
+    contentContainer.appendChild(title);
+    contentContainer.appendChild(excerpt);
+    link.appendChild(contentContainer);
     li.appendChild(link);
 
     return li;
