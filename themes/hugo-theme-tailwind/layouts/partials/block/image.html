@@ -1,25 +1,18 @@
-{{- $page := . -}}
-{{- $addPagefindMeta := false -}}
-{{- if reflect.IsMap . -}}
-  {{- $page = .page -}}
-  {{- $addPagefindMeta = .addPagefindMeta | default false -}}
-{{- end -}}
-{{- $alt := $page.Title -}}
+{{- $alt := .Title -}}
 
 {{- $respSizes := slice "960" "1600" -}}
 {{- $hint := "photo" -}}
 {{- $filter := "box" -}}
-{{- if $page.Params.image -}}
-  {{- $dest := $page.Params.image | safeURL -}}
+{{- if .Params.image -}}
+  {{- $dest := .Params.image | safeURL -}}
   {{- $dest = path.Join (path.Dir $dest) (path.Base $dest) -}}
 
-  {{- with $page.Resources.Get $dest -}}
+  {{- with .Resources.Get $dest -}}
   {{- if eq .MediaType.SubType "svg" -}}
   <figure>
     <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ .RelPermalink }}"
       alt="{{ $alt }}" title="{{ $alt }}"
       loading="lazy"
-      {{- if $addPagefindMeta }} data-pagefind-meta="image[src]"{{ end }}
     >
   </figure>
   {{- else -}}
@@ -43,16 +36,15 @@
         {{- end -}}
       {{- end -}}
     {{- end -}}" sizes="{{ $dataSzes }}" />
-    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ $actualImg.RelPermalink }}" width="{{ $src.Width }}" height="{{ $src.Height }}" alt="{{ $alt }}" title="{{ $alt }}" loading="lazy"{{- if $addPagefindMeta }} data-pagefind-meta="image[src]"{{ end }} />
+    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ $actualImg.RelPermalink }}" width="{{ $src.Width }}" height="{{ $src.Height }}" alt="{{ $alt }}" title="{{ $alt }}" loading="lazy" />
   </picture>
   {{- end -}}
   <!-- or otherwise simply load the URL -->
   {{- else -}}
   <figure>
-    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ $page.Params.image | safeURL }}"
+    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ .Params.image | safeURL }}"
       alt="{{ $alt }}" title="{{ $alt }}"
       loading="lazy"
-      {{- if $addPagefindMeta }} data-pagefind-meta="image[src]"{{ end }}
     >
   </figure>
   {{- end -}}

@@ -1,5 +1,18 @@
 {{ define "main" }}
 <div class="flex flex-col w-full max-w-4xl lg:max-w-5xl">
+  <!-- Hidden Pagefind Image -->
+  {{ if .Params.image }}
+    {{ $image := .Resources.Get .Params.image }}
+    {{ if $image }}
+      {{ if ne $image.MediaType.SubType "svg" }}
+        {{ $pagefindImg := $image.Fit "128x128" }}
+        <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+      {{ else }}
+        <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
   <!-- Person Profile Section -->
   <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-blue-950">
     <div class="flex flex-col md:flex-row gap-6 p-6">
@@ -8,7 +21,7 @@
         {{ if $image }}
           <div class="flex-shrink-0">
             {{ $baseSize := mul 48 4 }}
-            {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt" .Title "class" "w-48 h-48 rounded-lg object-cover shadow-md" "method" "fit" "addPagefindMeta" true) }}
+            {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt" .Title "class" "w-48 h-48 rounded-lg object-cover shadow-md" "method" "fit") }}
           </div>
         {{ end }}
       {{ end }}

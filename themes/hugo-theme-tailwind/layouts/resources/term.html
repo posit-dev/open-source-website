@@ -1,5 +1,18 @@
 {{ define "main" }}
 <div class="flex flex-col w-full max-w-4xl lg:max-w-5xl">
+  <!-- Hidden Pagefind Image -->
+  {{ if .Params.image }}
+    {{ $image := .Resources.Get .Params.image }}
+    {{ if $image }}
+      {{ if ne $image.MediaType.SubType "svg" }}
+        {{ $pagefindImg := $image.Fit "128x128" }}
+        <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+      {{ else }}
+        <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
   <!-- Resource Profile Section -->
   <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-blue-950">
     {{ if .Params.image }}
@@ -7,7 +20,7 @@
     {{ if $image }}
     <div class="w-full h-64 bg-gray-200 dark:bg-blue-900">
       {{ if eq $image.MediaType.SubType "svg" }}
-      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy" data-pagefind-meta="image[src]">
+      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy">
       {{ else }}
       {{ $height := mul 64 4 }}
       {{ $widths := slice 600 800 1200 1600 }}
@@ -31,8 +44,7 @@
           sizes="(min-width: 1024px) 1024px, 100vw"
           alt="{{ .Title }}"
           class="w-full h-full object-cover"
-          loading="lazy"
-          data-pagefind-meta="image[src]" />
+          loading="lazy" />
       </picture>
       {{ end }}
     </div>

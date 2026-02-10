@@ -4,9 +4,22 @@
 
 {{ define "main" }}
 <div class="flex flex-col mt-6">
+    <!-- Hidden Pagefind Image -->
+    {{ if .Params.image }}
+      {{ $image := .Resources.Get .Params.image }}
+      {{ if $image }}
+        {{ if ne $image.MediaType.SubType "svg" }}
+          {{ $pagefindImg := $image.Fit "128x128" }}
+          <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+        {{ else }}
+          <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
     <div>
       <a href="{{ .RelPermalink }}">
-        {{ partial "block/image.html" (dict "page" . "addPagefindMeta" true) }}
+        {{ partial "block/image.html" . }}
       </a>
     </div>
     <div class="flex flex-col gap-y-3 p-6">

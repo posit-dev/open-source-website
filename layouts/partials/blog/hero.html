@@ -11,7 +11,7 @@
   {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
     {{- /* It's a resource */ -}}
     {{- if eq $heroImg.MediaType.SubType "svg" -}}
-      <img class="w-full h-full object-cover rounded-xl" src="{{ $heroImg.RelPermalink }}" alt="{{ $alt }}" data-pagefind-meta="image[src]" />
+      <img class="w-full h-full object-cover rounded-xl" src="{{ $heroImg.RelPermalink }}" alt="{{ $alt }}" />
     {{- else -}}
       {{- $respSizes := slice "640" "960" "1280" "1600" "1920" -}}
       <picture>
@@ -31,12 +31,11 @@
           {{- end -}}" sizes="100vw" />
         <img class="w-full h-full object-cover rounded-xl"
              src="{{ ($heroImg.Resize "1280x jpg box").RelPermalink }}"
-             alt="{{ $alt }}"
-             data-pagefind-meta="image[src]" />
+             alt="{{ $alt }}" />
       </picture>
     {{- end -}}
   {{- else -}}
     {{- /* It's a URL string */ -}}
-    <img class="w-full h-full object-cover rounded-xl" src="{{ $heroImg }}" alt="{{ $alt }}" data-pagefind-meta="image[src]" />
+    <img class="w-full h-full object-cover rounded-xl" src="{{ $heroImg }}" alt="{{ $alt }}" />
   {{- end -}}
 </div>

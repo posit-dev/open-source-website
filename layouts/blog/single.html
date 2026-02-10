@@ -4,6 +4,18 @@
 
 {{ define "main" }}
 <article class="flex flex-col w-full relative">
+  <!-- Hidden Pagefind Image -->
+  {{ $heroImg := partial "blog/thumbnail.html" . }}
+  {{ $imgType := printf "%T" $heroImg }}
+  {{ if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") }}
+    {{ if ne $heroImg.MediaType.SubType "svg" }}
+      {{ $pagefindImg := $heroImg.Fit "128x128" }}
+      <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+    {{ else }}
+      <img src="{{ $heroImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+    {{ end }}
+  {{ end }}
+
   {{- /* Hero image (unless nohero is true) */ -}}
   {{- if not .Params.nohero -}}
     {{ partial "blog/hero.html" . }}
