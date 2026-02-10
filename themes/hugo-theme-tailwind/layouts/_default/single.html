@@ -6,7 +6,7 @@
 <div class="flex flex-col mt-6">
     <div>
       <a href="{{ .RelPermalink }}">
-        {{ partial "block/image.html" . }}
+        {{ partial "block/image.html" (dict "page" . "addPagefindMeta" true) }}
       </a>
     </div>
     <div class="flex flex-col gap-y-3 p-6">
