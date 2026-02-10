@@ -8,7 +8,7 @@
         {{ if $image }}
           <div class="flex-shrink-0">
             {{ $baseSize := mul 48 4 }}
-            {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt" .Title "class" "w-48 h-48 rounded-lg object-cover shadow-md" "method" "fit") }}
+            {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt" .Title "class" "w-48 h-48 rounded-lg object-cover shadow-md" "method" "fit" "addPagefindMeta" true) }}
           </div>
         {{ end }}
       {{ end }}

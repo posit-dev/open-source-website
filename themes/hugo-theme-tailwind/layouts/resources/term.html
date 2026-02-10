@@ -7,7 +7,7 @@
     {{ if $image }}
     <div class="w-full h-64 bg-gray-200 dark:bg-blue-900">
       {{ if eq $image.MediaType.SubType "svg" }}
-      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy">
+      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy" data-pagefind-meta="image[src]">
       {{ else }}
       {{ $height := mul 64 4 }}
       {{ $widths := slice 600 800 1200 1600 }}
@@ -31,7 +31,8 @@
           sizes="(min-width: 1024px) 1024px, 100vw"
           alt="{{ .Title }}"
           class="w-full h-full object-cover"
-          loading="lazy" />
+          loading="lazy"
+          data-pagefind-meta="image[src]" />
       </picture>
       {{ end }}
     </div>

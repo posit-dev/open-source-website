@@ -9,6 +9,7 @@
   - alt: Alt text (required)
   - class: CSS classes (optional)
   - method: "fit" or "fill" - default "fit" (optional, only used if baseWidth is provided)
+  - addPagefindMeta: Add data-pagefind-meta attribute for search indexing (optional, default false)
 */}}
 {{ $image := .image }}
 {{ $imagePath := .imagePath }}
@@ -17,13 +18,14 @@
 {{ $alt := .alt }}
 {{ $class := .class }}
 {{ $method := default "fit" .method }}
+{{ $addPagefindMeta := .addPagefindMeta | default false }}
 
 {{ if not $image }}
   {{ $image = resources.Get $imagePath }}
 {{ end }}
 {{ if $image }}
   {{ if eq $image.MediaType.SubType "svg" }}
-    <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
+    <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy"{{- if $addPagefindMeta }} data-pagefind-meta="image[src]"{{ end }}>
   {{ else }}
     {{ $size1x := $baseHeight }}
     {{ $size2x := mul $baseHeight 2 }}
@@ -65,7 +67,7 @@
                 {{ $img3x.RelPermalink }} 3x"
         alt="{{ $alt }}"
         class="{{ $class }}"
-        loading="lazy" />
+        loading="lazy"{{- if $addPagefindMeta }} data-pagefind-meta="image[src]"{{ end }} />
     </picture>
   {{ end }}
 {{ end }}
