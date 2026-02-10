@@ -78,7 +78,7 @@
     // Image (if available)
     if (result.meta.image) {
       const imageContainer = document.createElement('div');
-      imageContainer.className = 'flex-none w-16 h-16 rounded overflow-hidden bg-gray-100 dark:bg-gray-700';
+      imageContainer.className = 'flex-none w-16 h-16 rounded overflow-hidden';
 
       const img = document.createElement('img');
       img.src = result.meta.image;
