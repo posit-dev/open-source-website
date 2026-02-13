@@ -1,15 +1,336 @@
 ---
-title: "dplyr"
-description: "A grammar of data manipulation for R"
-website: "https://dplyr.tidyverse.org/"
-github: "tidyverse/dplyr"
+title: dplyr
+description: 'dplyr: A grammar of data manipulation'
+website: https://dplyr.tidyverse.org/
+github: tidyverse/dplyr
 people:
+- Hadley Wickham
+- Lionel Henry
+- Davis Vaughan
+- Mine Çetinkaya-Rundel
+- Jenny Bryan
+- Christophe Dervieux
+- Gábor Csárdi
+- Simon Couch
+- Neal Richardson
+- Tomasz Kalinowski
+- Charlotte Wickham
+- Carson Sievert
+- Barret Schloerke
+- Jeroen Janssens
+- Joe Cheng
+image: dplyr.png
+languages:
+- R
+external:
+  title: dplyr
+  repo: tidyverse/dplyr
+  description: 'dplyr: A grammar of data manipulation'
+  website: https://dplyr.tidyverse.org/
+  stars: 4997
+  forks: 2132
+  latest_release: '2026-02-04T11:30:38+00:00'
+  first_commit: '2012-10-28T13:39:17+00:00'
+  license: NOASSERTION
+  contributors:
+  - romainfrancois
+  - hadley
+  - krlmlr
+  - lionel-
+  - DavisVaughan
+  - batpigandme
+  - yutannihilation
+  - lindbrook
+  - jimhester
+  - kevinushey
+  - mine-cetinkaya-rundel
+  - hannes
+  - jennybc
+  - ilarischeinin
+  - zeehio
+  - s-fleck
+  - billdenney
+  - sfirke
+  - javierluraschi
+  - cosinequanon
+  - leondutoit
+  - earowang
+  - salim-b
+  - maurolepore
+  - cderv
+  - pimentel
+  - eibanez
+  - steveharoz
+  - coolbutuseless
+  - arunsrinivasan
+  - MichaelChirico
+  - markdly
+  - dgromer
+  - brianrice2
+  - eutwt
+  - xiaodaigh
+  - foo-bar-baz-qux
+  - quartin
+  - ncarchedi
+  - mkuhn
+  - ajschumacher
+  - bpbond
+  - rbdixon
+  - daattali
+  - filipefilardi
+  - gergness
+  - ianmcook
+  - imanuelcostigan
+  - jschelbert
+  - jayhesselberth
+  - aadler
+  - mutahiwachira
+  - Nick-Rivera
+  - NicolasCOUTIN
+  - npjc
+  - pkq
+  - uribo
+  - sinarueeger
+  - tklebel
+  - torockel
+  - zachary-foster
+  - joel23888
+  - michaelweylandt
+  - psychometrician
+  - shabbybanks
+  - apreshill
+  - bbrewington
+  - ijlyttle
+  - tjmahr
+  - benmarwick
+  - austenhead
+  - ajdamico
+  - Shurakai
+  - earino
+  - edwindj
+  - ethanwhite
+  - saurfang
+  - gaborcsardi
+  - jrnold
+  - jonthegeek
+  - karldw
+  - kenahoo
+  - justmarkham
+  - sandan
+  - mnel
+  - matthewjnield
+  - maelle
+  - seblammers
+  - smwindecker
+  - sastoudt
+  - scarioscia
+  - boshek
+  - russellpierce
+  - RodDalBen
+  - Robinlovelace
+  - robertzk
+  - rivaquiroga
+  - rbjanis
+  - cuixueqin
+  - shanepiesik
+  - shannonpileggi
+  - sharlagelfand
+  - smsaladi
+  - simon-anders
+  - simonpcouch
+  - szimmer
+  - StevenMMortimer
+  - DasAllFolks
+  - sowla
+  - takahisah
+  - mjsmith037
+  - mdlincoln
+  - Meghansaha
+  - mdsumner
+  - mtreadwell
+  - ilovemane
+  - MikeKSmith
+  - MikeJohnPage
+  - mikmart
+  - romatik
+  - nathancday
+  - nealrichardson
+  - Nelson-Gon
+  - nhanitvn
+  - thisisnic
+  - nicholasjhorton
+  - econpotter
+  - nmercadeb
+  - pablobernabeu
+  - patrickbarks
+  - paulstaab
+  - PedramNavid
+  - perezp44
+  - randyzwitch
+  - earcanal
+  - echasnovski
+  - eipi10
+  - eitsupi
+  - harrismcgehee
+  - tappek
+  - hoxo-m
+  - hs3180
+  - jbao
+  - jjchern
+  - krterberg
+  - laresbernardo
+  - lehy-probayes
+  - mister-frostee
+  - mnfn
+  - rivizan
+  - shea-parkes
+  - shearerp
+  - sixvable
+  - suzanbaert
+  - takapai
+  - teramonagi
+  - tverbeke
+  - wasdoff
+  - tcarnus
+  - TimTaylor
+  - Teebusch
+  - TSchiefer
+  - tomfaulhaber
+  - tomalrussell
+  - t-kalinowski
+  - tonyelhabr
+  - tonyfischetti
+  - trymnf
+  - UmbertoFasci
+  - VisruthSK
+  - wibeasley
+  - PursuitOfDataScience
+  - yihui
+  - zekiakyol
+  - arcoutte
+  - beansrowning
+  - pachevalier
+  - chayajones
+  - cwickham
+  - davidkane9
+  - delabj
+  - dpastoor
+  - DanChaltiel
+  - strengejacke
+  - dpprdan
+  - djnavarro
+  - smallperks
+  - davidtedfordholt
+  - davidbaniadam
+  - davidkretch
+  - dgrtwo
+  - eddelbuettel
+  - dirkschumacher
+  - cb4ds
+  - ellisvalentiner
+  - espinielli
+  - estern95
+  - etiennebacher
+  - fkohrt
+  - francisbarton
+  - FvD
+  - garrettgman
+  - nachti
+  - gregrahn
+  - zenggyu
+  - aaronwolen
+  - apeterson91
+  - davisadamw
+  - alexmcsw
+  - courtiol
+  - alyst
+  - ateucher
+  - cpsievert
+  - arielhasidim
+  - ahcyip
+  - schloerke
+  - bschneidr
+  - bjungbogati
+  - briandk
+  - cjyetman
+  - ccani007
+  - cathblatter
+  - NoRaincheck
+  - chrmongeau
+  - codetrainee
+  - csgillespie
+  - rundel
+  - Copepoda
+  - craigcitro
+  - joranE
+  - jlegewie
+  - jthurner
+  - JBrandenburg02
+  - GoldbergData
+  - casallas
+  - juliaapolonio
+  - jentjr
+  - katrinleinweber
+  - kirillseva
+  - laurakwiley
+  - leebunce
+  - LeeMendelowitz
+  - LluisRamon
+  - lorenzwalthert
+  - LCHansson
+  - mgperry
+  - MarceloRTonon
+  - mpaulacaldas
+  - markfairbanks
+  - markwestcott34
+  - weirdlittlespot
+  - charliejhadley
+  - mattsteadman
+  - gustavdelius
+  - Bisaloo
+  - Hzanib
+  - itcarroll
+  - IndrajeetPatil
+  - jackhannah95
+  - jwnorman
+  - jpeacock29
+  - JakeRuss
+  - elben10
+  - jimjam-slam
+  - JamesHWade
+  - JaneWall
+  - jdagilliland
+  - jasonmhoule
+  - jmuhlenkamp
+  - jeffreypullin
+  - jenren
+  - jrwinget
+  - jeroenjanssens
+  - jimvine
+  - jcheng5
+  - JohannesNE
+  - jonkeane
+  readme_image: man/figures/logo.png
+  last_updated: '2026-02-13T14:17:08.444491+00:00'
+  languages:
+  - R
+  people:
   - Hadley Wickham
   - Lionel Henry
   - Davis Vaughan
-image: "dplyr.png"
-languages:
-  - R
+  - Mine Çetinkaya-Rundel
+  - Jenny Bryan
+  - Christophe Dervieux
+  - Gábor Csárdi
+  - Simon Couch
+  - Neal Richardson
+  - Tomasz Kalinowski
+  - Charlotte Wickham
+  - Carson Sievert
+  - Barret Schloerke
+  - Jeroen Janssens
+  - Joe Cheng
+latest_release: '2026-02-04T11:30:38+00:00'
 ---
 
 dplyr is a grammar of data manipulation, providing a consistent set of verbs that help solve the most common data manipulation challenges. It offers functions for filtering, selecting, transforming, summarizing, and arranging data.

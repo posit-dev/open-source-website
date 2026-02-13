@@ -1,14 +1,404 @@
 ---
-title: "ggplot2"
-description: "A system for declaratively creating graphics based on the Grammar of Graphics"
-website: "https://ggplot2.tidyverse.org/"
-github: "tidyverse/ggplot2"
+title: ggplot2
+description: An implementation of the Grammar of Graphics in R
+website: https://ggplot2.tidyverse.org
+github: tidyverse/ggplot2
 people:
-  - Hadley Wickham
-  - Lionel Henry
-image: "ggplot2.png"
+- Hadley Wickham
+- Winston Chang
+- Teun Van den Brand
+- Thomas Lin Pedersen
+- Lionel Henry
+- Max Kuhn
+- Hassan Kibirige
+- Carson Sievert
+- Mine Çetinkaya-Rundel
+- Barret Schloerke
+- Charlotte Wickham
+- Christophe Dervieux
+- Davis Vaughan
+- Gina Reynolds
+- Gábor Csárdi
+- Jeroen Janssens
+- Jeroen Ooms
+image: ggplot2.png
 languages:
+- R
+external:
+  title: ggplot2
+  repo: tidyverse/ggplot2
+  description: An implementation of the Grammar of Graphics in R
+  website: https://ggplot2.tidyverse.org
+  stars: 6876
+  forks: 2132
+  latest_release: '2026-02-02T09:41:41+00:00'
+  first_commit: '2008-05-25T01:21:32+00:00'
+  license: NOASSERTION
+  contributors:
+  - hadley
+  - wch
+  - teunbrand
+  - thomasp85
+  - kohske
+  - yutannihilation
+  - clauswilke
+  - jiho
+  - lionel-
+  - paleolimbot
+  - karawoo
+  - BrianDiggs
+  - JakeRuss
+  - batpigandme
+  - joranE
+  - hrbrmstr
+  - MichaelChirico
+  - JoFrhwld
+  - jimhester
+  - eliocamp
+  - topepo
+  - dkahle
+  - has2k1
+  - jrnold
+  - olivroy
+  - krlmlr
+  - dpseidel
+  - cpsievert
+  - mine-cetinkaya-rundel
+  - tdhock
+  - baptiste
+  - mitchelloharawild
+  - foo-bar-baz-qux
+  - tmshn
+  - sierrajohnson
+  - kevinxperese
+  - pkq
+  - noamross
+  - richierocks
+  - bfgray3
+  - burchill
+  - wligtenberg
+  - javlon
+  - djmurphy420
+  - davidmorrison
+  - schloerke
+  - tonytonov
+  - jonocarroll
+  - mikmart
+  - coolbutuseless
+  - veraanadi
+  - microly
+  - stragu
+  - phispu
+  - zeehio
+  - seaaan
+  - goyalmunish
+  - malcolmbarrett
+  - Katiedaisey
+  - yjunechoe
+  - jdagilliland
+  - jankatins
+  - jan-glx
+  - gregrs-uk
+  - 92amartins
+  - edzer
+  - etiennebacher
+  - wibeasley
+  - steveharoz
+  - seancarmody
+  - aphalo
+  - orrymr
+  - mvkorpel
+  - michaelgrund
+  - melimore86
+  - mjskay
+  - mrtns
+  - PursuitOfDataScience
+  - agmurray
+  - bbolker
+  - johan-ejstrud
+  - klin333
+  - spaette
+  - mcol
+  - lindbrook
+  - katrinleinweber
+  - bbrewington
+  - thoolihan
+  - tjmahr
+  - Ahobert
+  - annennenne
+  - AnneLyng
+  - bjreisman
+  - benyamindsmith
+  - arcresu
+  - carywreams
+  - CateGitau
+  - infotroph
+  - connorlewis
+  - Maschette
+  - daniel-barnett
+  - kevinushey
+  - slowkow
+  - kelseymoty
+  - jfalip
+  - lwjohnst86
+  - ikosmidis
+  - davharris
+  - Bisaloo
+  - daattali
+  - delferts
+  - dylan-stark
+  - alistaire47
+  - rsaporta
+  - Smudgerville
+  - RichardJActon
+  - raerickson
+  - rasmusab
+  - randyzwitch
+  - rdboyes
+  - JobNmadu
+  - pridiltal
+  - PietrH
+  - Tutuchan
+  - flying-sheep
+  - rivaquiroga
+  - robertzk
+  - RodDalBen
+  - romainfrancois
+  - DarwinAwardWinner
+  - rcurtin
+  - Ryo-N7
+  - salim-b
+  - sashahafner
+  - 808sAndBR
+  - sebkopf
+  - restonslacker
+  - smach
+  - Shelmith-Kariuki
+  - andrasberczi
+  - cwickham
+  - martin-martin
+  - mruessler
+  - MathieuYeche
+  - MattCowgill
+  - mtrsl
+  - mattsteadman
+  - mattansb
+  - mbergins
+  - mpancia
+  - mnazarov
+  - maelle
+  - Meghansaha
+  - mnbram
+  - krassowski
+  - nalimilan
+  - mmhamdy
+  - njtierney
+  - nicksolomon
+  - NikNakk
+  - nmercadeb
+  - PPaccioretti
+  - joey711
+  - pmur002
+  - pn317
+  - ppanko
+  - perezp44
+  - PeteHaitch
+  - crowding
+  - arilamstein
+  - atusy
+  - beckymaust
+  - bersbersbers
+  - buyske
+  - catalamarti
+  - dmurdoch
+  - evanhaldane
+  - gregleleu
+  - guqicun
+  - heckendorfc
+  - hub-shale
+  - jashapiro
+  - laresbernardo
+  - larspijnappel
+  - laurabrianna
+  - lehy
+  - margoal1
+  - maxsutton
+  - metanoid
+  - mone27
+  - nicholasdavies
+  - pank
+  - pbiecek
+  - r2evans
+  - stefanedwards
+  - timgoodman
+  - tomschloss
+  - smsaladi
+  - sinarueeger
+  - Songeo
+  - StefanBRas
+  - lianos
+  - sushmitavgopalan16
+  - sowla
+  - talgalili
+  - laderast
+  - Thell
+  - Thieffen
+  - thiyangt
+  - tgs
+  - tklebel
+  - MaxAtoms
+  - TimTaylor
+  - durtal
+  - vinay-swamy
+  - violetr
+  - VisruthSK
+  - waltersom
+  - billybarc
+  - williamlai2
+  - Ax3man
+  - xvrdm
+  - iamYannC
+  - yihui
+  - zekiakyol
+  - abhro
+  - ismayc
+  - cderv
+  - croach
+  - codetrainee
+  - clairemcwhite
+  - cpenaloza
+  - collinberke
+  - cuixueqin
+  - damonbayer
+  - dlependorf
+  - DanRuderman
+  - dgromer
+  - mastropi
+  - daniel-wells
+  - djnavarro
+  - dariobuttari
+  - dariyasydykova
+  - dvcv
+  - davidkretch
+  - wilkox
+  - DavisVaughan
+  - Eli-Berkow
+  - erictleung
+  - echasnovski
+  - fabern
+  - fmarotta
+  - fkohrt
+  - Symaxion
+  - ajschumacher
+  - yeedle
+  - jabranham
+  - alex-trueman
+  - aijordan
+  - AliciaSchep
+  - alonmar
+  - amysheep
+  - andrewwbutler
+  - andrewdolman
+  - econandrew
+  - accustodio
+  - idno0001
+  - pierucci
+  - alamstein-trulia
+  - ahcyip
+  - arturcarvalho
+  - averiperny
+  - banfai
+  - bkmgit
+  - BernhardKonrad
+  - billdenney
+  - BrentWHR
+  - bwiernik
+  - briandk
+  - brianrice2
+  - brianwdavis
+  - brodieG
+  - ccani007
+  - jmbarbone
+  - jsta
+  - joshhwuu
+  - caijun
+  - jentjr
+  - jtlandis
+  - kbroman
+  - huftis
+  - kloesing
+  - wendtke
+  - kbodwin
+  - darrkj
+  - kent37
+  - kferris10
+  - klmr
+  - debruine
+  - llrs
+  - lgaborini
+  - lselzer
+  - luisDVA
+  - jemus42
+  - luhann
+  - mcguinlu
+  - lgibson7
+  - mdlama
+  - Polkas
+  - MaraAlexeev
+  - tereom
+  - flrd
+  - erocoar2
+  - EvaMaeRey
+  - gfiumara
+  - gregmacfarlane
+  - GuangchuangYu
+  - gaborcsardi
+  - gokceneraslan
+  - haleyjeppson
+  - heathgilham
+  - hlendway
+  - hbuschme
+  - hpages
+  - salmasian
+  - HughParsonage
+  - izahn
+  - wurli
+  - rjake
+  - JamesCuster
+  - jbengler
+  - netique
+  - jansim
+  - jgjl
+  - jeroenjanssens
+  - jeroen
+  - jdonland
+  - botanize
+  - johow
+  - jschoeley
+  - jonathan-g
+  readme_image: man/figures/logo.png
+  last_updated: '2026-02-13T14:17:08.374021+00:00'
+  languages:
   - R
+  people:
+  - Hadley Wickham
+  - Winston Chang
+  - Teun Van den Brand
+  - Thomas Lin Pedersen
+  - Lionel Henry
+  - Max Kuhn
+  - Hassan Kibirige
+  - Carson Sievert
+  - Mine Çetinkaya-Rundel
+  - Barret Schloerke
+  - Charlotte Wickham
+  - Christophe Dervieux
+  - Davis Vaughan
+  - Gina Reynolds
+  - Gábor Csárdi
+  - Jeroen Janssens
+  - Jeroen Ooms
+latest_release: '2026-02-02T09:41:41+00:00'
 ---
 
 ggplot2 is a system for declaratively creating graphics based on the Grammar of Graphics philosophy. Users provide data, map variables to aesthetics, specify graphical primitives, and the package handles visualization details.
