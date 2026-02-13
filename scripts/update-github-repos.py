@@ -15,6 +15,7 @@ Reads GitHub organizations from data/github-orgs.toml and writes
 repository information to data/github-repos.toml.
 """
 
+import argparse
 import os
 import re
 import sys
@@ -43,89 +44,99 @@ def get_github_token() -> str:
 
 
 def extract_first_image_url(readme_content: str) -> str | None:
-    """Extract the first image URL from README markdown content."""
-    # Match markdown images: ![alt](url)
-    markdown_pattern = r"!\[.*?\]\((.*?)\)"
-    # Match HTML img tags: <img src="url" ...>
+    """Extract the first non-badge image URL from README."""
+    # Match HTML img tags: <img src="url" ...> or <img ... src="url" ...>
     html_pattern = r'<img[^>]+src=["\']([^"\']+)["\']'
 
-    markdown_match = re.search(markdown_pattern, readme_content)
-    if markdown_match:
-        return markdown_match.group(1)
-
-    html_match = re.search(html_pattern, readme_content, re.IGNORECASE)
-    if html_match:
-        return html_match.group(1)
+    for match in re.finditer(html_pattern, readme_content, re.IGNORECASE):
+        url = match.group(1)
+        # Skip badge images
+        if "badge.svg" not in url.lower():
+            return url
 
     return None
 
 
-def get_first_commit_date(repo) -> str | None:
+def format_value(value: Any, max_len: int = 40) -> str:
+    """Format a value for display, truncating if needed."""
+    if isinstance(value, list):
+        value_str = ", ".join(str(v) for v in value)
+    else:
+        value_str = str(value)
+
+    if len(value_str) > max_len:
+        return value_str[:max_len - 3] + "..."
+    return value_str
+
+
+def get_first_commit_date(repo, repo_name: str, max_name_len: int, out_console: Console = console) -> str | None:
     """Get the date of the first commit in the repository."""
+    repo_name_padded = repo_name.rjust(max_name_len)
     try:
-        console.print("    [dim]Fetching first commit date[/]")
-        # Get commits from oldest to newest by getting all commits and taking the last one
-        # For efficiency, we'll use created_at as a proxy if getting first commit is too expensive
-        commits = list(repo.get_commits())
-        if commits:
-            # The last commit in the default iteration is actually the most recent
-            # We need to reverse or get the last page
-            # For efficiency, let's just use the repository created date
+        # Use repo creation date as a proxy for first commit
+        if repo.created_at:
             date = repo.created_at.isoformat()
-            console.print(f"    [dim]First commit: {date}[/]")
+            out_console.print(f"[dim][{repo_name_padded}] first_commit: {date}[/]")
             return date
     except Exception as e:
-        console.print(f"    [yellow]Warning:[/] Could not get first commit date: {e}")
-        return repo.created_at.isoformat() if repo.created_at else None
+        out_console.print(f"[yellow][{repo_name_padded}] Warning: Could not get creation date: {e}[/]")
+    return None
 
 
-def get_latest_release_date(repo) -> str | None:
-    """Get the date of the latest release."""
+def get_release_info(repo, repo_name: str, max_name_len: int, out_console: Console = console) -> tuple[str | None, int]:
+    """Get the date of the latest release and total release count.
+
+    Returns (latest_release_date, release_count)
+    """
+    repo_name_padded = repo_name.rjust(max_name_len)
     try:
-        console.print("    [dim]Fetching latest release[/]")
         releases = repo.get_releases()
-        if releases.totalCount > 0:
+        count = releases.totalCount
+        if count > 0:
             latest_release = releases[0]
             date = latest_release.created_at.isoformat()
-            console.print(f"    [dim]Latest release: {date}[/]")
-            return date
+            out_console.print(f"[dim][{repo_name_padded}] latest_release: {date}[/]")
+            out_console.print(f"[dim][{repo_name_padded}] releases: {count}[/]")
+            return date, count
         else:
-            console.print("    [dim]No releases found[/]")
+            out_console.print(f"[dim][{repo_name_padded}] latest_release: None[/]")
+            out_console.print(f"[dim][{repo_name_padded}] releases: 0[/]")
+            return None, 0
     except Exception as e:
-        console.print(f"    [yellow]Warning:[/] Could not get latest release: {e}")
-    return None
+        out_console.print(f"[yellow][{repo_name_padded}] Warning: Could not get releases: {e}[/]")
+        return None, 0
 
 
-def get_contributors(repo) -> list[str]:
+def get_contributors(repo, repo_name: str, max_name_len: int, out_console: Console = console) -> list[str]:
     """Get list of contributor usernames."""
+    repo_name_padded = repo_name.rjust(max_name_len)
     try:
-        console.print("    [dim]Fetching contributors[/]")
         contributors = repo.get_contributors()
         contributor_list = [contributor.login for contributor in contributors]
-        console.print(f"    [dim]Found {len(contributor_list)} contributors[/]")
+        out_console.print(f"[dim][{repo_name_padded}] contributors: {format_value(contributor_list)}[/]")
         return contributor_list
     except Exception as e:
-        console.print(f"    [yellow]Warning:[/] Could not get contributors: {e}")
+        out_console.print(f"[yellow][{repo_name_padded}] Warning: Could not get contributors: {e}[/]")
         return []
 
 
-def get_readme_first_image(repo) -> str | None:
-    """Get the URL of the first image in README.md."""
+def get_readme_first_image(repo, repo_name: str, max_name_len: int, out_console: Console = console) -> str | None:
+    """Get the URL of the first non-badge image in README.md."""
+    repo_name_padded = repo_name.rjust(max_name_len)
     try:
-        console.print("    [dim]Fetching README image[/]")
         readme = repo.get_readme()
         content = readme.decoded_content.decode("utf-8")
         image_url = extract_first_image_url(content)
         if image_url:
-            console.print("    [dim]Found README image[/]")
+            out_console.print(f"[dim][{repo_name_padded}] readme_image: {format_value(image_url)}[/]")
         else:
-            console.print("    [dim]No image in README[/]")
+            out_console.print(f"[dim][{repo_name_padded}] readme_image: None[/]")
         return image_url
     except UnknownObjectException:
-        console.print("    [dim]No README found[/]")
+        out_console.print(f"[dim][{repo_name_padded}] readme_image: None (no README)[/]")
         return None
     except Exception as e:
-        console.print(f"    [yellow]Warning:[/] Could not get README: {e}")
+        out_console.print(f"[yellow][{repo_name_padded}] Warning: Could not get README: {e}[/]")
         return None
 
 
@@ -190,12 +201,30 @@ def write_repos_to_file(repos_dict: dict[str, dict[str, Any]], output_file: Path
         console.print(f"[bold red]Error:[/] Failed to write to {output_file}: {e}")
 
 
-def fetch_org_repos(gh: Github, org_name: str, existing_repos: dict[str, dict[str, Any]], output_file: Path) -> dict[str, dict[str, Any]]:
+def fetch_org_repos(gh: Github, org_name: str, existing_repos: dict[str, dict[str, Any]], output_file: Path, keys_to_update: set[str] | None = None, force: bool = False) -> dict[str, dict[str, Any]]:
     """Fetch all public, non-archived repositories for an organization."""
     repos_dict = existing_repos.copy()
 
+    # Available keys that can be fetched
+    FETCHABLE_KEYS = {"stars", "forks", "latest_release", "releases", "first_commit", "license", "contributors", "readme_image", "description", "website", "name", "language"}
+
+    # If no keys specified, fetch all
+    if keys_to_update is None:
+        keys_to_update = FETCHABLE_KEYS
+    else:
+        # Validate keys
+        invalid_keys = keys_to_update - FETCHABLE_KEYS
+        if invalid_keys:
+            console.print(f"[yellow]Warning:[/] Invalid keys: {', '.join(invalid_keys)}")
+            console.print(f"[yellow]Valid keys are:[/] {', '.join(sorted(FETCHABLE_KEYS))}")
+            keys_to_update = keys_to_update & FETCHABLE_KEYS
+
     try:
         console.print(f"\n[bold cyan]Organization:[/] {org_name}")
+        if keys_to_update != FETCHABLE_KEYS:
+            console.print(f"[cyan]Updating keys:[/] {', '.join(sorted(keys_to_update))}")
+        if force:
+            console.print("[yellow]Force mode:[/] Ignoring last_updated timestamps")
         console.print("[dim]Scanning repositories...[/]")
         org = gh.get_organization(org_name)
         all_repos = list(org.get_repos(type="public"))
@@ -210,12 +239,16 @@ def fetch_org_repos(gh: Github, org_name: str, existing_repos: dict[str, dict[st
                 continue
 
             existing_repo = existing_repos.get(repo.full_name)
-            should_update, reason = should_update_repo(existing_repo)
 
-            if should_update:
+            # Skip timestamp check if force flag is set
+            if force:
                 repos_to_update.append(repo)
             else:
-                skipped_repos.append((repo.full_name, reason))
+                should_update, reason = should_update_repo(existing_repo)
+                if should_update:
+                    repos_to_update.append(repo)
+                else:
+                    skipped_repos.append((repo.full_name, reason))
 
         # Show summary
         console.print(f"[green]✓[/] Found {len(all_repos)} repos: [cyan]{len(repos_to_update)}[/] to update, [dim]{len(skipped_repos)}[/] to skip")
@@ -231,6 +264,9 @@ def fetch_org_repos(gh: Github, org_name: str, existing_repos: dict[str, dict[st
         if repos_to_update:
             console.print(f"\n[bold]Fetching metadata for {len(repos_to_update)} repositories[/]")
 
+            # Find the maximum repo name length for right-alignment
+            max_repo_name_len = max(len(repo.full_name) for repo in repos_to_update)
+
             with Progress(
                 SpinnerColumn(),
                 TextColumn("[progress.description]{task.description}"),
@@ -244,20 +280,56 @@ def fetch_org_repos(gh: Github, org_name: str, existing_repos: dict[str, dict[st
                 for repo in repos_to_update:
                     progress.update(task, description=f"[cyan]{repo.full_name}")
 
-                    repo_info = {
-                        "repo": repo.full_name,
-                        "name": repo.name,
-                        "description": repo.description or "",
-                        "website": repo.homepage or "",
-                        "stars": repo.stargazers_count,
-                        "forks": repo.forks_count,
-                        "latest_release": get_latest_release_date(repo),
-                        "first_commit": get_first_commit_date(repo),
-                        "license": repo.license.spdx_id if repo.license else None,
-                        "contributors": get_contributors(repo),
-                        "readme_image": get_readme_first_image(repo),
-                        "last_updated": datetime.now(timezone.utc).isoformat(),
-                    }
+                    # Start with existing data or base structure
+                    existing_data = existing_repos.get(repo.full_name, {})
+                    repo_info = existing_data.copy() if existing_data else {}
+
+                    # Always update repo identifier and timestamp
+                    repo_info["repo"] = repo.full_name
+
+                    # Format repo name with right-alignment
+                    repo_name_padded = repo.full_name.rjust(max_repo_name_len)
+
+                    # Print repo URL first for easy navigation
+                    progress.console.print(f"[dim][{repo_name_padded}] url: https://github.com/{repo.full_name}[/]")
+
+                    # Update only requested keys
+                    if "name" in keys_to_update:
+                        repo_info["name"] = repo.name
+                        progress.console.print(f"[dim][{repo_name_padded}] name: {format_value(repo.name)}[/]")
+                    if "description" in keys_to_update:
+                        repo_info["description"] = repo.description or ""
+                        progress.console.print(f"[dim][{repo_name_padded}] description: {format_value(repo.description or '')}[/]")
+                    if "website" in keys_to_update:
+                        repo_info["website"] = repo.homepage or ""
+                        progress.console.print(f"[dim][{repo_name_padded}] website: {format_value(repo.homepage or '')}[/]")
+                    if "stars" in keys_to_update:
+                        repo_info["stars"] = repo.stargazers_count
+                        progress.console.print(f"[dim][{repo_name_padded}] stars: {repo.stargazers_count}[/]")
+                    if "forks" in keys_to_update:
+                        repo_info["forks"] = repo.forks_count
+                        progress.console.print(f"[dim][{repo_name_padded}] forks: {repo.forks_count}[/]")
+                    if "license" in keys_to_update:
+                        repo_info["license"] = repo.license.spdx_id if repo.license else None
+                        progress.console.print(f"[dim][{repo_name_padded}] license: {repo_info['license']}[/]")
+                    if "language" in keys_to_update:
+                        repo_info["language"] = repo.language
+                        progress.console.print(f"[dim][{repo_name_padded}] language: {repo.language}[/]")
+                    # Fetch release info if either latest_release or releases count is requested
+                    if "latest_release" in keys_to_update or "releases" in keys_to_update:
+                        latest_release, release_count = get_release_info(repo, repo.full_name, max_repo_name_len, progress.console)
+                        if "latest_release" in keys_to_update:
+                            repo_info["latest_release"] = latest_release
+                        if "releases" in keys_to_update:
+                            repo_info["releases"] = release_count
+                    if "first_commit" in keys_to_update:
+                        repo_info["first_commit"] = get_first_commit_date(repo, repo.full_name, max_repo_name_len, progress.console)
+                    if "contributors" in keys_to_update:
+                        repo_info["contributors"] = get_contributors(repo, repo.full_name, max_repo_name_len, progress.console)
+                    if "readme_image" in keys_to_update:
+                        repo_info["readme_image"] = get_readme_first_image(repo, repo.full_name, max_repo_name_len, progress.console)
+
+                    repo_info["last_updated"] = datetime.now(timezone.utc).isoformat()
 
                     # Update the repos dict and write immediately
                     repos_dict[repo.full_name] = repo_info
@@ -277,6 +349,33 @@ def fetch_org_repos(gh: Github, org_name: str, existing_repos: dict[str, dict[st
 
 def main() -> None:
     """Main function to orchestrate the script."""
+    # Define basic keys that require no additional API calls
+    BASIC_KEYS = {"name", "description", "website", "stars", "forks", "license", "first_commit", "language"}
+
+    parser = argparse.ArgumentParser(
+        description="Fetch public repositories from GitHub organizations and save metadata."
+    )
+    parser.add_argument(
+        "--keys",
+        type=str,
+        help="Comma-separated list of keys to update (e.g., 'stars,forks,contributors'). Use 'basic' to update all keys that require no additional API calls. If not specified, all keys are updated.",
+    )
+    parser.add_argument(
+        "--force",
+        "-f",
+        action="store_true",
+        help="Force update all repositories, ignoring the last_updated timestamp.",
+    )
+    args = parser.parse_args()
+
+    # Parse keys argument
+    keys_to_update = None
+    if args.keys:
+        if args.keys.strip().lower() == "basic":
+            keys_to_update = BASIC_KEYS
+        else:
+            keys_to_update = {key.strip() for key in args.keys.split(",")}
+
     console.print("\n[bold blue]GitHub Repository Metadata Fetcher[/]\n")
 
     # Set up paths
@@ -313,15 +412,25 @@ def main() -> None:
     auth = Auth.Token(token)
     gh = Github(auth=auth)
 
+    # Check rate limit
+    remaining, limit = gh.rate_limiting
+    reset_time = gh.rate_limiting_resettime
+    reset_dt = datetime.fromtimestamp(reset_time, tz=timezone.utc)
+    console.print(f"[cyan]Rate limit:[/] {remaining}/{limit} remaining (resets at {reset_dt.strftime('%H:%M:%S')})")
+
     # Fetch repositories for all organizations
     all_repos_dict = existing_repos.copy()
     for org_name in organizations:
-        repos_dict = fetch_org_repos(gh, org_name, all_repos_dict, output_file)
+        repos_dict = fetch_org_repos(gh, org_name, all_repos_dict, output_file, keys_to_update, args.force)
         all_repos_dict.update(repos_dict)
 
     # Final write to ensure everything is saved
     console.print("[dim]Writing final output...[/]")
     write_repos_to_file(all_repos_dict, output_file)
+
+    # Show final rate limit status
+    remaining, limit = gh.rate_limiting
+    console.print(f"[cyan]Rate limit:[/] {remaining}/{limit} remaining")
 
     console.print(f"\n[bold green]✓ Done![/] Processed [cyan]{len(all_repos_dict)}[/] repositories total")
     console.print(f"[dim]Data written to {output_file}[/]\n")
