@@ -178,7 +178,11 @@ def should_update_repo(existing_repo: dict[str, Any] | None) -> tuple[bool, str]
 def write_repos_to_file(repos_dict: dict[str, dict[str, Any]], output_file: Path) -> None:
     """Write all repositories to the output file."""
     try:
-        repos_list = list(repos_dict.values())
+        # Filter out None values from each repo (TOML doesn't support None)
+        repos_list = [
+            {key: value for key, value in repo.items() if value is not None}
+            for repo in repos_dict.values()
+        ]
         output_data = {"repos": repos_list}
         with open(output_file, "wb") as f:
             tomli_w.dump(output_data, f)
