@@ -26,6 +26,10 @@ build-search:
 update-github-repos:
     ./scripts/update-github-repos.py
 
+# Update software metadata from repos.toml
+update-software-meta:
+    ./scripts/update-software-meta.py
+
 quarto-preview:
     uv run quarto preview
 
