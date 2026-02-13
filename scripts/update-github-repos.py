@@ -63,7 +63,7 @@ def extract_first_image_url(readme_content: str) -> str | None:
 def get_first_commit_date(repo) -> str | None:
     """Get the date of the first commit in the repository."""
     try:
-        console.print(f"    [dim]Fetching first commit date[/]")
+        console.print("    [dim]Fetching first commit date[/]")
         # Get commits from oldest to newest by getting all commits and taking the last one
         # For efficiency, we'll use created_at as a proxy if getting first commit is too expensive
         commits = list(repo.get_commits())
@@ -82,7 +82,7 @@ def get_first_commit_date(repo) -> str | None:
 def get_latest_release_date(repo) -> str | None:
     """Get the date of the latest release."""
     try:
-        console.print(f"    [dim]Fetching latest release[/]")
+        console.print("    [dim]Fetching latest release[/]")
         releases = repo.get_releases()
         if releases.totalCount > 0:
             latest_release = releases[0]
@@ -90,7 +90,7 @@ def get_latest_release_date(repo) -> str | None:
             console.print(f"    [dim]Latest release: {date}[/]")
             return date
         else:
-            console.print(f"    [dim]No releases found[/]")
+            console.print("    [dim]No releases found[/]")
     except Exception as e:
         console.print(f"    [yellow]Warning:[/] Could not get latest release: {e}")
     return None
@@ -99,7 +99,7 @@ def get_latest_release_date(repo) -> str | None:
 def get_contributors(repo) -> list[str]:
     """Get list of contributor usernames."""
     try:
-        console.print(f"    [dim]Fetching contributors[/]")
+        console.print("    [dim]Fetching contributors[/]")
         contributors = repo.get_contributors()
         contributor_list = [contributor.login for contributor in contributors]
         console.print(f"    [dim]Found {len(contributor_list)} contributors[/]")
@@ -112,17 +112,17 @@ def get_contributors(repo) -> list[str]:
 def get_readme_first_image(repo) -> str | None:
     """Get the URL of the first image in README.md."""
     try:
-        console.print(f"    [dim]Fetching README image[/]")
+        console.print("    [dim]Fetching README image[/]")
         readme = repo.get_readme()
         content = readme.decoded_content.decode("utf-8")
         image_url = extract_first_image_url(content)
         if image_url:
-            console.print(f"    [dim]Found README image[/]")
+            console.print("    [dim]Found README image[/]")
         else:
-            console.print(f"    [dim]No image in README[/]")
+            console.print("    [dim]No image in README[/]")
         return image_url
     except UnknownObjectException:
-        console.print(f"    [dim]No README found[/]")
+        console.print("    [dim]No README found[/]")
         return None
     except Exception as e:
         console.print(f"    [yellow]Warning:[/] Could not get README: {e}")
@@ -132,7 +132,7 @@ def get_readme_first_image(repo) -> str | None:
 def load_existing_repos(output_file: Path) -> dict[str, dict[str, Any]]:
     """Load existing repository data from the output file."""
     if not output_file.exists():
-        console.print(f"[dim]No existing repos file found[/]")
+        console.print("[dim]No existing repos file found[/]")
         return {}
 
     try:
@@ -171,8 +171,8 @@ def should_update_repo(existing_repo: dict[str, Any] | None) -> tuple[bool, str]
         else:
             hours_ago = time_diff.total_seconds() / 3600
             return True, f"stale ({hours_ago:.1f}h ago)"
-    except Exception as e:
-        return True, f"invalid timestamp"
+    except Exception:
+        return True, "invalid timestamp"
 
 
 def write_repos_to_file(repos_dict: dict[str, dict[str, Any]], output_file: Path) -> None:

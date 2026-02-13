@@ -22,6 +22,10 @@ build: build-tailwind
 build-search:
     npm run build-search
 
+# Update GitHub repository metadata
+update-github-repos:
+    ./scripts/update-github-repos.py
+
 quarto-preview:
     uv run quarto preview
 
