@@ -1,0 +1,8 @@
+orgs = [
+  "posit-dev",
+  "rstudio",
+  "tidyverse",
+  "tidymodels",
+  "r-lib",
+  "r-dbi"
+]

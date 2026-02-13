@@ -18,3 +18,5 @@ public/
 
 /.quarto/
 **/*.quarto_ipynb
+
+.env
