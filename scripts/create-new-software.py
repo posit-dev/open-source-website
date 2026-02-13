@@ -42,8 +42,9 @@ def load_github_repos(repos_file: Path) -> list[dict]:
 
 
 def get_software_name(repo_data: dict) -> str | None:
-    """Get the software name from repo data."""
-    return repo_data.get('name')
+    """Get the software name from repo data, converted to lowercase."""
+    name = repo_data.get('name')
+    return name.lower() if name else None
 
 
 def create_software_directory(
@@ -151,7 +152,7 @@ def main() -> None:
             progress.update(task, description=f"[cyan]{github_repo}")
 
             if not software_name:
-                results.append((github_repo, "skipped", "no name field"))
+                results.append((github_repo, "skipped", "no name field", None))
                 skipped_count += 1
                 progress.advance(task)
                 continue
@@ -159,7 +160,7 @@ def main() -> None:
             # Skip repos with less than minimal stars
             stars = repo_data.get('stars', 0)
             if stars < args.minimal_stars:
-                results.append((github_repo, "skipped", f"too few stars ({stars} < {args.minimal_stars})"))
+                results.append((github_repo, "skipped", f"too few stars ({stars} < {args.minimal_stars})", None))
                 skipped_count += 1
                 progress.advance(task)
                 continue
@@ -172,13 +173,13 @@ def main() -> None:
             )
 
             if created:
-                results.append((github_repo, "created", message))
+                results.append((github_repo, "created", message, software_name))
                 created_count += 1
             elif "already exists" in message:
-                results.append((github_repo, "skipped", message))
+                results.append((github_repo, "skipped", message, software_name))
                 skipped_count += 1
             else:
-                results.append((github_repo, "error", message))
+                results.append((github_repo, "error", message, software_name))
                 error_count += 1
 
             progress.advance(task)
@@ -188,6 +189,7 @@ def main() -> None:
 
     table = Table(show_header=True, header_style="bold cyan")
     table.add_column("Repository", style="dim", no_wrap=True)
+    table.add_column("Directory", style="cyan", no_wrap=True)
     table.add_column("Status", style="")
     table.add_column("Message", style="dim")
 
@@ -199,24 +201,26 @@ def main() -> None:
         remaining = max(0, 20 - len(filtered))
         filtered.extend([r for r in results if r[1] == "skipped"][:remaining])
 
-        for github_repo, status, message in filtered:
+        for github_repo, status, message, directory in filtered:
             if status == "created":
                 status_str = "[green]✓ Created[/]"
             elif status == "error":
                 status_str = "[red]✗ Error[/]"
             else:
                 status_str = "[dim]○ Skipped[/]"
-            table.add_row(github_repo, status_str, message)
+            dir_name = directory if directory else "-"
+            table.add_row(github_repo, dir_name, status_str, message)
     else:
         # Show all results sorted by status
-        for github_repo, status, message in sorted(results, key=lambda x: (x[1] != "created", x[1] != "error", x[0])):
+        for github_repo, status, message, directory in sorted(results, key=lambda x: (x[1] != "created", x[1] != "error", x[0])):
             if status == "created":
                 status_str = "[green]✓ Created[/]"
             elif status == "error":
                 status_str = "[red]✗ Error[/]"
             else:
                 status_str = "[dim]○ Skipped[/]"
-            table.add_row(github_repo, status_str, message)
+            dir_name = directory if directory else "-"
+            table.add_row(github_repo, dir_name, status_str, message)
 
     console.print(table)
 
