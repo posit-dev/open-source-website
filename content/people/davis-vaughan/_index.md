@@ -2,7 +2,7 @@
 title: "Davis Vaughan"
 image: "davis.jpeg"
 role: "Principal Software Engineer"
-github: ""
+github: "DavisVaughan"
 linkedin: ""
 bluesky: ""
 website: ""
