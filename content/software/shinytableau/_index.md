@@ -1,6 +1,7 @@
 ---
 description: Extend Tableau dashboards using Shiny
 github: rstudio/shinytableau
+image: screenshot.png
 languages:
 - JavaScript
 people:

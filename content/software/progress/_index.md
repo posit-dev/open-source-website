@@ -1,6 +1,7 @@
 ---
 description: Progress bar in your R terminal
 github: r-lib/progress
+image: logo.png
 languages:
 - R
 latest_release: '2023-12-05T09:32:50+00:00'

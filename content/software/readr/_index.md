@@ -1,6 +1,7 @@
 ---
 description: Read flat files (csv, tsv, fwf) into R
 github: tidyverse/readr
+image: logo.png
 languages:
 - R
 latest_release: '2025-11-14T17:31:10+00:00'

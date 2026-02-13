@@ -1,6 +1,7 @@
 ---
 description: ''
 github: posit-dev/python-tidytuesday
+image: posit_round_logo.png
 title: python-tidytuesday
 website: ''
 

@@ -1,6 +1,7 @@
 ---
 description: Extra recipes for Text Processing
 github: tidymodels/textrecipes
+image: logo.png
 languages:
 - R
 latest_release: '2025-03-18T15:37:10+00:00'

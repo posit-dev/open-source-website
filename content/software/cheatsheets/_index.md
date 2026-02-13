@@ -1,6 +1,7 @@
 ---
 description: Posit Cheat Sheets - Can also be found at https://posit.co/resources/cheatsheets/.
 github: rstudio/cheatsheets
+image: rstudio-ide.png
 languages:
 - TeX
 people:

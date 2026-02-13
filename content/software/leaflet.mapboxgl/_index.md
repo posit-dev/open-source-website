@@ -2,6 +2,7 @@
 description: Extends the R Leaflet package with a Mapbox GL JS plugin to allow easy
   drawing of vector tile layers.
 github: rstudio/leaflet.mapboxgl
+image: sshot.png
 languages:
 - R
 people:

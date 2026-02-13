@@ -1,6 +1,7 @@
 ---
 description: parsnip wrappers for tree-based models
 github: tidymodels/bonsai
+image: logo.png
 languages:
 - R
 latest_release: '2025-06-23T20:18:05+00:00'

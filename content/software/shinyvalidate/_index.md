@@ -1,6 +1,7 @@
 ---
 description: Input validation package for the Shiny web framework
 github: rstudio/shinyvalidate
+image: demo.gif
 languages:
 - JavaScript
 latest_release: '2023-10-05T22:06:32+00:00'

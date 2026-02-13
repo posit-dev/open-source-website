@@ -1,6 +1,7 @@
 ---
 description: Tools to make an R developer's life easier
 github: r-lib/devtools
+image: logo.png
 languages:
 - R
 latest_release: '2025-10-02T01:44:51+00:00'

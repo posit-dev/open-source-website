@@ -2,6 +2,7 @@
 description: Wrappers for discriminant analysis and naive Bayes models for use with
   the parsnip package
 github: tidymodels/discrim
+image: logo.png
 languages:
 - R
 latest_release: '2025-12-01T23:23:30+00:00'

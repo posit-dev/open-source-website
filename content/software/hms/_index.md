@@ -1,6 +1,7 @@
 ---
 description: A simple class for storing time-of-day values
 github: tidyverse/hms
+image: logo.png
 languages:
 - R
 latest_release: '2025-10-16T19:10:13+00:00'

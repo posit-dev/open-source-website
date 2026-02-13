@@ -1,6 +1,7 @@
 ---
 description: Version, share, deploy, and monitor models.
 github: rstudio/vetiver-python
+image: logo.png
 languages:
 - Python
 latest_release: '2024-12-17T02:43:43+00:00'

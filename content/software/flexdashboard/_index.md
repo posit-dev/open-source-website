@@ -1,6 +1,7 @@
 ---
 description: Easy interactive dashboards for R
 github: rstudio/flexdashboard
+image: logo.png
 languages:
 - JavaScript
 latest_release: '2026-01-28T20:55:02+00:00'

@@ -1,6 +1,7 @@
 ---
 description: ''
 github: rstudio/shinytest2
+image: logo.svg
 languages:
 - R
 latest_release: '2026-01-09T21:28:50+00:00'

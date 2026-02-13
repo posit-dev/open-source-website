@@ -1,6 +1,7 @@
 ---
 description: Tools for Managing SSH and Git Credentials
 github: r-lib/credentials
+image: logo.png
 languages:
 - R
 latest_release: '2020-07-21T08:31:43+00:00'

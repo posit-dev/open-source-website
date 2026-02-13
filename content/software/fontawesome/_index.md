@@ -1,6 +1,7 @@
 ---
 description: Easily insert FontAwesome icons into R Markdown docs and Shiny apps
 github: rstudio/fontawesome
+image: logo.svg
 languages:
 - R
 latest_release: '2024-11-16T17:56:25+00:00'

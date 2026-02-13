@@ -1,6 +1,7 @@
 ---
 description: A pkgdown template for core tidyverse packages
 github: tidyverse/tidytemplate
+image: logo.png
 languages:
 - SCSS
 people:

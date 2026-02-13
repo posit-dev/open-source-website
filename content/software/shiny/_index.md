@@ -1,6 +1,7 @@
 ---
 description: Easy interactive web applications with R
 github: rstudio/shiny
+image: logo.png
 languages:
 - R
 latest_release: '2025-12-09T21:26:52+00:00'

@@ -1,6 +1,7 @@
 ---
 description: Tools for post-processing class probability estimates
 github: tidymodels/probably
+image: logo.png
 languages:
 - R
 latest_release: '2025-10-16T12:05:16+00:00'

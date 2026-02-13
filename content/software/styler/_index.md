@@ -1,6 +1,7 @@
 ---
 description: Non-invasive pretty printing of R code
 github: r-lib/styler
+image: logo.png
 languages:
 - R
 latest_release: '2024-04-07T17:55:30+00:00'

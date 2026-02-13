@@ -1,6 +1,7 @@
 ---
 description: Authoring Books and Technical Documents with R Markdown
 github: rstudio/bookdown
+image: logo.png
 languages:
 - JavaScript
 latest_release: '2025-12-05T17:16:47+00:00'

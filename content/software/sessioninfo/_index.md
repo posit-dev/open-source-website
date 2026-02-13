@@ -1,6 +1,7 @@
 ---
 description: Print Session Information
 github: r-lib/sessioninfo
+image: session-info2.svg
 languages:
 - R
 latest_release: '2025-02-05T12:57:20+00:00'

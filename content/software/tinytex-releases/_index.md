@@ -1,6 +1,7 @@
 ---
 description: Windows/macOS/Linux binaries and installation methods of TinyTeX
 github: rstudio/tinytex-releases
+image: logo-tinytex.png
 languages:
 - PowerShell
 latest_release: '2026-02-01T07:35:46+00:00'

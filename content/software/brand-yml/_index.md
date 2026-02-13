@@ -1,6 +1,7 @@
 ---
 description: Unified branding with a single YAML file
 github: posit-dev/brand-yml
+image: brand-yml-wide-color.svg
 languages:
 - Python
 latest_release: '2025-11-06T16:31:36+00:00'

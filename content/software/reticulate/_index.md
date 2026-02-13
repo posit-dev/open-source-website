@@ -1,6 +1,7 @@
 ---
 description: R Interface to Python
 github: rstudio/reticulate
+image: reticulated_python.png
 languages:
 - R
 latest_release: '2025-11-14T18:54:01+00:00'

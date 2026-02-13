@@ -1,6 +1,7 @@
 ---
 description: An R package for interacting with the Posit Connect server API
 github: posit-dev/connectapi
+image: logo.svg
 languages:
 - R
 latest_release: '2026-01-14T19:19:58+00:00'

@@ -1,6 +1,7 @@
 ---
 description: Model Context Protocol For R
 github: posit-dev/mcptools
+image: logo.png
 languages:
 - R
 latest_release: '2025-10-29T20:23:51+00:00'

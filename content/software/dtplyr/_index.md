@@ -1,6 +1,7 @@
 ---
 description: Data table backend for dplyr
 github: tidyverse/dtplyr
+image: logo.png
 languages:
 - R
 latest_release: '2026-02-10T17:24:35+00:00'

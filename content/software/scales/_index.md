@@ -1,6 +1,7 @@
 ---
 description: Tools for ggplot2 scales
 github: r-lib/scales
+image: logo.png
 languages:
 - R
 latest_release: '2025-04-23T14:42:43+00:00'

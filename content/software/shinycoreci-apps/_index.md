@@ -1,6 +1,7 @@
 ---
 description: SUPERSEDED - Apps for Shiny continuous integration testing
 github: rstudio/shinycoreci-apps
+image: view-test-results.png
 languages:
 - JavaScript
 people:

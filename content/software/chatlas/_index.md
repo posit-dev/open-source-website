@@ -2,6 +2,7 @@
 description: Your friendly guide to building LLM chat apps in Python with less effort
   and more clarity.
 github: posit-dev/chatlas
+image: logo.png
 languages:
 - Python
 latest_release: '2026-01-22T22:50:44+00:00'

@@ -1,6 +1,7 @@
 ---
 description: R Interface to D3 Visualizations
 github: rstudio/r2d3
+image: r2d3-hex.png
 languages:
 - R
 latest_release: '2018-12-18T18:00:22+00:00'

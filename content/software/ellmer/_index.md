@@ -1,6 +1,7 @@
 ---
 description: Call LLM APIs from R
 github: tidyverse/ellmer
+image: logo.png
 languages:
 - R
 latest_release: '2025-11-14T20:30:45+00:00'

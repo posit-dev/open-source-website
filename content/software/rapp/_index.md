@@ -1,6 +1,7 @@
 ---
 description: Build CLI applications in R
 github: r-lib/Rapp
+image: logo.png
 languages:
 - R
 latest_release: '2025-12-14T18:49:06+00:00'

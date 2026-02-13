@@ -1,6 +1,7 @@
 ---
 description: Turn R scripts into terminal screencasts
 github: r-lib/asciicast
+image: unnamed-chunk-3.svg
 languages:
 - R
 latest_release: '2024-01-18T06:18:02+00:00'

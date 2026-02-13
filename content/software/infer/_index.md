@@ -1,6 +1,7 @@
 ---
 description: An R package for tidyverse-friendly statistical inference
 github: tidymodels/infer
+image: logo.png
 languages:
 - R
 latest_release: '2025-12-18T14:07:39+00:00'

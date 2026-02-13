@@ -1,6 +1,7 @@
 ---
 description: Understanding complex R objects with tools similar to str()
 github: r-lib/lobstr
+image: logo.png
 languages:
 - C
 latest_release: '2025-11-14T13:22:25+00:00'

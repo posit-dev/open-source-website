@@ -1,6 +1,7 @@
 ---
 description: Tools for making beautiful & useful command line interfaces
 github: r-lib/cli
+image: alert-success.svg
 languages:
 - R
 latest_release: '2025-04-22T11:59:57+00:00'

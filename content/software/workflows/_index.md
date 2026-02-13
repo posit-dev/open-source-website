@@ -1,6 +1,7 @@
 ---
 description: Modeling Workflows
 github: tidymodels/workflows
+image: logo.png
 languages:
 - R
 latest_release: '2025-08-27T09:07:53+00:00'

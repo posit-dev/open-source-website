@@ -1,6 +1,7 @@
 ---
 description: Simple git client for R
 github: r-lib/gert
+image: logo.png
 languages:
 - C
 latest_release: '2024-07-18T11:32:08+00:00'

@@ -1,6 +1,7 @@
 ---
 description: Interactive Tutorials with R Markdown
 github: rstudio/learnr
+image: logo.png
 languages:
 - R
 latest_release: '2025-11-13T15:23:19+00:00'

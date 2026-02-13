@@ -1,6 +1,7 @@
 ---
 description: config package for R
 github: rstudio/config
+image: logo.svg
 languages:
 - R
 people:

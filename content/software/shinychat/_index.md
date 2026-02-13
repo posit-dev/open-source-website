@@ -1,6 +1,7 @@
 ---
 description: Chat UI component for Shiny
 github: posit-dev/shinychat
+image: logo.svg
 languages:
 - Python
 latest_release: '2026-02-09T15:54:52+00:00'

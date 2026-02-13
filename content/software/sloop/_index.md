@@ -1,6 +1,7 @@
 ---
 description: S language OOP ⛵️
 github: r-lib/sloop
+image: logo.png
 languages:
 - R
 latest_release: '2019-02-17T15:12:20+00:00'

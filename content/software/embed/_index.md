@@ -1,6 +1,7 @@
 ---
 description: Extra recipes for predictor embeddings
 github: tidymodels/embed
+image: logo.png
 languages:
 - R
 latest_release: '2026-01-29T21:24:25+00:00'

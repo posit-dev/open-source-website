@@ -1,6 +1,7 @@
 ---
 description: Chat with your data in R and Python
 github: posit-dev/querychat
+image: logo.png
 languages:
 - Python
 latest_release: '2026-01-23T23:04:44+00:00'

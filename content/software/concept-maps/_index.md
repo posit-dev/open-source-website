@@ -1,6 +1,7 @@
 ---
 description: Concept maps for all things data science
 github: rstudio/concept-maps
+image: dplyr.svg
 languages:
 - HTML
 people:

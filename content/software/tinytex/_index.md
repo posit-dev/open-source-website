@@ -2,6 +2,7 @@
 description: A lightweight, cross-platform, portable, and easy-to-maintain LaTeX distribution
   based on TeX Live
 github: rstudio/tinytex
+image: logo-tinytex.png
 languages:
 - R
 latest_release: '2025-11-19T14:28:59+00:00'

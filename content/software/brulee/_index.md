@@ -1,6 +1,7 @@
 ---
 description: High-Level Modeling Functions with 'torch'
 github: tidymodels/brulee
+image: logo.png
 languages:
 - R
 latest_release: '2025-09-02T10:44:03+00:00'

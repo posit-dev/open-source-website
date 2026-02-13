@@ -1,6 +1,7 @@
 ---
 description: A fresh approach to package installation
 github: r-lib/pak
+image: cran.svg
 languages:
 - C
 latest_release: '2025-12-21T19:30:49+00:00'

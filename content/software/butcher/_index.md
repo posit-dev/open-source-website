@@ -1,6 +1,7 @@
 ---
 description: Reduce the size of model objects saved to disk
 github: tidymodels/butcher
+image: logo.png
 languages:
 - R
 latest_release: '2025-12-09T11:27:57+00:00'

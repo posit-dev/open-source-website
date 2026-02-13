@@ -1,6 +1,7 @@
 ---
 description: Ark, an R kernel
 github: posit-dev/ark
+image: logo.png
 languages:
 - Rust
 latest_release: '2026-01-30T15:17:50+00:00'

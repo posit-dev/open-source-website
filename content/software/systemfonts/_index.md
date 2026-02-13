@@ -1,6 +1,7 @@
 ---
 description: System Native Font Handling in R
 github: r-lib/systemfonts
+image: logo.png
 languages:
 - C++
 latest_release: '2025-10-01T11:54:44+00:00'

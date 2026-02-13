@@ -1,6 +1,7 @@
 ---
 description: Turn your R code into a web API.
 github: rstudio/plumber
+image: logo.svg
 languages:
 - R
 latest_release: '2026-02-09T15:06:24+00:00'

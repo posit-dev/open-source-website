@@ -1,6 +1,7 @@
 ---
 description: Companion R package to Data Science Course in a Box
 github: tidyverse/dsbox
+image: logo.png
 languages:
 - R
 people:

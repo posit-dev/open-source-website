@@ -1,6 +1,7 @@
 ---
 description: A tidy unified interface to models
 github: tidymodels/parsnip
+image: logo.png
 languages:
 - R
 latest_release: '2026-01-11T20:23:17+00:00'

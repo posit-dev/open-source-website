@@ -1,6 +1,7 @@
 ---
 description: Safely access RStudio's API (when available)
 github: rstudio/rstudioapi
+image: logo.png
 languages:
 - R
 latest_release: '2024-10-16T22:39:47+00:00'

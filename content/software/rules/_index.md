@@ -1,6 +1,7 @@
 ---
 description: parsnip extension for rule-based models
 github: tidymodels/rules
+image: logo.png
 languages:
 - R
 latest_release: '2023-03-08T23:13:46+00:00'

@@ -1,6 +1,7 @@
 ---
 description: Dynamic Documents for R
 github: rstudio/rmarkdown
+image: logo.png
 languages:
 - R
 latest_release: '2025-09-29T14:17:29+00:00'

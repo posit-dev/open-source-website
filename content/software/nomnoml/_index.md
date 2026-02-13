@@ -1,6 +1,7 @@
 ---
 description: Sassy 'UML' Diagrams for R
 github: rstudio/nomnoml
+image: logo.png
 languages:
 - JavaScript
 title: nomnoml

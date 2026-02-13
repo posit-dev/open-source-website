@@ -1,6 +1,7 @@
 ---
 description: R htmlwidget for Sortable.js
 github: rstudio/sortable
+image: logo.png
 languages:
 - R
 people:

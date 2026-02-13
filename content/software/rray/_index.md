@@ -1,6 +1,7 @@
 ---
 description: Simple Arrays
 github: r-lib/rray
+image: logo.png
 languages:
 - R
 latest_release: '2019-07-24T13:42:10+00:00'

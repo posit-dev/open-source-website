@@ -1,6 +1,7 @@
 ---
 description: Paginate the HTML Output of R Markdown with CSS for Print
 github: rstudio/pagedown
+image: logo.png
 languages:
 - R
 latest_release: '2025-08-20T20:24:24+00:00'

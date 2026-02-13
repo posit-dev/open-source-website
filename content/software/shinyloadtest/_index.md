@@ -1,6 +1,7 @@
 ---
 description: Tools for load testing Shiny applications
 github: rstudio/shinyloadtest
+image: slt_report_screenshot.png
 languages:
 - HTML
 latest_release: '2026-02-09T14:55:05+00:00'

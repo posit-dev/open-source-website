@@ -1,6 +1,7 @@
 ---
 description: Parsnip wrappers for survival models
 github: tidymodels/censored
+image: logo.png
 languages:
 - R
 latest_release: '2025-02-14T20:49:56+00:00'

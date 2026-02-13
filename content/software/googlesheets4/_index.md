@@ -1,6 +1,7 @@
 ---
 description: Google Spreadsheets R API (reboot of the googlesheets package)
 github: tidyverse/googlesheets4
+image: logo.png
 languages:
 - R
 latest_release: '2025-09-03T23:00:17+00:00'

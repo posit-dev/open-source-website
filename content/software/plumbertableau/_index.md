@@ -2,6 +2,7 @@
 description: R package for creating Plumber APIs that function as Tableau Analytics
   Extensions
 github: rstudio/plumbertableau
+image: logo.svg
 languages:
 - R
 latest_release: '2021-08-05T14:49:01+00:00'

@@ -1,6 +1,7 @@
 ---
 description: A fresh approach to string manipulation in R
 github: tidyverse/stringr
+image: logo.png
 languages:
 - R
 latest_release: '2025-11-03T22:09:36+00:00'

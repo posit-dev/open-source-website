@@ -1,6 +1,7 @@
 ---
 description: Construct Modeling Packages
 github: tidymodels/hardhat
+image: logo.png
 languages:
 - R
 latest_release: '2025-08-20T08:57:28+00:00'

@@ -1,6 +1,7 @@
 ---
 description: R interface to TensorFlow Estimators
 github: rstudio/tfestimators
+image: tensorflow-architecture.png
 languages:
 - R
 latest_release: '2025-08-18T20:39:02+00:00'

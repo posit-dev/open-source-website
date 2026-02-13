@@ -1,6 +1,7 @@
 ---
 description: Pin, discover, and share resources
 github: rstudio/pins-r
+image: logo.png
 languages:
 - R
 latest_release: '2025-04-30T12:56:12+00:00'

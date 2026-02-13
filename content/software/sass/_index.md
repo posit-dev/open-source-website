@@ -1,6 +1,7 @@
 ---
 description: Sass compiler package for R
 github: rstudio/sass
+image: logo.svg
 languages:
 - C++
 latest_release: '2025-04-11T20:21:04+00:00'

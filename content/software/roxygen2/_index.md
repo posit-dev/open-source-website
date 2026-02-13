@@ -1,6 +1,7 @@
 ---
 description: Generate R package documentation from inline R comments
 github: r-lib/roxygen2
+image: logo.png
 languages:
 - R
 latest_release: '2025-09-03T20:12:14+00:00'

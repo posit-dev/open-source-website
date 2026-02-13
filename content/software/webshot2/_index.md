@@ -1,6 +1,7 @@
 ---
 description: Take screenshots of web pages from R
 github: rstudio/webshot2
+image: README-demo-1.png
 languages:
 - R
 latest_release: '2025-04-24T02:10:54+00:00'

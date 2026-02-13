@@ -1,6 +1,7 @@
 ---
 description: https://rstudio.github.io/connections/
 github: rstudio/connections
+image: connection-1.png
 languages:
 - R
 latest_release: '2023-12-18T23:41:21+00:00'

@@ -1,6 +1,7 @@
 ---
 description: Google Drive R API
 github: tidyverse/googledrive
+image: logo.png
 languages:
 - R
 latest_release: '2025-09-10T06:09:30+00:00'

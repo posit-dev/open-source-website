@@ -1,6 +1,7 @@
 ---
 description: Read excel files (.xls and .xlsx) into R 🖇
 github: tidyverse/readxl
+image: logo.png
 languages:
 - C++
 latest_release: '2025-03-07T07:25:18+00:00'

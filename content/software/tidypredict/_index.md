@@ -1,6 +1,7 @@
 ---
 description: Run predictions inside the database
 github: tidymodels/tidypredict
+image: logo.png
 languages:
 - R
 latest_release: '2025-12-12T20:10:58+00:00'

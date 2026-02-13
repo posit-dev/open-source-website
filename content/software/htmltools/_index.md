@@ -1,6 +1,7 @@
 ---
 description: Tools for HTML generation and output
 github: rstudio/htmltools
+image: logo.png
 languages:
 - R
 latest_release: '2025-12-08T17:18:25+00:00'

@@ -1,6 +1,7 @@
 ---
 description: RStudio hex stickers
 github: rstudio/hex-stickers
+image: agua.png
 languages:
 - R
 people:

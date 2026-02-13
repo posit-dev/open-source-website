@@ -1,6 +1,7 @@
 ---
 description: Tidy methods for measuring model performance
 github: tidymodels/yardstick
+image: logo.png
 languages:
 - R
 latest_release: '2025-01-22T22:13:45+00:00'

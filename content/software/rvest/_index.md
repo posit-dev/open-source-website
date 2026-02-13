@@ -1,6 +1,7 @@
 ---
 description: Simple web scraping for R
 github: tidyverse/rvest
+image: logo.png
 languages:
 - R
 latest_release: '2025-08-29T12:57:27+00:00'

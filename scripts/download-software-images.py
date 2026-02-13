@@ -18,7 +18,6 @@ import argparse
 import sys
 from pathlib import Path
 from typing import Any
-from urllib.parse import urljoin
 
 import requests
 import yaml
@@ -82,12 +81,14 @@ def write_frontmatter(file_path: Path, frontmatter: dict[str, Any], remaining_co
         f.write(new_content)
 
 
-def download_image(url: str, output_path: Path) -> bool:
+def download_image(url: str, output_path: Path, try_master_fallback: bool = True) -> tuple[bool, str | None]:
     """
     Download image from URL to output path.
 
+    Tries 'main' branch first, then 'master' if that fails with 404.
+
     Returns:
-        bool: True if successful, False otherwise
+        tuple: (success: bool, final_url: str | None)
     """
     try:
         response = requests.get(url, timeout=10, stream=True)
@@ -97,10 +98,23 @@ def download_image(url: str, output_path: Path) -> bool:
             for chunk in response.iter_content(chunk_size=8192):
                 f.write(chunk)
 
-        return True
+        return True, url
+    except requests.exceptions.HTTPError as e:
+        # If 404 and we haven't tried master yet, try with master branch
+        # Only do this for raw.githubusercontent.com URLs
+        if (e.response.status_code == 404 and
+            try_master_fallback and
+            '/main/' in url and
+            'raw.githubusercontent.com' in url):
+            master_url = url.replace('/main/', '/master/')
+            console.print(f"[dim]Trying master branch:[/] {master_url}")
+            return download_image(master_url, output_path, try_master_fallback=False)
+        else:
+            console.print(f"[red]Error downloading:[/] {e}")
+            return False, None
     except Exception as e:
         console.print(f"[red]Error downloading:[/] {e}")
-        return False
+        return False, None
 
 
 def get_image_filename(url: str) -> str:
@@ -182,13 +196,20 @@ def process_software_directory(
                     continue
 
                 # Construct image URL
-                image_url = urljoin(f"https://github.com/{github_repo}/", readme_image)
+                # If readme_image is already a full URL, use it directly
+                if readme_image.startswith(('http://', 'https://')):
+                    image_url = readme_image
+                else:
+                    # Otherwise construct raw GitHub URL
+                    # Format: https://raw.githubusercontent.com/{owner}/{repo}/main/{path}
+                    image_url = f"https://raw.githubusercontent.com/{github_repo}/main/{readme_image}"
 
                 # Get filename
                 image_filename = get_image_filename(readme_image)
 
                 if dry_run:
-                    console.print(f"  [green]✓[/] Would download {software_name}: {image_url} -> {image_filename}")
+                    branch_info = " (will try main/master)" if image_url.startswith("https://raw.githubusercontent.com/") else ""
+                    console.print(f"  [green]✓[/] Would download {software_name}: {image_url} -> {image_filename}{branch_info}")
                     downloaded_count += 1
                     progress.advance(task)
                     continue
@@ -197,12 +218,18 @@ def process_software_directory(
                 output_path = dir_path / image_filename
                 console.print(f"  [cyan]Downloading:[/] {image_url}")
 
-                if download_image(image_url, output_path):
+                success, final_url = download_image(image_url, output_path)
+                if success:
                     # Update frontmatter
                     frontmatter['image'] = image_filename
                     write_frontmatter(index_file, frontmatter, remaining_content)
 
-                    console.print(f"  [green]✓[/] Downloaded {software_name}: {image_filename}")
+                    # Show branch info only for GitHub URLs
+                    if final_url and 'raw.githubusercontent.com' in final_url:
+                        branch = "master" if "/master/" in final_url else "main"
+                        console.print(f"  [green]✓[/] Downloaded {software_name}: {image_filename} (from {branch})")
+                    else:
+                        console.print(f"  [green]✓[/] Downloaded {software_name}: {image_filename}")
                     downloaded_count += 1
                 else:
                     console.print(f"  [red]✗[/] Failed {software_name}")

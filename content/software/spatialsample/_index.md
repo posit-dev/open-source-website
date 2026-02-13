@@ -1,6 +1,7 @@
 ---
 description: Create and summarize spatial resampling objects 🗺
 github: tidymodels/spatialsample
+image: logo.png
 languages:
 - R
 latest_release: '2024-10-02T16:28:40+00:00'

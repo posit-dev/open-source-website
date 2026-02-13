@@ -1,6 +1,7 @@
 ---
 description: Create Blogs and Websites with R Markdown
 github: rstudio/blogdown
+image: logo.png
 languages:
 - R
 latest_release: '2026-01-18T04:20:01+00:00'

@@ -1,6 +1,7 @@
 ---
 description: 'renv: Project environments for R.'
 github: rstudio/renv
+image: logo.svg
 languages:
 - R
 latest_release: '2025-07-24T22:49:27+00:00'

@@ -1,6 +1,7 @@
 ---
 description: An R 📦 to make testing 😀
 github: r-lib/testthat
+image: logo.png
 languages:
 - R
 latest_release: '2026-01-08T23:38:28+00:00'

@@ -1,6 +1,7 @@
 ---
 description: Database (DBI) backend for dplyr
 github: tidyverse/dbplyr
+image: logo.png
 languages:
 - R
 latest_release: '2025-09-09T16:38:02+00:00'

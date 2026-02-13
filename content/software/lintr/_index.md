@@ -1,6 +1,7 @@
 ---
 description: Static Code Analysis for R
 github: r-lib/lintr
+image: logo.png
 languages:
 - R
 latest_release: '2025-11-27T15:14:26+00:00'

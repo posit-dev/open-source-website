@@ -1,6 +1,7 @@
 ---
 description: Data validation toolkit for assessing and monitoring data quality.
 github: posit-dev/pointblank
+image: pointblank_logo.svg
 languages:
 - Python
 latest_release: '2026-02-04T18:46:26+00:00'

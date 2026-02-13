@@ -1,6 +1,7 @@
 ---
 description: The layout packages that powers ggplot2
 github: r-lib/gtable
+image: logo.png
 languages:
 - R
 latest_release: '2024-10-25T12:41:50+00:00'

@@ -1,6 +1,7 @@
 ---
 description: Minimalist Async Evaluation Framework for R
 github: r-lib/mirai
+image: logo.png
 languages:
 - R
 latest_release: '2026-02-13T11:36:25+00:00'

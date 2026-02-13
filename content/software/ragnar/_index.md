@@ -1,6 +1,7 @@
 ---
 description: RAG in R
 github: tidyverse/ragnar
+image: logo.png
 languages:
 - R
 latest_release: '2026-01-23T17:26:32+00:00'

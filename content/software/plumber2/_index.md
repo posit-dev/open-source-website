@@ -1,6 +1,7 @@
 ---
 description: Easy and Powerful Webservers in R
 github: posit-dev/plumber2
+image: logo.png
 languages:
 - R
 latest_release: '2026-01-20T09:21:21+00:00'

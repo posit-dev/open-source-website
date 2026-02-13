@@ -1,6 +1,7 @@
 ---
 description: A promise library for R
 github: rstudio/promises
+image: logo.svg
 languages:
 - R
 latest_release: '2025-11-05T18:06:35+00:00'
