@@ -25,7 +25,7 @@ from typing import Any
 
 import tomli_w
 from dotenv import load_dotenv
-from github import Github, GithubException, UnknownObjectException
+from github import Auth, Github, GithubException, UnknownObjectException
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn, TimeRemainingColumn
 
@@ -306,7 +306,8 @@ def main() -> None:
     # Initialize GitHub client
     console.print("[dim]Initializing GitHub client...[/]")
     token = get_github_token()
-    gh = Github(token)
+    auth = Auth.Token(token)
+    gh = Github(auth=auth)
 
     # Fetch repositories for all organizations
     all_repos_dict = existing_repos.copy()
