@@ -23,12 +23,12 @@ build-search:
     npm run build-search
 
 # Update GitHub repository metadata
-update-github-repos:
-    ./scripts/update-github-repos.py
+update-github-repos *args:
+    ./scripts/update-github-repos.py {{args}}
 
-# Update software metadata from repos.toml
-update-software-meta:
-    ./scripts/update-software-meta.py
+# Update software frontmatter from github-repos.toml
+update-software-frontmatter:
+    ./scripts/update-software-frontmatter.py
 
 quarto-preview:
     uv run quarto preview

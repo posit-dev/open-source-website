@@ -7,12 +7,13 @@
 # ///
 
 """
-Update software metadata from GitHub repositories.
+Update software frontmatter from GitHub repositories.
 
 Reads _index.md files from content/software directories, extracts the github
 field from YAML frontmatter, looks up the corresponding repository in
-data/repos.toml, and updates the frontmatter with a 'meta' field containing
-repository metadata.
+data/github-repos.toml, and updates the frontmatter with an 'external' field containing
+repository metadata. Also sets top-level frontmatter keys based on external,
+include, exclude, and override fields.
 """
 
 import sys
@@ -65,15 +66,22 @@ def parse_frontmatter(content: str) -> tuple[dict[str, Any], str, str]:
     return frontmatter, yaml_section, remaining_content
 
 
+class NoAliasYamlDumper(yaml.SafeDumper):
+    """Custom YAML dumper that disables anchors and aliases."""
+    def ignore_aliases(self, data):
+        return True
+
+
 def format_frontmatter(frontmatter: dict[str, Any]) -> str:
     """
     Format frontmatter dict back to YAML string.
 
     Uses block style for better readability and preserves structure.
+    Disables YAML anchors/aliases (& and *).
     """
-    # Custom YAML dumper for better formatting
     yaml_str = yaml.dump(
         frontmatter,
+        Dumper=NoAliasYamlDumper,
         default_flow_style=False,
         allow_unicode=True,
         sort_keys=False,
@@ -151,19 +159,20 @@ def load_people_mapping(people_dir: Path) -> dict[str, str]:
     return people_map
 
 
-def extract_metadata_for_frontmatter(
+def extract_external_metadata(
     repo_data: dict[str, Any],
     people_map: dict[str, str]
 ) -> dict[str, Any]:
     """
-    Extract relevant metadata fields for insertion into frontmatter.
+    Extract relevant metadata fields for the 'external' section in frontmatter.
 
     Converts contributor GitHub usernames to person names where available.
+    Uses 'title' instead of 'name' for the repository name.
+    Converts primary 'language' to 'languages' list.
     """
-    # Fields to include in the meta section
-    meta_fields = [
+    # Fields to include in the external section
+    external_fields = [
         'repo',
-        'name',
         'description',
         'website',
         'stars',
@@ -176,10 +185,19 @@ def extract_metadata_for_frontmatter(
         'last_updated'
     ]
 
-    meta = {}
-    for field in meta_fields:
+    external = {}
+
+    # Special handling: use 'name' from repo_data as 'title' in external
+    if 'name' in repo_data and repo_data['name'] is not None:
+        external['title'] = repo_data['name']
+
+    for field in external_fields:
         if field in repo_data and repo_data[field] is not None:
-            meta[field] = repo_data[field]
+            external[field] = repo_data[field]
+
+    # Special handling: convert primary language to languages list
+    if 'language' in repo_data and repo_data['language'] is not None:
+        external['languages'] = [repo_data['language']]
 
     # Add people names based on contributors
     if 'contributors' in repo_data and repo_data['contributors']:
@@ -189,9 +207,63 @@ def extract_metadata_for_frontmatter(
                 people_names.append(people_map[contributor_username])
 
         if people_names:
-            meta['people'] = people_names
+            external['people'] = people_names
 
-    return meta
+    return external
+
+
+def compute_top_level_keys(
+    external: dict[str, Any],
+    include: dict[str, Any],
+    exclude: dict[str, Any],
+    override: dict[str, Any]
+) -> dict[str, Any]:
+    """
+    Compute top-level frontmatter keys based on external, include, exclude, and override.
+
+    Logic:
+    1. Start with values from external
+    2. For list values: add items from include
+    3. For list values: remove items from exclude
+    4. Apply override (replaces any previous value)
+
+    Keys computed: title, people, description, website, latest_release, languages
+    """
+    result = {}
+
+    # Keys to process
+    keys_to_process = ['title', 'people', 'description', 'website', 'latest_release', 'languages']
+
+    for key in keys_to_process:
+        # Start with external value
+        value = external.get(key)
+
+        # Handle list values with include/exclude
+        if isinstance(value, list) and key in include:
+            # Add items from include
+            include_items = include.get(key, [])
+            if isinstance(include_items, list):
+                value = list(value)  # Make a copy
+                value.extend(include_items)
+                # Deduplicate while preserving order
+                seen = set()
+                value = [x for x in value if not (x in seen or seen.add(x))]
+
+        if isinstance(value, list) and key in exclude:
+            # Remove items from exclude
+            exclude_items = exclude.get(key, [])
+            if isinstance(exclude_items, list):
+                value = [x for x in value if x not in exclude_items]
+
+        # Apply override if present
+        if key in override:
+            value = override[key]
+
+        # Only set if we have a value
+        if value is not None:
+            result[key] = value
+
+    return result
 
 
 def process_software_directory(
@@ -252,27 +324,32 @@ def process_software_directory(
                     progress.advance(task)
                     continue
 
-                # Look up repo in repos.toml
+                # Look up repo in github-repos.toml
                 repo_data = repos_dict.get(github_repo)
                 if not repo_data:
-                    console.print(f"  [yellow]Warning:[/] Repository '{github_repo}' not found in repos.toml")
+                    console.print(f"  [yellow]Warning:[/] Repository '{github_repo}' not found in github-repos.toml")
                     skipped_count += 1
                     progress.advance(task)
                     continue
 
-                # Extract metadata
-                meta = extract_metadata_for_frontmatter(repo_data, people_map)
+                # Extract external metadata
+                external = extract_external_metadata(repo_data, people_map)
 
-                # Check if meta needs updating
-                existing_meta = frontmatter.get('meta', {})
-                if existing_meta == meta:
-                    console.print(f"  [dim]Skipped {software_name}: meta already up to date[/]")
-                    skipped_count += 1
-                    progress.advance(task)
-                    continue
+                # Always update - never skip
+                # Update external in frontmatter
+                frontmatter['external'] = external
 
-                # Update frontmatter
-                frontmatter['meta'] = meta
+                # Get include, exclude, override from frontmatter (if they exist)
+                include = frontmatter.get('include', {})
+                exclude = frontmatter.get('exclude', {})
+                override = frontmatter.get('override', {})
+
+                # Compute top-level keys
+                top_level = compute_top_level_keys(external, include, exclude, override)
+
+                # Update top-level keys in frontmatter
+                for key, value in top_level.items():
+                    frontmatter[key] = value
 
                 # Write back
                 write_frontmatter(index_file, frontmatter, remaining_content)
@@ -291,18 +368,18 @@ def process_software_directory(
 
 def main() -> None:
     """Main function to orchestrate the script."""
-    console.print("\n[bold blue]Software Metadata Updater[/]\n")
+    console.print("\n[bold blue]Software Frontmatter Updater[/]\n")
 
     # Set up paths
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
     software_dir = project_root / "content" / "software"
     people_dir = project_root / "content" / "people"
-    repos_file = project_root / "data" / "repos.toml"
+    repos_file = project_root / "data" / "github-repos.toml"
 
     console.print(f"[dim]Software directory: {software_dir}[/]")
     console.print(f"[dim]People directory:   {people_dir}[/]")
-    console.print(f"[dim]Repos data:         {repos_file}[/]")
+    console.print(f"[dim]GitHub repos data:  {repos_file}[/]")
 
     # Check if directories exist
     if not software_dir.exists():
