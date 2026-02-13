@@ -72,21 +72,103 @@ class NoAliasYamlDumper(yaml.SafeDumper):
         return True
 
 
+def sort_dict_with_keys_at_end(data: Any, keys_at_end: list[str]) -> Any:
+    """
+    Recursively sort dictionary keys, but put certain keys at the end in specified order.
+
+    Args:
+        data: The data structure to sort
+        keys_at_end: List of keys that should appear at the end (in this order)
+
+    Returns:
+        Sorted data structure
+    """
+    if isinstance(data, dict):
+        # Separate keys into regular and end keys
+        regular_keys = []
+        end_keys_present = []
+
+        for key in data.keys():
+            if key in keys_at_end:
+                end_keys_present.append(key)
+            else:
+                regular_keys.append(key)
+
+        # Sort regular keys alphabetically
+        regular_keys.sort()
+
+        # Keep end keys in the order specified in keys_at_end
+        end_keys_ordered = [key for key in keys_at_end if key in end_keys_present]
+
+        # Build new dict with sorted keys
+        sorted_dict = {}
+        for key in regular_keys + end_keys_ordered:
+            sorted_dict[key] = sort_dict_with_keys_at_end(data[key], keys_at_end)
+
+        return sorted_dict
+    elif isinstance(data, list):
+        # Recursively sort list items if they're dicts
+        return [sort_dict_with_keys_at_end(item, keys_at_end) for item in data]
+    else:
+        return data
+
+
+def add_blank_lines_before_keys(yaml_str: str, keys: list[str]) -> str:
+    """
+    Add blank lines before specific top-level keys in YAML string.
+
+    Args:
+        yaml_str: YAML string
+        keys: List of keys to add blank lines before
+
+    Returns:
+        YAML string with blank lines added
+    """
+    lines = yaml_str.split('\n')
+    result = []
+
+    for i, line in enumerate(lines):
+        # Check if this line is a top-level key (no indentation) that should have a blank line before it
+        if line and not line.startswith(' '):
+            # Extract the key name
+            key_name = line.split(':')[0] if ':' in line else ''
+            if key_name in keys:
+                # Add blank line before this key (unless it's the first line)
+                if i > 0 and result and result[-1] != '':
+                    result.append('')
+        result.append(line)
+
+    return '\n'.join(result)
+
+
 def format_frontmatter(frontmatter: dict[str, Any]) -> str:
     """
     Format frontmatter dict back to YAML string.
 
     Uses block style for better readability and preserves structure.
     Disables YAML anchors/aliases (& and *).
+    Sorts keys alphabetically but puts certain keys at the end in specific order.
+    Adds blank lines before include, exclude, override, and external keys.
     """
+    # Keys that should appear at the end, in this specific order
+    keys_at_end = ['include', 'exclude', 'override', 'external']
+
+    # Sort the frontmatter
+    sorted_frontmatter = sort_dict_with_keys_at_end(frontmatter, keys_at_end)
+
+    # Dump to YAML
     yaml_str = yaml.dump(
-        frontmatter,
+        sorted_frontmatter,
         Dumper=NoAliasYamlDumper,
         default_flow_style=False,
         allow_unicode=True,
-        sort_keys=False,
+        sort_keys=False,  # We already sorted manually
         indent=2
     )
+
+    # Add blank lines before special keys
+    yaml_str = add_blank_lines_before_keys(yaml_str, keys_at_end)
+
     return yaml_str.strip()
 
 
