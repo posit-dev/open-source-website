@@ -27,6 +27,52 @@ Paragraph 2: Two to three sentences covering what makes this package valuable - 
 Do not include headers, titles, installation instructions, or badges. Just write the summary paragraphs as plain text."""
 
 
+def parse_frontmatter(content: str) -> tuple[str, str]:
+    """Parse markdown frontmatter, return (yaml_section, body).
+
+    Args:
+        content: Markdown file content with frontmatter
+
+    Returns:
+        Tuple of (yaml_section as string, body content)
+
+    Raises:
+        ValueError: If frontmatter is missing or malformed
+    """
+    lines = content.split("\n")
+    if not lines or lines[0].strip() != "---":
+        raise ValueError("No frontmatter found")
+
+    # Find closing ---
+    end_idx = None
+    for i in range(1, len(lines)):
+        if lines[i].strip() == "---":
+            end_idx = i
+            break
+
+    if end_idx is None:
+        raise ValueError("Frontmatter not closed")
+
+    # Keep YAML as original string (don't parse and re-dump)
+    yaml_section = "\n".join(lines[1:end_idx])
+    body = "\n".join(lines[end_idx + 1 :]).strip()
+
+    return yaml_section, body
+
+
+def reconstruct_markdown(yaml_section: str, body: str) -> str:
+    """Reconstruct markdown with frontmatter.
+
+    Args:
+        yaml_section: YAML frontmatter content (without --- delimiters)
+        body: Markdown body content
+
+    Returns:
+        Complete markdown file content
+    """
+    return f"---\n{yaml_section}\n---\n\n{body}\n"
+
+
 def main():
     """Main entry point for the script."""
     parser = argparse.ArgumentParser(
