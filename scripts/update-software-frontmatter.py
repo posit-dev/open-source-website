@@ -23,7 +23,13 @@ from typing import Any
 
 import yaml
 from rich.console import Console
-from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
+from rich.progress import (
+    Progress,
+    SpinnerColumn,
+    TextColumn,
+    BarColumn,
+    TaskProgressColumn,
+)
 
 console = Console(stderr=True)
 
@@ -35,15 +41,15 @@ def parse_frontmatter(content: str) -> tuple[dict[str, Any], str, str]:
     Returns:
         tuple: (frontmatter_dict, yaml_section, remaining_content)
     """
-    lines = content.split('\n')
+    lines = content.split("\n")
 
-    if not lines or lines[0].strip() != '---':
+    if not lines or lines[0].strip() != "---":
         return {}, "", content
 
     # Find the closing ---
     end_idx = None
     for i in range(1, len(lines)):
-        if lines[i].strip() == '---':
+        if lines[i].strip() == "---":
             end_idx = i
             break
 
@@ -52,7 +58,7 @@ def parse_frontmatter(content: str) -> tuple[dict[str, Any], str, str]:
 
     # Extract frontmatter YAML
     yaml_lines = lines[1:end_idx]
-    yaml_section = '\n'.join(yaml_lines)
+    yaml_section = "\n".join(yaml_lines)
 
     try:
         frontmatter = yaml.safe_load(yaml_section) or {}
@@ -61,13 +67,14 @@ def parse_frontmatter(content: str) -> tuple[dict[str, Any], str, str]:
         return {}, "", content
 
     # Remaining content
-    remaining_content = '\n'.join(lines[end_idx + 1:])
+    remaining_content = "\n".join(lines[end_idx + 1 :])
 
     return frontmatter, yaml_section, remaining_content
 
 
 class NoAliasYamlDumper(yaml.SafeDumper):
     """Custom YAML dumper that disables anchors and aliases."""
+
     def ignore_aliases(self, data):
         return True
 
@@ -124,21 +131,21 @@ def add_blank_lines_before_keys(yaml_str: str, keys: list[str]) -> str:
     Returns:
         YAML string with blank lines added
     """
-    lines = yaml_str.split('\n')
+    lines = yaml_str.split("\n")
     result = []
 
     for i, line in enumerate(lines):
         # Check if this line is a top-level key (no indentation) that should have a blank line before it
-        if line and not line.startswith(' '):
+        if line and not line.startswith(" "):
             # Extract the key name
-            key_name = line.split(':')[0] if ':' in line else ''
+            key_name = line.split(":")[0] if ":" in line else ""
             if key_name in keys:
                 # Add blank line before this key (unless it's the first line)
-                if i > 0 and result and result[-1] != '':
-                    result.append('')
+                if i > 0 and result and result[-1] != "":
+                    result.append("")
         result.append(line)
 
-    return '\n'.join(result)
+    return "\n".join(result)
 
 
 def format_frontmatter(frontmatter: dict[str, Any]) -> str:
@@ -151,7 +158,7 @@ def format_frontmatter(frontmatter: dict[str, Any]) -> str:
     Adds blank lines before include, exclude, override, and external keys.
     """
     # Keys that should appear at the end, in this specific order
-    keys_at_end = ['include', 'exclude', 'override', 'external']
+    keys_at_end = ["include", "exclude", "override", "external"]
 
     # Sort the frontmatter
     sorted_frontmatter = sort_dict_with_keys_at_end(frontmatter, keys_at_end)
@@ -163,7 +170,7 @@ def format_frontmatter(frontmatter: dict[str, Any]) -> str:
         default_flow_style=False,
         allow_unicode=True,
         sort_keys=False,  # We already sorted manually
-        indent=2
+        indent=2,
     )
 
     # Add blank lines before special keys
@@ -172,7 +179,9 @@ def format_frontmatter(frontmatter: dict[str, Any]) -> str:
     return yaml_str.strip()
 
 
-def write_frontmatter(file_path: Path, frontmatter: dict[str, Any], remaining_content: str) -> None:
+def write_frontmatter(
+    file_path: Path, frontmatter: dict[str, Any], remaining_content: str
+) -> None:
     """
     Write updated frontmatter back to the markdown file.
     """
@@ -180,7 +189,7 @@ def write_frontmatter(file_path: Path, frontmatter: dict[str, Any], remaining_co
 
     new_content = f"---\n{yaml_content}\n---\n{remaining_content}"
 
-    with open(file_path, 'w', encoding='utf-8') as f:
+    with open(file_path, "w", encoding="utf-8") as f:
         f.write(new_content)
 
 
@@ -195,13 +204,15 @@ def load_repos_data(repos_file: Path) -> dict[str, dict[str, Any]]:
         sys.exit(1)
 
     try:
-        with open(repos_file, 'rb') as f:
+        with open(repos_file, "rb") as f:
             data = tomllib.load(f)
 
-        repos_list = data.get('repos', [])
-        repos_dict = {repo['repo']: repo for repo in repos_list}
+        repos_list = data.get("repos", [])
+        repos_dict = {repo["repo"]: repo for repo in repos_list}
 
-        console.print(f"[dim]Loaded {len(repos_dict)} repositories from {repos_file.name}[/]")
+        console.print(
+            f"[dim]Loaded {len(repos_dict)} repositories from {repos_file.name}[/]"
+        )
         return repos_dict
 
     except Exception as e:
@@ -224,11 +235,11 @@ def load_people_mapping(people_dir: Path) -> dict[str, str]:
 
     for index_file in index_files:
         try:
-            content = index_file.read_text(encoding='utf-8')
+            content = index_file.read_text(encoding="utf-8")
             frontmatter, _, _ = parse_frontmatter(content)
 
-            github_username = frontmatter.get('github', '').strip()
-            person_name = frontmatter.get('title', '').strip()
+            github_username = frontmatter.get("github", "").strip()
+            person_name = frontmatter.get("title", "").strip()
 
             if github_username and person_name:
                 people_map[github_username] = person_name
@@ -242,8 +253,7 @@ def load_people_mapping(people_dir: Path) -> dict[str, str]:
 
 
 def extract_external_metadata(
-    repo_data: dict[str, Any],
-    people_map: dict[str, str]
+    repo_data: dict[str, Any], people_map: dict[str, str]
 ) -> dict[str, Any]:
     """
     Extract relevant metadata fields for the 'external' section in frontmatter.
@@ -254,42 +264,41 @@ def extract_external_metadata(
     """
     # Fields to include in the external section
     external_fields = [
-        'repo',
-        'description',
-        'website',
-        'stars',
-        'forks',
-        'latest_release',
-        'first_commit',
-        'license',
-        'contributors',
-        'readme_image',
-        'last_updated'
+        "repo",
+        "description",
+        "website",
+        "stars",
+        "forks",
+        "latest_release",
+        "first_commit",
+        "license",
+        "readme_image",
+        "last_updated",
     ]
 
     external = {}
 
     # Special handling: use 'name' from repo_data as 'title' in external
-    if 'name' in repo_data and repo_data['name'] is not None:
-        external['title'] = repo_data['name']
+    if "name" in repo_data and repo_data["name"] is not None:
+        external["title"] = repo_data["name"]
 
     for field in external_fields:
         if field in repo_data and repo_data[field] is not None:
             external[field] = repo_data[field]
 
     # Special handling: convert primary language to languages list
-    if 'language' in repo_data and repo_data['language'] is not None:
-        external['languages'] = [repo_data['language']]
+    if "language" in repo_data and repo_data["language"] is not None:
+        external["languages"] = [repo_data["language"]]
 
     # Add people names based on contributors
-    if 'contributors' in repo_data and repo_data['contributors']:
+    if "contributors" in repo_data and repo_data["contributors"]:
         people_names = []
-        for contributor_username in repo_data['contributors']:
+        for contributor_username in repo_data["contributors"]:
             if contributor_username in people_map:
                 people_names.append(people_map[contributor_username])
 
         if people_names:
-            external['people'] = people_names
+            external["people"] = people_names
 
     return external
 
@@ -298,7 +307,7 @@ def compute_top_level_keys(
     external: dict[str, Any],
     include: dict[str, Any],
     exclude: dict[str, Any],
-    override: dict[str, Any]
+    override: dict[str, Any],
 ) -> dict[str, Any]:
     """
     Compute top-level frontmatter keys based on external, include, exclude, and override.
@@ -314,7 +323,14 @@ def compute_top_level_keys(
     result = {}
 
     # Keys to process
-    keys_to_process = ['title', 'people', 'description', 'website', 'latest_release', 'languages']
+    keys_to_process = [
+        "title",
+        "people",
+        "description",
+        "website",
+        "latest_release",
+        "languages",
+    ]
 
     for key in keys_to_process:
         # Start with external value
@@ -351,7 +367,7 @@ def compute_top_level_keys(
 def process_software_directory(
     software_dir: Path,
     repos_dict: dict[str, dict[str, Any]],
-    people_map: dict[str, str]
+    people_map: dict[str, str],
 ) -> tuple[int, int, int]:
     """
     Process all _index.md files in software directories.
@@ -367,7 +383,9 @@ def process_software_directory(
     index_files = list(software_dir.glob("*/_index.md"))
 
     if not index_files:
-        console.print("[yellow]Warning:[/] No _index.md files found in content/software")
+        console.print(
+            "[yellow]Warning:[/] No _index.md files found in content/software"
+        )
         return 0, 0, 0
 
     console.print(f"\n[cyan]Found {len(index_files)} software directories[/]\n")
@@ -387,21 +405,27 @@ def process_software_directory(
 
             try:
                 # Read the file
-                content = index_file.read_text(encoding='utf-8')
+                content = index_file.read_text(encoding="utf-8")
 
                 # Parse frontmatter
-                frontmatter, yaml_section, remaining_content = parse_frontmatter(content)
+                frontmatter, yaml_section, remaining_content = parse_frontmatter(
+                    content
+                )
 
                 if not frontmatter:
-                    console.print(f"  [yellow]Warning:[/] No frontmatter in {software_name}/_index.md")
+                    console.print(
+                        f"  [yellow]Warning:[/] No frontmatter in {software_name}/_index.md"
+                    )
                     skipped_count += 1
                     progress.advance(task)
                     continue
 
                 # Check if github field exists
-                github_repo = frontmatter.get('github')
+                github_repo = frontmatter.get("github")
                 if not github_repo:
-                    console.print(f"  [dim]Skipped {software_name}: no 'github' field[/]")
+                    console.print(
+                        f"  [dim]Skipped {software_name}: no 'github' field[/]"
+                    )
                     skipped_count += 1
                     progress.advance(task)
                     continue
@@ -409,7 +433,9 @@ def process_software_directory(
                 # Look up repo in github-repos.toml
                 repo_data = repos_dict.get(github_repo)
                 if not repo_data:
-                    console.print(f"  [yellow]Warning:[/] Repository '{github_repo}' not found in github-repos.toml")
+                    console.print(
+                        f"  [yellow]Warning:[/] Repository '{github_repo}' not found in github-repos.toml"
+                    )
                     skipped_count += 1
                     progress.advance(task)
                     continue
@@ -419,12 +445,12 @@ def process_software_directory(
 
                 # Always update - never skip
                 # Update external in frontmatter
-                frontmatter['external'] = external
+                frontmatter["external"] = external
 
                 # Get include, exclude, override from frontmatter (if they exist)
-                include = frontmatter.get('include', {})
-                exclude = frontmatter.get('exclude', {})
-                override = frontmatter.get('override', {})
+                include = frontmatter.get("include", {})
+                exclude = frontmatter.get("exclude", {})
+                override = frontmatter.get("override", {})
 
                 # Compute top-level keys
                 top_level = compute_top_level_keys(external, include, exclude, override)
@@ -440,7 +466,9 @@ def process_software_directory(
                 updated_count += 1
 
             except Exception as e:
-                console.print(f"  [bold red]Error:[/] Failed to process {software_name}: {e}")
+                console.print(
+                    f"  [bold red]Error:[/] Failed to process {software_name}: {e}"
+                )
                 error_count += 1
 
             progress.advance(task)
@@ -465,7 +493,9 @@ def main() -> None:
 
     # Check if directories exist
     if not software_dir.exists():
-        console.print(f"[bold red]Error:[/] Software directory not found: {software_dir}")
+        console.print(
+            f"[bold red]Error:[/] Software directory not found: {software_dir}"
+        )
         sys.exit(1)
 
     # Load repository data
@@ -475,7 +505,9 @@ def main() -> None:
     people_map = load_people_mapping(people_dir)
 
     # Process all software directories
-    updated, skipped, errors = process_software_directory(software_dir, repos_dict, people_map)
+    updated, skipped, errors = process_software_directory(
+        software_dir, repos_dict, people_map
+    )
 
     # Summary
     console.print("\n[bold]Summary:[/]")
