@@ -30,3 +30,7 @@ external:
   title: watcher
   website: https://watcher.r-lib.org/
 ---
+
+watcher provides efficient, cross-platform file system monitoring for R. Built on libfswatch, it automatically detects changes to files and directories using native operating system APIs like FSEvents on macOS, inotify on Linux, and ReadDirectoryChangesW on Windows. Whether you're developing data pipelines that need to trigger when new data arrives, building reactive applications, or automating workflows based on file changes, watcher provides a lightweight solution that runs asynchronously without blocking your R session.
+
+The package makes it simple to watch files or entire directory trees recursively, and respond to changes either by logging events or executing custom R functions. With seamless integration into R's event loop through the later package, watcher is particularly well-suited for Shiny applications and interactive development workflows where you need to react to file system changes in real-time. The underlying event-driven architecture ensures optimal performance across all platforms, making it a reliable choice for production environments where monitoring file system activity is critical.

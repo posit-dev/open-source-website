@@ -49,3 +49,7 @@ external:
   title: vetiver-r
   website: https://rstudio.github.io/vetiver-r/
 ---
+
+Vetiver provides fluent tooling to version, share, deploy, and monitor trained machine learning models in R. Named after the "oil of tranquility" used as a stabilizing ingredient in perfumery, vetiver brings stability and structure to the model deployment lifecycle. The package handles recording and validating model input data prototypes, creating production-ready REST APIs with Plumber, and making predictions from remote endpoints—transforming models from experimental artifacts into reliable, versioned services.
+
+Vetiver works seamlessly with popular R modeling frameworks including tidymodels, caret, mlr3, XGBoost, ranger, keras, and base R functions like lm() and glm(). Its extensible design uses generics that support many model types, allowing data scientists to adopt a consistent MLOps workflow regardless of their modeling approach. By integrating with the pins package for model storage and versioning across local folders, Posit Connect, Amazon S3, and other backends, vetiver enables teams to collaborate on models and maintain reproducible deployment pipelines from development through production monitoring.

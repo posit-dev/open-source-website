@@ -70,3 +70,7 @@ external:
   title: webinars
   website: https://resources.rstudio.com/webinars
 ---
+
+The webinars repository is a comprehensive collection of code, slides, and materials from RStudio's educational webinar series. This resource brings together presentations from leading experts in the R community, covering a wide range of topics from data visualization and machine learning to package development and workflow optimization. Each webinar is carefully structured with reproducible code examples and accompanying slides, making it easy to follow along and apply the concepts to your own work.
+
+Whether you're looking to learn new techniques, explore R packages, or stay current with best practices in data science, this repository serves as a valuable learning resource. All materials are openly available and organized by topic, allowing you to dive into the areas most relevant to your work. The webinars are designed to be accessible both during live presentations and as on-demand content, with recordings available on the RStudio website for those who want to learn at their own pace.

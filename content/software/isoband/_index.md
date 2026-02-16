@@ -40,3 +40,7 @@ external:
   title: isoband
   website: http://isoband.r-lib.org/
 ---
+
+The isoband package transforms gridded elevation data into publication-quality contour visualizations through its efficient generation of isolines and isobands. Whether you're mapping topographic features, visualizing temperature gradients, or exploring any continuous spatial data, isoband handles the computational complexity of contour generation while providing seamless integration with R's visualization ecosystem. The package's core functions, `isolines()` and `isobands()`, process regularly spaced grid data and return coordinate vectors that work directly with both base graphics and ggplot2 workflows.
+
+Built with performance in mind, isoband excels at processing large datasets without degradation, making it ideal for production environments and exploratory analysis alike. Its flexible output format can be used directly with grid graphics or converted to spatial features using `iso_to_sfg()`, providing data scientists and developers with multiple pathways for creating professional contour maps. Originally developed by Claus Wilke and donated to r-lib in 2022, the package continues to serve as a foundational tool for spatial data visualization in R.

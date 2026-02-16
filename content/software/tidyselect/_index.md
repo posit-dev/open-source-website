@@ -60,3 +60,7 @@ external:
   title: tidyselect
   website: https://tidyselect.r-lib.org
 ---
+
+tidyselect is the engine that powers column selection in popular tidyverse packages like dplyr and tidyr. It provides a consistent, intuitive syntax for selecting variables from data frames, enabling you to work with columns using flexible patterns like ranges, helper functions, and set operations. Whether you're using `select()` to choose specific columns, `pull()` to extract a single variable, or any of the tidyr verbs that operate on column subsets, tidyselect is working behind the scenes to interpret your selections.
+
+For package developers, tidyselect offers a robust framework for implementing your own selecting functions that feel native to the tidyverse ecosystem. It handles the complexity of parsing selection expressions, resolving column names, and managing edge cases, so you can focus on your package's core functionality. With tidyselect, you can create data manipulation functions that accept the same intuitive selection syntax your users already know and love, ensuring a seamless experience across the R data science ecosystem.

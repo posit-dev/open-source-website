@@ -35,3 +35,7 @@ external:
   title: prettycode
   website: https://r-lib.github.io/prettycode/
 ---
+
+prettycode brings syntax highlighting to your R terminal, making code inspection clearer and more pleasant. When you're working in the console and need to examine a function's source code, prettycode replaces R's standard black-and-white output with color-coded syntax highlighting using ANSI colors. This enhanced readability is especially valuable for data scientists and developers who frequently inspect function definitions while debugging or exploring packages in command-line environments.
+
+The package integrates seamlessly into your workflow with minimal setup—simply activate it and all function displays automatically benefit from syntax highlighting. For longer functions, prettycode intelligently uses your system's default pager to prevent overwhelming your terminal, while still offering the flexibility to customize this behavior to match your preferences. Whether you're working on a remote server, troubleshooting production code, or just prefer the terminal for your R development, prettycode reduces eye strain and makes code structure immediately apparent through thoughtful use of color.

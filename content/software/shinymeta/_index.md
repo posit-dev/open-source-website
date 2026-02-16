@@ -39,3 +39,7 @@ external:
   title: shinymeta
   website: https://rstudio.github.io/shinymeta
 ---
+
+shinymeta transforms your Shiny applications from interactive black boxes into transparent, reproducible workflows by capturing the logic behind your app and exposing it as standalone R code. Using metaprogramming techniques, shinymeta provides special counterparts to Shiny's reactive building blocks (like `metaReactive()` and `metaRender()`) that automatically generate code to recreate what users see in your app, enabling them to reproduce results outside the Shiny runtime.
+
+This capability unlocks powerful possibilities for data science workflows: users can automate analyses with the latest data, download reproducible reports with embedded code, and extend your app's logic in ways you never anticipated. Whether you're building educational tools that help students understand statistical concepts through code, creating exploratory analysis apps where users need permanent records of their work, or developing data dashboards where transparency and reproducibility are essential, shinymeta bridges the gap between interactive exploration and reproducible research. The package makes complex analyses more transparent, helps build user trust through code visibility, and empowers your audience to take ownership of the insights they discover.

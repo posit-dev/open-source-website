@@ -50,3 +50,7 @@ external:
   title: systemfonts
   website: https://systemfonts.r-lib.org
 ---
+
+Creating high-quality data visualizations and documents in R often requires precise control over typography, but managing fonts across different operating systems can be surprisingly complex. systemfonts solves this challenge by providing a unified interface to locate and work with fonts installed on your system, leveraging native libraries like CoreText on macOS, FontConfig on Linux, and the Windows font registry.
+
+Whether you're building graphics with ggplot2, creating reports with R Markdown, or developing packages that need reliable font access, systemfonts makes it easy to discover available fonts, match them by family and style, and retrieve detailed font metadata. The package goes beyond system fonts by allowing you to register custom fonts from local files or even fetch fonts on-demand from online repositories like Google Fonts. With special cross-platform aliases for common font categories (sans, serif, mono, emoji) and a C/C++ API for package developers, systemfonts provides the foundation for consistent, professional typography in R graphics and documents across any platform.

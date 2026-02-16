@@ -69,3 +69,7 @@ external:
   title: dtplyr
   website: https://dtplyr.tidyverse.org
 ---
+
+dtplyr bridges two powerful R data manipulation ecosystems by providing a translation layer between dplyr and data.table. It enables you to write code using dplyr's intuitive and expressive syntax while automatically gaining the exceptional speed and computational efficiency of data.table under the hood. This approach is particularly valuable when working with large datasets where performance matters, allowing you to maintain readable, familiar dplyr code while achieving significantly faster execution times.
+
+The package works through a simple lazy evaluation workflow: wrap your data with lazy_dt(), chain together standard dplyr verbs like filter(), mutate(), group_by(), and summarise(), then materialize the result when needed. This seamless integration means you can leverage your existing dplyr knowledge without learning data.table's different syntax, while still benefiting from its performance advantages. With minimal translation overhead of under 1ms per operation, dtplyr makes it easy to optimize your data pipelines for speed without sacrificing code clarity or readability.

@@ -37,3 +37,7 @@ external:
   title: btw
   website: https://posit-dev.github.io/btw/
 ---
+
+btw is a comprehensive R package that bridges the gap between your R environment and Large Language Models. It addresses a fundamental challenge when working with AI assistants: LLMs need context about your data structures, packages, and relevant documentation to provide meaningful help. Rather than manually gathering and formatting this information, btw automates the entire process, making it effortless to get AI assistance that's actually useful for your specific R workflow.
+
+The package supports three distinct workflows to fit different preferences and use cases. For quick interactions, the `btw()` function compiles relevant context from your R environment that you can paste directly into ChatGPT or Claude. If you prefer working within your IDE, `btw_app()` launches a built-in AI assistant that can explore your local environment and access documentation without leaving R. For developers building LLM-powered applications, functions like `btw_client()` and `btw_tools()` provide the building blocks to integrate AI capabilities into custom tools and connect with external coding agents via the Model Context Protocol.

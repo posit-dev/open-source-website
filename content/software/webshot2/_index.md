@@ -46,3 +46,7 @@ external:
   title: webshot2
   website: https://rstudio.github.io/webshot2/
 ---
+
+webshot2 is an R package that captures screenshots of web pages programmatically, powered by modern headless Chrome technology. Built as the successor to the original webshot package, it leverages the Chromote library to provide reliable, high-performance screenshot capabilities for any web content you can render in a browser. Whether you're documenting interactive visualizations, creating automated reports, testing web applications, or archiving dynamic content, webshot2 turns web pages into images with just a few lines of R code.
+
+The package excels at both single-page captures and batch operations, offering parallel processing to efficiently handle multiple screenshots simultaneously. You can customize viewport dimensions, specify clipping regions, and work with any Chromium-based browser including Chrome, Edge, Brave, Vivaldi, and Opera. This makes webshot2 an essential tool for R users who need to programmatically capture visual representations of Shiny apps, HTML widgets, dashboards, or any web-based content in their data science workflows.

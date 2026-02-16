@@ -39,3 +39,7 @@ external:
   title: tidyclust
   website: https://tidyclust.tidymodels.org/
 ---
+
+tidyclust brings the power and consistency of the tidymodels ecosystem to unsupervised learning. Modeled closely after the parsnip package, tidyclust provides a unified, tidy interface to clustering models, making it easy to create, fit, and evaluate different clustering algorithms using a consistent syntax. Whether you're working with K-means, hierarchical clustering, or other clustering methods, tidyclust streamlines your workflow with familiar tidyverse conventions and integrates seamlessly with the broader tidymodels framework.
+
+With tidyclust, you can create cluster specifications with intuitive functions, fit models to your data with a simple pipe-based workflow, and extract results in tidy formats. The package makes it straightforward to predict cluster assignments for new observations, extract training set cluster assignments, and retrieve cluster centroids. This consistent interface eliminates the need to learn different function signatures and output formats for each clustering algorithm, allowing you to focus on exploring patterns in your data rather than wrestling with API inconsistencies.

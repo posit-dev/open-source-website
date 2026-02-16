@@ -46,3 +46,7 @@ external:
   title: lobstr
   website: https://lobstr.r-lib.org/
 ---
+
+lobstr is a diagnostic toolkit designed to help R developers inspect and understand the internal structure of objects with unprecedented clarity. Building on the foundation of R's familiar str() function, lobstr provides specialized tools that reveal how R actually works under the hood. Whether you're debugging complex code, optimizing memory usage, or simply trying to understand how R evaluates your expressions, lobstr transforms abstract concepts about R's internals into visual, comprehensible representations that make troubleshooting and learning intuitive.
+
+The package offers four powerful diagnostic tools that each address a specific aspect of R's behavior. The ast() function visualizes abstract syntax trees to show exactly how R parses your code, while ref() reveals how objects share memory across data structures, helping you identify when variables point to the same data rather than holding copies. The obj_size() function provides accurate memory footprint analysis by accounting for shared references, and cst() displays call stack relationships to help you trace function execution flow. Together, these tools give data scientists and developers the insights they need to write more efficient code, understand performance characteristics, and master R's evaluation model.

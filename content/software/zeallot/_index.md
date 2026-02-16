@@ -26,3 +26,7 @@ external:
   title: zeallot
   website: ''
 ---
+
+Working with functions that return multiple values in R often means dealing with unwieldy lists and extracting elements one at a time. zeallot brings the power of multiple assignment to R through its `%<-%` operator, allowing you to unpack lists, destructure data frames, and assign multiple values in a single, elegant expression. Whether you're working with functions that return complex nested structures or simply want to write more concise and readable code, zeallot lets you assign multiple values to explicit variable names in one go.
+
+The package shines when working with modern R patterns like purrr's safe functions, where you can unpack both the result and error in one line (`c(res, err) %<-% safe_log(10)`), or when you need to extract specific columns from a data frame (`c(cyl=, wt=) %<-% mtcars`). zeallot also supports nested unpacking for complex list structures and collector variables for capturing remaining elements, making it a versatile tool for data scientists who want to write self-documenting code without sacrificing clarity or brevity.

@@ -54,3 +54,7 @@ external:
   title: hardhat
   website: https://hardhat.tidymodels.org
 ---
+
+Hardhat is a developer-focused R package that streamlines the creation of new modeling packages by providing a standardized infrastructure aligned with tidymodels conventions. If you're building statistical or machine learning models in R, hardhat handles the boilerplate code so you can focus on writing the core implementation of your model, ensuring consistency across the tidymodels ecosystem and reducing development time.
+
+The package offers essential tools for common modeling workflows, including `mold()` and `forge()` for data preprocessing at fitting and prediction time, centralized validation functions to ensure data consistency, and modernized alternatives to base R's preprocessing infrastructure. Hardhat also provides utilities for handling intercept columns, standardizing predict output, and managing predictor metadata like classes and factor levels, making it easier to build robust, production-ready modeling packages that work seamlessly with other tidymodels tools.

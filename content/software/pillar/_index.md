@@ -49,3 +49,7 @@ external:
   title: pillar
   website: https://pillar.r-lib.org/
 ---
+
+Pillar provides the formatting engine that makes your data beautiful in R. Working behind the scenes, it powers the elegant column displays you see when printing tibbles, using color and unicode characters to guide the eye and make data structures easier to read and understand. Whether you're exploring a dataset in the console or reviewing analysis results, pillar ensures your data is presented in a clean, visually polished format that highlights what matters most.
+
+For R package developers, pillar offers a powerful toolkit for creating custom display methods for specialized data types. By implementing pillar's extension points, you can define how your custom vectors and table-like objects are rendered, ensuring they integrate seamlessly with the tidyverse ecosystem. This makes pillar an essential foundation for packages working with domain-specific data structures, from database connections to spatial data, enabling developers to deliver professional-quality data displays without building formatting logic from scratch.

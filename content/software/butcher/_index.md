@@ -57,3 +57,7 @@ external:
   title: butcher
   website: https://butcher.tidymodels.org/
 ---
+
+Fitted model objects in R often consume far more memory than necessary. The culprit? Unnecessary components like training environments, control parameters, and original data that persist after model fitting but aren't needed for predictions. This bloat becomes a significant problem when saving models to disk, deploying them to production systems, or managing multiple models in memory. Butcher solves this problem by selectively removing these unnecessary components while preserving full prediction capabilities, often reducing model size by orders of magnitude.
+
+The package provides a suite of specialized functions to strip away different components of model objects: axe_call() removes the call object, axe_env() clears captured environments, axe_data() removes training data, and more. The primary butcher() function executes all these operations at once, making it easy to dramatically reduce model size with a single command. Whether you're deploying models to production, building model repositories, or simply trying to save disk space, butcher helps you keep only what you need without sacrificing functionality.

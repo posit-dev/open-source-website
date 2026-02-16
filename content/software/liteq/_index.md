@@ -31,3 +31,7 @@ external:
   title: liteq
   website: ''
 ---
+
+liteq is a lightweight, serverless message queue system for R that uses SQLite as its backend. Perfect for coordinating parallel workflows and managing asynchronous tasks, liteq provides a portable alternative to heavyweight message brokers like RabbitMQ or Redis. Since it requires only SQLite, you can use it anywhere R runs without setting up external infrastructure or managing additional services.
+
+The package excels at building resilient data processing pipelines. It automatically detects crashed workers and returns unacknowledged messages to the queue, ensuring no work is lost when processes fail unexpectedly. With support for multiple databases and queues, race-condition-safe operations, and flexible message handling, liteq makes it straightforward to build robust job processing systems for everything from batch data transformations to distributed computing workflows.

@@ -88,3 +88,7 @@ external:
   title: learnr
   website: https://pkgs.rstudio.com/learnr
 ---
+
+learnr is an R package that transforms R Markdown documents into interactive tutorials, making it easy to create engaging educational experiences directly in the browser. It enables educators and trainers to build comprehensive learning materials that combine narrative content, executable R code exercises, quiz questions, videos, and even Shiny components all within a single document. Students can modify and run code examples in real-time, receive immediate feedback on their work, and test their understanding with built-in assessments without requiring any local R installation.
+
+What makes learnr particularly powerful is its automatic progress tracking feature, which preserves all work done within a tutorial so learners can seamlessly pick up where they left off. This makes it ideal for creating self-paced courses, workshop materials, or documentation that requires hands-on practice. Whether you're teaching introductory R programming, advanced statistical methods, or data science workflows, learnr provides a streamlined way to deliver interactive content that keeps learners engaged while allowing them to learn by doing.

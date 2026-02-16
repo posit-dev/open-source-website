@@ -50,3 +50,7 @@ external:
   title: tensorflow
   website: https://tensorflow.rstudio.com
 ---
+
+The tensorflow package provides complete access to the TensorFlow machine learning framework from within R. TensorFlow is an open source library for numerical computation using data flow graphs, where nodes represent mathematical operations and edges represent the multidimensional data arrays (tensors) flowing between them. This flexible architecture enables you to deploy computation across CPUs and GPUs with a single, unified API, making it ideal for building and training deep learning models at scale.
+
+By bridging R's statistical computing capabilities with TensorFlow's powerful machine learning infrastructure, this package opens up the full TensorFlow API to R users. Whether you're developing neural networks for image recognition, natural language processing, or time series forecasting, the tensorflow package allows you to construct and execute TensorFlow graphs directly from R. The package integrates seamlessly with the RStudio IDE, providing code completion and inline help to accelerate your machine learning workflow, making sophisticated deep learning accessible to data scientists and researchers working in the R ecosystem.

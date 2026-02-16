@@ -48,3 +48,7 @@ external:
   title: modelr
   website: https://modelr.tidyverse.org
 ---
+
+modelr provides helper functions that streamline modeling workflows within the tidyverse ecosystem. Originally designed to support teaching modeling fundamentals in R for Data Science, modelr bridges the gap between data manipulation and statistical modeling by enabling elegant, pipe-friendly workflows. The package offers intuitive tools for partitioning datasets, evaluating model quality, and seamlessly adding predictions and residuals to data frames, making it easier to iterate on models and visualize results.
+
+Key features include flexible resampling methods (bootstrap, cross-validation), model quality metrics (RMSE, MAE, R-squared), and convenience functions like `data_grid()` for generating reference points for predictions. While modelr is now superseded by the more comprehensive tidymodels framework for production modeling work, it remains an excellent lightweight option for exploratory analysis, educational purposes, and quick modeling tasks that benefit from tidyverse conventions.

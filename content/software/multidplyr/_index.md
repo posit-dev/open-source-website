@@ -49,3 +49,7 @@ external:
   title: multidplyr
   website: https://multidplyr.tidyverse.org
 ---
+
+multidplyr is a parallel processing backend for dplyr that enables data scientists to harness the full power of multi-core processors when working with large datasets. By partitioning data frames across multiple CPU cores and keeping them distributed during computation, multidplyr allows you to apply familiar dplyr operations at scale without rewriting your code. The package seamlessly integrates with your existing dplyr workflows—simply wrap your data with `partition()`, perform your transformations using standard dplyr verbs, and collect results back to your main R session.
+
+Designed for computationally intensive operations on datasets with millions of observations, multidplyr excels when parallelizing complex functions where the computational gains outweigh communication overhead. The package offers flexible data distribution strategies, allowing you to either read different files on each worker or partition already-loaded data using `group_by()` to ensure related observations stay together. Inspired by partools and distributedR, multidplyr prioritizes minimizing inter-node data transfer while maximizing parallel performance, making it an essential tool for data scientists tackling large-scale data processing challenges in R.

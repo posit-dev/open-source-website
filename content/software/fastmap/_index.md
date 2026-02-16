@@ -34,3 +34,7 @@ external:
   title: fastmap
   website: https://r-lib.github.io/fastmap/
 ---
+
+Fastmap provides high-performance data structures for R developers who need efficient key-value stores, stacks, and queues in their applications. Built with C++, it addresses a critical performance limitation in R's native environments: when storing or accessing keys, traditional R environments intern every key into R's symbol table, which never gets garbage collected. For long-running processes with dynamically generated keys, this creates memory leakage and progressively degrades performance as the symbol table expands. Fastmap eliminates this problem entirely by storing keys as C++ strings, ensuring consistent memory usage and performance even under heavy workloads.
+
+The package is particularly valuable for data scientists and developers building production systems, interactive applications, or long-running analytics pipelines where memory efficiency and predictable performance are essential. Fastmap implements a hopscotch hash map internally for fast lookups while maintaining compatibility with R's serialization capabilities. Whether you're caching computation results, managing session state, or implementing custom data structures, fastmap delivers the speed and reliability needed for demanding R applications without the hidden costs of symbol table pollution.

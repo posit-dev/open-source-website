@@ -368,3 +368,7 @@ external:
   title: fs
   website: https://fs.r-lib.org/
 ---
+
+fs provides a cross-platform, unified interface for file system operations in R. Built on libuv, the same battle-tested C library that powers Node.js, fs eliminates the inconsistencies and quirks of base R's file handling functions. Every function is fully vectorized, returns predictable outputs, and throws explicit errors instead of silently failing, making your file operations more reliable and easier to debug. The package handles path encoding automatically with UTF-8 across all operating systems, removing a common source of frustration when working with files on different platforms.
+
+The package organizes operations into intuitive families: path_ functions for path manipulation, file_ for file operations, dir_ for directories, and link_ for symbolic links. This consistent naming and behavior makes fs particularly valuable for data scientists and developers who need to programmatically manage files and directories as part of their workflows. Whether you're processing multiple data files, organizing project outputs, or building reproducible pipelines, fs integrates seamlessly with tidyverse tools like dplyr and purrr, allowing you to chain file operations together with the pipe operator and focus on your analysis rather than wrestling with file system quirks.

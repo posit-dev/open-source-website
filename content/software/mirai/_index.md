@@ -42,3 +42,7 @@ external:
   title: mirai
   website: https://mirai.r-lib.org/
 ---
+
+mirai is a minimalist async evaluation framework that brings high-performance parallel computing to R. It enables you to send computational tasks to background processes without blocking your main session, delivering microsecond-level response times through an event-driven architecture built on NNG and nanonext. By supporting dynamic scaling from local laptops to HPC clusters and cloud platforms, mirai makes it easy to write code that runs efficiently whether you're prototyping on your machine or deploying to production infrastructure.
+
+What makes mirai essential for modern R development is its deep integration across the R ecosystem. It powers the official R parallel backend, purrr's parallel mapping functions, Shiny's async task execution, and tidymodels' parallel infrastructure. With features like distributed tracing, OpenTelemetry observability, and cross-language data support for torch, Arrow, and Polars, mirai provides production-grade capabilities while maintaining a clean, minimalist design. Whether you're building responsive Shiny applications, running large-scale data science pipelines with targets, or orchestrating complex parallel workflows, mirai delivers the scalability and reliability needed for professional data science work.

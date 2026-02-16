@@ -31,3 +31,7 @@ external:
   title: carrier
   website: ''
 ---
+
+Carrier makes it easy to package R functions for execution in remote sessions or different processes. When working with distributed computing frameworks, parallel processing, or cloud environments, functions often fail because they rely on hidden dependencies that don't exist in the remote context. Carrier solves this problem by providing tools to create self-contained "crates" that bundle functions with their required dependencies and data, ensuring they work reliably wherever they're sent.
+
+The package's `crate()` function helps you explicitly declare what your function needs to run, from namespace requirements to data objects. Carrier enforces best practices by requiring namespace prefixes for non-base functions, preventing subtle bugs that only appear in production. It also displays the total size of packaged functions, giving you visibility into data transmission costs before deploying to remote workers. Whether you're running parallel computations across cores or distributing workloads to cloud instances, carrier ensures your functions arrive complete and ready to execute.

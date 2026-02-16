@@ -184,3 +184,7 @@ external:
   title: broom
   website: https://broom.tidymodels.org
 ---
+
+broom is an essential R package that transforms complex statistical model outputs into tidy data structures, making them easy to work with in modern data analysis workflows. Instead of dealing with messy, inconsistent model objects, broom provides three core functions that standardize how you interact with statistical results: tidy() extracts model components like regression coefficients into a clean format perfect for visualization and further analysis, glance() returns a single-row summary with goodness-of-fit metrics for quick model comparison, and augment() enriches your original data with model-derived predictions and residuals. With support for over 100 models from popular packages, broom seamlessly integrates with the tidyverse ecosystem and tidy data principles.
+
+What makes broom particularly valuable for data scientists and developers is how it streamlines the entire modeling workflow. Whether you're exploring a single model, comparing multiple competing models, or building reproducible analysis pipelines, broom eliminates the friction of extracting information from diverse model objects. This consistency enables you to spend less time wrestling with data structures and more time on the analytical work that matters, from creating custom visualizations of model results to efficiently documenting your findings in reports and presentations.

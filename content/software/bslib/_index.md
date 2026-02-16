@@ -65,3 +65,7 @@ external:
   title: bslib
   website: https://rstudio.github.io/bslib/
 ---
+
+bslib is a modern UI toolkit that brings contemporary Bootstrap styling and theming capabilities to Shiny applications and R Markdown documents. Built on Bootstrap's powerful CSS framework, it enables you to create visually stunning dashboards and data applications with custom themes that can be applied consistently across your projects. The package provides a rich collection of reusable UI components including cards, value boxes, and sidebars, along with real-time theming tools that let you preview and refine your designs interactively without redeploying your application.
+
+What makes bslib essential for data scientists and developers is its ability to modernize the look and feel of Shiny apps while maintaining backward compatibility. While Shiny historically defaulted to Bootstrap 3, bslib unlocks access to Bootstrap 4 and 5, bringing modern design patterns and improved accessibility to your work. Whether you're building analytical dashboards for stakeholders, creating interactive reports, or developing production data applications, bslib gives you the flexibility to craft professional, on-brand experiences that make your data insights shine.

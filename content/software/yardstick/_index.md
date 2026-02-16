@@ -76,3 +76,7 @@ external:
   title: yardstick
   website: https://yardstick.tidymodels.org/
 ---
+
+Yardstick brings tidy data principles to model performance evaluation, providing a comprehensive toolkit for assessing how well your predictive models perform. Whether you're evaluating binary classification, multiclass problems, or regression models, yardstick offers an intuitive, data-frame-friendly interface that seamlessly integrates with the tidymodels ecosystem and dplyr workflows. The package includes a rich collection of performance metrics—from accuracy and ROC AUC to precision-recall curves—all accessible through a consistent, easy-to-use API.
+
+What sets yardstick apart is its ability to streamline the entire evaluation workflow. Calculate metrics across multiple model resamples simultaneously using grouped data frames, generate publication-quality visualizations with minimal code through autoplot methods, and maintain reproducible, organized results as tibbles for downstream analysis. For data scientists who need rigorous model assessment without sacrificing code clarity or reproducibility, yardstick is an essential tool in the modern R machine learning toolkit.

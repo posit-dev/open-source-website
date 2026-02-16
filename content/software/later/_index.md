@@ -51,3 +51,7 @@ external:
   title: later
   website: https://later.r-lib.org/
 ---
+
+The later package brings asynchronous programming capabilities to R by enabling you to schedule functions or formulas to execute after a specified delay. Similar to JavaScript's `setTimeout` function, later allows you to defer operations, create responsive applications, and handle background tasks without blocking your interactive R session. This is particularly valuable for building Shiny applications that need to perform long-running computations, scheduled updates, or asynchronous I/O operations while maintaining a responsive user interface.
+
+Beyond basic delayed execution, later provides advanced features like file descriptor monitoring for asynchronous I/O operations with TCP sockets and other resources, making it a foundation for building scalable network-enabled applications in R. The package includes built-in reentrancy protection to prevent overlapping code execution and offers C++ integration through its API, allowing package developers to schedule callbacks from both the main R thread and background threads. When combined with the promises package, later enables sophisticated asynchronous workflows that can transform how you handle time-consuming operations in data analysis pipelines and interactive applications.

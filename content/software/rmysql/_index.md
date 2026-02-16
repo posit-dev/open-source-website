@@ -40,3 +40,7 @@ external:
   title: RMySQL
   website: http://cran.r-project.org/package=RMySQL
 ---
+
+RMySQL is a database interface and MySQL driver for R that enables seamless connectivity between your R environment and MySQL databases. Implementing the DBI (Database Interface) specification, it provides a standardized, reliable approach for data scientists and developers to read, write, and query MySQL databases directly from their R workflows. Whether you're loading production data for statistical analysis, writing R datasets to persistent storage, or running complex SQL queries while leveraging R's analytical capabilities, RMySQL bridges the gap between database operations and data science.
+
+The package offers essential features for database-driven data science, including flexible connection management with support for credential files, the ability to read and write tables efficiently, and progressive result fetching for handling large datasets that exceed memory constraints. While RMySQL is now considered a legacy package being phased out in favor of RMariaDB, it remains functional and continues to serve existing projects that rely on MySQL connectivity in R.

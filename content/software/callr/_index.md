@@ -64,3 +64,7 @@ external:
   title: callr
   website: https://callr.r-lib.org/
 ---
+
+callr is an essential R package that enables you to execute R functions in separate, isolated R processes. This capability is invaluable when you need to run computations without affecting your current R environment, test code in a clean session, or manage resource-intensive operations that might otherwise interfere with your interactive workflow. By seamlessly transferring function arguments to subprocesses and returning results back to your main session, callr provides a robust foundation for reliable and reproducible R development.
+
+What makes callr particularly powerful is its flexibility in handling different execution patterns. Whether you need a quick one-off computation with the r() function, a background process running asynchronously with r_bg(), or a persistent R session for repeated function calls with r_session, callr adapts to your workflow. The package handles all the complexity of process management while preserving error stack traces, managing output streams, and ensuring that your results transfer back safely. For data scientists and developers working on package development, testing workflows, or complex analytical pipelines, callr delivers the isolation and control needed to build robust, maintainable R code.

@@ -66,3 +66,7 @@ external:
   title: infer
   website: https://infer.tidymodels.org
 ---
+
+The infer package brings statistical inference into the tidyverse, offering an expressive and intuitive grammar for performing hypothesis tests and constructing confidence intervals using computational methods. Built around four core verbs—specify(), hypothesize(), generate(), and calculate()—infer transforms complex statistical procedures into readable, step-by-step workflows that make randomization-based inference accessible to data scientists at all levels. Whether you're conducting permutation tests, bootstrap simulations, or traditional hypothesis testing, infer's consistent API integrates seamlessly with dplyr, ggplot2, and other tidyverse tools you already know.
+
+Designed for both teaching and production environments, infer supports a wide range of statistical procedures while maintaining the clarity and elegance that tidyverse users expect. The package handles everything from simple t-tests to complex multi-variable relationships, providing built-in visualization utilities that help you understand sampling distributions and make informed decisions about your data. By following tidyverse design principles and offering both formula and non-formula interfaces, infer makes rigorous statistical inference feel natural and approachable for modern data analysis workflows.

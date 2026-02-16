@@ -37,3 +37,7 @@ external:
   title: shinyapps
   website: http://shinyapps.io
 ---
+
+The shinyapps package streamlined the deployment of interactive Shiny applications to shinyapps.io, Posit's cloud hosting platform. It provided R developers with a simple, programmatic interface to publish their data visualizations, dashboards, and analytical tools directly from their R environment to the web. The package handled authentication, bundling dependencies, and managing application deployments, eliminating the complexity of server configuration and allowing data scientists to share their work with colleagues and stakeholders in minutes rather than hours.
+
+Note that this package has been deprecated and replaced by the rsconnect package, which offers broader deployment capabilities beyond shinyapps.io, including support for Posit Connect and other hosting platforms. Users should migrate to rsconnect for continued support and access to the latest deployment features.

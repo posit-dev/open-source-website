@@ -48,3 +48,7 @@ external:
   title: yaml
   website: http://yaml.r-lib.org/
 ---
+
+The yaml package provides R bindings to libyaml, a fast YAML parser and emitter that makes it easy to work with YAML data in your R workflows. YAML (YAML Ain't Markup Language) is a human-readable data serialization format widely used for configuration files, data exchange between languages, and storing structured data. Whether you're reading configuration files, exchanging data with other systems, or managing complex nested data structures, yaml seamlessly converts between YAML text and native R objects.
+
+With simple functions like `yaml.load()` and `as.yaml()`, you can parse YAML strings into R lists and vectors, or convert R objects back into YAML format with just a single line of code. The package supports advanced features including custom handlers for special data types, flexible formatting options, and both string-based and file-based operations through convenient `read_yaml()` and `write_yaml()` functions. Built on the robust libyaml library, yaml delivers reliable performance for data scientists and developers who need to work with YAML in their R projects.

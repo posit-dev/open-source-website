@@ -83,3 +83,7 @@ external:
   title: plumber
   website: https://www.rplumber.io
 ---
+
+Plumber transforms your existing R code into production-ready web APIs with minimal effort. By simply adding special comment decorations to your R functions, you can expose them as HTTP endpoints without learning web development frameworks or restructuring your code. Whether you need to share analytical models, create data pipelines, or integrate R with other applications, Plumber handles the complexities of request routing, parameter parsing, and response formatting across multiple data formats including JSON, XML, and even custom outputs like PNG images.
+
+What makes Plumber particularly powerful for data scientists and developers is its seamless integration with the R ecosystem and modern deployment workflows. Using familiar roxygen2-style annotations, you can define API routes, specify HTTP methods, and document your endpoints directly in your R source files. Plumber supports flexible deployment options ranging from local development servers for rapid testing to enterprise platforms like Posit Connect, Docker containers, and cloud services. This makes it ideal for teams looking to operationalize their R analytics, build microservices architectures, or provide programmatic access to R-powered insights without sacrificing the interactive development experience that makes R so productive.

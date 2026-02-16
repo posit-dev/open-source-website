@@ -50,3 +50,7 @@ external:
   title: rules
   website: https://rules.tidymodels.org
 ---
+
+The rules package brings rule-based modeling to the tidymodels ecosystem by extending parsnip with specialized model definitions for interpretable, transparent prediction approaches. Rule-based models offer a unique combination of predictive power and explainability, making them particularly valuable when model interpretability is as important as accuracy. By generating human-readable if-then rules, these models help data scientists understand and communicate the logic behind predictions in a way that traditional black-box algorithms cannot.
+
+Rules supports three distinct modeling paradigms through a unified interface: Cubist models for rule sets with embedded linear models and ensemble methods, C5.0 for classification rule sets derived from decision trees, and RuleFit for extracting rules from tree ensembles and incorporating them into regularized regression. This integration allows you to leverage the full power of tidymodels workflows, including preprocessing pipelines, hyperparameter tuning, and model comparison, while working with interpretable rule-based algorithms that provide clear insights into your data's underlying patterns.

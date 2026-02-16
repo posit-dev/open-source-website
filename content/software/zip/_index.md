@@ -46,3 +46,7 @@ external:
   title: zip
   website: https://r-lib.github.io/zip/
 ---
+
+The **zip** package provides cross-platform ZIP compression capabilities for R, making it easy to create, manage, and extract compressed archives directly from your R workflows. Built on the lightweight miniz library, it delivers reliable compression functionality that works consistently across Windows, macOS, and Linux without requiring external system tools. Whether you're packaging datasets for sharing, archiving project outputs, or managing large collections of files, zip offers a straightforward interface that integrates seamlessly into your data pipelines.
+
+Key features include recursive directory compression, the ability to list and inspect archive contents as data frames, and support for background processing to handle large files without blocking your R session. The package automatically handles file permissions, timestamps, and metadata, giving you fine-grained control over your compressed archives. For data scientists distributing reproducible research or developers building packages that need to bundle resources, zip provides a dependable solution for all your compression needs within the R ecosystem.

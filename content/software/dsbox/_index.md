@@ -32,3 +32,7 @@ external:
   title: dsbox
   website: https://tidyverse.github.io/dsbox/
 ---
+
+dsbox is an educational R package designed to support data science instruction through the Data Science Course in a Box project. It provides carefully curated datasets and interactive learnr tutorials that make teaching and learning data science more accessible and engaging. By bundling course-ready materials in a single package, dsbox eliminates the friction of finding and preparing educational datasets, allowing instructors and students to focus on mastering core data science concepts and techniques.
+
+What makes dsbox particularly valuable for data science education is its integration of both static datasets and interactive tutorials in one cohesive package. The included datasets are specifically chosen to demonstrate real-world data science scenarios while remaining approachable for learners at various skill levels. The learnr tutorials provide hands-on practice that reinforces key concepts, making it an ideal companion for courses covering data wrangling, visualization, and statistical analysis. Whether you're teaching a data science course, running a workshop, or learning independently, dsbox provides the educational infrastructure you need without the overhead of creating teaching materials from scratch.

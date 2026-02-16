@@ -47,3 +47,7 @@ external:
   title: waldo
   website: http://waldo.r-lib.org/
 ---
+
+When your R unit tests fail, tracking down exactly what went wrong can be frustrating. waldo makes this detective work effortless by finding and clearly describing the differences between two R objects. Inspired by `all.equal()` but designed with developer experience in mind, waldo provides intelligent, color-coded diffs that highlight what actually changed, ordered from most to least important. Whether you're comparing atomic vectors, nested lists, or complex data frames, waldo generates actionable insights by showing differences with executable R code paths, comparing elements by name rather than position, and displaying just enough context to understand the issue without overwhelming you with output.
+
+waldo's smart comparison engine adapts to your console width and data structure complexity. For vectors, it produces git-style diffs showing additions, deletions, and changes with surrounding context. For nested objects like lists and data frames, it creates precise code paths that pinpoint exactly where differences occur, even in deeply recursive structures. This makes waldo an indispensable tool for package developers and data scientists who need to quickly understand test failures and validate data transformations.

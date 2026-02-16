@@ -41,3 +41,7 @@ external:
   title: brand-yml
   website: https://posit-dev.github.io/brand-yml/
 ---
+
+Maintaining consistent branding across reports, apps, dashboards, and visualizations can be time-consuming and error-prone, especially when working with multiple tools and frameworks. brand-yml solves this challenge by providing a single, portable YAML configuration file that captures your organization's complete brand identity—including logos, color palettes, fonts, and typography standards—in one centralized location. Instead of manually applying brand guidelines to each project, data scientists and developers can reference this single source of truth, ensuring visual consistency across all deliverables.
+
+The tool integrates seamlessly with Quarto, Shiny for Python and R, and other Posit open-source frameworks, making professional branding accessible without requiring deep design expertise. By defining your brand assets once in a `_brand.yml` file, you can automatically apply organizational standards to everything you create, reducing setup time and eliminating inconsistencies between different outputs. Whether you're building interactive applications, generating reports, or creating data visualizations, brand-yml helps you deliver polished, on-brand results that meet your company's guidelines effortlessly.

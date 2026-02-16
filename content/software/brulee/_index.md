@@ -50,3 +50,7 @@ external:
   title: brulee
   website: https://brulee.tidymodels.org/
 ---
+
+brulee brings the computational power of PyTorch to R users through high-level modeling functions that integrate seamlessly with the tidymodels ecosystem. The package provides neural networks, linear regression, logistic regression, and multinomial regression models built on torch infrastructure, allowing data scientists to leverage deep learning capabilities while maintaining familiar R syntax and workflows.
+
+brulee supports multiple interface options including formula-based modeling, x/y matrix inputs, and recipe-based preprocessing pipelines. This flexibility enables you to fit torch-powered models using the same tidymodels semantics you already know, with consistent tibble outputs for predictions and full compatibility with the parsnip and recipes packages for advanced feature engineering and model tuning.

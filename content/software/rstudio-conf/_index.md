@@ -187,3 +187,7 @@ external:
   title: rstudio-conf
   website: ''
 ---
+
+The rstudio-conf repository is the comprehensive archive for materials from rstudio::conf, the premier annual gathering for data science professionals working with R and Python. This repository spans multiple years of conferences, organizing presentations, workshop materials, keynote recordings, and session slides from leading experts in the data science community. From foundational workshops on the tidyverse and Shiny to advanced sessions on machine learning with tidymodels, package development, and data visualization, the repository captures the collective knowledge shared at these influential conferences.
+
+For data scientists and developers, this repository serves as an invaluable learning resource and reference library. Whether you're looking to catch up on conference sessions you missed, explore new tools and techniques from expert practitioners, or dive into hands-on workshop materials covering topics like Quarto, causal inference, or production-ready applications, rstudio-conf provides direct access to educational content from some of the most respected voices in the R and Python ecosystems. The materials are organized by year and presenter, making it easy to navigate and discover content that matches your interests and skill level.

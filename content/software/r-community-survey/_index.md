@@ -24,3 +24,7 @@ external:
   title: r-community-survey
   website: ''
 ---
+
+The R Community Survey is an annual research initiative that captures insights from the global R programming community. Originally launched as the "R Learning Survey" in 2018, this project provides valuable data about how people learn and use R, their challenges, preferences, and experiences within the ecosystem. By offering multilingual surveys and comprehensive analysis documents, this repository serves as an essential resource for understanding trends in R adoption, community demographics, and the evolving needs of data scientists and statisticians who rely on R for their work.
+
+What makes this project particularly valuable is its commitment to transparency and reproducibility. The repository contains not just the raw survey data, but also the complete survey instruments, data dictionaries for coding responses, and exploratory analysis documents that demonstrate best practices for survey data analysis in R. While the authors are transparent about sampling limitations, the longitudinal nature of the survey allows researchers, educators, and R package developers to track how the community's needs and practices change over time. Whether you're interested in understanding learning pathways for R, designing better educational resources, or studying open-source community dynamics, this dataset provides a rich foundation for evidence-based insights.

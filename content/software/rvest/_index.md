@@ -67,3 +67,7 @@ external:
   title: rvest
   website: https://rvest.tidyverse.org
 ---
+
+rvest makes web scraping simple and intuitive for R users. The package provides a straightforward way to extract data from websites using familiar functions that integrate seamlessly with tidyverse workflows. With tools like read_html() to load web pages, html_elements() to select content using CSS selectors or XPath, and html_table() to convert HTML tables directly into data frames, rvest removes the complexity from harvesting structured information from the web.
+
+Inspired by Python's Beautiful Soup, rvest is designed for both beginners approaching web scraping for the first time and experienced developers tackling complex data extraction tasks. Its pipe-friendly syntax creates readable, maintainable code that clearly expresses the logical flow of scraping operations. Whether you're collecting research data, monitoring online content, or building datasets from public websites, rvest provides the essential toolkit while encouraging responsible scraping practices through integration with complementary packages like polite for respecting robots.txt standards and managing request rates.

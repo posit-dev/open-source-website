@@ -50,3 +50,7 @@ external:
   title: markdown
   website: https://cran.r-project.org/package=markdown
 ---
+
+The markdown package is the foundational tool for converting Markdown-formatted text into HTML and other output formats within R. Built on the robust commonmark engine, it provides essential utilities for programmatically rendering plain-text Markdown documents into formatted output. This makes it a valuable tool for developers who need to process Markdown content in their R workflows, whether for generating documentation, creating reports, or building content management systems.
+
+As the first generation of Markdown rendering for R (introduced in 2012), this package established the groundwork for R's Markdown ecosystem. While active development has transitioned to the litedown package, the markdown package remains a stable, proven solution for converting Markdown to HTML within R environments. It offers a straightforward API built on the widely-adopted commonmark specification, ensuring consistent and reliable Markdown processing for data scientists and developers who need programmatic control over document rendering.

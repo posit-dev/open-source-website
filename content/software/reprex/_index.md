@@ -69,3 +69,7 @@ external:
   title: reprex
   website: https://reprex.tidyverse.org
 ---
+
+Creating a reproducible example is essential when seeking help with code issues or collaborating with colleagues, but formatting code for sharing can be tedious and error-prone. Reprex streamlines this process by automatically preparing R code for posting to GitHub issues, StackOverflow, Slack messages, or even presentation slides. Simply provide your code from the clipboard, RStudio selection, or a file, and reprex executes it, captures the output, and formats everything into ready-to-share Markdown or other formats.
+
+The package offers multiple output formats including GitHub-flavored Markdown, Slack-optimized Markdown, and runnable R scripts with commented output. Key features include automatic syntax highlighting, figure uploads to imgur.com, session information inclusion, and utility functions for cleaning and inverting examples. By ensuring that your shared code is immediately runnable by others without modification, reprex significantly improves the quality of technical support requests and accelerates collaborative debugging across data science teams.

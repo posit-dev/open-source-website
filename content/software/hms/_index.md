@@ -50,3 +50,7 @@ external:
   title: hms
   website: https://hms.tidyverse.org/
 ---
+
+hms is a lightweight R package that provides a simple yet robust class for storing and displaying time-of-day values in the familiar hh:mm:ss format. Built on R's difftime foundation, it stores times internally as seconds elapsed since midnight, making it ideal for seamless data exchange with databases and spreadsheets. The package supports flexible construction from hours, minutes, or seconds, and handles edge cases elegantly, including times that extend beyond 24 hours or negative durations, while maintaining precision up to microseconds.
+
+What makes hms particularly valuable for data scientists is its seamless integration with data frames and compatibility with various time formats, including POSIXt objects. Whether you're importing time data from external sources, performing time-based calculations, or preparing datasets for analysis, hms eliminates common friction points in time representation. Its focused design ensures that time-of-day values are handled consistently and accurately throughout your data pipeline, letting you concentrate on analysis rather than wrestling with time format conversions.

@@ -57,3 +57,7 @@ external:
   title: profvis
   website: https://profvis.r-lib.org/
 ---
+
+profvis is an interactive visualization tool that helps R developers understand and optimize their code's performance. By wrapping your code in the `profvis()` function, you can automatically capture detailed profiling data and explore it through an intuitive web-based interface. Instead of deciphering raw profiling output, profvis presents timing information visually, making it easy to identify which functions are consuming the most time and where performance bottlenecks exist in your application.
+
+What makes profvis invaluable for data scientists and developers is its ability to reveal the true behavior of your code in action. Whether you're optimizing a data processing pipeline, improving the responsiveness of a Shiny application, or simply curious about where your R code spends its time, profvis provides immediate, actionable insights. The interactive flame graphs and data views let you drill down into call hierarchies, understand how functions interact, and discover unexpected performance issues that would be difficult to spot otherwise. With profvis, performance optimization moves from guesswork to data-driven decision-making.

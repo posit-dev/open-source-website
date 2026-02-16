@@ -33,3 +33,7 @@ external:
   title: concept-maps
   website: ''
 ---
+
+Concept maps are visual diagrams that help learners and educators understand complex relationships between data science concepts. This collection provides ready-to-use mental models for teaching and learning fundamental data science topics, from data manipulation with dplyr to programming concepts like functions and regular expressions. Each concept map distills a specific topic into a clear visual representation, making it easier to grasp how different ideas connect and build upon each other.
+
+What makes these concept maps particularly valuable is their dual purpose and accessibility. For instructors, they provide a quick overview of lesson content and help structure teaching materials around well-defined learning objectives. For learners, they serve as reference guides to verify understanding and identify gaps in knowledge. With over 25 finalized maps covering data transformation, visualization, and programming fundamentals, and many available in both English and Spanish, these open-licensed resources support data science education across diverse audiences and skill levels.

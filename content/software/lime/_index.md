@@ -50,3 +50,7 @@ external:
   title: lime
   website: https://lime.data-imaginist.com/
 ---
+
+LIME (Local Interpretable Model-agnostic Explanations) transforms black-box machine learning models into interpretable predictions by explaining why specific outcomes occurred. Rather than treating complex models as inscrutable systems, LIME identifies the small set of features in your data that drove each individual prediction, making it invaluable for model validation, debugging, and building stakeholder trust. The package works seamlessly across popular modeling frameworks like caret, parsnip, and mlr, ensuring you can explain predictions regardless of your modeling approach.
+
+Built with an idiomatic R implementation, LIME handles diverse data types including tabular data with feature-level explanations, images with visual highlighting of decision-influencing regions, and text with word-level importance indicators. The package delivers explanations in structured tabular formats containing feature weights, prediction probabilities, and model performance metrics, making complex model behavior accessible to both technical and non-technical audiences. Whether you're ensuring compliance with interpretability requirements or identifying potentially problematic feature relationships, LIME provides the transparency needed for responsible machine learning in production environments.

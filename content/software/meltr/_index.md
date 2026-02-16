@@ -31,3 +31,7 @@ external:
   title: meltr
   website: https://r-lib.github.io/meltr/
 ---
+
+Real-world data is messy, and not every file fits neatly into a rectangular table. meltr is an R package designed for reading unstructured or "non-rectangular" data files that violate the assumptions of standard CSV readers. Instead of forcing irregular data into columns with consistent types, meltr reads files cell-by-cell and returns structured metadata about each cell's position, data type, and raw value. This approach is particularly valuable when working with files that have varying column counts per row, mixed data types, embedded newlines, or formatting so irregular that conventional tools simply fail.
+
+By preserving the original data as strings while annotating each cell with its inferred type and location, meltr gives you the flexibility to extract, filter, and transform messy data using familiar tools like dplyr. Whether you're identifying missing values scattered throughout a file, extracting specific data types from chaotic spreadsheets, or preparing irregular data for manual review, meltr provides a solid foundation for tackling data challenges that would otherwise require extensive manual preprocessing.

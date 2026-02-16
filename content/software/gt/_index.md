@@ -98,6 +98,6 @@ external:
   website: https://gt.rstudio.com
 ---
 
-With the gt package, anyone can make wonderful-looking tables using the R programming language. The package focuses on constructing tables with a cohesive set of components including headers, stubs, column labels, table body, and footer.
+gt is a comprehensive R package for creating professional, publication-quality tables with exceptional customization capabilities. Built on a modular design philosophy, gt organizes tables into distinct components—headers, stubs, column labels, spanner labels, body, and footer sections—giving you precise control over every aspect of your table's appearance. The package provides extensive formatting functions for dates, currency, numbers, and more, while supporting multiple output formats including HTML, LaTeX, and RTF, making it versatile enough for any reporting need.
 
-gt provides extensive customization options for formatting, styling, and annotating tables, making it easy to create publication-quality tables for reports and presentations.
+What makes gt particularly valuable for data scientists and developers is its intuitive workflow that transforms raw data frames into polished, presentation-ready tables with minimal code. Whether you're creating simple data displays or complex statistical tables with custom styling, gt handles both extremes with ease. Its straightforward approach lets you focus on the story your data tells rather than wrestling with formatting details, while still offering deep customization when needed. From R Markdown documents and interactive reports to formal publications and business presentations, gt delivers the flexibility and polish that modern data communication demands.

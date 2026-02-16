@@ -30,3 +30,7 @@ external:
   title: askpass
   website: ''
 ---
+
+askpass provides cross-platform utilities for securely prompting users for credentials and passphrases in R. Whether you need to authenticate with a server, read a protected SSH key, or access password-protected resources, askpass delivers a seamless experience across different environments including RStudio, macOS, Windows, and terminal sessions. The package includes native programs for macOS and Windows, eliminating the need for additional dependencies like tcltk.
+
+Beyond direct use in R scripts, askpass integrates elegantly with your development workflow by serving as a password-entry backend for Git and SSH operations. By configuring the SSH_ASKPASS and GIT_ASKPASS environment variables, askpass ensures that when R calls out to git or ssh, users are automatically prompted for credentials in a secure, platform-appropriate manner. This makes it particularly valuable for data scientists and developers working with version control systems, remote repositories, and encrypted resources as part of their daily workflow.

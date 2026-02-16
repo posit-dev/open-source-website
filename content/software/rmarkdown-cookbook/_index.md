@@ -55,3 +55,7 @@ external:
   title: rmarkdown-cookbook
   website: https://yihui.org/rmarkdown-cookbook/
 ---
+
+The R Markdown Cookbook is a practical, recipe-oriented guide that helps data scientists and developers solve real-world challenges when working with R Markdown. Rather than presenting theoretical concepts, this resource provides actionable solutions to common tasks you encounter when creating dynamic documents, reports, presentations, and dashboards. From customizing document appearance and managing code chunk behavior to working with multiple output formats and integrating external content, the cookbook offers tested approaches that you can immediately apply to your projects.
+
+Published by Chapman & Hall/CRC and freely available online through Bookdown, the R Markdown Cookbook serves as an essential companion to R Markdown workflows. It bridges the gap between basic tutorials and comprehensive documentation, giving you targeted recipes that address specific problems efficiently. Whether you're fine-tuning document layouts, handling complex data visualizations, automating report generation, or troubleshooting unexpected behavior, this community-driven resource evolves continuously based on user feedback to ensure it remains relevant to the challenges you face in modern data science and analytical work.

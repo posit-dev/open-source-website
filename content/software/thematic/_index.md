@@ -42,3 +42,7 @@ external:
   title: thematic
   website: https://rstudio.github.io/thematic/
 ---
+
+Styling R graphics across different plotting systems—ggplot2, lattice, and base R—typically requires learning and maintaining separate theming approaches for each framework. thematic eliminates this complexity by providing a unified theming interface that works seamlessly across all major R graphics systems. With just a few simple settings for colors and fonts, thematic automatically applies consistent styling to your entire visualization ecosystem, whether you're working in Shiny apps, R Markdown documents, or the RStudio IDE.
+
+What makes thematic particularly powerful is its ability to automatically detect and adapt to your working environment. In Shiny applications, it intelligently syncs plot aesthetics with your app's CSS theme, ensuring visual harmony between your interface and embedded graphics. In RStudio, it reads your IDE theme preferences to style plots accordingly, and in R Markdown it integrates with bslib for seamless theme coordination. This "automatic theming" capability means you can maintain design consistency without writing repetitive styling code, while still retaining full control to override global defaults with plot-specific customizations whenever needed.

@@ -44,3 +44,7 @@ external:
   title: stacks
   website: https://stacks.tidymodels.org
 ---
+
+stacks is an R package that implements model stacking, a powerful ensemble method that combines predictions from multiple models to create a single, superior predictive model. By systematically blending diverse modeling approaches—from random forests to neural networks—stacks captures complementary strengths across different algorithms, often achieving better predictive performance than any individual model alone. The package uses regularized linear regression to automatically determine optimal weights for each candidate model, intelligently excluding redundant contributors while retaining those that genuinely improve predictions.
+
+Built as a natural extension of the tidymodels ecosystem, stacks integrates seamlessly with familiar tools like recipes, workflows, and tune. It supports any model available in parsnip, works with any resampling scheme from rsample, and can optimize for any metric from yardstick or custom performance measures. Whether you're working on classification or regression problems, stacks provides a tidy, principled workflow for creating interpretable and efficient ensemble models that leverage the full breadth of your modeling toolkit.

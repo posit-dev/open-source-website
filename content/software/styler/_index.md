@@ -54,3 +54,7 @@ external:
   title: styler
   website: https://styler.r-lib.org
 ---
+
+styler is an R package that automatically formats your code according to established style guidelines, freeing you from the tedious task of manual code formatting. It applies the tidyverse style guide by default or can be customized to follow your team's specific conventions, ensuring consistent code style across projects and collaborators. With its non-invasive approach, styler improves code readability and presentation while preserving your code's logic and functionality.
+
+What makes styler particularly valuable for data scientists and R developers is its seamless integration into existing workflows. You can format code directly within RStudio using its built-in add-in, apply styling programmatically with functions like style_pkg(), style_file(), and style_text(), or integrate it with third-party development tools. By automating code formatting, styler eliminates style inconsistencies, reduces cognitive load during code reviews, and helps teams maintain professional, uniform code standards without manual effort, allowing you to focus on what matters most: solving problems with your code.

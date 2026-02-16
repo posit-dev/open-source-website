@@ -39,3 +39,7 @@ external:
   title: applicable
   website: https://applicable.tidymodels.org/
 ---
+
+applicable is an R package that addresses a critical question in predictive modeling: when should you trust your model's predictions? When new data points are substantially different from your training set, their predicted values may be unreliable. The package provides methods to quantify this extrapolation risk by measuring how far new observations deviate from the original training data, helping you identify potentially suspect predictions before they lead to costly errors. This concept of an "applicability domain," borrowed from chemistry where such models are standard practice, serves as essential quality control for production models.
+
+What makes applicable particularly valuable for data scientists is its ability to work with both binary and continuous data, providing tailored methods for different modeling scenarios. Rather than blindly trusting model outputs on unfamiliar data, you can quantify whether predictions fall within your model's learned domain or represent dangerous extrapolations. As part of the tidymodels ecosystem, applicable integrates seamlessly with your existing modeling workflows, making it straightforward to add this layer of prediction reliability assessment to any project where stakes are high and out-of-distribution predictions could have serious consequences.

@@ -33,3 +33,7 @@ external:
   title: credentials
   website: https://docs.ropensci.org/credentials
 ---
+
+The credentials package simplifies secure authentication for Git operations and SSH-based services in R. Instead of hardcoding passwords or tokens in your scripts, credentials provides a safe interface to Git's native credential store and SSH key management system. This eliminates the security risks of exposing sensitive information while streamlining your development workflow across multiple projects and sessions.
+
+Whether you're pushing code to GitHub, cloning private repositories, or automating Git operations in your data pipelines, credentials handles the authentication complexity for you. The package automatically locates or generates SSH keys, retrieves GitHub Personal Access Tokens from your system's credential store, and seamlessly integrates with popular Git client libraries. For data scientists and developers working with version-controlled projects, credentials removes authentication friction so you can focus on your code rather than credential management.

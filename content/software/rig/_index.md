@@ -49,3 +49,7 @@ external:
   title: rig
   website: ''
 ---
+
+Rig is a cross-platform command-line tool that streamlines R version management for developers and data scientists. Whether you're maintaining legacy projects, testing packages across multiple R versions, or simply keeping up with the latest releases, rig makes it effortless to install, configure, and switch between different R installations. Instead of manually juggling versions, you can reference them symbolically using intuitive names like "devel," "release," or "oldrel," and run multiple versions simultaneously without conflicts.
+
+Beyond basic version management, rig automates the tedious setup tasks that typically follow a fresh R installation. It configures your default CRAN mirror, installs the pak package manager, creates user-level package libraries with proper permissions, and on macOS, even provides a convenient menu bar application for quick version switching. Built in Rust for speed and reliability, rig works seamlessly across macOS, Windows, and Linux, making it an essential tool for anyone working with R in professional or research environments.

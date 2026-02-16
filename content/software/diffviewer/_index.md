@@ -32,3 +32,7 @@ external:
   title: diffviewer
   website: http://diffviewer.r-lib.org
 ---
+
+Diffviewer is an R package that creates interactive HTML widgets for visually comparing files side-by-side. Whether you're reviewing changes between versions of a dataset, spotting differences in images, or tracking modifications to text files, diffviewer provides an intuitive interface that makes it easy to understand what's changed at a glance. The package integrates specialized JavaScript libraries to handle different comparison types: resemble.js for images, daff.js for data frames, and jsdiff for text and general files.
+
+Originally extracted from common UI patterns in shinytest and vdiffr, diffviewer consolidates powerful visualization capabilities into a single, easy-to-use package. For data scientists and R developers who need quick, visual comparison tools integrated into their workflows, diffviewer eliminates the need for manual side-by-side review and provides an interactive experience for exploring differences. The tool is particularly valuable when validating test results, reviewing data transformations, or auditing changes across different versions of your work.

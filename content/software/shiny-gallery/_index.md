@@ -30,3 +30,7 @@ external:
   title: shiny-gallery
   website: ''
 ---
+
+The Shiny Gallery is a curated collection of source code from applications featured in the Shiny User Showcase, highlighting innovative work created by the Shiny community. This repository serves as a centralized hub where developers can explore real-world examples of interactive web applications built with Shiny, providing both inspiration and practical reference implementations. By gathering these user-contributed applications in one place, the gallery makes it easy to discover what's possible with Shiny and learn from experienced practitioners.
+
+Whether you're looking to understand best practices, explore different approaches to common challenges, or simply get inspired for your next project, the Shiny Gallery offers a valuable learning resource. Each application demonstrates how data scientists and developers have leveraged Shiny's capabilities to create compelling interactive experiences, from data visualizations to analytical dashboards and beyond. The gallery transforms scattered individual projects into an accessible showcase that benefits both newcomers seeking examples and experienced developers looking for fresh ideas.

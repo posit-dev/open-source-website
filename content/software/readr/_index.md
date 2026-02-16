@@ -43,6 +43,7 @@ external:
   - mkearney
   - sambrady3
   - dmurdoch
+  - dmurdoch
   - dewittpe
   - kmillar
   - boshek
@@ -147,3 +148,7 @@ external:
   title: readr
   website: https://readr.tidyverse.org
 ---
+
+readr is a fast and user-friendly R package designed to streamline the process of importing rectangular data from delimited files. Whether you're working with CSV, TSV, fixed-width files, or other common data formats, readr offers a dramatic speed improvement over base R functions, delivering performance gains of up to 10-100x depending on your dataset. The package intelligently detects column types during import while providing informative feedback when parsing encounters unexpected results, making it easier to diagnose and resolve data quality issues quickly.
+
+What makes readr particularly valuable for data scientists is its thoughtful design that grows with your workflow. During exploratory analysis, automatic type detection gets you started immediately, while mature production pipelines benefit from explicit column specifications for robust, reproducible imports. As part of the tidyverse, readr follows consistent naming conventions and returns tibbles by default, ensuring seamless integration with your data analysis pipeline. The package handles strings without unwanted modifications, automatically parses common date and time formats, and displays progress bars for lengthy imports, creating a smooth and predictable experience from initial exploration through production deployment.

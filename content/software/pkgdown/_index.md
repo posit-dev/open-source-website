@@ -208,3 +208,7 @@ external:
   title: pkgdown
   website: https://pkgdown.r-lib.org/
 ---
+
+pkgdown is an essential tool for R package developers that automatically transforms your package documentation into professional, searchable websites. With minimal configuration, pkgdown converts your README into a homepage, organizes function documentation from man/ files into comprehensive reference pages, and renders vignettes as polished articles. This automated approach eliminates the manual effort of maintaining separate documentation sites while ensuring your website stays perfectly synchronized with your package code.
+
+Trusted by over 12,000 R packages, pkgdown has become the standard for package documentation websites in the R ecosystem. It integrates seamlessly with modern development workflows, offering one-command setup through usethis and automatic deployment via GitHub Actions. The framework built on Bootstrap 5 provides extensive customization options for branding and styling, while the local preview feature lets you review changes before publishing. Whether you're building a personal package or maintaining widely-used tools for data science and statistical analysis, pkgdown delivers professional documentation that helps users discover and understand your package's capabilities.

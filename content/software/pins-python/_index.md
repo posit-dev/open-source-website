@@ -47,3 +47,7 @@ external:
   title: pins-python
   website: https://rstudio.github.io/pins-python/
 ---
+
+Pins-python makes it easy to publish, version, and share Python objects—including datasets, models, and other analytical artifacts—across projects and teams. The package provides a unified API for storing and retrieving data from multiple backends, including local folders, Posit Connect, Amazon S3, Google Cloud Storage, and Azure blob storage. With automatic versioning built in, you can track changes over time, retrieve historical data for reproducible research, and quickly revert to previous versions when needed.
+
+The real power of pins comes from enabling team collaboration. By connecting to shared boards, data scientists can transform individual analyses into collaborative assets with built-in governance and auditability. Whether you're sharing datasets across organizational units, maintaining version history for automated reports, or enabling cross-language workflows with R's pins package, pins-python handles the storage complexity so you can focus on your analysis. It supports flexible formats including CSV, Parquet, JSON, and Joblib, and integrates seamlessly with Posit Connect's permission system for secure access control.

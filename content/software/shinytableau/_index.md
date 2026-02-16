@@ -34,3 +34,7 @@ external:
   title: shinytableau
   website: https://rstudio.github.io/shinytableau
 ---
+
+Shinytableau is an R package that bridges the gap between Tableau's powerful dashboard capabilities and R's advanced analytical features. It enables developers to create custom Tableau dashboard extensions using R and Shiny, bringing sophisticated visualizations and statistical capabilities that go beyond Tableau's native functionality. Whether you need specialized plots from ggplot2, interactive visualizations with plotly, or custom analytical outputs, shinytableau makes it possible to embed these directly into Tableau dashboards while maintaining access to worksheet data as R data frames.
+
+For organizations invested in Tableau, shinytableau offers a practical solution for extending dashboards without requiring a complete platform migration. Extensions built with shinytableau are reusable by non-technical Tableau users through customizable configuration dialogs, making R-powered analytics accessible to broader teams. This approach preserves the familiar Tableau workflow while unlocking the full potential of R's visualization libraries and statistical tools, allowing data scientists and developers to augment existing dashboards with capabilities that were previously out of reach.

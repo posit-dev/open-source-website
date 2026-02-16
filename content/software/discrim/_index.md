@@ -49,3 +49,7 @@ external:
   title: discrim
   website: https://discrim.tidymodels.org
 ---
+
+discrim is a specialized R package that brings discriminant analysis and naive Bayes classification methods into the tidymodels ecosystem. It provides a unified interface for fitting various classification models including linear discriminant analysis, quadratic discriminant analysis, regularized discriminant analysis, flexible discriminant analysis, and naive Bayes classifiers. By wrapping functionality from multiple underlying packages like MASS, mda, klaR, and naivebayes, discrim allows you to apply these classical statistical learning techniques using consistent tidymodels syntax and workflows.
+
+What makes discrim valuable for data scientists is its ability to simplify complex classification tasks through a standardized approach. Instead of learning different function signatures and data structures for each discriminant analysis package, you can leverage the familiar parsnip interface to fit, tune, and evaluate models. The package supports both standard and regularized variants of discriminant analysis, making it particularly useful for high-dimensional classification problems where feature selection and regularization are important. Whether you're working with well-separated classes that benefit from linear boundaries or complex decision surfaces requiring flexible discriminant analysis, discrim provides the tools you need within a cohesive modeling framework.

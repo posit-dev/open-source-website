@@ -24,3 +24,7 @@ external:
   title: orbital
   website: https://posit-dev.github.io/orbital/
 ---
+
+Orbital transforms Scikit-Learn machine learning pipelines into SQL queries that can execute directly in your database, eliminating the need for Python runtime environments during inference. This powerful tool enables you to deploy models in SQL-first environments where Python isn't available or practical, allowing predictions to run at database query time with reduced latency and operational complexity. Whether you're migrating ML workflows to a database-centric architecture or looking to simplify your model serving infrastructure, Orbital bridges the gap between Python-trained models and production SQL systems.
+
+Supporting a wide range of Scikit-Learn models including linear and logistic regression, tree-based methods like decision trees and random forests, gradient boosting, and regularized regression (Lasso, Elastic Net), Orbital handles both model conversion and common data preprocessing transformations such as standardization through ColumnTransformer components. The tool currently supports DuckDB with plans to expand to additional database dialects, making it easier for data scientists and developers to leverage their existing machine learning pipelines in high-performance database environments without rewriting their models from scratch.

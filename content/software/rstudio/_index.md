@@ -193,3 +193,7 @@ external:
   title: rstudio
   website: https://posit.co/products/open-source/rstudio/
 ---
+
+RStudio is a powerful integrated development environment designed specifically for R programming. It brings together all the essential tools for data analysis and statistical computing into a single, cohesive workspace—including a console, syntax-highlighting editor with intelligent code completion, plotting tools, workspace browser, and integrated help system. Whether you're exploring data interactively, developing production code, or authoring reproducible reports with Sweave and TeX, RStudio streamlines your workflow by eliminating the need to switch between multiple disconnected tools.
+
+Available across Windows, Mac, Linux, and FreeBSD, RStudio serves both individual developers and collaborative teams. Its server deployment option enables organizations to provide centralized R development infrastructure accessible through any web browser, making it easy for teams to work together on data science projects from anywhere. With its combination of advanced editing features, flexible code execution options, and cross-platform accessibility, RStudio has become the go-to IDE for data scientists, statisticians, and developers working in the R ecosystem.

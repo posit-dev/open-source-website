@@ -151,3 +151,7 @@ external:
   title: roxygen2
   website: https://roxygen2.r-lib.org
 ---
+
+roxygen2 is an essential R package that streamlines documentation for R package developers by automatically generating documentation files from inline code comments. Instead of manually creating and maintaining separate .Rd files, you write special roxygen2 comments (marked with `#'`) directly above your function definitions, and the package transforms them into proper R documentation. This approach keeps documentation and code together, reducing duplication and the risk of outdated documentation while making package development more efficient and maintainable.
+
+Beyond just function documentation, roxygen2 manages critical package infrastructure including your NAMESPACE file, which controls what functions are exported and imported in your package. It can also handle the Collate field in your DESCRIPTION file to manage source file loading order. Whether you're documenting functions, datasets, S3/S4/R6 objects, or entire packages, roxygen2 provides a comprehensive solution that has become the de facto standard in the R community. By automating tedious documentation tasks and keeping your docs close to your code, roxygen2 lets you focus on building great packages rather than wrestling with documentation mechanics.

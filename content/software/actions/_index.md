@@ -131,3 +131,7 @@ external:
   title: actions
   website: ''
 ---
+
+GitHub Actions for R brings the power of continuous integration and automated testing directly into your GitHub workflow. This collection of specialized actions eliminates the need for external CI services by providing native tools to set up R environments, manage dependencies, run package checks, and handle everything from documentation builds to deployment—all within GitHub's infrastructure.
+
+With nine ready-to-use actions covering essential tasks like R installation, dependency management with renv, pandoc and LaTeX setup, and automated R CMD check runs, this toolkit makes it simple to implement professional CI/CD pipelines. The repository includes example workflows for common scenarios and comprehensive troubleshooting resources, helping R developers maintain code quality, catch bugs early, and automate repetitive tasks with minimal configuration.

@@ -55,3 +55,7 @@ external:
   title: rstudioapi
   website: http://rstudio.github.io/rstudioapi
 ---
+
+rstudioapi is an essential R package that provides a safe and reliable bridge between your R code and the RStudio IDE's powerful features. Designed specifically for package developers, it enables you to programmatically access RStudio's API while maintaining full CRAN compliance and gracefully handling environments where RStudio may not be available. The package includes built-in version checking and conditional execution capabilities, ensuring your code can leverage IDE features like the viewer pane, document manipulation, and project management without breaking when run in other R environments.
+
+What makes rstudioapi particularly valuable is its defensive design philosophy. Rather than assuming RStudio is always present, the package provides functions to detect availability and verify version requirements before attempting API calls. This allows you to write robust packages that enhance the user experience within RStudio while maintaining full compatibility with command-line R, R GUI, and other development environments. Whether you're building interactive visualizations that leverage RStudio's viewer, creating document templates, or integrating with project workflows, rstudioapi provides the foundation for seamless IDE integration without sacrificing portability.

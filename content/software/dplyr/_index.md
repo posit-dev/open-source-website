@@ -334,6 +334,6 @@ external:
   website: https://dplyr.tidyverse.org/
 ---
 
-dplyr is a grammar of data manipulation, providing a consistent set of verbs that help solve the most common data manipulation challenges. It offers functions for filtering, selecting, transforming, summarizing, and arranging data.
+dplyr is a powerful R package that provides a consistent grammar of data manipulation, making it easier to solve common data transformation challenges. At its core, dplyr offers five primary verbs that cover the essential operations data scientists perform daily: `mutate()` for creating new variables, `select()` for choosing columns, `filter()` for subsetting rows, `summarise()` for aggregating data, and `arrange()` for sorting. These functions work seamlessly with `group_by()` to enable grouped operations, and they integrate naturally with the pipe operator to create readable, intuitive data transformation workflows.
 
-dplyr is designed to work naturally with data frames and works seamlessly with the pipe operator, making data transformation workflows intuitive and readable.
+What makes dplyr particularly valuable is its flexibility across different computational backends. While it works beautifully with standard data frames and tibbles, dplyr can also interface with relational databases through dbplyr (automatically translating your R code to SQL), handle larger-than-memory datasets with Apache Arrow, leverage high-performance engines like data.table and DuckDB, and even connect to Apache Spark for distributed computing. This backend-agnostic approach means you can write consistent, readable code regardless of where your data lives, making dplyr an essential tool for data scientists working across diverse data environments.

@@ -141,3 +141,7 @@ external:
   title: rlang
   website: https://rlang.r-lib.org
 ---
+
+rlang is a comprehensive toolkit that provides low-level APIs for programming with R's language features and metaprogramming capabilities. It offers essential frameworks for R developers building packages and data-aware functions, including the powerful Tidy Eval system that powers tidyverse packages like dplyr and ggplot2. With features like the embracing operator and name injection, rlang simplifies the challenge of writing functions that work seamlessly with data-masking, making it easier to create intuitive interfaces for data science workflows.
+
+Beyond metaprogramming, rlang delivers practical solutions for everyday R programming challenges. Its robust argument validation functions streamline parameter checking, while sophisticated error handling tools enable you to create clear, informative error messages with backtraces and bullet-point formatting. The package also provides utilities for working with environments, managing dynamic collections through splicing and name injection, and manipulating R objects programmatically. Whether you're developing R packages or writing advanced data analysis code, rlang offers standardized patterns that reduce boilerplate and improve consistency across your projects.

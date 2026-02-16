@@ -68,3 +68,7 @@ external:
   title: RPostgres
   website: https://rpostgres.r-dbi.org
 ---
+
+RPostgres is a modern database interface that enables R users to connect with PostgreSQL databases. Built from scratch using C++ and cpp11, it implements the DBI (Database Interface) standard and provides a streamlined way for data scientists and developers to perform database operations in R, including querying, reading, and writing data to PostgreSQL instances—whether local or cloud-hosted. RPostgres modernizes PostgreSQL connectivity for R users with cleaner code patterns, better resource handling, and improved performance compared to its predecessor RPostgreSQL.
+
+Key features include support for secure parameterized queries through `dbSendQuery()` and `dbBind()` functions to help prevent SQL injection vulnerabilities, automatic cleanup of open connections and result sets to reduce concerns about memory leaks, and modest speed improvements of approximately 5ms faster per query. The package integrates seamlessly with R's broader database ecosystem and follows established DBI conventions, making it intuitive for users already familiar with R's data access patterns and particularly valuable for analysts working with large datasets or building production applications requiring reliable database interactions.

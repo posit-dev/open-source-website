@@ -99,3 +99,7 @@ external:
   title: rstudio-docker-products
   website: https://hub.docker.com/u/rstudio
 ---
+
+RStudio Docker Products provides pre-built, containerized images of RStudio's professional analytics platform, making it easier for teams to deploy and scale their data science infrastructure. The repository includes Docker containers for RStudio Workbench (a collaborative development environment), RStudio Connect (a publishing and sharing platform for analytics), and RStudio Package Manager (a repository management system for R packages). Whether you're setting up a complete analytics stack locally for development or deploying to production, these images provide a flexible foundation that can be customized to meet your organization's specific needs.
+
+Rather than manually installing and configuring each component, teams can use docker-compose to orchestrate a complete RStudio Team deployment with all products working together seamlessly. The images are designed as starting points that organizations can fork and customize with their own security scanning, base OS preferences, and CVE management standards. With configurable dependency versions and validation testing built in, these Docker images reduce operational overhead while giving teams the flexibility to control Python, R, Quarto, and other component versions to match their workflow requirements.

@@ -98,3 +98,7 @@ external:
   title: pins-r
   website: https://pins.rstudio.com
 ---
+
+The pins package transforms data sharing and versioning in R by providing a unified interface for publishing, discovering, and retrieving data objects across multiple storage backends. Whether you're working with a networked drive, cloud storage platforms like AWS S3 or Azure, or enterprise solutions like Posit Connect, pins makes it easy to treat curated datasets and models as discoverable, maintainable assets that your entire team can reliably build upon. With automatic versioning built in, you can track changes over time, reference historical data versions, and re-run prior analyses without the risk of overwriting critical work.
+
+Designed for collaborative data science workflows, pins supports multiple file formats including RDS, Parquet, Arrow, CSV, and JSON, making your data accessible to diverse downstream consumers. The package also offers cross-language compatibility, allowing R and Python users to work seamlessly with the same pinned objects. Whether you're sharing model outputs with colleagues, publishing reference datasets to a centralized platform, or building cloud-native data pipelines, pins provides the infrastructure to make your data workflows more reproducible, discoverable, and scalable.

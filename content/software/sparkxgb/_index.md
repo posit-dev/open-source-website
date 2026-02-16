@@ -30,3 +30,7 @@ external:
   title: sparkxgb
   website: https://spark.posit.co/packages/sparkxgb/
 ---
+
+sparkxgb is a sparklyr extension that brings the power of XGBoost to Apache Spark, enabling distributed gradient boosting on large-scale datasets. By combining Spark's distributed computing capabilities with XGBoost's industry-leading machine learning algorithms, sparkxgb allows R users to train high-performance models on massive datasets that would be impractical to process on a single machine.
+
+The package provides a familiar R interface with support for both formula-based model specification and the Spark ML Pipelines API. Data scientists can seamlessly integrate XGBoost classifiers and regressors into their Spark workflows, perform hyperparameter tuning with cross-validation, and leverage all the advantages of distributed computing while working in the R environment they know. Whether you're building classification models for complex prediction tasks or regression models for forecasting, sparkxgb makes it easy to scale your machine learning workflows without sacrificing the flexibility and power of XGBoost.

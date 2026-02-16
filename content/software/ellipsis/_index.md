@@ -37,3 +37,7 @@ external:
   title: ellipsis
   website: https://ellipsis.r-lib.org
 ---
+
+ellipsis is an essential R package that makes functions using the `...` parameter safer and more reliable. The `...` construct in R is powerful for passing arguments through to other functions, but it comes with a critical drawback: misspelled or extraneous arguments are silently ignored, leading to subtle bugs that are hard to detect. For example, calling `mean(1, 2, 3, 4)` returns 1 instead of the expected result because the extra arguments disappear without warning. ellipsis solves this problem by providing validation functions that transform these silent failures into explicit errors, helping developers catch mistakes early.
+
+The package offers three key validation functions tailored to different use cases. `check_dots_used()` ensures all arguments passed through `...` are actually evaluated, preventing arguments from being accidentally swallowed. `check_dots_unnamed()` enforces that components are unnamed, making it easier to catch misspelled named arguments. `check_dots_empty()` takes the strictest approach by erroring if `...` is used at all, forcing users to specify full argument names explicitly. Whether you're building R packages or writing robust data analysis functions, ellipsis helps you create more predictable code and deliver better user experiences by catching common mistakes before they become production issues.

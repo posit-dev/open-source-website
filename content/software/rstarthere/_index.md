@@ -31,3 +31,7 @@ external:
   title: RStartHere
   website: ''
 ---
+
+RStartHere is a curated guide to the most essential R packages for data science, organized by their role in your workflow. Rather than overwhelming you with CRAN's thousands of available packages, RStartHere provides carefully selected recommendations for each stage of the data science process—from importing and tidying data to visualization, transformation, modeling, and communication. Each package has been chosen for its performance, intuitive syntax, compatibility with other tools, and active development, giving you a reliable starting point for building effective data science workflows.
+
+What makes RStartHere particularly valuable is its workflow-based organization across seven key domains, making it easy to find the right tool for your specific task. Whether you're connecting to databases, creating interactive visualizations, building machine learning models, or automating your analyses, the guide offers approximately 150+ well-maintained packages that work seamlessly together. With direct links to documentation and vignettes, RStartHere accelerates your path from problem to solution, helping both newcomers and experienced practitioners discover trusted tools that have been proven in real-world data science projects.

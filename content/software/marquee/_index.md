@@ -34,3 +34,7 @@ external:
   title: marquee
   website: https://marquee.r-lib.org
 ---
+
+Marquee is a markdown parser and renderer designed specifically for the R graphics engine, enabling developers to incorporate richly formatted text directly into their visualizations. Rather than being limited to plain text labels and annotations, data scientists can leverage the full CommonMark specification to create professional, publication-ready graphics with formatted headers, emphasized text, code blocks, and other markdown elements—all within R's native plotting systems like ggplot2 and grid.
+
+The package bridges the gap between markdown's intuitive formatting syntax and R's graphics infrastructure, offering a streamlined approach that integrates seamlessly with existing visualization workflows. Marquee provides flexible styling options for fonts, colors, and backgrounds, while its core function, `marquee_grob()`, creates graphic objects that work naturally with standard R plotting tools. For teams working in the R ecosystem who want to elevate their visualizations beyond basic text rendering, marquee delivers a focused solution that brings markdown's readability and formatting power to data visualization.

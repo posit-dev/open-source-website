@@ -45,3 +45,7 @@ external:
   title: r-builds
   website: ''
 ---
+
+r-builds provides pre-compiled R binaries for a wide range of Linux distributions, making it simple to deploy consistent R environments across different platforms. Whether you're running Ubuntu, Debian, CentOS, RHEL, or other major Linux distributions, r-builds offers tested, production-ready binaries that support both x86_64 and ARM64 architectures. These binaries are designed with minimal dependencies and enable side-by-side installation of multiple R versions, making them ideal for teams managing diverse projects or transitioning between R releases.
+
+Built with a focus on accessibility and reliability, r-builds supports the current R version and the previous four minor versions, with best-effort support extending back to R 3.0.0. The binaries are extensively tested and used daily in production environments including Posit Cloud and shinyapps.io. For data scientists and developers working in Linux environments, r-builds eliminates the complexity of compiling R from source while maintaining the flexibility to customize installations when needed.

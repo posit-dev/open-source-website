@@ -34,3 +34,7 @@ external:
   title: rematch2
   website: ''
 ---
+
+Regular expressions are powerful, but R's base regex functions return complex nested lists that can be difficult to work with. rematch2 transforms this experience by wrapping `regexpr` and `gregexpr` to deliver results as tidy tibbles instead. Whether you're extracting the first match with `re_match()` or finding all occurrences with `re_match_all()`, you get clean data frames where named capture groups automatically become intuitive column names.
+
+This approach makes pattern matching accessible for data scientists who need to parse structured text—like dates, URLs, or identifiers—without wrestling with unwieldy list structures. rematch2 also tracks exact character positions where matches occur, making it invaluable for text manipulation pipelines. By prioritizing usability and seamless integration with tidyverse workflows, rematch2 helps you spend less time debugging regex output and more time analyzing your data.

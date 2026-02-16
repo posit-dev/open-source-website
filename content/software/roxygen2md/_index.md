@@ -26,3 +26,7 @@ external:
   title: roxygen2md
   website: https://roxygen2md.r-lib.org/
 ---
+
+roxygen2md is an R package that modernizes documentation in roxygen2-based projects by automatically converting legacy Rd (R documentation) markup syntax into clean, readable Markdown format. If you maintain R packages, you know that older documentation often contains verbose Rd markup like `\emph{}`, `\code{}`, `\href{}`, and `\url{}` that can make your roxygen2 comments harder to read and maintain. roxygen2md streamlines this by automating the conversion to Markdown equivalents, updating your `DESCRIPTION` file to enable Markdown support, and providing diagnostic tools to identify any remaining unconverted elements.
+
+What makes roxygen2md particularly valuable for package developers is its staged workflow approach. Rather than attempting to convert everything at once, the package offers "none," "simple," "full," and "unlink" scopes that let you tackle the modernization incrementally. This methodical approach isolates automated changes from those requiring careful human review, reducing risk in large legacy codebases. Whether you're maintaining a mature package with years of accumulated documentation or starting fresh with modern standards, roxygen2md helps ensure your documentation is consistent, readable, and ready for enhanced rendering with tools like pkgdown.

@@ -38,3 +38,7 @@ external:
   title: mockery
   website: ''
 ---
+
+Mockery is a testing library for R that makes it easy to replace functions with substitutes during testing. When writing unit tests, you often need to isolate the code you're testing from external dependencies like database connections, API calls, or even base R functions. Mockery's stub function lets you temporarily replace these dependencies with fixed return values or alternative implementations, while mock objects let you verify exactly how functions were called and what arguments they received. This is particularly valuable for testing code that depends on external resources or for mocking R primitives that other tools can't handle.
+
+Note that mockery is now superseded by testthat's built-in mocking functionality. For new test suites, developers should use testthat::local_mocked_bindings() instead, which provides similar capabilities with better integration into the testthat framework.

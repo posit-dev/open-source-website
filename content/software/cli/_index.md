@@ -91,3 +91,7 @@ external:
   title: cli
   website: https://cli.r-lib.org/
 ---
+
+cli is a comprehensive toolkit for building polished command-line interfaces in R. It provides high-level semantic elements like headings, lists, alerts, and progress bars, allowing you to create professional terminal output without wrestling with low-level formatting details. With support for ANSI colors, dynamic text through glue integration, and intelligent features like pluralized messages, cli makes it easy to provide clear, user-friendly feedback from your R packages and scripts.
+
+What makes cli particularly powerful is its CSS-like theming system, which enables consistent styling across your command-line tools. Whether you're developing R packages that need informative error messages, building data pipelines that report progress, or creating interactive command-line applications, cli handles the complexity of terminal formatting while you focus on functionality. The package's semantic approach means your code remains readable and maintainable, while users enjoy beautifully formatted output that enhances their experience with your tools.

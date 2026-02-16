@@ -99,7 +99,7 @@ external:
   - carlganz
   - colearendt
   - csgillespie
-  - chendaniely
+  - chendanialy
   - davidmacro
   - dmenne
   - dselivanov
@@ -145,3 +145,7 @@ external:
   title: shiny
   website: https://shiny.posit.co/
 ---
+
+Shiny is an R package that makes it easy to build rich, interactive web applications directly from R, without requiring any knowledge of HTML, CSS, or JavaScript. At its core, Shiny uses an intuitive reactive programming model that automatically connects your R code to user interface elements, so outputs instantly update whenever users interact with your app. This approach minimizes the amount of code you need to write while making complex application logic easier to understand and maintain, allowing you to transform existing R analyses into live, interactive experiences with minimal effort.
+
+Beyond its elegant programming model, Shiny provides a comprehensive ecosystem for building production-ready applications. It includes a sophisticated set of customizable widgets for plots, tables, sliders, and other interactive elements, all styled with an attractive Bootstrap-based theme that can be easily customized. The framework seamlessly integrates with R Markdown for embedding apps in dynamic documents, offers powerful tools for improving performance including async programming and caching, and supports modular code organization to reduce complexity in larger projects. With its rich ecosystem of extension packages and active community, Shiny has become the go-to solution for data scientists and analysts who want to share their work through interactive dashboards and applications.

@@ -55,3 +55,7 @@ external:
   title: memoise
   website: https://memoise.r-lib.org
 ---
+
+Memoise is a performance optimization package that dramatically speeds up your R code by caching function results. When you memoise a function, it automatically stores the output of each computation and returns the cached result when the same inputs are encountered again, eliminating redundant calculations. This is particularly valuable for data scientists working with computationally expensive operations like complex statistical models, database queries, or API calls where the same parameters are frequently reused.
+
+The package offers flexible caching strategies to suit different workflows. You can use in-memory caching for fast, session-specific performance, disk-based caching to persist results across R sessions, or even cloud storage backends for distributed computing environments. Memoise also provides intelligent cache management features, including automatic expiration policies, manual cache clearing, and the ability to share caches across multiple memoised functions without conflicts. With a simple function wrapper approach, memoise integrates seamlessly into existing code and can transform functions that take seconds or minutes to run into sub-millisecond operations on subsequent calls.

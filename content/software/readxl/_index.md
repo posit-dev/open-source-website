@@ -76,3 +76,7 @@ external:
   title: readxl
   website: https://readxl.tidyverse.org
 ---
+
+readxl makes it easy to get data out of Excel and into R. The package supports both legacy `.xls` files and modern `.xlsx` formats, with the major advantage of having no external dependencies—no Java, no Perl, just pure R. This means it's straightforward to install and works reliably across all operating systems. Whether you're wrangling data from colleagues who live in Excel or integrating spreadsheet data into reproducible analysis pipelines, readxl provides a fast and dependable solution.
+
+The package handles the messy realities of Excel files with grace. It automatically detects file formats, converts character encodings to UTF-8, manages datetime values across different Excel date systems, and returns data as tibbles for seamless integration with tidyverse workflows. With intuitive functions like `read_excel()` for imports and `excel_sheets()` for exploring workbook contents, plus flexible options for selecting cell ranges and specifying column types, readxl gives data scientists the tools they need to efficiently bridge the gap between Excel and R.

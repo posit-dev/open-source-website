@@ -146,3 +146,7 @@ external:
   title: cheatsheets
   website: https://rstudio.github.io/cheatsheets/
 ---
+
+Posit Cheatsheets is a comprehensive collection of scannable visual reference guides designed to help data scientists and R users quickly locate essential functions across popular packages and tools. Rather than serving as exhaustive documentation, these cheatsheets function like an organized menu bar that guides you to the right command at the right time. They use thoughtful visual design, strategic use of color and white space, and clear hierarchies to make information discovery fast and intuitive, whether you're exploring dplyr for data manipulation, ggplot2 for visualization, or the RStudio IDE's features.
+
+The collection serves multiple purposes simultaneously: helping programmers find information quickly during active development, acting as effective teaching tools in data science education, and providing accessible references directly within the RStudio IDE. Each cheatsheet is available in multiple formats including PDF for visual reference and HTML text-based versions for improved accessibility with screen readers. With community-contributed translations and regular updates from maintainers, these cheatsheets have become an essential resource for both newcomers learning R and experienced practitioners needing quick reminders.

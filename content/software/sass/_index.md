@@ -61,3 +61,7 @@ external:
   title: sass
   website: https://rstudio.github.io/sass/
 ---
+
+The sass package brings the power of Sass (Syntactically Awesome Style Sheets) to R, providing native bindings to LibSass for compiling Sass into CSS. Sass is a mature CSS extension language that makes styling modern websites less complex and more maintainable through features like variables, nesting, mixins, and mathematical operations. Rather than writing repetitive CSS manually, you can use Sass to create dynamic, reusable stylesheets that are easier to understand and modify.
+
+This package is particularly valuable for R developers building web applications, interactive documents, or R packages that require customizable styling systems. The sass package accepts input in multiple flexible formats including raw R strings, named lists for defining variables, file references, and nested structures combining all these methods. With its fast C++-based compiler, sass seamlessly integrates Sass preprocessing capabilities into R workflows, enabling programmatic stylesheet generation and making it simpler to maintain consistent, sophisticated designs across your projects.

@@ -52,3 +52,7 @@ external:
   title: finetune
   website: https://finetune.tidymodels.org/
 ---
+
+The finetune package brings advanced hyperparameter optimization methods to the tidymodels ecosystem, making it easier to find optimal model configurations without exhaustive computational overhead. Built as an extension to the tune package, finetune provides sophisticated search algorithms including simulated annealing and racing methods that intelligently explore the parameter space. These techniques are particularly valuable when working with complex models or large datasets where traditional grid search becomes prohibitively expensive.
+
+At its core, finetune offers three powerful approaches to model tuning. Simulated annealing uses a probabilistic strategy that occasionally accepts worse solutions to escape local optima, helping you discover better hyperparameter combinations across rugged optimization landscapes. Racing methods take a different approach by evaluating all candidate parameters on small resamples first, then statistically eliminating poor performers early in the process. Whether you choose ANOVA-based racing or win/loss tournament-style racing, you can dramatically reduce tuning time while maintaining the quality of your final model selection.

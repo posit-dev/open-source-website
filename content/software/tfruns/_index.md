@@ -40,3 +40,7 @@ external:
   title: tfruns
   website: https://tensorflow.rstudio.com/tools/tfruns/index.html
 ---
+
+Training TensorFlow models often involves running dozens or even hundreds of experiments with different hyperparameters, architectures, and datasets. The tfruns package streamlines this experimentation process by automatically tracking every aspect of your training runs—from hyperparameters and performance metrics to generated outputs and the underlying source code—without requiring any changes to your existing code. Whether you're working with Keras or TensorFlow Estimator models, tfruns captures comprehensive run data behind the scenes, letting you focus on model development rather than building logging infrastructure.
+
+Beyond tracking, tfruns provides powerful tools for comparing experiments and identifying your best-performing models. Its built-in visualization and reporting capabilities make it easy to analyze multiple runs side-by-side, spot trends in your metrics, and communicate results to stakeholders. By reducing the friction in the machine learning workflow, tfruns helps data scientists and researchers iterate faster and make more informed decisions about model optimization.

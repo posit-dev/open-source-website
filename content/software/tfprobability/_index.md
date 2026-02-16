@@ -33,3 +33,7 @@ external:
   title: tfprobability
   website: https://rstudio.github.io/tfprobability/
 ---
+
+tfprobability brings the power of TensorFlow Probability to R, enabling advanced probabilistic modeling and statistical computation with familiar R syntax. The package provides a comprehensive toolkit for building probabilistic models, from simple distributions to complex multi-level hierarchical models, while leveraging TensorFlow's computational efficiency. Whether you're performing Bayesian inference with MCMC and variational methods, quantifying uncertainty in neural networks, or building sophisticated time series models with state space approaches, tfprobability offers the flexibility to tackle challenging statistical problems.
+
+At its core, tfprobability provides rich distribution objects with methods for probability calculations, summary statistics, and information-theoretic measures like entropy and KL divergence. The package also includes bijectors—invertible transformations that enable likelihood calculations under transformed distributions—and seamless integration with Keras layers, allowing you to embed probabilistic reasoning directly into neural network architectures. This combination of deep learning and probabilistic modeling opens up powerful workflows for density estimation with autoregressive flows, uncertainty quantification, and any application where understanding the full distribution of outcomes matters as much as point predictions.

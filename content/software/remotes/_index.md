@@ -117,3 +117,7 @@ external:
   title: remotes
   website: https://remotes.r-lib.org/
 ---
+
+The remotes package provides a lightweight, flexible solution for installing R packages from diverse repositories beyond CRAN. Whether you need to install development versions from GitHub, access packages from GitLab or Bitbucket, or pull code from git and subversion repositories, remotes makes it straightforward. As a standalone replacement for the install_* functions in devtools, it requires no compiler or external dependencies for most use cases, making it faster to install and easier to use in any environment.
+
+With remotes, you can install packages from specific versions, branches, commits, tags, or even pull requests, giving you precise control over your dependencies. The package automatically handles dependency resolution and supports the Remotes field in package descriptions, allowing package authors to specify non-standard dependencies that point directly to development repositories. This flexibility is invaluable for data scientists and developers who need to work with cutting-edge features, collaborate on pre-release code, or maintain reproducible environments with exact package versions.

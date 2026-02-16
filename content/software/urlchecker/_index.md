@@ -37,3 +37,7 @@ external:
   title: urlchecker
   website: https://urlchecker.r-lib.org/
 ---
+
+urlchecker is a lightweight tool designed to help R package developers maintain healthy, functional URLs throughout their documentation, vignettes, and code. When submitting packages to CRAN, all URLs are checked for validity, but this checking functionality is only available in newer versions of R. urlchecker brings these essential URL checks to older R versions, allowing you to catch broken links, outdated redirects, and invalid URLs before submission. The package leverages concurrent requests to scan URLs much faster than the built-in tools package, saving valuable time during package development and maintenance.
+
+Beyond simple checking, urlchecker can automatically update URLs that have moved to new locations (301 redirects), ensuring your package documentation always points to the right place. Whether you're preparing a CRAN submission, maintaining an existing package, or simply want to keep your documentation links up-to-date, urlchecker provides a fast and reliable solution that integrates seamlessly into your R package development workflow.

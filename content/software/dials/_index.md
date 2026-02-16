@@ -59,3 +59,7 @@ external:
   title: dials
   website: https://dials.tidymodels.org/
 ---
+
+Dials provides infrastructure for creating and managing tuning parameter values within the tidymodels ecosystem. When building machine learning models in R, finding optimal parameter values can feel like turning a set of dials on a complex machine—hence the name. This package handles the foundational work of defining parameter spaces, generating candidate values, and managing parameter objects, making it easier to tune predictive models systematically.
+
+As a core tidymodels package, dials integrates seamlessly with tune and other modeling tools, providing a consistent interface for working with hyperparameters across different model types. Whether you're tuning a single model or comparing multiple algorithms, dials ensures that parameter definitions are standardized and reproducible, reducing the complexity of optimization workflows for data scientists and machine learning practitioners.

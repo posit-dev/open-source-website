@@ -35,3 +35,7 @@ external:
   title: sortable
   website: https://rstudio.github.io/sortable/
 ---
+
+The sortable package brings intuitive drag-and-drop functionality to R environments by wrapping the powerful SortableJS JavaScript library as an htmlwidget. It enables data scientists and developers to create interactive interfaces for item reordering, categorization, and ranking tasks across Shiny applications, learnr tutorials, and R Markdown documents—all without writing a single line of JavaScript. Whether you're building educational platforms with ranking exercises, designing task management interfaces, or creating interactive surveys, sortable makes it simple to add polished, user-friendly drag-and-drop interactions to your applications.
+
+The package offers flexible components to suit different use cases: rank lists for simple reordering tasks, bucket lists for multi-category classification workflows, and a universal `sortable_js()` function that works with any HTML element. For educators, the built-in `question_rank()` function seamlessly integrates ranking questions into learnr tutorials. With configurable options for multi-selection dragging and swap-based reordering, sortable provides the interactive capabilities modern data applications demand while maintaining the simplicity R users expect.

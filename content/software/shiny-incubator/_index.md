@@ -29,3 +29,7 @@ external:
   title: shiny-incubator
   website: ''
 ---
+
+shiny-incubator serves as an experimental playground for innovative Shiny features and ideas that fall outside the scope of the core Shiny package. Created by the Shiny development team, this repository provides a testing ground for novel UI components, interaction patterns, and functionality that may be too experimental, specialized, or niche for inclusion in the main Shiny package. It offers developers early access to cutting-edge concepts and proof-of-concept implementations that push the boundaries of what's possible in interactive web applications with R.
+
+While the features in shiny-incubator are not officially supported or guaranteed to be stable, they represent valuable explorations into potential future directions for Shiny development. For developers looking to experiment with advanced capabilities, prototype new ideas, or draw inspiration from innovative approaches to reactive web applications, shiny-incubator provides a rich resource of examples and implementations. It's an ideal place to discover experimental features that might solve unique challenges in your Shiny applications, while understanding that these tools are intended for exploration and may evolve or change over time.

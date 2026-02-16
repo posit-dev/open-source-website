@@ -63,3 +63,7 @@ external:
   title: RMariaDB
   website: https://rmariadb.r-dbi.org
 ---
+
+RMariaDB is a modern database interface that connects R to MariaDB and MySQL databases, serving as the successor to the older RMySQL package. Built with full compliance to the DBI specification, it provides a consistent and reliable way to query databases, manage tables, and integrate relational data directly into your R workflows. Whether you're building data pipelines, running analytical queries, or managing database operations, RMariaDB offers the tools you need to seamlessly bridge your R environment with MariaDB infrastructure.
+
+The package excels in flexibility and security, allowing you to leverage MariaDB configuration files for secure credential management instead of hardcoding sensitive information in your scripts. With support for both batch and incremental result retrieval, RMariaDB gives you fine-grained control over memory usage when working with large datasets. Its comprehensive adherence to DBI standards ensures that your code remains portable across R's database ecosystem, making it an essential tool for data scientists and developers who rely on MariaDB or MySQL for their analytical work.

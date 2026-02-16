@@ -46,3 +46,7 @@ external:
   title: shinyloadtest
   website: https://rstudio.github.io/shinyloadtest/
 ---
+
+shinyloadtest provides a scientific approach to evaluating how your Shiny applications perform under real-world traffic conditions. Instead of guessing whether your app can handle dozens or thousands of concurrent users, shinyloadtest enables you to conduct rigorous load tests that reveal your application's true capacity and identify performance bottlenecks before they impact users. The toolkit works through a straightforward three-step process: record a typical user session, replay it in parallel to simulate multiple simultaneous users with the shinycannon command-line tool, and analyze the results through detailed HTML reports that highlight performance patterns.
+
+Whether you're preparing for a product launch, scaling existing applications, or optimizing infrastructure costs, shinyloadtest transforms capacity planning from speculation into data-driven decision making. The framework helps you estimate maximum concurrent user capacity, pinpoint whether bottlenecks exist in your code or infrastructure, and make informed optimization choices. By enabling developers and administrators to horizontally scale applications to handle tens of thousands of users, shinyloadtest addresses common misconceptions about Shiny's scalability and empowers teams to deploy production-ready applications with confidence.

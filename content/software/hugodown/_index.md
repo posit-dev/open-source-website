@@ -42,3 +42,7 @@ external:
   title: hugodown
   website: https://hugodown.r-lib.org
 ---
+
+hugodown is an experimental R package that streamlines the creation of Hugo-based websites with R Markdown. It provides a thoughtful separation of concerns: your R code executes only when you explicitly knit a document, generating clean Markdown files that Hugo then transforms into a polished website. This architecture is particularly valuable for data scientists maintaining blogs with computationally intensive analyses, as it eliminates unnecessary re-execution of long-running code on every site rebuild and ensures consistent results across multiple contributors.
+
+The package addresses common pain points in R-based website workflows through Hugo version pinning, which prevents unexpected theme breakage across different projects, and curated theme configurations that handle technical details like HTML widgets, syntax highlighting, and math rendering automatically. With convenient functions for managing background preview servers, generating new posts from templates, and tracking outdated content, hugodown offers a streamlined, low-maintenance infrastructure for data scientists and developers who want to focus on writing compelling content rather than managing complex build systems.

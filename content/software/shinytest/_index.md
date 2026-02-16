@@ -57,3 +57,7 @@ external:
   title: shinytest
   website: https://rstudio.github.io/shinytest/
 ---
+
+shinytest was an R package designed to bring automated testing capabilities to Shiny applications through a snapshot-based testing approach. It enabled developers to script interactions with their apps, capture application states as baseline snapshots, and automatically detect regressions by comparing subsequent test runs against these baselines. This workflow helped teams maintain quality and catch bugs early by verifying that user interactions produced consistent, expected results without manual testing.
+
+Note that shinytest is now deprecated and may not work with Shiny versions after 1.8.1 due to its dependency on PhantomJS, an outdated headless browser that is no longer maintained. For automated testing of modern Shiny applications, please use shinytest2, which leverages contemporary Chromium-based browser technology and provides enhanced testing capabilities for today's Shiny apps.

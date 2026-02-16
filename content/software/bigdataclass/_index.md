@@ -34,3 +34,7 @@ external:
   title: bigdataclass
   website: https://rstudio.github.io/bigdataclass/
 ---
+
+bigdataclass is a comprehensive two-day workshop designed to teach data scientists and developers how to work with data stored outside R environments, focusing on database connections and big data cluster analysis. The course emphasizes using the dplyr, DBI, and odbc packages for database work, along with sparklyr for Spark operations, enabling you to use familiar dplyr verbs that are automatically translated to SQL queries. This approach lets you leverage the power of enterprise databases like SQL Server, Oracle, and PostgreSQL, as well as scalable platforms including Hadoop clusters with Hive and Spark, all from within R.
+
+The workshop provides a complete learning package with workbook notebooks containing guided exercises, presentation materials, and fully worked solutions. Whether you're looking to scale your data analysis beyond local datasets or integrate R into your organization's existing database infrastructure, bigdataclass offers practical instruction that balances hands-on exercises with security considerations and deployment best practices, making it ideal for professionals ready to tackle real-world big data challenges.

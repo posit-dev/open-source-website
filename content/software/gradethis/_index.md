@@ -48,3 +48,7 @@ external:
   title: gradethis
   website: https://pkgs.rstudio.com/gradethis/
 ---
+
+gradethis is an R package that helps educators scale feedback for interactive coding exercises. Designed to work seamlessly with learnr tutorials, gradethis automates the process of evaluating student code and providing meaningful, customized responses. Instead of simple pass/fail grading, it identifies common mistakes and delivers targeted guidance that helps students understand exactly what went wrong and how to fix it.
+
+The package offers two powerful grading approaches: code comparison using `grade_this_code()` for evaluating solutions against model answers, and custom logic grading with `grade_this()` for specialized testing and feedback rules. Whether you're teaching R to a classroom of students or creating self-paced tutorials for a broader audience, gradethis enables you to deliver immediate, specific feedback at scale without manual grading, making it an essential tool for modern data science education.

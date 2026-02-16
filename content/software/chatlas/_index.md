@@ -55,3 +55,7 @@ external:
   title: chatlas
   website: https://posit-dev.github.io/chatlas/
 ---
+
+Chatlas is a Python library that makes building large language model (LLM) chat applications straightforward and accessible. Designed to eliminate the complexity typically associated with integrating conversational AI, chatlas provides a clean, intuitive interface for developers and data scientists who want to create powerful chat-based applications without extensive boilerplate code. Whether you're prototyping an AI assistant, building interactive data analysis tools, or developing customer-facing chatbots, chatlas handles the underlying complexity so you can focus on your application logic.
+
+The library shines in its flexibility and ease of use. With support for multiple LLM providers including OpenAI and Anthropic, you can seamlessly switch between models to find the best fit for your use case. Chatlas also supports custom tool integration, allowing your models to call Python functions dynamically and interact with external systems. This combination of multi-provider support and extensible tool functionality makes chatlas an excellent choice for data scientists building analytical workflows and developers creating production-ready conversational applications, all while maintaining the clarity and simplicity that Python developers expect.

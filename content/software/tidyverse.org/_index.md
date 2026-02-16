@@ -135,3 +135,7 @@ external:
   title: tidyverse.org
   website: https://tidyverse.org
 ---
+
+tidyverse.org is the central hub and documentation website for the tidyverse ecosystem, an opinionated collection of R packages designed for data science. The site serves as a comprehensive resource for data scientists and R developers, providing unified access to documentation, learning materials, and community resources for nine core packages including dplyr, ggplot2, and tidyr. By bringing together packages that share common design philosophy, grammar, and data structures, tidyverse.org makes it easier for users to discover, learn, and effectively use these tools in their data analysis workflows.
+
+Built with Hugo and hugodown, the website features a blog highlighting package releases and data science techniques, curated learning paths including links to "R for Data Science," and guidance on getting help and creating reproducible examples. The site's clean, organized structure helps both newcomers get started quickly with the tidyverse and experienced practitioners stay updated on the latest developments across the ecosystem. Whether you're learning data science fundamentals or building complex analytical pipelines, tidyverse.org provides the documentation and resources to support your journey.

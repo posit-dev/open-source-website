@@ -56,3 +56,7 @@ external:
   title: processx
   website: https://processx.r-lib.org/
 ---
+
+processx is an R package that enables you to launch, control, and monitor system processes in the background without blocking your R session. Whether you're running long computations, calling external command-line tools, or orchestrating complex data pipelines, processx gives you fine-grained control over subprocess execution while keeping your interactive R environment responsive. The package provides sophisticated mechanisms for capturing standard output and error streams in real-time, managing process lifecycles, and handling multiple concurrent processes through its polling system.
+
+Key features include non-blocking process execution that prevents R from freezing, the ability to read output line-by-line or in chunks with callback functions, support for writing to standard input, and cross-platform compatibility across Linux, macOS, and Windows. For data scientists and developers building tools that interact with external programs or need to manage complex computational workflows, processx offers the reliability and flexibility to implement timeouts, responsive termination, and real-time output processing with minimal dependencies.

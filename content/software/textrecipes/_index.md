@@ -50,3 +50,7 @@ external:
   title: textrecipes
   website: https://textrecipes.tidymodels.org/
 ---
+
+textrecipes extends the recipes framework with specialized preprocessing steps designed specifically for text data, enabling seamless integration of natural language processing into tidymodels machine learning workflows. When working with unstructured text data, data scientists face the challenge of transforming words and documents into numerical features that models can understand. textrecipes solves this by providing a comprehensive toolkit of text-specific preprocessing steps that work within the familiar recipes pipeline, ensuring reproducible transformations and consistent handling of both training and test data.
+
+The package offers essential text processing capabilities including tokenization, stopword removal, token filtering, TF-IDF transformation, and even advanced techniques like Latent Dirichlet Allocation for topic modeling. By operating within the recipes framework, textrecipes allows you to chain multiple text preprocessing steps together, combine them with other feature engineering operations, and apply the entire pipeline consistently across your dataset. This makes it invaluable for anyone building text classification models, sentiment analysis systems, or any machine learning application that needs to extract meaningful features from text.

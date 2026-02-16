@@ -32,3 +32,7 @@ external:
   title: rray
   website: https://rray.r-lib.org
 ---
+
+rray is an array manipulation library designed to make working with multi-dimensional data in R more intuitive and consistent. While base R provides array functionality, it often exhibits unexpected behaviors like dimension dropping and lacks automatic broadcasting capabilities found in modern array libraries. rray addresses these limitations by introducing a stricter array class with consistent semantics and powerful dimension-aware operations, making complex array computations more straightforward and reliable.
+
+What sets rray apart is its comprehensive approach to array handling, inspired by the tibble philosophy of stricter, more predictable behavior. The package enables automatic dimension alignment through broadcasting, allowing arrays of different shapes to work together seamlessly without manual preprocessing. Functions like `rray_bind()` can combine arrays with mismatched dimensions by automatically broadcasting them to compatible shapes, while operations consistently preserve dimensions instead of unexpectedly dropping them. Whether you're performing sophisticated numerical computations, working with tensor-like data structures, or need NumPy-style broadcasting in R, rray bridges the gap between R's native capabilities and modern array computing requirements.

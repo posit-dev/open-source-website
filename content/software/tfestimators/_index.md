@@ -38,3 +38,7 @@ external:
   title: tfestimators
   website: https://tensorflow.rstudio.com/tfestimators
 ---
+
+tfestimators is an R interface to TensorFlow's high-level Estimators API, bringing enterprise-grade machine learning capabilities to R developers. The package provides immediate access to pre-built implementations of linear models and deep neural networks, while also offering a flexible framework for defining custom model architectures. By bridging R with TensorFlow's production-ready infrastructure, tfestimators enables data scientists to develop sophisticated models using familiar R syntax while leveraging the power and scalability of TensorFlow underneath.
+
+What makes tfestimators particularly valuable is its focus on the complete machine learning lifecycle, from development through production deployment. The package includes an Experiment API that supports distributed training and hyperparameter tuning for both standard and custom estimators, making it easier to scale models across computing resources. Perhaps most importantly, trained models can be deployed independently without requiring an R runtime, simplifying the path to production and reducing infrastructure complexity. Whether you're building quick prototypes with pre-built models or developing specialized solutions for complex problems, tfestimators provides a streamlined workflow that connects R's data analysis strengths with industrial-strength machine learning deployment.

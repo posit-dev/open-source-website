@@ -55,3 +55,7 @@ external:
   title: rcmdcheck
   website: https://rcmdcheck.r-lib.org
 ---
+
+The rcmdcheck package streamlines quality assurance for R package developers by enabling programmatic execution of R CMD check directly from within R. Instead of running checks manually from the command line, rcmdcheck allows you to automate package validation, capture structured results, and integrate quality checks seamlessly into your development workflow. This is especially valuable for continuous integration pipelines, automated testing, and maintaining high-quality R packages at scale.
+
+With rcmdcheck, you can run comprehensive package checks on local source packages or .tar.gz files, receiving organized results with errors, warnings, and notes neatly categorized for easy analysis. The package also provides powerful features for comparing check results across different versions, retrieving and parsing CRAN check results across all testing platforms, and executing checks as background processes for concurrent testing. Whether you're developing a single package or maintaining a suite of R tools, rcmdcheck simplifies the quality assurance process and helps you catch issues before they reach users.

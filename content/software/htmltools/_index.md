@@ -74,3 +74,7 @@ external:
   title: htmltools
   website: https://rstudio.github.io/htmltools/
 ---
+
+htmltools is a foundational R package that enables developers to generate and manipulate HTML, CSS, and JavaScript programmatically from within R. It eliminates the need to write raw HTML manually, providing an intuitive R-based interface for building custom user interfaces in Shiny applications, R Markdown documents, and other web-based outputs. The package serves as the building block for creating reusable HTML components that can be seamlessly integrated into data science workflows and interactive visualizations.
+
+What makes htmltools particularly powerful is its flexible component composition system. With functions like tagList() for combining multiple HTML elements and tagQuery() for querying and modifying HTML structures after creation, you gain fine-grained control over your web interfaces. This extensibility allows you to assemble complex layouts, compose interactive visualizations, and create custom HTML components that other packages and users can build upon. Whether you're developing a custom Shiny dashboard, creating reusable UI components, or building R packages that generate web content, htmltools provides the essential toolkit for bridging R code and web technologies.

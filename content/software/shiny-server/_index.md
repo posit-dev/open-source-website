@@ -54,3 +54,7 @@ external:
   title: shiny-server
   website: https://rstudio.com/shiny/server
 ---
+
+Shiny Server is a free and open source server application that enables you to deploy and host interactive Shiny applications across the web. It transforms your R-based analytical work into accessible web applications that users can access through any standard web browser, making it easy to share data visualizations, dashboards, and interactive analysis tools with colleagues, stakeholders, or the broader community. With support for multiple applications on a single server instance, each application receives its own distinct URL, allowing organizations to manage comprehensive portfolios of data products from a centralized deployment.
+
+Whether you're running a single application for your team or managing dozens of data products across an organization, Shiny Server provides flexible configuration options to meet diverse deployment needs. It supports both administrator-controlled hosting and user self-service deployment models, enabling data scientists to independently publish their work without requiring IT intervention for every update. The server works with a wide range of browsers, including legacy versions that lack modern websocket support, ensuring broad accessibility for your applications. With straightforward configuration through simple text files and a default setup that gets you running quickly, Shiny Server bridges the gap between local development and production deployment for R-based interactive applications.

@@ -36,3 +36,7 @@ external:
   title: planning
   website: ''
 ---
+
+The tidymodels planning repository serves as a central hub for coordinating future development of the tidymodels ecosystem. This collaborative space documents upcoming initiatives, features, and strategic directions for the suite of modeling packages that data scientists rely on for their machine learning workflows. By maintaining transparency about planned developments, the repository helps the community understand where tidymodels is headed and provides opportunities to shape its evolution.
+
+This repository embodies an open and community-driven approach to software development. Users and contributors can participate in discussions about proposed features, share feedback through issues and pull requests, and help prioritize development efforts. Whether you're a tidymodels maintainer coordinating cross-package initiatives or a community member interested in influencing the future of R's modeling ecosystem, this planning repository offers a structured way to engage with the project's roadmap and contribute to meaningful conversations about its direction.

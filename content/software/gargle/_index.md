@@ -58,3 +58,7 @@ external:
   title: gargle
   website: https://gargle.r-lib.org/
 ---
+
+Gargle provides robust infrastructure for working with Google's extensive ecosystem of APIs from R. Whether you're accessing Google Sheets, Drive, Analytics, or any of Google's 250+ available APIs, gargle eliminates the complexity of authentication and HTTP request management, allowing you to focus on your data analysis rather than the technical plumbing. The package serves as the foundation for many popular R packages that wrap Google APIs, offering a battle-tested solution for credential management and API communication.
+
+At its core, gargle solves two critical challenges: authentication and request handling. Its intelligent `token_fetch()` function automatically attempts multiple authentication methods including service accounts, application default credentials, and OAuth2 flows, with user-level token caching for seamless workflow integration. For package developers building Google API wrappers, gargle provides a comprehensive toolkit for constructing API calls, submitting requests, and processing responses using Google's Discovery Document specifications. While primarily designed for package authors, data scientists working directly with Google APIs will appreciate gargle's low-level control and flexibility for custom integrations.

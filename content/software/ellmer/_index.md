@@ -99,3 +99,7 @@ external:
   title: ellmer
   website: https://ellmer.tidyverse.org/
 ---
+
+ellmer provides a unified interface for working with large language models directly from R, making it easy to integrate AI capabilities into your data science workflows. Whether you need to generate code, analyze text, extract structured data, or build interactive applications, ellmer connects you to over 20 LLM providers including Claude, OpenAI, Google Gemini, Groq, and Mistral. The package handles the complexity of different provider APIs while giving you the flexibility to choose the right model for your needs—from cost-effective options for experimentation to high-performing models for production work.
+
+Key features include streaming outputs for real-time interaction, tool calling for extending model capabilities, image analysis support, and intelligent credential management that works seamlessly with cloud authentication systems. For teams working in enterprise environments, ellmer supports routing through Azure, AWS, or Databricks to meet organizational policies, while individual developers can run models locally using Ollama for complete privacy. The package's stateful chat objects maintain conversation context across interactions, enabling sophisticated multi-turn dialogues that remember previous exchanges and build on prior results.

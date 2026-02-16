@@ -41,3 +41,7 @@ external:
   title: py-shinylive
   website: https://shiny.posit.co/py/get-started/shinylive.html
 ---
+
+py-shinylive is a Python package that transforms Shiny for Python applications into standalone web applications that run entirely in the browser. By leveraging WebAssembly technology through Pyodide, py-shinylive eliminates the need for a traditional Python server, allowing your interactive data applications to execute client-side. This breakthrough means you can deploy Shiny applications to any static web hosting service, from GitHub Pages to simple file servers, without worrying about server infrastructure, scaling, or backend maintenance.
+
+What makes py-shinylive particularly valuable for data scientists and developers is its seamless deployment workflow and infrastructure-free approach. The package intelligently manages all necessary web assets and dependencies, automatically handling version control and caching to streamline the export process. Whether you're sharing a quick data exploration tool with colleagues, embedding an interactive visualization in documentation, or publishing educational materials, py-shinylive provides a frictionless path from development to deployment. It works as part of a broader Shinylive ecosystem that includes support for both Python and R, making it easy to create portable, shareable data applications that run anywhere a web browser does.

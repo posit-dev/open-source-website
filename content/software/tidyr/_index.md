@@ -176,3 +176,7 @@ external:
   title: tidyr
   website: https://tidyr.tidyverse.org/
 ---
+
+tidyr helps you organize messy data into a standardized, analysis-ready format. At its core, tidyr enforces the principles of "tidy data"—where each variable forms a column, each observation forms a row, and each cell contains a single value. This consistent structure means you spend less time wrestling with data organization and more time extracting insights from your analysis.
+
+The package provides powerful tools for common data reshaping challenges. Use `pivot_longer()` and `pivot_wider()` to transform between long and wide formats, `unnest_longer()` and `hoist()` to wrangle nested structures from JSON or other hierarchical sources, and specialized functions to split or combine columns, handle missing values, and create nested data frames for grouped operations. Whether you're cleaning survey data, processing API responses, or preparing datasets for visualization, tidyr streamlines the path from raw data to tidy data.

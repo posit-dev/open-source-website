@@ -57,3 +57,7 @@ external:
   title: pkgdepends
   website: https://r-lib.github.io/pkgdepends/
 ---
+
+pkgdepends is a comprehensive toolkit for handling R package dependencies, downloads, and installations. It provides the core infrastructure for resolving complex dependency trees, supporting diverse package sources including CRAN, Bioconductor, GitHub, GitLab, git repositories, and local files. With built-in caching, concurrent downloads, and a sophisticated dependency solver, pkgdepends ensures that all package requirements are satisfied efficiently and reliably.
+
+Designed as a developer toolkit rather than a standalone tool, pkgdepends is ideal for building R packages and applications that require sophisticated dependency management capabilities. Its parallel processing features and integration with pkgcache make it particularly valuable for creating tools that need to handle package installations at scale. Whether you're developing package management utilities, continuous integration pipelines, or automated R environments, pkgdepends provides the robust foundation needed to manage dependencies programmatically with confidence.

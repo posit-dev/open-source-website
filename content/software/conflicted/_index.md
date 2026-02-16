@@ -36,3 +36,7 @@ external:
   title: conflicted
   website: https://conflicted.r-lib.org/
 ---
+
+conflicted provides an alternative conflict resolution strategy for R that makes function name conflicts explicit rather than silent. When multiple packages export functions with the same name, R normally uses the most recently loaded version without warning, which can lead to hard-to-debug errors, especially when package updates introduce new naming overlaps. conflicted takes a different approach by turning every conflict into an error, forcing you to explicitly choose which function to use either by declaring session-wide preferences with `conflicts_prefer()` or by using namespaced calls like `dplyr::filter()`.
+
+This pragmatic middle-ground approach helps data scientists and R developers avoid the subtle bugs that arise from function masking, without requiring the upfront overhead of explicitly importing every function. By catching ambiguous function calls at runtime with clear error messages, conflicted makes your R code more predictable and maintainable while preserving the convenience of R's package system.

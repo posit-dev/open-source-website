@@ -65,6 +65,6 @@ external:
   website: https://posit-dev.github.io/air/
 ---
 
-Air is an extremely fast R formatter that automatically styles your code. It works seamlessly with Positron and RStudio, formatting your code instantly when you save a file.
+Air is a high-performance R code formatter and language server that automatically styles your code according to the tidyverse style guide. Built with Rust for exceptional speed, Air can format even large R files in milliseconds, making code formatting effortless and instantaneous. Whether you're working on solo projects or collaborating with a team, Air ensures consistent, readable code without requiring manual formatting decisions.
 
-Air formats R code according to the tidyverse style guide, handling complex cases like pipe chains, function calls, and conditional statements. Built with Rust for maximum performance, Air can format large R files in milliseconds.
+Air integrates seamlessly with modern editors including Positron, RStudio, VS Code, and Neovim through language server protocol support. It handles complex R syntax with ease, from intricate pipe chains and nested function calls to conditional statements and data transformations. By automating code style enforcement, Air helps data scientists and R developers focus on analysis and insights rather than formatting details, while maintaining professional code quality across projects and teams.

@@ -38,3 +38,7 @@ external:
   title: tinytex-releases
   website: https://yihui.org/tinytex/
 ---
+
+TinyTeX is a lightweight, cross-platform LaTeX distribution designed to eliminate the pain of traditional TeX installations. Built on TeX Live, TinyTeX offers a portable and easy-to-maintain alternative that strips away unnecessary bloat while retaining everything you need for compiling documents. Whether you're rendering R Markdown reports, creating technical documents, or working with LaTeX in production environments, TinyTeX provides pre-built binaries for Windows, macOS, and Linux that can be deployed in minutes rather than hours.
+
+The project offers flexible bundle sizes to match your needs: from the minimal TinyTeX-0 (under 1 MB on Linux) containing just the infrastructure, to TinyTeX-1 with about 90 packages optimized for R Markdown workflows, to the comprehensive TinyTeX-2 with the complete TeX Live collection. Each bundle includes tlmgr, the TeX Live package manager, allowing you to install additional packages on-demand. Monthly releases ensure you have access to stable, tested distributions, while daily builds provide the latest updates for those who need cutting-edge features. This repository serves as the distribution hub, making it simple to integrate TinyTeX into automated workflows, container images, or continuous integration pipelines.

@@ -96,3 +96,7 @@ external:
   title: scales
   website: https://scales.r-lib.org
 ---
+
+Scales provides the internal scaling infrastructure that powers ggplot2, making it easier to convert data values into visual properties like position, color, and size. One of the most challenging aspects of creating effective data visualizations is scaling—transforming raw data into perceptual properties—and its inverse, creating readable guides like legends and axes that help viewers interpret the graph. The scales package tackles both of these problems head-on, giving you precise control over how your data is displayed.
+
+With scales, you can customize every aspect of how your plots communicate information. Use break functions to control where tick marks appear on axes, label functions to format dates, numbers, and currency in readable ways, and transformation functions to apply custom mathematical transformations like logarithmic or square root scales. The package also provides access to carefully designed color palettes from systems like Viridis and ColorBrewer that work in any plotting system, not just ggplot2. Whether you need to display thousands of data points with abbreviated labels, format dates in a specific style, or apply a custom transformation repeatedly across multiple visualizations, scales gives you the tools to make your graphics both beautiful and informative.

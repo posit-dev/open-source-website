@@ -49,3 +49,7 @@ external:
   title: crayon
   website: http://r-lib.github.io/crayon/
 ---
+
+Crayon is an R package that brings color and style to terminal output, making it easier to create professional, readable command-line interfaces. Whether you're building diagnostic messages, highlighting errors and warnings, or simply improving the user experience of your R scripts and packages, crayon provides a simple API for adding colors, bold text, italics, underlines, and background colors to console output. The package automatically detects ANSI color support and includes powerful features like style nesting and combination, allowing developers to create consistent, visually distinct messaging systems that help users quickly identify critical information.
+
+While crayon has been superseded by the more comprehensive cli package for new projects, it remains a well-supported tool that continues to receive bug fixes. Its straightforward approach to terminal styling made it a foundational package in the R ecosystem, and it's still widely used in existing codebases. For data scientists and developers working with command-line tools, crayon offers an intuitive way to enhance terminal output without the complexity of manually managing ANSI escape codes, supporting everything from basic color application to sophisticated custom themes with 256-color palettes.

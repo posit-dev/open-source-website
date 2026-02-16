@@ -84,3 +84,7 @@ external:
   title: py-shiny
   website: https://shiny.posit.co/py/
 ---
+
+Shiny for Python is a web application framework that enables data scientists and developers to build fast, beautiful interactive applications entirely in Python. Designed for rapid prototyping, Shiny lets you create interactive visualizations and prototype applications in an afternoon, while remaining extensible enough to power large, mission-critical applications. Unlike other frameworks that force you to choose between speed and flexibility, Shiny balances both through reactive programming principles that make building sophisticated applications more intuitive and maintainable.
+
+The framework excels at transforming Python analyses into interactive web experiences without requiring web development expertise. Key features include reactive programming for automatic UI updates, modular development support for scaling complex projects, and flexible deployment options ranging from cloud platforms like Posit Connect and shinyapps.io to serverless environments like Shinylive. Whether you're building a quick dashboard to explore data or developing an enterprise application for production use, Shiny for Python provides the tools to create responsive, professional web applications that bring your Python code to life.

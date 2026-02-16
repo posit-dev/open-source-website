@@ -65,3 +65,7 @@ external:
   title: gh
   website: https://gh.r-lib.org
 ---
+
+gh is a minimalistic R package that provides seamless access to GitHub's REST and GraphQL APIs directly from your R environment. It enables data scientists and developers to programmatically interact with GitHub repositories, issues, pull requests, and other resources without needing deep knowledge of API mechanics. The package handles all the complexity of authentication, request formatting, and JSON parsing, allowing you to copy endpoint paths straight from GitHub's documentation and use them in your R code with minimal adaptation.
+
+What makes gh particularly valuable for data-driven workflows is its intelligent handling of authentication through multiple methods including git credential stores and environment variables, automatic pagination for retrieving large datasets, and support for all standard HTTP methods. Whether you're analyzing repository metrics, automating issue management, querying collaborative coding patterns, or building data pipelines that depend on GitHub data, gh provides a low-friction interface that integrates naturally with the R ecosystem while keeping your credentials secure and your code clean.

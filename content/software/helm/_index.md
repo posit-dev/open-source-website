@@ -103,3 +103,7 @@ external:
   title: helm
   website: ''
 ---
+
+Deploying data science infrastructure on Kubernetes doesn't have to be complex. This repository provides official Helm charts that make it simple to deploy and manage Posit products in containerized environments. Whether you're running Posit Connect for publishing analytics, Posit Workbench for collaborative development, or Posit Package Manager for centralized package distribution, these charts streamline the entire deployment process with production-ready configurations.
+
+Built with enterprise needs in mind, these Helm charts offer flexible configuration options, comprehensive documentation, and example deployments to get you started quickly. The collection includes supporting utilities like library charts for building custom solutions and daemonsets for optimizing container image distribution across your cluster. Released under the MIT license, the charts are freely available and actively maintained with contributions from both the Posit team and the broader community.

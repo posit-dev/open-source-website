@@ -84,3 +84,7 @@ external:
   title: rsample
   website: https://rsample.tidymodels.org
 ---
+
+rsample is a foundational R package within the tidymodels ecosystem that provides efficient tools for creating and analyzing resampled datasets. Whether you're estimating sampling distributions to understand statistical properties or evaluating model performance with holdout sets, rsample offers a comprehensive suite of resampling methods including bootstrap, cross-validation, Monte Carlo splits, and more. The package focuses on delivering the essential building blocks for resampling workflows, integrating seamlessly with other tidymodels packages for end-to-end machine learning pipelines.
+
+What makes rsample particularly valuable for data scientists working with large datasets is its remarkable memory efficiency. Rather than creating full copies of your data for each resample, rsample uses intelligent indexing to reference the original dataset. This approach means that creating 50 bootstrap samples increases memory usage by only 2-3 times instead of 50 times, making extensive resampling workflows practical even with substantial datasets. Combined with its consistent, tidy interface and modular design, rsample enables you to conduct rigorous model evaluation and statistical analysis without worrying about computational overhead or memory constraints.

@@ -36,3 +36,7 @@ external:
   title: py-shinyswatch
   website: https://posit-dev.github.io/py-shinyswatch/
 ---
+
+py-shinyswatch brings professionally designed Bootstrap 5 themes from Bootswatch to Python Shiny applications, making it effortless to create visually polished data apps without extensive CSS customization. With 25 pre-built themes ranging from sleek and minimal to bold and playful, data scientists and developers can quickly elevate their Shiny applications from functional prototypes to production-ready interfaces with just a single line of code.
+
+The package goes beyond simple styling by offering an interactive theme picker that lets end users customize the appearance dynamically, and a color palette system that extends consistent theming to plots and custom visualizations. Whether you're building dashboards for stakeholders, interactive reports for clients, or data exploration tools for your team, py-shinyswatch eliminates the design friction and lets you focus on the data story you want to tell.

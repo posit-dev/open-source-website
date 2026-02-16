@@ -188,3 +188,7 @@ external:
   title: testthat
   website: https://testthat.r-lib.org
 ---
+
+testthat is R's premier unit testing framework, designed to make testing an enjoyable and integral part of your development workflow. With its intuitive expectation syntax and comprehensive testing capabilities, testthat helps you confidently verify that your functions behave correctly, handle edge cases gracefully, and produce appropriate errors and warnings. Used by thousands of CRAN packages, testthat has become the de facto standard for testing R code.
+
+The package excels at making testing both powerful and accessible. Its clear, readable syntax lets you express what you expect your code to do in plain terms, while visual feedback with color-coded output shows you at a glance which tests pass, fail, or encounter errors. Whether you're running quick interactive tests during development, building a comprehensive test suite for a package, or integrating tests into automated workflows with R CMD check, testthat provides the tools and flexibility to ensure your R code is robust and reliable.

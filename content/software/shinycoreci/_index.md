@@ -42,3 +42,7 @@ external:
   title: shinycoreci
   website: https://rstudio.github.io/shinycoreci/
 ---
+
+shinycoreci is a comprehensive testing infrastructure package that ensures the stability and reliability of the Shiny ecosystem. Built by the core Shiny development team, it maintains an extensive suite of automated tests that continuously validate Shiny applications across multiple platforms including Ubuntu, macOS, and Windows. The package automatically tests the bleeding edge versions of 30+ critical Shiny-related packages such as bslib, htmltools, and shinytest2, catching integration issues and breaking changes before they reach production environments.
+
+What sets shinycoreci apart is its ability to orchestrate tests across diverse deployment scenarios, from local RStudio IDE sessions to production environments like shinyapps.io and Posit Connect. By providing standardized testing frameworks and automated snapshot management, shinycoreci streamlines the development and contribution process for anyone working with Shiny. The public test results dashboard offers complete transparency into package health, helping both maintainers and contributors make informed decisions about ecosystem compatibility and stability.

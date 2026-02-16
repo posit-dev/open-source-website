@@ -44,3 +44,7 @@ external:
   title: ai-blog
   website: https://blogs.rstudio.com/ai/
 ---
+
+The ai-blog repository powers the Posit AI Blog, a community-driven publication built with Distill for R Markdown that brings together insights, tutorials, and practical examples for using artificial intelligence technologies with R. Originally launched as the TensorFlow for R Blog, it has evolved into a comprehensive resource covering deep learning frameworks like TensorFlow, Keras, and torch, as well as distributed computing and MLOps tools such as sparklyr and mlflow. The repository contains the source code for hundreds of blog posts authored by both Posit team members and external contributors from the broader data science community.
+
+What makes this project particularly valuable is its emphasis on community contributions and accessible technical writing. Each blog post is an R Markdown document stored in the repository, demonstrating reproducible workflows and best practices for integrating AI capabilities into R-based data science pipelines. The blog welcomes submissions from practitioners who want to share their experiences with machine learning in R, creating a rich knowledge base that ranges from introductory tutorials to advanced techniques in natural language processing, computer vision, time series forecasting, and probabilistic modeling.

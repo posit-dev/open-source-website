@@ -66,3 +66,7 @@ external:
   title: shinyapps-package-dependencies
   website: https://www.shinyapps.io/
 ---
+
+Many R packages require external software libraries and system-level dependencies to function properly. When deploying Shiny applications to shinyapps.io, these dependencies need to be installed on the hosting environment, which can create deployment friction and mysterious failures. The shinyapps-package-dependencies project solves this problem by automatically installing the necessary system dependencies for R packages deployed to the platform.
+
+This community-driven collection of bash scripts ensures that data scientists and developers can deploy their applications with confidence, knowing that the underlying system requirements will be handled transparently. By maintaining a comprehensive repository of dependency installation scripts, the project enables broader package compatibility on shinyapps.io and eliminates the need for manual dependency configuration. Developers can also contribute support for new packages or request additions through GitHub issues, making the system continuously adaptable to the evolving R ecosystem.

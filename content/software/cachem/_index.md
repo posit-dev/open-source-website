@@ -39,3 +39,7 @@ external:
   title: cachem
   website: https://cachem.r-lib.org
 ---
+
+Cachem provides intelligent key-value storage for R with built-in resource management that prevents unbounded memory growth. Unlike standard caching approaches, cachem automatically handles cache eviction through configurable memory limits, age constraints, and flexible policies like least-recently-used (LRU) or first-in-first-out (FIFO). Whether you're optimizing data processing pipelines or building responsive applications, cachem eliminates manual cache management while ensuring predictable resource usage.
+
+The package offers both memory-based and disk-based caching options, each optimized for different use cases. Memory caches provide lightning-fast access and can even store non-serializable R objects, while disk caches enable persistent storage for larger datasets. Cachem's unique sentinel value system for missing keys streamlines error handling, and its support for layered, multi-level cache hierarchies lets you combine the speed of memory with the capacity of disk storage for sophisticated caching strategies.

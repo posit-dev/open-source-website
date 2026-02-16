@@ -113,3 +113,7 @@ external:
   title: tibble
   website: https://tibble.tidyverse.org/
 ---
+
+Tibbles are a modern reimagining of R's data frames, designed to make data manipulation more reliable and user-friendly. While maintaining compatibility with the broader R ecosystem, tibbles take a stricter approach that prevents common pitfalls: they never silently change variable names or types, don't perform partial matching on column names, and only recycle vectors of length 1. This deliberate pickiness helps you catch errors early and write cleaner, more maintainable code.
+
+The enhanced printing methods make working with large datasets a pleasure, displaying column types upfront and intelligently truncating output for readability. Tibbles also provide first-class support for list columns, making it natural to work with complex, nested data structures. By making implicit assumptions explicit and refusing to guess what you meant, tibbles reduce debugging time and help data scientists and developers build more robust data pipelines.

@@ -44,3 +44,7 @@ external:
   title: bonsai
   website: https://bonsai.tidymodels.org
 ---
+
+bonsai extends the parsnip package by providing additional engines for tree-based models within the tidymodels ecosystem. It brings powerful machine learning algorithms like LightGBM, CatBoost, and conditional inference trees into tidymodels' unified modeling interface, allowing you to leverage cutting-edge tree-based methods using the familiar parsnip syntax. Whether you're building boosted trees for high-performance predictions, decision trees for interpretable models, or random forests for robust ensemble learning, bonsai makes these algorithms accessible through consistent, tidy R code.
+
+What makes bonsai particularly valuable for data scientists is its integration of diverse tree-based engines into a single framework, eliminating the need to learn different syntaxes for each algorithm. The package supports both regression and classification tasks across all its engines, including specialized options like AORSF for oblique random survival forests and partykit for conditional inference procedures. By standardizing access to these powerful tools within the tidymodels workflow, bonsai enables you to experiment with different tree-based approaches while maintaining clean, reproducible code that fits seamlessly into your existing modeling pipelines.

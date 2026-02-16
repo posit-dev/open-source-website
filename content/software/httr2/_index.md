@@ -104,3 +104,7 @@ external:
   title: httr2
   website: https://httr2.r-lib.org
 ---
+
+httr2 is a modern HTTP client for R that makes working with web APIs elegant and reliable. Whether you're retrieving data from REST APIs, building integrations with web services, or automating HTTP workflows, httr2 provides a clean, chainable interface that lets you compose requests step-by-step and handle responses with confidence. Built as a reimagining of its predecessor httr, it brings contemporary design patterns to R's HTTP toolkit while maintaining the stability of proven libraries like curl and openssl.
+
+The package excels at making API interactions robust and developer-friendly. It includes automatic retry logic for handling transient failures and rate limiting, built-in response caching for improved performance, and comprehensive OAuth support for modern authentication flows. Security features like credential management and secret obfuscation help you write code that's safe to share publicly. With explicit request objects and powerful helper functions for extracting response data—whether JSON, HTML, headers, or status codes—httr2 gives data scientists and developers the tools they need to work seamlessly with any HTTP-based service.

@@ -26,3 +26,7 @@ external:
   title: pkgapi
   website: ''
 ---
+
+pkgapi is a specialized R package that creates comprehensive maps of function calls within your R packages, revealing how functions interact with each other and with imported dependencies. It automatically analyzes your package code to generate a complete call graph, showing which functions call which other functions, and tracking usage of external packages throughout your codebase. This visibility is invaluable when you need to understand package architecture, optimize dependencies, or refactor code with confidence.
+
+For R package developers and maintainers, pkgapi addresses a critical need: understanding the internal structure and dependency relationships of your code. Whether you're working on a legacy codebase, preparing for a major refactor, or simply documenting how your package functions interconnect, pkgapi provides clear insights into call chains and dependency patterns. By automatically mapping these relationships, it helps you make informed decisions about code organization, identify potential optimization opportunities, and maintain a cleaner, more maintainable package structure.

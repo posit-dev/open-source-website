@@ -33,3 +33,7 @@ external:
   title: webfakes
   website: https://webfakes.r-lib.org
 ---
+
+webfakes is a lightweight R package that lets you create fake web servers for testing HTTP clients and API interactions. Built on the embedded civetweb server, it provides a complete web application framework that runs directly in your R process, eliminating issues with local firewalls and external dependencies. You can define custom HTTP handlers in R, use flexible path matching with parameters and regular expressions, and leverage built-in middleware for parsing JSON, multipart, and URL-encoded request bodies.
+
+Whether you're testing an HTTP client package or need to simulate specific API behavior, webfakes makes it easy to spin up realistic web services for your test suites. The package includes a ready-to-use httpbin-style app for common testing scenarios, supports concurrent requests through its multi-threaded server, and even allows you to simulate low bandwidth conditions. Since web apps are just R objects, you can save them to disk, copy them between processes, extend them with new routes and middleware, and interact with them from your browser or command line for easy debugging.

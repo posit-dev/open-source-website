@@ -22,3 +22,7 @@ external:
   title: Intro
   website: ''
 ---
+
+Introduction to Data Science with R provides comprehensive course materials from a professional video course developed in partnership between RStudio and O'Reilly Media. This structured educational resource guides learners through the fundamentals of data science using R, covering essential concepts in data analysis, manipulation, and visualization. Whether you're transitioning into data science or expanding your analytical toolkit, these materials offer a systematic approach to mastering R's powerful ecosystem for data-driven work.
+
+The course materials include hands-on exercises, code examples, and practical demonstrations that help data scientists and developers build confidence working with real-world datasets. By focusing on R's core capabilities for statistical computing and graphics, learners gain the skills needed to explore data, generate insights, and communicate findings effectively—making this an ideal starting point for anyone looking to leverage R for data science projects.

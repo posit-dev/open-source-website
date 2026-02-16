@@ -36,3 +36,7 @@ external:
   title: prettyunits
   website: http://r-lib.github.io/prettyunits/
 ---
+
+Transform raw numbers into human-readable formats with prettyunits, an R package designed to make your data more accessible and understandable. Whether you're working with file sizes, time intervals, large quantities, or statistical values, prettyunits automatically converts them into intuitive representations that resonate with human perception. Convert 1,337,000 bytes into "1.34 MB", display elapsed time as "2d 5h 15m", or format large datasets with metric prefixes like "1.34 M"—all with simple, consistent function calls.
+
+The package excels at making data science workflows more user-friendly by bridging the gap between machine precision and human comprehension. Beyond basic formatting, prettyunits offers vague time expressions like "moments ago" or "3 days ago" for relative timestamps, handles p-values with appropriate scientific notation, and even identifies color names from hex codes. These capabilities make it invaluable for creating reports, dashboards, and interactive applications where clarity and readability matter. With seamless integration into tidyverse workflows, prettyunits lets you format entire columns of data efficiently, ensuring your outputs are as polished as your analysis.

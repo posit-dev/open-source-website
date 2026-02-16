@@ -43,3 +43,7 @@ external:
   title: progress
   website: http://r-lib.github.io/progress/
 ---
+
+progress is an elegant R package that brings visual feedback to your terminal through customizable ASCII progress bars. When running long computations, processing large datasets, or downloading files, progress transforms the waiting experience by displaying real-time updates on completion status, elapsed time, estimated time to completion, and processing rates. This immediate visual feedback helps you track the advancement of your work and make informed decisions about whether to wait or optimize your code.
+
+What makes progress particularly valuable is its flexibility and ease of integration into existing workflows. Whether you're working with simple loops, functional programming patterns using purrr, or batch operations with plyr, progress adapts to your coding style. The package offers extensive customization through tokens that display percentages, download speeds, tick counts, and custom information, while its R6 class design makes it straightforward to implement. For data scientists and developers running iterative analyses or ETL pipelines, progress provides the transparency needed to monitor operations without interrupting your flow or requiring complex setup.

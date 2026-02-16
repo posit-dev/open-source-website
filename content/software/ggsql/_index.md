@@ -36,3 +36,7 @@ external:
   title: ggsql
   website: http://ggsql.org/
 ---
+
+ggsql is an experimental SQL extension that brings declarative data visualization directly into your SQL queries using the Grammar of Graphics framework. By extending SQL syntax with visualization commands, ggsql lets you write integrated queries that combine data retrieval and visual specifications in one composable expression. The system splits queries at the VISUALISE boundary, routing SQL operations to pluggable data readers like DuckDB or PostgreSQL, while rendering visualizations through multiple output formats including Vega-Lite and ggplot2.
+
+The project provides a complete development ecosystem including a CLI tool, REST API server, Jupyter kernel with inline rendering, VS Code extension with syntax highlighting, and Python bindings. Whether you're exploring data in Jupyter notebooks, generating server-side visualizations via APIs, or creating charts programmatically, ggsql offers a unified syntax with core grammar components like DRAW for geometric layers, SCALE for data transformations, FACET for small multiples, and flexible coordinate systems and theming options.

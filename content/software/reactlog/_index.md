@@ -32,3 +32,7 @@ external:
   title: reactlog
   website: http://rstudio.github.io/reactlog
 ---
+
+Reactlog is a powerful debugging tool that provides visual insight into Shiny's reactive system. When building Shiny applications, the reactive graph can quickly become complex and opaque, making it difficult to understand why certain elements update or diagnose performance issues. Reactlog transforms this black box into an interactive dependency graph, allowing developers to see exactly how reactive elements interact, which components are invalidating, and where bottlenecks occur.
+
+The package offers sophisticated visualization features including historical replay to navigate through reactive interactions, family tree highlighting to trace related components, and filtering capabilities for focused analysis. With a simple function call to enable logging and keyboard shortcuts to access the visualizer during app execution, reactlog makes it substantially easier to identify unused reactive elements, unexpected dependencies, and performance issues in your Shiny applications.

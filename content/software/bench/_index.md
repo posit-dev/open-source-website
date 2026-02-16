@@ -52,3 +52,7 @@ external:
   title: bench
   website: http://bench.r-lib.org/
 ---
+
+bench is a powerful benchmarking package for R that provides high-precision timing of code execution while tracking memory allocations and garbage collections. It helps data scientists and developers accurately measure and compare the performance of different approaches to solving the same problem, ensuring that optimizations actually improve performance rather than simply changing implementation details. The package uses the highest precision timing APIs available on each operating system and verifies that different expressions produce equivalent results, preventing common benchmarking mistakes.
+
+Key features include adaptive stopping that runs expressions for a consistent amount of time rather than a fixed number of iterations, automatic filtering of iterations affected by garbage collection to isolate true performance characteristics, and human-readable output with custom formatting for times and memory usage. The package also provides bench::press() for easily benchmarking across grids of parameters, full integration with ggplot2 for visualization with custom scales and geoms, and system_time() as a more precise alternative to base R's system.time(). Together, these capabilities make bench an essential tool for performance optimization and comparing alternative implementations in R.

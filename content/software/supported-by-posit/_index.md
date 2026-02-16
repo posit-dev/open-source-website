@@ -31,6 +31,6 @@ external:
   website: https://posit-dev.github.io/supported-by-posit/
 ---
 
-Supported By Posit is a web component that package maintainers can add to their project websites to indicate Posit's support. The badge appears as a clickable element in the top navigation bar or mobile menu, linking to Posit's website.
+Supported By Posit is a lightweight web component that makes it easy for package maintainers to showcase Posit's support on their project websites. The badge appears as a prominent, clickable element in the top navigation bar (or hamburger menu on mobile), linking directly to Posit's website. This simple visual indicator helps users understand which projects receive official backing from Posit, building trust and recognition across the data science ecosystem.
 
-The badge is easy to integrate by adding a single JavaScript file to Quarto and pkgdown websites. It supports customizable colors for light and dark modes, responsive behavior, and flexible positioning options to ensure it fits seamlessly into any site design.
+The component is designed for effortless integration with Quarto and pkgdown websites—just add a single JavaScript file to your site configuration. It includes thoughtful customization options like color schemes for both light and dark modes, responsive breakpoints, and flexible positioning controls, ensuring the badge looks native to your site's design. Already adopted by popular R packages like dplyr, ggplot2, Shiny, and many others across the tidyverse, it provides a consistent way to communicate Posit's involvement with open-source projects.
