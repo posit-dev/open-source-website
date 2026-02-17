@@ -14,10 +14,10 @@ website: https://pagedown.rbind.io
 external:
   description: Paginate the HTML Output of R Markdown with CSS for Print
   first_commit: '2018-09-27T13:58:17+00:00'
-  forks: 122
+  forks: 121
   languages:
   - R
-  last_updated: '2026-02-13T14:17:03.672668+00:00'
+  last_updated: '2026-02-17T11:21:13.506551+00:00'
   latest_release: '2025-08-20T20:24:24+00:00'
   license: NOASSERTION
   people:
@@ -25,7 +25,7 @@ external:
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: rstudio/pagedown
-  stars: 915
+  stars: 916
   title: pagedown
   website: https://pagedown.rbind.io
 ---

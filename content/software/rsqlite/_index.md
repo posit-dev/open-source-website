@@ -15,10 +15,10 @@ website: https://rsqlite.r-dbi.org
 external:
   description: R interface for SQLite
   first_commit: '2013-05-26T19:47:56+00:00'
-  forks: 79
+  forks: 80
   languages:
   - R
-  last_updated: '2026-02-13T14:17:21.885767+00:00'
+  last_updated: '2026-02-17T11:37:30.378411+00:00'
   latest_release: '2026-02-05T19:29:00+00:00'
   license: LGPL-2.1
   people:

@@ -24,7 +24,7 @@ external:
   forks: 215
   languages:
   - R
-  last_updated: '2026-02-13T14:17:08.403635+00:00'
+  last_updated: '2026-02-17T11:27:25.658166+00:00'
   latest_release: '2026-02-03T09:21:47+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/lubridate
-  stars: 783
+  stars: 785
   title: lubridate
   website: https://lubridate.tidyverse.org
 ---

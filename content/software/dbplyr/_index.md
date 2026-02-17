@@ -11,8 +11,8 @@ people:
 - Edgar Ruiz
 - Simon Couch
 - Christophe Dervieux
-- Mine Çetinkaya-Rundel
 - Davis Vaughan
+- Mine Çetinkaya-Rundel
 - Carson Sievert
 - Joe Cheng
 - Jeroen Janssens
@@ -26,7 +26,7 @@ external:
   forks: 187
   languages:
   - R
-  last_updated: '2026-02-13T14:17:08.783667+00:00'
+  last_updated: '2026-02-17T11:28:35.315217+00:00'
   latest_release: '2025-09-09T16:38:02+00:00'
   license: NOASSERTION
   people:
@@ -35,8 +35,8 @@ external:
   - Edgar Ruiz
   - Simon Couch
   - Christophe Dervieux
-  - Mine Çetinkaya-Rundel
   - Davis Vaughan
+  - Mine Çetinkaya-Rundel
   - Carson Sievert
   - Joe Cheng
   - Jeroen Janssens

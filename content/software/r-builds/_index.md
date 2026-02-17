@@ -14,7 +14,7 @@ external:
   forks: 19
   languages:
   - Shell
-  last_updated: '2026-02-13T14:17:04.084021+00:00'
+  last_updated: '2026-02-17T11:22:08.458697+00:00'
   license: GPL-3.0
   people:
   - Gábor Csárdi

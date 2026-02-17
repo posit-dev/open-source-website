@@ -25,7 +25,7 @@ external:
   forks: 28
   languages:
   - Rust
-  last_updated: '2026-02-13T14:16:46.242035+00:00'
+  last_updated: '2026-02-17T11:12:49.859327+00:00'
   latest_release: '2026-01-21T14:19:23+00:00'
   license: MIT
   people:

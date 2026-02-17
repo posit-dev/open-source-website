@@ -14,12 +14,12 @@ external:
   forks: 4
   languages:
   - R
-  last_updated: '2026-02-13T14:16:47.114215+00:00'
+  last_updated: '2026-02-17T11:14:31.094913+00:00'
   license: MIT
   people:
   - Garrick Aden-Buie
   repo: posit-dev/skills
-  stars: 101
+  stars: 108
   title: skills
   website: ''
 ---

@@ -15,13 +15,13 @@ external:
   forks: 46
   languages:
   - R
-  last_updated: '2026-02-13T14:17:19.071028+00:00'
+  last_updated: '2026-02-17T11:33:23.184931+00:00'
   latest_release: '2025-09-14T18:48:48+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan
   repo: r-lib/here
-  stars: 431
+  stars: 430
   title: here
   website: https://here.r-lib.org/
 ---

@@ -14,7 +14,7 @@ external:
   forks: 71
   languages:
   - R
-  last_updated: '2026-02-13T14:17:19.337564+00:00'
+  last_updated: '2026-02-17T11:34:02.997752+00:00'
   latest_release: '2024-04-07T17:55:30+00:00'
   license: NOASSERTION
   readme_image: man/figures/logo.png

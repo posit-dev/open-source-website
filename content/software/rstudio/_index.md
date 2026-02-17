@@ -19,7 +19,7 @@ external:
   forks: 1156
   languages:
   - Java
-  last_updated: '2026-02-13T14:17:00.951514+00:00'
+  last_updated: '2026-02-17T11:15:25.875813+00:00'
   license: NOASSERTION
   people:
   - JJ Allaire
@@ -29,7 +29,7 @@ external:
   - Jeroen Ooms
   - Gábor Csárdi
   repo: rstudio/rstudio
-  stars: 4947
+  stars: 4946
   title: rstudio
   website: https://posit.co/products/open-source/rstudio/
 ---

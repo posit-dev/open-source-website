@@ -11,8 +11,11 @@ people:
 - Jules Walzer-Goldfeld
 - Isabel Zimmerman
 - Carlos Scheidegger
-title: great-tables
+title: Great Tables
 website: https://posit-dev.github.io/great-tables/
+
+override:
+  title: Great Tables
 
 external:
   description: Make awesome display tables using Python
@@ -20,7 +23,7 @@ external:
   forks: 118
   languages:
   - Python
-  last_updated: '2026-02-13T14:16:45.469674+00:00'
+  last_updated: '2026-02-17T11:11:10.669826+00:00'
   latest_release: '2025-10-31T20:52:40+00:00'
   license: MIT
   people:
@@ -31,7 +34,7 @@ external:
   - Carlos Scheidegger
   readme_image: https://posit-dev.github.io/great-tables/assets/GT_logo.svg
   repo: posit-dev/great-tables
-  stars: 2595
+  stars: 2599
   title: great-tables
   website: https://posit-dev.github.io/great-tables/
 ---

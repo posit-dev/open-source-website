@@ -19,7 +19,7 @@ external:
   forks: 83
   languages:
   - R
-  last_updated: '2026-02-13T14:17:18.753538+00:00'
+  last_updated: '2026-02-17T11:32:41.205663+00:00'
   latest_release: '2025-03-13T19:24:32+00:00'
   license: NOASSERTION
   people:
@@ -29,7 +29,7 @@ external:
   - Jenny Bryan
   - Jeroen Janssens
   repo: r-lib/xml2
-  stars: 224
+  stars: 223
   title: xml2
   website: https://xml2.r-lib.org/
 ---

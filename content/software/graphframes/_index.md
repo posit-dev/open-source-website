@@ -13,7 +13,7 @@ external:
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-13T14:17:03.319636+00:00'
+  last_updated: '2026-02-17T11:20:27.300255+00:00'
   latest_release: '2018-10-30T18:58:30+00:00'
   license: Apache-2.0
   repo: rstudio/graphframes

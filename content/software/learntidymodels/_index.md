@@ -16,7 +16,7 @@ external:
   forks: 19
   languages:
   - R
-  last_updated: '2026-02-13T14:17:12.547799+00:00'
+  last_updated: '2026-02-17T11:30:35.904707+00:00'
   license: NOASSERTION
   people:
   - Julia Silge

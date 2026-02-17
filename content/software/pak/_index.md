@@ -22,7 +22,7 @@ external:
   forks: 77
   languages:
   - C
-  last_updated: '2026-02-13T14:17:19.602237+00:00'
+  last_updated: '2026-02-17T11:34:37.941295+00:00'
   latest_release: '2025-12-21T19:30:49+00:00'
   people:
   - Gábor Csárdi

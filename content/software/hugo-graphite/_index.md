@@ -13,7 +13,7 @@ external:
   forks: 11
   languages:
   - CSS
-  last_updated: '2026-02-13T14:17:03.973703+00:00'
+  last_updated: '2026-02-17T11:21:53.605352+00:00'
   latest_release: '2020-07-08T22:34:15+00:00'
   license: MIT
   repo: rstudio/hugo-graphite

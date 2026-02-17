@@ -24,7 +24,7 @@ external:
   forks: 64
   languages:
   - R
-  last_updated: '2026-02-13T14:17:08.750844+00:00'
+  last_updated: '2026-02-17T11:28:28.056400+00:00'
   latest_release: '2024-09-27T15:59:19+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/glue
-  stars: 742
+  stars: 743
   title: glue
   website: https://glue.tidyverse.org
 ---

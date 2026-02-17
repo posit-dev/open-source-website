@@ -22,10 +22,10 @@ website: https://rstudio.github.io/cheatsheets/
 external:
   description: Posit Cheat Sheets - Can also be found at https://posit.co/resources/cheatsheets/.
   first_commit: '2017-01-04T18:04:05+00:00'
-  forks: 1933
+  forks: 1932
   languages:
   - TeX
-  last_updated: '2026-02-13T14:17:02.592607+00:00'
+  last_updated: '2026-02-17T11:18:49.831549+00:00'
   license: CC-BY-4.0
   people:
   - Mine Çetinkaya-Rundel
@@ -41,7 +41,7 @@ external:
   - Max Kuhn
   readme_image: pngs/rstudio-ide.png
   repo: rstudio/cheatsheets
-  stars: 6303
+  stars: 6308
   title: cheatsheets
   website: https://rstudio.github.io/cheatsheets/
 ---

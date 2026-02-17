@@ -20,7 +20,7 @@ external:
   forks: 523
   languages:
   - TeX
-  last_updated: '2026-02-13T14:17:01.432688+00:00'
+  last_updated: '2026-02-17T11:16:27.853884+00:00'
   latest_release: '2024-04-07T12:17:21+00:00'
   people:
   - Christophe Dervieux

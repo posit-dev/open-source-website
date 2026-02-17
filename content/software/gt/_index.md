@@ -23,7 +23,7 @@ external:
   forks: 217
   languages:
   - R
-  last_updated: '2026-02-13T14:17:03.287973+00:00'
+  last_updated: '2026-02-17T11:20:22.492358+00:00'
   latest_release: '2026-01-22T14:22:09+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:
   - JJ Allaire
   readme_image: man/figures/logo.svg
   repo: rstudio/gt
-  stars: 2136
+  stars: 2138
   title: gt
   website: https://gt.rstudio.com
 ---

@@ -19,7 +19,7 @@ external:
   forks: 353
   languages:
   - R
-  last_updated: '2026-02-13T14:17:08.527584+00:00'
+  last_updated: '2026-02-17T11:27:52.108128+00:00'
   latest_release: '2025-08-29T12:57:27+00:00'
   license: NOASSERTION
   people:
@@ -29,7 +29,7 @@ external:
   - Charlotte Wickham
   readme_image: man/figures/logo.png
   repo: tidyverse/rvest
-  stars: 1515
+  stars: 1514
   title: rvest
   website: https://rvest.tidyverse.org
 ---

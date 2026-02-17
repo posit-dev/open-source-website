@@ -27,10 +27,10 @@ website: https://dplyr.tidyverse.org/
 external:
   description: 'dplyr: A grammar of data manipulation'
   first_commit: '2012-10-28T13:39:17+00:00'
-  forks: 2132
+  forks: 2131
   languages:
   - R
-  last_updated: '2026-02-13T14:17:08.444491+00:00'
+  last_updated: '2026-02-17T11:27:36.219369+00:00'
   latest_release: '2026-02-04T11:30:38+00:00'
   license: NOASSERTION
   people:
@@ -51,7 +51,7 @@ external:
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: tidyverse/dplyr
-  stars: 4997
+  stars: 4996
   title: dplyr
   website: https://dplyr.tidyverse.org/
 ---

@@ -23,7 +23,7 @@ external:
   forks: 24
   languages:
   - Rust
-  last_updated: '2026-02-13T14:16:45.599871+00:00'
+  last_updated: '2026-02-17T11:11:29.989986+00:00'
   latest_release: '2026-01-30T15:17:50+00:00'
   license: MIT
   people:
@@ -37,7 +37,7 @@ external:
   - Simon Couch
   readme_image: doc/logo.png
   repo: posit-dev/ark
-  stars: 285
+  stars: 286
   title: ark
   website: ''
 ---

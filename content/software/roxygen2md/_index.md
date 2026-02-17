@@ -13,7 +13,7 @@ external:
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-13T14:17:19.237672+00:00'
+  last_updated: '2026-02-17T11:33:50.562655+00:00'
   latest_release: '2024-02-18T17:50:05+00:00'
   repo: r-lib/roxygen2md
   stars: 68

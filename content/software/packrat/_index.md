@@ -19,7 +19,7 @@ external:
   forks: 89
   languages:
   - R
-  last_updated: '2026-02-13T14:17:01.306241+00:00'
+  last_updated: '2026-02-17T11:16:08.392084+00:00'
   latest_release: '2025-06-16T19:36:33+00:00'
   people:
   - Joe Cheng
@@ -28,7 +28,7 @@ external:
   - Christophe Dervieux
   - Hadley Wickham
   repo: rstudio/packrat
-  stars: 408
+  stars: 407
   title: packrat
   website: http://rstudio.github.io/packrat/
 ---

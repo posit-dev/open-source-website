@@ -16,10 +16,10 @@ website: https://posit-dev.github.io/querychat/
 external:
   description: Chat with your data in R and Python
   first_commit: '2025-03-13T05:44:18+00:00'
-  forks: 25
+  forks: 26
   languages:
   - Python
-  last_updated: '2026-02-13T14:16:46.451534+00:00'
+  last_updated: '2026-02-17T11:13:16.103822+00:00'
   latest_release: '2026-01-23T23:04:44+00:00'
   license: MIT
   people:
@@ -29,7 +29,7 @@ external:
   - Barret Schloerke
   readme_image: pkg-r/man/figures/logo.png
   repo: posit-dev/querychat
-  stars: 176
+  stars: 178
   title: querychat
   website: https://posit-dev.github.io/querychat/
 ---

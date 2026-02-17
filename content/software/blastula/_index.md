@@ -18,7 +18,7 @@ external:
   forks: 83
   languages:
   - R
-  last_updated: '2026-02-13T14:17:03.017293+00:00'
+  last_updated: '2026-02-17T11:19:47.076630+00:00'
   latest_release: '2025-04-03T12:52:40+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +27,7 @@ external:
   - Neal Richardson
   readme_image: man/figures/logo.svg
   repo: rstudio/blastula
-  stars: 565
+  stars: 567
   title: blastula
   website: https://pkgs.rstudio.com/blastula
 ---

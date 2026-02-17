@@ -21,7 +21,7 @@ external:
   forks: 21
   languages:
   - R
-  last_updated: '2026-02-13T14:17:05.215783+00:00'
+  last_updated: '2026-02-17T11:24:36.767846+00:00'
   latest_release: '2026-01-09T21:28:50+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:
   - Winston Chang
   readme_image: man/figures/logo.svg
   repo: rstudio/shinytest2
-  stars: 120
+  stars: 121
   title: shinytest2
   website: https://rstudio.github.io/shinytest2/
 ---

@@ -23,10 +23,10 @@ website: https://rmarkdown.rstudio.com
 external:
   description: Dynamic Documents for R
   first_commit: '2014-01-22T17:25:19+00:00'
-  forks: 996
+  forks: 995
   languages:
   - R
-  last_updated: '2026-02-13T14:17:01.401390+00:00'
+  last_updated: '2026-02-17T11:16:22.152580+00:00'
   latest_release: '2025-09-29T14:17:29+00:00'
   license: GPL-3.0
   people:

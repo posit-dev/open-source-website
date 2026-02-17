@@ -24,7 +24,7 @@ external:
   forks: 291
   languages:
   - R
-  last_updated: '2026-02-13T14:17:08.462085+00:00'
+  last_updated: '2026-02-17T11:27:40.084911+00:00'
   latest_release: '2025-11-14T17:31:10+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:
   - Emil Hvitfeldt
   readme_image: man/figures/logo.png
   repo: tidyverse/readr
-  stars: 1024
+  stars: 1026
   title: readr
   website: https://readr.tidyverse.org
 ---

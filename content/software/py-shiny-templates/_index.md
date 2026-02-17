@@ -18,7 +18,7 @@ external:
   forks: 30
   languages:
   - Python
-  last_updated: '2026-02-13T14:16:45.714091+00:00'
+  last_updated: '2026-02-17T11:11:42.723361+00:00'
   license: MIT
   people:
   - Carson Sievert

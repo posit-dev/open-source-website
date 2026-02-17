@@ -3,7 +3,7 @@ description: R Interface to Keras
 github: rstudio/keras3
 languages:
 - R
-latest_release: '2025-12-21T21:00:40+00:00'
+latest_release: '2026-02-13T02:51:33+00:00'
 people:
 - Tomasz Kalinowski
 - JJ Allaire
@@ -18,8 +18,8 @@ external:
   forks: 284
   languages:
   - R
-  last_updated: '2026-02-13T14:17:02.639517+00:00'
-  latest_release: '2025-12-21T21:00:40+00:00'
+  last_updated: '2026-02-17T11:18:59.144027+00:00'
+  latest_release: '2026-02-13T02:51:33+00:00'
   license: NOASSERTION
   people:
   - Tomasz Kalinowski
@@ -27,7 +27,7 @@ external:
   - Daniel Falbel
   - Max Kuhn
   repo: rstudio/keras3
-  stars: 856
+  stars: 855
   title: keras3
   website: https://keras3.posit.co/
 ---

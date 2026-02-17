@@ -23,7 +23,7 @@ external:
   forks: 196
   languages:
   - R
-  last_updated: '2026-02-13T14:17:08.425547+00:00'
+  last_updated: '2026-02-17T11:27:28.734986+00:00'
   latest_release: '2025-11-03T22:09:36+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: tidyverse/stringr
-  stars: 656
+  stars: 655
   title: stringr
   website: https://stringr.tidyverse.org
 ---

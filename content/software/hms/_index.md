@@ -18,7 +18,7 @@ external:
   forks: 29
   languages:
   - R
-  last_updated: '2026-02-13T14:17:08.654655+00:00'
+  last_updated: '2026-02-17T11:28:14.051473+00:00'
   latest_release: '2025-10-16T19:10:13+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +27,7 @@ external:
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/hms
-  stars: 143
+  stars: 142
   title: hms
   website: https://hms.tidyverse.org/
 ---

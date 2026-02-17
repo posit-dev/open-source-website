@@ -16,14 +16,14 @@ external:
   forks: 2
   languages:
   - C++
-  last_updated: '2026-02-13T14:17:20.786362+00:00'
+  last_updated: '2026-02-17T11:37:11.533112+00:00'
   latest_release: '2025-12-02T00:01:06+00:00'
   license: NOASSERTION
   people:
   - Charlie Gao
   - Jeroen Janssens
   repo: r-lib/watcher
-  stars: 33
+  stars: 34
   title: watcher
   website: https://watcher.r-lib.org/
 ---

@@ -21,10 +21,10 @@ website: https://rstudio.github.io/httpuv/
 external:
   description: HTTP and WebSocket server package for R
   first_commit: '2013-02-01T16:17:25+00:00'
-  forks: 87
+  forks: 88
   languages:
   - C
-  last_updated: '2026-02-13T14:17:01.209807+00:00'
+  last_updated: '2026-02-17T11:15:56.745656+00:00'
   latest_release: '2025-04-16T08:39:59+00:00'
   license: NOASSERTION
   people:

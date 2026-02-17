@@ -3,7 +3,7 @@ description: 'httr: a friendly http package for R'
 github: r-lib/httr
 languages:
 - R
-latest_release: '2023-08-15T01:20:13+00:00'
+latest_release: '2026-02-13T13:25:34+00:00'
 people:
 - Hadley Wickham
 - Jenny Bryan
@@ -17,11 +17,11 @@ website: https://httr.r-lib.org
 external:
   description: 'httr: a friendly http package for R'
   first_commit: '2011-11-11T15:05:00+00:00'
-  forks: 1968
+  forks: 1967
   languages:
   - R
-  last_updated: '2026-02-13T14:17:18.506871+00:00'
-  latest_release: '2023-08-15T01:20:13+00:00'
+  last_updated: '2026-02-17T11:32:02.655473+00:00'
+  latest_release: '2026-02-13T13:25:34+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

@@ -1,5 +1,5 @@
 ---
-description: Shiny for Python
+description: Easy interactive web applications with Python
 github: posit-dev/py-shiny
 image: shiny-python.svg
 languages:
@@ -17,16 +17,20 @@ people:
 - Nick Strayer
 - Michael Chow
 - Hassan Kibirige
-title: py-shiny
+title: Shiny for Python
 website: https://shiny.posit.co/py/
+
+override:
+  description: Easy interactive web applications with Python
+  title: Shiny for Python
 
 external:
   description: Shiny for Python
   first_commit: '2021-07-27T20:19:49+00:00'
-  forks: 119
+  forks: 121
   languages:
   - Python
-  last_updated: '2026-02-13T14:16:45.344438+00:00'
+  last_updated: '2026-02-17T11:10:54.797639+00:00'
   latest_release: '2025-12-08T17:48:13+00:00'
   license: MIT
   people:
@@ -42,7 +46,7 @@ external:
   - Michael Chow
   - Hassan Kibirige
   repo: posit-dev/py-shiny
-  stars: 1684
+  stars: 1686
   title: py-shiny
   website: https://shiny.posit.co/py/
 ---

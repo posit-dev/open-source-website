@@ -4,7 +4,7 @@ description: Schedule an R function or formula to run after a specified period o
 github: r-lib/later
 languages:
 - C++
-latest_release: '2026-01-08T08:06:53+00:00'
+latest_release: '2026-02-13T20:15:06+00:00'
 people:
 - Winston Chang
 - Joe Cheng
@@ -23,8 +23,8 @@ external:
   forks: 31
   languages:
   - C++
-  last_updated: '2026-02-13T14:17:19.370547+00:00'
-  latest_release: '2026-01-08T08:06:53+00:00'
+  last_updated: '2026-02-17T11:34:07.433296+00:00'
+  latest_release: '2026-02-13T20:15:06+00:00'
   license: NOASSERTION
   people:
   - Winston Chang

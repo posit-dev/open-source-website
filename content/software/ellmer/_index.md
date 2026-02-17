@@ -24,10 +24,10 @@ website: https://ellmer.tidyverse.org/
 external:
   description: Call LLM APIs from R
   first_commit: '2024-08-27T21:55:59+00:00'
-  forks: 119
+  forks: 120
   languages:
   - R
-  last_updated: '2026-02-13T14:17:09.022980+00:00'
+  last_updated: '2026-02-17T11:29:04.405145+00:00'
   latest_release: '2025-11-14T20:30:45+00:00'
   license: NOASSERTION
   people:

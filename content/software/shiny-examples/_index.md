@@ -20,10 +20,10 @@ website: ''
 external:
   description: ''
   first_commit: '2013-10-20T17:05:23+00:00'
-  forks: 3727
+  forks: 3726
   languages:
   - JavaScript
-  last_updated: '2026-02-13T14:17:01.322324+00:00'
+  last_updated: '2026-02-17T11:16:10.626201+00:00'
   latest_release: '2014-07-23T18:26:26+00:00'
   license: NOASSERTION
   people:

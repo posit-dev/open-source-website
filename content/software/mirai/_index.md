@@ -18,7 +18,7 @@ external:
   forks: 17
   languages:
   - R
-  last_updated: '2026-02-13T14:17:20.620449+00:00'
+  last_updated: '2026-02-17T11:36:51.527345+00:00'
   latest_release: '2026-02-13T11:36:25+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +27,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/mirai
-  stars: 298
+  stars: 299
   title: mirai
   website: https://mirai.r-lib.org/
 ---

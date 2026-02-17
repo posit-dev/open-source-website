@@ -20,7 +20,7 @@ external:
   forks: 35
   languages:
   - CSS
-  last_updated: '2026-02-13T14:17:03.766938+00:00'
+  last_updated: '2026-02-17T11:21:27.500170+00:00'
   license: CC-BY-SA-4.0
   people:
   - Mine Çetinkaya-Rundel

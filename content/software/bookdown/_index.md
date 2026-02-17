@@ -19,7 +19,7 @@ external:
   forks: 1276
   languages:
   - JavaScript
-  last_updated: '2026-02-13T14:17:01.994795+00:00'
+  last_updated: '2026-02-17T11:17:37.857286+00:00'
   latest_release: '2025-12-05T17:16:47+00:00'
   license: GPL-3.0
   people:

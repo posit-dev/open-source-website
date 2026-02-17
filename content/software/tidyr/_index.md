@@ -25,7 +25,7 @@ external:
   forks: 420
   languages:
   - R
-  last_updated: '2026-02-13T14:17:08.496009+00:00'
+  last_updated: '2026-02-17T11:27:47.301936+00:00'
   latest_release: '2026-01-09T14:13:04+00:00'
   license: NOASSERTION
   people:
@@ -41,7 +41,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/tidyr
-  stars: 1427
+  stars: 1428
   title: tidyr
   website: https://tidyr.tidyverse.org/
 ---

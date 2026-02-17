@@ -14,7 +14,7 @@ external:
   forks: 58
   languages:
   - Shell
-  last_updated: '2026-02-13T14:17:04.195954+00:00'
+  last_updated: '2026-02-17T11:22:23.731964+00:00'
   license: MIT
   people:
   - Neal Richardson

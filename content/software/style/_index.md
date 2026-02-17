@@ -19,7 +19,7 @@ external:
   forks: 118
   languages:
   - SCSS
-  last_updated: '2026-02-13T14:17:08.766378+00:00'
+  last_updated: '2026-02-17T11:28:30.073430+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

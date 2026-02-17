@@ -25,7 +25,7 @@ external:
   forks: 238
   languages:
   - R
-  last_updated: '2026-02-13T14:17:18.489638+00:00'
+  last_updated: '2026-02-17T11:31:59.285144+00:00'
   latest_release: '2025-09-03T20:12:14+00:00'
   license: NOASSERTION
   people:
@@ -41,7 +41,7 @@ external:
   - Simon Couch
   readme_image: man/figures/logo.png
   repo: r-lib/roxygen2
-  stars: 626
+  stars: 627
   title: roxygen2
   website: https://roxygen2.r-lib.org
 ---

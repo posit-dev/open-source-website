@@ -19,7 +19,7 @@ external:
   forks: 18
   languages:
   - Python
-  last_updated: '2026-02-13T14:17:05.357961+00:00'
+  last_updated: '2026-02-17T11:24:57.075133+00:00'
   latest_release: '2024-12-17T02:43:43+00:00'
   license: MIT
   people:

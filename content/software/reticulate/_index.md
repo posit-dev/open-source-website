@@ -4,7 +4,7 @@ github: rstudio/reticulate
 image: reticulated_python.png
 languages:
 - R
-latest_release: '2025-11-14T18:54:01+00:00'
+latest_release: '2026-02-13T12:55:36+00:00'
 people:
 - Tomasz Kalinowski
 - JJ Allaire
@@ -21,11 +21,11 @@ website: https://rstudio.github.io/reticulate
 external:
   description: R Interface to Python
   first_commit: '2017-02-06T18:59:46+00:00'
-  forks: 347
+  forks: 346
   languages:
   - R
-  last_updated: '2026-02-13T14:17:02.655138+00:00'
-  latest_release: '2025-11-14T18:54:01+00:00'
+  last_updated: '2026-02-17T11:19:02.584298+00:00'
+  latest_release: '2026-02-13T12:55:36+00:00'
   license: Apache-2.0
   people:
   - Tomasz Kalinowski

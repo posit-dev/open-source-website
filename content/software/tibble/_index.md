@@ -23,7 +23,7 @@ external:
   forks: 135
   languages:
   - R
-  last_updated: '2026-02-13T14:17:08.607674+00:00'
+  last_updated: '2026-02-17T11:28:07.069480+00:00'
   latest_release: '2026-01-10T18:28:34+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:
   - Christophe Dervieux
   readme_image: man/figures/logo.png
   repo: tidyverse/tibble
-  stars: 737
+  stars: 738
   title: tibble
   website: https://tibble.tidyverse.org/
 ---

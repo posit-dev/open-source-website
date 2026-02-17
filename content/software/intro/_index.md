@@ -14,9 +14,9 @@ external:
   forks: 315
   languages:
   - R
-  last_updated: '2026-02-13T14:17:01.681522+00:00'
+  last_updated: '2026-02-17T11:16:58.874972+00:00'
   repo: rstudio/Intro
-  stars: 237
+  stars: 236
   title: Intro
   website: ''
 ---
