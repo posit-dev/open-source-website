@@ -20,8 +20,11 @@ people:
 - Edgar Ruiz
 - Carson Sievert
 - Emil Hvitfeldt
-title: quarto-cli
+title: Quarto
 website: https://quarto.org
+
+override:
+  title: Quarto
 
 external:
   description: Open-source scientific and technical publishing system built on Pandoc.
