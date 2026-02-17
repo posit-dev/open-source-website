@@ -8,7 +8,7 @@ This website is a data-driven catalog that brings together software, people, and
 
 The site uses a modern static site generation stack combining Hugo for fast site building with Quarto for scientific computing content, supporting multiple content formats including standard Markdown, Quarto documents, and executable Jupyter notebooks.
 
-**Live Site**: https://positopensource.netlify.app
+**Live Site**: https://posit-open-source.netlify.app
 
 ## Tech Stack
 
