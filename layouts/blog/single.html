@@ -1,5 +1,5 @@
 {{ define "head" }}
-  {{ partial "jsonld.html" . }}
+{{ partial "jsonld.html" . }}
 {{ end }}
 
 {{ define "main" }}
@@ -8,17 +8,17 @@
   {{ $heroImg := partial "blog/thumbnail.html" . }}
   {{ $imgType := printf "%T" $heroImg }}
   {{ if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") }}
-    {{ if ne $heroImg.MediaType.SubType "svg" }}
-      {{ $pagefindImg := $heroImg.Fit "128x128" }}
-      <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
-    {{ else }}
-      <img src="{{ $heroImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
-    {{ end }}
+  {{ if ne $heroImg.MediaType.SubType "svg" }}
+  {{ $pagefindImg := $heroImg.Fit "128x128" }}
+  <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+  {{ else }}
+  <img src="{{ $heroImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+  {{ end }}
   {{ end }}
 
   {{- /* Hero image (unless nohero is true) */ -}}
   {{- if not .Params.nohero -}}
-    {{ partial "blog/hero.html" . }}
+  {{ partial "blog/hero.html" . }}
   {{- end -}}
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -43,7 +43,7 @@
         </div>
 
         {{- /* Article content */ -}}
-        <div class="mt-8 w-full prose dark:prose-invert prose-quoteless post-content">
+        <div data-pagefind-body class="mt-8 w-full prose dark:prose-invert prose-quoteless post-content">
           {{ .Content | safeHTML }}
         </div>
 
@@ -53,18 +53,18 @@
 
       {{- /* Table of contents sidebar */ -}}
       {{- if or .Params.Toc $.Site.Params.Toc -}}
-        {{- if ne .Params.Toc false -}}
-          <aside class="hidden lg:block w-64 shrink-0 mt-24">
-            <div class="sticky top-8">
-              <nav class="prose dark:prose-invert prose-sm">
-                <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">{{ T "table_of_contents" }}</h2>
-                <div class="text-sm">
-                  {{ .TableOfContents }}
-                </div>
-              </nav>
+      {{- if ne .Params.Toc false -}}
+      <aside class="hidden lg:block w-64 shrink-0 mt-24">
+        <div class="sticky top-8">
+          <nav class="prose dark:prose-invert prose-sm">
+            <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">{{ T "table_of_contents" }}</h2>
+            <div class="text-sm">
+              {{ .TableOfContents }}
             </div>
-          </aside>
-        {{- end -}}
+          </nav>
+        </div>
+      </aside>
+      {{- end -}}
       {{- end -}}
     </div>
   </div>
@@ -74,7 +74,7 @@
 
   {{- /* Subscription CTA */ -}}
   {{- if not .Params.hidesubscription -}}
-    {{ partial "blog/subscribe.html" . }}
+  {{ partial "blog/subscribe.html" . }}
   {{- end -}}
 </article>
 {{ end }}
