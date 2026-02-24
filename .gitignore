@@ -7,6 +7,9 @@ public/
 /resources/
 .hugo_build.lock
 
+# Generated CSS
+assets/css/index.css
+
 # OS files
 .DS_Store
 
