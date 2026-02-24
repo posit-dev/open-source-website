@@ -37,6 +37,11 @@
   async function initPagefind() {
     if (!pagefind) {
       pagefind = await import('/pagefind/pagefind.js');
+      pagefind.options({
+        ranking: {
+          termSaturation: 0.25
+        }
+      });
     }
     return pagefind;
   }
@@ -197,15 +202,25 @@
     const contentContainer = document.createElement('div');
     contentContainer.className = 'flex-1 min-w-0';
 
+    const titleRow = document.createElement('div');
+    titleRow.className = 'flex items-start justify-between gap-2';
+
     const title = document.createElement('div');
     title.className = 'text-sm font-medium text-gray-900 dark:text-gray-100';
     title.innerHTML = result.meta.title || 'Untitled';
+
+    const score = document.createElement('div');
+    score.className = 'text-xs text-gray-500 dark:text-gray-400 flex-shrink-0';
+    score.textContent = result._score ? result._score.toFixed(2) : '0.00';
+
+    titleRow.appendChild(title);
+    titleRow.appendChild(score);
 
     const excerpt = document.createElement('div');
     excerpt.className = 'mt-1 text-sm text-gray-600 dark:text-gray-400 line-clamp-2';
     excerpt.innerHTML = result.excerpt || '';
 
-    contentContainer.appendChild(title);
+    contentContainer.appendChild(titleRow);
     contentContainer.appendChild(excerpt);
     link.appendChild(contentContainer);
     li.appendChild(link);
@@ -225,11 +240,8 @@
     try {
       const pf = await initPagefind();
 
-      const search = await pf.search(query);
-
-      lastSearchResults = search;
-
-      updateFilterCounts(search.filters);
+      const unfilteredSearch = await pf.search(query);
+      updateFilterCounts(unfilteredSearch.filters);
 
       const selectedTypes = getSelectedFilters();
 
@@ -238,18 +250,29 @@
         return;
       }
 
-      const filteredResults = [];
+      const seenUrls = new Set();
+      const combinedResults = [];
 
-      for (const result of search.results) {
-        const data = await result.data();
-        const resultType = data.filters?.type;
+      for (const type of selectedTypes) {
+        const search = await pf.search(query, {
+          filters: { type: type }
+        });
 
-        if (resultType && selectedTypes.includes(resultType)) {
-          filteredResults.push(data);
+        for (const result of search.results) {
+          const data = await result.data();
+          if (!seenUrls.has(data.url)) {
+            seenUrls.add(data.url);
+            data._score = result.score;
+            combinedResults.push(data);
+          }
         }
       }
 
-      if (filteredResults.length === 0) {
+      combinedResults.sort((a, b) => (b._score || 0) - (a._score || 0));
+
+      lastSearchResults = { results: combinedResults };
+
+      if (combinedResults.length === 0) {
         showNoResults();
         return;
       }
@@ -259,14 +282,12 @@
       searchNoResults.classList.add('hidden');
       searchResultsList.innerHTML = '';
 
-      const resultsToShow = filteredResults.slice(0, 10);
-
-      for (const [index, data] of resultsToShow.entries()) {
+      for (const [index, data] of combinedResults.entries()) {
         const resultItem = createResultItem(data, index);
         searchResultsList.appendChild(resultItem);
       }
 
-      updateResultsHeader(resultsToShow.length);
+      updateResultsHeader(combinedResults.length);
 
       selectedIndex = -1;
     } catch (error) {
