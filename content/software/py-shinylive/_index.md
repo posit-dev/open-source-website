@@ -13,13 +13,13 @@ people:
 title: py-shinylive
 website: https://shiny.posit.co/py/get-started/shinylive.html
 
-external:
+external:  # updated automatically, do not edit
   description: Python package for deploying Shinylive applications
   first_commit: '2022-08-29T22:44:07+00:00'
   forks: 5
   languages:
   - Python
-  last_updated: '2026-02-17T11:11:18.853398+00:00'
+  last_updated: '2026-02-24T09:25:56.895423+00:00'
   latest_release: '2025-12-08T21:03:47+00:00'
   license: MIT
   people:

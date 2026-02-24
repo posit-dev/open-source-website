@@ -13,13 +13,13 @@ people:
 title: downlit
 website: https://downlit.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Syntax Highlighting and Automatic Linking
   first_commit: '2020-05-28T18:00:36+00:00'
   forks: 25
   languages:
   - R
-  last_updated: '2026-02-17T11:36:13.021752+00:00'
+  last_updated: '2026-02-24T09:26:36.293738+00:00'
   latest_release: '2025-11-13T22:37:02+00:00'
   license: NOASSERTION
   people:

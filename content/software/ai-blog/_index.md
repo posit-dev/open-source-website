@@ -11,13 +11,13 @@ people:
 title: ai-blog
 website: https://blogs.rstudio.com/ai/
 
-external:
+external:  # updated automatically, do not edit
   description: 'Repository for the RStudio AI Blog (formerly: TensorFlow for R Blog)'
   first_commit: '2018-07-11T16:03:48+00:00'
   forks: 33
   languages:
   - HTML
-  last_updated: '2026-02-17T11:20:52.258054+00:00'
+  last_updated: '2026-02-24T09:26:17.242852+00:00'
   people:
   - JJ Allaire
   - Daniel Falbel

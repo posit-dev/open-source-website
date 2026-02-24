@@ -19,13 +19,13 @@ include:
   languages:
   - R
 
-external:
+external:  # updated automatically, do not edit
   description: R formatter and language server
   first_commit: '2024-10-26T18:24:07+00:00'
   forks: 28
   languages:
   - Rust
-  last_updated: '2026-02-17T11:12:49.859327+00:00'
+  last_updated: '2026-02-24T09:25:57.782198+00:00'
   latest_release: '2026-01-21T14:19:23+00:00'
   license: MIT
   people:
@@ -36,7 +36,7 @@ external:
   - Barret Schloerke
   readme_image: docs/images/air.png
   repo: posit-dev/air
-  stars: 389
+  stars: 390
   title: air
   website: https://posit-dev.github.io/air/
 ---

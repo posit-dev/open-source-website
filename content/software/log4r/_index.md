@@ -10,14 +10,14 @@ people:
 title: log4r
 website: https://log4r.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: A fast & lightweight approach to logging in R based on the widely-emulated
     Apache Log4j project.
   first_commit: '2010-08-25T01:56:42+00:00'
   forks: 24
   languages:
   - R
-  last_updated: '2026-02-17T11:31:50.356638+00:00'
+  last_updated: '2026-02-24T09:26:33.976203+00:00'
   latest_release: '2024-10-12T00:20:05+00:00'
   people:
   - Hadley Wickham

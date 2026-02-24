@@ -18,13 +18,13 @@ people:
 title: probably
 website: https://probably.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Tools for post-processing class probability estimates
   first_commit: '2018-09-11T19:02:58+00:00'
   forks: 17
   languages:
   - R
-  last_updated: '2026-02-17T11:29:55.710829+00:00'
+  last_updated: '2026-02-24T09:26:27.197066+00:00'
   latest_release: '2025-10-16T12:05:16+00:00'
   license: NOASSERTION
   people:

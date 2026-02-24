@@ -21,13 +21,13 @@ people:
 title: positron
 website: https://positron.posit.co
 
-external:
+external:  # updated automatically, do not edit
   description: Positron, a next-generation data science IDE
   first_commit: '2022-05-24T20:22:25+00:00'
   forks: 138
   languages:
   - TypeScript
-  last_updated: '2026-02-17T11:11:13.785745+00:00'
+  last_updated: '2026-02-24T09:25:56.854515+00:00'
   latest_release: '2026-01-28T21:46:35+00:00'
   license: NOASSERTION
   people:
@@ -45,7 +45,7 @@ external:
   - Joe Cheng
   readme_image: positron-product-icons/positron.png
   repo: posit-dev/positron
-  stars: 3963
+  stars: 3971
   title: positron
   website: https://positron.posit.co
 ---

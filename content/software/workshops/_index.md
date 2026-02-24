@@ -15,13 +15,13 @@ people:
 title: workshops
 website: https://workshops.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Website and materials for tidymodels workshops
   first_commit: '2022-04-10T14:43:31+00:00'
   forks: 59
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:31:04.762078+00:00'
+  last_updated: '2026-02-24T09:26:27.845123+00:00'
   latest_release: '2025-10-07T00:40:39+00:00'
   license: CC-BY-SA-4.0
   people:

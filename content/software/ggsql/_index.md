@@ -12,14 +12,14 @@ people:
 title: ggsql
 website: http://ggsql.org/
 
-external:
+external:  # updated automatically, do not edit
   description: A experimental SQL extension for declarative data visualisation based
     on the Grammar of Graphics.
   first_commit: '2025-12-04T13:26:11+00:00'
   forks: 4
   languages:
   - Rust
-  last_updated: '2026-02-17T11:14:36.804399+00:00'
+  last_updated: '2026-02-24T09:25:58.911126+00:00'
   license: MIT
   people:
   - George Stagg
@@ -27,7 +27,7 @@ external:
   - Teun Van den Brand
   - Carson Sievert
   repo: posit-dev/ggsql
-  stars: 34
+  stars: 35
   title: ggsql
   website: http://ggsql.org/
 ---

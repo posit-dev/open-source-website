@@ -14,13 +14,13 @@ people:
 title: DT
 website: https://rstudio.github.io/DT/
 
-external:
+external:  # updated automatically, do not edit
   description: R Interface to the jQuery Plug-in DataTables
   first_commit: '2014-11-11T21:28:04+00:00'
   forks: 179
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:17:04.832825+00:00'
+  last_updated: '2026-02-24T09:26:15.031367+00:00'
   latest_release: '2025-09-03T13:49:20+00:00'
   license: NOASSERTION
   people:

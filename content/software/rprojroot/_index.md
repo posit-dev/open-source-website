@@ -10,13 +10,13 @@ people:
 title: rprojroot
 website: https://rprojroot.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Finding files in project subdirectories
   first_commit: '2015-05-19T02:10:40+00:00'
   forks: 23
   languages:
   - R
-  last_updated: '2026-02-17T11:32:49.815706+00:00'
+  last_updated: '2026-02-24T09:26:34.441821+00:00'
   latest_release: '2025-08-26T15:22:36+00:00'
   license: NOASSERTION
   people:

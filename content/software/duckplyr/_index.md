@@ -13,13 +13,13 @@ people:
 title: duckplyr
 website: https://duckplyr.tidyverse.org/
 
-external:
+external:  # updated automatically, do not edit
   description: A drop-in replacement for dplyr, powered by DuckDB for speed.
   first_commit: '2022-11-29T08:20:48+00:00'
-  forks: 25
+  forks: 26
   languages:
   - R
-  last_updated: '2026-02-17T11:28:59.522587+00:00'
+  last_updated: '2026-02-24T09:26:23.878525+00:00'
   latest_release: '2025-11-03T23:28:28+00:00'
   license: NOASSERTION
   people:

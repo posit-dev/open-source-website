@@ -11,13 +11,13 @@ people:
 title: zip
 website: https://r-lib.github.io/zip/
 
-external:
+external:  # updated automatically, do not edit
   description: Platform independent zip compression via miniz
   first_commit: '2017-04-09T01:06:13+00:00'
   forks: 23
   languages:
   - C
-  last_updated: '2026-02-17T11:34:11.157116+00:00'
+  last_updated: '2026-02-24T09:26:35.154801+00:00'
   latest_release: '2025-05-13T13:31:24+00:00'
   license: NOASSERTION
   people:

@@ -13,13 +13,13 @@ people:
 title: gert
 website: https://docs.ropensci.org/gert/
 
-external:
+external:  # updated automatically, do not edit
   description: Simple git client for R
   first_commit: '2018-10-19T09:11:55+00:00'
   forks: 36
   languages:
   - C
-  last_updated: '2026-02-17T11:35:18.844810+00:00'
+  last_updated: '2026-02-24T09:26:35.781420+00:00'
   latest_release: '2024-07-18T11:32:08+00:00'
   license: NOASSERTION
   people:

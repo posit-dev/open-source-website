@@ -10,19 +10,19 @@ people:
 title: tufte
 website: https://rstudio.github.io/tufte/
 
-external:
+external:  # updated automatically, do not edit
   description: Tufte Styles for R Markdown Documents
   first_commit: '2016-01-06T06:17:45+00:00'
   forks: 112
   languages:
   - R
-  last_updated: '2026-02-17T11:17:49.746896+00:00'
+  last_updated: '2026-02-24T09:26:15.503206+00:00'
   latest_release: '2025-07-29T20:01:50+00:00'
   people:
   - Christophe Dervieux
   readme_image: https://bookdown.org/yihui/rmarkdown/images/cover.png
   repo: rstudio/tufte
-  stars: 424
+  stars: 425
   title: tufte
   website: https://rstudio.github.io/tufte/
 ---

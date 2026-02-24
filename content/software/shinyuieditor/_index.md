@@ -10,20 +10,20 @@ people:
 title: shinyuieditor
 website: https://rstudio.github.io/shinyuieditor/
 
-external:
+external:  # updated automatically, do not edit
   description: A GUI for laying out a Shiny application that generates clean and human-readable
     UI code
   first_commit: '2021-10-14T15:07:03+00:00'
   forks: 32
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:24:51.221316+00:00'
+  last_updated: '2026-02-24T09:26:19.605456+00:00'
   latest_release: '2024-06-27T16:34:57+00:00'
   license: MIT
   people:
   - Nick Strayer
   repo: rstudio/shinyuieditor
-  stars: 225
+  stars: 226
   title: shinyuieditor
   website: https://rstudio.github.io/shinyuieditor/
 ---

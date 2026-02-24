@@ -11,13 +11,13 @@ people:
 title: tfdatasets
 website: https://tensorflow.rstudio.com/tools/tfdatasets/
 
-external:
+external:  # updated automatically, do not edit
   description: R interface to TensorFlow Datasets API
   first_commit: '2017-10-04T13:39:34+00:00'
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-17T11:19:56.798172+00:00'
+  last_updated: '2026-02-24T09:26:16.729137+00:00'
   latest_release: '2025-08-20T14:50:10+00:00'
   people:
   - JJ Allaire

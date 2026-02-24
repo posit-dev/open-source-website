@@ -13,14 +13,14 @@ people:
 title: lime
 website: https://lime.data-imaginist.com/
 
-external:
+external:  # updated automatically, do not edit
   description: Local Interpretable Model-Agnostic Explanations (R port of original
     Python package)
   first_commit: '2017-03-17T10:40:29+00:00'
   forks: 109
   languages:
   - R
-  last_updated: '2026-02-17T11:29:25.943240+00:00'
+  last_updated: '2026-02-24T09:26:26.937801+00:00'
   latest_release: '2025-12-10T00:23:55+00:00'
   license: NOASSERTION
   people:

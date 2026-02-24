@@ -10,13 +10,13 @@ people:
 title: supported-by-posit
 website: https://posit-dev.github.io/supported-by-posit/
 
-external:
+external:  # updated automatically, do not edit
   description: Add a "Supported by Posit" badge to a package website
   first_commit: '2025-05-28T10:44:51+00:00'
   forks: 0
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:13:27.899553+00:00'
+  last_updated: '2026-02-24T09:25:58.157875+00:00'
   license: NOASSERTION
   people:
   - Jeroen Janssens

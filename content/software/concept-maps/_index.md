@@ -10,13 +10,13 @@ people:
 title: concept-maps
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Concept maps for all things data science
   first_commit: '2020-08-21T00:11:16+00:00'
   forks: 42
   languages:
   - HTML
-  last_updated: '2026-02-17T11:23:50.261028+00:00'
+  last_updated: '2026-02-24T09:26:19.024159+00:00'
   license: NOASSERTION
   people:
   - Jeroen Janssens

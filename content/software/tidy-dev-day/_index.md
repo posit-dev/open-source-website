@@ -15,13 +15,13 @@ people:
 title: tidy-dev-day
 website: https://rstd.io/tidy-dev-day
 
-external:
+external:  # updated automatically, do not edit
   description: Tidyverse developer day
   first_commit: '2018-10-24T17:33:49+00:00'
   forks: 37
   languages:
   - R
-  last_updated: '2026-02-17T11:28:50.522783+00:00'
+  last_updated: '2026-02-24T09:26:23.779553+00:00'
   people:
   - Mine Çetinkaya-Rundel
   - Hadley Wickham

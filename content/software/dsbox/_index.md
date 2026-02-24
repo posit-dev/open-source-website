@@ -9,13 +9,13 @@ people:
 title: dsbox
 website: https://tidyverse.github.io/dsbox/
 
-external:
+external:  # updated automatically, do not edit
   description: Companion R package to Data Science Course in a Box
   first_commit: '2018-05-14T14:07:26+00:00'
   forks: 26
   languages:
   - R
-  last_updated: '2026-02-17T11:28:47.387216+00:00'
+  last_updated: '2026-02-24T09:26:23.740885+00:00'
   license: NOASSERTION
   people:
   - Mine Çetinkaya-Rundel

@@ -12,13 +12,13 @@ people:
 title: connectapi
 website: https://posit-dev.github.io/connectapi/
 
-external:
+external:  # updated automatically, do not edit
   description: An R package for interacting with the Posit Connect server API
   first_commit: '2019-01-23T20:32:57+00:00'
   forks: 25
   languages:
   - R
-  last_updated: '2026-02-17T11:10:46.295622+00:00'
+  last_updated: '2026-02-24T09:25:56.624859+00:00'
   latest_release: '2026-01-14T19:19:58+00:00'
   license: NOASSERTION
   people:

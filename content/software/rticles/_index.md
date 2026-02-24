@@ -14,13 +14,13 @@ people:
 title: rticles
 website: https://pkgs.rstudio.com/rticles/
 
-external:
+external:  # updated automatically, do not edit
   description: LaTeX Journal Article Templates for R Markdown
   first_commit: '2014-03-14T18:52:20+00:00'
-  forks: 523
+  forks: 522
   languages:
   - TeX
-  last_updated: '2026-02-17T11:16:27.853884+00:00'
+  last_updated: '2026-02-24T09:26:14.675754+00:00'
   latest_release: '2024-04-07T12:17:21+00:00'
   people:
   - Christophe Dervieux

@@ -12,13 +12,13 @@ people:
 title: generics
 website: https://generics.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Common generic methods
   first_commit: '2018-06-12T15:55:26+00:00'
   forks: 13
   languages:
   - R
-  last_updated: '2026-02-17T11:35:00.806207+00:00'
+  last_updated: '2026-02-24T09:26:35.591763+00:00'
   latest_release: '2025-05-09T18:17:34+00:00'
   license: NOASSERTION
   people:

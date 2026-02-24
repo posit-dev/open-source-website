@@ -9,14 +9,14 @@ people:
 title: gridlayout
 website: https://rstudio.github.io/gridlayout
 
-external:
+external:  # updated automatically, do not edit
   description: Package for setting up CSS grid layouts in Shiny apps or RMarkdown
     documents
   first_commit: '2021-02-17T21:57:27+00:00'
   forks: 4
   languages:
   - HTML
-  last_updated: '2026-02-17T11:24:20.331923+00:00'
+  last_updated: '2026-02-24T09:26:19.339869+00:00'
   license: NOASSERTION
   people:
   - Nick Strayer

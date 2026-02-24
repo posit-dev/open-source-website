@@ -15,13 +15,13 @@ people:
 title: vctrs
 website: https://vctrs.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Generic programming with typed R vectors
   first_commit: '2016-09-06T21:32:53+00:00'
   forks: 73
   languages:
   - C
-  last_updated: '2026-02-17T11:33:29.732388+00:00'
+  last_updated: '2026-02-24T09:26:34.807181+00:00'
   latest_release: '2026-01-27T14:09:03+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/vctrs
-  stars: 300
+  stars: 301
   title: vctrs
   website: https://vctrs.r-lib.org
 ---

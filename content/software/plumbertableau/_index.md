@@ -11,14 +11,14 @@ people:
 title: plumbertableau
 website: https://rstudio.github.io/plumbertableau/
 
-external:
+external:  # updated automatically, do not edit
   description: R package for creating Plumber APIs that function as Tableau Analytics
     Extensions
   first_commit: '2021-01-22T23:54:49+00:00'
   forks: 0
   languages:
   - R
-  last_updated: '2026-02-17T11:24:14.462765+00:00'
+  last_updated: '2026-02-24T09:26:19.277157+00:00'
   latest_release: '2021-08-05T14:49:01+00:00'
   license: NOASSERTION
   people:

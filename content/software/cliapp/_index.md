@@ -9,13 +9,13 @@ people:
 title: cliapp
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Rich Command Line Applications
   first_commit: '2018-09-12T11:56:25+00:00'
   forks: 2
   languages:
   - R
-  last_updated: '2026-02-17T11:35:13.111948+00:00'
+  last_updated: '2026-02-24T09:26:35.719959+00:00'
   latest_release: '2024-04-24T20:40:10+00:00'
   license: NOASSERTION
   people:

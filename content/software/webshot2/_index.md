@@ -14,13 +14,13 @@ people:
 title: webshot2
 website: https://rstudio.github.io/webshot2/
 
-external:
+external:  # updated automatically, do not edit
   description: Take screenshots of web pages from R
   first_commit: '2019-03-08T16:57:59+00:00'
   forks: 17
   languages:
   - R
-  last_updated: '2026-02-17T11:22:01.955682+00:00'
+  last_updated: '2026-02-24T09:26:17.920809+00:00'
   latest_release: '2025-04-24T02:10:54+00:00'
   license: NOASSERTION
   people:

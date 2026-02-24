@@ -10,14 +10,14 @@ people:
 title: shiny-incubator
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Examples and ideas that don't belong in the core Shiny package and
     aren't officially supported.
   first_commit: '2012-08-31T17:44:33+00:00'
   forks: 32
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:15:46.285815+00:00'
+  last_updated: '2026-02-24T09:26:14.300711+00:00'
   people:
   - Joe Cheng
   - Winston Chang

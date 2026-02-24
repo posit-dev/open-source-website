@@ -13,13 +13,13 @@ people:
 title: bundle
 website: https://rstudio.github.io/bundle/
 
-external:
+external:  # updated automatically, do not edit
   description: Prepare objects for serialization with a consistent interface
   first_commit: '2022-06-23T19:15:20+00:00'
   forks: 6
   languages:
   - R
-  last_updated: '2026-02-17T11:25:34.233714+00:00'
+  last_updated: '2026-02-24T09:26:20.065909+00:00'
   latest_release: '2025-12-10T20:15:43+00:00'
   license: NOASSERTION
   people:

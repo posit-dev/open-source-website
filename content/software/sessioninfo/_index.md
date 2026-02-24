@@ -15,13 +15,13 @@ people:
 title: sessioninfo
 website: https://sessioninfo.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Print Session Information
   first_commit: '2017-04-21T10:27:47+00:00'
   forks: 31
   languages:
   - R
-  last_updated: '2026-02-17T11:34:13.483558+00:00'
+  last_updated: '2026-02-24T09:26:35.174684+00:00'
   latest_release: '2025-02-05T12:57:20+00:00'
   license: GPL-2.0
   people:
@@ -33,7 +33,7 @@ external:
   - Hadley Wickham
   readme_image: https://raw.githubusercontent.com/r-lib/sessioninfo/main/man/figures/session-info2.svg
   repo: r-lib/sessioninfo
-  stars: 79
+  stars: 80
   title: sessioninfo
   website: https://sessioninfo.r-lib.org
 ---

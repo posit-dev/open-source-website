@@ -10,13 +10,13 @@ people:
 title: keras-customer-churn
 website: https://jjallaire.shinyapps.io/keras-customer-churn/
 
-external:
+external:  # updated automatically, do not edit
   description: Customer Churn Shiny Application
   first_commit: '2017-12-05T17:59:47+00:00'
   forks: 58
   languages:
   - R
-  last_updated: '2026-02-17T11:20:06.369013+00:00'
+  last_updated: '2026-02-24T09:26:16.827538+00:00'
   people:
   - JJ Allaire
   - Daniel Falbel

@@ -10,13 +10,13 @@ people:
 title: conflicted
 website: https://conflicted.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: An alternative conflict resolution strategy for R
   first_commit: '2018-05-20T23:37:42+00:00'
   forks: 14
   languages:
   - R
-  last_updated: '2026-02-17T11:34:58.670957+00:00'
+  last_updated: '2026-02-24T09:26:35.571545+00:00'
   latest_release: '2023-01-31T19:50:16+00:00'
   license: NOASSERTION
   people:

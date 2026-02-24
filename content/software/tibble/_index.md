@@ -17,13 +17,13 @@ people:
 title: tibble
 website: https://tibble.tidyverse.org/
 
-external:
+external:  # updated automatically, do not edit
   description: A modern re-imagining of the data frame
   first_commit: '2015-10-28T23:57:00+00:00'
   forks: 135
   languages:
   - R
-  last_updated: '2026-02-17T11:28:07.069480+00:00'
+  last_updated: '2026-02-24T09:26:23.399649+00:00'
   latest_release: '2026-01-10T18:28:34+00:00'
   license: NOASSERTION
   people:

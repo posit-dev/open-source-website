@@ -18,13 +18,13 @@ people:
 title: embed
 website: https://embed.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Extra recipes for predictor embeddings
   first_commit: '2018-05-16T18:28:10+00:00'
   forks: 22
   languages:
   - R
-  last_updated: '2026-02-17T11:29:45.199987+00:00'
+  last_updated: '2026-02-24T09:26:27.096868+00:00'
   latest_release: '2026-01-29T21:24:25+00:00'
   license: NOASSERTION
   people:

@@ -11,13 +11,13 @@ people:
 title: shinytableau
 website: https://rstudio.github.io/shinytableau
 
-external:
+external:  # updated automatically, do not edit
   description: Extend Tableau dashboards using Shiny
   first_commit: '2020-07-03T20:45:09+00:00'
   forks: 5
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:23:35.989975+00:00'
+  last_updated: '2026-02-24T09:26:18.878433+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng

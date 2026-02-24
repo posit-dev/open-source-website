@@ -10,13 +10,13 @@ people:
 title: sortable
 website: https://rstudio.github.io/sortable/
 
-external:
+external:  # updated automatically, do not edit
   description: R htmlwidget for Sortable.js
   first_commit: '2015-03-03T19:57:30+00:00'
   forks: 33
   languages:
   - R
-  last_updated: '2026-02-17T11:17:16.712833+00:00'
+  last_updated: '2026-02-24T09:26:15.169075+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke

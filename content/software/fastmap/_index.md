@@ -11,13 +11,13 @@ people:
 title: fastmap
 website: https://r-lib.github.io/fastmap/
 
-external:
+external:  # updated automatically, do not edit
   description: Fast map implementation for R
   first_commit: '2019-04-18T18:07:06+00:00'
   forks: 8
   languages:
   - C++
-  last_updated: '2026-02-17T11:35:43.413161+00:00'
+  last_updated: '2026-02-24T09:26:36.006552+00:00'
   latest_release: '2024-05-14T17:53:33+00:00'
   license: NOASSERTION
   people:

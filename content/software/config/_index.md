@@ -9,13 +9,13 @@ people:
 title: config
 website: https://rstudio.github.io/config/
 
-external:
+external:  # updated automatically, do not edit
   description: config package for R
   first_commit: '2016-05-29T01:48:59+00:00'
   forks: 31
   languages:
   - R
-  last_updated: '2026-02-17T11:18:17.878154+00:00'
+  last_updated: '2026-02-24T09:26:15.819047+00:00'
   people:
   - JJ Allaire
   readme_image: man/figures/logo.svg

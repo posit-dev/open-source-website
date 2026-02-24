@@ -8,13 +8,13 @@ people:
 title: tidyversedashboard
 website: https://tidyverse.org/dashboard
 
-external:
+external:  # updated automatically, do not edit
   description: Tidyverse activity dashboard
   first_commit: '2018-04-27T17:24:10+00:00'
   forks: 24
   languages:
   - R
-  last_updated: '2026-02-17T11:28:45.887220+00:00'
+  last_updated: '2026-02-24T09:26:23.720262+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

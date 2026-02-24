@@ -10,13 +10,13 @@ people:
 title: carrier
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Create standalone functions for remote execution
   first_commit: '2018-08-22T16:01:23+00:00'
   forks: 3
   languages:
   - R
-  last_updated: '2026-02-17T11:35:08.920403+00:00'
+  last_updated: '2026-02-24T09:26:35.678459+00:00'
   latest_release: '2025-09-11T09:52:03+00:00'
   license: NOASSERTION
   people:

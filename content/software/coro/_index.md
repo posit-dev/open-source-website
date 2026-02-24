@@ -14,13 +14,13 @@ people:
 title: coro
 website: https://coro.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Coroutines for R
   first_commit: '2017-09-27T08:37:42+00:00'
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-17T11:34:35.335449+00:00'
+  last_updated: '2026-02-24T09:26:35.388306+00:00'
   latest_release: '2024-11-05T09:52:00+00:00'
   license: NOASSERTION
   people:

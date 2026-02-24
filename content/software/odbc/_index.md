@@ -15,13 +15,13 @@ people:
 title: odbc
 website: https://odbc.r-dbi.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Connect to ODBC databases (using the DBI interface)
   first_commit: '2016-07-13T19:32:07+00:00'
   forks: 116
   languages:
   - C++
-  last_updated: '2026-02-17T11:37:41.652659+00:00'
+  last_updated: '2026-02-24T09:26:38.334315+00:00'
   latest_release: '2025-12-08T14:40:41+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-dbi/odbc
-  stars: 407
+  stars: 408
   title: odbc
   website: https://odbc.r-dbi.org/
 ---

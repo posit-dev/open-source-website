@@ -9,13 +9,13 @@ people:
 title: rex
 website: https://rex.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Friendly regular expressions for R.
   first_commit: '2014-09-23T01:13:17+00:00'
   forks: 28
   languages:
   - R
-  last_updated: '2026-02-17T11:32:26.842643+00:00'
+  last_updated: '2026-02-24T09:26:34.259825+00:00'
   latest_release: '2021-11-24T20:50:29+00:00'
   license: NOASSERTION
   people:

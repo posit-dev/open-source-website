@@ -9,13 +9,13 @@ people:
 title: meltr
 website: https://r-lib.github.io/meltr/
 
-external:
+external:  # updated automatically, do not edit
   description: Read Non-Rectangular Text Data
   first_commit: '2021-07-07T21:18:25+00:00'
   forks: 2
   languages:
   - C++
-  last_updated: '2026-02-17T11:36:44.779827+00:00'
+  last_updated: '2026-02-24T09:26:36.599586+00:00'
   latest_release: '2022-09-10T19:37:00+00:00'
   license: NOASSERTION
   people:

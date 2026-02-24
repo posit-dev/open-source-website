@@ -17,14 +17,14 @@ people:
 title: remotes
 website: https://remotes.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Install R packages from GitHub, GitLab, Bitbucket, git, svn repositories,
     URLs
   first_commit: '2016-01-02T10:24:31+00:00'
-  forks: 155
+  forks: 156
   languages:
   - R
-  last_updated: '2026-02-17T11:33:07.956167+00:00'
+  last_updated: '2026-02-24T09:26:34.603265+00:00'
   latest_release: '2024-03-17T12:41:28+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:
   - Jeroen Janssens
   - Jeroen Ooms
   repo: r-lib/remotes
-  stars: 356
+  stars: 355
   title: remotes
   website: https://remotes.r-lib.org/
 ---

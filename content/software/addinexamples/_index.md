@@ -9,13 +9,13 @@ people:
 title: addinexamples
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: An R package showcasing how RStudio addins can be registered and used.
   first_commit: '2015-12-17T00:45:21+00:00'
   forks: 65
   languages:
   - R
-  last_updated: '2026-02-17T11:17:42.577938+00:00'
+  last_updated: '2026-02-24T09:26:15.424061+00:00'
   license: NOASSERTION
   people:
   - JJ Allaire

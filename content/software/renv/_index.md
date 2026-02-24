@@ -15,13 +15,13 @@ people:
 title: renv
 website: https://rstudio.github.io/renv/
 
-external:
+external:  # updated automatically, do not edit
   description: 'renv: Project environments for R.'
   first_commit: '2018-11-28T20:25:39+00:00'
   forks: 163
   languages:
   - R
-  last_updated: '2026-02-17T11:21:25.753881+00:00'
+  last_updated: '2026-02-24T09:26:17.552858+00:00'
   latest_release: '2025-07-24T22:49:27+00:00'
   license: MIT
   people:
@@ -33,7 +33,7 @@ external:
   - Neal Richardson
   readme_image: man/figures/logo.svg
   repo: rstudio/renv
-  stars: 1131
+  stars: 1134
   title: renv
   website: https://rstudio.github.io/renv/
 ---

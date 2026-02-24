@@ -14,13 +14,13 @@ people:
 title: usemodels
 website: https://usemodels.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Boilerplate Code for tidymodels
   first_commit: '2020-06-06T00:02:59+00:00'
   forks: 7
   languages:
   - R
-  last_updated: '2026-02-17T11:30:38.125276+00:00'
+  last_updated: '2026-02-24T09:26:27.585890+00:00'
   latest_release: '2022-02-18T22:08:12+00:00'
   license: NOASSERTION
   people:

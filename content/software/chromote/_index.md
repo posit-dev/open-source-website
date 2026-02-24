@@ -14,13 +14,13 @@ people:
 title: chromote
 website: https://rstudio.github.io/chromote/
 
-external:
+external:  # updated automatically, do not edit
   description: Chrome Remote Interface for R
   first_commit: '2019-02-02T04:37:53+00:00'
   forks: 22
   languages:
   - R
-  last_updated: '2026-02-17T11:21:46.372673+00:00'
+  last_updated: '2026-02-24T09:26:17.779501+00:00'
   latest_release: '2025-04-24T12:46:38+00:00'
   license: NOASSERTION
   people:

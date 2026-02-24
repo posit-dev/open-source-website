@@ -11,13 +11,13 @@ people:
 title: slider
 website: https://slider.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Sliding Window Functions
   first_commit: '2019-07-01T03:02:14+00:00'
   forks: 13
   languages:
   - R
-  last_updated: '2026-02-17T11:35:49.785693+00:00'
+  last_updated: '2026-02-24T09:26:36.068496+00:00'
   latest_release: '2025-11-14T20:31:30+00:00'
   license: NOASSERTION
   people:

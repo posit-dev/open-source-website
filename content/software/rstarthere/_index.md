@@ -6,16 +6,16 @@ languages:
 title: RStartHere
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: A guide to some of the most useful R Packages that we know about
   first_commit: '2016-04-25T20:27:24+00:00'
-  forks: 218
+  forks: 219
   languages:
   - R
-  last_updated: '2026-02-17T11:18:12.484212+00:00'
+  last_updated: '2026-02-24T09:26:15.759920+00:00'
   license: NOASSERTION
   repo: rstudio/RStartHere
-  stars: 662
+  stars: 663
   title: RStartHere
   website: ''
 ---

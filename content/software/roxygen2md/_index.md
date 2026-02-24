@@ -7,13 +7,13 @@ latest_release: '2024-02-18T17:50:05+00:00'
 title: roxygen2md
 website: https://roxygen2md.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Convert elements of roxygen documentation to markdown
   first_commit: '2016-11-24T14:25:44+00:00'
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-17T11:33:50.562655+00:00'
+  last_updated: '2026-02-24T09:26:34.949406+00:00'
   latest_release: '2024-02-18T17:50:05+00:00'
   repo: r-lib/roxygen2md
   stars: 68

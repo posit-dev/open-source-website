@@ -8,13 +8,13 @@ people:
 title: sparkDemos
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2016-08-06T18:35:08+00:00'
   forks: 37
   languages:
   - HTML
-  last_updated: '2026-02-17T11:18:24.577991+00:00'
+  last_updated: '2026-02-24T09:26:15.898463+00:00'
   people:
   - Edgar Ruiz
   repo: rstudio/sparkDemos

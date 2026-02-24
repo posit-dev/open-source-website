@@ -11,13 +11,13 @@ people:
 title: RMariaDB
 website: https://rmariadb.r-dbi.org
 
-external:
+external:  # updated automatically, do not edit
   description: An R interface to MariaDB
   first_commit: '2017-07-05T15:35:16+00:00'
   forks: 39
   languages:
   - R
-  last_updated: '2026-02-17T11:37:44.251636+00:00'
+  last_updated: '2026-02-24T09:26:38.355525+00:00'
   latest_release: '2025-02-24T18:19:14+00:00'
   license: NOASSERTION
   people:

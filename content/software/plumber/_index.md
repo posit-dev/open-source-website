@@ -15,13 +15,13 @@ people:
 title: plumber
 website: https://www.rplumber.io
 
-external:
+external:  # updated automatically, do not edit
   description: Turn your R code into a web API.
   first_commit: '2015-06-04T05:09:10+00:00'
   forks: 260
   languages:
   - R
-  last_updated: '2026-02-17T11:17:21.159215+00:00'
+  last_updated: '2026-02-24T09:26:15.208535+00:00'
   latest_release: '2026-02-09T15:06:24+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:
   - Carson Sievert
   readme_image: man/figures/logo.svg
   repo: rstudio/plumber
-  stars: 1433
+  stars: 1434
   title: plumber
   website: https://www.rplumber.io
 ---

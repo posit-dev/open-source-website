@@ -9,13 +9,13 @@ people:
 title: ggbot2
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2025-09-19T17:47:08+00:00'
   forks: 4
   languages:
   - R
-  last_updated: '2026-02-17T11:29:10.491973+00:00'
+  last_updated: '2026-02-24T09:26:23.981305+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng

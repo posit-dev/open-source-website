@@ -14,13 +14,13 @@ people:
 title: stacks
 website: https://stacks.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: An R package for tidy stacked ensemble modeling
   first_commit: '2020-06-12T20:51:21+00:00'
   forks: 29
   languages:
   - R
-  last_updated: '2026-02-17T11:30:40.204249+00:00'
+  last_updated: '2026-02-24T09:26:27.605246+00:00'
   latest_release: '2025-05-27T19:55:03+00:00'
   license: NOASSERTION
   people:

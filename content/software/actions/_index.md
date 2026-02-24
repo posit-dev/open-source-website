@@ -19,13 +19,13 @@ people:
 title: actions
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: GitHub Actions for the R community
   first_commit: '2019-10-10T15:13:37+00:00'
   forks: 228
   languages:
   - TypeScript
-  last_updated: '2026-02-17T11:35:55.152949+00:00'
+  last_updated: '2026-02-24T09:26:36.110555+00:00'
   latest_release: '2025-10-08T15:48:57+00:00'
   license: CC0-1.0
   people:

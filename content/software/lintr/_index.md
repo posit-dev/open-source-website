@@ -15,13 +15,13 @@ people:
 title: lintr
 website: https://lintr.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Static Code Analysis for R
   first_commit: '2014-09-28T02:48:15+00:00'
-  forks: 196
+  forks: 195
   languages:
   - R
-  last_updated: '2026-02-17T11:32:30.722686+00:00'
+  last_updated: '2026-02-24T09:26:34.280071+00:00'
   latest_release: '2025-11-27T15:14:26+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: r-lib/lintr
-  stars: 1270
+  stars: 1269
   title: lintr
   website: https://lintr.r-lib.org
 ---

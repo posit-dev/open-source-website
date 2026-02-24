@@ -12,13 +12,13 @@ people:
 title: multidplyr
 website: https://multidplyr.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: A dplyr backend that partitions a data frame over multiple processes
   first_commit: '2015-11-05T22:55:06+00:00'
   forks: 76
   languages:
   - R
-  last_updated: '2026-02-17T11:28:09.235030+00:00'
+  last_updated: '2026-02-24T09:26:23.420332+00:00'
   latest_release: '2025-11-13T13:40:03+00:00'
   license: NOASSERTION
   people:

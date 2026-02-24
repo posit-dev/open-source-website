@@ -14,13 +14,13 @@ people:
 title: bonsai
 website: https://bonsai.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: parsnip wrappers for tree-based models
   first_commit: '2022-04-29T13:33:22+00:00'
   forks: 8
   languages:
   - R
-  last_updated: '2026-02-17T11:31:06.910716+00:00'
+  last_updated: '2026-02-24T09:26:27.866313+00:00'
   latest_release: '2025-06-23T20:18:05+00:00'
   license: NOASSERTION
   people:

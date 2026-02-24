@@ -11,13 +11,13 @@ people:
 title: tree-sitter-r
 website: https://r-lib.github.io/tree-sitter-r/
 
-external:
+external:  # updated automatically, do not edit
   description: Tree-sitter grammar for R
   first_commit: '2020-10-29T20:06:05+00:00'
   forks: 37
   languages:
   - R
-  last_updated: '2026-02-17T11:36:34.239091+00:00'
+  last_updated: '2026-02-24T09:26:36.498119+00:00'
   latest_release: '2025-06-05T19:17:25+00:00'
   license: MIT
   people:
@@ -25,7 +25,7 @@ external:
   - Lionel Henry
   - Jenny Bryan
   repo: r-lib/tree-sitter-r
-  stars: 124
+  stars: 126
   title: tree-sitter-r
   website: https://r-lib.github.io/tree-sitter-r/
 ---

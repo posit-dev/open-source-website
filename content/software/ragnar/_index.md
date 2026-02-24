@@ -15,13 +15,13 @@ people:
 title: ragnar
 website: http://ragnar.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: RAG in R
   first_commit: '2025-01-20T19:30:06+00:00'
-  forks: 21
+  forks: 22
   languages:
   - R
-  last_updated: '2026-02-17T11:29:06.514047+00:00'
+  last_updated: '2026-02-24T09:26:23.939386+00:00'
   latest_release: '2026-01-23T17:26:32+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidyverse/ragnar
-  stars: 164
+  stars: 165
   title: ragnar
   website: http://ragnar.tidyverse.org
 ---

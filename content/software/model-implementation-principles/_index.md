@@ -10,13 +10,13 @@ people:
 title: model-implementation-principles
 website: https://tidymodels.github.io/model-implementation-principles/
 
-external:
+external:  # updated automatically, do not edit
   description: recommendations for creating R modeling packages
   first_commit: '2018-08-17T18:21:26+00:00'
   forks: 4
   languages:
   - HTML
-  last_updated: '2026-02-17T11:29:51.357098+00:00'
+  last_updated: '2026-02-24T09:26:27.157019+00:00'
   people:
   - Max Kuhn
   - Davis Vaughan

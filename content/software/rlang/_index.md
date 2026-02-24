@@ -23,13 +23,13 @@ people:
 title: rlang
 website: https://rlang.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Low-level API for programming with R
   first_commit: '2016-11-07T16:28:57+00:00'
-  forks: 151
+  forks: 152
   languages:
   - R
-  last_updated: '2026-02-17T11:33:40.688550+00:00'
+  last_updated: '2026-02-24T09:26:34.867680+00:00'
   latest_release: '2025-12-15T14:22:46+00:00'
   license: NOASSERTION
   people:
@@ -49,7 +49,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/rlang
-  stars: 555
+  stars: 557
   title: rlang
   website: https://rlang.r-lib.org
 ---

@@ -13,13 +13,13 @@ people:
 title: gtable
 website: https://gtable.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: The layout packages that powers ggplot2
   first_commit: '2011-12-30T16:08:43+00:00'
   forks: 18
   languages:
   - R
-  last_updated: '2026-02-17T11:32:04.859288+00:00'
+  last_updated: '2026-02-24T09:26:34.078946+00:00'
   latest_release: '2024-10-25T12:41:50+00:00'
   license: NOASSERTION
   people:

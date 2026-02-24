@@ -15,13 +15,13 @@ people:
 title: withr
 website: http://withr.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Methods For Temporarily Modifying Global State
   first_commit: '2015-04-21T19:18:28+00:00'
   forks: 44
   languages:
   - R
-  last_updated: '2026-02-17T11:32:47.572977+00:00'
+  last_updated: '2026-02-24T09:26:34.421695+00:00'
   latest_release: '2024-10-28T10:59:02+00:00'
   license: NOASSERTION
   people:

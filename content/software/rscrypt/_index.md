@@ -6,13 +6,13 @@ languages:
 title: rscrypt
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: scrypt cryptographic functions for R
   first_commit: '2013-12-20T16:13:16+00:00'
   forks: 11
   languages:
   - C
-  last_updated: '2026-02-17T11:16:15.614029+00:00'
+  last_updated: '2026-02-24T09:26:14.596295+00:00'
   license: BSD-2-Clause
   repo: rstudio/rscrypt
   stars: 33

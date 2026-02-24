@@ -15,13 +15,13 @@ people:
 title: tidytemplate
 website: https://tidytemplate.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: A pkgdown template for core tidyverse packages
   first_commit: '2016-10-24T19:17:37+00:00'
   forks: 26
   languages:
   - SCSS
-  last_updated: '2026-02-17T11:28:23.257361+00:00'
+  last_updated: '2026-02-24T09:26:23.541586+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

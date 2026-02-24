@@ -10,13 +10,13 @@ people:
 title: pingr
 website: http://r-lib.github.io/pingr/
 
-external:
+external:  # updated automatically, do not edit
   description: ICMP and TCP ping and related tools
   first_commit: '2014-09-21T14:36:10+00:00'
   forks: 9
   languages:
   - C
-  last_updated: '2026-02-17T11:32:22.658928+00:00'
+  last_updated: '2026-02-24T09:26:34.219885+00:00'
   latest_release: '2024-12-12T09:17:13+00:00'
   license: NOASSERTION
   people:

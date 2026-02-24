@@ -7,14 +7,14 @@ languages:
 title: Intro
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Course materials for "Introduction to Data Science with R", a video
     course by RStudio and O'Reilly Media
   first_commit: '2014-11-11T20:45:33+00:00'
   forks: 315
   languages:
   - R
-  last_updated: '2026-02-17T11:16:58.874972+00:00'
+  last_updated: '2026-02-24T09:26:14.991303+00:00'
   repo: rstudio/Intro
   stars: 236
   title: Intro

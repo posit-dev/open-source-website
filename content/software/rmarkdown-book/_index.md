@@ -9,14 +9,14 @@ people:
 title: rmarkdown-book
 website: https://yihui.org/rmarkdown/
 
-external:
+external:  # updated automatically, do not edit
   description: 'R Markdown: The Definitive Guide (published by Chapman & Hall/CRC
     in July 2018)'
   first_commit: '2018-02-10T06:26:39+00:00'
   forks: 533
   languages:
   - RMarkdown
-  last_updated: '2026-02-17T11:20:12.004782+00:00'
+  last_updated: '2026-02-24T09:26:16.886955+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux

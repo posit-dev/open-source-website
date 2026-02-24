@@ -14,13 +14,13 @@ people:
 title: R6
 website: https://R6.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Encapsulated object-oriented programming for R
   first_commit: '2014-05-07T04:33:54+00:00'
   forks: 59
   languages:
   - R
-  last_updated: '2026-02-17T11:32:16.044797+00:00'
+  last_updated: '2026-02-24T09:26:34.159810+00:00'
   latest_release: '2025-02-14T21:15:08+00:00'
   license: NOASSERTION
   people:

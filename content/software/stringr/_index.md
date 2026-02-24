@@ -17,13 +17,13 @@ people:
 title: stringr
 website: https://stringr.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: A fresh approach to string manipulation in R
   first_commit: '2009-11-08T22:20:08+00:00'
   forks: 196
   languages:
   - R
-  last_updated: '2026-02-17T11:27:28.734986+00:00'
+  last_updated: '2026-02-24T09:26:23.175158+00:00'
   latest_release: '2025-11-03T22:09:36+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: tidyverse/stringr
-  stars: 655
+  stars: 654
   title: stringr
   website: https://stringr.tidyverse.org
 ---

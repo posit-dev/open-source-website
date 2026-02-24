@@ -29,13 +29,13 @@ people:
 title: usethis
 website: https://usethis.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Set up commonly used 📦 components
   first_commit: '2016-11-07T14:33:45+00:00'
-  forks: 301
+  forks: 303
   languages:
   - R
-  last_updated: '2026-02-17T11:33:37.016386+00:00'
+  last_updated: '2026-02-24T09:26:34.847549+00:00'
   latest_release: '2025-09-05T20:26:57+00:00'
   license: NOASSERTION
   people:
@@ -61,7 +61,7 @@ external:
   - Edgar Ruiz
   readme_image: man/figures/logo.png
   repo: r-lib/usethis
-  stars: 897
+  stars: 898
   title: usethis
   website: https://usethis.r-lib.org/
 ---

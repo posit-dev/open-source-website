@@ -9,13 +9,13 @@ people:
 title: sodium
 website: https://docs.ropensci.org/sodium
 
-external:
+external:  # updated automatically, do not edit
   description: R bindings to libsodium
   first_commit: '2015-10-04T19:53:28+00:00'
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-17T11:33:02.798591+00:00'
+  last_updated: '2026-02-24T09:26:34.562841+00:00'
   latest_release: '2022-06-11T08:15:53+00:00'
   license: NOASSERTION
   people:

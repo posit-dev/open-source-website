@@ -14,13 +14,13 @@ people:
 title: thematic
 website: https://rstudio.github.io/thematic/
 
-external:
+external:  # updated automatically, do not edit
   description: Theme ggplot2, lattice, and base graphics based on a few simple settings.
   first_commit: '2020-03-06T23:01:11+00:00'
   forks: 11
   languages:
   - R
-  last_updated: '2026-02-17T11:23:13.473166+00:00'
+  last_updated: '2026-02-24T09:26:18.635019+00:00'
   latest_release: '2025-06-16T15:29:51+00:00'
   license: NOASSERTION
   people:

@@ -10,13 +10,13 @@ people:
 title: askpass
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Password Entry for R, Git, and SSH
   first_commit: '2018-11-17T12:32:43+00:00'
   forks: 0
   languages:
   - R
-  last_updated: '2026-02-17T11:35:27.218442+00:00'
+  last_updated: '2026-02-24T09:26:35.863912+00:00'
   latest_release: '2023-09-03T17:44:05+00:00'
   license: NOASSERTION
   people:

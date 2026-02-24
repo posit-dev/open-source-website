@@ -16,13 +16,13 @@ people:
 title: brulee
 website: https://brulee.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: High-Level Modeling Functions with 'torch'
   first_commit: '2020-08-19T21:34:01+00:00'
   forks: 9
   languages:
   - R
-  last_updated: '2026-02-17T11:30:48.279095+00:00'
+  last_updated: '2026-02-24T09:26:27.686431+00:00'
   latest_release: '2025-09-02T10:44:03+00:00'
   license: NOASSERTION
   people:

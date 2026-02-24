@@ -12,13 +12,13 @@ people:
 title: r-system-requirements
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: System requirements for R packages
   first_commit: '2019-02-11T21:01:15+00:00'
   forks: 31
   languages:
   - Shell
-  last_updated: '2026-02-17T11:21:48.756791+00:00'
+  last_updated: '2026-02-24T09:26:17.799125+00:00'
   license: MIT
   people:
   - Gábor Csárdi

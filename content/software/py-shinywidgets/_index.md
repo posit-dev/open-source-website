@@ -12,13 +12,13 @@ people:
 title: py-shinywidgets
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Render ipywidgets inside a PyShiny app
   first_commit: '2021-12-02T21:09:21+00:00'
   forks: 7
   languages:
   - Python
-  last_updated: '2026-02-17T11:11:01.856658+00:00'
+  last_updated: '2026-02-24T09:25:56.756259+00:00'
   latest_release: '2026-01-22T01:15:31+00:00'
   license: MIT
   people:

@@ -10,14 +10,14 @@ people:
 title: bigdataclass
 website: https://rstudio.github.io/bigdataclass/
 
-external:
+external:  # updated automatically, do not edit
   description: Two-day workshop that covers how to use R to interact databases and
     Spark
   first_commit: '2017-12-13T17:09:10+00:00'
   forks: 54
   languages:
   - R
-  last_updated: '2026-02-17T11:20:08.562276+00:00'
+  last_updated: '2026-02-24T09:26:16.847802+00:00'
   latest_release: '2019-01-16T21:53:30+00:00'
   people:
   - Edgar Ruiz

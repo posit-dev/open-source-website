@@ -17,13 +17,13 @@ people:
 title: webinars
 website: https://resources.rstudio.com/webinars
 
-external:
+external:  # updated automatically, do not edit
   description: Code and slides for RStudio webinars
   first_commit: '2014-07-30T16:39:40+00:00'
-  forks: 1403
+  forks: 1401
   languages:
   - HTML
-  last_updated: '2026-02-17T11:16:38.945033+00:00'
+  last_updated: '2026-02-24T09:26:14.774292+00:00'
   people:
   - Winston Chang
   - Edgar Ruiz
@@ -36,7 +36,7 @@ external:
   - Max Kuhn
   - Greg Swinehart
   repo: rstudio/webinars
-  stars: 1536
+  stars: 1533
   title: webinars
   website: https://resources.rstudio.com/webinars
 ---

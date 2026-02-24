@@ -9,13 +9,13 @@ people:
 title: aml-training
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: The most recent version of the Applied Machine Learning notes
   first_commit: '2019-02-23T15:33:16+00:00'
   forks: 29
   languages:
   - HTML
-  last_updated: '2026-02-17T11:30:00.123975+00:00'
+  last_updated: '2026-02-24T09:26:27.236800+00:00'
   latest_release: '2019-05-27T19:19:27+00:00'
   license: GPL-2.0
   people:

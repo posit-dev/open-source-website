@@ -14,13 +14,13 @@ people:
 title: evaluate
 website: http://evaluate.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: A version of eval for R that returns more information about what happened
   first_commit: '2008-05-18T13:40:10+00:00'
   forks: 36
   languages:
   - R
-  last_updated: '2026-02-17T11:31:38.567501+00:00'
+  last_updated: '2026-02-24T09:26:33.908691+00:00'
   latest_release: '2025-08-27T16:20:44+00:00'
   license: NOASSERTION
   people:

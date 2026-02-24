@@ -13,13 +13,13 @@ people:
 title: googledrive
 website: https://googledrive.tidyverse.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Google Drive R API
   first_commit: '2017-04-26T23:22:32+00:00'
   forks: 49
   languages:
   - R
-  last_updated: '2026-02-17T11:28:37.428532+00:00'
+  last_updated: '2026-02-24T09:26:23.641481+00:00'
   latest_release: '2025-09-10T06:09:30+00:00'
   license: NOASSERTION
   people:

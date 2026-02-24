@@ -17,13 +17,13 @@ people:
 title: rsample
 website: https://rsample.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Classes and functions to create and summarize resampling objects
   first_commit: '2017-04-22T19:19:58+00:00'
   forks: 68
   languages:
   - R
-  last_updated: '2026-02-17T11:29:28.529739+00:00'
+  last_updated: '2026-02-24T09:26:26.957593+00:00'
   latest_release: '2026-01-30T11:52:49+00:00'
   license: NOASSERTION
   people:

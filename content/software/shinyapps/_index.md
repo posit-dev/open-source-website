@@ -8,11 +8,11 @@ people:
 title: shinyapps
 website: http://shinyapps.io
 
-external:
+external:  # updated automatically, do not edit
   description: Deploy Shiny applications to ShinyApps
   first_commit: '2013-09-27T16:16:55+00:00'
   forks: 109
-  last_updated: '2026-02-17T11:16:05.272857+00:00'
+  last_updated: '2026-02-24T09:26:14.497477+00:00'
   people:
   - JJ Allaire
   - Joe Cheng

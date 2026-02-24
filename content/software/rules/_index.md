@@ -16,13 +16,13 @@ people:
 title: rules
 website: https://rules.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: parsnip extension for rule-based models
   first_commit: '2019-10-27T20:58:03+00:00'
   forks: 7
   languages:
   - R
-  last_updated: '2026-02-17T11:30:18.258364+00:00'
+  last_updated: '2026-02-24T09:26:27.401719+00:00'
   latest_release: '2023-03-08T23:13:46+00:00'
   license: NOASSERTION
   people:

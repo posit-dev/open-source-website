@@ -18,13 +18,13 @@ people:
 title: cli
 website: https://cli.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Tools for making beautiful & useful command line interfaces
   first_commit: '2017-04-28T16:10:28+00:00'
   forks: 83
   languages:
   - R
-  last_updated: '2026-02-17T11:34:18.302714+00:00'
+  last_updated: '2026-02-24T09:26:35.215293+00:00'
   latest_release: '2025-04-22T11:59:57+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:
   - George Stagg
   readme_image: man/figures/README/alert-success.svg
   repo: r-lib/cli
-  stars: 694
+  stars: 695
   title: cli
   website: https://cli.r-lib.org/
 ---

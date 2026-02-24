@@ -11,13 +11,13 @@ people:
 title: webdriver
 website: https://rstudio.github.io/webdriver/
 
-external:
+external:  # updated automatically, do not edit
   description: WebDriver client in R
   first_commit: '2016-08-18T11:20:46+00:00'
   forks: 16
   languages:
   - R
-  last_updated: '2026-02-17T11:18:29.240395+00:00'
+  last_updated: '2026-02-24T09:26:15.937956+00:00'
   latest_release: '2021-01-12T20:32:10+00:00'
   license: NOASSERTION
   people:

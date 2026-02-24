@@ -12,13 +12,13 @@ people:
 title: hugodown
 website: https://hugodown.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Make websites with hugo and RMarkdown
   first_commit: '2020-05-18T14:26:06+00:00'
   forks: 23
   languages:
   - R
-  last_updated: '2026-02-17T11:36:10.923708+00:00'
+  last_updated: '2026-02-24T09:26:36.272692+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

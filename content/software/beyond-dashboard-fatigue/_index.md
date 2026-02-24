@@ -8,13 +8,13 @@ people:
 title: beyond-dashboard-fatigue
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Materials for the RStudio webinar 'Beyond Dashboard Fatigue'
   first_commit: '2020-07-10T15:58:15+00:00'
   forks: 24
   languages:
   - R
-  last_updated: '2026-02-17T11:23:37.626719+00:00'
+  last_updated: '2026-02-24T09:26:18.899103+00:00'
   license: CC0-1.0
   people:
   - Rich Iannone

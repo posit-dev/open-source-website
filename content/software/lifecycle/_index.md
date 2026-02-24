@@ -14,13 +14,13 @@ people:
 title: lifecycle
 website: https://lifecycle.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Manage the life cycle of your exported functions and arguments
   first_commit: '2018-12-27T16:31:45+00:00'
   forks: 25
   languages:
   - R
-  last_updated: '2026-02-17T11:35:32.420320+00:00'
+  last_updated: '2026-02-24T09:26:35.904429+00:00'
   latest_release: '2026-01-09T14:10:39+00:00'
   license: NOASSERTION
   people:

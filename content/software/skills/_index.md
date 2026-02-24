@@ -2,24 +2,24 @@
 description: A collection of Claude Skills from Posit
 github: posit-dev/skills
 languages:
-- R
+- Python
 people:
 - Garrick Aden-Buie
 title: skills
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: A collection of Claude Skills from Posit
   first_commit: '2025-11-21T15:27:13+00:00'
   forks: 4
   languages:
-  - R
-  last_updated: '2026-02-17T11:14:31.094913+00:00'
+  - Python
+  last_updated: '2026-02-24T09:25:58.852286+00:00'
   license: MIT
   people:
   - Garrick Aden-Buie
   repo: posit-dev/skills
-  stars: 108
+  stars: 122
   title: skills
   website: ''
 ---

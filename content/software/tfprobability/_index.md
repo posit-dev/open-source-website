@@ -10,13 +10,13 @@ people:
 title: tfprobability
 website: https://rstudio.github.io/tfprobability/
 
-external:
+external:  # updated automatically, do not edit
   description: R interface to TensorFlow Probability
   first_commit: '2019-02-14T16:56:38+00:00'
   forks: 14
   languages:
   - R
-  last_updated: '2026-02-17T11:21:51.091430+00:00'
+  last_updated: '2026-02-24T09:26:17.819382+00:00'
   latest_release: '2025-08-20T18:06:41+00:00'
   license: NOASSERTION
   people:

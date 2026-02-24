@@ -15,13 +15,13 @@ people:
 title: textrecipes
 website: https://textrecipes.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Extra recipes for Text Processing
   first_commit: '2018-09-10T23:15:56+00:00'
   forks: 17
   languages:
   - R
-  last_updated: '2026-02-17T11:29:53.483792+00:00'
+  last_updated: '2026-02-24T09:26:27.177754+00:00'
   latest_release: '2025-03-18T15:37:10+00:00'
   license: NOASSERTION
   people:

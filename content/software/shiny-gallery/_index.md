@@ -9,18 +9,18 @@ people:
 title: shiny-gallery
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Code and other documentation for apps in the Shiny Gallery ✨
   first_commit: '2020-01-21T11:51:28+00:00'
-  forks: 233
+  forks: 234
   languages:
   - HTML
-  last_updated: '2026-02-17T11:23:04.742788+00:00'
+  last_updated: '2026-02-24T09:26:18.516781+00:00'
   people:
   - Mine Çetinkaya-Rundel
   - Winston Chang
   repo: rstudio/shiny-gallery
-  stars: 151
+  stars: 153
   title: shiny-gallery
   website: ''
 ---

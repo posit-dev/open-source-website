@@ -8,13 +8,13 @@ people:
 title: clisymbols
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Unicode symbols for CLI applications, with fallbacks
   first_commit: '2015-04-14T02:57:39+00:00'
   forks: 2
   languages:
   - R
-  last_updated: '2026-02-17T11:32:44.924617+00:00'
+  last_updated: '2026-02-24T09:26:34.401121+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

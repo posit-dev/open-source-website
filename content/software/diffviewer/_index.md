@@ -10,13 +10,13 @@ people:
 title: diffviewer
 website: http://diffviewer.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: HTML widget to visually compare files
   first_commit: '2020-07-26T13:18:02+00:00'
   forks: 7
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:36:17.794017+00:00'
+  last_updated: '2026-02-24T09:26:36.334209+00:00'
   latest_release: '2024-06-12T16:12:44+00:00'
   license: NOASSERTION
   people:

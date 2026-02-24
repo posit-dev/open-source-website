@@ -15,13 +15,13 @@ people:
 title: shinytest
 website: https://rstudio.github.io/shinytest/
 
-external:
+external:  # updated automatically, do not edit
   description: Automated testing for shiny apps
   first_commit: '2016-08-24T12:19:09+00:00'
   forks: 51
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:18:33.977785+00:00'
+  last_updated: '2026-02-24T09:26:15.977946+00:00'
   latest_release: '2024-03-02T17:37:21+00:00'
   license: NOASSERTION
   people:

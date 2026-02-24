@@ -10,19 +10,19 @@ people:
 title: rmarkdown-cookbook
 website: https://yihui.org/rmarkdown-cookbook/
 
-external:
+external:  # updated automatically, do not edit
   description: R Markdown Cookbook. A range of tips and tricks to make better use
     of R Markdown.
   first_commit: '2018-04-26T13:06:57+00:00'
-  forks: 236
+  forks: 237
   languages:
   - RMarkdown
-  last_updated: '2026-02-17T11:20:38.260101+00:00'
+  last_updated: '2026-02-24T09:26:17.103208+00:00'
   latest_release: '2020-08-14T17:34:56+00:00'
   people:
   - Christophe Dervieux
   repo: rstudio/rmarkdown-cookbook
-  stars: 609
+  stars: 608
   title: rmarkdown-cookbook
   website: https://yihui.org/rmarkdown-cookbook/
 ---

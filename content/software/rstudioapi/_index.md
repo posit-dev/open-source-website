@@ -12,13 +12,13 @@ people:
 title: rstudioapi
 website: http://rstudio.github.io/rstudioapi
 
-external:
+external:  # updated automatically, do not edit
   description: Safely access RStudio's API (when available)
   first_commit: '2014-01-10T11:37:40+00:00'
   forks: 36
   languages:
   - R
-  last_updated: '2026-02-17T11:16:17.768903+00:00'
+  last_updated: '2026-02-24T09:26:14.616892+00:00'
   latest_release: '2024-10-16T22:39:47+00:00'
   license: NOASSERTION
   people:

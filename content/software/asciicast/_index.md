@@ -12,13 +12,13 @@ people:
 title: asciicast
 website: https://asciicast.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Turn R scripts into terminal screencasts
   first_commit: '2019-07-16T12:28:14+00:00'
   forks: 11
   languages:
   - R
-  last_updated: '2026-02-17T11:35:51.920004+00:00'
+  last_updated: '2026-02-24T09:26:36.089497+00:00'
   latest_release: '2024-01-18T06:18:02+00:00'
   license: NOASSERTION
   people:

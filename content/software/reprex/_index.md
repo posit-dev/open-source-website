@@ -17,13 +17,13 @@ people:
 title: reprex
 website: https://reprex.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: Render bits of R code for sharing, e.g., on GitHub or StackOverflow.
   first_commit: '2015-08-25T17:06:45+00:00'
   forks: 84
   languages:
   - R
-  last_updated: '2026-02-17T11:28:03.641966+00:00'
+  last_updated: '2026-02-24T09:26:23.379903+00:00'
   latest_release: '2024-07-06T00:20:34+00:00'
   license: NOASSERTION
   people:

@@ -20,13 +20,13 @@ people:
 title: parsnip
 website: https://parsnip.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: A tidy unified interface to models
   first_commit: '2017-12-10T22:48:42+00:00'
   forks: 105
   languages:
   - R
-  last_updated: '2026-02-17T11:29:38.459207+00:00'
+  last_updated: '2026-02-24T09:26:27.035917+00:00'
   latest_release: '2026-01-11T20:23:17+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +43,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/parsnip
-  stars: 642
+  stars: 643
   title: parsnip
   website: https://parsnip.tidymodels.org
 ---

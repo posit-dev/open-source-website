@@ -12,13 +12,13 @@ people:
 title: ragg
 website: https://ragg.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Graphic Devices Based on AGG
   first_commit: '2019-03-15T10:11:11+00:00'
   forks: 30
   languages:
   - C++
-  last_updated: '2026-02-17T11:35:39.087997+00:00'
+  last_updated: '2026-02-24T09:26:35.966245+00:00'
   latest_release: '2025-09-02T06:41:38+00:00'
   license: NOASSERTION
   people:

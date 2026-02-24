@@ -13,13 +13,13 @@ people:
 title: shiny-vscode
 website: https://open-vsx.org/extension/posit/shiny
 
-external:
+external:  # updated automatically, do not edit
   description: Shiny VS Code Extension
   first_commit: '2022-06-18T02:06:43+00:00'
   forks: 13
   languages:
   - TypeScript
-  last_updated: '2026-02-17T11:11:16.388637+00:00'
+  last_updated: '2026-02-24T09:25:56.874521+00:00'
   latest_release: '2025-06-12T21:06:04+00:00'
   license: MIT
   people:

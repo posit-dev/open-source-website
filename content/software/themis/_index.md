@@ -14,13 +14,13 @@ people:
 title: themis
 website: https://themis.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Extra recipes steps for dealing with unbalanced data
   first_commit: '2019-10-12T18:46:35+00:00'
   forks: 13
   languages:
   - R
-  last_updated: '2026-02-17T11:30:16.093449+00:00'
+  last_updated: '2026-02-24T09:26:27.380044+00:00'
   latest_release: '2025-01-22T23:40:45+00:00'
   license: NOASSERTION
   people:

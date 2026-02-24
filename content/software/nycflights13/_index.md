@@ -10,14 +10,14 @@ people:
 title: nycflights13
 website: https://nycflights13.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: An R data package containing all out-bound flights from NYC in 2013
     + useful metdata
   first_commit: '2014-06-27T16:25:59+00:00'
   forks: 233
   languages:
   - R
-  last_updated: '2026-02-17T11:27:49.401651+00:00'
+  last_updated: '2026-02-24T09:26:23.278886+00:00'
   latest_release: '2021-04-12T12:50:46+00:00'
   people:
   - Hadley Wickham

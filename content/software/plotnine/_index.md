@@ -15,7 +15,7 @@ people:
 title: plotnine
 website: https://plotnine.org
 
-external:
+external:  # updated automatically, do not edit
   description: A Grammar of Graphics for Python
   first_commit: '2017-04-24T19:00:44+00:00'
   forks: 245

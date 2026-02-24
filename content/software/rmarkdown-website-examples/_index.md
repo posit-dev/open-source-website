@@ -8,13 +8,13 @@ people:
 title: rmarkdown-website-examples
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Examples of R Markdown Websites
   first_commit: '2016-04-04T13:11:27+00:00'
   forks: 177
   languages:
   - HTML
-  last_updated: '2026-02-17T11:18:09.194670+00:00'
+  last_updated: '2026-02-24T09:26:15.720490+00:00'
   people:
   - JJ Allaire
   repo: rstudio/rmarkdown-website-examples

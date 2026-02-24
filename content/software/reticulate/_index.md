@@ -18,13 +18,13 @@ people:
 title: reticulate
 website: https://rstudio.github.io/reticulate
 
-external:
+external:  # updated automatically, do not edit
   description: R Interface to Python
   first_commit: '2017-02-06T18:59:46+00:00'
   forks: 346
   languages:
   - R
-  last_updated: '2026-02-17T11:19:02.584298+00:00'
+  last_updated: '2026-02-24T09:26:16.195164+00:00'
   latest_release: '2026-02-13T12:55:36+00:00'
   license: Apache-2.0
   people:
@@ -39,7 +39,7 @@ external:
   - Lionel Henry
   readme_image: man/figures/reticulated_python.png
   repo: rstudio/reticulate
-  stars: 1739
+  stars: 1742
   title: reticulate
   website: https://rstudio.github.io/reticulate
 ---

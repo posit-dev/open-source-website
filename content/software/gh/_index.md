@@ -16,13 +16,13 @@ people:
 title: gh
 website: https://gh.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Minimalistic GitHub API client in R
   first_commit: '2015-06-08T03:00:11+00:00'
   forks: 56
   languages:
   - R
-  last_updated: '2026-02-17T11:32:56.421205+00:00'
+  last_updated: '2026-02-24T09:26:34.502090+00:00'
   latest_release: '2025-05-26T09:31:40+00:00'
   license: NOASSERTION
   people:

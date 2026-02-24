@@ -10,13 +10,13 @@ people:
 title: ymlthis
 website: https://ymlthis.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: write YAML for R Markdown, bookdown, blogdown, and more
   first_commit: '2019-06-03T20:45:14+00:00'
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-17T11:35:45.500336+00:00'
+  last_updated: '2026-02-24T09:26:36.026922+00:00'
   latest_release: '2022-08-04T13:16:24+00:00'
   license: NOASSERTION
   people:

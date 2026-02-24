@@ -9,13 +9,13 @@ people:
 title: funs
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Collection of low-level functions for working with vctrs
   first_commit: '2018-10-31T21:39:12+00:00'
   forks: 7
   languages:
   - R
-  last_updated: '2026-02-17T11:28:52.094882+00:00'
+  last_updated: '2026-02-24T09:26:23.799234+00:00'
   license: NOASSERTION
   people:
   - Davis Vaughan

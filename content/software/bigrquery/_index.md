@@ -14,13 +14,13 @@ people:
 title: bigrquery
 website: https://bigrquery.r-dbi.org
 
-external:
+external:  # updated automatically, do not edit
   description: An interface to Google's BigQuery from R.
   first_commit: '2013-05-22T14:04:16+00:00'
   forks: 190
   languages:
   - R
-  last_updated: '2026-02-17T11:37:27.467221+00:00'
+  last_updated: '2026-02-24T09:26:38.205437+00:00'
   latest_release: '2025-09-10T12:43:44+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +31,7 @@ external:
   - Edgar Ruiz
   - Davis Vaughan
   repo: r-dbi/bigrquery
-  stars: 525
+  stars: 524
   title: bigrquery
   website: https://bigrquery.r-dbi.org
 ---

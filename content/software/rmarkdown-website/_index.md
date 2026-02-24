@@ -8,13 +8,13 @@ people:
 title: rmarkdown-website
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2016-01-29T21:51:49+00:00'
   forks: 32
   languages:
   - HTML
-  last_updated: '2026-02-17T11:17:54.764684+00:00'
+  last_updated: '2026-02-24T09:26:15.562857+00:00'
   people:
   - JJ Allaire
   repo: rstudio/rmarkdown-website

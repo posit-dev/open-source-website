@@ -23,7 +23,6 @@ people:
 - Edgar Ruiz
 - Carson Sievert
 - Emil Hvitfeldt
-- Greg Swinehart
 title: Quarto
 website: https://quarto.org
 
@@ -36,7 +35,7 @@ include:
 override:
   title: Quarto
 
-external:
+external:  # updated automatically, do not edit
   description: Open-source scientific and technical publishing system built on Pandoc.
   first_commit: '2020-09-25T13:25:46+00:00'
   forks: 409

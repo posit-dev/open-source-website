@@ -15,13 +15,13 @@ people:
 title: mcptools
 website: https://posit-dev.github.io/mcptools/
 
-external:
+external:  # updated automatically, do not edit
   description: Model Context Protocol For R
   first_commit: '2025-03-26T21:10:12+00:00'
   forks: 13
   languages:
   - R
-  last_updated: '2026-02-17T11:13:18.398144+00:00'
+  last_updated: '2026-02-24T09:25:58.059616+00:00'
   latest_release: '2025-10-29T20:23:51+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: posit-dev/mcptools
-  stars: 153
+  stars: 156
   title: mcptools
   website: https://posit-dev.github.io/mcptools/
 ---

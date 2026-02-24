@@ -18,14 +18,14 @@ people:
 title: chatlas
 website: https://posit-dev.github.io/chatlas/
 
-external:
+external:  # updated automatically, do not edit
   description: Your friendly guide to building LLM chat apps in Python with less effort
     and more clarity.
   first_commit: '2024-10-28T22:58:22+00:00'
-  forks: 20
+  forks: 21
   languages:
   - Python
-  last_updated: '2026-02-17T11:12:52.120097+00:00'
+  last_updated: '2026-02-24T09:25:57.801867+00:00'
   latest_release: '2026-01-22T22:50:44+00:00'
   license: MIT
   people:
@@ -39,7 +39,7 @@ external:
   - Neal Richardson
   readme_image: https://posit-dev.github.io/chatlas/logos/hex/logo.png
   repo: posit-dev/chatlas
-  stars: 151
+  stars: 150
   title: chatlas
   website: https://posit-dev.github.io/chatlas/
 ---

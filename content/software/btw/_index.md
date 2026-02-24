@@ -12,13 +12,13 @@ people:
 title: btw
 website: https://posit-dev.github.io/btw/
 
-external:
+external:  # updated automatically, do not edit
   description: A complete toolkit for connecting R and LLMs
   first_commit: '2025-02-06T23:25:06+00:00'
-  forks: 6
+  forks: 7
   languages:
   - R
-  last_updated: '2026-02-17T11:13:07.656990+00:00'
+  last_updated: '2026-02-24T09:25:57.961613+00:00'
   latest_release: '2025-12-23T13:00:45+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +27,7 @@ external:
   - Charlie Gao
   readme_image: man/figures/logo.png
   repo: posit-dev/btw
-  stars: 108
+  stars: 110
   title: btw
   website: https://posit-dev.github.io/btw/
 ---

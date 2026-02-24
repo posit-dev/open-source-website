@@ -12,13 +12,13 @@ people:
 title: rsconnect-python
 website: https://docs.posit.co/rsconnect-python/
 
-external:
+external:  # updated automatically, do not edit
   description: The Posit Connect command-line interface.
   first_commit: '2019-11-26T15:15:26+00:00'
   forks: 27
   languages:
   - Python
-  last_updated: '2026-02-17T11:10:49.244518+00:00'
+  last_updated: '2026-02-24T09:25:56.653722+00:00'
   latest_release: '2025-12-05T18:27:41+00:00'
   license: MIT
   people:

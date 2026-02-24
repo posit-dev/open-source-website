@@ -15,13 +15,13 @@ people:
 title: leaflet
 website: http://rstudio.github.io/leaflet/
 
-external:
+external:  # updated automatically, do not edit
   description: R Interface to Leaflet Maps
   first_commit: '2014-11-11T21:25:54+00:00'
   forks: 506
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:17:01.722214+00:00'
+  last_updated: '2026-02-24T09:26:15.011252+00:00'
   latest_release: '2025-09-04T11:43:34+00:00'
   license: NOASSERTION
   people:

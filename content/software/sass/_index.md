@@ -19,13 +19,13 @@ people:
 title: sass
 website: https://rstudio.github.io/sass/
 
-external:
+external:  # updated automatically, do not edit
   description: Sass compiler package for R
   first_commit: '2018-08-14T17:02:58+00:00'
   forks: 19
   languages:
   - C++
-  last_updated: '2026-02-17T11:21:06.000931+00:00'
+  last_updated: '2026-02-24T09:26:17.361545+00:00'
   latest_release: '2025-04-11T20:21:04+00:00'
   license: NOASSERTION
   people:
@@ -41,7 +41,7 @@ external:
   - Jeroen Ooms
   readme_image: man/figures/logo.svg
   repo: rstudio/sass
-  stars: 101
+  stars: 102
   title: sass
   website: https://rstudio.github.io/sass/
 ---

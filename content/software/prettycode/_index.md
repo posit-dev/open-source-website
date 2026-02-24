@@ -10,13 +10,13 @@ people:
 title: prettycode
 website: https://r-lib.github.io/prettycode/
 
-external:
+external:  # updated automatically, do not edit
   description: Syntax highlight R code in the terminal
   first_commit: '2016-11-15T13:30:58+00:00'
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-17T11:33:48.410893+00:00'
+  last_updated: '2026-02-24T09:26:34.929235+00:00'
   latest_release: '2019-12-16T13:00:40+00:00'
   license: NOASSERTION
   people:

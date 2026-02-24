@@ -10,14 +10,14 @@ people:
 title: leaflet.mapboxgl
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Extends the R Leaflet package with a Mapbox GL JS plugin to allow easy
     drawing of vector tile layers.
   first_commit: '2019-03-04T19:42:54+00:00'
   forks: 3
   languages:
   - R
-  last_updated: '2026-02-17T11:21:58.581477+00:00'
+  last_updated: '2026-02-24T09:26:17.900838+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng

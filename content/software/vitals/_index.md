@@ -14,13 +14,13 @@ people:
 title: vitals
 website: https://vitals.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: Large language model evaluation for R
   first_commit: '2025-02-10T16:40:08+00:00'
-  forks: 10
+  forks: 11
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:29:08.938941+00:00'
+  last_updated: '2026-02-24T09:26:23.959400+00:00'
   latest_release: '2025-12-01T15:34:29+00:00'
   license: NOASSERTION
   people:

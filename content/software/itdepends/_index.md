@@ -8,13 +8,13 @@ people:
 title: itdepends
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2018-10-16T17:42:23+00:00'
   forks: 13
   languages:
   - R
-  last_updated: '2026-02-17T11:35:16.695907+00:00'
+  last_updated: '2026-02-24T09:26:35.760568+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan

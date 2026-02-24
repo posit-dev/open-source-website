@@ -17,13 +17,13 @@ people:
 title: workflows
 website: https://workflows.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Modeling Workflows
   first_commit: '2019-09-25T15:45:32+00:00'
   forks: 25
   languages:
   - R
-  last_updated: '2026-02-17T11:30:11.518118+00:00'
+  last_updated: '2026-02-24T09:26:27.338517+00:00'
   latest_release: '2025-08-27T09:07:53+00:00'
   license: NOASSERTION
   people:

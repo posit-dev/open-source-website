@@ -12,13 +12,13 @@ people:
 title: nanonext
 website: https://nanonext.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: R binding for NNG (Nanomsg Next Gen)
   first_commit: '2022-01-23T12:59:16+00:00'
   forks: 11
   languages:
   - C
-  last_updated: '2026-02-17T11:36:49.462031+00:00'
+  last_updated: '2026-02-24T09:26:36.640074+00:00'
   latest_release: '2026-02-09T19:24:09+00:00'
   license: NOASSERTION
   people:

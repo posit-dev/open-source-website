@@ -10,13 +10,13 @@ people:
 title: available
 website: https://r-lib.github.io/available/
 
-external:
+external:  # updated automatically, do not edit
   description: Check if a package name is available to use
   first_commit: '2017-04-28T14:59:20+00:00'
   forks: 17
   languages:
   - R
-  last_updated: '2026-02-17T11:34:15.580631+00:00'
+  last_updated: '2026-02-24T09:26:35.194961+00:00'
   latest_release: '2022-07-10T18:39:42+00:00'
   license: NOASSERTION
   people:

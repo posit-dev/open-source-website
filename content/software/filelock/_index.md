@@ -10,13 +10,13 @@ people:
 title: filelock
 website: https://r-lib.github.io/filelock/
 
-external:
+external:  # updated automatically, do not edit
   description: Cross platform file locking in R
   first_commit: '2017-05-12T18:03:59+00:00'
   forks: 7
   languages:
   - R
-  last_updated: '2026-02-17T11:34:20.378186+00:00'
+  last_updated: '2026-02-24T09:26:35.235471+00:00'
   latest_release: '2023-12-11T01:11:32+00:00'
   license: NOASSERTION
   people:

@@ -19,13 +19,13 @@ people:
 title: tidyr
 website: https://tidyr.tidyverse.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Tidy Messy Data
   first_commit: '2014-06-10T14:24:33+00:00'
   forks: 420
   languages:
   - R
-  last_updated: '2026-02-17T11:27:47.301936+00:00'
+  last_updated: '2026-02-24T09:26:23.258134+00:00'
   latest_release: '2026-01-09T14:13:04+00:00'
   license: NOASSERTION
   people:
@@ -41,7 +41,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/tidyr
-  stars: 1428
+  stars: 1426
   title: tidyr
   website: https://tidyr.tidyverse.org/
 ---

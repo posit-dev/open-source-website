@@ -8,13 +8,13 @@ people:
 title: R-Websockets
 website: http://illposed.net/websockets.html
 
-external:
+external:  # updated automatically, do not edit
   description: HTML 5 Websockets implementation for R
   first_commit: '2011-04-17T20:01:50+00:00'
   forks: 36
   languages:
   - R
-  last_updated: '2026-02-17T11:15:27.531263+00:00'
+  last_updated: '2026-02-24T09:26:14.119750+00:00'
   people:
   - Joe Cheng
   repo: rstudio/R-Websockets

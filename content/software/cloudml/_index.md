@@ -11,13 +11,13 @@ people:
 title: cloudml
 website: https://tensorflow.rstudio.com/tools/cloudml/
 
-external:
+external:  # updated automatically, do not edit
   description: R interface to Google Cloud Machine Learning Engine
   first_commit: '2017-02-17T19:29:06+00:00'
   forks: 23
   languages:
   - R
-  last_updated: '2026-02-17T11:19:07.098280+00:00'
+  last_updated: '2026-02-24T09:26:16.233951+00:00'
   latest_release: '2025-08-18T22:42:41+00:00'
   people:
   - JJ Allaire

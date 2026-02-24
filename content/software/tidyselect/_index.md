@@ -12,13 +12,13 @@ people:
 title: tidyselect
 website: https://tidyselect.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: A backend for functions taking tidyverse selections
   first_commit: '2017-05-23T18:19:37+00:00'
   forks: 40
   languages:
   - R
-  last_updated: '2026-02-17T11:34:24.784896+00:00'
+  last_updated: '2026-02-24T09:26:35.276379+00:00'
   latest_release: '2024-03-11T11:44:46+00:00'
   license: NOASSERTION
   people:

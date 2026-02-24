@@ -8,13 +8,13 @@ people:
 title: rstudio-docker-products
 website: https://hub.docker.com/u/rstudio
 
-external:
+external:  # updated automatically, do not edit
   description: Docker images for RStudio Professional Products
   first_commit: '2019-06-06T18:31:12+00:00'
   forks: 58
   languages:
   - Shell
-  last_updated: '2026-02-17T11:22:23.731964+00:00'
+  last_updated: '2026-02-24T09:26:18.123112+00:00'
   license: MIT
   people:
   - Neal Richardson

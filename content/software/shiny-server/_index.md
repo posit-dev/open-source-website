@@ -10,20 +10,20 @@ people:
 title: shiny-server
 website: https://rstudio.com/shiny/server
 
-external:
+external:  # updated automatically, do not edit
   description: Host Shiny applications over the web.
   first_commit: '2012-08-22T18:42:22+00:00'
   forks: 292
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:15:44.697993+00:00'
+  last_updated: '2026-02-24T09:26:14.280527+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng
   - Winston Chang
   - Garrick Aden-Buie
   repo: rstudio/shiny-server
-  stars: 753
+  stars: 752
   title: shiny-server
   website: https://rstudio.com/shiny/server
 ---

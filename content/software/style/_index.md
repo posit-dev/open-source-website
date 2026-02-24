@@ -13,13 +13,13 @@ people:
 title: style
 website: https://style.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: The tidyverse style guide for R code
   first_commit: '2017-03-07T20:15:49+00:00'
   forks: 118
   languages:
   - SCSS
-  last_updated: '2026-02-17T11:28:30.073430+00:00'
+  last_updated: '2026-02-24T09:26:23.601343+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

@@ -13,13 +13,13 @@ people:
 title: dtplyr
 website: https://dtplyr.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: Data table backend for dplyr
   first_commit: '2016-03-07T23:28:16+00:00'
   forks: 60
   languages:
   - R
-  last_updated: '2026-02-17T11:28:11.989399+00:00'
+  last_updated: '2026-02-24T09:26:23.440503+00:00'
   latest_release: '2026-02-10T17:24:35+00:00'
   license: NOASSERTION
   people:

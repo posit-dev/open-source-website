@@ -14,13 +14,13 @@ people:
 title: websocket
 website: https://rstudio.github.io/websocket/
 
-external:
+external:  # updated automatically, do not edit
   description: WebSocket client for R
   first_commit: '2018-02-21T18:29:48+00:00'
   forks: 19
   languages:
   - C++
-  last_updated: '2026-02-17T11:20:14.623427+00:00'
+  last_updated: '2026-02-24T09:26:16.906429+00:00'
   latest_release: '2025-04-10T10:24:20+00:00'
   license: NOASSERTION
   people:

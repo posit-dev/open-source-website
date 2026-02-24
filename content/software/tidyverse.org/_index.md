@@ -25,13 +25,13 @@ people:
 title: tidyverse.org
 website: https://tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: Source of tidyverse.org
   first_commit: '2017-07-27T12:34:02+00:00'
   forks: 117
   languages:
   - HTML
-  last_updated: '2026-02-17T11:28:42.134485+00:00'
+  last_updated: '2026-02-24T09:26:23.681035+00:00'
   license: CC-BY-SA-4.0
   people:
   - Hadley Wickham
@@ -53,7 +53,7 @@ external:
   - Edgar Ruiz
   - Garrick Aden-Buie
   repo: tidyverse/tidyverse.org
-  stars: 207
+  stars: 208
   title: tidyverse.org
   website: https://tidyverse.org
 ---

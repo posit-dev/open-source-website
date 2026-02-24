@@ -6,13 +6,13 @@ languages:
 title: dbi3
 website: https://r-dbi.github.io/dbi3
 
-external:
+external:  # updated automatically, do not edit
   description: DBI revisited
   first_commit: '2021-10-31T23:18:46+00:00'
   forks: 2
   languages:
   - R
-  last_updated: '2026-02-17T11:37:58.929628+00:00'
+  last_updated: '2026-02-24T09:26:38.496983+00:00'
   repo: r-dbi/dbi3
   stars: 41
   title: dbi3

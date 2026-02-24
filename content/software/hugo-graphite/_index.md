@@ -7,13 +7,13 @@ latest_release: '2020-07-08T22:34:15+00:00'
 title: hugo-graphite
 website: https://hugo-graphite.netlify.app/
 
-external:
+external:  # updated automatically, do not edit
   description: A Hugo theme for teams
   first_commit: '2019-02-19T21:35:34+00:00'
   forks: 11
   languages:
   - CSS
-  last_updated: '2026-02-17T11:21:53.605352+00:00'
+  last_updated: '2026-02-24T09:26:17.839497+00:00'
   latest_release: '2020-07-08T22:34:15+00:00'
   license: MIT
   repo: rstudio/hugo-graphite

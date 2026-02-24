@@ -7,13 +7,13 @@ languages:
 title: nomnoml
 website: https://rstudio.github.io/nomnoml/
 
-external:
+external:  # updated automatically, do not edit
   description: Sassy 'UML' Diagrams for R
   first_commit: '2018-10-12T03:11:05+00:00'
   forks: 17
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:21:19.340865+00:00'
+  last_updated: '2026-02-24T09:26:17.508640+00:00'
   license: NOASSERTION
   readme_image: man/figures/logo.png
   repo: rstudio/nomnoml

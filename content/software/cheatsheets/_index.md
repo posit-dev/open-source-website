@@ -19,13 +19,13 @@ people:
 title: cheatsheets
 website: https://rstudio.github.io/cheatsheets/
 
-external:
+external:  # updated automatically, do not edit
   description: Posit Cheat Sheets - Can also be found at https://posit.co/resources/cheatsheets/.
   first_commit: '2017-01-04T18:04:05+00:00'
-  forks: 1932
+  forks: 1935
   languages:
   - TeX
-  last_updated: '2026-02-17T11:18:49.831549+00:00'
+  last_updated: '2026-02-24T09:26:16.115256+00:00'
   license: CC-BY-4.0
   people:
   - Mine Çetinkaya-Rundel

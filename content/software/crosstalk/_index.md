@@ -13,13 +13,13 @@ people:
 title: crosstalk
 website: http://rstudio.github.io/crosstalk
 
-external:
+external:  # updated automatically, do not edit
   description: Inter-htmlwidget communication for R (with and without Shiny)
   first_commit: '2015-10-07T14:38:24+00:00'
   forks: 56
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:17:31.853274+00:00'
+  last_updated: '2026-02-24T09:26:15.326477+00:00'
   latest_release: '2025-08-27T14:56:29+00:00'
   license: NOASSERTION
   people:

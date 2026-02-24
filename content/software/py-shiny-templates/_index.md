@@ -12,13 +12,13 @@ people:
 title: py-shiny-templates
 website: 'https://shiny.posit.co/py/templates '
 
-external:
+external:  # updated automatically, do not edit
   description: Templates for Shiny for Python
   first_commit: '2023-12-06T18:26:49+00:00'
   forks: 30
   languages:
   - Python
-  last_updated: '2026-02-17T11:11:42.723361+00:00'
+  last_updated: '2026-02-24T09:25:57.130878+00:00'
   license: MIT
   people:
   - Carson Sievert

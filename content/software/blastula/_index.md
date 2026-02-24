@@ -12,13 +12,13 @@ people:
 title: blastula
 website: https://pkgs.rstudio.com/blastula
 
-external:
+external:  # updated automatically, do not edit
   description: Easily send great-looking HTML email messages from R
   first_commit: '2017-08-13T06:21:56+00:00'
   forks: 83
   languages:
   - R
-  last_updated: '2026-02-17T11:19:47.076630+00:00'
+  last_updated: '2026-02-24T09:26:16.629657+00:00'
   latest_release: '2025-04-03T12:52:40+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +27,7 @@ external:
   - Neal Richardson
   readme_image: man/figures/logo.svg
   repo: rstudio/blastula
-  stars: 567
+  stars: 568
   title: blastula
   website: https://pkgs.rstudio.com/blastula
 ---

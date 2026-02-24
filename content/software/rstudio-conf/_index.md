@@ -27,13 +27,13 @@ people:
 title: rstudio-conf
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Materials for rstudio::conf
   first_commit: '2017-01-18T15:11:27+00:00'
   forks: 393
   languages:
   - HTML
-  last_updated: '2026-02-17T11:18:54.029411+00:00'
+  last_updated: '2026-02-24T09:26:16.134788+00:00'
   people:
   - Mine Çetinkaya-Rundel
   - Max Kuhn

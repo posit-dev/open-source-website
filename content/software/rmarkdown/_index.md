@@ -20,13 +20,13 @@ people:
 title: rmarkdown
 website: https://rmarkdown.rstudio.com
 
-external:
+external:  # updated automatically, do not edit
   description: Dynamic Documents for R
   first_commit: '2014-01-22T17:25:19+00:00'
   forks: 995
   languages:
   - R
-  last_updated: '2026-02-17T11:16:22.152580+00:00'
+  last_updated: '2026-02-24T09:26:14.636602+00:00'
   latest_release: '2025-09-29T14:17:29+00:00'
   license: GPL-3.0
   people:
@@ -43,7 +43,7 @@ external:
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: rstudio/rmarkdown
-  stars: 3018
+  stars: 3021
   title: rmarkdown
   website: https://rmarkdown.rstudio.com
 ---

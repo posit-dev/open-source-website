@@ -20,13 +20,13 @@ people:
 title: devtools
 website: https://devtools.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Tools to make an R developer's life easier
   first_commit: '2010-05-03T04:08:49+00:00'
-  forks: 761
+  forks: 762
   languages:
   - R
-  last_updated: '2026-02-17T11:31:48.257640+00:00'
+  last_updated: '2026-02-24T09:26:33.955723+00:00'
   latest_release: '2025-10-02T01:44:51+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +43,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/devtools
-  stars: 2496
+  stars: 2497
   title: devtools
   website: https://devtools.r-lib.org
 ---

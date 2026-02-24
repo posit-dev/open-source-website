@@ -12,13 +12,13 @@ people:
 title: googlesheets4
 website: https://googlesheets4.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: Google Spreadsheets R API (reboot of the googlesheets package)
   first_commit: '2017-04-28T02:03:33+00:00'
   forks: 53
   languages:
   - R
-  last_updated: '2026-02-17T11:28:39.542764+00:00'
+  last_updated: '2026-02-24T09:26:23.661327+00:00'
   latest_release: '2025-09-03T23:00:17+00:00'
   license: NOASSERTION
   people:

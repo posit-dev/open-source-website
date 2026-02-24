@@ -8,13 +8,13 @@ people:
 title: r-manuals
 website: https://rstudio.github.io/r-manuals
 
-external:
+external:  # updated automatically, do not edit
   description: A re-styled version of the R manuals
   first_commit: '2021-12-28T15:17:10+00:00'
-  forks: 10
+  forks: 11
   languages:
   - R
-  last_updated: '2026-02-17T11:25:00.724486+00:00'
+  last_updated: '2026-02-24T09:26:19.708167+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux

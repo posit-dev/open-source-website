@@ -12,13 +12,13 @@ people:
 title: blogdown
 website: https://pkgs.rstudio.com/blogdown/
 
-external:
+external:  # updated automatically, do not edit
   description: Create Blogs and Websites with R Markdown
   first_commit: '2016-11-02T18:57:35+00:00'
   forks: 323
   languages:
   - R
-  last_updated: '2026-02-17T11:18:41.546832+00:00'
+  last_updated: '2026-02-24T09:26:16.035825+00:00'
   latest_release: '2026-01-18T04:20:01+00:00'
   people:
   - Christophe Dervieux

@@ -10,13 +10,13 @@ people:
 title: bit64
 website: https://bit64.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: An R package with an S3 Class for Vectors of 64bit Integers
   first_commit: '2020-04-12T17:33:29+00:00'
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-17T11:36:07.776563+00:00'
+  last_updated: '2026-02-24T09:26:36.232511+00:00'
   latest_release: '2025-01-17T04:42:06+00:00'
   people:
   - Jeroen Janssens

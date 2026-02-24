@@ -20,14 +20,14 @@ people:
 title: recipes
 website: https://recipes.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Pipeable steps for feature engineering and data preprocessing to prepare
     for modeling
   first_commit: '2016-12-16T02:40:24+00:00'
   forks: 123
   languages:
   - R
-  last_updated: '2026-02-17T11:29:23.860427+00:00'
+  last_updated: '2026-02-24T09:26:26.917277+00:00'
   latest_release: '2025-05-21T17:05:49+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +43,7 @@ external:
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/recipes
-  stars: 612
+  stars: 613
   title: recipes
   website: https://recipes.tidymodels.org
 ---

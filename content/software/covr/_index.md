@@ -13,13 +13,13 @@ people:
 title: covr
 website: https://covr.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Test coverage reports for R
   first_commit: '2014-12-21T03:26:04+00:00'
-  forks: 120
+  forks: 121
   languages:
   - R
-  last_updated: '2026-02-17T11:32:38.609052+00:00'
+  last_updated: '2026-02-24T09:26:34.339616+00:00'
   latest_release: '2022-08-24T14:15:38+00:00'
   license: NOASSERTION
   people:
@@ -29,7 +29,7 @@ external:
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: r-lib/covr
-  stars: 344
+  stars: 345
   title: covr
   website: https://covr.r-lib.org
 ---

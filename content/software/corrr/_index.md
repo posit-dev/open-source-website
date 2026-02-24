@@ -14,13 +14,13 @@ people:
 title: corrr
 website: https://corrr.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Explore correlations in R
   first_commit: '2016-06-24T06:09:09+00:00'
   forks: 58
   languages:
   - R
-  last_updated: '2026-02-17T11:29:20.406397+00:00'
+  last_updated: '2026-02-24T09:26:26.892505+00:00'
   latest_release: '2022-08-16T19:52:49+00:00'
   license: NOASSERTION
   people:

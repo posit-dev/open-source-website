@@ -12,13 +12,13 @@ people:
 title: hms
 website: https://hms.tidyverse.org/
 
-external:
+external:  # updated automatically, do not edit
   description: A simple class for storing time-of-day values
   first_commit: '2016-03-31T09:05:58+00:00'
   forks: 29
   languages:
   - R
-  last_updated: '2026-02-17T11:28:14.051473+00:00'
+  last_updated: '2026-02-24T09:26:23.460478+00:00'
   latest_release: '2025-10-16T19:10:13+00:00'
   license: NOASSERTION
   people:

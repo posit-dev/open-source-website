@@ -17,13 +17,13 @@ people:
 title: dials
 website: https://dials.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Tools for creating tuning parameter values
   first_commit: '2018-07-23T03:07:49+00:00'
   forks: 33
   languages:
   - R
-  last_updated: '2026-02-17T11:29:49.536640+00:00'
+  last_updated: '2026-02-24T09:26:27.136812+00:00'
   latest_release: '2025-09-04T09:26:12+00:00'
   license: NOASSERTION
   people:

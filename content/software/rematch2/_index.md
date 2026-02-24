@@ -10,13 +10,13 @@ people:
 title: rematch2
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Tidy output from regular expression matches
   first_commit: '2017-06-20T15:18:28+00:00'
   forks: 6
   languages:
   - R
-  last_updated: '2026-02-17T11:34:27.007202+00:00'
+  last_updated: '2026-02-24T09:26:35.296903+00:00'
   latest_release: '2020-04-30T10:30:07+00:00'
   license: NOASSERTION
   people:

@@ -10,13 +10,13 @@ people:
 title: debugme
 website: https://r-lib.github.io/debugme/
 
-external:
+external:  # updated automatically, do not edit
   description: Easy and efficient debugging for R packages
   first_commit: '2016-09-25T14:36:52+00:00'
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-17T11:33:31.893920+00:00'
+  last_updated: '2026-02-24T09:26:34.827793+00:00'
   latest_release: '2024-04-25T07:24:47+00:00'
   license: NOASSERTION
   people:

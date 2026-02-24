@@ -17,13 +17,13 @@ people:
 title: infer
 website: https://infer.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: An R package for tidyverse-friendly statistical inference
   first_commit: '2017-06-05T17:41:42+00:00'
   forks: 84
   languages:
   - R
-  last_updated: '2026-02-17T11:29:30.762815+00:00'
+  last_updated: '2026-02-24T09:26:26.977174+00:00'
   latest_release: '2025-12-18T14:07:39+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/infer
-  stars: 779
+  stars: 781
   title: infer
   website: https://infer.tidymodels.org
 ---

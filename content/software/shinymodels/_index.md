@@ -14,13 +14,13 @@ people:
 title: shinymodels
 website: https://shinymodels.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2021-06-03T04:19:47+00:00'
   forks: 6
   languages:
   - R
-  last_updated: '2026-02-17T11:30:56.351084+00:00'
+  last_updated: '2026-02-24T09:26:27.766641+00:00'
   latest_release: '2024-01-31T15:11:11+00:00'
   license: NOASSERTION
   people:

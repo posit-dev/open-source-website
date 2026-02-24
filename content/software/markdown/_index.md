@@ -13,14 +13,14 @@ people:
 title: markdown
 website: https://cran.r-project.org/package=markdown
 
-external:
+external:  # updated automatically, do not edit
   description: The first generation of Markdown rendering for R (born in 2012), based
     on commonmark. Note that this package is markdown, not *rmarkdown*.
   first_commit: '2012-03-30T15:27:29+00:00'
   forks: 78
   languages:
   - R
-  last_updated: '2026-02-17T11:15:34.481493+00:00'
+  last_updated: '2026-02-24T09:26:14.182177+00:00'
   latest_release: '2025-03-23T19:41:12+00:00'
   license: NOASSERTION
   people:

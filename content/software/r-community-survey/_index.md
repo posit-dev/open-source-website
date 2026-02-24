@@ -7,14 +7,14 @@ languages:
 title: r-community-survey
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: This repo contains both the survey instruments, analysis documents,
     and data from the learning R survey.
   first_commit: '2018-12-10T16:26:41+00:00'
   forks: 8
   languages:
   - CSS
-  last_updated: '2026-02-17T11:21:30.761986+00:00'
+  last_updated: '2026-02-24T09:26:17.614268+00:00'
   license: Apache-2.0
   repo: rstudio/r-community-survey
   stars: 47

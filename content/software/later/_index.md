@@ -16,14 +16,14 @@ people:
 title: later
 website: https://later.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Schedule an R function or formula to run after a specified period of
     time
   first_commit: '2017-03-17T21:11:40+00:00'
   forks: 31
   languages:
   - C++
-  last_updated: '2026-02-17T11:34:07.433296+00:00'
+  last_updated: '2026-02-24T09:26:35.114416+00:00'
   latest_release: '2026-02-13T20:15:06+00:00'
   license: NOASSERTION
   people:

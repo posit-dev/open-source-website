@@ -12,13 +12,13 @@ people:
 title: pool
 website: http://rstudio.github.io/pool/
 
-external:
+external:  # updated automatically, do not edit
   description: Object Pooling in R
   first_commit: '2016-05-18T17:33:18+00:00'
   forks: 32
   languages:
   - R
-  last_updated: '2026-02-17T11:18:16.256145+00:00'
+  last_updated: '2026-02-24T09:26:15.799355+00:00'
   latest_release: '2024-10-07T14:57:52+00:00'
   license: NOASSERTION
   people:

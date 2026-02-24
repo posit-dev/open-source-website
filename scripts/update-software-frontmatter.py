@@ -148,6 +148,34 @@ def add_blank_lines_before_keys(yaml_str: str, keys: list[str]) -> str:
     return "\n".join(result)
 
 
+def add_comment_after_key(yaml_str: str, key: str, comment: str) -> str:
+    """
+    Add an inline comment after a specific top-level key in YAML string.
+
+    Args:
+        yaml_str: YAML string
+        key: Key to add comment after
+        comment: Comment text (without the # prefix)
+
+    Returns:
+        YAML string with comment added
+    """
+    lines = yaml_str.split("\n")
+    result = []
+
+    for line in lines:
+        # Check if this line is the target top-level key (no indentation)
+        if line and not line.startswith(" "):
+            key_name = line.split(":")[0] if ":" in line else ""
+            if key_name == key:
+                # Add comment at the end of the line
+                result.append(f"{line}  # {comment}")
+                continue
+        result.append(line)
+
+    return "\n".join(result)
+
+
 def format_frontmatter(frontmatter: dict[str, Any]) -> str:
     """
     Format frontmatter dict back to YAML string.
@@ -156,6 +184,7 @@ def format_frontmatter(frontmatter: dict[str, Any]) -> str:
     Disables YAML anchors/aliases (& and *).
     Sorts keys alphabetically but puts certain keys at the end in specific order.
     Adds blank lines before include, exclude, override, and external keys.
+    Adds an inline comment after the external key.
     """
     # Keys that should appear at the end, in this specific order
     keys_at_end = ["include", "exclude", "override", "external"]
@@ -175,6 +204,9 @@ def format_frontmatter(frontmatter: dict[str, Any]) -> str:
 
     # Add blank lines before special keys
     yaml_str = add_blank_lines_before_keys(yaml_str, keys_at_end)
+
+    # Add comment after external key
+    yaml_str = add_comment_after_key(yaml_str, "external", "updated automatically, do not edit")
 
     return yaml_str.strip()
 

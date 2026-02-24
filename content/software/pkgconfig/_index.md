@@ -9,13 +9,13 @@ people:
 title: pkgconfig
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Private configuration for R packages
   first_commit: '2014-09-07T18:37:00+00:00'
   forks: 2
   languages:
   - R
-  last_updated: '2026-02-17T11:32:20.481417+00:00'
+  last_updated: '2026-02-24T09:26:34.200157+00:00'
   latest_release: '2019-09-22T08:42:05+00:00'
   license: NOASSERTION
   people:

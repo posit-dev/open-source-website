@@ -10,13 +10,13 @@ people:
 title: gt-extras
 website: https://posit-dev.github.io/gt-extras/
 
-external:
+external:  # updated automatically, do not edit
   description: A Collection of Helper Functions for the great-tables Package.
   first_commit: '2025-06-11T15:09:21+00:00'
   forks: 9
   languages:
   - Python
-  last_updated: '2026-02-17T11:13:35.943504+00:00'
+  last_updated: '2026-02-24T09:25:58.237040+00:00'
   latest_release: '2025-08-18T16:34:42+00:00'
   license: MIT
   people:

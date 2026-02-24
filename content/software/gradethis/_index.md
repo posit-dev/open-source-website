@@ -13,13 +13,13 @@ people:
 title: gradethis
 website: https://pkgs.rstudio.com/gradethis/
 
-external:
+external:  # updated automatically, do not edit
   description: Tools for teachers to use with learnr
   first_commit: '2018-03-25T19:49:44+00:00'
   forks: 41
   languages:
   - R
-  last_updated: '2026-02-17T11:20:29.634861+00:00'
+  last_updated: '2026-02-24T09:26:17.024689+00:00'
   latest_release: '2023-06-27T02:54:24+00:00'
   license: NOASSERTION
   people:

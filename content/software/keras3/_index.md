@@ -12,13 +12,13 @@ people:
 title: keras3
 website: https://keras3.posit.co/
 
-external:
+external:  # updated automatically, do not edit
   description: R Interface to Keras
   first_commit: '2017-02-01T17:17:47+00:00'
   forks: 284
   languages:
   - R
-  last_updated: '2026-02-17T11:18:59.144027+00:00'
+  last_updated: '2026-02-24T09:26:16.175212+00:00'
   latest_release: '2026-02-13T02:51:33+00:00'
   license: NOASSERTION
   people:

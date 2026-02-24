@@ -13,13 +13,13 @@ people:
 title: bookdown
 website: https://pkgs.rstudio.com/bookdown/
 
-external:
+external:  # updated automatically, do not edit
   description: Authoring Books and Technical Documents with R Markdown
   first_commit: '2015-10-28T05:03:18+00:00'
-  forks: 1276
+  forks: 1278
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:17:37.857286+00:00'
+  last_updated: '2026-02-24T09:26:15.365588+00:00'
   latest_release: '2025-12-05T17:16:47+00:00'
   license: GPL-3.0
   people:
@@ -29,7 +29,7 @@ external:
   - Carson Sievert
   readme_image: man/figures/logo.png
   repo: rstudio/bookdown
-  stars: 4009
+  stars: 4017
   title: bookdown
   website: https://pkgs.rstudio.com/bookdown/
 ---

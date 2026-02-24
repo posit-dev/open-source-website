@@ -12,13 +12,13 @@ people:
 title: spatialsample
 website: https://spatialsample.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Create and summarize spatial resampling objects 🗺
   first_commit: '2021-01-19T21:06:51+00:00'
   forks: 6
   languages:
   - R
-  last_updated: '2026-02-17T11:30:54.069526+00:00'
+  last_updated: '2026-02-24T09:26:27.747176+00:00'
   latest_release: '2024-10-02T16:28:40+00:00'
   license: NOASSERTION
   people:

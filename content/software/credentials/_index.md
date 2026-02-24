@@ -11,13 +11,13 @@ people:
 title: credentials
 website: https://docs.ropensci.org/credentials
 
-external:
+external:  # updated automatically, do not edit
   description: Tools for Managing SSH and Git Credentials
   first_commit: '2018-11-06T19:40:03+00:00'
   forks: 4
   languages:
   - R
-  last_updated: '2026-02-17T11:35:25.178872+00:00'
+  last_updated: '2026-02-24T09:26:35.842999+00:00'
   latest_release: '2020-07-21T08:31:43+00:00'
   license: NOASSERTION
   people:

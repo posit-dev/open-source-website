@@ -19,13 +19,13 @@ people:
 title: rstudio-conf-2022-program
 website: https://www.rstudio.com/conference/2022/schedule/
 
-external:
+external:  # updated automatically, do not edit
   description: rstudio::conf(2022, "program")
   first_commit: '2022-05-20T16:35:56+00:00'
   forks: 54
   languages:
   - R
-  last_updated: '2026-02-17T11:25:27.892920+00:00'
+  last_updated: '2026-02-24T09:26:19.998617+00:00'
   people:
   - Garrick Aden-Buie
   - Barret Schloerke

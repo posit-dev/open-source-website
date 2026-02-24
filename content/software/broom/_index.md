@@ -18,13 +18,13 @@ people:
 title: broom
 website: https://broom.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Convert statistical analysis objects from R into tidy format
   first_commit: '2014-09-11T19:17:04+00:00'
   forks: 305
   languages:
   - R
-  last_updated: '2026-02-17T11:29:18.216293+00:00'
+  last_updated: '2026-02-24T09:26:26.849297+00:00'
   latest_release: '2025-12-03T20:26:24+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/broom
-  stars: 1512
+  stars: 1510
   title: broom
   website: https://broom.tidymodels.org
 ---

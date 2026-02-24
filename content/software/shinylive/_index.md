@@ -15,13 +15,13 @@ people:
 title: shinylive
 website: https://shinylive.io/py/examples/
 
-external:
+external:  # updated automatically, do not edit
   description: Run Shiny on Python and R (compiled to wasm) in the browser
   first_commit: '2022-04-29T22:29:25+00:00'
   forks: 24
   languages:
   - TypeScript
-  last_updated: '2026-02-17T11:11:08.466154+00:00'
+  last_updated: '2026-02-24T09:25:56.814677+00:00'
   latest_release: '2025-12-08T20:54:30+00:00'
   license: MIT
   people:

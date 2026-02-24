@@ -6,13 +6,13 @@ languages:
 title: r-docker
 website: https://hub.docker.com/r/rstudio/r-base
 
-external:
+external:  # updated automatically, do not edit
   description: Docker images for R
   first_commit: '2019-02-27T22:14:56+00:00'
   forks: 25
   languages:
   - Dockerfile
-  last_updated: '2026-02-17T11:21:56.928620+00:00'
+  last_updated: '2026-02-24T09:26:17.880586+00:00'
   license: GPL-3.0
   repo: rstudio/r-docker
   stars: 140

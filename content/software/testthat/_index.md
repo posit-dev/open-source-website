@@ -23,13 +23,13 @@ people:
 title: testthat
 website: https://testthat.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: An R 📦 to make testing 😀
   first_commit: '2009-09-02T12:51:44+00:00'
-  forks: 339
+  forks: 340
   languages:
   - R
-  last_updated: '2026-02-17T11:31:43.010189+00:00'
+  last_updated: '2026-02-24T09:26:33.934225+00:00'
   latest_release: '2026-01-08T23:38:28+00:00'
   license: NOASSERTION
   people:
@@ -49,7 +49,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/testthat
-  stars: 923
+  stars: 925
   title: testthat
   website: https://testthat.r-lib.org
 ---

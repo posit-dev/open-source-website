@@ -15,13 +15,13 @@ people:
 title: tidyposterior
 website: https://tidyposterior.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Bayesian comparisons of models using resampled statistics
   first_commit: '2017-10-15T17:39:33+00:00'
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-17T11:29:32.900365+00:00'
+  last_updated: '2026-02-24T09:26:26.996773+00:00'
   latest_release: '2025-07-30T23:43:16+00:00'
   license: NOASSERTION
   people:

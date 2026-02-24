@@ -14,13 +14,13 @@ people:
 title: vetiver-r
 website: https://rstudio.github.io/vetiver-r/
 
-external:
+external:  # updated automatically, do not edit
   description: Version, share, deploy, and monitor models
   first_commit: '2021-07-09T03:41:56+00:00'
-  forks: 30
+  forks: 31
   languages:
   - R
-  last_updated: '2026-02-17T11:24:39.142342+00:00'
+  last_updated: '2026-02-24T09:26:19.504546+00:00'
   latest_release: '2025-12-13T20:36:56+00:00'
   license: NOASSERTION
   people:

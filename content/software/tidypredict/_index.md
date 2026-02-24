@@ -17,13 +17,13 @@ people:
 title: tidypredict
 website: https://tidypredict.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Run predictions inside the database
   first_commit: '2017-12-18T00:26:43+00:00'
   forks: 33
   languages:
   - R
-  last_updated: '2026-02-17T11:29:40.757382+00:00'
+  last_updated: '2026-02-24T09:26:27.056538+00:00'
   latest_release: '2025-12-12T20:10:58+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/tidypredict
-  stars: 262
+  stars: 263
   title: tidypredict
   website: https://tidypredict.tidymodels.org
 ---

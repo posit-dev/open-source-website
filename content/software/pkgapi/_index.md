@@ -8,13 +8,13 @@ people:
 title: pkgapi
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Create a map of functions for an R package - WORK IN PROGRESS!
   first_commit: '2016-11-28T03:02:36+00:00'
   forks: 11
   languages:
   - R
-  last_updated: '2026-02-17T11:33:52.171893+00:00'
+  last_updated: '2026-02-24T09:26:34.970320+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

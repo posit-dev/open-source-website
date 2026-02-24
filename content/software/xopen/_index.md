@@ -10,13 +10,13 @@ people:
 title: xopen
 website: https://r-lib.github.io/xopen/
 
-external:
+external:  # updated automatically, do not edit
   description: Open System Files, URLs, Anything
   first_commit: '2018-09-10T08:11:47+00:00'
   forks: 3
   languages:
   - Shell
-  last_updated: '2026-02-17T11:35:10.999261+00:00'
+  last_updated: '2026-02-24T09:26:35.699456+00:00'
   latest_release: '2024-04-25T08:48:47+00:00'
   license: NOASSERTION
   people:

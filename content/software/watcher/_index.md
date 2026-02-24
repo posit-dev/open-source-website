@@ -10,13 +10,13 @@ people:
 title: watcher
 website: https://watcher.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Watch the File System for Changes
   first_commit: '2025-01-31T23:11:05+00:00'
   forks: 2
   languages:
   - C++
-  last_updated: '2026-02-17T11:37:11.533112+00:00'
+  last_updated: '2026-02-24T09:26:36.865111+00:00'
   latest_release: '2025-12-02T00:01:06+00:00'
   license: NOASSERTION
   people:

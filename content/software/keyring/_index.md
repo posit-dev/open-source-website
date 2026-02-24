@@ -12,13 +12,13 @@ people:
 title: keyring
 website: https://keyring.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: ':closed_lock_with_key: Access the system credential store from R'
   first_commit: '2017-01-27T16:18:55+00:00'
   forks: 31
   languages:
   - C
-  last_updated: '2026-02-17T11:33:58.414001+00:00'
+  last_updated: '2026-02-24T09:26:35.031018+00:00'
   latest_release: '2025-06-15T20:21:06+00:00'
   license: NOASSERTION
   people:

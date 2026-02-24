@@ -13,13 +13,13 @@ people:
 title: revdepcheck
 website: https://revdepcheck.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: R package reverse dependency checking
   first_commit: '2016-08-06T20:40:42+00:00'
   forks: 33
   languages:
   - R
-  last_updated: '2026-02-17T11:33:24.753958+00:00'
+  last_updated: '2026-02-24T09:26:34.766074+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

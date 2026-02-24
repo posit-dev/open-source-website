@@ -14,13 +14,13 @@ people:
 title: rig
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: The R Installation Manager
   first_commit: '2021-11-09T12:13:28+00:00'
   forks: 31
   languages:
   - Rust
-  last_updated: '2026-02-17T11:36:47.103469+00:00'
+  last_updated: '2026-02-24T09:26:36.619947+00:00'
   latest_release: '2025-10-22T17:35:17+00:00'
   license: MIT
   people:
@@ -31,7 +31,7 @@ external:
   - Emil Hvitfeldt
   readme_image: tools/rig-app.png
   repo: r-lib/rig
-  stars: 891
+  stars: 894
   title: rig
   website: ''
 ---

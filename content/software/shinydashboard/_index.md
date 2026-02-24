@@ -14,13 +14,13 @@ people:
 title: shinydashboard
 website: http://rstudio.github.io/shinydashboard/
 
-external:
+external:  # updated automatically, do not edit
   description: Shiny Dashboarding framework
   first_commit: '2014-11-11T19:55:03+00:00'
   forks: 297
   languages:
   - CSS
-  last_updated: '2026-02-17T11:16:57.122183+00:00'
+  last_updated: '2026-02-24T09:26:14.971656+00:00'
   latest_release: '2025-04-22T14:03:07+00:00'
   license: NOASSERTION
   people:

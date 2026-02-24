@@ -11,13 +11,13 @@ people:
 title: shinyapps-package-dependencies
 website: https://www.shinyapps.io/
 
-external:
+external:  # updated automatically, do not edit
   description: Collection of bash scripts that install R package system dependencies
   first_commit: '2014-08-08T04:57:26+00:00'
   forks: 57
   languages:
   - R
-  last_updated: '2026-02-17T11:16:41.112768+00:00'
+  last_updated: '2026-02-24T09:26:14.794090+00:00'
   license: NOASSERTION
   people:
   - JJ Allaire

@@ -9,13 +9,13 @@ people:
 title: miniUI
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2015-12-23T20:24:59+00:00'
   forks: 28
   languages:
   - R
-  last_updated: '2026-02-17T11:17:47.583418+00:00'
+  last_updated: '2026-02-24T09:26:15.483570+00:00'
   people:
   - Joe Cheng
   - JJ Allaire

@@ -11,13 +11,13 @@ people:
 title: blob
 website: https://blob.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: A simple S3 class for representing BLOBs
   first_commit: '2016-10-27T13:11:54+00:00'
   forks: 14
   languages:
   - R
-  last_updated: '2026-02-17T11:28:25.356767+00:00'
+  last_updated: '2026-02-24T09:26:23.561475+00:00'
   latest_release: '2026-01-13T06:57:50+00:00'
   license: NOASSERTION
   people:

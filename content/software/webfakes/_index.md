@@ -10,13 +10,13 @@ people:
 title: webfakes
 website: https://webfakes.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Fake web apps for HTTP testing R packages
   first_commit: '2020-03-30T15:34:05+00:00'
   forks: 6
   languages:
   - C
-  last_updated: '2026-02-17T11:36:03.487202+00:00'
+  last_updated: '2026-02-24T09:26:36.191901+00:00'
   latest_release: '2025-06-24T17:53:05+00:00'
   license: NOASSERTION
   people:

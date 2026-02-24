@@ -14,13 +14,13 @@ people:
 title: pins-python
 website: https://rstudio.github.io/pins-python/
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2022-02-07T16:34:15+00:00'
   forks: 11
   languages:
   - Python
-  last_updated: '2026-02-17T11:25:13.466847+00:00'
+  last_updated: '2026-02-24T09:26:19.834677+00:00'
   latest_release: '2025-10-03T16:46:15+00:00'
   license: MIT
   people:

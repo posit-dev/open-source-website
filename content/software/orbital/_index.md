@@ -7,17 +7,17 @@ latest_release: '2026-02-09T13:14:04+00:00'
 title: orbital
 website: https://posit-dev.github.io/orbital/
 
-external:
+external:  # updated automatically, do not edit
   description: Turn SciKitLearn pipelines into SQL
   first_commit: '2025-02-25T10:47:37+00:00'
   forks: 2
   languages:
   - Python
-  last_updated: '2026-02-17T11:13:11.532360+00:00'
+  last_updated: '2026-02-24T09:25:58.001247+00:00'
   latest_release: '2026-02-09T13:14:04+00:00'
   license: MIT
   repo: posit-dev/orbital
-  stars: 110
+  stars: 111
   title: orbital
   website: https://posit-dev.github.io/orbital/
 ---

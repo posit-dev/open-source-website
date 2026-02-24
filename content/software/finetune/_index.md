@@ -16,13 +16,13 @@ people:
 title: finetune
 website: https://finetune.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Additional functions for model tuning
   first_commit: '2020-07-04T20:12:07+00:00'
-  forks: 11
+  forks: 12
   languages:
   - R
-  last_updated: '2026-02-17T11:30:43.813138+00:00'
+  last_updated: '2026-02-24T09:26:27.645706+00:00'
   latest_release: '2025-05-20T21:08:32+00:00'
   license: NOASSERTION
   people:

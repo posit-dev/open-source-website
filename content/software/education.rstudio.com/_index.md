@@ -14,13 +14,13 @@ people:
 title: education.rstudio.com
 website: https://education.rstudio.com
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2018-12-03T22:12:20+00:00'
   forks: 35
   languages:
   - CSS
-  last_updated: '2026-02-17T11:21:27.500170+00:00'
+  last_updated: '2026-02-24T09:26:17.574083+00:00'
   license: CC-BY-SA-4.0
   people:
   - Mine Çetinkaya-Rundel

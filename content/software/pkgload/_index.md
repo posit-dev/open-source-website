@@ -18,13 +18,13 @@ people:
 title: pkgload
 website: http://pkgload.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Simulate installing and loading a package
   first_commit: '2016-11-07T21:45:48+00:00'
   forks: 53
   languages:
   - R
-  last_updated: '2026-02-17T11:33:44.145633+00:00'
+  last_updated: '2026-02-24T09:26:34.887420+00:00'
   latest_release: '2025-09-23T10:17:36+00:00'
   license: NOASSERTION
   people:

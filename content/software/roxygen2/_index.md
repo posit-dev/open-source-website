@@ -19,13 +19,13 @@ people:
 title: roxygen2
 website: https://roxygen2.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Generate R package documentation from inline R comments
   first_commit: '2011-05-18T08:23:27+00:00'
   forks: 238
   languages:
   - R
-  last_updated: '2026-02-17T11:31:59.285144+00:00'
+  last_updated: '2026-02-24T09:26:34.038192+00:00'
   latest_release: '2025-09-03T20:12:14+00:00'
   license: NOASSERTION
   people:
@@ -41,7 +41,7 @@ external:
   - Simon Couch
   readme_image: man/figures/logo.png
   repo: r-lib/roxygen2
-  stars: 627
+  stars: 629
   title: roxygen2
   website: https://roxygen2.r-lib.org
 ---

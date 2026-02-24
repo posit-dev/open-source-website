@@ -7,13 +7,13 @@ latest_release: '2018-10-30T18:58:30+00:00'
 title: graphframes
 website: https://spark.rstudio.com/graphframes/
 
-external:
+external:  # updated automatically, do not edit
   description: R Interface for GraphFrames
   first_commit: '2018-03-21T20:58:14+00:00'
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-17T11:20:27.300255+00:00'
+  last_updated: '2026-02-24T09:26:17.004998+00:00'
   latest_release: '2018-10-30T18:58:30+00:00'
   license: Apache-2.0
   repo: rstudio/graphframes

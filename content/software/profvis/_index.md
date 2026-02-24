@@ -16,13 +16,13 @@ people:
 title: profvis
 website: https://profvis.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Visualize R profiling data
   first_commit: '2015-09-18T18:01:49+00:00'
   forks: 38
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:33:00.683969+00:00'
+  last_updated: '2026-02-24T09:26:34.542790+00:00'
   latest_release: '2024-09-19T19:25:49+00:00'
   license: NOASSERTION
   people:

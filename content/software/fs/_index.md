@@ -17,13 +17,13 @@ people:
 title: fs
 website: https://fs.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Provide cross platform file operations based on libuv.
   first_commit: '2017-12-13T21:01:16+00:00'
   forks: 82
   languages:
   - C
-  last_updated: '2026-02-17T11:34:45.781157+00:00'
+  last_updated: '2026-02-24T09:26:35.429320+00:00'
   latest_release: '2025-04-12T09:38:14+00:00'
   license: NOASSERTION
   people:

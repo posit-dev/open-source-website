@@ -20,13 +20,13 @@ people:
 title: dbplyr
 website: https://dbplyr.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: Database (DBI) backend for dplyr
   first_commit: '2017-03-28T20:29:16+00:00'
-  forks: 187
+  forks: 185
   languages:
   - R
-  last_updated: '2026-02-17T11:28:35.315217+00:00'
+  last_updated: '2026-02-24T09:26:23.621413+00:00'
   latest_release: '2025-09-09T16:38:02+00:00'
   license: NOASSERTION
   people:

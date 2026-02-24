@@ -9,13 +9,13 @@ people:
 title: mockery
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: A mocking library for R.
   first_commit: '2016-07-18T18:54:06+00:00'
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-17T11:33:21.055255+00:00'
+  last_updated: '2026-02-24T09:26:34.725347+00:00'
   latest_release: '2025-09-03T20:06:59+00:00'
   license: NOASSERTION
   people:

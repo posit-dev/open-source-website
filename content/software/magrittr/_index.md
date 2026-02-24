@@ -14,13 +14,13 @@ people:
 title: magrittr
 website: https://magrittr.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: Improve the readability of R code with the pipe
   first_commit: '2014-01-01T13:30:01+00:00'
   forks: 161
   languages:
   - R
-  last_updated: '2026-02-17T11:27:42.888687+00:00'
+  last_updated: '2026-02-24T09:26:23.237995+00:00'
   latest_release: '2025-09-11T16:42:35+00:00'
   license: NOASSERTION
   people:

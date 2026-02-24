@@ -14,13 +14,13 @@ people:
 title: svglite
 website: https://svglite.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: A lightweight svg graphics device for R
   first_commit: '2012-11-27T14:29:49+00:00'
   forks: 40
   languages:
   - C++
-  last_updated: '2026-02-17T11:32:13.946003+00:00'
+  last_updated: '2026-02-24T09:26:34.139257+00:00'
   latest_release: '2025-10-20T15:57:02+00:00'
   people:
   - Hadley Wickham

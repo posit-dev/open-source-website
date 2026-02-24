@@ -16,13 +16,13 @@ people:
 title: promises
 website: https://rstudio.github.io/promises/
 
-external:
+external:  # updated automatically, do not edit
   description: A promise library for R
   first_commit: '2017-04-11T18:52:38+00:00'
   forks: 17
   languages:
   - R
-  last_updated: '2026-02-17T11:19:13.600086+00:00'
+  last_updated: '2026-02-24T09:26:16.292608+00:00'
   latest_release: '2025-11-05T18:06:35+00:00'
   license: NOASSERTION
   people:

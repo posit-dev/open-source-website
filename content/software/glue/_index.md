@@ -17,14 +17,14 @@ people:
 title: glue
 website: https://glue.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: Glue strings to data in R. Small, fast, dependency free interpreted
     string literals.
   first_commit: '2016-12-23T21:07:25+00:00'
   forks: 64
   languages:
   - R
-  last_updated: '2026-02-17T11:28:28.056400+00:00'
+  last_updated: '2026-02-24T09:26:23.581401+00:00'
   latest_release: '2024-09-27T15:59:19+00:00'
   license: NOASSERTION
   people:

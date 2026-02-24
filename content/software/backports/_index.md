@@ -7,13 +7,13 @@ latest_release: '2024-08-12T09:35:38+00:00'
 title: backports
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Reimplementations of Functions Introduced Since R-3.0.0
   first_commit: '2016-02-12T08:08:46+00:00'
   forks: 14
   languages:
   - R
-  last_updated: '2026-02-17T11:33:12.148847+00:00'
+  last_updated: '2026-02-24T09:26:34.643202+00:00'
   latest_release: '2024-08-12T09:35:38+00:00'
   repo: r-lib/backports
   stars: 66

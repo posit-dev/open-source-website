@@ -12,13 +12,13 @@ people:
 title: py-shinyswatch
 website: https://posit-dev.github.io/py-shinyswatch/
 
-external:
+external:  # updated automatically, do not edit
   description: Bootswatch themes for py-shiny
   first_commit: '2023-03-27T20:11:42+00:00'
   forks: 4
   languages:
   - Python
-  last_updated: '2026-02-17T11:11:25.747351+00:00'
+  last_updated: '2026-02-24T09:25:56.954507+00:00'
   latest_release: '2025-03-03T19:13:26+00:00'
   license: MIT
   people:

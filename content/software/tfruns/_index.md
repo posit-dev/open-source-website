@@ -11,13 +11,13 @@ people:
 title: tfruns
 website: https://tensorflow.rstudio.com/tools/tfruns/index.html
 
-external:
+external:  # updated automatically, do not edit
   description: Track, Visualize, and Manage TensorFlow Training Runs
   first_commit: '2017-07-20T11:17:34+00:00'
   forks: 22
   languages:
   - HTML
-  last_updated: '2026-02-17T11:19:38.227829+00:00'
+  last_updated: '2026-02-24T09:26:16.531103+00:00'
   latest_release: '2025-08-20T13:21:33+00:00'
   people:
   - JJ Allaire

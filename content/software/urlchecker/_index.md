@@ -11,13 +11,13 @@ people:
 title: urlchecker
 website: https://urlchecker.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Run CRAN URL checks from older versions of R
   first_commit: '2020-10-02T13:26:31+00:00'
   forks: 5
   languages:
   - R
-  last_updated: '2026-02-17T11:36:29.920553+00:00'
+  last_updated: '2026-02-24T09:26:36.457623+00:00'
   latest_release: '2021-11-30T00:26:11+00:00'
   license: GPL-3.0
   people:

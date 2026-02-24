@@ -12,13 +12,13 @@ people:
 title: r-shinylive
 website: https://posit-dev.github.io/r-shinylive/
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2023-09-07T14:44:00+00:00'
   forks: 20
   languages:
   - R
-  last_updated: '2026-02-17T11:11:34.003867+00:00'
+  last_updated: '2026-02-24T09:25:57.032408+00:00'
   latest_release: '2024-11-13T16:30:05+00:00'
   license: NOASSERTION
   people:

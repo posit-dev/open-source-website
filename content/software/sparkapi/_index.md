@@ -8,13 +8,13 @@ people:
 title: sparkapi
 website: http://spark.rstudio.com/extensions.html
 
-external:
+external:  # updated automatically, do not edit
   description: Sparklyr Extensions API
   first_commit: '2016-06-20T20:23:25+00:00'
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-17T11:18:21.203407+00:00'
+  last_updated: '2026-02-24T09:26:15.858803+00:00'
   license: Apache-2.0
   people:
   - JJ Allaire

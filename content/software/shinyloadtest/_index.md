@@ -14,13 +14,13 @@ people:
 title: shinyloadtest
 website: https://rstudio.github.io/shinyloadtest/
 
-external:
+external:  # updated automatically, do not edit
   description: Tools for load testing Shiny applications
   first_commit: '2017-02-14T06:46:53+00:00'
   forks: 22
   languages:
   - HTML
-  last_updated: '2026-02-17T11:19:04.946617+00:00'
+  last_updated: '2026-02-24T09:26:16.214430+00:00'
   latest_release: '2026-02-09T14:55:05+00:00'
   people:
   - Barret Schloerke

@@ -12,13 +12,13 @@ people:
 title: bench
 website: http://bench.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: High Precision Timing of R Expressions
   first_commit: '2018-04-10T18:01:13+00:00'
   forks: 25
   languages:
   - R
-  last_updated: '2026-02-17T11:34:54.376886+00:00'
+  last_updated: '2026-02-24T09:26:35.530445+00:00'
   latest_release: '2025-01-16T22:42:26+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +27,7 @@ external:
   - Jeroen Janssens
   readme_image: man/figures/README-autoplot-1.png
   repo: r-lib/bench
-  stars: 254
+  stars: 255
   title: bench
   website: http://bench.r-lib.org/
 ---

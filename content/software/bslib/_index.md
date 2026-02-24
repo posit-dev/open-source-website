@@ -17,13 +17,13 @@ people:
 title: bslib
 website: https://rstudio.github.io/bslib/
 
-external:
+external:  # updated automatically, do not edit
   description: Tools for theming Shiny and R Markdown via Bootstrap 3, 4, or 5.
   first_commit: '2019-11-01T22:21:50+00:00'
-  forks: 65
+  forks: 66
   languages:
   - SCSS
-  last_updated: '2026-02-17T11:22:52.447917+00:00'
+  last_updated: '2026-02-24T09:26:18.392358+00:00'
   latest_release: '2026-01-26T16:25:01+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:
   - Lionel Henry
   readme_image: man/figures/logo.png
   repo: rstudio/bslib
-  stars: 547
+  stars: 550
   title: bslib
   website: https://rstudio.github.io/bslib/
 ---

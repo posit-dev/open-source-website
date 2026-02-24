@@ -12,13 +12,13 @@ people:
 title: crayon
 website: http://r-lib.github.io/crayon/
 
-external:
+external:  # updated automatically, do not edit
   description: 🖍️ R package for colored terminal output — now superseded by cli
   first_commit: '2014-09-22T20:07:22+00:00'
   forks: 38
   languages:
   - R
-  last_updated: '2026-02-17T11:32:24.738559+00:00'
+  last_updated: '2026-02-24T09:26:34.239706+00:00'
   latest_release: '2024-06-20T11:48:46+00:00'
   license: NOASSERTION
   people:

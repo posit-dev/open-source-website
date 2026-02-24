@@ -15,13 +15,13 @@ people:
 title: fontawesome
 website: https://rstudio.github.io/fontawesome/
 
-external:
+external:  # updated automatically, do not edit
   description: Easily insert FontAwesome icons into R Markdown docs and Shiny apps
   first_commit: '2018-05-30T22:31:54+00:00'
   forks: 39
   languages:
   - R
-  last_updated: '2026-02-17T11:20:46.504474+00:00'
+  last_updated: '2026-02-24T09:26:17.183634+00:00'
   latest_release: '2024-11-16T17:56:25+00:00'
   license: NOASSERTION
   people:

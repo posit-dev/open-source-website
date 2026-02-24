@@ -17,13 +17,13 @@ people:
 title: gt
 website: https://gt.rstudio.com
 
-external:
+external:  # updated automatically, do not edit
   description: Easily generate information-rich, publication-quality tables from R
   first_commit: '2018-03-20T15:18:51+00:00'
   forks: 217
   languages:
   - R
-  last_updated: '2026-02-17T11:20:22.492358+00:00'
+  last_updated: '2026-02-24T09:26:16.965717+00:00'
   latest_release: '2026-01-22T14:22:09+00:00'
   license: NOASSERTION
   people:

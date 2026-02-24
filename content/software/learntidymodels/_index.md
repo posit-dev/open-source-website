@@ -10,13 +10,13 @@ people:
 title: learntidymodels
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Learn tidymodels with interactive learnr primers
   first_commit: '2020-06-05T20:57:16+00:00'
   forks: 19
   languages:
   - R
-  last_updated: '2026-02-17T11:30:35.904707+00:00'
+  last_updated: '2026-02-24T09:26:27.564530+00:00'
   license: NOASSERTION
   people:
   - Julia Silge

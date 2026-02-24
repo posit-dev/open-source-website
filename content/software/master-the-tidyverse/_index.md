@@ -4,11 +4,11 @@ github: rstudio/master-the-tidyverse
 title: master-the-tidyverse
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Course contents for Master the Tidyverse
   first_commit: '2017-07-07T19:08:47+00:00'
   forks: 67
-  last_updated: '2026-02-17T11:19:34.252851+00:00'
+  last_updated: '2026-02-24T09:26:16.491349+00:00'
   license: NOASSERTION
   repo: rstudio/master-the-tidyverse
   stars: 162

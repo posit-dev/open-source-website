@@ -14,13 +14,13 @@ people:
 title: multilevelmod
 website: https://multilevelmod.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Parsnip wrappers for mixed-level and hierarchical models
   first_commit: '2020-04-23T22:54:06+00:00'
   forks: 6
   languages:
   - R
-  last_updated: '2026-02-17T11:30:29.932299+00:00'
+  last_updated: '2026-02-24T09:26:27.504797+00:00'
   latest_release: '2022-06-17T12:13:05+00:00'
   license: NOASSERTION
   people:

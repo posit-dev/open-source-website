@@ -10,13 +10,13 @@ people:
 title: shinythemes
 website: http://rstudio.github.io/shinythemes/
 
-external:
+external:  # updated automatically, do not edit
   description: Themes for Shiny
   first_commit: '2014-12-05T19:00:43+00:00'
   forks: 76
   languages:
   - R
-  last_updated: '2026-02-17T11:17:08.499201+00:00'
+  last_updated: '2026-02-24T09:26:15.070136+00:00'
   license: NOASSERTION
   people:
   - Winston Chang

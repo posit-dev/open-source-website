@@ -16,13 +16,13 @@ people:
 title: pak
 website: https://pak.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: A fresh approach to package installation
   first_commit: '2017-11-02T19:33:56+00:00'
-  forks: 77
+  forks: 78
   languages:
   - C
-  last_updated: '2026-02-17T11:34:37.941295+00:00'
+  last_updated: '2026-02-24T09:26:35.408299+00:00'
   latest_release: '2025-12-21T19:30:49+00:00'
   people:
   - Gábor Csárdi

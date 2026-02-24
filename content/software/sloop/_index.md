@@ -10,13 +10,13 @@ people:
 title: sloop
 website: https://sloop.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: S language OOP ⛵️
   first_commit: '2017-02-08T18:50:26+00:00'
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-17T11:34:00.669747+00:00'
+  last_updated: '2026-02-24T09:26:35.051920+00:00'
   latest_release: '2019-02-17T15:12:20+00:00'
   people:
   - Hadley Wickham

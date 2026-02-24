@@ -11,13 +11,13 @@ people:
 title: progress
 website: http://r-lib.github.io/progress/
 
-external:
+external:  # updated automatically, do not edit
   description: Progress bar in your R terminal
   first_commit: '2014-10-03T20:14:56+00:00'
   forks: 40
   languages:
   - R
-  last_updated: '2026-02-17T11:32:35.441133+00:00'
+  last_updated: '2026-02-24T09:26:34.319521+00:00'
   latest_release: '2023-12-05T09:32:50+00:00'
   license: NOASSERTION
   people:

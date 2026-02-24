@@ -12,13 +12,13 @@ people:
 title: shinycoreci
 website: https://rstudio.github.io/shinycoreci/
 
-external:
+external:  # updated automatically, do not edit
   description: Application-level automated tests for Shiny
   first_commit: '2019-12-10T21:46:45+00:00'
   forks: 7
   languages:
   - HTML
-  last_updated: '2026-02-17T11:23:01.047144+00:00'
+  last_updated: '2026-02-24T09:26:18.475693+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke

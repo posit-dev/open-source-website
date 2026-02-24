@@ -13,13 +13,13 @@ people:
 title: clock
 website: https://clock.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: A Date-Time Library for R
   first_commit: '2020-10-26T19:27:27+00:00'
   forks: 7
   languages:
   - R
-  last_updated: '2026-02-17T11:36:32.214560+00:00'
+  last_updated: '2026-02-24T09:26:36.478516+00:00'
   latest_release: '2026-01-13T16:12:36+00:00'
   license: NOASSERTION
   people:

@@ -9,13 +9,13 @@ people:
 title: bookdown.org
 website: https://bookdown.org
 
-external:
+external:  # updated automatically, do not edit
   description: Source documents to generate the bookdown.org website
   first_commit: '2018-07-16T22:14:59+00:00'
   forks: 80
   languages:
   - R
-  last_updated: '2026-02-17T11:20:56.564772+00:00'
+  last_updated: '2026-02-24T09:26:17.282652+00:00'
   license: MIT
   people:
   - Christophe Dervieux

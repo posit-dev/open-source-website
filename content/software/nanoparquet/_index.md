@@ -10,20 +10,20 @@ people:
 title: nanoparquet
 website: https://nanoparquet.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: R package to read and write Parquet files
   first_commit: '2024-03-30T15:40:31+00:00'
   forks: 6
   languages:
   - C++
-  last_updated: '2026-02-17T11:37:01.497507+00:00'
+  last_updated: '2026-02-24T09:26:36.762429+00:00'
   latest_release: '2025-12-16T21:21:31+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jeroen Janssens
   repo: r-lib/nanoparquet
-  stars: 79
+  stars: 80
   title: nanoparquet
   website: https://nanoparquet.r-lib.org/
 ---

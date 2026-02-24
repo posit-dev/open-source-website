@@ -12,14 +12,14 @@ people:
 title: tinytex
 website: https://yihui.org/tinytex/
 
-external:
+external:  # updated automatically, do not edit
   description: A lightweight, cross-platform, portable, and easy-to-maintain LaTeX
     distribution based on TeX Live
   first_commit: '2017-11-16T21:24:02+00:00'
-  forks: 122
+  forks: 123
   languages:
   - R
-  last_updated: '2026-02-17T11:20:04.688930+00:00'
+  last_updated: '2026-02-24T09:26:16.807973+00:00'
   latest_release: '2025-11-19T14:28:59+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +27,7 @@ external:
   - JJ Allaire
   readme_image: https://yihui.org/images/logo-tinytex.png
   repo: rstudio/tinytex
-  stars: 1088
+  stars: 1089
   title: tinytex
   website: https://yihui.org/tinytex/
 ---

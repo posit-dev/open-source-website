@@ -14,13 +14,13 @@ people:
 title: haven
 website: https://haven.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: Read SPSS, Stata and SAS files from R
   first_commit: '2015-02-04T16:28:17+00:00'
   forks: 116
   languages:
   - C
-  last_updated: '2026-02-17T11:27:58.889604+00:00'
+  last_updated: '2026-02-24T09:26:23.339770+00:00'
   latest_release: '2025-05-30T13:08:26+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +31,7 @@ external:
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: tidyverse/haven
-  stars: 446
+  stars: 447
   title: haven
   website: https://haven.tidyverse.org
 ---

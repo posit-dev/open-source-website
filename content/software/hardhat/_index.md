@@ -17,13 +17,13 @@ people:
 title: hardhat
 website: https://hardhat.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Construct Modeling Packages
   first_commit: '2019-02-11T16:31:00+00:00'
   forks: 21
   languages:
   - R
-  last_updated: '2026-02-17T11:29:58.001418+00:00'
+  last_updated: '2026-02-24T09:26:27.216950+00:00'
   latest_release: '2025-08-20T08:57:28+00:00'
   license: NOASSERTION
   people:

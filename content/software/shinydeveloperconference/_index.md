@@ -9,14 +9,14 @@ people:
 title: ShinyDeveloperConference
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Materials collected from the First Shiny Developer Conference Palo
     Alto, CA January 30-31 2016
   first_commit: '2016-04-13T17:16:05+00:00'
   forks: 328
   languages:
   - HTML
-  last_updated: '2026-02-17T11:18:10.747965+00:00'
+  last_updated: '2026-02-24T09:26:15.740187+00:00'
   people:
   - Joe Cheng
   repo: rstudio/ShinyDeveloperConference

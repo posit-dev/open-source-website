@@ -13,13 +13,13 @@ people:
 title: desc
 website: https://desc.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Manipulate DESCRIPTION files
   first_commit: '2015-09-07T22:01:43+00:00'
   forks: 35
   languages:
   - R
-  last_updated: '2026-02-17T11:32:58.666297+00:00'
+  last_updated: '2026-02-24T09:26:34.522133+00:00'
   latest_release: '2023-12-10T11:07:16+00:00'
   license: NOASSERTION
   people:

@@ -10,13 +10,13 @@ people:
 title: reactlog
 website: http://rstudio.github.io/reactlog
 
-external:
+external:  # updated automatically, do not edit
   description: Shiny Reactivity Visualizer
   first_commit: '2018-06-18T19:54:37+00:00'
   forks: 8
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:20:50.622273+00:00'
+  last_updated: '2026-02-24T09:26:17.223063+00:00'
   latest_release: '2022-09-26T16:21:09+00:00'
   license: NOASSERTION
   people:

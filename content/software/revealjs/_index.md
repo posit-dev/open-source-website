@@ -9,13 +9,13 @@ people:
 title: revealjs
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: R Markdown Format for reveal.js Presentations
   first_commit: '2014-09-15T13:20:50+00:00'
   forks: 85
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:16:44.965742+00:00'
+  last_updated: '2026-02-24T09:26:14.833642+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux

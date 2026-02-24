@@ -12,13 +12,13 @@ people:
 title: ps
 website: https://ps.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: R package to query, list, manipulate system processes
   first_commit: '2018-06-15T12:19:35+00:00'
   forks: 22
   languages:
   - C
-  last_updated: '2026-02-17T11:35:03.072858+00:00'
+  last_updated: '2026-02-24T09:26:35.612143+00:00'
   latest_release: '2025-04-12T09:22:49+00:00'
   license: NOASSERTION
   people:

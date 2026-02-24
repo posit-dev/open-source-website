@@ -10,13 +10,13 @@ people:
 title: prettyunits
 website: http://r-lib.github.io/prettyunits/
 
-external:
+external:  # updated automatically, do not edit
   description: Pretty, human readable formatting of quantities
   first_commit: '2014-10-03T19:59:19+00:00'
   forks: 16
   languages:
   - JavaScript
-  last_updated: '2026-02-17T11:32:33.073460+00:00'
+  last_updated: '2026-02-24T09:26:34.299620+00:00'
   latest_release: '2023-09-24T10:52:33+00:00'
   license: NOASSERTION
   people:

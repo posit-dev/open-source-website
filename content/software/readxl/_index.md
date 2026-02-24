@@ -14,13 +14,13 @@ people:
 title: readxl
 website: https://readxl.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: Read excel files (.xls and .xlsx) into R 🖇
   first_commit: '2015-03-13T14:50:20+00:00'
   forks: 196
   languages:
   - C++
-  last_updated: '2026-02-17T11:28:01.440142+00:00'
+  last_updated: '2026-02-24T09:26:23.360012+00:00'
   latest_release: '2025-03-07T07:25:18+00:00'
   license: NOASSERTION
   people:

@@ -8,13 +8,13 @@ people:
 title: cranwhales
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2018-05-25T23:12:51+00:00'
   forks: 15
   languages:
   - R
-  last_updated: '2026-02-17T11:20:44.143814+00:00'
+  last_updated: '2026-02-24T09:26:17.163526+00:00'
   people:
   - Joe Cheng
   repo: rstudio/cranwhales

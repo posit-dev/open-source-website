@@ -26,13 +26,13 @@ people:
 title: pkgdown
 website: https://pkgdown.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Generate static html documentation for an R package
   first_commit: '2012-03-15T00:36:24+00:00'
   forks: 344
   languages:
   - R
-  last_updated: '2026-02-17T11:32:09.478254+00:00'
+  last_updated: '2026-02-24T09:26:34.098927+00:00'
   latest_release: '2025-11-05T16:48:34+00:00'
   license: NOASSERTION
   people:
@@ -55,7 +55,7 @@ external:
   - Daniel Falbel
   readme_image: man/figures/logo.png
   repo: r-lib/pkgdown
-  stars: 764
+  stars: 765
   title: pkgdown
   website: https://pkgdown.r-lib.org/
 ---

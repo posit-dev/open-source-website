@@ -10,13 +10,13 @@ people:
 title: ellipsis
 website: https://ellipsis.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Tools for Working with ...
   first_commit: '2018-07-06T20:49:16+00:00'
   forks: 14
   languages:
   - R
-  last_updated: '2026-02-17T11:35:06.736706+00:00'
+  last_updated: '2026-02-24T09:26:35.657239+00:00'
   latest_release: '2021-04-29T12:05:34+00:00'
   license: NOASSERTION
   people:

@@ -28,13 +28,13 @@ people:
 title: hex-stickers
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: RStudio hex stickers
   first_commit: '2018-03-27T18:05:42+00:00'
   forks: 133
   languages:
   - R
-  last_updated: '2026-02-17T11:20:31.778821+00:00'
+  last_updated: '2026-02-24T09:26:17.044845+00:00'
   license: CC0-1.0
   people:
   - Hadley Wickham

@@ -21,13 +21,13 @@ people:
 title: ellmer
 website: https://ellmer.tidyverse.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Call LLM APIs from R
   first_commit: '2024-08-27T21:55:59+00:00'
-  forks: 120
+  forks: 121
   languages:
   - R
-  last_updated: '2026-02-17T11:29:04.405145+00:00'
+  last_updated: '2026-02-24T09:26:23.919025+00:00'
   latest_release: '2025-11-14T20:30:45+00:00'
   license: NOASSERTION
   people:
@@ -45,7 +45,7 @@ external:
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: tidyverse/ellmer
-  stars: 581
+  stars: 584
   title: ellmer
   website: https://ellmer.tidyverse.org/
 ---

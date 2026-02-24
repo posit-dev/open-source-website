@@ -26,13 +26,13 @@ people:
 title: ggplot2
 website: https://ggplot2.tidyverse.org
 
-external:
+external:  # updated automatically, do not edit
   description: An implementation of the Grammar of Graphics in R
   first_commit: '2008-05-25T01:21:32+00:00'
-  forks: 2131
+  forks: 2135
   languages:
   - R
-  last_updated: '2026-02-17T11:27:21.792971+00:00'
+  last_updated: '2026-02-24T09:26:23.111568+00:00'
   latest_release: '2026-02-02T09:41:41+00:00'
   license: NOASSERTION
   people:
@@ -55,7 +55,7 @@ external:
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/ggplot2
-  stars: 6876
+  stars: 6881
   title: ggplot2
   website: https://ggplot2.tidyverse.org
 ---

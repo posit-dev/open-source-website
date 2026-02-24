@@ -15,13 +15,13 @@ people:
 title: modeldb
 website: https://modeldb.tidymodels.org
 
-external:
+external:  # updated automatically, do not edit
   description: Run models inside a database using R
   first_commit: '2018-03-02T02:01:56+00:00'
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-17T11:29:43.049797+00:00'
+  last_updated: '2026-02-24T09:26:27.077034+00:00'
   latest_release: '2025-08-22T17:22:28+00:00'
   license: NOASSERTION
   people:

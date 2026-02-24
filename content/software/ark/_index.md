@@ -17,13 +17,13 @@ people:
 title: ark
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Ark, an R kernel
   first_commit: '2023-05-18T17:08:46+00:00'
   forks: 24
   languages:
   - Rust
-  last_updated: '2026-02-17T11:11:29.989986+00:00'
+  last_updated: '2026-02-24T09:25:56.993757+00:00'
   latest_release: '2026-01-30T15:17:50+00:00'
   license: MIT
   people:
@@ -37,7 +37,7 @@ external:
   - Simon Couch
   readme_image: doc/logo.png
   repo: posit-dev/ark
-  stars: 286
+  stars: 288
   title: ark
   website: ''
 ---

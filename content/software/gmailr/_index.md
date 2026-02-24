@@ -11,13 +11,13 @@ people:
 title: gmailr
 website: https://gmailr.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Access the Gmail RESTful API from R.
   first_commit: '2014-07-09T16:54:55+00:00'
   forks: 55
   languages:
   - R
-  last_updated: '2026-02-17T11:32:18.297121+00:00'
+  last_updated: '2026-02-24T09:26:34.180438+00:00'
   latest_release: '2026-01-29T22:39:25+00:00'
   license: NOASSERTION
   people:

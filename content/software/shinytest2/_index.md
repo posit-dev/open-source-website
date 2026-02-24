@@ -15,13 +15,13 @@ people:
 title: shinytest2
 website: https://rstudio.github.io/shinytest2/
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2021-07-06T19:41:56+00:00'
   forks: 21
   languages:
   - R
-  last_updated: '2026-02-17T11:24:36.767846+00:00'
+  last_updated: '2026-02-24T09:26:19.484105+00:00'
   latest_release: '2026-01-09T21:28:50+00:00'
   license: NOASSERTION
   people:

@@ -10,13 +10,13 @@ people:
 title: shiny-assistant
 website: https://gallery.shinyapps.io/assistant/
 
-external:
+external:  # updated automatically, do not edit
   description: Chat assistant for Shiny
   first_commit: '2024-08-02T19:15:02+00:00'
-  forks: 19
+  forks: 18
   languages:
   - Python
-  last_updated: '2026-02-17T11:12:24.946032+00:00'
+  last_updated: '2026-02-24T09:25:57.545434+00:00'
   people:
   - Winston Chang
   - Joe Cheng

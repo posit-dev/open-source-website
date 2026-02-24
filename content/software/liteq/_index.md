@@ -8,13 +8,13 @@ people:
 title: liteq
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Serverless R message queue using SQLite
   first_commit: '2017-01-07T22:29:26+00:00'
   forks: 9
   languages:
   - R
-  last_updated: '2026-02-17T11:33:56.222468+00:00'
+  last_updated: '2026-02-24T09:26:35.010646+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

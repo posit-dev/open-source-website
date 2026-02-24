@@ -11,13 +11,13 @@ people:
 title: memoise
 website: https://memoise.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Easy memoisation for R
   first_commit: '2010-11-11T17:37:44+00:00'
   forks: 58
   languages:
   - R
-  last_updated: '2026-02-17T11:31:55.437918+00:00'
+  last_updated: '2026-02-24T09:26:34.016384+00:00'
   latest_release: '2021-11-24T21:24:31+00:00'
   license: NOASSERTION
   people:

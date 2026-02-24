@@ -13,13 +13,13 @@ people:
 title: vetiver-python
 website: https://rstudio.github.io/vetiver-python/stable/
 
-external:
+external:  # updated automatically, do not edit
   description: Version, share, deploy, and monitor models.
   first_commit: '2021-12-09T02:14:08+00:00'
-  forks: 18
+  forks: 19
   languages:
   - Python
-  last_updated: '2026-02-17T11:24:57.075133+00:00'
+  last_updated: '2026-02-24T09:26:19.667115+00:00'
   latest_release: '2024-12-17T02:43:43+00:00'
   license: MIT
   people:

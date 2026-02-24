@@ -13,13 +13,13 @@ people:
 title: packrat
 website: http://rstudio.github.io/packrat/
 
-external:
+external:  # updated automatically, do not edit
   description: Packrat is a dependency management system for R
   first_commit: '2013-10-08T21:29:27+00:00'
   forks: 89
   languages:
   - R
-  last_updated: '2026-02-17T11:16:08.392084+00:00'
+  last_updated: '2026-02-24T09:26:14.517852+00:00'
   latest_release: '2025-06-16T19:36:33+00:00'
   people:
   - Joe Cheng

@@ -17,13 +17,13 @@ people:
 title: learnr
 website: https://pkgs.rstudio.com/learnr
 
-external:
+external:  # updated automatically, do not edit
   description: Interactive Tutorials with R Markdown
   first_commit: '2016-10-19T16:33:44+00:00'
   forks: 242
   languages:
   - R
-  last_updated: '2026-02-17T11:18:38.569409+00:00'
+  last_updated: '2026-02-24T09:26:16.016466+00:00'
   latest_release: '2025-11-13T15:23:19+00:00'
   license: Apache-2.0
   people:

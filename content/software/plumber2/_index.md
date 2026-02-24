@@ -11,13 +11,13 @@ people:
 title: plumber2
 website: http://plumber2.posit.co/
 
-external:
+external:  # updated automatically, do not edit
   description: Easy and Powerful Webservers in R
   first_commit: '2025-02-27T14:17:04+00:00'
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-17T11:13:13.734326+00:00'
+  last_updated: '2026-02-24T09:25:58.020845+00:00'
   latest_release: '2026-01-20T09:21:21+00:00'
   license: NOASSERTION
   people:

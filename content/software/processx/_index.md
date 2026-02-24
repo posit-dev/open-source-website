@@ -14,13 +14,13 @@ people:
 title: processx
 website: https://processx.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Execute and Control Subprocesses from R
   first_commit: '2016-08-19T13:18:57+00:00'
   forks: 43
   languages:
   - R
-  last_updated: '2026-02-17T11:33:27.010584+00:00'
+  last_updated: '2026-02-24T09:26:34.786408+00:00'
   latest_release: '2025-02-19T21:20:17+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +31,7 @@ external:
   - Jeroen Ooms
   - Jeroen Janssens
   repo: r-lib/processx
-  stars: 244
+  stars: 243
   title: processx
   website: https://processx.r-lib.org/
 ---

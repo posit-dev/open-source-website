@@ -13,13 +13,13 @@ people:
 title: applicable
 website: https://applicable.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Quantify extrapolation of new samples given a training set
   first_commit: '2019-07-08T18:53:53+00:00'
   forks: 8
   languages:
   - R
-  last_updated: '2026-02-17T11:30:06.977185+00:00'
+  last_updated: '2026-02-24T09:26:27.298482+00:00'
   latest_release: '2024-04-24T17:26:35+00:00'
   license: NOASSERTION
   people:

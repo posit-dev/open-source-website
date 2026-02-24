@@ -24,13 +24,13 @@ override:
   description: Easy interactive web applications with Python
   title: Shiny for Python
 
-external:
+external:  # updated automatically, do not edit
   description: Shiny for Python
   first_commit: '2021-07-27T20:19:49+00:00'
   forks: 121
   languages:
   - Python
-  last_updated: '2026-02-17T11:10:54.797639+00:00'
+  last_updated: '2026-02-24T09:25:56.695330+00:00'
   latest_release: '2025-12-08T17:48:13+00:00'
   license: MIT
   people:

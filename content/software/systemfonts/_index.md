@@ -14,13 +14,13 @@ people:
 title: systemfonts
 website: https://systemfonts.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: System Native Font Handling in R
   first_commit: '2019-06-04T08:45:46+00:00'
   forks: 17
   languages:
   - C++
-  last_updated: '2026-02-17T11:35:47.688863+00:00'
+  last_updated: '2026-02-24T09:26:36.047709+00:00'
   latest_release: '2025-10-01T11:54:44+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +31,7 @@ external:
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: r-lib/systemfonts
-  stars: 95
+  stars: 96
   title: systemfonts
   website: https://systemfonts.r-lib.org
 ---

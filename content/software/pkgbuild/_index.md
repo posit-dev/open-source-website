@@ -14,13 +14,13 @@ people:
 title: pkgbuild
 website: https://pkgbuild.r-lib.org
 
-external:
+external:  # updated automatically, do not edit
   description: Find tools needed to build R packages
   first_commit: '2016-11-10T14:16:37+00:00'
   forks: 38
   languages:
   - R
-  last_updated: '2026-02-17T11:33:46.264737+00:00'
+  last_updated: '2026-02-24T09:26:34.908648+00:00'
   latest_release: '2025-05-26T10:36:19+00:00'
   license: NOASSERTION
   people:

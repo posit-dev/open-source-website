@@ -5,14 +5,14 @@ image: posit_round_logo.png
 title: python-tidytuesday
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: ''
   first_commit: '2025-02-12T19:48:04+00:00'
   forks: 4
-  last_updated: '2026-02-17T11:13:09.250046+00:00'
+  last_updated: '2026-02-24T09:25:57.981283+00:00'
   readme_image: images/posit_round_logo.png
   repo: posit-dev/python-tidytuesday
-  stars: 101
+  stars: 102
   title: python-tidytuesday
   website: ''
 ---

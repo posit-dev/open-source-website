@@ -8,13 +8,13 @@ people:
 title: r-builds
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: an opinionated environment for compiling R
   first_commit: '2019-03-25T16:56:28+00:00'
   forks: 19
   languages:
   - Shell
-  last_updated: '2026-02-17T11:22:08.458697+00:00'
+  last_updated: '2026-02-24T09:26:17.980914+00:00'
   license: GPL-3.0
   people:
   - Gábor Csárdi

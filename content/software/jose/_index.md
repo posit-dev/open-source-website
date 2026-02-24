@@ -9,13 +9,13 @@ people:
 title: jose
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: ' Javascript Object Signing and Encryption for R'
   first_commit: '2016-02-10T21:40:31+00:00'
   forks: 8
   languages:
   - R
-  last_updated: '2026-02-17T11:33:10.091680+00:00'
+  last_updated: '2026-02-24T09:26:34.622738+00:00'
   latest_release: '2021-11-06T13:38:21+00:00'
   license: NOASSERTION
   people:

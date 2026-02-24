@@ -11,13 +11,13 @@ people:
 title: connections
 website: https://rstudio.github.io/connections/
 
-external:
+external:  # updated automatically, do not edit
   description: https://rstudio.github.io/connections/
   first_commit: '2019-09-06T12:49:39+00:00'
   forks: 4
   languages:
   - R
-  last_updated: '2026-02-17T11:22:42.000253+00:00'
+  last_updated: '2026-02-24T09:26:18.287334+00:00'
   latest_release: '2023-12-18T23:41:21+00:00'
   license: NOASSERTION
   people:
@@ -25,7 +25,7 @@ external:
   - Hadley Wickham
   readme_image: man/figures/connection-1.png
   repo: rstudio/connections
-  stars: 58
+  stars: 59
   title: connections
   website: https://rstudio.github.io/connections/
 ---

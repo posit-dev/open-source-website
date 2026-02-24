@@ -17,13 +17,13 @@ people:
 title: workflowsets
 website: https://workflowsets.tidymodels.org/
 
-external:
+external:  # updated automatically, do not edit
   description: Create a collection of modeling workflows
   first_commit: '2020-11-24T02:30:49+00:00'
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-17T11:30:51.886011+00:00'
+  last_updated: '2026-02-24T09:26:27.726792+00:00'
   latest_release: '2025-05-28T13:18:33+00:00'
   license: NOASSERTION
   people:

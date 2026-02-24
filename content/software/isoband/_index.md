@@ -12,13 +12,13 @@ people:
 title: isoband
 website: http://isoband.r-lib.org/
 
-external:
+external:  # updated automatically, do not edit
   description: 'isoband: An R package to generate contour lines and polygons.'
   first_commit: '2018-12-29T06:05:34+00:00'
   forks: 16
   languages:
   - C++
-  last_updated: '2026-02-17T11:35:34.622103+00:00'
+  last_updated: '2026-02-24T09:26:35.924342+00:00'
   latest_release: '2025-12-05T12:51:46+00:00'
   license: NOASSERTION
   people:

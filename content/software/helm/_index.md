@@ -9,13 +9,13 @@ people:
 title: helm
 website: ''
 
-external:
+external:  # updated automatically, do not edit
   description: Helm Resources for Posit Products
   first_commit: '2021-07-28T13:48:49+00:00'
   forks: 35
   languages:
   - Markdown
-  last_updated: '2026-02-17T11:24:42.697106+00:00'
+  last_updated: '2026-02-24T09:26:19.525061+00:00'
   latest_release: '2026-02-11T15:11:35+00:00'
   license: MIT
   people:
