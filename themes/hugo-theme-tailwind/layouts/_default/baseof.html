@@ -29,6 +29,23 @@
   </header>
   <main class="flex flex-auto justify-center pt-10">
     <div class="w-full max-w-7xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {{ $contentType := "" }}
+      {{ if eq .Section "software" }}
+        {{ $contentType = "Software" }}
+      {{ else if eq .Section "people" }}
+        {{ $contentType = "People" }}
+      {{ else if eq .Section "events" }}
+        {{ $contentType = "Events" }}
+      {{ else if eq .Section "resources" }}
+        {{ $contentType = "Resources" }}
+      {{ else if eq .Section "blog" }}
+        {{ $contentType = "Blog" }}
+      {{ else if .Section }}
+        {{ $contentType = "Other" }}
+      {{ end }}
+      {{ if $contentType }}
+        <span class="hidden" data-pagefind-filter-type="{{ $contentType }}">{{ $contentType }}</span>
+      {{ end }}
       {{ block "main" . }}{{ end }}
     </div>
   </main>

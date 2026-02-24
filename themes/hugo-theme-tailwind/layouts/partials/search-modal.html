@@ -5,7 +5,7 @@
 
   <!-- Modal Content -->
   <div class="flex min-h-full items-start justify-center p-4 sm:p-6 md:p-20">
-    <div class="relative w-full max-w-2xl transform overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
+    <div class="relative w-full max-w-4xl transform overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
       <!-- Search Input -->
       <div class="relative">
         <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
@@ -23,25 +23,163 @@
         >
       </div>
 
-      <!-- Results Container -->
-      <div id="search-results" class="max-h-[50vh] scroll-py-2 overflow-y-auto border-t border-gray-200 dark:border-gray-700">
-        <!-- Loading state -->
-        <div id="search-loading" class="hidden py-8 text-center text-sm text-gray-500 dark:text-gray-400">
-          Searching...
-        </div>
+      <!-- Mobile filter toggle button -->
+      <div class="sm:hidden w-full border-t border-gray-200 dark:border-gray-700 p-3">
+        <button id="mobile-filter-toggle" class="flex items-center justify-between w-full text-sm text-gray-700 dark:text-gray-300">
+          <span class="font-medium">Filters</span>
+          <svg class="h-5 w-5 transition-transform" id="mobile-filter-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
 
-        <!-- Empty state -->
-        <div id="search-empty" class="py-8 text-center text-sm text-gray-500 dark:text-gray-400">
-          Type to search
-        </div>
+      <!-- Two-column layout: Filters + Results -->
+      <div class="flex border-t border-gray-200 dark:border-gray-700">
 
-        <!-- No results state -->
-        <div id="search-no-results" class="hidden py-8 text-center text-sm text-gray-500 dark:text-gray-400">
-          No results found
-        </div>
+        <!-- Left Sidebar: Filters -->
+        <aside id="search-filters" aria-label="Search filters" role="group" class="flex-none w-full sm:w-48 border-r border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-4 overflow-y-auto max-h-[50vh] hidden sm:block">
+          <h3 id="filter-heading" class="text-xs font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wide mb-3">Filter by Type</h3>
 
-        <!-- Results list -->
-        <ul id="search-results-list" class="divide-y divide-gray-200 dark:divide-gray-700"></ul>
+          <!-- Clear/Select All buttons -->
+          <div class="flex gap-2 mb-3 pb-3 border-b border-gray-200 dark:border-gray-700">
+            <button id="select-all-filters" class="text-xs text-posit-blue-600 dark:text-posit-blue-400 hover:underline" aria-label="Select all filter types">
+              Select All
+            </button>
+            <span class="text-xs text-gray-300 dark:text-gray-600" aria-hidden="true">|</span>
+            <button id="clear-all-filters" class="text-xs text-gray-500 dark:text-gray-400 hover:underline" aria-label="Clear all filter types">
+              Clear All
+            </button>
+          </div>
+
+          <!-- Filter checkboxes -->
+          <div role="group" aria-labelledby="filter-heading" class="space-y-2">
+            <!-- Software -->
+            <label class="flex items-center justify-between cursor-pointer group">
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="filter-software"
+                  value="Software"
+                  checked
+                  aria-label="Show Software results"
+                  class="h-4 w-4 rounded border-gray-300 text-posit-green-600 focus:ring-posit-green-500 dark:border-gray-600 dark:bg-gray-800"
+                >
+                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100">Software</span>
+              </div>
+              <span id="count-software" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+            </label>
+
+            <!-- People -->
+            <label class="flex items-center justify-between cursor-pointer group">
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="filter-people"
+                  value="People"
+                  checked
+                  aria-label="Show People results"
+                  class="h-4 w-4 rounded border-gray-300 text-posit-green-600 focus:ring-posit-green-500 dark:border-gray-600 dark:bg-gray-800"
+                >
+                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100">People</span>
+              </div>
+              <span id="count-people" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+            </label>
+
+            <!-- Events -->
+            <label class="flex items-center justify-between cursor-pointer group">
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="filter-events"
+                  value="Events"
+                  checked
+                  aria-label="Show Events results"
+                  class="h-4 w-4 rounded border-gray-300 text-posit-green-600 focus:ring-posit-green-500 dark:border-gray-600 dark:bg-gray-800"
+                >
+                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100">Events</span>
+              </div>
+              <span id="count-events" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+            </label>
+
+            <!-- Resources -->
+            <label class="flex items-center justify-between cursor-pointer group">
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="filter-resources"
+                  value="Resources"
+                  checked
+                  aria-label="Show Resources results"
+                  class="h-4 w-4 rounded border-gray-300 text-posit-green-600 focus:ring-posit-green-500 dark:border-gray-600 dark:bg-gray-800"
+                >
+                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100">Resources</span>
+              </div>
+              <span id="count-resources" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+            </label>
+
+            <!-- Blog -->
+            <label class="flex items-center justify-between cursor-pointer group">
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="filter-blog"
+                  value="Blog"
+                  checked
+                  aria-label="Show Blog results"
+                  class="h-4 w-4 rounded border-gray-300 text-posit-green-600 focus:ring-posit-green-500 dark:border-gray-600 dark:bg-gray-800"
+                >
+                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100">Blog</span>
+              </div>
+              <span id="count-blog" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+            </label>
+
+            <!-- Other -->
+            <label class="flex items-center justify-between cursor-pointer group">
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="filter-other"
+                  value="Other"
+                  checked
+                  aria-label="Show Other results"
+                  class="h-4 w-4 rounded border-gray-300 text-posit-green-600 focus:ring-posit-green-500 dark:border-gray-600 dark:bg-gray-800"
+                >
+                <span class="ml-2 text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100">Other</span>
+              </div>
+              <span id="count-other" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+            </label>
+          </div>
+        </aside>
+
+        <!-- Right Side: Results -->
+        <div class="flex-1 min-w-0">
+          <!-- Results header -->
+          <div id="search-results-header" class="hidden px-4 py-2 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+            <p class="text-xs text-gray-600 dark:text-gray-400">
+              <span id="results-count-text"></span>
+            </p>
+          </div>
+
+          <div id="search-results" class="max-h-[50vh] scroll-py-2 overflow-y-auto" role="region" aria-live="polite" aria-label="Search results">
+            <!-- Loading state -->
+            <div id="search-loading" class="hidden py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+              Searching...
+            </div>
+
+            <!-- Empty state -->
+            <div id="search-empty" class="py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+              Type to search
+            </div>
+
+            <!-- No results state -->
+            <div id="search-no-results" class="hidden py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+              No results found
+            </div>
+
+            <!-- Results list -->
+            <ul id="search-results-list" class="divide-y divide-gray-200 dark:divide-gray-700"></ul>
+          </div>
+        </div>
       </div>
 
       <!-- Footer -->
