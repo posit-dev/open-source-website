@@ -80,15 +80,20 @@
           <tr class="hover:bg-gray-50 dark:hover:bg-blue-900/50">
             <!-- Logo -->
             <td class="px-3 py-2">
-              {{ if .Params.image }}
-                {{ $image := .Resources.Get .Params.image }}
-                {{ if $image }}
-                  <div class="w-12 h-12 flex items-center justify-center">
+              <div class="w-12 h-12 flex items-center justify-center">
+                {{ $hasImage := false }}
+                {{ if .Params.image }}
+                  {{ $image := .Resources.Get .Params.image }}
+                  {{ if $image }}
+                    {{ $hasImage = true }}
                     {{ $height := mul 12 4 }}
                     {{ partial "responsive_image_fixed.html" (dict "image" $image "baseHeight" $height "alt" .Title "class" "max-h-full max-w-full object-contain") }}
-                  </div>
+                  {{ end }}
                 {{ end }}
-              {{ end }}
+                {{ if not $hasImage }}
+                  <img src="/images/hex-placeholder.svg" alt="Placeholder" class="max-h-full max-w-full object-contain opacity-30" />
+                {{ end }}
+              </div>
             </td>
 
             <!-- Title (linked) -->
