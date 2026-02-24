@@ -4,6 +4,9 @@ github: quarto-dev/quarto-cli
 image: quarto.png
 languages:
 - JavaScript
+- Python
+- R
+- Julia
 latest_release: '2026-02-11T11:46:04+00:00'
 people:
 - JJ Allaire
@@ -20,8 +23,15 @@ people:
 - Edgar Ruiz
 - Carson Sievert
 - Emil Hvitfeldt
+- Greg Swinehart
 title: Quarto
 website: https://quarto.org
+
+include:
+  languages:
+  - Python
+  - R
+  - Julia
 
 override:
   title: Quarto
