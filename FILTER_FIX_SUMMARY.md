@@ -165,3 +165,62 @@ Now ready for manual testing:
 ---
 
 *Fix completed February 24, 2026*
+
+---
+
+## Update: OR Logic Implementation
+
+**Date:** February 24, 2026
+**Issue:** Filters were acting as AND instead of OR
+**Status:** ✅ **FIXED**
+
+### Problem
+
+When multiple filter types were selected (e.g., "People" and "Blog"), the search returned zero results. This was because:
+- Each page has only ONE type
+- AND logic requires results to match ALL selected types
+- No page can be both "People" AND "Blog" simultaneously
+
+### Solution
+
+Changed from server-side (Pagefind API) filtering to client-side OR filtering:
+
+**Before:**
+```javascript
+const filters = { type: selectedTypes };
+const search = await pf.search(query, { filters });
+```
+
+**After:**
+```javascript
+const search = await pf.search(query);
+
+for (const result of search.results) {
+  const data = await result.data();
+  const resultType = data.filters?.type;
+  
+  if (resultType && selectedTypes.includes(resultType)) {
+    filteredResults.push(data);
+  }
+}
+```
+
+### How It Works Now
+
+1. Search **without** filters to get all matching results
+2. Filter results **client-side** using `Array.includes()` 
+3. Include result if its type matches **ANY** selected checkbox (OR logic)
+4. Display filtered results
+
+### Example
+
+Selecting "People" + "Blog":
+- ✅ Shows all People pages
+- ✅ Shows all Blog posts  
+- ✅ Shows combined results from both types
+
+This is proper OR behavior!
+
+---
+
+**Status:** Both filter detection AND OR logic now working correctly! ✅
