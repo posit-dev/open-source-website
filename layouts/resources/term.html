@@ -68,6 +68,31 @@
       </p>
       {{ end }}
 
+      {{ if eq .Params.resource_type "cheatsheet" }}
+        {{ with .Params.thumbnails }}
+        <div class="mt-6">
+          <h3 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">
+            Preview
+          </h3>
+          <div class="flex gap-4 overflow-x-auto pb-2">
+            {{ range . }}
+              {{ $thumbnail := $.Resources.Get . }}
+              {{ if $thumbnail }}
+              <div class="flex-shrink-0">
+                <img
+                  src="{{ $thumbnail.RelPermalink }}"
+                  alt="Page preview"
+                  class="h-48 w-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+                  loading="lazy"
+                />
+              </div>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      {{ end }}
+
       <!-- Resource Metadata -->
       <div class="flex flex-wrap gap-4">
         {{ with .Params.date }}
@@ -131,6 +156,30 @@
         </a>
         {{ end }}
       </div>
+
+      {{ with .Params.translations }}
+      <div class="mt-4">
+        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          Available Translations
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {{ range . }}
+            {{ range $lang, $file := . }}
+            <a
+              href="{{ $file }}"
+              target="_blank"
+              class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 transition-colors"
+            >
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              {{ $lang }}
+            </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
     </div>
   </div>
 
@@ -181,10 +230,25 @@
 
   <!-- Content Section -->
   {{ if .Content }}
-  <div class="mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-blue-950 p-6">
-    <div class="prose prose dark:prose-invert max-w-none">
-      {{ .Content }}
+  <div class="flex flex-col lg:flex-row gap-8 mt-6">
+    <div class="flex-1 max-w-4xl mx-2 md:mx-0">
+      <div class="rounded-lg shadow-md bg-white dark:bg-blue-950 p-6">
+        <div class="prose prose dark:prose-invert max-w-none">
+          {{ .Content }}
+        </div>
+      </div>
     </div>
+
+    <aside class="hidden lg:block w-64 shrink-0">
+      <div class="sticky top-8">
+        <nav class="prose dark:prose-invert prose-sm">
+          <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">Table of Contents</h2>
+          <div class="text-sm">
+            {{ .TableOfContents }}
+          </div>
+        </nav>
+      </div>
+    </aside>
   </div>
   {{ end }}
 
