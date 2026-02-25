@@ -175,7 +175,11 @@
       <div id="software-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {{ $softwareSection := site.GetPage "/software" }}
         {{ range sort $softwareSection.Pages "Title" }}
-          {{ $uniqueID := printf "software-%s" (.File.UniqueID | default .RelPermalink | md5) }}
+          {{ $fileID := "" }}
+          {{ with .File }}
+            {{ $fileID = .UniqueID }}
+          {{ end }}
+          {{ $uniqueID := printf "software-%s" ($fileID | default .RelPermalink | md5) }}
           <div
             id="{{ $uniqueID }}"
             class="software-item"
@@ -208,7 +212,11 @@ window.softwareData = [
   {{ $softwareSection := site.GetPage "/software" }}
   {{ $sortedPages := sort $softwareSection.Pages "Title" }}
   {{ range $index, $page := $sortedPages }}
-    {{ $uniqueID := printf "software-%s" (.File.UniqueID | default .RelPermalink | md5) }}
+    {{ $fileID := "" }}
+    {{ with .File }}
+      {{ $fileID = .UniqueID }}
+    {{ end }}
+    {{ $uniqueID := printf "software-%s" ($fileID | default .RelPermalink | md5) }}
     {
       id: "{{ $uniqueID }}",
       title: "{{ .Title }}",
