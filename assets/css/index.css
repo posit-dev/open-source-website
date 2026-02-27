@@ -1486,6 +1486,10 @@
     border-style: var(--tw-border-style);
     border-width: 0px;
   }
+  .border-1 {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .border-2 {
     border-style: var(--tw-border-style);
     border-width: 2px;
@@ -1505,6 +1509,10 @@
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
+  }
+  .border-b-2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 2px;
   }
   .border-blue-100 {
     border-color: var(--color-blue-100);
@@ -1553,6 +1561,9 @@
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
+  }
+  .bg-gray-300 {
+    background-color: var(--color-gray-300);
   }
   .bg-gray-600 {
     background-color: var(--color-gray-600);
@@ -1691,6 +1702,12 @@
   }
   .pb-3 {
     padding-bottom: calc(var(--spacing) * 3);
+  }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pb-6 {
+    padding-bottom: calc(var(--spacing) * 6);
   }
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
@@ -3125,6 +3142,56 @@
       &:is(.dark *) {
         background-color: transparent;
       }
+    }
+  }
+  .\[\&_a\]\:text-gray-600 {
+    & a {
+      color: var(--color-gray-600);
+    }
+  }
+  .\[\&_a\]\:text-gray-800 {
+    & a {
+      color: var(--color-gray-800);
+    }
+  }
+  .\[\&_a\]\:no-underline {
+    & a {
+      text-decoration-line: none;
+    }
+  }
+  .\[\&_a\]\:hover\:underline {
+    & a {
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-line: underline;
+        }
+      }
+    }
+  }
+  .\[\&_li\]\:text-gray-600 {
+    & li {
+      color: var(--color-gray-600);
+    }
+  }
+  .\[\&_li\]\:marker\:text-gray-600 {
+    & li {
+      & *::marker {
+        color: var(--color-gray-600);
+      }
+      &::marker {
+        color: var(--color-gray-600);
+      }
+      & *::-webkit-details-marker {
+        color: var(--color-gray-600);
+      }
+      &::-webkit-details-marker {
+        color: var(--color-gray-600);
+      }
+    }
+  }
+  .\[\&_ul\]\:my-0 {
+    & ul {
+      margin-block: calc(var(--spacing) * 0);
     }
   }
 }

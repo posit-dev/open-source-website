@@ -14,7 +14,7 @@
   {{ end }}
 
   <!-- Resource Profile Section -->
-  <div class="flex flex-col mt-6 overflow-hidden">
+  <div class="flex flex-col mt-6 overflow-hidden border-b-2 pb-8 border-gray-200">
     {{ if .Params.image }}
     {{ $image := .Resources.Get .Params.image }}
     {{ if $image }}
@@ -48,7 +48,7 @@
     {{ end }}
 
     <div class="flex flex-col gap-y-4">
-      <div class="flex items-start justify-between gap-4 flex-wrap">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
         <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100 flex-1">
           {{ .Title }}
         </h1>
@@ -66,31 +66,6 @@
       <p class="text-lg text-gray-600 dark:text-gray-300">
         {{ . }}
       </p>
-      {{ end }}
-
-      {{ if eq .Params.resource_type "cheatsheet" }}
-        {{ with .Params.thumbnails }}
-        <div class="mt-6">
-          <h3 class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">
-            Preview
-          </h3>
-          <div class="flex gap-4 overflow-x-auto pb-2">
-            {{ range . }}
-              {{ $thumbnail := $.Resources.Get . }}
-              {{ if $thumbnail }}
-              <div class="flex-shrink-0">
-                <img
-                  src="{{ $thumbnail.RelPermalink }}"
-                  alt="Page preview"
-                  class="h-48 w-auto rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-                  loading="lazy"
-                />
-              </div>
-              {{ end }}
-            {{ end }}
-          </div>
-        </div>
-        {{ end }}
       {{ end }}
 
       <!-- Resource Metadata -->
@@ -119,6 +94,24 @@
       <!-- Authors -->
       {{ partial "block/author.html" . }}
 
+      {{ if eq .Params.resource_type "cheatsheet" }}
+      {{ with .Params.thumbnails }}
+      <div class="mt-3">
+        <div class="flex gap-4 overflow-x-auto pb-2">
+          {{ range . }}
+          {{ $thumbnail := $.Resources.Get . }}
+          {{ if $thumbnail }}
+          <div class="shrink-0">
+            <img src="{{ $thumbnail.RelPermalink }}" alt="Page preview"
+              class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy" />
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+
       <!-- Resource Links -->
       <div class="flex flex-wrap gap-1">
         {{ $resourceUrl := or .Params.video_url .Params.url }}
@@ -136,7 +129,7 @@
         {{ with .Params.download_url }}
         {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
         <a href="{{ . }}" target="_blank"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
+          class="inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -164,18 +157,16 @@
         </h3>
         <div class="flex flex-wrap gap-2">
           {{ range . }}
-            {{ range $lang, $file := . }}
-            <a
-              href="{{ $file }}"
-              target="_blank"
-              class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 transition-colors"
-            >
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              {{ $lang }}
-            </a>
-            {{ end }}
+          {{ range $lang, $file := . }}
+          <a href="{{ $file }}" target="_blank"
+            class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            {{ $lang }}
+          </a>
+          {{ end }}
           {{ end }}
         </div>
       </div>
@@ -230,10 +221,10 @@
 
   <!-- Content Section -->
   {{ if .Content }}
-  <div class="flex flex-col lg:flex-row gap-8 mt-6">
+  <div class="flex flex-col lg:flex-row gap-8 mt-8">
     <div class="flex-1 max-w-4xl mx-2 md:mx-0">
-      <div class="rounded-lg shadow-md bg-white dark:bg-blue-950 p-6">
-        <div class="prose prose dark:prose-invert max-w-none">
+      <div class="">
+        <div class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
           {{ .Content }}
         </div>
       </div>
@@ -242,8 +233,9 @@
     <aside class="hidden lg:block w-64 shrink-0">
       <div class="sticky top-8">
         <nav class="prose dark:prose-invert prose-sm">
-          <h2 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">Table of Contents</h2>
-          <div class="text-sm">
+          <h2 class="text-lg font-semibold mb-4 text-gray-600">On this page</h2>
+          <div
+            class="text-sm [&_a]:no-underline [&_a]:text-gray-600 [&_a]:hover:underline [&_ul]:my-0 [&_li]:marker:text-gray-600">
             {{ .TableOfContents }}
           </div>
         </nav>
