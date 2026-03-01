@@ -14,7 +14,7 @@
   {{ end }}
 
   <!-- Software Profile Section -->
-  <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-blue-950">
+  <div class="flex flex-col pb-8 mt-6 mx-2 md:mx-0 border-b-2 border-blue-100">
     <div class="flex flex-col md:flex-row gap-6 p-6">
       <div class="flex-shrink-0 w-48 h-48 flex items-center justify-center bg-white dark:bg-blue-900 rounded-lg p-4">
         {{ $hasImage := false }}
@@ -97,9 +97,9 @@
     </h2>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10 mx-2 md:mx-0 mb-6">
     {{ range $people }}
-    {{ partial "card_person.html" . }}
+    {{ partial "card_person.html" (dict "page" . "showRole" false "size" "small") }}
     {{ end }}
   </div>
   {{ end }}

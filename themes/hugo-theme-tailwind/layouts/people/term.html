@@ -14,7 +14,7 @@
   {{ end }}
 
   <!-- Person Profile Section -->
-  <div class="flex flex-col mt-6 md:mx-0 overflow-hidden border-b-2 pb-6 border-blue-300">
+  <div class="flex flex-col mt-6 md:mx-0 overflow-hidden border-b-2 pb-8 border-blue-100">
     <div class="flex flex-col md:flex-row gap-6">
       {{ if .Params.image }}
       {{ $image := .Resources.Get .Params.image }}
@@ -146,7 +146,7 @@
 
   <div class="flex flex-col">
     {{ range $combined.ByDate.Reverse }}
-    <article class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-blue-950">
+    <article class="flex flex-col pb-8 mt-6 mx-2 md:mx-0">
       <div>
         <a href="{{ .RelPermalink }}">
           {{ partial "block/image.html" . }}

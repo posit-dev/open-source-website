@@ -1,28 +1,40 @@
 {{/*
   Renders a person card
   Context: A person page (from .Site.GetPage or .GetTerms "people")
+  Params:
+    - page: The person page object (required)
+    - showRole: Whether to show the person's role (default: true)
+    - size: "small" or "normal" (default: "normal")
 */}}
-<a href="{{ .RelPermalink }}"
-  class="flex flex-col items-center rounded-xl bg-white dark:bg-blue-950 border border-blue-300 dark:border-blue-800 hover:border-blue-200 hover:border-[3px] hover:-m-[2px] dark:hover:border-blue-700 transition-all p-6">
-  {{ if .Params.image }}
-  {{ $image := .Resources.Get .Params.image }}
+{{ $page := .page }}
+{{ $showRole := true }}
+{{ if isset . "showRole" }}
+  {{ $showRole = .showRole }}
+{{ end }}
+{{ $isSmall := eq .size "small" }}
+
+<a href="{{ $page.RelPermalink }}"
+  class="flex flex-col items-center group transition-opacity hover:opacity-70">
+  {{ if $page.Params.image }}
+  {{ $image := $page.Resources.Get $page.Params.image }}
   {{ if $image }}
-  {{ $baseSize := mul 36 4 }}
-  <div class="w-36 h-36 mb-4 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
-    {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt" .Title "class" "w-full h-full object-cover" "method" "fit") }}
+  <div class="{{ if $isSmall }}w-[100px] h-[100px]{{ else }}w-30 h-30{{ end }} mb-3 overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700">
+    {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" (cond $isSmall 100 120) "baseHeight" (cond $isSmall 100 120) "alt" $page.Title "class" "w-full h-full object-cover" "method" "fit") }}
   </div>
   {{ end }}
   {{ end }}
 
-  <div class="flex flex-col gap-y-2 text-center">
-    <h2 class="text-xl font-medium text-gray-500 dark:text-gray-100">
-      {{ .Title }}
+  <div class="flex flex-col gap-y-1 text-center">
+    <h2 class="{{ if $isSmall }}text-sm{{ else }}text-base{{ end }} font-medium text-gray-500 dark:text-gray-100">
+      {{ $page.Title }}
     </h2>
 
-    {{ with .Params.role }}
-    <p class="text-sm text-gray-600 dark:text-gray-300">
+    {{ if $showRole }}
+    {{ with $page.Params.role }}
+    <p class="{{ if $isSmall }}text-xs{{ else }}text-sm{{ end }} text-gray-600 dark:text-gray-300">
       {{ . }}
     </p>
+    {{ end }}
     {{ end }}
   </div>
 </a>

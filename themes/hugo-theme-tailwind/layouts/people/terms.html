@@ -1,13 +1,13 @@
 {{ define "main" }}
 <div class="flex flex-col w-full mt-6" data-pagefind-ignore>
-  <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200 mb-6">
+  <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200 mb-12">
     People at Posit Open Source
   </h1>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
     {{ $peopleSection := site.GetPage "/people" }}
     {{ range $peopleSection.Pages.ByTitle }}
-      {{ partial "card_person.html" . }}
+      {{ partial "card_person.html" (dict "page" . "showRole" true) }}
     {{ end }}
   </div>
 </div>
