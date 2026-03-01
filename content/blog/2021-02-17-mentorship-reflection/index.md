@@ -4,7 +4,7 @@ people:
   - Christian Okoth
 date: '2021-02-17'
 categories:
-  - learn
+  - education
 description: A mentorship experience during undergrad opens up opportunities for learning about text analysis, as well as meta-skills like debugging and reproducibility.
 slug: ncsu-mentorship-reflect
 image: hands-wd.jpg

@@ -11,7 +11,7 @@ image_alt: >-
   Quarto 1.7: half the Quarto logo is light on dark, the other half dark on
   light
 categories:
-  - releases
+  - quarto
 ---
 
 

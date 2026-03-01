@@ -4,7 +4,9 @@ people:
   - Charlotte Wickham
 date: '2025-07-19'
 categories:
-  - programming
+  - shiny
+  - tidyverse
+  - plotnine
 ---
 
 

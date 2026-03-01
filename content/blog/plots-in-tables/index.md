@@ -8,7 +8,7 @@ description: >-
   Exploring three approaches to add small plots to Great Tables using plotnine,
   svg.py, or HTML.
 categories:
-  - programming
+  - great tables
 ---
 
 

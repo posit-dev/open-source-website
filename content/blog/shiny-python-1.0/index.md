@@ -8,7 +8,9 @@ image: shinyforpython-1.0.jpg
 image_alt: "Announcing Shiny for Python 1.0"
 hero_video: shinyforpython-1.0.mp4
 categories:
-  - releases
+  - shiny
+language: 
+  - python
 ---
 
 It's time for another Shiny for Python release! Not only does this release include a number of exciting features and big improvements, it's also the release we're choosing to call Shiny for Python v1.0.

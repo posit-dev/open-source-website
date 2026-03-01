@@ -5,7 +5,7 @@ people:
 date: '2024-07-02'
 image: ruthson-zimmerman-FVwG5OzPuzo-unsplash.jpg
 categories:
-  - learn
+  - plotnine
 ---
 
 

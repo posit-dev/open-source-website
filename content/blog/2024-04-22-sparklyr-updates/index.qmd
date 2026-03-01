@@ -7,7 +7,7 @@ slug: sparklyr-updates-q1-2024
 date: '2024-04-22'
 image: images/sparklyr.png
 categories:
-  - releases
+  - tidyverse
 ---
 
 ```{r setup, include=FALSE}
