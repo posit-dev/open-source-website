@@ -21,11 +21,12 @@
   {{- $paginator := .Paginate .RegularPages 20 -}}
   {{- $posts := $paginator.Pages -}}
 
-  {{- /* Featured "Most Recent" section - only on page 1 */ -}}
-  {{- if eq $paginator.PageNumber 1 -}} 
-    {{- with (index $posts 0) -}}
+  {{- /* Featured section - only on page 1 */ -}}
+  {{- if eq $paginator.PageNumber 1 -}}
+    {{- $featuredPosts := where .RegularPages "Params.featured" true -}}
+    {{- with (index $featuredPosts 0) -}}
       <section class="mb-12">
-        <h2 class="text-sm font-semibold mb-6 text-gray-600 dark:text-gray-400 uppercase tracking-wider">Most Recent</h2>
+        <h2 class="text-sm font-semibold mb-6 text-gray-600 dark:text-gray-400 uppercase tracking-wider">Featured</h2>
         <article class="rounded-lg overflow-hidden bg-transparent transition-colors duration-200 border border-transparent hover:bg-blue-50 hover:border-blue-50 cursor-pointer hover:border-[4px] hover:-m-[3px] dark:border-gray-800 bg-blue-50 relative">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {{- /* Featured image */ -}}
@@ -95,13 +96,8 @@
 
     {{- /* 3-column grid */ -}}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {{- $start := 0 -}}
-      {{- if eq $paginator.PageNumber 1 -}}
-        {{- $start = 1 -}} {{- /* Skip first post on page 1 (already featured) */ -}}
-      {{- end -}}
-
-      {{- range $index, $post := $posts -}}
-        {{- if ge $index $start -}}
+      {{- range $post := $posts -}}
+        {{- if not $post.Params.featured -}}
           <article class="rounded-lg overflow-hidden bg-transparent transition-colors duration-200 border border-transparent hover:bg-blue-50 hover:border-blue-50 cursor-pointer hover:border-[4px] hover:-m-[3px] dark:border-gray-800 bg-blue-50 relative">
             {{- /* Grid card image */ -}}
             <div class="w-full aspect-[1200/630] overflow-hidden">

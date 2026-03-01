@@ -9,6 +9,7 @@ description: >-
   svg.py, or HTML.
 categories:
   - great tables
+featured: true
 ---
 
 
