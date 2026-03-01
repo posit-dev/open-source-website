@@ -166,6 +166,11 @@
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.2px;
   }
+
+  /* Global link underline offset */
+  a {
+    text-underline-offset: 5px;
+  }
 }
 
 @layer base {
@@ -416,8 +421,8 @@
 .prose {
   --tw-prose-body: var(--color-gray-500) !important;
   --tw-prose-headings: var(--color-gray-500) !important;
-  --tw-prose-links: var(--color-blue-600) !important;
-  --tw-prose-bold: var(--color-gray-700) !important;
+  --tw-prose-links: var(--color-blue-500) !important;
+  --tw-prose-bold: var(--color-gray-500) !important;
   --tw-prose-code: var(--color-gray-700) !important;
   --tw-prose-quotes: var(--color-gray-700) !important;
 }
