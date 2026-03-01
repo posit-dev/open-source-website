@@ -170,6 +170,8 @@
   /* Global link underline offset */
   a {
     text-underline-offset: 5px;
+  }
+
   /* Reset letter-spacing for monospace/Source Code Pro */
   .font-mono,
   code,
