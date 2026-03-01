@@ -183,7 +183,7 @@
 
     const link = document.createElement('a');
     link.href = result.url;
-    link.className = 'flex gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors';
+    link.className = 'flex gap-3 px-4 py-3 hover:bg-blue-50 dark:hover:bg-blue-900 transition-colors';
 
     if (result.meta.image) {
       const imageContainer = document.createElement('div');
@@ -300,10 +300,10 @@
     const items = searchResultsList.querySelectorAll('.search-result-item');
     items.forEach((item, index) => {
       if (index === selectedIndex) {
-        item.querySelector('a').classList.add('bg-gray-100', 'dark:bg-gray-600');
+        item.querySelector('a').classList.add('bg-blue-100', 'dark:bg-blue-800');
         item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       } else {
-        item.querySelector('a').classList.remove('bg-gray-100', 'dark:bg-gray-600');
+        item.querySelector('a').classList.remove('bg-blue-100', 'dark:bg-blue-800');
       }
     });
   }
