@@ -15,7 +15,8 @@
           Open source software
         </h1>
         <p class="text-gray-600 dark:text-gray-400 mt-2">
-          Explore <span x-text="totalCount">{{ len $softwareSection.Pages }}</span> open-source projects from the Posit ecosystem
+          {{- $nonFeaturedCount := len (where $softwareSection.Pages "Params.featured" "!=" true) -}}
+          Explore <span x-text="totalCount">{{ $nonFeaturedCount }}</span> open-source projects from the Posit ecosystem
         </p>
       </div>
       <button
@@ -157,7 +158,8 @@
         <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
           <div class="flex items-center justify-between mb-2">
             <span class="text-sm text-gray-600 dark:text-gray-400">
-              Showing <span x-text="visibleCount" class="font-semibold text-gray-900 dark:text-gray-100">{{ len $softwareSection.Pages }}</span> of <span x-text="totalCount">{{ len $softwareSection.Pages }}</span>
+              {{- $nonFeaturedCount := len (where $softwareSection.Pages "Params.featured" "!=" true) -}}
+              Showing <span x-text="visibleCount" class="font-semibold text-gray-900 dark:text-gray-100">{{ $nonFeaturedCount }}</span> of <span x-text="totalCount">{{ $nonFeaturedCount }}</span>
             </span>
           </div>
           <button
@@ -172,9 +174,71 @@
     </div>
 
     <div class="flex-1 min-w-0">
+      {{- /* Featured section */ -}}
+      {{- $featuredSoftware := where $softwareSection.Pages "Params.featured" true -}}
+      {{- if gt (len $featuredSoftware) 0 -}}
+      {{- with (index $featuredSoftware 0) -}}
+      <section class="mb-12">
+        <h2 class="text-sm font-semibold mb-6 text-gray-600 dark:text-gray-400 uppercase tracking-wider">Featured</h2>
+        <article class="group rounded-xl overflow-hidden bg-transparent transition-colors duration-200 border border-transparent hover:bg-blue-50 hover:border-blue-50 cursor-pointer hover:border-4 hover:-m-0.75 dark:border-gray-800 bg-blue-50 relative">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+            {{- /* Featured image */ -}}
+            <div class="w-full max-h-96 overflow-hidden flex items-center justify-center bg-gray-50 dark:bg-gray-900 group-hover:bg-blue-50 dark:group-hover:bg-blue-900 rounded-xl transition-colors duration-200">
+              <a href="{{ .RelPermalink }}" class="block w-full h-full">
+                {{- $featuredImg := .Resources.Get .Params.image -}}
+                {{- if $featuredImg -}}
+                  <img class="w-full h-full object-contain p-8" src="{{ $featuredImg.RelPermalink }}" alt="{{ .Title }}" loading="lazy" />
+                {{- else -}}
+                  <div class="w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+                    <span class="text-gray-400 dark:text-gray-500">No image</span>
+                  </div>
+                {{- end -}}
+              </a>
+            </div>
+
+            {{- /* Featured content */ -}}
+            <div class="flex flex-col gap-y-2 p-6 lg:p-8 justify-center">
+              <div class="flex flex-row gap-x-4 items-center flex-wrap">
+                {{- with .Params.external.stars -}}
+                <span class="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  {{ . }}
+                </span>
+                {{- end -}}
+                {{- with .Params.languages -}}
+                <span class="text-sm text-gray-600 dark:text-gray-400">{{ delimit . ", " }}</span>
+                {{- end -}}
+              </div>
+              <h3 class="text-2xl font-medium text-gray-500 dark:text-gray-100">
+                <a href="{{ .RelPermalink }}" class="hover:text-blue-500 dark:hover:text-blue-400 after:absolute after:inset-0">{{ .Title }}</a>
+              </h3>
+
+              {{- with .Description -}}
+              <div class="text-gray-600 dark:text-gray-300 line-clamp-3">
+                {{ . }}
+              </div>
+              {{- end -}}
+
+              <div class="flex flex-col mt-6 gap-y-4 relative z-10">
+                {{- with .Params.people -}}
+                <div class="flex flex-wrap gap-2">
+                  {{- range . -}}
+                  <span class="text-sm text-gray-600 dark:text-gray-400">{{ . }}</span>
+                  {{- end -}}
+                </div>
+                {{- end -}}
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      {{- end -}}
+      {{- end -}}
+
       <div id="software-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {{ $softwareSection := site.GetPage "/software" }}
         {{ range sort $softwareSection.Pages "Title" }}
+          {{- if not .Params.featured -}}
           {{ $fileID := "" }}
           {{ with .File }}
             {{ $fileID = .UniqueID }}
@@ -186,6 +250,7 @@
           >
             {{ partial "card_software.html" . }}
           </div>
+          {{- end -}}
         {{ end }}
       </div>
 
@@ -211,7 +276,8 @@
 window.softwareData = [
   {{ $softwareSection := site.GetPage "/software" }}
   {{ $sortedPages := sort $softwareSection.Pages "Title" }}
-  {{ range $index, $page := $sortedPages }}
+  {{ $nonFeatured := where $sortedPages "Params.featured" "!=" true }}
+  {{ range $index, $page := $nonFeatured }}
     {{ $fileID := "" }}
     {{ with .File }}
       {{ $fileID = .UniqueID }}
@@ -224,7 +290,7 @@ window.softwareData = [
       languages: [{{ range $i, $lang := .Params.languages }}{{ if $i }},"{{ $lang }}"{{ else }}"{{ $lang }}"{{ end }}{{ end }}],
       firstCommit: {{ with .Params.external }}"{{ .first_commit | default "" }}"{{ else }}""{{ end }},
       latestRelease: "{{ .Params.latest_release | default "" }}"
-    }{{ if ne (add $index 1) (len $sortedPages) }},{{ end }}
+    }{{ if ne (add $index 1) (len $nonFeatured) }},{{ end }}
   {{ end }}
 ];
 

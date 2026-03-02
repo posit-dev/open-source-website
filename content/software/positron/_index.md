@@ -48,6 +48,7 @@ external:  # updated automatically, do not edit
   stars: 3979
   title: positron
   website: https://positron.posit.co
+featured: true
 ---
 
 Positron is a next-generation data science IDE built by Posit PBC. It provides an extensible, polyglot environment for writing code, exploring data, and creating reproducible analyses.
