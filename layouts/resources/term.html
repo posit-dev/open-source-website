@@ -129,7 +129,7 @@
 
       <!-- Resource Links -->
       <div class="flex flex-wrap gap-1">
-        {{ $resourceUrl := or .Params.video_url .Params.url }}
+        {{ $resourceUrl := or .Params.video_url .Params.url .Params.external.url }}
         {{ with $resourceUrl }}
         <a href="{{ . }}" target="_blank"
           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors">
@@ -191,7 +191,7 @@
 
   <!-- Video Section (if resource_type is video) -->
   {{ if eq .Params.resource_type "video" }}
-  {{ $videoUrl := or .Params.video_url .Params.url }}
+  {{ $videoUrl := or .Params.video_url .Params.url .Params.external.url }}
   {{ with $videoUrl }}
   <div class="mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-blue-950">
     <div class="aspect-video w-full">
