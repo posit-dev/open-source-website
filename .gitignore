@@ -23,3 +23,6 @@ assets/css/index.css
 **/*.quarto_ipynb
 
 .env
+
+# Downloaded audio files
+content/resources/videos/**/audio.*
