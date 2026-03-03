@@ -6,6 +6,13 @@ Context: A resource page (from .Site.GetPage or .GetTerms "resources")
   {{ $image := "" }}
   {{ $imageAlt := .Title }}
 
+  {{ if eq .Params.resource_type "video" }}
+  {{ with .Params.external.thumbnail }}
+  <a href="{{ $.RelPermalink }}" class="w-full h-36 overflow-hidden block">
+    <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover" loading="lazy">
+  </a>
+  {{ end }}
+  {{ else }}
   {{ if .Params.image }}
   {{ $image = .Resources.Get .Params.image }}
   {{ else }}
@@ -18,17 +25,13 @@ Context: A resource page (from .Site.GetPage or .GetTerms "resources")
   {{ end }}
   {{ end }}
   {{ end }}
-
   {{ if $image }}
   <a href="{{ .RelPermalink }}" class="w-full h-32 flex items-center justify-center p-4">
     {{ $height := mul 24 4 }}
     {{ partial "responsive_image_fixed.html" (dict "image" $image "baseHeight" $height "alt" $imageAlt "class"
     "max-h-full max-w-full object-contain") }}
   </a>
-  {{ else if .Params.external.thumbnail }}
-  <a href="{{ .RelPermalink }}" class="w-full h-36 overflow-hidden block">
-    <img src="{{ .Params.external.thumbnail }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy">
-  </a>
+  {{ end }}
   {{ end }}
 
   <div class="flex flex-col gap-y-2 p-4">
