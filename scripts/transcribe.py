@@ -106,6 +106,7 @@ def transcribe_audio(
             "model": "gpt-4o-transcribe-diarize",
             "file": f,
             "response_format": "diarized_json",
+            "chunking_strategy": "auto",
         }
         if speaker_names:
             kwargs["known_speaker_names"] = speaker_names
