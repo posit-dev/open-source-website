@@ -96,20 +96,29 @@ def compress_audio(src: Path) -> tuple[Path, bool]:
     )
 
 
+def build_prompt(frontmatter: dict[str, Any]) -> str:
+    parts = []
+    title = frontmatter.get("title", "")
+    if title:
+        parts.append(title)
+    software = frontmatter.get("software", []) or []
+    parts.extend(software)
+    return ", ".join(parts)
+
+
 def transcribe_audio(
     audio_file: Path,
-    speaker_names: list[str],
+    prompt: str,
     client: openai.OpenAI,
 ) -> dict[str, Any]:
     with open(audio_file, "rb") as f:
         kwargs: dict[str, Any] = {
-            "model": "gpt-4o-transcribe-diarize",
+            "model": "gpt-4o-transcribe",
             "file": f,
-            "response_format": "diarized_json",
-            "chunking_strategy": "auto",
+            "response_format": "json",
         }
-        if speaker_names:
-            kwargs["known_speaker_names"] = speaker_names
+        if prompt:
+            kwargs["prompt"] = prompt
         result = client.audio.transcriptions.create(**kwargs)
     return result.model_dump()
 
@@ -131,11 +140,11 @@ def process_video(video_dir: Path, client: openai.OpenAI) -> str:
             else {}
         )
 
-        speaker_names = frontmatter.get("people", []) or []
+        prompt = build_prompt(frontmatter)
 
         audio_path, is_temp = compress_audio(audio_file)
         try:
-            data = transcribe_audio(audio_path, speaker_names, client)
+            data = transcribe_audio(audio_path, prompt, client)
         finally:
             if is_temp:
                 audio_path.unlink(missing_ok=True)
