@@ -63,16 +63,6 @@ def find_audio_file(video_dir: Path) -> Path | None:
     return None
 
 
-def build_prompt(frontmatter: dict[str, Any]) -> str:
-    parts = []
-    title = frontmatter.get("title", "")
-    if title:
-        parts.append(title)
-    software = frontmatter.get("software", []) or []
-    parts.extend(software)
-    return ", ".join(parts)
-
-
 def compress_audio(src: Path) -> tuple[Path, bool]:
     if src.stat().st_size <= MAX_BYTES:
         return src, False
@@ -108,7 +98,6 @@ def compress_audio(src: Path) -> tuple[Path, bool]:
 
 def transcribe_audio(
     audio_file: Path,
-    prompt: str,
     speaker_names: list[str],
     client: openai.OpenAI,
 ) -> dict[str, Any]:
@@ -118,8 +107,6 @@ def transcribe_audio(
             "file": f,
             "response_format": "diarized_json",
         }
-        if prompt:
-            kwargs["prompt"] = prompt
         if speaker_names:
             kwargs["known_speaker_names"] = speaker_names
         result = client.audio.transcriptions.create(**kwargs)
@@ -143,12 +130,11 @@ def process_video(video_dir: Path, client: openai.OpenAI) -> str:
             else {}
         )
 
-        prompt = build_prompt(frontmatter)
         speaker_names = frontmatter.get("people", []) or []
 
         audio_path, is_temp = compress_audio(audio_file)
         try:
-            data = transcribe_audio(audio_path, prompt, speaker_names, client)
+            data = transcribe_audio(audio_path, speaker_names, client)
         finally:
             if is_temp:
                 audio_path.unlink(missing_ok=True)
