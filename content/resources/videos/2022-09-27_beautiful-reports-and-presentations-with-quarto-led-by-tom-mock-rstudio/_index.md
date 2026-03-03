@@ -1,0 +1,44 @@
+---
+date: '2022-09-27'
+description: "Quarto is a powerful tool for authoring reproducible computational documents in R, Python or Julia. Quarto can also help with sharing your results to business stakeholders across your company. This talk will provide an overview of Quarto's implementation of revealjs for interactive presentations and HTML/PDF documents for static reports.\n\nContent website: rstd.io/quarto-reports\n\nTimestamps: \n2:55 - Start of session\n4:10 - Visual editor in RStudio\n6:20 - Parameters to create different variations of a report\n15:30 - Unified syntax across different output formats\n18:01 - Pandoc fenced divs\n20:10 - Tabsets\n22:22 - Pandoc bracketed spans\n24:30 - Footnotes\n26:30 - Layout image inline with paragraphs / image into \"gutter\" column margin\n29:23 - Hide all code\n29:50 - Code tools (Fold code, source code)\n34:12 - Code highlighting\n37:03 - HTML Appearance\n38:00 - Bootswatch themes\n38:43 - PDF Articles\n42:05 - Presentations (revealjs (HTML), PowerPoint (MS Office), beamer (LaTeX, PDF))\n45:06 - Creating slides\n47:53 - Multiple columns\n48:28 - Secret Tip (Alt + Click to Zoom in to a section)\n49:24 - Absolute Position\n51:04 - Presentation themes\n52:44 - Footer/Logo\n54:01 - Slide Background\n57:01 - Custom classes\n58:35 - End slide with helpful links (all shared here: rstd.io/quarto-reports)\n\nThis meetup is Part 3 in our Quarto series:\nPart 1: Welcome to Quarto Workshop: https://www.youtube.com/watch?v=yvi5uXQMvu4\nPart 2: Building a Blog with Quarto: https://youtu.be/CVcvXfRyfE0\nFor more about Quarto: quarto.org\n\n\U0001F4DA Resources discussed:\nVisual editor: https://quarto.org/docs/visual-editor/\nParameters: https://quarto.org/docs/computations/parameters.html\nTabsets: https://quarto.org/docs/interactive/layout.html#tabset-panel\nFenced Divs and Bracketed spans: https://quarto.org/docs/authoring/markdown-basics.html#divs-and-spans \nFootnotes: https://quarto.org/docs/authoring/footnotes-and-citations.html \nFigures and figure layouts: https://quarto.org/docs/authoring/figures.html#complex-layouts \nCode execution options: https://quarto.org/docs/computations/execution-options.html \nCode chunk format options: https://quarto.org/docs/reference/formats/html.html#code \nCode appearance: https://quarto.org/docs/output-formats/html-code.html#appearance \nCode highlighting light/dark: https://quarto.org/docs/output-formats/html-code.html#appearance \nFunction links in code chunks with downlit: https://quarto.org/docs/output-formats/html-code.html#code-linking \nHTML Themes: ​​https://quarto.org/docs/output-formats/html-themes.html \nPDF formatting options: https://quarto.org/docs/reference/formats/pdf.html#title-author\nPDF journal templates: https://quarto.org/docs/journals/templates.html \nPresentations: https://quarto.org/docs/presentations/index.html \nRevealjs Options: https://quarto.org/docs/presentations/revealjs/\nAdvanced Revealjs (absolute positioning, layout helpers like r-stack): https://quarto.org/docs/presentations/revealjs/advanced.html\nRevealjs themes and customizing: https://quarto.org/docs/presentations/revealjs/themes.html \nRevealjs footer & logo: https://quarto.org/docs/presentations/revealjs/index.html#footer-logo \nInline span text formatting: \nEmil Hvitfeldt’s Slidecraft 101: Colors and Fonts, https://www.emilhvitfeldt.com/post/slidecraft-colors-fonts/ \nMeghan Hall’s Quarto Slides, https://meghan.rbind.io/blog/quarto-slides/ \nAndrew Heiss’ Quarto slides on APIs and webscraping with R, https://github.com/andrewheiss/2022-seacen\n\nSpeaker bio:\nThomas is the Customer Enablement Lead at RStudio, helping RStudio’s customers be as successful as possible. He is deeply involved in the global data science community, sharing tips on RStats Twitter (find him at @thomas_mock), as co-founder of TidyTuesday, a weekly Data Science learning challenge, and presenting on various Data Science topics on YouTube or at conferences.\n\nFor upcoming meetups: rstd.io/community-events"
+people:
+- Emil Hvitfeldt
+resource_type: video
+resources: []
+software:
+- downlit
+- here
+- markdown
+- Quarto
+- revealjs
+- rstudio
+title: Beautiful reports and presentations with Quarto | Led by Tom Mock, RStudio
+
+external:  # updated automatically, do not edit
+  channel: Posit PBC
+  comment_count: 5
+  date: '2022-09-27T17:53:41Z'
+  definition: hd
+  description: "Quarto is a powerful tool for authoring reproducible computational documents in R, Python or Julia. Quarto can also help with sharing your results to business stakeholders across your company. This talk will provide an overview of Quarto's implementation of revealjs for interactive presentations and HTML/PDF documents for static reports.\n\nContent website: rstd.io/quarto-reports\n\nTimestamps: \n2:55 - Start of session\n4:10 - Visual editor in RStudio\n6:20 - Parameters to create different variations of a report\n15:30 - Unified syntax across different output formats\n18:01 - Pandoc fenced divs\n20:10 - Tabsets\n22:22 - Pandoc bracketed spans\n24:30 - Footnotes\n26:30 - Layout image inline with paragraphs / image into \"gutter\" column margin\n29:23 - Hide all code\n29:50 - Code tools (Fold code, source code)\n34:12 - Code highlighting\n37:03 - HTML Appearance\n38:00 - Bootswatch themes\n38:43 - PDF Articles\n42:05 - Presentations (revealjs (HTML), PowerPoint (MS Office), beamer (LaTeX, PDF))\n45:06 - Creating slides\n47:53 - Multiple columns\n48:28 - Secret Tip (Alt + Click to Zoom in to a section)\n49:24 - Absolute Position\n51:04 - Presentation themes\n52:44 - Footer/Logo\n54:01 - Slide Background\n57:01 - Custom classes\n58:35 - End slide with helpful links (all shared here: rstd.io/quarto-reports)\n\nThis meetup is Part 3 in our Quarto series:\nPart 1: Welcome to Quarto Workshop: https://www.youtube.com/watch?v=yvi5uXQMvu4\nPart 2: Building a Blog with Quarto: https://youtu.be/CVcvXfRyfE0\nFor more about Quarto: quarto.org\n\n\U0001F4DA Resources discussed:\nVisual editor: https://quarto.org/docs/visual-editor/\nParameters: https://quarto.org/docs/computations/parameters.html\nTabsets: https://quarto.org/docs/interactive/layout.html#tabset-panel\nFenced Divs and Bracketed spans: https://quarto.org/docs/authoring/markdown-basics.html#divs-and-spans \nFootnotes: https://quarto.org/docs/authoring/footnotes-and-citations.html \nFigures and figure layouts: https://quarto.org/docs/authoring/figures.html#complex-layouts \nCode execution options: https://quarto.org/docs/computations/execution-options.html \nCode chunk format options: https://quarto.org/docs/reference/formats/html.html#code \nCode appearance: https://quarto.org/docs/output-formats/html-code.html#appearance \nCode highlighting light/dark: https://quarto.org/docs/output-formats/html-code.html#appearance \nFunction links in code chunks with downlit: https://quarto.org/docs/output-formats/html-code.html#code-linking \nHTML Themes: ​​https://quarto.org/docs/output-formats/html-themes.html \nPDF formatting options: https://quarto.org/docs/reference/formats/pdf.html#title-author\nPDF journal templates: https://quarto.org/docs/journals/templates.html \nPresentations: https://quarto.org/docs/presentations/index.html \nRevealjs Options: https://quarto.org/docs/presentations/revealjs/\nAdvanced Revealjs (absolute positioning, layout helpers like r-stack): https://quarto.org/docs/presentations/revealjs/advanced.html\nRevealjs themes and customizing: https://quarto.org/docs/presentations/revealjs/themes.html \nRevealjs footer & logo: https://quarto.org/docs/presentations/revealjs/index.html#footer-logo \nInline span text formatting: \nEmil Hvitfeldt’s Slidecraft 101: Colors and Fonts, https://www.emilhvitfeldt.com/post/slidecraft-colors-fonts/ \nMeghan Hall’s Quarto Slides, https://meghan.rbind.io/blog/quarto-slides/ \nAndrew Heiss’ Quarto slides on APIs and webscraping with R, https://github.com/andrewheiss/2022-seacen\n\nSpeaker bio:\nThomas is the Customer Enablement Lead at RStudio, helping RStudio’s customers be as successful as possible. He is deeply involved in the global data science community, sharing tips on RStats Twitter (find him at @thomas_mock), as co-founder of TidyTuesday, a weekly Data Science learning challenge, and presenting on various Data Science topics on YouTube or at conferences.\n\nFor upcoming meetups: rstd.io/community-events"
+  duration: 6328
+  has_captions: false
+  language: en
+  last_updated: '2026-03-02T20:54:21.113434+00:00'
+  like_count: 523
+  people:
+  - Emil Hvitfeldt
+  playlist: ''
+  software:
+  - downlit
+  - here
+  - markdown
+  - Quarto
+  - revealjs
+  - rstudio
+  tags: []
+  thumbnail: https://i.ytimg.com/vi/hbf7Ai3jnxY/maxresdefault.jpg
+  title: Beautiful reports and presentations with Quarto | Led by Tom Mock, RStudio
+  url: https://www.youtube.com/watch?v=hbf7Ai3jnxY
+  view_count: 30600
+---
+

@@ -1,0 +1,35 @@
+---
+date: '2025-09-04'
+description: "ADD THE DATA SCIENCE HANGOUT TO YOUR CALENDAR HERE: https://pos.it/dsh - All are welcome! We'd love to see you!\n\nWe were recently joined by Dony Unardi, Principal Data Scientist at Genentech, to chat about the Teal framework for Shiny, data cleaning and harmonization in the pharmaceutical industry, and career transitions from SAS (and web development!) to R.\n\nIn this Hangout, we explore Teal, an open-source framework built around Shiny to accelerate the creation of clinical trial analysis apps. Donnie explains that Teal provides out-of-the-box features like advanced filtering and, most importantly, code reproducibility. This allows users to generate the exact R code needed to reproduce a visualization or analysis from the app in their local environment, a critical feature for validation and submission in the pharma industry.\n\nResources mentioned in the video and zoom chat: \n\U0001F517 Teal Gallery → https://insightsengineering.github.io/teal.gallery/ \n\U0001F517 Pharmaverse → https://pharmaverse.org/ \n\U0001F517 SAS to R: A Data Snack from the Fred Hutch Data Science Lab → https://hutchdatascience.org/data_snacks/r_snacks/sas2r.html \n\U0001F517 A SAS to R Success Story (Posit Video) → https://posit.co/resources/videos/a-sas-to-r-success-story/ \n\U0001F517 R Consortium Submissions Working Group → https://rconsortium.github.io/submissions-wg/\n\nIf you didn’t join live, one great discussion you missed from the zoom chat was about making the transition from SAS to R. Many community members shared personal experiences, valuable resources, and advice, emphasizing the importance of learning R's idioms rather than attempting a direct, one-to-one translation of SAS code. Let us know below if you’d like to hear more about this topic!\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.posit.co\nHangout: https://pos.it/dsh\nLinkedIn:  https://www.linkedin.com/company/posit-software\nBluesky:  https://bsky.app/profile/posit.co\n\nThanks for hanging out with us! \U0001F49B\n\nTimestamps\n00:00 Introduction \n06:34 \"What is the teal shiny app framework?\" \n12:10 \"Does being in the Bay Area make a difference for data careers?\" \n16:44 \"What kind of sass are you talking about? (SAS!)\" \n18:07 \"How do you approach technical interviews?\" \n20:22 \"Do you have any tips for a SAS programmer being told to use R?\" \n26:10 \"What are some of the data quality challenges that you find in pharma data?\" \n29:43 \"How is reproducibility defined in the pharma industry?\" \n32:37 \"What does Teal offer for reproducibility that a Git repo does not?\" \n36:48 \"What are the pharma job titles for roles focused on data cleaning and QAQC?\" \n39:11 \"What do you mean by harmonizing data?\" \n42:09 \"How do you prioritize projects and collaborate with your teammates?\" \n44:36 \"Should personal data science projects be for learning or for a resume?\" \n47:58 \"How did you get leadership support to contribute to the open-source community?\""
+people: []
+resource_type: video
+resources: []
+software:
+- here
+- sass
+- Shiny
+title: SAS to R, data harmonization, & a career in pharma | Dony Unardi | Data Science Hangout
+
+external:  # updated automatically, do not edit
+  channel: Posit PBC
+  comment_count: 3
+  date: '2025-09-04T14:30:07Z'
+  definition: hd
+  description: "ADD THE DATA SCIENCE HANGOUT TO YOUR CALENDAR HERE: https://pos.it/dsh - All are welcome! We'd love to see you!\n\nWe were recently joined by Dony Unardi, Principal Data Scientist at Genentech, to chat about the Teal framework for Shiny, data cleaning and harmonization in the pharmaceutical industry, and career transitions from SAS (and web development!) to R.\n\nIn this Hangout, we explore Teal, an open-source framework built around Shiny to accelerate the creation of clinical trial analysis apps. Donnie explains that Teal provides out-of-the-box features like advanced filtering and, most importantly, code reproducibility. This allows users to generate the exact R code needed to reproduce a visualization or analysis from the app in their local environment, a critical feature for validation and submission in the pharma industry.\n\nResources mentioned in the video and zoom chat: \n\U0001F517 Teal Gallery → https://insightsengineering.github.io/teal.gallery/ \n\U0001F517 Pharmaverse → https://pharmaverse.org/ \n\U0001F517 SAS to R: A Data Snack from the Fred Hutch Data Science Lab → https://hutchdatascience.org/data_snacks/r_snacks/sas2r.html \n\U0001F517 A SAS to R Success Story (Posit Video) → https://posit.co/resources/videos/a-sas-to-r-success-story/ \n\U0001F517 R Consortium Submissions Working Group → https://rconsortium.github.io/submissions-wg/\n\nIf you didn’t join live, one great discussion you missed from the zoom chat was about making the transition from SAS to R. Many community members shared personal experiences, valuable resources, and advice, emphasizing the importance of learning R's idioms rather than attempting a direct, one-to-one translation of SAS code. Let us know below if you’d like to hear more about this topic!\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.posit.co\nHangout: https://pos.it/dsh\nLinkedIn:  https://www.linkedin.com/company/posit-software\nBluesky:  https://bsky.app/profile/posit.co\n\nThanks for hanging out with us! \U0001F49B\n\nTimestamps\n00:00 Introduction \n06:34 \"What is the teal shiny app framework?\" \n12:10 \"Does being in the Bay Area make a difference for data careers?\" \n16:44 \"What kind of sass are you talking about? (SAS!)\" \n18:07 \"How do you approach technical interviews?\" \n20:22 \"Do you have any tips for a SAS programmer being told to use R?\" \n26:10 \"What are some of the data quality challenges that you find in pharma data?\" \n29:43 \"How is reproducibility defined in the pharma industry?\" \n32:37 \"What does Teal offer for reproducibility that a Git repo does not?\" \n36:48 \"What are the pharma job titles for roles focused on data cleaning and QAQC?\" \n39:11 \"What do you mean by harmonizing data?\" \n42:09 \"How do you prioritize projects and collaborate with your teammates?\" \n44:36 \"Should personal data science projects be for learning or for a resume?\" \n47:58 \"How did you get leadership support to contribute to the open-source community?\""
+  duration: 3200
+  has_captions: true
+  language: en
+  last_updated: '2026-03-02T20:54:17.198719+00:00'
+  like_count: 12
+  playlist: ''
+  software:
+  - here
+  - sass
+  - Shiny
+  tags: []
+  thumbnail: https://i.ytimg.com/vi/B1CxZrmi8Yw/maxresdefault.jpg
+  title: SAS to R, data harmonization, & a career in pharma | Dony Unardi | Data Science Hangout
+  url: https://www.youtube.com/watch?v=B1CxZrmi8Yw
+  view_count: 494
+---
+
