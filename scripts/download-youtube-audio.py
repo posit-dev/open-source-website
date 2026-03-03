@@ -58,13 +58,6 @@ def download_audio(url: str, dest_dir: Path) -> None:
     ydl_opts = {
         "format": "bestaudio/best",
         "outtmpl": str(dest_dir / "audio.%(ext)s"),
-        "postprocessors": [
-            {
-                "key": "FFmpegExtractAudio",
-                "preferredcodec": "mp3",
-                "preferredquality": "128",
-            }
-        ],
         "no_playlist": True,
         "quiet": True,
         "no_warnings": True,
@@ -99,7 +92,7 @@ def main() -> None:
         for video_dir in dirs:
             progress.update(task, description=f"[cyan]{video_dir.name}")
 
-            if (video_dir / "audio.mp3").exists():
+            if any(video_dir.glob("audio.*")):
                 skipped += 1
                 progress.advance(task)
                 continue
