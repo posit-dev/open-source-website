@@ -27,5 +27,7 @@ assets/css/index.css
 /plan.md
 /research.md
 
+/.claude/settings.local.json
+
 # Downloaded audio files
 content/resources/videos/**/audio.*
