@@ -206,7 +206,9 @@ def format_frontmatter(frontmatter: dict[str, Any]) -> str:
     yaml_str = add_blank_lines_before_keys(yaml_str, keys_at_end)
 
     # Add comment after external key
-    yaml_str = add_comment_after_key(yaml_str, "external", "updated automatically, do not edit")
+    yaml_str = add_comment_after_key(
+        yaml_str, "external", "updated automatically, do not edit"
+    )
 
     return yaml_str.strip()
 
@@ -271,7 +273,9 @@ def load_people_mapping(people_dir: Path) -> dict[str, str]:
             frontmatter, _, _ = parse_frontmatter(content)
 
             social = frontmatter.get("social", {})
-            github_username = social.get("github", "").strip() if isinstance(social, dict) else ""
+            github_username = (
+                social.get("github", "").strip() if isinstance(social, dict) else ""
+            )
             person_name = frontmatter.get("title", "").strip()
 
             if github_username and person_name:
@@ -370,10 +374,12 @@ def compute_top_level_keys(
         value = external.get(key)
 
         # Handle list values with include/exclude
-        if isinstance(value, list) and key in include:
+        if key in include:
             # Add items from include
             include_items = include.get(key, [])
             if isinstance(include_items, list):
+                if not isinstance(value, list):
+                    value = []
                 value = list(value)  # Make a copy
                 value.extend(include_items)
                 # Deduplicate while preserving order

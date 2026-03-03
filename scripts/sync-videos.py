@@ -171,9 +171,11 @@ def compute_top_level_keys(
     for key in keys_to_process:
         value = external.get(key)
 
-        if isinstance(value, list) and key in include:
+        if key in include:
             include_items = include.get(key, [])
             if isinstance(include_items, list):
+                if not isinstance(value, list):
+                    value = []
                 value = list(value)
                 value.extend(include_items)
                 seen: set = set()

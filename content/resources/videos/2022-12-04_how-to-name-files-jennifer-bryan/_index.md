@@ -13,11 +13,16 @@ description: 'Low-tech common sense about filenames. The holy trinity is:
 
 
   https://normconf.com/'
-people: []
+people:
+- Jenny Bryan
 resource_type: video
 resources: []
 software: []
 title: How to name files  - Jennifer Bryan
+
+include:
+  people:
+  - Jenny Bryan
 
 external:  # updated automatically, do not edit
   channel: NormConf
