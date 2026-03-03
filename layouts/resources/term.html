@@ -230,7 +230,7 @@
   <!-- Content Section -->
   {{ if eq .Params.resource_type "video" }}
   {{ $body := .Content }}
-  {{ if not $body }}{{ $body = .Params.description | replaceRE `(https?://\S+)` `<a href="$1" target="_blank">$1</a>` | replaceRE "\n" "<br>" | safeHTML }}{{ end }}
+  {{ if not $body }}{{ $body = .Params.description | replaceRE "\n" "<br>" | safeHTML }}{{ end }}
   {{ with $body }}
   <div class="mt-8 mx-2 md:mx-0">
     <div id="video-description" class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
@@ -280,9 +280,38 @@
       });
     }
 
+    function linkifyURLs(root) {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      var nodes = [];
+      var node;
+      while ((node = walker.nextNode())) nodes.push(node);
+      nodes.forEach(function (textNode) {
+        var text = textNode.nodeValue;
+        if (!/https?:\/\//.test(text)) return;
+        var frag = document.createDocumentFragment();
+        var re = /(https?:\/\/\S+)/g;
+        var last = 0, m;
+        while ((m = re.exec(text)) !== null) {
+          if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+          var url = m[1].replace(/[.,;:!?)\]'"]+$/, "");
+          var trailing = m[1].slice(url.length);
+          var a = document.createElement("a");
+          a.href = url;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = url;
+          frag.appendChild(a);
+          if (trailing) frag.appendChild(document.createTextNode(trailing));
+          last = m.index + m[0].length;
+        }
+        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
+      });
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
       var desc = document.getElementById("video-description");
-      if (desc) linkifyTimestamps(desc);
+      if (desc) { linkifyURLs(desc); linkifyTimestamps(desc); }
     });
   })();
   </script>
