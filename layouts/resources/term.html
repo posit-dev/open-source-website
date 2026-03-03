@@ -230,7 +230,7 @@
   <!-- Content Section -->
   {{ if eq .Params.resource_type "video" }}
   {{ $body := .Content }}
-  {{ if not $body }}{{ $body = .Params.description | replaceRE "\n" "<br>" | safeHTML }}{{ end }}
+  {{ if not $body }}{{ $body = .Params.description | replaceRE `(https?://[^\s<>"'.,;!?]+)` `<a href="$1" target="_blank">$1</a>` | replaceRE "\n" "<br>" | safeHTML }}{{ end }}
   {{ with $body }}
   <div class="mt-8 mx-2 md:mx-0">
     <div id="video-description" class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
