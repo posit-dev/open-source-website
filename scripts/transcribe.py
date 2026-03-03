@@ -8,17 +8,23 @@
 # ]
 # ///
 
+
 """
 Transcribe audio files found under content/resources/videos/.
 
-For each subdirectory that contains an audio file but no transcription.json,
-downloads the audio, optionally compresses it to fit the 25 MB API limit, and
-transcribes it using the OpenAI gpt-4o-transcribe-diarize model. The result is
-written as transcription.json. Requires OPENAI_API_KEY in .env.
+For each subdirectory that contains an audio file but no transcription.vtt,
+optionally compresses it to fit the 25 MB API limit, and transcribes it using
+the OpenAI whisper-1 model. The result is written as transcription.vtt.
+Requires OPENAI_API_KEY in .env.
+
+Runs up to --jobs transcriptions in parallel (default 5) with at least 1 second
+between API requests and exponential backoff on rate-limit / server errors.
 """
 
-import json
+import argparse
+import asyncio
 import os
+import random
 import subprocess
 import sys
 import tempfile
@@ -31,16 +37,19 @@ from dotenv import load_dotenv
 from rich.console import Console
 from rich.progress import (
     BarColumn,
+    MofNCompleteColumn,
     Progress,
     SpinnerColumn,
-    TaskProgressColumn,
     TextColumn,
+    TimeElapsedColumn,
 )
 
-console = Console(stderr=True)
+console = Console(stderr=True, log_time_format="[%Y-%m-%d %H:%M:%S]", log_path=False)
 
 MAX_BYTES = 25 * 1024 * 1024
 COMPRESSION_BITRATES = ["64k", "48k", "32k", "24k", "16k"]
+MAX_RETRIES = 5
+BASE_BACKOFF = 1.0
 
 
 def parse_frontmatter(content: str) -> dict[str, Any]:
@@ -67,23 +76,10 @@ def compress_audio(src: Path) -> tuple[Path, bool]:
     if src.stat().st_size <= MAX_BYTES:
         return src, False
 
-    size_mb = src.stat().st_size / 1024 / 1024
-    console.print(f"  [yellow]Compressing {src.name} ({size_mb:.1f} MB)…[/]")
-
     for bitrate in COMPRESSION_BITRATES:
         tmp = Path(tempfile.mktemp(suffix=".mp3"))
         subprocess.run(
-            [
-                "ffmpeg",
-                "-y",
-                "-i",
-                str(src),
-                "-c:a",
-                "libmp3lame",
-                "-b:a",
-                bitrate,
-                str(tmp),
-            ],
+            ["ffmpeg", "-y", "-i", str(src), "-c:a", "libmp3lame", "-b:a", bitrate, str(tmp)],
             check=True,
             capture_output=True,
         )
@@ -106,61 +102,110 @@ def build_prompt(frontmatter: dict[str, Any]) -> str:
     return ", ".join(parts)
 
 
-def transcribe_audio(
+class RateLimiter:
+    """Ensures at least `min_interval` seconds between API requests."""
+
+    def __init__(self, min_interval: float = 1.0) -> None:
+        self._lock = asyncio.Lock()
+        self._last: float = 0.0
+        self._interval = min_interval
+
+    async def wait(self) -> None:
+        async with self._lock:
+            loop = asyncio.get_running_loop()
+            elapsed = loop.time() - self._last
+            if elapsed < self._interval:
+                await asyncio.sleep(self._interval - elapsed)
+            self._last = asyncio.get_running_loop().time()
+
+
+async def transcribe_audio(
     audio_file: Path,
     prompt: str,
-    client: openai.OpenAI,
-) -> dict[str, Any]:
-    with open(audio_file, "rb") as f:
-        kwargs: dict[str, Any] = {
-            "model": "whisper-1",
-            "file": f,
-            "response_format": "verbose_json",
-        }
-        if prompt:
-            kwargs["prompt"] = prompt
-        result = client.audio.transcriptions.create(**kwargs)
-    return result.model_dump()
+    name: str,
+    client: openai.AsyncOpenAI,
+    rate_limiter: RateLimiter,
+) -> str:
+    kwargs: dict[str, Any] = {
+        "model": "whisper-1",
+        "response_format": "vtt",
+    }
+    if prompt:
+        kwargs["prompt"] = prompt
 
+    for attempt in range(MAX_RETRIES):
+        if attempt > 0:
+            delay = BASE_BACKOFF * (2 ** (attempt - 1)) + random.uniform(0, 1)
+            console.log(f"{name}  [yellow]retry {attempt + 1}/{MAX_RETRIES} in {delay:.1f}s[/]")
+            await asyncio.sleep(delay)
 
-def process_video(video_dir: Path, client: openai.OpenAI) -> str:
-    try:
-        audio_file = find_audio_file(video_dir)
-        if audio_file is None:
-            return "no_audio"
-
-        transcription_file = video_dir / "transcription.json"
-        if transcription_file.exists():
-            return "skipped"
-
-        index_file = video_dir / "_index.md"
-        frontmatter = (
-            parse_frontmatter(index_file.read_text(encoding="utf-8"))
-            if index_file.exists()
-            else {}
-        )
-
-        prompt = build_prompt(frontmatter)
-
-        audio_path, is_temp = compress_audio(audio_file)
+        await rate_limiter.wait()
         try:
-            data = transcribe_audio(audio_path, prompt, client)
+            with open(audio_file, "rb") as f:
+                return await client.audio.transcriptions.create(file=f, **kwargs)
+        except openai.RateLimitError:
+            if attempt == MAX_RETRIES - 1:
+                raise
+        except openai.APIStatusError as e:
+            if e.status_code < 500 or attempt == MAX_RETRIES - 1:
+                raise
+
+    raise RuntimeError("Exceeded max retries")
+
+
+async def process_video_async(
+    video_dir: Path,
+    client: openai.AsyncOpenAI,
+    semaphore: asyncio.Semaphore,
+    rate_limiter: RateLimiter,
+    progress: Progress,
+    task_id: Any,
+) -> str:
+    async with semaphore:
+        name = video_dir.name
+        try:
+            audio_file = find_audio_file(video_dir)
+            if audio_file is None:
+                console.log(f"{name}  [dim]no audio file[/]")
+                return "no_audio"
+
+            transcription_file = video_dir / "transcription.vtt"
+            if transcription_file.exists():
+                console.log(f"{name}  [dim]already transcribed[/]")
+                return "skipped"
+
+            index_file = video_dir / "_index.md"
+            frontmatter = (
+                parse_frontmatter(index_file.read_text(encoding="utf-8"))
+                if index_file.exists()
+                else {}
+            )
+            prompt = build_prompt(frontmatter)
+
+            if audio_file.stat().st_size > MAX_BYTES:
+                size_mb = audio_file.stat().st_size / 1024 / 1024
+                console.log(f"{name}  [yellow]compressing ({size_mb:.1f} MB)[/]")
+
+            audio_path, is_temp = await asyncio.to_thread(compress_audio, audio_file)
+            try:
+                console.log(f"{name}  [cyan]transcribing[/]")
+                data = await transcribe_audio(audio_path, prompt, name, client, rate_limiter)
+            finally:
+                if is_temp:
+                    audio_path.unlink(missing_ok=True)
+
+            transcription_file.write_text(data, encoding="utf-8")
+            console.log(f"{name}  [green]done[/]")
+            return "transcribed"
+
+        except Exception as e:
+            console.log(f"{name}  [red]error:[/] {e}")
+            return "error"
         finally:
-            if is_temp:
-                audio_path.unlink(missing_ok=True)
-
-        transcription_file.write_text(
-            json.dumps(data, indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
-        return "transcribed"
-
-    except Exception as e:
-        console.print(f"  [red]✗[/] {video_dir.name}: {e}")
-        return "error"
+            progress.advance(task_id)
 
 
-def main() -> None:
+async def main_async(jobs: int) -> None:
     console.print("\n[bold blue]Video Transcriber[/]\n")
 
     load_dotenv()
@@ -169,7 +214,7 @@ def main() -> None:
         console.print("[bold red]Error:[/] OPENAI_API_KEY not set in .env")
         sys.exit(1)
 
-    client = openai.OpenAI(api_key=api_key)
+    client = openai.AsyncOpenAI(api_key=api_key)
 
     videos_dir = Path(__file__).parent.parent / "content" / "resources" / "videos"
     if not videos_dir.exists():
@@ -177,34 +222,32 @@ def main() -> None:
         sys.exit(1)
 
     dirs = sorted(d for d in videos_dir.iterdir() if d.is_dir())
-    console.print(f"[dim]Found {len(dirs)} video directories[/]\n")
+    console.print(f"[dim]Found {len(dirs)} video directories (--jobs {jobs})[/]\n")
 
-    transcribed = skipped = no_audio = errors = 0
+    semaphore = asyncio.Semaphore(jobs)
+    rate_limiter = RateLimiter(min_interval=1.0)
 
     with Progress(
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
         BarColumn(),
-        TaskProgressColumn(),
+        MofNCompleteColumn(),
+        TimeElapsedColumn(),
         console=console,
     ) as progress:
-        task = progress.add_task("[cyan]Transcribing...", total=len(dirs))
+        task_id = progress.add_task("[cyan]Transcribing...", total=len(dirs))
 
-        for video_dir in dirs:
-            progress.update(task, description=f"[cyan]{video_dir.name}")
-            result = process_video(video_dir, client)
+        results: list[str] = await asyncio.gather(
+            *[
+                process_video_async(d, client, semaphore, rate_limiter, progress, task_id)
+                for d in dirs
+            ]
+        )
 
-            if result == "transcribed":
-                console.print(f"  [green]✓[/] {video_dir.name}")
-                transcribed += 1
-            elif result == "skipped":
-                skipped += 1
-            elif result == "no_audio":
-                no_audio += 1
-            elif result == "error":
-                errors += 1
-
-            progress.advance(task)
+    transcribed = results.count("transcribed")
+    skipped = results.count("skipped")
+    no_audio = results.count("no_audio")
+    errors = results.count("error")
 
     console.print("\n[bold]Summary:[/]")
     console.print(f"  [green]✓[/] Transcribed: {transcribed}")
@@ -214,6 +257,21 @@ def main() -> None:
         console.print(f"  [red]✗[/] Errors:      {errors}")
 
     console.print("\n[bold green]✓ Done![/]\n")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Transcribe video audio files using OpenAI Whisper"
+    )
+    parser.add_argument(
+        "--jobs",
+        type=int,
+        default=5,
+        metavar="N",
+        help="number of parallel transcription jobs (default: 5)",
+    )
+    args = parser.parse_args()
+    asyncio.run(main_async(args.jobs))
 
 
 if __name__ == "__main__":

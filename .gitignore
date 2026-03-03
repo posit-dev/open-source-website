@@ -26,4 +26,4 @@ assets/css/index.css
 
 # Downloaded audio files and transcriptions
 content/resources/videos/**/audio.*
-content/resources/videos/**/transcription.json
+content/resources/videos/**/transcription.vtt
