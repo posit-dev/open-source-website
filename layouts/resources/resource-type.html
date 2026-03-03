@@ -19,7 +19,7 @@
 
   {{ if $resources }}
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0">
-    {{ range $resources.ByTitle }}
+    {{ range $resources.ByDate.Reverse }}
       {{ partial "card_resource.html" . }}
     {{ end }}
   </div>
