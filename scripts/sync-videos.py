@@ -206,15 +206,26 @@ def load_videos(videos_toml: Path) -> list[dict[str, Any]]:
     return data.get("videos", [])
 
 
-def load_names(directory: Path) -> list[str]:
+def load_names(directory: Path, ignore_slugs: set[str] | None = None) -> list[str]:
     names = []
     for index_file in sorted(directory.glob("*/_index.md")):
+        slug = index_file.parent.name
+        if ignore_slugs and slug in ignore_slugs:
+            continue
         content = index_file.read_text(encoding="utf-8")
         frontmatter, _, _ = parse_frontmatter(content)
         title = frontmatter.get("title", "").strip()
         if title:
             names.append(title)
     return names
+
+
+def load_software_match_ignore(ignore_toml: Path) -> set[str]:
+    if not ignore_toml.exists():
+        return set()
+    with open(ignore_toml, "rb") as f:
+        data = tomllib.load(f)
+    return set(data.get("names", []))
 
 
 # ---------------------------------------------------------------------------
@@ -385,6 +396,7 @@ def main() -> None:
     videos_dir = project_root / "content" / "resources" / "videos"
     people_dir = project_root / "content" / "people"
     software_dir = project_root / "content" / "software"
+    ignore_toml = project_root / "data" / "software-match-ignore.toml"
 
     for path, label in [
         (videos_toml, "videos TOML"),
@@ -397,12 +409,14 @@ def main() -> None:
 
     all_videos = load_videos(videos_toml)
     people_names = load_names(people_dir)
-    software_names = load_names(software_dir)
+    ignore_slugs = load_software_match_ignore(ignore_toml)
+    software_names = load_names(software_dir, ignore_slugs=ignore_slugs)
 
     console.print(
         f"[dim]Loaded {len(all_videos)} videos, "
         f"{len(people_names)} people, "
-        f"{len(software_names)} software entries[/]\n"
+        f"{len(software_names)} software entries "
+        f"({len(ignore_slugs)} ignored)[/]\n"
     )
 
     videos_dir.mkdir(parents=True, exist_ok=True)
