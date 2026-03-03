@@ -116,7 +116,7 @@ def transcribe_audio(
         kwargs: dict[str, Any] = {
             "model": "gpt-4o-transcribe-diarize",
             "file": f,
-            "response_format": "verbose_json",
+            "response_format": "diarized_json",
         }
         if prompt:
             kwargs["prompt"] = prompt
