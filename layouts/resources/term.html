@@ -199,7 +199,7 @@
       {{ $videoId = index (split $videoId "&") 0 }}
       {{ end }}
       {{ if $videoId }}
-      <iframe class="w-full h-full" src="https://www.youtube.com/embed/{{ $videoId }}" frameborder="0"
+      <iframe id="youtube-player" class="w-full h-full" src="https://www.youtube.com/embed/{{ $videoId }}?enablejsapi=1" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
       {{ else }}
@@ -233,10 +233,59 @@
   {{ if not $body }}{{ $body = .Params.description | markdownify }}{{ end }}
   {{ with $body }}
   <div class="mt-8 mx-2 md:mx-0">
-    <div class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
+    <div id="video-description" class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
       {{ . }}
     </div>
   </div>
+  <script>
+  (function () {
+    function toSeconds(ts) {
+      var parts = ts.split(":").map(Number);
+      if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+      return parts[0] * 60 + parts[1];
+    }
+
+    function linkifyTimestamps(root) {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      var nodes = [];
+      var node;
+      while ((node = walker.nextNode())) nodes.push(node);
+      nodes.forEach(function (textNode) {
+        var text = textNode.nodeValue;
+        if (!/\d{1,2}:\d{2}/.test(text)) return;
+        var frag = document.createDocumentFragment();
+        var re = /(\d{1,2}:\d{2}(?::\d{2})?)/g;
+        var last = 0, m;
+        while ((m = re.exec(text)) !== null) {
+          if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+          var a = document.createElement("a");
+          a.textContent = m[1];
+          a.href = "#";
+          a.dataset.t = toSeconds(m[1]);
+          a.addEventListener("click", function (e) {
+            e.preventDefault();
+            var player = document.getElementById("youtube-player");
+            if (player) {
+              player.contentWindow.postMessage(
+                JSON.stringify({ event: "command", func: "seekTo", args: [Number(this.dataset.t), true] }),
+                "*"
+              );
+            }
+          });
+          frag.appendChild(a);
+          last = m.index + m[0].length;
+        }
+        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var desc = document.getElementById("video-description");
+      if (desc) linkifyTimestamps(desc);
+    });
+  })();
+  </script>
   {{ end }}
   {{ else if .Content }}
   <div class="flex flex-col lg:flex-row gap-8 mt-8">
