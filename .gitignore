@@ -24,5 +24,6 @@ assets/css/index.css
 
 .env
 
-# Downloaded audio files
+# Downloaded audio files and transcriptions
 content/resources/videos/**/audio.*
+content/resources/videos/**/transcription.json

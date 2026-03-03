@@ -36,6 +36,9 @@ sync-videos:
 download-youtube-audio:
     ./scripts/download-youtube-audio.py
 
+transcribe:
+    ./scripts/transcribe.py
+
 quarto-preview:
     uv run quarto preview
 
