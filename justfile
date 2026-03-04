@@ -40,8 +40,8 @@ transcribe:
     ./scripts/transcribe.py
 
 # Format VTT transcriptions into HTML using the Anthropic API
-format-transcription *args:
-    ./scripts/format-transcription.py {{args}}
+format-transcriptions *args:
+    ./scripts/format-transcriptions.py {{args}}
 
 quarto-preview:
     uv run quarto preview
