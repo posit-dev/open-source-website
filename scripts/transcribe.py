@@ -5,18 +5,25 @@
 #   "rich>=13.0.0",
 #   "openai>=2.0.0",
 #   "python-dotenv>=1.0.0",
+#   "yt-dlp>=2025.0",
 # ]
 # ///
 
 
 """
-Transcribe audio files found under content/resources/videos/.
+Download audio from YouTube and transcribe it for each video under
+content/resources/videos/.
 
-For each subdirectory that contains an audio file but no transcription.vtt,
-optionally compresses it to fit the 25 MB API limit, and transcribes it using
-the OpenAI whisper-1 model. The result is written as transcription.vtt.
+For each subdirectory:
+- If transcription.vtt already exists, skip.
+- If no audio file exists, download it from external.url in _index.md using
+  yt-dlp (pass --cookies-from-browser BROWSER if authentication is needed).
+- If the audio exceeds the 25 MB API limit, split into chunks at silence
+  boundaries, transcribe each chunk, and merge the VTT output with corrected
+  timestamps.
+- Delete the audio file after a successful transcription.
+
 Requires OPENAI_API_KEY in .env.
-
 Runs up to --jobs transcriptions in parallel (default 5) with at least 1 second
 between API requests and exponential backoff on rate-limit / server errors.
 """
@@ -25,6 +32,7 @@ import argparse
 import asyncio
 import os
 import random
+import re
 import subprocess
 import sys
 import tempfile
@@ -40,14 +48,14 @@ from rich.progress import (
     MofNCompleteColumn,
     Progress,
     SpinnerColumn,
+    TaskID,
     TextColumn,
     TimeElapsedColumn,
 )
 
-console = Console(stderr=True, log_time_format="[%Y-%m-%d %H:%M:%S]", log_path=False)
+console = Console(stderr=True)
 
 MAX_BYTES = 25 * 1024 * 1024
-COMPRESSION_BITRATES = ["64k", "48k", "32k", "24k", "16k"]
 MAX_RETRIES = 5
 BASE_BACKOFF = 1.0
 
@@ -72,24 +80,35 @@ def find_audio_file(video_dir: Path) -> Path | None:
     return None
 
 
-def compress_audio(src: Path) -> tuple[Path, bool]:
-    if src.stat().st_size <= MAX_BYTES:
-        return src, False
+def get_video_url(video_dir: Path) -> str | None:
+    index_file = video_dir / "_index.md"
+    if not index_file.exists():
+        return None
+    frontmatter = parse_frontmatter(index_file.read_text(encoding="utf-8"))
+    return frontmatter.get("external", {}).get("url")
 
-    for bitrate in COMPRESSION_BITRATES:
-        tmp = Path(tempfile.mktemp(suffix=".mp3"))
-        subprocess.run(
-            ["ffmpeg", "-y", "-i", str(src), "-c:a", "libmp3lame", "-b:a", bitrate, str(tmp)],
-            check=True,
-            capture_output=True,
-        )
-        if tmp.stat().st_size <= MAX_BYTES:
-            return tmp, True
-        tmp.unlink(missing_ok=True)
 
-    raise RuntimeError(
-        f"Could not compress {src.name} below 25 MB even at {COMPRESSION_BITRATES[-1]}"
-    )
+def download_audio(url: str, dest_dir: Path, browser: str | None) -> None:
+    cmd = [
+        sys.executable,
+        "-m",
+        "yt_dlp",
+        "--remote-components",
+        "ejs:github",
+        "--format",
+        "bestaudio/best",
+        "--output",
+        str(dest_dir / "audio.%(ext)s"),
+        "--no-playlist",
+        "--quiet",
+        "--no-warnings",
+    ]
+    if browser:
+        cmd += ["--cookies-from-browser", browser]
+    cmd.append(url)
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or result.stdout.strip())
 
 
 def build_prompt(frontmatter: dict[str, Any]) -> str:
@@ -100,6 +119,150 @@ def build_prompt(frontmatter: dict[str, Any]) -> str:
     software = frontmatter.get("software", []) or []
     parts.extend(software)
     return ", ".join(parts)
+
+
+def get_audio_duration(src: Path) -> float:
+    result = subprocess.run(
+        [
+            "ffprobe",
+            "-v",
+            "error",
+            "-show_entries",
+            "format=duration",
+            "-of",
+            "default=noprint_wrappers=1:nokey=1",
+            str(src),
+        ],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    return float(result.stdout.strip())
+
+
+def detect_silence(
+    src: Path, noise_db: float = -30, min_duration: float = 0.5
+) -> list[float]:
+    result = subprocess.run(
+        [
+            "ffmpeg",
+            "-i",
+            str(src),
+            "-af",
+            f"silencedetect=noise={noise_db}dB:d={min_duration}",
+            "-f",
+            "null",
+            "-",
+        ],
+        capture_output=True,
+        text=True,
+    )
+    starts: list[float] = []
+    ends: list[float] = []
+    for line in result.stderr.splitlines():
+        if m := re.search(r"silence_start:\s*([\d.]+)", line):
+            starts.append(float(m.group(1)))
+        elif m := re.search(r"silence_end:\s*([\d.]+)", line):
+            ends.append(float(m.group(1)))
+    return [(s + e) / 2 for s, e in zip(starts, ends)]
+
+
+def compute_chunk_boundaries(
+    duration: float,
+    file_size: int,
+    silence_points: list[float],
+) -> list[tuple[float, float]]:
+    max_chunk_secs = MAX_BYTES / (file_size / duration)
+    boundaries: list[tuple[float, float]] = []
+    start = 0.0
+    while start < duration:
+        ideal_end = min(start + max_chunk_secs, duration)
+        if ideal_end >= duration:
+            boundaries.append((start, duration))
+            break
+        candidates = [t for t in silence_points if start < t <= ideal_end]
+        cut = max(candidates) if candidates else ideal_end
+        boundaries.append((start, cut))
+        start = cut
+    return boundaries
+
+
+def split_at_silence(src: Path, _offset: float = 0.0) -> list[tuple[Path, float]]:
+    duration = get_audio_duration(src)
+    silence = detect_silence(src)
+    boundaries = compute_chunk_boundaries(duration, src.stat().st_size, silence)
+    chunks: list[tuple[Path, float]] = []
+    for start, end in boundaries:
+        tmp = Path(tempfile.mktemp(suffix=src.suffix))
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-y",
+                "-ss",
+                str(start),
+                "-i",
+                str(src),
+                "-t",
+                str(end - start),
+                "-c",
+                "copy",
+                str(tmp),
+            ],
+            check=True,
+            capture_output=True,
+        )
+        if tmp.stat().st_size > MAX_BYTES:
+            sub_chunks = split_at_silence(tmp, _offset=_offset + start)
+            tmp.unlink(missing_ok=True)
+            chunks.extend(sub_chunks)
+        else:
+            chunks.append((tmp, _offset + start))
+    return chunks
+
+
+def parse_vtt_timestamp(ts: str) -> float:
+    parts = ts.strip().split(":")
+    if len(parts) == 3:
+        return int(parts[0]) * 3600 + int(parts[1]) * 60 + float(parts[2])
+    return int(parts[0]) * 60 + float(parts[1])
+
+
+def format_vtt_timestamp(seconds: float) -> str:
+    h = int(seconds // 3600)
+    m = int((seconds % 3600) // 60)
+    s = seconds % 60
+    return f"{h:02d}:{m:02d}:{s:06.3f}"
+
+
+def parse_vtt(content: str) -> list[tuple[float, float, str]]:
+    cues: list[tuple[float, float, str]] = []
+    for block in re.split(r"\n{2,}", content.strip()):
+        lines = block.strip().splitlines()
+        arrow = next((i for i, line in enumerate(lines) if "-->" in line), None)
+        if arrow is None:
+            continue
+        m = re.match(r"([\d:.]+)\s+-->\s+([\d:.]+)", lines[arrow])
+        if not m:
+            continue
+        start = parse_vtt_timestamp(m.group(1))
+        end = parse_vtt_timestamp(m.group(2))
+        text = "\n".join(lines[arrow + 1 :]).strip()
+        if text:
+            cues.append((start, end, text))
+    return cues
+
+
+def merge_vtt(parts: list[tuple[str, float]]) -> str:
+    lines = ["WEBVTT", ""]
+    for vtt_content, offset in parts:
+        for start, end, text in parse_vtt(vtt_content):
+            lines.append(
+                f"{format_vtt_timestamp(start + offset)} --> "
+                f"{format_vtt_timestamp(end + offset)}"
+            )
+            lines.append(text)
+            lines.append("")
+    return "\n".join(lines)
 
 
 class RateLimiter:
@@ -136,7 +299,9 @@ async def transcribe_audio(
     for attempt in range(MAX_RETRIES):
         if attempt > 0:
             delay = BASE_BACKOFF * (2 ** (attempt - 1)) + random.uniform(0, 1)
-            console.log(f"{name}  [yellow]retry {attempt + 1}/{MAX_RETRIES} in {delay:.1f}s[/]")
+            console.print(
+                f"  [yellow]↻[/] {name}  retry {attempt + 1}/{MAX_RETRIES} in {delay:.1f}s"
+            )
             await asyncio.sleep(delay)
 
         await rate_limiter.wait()
@@ -159,20 +324,28 @@ async def process_video_async(
     semaphore: asyncio.Semaphore,
     rate_limiter: RateLimiter,
     progress: Progress,
-    task_id: Any,
+    overall_task: TaskID,
+    browser: str | None,
 ) -> str:
     async with semaphore:
         name = video_dir.name
+        job_task = progress.add_task(f"[dim]{name}", total=None)
         try:
-            audio_file = find_audio_file(video_dir)
-            if audio_file is None:
-                console.log(f"{name}  [dim]no audio file[/]")
-                return "no_audio"
-
             transcription_file = video_dir / "transcription.vtt"
             if transcription_file.exists():
-                console.log(f"{name}  [dim]already transcribed[/]")
                 return "skipped"
+
+            audio_file = find_audio_file(video_dir)
+
+            if audio_file is None:
+                url = get_video_url(video_dir)
+                if not url:
+                    return "no_url"
+                progress.update(job_task, description=f"[cyan]{name}  downloading")
+                await asyncio.to_thread(download_audio, url, video_dir, browser)
+                audio_file = find_audio_file(video_dir)
+                if audio_file is None:
+                    raise RuntimeError("Download succeeded but audio file not found")
 
             index_file = video_dir / "_index.md"
             frontmatter = (
@@ -184,28 +357,55 @@ async def process_video_async(
 
             if audio_file.stat().st_size > MAX_BYTES:
                 size_mb = audio_file.stat().st_size / 1024 / 1024
-                console.log(f"{name}  [yellow]compressing ({size_mb:.1f} MB)[/]")
+                progress.update(
+                    job_task,
+                    description=f"[yellow]{name}  chunking audio ({size_mb:.1f} MB)",
+                )
+                chunks: list[tuple[Path, float]] = await asyncio.to_thread(
+                    split_at_silence, audio_file
+                )
+                is_temp = True
+            else:
+                chunks = [(audio_file, 0.0)]
+                is_temp = False
 
-            audio_path, is_temp = await asyncio.to_thread(compress_audio, audio_file)
             try:
-                console.log(f"{name}  [cyan]transcribing[/]")
-                data = await transcribe_audio(audio_path, prompt, name, client, rate_limiter)
+                vtt_parts: list[tuple[str, float]] = []
+                total_chunks = len(chunks)
+                for i, (chunk_path, offset) in enumerate(chunks):
+                    label = f" {i + 1}/{total_chunks}" if total_chunks > 1 else ""
+                    progress.update(
+                        job_task, description=f"[cyan]{name}  transcribing{label}"
+                    )
+                    vtt = await transcribe_audio(
+                        chunk_path, prompt, name, client, rate_limiter
+                    )
+                    vtt_parts.append((vtt, offset))
             finally:
                 if is_temp:
-                    audio_path.unlink(missing_ok=True)
+                    for chunk_path, _ in chunks:
+                        chunk_path.unlink(missing_ok=True)
 
+            if len(vtt_parts) == 1:
+                data = vtt_parts[0][0]
+            else:
+                progress.update(
+                    job_task, description=f"[cyan]{name}  merging transcript"
+                )
+                data = merge_vtt(vtt_parts)
             transcription_file.write_text(data, encoding="utf-8")
-            console.log(f"{name}  [green]done[/]")
+            audio_file.unlink()
             return "transcribed"
 
         except Exception as e:
-            console.log(f"{name}  [red]error:[/] {e}")
+            console.print(f"  [red]✗[/] {name}: {e}")
             return "error"
         finally:
-            progress.advance(task_id)
+            progress.remove_task(job_task)
+            progress.advance(overall_task)
 
 
-async def main_async(jobs: int) -> None:
+async def main_async(jobs: int, browser: str | None) -> None:
     console.print("\n[bold blue]Video Transcriber[/]\n")
 
     load_dotenv()
@@ -229,30 +429,32 @@ async def main_async(jobs: int) -> None:
 
     with Progress(
         SpinnerColumn(),
-        TextColumn("[progress.description]{task.description}"),
+        TextColumn("{task.description}"),
         BarColumn(),
         MofNCompleteColumn(),
         TimeElapsedColumn(),
         console=console,
     ) as progress:
-        task_id = progress.add_task("[cyan]Transcribing...", total=len(dirs))
+        overall_task = progress.add_task("[bold cyan]Transcribing", total=len(dirs))
 
         results: list[str] = await asyncio.gather(
             *[
-                process_video_async(d, client, semaphore, rate_limiter, progress, task_id)
+                process_video_async(
+                    d, client, semaphore, rate_limiter, progress, overall_task, browser
+                )
                 for d in dirs
             ]
         )
 
     transcribed = results.count("transcribed")
     skipped = results.count("skipped")
-    no_audio = results.count("no_audio")
+    no_url = results.count("no_url")
     errors = results.count("error")
 
     console.print("\n[bold]Summary:[/]")
     console.print(f"  [green]✓[/] Transcribed: {transcribed}")
     console.print(f"  [dim]○[/] Skipped:     {skipped}")
-    console.print(f"  [dim]○[/] No audio:    {no_audio}")
+    console.print(f"  [dim]○[/] No URL:      {no_url}")
     if errors:
         console.print(f"  [red]✗[/] Errors:      {errors}")
 
@@ -261,7 +463,7 @@ async def main_async(jobs: int) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Transcribe video audio files using OpenAI Whisper"
+        description="Download and transcribe video audio files using OpenAI Whisper"
     )
     parser.add_argument(
         "--jobs",
@@ -270,8 +472,13 @@ def main() -> None:
         metavar="N",
         help="number of parallel transcription jobs (default: 5)",
     )
+    parser.add_argument(
+        "--cookies-from-browser",
+        metavar="BROWSER",
+        help="browser to read cookies from for yt-dlp (e.g. chrome, firefox, safari)",
+    )
     args = parser.parse_args()
-    asyncio.run(main_async(args.jobs))
+    asyncio.run(main_async(args.jobs, args.cookies_from_browser))
 
 
 if __name__ == "__main__":

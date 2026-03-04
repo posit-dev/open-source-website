@@ -1,0 +1,3190 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.280
+Yeah, thanks everyone for joining us. We're so excited to talk about Polars and actually forgot
+
+00:00:07.280 --> 00:00:14.400
+the long name of this workshop, but how it relates to clinical reporting and TFLs. I'm here with
+
+00:00:14.400 --> 00:00:21.920
+Jeroen Janssens, who actually is, I would say, the Polar's big dog. So it's a crime that I spoke
+
+00:00:21.920 --> 00:00:29.440
+first because I feel like Jeroen is the authority on Polars. And so I feel really lucky to have him
+
+00:00:30.000 --> 00:00:36.400
+here. Jeroen, do you want to take it away? Yeah, yeah, yeah. No, Michael, I can't believe
+
+00:00:36.400 --> 00:00:42.000
+you spoke first. This is not at all how we rehearsed. But I'll forgive you. I'll forgive
+
+00:00:42.000 --> 00:00:48.959
+you because look at our shirts. Look at our shirts. They are DataFrame themed and that makes
+
+00:00:48.959 --> 00:00:55.520
+it up. So yeah, and actually, you know, the full title, I have it here in front of me. I'll share
+
+00:00:55.520 --> 00:01:04.239
+my slides in a second, but it's Polars, the Blazing Fast Python Framework for Modern Clinical
+
+00:01:04.239 --> 00:01:13.839
+Trial Data Exploration. That's quite a subtitle there. And so we have some, you know, we have our
+
+00:01:13.839 --> 00:01:19.440
+work cut out for us and we're indeed very excited that you're joining us, that you're, you know,
+
+00:01:19.440 --> 00:01:26.000
+investing your time in learning about this, this awesome package. So yeah, my name is Jeroen.
+
+00:01:27.120 --> 00:01:33.279
+I work at Posit, just like Michael. I do developer relations. Michael does open source.
+
+00:01:34.239 --> 00:01:40.639
+And so for the next two hours, we're going to be talking all about Polars. And if you have any
+
+00:01:40.639 --> 00:01:48.080
+questions, you can use the chat. I might not see them when I'm talking, but Michael, shall we say
+
+00:01:48.080 --> 00:01:54.800
+that whenever you detect a question in the chat, that you just give me a heads up, that you
+
+00:01:54.800 --> 00:02:02.000
+vocalize it? Yeah, I can do a little nudge when it seems like good timing, if there's a question
+
+00:02:02.000 --> 00:02:08.000
+that... Yeah, yeah. Or you can just, you know, convert the text to speech yourself. Sure.
+
+00:02:09.679 --> 00:02:11.919
+Yes. Let me see. I think this is...
+
+00:02:12.240 --> 00:02:19.839
+Yeah. And I, one thing that could be nice too, while you get this cooking is, I'd be curious what
+
+00:02:22.000 --> 00:02:28.399
+what drew people to this workshop, since it's called R and Pharma. I'd love to hear, you know,
+
+00:02:28.399 --> 00:02:37.360
+your experience with Polars and what, what your kind of drew you to Polars and Python. So maybe
+
+00:02:37.919 --> 00:02:43.279
+so maybe drop in the chat. Good question to start with. Yeah. How you got here? I don't know.
+
+00:02:44.559 --> 00:02:51.919
+Because it is, the conference is R and Pharma, but yeah, this is a, this is,
+
+00:02:51.919 --> 00:02:55.440
+this is going to be all about Python, all Polars and Polars and Python.
+
+00:02:57.199 --> 00:03:04.479
+Okay. Am I sharing my slides? Do you see them? I can see them. Fantastic. All right then.
+
+00:03:08.160 --> 00:03:13.759
+So this is what we're up to for the next two hours. I'm going to start with, you know,
+
+00:03:14.880 --> 00:03:20.479
+laying the groundwork, giving you the context of what is Polars in a nutshell. You may already be
+
+00:03:20.479 --> 00:03:26.240
+familiar with what Polars is about, but since we have quite a few, quite a few people joining us
+
+00:03:27.600 --> 00:03:31.119
+today, I thought it'd be good to first, you know, give you the basics.
+
+00:03:32.080 --> 00:03:38.399
+Then ETL. So extract, transform and load. That's what it, you know, basically comes down to,
+
+00:03:38.399 --> 00:03:45.520
+right? So we're going to, we're going to have a look at how Polars, how its vast API maps onto
+
+00:03:45.520 --> 00:03:51.039
+that. Then we're going to have a look at some common operations that you'll use probably,
+
+00:03:51.039 --> 00:03:56.160
+you know, 80% of the time. And then, you know, depending on how we're feeling,
+
+00:03:56.399 --> 00:04:03.759
+we we could do a deep dive into expressions. So this is kind of like a buffer depending on,
+
+00:04:03.759 --> 00:04:10.479
+you know, how fast or how slow we're going. It's all good. We can go as deep or as shallow
+
+00:04:10.479 --> 00:04:15.679
+as we like. I want to make this this tutorial interactive, you know, to the extent that
+
+00:04:15.679 --> 00:04:22.399
+that's possible using Zoom chat. But then I'm going to give the floor to Michael because he
+
+00:04:22.399 --> 00:04:30.079
+has actually prepared a demo where he applies Polars and also some, you know, does some great
+
+00:04:30.079 --> 00:04:37.440
+tabling with clinical trial data. So Q&A is listed here at the very end. But again, as we said,
+
+00:04:38.160 --> 00:04:46.640
+questions are welcome throughout the tutorial. So Polars in a nutshell.
+
+00:04:47.040 --> 00:04:53.519
+Polars is a DataFrame library. It's written in Rust, but it has bindings in a couple of
+
+00:04:53.519 --> 00:05:01.279
+different languages like Python, R, JavaScript. And the one for Python, that's actually the most
+
+00:05:01.279 --> 00:05:07.359
+popular one and the most developed one. So that's why we're going to focus on that one today.
+
+00:05:07.600 --> 00:05:13.679
+If you're like, I really like Polars, but I feel more comfortable with R,
+
+00:05:13.679 --> 00:05:18.959
+there are alternatives for that as well. So there are various ways in which you can use Polars
+
+00:05:18.959 --> 00:05:23.359
+within R. Although I have to admit, I don't have that much experience with that, but I just wanted
+
+00:05:23.359 --> 00:05:32.640
+to point out there are options. It is blazingly fast. So I have,
+
+00:05:33.600 --> 00:05:41.040
+yeah, here's a benchmark to back that up. So what we see here is
+
+00:05:44.320 --> 00:05:49.119
+different timings, different timings for different queries, different benchmark queries
+
+00:05:49.119 --> 00:05:57.600
+that we have performed using Polars and four other popular DataFrame libraries.
+
+00:05:57.760 --> 00:06:04.959
+So on the x-axis, we have time. Notice that it's on a log scale. And so this gives you an idea of
+
+00:06:04.959 --> 00:06:13.359
+how fast Polars actually is. DougDB is also really fast. And so for a couple of queries, DougDB is
+
+00:06:13.359 --> 00:06:19.040
+actually faster. And this changes over time. There's a very healthy bit of competition going
+
+00:06:19.040 --> 00:06:25.920
+on between these two. But it is fair to say that Polars is a little bit faster than DougDB.
+
+00:06:26.640 --> 00:06:32.799
+But it is fair to say that, you know, both Polars and DougDB, they are way faster than
+
+00:06:32.799 --> 00:06:42.320
+the alternatives here. So Pandas and PySpark or Dask. Now, the second thing you should know,
+
+00:06:42.320 --> 00:06:48.559
+so the first one being Polars is really fast, blazingly fast. The second thing you should know
+
+00:06:48.559 --> 00:06:57.119
+is that Polars is really popular. These are GitHub stars over time. And now popularity by itself is,
+
+00:06:57.119 --> 00:07:03.679
+of course, not really, you know, the only thing that matters. But when you're choosing something
+
+00:07:03.679 --> 00:07:11.679
+new, it really helps to have, you know, to use a technology which is, that has a community around
+
+00:07:11.760 --> 00:07:20.480
+it, that has good support. So, and as we can see here, this is definitely the case for Polars.
+
+00:07:20.480 --> 00:07:29.519
+This graph is a little bit outdated. I checked an hour ago and it's now at about 36,000 GitHub stars.
+
+00:07:29.519 --> 00:07:35.839
+All to say that in this very short time span, Polars has gotten a lot of attention.
+
+00:07:36.799 --> 00:07:46.399
+I guess that's about it, right? Oh yeah, the API. It has a very expressive API. So what you often
+
+00:07:46.399 --> 00:07:55.760
+hear is that, you know, come for the speed. Sorry, I'm moving all over the place with my slides.
+
+00:07:56.640 --> 00:08:03.679
+But what you often hear is that Polars come for the speed, stay for the API.
+
+00:08:04.000 --> 00:08:07.279
+And I have a slide about that as well, but it's a little bit further down the road.
+
+00:08:08.079 --> 00:08:18.640
+Now, the API, so the actual code that you're writing is, I hear very often from people who
+
+00:08:18.640 --> 00:08:26.079
+are used to Pandas, which is another very popular data frame library in Python, which has been
+
+00:08:27.040 --> 00:08:37.280
+around for, well, I would say 15 years, give or take. It's very different, but what I've been
+
+00:08:37.280 --> 00:08:45.280
+hearing from our people trying, you know, to get used to Polars is that it reminds them a lot of,
+
+00:08:45.280 --> 00:08:50.320
+you know, of the tidyverse. So, and I would say that's a great compliment. Now it's not exactly
+
+00:08:50.320 --> 00:08:55.599
+the same and it never will be because R and Python are still two very different languages.
+
+00:08:57.760 --> 00:09:01.039
+But yeah, there are some similarities there.
+
+00:09:03.200 --> 00:09:10.400
+Hey, so there's this book that I wrote together with Thijs Nieuwdorp. And
+
+00:09:12.159 --> 00:09:17.760
+if you're interested, we are giving away three digital copies. So if you go to
+
+00:09:17.919 --> 00:09:26.799
+polarsguide.com slash rfarmr, if you scan the QR code, you can enter the raffle by filling in your
+
+00:09:26.799 --> 00:09:33.599
+name and email address. Everybody who does this gets the first chapter for free. So this could
+
+00:09:33.599 --> 00:09:42.159
+also be, you know, this could also help you to assess whether it's worthwhile for you to invest
+
+00:09:42.159 --> 00:09:49.840
+more time into learning Polars. But yeah, you could be one of the three lucky people to win a
+
+00:09:49.840 --> 00:09:57.760
+free digital copy. Yes. Okay. Yeah, here it is. I mean, even Yoda agrees with this. So come for
+
+00:09:57.760 --> 00:10:06.239
+the speed, stay for the API. And we're going to be focusing mostly on the API. The speed is
+
+00:10:06.239 --> 00:10:14.719
+something you have to, you know, see for yourself. Once you try it out for yourself, you'll notice
+
+00:10:14.719 --> 00:10:20.799
+how fast it is. I have shown you the benchmark, but it is not until you try it out for yourself
+
+00:10:20.799 --> 00:10:30.159
+that you can truly witness how different this is. So once you experience this speed up, it actually
+
+00:10:30.159 --> 00:10:40.239
+opens up possibilities. It's a strange thing, but it's, that's how time can, that's what time can do
+
+00:10:40.880 --> 00:10:51.760
+to you. So regarding this API or the actual code that we need to write in order to get stuff done,
+
+00:10:52.640 --> 00:11:01.280
+about 50% of that comes down to expressions. And expressions are a very important concept
+
+00:11:01.280 --> 00:11:11.280
+within Polars. And this is also the thing that is perhaps most difficult to grasp. It is the thing
+
+00:11:11.919 --> 00:11:19.599
+that you have to, yes, perhaps spend the most time in. I'm sure that, you know, as our users, many of
+
+00:11:20.559 --> 00:11:31.440
+you have experience with ggplot2, you know, for visualizing data. I love ggplot2, but do you still
+
+00:11:31.440 --> 00:11:39.599
+remember when you first, you know, needed to understand the ideas, the concepts, the grammar
+
+00:11:39.599 --> 00:11:46.719
+of graphics behind it? It took a while. There's definitely a learning curve, but once you get it,
+
+00:11:46.719 --> 00:11:54.640
+once that, you know, there's something, something clicks and you're like, yes, I get it now. And
+
+00:11:54.640 --> 00:12:01.679
+from that moment on, you feel liberated. You don't have to consult the documentation for every little
+
+00:12:01.679 --> 00:12:08.159
+thing that you do because you understand the underlying ideas. And that kind of holds for
+
+00:12:08.159 --> 00:12:13.840
+expressions as well. There is a learning curve associated with these things, but once you,
+
+00:12:13.840 --> 00:12:23.200
+once you grasp it, it, it, after that, it comes very natural to you. And you'll then notice how,
+
+00:12:24.320 --> 00:12:30.320
+how easy it is for you to work with these building blocks. And that's a good thing,
+
+00:12:30.320 --> 00:12:37.200
+because expressions, they pop up in various places. And I'll show you those places in a moment.
+
+00:12:37.200 --> 00:12:45.359
+First, I just want to drive home the point how big of a thing expressions are within Polars.
+
+00:12:46.000 --> 00:12:53.359
+So when Tyson and I set out to write the book, you know, for O'Reilly, we were like, yeah,
+
+00:12:53.359 --> 00:13:02.000
+we'll devote a chapter to expressions, of course. But we were, as it turned out, incredibly naive
+
+00:13:02.000 --> 00:13:09.440
+in that respect. So it turned out we needed not one, not two, but three chapters to cover
+
+00:13:09.440 --> 00:13:17.119
+everything that expressions have to offer. So within the book itself, they, they,
+
+00:13:18.719 --> 00:13:26.239
+they play, they take up a lot of pages. And I also counted, so you should take this with a
+
+00:13:26.239 --> 00:13:33.119
+little bit grain of salt, because it's, it's not, you know, it's not always straightforward
+
+00:13:33.119 --> 00:13:45.200
+to get the number of functions or methods that a package has to offer. But if you look at, so,
+
+00:13:45.200 --> 00:13:55.200
+so there are 404 methods associated with expressions. And so that, so that's when you,
+
+00:13:55.200 --> 00:14:00.880
+and you, you know, sum the, the top two, the top two numbers. So the, the top level functions
+
+00:14:00.880 --> 00:14:06.320
+that Polars offers. So for reading in data and writing your data, no, that's a method of a data
+
+00:14:06.320 --> 00:14:14.960
+frame, lots of functions there. A data frame also has lots of methods now. And then you see that
+
+00:14:14.960 --> 00:14:23.679
+also expressions there, it's about half. So yeah. So that's why I wanted to devote some time to
+
+00:14:23.679 --> 00:14:35.919
+this, to these things. Now, ETL, extract, transform, and load. That's, you know, in that's
+
+00:14:38.080 --> 00:14:43.039
+often what it comes down to when you work with data, regardless of the type of data that you
+
+00:14:43.039 --> 00:14:49.599
+work with. At least in my experience, if you have other ideas here, I would love, I would love to
+
+00:14:49.599 --> 00:14:53.919
+hear this. By the way, Michael, if there is something coming up in the chat, let me know,
+
+00:14:53.919 --> 00:15:00.159
+right? I don't see any messages at this moment, but if there is a question that's, that's relevant,
+
+00:15:00.719 --> 00:15:07.039
+then be sure to let me know. I always. You have the links to the slides by chance.
+
+00:15:09.520 --> 00:15:17.760
+Yeah, I do. Shall we do that? Can we do that afterwards? Perfect. Yeah. And we'll make sure
+
+00:15:17.760 --> 00:15:26.640
+that we'll, we'll combine that with the demo that Michael has prepared so that everybody gets both.
+
+00:15:29.840 --> 00:15:36.239
+So ETL, extract data. So read data from a particular source. Doesn't matter where it
+
+00:15:36.239 --> 00:15:42.400
+comes from, read some data. Then a whole bunch of transformations, right? And I made, I enlarged
+
+00:15:42.400 --> 00:15:49.119
+this T just to, you know, visualize that, yes, that is where we spend at least 80% of our time.
+
+00:15:51.280 --> 00:15:55.200
+And then it's storing that data somewhere. All right. Maybe you want to make some,
+
+00:15:55.200 --> 00:16:02.400
+some visualizations. You want to model your data, maybe create a great looking table. Okay. Those
+
+00:16:02.400 --> 00:16:09.599
+are also very important steps, but when it comes to actually working with the data, is it what,
+
+00:16:09.599 --> 00:16:20.479
+this is what it comes down to. So here I have a complete example, and I'm not expecting you
+
+00:16:20.479 --> 00:16:26.640
+to read this code. I'm not expecting you to understand it or whatever. I just want to point
+
+00:16:26.640 --> 00:16:37.440
+out the ratio of ET and L. So what I've colored red here. So there are a few lines at the beginning,
+
+00:16:37.440 --> 00:16:43.919
+and then there's one more towards the bottom on the left side. That's where we read in some data.
+
+00:16:44.559 --> 00:16:52.640
+So in this example, we, this is, it doesn't really matter, but it, this is a city bike data. So
+
+00:16:52.640 --> 00:16:59.599
+bikes that you can rent in New York city. We read in some CSV data at the start. And later on,
+
+00:16:59.599 --> 00:17:06.239
+we combine that with some geo JSON. We create a beautiful visualization that I'll show you in a
+
+00:17:06.239 --> 00:17:13.520
+moment. And at the very end, there's this line, which I've made blue. And that's where we write
+
+00:17:13.520 --> 00:17:22.560
+the results to disk, to parquet format. And the rest in white, that's, those are all the
+
+00:17:22.560 --> 00:17:29.199
+transformations, right? That's where we select columns, where we filter, where we do aggregations
+
+00:17:29.199 --> 00:17:35.599
+and joins and so forth. Right. And I think this is very typical, right? There are always
+
+00:17:35.599 --> 00:17:44.079
+exceptions to this, but I think for most data pipelines, if you will, this is what it comes down to.
+
+00:17:47.920 --> 00:17:50.239
+By the way, when it comes to reading data,
+
+00:17:51.280 --> 00:17:57.040
+pollers can read in lots of different formats and can read from lots of different sources.
+
+00:17:58.000 --> 00:18:05.839
+So it can also read from lots of different databases. It can read Excel spreadsheets,
+
+00:18:08.959 --> 00:18:15.680
+JSON. I don't know. I don't know actually what kind of formats are used most often in your field.
+
+00:18:16.800 --> 00:18:22.560
+I am curious to hear about that, but in any case, I'm pretty sure there's a way to get that data
+
+00:18:23.040 --> 00:18:31.439
+into pollers. Yeah. And Jeroen, someone asked about read Excel, which maybe is a
+
+00:18:31.439 --> 00:18:38.640
+interesting kind of detail between Python and R that the R package doesn't have read Excel.
+
+00:18:40.079 --> 00:18:46.239
+Oh, really? Is that, I didn't know that. I think it's just because it uses a Python package,
+
+00:18:47.119 --> 00:18:50.719
+but they didn't like a workaround. It's kind of just a funny,
+
+00:18:51.920 --> 00:18:58.640
+one of those funny kind of in-between methods. Oh yeah. Yeah. I bet there's some discrepancies
+
+00:18:59.839 --> 00:19:10.400
+between the different languages, you know, that you use. So in that case, yeah. Also,
+
+00:19:10.400 --> 00:19:19.359
+so the R version or sorry, the Python version or the Python API relies on some other package
+
+00:19:21.280 --> 00:19:29.599
+to do the reading of the spreadsheets. And yeah. Okay. So I wasn't aware of this,
+
+00:19:30.319 --> 00:19:35.439
+but I'm pretty sure that, you know, with that, you know, in R what I would then do is
+
+00:19:36.400 --> 00:19:45.119
+first read it in into a regular data frame and then pass that on to pollers.
+
+00:19:47.119 --> 00:19:54.400
+Read Excel, right? That's the R package. Read Excel. Yeah. Yeah. Pretty sure. I have to say
+
+00:19:55.040 --> 00:20:03.359
+my R is a little bit rusty. Although I sometimes do still prefer R over Python.
+
+00:20:04.239 --> 00:20:13.680
+Okay. Oh, we're recording this, right? Nevermind. Hey, look at this. Wow. This is a visualization
+
+00:20:13.680 --> 00:20:24.560
+that was created using plot nine, right? Actually a Python port of ggplot2. I'm not going to show
+
+00:20:24.560 --> 00:20:33.040
+you the code to plot this, but that wall of code that I showed earlier, that was actually
+
+00:20:33.040 --> 00:20:40.479
+needed in order to produce this visualization. So just wanted to throw it out there. And if you
+
+00:20:40.479 --> 00:20:46.880
+are curious, this is discussed in the first chapter of the book. Anyway, just wanted to
+
+00:20:46.880 --> 00:20:55.839
+plug plot nine as well here, I guess. Okay. So transformations, right? We've seen this wall of
+
+00:20:55.839 --> 00:21:03.920
+text, lots of code. I've said, you're right. Expressions are important. Okay. Let's get,
+
+00:21:03.920 --> 00:21:09.839
+you know, down to business. What are some common operations? Yeah. So these are not all of them,
+
+00:21:09.839 --> 00:21:17.359
+not all of them that you probably want to do, but I would say that in the majority of cases,
+
+00:21:17.359 --> 00:21:23.119
+you want to either select columns that you already have in your data frame. Maybe you want to select
+
+00:21:23.119 --> 00:21:33.760
+a subset or create a new column. Maybe you want to filter rows. Maybe you want to do some
+
+00:21:33.760 --> 00:21:42.479
+aggregations, right? Some grouping and create aggregate statistics. Or last one, sorting rows.
+
+00:21:42.479 --> 00:21:49.439
+I would say that these are the most common ones, perhaps joining. I could have added joining here
+
+00:21:49.439 --> 00:21:58.560
+as well. But let's start with these, right? Now, the reason I want to cover these is to
+
+00:22:00.959 --> 00:22:07.760
+show you where expressions play a role and how they are being used by the rest of the API.
+
+00:22:08.479 --> 00:22:16.160
+Yeah. And don't worry, Michael and I, we're not expecting you to be an expert by the end of these
+
+00:22:16.160 --> 00:22:22.719
+two hours. What we hope to get out, what we hope that you get out of this is that you're like,
+
+00:22:23.599 --> 00:22:28.880
+yeah, this, this Polar's thing sounds interesting. I'm going to give it a go.
+
+00:22:29.520 --> 00:22:36.239
+Yeah. If that, or maybe you decide, you know, not my cup of tea. That's fine too. But then
+
+00:22:36.239 --> 00:22:40.079
+I think Michael, right? You, we have, we have succeeded.
+
+00:22:43.760 --> 00:22:51.760
+Okay. Okay. So not clinical trial data yet. Let's keep things simple for now. Let's work
+
+00:22:51.760 --> 00:22:58.479
+with some fruits. Fruit is good for you too, right? So we have here 10 fruits
+
+00:22:58.719 --> 00:23:07.920
+and various properties related to those fruits. Yeah. So their weight, color, whether they are
+
+00:23:07.920 --> 00:23:15.920
+round or not, and their continent of origin. That's right.
+
+00:23:19.599 --> 00:23:27.920
+So let's see. So, so those five common operations that I just listed, let's just have a look at
+
+00:23:28.000 --> 00:23:37.839
+how they can be used using Polar's on the, on this small data frame, right? So we're using the
+
+00:23:37.839 --> 00:23:46.800
+select method here. So on the fruit data frame, and we're passing in four different arguments
+
+00:23:46.800 --> 00:23:56.079
+to this method. Now we see pl.call a couple of times. Now this is the most common way to start
+
+00:23:57.040 --> 00:24:03.839
+an expression. Yeah. I haven't even explained what an expression is. Don't worry about it. First,
+
+00:24:03.839 --> 00:24:09.280
+I want you to get a feeling for what this is. I want you to build up some, some intuition.
+
+00:24:09.280 --> 00:24:18.800
+We'll get to the definition later. The pl.call, the first one, and then in quotes name refers
+
+00:24:18.800 --> 00:24:23.599
+to the column called name, right? And we're not doing anything else with it. So what we're
+
+00:24:23.599 --> 00:24:31.040
+basically saying is, all right, select the name column. That's all. That's all. Now in the last
+
+00:24:31.040 --> 00:24:39.760
+argument here is round. You see that we just use the name itself. That's possible too, but then
+
+00:24:39.760 --> 00:24:48.319
+we're not creating an expression. And that means that we cannot do anything special with this
+
+00:24:48.319 --> 00:24:56.479
+column. We can only select the column as is. So for example, what we do here with the weight column
+
+00:24:57.119 --> 00:25:05.520
+is we divide it by a thousand, right? We go from, so this is in metric.
+
+00:25:08.000 --> 00:25:16.560
+We go from a gram to kilogram over here by dividing it by a thousand. But in order to be
+
+00:25:16.560 --> 00:25:23.599
+able to do that, in order to be able to do some operation to a column, it needs to be an expression.
+
+00:25:25.040 --> 00:25:28.000
+That's what we're doing here. We're using pl.call.
+
+00:25:30.319 --> 00:25:37.599
+Call obviously being short for column. Now that second argument over there, that is a regular
+
+00:25:37.599 --> 00:25:47.359
+expression. So keep in mind, whenever I say the word expression, I am referring to a Polar's
+
+00:25:47.359 --> 00:25:54.319
+expression and not the thing that you may know as a regular expression or a regex, right? Those are
+
+00:25:54.319 --> 00:26:02.160
+two different things. But what we're doing there is we're selecting all the columns that have
+
+00:26:03.119 --> 00:26:07.920
+the text or in it. So color and origin.
+
+00:26:11.040 --> 00:26:13.760
+Yeah. If there are any questions, let us know.
+
+00:26:18.479 --> 00:26:18.979
+Okay.
+
+00:26:18.979 --> 00:26:26.900
+Second common operation. Creating new columns. This is done using the withColumns method.
+
+00:26:28.020 --> 00:26:35.939
+And I always like to tease the creators of Polar's that it was a mistake to call this withColumns.
+
+00:26:36.900 --> 00:26:44.180
+Why? Because all the operations, all the other operations, they're verbs, just as with the
+
+00:26:44.180 --> 00:26:52.739
+tidyverse. But for some reason, and I'm guessing this has to do because Polar's has been inspired
+
+00:26:53.859 --> 00:27:00.979
+by Spark, they went with the withColumns method. Anyway, let's not dwell on this for too long,
+
+00:27:00.979 --> 00:27:07.540
+Jeroen. Let's just focus here on the good stuff. And that is that you can create new columns
+
+00:27:07.540 --> 00:27:16.500
+using expressions here. Okay. First argument, pl.lit. So a literal value. This is another way
+
+00:27:16.500 --> 00:27:22.339
+of starting an expression. So the other one being pl.col, that is to use an existing column
+
+00:27:22.339 --> 00:27:30.099
+as a starting point. pl.lit, that's when you start with a Python value.
+
+00:27:30.180 --> 00:27:35.380
+Maybe you have some other data somewhere lying around. It could be, I don't know,
+
+00:27:37.140 --> 00:27:44.660
+a constant value, like true, or maybe it's a number, maybe it's a list of values, or a numpy array.
+
+00:27:47.859 --> 00:27:55.780
+So pl.lit true, that's when you start with a Python value.
+
+00:27:55.780 --> 00:28:05.939
+So pl.lit true starts a new expression, right? And we're giving that a name. It doesn't have
+
+00:28:05.939 --> 00:28:10.579
+a name by itself because it's entirely new. We give that the name isFruit. And this,
+
+00:28:11.780 --> 00:28:15.859
+at the very end, then becomes a new column called isFruit.
+
+00:28:16.660 --> 00:28:26.739
+So then, second argument here, just again, a new column called isBerry.
+
+00:28:28.180 --> 00:28:34.020
+And this is based on the name column, right? You can see that because we use pl.col name,
+
+00:28:34.739 --> 00:28:41.140
+and then we apply some operation to it, namely the endsWith method,
+
+00:28:41.859 --> 00:28:50.819
+which is part of the str namespace. So whenever the name of the fruit ends with berry,
+
+00:28:51.380 --> 00:28:59.699
+the value for isBerry becomes true. A little bit contrived, I know, but I just want to
+
+00:28:59.699 --> 00:29:06.500
+demonstrate a couple of options here. Now, in this second argument, we're giving
+
+00:29:07.380 --> 00:29:11.939
+the name isBerry, and we do that in a different way. So there are two different ways of giving
+
+00:29:11.939 --> 00:29:19.699
+a name to a column. One is using the alias method, and the other one is by using a keyword argument.
+
+00:29:20.339 --> 00:29:24.099
+There's some restrictions there, of course, because it has to be a valid
+
+00:29:24.099 --> 00:29:28.339
+Python keyword argument, a valid Python name, actually.
+
+00:29:28.900 --> 00:29:36.979
+Meaning it cannot start with a number, for example. If you want that, well, don't want that,
+
+00:29:36.979 --> 00:29:45.859
+but if you really need to use the alias method. Right, so that's it for creating new columns.
+
+00:29:46.660 --> 00:29:56.579
+Again, we have two different expressions over here. Now, filtering rows. This is actually a
+
+00:29:57.540 --> 00:30:06.500
+single expression that I have put onto two different lines. It's actually an expression
+
+00:30:06.500 --> 00:30:14.020
+that's composed of multiple expressions. So what we do here is we keep all the rows,
+
+00:30:14.020 --> 00:30:23.300
+we keep all the fruits that weigh more than a thousand grams and that are round.
+
+00:30:25.300 --> 00:30:38.739
+So we have two rows, two different fruits that, yeah, for which this expression yields true.
+
+00:30:39.699 --> 00:30:44.339
+These two expressions, by the way, they're combined into a single expression
+
+00:30:44.339 --> 00:30:50.500
+using the and operator here. You can combine expressions like this as well.
+
+00:30:54.900 --> 00:30:59.060
+I guess, yeah, and there are other ways to combine expressions. You can use arithmetic
+
+00:31:00.020 --> 00:31:05.140
+and comparison operators. Actually, there is a comparison operator here
+
+00:31:05.699 --> 00:31:10.900
+with the weight, right? We say weight has to be greater than a thousand. Yeah. And the Boolean
+
+00:31:10.900 --> 00:31:19.380
+operators. All right. I'm not hearing any questions, Michael, or are you secretly answering
+
+00:31:19.380 --> 00:31:24.099
+them via Zoom? I have answered a couple. There is one.
+
+00:31:28.640 --> 00:31:31.640
+There is one. Here's a question for you.
+
+00:31:31.640 --> 00:31:33.640
+All right, all right, let's hear it.
+
+00:31:33.640 --> 00:31:39.640
+Riddle us this, Jeroen. Is it possible to have labels attached to column names?
+
+00:31:41.640 --> 00:31:44.640
+To have labels attached to column names?
+
+00:31:44.640 --> 00:31:45.640
+Oh, wait.
+
+00:31:43.200 --> 00:31:51.120
+patch to column names. Oh, wait. Oh, that is something that I don't, I've never, I've
+
+00:31:51.120 --> 00:31:56.680
+seen that when I had to use some SPSS data. Is that where this comes from? So a column
+
+00:31:56.680 --> 00:32:02.320
+has and a name and a label. Is that some extra metadata?
+
+00:32:02.320 --> 00:32:14.600
+I'm not sure. Yeah. It does sound like it's SPSS related because Albert in the chat's
+
+00:32:14.600 --> 00:32:21.720
+mentioning that there's a way to do it. Is there a way in Polars to do this?
+
+00:32:21.720 --> 00:32:29.119
+Oh, it sounds like SAS as well. People are weighing in. This is more expressing our naivety
+
+00:32:29.119 --> 00:32:34.720
+about labels, but it's clear they're load-bearing. The chat's actually really picking up. So
+
+00:32:34.720 --> 00:32:43.520
+it's clear labels are load-bearing. I love that. I love to see the interactivity.
+
+00:32:43.520 --> 00:32:51.560
+I do see very tiny pop-ups, but I can't read it. Okay. So labels, I think that's not possible
+
+00:32:51.560 --> 00:33:01.719
+in Polars. I think this is a feature that you may have gotten used to when using SAS
+
+00:33:01.719 --> 00:33:18.360
+or SPSS. So, and now I'm wondering, okay, what is the, maybe now it gets a little bit
+
+00:33:18.360 --> 00:33:25.759
+philosophical, but the use of a label, that is something that it's not really important
+
+00:33:25.759 --> 00:33:32.799
+for me at this moment. But I think the short answer is, is that you can only have, a column
+
+00:33:32.799 --> 00:33:43.960
+can only have a name. Labels have, so if you, if there is some additional metadata associated
+
+00:33:43.960 --> 00:33:51.060
+with the column that you may want to use at a later stage, maybe when you are creating
+
+00:33:51.060 --> 00:34:00.640
+a table of some sorts, what I then would do is, and it may sound very hacky, right? Because
+
+00:34:00.640 --> 00:34:07.280
+you're used to this very nice feature of being able to use labels in SPSS and SAS to applications
+
+00:34:07.280 --> 00:34:12.899
+I have very little experience with, I have to admit. But if I would need to use some
+
+00:34:12.899 --> 00:34:20.259
+additional metadata or for the columns in a data frame, I would create a separate data
+
+00:34:20.259 --> 00:34:29.220
+frame that has two columns. And one is the name of the column. And the other one is the
+
+00:34:29.220 --> 00:34:35.560
+metadata, the label that you would do. And then later on, when you have transformed all
+
+00:34:35.599 --> 00:34:42.920
+your data and you're ready to produce a table, perhaps using the great tables package, the
+
+00:34:42.920 --> 00:34:50.920
+same, then this is the time when you can refer back to that second data frame that you created.
+
+00:34:51.479 --> 00:34:58.000
+Now, again, this is a workaround, it is hacky, but I also have to say that I haven't not seen
+
+00:34:58.000 --> 00:35:05.879
+this anywhere else. It's also not a feature, as far as I know, that most relational databases
+
+00:35:05.879 --> 00:35:06.319
+have.
+
+00:35:07.039 --> 00:35:12.920
+Right. Like what you described, putting the metadata as a separate table is a very SQL
+
+00:35:13.679 --> 00:35:20.399
+database thing. Like, if anyone's ever looked up like information about the columns, it's
+
+00:35:20.399 --> 00:35:27.319
+always like a table where each row is a column being described. So it's a very nice, it's a
+
+00:35:27.319 --> 00:35:36.160
+pretty classic pattern. But I do get that if you're really used to SAS and SPSS, that this
+
+00:35:36.160 --> 00:35:36.839
+thing might be a really...
+
+00:35:37.560 --> 00:35:45.720
+Yeah, that's a bummer. Who knows, maybe at some point there could be an extension for
+
+00:35:45.720 --> 00:35:53.679
+Polars for this. I don't know. I guess it also depends on how many SAS and SPSS users want to
+
+00:35:53.679 --> 00:36:03.879
+move over to Polars, right? If there's really a need, I know some fellas in the Polars team. I
+
+00:36:03.879 --> 00:36:09.439
+don't know, maybe we can work something out. Just saying. But yeah, thanks for that question.
+
+00:36:10.120 --> 00:36:16.920
+I will say Albert Lee pointed to Roche has a package called pyreadstat that does, it sounds
+
+00:36:16.920 --> 00:36:22.920
+like something you mentioned, reads like two pieces out, the data and the metadata.
+
+00:36:24.039 --> 00:36:32.439
+All right. Yeah, yeah, I've seen pyreadstat, right, which can be used to read in SAS data as a
+
+00:36:32.439 --> 00:36:39.479
+Polars data frame. And I guess it supports some other formats as well, might also support SPSS.
+
+00:36:39.800 --> 00:36:48.800
+But if that's how they do it, then now I'm feeling a whole lot better about my suggestion. It's not
+
+00:36:48.800 --> 00:36:51.240
+hacky at all. Just have a second data frame.
+
+00:36:52.599 --> 00:36:58.719
+Yeah, yeah, that was neat. Okay, I was gonna ask for more clarification on the question sent to
+
+00:36:58.719 --> 00:37:01.800
+you, but that was a neat, that was a fun one.
+
+00:37:02.800 --> 00:37:11.400
+Yeah, yeah, no, but please, please. I mean, more questions is better, right? If we, plenty of
+
+00:37:11.400 --> 00:37:17.759
+time. All right. So just keep those questions coming. If Michael thinks, you know, he can
+
+00:37:17.759 --> 00:37:23.400
+answer them in the chat, then that's fine too. If we want to turn this into a bit more of a
+
+00:37:23.400 --> 00:37:26.520
+discussion, I'm very happy to do that as well.
+
+00:37:27.520 --> 00:37:28.279
+Yeah, for sure.
+
+00:37:29.240 --> 00:37:35.080
+All right, then. Let's go back. Let's go back to this, this example right here, where we used a
+
+00:37:35.080 --> 00:37:41.920
+group by method on the data frame in order to compute some aggregate statistics. Right? So this
+
+00:37:41.920 --> 00:37:50.039
+is, this is an interesting one. It may take some time to read it. But we're using expressions here
+
+00:37:50.200 --> 00:37:59.400
+in two different places. In the first place, that's the first line. We are using an expression
+
+00:37:59.400 --> 00:38:08.120
+to determine which groups we're going to create. Actually, we're defining what a group is. And
+
+00:38:08.120 --> 00:38:18.400
+that is, wait, I have to look at it again. Yes, it is the first part. No, it's the last part. It's
+
+00:38:18.400 --> 00:38:24.640
+the continent. But then if it's like South America and North America, that is stripped of
+
+00:38:24.640 --> 00:38:31.640
+this. Yeah, because we're using the split method, str.split method, turn it into a list and getting
+
+00:38:31.640 --> 00:38:39.240
+the last element from that list. So it's a few steps here. But I guess if you look at the outcome,
+
+00:38:39.879 --> 00:38:48.200
+so in the resulting data frame, then it's clear what this expression is doing. Yeah. So that's
+
+00:38:48.960 --> 00:38:58.559
+the origin that we're actually using. We're using a derivative of the origin column there to
+
+00:38:58.559 --> 00:39:07.840
+determine the groups. Now, the second place where we're using expressions, that is within the ag
+
+00:39:08.120 --> 00:39:16.840
+or aggregate method. And that is first, we want to have a column called len. So this is the number
+
+00:39:16.840 --> 00:39:33.240
+of rows in each group. And secondly, the average weight. Yeah, so important to note here that a
+
+00:39:33.240 --> 00:39:40.680
+method like mean, that is one of a couple of methods that summarize data. So they're turning
+
+00:39:40.840 --> 00:39:51.879
+multiple values into one. Beautiful. All right, I think this is the last one. Yeah, it's the last
+
+00:39:51.879 --> 00:39:59.200
+one, right? Sorting, sorting rows, very common. What are we doing here? Right? Again, a little
+
+00:39:59.200 --> 00:40:06.360
+bit contrived, but here the fruits are sorted by the length of their name. I couldn't think of
+
+00:40:06.360 --> 00:40:15.720
+anything better. Weight is an obvious one, but I want it to be a little bit more complicated. So
+
+00:40:15.720 --> 00:40:25.200
+the length in descending order. Yeah. And you get that by setting the descending keyword to true.
+
+00:40:26.200 --> 00:40:34.999
+I'm curious to hear actually, who is, who has experience here with pandas? Let us know in the
+
+00:40:34.999 --> 00:40:43.999
+chat. Michael, I'm counting on you to give me some aggregate statistics there. We got to let it
+
+00:40:43.999 --> 00:40:48.759
+incubate, you know, people are getting incubate. Yeah, let it incubate for a little bit. All right,
+
+00:40:48.759 --> 00:40:55.160
+we got some pandas coming in. We got a little bit of pandas in the house. That's okay. I, I
+
+00:40:55.160 --> 00:41:02.400
+am, I owe a lot to pandas, I have to say. So there on the internet, there are sometimes, you know,
+
+00:41:02.400 --> 00:41:10.759
+some, some annoying or less elegant comparisons between polars and pandas. Um, and I say, let's
+
+00:41:10.759 --> 00:41:19.040
+ignore those. Without pandas, there would never have been a polars. And, um, so I, I really, um,
+
+00:41:19.040 --> 00:41:27.720
+we owe a lot to them or yeah, we, I say we. Um, I'm mentioning pandas because when you're,
+
+00:41:27.720 --> 00:41:33.759
+when you want to change the sorting order and in pandas, right, if you want to sort your rows,
+
+00:41:33.759 --> 00:41:39.640
+but you want to do it in descending order, what you have to do in pandas is you have to set the
+
+00:41:39.640 --> 00:41:47.799
+ascending keyword to false. Now I'm not saying which one is better. I'm just saying, I'm just
+
+00:41:47.799 --> 00:41:55.040
+want to point out if you do have experience with pandas, you may run into, you know, a couple of
+
+00:41:55.040 --> 00:42:03.040
+these small differences and, uh, yeah, that's, um, that will, that will require you to do some
+
+00:42:03.040 --> 00:42:10.319
+unlearning there. Yeah. Something to keep in mind if you are interested. Uh, chapter three is devoted
+
+00:42:10.879 --> 00:42:20.720
+entirely to this. Um, I hope I'm not overselling the book. Um, anyway, anyway, expressions, right?
+
+00:42:20.720 --> 00:42:28.080
+We've seen a couple of examples now. Um, we've built some intuition for what an expression is
+
+00:42:28.080 --> 00:42:36.480
+and what it can do now. Let's see. Yeah, we've got some time left, right, Michael? Um, let's look a
+
+00:42:36.559 --> 00:42:42.799
+little bit more closely at what it is. I have a question. I'm so sorry. No, no, no. Don't apologize.
+
+00:42:42.799 --> 00:42:49.919
+I love questions. Yeah, let's hear it. Does it break down ties alphabetically by name
+
+00:42:49.919 --> 00:42:59.040
+or by original sort order? So is it? Oh, so whether the original, uh, oh, wow.
+
+00:42:59.600 --> 00:43:07.840
+It's a very tricky question. Is it stable? You know, I would guess, I would hope yes,
+
+00:43:08.799 --> 00:43:13.439
+but I, that's something that would, I would have to look up. Um, you know what?
+
+00:43:13.439 --> 00:43:19.520
+It might even have different, does it have just one sorting algorithm or multiple?
+
+00:43:19.520 --> 00:43:23.919
+This is something that we can definitely look up. Uh, I don't want to do that right now,
+
+00:43:23.919 --> 00:43:30.319
+but maybe I can do this when you're talking. Yeah. I think there's, I just found a,
+
+00:43:30.319 --> 00:43:36.960
+there's a maintain order argument. There you have it. I knew it. I knew it. I was,
+
+00:43:38.960 --> 00:43:46.559
+isn't that fantastic? Um, it's false. So I guess, I guess it's not stable by default, but
+
+00:43:47.119 --> 00:43:52.799
+you can make it stable. So, yeah. And then I guess it'll be, it'll be a little bit slower,
+
+00:43:53.600 --> 00:43:58.799
+not that you'll notice it, but, uh, that's what I'm guessing. Uh, that's why they,
+
+00:43:58.799 --> 00:44:04.480
+why they made that false by default. Yeah. Yeah. Yeah. Yeah. Great question. Keep them coming.
+
+00:44:09.679 --> 00:44:14.400
+What is an expression? Okay. So if you, um,
+
+00:44:14.879 --> 00:44:19.759
+if you, uh, look at the official Polar's documentation, they define an expression
+
+00:44:19.759 --> 00:44:27.840
+as a lazy representation of a data transformation. All right. All right. Let's keep that in mind.
+
+00:44:28.720 --> 00:44:35.439
+If you ask, uh, Marco Gorelli, who is a core contributor to Polar's and the creator of Narwhals,
+
+00:44:35.439 --> 00:44:43.200
+uh, uh, another fantastic, uh, Python package that, um, that sort of, uh, abstracts,
+
+00:44:43.200 --> 00:44:49.759
+uh, all the different DataFrame, uh, uh, implementations. Um, he defines an expression
+
+00:44:49.759 --> 00:44:59.359
+as a function from a DataFrame to a series. So, and, you know, I'm not saying that these two
+
+00:44:59.359 --> 00:45:05.759
+definitions are wrong, but I think that we can do better than this. I think that we can do better.
+
+00:45:06.879 --> 00:45:11.679
+Um, I guess that's also when you start writing a book and you're spending so much time
+
+00:45:11.919 --> 00:45:21.040
+almost two years with the material, you kind of have this need to define things. I don't know if
+
+00:45:21.040 --> 00:45:28.319
+that's a form of yak shaving because I, you know, it's just better to, to be writing, but, um,
+
+00:45:29.520 --> 00:45:36.160
+here's a, here's what Tyson and I came up with. And that is, uh, an expression is a tree of
+
+00:45:36.160 --> 00:45:45.840
+operations that describe how to construct one or more series. Now that's quite a mouthful. Um,
+
+00:45:45.840 --> 00:45:53.600
+so, so let's, um, let's break this down because I do think it is important that you, uh, have a
+
+00:45:53.600 --> 00:46:01.759
+mental model of what an expression is. Um, so, so that you know what you're dealing with and maybe,
+
+00:46:01.759 --> 00:46:07.280
+maybe you won't get it now. That's, that's okay. But when you do begin this Polar's journey,
+
+00:46:08.239 --> 00:46:14.720
+I do want to advise you to, to grasp this concept of an expression, because that is something that
+
+00:46:14.720 --> 00:46:21.999
+will come back, uh, uh, the most, otherwise it'll haunt you. And, um, that won't be, uh,
+
+00:46:21.999 --> 00:46:29.919
+that won't be fair. Okay. So let's break this down. Let's start at the very end here series.
+
+00:46:32.319 --> 00:46:43.280
+A series is a, um, um, a sequence of values. That's how I see it. Very often,
+
+00:46:44.480 --> 00:46:53.359
+a series is also a column. It's not always the case. Let me go back to this example right here.
+
+00:46:53.359 --> 00:47:08.319
+Yeah, I guess this will do. I'm sorting on a series that does not exist in this data frame,
+
+00:47:09.359 --> 00:47:13.600
+right? I'm creating a new series based on an existing column,
+
+00:47:13.999 --> 00:47:23.600
+but this new series does not become a column by itself, right? We don't have the length of the
+
+00:47:23.600 --> 00:47:32.319
+name of all the names somewhere. It is never materialized. It's only used to sort. Yeah.
+
+00:47:33.200 --> 00:47:40.319
+Maybe I'm already giving away too much here. So to construct one or more series,
+
+00:47:44.319 --> 00:47:49.840
+okay. So the second part I want to highlight here is that it is a tree of operations.
+
+00:47:52.160 --> 00:47:56.960
+Here's an example, uh, of how you can think of this. So what we're doing here
+
+00:47:56.960 --> 00:48:03.600
+is, uh, let's see here. I have an expression. It's not based on any existing data frame.
+
+00:48:04.239 --> 00:48:11.439
+Yeah. What we're doing is we're adding three and five, and we're dividing that by, well,
+
+00:48:11.439 --> 00:48:20.160
+first adding one and five. So, um, all these operations. So we start with two different
+
+00:48:20.160 --> 00:48:27.840
+expressions, the three and the one, both of those. And they're at the, uh, they're at the
+
+00:48:27.840 --> 00:48:37.359
+very bottom, as you can see here. Uh, and what we do is we add, it's interesting how to, uh,
+
+00:48:37.359 --> 00:48:43.840
+that I'm struggling so much putting this into words, but, um, there, so there are in total
+
+00:48:43.840 --> 00:48:51.679
+four different values that we're dealing with to start and they are combined. So five and one
+
+00:48:51.679 --> 00:48:59.840
+are combined using the, using arithmetic, right. The plus or the, the add method or the,
+
+00:48:59.840 --> 00:49:07.760
+the, the plus operator, if you will. Yeah. So these two, uh, combined with that operator
+
+00:49:07.760 --> 00:49:14.799
+will create a new expression. And that's done, uh, again for the numbers five and three
+
+00:49:15.360 --> 00:49:23.039
+on the right side. And then as a final step, these two expressions are combined into a single
+
+00:49:23.039 --> 00:49:32.639
+expression using the division operator. Yeah. And you can visualize any expression here using the
+
+00:49:32.639 --> 00:49:45.840
+meta tree format method. Um, and this is a very simple example, right. But, um, this is to show
+
+00:49:45.840 --> 00:49:53.360
+that we are dealing with a, a, a tree of operations here. And, um, and this is, this is,
+
+00:49:53.360 --> 00:50:07.360
+um, yeah, I hope this helps in your mental model. Um, right. That describe, so an expression is a
+
+00:50:07.360 --> 00:50:14.000
+tree of operations that describe how to construct one or more series. And this describe part, um,
+
+00:50:14.000 --> 00:50:20.880
+is actually related to what the official Polar's documentation calls lazy. So the expression by
+
+00:50:20.880 --> 00:50:29.039
+itself doesn't do anything. This is perhaps the most, the most interesting aspect of an expression.
+
+00:50:29.679 --> 00:50:40.319
+They are lazy. They're only a, you could call them a, a recipe of what to do. And it is the method
+
+00:50:41.279 --> 00:50:48.720
+combined with a data frame that determines what the result will be.
+
+00:50:53.200 --> 00:51:00.000
+And I guess I, I think I have a, uh, an example about this, uh, in a second. Okay. Constructing
+
+00:51:00.080 --> 00:51:13.919
+here. So, um, why did I put this in here? Um, yeah, so there, it is created, a series is created,
+
+00:51:13.919 --> 00:51:20.399
+but it's not always becoming a new column. I think that's why I put this in here and I should read
+
+00:51:20.399 --> 00:51:26.399
+the book again. Um, one or more series. This is an interesting one because this is not in the
+
+00:51:26.399 --> 00:51:34.799
+definition that Marco Gorelli gave. Yeah. Um, remember that expression I had with the regex,
+
+00:51:34.799 --> 00:51:44.480
+the regular expression, uh, or which yielded two columns, uh, color and origin. Yeah. So do those
+
+00:51:44.480 --> 00:51:53.919
+are two series and in turn, two columns that were created. So a single expression can lead to more
+
+00:51:53.919 --> 00:52:00.319
+than one series. Now the developers, they will say, yeah, but under the hood, it's expanded into
+
+00:52:00.319 --> 00:52:06.799
+multiple expressions and like, all right, all right. That may be, but from a user perspective,
+
+00:52:06.799 --> 00:52:15.679
+it is still only one expression. Here's another example where we use a single expression
+
+00:52:16.639 --> 00:52:22.559
+to modify all the existing columns. So we start out with two columns, A and B,
+
+00:52:23.679 --> 00:52:31.279
+and we're multiplying them by 10, yielding another two columns or again,
+
+00:52:31.279 --> 00:52:35.200
+two columns. So in total four columns with just a single expression.
+
+00:52:35.279 --> 00:52:43.679
+Let's see now. All right, Michael, do we have any more questions that we want to discuss? No,
+
+00:52:43.679 --> 00:52:51.039
+no. I was just putting a note that PL.all is, it's kind of similar to like using a cross in.
+
+00:52:51.039 --> 00:53:01.120
+Oh yeah, yeah, yeah. You could also do PL.call asterisk. Um, yeah. Or a cross in the middle.
+
+00:53:01.120 --> 00:53:07.679
+Yeah. Or a cross in R you mean? In R, yeah. Just for the R.
+
+00:53:07.679 --> 00:53:12.240
+Of course you were, oh, very good of you. You were relating it back to some tidyverse methods.
+
+00:53:12.240 --> 00:53:16.319
+Right. Functions. Sorry. That's very good of you. That's, uh, thank you.
+
+00:53:17.279 --> 00:53:25.279
+You're welcome. Yeah. Yeah. Although, you know, if you're used to a tidy select, that's then,
+
+00:53:26.080 --> 00:53:33.760
+that, yes, nothing compares. Um, anyway, anyway, let me see if I want to,
+
+00:53:36.960 --> 00:53:41.279
+to what extent I want to cover this. So properties, expressions because of this,
+
+00:53:41.279 --> 00:53:48.000
+they of course also have some, some properties. And I think in my, uh, in, in my, my story, I have,
+
+00:53:48.480 --> 00:53:57.600
+um, mentioned these in passing, but let's just say, let's just have a look at what we want to pay,
+
+00:53:57.600 --> 00:54:02.639
+uh, to which ones we want to pay extra attention here. Again, uh, they're lazy, right? They're
+
+00:54:02.639 --> 00:54:11.919
+like recipes and, um, it's the, uh, the methods. So .filter, .sort, .groupby, they are, they are
+
+00:54:11.919 --> 00:54:20.720
+the cooks that follow the recipe. Yeah. They depend both on the function. So .filter, .sort,
+
+00:54:20.720 --> 00:54:28.960
+.select, and the data to which they're applied. So, um, here's an interesting, uh, um, example
+
+00:54:28.960 --> 00:54:37.519
+to, to demonstrate this is, uh, I create an expression called is orange. This is just a
+
+00:54:37.519 --> 00:54:43.120
+Python object, right? An expression is just a Python object, which you can assign to a variable
+
+00:54:44.080 --> 00:54:55.679
+is orange. Now I can reuse this, this expression, uh, here in this first example, I am creating
+
+00:54:56.319 --> 00:55:04.720
+a new column called is orange. Notice that, you know, the name of the, of the expression
+
+00:55:05.439 --> 00:55:12.080
+and the name of the variable is the same as both is orange, but that doesn't necessarily
+
+00:55:12.080 --> 00:55:16.480
+have to be the case, right? I could have also assigned this to a variable called e
+
+00:55:17.200 --> 00:55:23.120
+for expression, right? Not a very good name, but what matters is the name of the expression,
+
+00:55:23.120 --> 00:55:30.000
+which we use, which we create here using .alias. Now here, I apply it to the fruit data frame,
+
+00:55:30.000 --> 00:55:38.559
+which we already know, but we can also apply it. Um, wait, I'm going to fly it to the fruit data
+
+00:55:38.559 --> 00:55:44.000
+frame a couple of more times, but then using different methods. So we can use it to filter.
+
+00:55:45.120 --> 00:55:53.439
+So now we're getting all the color. Oh, we only got the rows, um, of the fruits that are orange.
+
+00:55:54.399 --> 00:56:01.760
+Yeah. Same, exact same expression used in a different place. We can use it to create the
+
+00:56:01.760 --> 00:56:11.039
+groups. How many, uh, how many orange fruits do we have? It so happens that in English, orange is
+
+00:56:11.039 --> 00:56:17.120
+also a fruit, but I'm talking about the color here, of course. Yeah. So six that are not orange
+
+00:56:17.200 --> 00:56:24.880
+or that are. Okay. Now finally I get to demonstrate that these can also be used on
+
+00:56:25.760 --> 00:56:32.480
+other data frames. So remember we have this is orange expression and I'm here, I'm applying it
+
+00:56:32.480 --> 00:56:41.840
+to an entirely new data frame. Yeah. Um, that I'm making up right here. These are three different,
+
+00:56:41.919 --> 00:56:49.039
+um, flowers, right. And, uh, two of them are orange. Fantastic.
+
+00:56:54.559 --> 00:57:01.600
+Expressive, right? Yeah. There's a, okay. I can go on about this for a very long time,
+
+00:57:01.600 --> 00:57:07.279
+but I do hope that, you know, because of this method chaining, uh, that you can do and that
+
+00:57:07.279 --> 00:57:14.399
+you can combine these expressions, uh, um, that you can combine multiple expressions into a single
+
+00:57:14.399 --> 00:57:23.200
+one and that you can reuse them, that they are indeed very expressive. Um, efficient? Yes.
+
+00:57:24.000 --> 00:57:30.799
+The Polar's execution engine, it will execute these expressions in parallel. That's, that's,
+
+00:57:31.200 --> 00:57:41.360
+that's, uh, that's awesome. Um, that means that in many, many cases, uh, your Polar's query will
+
+00:57:41.360 --> 00:57:47.039
+be very fast, will be a lot faster than what you're used to. I don't know if that, if speed is
+
+00:57:47.039 --> 00:57:53.840
+a thing, right. Let us know in the, in the, in the, in the, in the, in the chat, if speed is something
+
+00:57:53.840 --> 00:58:02.159
+that you, uh, run into, meaning that your code is being too slow and it really becomes a burden.
+
+00:58:03.919 --> 00:58:07.679
+It may not be the case, right? Maybe you're just dealing with a couple of thousand rows and all is
+
+00:58:07.679 --> 00:58:14.639
+good. That's fine too. All right. Expressions are also idiomatic. Last thing. And then I think I'm
+
+00:58:14.639 --> 00:58:24.480
+going to hand it over to Michael. So here's some non-idiomatic Polar's code. Yeah. If you're used
+
+00:58:24.480 --> 00:58:31.360
+to pandas, this may look familiar, right? With the square brackets and all, but, um, and, and it is
+
+00:58:31.360 --> 00:58:40.319
+indeed the case that this code produces the same result as the earlier filter example that I had.
+
+00:58:41.200 --> 00:58:49.600
+Now it is suboptimal because, um, these two things, these expressions, they're not executed
+
+00:58:49.600 --> 00:58:56.960
+in parallel, right? It's, it's not an expression. So the optimizer that Polar's has cannot make any
+
+00:58:56.960 --> 00:59:05.360
+optimizations and they're, they're executed, uh, in a serial fashion. Um,
+
+00:59:06.000 --> 00:59:17.840
+um, also there are, it is very, uh, possible, it's very likely that you will run into an error.
+
+00:59:18.480 --> 00:59:24.240
+Um, and that's because, let me see here. There's a lot going on here on this page.
+
+00:59:25.200 --> 00:59:33.200
+Yeah. So we got some fruit and, um, I'm doing a filter and creating a new column. And then I'm
+
+00:59:33.200 --> 00:59:42.240
+trying to do the same using, so the top one is idiomatic and just produces a beautiful data frame.
+
+00:59:43.360 --> 00:59:51.439
+And the second one is not idiomatic. And the reason why that is, is because, um, the filter
+
+00:59:52.319 --> 01:00:00.480
+method reduces the number of rows from 10 to two. Yeah. So, so by the time we are, uh, at the with
+
+01:00:00.480 --> 01:00:13.519
+columns step, um, Polar's thinks, or Polar's is, is, is, is, uh, dealing with a data frame that has
+
+01:00:14.080 --> 01:00:23.120
+with a data frame that has two rows, whereas the code that so, so isBerry equals fruit, uh,
+
+01:00:23.120 --> 01:00:28.880
+name in square brackets, that refers to the original fruit data frame, which still has 10
+
+01:00:28.880 --> 01:00:34.799
+rows. So that's a mismatch, right? Actually the error, the shape error right here,
+
+01:00:36.399 --> 01:00:42.399
+pretty much gives it away. Unable to add a column of length 10 to a data frame of height two.
+
+01:00:43.519 --> 01:00:52.799
+Yeah. So just as a, as a warning, right. Uh, or maybe as an encouragement that you should always
+
+01:00:52.799 --> 01:01:02.319
+use expressions in Polar's. Ah, right. That was a lot of talking. Now, I guess now is the time,
+
+01:01:02.319 --> 01:01:09.279
+if you have any questions, uh, about, um, uh, anything that I've just said or things that I
+
+01:01:09.279 --> 01:01:15.519
+have not said about Polar's, now's a good time. If you want to lay to wait a little bit longer,
+
+01:01:15.519 --> 01:01:22.720
+uh, that's fine too. Otherwise I'm going to give the floor to, uh, to Michael.
+
+01:01:25.519 --> 01:01:29.200
+What do you, what do you, what do you think, Michael? Do we have any, anything in the chat
+
+01:01:29.200 --> 01:01:36.159
+that is we're discussing now? No one, no one answered, uh, do we have a need for speed in the
+
+01:01:36.159 --> 01:01:45.600
+chat? So it's a toss, you know? Uh, that's cool. That's cool. I mean, um, there's more to life than
+
+01:01:45.600 --> 01:01:56.559
+speed. So it's true. Should I, let me crack open this demo. All right. Jared in the chat feels a
+
+01:01:56.559 --> 01:02:04.880
+need for speed. So that's, ah, thanks Jared. Yes. Um, all right. I'm going to give the floor to you.
+
+01:02:04.880 --> 01:02:10.559
+I don't know if I have to stop sharing now. That's great. I'm going to, I'm just going to stop sharing.
+
+01:02:12.960 --> 01:02:24.639
+Uh, Phil's blurb, just so that people, uh, in case anyone wants to follow along with,
+
+01:02:24.639 --> 01:02:30.480
+um, on Posit Workshop, I'm just going to, I'm going to crack open and use Posit Workbench.
+
+01:02:30.480 --> 01:02:39.039
+Um, since it's, it seems like a good way to just kind of fire it up and, um, all right. So let me,
+
+01:02:40.559 --> 01:02:47.360
+let me share my screen. Hey, Michael, and shall we do the same now for you? Whenever there's a
+
+01:02:47.360 --> 01:02:56.159
+question in the chat, I'll just, uh, give you a heads up. It's a deal. I'll, um, on my second
+
+01:02:56.159 --> 01:03:08.080
+monitor, I'll also open the, put the chat just to just in case. All right. So, whoa, I don't know.
+
+01:03:08.080 --> 01:03:13.279
+Don't look at my desktop. Cause I actually literally never look at it and didn't know it
+
+01:03:13.919 --> 01:03:19.840
+even existed. So I think before my Mac, I had, I had a setting where desktop didn't exist,
+
+01:03:19.840 --> 01:03:24.639
+basically like the files aren't there. Nothing's there, but I think it update changed it
+
+01:03:24.639 --> 01:03:31.600
+and brought the desktop back, which was frightening because it's, it looks just littered with files.
+
+01:03:28.620 --> 01:03:34.300
+but I think an update changed it and brought the desktop back, which was frightening because
+
+01:03:34.300 --> 01:03:37.700
+it's, it looks just littered with files.
+
+01:03:37.700 --> 01:03:39.140
+So if you see a desktop-
+
+01:03:39.140 --> 01:03:42.220
+Excuses, excuses, Michael.
+
+01:03:42.220 --> 01:03:44.340
+We know what you need to do after this workshop.
+
+01:03:44.340 --> 01:03:47.820
+You need to clean up your desktop.
+
+01:03:47.820 --> 01:03:52.540
+But let's focus on the good stuff, on this clean code.
+
+01:03:52.540 --> 01:03:57.579
+So I'm going to start from scratch again, just so I can show how I got into it.
+
+01:03:57.579 --> 01:04:01.579
+The one piece I can't show is I don't think it'll have any log in.
+
+01:04:01.579 --> 01:04:06.340
+So I just clicked Posit Workbench at workshop.posit.team.
+
+01:04:06.340 --> 01:04:09.780
+And I think if this is your first time, you'll be prompted to sign in.
+
+01:04:09.780 --> 01:04:13.700
+So usually I click through and then there's a GitHub option.
+
+01:04:13.700 --> 01:04:17.820
+So I chose, actually, let me, I'm just going to do this.
+
+01:04:17.820 --> 01:04:23.180
+So Posit Workbench, and then I clicked sign in with open ID.
+
+01:04:23.180 --> 01:04:27.020
+And then I used GitHub to sign in.
+
+01:04:27.020 --> 01:04:28.680
+And let me see what file I might have.
+
+01:04:30.059 --> 01:04:32.700
+I think for a speed, if you click on register,
+
+01:04:32.700 --> 01:04:37.020
+it's a little bit faster just cause you can plug and chug an email.
+
+01:04:37.020 --> 01:04:38.620
+Oh, nice, cool.
+
+01:04:38.620 --> 01:04:40.940
+That gets you in pretty quickly.
+
+01:04:40.940 --> 01:04:45.139
+If you don't mind logging out to GitHub or Posit Cloud, that works fine too.
+
+01:04:45.139 --> 01:04:47.459
+Either way is totally fine.
+
+01:04:47.459 --> 01:04:48.459
+And for the email here,
+
+01:04:48.459 --> 01:04:51.740
+you can totally make up an email address, works fine.
+
+01:04:51.740 --> 01:04:54.660
+The only thing that I usually do is just so in case I ever want to log in,
+
+01:04:54.660 --> 01:04:57.300
+I just keep the email and the username the same.
+
+01:04:57.300 --> 01:05:00.579
+Even if I use a fake one, I can kind of remember how to get back to it.
+
+01:05:00.579 --> 01:05:01.940
+Remember, yeah.
+
+01:05:01.940 --> 01:05:06.060
+But just for, since I'm on here, we don't keep these up forever.
+
+01:05:06.060 --> 01:05:09.100
+These are just to explore and play with the environments.
+
+01:05:09.100 --> 01:05:11.300
+The Posit Cloud environments do stay up, but
+
+01:05:11.300 --> 01:05:14.100
+unfortunately they don't have Positron with Python yet.
+
+01:05:15.380 --> 01:05:18.060
+And so that's why we're using this separate environment.
+
+01:05:18.060 --> 01:05:22.459
+So this is just, these will be up for a couple days if you want to play with them.
+
+01:05:22.459 --> 01:05:23.139
+Yeah, nice.
+
+01:05:23.179 --> 01:05:26.459
+Okay, so it's a good place to visit, but don't try to live there.
+
+01:05:26.459 --> 01:05:27.819
+Could be-
+
+01:05:27.819 --> 01:05:29.139
+Well said, well said.
+
+01:05:29.139 --> 01:05:34.219
+All right, so I'm going to click into Workbench.
+
+01:05:34.219 --> 01:05:36.499
+And I'm going to, this is the session I started before.
+
+01:05:36.499 --> 01:05:39.700
+So Workbench will list out all of your sessions.
+
+01:05:39.700 --> 01:05:43.620
+So a session something like, I have Positron open.
+
+01:05:43.620 --> 01:05:46.700
+I'm going to create a new one here.
+
+01:05:46.700 --> 01:05:51.099
+So I click Positron Pro launch and that.
+
+01:05:52.099 --> 01:05:55.659
+Okay, so now we've got a new session cooking.
+
+01:05:55.659 --> 01:05:59.099
+All right, and it just opened it.
+
+01:05:59.099 --> 01:06:00.940
+Okay, great.
+
+01:06:00.940 --> 01:06:04.140
+And then I'm going to look at my files.
+
+01:06:04.140 --> 01:06:05.739
+So it's like you don't have anything.
+
+01:06:05.739 --> 01:06:08.860
+I'm going to go to, let me put this in the chat.
+
+01:06:08.860 --> 01:06:15.179
+So, examples, great tables, pharma.
+
+01:06:15.179 --> 01:06:20.539
+Okay, so I'm going to clone this.
+
+01:06:21.019 --> 01:06:28.140
+So I went to code HTTPS and clicked this copy.
+
+01:06:29.179 --> 01:06:33.580
+And then I'm going to get clone here.
+
+01:06:35.019 --> 01:06:35.980
+Oh, you know what?
+
+01:06:35.980 --> 01:06:47.340
+I forgot that Workbench you share, you have like a shared folder.
+
+01:06:47.340 --> 01:06:49.739
+So I had two Workbench sessions open.
+
+01:06:50.539 --> 01:06:54.220
+And so I'm going to delete my previous work really quick.
+
+01:06:55.259 --> 01:06:58.539
+And you can also clone just from the top left-hand side.
+
+01:06:58.539 --> 01:07:01.819
+There's three little lines and there's a, oh, it's right there.
+
+01:07:01.819 --> 01:07:03.259
+Clone repository, that works fine too.
+
+01:07:03.259 --> 01:07:05.659
+I saw that, it required me to sign into.
+
+01:07:06.379 --> 01:07:07.179
+Oh, it doesn't?
+
+01:07:07.179 --> 01:07:08.379
+Oh, oh, okay.
+
+01:07:09.019 --> 01:07:10.379
+But I could have gotten it wrong.
+
+01:07:10.379 --> 01:07:10.860
+Let's see.
+
+01:07:10.860 --> 01:07:12.140
+So I'm going to clone this.
+
+01:07:13.179 --> 01:07:14.700
+All right, and then I'm going to CD in.
+
+01:07:14.940 --> 01:07:19.980
+This uses UV, so I'm going to do UV sync.
+
+01:07:20.620 --> 01:07:22.700
+Let me make this a little bigger for folks.
+
+01:07:23.659 --> 01:07:29.340
+Sorry, this bar is so long right here, but, so UV sync.
+
+01:07:30.700 --> 01:07:33.500
+So what this will do is it'll create a virtual environment
+
+01:07:34.539 --> 01:07:38.060
+in the folder .vmv in this folder.
+
+01:07:38.620 --> 01:07:41.739
+And basically this will hold like everything we need to run
+
+01:07:41.739 --> 01:07:43.179
+Python and our packages.
+
+01:07:45.179 --> 01:07:49.179
+And I think Positron usually picks up on it.
+
+01:07:49.179 --> 01:07:49.739
+Let's see.
+
+01:07:51.260 --> 01:07:55.179
+For some reason, it didn't here.
+
+01:07:55.179 --> 01:08:01.419
+So let me just, maybe because I didn't have Python select.
+
+01:08:01.419 --> 01:08:03.019
+Oh, you know what we have to do?
+
+01:08:03.019 --> 01:08:04.060
+I'm so sorry.
+
+01:08:04.060 --> 01:08:07.979
+And then now that I ran UV, I'm going to click open folder.
+
+01:08:08.940 --> 01:08:11.260
+Now that I ran UV, I'm going to click open folder.
+
+01:08:13.100 --> 01:08:17.579
+And I am going to open the examples folder that we cloned.
+
+01:08:18.299 --> 01:08:19.579
+Sorry, so I cloned the folder.
+
+01:08:20.299 --> 01:08:21.899
+I went into it and I ran UV.
+
+01:08:22.540 --> 01:08:26.060
+But the one thing I forgot to do is I need to open the examples folder.
+
+01:08:27.019 --> 01:08:29.820
+All right, so here we go.
+
+01:08:29.820 --> 01:08:31.100
+And now I bet it will.
+
+01:08:31.660 --> 01:08:34.299
+So notice now Positron knows that we're using UV.
+
+01:08:35.100 --> 01:08:38.139
+And it actually is able to kind of set it up from the beginning.
+
+01:08:39.100 --> 01:08:42.060
+So yeah, opening folder, it's kind of nice.
+
+01:08:42.060 --> 01:08:45.660
+Like Positron knows it's UV and can set everything up.
+
+01:08:45.660 --> 01:08:51.820
+All right, so I'm going to just to show you what we're going to do.
+
+01:08:51.820 --> 01:08:54.459
+I'm going to run the full example.
+
+01:08:55.100 --> 01:08:59.419
+And I'm going to produce the table first before going through the code.
+
+01:08:59.419 --> 01:09:04.859
+So here's the, I'm going to make this a little smaller.
+
+01:09:05.579 --> 01:09:08.859
+All right, so here's the table we're going to produce.
+
+01:09:10.699 --> 01:09:15.820
+So this is, I got this from Rich Ianan, who is the author of GT
+
+01:09:15.820 --> 01:09:18.380
+and maintains Great Tables with me.
+
+01:09:19.260 --> 01:09:22.459
+And this is from some clinical trial.
+
+01:09:23.260 --> 01:09:27.419
+And I have to admit, I'm a little bit less familiar with this type of work.
+
+01:09:28.139 --> 01:09:32.380
+But this was a type of table he assured me is kind of
+
+01:09:33.100 --> 01:09:36.060
+representative of what people might do.
+
+01:09:38.220 --> 01:09:40.380
+And I think it's interesting because,
+
+01:09:40.380 --> 01:09:42.859
+so this is using Great Tables to recreate this table.
+
+01:09:43.579 --> 01:09:47.100
+And let me just flag some of the things we're going to do.
+
+01:09:47.100 --> 01:09:51.500
+So I actually included an image with some things annotated.
+
+01:09:51.500 --> 01:09:53.899
+So I'm just going to show you.
+
+01:09:54.859 --> 01:10:01.899
+So here we have a count of our sort of like sample size.
+
+01:10:02.940 --> 01:10:05.179
+This is up in the inside the column labels.
+
+01:10:05.739 --> 01:10:07.260
+So we're going to want to do that.
+
+01:10:08.060 --> 01:10:10.380
+We've also formatted a lot of the values.
+
+01:10:10.380 --> 01:10:13.979
+So notice pvalue used to have a lot more decimals.
+
+01:10:14.620 --> 01:10:16.620
+And we've cleaned it up a little bit.
+
+01:10:17.579 --> 01:10:21.019
+And then this, another interesting kind of mechanic is that
+
+01:10:21.820 --> 01:10:24.699
+we have this extra information, the percent.
+
+01:10:26.859 --> 01:10:28.220
+So here, this is reporting,
+
+01:10:31.019 --> 01:10:34.620
+I think this is number of people in these different age brackets.
+
+01:10:35.179 --> 01:10:38.620
+But then we also have the percentage for the condition.
+
+01:10:38.620 --> 01:10:46.940
+So in the placebo condition, 16% of people are less than 65 years old.
+
+01:10:47.500 --> 01:10:50.699
+And so these are kind of three interesting pieces of the table.
+
+01:10:50.699 --> 01:10:53.739
+The pulling out these overall sample sizes,
+
+01:10:56.299 --> 01:10:59.260
+formatting the values in different ways,
+
+01:10:59.260 --> 01:11:02.060
+and kind of combining information together
+
+01:11:02.859 --> 01:11:05.260
+by putting the percents in parentheses.
+
+01:11:06.540 --> 01:11:07.260
+All right.
+
+01:11:07.260 --> 01:11:10.139
+And if you have any questions, feel free to put them in the chat.
+
+01:11:10.139 --> 01:11:15.979
+And you're definitely, feel free to interrupt me if I miss anything.
+
+01:11:17.899 --> 01:11:18.299
+All right.
+
+01:11:19.100 --> 01:11:23.500
+So to start, I'm just going to load this data
+
+01:11:23.500 --> 01:11:26.139
+and show you a bit what the sample data looks like.
+
+01:11:27.019 --> 01:11:28.459
+So, okay, let's do...
+
+01:11:33.179 --> 01:11:33.679
+table.
+
+01:11:34.459 --> 01:11:35.419
+Let's look at the data.
+
+01:11:36.139 --> 01:11:36.639
+Oh.
+
+01:11:39.260 --> 01:11:40.299
+Oh, it prints out here.
+
+01:11:40.299 --> 01:11:40.799
+Okay.
+
+01:11:43.979 --> 01:11:44.699
+All right.
+
+01:11:44.780 --> 01:11:46.859
+So notice that the table data is funny.
+
+01:11:46.859 --> 01:11:51.419
+It actually matches pretty closely the table on the right.
+
+01:11:51.419 --> 01:11:52.859
+So you have like age here.
+
+01:11:54.620 --> 01:11:59.500
+And then you have these different labels, like N, mean, SD, median, min.
+
+01:11:59.500 --> 01:12:01.979
+So our table is pretty close to the final format.
+
+01:12:02.539 --> 01:12:04.380
+We just need to do a little bit of cleanup.
+
+01:12:06.380 --> 01:12:12.539
+So the first thing I'm going to show is pulling out the...
+
+01:12:12.539 --> 01:12:13.820
+Sorry, I'm going to make this full screen.
+
+01:12:15.500 --> 01:12:17.739
+Pulling out the overall values here.
+
+01:12:18.859 --> 01:12:23.020
+So what we'll do is we're going to run a simple filter.
+
+01:12:24.060 --> 01:12:25.260
+So let me just show you.
+
+01:12:27.739 --> 01:12:32.940
+So we're going to filter where category is this age Y.
+
+01:12:33.979 --> 01:12:35.739
+And where the label is N.
+
+01:12:35.739 --> 01:12:38.859
+We're just going to pull out basically the first row of data.
+
+01:12:39.739 --> 01:12:40.380
+All right.
+
+01:12:40.380 --> 01:12:42.140
+So here we go.
+
+01:12:42.779 --> 01:12:48.700
+So we use the filter with PL.call category is age Y.
+
+01:12:49.500 --> 01:12:53.020
+And PL.call label is N to get the first row.
+
+01:12:54.219 --> 01:12:59.260
+Then we're going to select these four columns
+
+01:13:00.299 --> 01:13:03.179
+where we want to pull out this N value.
+
+01:13:04.219 --> 01:13:05.900
+So I'm going to show you that piece.
+
+01:13:08.060 --> 01:13:11.179
+Notice that in Python, one funny thing is that
+
+01:13:11.179 --> 01:13:15.099
+to run this, notice that in R,
+
+01:13:15.099 --> 01:13:19.419
+you might be able to just highlight part of your pipe and run it.
+
+01:13:19.419 --> 01:13:22.940
+In Python, what I do is I usually highlight up to where I want to run.
+
+01:13:23.739 --> 01:13:25.979
+And then I close the parentheses at the end.
+
+01:13:27.020 --> 01:13:29.580
+You could also do it by commenting out lines.
+
+01:13:30.460 --> 01:13:34.620
+But I find that this is a quick way to just run little bits of code.
+
+01:13:35.580 --> 01:13:36.060
+All right.
+
+01:13:36.060 --> 01:13:39.099
+So notice we've selected now the four columns we care about.
+
+01:13:40.060 --> 01:13:42.779
+And then I needed to kind of wrap up with a little bit of
+
+01:13:45.659 --> 01:13:51.659
+more kind of advanced pollers where we're going to cast to an integer
+
+01:13:51.659 --> 01:13:53.500
+just to get rid of these decimal places.
+
+01:13:54.539 --> 01:14:00.700
+And then .row is a funny method that is like give me this exact row of data.
+
+01:14:02.460 --> 01:14:04.539
+Named means like as a dictionary.
+
+01:14:05.339 --> 01:14:06.460
+So just to show you.
+
+01:14:09.099 --> 01:14:09.500
+All right.
+
+01:14:09.500 --> 01:14:14.460
+So it gave us back a dictionary with these values.
+
+01:14:15.339 --> 01:14:19.339
+And this is probably the funkiest part actually of the whole table
+
+01:14:19.339 --> 01:14:23.339
+because we kind of need to pull these out and like hoist them into the column names.
+
+01:14:25.900 --> 01:14:26.219
+All right.
+
+01:14:26.219 --> 01:14:31.580
+And Michael, this reminds me of our discussion about labels.
+
+01:14:31.580 --> 01:14:33.419
+Yeah, it is kind of label-y.
+
+01:14:34.700 --> 01:14:39.500
+Yeah, you create a separate object.
+
+01:14:39.500 --> 01:14:43.500
+In this case, it's a dictionary, which, you know, does the job as well.
+
+01:14:43.500 --> 01:14:45.500
+Earlier, we talked about a second data frame.
+
+01:14:46.140 --> 01:14:50.940
+But as we'll see later on, you're referring back to this dictionary
+
+01:14:53.260 --> 01:14:55.979
+and then use them to create the column names.
+
+01:14:56.539 --> 01:14:57.179
+Yeah, totally.
+
+01:14:59.820 --> 01:15:02.460
+It's very interesting that we just, yeah.
+
+01:15:03.419 --> 01:15:04.380
+Very latest again.
+
+01:15:05.020 --> 01:15:05.260
+Yeah.
+
+01:15:06.140 --> 01:15:06.859
+No, for real.
+
+01:15:09.659 --> 01:15:10.140
+All right.
+
+01:15:10.140 --> 01:15:12.060
+So that's the end overall.
+
+01:15:12.620 --> 01:15:16.700
+The next piece to show off is selectors.
+
+01:15:16.700 --> 01:15:19.419
+So what we're going to do is we're going to clean up the code a little bit.
+
+01:15:19.419 --> 01:15:21.419
+But I just want to show, Jeroen showed a little bit
+
+01:15:21.419 --> 01:15:23.979
+of how you can kind of pull an expression out.
+
+01:15:23.979 --> 01:15:28.539
+You can assign an expression to a variable and then reuse it.
+
+01:15:29.419 --> 01:15:31.739
+We're doing something similar here with these selectors.
+
+01:15:32.620 --> 01:15:36.539
+So I'm saying, select these four columns by name.
+
+01:15:36.539 --> 01:15:39.020
+So just select these four columns.
+
+01:15:39.820 --> 01:15:45.260
+And then this selector is saying, choose all columns that end with underscore PCT.
+
+01:15:46.219 --> 01:15:56.380
+And so if I run this on tbl, tbl.select, I can get these columns, just these columns back.
+
+01:15:57.020 --> 01:16:04.779
+You know, tbl.select, this percentage selector, you know, I can get all the percent columns.
+
+01:16:05.500 --> 01:16:10.140
+So sometimes I find it's nice to just pull these out a little bit to kind of flag
+
+01:16:10.140 --> 01:16:13.500
+like some of the structure that we're going to get into.
+
+01:16:14.620 --> 01:16:14.940
+All right.
+
+01:16:15.739 --> 01:16:19.020
+So we pulled out these overall n values.
+
+01:16:19.979 --> 01:16:22.060
+Next, we're going to clean up the table a little bit.
+
+01:16:22.700 --> 01:16:28.140
+So specifically, right.
+
+01:16:28.859 --> 01:16:35.580
+Notice that we might want to limit, I think this table actually cut short some of the values,
+
+01:16:35.580 --> 01:16:41.260
+but we might want to limit how many decimal places or significant figures people see.
+
+01:16:43.659 --> 01:16:45.580
+The other one is these percent columns.
+
+01:16:46.779 --> 01:16:47.900
+Do I have one?
+
+01:16:47.900 --> 01:16:48.620
+Yeah.
+
+01:16:48.620 --> 01:16:54.299
+We might want to write this out in a more clean way.
+
+01:16:54.940 --> 01:16:59.580
+So for example, we might want to write it like this with a parentheses around it and a percentage
+
+01:16:59.580 --> 01:17:04.460
+sign and then the p values we might want to shorten.
+
+01:17:05.979 --> 01:17:07.979
+So I'm going to do that here.
+
+01:17:08.700 --> 01:17:13.020
+And basically, the trick is we're going to use this with columns method,
+
+01:17:13.020 --> 01:17:14.940
+which is a lot like the dplyr mutate.
+
+01:17:15.099 --> 01:17:19.580
+And we're going to use it to change our columns.
+
+01:17:20.700 --> 01:17:27.339
+So this one, and this is using a, these all come from great tables.
+
+01:17:27.900 --> 01:17:33.500
+So these are actually like formatters that clean up your numbers and turn them into strings.
+
+01:17:34.539 --> 01:17:40.219
+So basically, we're doing a format number to three significant figures.
+
+01:17:40.940 --> 01:17:44.539
+And you can actually test these out just directly in your console.
+
+01:17:44.539 --> 01:17:53.820
+So you could do something like, you know, put a number in nsigfig equals three.
+
+01:17:58.620 --> 01:17:59.179
+Yep.
+
+01:17:59.179 --> 01:18:04.060
+So you can see that it formatted it to three significant figures.
+
+01:18:06.060 --> 01:18:09.659
+So that's the interesting thing about these functions is that you can actually
+
+01:18:09.820 --> 01:18:13.900
+is they can work either inside with a polar's expression,
+
+01:18:14.539 --> 01:18:17.979
+or you can try them on numbers directly to see,
+
+01:18:19.900 --> 01:18:22.299
+just to like kind of experiment and get a feel for them.
+
+01:18:23.339 --> 01:18:23.979
+All right.
+
+01:18:23.979 --> 01:18:26.620
+So I'm going to run these.
+
+01:18:28.299 --> 01:18:33.260
+Let me just run the, this one.
+
+01:18:34.859 --> 01:18:35.179
+All right.
+
+01:18:35.500 --> 01:18:35.580
+Okay.
+
+01:18:35.580 --> 01:18:43.339
+So the key is now these conditions, the placebo, these two in total
+
+01:18:44.140 --> 01:18:47.020
+have all been shortened to three significant figures.
+
+01:18:49.099 --> 01:18:52.539
+The percentage columns are now, if you look,
+
+01:18:54.299 --> 01:18:58.060
+formatted so they're inside parentheses with a percentage sign.
+
+01:19:00.380 --> 01:19:03.979
+And then the p values have been shortened to four decimals.
+
+01:19:05.419 --> 01:19:07.260
+And notice that they're all strings now.
+
+01:19:07.260 --> 01:19:11.179
+So they're sort of like clean formatted numbers that can go into the table.
+
+01:19:12.700 --> 01:19:13.020
+Okay.
+
+01:19:13.820 --> 01:19:19.739
+So the last thing we need to do is add these to the percentage columns to the
+
+01:19:22.140 --> 01:19:23.020
+value columns.
+
+01:19:24.140 --> 01:19:27.099
+So we're just going to basically add them together.
+
+01:19:27.659 --> 01:19:30.140
+So placebo plus placebo percent.
+
+01:19:30.859 --> 01:19:33.099
+The one trick is we need to fill in null values
+
+01:19:33.820 --> 01:19:37.260
+because a null plus a string is a null.
+
+01:19:37.900 --> 01:19:40.140
+So this is called null value propagation.
+
+01:19:41.099 --> 01:19:43.739
+So we need to basically just make sure they're empty strings
+
+01:19:44.620 --> 01:19:50.380
+so that anywhere there isn't a percent, we still keep that left-hand value.
+
+01:19:50.940 --> 01:19:53.659
+So it's kind of like a funny dance.
+
+01:19:55.739 --> 01:20:02.620
+But it's just basically how, because of how nulls work.
+
+01:20:02.620 --> 01:20:05.979
+So I'm going to run this and do cleaned.
+
+01:20:07.260 --> 01:20:07.580
+Okay.
+
+01:20:08.620 --> 01:20:15.739
+So notice that now in the value columns,
+
+01:20:18.779 --> 01:20:22.299
+the percentage sign, we have it fully formatted for our table.
+
+01:20:22.299 --> 01:20:23.739
+So with the value and the percentage.
+
+01:20:24.460 --> 01:20:25.099
+Yeah, that's right.
+
+01:20:25.099 --> 01:20:27.020
+So someone asked, how do you align decimals?
+
+01:20:27.659 --> 01:20:31.339
+So I'll show you in the key is great tables.
+
+01:20:31.419 --> 01:20:36.859
+So now that we have our sort of raw pollers table ready for display,
+
+01:20:38.059 --> 01:20:45.180
+we can use great tables to sort of style it.
+
+01:20:45.180 --> 01:20:47.739
+So here's what it looks like.
+
+01:20:47.739 --> 01:20:51.579
+So great tables, if you call dot style on a pollers data frame,
+
+01:20:52.140 --> 01:20:55.020
+that's a great tables table.
+
+01:20:55.020 --> 01:20:57.099
+So this is the same as if you were to use this.
+
+01:20:57.900 --> 01:21:00.459
+Great tables has a GT object that starts everything.
+
+01:21:01.099 --> 01:21:03.979
+These basically do the exact same thing.
+
+01:21:04.939 --> 01:21:10.699
+So to align decimals, great tables has, I think, a number of ways that it does it.
+
+01:21:13.979 --> 01:21:18.380
+I'm not exactly sure for these with parentheses.
+
+01:21:18.380 --> 01:21:21.739
+It might be a little tricky, but I think that by default,
+
+01:21:21.739 --> 01:21:27.020
+great tables is a number of ways that it tries to align decimals.
+
+01:21:27.099 --> 01:21:29.739
+Let me try producing the table and see.
+
+01:21:30.780 --> 01:21:35.660
+I think depending on how you need them aligned can differ.
+
+01:21:35.660 --> 01:21:40.219
+But actually, let me from great tables import exible.
+
+01:21:40.219 --> 01:21:46.939
+I think this will actually show the alignment.
+
+01:21:46.939 --> 01:21:51.979
+So not here.
+
+01:21:52.140 --> 01:21:52.939
+Not here.
+
+01:21:56.620 --> 01:21:57.180
+You know what?
+
+01:21:58.620 --> 01:22:01.099
+I have to admit, I'm not totally sure.
+
+01:22:01.099 --> 01:22:09.739
+I thought there are some different ways to align the decimals, but I can't quite remember now.
+
+01:22:09.739 --> 01:22:15.420
+Let me try format number.
+
+01:22:16.219 --> 01:22:17.739
+I'm just going to look at the help.
+
+01:22:17.739 --> 01:22:20.140
+So if you put a question mark at the end, you can see the help.
+
+01:22:22.540 --> 01:22:31.339
+It's not formatted in my favorite way, but there might be an align.
+
+01:22:36.620 --> 01:22:37.180
+I failed you.
+
+01:22:37.819 --> 01:22:45.420
+I think there's some sort of alignment strategy somewhere in great tables,
+
+01:22:45.420 --> 01:22:49.339
+but I actually can't remember exactly where.
+
+01:22:49.339 --> 01:22:53.339
+So okay, there's auto align.
+
+01:22:53.339 --> 01:22:59.339
+So that suggests that there are ways to do alignment.
+
+01:23:01.339 --> 01:23:03.020
+I know it's possible in great tables.
+
+01:23:03.020 --> 01:23:05.500
+I have to admit, I don't know exactly know how.
+
+01:23:05.500 --> 01:23:10.300
+So I think we need rich in the great tables big brain.
+
+01:23:11.099 --> 01:23:15.819
+But if you know in GT how to align, definitely let us know in the chat.
+
+01:23:15.819 --> 01:23:18.780
+I think it's probably similar in great tables.
+
+01:23:19.339 --> 01:23:20.300
+But that's a great question.
+
+01:23:20.300 --> 01:23:23.339
+I think that's a big one for table styling.
+
+01:23:24.540 --> 01:23:24.859
+All right.
+
+01:23:24.859 --> 01:23:30.219
+So I'm going to keep going and maybe someone knows how to do the alignment.
+
+01:23:31.020 --> 01:23:31.339
+All right.
+
+01:23:31.339 --> 01:23:35.260
+So to start, I'm going to create this header.
+
+01:23:36.540 --> 01:23:37.579
+So all right.
+
+01:23:37.579 --> 01:23:40.939
+So what tab header does is it lets us add a title and subtitle.
+
+01:23:41.979 --> 01:23:45.660
+So here we're able to give the table a name and a brief description.
+
+01:23:46.620 --> 01:23:52.059
+And then I'm going to use submissing to get rid of all these nones.
+
+01:23:53.180 --> 01:23:55.020
+So I'll show you that now.
+
+01:24:00.140 --> 01:24:03.099
+So notice we got rid of all the null values.
+
+01:24:05.500 --> 01:24:07.900
+One funny thing is we use this percentage column.
+
+01:24:09.660 --> 01:24:10.699
+We moved it in.
+
+01:24:10.699 --> 01:24:14.140
+So like placebo percent, we don't really need anymore because we moved it in here.
+
+01:24:14.939 --> 01:24:20.300
+So we're going to use calls hide to hide all of these percentage columns.
+
+01:24:22.699 --> 01:24:23.180
+All right.
+
+01:24:24.699 --> 01:24:24.939
+Nice.
+
+01:24:24.939 --> 01:24:27.739
+So we got rid of the PCT columns.
+
+01:24:29.180 --> 01:24:31.020
+And then we're just going to clean up our label.
+
+01:24:31.020 --> 01:24:35.020
+So notice our column names are still these underscore names
+
+01:24:35.020 --> 01:24:38.059
+with lowercase with underscores.
+
+01:24:38.859 --> 01:24:41.819
+We're just going to clean them up a little bit using calls label.
+
+01:24:42.780 --> 01:24:49.020
+So a key here is we're now using this nOverallPlacebo piece.
+
+01:24:51.099 --> 01:24:52.859
+We're using a Python F string.
+
+01:24:52.859 --> 01:24:57.180
+So basically, this lets us insert this value from the dictionary.
+
+01:24:57.180 --> 01:25:00.540
+So nOverallPlacebo looks like this.
+
+01:25:02.219 --> 01:25:03.579
+So it's just the number 86.
+
+01:25:04.380 --> 01:25:07.979
+So we're able to, in these curly braces, write a little bit of Python.
+
+01:25:08.540 --> 01:25:10.540
+And it'll just insert the result.
+
+01:25:12.540 --> 01:25:15.660
+And we're also using this thing called MD for markdown
+
+01:25:16.380 --> 01:25:22.140
+to be able to format a little bit the result.
+
+01:25:22.140 --> 01:25:24.780
+So let me just show you that.
+
+01:25:28.620 --> 01:25:29.900
+Oh, I don't know how to scroll.
+
+01:25:31.099 --> 01:25:31.739
+I got this.
+
+01:25:35.579 --> 01:25:36.219
+All right.
+
+01:25:36.219 --> 01:25:38.780
+So now notice our labels are a lot cleaner.
+
+01:25:38.859 --> 01:25:44.140
+And they have this and these sample size values in them.
+
+01:25:45.260 --> 01:25:47.579
+So that's a lot nicer to read.
+
+01:25:50.219 --> 01:25:52.939
+And then the very last thing is we're going to put a footnote in
+
+01:25:53.579 --> 01:25:58.459
+with the date and a note about the source.
+
+01:25:58.459 --> 01:26:01.339
+So let's do this.
+
+01:26:01.339 --> 01:26:08.699
+All right.
+
+01:26:08.699 --> 01:26:11.339
+So that just added a source at the very bottom.
+
+01:26:12.459 --> 01:26:15.420
+And I think that creates the full table.
+
+01:26:16.059 --> 01:26:20.300
+So we did some title, subtitles.
+
+01:26:21.260 --> 01:26:22.780
+We set the column labels.
+
+01:26:22.780 --> 01:26:25.739
+We gave them nice names with calls label.
+
+01:26:26.699 --> 01:26:31.420
+And we had those extra percent columns that we hid with calls hide.
+
+01:26:32.620 --> 01:26:40.939
+And then we also got rid of none values, which were just written out by setting sub missing.
+
+01:26:42.699 --> 01:26:45.420
+And then last, we added a little source note at the bottom
+
+01:26:47.099 --> 01:26:50.300
+about when we executed this program.
+
+01:26:50.699 --> 01:26:59.660
+So that's the gist of using pollers to go from not totally raw data,
+
+01:26:59.660 --> 01:27:06.699
+like processed a little bit data, to a table that's ready for publication.
+
+01:27:09.099 --> 01:27:13.660
+Yes, if you have any questions, I'm happy to walk through that table.
+
+01:27:13.660 --> 01:27:20.219
+I do also have a note about a little piece I can show, which is this table is like pretty,
+
+01:27:21.900 --> 01:27:23.739
+it came pretty pre-processed.
+
+01:27:23.739 --> 01:27:28.780
+You know, if you look at TIBL, it's already in the format of this final table.
+
+01:27:28.780 --> 01:27:33.500
+So obviously, there's like a lot of work people would be doing to get this thing ready.
+
+01:27:36.540 --> 01:27:38.939
+And for example, like one thing I could show is,
+
+01:27:39.660 --> 01:27:49.979
+if we do, I added a dataset for, oh, okay, let's see.
+
+01:27:54.859 --> 01:28:01.339
+To show how you can do a little bit of, I'm just going to call this age.
+
+01:28:01.339 --> 01:28:07.099
+So just to show how you can do a little bit of data analysis.
+
+01:28:07.099 --> 01:28:12.620
+So this is kind of like, this is what these, this square might look like,
+
+01:28:13.420 --> 01:28:18.939
+which is like the counts of all the different people in the different age groups.
+
+01:28:19.979 --> 01:28:24.939
+So this is like a wider format, has the conditions as the columns.
+
+01:28:24.939 --> 01:28:29.180
+And then if you look at this table, you can see that there's like a lot of data.
+
+01:28:29.660 --> 01:28:31.260
+Has the conditions as the columns.
+
+01:28:33.020 --> 01:28:38.780
+But you might, if you were analyzing it, you would probably see it in a tidy,
+
+01:28:39.660 --> 01:28:43.180
+long format, where condition is its own column.
+
+01:28:44.140 --> 01:28:48.780
+And then condition and age group are sort of crossed here.
+
+01:28:48.780 --> 01:28:50.140
+And you have N for each of these.
+
+01:28:51.819 --> 01:28:56.780
+So if that's the case, you can do things like group by, just to show,
+
+01:29:00.140 --> 01:29:04.140
+you know, what some of the stuff Yuri mentioned.
+
+01:29:05.020 --> 01:29:09.979
+You can do group by.ag and do like the sum of N.
+
+01:29:15.500 --> 01:29:17.500
+There's so much help going on in this IDE.
+
+01:29:17.500 --> 01:29:17.739
+Okay.
+
+01:29:18.699 --> 01:29:22.699
+To get these totals, you can always calculate them.
+
+01:29:23.500 --> 01:29:29.660
+Or the interesting thing is, how would you get these percentages?
+
+01:29:29.660 --> 01:29:33.660
+So notice that these percentages are the percent within the condition.
+
+01:29:33.660 --> 01:29:37.819
+So within placebo, 16% of people are under 65.
+
+01:29:39.819 --> 01:29:44.219
+And the key here is that's a, with columns.
+
+01:29:46.059 --> 01:29:47.660
+And polars is very sequely.
+
+01:29:47.660 --> 01:29:54.140
+So basically, what you can do is, you could do like pl.call N
+
+01:29:57.180 --> 01:30:05.020
+divided by pl.call N.sum over condition.
+
+01:30:06.219 --> 01:30:12.939
+So this is kind of like, this is like using a group by with mutate in dplyr.
+
+01:30:13.500 --> 01:30:15.180
+Or the dot group by argument.
+
+01:30:17.739 --> 01:30:25.500
+Over, we're saying, sum and within, sorry, my little zoom bars in the way.
+
+01:30:26.140 --> 01:30:27.739
+Sum N within each condition.
+
+01:30:28.540 --> 01:30:33.500
+And return that sum for that condition for each of the values in that condition.
+
+01:30:34.300 --> 01:30:37.420
+So basically, actually, let me show you.
+
+01:30:37.420 --> 01:30:45.020
+So I'm going to say, condition N, just so you can see what it looks like.
+
+01:30:46.219 --> 01:30:49.500
+So notice that, I'm going to sort by condition.
+
+01:30:49.500 --> 01:30:50.699
+It's another neat thing.
+
+01:30:52.380 --> 01:30:58.380
+So, all right, notice that condition N is the same for all of the placebo group.
+
+01:30:59.339 --> 01:31:02.059
+And the same for all of this condition.
+
+01:31:02.859 --> 01:31:08.059
+And, okay, unfortunately, there's the same N, but the same for this one too.
+
+01:31:08.620 --> 01:31:18.059
+So basically, the key then is that you can do pl.call N divided by this
+
+01:31:21.099 --> 01:31:22.300
+to come up with the percentage.
+
+01:31:22.300 --> 01:31:27.900
+I'm going to say like percent equals, I'm going to round it.
+
+01:31:27.900 --> 01:31:38.459
+So, all right, so that gets us these percentages calculated.
+
+01:31:38.459 --> 01:31:40.780
+So if you were doing something like this from raw data,
+
+01:31:41.420 --> 01:31:43.900
+you might do a little bit of this prep work.
+
+01:31:46.300 --> 01:31:52.459
+So that's, yeah, that's the gist of using polars to create a table.
+
+01:31:53.339 --> 01:31:57.739
+And do a little bit of the prep work.
+
+01:31:59.099 --> 01:32:06.300
+And hopefully it shows off some of the power of polars, like with columns, group by, ag, and sort.
+
+01:32:07.339 --> 01:32:10.219
+So this is most of what I've prepped.
+
+01:32:11.660 --> 01:32:18.219
+Super happy to answer any questions you have, either about this or polars more generally.
+
+01:32:20.219 --> 01:32:21.260
+Yeah, thanks, Michael.
+
+01:32:21.260 --> 01:32:26.219
+This was a great walkthrough where you not only demonstrated
+
+01:32:27.020 --> 01:32:31.579
+how you can apply polars to a somewhat more complicated
+
+01:32:31.579 --> 01:32:38.219
+or a dataset that is more grounded in the real world,
+
+01:32:39.819 --> 01:32:45.500
+especially for this audience, but also how you can create beautiful tables.
+
+01:32:45.500 --> 01:32:50.699
+And I think there's actually a lot more that you can do with this package.
+
+01:32:51.260 --> 01:32:54.780
+Things that you haven't yet shown, that's not the focus of this tutorial, of course,
+
+01:32:54.780 --> 01:32:59.500
+but for those of you who are interested in creating great tables,
+
+01:33:00.300 --> 01:33:06.939
+Michael and Rich, they have actually, there's some great YouTube videos of these two
+
+01:33:08.699 --> 01:33:13.900
+where they do give a very good overview of what great tables has to offer.
+
+01:33:15.660 --> 01:33:18.540
+Now, there was one question, Michael.
+
+01:33:19.180 --> 01:33:25.020
+Whether it's possible to include the name of the statistical test
+
+01:33:26.380 --> 01:33:33.180
+to generate the p-value, either as in the column name or in a footnote?
+
+01:33:33.979 --> 01:33:35.180
+Yeah, that's a great question.
+
+01:33:35.180 --> 01:33:38.300
+So the easy one to do is the column name.
+
+01:33:39.099 --> 01:33:45.020
+I think this one here was intended to be added to a footnote, like
+
+01:33:49.500 --> 01:33:51.979
+we could add it here, I think.
+
+01:33:51.979 --> 01:33:52.459
+Let's see.
+
+01:33:53.020 --> 01:33:55.020
+Let me just double check that this does what.
+
+01:33:56.699 --> 01:33:57.900
+Oh, no, I did a bad thing.
+
+01:34:00.699 --> 01:34:01.339
+Let me see.
+
+01:34:01.339 --> 01:34:02.219
+What did I do?
+
+01:34:03.579 --> 01:34:05.660
+Why did I make you so mad?
+
+01:34:06.939 --> 01:34:11.739
+Well, you started with a keyword argument and then you added another one.
+
+01:34:11.739 --> 01:34:12.540
+Oh, interesting.
+
+01:34:12.540 --> 01:34:14.459
+Another regular argument, yeah.
+
+01:34:14.459 --> 01:34:15.099
+Yeah.
+
+01:34:15.099 --> 01:34:15.579
+All right.
+
+01:34:15.579 --> 01:34:22.140
+So I'll just do another .tab, source note, .tab, source note, another.
+
+01:34:23.180 --> 01:34:23.579
+Let's see.
+
+01:34:25.660 --> 01:34:30.459
+So I think that this one, actually, you could add it here.
+
+01:34:31.099 --> 01:34:41.180
+So we could do like one, this was a, I don't know what test you run the most,
+
+01:34:41.180 --> 01:34:45.339
+but I think I saw something about a chi-square somewhere.
+
+01:34:45.660 --> 01:34:46.140
+I don't know.
+
+01:34:46.699 --> 01:34:51.020
+I don't even remember how to, or a Kruskal-Walsh.
+
+01:34:51.020 --> 01:34:59.500
+I saw like, I don't know where I saw these mentions, but that's one way is you could put
+
+01:34:59.500 --> 01:35:01.339
+it in the footnote.
+
+01:35:01.339 --> 01:35:05.020
+I'm really revealing myself by just simply writing the sentence, this was a chi-square
+
+01:35:05.020 --> 01:35:05.420
+test.
+
+01:35:05.420 --> 01:35:05.979
+But.
+
+01:35:07.493 --> 01:35:33.333
+and
+
+01:35:15.448 --> 01:35:26.288
+glyphs and map them to the source note. We're still adding it to Great Tables, but I think
+
+01:35:26.288 --> 01:35:31.128
+I saw Rich was actively working on it, so I'm hopeful that we'll have it in the next
+
+01:35:31.128 --> 01:35:45.728
+like couple months, hopefully. Yeah, it's a good question. I'm seeing another. We generate
+
+01:35:45.728 --> 01:35:52.808
+many similar type of tables into Excel for some of our clients, given that's the preferred
+
+01:35:52.808 --> 01:35:58.288
+way to consume the table data. How to export the table into Excel? Do you mean the Great
+
+01:35:58.367 --> 01:36:07.928
+Tables output or the Polars table? Probably the Great Table. I think, yeah, it's a good
+
+01:36:07.928 --> 01:36:15.207
+question. I don't think there's an easy way to do it. One thing that might work okay is,
+
+01:36:17.688 --> 01:36:25.687
+let me open up a new, I'm going to open up a sheet.
+
+01:36:26.647 --> 01:36:31.528
+Just for completeness, you can write a Polars data frame to an Excel sheet.
+
+01:36:31.528 --> 01:36:40.568
+Great, this is incredible. I just copied the HTML output. So I think the key is that because
+
+01:36:40.568 --> 01:36:48.168
+this, I learned something today. So because this is a, I think when I copied it,
+
+01:36:49.128 --> 01:36:59.848
+Excel's pretty good at this kind of thing. So I don't know, it might not be 100% of the way,
+
+01:36:59.848 --> 01:37:13.367
+but I'm pretty surprised at how far it got. Yeah, freaky. So yeah, try it out. Including footnotes?
+
+01:37:14.327 --> 01:37:16.727
+Say what? Footnotes?
+
+01:37:19.047 --> 01:37:26.567
+Did I? Maybe I just didn't, I don't know. It just cut that part out. Let's see.
+
+01:37:28.727 --> 01:37:33.688
+Can't have it all. It could be that I didn't, maybe I just didn't highlight
+
+01:37:35.927 --> 01:37:42.248
+powerfully enough. You know what I'm saying? But is there a way to just copy the full
+
+01:37:43.927 --> 01:37:51.608
+shoot? It could be that if you copy the whole thing, you know, maybe that'll do it.
+
+01:37:53.287 --> 01:37:55.528
+Try it out. It's tricky. It's tricky.
+
+01:37:58.888 --> 01:38:02.888
+That's an interesting one though. I'm surprised. I mean, I understand that.
+
+01:38:03.528 --> 01:38:08.727
+Delighted. Yeah. I always, you know, maybe I'm a little bit, you know,
+
+01:38:09.688 --> 01:38:15.367
+playing the devil's advocate here, but one question that you could also ask is like,
+
+01:38:15.367 --> 01:38:21.608
+is it really necessary to export this to Excel, right? Maybe the client would be happy with
+
+01:38:22.647 --> 01:38:27.528
+some other format as well, but maybe Excel's just what they're used to and they're not aware that
+
+01:38:27.528 --> 01:38:33.927
+there are other possibilities. Maybe an HTML page, right? So that this becomes part of a
+
+01:38:34.248 --> 01:38:43.048
+document. Maybe that will suffice or maybe even be better or a PDF. Yeah. That's also something
+
+01:38:43.048 --> 01:38:48.248
+you can ask. Yeah. Yeah. I do know Excel is kind of nice though, because you can kind of like
+
+01:38:49.528 --> 01:38:54.248
+do a lot of tweaking. You can like widen columns and merge cells and kind of
+
+01:38:55.048 --> 01:39:02.647
+do a lot of manual styling, but it does, it's hard to reproduce is the one kind of tricky thing.
+
+01:39:02.647 --> 01:39:12.968
+Yeah. There are different approaches. Yeah. Yep. Yeah. Nice. Any other questions about polars?
+
+01:39:16.248 --> 01:39:20.808
+I'd be super curious what kinds of things people are looking to use polars for
+
+01:39:23.768 --> 01:39:26.727
+or what you're using pandas for even.
+
+01:39:27.448 --> 01:39:36.488
+I'm definitely a bit less familiar with like Python and pharma. So it's an interesting space.
+
+01:39:37.687 --> 01:39:42.648
+One area where it comes up quite a bit is on like the larger data side. So a little bit more on the
+
+01:39:42.648 --> 01:39:48.007
+research side than some of the late stage clinical trials, but there they often use like other
+
+01:39:48.007 --> 01:39:53.928
+backends like Snowflake and Databricks to interact with data, a lot of Parquet. And so it's just
+
+01:39:54.328 --> 01:39:59.368
+interesting to kind of see where polars fits, how people are using it. Yeah.
+
+01:40:00.888 --> 01:40:12.967
+It does. Sorry. That reminded me of Narwhals. Like so now, like if you work, if Narwhals is nice,
+
+01:40:12.967 --> 01:40:18.807
+if you work on a team that uses a lot of pandas, you can use Narwhals to kind of like code in
+
+01:40:19.048 --> 01:40:25.287
+you can use Narwhals to kind of like code in polars, but have it run on pandas.
+
+01:40:27.448 --> 01:40:34.967
+And some of what you said, Phil, just reminded me too, that Narwhals has some support for
+
+01:40:41.287 --> 01:40:42.727
+let me just go into one of these.
+
+01:40:43.127 --> 01:40:50.088
+I thought that they also, I think they're working on support for SQL with Ibis,
+
+01:40:51.368 --> 01:40:58.888
+another Python library, and also on integrating with DuckDB. So I think like generating SQL is
+
+01:40:58.888 --> 01:41:07.928
+maybe the kind of big one here, they mentioned. So you can use Narwhals with a tool called Ibis
+
+01:41:07.928 --> 01:41:15.368
+to kind of like code in polars, but generate SQL code, which you could use to hit like Spark
+
+01:41:15.368 --> 01:41:26.328
+or Snowflake or any of those types of warehouses. Yeah. And they also have one called SQL frame.
+
+01:41:27.127 --> 01:41:29.928
+Yeah. And they also have one called SQL frame. So it seems like they've been
+
+01:41:31.287 --> 01:41:34.888
+busy kind of wiring up everything.
+
+01:41:37.847 --> 01:41:42.247
+Yeah. Narwhals is an interesting one. Any other interesting polar stuff?
+
+01:41:45.608 --> 01:41:53.127
+I think PyShiny, one fun thing is ShinyLive can run polars in the browser. So you can do
+
+01:41:53.368 --> 01:42:11.687
+import polars as PL. Let's see. I'm just going to do render DataFrame, PL.DataFrameX.
+
+01:42:13.127 --> 01:42:19.127
+This may be over the top to show that they can run it, but I think this works.
+
+01:42:19.368 --> 01:42:26.247
+I think this works. Yeah. Yep. So they've got polars running in the browser,
+
+01:42:26.247 --> 01:42:28.888
+which is pretty cool. This slider obviously doesn't do anything anymore, but
+
+01:42:31.368 --> 01:42:38.247
+yeah. So a lot of neat stuff cooking. Yeah. Tim mentioned Ibis is cool on its own. So
+
+01:42:38.247 --> 01:42:42.967
+that's another one to check out. It's like DataFrame, similar API to polars,
+
+01:42:43.687 --> 01:42:52.007
+but it's made to fire on different SQL backends. Okay. Confusingly, Ibis can fire on polars.
+
+01:42:52.727 --> 01:43:00.567
+Narwhals can fire polars on Ibis. It's like everything's wired to everything else right now,
+
+01:43:03.368 --> 01:43:10.807
+but a fun one. Yeah. So you have ShinyLive. Any other cool polar stuff?
+
+01:43:12.967 --> 01:43:22.168
+I think those are the big ones, probably. Let's see.
+
+01:43:26.407 --> 01:43:31.127
+What are the newest polars releases? Do you know what polars is up to?
+
+01:43:32.088 --> 01:43:37.527
+No, I have no clue. I'm going to pull it up. This team, the polars team is
+
+01:43:39.527 --> 01:43:43.448
+cranking out features on a very high speed.
+
+01:43:46.567 --> 01:43:55.448
+Wow. Yeah. So it feels like a year or two ago, they bumped to version one, but...
+
+01:43:56.247 --> 01:44:09.768
+Yep. There's a lot going on, but I feel it is very ready to use in production. In fact,
+
+01:44:13.768 --> 01:44:20.408
+before I joined Posit, I was working for a client where we converted a very large code base
+
+01:44:20.487 --> 01:44:29.848
+from pandas to polars, and that's been a big success, and it's still running. It's still
+
+01:44:29.848 --> 01:44:36.328
+running. So I feel very... Michael is looking up the video.
+
+01:44:39.288 --> 01:44:40.968
+Yeah. Yeah. Yeah. Yeah.
+
+01:44:40.968 --> 01:44:43.768
+I'll go to the middle and freak you out, and then I'll...
+
+01:44:43.768 --> 01:44:45.528
+What are you doing, Michael? What is this?
+
+01:44:45.607 --> 01:44:52.007
+I just thought I was trying to get to a point in time where you are, but here we go. Who's this
+
+01:44:52.007 --> 01:44:58.888
+guy? You know? It's also cool. You didn't give out three free copies of Python polars to the
+
+01:44:58.888 --> 01:45:04.487
+PyData crowd, so I feel like this workshop is lucky, you know?
+
+01:45:06.088 --> 01:45:11.448
+Of course. Of course. Yeah. If you want to enter the raffle, you can do that.
+
+01:45:11.448 --> 01:45:17.687
+Of course. Of course. Yeah. If you want to enter the raffle, that's still possible.
+
+01:45:18.328 --> 01:45:30.328
+The link is in the slides that I shared earlier in the chat. Maybe I can just share the signup URL.
+
+01:45:33.528 --> 01:45:37.367
+Yeah. Once more, right? You don't have to,
+
+01:45:38.088 --> 01:45:45.848
+only if you're interested. Yeah. Nice. Yeah. Elon pointed out this
+
+01:45:45.848 --> 01:45:55.367
+Polars DS extension. So extensions work is they often put... Let's see. Does this one do...
+
+01:45:58.007 --> 01:46:04.328
+Oh, this one you just import, and they provide new functions, basically, that you can run on stuff.
+
+01:46:05.288 --> 01:46:13.448
+I think they used to use great tables, but I don't know if they still do. Honestly,
+
+01:46:13.448 --> 01:46:16.567
+I haven't looked at this package in a long time, but it seems like it has a lot of nice
+
+01:46:20.807 --> 01:46:29.367
+stuff. So yeah, it seems like a cool one to check out. Yeah, I think... Oh,
+
+01:46:30.328 --> 01:46:38.487
+hey, Curtis. Nice to see you, Curtis. No, it's a different Curtis. No. Oh,
+
+01:46:38.487 --> 01:46:46.007
+you know this Curtis. My bad. Yes, I do. I do. I can't believe I... Yeah. We've known each other
+
+01:46:46.007 --> 01:46:53.528
+for quite a while. I'm not trying to... Yes. Okay. I'll share the link to the slides again.
+
+01:46:54.088 --> 01:47:01.208
+Yeah. Nice. I can't believe I just presumed that you might not know a Curtis who showed up,
+
+01:47:01.208 --> 01:47:06.088
+you know? There is another Curtis that we both know. That is true.
+
+01:47:06.888 --> 01:47:14.167
+Yeah. But there are a lot of Curtis's out there. Yeah. Nice. The other... I think Polars and
+
+01:47:14.167 --> 01:47:21.848
+Geospatial is coming along, but I don't know exactly kind of where it's at yet. But I feel
+
+01:47:22.648 --> 01:47:27.127
+when I checked probably six months ago, it was coming along pretty well.
+
+01:47:29.927 --> 01:47:38.167
+Yeah. So I think that's the world of Polars. Yeah, that's about it. So I hope that we have
+
+01:47:38.167 --> 01:47:45.528
+been able to give you a good overview of what Polars has to offer. We definitely didn't discuss
+
+01:47:45.528 --> 01:47:50.007
+everything that Polars has to offer. For example, we didn't go into the whole
+
+01:47:51.607 --> 01:47:59.208
+lazy versus eager mode in Polars, which it's a big deal. It's not something where I would start
+
+01:47:59.208 --> 01:48:06.728
+with. That's why we didn't include it. But just to say that there is more to explore if you're
+
+01:48:06.728 --> 01:48:18.247
+interested. So give it a shot. There are various ways in which you can reach out to Michael or
+
+01:48:18.247 --> 01:48:29.927
+myself. I don't know what the best way is. We're both on LinkedIn, of course. You'll be able to
+
+01:48:29.927 --> 01:48:36.807
+find us if you go to the polarsguide.com website. You'll be able to find me easily. We're always
+
+01:48:36.807 --> 01:48:45.927
+happy to answer any questions that you have. So thank you so much for joining us for nearly two
+
+01:48:45.927 --> 01:48:53.607
+hours. So we appreciate it and we wish you all the best and enjoy the rest of our pharma.
+
+01:48:54.408 --> 01:49:00.088
+Yeah, thanks so much for coming. So excited to see so much interest in Polars in the pharma
+
+01:49:00.088 --> 01:49:08.247
+community. And yeah, excited to hear what people start using it for. So thanks for coming. Phil,
+
+01:49:08.247 --> 01:49:13.528
+do you have any last words? No last words. So I'm just going to put one more time in the chat
+
+01:49:13.528 --> 01:49:20.648
+in case you needed the form to get the badge. So for attending today, you'll get a completion badge.
+
+01:49:20.648 --> 01:49:27.127
+You can fill out the form and get that. We've got an amazing Python workshop on Friday with
+
+01:49:27.127 --> 01:49:32.007
+Yilong and the team to talk about clinical reporting with Python. So stay tuned for that
+
+01:49:32.007 --> 01:49:38.007
+if you're interested in helping to lead the charge in Python in that community. A big thanks to the
+
+01:49:38.007 --> 01:49:44.247
+team today for taking us through Polars. Excited to see the advancements that come out of the space.
+
+01:49:44.328 --> 01:49:51.448
+We've got the slides in the chat box as well. So with that, if you're interested, we also got
+
+01:49:52.567 --> 01:49:57.927
+point blank coming up next in seven minutes. So I'm going to jump over there with Rich,
+
+01:49:57.927 --> 01:50:03.127
+who also does a lot of Python work. I also think the package does work for R and Python. So you
+
+01:50:03.127 --> 01:50:09.047
+can technically think of it as a continuation of our Python session for today. So with that,
+
+01:50:09.047 --> 01:50:15.448
+thank you to the two of you so much for helping. If you have any questions, feel free to reach out
+
+01:50:15.448 --> 01:50:19.607
+to the speakers. We'll be posting the video on our YouTube channel in a couple of weeks.
+
+01:50:20.648 --> 01:50:28.968
+And I think we're good to go. So thanks a lot. One last point blank is built with great tables.
+
+01:50:28.968 --> 01:50:33.208
+So if you're there, just feast your mind on that. Because Rich, I don't know how,
+
+01:50:33.848 --> 01:50:38.968
+but all of that is great tables in ways that I'll never comprehend.
+
+01:50:39.528 --> 01:50:43.448
+Awesome. I just put that the recordings will go on our YouTube channel in a couple,
+
+01:50:44.007 --> 01:50:47.208
+I want to say a couple months, but probably a little sooner than that. It takes a little bit
+
+01:50:47.208 --> 01:50:53.607
+of time to get everything up and out. So all right. That's great. Thank you so much. I'll
+
+01:50:53.607 --> 01:50:58.648
+go ahead and end the presentation for today. All right. See y'all. Yep. See you later. Bye-bye.

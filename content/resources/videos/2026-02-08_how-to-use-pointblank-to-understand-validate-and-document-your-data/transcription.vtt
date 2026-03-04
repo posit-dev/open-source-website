@@ -1,0 +1,5896 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.920
+Hello, everybody.
+
+00:00:01.920 --> 00:00:05.520
+We are excited to keep the positive and wonderful momentum
+
+00:00:05.520 --> 00:00:09.080
+going for the rPharma 2025 workshop series.
+
+00:00:09.080 --> 00:00:12.320
+And there's been a whole bunch of fantastic ones already.
+
+00:00:12.320 --> 00:00:18.320
+I am super excited to introduce our instructor today.
+
+00:00:18.320 --> 00:00:21.879
+I definitely consider one of my R friends in IRL.
+
+00:00:21.879 --> 00:00:23.280
+I've known him for years.
+
+00:00:23.280 --> 00:00:28.360
+And he has built amazing tools in the R ecosystem.
+
+00:00:28.400 --> 00:00:31.760
+You may know him for his awesome GT package,
+
+00:00:31.760 --> 00:00:33.480
+but he does way more than that.
+
+00:00:33.480 --> 00:00:37.080
+And we are going to be talking about the pointblank package
+
+00:00:37.080 --> 00:00:40.840
+today, which is one of those underrated gems in the R
+
+00:00:40.840 --> 00:00:44.360
+ecosystem, and more recently, the Python ecosystem as well.
+
+00:00:44.360 --> 00:00:46.400
+So without further ado, I'm really
+
+00:00:46.400 --> 00:00:49.599
+excited to introduce our instructor for today,
+
+00:00:49.599 --> 00:00:51.840
+software engineer at Posit, Richie Ong.
+
+00:00:51.840 --> 00:00:54.320
+So you are here.
+
+00:00:54.320 --> 00:00:57.279
+So we're really excited to have you here.
+
+00:00:57.279 --> 00:00:59.840
+And I'll be watching the chat for any questions.
+
+00:00:59.840 --> 00:01:01.959
+And I'll serve them up your way whenever you like.
+
+00:01:01.959 --> 00:01:03.959
+But the floor is yours.
+
+00:01:03.959 --> 00:01:06.279
+We're ready to get all into pointblank.
+
+00:01:06.279 --> 00:01:08.559
+It's one of my favorite packages.
+
+00:01:08.559 --> 00:01:12.400
+It's actually, OK, I know there's a Python workshop
+
+00:01:12.400 --> 00:01:13.080
+just before.
+
+00:01:13.080 --> 00:01:15.080
+Just so you know, we're doing this in R.
+
+00:01:15.080 --> 00:01:17.400
+But there actually is a pointblank for Python,
+
+00:01:17.400 --> 00:01:18.360
+just so you know.
+
+00:01:18.360 --> 00:01:22.080
+So if you were using R and you just had to go into Python,
+
+00:01:22.080 --> 00:01:23.620
+when you use pointblank, you can just
+
+00:01:23.620 --> 00:01:25.360
+transfer those skills right to the Python,
+
+00:01:25.360 --> 00:01:28.760
+which is pretty close to it.
+
+00:01:28.760 --> 00:01:30.440
+Just a little tidbit of information.
+
+00:01:30.440 --> 00:01:32.320
+I'm going to share my screen.
+
+00:01:32.320 --> 00:01:38.599
+I am hoping that this is very large, large enough
+
+00:01:38.599 --> 00:01:42.160
+for everybody on the workshop.
+
+00:01:42.160 --> 00:01:44.080
+You may want to zoom in a couple of notches.
+
+00:01:44.080 --> 00:01:44.760
+Just a bit more.
+
+00:01:44.760 --> 00:01:45.879
+OK, yeah, maybe like this.
+
+00:01:45.879 --> 00:01:46.760
+A little more.
+
+00:01:46.760 --> 00:01:48.279
+A little more, OK, here we go.
+
+00:01:48.279 --> 00:01:49.519
+This should do it.
+
+00:01:49.519 --> 00:01:50.160
+All right.
+
+00:01:50.160 --> 00:01:52.599
+That's more for the on-demand recording, especially.
+
+00:01:52.599 --> 00:01:54.639
+Yeah, yeah, good call.
+
+00:01:54.639 --> 00:01:59.320
+So what I'm going to do is I have everything that is here
+
+00:01:59.320 --> 00:02:00.440
+is actually in a repo.
+
+00:02:00.440 --> 00:02:05.160
+It's in a repo under my personal repo,
+
+00:02:05.160 --> 00:02:09.199
+richemn slash pointblank hyphen workshop.
+
+00:02:09.199 --> 00:02:10.880
+So all that you see here is there.
+
+00:02:10.880 --> 00:02:12.479
+And you can always get it at any time.
+
+00:02:12.479 --> 00:02:13.979
+And of course, it's available inside
+
+00:02:13.979 --> 00:02:18.720
+of Paws of Cloud, which is where I'm using this.
+
+00:02:18.720 --> 00:02:20.720
+But here it is right there, pointblank workshop.
+
+00:02:20.720 --> 00:02:22.919
+It's right in front of me.
+
+00:02:22.919 --> 00:02:25.479
+So basically, I'm going to go through in this next two hours
+
+00:02:25.479 --> 00:02:28.679
+just a few of these QMD files, basically
+
+00:02:28.679 --> 00:02:32.520
+the first, second, third, and the fifth,
+
+00:02:32.520 --> 00:02:34.080
+I believe, is what I'm going to do.
+
+00:02:34.080 --> 00:02:35.919
+That'll fit nicely during the two-hour time.
+
+00:02:35.919 --> 00:02:38.080
+And it'll leave lots of time for questions
+
+00:02:38.080 --> 00:02:40.880
+and for your own experimentation.
+
+00:02:40.880 --> 00:02:43.320
+So let's get right into this.
+
+00:02:43.320 --> 00:02:48.039
+OK, so let's first introduce what is data validation.
+
+00:02:48.039 --> 00:02:51.479
+Oops, I'm going to make this a little bit smaller, OK.
+
+00:02:51.479 --> 00:02:54.199
+So pointblank is for data validation, obviously.
+
+00:02:54.199 --> 00:02:56.479
+And the workflow that we use inside this package
+
+00:02:56.479 --> 00:02:58.919
+is we create something called an agent.
+
+00:02:58.919 --> 00:03:01.119
+It's just a function called create agent.
+
+00:03:01.119 --> 00:03:02.839
+So that's the first thing you got to do.
+
+00:03:02.839 --> 00:03:05.320
+That's where you actually give the object your data,
+
+00:03:05.320 --> 00:03:07.399
+like the table you want to validate.
+
+00:03:07.399 --> 00:03:08.600
+OK, so that's very important.
+
+00:03:08.600 --> 00:03:11.199
+It's kind of like the first step.
+
+00:03:11.199 --> 00:03:15.839
+And then in the middle, there's as many functions
+
+00:03:15.839 --> 00:03:18.320
+as you want, this declaration of validation steps
+
+00:03:18.320 --> 00:03:19.919
+using validation functions.
+
+00:03:19.919 --> 00:03:22.720
+OK, the more you add, the more stringent
+
+00:03:22.720 --> 00:03:27.360
+that your validation process is going to go down.
+
+00:03:27.360 --> 00:03:30.000
+OK, and then finally, there's a third step,
+
+00:03:30.000 --> 00:03:31.279
+the interrogation of the data.
+
+00:03:31.279 --> 00:03:33.039
+This is where the agent finally carries out
+
+00:03:33.039 --> 00:03:34.080
+the validation tasks.
+
+00:03:34.080 --> 00:03:36.320
+Up to that point, it just has the data,
+
+00:03:36.320 --> 00:03:38.160
+but it doesn't actually do anything with it.
+
+00:03:38.160 --> 00:03:41.199
+So you have to use this to sort of initiate the whole process.
+
+00:03:44.080 --> 00:03:45.600
+So let's actually run through this.
+
+00:03:45.600 --> 00:03:48.039
+I'll take a table that's inside the pointblank package.
+
+00:03:48.039 --> 00:03:48.880
+It's called smalltable.
+
+00:03:48.880 --> 00:03:49.800
+It's really very small.
+
+00:03:49.800 --> 00:03:51.839
+I'm just going to run this real fast.
+
+00:03:51.839 --> 00:03:55.119
+And we see here, it's got 13 rows, eight columns.
+
+00:03:55.119 --> 00:03:56.880
+It's pretty good for just validation tasks,
+
+00:03:56.880 --> 00:03:59.399
+just to see, just to experiment with the package.
+
+00:03:59.399 --> 00:04:01.679
+OK, so I'm going to close this up.
+
+00:04:01.679 --> 00:04:03.399
+OK, so I'm going to do that first thing.
+
+00:04:03.399 --> 00:04:05.839
+I'm going to call this object agent1.
+
+00:04:05.839 --> 00:04:08.279
+We're going to use the createAgent function.
+
+00:04:08.279 --> 00:04:09.600
+First argument is table.
+
+00:04:09.600 --> 00:04:13.039
+We give the smalltable from the package.
+
+00:04:13.039 --> 00:04:15.600
+We could optionally give it just a friendly name, smalltable
+
+00:04:15.600 --> 00:04:16.839
+like this in quotes.
+
+00:04:16.839 --> 00:04:18.040
+That's just for the display.
+
+00:04:18.040 --> 00:04:19.399
+In the end, you're going to get a report,
+
+00:04:19.399 --> 00:04:21.480
+and it's good to see the actual name of the table.
+
+00:04:21.480 --> 00:04:24.200
+So you're just sort of echoing that right here.
+
+00:04:24.200 --> 00:04:25.720
+Another thing you do is add a label.
+
+00:04:25.720 --> 00:04:27.040
+This is just a line of text.
+
+00:04:27.040 --> 00:04:28.720
+Again, that appears in the report.
+
+00:04:28.720 --> 00:04:29.920
+And I'll show you the report.
+
+00:04:29.920 --> 00:04:31.040
+It's going to be like this.
+
+00:04:31.040 --> 00:04:34.119
+I'm going to hit Play, and it appears right here.
+
+00:04:34.119 --> 00:04:35.720
+OK, so I have to scroll a little bit
+
+00:04:35.720 --> 00:04:37.399
+because this whole area doesn't actually
+
+00:04:37.399 --> 00:04:39.320
+capture the entire table.
+
+00:04:39.320 --> 00:04:42.600
+What we see here in the top, pointblank validation plan,
+
+00:04:42.600 --> 00:04:44.399
+no interrogation performed, because all
+
+00:04:44.399 --> 00:04:47.440
+we did in the first step here is just create the agent.
+
+00:04:47.440 --> 00:04:49.000
+We didn't add any steps.
+
+00:04:49.000 --> 00:04:52.359
+So we see that this table is actually empty.
+
+00:04:52.359 --> 00:04:55.799
+So let's make it less empty.
+
+00:04:55.799 --> 00:04:57.480
+Let's add some steps.
+
+00:04:57.480 --> 00:04:59.839
+So in this case, we're going to take the agent, again,
+
+00:04:59.839 --> 00:05:00.959
+that we already made.
+
+00:05:00.959 --> 00:05:03.000
+We save it over the initial one.
+
+00:05:03.000 --> 00:05:04.880
+But this time, we're going to add some steps.
+
+00:05:04.880 --> 00:05:06.000
+And there's lots of these.
+
+00:05:06.000 --> 00:05:08.279
+There's probably 30 of these.
+
+00:05:08.279 --> 00:05:11.160
+And but the good thing is they all
+
+00:05:11.160 --> 00:05:12.640
+sort of start with the same sort of pattern.
+
+00:05:12.640 --> 00:05:13.600
+There's groups of these.
+
+00:05:13.600 --> 00:05:16.279
+They start either with callVals, callIs.
+
+00:05:16.279 --> 00:05:19.239
+Sometimes they're special names like rowsDistinct.
+
+00:05:19.239 --> 00:05:23.279
+But there's just a few groups of these validation functions.
+
+00:05:23.279 --> 00:05:24.720
+So I'm going to add a few of these.
+
+00:05:24.720 --> 00:05:26.399
+And I'll go through what these actually
+
+00:05:26.399 --> 00:05:28.079
+do a little bit later.
+
+00:05:28.079 --> 00:05:30.839
+I just want to show you the entire process first.
+
+00:05:30.839 --> 00:05:32.000
+So let's actually run this.
+
+00:05:34.519 --> 00:05:38.359
+OK, so now we get another table as a result.
+
+00:05:38.359 --> 00:05:40.600
+Again, we see no interrogation performed
+
+00:05:40.600 --> 00:05:43.000
+because we never used the last step, which is interrogate.
+
+00:05:43.000 --> 00:05:45.079
+But I wanted to show you what happens
+
+00:05:45.079 --> 00:05:46.279
+if you just don't do that.
+
+00:05:46.279 --> 00:05:48.279
+OK, so we get a number of steps.
+
+00:05:48.279 --> 00:05:50.119
+And this essentially is the validation plan.
+
+00:05:50.119 --> 00:05:51.200
+We have a number of steps.
+
+00:05:51.200 --> 00:05:54.679
+And what will happen when you use interrogate right here
+
+00:05:54.679 --> 00:05:58.440
+is that those steps will eventually have data.
+
+00:05:58.440 --> 00:06:00.920
+OK, so we see it right now.
+
+00:06:00.920 --> 00:06:02.920
+OK, and now this is actually a good time
+
+00:06:02.920 --> 00:06:07.480
+to understand what this does, what the individual steps do,
+
+00:06:07.480 --> 00:06:10.279
+and what this table shows.
+
+00:06:10.279 --> 00:06:11.839
+So what we've done here, I'm just
+
+00:06:11.839 --> 00:06:14.160
+going back a little bit, we're checking
+
+00:06:14.160 --> 00:06:17.959
+that the column values in column D
+
+00:06:17.959 --> 00:06:22.160
+are greater than or equal to value 0, so a static value.
+
+00:06:22.160 --> 00:06:24.239
+We could compare it against other columns.
+
+00:06:24.239 --> 00:06:26.399
+But in this case, we're just choosing a static value
+
+00:06:26.399 --> 00:06:29.440
+inside of this value argument.
+
+00:06:29.440 --> 00:06:31.279
+The second step is we're checking
+
+00:06:31.279 --> 00:06:33.480
+for values within a set.
+
+00:06:33.480 --> 00:06:36.200
+So column F will have text values.
+
+00:06:36.200 --> 00:06:38.839
+And we're saying that we expect values in column F
+
+00:06:38.839 --> 00:06:42.040
+to be either low, mid, or high.
+
+00:06:42.040 --> 00:06:47.760
+OK, two more, or three more, which begin with col is.
+
+00:06:47.760 --> 00:06:53.320
+So we're saying columns E and D are logical and numeric,
+
+00:06:53.320 --> 00:06:55.239
+respectively.
+
+00:06:55.239 --> 00:06:59.160
+And that columns B and F are character columns.
+
+00:06:59.160 --> 00:07:01.600
+OK, finally, for the last validation step,
+
+00:07:01.600 --> 00:07:03.440
+we have rows distinct.
+
+00:07:03.440 --> 00:07:07.559
+So in this one, we're saying that all the rows are unique.
+
+00:07:08.519 --> 00:07:10.000
+OK, those are our expectations.
+
+00:07:10.000 --> 00:07:12.799
+So we see in the actual output, though,
+
+00:07:12.799 --> 00:07:14.959
+it's kind of nice to see this because we sort of see
+
+00:07:14.959 --> 00:07:18.000
+our validation functions being echoed here.
+
+00:07:18.000 --> 00:07:19.679
+And if you hover over them, we sort of
+
+00:07:19.679 --> 00:07:23.720
+see plain English expectation text.
+
+00:07:23.720 --> 00:07:28.440
+So that sort of echoes what we expect to see.
+
+00:07:28.440 --> 00:07:30.239
+And if you scroll a little bit to the right,
+
+00:07:30.239 --> 00:07:35.279
+we see something called units, pass, and fail.
+
+00:07:35.279 --> 00:07:37.519
+OK, so units are, for each step,
+
+00:07:37.519 --> 00:07:40.040
+there's individual atomic test units.
+
+00:07:40.040 --> 00:07:42.559
+So for these callVals functions, we're
+
+00:07:42.559 --> 00:07:46.399
+checking values down an entire column, and there's 13 rows.
+
+00:07:46.399 --> 00:07:49.200
+So really, there's 13 individual checks.
+
+00:07:49.200 --> 00:07:52.399
+And because we see there's 13 units and 13 pass
+
+00:07:52.399 --> 00:07:55.239
+or validation, and we have none that fail,
+
+00:07:55.239 --> 00:07:58.640
+we see that all the columns match this expectation
+
+00:07:58.640 --> 00:08:04.760
+that all values in D are greater than or equal to 0.
+
+00:08:04.760 --> 00:08:06.559
+Great, and we also see other ones,
+
+00:08:06.559 --> 00:08:11.279
+which are identity things, like columns are different types.
+
+00:08:11.279 --> 00:08:13.320
+They have one test unit because they're checking
+
+00:08:13.320 --> 00:08:15.359
+one thing for the type, and we see
+
+00:08:15.359 --> 00:08:18.000
+that they all seem to pass.
+
+00:08:18.000 --> 00:08:20.559
+It's only when we get to rows distinct, where
+
+00:08:20.559 --> 00:08:23.399
+we expect distinct rows across all of our columns,
+
+00:08:23.399 --> 00:08:26.399
+basically each row is different from the other,
+
+00:08:26.399 --> 00:08:30.160
+we get two failures in this column.
+
+00:08:30.160 --> 00:08:34.119
+So out of 13 test units, 11 pass, we have two failures.
+
+00:08:34.119 --> 00:08:37.840
+That's because we don't have entirely distinct columns
+
+00:08:37.840 --> 00:08:42.239
+in our small table data set.
+
+00:08:42.239 --> 00:08:46.080
+Another cool thing is that we see right here a button, CSV.
+
+00:08:46.080 --> 00:08:48.239
+So we can actually click that, and what we get
+
+00:08:48.239 --> 00:08:50.679
+is it just downloads a CSV, which
+
+00:08:50.679 --> 00:08:53.679
+is kind of cool if someone doesn't have access
+
+00:08:53.679 --> 00:08:57.080
+to point blank or R, and you just give them this file,
+
+00:08:57.080 --> 00:09:00.760
+and they're curious about which actual rows are
+
+00:09:00.760 --> 00:09:01.919
+the failure rows.
+
+00:09:01.919 --> 00:09:04.880
+They can actually look at this and see what the problems are,
+
+00:09:04.880 --> 00:09:09.760
+and this is available for all row-based validation
+
+00:09:09.760 --> 00:09:10.719
+functions.
+
+00:09:10.719 --> 00:09:14.919
+They can produce these if there are failures.
+
+00:09:14.919 --> 00:09:17.840
+OK, that was like the very first thing,
+
+00:09:17.840 --> 00:09:21.760
+and I want to check if there's any questions at all,
+
+00:09:21.760 --> 00:09:25.039
+because I see there's a few, but really it's just Phil.
+
+00:09:25.039 --> 00:09:26.840
+And OK, that's great.
+
+00:09:26.840 --> 00:09:30.239
+OK, but just know if there are any questions,
+
+00:09:30.239 --> 00:09:32.479
+feel free to ask in the chat, and I will take a break,
+
+00:09:32.479 --> 00:09:34.719
+and I will answer those.
+
+00:09:34.719 --> 00:09:37.599
+OK, so I went over the validation report.
+
+00:09:37.599 --> 00:09:40.080
+Here it is in text form.
+
+00:09:40.080 --> 00:09:41.280
+I didn't go over everything.
+
+00:09:41.280 --> 00:09:42.520
+Basically, step is important.
+
+00:09:42.520 --> 00:09:44.599
+That's the column, the first column.
+
+00:09:44.599 --> 00:09:46.599
+Each time you use a validation function,
+
+00:09:46.599 --> 00:09:48.559
+it will make a new step.
+
+00:09:48.559 --> 00:09:51.239
+Sometimes one use of a validation function
+
+00:09:51.239 --> 00:09:52.479
+will make multiple steps.
+
+00:09:52.479 --> 00:09:58.280
+Say if you define multiple columns in a column type check,
+
+00:09:58.280 --> 00:10:03.479
+it will just expand to several rows or several steps.
+
+00:10:03.479 --> 00:10:07.000
+Columns, if there are column-based validation
+
+00:10:07.000 --> 00:10:08.880
+checks, this will become relevant,
+
+00:10:08.880 --> 00:10:11.440
+and there'll be names of target columns in there.
+
+00:10:14.640 --> 00:10:16.919
+Same goes for the values column.
+
+00:10:16.919 --> 00:10:19.440
+If there are any values associated with something,
+
+00:10:19.440 --> 00:10:21.200
+say, for instance, you're checking
+
+00:10:21.200 --> 00:10:22.840
+for a column greater than some value,
+
+00:10:22.840 --> 00:10:24.080
+it will appear in this column.
+
+00:10:24.080 --> 00:10:25.760
+So it gives you a little bit information.
+
+00:10:25.799 --> 00:10:28.960
+So argument values will appear in this table, but not always.
+
+00:10:28.960 --> 00:10:32.239
+But most of the time, it will.
+
+00:10:32.239 --> 00:10:34.320
+There's actually two columns, table and a val.
+
+00:10:34.320 --> 00:10:36.559
+OK, so I'm going to scroll back up here.
+
+00:10:36.559 --> 00:10:39.919
+In this case, we always get a circle
+
+00:10:39.919 --> 00:10:43.880
+with a line facing right, and we get a checkmark.
+
+00:10:43.880 --> 00:10:47.159
+It just means, well, there's a feature we haven't seen yet.
+
+00:10:47.159 --> 00:10:50.479
+But what happens is you can modify the table within a step,
+
+00:10:50.479 --> 00:10:51.880
+and it's isolated within a step.
+
+00:10:51.880 --> 00:10:54.960
+You can mutate the table, in other words.
+
+00:10:54.960 --> 00:10:56.960
+In all our cases, we never did that.
+
+00:10:56.960 --> 00:11:00.520
+And also, this val column means there's no evaluation issues
+
+00:11:00.520 --> 00:11:01.599
+with the table.
+
+00:11:01.599 --> 00:11:03.760
+We didn't use a column that didn't exist.
+
+00:11:03.760 --> 00:11:06.159
+If we used a column that didn't exist,
+
+00:11:06.159 --> 00:11:07.840
+there'd be some problem here flagged,
+
+00:11:07.840 --> 00:11:11.200
+and this step would fail, or be a deactivate,
+
+00:11:11.200 --> 00:11:13.280
+and you would just know.
+
+00:11:13.280 --> 00:11:14.280
+So that's what this does.
+
+00:11:14.280 --> 00:11:15.780
+It tells you if there's any problems
+
+00:11:15.780 --> 00:11:19.200
+with the validation itself, or the setup of the validation,
+
+00:11:19.200 --> 00:11:21.239
+but not so much the validation results.
+
+00:11:21.400 --> 00:11:23.159
+OK.
+
+00:11:23.159 --> 00:11:23.659
+That's it.
+
+00:11:23.659 --> 00:11:28.200
+Pass, fail, and I'm going to go over these next few columns,
+
+00:11:28.200 --> 00:11:30.239
+W, S, and N. I'll just tell you right now,
+
+00:11:30.239 --> 00:11:32.559
+these are indicators that show whether we
+
+00:11:32.559 --> 00:11:35.559
+have a certain condition that is met,
+
+00:11:35.559 --> 00:11:38.760
+and these conditions are warn, stop, or notify.
+
+00:11:38.760 --> 00:11:41.000
+And as we see here, we see nothing but dashes,
+
+00:11:41.000 --> 00:11:42.679
+because we never actually set those up,
+
+00:11:42.679 --> 00:11:44.320
+but we will in a future example.
+
+00:11:52.239 --> 00:11:55.919
+And finally, I just want to note that pass and fail,
+
+00:11:55.919 --> 00:11:57.520
+when you look at the values in there,
+
+00:11:57.520 --> 00:12:02.679
+there's actually two values per each of the cells.
+
+00:12:02.679 --> 00:12:04.799
+What we get is the actual absolute number
+
+00:12:04.799 --> 00:12:08.280
+of test units which passed here, and then the fraction thereof.
+
+00:12:08.280 --> 00:12:10.880
+And then for fail, again, it's the number
+
+00:12:10.880 --> 00:12:13.919
+of test units that failed, and the fraction of test units
+
+00:12:13.919 --> 00:12:15.159
+that failed out of the total.
+
+00:12:16.159 --> 00:12:16.679
+OK.
+
+00:12:16.679 --> 00:12:17.520
+And here's T column.
+
+00:12:17.520 --> 00:12:21.400
+We'll have the CSP buttons if there are any problem
+
+00:12:21.400 --> 00:12:23.599
+rows to see.
+
+00:12:29.400 --> 00:12:33.119
+So now, I'm going to take this a step further.
+
+00:12:33.119 --> 00:12:35.200
+I'm going to use something called action
+
+00:12:35.200 --> 00:12:37.559
+levels to set thresholds.
+
+00:12:37.559 --> 00:12:40.320
+And we have three of them that we saw, warn, stop,
+
+00:12:40.320 --> 00:12:41.719
+and notify.
+
+00:12:41.719 --> 00:12:45.599
+And what you would do is you would define this function.
+
+00:12:45.599 --> 00:12:48.119
+And I'm just doing it in a way where I set it right there
+
+00:12:48.119 --> 00:12:49.760
+to an object.
+
+00:12:49.760 --> 00:12:53.159
+And then I introduce it to the create agent function
+
+00:12:53.159 --> 00:12:57.039
+under the actions parameter or argument right there.
+
+00:12:57.039 --> 00:12:59.239
+But the cool thing here is that if you set the object
+
+00:12:59.239 --> 00:13:00.840
+and print the object, we can actually
+
+00:13:00.840 --> 00:13:03.239
+sort of see what it prints out.
+
+00:13:03.239 --> 00:13:05.840
+It just sort of echoes back that we set here
+
+00:13:05.840 --> 00:13:09.159
+a warn failure threshold of one.
+
+00:13:09.159 --> 00:13:12.200
+We set here a warn failure threshold
+
+00:13:12.200 --> 00:13:16.039
+of 0.15 of all test units.
+
+00:13:16.039 --> 00:13:20.440
+So basically, if 15% of test units fail within a step,
+
+00:13:20.440 --> 00:13:23.039
+then it will enter the warn state.
+
+00:13:23.039 --> 00:13:25.760
+And we're increasing that for other states.
+
+00:13:25.760 --> 00:13:29.080
+For stop, it's going to be 0.25.
+
+00:13:29.080 --> 00:13:38.400
+For notify, it's 0.35 or 35%.
+
+00:13:38.559 --> 00:13:42.280
+So I'm going to use that object in another agent,
+
+00:13:42.280 --> 00:13:44.719
+calling this agent2.
+
+00:13:44.719 --> 00:13:47.280
+So I'm going to operate over a small table again.
+
+00:13:47.280 --> 00:13:50.400
+And this time, we're going to use some other validation
+
+00:13:50.400 --> 00:13:54.119
+functions, some that we saw before, some not.
+
+00:13:54.119 --> 00:13:55.400
+And we're going to interrogate.
+
+00:13:55.400 --> 00:13:58.960
+So we're just going to see what the effect of the actions
+
+00:13:58.960 --> 00:14:02.440
+and levels function does.
+
+00:14:02.440 --> 00:14:03.520
+So I'm going to run that.
+
+00:14:07.479 --> 00:14:07.960
+Great.
+
+00:14:08.039 --> 00:14:10.320
+So now I'm going to scroll down and see the results.
+
+00:14:10.320 --> 00:14:12.880
+We get another validation report table.
+
+00:14:12.880 --> 00:14:16.239
+And in this case, we see that we have circles here instead
+
+00:14:16.239 --> 00:14:18.960
+of dashes because we set all three levels.
+
+00:14:18.960 --> 00:14:25.080
+We also see that we get this in the top in the title.
+
+00:14:25.080 --> 00:14:28.320
+So these are our global validation thresholds
+
+00:14:28.320 --> 00:14:34.239
+right there, exactly what we put in, 0.15, 0.25, and 0.35.
+
+00:14:34.280 --> 00:14:38.039
+And we also see here that in this step right here,
+
+00:14:38.039 --> 00:14:41.520
+callVal's lt, it must be the case
+
+00:14:41.520 --> 00:14:46.320
+that not all values in column A were less than 7.
+
+00:14:46.320 --> 00:14:48.119
+So we have some failures.
+
+00:14:48.119 --> 00:14:51.960
+And because we have 0.15, that equals this threshold right
+
+00:14:51.960 --> 00:14:55.719
+here, which was set to 0.15.
+
+00:14:55.719 --> 00:14:59.559
+So we have a solid filled yellow circle.
+
+00:14:59.559 --> 00:15:02.159
+And for this regex function, we're
+
+00:15:02.159 --> 00:15:04.960
+expecting that values in B, column B,
+
+00:15:04.960 --> 00:15:06.919
+should match this regex.
+
+00:15:06.919 --> 00:15:09.440
+We have a lot of failures.
+
+00:15:09.440 --> 00:15:13.000
+Over 50% of the test units failed.
+
+00:15:13.000 --> 00:15:18.080
+So we're actually well above the 0.35 or 35% threshold
+
+00:15:18.080 --> 00:15:18.919
+for this.
+
+00:15:18.919 --> 00:15:21.280
+So all of these become filled.
+
+00:15:21.280 --> 00:15:22.760
+So this is like a visual way to see
+
+00:15:22.760 --> 00:15:28.239
+that our testing has failed above acceptable levels.
+
+00:15:29.119 --> 00:15:30.479
+OK.
+
+00:15:30.479 --> 00:15:31.000
+And here.
+
+00:15:31.000 --> 00:15:32.679
+And we also get these visual indicators
+
+00:15:32.679 --> 00:15:34.799
+on the side, which sort of, at a glance,
+
+00:15:34.799 --> 00:15:36.840
+show us how things went.
+
+00:15:36.840 --> 00:15:40.039
+Basically, solid green is like everything passed without fail.
+
+00:15:40.039 --> 00:15:45.679
+Light green is things did fail, but no thresholds were met.
+
+00:15:45.679 --> 00:15:49.400
+And these colors are basically the same as the threshold
+
+00:15:49.400 --> 00:15:50.440
+levels here.
+
+00:15:50.440 --> 00:15:54.400
+So they get the highest one each time.
+
+00:15:54.400 --> 00:15:56.840
+Great.
+
+00:15:56.840 --> 00:15:58.200
+So I'm going to make another one.
+
+00:15:58.960 --> 00:16:01.559
+And I'm going to demonstrate that it's actually
+
+00:16:01.559 --> 00:16:05.599
+pretty versatile what you can do with this action levels
+
+00:16:05.599 --> 00:16:06.919
+function.
+
+00:16:06.919 --> 00:16:09.280
+You can actually set it globally, as we did before.
+
+00:16:09.280 --> 00:16:11.200
+What we did is we take that object, which
+
+00:16:11.200 --> 00:16:14.760
+is made from this function, and pass it into actions.
+
+00:16:14.760 --> 00:16:16.280
+So that sort of set our thresholds
+
+00:16:16.280 --> 00:16:18.640
+for every single step.
+
+00:16:18.640 --> 00:16:22.039
+Or if you wanted to, you can set it for individual steps.
+
+00:16:22.039 --> 00:16:25.000
+So over here, we see that call vows between.
+
+00:16:25.000 --> 00:16:26.640
+We set some parameters.
+
+00:16:26.640 --> 00:16:30.200
+We're seeing here that the values in column D
+
+00:16:30.200 --> 00:16:33.960
+should be between 0 and 4,000.
+
+00:16:33.960 --> 00:16:36.640
+But we also want to set some custom actions.
+
+00:16:36.640 --> 00:16:41.520
+So we're saying that warn if there's one test failure.
+
+00:16:41.520 --> 00:16:42.880
+Stop if there's three.
+
+00:16:42.880 --> 00:16:45.000
+Notify if there's five.
+
+00:16:45.000 --> 00:16:47.159
+So this will just be for that step.
+
+00:16:47.159 --> 00:16:49.919
+Every other step will receive the thresholds
+
+00:16:49.919 --> 00:16:52.280
+that are from this object.
+
+00:16:52.280 --> 00:16:53.359
+So I'm going to run this.
+
+00:16:57.320 --> 00:17:00.200
+Scroll down.
+
+00:17:00.200 --> 00:17:00.799
+Great.
+
+00:17:00.799 --> 00:17:02.559
+And we see that right here.
+
+00:17:02.559 --> 00:17:06.000
+So the one we set here is call vows between.
+
+00:17:06.000 --> 00:17:07.880
+We have one test failure.
+
+00:17:07.880 --> 00:17:13.920
+And one test failure corresponds to this right here, warn at 1.
+
+00:17:13.920 --> 00:17:17.239
+So we can either use absolute numbers
+
+00:17:17.239 --> 00:17:22.479
+when we define values inside of action levels,
+
+00:17:22.479 --> 00:17:23.560
+like we did here.
+
+00:17:23.560 --> 00:17:25.359
+So these are absolute numbers.
+
+00:17:25.359 --> 00:17:27.160
+Or we can use fractions.
+
+00:17:27.160 --> 00:17:29.920
+And those are what you see here right there on the bottom.
+
+00:17:34.319 --> 00:17:37.959
+And speaking of validation functions,
+
+00:17:37.959 --> 00:17:40.160
+there are quite a few.
+
+00:17:40.160 --> 00:17:41.160
+36 at last count.
+
+00:17:41.160 --> 00:17:43.959
+I'm just going to go through them all real quickly
+
+00:17:43.959 --> 00:17:45.520
+because there's so many.
+
+00:17:45.520 --> 00:17:48.040
+But I want to just give you the basic features.
+
+00:17:48.040 --> 00:17:52.640
+So whenever you see call vows like this,
+
+00:17:52.640 --> 00:17:56.640
+it just means that we're checking values within a column.
+
+00:17:56.640 --> 00:17:59.119
+So whether they're less than something, less than or equal,
+
+00:17:59.119 --> 00:18:02.680
+equal, so on and so forth.
+
+00:18:02.680 --> 00:18:05.800
+So that's one distinct group.
+
+00:18:05.800 --> 00:18:08.400
+Another group is starting with rows.
+
+00:18:08.400 --> 00:18:11.560
+So we're checking something about entire rows.
+
+00:18:11.560 --> 00:18:13.719
+In this case, we're checking whether rows are unique
+
+00:18:13.719 --> 00:18:17.199
+or distinct or whether rows are complete,
+
+00:18:17.199 --> 00:18:22.359
+which means that they have no NA values within a row.
+
+00:18:22.359 --> 00:18:24.560
+Another class of these validation functions
+
+00:18:24.560 --> 00:18:27.400
+is call is.
+
+00:18:27.400 --> 00:18:29.319
+These ones right here, just bunch them.
+
+00:18:29.319 --> 00:18:30.400
+We're just type checking.
+
+00:18:30.400 --> 00:18:33.800
+So we're saying this column is a character.
+
+00:18:33.800 --> 00:18:36.160
+You give the columns that should be character.
+
+00:18:36.160 --> 00:18:38.640
+If they're integer, you can use the call
+
+00:18:38.640 --> 00:18:42.359
+as integer validation function.
+
+00:18:42.359 --> 00:18:46.000
+We may check for columns existing.
+
+00:18:46.000 --> 00:18:49.160
+So for that, we use calls exist and provide some column names.
+
+00:18:49.160 --> 00:18:51.640
+What we're saying, these columns should exist in our table
+
+00:18:51.640 --> 00:18:54.000
+that we provided.
+
+00:18:54.000 --> 00:18:56.640
+Call schema match is a pretty comprehensive one,
+
+00:18:56.640 --> 00:18:59.000
+which involves a helper function.
+
+00:18:59.000 --> 00:19:01.839
+What that does is we're basically
+
+00:19:01.839 --> 00:19:06.239
+saying our table has these columns and these types.
+
+00:19:06.239 --> 00:19:08.160
+And we're setting some more parameters
+
+00:19:08.160 --> 00:19:13.839
+for either loosening the checks, basically specifying
+
+00:19:13.839 --> 00:19:15.800
+whether order should be maintained.
+
+00:19:15.800 --> 00:19:19.000
+And really, there's lots of options in there.
+
+00:19:19.000 --> 00:19:22.040
+But it's a way to check the structure of the table.
+
+00:19:22.040 --> 00:19:23.719
+There's a few specialized ones here.
+
+00:19:23.719 --> 00:19:25.680
+I'm going to go through just two more.
+
+00:19:25.680 --> 00:19:27.160
+Basically, row count match, we're
+
+00:19:27.160 --> 00:19:29.719
+just saying that our table should have the exact number
+
+00:19:29.719 --> 00:19:31.520
+of rows that we specified.
+
+00:19:31.520 --> 00:19:33.520
+Or compared to another table, it should have the same number
+
+00:19:33.520 --> 00:19:35.479
+of rows as another table.
+
+00:19:35.479 --> 00:19:37.439
+And call count match is the same sort of thing,
+
+00:19:37.439 --> 00:19:40.319
+except for column counts.
+
+00:19:40.319 --> 00:19:41.880
+So a lot to keep track of.
+
+00:19:41.880 --> 00:19:43.599
+But hopefully, it's a little bit easier,
+
+00:19:43.599 --> 00:19:45.920
+since we have some conventions in naming.
+
+00:19:45.920 --> 00:19:47.359
+OK, great.
+
+00:19:47.359 --> 00:19:51.280
+OK, so I'm going to check for questions real quick.
+
+00:19:51.280 --> 00:19:53.599
+I don't think there are any, but it's always good.
+
+00:19:53.599 --> 00:19:54.800
+OK, there are some questions.
+
+00:19:54.800 --> 00:19:57.119
+Great.
+
+00:19:57.119 --> 00:20:00.199
+Can you create an agent without specifying table
+
+00:20:00.199 --> 00:20:03.040
+so it can be applied to different tables?
+
+00:20:03.040 --> 00:20:05.760
+No.
+
+00:20:05.760 --> 00:20:06.719
+We don't have that yet.
+
+00:20:06.719 --> 00:20:08.239
+But it's been asked a few times.
+
+00:20:08.239 --> 00:20:10.640
+And it's actually a pretty good one for doing that sort of
+
+00:20:10.640 --> 00:20:11.359
+thing.
+
+00:20:11.359 --> 00:20:13.760
+But what you could do for using something like this
+
+00:20:13.959 --> 00:20:16.719
+But what you could do for using something a few times
+
+00:20:16.719 --> 00:20:18.760
+is create some YAML.
+
+00:20:18.760 --> 00:20:21.400
+It's not really covered in this workshop.
+
+00:20:21.400 --> 00:20:23.280
+But you can actually create a YAML definition
+
+00:20:23.280 --> 00:20:26.439
+of an interrogation.
+
+00:20:26.439 --> 00:20:29.400
+And then just use set table to set the table
+
+00:20:29.400 --> 00:20:31.839
+and then interrogate, basically, on that.
+
+00:20:31.839 --> 00:20:33.680
+So there's ways to sort of swap in a table
+
+00:20:33.680 --> 00:20:35.920
+and output the set table function.
+
+00:20:35.920 --> 00:20:37.359
+But unfortunately, with the agent,
+
+00:20:37.359 --> 00:20:39.119
+it does require, I think initially,
+
+00:20:39.119 --> 00:20:40.439
+some sort of table to be set.
+
+00:20:40.439 --> 00:20:42.560
+And we do want to loosen that.
+
+00:20:42.560 --> 00:20:45.839
+And make it, actually, this whole thing a bit more lazy.
+
+00:20:45.839 --> 00:20:47.599
+But until we get that laziness condition,
+
+00:20:47.599 --> 00:20:49.760
+we can't really do that with the agent object.
+
+00:20:52.520 --> 00:20:53.839
+OK, another question right here.
+
+00:20:53.839 --> 00:20:57.119
+Can you stack agents to create one report on different tables?
+
+00:20:57.119 --> 00:20:58.439
+You actually can.
+
+00:20:58.439 --> 00:21:01.439
+So what you can do is you can create multiple agents.
+
+00:21:01.439 --> 00:21:03.000
+And then once you have those objects,
+
+00:21:03.000 --> 00:21:05.160
+you can create something called a multi-agent.
+
+00:21:05.160 --> 00:21:07.040
+And then that gives you two reporting options,
+
+00:21:07.040 --> 00:21:09.880
+either a wide report, where you're actually
+
+00:21:09.920 --> 00:21:13.640
+checking the same agent over time.
+
+00:21:13.640 --> 00:21:15.119
+But more or less, what you're asking
+
+00:21:15.119 --> 00:21:16.880
+is to have basically multiple validation
+
+00:21:16.880 --> 00:21:20.439
+reports on one printout, which is what's offered there
+
+00:21:20.439 --> 00:21:23.520
+in that function.
+
+00:21:23.520 --> 00:21:26.079
+OK, and call is integer if the type is character,
+
+00:21:26.079 --> 00:21:27.800
+but the values are castable.
+
+00:21:27.800 --> 00:21:29.520
+Does that pass or fail?
+
+00:21:29.520 --> 00:21:30.119
+Currently, no.
+
+00:21:30.119 --> 00:21:33.239
+It's actually just checking the column class.
+
+00:21:35.920 --> 00:21:37.599
+But that's actually a really good idea
+
+00:21:37.599 --> 00:21:40.680
+for a feature, integer-like, whether it
+
+00:21:40.680 --> 00:21:46.520
+could be cursable to an integer and succeed.
+
+00:21:46.520 --> 00:21:49.359
+So I definitely encourage, and I may think of this for myself
+
+00:21:49.359 --> 00:21:51.479
+as well, issues for this, because this
+
+00:21:51.479 --> 00:21:53.119
+is an evolving package.
+
+00:21:53.119 --> 00:21:55.520
+And it's always good to have new things like that,
+
+00:21:55.520 --> 00:21:59.239
+that I haven't really even thought of.
+
+00:21:59.239 --> 00:22:01.160
+OK, great.
+
+00:22:01.160 --> 00:22:04.719
+OK, I'm going to keep going on this one file.
+
+00:22:04.760 --> 00:22:06.479
+I'm going to show you a different way
+
+00:22:06.479 --> 00:22:10.760
+to do validations using the same functions.
+
+00:22:10.760 --> 00:22:12.719
+OK, so this is a little bit strange,
+
+00:22:12.719 --> 00:22:15.239
+but we can actually use validation functions directly
+
+00:22:15.239 --> 00:22:15.800
+on the data.
+
+00:22:15.800 --> 00:22:19.199
+We don't have to specify an agent.
+
+00:22:19.199 --> 00:22:22.079
+So what you do is you just take your object,
+
+00:22:22.079 --> 00:22:26.000
+and you just pipe it towards a function
+
+00:22:26.000 --> 00:22:29.959
+that we saw here, one of these from a list.
+
+00:22:29.959 --> 00:22:33.079
+And then specify the arguments as before.
+
+00:22:33.079 --> 00:22:34.280
+So what does it even do?
+
+00:22:34.359 --> 00:22:38.719
+What it does is, if there's a problem, it will stop.
+
+00:22:38.719 --> 00:22:40.800
+If there's no problem, it'll just sail through.
+
+00:22:40.800 --> 00:22:43.560
+The small data object will just continue.
+
+00:22:43.560 --> 00:22:46.719
+So it acts as a bit of a filter, a filter for failure,
+
+00:22:46.719 --> 00:22:47.800
+as it were.
+
+00:22:47.800 --> 00:22:50.239
+I'm going to run this to show you that, in the end,
+
+00:22:50.239 --> 00:22:53.359
+because this passes, we just get small table.
+
+00:22:53.359 --> 00:22:55.000
+OK, run.
+
+00:22:55.000 --> 00:22:56.160
+Great, no problems.
+
+00:22:56.160 --> 00:22:57.560
+We have a small table.
+
+00:22:57.560 --> 00:22:58.800
+No errors appeared.
+
+00:22:58.800 --> 00:23:00.199
+So we're good.
+
+00:23:00.199 --> 00:23:01.239
+This validation passed.
+
+00:23:01.800 --> 00:23:03.839
+Spoiler alert, like this says, error equals true.
+
+00:23:03.839 --> 00:23:06.400
+If you want to render this, that means that this would render.
+
+00:23:06.400 --> 00:23:08.359
+But obviously, we have some sort of problem now.
+
+00:23:08.359 --> 00:23:12.640
+When we narrow this range to 5 and 10 instead of 0 and 10,
+
+00:23:12.640 --> 00:23:14.640
+we have some values which are outside this range.
+
+00:23:14.640 --> 00:23:16.239
+So there's going to be a problem here.
+
+00:23:16.239 --> 00:23:18.920
+So let's run this.
+
+00:23:18.920 --> 00:23:20.000
+OK, this is kind of cool.
+
+00:23:20.000 --> 00:23:21.800
+So we don't get the table.
+
+00:23:21.800 --> 00:23:23.319
+We actually get this error message.
+
+00:23:23.319 --> 00:23:26.160
+And the error message is not bad in terms
+
+00:23:26.160 --> 00:23:28.359
+of description quality.
+
+00:23:28.359 --> 00:23:30.239
+It says, exceedance of, oh, it's not
+
+00:23:30.239 --> 00:23:32.599
+exceedance of, OK, maybe it's a little bit confusing
+
+00:23:32.599 --> 00:23:33.400
+at the beginning.
+
+00:23:33.400 --> 00:23:36.439
+Because it says, exceedance of failed test units
+
+00:23:36.439 --> 00:23:39.079
+where values in A, that's where we're testing,
+
+00:23:39.079 --> 00:23:41.439
+should have been between 5 and 10.
+
+00:23:41.439 --> 00:23:46.239
+OK, so I'm going to tell you what this exceedance is,
+
+00:23:46.239 --> 00:23:47.439
+failed test units.
+
+00:23:47.439 --> 00:23:48.800
+By default, it's 1.
+
+00:23:48.800 --> 00:23:52.000
+And you can change it with a threshold argument.
+
+00:23:52.000 --> 00:23:56.479
+You can set thresholds just within this function here.
+
+00:23:56.479 --> 00:23:59.359
+There's an argument for that.
+
+00:24:00.199 --> 00:24:01.560
+But by default, it is 1.
+
+00:24:01.560 --> 00:24:06.280
+If you get one failure, then any more failures or any failure
+
+00:24:06.280 --> 00:24:09.400
+or more than that will trigger this error.
+
+00:24:09.400 --> 00:24:11.280
+So that's what we see here.
+
+00:24:11.280 --> 00:24:13.520
+Threshold's 1, failures are 10.
+
+00:24:17.400 --> 00:24:21.439
+Call is, it'll check whether a column is of a certain type.
+
+00:24:21.439 --> 00:24:24.359
+So let's look at a few cases of, here's one that's passing.
+
+00:24:24.359 --> 00:24:28.599
+So we're thinking that column B is a character column.
+
+00:24:28.599 --> 00:24:31.599
+I think it is, because we see the table in the end
+
+00:24:31.599 --> 00:24:34.839
+when we pass the table through this function.
+
+00:24:34.839 --> 00:24:35.880
+Great.
+
+00:24:35.880 --> 00:24:38.680
+And in this case, date is not numeric.
+
+00:24:38.680 --> 00:24:40.280
+It's probably a date column.
+
+00:24:40.280 --> 00:24:41.839
+So I'm going to run this.
+
+00:24:41.839 --> 00:24:43.560
+OK, see, they're the same sort of thing.
+
+00:24:43.560 --> 00:24:45.520
+It actually tells you what type of column it is,
+
+00:24:45.520 --> 00:24:48.199
+numeric, which is nice.
+
+00:24:48.199 --> 00:24:51.439
+And of course, it's one error.
+
+00:24:51.439 --> 00:24:53.560
+There's only one error possible, because we're just
+
+00:24:53.560 --> 00:24:55.719
+checking one thing, which is the type.
+
+00:24:55.719 --> 00:24:56.959
+OK, so this is kind of cool.
+
+00:24:57.000 --> 00:25:01.000
+So what you can do with these is you can insert these checks
+
+00:25:01.000 --> 00:25:03.800
+inside pipelines, if you want to.
+
+00:25:03.800 --> 00:25:06.079
+You can have another function or another,
+
+00:25:06.079 --> 00:25:08.319
+you can pipe to another function that does something,
+
+00:25:08.319 --> 00:25:10.079
+or just have it run by itself like this
+
+00:25:10.079 --> 00:25:12.479
+and just stop a notebook, if you're rendering a notebook,
+
+00:25:12.479 --> 00:25:13.239
+and have error.
+
+00:25:13.239 --> 00:25:15.079
+Don't have this error equals true.
+
+00:25:15.079 --> 00:25:16.800
+It'll just essentially stop the notebook
+
+00:25:16.800 --> 00:25:19.000
+if there are problems that you don't really
+
+00:25:19.000 --> 00:25:21.760
+want to have these problems.
+
+00:25:21.760 --> 00:25:25.079
+OK, let's check out these rows functions.
+
+00:25:25.079 --> 00:25:25.920
+We have two of them.
+
+00:25:25.920 --> 00:25:29.760
+RowsDistinct and RowsComplete.
+
+00:25:29.760 --> 00:25:32.359
+So again, it'll check entire rows.
+
+00:25:32.359 --> 00:25:36.479
+And a cool thing is that there's actually a columns argument.
+
+00:25:36.479 --> 00:25:38.280
+And what it does is it sort of narrows down.
+
+00:25:38.280 --> 00:25:40.439
+It's almost like selecting the table beforehand,
+
+00:25:40.439 --> 00:25:41.760
+before doing the check.
+
+00:25:41.760 --> 00:25:43.000
+So you can check a subset.
+
+00:25:43.000 --> 00:25:45.520
+So if you wanted to have, say, for instance,
+
+00:25:45.520 --> 00:25:48.400
+a distinctness check excluding some columns,
+
+00:25:48.400 --> 00:25:52.239
+we can do that by providing what is here a,
+
+00:25:52.280 --> 00:25:54.319
+I think it's column subs, or just columns.
+
+00:25:54.319 --> 00:25:56.520
+Yeah, right there.
+
+00:25:56.520 --> 00:25:58.239
+OK, but we're not doing that here.
+
+00:25:58.239 --> 00:26:00.000
+And we already kind of know from before,
+
+00:26:00.000 --> 00:26:01.959
+if you're paying attention, that we
+
+00:26:01.959 --> 00:26:03.599
+don't have entirely distinct rows.
+
+00:26:03.599 --> 00:26:06.599
+So we actually get this error right here.
+
+00:26:06.599 --> 00:26:07.319
+Great.
+
+00:26:07.319 --> 00:26:10.000
+And distinct rows, well, in this case,
+
+00:26:10.000 --> 00:26:11.199
+we're filtering a little bit.
+
+00:26:11.199 --> 00:26:12.920
+We're just taking a few of the top rows.
+
+00:26:12.920 --> 00:26:15.199
+And I think within that region of the table,
+
+00:26:15.199 --> 00:26:18.160
+we do have distinct rows, entirely distinct.
+
+00:26:18.160 --> 00:26:20.839
+So we get the table there.
+
+00:26:20.839 --> 00:26:23.199
+OK, I'm just going to close this up.
+
+00:26:23.199 --> 00:26:24.319
+OK, rows complete.
+
+00:26:24.319 --> 00:26:26.000
+I think it's the same sort of situation.
+
+00:26:26.000 --> 00:26:29.239
+We do have nulls, NA values within our table.
+
+00:26:29.239 --> 00:26:33.079
+So the entire table will not have complete rows,
+
+00:26:33.079 --> 00:26:34.640
+because we do have presence of NAs.
+
+00:26:37.160 --> 00:26:39.640
+But here's a case where we're just checking a few columns,
+
+00:26:39.640 --> 00:26:42.439
+date time, date, A and B, so four columns.
+
+00:26:42.439 --> 00:26:45.880
+Within those columns, or within the cells of those columns,
+
+00:26:45.880 --> 00:26:49.079
+there's no NAs down the entire table.
+
+00:26:49.079 --> 00:26:51.359
+So this will pass just fine.
+
+00:26:51.359 --> 00:26:52.199
+So we see the table.
+
+00:26:54.920 --> 00:26:56.599
+Great.
+
+00:26:56.599 --> 00:26:59.119
+And OK, we've got a few functions here,
+
+00:26:59.119 --> 00:27:01.959
+which are end with underscore match.
+
+00:27:01.959 --> 00:27:04.920
+So it validates whether some aspects of the table,
+
+00:27:04.920 --> 00:27:07.199
+as a whole, matches some sort of expectation.
+
+00:27:07.199 --> 00:27:08.599
+OK, so let's go through these again.
+
+00:27:08.599 --> 00:27:09.479
+Call schema match.
+
+00:27:09.479 --> 00:27:12.359
+That's column schema matching.
+
+00:27:12.359 --> 00:27:14.959
+Row count match, where we're expecting
+
+00:27:14.959 --> 00:27:16.560
+a certain number of rows.
+
+00:27:16.560 --> 00:27:18.400
+Either you give a literal sort of value,
+
+00:27:18.400 --> 00:27:21.199
+or you compare it against another table.
+
+00:27:21.199 --> 00:27:23.959
+This is great for things like joins.
+
+00:27:23.959 --> 00:27:26.040
+You have the original table, and you're
+
+00:27:26.040 --> 00:27:27.920
+doing a join on that table.
+
+00:27:27.920 --> 00:27:30.599
+And you want to make sure that you have the same number of rows
+
+00:27:30.599 --> 00:27:33.920
+in the end, because some joins will have rows or whatever.
+
+00:27:33.920 --> 00:27:36.760
+So this could be good for that sort of thing.
+
+00:27:36.760 --> 00:27:37.800
+Save the call count match.
+
+00:27:37.800 --> 00:27:40.000
+Maybe you have an expectation of how many columns
+
+00:27:40.000 --> 00:27:42.400
+are after an operation, or just how many columns
+
+00:27:42.400 --> 00:27:43.800
+you expect in the initial data.
+
+00:27:43.800 --> 00:27:47.079
+You haven't seen it in a while, and it changes regularly.
+
+00:27:47.079 --> 00:27:49.880
+You want to say, it has this many tables.
+
+00:27:49.880 --> 00:27:52.680
+I mean, this many columns.
+
+00:27:52.680 --> 00:27:53.239
+Table match.
+
+00:27:53.239 --> 00:27:54.880
+This is a bit of a strange one.
+
+00:27:54.880 --> 00:27:56.680
+Maybe you won't reach for this very often.
+
+00:27:56.680 --> 00:27:59.560
+It's basically, does the table match some other table?
+
+00:27:59.560 --> 00:28:01.439
+Like, exactly.
+
+00:28:01.439 --> 00:28:03.040
+Maybe you want that, maybe you don't.
+
+00:28:03.040 --> 00:28:04.839
+There's probably good reasons to use that,
+
+00:28:04.839 --> 00:28:06.839
+but it's a good one to have.
+
+00:28:06.839 --> 00:28:08.760
+OK, let's look at row count match.
+
+00:28:08.760 --> 00:28:11.040
+So in this case, small table.
+
+00:28:11.040 --> 00:28:15.199
+We're expecting 13 rows in that table.
+
+00:28:15.199 --> 00:28:18.560
+And it's true, because it did an error here.
+
+00:28:18.560 --> 00:28:19.800
+So it must be true.
+
+00:28:19.800 --> 00:28:22.400
+We took the data, passed it to this.
+
+00:28:22.400 --> 00:28:28.560
+If it didn't have 13 rows, you'd get an error.
+
+00:28:28.560 --> 00:28:30.880
+For columns, I said before we can
+
+00:28:30.880 --> 00:28:32.839
+compare it against another table.
+
+00:28:32.839 --> 00:28:35.119
+It just so happens that small table has the same number
+
+00:28:35.119 --> 00:28:39.199
+of columns as the penguins data set in Polymer Penguins.
+
+00:28:39.199 --> 00:28:41.640
+So I'm just showing this as a weird example,
+
+00:28:41.640 --> 00:28:44.000
+but I'm showing that you can use another table.
+
+00:28:44.040 --> 00:28:47.280
+It'll just fetch the count from that and use it here.
+
+00:28:47.280 --> 00:28:48.640
+So I'm running that.
+
+00:28:48.640 --> 00:28:50.400
+And it gives us small table again,
+
+00:28:50.400 --> 00:28:54.479
+because the column count is matched.
+
+00:28:54.479 --> 00:28:56.359
+Great.
+
+00:28:56.359 --> 00:28:57.880
+I'm going to check again for questions,
+
+00:28:57.880 --> 00:29:00.239
+because I like to do that.
+
+00:29:00.239 --> 00:29:03.880
+Table match versus diffdf package.
+
+00:29:03.880 --> 00:29:07.880
+Not quite as powerful, but it will tell you.
+
+00:29:07.880 --> 00:29:11.359
+Basically, what happens is we count the rows.
+
+00:29:11.359 --> 00:29:13.680
+We count the columns, we count the rows.
+
+00:29:13.680 --> 00:29:15.520
+Check all the schema.
+
+00:29:15.520 --> 00:29:18.439
+And basically, then check the values one by one.
+
+00:29:18.439 --> 00:29:19.680
+And that's the order we do it.
+
+00:29:19.680 --> 00:29:24.479
+If it does error at any point, we tell you what occurred.
+
+00:29:24.479 --> 00:29:26.239
+But we don't get deep into it.
+
+00:29:26.239 --> 00:29:29.400
+We don't compare individual values.
+
+00:29:29.400 --> 00:29:32.719
+So not as detailed as the other package.
+
+00:29:32.719 --> 00:29:37.959
+It's like diffdf lite, I guess you could say.
+
+00:29:37.959 --> 00:29:40.160
+Oh, and there's a nice suggestion
+
+00:29:40.160 --> 00:29:41.959
+from making a more obscure suggestion
+
+00:29:41.959 --> 00:29:46.479
+from call has tagged na from Haven.
+
+00:29:46.479 --> 00:29:49.680
+That looks fantastic.
+
+00:29:49.680 --> 00:29:52.160
+And what I'll do is I'll make a note of all this
+
+00:29:52.160 --> 00:29:54.880
+for future requests.
+
+00:29:54.880 --> 00:29:56.520
+And there's also, OK, here we go.
+
+00:29:56.520 --> 00:29:59.160
+Or maybe you have to explain how to write
+
+00:29:59.160 --> 00:30:01.160
+my own LLJ functions.
+
+00:30:01.160 --> 00:30:02.160
+We can do that.
+
+00:30:02.160 --> 00:30:04.319
+We can do that.
+
+00:30:04.319 --> 00:30:07.520
+Let's scroll back up here.
+
+00:30:07.520 --> 00:30:11.160
+With specially, you provide your own function.
+
+00:30:11.160 --> 00:30:13.760
+And I think what it expects is either
+
+00:30:13.760 --> 00:30:17.520
+a vector of logical values.
+
+00:30:17.520 --> 00:30:20.079
+And that is used for reporting.
+
+00:30:20.079 --> 00:30:22.400
+Or you can have a table where the final column
+
+00:30:22.400 --> 00:30:24.640
+will be logical.
+
+00:30:24.640 --> 00:30:27.119
+So as long as your function that you provide to specially
+
+00:30:27.119 --> 00:30:29.920
+produces that, it'll work within the framework, especially
+
+00:30:29.920 --> 00:30:30.880
+the reporting framework.
+
+00:30:30.880 --> 00:30:32.280
+It needs to have some sort of way
+
+00:30:32.280 --> 00:30:34.400
+to say how many test units you have
+
+00:30:34.400 --> 00:30:36.000
+and how many paths are failed.
+
+00:30:36.000 --> 00:30:39.160
+So you can definitely use this and supply any function.
+
+00:30:42.040 --> 00:30:43.760
+OK, great.
+
+00:30:43.760 --> 00:30:44.680
+Great, great, great.
+
+00:30:44.680 --> 00:30:49.439
+OK, so now I'm going to show you what to do when things fail
+
+00:30:49.439 --> 00:30:51.439
+and you want to know more.
+
+00:30:51.439 --> 00:30:54.839
+So you can use those CSV buttons in the validation report.
+
+00:30:54.839 --> 00:30:55.479
+That's great.
+
+00:30:55.479 --> 00:30:57.160
+That's more for other people.
+
+00:30:57.160 --> 00:31:01.199
+Like if you're sharing this HTML file, which has a report,
+
+00:31:01.199 --> 00:31:02.640
+they can just click on the CSV button
+
+00:31:02.640 --> 00:31:07.400
+and get the right extracts of things that failed.
+
+00:31:07.400 --> 00:31:09.319
+But you have the program right in front of you.
+
+00:31:09.319 --> 00:31:11.599
+You have point blank, and we can do more.
+
+00:31:11.599 --> 00:31:14.959
+So we can actually use the getDataExtracts function
+
+00:31:14.959 --> 00:31:15.839
+and does a lot more.
+
+00:31:15.839 --> 00:31:19.239
+Basically, it gives you that in table form.
+
+00:31:19.239 --> 00:31:23.920
+So agent 3, which is up here, the very last one,
+
+00:31:23.920 --> 00:31:25.920
+it has some failures.
+
+00:31:25.920 --> 00:31:27.680
+So we have some CSV buttons.
+
+00:31:27.680 --> 00:31:30.040
+And every time you see a CSV button,
+
+00:31:30.040 --> 00:31:32.040
+that means there are, of course, rows that failed.
+
+00:31:32.040 --> 00:31:36.439
+And you can use get, this function right here
+
+00:31:36.439 --> 00:31:40.800
+called getDataExtracts to get specific values.
+
+00:31:40.800 --> 00:31:45.319
+If you just use it on the agent itself, like this,
+
+00:31:45.319 --> 00:31:47.319
+what we get is a list.
+
+00:31:47.319 --> 00:31:51.160
+It's presented a little bit in this way inside of a notebook
+
+00:31:51.160 --> 00:31:52.119
+right here.
+
+00:31:52.119 --> 00:31:54.199
+But this is essentially a list of tables
+
+00:31:54.199 --> 00:31:56.160
+or whatever the data frame that you passed in,
+
+00:31:56.160 --> 00:31:58.520
+whatever type it is.
+
+00:31:58.520 --> 00:32:00.199
+So this is good.
+
+00:32:00.199 --> 00:32:03.040
+And you can probably peel off a table you want from the list.
+
+00:32:03.040 --> 00:32:05.800
+Or we present this argument i.
+
+00:32:05.800 --> 00:32:07.040
+And you provide a step number.
+
+00:32:07.040 --> 00:32:09.479
+And that step corresponds to the step in the table.
+
+00:32:09.479 --> 00:32:11.239
+So in this case, we're not getting a list.
+
+00:32:11.239 --> 00:32:14.599
+We're getting the actual table or the extract of the table
+
+00:32:14.599 --> 00:32:16.839
+where there's row failures.
+
+00:32:16.839 --> 00:32:17.880
+So I'm going to link this back.
+
+00:32:17.880 --> 00:32:18.920
+I'm going to scroll back a little bit.
+
+00:32:18.920 --> 00:32:20.000
+So this is step 9.
+
+00:32:20.000 --> 00:32:23.760
+I'm going to take a look and see what this was.
+
+00:32:23.760 --> 00:32:24.599
+Scrolling back.
+
+00:32:24.599 --> 00:32:26.160
+This is called values in set.
+
+00:32:26.160 --> 00:32:28.280
+So we expected that values in f should
+
+00:32:28.280 --> 00:32:31.760
+be in the set of low and mid.
+
+00:32:31.760 --> 00:32:34.719
+So if you look at column f in this extract table,
+
+00:32:34.719 --> 00:32:36.160
+we said we get nothing but high.
+
+00:32:36.160 --> 00:32:39.719
+So these are the ones that are the failing rows.
+
+00:32:39.719 --> 00:32:42.439
+None of them are low and mid.
+
+00:32:42.439 --> 00:32:43.520
+So that's how we get this.
+
+00:32:43.520 --> 00:32:48.040
+So again, for small tables, you can easily inspect this.
+
+00:32:48.040 --> 00:32:51.239
+But as tables become huge, obviously,
+
+00:32:51.239 --> 00:32:55.599
+you're going to want this to see what the problems are.
+
+00:32:55.599 --> 00:32:56.119
+OK.
+
+00:32:56.119 --> 00:32:58.880
+So basically, you can use, just to wrap up this part,
+
+00:32:58.880 --> 00:33:03.479
+you can use the entire agent object to get a list of tables.
+
+00:33:03.479 --> 00:33:05.959
+Or you can use specific values of i,
+
+00:33:05.959 --> 00:33:10.880
+which correspond to steps from the validation report table.
+
+00:33:10.880 --> 00:33:12.839
+OK.
+
+00:33:12.839 --> 00:33:15.000
+So we have failing data.
+
+00:33:15.000 --> 00:33:18.280
+Another way to sort of get it is something
+
+00:33:18.280 --> 00:33:21.239
+called sundered data.
+
+00:33:21.239 --> 00:33:21.719
+OK.
+
+00:33:21.719 --> 00:33:25.719
+So basically, it's just a split of the original table
+
+00:33:25.719 --> 00:33:27.479
+to good rows and bad rows.
+
+00:33:27.479 --> 00:33:31.599
+And bad rows are ones that have some failure within a row
+
+00:33:31.599 --> 00:33:33.479
+from any validation step.
+
+00:33:33.479 --> 00:33:35.680
+And good rows are just like those
+
+00:33:35.680 --> 00:33:37.680
+rows that have no failures at all
+
+00:33:37.680 --> 00:33:42.160
+within the cells of those rows from any validation step.
+
+00:33:42.160 --> 00:33:44.439
+So it's kind of like the more validation steps you have,
+
+00:33:44.439 --> 00:33:46.800
+the more potential there is for failures
+
+00:33:46.800 --> 00:33:49.880
+and more potential for bad rows.
+
+00:33:49.980 --> 00:33:59.980
+to understand, validate, and document your data, pointblank, rstudio
+
+00:33:56.014 --> 00:34:00.094
+So getSenderData is the function where you can get these pieces of the table.
+
+00:34:00.814 --> 00:34:02.414
+Um, so let's actually use that.
+
+00:34:02.534 --> 00:34:04.414
+Let's make a new agent right here.
+
+00:34:05.294 --> 00:34:06.814
+Uh, we're getting a small table again.
+
+00:34:07.294 --> 00:34:11.254
+It's giving me a table name, small table again, a little description.
+
+00:34:12.134 --> 00:34:13.894
+Uh, just two validation functions here.
+
+00:34:13.974 --> 00:34:19.414
+Uh, values are greater than some value and values are between two values.
+
+00:34:20.134 --> 00:34:21.093
+But here's something kind of cool.
+
+00:34:21.134 --> 00:34:27.774
+Uh, in this case, I'm using vars and I'm saying that values in column C should be
+
+00:34:27.774 --> 00:34:34.333
+between neighboring values, um, of column A and column D. Okay.
+
+00:34:35.173 --> 00:34:37.414
+So it can use values in columns, like they're beside each other.
+
+00:34:37.813 --> 00:34:39.454
+And in this case, we're not using literal values.
+
+00:34:39.534 --> 00:34:43.493
+And of course you can put a literal value here and a, you know, a column value here.
+
+00:34:43.534 --> 00:34:45.574
+So you can mix and match whichever way you want.
+
+00:34:46.493 --> 00:34:50.374
+Uh, another cool argument, since I'm bringing this up is naPass.
+
+00:34:50.493 --> 00:34:54.934
+So what I'm saying here is that if any of these columns have nAs, we're just
+
+00:34:54.934 --> 00:34:56.774
+going to say that this row is passed.
+
+00:34:56.853 --> 00:34:58.734
+We're going to excuse this, this row.
+
+00:34:59.294 --> 00:34:59.534
+Okay.
+
+00:34:59.574 --> 00:35:04.374
+By default, this is false, but we can just say nAs, it's a pass.
+
+00:35:05.853 --> 00:35:06.173
+Okay.
+
+00:35:06.214 --> 00:35:07.254
+So I will run this.
+
+00:35:11.694 --> 00:35:12.133
+Great.
+
+00:35:12.733 --> 00:35:13.694
+And now we see the report.
+
+00:35:15.173 --> 00:35:17.334
+Two, uh, validation functions reuse.
+
+00:35:17.413 --> 00:35:18.413
+So there's two steps.
+
+00:35:19.014 --> 00:35:19.974
+Uh, we have some failures.
+
+00:35:20.093 --> 00:35:22.334
+We didn't set any action levels right here.
+
+00:35:22.374 --> 00:35:23.773
+So we have nothing here, but dashes.
+
+00:35:24.453 --> 00:35:28.014
+Uh, and this is like a light green, which means that there were some failures, but
+
+00:35:28.053 --> 00:35:32.453
+there's no thresholds, uh, exceeded because there's nothing here, but we have
+
+00:35:32.453 --> 00:35:38.694
+some failures, okay, but we don't know where those failures are, uh, and say,
+
+00:35:38.694 --> 00:35:43.534
+for instance, we want to use that data and just filter out like the, the stuff
+
+00:35:43.534 --> 00:35:47.574
+that failed and no matter which step it was, uh, we could do that with guess under
+
+00:35:47.574 --> 00:35:47.894
+data.
+
+00:35:48.654 --> 00:35:48.974
+Okay.
+
+00:35:49.254 --> 00:35:50.214
+So I'm going to run this.
+
+00:35:52.413 --> 00:35:52.654
+Okay.
+
+00:35:52.694 --> 00:35:53.574
+So we're taking the agent.
+
+00:35:53.614 --> 00:35:56.733
+We're passing it right to get center data with no arguments just by itself.
+
+00:35:57.574 --> 00:36:00.853
+And we get here is like a past piece right here by default.
+
+00:36:02.214 --> 00:36:05.973
+So it must've been that, uh, for these two validations, everything
+
+00:36:05.973 --> 00:36:07.333
+went fine for those rows.
+
+00:36:08.214 --> 00:36:08.534
+Okay.
+
+00:36:08.574 --> 00:36:10.693
+So we could maybe just prove it a little bit.
+
+00:36:11.253 --> 00:36:14.014
+Column D is always greater than a thousand.
+
+00:36:15.174 --> 00:36:15.893
+We sort of see that.
+
+00:36:15.893 --> 00:36:16.973
+Yeah, that checks out.
+
+00:36:17.094 --> 00:36:17.454
+Okay.
+
+00:36:17.534 --> 00:36:18.094
+What's the other one?
+
+00:36:18.534 --> 00:36:20.294
+Uh, C is between a and D.
+
+00:36:20.574 --> 00:36:20.893
+Okay.
+
+00:36:21.654 --> 00:36:24.973
+So C in this case, yeah, a is smaller.
+
+00:36:25.053 --> 00:36:26.294
+D is much larger.
+
+00:36:26.534 --> 00:36:28.654
+We can just say if these are smaller, we're fine.
+
+00:36:29.053 --> 00:36:30.014
+And he's pass.
+
+00:36:30.374 --> 00:36:35.693
+This is the good, the good set of data, but we can also get the complimentary
+
+00:36:35.693 --> 00:36:37.773
+data piece, so all the rows that failed.
+
+00:36:38.014 --> 00:36:40.574
+So basically it will be, uh, the other rows.
+
+00:36:41.094 --> 00:36:43.934
+So I'm going to use get center data type fail.
+
+00:36:44.814 --> 00:36:45.493
+We'll run that right now.
+
+00:36:45.853 --> 00:36:46.214
+Okay.
+
+00:36:46.454 --> 00:36:51.174
+So this is eight rows, uh, and this is five rows and in total we have 13 rows.
+
+00:36:51.294 --> 00:36:53.174
+So it's always a split of the data in some way.
+
+00:36:54.253 --> 00:36:58.133
+Uh, so if you add these rows up together, they should of course add up to the, to
+
+00:36:58.133 --> 00:36:59.893
+the count of the original number of rows.
+
+00:37:01.534 --> 00:37:03.294
+So you can do that if you want the field piece.
+
+00:37:04.693 --> 00:37:08.333
+Uh, another thing you do is you can have a combined data set.
+
+00:37:09.413 --> 00:37:11.413
+What that does is it adds a flag call.
+
+00:37:11.413 --> 00:37:14.773
+And then you get, uh, well, better just to show you, I'm going to run that right now.
+
+00:37:15.413 --> 00:37:19.693
+So we get this new column right here called PB combined and has either pass or
+
+00:37:19.693 --> 00:37:25.413
+fail for, you know, whether all, all the values in these rows passed or whether
+
+00:37:25.413 --> 00:37:31.454
+there were some failures somewhere within this row and the labels within PB combined.
+
+00:37:31.493 --> 00:37:32.094
+They're, they're flexible.
+
+00:37:32.094 --> 00:37:32.893
+You can set up what they are.
+
+00:37:33.094 --> 00:37:37.413
+So pass, fail, that argument, you can provide a vector true or false, and
+
+00:37:37.413 --> 00:37:41.534
+then if you run that, we see, we get true or false instead of, uh, the text,
+
+00:37:41.534 --> 00:37:48.014
+which is pass or fail, tells you the numbers, in this case, zero or one for
+
+00:37:48.014 --> 00:37:52.973
+pass or fail, uh, which just saves you a bit of, uh, uh, an additional sort of
+
+00:37:52.973 --> 00:37:54.613
+transformation because it does it here for you.
+
+00:37:56.613 --> 00:37:57.133
+Okay.
+
+00:37:58.014 --> 00:38:01.294
+Again, I will check for questions now just to make sure.
+
+00:38:01.534 --> 00:38:02.214
+Uh, okay.
+
+00:38:02.214 --> 00:38:03.493
+So I'm going to run that again.
+
+00:38:03.534 --> 00:38:06.493
+I will check for questions now just to make sure.
+
+00:38:06.734 --> 00:38:07.574
+Uh, okay.
+
+00:38:08.053 --> 00:38:11.773
+Can sender data that failed also have a list of failures?
+
+00:38:12.814 --> 00:38:16.254
+Um, no, I don't think it has that.
+
+00:38:16.814 --> 00:38:17.134
+Yeah.
+
+00:38:17.173 --> 00:38:21.694
+Basically it's, um, it's kind of take it or leave it at this point.
+
+00:38:21.773 --> 00:38:22.854
+It, there's, there's some error.
+
+00:38:22.893 --> 00:38:25.414
+It doesn't actually tell you which errors occurred, where there could
+
+00:38:25.414 --> 00:38:27.214
+be multiple on different cells.
+
+00:38:27.893 --> 00:38:30.453
+Um, but there's no way to visualize or even find out right now.
+
+00:38:30.893 --> 00:38:31.694
+I think that's it.
+
+00:38:32.013 --> 00:38:33.573
+And the last one was from Phil.
+
+00:38:33.613 --> 00:38:34.414
+Okay, great.
+
+00:38:38.094 --> 00:38:38.613
+Okay.
+
+00:38:39.534 --> 00:38:45.053
+Um, now before we end off this, this part of it, I want to show you another thing
+
+00:38:45.053 --> 00:38:48.893
+you can do because there's lots of information and you can get something
+
+00:38:48.893 --> 00:38:50.974
+called an X list from an agent.
+
+00:38:51.893 --> 00:38:53.534
+And really it's just a giant list.
+
+00:38:54.134 --> 00:38:59.053
+Um, and better to show you than to just talk about it because it's
+
+00:38:59.094 --> 00:38:59.654
+just right here.
+
+00:39:01.654 --> 00:39:01.934
+Okay.
+
+00:39:01.934 --> 00:39:05.414
+So use that function on the agent and printing it gives you this display
+
+00:39:06.094 --> 00:39:07.214
+because it's actually lots of information.
+
+00:39:07.214 --> 00:39:08.814
+It's a, it's a list full of information.
+
+00:39:09.293 --> 00:39:11.094
+So you have things like the, uh, it's basically all the
+
+00:39:11.094 --> 00:39:12.974
+metadata from the interrogation.
+
+00:39:13.573 --> 00:39:17.453
+So the time of start, time of end, we got things like labels, descriptive
+
+00:39:17.453 --> 00:39:21.214
+things, the table itself, uh, and really the important thing is like the
+
+00:39:21.214 --> 00:39:26.333
+results here, like the step, um, some more metadata and right here is the
+
+00:39:26.333 --> 00:39:30.013
+values right here of like how many test units, how many passed, how many
+
+00:39:30.013 --> 00:39:33.053
+failed and the fraction of test units, which passed or failed.
+
+00:39:35.134 --> 00:39:38.893
+Then we have conditions right here and a few other things.
+
+00:39:41.854 --> 00:39:42.773
+So let's take a look at this.
+
+00:39:42.814 --> 00:39:44.293
+Let's use one of these.
+
+00:39:44.534 --> 00:39:47.934
+Let's use dollar sign it from the X list or run that.
+
+00:39:47.934 --> 00:39:50.733
+So in this case, we see a list, uh, these are test units.
+
+00:39:50.733 --> 00:39:53.613
+It's a little bit strange because we don't really know, uh, we know this is
+
+00:39:53.613 --> 00:39:58.173
+step one and this is the last step, but we just get these values one, 13, but
+
+00:39:58.173 --> 00:40:02.654
+basically the position shows you the step number, uh, let's look at number
+
+00:40:02.654 --> 00:40:07.613
+past, again, it's going step-by-step starting at one, uh, so step one had
+
+00:40:08.254 --> 00:40:12.053
+one pass, one failed, one passed, one failed, one failed, one failed, one
+
+00:40:12.053 --> 00:40:15.493
+passed, one failed, one failed, one passed, one failed, one failed, one
+
+00:40:15.534 --> 00:40:19.374
+failed, uh, so step one had one passing step two at 11 passing.
+
+00:40:19.374 --> 00:40:20.173
+So on and so forth.
+
+00:40:20.854 --> 00:40:21.934
+Fraction is kind of the same.
+
+00:40:23.974 --> 00:40:24.333
+Great.
+
+00:40:24.773 --> 00:40:28.094
+So this is the fraction of, uh, test units that passed each step.
+
+00:40:28.654 --> 00:40:29.094
+Okay, great.
+
+00:40:29.534 --> 00:40:31.694
+So you can actually take this and do your own thing with it.
+
+00:40:31.733 --> 00:40:34.094
+If you didn't, you know, you want to do something aside from the report
+
+00:40:34.094 --> 00:40:35.613
+you get, you can make your own report.
+
+00:40:37.654 --> 00:40:38.733
+So in this case, we're making a table.
+
+00:40:38.773 --> 00:40:42.814
+We can just pass in the X list, some vectors and get ourselves a table.
+
+00:40:43.654 --> 00:40:49.333
+So steps, whether we have one stop or notify, and then we can just move with
+
+00:40:49.333 --> 00:40:51.374
+that and do other things, presumably.
+
+00:40:56.414 --> 00:41:00.613
+Another cool thing you do is you can email, uh, the interrogation report.
+
+00:41:01.733 --> 00:41:04.733
+And we do that with, um, this function called email create.
+
+00:41:05.694 --> 00:41:10.293
+Uh, we have a package called blastula and it works well with a point blank.
+
+00:41:10.733 --> 00:41:15.974
+So if you ever want to like in production or in CI run these validations and then
+
+00:41:15.974 --> 00:41:20.333
+like notify yourself or notify someone else, you can do that with this.
+
+00:41:20.733 --> 00:41:23.013
+So I'm going to show you what agent three looks like when you
+
+00:41:23.013 --> 00:41:25.053
+pass it through email, create.
+
+00:41:27.013 --> 00:41:28.493
+It's actually going to appear here on the side.
+
+00:41:28.534 --> 00:41:29.333
+So I can open that up.
+
+00:41:30.214 --> 00:41:35.134
+So we get here is an email message body, uh, with some texts saying when the
+
+00:41:35.134 --> 00:41:39.854
+validation was done, how many steps there are, and sort of like a mini version of
+
+00:41:39.854 --> 00:41:43.293
+the validation report, it's missing some of the columns, but this is meant to fit
+
+00:41:43.293 --> 00:41:47.173
+within an email, so it's going to be kind of small, great.
+
+00:41:47.854 --> 00:41:48.613
+So that's what you get there.
+
+00:41:49.613 --> 00:41:53.773
+And the idea is that when you have that, you could use, um, this
+
+00:41:53.773 --> 00:41:54.814
+sort of construction right here.
+
+00:41:55.534 --> 00:41:59.173
+Like say, for instance, if you had some sort of test failure, uh, with notify.
+
+00:41:59.654 --> 00:42:04.893
+So if any of these results from the X list, uh, provide true for notify, then
+
+00:42:04.893 --> 00:42:08.773
+you can basically take that email and then send it off through blastula like that.
+
+00:42:10.854 --> 00:42:11.094
+Great.
+
+00:42:15.293 --> 00:42:15.414
+Okay.
+
+00:42:15.414 --> 00:42:16.453
+So I'm going to close this up.
+
+00:42:19.214 --> 00:42:23.534
+And, uh, speaking of reports being customized or changed, you can actually
+
+00:42:23.534 --> 00:42:25.374
+customize reports yourself a little bit.
+
+00:42:27.094 --> 00:42:29.654
+Um, we actually have a function called get agent report.
+
+00:42:30.094 --> 00:42:31.813
+Normally when you have an agent, you can just print it.
+
+00:42:31.933 --> 00:42:35.614
+It'll provide the report, but if you use get agent report, it'll do the same thing,
+
+00:42:35.614 --> 00:42:37.893
+but it'll give you a chance to use some options.
+
+00:42:37.893 --> 00:42:39.614
+Uh, for instance, we can change the title.
+
+00:42:40.373 --> 00:42:43.573
+I will run that and show you, in this case, it's the third example.
+
+00:42:45.813 --> 00:42:46.174
+There we go.
+
+00:42:46.654 --> 00:42:48.414
+And we're using markdown here and it just sort of applies
+
+00:42:48.414 --> 00:42:50.253
+that markdown, uh, to the title.
+
+00:42:50.333 --> 00:42:52.133
+So that's one option, changing the title.
+
+00:42:52.933 --> 00:42:57.414
+Um, you could do things like arrange steps in certain ways.
+
+00:42:58.013 --> 00:43:00.453
+Uh, in this case, severity is a keyword we can use.
+
+00:43:01.174 --> 00:43:06.054
+If I run that, it'll put the most severe steps first and then go down to the
+
+00:43:06.294 --> 00:43:08.253
+and then go down to like less severe.
+
+00:43:08.333 --> 00:43:10.253
+Uh, so that's sort of nice reordering.
+
+00:43:10.294 --> 00:43:11.933
+So it shows you what failed first.
+
+00:43:15.494 --> 00:43:18.094
+Uh, we can do that and also just keep the failure states.
+
+00:43:18.494 --> 00:43:20.373
+So basically in this, in this case, we're just cutting out
+
+00:43:20.933 --> 00:43:22.174
+everything that was essentially green.
+
+00:43:24.373 --> 00:43:25.094
+Scroll down.
+
+00:43:27.573 --> 00:43:28.054
+Great.
+
+00:43:29.813 --> 00:43:32.214
+Uh, last thing you may not need it, but you can always change
+
+00:43:32.214 --> 00:43:33.614
+the language of the agent report.
+
+00:43:34.294 --> 00:43:35.294
+We have for quite a few of them.
+
+00:43:35.573 --> 00:43:36.933
+In this Lang parameter.
+
+00:43:36.974 --> 00:43:40.054
+So if you run this, it'll just change the language and there's
+
+00:43:40.054 --> 00:43:41.174
+quite a few languages supported.
+
+00:43:41.614 --> 00:43:44.133
+So all the texts will just change to suit that language.
+
+00:43:44.974 --> 00:43:49.414
+So that was basically it for the first, uh, QMD file of this workshop.
+
+00:43:50.133 --> 00:43:53.294
+Um, I want to provide like maybe 10 minutes.
+
+00:43:53.854 --> 00:43:56.333
+If you have a Symfronium, uh, I really encourage you to sort of
+
+00:43:56.333 --> 00:43:59.013
+play with some of these cells.
+
+00:43:59.494 --> 00:44:01.253
+Change a few things, maybe insert your own data.
+
+00:44:01.253 --> 00:44:04.414
+And, uh, I'm thinking of taking a long break, maybe a 10 minute break
+
+00:44:04.453 --> 00:44:07.373
+up until like, uh, five to the hour.
+
+00:44:07.854 --> 00:44:10.813
+It's more like an eight minute break at this point, and I'll, I'll be
+
+00:44:10.813 --> 00:44:12.094
+here to answer questions, obviously.
+
+00:44:12.333 --> 00:44:15.813
+So it's the old mini Q and a period plus experimentation time.
+
+00:44:16.094 --> 00:44:16.453
+All right.
+
+00:44:16.453 --> 00:44:17.573
+Thank you, Richard.
+
+00:44:17.573 --> 00:44:21.693
+And I'll keep an eye on the questions for as I come in, but yeah.
+
+00:44:21.974 --> 00:44:22.253
+Great.
+
+00:44:22.253 --> 00:44:26.933
+First session really decided to learn even more of what point blanks capable of.
+
+00:44:27.494 --> 00:44:27.893
+Yeah.
+
+00:44:28.054 --> 00:44:28.494
+Thanks.
+
+00:44:28.494 --> 00:44:29.734
+And, uh, there's actually a question here.
+
+00:44:29.734 --> 00:44:33.294
+So I'm gonna answer that, um, it's possible to manipulate, manipulate the
+
+00:44:33.294 --> 00:44:37.693
+data in the cell of a table before running a step, for example, is one
+
+00:44:37.693 --> 00:44:44.214
+value bigger than another, if a table is contains 95% CI or me, I'm not
+
+00:44:44.214 --> 00:44:46.054
+gonna read the rest cause it's yes.
+
+00:44:46.133 --> 00:44:50.453
+Um, we didn't go through it because, um, otherwise, you know, this
+
+00:44:50.453 --> 00:44:54.854
+workshop would be very long, but, uh, there's actually an argument in each
+
+00:44:54.854 --> 00:44:58.253
+of these steps, uh, each of these functions, which constitutes a step.
+
+00:44:58.893 --> 00:44:59.933
+I'm gonna go to one of these.
+
+00:45:00.854 --> 00:45:03.494
+Uh, it's called create conditions.
+
+00:45:04.094 --> 00:45:05.494
+I'm looking for a complete, but it's not continuing.
+
+00:45:05.534 --> 00:45:08.453
+Uh, I'll just go to the function itself, please.
+
+00:45:08.453 --> 00:45:09.013
+No.
+
+00:45:09.013 --> 00:45:09.534
+Okay.
+
+00:45:10.294 --> 00:45:10.854
+One sec.
+
+00:45:11.373 --> 00:45:12.094
+I chose the one function.
+
+00:45:12.094 --> 00:45:12.693
+I didn't have it.
+
+00:45:12.773 --> 00:45:14.294
+Uh, let's go back up.
+
+00:45:15.013 --> 00:45:20.054
+So call vals, um, functions really most of them except for identity ones.
+
+00:45:20.054 --> 00:45:21.333
+They allowed you to change the table.
+
+00:45:21.333 --> 00:45:21.854
+Okay.
+
+00:45:21.854 --> 00:45:22.573
+So let's see here.
+
+00:45:22.614 --> 00:45:23.013
+Okay.
+
+00:45:23.013 --> 00:45:23.414
+Here we go.
+
+00:45:24.614 --> 00:45:26.933
+Pre there we go.
+
+00:45:26.933 --> 00:45:27.573
+Pre conditions.
+
+00:45:27.573 --> 00:45:28.073
+Okay.
+
+00:45:28.373 --> 00:45:28.873
+Perfect.
+
+00:45:29.013 --> 00:45:31.573
+So in this case, I'm going to just move that away.
+
+00:45:32.133 --> 00:45:36.373
+You could like provide an expression and you can mutate the table before
+
+00:45:36.373 --> 00:45:38.133
+proceeding with the validation step.
+
+00:45:38.373 --> 00:45:38.893
+Okay.
+
+00:45:38.893 --> 00:45:39.933
+This is only for that step two.
+
+00:45:39.933 --> 00:45:40.974
+It's isolated within that step.
+
+00:45:42.133 --> 00:45:45.534
+So you can add a call, uh, which has some value you want to check against.
+
+00:45:46.294 --> 00:45:47.573
+Uh, can have multiple columns.
+
+00:45:47.573 --> 00:45:51.974
+And then like any values provide for columns and value that it, it will presume
+
+00:45:51.974 --> 00:45:54.933
+it will work on the table that has been mutated.
+
+00:45:54.933 --> 00:45:55.453
+Okay.
+
+00:45:55.453 --> 00:45:59.133
+So you can add a, add a column here, which exists only in the mutated table.
+
+00:45:59.133 --> 00:46:03.773
+Say column X, it's not available in the original table, but it is after this
+
+00:46:03.773 --> 00:46:05.333
+function is applied to the table.
+
+00:46:05.333 --> 00:46:05.854
+Okay.
+
+00:46:05.854 --> 00:46:06.854
+So that's how you do it.
+
+00:46:06.854 --> 00:46:08.133
+Use formulas and tax for that.
+
+00:46:08.133 --> 00:46:10.333
+And, or you can provide a, a bear function.
+
+00:46:10.333 --> 00:46:10.854
+Okay.
+
+00:46:10.854 --> 00:46:11.854
+So that's how you do it.
+
+00:46:11.854 --> 00:46:15.333
+Use formulas and tax for that and, or you can provide a, a bear function.
+
+00:46:15.333 --> 00:46:15.854
+Okay.
+
+00:46:15.933 --> 00:46:19.573
+So basically you have some way to sort of like mutate your table, shape it to the
+
+00:46:19.573 --> 00:46:22.573
+way you, to what you need to make a validation work.
+
+00:46:23.294 --> 00:46:23.794
+Yeah.
+
+00:46:27.654 --> 00:46:28.414
+I'm just going to go to the bottom.
+
+00:46:29.414 --> 00:46:35.813
+I have a question, Rich, if you don't mind, um, is, um, DuckDB databases
+
+00:46:35.813 --> 00:46:36.933
+supported in point blank?
+
+00:46:37.813 --> 00:46:38.333
+They are.
+
+00:46:38.494 --> 00:46:39.013
+Yeah.
+
+00:46:39.013 --> 00:46:39.534
+Nice.
+
+00:46:39.534 --> 00:46:43.933
+So basically anything, or most everything in dbplyr and dplyr will be supported.
+
+00:46:43.933 --> 00:46:50.654
+It's used as like the way to sort of like the backend and even things like
+
+00:46:50.654 --> 00:46:56.573
+databases, like MySQL, uh, SQLite also supported Postgres it's in there.
+
+00:46:56.734 --> 00:46:58.773
+And we do a lot of tests to make sure that it does work.
+
+00:46:59.573 --> 00:47:03.253
+Um, so we do a little bit of verification on that end.
+
+00:47:04.453 --> 00:47:10.174
+Um, and basically as dbplyr gets better, this will get better in working with it.
+
+00:47:10.174 --> 00:47:10.693
+Uh, okay.
+
+00:47:10.693 --> 00:47:15.013
+So some questions about philosophical and or design differences, uh, between
+
+00:47:15.054 --> 00:47:16.654
+this and assertor and validate.
+
+00:47:17.133 --> 00:47:18.453
+Yeah, I've taken a look at those packages.
+
+00:47:18.534 --> 00:47:23.133
+Uh, basically these are very similar, except the big thing I want to, I want to
+
+00:47:23.133 --> 00:47:26.773
+design for was having, um, reporting that was publishable.
+
+00:47:28.133 --> 00:47:33.094
+So basically this is a good first, uh, you know, sharing with the people, you know,
+
+00:47:33.094 --> 00:47:36.414
+that don't use the program or don't, or, you know, they're allergic to console
+
+00:47:36.414 --> 00:47:37.414
+output, things like that.
+
+00:47:37.414 --> 00:47:38.494
+Or we don't have to create your own reports.
+
+00:47:38.494 --> 00:47:41.253
+You know, we have something serviceable that is available right away.
+
+00:47:41.294 --> 00:47:46.414
+And, um, yeah, that was, that's, that's, I think the biggest distinction, also
+
+00:47:46.414 --> 00:47:51.494
+the composable nature of, um, mutating data and then handling with failure,
+
+00:47:51.534 --> 00:47:52.893
+handling failures and reporting.
+
+00:47:53.453 --> 00:47:58.654
+Um, say for instance, you, you provide a, um, no, call it doesn't exist.
+
+00:47:58.693 --> 00:47:59.693
+Like the report doesn't fail.
+
+00:47:59.734 --> 00:48:00.534
+It just keeps going.
+
+00:48:00.933 --> 00:48:03.654
+It just mentioned that, you know, there's, there's a problem you should address.
+
+00:48:03.654 --> 00:48:06.773
+Uh, and so that, that, those are some of the things we want to make sure that
+
+00:48:06.773 --> 00:48:10.693
+things generally sort of work, but give you more information to sort of, you
+
+00:48:10.693 --> 00:48:14.974
+know, fix things up on if it has to do with a user problem, not so much a data,
+
+00:48:15.174 --> 00:48:16.214
+a problem itself.
+
+00:48:18.614 --> 00:48:24.693
+Um, so that's basically it, um, just lots of tools and, uh, affordances for, for
+
+00:48:24.693 --> 00:48:28.734
+having an organization, organization, uh, you know, get, get to the bottom of it.
+
+00:48:28.734 --> 00:48:29.214
+Kind of funny.
+
+00:48:29.214 --> 00:48:33.373
+Cause like it's mentioned here in the comments that, um, do you want to try
+
+00:48:33.373 --> 00:48:35.974
+like, uh, NYC taxi data with duck TV?
+
+00:48:36.494 --> 00:48:40.094
+It's kind of funny because in the Python version of this, um, of point blank, I
+
+00:48:40.094 --> 00:48:45.133
+actually use NYC taxi data, like a bunch of those parquet files and, uh, for my tests.
+
+00:48:45.174 --> 00:48:49.573
+So it's just kind of a, it's good to see NYC taxi data still being, still being loved.
+
+00:48:50.414 --> 00:48:55.494
+Uh, it's a lot of data and, uh, and, and, and, and, and, and, and, and, and, and,
+
+00:48:55.494 --> 00:49:02.214
+still being loved, uh, it's a lot of data and, uh, um, yeah, let's see it.
+
+00:49:03.294 --> 00:49:03.654
+Okay.
+
+00:49:03.693 --> 00:49:07.133
+I'm going to, I know the break's not over, but I'm going to slowly summarize
+
+00:49:07.534 --> 00:49:09.573
+before we get on to the next set of Q and D's.
+
+00:49:10.294 --> 00:49:15.893
+Um, basically data validation, blank, blank, you need agents, a set of
+
+00:49:15.893 --> 00:49:20.654
+validation functions, and then that last interrogate step, get the last function
+
+00:49:20.654 --> 00:49:24.693
+call, um, okay, well, I'm also got a question, so I'm going to look at that.
+
+00:49:25.054 --> 00:49:28.013
+Would it have to collect all the NYC taxi data if only a couple
+
+00:49:28.013 --> 00:49:29.253
+of columns are getting validated?
+
+00:49:29.654 --> 00:49:31.214
+Um, nothing is being collected.
+
+00:49:31.294 --> 00:49:35.133
+Everything's all being done on the database side, uh, for our, for everything.
+
+00:49:35.253 --> 00:49:38.573
+Like there should be no transfer of large datasets to your machine.
+
+00:49:39.494 --> 00:49:45.573
+Um, hope that answers the question because we're using dbplyr and, um, we
+
+00:49:45.573 --> 00:49:47.974
+don't collect the very end and we collect a small amount of data, which
+
+00:49:47.974 --> 00:49:52.654
+is basically just like the, the, the tally of results, which is not very large.
+
+00:49:53.094 --> 00:49:56.174
+Condense it down before we actually pull anything back.
+
+00:49:57.133 --> 00:49:57.453
+Okay.
+
+00:49:57.534 --> 00:49:58.174
+Uh, okay.
+
+00:49:58.373 --> 00:50:02.534
+So the agent, it creates a report that tries to be informative and easily
+
+00:50:02.534 --> 00:50:07.133
+explainable as those reports you've seen multiple times, we can set data
+
+00:50:07.133 --> 00:50:08.974
+quality thresholds with action levels.
+
+00:50:09.693 --> 00:50:15.294
+Uh, there can be D default, DQ data quality thresholds and steps specific thresholds.
+
+00:50:16.054 --> 00:50:16.414
+Okay.
+
+00:50:16.453 --> 00:50:19.854
+So basically you can use action, like the action levels function or the
+
+00:50:20.453 --> 00:50:25.654
+object created from it within certain steps or globally within, uh, uh, create
+
+00:50:25.654 --> 00:50:31.133
+agent, uh, there are 36 validation functions and they have a similar
+
+00:50:31.133 --> 00:50:32.654
+interface and many common arguments.
+
+00:50:32.773 --> 00:50:35.573
+Um, and it can be used with an agent or directly on the data.
+
+00:50:36.133 --> 00:50:39.054
+And directly on the data means that you pass data through or you
+
+00:50:39.054 --> 00:50:42.933
+error based on data quality, uh, test units failing.
+
+00:50:44.933 --> 00:50:48.974
+We can get data extracts, uh, pertain to failing test units in rows of the
+
+00:50:48.974 --> 00:50:50.773
+input data set with get data extracts.
+
+00:50:50.813 --> 00:50:53.614
+It has an eye argument if you want to match it to a step.
+
+00:50:54.414 --> 00:50:57.453
+And that way you just get like the table itself and not a list of tables.
+
+00:50:59.174 --> 00:51:03.094
+There's the option to, to obtain sundered data, uh, which is the input
+
+00:51:03.094 --> 00:51:07.014
+data split by whether cells contain failing test units, and you can get
+
+00:51:07.014 --> 00:51:10.014
+either the passing piece or the failing piece or a combined report.
+
+00:51:11.254 --> 00:51:15.974
+Um, there's a large amount of validation data with that get agent X list function.
+
+00:51:16.173 --> 00:51:19.894
+So it creates a list and the print method just shows you what's basically how to,
+
+00:51:19.933 --> 00:51:25.693
+what's in the list, basically what, you know, ways to access it and also how
+
+00:51:25.693 --> 00:51:27.214
+many objects are in each one of those.
+
+00:51:27.974 --> 00:51:32.413
+Um, if you want to email, um, as a result of validation, sometimes you're
+
+00:51:32.413 --> 00:51:34.094
+just running this on a schedule.
+
+00:51:34.693 --> 00:51:38.254
+You can do that with email create combined with, uh, functions
+
+00:51:38.254 --> 00:51:39.653
+in the blastula R package.
+
+00:51:41.333 --> 00:51:43.974
+And finally, there's some custom customization opportunities
+
+00:51:43.974 --> 00:51:45.254
+with get agent reports.
+
+00:51:45.813 --> 00:51:49.413
+Normally you just print the agent itself, but you could use this to
+
+00:51:49.453 --> 00:51:51.494
+give it some, some options for display.
+
+00:51:54.413 --> 00:51:54.813
+Great.
+
+00:51:55.214 --> 00:51:57.413
+So I'm gonna move on to the next step or the next step.
+
+00:51:57.453 --> 00:52:02.533
+Uh, the next QMD file in, in our set of QMD files from this, uh, workshop.
+
+00:52:03.813 --> 00:52:07.293
+And that is about scanning data and also using a function
+
+00:52:07.293 --> 00:52:08.573
+called draft validation.
+
+00:52:09.494 --> 00:52:09.813
+Okay.
+
+00:52:11.214 --> 00:52:11.854
+So scan data.
+
+00:52:11.894 --> 00:52:16.293
+Um, what this is, is basically just like a large description of a dataset.
+
+00:52:17.134 --> 00:52:22.413
+Um, you run one function, scan data, give it a table.
+
+00:52:23.094 --> 00:52:25.573
+You can also provide, um, there's many different sections.
+
+00:52:25.573 --> 00:52:28.293
+It provides, it provides an HTML report in the end.
+
+00:52:28.774 --> 00:52:31.774
+You can cut it down or reorder just by using this, this
+
+00:52:31.774 --> 00:52:33.254
+sections argument right here.
+
+00:52:33.734 --> 00:52:38.254
+So each of these letters corresponds to a letter here, like overview variables,
+
+00:52:38.333 --> 00:52:42.333
+interactions, correlations, missing values, and finally sample.
+
+00:52:43.014 --> 00:52:46.214
+Uh, in this case, I just want the overview variables, uh, missing
+
+00:52:46.214 --> 00:52:48.293
+values and a sample of the data.
+
+00:52:48.854 --> 00:52:52.734
+So I'm going to run this and they're quite sure where it'll appear, either
+
+00:52:52.734 --> 00:52:57.094
+it's on the right or below, um, cause it's been ages since I used
+
+00:52:57.094 --> 00:52:59.413
+this type of, uh, way of working.
+
+00:53:01.214 --> 00:53:04.533
+But we see here, it's going, it'll take some time, uh, depending on
+
+00:53:04.533 --> 00:53:06.014
+how many columns you have usually.
+
+00:53:06.494 --> 00:53:07.173
+Uh, but now it's done.
+
+00:53:07.214 --> 00:53:07.533
+Okay.
+
+00:53:07.533 --> 00:53:10.413
+So now we're taking a look at the table scan.
+
+00:53:11.214 --> 00:53:13.774
+And if you click here, you just shortcuts to get to different
+
+00:53:13.774 --> 00:53:15.134
+sections, or you could just scroll down.
+
+00:53:15.974 --> 00:53:19.933
+Uh, we have overview, basically the sort of like the dimensions of the table.
+
+00:53:20.614 --> 00:53:24.573
+Uh, some information about the processing of the table and, oh,
+
+00:53:24.693 --> 00:53:25.693
+it doesn't make it easy to scroll down.
+
+00:53:26.173 --> 00:53:30.014
+Jeez, I'm going to use this variables.
+
+00:53:30.173 --> 00:53:30.693
+There we go.
+
+00:53:30.774 --> 00:53:35.173
+I'm going to try my best here to scroll down without the ID fighting me, but
+
+00:53:35.173 --> 00:53:37.494
+we see here, we see one, uh, column.
+
+00:53:37.854 --> 00:53:38.774
+It's a character column.
+
+00:53:39.333 --> 00:53:43.173
+We're showing just some, you know, basic data about the column and
+
+00:53:43.173 --> 00:53:46.774
+toggle details, this is where some good stuff is and I may not be able to get to
+
+00:53:46.774 --> 00:53:46.894
+it.
+
+00:53:46.933 --> 00:53:51.254
+I'm going to actually take this and pop it out into a browser or somewhere
+
+00:53:51.254 --> 00:53:52.533
+else, anywhere else is good.
+
+00:53:52.573 --> 00:53:52.693
+Okay.
+
+00:53:52.693 --> 00:53:52.974
+There we go.
+
+00:53:53.014 --> 00:53:53.653
+This is much better.
+
+00:53:55.134 --> 00:53:55.413
+There we go.
+
+00:53:55.413 --> 00:53:57.173
+So if you click on this, we get some details.
+
+00:53:57.214 --> 00:53:59.653
+So you can see things like, uh, well, this is a character column.
+
+00:53:59.653 --> 00:54:00.813
+So we see common values.
+
+00:54:00.813 --> 00:54:02.453
+That's just the way he wants to print it out.
+
+00:54:03.214 --> 00:54:05.494
+And string lengths for the table.
+
+00:54:05.573 --> 00:54:06.734
+Uh, start with the plot there.
+
+00:54:07.573 --> 00:54:08.533
+We're looking at sample number.
+
+00:54:08.533 --> 00:54:09.813
+That's not so interesting.
+
+00:54:09.933 --> 00:54:12.573
+Uh, let's look at something that's more like a measurement.
+
+00:54:12.774 --> 00:54:16.653
+Um, let's look at column, column in depth here.
+
+00:54:17.494 --> 00:54:17.933
+There we go.
+
+00:54:18.533 --> 00:54:20.774
+So we see some stats about these values.
+
+00:54:20.894 --> 00:54:21.614
+Uh, kind of cool.
+
+00:54:21.653 --> 00:54:23.614
+You can observe outliers here really nicely.
+
+00:54:23.614 --> 00:54:27.494
+So this is a little bit kind of pre data validation, data quality.
+
+00:54:27.494 --> 00:54:30.214
+You just start scoping things out and really understanding the data.
+
+00:54:31.214 --> 00:54:32.254
+You see common values.
+
+00:54:32.293 --> 00:54:34.453
+Uh, it's not so great for numeric data, but it might be good for
+
+00:54:34.453 --> 00:54:35.854
+things like categorical data.
+
+00:54:36.494 --> 00:54:40.214
+Uh, min max, our max min slices, we can sort of see frequency
+
+00:54:40.214 --> 00:54:41.693
+counts of different values.
+
+00:54:42.494 --> 00:54:45.734
+Um, but the really cool stuff is in the first one, the stats,
+
+00:54:46.173 --> 00:54:47.974
+descriptive stats tables.
+
+00:54:48.734 --> 00:54:52.134
+And we've got a few more here and we got some, you know, some,
+
+00:54:52.134 --> 00:54:54.134
+uh, Delta values here as well.
+
+00:54:54.693 --> 00:54:57.774
+Um, and a cool thing here, it's not really labeled.
+
+00:54:57.813 --> 00:54:59.214
+This is like missing values.
+
+00:54:59.374 --> 00:55:01.014
+If it's all blue, this is the top of the table.
+
+00:55:01.014 --> 00:55:01.573
+This is the bottom.
+
+00:55:01.573 --> 00:55:03.494
+It's sliced up into different sectors.
+
+00:55:04.173 --> 00:55:06.693
+We see here, we don't get a missing values cause it's all blue in these
+
+00:55:06.693 --> 00:55:12.894
+columns, everything from like this column here to, uh, the date egg column.
+
+00:55:13.653 --> 00:55:16.053
+But we start to see missing values in certain parts.
+
+00:55:16.214 --> 00:55:20.214
+Um, you know, right here in this sector and also the bottom, there's
+
+00:55:20.254 --> 00:55:21.813
+some fraction of missing values.
+
+00:55:22.494 --> 00:55:24.974
+Uh, for these columns, we have even more missing, missing
+
+00:55:24.974 --> 00:55:26.453
+values distributed throughout.
+
+00:55:26.453 --> 00:55:28.173
+And what makes lots of sense is comments.
+
+00:55:28.173 --> 00:55:29.693
+These are totally optional, it seems.
+
+00:55:29.693 --> 00:55:31.214
+So there would be lots of missing values.
+
+00:55:31.214 --> 00:55:35.614
+So, um, basically when there's comments, they're pretty, they're pretty sparse.
+
+00:55:37.214 --> 00:55:39.933
+Uh, but it's a cool way to sort of like understand if you have just one
+
+00:55:39.933 --> 00:55:42.653
+missing value, uh, this won't be blue.
+
+00:55:43.134 --> 00:55:45.774
+You can flag out of really large tables.
+
+00:55:45.774 --> 00:55:47.693
+There's some missing values really quickly.
+
+00:55:49.494 --> 00:55:51.533
+And then finally, uh, there's like the sample table.
+
+00:55:51.894 --> 00:55:55.614
+Um, not much here, but basically this is just a GDL table.
+
+00:55:55.614 --> 00:55:59.214
+Um, you know, the first five rows and the last five rows of the entire table,
+
+00:55:59.214 --> 00:56:03.693
+and you can scroll across, uh, to sort of see, see things and just, just get a
+
+00:56:03.693 --> 00:56:06.374
+feel for what the data is in the sample table.
+
+00:56:07.094 --> 00:56:09.293
+We sort of see here, if you have really good eyes, you can sort of
+
+00:56:09.293 --> 00:56:12.854
+see there's missing, uh, rows here, but it gives you like the actual
+
+00:56:12.854 --> 00:56:14.173
+row numbers at the end.
+
+00:56:14.214 --> 00:56:16.774
+So you even have a sense of what the size of the table is.
+
+00:56:18.374 --> 00:56:18.573
+Great.
+
+00:56:18.573 --> 00:56:19.453
+So that's table scan.
+
+00:56:19.494 --> 00:56:20.134
+It's kind of cool.
+
+00:56:20.173 --> 00:56:21.254
+You can publish this as well.
+
+00:56:21.293 --> 00:56:22.094
+I've done it in the past.
+
+00:56:22.094 --> 00:56:24.094
+It's basically just a chunk of HTML in the end.
+
+00:56:25.094 --> 00:56:25.374
+Great.
+
+00:56:25.533 --> 00:56:28.293
+And yeah, some additional instructions here.
+
+00:56:28.494 --> 00:56:29.974
+Basically the sections could be reordered.
+
+00:56:30.014 --> 00:56:32.573
+You can, you can use a string like this, just capital letters
+
+00:56:32.573 --> 00:56:33.653
+for each of the different parts.
+
+00:56:34.053 --> 00:56:35.374
+You can omit some things.
+
+00:56:35.614 --> 00:56:37.693
+Um, that's a way of customizing it.
+
+00:56:38.254 --> 00:56:41.214
+Um, I was going to show you something here too.
+
+00:56:41.254 --> 00:56:42.693
+Let's look at some pharma tables.
+
+00:56:42.693 --> 00:56:43.494
+Let's look at CDDM.
+
+00:56:43.854 --> 00:56:44.374
+Here we go.
+
+00:56:46.014 --> 00:56:49.774
+So in this case, I'm getting the, uh, adverse effects table here for the
+
+00:56:49.774 --> 00:56:55.653
+I just want the, uh, the first few columns, which are overview, um, sample.
+
+00:56:55.813 --> 00:56:58.214
+So sample second, and then variables last.
+
+00:56:59.094 --> 00:56:59.374
+Okay.
+
+00:57:03.374 --> 00:57:05.094
+And I, I do apologize.
+
+00:57:05.094 --> 00:57:07.333
+It does sometimes take so much time, a little bit of time.
+
+00:57:07.614 --> 00:57:10.933
+Um, also because we're on cloud, it takes even longer because these
+
+00:57:10.933 --> 00:57:13.173
+instances are not very powerful.
+
+00:57:13.734 --> 00:57:18.894
+Um, but it's, it's a great way to, to, to, to, to, to, to, to, to, to, to, to,
+
+00:57:19.173 --> 00:57:23.774
+um, but I'll just talk over this part and I'll get back to that part.
+
+00:57:24.453 --> 00:57:26.933
+Uh, and again, just like the validation reports, you can
+
+00:57:26.933 --> 00:57:27.813
+have them in different languages.
+
+00:57:27.854 --> 00:57:28.653
+Oh, it did pop out.
+
+00:57:28.693 --> 00:57:29.374
+So that's great.
+
+00:57:29.854 --> 00:57:31.573
+Uh, just certain things I want to show you here.
+
+00:57:31.573 --> 00:57:33.533
+I'm going to pop this out as before.
+
+00:57:34.374 --> 00:57:35.974
+Cause this has some really cool features.
+
+00:57:36.134 --> 00:57:40.413
+Um, so again, overview this time to samples in the middle.
+
+00:57:40.894 --> 00:57:42.854
+And then down here, we have this cool thing.
+
+00:57:42.854 --> 00:57:43.614
+It's like labels.
+
+00:57:43.653 --> 00:57:44.573
+They get shown here too.
+
+00:57:45.693 --> 00:57:46.293
+So it's kind of anything.
+
+00:57:46.293 --> 00:57:47.293
+This is a label dataset.
+
+00:57:47.293 --> 00:57:49.734
+So they just appear, uh, right inside this report.
+
+00:57:49.774 --> 00:57:50.813
+So kind of cool.
+
+00:57:51.774 --> 00:57:53.533
+Um, and there's lots more columns.
+
+00:57:53.533 --> 00:57:54.894
+That's why this took a long time.
+
+00:57:55.614 --> 00:57:59.533
+Um, I believe ggplot for this cause sometimes there's, there's plots in some
+
+00:57:59.533 --> 00:58:04.293
+of these, um, we'll see these, these character value ones, their string lengths.
+
+00:58:04.333 --> 00:58:05.933
+This takes a little bit of time to process.
+
+00:58:06.614 --> 00:58:09.933
+So, um, that, that requires a bit more waiting.
+
+00:58:11.494 --> 00:58:12.854
+Uh, but kind of cool, kind of cool.
+
+00:58:12.894 --> 00:58:16.614
+It does scale to lots of columns, but you just have to, you just have to wait a bit.
+
+00:58:17.854 --> 00:58:18.374
+Great.
+
+00:58:18.854 --> 00:58:19.053
+Okay.
+
+00:58:19.053 --> 00:58:22.094
+I'm not gonna show the other one, uh, but I'm going to go to the next section here.
+
+00:58:22.813 --> 00:58:24.413
+Well, actually I'm not going to skip.
+
+00:58:24.453 --> 00:58:26.614
+You can actually export this to an HTML file.
+
+00:58:27.214 --> 00:58:29.653
+Um, there's a function called export report.
+
+00:58:30.254 --> 00:58:32.333
+This works for all sorts of objects within point blank.
+
+00:58:32.333 --> 00:58:33.573
+It could be a validation report.
+
+00:58:33.614 --> 00:58:34.693
+It could be this thing.
+
+00:58:35.094 --> 00:58:37.134
+Uh, it could be the next thing I'm going to show you later, but there's
+
+00:58:37.134 --> 00:58:41.413
+different types of reports and exporting of them can be easily handled with this
+
+00:58:41.413 --> 00:58:43.453
+one function called export report.
+
+00:58:43.453 --> 00:58:47.693
+You provide a file name, you provide the object, and it does the thing that you want.
+
+00:58:47.693 --> 00:58:48.774
+It writes that to disk.
+
+00:58:50.894 --> 00:58:51.413
+Okay.
+
+00:58:51.974 --> 00:58:57.734
+Now I showed you this before, like, um, these validations right here, these
+
+00:58:57.734 --> 00:58:59.813
+validation workflows with lots of steps.
+
+00:58:59.854 --> 00:59:02.293
+I'm going to scroll up till I get to one which has lots.
+
+00:59:03.094 --> 00:59:04.693
+Um, here we go.
+
+00:59:05.293 --> 00:59:05.573
+Great.
+
+00:59:05.614 --> 00:59:06.413
+All this stuff here.
+
+00:59:06.533 --> 00:59:07.494
+So I'm going to get back to that.
+
+00:59:08.014 --> 00:59:10.693
+Um, but I realized that this could take some time.
+
+00:59:10.894 --> 00:59:12.494
+Maybe it's a bit discouraging when you're doing this.
+
+00:59:12.494 --> 00:59:14.813
+Maybe it's a bit discouraging when you start off in the package, you
+
+00:59:14.813 --> 00:59:16.374
+have to understand what these all are.
+
+00:59:17.134 --> 00:59:20.533
+You have to refute, refer to the documentation, uh, quite a bit.
+
+00:59:21.894 --> 00:59:22.974
+A little hard to get started initially.
+
+00:59:23.254 --> 00:59:24.413
+Uh, but we have something for that.
+
+00:59:24.453 --> 00:59:27.214
+We have a function called draft validation.
+
+00:59:28.134 --> 00:59:31.653
+What it will do is it will generate a draft validation plan.
+
+00:59:31.693 --> 00:59:36.254
+So basically it'll just write a plan for you, uh, into a new R file using an input
+
+00:59:36.254 --> 00:59:39.293
+data table, uh, just like we did with scan data, you just pop it in the
+
+00:59:39.293 --> 00:59:41.333
+input table and away it goes.
+
+00:59:42.614 --> 00:59:46.653
+Uh, but with draft validation, the data table will be scanned to learn about
+
+00:59:46.693 --> 00:59:51.413
+its column data and it'll provide you a set of starter validation steps.
+
+00:59:51.933 --> 00:59:52.214
+Okay.
+
+00:59:52.254 --> 00:59:54.374
+So it'd be like a plan will be written for you.
+
+00:59:54.933 --> 00:59:55.214
+Okay.
+
+00:59:55.254 --> 00:59:57.173
+So let's look at storms from dplyr.
+
+00:59:58.014 --> 00:59:58.293
+Okay.
+
+00:59:58.333 --> 00:59:59.134
+Quite a few columns.
+
+01:00:01.293 --> 01:00:06.094
+And, uh, what I'm saying is that draft validation, if you include that, it will,
+
+01:00:06.134 --> 01:00:09.094
+uh, it will look at it and make a file for you.
+
+01:00:09.933 --> 01:00:11.374
+Uh, we have to do this thing here.
+
+01:00:11.573 --> 01:00:12.533
+This is a little bit strange.
+
+01:00:13.134 --> 01:00:18.094
+Uh, we have to provide formal notation, this sort of like Tilda initially, uh,
+
+01:00:18.094 --> 01:00:19.614
+because we're trying to be lazy with it.
+
+01:00:19.693 --> 01:00:23.053
+And, um, it's really an expression for getting the data.
+
+01:00:23.094 --> 01:00:25.413
+So you can do more things with this if you want to like, you know, like
+
+01:00:26.014 --> 01:00:27.413
+mutate select if you wanted to.
+
+01:00:28.053 --> 01:00:31.254
+Um, but we have to do this to make it work.
+
+01:00:31.614 --> 01:00:31.933
+Okay.
+
+01:00:32.333 --> 01:00:34.254
+So I'm not gonna run it cause it's already been run.
+
+01:00:34.293 --> 01:00:34.774
+Actually.
+
+01:00:34.813 --> 01:00:35.614
+Storms validation.
+
+01:00:35.653 --> 01:00:36.774
+It's right here.
+
+01:00:36.854 --> 01:00:39.734
+Um, or I should say it was there.
+
+01:00:41.933 --> 01:00:42.453
+Here it is.
+
+01:00:43.053 --> 01:00:43.653
+Thoughts aside.
+
+01:00:44.053 --> 01:00:44.813
+So it creates this.
+
+01:00:46.014 --> 01:00:49.614
+This is a brand new R file and, uh, it looked, you know, it
+
+01:00:49.614 --> 01:00:52.614
+generates like library point blank, which is what you need as a minimum.
+
+01:00:53.254 --> 01:00:57.374
+Uh, we fetched the, uh, the data through dplyr storms table can also
+
+01:00:57.374 --> 01:01:01.653
+take an expression like this to, to get the data instead of just having it on.
+
+01:01:01.693 --> 01:01:04.333
+You can provide a recipe for getting the data essentially this way.
+
+01:01:05.813 --> 01:01:08.894
+And, uh, it does that even as action levels, uh, just by itself, just to
+
+01:01:09.134 --> 01:01:09.693
+show you it's possible.
+
+01:01:09.693 --> 01:01:10.813
+It's just like a template thing.
+
+01:01:11.453 --> 01:01:12.173
+It doesn't mean much.
+
+01:01:12.173 --> 01:01:15.614
+You didn't provide that, but it just does it to show you that the, you know,
+
+01:01:15.614 --> 01:01:17.533
+the functionality exists, essentially.
+
+01:01:18.413 --> 01:01:20.254
+Uh, it does tell you things like, uh, you know, the audition
+
+01:01:20.254 --> 01:01:21.374
+plan was generated by this.
+
+01:01:22.014 --> 01:01:24.573
+And a cool thing is it provides this.
+
+01:01:25.053 --> 01:01:27.374
+We don't have it updated yet for native pipes, but that's the
+
+01:01:27.374 --> 01:01:28.653
+thing we'll do pretty soon.
+
+01:01:29.453 --> 01:01:34.494
+Um, but does provide comments between each of these and provides, you know,
+
+01:01:34.653 --> 01:01:37.854
+these with values that work essentially.
+
+01:01:37.854 --> 01:01:41.053
+So if you were to run this, it would essentially run and it basically just
+
+01:01:41.053 --> 01:01:44.254
+uses the limits of the data for lots of these, these between checks.
+
+01:01:45.053 --> 01:01:48.974
+And then also at the end, it does a really nice thing as you get towards it.
+
+01:01:49.533 --> 01:01:52.494
+It does Rose distinct call schema match.
+
+01:01:52.573 --> 01:01:56.653
+It calls up the call schema helper function to define the schema for the
+
+01:01:56.653 --> 01:02:00.573
+table, and it just puts it within call schema match because it requires this
+
+01:02:00.573 --> 01:02:01.053
+object.
+
+01:02:01.854 --> 01:02:05.614
+And then, so if you run this check again with the table, if there's a
+
+01:02:05.614 --> 01:02:09.933
+change in the schema, this will flag that, uh, and then it ends up
+
+01:02:09.933 --> 01:02:12.254
+interrogate, and then it just prints out agent in the end.
+
+01:02:12.254 --> 01:02:14.573
+So it gives you this file essentially is what I'm going to show you.
+
+01:02:16.333 --> 01:02:17.293
+So pretty cool.
+
+01:02:17.453 --> 01:02:19.533
+Um, it's a good step.
+
+01:02:19.614 --> 01:02:23.933
+It's a good sort of like, uh, you know, you have like big tables and you're,
+
+01:02:24.014 --> 01:02:27.214
+you're holding off on doing validations because it does take some time.
+
+01:02:27.693 --> 01:02:30.254
+Uh, this is a good way to sort of like speed things up a little bit.
+
+01:02:30.254 --> 01:02:30.734
+Initially.
+
+01:02:30.813 --> 01:02:35.374
+So just want to show you that, so it's ready to run all validation steps, run
+
+01:02:35.374 --> 01:02:36.173
+without failing test units.
+
+01:02:36.173 --> 01:02:36.813
+That's the promise.
+
+01:02:36.813 --> 01:02:41.134
+At least I run it on multiple data sets to make sure that it seems to do the
+
+01:02:41.134 --> 01:02:41.693
+right thing.
+
+01:02:42.254 --> 01:02:46.014
+It even knows about certain things like latitude and longitude, uh, columns,
+
+01:02:46.014 --> 01:02:48.894
+just by sniffing the column name and some of the content within it.
+
+01:02:48.894 --> 01:02:51.614
+So it does, it does a few things, a few extra things.
+
+01:02:53.614 --> 01:02:53.933
+Okay.
+
+01:02:53.933 --> 01:02:57.374
+So basically all I want to say for this file is, uh, you know, I'm going to
+
+01:02:58.333 --> 01:02:58.734
+Okay.
+
+01:02:58.734 --> 01:03:02.494
+So basically all I want to say for this file is, uh, it's a great idea to
+
+01:03:02.494 --> 01:03:03.214
+examine your data.
+
+01:03:03.214 --> 01:03:05.053
+You're unfamiliar with using scan data.
+
+01:03:06.173 --> 01:03:08.974
+Um, cause it can inform your, your data quality checks.
+
+01:03:09.854 --> 01:03:13.374
+And, uh, speaking of which the draft validation function give you a really
+
+01:03:13.374 --> 01:03:17.053
+good quick start for data validation because it scans your data, but in a
+
+01:03:17.053 --> 01:03:18.333
+different way to create a file.
+
+01:03:20.494 --> 01:03:22.734
+I'm going to quickly check the chat.
+
+01:03:24.413 --> 01:03:25.933
+Uh, wait.
+
+01:03:25.933 --> 01:03:26.573
+Yep.
+
+01:03:26.573 --> 01:03:27.053
+Awesome.
+
+01:03:27.453 --> 01:03:28.573
+No real questions.
+
+01:03:28.573 --> 01:03:30.413
+Cause one's been answered throughout.
+
+01:03:30.413 --> 01:03:30.653
+Okay.
+
+01:03:31.693 --> 01:03:32.494
+Wonderful.
+
+01:03:32.494 --> 01:03:36.173
+Uh, so now I'm going to go to the next document here, expect to test
+
+01:03:36.173 --> 01:03:36.974
+functions, QMD.
+
+01:03:37.693 --> 01:03:42.413
+So this is all about, uh, using some cousins of the validation function, uh,
+
+01:03:42.413 --> 01:03:43.053
+their variants.
+
+01:03:43.053 --> 01:03:47.774
+They all begin with expect or began with test underscore, but they have the
+
+01:03:47.774 --> 01:03:48.573
+same names.
+
+01:03:48.573 --> 01:03:52.974
+So basically all those 36, uh, functions you saw, you're just glomming expect
+
+01:03:52.974 --> 01:03:55.933
+or test before it, and they have different functionality.
+
+01:03:57.053 --> 01:03:58.653
+And I'll show you what that functionality really is.
+
+01:04:00.413 --> 01:04:00.974
+Okay.
+
+01:04:00.974 --> 01:04:05.533
+Um, so let's start with expect.
+
+01:04:05.533 --> 01:04:08.333
+So we have expect, uh, the prefix.
+
+01:04:09.053 --> 01:04:11.774
+It'll indicate that those functions are to be used with unit testing.
+
+01:04:11.774 --> 01:04:16.734
+So like test that, uh, and if you ever use test that a lot of functions are,
+
+01:04:16.734 --> 01:04:18.094
+they all begin expect.
+
+01:04:20.094 --> 01:04:24.333
+Um, so another one is the test prefix.
+
+01:04:24.333 --> 01:04:28.494
+So those functions, those variants of the functions will, uh, either give you
+
+01:04:29.053 --> 01:04:30.894
+true or false and nothing else.
+
+01:04:31.614 --> 01:04:32.173
+Okay.
+
+01:04:32.173 --> 01:04:33.453
+They'll produce logical outputs.
+
+01:04:34.094 --> 01:04:37.214
+So this is great for conditionals or programming with, with data.
+
+01:04:37.854 --> 01:04:42.333
+Say, for instance, you saw, you don't want to carry on in a certain, you
+
+01:04:42.333 --> 01:04:45.453
+know, programming path, uh, based on some, some data quality issue.
+
+01:04:46.094 --> 01:04:48.254
+Um, you can do that, or it can redirect to something else.
+
+01:04:49.214 --> 01:04:52.894
+Uh, probably a message or some sort of failure or, you know, what have you,
+
+01:04:52.894 --> 01:04:54.254
+but it gives you options for programming.
+
+01:04:54.894 --> 01:04:55.453
+Uh, with data.
+
+01:04:57.053 --> 01:05:01.533
+So let's first look at, um, expectation functions, the ones that begin with expect.
+
+01:05:02.333 --> 01:05:03.134
+Okay.
+
+01:05:03.134 --> 01:05:06.014
+So the test that package has, uh, has a questions of functions, uh,
+
+01:05:06.014 --> 01:05:09.134
+functions beginning with expect those functions.
+
+01:05:09.134 --> 01:05:13.453
+Um, these functions here follow the same convention and they actually could be used
+
+01:05:13.453 --> 01:05:15.374
+within the standard test that workflow.
+
+01:05:15.374 --> 01:05:20.894
+Uh, so you just have to provide, you know, test hyphen, um, some name provide, um,
+
+01:05:21.854 --> 01:05:23.693
+you know, point blanks, expect functions.
+
+01:05:23.693 --> 01:05:26.974
+You can mix them with, with, with test that's functions as well.
+
+01:05:26.974 --> 01:05:29.214
+And it works fine with test that's reporter.
+
+01:05:31.374 --> 01:05:31.933
+Okay.
+
+01:05:31.933 --> 01:05:36.974
+Uh, but, you know, as opposed to what you do with test that we're testing data instead.
+
+01:05:38.094 --> 01:05:38.653
+Okay.
+
+01:05:38.653 --> 01:05:43.933
+So let's look at our table here, small table, and we want to test the values in the SQL,
+
+01:05:43.933 --> 01:05:47.293
+uh, really trust column names in this table, but that's, that's what we have.
+
+01:05:48.173 --> 01:05:48.494
+Okay.
+
+01:05:48.494 --> 01:05:50.094
+So we have these values within that column.
+
+01:05:50.413 --> 01:05:50.813
+Okay.
+
+01:05:50.813 --> 01:05:55.134
+So say, for instance, we always expect that those values are between zero and 10.
+
+01:05:56.413 --> 01:05:57.614
+Is any values.
+
+01:05:57.614 --> 01:05:58.254
+Those are fine.
+
+01:05:58.254 --> 01:05:59.053
+We're going to permit those.
+
+01:05:59.053 --> 01:05:59.854
+We're going to pass those.
+
+01:06:00.734 --> 01:06:02.894
+So we can use expect call vials between.
+
+01:06:02.894 --> 01:06:06.254
+So it's just like call vials between we saw before, just expect in front of it.
+
+01:06:06.974 --> 01:06:07.614
+So we can run that.
+
+01:06:08.573 --> 01:06:08.974
+Okay.
+
+01:06:08.974 --> 01:06:12.254
+So any pass is true because we're, we're fine with any, any is passing.
+
+01:06:12.254 --> 01:06:14.014
+This is the left and right values.
+
+01:06:14.014 --> 01:06:15.693
+And this is the column we're checking.
+
+01:06:15.693 --> 01:06:16.173
+Okay.
+
+01:06:17.374 --> 01:06:17.933
+Run that.
+
+01:06:18.413 --> 01:06:18.894
+Run that.
+
+01:06:19.693 --> 01:06:20.573
+Oh, we see nothing.
+
+01:06:20.573 --> 01:06:22.173
+Nothing happened, which is actually good.
+
+01:06:22.173 --> 01:06:25.533
+Cause in test that you'd expect functions do nothing until they fail.
+
+01:06:27.053 --> 01:06:27.374
+Okay.
+
+01:06:28.173 --> 01:06:29.214
+Um, okay.
+
+01:06:29.214 --> 01:06:30.333
+Let's try something that fails.
+
+01:06:30.333 --> 01:06:34.173
+So we're doing it with a different range and obviously it's going to be, um, not all the
+
+01:06:34.173 --> 01:06:37.374
+values within this range are, are going to be within the range.
+
+01:06:37.374 --> 01:06:38.254
+So I'm going to run this.
+
+01:06:40.094 --> 01:06:40.573
+Great.
+
+01:06:40.573 --> 01:06:41.374
+We get error.
+
+01:06:41.374 --> 01:06:47.134
+Um, so it's just like the error you would use if you used, uh, call vials between directly
+
+01:06:47.134 --> 01:06:48.014
+on the data.
+
+01:06:48.014 --> 01:06:50.653
+It's very similar to that, except this works within the test that framework.
+
+01:06:50.653 --> 01:06:51.693
+That's the key difference here.
+
+01:06:53.693 --> 01:06:54.333
+Okay.
+
+01:06:54.333 --> 01:07:00.494
+So if you're doing test that use expect call vials between, or there's lots of options.
+
+01:07:00.494 --> 01:07:02.254
+You can use like these test values.
+
+01:07:03.053 --> 01:07:03.933
+They get true or false.
+
+01:07:03.933 --> 01:07:06.573
+And you can always use test that expect true or expect false.
+
+01:07:08.094 --> 01:07:09.134
+So a lot of ways to do it.
+
+01:07:10.254 --> 01:07:15.293
+Um, so just like there's 36, you know, like regular, uh, validation functions, we get 36
+
+01:07:15.293 --> 01:07:17.293
+expect functions, 36 test functions.
+
+01:07:18.254 --> 01:07:23.614
+Um, so one thing that you can do, this is like a little, little suggestion.
+
+01:07:24.413 --> 01:07:28.653
+Uh, you can use draft validation that we saw before to generate a validation plan with
+
+01:07:28.653 --> 01:07:30.333
+the data as a primary input.
+
+01:07:31.134 --> 01:07:33.533
+And then we have another function called write test that file.
+
+01:07:34.254 --> 01:07:38.813
+It'll create a test that dot R file using the agent from the draft validation file.
+
+01:07:39.453 --> 01:07:39.953
+Okay.
+
+01:07:40.813 --> 01:07:42.653
+So that is actually right here.
+
+01:07:42.653 --> 01:07:44.173
+I'm using game revenue.
+
+01:07:44.173 --> 01:07:45.854
+It's used a similar way as the other one.
+
+01:07:45.854 --> 01:07:52.653
+Use the tilde in front, give it a file name, and it'll actually create this test that file.
+
+01:07:52.653 --> 01:07:54.254
+And it says right here, generate by blank.
+
+01:07:54.813 --> 01:07:56.894
+It opens up, uh, uses library statements.
+
+01:07:51.905 --> 01:07:57.265
+runs a library statement, it loads the data, and then it creates a number of individual
+
+01:07:57.265 --> 01:08:07.905
+test that, like, functions to wrap up these expect functions in the end. And because it
+
+01:08:07.905 --> 01:08:11.544
+begins with test, you can run tests right away, which is kind of cool. So if you have,
+
+01:08:11.544 --> 01:08:17.165
+say, for instance, a dataset in your package, you can test that dataset. Maybe it changes
+
+01:08:17.165 --> 01:08:21.185
+once in a while, you want to update it, you want to make sure that, you know, things don't
+
+01:08:21.185 --> 01:08:26.625
+go out of your expected parameters when things get updated, you can always run this as part
+
+01:08:26.625 --> 01:08:36.824
+of your package checks, which is kind of neat. Great. Nice. Okay. So the test functions.
+
+01:08:36.824 --> 01:08:41.985
+So I alluded to this before, if they begin with test underscore, and it matches all the
+
+01:08:41.985 --> 01:08:47.065
+other ones, they give us a single true or false. So, for instance, if you wanted to
+
+01:08:47.065 --> 01:08:52.344
+have a script to error that had errors, if there aren't any values in a daytime column
+
+01:08:52.344 --> 01:08:59.184
+of a small table dataset, we can write this. There we go. So if not, test call vals not
+
+01:08:59.184 --> 01:09:03.504
+null, it's a little bit confusing because we're using not twice, then we should have
+
+01:09:03.504 --> 01:09:07.625
+the stop statement. I'm going to run this, and we'll see that we don't have stop, we
+
+01:09:07.625 --> 01:09:13.345
+don't have the error at all. This one does. In this case, we're getting billions here
+
+01:09:13.424 --> 01:09:19.585
+from these two things. We're negating both, and we're checking as an or. A little bit
+
+01:09:19.585 --> 01:09:24.225
+confusing, especially in a workshop, but I'm just going to run it, and it shows that because
+
+01:09:24.225 --> 01:09:33.504
+of these tests, we do have a true passing through, or I should say a false passing through
+
+01:09:33.504 --> 01:09:39.905
+in this case, and we do get this, there are problems with small table. Great. So these
+
+01:09:39.905 --> 01:09:46.385
+are just variants of the validation functions. They may be able to test or expect, and again,
+
+01:09:46.385 --> 01:09:51.305
+you can validate tabular data and test that workflow. I do this sometimes for other packages.
+
+01:09:51.305 --> 01:09:55.665
+I got a package called font awesome. I'm always changing the dataset because there's always
+
+01:09:55.665 --> 01:10:01.464
+new fonts being added, so I use these expect functions within that to make sure that certain
+
+01:10:01.464 --> 01:10:06.785
+things are what I expect, like nothing gets too different because I have functions acting
+
+01:10:06.785 --> 01:10:12.705
+on the data. So I definitely do use these expect functions a lot. And tests, really
+
+01:10:12.705 --> 01:10:18.584
+good for programming. You don't have to. There's other ways to get true or false. We saw with
+
+01:10:18.584 --> 01:10:23.744
+the X list, you can just obtain them, get that vector of true or false, but this is
+
+01:10:23.744 --> 01:10:31.304
+not bad for a quick Boolean thing or logical value when you need it. Again, I will check
+
+01:10:31.304 --> 01:10:37.705
+for questions. There is cucumber in addition to test that. Yeah. There's actually quite
+
+01:10:37.705 --> 01:10:42.905
+a few, when you really break it down, there's actually quite a few unit testing frameworks
+
+01:10:42.905 --> 01:10:50.744
+for R. And I hope with the options that you can use, you can use these with as many as,
+
+01:10:50.744 --> 01:10:59.145
+you know, with a wide range of them. Great. I'm not going to take a break from this one
+
+01:10:59.145 --> 01:11:02.785
+because this was a short section. I'm going to go right into the next section, which is
+
+01:11:02.785 --> 01:11:09.785
+section 5. We're skipping 4 because this is only a two-hour workshop. And this is a pretty
+
+01:11:09.785 --> 01:11:18.744
+important section. And essentially what this is, is the documenting part of point blank.
+
+01:11:18.744 --> 01:11:25.345
+So this is an introduction to data documentation. And it uses an entirely different set of functions,
+
+01:11:25.345 --> 01:11:29.985
+which are not validation, but more like getting metadata and trying to explain your data and
+
+01:11:29.985 --> 01:11:36.865
+still publishing what the data is. But this is more aligned with things like data dictionaries
+
+01:11:36.865 --> 01:11:43.425
+and data documentation. It goes by different names. And they were quite sure what the name
+
+01:11:43.425 --> 01:11:50.425
+of these things is what I'm saying. But I do think that a good thing to do often is
+
+01:11:50.425 --> 01:11:54.145
+to document our datasets. I'm reading this line right here. And we can do that through
+
+01:11:54.145 --> 01:11:59.744
+the use of several functions that let us define portions of information about a table.
+
+01:11:59.744 --> 01:12:03.345
+Okay. So, again, I just can't let go of a small table. I'm just going to use that here
+
+01:12:03.345 --> 01:12:11.105
+as well. And I'm saying let's document that small table dataset. It's easily available.
+
+01:12:11.105 --> 01:12:17.345
+It's right inside the package. Let's have a look at it again. Okay. Here it is. This
+
+01:12:17.345 --> 01:12:23.665
+is all of it. It's got these columns, date time, date, A, B, C, D, E, F. Not the most
+
+01:12:23.665 --> 01:12:28.864
+exciting table to document. But as an example, it's not too bad. We can at least see it all
+
+01:12:28.864 --> 01:12:34.545
+in front of us. There's only 13 rows. But really, when you're documenting data, you're
+
+01:12:34.545 --> 01:12:38.704
+not really concerned about the rows. You're more concerned about what the columns are,
+
+01:12:38.704 --> 01:12:46.825
+what the table represents, how you use it. More description type things than values.
+
+01:12:47.065 --> 01:12:49.785
+Values do play a part in this. And I'll show you that soon.
+
+01:12:52.264 --> 01:12:56.825
+So, to start the process, we have another create function. This time it's called create
+
+01:12:56.825 --> 01:13:03.545
+informant. And this creates an informant object that is a bit different from the agent object.
+
+01:13:03.545 --> 01:13:07.785
+Okay. But it looks similar in terms of the way it's set up. We have table, table name,
+
+01:13:07.785 --> 01:13:13.385
+label. Those are the same arguments as in create agent. I'm going to pass a small table.
+
+01:13:14.024 --> 01:13:19.385
+This is just a name that's going to be used in the report. And we're going to call this
+
+01:13:19.385 --> 01:13:24.424
+metadata for the small table dataset. And as before, you just have to print the object to
+
+01:13:24.424 --> 01:13:31.144
+see it. Okay. So, we'll run that now. Okay. This table is not as wide as the other one.
+
+01:13:31.144 --> 01:13:33.864
+So, I don't have to scroll to the right constantly like I did before.
+
+01:13:36.105 --> 01:13:39.545
+And again, we can customize this. You don't have to always see point blank information.
+
+01:13:39.545 --> 01:13:44.905
+You can change this. There's a function for that. But what it shows you, again, is what type
+
+01:13:44.905 --> 01:13:50.345
+of table this is, the name that we gave it, small table. It gives us the dimensions at the top.
+
+01:13:50.345 --> 01:13:55.304
+Because it's pretty important to know more about the table. This is all about table metadata.
+
+01:13:55.304 --> 01:14:03.785
+So, we have right away rows and columns. Cool. And what we have here is another section. It
+
+01:14:03.864 --> 01:14:10.184
+really just has columns. And then each of the column names in a box. And then each of the
+
+01:14:10.184 --> 01:14:17.625
+column types just beside. Okay. So, that's what we start off with. It's not much, but it's something
+
+01:14:17.625 --> 01:14:23.785
+to go on. Okay. So, that's how we begin. Okay. So, it's automatically generating information.
+
+01:14:25.225 --> 01:14:28.424
+Obviously, you know, this program knows nothing about what's actually in the columns or how to
+
+01:14:28.424 --> 01:14:32.345
+describe them. You provide that. And I'll show you how to do that next. So, we have like three
+
+01:14:32.345 --> 01:14:40.024
+functions here. They all begin with info. Info underscore. So, info tabular. This is where you
+
+01:14:40.024 --> 01:14:46.505
+just add some text. And it's just pertaining to the data table as a whole. You just want to give
+
+01:14:46.505 --> 01:14:52.744
+like an introductory paragraph. And it goes to the top. Info columns. This is for adding
+
+01:14:52.744 --> 01:14:57.065
+information for each table column. So, right now we see like a lack of information. We have nothing
+
+01:14:57.065 --> 01:15:05.225
+here to the sides. This is how you add information to each of these rows. And finally, info section.
+
+01:15:05.864 --> 01:15:11.704
+This is more like a free form type thing. It lets you add sections of text and provide
+
+01:15:11.704 --> 01:15:15.225
+ancillary information. So, basically you can add multiple sections, add text within those sections,
+
+01:15:15.785 --> 01:15:20.825
+use markdown. So, you can provide all sorts of information, like the table user, stakeholders,
+
+01:15:21.704 --> 01:15:26.984
+contact info, whatever you want. You can just add sections based on any metadata that is
+
+01:15:27.704 --> 01:15:31.625
+important. But it will be at the bottom of the table, the report table at the end.
+
+01:15:33.065 --> 01:15:37.785
+Okay. Enough talking. Let's actually try doing this with some code. So, I'm going to start over
+
+01:15:37.785 --> 01:15:43.464
+again. Create informant with small table. Example two. In this case, I'm using info tabular. The
+
+01:15:43.464 --> 01:15:47.625
+argument is description. You can leave that out. There's only one argument. And we're just saying
+
+01:15:47.625 --> 01:15:52.984
+this table is included in the point blank package. I've used markdown here. You can see the two stars
+
+01:15:52.984 --> 01:15:59.625
+on each side. This will be bold. So, markdown is just assumed as being there. Okay. Info columns.
+
+01:15:59.625 --> 01:16:04.825
+Date time. Only doing what? I'm only describing the date time column. And what I'm providing is
+
+01:16:05.945 --> 01:16:10.345
+info. Actually, that's not the name of the argument. You can actually use any argument
+
+01:16:10.345 --> 01:16:20.105
+name you want. It will basically just like use that in what's written below. You'll see. So,
+
+01:16:20.105 --> 01:16:23.704
+it will say this column is full of timestamps. And that's how I'm describing date time.
+
+01:16:24.264 --> 01:16:28.105
+Okay. Finally, this one is a bit more complicated. Info section. You provide your arguments again.
+
+01:16:29.624 --> 01:16:32.745
+So, section name, further information. And then within that section,
+
+01:16:33.545 --> 01:16:39.064
+examples and documentation. And then we can write some multiline markdown here. Okay. I'm going to
+
+01:16:39.064 --> 01:16:47.144
+run this. Great. Okay. I'm going to scroll down a little bit here. I'm going to see if I can pop
+
+01:16:47.144 --> 01:16:52.745
+this out just so we can see this a little bit better. Great. I'm going to try that. Here we go.
+
+01:16:52.745 --> 01:16:59.865
+This is slightly better. A little bit small. Okay. That's much better. Okay. So, this is info
+
+01:16:59.865 --> 01:17:03.785
+tabular. The text I provided. Description. The table is included in the point blank package. I'm
+
+01:17:03.785 --> 01:17:07.384
+going to scroll up so you can see where it comes from. Description. That's where description comes
+
+01:17:07.384 --> 01:17:13.704
+from. And then this bit of text is right here. Rendered as HTML from the markdown. Columns,
+
+01:17:13.704 --> 01:17:20.024
+the first column is date time. We just so happen to provide that in info columns, the info, which
+
+01:17:20.024 --> 01:17:25.704
+is right here. So, basically, this bit of text, like this label, or this argument name, becomes
+
+01:17:25.704 --> 01:17:30.745
+this label. And then, like, this column is full of timestamps is this text right here. So, you can
+
+01:17:30.745 --> 01:17:39.305
+associate data, metadata, to each of the columns. Great. And then, finally, info section. That lets
+
+01:17:39.305 --> 01:17:45.384
+you add sections to the back. It's a bit multi tiered. Because we have one call of it. And this
+
+01:17:45.384 --> 01:17:49.785
+is a real argument called section name. We call that further information. That's right here.
+
+01:17:50.504 --> 01:17:54.425
+And then within that, we can have multiple of these. But we just chose one. Example of
+
+01:17:54.425 --> 01:17:58.185
+documentation. That's right here. And then the large piece of text we have right here.
+
+01:17:58.985 --> 01:18:03.624
+And this is a link. Because it's all just markdown and this does work. Because it's just using
+
+01:18:03.624 --> 01:18:12.264
+column mark to render that. Okay. I'm going to close this up. So, that's a very basic way of
+
+01:18:12.264 --> 01:18:17.464
+doing this. Okay. And, of course, we can go further. We can describe each of the columns.
+
+01:18:19.064 --> 01:18:25.704
+But I want to keep going a little bit more on, again, what you use these for. So, tabular, again,
+
+01:18:25.704 --> 01:18:32.185
+is for stuff at the top to the table section. Okay. Use named arguments to define the subsection
+
+01:18:32.185 --> 01:18:36.985
+names. So, it can be description or it can be something else. And you just put in some text.
+
+01:18:38.905 --> 01:18:45.384
+Okay. Ideas. For instance, you can have, like, high level summary of the table.
+
+01:18:46.584 --> 01:18:49.305
+What each row of the table represents. You can describe that.
+
+01:18:49.305 --> 01:18:56.264
+The main users of the table. Description of how the table is generated. Information on the
+
+01:18:56.264 --> 01:19:02.745
+frequency of updates. These are just suggestions. But they're pretty good. Okay. I'll get a little
+
+01:19:02.745 --> 01:19:06.824
+more into info columns, though. Because that's really where the most of the work should be done.
+
+01:19:07.785 --> 01:19:14.185
+You want to describe each of the columns. Okay. So, create informant is how you create the report.
+
+01:19:14.985 --> 01:19:21.545
+Info columns is for adding information. And to add information to the columns, you'd have to
+
+01:19:21.545 --> 01:19:26.665
+have a separate call each time in the columns. There's no way to bulk, you know, provide
+
+01:19:26.665 --> 01:19:30.584
+information. There is a way with a separate function, but not with info columns. Okay.
+
+01:19:31.545 --> 01:19:36.024
+Okay. So, let's try this with a much more interesting dataset. Let's use the penguins
+
+01:19:36.024 --> 01:19:42.824
+dataset. In this case, this is a very long bit of code. But basically, what I'm doing,
+
+01:19:43.785 --> 01:19:49.704
+I'm creating the informant using penguins. Providing some information at the top. This
+
+01:19:49.704 --> 01:19:54.345
+is a label. And then each of the columns, I'm providing a description. Using markdown wherever
+
+01:19:54.345 --> 01:20:04.665
+possible. And another cool thing is that you don't quite see it yet. But you might notice that
+
+01:20:05.545 --> 01:20:13.225
+I used ends with mm. So, all these columns here, they end with mm. And if you use info columns,
+
+01:20:13.225 --> 01:20:19.144
+all the text you add is additive. It will just keep appending the text to the back.
+
+01:20:19.785 --> 01:20:23.464
+So, the order is essential here. So, basically, we're saying these columns right here,
+
+01:20:23.464 --> 01:20:27.225
+they have different bits of text, but they all pertain to some sort of units. Millimeters,
+
+01:20:27.225 --> 01:20:31.064
+in this case. So, we can actually use this. Anything that ends with millimeters,
+
+01:20:31.944 --> 01:20:35.944
+which are these columns right here, will get this extra bit of text in parentheses,
+
+01:20:35.944 --> 01:20:42.024
+in units of millimeters. So, kind of cool. So, let's run that. So, we can sort of see it.
+
+01:20:43.785 --> 01:20:46.824
+Okay. I'm going to scroll down. I'm going to learn my lesson and just make this
+
+01:20:47.944 --> 01:20:55.384
+into a separate window. And expand this. And zoom a little bit here. Okay. Great. So,
+
+01:20:55.384 --> 01:21:00.105
+we add the pieces of text. And the new thing I want to note is that besides adding text for all
+
+01:21:00.105 --> 01:21:05.384
+these, this in units of millimeters wasn't repeated three times for each of these. It was
+
+01:21:05.384 --> 01:21:10.425
+just added multiple times with some type select statements. Because of the property of each time
+
+01:21:10.425 --> 01:21:16.745
+you call these, it will just keep adding text to the same key here at the end. So, we can add some
+
+01:21:16.745 --> 01:21:29.144
+common text to multiple columns. So, that's kind of cool. Okay. And scroll down.
+
+01:21:30.425 --> 01:21:36.105
+So, again, type select. We can use all of them. All the different ones which are most useful are
+
+01:21:36.105 --> 01:21:41.144
+things like starts with, ends with, contains, matches, and everything, in case you want to
+
+01:21:41.144 --> 01:21:47.624
+include something to every column. Some piece of text. Pretty useful when you have things which
+
+01:21:47.624 --> 01:21:56.105
+are common or maybe the text is the same for multiple columns. Okay. So, info section. So,
+
+01:21:56.504 --> 01:22:03.384
+it's that's a bit of a bigger function in that you can add multiple sections at the end of that
+
+01:22:05.305 --> 01:22:10.024
+informant table. But this is information that doesn't fit at the top, like the table or the
+
+01:22:10.024 --> 01:22:14.185
+column sections. So, it's kind of almost like additional information or reference information
+
+01:22:14.185 --> 01:22:21.464
+that's important. So, some of it might be like source information. Like, for instance, the
+
+01:22:22.024 --> 01:22:28.665
+citations for the papers that were used to get the dataset or the dataset was involved with.
+
+01:22:29.384 --> 01:22:33.305
+So, I'm going to run that. So, I'm going to take that same data or that same object,
+
+01:22:33.944 --> 01:22:39.545
+just add on info section with the section name source, and then provide this multiline markdown.
+
+01:22:40.665 --> 01:22:44.824
+Okay. I'm going to run that. Scroll down.
+
+01:22:44.824 --> 01:22:55.305
+There we are. Okay. So, this hasn't changed. But this has. So, now we have references
+
+01:22:55.305 --> 01:23:01.225
+appearing at the top here. And these are all nicely formatted. These DOI links, they do what
+
+01:23:01.225 --> 01:23:06.425
+they're supposed to. The links are nicely formatted because of some internal stuff that we do in terms
+
+01:23:06.425 --> 01:23:11.785
+of styles. So, that's great. And the note here is basically just an additional note we put in,
+
+01:23:11.785 --> 01:23:17.384
+another piece of text. Okay. So, this is great. So, you can do anything you want with this last
+
+01:23:17.384 --> 01:23:21.624
+function, which is like info section. As many sections as you want, as much text as you want,
+
+01:23:23.624 --> 01:23:26.504
+for things which are not, don't need to be up front or don't need to be,
+
+01:23:26.504 --> 01:23:33.785
+don't really pertain exactly to individual columns. Great. We'll close this.
+
+01:23:37.305 --> 01:23:40.905
+Okay. And then, yeah. Basically, I'm going through some ideas about other things that
+
+01:23:40.905 --> 01:23:45.704
+could go in the back. I'll just run through them because why not? Info related to the source,
+
+01:23:45.704 --> 01:23:50.985
+definitions, explanations, person's responsible, further details on table production,
+
+01:23:52.185 --> 01:23:57.464
+important issues with the table, notes on upcoming changes, links to other information,
+
+01:23:57.464 --> 01:24:01.624
+report generation metadata, include things like update history, person's responsible.
+
+01:24:02.504 --> 01:24:10.745
+If you can do it with Markdown, then you can do it here. Okay. And I want to say, as before,
+
+01:24:11.624 --> 01:24:15.704
+you don't have to see that title at the top, which says point blank informant. You can just get rid
+
+01:24:15.704 --> 01:24:20.905
+of that, change it. You can use get informant report, and you provide options there.
+
+01:24:23.545 --> 01:24:28.105
+Mostly with the title, you can change the width of the table a bit. So, it fits, like, you know,
+
+01:24:28.105 --> 01:24:32.905
+like whatever your main document you're putting this into. This is kind of like a keyword.
+
+01:24:34.105 --> 01:24:37.704
+This is all in the documentation for get informant report. You can include some static text or this
+
+01:24:37.704 --> 01:24:42.425
+keyword with quotes or sorry, with colons on each side, table name. So, the title will just
+
+01:24:42.425 --> 01:24:47.785
+become the table name. Let's actually run that right here. It's fine to just show it here and
+
+01:24:47.785 --> 01:24:51.545
+just close it up. It just says penguins because that's the data set we're using, the table name,
+
+01:24:51.545 --> 01:24:58.344
+it just being hoisted up as the title of this whole report. Great. And you might notice that
+
+01:24:58.344 --> 01:25:05.224
+it was not as wide because it's now 600px. Great. And as I've mentioned before, we have this
+
+01:25:05.224 --> 01:25:09.224
+function that does a lot called export report. You can use it with scan data reports. You can
+
+01:25:09.224 --> 01:25:14.905
+use it with the validation report. It just gives you an opportunity to take that object and to make
+
+01:25:14.905 --> 01:25:20.905
+HTML out of that. So, you can embed that anywhere else that you want it. So, that's export report
+
+01:25:20.905 --> 01:25:29.864
+here. And I would say there's definitely more to this than that. So, there's actually another QMD
+
+01:25:30.744 --> 01:25:35.305
+which we want to get hopefully done. It's called getting deeper into data documentation.
+
+01:25:38.425 --> 01:25:41.305
+And I won't waste any time getting to it because it's actually pretty useful. That's what
+
+01:25:42.264 --> 01:25:48.264
+might seal the deal in terms of using this. Okay. So, there's more you can do. You can provide
+
+01:25:48.264 --> 01:25:55.705
+static text or you could do things like actually use parts of the data to change the text. Okay.
+
+01:25:56.344 --> 01:26:04.264
+And that's in the concept of snippets. Info snippet is one thing. And there's other versions
+
+01:26:04.264 --> 01:26:09.785
+of this. But let me show what that does. Okay. And best examples. But I want to set the stage
+
+01:26:09.785 --> 01:26:14.425
+saying that, you know, lots of information about the table could be from the table itself. So,
+
+01:26:14.425 --> 01:26:21.144
+if you wanted to show some categorical values from a column, you could just take those from the data
+
+01:26:21.144 --> 01:26:26.585
+instead of typing those in yourself. Or you wanted a range of values in an important numeric
+
+01:26:26.585 --> 01:26:32.344
+column. You can obtain that from the data. It could be KPI values that you can calculate using
+
+01:26:32.344 --> 01:26:37.624
+data from the table. So, you can actually fashion a function to get information from the table,
+
+01:26:37.624 --> 01:26:42.665
+include it in your documentation. So, I'll be done with the info snippet function.
+
+01:26:44.024 --> 01:26:47.945
+Let's look at small table again. We're getting away from penguins. That's the small table.
+
+01:26:48.585 --> 01:26:52.665
+Because it's simple and it might illustrate our points better. Okay. Very small table. We've got
+
+01:26:52.665 --> 01:26:58.905
+numeric values and things like that. So, D, we could, for instance, we could make a function
+
+01:26:58.905 --> 01:27:05.144
+or make a small pipeline here to get the mean and round the value. Great. Okay. That's nice.
+
+01:27:05.144 --> 01:27:11.945
+So, it just proves that we can take the data and use it. So, let's do that. And apologize for the
+
+01:27:12.344 --> 01:27:19.065
+pipes. Don't have it yet in terms of native R pipes in these examples. But you could do it that
+
+01:27:19.065 --> 01:27:25.305
+way, too. But the idea here is that you create an informant and we're creating a snippet. We're
+
+01:27:25.305 --> 01:27:30.665
+giving it a name, mean D, and a function. We're buying a function to get that value. So, I'll run
+
+01:27:30.665 --> 01:27:37.224
+that. Great. I'm not showing the report because we're actually not done yet. We have mean D.
+
+01:27:37.864 --> 01:27:43.384
+Okay. But what are we doing with it? Well, we're going to insert that into some text. So, the next
+
+01:27:43.384 --> 01:27:48.185
+thing we're going to do is take that same object, use info columns. In this case, we're looking at
+
+01:27:48.185 --> 01:27:52.984
+column D. And we're seeing here this column contains fairly large numbers, much larger than
+
+01:27:52.984 --> 01:27:57.785
+the numbers in column A. Have to write something. The mean value is, oh, check this out, in curly
+
+01:27:57.785 --> 01:28:03.624
+braces, mean D. That corresponds to this right here. So, we define what the snippet is, the
+
+01:28:04.425 --> 01:28:11.305
+snippet of text. We can insert it also with curly braces. And let's actually run that.
+
+01:28:13.465 --> 01:28:21.465
+Great. Okay. Let's keep going. I'm going to do more of it. I'm going to write the whole thing again.
+
+01:28:24.344 --> 01:28:28.665
+So, we see it all together. Create informant. Create the snippet. So, we're getting some
+
+01:28:29.624 --> 01:28:37.384
+aggregate value from some of our data right here. We're calling it mean D. We're inserting it in a
+
+01:28:37.384 --> 01:28:42.984
+piece of text. And then because we have to access the data, we have to give permission to do that.
+
+01:28:42.984 --> 01:28:47.305
+We have to use incorporate. So, it's just like interrogate. If we're doing any of this stuff
+
+01:28:47.305 --> 01:28:52.504
+where we actually have to access the data, we have to use a function. In this case, that function is
+
+01:28:52.504 --> 01:29:01.785
+called incorporate. Okay. I'm going to run that. Okay. Okay. Kind of cool. It says some things in
+
+01:29:01.785 --> 01:29:06.665
+the console. Incorporation started. There's a single snippet to process. Information gathered,
+
+01:29:06.665 --> 01:29:12.585
+snippets processed, information built. Okay. Cool. That's encouraging. I'm going to run this now.
+
+01:29:15.545 --> 01:29:18.264
+Okay. Now I'm really excited to get down to the column which I changed, which is D.
+
+01:29:18.984 --> 01:29:24.264
+That's the only column. Oh, of course, it's cut off. There we go. Okay. This column contains
+
+01:29:24.264 --> 01:29:28.344
+fairly large values, blah, blah, blah. And then the mean value is, oh, cool, this value I got
+
+01:29:28.344 --> 01:29:34.825
+right here. Nice. Which is far greater than any number in any of that other column. Doesn't matter
+
+01:29:34.825 --> 01:29:38.905
+what I said. But the key thing is, like, this value can change over time. Your table may change.
+
+01:29:38.905 --> 01:29:43.705
+But these values update. As long as you run that whole thing, use incorporate, it will take that
+
+01:29:43.705 --> 01:29:49.465
+recipe and you're allowed to insert values that you can obtain from the table, which is kind of
+
+01:29:49.465 --> 01:29:54.825
+cool for evolving tables. It's really kind of neat. It means that if you do run this, it doesn't get
+
+01:29:54.825 --> 01:30:00.984
+stale. You don't have to use manual values. It's really cool. And we have some variants. We built
+
+01:30:00.984 --> 01:30:08.185
+in some of these common some of the snippet functions for common things. So, we got a few
+
+01:30:08.185 --> 01:30:13.545
+functions available to make it easier to get commonly used text snippets. Okay. So, snip list.
+
+01:30:14.264 --> 01:30:21.624
+What it does is get a list of column categories. Nice. Snip lowest and highest. Get the lowest
+
+01:30:21.624 --> 01:30:28.104
+and highest value from a column. You can use that in a min or max type situation. Snip stats. Get
+
+01:30:28.104 --> 01:30:35.864
+an inline stat summary. Kind of cool. Okay. So, let's see how those are used. So, each of these
+
+01:30:35.864 --> 01:30:40.185
+functions can be used directly as an FN value and info snippet. And we don't have to specify
+
+01:30:40.984 --> 01:30:46.264
+the table since it assumes the target table is the one we're snipping data from. So, let's have a look
+
+01:30:46.264 --> 01:30:51.624
+at that. Let's go back to a good dataset, penguins. And we're going to say here we're going to get two
+
+01:30:51.624 --> 01:30:58.504
+snippets. Snip a list. We're going to get species. Okay. So, basically getting a list of values from
+
+01:30:58.504 --> 01:31:03.465
+the species column and a list of values from the island column. We want to know our islands.
+
+01:31:06.104 --> 01:31:11.785
+Oh, and here's where it's used. Nice. And here's where the other one's used. Cool. Okay. Let's see
+
+01:31:11.785 --> 01:31:20.024
+it. Okay. I'm running that. And the console said stuff. Two snippets to process. Great. All check
+
+01:31:20.024 --> 01:31:29.384
+marks. Now let's look at this. And I'm going to zoom. Expand that. Okay. Very cool. I'm going
+
+01:31:29.384 --> 01:31:34.264
+to compare that against the text that we have. A factor. Okay. Species. A factor denoting penguin
+
+01:31:34.264 --> 01:31:40.984
+species. And then we said species snippet. Cool. Okay. Nice. That's right here. And then it just
+
+01:31:40.984 --> 01:31:46.185
+got that because a snip list. Okay. This can change over time. There can be less, you know,
+
+01:31:46.185 --> 01:31:53.305
+more species can be added. This will just keep track of that. And we use that snippet for island
+
+01:31:53.305 --> 01:32:00.344
+snippet right here. A factor denoting the island in the Palmer archipelago Antarctica. So, we have
+
+01:32:00.344 --> 01:32:06.185
+that list right here. So, it was obtained from the data, which is kind of cool. Great.
+
+01:32:08.905 --> 01:32:14.425
+Nice. So, I'll close that. So, it also works for numeric values. Let's use snip list
+
+01:32:14.984 --> 01:32:20.665
+to provide a text snippet based on values in the year column. Okay. So, in this case, we're
+
+01:32:20.665 --> 01:32:26.744
+creating a snippet. Year. I will run that. I'm using the same object over and again. So, it's
+
+01:32:26.744 --> 01:32:32.185
+going to basically add to the same thing. I use incorporate as well. Really important here if you
+
+01:32:32.185 --> 01:32:40.665
+use snippets. Okay. I'm going to run this. And do this. So, the year should be put in as well.
+
+01:32:41.305 --> 01:32:49.785
+Here we go. Info for integer. Sorry, for year. The study year. 2007, 2008, and 2009. Nice.
+
+01:32:53.224 --> 01:32:58.905
+Great. So, it can be used for numbers and also for categories, text. Okay. Snip lowest and snip
+
+01:32:58.905 --> 01:33:02.984
+highest. I think you know where I'm going with this one. I'm going to create those snippets.
+
+01:33:03.305 --> 01:33:09.465
+Here's a cool thing. Min depth. I specified it down here, but I'm using it up here. So,
+
+01:33:09.465 --> 01:33:12.425
+the order doesn't really matter in the end, which is kind of nice. You don't have to worry about
+
+01:33:12.425 --> 01:33:18.825
+that, which is super, super nice. There we go. I just want to demonstrate that. It could be down
+
+01:33:18.825 --> 01:33:28.264
+below. It could be all gathered up in one sort of spot. It shouldn't affect the outcome. Great.
+
+01:33:28.825 --> 01:33:34.504
+Now, we have lots of snippets because we keep adding to this one informant object. Now,
+
+01:33:34.504 --> 01:33:38.425
+there's six in total. It keeps doing the other ones, too. Okay. So, let's print this out.
+
+01:33:41.545 --> 01:33:50.344
+Great. We'll expand this. There we are. Okay. There we go. Integer denoting flipper length
+
+01:33:50.905 --> 01:33:55.384
+Okay. There we go. Integer denoting flipper length in units of millimeters.
+
+01:33:55.384 --> 01:34:04.185
+Largest observed is 231 mm. Great. Because of this. There we are. This text right here. So,
+
+01:34:04.185 --> 01:34:08.665
+we just insert the number there. And this one for bill depth millimeters, a number
+
+01:34:08.665 --> 01:34:17.465
+denoting bill depth in the range of 13.1 to 21.5 millimeters. That is up here. Great.
+
+01:34:18.024 --> 01:34:23.864
+So, yeah, kind of cool. Like, your data can, again, your data can change. This keeps up with
+
+01:34:23.864 --> 01:34:32.104
+that, with those changes. You do all sorts of other things, too. You can use little tiny,
+
+01:34:33.945 --> 01:34:40.024
+well, small conventions like links can be written like this or link text like that.
+
+01:34:40.585 --> 01:34:46.104
+And dates can be enclosed in parentheses. And they can be formatted differently, is what I'm
+
+01:34:46.104 --> 01:34:51.705
+saying. So, point blank will try to find certain things and try to make them look a little bit
+
+01:34:51.705 --> 01:34:57.465
+different. And so, let's actually take a look at that in action here. So, in this case, I'm putting
+
+01:34:57.465 --> 01:35:08.665
+a date within parentheses. Good stuff. And links, well, I don't know if you can see this, but
+
+01:35:09.545 --> 01:35:13.945
+well, this is not much different than when you have a markdown. But the dates thing is definitely
+
+01:35:13.945 --> 01:35:18.024
+different. But let's run this. Again, we're using the same object over and over again,
+
+01:35:18.024 --> 01:35:25.705
+rewriting it and seeing the change. Okay. No new snippets, just more text. I'm going to run this.
+
+01:35:28.104 --> 01:35:35.624
+Expand that out. Okay. So, we see here there's a date. It just has another line.
+
+01:35:36.185 --> 01:35:39.945
+Sometimes dates are important. So, that's what that does. If you include parentheses around a
+
+01:35:39.945 --> 01:35:48.825
+date, it'll just do that. And here, some nicely styled links. Basically, the underline appears
+
+01:35:48.825 --> 01:35:55.144
+when you hover over. And that's all I want to say about that. But kind of cool that you can do that.
+
+01:35:58.425 --> 01:36:04.825
+Okay. Labels. So, this is maybe getting a little bit too far. But we can actually enclose
+
+01:36:05.624 --> 01:36:11.465
+bits of text with double parentheses or triple parens for different types of labels.
+
+01:36:12.825 --> 01:36:18.264
+Like a rectangular label or a rounded rect label. Okay. So, you can do things like this.
+
+01:36:20.984 --> 01:36:26.185
+So, let's just do that. And run this. Okay. No new snippets. Same as before.
+
+01:36:26.185 --> 01:36:29.785
+It's good to see that it does that, though. We just add more text.
+
+01:36:30.744 --> 01:36:34.825
+And we have to scroll to the very bottom to see that. And, of course, I'm going to pop this out
+
+01:36:34.825 --> 01:36:42.185
+first. Okay. Now, I will scroll. Maybe zoom in a little bit. Additional notes. Data types,
+
+01:36:42.185 --> 01:36:47.624
+factor, numeric, integer. That's based on this right here. This section we added additional
+
+01:36:47.624 --> 01:36:54.984
+notes, data types, the subsection. And it just has text with the triple parens making, like,
+
+01:36:55.785 --> 01:36:59.864
+these rounded rectangle labels. Sometimes good to have.
+
+01:37:04.344 --> 01:37:11.945
+Great. Okay. Style text. There's many more things you can do. You can also add in
+
+01:37:12.825 --> 01:37:19.384
+double angle brackets. You can put in some CSS. Just a quick way to style it any way you want.
+
+01:37:19.945 --> 01:37:24.185
+These are just a few suggestions that work well. You can change the color of the text,
+
+01:37:24.185 --> 01:37:28.984
+the background color. Do some text decoration, like, overlines, line throughs, underlines.
+
+01:37:30.024 --> 01:37:35.545
+Change the font style, letter spacing, a border around it. Change the font.
+
+01:37:37.144 --> 01:37:43.624
+Things like that. Bold, italic. The font size. All sorts of things.
+
+01:37:44.104 --> 01:37:48.504
+Let's try one more example where we take
+
+01:37:52.264 --> 01:37:58.744
+these labels and we do change, like, the border values. Okay. This may be the last one, I think.
+
+01:38:00.585 --> 01:38:09.465
+Okay. Great. I'm going to run this. And there's just so you know, there's two vignettes in the
+
+01:38:09.465 --> 01:38:13.705
+point blank website that shows all the stuff. Like, basically runs through exactly this,
+
+01:38:13.705 --> 01:38:17.624
+aside from, like, the content here. So, this is, like, pretty easy to find,
+
+01:38:17.624 --> 01:38:22.344
+this reference material. But here. We have these values that are in
+
+01:38:23.864 --> 01:38:30.504
+square, square bordered labels. And they have color fills for each of these. So, this might be
+
+01:38:30.504 --> 01:38:36.665
+good if you want to color code certain things. And not bad for metadata. Especially things like
+
+01:38:36.665 --> 01:38:45.224
+keywords and data types. So, that's that. Okay. And that's finally it. Basically, we have a lot
+
+01:38:45.224 --> 01:38:50.024
+of snippet functions and we have info snippet, as well, where you provide your own function.
+
+01:38:50.825 --> 01:38:55.864
+Again, we have several provided that you can just use inside the function argument. And that's a way
+
+01:38:55.864 --> 01:39:03.705
+to query the table and to produce text that goes within your own text. You just use curly braces
+
+01:39:03.705 --> 01:39:10.984
+to insert the snippets, the snippet values. And if you print out, you always see this sort of
+
+01:39:10.984 --> 01:39:15.705
+thing. Incorporation started. You have to use incorporate. If you see that you still have
+
+01:39:16.665 --> 01:39:21.305
+curly braces in your text, that means you didn't use incorporate or maybe something worse happened.
+
+01:39:22.425 --> 01:39:26.104
+But that's usually what happens or what doesn't happen if you don't use incorporate.
+
+01:39:27.065 --> 01:39:35.065
+And that is kind of it. Hopefully, this is a way to somewhat easily get data into
+
+01:39:36.665 --> 01:39:42.344
+sort of like an object that you can publish and provides information for other people that might
+
+01:39:42.344 --> 01:39:47.705
+want to use the data. I'm going to look at questions. And that really is like the end of my content here.
+
+01:39:47.705 --> 01:39:53.144
+And now I think for the last 5, 10 minutes, I will just take questions. It could be any question.
+
+01:39:53.945 --> 01:39:56.024
+Doesn't matter with me. I will answer them.
+
+01:40:00.024 --> 01:40:03.624
+And in addition to questions, there's actually some really funny comments in here.
+
+01:40:04.185 --> 01:40:13.465
+Like mean underscore D smells like glue. It is kind of like glue. I think it might even use glue
+
+01:40:13.465 --> 01:40:22.585
+under the hood. So basically don't use glue again, essentially, with any of these text snippets.
+
+01:40:23.144 --> 01:40:31.224
+Okay. Got another question. What are some of the more important use cases of generating HTML
+
+01:40:31.224 --> 01:40:37.224
+data documentation? So if I publish data in a package, I might write a core document about it.
+
+01:40:37.224 --> 01:40:42.905
+That's kind of it. It might be for things like colleagues, people you're onboarding with
+
+01:40:42.905 --> 01:40:49.945
+datasets, especially if you have core datasets that, you know, they update frequently. And
+
+01:40:50.504 --> 01:40:55.545
+understanding it is very essential to carrying out your work. This is like a, quote, unquote,
+
+01:40:55.545 --> 01:41:00.185
+nice thing to do. But I also want to make it easy. And there's actually some functions which
+
+01:41:00.185 --> 01:41:06.264
+I haven't covered in here which allow you to get allow you to do the bulk thing of like
+
+01:41:07.065 --> 01:41:14.024
+use a data frame filled with descriptions of columns and then apply them to the columns in
+
+01:41:14.024 --> 01:41:18.665
+one pass. And you can imagine combining that with Excel, for instance. Someone might start in Excel,
+
+01:41:19.305 --> 01:41:25.465
+grab that data into a data frame and then use this function to get those pieces of text instead
+
+01:41:25.465 --> 01:41:30.504
+of using info columns multiple times. Which is fine. But there's other ways to do it. So
+
+01:41:32.825 --> 01:41:36.825
+because lots of ways to document or not document data is what I'm saying.
+
+01:41:38.344 --> 01:41:42.984
+So got a question here. When point blank is used on database tables, are the calculations
+
+01:41:42.984 --> 01:41:48.504
+performed in the database or is the data pulled locally first? Definitely the first one,
+
+01:41:48.504 --> 01:41:50.905
+in the database.
+
+01:41:49.245 --> 01:41:54.245
+are the calculations performed in the database, or is the data pulled locally first?
+
+01:41:54.245 --> 01:41:59.245
+Definitely the first one, in the database.
+
+01:41:59.245 --> 01:42:04.245
+We do everything with dbplyr,
+
+01:42:04.245 --> 01:42:09.245
+which is loaded at dplyr load time,
+
+01:42:09.245 --> 01:42:14.245
+and we don't purposefully collect any data before everything is summarized down
+
+01:42:14.245 --> 01:42:19.245
+into the final results.
+
+01:42:19.245 --> 01:42:24.245
+Oh, yes.
+
+01:42:24.245 --> 01:42:29.245
+Eric said my adventures with pointblank can be seen.
+
+01:42:29.245 --> 01:42:34.245
+I love this before, and I have to admit, I almost forgot about it.
+
+01:42:34.245 --> 01:42:39.245
+But it's wild.
+
+01:42:39.245 --> 01:42:44.245
+I loved it, and there's a link to it right now in the webinar chat to go see it.
+
+01:42:44.245 --> 01:42:49.245
+And I do recommend seeing it.
+
+01:42:49.245 --> 01:42:54.245
+Okay, I'm just going to stop, wait for questions.
+
+01:42:54.245 --> 01:42:59.245
+It could be anything. It could be comments, what have you.
+
+01:42:59.245 --> 01:43:04.245
+It's fine.
+
+01:43:04.245 --> 01:43:09.245
+Okay, well, thank you for joining us today.
+
+01:43:09.245 --> 01:43:14.245
+And if you don't mind, I may ask one or two more things, because it's not every day we get to have you talk to us about all things pointblank.
+
+01:43:14.245 --> 01:43:19.245
+I've always been one of those people that subscribes to learning by doing.
+
+01:43:19.245 --> 01:43:24.245
+And so that little table contest was a great nudge to take your previous materials.
+
+01:43:24.245 --> 01:43:29.245
+And now, obviously, with this material, it's even more of abundance of materials to choose from.
+
+01:43:29.245 --> 01:43:34.245
+And one thing that pointblank really opened my eyes on is that this could be a great use case
+
+01:43:34.245 --> 01:43:39.245
+for kind of a CICD situation where maybe you're getting data updated
+
+01:43:39.245 --> 01:43:44.245
+every month, every week, or whatnot, but you have the same checks you want to run every time, right?
+
+01:43:44.245 --> 01:43:49.245
+And you don't want to do that manually.
+
+01:43:49.245 --> 01:43:54.245
+So being able to take what you've taught us here, putting it into a set of R scripts that could be called on like a cron job-like fashion on GitHub Actions,
+
+01:43:54.245 --> 01:43:59.245
+I think is a real game changer to what we deal with a lot in our day-to-day here.
+
+01:43:59.245 --> 01:44:04.245
+Yeah. And I've known people that do that.
+
+01:44:04.245 --> 01:44:09.245
+And there's a whole thing I haven't talked about, which is the YAML workflow.
+
+01:44:09.245 --> 01:44:14.245
+You can express all these things in YAML if you want to.
+
+01:44:14.245 --> 01:44:19.245
+It's actually more shareable with people that don't use R and don't want to see R function calls.
+
+01:44:19.245 --> 01:44:24.245
+With one function called YAML interrogate, I believe it is.
+
+01:44:24.245 --> 01:44:29.245
+So that's a good way to run in production because it sort of splits.
+
+01:44:29.245 --> 01:44:34.245
+You have these very committable YAML files and just one R script which calls the YAML file with the data,
+
+01:44:34.245 --> 01:44:39.245
+which is pretty nice for a CI.
+
+01:44:39.245 --> 01:44:44.245
+Yeah. And maybe not quite a related question, but would you say there's type of data that you wouldn't use pointblank for?
+
+01:44:45.245 --> 01:44:50.245
+Are there any types of variables or types of structures that you would say, nah, probably not a good fit?
+
+01:44:50.245 --> 01:44:55.245
+Probably non-tabular data and basically any data you do have in tables, which are things like list columns, doesn't really handle that.
+
+01:44:55.245 --> 01:45:00.245
+Unless you especially, and you can handle it yourself.
+
+01:45:00.245 --> 01:45:05.245
+I mean, you can do pretty much anything you want with that one function, which gives you carte blanche.
+
+01:45:05.245 --> 01:45:10.245
+Just write your own UDF, your own function to create a validation.
+
+01:45:10.245 --> 01:45:15.245
+As long as you give it the results that it expects, which is a list of, sorry,
+
+01:45:15.245 --> 01:45:20.245
+a vector of logicals or a table with a final column is logical.
+
+01:45:20.245 --> 01:45:25.245
+You can do pretty much whatever you want and whatever you can imagine in terms of validation.
+
+01:45:25.245 --> 01:45:30.245
+Excellent. And I really love the idea of having these HTML based reports.
+
+01:45:32.245 --> 01:45:37.245
+I know I've been on a crusade in my day job efforts to get away from static, you know,
+
+01:45:38.245 --> 01:45:43.245
+Word document reports and whatnot.
+
+01:45:43.245 --> 01:45:48.245
+So having HTML to be able to get to these details in a novel way, I think has been a huge, huge help for making pointblank more mainstream in our data checking needs.
+
+01:45:51.245 --> 01:45:56.245
+Well, that's awesome. That's great. Yeah, that's what I was thinking too initially.
+
+01:45:56.245 --> 01:46:01.245
+Although I didn't really know until people started using it and yeah, got reports back.
+
+01:46:01.245 --> 01:46:06.245
+That's actually good.
+
+01:46:06.245 --> 01:46:11.245
+I'll keep an eye on things too.
+
+01:46:11.245 --> 01:46:16.245
+Does it matter if the source table is grouped?
+
+01:46:16.245 --> 01:46:21.245
+I think it either conveniently ignores it or ungroups it at the beginning.
+
+01:46:21.245 --> 01:46:26.245
+I know we handle it at some point, but I forget the actual behavior.
+
+01:46:26.245 --> 01:46:31.245
+I think it does matter, but it's handled is my question.
+
+01:46:31.245 --> 01:46:36.245
+If you have grouped tables and it does adversely affect a validation, let me know.
+
+01:46:36.245 --> 01:46:41.245
+And we can always provide some options there.
+
+01:46:41.245 --> 01:46:46.245
+Things like detection and handling.
+
+01:46:46.245 --> 01:46:51.245
+And I believe you touched on it earlier, Rich, but it sounds like Parquet files are just as supportive as anything else for pointblank, right?
+
+01:46:51.245 --> 01:46:56.245
+Okay. In the Python version, yes.
+
+01:46:56.245 --> 01:47:01.245
+They may work just by virtue of dplyr using them, but probably not.
+
+01:47:01.245 --> 01:47:06.245
+But I haven't had a report and I haven't actually done the legwork myself to see whether Parquet files do work.
+
+01:47:06.245 --> 01:47:11.245
+Like that they're verified to work.
+
+01:47:11.245 --> 01:47:16.245
+So that's a thing to do. But if you do Python, yes, the answer is yes.
+
+01:47:16.245 --> 01:47:21.245
+But we haven't talked about Python much here.
+
+01:47:21.245 --> 01:47:26.245
+Yeah.
+
+01:47:26.245 --> 01:47:31.245
+Have you thought about dplyr and using this with some of the new LLM agent-based tools?
+
+01:47:31.245 --> 01:47:36.245
+Have you thought about that piece for pointblank?
+
+01:47:36.245 --> 01:47:41.245
+Yeah, I thought about it. And that stuff, unfortunately, it's there, but it's in the Python version only.
+
+01:47:41.245 --> 01:47:46.245
+The Python version was developed later, just in the last year compared to this.
+
+01:47:46.245 --> 01:47:51.245
+So it applies with Python. There's stuff missing still.
+
+01:47:51.245 --> 01:47:56.245
+Like all this informant stuff, the data documentation stuff is not in there yet.
+
+01:47:56.245 --> 01:48:01.245
+But in the Python version, if you want to use AI, you can. There's quite a few avenues for that.
+
+01:48:01.245 --> 01:48:06.245
+There's a way to sort of create through LLM's validation plans, which is not dissimilar to draft validation.
+
+01:48:06.245 --> 01:48:11.245
+And there's also an assistant in there for just like talking and reasoning through.
+
+01:48:12.245 --> 01:48:17.245
+You describe what you want. It knows the API. And you describe which validations you want.
+
+01:48:17.245 --> 01:48:22.245
+And it will just like suggest them to you. And you put them in.
+
+01:48:22.245 --> 01:48:27.245
+There's also another validation function in that called prompt.
+
+01:48:27.245 --> 01:48:32.245
+And what you do there is you just provide text on what the check is.
+
+01:48:32.245 --> 01:48:37.245
+So a validation step is essentially a prompt.
+
+01:48:37.245 --> 01:48:42.245
+It's a little bit fast. Memorization and such.
+
+01:48:42.245 --> 01:48:47.245
+But you're basically using English to validate certain parts of your table with that function.
+
+01:48:47.245 --> 01:48:52.245
+Not in the R version yet, but I plan to get those things in due course into the R version.
+
+01:48:52.245 --> 01:48:57.245
+This may be the end.
+
+01:48:57.245 --> 01:49:02.245
+I think it's the end. I don't see anything else come in.
+
+01:49:02.245 --> 01:49:07.245
+Any last questions? Throw it in the chat.
+
+01:49:07.245 --> 01:49:12.245
+Just getting a lot of praise and clapping hands.
+
+01:49:12.245 --> 01:49:17.245
+Pointblank is very popular. Lots of people reach out.
+
+01:49:17.245 --> 01:49:22.245
+Rich, I'm excited for next year. Highlighting it, bringing it more to the public.
+
+01:49:22.245 --> 01:49:27.245
+What are some things you think we can do with Pointblank for next year?
+
+01:49:27.245 --> 01:49:32.245
+I'm planning workshops, talks. I may also create some videos as well.
+
+01:49:32.245 --> 01:49:37.245
+I'm planning for great tables and other packages as well.
+
+01:49:37.245 --> 01:49:42.245
+It's pretty much just that. Just getting information out there.
+
+01:49:42.245 --> 01:49:47.245
+It could be in multiple forms, but people just got to know about this.
+
+01:49:47.245 --> 01:49:52.245
+I think it's great to check your data and you'll sleep better at night.
+
+01:49:52.245 --> 01:49:57.245
+Do you have any early packages that you made?
+
+01:49:57.245 --> 01:50:02.245
+Not one of the first, but it's definitely early. It started in 2017.
+
+01:50:02.245 --> 01:50:07.245
+I think my earliest package was somewhere in 2013 kind of time.
+
+01:50:07.245 --> 01:50:12.245
+What was that?
+
+01:50:12.245 --> 01:50:17.245
+I believe I did some packages to do with atmospheric modeling initially.
+
+01:50:17.245 --> 01:50:22.245
+It's cool because this package was based on some work you were actually doing.
+
+01:50:22.245 --> 01:50:27.245
+I had data quality issues myself. I don't want to just throw a bunch of SQL at the problem.
+
+01:50:27.245 --> 01:50:32.245
+That's annoying. I had tons of tables.
+
+01:50:32.245 --> 01:50:37.245
+I'm going to not do my work and write a package. A month later, I'll do the work.
+
+01:50:37.245 --> 01:50:42.245
+I got it spun up pretty quickly because it just didn't have all the good reporting.
+
+01:50:42.245 --> 01:50:47.245
+GT wasn't a thing at the time.
+
+01:50:47.245 --> 01:50:52.245
+Report tables were using different R packages that were available circa 2017.
+
+01:50:52.245 --> 01:50:57.245
+I don't know if you saw at PositConf, there's a workshop called Data Science Workflows.
+
+01:50:57.245 --> 01:51:02.245
+Point Blank was a big part of that.
+
+01:51:02.245 --> 01:51:07.245
+It was actually a TA for one of those. The very first one in Chicago.
+
+01:51:07.245 --> 01:51:12.245
+The idea that it uses Point Blank to validate data and then trigger emails automatically
+
+01:51:12.245 --> 01:51:17.245
+that basically let you know what shape your data is in.
+
+01:51:17.245 --> 01:51:22.245
+Based on the Point Blank reports, actions can get triggered.
+
+01:51:22.245 --> 01:51:27.245
+Data looks good, send it off. Data looks bad, further review.
+
+01:51:27.245 --> 01:51:32.245
+It didn't quite cover that. In actions level, there's actually a separate set of arguments that allow you to provide functions.
+
+01:51:32.245 --> 01:51:37.245
+To do enter those thresholds, it's not just visual, you can actually fire off functions.
+
+01:51:37.245 --> 01:51:42.245
+It could be logging, it could be mostly logging or errors.
+
+01:51:42.245 --> 01:51:47.245
+To stop things, Dennis tracks. You can actually react to failures in that way.
+
+01:51:47.245 --> 01:51:52.245
+That's pretty cool.
+
+01:51:52.245 --> 01:51:57.245
+Someone mentioned that with Snowflake, because that's a use case that I hear all the time.
+
+01:51:57.245 --> 01:52:02.245
+It didn't quite work early on, but I think since 2021, that kind of time,
+
+01:52:02.245 --> 01:52:07.245
+things got a little more improved.
+
+01:52:07.245 --> 01:52:12.245
+I think there's actually a blog post kicking around somewhere where someone actually did use Snowflake with Point Blank for R.
+
+01:52:12.245 --> 01:52:17.245
+Yeah, Point Blank, Databricks, all of the data platforms.
+
+01:52:17.245 --> 01:52:22.245
+Really cool.
+
+01:52:22.245 --> 01:52:27.245
+I did test it on the R side for Spark or Databricks.
+
+01:52:27.245 --> 01:52:32.245
+I did test it, so it does actually work. Not theoretically, but I verified that.
+
+01:52:32.245 --> 01:52:37.245
+Have to chat with Edgar.
+
+01:52:37.245 --> 01:52:42.245
+Yes.
+
+01:52:42.245 --> 01:52:47.245
+I don't know if he's still working on it.
+
+01:52:47.245 --> 01:52:52.245
+I'll give you one last chance to post here in the chat.
+
+01:52:52.245 --> 01:52:57.245
+Otherwise, we will see you next year, hopefully, Rich.
+
+01:52:57.245 --> 01:53:02.245
+Yeah, love to be here.
+
+01:53:02.245 --> 01:53:07.245
+Okay, well, I think that's it. We'll go ahead and end the webinar.
+
+01:53:07.245 --> 01:53:12.245
+I posted the form for the badge.
+
+01:53:12.245 --> 01:53:17.245
+Yeah, Rich, you shared your slide, so I think people should be in good shape.
+
+01:53:17.245 --> 01:53:22.245
+That concludes day two of R and Pharma.
+
+01:53:22.245 --> 01:53:27.245
+Then we'll be kicking off the APAC tonight at 9 p.m.
+
+01:53:27.245 --> 01:53:32.245
+They've got a series of talks that will run until about 3 a.m.
+
+01:53:32.245 --> 01:53:37.245
+Then we pick back up here at 10 a.m. tomorrow with the keynote with Simon from Posit,
+
+01:53:37.245 --> 01:53:42.245
+who will be talking about AI.
+
+01:53:42.245 --> 01:53:47.245
+It should be an exciting 24 hours, so hopefully we'll see everybody tomorrow or stick around for APAC tonight.
+
+01:53:47.245 --> 01:53:52.245
+I think that's it. Thanks, Rich.
+
+01:53:52.245 --> 01:53:57.245
+All right, thanks for having me.

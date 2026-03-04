@@ -1,0 +1,863 @@
+WEBVTT
+
+00:00:00.500 --> 00:00:04.720
+Hello, everybody. Good morning. My name is Isabella Velásquez. I am on the developer
+
+00:00:04.720 --> 00:00:10.560
+relations team at Posit. I'm really excited to be here with you today. And the topic of
+
+00:00:10.560 --> 00:00:17.360
+my talk is Positron, the First Five Minutes. And probably like many of you, I have spent
+
+00:00:17.360 --> 00:00:23.360
+a lot of time working with data and files and having to manage all sorts of different
+
+00:00:23.360 --> 00:00:30.920
+windows. You know, I need a browser for documentation. I need my editor to edit my code. Sometimes
+
+00:00:30.920 --> 00:00:36.919
+I need to pop up the terminal to do something else. And all of that kind of like code switching
+
+00:00:36.919 --> 00:00:43.680
+tax that we have to pay, you know, puts a big damper in terms of our focus and our flow.
+
+00:00:43.680 --> 00:00:49.000
+And so what if there was a single place where we could bring that all together, integrate
+
+00:00:49.000 --> 00:00:57.520
+a development environment that allows us to code and view documentation and run command
+
+00:00:57.520 --> 00:01:03.560
+commands if we need, all in a single place. And that is what Positron is. And that kind
+
+00:01:03.560 --> 00:01:10.320
+of single unified interface that really helps you get into the data science flow. And so
+
+00:01:10.320 --> 00:01:16.680
+I'm going to show in five minutes what it might look like as soon as you open up a project
+
+00:01:16.680 --> 00:01:21.760
+in Positron, what those five minutes could look like, and how it's possible thanks to
+
+00:01:21.760 --> 00:01:27.279
+Positron's layout, which we'll get into a little bit deeper afterwards.
+
+00:01:27.279 --> 00:01:47.040
+So with that, I will start the clock. Maybe. Okay. That works. Why won't this work? Okay.
+
+00:01:47.040 --> 00:01:57.000
+Anybody want to set a timer for me? Thank you. All right. Okay. And ready? Go. Okay.
+
+00:01:57.519 --> 00:02:03.760
+So here we are. This is what it looks like. For me, when I first open up Positron, I'm
+
+00:02:03.760 --> 00:02:08.919
+going to navigate and open a new folder by hitting new from Git and pasting the GitHub
+
+00:02:08.919 --> 00:02:14.679
+repository URL that I want to clone. I'm going to hit okay. It's going to open up that folder
+
+00:02:14.679 --> 00:02:20.639
+with all the files that are in that repository. Next I'm going to open up the Python demo.py
+
+00:02:20.639 --> 00:02:26.479
+file. And this is going to contain a script. Let's see what's in it. First up is loading
+
+00:02:26.479 --> 00:02:32.360
+libraries and data. We can see it's some sort of Georgia aquarium species CSV. Next it's
+
+00:02:32.360 --> 00:02:38.160
+going to summarize the number of species by conservation status, create a summary table,
+
+00:02:38.160 --> 00:02:44.279
+and then finally create a plot using a package called plot nine. And that's it so far. So
+
+00:02:44.279 --> 00:02:49.479
+navigating back up to the top, let's start running some code. I'm going to hit run cell.
+
+00:02:49.479 --> 00:02:55.160
+And then I can see something populated down here in the console. So it actually ran Redmond
+
+00:02:55.160 --> 00:03:00.679
+Mike CSV and then showed me species, which I can see down here. So this is great. I get
+
+00:03:00.679 --> 00:03:06.039
+a quick insight into my data. But honestly, it's a little bit hard to read, right? Can't
+
+00:03:06.039 --> 00:03:11.440
+do anything like sort and filter. So instead I'm going to go over to my viewer pane and
+
+00:03:11.440 --> 00:03:16.720
+open that up. I can see that it's read in my data set called species, and I can open
+
+00:03:16.720 --> 00:03:22.679
+that and see all of the columns within species, some information about them, like their type,
+
+00:03:22.679 --> 00:03:28.039
+and then open that up to see some of the first few values that are contained within each
+
+00:03:28.039 --> 00:03:34.960
+of those columns. So I see some least concern, not endangered, things like that. Closing
+
+00:03:34.960 --> 00:03:40.960
+that up, let's say I want to see another view. I can hit the view data table icon up there,
+
+00:03:40.960 --> 00:03:46.399
+and that is going to open up a spreadsheet view of my data set. And so if you're coming
+
+00:03:46.399 --> 00:03:51.520
+from our studio, this might be a little familiar or Excel as well. It's, you know, easy to
+
+00:03:51.520 --> 00:03:58.880
+read. It has cells for each of the different values within that data set. I can do things
+
+00:03:58.880 --> 00:04:03.960
+like hit these three dots and sort ascending. So if I wanted to take a quick look at the
+
+00:04:03.960 --> 00:04:08.919
+critically endangered species, I can see, you know, African penguin is up there and
+
+00:04:08.919 --> 00:04:13.440
+things like that. So just a quick view of my data set. And another way I can, a thing
+
+00:04:13.440 --> 00:04:20.160
+I can do is open up the summary panel, which also gives me the sparkline view of my data.
+
+00:04:20.160 --> 00:04:27.640
+And I can see, you know, least concern has 96, 62% of the data set, which, you know,
+
+00:04:27.640 --> 00:04:32.480
+it means it's the most common one. And then I also notice it's covered by the cursor a
+
+00:04:32.480 --> 00:04:36.920
+bit, but there's one called not evaluated. So I'm kind of curious, what does this percentage
+
+00:04:36.920 --> 00:04:41.799
+look like if I don't have not evaluated on there because it's not evaluated, right? And
+
+00:04:41.799 --> 00:04:49.279
+so in within Positron, I can create an ephemeral, not permanent filter where I hit that plus
+
+00:04:49.279 --> 00:04:55.720
+sign, select the column. And then the condition I'm going to say, I do not want it to equal
+
+00:04:55.720 --> 00:05:04.359
+to not evaluated, apply that filter. And when I do so that histogram updates and I can scan
+
+00:05:04.359 --> 00:05:10.399
+over now least concern makes up 71% of the data set. And so again, just a quick view
+
+00:05:10.399 --> 00:05:14.359
+to kind of get a grasp of what's contained in here and what steps I might want to take
+
+00:05:14.359 --> 00:05:21.359
+later. So after that, I can close out of this. Again, it's temporary. It's not going to actually
+
+00:05:21.359 --> 00:05:26.959
+change my data. In addition to running blocks of code within the script, I can hit this
+
+00:05:26.959 --> 00:05:32.000
+play button and it will run everything from the top to the bottom. The last part was the
+
+00:05:32.000 --> 00:05:38.119
+plots, which I can see now in my plot viewer. And so opening that up, I can see another
+
+00:05:38.119 --> 00:05:43.920
+like histogram of the conservation status summary, and then a very helpful part where
+
+00:05:43.920 --> 00:05:49.959
+it says species is threatened. But I noticed like my favorite theme in plot nine is theme
+
+00:05:49.959 --> 00:05:55.000
+minimal. And I kind of want to remember how do I do that again? How do I, are there any
+
+00:05:55.000 --> 00:06:02.519
+arguments within theme minimal that I can use? And so within Positron, I can open this
+
+00:06:02.519 --> 00:06:10.160
+up, hit and then search the help documentation by running help. And then in this case, I'm
+
+00:06:10.160 --> 00:06:14.720
+going to write P9, which means plot nine, and then the name of the function, theme minimal,
+
+00:06:14.720 --> 00:06:23.559
+hitting enter. Now I see the help documentation within my viewer right there. So I can take
+
+00:06:23.559 --> 00:06:27.320
+a look. I'm like, oh, yeah, interesting. There is a base size. So if I want to play around
+
+00:06:27.320 --> 00:06:32.040
+with that, I can go ahead and, you know, make changes to that. But for now, I'm just
+
+00:06:32.040 --> 00:06:45.079
+going to go ahead and add that theme. I made a typo. Theme minimal. Rerun this here. And
+
+00:06:45.079 --> 00:06:49.440
+then opening up my plot viewer, I notice like, oh, I actually have two versions of plot.
+
+00:06:49.440 --> 00:07:16.320
+I can go back and forth and see what I have created. Ta-da! Thank you very, very much.
+
+00:07:16.320 --> 00:07:21.679
+So that was really fast. We watched an incredibly fast workflow, and I did have the advantage
+
+00:07:21.679 --> 00:07:25.519
+of actually knowing what was contained in the script and everything like that. But really
+
+00:07:25.519 --> 00:07:29.040
+it was just to get a sense of, like, when you open up that project, what might your
+
+00:07:29.040 --> 00:07:34.000
+workflow look like to start exploring your data? And, you know, something that you may
+
+00:07:34.000 --> 00:07:39.559
+be wondering is how can we do all of that really quickly? And I would say one of the
+
+00:07:39.559 --> 00:07:45.359
+big components that enables this to be possible is the Positron interface, which is meant
+
+00:07:45.359 --> 00:07:51.079
+to be a very flexible environment for your data science needs. And so you can really
+
+00:07:51.079 --> 00:07:57.959
+tailor your workflow or, I'm sorry, your workspace for your workflow according to, like, your
+
+00:07:57.959 --> 00:08:04.440
+needs. And then these are kind of the core elements of the Positron interface that each
+
+00:08:04.440 --> 00:08:12.320
+have, like, their own function in terms of running data, exploring data, and so on. So
+
+00:08:12.359 --> 00:08:17.040
+On the left-hand side we have the activity bar, which we barely even mentioned. And so
+
+00:08:17.040 --> 00:08:23.720
+this is going to be the way that you can quickly switch across different views in Positron
+
+00:08:23.720 --> 00:08:30.079
+from the Explorer, the Search, the Source, Control, and Extensions. And if you want to
+
+00:08:30.079 --> 00:08:37.080
+run Positron Assistant, which is an AI client within Positron, it's available there as well.
+
+00:08:37.080 --> 00:08:41.880
+The primary sidebar to the right of the activity bar is going to show you the different views
+
+00:08:41.919 --> 00:08:48.679
+that you have chosen within the activity bar. And so when you choose, you know, the system,
+
+00:08:48.679 --> 00:08:54.359
+the system will show up there, and by default it's the File Explorer. The editor, as you
+
+00:08:54.359 --> 00:08:59.520
+can imagine, is where you would edit and you can run your code. And the panel is below
+
+00:08:59.520 --> 00:09:06.799
+the editor, and it contains the console, which is a fully integrated console where you can
+
+00:09:06.799 --> 00:09:13.400
+run lines of code and see the results, messages, and things like that from your output.
+
+00:09:13.400 --> 00:09:18.039
+The secondary sidebar contains several things. It's on the right by default. You can switch
+
+00:09:18.039 --> 00:09:23.080
+between the Session pane, where you can explore the variables that you have defined and the
+
+00:09:23.080 --> 00:09:28.119
+plots that you have created, the Connections pane, so if you're connecting to databases,
+
+00:09:28.119 --> 00:09:32.679
+that's available as well. There's also the Help pane, which we noticed earlier, and then
+
+00:09:32.679 --> 00:09:40.520
+also the Viewer pane as well. I also wanted to mention there are a couple of other things
+
+00:09:40.520 --> 00:09:46.599
+that might not be super obvious, but are very important, and so probably worth highlighting.
+
+00:09:46.599 --> 00:09:51.559
+So the first one is the title bar at the very, very top, and this shows the active file and
+
+00:09:51.559 --> 00:09:57.599
+the project, along with any kind of window controls. A little bit covered up by the tooltip
+
+00:09:57.599 --> 00:10:04.000
+there are small icons where you can change the layout really quickly of Positron and
+
+00:10:04.000 --> 00:10:10.679
+also get back to this default layout, if that is your preference. Below it, the top bar
+
+00:10:10.679 --> 00:10:16.760
+provides global project tools, such as file search, so clicking there, you can search
+
+00:10:16.760 --> 00:10:23.760
+within the files. You can switch between projects, and then also here, you can also see the interpreters,
+
+00:10:23.760 --> 00:10:29.400
+so choosing between R and Python and different versions of R and Python, clicking there,
+
+00:10:29.400 --> 00:10:36.159
+you can go ahead and switch between the different interpreters that you have available. Finally,
+
+00:10:36.159 --> 00:10:42.159
+the status bar at the very bottom displays details like your Corda version, your Git
+
+00:10:42.159 --> 00:10:49.000
+status, and so on. So just to kind of dive a little bit deeper in the specific things
+
+00:10:49.039 --> 00:10:53.880
+that we just saw, I just wanted to mention the welcome page. If you watched Jonathan
+
+00:10:53.880 --> 00:11:00.880
+McPherson's keynote yesterday, one thing that I had always used and never really thought
+
+00:11:02.200 --> 00:11:07.479
+of is the fact that when you open up Positron, kind of the world is your oyster. Jonathan
+
+00:11:07.479 --> 00:11:13.159
+mentioned that sometimes people open up RStudio because they want to add two numbers together,
+
+00:11:13.159 --> 00:11:18.760
+and similarly with Positron, you have something similar. The layout is all right there, the
+
+00:11:18.760 --> 00:11:24.719
+activity bar, the console, if you want to use Python to add numbers, and then as mentioned,
+
+00:11:24.719 --> 00:11:31.719
+there are three big ways of creating or opening up new folders. You can open up a new folder,
+
+00:11:32.400 --> 00:11:36.840
+create a new folder, or create a new folder from a GitHub repository. There's a handy
+
+00:11:36.840 --> 00:11:42.320
+way of looking at all of your recent files, and another thing I wanted to mention is to
+
+00:11:42.320 --> 00:11:49.320
+the right of that are some really handy resources in case you are getting accustomed to Positron
+
+00:11:50.640 --> 00:11:55.119
+and migrating from another tool. So in particular, there are two walkthroughs, migrating from
+
+00:11:55.119 --> 00:12:00.440
+RStudio, migrating from VS Code, that you can click through and really help get yourself
+
+00:12:00.440 --> 00:12:07.440
+accustomed to this new IDE, as well as links to the Positron documentation and other resources.
+
+00:12:07.640 --> 00:12:13.640
+So, to this left-hand side, we talked about the primary sidebar. Specifically, the file
+
+00:12:13.640 --> 00:12:19.679
+explorer is probably one of the most used views in the activity bar, and so it's essentially
+
+00:12:19.679 --> 00:12:25.880
+a file explorer for your project. When you click the explorer icon, you see a tree of
+
+00:12:25.880 --> 00:12:31.599
+all of the files that are contained within your current workspace, and here you can browse
+
+00:12:31.599 --> 00:12:38.599
+your files, create new files, delete your files, rename your files, even move your files,
+
+00:12:39.159 --> 00:12:45.080
+and then in addition, it also shows the status of your files, so if you change something,
+
+00:12:45.080 --> 00:12:49.440
+it will either change color or add an icon to indicate that there's something different
+
+00:12:49.440 --> 00:12:56.440
+about that particular file. So, the editor is where you write and save your code, and
+
+00:12:57.239 --> 00:13:04.239
+it's a full-fledged text editor with all of those things that you need in order to
+
+00:13:04.239 --> 00:13:10.400
+write good R or Python code. There's syntax highlighting where different colors will show
+
+00:13:10.400 --> 00:13:16.599
+up depending on, you know, if you're using a function or using different kind of arguments
+
+00:13:16.599 --> 00:13:23.000
+or things like that. As you type, the editor will also provide some suggestions, and so
+
+00:13:23.000 --> 00:13:29.039
+you can hit tab and then complete, you know, a particular line of code without having to
+
+00:13:29.039 --> 00:13:34.960
+write it fully out, which is what I did with the minimal. You can run single lines of code
+
+00:13:34.960 --> 00:13:41.960
+by using the command enter or command return on Mac, and so then running single lines of
+
+00:13:42.000 --> 00:13:48.000
+code will populate it in the console. So, finally, like if you notice in the script
+
+00:13:48.039 --> 00:13:53.119
+that I had, we are able to create chunks so that you can collapse chunks so it's a bit
+
+00:13:53.119 --> 00:14:00.119
+easier to read through your file. Next up is the console, and so this is going to be
+
+00:14:01.479 --> 00:14:07.239
+a way that you can run code, again, either line by line or a block of code that you paste
+
+00:14:07.239 --> 00:14:13.440
+in here, run enter to execute it immediately. When you run code from the editor, it's going
+
+00:14:13.440 --> 00:14:20.440
+to show any kind of output or warning or messages, and then it also will provide errors,
+
+00:14:20.440 --> 00:14:26.359
+so if you run into an issue with your code, it will populate here, and you can also use
+
+00:14:26.359 --> 00:14:30.679
+the console to view, like, any objects that you've created. In this case, it's showing
+
+00:14:30.679 --> 00:14:36.119
+the species object that we created, and, you know, coming from our studio, you may be aware
+
+00:14:36.119 --> 00:14:40.880
+the console is temporary. It's not going to save any of the code that you've run, and
+
+00:14:40.880 --> 00:14:46.679
+so be sure to write your code in the editor if it's something that you want to keep.
+
+00:14:46.679 --> 00:14:51.719
+The viewer pane is a quick way of taking a look at any data sets that you've imported.
+
+00:14:51.719 --> 00:14:57.880
+In this case, we have species, which was the part of the original CSV import, and then
+
+00:14:57.880 --> 00:15:03.080
+conservation status, which is that summary table that we created later on. Opening this
+
+00:15:03.080 --> 00:15:09.559
+up, again, you get a quick view of the columns, what's contained within them, the data types
+
+00:15:09.599 --> 00:15:16.599
+of those columns, and then hitting that small grid icon opens up the Data Explorer.
+
+00:15:18.359 --> 00:15:22.919
+The primary display of the Data Explorer is this data grid, which is a spreadsheet like
+
+00:15:22.919 --> 00:15:28.359
+cell view. Each column header has the name of the column. Below that, the data type,
+
+00:15:28.359 --> 00:15:34.640
+which depends on the back end of however you imported the data, so the language you ran
+
+00:15:34.640 --> 00:15:40.479
+or DuckDB or things like that. At the top of each control, there's a way to sort your
+
+00:15:40.479 --> 00:15:46.400
+columns as well. You can rearrange them by dragging and dropping. If you notice, there's
+
+00:15:46.400 --> 00:15:53.400
+also the row index, which will be zero if you're working in Python, or start at zero
+
+00:15:53.400 --> 00:15:58.719
+if you're working in Python, one if you're working in R. And of course, as shown, you
+
+00:15:58.719 --> 00:16:05.719
+could sort and arrange your data set by hitting that small three dots at the top.
+
+00:16:08.799 --> 00:16:14.200
+Next up is the summary panel. Again, it displays a vertical scrolling list of all the column
+
+00:16:14.200 --> 00:16:21.200
+names, and then also displays a small sparkline graph of the data contained within those columns,
+
+00:16:22.200 --> 00:16:29.200
+and then also a percentage. It also provides a small far graph of the missing values. So
+
+00:16:32.039 --> 00:16:39.039
+in this case, fun fact, we can see there are 10% of those are missing. If you hover over,
+
+00:16:39.919 --> 00:16:45.760
+you get tool tips with some of the summary and missing data indicators, and then you
+
+00:16:45.760 --> 00:16:51.239
+can actually hover over the small A to the left and get another view of the data type
+
+00:16:51.239 --> 00:16:58.239
+of that particular column. The filter bar is that ephemeral filter that I mentioned.
+
+00:16:59.320 --> 00:17:06.319
+You can add, show, and hide filters, and then select your column and take a quick look at
+
+00:17:06.359 --> 00:17:11.479
+your data set to see, you know, how and if things change if you were to run that filter
+
+00:17:11.479 --> 00:17:18.479
+directly on your data set. And the plots viewer. So here on the lower right, a way
+
+00:17:20.160 --> 00:17:24.599
+to view of your plots, and then, again, in the five minutes, unfortunately I didn't get
+
+00:17:24.599 --> 00:17:29.479
+the time to go through everything that's in here, but there is a lot. So in addition to
+
+00:17:29.479 --> 00:17:33.680
+the plot history where you can go back and forth and check out different plots and decide
+
+00:17:33.680 --> 00:17:39.040
+which ones are your favorite, you can also use the arrows to go back and forth. You can
+
+00:17:39.040 --> 00:17:45.239
+save plots directly from here, so hitting that floppy disk will pop up a dialog where
+
+00:17:45.239 --> 00:17:52.239
+you can specify the size and save your plot exactly the way that you want it to look like.
+
+00:17:52.319 --> 00:17:57.520
+You can also hit copy and copy your plot directly to your clipboard if you want to paste it,
+
+00:17:57.520 --> 00:18:02.359
+you know, in an email or anything like that. You can change the dimensions and see how
+
+00:18:02.359 --> 00:18:08.880
+your plot looks, you know, in different sizes and in different dimensions. It also shows
+
+00:18:08.880 --> 00:18:14.880
+you how this plot was generated, in this case, myplotlib, but, again, you can change that
+
+00:18:14.880 --> 00:18:21.680
+just to see what it would look like in different ways. And, oh, another thing to mention is
+
+00:18:21.680 --> 00:18:28.040
+if you hit that circle, it actually shows you your plot in dark mode. So if you want
+
+00:18:28.079 --> 00:18:33.079
+to see, like, different versions of your plot, you can do that all within the plot viewer.
+
+00:18:33.079 --> 00:18:40.079
+All right, last up is that documentation pane. So if you're coming from R and RStudio, hitting
+
+00:18:42.280 --> 00:18:47.800
+question mark and then the name of the function opens up a similar kind of help documentation
+
+00:18:47.800 --> 00:18:54.800
+and then for Python users in Positron, let me back up, R users in Positron have the same
+
+00:18:55.520 --> 00:19:01.680
+feature and Python users in Positron also have an option as well. And the benefits of
+
+00:19:01.680 --> 00:19:05.760
+this is, of course, you have your documentation directly within your IDE. You can actually
+
+00:19:05.760 --> 00:19:11.079
+go page back and forth within the documentation without having to open it up in a browser
+
+00:19:11.079 --> 00:19:16.640
+or anything like that. And that was just the first five minutes. I think I spent more time
+
+00:19:16.640 --> 00:19:22.160
+talking about it than actually doing it. But what can we do in the next five minutes? So
+
+00:19:22.199 --> 00:19:26.400
+I mentioned there's an activity bar that we didn't even touch this time around. You can
+
+00:19:26.400 --> 00:19:33.040
+imagine you can push changes to Git. So because I had made a change within the file, there's
+
+00:19:33.040 --> 00:19:38.119
+a one button or one icon there. So it's letting me know, hey, you've made a change. Do you
+
+00:19:38.119 --> 00:19:43.040
+want to push that up to Git because you haven't yet? And so doing that shows, like, a pane,
+
+00:19:43.040 --> 00:19:48.959
+a very nifty pane of all the changes that you've made within your GitHub repository
+
+00:19:49.119 --> 00:19:53.880
+and then an easy way to commit any changes that you've made and push them up.
+
+00:19:53.880 --> 00:20:00.880
+Debug. So within here, if you run into issues with your script, you can run your debugger.
+
+00:20:04.280 --> 00:20:11.280
+This is the extensions. So one of the great benefits of VS Code-based IDEs like Positron
+
+00:20:11.560 --> 00:20:18.560
+is the ability to use the very, very extensive extension list that there exists for VS Code.
+
+00:20:19.119 --> 00:20:23.839
+So things like themes are things that make your code, you know, easier to read and things
+
+00:20:23.839 --> 00:20:29.079
+like that. And so hitting that opens up the marketplace where you can search for the different
+
+00:20:29.079 --> 00:20:35.239
+kinds of extensions that you need. Configure tests. So if you need tests for your scripts
+
+00:20:35.239 --> 00:20:40.160
+in order to make sure that things run the way that are expected, you would do that here
+
+00:20:40.160 --> 00:20:47.160
+as well. The arrow icon allows you to publish directly from Positron to PositConnect or
+
+00:20:48.959 --> 00:20:54.359
+PositConnect Cloud. And so these are different platforms for publishing all sorts of data
+
+00:20:54.359 --> 00:21:01.359
+science content. So if you have a Cordo document, a Shiny document, a Streamlit app or anything
+
+00:21:02.199 --> 00:21:08.359
+like that, you hit that, configure your settings, and then you're able to publish and then also
+
+00:21:08.359 --> 00:21:15.359
+update anything that you have published in the past directly within the IDE.
+
+00:21:15.479 --> 00:21:21.079
+And finally, Positron Assistant. If you were here yesterday, Ryan Johnson gave a talk on
+
+00:21:21.079 --> 00:21:27.560
+Positron Assistant and Databot. And, you know, just with that, you could definitely spend
+
+00:21:27.560 --> 00:21:32.079
+at least 10 minutes working with Positron Assistant and working with it to view your
+
+00:21:32.079 --> 00:21:37.400
+code, learn about your code, explore your code, and things like that. So really there's
+
+00:21:37.400 --> 00:21:43.680
+so much that you can do. And I was just talking about this one activity bar, the whole, you
+
+00:21:43.680 --> 00:21:47.920
+know, ecosystem of everything, the interface of Positron that's available, it's really
+
+00:21:47.920 --> 00:21:54.239
+quite impressive. And for you, you can try it yourself. If you just walk out here, take
+
+00:21:54.239 --> 00:21:59.920
+a few steps, we have laptops that are configured with Positron and Positron Assistant that
+
+00:21:59.920 --> 00:22:04.800
+you can try out. And, you know, the Positron team is there as well to answer any questions
+
+00:22:04.800 --> 00:22:09.400
+that you may have specifically about the layout or anything else. So I highly encourage you
+
+00:22:09.400 --> 00:22:14.640
+to try it. I did also want to give a shout out to my colleagues, Sharon Wing and Sam
+
+00:22:14.640 --> 00:22:19.560
+Edwards who developed this demo that I used. So thank you so much. It was a lot of fun
+
+00:22:19.560 --> 00:22:26.000
+to work with it. Last thing I want to mention is you might be thinking, wait a second, that
+
+00:22:26.000 --> 00:22:31.560
+wasn't the actual first five minutes, right? And you are absolutely correct. There are
+
+00:22:31.560 --> 00:22:37.599
+quite a few things that happened before this that I did not mention. You know, so, for
+
+00:22:37.599 --> 00:22:43.000
+example, downloading and installing Positron and downloading and installing R and Python.
+
+00:22:43.000 --> 00:22:49.239
+And I have a lot of key bindings and extensions that I've installed and downloaded because,
+
+00:22:49.239 --> 00:22:54.160
+you know, I've been working with Positron for a little while. And so absolutely correct.
+
+00:22:54.160 --> 00:22:57.719
+And if you want to learn more about this, you can come watch my demo, which I'm giving
+
+00:22:57.719 --> 00:23:03.839
+next Wednesday. It's online. And I would love to see you there if you want to learn more
+
+00:23:03.959 --> 00:23:08.959
+about these steps as well. And with that, thank you so much for watching. And we're
+
+00:23:08.959 --> 00:23:10.959
+happy to take any questions.
+
+00:23:40.959 --> 00:23:57.079
+Can everyone still hear on the microphone virtually? Okay. Awesome. Yeah. Great question.
+
+00:23:57.079 --> 00:24:02.000
+We get asked this a lot. This is maybe one of our most asked for features in Positron.
+
+00:24:02.000 --> 00:24:10.719
+Oh, sorry. Yeah. The question is will Corto inline output be supported in Positron eventually?
+
+00:24:11.520 --> 00:24:19.040
+Short answer, yes. Long answer, this is, yeah, one of our most asked for features. Basically
+
+00:24:19.040 --> 00:24:25.520
+due to the architecture of the way that Positron, the Corto extension, the visual editor, everything
+
+00:24:25.520 --> 00:24:30.959
+is set up. It's a really tough change. But we do know, you know, thinking about Jonathan's
+
+00:24:30.959 --> 00:24:39.359
+keynote talk yesterday, we want to be listening to our users. It won't be planned for this year,
+
+00:24:39.359 --> 00:24:44.319
+probably. But it will be coming. Because we know that this is kind of a blocker for
+
+00:24:44.880 --> 00:24:49.359
+some people who want to use Positron. I will highlight, too, that we have support for
+
+00:24:51.040 --> 00:24:58.880
+notebooks, which, you know, have inline output out of the box, basically. But, yeah, right now
+
+00:24:58.880 --> 00:25:05.119
+that's what you want if you want to be creating documents with inline output. Or just like we're
+
+00:25:05.119 --> 00:25:08.800
+still fine with you going back to RStudio if that's what you need to use that for.
+
+00:25:10.160 --> 00:25:11.359
+It's a great tool for that right now.
+
+00:25:24.640 --> 00:25:31.920
+Good question. Yes. So, it yes. So, Positron has a sort of different notion of projects where
+
+00:25:31.920 --> 00:25:36.959
+we call them workspaces. And you open up a folder, basically,
+
+00:25:40.000 --> 00:25:45.280
+you open up the folder as a workspace, and then your file layout, you know, basically,
+
+00:25:46.079 --> 00:25:51.439
+you can have workspace specific settings and everything. I believe there's nothing,
+
+00:25:51.439 --> 00:25:57.439
+like, necessarily special about that Rproj file in Positron. So, you can open up a folder as an
+
+00:25:57.520 --> 00:26:02.400
+Rproj, basically. We do have documentation about this, too, if you're more interested
+
+00:26:02.400 --> 00:26:07.280
+than my high level answer. I'm a little bit more on the Python side, so I don't know exactly,
+
+00:26:07.280 --> 00:26:11.439
+like, all of the technical details about that. But, like, short answer is yes.
+
+00:26:15.359 --> 00:26:16.719
+Yes. You can talk to Davis later.
+
+00:26:27.439 --> 00:26:36.880
+The question was, is VS Code going to be continued to be in Workbench alongside Positron?
+
+00:26:36.880 --> 00:26:40.640
+The answer is yes. I think there's a lot that you can do in VS Code that's very good to do
+
+00:26:40.640 --> 00:26:46.640
+in VS Code. I still develop a lot of TypeScript in VS Code, because it's just, like, there are more
+
+00:26:46.640 --> 00:26:52.319
+extensions and things around that, personally. So, yeah, I mean, we know that there's a bunch
+
+00:26:52.319 --> 00:26:56.000
+of different uses for the different IDEs, and, yeah, we'll continue to offer VS Code in Workbench.
+
+00:26:57.520 --> 00:27:14.479
+Yeah, roadmap for other languages being first class supported in Positron. I will call out
+
+00:27:14.479 --> 00:27:19.040
+that you can edit, you know, SQL, you can see syntax highlighting and stuff like that right now,
+
+00:27:19.680 --> 00:27:24.079
+but it's not like we have a SQL console necessarily right now. I do think we're
+
+00:27:24.079 --> 00:27:29.920
+interested in more first class SQL support. I can't commit to any timelines, sadly,
+
+00:27:29.920 --> 00:27:36.160
+because we just don't know exactly what the timelines look like. SQL support, Julia support
+
+00:27:36.160 --> 00:27:41.280
+are both, like, very highly upvoted, and it's just kind of a question of, like, what our priorities
+
+00:27:41.280 --> 00:27:45.839
+are, what our capacity is as a team, you know, what kind of support we get from the community
+
+00:27:45.839 --> 00:27:51.439
+and, like, interest. So I can't commit to a roadmap. I also can't say that it'll be this
+
+00:27:51.439 --> 00:27:56.079
+year in 2025, but, yeah.
+
+00:28:51.439 --> 00:28:59.119
+Yeah. Here, let me give you the mic. The question was, do we plan to support any
+
+00:28:59.119 --> 00:29:06.479
+older versions of R? We support R 4.2 and above, which is at this point five versions of R,
+
+00:29:07.359 --> 00:29:14.079
+which is the same version policy as the tidyverse, and like Positron being a newer IDE,
+
+00:29:14.079 --> 00:29:19.280
+had the ability to say we're going to be using a little bit newer version of R,
+
+00:29:19.920 --> 00:29:24.640
+which does come with a number of improvements, like on, like, Windows you get UTF-8 natively
+
+00:29:24.640 --> 00:29:29.119
+out of the box, which is, like, a huge benefit and simplifies a whole bunch of things. So
+
+00:29:29.119 --> 00:29:32.400
+we will not, we have no plans to extend that further back. Yeah.
+
+00:29:41.199 --> 00:29:44.400
+Another question. You asked what my favorite feature of Positron is. I'm very biased,
+
+00:29:44.400 --> 00:29:48.880
+but I really like remote SSH. This is something you can do in VS Code, but we kind of doctored
+
+00:29:48.880 --> 00:29:54.800
+it up and made it better, in my opinion, for Positron, where you can, if you have SSH access
+
+00:29:54.800 --> 00:30:01.359
+to a remote machine, you can connect with the little bottom left button, connect to the host,
+
+00:30:01.359 --> 00:30:05.359
+the UI still lives on your laptop, but basically everything else is on your remote machine. So if
+
+00:30:05.359 --> 00:30:10.479
+it's a more powerful machine, you get access to the file system, the data, the, your R session
+
+00:30:10.479 --> 00:30:16.400
+or whatever is on that remote machine, and you can take advantage of the compute and stuff.
+
+00:30:17.040 --> 00:30:21.199
+I really like it. And as well, you can disconnect and reconnect as your code is running,
+
+00:30:21.199 --> 00:30:25.199
+which is a big feature that I don't think VS Code has. So that's what I like.
+
+00:30:46.400 --> 00:30:58.160
+Can a remote SSH, or sorry, a Workbench EC2 instance be used as that SSH host? I believe
+
+00:30:58.160 --> 00:31:03.680
+the answer is yes. I think they qualify for all of our technical requirements. I haven't
+
+00:31:03.680 --> 00:31:10.560
+personally tried it. And I also don't want to give advice that would like mess up your instance,
+
+00:31:10.560 --> 00:31:14.000
+but if you pay for Workbench, you know, you have support, so you can always open a ticket.
+
+00:31:17.280 --> 00:31:32.239
+How do we get a Positron shirt like Davis has? Sorry, virtual. It's a great shirt. I wore it
+
+00:31:32.239 --> 00:31:38.160
+for my talk yesterday. I think right now it's only the team members who were around for the
+
+00:31:38.160 --> 00:31:44.400
+official release of Positron, but I can't say that we'll never offer a Positron shirt in the future.
+
+00:31:47.119 --> 00:31:48.880
+How much do I want for it? Yeah. Oh.
+
+00:31:51.760 --> 00:31:55.920
+T-shirts for everyone here? Uh, no, sorry.
+
+00:31:55.920 --> 00:31:57.920
+Yeah.
+

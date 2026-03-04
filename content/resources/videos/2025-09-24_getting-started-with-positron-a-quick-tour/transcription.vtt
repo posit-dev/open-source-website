@@ -1,0 +1,725 @@
+WEBVTT
+
+00:00:00.640 --> 00:00:06.000
+Hi everyone, my name is Isabella Velazquez. Today I'm going to be showing you how to set up and
+
+00:00:06.000 --> 00:00:12.560
+navigate Positron, Posit's new IDE for data science. I'm going to be showing you how to
+
+00:00:12.560 --> 00:00:17.680
+install and download all the things that you need to get started with Positron. If you already have
+
+00:00:17.680 --> 00:00:22.080
+these things installed, just sit tight because afterwards I'm going to go into a quick layout
+
+00:00:22.080 --> 00:00:26.639
+tour where I'm going to show you the different components of Positron's layout that can help
+
+00:00:26.639 --> 00:00:32.320
+you with your data science workflow. Finally, I'm going to go into a very quick glimpse into
+
+00:00:32.320 --> 00:00:38.560
+Positron Assistant, which is an AI client that can help you look at your data, look at your plots,
+
+00:00:38.560 --> 00:00:44.639
+and so on, provide suggestions for your data science workflows. If Positron's AI capabilities
+
+00:00:44.639 --> 00:00:49.680
+are what mostly interest you, I highly recommend that you sign up for the end-to-end workflow next
+
+00:00:49.680 --> 00:00:56.560
+month, which is going to primarily focus on that. Stick around for Q&A after the presentation,
+
+00:00:56.560 --> 00:01:02.799
+and with that, let's get started. First, start off on the Positron documentation page.
+
+00:01:03.840 --> 00:01:12.160
+To download Positron, I go hit download, agree to the Positron license, search for my platform,
+
+00:01:13.040 --> 00:01:13.839
+and hit download.
+
+00:01:22.639 --> 00:01:24.400
+Move this into my applications.
+
+00:01:33.919 --> 00:01:35.440
+I'm going to open up Positron.
+
+00:01:42.879 --> 00:01:48.400
+So this is a completely fresh installation of Positron. If you notice down here, it'll let me
+
+00:01:48.400 --> 00:01:55.199
+know that no interpreters have been found because I don't have R or Python installed. I can hit the
+
+00:01:55.199 --> 00:02:02.480
+get started documentation to figure out what to do next. Let's do the Python setup. Notice
+
+00:02:03.279 --> 00:02:09.440
+we have a few options. We can download Python with UV, PyEnv, PyEnv for Windows.
+
+00:02:10.399 --> 00:02:12.080
+I'm going to hit UV.
+
+00:02:17.279 --> 00:02:23.360
+And reading this, I can see to install the latest Python version, I can run UV Python install.
+
+00:02:26.880 --> 00:02:32.399
+But first things first, I need to install UV, so I'm going to hit installation. I'm on a Mac,
+
+00:02:33.199 --> 00:02:36.720
+so I'm going to go ahead and use cURL to download the script and execute it.
+
+00:02:36.880 --> 00:02:39.919
+I'm going to go back to Positron, terminal,
+
+00:02:45.360 --> 00:02:51.919
+paste, enter, and this will download UV. And then I can go back to
+
+00:02:53.759 --> 00:02:58.320
+installing Python, and then run UV Python install.
+
+00:03:06.720 --> 00:03:18.559
+So this is going to install Python 3.13.7 onto my computer. The next time that we reload
+
+00:03:18.559 --> 00:03:28.000
+Windows or open Positron back up, hit start session, and now I will have Python enabled.
+
+00:03:28.720 --> 00:03:38.399
+And that's it. That's all I had to do to get Positron and Python installed on my computer.
+
+00:03:39.279 --> 00:03:49.440
+I also want to install R. Go back, hit R setup, and then it says, if you plan to use R with
+
+00:03:50.240 --> 00:03:55.679
+Positron, ensure you have R 4.2 installed. And to install R, follow the instructions for our
+
+00:03:55.679 --> 00:04:03.600
+operating system at this address. So I can go ahead, quick download R for macOS again.
+
+00:04:05.839 --> 00:04:07.679
+I believe I have this one.
+
+00:04:08.160 --> 00:04:19.920
+We've been completed. I'm going to go through the installation steps. Three, install.
+
+00:04:20.880 --> 00:04:22.160
+Install.
+
+00:04:34.160 --> 00:04:41.600
+Once it's been successfully installed, I can, once again, close out of Positron, open it back up.
+
+00:04:41.600 --> 00:04:49.839
+And when I hit start session, I'll have not only Python, but also R available.
+
+00:04:56.480 --> 00:05:03.119
+The UV documentation also mentions that if I want to install a specific Python version,
+
+00:05:03.679 --> 00:05:09.119
+I can go ahead and run UV Python install on the version that I want. So say I want 3.2,
+
+00:05:09.679 --> 00:05:22.959
+3.12. Go back to Positron. Type UV Python install 3.12. Enter.
+
+00:05:29.679 --> 00:05:34.160
+Reopen Positron. And then in the command palette, type
+
+00:05:34.480 --> 00:05:44.480
+Python select interpreter. Hit enter. We have not only 3.13.7, but also 3.12.11.
+
+00:05:44.480 --> 00:05:50.239
+So let's say I want to go with the latest and greatest. I'm going to hit Python 3.13.7.
+
+00:05:51.200 --> 00:06:00.000
+Now we are ready to get started with our project. For PositConf this year, we created a demo
+
+00:06:00.799 --> 00:06:05.920
+that explored different data sets depending on whether we were looking at R or Python.
+
+00:06:06.640 --> 00:06:13.359
+So for Python folks, we were taking a look at the species at the Georgia Aquarium. And
+
+00:06:13.359 --> 00:06:18.880
+for R users, we were looking at different metrics from the Falcons football team.
+
+00:06:19.839 --> 00:06:26.959
+So let's say that we want to explore this demo a bit more. Here we are on the GitHub repository.
+
+00:06:27.279 --> 00:06:35.760
+We scroll down. Gives us a bit of an intro. Some of the setup, which is what we just did.
+
+00:06:39.119 --> 00:06:47.279
+And are just about to do. And then instructions for the demo. So I'm going to hit code.
+
+00:06:48.160 --> 00:06:55.600
+I'm going to copy this URL to the clipboard. Going back to Positron. And go over to the
+
+00:06:55.760 --> 00:07:01.279
+activity bar. And you notice it says Git is not installed or otherwise not available.
+
+00:07:01.279 --> 00:07:05.679
+Install Git or fix your Git installation. Let's return to the Positron documentation.
+
+00:07:09.119 --> 00:07:14.959
+Here we can hit Git version control, where it mentions a little bit about Git, which is a
+
+00:07:14.959 --> 00:07:20.000
+distributed version control system that tracks changes in your boss over time. And it mentions
+
+00:07:20.000 --> 00:07:23.679
+before you can use Git in Positron, you need to have Git installed on your computer.
+
+00:07:23.679 --> 00:07:38.079
+To do so, we can go to git-ccm.com and download Git. Here are the instructions for macOS.
+
+00:07:38.959 --> 00:07:43.359
+It says install Homebrew if you don't already have it, which I do not have on this computer.
+
+00:07:44.160 --> 00:07:50.399
+So first, I'm going to install Homebrew by running this script. Return to Positron.
+
+00:07:50.399 --> 00:07:58.799
+Return to Positron. Open up the terminal. Hit paste. Enter.
+
+00:08:20.399 --> 00:08:34.799
+And let's go back and type install Git.
+
+00:08:35.440 --> 00:08:41.200
+So
+
+00:08:48.719 --> 00:08:50.400
+let's reload the window.
+
+00:08:52.799 --> 00:08:55.200
+Now if we hit clone repository,
+
+00:08:56.159 --> 00:08:58.559
+we can clone from
+
+00:09:04.799 --> 00:09:08.640
+and select as a repository destination.
+
+00:09:10.880 --> 00:09:16.640
+Then open it up. I'm going to say I trust all the authors in this parent folder.
+
+00:09:19.359 --> 00:09:21.840
+And here we go. Now we have our project open.
+
+00:09:22.719 --> 00:09:28.000
+So let's briefly talk about each section of Positron that we see here.
+
+00:09:30.000 --> 00:09:37.520
+So first up is the activity bar on the far left, which provides quick access between core views
+
+00:09:37.520 --> 00:09:47.039
+such as explore, search, source control, and extensions, among others.
+
+00:09:47.599 --> 00:09:52.080
+The primary sidebar is on the explorer by default, and it shows you different views
+
+00:09:52.080 --> 00:09:57.919
+depending on what you have chosen in the activity bar. So right now it's on the explorer icon,
+
+00:09:57.919 --> 00:10:02.400
+which provides the file explorer to navigate the project directory in the outline.
+
+00:10:03.520 --> 00:10:09.440
+If we choose the assistant icon, this pane provides access to Positron assistant.
+
+00:10:09.760 --> 00:10:13.599
+The editor is in the center by default, and this is where you write your code.
+
+00:10:14.640 --> 00:10:20.400
+The panel is below the editor by default. It contains the fully interactive integrated
+
+00:10:20.400 --> 00:10:27.440
+console as well as the terminal. You can also access logs from the output channel in the panel.
+
+00:10:27.440 --> 00:10:33.280
+The second view sidebar is on the right by default. You can switch between the sessions pane,
+
+00:10:34.239 --> 00:10:38.400
+and this is where you can explore the variables you have defined and the plots you have created.
+
+00:10:40.400 --> 00:10:45.359
+The connections pane, the help pane, and the viewer pane.
+
+00:10:47.599 --> 00:10:51.520
+The title bar at the very top of the window shows the active file project
+
+00:10:51.520 --> 00:10:55.840
+along with the window controls. Below it, the top bar provides global flow
+
+00:10:55.840 --> 00:11:00.000
+of information about the project. The title bar at the very top of the window
+
+00:11:00.000 --> 00:11:05.039
+controls. Below it, the top bar provides global project tools such as file search,
+
+00:11:05.039 --> 00:11:08.799
+the project switcher, and the interpreter selector with the ability to start,
+
+00:11:09.679 --> 00:11:15.039
+stop, and switch interpreters. And the status bar at the bottom of the window displays details
+
+00:11:15.039 --> 00:11:20.080
+such as your git branch, language mode, portal version, and cursor position.
+
+00:11:22.000 --> 00:11:27.520
+If you are ever in this setup and you find yourself wanting to return to the default,
+
+00:11:28.479 --> 00:11:37.760
+these icons can help you do so. So if you click on here, you'll be able to customize your layout
+
+00:11:38.960 --> 00:11:47.119
+and move things around. Say if you prefer side-by-side layout, a notebook layout,
+
+00:11:47.359 --> 00:11:56.960
+or I like the default layout, which is the stack layout, clicking that returns me to
+
+00:11:56.960 --> 00:12:02.640
+my original view. The explorer is the first and foremost view in the activity bar. It's like a
+
+00:12:02.640 --> 00:12:10.880
+file explorer for your project. And the sidebar expands to show a tree of all the files and
+
+00:12:10.880 --> 00:12:15.760
+folders in your current workspace. So you can easily browse and open any file in your project.
+
+00:12:16.559 --> 00:12:26.559
+You can also create new files, new folders, refresh, explore, and collapse all the folders.
+
+00:12:27.359 --> 00:12:35.200
+It will also change the colors and the icons if something has been added or modified or staged for
+
+00:12:35.200 --> 00:12:43.679
+commit. So let's say we want to run our Python demo. I'm going to switch my interpreter
+
+00:12:44.400 --> 00:12:51.679
+because it selected R for me. So now I am in Python. You can see R is still open. Since I'm
+
+00:12:51.679 --> 00:12:55.200
+not going to need it right now, I'm going to go ahead and close it and just stay with Python.
+
+00:12:56.000 --> 00:13:07.679
+And then I'm going to open up my python-demo.py. If you notice here, plot 9, it has a squiggly
+
+00:13:08.479 --> 00:13:14.799
+line underneath. And hovering over it shows me what the error is. It says import plot 9 cannot
+
+00:13:14.799 --> 00:13:20.719
+be resolved. What that means is that I'm missing plot 9. It has not been installed.
+
+00:13:22.880 --> 00:13:32.880
+Similarly with pullers, it is also missing. In my file explorer, there is a requirements.txt file.
+
+00:13:33.039 --> 00:13:41.119
+These are all the files that I need for my project. So I can actually go ahead and
+
+00:13:41.919 --> 00:13:51.520
+install all of those libraries using UV. I want to create a virtual environment,
+
+00:13:51.520 --> 00:13:58.159
+which is a self-contained way of managing all of my Python dependencies. I highly recommend
+
+00:13:58.159 --> 00:14:01.599
+always creating a virtual environment if you are running a Python project.
+
+00:14:02.400 --> 00:14:12.159
+So I'm going to run, in the terminal, uvvamp to create my virtual environment.
+
+00:14:14.320 --> 00:14:20.400
+You notice it's going to say creating virtual environment at .vamp, activate source,
+
+00:14:20.400 --> 00:14:26.320
+vamp bin, activate. And at the bottom, it's going to say we notice a new environment has
+
+00:14:26.320 --> 00:14:31.440
+been created. Do you want to select it for the workspace folder? So I'm going to hit yes. Now,
+
+00:14:31.440 --> 00:14:36.000
+both the console and the new terminals will reflect the new project-specific virtual
+
+00:14:36.000 --> 00:14:42.159
+environment. If I click my interpreter here, I can confirm because it has the
+
+00:14:43.520 --> 00:14:50.159
+directory for my demo. And then it also says vamp in Python. Now I can install all the
+
+00:14:50.159 --> 00:14:57.760
+dependencies by running this in the terminal. First, I'm going to source my virtual environment.
+
+00:15:00.479 --> 00:15:04.400
+If you notice, this is the same instructions that I was provided here.
+
+00:15:05.119 --> 00:15:10.400
+Enter. And now I can install all of the libraries I need by running
+
+00:15:10.400 --> 00:15:14.880
+uvpipinstall-r requirements.txt.
+
+00:15:25.599 --> 00:15:29.359
+And super quick, UV installed all of the packages that I need.
+
+00:15:29.440 --> 00:15:37.760
+Okay. Now, when I return to my Python-demo.py script,
+
+00:15:38.559 --> 00:15:45.200
+plotline and pollers are no longer underlined. And I can hit run cell.
+
+00:15:46.159 --> 00:15:55.840
+It's going to import all the modules and then also read in this GeorgiaAquariumSpecies.csv
+
+00:15:55.840 --> 00:16:04.239
+data set and then store it in an object called species. Let's quickly take a look at the rest
+
+00:16:04.239 --> 00:16:10.479
+of the script. So up here, we have loading libraries. The next chunk of code has a
+
+00:16:11.039 --> 00:16:17.679
+summarizing the number of species by conservation status. And we can see there are a few options,
+
+00:16:17.679 --> 00:16:24.080
+critically endangered, endangered, vulnerable, and so on. This next section is creating a summary
+
+00:16:24.080 --> 00:16:32.239
+table. And then the very last part is creating a plot using the plot9 package.
+
+00:16:32.880 --> 00:16:42.640
+Since we ran this chunk up here, we also got an output in our console. So let's open that up a
+
+00:16:42.640 --> 00:16:51.039
+little bit more. If you notice, it printed the species object that we created up in the
+
+00:16:51.919 --> 00:16:59.520
+Python-demo.py file. So the console provides a direct command line to the Python-demo.py
+
+00:16:59.919 --> 00:17:04.719
+file. So the console provides a direct command line interface for interacting with R or Python.
+
+00:17:05.760 --> 00:17:12.000
+So you can type a single line or block of code directly into the console, press enter to execute
+
+00:17:12.000 --> 00:17:19.119
+it immediately. And like we just did when you run a script in the editor, the output, like any
+
+00:17:19.119 --> 00:17:24.800
+results, plots, or warnings are displayed in the console. We can take a quick look at the species
+
+00:17:25.599 --> 00:17:32.400
+data set. It's a bit abbreviated here, but we can see some of the animals,
+
+00:17:33.119 --> 00:17:36.239
+some of the information contained about them, and so on.
+
+00:17:38.239 --> 00:17:45.119
+But one thing to note is that the console is meant to view these variables in the objects,
+
+00:17:45.119 --> 00:17:50.880
+but it's meant to be temporary. Any commands we type into the console are not saved,
+
+00:17:50.880 --> 00:17:59.199
+and we want to make sure that we do that in our script. So while having this printed out is very
+
+00:17:59.199 --> 00:18:08.160
+helpful, it's a little bit hard to see. And for that, Positron has the viewer pane. Located up
+
+00:18:08.160 --> 00:18:17.439
+here, it displays any objects and data sets that we have imported. Opening this up, we can take a
+
+00:18:17.439 --> 00:18:26.319
+closer look at our CSV. You can see the names of the various columns. We can see the data type,
+
+00:18:27.359 --> 00:18:34.000
+in this case string, across all of them. And then opening them up, we can see the first few values.
+
+00:18:38.160 --> 00:18:44.400
+So this helps provide a quick look as to what is contained within our data set.
+
+00:18:45.359 --> 00:18:55.199
+If we want an even more granular view, we can hit this icon to open up the data grid.
+
+00:18:58.640 --> 00:19:05.520
+The data grid is the primary display of the Data Explorer in Positron, with a spreadsheet-like
+
+00:19:05.520 --> 00:19:12.400
+cell-by-cell view. And it's meant to scale efficiently to relatively large in-memory
+
+00:19:12.400 --> 00:19:22.400
+data sets, up to millions of rows or columns. So opening that up, each column header has the
+
+00:19:22.400 --> 00:19:26.239
+column name above the data type, which is dependent on the back-end type.
+
+00:19:28.000 --> 00:19:31.920
+At the top right of each column, there is a context menu
+
+00:19:33.599 --> 00:19:36.880
+to control sorting or add a filter for the selected column.
+
+00:19:37.599 --> 00:19:42.959
+You can resize the columns by clicking and dragging the column's borders.
+
+00:19:44.479 --> 00:19:51.280
+The row labels default to the observed row index. And we can also sort the data by column's value
+
+00:19:52.400 --> 00:19:58.959
+by opening up that menu and then clicking Sort Ascending or Sort Descending.
+
+00:19:59.040 --> 00:20:07.119
+Another aspect of the Data Explorer is called the Summary Panel. And this displays a scrolling
+
+00:20:07.119 --> 00:20:12.560
+list of all the column names and an icon representing their respective type. So in
+
+00:20:12.560 --> 00:20:19.920
+this case, this column is called Name. Hovering over, we can see it is a string. It also displays
+
+00:20:19.920 --> 00:20:25.520
+a sparkline histogram or frequency table of that column's data and the amount of data that is
+
+00:20:26.079 --> 00:20:34.560
+missing as both an inline graph and an increasing percentage. If you click on the caret symbol for
+
+00:20:35.439 --> 00:20:39.599
+a column, it will expand to show additional summary statistics and a larger sparkline.
+
+00:20:40.640 --> 00:20:44.079
+And the summary sparkline charts and missing data indicator
+
+00:20:45.040 --> 00:20:48.959
+also provide tooltips when you hover over them.
+
+00:20:49.760 --> 00:20:54.880
+Above the Summary Panel are the filters. So by hitting this plus sign, I can create an
+
+00:20:54.880 --> 00:21:01.439
+ephemeral filter where I can take a quick look at the data if I were to apply certain filters
+
+00:21:02.400 --> 00:21:08.160
+without actually changing the data set itself. So for example, let's say I want to select
+
+00:21:09.199 --> 00:21:12.000
+conservation status. It's not equal to
+
+00:21:12.719 --> 00:21:22.400
+least concerned. Apply the filter. And then we can take a quick look at the other categories and how
+
+00:21:22.400 --> 00:21:28.239
+much, how many counts they have and how many things have changed. I can continue adding more
+
+00:21:28.239 --> 00:21:35.040
+filters if I want, or I can remove them. And again, these are ephemeral filters. They don't
+
+00:21:35.359 --> 00:21:47.280
+modify anything within your data set. Let's return to our file. So I could go through and run
+
+00:21:47.280 --> 00:21:51.280
+all of this code line by line or chunk by chunk, but I can also hit this play button
+
+00:21:52.880 --> 00:21:56.079
+and it will run the whole script from top to bottom.
+
+00:21:56.880 --> 00:22:00.319
+Doing so, you can see that my plot has now populated.
+
+00:22:04.719 --> 00:22:11.040
+It shows a quick histogram by conservation status and that summary table that was created within
+
+00:22:11.040 --> 00:22:23.359
+the script. So let's take a look at how this works. So I'm going to go ahead and create a
+
+00:22:23.599 --> 00:22:34.560
+script. Something I may have noticed is that the font size to me seems a little bit small.
+
+00:22:35.280 --> 00:22:42.800
+And for me, personally, my favorite theme in plot nine is theme minimal. So per se,
+
+00:22:42.800 --> 00:22:49.920
+I am wondering if I could edit the theme and the font size at the same time.
+
+00:22:50.560 --> 00:22:57.199
+If I go to the console, I can run help and then run p9, which stands for plot nine,
+
+00:22:57.920 --> 00:22:59.280
+and then theme minimal.
+
+00:23:03.680 --> 00:23:11.520
+Hit enter. And the help documentation for plot nine is available within Positron itself.
+
+00:23:12.479 --> 00:23:18.239
+And taking a quick look, I can see indeed within theme minimal, I can change the base size,
+
+00:23:19.199 --> 00:23:25.599
+which is the base font size, as an argument itself. So I can scroll down
+
+00:23:28.160 --> 00:23:29.439
+and add that to my code.
+
+00:23:36.479 --> 00:23:41.439
+Also add the base size. I'm going to do 16.
+
+00:23:41.439 --> 00:23:54.079
+Hit run cell. Now I can see the theme minimal has been applied and the font size is bigger.
+
+00:23:56.160 --> 00:24:03.040
+In the plots pane, I can also look at my plot history. So say I wanted to compare how it looks
+
+00:24:03.040 --> 00:24:08.800
+now to my previous plot, I can click back and forth. There are various other things I can do
+
+00:24:08.800 --> 00:24:17.359
+in the plots pane. From here, I can save my plot and also provide a specific width and height,
+
+00:24:17.359 --> 00:24:27.839
+if I so choose. I can copy the plot to my clipboard. I can also change
+
+00:24:29.280 --> 00:24:35.119
+dimensions of the plot depending on what I am interested in. So say I want a square plot.
+
+00:24:36.000 --> 00:24:42.319
+The other thing I can do is apply a dark filter and save this version, if I prefer,
+
+00:24:43.359 --> 00:24:44.719
+and then also clear all plots.
+
+00:24:52.160 --> 00:24:56.400
+One other thing I want to note, if we look back on the editor, on the side, you'll see
+
+00:24:57.119 --> 00:25:06.160
+that on the line 68, where I have changed the theme, there is this green bar, which indicates
+
+00:25:06.160 --> 00:25:11.760
+that I have made a modification. So quick recap, we've taken a look at the file explorer, the
+
+00:25:11.760 --> 00:25:22.000
+editor, the console, the variable, the viewer pane, along with the data grid, the summary panel,
+
+00:25:22.800 --> 00:25:30.079
+and the filter bar. And we've also taken a look at the plots pane. Now let's take a look at the
+
+00:25:30.079 --> 00:25:37.920
+Positron Assistant. I click Positron Assistant, open this up. If we go back to the Positron
+
+00:25:37.920 --> 00:25:43.599
+documentation, features, and then Positron Assistant, you can learn more about Positron
+
+00:25:43.599 --> 00:25:51.599
+Assistant. If you notice, we need to opt into Positron Assistant enable setting to enable it.
+
+00:25:52.000 --> 00:25:58.719
+So by hitting this and hitting open link, it's going to take us to our settings in Positron,
+
+00:25:58.719 --> 00:26:10.079
+and then I can hit enable. Next up, we'll have to go to our command palette and reload the window.
+
+00:26:12.800 --> 00:26:18.959
+Going back to Positron Assistant, we can hit add a topic as a chat provider, paste
+
+00:26:19.680 --> 00:26:28.239
+our interopic key. After we hit sign in, hit close, and now Positron Assistant is now enabled.
+
+00:26:28.239 --> 00:26:33.680
+Positron Assistant, as noted in the sidebar, is an AI coding companion designed to accelerate
+
+00:26:33.680 --> 00:26:38.640
+and enhance your data science projects. So let's try a few examples.
+
+00:26:41.119 --> 00:26:47.520
+So if you notice here, we are in ask mode. This is the default mode with Positron Assistant.
+
+00:26:48.479 --> 00:26:53.760
+Ask is for questions and help, edit is for collaborative code modifications,
+
+00:26:53.760 --> 00:26:58.959
+and agent is for autonomous task execution like file management and code execution.
+
+00:27:00.319 --> 00:27:12.800
+First, let's ask Positron Assistant to please summarize the species data table.
+
+00:27:18.239 --> 00:27:23.599
+It lets us know the species data table from the Georgia Aquarium contains 154 species across 11
+
+00:27:23.599 --> 00:27:29.599
+columns. Overview, key columns, conservation, status, distribution.
+
+00:27:31.760 --> 00:27:36.479
+All right, so we can see this could be very helpful for beginning your analyses.
+
+00:27:37.040 --> 00:27:44.800
+Let's try another question. We can ask Positron Assistant, what do you see in the current plot?
+
+00:27:45.520 --> 00:27:50.560
+Positron Assistant has let us know, looking at the current plot, I can see a horizontal bar chart
+
+00:27:50.560 --> 00:27:55.199
+that visualizes the conservation status and we have the Georgia Aquarium species.
+
+00:27:55.760 --> 00:28:01.439
+Here's what the plot shows. So we can see that the current plot is showing us the
+
+00:28:02.400 --> 00:28:08.000
+Positron Assistant has let us know, looking at the current plot, I can see a horizontal bar chart
+
+00:28:08.000 --> 00:28:12.640
+that visualizes the conservation status and we have the Georgia Aquarium species.
+
+00:28:12.640 --> 00:28:20.719
+Here's what the plot shows. Let's know it's a flip bar chart. All right, this is very helpful and
+
+00:28:20.719 --> 00:28:28.079
+can help us like figure out how we best want to explain the things that we've seen in our dataset.
+
+00:28:28.880 --> 00:28:31.520
+Let's ask Positron Assistant one more question.
+
+00:28:33.520 --> 00:28:43.520
+Based on data tables in my session, please suggest some starter code for interesting analyses.
+
+00:28:58.079 --> 00:29:04.319
+I'm just letting it run.
+
+00:29:12.239 --> 00:29:19.119
+So we can see it has a lot of ideas. So it suggests some geographic distribution analyses
+
+00:29:19.119 --> 00:29:26.000
+that we could do, size distribution by conservation status, diet diversity analysis,
+
+00:29:26.000 --> 00:29:32.000
+habitat complexity analysis, conservation status heat map, and fun fact text analysis.
+
+00:29:33.040 --> 00:29:37.520
+So from here we have a few options. So as opposed to the answers from before,
+
+00:29:38.400 --> 00:29:45.199
+this time Positron Assistant actually gave us some code. So if we hover over the code chunks,
+
+00:29:45.199 --> 00:29:52.000
+we have a few options. Here we can run in console. So as you recall, the console provides a temporary
+
+00:29:52.000 --> 00:29:58.160
+workspace for our code. So if we want to take a quick look at what Positron Assistant provided us,
+
+00:29:58.160 --> 00:30:06.239
+we can hit that. We can also apply in the editor. Let's say we want to check out the
+
+00:30:06.239 --> 00:30:10.719
+size distribution by conservation status. I can hit this play button,
+
+00:30:12.000 --> 00:30:18.479
+and then it will show me the plot that it came up with. And with that, I'll stop there. I hope that
+
+00:30:18.479 --> 00:30:23.760
+you enjoyed this quick Positron setup and layout tour, as well as a brief glimpse into Positron
+
+00:30:23.760 --> 00:30:29.839
+Assistant. If Positron's AI capabilities are what interests you, including Positron Assistant's
+
+00:30:29.839 --> 00:30:35.680
+different modes, and DataBot and AI Assistant for exploratory data analysis, I highly encourage you
+
+00:30:35.680 --> 00:30:42.319
+to sign up for Ryan Johns' workflow demo happening at the same time next month. With that, thank you,
+
+00:30:42.319 --> 00:30:47.359
+and stick around for Q&A!
+

@@ -1,0 +1,2551 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Paz at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.680 --> 00:00:22.040
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:22.040 --> 00:00:27.280
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.280 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:35.720
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.720 --> 00:00:38.400
+Can't wait to see you there.
+
+00:00:38.400 --> 00:00:44.520
+And with that, I would love to introduce our featured leader today, Pallas Horwitz. She's
+
+00:00:44.520 --> 00:00:49.240
+an analytics consultant and a professional development coach. Pallas, thank you so much
+
+00:00:49.240 --> 00:00:50.240
+for being here.
+
+00:00:50.240 --> 00:00:54.160
+So excited to be here. Thank you for inviting me.
+
+00:00:54.160 --> 00:01:00.919
+Yeah, of course. And I, I learned about Pallas through a mutual friend of ours, Mark, and
+
+00:01:00.919 --> 00:01:05.480
+Mark is not here today. Mark, if you're listening later, we miss you.
+
+00:01:05.480 --> 00:01:10.800
+He actually, he's hiking right now, but he messaged me and said to say hello to everyone
+
+00:01:10.800 --> 00:01:12.400
+and he wishes he was here.
+
+00:01:12.400 --> 00:01:19.400
+Yeah, he's hiking the Grand Canyon, which is amazing. Well, Pallas, if you could introduce
+
+00:01:19.440 --> 00:01:24.639
+yourself for us, that would be great. A little bit about you and something you like to do
+
+00:01:24.639 --> 00:01:27.080
+outside of work for fun.
+
+00:01:27.080 --> 00:01:34.080
+Okay. Well, I'm Pallas. I've been doing data things for about 13 years now. Spent half
+
+00:01:36.879 --> 00:01:41.480
+my career in the gaming industry and half my career in tech more generally. And I've
+
+00:01:41.480 --> 00:01:45.400
+definitely worked my way up starting entry level and then growing into a lead and then
+
+00:01:45.400 --> 00:01:52.160
+manager and then director. And it's just interesting to see, you know, how things have
+
+00:01:52.160 --> 00:01:57.320
+changed every five years. There's new trends, new tools. And outside of work, I'm a big
+
+00:01:57.320 --> 00:02:03.519
+movie buff. I like really old movies, like 1930s, 1920s. And all that stuff's available
+
+00:02:03.519 --> 00:02:07.959
+on streaming now. YouTube's great for that stuff. So I've watched a lot of old movies.
+
+00:02:07.959 --> 00:02:12.960
+Oh, that's awesome. I think that we probably have some cinema files in our, our group as
+
+00:02:12.960 --> 00:02:19.960
+well. Well, I wanted to pop in the link one more time to questions, make sure that I've
+
+00:02:20.720 --> 00:02:26.880
+got it to share with everybody and remind everybody that when you ask questions in Slido,
+
+00:02:26.880 --> 00:02:32.199
+you can also vote for other questions. So if you pop into Slido, look at the questions
+
+00:02:32.199 --> 00:02:36.080
+that everybody else has asked, upvote ones that sound interesting to you and ask your
+
+00:02:36.080 --> 00:02:42.720
+own. But I get to start because we don't have any questions rolling in here yet. So one
+
+00:02:42.720 --> 00:02:46.919
+of the questions that I had initially for Pat was when I first talked to her was like,
+
+00:02:46.919 --> 00:02:53.399
+Hey, you know, a lot of data science projects actually fail. And a lot of like analytics
+
+00:02:53.399 --> 00:02:57.960
+initiatives fail. It's something that as data scientists, I think we've all dealt with.
+
+00:02:57.960 --> 00:03:02.399
+And so one thing I've struggled with when I'm writing my resume, or I'm talking about
+
+00:03:02.399 --> 00:03:06.919
+my experiences, there's always this question of like, well, what impact did you have? And
+
+00:03:06.919 --> 00:03:11.399
+I'm thinking, Oh, well, that project got canceled or that project failed, or, or that whole
+
+00:03:11.440 --> 00:03:16.800
+initiative got canned. Is there a way you can think of to like some advice you could
+
+00:03:16.800 --> 00:03:22.240
+give for people on how to phrase or structure things or approach things in that situation?
+
+00:03:22.919 --> 00:03:31.119
+Yeah, I think a lot of times when we think about impact, we think, therefore, the company
+
+00:03:31.119 --> 00:03:36.759
+made this decision, they launched this feature, they made this amount of money. And there's
+
+00:03:36.759 --> 00:03:42.440
+a broader definition of impact, actually, when we try something out from a data science
+
+00:03:42.440 --> 00:03:46.559
+perspective, and it doesn't work, well, we actually just learned something new, we learn
+
+00:03:46.559 --> 00:03:52.279
+this data isn't predictive of this outcome, we learn this technique falls short. And
+
+00:03:52.279 --> 00:03:57.759
+sometimes the absence of something working saves the business time, it means we don't
+
+00:03:57.759 --> 00:04:01.759
+need to invest further there, it means we can ask other questions, we can focus on other
+
+00:04:01.759 --> 00:04:08.320
+hypotheses. And that in and of itself is valuable, you are moving the research of your
+
+00:04:08.559 --> 00:04:13.839
+company forward when you find out something doesn't work, because it means, well, someone
+
+00:04:13.839 --> 00:04:18.559
+else doesn't need to do that. You've saved time, you're moving forward. And so I think,
+
+00:04:18.839 --> 00:04:22.559
+you know, when we think about these, these research studies, or these analysis techniques,
+
+00:04:22.600 --> 00:04:27.720
+it's not just about what answer did you get? But what are your business stakeholders care
+
+00:04:27.720 --> 00:04:32.480
+about? And how do you move the conversation forward, you know, that our role is data
+
+00:04:32.480 --> 00:04:40.440
+people is to help business leaders make informed decisions with confidence. And so if our
+
+00:04:40.440 --> 00:04:45.839
+data can't inform this, the solution, well, that's okay, then they can rely on their
+
+00:04:45.839 --> 00:04:51.000
+business intuition. And that's valuable for the business stakeholders to know. And so
+
+00:04:51.000 --> 00:04:55.440
+it's not, it's not a failure, it's still a learning, it's just a different flavor of
+
+00:04:55.440 --> 00:04:55.880
+learning.
+
+00:04:57.200 --> 00:05:01.679
+As you're saying all this, I'm sitting here trying to think of things that I could have
+
+00:05:01.679 --> 00:05:06.600
+done differently, or ways that I could have talked about all of these failures differently.
+
+00:05:06.600 --> 00:05:10.239
+And sometimes they were failures that were completely outside of the data product itself.
+
+00:05:10.239 --> 00:05:15.399
+They were failures on a leadership level or strategic level, failures of communication.
+
+00:05:16.200 --> 00:05:22.279
+But I still learned from those. I think that's a great takeaway. All right, well, I have
+
+00:05:22.279 --> 00:05:28.359
+another selfish question. Let me check and see what we have here. Ah, we do have some
+
+00:05:28.359 --> 00:05:32.600
+questions in Slido. Okay, I will hold my selfish questions for a minute. We have an
+
+00:05:32.600 --> 00:05:37.000
+anonymous question that if you are in Slido, I will just highlight it. So everybody can
+
+00:05:37.000 --> 00:05:42.559
+see it. But I'll copy it into the chat as well. Which is what data project management
+
+00:05:42.559 --> 00:05:47.559
+framework have you found most success using and I really like this because I've worked
+
+00:05:47.559 --> 00:05:51.239
+in all kinds of project management environments. And some of them I really don't like. So I'd
+
+00:05:51.239 --> 00:05:52.359
+love to know your opinion.
+
+00:05:54.359 --> 00:05:55.320
+Oh, that's a hard one.
+
+00:05:55.679 --> 00:05:56.519
+It is.
+
+00:05:57.760 --> 00:06:02.920
+So the truth is, you know, these projects are broken into phases, we need to understand
+
+00:06:02.920 --> 00:06:08.079
+the question, we need to decide on our technique. And then we actually need to do the
+
+00:06:08.079 --> 00:06:15.119
+analysis and iterate, etc. And, you know, I've worked on product development teams that
+
+00:06:15.119 --> 00:06:20.959
+use agile, I've worked on teams that use Kanban. And none of these are actually a great
+
+00:06:20.959 --> 00:06:28.559
+fit for data projects, because there is so much ambiguity. And so it's really, it's not
+
+00:06:28.559 --> 00:06:33.959
+that there is a best path here, it's about understanding how to chunk up your work and
+
+00:06:33.959 --> 00:06:38.200
+set expectations. Because if you know how to set expectations with your stakeholders,
+
+00:06:38.440 --> 00:06:43.320
+the actual project management framework itself is less important, but the framework is
+
+00:06:43.320 --> 00:06:49.920
+there to drive decisions, drive timelines, drive prioritization. And for data projects,
+
+00:06:49.920 --> 00:06:54.760
+it's often better to have a conversation, and then square peg round hole it into whatever
+
+00:06:54.760 --> 00:06:59.799
+company or whatever process your company is using. But I've never seen a process that like
+
+00:06:59.839 --> 00:07:04.119
+fits perfectly and seamlessly where you don't need to have that stakeholder conversation.
+
+00:07:05.839 --> 00:07:10.959
+Yeah, nothing is perfect. I feel like it's tough because teams are made up of individuals
+
+00:07:10.959 --> 00:07:16.160
+and individuals are all completely different people. And often, when I'm saying like, I've
+
+00:07:16.160 --> 00:07:22.359
+worked in project management styles that were really, really terrible. They were terrible
+
+00:07:22.359 --> 00:07:26.920
+for me, but they were not terrible for some other people on my teams. And that's always
+
+00:07:26.920 --> 00:07:31.239
+tricky, right? It's like, it's almost like teaching, everyone's going to be a different
+
+00:07:31.239 --> 00:07:38.079
+type of learner. One thing I also am curious about is something that I struggle with
+
+00:07:38.079 --> 00:07:44.480
+personally, advocating for taking the time to like sharpen your own axe. And we've talked
+
+00:07:44.480 --> 00:07:49.359
+about this on the Hangout before. But my question is, instead of like, hey, how do I convince
+
+00:07:49.359 --> 00:07:54.880
+my manager that I need time to sharpen my axe? How do I convince myself that it is okay
+
+00:07:55.079 --> 00:08:02.359
+to say, I need several hours a week to skill build when that doesn't have a product at
+
+00:08:02.359 --> 00:08:04.119
+the end of it to hand over to somebody?
+
+00:08:04.119 --> 00:08:24.119
+It's a little bit, it's a little bit goes back to our conversation about failure. And it's only failure if you don't take into account the learning opportunity and the fact that you're moving the conversation forward. If you are hyper laser focused on, I have to figure out the root
+
+00:08:25.040 --> 00:08:44.280
+cause of what drove this metric, or I have to just project out, forecast, whatever thing I'm forecasting. You're not thinking more holistically. And, you know, as AI becomes more and more popular, AI is able to, you know, point to these different techniques and
+
+00:08:48.280 --> 00:08:48.760
+methods.
+
+00:08:49.760 --> 00:08:50.719
+That's the one.
+
+00:08:50.719 --> 00:08:51.320
+There it is.
+
+00:08:52.400 --> 00:09:11.599
+And what actually AI can't do, though, is add that, you know, human je ne sais quoi. And, you know, if we think about how can you be the best creative thinking human that is going to connect insights better than the people in the AI, you know, models around you,
+
+00:09:12.080 --> 00:09:31.119
+investing in your skill set is going to make you better. And sometimes it's not just about getting explicit permission from your manager, because if you want to spend two hours a week, your manager is not going to know what you're doing for two hours a week, you're going to be able to slide that in just fine. But it's about recognizing your impact doesn't come from just, you know,
+
+00:09:32.080 --> 00:09:57.280
+spending more time in Python and R, typing at the keyboard, trying to fit this model, your impact comes from your ability to think holistically. And you're not going to be able to think holistically without taking a step back and figuring out what do I need to invest in for myself, so that I, you know, like, it's invest in yourself for the sake of helping drive investment in your company. And you have to put your career first because no one else is going to do it for you.
+
+00:09:57.840 --> 00:10:17.119
+Oof. That is true. And that is so, so hard to swallow. Sometimes I really struggle with this. If anybody else does, I'm with you. We have another anonymous question in the chat that I really like. So I will highlight that for everybody in Slido. So you can see it and I'll put it in the chat here as well.
+
+00:10:17.119 --> 00:10:31.359
+And it is, given all the different teams and all the different people that you've worked with, what repeated forms of communication failures have you seen? And how can you now overcome them preemptively?
+
+00:10:31.359 --> 00:11:00.000
+Well, there's a lot of usage of words like failure in these questions. And I really try to move away from that mindset. You know, things are not so binary in terms of success and failure. But I'd say the constant throughout my career, regardless of whether I'm at a startup, if I'm working on slot machines, hair extensions, you know, helping out Facebook in India, the common thing is, I'm not going to be able to do that.
+
+00:11:00.239 --> 00:11:22.000
+The common thing is, people who are drawn to data careers, think differently, oftentimes, than the business people around them. And that means they also communicate differently. They focus on different things. I've been called pedantic many times in my career. Sometimes I take that as a compliment. And sometimes, whatever, I brush it off.
+
+00:11:22.000 --> 00:11:50.000
+But it's, I fixate on the details, and I'm paid to fixate on the details in ways that no one else around me is. And so the biggest theme in my career is, we're talking past each other. The business stakeholders don't fully understand my skill set, my tool set, and what I can actually accomplish. And until I really took a step back and spent more time talking to my stakeholders, I didn't really understand what they were trying to accomplish.
+
+00:11:50.000 --> 00:12:11.000
+And so it's really about having that conversation. You know, we all would love to just focus on coding, and not have to worry about the human element. But the truth is, those human connections and those human relationships, understanding what matters to the people around you, that's actually what's going to help you drive your impact forward. That's how you're going to build trust.
+
+00:12:12.000 --> 00:12:37.000
+That's how, you know, when your model doesn't produce the results you were hoping for, when you have that relationship, and you have that trust, and you have that understanding with your stakeholders, that's going to give you grace. And they're like, oh, you worked really hard, and now we know this methodology doesn't work out, and you can try this other thing. But that doesn't work unless you talk to each other. And there's this art to understanding, what are the questions my business stakeholders meant to ask?
+
+00:12:38.000 --> 00:12:49.000
+Because sometimes they don't even know how to word their questions. Because as I said, they don't understand our skill sets and our tool set most of the time. And so how do you learn how to translate what they meant to ask you for?
+
+00:12:50.000 --> 00:13:09.000
+Yeah, that's a good one. My degrees, while they are statistical and mathy and stuff, come from a college of business. And so I got a bunch of business courses. And that was one of the biggest business analytics lessons for me in school. It was like over and over again. People are not going to know what they want.
+
+00:13:10.000 --> 00:13:29.000
+But it's the same education that my husband, who has an arts degree and worked in marketing and branding and logo creation, it was the same thing. He was taught, no one's going to know what they want. And half the job is you helping them figure out what they actually want, and then translating that into the stuff that you can give them.
+
+00:13:30.000 --> 00:13:49.000
+Fantastic advice. Thank you, anonymous asker, for your wonderful question. We have some non-anonymous questions popping up here. But I want to follow up with an anonymous one again, because it's right in line with what you just said. You said, I just want to stick to coding, and maybe that's not the best thing.
+
+00:13:49.000 --> 00:14:06.000
+This question is, as an R expert, R coding, programming language, I'm often encouraged to learn more about business context. Should coders go deep into domain knowledge or rather focus on building strong bridges with business experts? I feel I'd rather stick to what I do best and just code in R.
+
+00:14:06.000 --> 00:14:32.000
+So, I mean, that's a hard one. This is a really personal choice. Thinking about what you should be doing is a bit of a trap. Because, you know, I guess in the first three to five years of your career, you have to check a bunch of boxes, and it's about learning how to be effective and do effective analysis, find statistically significant results. And so you should be focusing on your hard skills those first three to five years.
+
+00:14:33.000 --> 00:14:53.000
+From there, when you play to your strengths, you're naturally going to be more inspired, more curious, and you're going to work harder than the people around you. And so if you focus on what you should pick up, well, all of the other people who are naturally inclined to that are going to do it better than you.
+
+00:14:54.000 --> 00:15:11.000
+And so if you force yourself, well, everyone says I should be doing this in Python, and then you force yourself, well, the problem is there's going to the next generation is going to be doing that much faster than you, and they're going to work harder than you and get further ahead than you. And so it's not about what you should or shouldn't be doing.
+
+00:15:12.000 --> 00:15:28.000
+But it's about where do you see yourself in five to 10 years? When the next technological sea change occurs, what are you doing now to make your skill set and your career trajectory robust against the next technological change?
+
+00:15:28.000 --> 00:15:43.000
+You know, when I first started writing data pipelines, it was all in Bash, and I was managing a Hadoop server, and it was miserable. And I should have become an expert in Hadoop and Bash, and that skill set would serve me not at all today.
+
+00:15:43.000 --> 00:16:08.000
+It does help me have empathy for my data engineering partners. But if I had just invested several years in becoming really good at that, it wouldn't have helped me get to where I wanted to go. And so there isn't an easy answer here, but just recognize, if you're only bringing one thing to the table, eventually the technology is going to move past that one thing. And so how are you going to future proof yourself?
+
+00:16:09.000 --> 00:16:31.000
+Awesome. And I wish that I had a better answer, too, because I've really struggled with this for a really, really long time. People are telling me I should do this, or I'm being really encouraged to do this, and it doesn't come easy to me. And I'm thinking, oh, I just must have a willpower problem where I should be able to power through and do this thing.
+
+00:16:31.000 --> 00:17:00.000
+And it turns out, no, what benefited me most was doing the thing that came more fluidly to me and more easy to me, and really prioritizing it. So thank you, anonymous question asker, that was great. And there's a sort of follow-up question that flows really nicely to this from Arsenis in Slido, and so I would love it if Arsenis could unmute and ask that for us, and I will highlight it in Slido so everybody can see it, pop it in the chat.
+
+00:17:01.000 --> 00:17:03.000
+Cool. Thank you, Libby.
+
+00:17:03.000 --> 00:17:04.000
+Hey.
+
+00:17:04.000 --> 00:17:30.000
+Yeah, thanks for joining us. Is it Paula's side? Thank you for joining us today and sharing your experience with us. So my question is, given all the ambiguity around data-related titles and role definitions, what are some of the ways that you think a data professional can best communicate their skills to the market so that they can actually land in a role
+
+00:17:30.000 --> 00:17:33.000
+that makes sense for them? So yeah.
+
+00:17:33.000 --> 00:17:36.000
+Yeah.
+
+00:17:36.000 --> 00:17:48.000
+So one thing you can do is, if you just spend a lot of time on LinkedIn and if you can find people who are already in the roles that you want to have, how are they talking about themselves?
+
+00:17:48.000 --> 00:18:03.000
+If you can reach out, even if companies aren't hiring, if you can network with people who run teams who have the type of role you want to have, reach out to that person, especially if they're not hiring, because that means they aren't getting a lot of outreaches, and just see if they'll have a casual coffee chat with you.
+
+00:18:03.000 --> 00:18:24.000
+You can make a guess and blindly have hypotheses about how you should market yourself, but the best way to test your hypothesis is talk to the people that you would sell your experience to and find out what lands the most with them. Let them tell you what they're looking for and what the market wants.
+
+00:18:25.000 --> 00:18:28.000
+Yeah.
+
+00:18:28.000 --> 00:18:39.000
+That's where I always get the advice to talk about your impact. We'll talk about the business impact you had. And I'm like, on all these data projects that like went nowhere or failed or like an app that nobody used.
+
+00:18:39.000 --> 00:18:42.000
+It's always so tough. Okay.
+
+00:18:42.000 --> 00:18:46.000
+Arsenis, thank you so much for your question.
+
+00:18:46.000 --> 00:18:49.000
+I have the same question over and over again.
+
+00:18:49.000 --> 00:18:52.000
+And it's always a struggle.
+
+00:18:52.000 --> 00:18:58.000
+I have a question from Rachel that I wanted to let her talk about. Rachel, do you want to ask that one?
+
+00:18:58.000 --> 00:19:14.000
+Yeah, Pell is when you were talking about helping people translate their ideas into a language that resonates with stakeholders. I was wondering if you could give us a specific example or one that like comes to mind for you right away.
+
+00:19:14.000 --> 00:19:16.000
+Yes, just give me a moment to think of one.
+
+00:19:16.000 --> 00:19:18.000
+Okay.
+
+00:19:18.000 --> 00:19:32.000
+I think a common theme is stakeholder asks for dashboards. I want to be able to slice this dashboard by date, country, blah, blah, blah, blah, blah, like 10 to 15 micromanaging slices the data.
+
+00:19:32.000 --> 00:19:49.000
+And whenever I get those sort of requests, my initial thinking is, yeah, you don't know what you're actually looking for. You just want to ask for everything just assuming if I if I work for a week or two, putting together every different slice of this dashboard, you'll finally have that magic aha moment.
+
+00:19:49.000 --> 00:20:03.000
+And so you don't actually know what you want. And so whenever I get a very detailed ask that has like 10 to 15 different sub segments in it, that tells me let me go have a conversation with that person.
+
+00:20:03.000 --> 00:20:15.000
+What are you trying to accomplish with this? What are you going to do with this data? What are you going to do if the data is informative and it validates your hypothesis? What are you going to do if the data negates your hypothesis?
+
+00:20:15.000 --> 00:20:30.000
+What are you going to do if the data is muddy? And then I check to see, do I get different answers? Because if the stakeholder tells me, well, if the data is positive, I'm going to do X. And if the data is negative, I'm going to do X. And if the data is blurry, I'm going to do X.
+
+00:20:30.000 --> 00:20:33.000
+Well, now we no longer have a data driven decision.
+
+00:20:33.000 --> 00:20:42.000
+This stakeholder already knows what they want to do. And so understand why they want to do it that way. And then think about what are the pitfalls?
+
+00:20:42.000 --> 00:20:52.000
+Well, the problem is they're not thinking about this long term holdout. And this idea they have, they're not taking into account all of the users that aren't going to have access to that feature.
+
+00:20:52.000 --> 00:21:06.000
+So instead of just providing them a dashboard of all the 10 to 15 different cuts, I'm going to also provide them information on how things are performing over and above the holdout so they can actually see what level of incremental value they're driving.
+
+00:21:06.000 --> 00:21:21.000
+They didn't ask for the incremental value functionality. They didn't ask for the holdout visibility. But that's going to actually tell them if they're on track to accomplish their goals. And so you have to understand what they want to accomplish.
+
+00:21:21.000 --> 00:21:31.000
+And then you have to use your own statistical knowledge to figure out, based on what's in my toolkit, what can I easily provide them that will actually answer their questions?
+
+00:21:32.000 --> 00:21:49.000
+Thank you. Do you ever see it going the other way as well, where a data scientist has a really great idea for something, but they have to convince stakeholders that this is something they should pursue and then putting it in their stakeholder language?
+
+00:21:50.000 --> 00:22:02.000
+That happens all the time, because sometimes the things we want to pursue, in order to explain them, we have to go into a level of mathiness that no one actually wants to listen to. And that's hard.
+
+00:22:02.000 --> 00:22:17.000
+You know, it's pretty common for the first time I pitch ideas for them to be rejected. And I often think of in a business context, when someone tells me no, that means that this idea is not yet a fit for where the business is.
+
+00:22:17.000 --> 00:22:31.000
+And so once I think about, okay, this idea is not yet ripe, what are the things that are holding the idea back? What do they care about right now? How can I turn a not yet into a yes?
+
+00:22:31.000 --> 00:22:39.000
+And that, again, you have to empathize with your audience and understand what they care about to get that no to a yes.
+
+00:22:40.000 --> 00:22:55.000
+I like that. I also like thinking about listening to stakeholders and the way that they are saying things and the words that they are using to describe them in all of your conversations, and then ask yourself if you are using the same language back to them or not.
+
+00:22:56.000 --> 00:23:09.000
+One thing that's always been challenging to me here is that the advice always seems to go towards the data scientist or the analyst or the data people to talk more like stakeholders, but the advice doesn't ever seem to go the other direction.
+
+00:23:09.000 --> 00:23:16.000
+Like, hey, business people, learn more data stuff, be more data literate, talk more like a data scientist.
+
+00:23:17.000 --> 00:23:26.000
+I would love to emphasize that it can go both ways. Both sides can be more aware of how the other is talking.
+
+00:23:26.000 --> 00:23:33.000
+I also wanted to call in some stuff that's happening in the chat because it's been really, really great.
+
+00:23:33.000 --> 00:23:42.000
+We were talking about the anonymous question of, like, I'm encouraged to learn more about business context, but I just kind of want to code.
+
+00:23:42.000 --> 00:23:54.000
+Marlene had a great bit of advice there. Marlene, would you be willing to hop in and talk about the hiring market right now and how all that stuff is going?
+
+00:23:54.000 --> 00:24:00.000
+Oh, yeah. I can go on. And I want Pallas to have her time because she's awesome.
+
+00:24:00.000 --> 00:24:02.000
+All right. Quick minute for Marlene.
+
+00:24:03.000 --> 00:24:08.000
+So I'll speak from personal experience. I was unemployed for almost a full year.
+
+00:24:08.000 --> 00:24:17.000
+Imagine trying to live on your savings and almost being ready to empty your retirement account after a year because, frankly, it's just hard to pay for things on unemployment.
+
+00:24:17.000 --> 00:24:30.000
+So I very quickly, I have, like, a lot of coding background, but I've also just been like a figure it out as I go person and I will handle the task at hand and whatever's on fire, I put it out and that kind of deal.
+
+00:24:30.000 --> 00:24:38.000
+In the job market, I got several applications that asked specifically, how much experience do you have in health care?
+
+00:24:38.000 --> 00:24:42.000
+How much experience do you have in HR? How much experience do you have in this?
+
+00:24:42.000 --> 00:24:49.000
+Right. And depending on what I was applying for, if I put less than one year, my resume went into the dumpster.
+
+00:24:49.000 --> 00:24:52.000
+Like, I could just tell I wasn't even getting responses back.
+
+00:24:52.000 --> 00:24:56.000
+If you are experiencing this, I feel for you. My heart goes out to you.
+
+00:24:56.000 --> 00:25:01.000
+It is not easy. Cry yourself to sleep, rock yourself, whatever you need to to get through it.
+
+00:25:01.000 --> 00:25:05.000
+Call mental health lines if you need phone a friend. But it is really rough.
+
+00:25:05.000 --> 00:25:15.000
+I highly suggest I'm not saying lie, but I think it's worth going into an interview and saying, I know your company does this.
+
+00:25:15.000 --> 00:25:20.000
+I haven't done a lot in that. But here's what I've studied in just prepping for this interview.
+
+00:25:20.000 --> 00:25:25.000
+And I want you to know that I can learn the domain knowledge very quickly.
+
+00:25:25.000 --> 00:25:30.000
+But these are the tools that I have ready to go. That's going to take your company to the next level.
+
+00:25:30.000 --> 00:25:35.000
+All that being said, I got to second round interviews doing that, and it was great.
+
+00:25:35.000 --> 00:25:39.000
+But what got me the job was knowing somebody. So build your network.
+
+00:25:39.000 --> 00:25:42.000
+I love this hangout for so many reasons. Thank you so much.
+
+00:25:42.000 --> 00:25:49.000
+You have Ted and Marcos and all the folks that I've made friends with here, Rachel and Libby, too.
+
+00:25:49.000 --> 00:25:54.000
+These are the folks that help you realize, like, there's a world outside of unemployment.
+
+00:25:54.000 --> 00:26:01.000
+So other than mental health, right, it's good to just know who's hiring and what.
+
+00:26:01.000 --> 00:26:06.000
+You know, I think I peened one other person on this call and said, hey, I'm interested in a job that's kind of in your field.
+
+00:26:06.000 --> 00:26:09.000
+Like, can you give me like the ups and downs of your field?
+
+00:26:09.000 --> 00:26:13.000
+And even that was valuable because I realized very quickly I didn't want to go into that work.
+
+00:26:13.000 --> 00:26:16.000
+So build your network. That's what we're all here for. It takes a village.
+
+00:26:16.000 --> 00:26:20.000
+And there's my quick diatribe. Does that help, Libby? Yes. Awesome.
+
+00:26:20.000 --> 00:26:25.000
+And that is really valuable, like finding out what you don't want. It can be super, super valuable.
+
+00:26:25.000 --> 00:26:29.000
+Because what you do want, you're looking at a really broad target.
+
+00:26:29.000 --> 00:26:32.000
+Like of all of these things, what do I want?
+
+00:26:32.000 --> 00:26:39.000
+But when you figure out what you don't want, it tends to be pretty specific and easy to avoid or steer clear of.
+
+00:26:39.000 --> 00:26:41.000
+Awesome. Thank you so much.
+
+00:26:41.000 --> 00:26:45.000
+And you can say you want the code, but the truth is a player is going to hear,
+
+00:26:45.000 --> 00:26:49.000
+I have to hire somebody to do something manually that ChatGPT can do, unfortunately.
+
+00:26:49.000 --> 00:26:54.000
+So instead you have to do the data science speak where I translate things more.
+
+00:26:54.000 --> 00:27:02.000
+And like Pals, like I can think about your greater needs and put it in data speak to feed to a ChatGPT model and or confer with other scientists.
+
+00:27:02.000 --> 00:27:08.000
+So I'll also tell you that you have to learn how to kind of speak that language a bit now or else employers aren't going to hear it.
+
+00:27:08.000 --> 00:27:12.000
+They're just going to think you're going to be overpaid for a lot of extra work.
+
+00:27:13.000 --> 00:27:21.000
+Well, speaking of like ways that our our industry is sort of evolving, Rohan had a question about this very, very thing.
+
+00:27:21.000 --> 00:27:24.000
+So I would love it if Rohan could unmute and ask his.
+
+00:27:27.000 --> 00:27:31.000
+Hello. Can you guys hear me? Yes. Great.
+
+00:27:31.000 --> 00:27:37.000
+Hi, Pals. So my question is, given how quickly the data science field is evolving,
+
+00:27:37.000 --> 00:27:45.000
+do you have any best practices or tips on basically keeping up or staying ahead with the data science field?
+
+00:27:48.000 --> 00:27:59.000
+I'll be very honest. One of the reasons I went into management and leadership was because staying on top of the latest coding trends,
+
+00:27:59.000 --> 00:28:04.000
+it was something I should be doing, but it was not a natural strength of mine.
+
+00:28:04.000 --> 00:28:10.000
+Whereas understanding the needs of technical stakeholders and business stakeholders and connecting those dots,
+
+00:28:10.000 --> 00:28:17.000
+that was something that I knew I was particularly good at and the people around me weren't.
+
+00:28:17.000 --> 00:28:25.000
+And so if you think about the things that you do better naturally than everyone around you,
+
+00:28:25.000 --> 00:28:32.000
+and then you think about, well, how is AI going to magnify that?
+
+00:28:32.000 --> 00:28:38.000
+How can I leverage AI and what's coming next to enhance my strengths?
+
+00:28:38.000 --> 00:28:43.000
+That's not a very specific answer, but that's like a lot of what I do in my coaching practices,
+
+00:28:43.000 --> 00:28:49.000
+helping people understand their strengths and then figure out how do you now future-proof yourself
+
+00:28:49.000 --> 00:28:56.000
+and make sure that when that next generation, because I'm a millennial, and so Gen Z came up and they were hungry,
+
+00:28:56.000 --> 00:29:00.000
+and next Gen Alpha is going to come up and they're going to be really hungry too.
+
+00:29:00.000 --> 00:29:07.000
+And so what are you going to do that's unique to you that no one else can be as you as well as you can?
+
+00:29:07.000 --> 00:29:12.000
+Like you're the best at being you.
+
+00:29:12.000 --> 00:29:17.000
+It's a lesson that we've been trying to teach ourselves since childhood, right?
+
+00:29:17.000 --> 00:29:21.000
+Like be yourself, just be you, you're great.
+
+00:29:21.000 --> 00:29:29.000
+And yet some of us, I mean, I'm almost 40 and I'm like, wow, it's taken me a really long time to embrace that lesson
+
+00:29:29.000 --> 00:29:33.000
+and realize that me as myself, I do have value.
+
+00:29:33.000 --> 00:29:35.000
+The things that I like to do do have value.
+
+00:29:35.000 --> 00:29:38.000
+Yours, everybody, you do too.
+
+00:29:38.000 --> 00:29:41.000
+All right, Rohan, thank you so much for the question.
+
+00:29:41.000 --> 00:29:48.000
+Let's move to Cecilia and Cecilia cannot unmute, but she would like to know what drew you to coaching
+
+00:29:48.000 --> 00:29:52.000
+after such a strong technical and leadership career?
+
+00:29:52.000 --> 00:29:56.000
+I bet it just came along with the territory of leadership, huh?
+
+00:29:56.000 --> 00:30:02.000
+I mean, the favorite part of my job was having one-on-ones with my team.
+
+00:30:02.000 --> 00:30:05.000
+And I was laid off two months ago on April 1st.
+
+00:30:05.000 --> 00:30:10.000
+And I had to think about, all right, well, the market's in a weird spot.
+
+00:30:10.000 --> 00:30:13.000
+What do I want to be, how do I want to be spending my time?
+
+00:30:13.000 --> 00:30:17.000
+Well, in my job, my favorite way to spend my time was having one-on-ones with my team.
+
+00:30:17.000 --> 00:30:22.000
+Wait a second, coaching is just all one-on-ones.
+
+00:30:22.000 --> 00:30:25.000
+I'd have to figure out how to meet people and how to connect with people.
+
+00:30:25.000 --> 00:30:32.000
+But there are ways that I don't need to find a company to pay me to have one-on-ones with people.
+
+00:30:32.000 --> 00:30:35.000
+I can just talk to the people directly.
+
+00:30:35.000 --> 00:30:40.000
+And if I'm providing value and they want to meet with me and I want to meet with them, we'll figure out how to make it work.
+
+00:30:40.000 --> 00:30:46.000
+And so, you know, I'm only two months into my coaching career, but I'm really enjoying it so far.
+
+00:30:46.000 --> 00:30:48.000
+And I've had a lot of fascinating conversations.
+
+00:30:48.000 --> 00:30:51.000
+And, you know, I am seeking my next role.
+
+00:30:51.000 --> 00:30:56.000
+Coaching was just something that was going to help keep me busy while I was unemployed.
+
+00:30:56.000 --> 00:31:01.000
+And it's possible my coaching takes off and then full-time employment doesn't make sense.
+
+00:31:01.000 --> 00:31:05.000
+We're having a bit of a race condition here to see which happens first.
+
+00:31:05.000 --> 00:31:11.000
+Yeah, I feel like the question of how long you've been coaching, though, is not like two months.
+
+00:31:11.000 --> 00:31:16.000
+If you're a leader, you've been coaching people for years and years and years.
+
+00:31:16.000 --> 00:31:22.000
+The pay structure is just different because freelancing is difficult, as I will attest.
+
+00:31:22.000 --> 00:31:25.000
+Cecilia, thank you for your amazing question.
+
+00:31:25.000 --> 00:31:28.000
+I have another question here from Lolo.
+
+00:31:28.000 --> 00:31:32.000
+If you are able to unmute and ask, that would be great.
+
+00:31:32.000 --> 00:31:38.000
+If not, let me know in the chat and I can ask for you as well.
+
+00:31:38.000 --> 00:31:42.000
+And I will put your question here in the chat.
+
+00:31:42.000 --> 00:31:44.000
+Sure, that's fine.
+
+00:31:44.000 --> 00:31:45.000
+Hey.
+
+00:31:45.000 --> 00:31:47.000
+Hey, hello.
+
+00:31:47.000 --> 00:31:54.000
+Yeah, so I was just trying to pick your brain, trying to refine my approach when it comes to stakeholder management.
+
+00:31:54.000 --> 00:32:03.000
+When you're interacting with business stakeholders, is there any particular fundamental structure you use that you recommend during meetings?
+
+00:32:03.000 --> 00:32:10.000
+And what's usually the most crucial agreement or insights that you hope to take out of those meetings?
+
+00:32:10.000 --> 00:32:19.000
+So the first thing I do, if I have a particularly difficult stakeholder that I'm not winning over, I'm going to ask them for a casual coffee chat.
+
+00:32:19.000 --> 00:32:21.000
+I want to get to know them interpersonally.
+
+00:32:21.000 --> 00:32:22.000
+I want to know what they do on the weekend.
+
+00:32:22.000 --> 00:32:24.000
+I want to hear about their pets.
+
+00:32:24.000 --> 00:32:27.000
+I want to see photos of their pets or their kids or whatever.
+
+00:32:27.000 --> 00:32:32.000
+I want to build a connection where they're going to give me the benefit of the doubt.
+
+00:32:32.000 --> 00:32:43.000
+Because once they see me as a human, they're going to be more inclined to be patient with me, to listen to what I have to say, to not jump to conclusions.
+
+00:32:43.000 --> 00:32:47.000
+And I'm going to be doing the same for them because now I care about them as a human as well.
+
+00:32:47.000 --> 00:32:53.000
+And so I think the trap is to think of your...
+
+00:32:54.140 --> 00:32:59.020
+The trap is to think of your stakeholders
+
+00:32:59.020 --> 00:33:03.260
+is just like barriers or obstacles or another subsystem
+
+00:33:03.260 --> 00:33:06.260
+or just like a technical component and their people.
+
+00:33:06.260 --> 00:33:09.140
+And it's rare for, especially for technical people,
+
+00:33:09.140 --> 00:33:10.900
+it's rare for a technical person
+
+00:33:10.900 --> 00:33:12.540
+to reach out to a business stakeholder and say,
+
+00:33:12.540 --> 00:33:14.740
+hey, I just like to get to know you better
+
+00:33:14.740 --> 00:33:17.740
+and about your career and how you got to your position.
+
+00:33:17.740 --> 00:33:20.520
+And when you actually show interest in people,
+
+00:33:20.520 --> 00:33:23.059
+the dynamics of the conversation changes
+
+00:33:23.080 --> 00:33:24.760
+and then you're having a dialogue
+
+00:33:24.760 --> 00:33:26.959
+as opposed to people just shutting you down.
+
+00:33:29.599 --> 00:33:31.119
+Awesome.
+
+00:33:31.119 --> 00:33:33.680
+Thank you so much, Lulu.
+
+00:33:33.680 --> 00:33:35.599
+I hope that that helped answer your question.
+
+00:33:35.599 --> 00:33:37.919
+I heartily agree.
+
+00:33:37.919 --> 00:33:39.560
+And I don't think I need to tell anybody
+
+00:33:39.560 --> 00:33:41.919
+that I'm a fan of making friends
+
+00:33:41.919 --> 00:33:43.439
+with everybody that you talk to
+
+00:33:43.439 --> 00:33:47.720
+and instead of networking, just make friends.
+
+00:33:47.720 --> 00:33:51.360
+I also will say one thing that I find really helpful
+
+00:33:51.380 --> 00:33:55.020
+is just avoiding corpo-speak.
+
+00:33:55.020 --> 00:33:57.699
+It helps people see you as an actual human being
+
+00:33:57.699 --> 00:34:00.500
+and not a corporate avatar of yourself.
+
+00:34:00.500 --> 00:34:02.779
+And so when you want people to,
+
+00:34:04.059 --> 00:34:05.959
+like Paola said, give you the benefit of the doubt,
+
+00:34:05.959 --> 00:34:08.599
+trust you, have real conversations with you,
+
+00:34:08.599 --> 00:34:12.260
+be patient with you, talking like a regular human being,
+
+00:34:12.260 --> 00:34:15.459
+like you're their neighbor can be so helpful.
+
+00:34:15.459 --> 00:34:16.760
+Alrighty.
+
+00:34:16.760 --> 00:34:20.379
+I have a question from Zach and it has an asterisk.
+
+00:34:20.379 --> 00:34:22.800
+So I will ask it for him.
+
+00:34:22.800 --> 00:34:25.720
+And that is, how do you expect the career landscape
+
+00:34:25.720 --> 00:34:27.400
+to change in the next few years?
+
+00:34:27.400 --> 00:34:29.800
+But Zach, I wanna pin onto the end of this
+
+00:34:29.800 --> 00:34:31.519
+and say also like, how have you seen
+
+00:34:31.519 --> 00:34:33.720
+the career landscape change
+
+00:34:33.720 --> 00:34:36.959
+because you've been in data for a really long time?
+
+00:34:36.959 --> 00:34:38.360
+Yeah.
+
+00:34:38.360 --> 00:34:39.879
+I mean, when I started my career
+
+00:34:39.879 --> 00:34:41.760
+and I know that this is gonna make everyone
+
+00:34:41.760 --> 00:34:43.320
+on this call cringe a little bit,
+
+00:34:43.320 --> 00:34:45.080
+but I'm gonna say it anyway.
+
+00:34:45.080 --> 00:34:48.559
+I did most of my work in Excel when I started my career.
+
+00:34:49.059 --> 00:34:53.300
+And then we moved to automation and I learned SQL
+
+00:34:53.300 --> 00:34:56.820
+and I learned Python and I'd used R a bit in college.
+
+00:34:56.820 --> 00:34:58.980
+And then I learned some machine learning techniques
+
+00:34:58.980 --> 00:35:00.699
+and then it became Bayesian.
+
+00:35:00.699 --> 00:35:02.539
+And then it turned in more into deep learning.
+
+00:35:02.539 --> 00:35:03.580
+I was like, oh, that's wizardry.
+
+00:35:03.580 --> 00:35:05.059
+I'm not ready to learn.
+
+00:35:05.059 --> 00:35:08.399
+I'm gonna hire someone else to think about that stuff.
+
+00:35:08.399 --> 00:35:11.979
+But I've seen the sophistication grow and grow and grow.
+
+00:35:11.979 --> 00:35:13.740
+And now with AI coming,
+
+00:35:13.740 --> 00:35:15.740
+there's almost like this critical point
+
+00:35:15.740 --> 00:35:17.460
+where just being a tech,
+
+00:35:17.460 --> 00:35:20.919
+it used to be the more technical
+
+00:35:20.919 --> 00:35:23.639
+and the more statistical wizardry you knew,
+
+00:35:23.639 --> 00:35:25.479
+the easier it was to get a job.
+
+00:35:25.479 --> 00:35:27.199
+And now I think there's this pendulum
+
+00:35:27.199 --> 00:35:28.520
+swinging the other way,
+
+00:35:28.520 --> 00:35:30.720
+which is if you're just a technician,
+
+00:35:30.720 --> 00:35:33.479
+it gets harder unless you're one of those few
+
+00:35:33.479 --> 00:35:36.679
+that have the PhD that are working on the LLMs,
+
+00:35:36.679 --> 00:35:41.679
+helping open AI and Claude and chat GPT
+
+00:35:41.679 --> 00:35:42.520
+and all of that stuff.
+
+00:35:42.520 --> 00:35:45.300
+If you're not in that niche domain,
+
+00:35:45.300 --> 00:35:48.759
+just being a technician probably isn't enough.
+
+00:35:48.759 --> 00:35:51.160
+And so how are you expanding your impact
+
+00:35:51.160 --> 00:35:54.860
+in terms of maybe as a data scientist,
+
+00:35:54.860 --> 00:35:56.279
+you wanna expand your impact,
+
+00:35:56.279 --> 00:35:58.360
+but you want it to be technical still.
+
+00:35:58.360 --> 00:35:59.600
+And so you wanna demonstrate,
+
+00:35:59.600 --> 00:36:01.160
+well, I can do all of my data engineering
+
+00:36:01.160 --> 00:36:03.559
+as well as all of my data science,
+
+00:36:03.559 --> 00:36:05.320
+as well as all my analytics engineering
+
+00:36:05.320 --> 00:36:06.520
+and dashboarding, et cetera.
+
+00:36:06.520 --> 00:36:08.919
+And so you wanna demonstrate that you have extra value
+
+00:36:08.919 --> 00:36:09.759
+because you don't have
+
+00:36:09.759 --> 00:36:12.539
+just the typical data science skillset.
+
+00:36:12.539 --> 00:36:14.139
+Maybe you're a technician,
+
+00:36:14.160 --> 00:36:15.440
+but you also wanna learn how to do
+
+00:36:15.440 --> 00:36:16.960
+some software development as well,
+
+00:36:16.960 --> 00:36:20.039
+or you wanna show that you can build apps with AI.
+
+00:36:20.039 --> 00:36:23.279
+How can you be more than just the person
+
+00:36:23.279 --> 00:36:25.800
+who writes models in R and Python?
+
+00:36:25.800 --> 00:36:28.699
+How can you be something plus that?
+
+00:36:30.559 --> 00:36:32.119
+Yes, I like that.
+
+00:36:32.119 --> 00:36:35.720
+And I've gotta say, no shame, no hate to Excel.
+
+00:36:35.720 --> 00:36:37.160
+We all still use it.
+
+00:36:37.160 --> 00:36:40.160
+And there's so much Excel love and support
+
+00:36:40.160 --> 00:36:41.000
+in the chat right now.
+
+00:36:41.000 --> 00:36:43.539
+If you are listening or watching this later
+
+00:36:43.600 --> 00:36:45.160
+and you're like, oh, I use Excel.
+
+00:36:45.160 --> 00:36:46.199
+I also love Excel.
+
+00:36:46.199 --> 00:36:48.440
+So do we all, yes.
+
+00:36:48.440 --> 00:36:51.720
+And Excel is, as several people have said in the chat,
+
+00:36:51.720 --> 00:36:54.460
+I think Excel is a gateway drug where you're like,
+
+00:36:54.460 --> 00:36:56.199
+Excel is fantastic until it's not,
+
+00:36:56.199 --> 00:36:57.600
+and then you need something more.
+
+00:36:57.600 --> 00:37:01.240
+And that's often how many of us end up coding
+
+00:37:01.240 --> 00:37:04.759
+or doing code-first analytics is because we needed that.
+
+00:37:04.759 --> 00:37:08.000
+So Zach, thank you so much for the question.
+
+00:37:09.119 --> 00:37:12.519
+I have a question from Kyle as well.
+
+00:37:12.519 --> 00:37:15.299
+Kyle, I don't know if you are available to ask this.
+
+00:37:15.299 --> 00:37:17.220
+I want to say, I don't think that you are,
+
+00:37:17.220 --> 00:37:19.859
+but maybe, let me see.
+
+00:37:22.940 --> 00:37:24.700
+Yeah, I can ask.
+
+00:37:24.700 --> 00:37:26.019
+There he is, yay, thanks.
+
+00:37:26.019 --> 00:37:27.459
+Yeah, thank you.
+
+00:37:27.459 --> 00:37:29.459
+So I have a friend that works in the industry
+
+00:37:29.459 --> 00:37:31.660
+and I know it's a sample of one,
+
+00:37:31.660 --> 00:37:35.140
+but when he's evaluating candidates,
+
+00:37:35.140 --> 00:37:36.820
+he looks at their GitHub profile.
+
+00:37:36.820 --> 00:37:39.260
+So how much does your GitHub profile weigh
+
+00:37:39.260 --> 00:37:40.880
+into job candidacy?
+
+00:37:40.880 --> 00:37:43.200
+And do you find it to be more important
+
+00:37:43.200 --> 00:37:44.399
+than other tangibles?
+
+00:37:48.140 --> 00:37:50.260
+Not how you have profile.
+
+00:37:50.260 --> 00:37:51.959
+I'm just gonna put that out there.
+
+00:37:53.160 --> 00:37:55.480
+I think it really depends on the role
+
+00:37:55.480 --> 00:37:58.519
+and the type of company you're interviewing with.
+
+00:37:58.519 --> 00:38:00.040
+There are companies where absolutely
+
+00:38:00.040 --> 00:38:01.600
+that's a non-negotiable.
+
+00:38:01.600 --> 00:38:03.239
+And you need to have that,
+
+00:38:03.239 --> 00:38:04.799
+and you need to have recent,
+
+00:38:04.799 --> 00:38:06.320
+it's not just you need a profile,
+
+00:38:06.320 --> 00:38:08.640
+you need recent commits in a language
+
+00:38:08.679 --> 00:38:11.200
+that they care about working on a problem
+
+00:38:11.200 --> 00:38:12.760
+that's similar to the problems they work on.
+
+00:38:12.760 --> 00:38:15.799
+And so this goes back to a question from earlier,
+
+00:38:15.799 --> 00:38:18.519
+which is, talk to the people
+
+00:38:18.519 --> 00:38:20.320
+that are in the roles you want to have,
+
+00:38:20.320 --> 00:38:22.339
+talk to the hiring managers,
+
+00:38:22.339 --> 00:38:23.880
+especially the ones that aren't currently hiring
+
+00:38:23.880 --> 00:38:26.239
+because they're not swamped with LinkedIn requests,
+
+00:38:26.239 --> 00:38:29.200
+but talk to the people who are managers
+
+00:38:29.200 --> 00:38:30.760
+at companies you want to work at,
+
+00:38:30.760 --> 00:38:33.160
+and they can tell you how important that is.
+
+00:38:34.440 --> 00:38:37.519
+Over my career, I've only had two roles
+
+00:38:37.519 --> 00:38:39.839
+where I actively checked the GitHub commits,
+
+00:38:39.839 --> 00:38:42.000
+and it was because it was a really niche problem
+
+00:38:42.000 --> 00:38:43.399
+I needed them to solve.
+
+00:38:43.399 --> 00:38:45.000
+And I needed to know that they had
+
+00:38:45.000 --> 00:38:47.839
+very, very relevant domain experience,
+
+00:38:47.839 --> 00:38:50.579
+but I haven't checked GitHub profiles
+
+00:38:50.579 --> 00:38:54.079
+for most of the roles I hire for,
+
+00:38:54.079 --> 00:38:55.920
+but that's not true everywhere.
+
+00:38:55.920 --> 00:38:59.200
+It really just depends on the actual industry itself
+
+00:38:59.200 --> 00:39:01.399
+and the type of company you want to work at.
+
+00:39:02.839 --> 00:39:04.399
+Awesome, thank you.
+
+00:39:04.399 --> 00:39:07.519
+And pulling in some stuff from the chat verbally,
+
+00:39:07.519 --> 00:39:10.760
+Marco says, we never decide to interview
+
+00:39:10.760 --> 00:39:13.279
+based on GitHub, where he works,
+
+00:39:13.279 --> 00:39:16.440
+but we do look at it if you link it in your resume.
+
+00:39:16.440 --> 00:39:18.000
+So if you're going to link it,
+
+00:39:18.000 --> 00:39:21.559
+make sure that it's nice to look at or presentable.
+
+00:39:21.559 --> 00:39:24.079
+My own GitHub is an absolute mess.
+
+00:39:24.079 --> 00:39:26.760
+I use it for demonstrating things to people,
+
+00:39:26.760 --> 00:39:28.720
+and so I'm constantly just putting random stuff in there
+
+00:39:28.720 --> 00:39:30.980
+to help people practice.
+
+00:39:31.980 --> 00:39:34.500
+But I like the call out that you don't have one,
+
+00:39:34.500 --> 00:39:37.899
+and I have never had a cohesive
+
+00:39:37.899 --> 00:39:41.420
+and beautiful GitHub portfolio either.
+
+00:39:41.420 --> 00:39:42.339
+I don't want people to think
+
+00:39:42.339 --> 00:39:44.619
+that you cannot survive without it,
+
+00:39:44.619 --> 00:39:46.820
+but it is nice being able to have something out there
+
+00:39:46.820 --> 00:39:49.160
+that you can talk with people about.
+
+00:39:49.160 --> 00:39:51.820
+Thank you, Kyle, for the great question.
+
+00:39:51.820 --> 00:39:53.940
+Let's see what else we've got,
+
+00:39:53.940 --> 00:39:55.100
+and do a time check here,
+
+00:39:55.100 --> 00:39:57.399
+because we've got about 15 minutes left.
+
+00:39:58.239 --> 00:40:02.959
+Um, there is a question here from Inger.
+
+00:40:04.200 --> 00:40:06.119
+If you are available to ask that live,
+
+00:40:06.119 --> 00:40:07.959
+I would love it if you could unmute.
+
+00:40:07.959 --> 00:40:09.100
+There you are, hey.
+
+00:40:10.040 --> 00:40:11.239
+Hi, everyone.
+
+00:40:11.239 --> 00:40:12.079
+Hi, thanks.
+
+00:40:12.079 --> 00:40:13.799
+Thanks, Pallas, for being here.
+
+00:40:13.799 --> 00:40:14.920
+My question is, I think,
+
+00:40:14.920 --> 00:40:17.040
+something maybe we already have touched on,
+
+00:40:17.040 --> 00:40:20.279
+but so I'm relatively new to data science
+
+00:40:20.279 --> 00:40:21.980
+as sort of a professional pathway,
+
+00:40:21.980 --> 00:40:23.799
+so I'm still learning conventions and norms,
+
+00:40:23.799 --> 00:40:25.839
+and I often kind of struggle to figure out
+
+00:40:25.880 --> 00:40:29.239
+how to showcase skills and data-related achievements
+
+00:40:29.239 --> 00:40:30.799
+when the projects that I want to highlight
+
+00:40:30.799 --> 00:40:33.359
+are confidential, so just thoughts about strategies
+
+00:40:33.359 --> 00:40:35.600
+or suggestions for demonstrating expertise
+
+00:40:35.600 --> 00:40:38.260
+without violating confidentiality.
+
+00:40:40.559 --> 00:40:41.500
+Yeah, that's hard.
+
+00:40:42.760 --> 00:40:47.279
+You know, you can talk to the company
+
+00:40:47.279 --> 00:40:48.920
+where you're doing these projects,
+
+00:40:48.920 --> 00:40:52.000
+and say, you know, hey, I'd like to showcase my work.
+
+00:40:52.000 --> 00:40:54.600
+What if I scrub all the labels,
+
+00:40:54.600 --> 00:40:58.040
+scrub all of the identifying context?
+
+00:40:58.040 --> 00:41:00.119
+Is there a genericized version of this
+
+00:41:00.119 --> 00:41:02.119
+you'd be comfortable with me showcasing?
+
+00:41:02.119 --> 00:41:03.480
+They're gonna say yes or no,
+
+00:41:03.480 --> 00:41:04.720
+and then they're gonna nitpick with you
+
+00:41:04.720 --> 00:41:09.399
+over how much you need to mask the details of the analysis,
+
+00:41:09.399 --> 00:41:12.600
+and if they do say no, well,
+
+00:41:12.600 --> 00:41:16.739
+I bet that there's a hobby or a small business near you
+
+00:41:16.739 --> 00:41:18.440
+where you could apply a similar technique
+
+00:41:18.440 --> 00:41:20.320
+to solve a similar problem,
+
+00:41:20.320 --> 00:41:22.440
+and you can go in from the get-go saying,
+
+00:41:22.440 --> 00:41:24.239
+hey, I wanna showcase my work,
+
+00:41:25.200 --> 00:41:28.799
+or do an analysis on movies or sports
+
+00:41:28.799 --> 00:41:29.640
+or something like that.
+
+00:41:29.640 --> 00:41:31.960
+You can always do a pet project
+
+00:41:31.960 --> 00:41:34.080
+that repurposes the technique you used,
+
+00:41:34.080 --> 00:41:37.039
+but doesn't actually rely on their data,
+
+00:41:37.039 --> 00:41:39.359
+but usually the easiest route is figuring out
+
+00:41:39.359 --> 00:41:42.640
+what's the obfuscated version of what you did
+
+00:41:42.640 --> 00:41:44.479
+that the company would be comfortable with you
+
+00:41:44.479 --> 00:41:45.840
+going to the market with.
+
+00:41:48.039 --> 00:41:52.419
+Thank you, and just as some sort of support
+
+00:41:53.260 --> 00:41:56.179
+for you, Morgana in the chat is saying yes,
+
+00:41:56.179 --> 00:41:58.719
+and I will say I've had the same struggle
+
+00:41:58.719 --> 00:42:03.080
+where I did data work that I absolutely could not talk about
+
+00:42:03.080 --> 00:42:05.099
+totally under NDA, government stuff,
+
+00:42:05.099 --> 00:42:06.260
+a lot of people who work in government
+
+00:42:06.260 --> 00:42:08.380
+can't talk about what they do.
+
+00:42:08.380 --> 00:42:10.039
+I am right there with you.
+
+00:42:10.039 --> 00:42:13.859
+I will also say that it's totally valid to struggle
+
+00:42:13.859 --> 00:42:15.340
+while you're in the moment,
+
+00:42:15.340 --> 00:42:17.099
+while you are working on the project,
+
+00:42:17.099 --> 00:42:19.260
+to think about that, oh, I need to find some way
+
+00:42:19.260 --> 00:42:21.940
+to document this for posterity for later.
+
+00:42:22.780 --> 00:42:25.020
+Because as you're in your job, doing your job,
+
+00:42:25.020 --> 00:42:26.700
+you're not actively thinking about the fact
+
+00:42:26.700 --> 00:42:28.940
+that later you're gonna need a different job.
+
+00:42:30.099 --> 00:42:32.179
+So don't beat yourself up too much for that,
+
+00:42:32.179 --> 00:42:34.140
+but I will say I've been in that same struggle bus,
+
+00:42:34.140 --> 00:42:36.140
+and I've been in interviews where they're like,
+
+00:42:36.140 --> 00:42:38.700
+can you tell me about a time when you did this?
+
+00:42:38.700 --> 00:42:41.099
+And I'm like, oh, wow, well, that was five years ago,
+
+00:42:41.099 --> 00:42:42.940
+and it was under total NDA,
+
+00:42:42.940 --> 00:42:44.059
+and I can't tell you anything,
+
+00:42:44.059 --> 00:42:45.460
+but I can tell you sort of this,
+
+00:42:45.460 --> 00:42:49.080
+and not having that code to share is such a struggle.
+
+00:42:49.979 --> 00:42:51.520
+So I hear you.
+
+00:42:51.520 --> 00:42:53.119
+Thank you so much for the great question.
+
+00:42:53.119 --> 00:42:55.559
+Sarah, I have a question from you,
+
+00:42:55.559 --> 00:42:57.640
+and Sarah, last time your Zoom name was different,
+
+00:42:57.640 --> 00:42:58.840
+so we couldn't find you.
+
+00:42:59.760 --> 00:43:02.400
+Hopefully we can find you this time
+
+00:43:02.400 --> 00:43:04.479
+to unmute and ask your question.
+
+00:43:04.479 --> 00:43:07.460
+Yes, thank you, Libby, appreciate it.
+
+00:43:07.460 --> 00:43:11.159
+So my question is, do you have any advice
+
+00:43:11.159 --> 00:43:13.679
+for maintaining stakeholder engagement
+
+00:43:13.679 --> 00:43:16.919
+for in-house data science requests or projects
+
+00:43:16.919 --> 00:43:21.799
+before they turn to an external vendor product?
+
+00:43:21.799 --> 00:43:23.080
+You know, in a fast-paced world,
+
+00:43:23.080 --> 00:43:24.440
+which there's lots of pressure
+
+00:43:24.440 --> 00:43:28.159
+to show excellent results quickly,
+
+00:43:28.159 --> 00:43:29.739
+this can be challenging.
+
+00:43:30.619 --> 00:43:35.479
+Yeah, that's double-edged sword, actually,
+
+00:43:35.479 --> 00:43:40.479
+because depending on the speed they wanna move at
+
+00:43:41.320 --> 00:43:44.320
+and the stakes of the decision,
+
+00:43:44.320 --> 00:43:46.440
+you know, you could intercept the train,
+
+00:43:46.919 --> 00:43:49.619
+but you might not like the consequences of doing so.
+
+00:43:50.799 --> 00:43:53.119
+You know, when they're making decisions
+
+00:43:53.119 --> 00:43:55.080
+potentially to evaluate, you know,
+
+00:43:55.080 --> 00:43:58.280
+putting you on a project or going with an external vendor
+
+00:43:58.280 --> 00:44:00.280
+or third-party solution, you know,
+
+00:44:00.280 --> 00:44:02.239
+have that conversation and find out
+
+00:44:02.239 --> 00:44:04.039
+what goes into this decision matrix,
+
+00:44:04.039 --> 00:44:06.919
+how are you evaluating how to make this decision?
+
+00:44:06.919 --> 00:44:08.039
+You know, and then be honest.
+
+00:44:08.039 --> 00:44:09.880
+You know, if I were to take it on,
+
+00:44:09.880 --> 00:44:11.679
+this is what I can bring to the table
+
+00:44:11.679 --> 00:44:14.520
+that going externally won't be able to accomplish,
+
+00:44:14.559 --> 00:44:17.479
+and this is why you should go with me instead,
+
+00:44:17.479 --> 00:44:19.080
+and also be honest with the trade-offs.
+
+00:44:19.080 --> 00:44:22.520
+But by the way, you know, I haven't, you know,
+
+00:44:22.520 --> 00:44:24.400
+I don't have experience in this particular domain
+
+00:44:24.400 --> 00:44:25.880
+or I haven't done this specific layer.
+
+00:44:25.880 --> 00:44:27.080
+It will take me a bit longer.
+
+00:44:27.080 --> 00:44:29.080
+And then, you know, be really honest,
+
+00:44:29.080 --> 00:44:31.580
+which is if you were the business stakeholder
+
+00:44:31.580 --> 00:44:33.520
+and you just heard the argument you made
+
+00:44:33.520 --> 00:44:35.479
+for why they should go with you,
+
+00:44:35.479 --> 00:44:37.599
+would you choose to go with you,
+
+00:44:37.599 --> 00:44:39.200
+or is there enough risk here
+
+00:44:39.200 --> 00:44:42.260
+that they really do need to go with an external solution?
+
+00:44:42.260 --> 00:44:43.099
+And, you know, obviously,
+
+00:44:43.099 --> 00:44:45.219
+the context and the details really matter,
+
+00:44:45.219 --> 00:44:49.539
+but put yourself in the mindset of the business stakeholder
+
+00:44:49.539 --> 00:44:52.780
+and understand how are they going to make this decision,
+
+00:44:52.780 --> 00:44:55.799
+and is it really in their best interest
+
+00:44:55.799 --> 00:44:57.900
+to keep it internal versus going external?
+
+00:44:59.859 --> 00:45:01.299
+Great points.
+
+00:45:01.299 --> 00:45:03.780
+Also, maybe think about the opportunity costs
+
+00:45:03.780 --> 00:45:07.020
+of them choosing you for maintaining it in-house,
+
+00:45:07.020 --> 00:45:08.239
+because if there's other things
+
+00:45:08.239 --> 00:45:09.940
+that the data science team could be doing
+
+00:45:09.940 --> 00:45:11.679
+that are much more valuable than that thing
+
+00:45:11.679 --> 00:45:14.239
+that they're potentially gonna vendor out,
+
+00:45:15.520 --> 00:45:17.179
+it might be a hard sell for them.
+
+00:45:18.760 --> 00:45:19.900
+My two cents.
+
+00:45:19.900 --> 00:45:21.619
+I'm giving my two cents on everything, Pallas.
+
+00:45:21.619 --> 00:45:22.460
+I'm so sorry.
+
+00:45:22.460 --> 00:45:25.619
+This is the Pallas and Libby advice show today.
+
+00:45:26.799 --> 00:45:29.320
+Thank you, Sarah, so much for your question.
+
+00:45:29.320 --> 00:45:32.419
+We have a lighthearted question from Joseph,
+
+00:45:32.419 --> 00:45:34.280
+which this one popped up in the beginning and I missed it,
+
+00:45:34.280 --> 00:45:36.520
+which is, so what old movies
+
+00:45:36.520 --> 00:45:39.059
+should we be watching on YouTube tonight?
+
+00:45:39.059 --> 00:45:41.020
+Give us an old movie recommendation.
+
+00:45:42.039 --> 00:45:45.020
+So there's like a 1930s version
+
+00:45:45.020 --> 00:45:48.700
+of Dr. Jekyll and Mr. Hyde that I just adore,
+
+00:45:48.700 --> 00:45:51.059
+because they do all of these different,
+
+00:45:51.919 --> 00:45:55.919
+they're very experimental with how they do the screens.
+
+00:45:55.919 --> 00:46:00.599
+They're a little bit racier with the implied romance,
+
+00:46:00.599 --> 00:46:03.719
+and it's just got that little bit of extra edge
+
+00:46:03.719 --> 00:46:05.960
+right before the studio system really comes in
+
+00:46:05.960 --> 00:46:08.000
+and puts the hamper on everything.
+
+00:46:08.000 --> 00:46:11.000
+And I don't actually remember the name of it outright,
+
+00:46:11.039 --> 00:46:12.799
+but if you just Google like Dr. Jekyll
+
+00:46:12.799 --> 00:46:15.640
+and Mr. Hyde movie from the 30s, that's my favorite one.
+
+00:46:16.679 --> 00:46:19.119
+I feel like Rachel just put an IMDb in the chat.
+
+00:46:19.119 --> 00:46:21.520
+That's 1931, Dr. Jekyll and Mr. Hyde,
+
+00:46:21.520 --> 00:46:24.599
+and I am looking at a clip right now that is priceless.
+
+00:46:25.979 --> 00:46:26.840
+All right, awesome.
+
+00:46:26.840 --> 00:46:28.440
+We're all gonna go look that up.
+
+00:46:30.760 --> 00:46:32.039
+All righty.
+
+00:46:32.039 --> 00:46:33.960
+More questions in Slido.
+
+00:46:33.960 --> 00:46:36.000
+Thank you, Joseph, for that lighthearted one.
+
+00:46:36.000 --> 00:46:36.840
+I love those.
+
+00:46:38.719 --> 00:46:39.559
+Let me take a second
+
+00:46:39.559 --> 00:46:41.320
+and look at all of these fantastic questions
+
+00:46:41.320 --> 00:46:43.919
+because we only have about eight minutes left
+
+00:46:43.919 --> 00:46:47.760
+and I wanna be able to get in a few more if we can.
+
+00:46:47.760 --> 00:46:51.520
+Olivia, I forgot how when we would collect the questions
+
+00:46:51.520 --> 00:46:54.960
+through Slack, we were also like starring to say like,
+
+00:46:54.960 --> 00:46:56.880
+oh, here's some to pull to the top
+
+00:46:56.880 --> 00:46:59.900
+and you're doing this magical thing of reading them
+
+00:46:59.900 --> 00:47:01.640
+while you're talking.
+
+00:47:01.640 --> 00:47:02.559
+It's difficult.
+
+00:47:02.559 --> 00:47:03.919
+Actually, I wanted to let everybody know
+
+00:47:03.919 --> 00:47:06.880
+I'm getting some DMs that are asking me to ask questions.
+
+00:47:06.880 --> 00:47:08.239
+If you could put those questions in Slido,
+
+00:47:08.239 --> 00:47:11.239
+that would really help because I'm trying to,
+
+00:47:11.239 --> 00:47:15.440
+like I said, I'm trying to captain the enterprise right now
+
+00:47:15.440 --> 00:47:17.039
+and do many, many things at one time.
+
+00:47:17.039 --> 00:47:20.640
+So keeping them in Slido really helps me out.
+
+00:47:20.640 --> 00:47:24.320
+Salmita, who always asks amazing questions, by the way,
+
+00:47:24.320 --> 00:47:27.320
+Salmita, question asking queen,
+
+00:47:27.320 --> 00:47:29.840
+has one with an asterisk, so I'm gonna ask it for her.
+
+00:47:29.840 --> 00:47:34.119
+With the increase in vibe coding and LLMs writing code,
+
+00:47:34.119 --> 00:47:36.039
+do you think that explainability
+
+00:47:36.039 --> 00:47:38.640
+and interpretability in data science
+
+00:47:38.640 --> 00:47:40.200
+have risen in importance?
+
+00:47:40.200 --> 00:47:43.799
+So as data scientists, like should data scientists
+
+00:47:43.799 --> 00:47:48.080
+be better decision makers than they are coders?
+
+00:47:48.080 --> 00:47:49.520
+Really interesting question.
+
+00:47:52.599 --> 00:47:55.119
+I'd like to say the answer is an easy yes,
+
+00:47:55.119 --> 00:47:57.359
+but I'm hesitating and I'll explain why.
+
+00:47:59.440 --> 00:48:04.440
+I have been in situations where it's really hard
+
+00:48:06.039 --> 00:48:08.200
+to make the business decision
+
+00:48:08.200 --> 00:48:10.520
+and no one knows the right answer.
+
+00:48:10.520 --> 00:48:12.239
+And so they turn to the person
+
+00:48:12.239 --> 00:48:15.000
+who can produce the most sophisticated math.
+
+00:48:15.000 --> 00:48:18.479
+And so while I do think interpretability,
+
+00:48:18.479 --> 00:48:20.880
+explainability is really important,
+
+00:48:20.880 --> 00:48:25.719
+there is always going to be that one category of problems
+
+00:48:25.719 --> 00:48:30.719
+and let's call it 20% where no one knows the right answer.
+
+00:48:31.479 --> 00:48:32.919
+So they're gonna defer to the person
+
+00:48:32.919 --> 00:48:35.359
+who can make the most complicated math
+
+00:48:35.400 --> 00:48:39.760
+and be a little intellectually intimidating.
+
+00:48:39.760 --> 00:48:41.280
+I don't think that's the way
+
+00:48:41.280 --> 00:48:43.440
+you can actually build your career,
+
+00:48:43.440 --> 00:48:45.559
+but I don't think that category of problem
+
+00:48:45.559 --> 00:48:47.400
+is going to go away.
+
+00:48:47.400 --> 00:48:50.719
+So I do think in general, explainability,
+
+00:48:50.719 --> 00:48:52.760
+interpretability is very important,
+
+00:48:52.760 --> 00:48:55.640
+but that one category I think is always going to exist
+
+00:48:55.640 --> 00:48:59.039
+because when humans don't know, we don't like the unknown.
+
+00:48:59.039 --> 00:49:01.440
+And so that thing we understand the least
+
+00:49:01.440 --> 00:49:04.080
+that seems really confident, let's just go with that.
+
+00:49:05.520 --> 00:49:06.559
+Yeah.
+
+00:49:06.559 --> 00:49:10.640
+My two cents on this one is that trust in AI
+
+00:49:10.640 --> 00:49:12.239
+is a very interesting topic
+
+00:49:12.239 --> 00:49:15.719
+and it's something that's evolving and being studied a lot,
+
+00:49:15.719 --> 00:49:19.159
+but it's been studied also just as like trust
+
+00:49:19.159 --> 00:49:20.559
+in predictive models in general,
+
+00:49:20.559 --> 00:49:23.119
+outside of LLMs or before LLMs.
+
+00:49:24.440 --> 00:49:26.880
+And a lot of times when you look at the results
+
+00:49:26.880 --> 00:49:31.640
+of those studies, humans were trusting their own judgment
+
+00:49:31.640 --> 00:49:34.280
+more than a computer output of a prediction.
+
+00:49:34.280 --> 00:49:37.679
+And so having that human being in the loop is definitely,
+
+00:49:38.559 --> 00:49:40.000
+I think, still really valuable
+
+00:49:40.000 --> 00:49:42.200
+to a lot of people individually
+
+00:49:42.200 --> 00:49:45.239
+when it comes down to them making a decision.
+
+00:49:45.239 --> 00:49:47.760
+So keep that in mind and use that as ammo
+
+00:49:47.760 --> 00:49:49.520
+when you're talking to other people.
+
+00:49:51.400 --> 00:49:53.280
+All righty.
+
+00:49:53.280 --> 00:49:57.800
+So I wanted to tuck a few more in.
+
+00:49:57.800 --> 00:50:00.000
+We only have about five minutes left.
+
+00:50:01.000 --> 00:50:04.319
+And there was a question from Nellie
+
+00:50:04.319 --> 00:50:05.719
+that I really, really liked.
+
+00:50:05.719 --> 00:50:09.400
+And I think that it's a great career advice type question
+
+00:50:09.400 --> 00:50:10.359
+that's fantastic for you.
+
+00:50:10.359 --> 00:50:12.599
+So Nellie, if you are available to unmute and ask that,
+
+00:50:12.599 --> 00:50:14.119
+that would be fantastic.
+
+00:50:14.119 --> 00:50:15.760
+And if not, I can ask it for you.
+
+00:50:17.800 --> 00:50:18.800
+Mic down. Okay.
+
+00:50:18.800 --> 00:50:19.760
+Can y'all hear me?
+
+00:50:19.760 --> 00:50:20.599
+Yes. Thank you.
+
+00:50:20.599 --> 00:50:22.560
+Okay, cool.
+
+00:50:22.560 --> 00:50:24.119
+So my question was,
+
+00:50:24.119 --> 00:50:28.319
+how can I continue to be a leader and mentor in a space
+
+00:50:28.319 --> 00:50:31.079
+when I'm now sort of at the bottom?
+
+00:50:31.079 --> 00:50:33.680
+Like I used to mentor freshmen when I was in college.
+
+00:50:33.680 --> 00:50:35.160
+I used to coach synchronized swimming.
+
+00:50:35.160 --> 00:50:38.239
+So I had a lot of these leadership mentor opportunities,
+
+00:50:38.239 --> 00:50:41.800
+but now I'm in my first full-time job and it's in data,
+
+00:50:41.800 --> 00:50:45.920
+which is not my actual degree,
+
+00:50:47.079 --> 00:50:48.239
+but I really enjoyed it
+
+00:50:48.239 --> 00:50:50.000
+and kind of did it during my coursework.
+
+00:50:50.000 --> 00:50:53.359
+But how can I continue to use those mentoring skills
+
+00:50:53.359 --> 00:50:56.280
+even if I'm sort of like towards the bottom
+
+00:50:56.280 --> 00:50:57.719
+of the chain per se?
+
+00:50:59.239 --> 00:51:01.680
+You actually have a really important accomplishment
+
+00:51:01.680 --> 00:51:02.520
+in this market,
+
+00:51:02.520 --> 00:51:05.079
+which means you have your first data job
+
+00:51:05.079 --> 00:51:07.119
+and there are a whole bunch of people
+
+00:51:07.119 --> 00:51:09.239
+out there looking right now
+
+00:51:09.239 --> 00:51:11.560
+and they have not gotten their first data job.
+
+00:51:11.560 --> 00:51:13.439
+And I bet they'd love advice
+
+00:51:13.439 --> 00:51:15.439
+about how you actually accomplished
+
+00:51:15.439 --> 00:51:17.439
+getting your first data job.
+
+00:51:17.439 --> 00:51:20.040
+How did you transition into this career?
+
+00:51:20.040 --> 00:51:23.839
+How did you get to a place of paycheck stability?
+
+00:51:23.839 --> 00:51:25.479
+That's really, really valuable.
+
+00:51:25.479 --> 00:51:28.199
+And so don't discount just what you've accomplished
+
+00:51:28.400 --> 00:51:30.280
+in the past six months to a year.
+
+00:51:30.280 --> 00:51:32.000
+There are a lot of people
+
+00:51:32.000 --> 00:51:34.239
+who are trying to accomplish those things
+
+00:51:34.239 --> 00:51:35.800
+and haven't figured it out yet.
+
+00:51:37.119 --> 00:51:38.760
+Absolutely.
+
+00:51:38.760 --> 00:51:42.000
+Yes, and someone, George, said in the chat,
+
+00:51:42.000 --> 00:51:44.040
+you can mentor upwards too.
+
+00:51:44.040 --> 00:51:46.880
+Like there are people above you who need your perspective
+
+00:51:46.880 --> 00:51:48.520
+as a person who is lower on the chain
+
+00:51:48.520 --> 00:51:49.880
+and it's really beneficial for them
+
+00:51:49.880 --> 00:51:51.680
+if they know what's good for them.
+
+00:51:53.199 --> 00:51:56.000
+And I will also say there's an episode of The Hangout
+
+00:51:56.000 --> 00:51:58.839
+from years ago with Namrata Shetty.
+
+00:51:58.839 --> 00:52:01.400
+I will put that in the chat right now
+
+00:52:01.400 --> 00:52:02.680
+where she talks about mentoring
+
+00:52:02.680 --> 00:52:03.760
+and she's like, I'm only a few years
+
+00:52:03.760 --> 00:52:04.680
+into my leadership journey,
+
+00:52:04.680 --> 00:52:07.959
+but I am mentoring because I'm further up the ladder
+
+00:52:07.959 --> 00:52:09.160
+than somebody.
+
+00:52:09.160 --> 00:52:12.000
+There's somebody underneath me on the rungs of the ladder
+
+00:52:12.000 --> 00:52:12.959
+and I can help them.
+
+00:52:12.959 --> 00:52:16.079
+Maybe I can't help everybody, but it's still valuable.
+
+00:52:16.079 --> 00:52:18.319
+So go watch her Hangout as well.
+
+00:52:18.319 --> 00:52:19.560
+All right, a few minutes left.
+
+00:52:19.560 --> 00:52:21.160
+Can we tuck one more in?
+
+00:52:21.160 --> 00:52:22.880
+Nellie, that was a great question.
+
+00:52:23.880 --> 00:52:25.479
+I feel like I want to just ask
+
+00:52:25.479 --> 00:52:27.280
+a generic career advice question.
+
+00:52:27.280 --> 00:52:28.479
+We ask this of everybody.
+
+00:52:28.479 --> 00:52:31.800
+Like what's the number one most memorable piece
+
+00:52:31.800 --> 00:52:34.479
+of career advice that you can leave us with
+
+00:52:34.479 --> 00:52:35.760
+after today, Pallas?
+
+00:52:36.719 --> 00:52:38.280
+Or just something that comes to mind
+
+00:52:38.280 --> 00:52:40.880
+that was really impactful for you personally.
+
+00:52:40.880 --> 00:52:41.719
+Yeah.
+
+00:52:43.400 --> 00:52:46.800
+I'll drain you of so much advice already today.
+
+00:52:48.800 --> 00:52:50.520
+The one that was told to me that was,
+
+00:52:50.520 --> 00:52:52.280
+so I was in the gaming industry at the time,
+
+00:52:52.680 --> 00:52:53.839
+making video games.
+
+00:52:53.839 --> 00:52:55.359
+I'm sure there are people on this call
+
+00:52:55.359 --> 00:52:56.319
+who work in healthcare,
+
+00:52:56.319 --> 00:52:58.319
+and this advice does not apply to you guys,
+
+00:52:58.319 --> 00:53:00.760
+but it applies to everyone who's not in healthcare,
+
+00:53:00.760 --> 00:53:03.599
+which is I adjusted an analysis.
+
+00:53:03.599 --> 00:53:05.040
+The results were awful.
+
+00:53:05.040 --> 00:53:06.199
+The product was going to die.
+
+00:53:06.199 --> 00:53:08.119
+We were going to have to pull the plug.
+
+00:53:08.119 --> 00:53:11.160
+I felt so responsible that I produced the analysis
+
+00:53:11.160 --> 00:53:12.800
+that was going to kill the product.
+
+00:53:12.800 --> 00:53:15.479
+And a friend of mine told me,
+
+00:53:15.479 --> 00:53:17.599
+it's just an effing video game.
+
+00:53:17.599 --> 00:53:19.680
+No lives are at stake.
+
+00:53:19.680 --> 00:53:21.800
+And I think sometimes,
+
+00:53:21.800 --> 00:53:25.560
+we devote so much of our waking lives to our analysis
+
+00:53:25.560 --> 00:53:26.599
+and understanding the data
+
+00:53:26.599 --> 00:53:28.560
+that we forget to have perspective.
+
+00:53:28.560 --> 00:53:30.319
+And again, this is not for the healthcare people.
+
+00:53:30.319 --> 00:53:31.719
+This is for everyone else.
+
+00:53:31.719 --> 00:53:33.239
+Lives are not at stake.
+
+00:53:34.280 --> 00:53:35.239
+Sorry, healthcare people,
+
+00:53:35.239 --> 00:53:37.079
+lives might be at stake for you guys.
+
+00:53:38.280 --> 00:53:39.239
+I really appreciate that.
+
+00:53:39.239 --> 00:53:40.079
+And you know what?
+
+00:53:40.079 --> 00:53:41.680
+As I was asking you the question,
+
+00:53:41.680 --> 00:53:43.800
+what's one that made a really big impact on you?
+
+00:53:43.800 --> 00:53:45.280
+Mine is sort of the same.
+
+00:53:45.280 --> 00:53:46.760
+I had a manager say,
+
+00:53:46.839 --> 00:53:50.760
+Libby, there are no analytical emergencies.
+
+00:53:50.760 --> 00:53:52.160
+Like you can chill out.
+
+00:53:52.160 --> 00:53:53.000
+It's okay.
+
+00:53:53.000 --> 00:53:53.920
+Cause I'm very hard on myself.
+
+00:53:53.920 --> 00:53:55.439
+That's the feedback I get from managers.
+
+00:53:55.439 --> 00:53:57.880
+Like Libby, you're so hard on yourself.
+
+00:53:57.880 --> 00:53:59.920
+Thank you so much, Pallas for hanging out with us.
+
+00:53:59.920 --> 00:54:00.760
+This has been wonderful.
+
+00:54:00.760 --> 00:54:02.319
+I hope you've had a good time.
+
+00:54:03.800 --> 00:54:04.640
+Thank you.
+
+00:54:04.640 --> 00:54:05.479
+No, this has been great.
+
+00:54:05.479 --> 00:54:07.239
+And it's a shame that I wasn't able
+
+00:54:07.239 --> 00:54:10.280
+to like read the chat as well and answer more questions.
+
+00:54:10.280 --> 00:54:11.959
+Cause this is how I love spending my day.
+
+00:54:11.959 --> 00:54:13.680
+This is why I've opened a coaching practice
+
+00:54:13.680 --> 00:54:15.719
+because there's nothing I enjoy more
+
+00:54:15.719 --> 00:54:19.040
+than just like thinking about things, talking to people
+
+00:54:19.040 --> 00:54:21.680
+and then helping them learn how to think and talk as well.
+
+00:54:21.680 --> 00:54:23.079
+So thank you so much for including me
+
+00:54:23.079 --> 00:54:25.560
+and thank you all for all of your wonderful questions.
+
+00:54:25.560 --> 00:54:26.400
+Yay.
+
+00:54:27.800 --> 00:54:30.079
+I wanted to make sure we left one minute
+
+00:54:30.079 --> 00:54:32.400
+to talk a little bit about your coaching practice too.
+
+00:54:32.400 --> 00:54:35.160
+Cause I saw some of your posts on LinkedIn.
+
+00:54:35.160 --> 00:54:38.239
+I didn't know if there was anything I'll share about that.
+
+00:54:38.239 --> 00:54:40.760
+I just put her LinkedIn in the chat, everybody.
+
+00:54:40.760 --> 00:54:42.000
+Yeah.
+
+00:54:42.000 --> 00:54:43.439
+I mean, I'm just getting started right now.
+
+00:54:43.439 --> 00:54:46.079
+I have some evening availability for folks,
+
+00:54:46.079 --> 00:54:49.680
+but yeah, I have a link to my calendar on there.
+
+00:54:49.680 --> 00:54:51.359
+By all means, sign up, you know,
+
+00:54:51.359 --> 00:54:53.079
+we'll talk for 20, 30 minutes
+
+00:54:53.079 --> 00:54:54.719
+and talk about what are you looking for?
+
+00:54:54.719 --> 00:54:55.640
+Is this a great fit?
+
+00:54:55.640 --> 00:54:57.719
+What sort of structure do you need?
+
+00:54:57.719 --> 00:54:59.719
+I do do a sliding pay scale for folks
+
+00:54:59.719 --> 00:55:01.920
+depending on where they're at their career.
+
+00:55:01.920 --> 00:55:04.119
+And sometimes it's a fit and sometimes it's not,
+
+00:55:04.119 --> 00:55:06.040
+but you know, I think I'm a friendly person.
+
+00:55:06.040 --> 00:55:07.000
+I'm not going to bite, you know,
+
+00:55:07.000 --> 00:55:10.239
+come chat with me and we'll see what makes sense.
+
+00:55:10.239 --> 00:55:11.599
+Thank you so much.
+
+00:55:12.479 --> 00:55:13.439
+Thank you, Pallas.
+
+00:55:13.439 --> 00:55:16.280
+Everybody, if you would like to save the chat,
+
+00:55:16.280 --> 00:55:18.959
+there are three dots at the top of the chat box.
+
+00:55:18.959 --> 00:55:21.719
+You can click those and then click save chat
+
+00:55:21.719 --> 00:55:24.199
+and you can take all the resources with you.
+
+00:55:24.199 --> 00:55:25.760
+Thank you for hanging out with us
+
+00:55:25.760 --> 00:55:28.040
+on this beautiful Thursday.
+
+00:55:28.040 --> 00:55:30.800
+And next week, I hope that you come hang out with us
+
+00:55:30.800 --> 00:55:33.119
+because we are going to have Karen Healy
+
+00:55:33.119 --> 00:55:34.400
+and Jonathan McPherson,
+
+00:55:34.400 --> 00:55:36.920
+two of our keynote speakers for Posit Conf
+
+00:55:36.920 --> 00:55:37.760
+that are coming up.
+
+00:55:37.760 --> 00:55:40.079
+And if you know either of those guys,
+
+00:55:40.079 --> 00:55:41.239
+you know that it's going to be
+
+00:55:41.239 --> 00:55:44.079
+a really, really interesting discussion.
+
+00:55:44.079 --> 00:55:45.839
+So come hang out with us.
+
+00:55:45.839 --> 00:55:47.000
+Can't wait.
+
+00:55:47.000 --> 00:55:48.719
+Have a wonderful week.
+
+00:55:48.719 --> 00:55:50.199
+Thanks for being here.
+
+00:55:50.199 --> 00:55:51.640
+Libby, you just reminded me
+
+00:55:51.640 --> 00:55:55.439
+when you were talking about the conference chat next week,
+
+00:55:55.439 --> 00:55:58.439
+if anybody is thinking about coming in person
+
+00:55:58.439 --> 00:56:01.680
+and maybe like nervous about going alone
+
+00:56:01.680 --> 00:56:02.839
+or not knowing anybody,
+
+00:56:02.839 --> 00:56:04.439
+I was thinking next week's hangout
+
+00:56:04.439 --> 00:56:06.319
+might be a good opportunity for people
+
+00:56:06.319 --> 00:56:08.599
+to just get to know each other a little bit better
+
+00:56:08.599 --> 00:56:11.800
+so you have a buddy when you're there in person.
+
+00:56:11.800 --> 00:56:14.680
+So know someone who's thinking about going,
+
+00:56:14.680 --> 00:56:16.520
+you're not sure if they want to,
+
+00:56:16.520 --> 00:56:20.119
+maybe invite them to next week's hangout too.
+
+00:56:20.119 --> 00:56:21.640
+That's a great idea.
+
+00:56:21.640 --> 00:56:22.640
+All right.
+
+00:56:22.640 --> 00:56:23.479
+Fantastic.
+
+00:56:23.479 --> 00:56:24.719
+Thank you, everybody.
+
+00:56:24.719 --> 00:56:26.400
+I'll see you next week.
+
+00:56:26.400 --> 00:56:27.239
+Bye.

@@ -1,0 +1,1708 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.660
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.660 --> 00:00:22.020
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.020 --> 00:00:27.260
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.260 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:36.340
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.340 --> 00:00:43.139
+Can't wait to see you there. I'm super excited to welcome our featured leader today, Arielle
+
+00:00:43.139 --> 00:00:49.580
+Dror, Director of Data and Analytics at Bay FC, which is a soccer team in the US National
+
+00:00:49.580 --> 00:00:54.020
+Women's Soccer League. Arielle, welcome. Thank you so much for being here.
+
+00:00:54.020 --> 00:00:58.259
+Hi, Libby. Thanks for having me. I'm really looking forward to today.
+
+00:00:58.259 --> 00:01:03.619
+Me too. Okay, I would love it if you could give a brief background about yourself. Tell
+
+00:01:03.619 --> 00:01:08.580
+us a little bit about what you do, and also something that you like to do for fun. I know
+
+00:01:08.580 --> 00:01:11.660
+that's a two-part question. I'll remind you about the second part.
+
+00:01:11.660 --> 00:01:16.099
+Love it. So I am currently the Director of Data and Analytics at Bay FC. We're one of
+
+00:01:16.099 --> 00:01:23.500
+the newer expansion teams in the NWSL, National Women's Soccer League. I work on the football
+
+00:01:23.500 --> 00:01:27.900
+ops side, where I work to integrate data into all of our decision-making processes,
+
+00:01:27.900 --> 00:01:36.540
+whether that be recruitment, tactical analysis, game prep, match review, salary cap analysis.
+
+00:01:36.540 --> 00:01:40.500
+If there's something that the sporting side is working on, I'm trying to integrate data
+
+00:01:40.500 --> 00:01:46.580
+to try and make our decision-making processes more informed.
+
+00:01:46.580 --> 00:01:51.059
+And what I like to do in free time, well, I have a puppy. His name is Bingo. He takes
+
+00:01:51.059 --> 00:01:55.699
+up all my time these days. He's not here right now, unfortunately, otherwise I would
+
+00:01:55.699 --> 00:02:00.379
+have him make an appearance, but maybe I'll post him on Blue Sky after. I'm also an avid
+
+00:02:00.379 --> 00:02:07.260
+knitter, currently working on my second sweater of the season, and I also really enjoy swimming.
+
+00:02:07.260 --> 00:02:11.179
+Nice! Wait, sweater, where are you based? Because I'm in Texas, it's hot, I never get
+
+00:02:11.179 --> 00:02:13.179
+to wear anything that I knit or crochet.
+
+00:02:13.179 --> 00:02:18.179
+I am based in the Bay Area, in San Jose specifically, which means I also don't usually get to wear
+
+00:02:18.179 --> 00:02:22.979
+the stuff I wear until I go back home to New Jersey, but it was chilly the other night
+
+00:02:22.979 --> 00:02:28.020
+so I finally got to wear one. Yes, it is pretty warm, but I struggle to show, I suffer just
+
+00:02:28.020 --> 00:02:30.380
+to show off all my wares.
+
+00:02:30.380 --> 00:02:35.339
+I love it. Well, there are lots of knitters and crocheters and sewists in the data community
+
+00:02:35.339 --> 00:02:43.220
+as well, so you are in fantastic company. If anybody is a knitter, Isabella, knit-are,
+
+00:02:43.220 --> 00:02:49.860
+yeah, I love it, both. If anybody else is a knitter or a crocheter in the group, let
+
+00:02:49.860 --> 00:02:55.419
+us know. I know that, I feel like Marcy is often knitting whenever she joins, which I
+
+00:02:55.419 --> 00:03:01.779
+don't think I see her today, but I mean, love seeing that. Tim says he's a crocheter. I
+
+00:03:01.779 --> 00:03:09.779
+know Hadley's a crocheter as well. Okay, well, let's start chatting. First of all, SlidoLink,
+
+00:03:09.779 --> 00:03:13.500
+everybody, if you don't remember, we'll put the SlidoLink in the chat. It's where you
+
+00:03:13.500 --> 00:03:20.660
+can ask questions to Arielle today, and we do have an anonymous one that says, what traits
+
+00:03:20.660 --> 00:03:26.660
+in players do you wish you were able to quantify, and do you think we'll ever be able to quantify
+
+00:03:26.660 --> 00:03:32.660
+traits like drive in athletes? Oh, wow, that's a great question. We're starting off with
+
+00:03:32.660 --> 00:03:37.979
+the hard questions. This is great. I know, it's anonymous. If this is you, feel free
+
+00:03:37.979 --> 00:03:42.820
+to put it in the chat. Congratulations on a fantastically tough first question. Yeah,
+
+00:03:42.820 --> 00:03:48.899
+this is great. So I will say, the data that we have in soccer is slowly evolving, and
+
+00:03:48.899 --> 00:03:52.979
+it might be helpful to just give an overview of what we have available to us right now.
+
+00:03:52.979 --> 00:03:59.179
+So most of the data we have is event level data. So if you think of a soccer game, there's
+
+00:03:59.179 --> 00:04:03.899
+one player that is usually on the ball, and then there are every other player on the pitch
+
+00:04:03.899 --> 00:04:09.419
+is not on the ball. And so this event data only collects on-ball information, which means
+
+00:04:09.419 --> 00:04:16.779
+we are missing like 95% of what happens in a game. So we have things like passes, shots,
+
+00:04:16.779 --> 00:04:23.899
+defensive actions, things like that. We don't necessarily have off-ball runs, where people
+
+00:04:23.899 --> 00:04:30.459
+are in space, et cetera. And so most of what you can do in soccer is actually quite limited.
+
+00:04:30.459 --> 00:04:34.059
+We're now getting to the point where we have that off-ball information, where you can actually
+
+00:04:34.059 --> 00:04:38.579
+quantify off-ball impact. So we're slowly getting to the point where we can quantify
+
+00:04:38.579 --> 00:04:44.859
+a lot of things. I do think that often in recruitment decisions, we start going into
+
+00:04:44.859 --> 00:04:56.299
+these personality level questions, and things like drive, or dog, or how fancy they are.
+
+00:04:56.299 --> 00:05:00.940
+I would love to be able to quantify those things to be able to actually give an informed
+
+00:05:00.940 --> 00:05:07.380
+discussion to actually drive what we're doing. So I might actually just take the example
+
+00:05:07.380 --> 00:05:12.899
+that you gave here, which is drive, or just tenacity. That's something that often is really
+
+00:05:12.899 --> 00:05:17.739
+talked about in our discussions that I really can't contribute to, and I have to try.
+
+00:05:17.739 --> 00:05:23.899
+It's tough. I think that anybody who works with people data, data about people, qualitatively
+
+00:05:23.899 --> 00:05:28.700
+or quantitatively, will say that anything that's a personality trait is extremely hard,
+
+00:05:28.700 --> 00:05:35.739
+and the results are dubious. Humans are complex systems, and anything that humans participate
+
+00:05:35.739 --> 00:05:41.820
+in are complex systems. I don't think we can ask, based on how recruitment works, we can't
+
+00:05:41.820 --> 00:05:47.179
+give them psychological evaluations either. Right. And the question is also, should we?
+
+00:05:47.179 --> 00:05:52.339
+Was that a thing that you even shifted to? Yeah, which is true. I think realistically,
+
+00:05:52.339 --> 00:05:54.299
+most players would be like, I'm not going to come here if you're going to give me a
+
+00:05:54.299 --> 00:06:00.940
+psychological evaluation. Right. It's kind of like when you start a data science job
+
+00:06:00.940 --> 00:06:06.339
+or data role, and you get a really weird take-home project that you're like, I'm not doing free
+
+00:06:06.339 --> 00:06:12.459
+work. I don't want to work here. Exactly. Yeah, very weird. Okay. Fantastic question.
+
+00:06:12.459 --> 00:06:17.299
+These are all curious. And we suddenly got a bananas amount of questions. So let's get
+
+00:06:17.299 --> 00:06:24.899
+going and see how many of these we can answer. Let's see. What do we have? What do we have?
+
+00:06:24.899 --> 00:06:32.260
+Can you share from Suraj? Let's see. Oh, and there's a follow-up. Suraj, if you are available
+
+00:06:32.260 --> 00:06:37.179
+to ask that question live, I would love that. And I'm going to highlight it in Slido. So
+
+00:06:37.179 --> 00:06:43.299
+if you're in Slido, you will be able to see Suraj's question at the top. Oh, fantastic.
+
+00:06:43.899 --> 00:06:49.540
+Yeah. Thanks Libby. Can you guys hear me? Yeah. Yeah. Yeah. Hi Ariel. I was just curious
+
+00:06:49.540 --> 00:06:57.339
+about how the data science and analysis work that you do is implemented on the field. Specifically
+
+00:06:57.339 --> 00:07:03.660
+like when it comes to you presenting some insights and whether they are sort of like
+
+00:07:03.660 --> 00:07:08.459
+implemented on the field by the team. Sometimes there can be an opposition. Players may be,
+
+00:07:08.459 --> 00:07:12.119
+some of them may be kind of like, depending on their personality, relying more on intuition
+
+00:07:12.200 --> 00:07:17.079
+and their skills. They may not be receptive to like data aspect of it. So I was just curious,
+
+00:07:17.079 --> 00:07:21.920
+like what is your experience like and what are the instances when you see that, that
+
+00:07:21.920 --> 00:07:27.880
+kind of work, data work being kind of acted on in the field and results generated? Just
+
+00:07:27.880 --> 00:07:34.320
+curious. Yeah, that's a great question. So I'm really lucky at Bay. We have two video
+
+00:07:34.320 --> 00:07:39.519
+analysts that work under me who do a lot of the work in terms of integrating data into
+
+00:07:39.519 --> 00:07:45.640
+our tactical decisions and sort of in our weekly scouts. And one of them is particularly
+
+00:07:45.640 --> 00:07:50.760
+data driven. He worked with the U.S. Women's National Team for several years, won a World
+
+00:07:50.760 --> 00:07:57.339
+Cup, two World Cups with them, two, one, won several World Cup, won a World Cup with them.
+
+00:07:57.339 --> 00:08:01.760
+And so they had a lot of data folks on their team. So he's actually pretty data literate.
+
+00:08:01.760 --> 00:08:07.260
+And so he, whenever I build our weekly pre and post match reports, he will take a lot
+
+00:08:07.260 --> 00:08:13.019
+of that data and integrate it into our video scouts that go to the players and to the coaches.
+
+00:08:13.019 --> 00:08:18.299
+And he uses it to inform some of the tactical recommendations that he makes each week. We
+
+00:08:18.299 --> 00:08:24.839
+will occasionally put like data in front of the players to sort of emphasize a point.
+
+00:08:24.839 --> 00:08:29.299
+We went through a period this year where we were dropping points where we shouldn't, like
+
+00:08:29.299 --> 00:08:33.739
+we're probably, the probability of us dropping the points we did was like less than 1%. So
+
+00:08:33.739 --> 00:08:37.179
+we put it in front of them to sort of emphasize the point that they were doing well. So we
+
+00:08:37.179 --> 00:08:43.219
+do it a lot. We do a lot of work like using data to increase the confidence of our players.
+
+00:08:43.219 --> 00:08:47.340
+But we do use it, like I said, for tactical decision-making too. So a good example is
+
+00:08:47.340 --> 00:08:54.840
+we have a pre-match report that I have automated that goes out every week. And one of the plots
+
+00:08:54.840 --> 00:09:02.099
+that I show is like who is the top chance creators on the team based off of a lot of
+
+00:09:02.099 --> 00:09:08.059
+different things that we do. There were two players who nearly all of their chances were
+
+00:09:08.059 --> 00:09:13.580
+through these two players who were not forwards. And so we designed an entire tactical plan
+
+00:09:13.580 --> 00:09:19.140
+around keeping them off the ball. And they did not get on the ball. And then we were
+
+00:09:19.140 --> 00:09:23.619
+able to win the game. And we were able to also use data afterwards to check our process.
+
+00:09:23.619 --> 00:09:28.900
+So we were able to see that they actually did not have any chance involvements. So that
+
+00:09:28.900 --> 00:09:33.820
+was like probably the cleanest example we have of where data is used to inform the decision,
+
+00:09:33.820 --> 00:09:40.780
+to find the information, inform the decision, and then actually evaluate after whether it worked.
+
+00:09:40.780 --> 00:09:44.539
+But that's, we're doing, yeah, we're doing lots of different stuff.
+
+00:09:44.539 --> 00:09:50.700
+So many sports balls terms right now. I need a translator. Okay, hold on. What are chances?
+
+00:09:50.700 --> 00:09:55.979
+Chances. Okay, that's a good point. Yeah. Yeah. So chances to score. So like a shot.
+
+00:09:55.979 --> 00:10:05.099
+Okay, so how can someone who is not, who doesn't have the ball provide a chance for a team score?
+
+00:10:05.099 --> 00:10:10.940
+Yeah. So, you know, you don't just win the ball and immediately shoot, right? Sometimes there's
+
+00:10:10.940 --> 00:10:16.979
+many passes in the build up before a player takes a player takes a shot. So there's an assist. And
+
+00:10:16.979 --> 00:10:21.460
+then if you think of hockey, there's like the hockey assist, the second assist. And you can
+
+00:10:21.460 --> 00:10:25.539
+go all the way back. Maybe there's 10 passes before the shot. Like we still want to know
+
+00:10:25.659 --> 00:10:29.940
+that player is involved in that build up. Because that means that they are getting on the ball,
+
+00:10:29.940 --> 00:10:35.900
+probably in dangerous locations. Okay. Interesting. Thank you. Sorry to interrupt. Had to like get a
+
+00:10:35.900 --> 00:10:40.380
+few. No, that's great. I appreciate like, if there's anything sports wise, that is confusing,
+
+00:10:40.380 --> 00:10:44.859
+please let me know so that I can clarify. That's all right. And there was a follow up to Suraj's
+
+00:10:44.859 --> 00:10:50.219
+question in Slido. In Slido, by the way, you can hit a little reply button and like add context
+
+00:10:50.299 --> 00:10:55.979
+questions. That was how do you translate results to coaches? And I was wondering that too, when
+
+00:10:55.979 --> 00:11:01.900
+you said that you had automated like a pregame or a pre match report? Is that like, scheduling
+
+00:11:02.700 --> 00:11:08.380
+a quarto document report in Connect? Or is that like a quick what? How does that work?
+
+00:11:08.940 --> 00:11:14.940
+Yeah, so it is we use Posit Connect. We love it. And it's just a quarto document that is scheduled
+
+00:11:14.940 --> 00:11:20.859
+to run every Sunday. And then I should automate sending it also. But I was going to say, do you
+
+00:11:20.859 --> 00:11:27.179
+automate the emailing? I would love to. But I want to be able to check in first. So I download it.
+
+00:11:27.179 --> 00:11:31.739
+And also, something that I've learned, and I'm sure this is true in other industries is that
+
+00:11:31.739 --> 00:11:35.580
+the less technical you are, the more less likely you are to actually log on to the portal. So
+
+00:11:36.700 --> 00:11:40.619
+it's usually better to just download and send it to them manually. But our analysts will go
+
+00:11:40.619 --> 00:11:44.780
+onto the platform and look at it. You're meeting people where they are,
+
+00:11:44.780 --> 00:11:49.580
+and I think that's really important. So the follow up part was, how do you translate
+
+00:11:49.580 --> 00:11:53.500
+results to coaches? And I guess that's part of it is like, meet them where they are,
+
+00:11:53.500 --> 00:11:58.859
+if they're non technical people. Yeah, be really open to questions. I think
+
+00:11:58.859 --> 00:12:02.940
+I was really lucky with this coaching staff, who's unfortunately moving on at the end of the season,
+
+00:12:02.940 --> 00:12:07.419
+they had never worked with a data person before. So they had no preconceived notions about what
+
+00:12:07.419 --> 00:12:12.059
+was possible, or really like a lot about a lot of concepts. So I was an open book,
+
+00:12:12.059 --> 00:12:17.179
+they were really eager to learn from me. Last year, I actually sat in the office with them.
+
+00:12:17.179 --> 00:12:23.580
+So just being able to integrate my thoughts and share my insights, and allow for conversation
+
+00:12:23.580 --> 00:12:29.820
+was a big, a big help for us. But yeah, it's just been a lot a long term process of conversation,
+
+00:12:29.820 --> 00:12:35.820
+teaching, informal moments, and just trusting that we both have the best interests in mind.
+
+00:12:36.619 --> 00:12:40.780
+I love it. And there's something, there's an anonymous question that is so in line with what
+
+00:12:40.780 --> 00:12:45.099
+I want to talk about. So I'm going to combine them. The anonymous question is, what tools or
+
+00:12:45.099 --> 00:12:52.780
+methodologies do you wish you had access to? If, you know, the National Women's Soccer League had
+
+00:12:52.780 --> 00:12:58.299
+the same funds as something like the NFL, what I really want to talk about is the fact that you
+
+00:12:58.299 --> 00:13:03.500
+do have access to so many cool technologies. And I put a link in the chat with a video
+
+00:13:03.500 --> 00:13:08.859
+on LinkedIn that just came out like a few days ago, about how you guys, you use drones,
+
+00:13:08.859 --> 00:13:16.140
+you've got like cameras out, out the wazoo. Also, you told me that you like, I don't know if it's
+
+00:13:16.140 --> 00:13:22.059
+shiny apps or quarto reports or something, but you actually embed video into your reports,
+
+00:13:22.059 --> 00:13:27.340
+so that when you have a point to be made about, like, here's what I'm showing you with the data,
+
+00:13:27.340 --> 00:13:31.419
+somebody can click it and watch a play that demonstrates what that data is trying to tell
+
+00:13:31.419 --> 00:13:34.940
+them. Can you talk about that? Yeah, I can talk about that, and then I can also answer the
+
+00:13:34.940 --> 00:13:39.979
+question because that's a fun one. So in terms of using data and video together, James, I see
+
+00:13:39.979 --> 00:13:44.619
+James is in the chat, and he'll be really familiar with this. There's a program that's used in sports
+
+00:13:44.619 --> 00:13:49.659
+called SportsCode. It's a proprietary software that's used specifically in sports, and it allows
+
+00:13:49.659 --> 00:13:56.299
+you to basically take a video feed and then tag it with specific events. I don't know a lot about
+
+00:13:56.299 --> 00:14:00.380
+SportsCode. This is like not my world, but something that's really cool about SportsCode
+
+00:14:00.380 --> 00:14:08.700
+is that you can actually import your own, like, specially formatted profile, like a file that is
+
+00:14:08.700 --> 00:14:14.700
+timestamped to the video, and then build things on top of it that really just look like dashboards.
+
+00:14:14.700 --> 00:14:18.859
+They're called SportsCode windows. They really just look like dashboards, and so our analysts
+
+00:14:18.859 --> 00:14:23.820
+and I have worked together where all of the data that we care about is timestamped, and then I
+
+00:14:23.820 --> 00:14:30.940
+format it in the format of this SportsCode format that is necessary, and then he's
+
+00:14:30.940 --> 00:14:36.700
+able to actually build dashboards on top of it. So, for example, we have one around chance creation,
+
+00:14:36.700 --> 00:14:41.099
+so he can click all the chance creations that are created, or all the chances that are created via
+
+00:14:41.099 --> 00:14:45.260
+through balls, and he can click on it, and then it'll pull all of this data that we have on all
+
+00:14:45.260 --> 00:14:50.619
+the through balls, and it'll give us, at the timestamp, he can watch the video along with all
+
+00:14:50.619 --> 00:14:55.099
+the data tidbits that I add at the bottom for information for the coaches. And at the beginning,
+
+00:14:55.099 --> 00:14:58.700
+I mean, I've talked a lot about collaborating with coaches, and I found out halfway through
+
+00:14:58.700 --> 00:15:02.780
+last year that when I talked with just pure data terms, they had no idea what I was talking about.
+
+00:15:03.580 --> 00:15:10.460
+I wish they had told me sooner, but August works too, and so we were able to build these SportsCode
+
+00:15:10.460 --> 00:15:14.780
+dashboards, basically, where whenever they had the video, but they also had the data,
+
+00:15:15.580 --> 00:15:20.859
+and it worked incredibly. So, some of our reports don't have video, but the ones that our coaches
+
+00:15:20.859 --> 00:15:26.140
+use most often do, and then I was able to automate all of that, and so now, because of PositConnect,
+
+00:15:26.140 --> 00:15:30.460
+now we have a shiny app that downloads all these files, generates all these files, and
+
+00:15:31.260 --> 00:15:35.099
+our analysts can put them on our lovely SportsCode with us, which is great.
+
+00:15:35.099 --> 00:15:41.659
+This is amazing. You are so far ahead of most data-driven organizations. I see a lot of nodding
+
+00:15:41.659 --> 00:15:46.460
+happening in my grid of faces right now. There are those of us who have worked at these
+
+00:15:46.460 --> 00:15:52.460
+corporations who have millions of dollars to spend on their analytics functions who can't get anybody
+
+00:15:52.460 --> 00:15:57.659
+to use any of their data products effectively. You're killing it. This is amazing.
+
+00:15:57.659 --> 00:16:02.859
+I appreciate it. I know it's easier said than done. It also helps that we have a really small
+
+00:16:02.859 --> 00:16:07.179
+org, right? There's 20 of us in the sporting organization, so I can actually have touch
+
+00:16:07.179 --> 00:16:14.140
+points with people. Scaling things is tough. It is really, really tough. That was fantastic.
+
+00:16:14.140 --> 00:16:17.739
+Thank you so much for the question, but I do want to go back to the question.
+
+00:16:19.340 --> 00:16:23.419
+What do you wish you had if you had access to it? Magically, more funds.
+
+00:16:24.219 --> 00:16:29.099
+More funds and also a league office that is able to do technological innovation. I think that's
+
+00:16:29.099 --> 00:16:34.780
+the big one. NFL has next-gen stats and has a whole internal data science team,
+
+00:16:34.780 --> 00:16:38.140
+and my understanding is that those products are available to teams.
+
+00:16:39.820 --> 00:16:44.700
+There's a lot of really advanced data. I've talked hand-wavy about this tracking data,
+
+00:16:44.700 --> 00:16:49.419
+which is essentially sensor or GPS data. It's a lot harder to work with than event data,
+
+00:16:49.419 --> 00:16:55.099
+and most teams don't have the capacity to work with it to the scale that they would want to,
+
+00:16:55.099 --> 00:16:59.820
+and so having a league office that is able to actually process that data and give out-of-the-box
+
+00:16:59.820 --> 00:17:05.099
+metrics and maybe even some dashboards would go a long way, not just for us, but also for
+
+00:17:05.099 --> 00:17:09.180
+any team in the league. We probably have one of the most built-out analytics departments
+
+00:17:09.979 --> 00:17:14.380
+in the league, and even we are struggling to think about how we would approach that,
+
+00:17:14.380 --> 00:17:21.020
+so just having people at the league office who are able to process data is really a huge help.
+
+00:17:22.060 --> 00:17:24.859
+I would love to have something like next-gen stats. That is so sick.
+
+00:17:25.579 --> 00:17:30.300
+Also, they do a really cool hackathon every year that helps teams find talent,
+
+00:17:30.300 --> 00:17:36.060
+and it's really hard to recruit in sports, and so having a capacity to do something like a
+
+00:17:36.060 --> 00:17:42.380
+hackathon would be really, really cool. Amazing. I mean, I think hackathons can be
+
+00:17:42.380 --> 00:17:47.099
+as small as you want them to be. It could be really fun. All right, let's get in some more
+
+00:17:47.099 --> 00:17:49.579
+questions because we have so many. There's no way we're going to get to all of them,
+
+00:17:49.579 --> 00:18:00.540
+but let's see what we've got here. Pardon me while I take a minute to pop in here. I think
+
+00:18:00.540 --> 00:18:07.500
+that there was one about breaking into sports analytics. Sorry, y'all. When the questions pop
+
+00:18:07.500 --> 00:18:12.060
+up in Slido, they all move, and then when y'all upvote them, they bounce around my screen.
+
+00:18:13.180 --> 00:18:18.380
+Okay, so let's assume that I did see the question about breaking into the field because this gives
+
+00:18:18.380 --> 00:18:24.699
+us a really great opportunity to talk about how you got started, and it's my favorite part of
+
+00:18:24.699 --> 00:18:36.300
+REL lore. Tell us about how you began working out loud and what that led to. Yeah, so I got this
+
+00:18:36.300 --> 00:18:42.300
+entire job by just obnoxiously working out loud until this paid off for me. I went to Smith
+
+00:18:42.300 --> 00:18:49.339
+College in Northampton, Massachusetts, historically women's college, also one of the first schools to
+
+00:18:49.339 --> 00:18:54.540
+have a data science program, or at least a liberal arts college. So I didn't go in thinking I was
+
+00:18:54.540 --> 00:19:01.579
+going to be a data science major, ended up being a data science major. Sorry, I'm going to close
+
+00:19:01.579 --> 00:19:06.859
+the chat. I'm getting distracted. Feel free. You told me it would happen. I told you. I told
+
+00:19:06.859 --> 00:19:19.500
+Arielle. The chat's wild, y'all. So my senior year, I was taking a class, an advanced
+
+00:19:19.500 --> 00:19:24.060
+programming class in R with my professor, Ben Balmer. I'm going to shout him out because he's fantastic
+
+00:19:24.060 --> 00:19:29.500
+and quite involved in the R community. We had to build an R package, and I had started
+
+00:19:29.500 --> 00:19:34.300
+watching. It was right after the 2019 World Cup. I was feeling really inspired. I started watching
+
+00:19:34.300 --> 00:19:40.300
+the NWSL, where I now work, and I wanted to learn more about Soccer Through Data.
+
+00:19:40.300 --> 00:19:45.979
+I basically scraped the website, all their stat pages, put it into an R package,
+
+00:19:45.979 --> 00:19:53.020
+and then over winter break, I just put it on Twitter. I didn't really think it was
+
+00:19:53.020 --> 00:19:56.380
+going to pop off or anything. I just put it up there to see what would happen. I wanted people
+
+00:19:56.380 --> 00:20:02.780
+to use it. I wanted feedback. It went mildly viral, so that was really helpful. From there,
+
+00:20:02.780 --> 00:20:08.619
+I was able to get some opportunities working for American Soccer Analysis, which is the main
+
+00:20:08.619 --> 00:20:15.260
+open-source soccer writing blog. I was writing for them and then doing some work for them
+
+00:20:15.260 --> 00:20:20.699
+behind the scenes, and then that turned into my first job. While I was doing that job, working
+
+00:20:20.699 --> 00:20:27.339
+for a multi-club organization, doing data analytics and some data engineering, I was also putting up
+
+00:20:27.339 --> 00:20:32.380
+post-match reports for NWSL every single weekend, just to keep my name out there.
+
+00:20:35.180 --> 00:20:38.140
+They weren't really that great in the beginning, but I was getting lots of feedback from
+
+00:20:39.819 --> 00:20:46.060
+other people on Twitter who were using them. After doing that for two-ish years,
+
+00:20:46.060 --> 00:20:49.660
+the Bay Area team was announced, and I really, really wanted this job.
+
+00:20:51.500 --> 00:20:54.459
+I made sure everyone knew I wanted this job, and it paid off.
+
+00:20:54.699 --> 00:21:02.540
+Bekkah, what kind of timeline? How long between you posting on Twitter and being like,
+
+00:21:02.540 --> 00:21:07.339
+YOLO, I'm just going to put this out there, it's not perfect, between you securing a job
+
+00:21:07.339 --> 00:21:13.339
+in sports analytics? I want to say that I am very lucky, and it doesn't usually happen this fast,
+
+00:21:13.339 --> 00:21:22.060
+but I put the R package up maybe January 2020. I think COVID helped here. People were really
+
+00:21:22.699 --> 00:21:28.300
+on the internet a lot, because they had nothing better to do. 2020, and then I got my email from
+
+00:21:28.300 --> 00:21:34.859
+my first boss October 2020. Again, I don't think that it usually happens that fast, and I was
+
+00:21:34.859 --> 00:21:41.500
+prepared for it to take a lot longer, but it really worked out for me. Then from that job to
+
+00:21:42.060 --> 00:21:48.300
+the BFC job, that was like two and a half years. Would you say that you endorse working out loud?
+
+00:21:49.099 --> 00:21:53.660
+I do endorse working out loud. Even if it doesn't turn into a job, you make lots of really great
+
+00:21:53.660 --> 00:22:00.859
+friends, which is maybe even better. I've made so many great friends just through working out loud,
+
+00:22:00.859 --> 00:22:06.780
+and people who eventually became my co-workers, and people who I've traveled with, people who
+
+00:22:07.500 --> 00:22:12.140
+I use as professional sounding boards even now, now that I work alone again.
+
+00:22:12.939 --> 00:22:20.859
+Shout out to Tan. Tan was on Instagram. Is Tan on here? He's great. Tan is here. Tan also works
+
+00:22:20.859 --> 00:22:25.020
+out loud a lot, and has done a lot of great work. Tan and I were co-workers at Zealous,
+
+00:22:25.979 --> 00:22:31.819
+and he's the best. Shout out to him. Tan is the best. All right. Thank you so much. That was
+
+00:22:31.819 --> 00:22:39.180
+amazing. By the way, with the Discord server that we put the link to, that's a fantastic place to
+
+00:22:39.180 --> 00:22:44.219
+go work out loud. If you are worried about posting your work on Twitter, or Blue Sky,
+
+00:22:44.219 --> 00:22:48.219
+or LinkedIn, and you're like, I don't feel like I'm in a safe place to do this, we have a channel
+
+00:22:48.219 --> 00:22:53.900
+called Only the Silliest Projects, which was spearheaded by Dami Pak. If anybody knows Dami,
+
+00:22:53.900 --> 00:23:00.380
+she is an amazing silly project person. That's a fantastic place to put stuff, but there's also
+
+00:23:00.380 --> 00:23:05.099
+all kinds of places to just share what you're doing, and the only people who will see it will
+
+00:23:05.099 --> 00:23:11.500
+be nice, supportive data people. Please use that to your advantage, and I would love to see what
+
+00:23:11.500 --> 00:23:17.660
+you're working on. Okay. Let's head over to the Slido again, because I see we have a question
+
+00:23:17.660 --> 00:23:22.300
+from Aaron. Adam, thank you for helping us get that onto the Slido, because Slido is blocked
+
+00:23:22.300 --> 00:23:27.500
+for Aaron for some reason. It is, why is it so hard to recruit for sports? What are the challenges?
+
+00:23:28.459 --> 00:23:36.380
+Honestly, I think I saw someone write this in the chat. The pay is just not on the level of
+
+00:23:37.020 --> 00:23:41.339
+what we would expect for people with technical skills, and that's something we're trying to
+
+00:23:41.339 --> 00:23:44.939
+change our pay. That's something I'm trying to work on behind the scenes, so that's definitely
+
+00:23:44.939 --> 00:23:50.540
+a challenge that we have. Also, we often want people who have some level of sports experience.
+
+00:23:51.339 --> 00:23:57.739
+It's really hard to get that experience, so working out loud is really helpful. Those are
+
+00:23:57.739 --> 00:24:03.020
+probably the two big ones. I find the most talented people that I would really want to
+
+00:24:03.020 --> 00:24:08.060
+come work here are just not willing to work in sports, which is super fair. It's a really hard,
+
+00:24:08.060 --> 00:24:13.739
+it's definitely not your typical tech job or typical data job. Yeah, there was a question
+
+00:24:13.739 --> 00:24:19.739
+in the Slido about this. Let me see. It was- It is not a nine to five. That is right, Jane.
+
+00:24:20.699 --> 00:24:24.540
+I think the question was, oh, Isabella highlighted it for me. Isabella, you are killing it. Thank
+
+00:24:24.540 --> 00:24:29.660
+you. This is amazing. It's, in the past, sports analytics jobs I've seen have tended to pay a
+
+00:24:29.660 --> 00:24:34.140
+little bit less than other industries. Do you feel like there's a passion penalty for working in the
+
+00:24:34.140 --> 00:24:39.099
+sports world? I have heard this sort of theory a lot, that if you get fulfillment out of a
+
+00:24:39.099 --> 00:24:46.619
+job, you have to make less money for it, which I don't think is true universally. What do you
+
+00:24:46.619 --> 00:24:51.819
+think, though, about sports? I would say definitely. Actually, let me backtrack. I
+
+00:24:52.540 --> 00:24:56.939
+majored in data science. I also majored in political science. I was really interested
+
+00:24:56.939 --> 00:25:01.819
+in doing data science for social good before this. I feel like every job I've had has paid a passion
+
+00:25:01.819 --> 00:25:08.140
+penalty to some extent. I would say it's true. Especially here in the Bay, I look at
+
+00:25:09.099 --> 00:25:16.699
+pay ranges for jobs. I will say it is an anomaly, but I think this is true throughout
+
+00:25:16.699 --> 00:25:20.540
+the country. It's definitely true. I think it's getting a lot better compared to where it was when
+
+00:25:20.540 --> 00:25:25.660
+I started. Maybe Tian can chime in here, too, because he's been in this world. Or James.
+
+00:25:26.459 --> 00:25:29.579
+It's definitely gotten better, but there definitely is some level of passion penalty,
+
+00:25:29.579 --> 00:25:33.500
+especially because those jobs that you're comparing it to, the work-life balance is
+
+00:25:33.500 --> 00:25:39.819
+just not the same. You're usually working in a smaller team. The projects you're working on,
+
+00:25:40.380 --> 00:25:45.020
+the type of people you're interfacing with, it's definitely very different. Not necessarily bad,
+
+00:25:45.020 --> 00:25:48.140
+but there's definitely a passion penalty. Where are some of the benefits of that? I think that's
+
+00:25:48.140 --> 00:25:53.500
+a great follow-up. You're working on a smaller team. Your hours are not normal. Oh, Chris Fabic
+
+00:25:53.500 --> 00:25:59.819
+is also here. Hey, Chris, who is an alumni of our data science hangout as well and is a ref
+
+00:25:59.819 --> 00:26:06.140
+for high-level soccer. I'm wondering what the benefits are, because I feel like when we're
+
+00:26:06.140 --> 00:26:11.819
+like, it's non-standard, it's lots of hours, it's weird, it's small teams. I think you also get to
+
+00:26:11.819 --> 00:26:16.540
+do a lot of cool stuff that people in much larger orgs don't get to do, don't get to put their hands
+
+00:26:16.540 --> 00:26:22.619
+on. Something that I really love is that I get to see my work actually put into play every single
+
+00:26:22.619 --> 00:26:27.660
+day. I know I'm making an impact with the work I'm doing. There's also the fun stuff of working
+
+00:26:27.660 --> 00:26:31.180
+in a team. You don't have to be experienced all the time, but I travel with the team. I've gone
+
+00:26:31.180 --> 00:26:38.540
+to see the world, quite literally the world, and meet really interesting people, work on really
+
+00:26:38.540 --> 00:26:43.979
+novel ideas. Those things I don't think I necessarily would have had the opportunity
+
+00:26:43.979 --> 00:26:51.339
+to do in a different industry. That stuff is worth it for me. I'm putting the link to that video
+
+00:26:51.339 --> 00:26:56.780
+again, that Bay FC video, because you talk about something I really like in there too, which is
+
+00:26:57.020 --> 00:27:01.339
+you developed a habit of going to get ice cream. I think it's before a game, right?
+
+00:27:02.060 --> 00:27:06.300
+Yeah, the night before a game. The night before a game. You went to go get ice cream one time,
+
+00:27:06.300 --> 00:27:10.859
+and then y'all won that game. You were like, well, now we got to go get ice cream before the game
+
+00:27:10.859 --> 00:27:14.780
+every single time to make sure we continue winning. It's true. But it means that you've
+
+00:27:14.780 --> 00:27:20.219
+gotten to explore your favorite ice cream places all over the freaking place. Absolutely, absolutely.
+
+00:27:20.219 --> 00:27:24.300
+It's been so much fun. We haven't done the data set. Oh, go ahead. Sorry. I was going to say,
+
+00:27:24.859 --> 00:27:30.140
+how have you not studied this? We really want to. The problem is that we don't have time.
+
+00:27:32.300 --> 00:27:39.260
+So we have our non-official ranking, but we wanted to actually do a formal study. Unfortunately,
+
+00:27:39.260 --> 00:27:47.579
+we know that the number one is far and away the best one, and that is Blacksmith Ice Cream in Salt
+
+00:27:47.579 --> 00:27:53.500
+Lake City area. If you are there, really best ice cream I've ever had in my life. It is so good.
+
+00:27:54.859 --> 00:28:00.060
+Cool. Maybe you can get on the Discord later and give us some tips on ice cream and also
+
+00:28:00.060 --> 00:28:06.859
+share some dog pics. Absolutely. Some puppy pics. We have some more questions in Slido here, so
+
+00:28:06.859 --> 00:28:10.859
+let's keep going because we've got about a half an hour left, and it's not enough time to answer
+
+00:28:10.859 --> 00:28:16.380
+all of these good questions. We had a question from Edward. Edward, if you would like to
+
+00:28:17.020 --> 00:28:21.739
+ask that live, that would be fantastic. A little bit more on the technical side.
+
+00:28:22.699 --> 00:28:30.939
+Hello. Thanks for choosing my question. Yeah. Sorry. The question is a bit more technical
+
+00:28:31.660 --> 00:28:35.500
+because y'all are talking about you've got some really data-oriented people. Are y'all working
+
+00:28:35.500 --> 00:28:41.979
+with PyTorch, Scikit-Learn, or OpenCV, computer vision framework stuff for feature extraction
+
+00:28:41.979 --> 00:28:48.140
+to analyze the game video for more subjective traits like tenacity in players? Because I
+
+00:28:48.219 --> 00:28:54.380
+need a player position, but that tenacity concept was really stuck with me. Yeah. I love that
+
+00:28:54.380 --> 00:29:00.939
+question. I would love to be doing really fun machine learning and cool novel work like that.
+
+00:29:00.939 --> 00:29:05.819
+Unfortunately, we have a lot more low-hanging fruit that we need to meet first before we can
+
+00:29:05.819 --> 00:29:10.380
+do really cool stuff. I actually don't do a ton of modeling in my day-to-day. It's a lot of data
+
+00:29:10.380 --> 00:29:16.300
+engineering and a lot of much more simple data analysis, data viz. One day, I would love to do
+
+00:29:16.300 --> 00:29:22.939
+something like that. I do also think we probably need to get a larger quantity of data or a video
+
+00:29:22.939 --> 00:29:28.219
+before we could feel comfortable doing something like that, but it sounds really cool. If someone
+
+00:29:28.219 --> 00:29:33.660
+does that publicly, tag me because I would love to see it. For sure. Thank you for asking the
+
+00:29:33.660 --> 00:29:38.859
+technical question, Edward, because I also have this question a lot for a lot of people, and I
+
+00:29:38.859 --> 00:29:42.859
+don't want to ask it because sometimes they're like, oh no, I wish I did, which was your answer
+
+00:29:42.859 --> 00:29:50.140
+as well. I wish I did all that technical stuff, but it's really nice to hear, though, that not
+
+00:29:50.140 --> 00:29:55.099
+everybody is doing these really super complicated computer vision models because it makes me feel
+
+00:29:55.099 --> 00:30:01.260
+more normal where I'm like, oh, the stuff you see on LinkedIn where everybody is doing cutting-edge,
+
+00:30:01.260 --> 00:30:07.180
+bleeding-edge stuff is not really reality. I think it makes us feel a little bit bad about
+
+00:30:07.180 --> 00:30:15.420
+ourselves sometimes, so fantastic. A plus answer. Let's hop over and grab some more questions here.
+
+00:30:17.579 --> 00:30:21.739
+Oops, I marked one as answered. I hope that I marked Edward's question as answered. When I
+
+00:30:21.739 --> 00:30:27.339
+mark them as answered, they disappear from Slido, so it makes me nervous. Okay, this is anonymous,
+
+00:30:27.339 --> 00:30:31.900
+and it's a two-part question. The first part says, do you ever correct anyone and tell them it's
+
+00:30:31.900 --> 00:30:39.020
+football, not soccer? And number two is, is the same set of data available for everyone beyond,
+
+00:30:39.020 --> 00:30:47.180
+say, FB ref and Opta stats? I don't know what those are. So those are like FB refs. Oh, Rajesh, this is you.
+
+00:30:47.900 --> 00:30:50.780
+Rajesh, do you want to give some background to this question?
+
+00:30:53.180 --> 00:30:56.939
+Rajesh, it was anonymous, but then in his reply, it said his name. Hey, Rajesh.
+
+00:30:56.939 --> 00:31:08.939
+All right. Can you hear me now? Yeah, perfect. So yeah, a brief background is...
+
+00:31:09.182 --> 00:31:17.262
+A brief background is my questions background is basically I used to work for an Asuka racing team
+
+00:31:17.262 --> 00:31:22.302
+and the data that you see on the tv is not even close to what the data that we used to get
+
+00:31:22.302 --> 00:31:23.262
+behind the scenes.
+
+00:31:19.302 --> 00:31:25.462
+Arielle Dror
+
+00:31:49.302 --> 00:31:55.941
+Question – How would you go about getting that same kind of data when the players are
+
+00:31:55.941 --> 00:32:01.061
+actually playing, even for the opposition players? Because when you jump on a player and
+
+00:32:01.061 --> 00:32:05.622
+especially given that football now has become football, it's actually becoming more
+
+00:32:06.822 --> 00:32:13.302
+structured and less about players and their talents themselves. So how would you go about
+
+00:32:13.941 --> 00:32:15.862
+getting that data? I'd be very curious to hear that.
+
+00:32:16.822 --> 00:32:20.822
+Very cool. First of all, that sounds like a sick job and someone also asked in here wanting to
+
+00:32:20.822 --> 00:32:24.022
+learn more about your past life. I also would like to learn more about your past life. That
+
+00:32:24.022 --> 00:32:30.821
+sounds so cool. In terms of live data, we get a little bit from the league from Opta,
+
+00:32:30.821 --> 00:32:34.261
+mostly just in the form of a dashboard where there's nothing we can really ingest,
+
+00:32:34.821 --> 00:32:36.982
+though that might be changing next year, fingers crossed.
+
+00:32:39.702 --> 00:32:44.982
+All the data we get is post-game. So we get stuff from our data providers ingested via API.
+
+00:32:45.062 --> 00:32:49.622
+Does that answer your question? We get more data than what is available publicly,
+
+00:32:51.622 --> 00:32:54.581
+but it's not from the league. So some teams in the league do not
+
+00:32:56.581 --> 00:32:58.102
+work with those data providers at all.
+
+00:33:01.221 --> 00:33:06.742
+Great question, Brijesh. If you do want to hear more about Brijesh's past life,
+
+00:33:06.742 --> 00:33:11.382
+Brijesh is going to be on The Hangout next year. Yes, we are scheduling it next year. It's so
+
+00:33:11.382 --> 00:33:15.782
+weird when we get to the end of this year. So Brijesh is going to be with us February 12th,
+
+00:33:16.422 --> 00:33:21.541
+right Brijesh? Yes, I'm flipping through my schedule right now, February 12th. So we will
+
+00:33:21.541 --> 00:33:28.822
+get to talk to Brijesh and now I know to ask him all about his NASCAR past. Yes, we'll look forward
+
+00:33:28.822 --> 00:33:34.501
+to that. Thank you for that fantastic question. And there was one part of it, which was,
+
+00:33:35.141 --> 00:33:38.182
+do you call it football? Do you call it football or do you call it soccer?
+
+00:33:38.262 --> 00:33:42.262
+I use it interchangeably. Sorry for the boring answer. Depends on the day. Depends on who I'm
+
+00:33:42.262 --> 00:33:48.421
+talking to. Depends on the vibe. Okay. All right, cool. We have another question here
+
+00:33:49.462 --> 00:33:56.421
+from Ntobeko. Do you want to ask that question live? I'm going to highlight it in Slido so we
+
+00:33:56.421 --> 00:34:04.102
+don't lose it as things are bouncing around. Let me see if I can find you to unmute.
+
+00:34:05.061 --> 00:34:11.781
+Yeah, hey. Hi, how are you guys? Okay. Can you hear me? Is my sound good? Yeah, you sound great.
+
+00:34:12.822 --> 00:34:18.822
+Okay. You've kind of answered this question already from Edward's question, but what I'm
+
+00:34:18.822 --> 00:34:24.902
+asking is probably based on the more social sort of community audience base, where I was wondering
+
+00:34:24.902 --> 00:34:30.262
+if there were any sporting myths that you had prior to landing a role that you were eliminated
+
+00:34:30.262 --> 00:34:35.701
+by after joining the team. I'm thinking about things like, is there any data around
+
+00:34:36.662 --> 00:34:42.742
+the home ground advantage or audience participation having any sort of influence in the game's
+
+00:34:42.742 --> 00:34:48.022
+performance? Because I think about things maybe like if they're having war cries and stuff,
+
+00:34:48.022 --> 00:34:52.262
+if you can measure things like the decibels throughout the stadium, does that, can that
+
+00:34:52.262 --> 00:34:56.822
+have a correlation that you can sort of look at later to sort of say, hey, we always say this,
+
+00:34:56.822 --> 00:35:02.182
+but here's the data that actually sort of supports that. Yeah, that's a good question.
+
+00:35:02.182 --> 00:35:09.141
+That's a great question. So we don't do a ton around audience home field advantage, etc. Most
+
+00:35:09.141 --> 00:35:14.102
+of the stuff we use there is just stuff that's publicly available because I try and use as much
+
+00:35:14.102 --> 00:35:20.581
+as publicly available as possible because it's just me. There's been some stuff around different
+
+00:35:20.581 --> 00:35:27.622
+tactical decisions that have happened or in-game moments. I want to share them, but I feel like
+
+00:35:27.622 --> 00:35:31.542
+they're kind of competitive advantages, so I don't want to share them too much that have been
+
+00:35:33.701 --> 00:35:40.502
+interesting to prove me wrong. But I will say a lot of those types of questions, we use publicly
+
+00:35:40.502 --> 00:35:45.622
+available information. Just again, there's not a lot of time to do some of those analyses.
+
+00:35:46.342 --> 00:35:51.381
+I know that this sounds like a fun thing for like fans to tackle. There are some questions
+
+00:35:51.381 --> 00:35:55.782
+that like if you are curious and if you think this is a fun thing and you can find data that
+
+00:35:55.782 --> 00:36:00.581
+is publicly available, it would be really fun. I'm sure there are some home team advantage
+
+00:36:01.141 --> 00:36:05.782
+analyses out there for some sports, right? I think that would be super fun.
+
+00:36:06.821 --> 00:36:10.022
+Yeah, that is my favorite question of the day. That was such a good question.
+
+00:36:10.902 --> 00:36:16.421
+I am always curious about these things and in analytics, it's like every idea is interesting,
+
+00:36:16.421 --> 00:36:21.222
+but you know you can't do them all and you have to prioritize and choose between questions. So,
+
+00:36:21.222 --> 00:36:27.062
+the fun ones often like fall off the end of the priority list. Unfortunately, there's so many
+
+00:36:27.062 --> 00:36:32.342
+fun questions I would love to do, but the reality is if I spent all my time doing fun questions,
+
+00:36:32.342 --> 00:36:37.381
+I wouldn't have a job anymore. So, yeah, one day I'll get to go do the fun ones again.
+
+00:36:38.342 --> 00:36:45.222
+And also, I wanted to call out Rory mentioned in the chat that soccer is actually British as well.
+
+00:36:45.222 --> 00:36:50.742
+I learned this just recently that like the term soccer is not an American term. It came from
+
+00:36:50.742 --> 00:36:56.661
+England. We somehow ended up just using soccer and the UK ended up using football and like
+
+00:36:57.701 --> 00:37:03.062
+very interesting. So, go Google that. Let's hop back over to the Slido and get some more questions
+
+00:37:03.062 --> 00:37:10.581
+and in our last 15 minutes, y'all, let's see. Oh, we have an anonymous one about breaking into
+
+00:37:10.581 --> 00:37:16.182
+sports. We kind of talked about this for the working out loud part, but is there anything
+
+00:37:16.182 --> 00:37:27.062
+specific that might help someone break in to sports analytics like projects in a GitHub repo
+
+00:37:27.062 --> 00:37:32.421
+or how to, you know, network? Are there conferences that you could attend for sports
+
+00:37:32.421 --> 00:37:35.861
+analytics? Let's talk about that to cover this anonymous question in Slido, which is
+
+00:37:35.861 --> 00:37:39.861
+for someone coming from business analytics, what's the best way to break into sports data roles?
+
+00:37:40.742 --> 00:37:48.182
+That's a great question. So, first of all, I'll say that a lot of clubs now also do have BI roles.
+
+00:37:48.182 --> 00:37:54.502
+So, that is totally an avenue that you can take. Like we have two or three business intelligence
+
+00:37:54.502 --> 00:37:59.541
+people on our business side who are lovely and I've talked to many people who do that,
+
+00:37:59.541 --> 00:38:05.381
+which is great. I don't know enough about BI to say if the work translates very well. So,
+
+00:38:05.381 --> 00:38:11.141
+I don't want to say anything there. I do think like in terms of networking, working out loud,
+
+00:38:11.141 --> 00:38:15.462
+et cetera, there's a couple conferences that I've gone to that I've found particularly friendly.
+
+00:38:16.342 --> 00:38:20.742
+America's Soccer Insights Conference Summit. I can't remember the full name. In Houston,
+
+00:38:20.742 --> 00:38:25.541
+I went last year. It's only the second year. It was the most friendly conference,
+
+00:38:26.101 --> 00:38:32.261
+except for maybe Posit Conf that I've ever been to. And they especially, they like particularly
+
+00:38:32.261 --> 00:38:36.742
+plan things so that industry professionals are talking to people that are interested in breaking
+
+00:38:36.742 --> 00:38:41.141
+in through like lots of breakout sessions. So, I really thought what they did was great.
+
+00:38:42.182 --> 00:38:47.222
+I've gone to a lot of like women's sports data type conferences. I've also found those to be
+
+00:38:47.222 --> 00:38:52.261
+really friendly. So, women in sports data, it didn't happen this year, but in the past,
+
+00:38:52.261 --> 00:38:59.062
+it's been super friendly and lovely. So, I highly recommend following people on Twitter. I mean,
+
+00:38:59.062 --> 00:39:04.182
+Twitter is dead now. So, Blue Sky, I guess, is the best option. Like following people on Blue
+
+00:39:04.182 --> 00:39:11.701
+Sky is often how I did most of my networking and just talking to people. I'm trying to think what
+
+00:39:11.701 --> 00:39:16.101
+else. In terms of like projects that people do, I find like the stuff that is quite interactive
+
+00:39:16.101 --> 00:39:21.222
+and not just like a single report or article. It's the stuff that draws me to profiles. So,
+
+00:39:21.222 --> 00:39:28.182
+packages, dashboards, that sort of work is, to me, just much more compelling than like a single
+
+00:39:28.182 --> 00:39:35.381
+analysis. I would agree. Finding some way to, quote unquote, or air quotes, deploy something,
+
+00:39:35.381 --> 00:39:41.222
+right? Just put it on the internet for other people to click around in. 100%. And maybe
+
+00:39:41.222 --> 00:39:47.541
+interact with, do an interactive thing. Fantastic. I saw a question from Nick Drew
+
+00:39:49.141 --> 00:39:54.502
+that was about wearables. And this is a great question. I've seen it pop up in the Zoom chat
+
+00:39:54.502 --> 00:40:00.101
+as well, people talking about wearables. So, I'd love you to ask it live. Hi, Libby. Ariel,
+
+00:40:00.101 --> 00:40:07.541
+thanks for presenting today. Yeah, I was thinking about athlete performance. And I don't know if
+
+00:40:07.541 --> 00:40:13.142
+that's something that you do or work with that kind of data, but it seems to me there's a lot
+
+00:40:13.142 --> 00:40:18.661
+of factors that would influence an athlete to perform well or not so well and made me think
+
+00:40:18.661 --> 00:40:25.142
+about secondary data sources. Like, is that something you do? And if so, are athletes
+
+00:40:25.142 --> 00:40:30.582
+interested in participating in that by, I guess, willingly give up some of their personal health
+
+00:40:30.582 --> 00:40:37.142
+data? I know my smartwatch collects a lot of data about me. So, I've got to imagine that that could
+
+00:40:37.142 --> 00:40:46.182
+be a goldmine of information if people are really interested in modeling athlete and team performance.
+
+00:40:46.182 --> 00:40:50.981
+Thank you. Yeah, that's a great question. So, to answer your first part, we have a sports scientist
+
+00:40:50.981 --> 00:40:55.781
+on staff who handles all of our sports performance data. We're slowly getting to the point where we
+
+00:40:55.781 --> 00:41:02.742
+can collaborate together more, but she handles most of that day-to-day. She's great. So,
+
+00:41:03.541 --> 00:41:09.382
+all of our players wear GPS units in-game and in training for us to track things around
+
+00:41:10.182 --> 00:41:16.021
+sprints, accelerations, decelerations, heart rate, all that kind of stuff. And in some leagues,
+
+00:41:16.021 --> 00:41:21.062
+that's required. In other leagues, it's voluntary. It's all up to the CBA. I think in our league,
+
+00:41:21.062 --> 00:41:25.942
+it's required. I've never seen any player not wear one. So, that's how they collect most of
+
+00:41:25.942 --> 00:41:32.582
+their data. The players also do fill out daily wellness surveys around sleep and whatnot.
+
+00:41:32.582 --> 00:41:37.461
+I don't think we're taking any data from their personal wearables. I think that might be a
+
+00:41:37.461 --> 00:41:43.622
+privacy violation. I don't think it would work. I don't think it would go well in our league
+
+00:41:43.622 --> 00:41:51.942
+personally. Let me see what else I want to cover there. Yeah, those are kind of the big things.
+
+00:41:52.742 --> 00:42:00.341
+Yeah. Does that answer your question? Perfect. Privacy is an illusion.
+
+00:42:03.062 --> 00:42:08.182
+We're getting distracted by the chat again. Okay. That was great. And there's also a question that
+
+00:42:08.182 --> 00:42:13.221
+is kind of a follow-up on that that I wanted to smoosh in here as well, which is from Nathan.
+
+00:42:13.221 --> 00:42:19.541
+And Nathan had said, like, is there commercially viable technology that you can place on players
+
+00:42:19.541 --> 00:42:25.142
+and on the ball to 3D model all the movements throughout the game? I'm pretty sure that
+
+00:42:25.142 --> 00:42:29.302
+technology is possible, but is it worth investing in at the moment? Because there's definitely
+
+00:42:29.302 --> 00:42:33.221
+motion capture, and we've talked about this with other sports analytics leaders,
+
+00:42:33.221 --> 00:42:39.942
+that's just from the video capture. Can you talk a little bit about that? Like,
+
+00:42:39.942 --> 00:42:44.182
+what is motion capture through video versus having them actually wear things?
+
+00:42:44.981 --> 00:42:51.461
+Yeah, so I will say I'm not familiar with any 3D motion capture through sensors at all, so I don't
+
+00:42:51.461 --> 00:42:57.461
+want to talk about something I don't know much about. It might exist. There's tons of 2D motion
+
+00:42:57.461 --> 00:43:02.661
+capture stuff. So there's obviously the GPS units we've talked about, and then there's also optical
+
+00:43:02.661 --> 00:43:06.021
+tracking systems where the cameras are set throughout the stadium, and they're collecting
+
+00:43:06.021 --> 00:43:13.942
+all the information from all the players and also the ball. And then what we use more often
+
+00:43:14.021 --> 00:43:20.981
+is broadcast tracking, which does the same thing but uses broadcast video. So it's basically using
+
+00:43:20.981 --> 00:43:26.421
+computer vision to track the players in the ball that are on camera. The challenge there is that
+
+00:43:27.221 --> 00:43:33.062
+in some leagues, the broadcast quality is not as good, and they have to use models to impute
+
+00:43:33.062 --> 00:43:40.502
+the off-ball players, which is a challenge for many reasons. Yeah, that's tough. Imputing is
+
+00:43:40.502 --> 00:43:45.781
+hard at all. Imputing is really hard. Coming up with what you think the data probably was when you
+
+00:43:45.781 --> 00:43:50.901
+don't have it is really tough and like fraught with problems. There was another question from
+
+00:43:50.901 --> 00:43:54.822
+Suraj that has a little asterisk, so I'm going to read it for him, which was, are there any scenarios
+
+00:43:54.822 --> 00:44:00.901
+of false positives, like when the play on the field contradicts the predictions from the data,
+
+00:44:00.901 --> 00:44:05.781
+and how do you handle that if that does happen? Yeah, I mean there's plenty of moments where that
+
+00:44:05.781 --> 00:44:12.981
+can happen. So we always try and, like every half six months, we look at our reporting and see where
+
+00:44:12.981 --> 00:44:19.142
+we were right, where we were wrong, what we might need to add to capture things. Sometimes things
+
+00:44:19.142 --> 00:44:24.901
+happen in games that are not quantifiable in data, or at least not easily. And that's why,
+
+00:44:24.901 --> 00:44:29.942
+you know, going into this, I only wanted to use data to make all of our decisions, because that's sort of
+
+00:44:29.942 --> 00:44:35.541
+how I operated in my last job. And I still live in that camp a lot of time, but I've also learned
+
+00:44:35.541 --> 00:44:41.221
+that using video analysts and using their expertise in collaboration with the data is really
+
+00:44:41.221 --> 00:44:46.981
+like where our best work is done. So it's a lot of interrogation of where those things might diverge,
+
+00:44:46.981 --> 00:44:53.221
+fixing things, seeing where things might be breaking, and also accepting that people, like
+
+00:44:54.101 --> 00:44:59.382
+everyone's best skills work together to give us that answer that we're looking for. Yeah, I like
+
+00:44:59.382 --> 00:45:05.062
+that. It's a nice little like reminder that subject matter expertise is like really, really important,
+
+00:45:05.062 --> 00:45:11.942
+and also that when you're wrong, it can be a feedback mechanism into your data to either say,
+
+00:45:11.942 --> 00:45:16.742
+okay, clearly we're not tracking all the variables that are confounding what we're predicting, or
+
+00:45:18.021 --> 00:45:22.502
+we're just not going to be able to know that. Like we're not going to be able to track that,
+
+00:45:22.502 --> 00:45:27.942
+and we have to be okay with it. Fantastic questions, Suraj. I saw you saying in the chat,
+
+00:45:27.942 --> 00:45:31.142
+I don't want to take up too much time. I don't want to ask more questions. No, ask them.
+
+00:45:31.781 --> 00:45:38.021
+I love questions. Yeah, we love the questions. Give me one second while I go through the Slido
+
+00:45:38.021 --> 00:45:42.742
+here and peek at more questions. Do you mind if I take one of the questions, Libby? Absolutely.
+
+00:45:42.742 --> 00:45:48.421
+There's one that I really like here. Someone asked how I picked the analytics stack,
+
+00:45:48.421 --> 00:45:55.142
+and I really like that question because I was in a pretty interesting situation when I joined Bay,
+
+00:45:55.142 --> 00:46:00.582
+where I joined in October, and our expansion draft where we picked players from existing
+
+00:46:00.582 --> 00:46:05.221
+teams was in December, and when I joined, we had absolutely nothing. We had no contracts signed
+
+00:46:05.221 --> 00:46:11.702
+except for one single data contract, and we were already making decisions on player transactions,
+
+00:46:11.702 --> 00:46:17.702
+which is really stressful. So I was tasked with deciding really early what that stack was going
+
+00:46:17.702 --> 00:46:24.262
+to look like, and so I did my best to try and find things that I knew were really flexible
+
+00:46:24.262 --> 00:46:28.582
+because I didn't really know how we were going to grow. So that's why we ended up with Snowflake,
+
+00:46:28.582 --> 00:46:33.861
+for example. I felt of all the warehouse solutions, that was the most flexible for what we wanted at
+
+00:46:33.861 --> 00:46:41.382
+the time, and then I also had to work really quickly to build pipelines to get this data into
+
+00:46:41.382 --> 00:46:47.702
+a workable format. So at first, I just built R pipelines, which is still great. I've worked
+
+00:46:47.702 --> 00:46:52.582
+in full R stacks for a long time, but I built everything working off of my computer. There
+
+00:46:52.582 --> 00:47:00.421
+was no orchestration. Nothing was deployed, really, and so in the second year, I was finally
+
+00:47:00.421 --> 00:47:08.021
+able to build a more coherent, error-proof tech stack using Astronomer and
+
+00:47:08.021 --> 00:47:13.781
+Python and R and a lot of different things, but the point I wanted to make here is that
+
+00:47:14.822 --> 00:47:18.661
+I worked really hard to build a flexible tech stack because I didn't know how things were
+
+00:47:18.661 --> 00:47:22.502
+going to work and also was okay with having something really crappy at first with the
+
+00:47:22.502 --> 00:47:27.461
+knowledge that I was eventually going to go back and make something more robust, and if anyone is
+
+00:47:27.461 --> 00:47:31.942
+in the situation, I highly recommend taking that approach. It's okay that things aren't perfect
+
+00:47:31.942 --> 00:47:36.661
+right away. Sometimes things just need to work. Sometimes things need to work. Sometimes
+
+00:47:36.661 --> 00:47:42.901
+you're already making decisions without any data and you need things to give you context.
+
+00:47:43.541 --> 00:47:46.502
+I love it. There was another question that was about the tech stack as well,
+
+00:47:47.302 --> 00:47:53.702
+and there was an add-on to it, which was, do you have any advice for new people learning these data
+
+00:47:53.702 --> 00:47:58.182
+science skills and getting experience? This is a tough question, especially when it comes to stuff
+
+00:47:58.182 --> 00:48:02.421
+like Snowflake or Databricks or whatever, where if you're not working in an organization that
+
+00:48:02.421 --> 00:48:08.182
+uses it, it's a little bit harder to get that experience, right? But there are ways that you
+
+00:48:08.182 --> 00:48:12.341
+can learn. Do you have any tips? Well, first of all, I will say that when I started working with
+
+00:48:12.341 --> 00:48:17.302
+Snowflake, I had never used it before, so that was fun, and that's okay. Sometimes you learn
+
+00:48:17.302 --> 00:48:23.381
+things on the job. Most of those things have free plans that you can use to try and build toy
+
+00:48:23.381 --> 00:48:29.222
+projects. I highly recommend trying to do that. There's tons of really good open source blogs
+
+00:48:29.222 --> 00:48:34.501
+that people write on Medium or elsewhere. I find really, even LinkedIn sometimes, I find to be
+
+00:48:34.501 --> 00:48:40.261
+really useful. Those are probably my two biggest suggestions I would use, but yeah, take advantage
+
+00:48:40.261 --> 00:48:47.541
+of that free tier. Okay, fantastic. I had another one on here that I think we can slip in in our five
+
+00:48:47.541 --> 00:48:53.621
+minutes left, and it's from Neil. It says, as players get more involved in analytics, is there
+
+00:48:53.621 --> 00:48:59.462
+a danger that they will start to optimize the way they play to improve their individual statistics
+
+00:48:59.462 --> 00:49:03.621
+rather than what is best for the team? This is a question that spans not just sports,
+
+00:49:04.261 --> 00:49:07.862
+but everything. If you've ever worked in a call center or managed a call center, you know that
+
+00:49:07.862 --> 00:49:12.822
+if you give people metrics that are time on call, they'll start to optimize for that at the
+
+00:49:12.822 --> 00:49:18.021
+detriment of their call quality. Does that happen in sports analytics too? Are the players
+
+00:49:18.021 --> 00:49:23.781
+self-aware of their stats? That is such a fun question. First of all, I do want to say we
+
+00:49:23.781 --> 00:49:28.102
+have some players that are super interested in data. One of the cool but also sad things
+
+00:49:28.102 --> 00:49:34.021
+about women's soccer is that most of our players will have to have jobs after they retire, and so
+
+00:49:34.021 --> 00:49:39.862
+we have players that have majored in computer science or math or are just interested in data,
+
+00:49:39.862 --> 00:49:44.741
+so that's been really cool to give them fun high-level intros on what we're doing.
+
+00:49:46.741 --> 00:49:51.062
+I'm not worried about them trying to optimize for stats because we use lots of things in our
+
+00:49:51.062 --> 00:49:59.942
+decision-making processes, to be honest. That is not my big concern. I'm more concerned about them
+
+00:50:00.901 --> 00:50:05.702
+I mean, it's good that data is publicly accessible. I would love them to just use us
+
+00:50:05.702 --> 00:50:10.102
+as the source of truth for data because the reality is that we can contextualize it more,
+
+00:50:10.102 --> 00:50:14.342
+so that's my bigger concern is that they're just trying to get data information without
+
+00:50:14.342 --> 00:50:21.062
+context from other people. That is a great question, and honestly,
+
+00:50:21.062 --> 00:50:25.062
+it's not something I've thought about, so now I'm going to think about it. Now Arielle is going to
+
+00:50:25.062 --> 00:50:30.102
+be thinking about this. Follow Arielle on Blue Sky to find out what comes of this. There was a
+
+00:50:30.102 --> 00:50:34.182
+great anonymous question that says, is there a believe sign anywhere in the locker room?
+
+00:50:35.302 --> 00:50:42.421
+Not in the locker room, but we did have one last year in our comms office, and I did hit it all
+
+00:50:42.421 --> 00:50:47.621
+the time except the doorway was quite tall. Yeah, it was super cute. We have been thinking about
+
+00:50:47.621 --> 00:50:52.021
+putting one in our house. We are huge Ted Lasso fans over here. Ready for a re-watch. I think
+
+00:50:52.021 --> 00:50:57.141
+we're going to re-watch again over the holidays. Okay, can we fit one more question in in the three
+
+00:50:57.141 --> 00:51:02.901
+minutes that we have left? I think that maybe we can. Let's see if I can find a short question.
+
+00:51:04.741 --> 00:51:08.501
+I wanted to ask a career advice one, so I think this one works. It's anonymous, and it says,
+
+00:51:08.501 --> 00:51:13.222
+what's the most important thing you learned about communicating analytics to stakeholders?
+
+00:51:14.501 --> 00:51:18.102
+Oh, that's a good question. Players, coaches.
+
+00:51:18.182 --> 00:51:23.222
+Yeah, well I think, to me, the big thing is meeting people where they're at, right? Like,
+
+00:51:23.222 --> 00:51:27.942
+I spent the whole first six months of my job, or even more, building dashboards and reports with,
+
+00:51:28.901 --> 00:51:31.942
+and you know, I would talk to them and be like, do you understand this? And they would be like,
+
+00:51:31.942 --> 00:51:36.582
+yeah, I understand, but it turns out, like, I wasn't meeting them where they were at. I was
+
+00:51:36.582 --> 00:51:42.661
+looking at things with the total data lens, and I don't know if they were just too polite to tell me
+
+00:51:42.661 --> 00:51:48.021
+or what, but once I found out that I had to use the video to contextualize what I was doing,
+
+00:51:48.582 --> 00:51:53.781
+they opened up this, like, communication that we didn't have before. So yeah, meeting people where
+
+00:51:53.781 --> 00:51:59.222
+they're at and just working with them slowly. Eventually, hopefully, they feel confident
+
+00:51:59.222 --> 00:52:03.942
+enough to tell you when things don't make sense to them, and I make it really clear to them, like,
+
+00:52:03.942 --> 00:52:09.222
+that I am a thought partner. Like, I'm not here to be, like, the, like, nerd in the corner that's
+
+00:52:09.222 --> 00:52:13.541
+telling them what to do. Like, I want everything we do to be really collaborative and that we build
+
+00:52:13.541 --> 00:52:17.222
+together, because they also have expertise, you know? I learn a lot from them just as they learn
+
+00:52:17.222 --> 00:52:23.541
+from me. I love that. That's fantastic advice, and I second and third it. I think that making
+
+00:52:23.541 --> 00:52:29.302
+friends with the people that you are serving your insights to is really important. Yeah, just so that
+
+00:52:29.302 --> 00:52:33.062
+they understand that you're a trusted person, because when you say, does that make sense? Did
+
+00:52:33.062 --> 00:52:36.421
+you understand that? That can feel like a challenge to their intelligence, right, where they're like,
+
+00:52:36.421 --> 00:52:41.062
+oh, now I can't say no, because I'm going to feel dumb. But if you are their friend first,
+
+00:52:41.781 --> 00:52:45.781
+and you let them know that you're a trusted person, yeah, then they can be like, no,
+
+00:52:45.781 --> 00:52:48.582
+Arielle, that doesn't make sense. Quit using soccer terms. I don't understand what you're
+
+00:52:48.582 --> 00:52:53.621
+talking about. You know, I think that's fantastic. Thank you so much for being here,
+
+00:52:53.621 --> 00:52:58.661
+Arielle. This was really fun. I think everybody in the chat had an amazing time, considering how
+
+00:52:58.661 --> 00:53:04.822
+absolutely wild it was going on in the chat. I hope you had a good time. This was so much
+
+00:53:04.822 --> 00:53:09.942
+fun. I really loved it. Yay. Okay. Come hang out with us in the Discord server. We have a Data
+
+00:53:09.942 --> 00:53:14.741
+Science Hangout channel. Everybody come say thank you to Arielle. You can tag her in there and give
+
+00:53:14.741 --> 00:53:20.741
+her all the praise. And also next week, come hang out with us because we are being joined by Ryan
+
+00:53:20.741 --> 00:53:28.741
+Tempe. And Ryan Tempe, if you do not know Ryan, he works at Lego. He gave hilarious conference talks
+
+00:53:28.741 --> 00:53:34.501
+about his silly projects that he did to learn, like the Golden Girls drinking game and all kinds
+
+00:53:34.501 --> 00:53:40.421
+of other hilarious stuff. He is a hoot. Come hang out with us next week. Thank you, everybody. You
+
+00:53:40.421 --> 00:53:43.621
+can save the chat with the three dots in the top right if you really, really want to. And I will
+
+00:53:43.621 --> 00:53:46.182
+see you next week and on the Discord. Bye.

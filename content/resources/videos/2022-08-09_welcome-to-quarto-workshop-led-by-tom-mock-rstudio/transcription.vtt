@@ -1,0 +1,4513 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.800
+Hi friends! Thank you so much for joining. It's so nice to see so many of you at the
+
+00:00:04.800 --> 00:00:12.440
+RStudio conference, whether in person or virtually on the Discord too. Welcome to the RStudio
+
+00:00:12.440 --> 00:00:19.240
+Enterprise Community Meetup. I'm Rachel, calling in from Boston today. We are streaming out
+
+00:00:19.240 --> 00:00:24.160
+to YouTube Live today, so if you've just joined now, feel free to say hi through the chat
+
+00:00:24.160 --> 00:00:31.360
+window and maybe where you're calling in from. I'm so happy to have my friend Tom Mock here
+
+00:00:31.360 --> 00:00:36.320
+with me today to teach us about Quarto. I know we've heard a lot about it lately on
+
+00:00:36.320 --> 00:00:41.480
+Twitter and LinkedIn and the RStudio conference, so I've been excited for this. Welcome to
+
+00:00:41.480 --> 00:00:47.880
+Quarto Workshop. If this is your first time joining one of these sessions, this is a friendly
+
+00:00:47.880 --> 00:00:53.959
+and open meetup environment for teams to share use cases, teach lessons learned, and just
+
+00:00:53.959 --> 00:00:59.680
+meet each other and ask questions. Together, we're all dedicated to making this an inclusive
+
+00:00:59.680 --> 00:01:06.599
+and open environment for everyone, no matter your experience, industry, or background.
+
+00:01:06.599 --> 00:01:10.599
+I will be sure to share a link in the chat where you can also find out about other upcoming
+
+00:01:10.599 --> 00:01:17.480
+events too. We have meetups like this every Tuesday at noon Eastern time, and also data
+
+00:01:17.480 --> 00:01:23.400
+science hangouts every Thursday at noon Eastern time. This is our first two-hour workshop
+
+00:01:23.400 --> 00:01:28.279
+in this meetup environment, so thank you, Tom, for being the first here. During the
+
+00:01:28.279 --> 00:01:33.639
+event, you will be able to ask anonymous questions as well through our Slido link, which we'll
+
+00:01:33.639 --> 00:01:38.839
+share in the chat too. And we can also try and answer these in a follow-up blog post
+
+00:01:38.839 --> 00:01:44.919
+as well. While we want to help with as many questions as possible, we likely won't be
+
+00:01:44.919 --> 00:01:50.959
+able to stop during the workshop to answer as many questions with so many people on today.
+
+00:01:51.000 --> 00:01:57.360
+But I'd recommend also asking follow-up questions after the event on community.rstudio.com. Curtis
+
+00:01:57.360 --> 00:02:03.239
+from our team just made a Cordo tag there as well. With all of that said, thank you
+
+00:02:03.239 --> 00:02:06.639
+so much, Tom, for getting us all started with Cordo today.
+
+00:02:06.639 --> 00:02:12.160
+Awesome. Thanks, Rachel, for hosting and for helping with getting this all off the ground.
+
+00:02:12.160 --> 00:02:16.240
+I'm going to try screen sharing my screen once, and then we can always flop over to
+
+00:02:16.240 --> 00:02:23.880
+the presentation if we need to. Today is going to be a bit longer, so as Rachel mentioned,
+
+00:02:23.880 --> 00:02:27.520
+it will look a little bit different in terms of the format that you may have been used
+
+00:02:27.520 --> 00:02:33.800
+to. We're going to cover quite a bit of material, and so a lot of this is kind of getting people
+
+00:02:33.800 --> 00:02:38.679
+excited about Cordo, giving you some of the overview of what Cordo provides, but I've
+
+00:02:38.679 --> 00:02:43.360
+seen two hours, while that seems like a long time, we're not able to cover everything,
+
+00:02:43.360 --> 00:02:46.660
+so we're going to make this part of a longer series, and if you want to come and join us
+
+00:02:46.660 --> 00:02:52.720
+later on, we're also going to do things like creating a Cordo blog, or creating Cordo presentations,
+
+00:02:52.720 --> 00:02:57.279
+or one very specifically focused purely on Python as opposed to today, which will be
+
+00:02:57.279 --> 00:03:02.080
+mostly focused on R with a mix of Python in it.
+
+00:03:02.080 --> 00:03:07.039
+For today's slides, we're going to go to a link, and we'll share it here in the chat
+
+00:03:07.039 --> 00:03:13.839
+real quickly, but this is the material for today. This website will be up forever, so
+
+00:03:13.839 --> 00:03:17.839
+you can always reference this material in the future. There will be an RStudio Cloud
+
+00:03:17.839 --> 00:03:22.960
+link as well as a place where you can actually download it locally, or clone a GitHub repository
+
+00:03:22.960 --> 00:03:27.600
+into your local RStudio, but for today, if you didn't want to install anything, you just
+
+00:03:27.600 --> 00:03:32.639
+wanted to get off the ground as fast as possible, you could always go into RStudio Cloud that's
+
+00:03:32.639 --> 00:03:37.839
+linked there as the third item. I'll zoom in a little bit here just so that it's a little
+
+00:03:37.839 --> 00:03:42.720
+bit bigger when we're going through, but let me know if you have any trouble seeing it in
+
+00:03:42.720 --> 00:03:49.039
+the comments. So, to orient you on this slide, or kind of this website, if you go to the left,
+
+00:03:49.039 --> 00:03:54.880
+it says workshop, intro to Cordo, and authoring Cordo. The intro to Cordo slide will be our
+
+00:03:54.880 --> 00:03:58.720
+first section, and we're going to jump directly into that, and kind of give you this broad
+
+00:03:58.720 --> 00:04:07.119
+overview of what Cordo looks like. So, thank you for joining, and again, we'll be posting
+
+00:04:07.119 --> 00:04:12.559
+some of the links in the chat, so I'll do my best to kind of re-emphasize that. Also, though,
+
+00:04:12.559 --> 00:04:16.799
+that these slides are already public, and if you look at the bottom of any of the slides, it will
+
+00:04:16.799 --> 00:04:21.119
+link back out to that website. So, if you see a screenshot of this, or want to take a screenshot,
+
+00:04:21.119 --> 00:04:26.320
+it actually has the URL built into each slide. So, let's get started, and we'll go into the
+
+00:04:26.320 --> 00:04:32.079
+presentation. So, for the first slide, we're going to say, hello, Cordo. So, welcome. We're
+
+00:04:32.079 --> 00:04:36.079
+using Cordo. We're going to be talking all about that today. Hopefully, you're in the right place
+
+00:04:36.640 --> 00:04:41.200
+here, and we're going to be going through quite a bit of the syntax and everything else.
+
+00:04:41.760 --> 00:04:47.920
+So, we can go on and go to the next slide. Kind of our assumptions for today is that,
+
+00:04:47.920 --> 00:04:51.119
+you know, a little bit about R, you probably know a little bit about Markdown,
+
+00:04:51.760 --> 00:04:56.079
+but you're really here to learn about Cordo, and maybe you're learning about it for the first time,
+
+00:04:56.079 --> 00:05:00.320
+or maybe you're learning about it as an extension, or the next generation of R Markdown.
+
+00:05:00.320 --> 00:05:05.040
+If we advance the slide one more time, we can see that we'll be teaching you Cordo syntax,
+
+00:05:05.040 --> 00:05:10.399
+and Cordo formats, and more Markdown, and even more R along the way. So, while you might learn
+
+00:05:10.399 --> 00:05:14.880
+a little bit of R today, we're really focused on that Markdown, Cordo syntax, the formats,
+
+00:05:14.880 --> 00:05:21.279
+and how you can create them. And we can continue forward. If you want to follow me, you can go to
+
+00:05:21.279 --> 00:05:26.559
+follow me on Twitter, or GitHub, or go to my blog, but really, you want to go to cordo.org
+
+00:05:26.559 --> 00:05:30.640
+as the primary resource for everything you want to learn about RStudio.
+
+00:05:34.079 --> 00:05:39.040
+For the workshop prep, you know, again, I just want to link out to the slides in case people
+
+00:05:39.040 --> 00:05:44.000
+see this as a recording, or they see it later on, but we have the content website, which has
+
+00:05:44.000 --> 00:05:48.480
+all the slides, as well as links out to various things, and then there's this full workshop
+
+00:05:48.480 --> 00:05:53.440
+material, which, again, will go broader than what we're covering today. That was based off
+
+00:05:53.440 --> 00:05:58.720
+the two-day workshop I gave at RStudio Conf. The other big thing you want to do is, if you
+
+00:05:58.720 --> 00:06:04.640
+are trying to use Cordo inside RStudio, you want to be on the latest version, and if you install
+
+00:06:04.640 --> 00:06:11.200
+2022.07.1 of RStudio, it actually comes with a bundled version of RStudio. So, you're basically
+
+00:06:11.200 --> 00:06:16.160
+ready to go, and you could just kind of get started working on it. As far as the packages
+
+00:06:16.160 --> 00:06:21.200
+I'm using, I also wanted to list those out, so you could see them and add to them as needed
+
+00:06:21.200 --> 00:06:28.160
+throughout today. We can go forward, and we're kind of ready to get started, so we'll go forward
+
+00:06:28.160 --> 00:06:34.880
+with that, and jump into the first kind of R-turn section. These R-turns, because we're, you know,
+
+00:06:34.880 --> 00:06:40.640
+streaming out to several hundred, and I believe 1800 people signed up, we definitely don't have
+
+00:06:40.640 --> 00:06:45.359
+kind of the traditional, like, in-person format of, I'm going to do it, you're going to do it,
+
+00:06:45.359 --> 00:06:50.239
+we're going to do it together. These are mostly, I'm going to cover a topic, provide the hands-on
+
+00:06:50.239 --> 00:06:54.640
+material, so you could do it in the future, or you could play with it, but really kind of think
+
+00:06:54.640 --> 00:07:00.320
+of today as exploring together, getting some kind of scaffolding put together, and then you can go
+
+00:07:00.320 --> 00:07:06.559
+and play around with it, whether you want to do it locally, and download RStudio 2022.07.1,
+
+00:07:06.559 --> 00:07:10.799
+or use them in RStudio Cloud with all the workshop materials that are already installed
+
+00:07:10.799 --> 00:07:16.959
+to that specific link on RStudio Cloud. So, let's get going. We'll go to the next one,
+
+00:07:18.559 --> 00:07:23.600
+and we're going to be talking about HelloCordo in terms of, talked about, we're getting started
+
+00:07:23.600 --> 00:07:28.799
+with it. A technical definition of Cordo is that it's an open-source scientific and technical
+
+00:07:28.799 --> 00:07:34.959
+publishing system built on Pandoc. That really means that it's open-source, just like our
+
+00:07:34.959 --> 00:07:39.440
+Markdown, so you don't have to buy anything. It's also open-source in terms of you can see all the
+
+00:07:39.440 --> 00:07:44.640
+source code, and you can use it kind of as you wish. It's a technical publishing system, which
+
+00:07:44.640 --> 00:07:49.519
+expands it a little bit farther than our Markdown in terms of Cordo, and the Cordo command line
+
+00:07:49.519 --> 00:07:55.839
+interface actually allow you to automatically, or kind of connect to things like Netlify, or GitHub,
+
+00:07:55.839 --> 00:08:01.679
+or GitHub Actions, as well as RStudio Connect, or Cordo Pubs, so you can publish the things you're
+
+00:08:01.679 --> 00:08:07.519
+working on and share them, whether that's securely to places with authentication, or just to the
+
+00:08:07.519 --> 00:08:16.320
+worldwide web on something like Netlify or Cordo Pubs. As far as how kind of the mental model for
+
+00:08:16.320 --> 00:08:22.320
+how our Markdown and Cordo work, we'll start with a Cordo diagram. So you may have heard the words
+
+00:08:22.320 --> 00:08:29.600
+Knitter or Markdown. Knitter originally started in 2011, our Markdown in 2014, and this is the
+
+00:08:29.600 --> 00:08:36.000
+underlying kind of structure that allows us to execute our code and generate complex documents
+
+00:08:36.000 --> 00:08:42.559
+from one single source, or the single source kind of rendering idea. So we first start with a .RMD,
+
+00:08:42.559 --> 00:08:49.119
+or an R Markdown file, that our code in that is evaluated via Knitter, and then an intermediary
+
+00:08:49.119 --> 00:08:54.159
+Markdown file is generated that is then processed by Pandoc to generate things like reports, or
+
+00:08:54.159 --> 00:08:59.440
+presentations, or projects. While you may not have really cared what happened behind the scenes,
+
+00:08:59.440 --> 00:09:03.520
+this is important for like the mental model as we move into Cordo to talk about some of the
+
+00:09:03.520 --> 00:09:09.840
+differences. The main difference here is that with R Markdown, you had a literal R package called
+
+00:09:09.840 --> 00:09:16.000
+R Markdown, as well as the format being .RMD. The R Markdown package and some of the extension
+
+00:09:16.000 --> 00:09:21.760
+packages, things like Schrodingen, or things like Pagedown, or Blogdown, had additional pre-processing
+
+00:09:21.760 --> 00:09:27.440
+steps that they were doing in the process of converting from the plain text RMD out to a report
+
+00:09:27.440 --> 00:09:33.280
+or presentation or project. For Cordo, the diagram is going to be very similar. We can actually
+
+00:09:33.280 --> 00:09:39.599
+show that real quickly, move to the next slide. We can say that Cordo is really more than just Knitter,
+
+00:09:39.599 --> 00:09:45.039
+but still building upon all these years of experience we have with them. So we have, you know,
+
+00:09:45.039 --> 00:09:49.440
+10 years of literate programming experience with Knitter and with R Markdown. We've been developing
+
+00:09:49.440 --> 00:09:54.719
+it and maintaining it for a long time. If you look at this diagram, it actually looks almost identical
+
+00:09:54.719 --> 00:10:02.080
+to the R Markdown diagram, but you may notice two things. Number one, the .QMD is the first item,
+
+00:10:02.080 --> 00:10:08.640
+so rather than a .R Markdown, it's a Cordo Markdown document. And then once we go to the Pandoc step,
+
+00:10:08.640 --> 00:10:14.640
+or this conversion layer, we have Lua filters, or essentially all the pre-processing that's being
+
+00:10:14.640 --> 00:10:21.200
+done along with Pandoc at the conversion step. So rather than relying on literal R code and having
+
+00:10:21.200 --> 00:10:28.080
+a mandatory kind of R runtime to execute these documents, by moving the pre-processing onto Pandoc
+
+00:10:28.080 --> 00:10:33.599
+and providing Lua filters and other pre-processing outside of a single language, we can actually go
+
+00:10:33.599 --> 00:10:40.080
+beyond Knitter and use things like Julia natively, or use Python natively, or even JavaScript or other
+
+00:10:40.080 --> 00:10:46.960
+languages. So a lot of power here to go beyond just R, but continue with the same mental model
+
+00:10:46.960 --> 00:10:52.719
+essentially that you had with R and Knitter. So let's advance to the next slide. When we talk
+
+00:10:52.719 --> 00:10:57.280
+about this being more than just Knitter, and we talk about things like Python and talk about Julia,
+
+00:10:57.840 --> 00:11:03.119
+we're just replacing one component. We're exchanging maybe R code for Python code or R
+
+00:11:03.119 --> 00:11:09.280
+code for Julia code, and then executing them natively via the Jupyter engine. You might be
+
+00:11:09.280 --> 00:11:14.239
+familiar with Jupyter as like an IPython notebook. In this case, we're really thinking of it as almost
+
+00:11:14.239 --> 00:11:19.919
+like a headless process, or a kernel that's executing the code, as opposed to it being the
+
+00:11:19.919 --> 00:11:27.679
+interface that we're using for our Cordo document. But your .qmd could be almost identical. All you're
+
+00:11:27.679 --> 00:11:33.440
+really doing is changing out the code steps. All of your markdown and Cordo syntax would be the same,
+
+00:11:33.440 --> 00:11:38.239
+and you'd just be changing out the language model. So allowing us to extend to more than just Knitter
+
+00:11:38.239 --> 00:11:45.200
+and more than just R. We can advance to the next slide and see that, you know, while you might want
+
+00:11:45.200 --> 00:11:51.039
+to use a plain text format like a .qmd, you know, you're familiar with our markdown, and that's what
+
+00:11:51.039 --> 00:11:55.919
+you want to use, other teams might actually want to use a Jupyter notebook as their literal
+
+00:11:55.919 --> 00:12:00.960
+interface. So any of the languages that you can execute with Jupyter, we've focused really on
+
+00:12:00.960 --> 00:12:06.400
+Python and Julia inside Jupyter, but any of the languages you can execute in Jupyter can then be,
+
+00:12:06.400 --> 00:12:11.919
+again, converted to this markdown, rendered with Pandoc and Lua filters, out to your final report
+
+00:12:11.919 --> 00:12:18.799
+presentation and project. So ultimately what these diagrams are telling us is that regardless of kind
+
+00:12:18.799 --> 00:12:23.919
+of the language, your kind of structure and how it actually happens behind the scenes is very similar,
+
+00:12:23.919 --> 00:12:29.919
+and it's really allowing us to have a shared syntax and a shared format across languages and
+
+00:12:29.919 --> 00:12:36.239
+across kind of input formats. This is expanded upon in the next slide where we talk about this
+
+00:12:36.239 --> 00:12:42.320
+in a bit more verbose terms. So just in case you miss the diagram or you want to kind of have it
+
+00:12:42.320 --> 00:12:47.679
+written out, Cordov uses an engine like Knitter to execute code and generate that temporary output
+
+00:12:47.679 --> 00:12:54.479
+or a .md file. The md file is processed via Pandoc and Cordov's Lua filters along with things like
+
+00:12:54.479 --> 00:13:01.119
+bootstrap CSS for HTML or LaTeX for PDF and then converted to the final output format depending
+
+00:13:01.119 --> 00:13:07.520
+upon what you chose. Importantly, while the Cordov teams provided a lot of different Lua filters and
+
+00:13:07.520 --> 00:13:12.880
+pre-processing steps, other developers in other languages, whether they're written in R or Python
+
+00:13:12.880 --> 00:13:18.400
+or Julia, can also be applied and in most situations are interchangeable between formats
+
+00:13:18.400 --> 00:13:23.679
+and not language specific. So you can write a Lua filter that comes from someone developing a Python
+
+00:13:23.679 --> 00:13:28.960
+that helps out there are developers that are working in R and vice versa. So by moving the
+
+00:13:28.960 --> 00:13:34.559
+pre-processing into Cordov and into kind of the Pandoc native Lua filter, we're again getting
+
+00:13:34.559 --> 00:13:42.719
+more interchange and not requiring one language to do it one way. The other benefit about what Cordov
+
+00:13:42.719 --> 00:13:48.479
+provides is, yes, Cordov can support HTML widgets in R and Jupyter widgets for Python and Julia
+
+00:13:48.479 --> 00:13:54.000
+and this allows you to have client-side interactivity for your documents. Beyond that
+
+00:13:54.000 --> 00:14:00.559
+though, it also allows you to use native JavaScript. So we have built-in support for Observable.js,
+
+00:14:00.559 --> 00:14:05.599
+which is a set of enhancements to vanilla JavaScript. It's by the same team, Mike Bostock,
+
+00:14:05.599 --> 00:14:10.880
+who authored D3 and there's actually some D3 integration directly into Observable.js.
+
+00:14:11.760 --> 00:14:17.280
+So Observable is really powerful because it has essentially a reactive runtime, so it's well suited
+
+00:14:17.280 --> 00:14:23.599
+for interactive data exploration and analysis. Reactive runtimes are things like ShinyCode,
+
+00:14:23.599 --> 00:14:28.159
+you know, that's another implementation of reactivity in R. We have reactivity here in
+
+00:14:28.159 --> 00:14:35.200
+JavaScript that's occurring only on the client side. So here we have an embedded Observable
+
+00:14:35.200 --> 00:14:41.280
+kind of little bar. If you go in there and you adjust the temperature, we can switch from say
+
+00:14:41.280 --> 00:14:46.880
+34 degrees to maybe it's a bit cooler, a bit warmer, and we get this real-time execution
+
+00:14:46.880 --> 00:14:51.119
+of this code only on the client side. So I don't have a server running to execute this,
+
+00:14:51.119 --> 00:14:56.479
+this is all being done in the browser and you can get this real-time changes that you're seeing.
+
+00:14:56.479 --> 00:15:01.520
+So you can almost write your own HTML widgets on the fly with Observable that's baked into Cordov.
+
+00:15:02.880 --> 00:15:07.919
+If we actually advance and look at what the code looks like, it looks a little bit different. Yeah,
+
+00:15:07.919 --> 00:15:12.960
+it's some JavaScript, but we're executing this in an Observable JavaScript chunk, but it's going
+
+00:15:12.960 --> 00:15:18.719
+to feel, again, very similar to writing code that you might have done with say something like Shiny.
+
+00:15:18.719 --> 00:15:23.440
+And you can have it interact with Shiny or go even further, but allowing you to do this without
+
+00:15:23.440 --> 00:15:31.119
+having to require a client side, or sorry, a server behind it. Now, while this kind of interaction is
+
+00:15:31.119 --> 00:15:36.239
+cool, we're probably a bit more interested in something like graphics or kind of reactive
+
+00:15:36.239 --> 00:15:42.479
+graphics. So on the next slide, we actually have some graphics and then a widget that we can
+
+00:15:42.479 --> 00:15:47.919
+interact with it. And again, this is done all through Porto via the help of Observable.js.
+
+00:15:48.719 --> 00:15:55.200
+So if we click on the dream tag underneath islands at the top right, we can actually add in new data
+
+00:15:55.200 --> 00:16:00.159
+back to this. So now for this penguin dataset, we actually have all the different penguins available
+
+00:16:00.159 --> 00:16:04.719
+here across all the different islands, and then we can adjust the bill length and get real-time
+
+00:16:04.719 --> 00:16:11.280
+changes that are observed inside the graphics itself. So whether you're working in R or Python
+
+00:16:11.280 --> 00:16:16.320
+or JavaScript or anywhere else, you have this ability to mix and merge between the different
+
+00:16:16.320 --> 00:16:20.239
+languages and have things interact and have all this client-side interactivity.
+
+00:16:22.000 --> 00:16:27.840
+So this really means that Cordo is a big universe. It's not just R anymore. You know, it's not just
+
+00:16:27.840 --> 00:16:33.039
+Python or just Julia. It's really thinking about how do we serve all these different communities
+
+00:16:33.039 --> 00:16:37.280
+and bring in things that you might not have even thought about in terms of there's a lot of power
+
+00:16:37.280 --> 00:16:42.719
+in things like JavaScript and Observable that are also useful to use in your data science products.
+
+00:16:43.599 --> 00:16:48.159
+Ultimately, Cordo is kind of the part here in the middle that's providing this structure of
+
+00:16:48.159 --> 00:16:53.280
+allowing you to use R and Python and Julia and Observable together and create very complex and
+
+00:16:53.280 --> 00:16:58.320
+beautiful documents at the end. So rather than thinking about, okay, I wrote my stuff in R and
+
+00:16:58.320 --> 00:17:02.559
+I wrote my stuff in Python and I have to generate a website and then I have to go generate a Word
+
+00:17:02.559 --> 00:17:08.079
+document and I have to redo all my work, by working through Cordo, you can essentially have
+
+00:17:08.079 --> 00:17:13.439
+some of this single-source publishing and have the ability to generate documents and websites
+
+00:17:13.439 --> 00:17:17.839
+and presentations all through this shared syntax, regardless of the language you're working in.
+
+00:17:20.160 --> 00:17:24.400
+On the next slide, we talk a little bit more about what Cordo actually is. You know,
+
+00:17:24.400 --> 00:17:28.800
+I've talked about all these exciting things, but what is Cordo in terms of breaking it down?
+
+00:17:29.280 --> 00:17:34.719
+Cordo itself is a command-line interface. So rather than, again, being just an R package or
+
+00:17:34.719 --> 00:17:40.079
+just a Python package or library, it's a language-agnostic command-line interface.
+
+00:17:40.079 --> 00:17:44.640
+So you don't even need any language on your computer to install it. You could just install it
+
+00:17:44.640 --> 00:17:49.839
+as a terminal, at your terminal, as a command-line interface and just use whatever language you want
+
+00:17:49.839 --> 00:17:57.920
+and add on to it. If we click through a little bit to see what the next part is,
+
+00:17:57.920 --> 00:18:03.680
+we can actually execute a little bit of the code. So we can step through and see the version. So if
+
+00:18:03.680 --> 00:18:10.479
+we click the right arrow button, we can see that you can call things like Cordo help at the terminal
+
+00:18:10.479 --> 00:18:14.880
+or you can go through and see the different help. That's how I'm displaying the text here.
+
+00:18:15.520 --> 00:18:20.719
+I can also do things like Cordo render to actually render out my document or Cordo preview,
+
+00:18:21.280 --> 00:18:26.079
+which allows me to preview the document and maintain a background server so that as changes
+
+00:18:26.079 --> 00:18:33.040
+are made, I can actually see those live and have a real-time feedback as I'm writing my documents.
+
+00:18:35.599 --> 00:18:39.520
+What this really means in terms of Cordo being a command-line interface is it's not
+
+00:18:39.520 --> 00:18:44.000
+tied into one tool. Obviously, I love using RStudio and that's what I'm going to be showing
+
+00:18:44.000 --> 00:18:49.680
+a lot of today. So I can advance and see that, yeah, here's RStudio. It might be a little
+
+00:18:49.680 --> 00:18:55.040
+bit small for you to read everything, but it's going to feel very similar in a great way as
+
+00:18:55.040 --> 00:19:00.160
+your experience with Markdown and with RMarkdown. There's a lot of enhancements that Cordo provides
+
+00:19:00.160 --> 00:19:05.760
+on top of it, but you don't have to relearn the wheel just to use it. However, if you go to your
+
+00:19:05.760 --> 00:19:10.560
+colleagues and they say, well, I've never used RStudio. I'm not familiar with that. I use this
+
+00:19:10.560 --> 00:19:16.560
+other tool. Maybe they prefer something like a Jupyter Notebook or JupyterLab. You can also use
+
+00:19:16.560 --> 00:19:21.760
+Cordo as a command-line interface in Jupyter or with JupyterLab. So you can actually write
+
+00:19:21.760 --> 00:19:27.599
+literal.ipython notebooks and then render those out to Cordo documents as well. So you're not
+
+00:19:27.599 --> 00:19:32.560
+limited just to the RStudio interface. And for certain other people, they're like, well, I kind
+
+00:19:32.560 --> 00:19:36.319
+of like notebooks, but I don't want to write in Jupyter for some reason. They're choosing a
+
+00:19:36.319 --> 00:19:42.400
+different interface. You can also use VS Code. And this way, regardless of what kind of editor
+
+00:19:42.400 --> 00:19:47.680
+you're using, you're able to meet in the middle and collaborate with your colleagues and say,
+
+00:19:47.680 --> 00:19:52.479
+I'm using Cordo, you're using Cordo, but you're not limited to one interface or one language.
+
+00:19:54.239 --> 00:19:57.920
+This kind of comes out a lot of times with the customers that I'm working with.
+
+00:19:57.920 --> 00:20:03.199
+And if we think about the different interfaces, this aligns with a lot of the most common
+
+00:20:03.199 --> 00:20:08.640
+open-source interfaces. And again, building on this idea of not just limiting it to one language
+
+00:20:08.640 --> 00:20:14.719
+or one editor, but trying to create something that's bigger than just RStudio. It's providing
+
+00:20:14.719 --> 00:20:22.000
+value for other communities besides just the R community. Now, that being said, we obviously have
+
+00:20:22.000 --> 00:20:27.040
+spent a lot of time building Cordo into these different tools and enhancing them as much as
+
+00:20:27.040 --> 00:20:32.880
+possible. So you can actually, inside RStudio, have the visual editor mode. What this allows
+
+00:20:32.880 --> 00:20:39.040
+you to do is actually get real-time conversion of just the markdown and some of the CSS and see what
+
+00:20:39.040 --> 00:20:45.760
+that looks like. So rather than only looking at the plain text or only looking at the rendered
+
+00:20:45.760 --> 00:20:52.000
+output once you've kind of finalized your document, with the visual mode, you can actually see, again,
+
+00:20:52.000 --> 00:20:58.719
+in literal real-time, the conversion of markdown or LaTeX or CSS, or even creating tables and
+
+00:20:58.719 --> 00:21:06.319
+graphics, what they look like inside the body of the document. So a lot of power here to not only
+
+00:21:06.319 --> 00:21:12.319
+write your documents, but have a better writing experience. So there's even things like adding bold
+
+00:21:12.319 --> 00:21:17.280
+text or inserting tables or graphics built into the editor and allowing you to have this rich
+
+00:21:17.280 --> 00:21:24.959
+experience inside RStudio. Again, you'll want to be on the latest version, 2022.07.1 of RStudio,
+
+00:21:24.959 --> 00:21:29.839
+provides all these integrations. And while you can use Cordo in older versions of RStudio,
+
+00:21:29.839 --> 00:21:33.839
+some of the enhancements came at this most recent version from RStudio Conf.
+
+00:21:35.920 --> 00:21:41.439
+Now, to explore what the visual editor looks like, we actually have a workshop material. So underneath
+
+00:21:41.439 --> 00:21:47.599
+the O3 authoring visual editor, there's the ability to kind of go through the visual editor mode.
+
+00:21:48.239 --> 00:21:52.640
+And you can click around and see some of these things and how they look like. So includes
+
+00:21:52.640 --> 00:21:58.160
+things like citations or the UI elements, as well as the visual editing mode. And you can turn it
+
+00:21:58.160 --> 00:22:05.359
+on and off to explore the sections. If you go back one slide and we look at the visual editor mode,
+
+00:22:05.359 --> 00:22:10.800
+we can click the Opt button or the Control button and click on the middle of the page,
+
+00:22:10.800 --> 00:22:15.680
+right around the Render button. And that'll actually zoom in on the page a little bit.
+
+00:22:16.640 --> 00:22:20.000
+But it's OK if we can't get there. We're working on some things.
+
+00:22:22.000 --> 00:22:26.959
+So going on to talk a little bit about the other editors. Again, we don't want to just
+
+00:22:26.959 --> 00:22:31.359
+limit these enhancements to something like RStudio. We want them to have a really good
+
+00:22:31.359 --> 00:22:36.239
+experience in any editor. So again, you're not limited to RStudio, but there's a lot of power
+
+00:22:36.239 --> 00:22:42.000
+there. If you are coming from, say, the VS Code world or that's the tool you want to use, there's
+
+00:22:42.000 --> 00:22:48.000
+a VS Code extension that allows you to get both the syntax highlighting and some of the auto
+
+00:22:48.000 --> 00:22:55.199
+completion and YAML linting and other things built into VS Code. And when you render something,
+
+00:22:55.199 --> 00:22:59.839
+you get it in this little pop-up page and have the side-by-side experience that you're familiar
+
+00:22:59.839 --> 00:23:08.800
+with. This also applies to things like YAML. So if you've used IPython notebooks, you may not
+
+00:23:08.800 --> 00:23:13.439
+write YAML in them because the IPython notebook or the Jupyter notebook doesn't really care about
+
+00:23:13.439 --> 00:23:18.479
+the YAML. It doesn't change what the Jupyter notebook does, but it's really important for
+
+00:23:18.479 --> 00:23:24.479
+Korto. So you can write these as a raw chunk in a Jupyter notebook. And again, you can use Jupyter
+
+00:23:25.040 --> 00:23:30.000
+lab as your interface. You're not limited to a plain text format, although I really like plain
+
+00:23:30.000 --> 00:23:37.119
+text formats like .qmd. You can, again, use an IPython notebook as your kind of editor of choice
+
+00:23:37.119 --> 00:23:43.280
+if that's the way you want it to go. We also have YAML intelligence. So this is obviously built
+
+00:23:43.280 --> 00:23:48.959
+into RStudio, but also within VS Code, it has auto completion through the VS Code extension
+
+00:23:48.959 --> 00:23:54.319
+for things like different YAML options. So not only would it help you find out what are the
+
+00:23:54.319 --> 00:23:59.839
+options you can change, but it'll help you define them and then input them, as well as the outputs
+
+00:23:59.839 --> 00:24:06.079
+you can do for them. So here for theme, we might start typing th, and then we can auto tab complete
+
+00:24:06.079 --> 00:24:11.839
+to theme, and then it'll let us see that we have things available like Cosmo or Litera or other
+
+00:24:11.839 --> 00:24:19.199
+different boot swatch themes that are available. For Jupyter, Jupyter lab, again, most of what
+
+00:24:19.199 --> 00:24:23.280
+this will look like is rather than having the auto completion, you have a little bit less kind
+
+00:24:23.280 --> 00:24:28.079
+of interactivity in the YAML because the YAML is not something that Jupyter is normally working
+
+00:24:28.079 --> 00:24:34.000
+with. So it's a literal raw chunk, and we can use that to say, okay, this is what the interface
+
+00:24:34.000 --> 00:24:40.800
+looks like. And you can still type the same figure chunks and the same kind of syntax,
+
+00:24:40.800 --> 00:24:44.479
+but the YAML itself will be essentially ignored by the Jupyter notebook.
+
+00:24:46.640 --> 00:24:53.520
+If we're using Cordo or Cordo preview or any other commands within Jupyter, from the terminal,
+
+00:24:53.520 --> 00:24:59.040
+we would call something like Cordo preview on our specific notebook. So Cordo preview notebook.ipython
+
+00:24:59.040 --> 00:25:05.680
+notebook, and then we're saying preview it or convert it to HTML. When we do this, it'll pop up
+
+00:25:05.680 --> 00:25:10.319
+a background screen so, again, we can have our side-by-side output. So while you're editing the
+
+00:25:10.319 --> 00:25:16.160
+document, you can save and get the re-rendered output very, very quickly from the terminal,
+
+00:25:16.160 --> 00:25:22.800
+but also having it available as a separate pane. Again, kind of talked about this a few times,
+
+00:25:22.800 --> 00:25:27.599
+but just want to be very clear that YAML needs to be a raw cell in Jupyter. Jupyter doesn't really
+
+00:25:27.599 --> 00:25:32.479
+care about the YAML, but it's needed and used exclusively by Cordo for these changes.
+
+00:25:32.880 --> 00:25:37.599
+So why did we talk all this time about different editors? Again, I think part of it is that we're
+
+00:25:37.599 --> 00:25:42.239
+talking about Cordo for collaboration and Cordo for more than one community, really like a data
+
+00:25:42.239 --> 00:25:48.640
+science team or across data science teams. So you might have a website or a data science project or
+
+00:25:48.640 --> 00:25:53.119
+a Cordo project that has something like this. You might have a data link and you're extracting some
+
+00:25:53.119 --> 00:25:59.119
+data with the S3 package and doing dplyr to do some extraction and data cleaning on it with an
+
+00:25:59.199 --> 00:26:03.599
+older R Markdown document you already wrote. And then you're doing some additional data cleaning
+
+00:26:03.599 --> 00:26:09.520
+from one of your Python colleagues who knows Suba and is writing Python code to edit that document.
+
+00:26:10.079 --> 00:26:14.640
+Then it's handed back off and we're working from Python and R and then we're just doing some
+
+00:26:14.640 --> 00:26:20.479
+general exploratory data analysis in it. And then lastly, we have a traditional .qmd and we're using
+
+00:26:20.479 --> 00:26:25.839
+the torch package in R to do some computer vision or classification of the images identifying what
+
+00:26:25.839 --> 00:26:31.280
+they are. So regardless of kind of the different structures you have, you have some R Markdown,
+
+00:26:31.280 --> 00:26:36.239
+you have some Jupyter notebooks, you have some QMDs, across any of these editors and across
+
+00:26:36.239 --> 00:26:42.079
+these different kind of input formats, you can create or aggregate them via Cordo into an overall
+
+00:26:42.079 --> 00:26:48.239
+project or to convert them over to complex outputs regardless of what you need. So a lot of power
+
+00:26:49.119 --> 00:26:54.640
+here for collaboration. The other part is eventually you're going to want to get whatever you have off
+
+00:26:54.640 --> 00:27:00.079
+of your machine. So you can use the Cordo publish command and that will actually allow you to take
+
+00:27:00.079 --> 00:27:05.199
+a document or a website or a presentation or something else you've created and then publish
+
+00:27:05.199 --> 00:27:10.959
+it somewhere off of your computer. So we have built-in support for Cordo Pub, which is a website
+
+00:27:10.959 --> 00:27:16.000
+that RStudio provides as a free service and you can actually sign up today to get that free
+
+00:27:16.640 --> 00:27:21.920
+service and you can actually sign up today for Cordo.Pub, get your handle and start publishing
+
+00:27:21.920 --> 00:27:27.520
+there for free. Or you can do something like a GitHub Pages branch and publish things to GitHub
+
+00:27:27.520 --> 00:27:32.239
+Pages, kind of like how I'm hosting some of my slides today. You can even use RStudio Connect.
+
+00:27:32.239 --> 00:27:36.800
+So if you have Connect on-premise or in your cloud, you can publish there and have authentication
+
+00:27:36.800 --> 00:27:41.839
+and have it work across your whole enterprise. Or something like Netlify, which again has a pretty
+
+00:27:41.839 --> 00:27:46.719
+generous free tier, allowing you to publish websites and other HTML content to them.
+
+00:27:47.839 --> 00:27:52.719
+So regardless of where you're publishing it, again, Cordo is extending the idea of our markdown
+
+00:27:52.719 --> 00:27:57.599
+to being a publishing or kind of this bigger project, not just creating things locally,
+
+00:27:57.599 --> 00:28:03.599
+but also baking in the ability to publish all sorts of different things. So lots of different
+
+00:28:03.599 --> 00:28:09.119
+things that you can create and then share out with the world. As far as for this idea of like
+
+00:28:09.119 --> 00:28:13.839
+data science and work, so for a lot of our customers that are using RStudio Workbench
+
+00:28:13.839 --> 00:28:21.359
+and RStudio Connect, you'll want to use the latest versions. So 2022.07.1 and 2022.07.0.
+
+00:28:22.000 --> 00:28:27.839
+These versions allow for all of the latest and greatest integrations of Cordo. You can use Cordo
+
+00:28:27.839 --> 00:28:33.439
+with older versions, but some of the latest stuff was built in recently. This diagram here, I'm not
+
+00:28:33.439 --> 00:28:38.319
+really going to go into all of the details, but just kind of an overview is that you can use Cordo
+
+00:28:38.319 --> 00:28:43.199
+and our markdown together and publish these complex kind of pipelines as needed on something
+
+00:28:43.199 --> 00:28:49.359
+like RStudio Connect for re-execution or rescheduling of Cordo documents and using
+
+00:28:49.359 --> 00:28:53.839
+them inside an enterprise environment with enterprise-grade authentication and sharing.
+
+00:28:56.800 --> 00:29:00.959
+One of the last kind of initial core parts of what Cordo provides is that
+
+00:29:01.920 --> 00:29:09.839
+Cordo is fully batteries included. So if you just install RStudio 2022.07.1, it comes pre-installed
+
+00:29:09.839 --> 00:29:15.280
+and loaded with a version of Cordo. So you don't really need to install anything else. You're ready
+
+00:29:15.280 --> 00:29:20.640
+to go. You can just get started working with Cordo and you don't have to worry about
+
+00:29:20.640 --> 00:29:25.439
+installing a bunch of different R packages to support Cordo. It's just there and always
+
+00:29:25.520 --> 00:29:30.239
+available and will be available moving forward in new versions of the RStudio IDE.
+
+00:29:30.880 --> 00:29:35.920
+So very exciting moment of having this be available. It coincided with RStudio Conf
+
+00:29:36.479 --> 00:29:41.040
+and having it baked in just allows you to get started faster and collaborate better as you're
+
+00:29:41.040 --> 00:29:47.520
+not having to do additional installs. This batteries included idea goes beyond just having
+
+00:29:47.520 --> 00:29:53.199
+it available rather than requiring a bunch of different installs of different packages.
+
+00:29:53.839 --> 00:29:59.920
+Again, all these different formats are baked into Cordo. So your basic formats like HTML, PDF,
+
+00:29:59.920 --> 00:30:06.800
+DocX, presentations with PowerPoint or the ones I did today with reveal.js or even advanced layout
+
+00:30:06.800 --> 00:30:13.199
+or websites. You can also do cross-referencing and writing entire books or blogs or interactive
+
+00:30:13.199 --> 00:30:20.239
+and combining shiny things together. You have all these different formats that are just there
+
+00:30:20.239 --> 00:30:25.439
+and already available. You don't have to install something new. The one thing I do want to note
+
+00:30:25.439 --> 00:30:29.680
+though is that there's three things that we're really keen on adding into Cordo. And again,
+
+00:30:29.680 --> 00:30:35.760
+these will be added into this single install in the future. So page down or paged HTML,
+
+00:30:35.760 --> 00:30:42.000
+basically the ability to create PDF without LaTeX and only using CSS. Journal articles and most of
+
+00:30:42.000 --> 00:30:46.479
+that work has already been completed. So you can actually use Cordo to publish to a lot of
+
+00:30:46.479 --> 00:30:51.920
+different journal formats. And then flex dashboard is one that a lot of people are really keen on.
+
+00:30:51.920 --> 00:30:57.520
+And that's also something we plan on having very shortly for allowing me to create entire dashboards
+
+00:30:57.520 --> 00:31:02.479
+through Cordo alone. And again, those dashboards could include shiny, they could include
+
+00:31:02.479 --> 00:31:07.280
+JavaScript or widgets. You can kind of build them as complex or as simple as you'd like.
+
+00:31:08.319 --> 00:31:12.239
+But core idea here is batteries included. And rather than having to install
+
+00:31:12.239 --> 00:31:16.479
+additional libraries, it's one install with all these things included.
+
+00:31:19.119 --> 00:31:23.760
+Now, at this point, you might be saying like, oh, this is a lot of exciting things, but I have a lot
+
+00:31:23.760 --> 00:31:28.560
+of R Markdown documents and IPython notebooks and Jupyter notebooks that I wrote before I heard
+
+00:31:28.560 --> 00:31:34.239
+about Cordo. What do I do with those? So for some of you, if you have existing work or you're still
+
+00:31:34.239 --> 00:31:40.560
+working in R Markdown Jupyter, you can just keep working in them. You can still use R Markdown
+
+00:31:40.560 --> 00:31:46.640
+to render them out or to knit them. But if you wanted to, you could still use Cordo to render
+
+00:31:46.640 --> 00:31:53.680
+your documents out. So you could use Cordo render on an existing R Markdown file and render it out
+
+00:31:53.680 --> 00:32:00.719
+to something like HTML, and it'll render it out to HTML. So for the most part, R Markdown documents
+
+00:32:00.719 --> 00:32:07.520
+will convert over as they are. You don't have to change the syntax. Well, you can change the
+
+00:32:07.520 --> 00:32:12.239
+syntax to be more aligned with all the features that Cordo is adding. But again, for older
+
+00:32:12.239 --> 00:32:16.640
+documents where you don't want to edit them, for the most part, you can just render them over.
+
+00:32:16.816 --> 00:32:23.816
+Quarto, rmarkdown, rstudio, cli, fs, gt, Quarto, rmarkdown, rstudio, tidyverse
+
+00:32:46.816 --> 00:32:53.816
+Quarto, rmarkdown, rstudio, cli, fs, gt, Quarto, rmarkdown, rstudio, tidyverse
+
+00:33:03.811 --> 00:33:13.971
+Quarto is the conversion step of the notebook or the rmarkdown to a final output format
+
+00:33:13.971 --> 00:33:19.171
+like html, pdf, or a website.
+
+00:33:19.171 --> 00:33:23.411
+To summarize a bit about this, why would you be interested in Quarto?
+
+00:33:23.411 --> 00:33:24.411
+1.
+
+00:33:24.411 --> 00:33:26.811
+Batteries included with the shared syntax.
+
+00:33:26.811 --> 00:33:31.571
+Batteries included in terms of it's installed with RStudio, so it's always available.
+
+00:33:31.571 --> 00:33:35.811
+If you're in another language or using a different editor, you have this shared syntax
+
+00:33:35.811 --> 00:33:40.090
+across R, Python, Julia, and JavaScript.
+
+00:33:40.090 --> 00:33:44.331
+Based off that, you get to choose your own editor and your preferred data science language.
+
+00:33:44.331 --> 00:33:48.971
+For many of you, and myself included, I'm still using RStudio and I love RStudio, but
+
+00:33:48.971 --> 00:33:53.730
+if you need to collaborate with someone who's using a different tool, you can still do that
+
+00:33:53.730 --> 00:34:00.211
+without having to change into a whole new thing, y'all can collaborate on a shared format.
+
+00:34:00.250 --> 00:34:04.410
+It also has better accessibility and richer features built in out of the box.
+
+00:34:04.410 --> 00:34:09.650
+There's been a lot of effort for ally work with accessibility, the ability to add things
+
+00:34:09.650 --> 00:34:14.311
+like alternative text and ARIA tags and all sorts of best practices that we're building
+
+00:34:14.311 --> 00:34:15.971
+into Quarto.
+
+00:34:15.971 --> 00:34:21.410
+You can, of course, add on to those, but we've tried to provide best practices for you out
+
+00:34:21.410 --> 00:34:22.410
+of the box.
+
+00:34:22.410 --> 00:34:27.251
+Ultimately, while our markdown is still being maintained and we have no plans to deprecate
+
+00:34:27.330 --> 00:34:32.330
+it or remove it, we're building most of our new features into Knitter and into Quarto
+
+00:34:32.330 --> 00:34:33.330
+itself.
+
+00:34:33.330 --> 00:34:36.611
+So, over time, Quarto is going to keep expanding.
+
+00:34:36.611 --> 00:34:40.730
+This might sound counterintuitive to you in terms of Knitter is used by both R Markdown
+
+00:34:40.730 --> 00:34:45.410
+and Quarto, so you might have some enhancements going back to the R Markdown world, but in
+
+00:34:45.410 --> 00:34:50.251
+reality, when you think of extending R Markdown, that would be writing a new package.
+
+00:34:50.251 --> 00:34:55.931
+The core R Markdown package itself, it's been very stable for a long time.
+
+00:34:55.931 --> 00:35:00.531
+You have things like Pagedown or Bookdown or Blogdown that are additional packages adding
+
+00:35:00.531 --> 00:35:02.531
+additional functionality.
+
+00:35:02.531 --> 00:35:06.671
+So what Quarto is providing here is, again, that battery's included, and rather than adding
+
+00:35:06.671 --> 00:35:11.450
+on new packages over time, they're added into the core install of Quarto.
+
+00:35:11.450 --> 00:35:16.650
+So lots of exciting things you can do with Quarto out of the box.
+
+00:35:16.650 --> 00:35:20.370
+And ultimately, this means that when you collaborate or work with others in different languages,
+
+00:35:20.370 --> 00:35:24.570
+again, you have this shared format, ability to choose your own editor, and work in your
+
+00:35:24.570 --> 00:35:29.611
+native language, whatever that is.
+
+00:35:29.611 --> 00:35:32.930
+I've talked a little bit about rendering, but I just want to be very clear in terms
+
+00:35:32.930 --> 00:35:37.331
+of there's different ways to render, and using command line interfaces might be something
+
+00:35:37.331 --> 00:35:38.490
+new for a lot of you.
+
+00:35:38.490 --> 00:35:40.490
+I don't want to ignore that.
+
+00:35:40.490 --> 00:35:44.010
+So inside our studio, you can always use the Render button.
+
+00:35:44.010 --> 00:35:47.611
+The Render button is right in the exact same place where you would have seen the Knit button
+
+00:35:47.611 --> 00:35:52.131
+for R Markdown, but now it's called Render because it's consistently rendering across
+
+00:35:52.131 --> 00:35:54.650
+different documents.
+
+00:35:54.650 --> 00:35:58.971
+You can also use the terminal or the system shell via Quarto Render.
+
+00:35:58.971 --> 00:36:03.930
+So here, whether it's in just a random terminal on your computer, or the integrated terminal
+
+00:36:03.930 --> 00:36:09.131
+or command line inside RStudio, or another editor, you can call Quarto Render, and then
+
+00:36:09.131 --> 00:36:14.811
+render the document out, and choose a specific format that you want to render it out to.
+
+00:36:14.811 --> 00:36:18.210
+And then lastly, if you really want to use the R package, or if there's some kind of
+
+00:36:18.210 --> 00:36:22.210
+workflow, and we'll talk a little bit about those, where you need to render it out to
+
+00:36:22.210 --> 00:36:27.010
+a different format, you can use the R package to take a document and render it out.
+
+00:36:27.010 --> 00:36:32.850
+So just as you would have used R Markdown colon colon Render, you can use Quarto colon
+
+00:36:32.850 --> 00:36:36.771
+colon Quarto Render to do similar workflows that you'd like to do.
+
+00:36:36.771 --> 00:36:41.090
+And you can choose the output format and provide parameterization and other things that you'd
+
+00:36:41.131 --> 00:36:48.131
+expect via the package or via the command line interface.
+
+00:36:48.131 --> 00:36:51.611
+Ultimately, what we're trying to talk about here is this change of your mental model.
+
+00:36:51.611 --> 00:36:55.611
+So maybe you're fully bought into R Markdown, maybe you haven't even thought about it.
+
+00:36:55.611 --> 00:36:59.930
+But really, what we're saying is rather than treating your exact source document and your
+
+00:36:59.930 --> 00:37:03.450
+output document as the same thing, like you do with something like Microsoft Office or
+
+00:37:03.450 --> 00:37:08.850
+Microsoft Word, where changes you make are unable to be tracked, we're talking about
+
+00:37:08.891 --> 00:37:14.251
+using code and then a source document and an output document.
+
+00:37:14.251 --> 00:37:16.691
+So with the source document, we have plain text.
+
+00:37:16.691 --> 00:37:22.291
+So we have YAML and we have Markdown and then different code that's at the bottom here.
+
+00:37:22.291 --> 00:37:26.451
+And when we render this out, we get a separate document that actually is generated as the
+
+00:37:26.451 --> 00:37:30.531
+output. So when you're working with something like version control or you're just trying
+
+00:37:30.531 --> 00:37:35.131
+to figure out how did I even create this document, you have the literal source code saying
+
+00:37:35.131 --> 00:37:38.210
+this is how I got there and then this is what I generated.
+
+00:37:38.210 --> 00:37:42.890
+So you can still have artifacts that you're creating over time, even though the source
+
+00:37:42.890 --> 00:37:45.451
+code of the data might be changing as you move along.
+
+00:37:45.451 --> 00:37:48.170
+You can always try and recreate it or reproduce the work you've done.
+
+00:37:50.170 --> 00:37:53.731
+When we think about a dot QMD, which is what we're going to focus on for the remainder
+
+00:37:53.731 --> 00:37:56.971
+of today, a QMD file is plain text.
+
+00:37:56.971 --> 00:38:01.090
+So you have metadata with choosing a format or choosing an engine.
+
+00:38:01.090 --> 00:38:04.971
+Obviously, we can choose Knitter and stick with R or we can choose Jupyter and do
+
+00:38:04.971 --> 00:38:07.451
+something in Julia or Python.
+
+00:38:07.451 --> 00:38:09.490
+Then we execute some code.
+
+00:38:09.490 --> 00:38:11.011
+So we've chosen our format.
+
+00:38:11.011 --> 00:38:13.571
+We've got some code in R or Python we want to execute.
+
+00:38:13.571 --> 00:38:17.291
+We go through here and we group by summarize on empty cars.
+
+00:38:17.291 --> 00:38:20.890
+Everyone's favorite data set that's kind of built in or a boring little data set.
+
+00:38:22.131 --> 00:38:24.170
+But then we can also add text to this.
+
+00:38:24.170 --> 00:38:28.811
+So rather than just executing code, we can add Markdown text and do things like adding
+
+00:38:28.811 --> 00:38:33.770
+alternative text to images or bolding the text or italicizing text or adding headers or
+
+00:38:33.770 --> 00:38:35.050
+subsections.
+
+00:38:35.090 --> 00:38:40.330
+But overall, you can still read this and it's plain text format, but it's indicating this
+
+00:38:40.330 --> 00:38:45.090
+is the Markdown or the markup to generate an output format in bold or italics or other
+
+00:38:45.090 --> 00:38:45.610
+things.
+
+00:38:47.971 --> 00:38:52.531
+The metadata or that YAML at the top is what's controlling the overall rendering
+
+00:38:52.531 --> 00:38:53.330
+process.
+
+00:38:53.330 --> 00:38:55.811
+So this tells you what is the output format I want to do?
+
+00:38:55.811 --> 00:38:58.291
+What kind of table of contents do I want to do?
+
+00:38:58.291 --> 00:39:01.770
+What are all the different things that I want to do across the entire document as it
+
+00:39:01.770 --> 00:39:02.770
+goes?
+
+00:39:02.770 --> 00:39:07.411
+And again, this can affect things like the code or just the content, the rendering process
+
+00:39:07.411 --> 00:39:09.011
+or how it appears.
+
+00:39:09.011 --> 00:39:11.770
+And it's usually read across by all the different components.
+
+00:39:11.770 --> 00:39:15.811
+So it interacts with Pandoc and interacts with Cordo and interacts with Knitter and
+
+00:39:15.811 --> 00:39:17.851
+affects all the different processes over time.
+
+00:39:20.170 --> 00:39:23.330
+What the YAML actually looks like is you'd have something like this.
+
+00:39:23.330 --> 00:39:27.851
+It's indicated with three dashes at the top and you do something like, what is the title
+
+00:39:27.851 --> 00:39:28.811
+of my document?
+
+00:39:28.811 --> 00:39:31.930
+And then most importantly, choosing a format.
+
+00:39:31.930 --> 00:39:36.210
+Coming from our markdown, you might have been familiar with the output.
+
+00:39:36.210 --> 00:39:40.571
+Here, we're always going to indicate that as format and then we can do something like
+
+00:39:40.571 --> 00:39:45.851
+HTML, add a table of contents and say that it's true, and then add code folding.
+
+00:39:45.851 --> 00:39:49.610
+So while the code is available, it's hidden behind a little details tag that can be
+
+00:39:49.610 --> 00:39:51.691
+opened or closed.
+
+00:39:51.691 --> 00:39:55.851
+But most importantly, you have three dashes at the top, three dashes at the bottom,
+
+00:39:55.851 --> 00:40:01.170
+and that indicates the opening and closing of your document as you move forward.
+
+00:40:01.170 --> 00:40:04.370
+The markdown components is based, again, on Pandoc.
+
+00:40:04.370 --> 00:40:08.571
+Pandoc is ultimately the tool that's behind the scenes being converting it out to other
+
+00:40:08.571 --> 00:40:09.811
+formats.
+
+00:40:09.811 --> 00:40:13.851
+And Pandoc markdown is very rich.
+
+00:40:13.851 --> 00:40:20.650
+So you can have, you know, not just the most basic markdown, but really, really kind of
+
+00:40:20.650 --> 00:40:24.851
+expansive markdown that allows you to do layout and kind of structuring of the document
+
+00:40:24.851 --> 00:40:26.571
+overall.
+
+00:40:26.650 --> 00:40:32.650
+So it's based on John Gruber's markdown syntax, and it has the importance of being plain text
+
+00:40:32.650 --> 00:40:35.531
+so that it's easy to read and easy to write.
+
+00:40:35.531 --> 00:40:39.170
+And when you check it into something like version control, your diffs are very easy
+
+00:40:39.170 --> 00:40:40.650
+to also read and write.
+
+00:40:40.650 --> 00:40:45.451
+So rather than a whole document changing if you change one or two lines, the structure
+
+00:40:45.451 --> 00:40:50.050
+is just where you can see the diffs and the different portions that are changed in source
+
+00:40:50.050 --> 00:40:53.291
+control as well.
+
+00:40:53.291 --> 00:40:57.770
+Markdown might do things like italics or bold or superscript, strikethrough, or even
+
+00:40:57.770 --> 00:41:00.411
+displaying verbatim code.
+
+00:41:00.411 --> 00:41:05.210
+So this allows you to write, again, like lots of different markup about what you're doing.
+
+00:41:05.210 --> 00:41:09.650
+And while you're looking at even just the plain text, you can also kind of imagine what
+
+00:41:09.650 --> 00:41:11.890
+that's going to look like in the output format.
+
+00:41:11.890 --> 00:41:17.930
+And again, if you're using RStudio with the visual editor mode, you can also render, essentially
+
+00:41:18.090 --> 00:41:23.370
+preview what all the different parts are in real time by switching from source mode to
+
+00:41:23.370 --> 00:41:24.370
+visual mode.
+
+00:41:24.370 --> 00:41:30.490
+Importantly, there's also the idea of headers in Markdown and in Pandock Markdown.
+
+00:41:30.490 --> 00:41:35.531
+So these allow you to break up a document by adding pound signs in front of text and
+
+00:41:35.531 --> 00:41:40.651
+say, this is a head section, and then you can build up subsections within each of those.
+
+00:41:40.651 --> 00:41:48.211
+So you can write out your headers and do overall complex kind of layouts of your document.
+
+00:41:48.211 --> 00:41:50.930
+As for code, and there was a good question I saw in the chat.
+
+00:41:50.930 --> 00:41:55.490
+So with Knitter, you can execute R code and Python code together.
+
+00:41:55.490 --> 00:41:59.091
+That would be using reticulate, and that's an important idea.
+
+00:41:59.091 --> 00:42:02.170
+You can merge them both into the same document.
+
+00:42:02.170 --> 00:42:03.651
+So here I have a code chunk.
+
+00:42:03.651 --> 00:42:09.651
+It's just executing R, but via reticulate, I could execute R and Python code together.
+
+00:42:09.651 --> 00:42:14.211
+If I wanted to use Python alone, I can use Jupyter as my engine, and R doesn't have to
+
+00:42:14.211 --> 00:42:16.050
+be involved in that process.
+
+00:42:16.050 --> 00:42:19.490
+So you don't have to go to a Python colleague and tell them, hey, you know, there's this
+
+00:42:19.490 --> 00:42:24.091
+cool tool we could collaborate on, but you have to install R, and you have to use R packages
+
+00:42:24.091 --> 00:42:25.251
+to manage it.
+
+00:42:25.251 --> 00:42:30.410
+They can just use it in their native language without having to install anything else.
+
+00:42:30.410 --> 00:42:34.011
+We're going to talk a little bit more about what code chunks actually build up with in
+
+00:42:34.011 --> 00:42:36.651
+the second half of today.
+
+00:42:36.651 --> 00:42:40.610
+But you might notice that there's this hash pipe syntax at the top indicating the chunk
+
+00:42:40.610 --> 00:42:46.451
+options as opposed to putting them into the chunk label where they might have been before.
+
+00:42:46.451 --> 00:42:49.930
+But regardless, you have this ability to, in a Horto document, just like I'm working
+
+00:42:49.930 --> 00:42:54.091
+on today, write code that generates outputs.
+
+00:42:54.091 --> 00:43:01.730
+And it can do more than just R, and you can actually have, you know, insertion of graphics
+
+00:43:01.730 --> 00:43:04.470
+in Matplotlib or using NumPy.
+
+00:43:04.470 --> 00:43:09.110
+So again, we can mix R and Python together in Knitter with Reticulate, or we could have
+
+00:43:09.110 --> 00:43:14.430
+a Python pure document that's using just Jupyter as its engine and doesn't have to have R in
+
+00:43:14.430 --> 00:43:15.670
+the full process.
+
+00:43:15.670 --> 00:43:21.030
+So it's more than just R, and you're able to collaborate with your colleagues.
+
+00:43:21.030 --> 00:43:26.311
+As far as the command line interface, again, you can call Horto dash dash help inside your
+
+00:43:26.311 --> 00:43:31.711
+terminal, and that will open up a lot of different things for rendering the documents out and
+
+00:43:31.711 --> 00:43:34.951
+display some of the features that are available.
+
+00:43:34.951 --> 00:43:40.271
+Most importantly, you want to make sure we're going to be on, like, 1.0.35 or more recent.
+
+00:43:40.271 --> 00:43:45.191
+That is kind of the 1.0 stable release, and that's what's bundled into RStudio as well
+
+00:43:45.191 --> 00:43:47.591
+as in RStudio Cloud.
+
+00:43:47.591 --> 00:43:52.071
+If you wanted to see the help from the terminal, it would, again, be Horto space dash dash
+
+00:43:52.071 --> 00:43:56.071
+help, and that will open up the help page that you see here.
+
+00:43:56.071 --> 00:44:00.910
+And the two most common things you're going to use are Horto render and Horto preview,
+
+00:44:00.910 --> 00:44:05.151
+which allow you to kind of generate the document or preview the document out to a different
+
+00:44:05.151 --> 00:44:08.110
+format.
+
+00:44:08.110 --> 00:44:12.591
+For some of you, working the command line may not be something you're used to, but for
+
+00:44:12.591 --> 00:44:14.271
+others it might be like, oh, yeah, that's great.
+
+00:44:14.271 --> 00:44:16.350
+I love using command line tools.
+
+00:44:16.350 --> 00:44:21.391
+If you wanted to go really deep into understanding, like, how to use different command line calls
+
+00:44:21.391 --> 00:44:26.391
+or work through different things, the data Carpentries has a link here on the page that
+
+00:44:26.391 --> 00:44:28.951
+goes out to a great workshop they have.
+
+00:44:28.951 --> 00:44:34.311
+Or there's a tool called TLDR that allows you to kind of ask questions and say, like,
+
+00:44:34.311 --> 00:44:35.311
+what is this tool?
+
+00:44:35.311 --> 00:44:37.990
+Like, how does it work?
+
+00:44:37.990 --> 00:44:43.110
+I did want to include some really common commands just so you have them available.
+
+00:44:43.110 --> 00:44:46.631
+Things like printing the working directory or changing the directory so you can move
+
+00:44:46.631 --> 00:44:52.591
+between folders, list the directory contents with LS, ask Horto what are the different
+
+00:44:52.591 --> 00:44:57.550
+things I can do with Horto dash dash help, make a directory or move a directory, allowing
+
+00:44:57.550 --> 00:45:03.030
+you to kind of work through all these different things you're able to.
+
+00:45:03.030 --> 00:45:08.311
+So while you may not have to work in the command line interface, just wanted to provide these
+
+00:45:08.311 --> 00:45:12.091
+as helpers for if you need to.
+
+00:45:12.091 --> 00:45:16.831
+If you want to go into kind of the first part, there's this ability to render and it kind
+
+00:45:16.831 --> 00:45:21.191
+of walks you through rendering a document with the render button and ultimately with
+
+00:45:21.191 --> 00:45:29.151
+this 01introhistory.qmd, we're recreating an article about Boston Terriers and recreating
+
+00:45:29.151 --> 00:45:31.430
+it with this single source.
+
+00:45:31.430 --> 00:45:38.230
+So we have that ability to create a specific document, render it out to HTML and to PDF
+
+00:45:38.230 --> 00:45:41.751
+and see the differences and compare them.
+
+00:45:41.751 --> 00:45:44.071
+So that was the first section.
+
+00:45:44.071 --> 00:45:48.211
+We still have about an hour left that we're going to do in the second section.
+
+00:45:48.211 --> 00:45:52.771
+But because it's a little bit longer today, I do want to take a five-minute break.
+
+00:45:52.771 --> 00:45:58.891
+So we're going to meet back here at 11.55 my time, which might be different for you,
+
+00:45:58.891 --> 00:46:02.571
+but we will prompt you back here in five minutes.
+
+00:46:02.571 --> 00:46:07.091
+So five minutes past the 10-minute mark here.
+
+00:46:07.091 --> 00:46:08.091
+So we'll pause for a second.
+
+00:46:08.091 --> 00:46:09.091
+Sounds good.
+
+00:46:09.091 --> 00:46:10.091
+Yeah, we'll leave this up.
+
+00:46:10.091 --> 00:46:12.451
+I'll answer some of the questions that are popping up in the chat.
+
+00:46:12.451 --> 00:46:17.131
+I do want to address some of those, but we'll give you a break if you need to use the bathroom
+
+00:46:17.131 --> 00:46:20.170
+or get a drink of water or anything else.
+
+00:46:20.170 --> 00:46:21.170
+Awesome.
+
+00:46:21.170 --> 00:46:25.170
+And I just wanted to say, I know for some reason, YouTube was blocking the Slido link
+
+00:46:25.170 --> 00:46:27.050
+when we were trying to share it.
+
+00:46:27.050 --> 00:46:32.451
+So I can share that on the screen as well if you want to be able to ask anonymous questions
+
+00:46:32.451 --> 00:46:34.530
+too.
+
+00:46:34.530 --> 00:46:38.771
+While we may not get to every single question, we are definitely going to take those and
+
+00:46:38.771 --> 00:46:44.930
+answer them in a follow-up blog post and other formats as well.
+
+00:46:45.571 --> 00:46:50.370
+So part of the reason why I really appreciate Rachel being here is she's helping out a lot.
+
+00:46:50.370 --> 00:46:54.651
+And for some reason, my computer decided it wanted to share things a bit blurrier.
+
+00:46:54.651 --> 00:46:58.811
+So while I'm not going to be driving everything on my screen, if you're looking at it right
+
+00:46:58.811 --> 00:47:03.571
+now, it might look a little bit blurry, which is kind of why Rachel is being kind enough
+
+00:47:03.571 --> 00:47:06.891
+to lead the example.
+
+00:47:06.891 --> 00:47:11.170
+But I just want to mention that in our studio, if you've never used it before, there's the
+
+00:47:11.410 --> 00:47:20.170
+R console at the very bottom left, typically here, or there's the actual command line terminal.
+
+00:47:20.170 --> 00:47:25.370
+So if we wanted to, we can obviously switch between R and one plus one, and you can execute
+
+00:47:25.370 --> 00:47:31.170
+R code from the terminal is where you'd actually say something like cordo dash dash help.
+
+00:47:31.170 --> 00:47:34.870
+And then it'll pop up all the different commands that the cordo can run.
+
+00:47:34.870 --> 00:47:41.410
+So that's where you're going to be looking for it is the terminal inside our studio.
+
+00:47:41.410 --> 00:47:47.670
+The other main feature is that cordo.org, and I'll drop that link into the chat, is
+
+00:47:47.670 --> 00:47:49.631
+an amazing resource.
+
+00:47:49.631 --> 00:47:53.230
+And it has a really strong search bar here at the top right.
+
+00:47:53.230 --> 00:47:57.591
+You can search for whatever you want to learn about and ask questions there.
+
+00:47:57.990 --> 00:48:05.430
+Ultimately, it has the Get Started tab that allows you to explore different things and
+
+00:48:05.430 --> 00:48:10.511
+get started just out of the gates, or the guide is much more guided in terms of specific
+
+00:48:10.511 --> 00:48:15.030
+topic and the different things that you want to ask.
+
+00:48:15.030 --> 00:48:19.550
+So there was someone who asked, can I run the cordo CLI at the terminal inside our studio?
+
+00:48:19.550 --> 00:48:20.550
+Absolutely.
+
+00:48:20.550 --> 00:48:24.191
+That is what we're expecting people who are using our studio to do is use the integrated
+
+00:48:24.191 --> 00:48:26.151
+terminal.
+
+00:48:26.151 --> 00:48:30.831
+But for other editors like VS Code or Jupyter, you might use a separate terminal or spin
+
+00:48:30.831 --> 00:48:35.470
+up a new terminal kind of ad hoc as needed.
+
+00:48:35.470 --> 00:48:39.430
+There were a couple questions about different formats.
+
+00:48:39.430 --> 00:48:45.550
+So you can change those via the YAML, or you can do it via the command line interface.
+
+00:48:45.550 --> 00:48:49.870
+So again, if I wanted to render a document, and part of the example that we're working
+
+00:48:49.870 --> 00:48:57.151
+on here is in the cordo workshop under intro, we have this .qmd file.
+
+00:48:57.151 --> 00:49:07.990
+If I want to, I can just say cordo render 01 intro, actually, let's move into that directory.
+
+00:49:07.990 --> 00:49:11.550
+Another good example of let's list and see where we are, we're in cordo workshop, let's
+
+00:49:11.550 --> 00:49:15.550
+do cordo-workshop01.intro.
+
+00:49:15.550 --> 00:49:20.430
+So I'm moving or changing the directory into this subfolder.
+
+00:49:20.430 --> 00:49:27.910
+I can cordo render history.qmd, and it's going to render it out to an HTML format.
+
+00:49:27.910 --> 00:49:30.631
+Or in this case, because I've changed it to a PDF initially.
+
+00:49:30.631 --> 00:49:33.370
+So it'll render it out, I've got a PDF.
+
+00:49:33.370 --> 00:49:36.790
+I can pull that up in my browser, make it a lot bigger.
+
+00:49:36.790 --> 00:49:42.030
+And while it's a little bit blurry on my screen, you can see that we have a pretty nice looking
+
+00:49:42.470 --> 00:49:48.230
+PDF document with some pretty complex type setting and using images around the text as
+
+00:49:48.230 --> 00:49:51.350
+well as in the sidebar.
+
+00:49:51.350 --> 00:49:59.831
+If I instead wanted to render that to HTML, I could say cordo render, let's say, history.qmd
+
+00:49:59.831 --> 00:50:00.831
+to HTML.
+
+00:50:00.831 --> 00:50:07.271
+When I render it this way, now rather than rendering it to the default of PDF, I get
+
+00:50:07.271 --> 00:50:09.550
+an HTML file.
+
+00:50:09.550 --> 00:50:13.871
+And I pull that up and we'll get it as self-contained.
+
+00:50:13.871 --> 00:50:16.871
+Let's do qmd.
+
+00:50:16.871 --> 00:50:22.871
+Apologies, I'm very zoomed in because I want you all to be able to see the content here.
+
+00:50:22.871 --> 00:50:30.750
+So in the YAML, I can render that HTML out, render that, and I have the similar looking
+
+00:50:30.750 --> 00:50:33.871
+complex layout in HTML.
+
+00:50:33.871 --> 00:50:39.030
+Now while you didn't see any of the real code in that document, and again, I apologize for
+
+00:50:39.030 --> 00:50:40.030
+being a bit blurry.
+
+00:50:40.030 --> 00:50:42.831
+We'll jump back in the slides here in a second.
+
+00:50:42.831 --> 00:50:47.510
+What we're trying to take away here is that I wrote no LaTeX and I wrote no CSS.
+
+00:50:47.510 --> 00:50:51.670
+I only used cordo to typeset this document.
+
+00:50:51.670 --> 00:50:57.790
+So cordo has a lot of information that are kind of structuring its building in to build
+
+00:50:57.790 --> 00:50:59.311
+things in different formats.
+
+00:50:59.311 --> 00:51:03.910
+So it's opinionated in a good way to give you nice defaults.
+
+00:51:03.910 --> 00:51:10.191
+For some people who are asking, and it's a great question, if I'm in the terminal on
+
+00:51:10.191 --> 00:51:19.711
+Linux or on Mac, let me clear this out, do a new terminal, zoom out just a hair there.
+
+00:51:19.711 --> 00:51:23.390
+So I can call cordo render on something.
+
+00:51:23.390 --> 00:51:28.951
+On some flavors of Windows, you have to do cordo.command.
+
+00:51:28.951 --> 00:51:34.571
+This is a very specific thing on different flavors of the terminal, and in some cases
+
+00:51:34.571 --> 00:51:38.831
+on Windows especially, you might have to use cordo.command, and then you can do something
+
+00:51:38.831 --> 00:51:40.550
+like help on Linux.
+
+00:51:40.550 --> 00:51:46.111
+It's not going to understand that, but inside the PowerShell or inside Git Bash flavored
+
+00:51:46.111 --> 00:51:50.390
+terminal inside Windows, you might have to namespace that.
+
+00:51:50.390 --> 00:51:55.150
+So great question, Rebecca, thank you for indicating that.
+
+00:51:55.150 --> 00:51:59.951
+So while I would love to screen share everything, it again is a bit blurry on my side.
+
+00:51:59.951 --> 00:52:04.591
+So I'm going to hand it back over to Rachel, and I'm going to move back into the slides
+
+00:52:04.591 --> 00:52:07.351
+here in about a minute.
+
+00:52:07.351 --> 00:52:11.910
+I'm going to stop screen sharing mine and move over to Rachel's screen sharing, if you
+
+00:52:11.910 --> 00:52:13.471
+want to pull up the slides again.
+
+00:52:13.471 --> 00:52:16.311
+We'll do, one second.
+
+00:52:16.311 --> 00:52:19.750
+Do you need a second to go grab some water or anything?
+
+00:52:19.750 --> 00:52:21.471
+I got my water right here.
+
+00:52:21.471 --> 00:52:22.471
+Okay.
+
+00:52:23.471 --> 00:52:25.471
+Thanks for sticking around, y'all.
+
+00:52:25.471 --> 00:52:31.231
+So we're going to switch back over to Rachel's component, and I'll stop screen sharing mine.
+
+00:52:31.231 --> 00:52:37.231
+I was also going to say, Tom, if you want me to walk through RStudio Cloud and to share
+
+00:52:37.231 --> 00:52:41.231
+that on my screen, I'm happy to do that as well and switch back and forth.
+
+00:52:41.231 --> 00:52:42.231
+Sure.
+
+00:52:42.231 --> 00:52:46.790
+Yeah, if you want to share RStudio Cloud, I'm happy to, if you want to zoom in a bit,
+
+00:52:46.790 --> 00:52:49.430
+we can walk through it together.
+
+00:52:49.550 --> 00:52:55.150
+Kind of like a live workshop here for me, which I had no idea I was doing right now.
+
+00:52:55.150 --> 00:52:57.150
+Thanks for sticking with it, Rachel.
+
+00:52:57.150 --> 00:53:03.670
+So Rachel has opened up the RStudio Cloud link, and we'll drop that into the chat here
+
+00:53:03.670 --> 00:53:04.670
+in a second.
+
+00:53:04.670 --> 00:53:09.311
+Let me grab the workshop component.
+
+00:53:09.311 --> 00:53:10.311
+Grab that link.
+
+00:53:10.311 --> 00:53:11.550
+I put it into the chat.
+
+00:53:11.550 --> 00:53:15.191
+You can't actually click on it on the screen, but it should be showing up in YouTube right
+
+00:53:15.191 --> 00:53:16.191
+now.
+
+00:53:16.471 --> 00:53:19.471
+And Rachel also put it into the restream chat, so it should be available.
+
+00:53:19.471 --> 00:53:20.471
+Oh, sorry.
+
+00:53:20.471 --> 00:53:22.670
+I'll show that again.
+
+00:53:22.670 --> 00:53:26.991
+So this, if you go that route, allows you to essentially get started immediately with
+
+00:53:26.991 --> 00:53:30.111
+the workshop materials as we see them.
+
+00:53:30.111 --> 00:53:33.071
+So you don't have to install additional things.
+
+00:53:33.071 --> 00:53:41.550
+For what I was working on, I was going into 01-intro on the file pane, and then clicking
+
+00:53:41.550 --> 00:53:42.550
+on history.qmd.
+
+00:53:42.550 --> 00:53:43.550
+Perfect.
+
+00:53:43.831 --> 00:53:48.430
+I'm going to move us out of the way a little bit.
+
+00:53:48.430 --> 00:53:50.750
+Oh, that's a little bit too big.
+
+00:53:50.750 --> 00:53:53.111
+There we go.
+
+00:53:53.111 --> 00:53:58.390
+And you can see inside the file pane that we have a couple images, the files of PDF
+
+00:53:58.390 --> 00:54:00.270
+and .html.
+
+00:54:00.270 --> 00:54:02.191
+You can always use the render button.
+
+00:54:02.191 --> 00:54:05.790
+So at the top left of the QMD or in the middle, there's a render button.
+
+00:54:05.790 --> 00:54:09.071
+You're welcome to use that, and that's where most people are going to be the most familiar
+
+00:54:09.071 --> 00:54:10.071
+with using it.
+
+00:54:10.071 --> 00:54:13.390
+You're absolutely able to click that.
+
+00:54:14.231 --> 00:54:16.071
+If you click on it, it'll render the document out.
+
+00:54:16.071 --> 00:54:17.071
+Great.
+
+00:54:17.071 --> 00:54:18.071
+We have our lovely Boston Terriers.
+
+00:54:18.071 --> 00:54:23.071
+Basically, this is not Howard, but I pretend it's Howard, my dog, and he's up on the screen.
+
+00:54:23.071 --> 00:54:29.191
+And if we wanted to change it to PDF, we could actually just go back to RStudio Cloud.
+
+00:54:29.191 --> 00:54:30.191
+And inside the YAML, under new format...
+
+00:54:30.191 --> 00:54:31.191
+I think your dog just heard his name, actually.
+
+00:54:31.191 --> 00:54:32.191
+He did.
+
+00:54:32.191 --> 00:54:33.191
+He started shaking a little bit.
+
+00:54:33.191 --> 00:54:34.191
+He's excited.
+
+00:54:34.191 --> 00:54:40.191
+So on line five, it says HTML.
+
+00:54:40.191 --> 00:54:46.390
+If we delete that and type in PDF and then a colon, yep, awesome.
+
+00:54:46.390 --> 00:54:49.430
+And then save and render it again.
+
+00:54:49.430 --> 00:54:52.270
+Now we'll actually render out a PDF.
+
+00:54:52.270 --> 00:54:58.790
+And again, part of the excitement of Cordo is that I don't know any LaTeX.
+
+00:54:58.790 --> 00:55:01.270
+That's just not a thing I do.
+
+00:55:01.270 --> 00:55:05.630
+It's giving Rachel a pop-up saying, I want to pull this into the browser automatically,
+
+00:55:05.630 --> 00:55:06.630
+and that's fine.
+
+00:55:06.630 --> 00:55:07.630
+It's nothing to be worried about.
+
+00:55:07.790 --> 00:55:10.430
+It's just trying to protect you.
+
+00:55:10.430 --> 00:55:14.591
+But now we have that same document rendered to PDF.
+
+00:55:14.591 --> 00:55:19.390
+And again, Rachel and I didn't have to write any LaTeX or any PDF-specific things.
+
+00:55:19.390 --> 00:55:21.111
+We just used Cordo syntax.
+
+00:55:21.111 --> 00:55:26.150
+So you can imagine that I'm writing a journal article, and I want to create a website, and
+
+00:55:26.150 --> 00:55:30.351
+I want to create a journal article that I actually submit to the publisher.
+
+00:55:30.351 --> 00:55:33.750
+Both of those could go from essentially the same single source.
+
+00:55:33.750 --> 00:55:36.991
+And you could write it in a way and have it render out without having to write all the
+
+00:55:37.351 --> 00:55:43.270
+manual LaTeX or write all the manual CSS to typeset it and make it look really good.
+
+00:55:43.270 --> 00:55:48.750
+I also saw someone mentioned about the specifics for the folder structure.
+
+00:55:48.750 --> 00:55:55.231
+Yes, I brought in all of the files from the two-day workshop I gave at RStudioConf.
+
+00:55:55.231 --> 00:55:59.711
+I didn't want to limit y'all just to the things I can cover in the next hour, but rather give
+
+00:55:59.711 --> 00:56:06.831
+you some of the other formats and other approaches that we can do for documents over everything.
+
+00:56:06.831 --> 00:56:08.910
+So with that, we're at our five-minute mark.
+
+00:56:08.910 --> 00:56:11.430
+Rachel, thanks for walking through RStudio Cloud with me.
+
+00:56:11.430 --> 00:56:12.430
+That's a lot of fun.
+
+00:56:12.430 --> 00:56:16.630
+And we'll go back to the slides, and I'll move us to the bottom right so that we can
+
+00:56:16.630 --> 00:56:19.550
+not overlap too much.
+
+00:56:19.550 --> 00:56:20.550
+Awesome.
+
+00:56:20.550 --> 00:56:25.670
+Also, pretty cool that I can just log into RStudio Cloud there without having to install
+
+00:56:25.670 --> 00:56:27.510
+anything and it just worked.
+
+00:56:27.510 --> 00:56:29.071
+Yeah, absolutely.
+
+00:56:29.071 --> 00:56:33.630
+That definitely helps with having to swap who's the presenter for today.
+
+00:56:33.630 --> 00:56:36.550
+So let me also get my slides aligned with you.
+
+00:56:36.550 --> 00:56:40.390
+If you click at the bottom, and again, the link that we're working off of, we'll drop
+
+00:56:40.390 --> 00:56:41.831
+that into the chat.
+
+00:56:41.831 --> 00:56:43.831
+The overall website is available here.
+
+00:56:43.831 --> 00:56:47.430
+I'll keep that up on the screen for a little bit.
+
+00:56:47.430 --> 00:56:50.991
+And Tom, which link should I be clicking on right now?
+
+00:56:50.991 --> 00:56:54.991
+The quarter two-hour webinar.
+
+00:56:54.991 --> 00:56:57.351
+So it should be, I think that's link one or two.
+
+00:56:57.351 --> 00:56:58.351
+Oh, sorry.
+
+00:56:58.351 --> 00:57:02.351
+You're on the two-day workshop page that has all of the content.
+
+00:57:02.351 --> 00:57:06.351
+Let me share it with you.
+
+00:57:06.351 --> 00:57:10.871
+Dropping it into your chat there on the side.
+
+00:57:10.871 --> 00:57:11.871
+In the restream chat?
+
+00:57:11.871 --> 00:57:12.871
+Yeah.
+
+00:57:12.871 --> 00:57:13.871
+Let me give it to you.
+
+00:57:13.871 --> 00:57:14.871
+There we go.
+
+00:57:14.871 --> 00:57:15.871
+Awesome.
+
+00:57:15.871 --> 00:57:16.871
+We have a lot of links here.
+
+00:57:16.871 --> 00:57:17.871
+Yes.
+
+00:57:17.871 --> 00:57:22.231
+I wanted to give y'all as much content as possible, and while I'm trying to cover a
+
+00:57:22.231 --> 00:57:27.150
+good chunk of it, obviously, there's a lot of things you can do afterwards after today
+
+00:57:27.150 --> 00:57:28.711
+is finished.
+
+00:57:28.711 --> 00:57:29.831
+Perfect.
+
+00:57:29.831 --> 00:57:34.871
+So now that Rachel's back on the primary website, we've completed Intro to Cordo, and we're
+
+00:57:34.871 --> 00:57:37.591
+going to talk a bit more about authoring Cordo.
+
+00:57:37.591 --> 00:57:41.871
+So on the top left, we have authoring Cordo, and we're going to go through that together.
+
+00:57:41.871 --> 00:57:42.871
+Okay.
+
+00:57:42.871 --> 00:57:45.630
+I'll send myself backstage here.
+
+00:57:45.630 --> 00:57:48.591
+Thanks so much, Rachel.
+
+00:57:48.591 --> 00:57:52.831
+So ultimately, again, we covered a little bit of the high details, but went through
+
+00:57:52.831 --> 00:57:53.831
+them pretty quickly.
+
+00:57:53.831 --> 00:57:57.591
+So now we're going to spend a bit more time talking about how to actually do things as
+
+00:57:57.591 --> 00:58:00.890
+opposed to just about what you can do.
+
+00:58:00.890 --> 00:58:04.311
+So we're going to talk about Cordo documents and mainly about this anatomy.
+
+00:58:04.750 --> 00:58:07.670
+We're going to go through YAML, talk about the different ways you can create formats.
+
+00:58:07.670 --> 00:58:13.231
+We're going to talk about markdown and text, and creating that over to the documents that
+
+00:58:13.231 --> 00:58:15.790
+you're rendering out, and then using code.
+
+00:58:15.790 --> 00:58:21.351
+So using things like Knitter or Jupyter to execute R or Python and Julia code.
+
+00:58:21.351 --> 00:58:25.510
+You add all these things together, and you have those beautiful, powerful, useful outputs,
+
+00:58:25.510 --> 00:58:28.231
+and again, you're creating them with a plain text input.
+
+00:58:28.231 --> 00:58:33.231
+So you don't have to write all the different things while you can embed raw CSS and raw
+
+00:58:33.430 --> 00:58:36.270
+LaTeX and all these other different things into it.
+
+00:58:36.270 --> 00:58:43.231
+Cordo provides a lot of power to do all that just through what's built into Cordo.
+
+00:58:43.231 --> 00:58:47.351
+This is really an extension of the idea of literate programming, basically the idea of
+
+00:58:47.351 --> 00:58:52.991
+writing out program logic in a human language with included code snippets and macros.
+
+00:58:52.991 --> 00:58:57.591
+So if we look at a plain text document like we have here on the page or a QMD, we have
+
+00:58:57.591 --> 00:59:00.390
+the title, which is highlighted here in purple.
+
+00:59:00.390 --> 00:59:04.591
+That's the YAML and all the different metadata about the document.
+
+00:59:04.591 --> 00:59:09.790
+We have yellow or kind of this off pink here that is highlighting the air quality, the
+
+00:59:09.790 --> 00:59:12.910
+relationship between temperature and ozone level, basically the markdown that you're
+
+00:59:12.910 --> 00:59:14.191
+working on.
+
+00:59:14.191 --> 00:59:19.390
+And then the code, which is highlighted here by the R chunk, and it has a label of figure
+
+00:59:19.390 --> 00:59:24.150
+air quality, as well as some code to generate a graphic via ggplot.
+
+00:59:24.150 --> 00:59:29.991
+So this idea of literate programming allows us to build up different components and write
+
+00:59:29.991 --> 00:59:35.630
+out the document as you'd like in real time in a linear way, like top to bottom, but structure
+
+00:59:35.630 --> 00:59:42.231
+it and add up all of the actual literate part in additional to the code that you're writing.
+
+00:59:42.231 --> 00:59:46.871
+So first we'll kick off with metadata or that YAML that's at the top.
+
+00:59:46.871 --> 00:59:51.071
+Metadata or what's called YAML, you could say it's yet another markup language or YAML
+
+00:59:51.071 --> 00:59:53.591
+and markup language or whatever you want to say.
+
+00:59:53.591 --> 00:59:57.351
+It follows the structure of these key value pairs.
+
+00:59:57.351 --> 01:00:01.550
+So you have a key, something like title, and then you have the value you're inputting,
+
+01:00:01.550 --> 01:00:06.351
+something like this is my first Quarto document, and you're putting that in as text.
+
+01:00:06.351 --> 01:00:11.831
+That's the general structure that all the YAML will follow of just matching some option
+
+01:00:11.831 --> 01:00:14.711
+with what the option you've chosen.
+
+01:00:14.711 --> 01:00:19.390
+So we think about like output options, going to the next slide, we have format is something.
+
+01:00:19.390 --> 01:00:24.591
+So format is the keyword that's saying this is the format we're choosing to render to,
+
+01:00:24.591 --> 01:00:27.231
+and the value is something we're choosing.
+
+01:00:27.231 --> 01:00:31.430
+Now we're not going to say something, we're going to choose something like HTML or PDF,
+
+01:00:31.430 --> 01:00:37.430
+or for today's slides, I used reveal.js to create these interactive HTML slides that
+
+01:00:37.430 --> 01:00:39.351
+allow me to step through it.
+
+01:00:39.351 --> 01:00:43.111
+And again, it's available through open source.
+
+01:00:43.111 --> 01:00:45.910
+So it's not something else I have to install or something else I have to buy.
+
+01:00:45.910 --> 01:00:51.731
+It's all built into that as a different format.
+
+01:00:51.731 --> 01:00:55.390
+You can also add option arguments or kind of sub commands to this.
+
+01:00:55.390 --> 01:00:59.351
+So I'm not limited to just saying HTML, and then I'm done for the day.
+
+01:00:59.351 --> 01:01:04.711
+I could say I have a format, and then I go down to a new line, and I have HTML.
+
+01:01:04.711 --> 01:01:08.591
+And then on the next line, I have table of contents equals true and code folding equals
+
+01:01:08.591 --> 01:01:09.591
+true.
+
+01:01:09.591 --> 01:01:15.471
+So again, I can control the structure, control the options within my format by adding these
+
+01:01:15.471 --> 01:01:19.071
+sub options to it.
+
+01:01:19.071 --> 01:01:20.910
+Sub options are going to be below.
+
+01:01:20.910 --> 01:01:25.591
+This is slightly cut off in terms of if you click F, Rachel, it'll go full screen for
+
+01:01:25.591 --> 01:01:27.591
+you.
+
+01:01:27.591 --> 01:01:31.711
+So it's going to have the sub options of option one and option two.
+
+01:01:31.711 --> 01:01:36.390
+The options are not limited to just plain text or just, you know, logicals like true
+
+01:01:36.390 --> 01:01:39.050
+and false, but they can be a mixing and matching.
+
+01:01:39.050 --> 01:01:43.311
+So some options might be logicals like true, false, or other.
+
+01:01:43.311 --> 01:01:46.311
+Some might be text where you're having to quote it, and that's okay.
+
+01:01:46.311 --> 01:01:51.390
+It's just depending upon what the options are that you're editing.
+
+01:01:51.390 --> 01:01:58.150
+Now as far as why you would actually choose YAML is that you might need to avoid mainly
+
+01:01:58.150 --> 01:02:00.550
+typing out all these different options.
+
+01:02:00.550 --> 01:02:04.951
+You know, if I just have a document like we showed in RStudio Cloud, it's pretty easy
+
+01:02:04.951 --> 01:02:07.550
+to say Kordo render document to HTML.
+
+01:02:07.550 --> 01:02:08.550
+Yep.
+
+01:02:08.550 --> 01:02:09.550
+I got that.
+
+01:02:09.550 --> 01:02:13.150
+That's easy enough where I can have fun with it and change it around.
+
+01:02:13.150 --> 01:02:17.750
+But if I wanted to start adding additional things, I can do those via the command line,
+
+01:02:17.750 --> 01:02:23.030
+but it gets a bit tricky in terms of like Kordo render document to HTML, add some options
+
+01:02:23.030 --> 01:02:25.750
+where code and folding is equal to true.
+
+01:02:25.750 --> 01:02:27.111
+Not too bad.
+
+01:02:27.111 --> 01:02:30.951
+But then I have something really long, and I have this like Kordo render document with
+
+01:02:30.951 --> 01:02:34.410
+code folding parameters, and it's running off the page.
+
+01:02:34.410 --> 01:02:35.811
+It's too long.
+
+01:02:35.811 --> 01:02:39.770
+So while you can absolutely use that, maybe you have it in like continuous integration
+
+01:02:39.851 --> 01:02:41.811
+or something else.
+
+01:02:41.811 --> 01:02:47.010
+It's much easier to write this via YAML, and that's why the YAML is provided is to structure
+
+01:02:47.010 --> 01:02:50.851
+these different options.
+
+01:02:50.851 --> 01:02:56.851
+Now as far as navigating within RStudio, I might walk again, Rachel, through this in
+
+01:02:56.851 --> 01:02:57.851
+RStudio Cloud.
+
+01:02:57.851 --> 01:03:01.971
+If you want to click escape, it'll get you out of full screen, and then you go back to
+
+01:03:01.971 --> 01:03:04.351
+RStudio Cloud.
+
+01:03:04.351 --> 01:03:07.731
+For anyone that missed this before, I just want to point out where the console and where
+
+01:03:07.731 --> 01:03:09.591
+the terminal is.
+
+01:03:10.410 --> 01:03:14.910
+So at the bottom left, we have the R console where you execute R code or you load packages
+
+01:03:14.910 --> 01:03:17.091
+or whatever else you want to do.
+
+01:03:17.091 --> 01:03:21.991
+And then right next to it on the tab is a word called terminal.
+
+01:03:21.991 --> 01:03:27.390
+And so if you click on terminal next to console on the bottom left, now you're at a command
+
+01:03:27.390 --> 01:03:32.351
+line interface or at the terminal inside RStudio Cloud, although it might be organized a bit
+
+01:03:32.351 --> 01:03:34.991
+differently on your specific computer.
+
+01:03:34.991 --> 01:03:39.550
+That's where you could execute the Cordo command line interface as opposed to the R
+
+01:03:39.550 --> 01:03:45.471
+package that would be executed inside the R console or in a .R or .qmd file.
+
+01:03:45.471 --> 01:03:49.170
+So just wanted to make sure that we have that differentiation between the terminal exists,
+
+01:03:49.170 --> 01:03:50.871
+you can execute code there.
+
+01:03:50.871 --> 01:03:54.831
+If you just installed Cordo, you might need to restart RStudio.
+
+01:03:54.831 --> 01:03:58.770
+For example, like if you install them separately, or if you're making changes, you typically
+
+01:03:58.770 --> 01:04:02.991
+want to refresh to make sure everything's available.
+
+01:04:02.991 --> 01:04:06.430
+Let's go back to the slides real quick.
+
+01:04:06.430 --> 01:04:13.191
+We've covered the navigation, perfect.
+
+01:04:13.191 --> 01:04:17.951
+The other part you might see is that when you click, say, the render button in RStudio,
+
+01:04:17.951 --> 01:04:20.670
+it's actually going to open up what's called a background job.
+
+01:04:20.670 --> 01:04:24.270
+Now here, rather than Rachel having to go and navigate to RStudio Cloud, I've got a
+
+01:04:24.270 --> 01:04:27.191
+screenshot for you.
+
+01:04:27.191 --> 01:04:31.510
+It's going to start this and maintain a background job for you.
+
+01:04:31.510 --> 01:04:35.630
+Part of why it does this is when you click the render button in RStudio, it both renders
+
+01:04:35.630 --> 01:04:41.910
+the document out and then maintains a stateful browser or kind of web server in the background.
+
+01:04:41.910 --> 01:04:47.150
+So as you make changes, you can re-render it and get the full thing built up together.
+
+01:04:47.150 --> 01:04:51.670
+So this is really useful for things like websites or building out complex structures where you're
+
+01:04:51.670 --> 01:04:56.030
+adding a lot of different components and you want to see how they all interact.
+
+01:04:56.030 --> 01:05:01.111
+If you did something via the R console, it would actually execute just as it was and
+
+01:05:01.111 --> 01:05:04.150
+render out the document without the background job.
+
+01:05:04.150 --> 01:05:08.111
+Or if you executed something via the terminal, it would just execute it via the terminal
+
+01:05:08.111 --> 01:05:10.831
+and not create a background job.
+
+01:05:10.831 --> 01:05:15.630
+But the Cordo render button specifically will start this background job and maintain it
+
+01:05:15.630 --> 01:05:16.991
+in the background.
+
+01:05:16.991 --> 01:05:21.471
+You could always kill it off or stop it if you wanted to stop that from being rendered
+
+01:05:21.471 --> 01:05:23.711
+in the back.
+
+01:05:23.711 --> 01:05:26.270
+For today, I saw a couple of questions about the recording.
+
+01:05:26.270 --> 01:05:31.390
+So this is on YouTube right now and you can access it in the future via YouTube as well.
+
+01:05:31.390 --> 01:05:36.871
+So it'll be both the live version that you're watching right now and the recorded version
+
+01:05:36.871 --> 01:05:41.630
+will both live on YouTube at the link you're at right now.
+
+01:05:41.630 --> 01:05:45.550
+Again for rendering, if you click that render button, that's where you get the background
+
+01:05:45.550 --> 01:05:46.670
+job.
+
+01:05:46.670 --> 01:05:52.670
+But you can also call it via the terminal in Cordo render or via the R console via the
+
+01:05:52.670 --> 01:05:56.550
+Cordo R package and call them Cordo underscore render.
+
+01:05:56.550 --> 01:05:57.790
+So all these are valid.
+
+01:05:57.790 --> 01:06:00.750
+There's not really a requirement to do it one way or the other.
+
+01:06:00.750 --> 01:06:03.270
+Just part of it is what are you needing to do?
+
+01:06:03.270 --> 01:06:06.591
+Like are you trying to render a document to different formats?
+
+01:06:06.591 --> 01:06:12.030
+You could do that very easily via the terminal or the R package without having to modify
+
+01:06:12.030 --> 01:06:12.871
+the document.
+
+01:06:09.221 --> 01:06:29.221
+https://www.rstudio.com
+
+01:06:39.221 --> 01:06:59.221
+https://www.rstudio.com
+
+01:06:59.221 --> 01:07:19.221
+https://www.rstudio.com
+
+01:07:19.221 --> 01:07:39.221
+https://www.rstudio.com
+
+01:07:39.221 --> 01:07:59.221
+https://www.rstudio.com
+
+01:07:59.221 --> 01:08:19.221
+https://www.rstudio.com
+
+01:08:19.221 --> 01:08:39.221
+https://www.rstudio.com
+
+01:08:39.221 --> 01:08:59.221
+https://www.rstudio.com
+
+01:08:59.221 --> 01:09:19.221
+https://www.rstudio.com
+
+01:09:19.221 --> 01:09:39.221
+https://www.rstudio.com
+
+01:09:39.221 --> 01:09:59.221
+https://www.rstudio.com
+
+01:09:59.221 --> 01:10:19.221
+https://www.rstudio.com
+
+01:10:19.221 --> 01:10:39.221
+https://www.rstudio.com
+
+01:10:39.221 --> 01:10:59.221
+https://www.rstudio.com
+
+01:10:59.221 --> 01:11:27.221
+https://www.rstudio.com
+
+01:11:27.221 --> 01:11:55.221
+https://www.rstudio.com
+
+01:11:55.221 --> 01:12:23.221
+https://www.rstudio.com
+
+01:12:23.221 --> 01:12:52.221
+https://www.rstudio.com
+
+01:12:53.221 --> 01:13:21.221
+https://www.rstudio.com
+
+01:13:21.221 --> 01:13:49.221
+https://www.rstudio.com
+
+01:13:49.221 --> 01:14:17.221
+https://www.rstudio.com
+
+01:14:17.221 --> 01:14:45.221
+https://www.rstudio.com
+
+01:14:45.221 --> 01:15:13.221
+https://www.rstudio.com
+
+01:15:13.221 --> 01:15:42.221
+https://www.rstudio.com
+
+01:15:44.221 --> 01:16:10.221
+https://www.rstudio.com
+
+01:16:11.221 --> 01:16:39.221
+https://www.rstudio.com
+
+01:16:39.221 --> 01:17:05.221
+https://www.rstudio.com
+
+01:17:05.221 --> 01:17:34.221
+https://www.rstudio.com
+
+01:17:35.221 --> 01:18:04.221
+https://www.rstudio.com
+
+01:18:04.221 --> 01:18:33.221
+https://www.rstudio.com
+
+01:18:33.221 --> 01:19:02.221
+https://www.rstudio.com
+
+01:19:03.221 --> 01:19:32.221
+https://www.rstudio.com
+
+01:19:32.221 --> 01:19:59.221
+https://www.rstudio.com
+
+01:19:59.221 --> 01:20:28.221
+https://www.rstudio.com
+
+01:20:28.221 --> 01:20:57.221
+https://www.rstudio.com
+
+01:20:57.221 --> 01:21:26.221
+https://www.rstudio.com
+
+01:21:27.221 --> 01:21:51.221
+https://www.rstudio.com
+
+01:21:52.221 --> 01:22:18.221
+https://www.rstudio.com
+
+01:22:19.221 --> 01:22:45.221
+https://www.rstudio.com
+
+01:22:45.221 --> 01:23:14.221
+https://www.rstudio.com
+
+01:23:15.221 --> 01:23:40.221
+https://www.rstudio.com
+
+01:23:40.221 --> 01:24:09.221
+https://www.rstudio.com
+
+01:24:10.221 --> 01:24:37.221
+https://www.rstudio.com
+
+01:24:40.221 --> 01:25:09.221
+https://www.rstudio.com
+
+01:25:10.221 --> 01:25:39.221
+https://www.rstudio.com
+
+01:25:40.221 --> 01:26:07.221
+https://www.rstudio.com
+
+01:26:11.221 --> 01:26:37.221
+https://www.rstudio.com
+
+01:26:37.221 --> 01:27:05.221
+https://www.rstudio.com
+
+01:27:05.221 --> 01:27:34.221
+https://www.rstudio.com
+
+01:27:34.221 --> 01:28:02.221
+https://www.rstudio.com
+
+01:28:02.221 --> 01:28:29.221
+https://www.rstudio.com
+
+01:28:33.221 --> 01:28:59.221
+https://www.rstudio.com
+
+01:28:59.221 --> 01:29:28.221
+https://www.rstudio.com
+
+01:29:29.221 --> 01:29:58.221
+https://www.rstudio.com
+
+01:29:59.221 --> 01:30:28.221
+https://www.rstudio.com
+
+01:30:29.221 --> 01:30:58.221
+https://www.rstudio.com
+
+01:30:58.221 --> 01:31:27.221
+https://www.rstudio.com
+
+01:31:28.221 --> 01:31:57.221
+https://www.rstudio.com
+
+01:31:58.221 --> 01:32:23.221
+https://www.rstudio.com
+
+01:32:23.221 --> 01:32:49.221
+https://www.rstudio.com
+
+01:32:49.221 --> 01:33:18.221
+https://www.rstudio.com
+
+01:33:19.221 --> 01:33:48.221
+https://www.rstudio.com
+
+01:33:49.221 --> 01:34:18.221
+https://www.rstudio.com
+
+01:34:19.221 --> 01:34:48.221
+https://www.rstudio.com
+
+01:34:48.221 --> 01:35:17.221
+https://www.rstudio.com
+
+01:35:17.221 --> 01:35:44.221
+https://www.rstudio.com
+
+01:35:47.221 --> 01:36:16.221
+https://www.rstudio.com
+
+01:36:17.221 --> 01:36:46.221
+https://www.rstudio.com
+
+01:36:47.221 --> 01:37:14.221
+https://www.rstudio.com
+
+01:37:17.221 --> 01:37:46.221
+https://www.rstudio.com
+
+01:37:46.221 --> 01:38:15.221
+https://www.rstudio.com
+
+01:38:16.221 --> 01:38:45.221
+https://www.rstudio.com
+
+01:38:45.221 --> 01:39:14.221
+https://www.rstudio.com
+
+01:39:15.221 --> 01:39:28.221
+https://www.rstudio.com
+
+01:39:19.498 --> 01:39:24.598
+I have rmarkdown documents and I want to render them as is to Quarto.
+
+01:39:24.598 --> 01:39:28.298
+I was like what all do I have to change? Do I have to change a lot of things?
+
+01:39:28.298 --> 01:39:33.758
+Rachel, did you have a question? Sorry. I noticed there was a question that's been asked a few times, so I just wanted to ask it.
+
+01:39:33.758 --> 01:39:38.538
+Is there a shortcut for the hash pipe?
+
+01:39:38.538 --> 01:39:47.198
+I don't think there is, but if you type one hash pipe and click enter, it will automatically add those below them.
+
+01:39:47.198 --> 01:39:53.058
+So basically, once you've inserted one hash pipe, as you go to more chunk options, it will automatically insert
+
+01:39:53.058 --> 01:39:59.898
+the starting structure of the pound sign, the vertical line, and a space for you. Thank you for that question, Rachel.
+
+01:39:59.898 --> 01:40:02.998
+Awesome, thanks.
+
+01:40:02.998 --> 01:40:08.457
+So for people that say, I have a bunch of rmarkdown documents, I want to
+
+01:40:08.457 --> 01:40:12.257
+apply it across different things, or I want to convert them over to Quarto,
+
+01:40:12.257 --> 01:40:16.018
+you can generally just render them via the command line.
+
+01:40:16.018 --> 01:40:21.358
+So you can call Quarto render on a document and render it and force it to be used via Quarto.
+
+01:40:21.358 --> 01:40:25.718
+If you wanted to modify your YAML and make it Quarto specific,
+
+01:40:25.718 --> 01:40:30.358
+you could change two primary parts. You change output to format
+
+01:40:30.358 --> 01:40:33.658
+and something like HTML document to HTML.
+
+01:40:33.658 --> 01:40:37.658
+There are smaller things of things like number underscore sections.
+
+01:40:37.658 --> 01:40:44.218
+Rather than using that syntax, we're using Pandoc style or traditional YAML style with a dash.
+
+01:40:44.218 --> 01:40:49.718
+But overall, you can see that as you're moving between these documents, that the formats actually look very similar.
+
+01:40:49.718 --> 01:40:53.017
+And again, you don't have to convert all of your documents over.
+
+01:40:53.017 --> 01:41:00.517
+It's more of like keep the existing documents you have, use something like the Quarto R package or the Quarto command line tool
+
+01:41:00.517 --> 01:41:06.057
+to render older rmarkdown documents and then write new documents via Quarto.
+
+01:41:06.057 --> 01:41:13.718
+But if you wanted to convert your documents and change all the YAML, you could do it manually as well if you'd like to.
+
+01:41:13.718 --> 01:41:20.818
+This is partially off the page, I'm sorry about that, but for the YAML for Quarto, the big important part here is again,
+
+01:41:20.818 --> 01:41:28.718
+Quarto is going to have this like word dash word syntax, like we think of number dash sections on line five under Quarto,
+
+01:41:28.718 --> 01:41:33.718
+as opposed to our markdown is using an underscore for a lot of different things.
+
+01:41:33.718 --> 01:41:39.177
+So if you want to be more consistent, that dash syntax is what we're looking for.
+
+01:41:39.177 --> 01:41:45.677
+A couple of good questions about rendering like a parent QMD that has rmarkdown files as its children.
+
+01:41:45.677 --> 01:41:50.378
+That's a pretty specific thing in terms of you're bringing in code from an rmarkdown file.
+
+01:41:50.378 --> 01:41:57.958
+If you're just reading in the lines of code, that's fine because you're not actually rendering it to rmarkdown, you're rendering it to Quarto.
+
+01:41:57.958 --> 01:42:06.458
+But if you have to say like a Quarto project or Quarto website, anything that's .RMD within that will actually be rendered via Quarto.
+
+01:42:06.458 --> 01:42:12.617
+So you can't like render something to rmarkdown just like out of the box via Quarto.
+
+01:42:12.617 --> 01:42:18.458
+It's going to be a Quarto document at that point. It's just going to try its best to convert it over.
+
+01:42:18.458 --> 01:42:23.557
+Good question. Within the workshop material, I have what's called like an old rmarkdown.
+
+01:42:23.617 --> 01:42:31.158
+Again, without changing anything, I can render it to Quarto by using the Quarto command line interface or the Quarto R package.
+
+01:42:31.158 --> 01:42:38.298
+Or I can manually go in and change .RMD to .QMD, and that indicates, hey, use Quarto.
+
+01:42:38.298 --> 01:42:45.298
+Or I could change the format from output to format to convert it over via the YAML header itself.
+
+01:42:46.298 --> 01:42:54.298
+Now, as far as this conversion process, well, again, it's not required, and many times you can kind of render something as is.
+
+01:42:54.298 --> 01:43:02.298
+Option one is I want an rmarkdown, I want to always use Quarto for the rendering, change just .RMD to .QMD.
+
+01:43:02.298 --> 01:43:08.298
+That tells RStudio and that tells Quarto, this is a Quarto document, render it as Quarto.
+
+01:43:08.298 --> 01:43:13.298
+So it'll force it to be executed as a Quarto document, no matter what is in the YAML.
+
+01:43:14.298 --> 01:43:23.298
+Option two is you can manually change the output, like output equals HTML document to something like format equals HTML.
+
+01:43:23.298 --> 01:43:29.298
+And again, this will force using Quarto, even if the extension is .RMD.
+
+01:43:31.298 --> 01:43:40.297
+The last option, though, here is, you know, you've got a rendering to Quarto, but maybe your knitter chunks, your code chunks are different.
+
+01:43:40.297 --> 01:43:52.297
+So there is a function in the dev version of Knitter, as of a couple days ago, that allows you to take syntax like fig.width equals one.
+
+01:43:52.297 --> 01:43:54.297
+I think we actually have to click through twice on that, sorry.
+
+01:43:56.297 --> 01:44:01.297
+One more time, there we go. So fig.width equals one, and it'll convert it over to the hashpipe syntax.
+
+01:44:01.297 --> 01:44:09.297
+So that'll allow you to take an entire document and very quickly convert all of the Knitter syntax over to the newer syntax.
+
+01:44:09.297 --> 01:44:11.297
+I wouldn't necessarily use this like all the time.
+
+01:44:11.297 --> 01:44:15.297
+I'd rather just write them as they're supposed to be moving forward.
+
+01:44:15.297 --> 01:44:21.297
+But if you have older documents, this would allow you to convert the chunk header into the hashpipe syntax.
+
+01:44:24.297 --> 01:44:27.297
+Again, you don't have to convert everything.
+
+01:44:27.297 --> 01:44:30.297
+It's backward compatible with the older chunk options.
+
+01:44:31.297 --> 01:44:37.297
+But if you want to be consistent or you want to kind of move towards a syntax that allows you to be more consistent moving forward.
+
+01:44:40.297 --> 01:44:54.297
+The other part was, you know, we talked quite a bit about this fence div or these Pandoc divs and something like the colon, colon, colon, curly brackets, layout, or layout number of rows or number of columns.
+
+01:44:54.297 --> 01:45:00.297
+Again, we're getting consistency here between something you can do in Markdown, as well as something you can do with code.
+
+01:45:00.297 --> 01:45:08.297
+So if we click through this twice, we're going to have the code and then we're going to highlight line four.
+
+01:45:08.297 --> 01:45:16.297
+Layout number of column equals two is the exact same syntax I use for fence divs to typeset images.
+
+01:45:16.297 --> 01:45:20.297
+But now I'm using it for generated graphics in R.
+
+01:45:20.297 --> 01:45:29.297
+So I can get side by side images, obviously on this presentation, because it's in horizontal landscape mode, they're kind of running off the page.
+
+01:45:29.297 --> 01:45:38.297
+But on a larger document or a more traditional portrait page, I would have two side by side images and the layout structure will look nice there.
+
+01:45:40.297 --> 01:45:45.297
+I can also use the online seven by click through one more time here.
+
+01:45:45.297 --> 01:45:48.297
+I get layout and I have that again, percentage style.
+
+01:45:48.297 --> 01:45:56.297
+So now I have 40 percent for image one, 40 percent for image two and negative 20 percent of blank space in the middle.
+
+01:45:57.297 --> 01:46:07.297
+And when I do this, it's generating, again, two graphics with blank space in the middle and also applying the figure caption and the labeling of those in my entire document.
+
+01:46:07.297 --> 01:46:19.297
+So a nice ability to, again, have consistent syntax of typesetting and arranging your documents, whether it's bringing in raw graphics off disk or generating graphics on the fly in R or Python or Julia.
+
+01:46:20.297 --> 01:46:34.297
+The last part that we're going to be covering today or kind of a last focus is more about aesthetics in terms of you probably have strong opinions about what your things you're creating should look like.
+
+01:46:34.297 --> 01:46:38.297
+I really like the defaults in Cordo. They're really good.
+
+01:46:38.297 --> 01:46:44.297
+They generally follow nice examples of like contrast for accessibility.
+
+01:46:44.297 --> 01:46:50.297
+But perhaps you just have a very strong opinion about what the overall document should look like.
+
+01:46:50.297 --> 01:46:57.297
+So, number one, for things like HTML, Cordo's HTML is styled with Bootstrap 5 and has these opinionated defaults.
+
+01:46:57.297 --> 01:47:03.297
+So Bootstrap is a popular CSS framework, very common for responsive websites.
+
+01:47:03.297 --> 01:47:07.297
+And version five is the latest version of this.
+
+01:47:07.297 --> 01:47:14.297
+Cordo comes pre-installed with 25 themes from Boot Swatch, which is applications of Bootstrap across different themes.
+
+01:47:14.297 --> 01:47:26.297
+And you can go into HTML, call theme and then choose a format like Lettera or something else to change the different format to something else you want to see.
+
+01:47:26.297 --> 01:47:29.297
+So Lettera is one that I really, really like.
+
+01:47:29.297 --> 01:47:40.297
+That's what I use for my personal blog. It's nice and has a overall good section of like this is what's available.
+
+01:47:40.297 --> 01:47:46.297
+You can also use a specific theme and further customize components with SCSS or SAS.
+
+01:47:46.297 --> 01:47:51.297
+So maybe you really like Lettera, but you want to change a few small components.
+
+01:47:51.297 --> 01:48:00.297
+You can do that with custom .CSS files to modify specific components and use everything else.
+
+01:48:00.297 --> 01:48:06.297
+For the question, Rachel, let me see. I can get a direct link to this.
+
+01:48:06.297 --> 01:48:11.297
+So if we do authoring, I'm going to paste a new link into the chat.
+
+01:48:11.297 --> 01:48:16.297
+So that's the direct link to the slide I'm on right or the slide deck I'm on right now.
+
+01:48:16.297 --> 01:48:27.297
+And because I'm using Reveal.js, if you go there, you can actually click at the bottom left and it'll open up the section where there's a lot of different slides you can move towards.
+
+01:48:27.297 --> 01:48:35.297
+There's a hamburger menu at the bottom left of the page, three vertical or horizontal lines.
+
+01:48:35.297 --> 01:48:41.297
+And that will allow you to move quickly to the aesthetics portion.
+
+01:48:41.297 --> 01:48:46.297
+So we're on slide 45 right now. Thanks, Rachel.
+
+01:48:46.297 --> 01:48:53.297
+As far as the bootstrap themes, those in action would look something like what I'm displaying here on the screen.
+
+01:48:53.297 --> 01:48:58.297
+So if we move through these, we have a basic blog with something like Lettera.
+
+01:48:58.297 --> 01:49:01.297
+It's very minimalistic and very high contrast.
+
+01:49:01.297 --> 01:49:09.297
+You could switch over to something that's like in a dark mode that has primarily like a dark blue background with lighter gray or white text in front
+
+01:49:09.297 --> 01:49:13.297
+or this really nicely themed kind of lavender or light purple.
+
+01:49:13.297 --> 01:49:16.297
+And again, all of the components are changing in unison.
+
+01:49:16.297 --> 01:49:22.297
+So whether you're doing a blog or even just an individual HTML page, all these components will be changed automatically.
+
+01:49:22.297 --> 01:49:30.297
+And you have nice visualizations as well as the nice theming of your blog itself.
+
+01:49:30.297 --> 01:49:37.297
+I included a section underneath 04 static for boot swatch themes and again link out to a lot of the different available themes.
+
+01:49:37.297 --> 01:49:45.297
+So HTML themes from Cordo.org and all this stuff that's available there.
+
+01:49:45.297 --> 01:49:54.297
+For presentations for today, thanks to Rachel's help, we've been working through kind of a unison reveal.js presentation.
+
+01:49:54.297 --> 01:49:57.297
+So Rachel's been driving it and I created it initially.
+
+01:49:57.297 --> 01:50:03.297
+And you're able to create these pretty easily with just a little bit of code.
+
+01:50:03.297 --> 01:50:07.297
+So a very basic reveal.js presentation would look something like this.
+
+01:50:07.297 --> 01:50:12.297
+And I have a title, my first presentation, the format is equal to reveal.js.
+
+01:50:12.297 --> 01:50:16.297
+And then I create new slides by creating level two headers.
+
+01:50:16.297 --> 01:50:25.297
+So like slide one, slide two, slide three here on the page, each of which has two pound signs indicating a level two header.
+
+01:50:25.297 --> 01:50:28.297
+Within those, I have a few different lists.
+
+01:50:28.297 --> 01:50:31.297
+So I have like lists for content and content.
+
+01:50:31.297 --> 01:50:34.297
+I have an image I'm bringing in and I can even display code.
+
+01:50:34.297 --> 01:50:44.297
+So all the presentation you've seen today over the past about two hours has been covering Cordo by creating a Cordo presentation with Cordo.
+
+01:50:44.297 --> 01:50:54.297
+So very, very meta, but a nice way of displaying code and talking about code with graphics as well as programmatically creating presentations.
+
+01:50:54.297 --> 01:51:00.297
+Important parts to note here is that you're going to create new slides with level one or level two headers.
+
+01:51:00.297 --> 01:51:03.297
+So that'd be like pound pound heading.
+
+01:51:03.297 --> 01:51:12.297
+And then you can add content or list or images or codes within each of those pages and just fit them into whatever the overall structure of your page looks like.
+
+01:51:12.297 --> 01:51:16.297
+Again, if we use our fence divs, we can use that to create columns.
+
+01:51:16.297 --> 01:51:25.297
+So I might have some content on the left, more content, an additional list, and a paragraph of text that is important to hold on the left, but it's fun to include below the list.
+
+01:51:25.297 --> 01:51:33.297
+And on the right, I have a nice picture of Howard, who is like he always is, just sleeping with his head smooshed up against the left side of the page.
+
+01:51:33.297 --> 01:51:39.297
+But by using these columns, I can overall structure my document and put them side by side.
+
+01:51:39.297 --> 01:51:47.297
+That basic syntax, if I'm putting it together and kind of deleting some of the text, I'm again using fenced div syntax.
+
+01:51:47.297 --> 01:51:53.297
+So I have four colons because I'm going to nest two fenced divs within it.
+
+01:51:53.297 --> 01:51:57.297
+So four colons and then a .columns with an S.
+
+01:51:57.297 --> 01:52:05.297
+And then within it, each different column I'm creating, I'm just creating two here, will be its own fenced div with a .column class,
+
+01:52:05.297 --> 01:52:10.297
+and then an additional .fragment so they show up as I move through the presentation.
+
+01:52:10.297 --> 01:52:18.297
+And then I have my image, and again, including some alt text of a picture of my dog Howard sleeping with his head smooshed against the side of the table.
+
+01:52:18.297 --> 01:52:28.297
+But again, you can put it together this and without having to manually align with HTML, you can just use Cordo syntax to create your presentation.
+
+01:52:28.297 --> 01:52:35.297
+That's all I'm covering on presentations for today, because we are going to have another workshop going over presentations alone later on,
+
+01:52:35.297 --> 01:52:42.297
+because you can do more than just HTML, although I really like Reveal.js presentations.
+
+01:52:42.297 --> 01:52:46.297
+The last part we're going to cover for today in total will be Cordo projects.
+
+01:52:46.297 --> 01:52:51.297
+And again, don't forget to come to Isabella Velazquez's presentation.
+
+01:52:51.297 --> 01:52:59.297
+She's going to be coming and talking to us at the end of August, August 30th, to talk about Cordo projects and building your own blog with Cordo.
+
+01:52:59.297 --> 01:53:05.297
+And I can almost guarantee you that you can have some type of working blog created in under an hour.
+
+01:53:05.297 --> 01:53:13.297
+So Cordo projects, number one, are directories that provide a way to render all or some of the files in a directory with a single command,
+
+01:53:13.297 --> 01:53:17.297
+something like Cordo render my project.
+
+01:53:17.297 --> 01:53:27.297
+Another one might be a way to share YAML configuration across multiple documents in terms of rather than writing a bunch of YAML for individual documents over and over,
+
+01:53:27.297 --> 01:53:36.297
+I can use a Cordo project to apply the same YAML to an entire directory of five or 10 or even dozens or hundreds of documents.
+
+01:53:36.297 --> 01:53:39.297
+It also allows me to control where documents are rendered to.
+
+01:53:39.297 --> 01:53:49.297
+So I can redirect my artifacts out to a separate directory and have a clean directory of experimentation and then the actual final output to a separate directory.
+
+01:53:49.297 --> 01:53:56.297
+And most importantly, I think, for things like blogs or other complex sites is I can freeze rendered output.
+
+01:53:56.297 --> 01:54:05.297
+So you can imagine that I have a blog post from four years ago using some code with a package that may not even exist anymore.
+
+01:54:05.297 --> 01:54:11.297
+Rather than having to re-execute that four-year-old blog post every time I render my blog or my website,
+
+01:54:11.297 --> 01:54:15.297
+it will actually store the computation and freeze that output for me.
+
+01:54:15.297 --> 01:54:22.297
+So when I render everything else, it just renders the new thing or the things I'm telling it to render.
+
+01:54:22.297 --> 01:54:26.297
+And in addition, projects allow you to create essentially aggregations.
+
+01:54:26.297 --> 01:54:36.297
+So you can imagine a book or a website is really just multiple Cordo documents or HTML pages or PDF pages that are combined into a single output.
+
+01:54:36.297 --> 01:54:43.297
+So just like the website for accessing the content you found today or a book or anything else you're publishing,
+
+01:54:43.297 --> 01:54:49.297
+you can create much more complex things by using Cordo projects.
+
+01:54:49.297 --> 01:54:54.297
+For what a Cordo project looks like, you might have a minimal one that looks something like this.
+
+01:54:54.297 --> 01:54:59.297
+It's always going to be created with a underscore Cordo.yaml file.
+
+01:54:59.297 --> 01:55:05.297
+That is always what the file is called to create a Cordo project, underscore Cordo.yaml.
+
+01:55:05.297 --> 01:55:10.297
+And that will affect everything in its directory and subdirectories of it.
+
+01:55:10.297 --> 01:55:14.297
+So for number one within the Cordo.yaml, it's a project.
+
+01:55:14.297 --> 01:55:16.297
+And we're not saying it's a website or it's a book.
+
+01:55:16.297 --> 01:55:24.297
+We're just saying this is a Cordo project and I want you to take everything I create and throw them into this underscore output folder.
+
+01:55:24.297 --> 01:55:27.297
+And I can apply some YAML across all of them.
+
+01:55:27.297 --> 01:55:30.297
+I want Table of Contents to always be true on a number of sections.
+
+01:55:30.297 --> 01:55:34.297
+And I have a bibliography that I want to bring in for all of my citations.
+
+01:55:34.297 --> 01:55:39.297
+Then I can also say that I'm creating these in both HTML and PDF at the same time.
+
+01:55:40.297 --> 01:55:46.297
+So for my HTML, I can apply custom styling with CSS and use a specific math method.
+
+01:55:46.297 --> 01:55:51.297
+And then for PDF, I want to create a report and customize the overall layout.
+
+01:55:51.297 --> 01:55:57.297
+So it allows you to kind of structure all these different things, create a new output directory with all the files that you're rendering.
+
+01:55:57.297 --> 01:56:05.297
+And it could, again, be many, many files and control it for different syntaxes in HTML and PDF.
+
+01:56:05.297 --> 01:56:08.297
+Again, we're about three minutes away from being two hours.
+
+01:56:08.297 --> 01:56:11.297
+I'm going to stick around for quite a while to answer questions.
+
+01:56:11.297 --> 01:56:13.297
+Thank you for all the great questions.
+
+01:56:13.297 --> 01:56:18.297
+But if you want to learn how to build a blog or really create like a complex Cordo project,
+
+01:56:18.297 --> 01:56:24.298
+make sure to come and join us for Isabel Velasquez's presentation, August 30th at 12 p.m. Eastern.
+
+01:56:24.298 --> 01:56:31.298
+You can add that to your calendar as a reminder with rstd.io slash Cordo dash blog.
+
+01:56:31.298 --> 01:56:36.298
+And that will allow you to be reminded a couple of weeks from now that, hey, this presentation is happening.
+
+01:56:36.298 --> 01:56:43.298
+Again, it'll be on YouTube and it'll be recorded and live streamed for your viewing pleasure.
+
+01:56:43.298 --> 01:56:50.298
+As we kind of wrap up for today on the actual presentation and get more into Q&A and answering a lot of the good questions you'll have,
+
+01:56:50.298 --> 01:56:53.298
+I want to give a huge shout out to the entire Cordo development team.
+
+01:56:53.298 --> 01:56:59.298
+Cordo is really a labor of love and crafted with love and care by the team.
+
+01:56:59.298 --> 01:57:04.298
+So development of Cordo is sponsored by RStudioPVC, soon to be PositPVC.
+
+01:57:04.298 --> 01:57:08.298
+The same core team works on both Cordo and RMarkdown.
+
+01:57:08.298 --> 01:57:10.298
+So you shouldn't be afraid about some of these changes.
+
+01:57:10.298 --> 01:57:15.298
+You should be excited. Names like Yiwei, JJ Allaire, Christoph, Charles, Carlos,
+
+01:57:15.298 --> 01:57:20.298
+similar people that are working or the same people working on both Cordo and RMarkdown and Knitter.
+
+01:57:20.298 --> 01:57:27.298
+Beyond that, because it's an open source project, there's also a sub link out to all of the contributors and all the people who contributed to it.
+
+01:57:27.298 --> 01:57:33.298
+You can contribute in ways like bug reports or feature requests or feedback in general.
+
+01:57:33.298 --> 01:57:41.298
+And you can get that done at github.com slash Cordo dash dev slash Cordo dash CLI.
+
+01:57:41.298 --> 01:57:44.298
+To close, in terms of the presentation, don't worry about going away.
+
+01:57:44.298 --> 01:57:47.298
+I'll answer more questions and share some more things.
+
+01:57:47.298 --> 01:57:53.298
+Why you should consider Cordo. Batteries included with the shared syntax across output types in different languages.
+
+01:57:53.298 --> 01:57:57.298
+You have the ability to choose your own editor and your preferred data science language.
+
+01:57:57.298 --> 01:58:05.298
+We will be doing a workshop or kind of a webinar on using Jupyter and VS Code and Python with Cordo.
+
+01:58:05.298 --> 01:58:10.298
+And doing that as a separate webinar so we can dedicate enough time to it.
+
+01:58:10.298 --> 01:58:15.298
+And that RMarkdown is still going to be maintained, but we're building all these new features into Cordo.
+
+01:58:15.298 --> 01:58:19.298
+So RMarkdown has a huge ecosystem that we're still supporting and still maintaining.
+
+01:58:20.298 --> 01:58:23.298
+But we're adding in new features into Cordo so they apply to everyone.
+
+01:58:23.298 --> 01:58:28.298
+As opposed to building out individual RMarkdown extension packages.
+
+01:58:28.298 --> 01:58:34.298
+If you want to access the materials, I have full workshop materials from two days that we used at RStudioConf.
+
+01:58:34.298 --> 01:58:39.298
+I have the webinar slides that are linked to here, as well as the RStudio Cloud content.
+
+01:58:39.298 --> 01:58:44.298
+All of which is available on the YouTube page as well.
+
+01:58:44.298 --> 01:58:48.298
+If you have follow-up questions, I'm going to do my best to stick around for a while and answer some of those.
+
+01:58:48.298 --> 01:58:52.298
+I know that some of you all, two hours is a big commitment, so maybe we'll see you later.
+
+01:58:52.298 --> 01:58:58.298
+If you have questions, you can ask them on community.rstudio.com underneath the Cordo tag.
+
+01:58:58.298 --> 01:59:03.298
+Or again, I'll stick around for a little bit today or reach out anytime on Twitter.
+
+01:59:03.298 --> 01:59:07.298
+With that, I'm going to bring Rachel back on screen.
+
+01:59:07.298 --> 01:59:12.298
+We can drop the presentation and we can go back to the talking head format.
+
+01:59:12.298 --> 01:59:18.298
+And the exciting Rachel and Tom show as we talk about the morning and Cordo itself.
+
+01:59:18.298 --> 01:59:22.298
+Thank you so much, Tom. That was awesome.
+
+01:59:22.298 --> 01:59:27.298
+And so impressed with you just running through with our screen share not working immediately.
+
+01:59:27.298 --> 01:59:30.298
+That went very smoothly after the fact.
+
+01:59:30.298 --> 01:59:35.298
+Awesome, Rachel. Thank you so much for the quick adaptation and for being a good colleague running through it all.
+
+01:59:35.298 --> 01:59:37.298
+Thank you.
+
+01:59:37.298 --> 01:59:38.298
+There are a lot of questions.
+
+01:59:38.298 --> 01:59:39.298
+So many questions.
+
+01:59:39.298 --> 01:59:41.298
+Yes.
+
+01:59:41.298 --> 01:59:47.298
+I want to make sure to go over to Slido first to ask some anonymous questions, too.
+
+01:59:47.298 --> 01:59:51.298
+Somebody had asked and it's been upvoted quite a bit.
+
+01:59:51.298 --> 01:59:56.298
+Is it possible to add authentication to a Cordo website?
+
+01:59:56.298 --> 01:59:57.298
+Yeah.
+
+01:59:57.298 --> 01:59:59.298
+So it's a great question.
+
+01:59:59.298 --> 02:00:01.298
+There's a couple different ways you can think about it.
+
+02:00:01.298 --> 02:00:08.298
+Cordo, if you're generating a website, is just .html or it's just general HTML content.
+
+02:00:08.298 --> 02:00:10.298
+You can publish it wherever you want.
+
+02:00:10.298 --> 02:00:22.298
+Obviously, with things like RStudio Connect, you can publish Cordo to your own server or behind your own firewall and control both the rendering process and the authentication process.
+
+02:00:22.298 --> 02:00:24.298
+For some people, though, they're like, well, I'm an individual.
+
+02:00:24.298 --> 02:00:26.298
+I can't buy and stand up Connect.
+
+02:00:26.298 --> 02:00:28.298
+And that's totally fine.
+
+02:00:28.298 --> 02:00:34.298
+One other option is Netlify has an authenticated level, I think, at like $19 a month.
+
+02:00:34.298 --> 02:00:39.298
+And you can add authentication to specific pages and host your content on Netlify.
+
+02:00:39.298 --> 02:00:50.298
+Outside of that, again, because Cordo is generating literal HTML, anywhere that you can generally embed HTML and add on authentication could also be done there.
+
+02:00:50.298 --> 02:00:52.298
+So you're not kind of limited.
+
+02:00:52.298 --> 02:00:58.298
+It's just anywhere you can host a website and add authentication, you can also do that via Cordo.
+
+02:00:58.298 --> 02:00:59.298
+Awesome.
+
+02:00:59.298 --> 02:01:01.298
+Thank you.
+
+02:01:01.298 --> 02:01:05.298
+I was teasing Tom that I feel like this is a morning talk show that we're on right here.
+
+02:01:05.298 --> 02:01:09.298
+So another question that was upvoted was from Kyle.
+
+02:01:09.298 --> 02:01:17.298
+And it was, for collaborative projects with R and Python, is there a recommended method for tracking package versions?
+
+02:01:17.298 --> 02:01:19.298
+Would Rm cover this kind of situation?
+
+02:01:19.298 --> 02:01:20.298
+Yes.
+
+02:01:20.298 --> 02:01:21.298
+Very good question.
+
+02:01:21.298 --> 02:01:30.298
+So if you go to Cordo.org, and I'll grab a link for Rachel to share on the screen here in a second, there's an entire section dedicated to essentially that topic.
+
+02:01:30.298 --> 02:01:42.298
+And that's really what Cordo is trying to provide is a way of allowing colleagues in multiple languages to work together on the same project and not bump up into each other when they're trying to execute their code.
+
+02:01:42.298 --> 02:01:48.298
+So that's part of what projects and managing execution allow you to do.
+
+02:01:48.298 --> 02:01:53.298
+So I'm going to drop a link into the chat that is addressing this directly.
+
+02:01:53.298 --> 02:01:59.298
+And then, Rachel, if you want to screen share through that real briefly, we'll talk about what it means.
+
+02:01:59.298 --> 02:02:01.298
+Oh, yes, I will screen share.
+
+02:02:01.298 --> 02:02:03.298
+Sorry.
+
+02:02:03.298 --> 02:02:06.298
+Sometimes it doesn't let me grab the link from there.
+
+02:02:06.298 --> 02:02:08.298
+Do you want to just send it in the private chat?
+
+02:02:08.298 --> 02:02:10.298
+Yeah, absolutely.
+
+02:02:10.298 --> 02:02:12.298
+There it is.
+
+02:02:12.298 --> 02:02:19.298
+What this whole section covers is essentially that idea of I want to freeze or control execution.
+
+02:02:19.298 --> 02:02:23.298
+And you can do that with or without virtual environments.
+
+02:02:23.298 --> 02:02:25.298
+So we're going to put a side by side real quick.
+
+02:02:25.298 --> 02:02:29.298
+So on this page, it talks about just the general idea of managing execution.
+
+02:02:29.298 --> 02:02:42.298
+So if you scroll down to freeze, you can use freeze to basically say, I want you to freeze the output of code, meaning that even if someone else tries to render it, it's not going to re-execute the code.
+
+02:02:42.298 --> 02:02:46.298
+They don't even have to have Python installed on their machine or are installed on the machine.
+
+02:02:46.298 --> 02:02:52.298
+It's just going to be rendering the HTML or the PDF via Cordo.
+
+02:02:52.298 --> 02:02:57.298
+If you have freeze equals false, then it will always try and re-execute code.
+
+02:02:57.298 --> 02:03:10.298
+But freeze equals true or freeze equals auto allows you to say only re-execute code when I change the source code or just never do it unless I manually force click render on that document.
+
+02:03:10.298 --> 02:03:18.298
+If you go down one section lower, there's using freeze and then one more subsection, virtual environments.
+
+02:03:18.298 --> 02:03:26.298
+It talks about that you might have a requirements.txt or a virtual environment like a venv in Python or an renv in R.
+
+02:03:26.298 --> 02:03:29.298
+Again, we're not doing a special language.
+
+02:03:29.298 --> 02:03:32.298
+It's whatever you're using in another language is what you use.
+
+02:03:32.298 --> 02:03:50.298
+I most commonly use venv in virtualenv in Python, and I'm using renv in R to control exactly installing specific libraries or a collection of libraries and defining those into a virtual environment.
+
+02:03:50.298 --> 02:03:51.298
+Great question.
+
+02:03:51.298 --> 02:03:53.298
+Thank you.
+
+02:03:53.298 --> 02:04:01.298
+I see over on YouTube, Jake, hi, Jake, had just asked, do packages like sharing on themer work with Cordo?
+
+02:04:02.298 --> 02:04:03.298
+Another good question.
+
+02:04:03.298 --> 02:04:09.298
+So I would generally say, so Schrodingen is, let's start from the top.
+
+02:04:09.298 --> 02:04:16.298
+Schrodingen actually uses a library called remark.js as the way of building slides.
+
+02:04:16.298 --> 02:04:20.298
+Cordo decided to move to reveal.js.
+
+02:04:20.298 --> 02:04:25.298
+The reason why we made that distinction is reveal.js is Pandoc compatible.
+
+02:04:25.298 --> 02:04:33.298
+So you can actually edit presentations in visual mode and get these syntax and, like, the highlighting to work properly.
+
+02:04:33.298 --> 02:04:37.298
+Kudos to Rachel for getting both themer and Schrodingen correct.
+
+02:04:37.298 --> 02:04:38.298
+That's awesome.
+
+02:04:38.298 --> 02:04:39.298
+High five.
+
+02:04:39.298 --> 02:04:43.298
+I was just asking who said that the correct way, because I don't know.
+
+02:04:43.298 --> 02:04:45.298
+Yours sounded more confident.
+
+02:04:45.298 --> 02:04:47.298
+No, you got exactly right.
+
+02:04:47.298 --> 02:04:52.298
+But I would say so Schrodingen themer out of the box is not necessarily going to work with Cordo.
+
+02:04:52.298 --> 02:04:55.298
+But the same ideas will.
+
+02:04:55.298 --> 02:05:04.298
+So you can imagine that remark.js, which powers Schrodingen, there's specific CSS components that affect specific parts.
+
+02:05:04.298 --> 02:05:12.298
+So you can use themes and Cordo bundles a bunch of different themes for reveal.js presentations.
+
+02:05:12.298 --> 02:05:14.298
+I would start there.
+
+02:05:14.298 --> 02:05:21.298
+And then there's a whole subsection on theming or applying HTML formatting to your themes.
+
+02:05:21.298 --> 02:05:27.298
+So if you go to Cordo.org, reveal.js, reveal themes, it will talk about that.
+
+02:05:27.298 --> 02:05:28.298
+Good question.
+
+02:05:28.298 --> 02:05:29.298
+Awesome.
+
+02:05:29.298 --> 02:05:34.298
+I'll take another question over from YouTube.
+
+02:05:34.298 --> 02:05:47.298
+And this was one that was from a bit earlier, but was how does Cordo handle two pictures in the same slide or bullet breakdowns and icons?
+
+02:05:47.298 --> 02:05:48.298
+Yep.
+
+02:05:48.298 --> 02:05:55.298
+So if you had a presentation like I had in reveal.js, the images are going to be stacked on top of each other.
+
+02:05:55.298 --> 02:05:57.298
+It's not going to try to align them automatically.
+
+02:05:57.298 --> 02:06:01.298
+It's just going to pull them to the left and inject them one on top of the other.
+
+02:06:01.298 --> 02:06:11.298
+You can use something like the dot columns, fence divs, to put them side by side, almost like Rachel and I are left aligned and right aligned right now in two columns.
+
+02:06:11.298 --> 02:06:28.298
+Or you could use absolute positioning with graphics and you could do a dot absolute class and then say literally from the top or the left or the right or the bottom of the screen, put them 150 pixels to the left and 200 pixels up.
+
+02:06:28.298 --> 02:06:33.298
+I would probably not put them inside bullets unless you had really small images.
+
+02:06:33.298 --> 02:06:46.298
+You could do icons with like font awesome if they're really small, but generally I would rely on alignment with the more typical fence divs that we showed in today's presentation.
+
+02:06:46.298 --> 02:06:47.298
+Great, thank you.
+
+02:06:47.298 --> 02:06:54.298
+I see there was actually a question on Slido that covered that as well with regards to scientific papers too.
+
+02:06:54.298 --> 02:06:56.298
+Perfect.
+
+02:06:56.298 --> 02:07:01.298
+Yeah, as much as possible, using the Cordo fence div syntax means you can use it anywhere.
+
+02:07:01.298 --> 02:07:11.298
+Now there's places where if you try and do five images on one page in a presentation, it might be a bit awkward because you can't scroll vertically.
+
+02:07:11.298 --> 02:07:19.298
+But on an academic article or a website, it makes a lot of sense because you're scrolling up and down and able to move between images.
+
+02:07:20.298 --> 02:07:33.298
+Copying over a few questions from the Slido over to the chat, so it may look like I'm asking them here, but is how do R and Python share objects if they're all in one Cordo document?
+
+02:07:33.298 --> 02:07:41.298
+Yep, so if you're trying to mix and match R and Python in the same single QMD, then you're using reticulate.
+
+02:07:41.298 --> 02:07:44.298
+You're basically saying I'm okay with using them together.
+
+02:07:44.298 --> 02:07:51.298
+So I have an R installation and I have a Python installation and I'm using reticulate to pass objects back and forth.
+
+02:07:51.298 --> 02:07:59.298
+There's also the idea of like in Python land, there's things I believe like Python 2 R or other kind of libraries like that.
+
+02:07:59.298 --> 02:08:05.298
+I'm not as deeply familiar with them, but I'm very familiar and comfortable with using reticulate inside Cordo.
+
+02:08:06.298 --> 02:08:18.298
+The alternative is within a Cordo project, you could have a native Python document that someone's editing on a whole different computer, like we were talking about earlier, and an R document that I'm editing on my computer.
+
+02:08:18.298 --> 02:08:21.298
+And we can still collaborate by using freeze equals true.
+
+02:08:21.298 --> 02:08:33.298
+And we're passing just data back and forth like she, Rachel, works on a Python document, writes out a parquet file that I then ingest into R and work on in a separate document.
+
+02:08:33.298 --> 02:08:39.298
+That's totally possible as well, where you don't have to mix and match them in the same document, but in the same project.
+
+02:08:42.298 --> 02:08:47.298
+Great, thank you. And there are so many great questions here today, too.
+
+02:08:47.298 --> 02:08:56.298
+So we will make sure that we answer them in some format, like a blog post and put that on the community.rstudio.com site, too.
+
+02:08:56.298 --> 02:09:00.298
+Maybe do a couple more and then we'll move over to the blog post.
+
+02:09:01.298 --> 02:09:05.298
+I don't want to keep you too long, and we're already two hours and ten, but I'm having a good time.
+
+02:09:05.298 --> 02:09:07.298
+But I want to make sure we're probably going to be here all day.
+
+02:09:07.298 --> 02:09:10.298
+That's good. Let's say maybe we'll do three more.
+
+02:09:10.298 --> 02:09:12.298
+Perfect, that's good.
+
+02:09:12.298 --> 02:09:15.298
+Can we add SQL script in Cordo?
+
+02:09:15.298 --> 02:09:21.298
+Absolutely. So Knitter actually allows you to execute SQL code in a Knitter code chunk.
+
+02:09:22.298 --> 02:09:31.298
+So rather than using R, when you're doing your brackets, it would be like backtick, backtick, backtick, curly bracket SQL, and you could write raw SQL code.
+
+02:09:31.298 --> 02:09:41.298
+Or you could do something like dbplyr in R to write SQL code via dplyr, and it'll actually do the conversion for you.
+
+02:09:41.298 --> 02:09:51.298
+And I believe in Python, there's a couple libraries like SQLAlchemy that allow you to write Python code that executes actually a SQL as well.
+
+02:09:53.298 --> 02:09:59.298
+Perfect. You put a lot of pressure to pick a few questions here. There's a lot of questions.
+
+02:09:59.298 --> 02:10:03.298
+Let's make it five. There you go. We'll go to 120. How about that?
+
+02:10:03.298 --> 02:10:10.298
+I'm going to go by some of the top voted ones that are on Slido so I don't have to make the decision.
+
+02:10:11.298 --> 02:10:14.298
+But somebody had asked, and let me copy it over here.
+
+02:10:16.298 --> 02:10:25.298
+What are some of the advantages of using Cordo over Emacs org mode? You can read it there.
+
+02:10:25.298 --> 02:10:32.298
+Absolutely. Yeah, so there's a lot of different ways of taking a document with literate programming.
+
+02:10:32.298 --> 02:10:38.298
+Part of that is you have things like Jupyter and mbconvert. You have Jupyter and mbdev.
+
+02:10:38.298 --> 02:10:42.298
+You have Cordo. You have R Markdown. You have raw Pandoc.
+
+02:10:42.298 --> 02:10:52.298
+You have org mode, which is actually an extension to Emacs, where in your terminal inside Emacs rather than an editor, you can write documents with literate programming.
+
+02:10:52.298 --> 02:11:01.298
+Rather than saying what the advantage is, is kind of making it language and location agnostic.
+
+02:11:01.298 --> 02:11:08.298
+Whereas Emacs and org mode kind of says you're basically saying like you're going to work inside that format only.
+
+02:11:08.298 --> 02:11:12.298
+Cordo is really just plain text, so you could use it in any text editor.
+
+02:11:12.298 --> 02:11:17.298
+You could use it without a text editor and just use it inside a terminal if you really wanted to.
+
+02:11:17.298 --> 02:11:21.298
+You can use it like really richly inside RStudio and VS Code and inside Jupyter.
+
+02:11:21.298 --> 02:11:26.298
+And you're meeting people where they are, as opposed to saying like this is the only way to do it.
+
+02:11:26.298 --> 02:11:30.298
+It's like you're allowing different editors and different languages to meet in the middle.
+
+02:11:30.298 --> 02:11:35.298
+I will say, though, that I'm not deeply familiar with org mode as a user,
+
+02:11:35.298 --> 02:11:45.298
+but I'm aware of like there are other things out there that are great and get things done and just calling out a few of those.
+
+02:11:45.298 --> 02:11:52.298
+Thank you. Another upvoted question on Slido was how do we comment align in YAML?
+
+02:11:52.298 --> 02:12:06.298
+Yeah. So if you I would typically say I don't add like commenting to YAML code in terms of like I'm always a bit nervous about messing things up.
+
+02:12:06.298 --> 02:12:15.298
+You can do a pound sign in front of specific lines and that at least in Cordo appears to comment out that line and it no longer executes.
+
+02:12:15.298 --> 02:12:21.298
+But more typically, like if you're trying to say like I'm doing this specific thing and like writing out a description,
+
+02:12:21.298 --> 02:12:26.298
+like literate programming of YAML, you might actually just want to put that into a comment below the YAML.
+
+02:12:26.298 --> 02:12:32.298
+Like you can do an HTML comment or a hidden code chunk that doesn't display when you render the document.
+
+02:12:32.298 --> 02:12:37.298
+But it says this is why I'm using this YAML option as opposed to trying to constrain yourself.
+
+02:12:28.143 --> 02:12:35.143
+Quarto Workshop! RStudio, cli, fs, gt, Quarto, rmarkdown, rstudio, tidyverse
+
+02:12:58.143 --> 02:13:01.703
+Do I love Hugo, or do I not love Hugo?
+
+02:13:01.703 --> 02:13:04.742
+Hugo is the rendering engine that BlogDown uses.
+
+02:13:04.742 --> 02:13:06.703
+So when you're actually using BlogDown,
+
+02:13:06.703 --> 02:13:10.343
+you're writing .rmds or .rmarkdown files
+
+02:13:10.343 --> 02:13:12.463
+that generate .md files.
+
+02:13:12.463 --> 02:13:15.082
+And then you hand over everything to Hugo
+
+02:13:15.082 --> 02:13:18.262
+to render it and create HTML.
+
+02:13:18.262 --> 02:13:20.383
+That is really powerful for creating
+
+02:13:20.383 --> 02:13:24.543
+exceptionally complex and specific websites.
+
+02:13:24.543 --> 02:13:26.003
+I can think of some of the websites
+
+02:13:26.003 --> 02:13:27.742
+I've seen that people like Allison Hill
+
+02:13:27.742 --> 02:13:30.043
+has created that are just beautiful and very
+
+02:13:30.043 --> 02:13:32.562
+functional and amazing.
+
+02:13:32.562 --> 02:13:35.723
+I am a noted Hugo non-fan.
+
+02:13:35.723 --> 02:13:39.922
+Whatever the opposite of a stan is, I am not a stan of Hugo.
+
+02:13:39.922 --> 02:13:42.403
+It's a separate thing that I have to manage.
+
+02:13:42.403 --> 02:13:44.363
+The BlogDown team has done a lot of work
+
+02:13:44.363 --> 02:13:46.803
+to make it much more user-friendly.
+
+02:13:46.803 --> 02:13:49.443
+But for me, it just was not the right option.
+
+02:13:49.443 --> 02:13:51.503
+It was not something I loved.
+
+02:13:51.503 --> 02:13:53.323
+If you have a very complex workflow
+
+02:13:53.323 --> 02:13:55.202
+and BlogDown's working for you, again, we're
+
+02:13:55.202 --> 02:13:57.382
+going to maintain BlogDown.
+
+02:13:57.403 --> 02:14:01.403
+And you can technically write Hugo-style Markdown documents
+
+02:14:01.403 --> 02:14:02.782
+with Cordo.
+
+02:14:02.782 --> 02:14:05.683
+Some of the things you lose by using
+
+02:14:05.683 --> 02:14:09.922
+Hugo as your rendering engine is things like interactivity,
+
+02:14:09.922 --> 02:14:12.922
+because you're only writing out that md that then gets parsed
+
+02:14:12.922 --> 02:14:16.323
+by Hugo, is you're always going to be limited in the things you
+
+02:14:16.323 --> 02:14:18.683
+can do with HTML widgets or Jupyter widgets
+
+02:14:18.683 --> 02:14:22.842
+or Observable because you're writing plain text.
+
+02:14:22.842 --> 02:14:25.323
+But BlogDown's very, very efficient at rendering
+
+02:14:25.323 --> 02:14:26.963
+1,000 blog posts.
+
+02:14:26.982 --> 02:14:29.223
+And I know for some people, like Yiwei,
+
+02:14:29.223 --> 02:14:32.263
+he literally has a blog that's been going for 15 years
+
+02:14:32.263 --> 02:14:34.903
+and has thousands of blog posts.
+
+02:14:34.903 --> 02:14:38.702
+For him, the conversion cost doesn't make any sense.
+
+02:14:38.702 --> 02:14:40.223
+His blog is working great.
+
+02:14:40.223 --> 02:14:41.583
+We're maintaining BlogDown.
+
+02:14:41.583 --> 02:14:43.422
+He's actually the maintainer of BlogDown,
+
+02:14:43.422 --> 02:14:45.422
+so he knows it's not going away.
+
+02:14:45.422 --> 02:14:47.743
+So you don't have to, but I personally
+
+02:14:47.743 --> 02:14:51.943
+switched over to using Cordo blogs from Distill.
+
+02:14:51.943 --> 02:14:53.663
+So if you're coming from the Distill land,
+
+02:14:53.663 --> 02:14:55.902
+I would say there's a much stronger emphasis
+
+02:14:55.902 --> 02:14:58.182
+that Cordo brings a lot to the table
+
+02:14:58.182 --> 02:15:03.122
+that you're familiar with with Distill, but does it better.
+
+02:15:03.122 --> 02:15:03.842
+Long question.
+
+02:15:03.842 --> 02:15:04.342
+Thank you.
+
+02:15:04.342 --> 02:15:06.282
+There's a long answer, sorry.
+
+02:15:06.282 --> 02:15:08.003
+OK, two more questions.
+
+02:15:08.003 --> 02:15:12.303
+I see Kero had asked on YouTube Live,
+
+02:15:12.303 --> 02:15:17.083
+is it possible to mix text and image content in the layout?
+
+02:15:17.083 --> 02:15:17.982
+So you can.
+
+02:15:17.982 --> 02:15:25.583
+There is a section of the page authoring figures block
+
+02:15:25.583 --> 02:15:29.422
+layout, and I'm going to type this in and paste it here
+
+02:15:29.422 --> 02:15:33.303
+into the chat if you want to highlight it.
+
+02:15:33.303 --> 02:15:33.863
+You can.
+
+02:15:33.863 --> 02:15:35.363
+There are certain times when things
+
+02:15:35.363 --> 02:15:36.782
+are a bit more surprising than I'd
+
+02:15:36.782 --> 02:15:39.963
+like in terms of if I'm trying to mix text and images
+
+02:15:39.963 --> 02:15:41.542
+in a table, that's still something
+
+02:15:41.542 --> 02:15:44.143
+that Cordo is working on for making it
+
+02:15:44.143 --> 02:15:45.743
+a really good experience.
+
+02:15:45.743 --> 02:15:49.103
+But with the general block layout syntax,
+
+02:15:49.103 --> 02:15:52.103
+which is very similar to layout number of columns equals two,
+
+02:15:52.103 --> 02:15:55.863
+you can mix and match some text, some paragraph, lists,
+
+02:15:55.863 --> 02:15:58.822
+and graphics together.
+
+02:15:58.822 --> 02:16:01.223
+But still some more work for us to do to make that really,
+
+02:16:01.223 --> 02:16:02.062
+really, really good.
+
+02:16:06.223 --> 02:16:08.103
+Great, thank you.
+
+02:16:08.103 --> 02:16:11.103
+And I also see Brian had asked, can we
+
+02:16:11.103 --> 02:16:14.583
+write package vignettes as Cordo?
+
+02:16:14.583 --> 02:16:19.262
+Yeah, so it's kind of a dependency with CRAN.
+
+02:16:19.262 --> 02:16:25.062
+So CRAN is expecting .md and .rmd files.
+
+02:16:25.062 --> 02:16:27.782
+If you were to create a vignette,
+
+02:16:27.782 --> 02:16:31.622
+you'd really be rendering out to a specific flavor of PDF.
+
+02:16:31.622 --> 02:16:34.542
+I don't believe off the top of my head
+
+02:16:34.542 --> 02:16:36.663
+that that's ready to go right now.
+
+02:16:36.663 --> 02:16:40.143
+Edgar Ruiz, part of the team here at our studio,
+
+02:16:40.143 --> 02:16:42.702
+is working on a package called Ecodown, which
+
+02:16:42.702 --> 02:16:46.363
+allows you to write essentially complex websites that
+
+02:16:46.363 --> 02:16:48.822
+encompass multiple packages with Cordo
+
+02:16:48.863 --> 02:16:53.502
+and using that as an extension of more of Packagedown.
+
+02:16:53.502 --> 02:16:55.463
+I'll have to look at specifically for package
+
+02:16:55.463 --> 02:16:58.183
+vignettes as PDF via Cordo.
+
+02:16:58.183 --> 02:17:02.262
+But again, you're not really getting like the thing
+
+02:17:02.262 --> 02:17:04.743
+you're doing is you're building for CRAN as opposed
+
+02:17:04.743 --> 02:17:06.623
+to building for anyone.
+
+02:17:06.623 --> 02:17:08.662
+And because there's limitations and a focus
+
+02:17:08.662 --> 02:17:11.822
+on what CRAN accepts, all the things you can do in Cordo
+
+02:17:11.822 --> 02:17:14.542
+are not necessarily accepted by what CRAN will accept for you.
+
+02:17:15.542 --> 02:17:16.023
+OK.
+
+02:17:16.023 --> 02:17:16.783
+I lied.
+
+02:17:16.783 --> 02:17:20.743
+There's one more question that I'm going to ask right now, too.
+
+02:17:20.743 --> 02:17:23.542
+What recommendations do you have for people who are just
+
+02:17:23.542 --> 02:17:24.702
+learning about Cordo?
+
+02:17:24.702 --> 02:17:25.942
+How should they start?
+
+02:17:25.942 --> 02:17:29.303
+And what are the best resources?
+
+02:17:29.303 --> 02:17:30.343
+Just do things.
+
+02:17:30.343 --> 02:17:33.743
+I mean, that's a trivial answer in terms of like,
+
+02:17:33.743 --> 02:17:34.583
+that's not fair.
+
+02:17:34.583 --> 02:17:37.063
+But really, it is just do things.
+
+02:17:37.063 --> 02:17:39.743
+If you are creating HTML documents,
+
+02:17:39.743 --> 02:17:43.502
+and if you stick to very simple HTML documents,
+
+02:17:43.502 --> 02:17:46.822
+if you stick to very basic YAML, like literally like format
+
+02:17:46.822 --> 02:17:50.623
+equals HTML, format equals PDF, just
+
+02:17:50.623 --> 02:17:53.343
+start doing some of your daily work there in terms of rather
+
+02:17:53.343 --> 02:17:56.222
+than thinking about, I wrote some .R files.
+
+02:17:56.222 --> 02:17:58.063
+I generated a CSV.
+
+02:17:58.063 --> 02:18:00.942
+I take the CSV and hand it off to a colleague,
+
+02:18:00.942 --> 02:18:05.023
+or I take it into Excel, or I take it into something else.
+
+02:18:05.023 --> 02:18:08.343
+Think about what value does Cordo bring to me?
+
+02:18:08.343 --> 02:18:10.542
+That ability to mix code that generates
+
+02:18:10.542 --> 02:18:12.702
+graphics and tables and text.
+
+02:18:12.702 --> 02:18:15.303
+Things like lab notebooks or lab reports,
+
+02:18:15.303 --> 02:18:18.982
+or even for like within an organization,
+
+02:18:18.982 --> 02:18:21.662
+like generating presentations with code and graphics
+
+02:18:21.662 --> 02:18:23.903
+and not having to manually rebuild them,
+
+02:18:23.903 --> 02:18:25.623
+or even just normal reports.
+
+02:18:25.623 --> 02:18:27.422
+Like, I got a lot of value out of that
+
+02:18:27.422 --> 02:18:30.382
+during my PhD using things like R Markdown
+
+02:18:30.382 --> 02:18:33.542
+that I may continue to get value out of with Cordo.
+
+02:18:33.542 --> 02:18:35.743
+If you really are thinking like, I just want to learn
+
+02:18:35.743 --> 02:18:39.143
+and like really learn deeply, Cordo.org
+
+02:18:39.143 --> 02:18:41.023
+has the guides.
+
+02:18:41.023 --> 02:18:42.942
+Focus, again, on the subset of topics
+
+02:18:42.942 --> 02:18:44.343
+that you're trying to learn about.
+
+02:18:44.343 --> 02:18:46.743
+Maybe it's presentations and static reports.
+
+02:18:46.743 --> 02:18:48.903
+That's a really great place to start.
+
+02:18:48.903 --> 02:18:51.783
+And there's a lot of powerful things you can do there.
+
+02:18:51.783 --> 02:18:55.463
+So on the left, there's documents and presentations.
+
+02:18:55.463 --> 02:18:57.583
+If you just focus on those two tabs,
+
+02:18:57.583 --> 02:19:01.542
+you can be very powerful and get a lot of stuff done.
+
+02:19:01.542 --> 02:19:06.183
+The other part is the authoring section at the very top.
+
+02:19:06.183 --> 02:19:08.063
+That gives you basically what is all
+
+02:19:08.063 --> 02:19:10.542
+the Cordo-specific cool stuff I can do.
+
+02:19:10.542 --> 02:19:13.343
+And again, most of that is format agnostic,
+
+02:19:13.343 --> 02:19:16.463
+as opposed to learning just a specific format.
+
+02:19:16.463 --> 02:19:20.422
+So laying tables or graphics or diagrams or whatever else,
+
+02:19:20.422 --> 02:19:22.222
+you can write out a lot of different things
+
+02:19:22.222 --> 02:19:24.422
+about what's possible in Cordo.
+
+02:19:24.422 --> 02:19:27.783
+The last thing I'll say is come to Isabella Velasquez's
+
+02:19:27.783 --> 02:19:28.903
+presentation.
+
+02:19:28.903 --> 02:19:31.183
+She'll be talking about building a blog.
+
+02:19:31.183 --> 02:19:35.023
+Maintaining a personal blog as basically a portfolio
+
+02:19:35.023 --> 02:19:38.702
+is useful for you to learn things and share that knowledge
+
+02:19:38.702 --> 02:19:42.382
+as well as actually use it in practice.
+
+02:19:42.382 --> 02:19:44.702
+And then if you're looking for your next job
+
+02:19:44.702 --> 02:19:47.023
+or you're just trying to remember what the heck you did
+
+02:19:47.023 --> 02:19:49.463
+six months ago, rather than digging back through notes,
+
+02:19:49.463 --> 02:19:51.063
+you can be like, oh, yeah, I literally
+
+02:19:51.063 --> 02:19:52.822
+have a blog post about that.
+
+02:19:52.822 --> 02:19:55.783
+So I personally, every time I'm trying to figure out, OK,
+
+02:19:55.783 --> 02:19:58.702
+how do I scrape JSON data from this website
+
+02:19:58.702 --> 02:20:00.502
+and bring it in and plot it?
+
+02:20:00.502 --> 02:20:02.942
+I wrote a blog post a year and a half ago
+
+02:20:02.942 --> 02:20:04.502
+that tells me how to do that.
+
+02:20:04.502 --> 02:20:06.463
+And I don't have to store it all in my head.
+
+02:20:06.463 --> 02:20:10.422
+I can use the reference material I wrote for myself.
+
+02:20:10.422 --> 02:20:11.143
+That's great.
+
+02:20:11.143 --> 02:20:11.982
+Thank you, Tom.
+
+02:20:11.982 --> 02:20:17.222
+And I know somebody put this tip in the Slido link as well,
+
+02:20:17.222 --> 02:20:22.063
+but also recommended to check out Minay's Cordo tip a day.
+
+02:20:22.063 --> 02:20:25.422
+And I'll share this again right in the chat window too.
+
+02:20:28.143 --> 02:20:29.662
+I see someone else had just asked,
+
+02:20:29.662 --> 02:20:30.963
+they couldn't attend earlier.
+
+02:20:30.963 --> 02:20:32.502
+Will the video remain here?
+
+02:20:32.502 --> 02:20:33.002
+Yes.
+
+02:20:33.002 --> 02:20:36.403
+So the recording, one of the great things about YouTube Live
+
+02:20:36.403 --> 02:20:40.322
+is that it will live there immediately after the live
+
+02:20:40.322 --> 02:20:42.922
+stream ends as well.
+
+02:20:42.922 --> 02:20:46.283
+So you can go back there and review the content.
+
+02:20:46.283 --> 02:20:48.343
+And then if you have follow-up questions,
+
+02:20:48.343 --> 02:20:52.843
+I would recommend, again, using this community thread here.
+
+02:20:52.843 --> 02:20:55.042
+So we can all help support each other there
+
+02:20:55.042 --> 02:20:57.762
+and answer questions as well.
+
+02:20:57.762 --> 02:20:59.882
+Tom and I will go through and collect
+
+02:20:59.882 --> 02:21:02.483
+all of the amazing questions that were asked today
+
+02:21:02.483 --> 02:21:05.723
+too, whether it was on YouTube or Slido,
+
+02:21:05.723 --> 02:21:08.762
+group those together, and try and put out a blog post.
+
+02:21:08.762 --> 02:21:10.723
+I'm not going to commit the timeline yet,
+
+02:21:10.723 --> 02:21:14.562
+but we will work on that and getting that out to you all
+
+02:21:14.562 --> 02:21:16.322
+too.
+
+02:21:16.322 --> 02:21:19.202
+Thank you so much, Tom, for the workshop today
+
+02:21:19.202 --> 02:21:23.122
+and sharing all your insights with us.
+
+02:21:23.122 --> 02:21:25.242
+Good to definitely have you, Rachel.
+
+02:21:25.242 --> 02:21:29.043
+Thank you for both co-running the slides.
+
+02:21:29.043 --> 02:21:30.242
+That was very much clutch.
+
+02:21:30.242 --> 02:21:32.723
+So thank you for Rachel for running through all the slides
+
+02:21:32.723 --> 02:21:34.502
+and for helping aggregate the questions
+
+02:21:34.502 --> 02:21:36.723
+and putting this all together.
+
+02:21:36.723 --> 02:21:38.163
+Shout out to Rachel in general.
+
+02:21:38.163 --> 02:21:40.562
+So she does put together the data science meetup
+
+02:21:40.562 --> 02:21:44.002
+and many other group community events.
+
+02:21:44.002 --> 02:21:46.202
+A great person to follow on LinkedIn or Twitter
+
+02:21:46.202 --> 02:21:48.442
+just to stay abreast of what are all the cool things
+
+02:21:48.442 --> 02:21:50.242
+that the community is putting together
+
+02:21:50.242 --> 02:21:52.242
+and all the different events that are happening.
+
+02:21:52.242 --> 02:21:53.963
+I'll let you talk about it, but just very much
+
+02:21:53.963 --> 02:21:55.083
+appreciate the work you do.
+
+02:21:55.083 --> 02:21:56.362
+So thanks, Rachel.
+
+02:21:56.362 --> 02:21:57.963
+Thank you, Tom.
+
+02:21:57.963 --> 02:21:59.523
+I put the link here too.
+
+02:21:59.523 --> 02:22:01.723
+If people want to find out about upcoming events,
+
+02:22:01.723 --> 02:22:04.843
+I'd love to see you all there.
+
+02:22:04.843 --> 02:22:06.523
+Everybody is welcome at these.
+
+02:22:06.523 --> 02:22:09.923
+You don't have to be a professional customer
+
+02:22:09.923 --> 02:22:13.523
+of RStudio or feel like you're an expert.
+
+02:22:13.523 --> 02:22:15.202
+You could have just started.
+
+02:22:15.202 --> 02:22:16.362
+Everyone is welcome.
+
+02:22:16.362 --> 02:22:17.483
+You can listen in.
+
+02:22:17.483 --> 02:22:19.562
+You can join the conversation, whatever
+
+02:22:19.562 --> 02:22:21.603
+you feel comfortable with too.
+
+02:22:21.603 --> 02:22:25.483
+So you can view just like upcoming community events
+
+02:22:25.483 --> 02:22:28.682
+there, but everything is also recorded and shared
+
+02:22:28.723 --> 02:22:31.723
+to the RStudio YouTube as well.
+
+02:22:31.723 --> 02:22:33.442
+Thank you all for joining us here today
+
+02:22:33.442 --> 02:22:35.322
+and huge thank you to you, Tom.
+
+02:22:35.322 --> 02:22:36.963
+Really appreciate it.
+
+02:22:36.963 --> 02:22:38.963
+Have a great rest of the day, everybody.

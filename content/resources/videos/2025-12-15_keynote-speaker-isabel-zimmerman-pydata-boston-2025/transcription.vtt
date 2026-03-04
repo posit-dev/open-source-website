@@ -1,0 +1,2317 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.200
+So yeah, we'll have our first keynote.
+
+00:00:06.200 --> 00:00:11.680
+So Isabel Zimmerman is a senior software engineer at Posit and a major contributor to open source
+
+00:00:11.680 --> 00:00:13.360
+and champion of open source.
+
+00:00:13.360 --> 00:00:15.680
+We're really lucky and excited to have her.
+
+00:00:15.680 --> 00:00:19.600
+So Isabel, let's have a round of applause.
+
+00:00:19.600 --> 00:00:21.040
+I did data science for a while.
+
+00:00:21.040 --> 00:00:28.120
+I transitioned into doing data science tool making because I just really love tools.
+
+00:00:28.120 --> 00:00:33.840
+I was actually the first full-time Python open source hire at Posit.
+
+00:00:33.840 --> 00:00:36.959
+And this was at a time where this company was still called RStudio.
+
+00:00:36.959 --> 00:00:42.560
+We actually already had people who were building Python stuff, but I was the first person who
+
+00:00:42.560 --> 00:00:47.560
+was dedicated full-time for solely novel open source Python work.
+
+00:00:47.560 --> 00:00:52.919
+I started out building MLOps packages, but nowadays I'm spending most of my time building
+
+00:00:52.919 --> 00:00:55.360
+the Python experience in different IDEs.
+
+00:00:56.240 --> 00:01:01.279
+And I have to say, my love of tools is not really constrained just to computers.
+
+00:01:01.279 --> 00:01:05.959
+If you haven't noticed, there's a giant magical goose on this slide.
+
+00:01:05.959 --> 00:01:07.720
+I am a huge fantasy reader.
+
+00:01:07.720 --> 00:01:14.199
+I'm actually flying to Boston from Salt Lake City, Utah for a fantasy conference.
+
+00:01:14.199 --> 00:01:19.239
+And one of my favorite fantasy books, there's this magical earring, no spoilers, but there's
+
+00:01:19.239 --> 00:01:22.879
+this magical earring that's passed down from generation to generation.
+
+00:01:23.480 --> 00:01:28.239
+And it turns out that this small little thing can beat the big evil bad guy at the end of
+
+00:01:28.239 --> 00:01:29.239
+the book.
+
+00:01:29.239 --> 00:01:33.519
+And I think there's something really special about having something in hand, even if it
+
+00:01:33.519 --> 00:01:40.199
+doesn't feel like the craziest, most magical tool, that can help solve a problem.
+
+00:01:40.199 --> 00:01:44.959
+And so I assume you're here not to hear about my favorite fantasy books, but probably because
+
+00:01:44.959 --> 00:01:51.559
+you are either a Python user or someone who uses and loves data or some Venn diagram overlap
+
+00:01:51.559 --> 00:01:53.839
+of these two.
+
+00:01:53.839 --> 00:01:59.279
+And maybe you're thinking, why do I even care about the tools I use?
+
+00:01:59.279 --> 00:02:01.160
+This is a whole talk about them.
+
+00:02:01.160 --> 00:02:03.839
+Why dedicate all of this time and energy?
+
+00:02:03.839 --> 00:02:10.759
+And so just off the bat, I consider a tool anything that you can use to carry out a particular
+
+00:02:10.759 --> 00:02:13.039
+function.
+
+00:02:13.039 --> 00:02:15.880
+This talk is about tool users and tool builders.
+
+00:02:15.880 --> 00:02:20.399
+And maybe you identify with one of these identities more than the other.
+
+00:02:20.399 --> 00:02:21.759
+And they're not mutually exclusive.
+
+00:02:21.759 --> 00:02:27.679
+But if you think about caring about using tools, maybe you feel more strongly about
+
+00:02:27.679 --> 00:02:28.679
+this identity.
+
+00:02:28.679 --> 00:02:31.919
+You know, I'm someone who consumes these things.
+
+00:02:31.919 --> 00:02:37.800
+If we think of this as like some sort of fantasy story, the villain in our tool user persona
+
+00:02:37.800 --> 00:02:43.440
+would be the inertia of only using the tools that you already know, because, you know,
+
+00:02:43.440 --> 00:02:44.440
+it's easier.
+
+00:02:44.440 --> 00:02:46.119
+You already know them.
+
+00:02:46.119 --> 00:02:52.839
+And so I'd like to consider that using tools and picking tools thoughtfully is very important.
+
+00:02:52.839 --> 00:02:56.899
+And choosing the right one will make your life way easier.
+
+00:02:56.899 --> 00:03:02.800
+So I'm someone who probably like most of you, when you get out into this data science world,
+
+00:03:02.800 --> 00:03:05.000
+you start using something called Pandas.
+
+00:03:05.000 --> 00:03:09.360
+And this is a data frame library that, you know, it's what I was taught in school.
+
+00:03:09.360 --> 00:03:13.479
+It's like one of the most popular libraries out there for Python.
+
+00:03:13.479 --> 00:03:15.440
+And I thought it was a great place to start.
+
+00:03:15.440 --> 00:03:18.279
+And it served me very well for a long time.
+
+00:03:18.279 --> 00:03:20.919
+The data I was working with started to get bigger.
+
+00:03:20.919 --> 00:03:24.720
+And Pandas started to feel a little bit slower, a little bit clunkier.
+
+00:03:24.720 --> 00:03:28.199
+So I ended up changing over to something called Pollers.
+
+00:03:28.199 --> 00:03:30.479
+The syntax is very similar.
+
+00:03:30.479 --> 00:03:31.479
+But it's built on Rust.
+
+00:03:31.479 --> 00:03:33.479
+And it's a little bit faster.
+
+00:03:33.479 --> 00:03:34.479
+And this was a simple switch.
+
+00:03:34.479 --> 00:03:37.220
+You know, a lot of the API is the same.
+
+00:03:37.220 --> 00:03:42.559
+But it made my life feel a little bit faster.
+
+00:03:42.559 --> 00:03:47.800
+And everyone sits somewhere on the spectrum of like building and using tools.
+
+00:03:47.800 --> 00:03:51.759
+And maybe you don't identify immediately as somebody who is building tools.
+
+00:03:51.759 --> 00:03:54.160
+But I'd like to convince you otherwise.
+
+00:03:54.160 --> 00:03:58.699
+One, I think it's important for everyone to even think of themselves as like a little
+
+00:03:58.699 --> 00:04:00.600
+bit of a tool builder.
+
+00:04:00.600 --> 00:04:04.360
+By building a tool for yourself, you can speed up your own work.
+
+00:04:04.360 --> 00:04:08.679
+And speed up not only your work today, but your work for future you.
+
+00:04:08.679 --> 00:04:12.440
+The barrier to building a tool has never been lower with the help of AI.
+
+00:04:12.440 --> 00:04:17.760
+You know, your cloud, your copilot, your chat GPT is able to help you build Python packages
+
+00:04:17.760 --> 00:04:21.079
+if you don't know where to start.
+
+00:04:21.079 --> 00:04:25.040
+And this tool doesn't have to be something that's widely shared into the world.
+
+00:04:25.040 --> 00:04:29.640
+It can be something that's just for yourself.
+
+00:04:29.640 --> 00:04:36.119
+As part of my own personal book nerdiness, I actually rebind books as well.
+
+00:04:36.119 --> 00:04:40.799
+And I have to do specific measurements for like the cover, the back, the spine, and all
+
+00:04:40.799 --> 00:04:43.359
+of these little hinges in between.
+
+00:04:43.359 --> 00:04:47.720
+And I like a very specific like 7 millimeter gutter.
+
+00:04:47.720 --> 00:04:50.959
+And all of the tools out there are all 5 millimeter.
+
+00:04:50.959 --> 00:04:57.160
+So I made this silly little like literal piece of plastic to help me make my own books.
+
+00:04:57.160 --> 00:04:59.559
+It's something only I will ever use.
+
+00:04:59.559 --> 00:05:00.880
+But it helps me every day.
+
+00:05:00.880 --> 00:05:02.239
+Well, maybe not every day.
+
+00:05:02.239 --> 00:05:08.559
+Every day I'm doing hobbies to make these books better.
+
+00:05:08.559 --> 00:05:10.920
+So your tools don't have to be anything fancy.
+
+00:05:10.920 --> 00:05:14.119
+And also you might already be building them.
+
+00:05:14.119 --> 00:05:18.519
+Maybe you're someone like me who is fat fingering Git push all the time.
+
+00:05:18.519 --> 00:05:22.920
+And now has an alias on their computer so that when you write GTI push, it actually
+
+00:05:22.920 --> 00:05:25.920
+uses Git instead.
+
+00:05:25.920 --> 00:05:29.640
+You know, if you're writing code, you're building something.
+
+00:05:29.880 --> 00:05:32.959
+A dashboard or a report, that's a tool.
+
+00:05:32.959 --> 00:05:36.040
+It's a tool used to make business decisions.
+
+00:05:36.040 --> 00:05:40.760
+Maybe you have a function that you've been slacking back and forth with your co-workers.
+
+00:05:40.760 --> 00:05:45.720
+That's a tool that you've been helping streamline your data workflows.
+
+00:05:45.720 --> 00:05:47.600
+Or maybe something else entirely.
+
+00:05:47.600 --> 00:05:51.760
+So these are all tools you might already be making.
+
+00:05:51.760 --> 00:05:56.559
+And when I transitioned from like a data scientist persona to a tool builder persona,
+
+00:05:56.559 --> 00:05:59.880
+I thought that I knew what mattered.
+
+00:05:59.880 --> 00:06:01.799
+I had already filled my bag with lots of tools.
+
+00:06:01.799 --> 00:06:04.200
+You know, I could write clean code.
+
+00:06:04.200 --> 00:06:05.600
+I could design APIs.
+
+00:06:05.600 --> 00:06:07.839
+I knew how to optimize performance.
+
+00:06:07.839 --> 00:06:13.799
+And I thought, you know, if my code works, people will use it.
+
+00:06:13.799 --> 00:06:18.119
+And we actually do a fair amount of user testing at Posit, where we will watch
+
+00:06:18.119 --> 00:06:19.559
+someone use tools.
+
+00:06:19.559 --> 00:06:24.679
+And I have watched truly like the most brilliant people that I look up to so
+
+00:06:24.679 --> 00:06:29.920
+much get confused about a tool because a button is in the wrong spot.
+
+00:06:29.920 --> 00:06:34.880
+Or, you know, you press refresh and it only refreshes like the first layer of your
+
+00:06:34.880 --> 00:06:37.359
+namespace and not the whole namespace.
+
+00:06:37.359 --> 00:06:39.359
+Or just something.
+
+00:06:39.359 --> 00:06:41.000
+And people get stuck.
+
+00:06:41.000 --> 00:06:42.279
+That's a part of life.
+
+00:06:42.279 --> 00:06:46.399
+Tools are imperfect because they're built by imperfect people and you are an
+
+00:06:46.399 --> 00:06:47.519
+imperfect user.
+
+00:06:47.519 --> 00:06:51.399
+And I think that is like the most beautiful thing to think about.
+
+00:06:51.399 --> 00:06:55.519
+Because if we are both imperfect on kind of both sides of this coin, that means
+
+00:06:55.519 --> 00:07:02.160
+that there are skills there that we can build and that we can learn.
+
+00:07:02.160 --> 00:07:07.160
+So, if you're like writing your resume, we often think about things in the scale
+
+00:07:07.160 --> 00:07:11.640
+of like there's hard skills and then there's soft skills.
+
+00:07:11.640 --> 00:07:15.839
+You know, hard skills are things like I know how to use scikit-learn.
+
+00:07:15.839 --> 00:07:17.239
+I write C++ code.
+
+00:07:17.239 --> 00:07:20.920
+And soft skills are like I can lead a team or I'm really good at writing
+
+00:07:20.920 --> 00:07:22.600
+documentation.
+
+00:07:22.600 --> 00:07:25.559
+And there is a lot of baggage around these terms that I want to address.
+
+00:07:25.559 --> 00:07:28.799
+You know, LinkedIn, it feels like, swaps every year.
+
+00:07:28.799 --> 00:07:31.320
+Half the time they say, all you need are hard skills.
+
+00:07:31.320 --> 00:07:32.720
+We don't care about soft skills anymore.
+
+00:07:32.720 --> 00:07:34.519
+And then it's all you need are soft skills.
+
+00:07:34.519 --> 00:07:36.000
+We don't care about hard skills anymore.
+
+00:07:36.000 --> 00:07:40.320
+And I'm not interested today in like really convincing you of one or the other.
+
+00:07:40.320 --> 00:07:46.000
+But more thinking about this dichotomy of the ways that we're working.
+
+00:07:46.000 --> 00:07:49.640
+And when I was thinking about this talk and like how to talk about tools,
+
+00:07:49.640 --> 00:07:53.799
+I realized that tools have these same hard and soft skills.
+
+00:07:53.799 --> 00:07:56.799
+So your hard skills and tools are these computer elements.
+
+00:07:56.799 --> 00:08:01.279
+Things like modularity, reproducibility, flexibility.
+
+00:08:01.279 --> 00:08:05.160
+Whereas the soft skills are more of these human elements of your tools.
+
+00:08:05.160 --> 00:08:09.079
+Things like knowing your user, understanding their needs,
+
+00:08:09.079 --> 00:08:13.399
+delighting in the small things, and explaining your work.
+
+00:08:13.399 --> 00:08:14.239
+And here's the thing.
+
+00:08:14.239 --> 00:08:20.079
+Your tools, to be really delightful tools that people love to use,
+
+00:08:20.079 --> 00:08:23.359
+have to have both these hard skills and the soft ones.
+
+00:08:26.239 --> 00:08:30.600
+All right, so we'll start with what a tool's hard skills are.
+
+00:08:30.600 --> 00:08:33.200
+With modularity.
+
+00:08:33.200 --> 00:08:35.119
+So when you're building a tool, a lot of times
+
+00:08:35.119 --> 00:08:39.039
+the first thing you have to think of is like, where are we starting from?
+
+00:08:39.039 --> 00:08:42.359
+And one of the first Python packages I was building is called Vediver.
+
+00:08:42.359 --> 00:08:44.119
+And it's an MLOps framework.
+
+00:08:44.119 --> 00:08:47.520
+And there's this element of building APIs.
+
+00:08:47.520 --> 00:08:51.640
+And I had to decide, where are these APIs coming from?
+
+00:08:51.640 --> 00:08:55.320
+I could, of course, go spend all this time, research,
+
+00:08:55.320 --> 00:08:58.159
+build out my own REST API generation.
+
+00:08:58.159 --> 00:09:02.479
+But I realized there's so many fantastic community tools out there
+
+00:09:02.479 --> 00:09:06.200
+that I can leverage what's already been built in the open source community
+
+00:09:06.200 --> 00:09:11.640
+and be able to have this relentless focus on the MLOps side of the work.
+
+00:09:11.640 --> 00:09:15.479
+So for tool builders, finding tools that work with what you already know
+
+00:09:15.479 --> 00:09:16.840
+is super important.
+
+00:09:16.840 --> 00:09:19.320
+And as a user, it's also really important
+
+00:09:19.320 --> 00:09:23.080
+to maybe understand what your tools are being built off of,
+
+00:09:23.080 --> 00:09:27.000
+to have these clear extension points.
+
+00:09:27.000 --> 00:09:29.559
+Tomorrow morning, one of my colleagues, Jules,
+
+00:09:29.559 --> 00:09:33.919
+is going to be giving a talk about how to build an extension package
+
+00:09:33.919 --> 00:09:36.479
+for different Python packages.
+
+00:09:36.479 --> 00:09:40.679
+I would love for 2026 to be like the year of Python extension packages.
+
+00:09:40.679 --> 00:09:46.200
+I want to see everyone making specialized tools for what they know.
+
+00:09:46.200 --> 00:09:52.200
+Because it makes your life a lot easier when something works exactly for you.
+
+00:09:52.200 --> 00:09:56.840
+The other good thing about modularity is, if we think about LEGOs,
+
+00:09:56.840 --> 00:09:58.559
+you can connect them to themselves.
+
+00:09:58.559 --> 00:10:00.799
+So if you're building on a modular surface,
+
+00:10:00.799 --> 00:10:04.479
+you're able to have a tool that grows with your user.
+
+00:10:04.479 --> 00:10:07.359
+Like in the Vetiver case, I can think of,
+
+00:10:07.359 --> 00:10:10.520
+you can do all these cool things with models, like what I've added.
+
+00:10:10.520 --> 00:10:13.520
+But you're also able to make really complex APIs
+
+00:10:13.520 --> 00:10:17.520
+because of the basics of FastAPI.
+
+00:10:17.520 --> 00:10:19.280
+OK, so this is a talk about tools.
+
+00:10:19.280 --> 00:10:21.719
+And it's only fair for me to eventually introduce the tool
+
+00:10:21.719 --> 00:10:23.599
+that I spend most of my day job on.
+
+00:10:23.599 --> 00:10:26.159
+And that's an IDE called Positron.
+
+00:10:26.159 --> 00:10:30.000
+So Positron is an IDE built specifically for data science.
+
+00:10:30.000 --> 00:10:34.799
+And if you're a VS Code user, it might look a little bit familiar.
+
+00:10:34.799 --> 00:10:36.200
+It is a VS Code fork.
+
+00:10:36.200 --> 00:10:42.280
+And it has different elements, like this Variables pane, this Plots pane,
+
+00:10:42.280 --> 00:10:46.440
+including a film strip on the side, and this built-in console,
+
+00:10:46.440 --> 00:10:52.200
+along with many other goodies that we've added to help emphasize this data
+
+00:10:52.200 --> 00:10:54.919
+science experience.
+
+00:10:54.919 --> 00:11:01.559
+But we built off of the basics of Code OSS, which is this open source VS Code.
+
+00:11:01.559 --> 00:11:05.080
+And it's useful for us because we are able to, again,
+
+00:11:05.080 --> 00:11:08.520
+have this relentless focus on the data science experience.
+
+00:11:08.520 --> 00:11:10.919
+But also, it's helpful for users because they
+
+00:11:10.919 --> 00:11:18.679
+can plug into this huge ecosystem of OpenVSX and VS Code extensions.
+
+00:11:18.679 --> 00:11:20.840
+Something that we've gotten for free because of this
+
+00:11:20.840 --> 00:11:25.000
+is the idea of growing and outgrowing your laptop through Remote SSH.
+
+00:11:25.000 --> 00:11:26.679
+And another one of my colleagues tomorrow
+
+00:11:26.679 --> 00:11:32.119
+is going to be giving a talk on Positron and Remote SSH.
+
+00:11:32.119 --> 00:11:36.440
+It's Rodrigo's talk tomorrow, I think, at 9 AM or 11.
+
+00:11:36.440 --> 00:11:37.479
+I'm so sorry.
+
+00:11:37.479 --> 00:11:40.039
+One of those two.
+
+00:11:40.039 --> 00:11:45.760
+So alongside reproducibility, alongside of modularity,
+
+00:11:45.760 --> 00:11:47.960
+we also want reproducibility.
+
+00:11:47.960 --> 00:11:51.039
+And data science folks know all about reproducibility.
+
+00:11:51.039 --> 00:11:55.039
+We think about it and how it is the foundational thing
+
+00:11:55.039 --> 00:11:58.359
+for trustworthy science.
+
+00:11:58.359 --> 00:12:03.760
+There's a strong pull for exploring data in reproducible ways.
+
+00:12:03.760 --> 00:12:05.880
+But there's also this tension because there's
+
+00:12:05.880 --> 00:12:09.400
+a lot of really cool ways to explore data with a GUI, where
+
+00:12:09.400 --> 00:12:12.239
+I'm going to load the CSV, and I'm going to click around.
+
+00:12:12.239 --> 00:12:13.840
+And it's a little bit of a mismatch.
+
+00:12:16.559 --> 00:12:19.760
+We can think about when we're doing data science
+
+00:12:19.760 --> 00:12:22.359
+or when we're doing data work, where are we
+
+00:12:22.359 --> 00:12:26.200
+doing steps that are not reproducible?
+
+00:12:26.200 --> 00:12:29.679
+Maybe you're loading your data from a CSV in Pandas.
+
+00:12:29.679 --> 00:12:31.520
+You're doing some exploration.
+
+00:12:31.520 --> 00:12:35.239
+And then you're exporting it to Excel and making a table there.
+
+00:12:35.239 --> 00:12:37.359
+I would encourage you to think about this workflow,
+
+00:12:37.359 --> 00:12:40.640
+the places where, when you tell your colleagues about it,
+
+00:12:40.640 --> 00:12:44.280
+it's, OK, download this, and then click, and then click, and then click.
+
+00:12:44.280 --> 00:12:48.280
+Because those are things that are going to be less reproducible over time.
+
+00:12:48.280 --> 00:12:50.760
+There's an open source package called Great Tables
+
+00:12:50.760 --> 00:12:56.679
+that allows you to move directly from building your data exploration with
+
+00:12:56.679 --> 00:12:59.880
+Pandas or Pollers right into a table, or if you
+
+00:12:59.880 --> 00:13:02.679
+want to use plots or something like that.
+
+00:13:02.679 --> 00:13:06.599
+So thinking really about completing your whole cycle in Python
+
+00:13:06.599 --> 00:13:09.679
+or in some sort of language where you can pass this off
+
+00:13:09.679 --> 00:13:13.400
+as a reproducible artifact, rather than saying,
+
+00:13:13.400 --> 00:13:17.440
+OK, here are all of the steps to click all of the right buttons
+
+00:13:17.440 --> 00:13:18.900
+to get your data in the right place.
+
+00:13:21.239 --> 00:13:23.960
+In Positron, there's something called a Data Explorer.
+
+00:13:23.960 --> 00:13:28.080
+And when we first built it, there was a little bit of this trap of,
+
+00:13:28.080 --> 00:13:29.359
+look at how beautiful this is.
+
+00:13:29.359 --> 00:13:31.979
+It can handle millions of rows, millions of columns.
+
+00:13:31.979 --> 00:13:33.559
+You can add filters.
+
+00:13:33.559 --> 00:13:35.960
+Here, I'm looking at different literary prizes.
+
+00:13:35.960 --> 00:13:39.119
+I want to look at Booker Prize winners.
+
+00:13:39.119 --> 00:13:44.000
+I'm able to look at my data in ascending or descending order.
+
+00:13:44.000 --> 00:13:47.400
+It's a great place to do quick data exploration.
+
+00:13:47.400 --> 00:13:50.780
+But if you notice, it's a lot of, if I was telling a colleague,
+
+00:13:50.780 --> 00:13:53.440
+I would say, add this filter, add this filter.
+
+00:13:53.440 --> 00:13:56.200
+So we added this button where you can convert to code,
+
+00:13:56.200 --> 00:14:01.359
+where because all of these filters are built in a very modular way,
+
+00:14:01.359 --> 00:14:05.900
+it has a one-to-one balance of, I can click this button because I
+
+00:14:05.900 --> 00:14:07.200
+know what the filters are.
+
+00:14:07.200 --> 00:14:11.880
+I can generate code, not using AI, just using a tree
+
+00:14:11.880 --> 00:14:14.919
+to have code that works and runs and generates the same data
+
+00:14:14.919 --> 00:14:17.559
+exploration every single time.
+
+00:14:17.559 --> 00:14:19.919
+So I think this is a really interesting way to bridge
+
+00:14:19.919 --> 00:14:24.520
+the gap between GUI exploration and having a reproducible output.
+
+00:14:27.400 --> 00:14:30.280
+And flexibility, when I think of flexibility,
+
+00:14:30.280 --> 00:14:33.559
+I think of a Swiss army knife, perhaps, in tools.
+
+00:14:33.559 --> 00:14:36.880
+So it's convenient.
+
+00:14:36.880 --> 00:14:40.799
+Swiss army knife, you can have scissors and a bottle opener
+
+00:14:40.799 --> 00:14:44.440
+and a knife or whatever else you need for your little tasks
+
+00:14:44.440 --> 00:14:46.799
+to open the boxes.
+
+00:14:46.799 --> 00:14:50.919
+And I'm pro-Swiss army knife, but you're not
+
+00:14:50.919 --> 00:14:53.520
+going to use a Swiss army knife to build a house.
+
+00:14:53.520 --> 00:14:56.059
+So you have to think about what kind of flexibility
+
+00:14:56.059 --> 00:14:59.479
+works well in the projects that you're building.
+
+00:14:59.479 --> 00:15:02.320
+And if you're not aware, there's something called the Zen of Python.
+
+00:15:02.320 --> 00:15:05.960
+If you type import this, it will print it out.
+
+00:15:05.960 --> 00:15:10.520
+And it has these core values of how to use Python as a language.
+
+00:15:10.520 --> 00:15:12.599
+And one of the ones that's really interesting to me
+
+00:15:12.599 --> 00:15:14.880
+is that simple is better than complex.
+
+00:15:14.880 --> 00:15:18.159
+Complex is better than complicated.
+
+00:15:18.159 --> 00:15:20.159
+And I know that this slide says flexibility,
+
+00:15:20.159 --> 00:15:22.119
+and I really do want to encourage that.
+
+00:15:22.119 --> 00:15:24.840
+But I also want people to think really thoughtfully
+
+00:15:24.840 --> 00:15:28.640
+about the kind of information that they're ingesting
+
+00:15:28.640 --> 00:15:32.359
+in terms of when you're writing functions or something like that.
+
+00:15:32.359 --> 00:15:36.200
+Lucas Lange, there's a PyCon keynote from 2022.
+
+00:15:36.200 --> 00:15:40.599
+I highly recommend it if you ever write any types in your code.
+
+00:15:40.599 --> 00:15:45.280
+And he really talks about a function that has insane types
+
+00:15:45.280 --> 00:15:48.520
+is probably a code smell of you need to break this down and make
+
+00:15:48.520 --> 00:15:51.440
+your code slightly less flexible.
+
+00:15:51.440 --> 00:15:53.280
+And I did fall into this trap.
+
+00:15:53.280 --> 00:15:55.919
+When I was starting to build tools, I would write a function,
+
+00:15:55.919 --> 00:15:58.599
+and I would type it, and I would see these crazy unions
+
+00:15:58.599 --> 00:16:02.320
+where I'm supporting polar's data frames, and panda's data frames,
+
+00:16:02.320 --> 00:16:05.799
+and lists, and dictionaries, and tuples, and all of it,
+
+00:16:05.799 --> 00:16:07.960
+when I really should have focused on building
+
+00:16:07.960 --> 00:16:10.599
+modular things for each function,
+
+00:16:10.599 --> 00:16:14.280
+and then combining them in a more clever way.
+
+00:16:14.280 --> 00:16:18.000
+Because if you have something that accepts really complex inputs,
+
+00:16:18.000 --> 00:16:23.919
+it's going to be way harder to also support very complex tasks.
+
+00:16:23.919 --> 00:16:27.599
+I think the rise of AI tools recently has highlighted the importance
+
+00:16:27.599 --> 00:16:30.359
+of starting with a reasonable amount of context,
+
+00:16:30.359 --> 00:16:34.799
+and then letting users configure more or less information.
+
+00:16:34.799 --> 00:16:36.799
+Something that we've noticed is like AI often
+
+00:16:36.799 --> 00:16:40.400
+does not have all of the right context for data science work.
+
+00:16:40.400 --> 00:16:42.640
+If it's only doing static analysis, it only
+
+00:16:42.640 --> 00:16:45.880
+knows that there is some sort of data frame called data,
+
+00:16:45.880 --> 00:16:48.919
+and it's getting this information from this URL.
+
+00:16:48.919 --> 00:16:52.280
+So in Positron, there's this thing called Positron Assistant,
+
+00:16:52.280 --> 00:16:55.479
+and it gives the LLMs a little bit of your data.
+
+00:16:55.479 --> 00:16:59.159
+It gives them images from your plots and whatever else
+
+00:16:59.159 --> 00:17:04.400
+you want in order to get the most out of AI for your data experience.
+
+00:17:04.400 --> 00:17:06.359
+This kind of has like this happy path, or we
+
+00:17:06.400 --> 00:17:08.439
+think of it as like a pit of success.
+
+00:17:08.439 --> 00:17:11.160
+So if you just open this up, it will have the context
+
+00:17:11.160 --> 00:17:16.880
+that's important for your model to make better information for a better output.
+
+00:17:16.880 --> 00:17:20.479
+But also, we care about privacy, so we need a really clear way
+
+00:17:20.479 --> 00:17:22.520
+to add and remove context.
+
+00:17:22.520 --> 00:17:25.880
+So you can see I'm clicking this eye, open and closed.
+
+00:17:25.880 --> 00:17:29.920
+So say you can see this information, you can't see this information,
+
+00:17:29.920 --> 00:17:33.920
+or adding in different context.
+
+00:17:33.920 --> 00:17:40.079
+These are what I think of as the hard skills, hard skills of a tool.
+
+00:17:40.079 --> 00:17:42.160
+And there is one thing that is front of mind
+
+00:17:42.160 --> 00:17:44.560
+that I've touched on very briefly, but that
+
+00:17:44.560 --> 00:17:51.479
+is the fact that AI 2025 is the era of AI everything.
+
+00:17:51.479 --> 00:17:54.319
+If you're writing code these days and it's out in the world,
+
+00:17:54.319 --> 00:17:56.359
+it will probably be read by AI assistants,
+
+00:17:56.359 --> 00:18:01.079
+or perhaps it's being read by Amazon Bedrock, by your local models
+
+00:18:01.079 --> 00:18:02.640
+or whatever.
+
+00:18:02.640 --> 00:18:05.920
+And AI is really good at these strong skills.
+
+00:18:05.920 --> 00:18:10.119
+You can almost use them as keywords to get better output from your LLM.
+
+00:18:10.119 --> 00:18:15.079
+Make this function more flexible, make this function more modular.
+
+00:18:15.079 --> 00:18:19.479
+But what AI does really struggle with, even with the right context,
+
+00:18:19.479 --> 00:18:24.199
+is what users actually need, or these soft skills.
+
+00:18:24.199 --> 00:18:29.040
+So great tools require technical excellence, but also user empathy.
+
+00:18:29.040 --> 00:18:32.560
+And I was looking at the Stack Overflow survey.
+
+00:18:32.560 --> 00:18:35.400
+There's 25,000 responses.
+
+00:18:35.400 --> 00:18:40.000
+And these are things that people do not plan to use AI ever for this task.
+
+00:18:40.000 --> 00:18:43.359
+And it looks like developers are showing the most resistance
+
+00:18:43.359 --> 00:18:46.400
+to these high-responsibility systemic tasks,
+
+00:18:46.400 --> 00:18:48.119
+like deployment and monitoring.
+
+00:18:48.119 --> 00:18:51.520
+But also really interesting is project planning.
+
+00:18:51.520 --> 00:18:55.880
+And I think part of project planning, in my mind, my hypothesis,
+
+00:18:55.880 --> 00:18:59.079
+is that project planning is a lot of the soft skills.
+
+00:18:59.079 --> 00:19:02.439
+Project planning is realizing my stakeholders
+
+00:19:02.439 --> 00:19:03.880
+need this output.
+
+00:19:03.880 --> 00:19:08.439
+My stakeholders think this is important, or I think this is important.
+
+00:19:08.439 --> 00:19:13.839
+Or that product knowledge that you carry with yourself and with your team,
+
+00:19:13.839 --> 00:19:22.239
+kind of these soft skills that AI is not able to take over for us.
+
+00:19:22.239 --> 00:19:24.520
+So when we think about the soft skills, I really
+
+00:19:24.520 --> 00:19:28.479
+want people to think about the human side of a tool.
+
+00:19:28.479 --> 00:19:30.920
+And the first thing is to know your users.
+
+00:19:34.079 --> 00:19:36.479
+At Posit, a lot of us were data scientists.
+
+00:19:36.479 --> 00:19:38.959
+So we have a lot of data science knowledge.
+
+00:19:38.959 --> 00:19:44.880
+So we really intimately know the struggles of what we were running into.
+
+00:19:44.880 --> 00:19:47.119
+And I think something interesting here is
+
+00:19:47.119 --> 00:19:50.160
+the difference between a data scientist and a software engineer.
+
+00:19:50.160 --> 00:19:53.760
+Data work inherently looks a little bit different
+
+00:19:53.760 --> 00:19:56.280
+than what we would consider software engineer work.
+
+00:19:56.280 --> 00:20:01.959
+Data practitioners are more on exploring uncharted territories.
+
+00:20:01.959 --> 00:20:06.079
+They do a lot of iteration and a lot of experimentation.
+
+00:20:06.079 --> 00:20:09.880
+And then software engineers, we can think of them as building castles
+
+00:20:09.880 --> 00:20:14.520
+in known lands, things that involve a lot of structure,
+
+00:20:14.520 --> 00:20:18.040
+and things that have a very specific outcome.
+
+00:20:18.040 --> 00:20:22.079
+So you're not going to give your cartographer a mason's tools.
+
+00:20:22.079 --> 00:20:24.560
+So knowing your users is really important.
+
+00:20:24.560 --> 00:20:26.800
+And if you don't know, it's OK to ask.
+
+00:20:26.800 --> 00:20:30.800
+I think that's a very thoughtful way to approach this problem.
+
+00:20:33.319 --> 00:20:37.079
+For us, we realize that a tool that's built for software engineers
+
+00:20:37.079 --> 00:20:41.920
+might not be the best fit for someone who needs to do a lot of experimentation.
+
+00:20:41.920 --> 00:20:47.000
+And one way we really wanted to show data scientists that we understand
+
+00:20:47.000 --> 00:20:50.000
+their struggles and something that I use almost daily
+
+00:20:50.000 --> 00:20:53.520
+is having a permanent console available in Positron.
+
+00:20:53.520 --> 00:20:57.599
+So if you're not familiar with having some sort of iPython console,
+
+00:20:57.599 --> 00:21:01.959
+you can think of it as sort of a Jupyter Notebook light that's built in,
+
+00:21:01.959 --> 00:21:08.719
+that's always on, that's activated all the time available in your IDE.
+
+00:21:08.719 --> 00:21:14.000
+So in this little GIF, I'm just mashing Command-Enter all the way down.
+
+00:21:14.000 --> 00:21:16.520
+If I was on Windows, it would be Control-Enter.
+
+00:21:16.520 --> 00:21:19.479
+And you can see I can run this line by line.
+
+00:21:19.479 --> 00:21:25.400
+This plot is slowly getting built up as I'm executing different pieces of it.
+
+00:21:25.400 --> 00:21:28.920
+And it's really built for this quick experimentation.
+
+00:21:28.920 --> 00:21:31.839
+I'm also able to go down there and type in this console.
+
+00:21:31.839 --> 00:21:35.040
+And it's fully syntax highlighted.
+
+00:21:35.040 --> 00:21:37.439
+You're able to get code completions there.
+
+00:21:37.439 --> 00:21:42.040
+And we've actually made changes to the LSP, or Language Server Protocol,
+
+00:21:42.040 --> 00:21:46.760
+inside the IDE so that it's optimized for data science use.
+
+00:21:46.760 --> 00:21:49.680
+This is all things that we realize data scientists,
+
+00:21:49.680 --> 00:21:54.719
+if they're using a data frame and they have either a period or your brackets,
+
+00:21:54.719 --> 00:21:57.359
+they probably will want a column.
+
+00:21:57.359 --> 00:22:02.280
+So we focused on making sure column completions come to the front.
+
+00:22:02.280 --> 00:22:05.040
+And just these little things that really show
+
+00:22:05.040 --> 00:22:09.560
+that we know how data scientists work because a lot of us
+
+00:22:09.560 --> 00:22:11.920
+are data scientists or were data scientists.
+
+00:22:12.920 --> 00:22:15.719
+And discoverability is a lot of this work.
+
+00:22:15.719 --> 00:22:18.520
+So when you're thinking about sharing a report
+
+00:22:18.520 --> 00:22:23.719
+or thinking about building a tool, you want to really be this little goose
+
+00:22:23.719 --> 00:22:27.800
+that's shining your lantern on the path that should be traveled the most.
+
+00:22:27.800 --> 00:22:31.239
+This is really kind of a subset of knowing your user.
+
+00:22:31.239 --> 00:22:34.199
+And all of these soft skills really come from a place of empathy
+
+00:22:34.199 --> 00:22:37.000
+for the people who are using the tools that you're building,
+
+00:22:37.000 --> 00:22:40.800
+or thinking about how you want your tool to be used.
+
+00:22:40.800 --> 00:22:45.959
+How you want your tool to support you as you're using it.
+
+00:22:45.959 --> 00:22:51.520
+So for discoverability, we ought to think about what will users care about?
+
+00:22:51.520 --> 00:22:58.640
+And how can we help them find things that are not immediately obvious?
+
+00:22:58.640 --> 00:23:01.880
+Discoverability really is an eternal quest.
+
+00:23:01.880 --> 00:23:06.400
+Your hidden features are going to be like secret passages.
+
+00:23:06.400 --> 00:23:08.719
+Just because there's treasure at the end of this tunnel,
+
+00:23:08.719 --> 00:23:13.719
+if nobody knows it's there, nobody's going to find it.
+
+00:23:13.719 --> 00:23:18.680
+So discoverability is really hard in documentation, in the actual API,
+
+00:23:18.680 --> 00:23:22.640
+in the UI of an app that you might be deploying.
+
+00:23:22.640 --> 00:23:25.920
+Documentation is really helpful, but it's also equally important
+
+00:23:25.920 --> 00:23:28.640
+to have things that are self-documenting.
+
+00:23:28.640 --> 00:23:31.319
+So when you're using a tool, we want to think about,
+
+00:23:31.319 --> 00:23:33.959
+are things easy for me to remember so I'm not
+
+00:23:33.959 --> 00:23:37.199
+looking at the docs every single time?
+
+00:23:37.199 --> 00:23:40.479
+Information can be hard to find and retain,
+
+00:23:40.479 --> 00:23:43.479
+so bringing to the front of what actually gets used is super important.
+
+00:23:46.479 --> 00:23:48.280
+So we want to think about, what are things
+
+00:23:48.280 --> 00:23:53.839
+that are high impact but hard to find, or things that are constantly used?
+
+00:23:53.839 --> 00:23:59.719
+There's a project called Quarto that is a open source publishing and authoring
+
+00:23:59.719 --> 00:24:00.680
+platform.
+
+00:24:00.680 --> 00:24:03.119
+It's actually how I've built all of my slides.
+
+00:24:03.119 --> 00:24:05.400
+It's how I've built my website.
+
+00:24:05.400 --> 00:24:07.040
+You can build dashboards with it.
+
+00:24:07.880 --> 00:24:11.760
+You can integrate it with different applications, like Shiny.
+
+00:24:11.760 --> 00:24:13.880
+And it's a really beautiful tool that we
+
+00:24:13.880 --> 00:24:18.119
+wanted people to have a great authoring experience in Positron with.
+
+00:24:18.119 --> 00:24:22.719
+So here you can see that it looks like just a markdown file
+
+00:24:22.719 --> 00:24:25.079
+that you're also able to run code in.
+
+00:24:25.079 --> 00:24:28.040
+I honestly, I could give a whole nother talk about how much I love Quarto.
+
+00:24:28.040 --> 00:24:31.880
+It is one of my favorite things to use.
+
+00:24:31.880 --> 00:24:35.479
+But there's a lot of settings, and there's a lot of ways to use Quarto.
+
+00:24:35.479 --> 00:24:38.119
+And when I'm building out something like these slides,
+
+00:24:38.119 --> 00:24:41.439
+a lot of times I'm making changes, and then I'm pressing Save.
+
+00:24:41.439 --> 00:24:43.280
+And I'll make changes, and I'm pressing Save.
+
+00:24:43.280 --> 00:24:46.199
+And when you're rendering these slides locally,
+
+00:24:46.199 --> 00:24:50.959
+that is kind of annoying to bring down my whole little local host
+
+00:24:50.959 --> 00:24:52.800
+and restart it.
+
+00:24:52.800 --> 00:24:55.079
+So we have this editor action bar where you
+
+00:24:55.079 --> 00:24:57.520
+can see there's this preview, this render on save.
+
+00:24:57.520 --> 00:25:02.400
+You can toggle between source and visual, insert a code cell.
+
+00:25:02.400 --> 00:25:07.119
+We wanted to think about what is important for users.
+
+00:25:07.119 --> 00:25:08.920
+If you're using something like this, you're
+
+00:25:08.920 --> 00:25:11.160
+probably wanting to run code in markdown.
+
+00:25:11.160 --> 00:25:13.880
+So we're going to have a button to insert a code cell.
+
+00:25:13.880 --> 00:25:17.880
+We also want to elevate the setting of render on save.
+
+00:25:17.880 --> 00:25:20.560
+It's not the biggest feature.
+
+00:25:20.560 --> 00:25:25.199
+People aren't going to Positron saying, wow, I can render on save now.
+
+00:25:25.199 --> 00:25:27.599
+But being able to elevate this because we
+
+00:25:27.599 --> 00:25:32.760
+think it's important for users for their own workflow.
+
+00:25:32.760 --> 00:25:36.920
+We're also making different UI changes to how our Jupyter notebooks look
+
+00:25:36.920 --> 00:25:43.239
+and to help ease discovery and have our Jupyter notebook experience
+
+00:25:43.239 --> 00:25:44.479
+feel good for you.
+
+00:25:44.479 --> 00:25:46.560
+So if you have big opinions on Jupyter notebooks,
+
+00:25:46.560 --> 00:25:48.359
+we'd love to talk to you at the Posit booth.
+
+00:25:52.160 --> 00:25:56.520
+Next, we'll talk about letting little things have big impact.
+
+00:25:56.520 --> 00:26:01.160
+So sometimes a tool can kind of feel like death by 1,000 paper cuts.
+
+00:26:01.160 --> 00:26:05.959
+Each tiny drop of improvement is a sort of healing solve.
+
+00:26:05.959 --> 00:26:09.959
+If you've ever, I know when I was learning Pandas, every single time
+
+00:26:09.959 --> 00:26:13.199
+that I tried to do a join, I would have to go to the documentation
+
+00:26:13.199 --> 00:26:16.400
+because it just didn't quite feel ergonomic to me,
+
+00:26:16.400 --> 00:26:20.619
+coming from a more SQL-y or R background.
+
+00:26:20.619 --> 00:26:24.640
+And I was just like, oh, I wish I could remember this a little bit better.
+
+00:26:24.640 --> 00:26:27.439
+And I think this is a really cool way to think about,
+
+00:26:27.439 --> 00:26:29.959
+how can we find these little things that can
+
+00:26:29.959 --> 00:26:33.640
+make a big impact in our projects?
+
+00:26:33.640 --> 00:26:35.880
+So we have to do the painful things, and we have
+
+00:26:35.880 --> 00:26:37.560
+to do the painful things more often.
+
+00:26:37.560 --> 00:26:39.640
+And it's funny because there's two big things that
+
+00:26:39.640 --> 00:26:41.880
+happen when you do these painful things.
+
+00:26:41.880 --> 00:26:46.079
+One, you either get really good at doing hard things,
+
+00:26:46.079 --> 00:26:52.000
+or you discover a new way to make the hard thing a little bit easier.
+
+00:26:52.000 --> 00:26:55.119
+So one thing that was small but really annoying
+
+00:26:55.119 --> 00:27:00.599
+was, if you've ever used an IDE and you're running just a regular script,
+
+00:27:00.599 --> 00:27:04.119
+and you click this little Play button, and it'll either run it in the terminal
+
+00:27:04.119 --> 00:27:08.199
+or in Positron, you can also run it in the console.
+
+00:27:08.199 --> 00:27:11.219
+And 99% of the time, that's super great.
+
+00:27:11.219 --> 00:27:18.160
+All I want is this Play button to run my Python file in my terminal.
+
+00:27:18.160 --> 00:27:23.680
+But sometimes I'm building a Streamlit app, or a Dash app, or Shiny app,
+
+00:27:23.680 --> 00:27:26.920
+or a FastAPI, or Flask, or whatever.
+
+00:27:26.920 --> 00:27:31.599
+And when you click that button, it actually just runs the Python file.
+
+00:27:31.599 --> 00:27:34.199
+It doesn't actually start the application.
+
+00:27:34.199 --> 00:27:36.859
+I know some people have changed their API because of this,
+
+00:27:36.859 --> 00:27:39.000
+because it's kind of annoying.
+
+00:27:39.000 --> 00:27:42.540
+But something that we built in that we thought was interesting
+
+00:27:42.540 --> 00:27:48.300
+was that, when you press the button, it actually runs Streamlit, run app,
+
+00:27:48.300 --> 00:27:52.859
+in your terminal, rather than just running the Python file itself.
+
+00:27:52.859 --> 00:27:57.660
+So this is something that it's a small, small change.
+
+00:27:57.660 --> 00:28:01.380
+But if you think about people who have used this package,
+
+00:28:01.380 --> 00:28:05.739
+or people who are reading your reports, or something like that,
+
+00:28:05.739 --> 00:28:07.979
+you can think about, what are things that people say,
+
+00:28:07.979 --> 00:28:10.140
+oh, I have to click a couple times for?
+
+00:28:10.140 --> 00:28:11.660
+And maybe it's not even a complaint.
+
+00:28:11.660 --> 00:28:13.260
+It's just an observation.
+
+00:28:13.260 --> 00:28:16.540
+Being able to minimize those small paper cuts
+
+00:28:16.540 --> 00:28:19.739
+really makes a big impact time over time.
+
+00:28:25.459 --> 00:28:30.699
+Our final way of having a soft skill is to explain your work.
+
+00:28:30.699 --> 00:28:35.140
+So the idea of a rubber duck is very popular in programming.
+
+00:28:35.140 --> 00:28:40.339
+You have this little companion that you can sit there and talk to.
+
+00:28:40.339 --> 00:28:42.739
+And oftentimes, when you're talking through your problems,
+
+00:28:42.739 --> 00:28:46.780
+your solutions just kind of fall out on their own.
+
+00:28:46.780 --> 00:28:49.660
+So here's the thing that happens when you explain things.
+
+00:28:49.660 --> 00:28:54.300
+Also from our Zen of Python, if the implementation is hard to explain,
+
+00:28:54.300 --> 00:28:55.939
+it's a bad idea.
+
+00:28:55.939 --> 00:28:58.780
+So of course, being able to write documentation and things
+
+00:28:58.780 --> 00:29:01.300
+like that is helpful for the handoff of work
+
+00:29:01.300 --> 00:29:03.099
+when you're collaborating with others.
+
+00:29:03.099 --> 00:29:07.180
+But selfishly, oftentimes, when you're explaining your work,
+
+00:29:07.180 --> 00:29:12.020
+you kind of are able to figure out what is a good idea and what isn't.
+
+00:29:12.020 --> 00:29:13.979
+Having clarity on the code that you're writing
+
+00:29:13.979 --> 00:29:17.180
+is really able to help you supercharge your own ability
+
+00:29:17.180 --> 00:29:20.219
+to comprehend the problems that you're solving
+
+00:29:20.219 --> 00:29:24.739
+and then build whatever you would like later.
+
+00:29:24.739 --> 00:29:27.339
+This is something that I saw on Blue Sky.
+
+00:29:27.339 --> 00:29:29.900
+I don't know if you call this a tweet or not.
+
+00:29:29.900 --> 00:29:33.699
+But on Blue Sky, I think about this almost every single day.
+
+00:29:33.699 --> 00:29:37.540
+If your writing helps even one person, it's worth doing,
+
+00:29:37.540 --> 00:29:40.540
+especially if that one person is you.
+
+00:29:40.540 --> 00:29:42.540
+And of course, like the original context of this
+
+00:29:42.540 --> 00:29:45.339
+is literary people wanting to become an author.
+
+00:29:45.339 --> 00:29:50.459
+But I think of this all the time when I'm looking for a new package to use.
+
+00:29:50.459 --> 00:29:55.699
+I want to see, is there not only API documentation, that reference page,
+
+00:29:55.699 --> 00:29:57.900
+but is there a getting started guide?
+
+00:29:57.900 --> 00:30:01.380
+Are there examples or some sort of a gallery?
+
+00:30:01.380 --> 00:30:06.339
+I also think about this when I'm writing functions for myself or for others.
+
+00:30:06.339 --> 00:30:10.660
+Things like doc strings and types, it's not mandatory in Python.
+
+00:30:10.660 --> 00:30:15.780
+You can run wild, make the craziest wild west of functions you desire.
+
+00:30:15.780 --> 00:30:19.500
+But when you add types and doc strings to your functions,
+
+00:30:19.500 --> 00:30:24.219
+you can realize, oh, this doesn't make too much sense.
+
+00:30:24.219 --> 00:30:27.099
+This argument is just like the other one.
+
+00:30:27.099 --> 00:30:29.859
+Or maybe you're like me, and sometimes you add types
+
+00:30:29.859 --> 00:30:32.619
+and realize your scope is way too broad.
+
+00:30:32.619 --> 00:30:37.619
+And it also helps yourself, but it helps your users as well later
+
+00:30:37.619 --> 00:30:40.939
+to pick up this information and say, oh, I should
+
+00:30:40.939 --> 00:30:42.780
+be passing a pandas data frame here.
+
+00:30:42.780 --> 00:30:45.380
+I should be doing whatever.
+
+00:30:45.380 --> 00:30:52.420
+So writing down your intent is super important, even if it's just for yourself.
+
+00:30:52.420 --> 00:30:56.260
+And the hard part can be surfacing this information later.
+
+00:30:56.260 --> 00:31:01.900
+One more thing that I want to focus on is this help pane in Positron.
+
+00:31:01.900 --> 00:31:04.180
+So if you just write something in the console
+
+00:31:04.180 --> 00:31:07.979
+and put a little question mark next to it, it will pull up this pane,
+
+00:31:07.979 --> 00:31:11.660
+and it will render all of your doc strings.
+
+00:31:11.660 --> 00:31:14.540
+And it has syntax, not really syntax highlighting,
+
+00:31:14.540 --> 00:31:19.900
+but formatting, rich API formatting for your NumPy and your Sphinx
+
+00:31:19.900 --> 00:31:23.219
+and your epitext formatted doc strings.
+
+00:31:23.219 --> 00:31:27.380
+If you're linking to other functions, all of your documentation is interlinked.
+
+00:31:27.380 --> 00:31:31.579
+So it's helpful because you don't have to go all the way over to something
+
+00:31:31.579 --> 00:31:35.180
+like a doc site if you're just looking for something really quickly.
+
+00:31:35.180 --> 00:31:39.459
+You can also do this in Jupyter and IPython if you do double question marks.
+
+00:31:42.979 --> 00:31:47.060
+So it's really helping to get this information closer to users,
+
+00:31:47.060 --> 00:31:54.780
+even if that user is just you, to really close this feedback loop.
+
+00:31:54.416 --> 00:32:00.976
+to close this feedback loop between writing documentation and being able to use it again
+
+00:32:00.976 --> 00:32:05.536
+later. And docs, like, they're a good place to write things down, especially when it's
+
+00:32:06.096 --> 00:32:08.176
+specific to a certain function.
+
+00:32:04.800 --> 00:32:06.240
+a good place to write things down,
+
+00:32:06.240 --> 00:32:10.600
+especially when it's specific to a certain function.
+
+00:32:10.600 --> 00:32:13.760
+But oftentimes, I'll have half-baked ideas or ideas
+
+00:32:13.760 --> 00:32:18.680
+that don't quite fit into the types or a doc string.
+
+00:32:18.680 --> 00:32:21.000
+Sometimes these are my half-baked ideas
+
+00:32:21.000 --> 00:32:23.640
+on architecture or something like that.
+
+00:32:23.640 --> 00:32:27.240
+And this is where I have really enjoyed using something
+
+00:32:27.240 --> 00:32:33.800
+like a Claude MD file for things that it's not good enough
+
+00:32:33.800 --> 00:32:36.919
+or it's not fleshed out enough to go to a doc site.
+
+00:32:36.919 --> 00:32:39.079
+It's not going to be sent to my colleagues
+
+00:32:39.079 --> 00:32:41.120
+or anything like that, because it turns out
+
+00:32:41.120 --> 00:32:43.360
+robots are really good at completing
+
+00:32:43.360 --> 00:32:44.399
+your half-baked ideas.
+
+00:32:47.200 --> 00:32:49.239
+I think it's a great maintenance task for something
+
+00:32:49.239 --> 00:32:52.960
+that maybe it's a project you only do part of the time,
+
+00:32:52.960 --> 00:32:55.320
+and you're going to put it down and pick it back up again
+
+00:32:55.320 --> 00:32:57.040
+in six months.
+
+00:32:57.040 --> 00:33:00.439
+It's a great place to write things like your architecture
+
+00:33:00.439 --> 00:33:02.480
+or the purpose of a certain function
+
+00:33:02.480 --> 00:33:05.800
+or if there's any gotchas for your project,
+
+00:33:05.800 --> 00:33:07.640
+and maybe even a happy path.
+
+00:33:07.640 --> 00:33:10.759
+We should always want to use this data frame,
+
+00:33:10.759 --> 00:33:13.399
+pull from this database, something like that.
+
+00:33:13.399 --> 00:33:17.160
+This is a great place to do super lightweight, very low
+
+00:33:17.160 --> 00:33:19.759
+stakes documentation.
+
+00:33:19.759 --> 00:33:22.920
+It's nice, because it doesn't have to be as polished.
+
+00:33:22.920 --> 00:33:25.319
+But if we think of the open source
+
+00:33:25.319 --> 00:33:29.399
+virtue of release early and release often,
+
+00:33:29.399 --> 00:33:33.480
+I want us to think about share early and share often.
+
+00:33:33.480 --> 00:33:36.920
+Bring these thoughts out of your brain as early as possible
+
+00:33:36.920 --> 00:33:39.079
+so you can add clarity to your work later on.
+
+00:33:42.520 --> 00:33:44.999
+So we want to think about tools really holistically,
+
+00:33:44.999 --> 00:33:48.160
+these hard skills, these soft skills.
+
+00:33:48.160 --> 00:33:50.240
+We can think about if we have this compass,
+
+00:33:50.240 --> 00:33:53.319
+that it always points towards beautiful tools for ourselves
+
+00:33:53.319 --> 00:33:55.380
+and for others, and always making sure
+
+00:33:55.380 --> 00:33:57.560
+that we're choosing the right tools for us
+
+00:33:57.560 --> 00:34:01.439
+to live our best lives as data practitioners.
+
+00:34:01.439 --> 00:34:05.759
+We want to consider the input and the output of our work
+
+00:34:05.759 --> 00:34:09.719
+and take on as much complexity as we can as a builder
+
+00:34:09.719 --> 00:34:13.559
+to make a user's life easier.
+
+00:34:13.559 --> 00:34:15.400
+There's a lot of feedback loops, especially
+
+00:34:15.400 --> 00:34:19.160
+when you're building projects, where people are using
+
+00:34:19.160 --> 00:34:21.719
+the tools you're building, noticing pain points
+
+00:34:21.719 --> 00:34:23.439
+and sharing them with others.
+
+00:34:23.439 --> 00:34:26.439
+And this is how our ecosystem improves.
+
+00:34:26.439 --> 00:34:29.760
+We're all both consumers and contributors.
+
+00:34:29.760 --> 00:34:31.079
+And everyone's unique perspective
+
+00:34:31.079 --> 00:34:33.579
+is really important as they bring in a different way
+
+00:34:33.579 --> 00:34:37.999
+that they're traversing through this space.
+
+00:34:37.999 --> 00:34:40.719
+So building tools, it's not about this final destination
+
+00:34:40.719 --> 00:34:45.400
+of the perfect package, the perfect report.
+
+00:34:45.400 --> 00:34:48.160
+It's this journey that really never ends.
+
+00:34:48.160 --> 00:34:52.359
+Using tools reveals what's needed and what to build next.
+
+00:34:52.359 --> 00:34:55.520
+Building reveals what's possible,
+
+00:34:55.520 --> 00:34:57.520
+what we can build for others.
+
+00:34:57.520 --> 00:35:02.079
+And sharing really just starts this cycle anew.
+
+00:35:02.079 --> 00:35:04.919
+So every great tool starts as someone's story
+
+00:35:04.919 --> 00:35:07.199
+of triumph or frustration.
+
+00:35:07.199 --> 00:35:09.320
+So all of your blog posts and your conference
+
+00:35:09.320 --> 00:35:12.079
+talks, your GitHub issues that you're opening,
+
+00:35:12.079 --> 00:35:14.600
+your LinkedIn posts that you're sharing,
+
+00:35:14.600 --> 00:35:18.800
+sharing what works and what doesn't helps everyone improve.
+
+00:35:18.800 --> 00:35:21.439
+So I would really encourage, give feedback
+
+00:35:21.439 --> 00:35:23.419
+because it matters.
+
+00:35:23.419 --> 00:35:26.419
+Your tools make other people's work better.
+
+00:35:26.419 --> 00:35:30.139
+And your feedback makes our tools better.
+
+00:35:30.139 --> 00:35:31.699
+So what makes tools stick?
+
+00:35:31.699 --> 00:35:34.380
+There's the hard skills of modularity,
+
+00:35:34.380 --> 00:35:37.139
+reproducibility, flexibility.
+
+00:35:37.139 --> 00:35:39.900
+There's also the soft skills of knowing your users
+
+00:35:39.900 --> 00:35:44.960
+and emphasizing discoverability, building little things
+
+00:35:44.960 --> 00:35:48.020
+for big impact, and explaining your work.
+
+00:35:48.020 --> 00:35:50.339
+This is all driven by a mission for people
+
+00:35:50.339 --> 00:35:52.540
+to have the most beautiful experience
+
+00:35:52.540 --> 00:35:54.660
+with the open source tools that they're using
+
+00:35:54.660 --> 00:35:59.339
+and for people to feel empowered that they can build tools
+
+00:35:59.339 --> 00:36:02.260
+small, medium, or large.
+
+00:36:02.260 --> 00:36:03.740
+So thank you all.
+
+00:36:03.740 --> 00:36:04.859
+There's a Posit booth.
+
+00:36:04.859 --> 00:36:05.859
+I'll be there.
+
+00:36:05.859 --> 00:36:08.339
+You can learn more about Positron at this site.
+
+00:36:08.339 --> 00:36:09.460
+That's also my website.
+
+00:36:09.460 --> 00:36:11.139
+And I'll be taking questions now.
+
+00:36:11.139 --> 00:36:12.139
+Thank you.
+
+00:36:12.660 --> 00:36:13.540
+Thank you.
+
+00:36:21.539 --> 00:36:22.579
+I don't know if people.
+
+00:36:22.579 --> 00:36:24.180
+I'll start with the front.
+
+00:36:24.180 --> 00:36:27.060
+Yes, a question about the plotting pane.
+
+00:36:27.060 --> 00:36:31.259
+I see that you had a MATPLOTLIB plot up there.
+
+00:36:31.259 --> 00:36:34.220
+Do you support other plots or packages
+
+00:36:34.220 --> 00:36:36.340
+to C-borne plotly or anything like that?
+
+00:36:36.340 --> 00:36:40.120
+Yep, the question was about Positron's plots pane
+
+00:36:40.120 --> 00:36:43.479
+and what sort of packages that we support.
+
+00:36:43.479 --> 00:36:46.840
+So we support MATPLOTLIB.
+
+00:36:46.840 --> 00:36:49.579
+Talking about modularity, most, actually,
+
+00:36:49.579 --> 00:36:53.199
+all Python plotting packages are built off of MATPLOTLIB.
+
+00:36:53.199 --> 00:36:55.079
+So we actually get a lot of support
+
+00:36:55.079 --> 00:36:57.520
+just from supporting MATPLOTLIB.
+
+00:36:57.520 --> 00:36:59.359
+But other packages that we know work well
+
+00:36:59.359 --> 00:37:03.139
+are plotly, C-borne, plot9.
+
+00:37:03.139 --> 00:37:04.639
+There's a whole bunch of others, but I
+
+00:37:04.639 --> 00:37:06.560
+think that's kind of the main ones
+
+00:37:06.560 --> 00:37:08.079
+that I can think of right now.
+
+00:37:08.079 --> 00:37:11.159
+So yes, many plots are supported.
+
+00:37:11.159 --> 00:37:12.819
+If you ever find one that isn't and you
+
+00:37:12.819 --> 00:37:14.639
+would like it to be, open a GitHub issue
+
+00:37:14.639 --> 00:37:16.079
+and we can support that for you.
+
+00:37:19.720 --> 00:37:21.400
+In the back.
+
+00:37:21.400 --> 00:37:22.280
+Thanks.
+
+00:37:22.280 --> 00:37:25.039
+You said that building for data scientists
+
+00:37:25.039 --> 00:37:27.919
+can be different than building for software engineers.
+
+00:37:27.919 --> 00:37:29.379
+There was a talk a couple of years
+
+00:37:29.379 --> 00:37:32.079
+back called, Why Software Engineers and Data Scientists
+
+00:37:32.079 --> 00:37:34.440
+Want to Murder Each Other.
+
+00:37:34.479 --> 00:37:38.159
+But when you're going from a tool user to a tool builder,
+
+00:37:38.159 --> 00:37:42.400
+you are shifting your own mindset from a data scientist
+
+00:37:42.400 --> 00:37:47.720
+why to a, or what, to an engineer's how.
+
+00:37:47.720 --> 00:37:49.599
+What's that shift like, and how are you
+
+00:37:49.599 --> 00:37:51.280
+able to make that work?
+
+00:37:51.280 --> 00:37:53.240
+Yeah.
+
+00:37:53.240 --> 00:37:57.000
+So the question is, when you go from data scientist
+
+00:37:57.000 --> 00:38:00.079
+to tool builder, these are, I talked about,
+
+00:38:00.079 --> 00:38:01.879
+they're two different skill sets.
+
+00:38:01.879 --> 00:38:05.240
+And how to make them happy together,
+
+00:38:05.240 --> 00:38:09.199
+and how to live with the two wolves inside you, I suppose.
+
+00:38:11.879 --> 00:38:14.599
+I think a lot of what I think about
+
+00:38:14.599 --> 00:38:17.159
+is the empathy for the data scientist
+
+00:38:17.159 --> 00:38:19.879
+leaks into you as a software engineer.
+
+00:38:19.879 --> 00:38:23.560
+They are a very different tool, different ideas,
+
+00:38:23.560 --> 00:38:26.960
+different skills in some ways.
+
+00:38:26.960 --> 00:38:30.440
+So I think knowing what the outcome is is important.
+
+00:38:30.440 --> 00:38:35.960
+For example, I'm trying to think.
+
+00:38:35.960 --> 00:38:39.079
+Even like the plots pane, my data science brain
+
+00:38:39.079 --> 00:38:41.720
+says we should be able to iterate
+
+00:38:41.720 --> 00:38:44.560
+through all of these lines.
+
+00:38:44.560 --> 00:38:46.479
+But the software engineer part of my brain
+
+00:38:46.479 --> 00:38:49.400
+says, OK, when we're using plots in a notebook,
+
+00:38:49.400 --> 00:38:51.000
+oftentimes it's all one chunk.
+
+00:38:51.000 --> 00:38:53.440
+So how do we make sure that both of these work?
+
+00:38:53.440 --> 00:38:55.720
+So I think it's acknowledging that these
+
+00:38:55.720 --> 00:38:59.800
+are two different skills for software engineering
+
+00:39:00.680 --> 00:39:02.159
+A skill that I might be doing is I'm
+
+00:39:02.159 --> 00:39:05.240
+writing more end-to-end tests, or unit tests,
+
+00:39:05.240 --> 00:39:08.400
+or something like that, than I might as a data scientist.
+
+00:39:08.400 --> 00:39:11.039
+But having that empathy of knowing the problems to solve
+
+00:39:11.039 --> 00:39:13.000
+is super important.
+
+00:39:13.000 --> 00:39:14.319
+So thank you for that question.
+
+00:39:18.039 --> 00:39:20.319
+I'll go here, and then I'll go over to you.
+
+00:39:20.319 --> 00:39:20.800
+Sure.
+
+00:39:20.800 --> 00:39:23.120
+So my question is, one of the things you do
+
+00:39:23.120 --> 00:39:26.359
+is you build a lot of features for the IDE
+
+00:39:26.359 --> 00:39:29.240
+or in the process of building small little tools into it.
+
+00:39:29.240 --> 00:39:33.400
+And what I wonder about is, what kind of signals or feedback
+
+00:39:33.400 --> 00:39:36.000
+do you use to figure out if this feature that you've just added
+
+00:39:36.000 --> 00:39:37.400
+was actually a good idea or not?
+
+00:39:37.400 --> 00:39:39.440
+Because I mean, looking at my own experience,
+
+00:39:39.440 --> 00:39:41.000
+like building a new feature, you probably
+
+00:39:41.000 --> 00:39:42.800
+think it's a good idea, which is why you release it.
+
+00:39:42.800 --> 00:39:44.359
+But that doesn't mean that your users actually
+
+00:39:44.359 --> 00:39:45.879
+agree with your enthusiasm.
+
+00:39:45.879 --> 00:39:47.599
+So how do you go about figuring that out?
+
+00:39:47.599 --> 00:39:52.319
+Yeah, the question is, you get a lot of feedback from people,
+
+00:39:52.319 --> 00:39:53.639
+and we build a lot of features.
+
+00:39:53.639 --> 00:39:55.720
+So how do we decide if, one, a feature is needed,
+
+00:39:55.720 --> 00:39:58.159
+and two, if not only is it needed,
+
+00:39:58.159 --> 00:40:00.199
+but people actually want it, which are subtly
+
+00:40:00.199 --> 00:40:03.319
+different things?
+
+00:40:03.319 --> 00:40:05.280
+I think one thing, we're lucky enough
+
+00:40:05.280 --> 00:40:09.479
+we have an active online community of people
+
+00:40:09.479 --> 00:40:13.759
+who are willing to tell us, I want you to support x, y,
+
+00:40:13.759 --> 00:40:15.400
+and z.
+
+00:40:15.400 --> 00:40:17.800
+So I think that is one way.
+
+00:40:17.800 --> 00:40:23.400
+And another is the intuition of, because we know our users,
+
+00:40:23.400 --> 00:40:26.120
+I think of, I was really struggling
+
+00:40:26.120 --> 00:40:29.280
+with deploying Jupyter Notebooks,
+
+00:40:29.280 --> 00:40:32.840
+or I was really struggling with transferring from this data
+
+00:40:32.840 --> 00:40:34.599
+science library to this one.
+
+00:40:34.599 --> 00:40:38.519
+So being able to infuse our own knowledge of knowing the users
+
+00:40:38.519 --> 00:40:40.880
+is also a good place to start.
+
+00:40:40.880 --> 00:40:44.200
+I think asking questions is super reasonable,
+
+00:40:44.200 --> 00:40:47.039
+saying, hey, I'm thinking about this.
+
+00:40:47.039 --> 00:40:48.919
+Is this something that would work?
+
+00:40:48.919 --> 00:40:52.479
+Is this something that makes sense from your stakeholders?
+
+00:40:52.479 --> 00:40:54.159
+Closing this feedback loop and not
+
+00:40:54.159 --> 00:40:57.800
+being afraid to just say, early on,
+
+00:40:57.800 --> 00:41:00.599
+can we have feedback on this, even if it's as a prototype
+
+00:41:00.599 --> 00:41:02.680
+or something like that.
+
+00:41:02.680 --> 00:41:04.599
+So a lot of communication with users
+
+00:41:04.599 --> 00:41:07.159
+and trying to put yourself in their shoes
+
+00:41:07.159 --> 00:41:10.240
+for small, medium, and large features.
+
+00:41:10.240 --> 00:41:12.279
+So two more minutes, so just a quick question.
+
+00:41:12.279 --> 00:41:13.719
+Perfect.
+
+00:41:13.719 --> 00:41:14.200
+Yes.
+
+00:41:14.200 --> 00:41:16.120
+Isabel, I have a question.
+
+00:41:16.120 --> 00:41:21.680
+How do you encourage data science persona types
+
+00:41:21.680 --> 00:41:23.320
+to become tool builders?
+
+00:41:26.200 --> 00:41:27.760
+And the reason I'm asking this is
+
+00:41:27.760 --> 00:41:31.560
+because sometimes there's this psychological barrier
+
+00:41:31.560 --> 00:41:32.919
+to building tools.
+
+00:41:32.919 --> 00:41:34.599
+They're like, I'm a tool consumer.
+
+00:41:34.599 --> 00:41:36.440
+I do not want to build.
+
+00:41:36.440 --> 00:41:37.760
+I just want to use the tools.
+
+00:41:37.760 --> 00:41:39.120
+I just want to get my job done.
+
+00:41:41.640 --> 00:41:43.880
+Yeah, I'd like to hear some of your thoughts on that.
+
+00:41:43.880 --> 00:41:45.839
+The question is, how do you convince
+
+00:41:45.839 --> 00:41:49.320
+people who identify as a tool consumer to be a tool builder?
+
+00:41:51.719 --> 00:41:54.200
+There's a couple different ways that we can talk about this.
+
+00:41:54.200 --> 00:41:58.800
+I think one is, the time is now, because of the AI tools
+
+00:41:58.800 --> 00:42:00.839
+that are available, I think the barrier
+
+00:42:00.839 --> 00:42:03.000
+to starting to build a Python package, like I said,
+
+00:42:03.000 --> 00:42:04.240
+is way lower.
+
+00:42:04.240 --> 00:42:07.279
+You can say, I have these functions,
+
+00:42:07.279 --> 00:42:10.159
+literally copy and paste them into ChatGBT or Cloud
+
+00:42:10.159 --> 00:42:11.880
+or whatever, and be like, hey, can you
+
+00:42:11.880 --> 00:42:14.279
+make this into a Python package?
+
+00:42:14.279 --> 00:42:17.959
+I think data scientists love reproducibility.
+
+00:42:17.959 --> 00:42:20.800
+So if you can frame things in a reproducible way,
+
+00:42:20.800 --> 00:42:23.560
+this is really important, because the more tools you
+
+00:42:23.560 --> 00:42:26.560
+build, it makes your work more reproducible
+
+00:42:26.560 --> 00:42:30.479
+by having these functions that you can reuse.
+
+00:42:30.479 --> 00:42:33.419
+So I think those are two important factors.
+
+00:42:33.419 --> 00:42:35.880
+Also, the more specialized something
+
+00:42:35.880 --> 00:42:38.919
+is for your task, I have this function
+
+00:42:38.919 --> 00:42:41.440
+for my specific data set, the faster
+
+00:42:41.440 --> 00:42:43.200
+they're going to be able to work.
+
+00:42:43.200 --> 00:42:45.640
+So even if it's just a small incremental tool
+
+00:42:45.640 --> 00:42:48.680
+of changing your script that you run all of your data
+
+00:42:48.719 --> 00:42:51.359
+through into a function, like, congratulations,
+
+00:42:51.359 --> 00:42:52.899
+you've already become a tool builder.
+
+00:42:52.899 --> 00:42:55.800
+You're already taking steps onto this path.
+
+00:42:55.800 --> 00:42:59.519
+So I think the time is right to change our mindsets
+
+00:42:59.519 --> 00:43:02.719
+and just be a little bit of a tool builder as long as well
+
+00:43:02.719 --> 00:43:05.599
+as being a tool consumer.
+
+00:43:05.599 --> 00:43:07.839
+All right, I'll take one more, or that's it?
+
+00:43:07.839 --> 00:43:09.120
+All right, I'm getting cut off.
+
+00:43:09.120 --> 00:43:11.120
+I will be over, out, and around.
+
+00:43:11.120 --> 00:43:12.719
+Feel free to ask me any more questions.
+
+00:43:12.719 --> 00:43:13.640
+I'd love to chat.
+
+00:43:13.640 --> 00:43:14.440
+Thank you so much.
+
+00:43:14.440 --> 00:43:16.159
+Thank you.

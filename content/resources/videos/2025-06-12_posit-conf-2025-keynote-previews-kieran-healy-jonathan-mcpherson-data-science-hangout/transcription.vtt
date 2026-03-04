@@ -1,0 +1,2296 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.660
+Hey there, welcome to the Posit Data Science Hangout. I'm Libby Heron, and this is a recording
+
+00:00:16.660 --> 00:00:22.020
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.020 --> 00:00:27.260
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.260 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:36.340
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.340 --> 00:00:42.320
+Can't wait to see you there. I want to go ahead and introduce our featured leaders today
+
+00:00:42.320 --> 00:00:48.840
+because we have two and they are both keynote at Posit Conf, which is really exciting. So
+
+00:00:48.840 --> 00:00:53.959
+we have Kieran Healy, Professor of Sociology at Duke University, and we also have Jonathan
+
+00:00:53.959 --> 00:01:01.180
+McPherson, Software Architect at Posit. Say hi to everybody. I am going to ask Kieran
+
+00:01:01.180 --> 00:01:07.580
+to go ahead and introduce yourself first. A little bit of background about Kieran and
+
+00:01:07.580 --> 00:01:11.620
+something you would like to do for fun outside of work.
+
+00:01:11.620 --> 00:01:16.660
+Hi everyone, and thanks for coming. There's a big crowd here. My name is Kieran Healy.
+
+00:01:16.720 --> 00:01:23.720
+As Libby said, I teach Sociology at Duke here in North Carolina. I'm originally from Ireland
+
+00:01:23.720 --> 00:01:29.720
+and I've been using, as I like to say, I've been using R since it was a different letter,
+
+00:01:29.720 --> 00:01:34.879
+since it was S. Back as a graduate student, I was introduced to it by one of my teachers
+
+00:01:34.879 --> 00:01:40.639
+and since then it's been sort of the main way that I do data analysis and teach it and
+
+00:01:40.639 --> 00:01:47.699
+draw pictures with it. And kind of over the years, having just being a user of it, I've
+
+00:01:47.699 --> 00:01:52.419
+become somebody who also writes about it and tries to teach people how to use it specifically
+
+00:01:52.419 --> 00:01:56.779
+with data visualization. So that's my background with R.
+
+00:01:56.779 --> 00:01:58.980
+And anything for fun?
+
+00:01:58.980 --> 00:02:05.540
+Anything for fun? Being Irish, I'm just naturally averse to those kinds of questions. I restore
+
+00:02:05.540 --> 00:02:09.380
+old computers. How about that? I build those things that you can see in the background.
+
+00:02:09.399 --> 00:02:17.279
+I rehabilitate in my basement vintage computers and then occasionally threaten my students
+
+00:02:17.279 --> 00:02:24.119
+with having them run their their analyses on them whenever they complain about running
+
+00:02:24.119 --> 00:02:25.880
+out of memory or something like that.
+
+00:02:25.880 --> 00:02:28.479
+Does it does it pain you to call them vintage?
+
+00:02:28.479 --> 00:02:30.000
+Because it pains me.
+
+00:02:30.000 --> 00:02:32.679
+It does, yeah, because that means I'm vintage.
+
+00:02:32.679 --> 00:02:35.399
+Right. Yeah. I mean, I'm like, well, these are the things I had as a kid.
+
+00:02:35.399 --> 00:02:38.399
+They can't possibly be vintage.
+
+00:02:38.419 --> 00:02:41.139
+Wonderful. I'm going to have Jonathan do the same thing.
+
+00:02:41.139 --> 00:02:42.820
+Jonathan, could you introduce yourself?
+
+00:02:42.820 --> 00:02:46.619
+Tell us a little bit about you, how you got here and something you like to do for fun.
+
+00:02:47.820 --> 00:02:48.899
+Yeah. Hey, everybody.
+
+00:02:48.899 --> 00:02:53.300
+I'm Jonathan. I'm coming at you live from the Seattle area of Washington, where it is
+
+00:02:53.300 --> 00:02:54.899
+still morning. I still need coffee.
+
+00:02:55.740 --> 00:02:58.779
+I'm a software engineer and architect at Posit.
+
+00:02:59.179 --> 00:03:04.100
+I'm not a data scientist, to be clear, but I do make tools for data scientists.
+
+00:03:04.320 --> 00:03:09.679
+So I was fortunate enough to be one of the early employees at RStudio, now Posit, and
+
+00:03:09.679 --> 00:03:12.759
+have worked for most of my time here on the RStudio IDE.
+
+00:03:13.240 --> 00:03:18.039
+If you have not used RStudio, it is one of the first and, in my opinion, still one of
+
+00:03:18.039 --> 00:03:20.000
+the best IDEs for the R language.
+
+00:03:20.919 --> 00:03:25.240
+A couple of years ago, I switched gears and helped create a new IDE called Positron,
+
+00:03:25.240 --> 00:03:29.839
+which kind of takes a lot of the ideas from RStudio and develops them into a bigger,
+
+00:03:29.960 --> 00:03:31.919
+more ambitious multi-language IDE.
+
+00:03:32.100 --> 00:03:37.380
+So I'd love to take questions about RStudio, Positron, data science tools, software
+
+00:03:37.380 --> 00:03:38.779
+engineering and architecture, and so on.
+
+00:03:39.740 --> 00:03:41.300
+For fun, I am a dad.
+
+00:03:41.539 --> 00:03:44.539
+I have three kids, so I spend a lot of time with them.
+
+00:03:44.820 --> 00:03:46.460
+I'm into music. I play the piano.
+
+00:03:47.220 --> 00:03:50.020
+I read a lot of books. I go through at least a few books a month.
+
+00:03:50.139 --> 00:03:52.179
+Fiction, nonfiction, everything in between.
+
+00:03:52.740 --> 00:03:56.820
+And I also ride my bicycle a lot, so that's me.
+
+00:03:57.500 --> 00:04:00.259
+I go through a lot of books every month, too, and then I tell myself, I don't have time
+
+00:04:00.279 --> 00:04:04.880
+for anything. I don't have time to read a lot of books.
+
+00:04:06.320 --> 00:04:11.279
+All right. Well, I wanted to give us a chance to sort of preview both of your
+
+00:04:11.679 --> 00:04:16.040
+conf talks. This is putting pressure on you because you might not even have your conf
+
+00:04:16.040 --> 00:04:21.119
+talks done. I have given a talk at conf and I was not ready months before, but
+
+00:04:21.399 --> 00:04:26.920
+I thought maybe we could do a pseudo abstract for each of you just so that it gives
+
+00:04:26.920 --> 00:04:28.320
+us all a little bit more context.
+
+00:04:28.660 --> 00:04:32.820
+Kieran, would you like to go first and talk a little bit about what you plan to talk
+
+00:04:32.820 --> 00:04:33.820
+about in your keynote?
+
+00:04:34.459 --> 00:04:39.700
+Sure. Yes. And my talk is certainly not done at this stage.
+
+00:04:40.540 --> 00:04:45.019
+My talk will be about trustworthy data visualization.
+
+00:04:45.859 --> 00:04:51.019
+As I said a minute ago, I'm interested in data visualization because it's such a
+
+00:04:51.019 --> 00:04:55.540
+powerful way to condense and present information, often tremendous amounts of
+
+00:04:55.540 --> 00:05:00.720
+information, into sort of a compelling and seemingly authoritative, often beautiful
+
+00:05:00.720 --> 00:05:04.119
+artifact that travels really well, that you can show to people and convince people of
+
+00:05:04.119 --> 00:05:08.959
+things with. And now, in a way, all of statistics, all of the things that we produce
+
+00:05:09.000 --> 00:05:13.399
+with data science models and tables and all the rest of it is like that, too.
+
+00:05:13.399 --> 00:05:16.920
+But visualizations are especially like that, I think, because they strive to be
+
+00:05:16.920 --> 00:05:19.119
+accessible and seem immediately interpretable.
+
+00:05:19.320 --> 00:05:21.920
+I mean, that's what we want when we make visualizations.
+
+00:05:22.140 --> 00:05:25.660
+But it's that power that also makes me kind of suspicious, a little bit suspicious
+
+00:05:25.660 --> 00:05:29.420
+anyway, of the whole rhetoric that has grown up around them, of their popularity, even
+
+00:05:29.420 --> 00:05:32.339
+though I do what I can to encourage that popularity myself.
+
+00:05:34.019 --> 00:05:39.459
+And as I say, the whole kind of language around data visualization from sort of
+
+00:05:39.459 --> 00:05:43.540
+old stuff like lying with graphs all the way through to more contemporary phrases like
+
+00:05:43.540 --> 00:05:47.859
+visual storytelling and things, I'm just a little bit suspicious of that.
+
+00:05:48.260 --> 00:05:51.779
+We want our data visualizations to be compelling and we want them to be convincing.
+
+00:05:52.459 --> 00:05:55.019
+But we also want them to be trustworthy or we should want that.
+
+00:05:55.019 --> 00:05:57.019
+And so we can ask, how can we do that?
+
+00:05:57.019 --> 00:05:59.779
+How can we make trustworthy data visualizations?
+
+00:05:59.779 --> 00:06:03.140
+And where does our trust in them come from?
+
+00:06:03.179 --> 00:06:04.299
+How is it sustained?
+
+00:06:04.859 --> 00:06:09.019
+And I think what I want to argue in the talk is that what we find is that the answer
+
+00:06:09.019 --> 00:06:13.739
+is not is not really the techniques used in the visualizations themselves or even in
+
+00:06:13.739 --> 00:06:17.540
+the software used to make them, even though that's made such tremendous strides over
+
+00:06:17.540 --> 00:06:23.000
+the last 20 or even five or six years, these are very useful and important, but
+
+00:06:23.000 --> 00:06:26.200
+they're not sufficient. And instead, the trustworthiness that we want depends on a
+
+00:06:26.200 --> 00:06:32.299
+kind of web of social processes and individual commitments that can't easily be
+
+00:06:32.299 --> 00:06:36.160
+automated and that we inevitably rely on.
+
+00:06:36.239 --> 00:06:40.559
+And if those processes break down or those commitments are weak, then it won't matter
+
+00:06:40.559 --> 00:06:44.600
+how good looking our graphs are or how compelling the stories we seem to tell with
+
+00:06:44.600 --> 00:06:47.040
+them can be. So that's what the talk is going to be about.
+
+00:06:48.200 --> 00:06:49.799
+It's a very juicy topic for me.
+
+00:06:50.040 --> 00:06:55.160
+I love it, especially because I do Tidy Tuesday every week and having 30 minutes to
+
+00:06:55.160 --> 00:07:00.040
+create a graph, I am frequently going, hmm, well, I got something done, but is it is
+
+00:07:00.040 --> 00:07:01.600
+this trustworthy? Is this good?
+
+00:07:01.600 --> 00:07:05.760
+Especially if the information that I'm conveying is something about like health care,
+
+00:07:05.760 --> 00:07:10.480
+you know, things that are very, very important and not frivolous like Pokemon or D&D
+
+00:07:10.480 --> 00:07:11.779
+monsters, which it is this week.
+
+00:07:12.480 --> 00:07:18.839
+All right, everybody, rev up your questions for Kieran about data visualization and
+
+00:07:18.839 --> 00:07:20.399
+other things that Kieran has mentioned.
+
+00:07:20.760 --> 00:07:22.519
+Jonathan, how about you?
+
+00:07:22.799 --> 00:07:24.880
+What is your conf talk going to be about?
+
+00:07:26.160 --> 00:07:31.679
+So my talk is going to be a little bit of history and a little bit of today and then a
+
+00:07:31.679 --> 00:07:35.899
+little bit of tomorrow. So kind of one of those time spanning talks.
+
+00:07:35.920 --> 00:07:41.200
+So like I mentioned in my intro a few minutes ago, I worked at RStudio.
+
+00:07:41.220 --> 00:07:45.619
+I've been at Posit for quite some time, and so I'm going to reflect a little bit on a
+
+00:07:45.619 --> 00:07:51.739
+decade of work on RStudio, kind of the principles that have led it to become the
+
+00:07:52.100 --> 00:07:54.100
+standard data science environment for R.
+
+00:07:54.579 --> 00:07:58.940
+I'm going to talk a bit about how those same principles developed the basis for
+
+00:07:58.940 --> 00:08:03.739
+Positron. I'll talk about Positron for quite a bit, and then I'll probably spend a
+
+00:08:03.739 --> 00:08:08.380
+little bit of time kind of looking to the future and talking about some of the ideas
+
+00:08:08.380 --> 00:08:10.459
+we have for the future of data science tooling.
+
+00:08:11.980 --> 00:08:15.500
+Wonderful. I know that we're probably going to have lots of Positron questions.
+
+00:08:16.420 --> 00:08:18.459
+Well, I want to hop right into Slido questions.
+
+00:08:18.459 --> 00:08:23.660
+We've got a few here already because Noor asked one that is the exact question that I
+
+00:08:23.660 --> 00:08:27.299
+wanted to ask. Noor, not a naive question, as you said in Slido.
+
+00:08:27.540 --> 00:08:30.140
+This is great. Are you available to unmute and ask yours?
+
+00:08:31.700 --> 00:08:32.739
+Hello.
+
+00:08:33.219 --> 00:08:37.619
+Yes, I am not fit for visual consumption, but my voice is here.
+
+00:08:38.599 --> 00:08:44.679
+This is more directed towards Jonathan, and I think it's a naive question, even though
+
+00:08:44.679 --> 00:08:51.400
+Libby doesn't, but what exactly does a data architect do from your perspective?
+
+00:08:52.039 --> 00:08:53.479
+And what is your day-to-day like?
+
+00:08:55.760 --> 00:08:59.640
+Yeah, so what is my day-to-day like?
+
+00:08:59.640 --> 00:09:05.719
+So I have worked on Positron since really day one.
+
+00:09:06.179 --> 00:09:12.580
+And so what an architect does in my role is quite a lot of coding and also quite a lot of
+
+00:09:12.580 --> 00:09:13.739
+fitting pieces together.
+
+00:09:14.539 --> 00:09:20.500
+So a system as complicated as an IDE has a whole bunch of subsystems.
+
+00:09:20.700 --> 00:09:26.900
+So if you think about the pieces that compose a complicated data science IDE like
+
+00:09:26.900 --> 00:09:34.659
+Positron, you have a user interface that displays the console and the graphs and charts
+
+00:09:34.679 --> 00:09:39.080
+and data grids and your variables viewer and all that stuff.
+
+00:09:39.359 --> 00:09:45.159
+You have language execution engines like R and Python that are actually performing the
+
+00:09:45.159 --> 00:09:47.400
+computations and then emitting results.
+
+00:09:48.159 --> 00:09:50.799
+You have other pieces that are going on.
+
+00:09:50.799 --> 00:09:53.080
+You have terminals. You have connections to other systems.
+
+00:09:54.799 --> 00:09:58.239
+These systems will often run in a web browser or in a desktop IDE.
+
+00:09:58.260 --> 00:10:04.820
+And so an architect's job in many cases is to simply design the way that all those
+
+00:10:04.820 --> 00:10:08.419
+processes work together to form a cohesive whole.
+
+00:10:09.260 --> 00:10:13.719
+So in the early days of Positron, I spent quite a lot of time just kind of slotting
+
+00:10:13.719 --> 00:10:19.020
+pieces in and out to figure out how to build a solid, reliable, robust system that does
+
+00:10:19.020 --> 00:10:20.260
+all the things we need it to do.
+
+00:10:21.200 --> 00:10:28.679
+And as the product has matured, my job is to be spending a lot more time actually
+
+00:10:29.239 --> 00:10:35.559
+writing a lot of middleware and glue code that keeps everything talking to each
+
+00:10:35.559 --> 00:10:40.479
+other, as well as writing a bunch of stuff that does individual features on the front
+
+00:10:40.479 --> 00:10:41.320
+end and the back end.
+
+00:10:41.320 --> 00:10:47.200
+So building UI, building capabilities that connect to R and Python, and then writing
+
+00:10:47.200 --> 00:10:50.159
+the systems that make those things talk to each other and work well together.
+
+00:10:51.119 --> 00:10:55.719
+Noor, I hope that that answered your question.
+
+00:10:55.719 --> 00:10:56.919
+I thought that was a great question.
+
+00:10:56.919 --> 00:11:02.520
+I say it's not naive because I don't know instinctively what a data architect does.
+
+00:11:02.679 --> 00:11:07.119
+And I've worked with data architects who do very different things.
+
+00:11:07.119 --> 00:11:12.080
+I feel like you might have the same title in another company with different functions
+
+00:11:12.080 --> 00:11:13.479
+and do something totally different.
+
+00:11:14.320 --> 00:11:18.679
+All righty, well, let's move on to Arsenis.
+
+00:11:18.679 --> 00:11:20.659
+Arsenis, you had a great question in Slido.
+
+00:11:20.659 --> 00:11:22.739
+I would love it if you could unmute and ask that.
+
+00:11:23.380 --> 00:11:24.020
+Yeah, sure.
+
+00:11:24.020 --> 00:11:24.539
+Thanks, Libby.
+
+00:11:24.539 --> 00:11:25.059
+Hey.
+
+00:11:25.179 --> 00:11:30.260
+Hey, so thank you, Kieran and Jonathan, for joining us today and chatting with us.
+
+00:11:30.580 --> 00:11:37.940
+My question is more for Kieran on this because you mentioned having used S when R
+
+00:11:37.940 --> 00:11:41.700
+was S, and I like the history of these languages quite a lot.
+
+00:11:41.979 --> 00:11:46.419
+So my question is, what are some of the developments in R that most stand out to
+
+00:11:46.419 --> 00:11:53.280
+you versus kind of the original S that maybe a lot of people might not be aware
+
+00:11:53.280 --> 00:11:58.719
+of or might've missed, and what are some of the developments that you hope to see
+
+00:11:58.719 --> 00:11:59.919
+in the language in the future?
+
+00:12:02.000 --> 00:12:03.280
+Boy, yeah, there's a lot.
+
+00:12:03.320 --> 00:12:12.119
+I mean, it's like 30 years and more of development kind of that is behind that.
+
+00:12:12.760 --> 00:12:15.840
+One of the things that changed is that you used to be able to use the underscore
+
+00:12:15.840 --> 00:12:21.979
+character as the assignment operator, which made for really terrible readability for
+
+00:12:21.979 --> 00:12:24.900
+code, and thankfully that went away.
+
+00:12:25.859 --> 00:12:32.219
+I think that it's in the character of R as a language to be constantly trying out
+
+00:12:32.219 --> 00:12:38.580
+new things within a sort of more or less structured overall community of the core
+
+00:12:38.580 --> 00:12:41.539
+developers and the wider world.
+
+00:12:41.559 --> 00:12:46.400
+And so in effect, what you have with R always is this kind of like these stratigraphic
+
+00:12:46.400 --> 00:12:54.200
+layers of previous efforts to develop aspects of the language, not all of which hang
+
+00:12:54.200 --> 00:12:55.960
+together very well.
+
+00:12:55.960 --> 00:12:59.799
+And so that was the main reason, I guess, that sort of Tidyverse and the whole place
+
+00:12:59.799 --> 00:13:08.679
+that Posit eventually can be traced back to, that was a real revolution in the
+
+00:13:08.700 --> 00:13:14.940
+usability of R for kind of people coming to data science broadly construed or data
+
+00:13:14.940 --> 00:13:17.460
+analysis, statistical data analysis for the first time.
+
+00:13:18.940 --> 00:13:23.299
+Not that there weren't sort of strictly speaking, there weren't that many things
+
+00:13:23.299 --> 00:13:28.460
+that you literally couldn't do before Tidyverse tools came along.
+
+00:13:28.460 --> 00:13:33.700
+But the harmonization that it brought really was a big step forward and sort of
+
+00:13:33.719 --> 00:13:40.200
+helped streamline things a little bit with all of the usual kind of trade-offs and
+
+00:13:40.200 --> 00:13:43.559
+caveats that come with that kind of development.
+
+00:13:43.919 --> 00:13:49.080
+And then the other big development, I think, going back to what Jonathan was talking
+
+00:13:49.080 --> 00:13:57.000
+about in his role, has kind of been in many ways the tooling, right, whether it's
+
+00:13:57.059 --> 00:14:05.140
+IDEs specifically, but then also kind of the ease with which R can talk to other aspects
+
+00:14:05.140 --> 00:14:09.219
+of general computing has really improved a great deal.
+
+00:14:10.179 --> 00:14:16.859
+So I'm not a software developer, although I do write R packages from time to time.
+
+00:14:16.859 --> 00:14:22.500
+And so I don't have extremely strong views on where the language should go or where the
+
+00:14:22.500 --> 00:14:25.780
+tooling should go. That's kind of not my area.
+
+00:14:25.780 --> 00:14:32.080
+But I do feel like the language as it exists now and the tooling as it exists now is just
+
+00:14:32.080 --> 00:14:36.520
+so much better than what we had in the past.
+
+00:14:36.520 --> 00:14:42.340
+And we'd like to see that sort of continue both in terms of its sort of flexibility while
+
+00:14:42.340 --> 00:14:47.479
+maintaining its core strengths, which have always been sort of it's the language that's
+
+00:14:47.479 --> 00:14:52.919
+built for data analysis at its core and builds into it kind of abstractions like the
+
+00:14:52.919 --> 00:14:56.940
+humble data frame that a lot of other languages kind of have to work a lot harder to
+
+00:14:56.940 --> 00:15:00.260
+integrate into how they work.
+
+00:15:00.539 --> 00:15:07.739
+And so between that and if we can continue on that path and maintain the sort of really
+
+00:15:07.739 --> 00:15:11.820
+vibrant kind of community that R has always had, then we'll be in good shape, I think.
+
+00:15:13.059 --> 00:15:17.500
+Something that Kieran said when I first talked to him that really stood out to me was
+
+00:15:18.299 --> 00:15:22.299
+something about like, you know, everyone's kind of worried about Positron, like, oh, it
+
+00:15:22.299 --> 00:15:23.400
+changes scary. Right.
+
+00:15:23.599 --> 00:15:29.919
+But when you've seen things progress over a large number of years from S to R, you've seen
+
+00:15:29.919 --> 00:15:31.039
+all of these changes happen.
+
+00:15:31.039 --> 00:15:35.320
+You're a lot less afraid of change because you know that it happens.
+
+00:15:35.320 --> 00:15:37.400
+Change happens. Stuff gets better over time.
+
+00:15:37.400 --> 00:15:38.760
+And it was such a positive outlook.
+
+00:15:40.719 --> 00:15:43.520
+Yeah, I mean, he's been around long enough.
+
+00:15:43.520 --> 00:15:48.760
+There's after a while you do you do feel like the sort of negative version of that is saying
+
+00:15:49.140 --> 00:15:52.659
+you don't want to turn into sort of a cranky old man yells at cloud.
+
+00:15:52.900 --> 00:15:55.659
+Anytime some new thing comes along, I'm real mad about it.
+
+00:15:56.979 --> 00:16:00.500
+In almost all of these cases, you know, something comes along and changes.
+
+00:16:00.900 --> 00:16:02.299
+It offers some advantages.
+
+00:16:02.299 --> 00:16:05.900
+Some people will seize on that and take advantage of it.
+
+00:16:05.900 --> 00:16:08.580
+Other people will be like, well, things work fine the way they are for me.
+
+00:16:08.619 --> 00:16:11.940
+So if it's not broke, don't fix it.
+
+00:16:12.520 --> 00:16:19.960
+But there's room within the overall kind of space of the language and of languages and
+
+00:16:19.960 --> 00:16:24.640
+tools generally for exactly that sort of range of reactions.
+
+00:16:24.640 --> 00:16:29.820
+It doesn't mean that kind of, you know, people are going to be sort of forced down one road
+
+00:16:29.820 --> 00:16:33.719
+rather than another. There's generally kind of a lot of heterogeneity that can persist for a
+
+00:16:33.719 --> 00:16:37.559
+very long time, even in the context of kind of innovation and change.
+
+00:16:38.119 --> 00:16:40.880
+Right. And good things are coming always.
+
+00:16:41.340 --> 00:16:43.380
+It doesn't change, doesn't have to be terrible.
+
+00:16:43.580 --> 00:16:47.179
+Well, there was a little discussion going on in the chat that I wanted to call out because
+
+00:16:47.179 --> 00:16:52.179
+Zach asked to the chat, like, hey, what do S&R even stand for?
+
+00:16:52.179 --> 00:16:53.500
+Like is S for statistics?
+
+00:16:54.340 --> 00:16:57.219
+I have always thought, yes, S is like loosely for statistics.
+
+00:16:57.739 --> 00:17:04.020
+And for anybody who is curious, my understanding of R, which is reflected in the comments
+
+00:17:04.020 --> 00:17:08.739
+here, is that Ross and Robert were the two guys who were working on this.
+
+00:17:08.739 --> 00:17:09.880
+And so they both start with R.
+
+00:17:09.880 --> 00:17:11.479
+And then, of course, it was S before.
+
+00:17:11.479 --> 00:17:13.079
+So let's call it another single letter.
+
+00:17:14.000 --> 00:17:15.520
+Great question, Zach, for the chat.
+
+00:17:15.520 --> 00:17:17.079
+And if you ever have any questions for Zach.
+
+00:17:17.079 --> 00:17:20.199
+And also S by analogy to C.
+
+00:17:21.359 --> 00:17:22.239
+Yeah, there we go.
+
+00:17:22.239 --> 00:17:23.599
+Because they come out of Bell Labs.
+
+00:17:23.640 --> 00:17:24.680
+They both come out of Bell Labs.
+
+00:17:24.680 --> 00:17:27.000
+It's C for computing and S for statistics.
+
+00:17:28.520 --> 00:17:33.560
+OK, awesome. If you have any questions for the chat, by the way, that are not for Kieran or
+
+00:17:33.560 --> 00:17:37.599
+Jonathan, do exactly what Zach did, put it in the chat and say, hey, question for chat.
+
+00:17:38.800 --> 00:17:40.839
+All right. Great, great question so far.
+
+00:17:41.439 --> 00:17:44.719
+Let's see, what have we got over in Slido?
+
+00:17:44.719 --> 00:17:46.280
+Alan, you had a great question.
+
+00:17:46.280 --> 00:17:48.199
+Would you like to unmute and ask that?
+
+00:17:49.119 --> 00:17:51.680
+I will highlight it here in Slido for us so we can all see it.
+
+00:17:55.040 --> 00:17:56.479
+Oh, OK, I can't, OK, I can't.
+
+00:17:58.119 --> 00:17:59.160
+Oh, there he is.
+
+00:17:59.319 --> 00:18:00.160
+Am I, am I?
+
+00:18:01.400 --> 00:18:04.520
+You're here, you're a robot for a second, but you're better.
+
+00:18:04.719 --> 00:18:07.119
+Good. Yeah, my question for Jonathan.
+
+00:18:07.119 --> 00:18:09.219
+But I also have to say, hi, Kieran, it's been a long time.
+
+00:18:09.219 --> 00:18:12.660
+It's really fun to see. We should catch up.
+
+00:18:13.900 --> 00:18:15.459
+Jonathan, I'm, I'm curious.
+
+00:18:16.500 --> 00:18:18.500
+We talk a whole lot and Kieran just mentioned tooling.
+
+00:18:18.880 --> 00:18:24.180
+We talk a whole lot about software development, software engineering, informing data
+
+00:18:24.180 --> 00:18:29.660
+science. And we see that in practices and, you know, deployment and methods and tools
+
+00:18:29.660 --> 00:18:34.939
+and stuff. I'm curious if on the software development side, if you see data science
+
+00:18:35.000 --> 00:18:38.920
+practices, methods like informing, making software better.
+
+00:18:39.959 --> 00:18:44.000
+I've started thinking a lot about, like, what are we what are we pushing back into
+
+00:18:44.000 --> 00:18:50.920
+software development that might be interesting that that that that we don't see from
+
+00:18:50.920 --> 00:18:53.439
+the from the data side or from that from the data science side?
+
+00:18:53.479 --> 00:18:58.520
+I'm curious if being at RStudio, Posit, a long time, if that's informing the way you
+
+00:18:58.520 --> 00:18:59.920
+think about software development.
+
+00:19:00.900 --> 00:19:08.979
+So I'll kind of answer in three parts here, so, so for the first two, I think that there
+
+00:19:08.979 --> 00:19:13.819
+has been limited flow in the other direction, probably less than less than you might
+
+00:19:13.819 --> 00:19:19.780
+hope. But there are a variety of things that are valuable when doing data science that
+
+00:19:19.780 --> 00:19:24.459
+have leaked back in the software engineering world, especially for people who work on
+
+00:19:24.459 --> 00:19:26.020
+software that does data science.
+
+00:19:26.920 --> 00:19:31.880
+But I will say that like having been part of both communities, like a lot of the back
+
+00:19:31.880 --> 00:19:35.800
+flow that I'm seeing is around like number one around iteration.
+
+00:19:36.439 --> 00:19:41.479
+Right. So like the when you when you develop software, like it is a very iterative
+
+00:19:41.479 --> 00:19:46.239
+process, right? Like, you know, like almost nobody, even in the age of LLMs, can one
+
+00:19:46.239 --> 00:19:47.280
+shot an application.
+
+00:19:47.400 --> 00:19:52.119
+Right. And so one thing you notice when you watch data scientists work is how iterative
+
+00:19:52.140 --> 00:19:56.699
+that work is, like especially when they're doing exploratory data analysis, like that
+
+00:19:56.699 --> 00:20:01.060
+process of like iterating, like testing, like there's a there's a loop here, right,
+
+00:20:01.060 --> 00:20:05.420
+that you're doing as as you iterate on your and explore your data.
+
+00:20:05.739 --> 00:20:13.900
+And that mechanism or like the tools that you use to explore that space are similar to
+
+00:20:13.900 --> 00:20:18.780
+the tools that you use at a philosophical level when you're exploring the software
+
+00:20:18.780 --> 00:20:23.119
+space. It's like if you watch software engineers kind of explore a new space, if
+
+00:20:23.119 --> 00:20:26.119
+they've been informed by data science, you can watch them do kind of the same iterative
+
+00:20:26.119 --> 00:20:28.719
+approach. The second is in reproducibility.
+
+00:20:28.719 --> 00:20:33.400
+Right. So one of the things that matters a lot to data scientists is making sure that
+
+00:20:33.400 --> 00:20:36.719
+the work they do is fully reproducible.
+
+00:20:36.719 --> 00:20:40.800
+Like this is one of the original goals of doing code first data science is that it
+
+00:20:40.800 --> 00:20:45.400
+generates an artifact, you know, that anybody can use to verify your analysis.
+
+00:20:46.219 --> 00:20:51.780
+You know, and I'm very fortunate to work in the world of software engineering in open
+
+00:20:51.780 --> 00:20:57.300
+source software, where one of the core values we have at Posit is we want to make our
+
+00:20:57.300 --> 00:21:02.339
+software reproducible in the same way that the data science are doing with the software
+
+00:21:02.339 --> 00:21:03.699
+is reproducible. Right.
+
+00:21:03.699 --> 00:21:07.380
+So, you know, we publish the source code to pretty much everything that we do.
+
+00:21:07.619 --> 00:21:11.219
+I can make sure that anybody can kind of build and verify copies of our software.
+
+00:21:11.219 --> 00:21:16.359
+We make sure that the environment in which we build the software is documented and
+
+00:21:16.359 --> 00:21:23.119
+available to people. So those are those are kind of two examples of practices that have
+
+00:21:23.359 --> 00:21:27.640
+kind of crossed the boundary or kind of co-evolved in these two separate communities.
+
+00:21:28.439 --> 00:21:34.280
+And then the third one is simply that, like, as we make software for data science, you
+
+00:21:34.280 --> 00:21:38.520
+know, and I'll probably talk about this a bit more in my keynote, but that that software
+
+00:21:38.520 --> 00:21:43.540
+is informed by the data science community and is built differently than people who are
+
+00:21:43.540 --> 00:21:45.500
+writing software for software engineers.
+
+00:21:45.859 --> 00:21:50.500
+These two communities have some similar needs, but also some that are some that are quite
+
+00:21:50.500 --> 00:21:57.420
+different. So, yeah, not a whole lot of crossover, but a lot of co-evolution and
+
+00:21:57.420 --> 00:21:59.459
+certainly some ideas have leaked over.
+
+00:22:00.859 --> 00:22:03.020
+Wonderful. Thank you for that great question, Alan.
+
+00:22:04.000 --> 00:22:10.520
+All righty. My next question that I wanted to ask, oh, all my Slido questions just moved
+
+00:22:10.760 --> 00:22:11.800
+one one minute here.
+
+00:22:12.560 --> 00:22:15.119
+All right, Lisa, you had a question for Kieran.
+
+00:22:15.119 --> 00:22:16.839
+Would you like to unmute and ask that?
+
+00:22:18.680 --> 00:22:20.400
+Sure. Lots of you hear me, too.
+
+00:22:20.599 --> 00:22:22.479
+Yeah. Yeah.
+
+00:22:22.520 --> 00:22:23.560
+Hi, Kieran.
+
+00:22:23.599 --> 00:22:25.280
+Great to sort of meet you.
+
+00:22:25.280 --> 00:22:29.680
+I think I've read a book or two of yours maybe on DataVis.
+
+00:22:30.339 --> 00:22:37.300
+So I'm super curious how to successfully move industry folks from tables of numbers to
+
+00:22:37.300 --> 00:22:40.619
+visualizations. And by the way, I'm not anti-tables.
+
+00:22:40.619 --> 00:22:47.900
+I just think, you know, let's say a 20 by 100 table of numbers.
+
+00:22:48.459 --> 00:22:51.420
+I sort of question what anyone is getting from that.
+
+00:22:51.560 --> 00:22:59.479
+So is the is the problem kind of just habits, you think, or are or is it sort of perceived
+
+00:22:59.479 --> 00:23:06.239
+differences in the information that's being conveyed that that's behind that resistance?
+
+00:23:06.719 --> 00:23:09.479
+Yeah, that's a good question.
+
+00:23:09.520 --> 00:23:15.839
+I was kind of hoping maybe your sociologist brain would have the answer.
+
+00:23:15.900 --> 00:23:16.900
+Why are they so resistant?
+
+00:23:16.900 --> 00:23:24.420
+I think people keep disagreeing with me that, yeah, I think that there is, well, you know.
+
+00:23:26.099 --> 00:23:31.260
+There's a lot of. Habit makes a big difference to how organizations work, and established
+
+00:23:31.260 --> 00:23:34.500
+practice is very hard to shift, even for good reasons.
+
+00:23:35.380 --> 00:23:40.660
+And and I will say that, like, you know, one of the so-called, you know, one of the things
+
+00:23:40.660 --> 00:23:51.640
+that I've learned is that, you know, data visualization as a as a technique is is great.
+
+00:23:51.640 --> 00:23:54.160
+And it has, you know, I'm all in favor of it.
+
+00:23:54.160 --> 00:23:58.520
+And I think in a world where we're giving sort of talks with sides all the time, it's
+
+00:23:58.839 --> 00:24:05.719
+much more effective in conveying what it is that you that you want to show than presenting
+
+00:24:05.719 --> 00:24:08.239
+a slide full of numbers, for example, can be.
+
+00:24:09.140 --> 00:24:13.099
+I I'll say two things about about sort of resistance.
+
+00:24:13.099 --> 00:24:17.540
+One is that because if people have been doing it for a long time, it doesn't just mean that
+
+00:24:17.540 --> 00:24:21.560
+they're entrenched. It also, you know, for sort of negative reasons, it also means that
+
+00:24:21.560 --> 00:24:26.099
+their skills are oriented towards interpreting that artifact like a table, that thing.
+
+00:24:26.900 --> 00:24:31.219
+I remember very, very strongly one of my kind of early experiences being trained just as
+
+00:24:31.219 --> 00:24:35.979
+a social scientist was encountering people, advisors and teachers who could just look
+
+00:24:35.979 --> 00:24:40.780
+at a table like of models or statistical data or summaries and see things kind of
+
+00:24:40.780 --> 00:24:44.640
+immediately in the table because they've been looking at them for years and they would
+
+00:24:44.640 --> 00:24:47.479
+just kind of put their finger like, look, that that coefficient there, what something
+
+00:24:47.479 --> 00:24:51.520
+is wrong with that, you know, that standard error or whatever it is like they would they
+
+00:24:51.520 --> 00:24:54.920
+just had that ability. And it was because they'd looked at like thousands of these
+
+00:24:54.920 --> 00:24:57.319
+things, hundreds of thousands of these things over a very long time.
+
+00:24:57.599 --> 00:25:02.079
+And so then if you're asking people to shift from that habit to sort of some new skill,
+
+00:25:02.079 --> 00:25:04.859
+then that can be that that can be tricky.
+
+00:25:05.920 --> 00:25:10.780
+And they too were raised in a you know, those people were trained in a world where people
+
+00:25:10.780 --> 00:25:15.979
+weren't presenting to audiences in a it was it was instead, you know, here's here's
+
+00:25:15.979 --> 00:25:20.339
+the here's the paper and a handout maybe that you could sort of look at for a while
+
+00:25:20.339 --> 00:25:23.939
+while the talk was being given as opposed to a world of slides.
+
+00:25:23.939 --> 00:25:29.020
+And so so then tables of data translate quite poorly to
+
+00:25:29.020 --> 00:25:31.040
+slides for that kind of person.
+
+00:25:31.800 --> 00:25:33.160
+One of the things that I.
+
+00:25:34.839 --> 00:25:39.959
+Emphasize a lot, and it's also something that people don't grasp all that
+
+00:25:40.239 --> 00:25:43.680
+straightforwardly when they're learning data visualization, is that an awful lot of
+
+00:25:43.680 --> 00:25:47.160
+visualization that that we do, in effect.
+
+00:25:48.199 --> 00:25:52.900
+Is structured the way that a table is structured, this is true of kind of small
+
+00:25:52.900 --> 00:25:57.439
+multiples, but also even simple things like like a huge amount of time, we have kind of
+
+00:25:57.439 --> 00:26:01.859
+some sort of we have some sort of continuous measure, a number and some sort of
+
+00:26:01.859 --> 00:26:06.680
+category broken out by some sort of set of categories, whether it's, you know, scores
+
+00:26:06.680 --> 00:26:11.819
+by country or by state or divisions of an organization or sales categories, whatever
+
+00:26:11.819 --> 00:26:14.300
+it is, and then some quantity associated with those.
+
+00:26:14.660 --> 00:26:19.260
+And one of the simplest things you can do that's extremely underrated and very effective
+
+00:26:19.540 --> 00:26:22.900
+for visualizations is to try and turn your visualization into something more like a
+
+00:26:22.900 --> 00:26:24.020
+table that people can read.
+
+00:26:24.239 --> 00:26:29.400
+Often, that's as simple as put the categorical stuff on the Y axis and not the X axis, so
+
+00:26:29.400 --> 00:26:31.959
+people don't have to turn their heads or, you know, to waste your time sort of figuring
+
+00:26:31.959 --> 00:26:36.239
+out how to put the labels at 45 degrees so that they're that they're readable.
+
+00:26:36.500 --> 00:26:40.599
+And instead, put the continuous quantity on the X axis and put the put the categorical
+
+00:26:40.599 --> 00:26:41.680
+quantity on the Y axis.
+
+00:26:41.680 --> 00:26:46.319
+And then suddenly it's just a table again, except that now there are dots or lengths
+
+00:26:46.319 --> 00:26:48.119
+which are easy to to grasp.
+
+00:26:48.119 --> 00:26:56.660
+And so the I think the I think the similarities between tabular layouts and and graphs are
+
+00:26:56.660 --> 00:26:59.939
+easy to underestimate and that one way to get people who are used to looking at tables
+
+00:26:59.939 --> 00:27:05.900
+of numbers to over to the visualization stuff is to help them realize that effective
+
+00:27:05.900 --> 00:27:10.619
+visualizations are often just tables of visual quantities rather than just tables of
+
+00:27:10.619 --> 00:27:13.459
+numbers and are easy to easier to read for that reason.
+
+00:27:14.939 --> 00:27:15.540
+I love it.
+
+00:27:16.160 --> 00:27:20.599
+There's so much good conversation happening in the chat, if you are watching this or
+
+00:27:20.599 --> 00:27:23.839
+listening to this later and you're not here live in the chat, you're missing so much
+
+00:27:24.400 --> 00:27:29.000
+because we have a community full of really smart and talented individuals who are giving
+
+00:27:29.000 --> 00:27:30.400
+us all of their their takes.
+
+00:27:30.479 --> 00:27:34.239
+Some of my takes are if you have somebody who can't let go of a table, you could do
+
+00:27:34.239 --> 00:27:39.180
+color mapped tables where bigger values have a different color or or something like
+
+00:27:39.180 --> 00:27:41.680
+that. I it's a go between at least.
+
+00:27:41.680 --> 00:27:45.579
+Right. So you can see visually as your values diverge.
+
+00:27:46.260 --> 00:27:47.619
+All right. Awesome question, Lisa.
+
+00:27:47.619 --> 00:27:48.880
+Thank you so much.
+
+00:27:49.260 --> 00:27:52.380
+Let's go to Zach's question.
+
+00:27:52.380 --> 00:27:54.739
+And Zach has an asterisk in his.
+
+00:27:54.739 --> 00:27:56.060
+That means Libby, ask it for me.
+
+00:27:56.060 --> 00:27:59.339
+So this is for Jonathan, I think.
+
+00:27:59.939 --> 00:28:03.060
+What? Oh, Jonathan, this is the question you've been dreading.
+
+00:28:03.060 --> 00:28:10.140
+Are you ready? What are your long term goals with Positron and do you think it might
+
+00:28:10.140 --> 00:28:12.280
+eventually replace RStudio?
+
+00:28:14.040 --> 00:28:16.400
+I did know someone was going to ask this.
+
+00:28:17.719 --> 00:28:20.920
+Thanks, Zach. It's a great question.
+
+00:28:22.040 --> 00:28:24.000
+So I'll answer the first part.
+
+00:28:24.040 --> 00:28:28.800
+So our long term goals for Positron is to really make it the best IDE for working with
+
+00:28:28.800 --> 00:28:31.000
+data in any language.
+
+00:28:31.359 --> 00:28:39.239
+So Positron is built in such a way that the R and Python subsystems that we added to
+
+00:28:39.239 --> 00:28:41.099
+Positron are just extensions.
+
+00:28:41.300 --> 00:28:43.699
+Right. So if you think about the again, I'm an architect.
+
+00:28:43.739 --> 00:28:46.459
+Think about the overall way the Positron is composed.
+
+00:28:47.020 --> 00:28:52.140
+We built it so that anybody can write a plug in for like a new language or new
+
+00:28:52.140 --> 00:28:53.540
+capabilities to Positron.
+
+00:28:53.619 --> 00:29:00.180
+So like Positron as a core is going to have the really like first class, like
+
+00:29:00.180 --> 00:29:05.099
+hopefully best in the world at being like a data science workbench that will be
+
+00:29:05.119 --> 00:29:09.880
+extensible to new languages and new capabilities over time and continue to evolve
+
+00:29:09.880 --> 00:29:11.119
+as the industry does.
+
+00:29:12.719 --> 00:29:16.319
+So for the second part of that question, is this eventually going to replace RStudio?
+
+00:29:16.640 --> 00:29:18.040
+The answer is probably not.
+
+00:29:18.400 --> 00:29:20.760
+So a couple of things to keep in mind here.
+
+00:29:20.760 --> 00:29:27.079
+So the first is that Positron is not and will never be a superset of RStudio.
+
+00:29:27.439 --> 00:29:29.640
+So it does not have all of RStudio's features.
+
+00:29:29.680 --> 00:29:32.319
+It won't ever have all the features that are currently in RStudio.
+
+00:29:32.800 --> 00:29:34.680
+And it makes a different set of tradeoffs.
+
+00:29:34.699 --> 00:29:39.180
+So like I want you to think about things that are more general and then more
+
+00:29:39.180 --> 00:29:44.180
+specific, like you can get a lot more power and capability if you're willing to make
+
+00:29:44.180 --> 00:29:46.900
+your tool fit for a very specific use.
+
+00:29:47.420 --> 00:29:53.180
+You can also get a lot more breadth for your tool at the expense of making it like a
+
+00:29:53.180 --> 00:29:55.819
+little bit awkward for more specific use cases.
+
+00:29:56.260 --> 00:30:00.020
+And this is one of the things we're really wrestling with as we develop Positron is,
+
+00:30:00.719 --> 00:30:05.319
+there are people that are coming from RStudio or from VS Code or PyCharm or Dataspot
+
+00:30:05.319 --> 00:30:11.599
+or whatever, and people who are using their tools in a very deep way, it's difficult
+
+00:30:11.599 --> 00:30:18.560
+to make one tool, one generic data workbench that serves all these very specific
+
+00:30:18.560 --> 00:30:21.319
+needs without turning into a very complicated piece of software.
+
+00:30:21.959 --> 00:30:24.280
+So RStudio is very, very fit.
+
+00:30:24.280 --> 00:30:30.000
+It's evolved almost like a river rock, just smoothed out by decades of work to
+
+00:30:30.000 --> 00:30:33.180
+be very, very good at specific R-based workflows.
+
+00:30:33.180 --> 00:30:38.140
+And honestly, even as someone who has worked on Positron for years now, I don't
+
+00:30:38.140 --> 00:30:43.099
+think Positron will ever be as good as RStudio for those specific use cases, simply
+
+00:30:43.099 --> 00:30:48.099
+again, because you can't take something so generic and make it work as well as
+
+00:30:48.099 --> 00:30:50.420
+something that is fit for a more specific purpose.
+
+00:30:51.380 --> 00:30:56.619
+So we think if you work for R and Python together or just Python, you'll be a lot
+
+00:30:56.619 --> 00:31:01.520
+happier in Positron because it's so much better at multi-language stuff.
+
+00:31:01.680 --> 00:31:04.719
+It has much deeper ID capabilities because it's built on VS Code.
+
+00:31:04.719 --> 00:31:06.760
+A couple of people in the chat have pointed that out.
+
+00:31:07.920 --> 00:31:14.000
+And also, we are continuing to invest in RStudio with a lot of the ideas that we
+
+00:31:14.000 --> 00:31:15.800
+have germinated in Positron.
+
+00:31:15.839 --> 00:31:20.479
+So if, for example, if you use a really recent build of RStudio, you'll notice
+
+00:31:21.160 --> 00:31:25.640
+that it has much better treatment for errors and warnings and messages in the
+
+00:31:25.640 --> 00:31:30.420
+console, which is basically derived and pioneered from work that we did in
+
+00:31:30.420 --> 00:31:31.260
+Positron.
+
+00:31:32.140 --> 00:31:38.540
+Same thing, for example, we're building some tools for R that run inside of
+
+00:31:38.540 --> 00:31:42.939
+Positron, and we're pulling those tools back into RStudio to improve the R
+
+00:31:42.939 --> 00:31:43.859
+experience there.
+
+00:31:44.459 --> 00:31:46.739
+One of those tools, for example, is called AIR.
+
+00:31:46.859 --> 00:31:52.900
+It's an incredibly fast code formatter and server for the R language.
+
+00:31:52.920 --> 00:31:58.000
+And it's native in Positron, but also you can now hook it up to RStudio in a recent
+
+00:31:58.000 --> 00:32:01.560
+release to have it format your R code beautifully every time you save it.
+
+00:32:02.400 --> 00:32:06.599
+So we're seeing a lot of cross-pollination between the IDEs, which we think is
+
+00:32:06.599 --> 00:32:06.959
+great.
+
+00:32:07.915 --> 00:32:09.915
+Kieran Healy & Jonathan McPherson Data Science Hangout, positron, rstudio
+
+00:32:37.915 --> 00:32:39.915
+Kieran Healy & Jonathan McPherson Data Science Hangout, positron, rstudio
+
+00:33:37.915 --> 00:33:39.915
+Kieran Healy & Jonathan McPherson Data Science Hangout, positron, rstudio
+
+00:34:07.915 --> 00:34:09.915
+Kieran Healy & Jonathan McPherson Data Science Hangout, positron, rstudio
+
+00:34:37.915 --> 00:34:39.915
+Kieran Healy & Jonathan McPherson Data Science Hangout, positron, rstudio
+
+00:34:39.915 --> 00:34:41.915
+Kieran Healy & Jonathan McPherson Data Science Hangout, postron, rstudio
+
+00:34:41.915 --> 00:34:43.915
+Kieran Healy & Jonathan McPherson Data Science Hangout, positron, rstudio
+
+00:34:43.915 --> 00:34:45.915
+Kieran Healy & Jonathan McPherson Data Science Hangout, positron, rstudio
+
+00:34:45.915 --> 00:34:48.415
+Kieran Healy & Jonathan McPherson Data Science Hangout, positron, rstudio
+
+00:34:48.415 --> 00:35:09.114
+Kieran Healy & Jonathan McPherson Data Science Hangout, positron, rstudio
+
+00:35:18.814 --> 00:35:21.614
+Well, it's Williams iPad, I believe.
+
+00:35:21.814 --> 00:35:23.614
+Okay, he's there.
+
+00:35:23.614 --> 00:35:26.814
+I see him with his awesome shark background as usual.
+
+00:35:27.215 --> 00:35:27.614
+Okay.
+
+00:35:27.614 --> 00:35:29.814
+I did just ask to unmute Bill.
+
+00:35:32.415 --> 00:35:33.415
+He's working on it.
+
+00:35:33.715 --> 00:35:36.715
+He's on zoom on the iPad, which is a little bit trickier.
+
+00:35:36.814 --> 00:35:37.915
+We have to ask.
+
+00:35:37.915 --> 00:35:38.515
+Oh, there we go.
+
+00:35:39.415 --> 00:35:40.314
+Sorry about that.
+
+00:35:41.915 --> 00:35:43.614
+And Karen don't feel bad about us.
+
+00:35:43.915 --> 00:35:46.415
+I used APL which was done in the 60s.
+
+00:35:46.515 --> 00:35:48.915
+So, yeah, it's okay.
+
+00:35:50.515 --> 00:35:55.814
+My question really revolves around the way people approach things in terms of
+
+00:35:55.814 --> 00:36:00.715
+the visualizations and the data that they're doing in that, you know, if
+
+00:36:00.715 --> 00:36:03.715
+we did it the way we should characteristically as a data science
+
+00:36:03.715 --> 00:36:09.215
+group, we let the data tell us what it is, but what I've seen recently
+
+00:36:10.614 --> 00:36:14.215
+and recently being the last few years people are starting with answers.
+
+00:36:15.114 --> 00:36:17.614
+And typically, well, that's not an evil thing to do.
+
+00:36:19.415 --> 00:36:23.215
+It slants how everything goes particularly the visualizations.
+
+00:36:23.614 --> 00:36:28.015
+And are you seeing that with all the work that you've been doing?
+
+00:36:30.415 --> 00:36:35.214
+I think that well first I have I have used APL a tiny bit because one of my
+
+00:36:35.214 --> 00:36:39.314
+former colleagues Ron Breger used to use to use it.
+
+00:36:40.015 --> 00:36:43.115
+Imagine a language for those who don't know it consisting entirely of
+
+00:36:43.115 --> 00:36:43.814
+operators.
+
+00:36:44.714 --> 00:36:49.415
+It's amazing, amazingly compact, but it's one of those write once read
+
+00:36:49.415 --> 00:36:50.915
+never languages.
+
+00:36:52.714 --> 00:37:01.115
+I think the thing you identify is a real issue for data analysis
+
+00:37:01.314 --> 00:37:02.015
+generally.
+
+00:37:03.115 --> 00:37:09.515
+I think it's kind of a chronic issue in the sense that there's no sort of
+
+00:37:09.615 --> 00:37:16.314
+sin you can commit with graphs or with data visualizations that you can't
+
+00:37:16.314 --> 00:37:22.115
+also commit with tables or models if sinning is what you want to do.
+
+00:37:23.115 --> 00:37:27.814
+And I say, you know, and it's not something that like it's a feature,
+
+00:37:27.814 --> 00:37:31.415
+but it is something that's kind of can tend to be supercharged by the
+
+00:37:31.415 --> 00:37:35.515
+power that data visualization gives, although in much the same way again
+
+00:37:35.515 --> 00:37:40.314
+that it can be supercharged by the immense sort of power of the data
+
+00:37:40.314 --> 00:37:42.714
+analysis tools that we have generally.
+
+00:37:43.714 --> 00:37:47.515
+I think there let me let me pick out sort of two reasons that that sort of
+
+00:37:47.515 --> 00:37:53.214
+thing happens across both visualization and statistical modeling generally.
+
+00:37:54.814 --> 00:38:00.015
+One is that the most general one is that when we're looking at data, we're
+
+00:38:00.015 --> 00:38:04.814
+looking for patterns and humans are pattern recognizing creatures.
+
+00:38:04.814 --> 00:38:08.714
+We're very good at finding patterns and we're often motivated in data
+
+00:38:08.714 --> 00:38:10.214
+visualization to find patterns.
+
+00:38:10.214 --> 00:38:15.314
+We want them to be there whether that's because we're an academic wanting to
+
+00:38:15.314 --> 00:38:19.214
+write a paper that has an interesting finding or that you're in industry and
+
+00:38:19.214 --> 00:38:22.214
+you're looking for looking for something that you want to sort of pitch or
+
+00:38:22.214 --> 00:38:27.015
+explain or like you want to find that pattern and and half of the reason that
+
+00:38:27.615 --> 00:38:32.915
+statistical techniques exist is to sort of slow your role a little bit and give
+
+00:38:32.915 --> 00:38:38.814
+you criteria that are not just kind of I think this looks like it's real and
+
+00:38:38.915 --> 00:38:42.314
+and so we really do need to that.
+
+00:38:42.314 --> 00:38:45.515
+That's why when I said at the beginning that I was a little suspicious or it
+
+00:38:45.515 --> 00:38:50.115
+tended to make me a little bit queasy that phrases like storytelling with data
+
+00:38:50.615 --> 00:38:56.615
+kind of, you know, bring me out in hives just a little bit is because they tend
+
+00:38:56.915 --> 00:39:01.915
+if you misunderstand the intent behind them, they can encourage you to just
+
+00:39:01.915 --> 00:39:02.915
+kind of well, I've got a yarn.
+
+00:39:02.915 --> 00:39:06.115
+I want to tell and I'm just going to look at you know, for the things that
+
+00:39:06.115 --> 00:39:10.714
+help me tell that yarn and a compelling way and a graph or a table is something
+
+00:39:10.714 --> 00:39:15.214
+that you know, or a fancy moss fancy statistical model is something that can
+
+00:39:15.214 --> 00:39:21.714
+help you tell that yarn even if it's not supported by the by what but by the
+
+00:39:21.714 --> 00:39:25.015
+data in there and so data in that sense never tells you what it is all by itself.
+
+00:39:25.214 --> 00:39:28.915
+It our jobs would be a lot easier if the data just transparently represented
+
+00:39:28.915 --> 00:39:30.915
+itself to us in a truthful manner.
+
+00:39:31.415 --> 00:39:36.415
+So we're committed to finding things and to look to look for things but you
+
+00:39:36.415 --> 00:39:40.615
+know, we have to sort of we have to be constrained in some way and then the
+
+00:39:40.615 --> 00:39:45.214
+second thing I would say is that one of the things both again both in data
+
+00:39:45.214 --> 00:39:48.814
+visualization and I think in the whole business of the whole world of modeling
+
+00:39:48.814 --> 00:39:56.015
+data statistically on the whole it that we see at IC again and again is out in
+
+00:39:56.015 --> 00:40:00.415
+the world and in classrooms with students and wherever else is that is
+
+00:40:00.415 --> 00:40:04.115
+that there's a again understandable but real tendency for people to say to
+
+00:40:04.115 --> 00:40:08.515
+themselves to begin by saying like what's the most complicated thing I know
+
+00:40:08.515 --> 00:40:14.714
+how to do and and and start there like I'm going to do that whether that's
+
+00:40:14.714 --> 00:40:19.714
+some fantastically complicated, you know multidimensional graph that that they
+
+00:40:19.714 --> 00:40:24.314
+can write ggplot code to produce because it has the capacity to do it or it's
+
+00:40:24.314 --> 00:40:29.214
+some fantastically complex statistical model that maybe you're not quite sure
+
+00:40:29.214 --> 00:40:31.814
+how to interpret but you know that that's the thing that you're supposed to
+
+00:40:31.814 --> 00:40:35.814
+in some sense supposed to do people often go immediately for that like that
+
+00:40:35.814 --> 00:40:40.115
+for I want I want to find a pattern and I want it sort of validated by the most
+
+00:40:40.115 --> 00:40:43.415
+complicated or technically sophisticated thing that I know how to do and very
+
+00:40:43.415 --> 00:40:47.815
+often the advice that you are warning that I end up giving people a lot of the
+
+00:40:47.815 --> 00:40:53.415
+time get people sort of want to resist it but because they say look I want to
+
+00:40:53.415 --> 00:40:56.514
+do the fancy thing I want to do the hard thing why are you telling me just look
+
+00:40:56.514 --> 00:41:00.315
+at the simplest thing first and then see where I should go next and so it's
+
+00:41:00.315 --> 00:41:07.514
+those kind of you know it's that sort of advice that you end up trying to trying
+
+00:41:07.514 --> 00:41:11.014
+to get across to people that often simpler is better or you know don't
+
+00:41:11.014 --> 00:41:14.315
+don't overextend yourself too early when you're looking at data and that and
+
+00:41:14.315 --> 00:41:18.714
+that's true for any kind of analysis no matter how you're presenting it but I
+
+00:41:18.714 --> 00:41:22.115
+think it is true that it's something that you know complex or beautiful
+
+00:41:22.115 --> 00:41:27.214
+visualizations can and can encourage and and can make it out the door because
+
+00:41:27.214 --> 00:41:31.714
+they're because they look so so great visualization is maybe sort of more
+
+00:41:31.714 --> 00:41:35.714
+prone to those kinds of problems than other approaches but but it's not unique
+
+00:41:35.714 --> 00:41:43.214
+to visualization by any means awesome thank you Karen all right we have less
+
+00:41:43.214 --> 00:41:50.214
+than 15 minutes left because somehow 45 minutes has flown by so let's move on to
+
+00:41:50.315 --> 00:41:54.615
+another question and Mike you had a great question would you like to unmute
+
+00:41:54.615 --> 00:41:57.115
+and ask that
+
+00:41:57.815 --> 00:42:06.214
+yep so I hope people can hear me this is question for Jonathan I wanted to first
+
+00:42:06.214 --> 00:42:11.115
+of all say thank you for all the developments in our studio IDE over the
+
+00:42:11.115 --> 00:42:15.415
+years and you know things like our markdown notebooks have really
+
+00:42:15.415 --> 00:42:21.415
+transformed many people's ways of working and so what if I'm allowed a
+
+00:42:21.415 --> 00:42:25.615
+kind of like have two-part question first part is what are you most excited
+
+00:42:25.615 --> 00:42:31.714
+about that's coming in either our studio IDE or positron and also the second part
+
+00:42:31.714 --> 00:42:39.014
+is how do you balance features for power users and ease of use for beginners
+
+00:42:39.615 --> 00:42:45.514
+those are the two great questions so I'll talk first about what we're most
+
+00:42:45.514 --> 00:42:51.815
+excited about and I almost hate to say this because everyone's excited about
+
+00:42:51.815 --> 00:42:56.014
+this right now but we are excited about AI integration quite a lot one of the
+
+00:42:56.014 --> 00:43:01.714
+things I've been working on it more than anything in the past couple of months is
+
+00:43:01.815 --> 00:43:09.714
+integrating a an AI assistant into positron so we have not really shared or
+
+00:43:09.714 --> 00:43:13.615
+demo much about that yet but you'll be you'll be hearing it quite a lot about
+
+00:43:13.615 --> 00:43:21.115
+it in the months to come there are there are so many places in an IDE where an AI
+
+00:43:21.115 --> 00:43:25.315
+can provide like really good feedback if you if you've ever used like you know
+
+00:43:25.315 --> 00:43:30.615
+github copilot or cursor or like windserver into these in these IDEs as
+
+00:43:30.615 --> 00:43:36.014
+like as these tools are primarily used today by software engineers, but the
+
+00:43:36.014 --> 00:43:40.815
+really cool thing about using them in an IDE like positron is that they have that
+
+00:43:40.815 --> 00:43:45.315
+is that you get they have access not only to the like that the state of your
+
+00:43:45.315 --> 00:43:49.915
+project in terms of code, but also the state of your data as I can as I can in
+
+00:43:49.915 --> 00:43:55.714
+memory object that can be manipulated with the result that you can get some
+
+00:43:55.714 --> 00:44:02.014
+like really like really quick robust analysis going by kind of describing
+
+00:44:02.014 --> 00:44:06.514
+what you want in natural language and kind of working with the AI kind of hand
+
+00:44:06.514 --> 00:44:10.615
+in hand to to arrive at a result.
+
+00:44:12.115 --> 00:44:17.315
+I don't want to get too off into the weeds there, but there's just like quite
+
+00:44:17.315 --> 00:44:22.214
+a lot of super exciting innovation happening today in the at the nexus of
+
+00:44:22.214 --> 00:44:26.915
+artificial intelligence and the IDE like not not like we're not that interested
+
+00:44:26.915 --> 00:44:30.815
+in like replacing, you know human activity like we don't you know, we're
+
+00:44:30.815 --> 00:44:33.915
+not going to create like some like an agent that you just like run and like
+
+00:44:33.915 --> 00:44:40.714
+let it go, but we are quite interested in you know, AI assisted operations in
+
+00:44:40.714 --> 00:44:45.415
+the IDE and there's a lot of a lot of places where that can be really helpful
+
+00:44:45.415 --> 00:44:49.415
+things like like asking the AI to explain errors like asking it to like, you
+
+00:44:49.415 --> 00:44:54.514
+know, modify your charts when you forget the ggplot syntax, which I do all the time.
+
+00:44:56.915 --> 00:45:01.714
+And like asking it to like, you know, help you find outliers asking it to you
+
+00:45:01.714 --> 00:45:10.115
+know, like help you generate analyses like reports that there's lots of great stuff.
+
+00:45:13.315 --> 00:45:18.514
+So second part of the question is about making an IDE that works well for both
+
+00:45:18.514 --> 00:45:22.615
+power users and beginners and I'm going to say that there's actually you know,
+
+00:45:22.615 --> 00:45:24.115
+this is actually very hard to do.
+
+00:45:26.115 --> 00:45:32.514
+And at the end of the day, we basically we kind of compromise, you know, that
+
+00:45:32.514 --> 00:45:35.514
+you can't make an IDE that's perfect for power users and beginners.
+
+00:45:35.514 --> 00:45:40.615
+So the best thing that we can do is to try to like keep the complexity in a place
+
+00:45:40.615 --> 00:45:48.014
+where you know, it doesn't show up unless you need it, you know, I've in
+
+00:45:48.014 --> 00:45:51.115
+these systems, there's usually what I call like a conservation of complexity,
+
+00:45:51.115 --> 00:45:53.714
+which is to say that like the amount of complexity is constant.
+
+00:45:53.714 --> 00:45:55.415
+It's sort of like the amount of energy in the universe.
+
+00:45:55.415 --> 00:45:59.115
+Like there's there's just going to be complexity and you know, you have to
+
+00:45:59.115 --> 00:46:04.615
+decide, you know, where that complexity goes and you know, how it's accessed and
+
+00:46:04.615 --> 00:46:07.214
+to like to the best of our capability.
+
+00:46:07.214 --> 00:46:12.915
+We take that complexity upon ourselves and try to push it like into the IDE as
+
+00:46:12.915 --> 00:46:14.915
+opposed to exposing users to it.
+
+00:46:15.415 --> 00:46:20.815
+You know, I think, you know, I think VS Code like does a like the trade-offs
+
+00:46:20.815 --> 00:46:24.714
+that they've made with respect to this are largely gated toward power users,
+
+00:46:24.714 --> 00:46:24.915
+right?
+
+00:46:24.915 --> 00:46:28.514
+So they pretty much hide everything, you know, like they don't have a lot of
+
+00:46:28.514 --> 00:46:34.315
+menus or toolbars, like it's a very Spartan aesthetic and you access
+
+00:46:34.315 --> 00:46:38.915
+most tools using the command palette, you know, when people come over for
+
+00:46:38.915 --> 00:46:42.815
+something like RStudio, which is a little bit more geared for like
+
+00:46:42.815 --> 00:46:45.514
+beginner use, people who are not accustomed to software development
+
+00:46:45.514 --> 00:46:51.115
+tools, it's got lots like menus and buttons and you know, other affordances
+
+00:46:51.115 --> 00:46:52.214
+for getting your work done.
+
+00:46:52.915 --> 00:46:57.115
+So if you look at the design of an IDE like Positron, you'll find that
+
+00:46:57.115 --> 00:46:58.915
+it lands somewhere in the middle.
+
+00:46:59.014 --> 00:47:04.315
+You know, we've added a lot more affordances for things that beginners
+
+00:47:04.315 --> 00:47:09.815
+are accustomed to while still like preserving like the full power of the
+
+00:47:09.815 --> 00:47:13.214
+command palette of like a rich set of commands for advanced users that
+
+00:47:13.214 --> 00:47:16.514
+maybe don't necessarily have all the buttons that beginners are drawn to.
+
+00:47:17.415 --> 00:47:18.915
+So it's a trade-off.
+
+00:47:18.915 --> 00:47:22.915
+It's not perfect for everyone, but we try to make sure that that
+
+00:47:22.915 --> 00:47:24.514
+complexity lands in the right place.
+
+00:47:25.415 --> 00:47:26.014
+Awesome.
+
+00:47:26.014 --> 00:47:30.014
+I was just chatting with Mike about this in the chat where he was saying
+
+00:47:30.014 --> 00:47:34.615
+like, could you have an RStudio IDE or Positron skin that sort of like
+
+00:47:34.714 --> 00:47:37.014
+hides complexity for newbies?
+
+00:47:37.415 --> 00:47:40.714
+And I was just thinking, oh yeah, Positron was really overwhelming when
+
+00:47:40.714 --> 00:47:43.714
+I first started using it because I was not a VS Code user before that.
+
+00:47:43.714 --> 00:47:45.115
+I had never really liked VS Code.
+
+00:47:45.115 --> 00:47:46.915
+I'm like, I don't want VS Code.
+
+00:47:46.915 --> 00:47:47.815
+I want something different.
+
+00:47:47.815 --> 00:47:48.514
+Why did we do this?
+
+00:47:48.514 --> 00:47:49.615
+Why is it still VS Code?
+
+00:47:49.615 --> 00:47:50.315
+This is the worst.
+
+00:47:50.915 --> 00:47:55.014
+But then I remembered that RStudio was also really overwhelming
+
+00:47:55.014 --> 00:47:56.214
+when I first started using it.
+
+00:47:56.415 --> 00:47:57.714
+It's got a billion panes.
+
+00:47:57.714 --> 00:47:59.115
+There's a bunch of buttons everywhere.
+
+00:47:59.115 --> 00:48:01.315
+Every pane has like 50 tabs on it.
+
+00:48:01.315 --> 00:48:02.714
+I'm like, it was so much.
+
+00:48:03.514 --> 00:48:07.115
+So just remembering that everything is hard when you're bad at it.
+
+00:48:07.514 --> 00:48:11.615
+Everything is tough when you're new to it and it gets better over time.
+
+00:48:11.615 --> 00:48:16.315
+You just have to work hard at it and lean on people who can support you.
+
+00:48:17.214 --> 00:48:18.315
+Fantastic question, Mike.
+
+00:48:18.315 --> 00:48:20.415
+Thank you for asking as always.
+
+00:48:21.315 --> 00:48:23.115
+And then I saw a question.
+
+00:48:23.115 --> 00:48:27.014
+I know we only have five minutes left, but I did like this question so much.
+
+00:48:27.014 --> 00:48:28.214
+It's from Simon.
+
+00:48:28.915 --> 00:48:31.815
+Simon, if you are available to unmute and ask this, that'd be great.
+
+00:48:31.815 --> 00:48:33.115
+It was a question for Kieran.
+
+00:48:33.615 --> 00:48:34.014
+Sure.
+
+00:48:34.514 --> 00:48:35.514
+Yeah, thanks Libby.
+
+00:48:36.615 --> 00:48:42.915
+So Kieran, I read your book, Data Visualization, a few years ago.
+
+00:48:43.514 --> 00:48:49.115
+It was handed to me by a coworker who we've been trying to onboard folks
+
+00:48:49.115 --> 00:48:54.014
+to using R or Python scripting languages to build data visualizations
+
+00:48:55.014 --> 00:48:59.514
+and open that up as like the broader world of data analysis.
+
+00:49:00.514 --> 00:49:05.714
+And so I liked your approach as like, hey, let's start people with plotting
+
+00:49:05.714 --> 00:49:09.315
+so they can get to see these results.
+
+00:49:09.315 --> 00:49:15.315
+And so I wonder if you still like that approach for getting people
+
+00:49:15.315 --> 00:49:16.715
+into the world of analysis.
+
+00:49:17.715 --> 00:49:18.114
+Thank you.
+
+00:49:18.114 --> 00:49:19.715
+Yeah, I do.
+
+00:49:19.715 --> 00:49:22.614
+Yeah, I'm in the middle of writing a second edition of the book
+
+00:49:22.614 --> 00:49:25.014
+that's trying to sort of do the same thing again.
+
+00:49:25.715 --> 00:49:31.415
+One of the reasons, this is kind of right at the center of kind of things
+
+00:49:31.415 --> 00:49:34.315
+Jonathan was just talking about it and Libby too and the questions.
+
+00:49:35.315 --> 00:49:40.815
+There's, if you're learning how to do this stuff with data science
+
+00:49:40.815 --> 00:49:47.915
+broadly construed, then you have to learn how to do statistics.
+
+00:49:48.514 --> 00:49:52.715
+You have to learn the idea of representing stuff for public consumption
+
+00:49:52.715 --> 00:49:53.815
+in tables or graphs.
+
+00:49:54.014 --> 00:49:57.514
+You have to learn a computer language, programming language to do that in
+
+00:49:57.915 --> 00:50:02.215
+and you have to learn some sort of IDE to do it with
+
+00:50:02.215 --> 00:50:05.614
+and that's just tremendously overwhelming for newcomers.
+
+00:50:05.614 --> 00:50:06.614
+And it's very hard.
+
+00:50:06.815 --> 00:50:09.915
+The flip side to what Libby was saying about how everything is hard
+
+00:50:09.915 --> 00:50:14.114
+when you're bad at it is for experts, it's what sort of the psychologist
+
+00:50:14.114 --> 00:50:15.315
+called the curse of knowledge, right?
+
+00:50:15.315 --> 00:50:18.114
+That once you know something, it's very hard to imagine not knowing it.
+
+00:50:18.514 --> 00:50:24.614
+And that makes things like sort of getting people to,
+
+00:50:26.815 --> 00:50:30.114
+onboarding people to new tools for people who already know how they work.
+
+00:50:30.114 --> 00:50:32.815
+It's very difficult to teach them, to teach new people
+
+00:50:34.215 --> 00:50:36.915
+because you forget yourself that, you know, what it's like not to know something.
+
+00:50:37.415 --> 00:50:42.614
+Data visualization is really handy as a way in because it can help you get past
+
+00:50:42.614 --> 00:50:46.915
+this feeling that you have to know everything before you can do anything.
+
+00:50:47.514 --> 00:50:49.415
+In coding.
+
+00:50:49.415 --> 00:50:53.915
+And so I really do feel like the combination, in R specifically too,
+
+00:50:53.915 --> 00:51:00.114
+the combination of pipeline approaches to coding, first this and then and then
+
+00:51:00.114 --> 00:51:02.915
+and then and then, which leads naturally to sort of thinking in terms of
+
+00:51:02.915 --> 00:51:06.315
+functional programming, but you don't know that that's what it is first,
+
+00:51:07.915 --> 00:51:12.514
+combined with the idea of kind of doing a series of minor small analyses
+
+00:51:12.514 --> 00:51:16.715
+that emit a graph you can see immediately and understand
+
+00:51:16.715 --> 00:51:19.715
+and interpret is a really powerful way, right?
+
+00:51:19.715 --> 00:51:23.715
+You know, to get people, you know, up the steepest part of the learning curve
+
+00:51:24.415 --> 00:51:26.315
+by because then you can revisit.
+
+00:51:26.315 --> 00:51:26.614
+Okay.
+
+00:51:26.614 --> 00:51:27.315
+What is this?
+
+00:51:27.415 --> 00:51:28.514
+What does this analysis mean?
+
+00:51:28.514 --> 00:51:29.215
+Or what is this?
+
+00:51:29.614 --> 00:51:30.114
+What can we do?
+
+00:51:30.114 --> 00:51:33.915
+That's more complicated and so on, but all in the context of, you know, just
+
+00:51:33.915 --> 00:51:38.514
+giving people the reward of saying, oh, look, I produced this thing that you
+
+00:51:38.514 --> 00:51:42.215
+can actually show to somebody else and it looks good and it's understandable
+
+00:51:42.215 --> 00:51:43.014
+and it makes sense.
+
+00:51:43.715 --> 00:51:46.315
+I think I think for that reason, data visualization is a very handy way
+
+00:51:46.315 --> 00:51:51.715
+to introduce people, not just to, you know, the business of data analysis,
+
+00:51:51.715 --> 00:51:57.014
+but to the whole ecosystem that's required now to do, you know, the
+
+00:51:57.014 --> 00:52:02.114
+whole enchilada of IDs, code, software, and the file system and all the
+
+00:52:02.114 --> 00:52:02.614
+rest of it.
+
+00:52:03.415 --> 00:52:03.815
+Yeah.
+
+00:52:03.815 --> 00:52:06.715
+Yeah, as Mina says, let them eat the cake first, right?
+
+00:52:06.715 --> 00:52:09.014
+Like let them get the beautiful thing first.
+
+00:52:09.114 --> 00:52:10.215
+Well, thank you so much, Karen.
+
+00:52:10.215 --> 00:52:12.514
+That was an amazing answer.
+
+00:52:12.514 --> 00:52:13.614
+I totally agree.
+
+00:52:13.614 --> 00:52:16.915
+I think that teaching plotting is like the first step to everybody
+
+00:52:16.915 --> 00:52:19.315
+understanding even what the concept of tidy data is.
+
+00:52:20.715 --> 00:52:23.114
+I have two minutes left on the clock.
+
+00:52:24.514 --> 00:52:28.915
+I want to ask each of you a lightning round question, which is one piece
+
+00:52:28.915 --> 00:52:31.614
+of career advice that you have found valuable or that you think other
+
+00:52:31.614 --> 00:52:34.315
+people should know and do it as quick as possible because we have two
+
+00:52:34.315 --> 00:52:35.114
+minutes on the clock.
+
+00:52:35.215 --> 00:52:37.415
+Jonathan, hot seat.
+
+00:52:38.815 --> 00:52:40.215
+Do you have anything on your mind?
+
+00:52:40.915 --> 00:52:50.014
+For a career advice specifically, career advice, I think, you know,
+
+00:52:50.014 --> 00:52:53.415
+the just being humble and curious is the best advice I ever got, you
+
+00:52:53.415 --> 00:52:58.315
+know, that's it's very simple, but like being humble and curious and
+
+00:52:58.315 --> 00:53:02.215
+just like nice to people that you work with, it sounds so simple, but
+
+00:53:02.315 --> 00:53:03.514
+it's very powerful.
+
+00:53:05.215 --> 00:53:06.014
+Fully agree.
+
+00:53:06.014 --> 00:53:06.715
+Couldn't agree more.
+
+00:53:06.715 --> 00:53:07.514
+Thanks, Jonathan.
+
+00:53:07.815 --> 00:53:08.715
+Karen, how about you?
+
+00:53:10.715 --> 00:53:14.315
+I would just I would just say that an elaboration of the curse of
+
+00:53:14.315 --> 00:53:17.415
+knowledge thing that I just said, once you know something, it's real
+
+00:53:17.415 --> 00:53:19.014
+hard to imagine not knowing it.
+
+00:53:19.014 --> 00:53:22.114
+So don't forget that people who don't know things don't know it yet.
+
+00:53:22.114 --> 00:53:25.915
+And when you're trying to explain something to somebody or learn it
+
+00:53:25.915 --> 00:53:26.415
+yourself.
+
+00:53:27.514 --> 00:53:28.315
+Or learn it yourself.
+
+00:53:28.315 --> 00:53:31.815
+Yep, be kind to everybody and yourself.
+
+00:53:32.514 --> 00:53:35.514
+And I think that this translates to if you built it, maybe don't write
+
+00:53:35.514 --> 00:53:38.715
+the docs for it because you know too much about it and your docs are
+
+00:53:38.715 --> 00:53:40.815
+going to be Swiss cheese and full of holes.
+
+00:53:41.715 --> 00:53:42.614
+All right, everybody.
+
+00:53:42.614 --> 00:53:44.614
+Thank you so much to Karen and Jonathan.
+
+00:53:44.614 --> 00:53:46.215
+This was so much fun having you both.
+
+00:53:46.215 --> 00:53:51.614
+I cannot wait to hear your keynote talks at PositConf and everybody.
+
+00:53:52.215 --> 00:53:54.815
+I'm so excited to see you today.
+
+00:53:54.815 --> 00:53:56.315
+Thank you for being in the chat.
+
+00:53:56.315 --> 00:53:58.415
+If you would like to save the chat and you're still here.
+
+00:53:58.415 --> 00:54:01.815
+There are three dots in the top of your chat window where you can click
+
+00:54:01.815 --> 00:54:06.114
+that and then click save chat that will let you save all of the resources
+
+00:54:06.114 --> 00:54:10.915
+that everybody has shared and we hope that you stay with us next week
+
+00:54:10.915 --> 00:54:11.614
+to next week.
+
+00:54:11.614 --> 00:54:16.215
+We're going to have Toby Hall EVPNCIO at Delta Dental of Michigan.
+
+00:54:17.114 --> 00:54:18.614
+Thanks Karen and Jonathan.

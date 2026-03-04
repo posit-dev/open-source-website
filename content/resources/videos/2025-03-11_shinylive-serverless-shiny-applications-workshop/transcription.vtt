@@ -1,0 +1,4861 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.560
+a few sparrows.
+
+00:00:02.560 --> 00:00:03.400
+You bet.
+
+00:00:03.400 --> 00:00:04.560
+Yeah, thank you so much, Harvey.
+
+00:00:04.560 --> 00:00:05.840
+And welcome everybody.
+
+00:00:05.840 --> 00:00:07.520
+Yeah, it's an exciting day.
+
+00:00:07.520 --> 00:00:10.600
+Our first full day of our pharma workshops.
+
+00:00:10.600 --> 00:00:13.920
+It's always such a jam-packed lineup.
+
+00:00:13.920 --> 00:00:16.400
+And you may have heard this before
+
+00:00:16.400 --> 00:00:18.700
+if you've returned from previous years,
+
+00:00:18.700 --> 00:00:20.280
+but we get a lot of feedback
+
+00:00:20.280 --> 00:00:23.360
+that the workshops are extremely high quality
+
+00:00:23.360 --> 00:00:26.240
+and they are often referenced time and time again
+
+00:00:26.240 --> 00:00:27.200
+well after the fact.
+
+00:00:27.200 --> 00:00:29.600
+So you are in for a treat today.
+
+00:00:29.600 --> 00:00:31.600
+And it is certainly my pleasure
+
+00:00:31.600 --> 00:00:34.639
+to introduce our instructor for today.
+
+00:00:34.639 --> 00:00:37.200
+He is a very influential member
+
+00:00:37.200 --> 00:00:39.480
+of the Shiny team over at Posit.
+
+00:00:39.480 --> 00:00:41.240
+I've had the pleasure of knowing Barrett
+
+00:00:41.240 --> 00:00:42.520
+for quite a few years now.
+
+00:00:42.520 --> 00:00:44.599
+He has also been one of the guests
+
+00:00:44.599 --> 00:00:46.959
+on my humble little Shiny developer series.
+
+00:00:46.959 --> 00:00:49.560
+And we've shared a lot of great technical bits
+
+00:00:49.560 --> 00:00:50.400
+back and forth.
+
+00:00:50.400 --> 00:00:53.360
+And we also share a love for lifting as well, which is fun.
+
+00:00:53.360 --> 00:00:56.520
+Without further ado, let me bring Barrett onto the stage.
+
+00:00:56.520 --> 00:00:59.240
+Thank you so much Barrett, it's all yours.
+
+00:00:59.880 --> 00:01:00.720
+Thank you so much, Eric.
+
+00:01:00.720 --> 00:01:01.919
+I appreciate it.
+
+00:01:01.919 --> 00:01:03.020
+Such a warm welcome.
+
+00:01:05.800 --> 00:01:07.320
+I'm going to put in the chat here
+
+00:01:07.320 --> 00:01:12.099
+cause I know Zoom doesn't like to do historical chat,
+
+00:01:14.120 --> 00:01:17.760
+but this is a link to the workshop slides
+
+00:01:17.760 --> 00:01:20.940
+which will have most of the stuff going on.
+
+00:01:20.940 --> 00:01:24.879
+Let's see how screen sharing is gonna work.
+
+00:01:26.000 --> 00:01:26.839
+Desktop.
+
+00:01:27.839 --> 00:01:31.080
+I am going to open up, here we go.
+
+00:01:31.080 --> 00:01:32.400
+Now I got Zoom chat.
+
+00:01:33.480 --> 00:01:36.360
+I'll have Zoom chat up on the side,
+
+00:01:36.360 --> 00:01:41.080
+but later when we get near the end of the day,
+
+00:01:41.080 --> 00:01:44.199
+I'll try to do Slido for Q&A.
+
+00:01:44.199 --> 00:01:48.639
+So if it's questions that can wait or something,
+
+00:01:48.639 --> 00:01:49.680
+we'll go to Slido.
+
+00:01:52.440 --> 00:01:54.959
+Given the website or you go to slido.com,
+
+00:01:55.080 --> 00:01:58.480
+here's the session number for Q&A.
+
+00:01:58.480 --> 00:02:01.279
+And we'll actually do some things at the beginning
+
+00:02:01.279 --> 00:02:05.199
+just so I get an idea of the group here.
+
+00:02:05.199 --> 00:02:08.360
+And then it also will have links to the slides.
+
+00:02:08.360 --> 00:02:10.600
+Okay, agenda.
+
+00:02:10.600 --> 00:02:15.080
+We'll do a quick little introduction of me and Eric,
+
+00:02:15.080 --> 00:02:17.259
+and then we're gonna do some learning.
+
+00:02:19.320 --> 00:02:20.720
+I know it's more of a workshop
+
+00:02:20.720 --> 00:02:25.320
+and so I just wanna like lay out the architecture
+
+00:02:25.320 --> 00:02:26.720
+and how things work.
+
+00:02:26.720 --> 00:02:28.940
+So not as active,
+
+00:02:30.080 --> 00:02:32.559
+but we'll go through some really interesting details,
+
+00:02:32.559 --> 00:02:33.460
+I believe.
+
+00:02:34.960 --> 00:02:36.320
+And then we'll have a little bit of break
+
+00:02:36.320 --> 00:02:38.759
+because that'll be about an hour in.
+
+00:02:38.759 --> 00:02:43.759
+And then we're gonna work on deploying our app to GitHub.
+
+00:02:44.059 --> 00:02:46.080
+And I'm really excited about this
+
+00:02:46.080 --> 00:02:48.919
+because normally when you do this in a classroom,
+
+00:02:48.919 --> 00:02:51.559
+Git says you're DDoSing everything.
+
+00:02:52.479 --> 00:02:54.539
+So doing this in a distributed environment
+
+00:02:54.539 --> 00:02:57.279
+is going to be kind of unique
+
+00:02:57.279 --> 00:02:59.839
+in that we won't hit that limit real quickly.
+
+00:02:59.839 --> 00:03:01.240
+So exciting.
+
+00:03:03.339 --> 00:03:05.479
+As Eric said, my name is Brett Schlerke.
+
+00:03:05.479 --> 00:03:07.360
+I am the instructor.
+
+00:03:07.360 --> 00:03:09.839
+I am at Posit on the Shiny team.
+
+00:03:09.839 --> 00:03:13.580
+And I've been there for over six years coming up on seven.
+
+00:03:14.960 --> 00:03:18.360
+I've had at least 15 years in our ecosystem.
+
+00:03:19.080 --> 00:03:24.080
+All the way back to undergrad and just been fun.
+
+00:03:25.440 --> 00:03:30.100
+It's so awesome to find a hobby that you can get paid for.
+
+00:03:30.100 --> 00:03:34.919
+So as Eric said, I'm a developer for Shiny.
+
+00:03:34.919 --> 00:03:38.320
+I have to put in plugs for ShinyTest2 and Plumber
+
+00:03:38.320 --> 00:03:42.320
+because they're more packages that I was lead developer on,
+
+00:03:42.320 --> 00:03:44.160
+including React Log.
+
+00:03:44.160 --> 00:03:46.559
+And ShinyTest2 and React Log
+
+00:03:46.559 --> 00:03:48.960
+really help your Shiny apps.
+
+00:03:48.960 --> 00:03:50.960
+I really encourage you to look into them.
+
+00:03:50.960 --> 00:03:53.520
+I'm biased, but I don't believe
+
+00:03:53.520 --> 00:03:55.839
+that they're talked about enough.
+
+00:03:55.839 --> 00:03:58.240
+And then today is all about Shiny Live.
+
+00:04:01.520 --> 00:04:05.440
+Eric Nance, he'll be here as well.
+
+00:04:05.440 --> 00:04:07.720
+He's director and statistician at Eli Lilly.
+
+00:04:07.720 --> 00:04:09.199
+His LinkedIn is there if you.
+
+00:04:10.759 --> 00:04:13.839
+And then I've also added in links
+
+00:04:13.880 --> 00:04:18.160
+to his R Weekly blog posts and highlights
+
+00:04:18.160 --> 00:04:21.760
+and his Shiny Developer Series, which is just awesome.
+
+00:04:21.760 --> 00:04:23.540
+And we need more coverage.
+
+00:04:24.600 --> 00:04:26.320
+And then you start that again soon, Barrett.
+
+00:04:26.320 --> 00:04:28.559
+So yeah, you're a nice little nudge for that.
+
+00:04:30.119 --> 00:04:31.119
+Awesome, awesome.
+
+00:04:33.720 --> 00:04:37.679
+So hopefully I want to try to answer this question for you
+
+00:04:37.679 --> 00:04:42.100
+before we get too deep and possibly spend too much time.
+
+00:04:42.940 --> 00:04:45.619
+But is this workshop for me?
+
+00:04:46.980 --> 00:04:47.899
+In this workshop,
+
+00:04:47.899 --> 00:04:50.980
+I am not going to teach you really about Shiny.
+
+00:04:50.980 --> 00:04:54.140
+I'm assuming you are familiar with Shiny
+
+00:04:54.140 --> 00:04:58.899
+and I am assuming you know about reactivity and all that.
+
+00:04:58.899 --> 00:05:00.420
+I'm not going to touch it.
+
+00:05:01.339 --> 00:05:04.579
+What I am going to do is try to show a different way
+
+00:05:04.579 --> 00:05:06.339
+that we can deploy something.
+
+00:05:06.339 --> 00:05:09.700
+So it doesn't have to be Connect or Shiny Apps IO
+
+00:05:09.700 --> 00:05:12.140
+or I'm just working locally.
+
+00:05:12.140 --> 00:05:14.940
+It's a completely new deployment system.
+
+00:05:14.940 --> 00:05:18.260
+And I think that's really, really exciting.
+
+00:05:19.779 --> 00:05:20.839
+Oh, all right.
+
+00:05:20.839 --> 00:05:25.839
+So let's try this on Slido so I can ask some questions.
+
+00:05:28.820 --> 00:05:30.299
+I'm kind of excited about this.
+
+00:05:30.299 --> 00:05:32.179
+I have no idea if it's going to work.
+
+00:05:32.179 --> 00:05:33.579
+This is new for me.
+
+00:05:33.579 --> 00:05:36.619
+So there we go.
+
+00:05:36.619 --> 00:05:38.959
+Where are you currently located?
+
+00:05:38.959 --> 00:05:40.640
+I just find this really exciting
+
+00:05:40.640 --> 00:05:43.640
+because you're not all in my little office.
+
+00:05:45.519 --> 00:05:48.799
+I'm in DC currently.
+
+00:05:48.799 --> 00:05:52.559
+And it's kind of weird
+
+00:05:52.559 --> 00:05:55.940
+when your local news is national news within the US.
+
+00:06:02.279 --> 00:06:06.859
+Seattle, Utah, Philly, Kansas.
+
+00:06:07.700 --> 00:06:08.700
+In training.
+
+00:06:12.380 --> 00:06:14.299
+Yeah, quite a diverse group coming
+
+00:06:14.299 --> 00:06:16.179
+from all around the world here.
+
+00:06:16.179 --> 00:06:17.940
+That's awesome.
+
+00:06:17.940 --> 00:06:21.540
+Austin, Portugal, Spain.
+
+00:06:21.540 --> 00:06:22.980
+Ooh, Spain.
+
+00:06:22.980 --> 00:06:25.540
+I'm gonna go visit your neighbor in the spring, I believe.
+
+00:06:29.299 --> 00:06:30.179
+Awesome.
+
+00:06:30.179 --> 00:06:31.500
+Thank you so much.
+
+00:06:31.500 --> 00:06:32.339
+Appreciate it.
+
+00:06:33.299 --> 00:06:35.019
+And then just a couple other ones.
+
+00:06:36.019 --> 00:06:39.220
+What is your familiarity with Shiny?
+
+00:06:44.019 --> 00:06:45.140
+I applaud you.
+
+00:06:46.859 --> 00:06:47.820
+Awesome.
+
+00:06:47.820 --> 00:06:49.059
+We got a good group here.
+
+00:06:50.579 --> 00:06:52.179
+And then last one.
+
+00:06:52.179 --> 00:06:53.660
+Before this workshop,
+
+00:06:53.660 --> 00:06:56.399
+have you ever used Shiny Live before?
+
+00:07:00.779 --> 00:07:03.980
+I believe I'm still in this
+
+00:07:04.059 --> 00:07:06.019
+I can't believe it zone of Shiny what?
+
+00:07:08.019 --> 00:07:10.540
+Shiny Live should not be possible ever.
+
+00:07:10.540 --> 00:07:13.260
+Like it doesn't make sense to me at all.
+
+00:07:13.260 --> 00:07:14.700
+But I'm so excited it's here.
+
+00:07:15.660 --> 00:07:17.980
+That's a good reminder, Barrett.
+
+00:07:17.980 --> 00:07:19.619
+That was the last year at PositCom,
+
+00:07:19.619 --> 00:07:23.619
+Joe Chen gave a talk about Shiny Live coming for R.
+
+00:07:23.619 --> 00:07:25.500
+And I remember he was very skeptical
+
+00:07:25.500 --> 00:07:26.519
+if it would be possible.
+
+00:07:26.519 --> 00:07:28.880
+So it is a monumental achievement.
+
+00:07:30.619 --> 00:07:31.859
+Absolutely.
+
+00:07:31.859 --> 00:07:35.339
+Yeah, I'll get more into that a little bit.
+
+00:07:36.420 --> 00:07:38.260
+All right, so let's learn.
+
+00:07:38.260 --> 00:07:41.100
+We got about 50 more minutes for the hour.
+
+00:07:41.100 --> 00:07:41.920
+Perfect.
+
+00:07:43.019 --> 00:07:46.019
+All right, so let's have some cake
+
+00:07:46.019 --> 00:07:47.500
+right at the beginning, right?
+
+00:07:47.500 --> 00:07:49.700
+So what is Shiny Live?
+
+00:07:49.700 --> 00:07:51.700
+Normally when we run Shiny,
+
+00:07:51.700 --> 00:07:56.339
+you have your traditional server, centralized server.
+
+00:07:56.339 --> 00:07:59.660
+And in this case, we would have three users come in
+
+00:07:59.660 --> 00:08:03.220
+and they would want to look at the Shiny application.
+
+00:08:03.220 --> 00:08:05.420
+In this case, R is actually running
+
+00:08:05.420 --> 00:08:06.899
+in the centralized server.
+
+00:08:06.899 --> 00:08:09.899
+There's gonna be like one instance of R
+
+00:08:09.899 --> 00:08:12.500
+and the users just have a website.
+
+00:08:12.500 --> 00:08:13.899
+There's nothing on their machines.
+
+00:08:13.899 --> 00:08:18.820
+It's just like going to a different website, like normal.
+
+00:08:21.459 --> 00:08:25.739
+It works well because everything is hidden in the server.
+
+00:08:25.739 --> 00:08:28.260
+The users only get the minimal amount of information.
+
+00:08:28.299 --> 00:08:30.619
+And then this allows your server to be,
+
+00:08:30.619 --> 00:08:32.460
+you can have it be really beefy
+
+00:08:32.460 --> 00:08:37.099
+and it can do all the heavy lifting for your users.
+
+00:08:39.140 --> 00:08:41.940
+Where in Shiny Live,
+
+00:08:41.940 --> 00:08:45.900
+what we do is we actually take that centralized server
+
+00:08:45.900 --> 00:08:49.219
+and instead we send it to each of the user's browsers.
+
+00:08:50.340 --> 00:08:53.900
+And that in itself is just kind of crazy.
+
+00:08:53.900 --> 00:08:55.580
+We'll go into that more later,
+
+00:08:55.580 --> 00:08:59.900
+but what we do is it's now distributed to the user.
+
+00:08:59.900 --> 00:09:02.380
+And so the user has both the server,
+
+00:09:02.380 --> 00:09:05.020
+like the backend and the front end on their machine.
+
+00:09:06.020 --> 00:09:08.859
+Disadvantages, they're not communicating with each other.
+
+00:09:08.859 --> 00:09:10.900
+There's no centralized server,
+
+00:09:10.900 --> 00:09:14.340
+but advantages, it scales really well.
+
+00:09:14.340 --> 00:09:16.580
+I mean, you can have as many users as you want
+
+00:09:16.580 --> 00:09:18.739
+because they just download the whole thing.
+
+00:09:20.619 --> 00:09:22.539
+Now there's no centralized server
+
+00:09:22.539 --> 00:09:23.940
+and this can be done through something
+
+00:09:23.940 --> 00:09:26.900
+like a static hosting website, like GitHub Pages.
+
+00:09:30.979 --> 00:09:34.820
+So let's look at that kick.
+
+00:09:44.380 --> 00:09:48.099
+So I clicked on the link and I promise you
+
+00:09:48.099 --> 00:09:50.780
+my personal website, I do not have a server.
+
+00:09:50.820 --> 00:09:52.460
+I am an open source.
+
+00:09:52.460 --> 00:09:54.619
+I don't like to pay for things.
+
+00:09:54.619 --> 00:09:58.340
+So when I go to it and I refresh it,
+
+00:09:58.340 --> 00:10:01.580
+things are cached and the app is fully loaded.
+
+00:10:01.580 --> 00:10:05.380
+And like R is already in the browser, R already is here.
+
+00:10:05.380 --> 00:10:08.539
+And the UI obviously is here as well,
+
+00:10:08.539 --> 00:10:11.179
+but everything is there in that browser tab
+
+00:10:11.179 --> 00:10:13.179
+and it's all self-contained.
+
+00:10:13.179 --> 00:10:17.940
+And it kind of feels like a anticlimactic reveal
+
+00:10:17.940 --> 00:10:21.580
+because you're like, it's just a Shiny app.
+
+00:10:21.580 --> 00:10:22.820
+What's the big deal?
+
+00:10:22.820 --> 00:10:25.500
+But it's, I promise it's all there
+
+00:10:25.500 --> 00:10:29.539
+and it's delivered statically and nothing is going on.
+
+00:10:29.539 --> 00:10:31.539
+And that's just the power of Shiny Live.
+
+00:10:33.020 --> 00:10:33.859
+All right.
+
+00:10:35.739 --> 00:10:38.460
+So how is Shiny Live even possible?
+
+00:10:38.460 --> 00:10:41.340
+And I think this is the most sincere slide.
+
+00:10:43.020 --> 00:10:44.460
+It's just legit magic.
+
+00:10:45.380 --> 00:10:46.219
+There's,
+
+00:10:48.700 --> 00:10:51.340
+if you were to ask me at any time point
+
+00:10:51.340 --> 00:10:53.580
+before maybe two years ago and say,
+
+00:10:53.580 --> 00:10:55.500
+can R be put on the internet?
+
+00:10:55.500 --> 00:10:58.700
+I would have laughed and bet you a dollar immediately.
+
+00:10:58.700 --> 00:11:02.020
+And today I am very happy to be wrong
+
+00:11:02.020 --> 00:11:03.380
+and lose that dollar bet.
+
+00:11:04.900 --> 00:11:08.380
+Even as Joe said, as Eric said, Joe said in his keynote,
+
+00:11:08.380 --> 00:11:12.380
+like I'm skeptical, but like, if it can happen,
+
+00:11:12.380 --> 00:11:14.020
+let's give it a go.
+
+00:11:15.219 --> 00:11:19.140
+And it all hinges on having R in the browser.
+
+00:11:20.900 --> 00:11:22.739
+So who did this?
+
+00:11:22.739 --> 00:11:23.580
+George Stagg.
+
+00:11:24.580 --> 00:11:27.099
+He's the gentleman we all have to thank
+
+00:11:28.099 --> 00:11:31.619
+because as the web started shifting towards
+
+00:11:31.619 --> 00:11:33.619
+let's put everything into the browser,
+
+00:11:33.619 --> 00:11:37.900
+he was ready to take on that challenge.
+
+00:11:37.900 --> 00:11:42.580
+And, you know, Shiny Live would not exist without him.
+
+00:11:43.219 --> 00:11:47.500
+I highly recommend you to look at his blog
+
+00:11:47.500 --> 00:11:51.299
+and his website, gws.phd.
+
+00:11:51.299 --> 00:11:55.900
+And he's also the maintainer of WebR
+
+00:11:55.900 --> 00:11:58.500
+where the true magic of Shiny Live comes in.
+
+00:12:00.539 --> 00:12:04.179
+WebR, excuse me, WebR is where a lot
+
+00:12:04.179 --> 00:12:05.380
+of the heavy lifting is done.
+
+00:12:05.380 --> 00:12:08.419
+And then Shiny Live is just kind of like the icing on top.
+
+00:12:08.419 --> 00:12:11.539
+So while I'm doing this workshop and presenting
+
+00:12:11.539 --> 00:12:15.380
+as I'm the developer, really the hats off
+
+00:12:15.380 --> 00:12:16.739
+need to go to George Stagg.
+
+00:12:16.739 --> 00:12:19.700
+I get to just present the cherry on top of the cake.
+
+00:12:19.700 --> 00:12:21.539
+Like he's done the heavy lifting
+
+00:12:21.539 --> 00:12:24.500
+and I want to be, we're all thankful for him.
+
+00:12:27.380 --> 00:12:30.659
+Also there's rwasm actions.
+
+00:12:30.659 --> 00:12:33.419
+So if you're doing anything for your company
+
+00:12:33.419 --> 00:12:38.419
+that is behind private GitHub or other things of the sort,
+
+00:12:39.419 --> 00:12:41.460
+but you do have access to GitHub,
+
+00:12:41.460 --> 00:12:43.580
+rwasm actions will be your friend
+
+00:12:43.580 --> 00:12:46.500
+and you can help set up your own private grand instances,
+
+00:12:46.500 --> 00:12:51.059
+things like that to help enable Shiny Live to work better.
+
+00:12:54.979 --> 00:12:58.859
+So if George Stagg is a magician, what is it?
+
+00:12:58.859 --> 00:13:00.020
+You know, it's always kind of fun
+
+00:13:00.020 --> 00:13:01.700
+to see how the magic works.
+
+00:13:01.700 --> 00:13:04.500
+So what is Shiny Live built upon?
+
+00:13:06.820 --> 00:13:08.099
+And there's a little bit of rabbit hole,
+
+00:13:08.780 --> 00:13:10.419
+a little bit of a nerdy rabbit hole,
+
+00:13:10.419 --> 00:13:12.820
+but I do feel like we should go down it
+
+00:13:12.820 --> 00:13:14.820
+because it kind of feels like,
+
+00:13:14.820 --> 00:13:16.820
+oh, I should just have R,
+
+00:13:16.820 --> 00:13:19.979
+I install R through the installer on the server
+
+00:13:19.979 --> 00:13:20.820
+and then we're done.
+
+00:13:20.820 --> 00:13:23.780
+Like that's kind of how it normally works,
+
+00:13:23.780 --> 00:13:25.219
+but it's all in your browser
+
+00:13:25.219 --> 00:13:27.619
+and the browser is just looking for a website.
+
+00:13:27.619 --> 00:13:31.619
+So it's kind of neat to see how that sauce is made.
+
+00:13:32.780 --> 00:13:37.539
+So Shiny Live, Shiny Live runs Shiny entirely in the browser
+
+00:13:37.539 --> 00:13:39.619
+without any need for a hosted server
+
+00:13:39.619 --> 00:13:43.299
+using WebAssembly via the WebR project.
+
+00:13:43.299 --> 00:13:44.140
+Link to that.
+
+00:13:47.460 --> 00:13:50.460
+And then Shiny Live uses WebR according to the description.
+
+00:13:50.460 --> 00:13:52.059
+So what is WebR?
+
+00:13:52.059 --> 00:13:54.820
+WebR is a version of statistical language R
+
+00:13:54.820 --> 00:13:56.140
+compiled for the browser
+
+00:13:56.140 --> 00:13:59.500
+and Node.js using WebAssembly via Emscripten.
+
+00:14:00.900 --> 00:14:02.900
+There is some fun rumblings right now
+
+00:14:02.900 --> 00:14:05.059
+about talking about Node.js.
+
+00:14:06.059 --> 00:14:08.900
+So right now we're doing things with the browser,
+
+00:14:08.900 --> 00:14:10.059
+but it would be kind of neat
+
+00:14:10.059 --> 00:14:13.140
+if we could have Node.js running in our instance
+
+00:14:14.219 --> 00:14:17.859
+just for portability and reproducibility purposes.
+
+00:14:20.659 --> 00:14:22.580
+WebR talked about Emscripten.
+
+00:14:22.580 --> 00:14:23.780
+So what is Emscripten?
+
+00:14:24.859 --> 00:14:26.140
+These are all terms,
+
+00:14:26.140 --> 00:14:29.380
+things that I had to learn over the past couple of years.
+
+00:14:29.380 --> 00:14:32.820
+Emscripten is complete compiler tool chain
+
+00:14:33.059 --> 00:14:35.460
+to WebAssembly using LLVM
+
+00:14:35.460 --> 00:14:39.500
+with a special focus on speed, size, and the web platform.
+
+00:14:39.500 --> 00:14:42.020
+This is where I start to get a little fuzzy.
+
+00:14:42.020 --> 00:14:45.979
+I'm more of a front-end R.
+
+00:14:45.979 --> 00:14:47.179
+This isn't my area,
+
+00:14:47.179 --> 00:14:50.059
+but George gets very, very excited
+
+00:14:50.059 --> 00:14:52.859
+when he gets to hang out in this land a little bit more.
+
+00:14:55.780 --> 00:14:58.299
+And then finally, what is WebAssembly?
+
+00:14:59.260 --> 00:15:02.700
+WebAssembly, abbreviated WASM,
+
+00:15:02.700 --> 00:15:05.340
+is a binary instruction format
+
+00:15:05.340 --> 00:15:07.619
+for a stack-based virtual machine.
+
+00:15:09.140 --> 00:15:11.140
+WASM is designed as a portable compilation target
+
+00:15:11.140 --> 00:15:12.380
+for programming languages,
+
+00:15:12.380 --> 00:15:13.659
+enabling deployment on the web
+
+00:15:13.659 --> 00:15:15.619
+for client and server applications,
+
+00:15:15.619 --> 00:15:18.580
+and it's supported by all major browsers.
+
+00:15:20.020 --> 00:15:22.059
+This is a really, really interesting concept
+
+00:15:22.059 --> 00:15:24.179
+because it feels like...
+
+00:15:24.179 --> 00:15:25.739
+Like the comparison I like to think of
+
+00:15:25.739 --> 00:15:28.340
+is it's like Docker for your web browser.
+
+00:15:29.419 --> 00:15:32.940
+You can, instead of having Docker on your desktop
+
+00:15:32.940 --> 00:15:34.940
+or your container and Kubernetes or whatever,
+
+00:15:34.940 --> 00:15:39.940
+instead you could have your information bundled up
+
+00:15:40.380 --> 00:15:42.780
+and then you just open it in your web browser
+
+00:15:42.780 --> 00:15:44.619
+versus saying Docker run.
+
+00:15:45.619 --> 00:15:47.700
+And WebAssembly just allows for that now
+
+00:15:47.700 --> 00:15:50.859
+and it's supported within all those browsers.
+
+00:15:56.739 --> 00:15:59.020
+I talked about how it's kind of bundled
+
+00:15:59.020 --> 00:16:02.619
+and this really helps drive reproducibility
+
+00:16:02.619 --> 00:16:06.020
+and that's always a big plus in the R community.
+
+00:16:06.020 --> 00:16:08.539
+How R Markdown and now Cordo
+
+00:16:09.619 --> 00:16:11.820
+are doing these reproducible documents.
+
+00:16:11.820 --> 00:16:13.859
+You can do all your research in there
+
+00:16:13.859 --> 00:16:17.219
+and then you can recompile it and it'll all show up again.
+
+00:16:18.059 --> 00:16:20.940
+With WASM, you really want to have something to say,
+
+00:16:20.940 --> 00:16:23.020
+I want to save this app in a bundle
+
+00:16:23.020 --> 00:16:24.179
+and I want to have it saved
+
+00:16:24.179 --> 00:16:25.700
+and I want it to work forever.
+
+00:16:25.700 --> 00:16:27.739
+How can I do this?
+
+00:16:27.739 --> 00:16:32.739
+And it's really important that you can have something
+
+00:16:33.780 --> 00:16:37.380
+that is platform neutral and you can also have...
+
+00:16:37.380 --> 00:16:39.619
+It's just a binary that you can just kind of ship around
+
+00:16:39.619 --> 00:16:42.979
+almost like a zip folder and it'll be really big
+
+00:16:42.979 --> 00:16:45.059
+because you're gonna have WASM,
+
+00:16:45.059 --> 00:16:47.020
+you're gonna have the compiled R system,
+
+00:16:47.020 --> 00:16:49.260
+you're gonna have extra libraries.
+
+00:16:49.260 --> 00:16:52.179
+So if your app is a little bit on the larger size
+
+00:16:52.179 --> 00:16:56.179
+and including your data, you might have a 500 meg bundle,
+
+00:16:56.179 --> 00:16:59.299
+but that's okay because anyone can open that up
+
+00:16:59.299 --> 00:17:02.500
+and if they had local hosting applied,
+
+00:17:02.500 --> 00:17:04.020
+they could kind of open it up
+
+00:17:05.099 --> 00:17:08.699
+with their Wi-Fi turned off and Shiny will work
+
+00:17:08.699 --> 00:17:10.739
+and Shiny Live will work and run.
+
+00:17:11.619 --> 00:17:13.859
+And it's very, very exciting with that
+
+00:17:13.859 --> 00:17:18.859
+because the place where it's being hosted
+
+00:17:19.020 --> 00:17:21.140
+does not need to have their own version of R
+
+00:17:21.140 --> 00:17:22.819
+and they can have their own version of R installed,
+
+00:17:22.819 --> 00:17:25.780
+can have conflicting versions of R in different bundles
+
+00:17:25.780 --> 00:17:28.780
+because it doesn't matter, they're just in different bundles.
+
+00:17:31.739 --> 00:17:35.180
+I do want to point out that the WASM
+
+00:17:35.180 --> 00:17:38.859
+is not completely 100% reproducible.
+
+00:17:39.739 --> 00:17:42.540
+There is some non-determinism places
+
+00:17:42.540 --> 00:17:46.579
+that they are aware of and are saying is allowed
+
+00:17:46.579 --> 00:17:49.900
+and the website that they have,
+
+00:17:49.900 --> 00:17:51.819
+I'll still go into that a little bit more.
+
+00:17:54.819 --> 00:17:55.660
+Libby.
+
+00:17:59.300 --> 00:18:00.140
+Yeah.
+
+00:18:01.459 --> 00:18:02.300
+Let's see.
+
+00:18:04.420 --> 00:18:05.739
+Here we go.
+
+00:18:05.739 --> 00:18:08.420
+So I do want to point out some interesting ones
+
+00:18:08.420 --> 00:18:12.780
+that I had George ask me about
+
+00:18:12.780 --> 00:18:16.380
+and it's like, why not Docker?
+
+00:18:16.380 --> 00:18:19.219
+Why not do any of like, you know,
+
+00:18:19.219 --> 00:18:20.859
+Docker has been solved, has big team,
+
+00:18:20.859 --> 00:18:23.219
+like why not use them?
+
+00:18:23.219 --> 00:18:25.660
+And one of the examples that he was able to show me
+
+00:18:25.660 --> 00:18:29.579
+is that you can have the same software
+
+00:18:31.420 --> 00:18:35.859
+in the same Docker instances, containers,
+
+00:18:35.859 --> 00:18:39.540
+and then if they're running on different hardware,
+
+00:18:39.540 --> 00:18:43.020
+you'll actually get different runtime values.
+
+00:18:43.020 --> 00:18:46.020
+So if we solve the matrix on the left
+
+00:18:46.020 --> 00:18:49.540
+with ARM or the middle with x86
+
+00:18:49.540 --> 00:18:51.260
+or on the right with RASC,
+
+00:18:52.140 --> 00:18:54.579
+you can see the number at the bottom is different.
+
+00:18:54.579 --> 00:18:57.060
+And as a R user, that's a little terrifying
+
+00:18:57.060 --> 00:18:58.780
+because I would think, oh,
+
+00:18:58.780 --> 00:19:01.500
+it's just maybe a small rounding error or something,
+
+00:19:01.500 --> 00:19:05.819
+but these small rounding errors are magnified
+
+00:19:05.819 --> 00:19:07.219
+in certain instances.
+
+00:19:07.219 --> 00:19:10.699
+And it's quite spooky, I think.
+
+00:19:11.699 --> 00:19:14.140
+When we do this in WebAssembly,
+
+00:19:14.140 --> 00:19:16.780
+because it's fully contained
+
+00:19:16.780 --> 00:19:18.780
+and it has the virtual operating system,
+
+00:19:20.219 --> 00:19:23.300
+this will produce a consistent answer every single time.
+
+00:19:33.420 --> 00:19:35.339
+So done a bunch of explaining.
+
+00:19:36.579 --> 00:19:38.979
+Let's look a little bit on how we can create
+
+00:19:38.979 --> 00:19:40.060
+a ShinyLive app.
+
+00:19:41.699 --> 00:19:43.819
+There's really just one main function
+
+00:19:43.819 --> 00:19:47.900
+that I like to look at, which is ShinyLive export.
+
+00:19:47.900 --> 00:19:51.339
+And you provide a ShinyAptr from location
+
+00:19:51.339 --> 00:19:54.060
+and you provide an output directory to location.
+
+00:19:58.060 --> 00:20:01.380
+This will, the phrasing I kind of like to use
+
+00:20:01.380 --> 00:20:04.180
+is that we'll say I have a from Shiny application
+
+00:20:04.180 --> 00:20:09.180
+and I will export it to a ShinyLive folder.
+
+00:20:10.180 --> 00:20:12.900
+It's not really an app because the app.r
+
+00:20:12.900 --> 00:20:14.619
+just got swallowed into the code.
+
+00:20:15.540 --> 00:20:19.660
+And so it is a little bit different.
+
+00:20:19.660 --> 00:20:21.500
+You won't see your Shiny app anymore.
+
+00:20:23.619 --> 00:20:26.819
+But as I've been saying throughout the day,
+
+00:20:29.699 --> 00:20:31.939
+the folder must be hosted
+
+00:20:31.939 --> 00:20:34.260
+just because of some web restrictions.
+
+00:20:34.260 --> 00:20:36.500
+And this can be done with GitHub pages
+
+00:20:36.540 --> 00:20:39.500
+or you can even do it with local host via HTTP UV.
+
+00:20:42.939 --> 00:20:44.660
+Okay, demo.
+
+00:20:44.660 --> 00:20:47.380
+All right, demo ShinyLive export.
+
+00:20:50.420 --> 00:20:51.300
+This one?
+
+00:20:51.300 --> 00:20:52.140
+Nope.
+
+00:20:53.300 --> 00:20:54.260
+This one.
+
+00:20:54.260 --> 00:20:56.739
+All right, let's play the app.
+
+00:20:59.380 --> 00:21:01.300
+We are all familiar.
+
+00:21:01.300 --> 00:21:03.619
+It's the hello world,
+
+00:21:03.619 --> 00:21:06.819
+old faithful, been updated with bslib.
+
+00:21:06.819 --> 00:21:08.819
+We can change the bins.
+
+00:21:08.819 --> 00:21:10.060
+This is running locally.
+
+00:21:10.060 --> 00:21:11.500
+No tricks, promise.
+
+00:21:11.500 --> 00:21:13.900
+It's just standard old Shiny application.
+
+00:21:15.939 --> 00:21:17.540
+This is just a regular app.r
+
+00:21:17.540 --> 00:21:22.540
+and then the rest is more just GitHub repo extra files.
+
+00:21:23.739 --> 00:21:28.739
+Okay, so now we can call ShinyLive export
+
+00:21:29.099 --> 00:21:34.099
+and I'm going to export it, the current directory dot,
+
+00:21:35.660 --> 00:21:38.260
+and I'm going to save it to outbearit
+
+00:21:38.260 --> 00:21:41.540
+just because I like to name all the folders after my name.
+
+00:21:41.540 --> 00:21:42.380
+It's very fun.
+
+00:21:44.579 --> 00:21:45.420
+So I'm doing this.
+
+00:21:45.420 --> 00:21:49.219
+It went quite quickly, copying more folders
+
+00:21:49.219 --> 00:21:51.180
+and then ta-da, done.
+
+00:21:52.420 --> 00:21:54.979
+Outbearit exists.
+
+00:21:54.979 --> 00:21:57.099
+It's got an index.html
+
+00:21:57.099 --> 00:22:01.300
+and that index.html will load all the other files.
+
+00:22:01.300 --> 00:22:04.780
+Every file must be transported if you were to move it.
+
+00:22:04.780 --> 00:22:09.099
+It's not like a self-contained R Markdown file
+
+00:22:09.099 --> 00:22:13.579
+where you can just have like a 50 megabyte HTML file.
+
+00:22:13.579 --> 00:22:18.579
+Instead, we need all of them in separate files and yeah.
+
+00:22:20.540 --> 00:22:22.420
+Okay, so there are instructions at the bottom
+
+00:22:22.420 --> 00:22:25.619
+where we can say htpv run static server.
+
+00:22:25.619 --> 00:22:27.739
+Because I'm in the IDE, I can click it.
+
+00:22:27.739 --> 00:22:29.699
+It'll paste in the code for me.
+
+00:22:29.699 --> 00:22:34.260
+And if I run it, we get the loading bar and ta-da.
+
+00:22:36.859 --> 00:22:41.859
+Again, it's just an httpv run static server.
+
+00:22:42.180 --> 00:22:44.140
+There's no Shiny connection.
+
+00:22:45.540 --> 00:22:49.060
+This would be, it's just,
+
+00:22:51.219 --> 00:22:52.780
+yeah, it's hard to like tell you,
+
+00:22:52.780 --> 00:22:55.020
+but it's just a static server.
+
+00:22:55.060 --> 00:22:57.780
+And now there isn't a centralized server.
+
+00:23:02.260 --> 00:23:04.780
+Cool, all right, let's go back to the slides.
+
+00:23:07.219 --> 00:23:08.339
+Ooh, some other ways.
+
+00:23:08.339 --> 00:23:10.579
+How can we create Shiny live apps?
+
+00:23:11.619 --> 00:23:15.459
+I really like to get started using shinylive.io.
+
+00:23:16.380 --> 00:23:18.060
+This was first created for Python.
+
+00:23:18.060 --> 00:23:21.619
+So the default links are towards Python,
+
+00:23:21.619 --> 00:23:26.579
+but we can go to examples or the editor in R.
+
+00:23:26.579 --> 00:23:27.900
+It's free, it's online.
+
+00:23:27.900 --> 00:23:30.380
+You can build your own app.
+
+00:23:30.380 --> 00:23:32.260
+You can link to it.
+
+00:23:32.260 --> 00:23:36.020
+You can send links and we're gonna try our best
+
+00:23:36.020 --> 00:23:39.060
+to make sure that those links will always work.
+
+00:23:39.060 --> 00:23:43.060
+And you or the user who gets the link at the end
+
+00:23:44.020 --> 00:23:46.099
+doesn't need to set up anything.
+
+00:23:46.099 --> 00:23:48.939
+So if we look here,
+
+00:23:48.939 --> 00:23:51.180
+just go through a couple of the examples here.
+
+00:23:52.459 --> 00:23:57.180
+Yeah, so we have the Old Faithful, Shiny Text,
+
+00:24:00.420 --> 00:24:04.060
+and Reactivity, oops,
+
+00:24:05.739 --> 00:24:08.939
+and Cylinders, Transmission,
+
+00:24:11.660 --> 00:24:13.859
+and let's see, Sliders.
+
+00:24:15.140 --> 00:24:16.900
+I always gotta do the play button.
+
+00:24:17.859 --> 00:24:22.859
+One, two, three, Shiny Live I.O., great.
+
+00:24:23.420 --> 00:24:26.020
+And Timer.
+
+00:24:29.020 --> 00:24:31.140
+Okay, so this is a good one to kind of show
+
+00:24:31.140 --> 00:24:33.020
+just because it's quick.
+
+00:24:33.020 --> 00:24:35.900
+You can load and save to disk, which is neat,
+
+00:24:35.900 --> 00:24:40.900
+but I like to instead to share the link
+
+00:24:40.900 --> 00:24:44.020
+and you can actually share in the top right corner
+
+00:24:44.020 --> 00:24:45.459
+and you can get the editor URL,
+
+00:24:45.579 --> 00:24:47.380
+which is similar to what you have here
+
+00:24:47.380 --> 00:24:49.219
+or just the application.
+
+00:24:49.219 --> 00:24:52.140
+I'll copy both just so we can see it.
+
+00:24:52.140 --> 00:24:55.420
+So here's an editor URL where you have both
+
+00:24:55.420 --> 00:24:59.060
+the file on the left, terminal on the bottom left,
+
+00:24:59.060 --> 00:25:01.380
+and then you have your app on the right.
+
+00:25:01.380 --> 00:25:06.380
+Or we have application, copy URL, go to it,
+
+00:25:08.500 --> 00:25:10.459
+shiny for R in the top with an edit,
+
+00:25:10.459 --> 00:25:12.699
+just kind of tell you it's Shiny Live
+
+00:25:12.780 --> 00:25:17.339
+or we'll even allow you to hide that header, copy URL.
+
+00:25:20.500 --> 00:25:21.939
+And now it's just an app.
+
+00:25:21.939 --> 00:25:24.500
+And this is where it gets very powerful
+
+00:25:24.500 --> 00:25:26.020
+because you can have iframes
+
+00:25:26.020 --> 00:25:28.060
+if you are making your own website,
+
+00:25:28.060 --> 00:25:29.579
+you can embed these apps.
+
+00:25:29.579 --> 00:25:32.579
+And I hope one day Packagedown will allow for us
+
+00:25:32.579 --> 00:25:37.579
+to automatically put our Shiny apps into the code
+
+00:25:37.579 --> 00:25:38.939
+because it would be really, really neat
+
+00:25:38.939 --> 00:25:41.540
+to have Shiny apps in your documentation.
+
+00:25:41.540 --> 00:25:44.020
+And none of our examples will ever have to say,
+
+00:25:44.020 --> 00:25:46.619
+if interactive, then do the app.
+
+00:25:46.619 --> 00:25:47.859
+We can remove all of it.
+
+00:25:51.579 --> 00:25:54.660
+All right, let's close those.
+
+00:25:56.900 --> 00:25:58.660
+And slides.
+
+00:26:01.060 --> 00:26:03.060
+You can put Shiny Live into Cordo.
+
+00:26:03.060 --> 00:26:07.020
+There's a Cordo extension that needs to be installed.
+
+00:26:07.020 --> 00:26:07.939
+It's nice.
+
+00:26:07.939 --> 00:26:10.180
+It's useful.
+
+00:26:10.180 --> 00:26:12.859
+It's not fully what I want,
+
+00:26:12.859 --> 00:26:16.060
+but it's very helpful to embed an application,
+
+00:26:16.939 --> 00:26:18.339
+self-contained application.
+
+00:26:23.260 --> 00:26:24.339
+Yes.
+
+00:26:24.339 --> 00:26:27.739
+So it's good for like little small apps,
+
+00:26:27.739 --> 00:26:31.939
+but I wouldn't write a 10-page multi-thousand line app
+
+00:26:31.939 --> 00:26:35.540
+for Shiny Live inside a Cordo document
+
+00:26:35.540 --> 00:26:36.939
+unless it's in a package,
+
+00:26:36.939 --> 00:26:38.439
+because then it's no big deal.
+
+00:26:39.439 --> 00:26:43.199
+But writing it right there is a little difficult.
+
+00:26:44.680 --> 00:26:47.359
+Also, the Shiny Live application
+
+00:26:48.719 --> 00:26:50.959
+is embedded inside an iframe.
+
+00:26:50.959 --> 00:26:55.959
+So the app code values and normal things
+
+00:26:56.560 --> 00:26:58.680
+that you would find with a runtime Shiny
+
+00:26:58.680 --> 00:27:02.199
+or server Shiny application or file,
+
+00:27:02.199 --> 00:27:05.920
+where you can retrieve values down in a lower chunk
+
+00:27:05.920 --> 00:27:07.479
+or a higher chunk,
+
+00:27:07.560 --> 00:27:09.000
+it's not possible here
+
+00:27:09.000 --> 00:27:11.800
+because Shiny Live is put inside an iframe
+
+00:27:11.800 --> 00:27:14.199
+and that isolates the app.
+
+00:27:14.199 --> 00:27:17.680
+And so values are not able to be shared as of right now.
+
+00:27:21.560 --> 00:27:22.800
+So how do we do it?
+
+00:27:22.800 --> 00:27:24.719
+You switch your little R chunk engine
+
+00:27:24.719 --> 00:27:27.119
+from R to Shiny Live R.
+
+00:27:27.119 --> 00:27:31.239
+And standalone true.
+
+00:27:33.640 --> 00:27:34.920
+Don't know about that one,
+
+00:27:34.920 --> 00:27:38.319
+but it's nice to have components of editor and viewer,
+
+00:27:38.319 --> 00:27:40.880
+and then your app code just goes below like normal.
+
+00:27:44.199 --> 00:27:46.760
+For your front matter, for Cordo,
+
+00:27:46.760 --> 00:27:50.239
+add in Cordo extension Shiny Live in your filters.
+
+00:27:50.239 --> 00:27:53.959
+That way, this code chunk over here
+
+00:27:53.959 --> 00:27:57.239
+is processed and upgraded into that Shiny Live application.
+
+00:27:58.599 --> 00:28:01.239
+All right, so let's take a look at that
+
+00:28:01.239 --> 00:28:04.880
+and what it would possibly look like.
+
+00:28:05.920 --> 00:28:08.920
+Okay, all right.
+
+00:28:10.319 --> 00:28:12.479
+So in my Cordo document,
+
+00:28:12.479 --> 00:28:16.119
+I have a filter of Cordo extension Shiny Live,
+
+00:28:16.119 --> 00:28:19.599
+and I have a chunk here called Shiny Live R.
+
+00:28:20.839 --> 00:28:22.760
+I want my editor and viewer component,
+
+00:28:22.760 --> 00:28:26.199
+and I just have a very small app of what is n times two.
+
+00:28:27.079 --> 00:28:28.800
+If I were to render this,
+
+00:28:35.280 --> 00:28:39.239
+hmm, hmm, hmm, hmm, waiting, waiting.
+
+00:28:39.239 --> 00:28:40.520
+It opens up.
+
+00:28:40.520 --> 00:28:42.280
+Cordo is hosting it locally.
+
+00:28:42.280 --> 00:28:44.079
+It's not doing,
+
+00:28:45.319 --> 00:28:48.479
+there's no server Shiny or anything like that.
+
+00:28:48.479 --> 00:28:51.400
+It's just a static HTML format.
+
+00:28:53.119 --> 00:28:54.680
+And yeah.
+
+00:28:58.439 --> 00:29:00.000
+N times two is 140.
+
+00:29:00.000 --> 00:29:01.000
+Perfect.
+
+00:29:01.000 --> 00:29:02.760
+App works.
+
+00:29:02.760 --> 00:29:04.640
+If you, it's kind of interesting.
+
+00:29:04.640 --> 00:29:05.800
+It's not reproducible,
+
+00:29:05.800 --> 00:29:08.880
+but if you are wanting to and you do have your editor,
+
+00:29:08.880 --> 00:29:10.760
+you can change the code
+
+00:29:11.839 --> 00:29:15.040
+and put in new information.
+
+00:29:17.599 --> 00:29:21.599
+So if I hit play, then, oh, new title.
+
+00:29:21.599 --> 00:29:25.199
+But if you do refresh the page,
+
+00:29:25.199 --> 00:29:28.040
+then your local edits are forgotten
+
+00:29:28.040 --> 00:29:31.160
+and you go back to the original document.
+
+00:29:35.640 --> 00:29:37.640
+Oh, Gandalf, what do you have to say?
+
+00:29:40.040 --> 00:29:41.359
+Keep it secret.
+
+00:29:41.359 --> 00:29:42.439
+Keep it safe.
+
+00:29:45.640 --> 00:29:50.640
+Unfortunately, Gandalf would be very sad about Shiny Live.
+
+00:29:53.119 --> 00:29:55.719
+Yeah, it is good for education process.
+
+00:29:55.719 --> 00:29:57.959
+It's very, very handy for that
+
+00:29:57.959 --> 00:30:00.640
+because education tends to be a lot more
+
+00:30:00.640 --> 00:30:03.640
+about the content and the content itself.
+
+00:30:03.800 --> 00:30:06.280
+Education, typically there are no secrets.
+
+00:30:06.280 --> 00:30:08.880
+You want the students to have everything.
+
+00:30:08.880 --> 00:30:10.800
+A little difficult for grading,
+
+00:30:10.800 --> 00:30:12.280
+so I don't recommend that.
+
+00:30:12.280 --> 00:30:15.839
+But for Shiny Live applications, there are no secrets.
+
+00:30:15.839 --> 00:30:17.439
+The whole app is in the browser.
+
+00:30:17.439 --> 00:30:20.439
+The user can inspect everything within the app.
+
+00:30:20.439 --> 00:30:23.160
+If I were to go up and find an app,
+
+00:30:23.160 --> 00:30:28.160
+I can go through the codes and I can find any password,
+
+00:30:28.199 --> 00:30:31.640
+any thing that you thought was safe
+
+00:30:31.640 --> 00:30:33.800
+is normally safe with a Shiny Live app
+
+00:30:33.800 --> 00:30:38.800
+because the Shiny app would be behind the server.
+
+00:30:39.119 --> 00:30:40.920
+So it'd be in the central server.
+
+00:30:40.920 --> 00:30:44.239
+But now with Shiny Live, the server is on the browser.
+
+00:30:44.239 --> 00:30:45.760
+So the user can find it
+
+00:30:45.760 --> 00:30:48.760
+and that's where it gets a little interesting.
+
+00:30:51.239 --> 00:30:52.079
+Yes.
+
+00:30:52.079 --> 00:30:54.599
+Does that include the data that is embedded in the app?
+
+00:30:54.599 --> 00:30:55.680
+Yes.
+
+00:30:55.680 --> 00:30:57.680
+Everything is in the browser.
+
+00:30:58.680 --> 00:31:03.680
+There is no PositCloud for the session today.
+
+00:31:05.040 --> 00:31:06.640
+But yeah, so everything is in the browser.
+
+00:31:06.640 --> 00:31:09.959
+So if you have a CSV, I'll be able to find that data.
+
+00:31:10.959 --> 00:31:12.839
+It can be found.
+
+00:31:12.839 --> 00:31:15.520
+It's a little spooky, a little different.
+
+00:31:15.520 --> 00:31:17.400
+But we need to kind of draw the line
+
+00:31:17.400 --> 00:31:19.959
+as to where there's some advantages and disadvantages.
+
+00:31:19.959 --> 00:31:21.880
+And this is one of the big ones.
+
+00:31:21.880 --> 00:31:26.359
+And if you are trying to connect or read from a secret API
+
+00:31:27.359 --> 00:31:29.280
+that you don't want users to know about,
+
+00:31:29.280 --> 00:31:31.479
+it's not secret.
+
+00:31:33.239 --> 00:31:35.160
+They will find it or can find it.
+
+00:31:38.239 --> 00:31:39.640
+Some other limitations.
+
+00:31:41.554 --> 00:31:50.674
+If your packages have a hard dependency on the curl package, then the parent package is not
+
+00:31:50.674 --> 00:32:00.434
+going to work with wasm. There's a known technical difficulty with curl in wasm and
+
+00:32:01.874 --> 00:32:05.954
+doesn't work. So if you change it to like a suggests, you might get away with it.
+
+00:32:05.954 --> 00:32:14.594
+But that's something to be aware of, including curl, because it's kind of like a system
+
+00:32:14.594 --> 00:32:19.713
+dependency in what it does. Not all system dependencies are currently working with wasm
+
+00:32:20.434 --> 00:32:28.193
+within WebR. There are room for improvement, and George is excited to continue working on those.
+
+00:32:29.074 --> 00:32:37.553
+But not everything is automatically there for everything. So I think he got a lot of the
+
+00:32:37.553 --> 00:32:43.794
+packages that you see to work. And that was great. So I think he's at like 70 or 80% of cram,
+
+00:32:43.794 --> 00:32:50.034
+which is really impressive, given all the different behaviors and requirements of each package.
+
+00:32:51.074 --> 00:32:56.354
+But it's not 100%. So just want to put that out there that you may have difficulties if you're
+
+00:32:56.354 --> 00:33:07.873
+doing something with expert requirement. And similar to curl, external databases do not work.
+
+00:33:09.153 --> 00:33:17.714
+That streaming connection is going to be another big difficulty to get over. But then I would even
+
+00:33:17.793 --> 00:33:23.634
+I would even like go again to say that there are no secrets. So if you are connecting to a database,
+
+00:33:24.594 --> 00:33:31.954
+you are notifying your users where they can run their attacks if they want. So again, no secrets.
+
+00:33:34.674 --> 00:33:38.354
+Eric says, regarding databases, I'm intrigued by the process
+
+00:33:39.314 --> 00:33:43.793
+progress DuckDB is making with WebAssembly. Oh, it's super impressive.
+
+00:33:43.873 --> 00:33:50.513
+There are things that George has demoed that are not purely ShinyLive, but what he's able to do
+
+00:33:50.513 --> 00:33:58.034
+with WebR, which just are mind blowing. And they're so fast. And then having DuckDB be your database,
+
+00:33:58.754 --> 00:34:08.273
+and then having WebR run things in the browser. It's just absolutely amazing. So when as we start
+
+00:34:08.273 --> 00:34:15.233
+to iron things out, that will become much more user friendly. Right now we're just trying to see
+
+00:34:15.233 --> 00:34:24.194
+what's what's even possible. David says, well, if the app is, if the app is stored in a public
+
+00:34:24.194 --> 00:34:30.834
+repo, then it should not be any worries regarding the secrets. Bingo. Exactly. So if everything is
+
+00:34:30.834 --> 00:34:36.914
+public, and you don't care that it's public, then GitHub Pages is a perfect place to host it.
+
+00:34:37.633 --> 00:34:42.674
+And that's what we will do in the second half of this workshop is we're going to actually everyone
+
+00:34:42.674 --> 00:34:48.834
+I hopefully will be deploying their own app to their own GitHub Pages.
+
+00:34:52.674 --> 00:34:58.513
+Howard asks, how do you get the GitHub page to run? Well, there's a couple of ways to do it.
+
+00:34:59.474 --> 00:35:05.873
+Howard asks, how do you find all the information? Do you inspect using Google Chrome? What do you
+
+00:35:05.873 --> 00:35:12.834
+do? You can just go to app.json. And that'll give you most of the stuff. So if you have my website,
+
+00:35:13.554 --> 00:35:18.754
+and then it ends in a slash, you can just add an app.json. And that'll give you most,
+
+00:35:18.754 --> 00:35:28.034
+most likely all the files. I had it here. Yeah, this app.json. So if it was pretty formatted,
+
+00:35:28.114 --> 00:35:33.474
+you can see like my app.r code. And then there's nothing else in this app. Oh, they even added in
+
+00:35:33.474 --> 00:35:42.914
+the readme. And also the our project file got bundled up as well. So you can find it there.
+
+00:35:43.713 --> 00:35:51.954
+Most of the other things are fixed. But this app.json will get upgraded for everyone's exported
+
+00:35:51.954 --> 00:36:02.754
+app. And now I will hand the floor to Eric to talk about FDA submissions, because we've
+
+00:36:02.754 --> 00:36:07.634
+kind of gone through some of these limitations. But there's some exciting opportunities here.
+
+00:36:08.594 --> 00:36:12.833
+Yeah, thank you, Barrett. So yeah, I'll take a few minutes to share some of my
+
+00:36:12.833 --> 00:36:18.833
+probably most exciting collaboration I've had externally with respect to this possibility,
+
+00:36:19.474 --> 00:36:24.833
+where this is rooted in a working group that I'm a part of under the R Consortium,
+
+00:36:24.833 --> 00:36:30.754
+called the Submissions Working Group, where a few of us in life sciences have gone together
+
+00:36:30.754 --> 00:36:36.914
+in partnership with regulatory authorities from the FDA, to look at the possibility of using
+
+00:36:36.914 --> 00:36:42.914
+open source software more in clinical submissions. And this has been going on in terms of, you know,
+
+00:36:42.914 --> 00:36:48.993
+fully sanctioned pilot projects for a few years now. And it was about two years ago that we were
+
+00:36:48.993 --> 00:36:56.034
+able to successfully submit a traditional Shiny application using R, completely open source
+
+00:36:56.594 --> 00:37:04.754
+files stored on GitHub, to the FDA through their transfer protocol. And it worked great. Now,
+
+00:37:04.754 --> 00:37:10.833
+of course, we have a traditional Shiny app, A. Yes, you can run it locally on your machine. But
+
+00:37:10.833 --> 00:37:15.474
+then, when you want to host it, you have to obviously have a hosting provider for that. And
+
+00:37:15.474 --> 00:37:22.673
+plus, the setup procedure that we had for that particular submission was a bit involved of using
+
+00:37:22.673 --> 00:37:28.673
+RM to bootstrap the package dependencies, making sure that the version of R was installed accordingly.
+
+00:37:29.234 --> 00:37:35.953
+It was just a lot of setup effort. And then, you know, as we finish that pilot, then we start to see
+
+00:37:35.953 --> 00:37:42.594
+the advancements that Barrett mentioned earlier with WebR, George Steg's influential work,
+
+00:37:42.594 --> 00:37:48.594
+and then ShinyLive came shortly thereafter. And so, I had the idea of, well, what if we try
+
+00:37:48.594 --> 00:37:53.873
+a different method of submitting the Shiny application? One of those methods being WebAssembly.
+
+00:37:54.433 --> 00:37:58.914
+And this is, when we started this, this is very early in the process. We didn't have nearly the
+
+00:37:58.914 --> 00:38:04.194
+coverage of packages that are supported in the WebAssembly framework as we do now.
+
+00:38:05.314 --> 00:38:12.113
+But as time went on, as we started looking at this feasibility in conjunction with a containerized
+
+00:38:12.113 --> 00:38:16.914
+approach, we thought the regulators would be more excited about the containerized approach,
+
+00:38:16.914 --> 00:38:21.873
+because that's, you know, Docker has been around for a while, and container technology to most of
+
+00:38:21.873 --> 00:38:27.553
+the IT sector is very well understood, whereas WebAssembly is a pretty new thing, especially in
+
+00:38:27.553 --> 00:38:32.594
+data science. It was about halfway through this pilot, it kind of, we flipped the script a little
+
+00:38:32.594 --> 00:38:37.713
+bit. They were actually more excited to get the WebAssembly portion, because it meant less setup
+
+00:38:37.713 --> 00:38:42.914
+for them, as long as they have a compliant web browser that's, you know, say Microsoft Edge,
+
+00:38:42.914 --> 00:38:49.234
+Google Chrome, or whatnot. Any modern web browser can run these WebAssembly powered applications.
+
+00:38:50.194 --> 00:38:56.673
+And so, then the work, we started to do the work, as we say, we figured out, okay, on their
+
+00:38:56.673 --> 00:39:03.553
+environment, how can we successfully bootstrap a Shiny live powered application? And the links that
+
+00:39:05.074 --> 00:39:09.314
+Bear is showing here, especially the GitHub repo on the right there,
+
+00:39:10.354 --> 00:39:16.273
+that has a complete scaffolding of what we did to assemble this Shiny application.
+
+00:39:16.833 --> 00:39:21.074
+And you're going to learn a lot about this today in the second half of the workshop,
+
+00:39:21.074 --> 00:39:28.433
+but we use Shiny live to take a Shiny application, and then put a little bit on
+
+00:39:28.433 --> 00:39:34.113
+top of it to inject the publicly available data sets are part of the application submission.
+
+00:39:34.993 --> 00:39:41.553
+And then we give them a little shim to run the application powered by Shiny live
+
+00:39:42.433 --> 00:39:49.393
+to an HTTP UV to run it in their local RStudio session. But technically speaking, the only
+
+00:39:49.393 --> 00:39:53.953
+packages they needed to do that to run the application that was already pre-bundled
+
+00:39:54.594 --> 00:40:02.113
+was HTTP UV. Once they have that, they can run it in a web browser process. And lo and behold,
+
+00:40:02.113 --> 00:40:07.953
+once we assembled the right bundle to meet the transfer requirements, it is now currently in
+
+00:40:07.953 --> 00:40:13.874
+review. We are hoping to get positive feedback in the coming months. But they have been very excited
+
+00:40:13.874 --> 00:40:20.513
+about this approach, and we think it can open the door for perhaps even more domain-specific
+
+00:40:20.513 --> 00:40:26.994
+applications that may not replace a clinical submission entirely, but it can serve as a great
+
+00:40:27.633 --> 00:40:34.833
+companion piece to showing dynamic web-based results, where a traditional, say, R Markdown
+
+00:40:34.833 --> 00:40:40.994
+HTML output may not be able to get you all the way there. But a Shiny web assembly application
+
+00:40:40.994 --> 00:40:46.914
+powered by Shiny live can take advantage of the Shiny ecosystem. But now, in a way where they don't
+
+00:40:46.914 --> 00:40:52.994
+have to run this on an instance of, say, Posit Connect or some other hosting provider, they can
+
+00:40:52.994 --> 00:40:58.753
+all run this locally on their respective machines. So again, we're very excited about it. You can see
+
+00:40:58.753 --> 00:41:03.794
+the links in the GitHub repo there if you want to look in more details, as well as the setup that we
+
+00:41:03.794 --> 00:41:10.034
+had them complete to get it onto their system. We hope that as the ecosystem advances, this will be
+
+00:41:10.034 --> 00:41:15.953
+even easier in the coming years. But overall, they are very excited. We are very excited.
+
+00:41:16.594 --> 00:41:22.034
+And as a whole, Shiny's already had a lot of inroads in life sciences, but I think it's going
+
+00:41:22.034 --> 00:41:29.713
+to take a huge leap as we go forward with this. So more to come in this space. Definitely stay tuned.
+
+00:41:29.713 --> 00:41:38.114
+But without Shiny live and WebR, of course, this future would not be possible at all. So I am
+
+00:41:38.114 --> 00:41:44.753
+indebted to George and Barrett and the Shiny team for making this a reality because we are
+
+00:41:44.753 --> 00:41:50.273
+extremely excited about it. And you'll be hearing more about this certainly in the coming year once
+
+00:41:50.273 --> 00:41:57.474
+we get hopefully a successful review in store with the FDA. And we may try new approaches next year.
+
+00:41:57.474 --> 00:42:01.953
+So yeah, that's just a little bit of a nutshell, but I invite you to check out the links
+
+00:42:01.953 --> 00:42:05.633
+if you want to learn more. And I'll be around throughout the conference and the workshop here
+
+00:42:05.713 --> 00:42:10.674
+if you have more questions on that. Speaking of questions, I'll take one from Jared
+
+00:42:11.234 --> 00:42:16.594
+real quick. It's a good one. He's asking, would this setup be a concern for blinding or patient
+
+00:42:16.594 --> 00:42:23.554
+identification? Well, as Barrett said, any Shiny live app, if you have data embedded into it,
+
+00:42:24.273 --> 00:42:31.073
+one way or another, that user, if they're willing to take the work and inspecting that
+
+00:42:31.073 --> 00:42:36.914
+application JSON file, could get their hands on that data. So for my perspective, I probably
+
+00:42:36.914 --> 00:42:44.273
+wouldn't use this in a confidential situation of patient unblinding perhaps. But what we did in
+
+00:42:44.273 --> 00:42:50.114
+this pilot submission is we used this on aggregated data that, again, was already publicly available.
+
+00:42:50.114 --> 00:42:56.034
+But the other approach to keep in mind is that when you share this with a regulator,
+
+00:42:56.034 --> 00:43:01.474
+it is shared through their direct transfer protocol. And they're not sharing it publicly
+
+00:43:01.474 --> 00:43:06.114
+from their side. They're going to review it on their respective infrastructure. So at least
+
+00:43:06.114 --> 00:43:11.713
+they wouldn't be sharing it externally, so to speak. But certainly, yeah, if you have concerns
+
+00:43:11.713 --> 00:43:18.914
+about patient information, just like of anything in this industry, you do have to be careful on
+
+00:43:18.914 --> 00:43:25.234
+which products you're sharing or which, I should say, interfaces you're sharing to review those
+
+00:43:25.234 --> 00:43:30.034
+results. So those will be one of the issues I'm sure we'll be sorting out in the coming year.
+
+00:43:34.354 --> 00:43:38.914
+But yeah, that's my summary of it. I can turn it back over to Barrett unless you have any other
+
+00:43:38.914 --> 00:43:39.234
+questions.
+
+00:43:41.153 --> 00:43:44.674
+Shared with a big thank you. And yes, thank you, Eric. Thanks for all the
+
+00:43:45.393 --> 00:43:52.513
+hard work and pushing the envelope on this on the FDA side. I know everyone will appreciate
+
+00:43:53.393 --> 00:43:55.474
+hopefully a much easier submission process.
+
+00:43:57.393 --> 00:44:01.713
+Yes, we will. And it's a team effort as well. So I want to make sure to make that clear. I could
+
+00:44:01.713 --> 00:44:07.153
+never have done this alone. But with the great advancements in open source, it just is so exciting
+
+00:44:07.153 --> 00:44:09.073
+to take advantage of that. So yeah, thank you.
+
+00:44:12.994 --> 00:44:19.474
+Jared asks, have you worked with Shiny Assistant to integrate into this?
+
+00:44:20.034 --> 00:44:33.794
+Yes. I believe we have. What Jared is asking about, if we, Assistant,
+
+00:44:36.354 --> 00:44:45.633
+you can now go to gallery.shinyappsioassistant. And put that into Zoom here. And you can say,
+
+00:44:45.953 --> 00:44:54.193
+you can say, if, sorry, let me introduce this. So Shiny Assistant is a newer thing that Winston
+
+00:44:54.193 --> 00:44:58.753
+Chang has been working on. And Shiny team has been trying to integrate with into these large
+
+00:44:58.753 --> 00:45:04.354
+language models more and more. Because a lot of what they're good at is to remove busy work.
+
+00:45:05.073 --> 00:45:10.674
+And really, the hard part of coming up or building a Shiny application is knowing what you want to
+
+00:45:10.674 --> 00:45:18.914
+do. Executing that is, I think, and one angle of looking at it is busy work. Something that
+
+00:45:18.914 --> 00:45:26.513
+is solvable, but describing what you want, things like that, is quite difficult. So what we've done
+
+00:45:26.513 --> 00:45:32.273
+is trained the large language model to, that's more code based, not necessarily chat GPT,
+
+00:45:32.273 --> 00:45:36.674
+which doesn't quite do as well with code directly. But instead, we're using Anthropic,
+
+00:45:36.674 --> 00:45:42.994
+which does a lot better with code. And you can say, I'll try to recreate the old faithful
+
+00:45:43.633 --> 00:45:55.794
+application. Please build me an application with a sidebar on the left. It should contain
+
+00:45:55.794 --> 00:46:09.474
+a single slider from zero to or from one to 50 bins. Given the bin size,
+
+00:46:10.034 --> 00:46:22.833
+construct a histogram of the geyser, our geyser, our data
+
+00:46:23.153 --> 00:46:40.753
+are available within R. The title should say Shiny live workshop.
+
+00:46:41.313 --> 00:46:50.674
+And so, have we used Shiny assistant to integrate this? Oh, no, that's Python. I want R. Go. That's
+
+00:46:50.674 --> 00:47:02.674
+why the geyser doesn't exist. I'll just resubmit that. Refresh. R paste. Done.
+
+00:47:03.554 --> 00:47:13.794
+R paste. Done. So this whole right side is actually done with Shiny live.io, which is done
+
+00:47:13.794 --> 00:47:24.434
+with, oh, that's really cool. It's fun when the demos work out. So I just described it in a short
+
+00:47:24.434 --> 00:47:30.994
+paragraph, and it wrote this whole application for me. It had the liberty of adding in this teal
+
+00:47:30.994 --> 00:47:39.953
+color. But it, you know, also did the main title in the X lab on what it's doing. Great job. Good
+
+00:47:39.953 --> 00:47:48.833
+bot. Nice job. Do it again. Yes. Very pretty liberty. Yeah. Looks good. And then what we can
+
+00:47:48.833 --> 00:47:53.713
+do is we can then share it, copy the editor, and, you know, you're back to Shiny live.
+
+00:47:55.474 --> 00:47:59.313
+So it's not a fully exported app, but it's using Shiny live.io,
+
+00:47:59.313 --> 00:48:04.354
+which if you can use it in Shiny live.io, you can definitely export it to be statically hosted.
+
+00:48:10.914 --> 00:48:17.393
+Oh, Kenneth Taylor, you've done stuff in the QA spot in Zoom. How do I look at this?
+
+00:48:19.713 --> 00:48:24.594
+Q&A. Oh, there we are. Right. Shiny app that works.
+
+00:48:30.193 --> 00:48:32.193
+Q&A.
+
+00:48:34.914 --> 00:48:40.273
+Kenneth is asking that he gets his app to work when exporting, and it works locally,
+
+00:48:40.273 --> 00:48:46.994
+but when push to GitHub fails, it just gets a blank page. Maybe we will debug later,
+
+00:48:47.874 --> 00:48:53.953
+because that seems like a very specific question. I hope, excuse me, we can go through the steps to
+
+00:48:53.953 --> 00:49:00.114
+make sure that you're in a good spot. And says, also, I found that importing custom Google font
+
+00:49:00.114 --> 00:49:04.354
+to use in the app gets successfully applied to everything except for ggplot2 objects.
+
+00:49:05.234 --> 00:49:12.754
+Oh, yes. I couldn't find any fix for this. That is unrelated to Shiny live, but I am excited about
+
+00:49:12.754 --> 00:49:28.594
+the package and how to fix it. It is thematic. So, thematic is a package that Carson Sievert
+
+00:49:28.594 --> 00:49:33.474
+is the lead developer on. Yeah, I'm in there, but, like, Carson did the work.
+
+00:49:34.913 --> 00:49:41.154
+And what's really, really cool is you just have your app, and it's doing its stuff,
+
+00:49:41.793 --> 00:49:52.193
+and then you add in thematic, and if you can look, the titles of this plot is now in the fun
+
+00:49:52.193 --> 00:49:57.234
+font that the rest of the app had. Also, the theme of the background colors, the shading,
+
+00:49:57.234 --> 00:50:03.713
+it all is kind of taking after your primary and secondary color scheme. So, I would suggest
+
+00:50:04.594 --> 00:50:15.793
+to look into the thematic package. Thank you, Eric. Cool. Let's see here.
+
+00:50:18.114 --> 00:50:26.114
+Oh, Nate asks, can it take non-cran packages? Yes, I would suggest you use the R universe,
+
+00:50:26.114 --> 00:50:36.433
+and I forgot to add it into the slides about R universe, but it is building.
+
+00:50:38.033 --> 00:50:42.594
+It doesn't state it here directly, but it is building these for Wasm. So,
+
+00:50:42.594 --> 00:50:46.994
+if you set your cran location to point to R universe, you can get extra packages that way.
+
+00:50:46.994 --> 00:50:59.234
+And let's see. Would ShinyLive make easier deploying apps as desktop app?
+
+00:51:02.114 --> 00:51:06.833
+It depends what your version of easier is. I think it scales much better,
+
+00:51:06.833 --> 00:51:10.433
+because it's infinite scaling for free, like, virtually free.
+
+00:51:10.754 --> 00:51:18.833
+And he has asked about that. So, it all depends as to what you're trying to go for.
+
+00:51:20.114 --> 00:51:24.433
+If your goal is distribution as easy as possible, I really like ShinyLive.
+
+00:51:25.553 --> 00:51:30.114
+If you want security and secrets, don't use ShinyLive.
+
+00:51:32.274 --> 00:51:36.673
+It does remind me, Barrett, we've seen in the community some attempts at putting Shiny apps
+
+00:51:36.673 --> 00:51:42.833
+in an Electron setup. Do you think those things are still worth pursuing for developers, or
+
+00:51:43.953 --> 00:51:46.994
+you think WebAssembly or ShinyLive is the better way to go?
+
+00:51:49.713 --> 00:51:57.234
+I think Electron will do the really nice applications. I know there are ways that
+
+00:51:57.234 --> 00:52:04.994
+we can get it to be a progressive web app. I think that's something that possibly ShinyLive
+
+00:52:05.234 --> 00:52:12.754
+should do. ShinyLive.io should perform so that you could just write it in ShinyLive.io and then it's
+
+00:52:12.754 --> 00:52:23.953
+available. But you could also have Electron just wrap your small static folder and have Electron
+
+00:52:23.953 --> 00:52:30.514
+host it. And that's a really nice combination, because Electron's good at the app part of it,
+
+00:52:30.514 --> 00:52:35.154
+but you can just have it essentially just be an iframe. And that's the end of your app.
+
+00:52:37.953 --> 00:52:40.033
+Application. Your computer application.
+
+00:52:44.594 --> 00:52:51.073
+Yes. Libby's asking about if you just set your CRAN repo with the options that way. I believe so.
+
+00:52:52.033 --> 00:52:58.913
+I believe that's how it works. And if you have GitHub packages, using r-universe makes it so that
+
+00:53:01.073 --> 00:53:03.953
+you don't have to have your package published to CRAN, and it will
+
+00:53:04.514 --> 00:53:09.953
+collect it, like, roughly every hour for all of the packages that you organize.
+
+00:53:09.953 --> 00:53:29.394
+And do I see website? ShinyLive server. Great. Ah, there we go.
+
+00:53:30.354 --> 00:53:33.874
+Slido's funny. I hope I haven't missed anyone's questions there.
+
+00:53:33.874 --> 00:53:36.833
+I've checked the Slido. There hasn't been any that show up on my end.
+
+00:53:36.833 --> 00:53:47.953
+Gotcha. Perfect. All right. Let's it's been an hour. Let's take a quick break. I am so excited
+
+00:53:48.514 --> 00:53:53.234
+about this. Let's see here. All right. So, I got a five minute break here. These hex stickers will
+
+00:53:53.234 --> 00:54:04.514
+slowly disappear. So, if you're oh, that seems way too fast. Right? Yeah. But let's come back
+
+00:54:04.514 --> 00:54:10.354
+in a minute. I'm going to go back to my slides. I'm going to go back to my slides, and I'm going
+
+00:54:10.433 --> 00:54:20.033
+way too fast. Right? Yeah. But let's come back in five minutes. So, let's say five minutes after
+
+00:54:20.033 --> 00:54:25.874
+the hour. We'll be good. All right. Thank you, Barrett. Yep. Let's all take a quick break here.
+
+00:54:27.394 --> 00:54:28.673
+See you soon. Yep.
+
+00:54:30.913 --> 00:54:35.313
+Hey, Barrett. I believe there was one earlier, and I'm not sure if you had already discussed
+
+00:54:35.313 --> 00:54:41.154
+this about being able to utilize Shiny live with a private GitHub repo.
+
+00:54:43.553 --> 00:54:48.594
+Private GitHub repo. Yes. I will not cover that today, but it is possible.
+
+00:54:53.474 --> 00:55:03.474
+Let me think of nice links to give you. So, within we'll come back to this, because there's still
+
+00:55:03.474 --> 00:55:19.874
+time. There is releases and tags. This part, reusable workflows. So, in your private repo,
+
+00:55:19.874 --> 00:55:25.634
+I would do one of the two things. Build a CRAN link.
+
+00:55:26.594 --> 00:55:35.634
+So, this one is deploy a CRAN repo. So, that is like within your private org, you would have a
+
+00:55:35.634 --> 00:55:42.594
+private CRAN repo that you would deploy to. And then this one here is release file system image.
+
+00:55:43.154 --> 00:55:46.833
+I think this one might be a little bit better, where you can
+
+00:55:47.553 --> 00:55:54.274
+it basically adds in an asset file to your GitHub release. And if you install from GitHub,
+
+00:55:55.073 --> 00:56:04.594
+given the GitHub release, or like that tag, then when we go to export your application, we will see
+
+00:56:04.594 --> 00:56:12.833
+like, oh, Barrett's secret package was installed from GitHub, and it was on this page. And then
+
+00:56:12.833 --> 00:56:18.673
+secret package was installed from GitHub, and it was on this tag. And I can see there is an asset
+
+00:56:18.673 --> 00:56:24.673
+file, which happens to be a WebAssembly like image. And we'll download that and use that for
+
+00:56:24.673 --> 00:56:32.274
+your package, rather than using the one that comes from the WebR CRAN repo. Or the WebR CRAN instance.
+
+00:56:34.033 --> 00:56:38.274
+So, it's a lot more handholding than what our universe does. Our universe just kind of
+
+00:56:38.274 --> 00:56:42.274
+does all of that for you, where our universe is a CRAN instance for you.
+
+00:56:42.833 --> 00:56:47.474
+And then it will, you know, bundle it up for you. But if you want to do it manually,
+
+00:56:48.673 --> 00:56:55.874
+here's where we go. I will put this in the link. Love the expert question.
+
+00:56:59.474 --> 00:57:04.673
+So, if I remember you saying correctly, Barrett, you said that even for an organization that's
+
+00:57:04.673 --> 00:57:09.874
+got a private GitHub organization, but it's hosted on GitHub.com, we could do this as well
+
+00:57:09.874 --> 00:57:15.874
+within our organization? Yes, you would need to do this reusable workflow stuff within your org.
+
+00:57:17.073 --> 00:57:22.673
+Much more handholding. And if our universe has private repos, but I don't believe they do.
+
+00:57:22.673 --> 00:57:28.354
+I don't believe so either. But I will be pursuing this for sure, especially in the coming year.
+
+00:57:28.433 --> 00:57:35.154
+Awesome. But the nice part is what we've tried to do is make them reusable workflows.
+
+00:57:35.793 --> 00:57:42.033
+Just more in the idea of a contract of, like, hey, when you release something, like,
+
+00:57:44.514 --> 00:57:52.673
+where is it? Deploy. So, you can just with this line, you can download that action. And then
+
+00:57:53.553 --> 00:58:05.874
+what will it do? It will try to say, yeah, we have an example somewhere else. But we hide away all of
+
+00:58:05.874 --> 00:58:15.713
+the difficult work. And, like, one of the things that I thought of was, like, when you're doing
+
+00:58:15.793 --> 00:58:23.953
+R command check on GitHub for a package, usually RLib actions likes you to copy their workflow
+
+00:58:23.953 --> 00:58:30.114
+and to execute it. And this is cool for, like, one or two packages. But when you're working with,
+
+00:58:30.673 --> 00:58:37.394
+like, 50 packages, like the Shiny team, that's not fun when you decide to, like, update how things
+
+00:58:37.394 --> 00:58:44.114
+are executed or your R versions or anything else. And so, instead, the Shiny team is utilized using
+
+00:58:44.114 --> 00:58:49.953
+reusable workflows where we have one central file of truth. And in this case, it will be stored
+
+00:58:49.953 --> 00:58:58.833
+inside our WASM actions. And we just say, hey, please call that action of, like, reusing it. And
+
+00:58:58.833 --> 00:59:06.754
+then, like, the logic will be maintained in one place. Because as a user, you're not wanting to
+
+00:59:06.754 --> 00:59:11.953
+maintain it. You're just wanting to keep that intent. And, you know, it's kind of nice having
+
+00:59:11.953 --> 00:59:17.793
+it be someone else's responsibility. It's just like the ethos of an R package itself. Someone
+
+00:59:17.793 --> 00:59:21.874
+else is maintaining it. You just want to use it, right? Yeah, this is huge for us. So, we're
+
+00:59:21.874 --> 00:59:29.313
+looking forward to playing with that. Perfect. Please do give us feedback if you are using it.
+
+00:59:30.274 --> 00:59:39.553
+We originally made it in, like, aspirations. Hopes and aspirations. We don't know if anyone's
+
+00:59:39.553 --> 00:59:45.073
+using it. Because it's only really going to be done with private. So, please do give us feedback.
+
+00:59:45.073 --> 00:59:53.553
+And we'll try to improve where we can. Oh, thank you. On the break slide, I was very excited about,
+
+00:59:54.514 --> 00:59:56.913
+oh, we can just make really slow animations. This is perfect.
+
+00:59:58.594 --> 01:00:02.514
+I'll have to figure out how to replicate that in Kordo. Because you got me intrigued. I did the
+
+01:00:02.514 --> 01:00:08.994
+timer thing for our break stuff next week. I'm honestly jealous of the timer. Because I couldn't
+
+01:00:08.994 --> 01:00:13.953
+embed it. Get back to Kordo, Barrett. No, I'm kidding. Yeah.
+
+01:00:16.594 --> 01:00:23.713
+All right. It has been a couple minutes afterwards. So, let's get going again. Eric,
+
+01:00:23.713 --> 01:00:35.793
+if you don't mind sending in the slides again to the chat. All right. Deploying. So, over the break,
+
+01:00:35.793 --> 01:00:41.394
+we are talking about some advanced deployment. And the goal of today is to have you hopefully
+
+01:00:41.394 --> 01:00:46.114
+not have to answer those harder questions yourself. And instead, it'll just kind of be a set
+
+01:00:46.114 --> 01:00:53.313
+it and forget it. And it's just going to work. And that's the kind of packages and executions
+
+01:00:53.313 --> 01:01:00.754
+that I enjoy. Automations. And you don't need to worry about it. So, all right. What are we
+
+01:01:00.754 --> 01:01:08.354
+going to do? We're going to deploy. And this is going to feel a little slow. Possibly. But I want
+
+01:01:08.354 --> 01:01:15.474
+to kind of make sure that we can herd 120 of you at some point through. And so, we're going to,
+
+01:01:15.474 --> 01:01:20.913
+you know, pad it just a little bit. But you could, if you wanted to, stream through this in like
+
+01:01:20.913 --> 01:01:26.433
+under five minutes. So, that's also the exciting part. That you can rapidly do this if you have
+
+01:01:26.433 --> 01:01:36.514
+multiple GitHub repos. And then, again, oh, insert link. That's a fun one. Let's just delete that.
+
+01:01:38.274 --> 01:01:46.673
+Oh, no, I do need that. That's not there. It's okay. Let's see. Since it's not there,
+
+01:01:46.673 --> 01:01:55.234
+most likely the website doesn't have it either. And so, then workshop materials. Starting out
+
+01:01:56.193 --> 01:02:04.274
+copy. And I'm going to put this in the chat here. I will redeploy the website
+
+01:02:04.274 --> 01:02:14.833
+when the workshop is done. Yeah, gotta have one snag. I am human. This is a fun event. All right.
+
+01:02:14.833 --> 01:02:28.274
+So, let's do okay. And that way I don't forget. Website paste. Done. And
+
+01:02:30.150 --> 01:02:33.430
+And great.
+
+01:02:33.430 --> 01:02:33.790
+All right.
+
+01:02:33.790 --> 01:02:37.990
+So let's go to GitHub and we're going to open up that application.
+
+01:02:34.679 --> 01:02:44.359
+Let's go to GitHub and we're going to open up that application and you should be at the
+
+01:02:44.359 --> 01:02:51.119
+starter shinylive app for rPharma 2024.
+
+01:02:51.119 --> 01:02:53.558
+And we're just going to kind of work through these steps.
+
+01:02:53.558 --> 01:02:56.318
+We're going to clone this repo to your personal GitHub.
+
+01:02:56.318 --> 01:03:04.279
+So I don't have it in mind, but usually it's somewhere in the top area, I think fork or
+
+01:03:04.279 --> 01:03:06.079
+somewhere.
+
+01:03:06.079 --> 01:03:13.798
+Do you mind sharing your page, Eric, to show that clone button?
+
+01:03:13.798 --> 01:03:16.598
+You're muted as well.
+
+01:03:16.598 --> 01:03:18.438
+Yep, I will go ahead and do that.
+
+01:03:18.438 --> 01:03:20.798
+Oh, actually, I can.
+
+01:03:20.798 --> 01:03:22.879
+I can do it in incognito.
+
+01:03:22.879 --> 01:03:24.079
+Ah, good catch.
+
+01:03:20.536 --> 01:03:22.536
+I will go ahead and do that.
+
+01:03:22.536 --> 01:03:25.536
+Oh, actually I can, I can do it in incognito.
+
+01:03:26.536 --> 01:03:27.536
+Ah, good catch.
+
+01:03:28.536 --> 01:03:31.536
+But there's, I'm not logged in to be able to, to do it.
+
+01:03:31.536 --> 01:03:33.536
+Oh, okay. Well, I'm happy to do it. Hold on.
+
+01:03:34.536 --> 01:03:35.536
+Okay. Let's see.
+
+01:03:36.536 --> 01:03:37.536
+Is it stop share?
+
+01:03:38.536 --> 01:03:40.536
+Yep. I will take over.
+
+01:03:40.536 --> 01:03:54.536
+So ironically, I just did it as you're asking, but I will go back to the other page here.
+
+01:03:55.536 --> 01:03:59.536
+Um, so this is a Barrett's version of the repository.
+
+01:03:59.536 --> 01:04:02.536
+So you will see a fork button up here.
+
+01:04:02.536 --> 01:04:04.536
+You know, go ahead and click that.
+
+01:04:04.536 --> 01:04:07.536
+And then you're going to see, I already have it.
+
+01:04:07.536 --> 01:04:13.536
+So that's why I can't do my alias, but it would ask you if you have multiple organizations, what's the owner.
+
+01:04:13.536 --> 01:04:18.536
+And then once you have that, you would hit create fork and then you would have that ready to go.
+
+01:04:18.536 --> 01:04:20.536
+So pretty, pretty straightforward.
+
+01:04:20.536 --> 01:04:22.536
+GitHub makes that super easy.
+
+01:04:22.536 --> 01:04:25.536
+So right there.
+
+01:04:26.536 --> 01:04:28.536
+Okay. I'll turn it over back to you.
+
+01:04:29.536 --> 01:04:30.536
+Thank you so much.
+
+01:04:30.536 --> 01:04:32.536
+Um, share desktop.
+
+01:04:33.536 --> 01:04:34.536
+Cool.
+
+01:04:35.536 --> 01:04:37.536
+And my chat, my chat.
+
+01:04:38.536 --> 01:04:39.536
+There we are.
+
+01:04:43.536 --> 01:04:44.536
+It's forecast.
+
+01:04:48.536 --> 01:04:49.536
+Yes. Okay.
+
+01:04:49.536 --> 01:04:56.536
+So, uh, now I'm hoping that, uh, all a hundred of you have done it.
+
+01:04:56.536 --> 01:04:58.536
+Let's see if the number goes up.
+
+01:04:58.536 --> 01:04:59.536
+Does it?
+
+01:04:59.536 --> 01:05:00.536
+Ooh, 14.
+
+01:05:00.536 --> 01:05:01.536
+I'll take it.
+
+01:05:01.536 --> 01:05:02.536
+All right.
+
+01:05:02.536 --> 01:05:06.536
+So assuming you have this, uh, what do we have here?
+
+01:05:06.536 --> 01:05:11.536
+Uh, we need to enable the publishing of the website through GitHub actions.
+
+01:05:11.536 --> 01:05:20.536
+So that is a lot of words for, we need to just check this setting deep inside the settings.
+
+01:05:20.536 --> 01:05:24.536
+So let's, uh, open this up into two tabs.
+
+01:05:28.536 --> 01:05:29.536
+All right.
+
+01:05:29.536 --> 01:05:37.536
+So what we need to do is, uh, let's see.
+
+01:05:37.536 --> 01:05:41.536
+We'll go to the settings that I have in my personal top right corner.
+
+01:05:41.536 --> 01:05:46.536
+It's not under my, my, uh, picture, but in that top row.
+
+01:05:46.536 --> 01:05:48.536
+Um, so I hit settings.
+
+01:05:48.536 --> 01:05:56.536
+I go down to pages, which is the bottom of the second chunk on the left.
+
+01:05:57.536 --> 01:06:07.536
+And then under the build and deployment, the source is going to be put to GitHub actions.
+
+01:06:07.536 --> 01:06:17.536
+Um, and what this does is it will enable us to upload a kind of like uploading a zip file and say,
+
+01:06:17.536 --> 01:06:18.536
+Hey, do your GitHub.
+
+01:06:18.536 --> 01:06:20.536
+This is the website.
+
+01:06:20.536 --> 01:06:22.536
+This is what we're doing for the website.
+
+01:06:22.536 --> 01:06:30.536
+Or normally if you're a package developer and you've done it with, um, uh, your, your special branch of like GH pages.
+
+01:06:30.536 --> 01:06:34.536
+So whatever is in the GH pages, uh, branch, that would be your website.
+
+01:06:34.536 --> 01:06:36.536
+And then there's a get history and everything.
+
+01:06:36.536 --> 01:06:42.536
+But really in most of our situations, we don't care about the historical value.
+
+01:06:42.536 --> 01:06:50.536
+We care about the now value for the website because the, the now value of the website is determined by whatever the code is.
+
+01:06:50.536 --> 01:06:54.536
+Um, it's just like an extension or reformatting of that code.
+
+01:06:54.536 --> 01:07:02.536
+So instead we've had it, uh, do this build GitHub actions approach, uh, which will just deploy from a static file.
+
+01:07:02.536 --> 01:07:12.536
+And then your repo will not balloon into an infinite size, which is not fun to deal with, uh, when you have some non-trivial data.
+
+01:07:14.536 --> 01:07:15.536
+All right.
+
+01:07:15.536 --> 01:07:21.536
+So now that we've set the GitHub actions, um, we'll go back to the code, see what the readme has.
+
+01:07:21.536 --> 01:07:25.536
+Readme says, um, enable done.
+
+01:07:25.536 --> 01:07:29.536
+Let's set up auto-exporting of the app.
+
+01:07:29.536 --> 01:07:31.536
+Um, cool.
+
+01:07:31.536 --> 01:07:32.536
+All right.
+
+01:07:32.536 --> 01:07:35.536
+So enable, we'll set up auto-exporting of the app.
+
+01:07:35.536 --> 01:07:38.536
+I don't believe I have this on my machine.
+
+01:07:38.536 --> 01:07:42.536
+So let's give this a try.
+
+01:07:43.536 --> 01:07:44.536
+Okay.
+
+01:07:44.536 --> 01:07:48.536
+Clone, clone, done.
+
+01:07:48.536 --> 01:07:53.536
+And what do I want to do?
+
+01:07:53.536 --> 01:07:56.536
+I want to call use this, use GitHub action.
+
+01:07:56.536 --> 01:07:57.536
+Oh, yeah.
+
+01:07:57.536 --> 01:08:01.536
+Let's see where we are in the, in the slides here.
+
+01:08:05.536 --> 01:08:07.536
+Oh, I got ahead of myself.
+
+01:08:07.536 --> 01:08:08.536
+I'm sorry.
+
+01:08:08.536 --> 01:08:09.536
+All right.
+
+01:08:09.536 --> 01:08:16.536
+Um, yeah, so before we do that, let's, let's do this part first.
+
+01:08:16.536 --> 01:08:18.536
+Uh, so we have demo.
+
+01:08:18.536 --> 01:08:28.536
+Let's make sure we have on our personal machines, this is like the one downside of doing this, uh, not on cloud, uh, is I don't have a guarantee that you have this installed.
+
+01:08:28.536 --> 01:08:37.536
+Um, but let's look at, uh, oh, I can do it here.
+
+01:08:38.536 --> 01:08:48.536
+Um, so what I would like for you to do is if you don't have pack, oops, if you don't have pack installed already, please do install dot packages of pack.
+
+01:08:48.536 --> 01:08:59.536
+Uh, I think it is a wonderful way to install, um, packages, uh, even just for the fact of, uh, it will parallelize your install.
+
+01:08:59.536 --> 01:09:08.536
+So if you have something kind of from a fresh start, um, and you have to install a hundred packages, it will try to find the best way to parallelize that over your machine.
+
+01:09:08.536 --> 01:09:17.536
+And it goes really quickly, um, compared to just the linear installation that are, or other packages will do by default.
+
+01:09:17.536 --> 01:09:23.536
+Um, so we'll go pack, pack of shiny live, which will install shiny live from grant.
+
+01:09:23.536 --> 01:09:26.536
+And then right afterwards, we'll want to call shiny live assets.
+
+01:09:26.536 --> 01:09:30.536
+Ensure.
+
+01:09:30.536 --> 01:09:37.536
+So shiny live assets and sure.
+
+01:09:37.536 --> 01:09:40.536
+Yeah, no, it won't, it won't freeze your machine.
+
+01:09:40.536 --> 01:09:42.536
+Like peril, paralyze it.
+
+01:09:42.536 --> 01:09:48.536
+It'll parallelize the downloads.
+
+01:09:48.536 --> 01:09:49.536
+Yeah.
+
+01:09:49.536 --> 01:09:55.536
+It sometimes does paralyze the machine in while installing.
+
+01:09:55.536 --> 01:09:56.536
+Um, right.
+
+01:09:56.536 --> 01:09:58.536
+So I'm going to make this a little bit bigger.
+
+01:09:58.536 --> 01:10:03.536
+Let's make this cause that's not important anymore.
+
+01:10:03.536 --> 01:10:08.536
+And oops.
+
+01:10:08.536 --> 01:10:09.536
+All right.
+
+01:10:09.536 --> 01:10:12.536
+So I'm just typing this out.
+
+01:10:12.536 --> 01:10:17.536
+Assuming we have shiny live installed, um, assets info.
+
+01:10:17.536 --> 01:10:24.536
+Um, what this will do is, um, is it will shiny, shiny, shiny live assets.
+
+01:10:24.536 --> 01:10:32.536
+Info will, will inspect your machine to figure out where the assets are installed on your computer or server, wherever you're at.
+
+01:10:32.536 --> 01:10:38.536
+In our case, or in my case, it's, you know, user Barrett it's on under library caches.
+
+01:10:38.536 --> 01:10:41.536
+Um, so this means that it's not in your, our package.
+
+01:10:41.536 --> 01:10:43.536
+It's not in your local folder.
+
+01:10:43.536 --> 01:10:52.536
+It's, it's stored away within your machine because we use this folder to like copy out or extract our assets as, as we need.
+
+01:10:52.536 --> 01:10:55.536
+Um, it'll be like 250 megs, 300 megs.
+
+01:10:55.536 --> 01:11:00.536
+It's, you know, slowly ballooning, but, um, yeah.
+
+01:11:00.536 --> 01:11:03.536
+Let's try assets info.
+
+01:11:03.536 --> 01:11:13.536
+I'm just going to clean this up just so we can see, um, assets remove 0.0, 8.0.
+
+01:11:13.536 --> 01:11:14.536
+Great.
+
+01:11:14.536 --> 01:11:15.536
+So I've removed it.
+
+01:11:15.536 --> 01:11:20.536
+Uh, if I look at my info, it should be empty and, you know, great.
+
+01:11:20.536 --> 01:11:29.536
+Uh, so I had asked for assets ensure and, you know, progress bars.
+
+01:11:29.536 --> 01:11:30.536
+Thank you community.
+
+01:11:30.536 --> 01:11:32.536
+Uh, that wasn't originally there.
+
+01:11:32.536 --> 01:11:35.536
+Um, but now thanks to each, uh, hit her too.
+
+01:11:35.536 --> 01:11:41.536
+Um, you have this downloading and a progress bar and it's just awesome.
+
+01:11:41.536 --> 01:11:46.536
+Uh, I'm using the dev version, which has the slightly higher, uh, shiny live version of 0.8.
+
+01:11:46.536 --> 01:11:54.536
+Um, but you should be getting 0.7 or 5, but that, I mean, it works.
+
+01:11:54.536 --> 01:12:03.536
+Um, hopefully if you get the latest shiny live on crayon, um, you'll get the, uh, yeah.
+
+01:12:03.536 --> 01:12:04.536
+Shiny live on crayon.
+
+01:12:04.536 --> 01:12:07.536
+Then you'll get a newer one.
+
+01:12:07.536 --> 01:12:08.536
+Have we not released it?
+
+01:12:08.536 --> 01:12:09.536
+Wow.
+
+01:12:09.536 --> 01:12:11.536
+It's 0.5.
+
+01:12:11.536 --> 01:12:13.536
+Hmm.
+
+01:12:13.536 --> 01:12:17.536
+Thank you, Howard.
+
+01:12:17.536 --> 01:12:30.536
+Um, yeah, it wasn't HTTR too, uh, for the hitter to package.
+
+01:12:30.536 --> 01:12:36.536
+Um, yeah, I think the same tongue twister applies to HTTP UV.
+
+01:12:36.536 --> 01:12:38.536
+Um, you can't say it quickly.
+
+01:12:38.536 --> 01:12:45.536
+Um, and you really want to, um, but I can't find a nice way to pronounce it either.
+
+01:12:45.536 --> 01:12:49.536
+So, um, okay.
+
+01:12:49.536 --> 01:12:50.536
+Yeah.
+
+01:12:50.536 --> 01:12:51.536
+GGI raff.
+
+01:12:51.536 --> 01:12:52.536
+It is G giraffe.
+
+01:12:52.536 --> 01:12:57.536
+Um, even though he says it's not.
+
+01:12:57.536 --> 01:12:58.536
+Okay.
+
+01:12:58.536 --> 01:13:03.536
+So now that I have assets insured, uh, I can look at my info and I will see that I have something downloaded.
+
+01:13:03.536 --> 01:13:04.536
+That's the important part.
+
+01:13:04.536 --> 01:13:09.536
+Um, if, um, okay.
+
+01:13:09.536 --> 01:13:14.536
+So now that we have this locally, I just kind of want to go through like what, you know,
+
+01:13:14.536 --> 01:13:16.536
+bring up those docs that we were talking about earlier.
+
+01:13:16.536 --> 01:13:22.536
+Uh, so exporting an app means that we're going to take the app that's at this current location and,
+
+01:13:22.536 --> 01:13:26.536
+or some location and export it to a different location.
+
+01:13:26.536 --> 01:13:30.536
+And, um, that must be hosted.
+
+01:13:30.536 --> 01:13:32.536
+So I demoed that earlier.
+
+01:13:32.536 --> 01:13:33.536
+I'm just going to do it again.
+
+01:13:33.536 --> 01:13:39.536
+Um, just because I think it's important with it.
+
+01:13:39.536 --> 01:13:50.536
+So shiny live export this local folder and export it to out, um, demo.
+
+01:13:50.536 --> 01:13:52.536
+And it goes through it, downloads it.
+
+01:13:52.536 --> 01:14:01.536
+And if you did not have your assets already downloaded, then, um, uh,
+
+01:14:01.536 --> 01:14:04.536
+if you do not have it already downloaded, then it will download them for you.
+
+01:14:04.536 --> 01:14:07.536
+Um, oops.
+
+01:14:07.536 --> 01:14:09.536
+It looks like it's picking up that outbear.
+
+01:14:09.536 --> 01:14:10.536
+It is already there.
+
+01:14:10.536 --> 01:14:14.536
+So maybe don't export it into the same folder, local folder.
+
+01:14:14.536 --> 01:14:16.536
+Um, we'll try that again.
+
+01:14:16.536 --> 01:14:19.536
+I'll, I'll go ahead and delete.
+
+01:14:19.536 --> 01:14:20.536
+Yeah.
+
+01:14:20.536 --> 01:14:21.536
+Delete.
+
+01:14:21.536 --> 01:14:23.536
+Yes.
+
+01:14:23.536 --> 01:14:24.536
+Try this again.
+
+01:14:24.536 --> 01:14:26.536
+Cause it got a little mad.
+
+01:14:26.536 --> 01:14:28.536
+Um, yes.
+
+01:14:28.536 --> 01:14:29.536
+Sorry.
+
+01:14:29.536 --> 01:14:32.536
+I'm running a dev version, um, bleeding edge of the bleeding edge.
+
+01:14:32.536 --> 01:14:38.536
+Uh, uh, but we'll get a release out on cran to get that updated for y'all.
+
+01:14:38.536 --> 01:14:39.536
+All right.
+
+01:14:39.536 --> 01:14:44.536
+So HPV run static server and I can do it with demo and it shows up.
+
+01:14:44.536 --> 01:14:47.536
+That's all right.
+
+01:14:47.536 --> 01:14:53.536
+So it does work, but like this cadence of like doing this, it like you have to
+
+01:14:53.536 --> 01:14:57.536
+download the assets you like once, but you do have to have them on your machine.
+
+01:14:57.536 --> 01:15:00.536
+And then you do have to run the server.
+
+01:15:00.536 --> 01:15:04.536
+Like, and then if I were to shut my machine off, then the server dies, you
+
+01:15:04.536 --> 01:15:06.536
+know, that's why we do deploy things.
+
+01:15:06.536 --> 01:15:11.536
+Um, so that's why it'd be really nice instead.
+
+01:15:11.536 --> 01:15:14.536
+If we had GitHub actions, do this for us.
+
+01:15:14.536 --> 01:15:17.536
+So GitHub actions have been talking about this looting about it, but I
+
+01:15:17.536 --> 01:15:19.536
+haven't actually like introduced it.
+
+01:15:19.536 --> 01:15:27.536
+Um, GitHub pages is a, um, uh, thing that, uh, GitHub allows for on every
+
+01:15:27.536 --> 01:15:30.536
+public repo or private if you do that.
+
+01:15:30.536 --> 01:15:35.536
+But, um, today we're talking about public repos and it, they basically just
+
+01:15:35.536 --> 01:15:41.536
+say, given your repo location, we will either use that single file or we will
+
+01:15:41.536 --> 01:15:45.536
+use a branch and we will host that for you for free.
+
+01:15:45.536 --> 01:15:48.536
+Um, so as an open source developer, this is awesome.
+
+01:15:48.536 --> 01:15:51.536
+You get a free website, free content to be hosted.
+
+01:15:51.536 --> 01:15:58.536
+And, um, you know, it's all tracked through a version, version tracking,
+
+01:15:58.536 --> 01:16:00.536
+which is just great.
+
+01:16:00.536 --> 01:16:07.536
+So GitHub pages hosts the website, but, and, uh, GitHub actions is the thing
+
+01:16:07.536 --> 01:16:09.536
+that's also free for public repos.
+
+01:16:09.536 --> 01:16:16.536
+And this is a big one, uh, because you get free executions for every commit.
+
+01:16:16.536 --> 01:16:20.536
+If you want or pull a request, commit, or, you know, whatever you'd like to do.
+
+01:16:20.536 --> 01:16:25.536
+And you can actually do a lot of work, uh, done by GitHub for free.
+
+01:16:25.536 --> 01:16:31.536
+Um, I've talked about this in a different presentation, but I, I like did napkin
+
+01:16:31.536 --> 01:16:34.536
+math on what the Shiny team does.
+
+01:16:34.536 --> 01:16:41.536
+And I think it's like $80,000 in fees that GitHub would have happily charged
+
+01:16:41.536 --> 01:16:43.536
+us if we were a private repo.
+
+01:16:43.536 --> 01:16:49.536
+Um, this is, I'm testing 150 applications every work night on three
+
+01:16:49.536 --> 01:16:52.536
+different operating systems on five different R versions.
+
+01:16:52.536 --> 01:16:54.536
+So it's like 2000 apps every night.
+
+01:16:54.536 --> 01:17:02.536
+Like, um, it's not something trivial and, uh, GitHub actions is free because
+
+01:17:02.536 --> 01:17:06.536
+the repo that we're doing it on is, uh, public.
+
+01:17:06.536 --> 01:17:12.536
+And I think just like a wonderful little, uh, perk of being a public repo.
+
+01:17:13.536 --> 01:17:18.536
+Um, so using the combination of GitHub pages and GitHub actions, we can then
+
+01:17:18.536 --> 01:17:25.536
+host our app as a website because we will, uh, have the action, download
+
+01:17:25.536 --> 01:17:28.536
+our repo, inspect the app, uh, quickly.
+
+01:17:28.536 --> 01:17:33.536
+And then we will, uh, tell the action to post to the pages.
+
+01:17:33.536 --> 01:17:35.536
+All right.
+
+01:17:35.536 --> 01:17:38.536
+Uh, so we've already updated our website settings.
+
+01:17:38.536 --> 01:17:39.536
+Sorry, I jumped the gun there.
+
+01:17:39.536 --> 01:17:42.536
+I was just excited about enabling that, that setting.
+
+01:17:42.536 --> 01:17:48.536
+So we've already done this part and then, all right, let's demo
+
+01:17:48.536 --> 01:17:50.536
+integrating GitHub actions.
+
+01:17:50.536 --> 01:17:55.536
+So if you don't already have it, I, I recommend that you install use this
+
+01:17:55.536 --> 01:18:02.536
+package because it will download the, um, uh, action for you and,
+
+01:18:02.536 --> 01:18:03.536
+and do all the things there.
+
+01:18:03.536 --> 01:18:06.536
+So what is this one linking to?
+
+01:18:06.536 --> 01:18:13.536
+This is a link, uh, to, uh, the use this command, which is quite long.
+
+01:18:15.536 --> 01:18:24.536
+Um, which will say, let's clear it up here and I'm in the final.
+
+01:18:25.536 --> 01:18:34.536
+Let's actually, instead, uh, going to open up GitHub.
+
+01:18:34.536 --> 01:18:42.536
+Going to open up one more, open a new session.
+
+01:18:44.536 --> 01:18:46.536
+Where is this?
+
+01:18:46.536 --> 01:18:50.536
+Shiny live three app open.
+
+01:18:50.536 --> 01:18:51.536
+Great.
+
+01:18:51.536 --> 01:18:52.536
+All right.
+
+01:18:52.536 --> 01:18:57.536
+So let's open up this one so that we can see all the actions
+
+01:18:57.536 --> 01:19:02.536
+occurring in real time.
+
+01:19:02.536 --> 01:19:04.536
+And right.
+
+01:19:04.536 --> 01:19:06.536
+So I just have my plain app.r.
+
+01:19:06.536 --> 01:19:07.536
+I have the app here.
+
+01:19:07.536 --> 01:19:10.536
+There's nothing else really there.
+
+01:19:10.536 --> 01:19:11.536
+And hello, shiny.
+
+01:19:11.536 --> 01:19:12.536
+Great.
+
+01:19:12.536 --> 01:19:13.536
+Awesome.
+
+01:19:13.536 --> 01:19:14.536
+So, okay.
+
+01:19:14.536 --> 01:19:18.536
+If I run this, it's the use this action where you say, all right,
+
+01:19:18.536 --> 01:19:20.536
+use this, use GitHub action.
+
+01:19:20.536 --> 01:19:26.536
+And the URL is from the rshinylive website under the actions one V1, uh,
+
+01:19:26.536 --> 01:19:29.536
+tag, and we're going to deploy an app.
+
+01:19:30.536 --> 01:19:33.536
+And I love use this for this because they, you know, okay.
+
+01:19:33.536 --> 01:19:34.536
+Set the, set the project.
+
+01:19:34.536 --> 01:19:38.536
+It'll create the GitHub folder for you for that GitHub actions uses.
+
+01:19:38.536 --> 01:19:40.536
+It'll ignore the GitHub folder.
+
+01:19:40.536 --> 01:19:43.536
+If you have a package, it's very useful.
+
+01:19:43.536 --> 01:19:47.536
+Um, does some more get ignores, creates the workflow folder, and then it
+
+01:19:47.536 --> 01:19:52.536
+finally copies in your YAML file, lots of stuff.
+
+01:19:52.536 --> 01:19:58.536
+And it's so nice that it's there to be used with any repo that you do.
+
+01:19:59.536 --> 01:20:00.536
+Um, all right.
+
+01:20:00.536 --> 01:20:03.536
+So let's walk through, uh, the code.
+
+01:20:03.536 --> 01:20:07.536
+Cause you know, I, I do recommend that, you know, if you're ever downloading
+
+01:20:07.536 --> 01:20:11.536
+and running something on your behalf, take a peek, uh, just want to make
+
+01:20:11.536 --> 01:20:13.536
+sure there's nothing funny in there.
+
+01:20:13.536 --> 01:20:15.536
+All right.
+
+01:20:15.536 --> 01:20:18.536
+So some comments, great name.
+
+01:20:18.536 --> 01:20:19.536
+Good.
+
+01:20:19.536 --> 01:20:22.536
+This will run when I manually trigger it.
+
+01:20:22.536 --> 01:20:24.536
+So that's a workflow dispatch.
+
+01:20:24.536 --> 01:20:27.536
+Uh, so, uh, after the first run, you can then come up to it and hit the
+
+01:20:27.536 --> 01:20:31.536
+play button and it will just redeploy again.
+
+01:20:31.536 --> 01:20:36.536
+Um, then it'll also run whenever we deploy to the main branch.
+
+01:20:36.536 --> 01:20:38.536
+So that's good.
+
+01:20:38.536 --> 01:20:43.536
+And then we'll also run it on polar, every single pull request, uh, commit,
+
+01:20:43.536 --> 01:20:48.536
+but, um, it will not deploy the GitHub pages, uh, underneath the hood.
+
+01:20:48.536 --> 01:20:53.536
+Uh, we have a check for that, but, um, on push or on workflow dispatch,
+
+01:20:53.536 --> 01:20:59.536
+it will push to your GitHub pages.
+
+01:20:59.536 --> 01:21:08.536
+Um, in the jobs, uh, we have, um, shiny live, a single job.
+
+01:21:08.536 --> 01:21:10.536
+And what it does is it's a reusable workflow.
+
+01:21:10.536 --> 01:21:15.536
+And so all the logic is hidden in here and I don't need to go through it,
+
+01:21:15.536 --> 01:21:19.536
+uh, uh, for now, or you can walk through it later.
+
+01:21:19.536 --> 01:21:24.536
+Um, but that file is where we will do all the deploying of the, the download
+
+01:21:24.536 --> 01:21:31.536
+are set up your package, find all the dependencies, uh, export it and, and
+
+01:21:31.536 --> 01:21:34.536
+then upload it to your pages.
+
+01:21:34.536 --> 01:21:38.536
+Um, because we are uploading to your GitHub pages, we do need to, uh,
+
+01:21:38.536 --> 01:21:40.536
+grant some permissions.
+
+01:21:40.536 --> 01:21:44.536
+Uh, and this is where I say like, you know, peak at what the code is doing.
+
+01:21:44.536 --> 01:21:47.536
+Um, because I could be like, Oh, give me permissions to delete your
+
+01:21:47.536 --> 01:21:50.536
+user repos, like that'd be really bad.
+
+01:21:50.536 --> 01:21:55.536
+Uh, instead it's just saying, Hey, some pages, we need to write to it.
+
+01:21:55.536 --> 01:22:00.536
+And then I need an ID, uh, token so that, you know, we can verify the
+
+01:22:00.536 --> 01:22:03.536
+deployment originates from the appropriate source.
+
+01:22:03.536 --> 01:22:06.536
+This is recommended by a GitHub and what we need to do.
+
+01:22:06.536 --> 01:22:10.536
+Um, and so we just have a very minimal set of permissions to
+
+01:22:10.536 --> 01:22:14.536
+deploy your, your application.
+
+01:22:14.536 --> 01:22:16.536
+Um, let's see here.
+
+01:22:16.536 --> 01:22:18.536
+Copy link.
+
+01:22:18.536 --> 01:22:25.536
+Oh, uh, um, uh, Eric, do you mind pasting the, um, links one more time
+
+01:22:25.536 --> 01:22:30.536
+in the chat just for people joining the workshop?
+
+01:22:30.536 --> 01:22:31.536
+All right.
+
+01:22:31.536 --> 01:22:32.536
+So this is here.
+
+01:22:32.536 --> 01:22:45.536
+Um, let's actually commit it and see what, all right.
+
+01:22:45.536 --> 01:22:47.536
+And then commit.
+
+01:22:47.536 --> 01:22:58.536
+And we say message, um, shop tasks.
+
+01:22:58.536 --> 01:22:59.536
+I don't know.
+
+01:22:59.536 --> 01:23:01.536
+That looks good to me.
+
+01:23:01.536 --> 01:23:08.536
+Commit done and push.
+
+01:23:08.536 --> 01:23:10.536
+Don't forget to push.
+
+01:23:10.536 --> 01:23:11.536
+All right.
+
+01:23:11.536 --> 01:23:15.536
+So this is the GitHub.
+
+01:23:15.536 --> 01:23:18.536
+Our informant app.
+
+01:23:18.536 --> 01:23:19.536
+Great.
+
+01:23:19.536 --> 01:23:20.536
+All right.
+
+01:23:20.536 --> 01:23:21.536
+So now we're here.
+
+01:23:21.536 --> 01:23:26.536
+Uh, I have this little pending thing, uh, orange flag right here, but
+
+01:23:26.536 --> 01:23:32.536
+what we can now do is we can go to the actions tab and we can now see
+
+01:23:32.536 --> 01:23:37.536
+that there's a first, uh, task being run and we'll go ahead.
+
+01:23:37.536 --> 01:23:40.536
+And here's that play button for the manual deployment.
+
+01:23:40.536 --> 01:23:42.536
+Um, but we can click into the workshop.
+
+01:23:42.536 --> 01:23:45.536
+We can see shiny live is building.
+
+01:23:45.536 --> 01:23:49.536
+Uh, we'll click into that as well.
+
+01:23:49.536 --> 01:23:57.536
+Um, so I'll put this into the chat for everyone here.
+
+01:23:57.536 --> 01:24:01.536
+Um, so you can follow along with it.
+
+01:24:01.536 --> 01:24:09.536
+Um, some days I stare on these styles of pages, you know, it's a little bit
+
+01:24:09.536 --> 01:24:12.536
+slower turnaround when you're having errors happen every five minutes.
+
+01:24:12.536 --> 01:24:17.536
+That like four minute mark is the worst because you can't go do something and
+
+01:24:17.536 --> 01:24:21.536
+you can't start another task, but it's four minutes.
+
+01:24:21.536 --> 01:24:24.536
+Oh, it's a long eternity.
+
+01:24:24.536 --> 01:24:27.536
+You know, Barrett, I could have a whole podcast episode about debugging
+
+01:24:27.536 --> 01:24:28.536
+GitHub actions.
+
+01:24:28.536 --> 01:24:30.536
+That's just waiting to happen.
+
+01:24:30.536 --> 01:24:34.536
+When things go wrong, they go wrong.
+
+01:24:34.536 --> 01:24:36.536
+Yes.
+
+01:24:36.536 --> 01:24:37.536
+Hit random keys on the keyboard.
+
+01:24:37.536 --> 01:24:42.536
+Try again.
+
+01:24:42.536 --> 01:24:44.536
+Um, so, okay.
+
+01:24:44.536 --> 01:24:46.536
+So let's see what this is doing.
+
+01:24:46.536 --> 01:24:48.536
+We have a couple of tasks being run.
+
+01:24:48.536 --> 01:24:49.536
+So they're setting up the job.
+
+01:24:49.536 --> 01:24:50.536
+That's not us.
+
+01:24:50.536 --> 01:24:51.536
+That's GitHub.
+
+01:24:51.536 --> 01:24:54.536
+This is us checking out the repo.
+
+01:24:54.536 --> 01:25:00.536
+We then are setting up, um, using some more reasonable, uh, actions done by
+
+01:25:00.536 --> 01:25:03.536
+the shiny team where we're setting up the R package.
+
+01:25:03.536 --> 01:25:08.536
+In this case, the package is not there, but it sets up R and a couple
+
+01:25:08.536 --> 01:25:10.536
+other dependencies.
+
+01:25:10.536 --> 01:25:12.536
+Um, so that'll take a couple of minutes.
+
+01:25:13.536 --> 01:25:17.536
+And then what we'll do is use our end to inspect the app dot R.
+
+01:25:17.536 --> 01:25:21.536
+It's not using a, um, yes.
+
+01:25:21.536 --> 01:25:22.536
+Thank you, Libby.
+
+01:25:22.536 --> 01:25:23.536
+See you.
+
+01:25:23.536 --> 01:25:26.536
+Um, it's not using our, our end to restore.
+
+01:25:26.536 --> 01:25:28.536
+Uh, it's not set up for that.
+
+01:25:28.536 --> 01:25:33.536
+Um, if there's interest, we can set up that, uh, reasonable workflow, but
+
+01:25:33.536 --> 01:25:40.536
+in this case, it's just inspecting the app dot R to find, um, dependencies
+
+01:25:40.536 --> 01:25:41.536
+that way.
+
+01:25:41.536 --> 01:25:47.536
+Oh, why it's not using our end of restore is because, um, packages, uh,
+
+01:25:47.536 --> 01:25:55.536
+being done that way are not easy to reproduce, uh, within GitHub pages.
+
+01:25:55.536 --> 01:26:01.536
+Instead, I would highly recommend that you manually export your app how you
+
+01:26:01.536 --> 01:26:02.536
+want it.
+
+01:26:02.536 --> 01:26:09.536
+If you have custom, uh, packages being installed and it does work locally,
+
+01:26:09.536 --> 01:26:14.536
+but I would instead try to set up how that's being done.
+
+01:26:14.536 --> 01:26:17.536
+And I think we might've done it through the extra packages.
+
+01:26:17.536 --> 01:26:18.536
+I don't know for sure.
+
+01:26:18.536 --> 01:26:21.536
+Uh, hook, uh, for the reasonable workflow.
+
+01:26:21.536 --> 01:26:23.536
+Something to look into.
+
+01:26:23.536 --> 01:26:24.536
+Uh.
+
+01:26:35.536 --> 01:26:36.536
+Still installing R?
+
+01:26:36.536 --> 01:26:37.536
+Yep.
+
+01:26:37.536 --> 01:26:38.536
+It's moving.
+
+01:26:38.536 --> 01:26:39.536
+So fast.
+
+01:26:39.536 --> 01:26:40.536
+So fast.
+
+01:26:55.536 --> 01:26:57.536
+One technical question, Barrett.
+
+01:26:57.536 --> 01:27:01.536
+Does the, all those Linux packages that are being installed at the top,
+
+01:27:01.536 --> 01:27:05.536
+do those get cached in subsequent runs?
+
+01:27:05.536 --> 01:27:07.536
+Uh, yes, we do have that.
+
+01:27:07.536 --> 01:27:08.536
+Okay, cool.
+
+01:27:08.536 --> 01:27:09.536
+Thank you.
+
+01:27:09.536 --> 01:27:10.536
+Yeah.
+
+01:27:10.536 --> 01:27:13.536
+So that'll be faster if we were to hit play again, now that it succeeded.
+
+01:27:13.536 --> 01:27:16.536
+Um, Oh, uh, finished.
+
+01:27:16.536 --> 01:27:17.536
+Awesome.
+
+01:27:17.536 --> 01:27:19.536
+So it's not, it's not there yet.
+
+01:27:19.536 --> 01:27:22.536
+There's a couple, you know, it's not fully magic.
+
+01:27:22.536 --> 01:27:32.536
+Um, so we built, we found the dependencies using RN and then, uh,
+
+01:27:32.536 --> 01:27:34.536
+two packages were installed.
+
+01:27:34.536 --> 01:27:39.536
+Um, and then there we go.
+
+01:27:39.536 --> 01:27:43.536
+And then we, uh, built the site by exporting it.
+
+01:27:43.536 --> 01:27:45.536
+That took nine seconds.
+
+01:27:45.536 --> 01:27:46.536
+Awesome.
+
+01:27:46.536 --> 01:27:50.536
+And then we uploaded that site as an artifact really fast.
+
+01:27:50.536 --> 01:27:51.536
+And then, you know,
+
+01:27:51.536 --> 01:27:54.536
+just some cleanup steps for GitHub actions themselves.
+
+01:27:54.536 --> 01:27:58.536
+Uh, that upload site artifact is then transferred over.
+
+01:27:58.536 --> 01:28:03.536
+If we were to look at here, this GitHub pages right here is transferred over.
+
+01:28:03.536 --> 01:28:04.536
+It's sites, 44 megs.
+
+01:28:04.536 --> 01:28:06.536
+That's not bad.
+
+01:28:06.536 --> 01:28:10.536
+Um, and then that's put on deploy and that's where we then deploy that to the
+
+01:28:10.536 --> 01:28:12.536
+GitHub pages.
+
+01:28:12.536 --> 01:28:15.536
+This will actually spawn a second job.
+
+01:28:15.536 --> 01:28:19.536
+Um, I believe.
+
+01:28:19.536 --> 01:28:20.536
+Um, Oh no, it won't.
+
+01:28:20.536 --> 01:28:23.536
+Uh, can't remember.
+
+01:28:23.536 --> 01:28:24.536
+We'll check.
+
+01:28:25.536 --> 01:28:29.536
+Um, so the one trick that I like to do to get to the website is I say
+
+01:28:29.536 --> 01:28:32.536
+website, use your GitHub pages.
+
+01:28:32.536 --> 01:28:34.536
+Um, and then it'll populate things.
+
+01:28:34.536 --> 01:28:39.536
+Uh, I just have a custom domain for my personal one and just kind of
+
+01:28:39.536 --> 01:28:44.536
+propagates to every repo underneath, but yours would most likely say, uh,
+
+01:28:44.536 --> 01:28:50.536
+GitHub.io slash or like user.github.io slash, you know, uh, workshop,
+
+01:28:50.536 --> 01:28:55.536
+aren't from a shiny live app.
+
+01:28:55.536 --> 01:29:01.536
+Uh, and then if we click to it, let's see, Hey, workshop aren't from a
+
+01:29:01.536 --> 01:29:02.536
+shiny live app.
+
+01:29:02.536 --> 01:29:04.536
+So this has never been done.
+
+01:29:04.536 --> 01:29:05.536
+Websites up.
+
+01:29:05.536 --> 01:29:06.536
+Hello.
+
+01:29:06.536 --> 01:29:07.536
+Shiny.
+
+01:29:07.536 --> 01:29:08.536
+Woo.
+
+01:29:08.536 --> 01:29:11.536
+Like live demo works.
+
+01:29:11.536 --> 01:29:15.536
+I'm very excited about this.
+
+01:29:15.536 --> 01:29:16.536
+Um, Oh yeah.
+
+01:29:16.536 --> 01:29:17.536
+Let's prove that it's working.
+
+01:29:17.536 --> 01:29:23.536
+Shiny is, is up and running.
+
+01:29:23.536 --> 01:29:25.536
+Hey, another success.
+
+01:29:25.536 --> 01:29:26.536
+All right.
+
+01:29:26.536 --> 01:29:29.536
+You can sleep easy tonight.
+
+01:29:29.536 --> 01:29:32.536
+Um, all right.
+
+01:29:32.536 --> 01:29:35.536
+So let's see where we are in slides.
+
+01:29:35.536 --> 01:29:38.536
+Um, so we did deploy to get pages.
+
+01:29:38.536 --> 01:29:39.536
+Let's update the app.
+
+01:29:39.536 --> 01:29:41.536
+Um, so let's go into the app.
+
+01:29:42.536 --> 01:29:45.536
+And we're going to edit the file.
+
+01:29:45.536 --> 01:29:50.536
+And I'm just doing this to show that when a new commit occurs, we will redeploy.
+
+01:29:50.536 --> 01:29:54.536
+And hopefully as Eric said, the packages will install faster.
+
+01:29:54.536 --> 01:29:59.536
+So our pharma 2024.
+
+01:29:59.536 --> 01:30:07.536
+So the title will say that let's commit, say, change title directly to the main
+
+01:30:08.536 --> 01:30:09.536
+branch.
+
+01:30:09.536 --> 01:30:13.536
+And then we can go back to the actions.
+
+01:30:13.536 --> 01:30:16.536
+We'll see the change titles, but ready to run.
+
+01:30:16.536 --> 01:30:18.536
+And the last one took seven minutes.
+
+01:30:18.536 --> 01:30:21.536
+So this will take, uh, hopefully five, four.
+
+01:30:21.536 --> 01:30:25.536
+Um, and we'll see that it runs.
+
+01:30:25.536 --> 01:30:36.536
+Um, so, uh, sheen is asking, can you connect to a live database and publish
+
+01:30:36.536 --> 01:30:37.536
+GitHub?
+
+01:30:37.536 --> 01:30:46.536
+So one thing that I would, you can do some work arounds that I've done is if
+
+01:30:46.536 --> 01:30:54.536
+you're doing a database that has a, uh, rest API and the rest API, you can have
+
+01:30:54.536 --> 01:30:55.536
+a get request.
+
+01:30:55.536 --> 01:31:01.536
+So you're not doing posts or post puts, but, um, uh, just as a standard get,
+
+01:31:02.536 --> 01:31:06.536
+then I found that the read lines function works.
+
+01:31:06.536 --> 01:31:14.536
+So you can read lines from a get API, a get rest API, and that allows you to
+
+01:31:14.536 --> 01:31:16.536
+retrieve data easily.
+
+01:31:16.536 --> 01:31:20.536
+Um, and then that makes it so, you know, obviously I would know where you're
+
+01:31:20.536 --> 01:31:25.536
+downloading your data from, but, uh, you can dynamically download that data.
+
+01:31:25.536 --> 01:31:30.536
+You know, once the app is up and running.
+
+01:31:30.536 --> 01:31:32.536
+That's an interesting point, Barrett.
+
+01:31:32.536 --> 01:31:36.536
+Maybe I want to restate that because you can give me ideas.
+
+01:31:36.536 --> 01:31:42.536
+So a database that we know we don't want to give like full access to the, to
+
+01:31:42.536 --> 01:31:46.536
+the given reviewer or whoever's using the app, but yeah, putting let's, let's
+
+01:31:46.536 --> 01:31:51.536
+plug a plumber API in front of it that has a get request to a certain set of
+
+01:31:51.536 --> 01:31:54.536
+operations that only that app needs.
+
+01:31:55.536 --> 01:31:59.536
+That seems like the approach then to get around, you know, giving full
+
+01:31:59.536 --> 01:32:02.536
+database access if I'm understanding correctly.
+
+01:32:02.536 --> 01:32:03.536
+Yes.
+
+01:32:03.536 --> 01:32:11.536
+Um, but it, by putting your stuff in an external database, uh, it then will
+
+01:32:11.536 --> 01:32:17.536
+break the reproducibility aspect, but it'll make it so you have dynamic data.
+
+01:32:17.536 --> 01:32:22.536
+So, uh, you know, pros and cons to each approach.
+
+01:32:22.536 --> 01:32:28.536
+Um, uh, you can have, as you said, you have your security done within, uh,
+
+01:32:28.536 --> 01:32:31.536
+your plumber server or the, the API.
+
+01:32:31.536 --> 01:32:37.536
+Um, but yeah, read lines is, is, has I've had success with it.
+
+01:32:37.536 --> 01:32:38.536
+Right.
+
+01:32:39.536 --> 01:32:49.536
+Website deployed, refresh and no, no, it'll think about it.
+
+01:32:49.536 --> 01:32:51.536
+It'll come back.
+
+01:32:51.536 --> 01:32:59.536
+Um, this is where usually it's like, try one more time.
+
+01:32:59.536 --> 01:33:02.536
+Or could you open it as a private tab?
+
+01:33:02.536 --> 01:33:04.536
+Ah, there we go.
+
+01:33:04.536 --> 01:33:06.536
+Got to bust that, that browser cache.
+
+01:33:06.536 --> 01:33:12.536
+There we go.
+
+01:33:12.536 --> 01:33:14.536
+Great suggestion, Eric.
+
+01:33:14.536 --> 01:33:15.536
+Yes.
+
+01:33:15.536 --> 01:33:18.536
+Uh, I just want to see.
+
+01:33:18.536 --> 01:33:20.536
+Browser cache is so funny.
+
+01:33:20.536 --> 01:33:22.536
+It's the same website.
+
+01:33:22.536 --> 01:33:24.536
+This one's loaded later, but this is the most recent.
+
+01:33:24.536 --> 01:33:26.536
+So, uh, yes, but it does work.
+
+01:33:26.536 --> 01:33:28.536
+Um, it got updated.
+
+01:33:28.536 --> 01:33:29.536
+I didn't do anything.
+
+01:33:29.536 --> 01:33:34.536
+I just committed it like normal and it automatically finished it.
+
+01:33:34.536 --> 01:33:38.536
+Uh, I don't necessarily know the details of how the GitHub action is working.
+
+01:33:38.536 --> 01:33:43.536
+I just know that it's on every commit or I can even come in.
+
+01:33:43.536 --> 01:33:49.536
+And if there's just a funny reason, but I, uh, difficult to come up with one.
+
+01:33:49.536 --> 01:33:54.536
+Uh, you can come in and hit the play button and say, please, uh, run, run
+
+01:33:54.536 --> 01:34:01.536
+this workflow, uh, manually and just run it and it will redeploy for fun.
+
+01:34:01.536 --> 01:34:03.536
+Uh, right here.
+
+01:34:03.536 --> 01:34:06.536
+Uh, at least it should.
+
+01:34:06.536 --> 01:34:07.536
+There we go.
+
+01:34:07.536 --> 01:34:11.536
+Deploy app to GitHub pages.
+
+01:34:11.536 --> 01:34:12.536
+Yeah.
+
+01:34:12.536 --> 01:34:16.536
+So I think that's just so neat and so powerful and it's automatically done.
+
+01:34:16.536 --> 01:34:23.536
+You know, I love the aspect of like sources to find an app dot R let, let all the magic
+
+01:34:23.536 --> 01:34:24.536
+happen like behind the scenes.
+
+01:34:24.536 --> 01:34:29.536
+Cause it's not, um, it's tedious to maintain.
+
+01:34:29.536 --> 01:34:33.536
+Um, yeah.
+
+01:34:33.536 --> 01:34:36.536
+All right.
+
+01:34:36.536 --> 01:34:37.536
+Woo.
+
+01:34:37.536 --> 01:34:42.536
+We had a successful deployment done five minutes early.
+
+01:34:42.536 --> 01:34:45.536
+This is a good day.
+
+01:34:45.536 --> 01:34:47.536
+Other people have succeeded as well.
+
+01:34:47.536 --> 01:34:50.536
+Very good day.
+
+01:34:50.536 --> 01:34:56.536
+Um, uh, I know it says Slido, but I'm happy to do, um, Q and a and zoom.
+
+01:34:56.536 --> 01:34:58.536
+That was pretty successful last time.
+
+01:34:58.536 --> 01:35:02.536
+Uh, and then if, yeah.
+
+01:35:02.536 --> 01:35:06.536
+Uh, anything, if you guys are going to take off early, which I completely
+
+01:35:06.536 --> 01:35:08.536
+understand on Friday afternoon.
+
+01:34:59.201 --> 01:35:06.721
+And then if yeah, if anything, if you guys are going to take off early, which I completely
+
+01:35:06.721 --> 01:35:15.041
+understand on Friday afternoon, here's some quick links and docs on places to look.
+
+01:35:15.041 --> 01:35:18.321
+And yeah, thank you for for hanging out today.
+
+01:35:18.321 --> 01:35:21.080
+Okay, we got some questions coming in the chat.
+
+01:35:21.080 --> 01:35:24.920
+I may just read them to you if you want, if you don't mind.
+
+01:35:24.920 --> 01:35:28.281
+Aida asks, how can I track my apps logs?
+
+01:35:28.281 --> 01:35:31.121
+Do they act the same way as any other server?
+
+01:35:31.121 --> 01:35:37.881
+So it's a good question.
+
+01:35:37.881 --> 01:35:44.081
+Logging is done like if you're thinking in the instance of like shiny, shiny apps.io
+
+01:35:44.081 --> 01:35:46.000
+or within connect.
+
+01:35:46.000 --> 01:35:49.921
+Logging works because there's that centralized server.
+
+01:35:49.921 --> 01:35:56.840
+And so every user is doing their heavy lifting in one location, and we can track those logs.
+
+01:35:56.840 --> 01:36:02.320
+In the case of shiny live, it's pretty impossible to track the logs unless you're like reporting
+
+01:36:02.320 --> 01:36:04.361
+them yourself.
+
+01:36:04.361 --> 01:36:09.681
+And you know, then we're getting into databases or, you know, streaming or posting information.
+
+01:36:09.681 --> 01:36:14.321
+So it's difficult to do, if not impossible.
+
+01:36:14.321 --> 01:36:21.601
+So it's easy it is when we have that centralized server with regular our shiny with shiny live
+
+01:36:21.601 --> 01:36:27.800
+and have and it's distributed by nature, there is no like centralized logging system.
+
+01:36:27.800 --> 01:36:31.440
+So sad face on that.
+
+01:36:31.440 --> 01:36:39.080
+Okay, we got another one here from Howard.
+
+01:36:39.080 --> 01:36:40.080
+It's more of a confirmation.
+
+01:36:40.080 --> 01:36:44.120
+It looks like he's asking, does your shiny live deployment show a white screen for a
+
+01:36:44.120 --> 01:36:49.641
+few seconds, then show a hexagon thing for a few seconds before loading?
+
+01:36:49.641 --> 01:36:53.241
+Maybe it's just my internet, and he gives a link to his version of the app.
+
+01:36:53.241 --> 01:36:57.440
+But I'll take a stab at this bear because I've been intimately aware of this with the
+
+01:36:57.440 --> 01:37:00.321
+pilot submission.
+
+01:37:00.321 --> 01:37:05.601
+Depending on your bandwidth, your respective computer or laptop, this can take longer than
+
+01:37:05.601 --> 01:37:08.600
+other times, right?
+
+01:37:09.120 --> 01:37:10.120
+Absolutely.
+
+01:37:10.120 --> 01:37:14.320
+Yeah, there's a lot of files being downloaded.
+
+01:37:14.320 --> 01:37:18.361
+I did click on Howard's link, I did get a white screen for a little bit longer than
+
+01:37:18.361 --> 01:37:22.801
+what I was doing, his hex logo is longer.
+
+01:37:22.801 --> 01:37:31.480
+But now that it's been cached, well, I've disabled cache here, so I need to close this.
+
+01:37:31.480 --> 01:37:39.840
+But if I hit refresh, demo fail, it is not as fast as the ones I was doing.
+
+01:37:39.840 --> 01:37:43.120
+So I don't know why, Howard, yours is a little bit slower.
+
+01:37:43.120 --> 01:37:52.400
+Maybe your GitHub instance is across the sea, and the ping slows it down.
+
+01:37:52.400 --> 01:37:59.760
+Yeah, we've had this similar issue even when we've been getting back to the pilot submission
+
+01:37:59.760 --> 01:38:04.120
+when we were kind of testing things out with our FDA reviewers.
+
+01:38:04.120 --> 01:38:08.721
+We have one that could load it after about a minute or so, certainly we're using more
+
+01:38:08.721 --> 01:38:11.921
+packages than what your demo app does here.
+
+01:38:11.921 --> 01:38:16.320
+And another reviewer couldn't even access it at all because of proxy issues with their
+
+01:38:16.320 --> 01:38:17.320
+VPN.
+
+01:38:17.320 --> 01:38:22.361
+So there are always like these network issues that can come in play no matter where you're
+
+01:38:22.361 --> 01:38:24.081
+hosting these apps.
+
+01:38:24.081 --> 01:38:28.880
+Yes, and package loading has turned around to be much faster now.
+
+01:38:28.880 --> 01:38:35.040
+And that we're really trying to bundle it and so that when your app is being loaded,
+
+01:38:35.040 --> 01:38:41.040
+and maybe it's in the GitHub version only right now, as I'm stating this.
+
+01:38:41.040 --> 01:38:46.361
+But the package is being loaded.
+
+01:38:46.361 --> 01:38:53.161
+It took 30 seconds before and now it takes like, ah, so that might be why.
+
+01:38:53.161 --> 01:38:54.161
+So exactly.
+
+01:38:54.161 --> 01:38:56.161
+All right, let's back up a second.
+
+01:38:56.161 --> 01:38:58.320
+Why is it taking Howard longer?
+
+01:38:58.521 --> 01:39:00.641
+I have the same internet on my machine.
+
+01:39:00.641 --> 01:39:03.400
+Why is Howard's app slower than my app?
+
+01:39:03.400 --> 01:39:06.480
+This is the difference between the bundling system that we've done in the last couple
+
+01:39:06.480 --> 01:39:07.600
+updates.
+
+01:39:07.600 --> 01:39:13.480
+So it's a weird thing to say, hey, we fixed the internals and made it better, but there's
+
+01:39:13.480 --> 01:39:14.960
+no difference in the app.
+
+01:39:14.960 --> 01:39:21.121
+You know, it's really exciting when there's like one main function, but this is the difference.
+
+01:39:21.121 --> 01:39:25.241
+Howard's app was done with 0.5.0 that he put in the chat earlier.
+
+01:39:25.241 --> 01:39:29.961
+And mine was done with the ShinyLive assets of ShinyLive assets.
+
+01:39:29.961 --> 01:39:35.201
+The one that the WebR is using is 0.8.0 and there's been a lot of updates.
+
+01:39:35.201 --> 01:39:41.600
+And so the package start time, you know, it's still struggling here and it's taking a bit.
+
+01:39:41.600 --> 01:39:49.280
+But now in the newer stuff, when I refresh one, two, three, four, four seconds until
+
+01:39:49.280 --> 01:39:51.081
+the app shows up in another second for the image.
+
+01:39:51.081 --> 01:39:55.961
+So five seconds rounding up where in Howard's situation, it's 30 seconds.
+
+01:39:55.961 --> 01:40:03.801
+So we'll get a CRAN release for ShinyLive out because that is a drastic difference.
+
+01:40:03.801 --> 01:40:08.921
+I was poking around the GitHub repo for ShinyLive and I didn't see the 0.8.0.
+
+01:40:08.921 --> 01:40:11.880
+Is that a custom branch on the repo?
+
+01:40:11.880 --> 01:40:25.081
+It is not the package version, but it is actually the version R. It is the ShinyLive
+
+01:40:25.081 --> 01:40:26.081
+assets version.
+
+01:40:26.081 --> 01:40:32.681
+And the assets is the big bundle, the thing that I was trying to ensure was downloaded.
+
+01:40:32.681 --> 01:40:38.641
+And that is different than the R package version, which is going to be 0.2.0 or in our next
+
+01:40:38.641 --> 01:40:39.641
+case will be 0.3.0.
+
+01:40:40.641 --> 01:40:43.521
+But yes, good catch, Howard.
+
+01:40:43.521 --> 01:40:45.521
+Fun to do a live debug here.
+
+01:40:45.521 --> 01:40:46.521
+Great.
+
+01:40:46.521 --> 01:40:54.681
+All right, Curtis, sorry to realize you discussed this earlier, but if this is deployed to a
+
+01:40:54.681 --> 01:40:57.961
+private repo, it would be okay to share the link to a website.
+
+01:40:57.961 --> 01:40:59.921
+Can you implement with SSO?
+
+01:40:59.921 --> 01:41:03.160
+Apologize if it's beyond scope.
+
+01:41:03.160 --> 01:41:12.681
+So private repos in GitHub do allow for websites.
+
+01:41:12.681 --> 01:41:21.000
+They do allow for websites and what I want to say here, the websites though are public
+
+01:41:21.000 --> 01:41:27.401
+in that you can inspect all the content of your website if you know the file name.
+
+01:41:27.401 --> 01:41:31.560
+In our case, we know the app.r and other stuff.
+
+01:41:31.560 --> 01:41:37.480
+So it is not necessarily private as you would like.
+
+01:41:37.480 --> 01:41:44.201
+The app, I would be able to inspect it even if it originated from a private repo.
+
+01:41:44.201 --> 01:41:50.841
+Your other half of your question, can you implement SSO?
+
+01:41:50.841 --> 01:41:54.201
+GitHub pages does not support that.
+
+01:41:54.201 --> 01:41:57.361
+If you did something within your app, that's within your app.
+
+01:41:57.361 --> 01:42:04.401
+But we would also be able to inspect your app code on the outside because you would
+
+01:42:04.401 --> 01:42:06.521
+only be doing authentication within the app.
+
+01:42:06.521 --> 01:42:13.600
+So I think it's just a no-win situation for security.
+
+01:42:13.600 --> 01:42:17.401
+It is an interesting point and kind of dovetails on a question I was going to ask again.
+
+01:42:17.401 --> 01:42:23.521
+As much as, yeah, for open source work and public facing apps, GitHub pages is by far
+
+01:42:23.600 --> 01:42:29.201
+the easiest on-ramp to get these applications shared online, again, through the magic of
+
+01:42:29.201 --> 01:42:31.121
+Shining Live here.
+
+01:42:31.121 --> 01:42:38.241
+For those of us that maybe need to look at an alternative even to GitHub pages for organizations,
+
+01:42:38.241 --> 01:42:45.121
+I've been looking at different hosting mechanisms, one of which that I was surprised actually
+
+01:42:45.121 --> 01:42:52.880
+kind of works, is at my day job we have a Linux cluster, we call it an HPC cluster,
+
+01:42:52.880 --> 01:42:57.720
+and we do have kind of a web space component.
+
+01:42:57.720 --> 01:43:02.921
+Those familiar with Linux, you may be familiar with, we have a public underscore HTML directory.
+
+01:43:02.921 --> 01:43:10.081
+You can expose that as like a makeshift web page, like it's served by Apache or whatever.
+
+01:43:10.081 --> 01:43:14.361
+And I did get a Shining Live app to render with that, it did take a while, but it was
+
+01:43:14.361 --> 01:43:19.081
+kind of shocking to me that it would render when I copied those exported assets over to
+
+01:43:19.081 --> 01:43:22.160
+like my public HTML space.
+
+01:43:22.160 --> 01:43:27.961
+Barrett, I guess my question for you is, do you recommend other types of hosting for
+
+01:43:27.961 --> 01:43:35.721
+an organization that could work in the absence of the requirements that a hosting provider
+
+01:43:35.721 --> 01:43:39.281
+needs to have to install, to run these assets?
+
+01:43:39.281 --> 01:43:43.440
+Is it because they're too big?
+
+01:43:43.440 --> 01:43:50.760
+It's not so much too big, I think it's more of, do we just want a place where maybe it
+
+01:43:50.760 --> 01:43:58.000
+still stays within our firewall of our organization, but it's something that we could give a client
+
+01:43:58.000 --> 01:44:03.521
+or a colleague an easy link to, and then within our company's intranet, they could browse
+
+01:44:03.521 --> 01:44:07.800
+through it pretty easily.
+
+01:44:07.800 --> 01:44:11.880
+One thing to note is that in my organization we use a lot of SharePoint, but obviously
+
+01:44:11.880 --> 01:44:14.680
+you can't put Shiny Live apps in SharePoint, right?
+
+01:44:14.680 --> 01:44:23.320
+So are there other options available to us that might work there in your experience?
+
+01:44:23.320 --> 01:44:32.281
+You can, so talking about security with that, I mean, I work at Posit, so I will state it,
+
+01:44:32.281 --> 01:44:38.281
+even though I'm an open source developer, Kinect does a really good job with authentication,
+
+01:44:38.281 --> 01:44:45.081
+maintaining authentication on who can see what, but I would also argue that if you're
+
+01:44:45.081 --> 01:44:54.680
+going to be doing something that needs authentication completely locked down, then I would not use
+
+01:44:54.680 --> 01:45:01.201
+a Shiny Live application at that point, I would just use Shiny, because then your database
+
+01:45:01.201 --> 01:45:07.161
+can be secret and you don't have to think hard about that, and it'll all just be hidden
+
+01:45:07.161 --> 01:45:10.641
+naturally, the way that we're all used to.
+
+01:45:10.641 --> 01:45:18.721
+But I think where Shiny Live will excel is having a public content, public information,
+
+01:45:18.721 --> 01:45:22.961
+and you're not trying to log it or do any form of authentication, you just want to share
+
+01:45:22.961 --> 01:45:27.240
+your work, Shiny Live and GitHub Pages is a wonderful combination.
+
+01:45:27.240 --> 01:45:31.000
+Excellent, yeah, thank you for that input.
+
+01:45:31.000 --> 01:45:37.081
+And I would imagine in the coming months, as now more people are getting lined up with
+
+01:45:37.081 --> 01:45:41.721
+Shiny Live, we're probably going to see more questions related to this, because it just
+
+01:45:41.721 --> 01:45:47.000
+opened up another realm of possibilities where we can share Shiny apps, where before, like
+
+01:45:47.000 --> 01:45:52.920
+I said, in the traditional sense, it was either a Posit Kinect server, a Shinyapps.io server,
+
+01:45:52.920 --> 01:45:53.920
+or things like that.
+
+01:45:53.920 --> 01:45:58.880
+Now we've got different options available, so it's going to take a bit of trial and error,
+
+01:45:58.880 --> 01:46:04.920
+I think, for each organization to figure out what best fits for them.
+
+01:46:04.920 --> 01:46:11.401
+If you also have things that are like, oh, I make viral Shiny applications that would
+
+01:46:11.401 --> 01:46:20.120
+just burn through your Shinyapps.io hours, you can then port it over to Shiny Live and
+
+01:46:20.120 --> 01:46:22.281
+with the GitHub Pages.
+
+01:46:22.281 --> 01:46:26.841
+And it's free, you don't get logging, there's not much other stuff.
+
+01:46:27.320 --> 01:46:34.201
+If your app is tweetable, then it's something that would work really well with Shiny Live.
+
+01:46:37.481 --> 01:46:38.281
+Excellent point.
+
+01:46:38.281 --> 01:46:40.920
+I'll keep an eye on the questions here.
+
+01:46:40.920 --> 01:46:43.000
+Still nothing new in Slido.
+
+01:46:43.560 --> 01:46:47.800
+Those in the chat, yeah, feel free to type your question in if we definitely have a few
+
+01:46:47.800 --> 01:46:49.401
+more minutes if you'd like to get there.
+
+01:46:49.401 --> 01:46:54.440
+And then one quick reminder, I did put a link in the chat earlier for all of you to get
+
+01:46:54.440 --> 01:46:56.440
+credit with the Credly credentials.
+
+01:46:56.440 --> 01:46:58.120
+I'll just put it in here one more time.
+
+01:46:58.760 --> 01:47:04.281
+We have a simple form that you can complete so you can get your badge for participating
+
+01:47:04.281 --> 01:47:05.641
+in this wonderful workshop.
+
+01:47:05.641 --> 01:47:08.201
+So I'll put that in there as well.
+
+01:47:09.401 --> 01:47:12.041
+Howard does have a comment here more than a question.
+
+01:47:12.041 --> 01:47:17.560
+Is Shiny Live feels like a free open source version of PositConnect or Shinyapps.io?
+
+01:47:17.560 --> 01:47:20.680
+Now, I can see where he's coming from there.
+
+01:47:21.560 --> 01:47:22.601
+Yes, absolutely.
+
+01:47:23.401 --> 01:47:34.601
+I love this virtuous cycle because it also does feel like Shiny Live is a connect killer,
+
+01:47:34.601 --> 01:47:36.920
+you know, like, oh, we just gave away all of our money.
+
+01:47:37.721 --> 01:47:42.760
+But there is some infrastructure that we had to do and there are no secrets.
+
+01:47:42.760 --> 01:47:44.440
+There are no centralized logins.
+
+01:47:45.880 --> 01:47:50.041
+Databases aren't possible right now or probably won't be possible.
+
+01:47:50.680 --> 01:47:55.481
+So if you can get stuff done, maybe like in the education space for free, like this is
+
+01:47:55.481 --> 01:47:56.041
+awesome.
+
+01:47:56.041 --> 01:47:56.760
+That is perfect.
+
+01:47:57.800 --> 01:48:02.760
+But once you start getting into sensitive data, you want to keep information away from
+
+01:48:02.760 --> 01:48:06.841
+your users, then having it in a normal Shiny application is better.
+
+01:48:07.401 --> 01:48:11.961
+And then I, you know, highly recommend Connect with all of its authentication.
+
+01:48:12.920 --> 01:48:18.680
+Yep, one, you know, Curtis is saying thank you for pointing out the GitHub Asia's website.
+
+01:48:18.680 --> 01:48:20.760
+Yeah, I totally agree.
+
+01:48:21.320 --> 01:48:27.240
+Ironically, for the pilot submission, Barrett, I had done a custom GitHub action to deploy
+
+01:48:27.240 --> 01:48:33.240
+the application, like a what I call a preview version of it for our reviewers, online via
+
+01:48:33.240 --> 01:48:33.800
+Netlify.
+
+01:48:34.841 --> 01:48:39.240
+But now that I know this, I don't know if I'm going to be able to do that.
+
+01:48:40.201 --> 01:48:44.521
+But now that I know this, I can probably change that to just a straight up GitHub page.
+
+01:48:44.521 --> 01:48:47.961
+That was that was my little hack around them before I knew about these actions.
+
+01:48:49.800 --> 01:48:50.281
+Yes, yes.
+
+01:48:54.601 --> 01:48:58.920
+One, one, one question that again came coming from me just because I'm such a geek with
+
+01:48:58.920 --> 01:49:00.521
+ShinyLive and WebR right now.
+
+01:49:01.240 --> 01:49:07.401
+Have you tried using a Shiny application that was constructed as an R package deployed via
+
+01:49:07.401 --> 01:49:08.041
+ShinyLive?
+
+01:49:09.800 --> 01:49:18.521
+I personally haven't done it.
+
+01:49:18.521 --> 01:49:26.601
+But what would happen is I'm trying to find oh, it zooms over here.
+
+01:49:26.601 --> 01:49:27.240
+All right, there we go.
+
+01:49:27.800 --> 01:49:29.401
+I personally haven't done it.
+
+01:49:29.401 --> 01:49:36.760
+But what would happen is your your app.r would just be like my awesome package, colon, colon
+
+01:49:36.760 --> 01:49:39.000
+make app, like execute.
+
+01:49:39.000 --> 01:49:43.320
+And as long as it just returns the Shiny application doesn't run it, but just returns it.
+
+01:49:44.041 --> 01:49:48.841
+And then that will be the last thing returned in the file, which is what Shiny then, you
+
+01:49:48.841 --> 01:49:50.920
+know, prints and then runs for runtime.
+
+01:49:51.641 --> 01:49:54.841
+Yeah, it just makes your app.r really small, which is awesome.
+
+01:49:56.201 --> 01:50:01.320
+This is where things like the play button would work really well for deploying your
+
+01:50:01.320 --> 01:50:02.120
+website.
+
+01:50:02.120 --> 01:50:07.161
+So if you update the package in another repo, you can then come over to your app.r, hit
+
+01:50:07.161 --> 01:50:13.240
+the play button, and then that will automatically or it won't automatically, it'll manually
+
+01:50:13.240 --> 01:50:17.560
+deploy your application using the new posted thing.
+
+01:50:18.360 --> 01:50:22.041
+But it's not super fast.
+
+01:50:22.041 --> 01:50:28.680
+So it either have to be done through your, you know, our universe or your crayon.
+
+01:50:28.680 --> 01:50:33.320
+And, you know, that's not it's delayed a little bit, but you can at least hit the play
+
+01:50:33.320 --> 01:50:36.680
+button rather than committing a fake commit to your repo.
+
+01:50:38.680 --> 01:50:43.641
+Interesting, yeah, because for the pilot submission application, the original one we
+
+01:50:43.641 --> 01:50:48.680
+created with the Golem package as an R package, which worked really well for us, but then
+
+01:50:48.680 --> 01:50:54.601
+at the time we were making the pilot for app, Golem was not supported in WebR.
+
+01:50:54.601 --> 01:50:56.760
+So then we had to pivot to Rhino in that case.
+
+01:50:56.760 --> 01:51:01.081
+But I'm tempted to go back to the Golem framework, because I think Golem is supported now
+
+01:51:01.081 --> 01:51:04.041
+from what I saw in George's updates.
+
+01:51:04.041 --> 01:51:08.680
+So I may give that a runes and report back if that if that workflow works as advertised.
+
+01:51:09.560 --> 01:51:16.360
+Awesome, yeah, I hope we can keep it to dealer's choice and developer's choice and just
+
+01:51:16.360 --> 01:51:17.800
+whatever is best for you.
+
+01:51:17.800 --> 01:51:20.201
+If it's possible, then let's see if we can get it to work.
+
+01:51:22.041 --> 01:51:22.680
+Absolutely.
+
+01:51:23.401 --> 01:51:26.440
+Well, with the few minutes we have left, I'll keep an eye on the chat here.
+
+01:51:26.440 --> 01:51:31.161
+But for for those in the audience who want to keep up with what's happening with Shiny
+
+01:51:31.161 --> 01:51:36.201
+Live, what would be the recommended ways that they should keep in touch or at least keep
+
+01:51:36.201 --> 01:51:38.680
+an eye on what's happening in the in this ecosystem?
+
+01:51:40.440 --> 01:51:43.880
+The R Shiny Live repo is a great place to to go.
+
+01:51:45.401 --> 01:51:46.521
+It's pretty light.
+
+01:51:46.521 --> 01:51:52.601
+If you're more into the weeds on things, the R Shiny Live repo does link to the Shiny
+
+01:51:52.601 --> 01:51:53.481
+Live assets.
+
+01:51:54.120 --> 01:51:56.041
+And that is where a lot of the magic happens.
+
+01:51:57.240 --> 01:52:01.000
+And or you can follow WebR or George and whatever he can do.
+
+01:52:02.041 --> 01:52:12.040
+But yes, we'll update R Shiny Live here and then get that out to Crayon because that demo
+
+01:52:12.040 --> 01:52:16.201
+demoable difference that of Howard's app and my app is shocking.
+
+01:52:16.201 --> 01:52:17.961
+So everyone should have the fast one.
+
+01:52:21.160 --> 01:52:22.040
+Yeah, excellent.
+
+01:52:22.040 --> 01:52:22.601
+Excellent.
+
+01:52:22.601 --> 01:52:26.841
+And for those that want to follow your your efforts in your dev journeys, where should
+
+01:52:26.841 --> 01:52:27.800
+they get a hold of you?
+
+01:52:28.680 --> 01:52:30.280
+Or at least see where you're up to online.
+
+01:52:31.881 --> 01:52:35.241
+Find me on LinkedIn slash Shlurky.
+
+01:52:35.241 --> 01:52:36.761
+See if you can type it on one go.
+
+01:52:36.761 --> 01:52:38.040
+And it's always a bonus point.
+
+01:52:40.680 --> 01:52:45.081
+And yeah, otherwise, I'm on I'm online on a lot of GitHub repos.
+
+01:52:46.040 --> 01:52:48.121
+And just find me there.
+
+01:52:48.121 --> 01:52:52.201
+I know it's not a direct one, but my personal site, I don't really maintain.
+
+01:52:52.201 --> 01:52:55.640
+So GitHub or a GitHub or LinkedIn will be the best.
+
+01:52:56.920 --> 01:52:57.721
+Awesome.
+
+01:52:57.721 --> 01:52:58.201
+Awesome.
+
+01:52:58.201 --> 01:52:58.440
+Yeah.
+
+01:52:58.440 --> 01:53:00.201
+And for those that are asking, yeah, thank you.
+
+01:53:00.201 --> 01:53:03.721
+We will have the recording up in months ish.
+
+01:53:04.761 --> 01:53:07.001
+Full disclosure, you're talking to one of the editors right here.
+
+01:53:07.001 --> 01:53:10.520
+So I'll definitely do my best to get it out as soon as as soon as possible.
+
+01:53:10.520 --> 01:53:14.121
+And myself and Jared on the chat here will be mostly in charge of that front.
+
+01:53:14.201 --> 01:53:19.721
+But certainly, Baron, on behalf of a huge turnout we had here for this workshop, we
+
+01:53:19.721 --> 01:53:24.841
+thank you immensely for your time and your generosity to put these materials together.
+
+01:53:24.841 --> 01:53:29.320
+You have definitely inspired many, many people here to try out Shiny Live.
+
+01:53:29.320 --> 01:53:30.680
+So, yeah, mission accomplished.
+
+01:53:31.560 --> 01:53:33.481
+Cue the victory jingle, however you want to call it.
+
+01:53:34.440 --> 01:53:36.201
+Very, very influential work here.
+
+01:53:36.201 --> 01:53:40.920
+And again, on behalf of the R Consortium group I'm a part of, we are so appreciative of Shiny
+
+01:53:40.920 --> 01:53:43.081
+Live and WebR and WebAssembly.
+
+01:53:43.560 --> 01:53:45.081
+It's going to be a game changer for us.
+
+01:53:45.961 --> 01:53:46.680
+Awesome.
+
+01:53:46.680 --> 01:53:47.961
+Thank you so much for having me.
+
+01:53:47.961 --> 01:53:49.241
+This was great.
+
+01:53:49.241 --> 01:53:54.841
+And all right, let's see if we can get the reactions of a double thumbs gives fireworks.
+
+01:53:54.841 --> 01:53:55.241
+All right.
+
+01:53:58.361 --> 01:53:59.640
+Couldn't be more appropriate.

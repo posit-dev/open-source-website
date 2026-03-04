@@ -1,0 +1,3694 @@
+WEBVTT
+
+00:00:00.640 --> 00:00:05.920
+Okay, well it's about almost five after and it seems like everybody's here who wants to be here,
+
+00:00:05.920 --> 00:00:10.400
+so let's get started. I'm going to paste these links again, post that one more time in case
+
+00:00:11.040 --> 00:00:16.240
+you missed it the first time I posted. There's a website for this workshop and it's probably a
+
+00:00:16.240 --> 00:00:23.920
+good idea to just open that up and find it and have it open in a tab. And there's only really
+
+00:00:23.920 --> 00:00:28.240
+two sections of the website. There's the home page here which gives you a little intro to what
+
+00:00:28.240 --> 00:00:36.400
+we're going to be doing today and also a reminder that this is the Next Generation Shiny Apps with
+
+00:00:36.400 --> 00:00:43.439
+bslib workshop at R Medicine, so hopefully you're in the right place. And this intro page will walk
+
+00:00:43.439 --> 00:00:47.520
+you through getting set up and there'll be a little bit of time where you can kind of do that
+
+00:00:47.520 --> 00:00:52.400
+or you can do that in the background while I'm kind of introducing everything for the workshop.
+
+00:00:52.400 --> 00:00:59.520
+And then there's also a page that says workshop with kind of a list of the things that I'm hoping
+
+00:00:59.520 --> 00:01:05.839
+or expecting or planning to cover today. I'm just going to go right to the welcome get getting
+
+00:01:05.839 --> 00:01:16.239
+started and I'll open this up and open up these slides so we can talk. So hello and welcome
+
+00:01:16.239 --> 00:01:21.120
+everyone. Like I said this is the Next Generation Shiny Apps with bslib.
+
+00:01:24.400 --> 00:01:31.279
+And I'm Garrick, Garrick Adenbuie. You can find me online at garrickadenbuie.com
+
+00:01:31.919 --> 00:01:41.360
+or on Mastodon, those kinds of places. But in day-to-day I work for Posit on the Shiny team.
+
+00:01:41.360 --> 00:01:47.519
+I joined Shiny about a year and a half ago more or less and most of my time in the past,
+
+00:01:48.239 --> 00:01:52.639
+at least in the first year on the Shiny team, was working with bslib.
+
+00:01:56.639 --> 00:01:59.120
+And I noticed that I might have frozen.
+
+00:02:04.000 --> 00:02:05.519
+I hope is that just...
+
+00:02:06.320 --> 00:02:09.839
+Am I back? Did I freeze for a second? I can't tell if that was...
+
+00:02:09.839 --> 00:02:11.600
+I was hearing you fine the whole time.
+
+00:02:12.160 --> 00:02:13.600
+Okay. Did my camera freeze?
+
+00:02:14.479 --> 00:02:15.520
+Not on my end.
+
+00:02:16.080 --> 00:02:22.080
+Okay. All right. All right. Thank you Zoom for that little wrinkle. But thank you. I'm glad
+
+00:02:22.080 --> 00:02:29.360
+that you're here to confirm that. Okay. So yeah. So I've been working with Shiny, bslib, right?
+
+00:02:29.360 --> 00:02:33.360
+This is, which is the package we're going to be talking about. And I've been working mostly
+
+00:02:34.080 --> 00:02:39.839
+I've been working mostly in bslib for the last year. So I'm excited to share some of the things
+
+00:02:39.839 --> 00:02:43.440
+that we've been working on, some of the vision that we have for the package in general,
+
+00:02:43.440 --> 00:02:46.720
+and how it fits into the Shiny ecosystem and into the future of Shiny.
+
+00:02:47.360 --> 00:02:51.839
+So before we get started, just a couple quick little things about the workshop to set sort
+
+00:02:51.839 --> 00:02:56.559
+of expectations for what we're gonna be doing today. We're planning on this being about three
+
+00:02:56.559 --> 00:03:05.679
+hours until 2 p.m. Eastern. I would like to use breakout groups for exercises. And we'll talk
+
+00:03:05.679 --> 00:03:11.119
+about the setup for that in a little bit. Please feel free to turn your video on if you want to,
+
+00:03:12.479 --> 00:03:18.240
+or unmute yourself if you have a question. It is helpful to see your faces. At the same time,
+
+00:03:18.240 --> 00:03:24.160
+I understand that you might not be in a place where video is easier appropriate.
+
+00:03:24.160 --> 00:03:30.479
+So I'll also, I have the chat window open as well. You are welcome to use chat at any time.
+
+00:03:30.479 --> 00:03:36.639
+Just drop a question in there. Or you can use the raise your hand feature of Zoom. If you use
+
+00:03:37.520 --> 00:03:41.919
+chat and you write a question in the chat, if you would like, if you for some reason would like me
+
+00:03:41.919 --> 00:03:47.759
+to not, or sorry, let me back that up. So if you have a question in chat, I might call on you to
+
+00:03:48.559 --> 00:03:53.839
+read your question out loud so we can talk about it. If you would prefer that I just read your
+
+00:03:53.839 --> 00:03:59.440
+question for you, please put a star at the start of the question and I'll just read it and no
+
+00:03:59.440 --> 00:04:10.080
+worries. Zoom has this cool little feature called raising hands, I guess, where if you find the bar
+
+00:04:10.080 --> 00:04:14.399
+at the bottom of the Zoom window, there's the reactions tab. You click on that and then there's
+
+00:04:14.399 --> 00:04:19.119
+a raise hand button there. And I'm pretty sure that floats you to the top of my participants
+
+00:04:19.119 --> 00:04:24.640
+list and I'll be able to see that and call on you. And you would use that method if you want to
+
+00:04:25.679 --> 00:04:33.119
+either use voice or video. So feel free to use that feature. Okay. Really quickly,
+
+00:04:33.119 --> 00:04:39.440
+there is a code of conduct for the workshop and for R-minus and in general. Please behave
+
+00:04:39.440 --> 00:04:44.880
+professionally. And that's pretty much it. If anybody, if there's any kind of issue that happens
+
+00:04:45.679 --> 00:04:50.399
+today, I really hope that there isn't. But if there is, you can reach out to me with a private
+
+00:04:50.399 --> 00:04:57.760
+chat or to Emily, who is also the host on this meeting, or reach out to me during the breakout
+
+00:04:57.760 --> 00:05:06.959
+sessions. Okay. So how do I envision these breakout sessions working? There's a lovely
+
+00:05:06.959 --> 00:05:12.399
+concept called pair programming, which is something that I really enjoy, which is basically working
+
+00:05:12.399 --> 00:05:18.000
+together with other people on writing code. And I'm hoping we can kind of use that as a
+
+00:05:18.000 --> 00:05:26.559
+model for the breakout sessions. We have about, I'm imagining we'll use about five people per
+
+00:05:26.559 --> 00:05:30.000
+breakout group or something like that, four or five people per breakout group.
+
+00:05:31.279 --> 00:05:38.160
+And when you move into a breakout session, the model for pair programming is basically
+
+00:05:38.160 --> 00:05:43.359
+that one person drives, like one person is the person who actually writes the code.
+
+00:05:43.359 --> 00:05:50.399
+And in this case, if one person could volunteer themselves to share their screen during the
+
+00:05:50.399 --> 00:05:57.920
+session, that would be extremely helpful. And that way, not everyone needs to share their screen,
+
+00:05:57.920 --> 00:06:03.119
+but we can all still work together. The role of the other people, usually pair programming is two
+
+00:06:03.119 --> 00:06:08.959
+people, but this is somewhere between pair programming and mob programming. But the role
+
+00:06:08.959 --> 00:06:13.440
+of the person who is not driving, as in not actually typing the code into the screen or
+
+00:06:13.440 --> 00:06:19.920
+clicking the mouse around, is to help out, to watch what the person who is driving is doing,
+
+00:06:19.920 --> 00:06:25.679
+review their code, give them some guidance, say, hey, oops, you missed a comma or parentheses here
+
+00:06:25.679 --> 00:06:31.200
+or there, or maybe go look something up in the documentation. And hopefully together,
+
+00:06:31.200 --> 00:06:36.959
+working together, the exercises will be kind of smooth sailing, but a fun way to practice
+
+00:06:36.959 --> 00:06:45.679
+what we talk about today during our sessions. In the breakout groups, if you can turn video on,
+
+00:06:45.679 --> 00:06:52.399
+again, that would be awesome. Or feel free to chat. Obviously, it'll be more engaging or
+
+00:06:52.399 --> 00:06:58.959
+exciting for everybody else if there's a slightly higher level of engagement. And when we come back
+
+00:06:58.959 --> 00:07:03.760
+into the regular group, feel free to turn your video back off, for example, or re-mute yourself
+
+00:07:03.760 --> 00:07:10.720
+or whatever. Well, I'll try to shuffle the, I think I'll try to keep things, if I can manage
+
+00:07:10.720 --> 00:07:16.399
+Zoom well, I will try to keep things where we use the same breakout groups within each hour,
+
+00:07:16.399 --> 00:07:20.959
+but maybe shuffle so you get a little bit of additional contact with everyone else in the
+
+00:07:20.959 --> 00:07:27.440
+workshop. And hopefully you meet some cool people. Okay. So that's it. That's how the workshop works.
+
+00:07:27.519 --> 00:07:32.239
+Okay. So let's actually get into talking about this. So what is BSLib? Well, first of all,
+
+00:07:33.200 --> 00:07:41.920
+first back in, you know, first there was this package called Shiny. And actually not really,
+
+00:07:41.920 --> 00:07:48.000
+because before Shiny, there was this package, this web framework called BSLib. So we have to go back
+
+00:07:48.000 --> 00:07:59.760
+just a little bit more. When Shiny came around, Shiny used this Bootstrap web framework as a way
+
+00:07:59.760 --> 00:08:09.600
+to lay out the UI elements and to make web apps that look actually pretty good. And Bootstrap
+
+00:08:10.799 --> 00:08:17.200
+was actually created by a couple of engineers at Twitter. And it was released in 2011. And at the
+
+00:08:17.200 --> 00:08:23.760
+time, it was like one of the first web frameworks. I mean, there have been lots of web frameworks in
+
+00:08:23.760 --> 00:08:29.679
+the history of the web. But this was one of the first that was just like a really nice combination
+
+00:08:30.480 --> 00:08:40.559
+of CSS, which is how new web pages are styled, and a bunch of HTML kind of templates that were
+
+00:08:40.559 --> 00:08:47.359
+easy to use. And it just, it just took the web by storm. And pretty soon, everybody was using
+
+00:08:47.359 --> 00:08:55.840
+Bootstrap to style their websites. And when Joe built Shiny in 2012,
+
+00:08:57.840 --> 00:09:03.599
+and released it, he used Bootstrap as a quick way to, you know, to make sure or to just make
+
+00:09:03.599 --> 00:09:13.280
+apps that look really nice. So it was a, it was a win for everybody. In 2013, so two years later,
+
+00:09:14.320 --> 00:09:19.039
+Bootstrap, I think, you know, when we when Shiny started using Bootstrap, it was on version two.
+
+00:09:19.039 --> 00:09:24.719
+And then in 2013, Bootstrap released version three, which was a complete rewrite of Bootstrap.
+
+00:09:24.719 --> 00:09:31.679
+And they have a tendency to do this every, you know, three to five years. And, and then Shiny in
+
+00:09:31.679 --> 00:09:39.840
+2014, moved to using Bootstrap three. So, so Shiny has a pretty, you know, a pretty tight history with
+
+00:09:39.840 --> 00:09:51.280
+Bootstrap. And Bootstrap, it's is pretty integrated into, into Shiny. Yeah, and I'm realizing now that,
+
+00:09:51.280 --> 00:09:56.799
+you know, I'm assuming most of everyone here is aware of what Shiny is and what it does
+
+00:09:56.799 --> 00:10:02.640
+in our world. But if you are not, then, you know, or if you want me to, like, talk a little bit more
+
+00:10:02.640 --> 00:10:08.400
+about the background of, of like, what Shiny is, or what it does, you can drop me a note. And I will,
+
+00:10:08.400 --> 00:10:17.200
+I will backtrack just a little bit. Okay, but in 2014, the Shiny engineers, at the time,
+
+00:10:17.200 --> 00:10:23.119
+mostly Winston and Joe, made a big push to move Shiny from Bootstrap two to Bootstrap three.
+
+00:10:23.840 --> 00:10:34.159
+And since then, Shiny is still using, for the most part, Bootstrap three. And this is sort of a feature
+
+00:10:34.159 --> 00:10:41.440
+and a bug at the same time. It's on the one hand, it's really nice that Shiny has been so stable
+
+00:10:41.440 --> 00:10:48.000
+over so many years. And on the other hand, it would be really nice to have some more modern
+
+00:10:48.479 --> 00:10:56.239
+UI styling and elements, right? So let's, let's take a look at, like, fundamentally what Shiny
+
+00:10:56.239 --> 00:11:02.559
+does and how it works. And this workshop is where you're focusing almost entirely on front-end
+
+00:11:03.200 --> 00:11:10.799
+code. So in a Shiny app, you have two pieces, you have a UI side, which is how you define,
+
+00:11:10.799 --> 00:11:15.919
+like, what shows up in the app and what people see when they come to use your, your Shiny app.
+
+00:11:16.719 --> 00:11:21.039
+And, and then there's a server side. And on the server side is where you kind of do all of,
+
+00:11:21.039 --> 00:11:26.799
+write all of the R code that is really about the logic of how data flows through your app,
+
+00:11:26.799 --> 00:11:32.960
+and you know, what happens when you change an input and that kind of thing. And so the apps
+
+00:11:32.960 --> 00:11:36.479
+that we see today are going to involve a lot of server code that we are just not going to talk
+
+00:11:36.479 --> 00:11:41.440
+about at all. We're going to focus almost entirely on front-end code. So what happens in the front
+
+00:11:41.440 --> 00:11:50.000
+end? What happens in the UI of a Shiny app? And so this is the part I think that, well,
+
+00:11:50.880 --> 00:11:56.400
+you know, the server part is, is really, really awesome, but also the part where you can write,
+
+00:11:56.400 --> 00:12:02.000
+where Shiny lets you write R functions, and you don't have to think about web stuff at all. You
+
+00:12:02.000 --> 00:12:08.719
+can just think about here, I have a numeric input and I've given it an ID so that I can use that on
+
+00:12:08.719 --> 00:12:13.919
+the server side. It has a label that I know, you know, will show up in the, and, you know, tell
+
+00:12:13.919 --> 00:12:21.200
+people what this input is about. And I'm going to set it to an initial value, give it a min and max
+
+00:12:21.200 --> 00:12:29.520
+range. And when, and what Shiny does is basically takes this idea of a numeric input that I have,
+
+00:12:29.520 --> 00:12:35.200
+you know, specified in R code, and it turns it into basically raw HTML. Like if you wanted to
+
+00:12:35.200 --> 00:12:38.719
+make this, if you wanted to make a web page on your own, you would have to write all of these
+
+00:12:38.719 --> 00:12:43.200
+things. There's a lot of extra stuff in here, like there's divs and labels and inputs, and,
+
+00:12:44.479 --> 00:12:49.679
+and some people find that fun to write all of this, and some people, you know, prefer to just
+
+00:12:49.679 --> 00:12:53.679
+think about the, the stuff that just matters for the thing that you're trying, the input that you're
+
+00:12:53.679 --> 00:13:01.280
+trying to create. And if we took this just basic raw HTML and we put it into the browser, it would
+
+00:13:01.280 --> 00:13:08.799
+look like this. It would, you know, here's the label, our academic year start is here in the
+
+00:13:08.799 --> 00:13:16.559
+label element, which shows up here. And then we have, we have an input where the value in here
+
+00:13:16.559 --> 00:13:22.799
+is going to be a number, and you can move it up and down by one, and it started at 2012, right?
+
+00:13:22.799 --> 00:13:28.320
+Okay. That's the extent of what happens with this code. This doesn't actually like connect to a
+
+00:13:28.320 --> 00:13:33.119
+server or anything. I'm only moving, like, this isn't connected to anything. It just, first of all,
+
+00:13:33.119 --> 00:13:38.960
+it's not connected to anything. And then second of all, it looks pretty basic. So what Bootstrap
+
+00:13:38.960 --> 00:13:45.039
+does is it takes the, takes the same HTML, this, you know, the same basic structure of the HTML,
+
+00:13:45.039 --> 00:13:52.479
+but now it has, we've sprinkled in just a couple classes. So we've got the form group class,
+
+00:13:53.440 --> 00:13:59.919
+we've got control label class here, we've got another class on the input element. And now that
+
+00:13:59.919 --> 00:14:06.479
+we have these classes with Bootstrap, our input looks quite a bit different.
+
+00:14:08.799 --> 00:14:14.000
+And it's definitely more stylish, and it's more what we have come to expect when we go to a
+
+00:14:14.000 --> 00:14:19.440
+website and see an input like this, right? So that's the role of Bootstrap, is to go from,
+
+00:14:20.400 --> 00:14:27.280
+to take this kind of HTML, and that looks kind of boring, and turn it into something that looks
+
+00:14:27.280 --> 00:14:36.479
+better, right? And over the years, the sort of styles of Bootstrap have evolved somewhat, but
+
+00:14:36.479 --> 00:14:40.880
+they're still pretty similar. So here's what Bootstrap 3 looks like, which we were just looking
+
+00:14:40.880 --> 00:14:47.119
+at. And here's what Bootstrap 5 looks like, the most recent version of Bootstrap. It's a little
+
+00:14:47.119 --> 00:14:57.679
+bit, you know, it's pretty similar, but also a little bit different, right? Okay, so BSLib,
+
+00:14:57.679 --> 00:15:02.960
+where does BSLib enter into this? So I think, you know, we kind of learned from the experience of
+
+00:15:02.960 --> 00:15:12.479
+moving from Bootstrap 2 to Bootstrap 3, that Shiny is very tightly integrated with the HTML markup
+
+00:15:12.479 --> 00:15:18.159
+that we create. So, you know, there are a lot of assumptions that we make about what that HTML is
+
+00:15:18.159 --> 00:15:22.320
+going to look like, and how we're going to interact with it, that's going to, like, power all of the
+
+00:15:23.119 --> 00:15:31.359
+server side of things. So for, so BSLib kind of came into this thinking, you know, Bootstrap is
+
+00:15:31.359 --> 00:15:39.760
+coming out with version 4 and version 5. And how do we bring those into Shiny, rather than rewriting
+
+00:15:39.760 --> 00:15:44.239
+everything that's inside of Shiny, when we want to upgrade from one Bootstrap version to another.
+
+00:15:45.039 --> 00:15:51.520
+And so that was the first kind of task of BSLib. And then the second task of BSLib is also, like,
+
+00:15:51.520 --> 00:15:58.080
+let's make it possible to do theming and to change the appearance of a Shiny app easily and quickly
+
+00:15:58.080 --> 00:16:05.440
+without doing a whole lot of extra work. And so this is what BSLib started doing. So you, the
+
+00:16:05.440 --> 00:16:12.479
+idea with BSLib was that you could take BSLib, and it gives you a theme, a BS theme function that
+
+00:16:12.479 --> 00:16:18.159
+you pass to a theme argument of one of the page functions in Shiny. And here you could say version
+
+00:16:18.159 --> 00:16:26.479
+5, right, so I want Bootstrap version 5, and do nothing to the rest of your app, and your app
+
+00:16:26.479 --> 00:16:33.119
+would just automatically be using Bootstrap 5 and look much better. So here's what, you know,
+
+00:16:33.119 --> 00:16:40.640
+what that would look like with version 5. And so then the other part of this,
+
+00:16:41.440 --> 00:16:45.200
+you know, that part's cool. So now we've, like, upgraded to version 5. This is a Shiny,
+
+00:16:45.200 --> 00:16:51.760
+this is a Shiny input now on version 5, on Bootstrap version 5. But then also to make
+
+00:16:52.400 --> 00:17:00.479
+theming more accessible and more fun, we need, we added this idea of presets. So the nomenclature
+
+00:17:00.479 --> 00:17:04.479
+has changed a little bit over the years. We, Bootstrap's theme originally was just about
+
+00:17:04.479 --> 00:17:13.599
+bringing in also boot swatch themes. Boot swatch is like a collection of pre-built preset Bootstrap
+
+00:17:13.599 --> 00:17:19.199
+themes. And recently we've added our own to that collection. So we had to move away from just
+
+00:17:19.199 --> 00:17:26.640
+calling this argument boot swatch. So a preset is like a Bootstrap theme preset that's sort of ready
+
+00:17:26.640 --> 00:17:32.719
+to go. You can leave it like that and get a new theme for your Shiny app, or you could, you could
+
+00:17:32.719 --> 00:17:41.359
+build on top of it and make some changes. So here is the Darkly boot swatch preset. You know, you
+
+00:17:41.359 --> 00:17:46.560
+change one argument and the next thing you know you have a brand new, brand new looking app.
+
+00:17:48.479 --> 00:17:53.040
+And then here recently, like in the last, within the last year we started working on
+
+00:17:54.000 --> 00:18:01.439
+a Shiny specific preset. So you can see this is a little bit different from the stock Bootstrap 5.
+
+00:18:01.439 --> 00:18:06.400
+There's a like higher contrast and on the, on the input and a couple other things,
+
+00:18:06.959 --> 00:18:15.199
+a font that Posit likes and that sort of thing. And so now if you use BS theme without these
+
+00:18:15.199 --> 00:18:19.839
+arguments, this is the default that you'll get. You'll get version 5 with preset Shiny.
+
+00:18:20.719 --> 00:18:29.280
+So within BS theme, basically if you're using BS theme, you're going to set a, choose a preset.
+
+00:18:30.400 --> 00:18:37.520
+Then you also can set Bootstrap variables. They're, throughout the Bootstrap documents,
+
+00:18:37.520 --> 00:18:42.800
+there are mentions of these Sass variables that they use, and you can change them directly from
+
+00:18:42.800 --> 00:18:49.119
+BS theme. So here, for example, I'm saying I want primary to be a specific color. And so
+
+00:18:49.839 --> 00:18:54.640
+primary is like the accent color for, for like action buttons and things like that.
+
+00:18:55.199 --> 00:19:01.040
+And success, I want to be this other color. These are roughly like, I think blue and green
+
+00:19:02.000 --> 00:19:06.239
+for those who don't, can't translate hex in their heads like me.
+
+00:19:08.640 --> 00:19:14.000
+No, I just happen to know that that's what they are. And then you can also enter, you know, grab
+
+00:19:14.000 --> 00:19:21.599
+fonts from Google. So here, these last two lines are saying, I want to use enter from Google fonts
+
+00:19:21.599 --> 00:19:26.880
+for the base font. And I want to use JetBrains mono for the code font. And, and, you know,
+
+00:19:26.880 --> 00:19:33.839
+just like that, you rebuild Bootstrap's Sass into CSS, you get a whole new Bootstrap theme.
+
+00:19:34.479 --> 00:19:42.160
+And, and it's pretty neat. So if, if you're interested, if like, if you're really interested
+
+00:19:42.160 --> 00:19:47.839
+in this part of BS Lib, this is probably, we'll do a little exercise now on that, where you get
+
+00:19:47.839 --> 00:19:53.680
+to practice using these things. But beyond that, the, you know, we won't, the rest of the workshop
+
+00:19:53.680 --> 00:19:58.959
+is gonna be mostly talking about the other new, newer things that BS Lib has added. But a good
+
+00:19:58.959 --> 00:20:04.719
+introduction to theming is the Get Started theming article. And if you're wondering how you find these
+
+00:20:04.719 --> 00:20:11.119
+kinds of, these kinds of Sass variables that I mentioned that you can change in a theme, you,
+
+00:20:11.119 --> 00:20:22.319
+we have a page in, in the BS Lib docs, where under theming, you can go to theming variables.
+
+00:20:22.319 --> 00:20:28.560
+And here you can see like a whole list of these things. Fortunately, there's a search. So if
+
+00:20:28.560 --> 00:20:33.359
+you're interested in like, finding things that are related to primary, for example,
+
+00:20:34.319 --> 00:20:38.880
+you can find them, you know, or like, if you want to search for fonts, this is a good way
+
+00:20:38.880 --> 00:20:46.319
+to, to look at what variables are available as for a first specific kind of thing. And sometimes
+
+00:20:46.319 --> 00:20:49.760
+they'll give you like, there's not a ton of information about what they do other than the
+
+00:20:49.760 --> 00:20:53.520
+name, but sometimes, but you can also kind of go to the source and sometimes it helps too.
+
+00:20:55.760 --> 00:21:08.160
+Okay, so, so with this theming aspect of BS Lib, we started to realize that sometimes that
+
+00:21:08.160 --> 00:21:16.719
+if all you really want to do is switch from a fluid page with bootstrap version five to,
+
+00:21:18.400 --> 00:21:23.439
+sorry, if you want to switch from fluid page with the bootstrap version of three to a fluid page
+
+00:21:23.439 --> 00:21:29.359
+with the bootstrap version of five, maybe we could make that a little bit easier. And so we started
+
+00:21:29.359 --> 00:21:37.359
+adding functions to BS Lib that would do that kind of thing. So you can simply replace page,
+
+00:21:37.359 --> 00:21:47.119
+you can replace fluid page with page fluid and, and the rest of your app basically works the same
+
+00:21:47.119 --> 00:21:54.400
+exact way, except now you have the latest version of bootstrap and the latest shiny preset theme
+
+00:21:54.400 --> 00:22:00.800
+from BS Lib. You can still use everything else that's in shiny inside of your app and you don't
+
+00:22:00.800 --> 00:22:06.400
+have to change anything, but page fluid basically just, you know, gets you the newest bootstrap
+
+00:22:06.400 --> 00:22:12.560
+versions and everything. Okay, so now it's your turn. I'm going to copy these, paste those links
+
+00:22:12.560 --> 00:22:20.479
+again. Okay, because I noticed some people have joined while I was talking. So in this workshop,
+
+00:22:20.479 --> 00:22:26.400
+we're going to use a data set that I've collected from the Department of Education in the United
+
+00:22:26.400 --> 00:22:31.520
+States. It's called the college scorecard data. It includes data about college enrollment,
+
+00:22:32.000 --> 00:22:39.119
+student aid costs, student outcomes from academic years 1996 through 2022.
+
+00:22:40.800 --> 00:22:45.280
+And there are basically two tables there. One, the first table is called school,
+
+00:22:46.000 --> 00:22:50.800
+and it gives you some information about each college in the data set. And then there's another
+
+00:22:50.800 --> 00:22:56.400
+table called scorecard, which gives you historical data on the cost of the school,
+
+00:22:56.400 --> 00:23:03.439
+the enrollment outcomes. The scorecard is by academic year, and school is one row per college.
+
+00:23:05.119 --> 00:23:08.640
+There's a, in the PositCloud project, you'll find a,
+
+00:23:11.119 --> 00:23:16.000
+you'll find a, there's a package that's already installed called college scorecard,
+
+00:23:16.560 --> 00:23:21.439
+and loading that package with library college scorecard brings in these two
+
+00:23:21.439 --> 00:23:28.000
+tables. So they're ready to use as soon as you do that. Okay. So in this next,
+
+00:23:29.199 --> 00:23:34.319
+in this next section, we're going to, your job is to find the exercises folder.
+
+00:23:35.599 --> 00:23:43.359
+All of our exercises for today are there. And there's an app called zero one app. There's also
+
+00:23:43.359 --> 00:23:49.680
+a solution there. Don't go look at the solution. Try it without looking at the solution. But if
+
+00:23:49.680 --> 00:23:53.119
+you get stuck, you can go look at the solution and see what's happening and maybe get yourself
+
+00:23:53.119 --> 00:23:58.719
+unstuck. The goal of this exercise is mostly just to make sure that everybody's set up and ready to
+
+00:23:58.719 --> 00:24:07.199
+go. And the task is to take the shiny app that's there and make it BS Libby-er by switching out
+
+00:24:07.199 --> 00:24:12.079
+the page function, maybe looking around to see what other page types are available.
+
+00:24:12.800 --> 00:24:20.640
+Try out a new bootstrap or bootswatch theme, and then use the app to learn a little bit about the
+
+00:24:20.640 --> 00:24:26.560
+school data set to kind of get a little bit of a feeling for the school data set. So I'm going to
+
+00:24:26.560 --> 00:24:34.319
+figure out how to send everyone to breakout sessions. While I do that, I'm going to go back
+
+00:24:34.319 --> 00:24:40.000
+to the website very quickly. And on the homepage, I just want to make sure that you've seen this. If
+
+00:24:40.000 --> 00:24:47.599
+you are wanting to just get set up very, very quickly, on the homepage, you go to using Posit
+
+00:24:47.599 --> 00:24:54.000
+Cloud and follow the instructions. You can sign up for a free account for Posit Cloud and then
+
+00:24:54.800 --> 00:25:03.119
+join the R Medicine 2024 BS Lib space. And once you're there, there's a project. It's an assignment,
+
+00:25:03.119 --> 00:25:07.680
+which means that when you click on it, it just automatically creates a copy for you that becomes
+
+00:25:07.680 --> 00:25:12.400
+yours to use for the rest of the workshop. I'm going to leave this up while I figure out how to
+
+00:25:12.400 --> 00:25:18.400
+send everyone into breakout groups. And when we're in the breakout groups, we will have,
+
+00:25:20.560 --> 00:25:26.640
+you'll have a few, yeah, I'll send like a one minute warning when it's time to come back. Okay.
+
+00:25:32.640 --> 00:25:33.359
+All right, hold on.
+
+00:25:37.680 --> 00:25:41.680
+Breakout rooms. Crete 10. Okay.
+
+00:25:46.479 --> 00:25:51.359
+Okay. All right, I'm going to send everyone to breakout group.
+
+00:25:51.920 --> 00:26:05.359
+Have fun, and I'll see you in a few minutes.
+
+00:27:07.680 --> 00:27:09.680
+Transcribed by https://otter.ai
+
+00:27:37.680 --> 00:27:39.680
+Transcribed by https://otter.ai
+
+00:28:07.680 --> 00:28:09.680
+Transcribed by https://otter.ai
+
+00:28:37.680 --> 00:28:39.680
+Transcribed by https://otter.ai
+
+00:29:07.680 --> 00:29:09.680
+Transcribed by https://otter.ai
+
+00:29:37.680 --> 00:29:39.680
+Transcribed by https://otter.ai
+
+00:30:07.680 --> 00:30:09.680
+Transcribed by https://otter.ai
+
+00:30:37.680 --> 00:30:39.680
+Transcribed by https://otter.ai
+
+00:31:07.680 --> 00:31:09.680
+Transcribed by https://otter.ai
+
+00:31:37.680 --> 00:31:39.680
+Transcribed by https://otter.ai
+
+00:31:39.680 --> 00:31:41.680
+Transcribed by https://otter.ai
+
+00:31:41.680 --> 00:31:43.680
+Transcribed by https://otter.ai
+
+00:31:43.680 --> 00:31:45.680
+Transcribed by https://otter.ai
+
+00:31:45.680 --> 00:31:47.680
+Transcribed by https://otter.ai
+
+00:31:47.680 --> 00:31:49.680
+Transcribed by https://otter.ai
+
+00:31:49.680 --> 00:31:51.680
+Transcribed by https://otter.ai
+
+00:32:06.479 --> 00:32:10.239
+All right. Welcome back. I hope that went well.
+
+00:32:10.239 --> 00:32:15.599
+Would anybody like to report how things went in their breakup group?
+
+00:32:15.599 --> 00:32:17.760
+Were there any troubles getting set up?
+
+00:32:17.760 --> 00:32:20.560
+Did anybody find my typo in the apps?
+
+00:32:24.640 --> 00:32:27.760
+Feel free to just go ahead and unmute if you want,
+
+00:32:27.760 --> 00:32:31.920
+and if anyone wants to give a small little update.
+
+00:32:31.920 --> 00:32:46.319
+Well, I can say all we did was just change to page fluid.
+
+00:32:48.319 --> 00:32:49.920
+That's as far as we got.
+
+00:32:51.520 --> 00:32:52.400
+But it worked, right?
+
+00:32:53.199 --> 00:32:56.079
+Right. Then we tried to figure out how to get a different theme in there,
+
+00:32:56.079 --> 00:32:59.839
+because you showed that, but I forgot what the syntax was.
+
+00:33:02.239 --> 00:33:04.319
+Yeah. So you did something like...
+
+00:33:04.319 --> 00:33:05.439
+Let me make this bigger. Sorry.
+
+00:33:06.079 --> 00:33:06.880
+We probably did something like this.
+
+00:33:06.880 --> 00:33:08.000
+Yeah, right there. Preset.
+
+00:33:08.000 --> 00:33:10.319
+I was trying to remember how to do the preset.
+
+00:33:10.959 --> 00:33:15.599
+Yeah. You can also use boot swatch still.
+
+00:33:15.599 --> 00:33:21.119
+So that's still around if you remember that better.
+
+00:33:22.479 --> 00:33:23.680
+Let me see if this...
+
+00:33:26.640 --> 00:33:29.520
+And yeah, that works.
+
+00:33:30.479 --> 00:33:34.800
+Or you can call it a preset, which is the sort of newer term.
+
+00:33:38.160 --> 00:33:38.800
+Yeah, cool.
+
+00:33:41.359 --> 00:33:42.160
+Okay, great.
+
+00:33:42.160 --> 00:33:46.000
+So anyone else with questions about...
+
+00:33:47.119 --> 00:33:50.239
+Did anyone learn anything about the dataset from this?
+
+00:33:51.920 --> 00:33:53.199
+Maybe we'll do that together real quick.
+
+00:33:55.199 --> 00:33:56.880
+So this app was kind of designed...
+
+00:33:56.880 --> 00:34:00.640
+Let me go back to my favorite preset, which is the shiny preset.
+
+00:34:02.479 --> 00:34:06.560
+And reload.
+
+00:34:06.560 --> 00:34:07.280
+Yeah. Okay.
+
+00:34:07.280 --> 00:34:14.159
+So this app is basically kind of walking through the school table.
+
+00:34:14.800 --> 00:34:17.919
+And the school table has a bunch of different variables like state.
+
+00:34:17.919 --> 00:34:22.560
+So there are the states you would expect, plus a few that you might not.
+
+00:34:22.639 --> 00:34:27.520
+The predominant degree of the school or college.
+
+00:34:27.520 --> 00:34:33.439
+The highest degree, bachelor, graduate, associate certificate of the school or college.
+
+00:35:05.913 --> 00:35:14.712
+fringe-rural, or remote-rural. Then there are a bunch of, let's see, these are all flags
+
+00:35:14.712 --> 00:35:22.192
+that are like, basically, is it, for example, historically, a black college or university?
+
+00:35:22.192 --> 00:35:29.753
+Is it a tribal university? Etc. Is it only for women? Only for men? Is it distance education
+
+00:35:29.753 --> 00:35:36.273
+only? Most of these are generally false for most schools except for a couple. Oh, and
+
+00:35:36.273 --> 00:35:43.832
+then whether or not tests are required. Cool. And then the scorecard data is going to give
+
+00:35:43.832 --> 00:35:49.673
+you these things. These variables come from the scorecard data where they tell you the
+
+00:35:49.673 --> 00:35:54.112
+number of students by academic year. So in most cases, we're going to just filter to
+
+00:35:54.112 --> 00:36:01.073
+the most recent academic year for a school. And yearly cost is similarly an average cost
+
+00:36:01.073 --> 00:36:07.432
+to attend the school, again, by academic year. So these are some of the variables we're going
+
+00:36:07.432 --> 00:36:11.233
+to be playing around with. And hopefully by the end, I don't know, we'll learn something
+
+00:36:11.233 --> 00:36:20.393
+about colleges in the United States. Okay, so, oh, I did have one more thing to show
+
+00:36:20.393 --> 00:36:26.152
+you before we move on to the next little bit, which is I recently wrote a little blog
+
+00:36:26.152 --> 00:36:35.913
+post. I'll share the link here if you want to just open that and read it later. But when
+
+00:36:35.913 --> 00:36:40.493
+you are making a Shiny app, and I'm going to just copy this to make sure I have it,
+
+00:36:40.493 --> 00:36:46.392
+and then I'll move back to RStudio. So when you are making a Shiny app, you know, you
+
+00:36:46.433 --> 00:36:51.472
+can create a new Shiny app by going through this new R script kind of menu, click on Shiny
+
+00:36:51.472 --> 00:36:57.672
+web app, or sometimes you can just like create a new R file, right? And I don't know if you've
+
+00:36:57.672 --> 00:37:02.312
+ever seen these, when you start typing Shiny, there are these snippets. And for example,
+
+00:37:02.312 --> 00:37:10.192
+you can type Shiny app, and then let me make sure I can trigger it. And then usually when
+
+00:37:10.192 --> 00:37:18.873
+that tab completion is up, I press tab, and then I get like the skeleton for Shiny app.
+
+00:37:18.873 --> 00:37:24.472
+And recently, I've found this to be kind of limiting because it doesn't include bslib.
+
+00:37:24.472 --> 00:37:28.513
+And if I'm making a small skeleton of a Shiny app, I want it to include bslib. So I'm going
+
+00:37:28.513 --> 00:37:36.513
+to show you how to fix that right now. Under tools, if you go to edit code snippets, it
+
+00:37:36.513 --> 00:37:42.392
+brings up this configuration page. And here are a list of like all of the snippets that
+
+00:37:42.392 --> 00:37:51.312
+you can use. But here's our Shiny app snippet. And then I'm just going to add library bslib
+
+00:37:51.312 --> 00:37:57.552
+here, I'm going to change this to page. And then I'm going to use a new syntax here, which
+
+00:37:57.552 --> 00:38:02.073
+is you can kind of see it, see these up here where I'm going to say one, which means that
+
+00:38:02.112 --> 00:38:07.752
+this is the first sort of thing that can be replaced in the snippet. And I'll put in a
+
+00:38:07.752 --> 00:38:11.633
+default value here. So whichever bslib page function you like the most, you can put this
+
+00:38:11.633 --> 00:38:17.153
+here, but we just were looking at page fluid. So I'll put fluid here. And then, and then
+
+00:38:17.153 --> 00:38:23.993
+that's it. So I'll save this. And if I delete all these things, and I go Shiny app, now my
+
+00:38:23.993 --> 00:38:31.353
+Shiny app snippet is a little bit a little bit different. Now it includes bslib. And it
+
+00:38:31.353 --> 00:38:38.273
+includes the page function. And because I use that special dollar one syntax, it stops
+
+00:38:38.273 --> 00:38:43.273
+first here at page fluid. So I have a default value of page fluid. But you know, if I
+
+00:38:43.312 --> 00:38:49.233
+wanted to, for example, have another page here, like page sidebar, I could just start
+
+00:38:49.233 --> 00:38:53.113
+typing page sidebar. And when I press tab again, it'll bring me into the into the app.
+
+00:38:53.152 --> 00:38:57.992
+And then here I can, you know, put my app things right and just move on from there. So
+
+00:38:58.272 --> 00:39:06.073
+this, this saves me untold seconds on a daily basis. And it might work for you too. So maybe
+
+00:39:06.073 --> 00:39:13.673
+you'd like that. So just you can save that blog post and walk through that later. All
+
+00:39:13.673 --> 00:39:19.793
+right. So now that we're up and running, let's talk about some of these layouts that we
+
+00:39:19.793 --> 00:39:28.192
+have in in bslib. I'm going to try this and hope that it works. So I have a, I have
+
+00:39:28.192 --> 00:39:35.432
+shiny, this is a shiny live app running in in the website. You could you could use this
+
+00:39:35.432 --> 00:39:39.472
+too, if you want to, to like, type a log, or for this part, you could just watch too, if
+
+00:39:39.472 --> 00:39:46.833
+you want. So we've seen page fluid. Right, I'm going to, I have a little package called
+
+00:39:46.833 --> 00:39:54.553
+lorem ipsum that I like to use when I'm making like these sort of example UIs. And here, I'm
+
+00:39:54.553 --> 00:39:58.192
+going to just add and whenever you use the so the first argument is the number of
+
+00:39:58.192 --> 00:40:02.553
+paragraphs. And the second argument is the number of sentences in each paragraph. So here
+
+00:40:02.553 --> 00:40:08.513
+I made like two paragraphs of just placeholder text. And so you can kind of get a sense for
+
+00:40:08.513 --> 00:40:13.152
+what happens with page fluid. So page fluid is just like fluid page where it stretches to the
+
+00:40:13.152 --> 00:40:20.833
+full width of whatever viewport you have. There's also page fixed. So that is the same as
+
+00:40:20.872 --> 00:40:29.673
+page as fixed page in shiny. And this is it now has a little bit of a border. I think
+
+00:40:29.673 --> 00:40:38.192
+that's basically the only thing is that like, it doesn't go full width at at certain screen
+
+00:40:38.192 --> 00:40:44.513
+sizes, like here, you can see it's limited to the sort of the center of the screen. That's
+
+00:40:44.513 --> 00:40:52.073
+basically the only difference between page fixed and page fluid. Okay, and then we have a new
+
+00:40:52.073 --> 00:41:00.513
+function called page sidebar. And page sidebar is going to let me make this slightly bigger.
+
+00:41:00.513 --> 00:41:08.553
+Okay, so page sidebar, basically, you know, has a main content area on the right, and then it
+
+00:41:08.553 --> 00:41:12.673
+adds a sidebar to the left. And there's nothing in this sidebar because I didn't put anything in
+
+00:41:12.673 --> 00:41:17.633
+the sidebar yet. So to put something in the sidebar, you can use the sidebar argument, and
+
+00:41:17.633 --> 00:41:25.353
+then the sidebar function. So you pass the sidebar to sidebar. And here you can put, you
+
+00:41:25.353 --> 00:41:27.032
+know, whatever you want. So
+
+00:41:27.830 --> 00:41:37.390
+sidebar to sidebar. And here you can put, you know, whatever you want. So, like a numeric
+
+00:41:37.390 --> 00:41:49.310
+input, value, let's see, I'm just going to say n. Let's make this really easy. And now
+
+00:41:49.310 --> 00:41:54.789
+we have, you know, an input in the sidebar. So this is a great place to tuck away inputs
+
+00:41:54.789 --> 00:42:00.070
+that you want to be accessible and you want them to be, you know, available to the user,
+
+00:42:00.070 --> 00:42:06.830
+but also if you want to let the user kind of like hide them and just focus on whatever
+
+00:42:06.830 --> 00:42:11.629
+it is that's in your main content area. Like, you know, like focusing on a plot or something
+
+00:42:11.629 --> 00:42:18.710
+like that. But you have this sort of drawer sidebar of inputs that you can work with.
+
+00:42:18.710 --> 00:42:31.469
+So page sidebar also takes a title. My first sidebar app. Let me see, where is the, there
+
+00:42:31.469 --> 00:42:36.349
+we go. Okay. So it takes a title. And if you give, so if you give it a title, it sort of
+
+00:42:36.349 --> 00:42:42.669
+creates this kind of reminiscent of a nav bar kind of feel. So you have a nice, so this
+
+00:42:42.669 --> 00:42:49.630
+is a really good layout for a dashboard where you have one page on the dashboard. You know,
+
+00:42:49.630 --> 00:42:55.069
+you just have, you know, this page here where there's maybe, you know, one, one, two, three,
+
+00:42:55.069 --> 00:42:59.669
+maybe four plots, but there's, there's only one page to the dashboard. So this is a good,
+
+00:42:59.669 --> 00:43:08.370
+a good fit for that kind of app. We also now have, well, yeah, so the, so title, you could
+
+00:43:08.370 --> 00:43:16.969
+also give title to sidebar. Like you can maybe call this sidebar settings. And if you give a
+
+00:43:16.969 --> 00:43:22.370
+title to the sidebar, there's a, we add a title here to the top of the app or to the top of the
+
+00:43:22.370 --> 00:43:28.370
+sidebar. So most of the time, and at least in the apps we'll see today, I just sort of leave that
+
+00:43:28.370 --> 00:43:35.010
+off. Let's see, there's a few other arguments here. So if you want to customize the sidebar
+
+00:43:35.010 --> 00:43:40.009
+area, you can, you can do that. You could do something like say, I want my background to be
+
+00:43:40.009 --> 00:43:47.770
+red. This is going to be a bit bright, but it'll still work. And you could make your foreground
+
+00:43:47.770 --> 00:43:57.410
+white. And so, you know, using these settings from the, from the sidebar, you can, you can change
+
+00:43:57.410 --> 00:44:03.169
+sort of the appearance. You can also decide what side it appears on. So you can say position equals
+
+00:44:03.330 --> 00:44:08.850
+right to move it over to the right side of the app. And now it's over here on the right instead of
+
+00:44:08.850 --> 00:44:19.050
+being on the left. And you can also choose whether or not you want it to be open or closed. So we'll
+
+00:44:19.050 --> 00:44:26.089
+say closed as at start. So this argument, just the open argument just decides whether or not it's
+
+00:44:26.089 --> 00:44:33.330
+open or closed at the time when the app loads. But the user might, you know, open it or close it
+
+00:44:33.330 --> 00:44:39.570
+themselves. So it's not going to stay closed permanently. If you want it to stay open, for
+
+00:44:39.570 --> 00:44:46.650
+always and always, you can say open as always. And then, then there's no way that you can collapse
+
+00:44:46.650 --> 00:44:52.009
+this sidebar. So you're kind of, you're stuck with it. And it's, but it's at least there all the
+
+00:44:52.009 --> 00:45:01.009
+time. Okay. So, so let's see, this is a page sidebar with the sidebar, as we talked about. So we
+
+00:45:01.009 --> 00:45:06.850
+also have a bunch of components in bslib. So things that have been sort of introduced in newer
+
+00:45:06.850 --> 00:45:11.809
+versions of bootstrap that we thought were really cool, and we want to bring to shiny. And one of
+
+00:45:11.809 --> 00:45:23.169
+the biggest of those is the card. So you can take a card and just give it some content. And you get
+
+00:45:24.369 --> 00:45:29.969
+something that looks kind of like this. It's scrolling a little bit because of just the size of
+
+00:45:29.969 --> 00:45:36.050
+my screen and everything. Is this a comfortable, if this is too small, let me know in the chat, but
+
+00:45:36.050 --> 00:45:43.290
+I'm going to stay here, I think, because this is fits enough on my screen. Okay, so cards, basically
+
+00:45:43.290 --> 00:45:48.729
+just like give you a border. And then it's like a way to put a little box around some content. But
+
+00:45:48.729 --> 00:45:55.449
+there are other parts of the card, too. So the first thing that happens, everything that you give
+
+00:45:55.449 --> 00:46:05.090
+to the card, basically is implicitly part of a thing called card body. So we basically take all of
+
+00:46:05.689 --> 00:46:11.330
+the children that, you know, the things that you put inside of the card, and we wrap it into a card
+
+00:46:11.330 --> 00:46:18.169
+body. And we just do that for you automatically. But now that you've seen card body, that implies
+
+00:46:18.169 --> 00:46:23.449
+that there's some other parts to the card. And there are so there's a card header. So here's where
+
+00:46:23.449 --> 00:46:30.889
+you would give your card a title, like my cool card, right. And with the with the card header, and
+
+00:46:30.889 --> 00:46:40.490
+now you have a sort of top area to the card. There's also a card footer, more information about
+
+00:46:40.490 --> 00:46:49.770
+my card. And that does the same thing, but for the bottom of the card. So this is a great place to
+
+00:46:49.770 --> 00:46:55.849
+put like attribution, or, you know, notes about a plot or something like that. And the card header
+
+00:46:55.849 --> 00:47:03.090
+is the best place to sort of tell people about what is inside of the card. All right, if you have
+
+00:47:03.090 --> 00:47:12.569
+more than one card, I'm gonna, let's keep these, I'm gonna just copy this and paste it. So now I have
+
+00:47:12.569 --> 00:47:20.129
+two cards. Now that I have two cards, you can see that the way that this works in page sidebar is
+
+00:47:20.129 --> 00:47:31.009
+they are now kind of stacked on top of each other. And yeah, and there's a question about can the
+
+00:47:31.009 --> 00:47:37.770
+card height be adjusted the height of the content? Let's take this out for just a second. And you can
+
+00:47:37.770 --> 00:47:41.729
+see this is a pretty tall card. We're gonna talk about this in just a little bit why this is a tall
+
+00:47:41.849 --> 00:47:51.810
+card. We'll talk about, we'll kind of get there. And basically, you know, the next, next section. So it's a
+
+00:47:51.810 --> 00:47:57.289
+great question. Just hold on to it for a second. Okay, so here we have these two cards. So what if
+
+00:47:57.289 --> 00:48:04.530
+you want the two cards to be next to each other instead of stacked on top of each other? You can
+
+00:48:04.530 --> 00:48:08.930
+see this function is listed up here. So that's probably the last one I want to use. So layout
+
+00:48:09.569 --> 00:48:19.210
+columns. layout columns is basically going to take things that take some things like your card, and
+
+00:48:19.289 --> 00:48:26.370
+it's going to put them into columns. So it's kind of like, it's kind of like row and column from
+
+00:48:26.370 --> 00:48:33.289
+shiny came together into one function where you you don't have to do so much wrapping anymore. So I
+
+00:48:33.289 --> 00:48:40.330
+can just take these two cards that I've created, and move them into layout cards. And now that
+
+00:48:40.330 --> 00:48:44.409
+they're in layout cards, or sorry, layout columns, now that they're in layout columns, they're going
+
+00:48:44.409 --> 00:48:52.889
+to be laid out in a column wise fashion, right? So we have these two cards next to my other card, so
+
+00:48:52.889 --> 00:49:00.090
+we can tell them apart. So we have these two cards next to each other. And layout columns, you can
+
+00:49:00.090 --> 00:49:05.689
+basically just give it as many things as you want. And it will just lay them out in a in a way that
+
+00:49:05.689 --> 00:49:11.009
+sort of makes sense. And until it doesn't, and then that's the time when you have to learn, you know,
+
+00:49:11.009 --> 00:49:17.250
+other other arguments to layout columns. We're going to cover that in the next in the next hour.
+
+00:49:17.770 --> 00:49:25.729
+So okay, so this is that's page sidebar and layout columns. And so now it's your turn to check out
+
+00:49:26.409 --> 00:49:32.530
+value boxes. I'm sorry, it's your turn to just practice some of the stuff that we that we just
+
+00:49:32.530 --> 00:49:39.129
+did. So basically, the goal with exercise two is that we're in the process of refactoring an older
+
+00:49:39.129 --> 00:49:44.370
+shiny app that uses these, we could because we wanted to use these new features from VS lib. And
+
+00:49:44.370 --> 00:49:50.289
+I've started the refactoring process by pulling out the inputs, so that if you just go find the
+
+00:49:50.289 --> 00:49:56.569
+section of UI, you can just like everything is just one line each so that you can move everything
+
+00:49:56.569 --> 00:50:02.410
+around a bit. Your task as a group is to migrate the UI section of the app from fluid page and
+
+00:50:02.410 --> 00:50:11.170
+sidebar layout to use these new page functions, maybe even a card, maybe even a layout columns in
+
+00:50:11.170 --> 00:50:19.090
+the app. And so give it a shot. So I'm gonna send everyone back to the breakout rooms. And if it and
+
+00:50:19.090 --> 00:50:27.129
+then also if you want to sort of stop at some point and get up and and take a break. I'll send a
+
+00:50:27.129 --> 00:50:32.210
+message when in five minutes basically to suggest that you do that. Okay, so I'm going to send
+
+00:50:32.210 --> 00:50:33.929
+everyone to the breakouts now go have fun.
+
+00:55:49.090 --> 00:55:51.850
+Transcribed by https://otter.ai
+
+00:56:19.090 --> 00:56:21.090
+Edited by https://otter.ai
+
+01:00:49.090 --> 01:00:51.169
+Transcribed by https://otter.ai
+
+01:01:49.090 --> 01:02:06.090
+All right, welcome back.
+
+01:02:06.090 --> 01:02:08.769
+How did that go?
+
+01:02:08.769 --> 01:02:12.449
+We could use reactions, I guess, for this, I could find them.
+
+01:02:12.449 --> 01:02:15.890
+That went well.
+
+01:02:15.890 --> 01:02:16.890
+Not well.
+
+01:02:16.890 --> 01:02:17.890
+Or you could chat.
+
+01:02:17.890 --> 01:02:18.890
+Where did my chat go?
+
+01:02:18.890 --> 01:02:23.250
+I don't understand why every time I move around, Zoom moves everything around.
+
+01:02:23.250 --> 01:02:24.730
+Hang on.
+
+01:02:24.730 --> 01:02:27.850
+So some people, that seemed to go pretty well.
+
+01:02:27.850 --> 01:02:34.449
+I have a sense that that was also probably a little bit not quite enough time for some
+
+01:02:34.449 --> 01:02:36.649
+other people.
+
+01:02:36.649 --> 01:02:39.250
+So let's do it together real quick.
+
+01:02:39.250 --> 01:02:50.090
+The idea was to take this app here, and number two, which is not that app, it should be this
+
+01:02:50.090 --> 01:02:51.090
+app.
+
+01:02:51.090 --> 01:02:52.090
+It looks something like this.
+
+01:02:52.090 --> 01:02:54.689
+Let me make that go away.
+
+01:02:54.689 --> 01:02:59.970
+Okay, so we get this nice, so we have kind of a sidebar layout, but also everything's
+
+01:02:59.970 --> 01:03:02.130
+kind of stacked on top of each other.
+
+01:03:02.130 --> 01:03:03.130
+Yeah.
+
+01:03:03.130 --> 01:03:05.730
+Okay, so there's a couple things we can do.
+
+01:03:05.730 --> 01:03:10.529
+First of all, instead of fluid page, we have BSLib here already, so we can just start making
+
+01:03:10.529 --> 01:03:11.529
+changes, right?
+
+01:03:11.529 --> 01:03:18.169
+So we do page sidebar here instead of fluid page.
+
+01:03:18.169 --> 01:03:22.449
+Is that going to do what we want?
+
+01:03:22.449 --> 01:03:23.449
+That almost works.
+
+01:03:23.449 --> 01:03:26.250
+So we're, yeah, now our whole page is in the sidebar.
+
+01:03:26.250 --> 01:03:28.970
+So that's close, but not quite what we want.
+
+01:03:29.970 --> 01:03:36.850
+We have a title panel, which we can turn into the title argument of page sidebar.
+
+01:03:36.850 --> 01:03:42.730
+This sidebar panel, I'm going to just move that up one, and to do that, you do option
+
+01:03:42.730 --> 01:03:48.149
+arrow up or arrow down, option on Mac or alt on Windows.
+
+01:03:48.149 --> 01:03:54.890
+So that's a super handy trick that I use all the time when I'm writing shiny apps.
+
+01:03:54.890 --> 01:03:58.970
+So this is going to be sidebar instead of sidebar panel, and we pass it to the sidebar
+
+01:03:58.970 --> 01:04:00.330
+argument.
+
+01:04:00.330 --> 01:04:07.230
+And now I'll pick this, command I, or I think it's control I on Windows, to get everything
+
+01:04:07.230 --> 01:04:10.630
+lined up correctly, and that puts it all in the sidebar.
+
+01:04:10.630 --> 01:04:20.169
+And then I could just start here and just take all this stuff, oops, hold on, take all
+
+01:04:20.169 --> 01:04:27.090
+this stuff out of the main panel, and the sidebar layout, there we go.
+
+01:04:27.090 --> 01:04:36.370
+So I'm feeling something, where am I, yeah, there we go, and reload the app.
+
+01:04:36.370 --> 01:04:42.169
+And now, yeah, this is certainly an improvement, right?
+
+01:04:42.169 --> 01:04:47.210
+I have the sidebar is over here, it can be hidden, and I have these things.
+
+01:04:47.250 --> 01:04:51.850
+I guess the next step is that these, it'd be nicer if these were cards, right?
+
+01:04:51.850 --> 01:04:59.090
+So I could take this and put it in a card, and it would also be helpful if it had a title,
+
+01:04:59.090 --> 01:05:00.090
+right?
+
+01:05:00.090 --> 01:05:05.490
+So I could put a card header over here and say admissions rate, which I'm just kind of
+
+01:05:05.490 --> 01:05:14.470
+reading from the output variable, and you can see that that's going to put that whole
+
+01:05:14.470 --> 01:05:16.769
+plot in the card, which is nice.
+
+01:05:17.330 --> 01:05:23.409
+So I'll just do that for the rest of these, card header, completion rate, and I'll move
+
+01:05:23.409 --> 01:05:34.529
+this up, and card, card header, actually, hang on, let's just do these two as cards,
+
+01:05:34.529 --> 01:05:38.769
+and then try one other thing.
+
+01:05:38.769 --> 01:05:45.250
+So once you get here, that's pretty good, so you have these two cards, these are kind
+
+01:05:45.250 --> 01:05:52.090
+of, these plots are, you know, don't need to be super, like, they don't need a lot of
+
+01:05:52.090 --> 01:05:53.090
+horizontal space.
+
+01:05:53.090 --> 01:05:56.970
+Right now, they're taking up, like, the whole width of the app, right?
+
+01:05:56.970 --> 01:06:04.289
+So I'm going to use layout columns here, and I'm just going to, let's see, this is the
+
+01:06:04.289 --> 01:06:09.490
+way I usually like to do this, is take this parentheses and move it here, and then grab
+
+01:06:09.490 --> 01:06:18.049
+everything, command I to re-indent, and get rid of that extra line, and now we've got
+
+01:06:18.049 --> 01:06:20.850
+the two cards next to each other.
+
+01:06:20.850 --> 01:06:27.289
+So this is pretty, this is a nice improvement, like, I could live with this app.
+
+01:06:27.289 --> 01:06:31.010
+We haven't really, like, touched any parts of it yet, so if you play with it a little
+
+01:06:31.010 --> 01:06:34.890
+bit, you can see, you know, okay, the sidebar, it works, right?
+
+01:06:34.890 --> 01:06:40.130
+And this part here works as well.
+
+01:06:40.130 --> 01:06:41.870
+Did anyone play with the group by?
+
+01:06:41.870 --> 01:06:43.569
+What happens here with this one?
+
+01:06:43.569 --> 01:06:47.809
+Notice there's a little divider here to kind of separate it from the others.
+
+01:06:47.809 --> 01:06:53.449
+So this input only controls this plot over here.
+
+01:06:53.449 --> 01:07:00.010
+It controls the color variable for the plot, and this is plotting the average cost over,
+
+01:07:00.010 --> 01:07:03.970
+compared to median earnings for each school, right?
+
+01:07:03.970 --> 01:07:08.090
+You can hover over and see some information.
+
+01:07:08.090 --> 01:07:17.610
+Okay, so this, because this input controls something that's just about this plot, it
+
+01:07:17.610 --> 01:07:21.730
+doesn't make as much sense, it's kind of different from these other inputs, right?
+
+01:07:21.730 --> 01:07:25.669
+These other inputs control every plot, so whenever I change anything from these inputs,
+
+01:07:25.669 --> 01:07:28.529
+every plot in the app updates.
+
+01:07:28.689 --> 01:07:36.569
+If I change only the group by, then only the group by updates, or so only this plot updates,
+
+01:07:36.569 --> 01:07:37.890
+right?
+
+01:07:37.890 --> 01:07:39.010
+How can we fix this?
+
+01:07:39.010 --> 01:07:46.090
+Well, page sidebar is powered by a function underneath called layout sidebar, and it's
+
+01:07:46.090 --> 01:07:50.929
+a lot like, it basically works in the same way that we've seen so far, and it's also
+
+01:07:50.929 --> 01:07:52.809
+a little bit like layout columns.
+
+01:07:52.809 --> 01:08:03.250
+So what I can do here is say layout sidebar, and I can move the plotly output in there,
+
+01:08:03.250 --> 01:08:11.649
+and I can say sidebar equals sidebar, and local inputs would go here.
+
+01:08:11.649 --> 01:08:15.730
+I'll reload this so you can see, we're getting close.
+
+01:08:15.730 --> 01:08:23.769
+So now I have basically a layout sidebar with this local input is going to end up there,
+
+01:08:23.769 --> 01:08:24.769
+right?
+
+01:08:24.769 --> 01:08:26.069
+I just have to make that actually happen.
+
+01:08:26.069 --> 01:08:32.809
+So I'm going to get rid of this divider, I'm going to take this input group by and move
+
+01:08:32.809 --> 01:08:42.669
+it all the way down into the sidebar, line everything up, and now I have a sidebar with
+
+01:08:42.669 --> 01:08:50.549
+global inputs that control every plot, and I have a local sidebar that's kind of wrapped
+
+01:08:50.549 --> 01:08:55.850
+around this one plot with the input that controls just this plot.
+
+01:08:55.850 --> 01:09:00.169
+So this is an important concept in general when you're designing your shiny apps and
+
+01:09:00.169 --> 01:09:02.689
+designing dashboards with BSLib.
+
+01:09:02.689 --> 01:09:07.769
+It's important to think about where the inputs are in relation to the things that they control.
+
+01:09:07.769 --> 01:09:15.649
+So global inputs that are in a sidebar should probably control everything on the page,
+
+01:09:15.649 --> 01:09:21.649
+and you have this option of using a layout sidebar, and you can even put this in a card.
+
+01:09:21.649 --> 01:09:30.330
+So I can even just say wrap this whole thing in a card, move that down, and put that in
+
+01:09:30.330 --> 01:09:40.809
+a card, and now I have a card with a sidebar that is related just to this output that it
+
+01:09:40.809 --> 01:09:41.809
+updates.
+
+01:09:41.809 --> 01:09:42.809
+All right.
+
+01:09:42.809 --> 01:09:43.809
+That's harsh.
+
+01:09:43.809 --> 01:09:44.809
+Okay, here we go.
+
+01:09:44.809 --> 01:09:45.809
+New layouts.
+
+01:09:45.809 --> 01:09:46.809
+So there's another kind of card.
+
+01:09:46.809 --> 01:10:02.970
+It's kind of like a special card, like a card variant called a value box, and I'd like
+
+01:10:02.970 --> 01:10:03.970
+to show it to you now.
+
+01:10:03.970 --> 01:10:10.049
+So a value box, you might be familiar with these a little bit from Shiny Dashboard has
+
+01:10:10.049 --> 01:10:11.049
+a similar function.
+
+01:10:11.049 --> 01:10:15.409
+I think it's just called a box there, and Flex Dashboard has another notion of this
+
+01:10:15.409 --> 01:10:16.409
+idea, right?
+
+01:10:17.010 --> 01:10:25.409
+But at its core, a value box takes a title where you would say like, I don't know, average
+
+01:10:25.409 --> 01:10:35.449
+cost, maybe average yearly cost, and it's going to take a value, which here would be,
+
+01:10:35.449 --> 01:10:43.970
+I don't know, 42,400, and if you want to format this, well, because I'm typing it out, I could
+
+01:10:43.970 --> 01:10:49.850
+do that, and you get a box that looks like this.
+
+01:10:49.850 --> 01:10:57.130
+Yeah, by the way, these values pair really nicely with the scales package.
+
+01:10:57.130 --> 01:11:01.649
+So in the scales package, there's a bunch of different functions.
+
+01:11:01.649 --> 01:11:10.529
+You can use dollar, for example, and I can say 42,400 and let the scales package do that
+
+01:11:10.529 --> 01:11:12.649
+formatting for me.
+
+01:11:12.649 --> 01:11:16.649
+But basically, yeah, you have a title and a value.
+
+01:11:16.649 --> 01:11:22.649
+There's also a theme argument where you can say basically what color or what color theme
+
+01:11:22.649 --> 01:11:24.130
+you want to use for this value box.
+
+01:11:24.130 --> 01:11:27.970
+I could choose primary or secondary.
+
+01:11:27.970 --> 01:11:35.330
+You can also use, so those are all like the, Bootstrap has this whole idea of theme colors,
+
+01:11:35.330 --> 01:11:37.929
+like semantic colors, like success.
+
+01:11:38.569 --> 01:11:47.289
+If this is a good value, you would use success, and if it's a bad value, you might use danger.
+
+01:11:47.289 --> 01:11:54.809
+You can also use basically any named color, like purple, and then there's a few other
+
+01:11:54.809 --> 01:11:57.769
+options that are available to you.
+
+01:11:57.769 --> 01:12:04.090
+And then finally, the other big piece of a value box is the showcase.
+
+01:12:04.409 --> 01:12:09.809
+And the showcase is kind of a good place to put either an icon or a plot.
+
+01:12:09.809 --> 01:12:15.929
+And for icons, I really like bsicons, the package bsicons, which has a function called
+
+01:12:15.929 --> 01:12:24.730
+bsicon, and then I just have to remember what these are, what icons are available.
+
+01:12:24.730 --> 01:12:32.689
+So I'm going to go to, I'm going to search for bootstrap icons, and it brings me to this
+
+01:12:32.689 --> 01:12:34.610
+page for bootstrap icons.
+
+01:12:34.610 --> 01:12:36.730
+And here you have like the whole list.
+
+01:12:36.730 --> 01:12:40.970
+And I was wanting money, something money related.
+
+01:12:40.970 --> 01:12:43.250
+And cash stack seems very appropriate.
+
+01:12:43.250 --> 01:12:51.730
+So I'll just remember that and come back to where I was and say cash stack.
+
+01:12:51.730 --> 01:12:55.649
+And now I have the cash stack showcase.
+
+01:12:55.649 --> 01:13:04.409
+If I take out the theme, this is the sort of default treatment in the shiny preset to
+
+01:13:04.409 --> 01:13:09.529
+give it a kind of nice gradient and everything.
+
+01:13:09.529 --> 01:13:18.409
+So in the next exercise, it's your turn to turn a couple of those things into value boxes.
+
+01:13:18.409 --> 01:13:22.569
+Exercises for number three, it contains the start of a dashboard, I've kind of worked
+
+01:13:22.569 --> 01:13:24.769
+out all of the reactive side logic for you.
+
+01:13:24.890 --> 01:13:30.049
+And your goal is to make three visually appealing value boxes that describe the number of undergraduates
+
+01:13:30.049 --> 01:13:34.289
+at a school, the average yearly cost and the rate of completion.
+
+01:13:34.289 --> 01:13:39.809
+And there's a, you're not like completely on your own here, there's an app that I built,
+
+01:13:39.809 --> 01:13:49.210
+which is available online, or through this command that you can run in your project.
+
+01:13:49.210 --> 01:13:51.409
+And it will actually, let me show it to you.
+
+01:13:51.929 --> 01:13:56.809
+So I can even warm it up and make sure that it's ready for everyone to come over here
+
+01:13:56.809 --> 01:14:03.169
+and look at it.
+
+01:14:03.169 --> 01:14:05.850
+And while that's warming up, let me just come back to the instructions.
+
+01:14:05.850 --> 01:14:13.090
+So the, I'm going to copy this link here into the website or into the chat.
+
+01:14:13.090 --> 01:14:17.210
+So if you want to open up this, the instructions and have them next to you while you're working
+
+01:14:17.210 --> 01:14:20.250
+on this exercise, that's a great place to do it.
+
+01:14:20.250 --> 01:14:24.529
+And I'll also make sure that I copy this into the chat when everyone goes into their
+
+01:14:24.529 --> 01:14:25.529
+breakout room.
+
+01:14:25.529 --> 01:14:30.409
+So if you're wondering what you should be doing, that's a good place to look.
+
+01:14:30.409 --> 01:14:34.210
+So the Build-A-Box app looks a lot like this.
+
+01:14:34.210 --> 01:14:41.569
+And through it, you can customize basically all of the little features of a value box.
+
+01:14:41.569 --> 01:14:42.689
+You can do it globally.
+
+01:14:42.689 --> 01:14:49.649
+So here you could pick, let's say I want to use semantic background colors.
+
+01:14:49.649 --> 01:14:52.970
+And you can swap out the theme quickly and see what it looks like.
+
+01:14:52.970 --> 01:14:57.210
+If I want to use a plot, an icon instead of a plot, you can do that.
+
+01:14:57.210 --> 01:15:02.090
+And you can also click on an individual card and it will bring up individual settings for
+
+01:15:02.090 --> 01:15:03.090
+the card.
+
+01:15:03.090 --> 01:15:10.090
+There's a helpful little, well, first of all, you could say, you know, like average yearly
+
+01:15:10.090 --> 01:15:12.529
+cost and you could put in the value.
+
+01:15:12.529 --> 01:15:17.689
+So 42, some made up number that I just came up with right now.
+
+01:15:17.730 --> 01:15:27.610
+And then you can use this to search through the icons and maybe find cash stack that way.
+
+01:15:27.610 --> 01:15:31.809
+And then at the top of the app, there's a show code button.
+
+01:15:31.809 --> 01:15:36.130
+And when you click on this, it'll give you the code for the three value boxes that you're
+
+01:15:36.130 --> 01:15:37.130
+looking at.
+
+01:15:37.130 --> 01:15:38.850
+And maybe in this case, you'd want to just copy this one.
+
+01:15:38.850 --> 01:15:43.930
+So that's a nice way to kind of get started exploring all of your value box options.
+
+01:15:44.930 --> 01:15:55.049
+Okay, I'm going to send everyone to, I'm going to shuffle the breakout rooms and send everyone
+
+01:15:55.049 --> 01:15:57.289
+to a new breakout room.
+
+01:15:57.289 --> 01:16:01.769
+And we'll be back probably around the middle of the hour.
+
+01:17:43.930 --> 01:17:44.930
+All right.
+
+01:17:44.930 --> 01:17:45.930
+Thank you.
+
+01:17:45.930 --> 01:17:46.930
+Bye.
+
+01:18:13.930 --> 01:18:15.930
+Transcribed by https://otter.ai
+
+01:18:43.930 --> 01:18:44.930
+Transcribed by https://otter.ai
+
+01:19:13.930 --> 01:19:14.930
+Transcribed by https://otter.ai
+
+01:19:43.930 --> 01:19:45.930
+Transcribed by https://otter.ai
+
+01:20:13.930 --> 01:20:14.930
+Transcribed by https://otter.ai
+
+01:20:43.930 --> 01:20:45.930
+Transcribed by https://otter.ai
+
+01:21:13.930 --> 01:21:14.930
+Transcribed by https://otter.ai
+
+01:21:25.679 --> 01:21:30.679
+https://github.com
+
+01:21:55.679 --> 01:22:00.679
+https://github.com
+
+01:22:25.679 --> 01:22:30.679
+https://github.com
+
+01:22:55.679 --> 01:23:00.679
+https://github.com
+
+01:23:25.679 --> 01:23:30.679
+https://github.com
+
+01:23:55.679 --> 01:24:00.679
+https://github.com
+
+01:24:25.679 --> 01:24:30.679
+https://github.com
+
+01:24:55.679 --> 01:25:00.679
+https://github.com
+
+01:25:25.679 --> 01:25:30.679
+https://github.com
+
+01:25:55.679 --> 01:26:00.679
+https://github.com
+
+01:26:25.679 --> 01:26:30.679
+https://github.com
+
+01:26:55.679 --> 01:27:00.679
+https://github.com
+
+01:27:25.679 --> 01:27:30.679
+https://github.com
+
+01:27:55.679 --> 01:28:00.679
+https://github.com
+
+01:28:25.679 --> 01:28:30.679
+https://github.com
+
+01:28:55.679 --> 01:29:00.679
+https://github.com
+
+01:29:25.679 --> 01:29:30.679
+https://github.com
+
+01:29:55.679 --> 01:30:00.679
+https://github.com
+
+01:30:25.679 --> 01:30:30.679
+https://github.com
+
+01:30:55.679 --> 01:31:00.679
+https://github.com
+
+01:31:25.679 --> 01:31:30.679
+https://github.com
+
+01:31:55.679 --> 01:32:00.679
+https://github.com
+
+01:32:25.679 --> 01:32:30.679
+https://github.com
+
+01:32:55.679 --> 01:33:00.679
+https://github.com
+
+01:33:25.679 --> 01:33:30.679
+https://github.com
+
+01:33:55.679 --> 01:34:00.679
+https://github.com
+
+01:34:25.679 --> 01:34:30.679
+https://github.com
+
+01:34:55.679 --> 01:35:00.679
+https://github.com
+
+01:35:25.679 --> 01:35:30.679
+https://github.com
+
+01:35:55.679 --> 01:36:00.679
+https://github.com
+
+01:36:25.679 --> 01:36:30.679
+https://github.com
+
+01:36:55.679 --> 01:37:00.679
+https://github.com
+
+01:37:25.679 --> 01:37:30.679
+https://github.com
+
+01:37:55.679 --> 01:38:00.679
+https://github.com
+
+01:38:25.679 --> 01:38:30.679
+https://github.com
+
+01:38:55.679 --> 01:39:00.679
+https://github.com
+
+01:39:25.679 --> 01:39:30.679
+https://github.com
+
+01:39:55.679 --> 01:40:00.679
+https://github.com
+
+01:40:25.679 --> 01:40:30.679
+https://github.com
+
+01:40:55.679 --> 01:41:01.679
+https://github.com
+
+01:41:25.679 --> 01:41:35.679
+https://github.com
+
+01:41:55.679 --> 01:42:15.679
+https://github.com
+
+01:42:15.679 --> 01:42:35.679
+https://github.com
+
+01:42:35.679 --> 01:42:55.679
+https://github.com
+
+01:42:55.679 --> 01:43:15.679
+https://github.com
+
+01:43:15.679 --> 01:43:43.679
+https://github.com
+
+01:43:43.679 --> 01:44:11.679
+https://github.com
+
+01:44:11.679 --> 01:44:39.679
+https://github.com
+
+01:44:39.679 --> 01:45:07.679
+https://github.com
+
+01:45:07.679 --> 01:45:35.679
+https://github.com
+
+01:45:35.679 --> 01:46:03.679
+https://github.com
+
+01:46:03.679 --> 01:46:29.679
+https://github.com
+
+01:46:29.679 --> 01:46:57.679
+https://github.com
+
+01:46:57.679 --> 01:47:23.679
+https://github.com
+
+01:47:23.679 --> 01:47:43.679
+https://github.com
+
+01:47:43.679 --> 01:48:11.679
+https://github.com
+
+01:48:11.679 --> 01:48:31.679
+https://github.com
+
+01:48:41.679 --> 01:49:09.679
+https://github.com
+
+01:49:09.679 --> 01:49:37.679
+https://github.com
+
+01:49:37.679 --> 01:50:05.679
+https://github.com
+
+01:50:05.679 --> 01:50:33.679
+https://github.com
+
+01:50:33.679 --> 01:51:01.679
+https://github.com
+
+01:51:01.679 --> 01:51:29.679
+https://github.com
+
+01:51:29.679 --> 01:51:57.679
+https://github.com
+
+01:51:57.679 --> 01:52:25.679
+https://github.com
+
+01:52:25.679 --> 01:52:53.679
+https://github.com
+
+01:52:53.679 --> 01:53:21.679
+https://github.com
+
+01:53:21.679 --> 01:53:49.679
+https://github.com
+
+01:53:49.679 --> 01:54:17.679
+https://github.com
+
+01:54:17.679 --> 01:54:45.679
+https://github.com
+
+01:54:45.679 --> 01:55:13.679
+https://github.com
+
+01:55:13.679 --> 01:55:41.679
+https://github.com
+
+01:55:41.679 --> 01:56:09.679
+https://github.com
+
+01:56:09.679 --> 01:56:37.679
+https://github.com
+
+01:56:37.679 --> 01:57:05.679
+https://github.com
+
+01:57:05.679 --> 01:57:33.679
+https://github.com
+
+01:57:33.679 --> 01:58:01.679
+https://github.com
+
+01:58:01.679 --> 01:58:29.679
+https://github.com
+
+01:58:29.679 --> 01:58:57.679
+https://github.com
+
+01:58:57.679 --> 01:59:25.679
+https://github.com
+
+01:59:25.679 --> 01:59:53.679
+https://github.com
+
+01:59:53.679 --> 02:00:21.679
+https://github.com
+
+02:00:21.679 --> 02:00:49.679
+https://github.com
+
+02:00:49.679 --> 02:01:17.679
+https://github.com
+
+02:01:17.679 --> 02:01:45.679
+https://github.com
+
+02:01:45.679 --> 02:02:13.679
+https://github.com
+
+02:02:13.679 --> 02:02:41.679
+https://github.com
+
+02:02:41.679 --> 02:03:03.679
+https://github.com
+
+02:02:58.079 --> 02:03:04.799
+It's a somewhat involved concept, but it's useful to just sort of like talk through it and see some
+
+02:03:04.799 --> 02:03:09.119
+examples. Whereas we're going to skip the advanced carding section because that's something that you
+
+02:03:09.119 --> 02:03:14.558
+could read later and it would make just as much sense. So with filling layouts,
+
+02:03:17.119 --> 02:03:21.199
+let's go back to like basically everything on the web and everything that you see in a web page
+
+02:03:21.199 --> 02:03:27.279
+is kind of surrounded by an invisible box. So you know if you put something in a card then you know
+
+02:03:27.279 --> 02:03:31.039
+we'll draw a border around the box and you actually kind of see the box. But in general
+
+02:03:31.039 --> 02:03:37.519
+everything on the web is this is this like is inside of a box in some way. And block elements
+
+02:03:40.399 --> 02:03:45.438
+are things like divs and paragraphs where basically they're going to take up the full
+
+02:03:45.438 --> 02:03:49.519
+width and there's like nothing you know there's stuff above them and stuff below them and they
+
+02:03:49.519 --> 02:03:57.519
+can like contain things. So they take up the full width but they're lazy about their height
+
+02:03:57.519 --> 02:04:04.078
+which means that in general it's what tells a block element how tall it should be is basically
+
+02:04:04.718 --> 02:04:11.358
+what things you put inside of it. So here I have a card and I have a map inside of the card
+
+02:04:12.078 --> 02:04:15.118
+and we're going to find our way down to just the UI part. So here I have
+
+02:04:15.438 --> 02:04:23.599
+a fixed page right so it's like just sort of a standard page and I'm using card basic because
+
+02:04:23.599 --> 02:04:32.078
+I want to use just Bootstrap's basic card styles and not BS Lib's extra fancy card styles. So
+
+02:04:32.078 --> 02:04:39.599
+card basic this card has a leaflet output and I've said the height of the leaflet output is 300 pixels
+
+02:04:39.599 --> 02:04:47.038
+but if I make this 500 pixels then the card is going to grow to be 500 pixels tall right.
+
+02:04:48.319 --> 02:04:53.358
+So it's kind of driven the the height of the card is driven by the stuff that you put inside it.
+
+02:04:53.358 --> 02:05:03.519
+If I put in like a paragraph of text and run this like this you know the text plus the the map are
+
+02:05:03.519 --> 02:05:10.159
+going to you know that's where the height of the card will come from okay. But in dashboard layouts
+
+02:05:12.079 --> 02:05:19.118
+we we're often dealing with constrained space both horizontally and vertically so this kind of
+
+02:05:19.118 --> 02:05:25.678
+presents a problem. I'm gonna what happens if we set the height of the card and we say like you
+
+02:05:25.678 --> 02:05:32.878
+know this card has to fit in something like 300 pixels. When we do that normally
+
+02:05:34.639 --> 02:05:42.398
+the the the map that's on the inside which is too big is going to overflow the container and
+
+02:05:43.439 --> 02:05:47.199
+because the relationship kind of goes from the thing inside back up to the
+
+02:05:47.199 --> 02:05:53.598
+the thing holding it right it goes from the child to the parent and here constraining
+
+02:05:54.398 --> 02:06:00.799
+so like the height of the child can drive the height of the parent but not the other way around
+
+02:06:00.799 --> 02:06:05.999
+unless you do a bunch of extra work which is something like you know set this to be height 100
+
+02:06:05.999 --> 02:06:12.719
+percent and and then now you're saying this height will follow from whatever is you know
+
+02:06:12.719 --> 02:06:20.159
+constraining the parent. The the problem with this approach of using height 100 percent is that
+
+02:06:20.719 --> 02:06:25.518
+this is it's finicky and it also is the kind of thing where you have to be very careful about
+
+02:06:25.518 --> 02:06:30.318
+where you have set height 100 percent and you have to make sure that it like follows all the way down
+
+02:06:30.318 --> 02:06:34.079
+and you might have to set it in a whole bunch of different places in your in your UI elements and
+
+02:06:34.079 --> 02:06:42.799
+stuff. So so this isn't gonna work super well for us. So because Shiny deals with putting things in
+
+02:06:42.799 --> 02:06:50.639
+dashboards we came up with this this concept called a filling layout where that basically
+
+02:06:50.639 --> 02:06:57.199
+answers the question of how can we take an output or a layout or a plot and have it just know to
+
+02:06:57.199 --> 02:07:03.279
+take up all of the space that's available to it which means either growing to fill the space that
+
+02:07:03.279 --> 02:07:10.398
+it has or shrinking down to to fit inside of the space that it has. Yeah so what I'm going to do
+
+02:07:10.398 --> 02:07:17.118
+here is I'm going to change out the basic card from that's using you know like basic bootstrap
+
+02:07:17.118 --> 02:07:25.999
+card for a bslib card and notice that I have this set so that the card is smaller than the plot
+
+02:07:27.118 --> 02:07:35.518
+by setting height 300 pixels and when we use a bslib card the plot is just going to know that
+
+02:07:35.518 --> 02:07:42.958
+it had you know know to take up this space instead of instead of overflowing. If I were
+
+02:07:42.958 --> 02:07:50.398
+to add yeah so let's add some text to this card I'm going to add one paragraph with one sentence
+
+02:07:51.039 --> 02:07:54.479
+and when I do that so I have my one paragraph one sentence you can see that
+
+02:07:55.198 --> 02:08:03.358
+the the card is still 300 pixels tall and the map is basically fitting in the space
+
+02:08:03.358 --> 02:08:09.759
+leftover available to it right so the map is a little bit smaller let me switch back and forth
+
+02:08:09.759 --> 02:08:16.319
+right so the map grows to take up whatever it can and then once we add a paragraph it's basically
+
+02:08:16.319 --> 02:08:24.078
+like these two things are taking up as much space as as they can kind of. What if I do
+
+02:08:24.638 --> 02:08:28.159
+something where I have like two paragraphs and I make them
+
+02:08:28.719 --> 02:08:33.918
+yeah and you can see the map is going to keep shrinking rather than rather than like making
+
+02:08:33.918 --> 02:08:38.879
+the card grow it's going to keep shrinking so that you have just you know it's taking up the
+
+02:08:38.879 --> 02:08:47.518
+space that's available to it. So this idea of fillability basically what is happening here is
+
+02:08:47.599 --> 02:08:55.759
+basically what is happening here is the card is fillable and the plot fills the fills the card
+
+02:08:56.638 --> 02:09:06.159
+and if we change page fix for page fillable this is a page that takes up the viewport height
+
+02:09:07.198 --> 02:09:14.159
+so for some reason okay so like imagine this is my you know this area here is my browser window
+
+02:09:14.159 --> 02:09:20.398
+this card has now you know has now expanded to fill up the whole the whole space available to it
+
+02:09:20.398 --> 02:09:27.839
+and it actually kind of ignores its own like Harry said height should be 300 pixels but because it's
+
+02:09:29.198 --> 02:09:35.839
+filling it's going to ignore the the it kind of just means something slightly different
+
+02:09:37.198 --> 02:09:41.358
+if you so I'll we'll come back to that in a second like how to how to handle heights
+
+02:09:44.638 --> 02:09:50.879
+so because every so that like this works really well we've seen it in a couple places where you
+
+02:09:50.879 --> 02:09:59.279
+know you put the plots into cards and if I go back to the like this you know this plot here
+
+02:09:59.279 --> 02:10:03.198
+is taking up all of the space that's available to it and this map is taking up the space available
+
+02:10:03.198 --> 02:10:10.398
+to it another place that it kind of come up came up is in this example with the with the spark line
+
+02:10:10.398 --> 02:10:19.759
+right so hold on one second so the spark lines so like this plot right now is kind of filling
+
+02:10:19.759 --> 02:10:25.039
+it has like a little box here where it's filling it up and when we expand the card and it grows
+
+02:10:25.039 --> 02:10:31.599
+then the plot grows to fill that space and then when we close the card it shrinks back down to
+
+02:10:31.599 --> 02:10:40.238
+fill just a little the little tiny space and so we use this this idea all over the place
+
+02:10:43.198 --> 02:10:50.159
+and the the the basic idea that like the concept that makes it work is this idea of two elements
+
+02:10:50.159 --> 02:10:55.439
+working together so it's not just about a card and it isn't just about a plot but it's about the two
+
+02:10:55.439 --> 02:11:02.159
+of them working together so fillability fillable layouts are created by a fillable container
+
+02:11:02.958 --> 02:11:10.319
+and the fillable container says you can fill this space and then and the sort of reciprocal of that
+
+02:11:10.319 --> 02:11:18.559
+is a fill item they have they are the filling layout is activated by putting a fill item inside
+
+02:11:18.559 --> 02:11:26.798
+of a fillable container and basically we kind of in bslib have filling turned on everywhere
+
+02:11:27.358 --> 02:11:37.919
+so in this example up here the page says the page is fillable the card says i'm i'm a fill item so
+
+02:11:37.919 --> 02:11:46.318
+the card can fill the page fillable and it also says i'm a fillable item so that you know this
+
+02:11:46.318 --> 02:11:53.839
+leaflet output can fill the card as well so in general you don't have to think about this
+
+02:11:53.839 --> 02:12:00.878
+too much until you decide that you don't want it right and then in those cases then you have to
+
+02:12:00.878 --> 02:12:04.958
+then you have to think about how you're going to break this relationship and that's where it
+
+02:12:04.958 --> 02:12:11.359
+becomes important to know that it's about the two things working together so it's either so when you
+
+02:12:11.359 --> 02:12:16.799
+when you need to kind of break out of this this sort of setup and you want something to either
+
+02:12:16.799 --> 02:12:22.159
+scroll or be a specific height or to be certain you know certain size whatever you basically have
+
+02:12:22.159 --> 02:12:29.119
+three options to break the fillability you're going to find the item and make it not a fill
+
+02:12:29.119 --> 02:12:34.318
+item anymore you can set fill equals false so there's lots of this fill argument around in
+
+02:12:34.318 --> 02:12:40.078
+bslib and you look for that and you say fill is false or you make the parent not fillable
+
+02:12:41.359 --> 02:12:46.159
+so fillable equals false on the parent and then then the stuff inside of it won't fill it
+
+02:12:47.438 --> 02:12:52.078
+or it basically just kind of goes back to being like you know the regular way that things work
+
+02:12:52.078 --> 02:12:59.599
+on the web or you can break the parent-child relationship basically like you add another
+
+02:12:59.599 --> 02:13:03.998
+div or wrapper or something that isn't fillable and you put that in the way and then they're not
+
+02:13:03.998 --> 02:13:10.479
+the parent and the child aren't connected anymore the other thing to keep in mind is that we we do
+
+02:13:10.479 --> 02:13:18.878
+this kind of breaking automatically on mobile devices because on mobile devices you know like
+
+02:13:18.878 --> 02:13:24.479
+if if you're thinking about so filling works both ways it works both in expanding all the content
+
+02:13:24.479 --> 02:13:29.198
+like expanding outputs and maps and plots and things to take up the full space and it also
+
+02:13:29.198 --> 02:13:35.518
+works by contracting everything down or shrinking it to fit in whatever space is available so in
+
+02:13:35.518 --> 02:13:41.998
+general you you don't really want your dashboard to just like shrink down on a mobile device it's
+
+02:13:41.998 --> 02:13:47.518
+better to kind of just go back to the normal flow layout which is where things just sort of stack
+
+02:13:47.518 --> 02:13:52.398
+and work their way down the page and so we do that for you but there are cases where you might want
+
+02:13:52.398 --> 02:14:00.398
+to have fillable fillability turned on on mobile screens so here's an example where you might want
+
+02:14:00.398 --> 02:14:08.159
+to break this where break this fillability so first of all so I have this card right and I have
+
+02:14:08.159 --> 02:14:16.799
+a card with a bunch of text and I have a so that's kind of this section here is the the bunch of text
+
+02:14:16.799 --> 02:14:23.039
+is here right that's this part here in the card body so I have a fillable page with the card inside
+
+02:14:23.039 --> 02:14:31.518
+of it I have an action button which is this one and I have the leaflet output and basically what's
+
+02:14:31.518 --> 02:14:39.518
+happening here is these sort of three elements are fighting for the vertical space in the card
+
+02:14:40.078 --> 02:14:49.919
+so the this you know this text here is is kind of fighting for this this wins because it's not
+
+02:14:49.919 --> 02:14:55.279
+fillable it's not a fill item sorry so this this text isn't a fill item because paragraph tags are
+
+02:14:55.279 --> 02:15:02.078
+not fill by default so it's basically it's like I'll take up as much space as you give me right
+
+02:15:03.359 --> 02:15:09.279
+and then the the map is like well okay there's after everybody else has been added to this card
+
+02:15:09.279 --> 02:15:15.359
+there's only like this little tiny space for me and and so it shrinks down so in this case we need
+
+02:15:15.359 --> 02:15:19.679
+to break fillability in some way so we have a couple options and we'll let's try them and see
+
+02:15:19.679 --> 02:15:26.479
+what happens so first of all I have card I have card and card body because we need to be explicit
+
+02:15:26.479 --> 02:15:31.119
+in card body if we're going to set we're going to say that card body is not fillable so we say
+
+02:15:31.119 --> 02:15:42.398
+fillable is false and in this case now so the card is a fill item and a page fillable so it'll still
+
+02:15:42.398 --> 02:15:50.239
+the card itself will expand all the way but the but I've turned off fillability in the card body
+
+02:15:50.878 --> 02:15:56.398
+and now everything in the card body is just regular like it just flows so um so it doesn't
+
+02:15:56.398 --> 02:16:01.919
+try to take up it doesn't try to shrink or grow it just takes up its natural height so we have
+
+02:16:01.919 --> 02:16:08.318
+like this you know all the text is here our button is here and then we have um and then
+
+02:16:08.318 --> 02:16:15.119
+we have the plot and the plot is like the default 400 pixels size right so that's one way you could
+
+02:16:15.119 --> 02:16:19.919
+do it and then you have a scrolling card this isn't quite what I wanted so I'm going to take
+
+02:16:19.919 --> 02:16:29.198
+that out and um what I was kind of thinking of is if I move the paragraph tag the paragraphs
+
+02:16:29.279 --> 02:16:37.119
+into their own div then they'll be grouped together and um
+
+02:16:40.638 --> 02:16:46.558
+and that that didn't work either um oh I know so we actually have to use card body
+
+02:16:46.558 --> 02:16:51.599
+we're going to use a second card body here and we're going to take this
+
+02:16:51.998 --> 02:17:00.638
+and we're going to move the um we're going to move the text into the into the this one card body the
+
+02:17:00.638 --> 02:17:08.558
+first card body and here we'll say fillable equals false and we'll try that there we go
+
+02:17:10.239 --> 02:17:16.398
+and now we have like the top half is kind of scrolling and then the bottom half is still
+
+02:17:16.638 --> 02:17:22.719
+the bottom half is still trying to fill so what what ends up happening is this one takes up
+
+02:17:22.719 --> 02:17:25.998
+but you know it takes up half of the card this takes up the other half of the card
+
+02:17:26.558 --> 02:17:35.599
+and um and they kind of share the vertical space um filling and fillability and filling are kind of
+
+02:17:35.599 --> 02:17:44.239
+they're they're a bit tricky um and there's a basically there's an article hold on I'm going to
+
+02:17:44.239 --> 02:17:49.998
+go find the article so the the best place to like read about this and like really take your time
+
+02:17:49.998 --> 02:17:58.159
+kind of digesting it is at bslib if you go to layouts and then filling layouts
+
+02:17:58.958 --> 02:18:08.719
+we kind of walk our way through through this um let's go back so there are a couple places a
+
+02:18:08.719 --> 02:18:14.558
+couple pages that have fillability turned on by default um first of all page fillable is pretty
+
+02:18:14.558 --> 02:18:22.799
+obvious uh fill basically you know like the idea is to get everything to fit into one screen um
+
+02:18:22.799 --> 02:18:27.919
+and this would be good for like a dashboard that's that's basically supposed to like take up the
+
+02:18:27.919 --> 02:18:34.878
+whole layout and um you can add a title if you want you could do something like say h2 title
+
+02:18:34.878 --> 02:18:44.159
+um you know and then basically everything is going to kind of share whatever height and width
+
+02:18:44.159 --> 02:18:51.839
+is available to it um page fillable comes with with uh with some arguments that are are useful
+
+02:18:51.839 --> 02:18:56.159
+and you'll see them in a lot of different places so first of all you can decide how much padding
+
+02:18:56.159 --> 02:19:01.839
+is around the outside edge by um with the padding argument I can make these go all the way to the
+
+02:19:01.839 --> 02:19:08.318
+edge by setting padding equals zero or I could give them you know lots of extra padding by saying
+
+02:19:08.318 --> 02:19:17.679
+like something like two rem right I can um the gap is so basically these layouts are driven by
+
+02:19:19.039 --> 02:19:29.198
+a css feature called flex so you can say gap equals zero and that is going to control the
+
+02:19:29.198 --> 02:19:36.719
+space between each element at at this level at the page level so you can see that it uh
+
+02:19:37.438 --> 02:19:42.398
+you know there are three levels here there's the first level first row second row and third row
+
+02:19:42.398 --> 02:19:49.758
+right and everything in between them there's zero space layout columns also has this argument
+
+02:19:49.758 --> 02:19:57.599
+and you can say gap zero there and now you have um you know you have a really tight layout but
+
+02:19:57.599 --> 02:20:03.198
+you can make this bigger you could say one rem or um or pick another value for some reason I might
+
+02:20:03.198 --> 02:20:11.678
+want one on the page level things and two in the in the layout columns when you if you do want
+
+02:20:12.558 --> 02:20:18.958
+filling to happen on mobile screens you can use fillable mobile equals true and that's going to
+
+02:20:18.958 --> 02:20:26.158
+give you something that looks like this so now you know I have the filling layout and um and it
+
+02:20:26.158 --> 02:20:30.798
+continues to be filling on mobile and because I have a layout columns here I'll also have to
+
+02:20:31.519 --> 02:20:41.438
+set say I want this to be fillable on mobile as well um at least I feel like I remember that but
+
+02:20:43.119 --> 02:20:51.999
+okay for at least for the outside layout that works um in page sidebar the the main area is
+
+02:20:51.999 --> 02:21:01.438
+fillable also so the same kind of logic applies you can you know do um you can use gap and you
+
+02:21:01.438 --> 02:21:08.879
+can use padding sometimes you'll need to use these to you know like if you have a uh if you have a
+
+02:21:08.879 --> 02:21:14.958
+layout that you want to kind of live at the edge imagine like a really big map that you want to put
+
+02:21:14.958 --> 02:21:22.558
+in here you'll want to set padding equal to zero and um and last but not least we have page nav bar
+
+02:21:22.558 --> 02:21:30.639
+so page nav bar is a lot like um so page nav bar is you know creates this let's see if we can get
+
+02:21:30.639 --> 02:21:39.198
+it there so it creates a a nav bar page where you can flip between um different sort of studio pages
+
+02:21:39.839 --> 02:21:48.158
+and um and to create a so basically these are um page number is going to take nav panels inside of
+
+02:21:48.158 --> 02:21:57.759
+the page nav bar and turn each nav panel into so here I have the first nav panel is named one and
+
+02:21:57.759 --> 02:22:04.798
+that becomes the the tab target right the thing that you click on and then you have the things
+
+02:22:05.359 --> 02:22:13.038
+that go inside of the content of that that sort of navigate that sort of page element or whatever
+
+02:22:13.599 --> 02:22:22.158
+um this this naming also works for this these nav panels work in in a bunch of other places like
+
+02:22:23.119 --> 02:22:30.558
+we have nav set cards that have tabs on them you could use a nav bar or a nav tab on its own
+
+02:22:31.438 --> 02:22:36.958
+nav set bar or a nav set tab on its own and in every case you're going to kind of say what content
+
+02:22:36.958 --> 02:22:45.519
+is grouped with which uh sort of tab control by using a nav panel um it's hard to see here but
+
+02:22:45.519 --> 02:22:50.639
+a thing that we really like is to do something like this where you say like title is my dashboard
+
+02:22:51.359 --> 02:22:59.599
+um so give it a title and that puts the you know that puts the title up here in the left corner
+
+02:22:59.599 --> 02:23:04.399
+and then we have another um we have a little function called nav spacer and what nav spacer
+
+02:23:04.399 --> 02:23:11.198
+does is it basically just pushes everything in the nav bar to the other side um and if you put
+
+02:23:12.158 --> 02:23:21.759
+tabs to the end and then you get this kind of this nice setup for um for your tabs you can also use
+
+02:23:21.759 --> 02:23:29.918
+nav item if you want to create something in the um in the in the nav bar like a github link or
+
+02:23:29.918 --> 02:23:36.399
+something like that and um you know i'm going to show you very quickly but it's it's it's a
+
+02:23:37.038 --> 02:23:43.519
+and um you know i'm just showing very quickly but you'd want to use like bs icons to put the
+
+02:23:43.519 --> 02:23:50.318
+icon there and and make it an actual link but nav item basically makes something in the nav bar
+
+02:23:50.318 --> 02:23:56.158
+area without associating with some content that's going to be shown when you click on the tab
+
+02:23:57.599 --> 02:24:05.759
+okay so it's your turn to do a little bit of this um in exercise five there's a few plots
+
+02:24:06.239 --> 02:24:10.399
+some of them should be familiar from some of the previous exercises but there isn't
+
+02:24:10.399 --> 02:24:16.479
+enough layout or enough space in the in the layout so your task for this exercise is to
+
+02:24:16.479 --> 02:24:21.678
+try to find a new layout that you can see these plots and you can see um you can you can see the
+
+02:24:21.678 --> 02:24:28.479
+elements and you definitely want to use layout columns and layout column wrap again and you
+
+02:24:29.119 --> 02:24:39.438
+will also want to use um page nav bar and uh nav panel um and then and there's one more thing
+
+02:24:39.438 --> 02:24:44.639
+which is that if you have that i'll just show you really quickly if you have like a row of
+
+02:24:46.479 --> 02:24:52.318
+value boxes for example and you want to let them define how tall they are which is a good idea
+
+02:24:52.318 --> 02:24:58.719
+usually on layout columns you would set fill false which is going to break the filling
+
+02:24:58.719 --> 02:25:05.839
+fillability relationship and it means that these this row is basically going to be as tall as it
+
+02:25:05.839 --> 02:25:12.399
+wants to be and the other rows will adapt so this is a using fill equals false is a great way
+
+02:25:12.399 --> 02:25:19.278
+it's a great thing to do when you have value boxes in in a layout columns or layout column wrap
+
+02:25:20.158 --> 02:25:25.599
+okay so with those hints you're going to go into exercise five and i'm going to keep the
+
+02:25:25.599 --> 02:25:31.198
+same breakout groups it seems like it's working and check the chat if you need some
+
+02:25:31.918 --> 02:25:47.119
+hints or a reminder about the instructions i'll see you in a few minutes
+
+02:25:49.278 --> 02:26:01.119
+so
+
+02:26:19.278 --> 02:26:19.778
+you
+
+02:26:49.278 --> 02:26:52.318
+you
+
+02:27:19.278 --> 02:27:21.339
+you
+
+02:27:49.278 --> 02:27:51.339
+you
+
+02:28:19.278 --> 02:28:21.339
+you
+
+02:28:49.278 --> 02:28:51.339
+you
+
+02:29:19.278 --> 02:29:21.339
+you
+
+02:29:49.278 --> 02:29:51.339
+you
+
+02:30:19.278 --> 02:30:21.339
+you
+
+02:30:49.278 --> 02:30:51.339
+you
+
+02:31:19.278 --> 02:31:21.339
+you
+
+02:31:49.278 --> 02:31:51.339
+you
+
+02:32:19.278 --> 02:32:21.339
+you
+
+02:32:49.278 --> 02:32:51.339
+you
+
+02:33:19.278 --> 02:33:21.339
+you
+
+02:33:49.278 --> 02:33:51.339
+you
+
+02:34:19.278 --> 02:34:21.339
+you
+
+02:34:29.278 --> 02:34:31.339
+you
+
+02:34:41.278 --> 02:34:43.339
+you
+
+02:34:49.278 --> 02:34:51.339
+you
+
+02:35:01.278 --> 02:35:03.339
+you
+
+02:35:13.278 --> 02:35:15.339
+you
+
+02:35:19.278 --> 02:35:21.339
+you
+
+02:35:28.278 --> 02:35:30.339
+you
+
+02:35:36.278 --> 02:35:39.999
+all right welcome back lots of people hanging out until the very end in the
+
+02:35:39.999 --> 02:35:44.278
+breakout which is hopefully a good sign at least that you're enjoying the
+
+02:35:44.278 --> 02:35:49.619
+people you're in the group the group with but let's let's go through the
+
+02:35:49.619 --> 02:35:55.278
+exercise of doing this together again so here's the app that you probably
+
+02:35:55.278 --> 02:36:02.839
+started out with it's it's hard to read anything right so this is one of the
+
+02:36:02.839 --> 02:36:07.119
+sort of problems with the fillable layouts is that you get stuff that looks
+
+02:36:07.119 --> 02:36:11.798
+like this there's one really easy way of solving this problem which is you can
+
+02:36:11.798 --> 02:36:18.239
+say fillable equals false here under site page sidebar and you can make that
+
+02:36:18.239 --> 02:36:25.078
+main area not fillable anymore kind of works like this might be what you wanted
+
+02:36:25.078 --> 02:36:29.558
+it makes nice big you know everything is nice and big and it takes up the whole
+
+02:36:29.558 --> 02:36:32.958
+like you know it kind of fits and then you I don't know I guess from here you
+
+02:36:32.958 --> 02:36:36.139
+would kind of work your way through and you know give these cards different
+
+02:36:36.139 --> 02:36:41.599
+heights and do all of that but it would probably be a little bit better to do
+
+02:36:41.599 --> 02:36:46.198
+something slightly different which would be to take some of these things
+
+02:36:46.198 --> 02:36:49.239
+and put them and to kind of break them up first of all between a couple
+
+02:36:49.239 --> 02:36:53.558
+different pages so the thing that speaks to me is that we have a bunch of plots
+
+02:36:53.558 --> 02:36:58.318
+and maybe the map you know this like this section here feels a lot like one
+
+02:36:58.318 --> 02:37:02.278
+of the apps that we've seen before you know we kind of have three plots
+
+02:37:02.278 --> 02:37:06.399
+together and uh and the map and this plot and the map kind of together so
+
+02:37:06.399 --> 02:37:11.159
+okay like we could go back to that layout and this feels like I don't know
+
+02:37:11.159 --> 02:37:14.879
+maybe maybe a separate table would be better for this so I'm gonna use page
+
+02:37:14.879 --> 02:37:21.318
+nav bar and I'm also gonna use nav panel and naming things is really hard I don't
+
+02:37:21.318 --> 02:37:27.038
+remember we'll just call this plots here and I'm gonna take like all of these
+
+02:37:27.038 --> 02:37:33.199
+plot outputs and the map is that yeah we'll take all of that and we'll put it
+
+02:37:33.199 --> 02:37:41.478
+in this first nav panel and then so that's good I'm gonna do can I I can't
+
+02:37:41.478 --> 02:37:48.758
+fold here oh this is not my normal our studio setup so okay and then I'll make
+
+02:37:48.758 --> 02:37:53.119
+another nav panel and I'll call this like table because I'm not thinking too
+
+02:37:53.119 --> 02:37:59.278
+hard about these names right now but once I do that hmm we're at least gonna
+
+02:37:59.278 --> 02:38:06.839
+be in a better spot probably where you know there's less less mush and this
+
+02:38:06.839 --> 02:38:14.119
+table kind of fits okay so if we want to do that same kind of now that we've
+
+02:38:14.119 --> 02:38:18.879
+kind of split it up we can do that same trick that we just did of making some of
+
+02:38:18.879 --> 02:38:25.278
+the things fillable like we can make we could say fillable equals and I'll make
+
+02:38:25.278 --> 02:38:30.919
+only the plots panel fillable that's one one way of going about this actually
+
+02:38:30.919 --> 02:38:36.278
+kind of like this I think because then we'll have we'll end up having is we'll
+
+02:38:36.278 --> 02:38:39.399
+have this part where we'll be like okay we're gonna kind of like rearrange
+
+02:38:39.399 --> 02:38:43.839
+everything so it fits on one screen and then for the table you know it's use as
+
+02:38:43.839 --> 02:38:48.919
+much space as you need right the other thing to keep in mind here is that we
+
+02:38:48.919 --> 02:38:54.798
+have this sidebar the this sidebar argument to page nav bar becomes a
+
+02:38:54.798 --> 02:39:00.318
+global sidebar so this sidebar persists across all of the pages right it's the
+
+02:39:00.318 --> 02:39:07.278
+same sidebar and if I change the school I go to you know some other school
+
+02:39:07.278 --> 02:39:14.439
+University of Finlay and you know this is now about the University of Finlay so
+
+02:39:14.439 --> 02:39:19.278
+then inside of nav panel inside of this plots nav panel it really just kind of
+
+02:39:19.278 --> 02:39:24.839
+comes about like using our layout column wrap and I'll just say widths
+
+02:39:24.839 --> 02:39:37.078
+width equals 1 3rd and I don't know grab these and put them in here something
+
+02:39:37.078 --> 02:39:43.038
+like that and then layout I'm just gonna do a really simple version right now and
+
+02:39:43.038 --> 02:39:53.159
+say width equals 1 half and let those but these next two cards have split the
+
+02:39:53.159 --> 02:40:02.879
+difference okay and you get something like something like this that's a little
+
+02:40:02.879 --> 02:40:07.278
+better right now I can actually see everything that's pretty close we can
+
+02:40:07.278 --> 02:40:11.558
+see everything for the most part that we'd want to see and this app is gonna
+
+02:40:11.558 --> 02:40:18.359
+mostly work at smaller sizes one other thing that I could show you that you
+
+02:40:18.359 --> 02:40:23.278
+might want to do here is like you know these plots you know they don't need to
+
+02:40:23.278 --> 02:40:27.879
+be they don't need to be so tall so I can set a max height on the first column
+
+02:40:27.879 --> 02:40:32.119
+and I'll say them this they shouldn't be any taller than I'm just gonna pick a
+
+02:40:32.119 --> 02:40:37.078
+random number for right now and say 300 which is 300 pixels and let's find out
+
+02:40:37.078 --> 02:40:46.839
+if this works this is this approach is more of a by more of a like try it out
+
+02:40:46.839 --> 02:40:50.119
+and and see if it works for your layout because every layout is gonna be a
+
+02:40:50.119 --> 02:40:55.558
+little bit different so this kind of works I would probably stay I probably
+
+02:40:55.558 --> 02:41:00.599
+would go with this and then work on making these sort of like spark spark
+
+02:41:00.599 --> 02:41:05.919
+lines right and have them sort of fill that area and by the way you can also so
+
+02:41:05.919 --> 02:41:10.439
+for this card undergraduate like I'm looking at average yearly cost here
+
+02:41:10.439 --> 02:41:16.518
+right cards like value boxes have a full screen option so you could say full
+
+02:41:16.518 --> 02:41:22.078
+screen is true on any of these and it's not turned on by default because you
+
+02:41:22.078 --> 02:41:25.318
+know something that you need to know that you want to do but when that's
+
+02:41:25.318 --> 02:41:30.359
+turned on then cards also expand just like value boxes like we saw for value
+
+02:41:30.359 --> 02:41:36.518
+boxes yeah this this plot looks nice like I this is this is nice and then
+
+02:41:36.518 --> 02:41:41.359
+maybe we'd set it up so that you know you have like a less detailed view for
+
+02:41:41.359 --> 02:41:50.558
+the card or the the smaller card version any questions about this task or the
+
+02:41:50.558 --> 02:41:56.399
+things that we were just talking about fill ability now page nav bar any of
+
+02:41:56.399 --> 02:42:09.439
+those things all right I'm gonna jump over to so for the next we have like 10
+
+02:42:09.439 --> 02:42:13.038
+and 15 minutes I'm gonna show you a couple cool things this is gonna be more
+
+02:42:13.038 --> 02:42:19.679
+of a show-and-tell together so there's a we've seen so far you know you can use
+
+02:42:19.679 --> 02:42:26.679
+sidebars as a way to hide some inputs but sometimes you need and you need
+
+02:42:26.679 --> 02:42:33.758
+information that is either something that can show up when you just when you
+
+02:42:33.758 --> 02:42:36.718
+like that's kind of local to the thing that you're working on and it'll show up
+
+02:42:36.718 --> 02:42:42.238
+just when you click on an element or when you hover over something and for
+
+02:42:42.238 --> 02:42:48.639
+that you can use popovers and tooltips so popovers are basically well in both
+
+02:42:48.639 --> 02:42:52.518
+cases they work more or less the same way in terms of when you're writing the
+
+02:42:52.518 --> 02:42:58.599
+code when you're writing the code you wrap a section and they use popover or
+
+02:42:58.599 --> 02:43:03.518
+tooltip the first argument is going to be the thing that you interact with to
+
+02:43:03.518 --> 02:43:08.359
+see the popover or to see the tooltip and then everything else is what shows
+
+02:43:08.359 --> 02:43:14.199
+up inside of the revealed popover or tooltip so here I'm gonna this creates a
+
+02:43:14.199 --> 02:43:19.639
+pop an icon with a gear make sure that when you're doing using this approach
+
+02:43:19.639 --> 02:43:26.359
+that you give the icon a title and BS icons and font awesome will both set
+
+02:43:26.359 --> 02:43:32.959
+things up correctly for accessibility and so now this creates a gear and when
+
+02:43:32.959 --> 02:43:40.038
+I click on this it'll reveal some content so here's a popover popovers
+
+02:43:40.038 --> 02:43:45.518
+work well with with with icons like that or they work well with buttons you
+
+02:43:45.518 --> 02:43:51.439
+know also you can even use like a shiny action button to open the thing up
+
+02:43:51.439 --> 02:43:58.818
+notice that by default when you enable a popover it appears it's there and it
+
+02:43:58.818 --> 02:43:59.318
+sticks around
+
+02:43:59.925 --> 02:44:02.645
+It's there, and it sticks around.
+
+02:44:02.645 --> 02:44:06.685
+The reason that it does that is because in general, because that makes it possible to
+
+02:44:06.685 --> 02:44:11.165
+put inputs in this section, right?
+
+02:44:11.165 --> 02:44:13.525
+So let's see how we could do something like that.
+
+02:44:13.525 --> 02:44:19.845
+So imagine we have a card, and here we have a, this card has a card header, and there's
+
+02:44:19.845 --> 02:44:22.165
+a plot inside of it.
+
+02:44:22.165 --> 02:44:25.965
+And what we want to do is we want to have a popover that looks kind of like this, except
+
+02:44:25.965 --> 02:44:29.605
+we're going to actually put some inputs inside of there.
+
+02:44:29.605 --> 02:44:35.645
+So at the moment, this requires a little bit of custom classes.
+
+02:44:35.645 --> 02:44:41.485
+There's an HStack class from Bootstrap, and that kind of makes everything...
+
+02:44:31.882 --> 02:44:38.882
+]. HStack is like line everything up horizontally, stack horizontally. With one other class,
+
+02:44:40.822 --> 02:44:47.242
+this class justify content between, that is a flex related class and what it does is it
+
+02:44:47.242 --> 02:44:54.242
+says push everything so that they are as far apart as possible from each other. Once you've
+
+02:44:55.222 --> 02:45:00.742
+done that, it's basically saying the cost first earnings is going to be on one side
+
+02:45:00.882 --> 02:45:05.282
+and then the popover is going to be on the other side of the card header and now you
+
+02:45:05.282 --> 02:45:12.001
+can put something in here that you would use for the grouping variable. You can put some
+
+02:45:12.001 --> 02:45:17.481
+inputs here that are going to affect the plot is the idea. Tooltips are really similar,
+
+02:45:17.481 --> 02:45:24.481
+like I said, a tooltip has a trigger element, so here I'm going to use the info circle and
+
+02:45:25.481 --> 02:45:32.481
+in this case, in the case of a tooltip, you're not going to put much in there in terms of
+
+02:45:35.481 --> 02:45:41.481
+content. It's just a little bit of content that's revealed when you need it. Help text
+
+02:45:41.481 --> 02:45:46.481
+is a good thing for this. Here I have a tooltip that's going to say, when you hover over it,
+
+02:45:46.481 --> 02:45:53.481
+it says regular expressions aren't supported. I've put that in as part of the label for
+
+02:45:53.481 --> 02:45:59.481
+a text input. You can just use this snippet or come back to this to reference it, but
+
+02:45:59.481 --> 02:46:05.481
+basically, I gave a tag list to label and then that's how we can get a couple different
+
+02:46:05.481 --> 02:46:11.481
+elements into the label area. Then you put whatever, you look for your school or something
+
+02:46:11.481 --> 02:46:19.481
+here. This is super helpful for giving a little bit of extra context around inputs. Like I
+
+02:46:20.481 --> 02:46:26.481
+said, card header and card footer are both great places to use these. You can actually
+
+02:46:26.481 --> 02:46:34.481
+have multiple HStacks. Here I'm taking the above example, using HStack to have this side
+
+02:46:34.481 --> 02:46:41.482
+and then a div, so I have a little toolbar area over here. That div then also has an HStack
+
+02:46:42.482 --> 02:46:50.482
+and then a gap. The more often I write this, the more likely it becomes that we'll end up
+
+02:46:50.482 --> 02:46:56.482
+with helper functions in BSLib that would do this for you, but for now, it's a couple
+
+02:46:56.482 --> 02:47:02.482
+classes that you can put together. Here, inside of this div, I've put a popover and a tooltip.
+
+02:47:02.482 --> 02:47:06.482
+You have a popover and then maybe you have your tooltip next to it, or maybe you make
+
+02:47:06.482 --> 02:47:17.482
+them both popovers or tooltips. Let me try to do this interactively instead of sending
+
+02:47:17.482 --> 02:47:29.482
+everyone to breakouts because this is a pretty neat way of... I'll just demo the app for
+
+02:47:29.482 --> 02:47:42.482
+exercise five. No, it should be... I got out of seven. Okay, so look at seven together.
+
+02:47:42.482 --> 02:47:47.482
+All right, so what I did here is I have... Do you remember this plot from earlier, the
+
+02:47:47.482 --> 02:47:56.482
+average cost versus median earnings? I had an input, which was radio buttons, that says
+
+02:47:56.482 --> 02:48:03.482
+here you have a couple choices and it's going to control the color of the variables. Before
+
+02:48:03.482 --> 02:48:10.482
+we had that in the hidden in the sidebar, but using the same idea, I have a card and
+
+02:48:10.482 --> 02:48:15.482
+then the card header, the HStack, and then the title and the popover. You can click on
+
+02:48:15.482 --> 02:48:23.482
+this and see the input, and you can see how this input affects the plot. This is one of
+
+02:48:23.482 --> 02:48:31.482
+the reasons why they stick around, so that you can move between them, move between options,
+
+02:48:31.482 --> 02:48:36.482
+and when you're done with it, you click the X or click the trigger again, and it'll go
+
+02:48:36.482 --> 02:48:50.482
+away. Another way that you can group content together is with an accordion. Accordions
+
+02:48:50.482 --> 02:48:57.482
+are sort of like nav sets, except they, at least in terms of their design philosophy,
+
+02:48:57.482 --> 02:49:03.482
+you have one accordion collects a bunch of different accordion panels, and an accordion
+
+02:49:03.482 --> 02:49:09.482
+panel has a title, and then everything else is content that goes inside of it. So the
+
+02:49:09.482 --> 02:49:16.482
+first argument is the title, and then everything else becomes the content. There's a couple
+
+02:49:17.482 --> 02:49:22.482
+interesting arguments, like you can use open to decide which accordions are open by default,
+
+02:49:22.482 --> 02:49:29.482
+and you can decide which, you know, you can decide if one or more accordions are open
+
+02:49:29.482 --> 02:49:35.482
+at a time, and you can also give each accordion panel, each of these titles, they can have
+
+02:49:35.482 --> 02:49:42.482
+icons as well. So it's a really useful way, like here's an example app where, you know,
+
+02:49:42.482 --> 02:49:48.482
+you can imagine it would be much better if these were sort of grouped into sections, like
+
+02:49:48.482 --> 02:49:54.482
+putting these two, you know, these two inputs together in an accordion that you could expand
+
+02:49:54.482 --> 02:50:01.482
+or contract as you, you know, or hide as you want. The other thing I want to show you
+
+02:50:01.482 --> 02:50:06.482
+quickly in the last couple of minutes is a couple other inputs that we have in BS Lib.
+
+02:50:07.482 --> 02:50:15.482
+Instead of checkbox input, like these, if you have a situation where you want people to be
+
+02:50:15.482 --> 02:50:21.482
+able to turn something on or off, you could instead use input switch, and I'll just make
+
+02:50:21.482 --> 02:50:26.482
+all of these input switch really quickly. You can see that you can just basically switch
+
+02:50:26.482 --> 02:50:33.482
+from checkbox input to input switch, and you immediately get this kind of treatment where
+
+02:50:33.482 --> 02:50:40.482
+everything becomes a toggle that you can turn on and off. Okay, there's also this really
+
+02:50:40.482 --> 02:50:50.482
+cool new thing that I'm really pleased with, which is an input task button, and there's a
+
+02:50:50.482 --> 02:50:55.482
+neat talk by Joe Ching called Managing Long-Running Operations, and it pairs with a feature
+
+02:50:55.482 --> 02:51:00.482
+from recent Shiny called Extended Task, but you don't need to know any of that to be able to
+
+02:51:00.482 --> 02:51:07.482
+use it. So here I have, basically I just have an action button where I have decided that
+
+02:51:07.482 --> 02:51:11.482
+instead of having this plot update whenever you change one of these toggles, I want it to
+
+02:51:11.482 --> 02:51:17.482
+update when you click the action button. So I can make some changes and then click the action
+
+02:51:17.482 --> 02:51:22.482
+button. Here's the problem with this is if, what if I like click this a few times, I've just
+
+02:51:22.482 --> 02:51:27.482
+clicked it a few times, and you can see like each click becomes a new recalculation and going
+
+02:51:28.482 --> 02:51:34.482
+back and figuring out, you know, redrawing the map, right? Input task button, you could
+
+02:51:34.482 --> 02:51:42.482
+basically just drop in for action button, and it'll do the same thing except better. So
+
+02:51:42.482 --> 02:51:49.482
+basically, when you click the button, it'll turn into a processing state, and it will give
+
+02:51:49.482 --> 02:51:53.482
+you some feedback that some work is happening. It automatically knows when that work is
+
+02:51:53.482 --> 02:52:00.482
+done, and it'll go back to its regular state when that happens. In the meantime, it won't
+
+02:52:00.482 --> 02:52:06.482
+let you keep clicking this. So I'm clicking right now, click, click, click, and nothing
+
+02:52:06.482 --> 02:52:13.482
+happens until it returns, and then it lets me click again. So this is really useful if you
+
+02:52:13.482 --> 02:52:17.482
+have something that's like a long-running task, but also you want to keep people from just
+
+02:52:17.482 --> 02:52:22.482
+like mashing the button. You know, you get both the visual indication that something is
+
+02:52:22.482 --> 02:52:28.482
+happening, and it prevents them from clicking the button a bunch. The last feature to show
+
+02:52:28.482 --> 02:52:35.482
+you is dark mode. This is like one of my favorite things of all time, and here's a little
+
+02:52:35.482 --> 02:52:41.482
+snippet that you can use to see this. Like it works really well in a page nav bar with the
+
+02:52:41.482 --> 02:52:46.482
+nav spacer trick that I showed you earlier and with the nav item. It's going to be hard to
+
+02:52:46.482 --> 02:52:54.482
+see here, but you end up with a little dark mode switcher kind of button, and you can click on
+
+02:52:54.482 --> 02:53:03.482
+that, and it actually will follow the current color scheme of the user's system and
+
+02:53:03.482 --> 02:53:09.481
+everything. So it works pretty well, and there's a lot more to it, but you can just basically
+
+02:53:10.481 --> 02:53:16.481
+drop it into your app, and then you have automatic dark mode. So we're coming up on the end of
+
+02:53:16.481 --> 02:53:22.481
+time, and I had planned for a little bit more time for questions and everything, so I will
+
+02:53:22.481 --> 02:53:28.481
+stick around after the end of the workshop to answer any questions that you have or just to
+
+02:53:28.481 --> 02:53:33.481
+talk about Shiny or BS Lib or anything, but I really appreciate you being here, and I
+
+02:53:33.481 --> 02:53:39.481
+appreciate our medicine for the opportunity to talk about BS Lib and Shiny, and thank you to
+
+02:53:39.481 --> 02:53:45.481
+everyone, especially those who are leading the breakout groups and making that a fun
+
+02:53:45.481 --> 02:53:50.481
+experience for everyone. So thank you.
+
+02:53:51.481 --> 02:53:56.481
+Thanks, Garrick. That was great.
+
+02:54:08.481 --> 02:54:11.481
+Hi, Garrick. Do you mind if I ask a question?
+
+02:54:11.481 --> 02:54:14.481
+I would love that. Thank you.
+
+02:54:15.481 --> 02:54:23.481
+With this new feature of Quarto emails, of being able to send emails by Posit Connect,
+
+02:54:23.481 --> 02:54:30.481
+do you know if in the future some of these amazing BS Lib features will be added to Quarto
+
+02:54:30.481 --> 02:54:31.481
+email?
+
+02:54:33.481 --> 02:54:36.481
+Do you mean in terms of theming?
+
+02:54:37.481 --> 02:54:46.481
+Yeah, in terms of theming. Yeah, that I want to get to use the cards, the layouts, to create
+
+02:54:46.481 --> 02:54:54.481
+beautiful theme emails. I know it doesn't work because I've tried it out, but I'm wondering
+
+02:54:54.481 --> 02:54:58.481
+if in the future that would be a feature that we could use.
+
+02:54:58.481 --> 02:55:12.481
+Yeah. So I am working right now on this idea of unified theming. So the idea that you would
+
+02:55:12.481 --> 02:55:18.481
+want to be able to quickly create an email that follows your brand guidelines or something
+
+02:55:18.481 --> 02:55:24.481
+like that. You want to be able to quickly make a Shiny, like use the same sort of config
+
+02:55:25.481 --> 02:55:29.481
+file to say like, my Shiny app should look like this and my email should look like that and my
+
+02:55:29.481 --> 02:55:36.481
+web pages should look like this. So that's definitely on the roadmap. The hard part about
+
+02:55:36.481 --> 02:55:44.481
+emails is that email clients are so weird and they're so weird about HTML and how they process
+
+02:55:44.481 --> 02:55:53.481
+things. It's like designing web content for emails is basically like a totally different
+
+02:55:53.481 --> 02:56:01.481
+world. Stuff that works in regular websites is not supported in most email clients. And
+
+02:56:01.481 --> 02:56:08.481
+every email client is weird. It's like a whole thing. So it's unlikely that the layout
+
+02:56:08.481 --> 02:56:16.481
+functions will work in emails. And it's also not our fault because HTML and CSS in emails
+
+02:56:16.481 --> 02:56:21.481
+is just very broken, unfortunately.
+
+02:56:21.481 --> 02:56:27.481
+Do you have any, sorry for the follow up, I promise it's the last one. Do you have any
+
+02:56:27.481 --> 02:56:36.481
+suggestions for me? So I work at Apple and want to do an email for the team that has some
+
+02:56:36.481 --> 02:56:44.481
+standard theme that we use internally. And so far I have a lot of restrictions on what I can
+
+02:56:44.481 --> 02:56:50.481
+do in Quarto emails. So do you have any suggestions for me so I can improve how the Quarto
+
+02:56:50.481 --> 02:56:58.481
+emails look? Is there any package or anything? Like using mail, not Gmail, how is that
+
+02:56:58.481 --> 02:57:00.481
+specific?
+
+02:57:00.481 --> 02:57:10.481
+Yeah. I don't know. I have not used Quarto emails much. Actually at all. Like, Quarto
+
+02:57:10.481 --> 02:57:16.481
+moves fast. And so that's not a feature I've had a chance to play with. I have used Blastula
+
+02:57:16.481 --> 02:57:23.481
+before, which is philosophically similar. And I think Rich is actually the person who
+
+02:57:23.481 --> 02:57:31.481
+implemented both. And I have done some very weird things to try to get emails to look the
+
+02:57:32.481 --> 02:57:40.481
+way that I want them. And it eventually involved actually using regular expressions and changing
+
+02:57:40.481 --> 02:57:48.481
+CSS declarations. It was not recommended. I really, I hope that by this time next year, the
+
+02:57:48.481 --> 02:57:56.481
+next workshop will be about how you can define, the project I'm working on is basically how you
+
+02:57:56.481 --> 02:58:02.481
+could just make a few setting declarations in like your Quarto YAML file or something and end
+
+02:58:02.481 --> 02:58:09.481
+up with apps that look, they're like a website, a dashboard, emails, everything just sort of
+
+02:58:09.481 --> 02:58:11.481
+look consistent.
+
+02:58:11.481 --> 02:58:14.481
+I look across these tools.
+
+02:58:14.481 --> 02:58:16.481
+Yeah. Yeah, that's the idea.
+
+02:58:16.481 --> 02:58:22.481
+Okay. Thank you very much. I'll be participating on that workshop.
+
+02:58:22.481 --> 02:58:24.481
+Nice.
+
+02:58:24.481 --> 02:58:26.481
+Thank you so much for listening to me.
+
+02:58:26.481 --> 02:58:28.481
+Thank you.
+
+02:58:28.481 --> 02:58:29.481
+I have a question.
+
+02:58:29.481 --> 02:58:30.481
+Yeah, absolutely.
+
+02:58:30.481 --> 02:58:35.481
+So at the beginning of your slides, you had this, like a chart, it's really like a graph, right? Or
+
+02:58:35.481 --> 02:58:40.481
+flow chart or whatever it is, with VS Live in the middle. Is it possible to make something like
+
+02:58:40.481 --> 02:58:46.481
+that to be a user input where you click on one of those things and then maybe you change
+
+02:58:46.481 --> 02:58:49.481
+something and then the whole diagram changes afterwards?
+
+02:58:49.481 --> 02:58:51.481
+Yeah, that would be cool.
+
+02:58:51.481 --> 02:58:55.481
+Yeah, I mean, anything's possible.
+
+02:58:55.481 --> 02:58:56.481
+That's a great idea.
+
+02:58:56.481 --> 02:58:58.481
+But people aren't doing that.
+
+02:58:58.481 --> 02:59:00.481
+No, I don't think so.
+
+02:59:00.481 --> 02:59:03.481
+This is, but it's totally possible.
+
+02:59:03.481 --> 02:59:05.481
+This is driven by Mermaid.
+
+02:59:05.481 --> 02:59:13.481
+And so this is a Mermaid graph that I did in, that I did in, and Quarto has really nice support for
+
+02:59:13.481 --> 02:59:20.481
+that kind of thing. But it's ultimately it's a JavaScript library that draws this and I have, I know that I have
+
+02:59:20.481 --> 02:59:26.481
+helped people make Shiny, I've helped people use Mermaid graphs in Shiny.
+
+02:59:26.481 --> 02:59:31.481
+So, it is possible. And then after that it's all about just writing some JavaScript.
+
+02:59:31.481 --> 02:59:36.481
+I shouldn't say just, like that's a lot of work, but it's about writing JavaScript that connects it.
+
+02:59:36.481 --> 02:59:46.481
+Yeah, that would be a tall task, but it'd be interesting if you could make each of those to be, and have the whole thing react to your choices and change.
+
+02:59:46.481 --> 02:59:55.481
+Oh yeah, totally, totally do. It's totally, totally within the realm of possibility. That's, yeah, just a question of time and making it happen.
+
+02:59:55.481 --> 02:59:56.481
+Right.
+
+02:59:56.481 --> 03:00:06.481
+Yeah, cool. Good suggestion.
+
+03:00:06.481 --> 03:00:10.481
+Are there any other questions? I'm very happy to answer. Anything else?
+
+03:00:10.481 --> 03:00:22.481
+Hi, my name is Agata and actually I have a question, like, okay, so I am completely new to Shiny, and I am just amazed by the workshops and by the possibilities.
+
+03:00:22.481 --> 03:00:31.481
+I wanted to ask you, like, also, like, okay, so maybe if you have some recommendations for how to create a personal web page.
+
+03:00:31.481 --> 03:00:42.481
+Yeah, so I highly recommend Quarto. That's, I guess, first of all, that's where, like what I use for my own website.
+
+03:00:43.481 --> 03:00:55.481
+I pushed the wrong buttons. It's quarto.org. So if you come here, there's, this is sort of like, Quarto is kind of like the next generation of R Markdown.
+
+03:00:55.481 --> 03:00:57.481
+If you're familiar with R Markdown.
+
+03:00:57.481 --> 03:01:01.481
+Yeah, sure, sure. Yeah, I haven't heard about Quarto, but like, yeah.
+
+03:01:02.481 --> 03:01:17.481
+And this is, this is awesome. So there's a section under guide on creating a website. There's even a section on creating a blog, and I mean, yeah, so first of all, my personal website is using Quarto.
+
+03:01:18.481 --> 03:01:35.481
+And then second of all, this website that I created for the workshop is also written in Quarto. And I mostly, you know, mostly just spend, when I'm doing that kind of thing, spend a lot of time over here in the docs.
+
+03:01:35.481 --> 03:01:45.481
+But it's, there's also the search function which you can use, and that's really helpful. But this tutorial is pretty great, and it's a good place to start. So.
+
+03:01:45.481 --> 03:02:09.481
+Okay, so one more question. Like, now for my research, I'm like creating, because I'm bioinformatician, I create the pipeline with SnakeMake. And I was actually thinking if it's possible to like, either build like the Shiny app to like visualize the data, you know, in this interactive mode and so on.
+
+03:02:09.481 --> 03:02:18.481
+Because for now, like I'm plotting 1000 plots, and you know, no one wants to go to them, obviously. So.
+
+03:02:18.481 --> 03:02:20.481
+Yeah, totally.
+
+03:02:20.481 --> 03:02:27.481
+So that's a great question. There's, there's a section here on interactivity too, and specifically Shiny.
+
+03:02:27.481 --> 03:02:37.481
+And you can, you can actually write Shiny apps that are inside of Quarto documents. So you could totally do that as one way of doing this.
+
+03:02:38.481 --> 03:02:43.481
+This is, this one focuses on R, but it works just as well for Python.
+
+03:02:43.481 --> 03:02:55.481
+And Shiny for Python. There is a whole, like if you're, if you're using Python and you want to stay with Python, you can, we actually also have Shiny for Python as well.
+
+03:02:55.481 --> 03:02:56.481
+Okay.
+
+03:02:56.481 --> 03:03:10.481
+And it's, it's kind of like, we get to take, we get to take some of the, so in the R world, like some of what I went through in the workshop is limited to, like you have to use Shiny, library Shiny and library bslib.
+
+03:03:10.481 --> 03:03:17.481
+And then you get to basically you get to the same place that Shiny for Python is right now, which is pretty nice.
+
+03:03:18.481 --> 03:03:31.481
+Highly recommend that. Also, there's this section on dashboards. So, dashboards are, this is another way that you can make these, make these, make these kinds of apps, like dashboard kinds of apps.
+
+03:03:31.481 --> 03:03:40.481
+This also uses a lot of the ideas behind bslib. So if you, so like the stuff that you learned today is still going to be, you know, like, it's, it's still floating around in the dashboard.
+
+03:03:40.481 --> 03:03:49.481
+And, and there's definitely a section in the dashboards about using Shiny for Python or Shiny for R, either one will work.
+
+03:03:49.481 --> 03:03:53.481
+And again, it makes an interactive app that, that's pretty cool.
+
+03:03:53.481 --> 03:04:00.481
+Yeah. Okay. So, like, okay, so Quadro is also supporting, it's also working under Python, like with Python.
+
+03:04:00.481 --> 03:04:01.481
+Yeah. Yeah.
+
+03:04:01.481 --> 03:04:04.481
+Okay. Perfect. Okay. Thank you so much.
+
+03:04:04.481 --> 03:04:06.481
+Awesome. Good luck.
+
+03:04:06.481 --> 03:04:08.481
+Thanks.
+
+03:04:08.481 --> 03:04:10.481
+I have a question.
+
+03:04:10.481 --> 03:04:11.481
+Sure.
+
+03:04:11.481 --> 03:04:20.481
+So, I wanted to know if there is, by the way, a great presentation, and I really enjoyed, enjoyed the workshop.
+
+03:04:21.481 --> 03:04:41.481
+So, my question was, I have some previous, like, I'm a little bit familiar with Shiny, I have worked on some projects where I built like Shiny app to visualize the results of like, where I can choose different variables and get my, like, nice plots and everything.
+
+03:04:41.481 --> 03:04:56.481
+So, I wanted to build a Shiny app, which has some presentations in it, but, like, most of the presentations are not created in R in general.
+
+03:04:56.481 --> 03:05:04.481
+So, they are maybe created in, like, PowerPoint or something, like, based on, like, collaborative work someone else did it.
+
+03:05:04.481 --> 03:05:23.481
+So, I wanted to add that, like, embed it, embed that in a Shiny app. Is that possible in any easier, like, is there any easier way to, like, just use the presentation as it is, instead of, like, doing it once again, like, all over again?
+
+03:05:23.481 --> 03:05:25.481
+Yeah.
+
+03:05:25.481 --> 03:05:29.481
+Yes and no.
+
+03:05:29.481 --> 03:05:37.481
+So, I think the fundamental question is, can you make a web page from the presentation?
+
+03:05:37.481 --> 03:05:45.481
+And I don't, I'm not super familiar with, it's been a long time since I've used PowerPoint.
+
+03:05:45.481 --> 03:05:52.481
+You know, these days I, if I need a presentation I'll use, I'll use Cordo.
+
+03:05:53.481 --> 03:06:03.481
+I haven't used Cordo for the, like, these days, but the presentations I'm talking about is, like, from way back, like, two or three years back, and I just don't want to redo those stuff.
+
+03:06:03.481 --> 03:06:14.481
+Right. Totally, totally get that. Yeah. Yeah, I think the, so the thing is, like, if you can turn it into a web page in some way, like, PowerPoint might have an export to web page thing.
+
+03:06:14.481 --> 03:06:17.481
+That seems possible.
+
+03:06:17.481 --> 03:06:35.481
+Once you have it as a, as a web page, you can, you can use what's called an iframe. You have a couple options. If you're in Shiny, you can use an iframe to embed the presentation in your Shiny app.
+
+03:06:36.481 --> 03:06:54.481
+It's like a little bit of work to set it up so that it's, like, hosted in the, it's, like, in the right place. But for the most part, like, if you, you would use the iframe to, like, so an iframe in web HTML is basically a way that you take one web page from somewhere else and put it into the current web page.
+
+03:06:54.481 --> 03:07:06.481
+Like, technically, this block right here is a whole presentation. It's actually, like, its own web page, and it's inside of an iframe.
+
+03:07:06.481 --> 03:07:12.481
+And if you can do that, then 100% get it, you'll, it's easy to get it into a Shiny app.
+
+03:07:12.481 --> 03:07:17.481
+The hard part is getting that first step of, like, it, where it's its own web page.
+
+03:07:17.481 --> 03:07:27.481
+Yeah, so my best way would be creating a page from those, like, slides, and then trying to embed that on the Shiny app.
+
+03:07:27.481 --> 03:07:29.481
+Yeah, yeah, exactly.
+
+03:07:29.481 --> 03:07:50.481
+Yeah, I've definitely, I know I've done things the other way where I've made PowerPoint presentations out of, like, Scheringen slides or, or, like, Quarto slides, where I've, like, taken screenshots and made them, like, the screenshot is the slide, but it's really just I have screenshots.
+
+03:07:50.481 --> 03:07:58.481
+That might be the easiest way. So just, like, export the slides as PNG. And then, then you have images and then you can, you can do something with that.
+
+03:07:59.481 --> 03:08:05.481
+Yeah, that, that sounds easier than before, but thank you so much for that.
+
+03:08:05.481 --> 03:08:06.481
+Yeah, you're welcome.
+
+03:08:06.481 --> 03:08:18.481
+Yeah, no problem.
+
+03:08:18.481 --> 03:08:20.481
+Does anyone else have a question.
+
+03:08:20.481 --> 03:08:23.481
+I see a few people still hanging out.
+
+03:08:23.481 --> 03:08:32.481
+Maybe you're already, you've already moved on and went to get coffee or something.
+
+03:08:32.481 --> 03:08:37.481
+Some, some folks might just stay on if they're going to the next workshop to it's the same link.
+
+03:08:37.481 --> 03:08:39.481
+Oh, great.
+
+03:08:39.481 --> 03:08:41.481
+Cool.
+
+03:08:41.481 --> 03:08:45.481
+All right, well thank you so much. Yeah, that was really great.
+
+03:08:45.481 --> 03:08:47.481
+This is wonderful.
+
+03:08:47.481 --> 03:08:49.481
+Bye everyone.

@@ -1,0 +1,1393 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:11.040
+Hello everyone, welcome to an exciting talk.
+
+00:00:11.040 --> 00:00:19.480
+So today we'll be discussing about this talk, which is When Rivers Speak, Analyzing Massive
+
+00:00:19.480 --> 00:00:24.160
+Water Quality Datasets Using SSH in Positron.
+
+00:00:24.160 --> 00:00:32.880
+So Roger Gers is a Cure A engineer at Poseidon, so stay tuned and follow this exciting talk.
+
+00:00:32.880 --> 00:00:39.200
+Thank you.
+
+00:00:39.200 --> 00:00:40.200
+Thank you very much.
+
+00:00:40.200 --> 00:00:41.200
+Yeah.
+
+00:00:41.200 --> 00:00:47.680
+And yeah, so my talk today is When Rivers Speak, Analyzing Massive Water Quality Datasets Using
+
+00:00:47.680 --> 00:00:49.680
+Remote SSH in Positron.
+
+00:00:49.680 --> 00:00:51.320
+My name is Rodrigo.
+
+00:00:51.320 --> 00:00:55.840
+A little bit about myself, just to start with.
+
+00:00:55.840 --> 00:01:00.520
+I'm a Cure Engineer at Posit, and I'm originally from Salvador, Brazil.
+
+00:01:00.520 --> 00:01:02.439
+That's my city, by the way.
+
+00:01:02.439 --> 00:01:04.320
+But I'm based in Pittsburgh.
+
+00:01:04.320 --> 00:01:09.000
+My background is actually in chemistry, so it's very exciting actually to be at PyData
+
+00:01:09.000 --> 00:01:14.320
+Boston with the Python community, because then I can get to learn a lot from the different
+
+00:01:14.320 --> 00:01:17.000
+talks and so on from everyone.
+
+00:01:17.320 --> 00:01:22.360
+My main interests lie at the intersection of statistics, data, and society, especially
+
+00:01:22.360 --> 00:01:28.360
+with how to use data and statistics to understand and improve the world.
+
+00:01:28.360 --> 00:01:33.800
+That's the overarching theme of many of my talks, and that's related to what I'll be
+
+00:01:33.800 --> 00:01:36.519
+presenting today.
+
+00:01:36.519 --> 00:01:40.480
+Throughout the talk, if anyone has any questions, please feel free to interrupt.
+
+00:01:40.480 --> 00:01:42.680
+I really don't mind.
+
+00:01:42.680 --> 00:01:46.559
+So yeah.
+
+00:01:47.120 --> 00:01:52.519
+So just an overview of the presentation, I'll start by talking about rivers as storytellers
+
+00:01:52.519 --> 00:01:54.160
+of human history.
+
+00:01:54.160 --> 00:02:00.440
+Then I'll dive more into the U.S. Geological Survey sensor network.
+
+00:02:00.440 --> 00:02:06.599
+And then we'll talk more about the technical aspects of how to take advantage of all those
+
+00:02:06.599 --> 00:02:12.759
+massive pieces of data that are available through APIs.
+
+00:02:12.759 --> 00:02:18.240
+And then we'll talk more about remote station positron as a potential solution to enable
+
+00:02:18.240 --> 00:02:22.240
+capturing and making sense of all of this data.
+
+00:02:22.240 --> 00:02:26.600
+And then in conclusion, I'll just wrap up with how data science can be a tool for a
+
+00:02:26.600 --> 00:02:29.619
+better world.
+
+00:02:29.619 --> 00:02:37.000
+So beginning with rivers as storytellers, that's something that I became very interested
+
+00:02:37.160 --> 00:02:43.919
+in as a chemist, who is also interested in the statistics part of things.
+
+00:02:43.919 --> 00:02:51.279
+So this is a map of the U.S. with all rivers that someone used open source data from the
+
+00:02:51.279 --> 00:03:00.160
+National Hydrography Dataset in order to capture all of this.
+
+00:03:00.160 --> 00:03:06.960
+And in terms of rivers, what really makes me very fascinated about them is their ability
+
+00:03:06.960 --> 00:03:14.720
+to record several dimensions of human history from migration patterns to industrialization,
+
+00:03:14.720 --> 00:03:20.919
+ecological resilience, inequality, neglect, and environmental deregulation or regulation
+
+00:03:20.919 --> 00:03:21.919
+and so on.
+
+00:03:21.919 --> 00:03:27.520
+So just as an example, that's a historical map of the Delaware River showcasing the route
+
+00:03:27.520 --> 00:03:30.800
+that George Washington's troops went through.
+
+00:03:30.800 --> 00:03:39.919
+So that idea of rivers as storytellers of societies and of human history has always
+
+00:03:39.919 --> 00:03:41.279
+interested me.
+
+00:03:41.279 --> 00:03:46.399
+And that's part of the reason why I decided to talk about this today.
+
+00:03:46.399 --> 00:03:52.520
+And more particularly, along with that theme of rivers as storytellers, I was always fascinated
+
+00:03:52.520 --> 00:03:59.479
+by the amount of data that's produced, especially here in the United States, from these rivers.
+
+00:03:59.479 --> 00:04:05.839
+I live in Pittsburgh, and Pittsburgh has essentially the beginning of the Ohio River.
+
+00:04:05.839 --> 00:04:10.720
+There are two rivers, the Alangany and the Monongahela River, that get together, forming
+
+00:04:10.720 --> 00:04:12.639
+the Ohio River.
+
+00:04:12.639 --> 00:04:17.220
+And the Ohio River has actually been used for a lot of mathematical modeling in terms
+
+00:04:17.220 --> 00:04:22.820
+of like pollution and patterns of rivers, just because of the pollution that goes into
+
+00:04:22.820 --> 00:04:24.339
+it, unfortunately.
+
+00:04:24.339 --> 00:04:31.260
+So that's what I was interested as well, about the idea of capturing that data from
+
+00:04:31.260 --> 00:04:38.739
+U.S. Geological Survey in order to try to understand patterns of those rivers.
+
+00:04:38.739 --> 00:04:46.140
+And in terms of the size of that network, the United States has one of the largest environmental
+
+00:04:46.140 --> 00:04:54.980
+monitoring systems in the world, with over 2.3 million sites spread all over the country.
+
+00:04:54.980 --> 00:05:01.059
+And many of those sites are capturing data every 15 minutes.
+
+00:05:01.059 --> 00:05:05.920
+The one they station at the beginning of the Ohio River, for example, it captures a bunch
+
+00:05:05.920 --> 00:05:08.859
+of water quality parameters every 15 minutes.
+
+00:05:08.859 --> 00:05:15.980
+And there is an API streaming that data as we speak, leading to hundreds of millions
+
+00:05:15.980 --> 00:05:21.839
+of measurements, as well as several years of data.
+
+00:05:21.839 --> 00:05:27.059
+Some of the more recent data is more complete.
+
+00:05:27.059 --> 00:05:37.700
+However, even in the past, there has been some data being streamed from those stations.
+
+00:05:37.700 --> 00:05:39.100
+Which leads to two questions.
+
+00:05:39.100 --> 00:05:42.940
+Why should we care about river data?
+
+00:05:42.940 --> 00:05:51.260
+As well as how can we listen to these massive amounts of data that rivers have been sharing?
+
+00:05:51.260 --> 00:05:58.859
+And to answer the first question, I think water quality data reveals a lot of things
+
+00:05:58.859 --> 00:06:05.579
+that are of societal concern, including shifts in regulation, political priorities, economic
+
+00:06:05.579 --> 00:06:11.619
+development, environmental justice, and climate transformations, in a way that data is not
+
+00:06:11.619 --> 00:06:19.260
+just numbers, but the social history that encodes a lot of aspects of our societies.
+
+00:06:19.260 --> 00:06:23.220
+So that's why I became more and more interested in that.
+
+00:06:23.220 --> 00:06:32.299
+And in terms of how can we listen to the data that rivers are sharing, that is a challenge.
+
+00:06:32.299 --> 00:06:38.579
+Because both in terms of computation, as well as storage, and so on, it's difficult
+
+00:06:38.579 --> 00:06:46.579
+to be able to capture the magnitude of that data and to be able to process it and analyze
+
+00:06:46.579 --> 00:06:47.859
+it and so on.
+
+00:06:47.859 --> 00:06:53.739
+So that's what made me really intrigued by that problem.
+
+00:06:53.739 --> 00:06:58.220
+Which leads to us talking about the technical overview of what we'll do today.
+
+00:06:58.220 --> 00:07:05.100
+So the first step was to fetch the national data, a national site index.
+
+00:07:05.100 --> 00:07:12.220
+That national site index contains the number that's assigned for each of those sites that
+
+00:07:12.220 --> 00:07:14.739
+are spread all over the United States.
+
+00:07:14.739 --> 00:07:20.619
+And the reason why we have to be very strategic about how to fetch is because those numbers
+
+00:07:20.619 --> 00:07:24.779
+are together with a massive amount of data.
+
+00:07:24.779 --> 00:07:28.940
+And a lot of those APIs are quite old.
+
+00:07:28.940 --> 00:07:34.559
+So it's difficult to be able to process all of that and to have a correlation between
+
+00:07:34.559 --> 00:07:36.899
+each number and each site.
+
+00:07:36.899 --> 00:07:42.739
+And there's no very accessible way to see here's a list of all numbers and all sites.
+
+00:07:42.739 --> 00:07:49.739
+You really have to make API calls and so on to the USGS water services API.
+
+00:07:49.739 --> 00:07:57.579
+And then we'll go through the sink ingestion of three years of data.
+
+00:07:57.579 --> 00:08:02.299
+We are only doing three years because just three years is already massive.
+
+00:08:02.299 --> 00:08:06.640
+We could go to 30 years of data and see what happens.
+
+00:08:06.640 --> 00:08:14.260
+One caveat though is that some of the data for some stations only became available recently.
+
+00:08:14.260 --> 00:08:16.019
+So that's the tricky part.
+
+00:08:16.019 --> 00:08:21.820
+So there could be a high level of missingness in some stations and so on.
+
+00:08:21.820 --> 00:08:27.820
+So that's what the third topic is, scaling to 30 years.
+
+00:08:27.820 --> 00:08:33.940
+And then followed by structuring the big data with Parquet or DuckDB.
+
+00:08:33.940 --> 00:08:39.219
+And then finally interpreting environmental time series as a sociological and historical
+
+00:08:39.219 --> 00:08:43.780
+evidence.
+
+00:08:43.780 --> 00:08:46.340
+Any questions so far that anyone has?
+
+00:08:46.340 --> 00:08:47.340
+Yeah, go ahead.
+
+00:08:47.340 --> 00:08:48.340
+Where does this data live?
+
+00:08:48.340 --> 00:08:54.619
+Do you need to continuously record it or is it there's some government servers you need
+
+00:08:54.619 --> 00:08:55.619
+to find?
+
+00:08:55.619 --> 00:08:56.619
+Yeah.
+
+00:08:56.619 --> 00:08:59.700
+So the question was where the data lives.
+
+00:08:59.700 --> 00:09:07.179
+So there's the USGS API water services API that you can make calls to.
+
+00:09:07.179 --> 00:09:13.700
+And that data is being in a lot of stations it's being streamed every 15 minutes for example.
+
+00:09:14.619 --> 00:09:20.419
+If anyone wants to explore more of this data, just a heads up that I think in January 2026
+
+00:09:20.419 --> 00:09:29.299
+a lot of the API endpoints are being deprecated, which makes that whole idea of exploring those
+
+00:09:29.299 --> 00:09:34.859
+data sets extremely relevant and pressing in terms of time.
+
+00:09:34.859 --> 00:09:39.299
+And it's easy to assume that someone out there is doing it.
+
+00:09:39.299 --> 00:09:40.940
+And I hope so.
+
+00:09:40.940 --> 00:09:50.940
+But just in case I've saved parts of the data set in my machine.
+
+00:09:50.940 --> 00:09:57.219
+So in terms, so the first part about fetching the national site index, there is a large
+
+00:09:57.219 --> 00:10:02.619
+inventory of more than 1.7 million rows after processing.
+
+00:10:02.619 --> 00:10:08.260
+And then doing some cleaning, the duplication and filtering of the stream sites, which results
+
+00:10:08.340 --> 00:10:15.020
+in the master table for the, that helps with the downstream workflow.
+
+00:10:15.020 --> 00:10:17.340
+I can show this part later.
+
+00:10:17.340 --> 00:10:24.739
+I think that would be easier so that we don't have to switch between applications now.
+
+00:10:24.739 --> 00:10:34.780
+But the idea is to use those values as part of the national site indexes as parameters
+
+00:10:34.780 --> 00:10:42.419
+to make the API calls to the four different water quality parameters that I'm interested
+
+00:10:42.419 --> 00:10:44.380
+in.
+
+00:10:44.380 --> 00:10:52.219
+And those four different water quality parameters are listed here in this table, temperature,
+
+00:10:52.219 --> 00:10:56.700
+specific conductance, dissolved oxygen and pH.
+
+00:10:56.700 --> 00:11:03.539
+And each of them I find interesting because they reveal patterns around pollution, industrial
+
+00:11:03.539 --> 00:11:07.940
+activity, weather and so on.
+
+00:11:07.940 --> 00:11:14.340
+And all of this is very important for the wildlife that lives in the river and in the
+
+00:11:14.340 --> 00:11:18.380
+surrounding areas of the river as well.
+
+00:11:18.380 --> 00:11:21.780
+And for us as well, we are also part of nature.
+
+00:11:21.780 --> 00:11:29.260
+So that's actually important to have, to monitor those parameters and so on.
+
+00:11:29.260 --> 00:11:34.380
+This is a caveat though, there are a bunch of other parameters and some of them are actually
+
+00:11:34.380 --> 00:11:40.260
+very important to prevent or to plan for flooding.
+
+00:11:40.260 --> 00:11:44.820
+For example, there are some rivers in the US where there's flooding in the surrounding
+
+00:11:44.820 --> 00:11:46.640
+regions from time to time.
+
+00:11:46.640 --> 00:11:54.299
+So they do have parameters related to the height of the river and so on.
+
+00:11:54.340 --> 00:12:00.859
+So in terms of temperature, very high values can stress the aquatic life, very low values
+
+00:12:00.859 --> 00:12:05.940
+can slow the metabolism of the organisms living there.
+
+00:12:05.940 --> 00:12:14.140
+The specific conductance is typically correlated with clean or polluted water.
+
+00:12:14.140 --> 00:12:18.020
+Low values would indicate that typically the water is clean.
+
+00:12:18.020 --> 00:12:24.619
+High values could indicate some pollution from industry and so on.
+
+00:12:24.619 --> 00:12:30.419
+Dissolved oxygen is one of the main ways also to quantify pollution because if you have
+
+00:12:30.419 --> 00:12:36.619
+very low dissolved oxygen, it usually indicates that zones and fish kills, whereas high dissolved
+
+00:12:36.619 --> 00:12:39.979
+oxygen usually indicates a healthy ecosystem.
+
+00:12:39.979 --> 00:12:47.700
+And finally the pH can indicate possible contamination or mineral imbalance in the water, which can
+
+00:12:47.700 --> 00:13:00.340
+cause some stress to the species and so on.
+
+00:13:00.340 --> 00:13:10.400
+So then in terms of the ingestion of those four parameters, there are thousands of sites
+
+00:13:10.400 --> 00:13:12.419
+for each state.
+
+00:13:12.419 --> 00:13:18.979
+Some cities might have even multiple sites where data is being collected, and leading
+
+00:13:18.979 --> 00:13:22.659
+to millions of rows per ingestion batch.
+
+00:13:22.659 --> 00:13:28.780
+And by ingestion batch here, I mean that in the way I plan the ingestion, I decided to
+
+00:13:28.780 --> 00:13:31.419
+do it by state.
+
+00:13:31.419 --> 00:13:38.940
+And then using a sync request and thread post to speed up the process is also helpful, which
+
+00:13:39.020 --> 00:13:43.260
+leads to producing the state-level Parquet partitions.
+
+00:13:43.260 --> 00:13:50.219
+And in the end, just three years of data, four parameters, leads to 1.8 gigabytes of
+
+00:13:50.219 --> 00:13:51.219
+Parquet data.
+
+00:13:51.219 --> 00:13:54.380
+If you do it in CSV instead, it's much larger.
+
+00:13:54.380 --> 00:14:00.780
+If you decide to collect the other parameters, it would also increase massively, along with
+
+00:14:00.780 --> 00:14:06.380
+expanding the year window would also lead to massive expansion.
+
+00:14:06.539 --> 00:14:13.940
+I will show that data after in the positron application.
+
+00:14:13.940 --> 00:14:21.700
+And then I was thinking, just as a planning for potential future exploration, what would
+
+00:14:21.700 --> 00:14:32.659
+be like to scale for 30 years of data if there was a feasible way to outgrow laptops' limitations.
+
+00:14:32.700 --> 00:14:39.979
+The reason why I say that is because although many of us do have machines that can process
+
+00:14:39.979 --> 00:14:46.979
+a lot of data and can collect at scale and so on, sometimes if you have limitations in
+
+00:14:46.979 --> 00:14:54.539
+terms of equipment, in terms of computing capacity, even tasks that we are used to in
+
+00:14:54.539 --> 00:14:58.539
+terms of data collection and processing can be a challenge.
+
+00:14:59.539 --> 00:15:08.179
+Even for three years of data, collecting the data without just with my machine, for example,
+
+00:15:08.179 --> 00:15:13.140
+it took about 70 minutes of running it continuously.
+
+00:15:13.140 --> 00:15:17.900
+And during that collection, there's always the ethical considerations behind it as well
+
+00:15:17.900 --> 00:15:24.299
+of making sure that you are not stressing servers, especially from government infrastructure
+
+00:15:24.299 --> 00:15:25.500
+and so on.
+
+00:15:25.500 --> 00:15:30.140
+So all of this is very important to consider.
+
+00:15:30.140 --> 00:15:36.380
+And we have tens of millions of rows of sensor data if we were to go through 30 years, for
+
+00:15:36.380 --> 00:15:37.700
+example.
+
+00:15:37.700 --> 00:15:43.500
+And if we scale up more than four parameters, that would also lead to several more columns.
+
+00:15:43.500 --> 00:15:52.059
+And I think there was someone who spoke earlier today about how columns really constitute
+
+00:15:52.059 --> 00:15:57.260
+a challenge for data processing capabilities and so on.
+
+00:15:57.260 --> 00:16:04.739
+And besides memory limits, some people can also be limited by storage.
+
+00:16:04.739 --> 00:16:11.659
+And that's how remote SSH can help overcome some of these gaps.
+
+00:16:11.659 --> 00:16:14.179
+Any questions up to this point?
+
+00:16:14.179 --> 00:16:15.179
+No?
+
+00:16:15.179 --> 00:16:17.260
+OK, cool.
+
+00:16:17.260 --> 00:16:26.619
+So let's jump on to how remote SSH can be a solution to some of these challenges.
+
+00:16:26.619 --> 00:16:32.919
+So I'll start by explaining how it works in a higher level view.
+
+00:16:32.919 --> 00:16:41.020
+So in terms of compute and storage, there are different types of providers that can
+
+00:16:41.020 --> 00:16:47.739
+provide virtual machines and so on so that we can remote into those virtual machines.
+
+00:16:47.739 --> 00:16:53.460
+If anyone, and in my talks, I always like to give ideas so that people can try it themselves
+
+00:16:53.460 --> 00:16:54.460
+for free.
+
+00:16:54.460 --> 00:17:00.539
+I usually don't like to, oh, let me recommend this provider or that provider.
+
+00:17:00.539 --> 00:17:05.400
+There are a bunch out there that are giving free trials and credits and so on.
+
+00:17:05.400 --> 00:17:13.800
+So if you want to try remote SSH with Positron and you need a VM or a provider, you can just
+
+00:17:13.800 --> 00:17:18.599
+look it up for the ones that have free credits available.
+
+00:17:18.599 --> 00:17:22.680
+Some of them have very generous free trials.
+
+00:17:22.680 --> 00:17:26.000
+So yeah, that can be a good option.
+
+00:17:26.000 --> 00:17:34.319
+And what remote SSH in Positron provides is a local UI with the ability to do remote computing.
+
+00:17:34.319 --> 00:17:41.280
+And that's very helpful because you're able to take advantage of Positron's capabilities
+
+00:17:41.280 --> 00:17:50.199
+and the UI while outgrowing your computer's resources and so on.
+
+00:17:50.199 --> 00:17:58.060
+And what I find really good as well is to pair the expansion of computing capabilities
+
+00:17:58.060 --> 00:18:05.939
+with other good practices when it comes to large data sets, such as using Parquet files,
+
+00:18:05.939 --> 00:18:11.380
+for example, which are fully supported within the Data Explorer and so on, which I'll show
+
+00:18:11.380 --> 00:18:13.660
+later as well.
+
+00:18:13.660 --> 00:18:20.900
+And lastly, that can help with a scalable network throughput for async ingestion pipelines,
+
+00:18:20.900 --> 00:18:23.619
+which is what we have today.
+
+00:18:23.619 --> 00:18:29.060
+One caveat, though, is that, of course, when you are making API calls, there are limitations
+
+00:18:29.060 --> 00:18:31.420
+that are beyond your control.
+
+00:18:31.420 --> 00:18:37.219
+And you also don't want to stress external servers and so on.
+
+00:18:37.219 --> 00:18:48.699
+Yeah, so I already explained some of these reasons why to use remote SSH in Positron
+
+00:18:48.699 --> 00:18:54.060
+in terms of offloading some of the heavy data collection and processing work to a remote
+
+00:18:54.060 --> 00:19:00.859
+server, keeping the laptop responsive, having the workflow that data scientists usually
+
+00:19:00.859 --> 00:19:10.000
+like within Positron, and doing the long-running ingestion jobs and so on.
+
+00:19:10.000 --> 00:19:16.579
+And I think now it's a good time to actually show some of the UI and how these different
+
+00:19:16.579 --> 00:19:25.859
+factors are factored into the Positron's remote SSH.
+
+00:19:25.859 --> 00:19:32.420
+So with that, I put some screenshots of different areas of the application.
+
+00:19:32.420 --> 00:19:39.459
+The first one I would like to highlight here is that you can pre-configure specific hosts
+
+00:19:39.459 --> 00:19:42.540
+so that you can connect to the desired host.
+
+00:19:42.540 --> 00:19:48.380
+So once you click Connect to Host, there will be a list of your pre-configured hosts.
+
+00:19:48.380 --> 00:19:51.660
+And then you can just go ahead and connect to it.
+
+00:19:51.660 --> 00:19:57.939
+This is very helpful if you have multiple remote environments, because sometimes people,
+
+00:19:57.939 --> 00:20:06.420
+for example, might set up one VM, one box for light tasks and another one for very heavy
+
+00:20:06.420 --> 00:20:07.680
+tasks.
+
+00:20:07.680 --> 00:20:16.959
+And since you're paying by the hour, you don't want necessarily to be using the wrong one
+
+00:20:16.959 --> 00:20:21.319
+for the wrong type of need that you have.
+
+00:20:21.319 --> 00:20:31.239
+So that's how you can connect to the host.
+
+00:20:31.239 --> 00:20:35.760
+Once you're connected, there is a very clear indication that you are connected in the lower
+
+00:20:35.760 --> 00:20:37.800
+left corner.
+
+00:20:37.800 --> 00:20:43.760
+And I think that's very helpful to preventing anyone, including myself, from getting lost,
+
+00:20:43.760 --> 00:20:47.280
+from not knowing which box you are at.
+
+00:20:47.280 --> 00:20:51.000
+And I did play around with multiple boxes.
+
+00:20:51.000 --> 00:20:58.439
+And at some point, I had to rely on that indicator to know, oh, I'm still using that one.
+
+00:20:58.439 --> 00:21:04.400
+Let me swap to the next one, and so on.
+
+00:21:04.400 --> 00:21:18.239
+And then one other part that I find really helpful is the automated port forwarding,
+
+00:21:18.239 --> 00:21:25.119
+which means that you can have different types of applications and the hosts being forward
+
+00:21:25.119 --> 00:21:27.239
+to the specific ports.
+
+00:21:27.239 --> 00:21:32.479
+For me, that I'm not used to assigning the ports myself.
+
+00:21:32.479 --> 00:21:36.040
+That's just generally really helpful.
+
+00:21:36.040 --> 00:21:39.959
+You can run, as usual, the Shiny apps and so on.
+
+00:21:39.959 --> 00:21:45.760
+You can still run the Shiny app within Positron with the automated port forwarding, even when
+
+00:21:45.760 --> 00:21:52.439
+you are inside a box.
+
+00:21:52.439 --> 00:21:58.800
+And lastly, there's the kernel supervisor, which is useful for very long running sessions,
+
+00:21:58.800 --> 00:22:05.040
+which means that you can shut down Positron, but still have the remote SSH running in the
+
+00:22:05.040 --> 00:22:09.119
+background.
+
+00:22:09.119 --> 00:22:14.099
+Yeah.
+
+00:22:14.099 --> 00:22:22.800
+So with that, I'm gonna show a little bit about how the data looks like.
+
+00:22:22.800 --> 00:22:24.800
+For anyone who is curious.
+
+00:22:24.800 --> 00:22:33.239
+I did put on my GitHub as well.
+
+00:22:33.239 --> 00:22:43.239
+Okay.
+
+00:22:43.239 --> 00:22:46.239
+So let me show here.
+
+00:22:46.239 --> 00:22:57.359
+With your GitHub, can you get rid of the console?
+
+00:22:57.359 --> 00:22:58.359
+Yeah.
+
+00:22:58.359 --> 00:22:59.359
+I think...
+
+00:22:59.359 --> 00:23:00.359
+Wait.
+
+00:23:00.359 --> 00:23:01.359
+If I go back to the presentation...
+
+00:23:01.359 --> 00:23:02.359
+Let me go back to...
+
+00:23:02.359 --> 00:23:03.359
+Just a second.
+
+00:23:03.359 --> 00:23:04.359
+Yeah.
+
+00:23:04.359 --> 00:23:05.359
+Here we go.
+
+00:23:05.359 --> 00:23:10.319
+Yes.
+
+00:23:10.319 --> 00:23:17.959
+So I put the repo here in my GitHub for everyone to see the...
+
+00:23:17.959 --> 00:23:21.560
+Of course, I didn't put the data.
+
+00:23:21.560 --> 00:23:22.560
+Because...
+
+00:23:22.560 --> 00:23:23.640
+Yeah.
+
+00:23:23.640 --> 00:23:33.319
+But the script that I use both to fetch all the sites as well as to capture the data for
+
+00:23:33.319 --> 00:23:38.760
+each state, the parquet partitions, it's all there.
+
+00:23:38.760 --> 00:23:44.199
+Okay, cool.
+
+00:23:44.199 --> 00:23:50.439
+So I wanted to show here the...
+
+00:23:50.439 --> 00:23:52.439
+Yeah.
+
+00:23:52.439 --> 00:23:58.380
+So that's the parquet files for three years for each state.
+
+00:23:58.380 --> 00:24:07.819
+And one thing I would like to emphasize here is if I go on to, for example, Pennsylvania.
+
+00:24:07.819 --> 00:24:13.099
+That's how the data looks like.
+
+00:24:13.099 --> 00:24:20.339
+And again, this is after collecting the sites.
+
+00:24:20.339 --> 00:24:22.699
+All the sites and numbers.
+
+00:24:22.699 --> 00:24:24.500
+We can see here that we have the site number.
+
+00:24:24.500 --> 00:24:25.900
+It's all the same.
+
+00:24:25.900 --> 00:24:32.979
+To collect that site number, as I showed before, first I run the fetch.py.
+
+00:24:32.979 --> 00:24:36.219
+And then I went ahead to the...
+
+00:24:36.219 --> 00:24:42.020
+I created this parquet file with all sites.
+
+00:24:42.020 --> 00:24:46.819
+And then based on those numbers, I went on to each state.
+
+00:24:46.819 --> 00:24:49.579
+So if I go on here, for example, for Pennsylvania.
+
+00:24:49.579 --> 00:24:50.579
+Let me just hide some.
+
+00:24:50.579 --> 00:24:55.859
+The activity bar and the primary site bar.
+
+00:24:55.859 --> 00:24:56.859
+Okay, cool.
+
+00:24:56.859 --> 00:24:57.859
+I can show that.
+
+00:24:57.859 --> 00:24:59.859
+Let me zoom out.
+
+00:24:59.859 --> 00:25:07.119
+So we can see here that we have over 20 million rows, eight columns.
+
+00:25:07.119 --> 00:25:13.500
+And one thing I really like about exploring data with ThemePositor, and specifically with
+
+00:25:13.500 --> 00:25:19.739
+that data explorer tool, is the ability to interact with your data and get to know it
+
+00:25:19.739 --> 00:25:21.339
+better.
+
+00:25:21.339 --> 00:25:28.020
+Because especially now with AI, it's very easy to fall into the trap of asking AI to
+
+00:25:28.020 --> 00:25:32.500
+do things and then it messing things up.
+
+00:25:32.500 --> 00:25:37.300
+Whereas once you are actually interacting with the data, you get to know it better.
+
+00:25:37.300 --> 00:25:38.939
+And you can avoid some pitfalls.
+
+00:25:38.939 --> 00:25:48.099
+One example I would show here, for example, is if we go on to filter by parameter.
+
+00:25:48.099 --> 00:25:49.260
+So equal to...
+
+00:25:49.260 --> 00:25:52.579
+So I'm gonna put the pH parameter, okay?
+
+00:25:52.579 --> 00:25:54.959
+Which is 00400.
+
+00:25:54.959 --> 00:25:57.420
+And then I can apply the filter.
+
+00:25:57.420 --> 00:26:01.660
+And you can see here that it's quite fast.
+
+00:26:01.979 --> 00:26:09.020
+So it's 11% of my rows were for that parameter.
+
+00:26:09.020 --> 00:26:14.300
+And then one thing I had noted before already, but I just wanted to show, if you're interested
+
+00:26:14.300 --> 00:26:22.020
+about the data, everyone knows the range that pH is usually assigned to.
+
+00:26:22.020 --> 00:26:26.579
+Like up to 14 and so on.
+
+00:26:26.579 --> 00:26:34.859
+If you go on sort ascending, for example, you can see that you have minus 99999.
+
+00:26:34.859 --> 00:26:38.739
+Does anyone know why that pH is so negative?
+
+00:26:38.739 --> 00:26:40.859
+Just like no data?
+
+00:26:40.859 --> 00:26:41.859
+Yeah.
+
+00:26:41.859 --> 00:26:42.859
+Yeah, just missing data.
+
+00:26:42.859 --> 00:26:45.900
+They just assigned that value.
+
+00:26:45.900 --> 00:26:54.579
+So yeah, situations like this, if you're not in close contact with your data, that's the
+
+00:26:54.579 --> 00:27:03.300
+type of thing that AI can take on and really hallucinate.
+
+00:27:03.300 --> 00:27:10.619
+And then let's say if you were to get the average, for example, of all of this, it would
+
+00:27:10.619 --> 00:27:14.739
+be quite bad because there is a lot...
+
+00:27:14.739 --> 00:27:17.219
+Like we can keep going.
+
+00:27:17.219 --> 00:27:21.660
+Like there's a lot of minus 9999 data.
+
+00:27:21.739 --> 00:27:24.540
+I mean, we can even like filter it.
+
+00:27:24.540 --> 00:27:32.699
+So let's say for value is equal to...
+
+00:27:32.699 --> 00:27:34.660
+Then apply the filter.
+
+00:27:34.660 --> 00:27:39.660
+So there are 11,600 rows of missing data.
+
+00:27:39.660 --> 00:27:41.660
+Is that applied?
+
+00:27:41.660 --> 00:27:46.660
+Because I can still filter to negative 999?
+
+00:27:46.660 --> 00:27:48.660
+Oh, there's a different negative?
+
+00:27:48.660 --> 00:27:50.660
+Because I still have it.
+
+00:27:51.660 --> 00:27:52.660
+Filter to include.
+
+00:27:52.660 --> 00:27:53.660
+Oh, to include.
+
+00:27:53.660 --> 00:27:54.660
+Filter to include.
+
+00:27:54.660 --> 00:27:55.660
+Sorry.
+
+00:27:55.660 --> 00:27:56.660
+Sorry.
+
+00:27:56.660 --> 00:27:57.660
+Yeah.
+
+00:27:57.660 --> 00:28:03.540
+And then what I find cool as well, let's say if I want to share this view with someone
+
+00:28:03.540 --> 00:28:08.939
+so that the person can put it in a notebook or something, I can just convert to code to
+
+00:28:08.939 --> 00:28:13.859
+like SQL, Pandas, or Polars, and it can just send it to them.
+
+00:28:13.859 --> 00:28:14.859
+So yeah.
+
+00:28:14.859 --> 00:28:20.459
+So that type of exploration is something that I'm really interested in data science, both
+
+00:28:21.260 --> 00:28:29.020
+through notebooks and data exploration in general, in order to enable people to, when
+
+00:28:29.020 --> 00:28:37.020
+they use AI, they can also know what they're doing with their data and so on.
+
+00:28:37.020 --> 00:28:39.459
+Any questions up to this point?
+
+00:28:39.459 --> 00:28:41.459
+This is the Data Explorer?
+
+00:28:41.459 --> 00:28:42.459
+Positron Data Explorer?
+
+00:28:42.459 --> 00:28:43.459
+Yes.
+
+00:28:43.459 --> 00:28:44.459
+It's the Data Explorer within Positron.
+
+00:28:44.459 --> 00:28:45.699
+You don't need to install anything.
+
+00:28:45.699 --> 00:28:48.819
+It's already native.
+
+00:28:49.300 --> 00:28:59.939
+It works with Pandas, Polars, DataFrames, like anything pretty much.
+
+00:28:59.939 --> 00:29:01.939
+Any other questions here?
+
+00:29:01.939 --> 00:29:02.939
+Yeah.
+
+00:29:02.939 --> 00:29:09.339
+You mentioned, I think in the earlier talk on Positron, mentioned that it's like a fork
+
+00:29:09.339 --> 00:29:10.339
+of VS Code.
+
+00:29:10.339 --> 00:29:11.339
+Yes.
+
+00:29:11.339 --> 00:29:12.339
+Right?
+
+00:29:12.339 --> 00:29:13.339
+And VS Code already has remote SSH.
+
+00:29:13.339 --> 00:29:14.339
+I use it all the time at work.
+
+00:29:14.339 --> 00:29:18.500
+How much did you have to kind of modify when you're developing Positron?
+
+00:29:19.180 --> 00:29:23.180
+Is it kind of just basically a wrapper on the existing logic?
+
+00:29:23.180 --> 00:29:26.260
+What changes did you guys have to make?
+
+00:29:26.260 --> 00:29:34.339
+So he was asking about the changes that we had to make to enable remote SSH in Positron.
+
+00:29:34.339 --> 00:29:36.500
+I joined Positron in April.
+
+00:29:36.500 --> 00:29:42.939
+So to be honest, I don't know all the details of the work that went behind it.
+
+00:29:42.939 --> 00:29:49.219
+One thing that I would mention, though, that using remote SSH, and I will mention actually
+
+00:29:49.219 --> 00:29:57.140
+someone who did the implementation, and I'm happy to put in touch with him, but one thing
+
+00:29:57.140 --> 00:30:06.660
+that I enjoy about remote SSH in Positron is the ability to use it within your usual
+
+00:30:06.660 --> 00:30:08.979
+workflow of data exploration.
+
+00:30:08.979 --> 00:30:16.819
+So you don't need to swap between different applications or different things or install
+
+00:30:16.819 --> 00:30:18.859
+extensions or any of that.
+
+00:30:18.859 --> 00:30:24.219
+It's just already there, native, and all batteries included and so on.
+
+00:30:24.219 --> 00:30:25.219
+Yeah.
+
+00:30:25.219 --> 00:30:30.500
+Sorry, I don't know the very specific details.
+
+00:30:30.500 --> 00:30:33.459
+Any other questions?
+
+00:30:33.459 --> 00:30:44.699
+Okay, so moving back to the slides.
+
+00:30:44.699 --> 00:30:52.859
+So in terms of the results of some exploration that I did for the three-year data collection,
+
+00:30:52.859 --> 00:31:03.540
+the ones in asterisk are ones that the speeds of the runtime were estimated, actually.
+
+00:31:03.540 --> 00:31:06.660
+I actually didn't do them.
+
+00:31:06.660 --> 00:31:14.339
+But I tried to use a machine that performance is about the same as my laptop, as a baseline,
+
+00:31:14.339 --> 00:31:24.219
+as well as some stronger, like higher computing capabilities virtual machines.
+
+00:31:24.219 --> 00:31:36.060
+And I essentially did the same task and recorded how long it took for each of the remote hosts.
+
+00:31:36.060 --> 00:31:41.859
+And I could get up to this point of reducing from seven to one minutes, that's how long
+
+00:31:41.859 --> 00:31:50.540
+it took in my laptop, to 33 minutes, so by half, essentially, the time.
+
+00:31:50.540 --> 00:31:54.099
+Here are the costs, hourly cost, total cost per full run.
+
+00:31:54.099 --> 00:31:59.459
+Of course, usually you run into issues when you are doing it.
+
+00:31:59.459 --> 00:32:02.819
+Sometimes something might stop working and so on.
+
+00:32:02.819 --> 00:32:10.619
+So I wouldn't budget based on how long something would take to, you expect something to run.
+
+00:32:10.660 --> 00:32:14.540
+But it's a good indicator, essentially.
+
+00:32:14.540 --> 00:32:19.300
+And the reason why I also stopped here is because once you start getting to a certain
+
+00:32:19.300 --> 00:32:26.020
+point, it doesn't really matter that much anymore what your computing capabilities are,
+
+00:32:26.020 --> 00:32:31.859
+because you might get rate-limited by the API and so on, and you don't want to stress
+
+00:32:31.859 --> 00:32:34.020
+the server or any of that.
+
+00:32:34.020 --> 00:32:42.020
+So it becomes less of a concern of your infrastructure that you're using, more of a concern of the
+
+00:32:42.020 --> 00:32:49.300
+external, the server infrastructure of the API provider.
+
+00:32:49.300 --> 00:33:00.619
+So yeah, and then in terms of when I think of processing 30 years of data, for example,
+
+00:33:00.619 --> 00:33:06.300
+I don't know what the results would look like, but it's very likely that that difference
+
+00:33:06.300 --> 00:33:14.979
+between my laptop versus more powerful machines would be very stark.
+
+00:33:14.979 --> 00:33:22.900
+The machines that I was using was from AWS, but there are a lot of virtual machine providers
+
+00:33:22.900 --> 00:33:27.219
+that can be good for that type of exploration.
+
+00:33:27.219 --> 00:33:33.140
+And again, taking advantage of the free trials, I think that that can be a really good opportunity
+
+00:33:33.140 --> 00:33:42.099
+for anyone interested in outgrowing their laptop with remote SSH.
+
+00:33:42.099 --> 00:33:43.579
+Any questions about this part?
+
+00:33:43.579 --> 00:33:44.579
+Yeah.
+
+00:33:44.579 --> 00:33:46.060
+I have a question, but just a remark.
+
+00:33:46.060 --> 00:33:51.660
+Not that I'm affiliated with them, but there is a company called Hyperparam that actually
+
+00:33:51.859 --> 00:33:58.900
+also has an open source JavaScript library that you can directly feed parquet files into
+
+00:33:58.900 --> 00:33:59.900
+your browser.
+
+00:33:59.900 --> 00:34:03.540
+They re-implemented some of the compression and things like that.
+
+00:34:03.540 --> 00:34:05.780
+So it's worthwhile to take a look at them.
+
+00:34:05.780 --> 00:34:06.780
+What is the name?
+
+00:34:06.780 --> 00:34:07.780
+It's called Hyperparam.
+
+00:34:07.780 --> 00:34:08.780
+I can...
+
+00:34:08.780 --> 00:34:09.780
+Hyperparam.
+
+00:34:09.780 --> 00:34:10.780
+Yeah.
+
+00:34:10.780 --> 00:34:11.780
+Okay.
+
+00:34:11.780 --> 00:34:12.780
+Cool.
+
+00:34:12.780 --> 00:34:18.540
+And then, yeah.
+
+00:34:18.540 --> 00:34:22.659
+So just a few remarks to conclude the presentation.
+
+00:34:22.659 --> 00:34:29.899
+First, as shown here, remote SSH in Positron can help with any projects related to mass
+
+00:34:29.899 --> 00:34:34.939
+scale data collection, storage, and processing.
+
+00:34:34.939 --> 00:34:43.459
+It's very useful to do so because in this way, users or any data scientists or data
+
+00:34:43.459 --> 00:34:50.620
+enthusiasts can take advantage of very powerful remote machines while remaining within the
+
+00:34:50.620 --> 00:34:55.379
+data science focused ID environment.
+
+00:34:55.379 --> 00:35:00.540
+And in general, I'm really excited about building data science and open source tools that can
+
+00:35:00.540 --> 00:35:05.500
+help us understand and improve the world in some way.
+
+00:35:05.500 --> 00:35:12.020
+So that's part of the reason why I'm really excited about Positron and ID development
+
+00:35:12.020 --> 00:35:16.540
+in general.
+
+00:35:16.540 --> 00:35:23.500
+And just as in my presentations, I always like to thank people who helped me throughout
+
+00:35:23.500 --> 00:35:25.020
+the process.
+
+00:35:25.020 --> 00:35:33.139
+I'm not a remote SSH expert, but he is an expert in remote SSH.
+
+00:35:33.139 --> 00:35:34.540
+He's one of my coworkers.
+
+00:35:34.540 --> 00:35:41.300
+And he gave a talk at PositConf about outgrowing your laptop with Positron.
+
+00:35:41.300 --> 00:35:46.699
+If anyone is interested and wants to know more details about remote SSH, you're welcome
+
+00:35:46.699 --> 00:35:47.699
+to check.
+
+00:35:47.699 --> 00:35:49.620
+It's on YouTube.
+
+00:35:49.620 --> 00:35:56.500
+And I would also like to thank the United States Geological Survey employees who have
+
+00:35:56.500 --> 00:36:05.780
+been doing a lot of heavy lifting to preserve the much needed resources that exist for those
+
+00:36:05.780 --> 00:36:08.179
+API endpoints and so on.
+
+00:36:08.718 --> 00:36:18.118
+of the much-needed resources that exist for those API endpoints and so on.
+
+00:36:18.118 --> 00:36:24.518
+And again, if you are interested, feel free to fork, to clone the repo, to try it out,
+
+00:36:24.518 --> 00:36:31.218
+to collect some data from their API, because again, maybe next year some of the endpoints
+
+00:36:31.218 --> 00:36:36.978
+I used won't be available anymore, so maybe it's the last chance we have to do so, which
+
+00:36:36.978 --> 00:36:42.618
+makes it even more urgent and interesting.
+
+00:36:42.618 --> 00:36:48.778
+And with that, I want to thank everyone for listening.
+
+00:36:48.778 --> 00:36:55.137
+Let's keep in touch here, my contact information, and again, I'm really interested in tools
+
+00:36:55.137 --> 00:37:02.758
+and data science with a focus on a better world, so if anyone is interested in those
+
+00:37:02.758 --> 00:37:10.798
+type of topics and projects, please contact me, and if you have any issues with positron
+
+00:37:10.798 --> 00:37:23.718
+or remote SH, also please feel free to reach out, and I'm happy to help.
+
+00:37:23.718 --> 00:37:27.317
+So any other questions?
+
+00:37:27.317 --> 00:37:28.317
+Yes?
+
+00:37:28.878 --> 00:37:38.878
+Have you made any interesting observations from that data you collected, maybe any visualizations?
+
+00:37:38.878 --> 00:37:47.198
+Yes, so I had done a blog post in the past with some visualizations showing.
+
+00:37:47.198 --> 00:37:53.398
+What I noticed with temperature, for example, there is a lot of seasonality and so on, that's
+
+00:37:53.398 --> 00:37:55.398
+very expected.
+
+00:37:55.957 --> 00:38:03.038
+Two of the variables were correlated, which I found interesting as well.
+
+00:38:03.038 --> 00:38:07.557
+I can send it to the blog post after, I think that would be the most helpful, yeah.
+
+00:38:07.557 --> 00:38:09.078
+I had the same question.
+
+00:38:09.078 --> 00:38:14.078
+I just wondered whether, like what stories you maybe got out of that, you know, the data
+
+00:38:14.078 --> 00:38:15.078
+and exploring it.
+
+00:38:15.078 --> 00:38:21.477
+Is there something that got you into reverse, like something in your life that happened
+
+00:38:21.477 --> 00:38:24.038
+that made you interested in this?
+
+00:38:24.078 --> 00:38:25.078
+Oh, okay.
+
+00:38:25.078 --> 00:38:33.958
+So yeah, so it's, when I was in high school, I was studying some differential equation
+
+00:38:33.958 --> 00:38:43.798
+for modeling pollution, and that differential equation is the Streeter-Phelps equation.
+
+00:38:43.798 --> 00:38:49.238
+It's modeled after the Ohio River, by pure coincidence.
+
+00:38:49.238 --> 00:38:53.958
+Years later, I moved to Pittsburgh, and I was like, oh, this is the Ohio River, the
+
+00:38:53.958 --> 00:38:56.318
+famous Ohio River.
+
+00:38:56.318 --> 00:39:00.917
+No one knew about that, but I was always like, oh, the Streeter-Phelps equation was modeled
+
+00:39:00.917 --> 00:39:02.878
+after this river.
+
+00:39:02.878 --> 00:39:06.837
+So that's kind of what made me feel interested in that.
+
+00:39:06.837 --> 00:39:09.277
+Thank you.
+
+00:39:09.277 --> 00:39:12.197
+Oh, thank you very much.

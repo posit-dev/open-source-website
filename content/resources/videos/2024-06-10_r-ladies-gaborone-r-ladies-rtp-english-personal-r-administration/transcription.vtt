@@ -1,0 +1,4132 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:10.000
+David, do you want to take it away?
+
+00:00:10.000 --> 00:00:29.000
+Sure. Thank you, Shayla. So yeah. Hi, everyone. Like I said, my name is David Alja. I'm a solutions engineer at Posit. So I do work on helping people understand how to get their data science into data science environments to work at their jobs.
+
+00:00:29.000 --> 00:00:47.000
+And so today, we'll be sort of working through part of a course that we'll be teaching at Posit Conf. So it's the one that they forgot to teach you about our course. And our focus for today will be personal R administration.
+
+00:00:47.000 --> 00:01:16.000
+I think just for a programming note, the runtime here is roughly three hours. If you can't stay for all three hours, that's fine. Feel free to drop. Like I said, there's a recording. But this is gonna be a little longer than the standard meetup. And our goal here is going to be to cover the things that you need to know to set up a development environment that's going to work effectively for you as you use R.
+
+00:01:16.000 --> 00:01:37.000
+The material, the slides I'm working from now, you can access from GitHub. This is the link to the course repository, which will have links to these slides as well as some things we won't be covering here today. So you can get those things here.
+
+00:01:37.000 --> 00:01:54.000
+And then you can also if you go to rstats.wtf, you'll also see a bunch of links to a lot of material we'll be talking about today. I'll also drop a link to the slides in the chat.
+
+00:01:54.000 --> 00:02:14.000
+And then just to tell you a little bit more about my background and some of the things that are going to influence the way I think about what it means to kind of build an effective development environment. I've used R in a bunch of different capacities.
+
+00:02:14.000 --> 00:02:35.000
+So when I first really started using R, I was an auditor. And I had like, I was doing some learning on my personal laptop. And then I had a bunch of different environments that I would use R in network. So I had a bunch of different servers. I was deploying Shiny apps to Shiny server. I had a bunch of different laptops.
+
+00:02:36.000 --> 00:02:56.000
+And so it was just like a really complicated situation where I'm working on the same project across lots of different environments. A little bit later, I moved to an advertising agency. And I was working there, again, on a range of different environments, some Windows based, some Linux based, some local, some remote.
+
+00:02:56.000 --> 00:03:10.000
+And now that I'm a solutions engineer at Posit, again, I have a personal laptop. I have my work MacBook. I have a couple of Linux environments that are persistent. I work in a lot of environments that disappear rapidly.
+
+00:03:11.000 --> 00:03:33.000
+My computation is kind of spread all over the place. And so, overarchingly, I think one of the things I'm trying to accomplish here is just giving you some way of thinking about how it's going to be possible to use R effectively across operating systems, across environments where you might have access to professional tools or where you're just working with open source things.
+
+00:03:34.000 --> 00:03:43.000
+Because I used to be an auditor, I am very concerned with being able to actually reproduce things. And there are lots of other contexts where that ends up being important.
+
+00:03:44.000 --> 00:03:56.000
+I'm trying to avoid needing an administrator to do something for me. Because a lot of the time, I just want to solve a problem I have without having to wait for someone to get back to me about the solution.
+
+00:03:57.000 --> 00:04:07.000
+And then the last thing, kind of, again, just in terms of how we'll be thinking about what we want to do here is we really want to be able to tell people when we're communicating, hey, go run this code.
+
+00:04:08.000 --> 00:04:18.000
+And we're going to prefer that approach to sending someone a page full of screenshots. Because if you can run the code, there's a much more likely chance that you can reproduce the thing you're seeing.
+
+00:04:19.000 --> 00:04:32.000
+So the questions we're focusing on for today is going to be things like how do I change the version of R I'm using for this project? How do I track which versions I'm using for this project? How do I move this project?
+
+00:04:33.000 --> 00:04:44.000
+One of the things I want you to see, there's normally in the What They Forgot class, we do kind of an explicit couple of hours focusing on the project-based workflow.
+
+00:04:44.000 --> 00:04:55.000
+And we're going to take a lot of that stuff as given today. We'll be creating RStudio projects. I'm not going to try to convince you today that you should work in those projects.
+
+00:04:55.000 --> 00:05:10.000
+We're just going to kind of start doing it. Because once you start working in that project-based workflow, you're going to find it a lot easier to take a lot of the lessons that we pick up today and think about what it means to take your project to work
+
+00:05:10.000 --> 00:05:16.000
+and then move it from place to place or deploy things or change the version of R or upgrade package versions.
+
+00:05:16.000 --> 00:05:31.000
+So we're taking projects as given and a lot of the context that we're setting here is going to be about what it looks like to work with a project from RStudio.
+
+00:05:32.000 --> 00:05:43.000
+So this is our agenda for today. We're going to start with a warm-up exercise that's actually pulled from the project-oriented workflow section.
+
+00:05:43.000 --> 00:05:51.000
+And we're just going to get ourselves used to thinking about where the stuff that makes up our installation is on our machines.
+
+00:05:51.000 --> 00:05:56.000
+And then there are going to be a few different sections we make our way through.
+
+00:05:56.000 --> 00:06:03.000
+We're going to talk about some ways you can change how R behaves as it starts. We'll talk about reasons why you might want to do that.
+
+00:06:03.000 --> 00:06:13.000
+We'll talk about installing R packages. There are some things that it's helpful to know when you're trying to install a package or trying to diagnose why you can't install a package.
+
+00:06:13.000 --> 00:06:18.000
+And keeping track of those and understanding a little bit more about what's going on there is going to be really helpful.
+
+00:06:18.000 --> 00:06:30.000
+We'll talk about some ways to construct environments that you can reproduce in some other context, whether that's deploying it to an application host somewhere or just moving it to another computer.
+
+00:06:30.000 --> 00:06:40.000
+Those concepts are very similar. And so we'll think about some ways to take information we have about our projects and use it to make them reproducible.
+
+00:06:40.000 --> 00:06:55.000
+And then the last part, which we may not get to, will be about kind of completing the cycle of going from one version of R to another and thinking about what that looks like in a project-oriented workflow.
+
+00:06:55.000 --> 00:07:02.000
+Let me pause there, see if there are any questions I should address before we jump in.
+
+00:07:03.000 --> 00:07:05.000
+Okay.
+
+00:07:05.000 --> 00:07:10.000
+Oh wait, hold on.
+
+00:07:10.000 --> 00:07:13.000
+Creating SBOMs.
+
+00:07:13.000 --> 00:07:17.000
+Yeah, Greg, if you want to come off mute and ask your question, go ahead.
+
+00:07:17.000 --> 00:07:19.000
+Sure, yeah.
+
+00:07:19.000 --> 00:07:27.000
+So I think this kind of coincides with your creating reproducible environments, and usually this is something that comes up whenever I talk to security.
+
+00:07:27.000 --> 00:07:37.000
+They want to be able to make sure that the modules that we install are tested.
+
+00:07:38.000 --> 00:07:42.000
+Yeah, sorry. To clarify, an SBOM is a software bill of materials.
+
+00:07:42.000 --> 00:07:54.000
+And usually in the Python space it comes with not only the versions that you have, but also the versions that you have for your particular software or architecture build environment.
+
+00:07:54.000 --> 00:08:01.000
+So like, say if you're working on Mac, Linux, Windows, all these different building environments incur different dependencies.
+
+00:08:02.000 --> 00:08:04.000
+And then, you know, that's something that's, yeah.
+
+00:08:04.000 --> 00:08:11.000
+So, we will not be covering like the SBOM in particular today.
+
+00:08:11.000 --> 00:08:21.000
+I think, right, like the software bill of materials has a specification, right, that captures a lot of the information you described.
+
+00:08:21.000 --> 00:08:28.000
+And one of the things you'll see are things I've seen as, for example, you know, I work at Posit.
+
+00:08:28.000 --> 00:08:31.000
+We make software that other customers install in their environments.
+
+00:08:31.000 --> 00:08:35.000
+They often want things like a software bill of materials from us.
+
+00:08:35.000 --> 00:08:41.000
+The way you get to generate one of those is by keeping track of the dependencies that you have, right?
+
+00:08:41.000 --> 00:08:49.000
+So there are often tools that will go from your requirements text file to an SBOM or your Go dependencies to an SBOM.
+
+00:08:49.000 --> 00:09:01.000
+And so part of what we need to do if we're working in R, right, is we need to be able to, for example, hand someone an R envelope file or some other thing that describes the collection of dependencies we're using.
+
+00:09:01.000 --> 00:09:06.000
+And that will give us the opportunity to then generate something like that.
+
+00:09:06.000 --> 00:09:16.000
+So once you have some way of recording what packages you're using, it's much easier to hand that off to tools that need to convert it into a different format.
+
+00:09:16.000 --> 00:09:31.000
+So, yeah, we won't be covering SBOMs directly, but when we talk about reproducible environments, you'll see how you can get to generating the information you need to create one of those.
+
+00:09:31.000 --> 00:09:33.000
+Cool.
+
+00:09:33.000 --> 00:09:46.000
+So, like I said, we're going to start with a little warm-up exercise where we're going to investigate our R package library.
+
+00:09:46.000 --> 00:09:52.000
+And so, you know, R packages, right, I think everybody is kind of implicitly familiar with them.
+
+00:09:52.000 --> 00:09:55.000
+You use lots of them as you're getting started.
+
+00:09:55.000 --> 00:10:01.000
+They're how you take bits of R code and send them to other people, right?
+
+00:10:01.000 --> 00:10:13.000
+When you install R from, you know, if you go to cran.rproject.org, you install R, you get R that comes with a collection of packages.
+
+00:10:13.000 --> 00:10:18.000
+So, you know, you have your 14 base packages and those 15 recommended packages.
+
+00:10:18.000 --> 00:10:22.000
+It says here we ship with all binary distributions of R, right?
+
+00:10:22.000 --> 00:10:26.000
+If you compiled R from source yourself, you might not get those.
+
+00:10:26.000 --> 00:10:33.000
+And if that doesn't mean anything to you, hang on, we'll talk about it in a few minutes.
+
+00:10:33.000 --> 00:10:46.000
+But so, for example, if you wanted to draw graphics and you only wanted to do them using base R, the lattice package actually does an excellent job of helping you visualize things.
+
+00:10:46.000 --> 00:10:54.000
+And so, it's one of the reasons that, you know, R has its reputation for being able to do effective graphics without necessarily needing a ton of things.
+
+00:10:54.000 --> 00:10:58.000
+And then, you know, subsequent packages have layered a lot on top of that.
+
+00:10:58.000 --> 00:11:05.000
+But, you know, we have R packages and it's going to come with, you know, base R is going to come with a lot of these packages.
+
+00:11:05.000 --> 00:11:17.000
+And so, you know, when you type install packages, typically what's happening is those packages are getting copied from some repository like CRAN into a library.
+
+00:11:17.000 --> 00:11:20.000
+That's going to be the default library.
+
+00:11:20.000 --> 00:11:25.000
+You can identify where that is on your system by typing .library.
+
+00:11:26.000 --> 00:11:36.000
+You may have access to multiple libraries that you are referencing packages from in your session.
+
+00:11:36.000 --> 00:11:43.000
+And the paths to those libraries are going to be accessed through this function .libpaths.
+
+00:11:43.000 --> 00:11:52.000
+And then, if you want to see all the packages you have on disk and where they're installed, then you would use the function installed packages.
+
+00:11:52.000 --> 00:11:59.000
+It is deeply unhelpful to my autocomplete life, but this function is called installed packages.
+
+00:11:59.000 --> 00:12:01.000
+But what are you going to do?
+
+00:12:01.000 --> 00:12:15.000
+So, what we're going to do, and we're going to take, you know, seven or eight minutes to do this, is you're going to pull down this collection of R files.
+
+00:12:15.000 --> 00:12:22.000
+And you're going to try to answer some of the questions in it to explore the library on your system.
+
+00:12:22.000 --> 00:12:24.000
+So, there are some questions there.
+
+00:12:24.000 --> 00:12:27.000
+There are three files in the bundle.
+
+00:12:27.000 --> 00:12:29.000
+One of them is Comfy.
+
+00:12:29.000 --> 00:12:30.000
+One of them is called Spartan.
+
+00:12:30.000 --> 00:12:35.000
+And then one of them has the solutions to some of the questions that we're asking there.
+
+00:12:35.000 --> 00:12:39.000
+So, I'm going to take this snippet.
+
+00:12:39.000 --> 00:12:43.000
+And I'm going to open up RStudio.
+
+00:12:43.000 --> 00:12:46.000
+And I'm just going to run this code.
+
+00:12:46.000 --> 00:12:52.000
+And it's going to, you're going to, by default, it's going to store the file on my desktop.
+
+00:12:52.000 --> 00:12:55.000
+I'm fine with that today.
+
+00:12:55.000 --> 00:13:00.000
+So, I'm going to say three and delete the zip file.
+
+00:13:00.000 --> 00:13:03.000
+And now you can see I get these three files on my system.
+
+00:13:03.000 --> 00:13:08.000
+I have, you know, your Comfy file, your Spartan file, right?
+
+00:13:08.000 --> 00:13:11.000
+And so, open up these files.
+
+00:13:11.000 --> 00:13:15.000
+Don't look at the solutions that I just put on screen.
+
+00:13:15.000 --> 00:13:17.000
+But, yeah, try to answer some of these questions.
+
+00:13:17.000 --> 00:13:22.000
+And we'll give that seven and a half minutes.
+
+00:13:22.000 --> 00:13:27.000
+Go.
+
+00:13:27.000 --> 00:13:33.000
+I actually think if you're not super oriented with it, the solution script is a great script to start with.
+
+00:13:33.000 --> 00:13:37.000
+Because it kind of just walks you through the process a lot more.
+
+00:13:37.000 --> 00:13:44.000
+So, if you're feeling like a little overwhelmed, go ahead and jump into the solution script.
+
+00:14:07.000 --> 00:14:11.000
+All right.
+
+00:14:37.000 --> 00:14:41.000
+All right.
+
+00:15:07.000 --> 00:15:11.000
+All right.
+
+00:15:37.000 --> 00:15:41.000
+All right.
+
+00:16:07.000 --> 00:16:13.000
+All right.
+
+00:16:13.000 --> 00:16:21.000
+If you have any questions as you're going through the exercise, please feel free to drop them in the chat and I'll do my best to help you out.
+
+00:16:37.000 --> 00:16:41.000
+All right.
+
+00:17:07.000 --> 00:17:11.000
+All right.
+
+00:17:37.000 --> 00:17:41.000
+All right.
+
+00:18:08.000 --> 00:18:11.000
+All right.
+
+00:18:11.000 --> 00:18:14.000
+All right.
+
+00:18:14.000 --> 00:18:17.000
+All right.
+
+00:18:17.000 --> 00:18:20.000
+All right.
+
+00:18:20.000 --> 00:18:23.000
+All right.
+
+00:18:23.000 --> 00:18:29.000
+A couple of minutes left.
+
+00:18:30.000 --> 00:18:33.000
+All right.
+
+00:18:33.000 --> 00:18:37.000
+All right.
+
+00:19:03.000 --> 00:19:07.000
+All right.
+
+00:19:33.000 --> 00:19:37.000
+All right.
+
+00:20:03.000 --> 00:20:07.000
+All right.
+
+00:20:34.000 --> 00:20:37.000
+All right.
+
+00:20:37.000 --> 00:20:40.000
+All right.
+
+00:20:40.000 --> 00:20:43.000
+All right.
+
+00:20:43.000 --> 00:20:46.000
+All right.
+
+00:20:46.000 --> 00:20:49.000
+All right.
+
+00:20:49.000 --> 00:20:52.000
+All right.
+
+00:20:52.000 --> 00:20:55.000
+Okay.
+
+00:20:55.000 --> 00:21:01.000
+So, what I'll do now is not restart the clock.
+
+00:21:01.000 --> 00:21:12.000
+I'll open up the files and run through the exercise myself.
+
+00:21:12.000 --> 00:21:16.000
+So, we'll open up the solution document.
+
+00:21:16.000 --> 00:21:21.000
+And do I have the FS package? I do.
+
+00:21:21.000 --> 00:21:24.000
+All right.
+
+00:21:24.000 --> 00:21:30.000
+So, you know, we'll see where the paths are in this case.
+
+00:21:30.000 --> 00:21:34.000
+So, I'm working on a Mac today.
+
+00:21:34.000 --> 00:21:37.000
+And so, I have a couple of libraries.
+
+00:21:37.000 --> 00:21:40.000
+The meanings of these we'll explore later.
+
+00:21:40.000 --> 00:21:44.000
+You can see there's one that's kind of under my user.
+
+00:21:44.000 --> 00:21:46.000
+There's one that's under slash library.
+
+00:21:46.000 --> 00:21:48.000
+That's what that looks like on Mac OS.
+
+00:21:48.000 --> 00:21:52.000
+That might look different on Windows or on Linux.
+
+00:21:52.000 --> 00:22:06.000
+And so, if I look at what's the default library is, in this case, it's the library that's under slash library here, which is a baffling choice.
+
+00:22:06.000 --> 00:22:10.000
+But, again, we'll talk more about that later.
+
+00:22:10.000 --> 00:22:20.000
+If we try to run this first comparison here, right, where we're trying to see if the default library and the library paths are identical.
+
+00:22:20.000 --> 00:22:24.000
+In my case, they're not because I have multiple library paths.
+
+00:22:24.000 --> 00:22:28.000
+So, we can see that my default library is identical.
+
+00:22:28.000 --> 00:22:34.000
+In this case, the second thing.
+
+00:22:34.000 --> 00:22:39.000
+I'm going to skip this part and move to the data frame of packages.
+
+00:22:39.000 --> 00:22:44.000
+So, let's see what packages I have installed and how many of them.
+
+00:22:44.000 --> 00:22:52.000
+So, I have 191 packages in my library right now.
+
+00:22:52.000 --> 00:22:55.000
+And we can tabulate.
+
+00:22:55.000 --> 00:22:56.000
+Let's see.
+
+00:22:56.000 --> 00:23:01.000
+So, some of them, 14 of them are base packages.
+
+00:23:01.000 --> 00:23:03.000
+15 of them are those recommended packages.
+
+00:23:03.000 --> 00:23:05.000
+So, that's doing what we expect.
+
+00:23:05.000 --> 00:23:16.000
+Then I have 102 packages installed into this, into my user library.
+
+00:23:16.000 --> 00:23:18.000
+What version of R were my packages built on?
+
+00:23:18.000 --> 00:23:24.000
+They were all built on 4.4 because I installed them this morning.
+
+00:23:24.000 --> 00:23:28.000
+And let's see what proportion of them need compilation.
+
+00:23:28.000 --> 00:23:32.000
+It's about 50-50 here.
+
+00:23:32.000 --> 00:23:46.000
+And again, some of the meanings of these things we'll explore a little bit more as we start stepping through the different aspects of understanding where packages come from and how they get on your system.
+
+00:23:46.000 --> 00:23:54.000
+But yeah, I see some of you have thousands of packages in your environment.
+
+00:23:54.000 --> 00:23:59.000
+And that doesn't get me heartburn at all.
+
+00:23:59.000 --> 00:24:02.000
+Okay, any questions about that exercise before we jump in?
+
+00:24:02.000 --> 00:24:04.000
+We're going to pivot a little.
+
+00:24:04.000 --> 00:24:10.000
+And we're going to start talking about, yeah, so I'm on macOS today.
+
+00:24:10.000 --> 00:24:14.000
+I work on a bunch of different operating systems.
+
+00:24:14.000 --> 00:24:16.000
+So, I'm on macOS today.
+
+00:24:16.000 --> 00:24:21.000
+Usually I give this workshop working from my Windows machine.
+
+00:24:21.000 --> 00:24:24.000
+And I often also work on Linux environments.
+
+00:24:24.000 --> 00:24:28.000
+So, really all three are in play.
+
+00:24:28.000 --> 00:24:37.000
+And I can bring up different environments if people have questions about the way things look on different operating systems.
+
+00:24:38.000 --> 00:24:44.000
+So, yeah, we're going to pivot a little to talking about our startup.
+
+00:24:44.000 --> 00:24:58.000
+But some of the things that we're seeing we did in that first exercise are going to kind of reoccur as we march through the next pieces of this workshop.
+
+00:24:58.000 --> 00:25:02.000
+So, why are we talking about our startup?
+
+00:25:02.000 --> 00:25:11.000
+The reason we're talking about it is because we're often going to want to change something about the way our code behaves.
+
+00:25:11.000 --> 00:25:14.000
+But we don't necessarily want to change the code.
+
+00:25:14.000 --> 00:25:24.000
+And so, the behavior that I'm talking about there might mean, for example, I want this code to do something different depending on what computer it's running on.
+
+00:25:24.000 --> 00:25:28.000
+So, maybe when my code is running on my laptop, I want it to do one thing.
+
+00:25:29.000 --> 00:25:32.000
+But if it's running on a server, I want it to do something else.
+
+00:25:32.000 --> 00:25:38.000
+And there are ways you can imagine saying, well, write an if statement.
+
+00:25:38.000 --> 00:25:42.000
+And if I'm on this environment, then do this.
+
+00:25:42.000 --> 00:25:44.000
+And if I'm on this different environment, then do that.
+
+00:25:44.000 --> 00:25:50.000
+But there are better ways to do that that make your code a little bit more robust.
+
+00:25:50.000 --> 00:25:57.000
+And so, we'll talk about understanding how you can influence what your code does as R starts up.
+
+00:25:57.000 --> 00:26:00.000
+So, R startup is pretty complicated.
+
+00:26:00.000 --> 00:26:02.000
+There's a lot of stuff happening.
+
+00:26:02.000 --> 00:26:14.000
+This is a flowchart that I reference surprisingly frequently because it's helpful to understand where you have the opportunity to change the behavior of R as it starts up.
+
+00:26:14.000 --> 00:26:21.000
+But we're going to focus on just a couple of parts of what that setup looks like.
+
+00:26:21.000 --> 00:26:27.000
+So, we'll be focusing on, in particular, R environment files, which are going to enable you to set environment variables.
+
+00:26:27.000 --> 00:26:37.000
+And then R profile scripts, which allow you to execute little or as much R code as you want, really, as your R session is starting up.
+
+00:26:37.000 --> 00:26:45.000
+And we'll talk about what you need to do to create and set each of those files.
+
+00:26:46.000 --> 00:27:02.000
+So, one thing you're going to want to make sure of, just generally, and hopefully this is fixed by now, but in case it's not, you want to make sure that when you are creating one of these files, that it terminates in an empty line.
+
+00:27:02.000 --> 00:27:06.000
+You can configure RStudio to make sure that that happens.
+
+00:27:07.000 --> 00:27:11.000
+I'll open up my RStudio configuration and go to code.
+
+00:27:11.000 --> 00:27:14.000
+And where is that?
+
+00:27:14.000 --> 00:27:15.000
+Under saving.
+
+00:27:15.000 --> 00:27:22.000
+And I can just make sure that the source files end with a new line.
+
+00:27:22.000 --> 00:27:29.000
+And that will make sure that as I'm making these changes to these files, they behave the way we expect.
+
+00:27:30.000 --> 00:27:37.000
+The other thing I'll do, since this isn't on, is I'll just turn this option on so we strip additional space at the end of lines.
+
+00:27:37.000 --> 00:27:38.000
+And I'll hit OK.
+
+00:27:38.000 --> 00:27:40.000
+So, again, that's in the settings menu.
+
+00:27:40.000 --> 00:27:49.000
+I'm using the shortcuts command comma or control comma if you're on Windows.
+
+00:27:49.000 --> 00:27:55.000
+And I'm going over to code and saving and just making sure that this file ends in a new line.
+
+00:27:55.000 --> 00:27:57.000
+And then hitting OK.
+
+00:27:58.000 --> 00:28:11.000
+And so once you have that option set, then we can start thinking about modifying the R environment file or .renviron, which is fun to say five times fast.
+
+00:28:11.000 --> 00:28:17.000
+And so what we're going to do is we're going to use the R environment file to set environment variables.
+
+00:28:17.000 --> 00:28:26.000
+And the way environment variables work is there's a collection of essentially key value pairs.
+
+00:28:26.000 --> 00:28:30.000
+Right. So some value that has a name.
+
+00:28:30.000 --> 00:28:38.000
+And the point of that is that it will change the way processes behave on a computer when you start.
+
+00:28:38.000 --> 00:28:46.000
+So things you would want to put in an R environment file, you might want to put R specific environment variables.
+
+00:28:46.000 --> 00:28:58.000
+So if you wanted to set, for example, how much history R keeps as you're executing code, you can set the R history as an environment variable.
+
+00:28:58.000 --> 00:29:10.000
+If you're trying to reach out to some other some other some service that provides you with data and you need an API key to connect to that service.
+
+00:29:10.000 --> 00:29:17.000
+So, for example, when I'm working with census data, I get an API key from the U.S. census.
+
+00:29:17.000 --> 00:29:23.000
+And then I use that to request data from them. And I put that as the API key in my code.
+
+00:29:23.000 --> 00:29:29.000
+What you can't execute in our environment file is our code itself.
+
+00:29:29.000 --> 00:29:39.000
+We'll talk about how you do that in a second. But you're really just limiting yourself to these key value pairs when you're when you're working with an R environment file.
+
+00:29:40.000 --> 00:29:49.000
+One way that's helpful to kind of get a handle on editing these files is to use the use this function.
+
+00:29:49.000 --> 00:29:54.000
+Use the use this function and use it to edit.
+
+00:29:54.000 --> 00:30:00.000
+Call this function the edit R environment file. And there are two different scopes to think about.
+
+00:30:00.000 --> 00:30:06.000
+There's the user R environment file, which is going to open up one below this.
+
+00:30:06.000 --> 00:30:11.000
+This tilde means this is your home directory on your operating system.
+
+00:30:11.000 --> 00:30:16.000
+This might mean something slightly different in on Linux or on Mac or Windows.
+
+00:30:16.000 --> 00:30:20.000
+But they're all going to kind of resolve to whatever counts as your home directory.
+
+00:30:20.000 --> 00:30:25.000
+And then underneath that directory, you have a dot R environment file.
+
+00:30:25.000 --> 00:30:31.000
+And then the other thing you can create at a different scope is a project R environment file.
+
+00:30:31.000 --> 00:30:42.000
+So that's below a specific set of directories into your projects that you can create that R environment file.
+
+00:30:42.000 --> 00:30:49.000
+So, again, these are some examples of things that you might want to put into, for example, a user R environment file.
+
+00:30:49.000 --> 00:30:55.000
+So, for example, these are real keys, but I burned all of them. So you can't do anything with them.
+
+00:30:55.000 --> 00:31:01.000
+Like if I wanted to put my GitHub personal access token in R environment file, which you don't need to do anymore.
+
+00:31:01.000 --> 00:31:05.000
+And I should take that as an example, which I will do before.
+
+00:31:05.000 --> 00:31:11.000
+But if you if you needed to set your GitHub personal access token as an environment variable, then you could do that.
+
+00:31:11.000 --> 00:31:18.000
+If you were using something like Posit Connect, right again, and you need to have access to an API key, you could do that.
+
+00:31:18.000 --> 00:31:25.000
+If you're on Windows and you need to make R tools available, we'll talk a little bit more about why you would want to do that.
+
+00:31:25.000 --> 00:31:29.000
+So these are the kinds of things you might put in a user R environment file.
+
+00:31:29.000 --> 00:31:36.000
+And then for projects, right, the things you're wanting to modify are going to be things that are associated with the project.
+
+00:31:36.000 --> 00:31:40.000
+So that might be, you know, the path to a virtual environment.
+
+00:31:40.000 --> 00:31:52.000
+If you're working with the reticulate package or if you had database credentials that you wanted to make available to your code, then you would put those there.
+
+00:31:52.000 --> 00:32:00.000
+So the R environment file is how you set environment variables and then you need a way to get them.
+
+00:32:00.000 --> 00:32:11.000
+And so the sys.getenv function is how you get environment variables rather than and this is how you get them.
+
+00:32:11.000 --> 00:32:21.000
+The R environment file is how you set them. There is a sys.setenv function, which you can also use to set environment variables.
+
+00:32:21.000 --> 00:32:31.000
+But they don't, those environment variables are not going to, they only, they're only set for the session you're running in.
+
+00:32:31.000 --> 00:32:39.000
+And if we were to go back to the flowchart, setting them in the R environment file sets them earlier.
+
+00:32:39.000 --> 00:32:44.000
+And when you're working with environment variables, setting them as early as you can is often good.
+
+00:32:44.000 --> 00:32:58.000
+So for setting the files, we're going to prefer using the .renv and then for setting, for getting the values, we're going to use sys.getenv.
+
+00:32:58.000 --> 00:33:04.000
+So what we're going to do there for questions in the chat. And there's one question from Sheila.
+
+00:33:04.000 --> 00:33:11.000
+How do you know if the R environment file you're looking at is for a user or project?
+
+00:33:11.000 --> 00:33:24.000
+How do you know if it's for a user or project? It's going to depend on where it is. So, I think the default is the user one. If you don't specify scope, you're going to get the user one.
+
+00:33:24.000 --> 00:33:28.000
+I'm pretty sure. Right. Yes.
+
+00:33:28.000 --> 00:33:36.000
+And if you're searching for one, is it first looking in the user and then you get them. Yeah.
+
+00:33:36.000 --> 00:33:38.000
+Stephanie, you're destroying my exercise.
+
+00:33:39.000 --> 00:33:40.000
+Sorry.
+
+00:33:40.000 --> 00:33:41.000
+No, it's all good.
+
+00:33:41.000 --> 00:33:46.000
+So we're going to, we're going to go through the exercise to answer exactly that question.
+
+00:33:46.000 --> 00:34:02.000
+Just to illustrate the, if I tell my terminal that I want to go to this dash tilde, and then I say what's working directory, am I in this computational context, right?
+
+00:34:02.000 --> 00:34:17.000
+On my Mac, slash users, slash udavid-algebra is my home directory. That home directory might look different if I was in on a different server, but all operating systems have this notion of home directory.
+
+00:34:17.000 --> 00:34:36.000
+So, no matter what context you're running in, the user R environment file is going to be something that lives here. So, if I were to list the files in this directory, there should be, there's not an R environment file here for reasons that will become apparent in a second.
+
+00:34:37.000 --> 00:34:52.000
+But you can see there are a bunch of other kinds of files that I have at this level because lots of programs know that they want to look in here for user specific information.
+
+00:34:52.000 --> 00:34:55.000
+We have one more question in the chat.
+
+00:34:55.000 --> 00:35:03.000
+So I have the option to either tie environmental variables globally or scope them to a particular project and user.
+
+00:35:03.000 --> 00:35:06.000
+Is the user like the user of the machine?
+
+00:35:06.000 --> 00:35:29.000
+The user is the user of the machine. So, if I say, who am I on this computer? I'm udavid-algebra. What I'm going to do just to illustrate the difference is I'm going to pull up a temporary, I have some sort of ephemeral RStudio server environments.
+
+00:35:29.000 --> 00:35:38.000
+I'm going to open up one of those so you see what it looks like when I do that same collection of things in a different context.
+
+00:35:38.000 --> 00:35:43.000
+So, I'm going to open up this instance of Workbench.
+
+00:35:43.000 --> 00:35:47.000
+And then I'm logging in, in this case, as...
+
+00:35:46.626 --> 00:35:55.506
+this instance of Workbench. And then I'm logging in, in this case, as this dummy user called
+
+00:35:55.506 --> 00:36:06.786
+Publisher1. And so I'm going to open up an RStudio session. And yes, Jeremy, that is a problem that
+
+00:36:07.505 --> 00:36:12.466
+lots of people working on locked down environments have. So that's a good call out there.
+
+00:36:13.425 --> 00:36:19.826
+So I'm in RStudio, right? If I open up, if I say that I want to go to my home directory,
+
+00:36:20.545 --> 00:36:25.666
+and then I print the working directory, in this case, it's slash home slash Publisher1. This is
+
+00:36:25.666 --> 00:36:33.265
+a Linux environment, right? So the home directory means something slightly different here. But you
+
+00:36:33.265 --> 00:36:39.346
+can see, again, I have a bunch of different files that correspond to things in my home directory
+
+00:36:39.346 --> 00:36:49.585
+here. And the user, I am in this case, right, is a different user. So the concept of, like,
+
+00:36:49.585 --> 00:36:58.706
+the home directory is associated with whoever's operating the kind of R session, right? So it's
+
+00:36:58.706 --> 00:37:02.306
+going to be your R session in that context. Does that help?
+
+00:37:08.946 --> 00:37:09.746
+Yeah, thank you.
+
+00:37:13.106 --> 00:37:22.626
+So what we're going to do is we're going to edit our user R environment file. So we're going to
+
+00:37:23.505 --> 00:37:30.145
+use this helper function. If you call it without a scope argument, it's going to
+
+00:37:31.746 --> 00:37:38.865
+return it's going to it'll open up the user environment file. You're going to add
+
+00:37:40.786 --> 00:37:46.865
+WTF underscore user as the this is when I say key value pairs, right? This is the key.
+
+00:37:47.426 --> 00:37:52.225
+This is the value. There's an equal sign between them. And then you can add whatever value you
+
+00:37:52.225 --> 00:37:58.706
+want, right? But your name underscore user, and then restart the session, right? You have to
+
+00:37:58.706 --> 00:38:04.786
+restart the session every time you want to set new environment variables because they are
+
+00:38:05.426 --> 00:38:14.226
+scoped to the session. And then in the console, run sys.get to get that value.
+
+00:38:14.226 --> 00:38:15.825
+So we'll give people a couple minutes to do that.
+
+00:39:22.226 --> 00:39:43.426
+Make sure I don't put any secrets on the internet.
+
+00:39:52.226 --> 00:40:19.826
+Okay, so
+
+00:40:22.946 --> 00:40:26.226
+I'm going to
+
+00:40:30.226 --> 00:40:38.386
+walk through that exercise. I'm going to call the use this function and edits my user R environment.
+
+00:40:41.106 --> 00:40:48.626
+You'll see right I get the path that the R environment file is, is at in this case,
+
+00:40:48.626 --> 00:40:54.465
+it's below slash user slash u David Algebra, which is my home directory dot R environment.
+
+00:40:54.465 --> 00:41:05.185
+I'm going to say WTF user. There's a Spanish cartoonist who also has the name David Algebra,
+
+00:41:06.226 --> 00:41:13.905
+which is why I insist on putting the E in front. And so just I want to show you that if I call
+
+00:41:13.905 --> 00:41:21.025
+sys.get in WTF user right now, there's no value because I haven't restarted R yet.
+
+00:41:21.826 --> 00:41:25.506
+Right, so it's not going to pick up this value until I restart R.
+
+00:41:28.145 --> 00:41:32.066
+And now if I run that again, I should get David Algebra user.
+
+00:41:32.786 --> 00:41:36.386
+All right, so you have to restart R when you set environment variables.
+
+00:41:37.185 --> 00:41:43.106
+Otherwise, and this is not that's not just R that's really any program. You're you have to
+
+00:41:43.106 --> 00:41:49.585
+restart it in order to pick up a change in environment. Okay, now we're going to do the
+
+00:41:49.585 --> 00:42:03.425
+same thing. But we're going to do it with the project R environment. So one thing you'll see,
+
+00:42:03.506 --> 00:42:11.905
+and if you haven't done this yet, you may want to I created a little you can use use this to
+
+00:42:11.905 --> 00:42:20.946
+create a project. So if you if you're not already in a project, you may want to create one first,
+
+00:42:20.946 --> 00:42:26.145
+just so that you don't put this somewhere in your home directory, where it will be confusing when
+
+00:42:26.145 --> 00:42:31.346
+you're not in this class. So if you're not in a project already, you may want to create one.
+
+00:42:33.585 --> 00:42:42.705
+And don't do what I'm doing, which is creating it inside a project. So create a new project if
+
+00:42:42.705 --> 00:42:47.826
+you're not already in one and then run. We're going to try the same collection of steps,
+
+00:42:47.826 --> 00:42:52.226
+right. So we're going to edit the R environment variable, but we're going to do it in the project
+
+00:42:52.226 --> 00:43:01.346
+scope. We'll add WTF projects to the project name. And then we'll restart and get the value of WTF
+
+00:43:01.346 --> 00:43:08.145
+project. And then once you've done that, you can answer this question, which is, what's the value
+
+00:43:08.145 --> 00:43:15.266
+of WTF user after you set WTF project, we'll give people a couple minutes to work through that as
+
+00:43:15.266 --> 00:43:21.185
+well. We can add more time if we need to.
+
+00:44:45.266 --> 00:45:01.185
+Is everyone able to set a project to our environment? Do we need more time?
+
+00:45:01.185 --> 00:45:21.105
+Give me a minute.
+
+00:47:01.185 --> 00:47:23.586
+Okay, so I'll jump back to RStudio and close this. And so now I'll run, restart R. I'm going to run
+
+00:47:23.586 --> 00:47:32.305
+use this, edit R environment, right. I'm in my WTF R-Ladies Gaborone project. So I'm going to
+
+00:47:32.305 --> 00:47:38.466
+select the project scope, right. You can see, again, the active projects use this identifies
+
+00:47:38.466 --> 00:47:44.946
+as this project, modify R environment and also just, you know, make sure you restart R
+
+00:47:45.026 --> 00:47:57.425
+once you set the value. So in this case, WTF projects equals all these projects. Again, if I
+
+00:48:01.586 --> 00:48:07.906
+try to get this value, there's nothing there. I haven't restarted R yet. I'm going to restart R.
+
+00:48:08.545 --> 00:48:14.785
+I'm going to run that value again. Let's run that again. Now I have this value project.
+
+00:48:15.345 --> 00:48:20.466
+What happened? What did people get when they ran WTF user?
+
+00:48:21.185 --> 00:48:31.026
+Nothing, right. So when you set a project level R environment file, your user level one does not
+
+00:48:31.026 --> 00:48:39.026
+get evaluated, right. So there's a name for that behavior, which is short-circuiting. But when you
+
+00:48:39.026 --> 00:48:49.745
+are, if you set this user, right, to a project level R environment, your user level one does not
+
+00:48:49.745 --> 00:48:58.305
+this user or this project level configuration, then you're not accessing information you have
+
+00:48:58.305 --> 00:49:08.865
+in your user level R environment file. And so if you saw earlier, I didn't actually have
+
+00:49:10.466 --> 00:49:17.985
+initially a user level R environment file in this project, because the way I do work,
+
+00:49:18.225 --> 00:49:21.425
+usually if I'm going to create them at all, I create them at the project level.
+
+00:49:22.626 --> 00:49:28.146
+So just something to be aware of, right. If you start trying to modify the behavior of R this way,
+
+00:49:28.146 --> 00:49:30.626
+you have to do it on a project by project basis.
+
+00:49:35.425 --> 00:49:41.026
+Questions about that before we move on to another way of customizing the way R starts up?
+
+00:49:41.105 --> 00:49:47.586
+Well, I have a question, I guess about collaboration, right? Like is, if you put it
+
+00:49:47.586 --> 00:49:51.506
+in the actual project, and then that's on some sort of version control,
+
+00:49:51.506 --> 00:49:56.386
+is that generally an ignored file? Or because, yeah, I'm wondering.
+
+00:49:56.386 --> 00:50:04.946
+Yeah, so again, I, the one of the reasons I don't usually give this workshop on my MacBook is
+
+00:50:05.026 --> 00:50:09.745
+because this is where all of my actual secrets are. So I have to do some things off screen to
+
+00:50:09.745 --> 00:50:25.586
+make sure I can show this to you safely. Get ignore. So I, yeah, I have, as part of my
+
+00:50:25.985 --> 00:50:31.506
+Git configuration for when I, so when I work with version control on this machine,
+
+00:50:32.066 --> 00:50:38.706
+there is a collection of files that I have Git configured to never recognize in any project.
+
+00:50:39.665 --> 00:50:45.586
+So if you work on Mac OS, right, you should ignore this file. Everyone should ignore this file.
+
+00:50:46.545 --> 00:50:51.586
+There's a bunch of R projects. So, you know, for example, if I'm working on a Mac OS,
+
+00:50:52.066 --> 00:50:57.586
+there's a bunch of R projects. So, you know, for example, the R project folder that gets created
+
+00:50:57.586 --> 00:51:02.626
+by R studio, when you launch a project, the R history, right? Like I don't want to share
+
+00:51:02.626 --> 00:51:08.066
+everything I've ever typed into the console with my collaborators. I don't want to keep our data
+
+00:51:08.066 --> 00:51:14.066
+files on disk, right? I don't want my HTTP pass like OAuth tokens. And the R environment file
+
+00:51:14.066 --> 00:51:20.706
+is another one of those things that I ignore for all projects. So typically, if you have secrets
+
+00:51:20.706 --> 00:51:25.826
+that you're putting into that kind of context, you need some way of distributing those out of
+
+00:51:25.826 --> 00:51:33.425
+band. So that might be like a password manager that your whole team uses, or, you know, that's
+
+00:51:33.425 --> 00:51:37.985
+the only recommendation that I could make safely, a password manager that your whole team uses.
+
+00:51:37.985 --> 00:51:43.185
+There are some good free ones, but like some solution for communicating secrets out of band,
+
+00:51:43.185 --> 00:51:46.946
+having ways to set those on remote systems without passing them around in your code,
+
+00:51:47.105 --> 00:51:51.026
+this is how you do that. But yeah, so the R environment file, I ignore
+
+00:51:54.146 --> 00:51:59.665
+globally. And the neat thing, this is kind of a neat capability of R, which is really like the
+
+00:52:00.626 --> 00:52:04.545
+only language I've used that has a built in way of doing this. Lots of other languages
+
+00:52:05.185 --> 00:52:11.266
+have a convention of using something called a .env file, and then having some package responsible
+
+00:52:11.266 --> 00:52:16.865
+for reading that .env file to get the same behavior. But this is kind of a neat thing
+
+00:52:16.865 --> 00:52:23.026
+that we get for free without needing to install stuff. So yes, don't commit your R environment
+
+00:52:23.026 --> 00:52:33.985
+files. Cool. Right, so we talked a little bit about, you know, those kind of secret key value
+
+00:52:33.985 --> 00:52:43.185
+pairs that you can use. You might also want to create some code that you run at the beginning
+
+00:52:43.185 --> 00:52:51.506
+of each session. And the one of the places you can do that is in this .R profile. It's R code
+
+00:52:51.506 --> 00:52:59.266
+that runs in the beginning of each session. There are a couple of ways, you know, a lot of the time
+
+00:53:00.146 --> 00:53:06.306
+if you're running a script at the beginning of an R session, one of the questions you have is like,
+
+00:53:06.306 --> 00:53:11.666
+am I doing this in an interactive context or not? So an interactive context, right, would be one
+
+00:53:11.666 --> 00:53:17.105
+where you're like the one we're in now, where I'm sitting here, I am typing and hitting enter
+
+00:53:17.105 --> 00:53:22.386
+and or control enter and lines are getting sent to the console. If you're knitting an R markdown
+
+00:53:22.386 --> 00:53:28.705
+document or running an R script from the command line or launching a shiny app, you typically like
+
+00:53:28.705 --> 00:53:37.026
+don't. Those are not interactive contexts. And most of the customization that you do in R profile,
+
+00:53:37.026 --> 00:53:41.506
+not all of it, but most of it is usually focused on stuff that's happening in the interactive
+
+00:53:41.506 --> 00:53:52.225
+context. So things you might want to put in your R profile. You might want to in your session set
+
+00:53:52.225 --> 00:53:57.186
+the default place where you get CRAN packages. There are other ways to do this. If you're using
+
+00:53:57.186 --> 00:54:06.786
+the RStudio IDE, it has some ways of configuring how you set the default CRAN mirror that you're
+
+00:54:06.786 --> 00:54:11.506
+going to fetch packages from. But if you were working on a system where you didn't have access
+
+00:54:11.506 --> 00:54:15.186
+to that and you wanted to make sure you were getting packages from the right place anyway,
+
+00:54:16.465 --> 00:54:22.546
+setting a default CRAN mirror is a great way to do that. There's a link to the package prompt,
+
+00:54:23.506 --> 00:54:27.745
+which is another way of, you know, if you are the kind of person who works with R
+
+00:54:28.626 --> 00:54:34.865
+in the terminal a lot, then you can use this to customize the way R looks in the terminal.
+
+00:54:34.865 --> 00:54:40.146
+It does not work exactly the way you want it to in RStudio, but you can see here,
+
+00:54:41.506 --> 00:54:44.065
+right, the usage instructions for this package
+
+00:54:44.786 --> 00:54:54.065
+describe setting. It's a run in your R profile in interactive contexts. So something fun to check
+
+00:54:54.065 --> 00:55:02.865
+out if you do any sort of R work in the terminal. But it's important to note, right, there are some
+
+00:55:02.865 --> 00:55:10.786
+things you don't want to put in your R profile. And in particular, if it matters to code you're
+
+00:55:10.786 --> 00:55:22.386
+sharing, right, then you don't really want it to be in your R profile. So let's see if we can
+
+00:55:22.386 --> 00:55:28.945
+figure out why we think we might not want to put these things in the R profile, right? So like,
+
+00:55:28.945 --> 00:55:37.266
+why might you not want to put strings as factors set to false in the R profile? This example is
+
+00:55:37.266 --> 00:55:42.786
+showing its age. I'm old. When I used R, when I started using R, this was more of a problem.
+
+00:55:42.786 --> 00:55:50.386
+It's less of a problem now, right? But if you're going to read something in to R as, and you want
+
+00:55:50.386 --> 00:55:55.186
+to set the kind of default, the type it comes in as, that's something you want to do explicitly
+
+00:55:56.225 --> 00:56:01.105
+in the code so that when you share your code with someone, they get the same results, right?
+
+00:56:01.985 --> 00:56:07.666
+You don't want to, for example, load something like the tidyverse in an R profile,
+
+00:56:08.705 --> 00:56:16.386
+because if you share code with a collaborator that doesn't have the tidyverse in it,
+
+00:56:16.386 --> 00:56:21.666
+they might, you know, run the code and get a different set of packages in their environment
+
+00:56:21.666 --> 00:56:25.186
+that execute the code, right? So that's something you would want to do explicitly in the script
+
+00:56:25.186 --> 00:56:32.626
+you're sharing, right? Don't alias functions in your R profile, right? Because that'll do,
+
+00:56:32.626 --> 00:56:37.426
+that'll cause some of the same problems, right? Someone might not end up with this F available
+
+00:56:37.426 --> 00:56:42.865
+in their environment. And then when you share your code with them, it won't work. And then,
+
+00:56:43.825 --> 00:56:48.865
+you know, again, if you were to set a theme in your R profile, then when someone else renders
+
+00:56:48.865 --> 00:56:52.546
+your plots, they're not going to get the same thing, right? So these are things that
+
+00:56:52.546 --> 00:56:56.705
+they matter to code that you're sharing, so you don't want to put them in the R profile,
+
+00:56:57.506 --> 00:57:02.945
+but you might want to, you'll want to set them explicitly in the script instead.
+
+00:57:05.506 --> 00:57:13.985
+We don't have neighbors today, so I'll just, I'll pick on, will I pick on someone? No,
+
+00:57:13.985 --> 00:57:19.026
+that seems like a lot. But Shannon, I guess I'll pick on Shannon. Shannon,
+
+00:57:19.026 --> 00:57:20.865
+why might these be safe to put in your R profile?
+
+00:57:23.186 --> 00:57:29.666
+So our use this and dev tools are things that you tend to use interactively, and they're not
+
+00:57:29.666 --> 00:57:35.825
+lending, the functions in these packages are not imperative to reproducible code and data
+
+00:57:35.825 --> 00:57:39.266
+and data reports and data artifacts. It's just things that you use on the fly.
+
+00:57:40.065 --> 00:57:44.465
+Right. So yeah, I like to think of these, thank you, Shannon. I like to think of these as like
+
+00:57:44.465 --> 00:57:50.065
+development dependencies, right? Use this as something I'm calling a lot if I'm doing
+
+00:57:50.065 --> 00:57:54.146
+interactive work. I'm just repeating what she said. That's not helpful, but they're development
+
+00:57:54.146 --> 00:58:00.626
+dependencies, right? So if I send a package to my collaborator, they don't need to have
+
+00:58:00.626 --> 00:58:07.906
+dev tools installed to work with the package necessarily. So those might be safe to put in
+
+00:58:07.906 --> 00:58:13.666
+your R profile. I still wouldn't, but this helps you kind of understand the distinction there.
+
+00:58:13.666 --> 00:58:18.786
+Go ahead, Greg. You mentioned developer dependencies. Can I
+
+00:58:19.985 --> 00:58:24.705
+handpick which R profile I load on execution?
+
+00:58:27.026 --> 00:58:31.506
+Can you handpick which R profile is loaded when R starts?
+
+00:58:32.386 --> 00:58:37.026
+I mean, well, whenever you load a project, sorry, I'm trying to encapsulate stuff into
+
+00:58:37.666 --> 00:58:40.626
+projects as opposed to just code.
+
+00:58:41.585 --> 00:58:48.065
+Right. I'm going to say, stay tuned, Greg. We have, we're getting there. I mean,
+
+00:58:48.065 --> 00:58:55.026
+so there are definitely ways that you can, for example, customize the behavior,
+
+00:58:56.065 --> 00:59:03.105
+like the flowchart I showed at the beginning. There are a number of things before the files
+
+00:59:03.105 --> 00:59:06.546
+that we're talking about putting on disk, right? These are kind of the most common ways.
+
+00:59:07.345 --> 00:59:13.426
+If you have a need to put deeper, deeper into the system, you can totally change those things.
+
+00:59:13.426 --> 00:59:18.786
+Some of the tools we'll talk about in a little bit, take advantage of some of these facts to
+
+00:59:18.786 --> 00:59:24.705
+give you a startup experience that I think is going to reflect some of what you're looking for.
+
+00:59:25.745 --> 00:59:31.105
+But we'll get into some of those details a little bit.
+
+00:59:33.906 --> 00:59:42.465
+So one way that you can figure out things that people put in their dot files is by searching,
+
+00:59:42.465 --> 00:59:47.666
+sorry, putting their dot R profile is by searching through them on GitHub.
+
+00:59:49.186 --> 00:59:55.985
+Files that start with this dot prefix are called dot files. It's a very creative name.
+
+00:59:56.546 --> 01:00:04.386
+And they are often configuration or other files for programs that people use on their computers.
+
+01:00:04.386 --> 01:00:10.065
+Some people share their dot files publicly as a way of making them available for other people
+
+01:00:10.065 --> 01:00:18.865
+who want to use them or just because they, whoops, because they want to use them to set up
+
+01:00:18.865 --> 01:00:27.666
+new computers. My dot files are public for that reason. What is happening to my ability to copy
+
+01:00:27.666 --> 01:00:37.026
+and paste? There we go. We've done it. Right. So if you search for dot R profiles, right,
+
+01:00:37.585 --> 01:00:43.345
+Colin Gillespie, you can check out his dot R profile. He's got a lot of stuff happening in
+
+01:00:43.345 --> 01:00:49.825
+here. Right. So you can check some of these out on GitHub for some inspiration for things to do.
+
+01:00:49.825 --> 01:01:00.306
+Right. I have a lot of people also put things under just the dot files, but I use a dot file
+
+01:01:00.306 --> 01:01:07.825
+manager system. So the translation to R is not immediately apparent there. Anyway.
+
+01:01:08.306 --> 01:01:14.546
+Okay. So we're going to do the same thing we did last time. Right. Now we're going to edit
+
+01:01:14.546 --> 01:01:22.146
+our user dot R profile. Then we're going to edit our project dot R file dot,
+
+01:01:23.585 --> 01:01:28.306
+edit our user dot R profile. We're going to edit our project dot R profile.
+
+01:01:29.745 --> 01:01:34.626
+And we're going to see what happens after you restart each R session.
+
+01:01:34.626 --> 01:01:37.985
+So I'll give you five minutes to do that.
+
+01:06:34.626 --> 01:06:50.865
+All right. So let's try out this activity and then we'll take a break. So what I'm going to do
+
+01:06:51.585 --> 01:06:59.825
+is I'm going to use this. I'm just paying attention to the button. What I'll do quickly
+
+01:06:59.825 --> 01:07:18.386
+is confirm I don't have anything. Okay. So I'm going to call use this, edit R profile. Again,
+
+01:07:18.386 --> 01:07:25.266
+you can see it takes the same scope argument as the edit R environment. So if I don't provide
+
+01:07:25.266 --> 01:07:31.026
+a scope, it's going to default to the one in my home directory. Right. So this is my user R
+
+01:07:31.026 --> 01:07:44.626
+profile. Right. And since this is dot R profile, we can just put R code in it. So I'll say hello
+
+01:07:44.626 --> 01:07:57.906
+from the user R profile. I save and restart this. Right. Now we can see, right, this is R code that
+
+01:07:57.906 --> 01:08:05.345
+gets executed on startup. Right. So I started the session. This was executed. I didn't do
+
+01:08:05.345 --> 01:08:11.426
+anything. Right. That's just what happens when I put R code in this user R profile.
+
+01:08:11.745 --> 01:08:17.026
+Now I'm going to edit this. Now I'm going to edit the same file, but in the project scope,
+
+01:08:17.026 --> 01:08:22.626
+again, you can see, right, the project scope I have here, my home directory. Beneath my home
+
+01:08:22.626 --> 01:08:29.426
+directory, I have my projects folder. And then in this project, right, my WTF R-Ladies-Gabroni
+
+01:08:29.426 --> 01:08:37.825
+project, I'm modifying this R profile. If I say hello, right, and again, this is R code. So I
+
+01:08:37.985 --> 01:08:42.546
+use the print function, user R profile.
+
+01:08:48.146 --> 01:08:57.906
+Save. Restart. Right. I get hello from user R profile. Right. Because the dot R profile
+
+01:08:58.626 --> 01:09:04.225
+is set in my projects directory, the one in my home directory is not evaluated.
+
+01:09:05.186 --> 01:09:09.825
+Right. So it's the same short circuiting behavior. But in this case,
+
+01:09:09.825 --> 01:09:14.705
+we're executing R code instead of setting values that we have to retrieve.
+
+01:09:18.386 --> 01:09:22.705
+Questions about any of that before we break briefly?
+
+01:09:22.705 --> 01:09:36.225
+Like I said, this behavior is going to come back in a bit when we talk about
+
+01:09:36.225 --> 01:09:45.666
+reproducible environments with Rn. But if there are no questions,
+
+01:09:46.626 --> 01:09:56.065
+should we give it another, Shannon, five minutes? Yeah. So give it five minutes. Take a break.
+
+01:09:56.626 --> 01:10:03.666
+Go get some coffee or whatever beverage is appropriate for what time you're in. And we'll
+
+01:10:03.666 --> 01:10:09.186
+see you in five minutes.
+
+01:11:33.666 --> 01:11:37.986
+Transcribed by https://otter.ai
+
+01:12:31.509 --> 01:12:36.469
+R-Ladies Gaborone & R-Ladies RTP
+
+01:12:47.549 --> 01:12:53.469
+R-Ladies Gaborone & R-Ladies RTP
+
+01:13:01.469 --> 01:13:04.469
+R-Ladies Gaborone & R-Ladies RTP
+
+01:13:05.469 --> 01:13:08.469
+R-Ladies Gaborone & R-Ladies RTP
+
+01:13:09.469 --> 01:13:12.469
+R-Ladies
+
+01:13:12.469 --> 01:13:15.469
+Gaborone & R-Ladies RTP
+
+01:13:16.469 --> 01:13:20.469
+R-Ladies
+
+01:13:20.469 --> 01:13:24.469
+Gaborone &
+
+01:13:24.469 --> 01:13:27.469
+R-Ladies
+
+01:13:27.469 --> 01:13:29.469
+Gaborone & Radwa
+
+01:13:29.469 --> 01:13:32.469
+R-Ladies
+
+01:13:32.469 --> 01:13:37.469
+Gaborone & R-Ladies RTP
+
+01:13:37.469 --> 01:13:42.469
+R-Ladies
+
+01:13:42.469 --> 01:13:46.469
+Gaborone & R-Ladies RTP
+
+01:13:46.469 --> 01:13:51.469
+R-Ladies
+
+01:13:51.469 --> 01:13:56.469
+Gaborone & R-Ladies RTP
+
+01:13:56.469 --> 01:14:01.469
+R-Ladies
+
+01:14:01.469 --> 01:14:06.469
+Gaborone & R-Ladies RTP
+
+01:14:06.469 --> 01:14:11.469
+R-Ladies
+
+01:14:11.469 --> 01:14:16.469
+R-Ladies
+
+01:14:16.469 --> 01:14:21.469
+Gaborone & R-Ladies RTP
+
+01:14:21.469 --> 01:14:26.469
+R-Ladies
+
+01:14:26.469 --> 01:14:31.469
+Gaborone & R-Ladies RTP
+
+01:14:31.469 --> 01:14:36.469
+R-Ladies
+
+01:14:36.469 --> 01:14:41.469
+R-Ladies
+
+01:14:41.469 --> 01:14:46.469
+Gaborone & R-Ladies RTP
+
+01:14:46.469 --> 01:14:51.469
+R-Ladies
+
+01:14:51.469 --> 01:14:56.469
+Gaborone & R-Ladies RTP
+
+01:14:56.469 --> 01:15:01.469
+R-Ladies
+
+01:15:01.469 --> 01:15:06.469
+Gaborone & R-Ladies RTP
+
+01:15:06.469 --> 01:15:11.469
+R-Ladies
+
+01:15:11.469 --> 01:15:16.469
+Gaborone & R-Ladies RTP
+
+01:15:16.469 --> 01:15:21.469
+R-Ladies
+
+01:15:21.469 --> 01:15:26.469
+Gaborone & R-Ladies
+
+01:15:26.469 --> 01:15:31.469
+R-Ladies
+
+01:15:31.469 --> 01:15:36.469
+Gaborone & R-Ladies RTP
+
+01:15:36.469 --> 01:15:41.469
+R-Ladies
+
+01:15:41.469 --> 01:15:46.469
+Gaborone & R-Ladies RTP
+
+01:15:46.469 --> 01:15:51.469
+R-Ladies
+
+01:15:51.469 --> 01:15:56.469
+R-Ladies
+
+01:15:56.469 --> 01:16:01.469
+RTP
+
+01:16:01.469 --> 01:16:06.469
+R-Ladies
+
+01:16:06.469 --> 01:16:11.469
+RTP
+
+01:16:11.469 --> 01:16:16.469
+R-Ladies
+
+01:16:16.469 --> 01:16:21.469
+R-Ladies
+
+01:16:21.469 --> 01:16:26.469
+RTP
+
+01:16:26.469 --> 01:16:31.469
+R-Ladies
+
+01:16:31.469 --> 01:16:36.469
+RTP
+
+01:16:36.469 --> 01:16:41.469
+R-Ladies
+
+01:16:41.469 --> 01:16:46.469
+R-Ladies
+
+01:16:46.469 --> 01:16:51.469
+RTP
+
+01:16:51.469 --> 01:16:56.469
+R-Ladies
+
+01:16:56.469 --> 01:17:01.469
+RTP
+
+01:17:01.469 --> 01:17:06.469
+R-Ladies
+
+01:17:06.469 --> 01:17:11.469
+R-Ladies
+
+01:17:11.469 --> 01:17:16.469
+RTP
+
+01:17:16.469 --> 01:17:21.469
+R-Ladies
+
+01:17:21.469 --> 01:17:26.469
+RTP
+
+01:17:26.469 --> 01:17:31.469
+R-Ladies
+
+01:17:31.469 --> 01:17:36.469
+R-Ladies
+
+01:17:36.469 --> 01:17:41.469
+RTP
+
+01:17:41.469 --> 01:17:46.469
+R-Ladies
+
+01:17:46.469 --> 01:17:51.469
+RTP
+
+01:17:51.469 --> 01:17:56.469
+R-Ladies
+
+01:17:56.469 --> 01:18:01.469
+R-Ladies
+
+01:18:01.469 --> 01:18:06.469
+RTP
+
+01:18:06.469 --> 01:18:11.469
+R-Ladies
+
+01:18:11.469 --> 01:18:16.469
+RTP
+
+01:18:16.469 --> 01:18:21.469
+R-Ladies
+
+01:18:21.469 --> 01:18:26.469
+R-Ladies
+
+01:18:26.469 --> 01:18:31.469
+RTP
+
+01:18:31.469 --> 01:18:36.469
+R-Ladies
+
+01:18:36.469 --> 01:18:41.469
+RTP
+
+01:18:41.469 --> 01:18:46.469
+R-Ladies
+
+01:18:46.469 --> 01:18:51.469
+R-Ladies
+
+01:18:51.469 --> 01:18:56.469
+R-Ladies
+
+01:18:56.469 --> 01:19:01.469
+R-Ladies
+
+01:19:01.469 --> 01:19:06.469
+R-Ladies
+
+01:19:06.469 --> 01:19:11.469
+R-Ladies
+
+01:19:11.469 --> 01:19:16.469
+R-Ladies
+
+01:19:16.469 --> 01:19:21.469
+R-Ladies
+
+01:19:21.469 --> 01:19:26.469
+R-Ladies
+
+01:19:26.469 --> 01:19:31.469
+R-Ladies
+
+01:19:31.469 --> 01:19:36.469
+R-Ladies
+
+01:19:36.469 --> 01:19:41.469
+R-Ladies
+
+01:19:41.469 --> 01:19:46.469
+R-Ladies
+
+01:19:46.469 --> 01:19:51.469
+R-Ladies
+
+01:19:51.469 --> 01:19:56.469
+R-Ladies
+
+01:19:56.469 --> 01:20:01.469
+R-Ladies
+
+01:20:01.469 --> 01:20:06.469
+R-Ladies
+
+01:20:06.469 --> 01:20:11.469
+R-Ladies
+
+01:20:11.469 --> 01:20:16.469
+R-Ladies
+
+01:20:16.469 --> 01:20:21.469
+R-Ladies
+
+01:20:21.469 --> 01:20:26.469
+R-Ladies
+
+01:20:26.469 --> 01:20:31.469
+R-Ladies
+
+01:20:31.469 --> 01:20:36.469
+R-Ladies
+
+01:20:36.469 --> 01:20:41.469
+R-Ladies
+
+01:20:41.469 --> 01:20:46.469
+R-Ladies
+
+01:20:46.469 --> 01:20:51.469
+R-Ladies
+
+01:20:51.469 --> 01:20:56.469
+R-Ladies
+
+01:20:56.469 --> 01:21:01.469
+R-Ladies
+
+01:21:01.469 --> 01:21:06.469
+R-Ladies
+
+01:21:06.469 --> 01:21:11.469
+R-Ladies
+
+01:21:11.469 --> 01:21:16.469
+R-Ladies
+
+01:21:16.469 --> 01:21:21.469
+R-Ladies
+
+01:21:21.469 --> 01:21:26.469
+R-Ladies
+
+01:21:26.469 --> 01:21:31.469
+R-Ladies
+
+01:21:31.469 --> 01:21:36.469
+R-Ladies
+
+01:21:36.469 --> 01:21:41.469
+R-Ladies
+
+01:21:41.469 --> 01:21:46.469
+R-Ladies
+
+01:21:46.469 --> 01:21:51.469
+R-Ladies
+
+01:21:51.469 --> 01:21:56.469
+R-Ladies
+
+01:21:56.469 --> 01:22:01.469
+R-Ladies
+
+01:22:01.469 --> 01:22:06.469
+R-Ladies
+
+01:22:06.469 --> 01:22:11.469
+R-Ladies
+
+01:22:11.469 --> 01:22:16.469
+R-Ladies
+
+01:22:16.469 --> 01:22:21.469
+R-Ladies
+
+01:22:21.469 --> 01:22:26.469
+R-Ladies
+
+01:22:26.469 --> 01:22:31.469
+R-Ladies
+
+01:22:31.469 --> 01:22:36.469
+R-Ladies
+
+01:22:36.469 --> 01:22:41.469
+R-Ladies
+
+01:22:41.469 --> 01:22:46.469
+R-Ladies
+
+01:22:46.469 --> 01:22:51.469
+R-Ladies
+
+01:22:51.469 --> 01:22:56.469
+R-Ladies
+
+01:22:56.469 --> 01:23:01.469
+R-Ladies
+
+01:23:01.469 --> 01:23:06.469
+R-Ladies
+
+01:23:06.469 --> 01:23:11.469
+R-Ladies
+
+01:23:11.469 --> 01:23:16.469
+R-Ladies
+
+01:23:16.469 --> 01:23:21.469
+R-Ladies
+
+01:23:21.469 --> 01:23:26.469
+R-Ladies
+
+01:23:26.469 --> 01:23:31.469
+R-Ladies
+
+01:23:31.469 --> 01:23:36.469
+R-Ladies
+
+01:23:36.469 --> 01:23:41.469
+R-Ladies
+
+01:23:41.469 --> 01:23:46.469
+R-Ladies
+
+01:23:46.469 --> 01:23:51.469
+R-Ladies
+
+01:23:51.469 --> 01:23:56.469
+R-Ladies
+
+01:23:56.469 --> 01:24:01.469
+R-Ladies
+
+01:24:01.469 --> 01:24:06.469
+R-Ladies
+
+01:24:06.469 --> 01:24:11.469
+R-Ladies
+
+01:24:11.469 --> 01:24:16.469
+R-Ladies
+
+01:24:16.469 --> 01:24:21.469
+R-Ladies
+
+01:24:21.469 --> 01:24:26.469
+R-Ladies
+
+01:24:26.469 --> 01:24:31.469
+R-Ladies
+
+01:24:31.469 --> 01:24:36.469
+R-Ladies
+
+01:24:36.469 --> 01:24:41.469
+R-Ladies
+
+01:24:41.469 --> 01:24:46.469
+R-Ladies
+
+01:24:46.469 --> 01:24:51.469
+R-Ladies
+
+01:24:51.469 --> 01:24:56.469
+R-Ladies
+
+01:24:56.469 --> 01:25:01.469
+R-Ladies
+
+01:25:01.469 --> 01:25:06.469
+R-Ladies
+
+01:25:06.469 --> 01:25:11.469
+R-Ladies
+
+01:25:11.469 --> 01:25:16.469
+R-Ladies
+
+01:25:16.469 --> 01:25:21.469
+R-Ladies
+
+01:25:21.469 --> 01:25:26.469
+R-Ladies
+
+01:25:26.469 --> 01:25:31.469
+R-Ladies
+
+01:25:31.469 --> 01:25:36.469
+R-Ladies
+
+01:25:36.469 --> 01:25:41.469
+R-Ladies
+
+01:25:41.469 --> 01:25:46.469
+R-Ladies
+
+01:25:46.469 --> 01:25:51.469
+R-Ladies
+
+01:25:51.469 --> 01:25:56.469
+R-Ladies
+
+01:25:56.469 --> 01:26:01.469
+R-Ladies
+
+01:26:01.469 --> 01:26:06.469
+R-Ladies
+
+01:26:06.469 --> 01:26:11.469
+R-Ladies
+
+01:26:11.469 --> 01:26:16.469
+R-Ladies
+
+01:26:16.469 --> 01:26:21.469
+R-Ladies
+
+01:26:21.469 --> 01:26:26.469
+R-Ladies
+
+01:26:26.469 --> 01:26:31.469
+R-Ladies
+
+01:26:31.469 --> 01:26:36.469
+R-Ladies
+
+01:26:36.469 --> 01:26:41.469
+R-Ladies
+
+01:26:41.469 --> 01:26:46.469
+R-Ladies
+
+01:26:46.469 --> 01:26:51.469
+R-Ladies
+
+01:26:51.469 --> 01:26:56.469
+R-Ladies
+
+01:26:56.469 --> 01:27:01.469
+R-Ladies
+
+01:27:01.469 --> 01:27:06.469
+R-Ladies
+
+01:27:06.469 --> 01:27:11.469
+R-Ladies
+
+01:27:11.469 --> 01:27:16.469
+R-Ladies
+
+01:27:16.469 --> 01:27:21.469
+R-Ladies
+
+01:27:21.469 --> 01:27:26.469
+R-Ladies
+
+01:27:26.469 --> 01:27:31.469
+R-Ladies
+
+01:27:31.469 --> 01:27:36.469
+R-Ladies
+
+01:27:36.469 --> 01:27:41.469
+R-Ladies
+
+01:27:41.469 --> 01:27:46.469
+R-Ladies
+
+01:27:46.469 --> 01:27:51.469
+R-Ladies
+
+01:27:51.469 --> 01:27:56.469
+R-Ladies
+
+01:27:56.469 --> 01:28:01.469
+R-Ladies
+
+01:28:01.469 --> 01:28:06.469
+R-Ladies
+
+01:28:06.469 --> 01:28:11.469
+R-Ladies
+
+01:28:11.469 --> 01:28:16.469
+R-Ladies
+
+01:28:16.469 --> 01:28:21.469
+R-Ladies
+
+01:28:21.469 --> 01:28:26.469
+R-Ladies
+
+01:28:26.469 --> 01:28:31.469
+R-Ladies
+
+01:28:31.469 --> 01:28:36.469
+R-Ladies
+
+01:28:36.469 --> 01:28:41.469
+R-Ladies
+
+01:28:41.469 --> 01:28:46.469
+R-Ladies
+
+01:28:46.469 --> 01:28:51.469
+R-Ladies
+
+01:28:51.469 --> 01:28:56.469
+R-Ladies
+
+01:28:56.469 --> 01:29:01.469
+R-Ladies
+
+01:29:01.469 --> 01:29:06.469
+R-Ladies
+
+01:29:06.469 --> 01:29:11.469
+R-Ladies
+
+01:29:11.469 --> 01:29:16.469
+R-Ladies
+
+01:29:16.469 --> 01:29:21.469
+R-Ladies
+
+01:29:21.469 --> 01:29:26.469
+R-Ladies
+
+01:29:26.469 --> 01:29:31.469
+R-Ladies
+
+01:29:31.469 --> 01:29:36.469
+R-Ladies
+
+01:29:36.469 --> 01:29:41.469
+R-Ladies
+
+01:29:41.469 --> 01:29:46.469
+R-Ladies
+
+01:29:46.469 --> 01:29:51.469
+R-Ladies
+
+01:29:51.469 --> 01:29:56.469
+R-Ladies
+
+01:29:56.469 --> 01:30:01.469
+R-Ladies
+
+01:30:01.469 --> 01:30:06.469
+R-Ladies
+
+01:30:06.469 --> 01:30:11.469
+R-Ladies
+
+01:30:11.469 --> 01:30:16.469
+R-Ladies
+
+01:30:16.469 --> 01:30:21.469
+R-Ladies
+
+01:30:21.469 --> 01:30:26.469
+R-Ladies
+
+01:30:26.469 --> 01:30:31.469
+R-Ladies
+
+01:30:31.469 --> 01:30:36.469
+R-Ladies
+
+01:30:36.469 --> 01:30:41.469
+R-Ladies
+
+01:30:41.469 --> 01:30:46.469
+R-Ladies
+
+01:30:46.469 --> 01:30:51.469
+R-Ladies
+
+01:30:51.469 --> 01:30:56.469
+R-Ladies
+
+01:30:56.469 --> 01:31:01.469
+R-Ladies
+
+01:31:01.469 --> 01:31:06.469
+R-Ladies
+
+01:31:06.469 --> 01:31:11.469
+R-Ladies
+
+01:31:11.469 --> 01:31:16.469
+R-Ladies
+
+01:31:16.469 --> 01:31:21.469
+R-Ladies
+
+01:31:21.469 --> 01:31:26.469
+R-Ladies
+
+01:31:26.469 --> 01:31:31.469
+R-Ladies
+
+01:31:31.469 --> 01:31:36.469
+R-Ladies
+
+01:31:36.469 --> 01:31:41.469
+R-Ladies
+
+01:31:41.469 --> 01:31:46.469
+R-Ladies
+
+01:31:46.469 --> 01:31:51.469
+R-Ladies
+
+01:31:51.469 --> 01:31:56.469
+R-Ladies
+
+01:31:56.469 --> 01:32:01.469
+R-Ladies
+
+01:32:01.469 --> 01:32:06.469
+R-Ladies
+
+01:32:06.469 --> 01:32:11.469
+R-Ladies
+
+01:32:11.469 --> 01:32:16.469
+R-Ladies
+
+01:32:16.469 --> 01:32:21.469
+R-Ladies
+
+01:32:21.469 --> 01:32:26.469
+R-Ladies
+
+01:32:26.469 --> 01:32:31.469
+R-Ladies
+
+01:32:31.469 --> 01:32:36.469
+R-Ladies
+
+01:32:36.469 --> 01:32:41.469
+R-Ladies
+
+01:32:41.469 --> 01:32:46.469
+R-Ladies
+
+01:32:46.469 --> 01:32:51.469
+R-Ladies
+
+01:32:51.469 --> 01:32:56.469
+R-Ladies
+
+01:32:56.469 --> 01:33:01.469
+R-Ladies
+
+01:33:01.469 --> 01:33:06.469
+R-Ladies
+
+01:33:06.469 --> 01:33:11.469
+R-Ladies
+
+01:33:11.469 --> 01:33:16.469
+R-Ladies
+
+01:33:16.469 --> 01:33:21.469
+R-Ladies
+
+01:33:21.469 --> 01:33:26.469
+R-Ladies
+
+01:33:26.469 --> 01:33:31.469
+R-Ladies
+
+01:33:31.469 --> 01:33:36.469
+R-Ladies
+
+01:33:36.469 --> 01:33:41.469
+R-Ladies
+
+01:33:41.469 --> 01:33:46.469
+R-Ladies
+
+01:33:46.469 --> 01:33:51.469
+R-Ladies
+
+01:33:51.469 --> 01:33:56.469
+R-Ladies
+
+01:33:56.469 --> 01:34:01.469
+R-Ladies
+
+01:34:01.469 --> 01:34:06.469
+R-Ladies
+
+01:34:06.469 --> 01:34:11.469
+R-Ladies
+
+01:34:11.469 --> 01:34:16.469
+R-Ladies
+
+01:34:16.469 --> 01:34:21.469
+R-Ladies
+
+01:34:21.469 --> 01:34:26.469
+R-Ladies
+
+01:34:26.469 --> 01:34:31.469
+R-Ladies
+
+01:34:31.469 --> 01:34:36.469
+R-Ladies
+
+01:34:36.469 --> 01:34:41.469
+R-Ladies
+
+01:34:41.469 --> 01:34:46.469
+R-Ladies
+
+01:34:46.469 --> 01:34:51.469
+R-Ladies
+
+01:34:51.469 --> 01:34:56.469
+R-Ladies
+
+01:34:56.469 --> 01:35:01.469
+R-Ladies
+
+01:35:01.469 --> 01:35:06.469
+R-Ladies
+
+01:35:06.469 --> 01:35:11.469
+R-Ladies
+
+01:35:11.469 --> 01:35:16.469
+R-Ladies
+
+01:35:16.469 --> 01:35:21.469
+R-Ladies
+
+01:35:21.469 --> 01:35:26.469
+R-Ladies
+
+01:35:26.469 --> 01:35:31.469
+R-Ladies
+
+01:35:31.469 --> 01:35:36.469
+R-Ladies
+
+01:35:36.469 --> 01:35:41.469
+R-Ladies
+
+01:35:41.469 --> 01:35:46.469
+R-Ladies
+
+01:35:46.469 --> 01:35:51.469
+R-Ladies
+
+01:35:51.469 --> 01:35:56.469
+R-Ladies
+
+01:35:56.469 --> 01:36:01.469
+R-Ladies
+
+01:36:01.469 --> 01:36:06.469
+R-Ladies
+
+01:36:06.469 --> 01:36:11.469
+R-Ladies
+
+01:36:11.469 --> 01:36:16.469
+R-Ladies
+
+01:36:16.469 --> 01:36:21.469
+R-Ladies
+
+01:36:21.469 --> 01:36:26.469
+R-Ladies
+
+01:36:26.469 --> 01:36:31.469
+R-Ladies
+
+01:36:31.469 --> 01:36:36.469
+R-Ladies
+
+01:36:36.469 --> 01:36:41.469
+R-Ladies
+
+01:36:41.469 --> 01:36:46.469
+R-Ladies
+
+01:36:46.469 --> 01:36:51.469
+R-Ladies
+
+01:36:51.469 --> 01:36:56.469
+R-Ladies
+
+01:36:56.469 --> 01:37:01.469
+R-Ladies
+
+01:37:01.469 --> 01:37:06.469
+R-Ladies
+
+01:37:06.469 --> 01:37:11.469
+R-Ladies
+
+01:37:11.469 --> 01:37:16.469
+R-Ladies
+
+01:37:16.469 --> 01:37:21.469
+R-Ladies
+
+01:37:21.469 --> 01:37:26.469
+R-Ladies
+
+01:37:26.469 --> 01:37:31.469
+R-Ladies
+
+01:37:31.469 --> 01:37:36.469
+R-Ladies
+
+01:37:36.469 --> 01:37:41.469
+R-Ladies
+
+01:37:41.469 --> 01:37:46.469
+R-Ladies
+
+01:37:46.469 --> 01:37:51.469
+R-Ladies
+
+01:37:51.469 --> 01:37:56.469
+R-Ladies
+
+01:37:56.469 --> 01:38:01.469
+R-Ladies
+
+01:38:01.469 --> 01:38:06.469
+R-Ladies
+
+01:38:06.469 --> 01:38:11.469
+R-Ladies
+
+01:38:11.469 --> 01:38:16.469
+R-Ladies
+
+01:38:16.469 --> 01:38:21.469
+R-Ladies
+
+01:38:21.469 --> 01:38:26.469
+R-Ladies
+
+01:38:26.469 --> 01:38:31.469
+R-Ladies
+
+01:38:31.469 --> 01:38:36.469
+R-Ladies
+
+01:38:36.469 --> 01:38:41.469
+R-Ladies
+
+01:38:41.469 --> 01:38:46.469
+R-Ladies
+
+01:38:46.469 --> 01:38:51.469
+R-Ladies
+
+01:38:51.469 --> 01:38:56.469
+R-Ladies
+
+01:38:56.469 --> 01:39:01.469
+R-Ladies
+
+01:39:01.469 --> 01:39:06.469
+R-Ladies
+
+01:39:06.469 --> 01:39:11.469
+R-Ladies
+
+01:39:11.469 --> 01:39:16.469
+R-Ladies
+
+01:39:16.469 --> 01:39:21.469
+R-Ladies
+
+01:39:21.469 --> 01:39:26.469
+R-Ladies
+
+01:39:26.469 --> 01:39:31.469
+R-Ladies
+
+01:39:31.469 --> 01:39:36.469
+R-Ladies
+
+01:39:36.469 --> 01:39:41.469
+R-Ladies
+
+01:39:41.469 --> 01:39:46.469
+R-Ladies
+
+01:39:46.469 --> 01:39:51.469
+R-Ladies
+
+01:39:51.469 --> 01:39:56.469
+R-Ladies
+
+01:39:56.469 --> 01:40:01.469
+R-Ladies
+
+01:40:01.469 --> 01:40:06.469
+R-Ladies
+
+01:40:06.469 --> 01:40:11.469
+R-Ladies
+
+01:40:11.469 --> 01:40:16.469
+R-Ladies
+
+01:40:16.469 --> 01:40:21.469
+R-Ladies
+
+01:40:21.469 --> 01:40:26.469
+R-Ladies
+
+01:40:26.469 --> 01:40:31.469
+R-Ladies
+
+01:40:31.469 --> 01:40:36.469
+R-Ladies
+
+01:40:36.469 --> 01:40:41.469
+R-Ladies
+
+01:40:41.469 --> 01:40:46.469
+R-Ladies
+
+01:40:46.469 --> 01:40:51.469
+R-Ladies
+
+01:40:51.469 --> 01:40:56.469
+R-Ladies
+
+01:40:56.469 --> 01:41:01.469
+R-Ladies
+
+01:41:01.469 --> 01:41:06.469
+R-Ladies
+
+01:41:06.469 --> 01:41:11.469
+R-Ladies
+
+01:41:11.469 --> 01:41:16.469
+R-Ladies
+
+01:41:16.469 --> 01:41:21.469
+R-Ladies
+
+01:41:21.469 --> 01:41:26.469
+R-Ladies
+
+01:41:26.469 --> 01:41:31.469
+R-Ladies
+
+01:41:31.469 --> 01:41:36.469
+R-Ladies
+
+01:41:36.469 --> 01:41:41.469
+R-Ladies
+
+01:41:41.469 --> 01:41:46.469
+R-Ladies
+
+01:41:46.469 --> 01:41:51.469
+R-Ladies
+
+01:41:51.469 --> 01:41:56.469
+R-Ladies
+
+01:41:56.469 --> 01:42:01.469
+R-Ladies
+
+01:42:01.469 --> 01:42:06.469
+R-Ladies
+
+01:42:06.469 --> 01:42:11.469
+R-Ladies
+
+01:42:11.469 --> 01:42:16.469
+R-Ladies
+
+01:42:16.469 --> 01:42:21.469
+R-Ladies
+
+01:42:21.469 --> 01:42:26.469
+R-Ladies
+
+01:42:26.469 --> 01:42:31.469
+R-Ladies
+
+01:42:31.469 --> 01:42:36.469
+R-Ladies
+
+01:42:36.469 --> 01:42:41.469
+R-Ladies
+
+01:42:41.469 --> 01:42:46.469
+R-Ladies
+
+01:42:46.469 --> 01:42:51.469
+R-Ladies
+
+01:42:51.469 --> 01:42:56.469
+R-Ladies
+
+01:42:56.469 --> 01:43:01.469
+R-Ladies
+
+01:43:01.469 --> 01:43:06.469
+R-Ladies
+
+01:43:06.469 --> 01:43:11.469
+R-Ladies
+
+01:43:11.469 --> 01:43:16.469
+R-Ladies
+
+01:43:16.469 --> 01:43:21.469
+R-Ladies
+
+01:43:21.469 --> 01:43:26.469
+R-Ladies
+
+01:43:26.469 --> 01:43:31.469
+R-Ladies
+
+01:43:31.469 --> 01:43:36.469
+R-Ladies
+
+01:43:36.469 --> 01:43:41.469
+R-Ladies
+
+01:43:41.469 --> 01:43:46.469
+R-Ladies
+
+01:43:46.469 --> 01:43:51.469
+R-Ladies
+
+01:43:51.469 --> 01:43:56.469
+R-Ladies
+
+01:43:56.469 --> 01:44:01.469
+R-Ladies
+
+01:44:01.469 --> 01:44:06.469
+R-Ladies
+
+01:44:06.469 --> 01:44:11.469
+R-Ladies
+
+01:44:11.469 --> 01:44:16.469
+R-Ladies
+
+01:44:16.469 --> 01:44:21.469
+R-Ladies
+
+01:44:21.469 --> 01:44:26.469
+R-Ladies
+
+01:44:26.469 --> 01:44:31.469
+R-Ladies
+
+01:44:31.469 --> 01:44:36.469
+R-Ladies
+
+01:44:34.032 --> 01:44:36.032
+Gaborone & R-Ladies Gaborone & R-Ladies RTP
+
+01:44:36.032 --> 01:44:38.032
+Gaborone & R-Ladies RTP
+
+01:46:03.332 --> 01:46:05.692
+Gaborone & R-Ladies
+
+01:46:33.332 --> 01:47:02.451
+So we're gonna try this out in my environment. I'm gonna all use this. I'm gonna edit my
+
+01:47:02.451 --> 01:47:19.572
+project or profile. And that's this. I'm gonna drop this in here. In this case, I'll just
+
+01:47:19.315 --> 01:47:31.355
+this. I'm going to drop this in here. In this case, I'll just add, I'll use package manager
+
+01:47:31.355 --> 01:47:45.555
+E3M, the brand latest. So now I have R up inside and package manager set as repositories.
+
+01:47:45.555 --> 01:47:53.315
+I'm going to restart R. By the way, that interrupts that you see when I restart R is because I
+
+01:47:53.315 --> 01:47:57.594
+have a weird thing happening in my terminal. You shouldn't see that, but just to explain
+
+01:47:57.594 --> 01:48:03.594
+what's going on. If I kill this terminal, it will stop doing that.
+
+01:48:03.594 --> 01:48:11.675
+So if I were to run options repos now, I would confirm that I have those two repositories
+
+01:48:11.675 --> 01:48:29.675
+set. And so now I can install packages, get seller. And you'll see it got fetched from
+
+01:48:29.675 --> 01:48:38.315
+the R universe. And we downloaded a binary package. So a neat thing to know about our
+
+01:48:38.315 --> 01:48:47.115
+universe is it's an R OpenSci project. For people who need to distribute more complicated
+
+01:48:47.115 --> 01:48:54.795
+packages, often they're associated with specific scientific domains and you want to distribute
+
+01:48:54.795 --> 01:49:05.355
+binary packages that are too difficult to get on CRAN for whatever reason. Then looking at the R
+
+01:49:05.355 --> 01:49:10.795
+universe is a great way to get some of those packages. And if you have packages you want to
+
+01:49:10.795 --> 01:49:19.755
+distribute and CRAN isn't the right place, setting up an R universe is pretty easy. So that's the
+
+01:49:19.755 --> 01:49:24.554
+idea, right? We can modify this repository option, right? This is a thing we would do in our R
+
+01:49:24.554 --> 01:49:32.395
+profile and gives us the ability to install binary packages from somewhere else. When R says a
+
+01:49:32.475 --> 01:49:39.835
+version of the package might be available elsewhere, this is a kind of polite error message,
+
+01:49:39.835 --> 01:49:45.195
+right? It's not available in the repositories you've listed, but it might be available somewhere
+
+01:49:45.195 --> 01:49:53.434
+else. So there isn't necessarily a good place to look because there's a kind of infinite number of
+
+01:49:53.434 --> 01:49:59.434
+places the package could be. But the most likely places I would say you can use package manager
+
+01:50:00.074 --> 01:50:06.635
+has a search function. So if, for example, a package has been archived on CRAN, you might
+
+01:50:06.635 --> 01:50:12.635
+have an easier time finding it on package manager because it displays both current and archive
+
+01:50:12.635 --> 01:50:21.035
+packages, even if the process you have to go through is slightly different. So look at package
+
+01:50:21.035 --> 01:50:26.874
+manager. You can look on the CRAN website itself. Sometimes packages are only on GitHub if they're
+
+01:50:26.874 --> 01:50:31.835
+on GitHub but not distributed through an R universe. Those are going to be the most common
+
+01:50:31.835 --> 01:50:43.994
+places. Those are where I would look. So, right, we got Git seller. We got a binary version of
+
+01:50:43.994 --> 01:50:48.874
+the package. And how do we know? We know because it told us that it downloaded a binary, right?
+
+01:50:48.874 --> 01:50:55.354
+Also, if you look at the extension here, you can see it's a .tgz, which on macOS is what the binary
+
+01:50:55.354 --> 01:51:01.115
+package format looks like when you download things on macOS. Again, it's slightly different
+
+01:51:01.115 --> 01:51:12.714
+on Windows and Linux. So binaries, right, the easiest thing to get. But if you are installing,
+
+01:51:12.714 --> 01:51:18.794
+you know, packages from somewhere where compiled versions aren't available, if, for example,
+
+01:51:18.794 --> 01:51:24.074
+you're installing a package from GitHub, if you install a package from GitHub, you're just copying
+
+01:51:24.794 --> 01:51:30.874
+the source files down to get those latest versions. Then you have to compile them yourself.
+
+01:51:32.395 --> 01:51:36.154
+And so you may need to install those packages from source. And so
+
+01:51:36.795 --> 01:51:39.674
+hopefully this gives you some clues for how to do that.
+
+01:51:43.195 --> 01:51:48.554
+Anything else on installing R packages before we talk about reproducible environments?
+
+01:51:49.434 --> 01:51:57.434
+So if you can go back to your R session, you had a URL to point to the package manager. Is that
+
+01:51:57.434 --> 01:52:00.475
+correct? When I go there, it doesn't seem to work.
+
+01:52:01.515 --> 01:52:02.475
+This URL?
+
+01:52:02.475 --> 01:52:06.075
+Yeah. Maybe I'm typing it wrong.
+
+01:52:06.075 --> 01:52:17.274
+Let's see what happens. Right. So let's talk about what's happening. So package manager,
+
+01:52:18.235 --> 01:52:26.315
+right, there's this is the web interface, right? So if you saw, I went to p3m.dev,
+
+01:52:27.515 --> 01:52:32.955
+I automatically get redirected to this client's thing, right? So this is this is the interface
+
+01:52:32.955 --> 01:52:39.434
+that gets served if you visit package manager in a browser. If I go over to the setup page,
+
+01:52:39.434 --> 01:52:46.394
+and say I want the directions for Mac OS, for example, in the RStudio IDE, then this is the
+
+01:52:46.394 --> 01:52:52.394
+repository URL that I need to configure from my R session, right? Because the HTTP request that
+
+01:52:53.035 --> 01:52:59.114
+I send from R to get packages is not going to look the same as the one that my browser makes.
+
+01:52:59.114 --> 01:53:04.075
+So that's the difference there, right? And there will be, I think we'll talk a little bit about
+
+01:53:04.075 --> 01:53:07.195
+some different settings you want to apply depending on how you're trying to get that
+
+01:53:07.195 --> 01:53:10.554
+information. But that's the distinction you're seeing there, right? Is the browser
+
+01:53:11.274 --> 01:53:16.235
+view and the view from the R package request are not the same.
+
+01:53:23.434 --> 01:53:27.674
+Any other questions about installing packages before we talk about reproducible environments?
+
+01:53:27.674 --> 01:53:41.035
+Okay. Reproducible environments is my favorite topic, which is why I have this job.
+
+01:53:43.434 --> 01:53:52.874
+And when I was working on this presentation a couple years ago, I just like, the takeaway I
+
+01:53:52.874 --> 01:54:00.874
+want is you are going to need to reproduce your environment. The work, if you believe the work you
+
+01:54:00.874 --> 01:54:07.035
+do is valuable, then you should believe it's worth being able to reproduce. That is an argument.
+
+01:54:07.755 --> 01:54:12.955
+There's a sermon that comes with it that I will give later in the interest of time. I'm just
+
+01:54:12.955 --> 01:54:18.714
+going to say having a way to reproduce your environment is going to make your life a lot
+
+01:54:18.714 --> 01:54:24.554
+easier if you have to pick up a project that you were working on in the future, which is a thing
+
+01:54:24.554 --> 01:54:30.475
+that happens often. Or if you want just someone else to be able to work on your stuff, just having
+
+01:54:30.475 --> 01:54:35.834
+a way to reproduce your environment is going to make your life easier. This is a diagram that
+
+01:54:36.554 --> 01:54:41.594
+someone on my team made a while ago to talk about different ways that you can think about
+
+01:54:42.554 --> 01:54:50.235
+reproducing environments. On the x-axis, there's who's responsible.
+
+01:54:51.274 --> 01:54:58.394
+And then on the y-axis, there's how permissive the environment is. We are going to focus on
+
+01:55:00.714 --> 01:55:06.635
+this snapshot use case where you are responsible for reproducing your environment,
+
+01:55:06.635 --> 01:55:10.874
+and we're assuming that the environment is relatively permissive. There are different
+
+01:55:10.874 --> 01:55:17.515
+things you will have to do if you work in a context where the environment is not as permissive.
+
+01:55:18.955 --> 01:55:24.235
+But understanding how to do things well up here makes all of the rest of these more easier.
+
+01:55:24.795 --> 01:55:33.195
+And if you're in the red zone, it kind of sucks to be there. So you want to try to stay in the
+
+01:55:33.195 --> 01:55:39.434
+happy path. This is your responsible. You don't necessarily have control over how permissive the
+
+01:55:39.434 --> 01:55:44.955
+environment is, but the more responsibility you take for reproducing the environment,
+
+01:55:44.955 --> 01:55:50.154
+the easier time you'll have if you have to operate under some of these more restrictive conditions.
+
+01:55:52.075 --> 01:55:57.034
+So we're going to talk about two different tools that you can use to construct reproducible
+
+01:55:57.034 --> 01:56:03.595
+environments. One is a positive package manager. We'll focus on public package manager.
+
+01:56:04.315 --> 01:56:11.034
+And then the other is using the renv package. In a world where you have the ability to access
+
+01:56:11.034 --> 01:56:15.354
+public package manager, there are a lot of things that it makes easy that you can do.
+
+01:56:16.474 --> 01:56:20.955
+Renv is something that you can use as long as you can install the package. So we'll talk about both
+
+01:56:20.955 --> 01:56:28.794
+of those as strategies for reproducing your environment. So one of the ways that package
+
+01:56:28.794 --> 01:56:34.395
+manager makes it possible for you to reproduce your environment is you'll notice that in our
+
+01:56:34.395 --> 01:56:46.315
+previous example, when I configured the repository that I wanted to get packages from, there's this
+
+01:56:46.315 --> 01:56:54.715
+slash latest. Slash latest tracks plus or minus a day, usually, the current state of cramp.
+
+01:56:55.434 --> 01:57:00.635
+So if I hit install packages, if I set this as my repository URL,
+
+01:57:02.075 --> 01:57:08.955
+then I'll get the packages the way they look on CRAN right now, whenever right now is.
+
+01:57:10.234 --> 01:57:15.914
+One thing you can do that might make it easier to reproduce projects,
+
+01:57:16.874 --> 01:57:21.354
+say you were working on something a long time ago, and you don't want to figure out what
+
+01:57:21.354 --> 01:57:28.794
+collection of dependencies you can use to bring that back to life manually, is you can use this
+
+01:57:28.794 --> 01:57:35.195
+date-based snapshot capability. So under the snapshots, do you want to freeze package versions
+
+01:57:35.195 --> 01:57:41.275
+or do you want to install packages from a particular date? So let's say I went back to
+
+01:57:41.994 --> 01:57:51.515
+a year ago today. Right now, if I look at this URL, again, rather than latest, what this says
+
+01:57:51.515 --> 01:58:01.434
+is slash CRAN slash June 7th, 2023. If I use this URL as my repository URL, then when I request
+
+01:58:01.434 --> 01:58:08.234
+packages from package manager, I will get back a package set reflecting the way CRAN looked a year
+
+01:58:08.234 --> 01:58:20.554
+ago. And so on back to, I think, like October 2017. There used to be another way to do
+
+01:58:20.554 --> 01:58:28.554
+this. If you ever worked with Microsoft R, MRAN and the checkpoint package enabled a similar kind
+
+01:58:28.554 --> 01:58:35.275
+of workflow. Microsoft stopped supporting MRAN last year. We have made some changes on the package
+
+01:58:35.275 --> 01:58:39.515
+manager side so that if you were using the checkpoint package and you try to get a date-based
+
+01:58:39.515 --> 01:58:46.155
+snapshot out of package manager, it will also respect that. So if date-based snapshots are a
+
+01:58:46.155 --> 01:58:52.474
+way you like to work, then you can use this repository. It's like date-based repository URL
+
+01:58:52.474 --> 01:58:59.755
+to recover previous states of the CRAN repository. This also works for PyPI. So
+
+01:59:00.715 --> 01:59:10.315
+just putting that out there. Where did my slides go? Okay. So date-based snapshots. I
+
+01:59:10.315 --> 01:59:21.674
+selected dates. You can see I get the dates in the URL. So what you're going to do is, yeah, Greg,
+
+01:59:21.835 --> 01:59:29.914
+go ahead. Sorry, just out of curiosity. So is the date stamp formatting of snapshots,
+
+01:59:29.914 --> 01:59:33.755
+is that only available in PPM or is that something that's also in RENV?
+
+01:59:36.315 --> 01:59:43.994
+There is an RENV function that will make it a little easier for you to work with date-based
+
+01:59:43.994 --> 01:59:52.715
+snapshots. It's a relatively new function. It's called checkout. But what I'm illustrating here,
+
+01:59:52.715 --> 02:00:00.794
+like using this date-based repository URL or date-based snapshot as the repository URL
+
+02:00:01.835 --> 02:00:07.275
+will work kind of no matter what package installation client you're using. Because
+
+02:00:07.515 --> 02:00:13.914
+the from the perspective of a package installation client, you're just supplying
+
+02:00:13.914 --> 02:00:23.114
+a CRAN repository that happens to behave the way this looks. So what we're going to do is
+
+02:00:23.114 --> 02:00:29.595
+we're going to take a couple minutes. You're going to set a date-based snapshot URL as your
+
+02:00:29.595 --> 02:00:36.075
+repository in your project. And then you're going to install a version of dplyr and post in the chat
+
+02:00:36.075 --> 02:00:44.234
+when you have installed this version of dplyr. What version did you install?
+
+02:00:45.515 --> 02:00:51.914
+We'll give people a couple minutes to do that.
+
+02:05:36.394 --> 02:05:42.554
+Okay. So some stuff is happening. One thing that Shannon has hopefully pointed out to me,
+
+02:05:44.154 --> 02:05:51.835
+I am very comfortable YOLO installing things because when I'm actually doing work, I always
+
+02:05:51.835 --> 02:06:01.355
+work in a isolated project environment. If that is not your lifestyle, make sure when this class
+
+02:06:01.355 --> 02:06:07.034
+is over, you reinstall whatever version of dplyr you were using before so that you don't break all
+
+02:06:07.034 --> 02:06:23.514
+of your projects. Yeah. So what we're going to do is I was running R 4.4. So I'm going to
+
+02:06:24.075 --> 02:06:28.075
+reset my version of RStudio so that it does that.
+
+02:06:37.115 --> 02:06:48.715
+So I've set my repository here to point to an instance of a
+
+02:06:49.595 --> 02:06:59.995
+sorry, a date-based snapshot for package manager. If I reset and I look at my repo option,
+
+02:07:01.195 --> 02:07:10.475
+you'll see that it's pointing to that version. If I install packages and I request dplyr,
+
+02:07:10.475 --> 02:07:28.075
+then I get dplyr version 1.0.5. Now, some people who are using R 4.3 did not get that result,
+
+02:07:28.075 --> 02:07:35.754
+and I also got something else slightly unusual happened, which I will debug after this call.
+
+02:07:36.554 --> 02:07:45.754
+But in general, what ought to happen, right, is that you should be able to point yourself back in time,
+
+02:07:46.875 --> 02:07:57.754
+fetch an older version of dplyr than the one that is the latest on CRAN. So if I reset this to latest,
+
+02:07:58.235 --> 02:08:13.595
+I reload, and I install packages. I ask for dplyr again. Now I should get 1.1.4, right? So that's the
+
+02:08:14.634 --> 02:08:19.835
+current version of dplyr on CRAN. And so that's what I'm expecting to get.
+
+02:08:19.835 --> 02:08:29.835
+Okay. Questions about that workflow, what's happening on the package manager side?
+
+02:08:40.634 --> 02:08:47.835
+If not, we'll switch to, can also use package version dplyr to check. That was a good call.
+
+02:08:50.154 --> 02:08:57.995
+I just read log messages all day, so why run functions? But yes, if I say package version,
+
+02:08:57.995 --> 02:09:04.154
+and I ask for dplyr, it will tell me that this is the version I have. Okay.
+
+02:09:06.075 --> 02:09:16.875
+So managing your dependencies by choosing a date for a repository is one way to do things.
+
+02:09:17.355 --> 02:09:22.955
+Right. In the context of a project-based workflow, right, one thing you might consider doing instead
+
+02:09:22.955 --> 02:09:32.235
+is working with a library that's isolated from your other projects, right? And that's what the
+
+02:09:32.235 --> 02:09:36.794
+rnv project is going to help you do, right, is it's going to give us a way of constructing
+
+02:09:37.434 --> 02:09:43.995
+per project r package libraries, so that when we make changes in one project,
+
+02:09:43.995 --> 02:09:51.514
+we're not worried about the influence they'll have on your other projects. So normally,
+
+02:09:51.514 --> 02:09:58.315
+right, and this is to the point of the warning that I will reiterate, right, normally when you
+
+02:09:58.315 --> 02:10:06.634
+have like a user library, or in the sort of standard setup, I have project one, project two,
+
+02:10:06.634 --> 02:10:13.754
+project three, and they all depend on the shared project environment that's generated by
+
+02:10:15.034 --> 02:10:17.835
+the shared project environment that's available at libpaths.
+
+02:10:20.315 --> 02:10:29.274
+And so what rnv is going to do is give me the give me a way to have individual libraries
+
+02:10:29.995 --> 02:10:37.195
+associated with each project, right. And the there are a lot of safety advantages to doing this,
+
+02:10:37.195 --> 02:10:42.634
+right. So I can experiment with new package, new packages, I can, I can install things
+
+02:10:42.634 --> 02:10:46.315
+experimentally, I'm not worried about breaking the other projects on my machine.
+
+02:10:47.914 --> 02:10:55.195
+You can communicate what versions of everything you're using to other people on your team,
+
+02:10:55.195 --> 02:11:01.835
+or just yourself if you're working on the same projects a year from now. And then rnv also has
+
+02:11:01.835 --> 02:11:07.034
+a caching mechanism that means that if you've already installed the package, it'll just you'll
+
+02:11:07.034 --> 02:11:12.475
+get that one linked into the library. So you're reusing things instead of downloading each of them
+
+02:11:13.674 --> 02:11:18.315
+fresh each time. So you're getting kind of the best of both worlds, you're in project isolation,
+
+02:11:19.034 --> 02:11:21.514
+but intelligent reuse of the things you have on disk.
+
+02:11:24.235 --> 02:11:34.075
+This is make this a little smaller, so that we can see what it looks like to work with rnv.
+
+02:11:34.075 --> 02:11:44.315
+I'm going to maybe show this one and then sort of illustrate some of the things we talked about
+
+02:11:44.315 --> 02:11:54.875
+along the way. So if I look at, I come back to the RStudio IDE, and I look at my libpaths right now,
+
+02:11:56.394 --> 02:12:05.674
+right, you'll see that I have, you know, these two libraries, right. So this is the user library,
+
+02:12:05.674 --> 02:12:11.754
+right, we call it that because that library is under my home directory. And then this second
+
+02:12:11.754 --> 02:12:17.034
+one is what we call the system library, right. Now the system library, because it's at the slash
+
+02:12:17.034 --> 02:12:23.595
+library. This is typically the way I would install packages into the system library,
+
+02:12:24.394 --> 02:12:30.475
+is by running commands as an administrator. If you're in an environment that is managed
+
+02:12:31.434 --> 02:12:37.595
+less permissively, then oftentimes what someone will do is try to install packages into the system
+
+02:12:37.595 --> 02:12:42.394
+library for you, so that they're available, even if they're not available in your user library.
+
+02:12:44.315 --> 02:12:45.674
+What I'm going to do to
+
+02:12:48.394 --> 02:12:54.235
+create an isolated project library instead, is first I'm going to install the rnv package,
+
+02:12:55.595 --> 02:13:00.715
+and then I'm going to run this function rnv init, right. So I'm going to initialize rnv,
+
+02:13:01.595 --> 02:13:09.034
+and a couple of things are going to change about my projects. So the first thing you'll see
+
+02:13:12.154 --> 02:13:20.154
+is that if I close these, and I'll close all these, and I'll open up the files pane,
+
+02:13:21.115 --> 02:13:32.715
+I'll come back to WCFR, ladies. I open up this R profile, you'll see this has been written
+
+02:13:32.715 --> 02:13:43.274
+into my R profile by rn, right. So if this wasn't here, rn would have created a user,
+
+02:13:43.355 --> 02:13:49.835
+or sorry, a project R profile. And what that means, right, as we've learned at the beginning,
+
+02:13:49.835 --> 02:13:57.274
+right, is that now the project R profile controls the behavior of the startup behavior
+
+02:13:57.274 --> 02:14:06.715
+when I open R. So you'll see if I clear my console and restart R one more time,
+
+02:14:07.274 --> 02:14:16.634
+the, this message is being printed, right, and rn has printed this message. So I get the rnv version,
+
+02:14:16.634 --> 02:14:20.875
+I get the projects I'm working in, right, and those are, those messages are coming from this
+
+02:14:20.875 --> 02:14:34.315
+activate script. Now if I look at the libpaths again, right, we'll see that, I'll make this a
+
+02:14:34.315 --> 02:14:43.195
+little bit bigger, right, now I have a different set of libpaths. So the first one, you can see,
+
+02:14:43.195 --> 02:14:52.634
+is, refers to the directory my project is in, right, and then you can see below that I have
+
+02:14:52.634 --> 02:15:00.794
+rnv library, right, but this is a project-specific library path. And the other thing you can see
+
+02:15:00.794 --> 02:15:07.595
+now is that the second library, right, is in a cache, right, it's referring to the caches
+
+02:15:07.595 --> 02:15:15.835
+directory, and so this is now those, if I come back to the diagram I have here, right, I now have a
+
+02:15:15.835 --> 02:15:21.274
+cache and I have a project-specific library. And so as I install packages, they'll go into the global
+
+02:15:21.274 --> 02:15:36.554
+cache and they'll become available in my project. So if I run rnv status, right, this will tell me
+
+02:15:40.475 --> 02:15:47.274
+whether there are things I need to do to change my project so that the project is in a consistent
+
+02:15:47.995 --> 02:15:57.674
+state. Consistent state in this case means that the state of the libraries referenced in my
+
+02:15:57.674 --> 02:16:03.674
+code are accurately reflected in this lock file, right, and so this lock file is going to be
+
+02:16:04.394 --> 02:16:10.715
+what keeps track of where I got my packages from, what version of R I'm using, and then what
+
+02:16:10.715 --> 02:16:20.634
+packages I'm actually using in my project. So if I create a new R script and I add, for example,
+
+02:16:23.514 --> 02:16:31.674
+a library statement, I'll just call this main.r, you'll see JSONLite is required but not installed.
+
+02:16:32.955 --> 02:16:38.315
+One thing I want to show you, right, is that if I type install packages, you can see in the help
+
+02:16:38.394 --> 02:16:46.394
+text here that this is not coming from utils anymore. It's coming from rnv shims. And so
+
+02:16:46.394 --> 02:16:53.595
+what happens is rnv is taking over the functionality of install.packages so that when you
+
+02:16:54.475 --> 02:17:00.794
+install those packages, you're installing them into the way rnv expects to manage them.
+
+02:17:00.794 --> 02:17:07.195
+So rather than clicking on this dialog, I'll use this here and I'll install packages.
+
+02:17:07.195 --> 02:17:09.674
+I'll say JSONLite and now what you see,
+
+02:17:13.274 --> 02:17:17.995
+get installed. And again, you can see that's into my project specific library.
+
+02:17:21.674 --> 02:17:24.955
+Shannon, are you able to hear me? Okay, I just got a, okay.
+
+02:17:27.595 --> 02:17:34.394
+Okay, so I'm installing JSONLite. You can see that because I've used rnv on this computer before,
+
+02:17:35.274 --> 02:17:39.995
+it's pulling it in from the cache. So I didn't actually go to the internet to get,
+
+02:17:41.514 --> 02:17:49.115
+in this case, JSONLite. If I use another library statement, or before I do that,
+
+02:17:51.115 --> 02:17:59.434
+I'll call rnv status. And what you see now is that I'm in what we were calling an inconsistent state.
+
+02:17:59.434 --> 02:18:06.875
+So I've installed the package. I'm using the package in my code, right? rnv is going to look
+
+02:18:06.875 --> 02:18:14.075
+through all the R code files in your project and figure out what packages you use. So I've installed
+
+02:18:14.075 --> 02:18:19.835
+the package, I've used the package, but the package isn't recorded in my lock file.
+
+02:18:20.875 --> 02:18:26.554
+And so what I'm going to do to correct that is I'm going to call rnv snapshot.
+
+02:18:27.514 --> 02:18:34.554
+And what we're going to do is we're going to update. You can see this is going from nothing
+
+02:18:34.554 --> 02:18:39.434
+to the current version. It's going to be updated in the lock file. I'll say yes.
+
+02:18:40.154 --> 02:18:47.274
+And now my lock file has been updated with the JSONLite package.
+
+02:18:50.154 --> 02:18:55.034
+Now, the observant among you will have noticed that this did not actually come from
+
+02:18:55.034 --> 02:19:03.355
+package manager. That's because I installed JSONLite before changing repositories.
+
+02:19:03.355 --> 02:19:09.914
+So one of the things rnv is keeping track of is the fact that I got this package
+
+02:19:09.914 --> 02:19:14.075
+from a different repository than the one I got this package from.
+
+02:19:17.914 --> 02:19:21.434
+And if I were to do that again, right, so if I were to add another library,
+
+02:19:21.674 --> 02:19:30.394
+say Parallelly, again, if I look at the status, you'll see the package is used but it's not
+
+02:19:30.394 --> 02:19:39.995
+installed. So I'm going to install it. Parallelly. And I'm getting it from package manager,
+
+02:19:39.995 --> 02:19:47.115
+right, so you can see it was downloaded. And so now I've installed the binary package from package
+
+02:19:47.274 --> 02:19:54.075
+manager, and then I've stuck it in the cache as well. And so now if I look at the status,
+
+02:19:54.075 --> 02:19:58.075
+right, and this is kind of the workflow that you exercise when you're using rnv. You check
+
+02:19:58.075 --> 02:20:02.634
+the status a lot. You see if there are problems, right, in this case, again,
+
+02:20:02.634 --> 02:20:10.475
+I've installed the package. It's recorded, but it's not used. I'll snapshot.
+
+02:20:11.434 --> 02:20:19.115
+It's hard. And you'll see, again, I'm going to grab the version of Parallelly and the repository
+
+02:20:19.115 --> 02:20:26.394
+I installed it from. And I'll add that to the lock file as well. Right. And it's the same thing if I
+
+02:20:26.394 --> 02:20:34.315
+remove the package. If I look at the status. Now, you can see it's installed and it's not
+
+02:20:34.315 --> 02:20:42.794
+recorded, right, but it's not being used. I snapshot. Then you'll see we go from having
+
+02:20:42.794 --> 02:20:52.154
+the JSON-like package to eliminating it from our lock file. And now the lock file just records the
+
+02:20:52.154 --> 02:20:59.595
+packages I'm actually using. If you're working with packages you install from GitHub, right,
+
+02:21:00.154 --> 02:21:09.034
+if you're working with Git projects, yes, the lock file is. So, yes, if you're working with Git,
+
+02:21:09.914 --> 02:21:17.034
+you would want to commit the lock file, right, that's going to make sure that when you share
+
+02:21:17.034 --> 02:21:25.514
+the project with a collaborator, then they have the ability to restore the lock file.
+
+02:21:25.995 --> 02:21:36.635
+Then they have the ability to restore the packages. Greg, do they have to solve the
+
+02:21:36.635 --> 02:21:45.034
+dependencies if they're not using ARM? No. So, you'll notice in the lock file there isn't any
+
+02:21:45.034 --> 02:21:51.915
+information about operating system. So, if I were to pick up this lock file and restore it on a
+
+02:21:51.915 --> 02:21:53.915
+different system.
+
+02:21:52.921 --> 02:21:54.641
+I were to pick up this lock file
+
+02:21:54.641 --> 02:21:57.001
+and restore it on a different system,
+
+02:21:57.001 --> 02:22:00.241
+as long as I have access to a CRAN repository
+
+02:22:00.241 --> 02:22:03.201
+that, or CRAN like repository that has all the packages,
+
+02:22:03.201 --> 02:22:06.221
+I'll get the same installation back.
+
+02:22:07.321 --> 02:22:11.361
+R-Env, I don't wanna say something incorrect.
+
+02:22:11.361 --> 02:22:16.241
+I think the solving languages,
+
+02:22:16.241 --> 02:22:19.321
+I think might not be correct for R-Env.
+
+02:22:19.321 --> 02:22:21.281
+That might be more like what Pack does.
+
+02:22:21.281 --> 02:22:22.640
+So no, it's not an SBOM.
+
+02:22:22.640 --> 02:22:23.480
+No, it's not.
+
+02:22:25.520 --> 02:22:27.641
+You can probably use it to generate one,
+
+02:22:27.641 --> 02:22:29.761
+but the R-Env lock file is not an SBOM.
+
+02:22:29.761 --> 02:22:33.200
+I believe like there's a particular specification
+
+02:22:33.200 --> 02:22:34.761
+for what an SBOM is,
+
+02:22:34.761 --> 02:22:37.641
+and you have to go generate one
+
+02:22:37.641 --> 02:22:39.601
+based on the information you have here.
+
+02:22:52.281 --> 02:22:55.281
+Okay, yeah, Greg, other question?
+
+02:22:56.680 --> 02:22:58.281
+Yeah, I'm gonna get a little bit in the weeds.
+
+02:22:58.281 --> 02:22:59.321
+So those hashes,
+
+02:22:59.321 --> 02:23:03.721
+are those just hashes supplied by the repo of choice?
+
+02:23:03.721 --> 02:23:06.401
+Like one thing that comes up for builds,
+
+02:23:06.401 --> 02:23:08.961
+it's like, are these good hashes or no?
+
+02:23:08.961 --> 02:23:09.800
+But.
+
+02:23:09.800 --> 02:23:12.281
+I don't remember.
+
+02:23:12.281 --> 02:23:13.361
+All right, that's fine.
+
+02:23:13.361 --> 02:23:16.880
+So I, yeah, I would check the documentation.
+
+02:23:16.880 --> 02:23:19.501
+They capture some things about the,
+
+02:23:06.790 --> 02:23:07.630
+That's fine.
+
+02:23:07.630 --> 02:23:10.710
+So I, yeah, I would, I would check the documentation.
+
+02:23:10.710 --> 02:23:14.990
+They capture some things about the install dependency,
+
+02:23:14.990 --> 02:23:17.830
+but I don't remember exactly what right now.
+
+02:23:17.830 --> 02:23:21.230
+So I would say, check the documentation.
+
+02:23:21.230 --> 02:23:22.830
+If it's not clear from the documentation,
+
+02:23:22.830 --> 02:23:23.910
+please raise an issue
+
+02:23:23.910 --> 02:23:25.710
+and we can get that question answered.
+
+02:23:31.110 --> 02:23:32.270
+Okay.
+
+02:23:32.270 --> 02:23:36.310
+So a couple, I want to show a couple of other things
+
+02:23:36.310 --> 02:23:41.310
+you can do with R-Env installed,
+
+02:23:41.470 --> 02:23:44.929
+with R-Env just to, in terms of how you install packages,
+
+02:23:46.350 --> 02:23:48.229
+just some conveniences to know about
+
+02:23:48.229 --> 02:23:50.709
+that make your life a little bit easier.
+
+02:23:50.709 --> 02:23:52.470
+So we already went through
+
+02:23:55.150 --> 02:23:57.630
+the fact that R-Env install
+
+02:23:59.350 --> 02:24:02.790
+and or install packages with the shims enabled, right?
+
+02:24:02.790 --> 02:24:05.549
+Those are going to be ways for you to install
+
+02:24:05.589 --> 02:24:06.589
+those different packages.
+
+02:24:06.589 --> 02:24:07.909
+And then there are a bunch of shortcuts
+
+02:24:07.909 --> 02:24:12.910
+for different ways of getting things onto your system
+
+02:24:13.429 --> 02:24:17.389
+that you can do if R-Env is active.
+
+02:24:17.389 --> 02:24:22.389
+So for example, if I said I wanted to install packages,
+
+02:24:22.870 --> 02:24:27.870
+JSON lights at 1.2, right?
+
+02:24:30.550 --> 02:24:33.910
+You can see like that version specifier
+
+02:24:33.910 --> 02:24:36.550
+is not a standard R syntax,
+
+02:24:36.550 --> 02:24:40.069
+but it's supported by R-Env.
+
+02:24:40.069 --> 02:24:42.110
+And the same thing is true if, for example,
+
+02:24:42.110 --> 02:24:45.150
+you wanted to install a version of the package
+
+02:24:45.150 --> 02:24:50.150
+from GitHub rather than installing it from CRAN.
+
+02:24:51.989 --> 02:24:55.429
+So if I say install JSON light here,
+
+02:24:57.669 --> 02:25:00.749
+then you can see now I've fetched the package from GitHub
+
+02:25:01.510 --> 02:25:03.989
+and I'm installing it.
+
+02:25:03.989 --> 02:25:05.510
+One other thing you'll see, right?
+
+02:25:05.510 --> 02:25:07.510
+This is taking a little bit longer, right?
+
+02:25:07.510 --> 02:25:11.989
+Because since I pulled the package source from GitHub,
+
+02:25:11.989 --> 02:25:14.669
+I had to compile it myself.
+
+02:25:15.790 --> 02:25:20.469
+And then if I snapshots that version of the package,
+
+02:25:23.510 --> 02:25:25.870
+oh, well, JSON light isn't actually used in this code.
+
+02:25:25.870 --> 02:25:30.870
+So we'll re-add that to the...
+
+02:25:35.269 --> 02:25:38.230
+And now you'll see, right, that R-Env can track also
+
+02:25:38.230 --> 02:25:40.829
+that the package was installed from GitHub
+
+02:25:40.829 --> 02:25:45.829
+rather than being installed from a repository
+
+02:25:45.870 --> 02:25:47.269
+and you'll record some information
+
+02:25:47.269 --> 02:25:51.269
+about the versions of the packages and where you got them.
+
+02:25:56.110 --> 02:25:57.829
+And then one last thing,
+
+02:25:57.829 --> 02:25:59.670
+and then I'll give us a five minute break
+
+02:25:59.670 --> 02:26:04.670
+before we finish out the kind of last section
+
+02:26:04.950 --> 02:26:06.349
+in the last 20 minutes here.
+
+02:26:08.110 --> 02:26:13.110
+So I have, the approach I take for sort of keeping my,
+
+02:26:18.709 --> 02:26:22.870
+my projects I care about separate from ones I don't
+
+02:26:22.909 --> 02:26:26.069
+is I have what I call the junk drawer.
+
+02:26:26.069 --> 02:26:29.909
+So I have a directory that's just called Scratch
+
+02:26:30.790 --> 02:26:32.950
+and in that project, anything goes.
+
+02:26:33.909 --> 02:26:38.790
+So I just install random GitHub projects,
+
+02:26:39.870 --> 02:26:41.150
+things that look interesting,
+
+02:26:41.150 --> 02:26:46.150
+like all of that goes into the Scratch drawer
+
+02:26:46.429 --> 02:26:48.950
+and I don't manage that at all.
+
+02:26:48.950 --> 02:26:51.429
+And then for everything else I use R-Env.
+
+02:26:52.429 --> 02:26:56.670
+So I have seen different versions of this approach.
+
+02:26:56.670 --> 02:26:59.269
+One neat approach someone told me about last time
+
+02:26:59.269 --> 02:27:01.549
+is you can have, for example, a globally,
+
+02:27:01.549 --> 02:27:04.790
+you can globally did ignore the Scratch directory
+
+02:27:04.790 --> 02:27:06.950
+and then you can have a Scratch directory
+
+02:27:06.950 --> 02:27:09.310
+in as many folders as you want.
+
+02:27:09.310 --> 02:27:12.110
+So figure out what approach makes the most sense to you.
+
+02:27:12.110 --> 02:27:14.989
+But I find that like when I'm doing experimental stuff
+
+02:27:14.989 --> 02:27:16.549
+when I don't wanna worry about it
+
+02:27:16.549 --> 02:27:18.909
+polluting the rest of my environment,
+
+02:27:18.989 --> 02:27:22.030
+then I'll do things in like this Scratch folder
+
+02:27:22.950 --> 02:27:26.469
+and then I'll have most of my other stuff organized
+
+02:27:26.469 --> 02:27:28.069
+in a project way.
+
+02:27:29.670 --> 02:27:30.510
+Okay.
+
+02:27:31.390 --> 02:27:36.390
+So let's take five and then I will do the last section
+
+02:27:38.469 --> 02:27:43.069
+on kind of installing and upgrading R.
+
+02:27:45.749 --> 02:27:48.390
+So yeah, I'll put a timer up on the screen
+
+02:27:48.469 --> 02:27:50.430
+and we'll say five minutes.
+
+02:27:58.550 --> 02:27:59.990
+Don't have a built-in countdown timer.
+
+02:27:59.990 --> 02:28:01.990
+I'm just Googling countdown timers here.
+
+02:28:03.110 --> 02:28:04.510
+That's a crazy question.
+
+02:28:12.069 --> 02:28:15.749
+Why are there no good countdown timers in the app?
+
+02:28:15.749 --> 02:28:17.670
+They're not fully pods.
+
+02:28:18.390 --> 02:28:19.230
+Okay.
+
+02:28:27.990 --> 02:28:30.830
+Why can't I find the previous one?
+
+02:28:48.390 --> 02:28:51.230
+Why can't I find the previous one?
+
+02:29:18.390 --> 02:29:22.069
+Why can't I find the previous one?
+
+02:29:48.390 --> 02:29:51.309
+Why can't I find the previous one?
+
+02:31:48.509 --> 02:31:51.349
+Why can't I find the previous one?
+
+02:32:06.630 --> 02:32:08.750
+Why can't I find the previous one?
+
+02:32:08.750 --> 02:32:11.589
+Why can't I find the previous one?
+
+02:32:48.389 --> 02:32:51.349
+Why can't I find the previous one?
+
+02:32:51.349 --> 02:32:55.389
+Why can't I find the previous one?
+
+02:32:55.389 --> 02:32:59.149
+Why can't I find the previous one?
+
+02:32:59.149 --> 02:33:02.190
+Why can't I find the previous one?
+
+02:33:02.190 --> 02:33:05.709
+Why can't I find the previous one?
+
+02:33:05.709 --> 02:33:10.310
+Why can't I find the previous one?
+
+02:33:10.310 --> 02:33:13.389
+Why can't I find the previous one?
+
+02:33:13.389 --> 02:33:17.310
+Why can't I find the previous one?
+
+02:33:17.310 --> 02:33:23.230
+Why can't I find the previous one?
+
+02:33:43.230 --> 02:33:44.870
+All right.
+
+02:33:44.870 --> 02:33:53.750
+In the homestretch, so do I clear scratch my scratch folder sometimes? No. I mean,
+
+02:33:55.190 --> 02:34:02.310
+Shannon, yeah. The nice thing about it is that I don't care about anything that's in it, so.
+
+02:34:05.430 --> 02:34:10.630
+But, you know, occasionally, like, I create reprexes and deploy things to, like,
+
+02:34:10.709 --> 02:34:15.349
+Cordopup or whatever. So I've never needed to delete it because it just, like,
+
+02:34:15.349 --> 02:34:24.469
+the way I have it constructed, it can't break anything. If you like condo-style
+
+02:34:24.469 --> 02:34:29.029
+file management and nothing in there sparks joy, then file means delete it.
+
+02:34:30.709 --> 02:34:38.550
+Okay. So the last thing to talk about is installing and upgrading R. And I'll say
+
+02:34:38.550 --> 02:34:45.110
+there's, like, two conceptual things that I like to sort of talk about here. One is that
+
+02:34:48.709 --> 02:34:55.990
+these sections are kind of a cycle, right? So installing R, upgrading R, and then
+
+02:34:56.949 --> 02:35:02.709
+working your way through reproducible environments. If you adopt the project-based
+
+02:35:02.709 --> 02:35:09.029
+workflow, then these things are all, like, points on a circle instead of things that you
+
+02:35:10.230 --> 02:35:16.709
+do occasionally and randomly and dramatically. So I want to encourage you to think about them
+
+02:35:16.709 --> 02:35:21.430
+that way, right? That, like, an install of R and an upgrade of R should basically be the same
+
+02:35:21.430 --> 02:35:29.029
+operation. The other thing to talk about, right, is this thing I like to call the project onion.
+
+02:35:29.990 --> 02:35:34.870
+And so the project onion is just thinking about the different layers of software that are
+
+02:35:34.870 --> 02:35:45.110
+responsible for how you manage your project. So we've spent a bit of time talking about
+
+02:35:46.870 --> 02:35:52.790
+these three things, right? So we've talked, and I'll, in a subsequent slide, we'll spell out
+
+02:35:53.430 --> 02:36:03.029
+explicitly what each of these are. But our goal is to come up with, like, a holistic framework for
+
+02:36:03.029 --> 02:36:12.469
+managing all the things we need to get to a place where we can kind of reproducibly manage
+
+02:36:14.149 --> 02:36:20.149
+our R projects. And that doesn't have to just be about our R projects. That can also be
+
+02:36:20.709 --> 02:36:25.349
+other kinds of projects that we work on. There's been a lot of, like, Python,
+
+02:36:29.430 --> 02:36:34.149
+there's been a lot of Python in the chat today, right? This concept, I think, is actually
+
+02:36:34.949 --> 02:36:39.269
+much more important to apply there. There are some things that it's kind of safe to ignore
+
+02:36:39.829 --> 02:36:47.509
+sometimes with R that are a little bit harder to manage in Python. So we've got these five
+
+02:36:47.509 --> 02:36:50.550
+concepts, right? I'm not going to spend as much time talking about
+
+02:36:52.070 --> 02:36:56.469
+Scoop and Homebrew today, right? Those are things you would use to manage how you get
+
+02:36:57.829 --> 02:37:04.389
+different pieces of software onto your computer. But the thing we will spend, I'll spend a little
+
+02:37:04.389 --> 02:37:10.469
+bit of time showing you in the last few minutes here, is this tool called Rig, right? Rig is
+
+02:37:10.550 --> 02:37:18.149
+a R language manager. So it's responsible for, it's a way of making it easy for you to install
+
+02:37:18.149 --> 02:37:25.349
+different versions of R. And then once you have those different versions, you can use
+
+02:37:26.949 --> 02:37:35.029
+Rig and tools like RN to manage your projects. Okay. The other thing that I'll say is
+
+02:37:35.269 --> 02:37:42.070
+because sometimes, like, you might want to experiment with these things without
+
+02:37:43.670 --> 02:37:47.110
+destroying your ability to, like, deliver on the projects you have in flight.
+
+02:37:48.230 --> 02:37:54.709
+So there are some tools I like to use to do, and again, this is, I mean, like, my job is to help
+
+02:37:54.709 --> 02:37:59.909
+other people install software. And so I need lots of practice doing this. But I find that these
+
+02:37:59.909 --> 02:38:02.709
+tools are useful if you just want to try something out and you don't want to, like, mess up your
+
+02:38:02.949 --> 02:38:08.949
+machine. So if you're using Windows, there's a tool called the Windows Sandbox, which essentially,
+
+02:38:08.949 --> 02:38:17.029
+it just lets you start a very lightweight Windows VM where you can install things. And then when
+
+02:38:17.029 --> 02:38:23.269
+you close the window, it disappears completely. Right? And so I use that to test out, you know,
+
+02:38:23.269 --> 02:38:29.349
+installing, like, different ways to install R without worrying about breaking my machine. So
+
+02:38:29.509 --> 02:38:34.790
+without worrying about breaking my machine. So if you're on Windows and you have the ability to turn
+
+02:38:34.790 --> 02:38:39.349
+on the Windows Sandbox, it's a fun way to experiment with things. I think it requires, like,
+
+02:38:39.349 --> 02:38:45.909
+Windows Professional, and you have to have access to control, like, some virtualization settings.
+
+02:38:45.909 --> 02:38:52.469
+So it might be trickier to do on your work laptop if you don't have that kind of control. But it's
+
+02:38:52.469 --> 02:38:59.430
+something to investigate. If you're on Mac OS, particularly, and at this point, let me say,
+
+02:38:59.430 --> 02:39:06.630
+if you're on Mac OS, I think both of these tools require you to be using an M series Mac.
+
+02:39:07.750 --> 02:39:15.190
+But something like Tart or this thing called UTM, both of these will allow you to boot up virtual
+
+02:39:16.070 --> 02:39:22.070
+ARM, virtual Mac stations. And then you can use those to, again, just do experiments with ways
+
+02:39:22.070 --> 02:39:27.029
+of installing R, different things. And then if you're on Linux, I don't know as much about Linux
+
+02:39:27.029 --> 02:39:32.389
+desktop, because I don't use that that frequently. But there are lots of easy ways to get yourself a
+
+02:39:32.389 --> 02:39:38.709
+Linux server that runs remotely that's not the one that's your kind of daily driver. So you can go
+
+02:39:38.709 --> 02:39:41.829
+spin up a VM, do terrible things to it, and then throw it away when you're done.
+
+02:39:42.709 --> 02:39:46.550
+But having a framework for experimenting is just going to make it make life a little bit easier for
+
+02:39:46.550 --> 02:39:57.430
+you in terms of figuring out how to take this project-based workflow and spread it to all of
+
+02:39:57.430 --> 02:40:05.269
+the things you do on your computer. So the thing I said at the beginning, I really strongly prefer
+
+02:40:06.230 --> 02:40:12.070
+being able to tell people to run a command, instead of being able to, instead of like giving
+
+02:40:12.070 --> 02:40:17.830
+you a screenshot of like, this is how you download R. And, you know, so I think that's the approach
+
+02:40:17.830 --> 02:40:23.350
+we'll be taking to installing R. And then, like I said, I'm going to skip over the package manager
+
+02:40:23.350 --> 02:40:31.269
+piece of this. But know that there are the, I will say one thing to know, it's just that like,
+
+02:40:31.269 --> 02:40:35.109
+there are lots of types of software that are called package managers, unfortunately.
+
+02:40:35.909 --> 02:40:41.909
+And so if you're using Windows, check out the Scoop project, or check out Wingets. If you're
+
+02:40:41.909 --> 02:40:47.190
+on Mac OS, check out Homebrew. These are things that'll make it possible for you to install
+
+02:40:48.229 --> 02:40:53.430
+Rig, right? And that's your homework, because we won't really get to it today.
+
+02:40:53.430 --> 02:41:00.790
+Your homework is to install Rig, which is the R installation manager. So if I,
+
+02:41:00.790 --> 02:41:05.830
+I'm doing this in a terminal, it's like, Rig is mostly a command line tool.
+
+02:41:07.749 --> 02:41:14.470
+There are some different ways of, you know, you could access it from the terminal inside RStudio.
+
+02:41:16.950 --> 02:41:21.109
+I will not do that today, just because I think it will make things slightly more confusing.
+
+02:41:22.229 --> 02:41:27.749
+But the things that Rig lets you do, right, is manage the different versions of R you have
+
+02:41:27.749 --> 02:41:32.550
+installed on your computer, get new versions of R, get older versions of R,
+
+02:41:33.430 --> 02:41:40.869
+set different versions as the default. So if you saw earlier in class, Shannon said that
+
+02:41:42.070 --> 02:41:50.070
+she was running R 4.3. And I wanted to test something that she said didn't work for her
+
+02:41:50.070 --> 02:41:55.109
+on R 4.3. And so I'll show you, I think that'll be the last thing we do today, is I'll show you
+
+02:41:55.109 --> 02:42:03.029
+what that looks like. So if I run, for example, Rig list, Rig list is going to list the versions
+
+02:42:03.029 --> 02:42:11.749
+of R that I have installed on my machine, right? So I have 4.4. Because I'm running on an ARM Mac,
+
+02:42:11.749 --> 02:42:19.830
+I have this little ARM 64 suffix. This will look different depending on what kind of machine you're
+
+02:42:19.830 --> 02:42:25.909
+on. But Rig runs on Mac and Windows and Linux. So no matter where you're using it, you should be
+
+02:42:25.909 --> 02:42:31.509
+able to do that. If I wanted to install, it'll take slightly too long and jeopardize my bandwidth,
+
+02:42:31.509 --> 02:42:38.310
+so I won't install another version of R. But if I wanted to look to get an additional version of R,
+
+02:42:38.310 --> 02:42:44.869
+right, I could Rig install, you know, latest. I can install a specific patch version. I could
+
+02:42:44.869 --> 02:42:54.070
+install, you know, R 4.0 if I wanted to. And when you install an R version, Rig also has a couple
+
+02:42:54.070 --> 02:43:02.389
+of defaults. Excuse me. So, for example, it will install, Rig will install pack by default.
+
+02:43:03.509 --> 02:43:09.509
+You can instruct it not to do that if you don't want, if you don't want it to. It will also set,
+
+02:43:09.509 --> 02:43:14.869
+I believe, package manager as your default repository. Again, if you don't want it to do
+
+02:43:14.869 --> 02:43:21.430
+that, if you just want it to come set out of the box, then you don't have to do that. But the nice
+
+02:43:21.430 --> 02:43:28.550
+thing is that if you install something with Rig, you're getting the R installation practices that
+
+02:43:28.550 --> 02:43:33.749
+are just going to be kind of baked in. And that's why we want to use something like a, quote, an
+
+02:43:33.749 --> 02:43:38.790
+installation manager, is because it just sets a lot of things for you that put you on the path
+
+02:43:38.790 --> 02:43:50.389
+to success. So, I Rig list. We can see my current version of, my current version of R is set to
+
+02:43:50.389 --> 02:43:58.149
+4.4.0. And that's the version I'm running in RStudio. I'm going to quit RStudio here. I'm
+
+02:43:58.149 --> 02:44:10.629
+going to set my default to 4.3 ARM64. Now, if I Rig list again, right, you'll see the star is by
+
+02:44:10.629 --> 02:44:22.790
+4.3. That's now my default version of R. And so, if I were to open up my instance of RStudio again,
+
+02:44:23.509 --> 02:44:28.310
+now you'll see my default version of R is R 4.3.2.
+
+02:44:32.149 --> 02:44:41.989
+One of the, and to kind of bring us full circle, you can see that my R profile hasn't changed.
+
+02:44:42.710 --> 02:44:49.350
+So, it's still activating RN. But now you can see I'm getting some additional information.
+
+02:44:49.350 --> 02:44:56.229
+Several things have happened as I started R here. So, because R packages have to be
+
+02:44:58.070 --> 02:45:07.509
+installed for each R minor version and package version, when I switch to R 4.3 from R 4.4,
+
+02:45:08.389 --> 02:45:15.830
+there's some code in RN where RN will figure out how to go get a version of itself for the
+
+02:45:16.310 --> 02:45:23.269
+appropriate version of R that you're running. And then you see I get this informational message
+
+02:45:23.269 --> 02:45:30.629
+that says that I'm using R 4.3 now, but my lock file was generated with R 4.4, right?
+
+02:45:31.350 --> 02:45:36.790
+And the other thing I get is a message that says none of the packages that I requested
+
+02:45:36.790 --> 02:45:40.710
+in the lock file are currently installed. So, if I look at the status,
+
+02:45:41.509 --> 02:45:47.269
+something wacky is happening there. If I look at the status,
+
+02:45:51.109 --> 02:45:57.109
+then I get asked if I want to restore the project library, right? And so, you can see,
+
+02:45:57.109 --> 02:46:01.749
+now again, I'm going, I'm getting that version of JSON Lite I installed from GitHub.
+
+02:46:01.749 --> 02:46:06.149
+I'm getting the version of Parallelly that I installed from Package Manager,
+
+02:46:06.149 --> 02:46:11.749
+but I'm getting versions that are specific to this version of R instead of the version 4.4
+
+02:46:12.310 --> 02:46:19.749
+that I started with. And then if I run snapshot,
+
+02:46:22.950 --> 02:46:31.749
+my package versions don't change, but my R version does change in my lock file.
+
+02:46:31.749 --> 02:46:37.830
+And so, when you think about, you know, taking a project, upgrading to a new version of R,
+
+02:46:37.830 --> 02:46:46.389
+right, you have a way of controlling which version of R you start, you know, you work with
+
+02:46:46.389 --> 02:46:54.470
+for a particular project. You have that recorded in your lock file. And there are some tools in Rig,
+
+02:46:54.710 --> 02:47:01.909
+for example, there's a Rig RStudio command, which will just launch RStudio. But if you provide Rig
+
+02:47:01.909 --> 02:47:19.670
+RStudio with an R project file or an R with a lock file, it will open, you can use this, you can use
+
+02:47:19.670 --> 02:47:28.070
+Rig to open RStudio with specific versions of R. So, it gives you a lot more control over
+
+02:47:28.070 --> 02:47:33.269
+what version of R you're working with, what versions of packages you're working with, right,
+
+02:47:33.269 --> 02:47:41.509
+it makes your R version parts of your R project. Hey, David. Yeah. I just wanted to ask about the
+
+02:47:41.509 --> 02:47:45.109
+snapshot. Is it the same as a Windows system restoration?
+
+02:47:46.070 --> 02:47:55.350
+It uses the date timestamp. Yeah, please. Yeah, so the, I have not used Windows system
+
+02:47:55.350 --> 02:48:02.070
+restoration in a long time. I think the, it is probably much more generic, right, so something
+
+02:48:02.070 --> 02:48:07.430
+like Windows system restoration is trying to back up all the files on your operating system.
+
+02:48:07.430 --> 02:48:16.950
+We, in this case, right, like, if I come back to the project's onion, right, we're talking here
+
+02:48:16.950 --> 02:48:26.389
+about, you know, stuff from your R projects to how you manage things, like software did you get
+
+02:48:26.389 --> 02:48:31.430
+installed, but around this is another layer of, you know, how you manage things, right,
+
+02:48:31.430 --> 02:48:37.430
+how you manage things, like software did you get installed, but around this is another layer
+
+02:48:37.430 --> 02:48:45.029
+of the operating system, and so the Windows, Windows backup, whatever Apple calls their
+
+02:48:45.029 --> 02:48:49.590
+thing, time machine, something like, all that is going to be stuff that's outside the context of
+
+02:48:50.470 --> 02:48:57.909
+managing the software you install on your computer. Okay.
+
+02:49:02.310 --> 02:49:09.269
+So, we are basically at time, I want to thank everyone for their time and attention.
+
+02:49:09.909 --> 02:49:15.670
+Happy to answer any final questions in the remaining couple of minutes before we hang it up.
+
+02:49:15.670 --> 02:49:36.149
+I have a question. Oh, sorry, Greg. I just wanted to ask if you left any out from the talk.
+
+02:49:37.509 --> 02:49:42.149
+There was a part where you were talking about where you could customize the profiles and Shannon
+
+02:49:42.149 --> 02:49:46.869
+said it wasn't covered in this presentation, like in the conference, would you cover it then?
+
+02:49:49.670 --> 02:49:55.909
+No, it's just a suggestion, yeah, and I'm happy to look up some really fun R profiles and share
+
+02:49:55.909 --> 02:50:05.509
+that with you. I would say, yeah, on customizing your R profile, there is some stuff I talk about
+
+02:50:05.509 --> 02:50:11.509
+not quite in this series about other ways of customizing your terminal, so you'll see,
+
+02:50:11.590 --> 02:50:18.389
+for example, that if I start typing things in my terminal, I get lots of help. These are all
+
+02:50:18.389 --> 02:50:25.989
+things that I do to make it easier to use the terminal when I'm trying to work on lots of
+
+02:50:25.989 --> 02:50:32.869
+different things. Again, my job just requires, not requires, but the way I find it effective to work
+
+02:50:33.670 --> 02:50:39.989
+might not be necessarily as useful to you because I don't actually do that much data science,
+
+02:50:40.229 --> 02:50:47.670
+I'm much more, yeah, but yeah, this is basically what we'll attempt to cover
+
+02:50:48.470 --> 02:50:53.269
+during the workshop in person. The resource setting up
+
+02:50:55.989 --> 02:51:05.749
+Python virtual environments, there's a, so solutions.posit.co is a website that my team
+
+02:51:05.749 --> 02:51:12.869
+maintains where we talk about lots of problems that you might confront, particularly if you're
+
+02:51:12.869 --> 02:51:17.509
+using posit professional products, but some things are just like things that are good to know,
+
+02:51:18.310 --> 02:51:28.070
+and so this is the article which I'll drop in the chat. Like I said, the real
+
+02:51:28.629 --> 02:51:36.310
+meat of the thing is something I call the iron law of Python management, which is create a
+
+02:51:36.310 --> 02:51:42.950
+virtual environment for every single project. I cannot stress enough how serious I am about
+
+02:51:42.950 --> 02:51:50.149
+you really have to do it for every single Python project. There is no other safe way to use Python.
+
+02:51:50.389 --> 02:51:56.310
+Greg, you got a question?
+
+02:52:04.310 --> 02:52:05.029
+Gregory, are you there?
+
+02:52:05.029 --> 02:52:10.310
+I think you're speaking, you're muted.
+
+02:52:10.310 --> 02:52:21.830
+Yeah, well, I am david at posit.co if you have questions or want to follow up by email.
+
+02:52:26.629 --> 02:52:33.830
+Okay, I think we're all good. Yeah, I think we're done. No one has any other questions.
+
+02:52:33.830 --> 02:52:42.149
+Sheila, do you have anything you want to add?
+
+02:52:44.149 --> 02:52:47.830
+No, I'm good. I just wanted to say thanks to everyone for joining.
+
+02:52:49.029 --> 02:52:51.029
+Yeah, have a great rest of your day or night.
+
+02:52:52.950 --> 02:52:55.509
+Yeah, it's nighttime right now in Africa.
+
+02:52:55.509 --> 02:53:08.950
+Okay, and I just want to just encourage Shannon and David to
+
+02:53:08.950 --> 02:53:11.909
+get started on that book because I think we really need this.
+
+02:53:14.950 --> 02:53:22.229
+Yeah, there are some of the material here will make its way back to the book.
+
+02:53:23.190 --> 02:53:32.470
+The book in question is at rstats.wtf. Kind of continually a work in progress, but some of the
+
+02:53:32.470 --> 02:53:40.629
+things I mentioned about the workflow cycle, those are things that I'll be filling out
+
+02:53:41.509 --> 02:53:42.310
+through the conference.
+
+02:53:44.470 --> 02:53:49.909
+All right then. Okay, thank you everyone for coming. The recording will be available soon
+
+02:53:49.909 --> 02:53:55.749
+on R-Ladies Global and you should be getting a notification beginning of next week. Yeah,
+
+02:53:55.749 --> 02:54:00.310
+so thank you again David and Shannon for your time. And Sheila, thank you so much for co-hosting
+
+02:54:00.310 --> 02:54:08.310
+with me. Thank you. Thank you. All right, bye everyone.

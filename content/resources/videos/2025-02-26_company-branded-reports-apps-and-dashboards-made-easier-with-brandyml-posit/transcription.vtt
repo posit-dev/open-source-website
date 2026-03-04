@@ -1,0 +1,662 @@
+WEBVTT
+
+00:00:00.320 --> 00:00:04.000
+Hi, I'm Sarah Altman and I'm on the Developer Relations team at Posit.
+
+00:00:04.960 --> 00:00:09.600
+Today I'm going to talk to you about brand.yml, a really exciting new project from the Shiny
+
+00:00:09.600 --> 00:00:16.559
+and Quarto team. Brand.yml allows you to easily apply branding across reports, dashboards,
+
+00:00:16.559 --> 00:00:23.600
+apps, and more with a single yml file. There will be a live Q&A after this presentation
+
+00:00:23.600 --> 00:00:28.320
+where we'll be joined by Gareth Aiden-Bouy and Carlo Scheidegger, two of the software
+
+00:00:28.320 --> 00:00:33.279
+engineers who created brand.yml. We're all really excited about this project and are
+
+00:00:33.279 --> 00:00:40.000
+looking forward to your question. So today I'm going to show you how to transform your
+
+00:00:40.000 --> 00:00:45.919
+unbranded Quarto documents and Shiny apps that might look something like this into consistent
+
+00:00:45.919 --> 00:00:52.560
+branded products like this, all with a single yml file. We'll talk about why you might want
+
+00:00:52.560 --> 00:01:00.080
+to use brand.yml, the structure of a brand.yml file, how to apply brand.yml to Quarto documents
+
+00:01:00.080 --> 00:01:06.879
+and Shiny apps, and how to create a brand.yml with the help of an LLM. So why use brand.yml?
+
+00:01:07.519 --> 00:01:13.839
+Let's say you're a data person in an organization and as part of your job you create reports,
+
+00:01:13.839 --> 00:01:20.160
+apps, plots, dashboards, and other things. All these artifacts that people at your organization
+
+00:01:20.239 --> 00:01:26.320
+and maybe even people outside of your organization use. And your company has particular branding,
+
+00:01:26.320 --> 00:01:32.800
+it has colors, logos, fonts that it uses in its materials. That branding might even be
+
+00:01:32.800 --> 00:01:41.279
+immediately recognizable to people outside of your company. So you as a diligent data professional
+
+00:01:41.279 --> 00:01:46.080
+try to apply your company's branding across all your plots and dashboards and apps.
+
+00:01:47.040 --> 00:01:53.279
+But you run into a couple of hurdles. First, you know how to change the color of your plots
+
+00:01:53.279 --> 00:01:57.360
+and you know how to adapt the theme of your Quarto dashboards. But to really get your company's
+
+00:01:57.360 --> 00:02:01.839
+branding right, you need to play around with CSS and other things that are mostly outside
+
+00:02:01.839 --> 00:02:07.279
+of your toolbox. Second, you can get some of the branding right but at the same time your
+
+00:02:07.279 --> 00:02:11.279
+co-workers are also trying to apply the same branding guidelines and you're all kind of
+
+00:02:11.279 --> 00:02:15.360
+getting it right but in different ways. And so your work as a team doesn't really feel right.
+
+00:02:16.080 --> 00:02:20.960
+It doesn't feel consistent. And then maybe you've amassed all this code that brands your outputs
+
+00:02:20.960 --> 00:02:26.320
+and it looks really nice, but then the company decides to change its brand. And so now you have
+
+00:02:26.320 --> 00:02:31.600
+to comb back through your code and update everything manually. A frustrating and time-intensive task.
+
+00:02:32.559 --> 00:02:34.479
+So you have a couple problems that you need to solve.
+
+00:02:37.360 --> 00:02:42.399
+Consistent branding across not only your own work but across your teams ensures your work
+
+00:02:42.399 --> 00:02:47.039
+looks professional and polished. Branding can be a subtle but really powerful way
+
+00:02:47.039 --> 00:02:53.600
+to make your work shine. And your organization might also require you to follow brand guidelines.
+
+00:02:53.600 --> 00:03:00.800
+So you need branding but branding consistently can be difficult. Your brand guidelines might
+
+00:03:00.800 --> 00:03:06.240
+include detailed requirements and applying various colors, fonts, and logos across tools
+
+00:03:06.240 --> 00:03:10.960
+and programming languages requires a lot of manual effort that can be prone to error.
+
+00:03:12.960 --> 00:03:17.520
+It can also be really difficult to update branding consistently when brand guidelines change.
+
+00:03:17.520 --> 00:03:20.800
+Think about all the files you might need to update with traditional approaches.
+
+00:03:23.759 --> 00:03:28.720
+Finally, ensuring team consistency can be hard. You want to make sure all contributors follow
+
+00:03:28.720 --> 00:03:34.399
+brand guidelines in a similar way across all their reports and dashboards and apps,
+
+00:03:34.399 --> 00:03:40.399
+which can definitely be challenging. So addressing these problems is exactly why the team
+
+00:03:40.399 --> 00:03:46.399
+behind brand.yaml created it. With brand.yaml you can define your organization's branding
+
+00:03:46.399 --> 00:03:52.559
+in a single yaml file and apply that branding across reports, dashboards, and apps pretty much
+
+00:03:52.559 --> 00:04:00.800
+instantly. So what does this mean? It means we write a single yaml file that specifies colors,
+
+00:04:00.800 --> 00:04:07.520
+logos, fonts, and typographic choices. You're going to often see this named underscore brand.yaml.
+
+00:04:10.399 --> 00:04:15.440
+Then you can instantly apply branding from that yaml file across quarter documents,
+
+00:04:15.440 --> 00:04:20.160
+shiny apps, and more. So at this point you might have a couple of questions.
+
+00:04:21.440 --> 00:04:28.160
+How do we structure this yaml file? And after we've created the yaml file, how do we actually
+
+00:04:28.160 --> 00:04:34.239
+apply it to our outputs to brand them? So let's look at the yaml file structure first.
+
+00:04:34.320 --> 00:04:38.880
+So I'm going to give you an overview of the file structure and explain how you'd go about
+
+00:04:38.880 --> 00:04:44.480
+building up your own brand.yaml file. But if this seems like a lot of manual work, know that towards
+
+00:04:44.480 --> 00:04:49.920
+the end of this presentation I'll show you how to create a brand.yaml with the help of an LLM.
+
+00:04:50.799 --> 00:04:56.799
+So yaml is a language often used to represent structured data in a human-readable format.
+
+00:04:56.799 --> 00:05:02.239
+You often see yaml used for things like configuration files. You don't need to know
+
+00:05:02.720 --> 00:05:08.399
+a lot about yaml to get started creating yaml files like brand.yaml.
+
+00:05:09.760 --> 00:05:16.480
+One thing to know is that yaml uses key-value pairs. So the key in this case right here is
+
+00:05:17.200 --> 00:05:21.679
+meta and then this whole thing is the value. And we have another key-value pair within that.
+
+00:05:22.720 --> 00:05:28.239
+And that's all you really need to know about how yaml works. So now let's talk about the specifics
+
+00:05:28.239 --> 00:05:37.359
+of a brand.yaml file. Brand.yaml files require a particular format to brand your outputs like
+
+00:05:37.359 --> 00:05:46.640
+Shiny apps and Cordo documents. There are four main components. Meta, which contains identity
+
+00:05:46.640 --> 00:05:55.040
+information like the name of your company. Logo, which is where you specify files or links to your
+
+00:05:55.040 --> 00:06:01.839
+brand's logo at various sizes. Color, which is where you define the colors in your brand's color
+
+00:06:01.839 --> 00:06:08.880
+palette and how those colors are used. And typography, which is where you define fonts
+
+00:06:08.880 --> 00:06:18.640
+and other typographic choices. So again a brand.yaml file will need meta, logo, color, typography.
+
+00:06:19.200 --> 00:06:25.600
+You can also specify defaults, which is where you can add additional context-specific settings
+
+00:06:25.600 --> 00:06:29.839
+that might be options used by like Bootstrap in Cordo or Shiny.
+
+00:06:31.679 --> 00:06:39.040
+So let's take a closer look at the color and typography sections. So first, color. So the
+
+00:06:39.040 --> 00:06:45.920
+color section in brand.yaml consists of two main parts. There's palette, which is a set of named
+
+00:06:45.920 --> 00:06:51.920
+colors specific to your brand. So in this case, the key value pairs are a name of a color,
+
+00:06:52.480 --> 00:06:56.959
+which this could be anything you want, and then the hex code for that color.
+
+00:06:58.160 --> 00:07:08.399
+So this brand defines a black, blue, neutral, red, and violet. The second part is the theme colors.
+
+00:07:09.359 --> 00:07:16.079
+And this is where you assign those specific colors to various UI elements. So here we're saying
+
+00:07:16.880 --> 00:07:24.079
+we want to use our neutral color for background. So if you were building up this file from scratch,
+
+00:07:24.079 --> 00:07:28.880
+you would first want to define the colors in your palette by taking a look at your
+
+00:07:29.440 --> 00:07:35.279
+brand guidelines and figure out what colors are in your brand's color palette to define those colors
+
+00:07:36.000 --> 00:07:41.920
+and then map those brand colors to particular UI elements. How do you want those colors
+
+00:07:41.920 --> 00:07:47.679
+to be used? Where do you want them to appear? Okay, so now typography.
+
+00:07:49.040 --> 00:07:55.519
+Like color, typography has two sections. First, you define the fonts used by your brand.
+
+00:07:57.519 --> 00:08:03.600
+And you can specify either local or online font sources. So this brand.yaml uses Google fonts.
+
+00:08:05.359 --> 00:08:12.320
+Then you take those fonts and define how they are used by different typographic elements.
+
+00:08:12.320 --> 00:08:18.559
+So in this case, we're using this font as the base font. And then for headings, we're using
+
+00:08:18.559 --> 00:08:25.679
+Montserrat with a particular weight and also assigning a color. Great. So, so far,
+
+00:08:25.679 --> 00:08:30.480
+we've talked about why you might want to use brand.yaml, how to structure a brand file.
+
+00:08:31.440 --> 00:08:37.760
+And now let's see it in action. I'm going to show you how to use brand.yaml with Cordo and Shiny.
+
+00:08:38.799 --> 00:08:46.400
+Okay, so now I'm in Positron. And over here on the left hand side, you can see all of my files.
+
+00:08:47.119 --> 00:08:55.520
+I have a Python Shiny app, Shiny for our app, and a Cordo document that creates a Cordo site.
+
+00:08:56.400 --> 00:09:01.760
+So I'm going to show you how to apply brand.yaml to the Shiny for Python app, Shiny for our app,
+
+00:09:01.760 --> 00:09:10.000
+and the Cordo document. So I have the Python app open, but we're actually going to talk about Cordo
+
+00:09:10.000 --> 00:09:19.520
+first. Okay. So here's my Cordo document. Let's just render it and see what it looks like without
+
+00:09:20.320 --> 00:09:27.200
+any branding. So I'm clicking the preview button to render and preview this Cordo site.
+
+00:09:32.880 --> 00:09:39.280
+Okay. Great. So that's just the default Cordo theme. We haven't applied any branding at all.
+
+00:09:42.080 --> 00:09:48.239
+For Cordo documents, to apply brand.yaml, all we need to do is add an underscore brand.yaml
+
+00:09:48.719 --> 00:09:53.359
+to the same parent directory. Cordo will then automatically apply the branding.
+
+00:09:54.239 --> 00:09:58.559
+So let's add a brand.yaml file. I'm going to create a new file.
+
+00:10:00.159 --> 00:10:05.119
+And I already have all the yaml that I want over here, so I'm just going to paste it in.
+
+00:10:06.719 --> 00:10:13.280
+Okay. This is the brand.yaml file that we saw earlier that defines a brand for an example
+
+00:10:13.280 --> 00:10:21.359
+company. It has a color palette, some fonts, a logo. Okay. I'm going to save this as underscore
+
+00:10:21.359 --> 00:10:30.239
+brand.yaml. And now I didn't change anything in the original Cordo document, so let's just rerun
+
+00:10:30.239 --> 00:10:37.840
+it and see what happens. Great. So without changing any code in the actual Cordo document,
+
+00:10:37.840 --> 00:10:43.200
+we applied the branding from brand.yaml. Cordo found our underscore brand.yaml file and applied
+
+00:10:43.200 --> 00:10:50.640
+the branding. So now we have a different colored nav bar, a logo, a different background,
+
+00:10:50.640 --> 00:10:57.599
+different fonts. And we got all of this from a single yaml file. If we wanted to use a brand
+
+00:10:57.599 --> 00:11:03.280
+yaml file from a different directory, you can supply the path to that brand.yaml
+
+00:11:03.440 --> 00:11:17.280
+to brand in the Cordo.yaml header. So if we had it in a directory brand.brandfile.examplecode.yaml,
+
+00:11:17.280 --> 00:11:23.280
+we could specify that there. You can also specify the brand file in the Cordo.yaml file if you're
+
+00:11:23.280 --> 00:11:29.679
+using a Cordo project. If you have a brand.yaml file in a directory with multiple Cordo documents
+
+00:11:29.679 --> 00:11:35.280
+and you want to turn off the branding for one of those documents, you can set brand to false.
+
+00:11:36.799 --> 00:11:40.159
+And that will make it so that the branding is not applied.
+
+00:11:43.119 --> 00:11:49.840
+I'm going to remove this and let's rerender. Okay. So you'll notice that the plots aren't
+
+00:11:49.840 --> 00:11:54.320
+branded. They didn't change. The goal is for Python and R plotting libraries to support
+
+00:11:54.320 --> 00:11:58.559
+brand.yaml in the future. But for right now, we're going to do a little bit of extra work
+
+00:11:58.559 --> 00:12:05.039
+to get the plot styled correctly. So for now, one way to do this is to take advantage of the
+
+00:12:05.039 --> 00:12:12.239
+brand.yaml Python package. With this package, we can easily read in the brand.yaml file into Python
+
+00:12:12.239 --> 00:12:17.760
+and then access specific elements of this. So we're going to use this to write a function that
+
+00:12:17.760 --> 00:12:23.119
+builds a matplotlib style sheet, essentially just something that's styling our matplotlib plots.
+
+00:12:24.080 --> 00:12:27.599
+And then in that style sheet, we'll use the colors from our brand.yaml.
+
+00:12:28.400 --> 00:12:32.799
+So I'm not really going to talk too much about this, but the code is in the GitHub repository
+
+00:12:32.799 --> 00:12:38.159
+and feel free to ask questions about it during the Q&A. Let's just quickly take a look at that
+
+00:12:38.159 --> 00:12:45.760
+Python script. So again, we're using the brand.yaml Python package. And if you take away something
+
+00:12:45.760 --> 00:12:50.640
+from all this matplotlib talk, I would take away this. There is a brand.yaml Python package
+
+00:12:50.799 --> 00:12:57.119
+that helps you use brand.yaml in Python. So here we create a function that defines that matplotlib
+
+00:12:57.119 --> 00:13:03.440
+style sheet using the brand.yaml Python package to read in our brand and then access specific
+
+00:13:03.440 --> 00:13:09.440
+elements of it. Okay. So now I'm going to go back to the Cordo document and uncomment these
+
+00:13:09.440 --> 00:13:20.000
+lines which are importing that function and then running it. Great. And now our plots follow the
+
+00:13:20.000 --> 00:13:24.880
+branding defined in the brand.yaml file. So next, let's talk about Shiny for Python.
+
+00:13:25.520 --> 00:13:31.599
+With Shiny for Python version 1.2, using brand.yaml to theme your Shiny app is pretty
+
+00:13:31.599 --> 00:13:37.440
+straightforward. To get started, you'll want to make sure you've installed the latest version
+
+00:13:37.440 --> 00:13:48.000
+of Shiny with the theme extra. And you can do that like this. So I'm just going to the terminal.
+
+00:13:48.960 --> 00:13:54.559
+So pip install Shiny bracket theme. I'm not going to run this because I already have it installed.
+
+00:13:55.760 --> 00:13:58.719
+And that will get you the latest version of Shiny with the theme extra.
+
+00:14:00.640 --> 00:14:06.479
+Great. I'm going to close these and now open up our Shiny for Python app.
+
+00:14:09.280 --> 00:14:15.359
+Let's run this. And remember, we have that brand file in the directory.
+
+00:14:16.320 --> 00:14:21.359
+So you might have expected it to automatically brand just like the Cordo document that we
+
+00:14:21.359 --> 00:14:25.919
+rendered. But this is just the default Shiny theme. So for Shiny for Python, we're going to
+
+00:14:25.919 --> 00:14:31.919
+need to do one more step to apply our branding from the brand.yaml file. And to do so, we're
+
+00:14:31.919 --> 00:14:38.719
+going to use the function UI theme from brand to define a custom theme from our brand.yaml file.
+
+00:14:38.960 --> 00:14:47.119
+So this is UI.page. This is defining page options for the entire page. So here we have a title and
+
+00:14:47.119 --> 00:14:53.039
+we're just setting fillable to true. But now I'm going to add the theme argument. And create a
+
+00:14:53.039 --> 00:15:02.239
+theme using UI.theme from brand. And this is setting the theme of the page to a theme that
+
+00:15:02.799 --> 00:15:08.239
+we're creating from brand. But now we still need to supply it with information about where our
+
+00:15:08.239 --> 00:15:15.280
+brand.yaml file is. So now I can either pass it the path to a brand.yaml file or because brand.yaml
+
+00:15:15.280 --> 00:15:22.719
+is in the same directory, I can use double underscore file to refer to the current file
+
+00:15:22.719 --> 00:15:30.479
+path and then theme from brand will find the correct brand.yaml file. Okay. So now I'm going
+
+00:15:31.440 --> 00:15:35.200
+to run this app again and see what happens.
+
+00:15:39.520 --> 00:15:44.239
+Great. So now our app uses the branding from brand.yaml.
+
+00:15:45.679 --> 00:15:50.159
+This is a little hard to see because it's small, but you'll see it in full screen in a little bit.
+
+00:15:52.719 --> 00:15:56.640
+So we still need to style the plots. I'm going to do the same thing as I did for the quarter
+
+00:15:56.719 --> 00:16:02.320
+document. Import that style sheet function and then run it.
+
+00:16:07.520 --> 00:16:12.479
+Okay. Now the plot is themed correctly.
+
+00:16:15.039 --> 00:16:21.119
+Okay. So finally we're going to talk about Shiny for R. So let's open up that app.
+
+00:16:22.080 --> 00:16:29.200
+Okay. So with the recent release of BSLib 0.9, BSLib and Shiny for R support brand.yaml.
+
+00:16:29.200 --> 00:16:34.000
+So to get started with brand.yaml in Shiny for R, you'll want to make sure to update BSLib.
+
+00:16:36.320 --> 00:16:39.440
+So let's run this app. So for Shiny for R,
+
+00:16:40.559 --> 00:16:46.000
+all we need to do is have that underscore brand.yaml file in our same directory.
+
+00:16:46.159 --> 00:16:51.760
+And Shiny will automatically apply the theme. You'll notice that I didn't need to do anything
+
+00:16:51.760 --> 00:16:57.840
+extra to style the plots, and that's because I'm using thematic. So right now thematic only
+
+00:16:57.840 --> 00:17:02.239
+partially supports brand.yaml, so I had to do a little bit of extra work. And the goal is for
+
+00:17:02.239 --> 00:17:07.040
+thematic to entirely support brand.yaml, so you won't have to do any extra work
+
+00:17:07.040 --> 00:17:09.359
+to style your plots inside Shiny apps.
+
+00:17:10.319 --> 00:17:17.599
+Okay. So now we have two apps and a quarter website styled from a single brand.yaml file.
+
+00:17:17.599 --> 00:17:23.280
+Now let's say we want to deploy one of these apps somewhere. I'm going to deploy to PositConnect.
+
+00:17:25.040 --> 00:17:31.439
+So in Positron, which is the IDE I'm in, or in VS Code, you can use the Posit Publisher extension
+
+00:17:31.439 --> 00:17:38.000
+to deploy to PositConnect. So I'm going to deploy to PositConnect, and I'm going to deploy to
+
+00:17:38.000 --> 00:17:43.599
+Publisher extension to publish to Connect. If you don't already have that extension,
+
+00:17:43.599 --> 00:17:48.959
+you can go to the extensions tab and then search for Posit Publisher,
+
+00:17:52.239 --> 00:18:00.959
+and then install. And then click on Posit Publisher and deploy your project from there.
+
+00:18:00.959 --> 00:18:06.239
+I've already deployed this Shiny app, so I already have a deployment set up. But if
+
+00:18:06.239 --> 00:18:10.079
+you're starting from scratch, you can click this plus button to set up a new deployment,
+
+00:18:12.560 --> 00:18:15.839
+select the file that you want to deploy,
+
+00:18:18.880 --> 00:18:25.920
+create a title for it, and then select where you want to deploy it. Okay.
+
+00:18:25.920 --> 00:18:32.640
+So I want to deploy the Shiny4R app, so I'm going to switch back to that, and then click
+
+00:18:32.640 --> 00:18:37.520
+deploy your project. Great. So this says our deployment was successful, so now I'm going to
+
+00:18:37.520 --> 00:18:46.880
+click view and then open. Okay, so here's our Shiny4R app, themed with brand.yaml and deployed
+
+00:18:46.880 --> 00:18:53.599
+to Connect. This diagram shows everywhere that the brand.yaml team hopes to deploy Shiny4R to
+
+00:18:53.920 --> 00:19:00.719
+that the brand.yaml team hopes to support brand.yaml in the future. The green boxes show
+
+00:19:00.719 --> 00:19:06.000
+where brand.yaml is already supported. This diagram is on the brand.yaml website.
+
+00:19:08.239 --> 00:19:12.239
+So if you want the most up-to-date information, you can take a look there. At this point,
+
+00:19:12.239 --> 00:19:17.359
+you might be thinking, this all sounds great, but translating my organization's brand guidelines
+
+00:19:17.359 --> 00:19:22.319
+into YAML seems kind of tedious. This is a great use case of an LLM.
+
+00:19:24.560 --> 00:19:29.760
+Garrick wrote this very helpful article about how to create a brand.yaml with the help of an LLM.
+
+00:19:30.560 --> 00:19:35.680
+Because brand.yaml is pretty new, the LLMs like chatGBT don't really know about it yet,
+
+00:19:36.319 --> 00:19:39.199
+but you can teach it pretty easily with a prompt.
+
+00:19:41.119 --> 00:19:45.920
+So Garrick wrote this helpful prompt that you can copy and paste into a chat interface
+
+00:19:45.920 --> 00:19:53.280
+or use as a system prompt. It teaches the LLM about brand.yaml and how to format the file.
+
+00:19:54.560 --> 00:20:01.119
+So I can copy this and then go to chatGBT
+
+00:20:04.880 --> 00:20:12.959
+and paste in that prompt. Then at the end, ask the LLM to generate you a brand.yaml file
+
+00:20:12.959 --> 00:20:17.760
+for your organization. So let's ask it to make a brand.yaml file for Posit.
+
+00:20:24.400 --> 00:20:27.599
+Now I need to supply it with information about Posit's brand.
+
+00:20:28.560 --> 00:20:33.520
+This can take the form of screenshots of the brand guidelines, text from the brand guidelines,
+
+00:20:33.520 --> 00:20:37.359
+or a screenshot of a page that shows a bunch of features of the brand.
+
+00:20:38.319 --> 00:20:42.800
+I'm going to supply it with a few screenshots of Posit's brand.
+
+00:20:48.959 --> 00:20:57.760
+Okay. Let's see what it says.
+
+00:21:07.359 --> 00:21:29.199
+So now we have a brand.yaml file for Posit. Let's try it out. One good way to experiment
+
+00:21:29.199 --> 00:21:35.199
+with brand.yaml is by using this branded theming example on ShinyLive. ShinyLive is a way to run
+
+00:21:35.199 --> 00:21:40.400
+Shiny in the browser. So I'm going to try out our brand.yaml in this example.
+
+00:21:44.079 --> 00:21:50.239
+So this ShinyLive example includes an app that uses a brand.yaml file, and the app is designed
+
+00:21:50.239 --> 00:21:56.640
+to highlight all the features of the brand. So this is using the brand.yaml that was already there,
+
+00:21:56.640 --> 00:22:03.040
+and you can see the color palette and the fonts. You can see the full palette here.
+
+00:22:03.760 --> 00:22:07.280
+So let's paste in from chat GPT and see what happens.
+
+00:22:08.719 --> 00:22:14.560
+And I'm not going to add the logos here, so let's just remove this for now.
+
+00:22:19.040 --> 00:22:22.640
+And rerun. Okay.
+
+00:22:25.199 --> 00:22:29.359
+So I don't think this perfectly captures Posit's brand, but it gets pretty close,
+
+00:22:29.359 --> 00:22:34.160
+and it's reasonably good. It's a good way to play around with a brand.yaml file.
+
+00:22:35.119 --> 00:22:39.439
+The LLM might not have given us a perfect brand.yaml file, but it's a good starting point.
+
+00:22:39.439 --> 00:22:44.160
+And now if I wanted to experiment, I could edit what is already there instead of starting from
+
+00:22:44.160 --> 00:22:50.719
+scratch. This branded theming example on ShinyLive is also just a great way to get familiar with
+
+00:22:50.719 --> 00:22:59.359
+brand.yaml. Okay. So we've covered a lot today. We've talked about how to apply brand.yaml files,
+
+00:23:00.719 --> 00:23:06.959
+how to structure those yaml files, and how to generate a brand.yaml file with the help of an LLM.
+
+00:23:08.079 --> 00:23:12.239
+Brand.yaml is really cool, and I encourage you all to try it out for your organization
+
+00:23:12.239 --> 00:23:17.119
+or personal branding uses. And again, here are just some advantages of brand.yaml.
+
+00:23:17.520 --> 00:23:22.560
+Brand.yaml creates a common syntax for theming across different outputs. You don't need to worry
+
+00:23:22.560 --> 00:23:26.079
+about maintaining different files with different structures for different outputs.
+
+00:23:27.520 --> 00:23:32.000
+This helps you get consistent branding without a lot of effort, ensuring your work consistently
+
+00:23:32.000 --> 00:23:37.040
+follows brand guidelines and avoids duplication by defining branding in one file.
+
+00:23:39.839 --> 00:23:44.319
+Brand.yaml also makes it really easy to collaborate. You can share a single brand.yaml
+
+00:23:44.560 --> 00:23:48.640
+file across your organization to ensure everyone can easily apply the same branding.
+
+00:23:50.479 --> 00:23:55.199
+Another thing is that we've been talking about using brand.yaml for use in your organization,
+
+00:23:55.199 --> 00:24:00.079
+but there are other things you might want branding for. You might want to develop a personal brand.yaml
+
+00:24:00.079 --> 00:24:04.319
+and use it across your websites and talk to create a consistent personal brand.
+
+00:24:05.119 --> 00:24:11.520
+I use brand.yaml for these slides, so if I want to use this theme in the future, I can just use
+
+00:24:11.680 --> 00:24:15.680
+this theme in the future. I can just use that same yaml file.
+
+00:24:18.319 --> 00:24:20.479
+Great, so thanks for coming to this presentation,
+
+00:24:20.479 --> 00:24:26.239
+and I am looking forward to your questions in the Q&A.
+

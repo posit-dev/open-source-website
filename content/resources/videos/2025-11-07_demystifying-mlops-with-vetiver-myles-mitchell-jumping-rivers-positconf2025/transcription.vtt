@@ -1,0 +1,1133 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.000
+So I'm Myles, and my talk is titled Demystifying MLOps with Vetiver.
+
+00:00:04.000 --> 00:00:06.000
+And I'm going to start with a quick disclaimer.
+
+00:00:06.000 --> 00:00:10.000
+So this is the statistical modeling and machine learning track.
+
+00:00:10.000 --> 00:00:14.000
+But my talk is not going to feature any machine learning models.
+
+00:00:14.000 --> 00:00:18.000
+In fact, there's going to be no statistical models at all for that matter.
+
+00:00:18.000 --> 00:00:21.000
+There's going to be no code.
+
+00:00:21.000 --> 00:00:23.000
+There's going to be no plots.
+
+00:00:23.000 --> 00:00:27.000
+Apart from one pie chart.
+
+00:00:27.000 --> 00:00:30.000
+Instead, I'm going to be taking you on my own personal journey
+
+00:00:30.000 --> 00:00:34.000
+as I got to grips with MLOps over the past couple of years.
+
+00:00:34.000 --> 00:00:38.000
+And along this journey, we'll find out about how...
+
+00:00:38.000 --> 00:00:40.000
+Well, first of all, what is MLOps?
+
+00:00:40.000 --> 00:00:44.000
+I'll be talking a bit about how it is often presented within the data science community.
+
+00:00:44.000 --> 00:00:48.000
+I think it can cause a lot of confusion to beginner data scientists.
+
+00:00:48.000 --> 00:00:51.000
+And I'll be going through some take-home lessons.
+
+00:00:51.000 --> 00:00:53.000
+So first, just some introductions.
+
+00:00:53.000 --> 00:00:55.000
+So I'm a principal data scientist at Jumping Rivers,
+
+00:00:55.000 --> 00:01:00.000
+which is a data science consultancy based in the United Kingdom.
+
+00:01:00.000 --> 00:01:03.000
+In terms of my day-to-day work, I do a lot of project management.
+
+00:01:03.000 --> 00:01:07.000
+I do a lot of support on client projects, mostly on the Python side.
+
+00:01:07.000 --> 00:01:10.000
+So I have worked on a few machine learning projects in the past.
+
+00:01:10.000 --> 00:01:14.000
+Also do a lot of teaching as well of programming, advanced statistics,
+
+00:01:14.000 --> 00:01:16.000
+that kind of thing.
+
+00:01:16.000 --> 00:01:19.000
+And I also organize a number of data science meetups.
+
+00:01:19.000 --> 00:01:21.000
+As you'll find out, I also enjoy hiking.
+
+00:01:21.000 --> 00:01:24.000
+And I've included lots of hiking analogies in this talk.
+
+00:01:24.000 --> 00:01:27.000
+Because who doesn't love analogies?
+
+00:01:27.000 --> 00:01:30.000
+And yet it is as tenuous as it sounds.
+
+00:01:30.000 --> 00:01:33.000
+You may have already visited us at the Jumping Rivers stand.
+
+00:01:33.000 --> 00:01:35.000
+We're one of the sponsors for the conference.
+
+00:01:35.000 --> 00:01:37.000
+If you haven't already, we'll be there at the next coffee break.
+
+00:01:37.000 --> 00:01:42.000
+So please do stop by to say hi if you haven't already.
+
+00:01:42.000 --> 00:01:44.000
+So I said there'd be hiking analogies.
+
+00:01:44.000 --> 00:01:48.000
+So like with any journey, we have to start with a route plan.
+
+00:01:48.000 --> 00:01:50.000
+So this is the plan for the talk.
+
+00:01:50.000 --> 00:01:53.000
+So I'll begin with how I got into data science.
+
+00:01:53.000 --> 00:01:56.000
+My first encounter with ML Ops.
+
+00:01:56.000 --> 00:01:58.000
+I'll go through how I got to grips with ML Ops
+
+00:01:58.000 --> 00:02:01.000
+using the wonderful Vetiver package by Posit.
+
+00:02:01.000 --> 00:02:03.000
+I'll go through some success stories
+
+00:02:03.000 --> 00:02:06.000
+and finish with some take-home lessons.
+
+00:02:06.000 --> 00:02:09.000
+So we're starting off on the journey.
+
+00:02:09.000 --> 00:02:12.000
+So we're going to start with how I got into data science.
+
+00:02:12.000 --> 00:02:15.000
+So I came from an academic background originally.
+
+00:02:15.000 --> 00:02:19.000
+So I did a PhD in astrophysics at Durham University in the UK.
+
+00:02:19.000 --> 00:02:21.000
+I'm studying in this wonderful building,
+
+00:02:21.000 --> 00:02:24.000
+which is a research and development centre in Durham University.
+
+00:02:24.000 --> 00:02:27.000
+And I was among one of the first PhD cohorts
+
+00:02:27.000 --> 00:02:29.000
+that was offered funding for additional training
+
+00:02:29.000 --> 00:02:32.000
+in what was called data intensive science back then.
+
+00:02:32.000 --> 00:02:34.000
+This was only eight years ago,
+
+00:02:34.000 --> 00:02:36.000
+but data science was still quite a novel topic back then.
+
+00:02:36.000 --> 00:02:39.000
+Machine learning wasn't so widely known.
+
+00:02:39.000 --> 00:02:41.000
+And there's certainly very little talk about AI
+
+00:02:41.000 --> 00:02:43.000
+and large language models and that sort of thing.
+
+00:02:43.000 --> 00:02:47.000
+So I got to do an additional six months of training in industry,
+
+00:02:47.000 --> 00:02:51.000
+and get into practice with big data and machine learning.
+
+00:02:51.000 --> 00:02:54.000
+Now, originally, I'd actually planned to stay in academia.
+
+00:02:54.000 --> 00:02:57.000
+I thought I'd love research. You know, that's amazing.
+
+00:02:57.000 --> 00:02:59.000
+But as I quickly found out, academia is very hard.
+
+00:02:59.000 --> 00:03:02.000
+And if you want to stay, you're going to be moving all around the world.
+
+00:03:02.000 --> 00:03:06.000
+It's going to be a long time before you end up with a permanent position.
+
+00:03:06.000 --> 00:03:09.000
+So I took full advantage of the extra training I'd received.
+
+00:03:09.000 --> 00:03:13.000
+I did an internship at Jumping Rivers for about three months during the PhD.
+
+00:03:13.000 --> 00:03:16.000
+And then I joined as a full-time data scientist in 2022.
+
+00:03:16.000 --> 00:03:21.000
+And I'm still there to this day. So obviously, I'm enjoying it.
+
+00:03:21.000 --> 00:03:24.000
+So I thought I'd say a little bit about my initial experience as a data scientist.
+
+00:03:24.000 --> 00:03:27.000
+So I had all these pictures in my head that I'd be working with these big
+
+00:03:27.000 --> 00:03:30.000
+machine learning models, you know, working with vast data sets.
+
+00:03:30.000 --> 00:03:32.000
+The reality was a bit different.
+
+00:03:32.000 --> 00:03:35.000
+So to start with, I was doing a lot of software development.
+
+00:03:35.000 --> 00:03:38.000
+If you're interested to know what software, check out diffify.com.
+
+00:03:38.000 --> 00:03:42.000
+It's an app I helped to build quite early on.
+
+00:03:42.000 --> 00:03:44.000
+Jumping Rivers also does a lot of teaching of courses.
+
+00:03:44.000 --> 00:03:49.000
+So I was very much involved in the writing of these courses and in teaching them
+
+00:03:49.000 --> 00:03:54.000
+to, like, the general public and going into companies and upskilling staff.
+
+00:03:54.000 --> 00:03:56.000
+I was doing lots of merge requests as well,
+
+00:03:56.000 --> 00:04:00.000
+lots of just co-development sort of internally within the company.
+
+00:04:00.000 --> 00:04:03.000
+And I was also going to conferences representing Jumping Rivers,
+
+00:04:03.000 --> 00:04:06.000
+also going to local data science meetups.
+
+00:04:06.000 --> 00:04:09.000
+But, yeah, I think you'd agree a lot of this doesn't really look very data sciency.
+
+00:04:09.000 --> 00:04:11.000
+You know, there's not really a lot of data,
+
+00:04:11.000 --> 00:04:16.000
+and there's certainly not much science going on in this slide.
+
+00:04:16.000 --> 00:04:18.000
+But I'm going to focus on the meetups for a second.
+
+00:04:18.000 --> 00:04:22.000
+So we organize meetups around England.
+
+00:04:22.000 --> 00:04:24.000
+So this is a map of the British Isles.
+
+00:04:24.000 --> 00:04:28.000
+This is England and the Shade region, for anyone who doesn't know.
+
+00:04:28.000 --> 00:04:33.000
+And the English refer to this region in the square as the North, okay?
+
+00:04:33.000 --> 00:04:36.000
+If you're from Scotland, you'd actually call this the Deep South, okay?
+
+00:04:36.000 --> 00:04:39.000
+But this is what we call the North.
+
+00:04:39.000 --> 00:04:43.000
+And these are the two cities in which we organize the data science meetups.
+
+00:04:43.000 --> 00:04:45.000
+So Newcastle-Upon-Tyne at the top,
+
+00:04:45.000 --> 00:04:47.000
+which is also where the Jumping Rivers main office is,
+
+00:04:47.000 --> 00:04:49.000
+and then Leeds at the bottom there.
+
+00:04:49.000 --> 00:04:52.000
+That's where we organize the other meetups.
+
+00:04:52.000 --> 00:04:57.000
+Lovely part of the world, lots of national parks to go to if you're ever around.
+
+00:04:57.000 --> 00:04:59.000
+So in September 2022,
+
+00:04:59.000 --> 00:05:01.000
+I got the chance to organize my first data science meetup.
+
+00:05:01.000 --> 00:05:04.000
+So I was planning the speakers. I was arranging the pizza.
+
+00:05:04.000 --> 00:05:07.000
+You know, lots of administration to go along with that.
+
+00:05:07.000 --> 00:05:10.000
+All these are advertised via meetup.com.
+
+00:05:10.000 --> 00:05:15.000
+And I was really curious to see what everyone else views as data science in the community.
+
+00:05:15.000 --> 00:05:18.000
+So I was very interested to see the sort of talks that are being submitted.
+
+00:05:18.000 --> 00:05:21.000
+So I did promise a pie chart.
+
+00:05:21.000 --> 00:05:25.000
+This is a breakdown of all the talks we've had from 2022 to the present day.
+
+00:05:25.000 --> 00:05:30.000
+So we've had 58 talks in total, and only about 5% are sort of outreach talks.
+
+00:05:30.000 --> 00:05:33.000
+So that's sort of talking about, you know, here are some opportunities for students,
+
+00:05:33.000 --> 00:05:36.000
+you know, to get into data science, that kind of thing.
+
+00:05:36.000 --> 00:05:38.000
+It'd be nice to have a bit more of that, I think.
+
+00:05:38.000 --> 00:05:41.000
+Maybe about 15% are sort of software talks,
+
+00:05:41.000 --> 00:05:44.000
+where, you know, a speaker is just talking about a package they've been using,
+
+00:05:44.000 --> 00:05:45.000
+that sort of thing.
+
+00:05:45.000 --> 00:05:49.000
+About 15% will be focusing on a particular model someone's been using,
+
+00:05:49.000 --> 00:05:53.000
+either machine learning model or just a general statistical model.
+
+00:05:53.000 --> 00:05:56.000
+25% LLMs. That's definitely on the rise, though.
+
+00:05:56.000 --> 00:05:58.000
+I think if I'd created this using just the data from the past year,
+
+00:05:58.000 --> 00:06:01.000
+LLMs would probably be over half of the talks,
+
+00:06:01.000 --> 00:06:04.000
+because that's very much on the rise at the moment.
+
+00:06:04.000 --> 00:06:09.000
+But about 40% fall into this area that I've sort of grouped as MLOps.
+
+00:06:09.000 --> 00:06:13.000
+So clearly, this is a really big area in data science.
+
+00:06:13.000 --> 00:06:16.000
+And this was my, personally, my first encounter with MLOps,
+
+00:06:16.000 --> 00:06:18.000
+was from going to these meetups.
+
+00:06:18.000 --> 00:06:21.000
+So this is now the tough part of the journey.
+
+00:06:21.000 --> 00:06:24.000
+Okay, going back to the hiking metaphor, we've discovered that there's wildlife,
+
+00:06:24.000 --> 00:06:26.000
+and it can actually eat humans.
+
+00:06:26.000 --> 00:06:28.000
+So, you know, we're going to have to be careful.
+
+00:06:28.000 --> 00:06:32.000
+So my first encounter with MLOps, well, what is it, first of all?
+
+00:06:32.000 --> 00:06:34.000
+So it stands for Machine Learning Operations.
+
+00:06:34.000 --> 00:06:39.000
+And the idea is that it streamlines the machine learning lifecycle.
+
+00:06:39.000 --> 00:06:44.000
+So the idea is we train our models.
+
+00:06:44.000 --> 00:06:47.000
+We want that model to be usable, so we deploy it to the cloud,
+
+00:06:47.000 --> 00:06:49.000
+where users can query it.
+
+00:06:49.000 --> 00:06:51.000
+So we'll have some sort of model API.
+
+00:06:51.000 --> 00:06:55.000
+And then we also want to monitor the model while it's in production.
+
+00:06:55.000 --> 00:06:57.000
+So we want to check that as the data changes,
+
+00:06:57.000 --> 00:07:00.000
+is the model still maintaining an acceptable accuracy?
+
+00:07:00.000 --> 00:07:03.000
+And if it's not, then we need to make sure we're retraining it
+
+00:07:03.000 --> 00:07:07.000
+at a regular frequency.
+
+00:07:07.000 --> 00:07:10.000
+Another big part of this, as well, is because this is like a cycle,
+
+00:07:10.000 --> 00:07:12.000
+and we're constantly retraining our models,
+
+00:07:12.000 --> 00:07:15.000
+it becomes very important to version and to store our models,
+
+00:07:15.000 --> 00:07:20.000
+because we want to be able to retrieve a model from any point in time in the past.
+
+00:07:20.000 --> 00:07:23.000
+If these models are leading to important decision-making in businesses,
+
+00:07:23.000 --> 00:07:26.000
+it's very important to see why a certain decision was made,
+
+00:07:26.000 --> 00:07:30.000
+and what was it about that model that led to that prediction.
+
+00:07:30.000 --> 00:07:33.000
+So that's pretty much all there is to it, really, in words.
+
+00:07:33.000 --> 00:07:35.000
+It sounds simple enough.
+
+00:07:35.000 --> 00:07:39.000
+Until we see our first architecture diagram.
+
+00:07:39.000 --> 00:07:43.000
+So this is like a very typical sort of architecture diagram.
+
+00:07:43.000 --> 00:07:45.000
+I actually just used a diagram that my friend put together.
+
+00:07:45.000 --> 00:07:47.000
+He'll not mind.
+
+00:07:47.000 --> 00:07:52.000
+But essentially, the way these work is they basically summarize
+
+00:07:52.000 --> 00:07:57.000
+the full infrastructure of like a machine learning sort of lifecycle or workflow.
+
+00:07:57.000 --> 00:08:00.000
+So usually there's some version control stuff,
+
+00:08:00.000 --> 00:08:03.000
+in this case with GitHub, sort of around the top.
+
+00:08:03.000 --> 00:08:06.000
+Then you're going to have some stuff to do with like development environment.
+
+00:08:06.000 --> 00:08:11.000
+There's going to be a staging environment somewhere, production environment.
+
+00:08:11.000 --> 00:08:14.000
+But, yeah, for like a beginner data scientist, when I look at this,
+
+00:08:14.000 --> 00:08:17.000
+it might as well just be squiggly lines, you know, just spaghetti.
+
+00:08:17.000 --> 00:08:20.000
+You know, I don't really know what's going on.
+
+00:08:20.000 --> 00:08:23.000
+These words, I don't recognize them.
+
+00:08:23.000 --> 00:08:26.000
+You know, what's easy to, you know, it's just, you know, I don't know.
+
+00:08:26.000 --> 00:08:29.000
+It might as well just be like symbols, you know.
+
+00:08:29.000 --> 00:08:33.000
+At the meetups, we have lots of free pizza to encourage high attendance.
+
+00:08:33.000 --> 00:08:37.000
+And as the organizer, I never get enough pizza at the start of the meetups.
+
+00:08:37.000 --> 00:08:39.000
+So at this point, I just start to think about pizza flavors, you know,
+
+00:08:39.000 --> 00:08:42.000
+like what I should have picked, you know, before it all started.
+
+00:08:42.000 --> 00:08:46.000
+So, yeah.
+
+00:08:46.000 --> 00:08:50.000
+So there is just an uncomfortable reality for a lot of beginners in data science
+
+00:08:50.000 --> 00:08:54.000
+that, and this was also touched on in Flavia's brilliant talk just before mine,
+
+00:08:54.000 --> 00:08:58.000
+there's an overwhelming choice when it comes to data science.
+
+00:08:58.000 --> 00:09:02.000
+So particularly with modeling frameworks, you know, do I go tidy models?
+
+00:09:02.000 --> 00:09:04.000
+Do I go R or Python?
+
+00:09:04.000 --> 00:09:06.000
+You know, which package am I going to use?
+
+00:09:06.000 --> 00:09:08.000
+What type of model will I use?
+
+00:09:08.000 --> 00:09:10.000
+Then there's cloud platforms.
+
+00:09:10.000 --> 00:09:12.000
+Do I use Azure? Do I use AWS?
+
+00:09:12.000 --> 00:09:14.000
+You know, it's an endless choice.
+
+00:09:14.000 --> 00:09:19.000
+And there's so many different options for creating environments and containers,
+
+00:09:19.000 --> 00:09:21.000
+and the list just goes on.
+
+00:09:21.000 --> 00:09:23.000
+It's also very multidisciplinary.
+
+00:09:23.000 --> 00:09:28.000
+So, you know, this demands expertise in data science on the modeling side,
+
+00:09:28.000 --> 00:09:30.000
+but also in like cloud infrastructure.
+
+00:09:30.000 --> 00:09:33.000
+So actually setting up, you know, compute environments,
+
+00:09:33.000 --> 00:09:39.000
+setting like the, you know, the optimal computing power, that sort of thing.
+
+00:09:39.000 --> 00:09:41.000
+So unless you've got a big team around you,
+
+00:09:41.000 --> 00:09:43.000
+it's very difficult to know how to jump into this area.
+
+00:09:43.000 --> 00:09:45.000
+It's also very expensive.
+
+00:09:45.000 --> 00:09:47.000
+You know, all these cloud platforms charge money.
+
+00:09:47.000 --> 00:09:49.000
+You know, none of these are free.
+
+00:09:49.000 --> 00:09:51.000
+There might be a few free trials out there,
+
+00:09:51.000 --> 00:09:54.000
+but, you know, it's very difficult to jump into this.
+
+00:09:54.000 --> 00:09:57.000
+So where do you even begin?
+
+00:09:57.000 --> 00:10:00.000
+So about that part of the journey, you know, it's been hard going.
+
+00:10:00.000 --> 00:10:02.000
+We're going to just persevere, though.
+
+00:10:02.000 --> 00:10:04.000
+You know, even though we forgot the bug spray,
+
+00:10:04.000 --> 00:10:06.000
+we're getting eaten alive by insects, you know.
+
+00:10:06.000 --> 00:10:09.000
+Can't get a good night's sleep, but we're going to just keep on going.
+
+00:10:09.000 --> 00:10:13.000
+So let's get to grips with MLOps.
+
+00:10:13.000 --> 00:10:16.000
+So just to add some extra motivation and incentive,
+
+00:10:16.000 --> 00:10:21.000
+in 2024, I agreed to deliver an MLOps workshop at an upcoming conference.
+
+00:10:21.000 --> 00:10:23.000
+I say I agreed to this.
+
+00:10:23.000 --> 00:10:26.000
+Actually, it was the CTO of Jumping Rivers, Colin.
+
+00:10:26.000 --> 00:10:31.000
+He signed up to do a workshop, and then he asked me to do it in his place.
+
+00:10:31.000 --> 00:10:33.000
+And he was very positive about, you know,
+
+00:10:33.000 --> 00:10:35.000
+he saw lots of benefits from doing this.
+
+00:10:35.000 --> 00:10:37.000
+You know, it means you'll get to learn it.
+
+00:10:37.000 --> 00:10:41.000
+You can start to teach MLOps as a service.
+
+00:10:41.000 --> 00:10:43.000
+And actually, you know what, he has got a point,
+
+00:10:43.000 --> 00:10:46.000
+and I would actually argue that if you are learning a really difficult topic,
+
+00:10:46.000 --> 00:10:50.000
+you know, sign up to do a talk sometime in the future or a workshop.
+
+00:10:50.000 --> 00:10:52.000
+It doesn't have to be at a big conference,
+
+00:10:52.000 --> 00:10:54.000
+but just at a local data science meetup.
+
+00:10:54.000 --> 00:10:56.000
+Because knowing that you're going to be getting up onto a stage,
+
+00:10:56.000 --> 00:10:59.000
+you know, presenting it to a large audience, you know,
+
+00:10:59.000 --> 00:11:01.000
+you're going to have to be able to explain it to an audience,
+
+00:11:01.000 --> 00:11:03.000
+and so you're going to have to understand it yourself.
+
+00:11:03.000 --> 00:11:06.000
+So I think it is actually probably the best way to learn a new topic
+
+00:11:06.000 --> 00:11:09.000
+is to just sign up to do a workshop,
+
+00:11:09.000 --> 00:11:12.000
+if you've got any opportunities to do that.
+
+00:11:12.000 --> 00:11:15.000
+So I had no choice now.
+
+00:11:15.000 --> 00:11:18.000
+The turning point in learning MLOps
+
+00:11:18.000 --> 00:11:21.000
+was discovering the Betafair package.
+
+00:11:21.000 --> 00:11:23.000
+So this is a package developed by Posit,
+
+00:11:23.000 --> 00:11:26.000
+and like many of their other packages, like Shiny and Quarto,
+
+00:11:26.000 --> 00:11:30.000
+it's multilingual, so it's available in both R and Python.
+
+00:11:30.000 --> 00:11:33.000
+It's completely free to install and use.
+
+00:11:33.000 --> 00:11:36.000
+So it's a really good sort of beginner-friendly package.
+
+00:11:36.000 --> 00:11:39.000
+I think this diagram from the Betafair documentation
+
+00:11:39.000 --> 00:11:41.000
+summarizes it really nicely.
+
+00:11:41.000 --> 00:11:44.000
+So this is the kind of lifecycle that we have in machine learning.
+
+00:11:44.000 --> 00:11:46.000
+So we're collecting data.
+
+00:11:46.000 --> 00:11:48.000
+We're doing some data cleaning using the Tidyverse.
+
+00:11:48.000 --> 00:11:51.000
+We're training the model using Tidy models.
+
+00:11:51.000 --> 00:11:54.000
+And then we've then got these steps in this kind of shaded background,
+
+00:11:54.000 --> 00:11:56.000
+and these are the steps that Betafair takes care of.
+
+00:11:56.000 --> 00:11:58.000
+So with a single package,
+
+00:11:58.000 --> 00:12:01.000
+you've got functions for versioning your models.
+
+00:12:01.000 --> 00:12:03.000
+So that will store the models.
+
+00:12:03.000 --> 00:12:05.000
+It will store it with the timestamp,
+
+00:12:05.000 --> 00:12:07.000
+so you can retrieve your models at any previous time.
+
+00:12:07.000 --> 00:12:10.000
+You can store them locally. You can store them on the cloud.
+
+00:12:10.000 --> 00:12:15.000
+It has deployment, so it will use Docker to create a Docker file.
+
+00:12:15.000 --> 00:12:19.000
+It will create a model API using Plumber,
+
+00:12:19.000 --> 00:12:22.000
+and it's got functions for deploying this straight to the cloud,
+
+00:12:22.000 --> 00:12:25.000
+whether that's Posit Connect or AWS.
+
+00:12:25.000 --> 00:12:27.000
+It's also got functions for monitoring your models.
+
+00:12:27.000 --> 00:12:30.000
+So you can basically track metrics like the accuracy
+
+00:12:30.000 --> 00:12:34.000
+or the root mean square error in real time as the data changes.
+
+00:12:34.000 --> 00:12:36.000
+In the background, it's using lots of other packages.
+
+00:12:36.000 --> 00:12:38.000
+So it's using pins for the versioning.
+
+00:12:38.000 --> 00:12:42.000
+It's using Plumber if it's R or FastAPI if it's Python
+
+00:12:42.000 --> 00:12:45.000
+to actually set up the model API,
+
+00:12:45.000 --> 00:12:47.000
+and it's also generating the Docker file for you.
+
+00:12:47.000 --> 00:12:50.000
+So even if you're not an expert in Docker
+
+00:12:50.000 --> 00:12:53.000
+and creating container environments,
+
+00:12:53.000 --> 00:12:55.000
+it does a lot of this heavy lifting for you,
+
+00:12:55.000 --> 00:12:58.000
+which I think is really nice.
+
+00:12:58.000 --> 00:13:01.000
+It also has the option to deploy your models to the local host.
+
+00:13:01.000 --> 00:13:04.000
+So if you're not ready to invest in cloud infrastructure,
+
+00:13:04.000 --> 00:13:06.000
+just deploy it onto your local machine,
+
+00:13:06.000 --> 00:13:08.000
+and you can still query it as though it's an API
+
+00:13:08.000 --> 00:13:11.000
+just using just the local host IP address.
+
+00:13:11.000 --> 00:13:14.000
+It's just a nice way to sort of get used to working with APIs
+
+00:13:14.000 --> 00:13:16.000
+and to check that the model actually behaves as expected,
+
+00:13:16.000 --> 00:13:18.000
+and it's completely free to do this.
+
+00:13:18.000 --> 00:13:21.000
+Once you're happy then with your model and it's working as expected,
+
+00:13:21.000 --> 00:13:25.000
+then you can start to think about that next step.
+
+00:13:25.000 --> 00:13:28.000
+So yeah, I think this is a really great beginner-friendly way
+
+00:13:28.000 --> 00:13:30.000
+to learn MLOps.
+
+00:13:30.000 --> 00:13:34.000
+So going back to that workshop that I was signed up to teach.
+
+00:13:34.000 --> 00:13:36.000
+So the way we did this,
+
+00:13:36.000 --> 00:13:38.000
+it's quite similar to how we run our training courses at Jumping Rivers.
+
+00:13:38.000 --> 00:13:41.000
+So we use Pulsate Workbench,
+
+00:13:41.000 --> 00:13:43.000
+where attendees can use Jupyter if it's Python,
+
+00:13:43.000 --> 00:13:45.000
+or RStudio if they're using R.
+
+00:13:45.000 --> 00:13:47.000
+All the dependencies are pre-installed,
+
+00:13:47.000 --> 00:13:49.000
+so no one has to install anything.
+
+00:13:49.000 --> 00:13:52.000
+So both R and Python attendees are welcome.
+
+00:13:52.000 --> 00:13:54.000
+We only really did deployments to the local host
+
+00:13:54.000 --> 00:13:57.000
+just to sort of teach them what an API is,
+
+00:13:57.000 --> 00:13:59.000
+how do we query an API, what's a POST request,
+
+00:13:59.000 --> 00:14:02.000
+what's a GET request, that kind of thing.
+
+00:14:02.000 --> 00:14:05.000
+And the feedback I've had is that the attendees have found it really clear
+
+00:14:05.000 --> 00:14:07.000
+to understand and sort of pitch to the right level.
+
+00:14:07.000 --> 00:14:10.000
+So I'm really pleased with how that's gone.
+
+00:14:10.000 --> 00:14:12.000
+So we're approaching the end of the journey.
+
+00:14:12.000 --> 00:14:14.000
+Back to civilization.
+
+00:14:14.000 --> 00:14:17.000
+Never been so happy to see a Walmart,
+
+00:14:17.000 --> 00:14:21.000
+as you can see from my face in this picture.
+
+00:14:21.000 --> 00:14:23.000
+But we're not going to stop here.
+
+00:14:23.000 --> 00:14:26.000
+So we've taken this forward.
+
+00:14:26.000 --> 00:14:28.000
+We've not just left at that one workshop.
+
+00:14:28.000 --> 00:14:31.000
+So I've now taught three workshops at conferences over the past year,
+
+00:14:31.000 --> 00:14:34.000
+and also I'm now giving this talk today.
+
+00:14:34.000 --> 00:14:39.000
+We're also now wrapping up our first MLOps project for a client.
+
+00:14:39.000 --> 00:14:41.000
+I'm not going to show you an architecture diagram for this,
+
+00:14:41.000 --> 00:14:45.000
+but basically it's Python models deployed in AWS, essentially.
+
+00:14:45.000 --> 00:14:48.000
+And it's gone very well, so we're very happy with that.
+
+00:14:48.000 --> 00:14:51.000
+We're also now starting to build up an MLOps server,
+
+00:14:51.000 --> 00:14:55.000
+Jumping Rivers, where explainability will be a key idea of it.
+
+00:14:55.000 --> 00:14:57.000
+So just making sure that the client is fully informed of the process
+
+00:14:57.000 --> 00:15:02.000
+and explaining the concepts to them in an understandable sort of manner.
+
+00:15:02.000 --> 00:15:05.000
+So we've already got data science and cloud engineering at Jumping Rivers,
+
+00:15:05.000 --> 00:15:08.000
+so this is essentially bridging these two areas.
+
+00:15:08.000 --> 00:15:11.000
+So, yeah, we're very excited to be developing this,
+
+00:15:11.000 --> 00:15:15.000
+and we're excited to share more information about this in the very near future.
+
+00:15:15.000 --> 00:15:17.000
+So just to give a quick summary,
+
+00:15:17.000 --> 00:15:21.000
+you can get started in MLOps right now with free and open-source tools,
+
+00:15:21.000 --> 00:15:23.000
+so check out Vetiver if you're interested
+
+00:15:23.000 --> 00:15:27.000
+in a really beginner-friendly package to get started.
+
+00:15:27.000 --> 00:15:31.000
+Architecture diagrams can be incredibly useful for the right use cases,
+
+00:15:31.000 --> 00:15:36.000
+but do consider the audience at the conference or the meetup that you're going to,
+
+00:15:36.000 --> 00:15:40.000
+and just consider whether you do need to have all of the information in that diagram.
+
+00:15:40.000 --> 00:15:42.000
+Of course, there's nothing wrong with just fashioning it up quickly
+
+00:15:42.000 --> 00:15:45.000
+and just in case anyone wants to take a photograph,
+
+00:15:45.000 --> 00:15:51.000
+it's quite a lot of information to be talking through in just one slide.
+
+00:15:51.000 --> 00:15:54.000
+And finally, signing up to teach a workshop or to give a talk,
+
+00:15:54.000 --> 00:15:56.000
+it's a really good way to learn a topic,
+
+00:15:56.000 --> 00:16:01.000
+so I can highly recommend having a go at teaching if you've never tried that.
+
+00:16:01.000 --> 00:16:05.000
+Just a quick plug as well, we organize an annual Shiny conference.
+
+00:16:05.000 --> 00:16:09.000
+It's called Shiny in Production, so this is running in Newcastle in the UK
+
+00:16:09.000 --> 00:16:13.000
+in just over two weeks, so if you fancy getting on a plane in two weeks' time,
+
+00:16:13.000 --> 00:16:15.000
+nine-and-a-half-hour journey, feel free to sign up.
+
+00:16:15.000 --> 00:16:18.000
+There's a discount code there.
+
+00:16:18.000 --> 00:16:21.000
+This will be on the last slide as well, and those are just some useful links.
+
+00:16:21.000 --> 00:16:24.000
+So we've got the Vedifer documentation, the link for the Shiny conference,
+
+00:16:24.000 --> 00:16:27.000
+the Jumping Rivers website where we've also got a blog.
+
+00:16:27.000 --> 00:16:30.000
+We've also got a YouTube channel where we put up free monthly webinars
+
+00:16:30.000 --> 00:16:35.000
+that anyone can check out, and we're Jumping Rivers Limited on LinkedIn
+
+00:16:35.000 --> 00:16:36.000
+if you want to check us out there.
+
+00:16:36.000 --> 00:16:38.000
+Thank you very much.
+
+00:16:38.000 --> 00:16:39.000
+Thank you.
+
+00:16:39.000 --> 00:16:40.000
+Thank you.
+
+00:16:40.000 --> 00:16:41.000
+Thank you very much.
+
+00:16:41.000 --> 00:16:42.000
+Thank you.
+
+00:16:42.000 --> 00:16:43.000
+Thank you.
+
+00:16:43.000 --> 00:16:44.000
+Thank you.
+
+00:16:44.000 --> 00:16:45.000
+Thank you.
+
+00:16:45.000 --> 00:16:47.000
+Okay, a quick question or two.
+
+00:16:47.000 --> 00:16:50.000
+Do you know of anyone who has had to rescind a model
+
+00:16:50.000 --> 00:16:54.000
+and fall back to the previous version?
+
+00:16:54.000 --> 00:16:57.000
+No, I've not come across any cases like that.
+
+00:16:57.000 --> 00:16:59.000
+Like I said, it's still quite a new service in Jumping Rivers,
+
+00:16:59.000 --> 00:17:02.000
+so I think the longer we spend in this area,
+
+00:17:02.000 --> 00:17:04.000
+we will start to see some more cases like this,
+
+00:17:04.000 --> 00:17:07.000
+but yeah, it's a core part of MLOps
+
+00:17:07.000 --> 00:17:09.000
+that you always want models to be retrievable at any point.
+
+00:17:09.000 --> 00:17:11.000
+Unexpected things can happen.
+
+00:17:11.000 --> 00:17:13.000
+You might suddenly change your mind
+
+00:17:13.000 --> 00:17:16.000
+and want to go back to where you were, so yeah.
+
+00:17:16.000 --> 00:17:18.000
+Okay, one more.
+
+00:17:18.000 --> 00:17:20.000
+I'm an early career data scientist
+
+00:17:20.000 --> 00:17:23.000
+who wants experience with MLOps,
+
+00:17:23.000 --> 00:17:26.000
+but my organization doesn't focus on deploying models.
+
+00:17:26.000 --> 00:17:31.000
+We do more one-off research.
+
+00:17:31.000 --> 00:17:33.000
+What advice do you have to practice MLOps
+
+00:17:33.000 --> 00:17:36.000
+without organizational support?
+
+00:17:36.000 --> 00:17:38.000
+Yeah, so like I said,
+
+00:17:38.000 --> 00:17:39.000
+the Vetiver package is a really good way
+
+00:17:39.000 --> 00:17:41.000
+just to start learning the concepts at least.
+
+00:17:41.000 --> 00:17:44.000
+It's completely free to install.
+
+00:17:44.000 --> 00:17:45.000
+It's a bit limited in that
+
+00:17:45.000 --> 00:17:48.000
+if you actually want to start practicing on the cloud,
+
+00:17:48.000 --> 00:17:50.000
+Vetiver is not going to just automatically
+
+00:17:50.000 --> 00:17:53.000
+let you deploy things straight to AWS and connect,
+
+00:17:53.000 --> 00:17:57.000
+so I think just to get used to the concepts,
+
+00:17:57.000 --> 00:18:00.000
+it's a really good way to get started at least.
+
+00:18:00.000 --> 00:18:02.000
+I'm still looking for that answer as to like
+
+00:18:02.000 --> 00:18:05.000
+how does a complete beginner take that next step
+
+00:18:05.000 --> 00:18:06.000
+going onto the cloud,
+
+00:18:06.000 --> 00:18:08.000
+so if anyone does have any suggestions or ideas about that,
+
+00:18:08.000 --> 00:18:11.000
+I'd be really interested to hear them afterwards.
+
+00:18:11.000 --> 00:18:13.000
+It's like somebody should do a workshop.
+
+00:18:13.000 --> 00:18:15.000
+Yeah, sounds great.
+
+00:18:15.000 --> 00:18:17.000
+All right, let's thank all the speakers.
+
+00:18:17.000 --> 00:18:18.000
+Thank you.
+

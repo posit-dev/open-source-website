@@ -1,0 +1,3940 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.000
+Hi, everyone. I hope everyone is having a great day three here at R Medicine.
+
+00:00:06.000 --> 00:00:14.000
+My name is Joy Payton. I use she, her pronouns, and I am a member of the organizing committee of the R Medicine Conference.
+
+00:00:14.000 --> 00:00:20.000
+And on behalf of everyone behind the scenes, we are so glad that you are here.
+
+00:00:20.000 --> 00:00:26.000
+And we hope that you're enjoying the diverse topics that our speakers are covering this week.
+
+00:00:27.000 --> 00:00:35.000
+One of the topics that I love to talk about as a data science educator is shame.
+
+00:00:35.000 --> 00:00:40.000
+Because I know that shame can keep people from asking for help.
+
+00:00:40.000 --> 00:00:50.000
+And some of what I've dealt with in the area of shame is realizing that my personal R workflows were not the best.
+
+00:00:50.000 --> 00:00:53.000
+So I have not always used projects.
+
+00:00:53.000 --> 00:00:59.000
+And I have been known to store secrets insecurely once or twice.
+
+00:00:59.000 --> 00:01:08.000
+And I have also been known to have package dependencies that were brittle, which has led me to be a little afraid to update R.
+
+00:01:08.000 --> 00:01:15.000
+So that is why one of the workshops I have most been looking forward to this year is this one.
+
+00:01:15.000 --> 00:01:22.000
+Offered by David Aja and Shannon Pileggi. Addressing personal R administration.
+
+00:01:22.000 --> 00:01:29.000
+So these two speakers are masterful presenters on any number of topics related to scientific computing.
+
+00:01:30.000 --> 00:01:41.000
+But I suspect that today they're going to treat all of us, not just to their technical genius, but also to their personal warmth and wisdom.
+
+00:01:41.000 --> 00:01:46.000
+So, Shannon, David, take it away.
+
+00:01:46.000 --> 00:01:48.000
+Thank you, Joy.
+
+00:01:48.000 --> 00:01:53.000
+Yeah, and a pleasure to be here with you all today. I'm David.
+
+00:01:54.000 --> 00:01:57.000
+Shannon will be hanging out with me today. It's nice to meet all of you.
+
+00:01:57.000 --> 00:02:01.000
+And I just want to say, you know, all have sinned.
+
+00:02:01.000 --> 00:02:08.000
+I am here speaking because I have done a number of catastrophic and embarrassing things with my development environments.
+
+00:02:08.000 --> 00:02:12.000
+And I just I'm here to help you avoid repeating some of those mistakes.
+
+00:02:12.000 --> 00:02:15.000
+Shannon, do you want to introduce yourself before we jump in?
+
+00:02:15.000 --> 00:02:18.000
+Sure. I'm Shannon Pileggi.
+
+00:02:18.000 --> 00:02:22.000
+I work at the Prostate Cancer Clinical Trials Consortium.
+
+00:02:22.000 --> 00:02:30.000
+David and I have co-taught various number of workshops under the umbrella of what they forgot to teach you about R.
+
+00:02:30.000 --> 00:02:40.000
+And I'm here to be his sidekick today and I'll help manage chat and questions and communication as we go along.
+
+00:02:40.000 --> 00:02:47.000
+Cool. Thanks, Shannon. So let's let's jump in.
+
+00:02:47.000 --> 00:02:57.000
+So this is personal, our administration, and I think the goal here is going to be this title.
+
+00:02:57.000 --> 00:02:59.000
+Often you'll say, you know, I can get this to work on my machine.
+
+00:02:59.000 --> 00:03:04.000
+And I think what we're hoping to do is get you to a place where you can you can just get to it works.
+
+00:03:04.000 --> 00:03:10.000
+Right. That you're confident doing things sort of across different computers.
+
+00:03:10.000 --> 00:03:19.000
+So just to provide some context, this course, I'm going to drop this link for the slides in the chat.
+
+00:03:19.000 --> 00:03:26.000
+There is a kind of there there are some portions that will be interactive so you can follow along at home.
+
+00:03:26.000 --> 00:03:48.000
+And then if you go to RStats.wtf, that has a book shaped website that that has some of the information that we'll be talking about today and the repository in which most of the other materials for WTF live is at github.com slash RStats.wtf.
+
+00:03:48.000 --> 00:03:52.000
+Just to give you a little bit of context about me.
+
+00:03:52.000 --> 00:04:00.000
+When I started using R professionally, roughly 10 years ago, I had to use it on a bunch of different computational environments.
+
+00:04:00.000 --> 00:04:05.000
+So I had some laptops. I had some other laptops. I had some instances of Workbench.
+
+00:04:05.000 --> 00:04:17.000
+I had some instances of Shiny Server. And so I got into the habit of having to take the work I was doing and spread it across a bunch of different machines.
+
+00:04:17.000 --> 00:04:22.000
+A little bit later, I was a formally a data scientist at an advertising agency.
+
+00:04:22.000 --> 00:04:29.000
+And again, just kind of jumping all over different laptop environments, some on Windows, a couple on Linux.
+
+00:04:29.000 --> 00:04:38.000
+And now that I work at Posit, I was a solutions engineer for several years, doing a lot of demos, showing people how to do different things.
+
+00:04:38.000 --> 00:04:49.000
+I recently moved to software engineering, but a lot of that is still entails the same setting up demos, reproducing problems and doing that on a collection of really different environments.
+
+00:04:49.000 --> 00:05:03.000
+And the reason I tell you all this is so that you understand that a lot of what I will be recommending is shaped by the experience of like how to get these things safely and reproducibly from one set of machines to another.
+
+00:05:03.000 --> 00:05:06.000
+So that's just some context about me.
+
+00:05:06.000 --> 00:05:11.000
+And then our objectives for today, we're going to hope to try to answer some of these questions.
+
+00:05:11.000 --> 00:05:15.000
+How do I upgrade the version of R I'm using for this project?
+
+00:05:15.000 --> 00:05:19.000
+How do I track the package versions I'm using for this project?
+
+00:05:19.000 --> 00:05:22.000
+How do I move this project from one machine to another?
+
+00:05:22.000 --> 00:05:25.000
+How do I use credentials without exposing them?
+
+00:05:25.000 --> 00:05:30.000
+You'll notice that there's a refrain of for this project across all these things.
+
+00:05:30.000 --> 00:05:38.000
+And so a lot of what we're assuming is that you have decided to onboard a project based workflow.
+
+00:05:38.000 --> 00:05:42.000
+Normally, we spend a lot more time talking about that.
+
+00:05:42.000 --> 00:05:56.000
+But today I'll give you sort of the briefest possible version of some of the things that it will be helpful to have be true when you decide to start working this way, because it's just going to make things a lot easier for you.
+
+00:05:56.000 --> 00:06:02.000
+You'll see this is actually a link to the full set of project oriented workflow slides.
+
+00:06:02.000 --> 00:06:08.000
+If we're doing this as a two day course, we usually spend much longer time on this section.
+
+00:06:08.000 --> 00:06:11.000
+But I'm just going to give you some highlights right now.
+
+00:06:11.000 --> 00:06:14.000
+So the first thing we're going to talk about is embracing the blank slate.
+
+00:06:14.000 --> 00:06:19.000
+If you have RStudio open, you can copy and run this snippet right now.
+
+00:06:19.000 --> 00:06:32.000
+And the blank slate is going to mean that you set RStudio up so that every time you start working, you're working in a fresh session where you're not carrying around stuff that you computed two weeks ago.
+
+00:06:32.000 --> 00:06:38.000
+So this means disabling the option that will cause you to save your RStudio workspace.
+
+00:06:38.000 --> 00:06:41.000
+RStudio won't ask you to save it when you quit.
+
+00:06:41.000 --> 00:06:43.000
+It won't load it when you start.
+
+00:06:43.000 --> 00:06:47.000
+This last line is just like a sort of file hygiene thing.
+
+00:06:47.000 --> 00:06:58.000
+But embracing the blank slate, this is just going to make your life a lot easier as you prepare to start moving between different projects.
+
+00:06:58.000 --> 00:07:04.000
+So that's, again, the briefest possible version of what the blank slate is about.
+
+00:07:04.000 --> 00:07:10.000
+In combination with that, one of the things you want to be prepared to do is to restart your R session often.
+
+00:07:10.000 --> 00:07:15.000
+If you have objects that you think are valuable, there are ways to save them.
+
+00:07:15.000 --> 00:07:17.000
+You can save them as RDS files.
+
+00:07:17.000 --> 00:07:19.000
+You can save them as a QS file.
+
+00:07:19.000 --> 00:07:25.000
+There's a bunch of formats you can use if you need to serialize something in particular about an R object.
+
+00:07:26.000 --> 00:07:35.000
+But most of the time, what you really want to make sure you've saved is the source for how you created that R object from your raw data, which you did not modify.
+
+00:07:35.000 --> 00:07:45.000
+And so being in the habit of restarting your R session is going to help you make sure that you're not carrying around stuff that you calculated weeks ago.
+
+00:07:45.000 --> 00:07:51.000
+Because that can often be the source of really confusing and difficult to debug problems.
+
+00:07:51.000 --> 00:07:59.000
+And so these are the shortcuts for restarting an RStudio session or a Puzzletron session if you're in one.
+
+00:07:59.000 --> 00:08:03.000
+And if you have it open, you should run it right now.
+
+00:08:03.000 --> 00:08:10.000
+And then the last thing you're going to do here is you're going to ‑‑ there are a couple of these.
+
+00:08:10.000 --> 00:08:20.000
+These two pieces of code here are often signifiers that something about your project workflow might not be quite complete.
+
+00:08:20.000 --> 00:08:35.000
+This is a link to kind of the tweet that people will cite often where Jenny Bryan, the original author of this course, has threatened to set your computer on fire if you do one of these two things.
+
+00:08:35.000 --> 00:08:45.000
+And the reason we don't want to do those is because if you're trying to work in a reproducible way where you're not carrying things with you between sessions,
+
+00:08:45.000 --> 00:08:54.000
+then if you're running this at the beginning of a script, it's because you're hoping that this resets you to a clean state, and it doesn't.
+
+00:08:54.000 --> 00:09:05.000
+Right? So there are things you can modify about a session, like your global session options or environment variables that you set as you're computing things, and this isn't going to reset those.
+
+00:09:05.000 --> 00:09:22.000
+And similarly, if you are changing your working directory because you're trying to access files that are in different places, that computation is much less likely to be successful if you're trying to take it with you across machines.
+
+00:09:22.000 --> 00:09:32.000
+So if you have either of these things in your code, again, it's an opportunity to think about adopting that blank slate and thinking about changing that workflow.
+
+00:09:32.000 --> 00:09:45.000
+One of the things that we'll cite that's particularly helpful here is the here package, which gives you a way of referencing paths relative to a project's root directory, whatever that is.
+
+00:09:46.000 --> 00:09:53.000
+That might be a project where you have the RStudio project file. That might be something where there's a git directory.
+
+00:09:53.000 --> 00:10:05.000
+But using this to construct paths in your project means that you can get RStudio or R to reference files in the correct place without needing to change your working directory.
+
+00:10:05.000 --> 00:10:19.000
+So that is sort of the whirlwind tour of the project-oriented workflow. There's one more piece of conceptual loading I want to do, but let me pause and see if there are any questions before we jump into this.
+
+00:10:24.000 --> 00:10:25.000
+Okay.
+
+00:10:26.000 --> 00:10:31.000
+All right, so I want to talk about The Onion. Not the satirical publication, though I'm a fan.
+
+00:10:32.000 --> 00:10:35.000
+But this thing that I've been calling the Project Onion.
+
+00:10:36.000 --> 00:10:48.000
+And this is going to be kind of our way of orienting the different conceptual things that we're trying to manage as we work on an R project.
+
+00:10:49.000 --> 00:10:55.000
+A dirty secret is that at some point I will try to convince you that this is actually true of all software projects.
+
+00:10:55.000 --> 00:11:02.000
+And if you want to ask me later about why I hate Conda, my explanation will reference this.
+
+00:11:03.000 --> 00:11:13.000
+So what we're going to do is we're going to start by talking about first things you can change to exercise control over individual R sessions.
+
+00:11:13.000 --> 00:11:18.000
+Then we're going to expand to think a little bit about managing your package environment.
+
+00:11:18.000 --> 00:11:31.000
+And those are the two things that I think are the most common sources of frustration as you start thinking about trying to administer your own or other people's R projects.
+
+00:11:31.000 --> 00:11:43.000
+And then as we progress, we'll also kind of expand to think about what it might look like to manage the version you're using, the version of R you're using, as part of a project.
+
+00:11:43.000 --> 00:11:48.000
+That might mean adopting some software that helps you manage those versions explicitly.
+
+00:11:49.000 --> 00:12:06.000
+And then the sort of last piece, which we may or may not get to today, is talking about how you think about managing all the software on your computer, which makes it easy for you to take this workflow and reproduce it across machines, new computers, other things.
+
+00:12:06.000 --> 00:12:13.000
+So we'll start. This is kind of the roadmap for what we'll be talking about over the course of the day.
+
+00:12:14.000 --> 00:12:26.000
+We're going to start with a little warm up exercise, just to get people, you know, computing, actually sort of doing things and set some projects up so that we have something to work with a little bit later.
+
+00:12:26.000 --> 00:12:33.000
+And to do that, we're going to start by working on our project libraries, right?
+
+00:12:33.000 --> 00:12:42.000
+So the library, the package library, and I'm being a little sloppy about referring to the difference between packages and libraries.
+
+00:12:42.000 --> 00:12:46.000
+For this purpose, it's not that important.
+
+00:12:46.000 --> 00:12:53.000
+So you have an R package, right? We think about those a lot. That's how you distribute R code.
+
+00:12:53.000 --> 00:12:56.000
+You have some collection of functions that you want other people to run.
+
+00:12:56.000 --> 00:13:01.000
+And that collection of packages is going to be stored in a library.
+
+00:13:01.000 --> 00:13:14.000
+If you install a version of base R in any of the typical fashions, you're going to get this set of 29 packages, 14 that are base, 15 recommended.
+
+00:13:14.000 --> 00:13:23.000
+Again, unless you compile R yourself, you might not get them. And if you do that, and you're in this class, I'm confused, but that's fine.
+
+00:13:24.000 --> 00:13:32.000
+If you were, for example, going to try to draw graphics, but you wanted to do so in a base-only fashion, you could use the lattice library, right?
+
+00:13:32.000 --> 00:13:40.000
+It comes with your R installation. You could install vanilla R from CRAN type library lattice, and you should expect that to work.
+
+00:13:40.000 --> 00:13:47.000
+So the packages get stored somewhere on your computer in the default library.
+
+00:13:48.000 --> 00:13:58.000
+If you run this .library object, I guess if you enter this object in the console, this will tell you where the library is stored.
+
+00:13:58.000 --> 00:14:05.000
+If you run this .libpaths function, it will show you all the libraries that are available to you for your session.
+
+00:14:05.000 --> 00:14:11.000
+And then this will print all the packages you have installed accessible to your current version of R.
+
+00:14:12.000 --> 00:14:19.000
+And so what we're going to do is we're going to take a little time for you to explore your package library.
+
+00:14:19.000 --> 00:14:25.000
+If you run use-this-use-course, I eliminated the package prefix there. That's a fail.
+
+00:14:25.000 --> 00:14:38.000
+So if you run use-this-use-course, this is going to download this rstats-wtf-explore-libraries thing to wherever it is you typically keep projects on your computer.
+
+00:14:38.000 --> 00:14:43.000
+You don't have to supply this destination directory argument.
+
+00:14:43.000 --> 00:14:51.000
+But when I run this, I'm going to put it in a particular place on my computer because I have feelings about that.
+
+00:14:51.000 --> 00:15:04.000
+And if the project doesn't activate automatically when you download it, then you can get the path that the project was installed to and then open that up.
+
+00:15:05.000 --> 00:15:12.000
+So let me show what that's going to look like, and then I'll give you a little bit of time to do it.
+
+00:15:12.000 --> 00:15:18.000
+So I'm going to copy this, and I'm going to jump over to RStudio.
+
+00:15:19.000 --> 00:15:37.000
+And I'm going to prefix this with use-this-rstats-wtf-explore-libraries, and I typically keep my projects in documents projects.
+
+00:15:37.000 --> 00:15:44.000
+So I'm going to run that. I'm going to delete the zip file because I don't need it.
+
+00:15:44.000 --> 00:15:48.000
+And then it's opening this in the file manager.
+
+00:15:48.000 --> 00:15:53.000
+And so I'm going to use this.
+
+00:15:53.000 --> 00:15:57.000
+Project activate.
+
+00:15:57.000 --> 00:16:01.000
+And I'm going to activate that project.
+
+00:16:01.000 --> 00:16:07.000
+Documents. Projects.
+
+00:16:07.000 --> 00:16:11.000
+Explore that. And that's going to pop it open in a new RStudio session.
+
+00:16:11.000 --> 00:16:15.000
+Is this big enough?
+
+00:16:15.000 --> 00:16:21.000
+So once you have this open in a project, you'll see these three files here.
+
+00:16:21.000 --> 00:16:30.000
+There's a solution if you want to step through the code and just see what it does.
+
+00:16:30.000 --> 00:16:38.000
+Or if you open the Spartan version, there are some questions here that you can try to answer.
+
+00:16:39.000 --> 00:16:42.000
+And the comfy version is somewhere in between.
+
+00:16:42.000 --> 00:16:46.000
+So we're going to take a little bit of time to run through this exercise.
+
+00:16:46.000 --> 00:16:56.000
+And when you get to the end, post in the chat how many packages you have installed in your project library.
+
+00:16:56.000 --> 00:16:59.000
+All right.
+
+00:16:59.000 --> 00:17:02.000
+Yep.
+
+00:17:29.000 --> 00:17:33.000
+All right.
+
+00:17:59.000 --> 00:18:03.000
+All right.
+
+00:18:29.000 --> 00:18:33.000
+All right.
+
+00:18:59.000 --> 00:19:03.000
+All right.
+
+00:19:29.000 --> 00:19:33.000
+All right.
+
+00:19:59.000 --> 00:20:03.000
+All right.
+
+00:20:29.000 --> 00:20:33.000
+All right.
+
+00:20:59.000 --> 00:21:03.000
+All right.
+
+00:21:29.000 --> 00:21:33.000
+All right.
+
+00:21:59.000 --> 00:22:03.000
+All right.
+
+00:22:29.000 --> 00:22:33.000
+All right.
+
+00:22:59.000 --> 00:23:03.000
+All right.
+
+00:23:29.000 --> 00:23:33.000
+All right.
+
+00:23:59.000 --> 00:24:03.000
+All right.
+
+00:24:29.000 --> 00:24:32.000
+All right.
+
+00:24:32.000 --> 00:24:35.000
+All right.
+
+00:24:35.000 --> 00:24:39.000
+All right.
+
+00:24:39.000 --> 00:24:42.000
+all right.
+
+00:24:42.000 --> 00:24:53.000
+Reminder to David, if you want, you can go fullscreen.
+
+00:24:53.000 --> 00:24:56.000
+If you want, you can go fullscreen on the slides.
+
+00:24:56.000 --> 00:24:59.000
+All right.
+
+00:24:59.000 --> 00:25:02.000
+People are supposed to think I'm a sane person.
+
+00:25:02.000 --> 00:25:03.000
+It's not going to rant about.
+
+00:25:03.000 --> 00:25:04.000
+Anyway.
+
+00:25:04.000 --> 00:25:06.000
+Okay.
+
+00:25:06.000 --> 00:25:12.000
+So.
+
+00:25:12.000 --> 00:25:16.000
+All right. You know, I'm seeing, I'm seeing some counts.
+
+00:25:16.000 --> 00:25:19.000
+528 Kaylee. I think you win.
+
+00:25:20.000 --> 00:25:24.000
+Yeah, I was, I have 186 and I was like, oh, that's, that's, that's too much.
+
+00:25:24.000 --> 00:25:27.000
+But I've been doing some package development.
+
+00:25:27.000 --> 00:25:28.000
+Anyway.
+
+00:25:28.000 --> 00:25:31.000
+So let's, let's step through it.
+
+00:25:31.000 --> 00:25:36.000
+And, you know, just to sort of revisit some of the previous advice.
+
+00:25:36.000 --> 00:25:39.000
+One thing I'll do right as I hold this off screen.
+
+00:25:39.000 --> 00:25:41.000
+I'm just going to restart the R session.
+
+00:25:41.000 --> 00:25:48.000
+You'll notice that the object I had in my global environment is gone.
+
+00:25:49.000 --> 00:25:53.000
+Because I have the code for computing that.
+
+00:25:53.000 --> 00:25:56.000
+And so I don't need to save that particular object.
+
+00:25:56.000 --> 00:25:59.000
+I can just create it again.
+
+00:25:59.000 --> 00:26:00.000
+Okay.
+
+00:26:00.000 --> 00:26:01.000
+So.
+
+00:26:01.000 --> 00:26:07.000
+I'm going to load the tidyverse and FS packages.
+
+00:26:07.000 --> 00:26:10.000
+And then we're the first thing we're going to look at is, you know, which
+
+00:26:10.000 --> 00:26:12.000
+paths.
+
+00:26:12.000 --> 00:26:15.000
+My, my libraries are in.
+
+00:26:15.000 --> 00:26:17.000
+You can see I'm working on a Mac today.
+
+00:26:18.000 --> 00:26:21.000
+And so I've got these two library paths.
+
+00:26:21.000 --> 00:26:24.000
+We're going to dig into the meaning of this later.
+
+00:26:24.000 --> 00:26:27.000
+And then we'll, which of these is the default library of the default
+
+00:26:27.000 --> 00:26:30.000
+library here is under.
+
+00:26:30.000 --> 00:26:34.000
+Slash library frameworks, et cetera.
+
+00:26:34.000 --> 00:26:35.000
+Yeah.
+
+00:26:35.000 --> 00:26:36.000
+Zoom in a little bit.
+
+00:26:36.000 --> 00:26:43.000
+This session does.
+
+00:26:43.000 --> 00:26:45.000
+That is massive.
+
+00:26:45.000 --> 00:26:46.000
+All right.
+
+00:26:46.000 --> 00:26:47.000
+I'm sorry.
+
+00:26:47.000 --> 00:26:49.000
+No, no, no.
+
+00:26:49.000 --> 00:26:50.000
+I know, I know.
+
+00:26:50.000 --> 00:26:51.000
+I'm trying.
+
+00:26:51.000 --> 00:26:52.000
+All right.
+
+00:26:52.000 --> 00:26:55.000
+All right.
+
+00:26:55.000 --> 00:26:58.000
+Is that better?
+
+00:26:58.000 --> 00:26:59.000
+Okay.
+
+00:26:59.000 --> 00:27:00.000
+All right.
+
+00:27:00.000 --> 00:27:06.000
+So if we're looking at, you know, so this is the, my default library.
+
+00:27:06.000 --> 00:27:09.000
+Is my library, the default library.
+
+00:27:09.000 --> 00:27:10.000
+And it's not.
+
+00:27:10.000 --> 00:27:15.000
+And there are some, there are some macOS trivia that I will not jump
+
+00:27:15.000 --> 00:27:19.000
+into the details of what you see that I have these two libraries here.
+
+00:27:19.000 --> 00:27:24.000
+And the thing that is in this case.
+
+00:27:24.000 --> 00:27:28.000
+First in my library paths is not actually my default library.
+
+00:27:28.000 --> 00:27:32.000
+And so if I run this one, then.
+
+00:27:32.000 --> 00:27:35.000
+Instead, if you look at the.
+
+00:27:35.000 --> 00:27:38.000
+If you look at this there, you can see like that's the, my default
+
+00:27:38.000 --> 00:27:40.000
+library is in my lib paths.
+
+00:27:40.000 --> 00:27:44.000
+It's just not the one most things are going to get installed into.
+
+00:27:44.000 --> 00:27:47.000
+If we take installed packages.
+
+00:27:47.000 --> 00:27:48.000
+Right.
+
+00:27:48.000 --> 00:27:49.000
+If we run that function.
+
+00:27:49.000 --> 00:27:50.000
+On its own.
+
+00:27:50.000 --> 00:27:51.000
+Right.
+
+00:27:51.000 --> 00:27:54.000
+We see it returns this kind of matrix situation.
+
+00:27:54.000 --> 00:27:57.000
+Which we're going to jam into a civil.
+
+00:27:57.000 --> 00:28:01.000
+And then if you compute the number of packages there, you can see I have
+
+00:28:01.000 --> 00:28:05.000
+186.
+
+00:28:05.000 --> 00:28:08.000
+You can see which of those are the base and recommended packages.
+
+00:28:08.000 --> 00:28:09.000
+Right.
+
+00:28:09.000 --> 00:28:11.000
+So we have those 29 packages I was talking about earlier.
+
+00:28:11.000 --> 00:28:14.000
+And you'll notice that these are.
+
+00:28:14.000 --> 00:28:17.000
+In this slash library.
+
+00:28:17.000 --> 00:28:18.000
+Path.
+
+00:28:18.000 --> 00:28:19.000
+Right.
+
+00:28:19.000 --> 00:28:23.000
+So these are things that came with the version of our I installed.
+
+00:28:23.000 --> 00:28:28.000
+And then you'll see that these other 157 packages are installed.
+
+00:28:28.000 --> 00:28:30.000
+Under user.
+
+00:28:30.000 --> 00:28:32.000
+And.
+
+00:28:32.000 --> 00:28:35.000
+We'll call these things the system library.
+
+00:28:35.000 --> 00:28:37.000
+And then we'll call this the user library.
+
+00:28:37.000 --> 00:28:40.000
+And again, we're going to get into more detail about that.
+
+00:28:40.000 --> 00:28:43.000
+In a little bit later.
+
+00:28:43.000 --> 00:28:47.000
+What proportion of these packages need compilation.
+
+00:28:47.000 --> 00:28:51.000
+So it's about half and half.
+
+00:28:51.000 --> 00:28:53.000
+Half of them don't.
+
+00:28:53.000 --> 00:28:54.000
+And about half of them do.
+
+00:28:54.000 --> 00:29:00.000
+And again, that we'll talk about exactly what that means.
+
+00:29:00.000 --> 00:29:02.000
+A couple of sections.
+
+00:29:02.000 --> 00:29:05.000
+And then what version of our were they built on.
+
+00:29:05.000 --> 00:29:08.000
+In this case, you know, our 4.5.
+
+00:29:08.000 --> 00:29:09.000
+I know.
+
+00:29:09.000 --> 00:29:11.000
+Is the most recent version of our.
+
+00:29:11.000 --> 00:29:13.000
+So all of my.
+
+00:29:13.000 --> 00:29:15.000
+Packages were built for this version.
+
+00:29:15.000 --> 00:29:19.000
+If I was to switch to an older R version that I have on the machine.
+
+00:29:19.000 --> 00:29:22.000
+That might look a little bit different depending on when exactly I
+
+00:29:22.000 --> 00:29:26.000
+installed the packages.
+
+00:29:26.000 --> 00:29:27.000
+Cool.
+
+00:29:28.000 --> 00:29:32.000
+So, you know, we've, we've splashed around the library a little bit.
+
+00:29:32.000 --> 00:29:35.000
+And so we're going to keep this project open.
+
+00:29:35.000 --> 00:29:38.000
+There's some things we're going to do in this context.
+
+00:29:38.000 --> 00:29:42.000
+But let's jump over to the first.
+
+00:29:42.000 --> 00:29:44.000
+Section of the onion, I guess.
+
+00:29:44.000 --> 00:29:46.000
+I guess it could be innermost section.
+
+00:29:46.000 --> 00:29:49.000
+You have to fully dissect the onion to access the innermost section.
+
+00:29:49.000 --> 00:29:52.000
+Anyway, but so we'll talk about some things.
+
+00:29:52.000 --> 00:29:54.000
+Related to starting our.
+
+00:29:54.000 --> 00:29:56.000
+So the first thing we're going to talk about is.
+
+00:29:56.000 --> 00:30:00.000
+Taking some control over what it looks like.
+
+00:30:00.000 --> 00:30:03.000
+To change how the session behaves.
+
+00:30:03.000 --> 00:30:05.000
+And the reason we're going to investigate this.
+
+00:30:05.000 --> 00:30:08.000
+Right. Is because this is.
+
+00:30:08.000 --> 00:30:13.000
+This gives us the opportunity to change things about what our code does.
+
+00:30:13.000 --> 00:30:15.000
+Depending on what context system.
+
+00:30:15.000 --> 00:30:19.000
+And you can do some of those things without having to actually.
+
+00:30:19.000 --> 00:30:22.000
+Change the code.
+
+00:30:22.000 --> 00:30:25.000
+So when you start are.
+
+00:30:25.000 --> 00:30:28.000
+A bunch of stuff happens.
+
+00:30:28.000 --> 00:30:31.000
+And we are not going to talk about most of it, but a lot.
+
+00:30:31.000 --> 00:30:33.000
+There are a lot of opportunities.
+
+00:30:33.000 --> 00:30:36.000
+For you to try to change the way.
+
+00:30:36.000 --> 00:30:39.000
+Our behaves as it starts.
+
+00:30:39.000 --> 00:30:42.000
+Sometimes if you're working on a system that's administered by.
+
+00:30:42.000 --> 00:30:45.000
+Someone else.
+
+00:30:45.000 --> 00:30:48.000
+You may change some of these things before you can start.
+
+00:30:48.000 --> 00:30:50.000
+So that you end up with access to.
+
+00:30:50.000 --> 00:30:53.000
+The right data sets, or if you're working in an environment.
+
+00:30:53.000 --> 00:30:55.000
+That's restricted in some way.
+
+00:30:55.000 --> 00:30:58.000
+Your administrator may be using some of these.
+
+00:30:58.000 --> 00:31:01.000
+The things we're going to focus on.
+
+00:31:01.000 --> 00:31:04.000
+Are in these two highlighted sections here.
+
+00:31:04.000 --> 00:31:06.000
+So we're just thinking about.
+
+00:31:06.000 --> 00:31:09.000
+Setting some environment variables, running some startup scripts.
+
+00:31:09.000 --> 00:31:13.000
+But we're, we're really just looking at a small subset.
+
+00:31:13.000 --> 00:31:16.000
+Of what you can do to influence the behavior of R as it starts.
+
+00:31:16.000 --> 00:31:19.000
+And then as you sort of expand your focus.
+
+00:31:19.000 --> 00:31:22.000
+You'll see other contexts in which.
+
+00:31:22.000 --> 00:31:25.000
+Like for.
+
+00:31:25.000 --> 00:31:28.000
+If you, if you end up working with something like GitHub actions.
+
+00:31:28.000 --> 00:31:31.000
+You might notice that some of these flags are getting set.
+
+00:31:31.000 --> 00:31:34.000
+As you're trying to run things in a reproducible way.
+
+00:31:34.000 --> 00:31:37.000
+On some other context.
+
+00:31:37.000 --> 00:31:40.000
+So we'll start by talking about the dot R environment file.
+
+00:31:40.000 --> 00:31:43.000
+It enables you to set what are called environment variables.
+
+00:31:43.000 --> 00:31:46.000
+And environment variables are.
+
+00:31:46.000 --> 00:31:49.000
+Key value pairs that let you change the way.
+
+00:31:49.000 --> 00:31:51.000
+Processes are behaving on computer.
+
+00:31:51.000 --> 00:31:54.000
+So they just store some information about the.
+
+00:31:54.000 --> 00:31:57.000
+State of a machine.
+
+00:31:57.000 --> 00:32:00.000
+And then you can use, you can get the name.
+
+00:32:00.000 --> 00:32:03.000
+Of a particular key and use that to.
+
+00:32:03.000 --> 00:32:06.000
+Change how, how the program executes.
+
+00:32:07.000 --> 00:32:10.000
+So there are.
+
+00:32:10.000 --> 00:32:13.000
+When you're, if you're going to create a dot R environment file.
+
+00:32:13.000 --> 00:32:16.000
+There are some things you should put in there, right?
+
+00:32:16.000 --> 00:32:19.000
+So if you have R specific environment variables.
+
+00:32:19.000 --> 00:32:22.000
+So you want to change the.
+
+00:32:22.000 --> 00:32:25.000
+The number of lines you retain in history.
+
+00:32:25.000 --> 00:32:28.000
+Or if you have API keys or other secrets, right?
+
+00:32:28.000 --> 00:32:31.000
+Things that you want to be available to your code.
+
+00:32:31.000 --> 00:32:34.000
+But you don't necessarily want to put them in your code.
+
+00:32:34.000 --> 00:32:37.000
+So the dot R environment file is where they should go.
+
+00:32:37.000 --> 00:32:40.000
+Importantly, what you should not put in the R environment.
+
+00:32:40.000 --> 00:32:43.000
+File is our code. Our code doesn't get evaluated in those files.
+
+00:32:43.000 --> 00:32:46.000
+It's really just those key value pairs.
+
+00:32:46.000 --> 00:32:49.000
+So to edit.
+
+00:32:49.000 --> 00:32:51.000
+In our environment file.
+
+00:32:51.000 --> 00:32:54.000
+You can, if you know where they are on disk, you can.
+
+00:32:54.000 --> 00:32:57.000
+You can open them in whatever way you choose.
+
+00:32:57.000 --> 00:32:59.000
+There's also this use this function.
+
+00:32:59.000 --> 00:33:01.000
+Which will enable you to edit them.
+
+00:33:01.000 --> 00:33:05.000
+And it has this scope argument and you can provide either the user scope.
+
+00:33:05.000 --> 00:33:09.000
+Or the project scope, depending on which of those you supply.
+
+00:33:09.000 --> 00:33:12.000
+You'll either get the R environment file.
+
+00:33:12.000 --> 00:33:15.000
+That is in your user directory.
+
+00:33:15.000 --> 00:33:18.000
+And just a note on this, if this is unfamiliar.
+
+00:33:18.000 --> 00:33:21.000
+This tilde or twiddle.
+
+00:33:21.000 --> 00:33:24.000
+Is a shorthand for your.
+
+00:33:24.000 --> 00:33:27.000
+Personal home directory.
+
+00:33:27.000 --> 00:33:30.000
+Which has a slightly different meaning across different operating systems.
+
+00:33:30.000 --> 00:33:33.000
+But it's a directory that most of your stuff goes into.
+
+00:33:33.000 --> 00:33:36.000
+By default. And that's what this is a shorthand for.
+
+00:33:36.000 --> 00:33:40.000
+And then project will be wherever, whatever project context you're operating in.
+
+00:33:40.000 --> 00:33:45.000
+You can set the path to the R environment file there.
+
+00:33:45.000 --> 00:33:50.000
+This is what an R environment file might look like.
+
+00:33:50.850 --> 00:33:57.010
+Right, so I might have, for example, if I'm on Windows and I'm trying to set some specific
+
+00:33:57.010 --> 00:34:00.530
+configuration related to R tools, if you don't know what R tools is, we'll talk about it in a
+
+00:34:00.530 --> 00:34:07.809
+little bit, that's something I might set here. If I have an API key for a service like Positive
+
+00:34:07.809 --> 00:34:14.210
+Connect or something else, then I could use that. If I wanted to change how many lines of history
+
+00:34:14.210 --> 00:34:19.649
+I'm keeping in my R context, right, that's an environment variable I could set. If I have a
+
+00:34:19.649 --> 00:34:24.609
+Postgres database, right, these are things that I could put into that R environment file.
+
+00:34:26.609 --> 00:34:31.410
+So the R environment file is how you set the values, and then when you want to get them,
+
+00:34:32.530 --> 00:34:37.809
+you're going to call the function sys.getenv, right, so it gets environment variables.
+
+00:34:37.809 --> 00:34:43.090
+If you just call it like this, it will print all of them. I'm not going to do that on screen
+
+00:34:43.090 --> 00:34:49.250
+because then I'll have to burn a ton of credentials, but if you do this on your machine,
+
+00:34:49.250 --> 00:34:56.049
+you should see all the environment variables that you have access to, and if you provide a name
+
+00:34:57.170 --> 00:35:01.010
+for one, then you can just retrieve that specific environment variable.
+
+00:35:01.809 --> 00:35:08.290
+So what we're going to do now is we're going to have you edit your user environment variable,
+
+00:35:09.409 --> 00:35:14.290
+and so what you're going to do is you're going to call use this edit R environment, you're going to
+
+00:35:14.369 --> 00:35:20.290
+set an environment variable called WTF underscore user, and you're just going to set it to your name
+
+00:35:20.290 --> 00:35:28.210
+underscore user, and then you're going to restart your R session, and then in the R console run
+
+00:35:28.210 --> 00:35:34.129
+sys.getenv WTF user and see what you get. I'll give you two minutes to do that.
+
+00:36:23.556 --> 00:36:53.556
+ಸದದದಪತಬನರಿದದ ಎಸತಬನರಿದದ ಅಥದಪದದ ದಾಕರ ಥಗಡಾಡಗದಡರವಾದದನಗರನರಲನಿರಚಸಂಕರಯವಂ ದಗಡಡ ದಗಡರಲನರ
+
+00:36:53.556 --> 00:37:23.556
+ಪರಸಿಕಂಚಟಾಯಂ ಇಚತದನರಪಿಂಟತದತರಕಾ ಥಗಡರಲನರಕತಾಂ ದಗಡಡರಲನರ ತಕರವದನರಲನರಿತಭಿಗತದದಡರಮನಾಂ ಘ�
+
+00:37:23.556 --> 00:37:53.556
+ಪರವಾಲರನಾ ಚಗಲಟರಾಂ ತಗಡರರನಿರಲನಾ ತಗಡರರನಾಂ ಅದಪರರನನಾಂ ತಗಡರರನನ ನಂರಲಪರಹನಾಂ ಜಬಲರನನಾಂ ಅದತ
+
+00:37:53.556 --> 00:38:23.556
+ತಗಡರರನನಾಂ ತಗಡರರನಿ ಸಿರಿರನಾಂ ಯಜರಮಹಾ ಭತ ನಾರಪರವರನಾಂ ಕರವದರಹಿಂದದಗರ ಅತಡದರರನನನಾಂ ಸಿರಿರ�
+
+00:38:23.556 --> 00:38:24.356
+ಅತಕಾ ಆದರಾನಲಗರನಾಂ ಕರವದರಫಾಛತಾನದಗರನನಾಂ ಇಪರವನದರನದರನಲಗರನದರನಾಂ ಅತಕರ ಆದರರನದರನದರನನನನಾ
+
+00:38:53.556 --> 00:38:54.556
+ಪರವನದರನವರನನಾಂ ಏಕದವರನಗರನನದರನನನಾಂ, ಆಗದರವಾಚವുವರಗಳನವರನನನವರನನದನನನನನಕಳರನತವರರಲವಾಚನ
+
+00:39:23.556 --> 00:39:53.556
+ರದಗರತದರಗರನಬರಾಶಿಯತದದನಾಂ ಪಾರದರಿಯಾಂ ಸಡಪತರದರಲವರನಾಂ ನಾಂ ಆಗದರವಾಚವಁವರರವರನನನನನನನನಂ ಬರ
+
+00:40:54.415 --> 00:41:00.955
+ಭರಗಾನವದದಗರನಾಂ
+
+00:41:00.955 --> 00:41:15.316
+ಅಧರದರರಡತದನನನನನನನನನನಿ ಇರಿಗ outro
+
+00:41:46.316 --> 00:41:58.316
+ಇಸಸಾಮದಲನಂ ಸತಾನಿಂ ವರದರಕಾಟದ ಸಪಿಚವಲರದತಿಁಂ ಜರಗಾಯಂ ಅದರರರನಂ
+
+00:41:58.316 --> 00:42:28.316
+ಇಲರತಾನ ಪರವಸವರನಿಂ ಆರದಾ, ಜರಗಾಯಂ ಅದರರರನಂ के ಪಡಬನಾನಿರ ವರದರಇ ಇನ ಬಢಕತಾನರಾಗಿ ಸಬರಗತ ಪರವರವರತ�
+
+00:42:28.316 --> 00:42:58.316
+ಐಬರ ಪರವಸವರನಂ ಟಗರವಜಗರದಾದನಾ ಇರಟರವರಗಳಮ ಚದಗರವನಾಗತಾ ಉನದನಇ ಪರವಸವರನಂ, ಇಪರವಜಗರದಾಓ ಬಡರದದ�
+
+00:42:58.596 --> 00:43:05.596
+ಇಪರವಸವರನಾಗತಾ ಇರಟರವರನಂ
+
+00:43:06.635 --> 00:43:09.996
+ಪರವಸವರ ಮಹಟಾರಏಂ ಭವಸಿತರರಕಾನದನಾದಸ
+
+00:43:10.395 --> 00:43:17.115
+ದರವರನಾಗತಾ ಎಠಿಪಿ ಚಟರವರನಾಗತಾನಾತದ ಪರವಸವರನಾಗತಾನಾದಕಾನಾಸವರರನನ
+
+00:43:18.075 --> 00:43:24.476
+you'll notice that the user value is no longer set even though the file exists
+
+00:43:25.276 --> 00:43:28.556
+and so one of the things that's important to understand about using
+
+00:43:29.355 --> 00:43:37.515
+these files is that if you set one for the project it's going to short circuit so the one in your
+
+00:43:37.515 --> 00:43:44.395
+user directory will never get evaluated and that's going to be an important thing to keep in mind
+
+00:43:45.036 --> 00:43:51.276
+both for if you say if you have project specific credentials but also global credentials
+
+00:43:52.075 --> 00:43:57.436
+then you might want to you can use our environment files there are also other
+
+00:43:57.436 --> 00:44:02.235
+environment loading packages you can think about using to make sure that you're actually
+
+00:44:02.235 --> 00:44:06.635
+getting all the things you need into the right session context there's a package called
+
+00:44:06.795 --> 00:44:17.515
+.env which performs some of the same functions as the sort of implicit behavior of the data
+
+00:44:17.515 --> 00:44:24.075
+the r-environ file but using a file called .env that's something people also use in
+
+00:44:24.075 --> 00:44:28.715
+other languages where this kind of this environment variable support isn't built in
+
+00:44:29.675 --> 00:44:37.115
+okay so many things to keep in mind there again project r-environ short circuits if it exists
+
+00:44:37.115 --> 00:44:42.715
+then your user level one doesn't get evaluated so it's just something you want to keep in mind
+
+00:44:45.035 --> 00:44:50.155
+so let me pause there any i don't see any questions about that can you inherit anything
+
+00:44:50.155 --> 00:44:56.556
+in your projects level no it's a it's a real bummer uh so sorry the question is can you
+
+00:44:56.556 --> 00:45:01.595
+inherit anything into the project level from the user level uh no so either you have to copy paste
+
+00:45:02.396 --> 00:45:10.876
+or um if if that behavior isn't annoying to you i mean like i don't actually even know let me let's
+
+00:45:11.436 --> 00:45:21.836
+let's do it live uh uh you'll notice that like this is if it's popular enough that there are
+
+00:45:21.836 --> 00:45:30.715
+implementations in other languages but what i'm really looking for is uh is it an rlib or is it
+
+00:45:30.715 --> 00:45:44.316
+just it is not it is not like it's like a gabber specific thing are no more languages github search
+
+00:45:44.316 --> 00:45:51.355
+does there we go so uh it's a project that gabber maintains personally um
+
+00:45:53.516 --> 00:46:00.396
+but yeah i don't i don't know if this does user inheritance either um but you can um there is a
+
+00:46:00.396 --> 00:46:05.756
+explicit load dot end function so you could call it twice if you wanted to grab stuff from your
+
+00:46:07.355 --> 00:46:13.035
+user uh directory as well as the home directory or sorry the user directory as well as the project
+
+00:46:13.035 --> 00:46:28.316
+directory yeah this is a neat one i'll drop this in the chat i should probably mention it in the
+
+00:46:28.316 --> 00:46:38.396
+slides cool so you've got your um dot r profile right that lets you set some values that you can
+
+00:46:38.396 --> 00:46:45.355
+retrieve to influence uh the behavior of your code um but then the other thing you might want
+
+00:46:45.355 --> 00:46:53.516
+to do is run some r code uh as your session is starting um and for that you can use the dot r
+
+00:46:53.516 --> 00:47:01.756
+profile so that's going to be our code that runs at the start of each session um the one of the
+
+00:47:02.715 --> 00:47:11.675
+function in r that's um tells you whether you're in an interactive session or not um so if this
+
+00:47:11.675 --> 00:47:19.836
+interactive uh if interactive returns true um this typically is going to mean like some some person
+
+00:47:19.836 --> 00:47:25.996
+is sitting there typing sending individual lines of console codes the console or using source or
+
+00:47:25.996 --> 00:47:33.355
+something but you're like you're there typing the code um and then if the r process is started in
+
+00:47:33.355 --> 00:47:38.876
+some kind of uh non-interactive context where there's for example no opportunity for you to
+
+00:47:38.876 --> 00:47:43.196
+react if you're prompted for something so that might be knitting an r markdown document or
+
+00:47:43.196 --> 00:47:48.396
+rendering a quarter document or if you call uh r from the command line or r script from the
+
+00:47:48.396 --> 00:47:55.915
+command line um those things are going to be uh the interactive function is going to return false
+
+00:47:55.915 --> 00:48:03.275
+um most r profile customization not all um uh but most of the time when you're thinking about
+
+00:48:03.275 --> 00:48:10.556
+doing this uh you want to do that for things that are interactive uh because it's not necessarily
+
+00:48:10.556 --> 00:48:16.076
+the case that in these non-interactive cases case uh contexts the r profile is something you want to
+
+00:48:16.076 --> 00:48:22.876
+dispatch with the code again this is going to vary a lot by your use case um so things you could
+
+00:48:22.876 --> 00:48:29.436
+put in your dot r profile right if you wanted to set a cran mirror um right other than a sort of
+
+00:48:29.436 --> 00:48:33.675
+vanilla cran mirror we'll talk about some reasons you might want to do that in a little bit um if
+
+00:48:33.675 --> 00:48:39.275
+you're interested in customizing the way the r prompt looks this is a link to another uh gabber
+
+00:48:39.275 --> 00:48:45.355
+joints the prompt package uh if you use the if you use r the command line for example this is a
+
+00:48:45.355 --> 00:48:50.795
+very interesting way to uh give yourself a little bit more information about what's going
+
+00:48:50.795 --> 00:48:56.636
+uh going on in your r session these are these are the kinds of things you can put in our profile
+
+00:48:58.155 --> 00:49:05.196
+um what you don't want to put in your r profile is anything that's going to influence uh how the
+
+00:49:05.196 --> 00:49:13.035
+code executes uh if you share it with someone all right and so for example um this example
+
+00:49:13.035 --> 00:49:18.556
+uh shannon can you put a note for me to remove this because it doesn't matter anymore uh uh if
+
+00:49:18.556 --> 00:49:28.155
+you're if you are uh running r on certain older versions um then uh setting this option uh that
+
+00:49:28.155 --> 00:49:35.516
+causes r to evaluate strings as factors um means that if someone else runs your code without this
+
+00:49:35.516 --> 00:49:40.795
+option set um then they're going to be computing on different values from the ones uh that you
+
+00:49:40.795 --> 00:49:45.275
+have right so you wouldn't want to put that in your r profile you don't want to load your
+
+00:49:45.275 --> 00:49:50.316
+load the tidyverse in our profile because that might result in you uh changing the definition
+
+00:49:50.316 --> 00:49:56.475
+of functions like say you're collaborating with somebody who uh only works in base r and wants
+
+00:49:56.475 --> 00:50:00.076
+to use the stats filter package right you're going to load the tidyverse you're going to get very
+
+00:50:00.076 --> 00:50:07.355
+different results from that um right similarly you don't want to alias functions uh in your
+
+00:50:07.355 --> 00:50:13.115
+dot r profile because that'll mean that you know if you use this alias f but then you share the
+
+00:50:13.115 --> 00:50:17.915
+code with somebody who doesn't have that alias this is going to fail to evaluate for them
+
+00:50:20.235 --> 00:50:27.516
+if you have if you want to be able to reproduce plots for example uh then if you if you you know
+
+00:50:27.516 --> 00:50:33.756
+if you set the theme for a plot in in one place uh but you don't share that code uh then the person
+
+00:50:33.836 --> 00:50:37.355
+who you're working with will end up with plots that look different from yours
+
+00:50:38.076 --> 00:50:45.035
+um since uh since there is another discussion i will just uh answer this question right so
+
+00:50:45.035 --> 00:50:50.715
+why the reason it might be safe to include uh packages like this um in your r profile
+
+00:50:50.715 --> 00:50:57.115
+and i say might right it's not a recommendation but it's a consideration um use this in dev tools
+
+00:50:57.115 --> 00:51:04.235
+or r packages that you'll i think about as development dependencies right um you'll you'll
+
+00:51:04.235 --> 00:51:11.355
+see we're making lots of use of use of use this in this class um but most of the code that's um
+
+00:51:12.795 --> 00:51:18.316
+is built using tools like use this or dev tools doesn't actually explicitly depend on it
+
+00:51:18.316 --> 00:51:25.275
+and so having access to the you know create r package function in a session um doesn't doesn't
+
+00:51:25.275 --> 00:51:29.595
+make it more difficult for you to share the package with someone else um so these are these
+
+00:51:29.595 --> 00:51:33.915
+are going to be the kinds of things that are very important to your development workflow
+
+00:51:33.915 --> 00:51:37.915
+um that don't necessarily uh influence what your collaborators are doing
+
+00:51:38.475 --> 00:51:41.836
+with your project those might be things that are safe to put in your r profile
+
+00:51:43.275 --> 00:51:50.396
+um one thing you can do right if you want to get some ideas some inspiration about uh what
+
+00:51:50.396 --> 00:51:56.715
+people are putting in their dot files um is that if you go looking uh on github for
+
+00:51:57.436 --> 00:52:04.876
+uh dot r profiles um you'll get uh just if people share their dot files which is a thing sometimes
+
+00:52:04.876 --> 00:52:11.996
+you do because it makes it easier to restore um your your work on another machine um or you just
+
+00:52:11.996 --> 00:52:16.636
+like keeping track of what kinds of options you've set um you can go looking at through
+
+00:52:16.636 --> 00:52:24.956
+people's dot files repos on github um and i've selected a few here um that uh you can examine
+
+00:52:24.956 --> 00:52:29.836
+these are all uh really i think pretty prolific our programmers so they make a lot of stuff and
+
+00:52:29.836 --> 00:52:35.355
+so they've you can see the various ways in which they want to customize their workflows for the
+
+00:52:35.355 --> 00:52:42.956
+work that they do um and that's stuff you can copy or just learn from uh so take a look through that
+
+00:52:42.956 --> 00:52:54.235
+code at your leisure okay so we're going to do the same thing now uh for the uh user and project
+
+00:52:54.235 --> 00:53:01.275
+our profiles uh that we did for the dot our environment files so first we're going to edit
+
+00:53:01.275 --> 00:53:09.755
+the r profile um we're going to add a line of our code right this just a print statement um
+
+00:53:10.395 --> 00:53:13.915
+and then restart the session see what happens when you reset
+
+00:53:14.635 --> 00:53:17.915
+and then you're going to do the same thing with the project our profile
+
+00:53:19.196 --> 00:53:33.035
+and we're going to take five minutes to do
+
+00:53:39.755 --> 00:53:49.035
+so
+
+00:54:09.755 --> 00:54:19.035
+so
+
+00:54:39.755 --> 00:54:51.755
+so
+
+00:55:09.755 --> 00:55:19.755
+so
+
+00:55:39.755 --> 00:55:49.755
+so
+
+00:56:09.755 --> 00:56:19.755
+so
+
+00:56:23.755 --> 00:56:33.755
+so
+
+00:56:39.755 --> 00:56:49.755
+so
+
+00:56:49.755 --> 00:56:59.755
+so
+
+00:56:59.755 --> 00:57:09.755
+so
+
+00:57:09.755 --> 00:57:19.755
+so
+
+00:57:19.755 --> 00:57:29.755
+so
+
+00:57:33.755 --> 00:57:43.755
+so
+
+00:57:49.755 --> 00:57:59.755
+so
+
+00:58:03.755 --> 00:58:13.755
+so
+
+00:58:19.755 --> 00:58:29.755
+so
+
+00:58:29.755 --> 00:58:39.755
+so
+
+00:58:39.755 --> 00:58:49.755
+so
+
+00:58:49.755 --> 00:58:59.755
+so
+
+00:58:59.755 --> 00:59:09.755
+so
+
+00:59:09.755 --> 00:59:19.755
+so
+
+00:59:19.755 --> 00:59:29.755
+so
+
+00:59:29.755 --> 00:59:39.755
+so
+
+00:59:39.755 --> 00:59:49.755
+so
+
+00:59:49.755 --> 00:59:59.755
+so
+
+00:59:59.755 --> 01:00:09.755
+so
+
+01:00:09.755 --> 01:00:19.755
+so
+
+01:00:19.755 --> 01:00:29.755
+so
+
+01:00:29.755 --> 01:00:39.755
+so
+
+01:00:39.755 --> 01:01:01.755
+so
+
+01:01:01.755 --> 01:01:11.755
+so
+
+01:01:11.755 --> 01:01:21.755
+so
+
+01:01:21.755 --> 01:01:31.755
+so
+
+01:01:31.755 --> 01:01:41.755
+so
+
+01:01:41.755 --> 01:02:05.755
+so
+
+01:02:05.755 --> 01:02:25.755
+so
+
+01:02:25.755 --> 01:02:35.755
+so
+
+01:02:35.755 --> 01:02:45.755
+so
+
+01:02:45.755 --> 01:03:05.755
+so
+
+01:03:05.755 --> 01:03:15.755
+so
+
+01:03:15.755 --> 01:03:25.755
+so
+
+01:03:25.755 --> 01:03:47.755
+so
+
+01:03:47.755 --> 01:03:57.755
+so
+
+01:03:57.755 --> 01:04:07.755
+so
+
+01:04:07.755 --> 01:04:27.755
+so
+
+01:04:27.755 --> 01:04:37.755
+so
+
+01:04:37.755 --> 01:04:47.755
+so
+
+01:04:47.755 --> 01:05:09.755
+so
+
+01:05:09.755 --> 01:05:31.755
+so
+
+01:05:31.755 --> 01:05:41.755
+so
+
+01:05:41.755 --> 01:05:51.755
+so
+
+01:05:51.755 --> 01:06:01.755
+so
+
+01:06:01.755 --> 01:06:11.755
+so
+
+01:06:11.755 --> 01:06:31.755
+so
+
+01:06:31.755 --> 01:06:53.755
+so
+
+01:06:53.755 --> 01:07:03.755
+so
+
+01:07:03.755 --> 01:07:13.755
+so
+
+01:07:13.755 --> 01:07:23.755
+so
+
+01:07:23.755 --> 01:07:33.755
+so
+
+01:07:33.755 --> 01:07:43.755
+so
+
+01:07:43.755 --> 01:07:53.755
+so
+
+01:07:53.755 --> 01:08:13.755
+so
+
+01:08:13.755 --> 01:08:33.755
+so
+
+01:08:33.755 --> 01:09:01.755
+so
+
+01:09:01.755 --> 01:09:03.755
+so
+
+01:09:02.789 --> 01:09:06.789
+which might mean that you have to compile the packages from source yourself,
+
+01:09:06.789 --> 01:09:10.789
+or you can use Posit Public Package Manager.
+
+01:09:10.789 --> 01:09:14.789
+This is a lot to say, so I will probably
+
+01:09:14.789 --> 01:09:18.789
+refer to it as P3M going forward. And Posit Public
+
+01:09:18.789 --> 01:09:22.789
+Package Manager, P3M, has binaries available
+
+01:09:22.789 --> 01:09:26.789
+for Windows, macOS, and Linux.
+
+01:09:26.789 --> 01:09:30.789
+And for macOS, it's both for ARM and Intel, so it's just
+
+01:09:30.789 --> 01:09:34.789
+easier to, you can just get whatever kind of binary packages
+
+01:09:34.789 --> 01:09:38.789
+you need by always using Public Package Manager.
+
+01:09:38.789 --> 01:09:42.789
+If you want to know whether a binary
+
+01:09:42.789 --> 01:09:46.789
+is available for the specific package you're trying to install, there are a couple
+
+01:09:46.789 --> 01:09:50.789
+of places to try to get that information. So if you're going, if you're looking
+
+01:09:50.789 --> 01:09:54.789
+at the CRAN, like a standard mirror of CRAN, you can see
+
+01:09:54.789 --> 01:09:58.789
+this is, you know, I pulled this screenshot from cran.rproject.org
+
+01:09:58.789 --> 01:10:02.789
+What you'll see here is that we have
+
+01:10:02.789 --> 01:10:06.789
+the package source, so that's the, just the
+
+01:10:06.789 --> 01:10:10.789
+all the files that comprise the package, tarred up
+
+01:10:10.789 --> 01:10:14.789
+and then compressed, that's what the gz means. And then
+
+01:10:14.789 --> 01:10:18.789
+we also have Windows and macOS binaries. So
+
+01:10:18.789 --> 01:10:22.789
+you can see there are Windows binaries for,
+
+01:10:22.789 --> 01:10:26.789
+as of this screenshot, rdevil, which means the version
+
+01:10:26.789 --> 01:10:30.789
+of R that is the next one to be released.
+
+01:10:30.789 --> 01:10:34.789
+But then you can see, for example, that there are no binaries available for
+
+01:10:34.789 --> 01:10:38.789
+the currently released version of R, or the
+
+01:10:38.789 --> 01:10:42.789
+next oldest version of R. And this is as of this screenshot.
+
+01:10:42.789 --> 01:10:46.789
+This information changes over time, so if you're trying to understand whether
+
+01:10:46.789 --> 01:10:50.789
+a binary is available from CRAN, this is where you need to look. And then you can
+
+01:10:50.789 --> 01:10:54.789
+see, again, the same thing on the macOS binary side. There are binaries
+
+01:10:54.789 --> 01:10:58.789
+available for the current release here, and for the previous release
+
+01:10:58.789 --> 01:11:02.789
+for, and those are available for ARM
+
+01:11:02.789 --> 01:11:06.789
+but they're not available for x86. So that's just
+
+01:11:06.789 --> 01:11:10.789
+all the information that's being presented to you in this box here.
+
+01:11:10.789 --> 01:11:14.789
+Something that is sometimes true
+
+01:11:14.789 --> 01:11:18.789
+is that if CRAN does have a binary package, it may
+
+01:11:18.789 --> 01:11:22.789
+not be the latest version of the package that's been released
+
+01:11:22.789 --> 01:11:26.789
+on CRAN. So in this screenshot, you can see the parallelly
+
+01:11:26.789 --> 01:11:30.789
+package. The source is at version
+
+01:11:30.789 --> 01:11:34.789
+1.32.1, but some of the binaries
+
+01:11:34.789 --> 01:11:38.789
+are a bit older than that. So the Windows
+
+01:11:38.789 --> 01:11:42.789
+binary, in this case, for the released version of R
+
+01:11:42.789 --> 01:11:46.789
+is slightly behind. And so if you see
+
+01:11:46.789 --> 01:11:50.789
+this note
+
+01:11:50.789 --> 01:11:54.789
+as you're installing a package from a standard CRAN repository.
+
+01:11:46.606 --> 01:11:54.606
+as you're installing a package from a standard CRAN repository, that's what it's asking you
+
+01:11:54.606 --> 01:12:00.166
+about, as you'll often have the option of either getting a slightly older version of
+
+01:12:00.166 --> 01:12:08.165
+the package, which is compiled already, or you can get the newest version and then compile
+
+01:12:08.165 --> 01:12:09.165
+it yourself.
+
+01:12:09.165 --> 01:12:15.325
+And again, that's just explaining what the message here, right, there's a binary version
+
+01:12:15.325 --> 01:12:22.365
+available, the source version is later, right, so CRAN has already compiled a binary version
+
+01:12:22.365 --> 01:12:31.365
+for this older version, but if you want the newest, then you might need to get it yourself.
+
+01:12:31.365 --> 01:12:35.926
+If you're looking at Posit Public Package Manager, and here I'll just pop open this
+
+01:12:35.926 --> 01:12:44.365
+link so we can take a look, if I go to a package like dplyr, and then I scroll down a little
+
+01:12:44.405 --> 01:12:54.006
+bit, these things are links, and so I can say if I'm looking for a Windows binary for
+
+01:12:54.006 --> 01:13:01.926
+R 4.4, this is going to tell me that a binary package is available for this, and I can see
+
+01:13:01.926 --> 01:13:14.125
+that for any combination of operating system and R version.
+
+01:13:14.125 --> 01:13:20.205
+The other thing you'll see is that the information you need here, so the package version, the
+
+01:13:20.205 --> 01:13:27.125
+R version, and the architecture are all exposed as things you can ask the server about.
+
+01:13:27.125 --> 01:13:33.686
+Right, so those things are links, so you can click on them to try to figure out if there's
+
+01:13:33.686 --> 01:13:37.245
+a binary version of the package available.
+
+01:13:37.245 --> 01:13:44.686
+And then once you're at the point of installing the package, there will be some information
+
+01:13:44.686 --> 01:13:54.406
+in the log that tells you whether you obtained a binary package, so you can see, for example,
+
+01:13:54.406 --> 01:14:00.165
+if you're downloading something from a standard CRAN mirror on Windows, you'll get this message
+
+01:14:00.165 --> 01:14:02.365
+about this.
+
+01:14:02.365 --> 01:14:06.846
+Binary packages for Windows are also served as zip files, so looking at this content type
+
+01:14:06.846 --> 01:14:11.445
+as a header is something else that will tell you whether you got a binary package.
+
+01:14:11.445 --> 01:14:17.245
+On macOS, again, the message will say the downloaded binary packages, but you can also
+
+01:14:17.245 --> 01:14:18.406
+look at this extension.
+
+01:14:18.406 --> 01:14:23.926
+Typically, binary packages from macOS have this .tgz extension.
+
+01:14:23.926 --> 01:14:28.406
+If you're downloading things from Package Manager, then the header is set a little differently,
+
+01:14:28.406 --> 01:14:35.126
+but your R version will still understand that you're getting a binary package here, and
+
+01:14:35.126 --> 01:14:40.046
+if you install packages using Rn, which we'll talk about in more detail later, but Rn will
+
+01:14:40.046 --> 01:14:51.885
+just explicitly tell you whether you installed a binary package or a source package.
+
+01:14:51.885 --> 01:14:56.445
+Is going to the bleeding edge going to be wonky?
+
+01:14:56.445 --> 01:15:01.805
+So when you say bleeding edge, do you mean released versions on CRAN, or do you mean
+
+01:15:02.606 --> 01:15:07.326
+development versions from GitHub or something?
+
+01:15:07.326 --> 01:15:13.645
+Yeah, I mean on CRAN, not necessarily getting from GitHub or some other source, but when
+
+01:15:13.645 --> 01:15:19.525
+I see, do you want to install from source, sometimes I think, oh yeah, give me the latest,
+
+01:15:19.525 --> 01:15:27.525
+but sometimes I think, oh, do I want the latest, or do I want to see how the latest is received
+
+01:15:27.525 --> 01:15:30.566
+by the community?
+
+01:15:30.566 --> 01:15:39.326
+So I wonder, is there a cognate to the long-term support versus generally available model,
+
+01:15:39.326 --> 01:15:41.606
+or is it just package by package?
+
+01:15:41.606 --> 01:15:46.245
+Yeah, so for R packages, as far as I know, no.
+
+01:15:46.245 --> 01:15:54.926
+There is, so I'm going to attempt to give a description of CRAN's behavior here, which
+
+01:15:54.926 --> 01:16:00.285
+is that they just, the packages on CRAN all have to work with each other.
+
+01:16:00.285 --> 01:16:09.606
+I think inspecting how CRAN builds binaries is not totally transparent, but if you get
+
+01:16:09.606 --> 01:16:16.005
+the, I think some of the stuff about needing to build it from a source yourself, I don't
+
+01:16:16.005 --> 01:16:17.005
+know.
+
+01:16:17.005 --> 01:16:23.405
+In general, I'd say for R packages, it's generally safe to take the latest version.
+
+01:16:23.405 --> 01:16:27.766
+It's guaranteed to work with the latest version of everything else on CRAN.
+
+01:16:27.766 --> 01:16:33.246
+That might not be true if it's, it might not work with what's in your environment currently,
+
+01:16:33.246 --> 01:16:37.486
+but it will work with everything else on CRAN.
+
+01:16:37.486 --> 01:16:48.565
+And so I often don't, I don't usually worry about trying to do a lot of compatibility
+
+01:16:48.565 --> 01:16:49.565
+solving.
+
+01:16:49.565 --> 01:16:51.845
+I just take the latest of everything.
+
+01:16:51.845 --> 01:16:58.806
+The other thing to sort of note in this context is that package manager, to the best of its
+
+01:16:58.806 --> 01:17:05.606
+ability, serves binary packages for as many things as are on CRAN relatively soon after
+
+01:17:05.606 --> 01:17:07.246
+they're released.
+
+01:17:07.246 --> 01:17:11.646
+And so if you want a higher chance of obtaining a binary package, you can just try it, try
+
+01:17:11.646 --> 01:17:20.685
+getting it from package manager, because that will often be a little bit more straightforward
+
+01:17:20.685 --> 01:17:21.685
+to do.
+
+01:17:21.685 --> 01:17:22.685
+Gotcha.
+
+01:17:22.685 --> 01:17:23.685
+Thank you.
+
+01:17:23.685 --> 01:17:24.685
+Is that helpful?
+
+01:17:24.685 --> 01:17:25.685
+Oh yeah.
+
+01:17:25.685 --> 01:17:26.685
+Okay.
+
+01:17:26.685 --> 01:17:37.326
+So using the package manager interface, let's take a couple of seconds and try to figure
+
+01:17:37.326 --> 01:17:47.685
+out if package manager serves a binary package of the R PostgreSQL package.
+
+01:17:47.685 --> 01:17:54.685
+So I'm going to drop a link to package manager in the chat.
+
+01:17:54.685 --> 01:18:00.926
+And let's try to find out whether package manager serves a binary for this package.
+
+01:18:00.926 --> 01:18:09.926
+And we'll just give that two minutes.
+
+01:20:09.926 --> 01:20:13.405
+All right.
+
+01:20:13.405 --> 01:20:14.405
+Long intros in EDM.
+
+01:20:14.405 --> 01:20:15.405
+Anyway.
+
+01:20:15.405 --> 01:20:16.405
+Okay.
+
+01:20:16.405 --> 01:20:26.725
+So let's jump over to package manager, and posit package manager, I should say.
+
+01:20:26.725 --> 01:20:37.645
+If we look up the R PostgreSQL package, you'll notice there's an R PostgreSQL package.
+
+01:20:37.645 --> 01:20:39.405
+This will be an important detail in a moment.
+
+01:20:39.886 --> 01:20:52.525
+So if we look at the R PostgreSQL package, and then we try to find a window, binary package
+
+01:20:52.525 --> 01:21:00.325
+for 4.3, I don't specify a distribution, but that's fine, because it doesn't serve a binary
+
+01:21:00.325 --> 01:21:02.165
+package for any of them.
+
+01:21:02.165 --> 01:21:08.325
+So if we change the version here, oh no, so it does serve it for Windows, but perhaps
+
+01:21:08.446 --> 01:21:12.446
+not for Red Hat 9.
+
+01:21:12.446 --> 01:21:13.446
+Yeah.
+
+01:21:13.446 --> 01:21:17.845
+So, and this is a...
+
+01:21:17.845 --> 01:21:22.645
+Sometimes a binary is available for your distribution and version, sometimes it isn't.
+
+01:21:22.645 --> 01:21:24.645
+Do I know why?
+
+01:21:24.645 --> 01:21:26.525
+I do not.
+
+01:21:26.525 --> 01:21:32.325
+It is for 4.3, but not for 4.4.
+
+01:21:32.325 --> 01:21:34.085
+No.
+
+01:21:34.085 --> 01:21:35.085
+That's really...
+
+01:21:35.205 --> 01:21:38.765
+That's surprising.
+
+01:21:38.765 --> 01:21:44.566
+That said, and this will be like a general piece of advice, the R PostgreSQL package
+
+01:21:44.566 --> 01:21:50.765
+does a lot of the same things, and is a little bit less painful to work with.
+
+01:21:50.765 --> 01:21:54.165
+And that one does serve binaries that are easier to get.
+
+01:21:54.165 --> 01:22:02.845
+So sometimes you may want to look to see if a similar package that provides some of the
+
+01:22:02.845 --> 01:22:07.165
+functionality you're looking for, where binary is available, might be an easier thing to
+
+01:22:07.165 --> 01:22:10.165
+switch to.
+
+01:22:10.165 --> 01:22:14.525
+Particularly if you, for example, are using Excel packages that depend on Java, don't
+
+01:22:14.525 --> 01:22:15.525
+do it.
+
+01:22:15.525 --> 01:22:18.525
+But no, Konstantin, I actually, I don't know.
+
+01:22:18.525 --> 01:22:27.325
+I will ask the team about that, because right now we don't really surface information about
+
+01:22:27.566 --> 01:22:32.566
+why a particular binary build might not succeed.
+
+01:22:32.566 --> 01:22:37.765
+So it's a little bit difficult to discover.
+
+01:22:37.765 --> 01:22:40.965
+But yeah, I will ask.
+
+01:22:40.965 --> 01:22:47.845
+And if you find yourself in the situation where you have a dependency, you need that,
+
+01:22:47.845 --> 01:22:53.725
+and there isn't a version, package manager isn't serving a binary, if you post an issue
+
+01:22:53.965 --> 01:23:02.845
+in the package, in the community, in forum.posit.co, under the package manager category, someone
+
+01:23:02.845 --> 01:23:06.085
+from the team will try to respond to you.
+
+01:23:06.085 --> 01:23:14.725
+So just try to, you know, like I said, I'll get back to you about if we can figure out
+
+01:23:14.725 --> 01:23:17.285
+a reason why that might not have succeeded.
+
+01:23:17.285 --> 01:23:21.126
+But that's where to go to get the information, if for some reason you can't find it.
+
+01:23:21.126 --> 01:23:28.046
+I will say a lot of the time it's just about, like, the different operating systems are
+
+01:23:28.046 --> 01:23:31.845
+painful and complicated.
+
+01:23:31.845 --> 01:23:37.006
+And so the one thing I'll talk about at the end of this section is one, an approach we're
+
+01:23:37.006 --> 01:23:41.926
+taking that we're hoping solves some of these problems, right?
+
+01:23:41.926 --> 01:23:45.606
+So we've talked a bunch about binary packages, right?
+
+01:23:45.606 --> 01:23:50.725
+If you can obtain binary packages, that's because somebody else compiled them.
+
+01:23:50.725 --> 01:23:57.046
+If you obtain the sources of a package, then you have to compile them in your environment.
+
+01:23:57.046 --> 01:24:02.886
+For packages that are just R code, R is all you need.
+
+01:24:02.886 --> 01:24:09.566
+If your package has dependencies on other compiled languages, you know, so these are
+
+01:24:09.566 --> 01:24:15.366
+some of the examples, there are a couple of others that are on CRAN, excuse me, then you're
+
+01:24:15.366 --> 01:24:19.725
+going to need some extra tools at your disposal to be able to compile those packages in your
+
+01:24:19.765 --> 01:24:26.566
+environment. If you don't have those tools available, and so I've set up a couple of
+
+01:24:26.566 --> 01:24:32.205
+environments that are that just that don't have them, this is the kind of thing you'll
+
+01:24:32.205 --> 01:24:38.606
+see. What exactly you'll see will vary by the way in which those tools are missing.
+
+01:24:38.606 --> 01:24:44.246
+But, for example, if this is like a version of R running on Windows where I don't have
+
+01:24:44.246 --> 01:24:48.845
+the make command, and so I try to install a version of dplyr and it's going to fail
+
+01:24:48.845 --> 01:24:54.566
+because it needs to compile some C code and the make is not available, and the same thing
+
+01:24:54.566 --> 01:25:02.965
+is going to be true if I'm missing this compiler, which R is looking for in a specific place.
+
+01:25:02.965 --> 01:25:08.205
+To get the tools you need to compile packages from source, if you're on Windows, you want
+
+01:25:08.205 --> 01:25:14.525
+R tools. R tools just installs a collection of things that R can use to compile packages
+
+01:25:14.525 --> 01:25:21.886
+in a sort of known location, and that just that makes the process go a lot more simply.
+
+01:25:21.886 --> 01:25:27.606
+If you're on Mac OS, then what you'll need is Xcode. You can also install Xcode is the
+
+01:25:27.606 --> 01:25:33.285
+easiest way to get the tools. And then if you're on Linux, then you'll need to kind
+
+01:25:33.285 --> 01:25:42.645
+of install the tools in the way that you install typical packages. If you run devtools has
+
+01:25:42.645 --> 01:25:49.046
+devel, you should see a message about if your system has all the things it needs to
+
+01:25:49.046 --> 01:25:53.405
+compile packages, then this is what you'll see. If you don't, then you'll get instructions
+
+01:25:53.405 --> 01:25:57.446
+about how to install the tools we were just talking about.
+
+01:25:57.446 --> 01:26:04.006
+The other important piece of installing R packages, particularly on Linux, but you can
+
+01:26:04.006 --> 01:26:10.006
+also encounter this problem in other operating systems, is with what we call system dependencies.
+
+01:26:10.006 --> 01:26:18.205
+So sometimes your R code depends on, say, C code that's written by the developer of
+
+01:26:18.205 --> 01:26:22.926
+the R package. So that's true of, for example, dplyr. dplyr has a collection of C code in
+
+01:26:22.926 --> 01:26:30.446
+it that comes with the source of the dplyr package. In other cases, there are Linux system
+
+01:26:30.446 --> 01:26:37.285
+dependencies that people use to kind of expose the same functionality into at a lower level
+
+01:26:37.446 --> 01:26:45.205
+to a number of different things. So if you've spent any time trying to install packages
+
+01:26:45.205 --> 01:26:51.725
+at all, you might be most familiar with geospatial packages. System dependencies, something like
+
+01:26:51.725 --> 01:26:59.006
+gdol or units, these are going to be things that R will look for. They're sort of low
+
+01:26:59.006 --> 01:27:03.725
+level Linux libraries that try to make some of that geospatial functionality available
+
+01:27:03.725 --> 01:27:09.765
+across programs. And if you don't have those system dependencies available, then the package
+
+01:27:09.765 --> 01:27:18.566
+is going to fail with messages that look like this, where it's checking for some other thing.
+
+01:27:18.566 --> 01:27:25.566
+And you need to take some action to install it, right? So the help you need is often going
+
+01:27:25.566 --> 01:27:30.926
+to be in the error message for how the package fails to compile. But this is the kind of
+
+01:27:30.926 --> 01:27:36.926
+thing that will let you know that you're missing a system dependency.
+
+01:27:36.926 --> 01:27:42.606
+One other important piece of the puzzle occasionally, this is infrequently true, but when it's true,
+
+01:27:42.606 --> 01:27:48.806
+it's quite painful, is if you have a package, and I'm picking on the geospatial libraries
+
+01:27:48.806 --> 01:27:55.165
+in particular here, because this is where the problem most often presents. In addition
+
+01:27:55.165 --> 01:28:00.926
+to being required to compile the package, sometimes you need to have these system dependencies
+
+01:28:00.926 --> 01:28:09.965
+available when you run the package as well. And so, if I call library SF in an environment
+
+01:28:09.965 --> 01:28:15.686
+that has those relevant system dependencies at runtime, then you'll see it call, this
+
+01:28:15.686 --> 01:28:22.325
+is an error message that it, sorry, just a status message that it emits when you start.
+
+01:28:22.325 --> 01:28:26.446
+That you're linking to these things, which are on your system. If you don't have those
+
+01:28:26.446 --> 01:28:32.566
+available, right, then you're going to, you can install the package successfully. And
+
+01:28:32.566 --> 01:28:38.085
+then when you try to load the package, you'll see an error message like this. And so, again,
+
+01:28:38.085 --> 01:28:44.006
+that's going to be an indication that you're missing some important dependency that you
+
+01:28:44.006 --> 01:28:49.886
+need to run the package, not just get it installed.
+
+01:28:49.886 --> 01:28:57.606
+If you want to figure out which system dependencies you need to ask your administrator to install,
+
+01:28:57.606 --> 01:29:04.626
+if you go to package manager and you type in the name of the package, there is a system
+
+01:29:04.626 --> 01:29:10.725
+requirements section that spells out the commands you need to ask your administrator to run
+
+01:29:10.725 --> 01:29:15.085
+so that you can get those installed. One of the reasons these are called system dependencies
+
+01:29:15.085 --> 01:29:19.305
+is because they have to be installed system wide. They're not something that typically
+
+01:29:19.305 --> 01:29:27.666
+you can just install yourself. However, in the last couple of days, this is very new.
+
+01:29:27.666 --> 01:29:35.345
+And still kind of in preview. But this promises, this might solve a lot of problems for people
+
+01:29:35.345 --> 01:29:45.146
+who work in environments where getting an administrator in the loop is very slow. We're
+
+01:29:45.146 --> 01:29:51.425
+calling these many Linux binaries. There's a sort of parallel Python project that solves
+
+01:29:51.425 --> 01:29:58.106
+the problem. And that project, the things that that project produces are called wheels.
+
+01:29:58.106 --> 01:30:03.705
+The product manager and I are in a dispute. I think we should just call these reels. He
+
+01:30:03.705 --> 01:30:08.906
+is not with me, but I'm doing it anyway. But this is a link to the blog post where we talk
+
+01:30:08.906 --> 01:30:15.305
+about the strategy we're taking to make it so that it's much easier to install packages,
+
+01:30:15.305 --> 01:30:21.666
+even on Linux, without administrative permission. And get all the system dependencies you need
+
+01:30:21.666 --> 01:30:26.626
+at the time you need them. And so, without getting into too much detail here, this is
+
+01:30:26.626 --> 01:30:34.906
+a container that has no system dependencies installed in it. But if I use this many Linux
+
+01:30:34.906 --> 01:30:40.266
+repository on package manager, then I can actually get those geospatial dependencies
+
+01:30:40.266 --> 01:30:45.906
+installed and running without any issues. Or not without any issues, but I can get them
+
+01:30:45.906 --> 01:30:51.106
+installed and running. So, this is currently in preview. If you have this kind of problem
+
+01:30:51.106 --> 01:30:57.305
+where you're working in an environment where you often find yourself going back and forth
+
+01:30:57.305 --> 01:31:06.065
+with an administrator, trying to get things installed, check this out. Give us feedback.
+
+01:31:06.065 --> 01:31:10.425
+It's available on public package manager, so you can use it. But I'm very excited about
+
+01:31:10.425 --> 01:31:23.026
+this as a way of solving the system dependency problem. Okay. So, in order to test or try
+
+01:31:23.026 --> 01:31:28.185
+out installing packages for ourselves, what we're gonna do is we're gonna install a package
+
+01:31:28.185 --> 01:31:33.866
+from the R universe. So, the R universe is another place you can get packages. Those
+
+01:31:33.866 --> 01:31:41.305
+packages are often things that don't necessarily make sense to put on CRAN. But it's just another
+
+01:31:41.305 --> 01:31:47.585
+way of thinking about distributing R packages. And so, what we're gonna do is we're going
+
+01:31:47.585 --> 01:31:56.986
+to try to update our R profile and install a package that's not on CRAN. So, in the project
+
+01:31:56.986 --> 01:32:08.986
+we have open, first try to install this get seller package and then add this to your project
+
+01:32:08.986 --> 01:32:16.746
+R profile so that you end up with the R open sci R universe and then restart R and try
+
+01:32:16.746 --> 01:32:20.425
+to install the package again. And we'll give people five minutes to do that.
+
+01:32:20.425 --> 01:32:25.786
+I can make a suggestion, David. How about we extend this to ten minutes and let people
+
+01:32:25.786 --> 01:32:31.345
+take a stretch break and do the exercise since we're about halfway through our time.
+
+01:32:31.345 --> 01:32:37.266
+Thank you, Shannon. Excellent idea. We'll give it ten minutes.
+
+01:32:37.266 --> 01:32:40.305
+And on behalf of Big Water, also drink water.
+
+01:32:40.305 --> 01:32:44.225
+Have some water, y'all. We'll see you in ten minutes.
+
+01:32:47.386 --> 01:32:48.386
+. .
+
+01:32:48.386 --> 01:32:49.386
+. .
+
+01:32:49.386 --> 01:32:50.386
+. .
+
+01:32:50.386 --> 01:32:51.386
+. .
+
+01:32:51.386 --> 01:32:52.386
+.
+
+01:33:16.746 --> 01:33:17.746
+.
+
+01:33:46.746 --> 01:34:15.805
+.
+
+01:34:16.805 --> 01:34:21.825
+My life, my life, my life, my life in the sunshine.
+
+01:34:21.825 --> 01:34:27.845
+Everybody loves the sunshine, the sunshine.
+
+01:34:30.825 --> 01:34:35.825
+Everybody loves the sunshine.
+
+01:34:36.825 --> 01:34:39.825
+And I'm viewing, I'm viewing, I'm viewing, I'm viewing,
+
+01:34:39.845 --> 01:34:43.845
+I'm moving in the sunshine.
+
+01:34:46.845 --> 01:34:49.845
+I do what I do, what I do, what I do, what I'm moving
+
+01:34:50.845 --> 01:34:52.845
+in the sunshine.
+
+01:34:55.845 --> 01:34:57.845
+Sunshine.
+
+01:34:59.845 --> 01:35:01.845
+Everybody loves the sunshine.
+
+01:35:04.845 --> 01:35:06.845
+Sunshine.
+
+01:35:06.845 --> 01:35:10.866
+Everybody loves the sunshine.
+
+01:35:36.866 --> 01:35:38.866
+Sunshine.
+
+01:35:40.866 --> 01:35:42.866
+Everybody loves the sunshine.
+
+01:35:45.866 --> 01:35:47.866
+Sunshine.
+
+01:35:49.866 --> 01:35:51.866
+Everybody loves the sunshine.
+
+01:36:06.866 --> 01:36:14.866
+My life, my life, my life, my life in the sunshine.
+
+01:36:16.866 --> 01:36:18.866
+Everybody loves the sunshine.
+
+01:36:36.845 --> 01:36:56.845
+My life, my life, my life, my life in the sunshine.
+
+01:36:56.845 --> 01:37:20.845
+My life, my life, my life, my life in the sunshine.
+
+01:37:20.845 --> 01:37:40.845
+My life, my life, my life, my life in the sunshine.
+
+01:37:40.845 --> 01:38:00.845
+My life, my life, my life, my life in the sunshine.
+
+01:38:00.845 --> 01:38:20.845
+My life, my life, my life, my life in the sunshine.
+
+01:38:20.845 --> 01:38:40.845
+My life, my life, my life, my life in the sunshine.
+
+01:38:40.845 --> 01:38:56.845
+My life, my life, my life, my life in the sunshine.
+
+01:39:10.845 --> 01:39:30.845
+My life, my life, my life, my life in the sunshine.
+
+01:39:30.845 --> 01:39:50.845
+My life, my life, my life, my life in the sunshine.
+
+01:39:50.845 --> 01:40:10.845
+My life, my life, my life, my life in the sunshine.
+
+01:40:10.845 --> 01:40:30.845
+My life, my life, my life, my life in the sunshine.
+
+01:40:30.845 --> 01:40:50.845
+My life, my life, my life, my life in the sunshine.
+
+01:40:50.845 --> 01:41:10.845
+My life, my life, my life, my life in the sunshine.
+
+01:41:10.845 --> 01:41:32.845
+My life, my life, my life, my life in the sunshine.
+
+01:41:40.845 --> 01:42:00.845
+My life, my life, my life, my life in the sunshine.
+
+01:42:00.845 --> 01:42:20.845
+My life, my life, my life, my life in the sunshine.
+
+01:42:20.845 --> 01:42:40.845
+My life, my life, my life, my life in the sunshine.
+
+01:42:40.845 --> 01:43:06.845
+My life, my life, my life, my life in the sunshine.
+
+01:43:06.845 --> 01:43:20.845
+Okay, so we're gonna walk through installing this package from the R universe.
+
+01:43:20.845 --> 01:43:30.845
+So the first thing I'll try to do is install this package and restart.
+
+01:43:30.845 --> 01:43:34.845
+I stretched, I drank some water.
+
+01:43:34.845 --> 01:43:38.845
+So I'm gonna attempt to install this package.
+
+01:43:38.845 --> 01:43:41.845
+And you see this failure, right?
+
+01:43:41.845 --> 01:43:49.845
+So git seller is not available for this version of R.
+
+01:43:49.845 --> 01:43:59.845
+And so what we need to do is find a way to let R know about this additional repository we want to install the package from.
+
+01:43:59.845 --> 01:44:19.845
+And so in this case, I'm just going to grab this setting where I'm going to set my repositories to include the R opensci R universe repository in addition to public package manager mirror.
+
+01:44:19.845 --> 01:44:22.845
+I accidentally pasted this into the console.
+
+01:44:22.845 --> 01:44:29.845
+If I run this, this will also work, but then it won't persist if I restart my session, right?
+
+01:44:29.845 --> 01:44:36.845
+So if I run that and then I try to do it again, right, I'm still going to see the same message.
+
+01:44:36.845 --> 01:44:49.845
+So if I want something like that to persist, then a good thing to do is to put it in a place where it will be available to each R session I start.
+
+01:44:49.845 --> 01:45:01.845
+And now if I try to install the package, then you'll see I get the package from the R universe.
+
+01:45:01.845 --> 01:45:09.845
+And you'll notice, this is a question here, that the package I downloaded is a binary package as well.
+
+01:45:09.845 --> 01:45:14.845
+So if you publish things through R universe, those do get compiled.
+
+01:45:14.845 --> 01:45:19.845
+So you do have an alternative way of distributing binary packages.
+
+01:45:19.845 --> 01:45:32.845
+So if you're in an organizational context where you have something that's very complicated to build, and you want to try to set that up once and distribute it to people publicly, then R universe can be a good option for that.
+
+01:45:32.845 --> 01:45:40.845
+In addition to sort of the standard distribution.
+
+01:45:40.845 --> 01:45:53.845
+Questions about that?
+
+01:45:53.845 --> 01:45:55.845
+All right.
+
+01:45:55.845 --> 01:45:58.845
+So, yes, we installed Git seller from binary.
+
+01:45:58.845 --> 01:46:05.845
+And we know that in this case, because the message says that the downloaded package is binary.
+
+01:46:05.845 --> 01:46:18.845
+When you're streaming things from package manager, they're all going to say this, but sometimes, again, there are tips about whether you've got a binary in the header that comes back from the CRAN server.
+
+01:46:19.845 --> 01:46:23.845
+So if you can get binaries, you should, because it makes your life easier.
+
+01:46:23.845 --> 01:46:24.845
+Things go a little bit faster.
+
+01:46:24.845 --> 01:46:27.845
+It's a little bit less work.
+
+01:46:27.845 --> 01:46:42.845
+But if you are trying to get the latest of something on GitHub or from some other source where binary hasn't been compiled for you, then you might need to install it from source instead.
+
+01:46:42.845 --> 01:46:47.845
+Before you move on, David, do you want to make any recommendations?
+
+01:46:47.845 --> 01:46:55.845
+So like in that exercise, you said the options at the project level.
+
+01:46:55.845 --> 01:47:02.845
+Do you want to make any recommendations for what people can do at their user level just to streamline installation?
+
+01:47:02.845 --> 01:47:16.845
+I would say it depends a little bit on, well, you know, some of what you do depends on how you decide to make your environments reproducible.
+
+01:47:16.845 --> 01:47:21.845
+So a thing I would probably do.
+
+01:47:21.845 --> 01:47:25.845
+Actually, you know, I can't explain why I haven't done it on this machine.
+
+01:47:25.845 --> 01:47:27.845
+So, you know, we're learning in real time.
+
+01:47:28.845 --> 01:47:33.845
+But a thing you could do, use our profile.
+
+01:47:33.845 --> 01:47:37.845
+Edit our profile, for God's sake.
+
+01:47:37.845 --> 01:47:44.845
+I'm going to edit it in the user scope is I would set my.
+
+01:47:38.321 --> 01:47:48.581
+and I'm going to edit it in the user scope, is I would set my default repository to
+
+01:47:48.581 --> 01:47:56.040
+Package Manager all the time. And that's because it's going to, for most of the
+
+01:47:56.040 --> 01:48:03.681
+time, it will have binaries for whatever distribution of R you're working on. If
+
+01:48:03.681 --> 01:48:06.880
+you're doing this on Linux then it's a bit more important that you find
+
+01:48:06.880 --> 01:48:12.440
+something that might match the Linux distribution you're using. Once you start
+
+01:48:12.440 --> 01:48:18.240
+isolating project environments then you might want the way in which you record
+
+01:48:18.240 --> 01:48:21.881
+that information starts to look a little different and we'll talk about that in
+
+01:48:21.881 --> 01:48:25.401
+the next step. Does that answer the question you were hoping to address?
+
+01:48:25.401 --> 01:48:38.721
+Is there something you were, something in particular? Okay, so reproducible
+
+01:48:38.721 --> 01:48:44.081
+environments, right, we're going to be thinking about recording both the
+
+01:48:44.081 --> 01:48:47.081
+package environments and we're also going to start capturing some other
+
+01:48:47.081 --> 01:48:51.081
+information about the version of the language we're using. We'll talk a little
+
+01:48:51.081 --> 01:48:56.681
+bit about what that means. There are really, the thing I want to
+
+01:48:56.681 --> 01:49:03.761
+help you think about here, there's this strategy map of
+
+01:49:03.761 --> 01:49:10.681
+reproducibility strategies and it describes on the x-axis we have
+
+01:49:10.681 --> 01:49:19.401
+who's responsible, on the y-axis we have how open the environment is. Most of the
+
+01:49:20.361 --> 01:49:26.880
+strategies that we're discussing for this class mostly focus on this
+
+01:49:26.880 --> 01:49:35.840
+top right area where you're in control of where you get your packages and the
+
+01:49:35.840 --> 01:49:41.441
+environment in which you're obtaining them is relatively permissive. We try to
+
+01:49:41.600 --> 01:49:52.000
+discourage people from, say, moving into a system where they're in
+
+01:49:52.000 --> 01:49:57.121
+control, they might be able to, if your environment, for example, has
+
+01:49:57.121 --> 01:50:01.041
+restricted connectivity, you don't necessarily want to end up in a
+
+01:50:01.041 --> 01:50:07.201
+situation where you try to install something and it just fails with a
+
+01:50:07.201 --> 01:50:10.800
+networking error and there's nothing you can do, right, because that's going to
+
+01:50:11.201 --> 01:50:16.561
+put you in a kind of miserable situation. Down here on the validated
+
+01:50:16.561 --> 01:50:21.121
+side, there are, when a lot of administrative control is exercised
+
+01:50:21.121 --> 01:50:26.000
+over the environment, then you want to try to sort of have a collaboration with
+
+01:50:26.000 --> 01:50:28.321
+the people who are managing that environment to make sure they
+
+01:50:28.321 --> 01:50:35.201
+understand your needs and the shared baseline is kind of a good jumping off
+
+01:50:35.201 --> 01:50:39.681
+point for a lot of organizations where you can have sort of a base set of
+
+01:50:39.681 --> 01:50:43.121
+packages installed and then people who know what they're doing can push
+
+01:50:43.121 --> 01:50:46.401
+themselves up into the right. So like I said, we'll be mostly talking
+
+01:50:46.401 --> 01:50:49.121
+about the snapshot strategy but know that there are
+
+01:50:49.121 --> 01:50:52.641
+other ways of thinking about managing this problem
+
+01:50:52.641 --> 01:50:56.240
+and understanding what you're doing up here also helps you talk about what
+
+01:50:56.240 --> 01:50:59.921
+happens down here if that's what needs to happen.
+
+01:51:00.240 --> 01:51:03.360
+So the two tools we're going to focus on for
+
+01:51:03.360 --> 01:51:08.080
+thinking about how we construct reproducible environments
+
+01:51:08.080 --> 01:51:14.880
+are going to be public package manager and then the renv package, both of which
+
+01:51:14.880 --> 01:51:21.201
+give you a little bit more control over what your package environment looks
+
+01:51:21.201 --> 01:51:23.681
+like and where you're getting things from than you might have
+
+01:51:23.681 --> 01:51:29.281
+in kind of the standard workflow. So we'll start with public package
+
+01:51:29.281 --> 01:51:33.041
+manager. Something that you'll have noticed when
+
+01:51:33.281 --> 01:51:40.960
+we set the package manager
+
+01:51:40.960 --> 01:51:48.401
+address is that the url contains this latest and latest is just going
+
+01:51:48.401 --> 01:51:53.600
+to track the current state of cran. It is not like
+
+01:51:53.600 --> 01:51:59.840
+it's latest by about a day. So within a day typically public
+
+01:51:59.840 --> 01:52:04.400
+package manager will reflect the set of packages that
+
+01:52:04.400 --> 01:52:08.321
+are available on cran.
+
+01:52:08.321 --> 01:52:14.321
+And so if you just need something that behaves like a standard cran mirror
+
+01:52:14.321 --> 01:52:20.801
+then grabbing things from latest is ideal. If instead
+
+01:52:20.801 --> 01:52:27.120
+you want something from a little bit further back
+
+01:52:27.120 --> 01:52:31.921
+in time then you can use what package manager
+
+01:52:31.921 --> 01:52:36.160
+calls a date-based snapshot and that gives you the ability. I'm just
+
+01:52:36.160 --> 01:52:41.120
+going to jump over to package manager and jump into the setup tab. So I'm
+
+01:52:41.120 --> 01:52:45.600
+working on macOS today and right now you see that this url
+
+01:52:45.600 --> 01:52:49.521
+points to the latest. So it's cran latest.
+
+01:52:49.521 --> 01:52:55.280
+If I want a repository that behaves the way
+
+01:52:55.280 --> 01:53:02.560
+cran behaved in July of 2022, I can use
+
+01:53:02.560 --> 01:53:05.921
+a url that looks like this where I have this date
+
+01:53:05.921 --> 01:53:12.241
+string in the in the url instead. And that means that if I supply this
+
+01:53:12.241 --> 01:53:17.041
+as the repository to my install packages
+
+01:53:17.041 --> 01:53:21.440
+command or to other things then when I type
+
+01:53:21.440 --> 01:53:27.041
+install packages I will get packages the way they looked on cran
+
+01:53:27.041 --> 01:53:31.041
+as of July 1st of 2022. If you're trying to bring
+
+01:53:31.041 --> 01:53:34.481
+an old project that you haven't worked on back to life
+
+01:53:34.481 --> 01:53:38.321
+and you need to just try to get a set of packages
+
+01:53:38.321 --> 01:53:41.921
+from a date that is like too difficult to figure out
+
+01:53:41.921 --> 01:53:45.280
+what set of packages you need, using the date-based
+
+01:53:45.280 --> 01:53:50.000
+snapshot workflow can be pretty nice. It's also really helpful if
+
+01:53:50.000 --> 01:53:55.280
+you're trying to like reproduce specific package installation problems.
+
+01:53:55.280 --> 01:53:58.560
+So doing things via that date-based snapshotting workflow
+
+01:53:58.560 --> 01:54:01.600
+can be really helpful.
+
+01:54:01.840 --> 01:54:05.041
+So what we're going to do
+
+01:54:05.600 --> 01:54:10.321
+is we're going to in the project we're going to check out what our
+
+01:54:10.321 --> 01:54:13.201
+current version of dplyr is. If you don't have dplyr
+
+01:54:13.201 --> 01:54:16.801
+installed you can do this with some other package
+
+01:54:16.801 --> 01:54:20.400
+like jsonlite is another one that will be relatively easy to install.
+
+01:54:20.400 --> 01:54:24.081
+So check out what the current version is and then
+
+01:54:24.081 --> 01:54:28.801
+put a date-based snapshot into that R profile.
+
+01:54:28.801 --> 01:54:31.840
+Restart R and then install a version of that package
+
+01:54:31.840 --> 01:54:35.041
+and see what version you get.
+
+01:54:38.880 --> 01:54:43.280
+So give people a couple minutes to do that.
+
+01:59:46.800 --> 01:59:50.800
+All right.
+
+01:59:52.800 --> 02:00:00.800
+Cool. So let's let's see what we got. I'm going to grab this.
+
+02:00:00.800 --> 02:00:02.800
+Open
+
+02:00:04.800 --> 02:00:08.800
+RStudio.
+
+02:00:08.800 --> 02:00:16.800
+And check out the package version I have which is 1.1.4.
+
+02:00:16.800 --> 02:00:28.800
+Okay and then I'm going to set my package repository to December of 2022.
+
+02:00:28.800 --> 02:00:34.800
+The repos option here it's a named vector
+
+02:00:36.800 --> 02:00:40.800
+and it is probably helpful to call it the same thing
+
+02:00:40.800 --> 02:00:44.800
+which I'm not doing right now. So I'm not going to change this to rspm. I'm just
+
+02:00:44.800 --> 02:00:48.800
+going to call this p3m here.
+
+02:00:48.800 --> 02:00:54.800
+And then I'm going to set my
+
+02:00:54.800 --> 02:00:58.800
+rspm. I'm just going to call this p3m here.
+
+02:01:02.480 --> 02:01:10.800
+So I'm going to restart. I'm going to install dplyr.
+
+02:01:16.721 --> 02:01:24.161
+Did I? Then I'm going to run the library dplyr
+
+02:01:24.161 --> 02:01:30.480
+which loads and that's filed.
+
+02:01:33.440 --> 02:01:36.480
+I got the same version.
+
+02:01:40.641 --> 02:01:47.040
+Now I'm going to try
+
+02:01:47.120 --> 02:01:51.920
+something.
+
+02:01:54.641 --> 02:01:56.480
+There we go. Yes.
+
+02:02:00.161 --> 02:02:01.440
+Hey that's new.
+
+02:02:04.321 --> 02:02:11.920
+I'm going to try that one more time.
+
+02:02:12.800 --> 02:02:20.800
+First I'm going to confirm that my repos are set correctly. They are not because
+
+02:02:23.201 --> 02:02:24.800
+I'm not in a project.
+
+02:02:28.401 --> 02:02:30.800
+We're doing it live folks. Okay.
+
+02:02:31.281 --> 02:02:31.781
+Okay.
+
+02:02:35.841 --> 02:02:42.321
+And if I check my repos again I'm still not in a project. Let's
+
+02:02:45.601 --> 02:02:53.841
+edit our profile. Oh you know what it is? I think the project file
+
+02:02:53.841 --> 02:03:01.601
+exists and I didn't set it in there. Hey so you know when you describe the short circuiting
+
+02:03:01.601 --> 02:03:06.800
+behavior and then fail to understand that it has implications for the demo you're doing? That's me.
+
+02:03:07.440 --> 02:03:20.641
+I know. Okay so we'll restart again and now that my repository is correctly set to
+
+02:03:21.521 --> 02:03:27.680
+the previous states I should get an older version of dplyr which
+
+02:03:30.961 --> 02:03:37.440
+I might have to compile from source. So you can see many other people got the version of
+
+02:03:39.680 --> 02:03:47.920
+1.0.10 and since that version is much older than the currently released version of R
+
+02:03:48.800 --> 02:03:52.800
+right because I'm running this in 4.5 I had to compile it in my environment.
+
+02:03:54.321 --> 02:04:01.440
+But that results in me having a packaged version of dplyr that is now older than
+
+02:04:04.081 --> 02:04:05.601
+the one I had installed previously.
+
+02:04:10.961 --> 02:04:16.880
+Any questions about what went wrong there? Does everyone understand what I
+
+02:04:18.880 --> 02:04:34.161
+missed? Okay so great. So in order to back ourselves out of this situation what we're
+
+02:04:34.161 --> 02:04:40.321
+going to do is we're going to since I had I put that configuration into my project R profile
+
+02:04:41.040 --> 02:04:45.280
+I'm going to take it out now.
+
+02:04:48.721 --> 02:04:51.440
+And if I restart you'll see that
+
+02:04:51.920 --> 02:04:54.800
+oh it's options
+
+02:04:58.321 --> 02:05:06.800
+repos but it's been reset to the standard and now if I was running
+
+02:05:09.280 --> 02:05:16.800
+I was using 1.1.4 before so I can run that again.
+
+02:05:16.800 --> 02:05:21.841
+I was using 1.1.4 before so I can grab this
+
+02:05:27.040 --> 02:05:30.081
+and update this to 1.1.4
+
+02:05:32.640 --> 02:05:36.160
+and install. Wow typing is amazing.
+
+02:05:39.920 --> 02:05:41.760
+And so you can see I'm going to
+
+02:05:47.280 --> 02:05:52.800
+reinstall my packages and now I'll end up back at the version of dplyr I was before.
+
+02:05:53.520 --> 02:06:02.800
+Martine thank you. Yes typos on the slide. You can tell these slides were written by a human being.
+
+02:06:05.520 --> 02:06:12.800
+So this process should feel a little janky to you.
+
+02:06:13.121 --> 02:06:20.241
+Installing a particular version and then you know not liking the results and going back to
+
+02:06:20.241 --> 02:06:27.201
+a different version by calling this. And so if that does seem like if you imagine that there's
+
+02:06:27.201 --> 02:06:34.001
+a better way to do that there is. It's renv and that's what we'll be talking about next right is
+
+02:06:34.001 --> 02:06:39.601
+trying to take some of the things we've got and managing our project environments. Shannon.
+
+02:06:39.601 --> 02:06:46.001
+Yeah just before we move on I want to be the r mom here and just say like if you installed
+
+02:06:46.560 --> 02:06:51.680
+the older version of dplyr make sure you go back and install the newer version again otherwise
+
+02:06:51.680 --> 02:06:56.241
+you're going to try to execute some code and be like pull your hair out and be like why doesn't
+
+02:06:56.241 --> 02:07:02.640
+this work. So just make sure you reinstall that newer version of dplyr because that is on your
+
+02:07:02.640 --> 02:07:12.160
+system library now. Hey Shannon what's a system library? No we're gonna get into it. Okay so
+
+02:07:12.961 --> 02:07:19.601
+the way things work if you don't do anything right if you just open up R and start working
+
+02:07:20.640 --> 02:07:26.241
+is that you might have you know project one and project two and project three and a little bit
+
+02:07:26.241 --> 02:07:32.001
+of mermaid clipping of your numbers which I will anyway right but all those things depend on a
+
+02:07:32.001 --> 02:07:40.321
+shared project library and so if you update something in one of them in if you when you
+
+02:07:40.321 --> 02:07:44.481
+update something because you're working on a particular project you're actually updating
+
+02:07:44.481 --> 02:07:50.001
+this shared project library and so this is where we're going to talk about libpaths right so if I
+
+02:07:50.001 --> 02:08:01.121
+run this libpaths function why why is my chalkboard here get me out of here anyway okay
+
+02:08:02.721 --> 02:08:08.881
+so if I run this libpaths function right which I ran before you can see I have these two paths
+
+02:08:08.881 --> 02:08:17.841
+right one of them is under slash users slash me all right this is my user library and then
+
+02:08:18.560 --> 02:08:25.760
+slash library slash frameworks are frameworks right this is the system library the system
+
+02:08:25.760 --> 02:08:41.280
+library as you saw at the beginning I have my finals if I run the code from this exercise
+
+02:08:42.241 --> 02:08:45.280
+and print the
+
+02:08:51.680 --> 02:08:57.920
+right these all the base R packages right the base packages the recommended packages
+
+02:08:57.920 --> 02:09:02.400
+those are the only things that are installed in the system library for me
+
+02:09:03.760 --> 02:09:10.321
+all the other packages I install get installed into my user library and so this means that any
+
+02:09:10.881 --> 02:09:18.321
+project I'm working on where I'm using R 4.5 if I don't do anything else I'm getting all those
+
+02:09:18.321 --> 02:09:29.920
+packages from here in this user path and the path looks slightly different depending on what
+
+02:09:29.920 --> 02:09:35.520
+operating system you're running on so when I wrote this example I wrote it on Windows and so
+
+02:09:36.481 --> 02:09:45.280
+under the C drive in the user path my name and then you know Windows paths but this is my user
+
+02:09:45.280 --> 02:09:50.961
+library on Windows and then similarly there's a system installation looks a little bit different
+
+02:09:50.961 --> 02:09:56.081
+on Linux but the same idea is going to show up in basically every operating system and what
+
+02:09:56.081 --> 02:10:04.321
+renv enables you to do is to take each of your projects and operate them with a library that
+
+02:10:04.481 --> 02:10:11.520
+is isolated from all the other libraries and so your project one has its own library project two
+
+02:10:12.160 --> 02:10:18.560
+has its own library so on from project three now that doesn't necessarily mean they are taking up
+
+02:10:18.560 --> 02:10:23.121
+three times the space on your computer because what you're going to do is you're going to
+
+02:10:23.121 --> 02:10:29.361
+maintain a global cache and as you need things that are in the cache you're linking them into
+
+02:10:29.920 --> 02:10:37.680
+each of these project libraries but from the perspective of your project what it will look like
+
+02:10:39.121 --> 02:10:41.920
+is that when you run libpaths and I'll show you what it looks like
+
+02:10:43.440 --> 02:10:50.961
+in the session right is that you're going to end up with the project having its own library
+
+02:10:52.481 --> 02:10:57.760
+in within the project directory and then is also going to make reference to a cache directory
+
+02:10:57.760 --> 02:11:06.400
+that has all the cache packages for the project so if I install the renv package here
+
+02:11:11.040 --> 02:11:16.800
+and then I initialize it oh before I before I initialize it I'm going to call libpaths
+
+02:11:16.800 --> 02:11:24.961
+right so we see this is the those are the packages I'm working with and then when I initialize
+
+02:11:25.520 --> 02:11:36.160
+that's new you'll see this that my R session got restored restored restarted sorry a bunch
+
+02:11:36.160 --> 02:11:40.961
+of things got created and we'll talk about those in a second but if I run libpaths now
+
+02:11:42.321 --> 02:11:53.760
+right again we're looking at right this is the project directory right so
+
+02:11:55.040 --> 02:12:02.400
+me documents projects the project we created renv library and then right but this is in this
+
+02:12:02.400 --> 02:12:08.961
+directory there's an rm directory here and then you can see there's also a library caches
+
+02:12:08.961 --> 02:12:15.760
+rn thing where my the other packages are getting cached so I've gone from taking that specific
+
+02:12:15.760 --> 02:12:22.400
+that that user library to instead having a package a project specific library
+
+02:12:25.841 --> 02:12:31.440
+um and so some of the advantages of doing this right is that it makes it much easier for you
+
+02:12:31.440 --> 02:12:37.680
+to do things like what we just did where you install a package without worrying about doing
+
+02:12:37.680 --> 02:12:45.040
+things to your other projects right um rn also has some machinery for making it easy to write down
+
+02:12:45.040 --> 02:12:52.640
+the set of packages you're using um and then uh share that with someone else and you can use that
+
+02:12:52.640 --> 02:12:58.721
+to they can use that to build an environment that looks exactly like yours um and you know
+
+02:12:58.721 --> 02:13:02.640
+the caching thing is nice because if you've already installed a package then you can just
+
+02:13:02.640 --> 02:13:08.400
+link it in from the library and that speeds up some of the workflow a little bit so what we're
+
+02:13:08.400 --> 02:13:15.040
+going to do is we're going to go through that same process I just went through you're going
+
+02:13:15.040 --> 02:13:23.601
+to create a new project um and you're going to call it wtifrnv and you're going to put it
+
+02:13:24.241 --> 02:13:30.800
+not in the current project um you're going to install the rnv package and then you're going to
+
+02:13:30.800 --> 02:13:36.721
+call init to initialize the package you may see a message that's different from the one I see if
+
+02:13:36.721 --> 02:13:41.280
+you've never saw if you've never used rnv before um and then we're going to you're going to call
+
+02:13:41.280 --> 02:13:51.841
+status and we're going to give people a couple minutes to do that
+
+02:13:52.400 --> 02:14:00.400
+so
+
+02:14:06.640 --> 02:14:09.601
+if you're in a project right now like the
+
+02:14:10.800 --> 02:14:16.800
+explorer libraries one I would recommend exiting out of that project before you execute the create
+
+02:14:16.800 --> 02:14:25.361
+project
+
+02:14:46.800 --> 02:14:47.440
+you
+
+02:15:16.800 --> 02:15:17.440
+you
+
+02:15:46.800 --> 02:15:47.841
+you
+
+02:16:16.800 --> 02:16:16.881
+you
+
+02:16:47.760 --> 02:16:59.760
+okay so I'm going to so what Shannon mentioned um a thing you don't want to do is create
+
+02:16:59.760 --> 02:17:07.040
+a project within a project so there are two ways to avoid doing that one is to um
+
+02:17:07.920 --> 02:17:15.680
+so in the slide for example I say wherever you typically put projects so for me
+
+02:17:17.601 --> 02:17:20.081
+I have a place I could typically put projects
+
+02:17:21.760 --> 02:17:28.800
+and so I could say that I want to create a project called wtfrnv in my projects directory
+
+02:17:29.760 --> 02:17:39.760
+right that is not below the project I'm currently in so oh well uh that will result in
+
+02:17:41.680 --> 02:17:42.001
+uh
+
+02:17:46.241 --> 02:17:55.361
+did I change versions anyway um so if I use this create project uh in a place that's not
+
+02:17:55.440 --> 02:18:02.481
+my current directory um and I've created this project before it seems so I'm going to overwrite
+
+02:18:02.481 --> 02:18:09.601
+it um and so that will launch uh RStudio in that session so that's one way to do that
+
+02:18:09.601 --> 02:18:16.800
+the other the other option is to if you go here and close the project um this will just
+
+02:18:16.800 --> 02:18:24.160
+kick you out into an RStudio session that is in your typically in your home directory
+
+02:18:24.160 --> 02:18:30.560
+and then from there you could go through the new project flow and create a project
+
+02:18:33.520 --> 02:18:36.160
+in a new directory so you can create a new project
+
+02:18:38.081 --> 02:18:43.601
+and I will do this as a subdirectory of my
+
+02:18:46.321 --> 02:18:48.640
+goodness projects
+
+02:18:48.800 --> 02:18:54.881
+uh and I'll do it yeah so there's a subdirectory of projects and I'll call it wtfrnv2
+
+02:18:57.280 --> 02:19:04.160
+I can choose to create a git repository I can also have RStudio initialize rnv for me when
+
+02:19:04.160 --> 02:19:09.201
+I create the project in this case I won't do that I'll just I'll switch into that projects
+
+02:19:10.321 --> 02:19:11.920
+install the rnv package here
+
+02:19:12.481 --> 02:19:26.081
+oh ha ha guys I am I'm committing lots of own goals today uh so the version of the package
+
+02:19:26.081 --> 02:19:34.481
+I installed in this case was uh 0.16 which is quite a bit older than the latest rnv
+
+02:19:34.961 --> 02:19:46.721
+uh and so uh let's let's go uh that it's our R profile uh and maybe come back to the future
+
+02:19:52.400 --> 02:19:57.201
+all right I'm gonna restart R we're gonna do it again
+
+02:19:57.201 --> 02:20:07.040
+okay uh so now that I have the latest version of uh rnv from CRAN
+
+02:20:08.081 --> 02:20:15.440
+then I'm going to initialize repository um one of the things you'll notice right so
+
+02:20:15.440 --> 02:20:21.841
+we get some messages here about uh things that will be updated in the lock file um the other
+
+02:20:21.841 --> 02:20:32.001
+thing you see we're capturing is the version of R um and so now if I open uh my rnv lock file
+
+02:20:32.800 --> 02:20:37.601
+we'll talk about the contents of this file in a second but did everyone get there
+
+02:20:39.440 --> 02:20:48.081
+did did I drive anyone else into the ditch of installing an old version of rnv sorry Martine
+
+02:20:52.800 --> 02:20:53.300
+okay
+
+02:20:56.881 --> 02:21:02.481
+okay so we're going to talk a little bit about what it looks like to
+
+02:21:02.481 --> 02:21:08.321
+manage dependencies with with rnv um if you already did the init um
+
+02:21:10.001 --> 02:21:14.481
+if you already did the init you may want to yeah you can just it's it's safe to do again
+
+02:21:15.280 --> 02:21:23.520
+if you upgrade the version and do it again you may be prompted uh to uh chain like it will
+
+02:21:23.520 --> 02:21:28.160
+rnv will ask you if you want to reinitialize the project and throw away the existing information
+
+02:21:28.160 --> 02:21:34.400
+and you can say yes so uh sometimes if you find yourself in a sticky place with uh rnv
+
+02:21:34.400 --> 02:21:38.800
+reinitializing is a totally valid way to just kind of move forward if that's safe for you to do
+
+02:21:39.520 --> 02:21:46.321
+so what I'm going to do is I'm going to create a new R script and I'm just going to call it main.r
+
+02:21:48.881 --> 02:21:56.800
+and what I'm going to do and this is described in the activity here is I'm going to add uh I've
+
+02:21:56.800 --> 02:22:05.601
+added a file uh I'm going to uh invoke I'm going to write some code that looks like I'm
+
+02:22:05.601 --> 02:22:14.240
+assuming a new dependency uh for my project um and then I'm going to run status and snapshot
+
+02:22:14.240 --> 02:22:18.800
+uh so that I see what things rnv is changing so I'll do this and then I'll give you an
+
+02:22:18.800 --> 02:22:25.520
+opportunity to do it so if I say library parallelly
+
+02:22:25.921 --> 02:22:26.800
+parallelly
+
+02:22:31.121 --> 02:22:34.401
+which I'm did I spell that correctly that's double l double l
+
+02:22:34.960 --> 02:22:40.401
+okay so I'm going to erase this first I'm going to check on the status
+
+02:22:46.321 --> 02:22:50.800
+no issues found the project is in a consistent state if I add
+
+02:22:51.681 --> 02:22:59.760
+a call here and then I add status the power project is in a consistent state
+
+02:22:59.760 --> 02:23:02.081
+I'm going to follow the prompts to install the package
+
+02:23:06.240 --> 02:23:09.520
+okay and
+
+02:23:11.681 --> 02:23:14.321
+this file is not where I think it is
+
+02:23:21.760 --> 02:23:31.200
+what sorry I'm going to create a new file I'm going to save it in wcfrnv2
+
+02:23:31.760 --> 02:23:39.520
+okay I don't think this is like a rent-backed project yet this is really confusing
+
+02:23:32.378 --> 02:23:50.378
+I think the first one I created was not actually in this directory.
+
+02:23:50.378 --> 02:24:04.378
+Okay, so I say that I want library parallelly in this directory, and then I call rm status.
+
+02:24:04.378 --> 02:24:17.378
+Then I'm going to get some information from our end about the sort of discrepancy between what my code says, and what my package library.
+
+02:24:18.378 --> 02:24:33.378
+And what my lock file. So there's there's kind of three places that the information is recorded right so I've installed the parallelly package. It's in the library. I'm using it in my code right so it appears on our code file.
+
+02:24:33.378 --> 02:24:48.378
+What, what I haven't done right now is recorded that I'm using the package in my RN block file. So the lock file is where we store the information about which packages we're using.
+
+02:24:48.378 --> 02:24:53.378
+And right now if you look in the lock file.
+
+02:24:53.378 --> 02:25:01.378
+There's a lot of information here but the main thing we see is there's only actually one package listed here, and it's our end.
+
+02:25:01.378 --> 02:25:17.378
+So what we need to do is we want to try to get our lock file into a place where the package is installed. It's recorded and it's being used. Right. And so those are the three states we're trying to harmonize.
+
+02:25:17.378 --> 02:25:23.378
+In this case, what I can do is I can call snapshot.
+
+02:25:23.378 --> 02:25:40.378
+You can see I'm capturing some information here about what the change this is going to entail. In this case, it's taking the parallelly package and recording the version of that package that I'm using the lock file. So I'm going to say do I want to proceed. Yes.
+
+02:25:40.378 --> 02:25:52.378
+There's a message that the lock file has been updated. And you can see now the parallelly package is also being recorded in the lock file as something I'm using.
+
+02:25:52.378 --> 02:26:07.378
+And if I do the same thing with another library, for example, jsonlite, you can see the ID knows that jsonlite is required because I've asked for it in my code. It's not installed.
+
+02:26:07.378 --> 02:26:14.378
+If I call status, I'm going to see the same thing. The package is used but it's not installed.
+
+02:26:14.378 --> 02:26:19.378
+So I'm going to install jsonlite.
+
+02:26:19.378 --> 02:26:33.378
+And in this case, I already had jsonlite installed. So you can see rather than fetching a fresh version from CRAN or Package Manager, I'm just linking it in from my package cache.
+
+02:26:33.378 --> 02:26:55.378
+And now if I call status, you can see, again, we're in the same situation. jsonlite is installed and it's being used, but it's not recorded. And so to update my lock file to record that I'm using jsonlite, I'm going to call snapshot.
+
+02:26:55.378 --> 02:27:21.378
+And if I look at the lock file, jsonlite, parallelly, and the rinf package. And then the last piece is if I decide to remove a dependency, now I have the situation where parallelly is installed and it's recorded as being used in my lock file, but I'm not actually using it in my code.
+
+02:27:22.378 --> 02:27:35.378
+And so, again, calling snapshot, you can see the operation that's going to be taken. We're going to remove our recording that parallelly is a package we've installed.
+
+02:27:35.378 --> 02:27:42.378
+And if I go back to the lock file, you can see now it's just the jsonlite and rinf packages.
+
+02:27:42.378 --> 02:28:04.378
+So I hope everyone stepped through that same kind of process, right? Add a library to a file in your new project, make sure the package is installed, call status to make sure you understand how it's getting recorded, and then remove it, call status again, and snapshot as appropriate.
+
+02:28:04.378 --> 02:28:06.378
+I'll give people five minutes to do that.
+
+02:28:12.378 --> 02:28:14.378
+Thank you.
+
+02:28:42.378 --> 02:28:44.378
+Thank you.
+
+02:29:12.378 --> 02:29:14.378
+Thank you.
+
+02:29:42.378 --> 02:29:43.378
+Thank you.
+
+02:30:12.378 --> 02:30:14.378
+Thank you.
+
+02:30:42.378 --> 02:30:44.378
+Thank you.
+
+02:31:12.378 --> 02:31:14.378
+Thank you.
+
+02:31:42.378 --> 02:31:44.378
+Thank you.
+
+02:32:12.378 --> 02:32:14.378
+Thank you.
+
+02:32:42.378 --> 02:32:44.378
+Thank you.
+
+02:33:13.378 --> 02:33:14.378
+Thank you.
+
+02:33:24.378 --> 02:33:29.378
+Okay.
+
+02:33:29.378 --> 02:33:31.378
+How did we do?
+
+02:33:32.378 --> 02:33:42.378
+Any questions about what's happening as we try to keep the state of the lock file in sync with the state of the library?
+
+02:33:57.378 --> 02:33:58.378
+Cool.
+
+02:34:01.378 --> 02:34:14.378
+So, yeah, one nice thing about rinf is that there are a lot of package installation workflows that it makes a little bit simpler.
+
+02:34:15.378 --> 02:34:38.378
+So if you are, you know, if you're using, and I'll show my instance of RStudio, if you see when I type install packages here, you can see that rather than, or I guess what you see is it says rinf shimps.
+
+02:34:38.378 --> 02:34:45.378
+So what this means is rinf has taken over the behavior of install.packages.
+
+02:34:45.378 --> 02:35:04.378
+And so if you type install.packages, you're actually calling rinf install, which makes it possible to do things like install jsonlite github by just typing that into install packages.
+
+02:35:04.378 --> 02:35:11.378
+That won't work if you're not using a session where rinf is active.
+
+02:35:11.378 --> 02:35:30.378
+But it can be a nice convenience if you are trying to, for example, work with the development version of a package or if you want to install a specific version, or if you want to install a package from a specific commit hash right as your workflows become more complicated.
+
+02:35:30.378 --> 02:35:37.378
+It will handle all of these different sort of workflows for you.
+
+02:35:37.378 --> 02:35:51.378
+And then, these are all also things that you could do with the dev tools package, but if you're already used to typing install packages, it's convenient to do that.
+
+02:35:52.378 --> 02:36:02.378
+The other thing about rinf install is that it works even if you're not using an rinf package, or sorry, if you're not in an active rinf session.
+
+02:36:02.378 --> 02:36:10.378
+So if you don't have...
+
+02:36:10.378 --> 02:36:24.378
+If you, for example, are running in a session where rinf is not managing your session, you can still use it to install packages.
+
+02:36:24.378 --> 02:36:35.378
+And so again, if you're trying to grab something off github or solve some problem like that, it's just a useful piece of shorthand to have at your disposal.
+
+02:36:35.378 --> 02:36:46.378
+One question I sometimes get about how to work on things where you don't care about reproducibility.
+
+02:36:46.378 --> 02:36:57.378
+There are such things, you know, if you're trying to reproduce a problem for someone else, or you just feel like tweeting some code or whatever.
+
+02:36:57.378 --> 02:37:07.378
+One pattern I like for this is I have what I call a scratch directory. I actually have a bunch of them because my directory structure is a little bit insane.
+
+02:37:07.378 --> 02:37:18.378
+But if you have a scratch directory, I just have, you know, I have a scratch project that rinf is active in, but I install, just YOLO install things into it all the time.
+
+02:37:19.378 --> 02:37:33.378
+And that works for me as a way of keeping my projects that I care about separate from things where I care a lot less and I'm willing to install incompatible versions of things and generally make a mess.
+
+02:37:33.378 --> 02:37:45.378
+If you, if you are so inclined, another thing it can be nice to do is like set a git ignore rule where you just globally ignore your scratch directory.
+
+02:37:45.378 --> 02:37:50.378
+That's a different version of this class.
+
+02:37:50.378 --> 02:38:04.378
+Question out loud. So, when collaborating with co workers in the same project, each on their own machine with own RStudio is our end, then a suitable solution to avoid clashes with packages and things.
+
+02:38:04.378 --> 02:38:09.378
+Or should we each work and a copy of the project with the RN file.
+
+02:38:09.378 --> 02:38:24.378
+Yeah, so I would say the, it is a, I think of it as a, as the best, the best. It's a good solution for for doing that. So, to talk a little bit in more detail about this.
+
+02:38:24.378 --> 02:38:32.378
+So, if you see right now, this is my project. These are my project files.
+
+02:38:32.378 --> 02:38:36.378
+If I set our end activates.
+
+02:38:37.378 --> 02:38:47.378
+And I, there's a, there is a little bit of a question of how you're collaborating right but you're so you're each on your own machine with your own version of RStudio.
+
+02:38:47.378 --> 02:38:54.378
+Hopefully that means that you're collaborating by sharing files with gets.
+
+02:38:54.378 --> 02:39:05.378
+Like, are you, are you using get are you using like, is everybody on a, like a shared drive of linking to the similar thing like what's what's the situation there.
+
+02:39:05.378 --> 02:39:08.378
+Share drive, my favorite.
+
+02:39:08.378 --> 02:39:12.378
+Okay, so I think, right, the.
+
+02:39:12.378 --> 02:39:20.378
+If we go back to the reproducibility strategy map that we were talking about a little bit ago.
+
+02:39:21.378 --> 02:39:49.378
+Let's find it right so the strategy map. The one of the assumptions implicit here is that it's not just that everyone is working on their own machine, but also that they're working on their own file system, you definitely can all work on a shared drive.
+
+02:39:50.378 --> 02:39:58.378
+I, I have no way to say to provide a euphemism for it is just like it ends up.
+
+02:39:58.378 --> 02:40:12.378
+I have found that experience to, to be in the long run ultimately pretty painful, because you're all you're all just like mutating the same thing.
+
+02:40:12.378 --> 02:40:16.378
+And most.
+
+02:40:16.378 --> 02:40:26.378
+Unless you're working in an environment that's really specifically configured to support that workflow and most environments, honestly, are not and even when they say they are they're kind of lying.
+
+02:40:27.378 --> 02:40:44.378
+You're, it's just going to be someone's going to update something right like one of the things you've seen is that for example, the, the user and project, like the project, the user and project libraries kind of vary based on the person who's running them.
+
+02:40:45.378 --> 02:41:03.378
+I just like I've seen enough weird conflicts there that that I think having an Rm block file that keeps track of the state of the project, it's better than nothing, I would, I would start moving in the direction of like getting people to work on their own copy
+
+02:41:04.378 --> 02:41:21.378
+because ultimately that's going to be an easier, more auditable way to figure out like who is making what change right so you don't end up in a situation where somebody just decides, they want to pull in the latest version of the thing in that project, without telling
+
+02:41:21.378 --> 02:41:26.378
+you and then you like you your expectations about what the project does change silently.
+
+02:41:27.378 --> 02:41:30.378
+So that's that's kind of my.
+
+02:41:30.378 --> 02:41:32.378
+Those are my opinions.
+
+02:41:32.378 --> 02:41:49.378
+So yeah, having our end on a shared direct like a shared drive is an improvement because then at least you know which packages you're using and you have some kind of explicit way of tracking that I think moving to a situation where each person is working on their own
+
+02:41:50.378 --> 02:42:00.378
+copy of the project and then you have a process for negotiating how you make changes to the project is like the best place to go.
+
+02:42:00.378 --> 02:42:02.378
+Is that is that helpful.
+
+02:42:02.378 --> 02:42:10.378
+Yeah, I think it's also important to talk about the onion in the context of our ends.
+
+02:42:10.378 --> 02:42:12.378
+Sorry about the onion.
+
+02:42:12.378 --> 02:42:26.378
+So, you know, we said that the slide said, our end helps you create an isolated project environment so like in the context of the onion What does that do and not do for you.
+
+02:42:26.378 --> 02:42:28.378
+Yeah.
+
+02:42:28.378 --> 02:42:37.378
+I think that for example, our end does not control Wow, I did this is why are you teaching this class.
+
+02:42:37.378 --> 02:42:52.378
+That's what doesn't do for you, which is noted in the documentation on this is very clear like our end is like not a package.
+
+02:42:53.378 --> 02:43:07.378
+Right, like, I know we're kind of talking about it lightly in this context, but you should really read all of the vignettes on the package documentation to really understand what is happening.
+
+02:43:07.378 --> 02:43:19.378
+Yeah. So, and what so one thing that our end does not do, where you could work I can imagine things that get we could get weird, is that it's possible that you and your collaborator.
+
+02:43:19.378 --> 02:43:22.378
+Do not agree on what version of our you're using.
+
+02:43:22.378 --> 02:43:23.378
+Right.
+
+02:43:23.378 --> 02:43:28.378
+If you're both working on shared file system.
+
+02:43:28.378 --> 02:43:44.378
+You could but you're working on you're working on a shared file system but different computers, you can have different versions of our and our end will like, it's not that that's a situation that it can't handle, but it's just one symptom of a thing that you're
+
+02:43:44.378 --> 02:44:00.378
+not actually controlling by working on the project in the same place right it's like you haven't quite negotiated all the things that you need to do to say that you're that you're, you're all collaborating at the same layer because you're not managing the version
+
+02:44:01.378 --> 02:44:03.378
+collectively.
+
+02:44:03.378 --> 02:44:19.378
+And so you might find that someone like opens the project on the shared directory rewrites the lock file to use our 4.3, and then you're just having like a kind of, you're both going to be changing that as you open the project and work on it, but without consensus about
+
+02:44:19.378 --> 02:44:25.378
+what it is you're actually doing.
+
+02:44:26.378 --> 02:44:44.378
+And there's like there are like aren't things you could you can go very deep on like trying not to solve the problem, but like to me quote solving the problem is just like start moving in the direction of an explicit contract about how you update the code that is
+
+02:44:44.378 --> 02:44:51.378
+your project and get is is one such contract.
+
+02:44:51.378 --> 02:44:57.378
+Cool.
+
+02:44:57.378 --> 02:45:08.378
+Any other questions before we speed run the final 15 minutes of this.
+
+02:45:08.378 --> 02:45:10.378
+Cool.
+
+02:45:10.378 --> 02:45:18.378
+Okay, so we talked about
+
+02:45:19.378 --> 02:45:22.378
+Right.
+
+02:45:22.378 --> 02:45:35.378
+Where we're writing down the language version, right, that's giving us some information about what our expectation is when we open the project.
+
+02:45:35.378 --> 02:45:44.378
+And ultimately what we what we might want is like a system for for bringing the version of our we want to use to the project we're working on.
+
+02:45:44.378 --> 02:45:53.378
+Right, so that we are so that like we can we actually sort of exercise control over each of those facets of the project.
+
+02:45:53.378 --> 02:46:00.378
+So, a thing I believe, though I did not link this image correctly right is that if you, if we come back to the onion.
+
+02:46:00.378 --> 02:46:02.378
+One more time.
+
+02:46:02.378 --> 02:46:08.378
+Right. Is that
+
+02:46:08.378 --> 02:46:17.378
+the, the, the operation when you install are right. And when you upgrade are you're actually doing the same thing. Right.
+
+02:46:17.378 --> 02:46:35.378
+And so if you think about taking an existing projects and moving it to a different version of our the process you go through to install our and then get packages for that project can be the same as like starting a new project and bringing things in.
+
+02:46:35.378 --> 02:46:45.378
+And so the last part of this will just focus on some things you can do to make it a little bit easier to
+
+02:46:45.378 --> 02:46:57.378
+set your environment up so that you are able to work on different versions of our without worrying about what it means for the rest of your workflow.
+
+02:46:57.378 --> 02:47:02.378
+And this is this is also this is just how I live. Now, so it makes things a little bit.
+
+02:47:02.378 --> 02:47:08.378
+It's, it's the most it's the part I'm most excited to talk about so there was a question earlier about
+
+02:47:08.378 --> 02:47:13.378
+how you, how do you like
+
+02:47:13.378 --> 02:47:19.378
+those focused on in particular on like say presenting things to to other people.
+
+02:47:19.378 --> 02:47:33.378
+I am I am doing something slightly precarious by like running this workshop on the laptop I use for work, which has like real production credentials that I have managed not to show you.
+
+02:47:34.378 --> 02:47:50.378
+But if you want a way to say experiment with things without actually breaking your machine, or if you just want a way to, you know, get a an R session where you can try to reproduce somebody's behavior from scratch.
+
+02:47:50.378 --> 02:47:56.378
+There are some tools I really recommend checking out depending on what operating system you're using. So if you're on.
+
+02:47:56.378 --> 02:48:14.378
+If you're on Windows, the Windows sandbox for any version, greater than Windows 10 really makes it trivial to just spin up a new session of Windows that doesn't have anything in it, which you can use for like testing software of uncertain provenance,
+
+02:48:14.378 --> 02:48:22.378
+but I find it really useful for also just like getting things in a clean session where I can sort of build something start to finish.
+
+02:48:22.378 --> 02:48:36.378
+If you, if you use Mac OS, there are a couple of virtual machine options that you can use one of them is called UTM. One of them is called Tart, I have experimented with both.
+
+02:48:36.378 --> 02:48:40.378
+You know, donuts.
+
+02:48:40.378 --> 02:48:42.378
+If you're on Linux.
+
+02:48:42.378 --> 02:48:45.378
+I don't use a Linux desktop often.
+
+02:48:45.378 --> 02:48:55.378
+I'm usually using a Linux servers, and so sometimes the easiest thing to do there's something called multi pass from canonical, that makes it very easy to launch a Linux command line.
+
+02:48:55.378 --> 02:49:10.378
+And then you also have the option of like using a VPS provider like DigitalOcean or Linode to start a Linux instance and just, you know, play around with stuff without, without breaking anything.
+
+02:49:10.378 --> 02:49:23.378
+So, you know, some of the stuff that I'm going to show in the next couple of minutes is stuff that you may not feel ready to do on your, the machine you need to do your work.
+
+02:49:23.378 --> 02:49:32.378
+So thinking about installing one of these things that makes it possible for you to get some reps on experimenting that that's going to be a good first step.
+
+02:49:32.378 --> 02:49:47.378
+The other thing that we're going to start thinking about are ways of being able to tell people, go run this, instead of like, go click through the world's least navigable website to download the version of R you need.
+
+02:49:48.378 --> 02:50:01.378
+There are ways of doing things where we're just going to make it much easier to like copy paste a command, execute it, and then sort of be on that next step.
+
+02:50:01.378 --> 02:50:13.378
+So if you use Mac OS, this may be familiar to you already. If you're on Windows. This is a less familiar workflow but it's becoming more familiar.
+
+02:50:14.378 --> 02:50:25.378
+There is a thing called a package manager, which is unfortunately it has no relation to Posit package manager it's just like a different layer of it's the outermost layer of the onion.
+
+02:50:25.378 --> 02:50:39.378
+And this is a way of installing stuff like anything that you that you like want to install to run software so like I install RStudio using homebrew for example.
+
+02:50:40.378 --> 02:50:55.378
+I'm not going to go into a ton of detail, but I will say that I've had, even on laptops that I don't manage a lot of success using things like these to get software in a place where I want it to be.
+
+02:50:56.378 --> 02:51:02.378
+And then the thing that I want to show you in the last couple of minutes is a package called rig.
+
+02:51:02.378 --> 02:51:09.378
+So you can get rig. If I go to the rig website, or the rig GitHub page.
+
+02:51:09.378 --> 02:51:14.378
+You can just kind of grab it off the internet.
+
+02:51:15.378 --> 02:51:31.378
+But you can also use one of these package managers to get it installed. And the thing rig does for you is it makes it really easy to install and switch between different versions of R without, without driving yourself crazy.
+
+02:51:32.378 --> 02:51:34.378
+So rig is what we call a language manager.
+
+02:51:34.378 --> 02:51:44.378
+There are most software packages have some kind of language manager rig is the one that is written for R.
+
+02:51:45.378 --> 02:51:51.378
+It's written in Rust, which is useful to know because it means it doesn't depend on R to work.
+
+02:51:51.378 --> 02:51:56.378
+And if someone tells you that they have written something in R that's going to help you manage R.
+
+02:51:57.378 --> 02:52:02.378
+You should be a little bit skeptical. And that's, that's not just true of R. That's also like if someone says I have a Python.
+
+02:52:02.378 --> 02:52:08.378
+I have a thing that manages Python that's written in Python. That's a, you should be skeptical.
+
+02:52:08.378 --> 02:52:13.378
+But most of these tools have some way of managing R.
+
+02:52:14.378 --> 02:52:21.378
+The other thing this is just like don't if you if you use one of these package managers I described don't install the language with it.
+
+02:52:21.378 --> 02:52:24.378
+You will have a hard time. Okay.
+
+02:52:24.378 --> 02:52:27.378
+So if I opened up a terminal.
+
+02:52:28.378 --> 02:52:31.378
+and I type rig.
+
+02:52:31.378 --> 02:52:34.378
+You'll see like rig is what I have.
+
+02:52:37.378 --> 02:52:39.378
+Right.
+
+02:52:39.378 --> 02:52:46.378
+There's a my class and this is also used by type rigans.
+
+02:52:46.378 --> 02:52:47.378
+Right.
+
+02:52:47.378 --> 02:52:50.378
+So I have our 4.1 through 4.5.
+
+02:52:50.378 --> 02:52:53.378
+In this case for my arm.
+
+02:52:53.378 --> 02:52:54.378
+CPU.
+
+02:52:54.378 --> 02:52:55.378
+Right.
+
+02:52:55.378 --> 02:52:57.378
+So I'm going to type rig.
+
+02:52:57.378 --> 02:52:58.378
+Right.
+
+02:52:58.378 --> 02:53:00.378
+And.
+
+02:53:00.378 --> 02:53:02.378
+And I type rig.
+
+02:53:02.378 --> 02:53:05.378
+You'll see like rig is what I have.
+
+02:53:05.378 --> 02:53:07.378
+It's a, it manages our installations.
+
+02:53:07.378 --> 02:53:09.378
+And so I have.
+
+02:53:09.378 --> 02:53:12.378
+You can see.
+
+02:53:12.378 --> 02:53:15.378
+A bunch of versions of our installed, right?
+
+02:53:15.378 --> 02:53:16.378
+CPU.
+
+02:53:16.378 --> 02:53:19.378
+And so what I'm going to do is I'm going to go close.
+
+02:53:19.378 --> 02:53:23.378
+Our studio.
+
+02:53:23.378 --> 02:53:24.378
+And.
+
+02:53:24.378 --> 02:53:29.378
+If I say, you know, I've listed the versions of our.
+
+02:53:29.378 --> 02:53:34.378
+That I have available and I'm going to say, I want to change my default version of our.
+
+02:53:34.378 --> 02:53:36.378
+To.
+
+02:53:36.378 --> 02:53:38.378
+Our 4.4.
+
+02:53:38.378 --> 02:53:43.378
+I run rig list again. You can see now the default is 4.4.
+
+02:53:43.378 --> 02:53:52.378
+And then if I start our studio again.
+
+02:53:52.378 --> 02:53:59.378
+Right. You can see now 4.4.2 is the version of our that I've started with.
+
+02:53:59.378 --> 02:54:04.378
+There are some different ways of switching around the version of our that's running.
+
+02:54:04.378 --> 02:54:06.378
+When you start our studio.
+
+02:54:06.378 --> 02:54:09.378
+Some of them only work on windows.
+
+02:54:09.378 --> 02:54:11.378
+Some of them are in our studio pro.
+
+02:54:11.378 --> 02:54:19.378
+If you use positron, this is much easier to deal with because you can just switch our sessions on a kind of per console basis.
+
+02:54:19.378 --> 02:54:27.378
+But if you depend on using our scripts or anything, just being able to make sure that the default is set the right way.
+
+02:54:27.378 --> 02:54:33.378
+Across all your operating systems and everything using rig is going to make that a lot easier to do.
+
+02:54:34.378 --> 02:54:43.378
+And then you can also use that to do things like if you wanted to rig install our 4.6, which I'm not going to do now because I don't need to trash my internet connection.
+
+02:54:43.378 --> 02:54:50.378
+But if I wanted to install our devil right to sort of do some preview work there investigate things on a new build.
+
+02:54:50.378 --> 02:54:57.378
+I can also do that. So having access to something like rig is going to make that a little bit easier.
+
+02:54:57.378 --> 02:55:03.378
+And then, just to kind of close the loop.
+
+02:55:03.378 --> 02:55:14.378
+You can see I'm here I've opened our 4.4 point two. I'm not in a project, I'm going to reopen the previous WCF RM two projects.
+
+02:55:14.378 --> 02:55:24.378
+And what you can see now right is I get some messaging from our end about how the version I'm using is different from the version that wrote my lock file.
+
+02:55:24.378 --> 02:55:30.378
+And now I can call as, as the instructions say are in for store.
+
+02:55:30.378 --> 02:55:38.378
+And this is going to result in me having the right our package installed for the version of our I'm using right so I've changed the version of our
+
+02:55:39.378 --> 02:55:48.378
+And then I've reinstalled the packages I need for this project. And so, when new version of our comes out right if you adopt this project based workflow.
+
+02:55:48.378 --> 02:56:00.378
+Then you don't need to be worried about like whether updating a version of our is going to wreck all the projects on your machine, you can upgrade them as you have time.
+
+02:56:00.378 --> 02:56:05.378
+That's basically all I have to say today.
+
+02:56:05.378 --> 02:56:15.378
+Thank you all for coming and for your attention, happy to answer questions in the remaining couple minutes we have here, or just let everyone go.
+
+02:56:15.378 --> 02:56:23.378
+And thank you again, Shannon.
+
+02:56:23.378 --> 02:56:34.378
+Well, while people type any last questions that they have, I do just want to take this opportunity to thank you both. Thank you so much for a fantastic presentation.
+
+02:56:34.378 --> 02:56:59.378
+It's clear that you are pros at this and did such a great job of curating your content, really helping disambiguate and demystify a lot of terminology and a lot of concepts that underlie a lot of what we do every day that I, I at least kind of knew about I've sort of poked at my our profile, but I've been afraid to poke it too hard.
+
+02:56:59.378 --> 02:57:14.378
+So thank you for making this a very friendly approachable topic for those of us who really want to take the next steps in administering our own our experiences, a little bit more and giving us the tools to make the next steps.
+
+02:57:14.378 --> 02:57:30.378
+So, I know I'm speaking for everyone who is present here today and saying, I learned a lot. I had a really great time. You're really engaging in the way you present your content and we're so, so grateful that you brought your talents here to our Medicine 2025.
+
+02:57:30.378 --> 02:57:41.378
+So thank you very much. With that, I will let you guys answer anything that popped into chat, but just want to make sure I thank you on camera and on video.
+
+02:57:44.378 --> 02:57:45.378
+Thanks for having us.

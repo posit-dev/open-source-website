@@ -1,0 +1,3625 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.960
+set up. Thanks, everybody, for joining. This is an R and Pharma workshop. We're excited
+
+00:00:04.960 --> 00:00:10.940
+to bring this workshop after the conference that we held last month. We're going to kick
+
+00:00:10.940 --> 00:00:15.840
+things off today looking at Shiny and high-performance computing with Michael Mayer, who's an engineer
+
+00:00:15.840 --> 00:00:22.160
+at Posit. With that, Michael, I'm going to go ahead and turn off my screen share, and
+
+00:00:22.160 --> 00:00:24.280
+we'll see if you can kick things off.
+
+00:00:24.280 --> 00:00:33.400
+Okay, great. I think the title is probably Turbocharge your Shiny App by offloading computations
+
+00:00:33.400 --> 00:00:45.080
+to HPC environments. I think this topic is fairly dear or close to me because I've been
+
+00:00:45.080 --> 00:00:53.160
+talking to so many people, customers, users, friends that are developing Shiny applications
+
+00:00:53.160 --> 00:01:02.639
+but at some point their computations are just getting too big and then either the interactivity
+
+00:01:02.639 --> 00:01:09.320
+of the application is suffering or sometimes the whole environment is crashing because
+
+00:01:09.320 --> 00:01:14.360
+they're using too much resources and stuff like that. I thought it would be good to highlight
+
+00:01:14.360 --> 00:01:31.120
+possibilities how we can offload computations from an HPC cluster. Also important for today,
+
+00:01:31.120 --> 00:01:40.120
+a little caveat, I'm not a Shiny developer. I'm not a data scientist either, so you probably
+
+00:01:40.199 --> 00:01:59.160
+wonder, I mean, what's this guy actually doing here? The reason why I thought I would provide
+
+00:01:59.160 --> 00:02:05.959
+this lecture today, because quite often you have data scientists that would like to use
+
+00:02:05.959 --> 00:02:12.440
+such a thing, but then they are kind of not aware of how the whole infrastructure
+
+00:02:12.440 --> 00:02:23.880
+setup works. I will today show you two basic workflows using two of my favorite R packages,
+
+00:02:23.880 --> 00:02:30.039
+how you can deal with that in a way that you can abstract all of the infrastructure setup
+
+00:02:31.000 --> 00:02:40.919
+out of things. I think we are kind of like four minutes past, so maybe let's get it officially
+
+00:02:40.919 --> 00:02:49.960
+started. Let me also just introduce myself again. My name is Michael. I'm a solutions engineer
+
+00:02:49.960 --> 00:02:59.559
+here at POSIT. I joined about four years ago. As a solution engineer, I'm working with many
+
+00:03:00.199 --> 00:03:11.960
+large pharma customers, but also customers with specific HPC needs. As mentioned before,
+
+00:03:11.960 --> 00:03:19.160
+today I will present you with two possibilities, two ways how you can offload
+
+00:03:21.559 --> 00:03:24.520
+computations to HPC cluster in a very elegant way.
+
+00:03:26.119 --> 00:03:39.479
+Good. The idea that I have here is I will first talk a little bit more how this all is going to
+
+00:03:39.479 --> 00:03:49.320
+work. There is a document that you can follow along. I will post the link in that chat box,
+
+00:03:50.039 --> 00:04:02.279
+and probably also can share the screen. I think you should be able to see my screen.
+
+00:04:02.360 --> 00:04:10.919
+The idea is I will start with introducing the problem, the approach that we will take,
+
+00:04:11.479 --> 00:04:19.160
+and then every one of you, I hope, has an existing RStudio or POSIT one or IDE locally available.
+
+00:04:19.160 --> 00:04:27.000
+Then we can play with a shiny application that is using some computation locally, and then we will go
+
+00:04:27.720 --> 00:04:34.600
+step by step by connecting that to a remote HPC cluster to see what happens.
+
+00:04:36.119 --> 00:04:40.519
+All right. I mean, now in terms of background,
+
+00:04:43.239 --> 00:04:51.239
+combining a shiny application with HPC cluster is definitely not something for the faint-hearted,
+
+00:04:51.239 --> 00:04:59.000
+because there is also lots of complexity involved. Number one is you are on a shiny server.
+
+00:04:59.000 --> 00:05:07.559
+How do you reach your HPC cluster? How can you travel the network? What we will use today is
+
+00:05:07.559 --> 00:05:16.279
+to use SSH connection, which stands for secure shell. Even if you have a shiny server,
+
+00:05:16.920 --> 00:05:22.679
+from where you can directly submit jobs to HPC clusters, such as Slurm cluster also,
+
+00:05:23.480 --> 00:05:34.600
+then you still also need a way to actually use the CLI or use some package that helps you to abstract
+
+00:05:34.600 --> 00:05:42.200
+out that whole gory CLI usage. In addition to that,
+
+00:05:42.200 --> 00:05:52.440
+we all know that R, and this workshop is mainly focusing on R today, needs lots of packages.
+
+00:05:53.239 --> 00:05:58.920
+From a shiny application perspective, you probably want to have the same R packages
+
+00:05:58.920 --> 00:06:05.079
+on your shiny server than you have on your remote HPC, while at the same time you don't want to
+
+00:06:05.559 --> 00:06:18.519
+pollute your library pass on your remote HPC with some packages that you then can override. So,
+
+00:06:18.519 --> 00:06:24.440
+any package installation on the remote HPC should be done in a way that it doesn't interfere with
+
+00:06:24.440 --> 00:06:33.880
+you running other programs on the HPC cluster. So, that having said, if I scroll down,
+
+00:06:35.239 --> 00:06:47.239
+here, I mean, I hope that everyone knows what a HPC cluster is. I mean, very high level HPC cluster
+
+00:06:47.239 --> 00:06:53.880
+for the purpose of today consists of three types of servers or nodes. The head node, where the
+
+00:06:54.519 --> 00:06:59.000
+main scheduler process runs, which I always call like the brain of the operations.
+
+00:06:59.880 --> 00:07:05.160
+Login nodes, this is where the users can log in to interact with the HPC cluster,
+
+00:07:05.160 --> 00:07:08.679
+like submitting jobs, post-processing, and so on and so forth.
+
+00:07:11.160 --> 00:07:17.880
+That's where interaction is happening. And then you have compute nodes. And compute nodes is
+
+00:07:17.880 --> 00:07:22.920
+where the actual computations are happening. And access to the compute nodes typically is only
+
+00:07:22.920 --> 00:07:33.239
+possible by submitting a job to the scheduler. And to further down, I have a little graph here
+
+00:07:34.440 --> 00:07:42.200
+that shows the two ways how I can integrate things. So, here you have a shiny server on a
+
+00:07:42.200 --> 00:07:49.079
+so-called service or login node. And login nodes, as we just discussed, allow you to submit jobs
+
+00:07:49.079 --> 00:07:55.720
+directly to the compute nodes via HPC CLI, like SLURM CLI and stuff like that. So, that is
+
+00:07:56.519 --> 00:08:08.119
+maybe the, that's what I call like the tidied equation. However, given which organization
+
+00:08:08.119 --> 00:08:17.399
+that you are with, your HPC administrators may not want the idea of adding a service node or
+
+00:08:17.399 --> 00:08:23.880
+opening the login nodes to host something like a shiny server or even POSIT Connect.
+
+00:08:23.880 --> 00:08:31.720
+So, that's why we will actually start with the tough bit here by having a shiny server outside
+
+00:08:31.720 --> 00:08:41.719
+of HPC cluster and then connecting to the SSH, to the login node via SSH. And then, via some magic,
+
+00:08:41.719 --> 00:08:49.320
+we are then automatically submitting the actual computation to the HPC nodes and the
+
+00:08:49.320 --> 00:08:57.320
+results will be transferred back to the shiny application, all very transparently.
+
+00:08:57.320 --> 00:09:04.679
+And the main two packages, those of you that haven't seen already, is clusterMq and a fairly
+
+00:09:04.679 --> 00:09:12.119
+new package called mirai. By way of a little bit of background, clusterMq is
+
+00:09:14.119 --> 00:09:23.080
+our front-end for a messaging framework called zeroMQ. And zeroMQ is a highly efficient
+
+00:09:23.080 --> 00:09:28.520
+communication framework that allows you to have low latency or high efficiency
+
+00:09:29.080 --> 00:09:37.000
+high efficiency message passing of sorts. In addition to that, you will also see a little
+
+00:09:37.000 --> 00:09:42.359
+bit of mirai tonight. For me, it's tonight because, as you probably can hear, I'm not
+
+00:09:43.799 --> 00:09:51.640
+based in the US, I'm based in Europe, specifically Switzerland. The second package is called mirai,
+
+00:09:51.640 --> 00:09:59.239
+which is kind of similar to clusterMq, that it uses also a very efficient messaging framework.
+
+00:09:59.239 --> 00:10:09.559
+However, it's using a tool called nanoMessage or NMG for short. And that is supposed to be like
+
+00:10:09.559 --> 00:10:18.919
+the successor of zeroMQ eventually. All right. So now, how can we get started?
+
+00:10:19.479 --> 00:10:28.679
+So I probably also should have mentioned to you that there is this Git repository that I created.
+
+00:10:29.479 --> 00:10:37.559
+So what you can do is, I will post the first exercise. You can post,
+
+00:10:39.559 --> 00:10:45.799
+you can go ahead and clone that GitHub repository locally. At this point in time,
+
+00:10:45.799 --> 00:10:52.679
+you don't need to worry about any HPC access, user account details, we will all get there
+
+00:10:52.679 --> 00:10:57.880
+eventually. So I'll probably stop here and give you like two or three
+
+00:11:00.200 --> 00:11:09.960
+moments, two or three minutes to clone the repository. And once you've done that,
+
+00:11:09.960 --> 00:11:18.760
+I will be using Positron, as you can see here. I already had a little bit of a head start,
+
+00:11:18.760 --> 00:11:27.799
+so I just can click on open folder and do. Yeah, I mean, that's a good idea. Good question. I mean,
+
+00:11:29.559 --> 00:11:36.039
+do we have, does everyone have the ability to run R code locally, either with RStudio or VS Code,
+
+00:11:36.039 --> 00:11:41.960
+or do we need access? Michael, I've got a few environments I can share in the chat box,
+
+00:11:43.400 --> 00:11:47.000
+and I'll put all the instructions there so people can just join. And I think if it's
+
+00:11:47.000 --> 00:11:50.919
+mostly just going to be local, they can use that for a hands-on for today's session.
+
+00:11:51.880 --> 00:12:00.039
+Okay, fair enough. Cool. Thanks a lot.
+
+00:12:06.039 --> 00:12:15.080
+Okay. The end goal of this first exercise is that you
+
+00:12:17.799 --> 00:12:25.239
+have map0 open and working directory set.
+
+00:12:26.200 --> 00:12:30.440
+Yeah. Actually, maybe I can also do that here so people can kind of follow along.
+
+00:12:30.440 --> 00:12:38.440
+So, this is the workshop environment. So, I think I can click here. I already have an account.
+
+00:12:38.919 --> 00:12:58.840
+You can register real quick, and then you will get access to my PDF
+
+00:12:58.840 --> 00:13:12.440
+You can register real quick, and then you come here to the new session, and then you
+
+00:13:12.440 --> 00:13:16.559
+have access to whatever IDE you want.
+
+00:13:16.559 --> 00:13:34.080
+Let's just use Positron here, and click on launch, and within Positron, it should come
+
+00:13:34.080 --> 00:13:39.679
+up in a moment.
+
+00:13:39.679 --> 00:13:49.239
+Ah, there we are.
+
+00:13:49.239 --> 00:14:01.840
+So eventually we should see Positron in the web browser here, and there we are.
+
+00:14:01.840 --> 00:14:25.000
+Now let's do open folder, there is the new folder here, open, new, new folder from template,
+
+00:14:25.000 --> 00:14:34.559
+yeah, so take a new folder from template, and we choose our project, we click on next,
+
+00:14:34.559 --> 00:14:52.080
+and maybe do, maybe Shiny HPC, and I, let's, ah, actually we can do it, let's do it differently,
+
+00:14:52.080 --> 00:14:59.679
+I mean we also can directly clone the repository over here, that's much easier, so just need to go
+
+00:14:59.679 --> 00:15:10.000
+back to the, to my little web browser to see the URL again, this URL, and I go back to the
+
+00:15:13.200 --> 00:15:20.239
+clone repository, copy and paste that stuff, and I clone it in that folder,
+
+00:15:20.880 --> 00:15:33.359
+yeah, why not, and now it's cloning, and it's asking me to open that whole thing in a separate folder.
+
+00:15:33.359 --> 00:15:49.359
+Okay, so just a little pulse check, I mean, do we have, do we have someone that already has
+
+00:15:50.320 --> 00:15:59.119
+managed to do that, or are you still doing things? Someone can type either no or yes in the chat box,
+
+00:16:01.520 --> 00:16:08.479
+or send a... Yeah, I'm adding, Michael, the PositCloud, if people are familiar with Posit
+
+00:16:08.479 --> 00:16:13.359
+Workbench and Positron, I added the steps to get into that, so they should be in the process of
+
+00:16:13.359 --> 00:16:20.080
+setting that up, if they're newer to this environment, or haven't used Positron, I'm
+
+00:16:20.080 --> 00:16:24.719
+going to add PositCloud, and this is going to make it work pretty easy for you, because I went
+
+00:16:24.719 --> 00:16:31.119
+ahead and cloned all the files, just give me two seconds, I'm just now pasting that into the chat
+
+00:16:31.119 --> 00:16:43.599
+box, so it should be, should be ready here, okay, cool, yeah, what, my hash means set that,
+
+00:16:43.599 --> 00:16:51.200
+that one should be fine for now, okay, so I just put the PositCloud, and so for people on today,
+
+00:16:51.200 --> 00:16:54.960
+you have basically two different ways to do the hands-on portion, you can use the Workbench
+
+00:16:54.960 --> 00:17:01.200
+instructions, if you want to try out Positron, you'll need to clone the GitHub repo directly in
+
+00:17:01.200 --> 00:17:06.800
+Positron, if you're not familiar how to clone, or you're not familiar with Positron, or you're not
+
+00:17:06.800 --> 00:17:11.920
+familiar with Posit Workbench, then I put PositCloud in, there's basically a link, you click that, you
+
+00:17:11.920 --> 00:17:16.959
+sign into PositCloud, it will take you directly to the workspace for today, and then you'll just
+
+00:17:16.959 --> 00:17:23.439
+click start, and it should launch the environment for you, and all of the files will be available
+
+00:17:23.439 --> 00:17:30.000
+inside of Positron, or excuse me, PositCloud. Okay, great, so, okay, now, now that you have,
+
+00:17:30.000 --> 00:17:37.760
+the first thing I wanted to do is to change the work directory in this app-zero here,
+
+00:17:37.760 --> 00:17:47.839
+and I've already done that stuff, and, and once, so you get wd, should report that you're in this
+
+00:17:48.640 --> 00:17:57.199
+app-zero folder, and as a starting point, so that we, you get a reproducible result,
+
+00:17:57.920 --> 00:18:08.800
+let's type renv colon colon init, let me init on the R console, and this will,
+
+00:18:09.439 --> 00:18:21.119
+and this will, no, sorry, not that, renv colon restore, sorry, I'm lost in the equation,
+
+00:18:21.680 --> 00:18:28.719
+that's what it should run, and renv restore, in your case, will, will ask you whether to activate
+
+00:18:28.719 --> 00:18:35.520
+the environment, and it will eventually install a number of R packages that you would need for,
+
+00:18:36.079 --> 00:18:44.560
+for the Shiny app that we will load, and I mean, I can make it a little bit,
+
+00:18:45.599 --> 00:18:52.880
+a little bit more exciting for me here, if I do renv, if I just delete this,
+
+00:18:53.680 --> 00:19:01.199
+renv folder, if I delete this thing from R profile, go back to the console,
+
+00:19:01.199 --> 00:19:07.599
+then I'm starting with the same thing than you, so if I now do renv restore,
+
+00:19:07.599 --> 00:19:15.439
+it asks me to activate the project, and type run, and it will immediately ask me
+
+00:19:16.160 --> 00:19:24.959
+here, whether it wants me to update those packages, I say yes, and it will install those things,
+
+00:19:31.199 --> 00:19:45.199
+very good, so this will take a moment, no, let's, it asks me to restart my session,
+
+00:19:46.479 --> 00:19:56.160
+and now I see it has some stuff to complain about, if I do renv status, then you see it's
+
+00:19:57.119 --> 00:20:06.719
+lots of, in my case, it has lots of packages that it wants to install, but hasn't installed yet,
+
+00:20:06.719 --> 00:20:13.359
+so maybe let's just do another renv restore,
+
+00:20:13.359 --> 00:20:25.839
+well, maybe we have a problem, some permission denied,
+
+00:20:25.839 --> 00:20:42.479
+good, okay, so Ivo, I mean, are you, which environment are you working on, are you on the
+
+00:20:45.040 --> 00:20:48.239
+workshop environment, or POSIX cloud, or locally?
+
+00:20:48.239 --> 00:20:51.520
+I think in the workbench environment they mentioned,
+
+00:20:52.479 --> 00:20:59.760
+oh, yeah, okay, it might be the working directory, I had to, in the cloud environment,
+
+00:20:59.760 --> 00:21:04.400
+go to the first app, and set the working directory as the application with the lock file,
+
+00:21:05.199 --> 00:21:09.359
+so I don't know if that could be it, yes,
+
+00:21:09.359 --> 00:21:14.239
+just trying, yeah, because it's,
+
+00:21:16.560 --> 00:21:25.199
+ah, because it's trying to install things into the side library, which is not, ah,
+
+00:21:26.560 --> 00:21:36.880
+if that's the, Ivo, could you maybe try first to run renv activate, and then renv restore,
+
+00:21:37.280 --> 00:21:39.680
+maybe it works that way,
+
+00:21:51.680 --> 00:21:59.040
+and once you did the activate, then restart the session, so it should load the, should
+
+00:22:00.079 --> 00:22:04.719
+set up the R environment, and once that's set up, it should have a different library
+
+00:22:04.719 --> 00:22:08.959
+parse locally to install the packages, and then the renv restore should work.
+
+00:22:09.839 --> 00:22:16.640
+For Clonium, maybe, yes, once you did the renv activate, for sure, starting the session,
+
+00:22:16.640 --> 00:22:21.680
+restarting the session is always actually needed, because it needs to set up the new library parse.
+
+00:22:23.199 --> 00:22:29.760
+Okay, so, I mean, once you master that thing, I mean, you should be,
+
+00:22:29.760 --> 00:22:36.560
+ah, in a position that if you run renv status,
+
+00:22:41.599 --> 00:22:47.839
+that should, that, like, my, on my screen should, shouldn't report any issue.
+
+00:22:48.880 --> 00:22:56.479
+I think then we finally can take a look at the app as such, and if you want to open,
+
+00:22:56.479 --> 00:23:02.719
+open the app, we can go through it, so it is a shiny application, of course,
+
+00:23:03.439 --> 00:23:12.959
+and we are using already here the ClusterMQ package to do at least some kind of parallel
+
+00:23:12.959 --> 00:23:22.000
+computing locally, and that is what we set here, because ClusterMQ supports a couple of compute
+
+00:23:22.000 --> 00:23:28.400
+backends, and we will use, for the first iteration, like, multiprocess backend, which means
+
+00:23:28.400 --> 00:23:37.680
+it just forks locally our processes, and there's no remote HPC, nothing involved, so that's all
+
+00:23:37.680 --> 00:23:50.319
+well and good, and then I do a, I use the Palmer Penguins dataset to run a GLM process in a form
+
+00:23:50.319 --> 00:23:59.839
+of a bootstrap, and finally I am, I'm plotting, plotting a histogram of the intercept and the
+
+00:23:59.839 --> 00:24:13.439
+slope of the, of the, of the model, so here is the actual compute function, where you see I'm doing
+
+00:24:13.520 --> 00:24:21.680
+bootstrapping, where I'm sampling from the actual dataset, and running the GLM, and returning back
+
+00:24:21.680 --> 00:24:33.359
+the, the output coefficients for intercept and x and 1, which is like the slope, and, and the nice
+
+00:24:33.359 --> 00:24:41.119
+thing about this ClusterMQ function, and we will not have too much time to really go very deep into
+
+00:24:41.199 --> 00:24:49.119
+the ClusterMQ package, but I mean there is good documentation that also reference in, in the
+
+00:24:49.119 --> 00:24:56.959
+quarter document that I shared earlier, the magic in the ClusterMQ happens behind a so-called Q
+
+00:24:56.959 --> 00:25:05.920
+function, so you have like a capital Q here, and this Q function is kind of the secret sauce, it
+
+00:25:05.920 --> 00:25:12.959
+will run the function, like the bootstrap trial function that you saw earlier, against these,
+
+00:25:12.959 --> 00:25:20.640
+these initial parameters, like in a range, all numbers from 1 to number of trials, it will also
+
+00:25:20.640 --> 00:25:30.239
+export some constant data, that is kind of the Palmer Penguins dataset, it will run so and so
+
+00:25:30.239 --> 00:25:36.800
+many processes, as many as I said for number of calls, you see how that works in a moment,
+
+00:25:37.599 --> 00:25:45.760
+I'm using the Palmer Penguins dataset, and instead of sending one, one function call after the others,
+
+00:25:45.760 --> 00:25:55.599
+I'm using some chunking here, to, and chunk size of one would mean all, all stuff is being sent at
+
+00:25:55.599 --> 00:26:03.760
+once, chunk size equals trials would mean that, that all, that one would be sent after the other,
+
+00:26:03.760 --> 00:26:12.479
+and here I'm just using something that, depending on the call size, would produce 10 chunks in total.
+
+00:26:13.520 --> 00:26:21.520
+Okay, and this result is then being returned, and then I'm doing a couple of, what are UI elements,
+
+00:26:21.520 --> 00:26:27.839
+like some sliders, where I can set the number of bins, and for the histogram, number of trials,
+
+00:26:27.839 --> 00:26:34.079
+and stuff like that, and I have a server function here, that calls all of that together, I mean maybe
+
+00:26:35.359 --> 00:26:40.239
+doing is probably better than talking, if I just click on one Shiny application,
+
+00:26:41.439 --> 00:26:47.199
+then you see that a Shiny application eventually will come, come up here, and,
+
+00:26:48.160 --> 00:26:56.479
+and you already can see that there's some stuff going on, so it already has ran things for 100
+
+00:26:56.479 --> 00:27:05.199
+trials, using a bin size of 100, or allowing for 100 bins, and on one call, so if I rerun the same
+
+00:27:05.199 --> 00:27:14.640
+thing with 316 trials, you see the same thing is rerun, still all locally, and the histograms are
+
+00:27:14.640 --> 00:27:21.119
+being updated, and with more data, you see the histograms are getting a little bit more rounded,
+
+00:27:21.839 --> 00:27:30.640
+or more smooth, and as I increase the number of trials here really, you see not only does the
+
+00:27:31.359 --> 00:27:40.719
+histogram get smoother, also the compute time is expanding, and depending on what,
+
+00:27:41.119 --> 00:27:48.560
+which environment you have, you already may, may be maxing out on a thousand trials, or
+
+00:27:49.119 --> 00:27:58.160
+3,000 trials, so I mean just be a little bit cognizant of the local resources, and of course,
+
+00:27:58.160 --> 00:28:06.560
+if I now change the slider to maybe only have like 10 bins, then that of course the plot is
+
+00:28:06.880 --> 00:28:16.719
+updated without recalculating, but now you also can see that the, need to get rid of this,
+
+00:28:19.760 --> 00:28:28.239
+I have to, yeah, so you see for me, the last thing finished in about eight seconds, which
+
+00:28:28.800 --> 00:28:34.880
+was quite kind of long, but now I just can select a different number of calls, and now the whole
+
+00:28:34.880 --> 00:28:43.760
+thing runs on three calls, and let's see what it has come up, and now the whole thing is, instead
+
+00:28:43.760 --> 00:28:50.479
+of eight seconds, it's one, it's now running, it has run in five seconds, so if I now go maybe to
+
+00:28:50.479 --> 00:29:03.119
+31,000, you can then see that it takes a lot longer now, it has now run in nine seconds on
+
+00:29:03.680 --> 00:29:08.239
+three CPUs, but now let's do a test again to,
+
+00:29:11.119 --> 00:29:15.439
+do it on one call, and you see immediately it's taking much longer,
+
+00:29:16.400 --> 00:29:23.040
+you see the ETA as well has been much longer, you're probably more looking at 20 something seconds,
+
+00:29:23.599 --> 00:29:32.640
+there we are, I don't know why I did that, well, but yeah, execution time is now 22 seconds, so
+
+00:29:33.439 --> 00:29:40.479
+that means by using the three calls, we managed to get the execution time down from 22 seconds
+
+00:29:40.479 --> 00:29:47.199
+to nine seconds, which I think is not too bad for now, but we will do a bit more later.
+
+00:29:47.199 --> 00:29:52.800
+When we go to the next step, and I mean, I mean, as you probably also can see,
+
+00:29:54.319 --> 00:30:01.520
+you see, by using this cluster mq package, the actual compute function is fairly,
+
+00:30:02.079 --> 00:30:06.560
+fairly simple, actually, we just need to worry about this q function,
+
+00:30:08.160 --> 00:30:14.560
+and you need to prepare the actual compute function, and you need to prepare the actual
+
+00:30:14.800 --> 00:30:22.400
+compute function, like this bootstrap trial, to make it use those, the respective parameters,
+
+00:30:23.119 --> 00:30:29.920
+and then the only other thing you need to do is to define why the options, which,
+
+00:30:30.560 --> 00:30:36.640
+which backend you want to have, and for the multiprocess backend, it's fairly,
+
+00:30:36.800 --> 00:30:43.599
+backend, it's fairly, it's fairly easy, because you just need to set that option.
+
+00:30:44.880 --> 00:30:50.560
+Later on, when we go to remote HPC, or full remote HPC, you will see that,
+
+00:30:53.520 --> 00:31:00.959
+that we not only need to set the, the scheduler or the backend, we also need to specify some
+
+00:31:01.520 --> 00:31:06.319
+thing called templates, well, but more of that later. I think I'll probably start,
+
+00:31:07.040 --> 00:31:16.160
+stop here for now, and just see how far people have gone. Yeah, and by the way, by the way, if,
+
+00:31:17.520 --> 00:31:23.520
+if you cannot use more than one, one call for now, don't worry, I mean, we will soon
+
+00:31:23.520 --> 00:31:29.359
+push that gap, and I think then, I hope that the performance improvements will be even, even
+
+00:31:29.359 --> 00:31:33.839
+bigger. Yeah, it looks like it's working, and a few people have cloned into Posit Cloud, so I
+
+00:31:33.839 --> 00:31:38.719
+think they should be in pretty good shape there. Michael, I was just going to say, in Posit Cloud,
+
+00:31:38.719 --> 00:31:46.239
+there's only four cores available, so people can go up to that amount. I know, I can, I can see
+
+00:31:46.239 --> 00:31:56.560
+you have 14 on yours, I wasn't, I wasn't sure. Yes, sure, yeah, no, I mean, I mean, the reason
+
+00:31:56.560 --> 00:32:04.239
+why I have 14 is because I'm working locally on my MacBook Pro, but I mean, don't worry if you
+
+00:32:04.239 --> 00:32:11.119
+only have four, maybe even two or one, I think, I just want you to get a general feeling of how,
+
+00:32:11.119 --> 00:32:17.680
+how this Shiny application is being set up by having like this, those three sliders,
+
+00:32:18.640 --> 00:32:25.520
+that you can configure the cluster MQ package by loading it and setting the appropriate scheduler,
+
+00:32:25.520 --> 00:32:32.160
+which for now is multiprocessing, and then depending on how much cores you have, how much
+
+00:32:32.160 --> 00:32:39.439
+trials you define, the respective computation will be done, and the histogram will be plotted.
+
+00:32:39.439 --> 00:32:48.719
+And by the way, this is also what will, what will remain, what will keep you following for the
+
+00:32:48.719 --> 00:32:54.640
+remainder of today's workshop. Yeah, because we will stick with the same example for one or two
+
+00:32:54.640 --> 00:33:03.040
+more iterations before we leave and go over to the MIRA stuff. Yeah, Michael, a quick note here,
+
+00:33:03.040 --> 00:33:10.719
+the Workbench images, I think only have two cores, and the Posit Cloud can be maxed up to four cores.
+
+00:33:10.719 --> 00:33:15.680
+I thought it was pretty interesting that Posit Cloud, I think, will default to one. If, and if
+
+00:33:15.680 --> 00:33:21.520
+you go up to the top right-hand side, there's a settings wheel, and you can change the resources
+
+00:33:21.520 --> 00:33:27.040
+or the cores to four. And when I did that, and I re-ran the Shiny app, the number of cores were
+
+00:33:27.040 --> 00:33:31.920
+automatically detected from what I had changed. So I thought that was pretty cool that the app
+
+00:33:31.920 --> 00:33:37.839
+could figure out automatically how many cores I had available for the computation. So if you,
+
+00:33:37.839 --> 00:33:45.599
+if you want to see that in Posit Cloud, you can just add more cores if needed, so. Yes, and by the way,
+
+00:33:46.000 --> 00:33:56.719
+yeah, if I, I mean, I mean, many, many people, if they do parallel computing for the first time
+
+00:33:56.719 --> 00:34:03.119
+with R, for example, they may end up eventually using the parallel package. And if they load the
+
+00:34:03.839 --> 00:34:11.199
+package parallel, which is a base R package, then they will run into lots of trouble,
+
+00:34:11.840 --> 00:34:18.560
+no matter on which system they are. The reason is that parallel is base R package and has been
+
+00:34:18.560 --> 00:34:27.520
+there right from day one of the R software. So it is not aware of modern ways of
+
+00:34:28.399 --> 00:34:35.520
+allocating CPUs and stuff like that. So parallel by default will use all the physically
+
+00:34:35.520 --> 00:34:40.800
+available cores on whatever server you have. However, as you probably know, when it comes to
+
+00:34:40.800 --> 00:34:49.280
+HPC clusters, the schedule will only allocate you two out of 20 cores on a computer maybe,
+
+00:34:50.800 --> 00:34:57.840
+or in Posit Cloud, there's also mechanisms, although the physical server behind the scenes is
+
+00:34:57.840 --> 00:35:09.760
+much larger, the parallel package will probably likely still detect all of those physically
+
+00:35:09.760 --> 00:35:14.560
+available cores while your session only has like the two or four cores that Phil was explaining to
+
+00:35:14.560 --> 00:35:22.959
+you. So if you want to avoid any problems by using too much resources, I always recommend you to use
+
+00:35:23.600 --> 00:35:33.600
+the parallelly package, which is like a package from Futureverse. But parallelly, instead of using
+
+00:35:33.600 --> 00:35:35.919
+detect cores, it's using available cores.
+
+00:35:36.153 --> 00:35:42.233
+available cores and that has support for any scheduler, for Linux cgroups and stuff
+
+00:35:42.233 --> 00:35:43.233
+like that.
+
+00:35:43.233 --> 00:35:52.952
+So whatever parallelly detects is much better than what the parallel package is doing.
+
+00:35:52.952 --> 00:35:59.712
+So that's why I'm setting for the number of cores a max value of parallelly available
+
+00:35:59.712 --> 00:36:00.712
+cores.
+
+00:36:00.712 --> 00:36:03.153
+And to Phil's point, I mean, this is precisely why...
+
+00:36:02.276 --> 00:36:09.076
+point. I mean, this is precisely why I'm seeing 14 cores because I have like 14 cores available.
+
+00:36:09.076 --> 00:36:15.716
+POSIT Cloud has two and POSIT Workshop has four available. So, I mean, just keep that in mind that
+
+00:36:17.396 --> 00:36:21.796
+figuring out available cores, always use the parallelly package.
+
+00:36:23.476 --> 00:36:29.956
+Good point, Phil. Thanks. Cool. So, I think we have like a couple of people have probably
+
+00:36:30.756 --> 00:36:40.596
+succeeded running the app as it is, right? So, I at least know that Ivo, Mahesh Kumar and
+
+00:36:42.356 --> 00:36:49.395
+Lovemore Kava have succeeded. So, that's good. And I hope there's others also that are following
+
+00:36:49.395 --> 00:37:02.035
+along. Right. So, now, I mean, we have some nice toy example. And the next step now, we want to
+
+00:37:03.156 --> 00:37:13.636
+make use of some remote HPC cluster. And if we go back to this document that I started to share
+
+00:37:13.716 --> 00:37:24.356
+with you earlier, there is we now need to run a couple of commands on the terminal.
+
+00:37:27.795 --> 00:37:35.396
+And the first step that we now do is we build an SSH connection to the
+
+00:37:35.716 --> 00:37:47.396
+HPC cluster. And maybe before we do that, you will need to first claim your user account name.
+
+00:37:48.276 --> 00:37:58.436
+And I will put another link into the chat box here. This is like an application on shinyapps.io.
+
+00:37:59.076 --> 00:38:07.716
+If you click on that app, you will it will contemplate a little bit. And after that,
+
+00:38:07.716 --> 00:38:12.915
+it will give you back a username. And this username is different for each of you.
+
+00:38:13.716 --> 00:38:18.755
+And you just need to maybe write it down for now because that will be
+
+00:38:21.315 --> 00:38:26.356
+very helpful. This will be important for what is coming next.
+
+00:38:28.675 --> 00:38:36.276
+And so, while you extract your and claim your usernames again, let me just go back to this
+
+00:38:36.276 --> 00:38:46.596
+document. So, the SSH connection to the HPC cluster. I'm sure that some of you have used
+
+00:38:46.596 --> 00:38:53.475
+SSH for various bits and pieces. So, by default, when you do when you so-called SSH into your
+
+00:38:53.475 --> 00:38:59.315
+server, it will probably ask you for your username and password. And you supply that all.
+
+00:38:59.315 --> 00:39:06.115
+And then everything is happy. And you enter the remote server. But SSH also supports
+
+00:39:08.035 --> 00:39:15.475
+key-based authentication where you create a key pair consisting of a so-called private key and
+
+00:39:15.475 --> 00:39:22.195
+a public key. And if you then store the public key on the remote server, once you trigger SSH
+
+00:39:22.195 --> 00:39:35.236
+connection, then your local private key will be... No. Your local private key will be then used
+
+00:39:35.236 --> 00:39:42.675
+to compare against remote public key. And if they match, then you will be allowed in without any
+
+00:39:42.675 --> 00:39:49.315
+password. So, it's something that you should handle with care. But to make things easy here,
+
+00:39:49.955 --> 00:39:56.675
+I have prepared this command here that you all can run. It should work on both POSIT
+
+00:39:57.955 --> 00:40:04.675
+workshop and POSIT Cloud. So, if I go back to my little thing here.
+
+00:40:06.915 --> 00:40:09.955
+And I hope that you have access to a terminal as well.
+
+00:40:10.915 --> 00:40:19.316
+So, if I go to the terminal here, I just interrupt the app for now. And I run this SSH key chain
+
+00:40:19.316 --> 00:40:32.036
+command. And this, in my case, it already has some SSH key generated. Now, I just can overwrite mine.
+
+00:40:32.036 --> 00:40:46.835
+And now, it has created something locally. So, if I look into the .ssh folder, you should see some
+
+00:40:46.835 --> 00:40:59.156
+MyHPC... What was it? Yeah. MyHPC stuff. So, it has created a MyHPC file that is
+
+00:40:59.716 --> 00:41:08.436
+kind of the private key. And MyHPC.pub is the public key. If you want to see how that looks
+
+00:41:08.436 --> 00:41:17.476
+like, you can do cut on it. So, it's got lots of gibberish, I always say.
+
+00:41:20.675 --> 00:41:21.075
+Oh, yeah.
+
+00:41:22.596 --> 00:41:26.355
+Michael, I was going to say, if you don't mind just sharing what we need to run in the terminal
+
+00:41:26.355 --> 00:41:32.996
+in the chat box, might be good. Yes. Okay, cool. I'll do that. So, this is...
+
+00:41:35.555 --> 00:41:40.115
+And then, just to make sure I'm on the same page. So, we went to the ShinyApps.io link
+
+00:41:40.115 --> 00:41:44.196
+for the user account. It assigned us a user account. And then, we're going to use that
+
+00:41:45.316 --> 00:41:53.156
+and the terminal with the SSH. Yeah. I mean, for this step, you don't need to use it yet.
+
+00:41:53.635 --> 00:41:57.795
+Okay. It'll come in next step. And I'll explain to you. But for now,
+
+00:41:57.795 --> 00:42:02.196
+maybe focusing on creating... Calling this SSH keychain command.
+
+00:42:03.635 --> 00:42:12.756
+And that should hopefully create you something. And then, if you then run this cut command as well
+
+00:42:13.876 --> 00:42:18.675
+in the terminal, then you also should see similar gibberish showing the private
+
+00:42:18.756 --> 00:42:24.436
+and the so-called public key. Okay, amazing. So, just to make sure I'm on the same page. So,
+
+00:42:24.996 --> 00:42:32.196
+run the first SSH keygen in the terminal. Let that run. And then, when that's finished,
+
+00:42:32.196 --> 00:42:37.156
+run the cat statement in the terminal. Okay. Yes, precisely. I mean, the cat command is
+
+00:42:37.156 --> 00:42:42.196
+not really needed. It's just to sort of give you a little bit of confidence that
+
+00:42:42.196 --> 00:42:45.395
+something has happened and there are some stuff there.
+
+00:42:49.316 --> 00:42:52.996
+And then, I mean, those two files, like the public private key,
+
+00:42:52.996 --> 00:42:56.916
+they will be your entry point to the remote HPC cluster in a moment.
+
+00:42:58.675 --> 00:43:01.876
+Okay. I tested those in PositCloud and it seems to be working great. So...
+
+00:43:02.515 --> 00:43:03.316
+Awesome.
+
+00:43:03.316 --> 00:43:03.955
+Yeah.
+
+00:43:03.955 --> 00:43:06.835
+Cool. So, and maybe if I do...
+
+00:43:07.795 --> 00:43:11.876
+Because I was working ahead and I tried to run the second app and I think it
+
+00:43:11.876 --> 00:43:15.156
+timed out because of permission. So, I'm guessing this is probably why.
+
+00:43:15.795 --> 00:43:22.515
+Yes. Yes. Right. Because, I mean, the next thing and then maybe...
+
+00:43:26.596 --> 00:43:32.835
+Next thing that you need to now run is this command here. This is maybe a little bit more
+
+00:43:32.835 --> 00:43:40.436
+involving. And here, you need to make sure that the username is precisely the username that you
+
+00:43:40.436 --> 00:43:47.635
+got. So, in my case, it was Posit00007. So, in your case, it should be anything slightly above 007.
+
+00:43:48.675 --> 00:43:54.436
+And if I now run this command here locally, I can show it again.
+
+00:43:55.395 --> 00:44:04.515
+I'm doing this thing and I go back to do Posit00007.
+
+00:44:09.876 --> 00:44:18.596
+Right. And now you see it's telling you what it's trying to do. Attempting to log in.
+
+00:44:19.555 --> 00:44:25.716
+One key remains to be installed. And then the password is a little bit super secure.
+
+00:44:25.716 --> 00:44:30.835
+So, secure that I put it in a document. I hope that IT security doesn't listen here.
+
+00:44:32.276 --> 00:44:35.156
+So, if you then put in this password...
+
+00:44:40.435 --> 00:44:41.635
+Ah, interesting.
+
+00:44:41.635 --> 00:44:49.796
+I cannot read. Are you also getting the same error messages, guys?
+
+00:44:51.955 --> 00:44:59.156
+Right now, for me, Michael, it's running something in the terminal. I put in my username
+
+00:45:00.356 --> 00:45:06.995
+from the Shiny apps. And I think it's running something in the terminal.
+
+00:45:07.955 --> 00:45:12.995
+Oh, but is it the same? Are you also on the SSH copy ID command?
+
+00:45:14.435 --> 00:45:22.356
+Yes. So, I just ran the username. And when I did that, let me just double check. Something
+
+00:45:22.356 --> 00:45:29.556
+popped up and says user bin SSH copy ID info source of keys to be installed.
+
+00:45:30.435 --> 00:45:37.156
+And it says my underscore HPC dot pub. And so, now it's just flashing in the terminal.
+
+00:45:38.916 --> 00:45:41.556
+Yeah. So, it looks like it's running something.
+
+00:45:42.596 --> 00:45:43.156
+Yeah.
+
+00:45:43.156 --> 00:45:46.755
+So, I wasn't sure if I was supposed to put something in here.
+
+00:45:47.796 --> 00:45:55.395
+So, then I don't know why. Are you good? Because, I mean, that was getting the time out, which
+
+00:45:55.476 --> 00:46:01.796
+you're getting source of things to be installed.
+
+00:46:03.476 --> 00:46:11.395
+All right. Let's just do the following thing. I mean, we already have close to the one hour mark.
+
+00:46:12.036 --> 00:46:20.116
+Maybe let's make let's do a five minute break and let's reconvene at a full hour. So, I will just
+
+00:46:20.995 --> 00:46:26.036
+look to see what's going on. And for those of you that need a quick bio break,
+
+00:46:26.036 --> 00:46:29.875
+we also can have a quick bio break. So, I'll be back in a moment.
+
+00:46:29.875 --> 00:46:30.916
+Hey, Michael. How are you doing?
+
+00:46:32.356 --> 00:46:40.995
+Great. I'm trying to figure out why people have problems with the command.
+
+00:46:42.276 --> 00:46:44.276
+I want to do another two, three minutes.
+
+00:46:44.995 --> 00:46:57.315
+Yeah. I mean, Mahesh, I think MyHPC is not a public host. It is like the private key
+
+00:46:57.315 --> 00:47:03.476
+that you have installed in your home directory until the slash dot SSH MyHPC.
+
+00:47:03.476 --> 00:47:10.596
+And I mean, the SSH copy ID command, it basically takes all of those parameters.
+
+00:47:10.596 --> 00:47:18.435
+Where dash I is like the specifies the private key, dash P is like the port number, 443.
+
+00:47:19.156 --> 00:47:27.635
+And username at this long thing is the kind of the host name and the username that you want to
+
+00:47:27.635 --> 00:47:33.955
+connect to. And that should be your POSET 00 something at PWB NLB, blah, blah, blah.
+
+00:47:34.835 --> 00:47:40.755
+I mean, Phil, I mean, if you run the command on your POSET workbench environment, does it work?
+
+00:47:41.635 --> 00:47:47.635
+Yeah. You want me to share my screen? I can kind of show you what's going. Let me see if I can have
+
+00:47:47.635 --> 00:47:57.716
+it up. Yeah, I do. Okay. So, this is the first app, which seems to be running fine. I had no
+
+00:47:57.716 --> 00:48:06.276
+issues with that. Here's the second app. RMF and PAC are a little bit strange in POSET Cloud,
+
+00:48:06.276 --> 00:48:11.476
+because you don't really have the idea of projects in POSET Cloud, because everything's
+
+00:48:11.476 --> 00:48:19.635
+managed and contained. So, sometimes I have to kind of work around some of the RMF features.
+
+00:48:20.276 --> 00:48:30.916
+And so, what I did is I ran, let me see if I can. So, here's the history. So, I ran
+
+00:48:32.755 --> 00:48:37.556
+in the terminal, this first function, which seemed to run just fine, if you can see that.
+
+00:48:38.916 --> 00:48:45.556
+And then I ran the second one. Let me see if I can take this one, the cat one.
+
+00:48:46.195 --> 00:48:55.955
+Yep. And then I ran this one, and I changed to my username that I got from the Shiny app.
+
+00:48:58.116 --> 00:49:05.796
+And then that's it. So, when I ran, it outprinted some of the text that's on my screen here.
+
+00:49:08.195 --> 00:49:12.515
+And it gave me this large private key, gave me a private key for this.
+
+00:49:12.835 --> 00:49:16.356
+And then, I think this is the part where I ran
+
+00:49:18.195 --> 00:49:25.556
+the new section. And it says, info to be installed, info attempting. And then I got
+
+00:49:25.556 --> 00:49:30.676
+this error, as it cannot connect host. It's actually timed out.
+
+00:49:32.676 --> 00:49:34.276
+Oh, you also get a timeout.
+
+00:49:35.156 --> 00:49:36.916
+Yeah, right here. Right here.
+
+00:49:37.716 --> 00:49:43.476
+Ah, okay. So, this is then the same for everyone.
+
+00:49:46.596 --> 00:49:48.916
+Do we have anyone that doesn't get any timeout?
+
+00:49:53.635 --> 00:49:58.116
+I thought that I saw somebody having some success in Workbench.
+
+00:49:59.075 --> 00:49:59.315
+Yeah.
+
+00:50:00.116 --> 00:50:02.036
+But maybe not, based on the recent.
+
+00:50:02.995 --> 00:50:10.116
+Yeah, that would be very bad. I mean, I will run the same stuff here.
+
+00:50:11.875 --> 00:50:15.395
+Do you want me to try to run this, the copy ID command again?
+
+00:50:16.356 --> 00:50:18.676
+No, no. I'll try it locally.
+
+00:50:20.676 --> 00:50:25.716
+I have a workshop session as well, so I can see what the problem is.
+
+00:50:26.356 --> 00:50:27.955
+Posted, zero, zero.
+
+00:50:28.515 --> 00:50:34.995
+Do I need to change the cluster mq host to my account here?
+
+00:50:35.955 --> 00:50:36.676
+Is this user?
+
+00:50:36.676 --> 00:50:38.835
+User or user and host?
+
+00:50:39.635 --> 00:50:47.875
+Yeah. Oh, but I also, I can reproduce that from Workbench, from the workshop environment,
+
+00:50:47.875 --> 00:50:54.116
+there's no connection possible. So, there must be some firewall rules that prevent
+
+00:50:54.116 --> 00:51:01.875
+that thing from happening. Do we have the same thing on our studio, on PositCloud as well?
+
+00:51:03.875 --> 00:51:09.156
+So, I'm in PositCloud here. Does this section here matter at all? Do I need to change this to my
+
+00:51:10.596 --> 00:51:12.036
+host, SSH host?
+
+00:51:13.236 --> 00:51:14.276
+No, no. I mean...
+
+00:51:15.796 --> 00:51:16.835
+That should still work?
+
+00:51:16.835 --> 00:51:23.315
+No. I mean, Phil, the point is if the SSH copy ID gives you a timeout,
+
+00:51:23.315 --> 00:51:25.556
+then it doesn't matter what you do with it.
+
+00:51:26.276 --> 00:51:31.156
+Okay. Yeah. Got it. I'll try it again, just to see what happens.
+
+00:51:32.995 --> 00:51:44.515
+Ah, right. Hang on, guys. I think I know what's going on here. The problem is pretty much me.
+
+00:51:47.875 --> 00:51:49.236
+You know that's a Taylor Swift song.
+
+00:51:50.195 --> 00:51:59.075
+Yes. Okay. No, zero. I think I know what I need to fix. So, it should be... Okay, good.
+
+00:51:59.796 --> 00:52:03.395
+Phil, can someone try again and see if it works?
+
+00:52:03.395 --> 00:52:04.916
+I think it just worked on my screen.
+
+00:52:05.635 --> 00:52:11.315
+Okay, cool. Yeah, yeah. That's great. So, Phil, I mean, now you just can press...
+
+00:52:11.315 --> 00:52:13.236
+Just type in, type yes.
+
+00:52:13.716 --> 00:52:22.356
+Yes. And now it asks you for the password that I posted in the chat earlier. I'll do that
+
+00:52:23.236 --> 00:52:29.395
+once more. Hang on one moment. And then press enter once you paste it.
+
+00:52:29.395 --> 00:52:32.835
+Yeah. I don't know if I messed it up by typing it too much. So, let me...
+
+00:52:33.476 --> 00:52:34.995
+It doesn't matter. You cannot mess it up.
+
+00:52:35.556 --> 00:52:35.955
+Oh, okay.
+
+00:52:38.995 --> 00:52:40.835
+Can I paste into it okay?
+
+00:52:40.835 --> 00:52:41.875
+Yeah, should be.
+
+00:52:42.676 --> 00:52:42.995
+Okay.
+
+00:52:43.955 --> 00:52:44.515
+There we go.
+
+00:52:44.515 --> 00:52:45.156
+Okay.
+
+00:52:45.156 --> 00:52:50.356
+Great. Successful. Yeah, Evo is also there. Great. Awesome.
+
+00:52:50.356 --> 00:52:50.835
+All right.
+
+00:52:52.356 --> 00:53:02.116
+And I mean, now what we now can do as a little test, we can run the following command.
+
+00:53:03.476 --> 00:53:10.036
+And then you're on the command line and then you will check if you actually can
+
+00:53:12.196 --> 00:53:18.196
+log in. So, if you run this SSH command, again, replacing username with your
+
+00:53:18.836 --> 00:53:25.316
+actual username, then you should be able to log into the HPC cluster.
+
+00:53:27.556 --> 00:53:31.556
+Sorry, I mean, lowercase s all the way.
+
+00:53:31.556 --> 00:53:33.316
+Oh, okay. Got it. Got it.
+
+00:53:35.235 --> 00:53:38.755
+Oh, Jennifer's also in. Great. You're making progress. You'll get there.
+
+00:53:38.995 --> 00:53:40.995
+You'll get there. Cool.
+
+00:53:44.115 --> 00:53:46.595
+Password? Is that the same password you just gave us?
+
+00:53:46.595 --> 00:53:54.036
+Yes. Sorry. And now you either can supply your same password and alternatively you also can do
+
+00:53:55.475 --> 00:54:00.755
+this thing. For those of you that want to see, want to get in without a password,
+
+00:54:00.755 --> 00:54:09.156
+I can run this command here. So, if you just press control C and we run the same thing with
+
+00:54:09.156 --> 00:54:20.036
+the dash I tilde slash SSH. Yeah. Control Evo will get you all the way immediately.
+
+00:54:21.156 --> 00:54:27.395
+Yeah. Great.
+
+00:54:30.755 --> 00:54:33.076
+Does that contain an expected string?
+
+00:54:33.076 --> 00:54:41.956
+Yes. Sorry. Control C and I think the dash I is lowercase I. I think it got gobbled up.
+
+00:54:42.676 --> 00:54:47.235
+Okay. Lowercase I. Lowercase I. Oh, right here.
+
+00:54:48.115 --> 00:54:50.276
+Yeah. Got it. This guy.
+
+00:54:52.916 --> 00:54:55.076
+All right. Something's happening.
+
+00:54:55.076 --> 00:54:59.796
+Yeah. And there you go. I mean, now just by running this SSH command
+
+00:55:02.276 --> 00:55:12.355
+and specifying our private SSH key, you are able to log onto the remote HPC cluster without any
+
+00:55:12.355 --> 00:55:15.556
+passwords. Sweet. Awesome.
+
+00:55:16.515 --> 00:55:27.156
+Okay. Cool. And I mean, this is precisely what we will, what is like a one-time setup
+
+00:55:28.436 --> 00:55:37.635
+that we had to do. I mean, going forward, whenever you use that server and you run SSH
+
+00:55:37.635 --> 00:55:44.115
+like we just did, you will be able to log into the HPC cluster without any password.
+
+00:55:44.916 --> 00:55:51.875
+So great. So maybe let me just take over the screen share a little bit and let's go back to
+
+00:55:52.595 --> 00:55:58.676
+my little process run thing. So you also see, I only ran like the SSH
+
+00:55:59.556 --> 00:56:07.556
+copy ID command. And again, as a little sanity check, I do SSH dash I for the key dash P,
+
+00:56:08.276 --> 00:56:17.156
+my username, and I'm in. Bang. And you also, if you want to be falsicious,
+
+00:56:17.156 --> 00:56:24.755
+you can change the username to whatever you want. For example, to mine. Well, I'm 100% sure that
+
+00:56:24.755 --> 00:56:31.395
+you will not get in because my private key is different to yours. Okay. Excellent. So
+
+00:56:32.196 --> 00:56:39.076
+now let's do, go to the next step. Now we already made this one application working.
+
+00:56:39.715 --> 00:56:52.036
+Now let's open the app dash one. And app dash one is pretty much the same as the
+
+00:56:53.235 --> 00:57:00.355
+app zero. The exception being is that this options thing has changed a little bit.
+
+00:57:01.715 --> 00:57:10.916
+And I will walk you through what that means here. So the backend scheduler is SSH. That means
+
+00:57:10.916 --> 00:57:17.715
+whenever cluster MQ wants to compute something, it runs some kind of SSH command. That's the
+
+00:57:17.715 --> 00:57:23.796
+first line. Second line is you need to tell them which host to use. And again,
+
+00:57:24.515 --> 00:57:30.115
+in my case, it's positive zero zero seven at something something. So in your case,
+
+00:57:30.115 --> 00:57:39.076
+you just need to make sure that the username up here is the one for you that you got assigned.
+
+00:57:40.755 --> 00:57:48.595
+Then for debugging, which we may need in a moment or not, there's output being dumped
+
+00:57:48.595 --> 00:57:57.076
+into that file. And in order to hide all of the gory stuff like we had to do before, like which
+
+00:57:57.956 --> 00:58:05.875
+SSH key, which port number and many other things. Now all of that is hidden in a so-called template
+
+00:58:05.875 --> 00:58:13.956
+such as SSH TMPL. And you also see that in the same folder, you have this SSH TMPL file.
+
+00:58:14.515 --> 00:58:21.235
+And here you see this is very, looks very daunting. And I think it's very difficult
+
+00:58:21.796 --> 00:58:30.595
+to understand. I mean, for those of you that are more technically involved, here is the P443 and
+
+00:58:30.595 --> 00:58:35.956
+the dash I option. You probably should still remember from the previous command. All the
+
+00:58:35.956 --> 00:58:41.875
+other things is kind of more gibberish. But what we are doing here, we are creating a so-called
+
+00:58:41.875 --> 00:58:49.635
+SSH tunnel to this remote host. And we are running some ClusterMQ processes on the remote
+
+00:58:51.956 --> 00:59:00.595
+server. And I mean, all of those curly brackets are just using some kind of templating with
+
+00:59:01.235 --> 00:59:05.316
+variables that are being taken care of within the ClusterMQ package.
+
+00:59:06.276 --> 00:59:13.156
+All right. Now let's do the following. Let's save the app. Let's try if we can
+
+00:59:13.796 --> 00:59:24.436
+get it running. And I think the document that I prepared has one additional step.
+
+00:59:26.755 --> 00:59:32.995
+Because I mean, what? You will probably again see the same thing than me connected to something
+
+00:59:32.995 --> 00:59:42.115
+running one calculations. However, this is what happens behind the scenes here. So now,
+
+00:59:42.115 --> 00:59:52.515
+as we mentioned previously, there has to be some kind of setup on the remote server.
+
+00:59:52.515 --> 00:59:55.076
+And maybe before I go further with the explanation,
+
+00:59:55.635 --> 01:00:05.235
+does anyone of you get any error message already? Or are we still okay? Or do you see the same thing
+
+01:00:05.235 --> 01:00:15.956
+than me? Okay. That's excellent. Cool. And I also can kind of share this window here. Here I am
+
+01:00:15.956 --> 01:00:26.916
+logged into this HPC cluster. And if I do sq here. Oh, right. And here, yeah. Here I can already see
+
+01:00:27.635 --> 01:00:36.676
+that process zero. That two users are already running stuff. And now I think that will improve
+
+01:00:37.475 --> 01:00:41.475
+very shortly. At the moment,
+
+01:00:45.796 --> 01:00:53.235
+yeah. And the HPC cluster that you're connected to is a cloud-based HPC cluster. And that means
+
+01:00:53.235 --> 01:01:02.836
+not in a cloud environment, not all of the compute nodes are up and running all the time.
+
+01:01:03.796 --> 01:01:10.276
+That means that at the moment, only one compute node is up and running.
+
+01:01:11.556 --> 01:01:16.836
+So whoever will run that user at the job 210.
+
+01:01:27.956 --> 01:01:31.475
+Do we see? It's been canceled already. Okay. Anyway.
+
+01:01:33.316 --> 01:01:40.515
+Okay. Now, what I'm trying to say here, because it's a cloud-based environment, not all the
+
+01:01:40.515 --> 01:01:44.916
+compute nodes are up and running all the time. So whenever there's a job coming, like you have
+
+01:01:45.715 --> 01:01:55.076
+like three jobs now, they're all waiting. This column in the sq output under st, which
+
+01:01:55.076 --> 01:02:04.036
+stands for job state, reads cf for everyone. And cf is short for configuring. So that means
+
+01:02:04.036 --> 01:02:15.156
+at the moment, because you guys have submitted a job of sorts, the HPC cluster is spinning up
+
+01:02:15.156 --> 01:02:21.156
+a compute node provisioning for you. And that typically takes about four minutes and a bit.
+
+01:02:21.156 --> 01:02:26.836
+Yeah, great. And we see already four users that have managed to do that stuff.
+
+01:02:27.796 --> 01:02:35.956
+And once we are beyond the four or five minute mark, then we should see things running.
+
+01:02:40.276 --> 01:02:41.475
+Let's watch that thing.
+
+01:02:41.475 --> 01:02:58.196
+I can do watch. So we should see it flipping to running at any given point.
+
+01:02:58.355 --> 01:03:04.916
+Ah, there we are. So one person already should have their job being running now.
+
+01:03:14.115 --> 01:03:20.916
+And let's wait until the others are also starting to run. And while I'm waiting,
+
+01:03:20.916 --> 01:03:29.395
+let's wait until the others are also starting to run. And while that is kind of
+
+01:03:31.156 --> 01:03:41.316
+doing things. So I mentioned before that because the HPC cluster does not have any information on
+
+01:03:41.316 --> 01:03:47.235
+what R packages you want to use. I mean, obviously we want to use the Mirai R package, right? The
+
+01:03:47.235 --> 01:03:55.076
+cluster MQ R package. But I mean, we also need to use the Shiny package, maybe the palmer penguins
+
+01:03:55.076 --> 01:04:01.156
+package and stuff like that. So in order to facilitate that, I have come up with a little
+
+01:04:01.156 --> 01:04:11.635
+bit of a glue code that is this HPC setup function that you can see in my screen share here. HPC
+
+01:04:11.635 --> 01:04:21.076
+setup will predefine the following two things. It will generate a random UUID where the whole
+
+01:04:22.676 --> 01:04:29.715
+Shiny deployment on the remote HPC can be identified. And the UUID is then being used
+
+01:04:29.715 --> 01:04:38.276
+to generate a directory on the remote HPC where all of the packages will be installed.
+
+01:04:39.235 --> 01:04:48.755
+And additionally, I'm also taking note of all of the locally installed packages on my local
+
+01:04:48.755 --> 01:04:55.156
+server, in the case on POSIT Workbench or POSIT Cloud and stuff like that. And eventually it
+
+01:04:55.156 --> 01:05:01.556
+returns with a package list, package directory, and then it eventually runs this init function
+
+01:05:02.515 --> 01:05:08.676
+that is being run remotely. And there it will then install all of those packages in the
+
+01:05:08.676 --> 01:05:21.316
+respective library paths. Okay, cool. Great. So turn if I got an error.
+
+01:05:25.076 --> 01:05:29.956
+Error in pack can, could not solve package dependence. That is something that I also
+
+01:05:31.956 --> 01:05:37.796
+figured. I got the same message in POSIT Cloud. I don't know if the person is working there, but
+
+01:05:39.635 --> 01:05:45.316
+I was able to get through it. Like I just worked beyond the error message and it seemed like things
+
+01:05:45.316 --> 01:05:50.995
+were still working okay. So I've noticed in the past, if you're in POSIT Cloud, rinf and pack
+
+01:05:51.796 --> 01:05:57.076
+seem to throw some strange errors just because POSIT Cloud doesn't really have the idea of like
+
+01:05:57.076 --> 01:06:07.395
+projects. I think that really shouldn't worry here. That doesn't worry me too much here,
+
+01:06:08.115 --> 01:06:15.395
+to be honest, but let's maybe, let me try it here on the workshop thing as well, because there is
+
+01:06:16.595 --> 01:06:20.515
+one thing that is probably a problem here.
+
+01:06:20.515 --> 01:06:28.436
+Yeah, I think you're right. I just got the same error message in the console. Yeah.
+
+01:06:29.156 --> 01:06:36.755
+Yes. I just need to reconnect to my session that seems to have stalled on me.
+
+01:06:39.556 --> 01:06:47.556
+Sorry about that problem guys, but I think this is the same issue I had when I prepared for this
+
+01:06:48.276 --> 01:06:52.916
+demo and I think we are entering a little bit of a shaky
+
+01:06:54.676 --> 01:06:59.715
+terror here, so to speak, and I'll explain to you why that is in a moment.
+
+01:07:01.235 --> 01:07:16.676
+So if I type lib here, what do we see? Okay, so we have those two folders and I check this thing
+
+01:07:18.515 --> 01:07:32.276
+here. Yes. Yes. Oh my God. Yeah. The reason, and I mean that kind of disqualifies the
+
+01:07:33.796 --> 01:07:41.956
+workshop environment here for sure, is because if you think about our installation, our installation
+
+01:07:41.956 --> 01:07:50.196
+has the main installation folder where it installs a binary library, the shared library,
+
+01:07:51.796 --> 01:07:56.436
+the R scripts and stuff like that, but it also has a so-called system library,
+
+01:07:57.076 --> 01:08:05.076
+that is this folder over here. But in the system library, by default, only base and recommended
+
+01:08:05.076 --> 01:08:16.676
+packages are being installed. While here, here we see that we have 229 packages, Robert.
+
+01:08:17.635 --> 01:08:25.956
+Unfortunately, there's only 30 base and recommended packages. So this workshop environment,
+
+01:08:25.956 --> 01:08:40.595
+and maybe it's the same with the POSI Cloud as well, has a polluted system library, which is not
+
+01:08:40.595 --> 01:08:47.956
+in accordance with anything that I would call best practice. This Puck tool that I'm using in the
+
+01:08:48.916 --> 01:08:57.956
+application code, it is trying to exactly replicate the same packages on the remote HPC
+
+01:08:57.956 --> 01:09:06.276
+than it has installed locally. Robert, because some of the package versions are incompatible
+
+01:09:06.276 --> 01:09:12.995
+with what you have in your R environment and stuff like that, Puck cannot solve dependencies
+
+01:09:12.995 --> 01:09:18.276
+if everything is inconsistent. Okay. Let me just think how we can make ends work.
+
+01:09:19.556 --> 01:09:29.156
+I mean, if it comes to diversity, we probably need to switch to me doing the whole thing.
+
+01:09:30.115 --> 01:09:33.796
+I haven't fully given up yet. What is here?
+
+01:09:44.595 --> 01:09:54.595
+By the way, can you guys also check what you have in this folder in your home directories
+
+01:09:54.595 --> 01:10:01.715
+on POSI Cloud? If there's anything, can I just ask you to remove that thing completely?
+
+01:10:15.796 --> 01:10:21.955
+So the home directory in POSI Cloud falls to the, I think it falls to the project folder.
+
+01:10:24.995 --> 01:10:33.715
+Yeah. I mean, those of you that are working on the workshop environment,
+
+01:10:33.715 --> 01:10:41.316
+they should probably run this command here. The rm-r. Okay. Got it. Perfect.
+
+01:10:45.316 --> 01:10:48.915
+Does it matter where the working directory is or do we run that in the console?
+
+01:10:49.316 --> 01:10:52.675
+Yeah. That's a good point. Let's do it in like that.
+
+01:10:56.356 --> 01:11:04.836
+That's easy, safer that way. So if you want to run it like that and see if that helps,
+
+01:11:04.836 --> 01:11:08.356
+because we need to get some kind of consistency here.
+
+01:11:10.836 --> 01:11:16.116
+So run that in the terminal, because I think my terminal is still inside the
+
+01:11:16.116 --> 01:11:26.036
+HPC user account. Yes. So if it's there, then you just need to type exit or quit.
+
+01:11:26.348 --> 01:11:30.828
+You just need to type exit or quit.
+
+01:11:30.828 --> 01:11:32.188
+Okay.
+
+01:11:32.188 --> 01:11:33.988
+I mean, you should be properly local
+
+01:11:33.988 --> 01:11:36.548
+through your Puzzle Cloud thing.
+
+01:11:36.548 --> 01:11:39.388
+We've ordered this loading.
+
+01:11:39.388 --> 01:11:44.388
+Let me try, if I can fix it on Puzzle Cloud.
+
+01:11:47.428 --> 01:11:49.428
+I think if you click on the link that I gave you,
+
+01:11:49.428 --> 01:11:50.907
+Michael, it will take you automatically
+
+01:11:50.907 --> 01:11:53.548
+into the environment that I got set up for today.
+
+01:11:55.147 --> 01:11:56.268
+Yeah, let me give you the link.
+
+01:11:56.268 --> 01:11:58.467
+It should take you right to where you need to go.
+
+01:11:58.467 --> 01:11:59.307
+Yeah.
+
+01:11:59.307 --> 01:12:00.147
+Here you go.
+
+01:12:00.147 --> 01:12:01.908
+I'm going to put it in the chat box for you.
+
+01:12:01.908 --> 01:12:02.868
+Thanks.
+
+01:12:02.868 --> 01:12:04.267
+The only problem with Puzzle Cloud though,
+
+01:12:04.267 --> 01:12:07.028
+is it doesn't, I only installed the Tidyverse
+
+01:12:07.028 --> 01:12:10.467
+and not the other packages because of the RMF.
+
+01:12:10.467 --> 01:12:13.107
+So if you just click content at the top.
+
+01:12:07.393 --> 01:12:11.473
+Tidyverse and not the other packages because of the RMF.
+
+01:12:11.473 --> 01:12:17.113
+So if you just click content at the top, yeah, and then start.
+
+01:12:17.113 --> 01:12:18.513
+Yeah, perfect.
+
+01:12:18.513 --> 01:12:19.553
+Cool, thanks.
+
+01:12:19.553 --> 01:12:25.913
+By the way, has someone cleaned up the R folder?
+
+01:12:25.913 --> 01:12:32.873
+Do you still get the same error or when you did it, Phil?
+
+01:12:32.873 --> 01:12:34.873
+I haven't had a chance to do it in Puzzle Cloud.
+
+01:12:34.873 --> 01:12:38.673
+That's going to see what the right location of the terminal.
+
+01:12:38.673 --> 01:12:44.152
+I'm back into the cloud projects location and I'm just going to wait and double check
+
+01:12:44.152 --> 01:12:46.473
+and see what you do here.
+
+01:12:46.473 --> 01:12:47.473
+So yeah.
+
+01:12:47.473 --> 01:12:49.713
+Yeah, so this is where I'm at.
+
+01:12:49.713 --> 01:12:50.713
+Okay.
+
+01:12:50.713 --> 01:12:55.113
+There should be also a home folder here.
+
+01:12:55.113 --> 01:12:56.113
+Ah.
+
+01:12:56.113 --> 01:12:57.113
+Yeah.
+
+01:12:57.113 --> 01:12:58.113
+Okay.
+
+01:12:58.113 --> 01:13:06.953
+So I think we then need to go to Cloud Lib and remove that thing here.
+
+01:13:06.953 --> 01:13:10.593
+Well, let's just look what's there.
+
+01:13:10.593 --> 01:13:11.592
+Yeah.
+
+01:13:11.592 --> 01:13:14.473
+There's plenty of crap.
+
+01:13:14.473 --> 01:13:18.032
+We don't need that.
+
+01:13:18.032 --> 01:13:19.793
+It's just convoluting things.
+
+01:13:19.793 --> 01:13:20.793
+Okay.
+
+01:13:20.793 --> 01:13:37.352
+And if you now do console session restart R, then it's still pointing to that two things.
+
+01:13:37.352 --> 01:13:42.912
+But now let's look into this folder.
+
+01:13:42.912 --> 01:13:45.393
+I mean, this is kind of what you see here.
+
+01:13:45.393 --> 01:13:55.672
+This is a system library with just less than 30 packages, exactly 30 packages that I would
+
+01:13:55.672 --> 01:13:56.672
+expect.
+
+01:13:56.672 --> 01:14:04.912
+Well, but then in the Cloud Lib thing, you now just should have nothing left.
+
+01:14:04.912 --> 01:14:11.912
+Do you mind, Michael, either freezing on this page for a second or giving me or pasting
+
+01:14:11.912 --> 01:14:14.032
+what we need to run in the terminal?
+
+01:14:14.032 --> 01:14:15.032
+Yes.
+
+01:14:15.672 --> 01:14:16.672
+The chat box might help a lot.
+
+01:14:16.672 --> 01:14:17.672
+Yeah.
+
+01:14:17.672 --> 01:14:22.672
+So, I mean, what we need to do is Cloud Lib.
+
+01:14:22.672 --> 01:14:23.672
+Yes.
+
+01:14:23.672 --> 01:14:27.273
+Oh, I mean, yeah, we are getting further.
+
+01:14:27.273 --> 01:14:28.273
+That's great.
+
+01:14:28.273 --> 01:14:36.273
+So, I mean, what we need to run is this thing here.
+
+01:14:36.273 --> 01:14:37.273
+Okay.
+
+01:14:37.273 --> 01:14:41.072
+So the only other thing I think I need to do is I got to change.
+
+01:14:41.113 --> 01:14:45.432
+So my user directory falls to the projects folder.
+
+01:14:45.432 --> 01:14:46.713
+So I just need to change it.
+
+01:14:46.713 --> 01:14:50.312
+Did you change it to the LibPath folder in the terminal?
+
+01:14:50.312 --> 01:14:51.312
+Yeah.
+
+01:14:51.312 --> 01:14:54.312
+Well, let me just.
+
+01:14:54.312 --> 01:14:55.312
+Okay.
+
+01:14:55.312 --> 01:14:56.913
+No, no, no.
+
+01:14:56.913 --> 01:15:00.633
+I mean, I didn't change any LibPath here.
+
+01:15:00.633 --> 01:15:04.393
+I just ran the Rm command as I specified.
+
+01:15:04.393 --> 01:15:05.393
+Okay.
+
+01:15:05.393 --> 01:15:08.393
+So now let's just open the file.
+
+01:15:08.393 --> 01:15:12.393
+We are at app-1, right?
+
+01:15:12.393 --> 01:15:13.393
+App.R.
+
+01:15:13.393 --> 01:15:18.393
+Now if I do go here, set WD.
+
+01:15:18.393 --> 01:15:19.393
+App-1.
+
+01:15:19.393 --> 01:15:20.393
+Get WD.
+
+01:15:20.393 --> 01:15:21.393
+Right.
+
+01:15:21.393 --> 01:15:22.393
+That's good.
+
+01:15:22.393 --> 01:15:23.393
+Session.
+
+01:15:23.393 --> 01:15:24.393
+Restart.
+
+01:15:24.393 --> 01:15:25.393
+R.
+
+01:15:25.393 --> 01:15:26.393
+Now let's maybe do run.
+
+01:15:26.393 --> 01:15:27.393
+Restore.
+
+01:15:27.393 --> 01:15:28.393
+Okay.
+
+01:15:29.393 --> 01:15:43.393
+I think that's maybe I need to reinstall Ben if we are quick.
+
+01:15:43.393 --> 01:15:46.393
+That's a single dependency thing, so that should be okay.
+
+01:15:46.393 --> 01:15:48.393
+We do run, restore.
+
+01:15:48.393 --> 01:15:49.393
+Yes.
+
+01:15:49.393 --> 01:15:50.393
+Activate.
+
+01:15:50.393 --> 01:15:57.393
+I've just been hitting yes on that.
+
+01:15:57.393 --> 01:15:58.393
+I don't know.
+
+01:15:58.393 --> 01:15:59.393
+Yeah.
+
+01:15:59.393 --> 01:16:03.393
+Do we need to restore?
+
+01:16:03.393 --> 01:16:04.393
+Yes.
+
+01:16:04.393 --> 01:16:14.393
+I mean, after we removed it, I would recommend that we restore in the app-1 folder as well
+
+01:16:14.393 --> 01:16:17.393
+because it's a separate R environment.
+
+01:16:17.393 --> 01:16:18.393
+Yeah.
+
+01:16:18.393 --> 01:16:21.393
+So it's downloading things here.
+
+01:16:22.393 --> 01:16:30.393
+And when this completes, do you mind just letting me see your terminal?
+
+01:16:30.393 --> 01:16:31.393
+Yeah.
+
+01:16:31.393 --> 01:16:33.393
+I'm just going to take a peek.
+
+01:16:33.393 --> 01:16:38.393
+If you don't mind expanding that, I'm going to look at that real quick.
+
+01:16:38.393 --> 01:16:42.393
+I don't know what I did.
+
+01:16:42.393 --> 01:16:43.393
+Oh, there we are.
+
+01:16:43.393 --> 01:16:46.393
+Yeah, I see it.
+
+01:16:46.393 --> 01:16:49.393
+Well, I cannot type anything at the moment.
+
+01:16:49.393 --> 01:16:50.393
+Oh, maybe it is.
+
+01:16:50.393 --> 01:16:52.393
+Ah, okay.
+
+01:16:52.393 --> 01:16:54.393
+I can maybe try.
+
+01:16:54.393 --> 01:17:11.393
+New terminal.
+
+01:17:11.393 --> 01:17:15.393
+Yeah, so I think maybe we just need to wait.
+
+01:17:15.393 --> 01:17:16.393
+Wait.
+
+01:17:16.393 --> 01:17:17.393
+Ah, okay.
+
+01:17:17.393 --> 01:17:27.393
+That can be a bit painful now because, I mean, that means we are actually running.
+
+01:17:27.393 --> 01:17:40.393
+This beautiful setup is using binary packages.
+
+01:17:40.393 --> 01:17:41.393
+Okay.
+
+01:17:42.393 --> 01:17:56.393
+Then I can try to interrupt it and we can.
+
+01:17:56.393 --> 01:17:57.393
+There we go.
+
+01:17:57.393 --> 01:18:00.393
+Now I can type something.
+
+01:18:00.393 --> 01:18:12.393
+Oh, it's very slow.
+
+01:18:12.393 --> 01:18:25.393
+Is it also slow for you guys?
+
+01:18:25.393 --> 01:18:29.393
+Running lots of GCC stuff now.
+
+01:18:29.393 --> 01:18:31.393
+Maybe a session.
+
+01:18:31.393 --> 01:18:34.393
+Terminator.
+
+01:18:34.393 --> 01:18:39.393
+I will terminate it real quick and restart because that's way too painful.
+
+01:18:39.393 --> 01:18:53.393
+So we already get WD.
+
+01:18:53.393 --> 01:18:55.393
+Okay, that's great.
+
+01:18:56.393 --> 01:19:02.393
+And now let's do options, repose.
+
+01:19:02.393 --> 01:19:23.393
+Okay, now that is okay.
+
+01:19:23.393 --> 01:19:30.393
+Just check one thing.
+
+01:19:30.393 --> 01:19:33.393
+I don't know why it doesn't use.
+
+01:19:33.393 --> 01:19:39.393
+It should use the right thing for.
+
+01:19:39.393 --> 01:19:43.393
+Ah.
+
+01:19:43.393 --> 01:19:47.393
+Yeah.
+
+01:19:47.393 --> 01:19:52.393
+Okay, let's go back to that stuff.
+
+01:19:52.393 --> 01:19:57.393
+I think we just need to leave that running.
+
+01:19:57.393 --> 01:20:14.393
+There's no way around it.
+
+01:20:14.393 --> 01:20:30.393
+Unfortunately, that may take a while, but I think maybe in the interest of time, I probably can switch to my Positron instance and I can walk you through what's happening next.
+
+01:20:30.393 --> 01:20:33.393
+If that's okay with everyone.
+
+01:20:33.393 --> 01:20:40.393
+And I mean, you can also do the run restore and hopefully it will eventually come back.
+
+01:20:40.393 --> 01:20:44.393
+So again, let me just.
+
+01:20:44.393 --> 01:20:48.393
+This is my app-run locally.
+
+01:20:48.393 --> 01:20:56.393
+I run the app again.
+
+01:20:56.393 --> 01:21:03.393
+Right. And you see, it works for me now.
+
+01:21:03.393 --> 01:21:15.393
+And I mean, what has already happened behind the scenes is the following.
+
+01:21:15.393 --> 01:21:21.393
+Does anyone know how I can get rid of this black?
+
+01:21:21.393 --> 01:21:28.393
+Anyway, we are here. So, I mean, we have found some error here.
+
+01:21:28.393 --> 01:21:34.393
+Okay, so we have an error here. No package called palmer penguins.
+
+01:21:34.393 --> 01:21:40.393
+So where does this appear?
+
+01:21:40.393 --> 01:21:44.393
+Now let's see.
+
+01:21:44.393 --> 01:21:56.393
+What is happening? App.r line 164.
+
+01:21:56.393 --> 01:22:03.393
+Ah, that's in the queue function.
+
+01:22:03.393 --> 01:22:08.393
+Okay, I think that's also some of the errors that we saw earlier, right?
+
+01:22:08.393 --> 01:22:12.393
+That is.
+
+01:22:12.393 --> 01:22:16.393
+Ah.
+
+01:22:16.393 --> 01:22:22.393
+Right. And this is now a little bit.
+
+01:22:22.393 --> 01:22:27.393
+I think you also see something like the.
+
+01:22:27.393 --> 01:22:31.393
+You also see the libpath set like that.
+
+01:22:31.393 --> 01:22:38.393
+Correct.
+
+01:22:38.393 --> 01:22:46.393
+I mean, if you do see that, now let's just use the SSH command.
+
+01:22:46.393 --> 01:22:51.393
+Let's log on to the cluster.
+
+01:22:51.393 --> 01:23:00.393
+And I mean, those of you that came to the palmer penguins error,
+
+01:23:00.393 --> 01:23:06.393
+if you log on to the HPC cluster using this SSH command as before,
+
+01:23:06.393 --> 01:23:10.393
+with the dash I and dash P option,
+
+01:23:10.393 --> 01:23:16.393
+you will find that there is a .shiny folder.
+
+01:23:16.393 --> 01:23:24.393
+And the .shiny folder is what we need to replace this libpath statement here with.
+
+01:23:24.393 --> 01:23:31.393
+So instead of the cluster mqlibs, we set it to this thing.
+
+01:23:31.393 --> 01:23:36.393
+In your case, it will be shiny dash some UUID thing.
+
+01:23:36.393 --> 01:23:48.393
+And if I do it like that, so you just have to copy and paste that into the chat box here.
+
+01:23:48.393 --> 01:23:54.393
+This is the piece of code and .shiny something should be different from UUID.
+
+01:23:54.393 --> 01:24:02.393
+And then if I rerun the shiny app, it should be more likely to have it working.
+
+01:24:03.393 --> 01:24:06.393
+So that's...
+
+01:24:06.393 --> 01:24:08.393
+There we are.
+
+01:24:08.393 --> 01:24:10.393
+Okay, so...
+
+01:24:14.393 --> 01:24:16.393
+Yeah, that's much better now.
+
+01:24:16.393 --> 01:24:17.393
+Great.
+
+01:24:17.393 --> 01:24:22.393
+I mean, as you can see, once I change it to the respective libpath,
+
+01:24:22.393 --> 01:24:27.393
+I think there's a missing bit in the code that I will fix after the workshop,
+
+01:24:27.393 --> 01:24:30.393
+and you can try it in your own leisure.
+
+01:24:30.393 --> 01:24:35.393
+So now we have the working shiny app again.
+
+01:24:35.393 --> 01:24:40.393
+You see the look and feel is still the same.
+
+01:24:40.393 --> 01:24:50.393
+And maybe I even can put it in the full screen mode.
+
+01:24:50.393 --> 01:24:56.393
+And you see there's tooltips on the bottom that is currently running some stuff.
+
+01:24:56.393 --> 01:25:00.393
+And I hope that will come back.
+
+01:25:04.393 --> 01:25:06.393
+Yeah, there we are.
+
+01:25:06.393 --> 01:25:09.393
+Okay, and I think now we can do precisely the same stuff.
+
+01:25:09.393 --> 01:25:19.393
+We can do a thousand trials and immediately it reruns the computation.
+
+01:25:19.393 --> 01:25:24.393
+And for those of you that are logged onto the HPC cluster,
+
+01:25:24.393 --> 01:25:28.393
+you can see that there's now some jobs running,
+
+01:25:28.393 --> 01:25:33.393
+and I see that others are also resubmitting, so that's good to see.
+
+01:25:33.393 --> 01:25:39.393
+And my process is already running here and has just finished,
+
+01:25:39.393 --> 01:25:43.393
+and you see I get a new histogram.
+
+01:25:43.393 --> 01:25:49.393
+And now I think we can beef up the number of calls to, let's say, like three.
+
+01:25:49.393 --> 01:25:57.393
+And if I now go back to my little window, then you see I'm suddenly running three jobs.
+
+01:25:57.393 --> 01:26:04.393
+And that means that I'm using three calls instead of one.
+
+01:26:04.393 --> 01:26:11.393
+If I go back to the process run,
+
+01:26:11.393 --> 01:26:18.393
+if I, if you, let's just rerun it again here.
+
+01:26:18.393 --> 01:26:29.393
+On three calls, and you can also watch the progress bar in a moment.
+
+01:26:29.393 --> 01:26:34.393
+Although now I may also be stuck on the, yeah.
+
+01:26:34.393 --> 01:26:45.393
+You see the progress bar with three or four calls is fairly fast after the initial setup phase.
+
+01:26:45.393 --> 01:26:52.393
+However, and it has run the computation in 20 seconds.
+
+01:26:52.393 --> 01:27:00.393
+However, when I reduce the whole thing to one call in a moment, so again, 21 seconds.
+
+01:27:00.393 --> 01:27:09.393
+Let's rerun the same thing on one call.
+
+01:27:09.393 --> 01:27:13.393
+Then it should be somehow different.
+
+01:27:13.393 --> 01:27:22.393
+Oh, but we still run with 100 trials, so I don't expect it to be too different for now.
+
+01:27:22.393 --> 01:27:25.393
+Because we need to increase the number of trials to add more work,
+
+01:27:25.393 --> 01:27:35.393
+because one of the disadvantages of that code, of that approach is,
+
+01:27:35.393 --> 01:27:46.393
+or in general, the more computation you have, the better it also is to actually distribute it over many calls.
+
+01:27:46.393 --> 01:27:48.393
+So, yeah.
+
+01:27:48.393 --> 01:28:00.393
+Maybe now I'm also, now everyone is stuck on this spinning up thing.
+
+01:28:00.393 --> 01:28:04.393
+By the way, I haven't checked in the chat box.
+
+01:28:04.393 --> 01:28:17.393
+Maybe let's, does anyone have a working Shiny app, app-1 running?
+
+01:28:17.393 --> 01:28:22.393
+Or are you still working? Or do we get some error messages?
+
+01:28:22.393 --> 01:28:33.393
+I can't see anything from anyone, but I can also check a little bit on what you're doing.
+
+01:28:33.393 --> 01:28:37.393
+Because we should see.
+
+01:28:37.393 --> 01:28:45.393
+And, Zulu dash L, Z, D, O, L, S, plus Z.
+
+01:28:45.393 --> 01:28:54.393
+Because, I mean, as we discussed earlier, there should be some CMQ SSH models.
+
+01:28:54.393 --> 01:28:58.393
+Yeah, so a couple of you have that already.
+
+01:28:58.393 --> 01:29:03.393
+So, we can take a look what POSIT-009 is doing.
+
+01:29:13.393 --> 01:29:18.393
+There we are. I mean, that seems to have run.
+
+01:29:18.393 --> 01:29:21.393
+That seems to run okay.
+
+01:29:21.393 --> 01:29:24.393
+It's just submitted and waiting.
+
+01:29:25.393 --> 01:29:28.393
+Let's go.
+
+01:29:28.393 --> 01:29:32.393
+Here we have an error message.
+
+01:29:32.393 --> 01:29:37.393
+Argument successes missing.
+
+01:29:40.393 --> 01:29:45.393
+All the others seem to be.
+
+01:29:45.393 --> 01:29:50.393
+There's also argument successes missing.
+
+01:29:50.393 --> 01:29:53.393
+Why is that?
+
+01:29:53.393 --> 01:29:56.393
+But, I mean, we also can check one thing.
+
+01:29:56.393 --> 01:30:01.393
+So, if I go to POSIT-009 user.
+
+01:30:09.393 --> 01:30:16.393
+Because, I mean, one of the things that we haven't done yet is,
+
+01:30:16.393 --> 01:30:25.393
+here you see the SLURM template that uses R to do stuff.
+
+01:30:25.393 --> 01:30:31.393
+In order to start running, to execute this cluster MQ package,
+
+01:30:31.393 --> 01:30:34.393
+it needs to be available somewhere.
+
+01:30:34.393 --> 01:30:39.393
+So, what I will do here, and you also can follow along,
+
+01:30:39.393 --> 01:30:45.393
+if you use the SSH command once more and then run.
+
+01:30:45.393 --> 01:30:50.393
+So, I'm logged in as user POSIT-009.
+
+01:30:50.393 --> 01:30:53.393
+So, you don't need to do that stuff.
+
+01:30:53.393 --> 01:31:00.393
+But, if you then type capital R, then run install.packages.
+
+01:31:00.393 --> 01:31:02.393
+Cluster MQ.
+
+01:31:02.393 --> 01:31:12.393
+Because, there's also the problem that without this package pre-installed
+
+01:31:12.393 --> 01:31:16.393
+somewhere on your user account, the whole thing will not work.
+
+01:31:16.393 --> 01:31:28.393
+So, if you can follow that stuff and go to this SSH session, like here.
+
+01:31:29.393 --> 01:31:31.393
+Oops.
+
+01:31:38.393 --> 01:31:43.393
+And, I will interrupt my SSH for now.
+
+01:31:43.393 --> 01:31:53.393
+So, if you do run this thing here again, like that.
+
+01:31:53.393 --> 01:31:59.393
+And, of course, with your POSIT user, and I run the same thing,
+
+01:31:59.393 --> 01:32:07.393
+then I type R, install.packages, cluster MQ.
+
+01:32:07.393 --> 01:32:13.393
+And, you see it asks me that I want to have a personal library.
+
+01:32:13.393 --> 01:32:17.393
+I say yes, yes.
+
+01:32:17.393 --> 01:32:22.393
+Then, I'm installing that cluster MQ stuff in there.
+
+01:32:23.393 --> 01:32:27.393
+Try that and see if that works better.
+
+01:32:43.393 --> 01:32:50.393
+Any takers or anyone willing to put something in the chat?
+
+01:32:50.393 --> 01:32:53.393
+I mean, we also can get a screen share going with some of you,
+
+01:32:53.393 --> 01:32:55.393
+so we can see what's going on.
+
+01:32:55.393 --> 01:32:59.393
+Ah, for Evo, it works.
+
+01:32:59.393 --> 01:33:00.393
+That's excellent.
+
+01:33:00.393 --> 01:33:01.393
+Cool.
+
+01:33:01.393 --> 01:33:05.393
+I will stop sharing real quick.
+
+01:33:05.393 --> 01:33:08.393
+And, ping Phil.
+
+01:33:08.393 --> 01:33:11.393
+Okay, so we have Evo working.
+
+01:33:11.393 --> 01:33:16.393
+And then, Mahesh Kumar, you updated libpath.
+
+01:33:17.393 --> 01:33:22.393
+If you rerun stuff, does it work now or still a problem?
+
+01:33:22.393 --> 01:33:25.393
+And, Jennifer, you also are still getting the error.
+
+01:33:25.393 --> 01:33:28.393
+So, I'm trying to.
+
+01:33:28.393 --> 01:33:38.393
+I mean, maybe if either Jennifer or Mahesh Kumar wants to try,
+
+01:33:38.393 --> 01:33:42.393
+if you can share your screen, maybe we can take a look together.
+
+01:33:42.393 --> 01:33:45.393
+I mean, I cannot guarantee.
+
+01:33:45.393 --> 01:33:46.393
+That's awesome.
+
+01:33:46.393 --> 01:33:48.393
+So, we can see your screen.
+
+01:33:48.393 --> 01:33:49.393
+Great.
+
+01:33:49.393 --> 01:33:55.393
+Now, let me make it.
+
+01:33:55.393 --> 01:34:00.393
+Okay, so you're on Pulsar Cloud.
+
+01:34:00.393 --> 01:34:03.393
+You're on the, yes, yeah.
+
+01:34:03.393 --> 01:34:05.393
+So, Renfrew Store, yeah.
+
+01:34:05.393 --> 01:34:07.393
+Okay, that's great.
+
+01:34:07.393 --> 01:34:09.393
+And, what else?
+
+01:34:09.393 --> 01:34:11.393
+You have updated that stuff.
+
+01:34:11.393 --> 01:34:12.393
+That's great.
+
+01:34:12.393 --> 01:34:16.393
+And now, can you run the app as it is now?
+
+01:34:16.393 --> 01:34:17.393
+Yeah, you have that folder.
+
+01:34:17.393 --> 01:34:19.393
+That's great.
+
+01:34:19.393 --> 01:34:24.393
+Now, just run the app and see what's happening.
+
+01:34:24.393 --> 01:34:33.393
+That's wonderful.
+
+01:34:33.393 --> 01:34:36.393
+Okay, so the first thing is working.
+
+01:34:36.393 --> 01:34:37.393
+That's great.
+
+01:34:37.393 --> 01:34:39.393
+It's now starting the app.
+
+01:34:39.393 --> 01:34:41.393
+Bam.
+
+01:34:41.393 --> 01:34:49.393
+Cool.
+
+01:34:49.393 --> 01:34:54.393
+Yeah, that seems to.
+
+01:34:54.393 --> 01:34:56.393
+Ah, okay, now we have an error.
+
+01:34:56.393 --> 01:35:01.393
+What?
+
+01:35:01.393 --> 01:35:04.393
+Oh, there's no package path.
+
+01:35:04.393 --> 01:35:05.393
+Okay.
+
+01:35:05.393 --> 01:35:06.393
+Okay.
+
+01:35:06.393 --> 01:35:22.393
+Now, can you show me the lib path thing real quick?
+
+01:35:22.393 --> 01:35:33.393
+Yeah, and this is.
+
+01:35:33.393 --> 01:35:35.393
+I'm sure that this is the same here.
+
+01:35:35.393 --> 01:35:36.393
+Ah, okay.
+
+01:35:36.393 --> 01:35:42.393
+Can you change into the .shiny folder, please?
+
+01:35:42.393 --> 01:35:51.393
+CD .shiny and then press the tab key on the HPC here.
+
+01:35:51.393 --> 01:35:52.393
+Great.
+
+01:35:52.393 --> 01:35:56.393
+Do LS.
+
+01:35:56.393 --> 01:35:59.393
+Ah.
+
+01:35:59.393 --> 01:36:02.393
+Okay, I think that we need to.
+
+01:36:02.393 --> 01:36:04.393
+I mean, what happened here?
+
+01:36:04.393 --> 01:36:10.393
+I think you previously probably got the error message,
+
+01:36:10.393 --> 01:36:14.393
+cannot resolve packages or version conflict and stuff like that.
+
+01:36:14.393 --> 01:36:17.393
+So it hasn't installed all of the needed packages.
+
+01:36:17.393 --> 01:36:23.393
+So what can we do to make it work?
+
+01:36:23.393 --> 01:36:26.393
+I mean, there's two possibilities.
+
+01:36:26.393 --> 01:36:29.393
+I mean, either you remove that .shiny folder,
+
+01:36:29.393 --> 01:36:31.393
+you restart the .shiny application,
+
+01:36:31.393 --> 01:36:34.393
+and we'll try to reinstall the packages.
+
+01:36:34.393 --> 01:36:35.393
+Alternatively,
+
+01:36:35.393 --> 01:36:40.393
+we also can manually install the Palmer Penguins package real quick,
+
+01:36:40.393 --> 01:36:45.393
+as you prefer.
+
+01:36:45.393 --> 01:36:49.393
+Michael, I'm getting pretty close,
+
+01:36:49.393 --> 01:36:56.393
+but I think I'm getting the same issue that when my app two runs,
+
+01:36:56.393 --> 01:36:58.393
+it sets everything up.
+
+01:36:58.393 --> 01:37:02.393
+It looks like it's getting the remote environment and installing the packages,
+
+01:37:02.393 --> 01:37:05.393
+and then it fails on the Penguins package.
+
+01:37:05.393 --> 01:37:07.393
+Yes.
+
+01:37:07.393 --> 01:37:08.393
+I think so.
+
+01:37:08.393 --> 01:37:09.393
+Mahesh and Phil,
+
+01:37:09.393 --> 01:37:14.393
+I think the reason why this doesn't work that way is because the technical
+
+01:37:14.393 --> 01:37:17.393
+design here is.
+
+01:37:17.393 --> 01:37:18.393
+I mean, first of all,
+
+01:37:18.393 --> 01:37:22.393
+you need to install that package remotely on the HPC cluster.
+
+01:37:22.393 --> 01:37:23.393
+Okay.
+
+01:37:24.393 --> 01:37:28.393
+And you need to install it into the same .shiny folder,
+
+01:37:28.393 --> 01:37:34.393
+where the bioc manager and the pack is installed.
+
+01:37:34.393 --> 01:37:38.393
+Yeah.
+
+01:37:38.393 --> 01:37:40.393
+No, Mahesh, go back.
+
+01:37:40.393 --> 01:37:44.393
+Go to the other terminal where you're locked under HPC.
+
+01:37:44.393 --> 01:37:49.393
+And here you need to manually.
+
+01:37:49.393 --> 01:37:55.393
+Here you manually need to type capital R to launch our session.
+
+01:37:55.393 --> 01:37:57.393
+Enter.
+
+01:37:57.393 --> 01:38:01.393
+And now you can set the .lib path,
+
+01:38:01.393 --> 01:38:04.393
+like you would set in the code.
+
+01:38:04.393 --> 01:38:05.393
+Yeah.
+
+01:38:05.393 --> 01:38:07.393
+Enter.
+
+01:38:07.393 --> 01:38:19.393
+And now you run install.packages.PrimalPenguins.
+
+01:38:19.393 --> 01:38:21.393
+Great.
+
+01:38:21.393 --> 01:38:24.393
+Michael, do you mind putting in the chat box the what you just,
+
+01:38:24.393 --> 01:38:28.393
+the lib paths piece, I think is the bit that I'm stuck on.
+
+01:38:28.393 --> 01:38:29.393
+Yeah.
+
+01:38:29.393 --> 01:38:30.393
+Yeah.
+
+01:38:30.393 --> 01:38:31.393
+Okay.
+
+01:38:31.393 --> 01:38:35.393
+The lib path is.
+
+01:38:35.393 --> 01:38:36.393
+Oh, great.
+
+01:38:36.393 --> 01:38:38.393
+A lot more.
+
+01:38:38.393 --> 01:38:39.393
+Also got it working.
+
+01:38:39.393 --> 01:38:40.393
+It's good.
+
+01:38:40.393 --> 01:38:46.393
+So the .lib path is this thing.
+
+01:38:46.393 --> 01:38:50.393
+And .shiny something.
+
+01:38:50.393 --> 01:38:54.393
+So we need to run this stuff on the HPC cluster in our session.
+
+01:38:54.393 --> 01:38:56.393
+And whatever you need to,
+
+01:38:56.393 --> 01:39:00.393
+then the .shiny folder is different for you.
+
+01:39:00.393 --> 01:39:01.393
+Yeah.
+
+01:39:01.393 --> 01:39:05.393
+So in the terminal, I'm in the cluster.
+
+01:39:05.393 --> 01:39:06.393
+Yes.
+
+01:39:06.393 --> 01:39:13.393
+And so if I run the lib path, shiny dot dot dot,
+
+01:39:13.393 --> 01:39:16.393
+is that the right thing for me to execute on the.
+
+01:39:16.393 --> 01:39:17.393
+Yes.
+
+01:39:17.393 --> 01:39:18.393
+Okay.
+
+01:39:18.393 --> 01:39:19.393
+Okay.
+
+01:39:19.393 --> 01:39:24.393
+Mahesh, I think to leave your, okay.
+
+01:39:24.393 --> 01:39:25.393
+To leave that session,
+
+01:39:25.393 --> 01:39:33.393
+just press type Q and run brackets open and close.
+
+01:39:33.393 --> 01:39:38.393
+If you want to leave the, yeah.
+
+01:39:38.393 --> 01:39:41.393
+No, Q and then run brackets.
+
+01:39:41.393 --> 01:39:45.393
+Q, open brackets, close brackets, something like that.
+
+01:39:45.393 --> 01:39:47.393
+Yeah, I know.
+
+01:39:47.393 --> 01:39:48.393
+Wait.
+
+01:39:48.393 --> 01:39:49.393
+No.
+
+01:39:49.393 --> 01:39:53.393
+Can you type LS again, Mahesh?
+
+01:39:53.393 --> 01:39:54.393
+LS.
+
+01:39:54.393 --> 01:39:56.393
+Okay, now you have to panel penguin stuff.
+
+01:39:56.393 --> 01:40:10.393
+And now go back and restart the shiny app again.
+
+01:40:10.393 --> 01:40:14.393
+Yeah, that's okay.
+
+01:40:14.393 --> 01:40:18.393
+Mahesh, I mean, the thing that is maybe difficult to understand
+
+01:40:18.393 --> 01:40:20.393
+if you do that for the first time is
+
+01:40:20.393 --> 01:40:25.393
+that you now have like the R packages all set up
+
+01:40:25.393 --> 01:40:29.393
+on your shiny server on POSIT Cloud or POSIT Workbench
+
+01:40:29.393 --> 01:40:32.393
+or workshop environment.
+
+01:40:32.393 --> 01:40:37.393
+And then the whole HPC stuff running on the remote HPC cluster
+
+01:40:37.393 --> 01:40:40.393
+that also needs the R packages.
+
+01:40:40.393 --> 01:40:41.393
+There we are.
+
+01:40:41.393 --> 01:40:44.393
+Now it's working for you.
+
+01:40:44.393 --> 01:40:46.393
+You see?
+
+01:40:46.393 --> 01:40:51.393
+And now I can, yeah, play around.
+
+01:40:51.393 --> 01:40:53.393
+Cool.
+
+01:40:53.393 --> 01:40:54.393
+Awesome.
+
+01:40:54.393 --> 01:40:57.393
+So, Phil, are you also making progress?
+
+01:40:57.393 --> 01:41:01.393
+It's not crazy about my libpaths command,
+
+01:41:01.393 --> 01:41:04.393
+so I'm just trying to wrap my head if I'm.
+
+01:41:04.393 --> 01:41:07.393
+Sure, I mean, maybe do you want to share the screen and we can.
+
+01:41:07.393 --> 01:41:09.393
+Yeah, sure, I can real quick.
+
+01:41:09.393 --> 01:41:11.393
+Yeah, let me see if I can.
+
+01:41:11.393 --> 01:41:13.393
+Maybe it's also helpful for others.
+
+01:41:13.393 --> 01:41:14.393
+I mean, that is.
+
+01:41:14.393 --> 01:41:15.393
+For a second.
+
+01:41:15.393 --> 01:41:19.393
+The libpath thing is also kind of an omission for me.
+
+01:41:19.393 --> 01:41:21.393
+So, are you on the HPC cluster?
+
+01:41:21.393 --> 01:41:22.393
+Yeah.
+
+01:41:22.393 --> 01:41:23.393
+Yeah.
+
+01:41:23.393 --> 01:41:24.393
+You're on the terminal.
+
+01:41:24.393 --> 01:41:27.393
+So, yeah.
+
+01:41:27.393 --> 01:41:35.393
+So, first of all, do a ls-la.
+
+01:41:35.393 --> 01:41:36.393
+La?
+
+01:41:36.393 --> 01:41:37.393
+Yeah, like that.
+
+01:41:37.393 --> 01:41:39.393
+Enter.
+
+01:41:39.393 --> 01:41:45.393
+And now you see you have a .shiny folder somewhere up here.
+
+01:41:45.393 --> 01:41:47.393
+In the middle.
+
+01:41:47.393 --> 01:41:49.393
+You see over here.
+
+01:41:49.393 --> 01:41:50.393
+Right here.
+
+01:41:50.393 --> 01:41:51.393
+Yes.
+
+01:41:51.393 --> 01:41:53.393
+And now I want you to copy that,
+
+01:41:53.393 --> 01:42:01.393
+and now press type capital R to launch an interactive R session.
+
+01:42:01.393 --> 01:42:03.393
+Oh, capital R.
+
+01:42:04.393 --> 01:42:07.393
+Control C or enter.
+
+01:42:07.393 --> 01:42:08.393
+Okay.
+
+01:42:08.393 --> 01:42:10.393
+Capital R.
+
+01:42:10.393 --> 01:42:12.393
+Capital R, got it.
+
+01:42:12.393 --> 01:42:15.393
+That will launch a manual R session.
+
+01:42:15.393 --> 01:42:16.393
+Enter.
+
+01:42:16.393 --> 01:42:21.393
+And now type the .libpath thing.
+
+01:42:21.393 --> 01:42:22.393
+Okay.
+
+01:42:22.393 --> 01:42:25.393
+.libpath.
+
+01:42:25.393 --> 01:42:27.393
+Oops, not that.
+
+01:42:27.393 --> 01:42:30.393
+Let me see.
+
+01:42:30.393 --> 01:42:32.393
+Okay, so .
+
+01:42:32.393 --> 01:42:35.393
+.lib, capital P.
+
+01:42:35.393 --> 01:42:36.393
+Capital P.
+
+01:42:36.393 --> 01:42:38.393
+Capital P, gotcha.
+
+01:42:38.393 --> 01:42:40.393
+Okay.
+
+01:42:40.393 --> 01:42:46.393
+Open brackets, double quotes, and then your .shiny stuff.
+
+01:42:46.393 --> 01:42:48.393
+.shiny.
+
+01:42:48.393 --> 01:42:50.393
+Got it.
+
+01:42:50.393 --> 01:42:54.393
+Double quotes and close brackets.
+
+01:42:54.393 --> 01:42:55.393
+Cool.
+
+01:42:55.393 --> 01:42:57.393
+Enter.
+
+01:42:57.393 --> 01:43:02.393
+I'm just going to copy this real quick because I need it.
+
+01:43:02.393 --> 01:43:03.393
+Okay.
+
+01:43:03.393 --> 01:43:13.393
+And then you can run install the packages palmer-penguins.
+
+01:43:13.393 --> 01:43:15.393
+Oh.
+
+01:43:15.393 --> 01:43:16.393
+Almost there.
+
+01:43:16.393 --> 01:43:19.393
+Almost.
+
+01:43:19.393 --> 01:43:23.393
+Let me see if I can.
+
+01:43:23.393 --> 01:43:24.393
+Yeah.
+
+01:43:24.393 --> 01:43:28.393
+Yeah, just making sure how to spell penguins.
+
+01:43:28.393 --> 01:43:29.393
+Cool.
+
+01:43:29.393 --> 01:43:34.393
+Yeah, there we go.
+
+01:43:34.393 --> 01:43:40.393
+Yes.
+
+01:43:40.393 --> 01:43:41.393
+Cool, just like that?
+
+01:43:41.393 --> 01:43:42.393
+Yeah, like that.
+
+01:43:42.393 --> 01:43:43.393
+Enter.
+
+01:43:43.393 --> 01:43:44.393
+Okay.
+
+01:43:44.393 --> 01:43:49.393
+And you see it's now installing it in the .shiny folder.
+
+01:43:49.393 --> 01:43:50.393
+Sweet.
+
+01:43:51.393 --> 01:43:56.393
+Now you can go back straight to your .shiny app on your R console.
+
+01:43:56.393 --> 01:44:04.393
+Or you can leave that with Q or go to the console and run the .shiny app proper.
+
+01:44:04.393 --> 01:44:05.393
+Okay.
+
+01:44:05.393 --> 01:44:08.393
+So I think I've got it up.
+
+01:44:08.393 --> 01:44:09.393
+I've got it up here.
+
+01:44:09.393 --> 01:44:10.393
+I can just run the app.
+
+01:44:10.393 --> 01:44:12.393
+Yeah, exactly.
+
+01:44:12.393 --> 01:44:16.393
+Cool.
+
+01:44:16.393 --> 01:44:18.393
+All right.
+
+01:44:19.393 --> 01:44:22.393
+Very good.
+
+01:44:22.393 --> 01:44:26.393
+So setting up the world environment.
+
+01:44:26.393 --> 01:44:29.393
+That's good.
+
+01:44:29.393 --> 01:44:37.393
+And it's doing the same error again now.
+
+01:44:37.393 --> 01:44:38.393
+Yeah.
+
+01:44:38.393 --> 01:44:40.393
+Do I need to restart the session?
+
+01:44:40.393 --> 01:44:41.393
+No.
+
+01:44:41.393 --> 01:44:46.393
+No, what I mean, the .libpass, in the code, did you modify it?
+
+01:44:46.393 --> 01:44:47.393
+Oh, I know.
+
+01:44:47.393 --> 01:44:48.393
+I did not.
+
+01:44:48.393 --> 01:44:49.393
+I did not.
+
+01:44:49.393 --> 01:44:50.393
+I did not.
+
+01:44:50.393 --> 01:44:51.393
+I did not.
+
+01:44:51.393 --> 01:44:52.393
+So I got this.
+
+01:44:52.393 --> 01:44:53.393
+I'm sure that's it.
+
+01:44:53.393 --> 01:44:54.393
+I'm sure that's it.
+
+01:44:54.393 --> 01:45:01.393
+ClusterMqLibs thing here.
+
+01:45:01.393 --> 01:45:03.393
+Tell me.
+
+01:45:03.393 --> 01:45:05.393
+Yeah, there we are, line 150.
+
+01:45:05.393 --> 01:45:12.393
+That is, you'd also need to, like, tilde slash and then your .shiny stuff.
+
+01:45:12.393 --> 01:45:13.393
+Oh, the .shiny stuff.
+
+01:45:13.393 --> 01:45:17.393
+So, no, I don't think I saved it.
+
+01:45:17.393 --> 01:45:21.393
+Let me see if I got it back.
+
+01:45:21.393 --> 01:45:22.393
+Right.
+
+01:45:22.393 --> 01:45:26.393
+Yeah, we'll get to your question in a moment.
+
+01:45:26.393 --> 01:45:27.393
+Okay.
+
+01:45:27.393 --> 01:45:40.393
+So, Phil, did you add that to your code, the .libpass?
+
+01:45:40.393 --> 01:45:45.393
+Phil?
+
+01:45:45.393 --> 01:45:46.393
+Okay.
+
+01:45:46.393 --> 01:45:47.393
+We lost him.
+
+01:45:47.393 --> 01:45:57.393
+Oh, but, well, to your question, I mean, it prompts me to enter the password.
+
+01:45:57.393 --> 01:46:02.393
+Is that, I guess that's the password for the HPC login here.
+
+01:46:02.393 --> 01:46:09.393
+I mean, if that's the case, then I think your SSH copy ID command has not worked.
+
+01:46:09.393 --> 01:46:17.393
+So, can you maybe re-execute the SSH copy ID command and see if that fixes it?
+
+01:46:17.393 --> 01:46:26.393
+And by all means, since Phil stopped sharing his screen, also feel free to share the screen.
+
+01:46:26.393 --> 01:46:27.393
+Sorry about that.
+
+01:46:27.393 --> 01:46:31.393
+I, for some reason, lost my screen share, but I'm back.
+
+01:46:31.393 --> 01:46:32.393
+Okay, cool.
+
+01:46:32.393 --> 01:46:33.393
+All right, then.
+
+01:46:34.393 --> 01:46:35.393
+Hang on.
+
+01:46:35.393 --> 01:46:39.393
+Hang on two more minutes and we'll get Phil fixed up.
+
+01:46:39.393 --> 01:46:40.393
+Awesome.
+
+01:46:40.393 --> 01:46:43.393
+So, what do I replace here, Michael?
+
+01:46:43.393 --> 01:46:46.393
+You need to put in the .shiny stuff.
+
+01:46:46.393 --> 01:46:49.393
+Yeah, do I replace all of this cluster?
+
+01:46:49.393 --> 01:46:50.393
+All of that stuff.
+
+01:46:50.393 --> 01:46:51.393
+Just like this?
+
+01:46:51.393 --> 01:46:53.393
+Like this, precisely.
+
+01:46:53.393 --> 01:46:55.393
+And now you save that and rerun it.
+
+01:46:55.393 --> 01:46:57.393
+Forward slash at the end here?
+
+01:46:57.393 --> 01:46:58.393
+Okay.
+
+01:46:58.393 --> 01:46:59.393
+It doesn't matter.
+
+01:46:59.393 --> 01:47:00.393
+It doesn't matter.
+
+01:47:00.393 --> 01:47:01.393
+Okay, cool.
+
+01:47:01.393 --> 01:47:02.393
+All right.
+
+01:47:02.393 --> 01:47:04.393
+So, don't need to restart R?
+
+01:47:04.393 --> 01:47:05.393
+Just run the puppy?
+
+01:47:05.393 --> 01:47:07.393
+Just run the puppy, I guess.
+
+01:47:07.393 --> 01:47:08.393
+All right.
+
+01:47:13.393 --> 01:47:15.393
+Oh, my terminal.
+
+01:47:15.393 --> 01:47:16.393
+My terminal.
+
+01:47:16.393 --> 01:47:18.393
+Maybe interrupt it first.
+
+01:47:18.393 --> 01:47:19.393
+Yeah.
+
+01:47:21.393 --> 01:47:22.393
+Control C.
+
+01:47:23.393 --> 01:47:24.393
+Yeah, I hit that.
+
+01:47:24.393 --> 01:47:26.393
+It's still frozen here.
+
+01:47:26.393 --> 01:47:27.393
+Oh.
+
+01:47:27.393 --> 01:47:28.393
+Manually stop it.
+
+01:47:28.393 --> 01:47:29.393
+Yes.
+
+01:47:32.393 --> 01:47:33.393
+You see it?
+
+01:47:33.393 --> 01:47:34.393
+I'll try the...
+
+01:47:34.393 --> 01:47:35.393
+Yeah.
+
+01:47:35.393 --> 01:47:37.393
+Sometimes this doesn't...
+
+01:47:38.393 --> 01:47:41.393
+So, for love, well, let's also get...
+
+01:47:41.393 --> 01:47:42.393
+Sweet.
+
+01:47:43.393 --> 01:47:46.393
+Then this stuff of the document.
+
+01:47:51.393 --> 01:48:00.393
+So, if you could run this command here,
+
+01:48:01.393 --> 01:48:02.393
+on your...
+
+01:48:03.393 --> 01:48:07.393
+In the workshop or POSIT cloud environment,
+
+01:48:07.393 --> 01:48:11.393
+in a terminal window, that would be good.
+
+01:48:11.393 --> 01:48:15.393
+And just make sure that you replace username
+
+01:48:15.393 --> 01:48:18.393
+with your POSIT username here.
+
+01:48:12.535 --> 01:48:20.455
+Deposit Username here. Okay, so I mean, Phil, I think I think so. I think I think my session
+
+01:48:20.455 --> 01:48:23.415
+is a bit froze, but I'm I think we're in a good shape, so I'm going to run it and I'll
+
+01:48:23.415 --> 01:48:30.855
+let you know here in two seconds, so. Okay, awesome. Yeah. And I mean, if that's the case,
+
+01:48:30.855 --> 01:48:40.855
+I think we have like another 15 minutes. So if you if you look at the project folder,
+
+01:48:40.855 --> 01:48:46.375
+I mean, there is, I mean, I probably prepared a bit bit more than we.
+
+01:48:48.935 --> 01:48:52.454
+Michael, if you want to share your screen again, just FYI.
+
+01:48:53.015 --> 01:49:01.015
+Sure, I'll do that. So, I mean, if you look, if you look back at, I mean, I think now we have a
+
+01:49:01.015 --> 01:49:12.535
+good success with App0 and App1. I think we, and I probably would probably stop here.
+
+01:49:15.654 --> 01:49:23.255
+Stop here for now, because I mean, the next apps would now mean to go to the Mirai package. However,
+
+01:49:23.255 --> 01:49:30.535
+I mean, you have the access to the GitHub repository. And you also have, I mean, I will
+
+01:49:31.174 --> 01:49:37.895
+leave the HPC cluster running for the rest of the week. So App0 means you can come back and
+
+01:49:38.855 --> 01:49:48.615
+explore those other packages as well. So the reason why I went with the cluster MQ package,
+
+01:49:48.615 --> 01:49:56.935
+because I think it, it has the ability to use this SSH connection from your Shiny server,
+
+01:49:56.935 --> 01:50:04.695
+and then uses locally the Slurm commands to distribute the jobs to the respective compute
+
+01:50:04.695 --> 01:50:11.414
+nodes. And that makes it, in my opinion, very elegant. And I also, because things are so simple
+
+01:50:11.414 --> 01:50:24.214
+from that perspective, we also went through the whole hoops of using the init functions here,
+
+01:50:24.214 --> 01:50:31.094
+the init data, HPC setup functions, and the init function that will remotely create all of those,
+
+01:50:31.734 --> 01:50:36.135
+the .shiny folders, and install all of the packages that you would need.
+
+01:50:37.094 --> 01:50:44.775
+So I mean, that's just to keep that thing very clean and relatively easy to understand.
+
+01:50:45.814 --> 01:50:53.734
+The Mirai package, and I probably can just gloss over it a little bit, is kind of
+
+01:50:55.014 --> 01:51:01.814
+different, because the Mirai package does not use any templates that would allow you to
+
+01:51:02.615 --> 01:51:10.214
+kind of hide the complexity of some of the IT stuff. So you see I have
+
+01:51:12.855 --> 01:51:21.014
+some strange looking stuff here, like the MyHPC stuff, the private key stuff is now
+
+01:51:21.014 --> 01:51:29.895
+hard-coded in the source code. However, I think the reason why I think Mirai is
+
+01:51:30.615 --> 01:51:39.335
+definitely worth exploring is because I believe it is kind of the future. And secondly,
+
+01:51:40.775 --> 01:51:53.174
+if you manage to define such a Mirai context, or if you're able to start so-called Mirai daemons
+
+01:51:53.174 --> 01:51:57.975
+that are, in that case, pointing to SSH configuration that is doing all the
+
+01:51:58.055 --> 01:52:05.415
+remote SSHing and stuff like that, I mean, then this opens you a whole world of possibilities,
+
+01:52:06.135 --> 01:52:12.934
+because there is a package called future.mirai, where you then can directly
+
+01:52:13.734 --> 01:52:22.775
+use futures from within your Shiny app, and they will then be automatically exported onto the HPC
+
+01:52:22.775 --> 01:52:30.054
+cluster video without you ever thinking more about it. So, which means instead of, again,
+
+01:52:30.054 --> 01:52:38.295
+having access to the resource in local Shiny server, you again can make use of as many
+
+01:52:38.855 --> 01:52:47.735
+resources on HPC cluster, and you have all in one unified environment. And secondly, and that's
+
+01:52:48.614 --> 01:52:57.575
+maybe adding a bit more deposit touch now, the Mirai package also is at the moment integrated
+
+01:52:59.814 --> 01:53:06.054
+into the so-called Perl package, which is... I should put it in the chat box.
+
+01:53:06.695 --> 01:53:21.015
+What is this package here? Yes, and Perl is like a package for object-oriented programming,
+
+01:53:21.015 --> 01:53:27.494
+and there you have lots of map commands of sorts and many other things. And as of late,
+
+01:53:28.374 --> 01:53:33.975
+behind the scenes, it already launches a Mirai cluster if there's no Mirai context
+
+01:53:36.054 --> 01:53:43.654
+available, but if you predefine your Mirai daemons using the Slurm stuff, then any call to
+
+01:53:43.654 --> 01:53:50.614
+the Perl package will automatically use those daemons, and instead of, again, being limited to
+
+01:53:50.614 --> 01:53:58.214
+local processes, you can make use of your HPC environment again. So, I think that's why I put
+
+01:53:58.214 --> 01:54:08.135
+out, added this Mirai stuff again. The last reason why I didn't go full in on Mirai, which
+
+01:54:08.135 --> 01:54:14.695
+would have been an obvious thing to do, is because Mirai at the moment does not support the nice
+
+01:54:14.695 --> 01:54:20.695
+chaining of the SSH connection to the actual Slurm submissions. So, as a matter of fact,
+
+01:54:20.695 --> 01:54:31.094
+if you look at the app4, app3 and app4, app3 will allow you to launch those Mirai daemons
+
+01:54:31.735 --> 01:54:38.934
+to do SSH connections and then launch the R processes locally on the login node, which
+
+01:54:38.934 --> 01:54:46.214
+may not be the best thing to do, but I mean, I just put it there as an example. And the app4 is
+
+01:54:46.214 --> 01:54:53.255
+then doing the same thing on a Slurm cluster, where you would need to run the Shiny app really
+
+01:54:53.255 --> 01:55:01.015
+locally on a login node where you can directly submit stuff to HPC cluster. Yeah, I mean,
+
+01:55:01.015 --> 01:55:09.334
+that's just a little bit more background on top of everything. But now I see Mahesh is asking a
+
+01:55:09.334 --> 01:55:17.334
+very good question. How will it work for Shiny app deployed on POSIX RSConnect? Yes. So,
+
+01:55:19.975 --> 01:55:28.374
+I probably could turn the arrow around and say to you, Mahesh, I mean, in principle,
+
+01:55:29.015 --> 01:55:36.214
+now you have everything you need to know about how to make it work with POSIX RSConnect.
+
+01:55:37.175 --> 01:55:45.654
+However, don't get me wrong. I mean, you still have the process of deploying the app to POSIX
+
+01:55:45.654 --> 01:55:58.455
+Connect. So, however, again, let's just take a step back for the last five or six minutes,
+
+01:55:59.334 --> 01:56:12.455
+how we made the app work. I mean, the app1 with the SSH connections. So, the app1 is using,
+
+01:56:13.175 --> 01:56:24.535
+I just go back here, it's using this SSH connection to do SSH tunnel and stuff like that.
+
+01:56:25.334 --> 01:56:36.214
+And the only thing it really needs is the location of this private SSH key. So,
+
+01:56:36.855 --> 01:56:43.975
+if you now think about such a Shiny application wants to be deployed on the Connect server,
+
+01:56:44.535 --> 01:56:51.574
+that means that the so-called application bundle that is being created on the workbench side of
+
+01:56:52.535 --> 01:57:04.694
+things needs to somehow contain that this .ssh or the my.hpc.ssh key. And so,
+
+01:57:05.815 --> 01:57:13.654
+the only change that you really need to do is to make sure that my.hpc key is part of the
+
+01:57:13.654 --> 01:57:19.495
+application bundle. So, you probably want to copy it into the application directory,
+
+01:57:19.495 --> 01:57:26.774
+maybe make a .ssh my.hpc here, make sure that it's also part of the files to be deployed.
+
+01:57:27.334 --> 01:57:37.175
+And then last but not least, you also need to then modify the SSH template to not have this
+
+01:57:37.175 --> 01:57:43.334
+tilt in front while one tries to use relative path. Because the Shiny app on the Connect server
+
+01:57:43.334 --> 01:57:49.894
+will be executed from some random directory that no one ever should know. So, this command
+
+01:57:49.894 --> 01:58:03.894
+will then use the .ssh thing via relative path. Yeah. So, I think those are the two
+
+01:58:03.894 --> 01:58:10.774
+main things that need to be changing. And I mean, as a little homework, I mean,
+
+01:58:10.774 --> 01:58:19.735
+you guys probably have access to this document, right? I will just share it once more.
+
+01:58:21.894 --> 01:58:30.774
+This document, you can make a bookmark locally. And for those of you that have survived until now,
+
+01:58:30.774 --> 01:58:49.175
+I will commit to add one example that you can deploy to your local Connect server.
+
+01:58:50.214 --> 01:58:58.694
+And provided that this local Connect server is allowing SSH access to this Shiny HPC cluster,
+
+01:58:58.694 --> 01:59:03.894
+you should be able to deploy that. And if not, I'm happy to have an individual
+
+01:59:03.894 --> 01:59:14.535
+conversation with you guys. Let me just maybe send an email to InfoEd. I mean, Phil,
+
+01:59:16.134 --> 01:59:24.615
+would it best go at InfoEd our farmer, or should I just let them have my email?
+
+01:59:25.495 --> 01:59:30.774
+Yeah, I would say either way is perfectly fine with us. If you're trying to get in touch with
+
+01:59:31.495 --> 01:59:37.654
+R&Pharma, I would probably say there's two ways to do that. One is our contact page,
+
+01:59:37.654 --> 01:59:48.295
+which I just put in the chat box. But then also, info at R&Pharma.com will also go to the
+
+01:59:48.295 --> 01:59:53.735
+nonprofit. And we can send stuff to Michael. But feel free to reach out to Michael directly as
+
+01:59:53.735 --> 02:00:01.894
+well. Either way works perfectly fine. Okay, cool. I mean, I posted my email address as well,
+
+02:00:01.894 --> 02:00:07.894
+so you can contact me offline. I mean, because we only didn't have 100 people today, I mean,
+
+02:00:07.894 --> 02:00:12.535
+I see the traffic should be fairly small. But I mean, I'm interested to make sure that
+
+02:00:13.094 --> 02:00:18.454
+this Connect deployment also works. Yeah. So, I mean, give me maybe one or two days for
+
+02:00:19.094 --> 02:00:24.694
+this document also should have an example. And the GitHub repository as well, an example
+
+02:00:24.694 --> 02:00:29.735
+that you can deploy to Connect and then remote submit to this HPC cluster.
+
+02:00:31.894 --> 02:00:42.295
+Okay, I think this was rather fast. Two and a half hours. I hope that it was at least
+
+02:00:42.935 --> 02:00:49.334
+somewhat helpful for some of you. I think we at least had success with a couple of people.
+
+02:00:50.134 --> 02:00:58.535
+I mean, just watch this document. And this will be extended as we go along further.
+
+02:00:58.535 --> 02:01:03.094
+So, you can use that as your... And likewise, the GitHub repository as well, you can use as your
+
+02:01:04.134 --> 02:01:08.375
+go-to resource going forward, because I will also keep adding stuff to that stuff as well.
+
+02:01:09.175 --> 02:01:15.574
+I mean, with that, thanks for your patience. Thanks for the collaboration also from Phil and
+
+02:01:15.574 --> 02:01:27.175
+from Arne Farmer. Thanks for hosting me today. And I'm almost curious to see if one of you
+
+02:01:27.175 --> 02:01:30.855
+will actually be using that stuff in your day-to-day work.
+
+02:01:31.654 --> 02:01:34.855
+If you do and you have success stories, feel free to share.
+
+02:01:34.855 --> 02:01:43.334
+Absolutely. Thank you so much, Michael. I felt like I was doing the whole thing. So,
+
+02:01:43.334 --> 02:01:49.975
+I feel like I can claim the badge for this one because I completed it. But very much appreciate
+
+02:01:49.975 --> 02:01:57.735
+volunteering and giving the community your time and energy and knowledge today. I just got a
+
+02:01:57.735 --> 02:02:02.855
+couple of quick things and I'll close the bridge. If you need a badge or want a badge, fill out the
+
+02:02:02.855 --> 02:02:07.735
+form that we put in the chat box. The second thing is we'll edit this video and get it posted
+
+02:02:07.735 --> 02:02:12.615
+on YouTube. It takes a month or two. So, if you want to revisit the material, feel free to check
+
+02:02:12.615 --> 02:02:19.014
+out our YouTube page in probably a month or so. Our next event is going to be the Hangout. I posted
+
+02:02:19.014 --> 02:02:24.774
+that in the chat box. That's going to be on December 16th. The Arne Farmer community gets
+
+02:02:24.774 --> 02:02:29.975
+together and has various topics. So, if you want to ask questions about HPC or whatever, that would
+
+02:02:29.975 --> 02:02:35.175
+be a great place to do it with other people from the pharma community. With that, thanks so much
+
+02:02:35.175 --> 02:02:41.495
+for coming. And I think, Michael, we can open it up for questions or end the bridge whenever people
+
+02:02:41.495 --> 02:02:47.574
+are ready. So, thanks again. And Michael, any final comments or any questions by the attendees?
+
+02:02:47.574 --> 02:02:53.735
+As mentioned, thanks to Farmer for hosting and thanks for the patience of the people. And I
+
+02:02:53.735 --> 02:03:03.254
+think we at least got to some working applications, which is quite exciting, yeah?
+
+02:03:03.254 --> 02:03:08.694
+Thanks for everything. Right. And just on time, 1.30, we'll go ahead and end the bridge.
+
+02:03:08.694 --> 02:03:13.975
+And we'll see everybody next time. Thanks again, Michael. All right. Bye. Bye, guys.
