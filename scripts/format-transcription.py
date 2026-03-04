@@ -87,6 +87,15 @@ Do NOT paraphrase, correct grammar, fix spelling, or improve wording.
 Copy the spoken words exactly as they appear in the VTT, including filler
 words ("um", "uh", "sort of", "you know") and false starts.
 
+## Correcting technology-name mishearings
+The metadata lists technologies used in this video. If a word is clearly a
+phonetic mishearing of one of those technology names, silently correct it.
+
+  "Korto" or "Corto"  →  Quarto   (if Quarto is listed)
+  "R Studio"          →  RStudio  (if RStudio is listed)
+
+Only correct when you are confident. Leave all other words verbatim.
+
 ## Combining multi-cue sentences
 A sentence in the VTT often spans several consecutive cues.
 Join them into a single sentence; each cue becomes its own <a> element.
@@ -113,7 +122,9 @@ Rules:
 
 ## Blockquotes
 Identify 0–3 memorable, insightful, or surprising quotes.
-Wrap each in a <blockquote>, using the same <a> elements as normal text.
+For each quote, keep the sentence(s) in their paragraph AND add a <blockquote>
+immediately after that paragraph repeating the exact same <a> elements.
+The blockquote is a pull quote — it duplicates text that also appears in prose.
 Rules:
   - At most one quote per 10 minutes of video.
   - Space them evenly throughout the document.
@@ -145,6 +156,14 @@ WHY:  Only <h3>, <p>, <a>, <blockquote> are allowed.
 HTML: <blockquote>The best code is reproducible code.</blockquote>
 WHY:  Text in blockquotes must also be wrapped in <a data-t="..."> elements.
 
+### ✗ WRONG — blockquote removes text from paragraph
+HTML:
+  <p><a data-t="320">Now I want to shift gears and talk about testing.</a></p>
+
+  <blockquote><a data-t="335">The best Shiny app is one you're not afraid to change.</a></blockquote>
+WHY:  The quoted sentence must also remain in a <p> in the prose flow.
+      The blockquote duplicates it — it does not replace it.
+
 ### ✗ WRONG — heading at the very start of the document
 HTML: <h3>Introduction</h3><p><a data-t="0">Hello everyone.</a></p>
 WHY:  Do not open with a heading; start with a <p>.
@@ -167,11 +186,11 @@ VTT:
 HTML:
   <p><a data-t="90">Today I want to talk about</a> <a data-t="95">reproducible research with Quarto.</a> <a data-t="101">It has changed how I work.</a></p>
 
-### ✓ CORRECT — paragraph break on topic change + blockquote
+### ✓ CORRECT — paragraph break on topic change + blockquote (pull quote)
 HTML:
   <p><a data-t="300">So that covers the basics of reactive programming.</a></p>
 
-  <p><a data-t="320">Now I want to shift gears and talk about testing.</a> <a data-t="324">Testing Shiny apps used to be really hard.</a> <a data-t="328">But shinytest2 has changed that.</a></p>
+  <p><a data-t="320">Now I want to shift gears and talk about testing.</a> <a data-t="324">Testing Shiny apps used to be really hard.</a> <a data-t="328">But shinytest2 has changed that.</a> <a data-t="335">The best Shiny app is one you're not afraid to change, and tests give you that confidence.</a></p>
 
   <blockquote><a data-t="335">The best Shiny app is one you're not afraid to change, and tests give you that confidence.</a></blockquote>
 

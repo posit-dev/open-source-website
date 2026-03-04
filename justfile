@@ -39,6 +39,10 @@ download-youtube-audio *args:
 transcribe:
     ./scripts/transcribe.py
 
+# Format VTT transcriptions into HTML using the Anthropic API
+format-transcription *args:
+    ./scripts/format-transcription.py {{args}}
+
 quarto-preview:
     uv run quarto preview
 
