@@ -70,7 +70,7 @@
 
       {{ if ne .Params.resource_type "video" }}
       {{ with .Params.description }}
-      <p class="text-lg text-gray-600 dark:text-gray-300">
+      <p class="prose" data-pagefind-body>
         {{ . }}
       </p>
       {{ end }}
@@ -201,8 +201,8 @@
       {{ $videoId = index (split $videoId "&") 0 }}
       {{ end }}
       {{ if $videoId }}
-      <iframe id="youtube-player" class="w-full h-full" src="https://www.youtube.com/embed/{{ $videoId }}?enablejsapi=1" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      <iframe id="youtube-player" class="w-full h-full" src="https://www.youtube.com/embed/{{ $videoId }}?enablejsapi=1"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
       {{ else }}
       <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
@@ -239,119 +239,120 @@
   {{ if not $body }}{{ $body = .Params.description | replaceRE "\n" "<br>" | safeHTML }}{{ end }}
   {{ with $body }}
   <div class="mt-8 mx-2 md:mx-0">
-    <div id="video-description" class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
+    <div id="video-description" data-pagefind-body
+      class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
       {{ . }}
     </div>
   </div>
   <script>
-  (function () {
-    function toSeconds(ts) {
-      var parts = ts.split(":").map(Number);
-      if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
-      return parts[0] * 60 + parts[1];
-    }
-
-    function seekAndPlay(seconds) {
-      var player = document.getElementById("youtube-player");
-      if (!player) return;
-      player.contentWindow.postMessage(
-        JSON.stringify({ event: "command", func: "seekTo", args: [seconds, true] }), "*"
-      );
-      player.contentWindow.postMessage(
-        JSON.stringify({ event: "command", func: "playVideo", args: [] }), "*"
-      );
-    }
-
-    function linkifyTimestamps(root) {
-      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-      var nodes = [];
-      var node;
-      while ((node = walker.nextNode())) nodes.push(node);
-      nodes.forEach(function (textNode) {
-        var text = textNode.nodeValue;
-        if (!/\d{1,2}:\d{2}/.test(text)) return;
-        var frag = document.createDocumentFragment();
-        var re = /(\d{1,2}:\d{2}(?::\d{2})?)/g;
-        var last = 0, m;
-        while ((m = re.exec(text)) !== null) {
-          if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
-          var a = document.createElement("a");
-          a.textContent = m[1];
-          a.href = "#";
-          a.dataset.t = toSeconds(m[1]);
-          a.addEventListener("click", function (e) {
-            e.preventDefault();
-            seekAndPlay(Number(this.dataset.t));
-          });
-          frag.appendChild(a);
-          last = m.index + m[0].length;
-        }
-        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
-        if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
-      });
-    }
-
-    function linkifyURLs(root) {
-      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-      var nodes = [];
-      var node;
-      while ((node = walker.nextNode())) nodes.push(node);
-      nodes.forEach(function (textNode) {
-        var text = textNode.nodeValue;
-        if (!/https?:\/\//.test(text)) return;
-        var frag = document.createDocumentFragment();
-        var re = /(https?:\/\/\S+)/g;
-        var last = 0, m;
-        while ((m = re.exec(text)) !== null) {
-          if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
-          var url = m[1].replace(/[.,;:!?)\]'"]+$/, "");
-          var trailing = m[1].slice(url.length);
-          var a = document.createElement("a");
-          a.href = url;
-          a.target = "_blank";
-          a.rel = "noopener";
-          a.textContent = url;
-          frag.appendChild(a);
-          if (trailing) frag.appendChild(document.createTextNode(trailing));
-          last = m.index + m[0].length;
-        }
-        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
-        if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      var desc = document.getElementById("video-description");
-      if (desc) { linkifyURLs(desc); linkifyTimestamps(desc); }
-
-      var transcript = document.getElementById("video-transcript");
-      if (transcript) {
-        transcript.addEventListener("click", function (e) {
-          var a = e.target.closest("a[data-t]");
-          if (!a) return;
-          e.preventDefault();
-          seekAndPlay(Number(a.dataset.t));
-        });
-
-        var headings = transcript.querySelectorAll("h3");
-        var toc = document.getElementById("transcript-toc");
-        if (toc && headings.length) {
-          var ul = document.createElement("ul");
-          headings.forEach(function (h) {
-            var id = h.textContent.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
-            h.id = id;
-            var li = document.createElement("li");
-            var a = document.createElement("a");
-            a.href = "#" + id;
-            a.textContent = h.textContent.trim();
-            li.appendChild(a);
-            ul.appendChild(li);
-          });
-          toc.appendChild(ul);
-        }
+    (function () {
+      function toSeconds(ts) {
+        var parts = ts.split(":").map(Number);
+        if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+        return parts[0] * 60 + parts[1];
       }
-    });
-  })();
+
+      function seekAndPlay(seconds) {
+        var player = document.getElementById("youtube-player");
+        if (!player) return;
+        player.contentWindow.postMessage(
+          JSON.stringify({event: "command", func: "seekTo", args: [seconds, true]}), "*"
+        );
+        player.contentWindow.postMessage(
+          JSON.stringify({event: "command", func: "playVideo", args: []}), "*"
+        );
+      }
+
+      function linkifyTimestamps(root) {
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+        var nodes = [];
+        var node;
+        while ((node = walker.nextNode())) nodes.push(node);
+        nodes.forEach(function (textNode) {
+          var text = textNode.nodeValue;
+          if (!/\d{1,2}:\d{2}/.test(text)) return;
+          var frag = document.createDocumentFragment();
+          var re = /(\d{1,2}:\d{2}(?::\d{2})?)/g;
+          var last = 0, m;
+          while ((m = re.exec(text)) !== null) {
+            if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+            var a = document.createElement("a");
+            a.textContent = m[1];
+            a.href = "#";
+            a.dataset.t = toSeconds(m[1]);
+            a.addEventListener("click", function (e) {
+              e.preventDefault();
+              seekAndPlay(Number(this.dataset.t));
+            });
+            frag.appendChild(a);
+            last = m.index + m[0].length;
+          }
+          if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+          if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
+        });
+      }
+
+      function linkifyURLs(root) {
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+        var nodes = [];
+        var node;
+        while ((node = walker.nextNode())) nodes.push(node);
+        nodes.forEach(function (textNode) {
+          var text = textNode.nodeValue;
+          if (!/https?:\/\//.test(text)) return;
+          var frag = document.createDocumentFragment();
+          var re = /(https?:\/\/\S+)/g;
+          var last = 0, m;
+          while ((m = re.exec(text)) !== null) {
+            if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+            var url = m[1].replace(/[.,;:!?)\]'"]+$/, "");
+            var trailing = m[1].slice(url.length);
+            var a = document.createElement("a");
+            a.href = url;
+            a.target = "_blank";
+            a.rel = "noopener";
+            a.textContent = url;
+            frag.appendChild(a);
+            if (trailing) frag.appendChild(document.createTextNode(trailing));
+            last = m.index + m[0].length;
+          }
+          if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+          if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var desc = document.getElementById("video-description");
+        if (desc) {linkifyURLs(desc); linkifyTimestamps(desc);}
+
+        var transcript = document.getElementById("video-transcript");
+        if (transcript) {
+          transcript.addEventListener("click", function (e) {
+            var a = e.target.closest("a[data-t]");
+            if (!a) return;
+            e.preventDefault();
+            seekAndPlay(Number(a.dataset.t));
+          });
+
+          var headings = transcript.querySelectorAll("h3");
+          var toc = document.getElementById("transcript-toc");
+          if (toc && headings.length) {
+            var ul = document.createElement("ul");
+            headings.forEach(function (h) {
+              var id = h.textContent.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+              h.id = id;
+              var li = document.createElement("li");
+              var a = document.createElement("a");
+              a.href = "#" + id;
+              a.textContent = h.textContent.trim();
+              li.appendChild(a);
+              ul.appendChild(li);
+            });
+            toc.appendChild(ul);
+          }
+        }
+      });
+    })();
   </script>
   {{ end }}
 
@@ -361,118 +362,125 @@
   {{ $headings := findRE `<h3>(.*?)</h3>` $content }}
   {{ $tocItems := slice (dict "id" "transcript" "text" "Transcript" "level" 2) }}
   {{ range $headings }}
-    {{ $inner := . | replaceRE `^<h3>` "" | replaceRE `</h3>$` "" }}
-    {{ $plainText := $inner | replaceRE `<[^>]+>` "" | htmlUnescape }}
+  {{ $inner := . | replaceRE `^<h3>` "" | replaceRE `</h3>$` "" }}
+  {{ $plainText := $inner | replaceRE `<[^>]+>` "" | htmlUnescape }}
     {{ $id := $plainText | anchorize }}
     {{ $content = replace $content . (printf "<h3 id=\"%s\">%s</h3>" $id $inner) }}
     {{ $tocItems = $tocItems | append (dict "id" $id "text" $plainText "level" 3) }}
-  {{ end }}
-  {{ if $software }}{{ $tocItems = $tocItems | append (dict "id" "featured-software" "text" "Featured software" "level" 2) }}{{ end }}
-  {{ if $resources }}{{ $tocItems = $tocItems | append (dict "id" "related-resources" "text" "Related resources" "level" 2) }}{{ end }}
-  {{ if $events }}{{ $tocItems = $tocItems | append (dict "id" "related-events" "text" "Related events" "level" 2) }}{{ end }}
-  <div class="flex flex-col lg:flex-row gap-8 mt-8 mx-2 md:mx-0">
-    <div class="flex-1 min-w-0">
-      <h2 id="transcript" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-2">Transcript</h2>
-      <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">This transcript was generated automatically and may contain errors.</p>
-      <div id="video-transcript" class="prose dark:prose-invert max-w-none">
-        {{ $content | safeHTML }}
-      </div>
-    </div>
-    {{ if $tocItems }}
-    <aside class="hidden lg:block w-64 shrink-0">
-      <div class="sticky top-8">
-        <nav class="prose dark:prose-invert prose-sm">
-          <h2 class="text-lg font-semibold mb-4 text-gray-600">On this page</h2>
-          <ul
-            class="text-sm [&_a]:no-underline [&_a]:text-gray-600 [&_a]:hover:underline [&_ul]:my-0 [&_li]:marker:text-gray-600">
-            {{ range $tocItems }}
-            <li{{ if eq .level 3 }} class="ml-3"{{ end }}><a href="#{{ .id }}">{{ .text }}</a></li>
-            {{ end }}
-          </ul>
-        </nav>
-      </div>
-    </aside>
     {{ end }}
-  </div>
-  <style>
-    #video-transcript a[data-t] {
-      color: inherit;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    #video-transcript a[data-t]:hover {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-  </style>
-  {{ end }}
-  {{ else if .Content }}
-  <div class="flex flex-col lg:flex-row gap-8 mt-8">
-    <div class="flex-1 max-w-4xl mx-2 md:mx-0">
-      <div class="">
-        <div class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
-          {{ .Content }}
+    {{ if $software }}{{ $tocItems = $tocItems | append (dict "id" "featured-software" "text" "Featured software"
+    "level" 2) }}{{ end }}
+    {{ if $resources }}{{ $tocItems = $tocItems | append (dict "id" "related-resources" "text" "Related resources"
+    "level" 2) }}{{ end }}
+    {{ if $events }}{{ $tocItems = $tocItems | append (dict "id" "related-events" "text" "Related events" "level" 2)
+    }}{{ end }}
+    <div class="flex flex-col lg:flex-row gap-8 mt-8 mx-2 md:mx-0">
+      <div class="flex-1 min-w-0">
+        <div class="w-full prose">
+          <h2 id="transcript" class="">Transcript</h2>
+          <p class="mb-6 italic">This transcript was generated automatically and may contain errors.</p>
+          <div data-pagefind-body id="video-transcript"
+            class="[&_a[data-t]]:hover:bg-gray-100 [&_a[data-t]]:hover:no-underline! [&_a[data-t]]:rounded [&_a[data-t]]:text-inherit! [&_a[data-t]]:transition-colors [&_a[data-t]]:duration-200">
+            {{ $content | safeHTML }}
+          </div>
         </div>
       </div>
+      {{ if $tocItems }}
+      <aside class="hidden lg:block w-64 shrink-0">
+        <div class="sticky top-8">
+          <nav class="prose dark:prose-invert prose-sm">
+            <h2 class="text-lg font-semibold mb-4 text-gray-600">On this page</h2>
+            <ul
+              class="text-sm [&_a]:no-underline [&_a]:text-gray-600 [&_a]:hover:underline [&_ul]:my-0 [&_li]:marker:text-gray-600">
+              {{ range $tocItems }}
+              <li{{ if eq .level 3 }} class="ml-3" {{ end }}><a href="#{{ .id }}">{{ .text }}</a></li>
+                {{ end }}
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      {{ end }}
+    </div>
+    <style>
+      #video-transcript a[data-t] {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      #video-transcript a[data-t]:hover {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+    </style>
+    {{ end }}
+    {{ else if .Content }}
+    <div class="flex flex-col lg:flex-row gap-8 mt-8">
+      <div class="flex-1 max-w-4xl mx-2 md:mx-0">
+        <div class="">
+          <div class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+
+      <aside class="hidden lg:block w-64 shrink-0">
+        <div class="sticky top-8">
+          <nav class="prose dark:prose-invert prose-sm">
+            <h2 class="text-lg font-semibold mb-4 text-gray-600">On this page</h2>
+            <div
+              class="text-sm [&_a]:no-underline [&_a]:text-gray-600 [&_a]:hover:underline [&_ul]:my-0 [&_li]:marker:text-gray-600">
+              {{ .TableOfContents }}
+            </div>
+          </nav>
+        </div>
+      </aside>
+    </div>
+    {{ end }}
+
+    <!-- Software used in this Resource -->
+    {{ if $software }}
+    <div class="mt-8 mb-6 mx-2 md:mx-0">
+      <h2 id="featured-software" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+        Featured software
+      </h2>
     </div>
 
-    <aside class="hidden lg:block w-64 shrink-0">
-      <div class="sticky top-8">
-        <nav class="prose dark:prose-invert prose-sm">
-          <h2 class="text-lg font-semibold mb-4 text-gray-600">On this page</h2>
-          <div
-            class="text-sm [&_a]:no-underline [&_a]:text-gray-600 [&_a]:hover:underline [&_ul]:my-0 [&_li]:marker:text-gray-600">
-            {{ .TableOfContents }}
-          </div>
-        </nav>
-      </div>
-    </aside>
-  </div>
-  {{ end }}
-
-  <!-- Software used in this Resource -->
-  {{ if $software }}
-  <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 id="featured-software" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Featured software
-    </h2>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
-    {{ range $software }}
-    {{ partial "card_software.html" . }}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+      {{ range $software }}
+      {{ partial "card_software.html" . }}
+      {{ end }}
+    </div>
     {{ end }}
-  </div>
-  {{ end }}
 
-  <!-- Related Resources -->
-  {{ if $resources }}
-  <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 id="related-resources" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Related resources
-    </h2>
-  </div>
+    <!-- Related Resources -->
+    {{ if $resources }}
+    <div class="mt-8 mb-6 mx-2 md:mx-0">
+      <h2 id="related-resources" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+        Related resources
+      </h2>
+    </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
-    {{ range $resources }}
-    {{ partial "card_resource.html" . }}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+      {{ range $resources }}
+      {{ partial "card_resource.html" . }}
+      {{ end }}
+    </div>
     {{ end }}
-  </div>
-  {{ end }}
 
-  <!-- Events related to this Resource -->
-  {{ if $events }}
-  <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 id="related-events" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Related events
-    </h2>
-  </div>
+    <!-- Events related to this Resource -->
+    {{ if $events }}
+    <div class="mt-8 mb-6 mx-2 md:mx-0">
+      <h2 id="related-events" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+        Related events
+      </h2>
+    </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
-    {{ range $events }}
-    {{ partial "card_event.html" . }}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+      {{ range $events }}
+      {{ partial "card_event.html" . }}
+      {{ end }}
+    </div>
     {{ end }}
-  </div>
-  {{ end }}
 </div>
 {{ end }}

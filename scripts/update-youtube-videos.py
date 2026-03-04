@@ -82,6 +82,7 @@ def load_youtube_config(config_path: Path) -> dict[str, list[str]]:
     return {
         "channels": data.get("channels", []),
         "playlists": data.get("playlists", []),
+        "videos": data.get("videos", []),
     }
 
 
@@ -95,6 +96,36 @@ def load_existing_videos(output_path: Path) -> dict[str, dict[str, Any]]:
     except Exception as e:
         console.print(f"[yellow]Warning:[/] Could not load existing videos: {e}")
         return {}
+
+
+def deduplicate_videos(
+    videos: dict[str, dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    """Remove slug collisions, keeping the entry with the more recent last_updated."""
+    seen: dict[str, str] = {}  # slug -> url
+    result: dict[str, dict[str, Any]] = {}
+    for url, video in videos.items():
+        slug = video.get("slug", "")
+        if slug not in seen:
+            seen[slug] = url
+            result[url] = video
+        else:
+            prev_url = seen[slug]
+            prev = result[prev_url]
+            if video.get("last_updated", "") > prev.get("last_updated", ""):
+                del result[prev_url]
+                seen[slug] = url
+                result[url] = video
+                console.print(
+                    f"  [yellow]Warning:[/] Duplicate slug '{slug}': "
+                    f"replaced {prev_url} with {url}"
+                )
+            else:
+                console.print(
+                    f"  [yellow]Warning:[/] Duplicate slug '{slug}': "
+                    f"kept {prev_url}, discarded {url}"
+                )
+    return result
 
 
 def write_videos(videos: dict[str, dict[str, Any]], output_path: Path) -> None:
@@ -234,9 +265,11 @@ def main() -> None:
     config = load_youtube_config(config_path)
     channels = config["channels"]
     playlists = config["playlists"]
+    individual_videos = config["videos"]
 
     console.print(f"[cyan]Channels:[/]  {', '.join(channels) or '(none)'}")
     console.print(f"[cyan]Playlists:[/] {', '.join(playlists) or '(none)'}")
+    console.print(f"[cyan]Videos:[/]    {', '.join(individual_videos) or '(none)'}")
 
     if args.force:
         console.print("[yellow]Force mode:[/] Ignoring last_updated timestamps")
@@ -277,6 +310,15 @@ def main() -> None:
                 video_context[vid] = (video_context.get(vid, ("", ""))[0], playlist_id)
         except Exception as e:
             console.print(f"  [bold red]Error:[/] Could not fetch playlist: {e}")
+
+    if individual_videos:
+        console.print(f"\n[bold]Individual videos: {len(individual_videos)}[/]")
+        for vid in individual_videos:
+            if vid not in video_context:
+                video_context[vid] = ("", "")
+                console.print(f"  [green]\u2713[/] Added {vid}")
+            else:
+                console.print(f"  [dim]○[/] Already tracked: {vid}")
 
     console.print(f"\n[cyan]Total unique videos:[/] {len(video_context)}")
 
@@ -345,6 +387,7 @@ def main() -> None:
         existing_videos = all_videos
 
     # Write final state (includes skipped videos preserved from existing data)
+    existing_videos = deduplicate_videos(existing_videos)
     write_videos(existing_videos, output_path)
 
     # Phase 6: Summary report

@@ -14,6 +14,14 @@ module.exports = {
         mono: ['"Source Code Pro"', 'monospace'],
       },
       typography: {
+        DEFAULT: {
+            css: {
+              fontWeight: '400',
+              'a': {
+                fontWeight: '400',
+              },
+            },
+          },
         quoteless: {
           css: {
             'blockquote p:first-of-type::before': { content: 'none' },
