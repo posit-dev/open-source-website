@@ -25,7 +25,32 @@ from pdf2image import convert_from_path
 from PIL import Image
 from rich.console import Console
 
+script_dir = Path(__file__).parent
+project_root = script_dir.parent
+cheatsheets_dir = project_root / "content" / "resources" / "cheatsheets"
+
 console = Console(stderr=True)
+
+
+def resolve_pdf(value: str) -> Path:
+    """Resolve a PDF path or cheatsheet directory name to a PDF path."""
+    if value.endswith(".pdf"):
+        return Path(value).resolve()
+    slug = value.rstrip("/")
+    directory = cheatsheets_dir / slug
+    pdf_path = directory / f"{slug}.pdf"
+    if pdf_path.is_file():
+        return pdf_path
+    pdfs = sorted(directory.glob("*.pdf")) if directory.is_dir() else []
+    if len(pdfs) == 1:
+        return pdfs[0]
+    if pdfs:
+        console.print(
+            f"[bold red]Error:[/] Multiple PDFs in {directory}, specify one with --pdf"
+        )
+        sys.exit(1)
+    console.print(f"[bold red]Error:[/] No PDF found in {directory}")
+    sys.exit(1)
 
 
 def parse_frontmatter(content: str) -> tuple[dict[str, Any], str, str]:
@@ -118,9 +143,8 @@ def main() -> None:
     )
     parser.add_argument(
         "--pdf",
-        type=Path,
         required=True,
-        help="Full path to the cheatsheet PDF",
+        help="Path to a PDF or cheatsheet directory name (e.g. ml-preprocessing-data)",
     )
     parser.add_argument(
         "--width",
@@ -130,10 +154,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    pdf_path: Path = args.pdf.resolve()
-    if not pdf_path.is_file():
-        console.print(f"[bold red]Error:[/] PDF not found: {pdf_path}")
-        sys.exit(1)
+    pdf_path = resolve_pdf(args.pdf)
 
     output_dir = pdf_path.parent
     console.print("\n[bold blue]Creating cheatsheet thumbnails[/]")
