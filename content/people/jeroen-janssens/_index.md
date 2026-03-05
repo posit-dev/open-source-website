@@ -2,6 +2,7 @@
 title: "Jeroen Janssens"
 image: "jeroenjanssens-headshot-2021.png"
 role: "Head of Developer Relations"
+affiliation: "Posit, PBC"
 social:
   bluesky: "jeroenjanssens.com"
   github: "jeroenjanssens"

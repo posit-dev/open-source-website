@@ -2,6 +2,7 @@
 title: "Hadley Wickham"
 image: "profile.jpg"
 role: "Chief Scientific Officer"
+affiliation: "Posit, PBC"
 social:
   bluesky: "hadley.nz"
   github: "hadley"

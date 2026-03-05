@@ -34,7 +34,7 @@
 
         {{ with .Params.role }}
         <p class="text-lg text-gray-600 dark:text-gray-300">
-          {{ . }}
+          {{ . }}{{ with $.Params.affiliation }} at {{ . }}{{ end }}
         </p>
         {{ end }}
 
@@ -154,6 +154,14 @@
 
   <!-- Software by this Person -->
   {{ $software := where .Pages "Section" "software" }}
+  {{ with .Params.people }}
+    {{ range . }}
+      {{ $member := site.GetPage (printf "/people/%s" (urlize .)) }}
+      {{ if $member }}
+        {{ $software = union $software (where $member.Pages "Section" "software") }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
   {{ if gt (len $software) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
     <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
@@ -170,6 +178,14 @@
 
   <!-- Events attended by this Person -->
   {{ $events := where .Pages "Section" "events" }}
+  {{ with .Params.people }}
+    {{ range . }}
+      {{ $member := site.GetPage (printf "/people/%s" (urlize .)) }}
+      {{ if $member }}
+        {{ $events = union $events (where $member.Pages "Section" "events") }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
   {{ if gt (len $events) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
     <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
@@ -188,6 +204,17 @@
   {{ $posts := where .Pages "Section" "blog" }}
   {{ $resources := where .Pages "Section" "resources" }}
   {{ $combined := union $posts $resources }}
+  {{ with .Params.people }}
+    {{ range . }}
+      {{ $member := site.GetPage (printf "/people/%s" (urlize .)) }}
+      {{ if $member }}
+        {{ $memberPosts := where $member.Pages "Section" "blog" }}
+        {{ $memberResources := where $member.Pages "Section" "resources" }}
+        {{ $combined = union $combined $memberPosts }}
+        {{ $combined = union $combined $memberResources }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
   {{ if gt (len $combined) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
     <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
