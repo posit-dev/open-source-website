@@ -2,6 +2,7 @@
 description: Make awesome display tables using Python
 github: posit-dev/great-tables
 image: great-tables.svg
+color: "#FA00C3"
 languages:
 - Python
 latest_release: '2026-03-02T20:52:39+00:00'
