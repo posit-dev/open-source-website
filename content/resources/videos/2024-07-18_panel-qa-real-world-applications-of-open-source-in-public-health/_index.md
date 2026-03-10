@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-07-18'
 description: 'Please join us for the live Q&A session at ~11:25 am ET for the July 17th Event: Real World Applications of Open Source in Public Health
 
@@ -63,4 +64,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9xTsNuLt3aQ
   view_count: 323
 ---
+image: thumbnail.jpg
 

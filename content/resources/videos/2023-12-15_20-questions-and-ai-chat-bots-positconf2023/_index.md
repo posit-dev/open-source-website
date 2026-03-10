@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Winston Chang\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: I can't believe it's not magic: new tools for data science.\r\nSession Code: TALK-1153"
 people:
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Sn9Uj6vW4-Y
   view_count: 436
 ---
+image: thumbnail.jpg
 

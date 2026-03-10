@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-10-18'
 description: 'We were recently joined by COL Kris Saling, Director of Innovation at US Army Human Resources Command to discuss transforming human resources and talent management services for those who serve.
 
@@ -73,4 +74,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=A2kV9DANmvg
   view_count: 366
 ---
+image: thumbnail.jpg
 

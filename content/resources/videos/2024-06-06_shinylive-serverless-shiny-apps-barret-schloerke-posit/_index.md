@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-06'
 description: 'In the rapidly evolving landscape of web technologies, the integration of R (and Python) with modern web frameworks has become increasingly important for data scientists and developers. This presentation introduces {shinylive}, a new R package that exports Shiny applications to be run within statically hosted websites. We will explore the capabilities of {shinylive} through its use of the innovative R package {webR}, which allows for the execution of R code in the browser (via WebAssembly and service workers) without the need for a centralized server.
 
@@ -115,4 +116,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=RcwvG7dtMqU
   view_count: 9582
 ---
+image: thumbnail.jpg
 

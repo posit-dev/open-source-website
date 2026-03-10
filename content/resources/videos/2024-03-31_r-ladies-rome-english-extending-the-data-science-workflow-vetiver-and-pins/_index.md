@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-03-31'
 description: "In this video, Isabel Zimmerman goes through the fundamental aspects of machine learning operations (MLOps) tasks, bridging the gap between data analysis and model deployment. While data practitioners excel in data analysis and model development, there's often a significant gap in understanding tasks beyond the conventional data science workflow. \n\nYou'll explore crucial MLOps concepts, such as deploying models as API endpoints and monitoring model decay, while leveraging the powerful capabilities of the vetiver and pins packages.\n\nMaterial: \n- presentation: https://www.isabelizimm.me/talk-extending-ds-workflow-rladies/\n- RStudioConf2022 talk: https://www.isabelizimm.me/talks/rstudioconf2022/\n- Vetiver website: https://vetiver.rstudio.com/\n\n0:00 Welcome & R-Ladies Rome Chapter Introduction\n0:04:45 Slido Pools\n0:10:15 Talk Intro\n0:10:56 Isalbel's Talk\n0:47:53 Hands-on session\n1:02:20 Q&A\n\nHave a look at our WebSite for more insights about our events: https://rladiesrome.quarto.pub/website/talks/"
 people:
@@ -36,4 +37,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ddQiNiIr3Mk
   view_count: 358
 ---
+image: thumbnail.jpg
 

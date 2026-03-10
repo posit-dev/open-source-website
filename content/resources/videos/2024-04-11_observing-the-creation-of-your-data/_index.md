@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-11'
 description: 'Data Science Hangout with Zack Fragoso, Head of MLOps at Domino''s Pizza.
 
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=v7IbJ30UaiM
   view_count: 1210
 ---
+image: thumbnail.jpg
 

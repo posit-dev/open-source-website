@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'COTA’s team of oncologists and data scientists curate real-world data used by life science companies and healthcare partners to inform drug development and patient care. Over time, we have received many of the same questions from our data users, which indicated a dire need for translating our internal clinical guidance and data model knowledge into a tool for successfully navigating our data. We developed rwnavigator, an R package that helps users easily prepare COTA data for analysis with time-to-event packages. As first-time package developers, we ran into many challenges as we created, tested, and deployed rwnavigator. We hope to share with the greater R community our motivations for developing this package and best practices we learned along the way.
 
@@ -44,4 +45,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=rQ8drf18MzA
   view_count: 242
 ---
+image: thumbnail.jpg
 

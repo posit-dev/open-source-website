@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Power BI is a multi-faceted business intelligence tool with built-in data ingestion, transformation, and visualization features. The learning curve for Power BI can be steep for many, but fortunately, R users can shorten the learning curve by leveraging the Tidyverse. In this talk, attendees will get introduced to how the Tidyverse can shorten the Power BI learning curve and enable them to perform tasks in Power BI that are not possible using its native functionality.
 
@@ -36,4 +37,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=7wHMaUmoWFA
   view_count: 1073
 ---
+image: thumbnail.jpg
 

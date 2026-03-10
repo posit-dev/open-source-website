@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-09-01'
 description: 'Joe Roberts
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-Z5E-3XzbEY
   view_count: 86
 ---
+image: thumbnail.jpg
 

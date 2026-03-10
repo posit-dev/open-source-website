@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'xaringan is a quirky package that extends R Markdown to create beautiful web-based HTML slides. Some of xaringan’s quirks come from the JavaScript library it uses, remarkjs, and some of it from the unusual naming scheme xaringan uses for its functions. But under this quirky exterior lies a powerful tool for learning and practicing web development, especially when combined with infinite_moon_reader() for immediate feedback. In this talk I''ll cover some basic web concepts that illustrate how fun and rewarding it can to learn HTML, CSS and JavaScript while building awesome slides in R Markdown.
 
@@ -90,4 +91,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=XtUYXMLBthM
   view_count: 1430
 ---
+image: thumbnail.jpg
 

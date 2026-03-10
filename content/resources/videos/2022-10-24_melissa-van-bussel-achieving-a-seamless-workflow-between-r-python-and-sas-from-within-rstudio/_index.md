@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Some of my best friends use Python...and all of my coworkers use SAS.
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=iS9toBHswBY
   view_count: 1034
 ---
+image: thumbnail.jpg
 

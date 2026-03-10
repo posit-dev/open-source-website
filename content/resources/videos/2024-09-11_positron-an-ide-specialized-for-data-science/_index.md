@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-09-11'
 description: 'Dr. Julia Silge, Engineering Manager at Posit, joins @JonKrohnLearns to introduce Positron, a fresh open-source IDE that’s perfect for exploratory data analysis and visualization. She also lays out her top picks for LLMs that boost coding efficiency and discusses when traditional NLP methods might be the smarter choice over LLMs. Plus, Julia highlights some must-know open-source libraries that make managing MLOps easier than ever. Tune in for insights that every data scientist, ML engineer, and developer will find useful.
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=KDvdY6k7wFA
   view_count: 1138
 ---
+image: thumbnail.jpg
 

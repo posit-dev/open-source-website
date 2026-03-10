@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-10-19'
 description: 'Scaling Spreadsheets with R
 
@@ -128,4 +129,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=yb_mBJz3iSc
   view_count: 4702
 ---
+image: thumbnail.jpg
 

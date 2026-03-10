@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by E. David Aja, not Kelly O'Briant \r\n\r\nRunning Connect with off-host content execution in Kubernetes is very cool and allows you to enable some powerful and sophisticated workflows. The question is, do you really need it? How do you evaluate and decide? Let's have a candid conversation about whether Connect content execution on Kubernetes is right for you and your organization. \r\n \r\nMoving to Kubernetes will introduce complexity, so it's important to have a strong motivating reason for making the switch. This talk will introduce new Connect features that are made possible by content-level containerization.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Data science infrastructure for your org.\r\nSession Code: TALK-1116"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=DN29WEXEF-8
   view_count: 281
 ---
+image: thumbnail.jpg
 

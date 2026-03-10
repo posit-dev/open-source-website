@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-11-06'
 description: 'Resources: https://github.com/karthik/rstudio2019'
 people: []
@@ -70,4 +71,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=f39_oW4RKfI
   view_count: 2495
 ---
+image: thumbnail.jpg
 

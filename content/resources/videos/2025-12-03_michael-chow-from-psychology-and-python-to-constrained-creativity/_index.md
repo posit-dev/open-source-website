@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-03'
 description: 'For this one, we turn the mic around. Wes McKinney takes over the interviewer’s chair to chat with his co-host, Michael Chow. Michael’s a principal software engineer at Posit, but he started out studying how people think — literally, with a PhD in cognitive psychology. Somewhere along the way, he got hooked on data science, helped build adaptive learning tools at DataCamp, and now spends his days thinking about how to make Python easier to use and more fun.
 
@@ -67,4 +68,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Ss-xCQlp2jM
   view_count: 233
 ---
+image: thumbnail.jpg
 

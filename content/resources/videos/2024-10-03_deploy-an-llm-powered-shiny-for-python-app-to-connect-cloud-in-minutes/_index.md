@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-03'
 description: 'Connect Cloud lets you quickly deploy data applications and documents from public GitHub repositories for Python and R projects.
 
@@ -90,4 +91,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=YB_VyRV5wwQ
   view_count: 1100
 ---
+image: thumbnail.jpg
 

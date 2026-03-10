@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-05'
 description: What should you name a new dinosaur discovery, according to neural networks? Which season of The Golden Girls should you watch when playing a drinking game? How can you build a LEGO set for the lowest price? R is constantly evolving, so as users, we’re constantly learning. Over the past few years, I’ve found that working on side projects is great for hands-on learning - and for me, the more absurd the project, the better. Side projects provide a safe, low-stakes environment to learn new packages and methodologies before using them in work or in production. Sharing those projects can help publicize the package and increase its accessibility, benefiting both the original author and future users. In this talk, I’ll share my experiences with side projects for learning state-of-the-art data science tools and growing as an R user, including how one project helped me land my dream job.
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=oOG-aXP_ICI
   view_count: 2381
 ---
+image: thumbnail.jpg
 

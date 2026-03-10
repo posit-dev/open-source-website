@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-10-10'
 description: 'which have you tried? #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf'
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WQBI2W82Rlo
   view_count: 1390
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-02-26'
 description: 'You will learn: How to apply consistent company branding across reports, dashboards, and apps
 
@@ -140,4 +141,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=U48y0_yzEPY
   view_count: 3150
 ---
+image: thumbnail.jpg
 

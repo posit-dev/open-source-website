@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-02-18'
 description: '*Deploy your data science content with Posit Connect Cloud!* Daniel Chen walks you through deploying a Shiny for Python app to Connect Cloud, sharing your content, and updating it via GitHub.
 
@@ -80,4 +81,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WD693FBfVUk
   view_count: 2563
 ---
+image: thumbnail.jpg
 

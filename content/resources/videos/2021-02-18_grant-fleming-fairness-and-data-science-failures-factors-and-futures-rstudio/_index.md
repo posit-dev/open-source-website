@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'In recent years, numerous highly publicized failures in data science have made evident that biases or issues of fairness in training data can sneak into, and be magnified by, our models, leading to harmful, incorrect predictions being made once the models are deployed into the real world. But what actually constitutes an unfiar or biased model, and how can we diagnose and address these issues within our own work? In this talk, I will present a framework for better understanding how issues of fairness overlap with data science as well as how we can improve our modeling pipelines to make them more interpretable, reproducible, and fair to the groups that they are intended to serve. We will explore this new framework together through an analysis of ProPublica''s COMPAS recidivism dataset using the tidymodels, drake, and iml packages.
 
@@ -87,4 +88,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=cBM_gV-B3YI
   view_count: 146
 ---
+image: thumbnail.jpg
 

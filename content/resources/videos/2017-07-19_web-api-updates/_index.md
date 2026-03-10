@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2017-07-19'
 description: There is a vast amount of data available on the web, and much of it is accessible via APIs.  Sources ranging from the US Census Bureau to the NOAA National Weather Service to S3 buckets and online databases can be reached programmatically from within R.  This webinar will cover the basics, and some of the pitfalls, of calling web APIs from within R, including read/write operations, headers, authentication, error handling, and response parsing.
 people: []
@@ -29,4 +30,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=lV3u6Dc93T0
   view_count: 3068
 ---
+image: thumbnail.jpg
 

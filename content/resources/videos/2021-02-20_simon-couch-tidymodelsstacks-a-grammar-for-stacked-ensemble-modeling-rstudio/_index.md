@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Full title: tidymodels/stacks, Or, In Preparation for Pesto: A Grammar for Stacked Ensemble Modeling
 
@@ -99,4 +100,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=E7uygsmx3-Y
   view_count: 1483
 ---
+image: thumbnail.jpg
 

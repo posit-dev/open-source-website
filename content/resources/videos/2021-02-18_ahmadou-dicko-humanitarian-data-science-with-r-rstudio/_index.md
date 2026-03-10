@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'Humanitarian actors are increasingly using data to drive their decisions. Since the Haiti 2010 earthquake, the volume of data collected and used by humanitarians has been growing exponentially and organizations are now relying on data specialists to turn all this data into life-saving data products.
 
@@ -102,4 +103,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WR41ViiEz_o
   view_count: 682
 ---
+image: thumbnail.jpg
 

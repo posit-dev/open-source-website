@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'From Solo to Social: Making Coding a Collaborative Adventure
 
@@ -55,4 +56,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=HP3VfGkHQ1c
   view_count: 107
 ---
+image: thumbnail.jpg
 

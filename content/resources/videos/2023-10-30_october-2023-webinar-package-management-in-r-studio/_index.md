@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-10-30'
 description: 'Package Management in R Studio
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=VFtO54DF4_c
   view_count: 441
 ---
+image: thumbnail.jpg
 

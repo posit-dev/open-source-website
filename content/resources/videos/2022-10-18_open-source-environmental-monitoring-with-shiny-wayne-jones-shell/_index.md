@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-18'
 description: 'What are the critical factors for successful uptake of an application?
 
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=OTucXosqzLQ
   view_count: 2173
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-17'
 description: 'From rstudio::global(2021) Pharma X-Sessions, sponsored by ProCogia: in this talk I discuss the process developed for validating internally generated R packages at SCHARP (Statistical Center for HIV/AIDS Research and Prevention) - the R Package Validation Framework. I cover the elements of the framework and basics of applying it with some examples. By using tools native to the R package building infrastructure, validation can become an integrated part of your package development, improving the quality of both the package and validation.
 
@@ -89,4 +90,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=1Bxk2wReFzE
   view_count: 1559
 ---
+image: thumbnail.jpg
 

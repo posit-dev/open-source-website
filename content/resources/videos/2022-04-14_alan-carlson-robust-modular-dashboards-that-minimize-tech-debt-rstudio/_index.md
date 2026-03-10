@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-04-14'
 description: 'Robust, modular dashboards that minimize tech debt
 
@@ -115,4 +116,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ssmwUBSpF-8
   view_count: 2569
 ---
+image: thumbnail.jpg
 

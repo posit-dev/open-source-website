@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-12-07'
 description: 'Using RStudio on Amazon SageMaker
 
@@ -84,4 +85,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fmgSVRWgXDg
   view_count: 4668
 ---
+image: thumbnail.jpg
 

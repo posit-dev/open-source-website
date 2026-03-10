@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Beyond the Basics: Expanding Quarto''s Capabilities with Lua
 
@@ -73,4 +74,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=u9ev3mvC-p0
   view_count: 384
 ---
+image: thumbnail.jpg
 

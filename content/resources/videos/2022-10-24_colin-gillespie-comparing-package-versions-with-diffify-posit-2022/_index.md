@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Even when we run the simplest of R scripts, we are using dozens of R packages. We use packages for data cleaning, writing reports, graphics and modelling. One of the strengths of R, is the depth of packages.
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=bgsQJ5Ox4X0
   view_count: 245
 ---
+image: thumbnail.jpg
 

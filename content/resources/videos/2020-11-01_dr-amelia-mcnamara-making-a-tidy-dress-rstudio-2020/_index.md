@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-01'
 description: 'After at least a year of dreaming about it, I finally produced the #rstats / #Tidyverse dress of my dreams. This involved designing fabric, getting it custom printed, making a pattern from an existing garment, and sewing the dress. I learned a lot of useful lessons during this project, including &quot;do unit tests&quot; (make a practice dress) and &quot;document your work&quot; (get your BFF to take pictures of you).'
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=82Byshg0Z-k
   view_count: 319
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-21'
 description: 'The tidymodels framework is a collection of packages for modeling and machine learning using tidyverse principles. In addition to regression and classification, it now also supports censored regression for time-to-event data. This type of data with potential censoring requires dedicated models and performance metrics from the field of survival analysis. While the censored package has made survival models available for a while, the recent addition of survival metrics to the yardstick package has enabled us to support this type of analysis across the entire framework. The same ease of use and vast functionality, from resampling and feature engineering to tuning, is now available for this additional modeling problem.
 
@@ -41,4 +42,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=oBI8rH8GIHQ
   view_count: 245
 ---
+image: thumbnail.jpg
 

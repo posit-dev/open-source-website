@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-06'
 description: 'We were recently joined by Joseph Powers, Principal Data Scientist at Intuit and Jen Wang, VP Product & Growth - formerly at thredUP to chat about transitioning from academia to tech roles, building inclusive & growth-oriented teams, and how organizations can improve their experimentation and causal inference processes to generate larger and faster insights that improve their product and marketing experiences.
 
@@ -81,4 +82,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ydNohRebMcs
   view_count: 346
 ---
+image: thumbnail.jpg
 

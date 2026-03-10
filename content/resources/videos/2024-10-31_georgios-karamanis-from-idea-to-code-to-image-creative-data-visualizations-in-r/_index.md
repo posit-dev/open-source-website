@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'In this talk, we will walk through the process of converting an idea into a creative visualization in R and ggplot2, from finding inspiration to writing the code. We’ll look at handy tips to make the creative and coding process smoother, how to create more personal plots, as well as the importance (and fun!) of sharing your work with a great community.
 
@@ -46,4 +47,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mMSitMwXem0
   view_count: 569
 ---
+image: thumbnail.jpg
 

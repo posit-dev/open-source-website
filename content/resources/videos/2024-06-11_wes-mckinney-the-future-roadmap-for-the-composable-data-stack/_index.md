@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-11'
 description: 'The Future Roadmap for the Composable Data Stack by Wes McKinney
 
@@ -62,4 +63,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=E-GObaGMEKU
   view_count: 1447
 ---
+image: thumbnail.jpg
 

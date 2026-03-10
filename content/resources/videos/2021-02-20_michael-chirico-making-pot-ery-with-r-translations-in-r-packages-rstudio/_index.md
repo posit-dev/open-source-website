@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'The R community is globally distributed and R itself is available with messages in 14 languages. Adding translations for non-native English-speaking users of your package can ease their experience and empower them to build better things with less frustration (though please note that ""object of type ''closure'' is not subsettable"" is equally inscrutable in all human languages).
 
@@ -89,4 +90,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=N-7LdfAZBeA
   view_count: 378
 ---
+image: thumbnail.jpg
 

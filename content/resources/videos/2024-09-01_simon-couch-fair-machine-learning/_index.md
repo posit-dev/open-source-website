@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-09-01'
 description: 'Simon Couch
 
@@ -67,4 +68,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=1wKt-574eo4
   view_count: 205
 ---
+image: thumbnail.jpg
 

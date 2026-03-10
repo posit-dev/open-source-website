@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2016-11-16'
 description: Overview view of proxied authentication with RStudio's professional products. Specific example of setting up Shiny Server Pro to use oauth2_proxy and Github OAuth provider.
 people: []
@@ -32,4 +33,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=GsW-RYCnADU
   view_count: 5277
 ---
+image: thumbnail.jpg
 

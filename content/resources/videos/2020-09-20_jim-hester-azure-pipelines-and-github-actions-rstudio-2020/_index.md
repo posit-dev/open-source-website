@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-09-20'
 description: Open source R packages on GitHub often take advantage of continuous integration services to automatically check their packages for errors. This is very useful to catch things quickly, as well and increasing confidence for proposed changes, as the Pull Requests can be checked before they are merged. Travis-CI and Appveyor are the most popular current methods. However newer services, Azure Pipelines and GitHub Actions, show promise for being more powerful and simpler to configure and debug. I will discuss these services and demonstrate some of their capabilities and how to configure them for your own use in packages and reports.
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WWDMZNW5CnU
   view_count: 999
 ---
+image: thumbnail.jpg
 

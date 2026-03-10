@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Purrrfectly parallel, purrrfectly distributed
 
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=j1yHjMvbnQM
   view_count: 317
 ---
+image: thumbnail.jpg
 

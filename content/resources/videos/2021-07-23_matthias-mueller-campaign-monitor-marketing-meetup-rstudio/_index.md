@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-07-23'
 description: 'R in Marketing: Serving Bespoke Insights Through Automation
 
@@ -64,4 +65,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Y2zoRCXgPwk
   view_count: 2086
 ---
+image: thumbnail.jpg
 

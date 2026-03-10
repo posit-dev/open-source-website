@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Theming Made Easy: Introducing brand.yml
 
@@ -80,4 +81,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=DPaoNM8Ux04
   view_count: 407
 ---
+image: thumbnail.jpg
 

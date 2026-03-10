@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-27'
 description: 'We were joined by Melissa Perry, Senior Manager, eCommerce Analytics at Peloton Interactive, Inc. Melissa is a value-driven data science leader with a passion for growing the next generation of data experts and moving beyond reporting, into optimized decision-making.
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=KT6UKh15_68
   view_count: 1087
 ---
+image: thumbnail.jpg
 

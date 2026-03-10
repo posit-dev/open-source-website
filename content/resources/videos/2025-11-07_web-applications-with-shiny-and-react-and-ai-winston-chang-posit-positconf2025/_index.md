@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Web applications with Shiny and React (and AI)
 
@@ -70,4 +71,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Kh8xDym8sTg
   view_count: 360
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Joe Powers\r\n\r\nToo many great data science products never go into production. To persuade leaders and colleagues to adopt your data science offering, you must translate your insights into terms that are relevant and accessible to them. Attempts to persuade these audiences with proofs and model performance stats will often fall flat because the audience is left feeling overwhelmed. \r\n \r\nThis talk will demonstrate the data simulation, visualization, and story-telling techniques that I use to influence leadership and the community-building techniques I use to earn the trust and support of fellow analysts. These efforts were successful in persuading Intuit to adopt advanced analytic methods like sequential analysis that cut the duration of our AB tests by over 60%.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Bridging the gap between data scientists and decision makers.\r\nSession Code: TALK-1077"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=HhsL8rl9jQ4
   view_count: 551
 ---
+image: thumbnail.jpg
 

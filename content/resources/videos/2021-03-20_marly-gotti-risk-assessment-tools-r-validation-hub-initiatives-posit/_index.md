@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-20'
 description: 'From rstudio::global(2021) Pharma X-Sessions, sponsored by ProCogia: we will present some of the resources and tools the R Validation Hub has been working on to aid the biopharmaceutical industry in the process of using R in a regulatory setting. In the talk, you will learn about the {riskmetric} R package, which measures the risk of using R packages, and you will also see a demo of the Risk Assessment Shiny application, which is an advanced user interface for {riskmetric}.
 
@@ -93,4 +94,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4uVQXHpNmUQ
   view_count: 2788
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-19'
 description: 'Discover cutting-edge advancements in data processing stacks. Listen in as Wes McKinney dives into pivotal projects like Parquet and Arrow, alongside essential interface libraries like Ibis and tidyverse. Wes navigates through the current state of these projects, highlighting areas for further innovation and growth.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9rOefO341sI
   view_count: 2516
 ---
+image: thumbnail.jpg
 

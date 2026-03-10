@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Death by Dropdown? Engineer Insightful Shiny Apps with Behavioral Science
 
@@ -61,4 +62,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QvMnUZLQ-oo
   view_count: 112
 ---
+image: thumbnail.jpg
 

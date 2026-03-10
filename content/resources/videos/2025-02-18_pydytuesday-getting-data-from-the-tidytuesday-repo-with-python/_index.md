@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-02-18'
 description: "*Let's navigate the TidyTuesday repo and download some data!* Libby Heeren walks you through what TidyTuesday is, how to navigate the GitHub repo, and how to pull in and use the data in Python using Positron. We hope you join us in participating in PydyTuesday!\n\nDon't forget to use the hashtags #TidyTuesday and #PydyTuesday wherever you like to hangout online - Bluesky, Mastodon, LinkedIn, etc. - have fun out there!  We can't wait to see the predictive models, visualizations, dashboards, and data apps that you create ✨\n\nNote: This video shows the pydytuesday package as \"PyDyTuesday\" - this was an early naming convention and has since been updated to just \"pydytuesday\" \U0001F389 \n\nResources and Repos to star:\n\n* TidyTuesday GitHub Repo: https://github.com/rfordatascience/tidytuesday\n* Posit PydyTuesday GitHub Repo: https://github.com/posit-dev/python-tidytuesday\n* TidyTuesday hashtag search on Bluesky: https://bsky.app/search?q=tidytuesday\n* Other videos in this PydyTuesday playlist: https://www.youtube.com/playlist?list=PL9HYL-VRX0oSDQjicFMLIIdcLv5NuvDp9\n\n#pythoncontent"
 people: []
@@ -30,4 +31,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ol2FrSL5gVU
   view_count: 1586
 ---
+image: thumbnail.jpg
 

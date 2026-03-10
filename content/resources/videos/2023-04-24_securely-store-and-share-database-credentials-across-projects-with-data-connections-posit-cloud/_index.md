@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-04-24'
 description: 'This video introduces the new Data Connections feature in Posit Cloud that enables users to more quickly securely store and share database credentials across multiple data projects.
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=HFvJsWiQYbA
   view_count: 1669
 ---
+image: thumbnail.jpg
 

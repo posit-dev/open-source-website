@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'What is Quarto? In this talk, in four acts, we will discuss how Quarto unifies and extends the R Markdown ecosystem. Through our work with NASA Openscapes, Duke University, and RStudio, we will share our experiences sharing, teaching, collaborating, and reimagining with Quarto. Full of demos with Quarto in RStudio and Jupyter and weaving together narrative and code, this talk will help you get the most out of Quarto regardless of your background with R Markdown, the computing language(s) you may use, and your tool of choice for authoring.
 
@@ -89,4 +90,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=p7Hxu4coDl8
   view_count: 4976
 ---
+image: thumbnail.jpg
 

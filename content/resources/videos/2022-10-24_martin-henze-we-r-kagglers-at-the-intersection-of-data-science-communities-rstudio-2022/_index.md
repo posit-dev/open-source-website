@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'In this presentation, I will share my experiences at the intersection of the R and Kaggle communities. As Kaggle''s first Notebooks Grandmaster, I will talk about how R users can contribute and thrive in an increasingly Python dominated community. A strong focus will be on the art of building insightful and engaging Kaggle notebooks and exploratory data analyses in general. I will share my lessons from running a weekly series aimed at promoting underrated Kaggle notebooks and their authors. And I will talk about organising a Kaggle insights competition aimed at exploring this dataset of 100 episodes, and what it taught me about community dynamics, different approaches to exploratory challenges, and the creativity of the participants.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WAp82jxf9RA
   view_count: 190
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Efficient and scalable analytics workflows are critical for an adaptive and data-driven organization. How can we scale systems to support an office charged with implementing USAID''s $6 billion HIV/AIDS program? Our team leveraged R and global health APIs to build more efficient workflows through automation by developing custom R packages to access health program data. Our investment in creating an automated data infrastructure with flexible, open-source tools like R enabled us to build reproducible workflows for analysts in over 50 partner countries. We would like to share our experience in a federal agency integrating APIs with R to develop scalable data pipelines, as inspiration for organizations facing similar resource & data challenges.
 
@@ -39,4 +40,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=AAtauBhZvHg
   view_count: 337
 ---
+image: thumbnail.jpg
 

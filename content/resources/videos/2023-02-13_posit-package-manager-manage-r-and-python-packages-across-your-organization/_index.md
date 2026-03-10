@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-02-13'
 description: 'Posit Package Manager is a repository management server to organize and centralize R and Python packages across your organization.
 
@@ -84,4 +85,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=q9Ym4MyKOmY
   view_count: 2598
 ---
+image: thumbnail.jpg
 

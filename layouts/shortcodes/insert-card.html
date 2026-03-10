@@ -3,8 +3,6 @@
 {{ if not $item }}
   {{ errorf "insert-card shortcode requires an 'item' argument" }}
 {{ end }}
-{{ $showBadge := true }}
-{{ with .Get "show-badge" }}
-  {{ $showBadge = ne (string .) "false" }}
-{{ end }}
-{{ partial "card.html" (dict "item" $item "show-badge" $showBadge) }}
+
+{{ $hide_badge := .Get "hide-badge" }}
+{{ partial "card.html" (dict "item" $item "hide-badge" $hide_badge) }}

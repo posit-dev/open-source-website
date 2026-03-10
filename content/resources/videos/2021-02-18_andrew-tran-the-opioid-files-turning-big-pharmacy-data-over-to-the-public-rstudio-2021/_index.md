@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'Through a community survey conducted over the summer, the RStudio tidymodels team learned that users felt the #1 priority for future development in the tidymodels package ecosystem should be ensembling, a statistical modeling technique involving the synthesis of multiple learning algorithms to improve predictive performance. This December, we were delighted to announce the initial release of stacks, a package for tidymodels-aligned ensembling. A particularly statistically-involved pesto recipe will help us get a sense for how the package works and how it advances the tidymodels package ecosystem as a whole.
 
@@ -86,4 +87,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vCFsvcURTdI
   view_count: 262
 ---
+image: thumbnail.jpg
 

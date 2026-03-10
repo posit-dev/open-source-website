@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Learn best practices for setting up the entire Rstudio team infrastructure - Server Pro, Connect, Package Manager from the perspective of a data scientist and for a data science audience - especially those who have never worked with servers, AWS, or bash. This talk will also be applicable to data scientists looking to start on an engineering project outside of Rstudio as well.
 
@@ -93,4 +94,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=b6dpDQ7uQjE
   view_count: 335
 ---
+image: thumbnail.jpg
 

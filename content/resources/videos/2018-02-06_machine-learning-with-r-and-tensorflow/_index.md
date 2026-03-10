@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2018-02-06'
 description: 'J.J. Allaire''s keynote at rstudio::conf 2018 on the R interface to TensorFlow (https://tensorflow.rstudio.com), a suite of packages that provide high-level interfaces to deep learning models (Keras) and standard regression and classification models (Estimators), as well as tools for cloud training, experiment management, and production deployment. The talk also discusses deep learning more broadly (what it is, how it works, and where it might be relevant to users of R in the years ahead).
 
@@ -57,4 +58,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=atiYXm7JZv0
   view_count: 99515
 ---
+image: thumbnail.jpg
 

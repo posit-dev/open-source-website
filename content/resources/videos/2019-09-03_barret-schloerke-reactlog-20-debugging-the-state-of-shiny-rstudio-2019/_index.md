@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-09-03'
 description: "The revamped reactlog provides an updated visual display to traverse through the reactive behavior within your shiny application. Using live shiny applications, we will use reactlog’s directed dependency graph to find missing reactive dependencies in “working” applications and address suboptimal reactive coding patterns. Correcting these coding patterns will reduce the amount of calculations done by shiny and keep reactive objects from being created unnecessarily.\r\n\r\nVIEW MATERIALS http://github.com/schloerke/presentation-2019-01-18-reactlog\r\n\r\nAbout the Author\r\nBarret Schloerke\r\nI specialize in Large Data Visualization where I utilize the interactivity of a web browser, the fast iterations of the R programming language, and large data storage capacity of Hadoop."
 people:
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9ObBOZ-EVqE
   view_count: 1270
 ---
+image: thumbnail.jpg
 

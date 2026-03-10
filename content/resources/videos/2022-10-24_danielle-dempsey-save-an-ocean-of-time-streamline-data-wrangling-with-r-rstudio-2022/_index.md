@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'My organization currently has over 250 oceanographic sensors deployed around the coast of Nova Scotia, Canada. Together, these generate around 4 million rows of data every year. I was shocked when I discovered my colleagues manually compiled, formatted, and analyzed these data using hundreds of Excel spreadsheets. This was highly time consuming, error prone, and lacked traceability. To improve this workflow, I developed an R package that reduced processing time by 95%. The package has since become integral to our data pipeline, including quality control, analysis, visualization, and report generation in RMarkdown. The resulting datasets have already proven invaluable to industry leaders looking to invest in Nova Scotia’s coastal resources.
 
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=cX2DE1V8-tI
   view_count: 911
 ---
+image: thumbnail.jpg
 

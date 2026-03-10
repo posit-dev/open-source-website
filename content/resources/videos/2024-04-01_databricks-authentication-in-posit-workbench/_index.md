@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-01'
 description: "Posit Workbench now has delegated Databricks credentials. \n\nUsers can log into a Databricks Workspace when starting an RStudio or VS Code session.\nAuthentication relies on OAuth-backed refresh tokens rather than Personal Access Tokens (PATs). This allows for more granular control over permissions, built-in expiration, and defined scopes.\nOnce logged in, you can interact directly with your Databricks clusters in that Workspace in your preferred environment.\n\nLearn more:\n- Databricks x Posit: https://posit.co/solutions/databricks/\n-  Empowering R and Python Developers: Databricks and Posit Announce New Integrations: https://posit.co/blog/databricks-and-posit-announce-new-integrations/\n- RStudio IDE and Posit Workbench 2023.12.0: What’s New: https://posit.co/blog/rstudio-2023-12-0-whats-new/\n- Posit Professional Drivers 2024.03.0: Support for Apple Silicon: https://posit.co/blog/pro-drivers-2024-03-0/\n\nContact our sales team to schedule a demo: https://posit.co/schedule-a-call/?booking_calendar__c=Databricks"
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=c2sllTm_waA
   view_count: 664
 ---
+image: thumbnail.jpg
 

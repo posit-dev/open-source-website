@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-02-27'
 description: 'In this session, Isabella Velásquez walks us through Quarto Live and Shinylive, powerful tools that allow us to create interactive R, Python, and Shiny applications without a server. These technologies make it easier than ever to share dynamic, engaging data science projects directly in the browser.
 
@@ -107,4 +108,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=59DSo_jjTpI
   view_count: 989
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'shinystate: Launching collaboration and session management to new heights in Shiny applications
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=69bnkXD3e6w
   view_count: 125
 ---
+image: thumbnail.jpg
 

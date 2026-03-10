@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-10-17'
 description: 'We were recently joined by Gabriela de Queiroz, Principal Cloud Advocate at Microsoft to discuss connecting with people, learning and sharing your knowledge with others.
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=5V3gDb30cT8
   view_count: 408
 ---
+image: thumbnail.jpg
 

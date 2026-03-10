@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Full title: Your R is My R too: Reflections on creating the Mi-R community
 
@@ -100,4 +101,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gjbUEGdL210
   view_count: 199
 ---
+image: thumbnail.jpg
 

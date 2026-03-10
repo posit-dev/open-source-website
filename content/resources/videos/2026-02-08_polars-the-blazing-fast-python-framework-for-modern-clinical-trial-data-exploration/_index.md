@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-02-08'
 description: 'Polars: The Blazing Fast Python Framework for Modern Clinical Trial Data Exploration - Michael Chow, Jeroen Janssens
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=SQzJ9I4-uqc
   view_count: 124
 ---
+image: thumbnail.jpg
 

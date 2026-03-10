@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-04-18'
 description: 'We were joined by Oscar Baruffa, Senior Analytics Manager at IDH.
 
@@ -167,4 +168,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=JvnFdl-Do-s
   view_count: 760
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-01-10'
 description: 'Learn how to transform Markdown and Python code into interactive slide presentations using Quarto and reveal.js. This tutorial covers essential features like code execution, data visualization, LaTeX equations, custom styling, and slide transitions. Starting with basic slides, we''ll explore advanced functionality including background customization, animations, chalkboard annotations, and brand theming. Perfect for data scientists, educators, and developers looking to create engaging technical presentations.
 
@@ -136,4 +137,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=kWnMc0GwX-U
   view_count: 8097
 ---
+image: thumbnail.jpg
 

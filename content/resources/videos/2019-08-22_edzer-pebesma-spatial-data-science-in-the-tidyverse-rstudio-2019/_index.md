@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-08-22'
 description: "Package sf (simple feature) and ggplot2::geom_sf have caused a fast uptake of tidy spatial data analysis by data scientists. Important spatial data science challenges are not handled by them, including raster and vector data cubes (e.g. socio-economic time series, satellite imagery, weather forecast or climate predictions data), and out-of-memory datasets. Powerful methods to analyse such datasets have been developed in packages stars (spatiotemporal tidy arrays) and tidync (tidy analysis of NetCDF files). This talk discusses how the simple feature and tidy data frameworks are extended to handle these challenging data types, and shows how R can be used for out-of-memory spatial and spatiotemporal datasets using tidy concepts.\r\n\r\nVIEW MATERIALS https://edzer.github.io/rstudio_conf/2019/index.html\r\n\r\nAbout the Author\r\nEdzer Pebesma\r\nI lead the spatio-temporal modelling laboratory at the institute for geoinformatics. I hold a PhD in geosciences, and am interested in spatial statistics, environmental modelling, geoinformatics and GI Science, semantic technology for spatial analysis, optimizing environmental monitoring, but also in e-Science and reproducible research. I am an ordinary member of the R foundation. I am one of the authors of Applied Spatial Data Analysis with R (second edition), am Co-Editor-in-Chief for the Journal of Statistical Software, and associate editor for Spatial Statistics. I believe that research is useful in particular when it helps solving real-world problems."
 people: []
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=2d8YaVu1uzs
   view_count: 3345
 ---
+image: thumbnail.jpg
 

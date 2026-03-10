@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-03-11'
 description: 'Tables in Python with Great Tables - Rich Iannone, Michael Chow
 
@@ -87,4 +88,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=rrAGYiXBuWQ
   view_count: 355
 ---
+image: thumbnail.jpg
 

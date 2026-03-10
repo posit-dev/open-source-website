@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Protecting our Healthcare Heroes: Using Natural Language Processing to Prevent Billing Mistakes in Healthcare
 
@@ -53,4 +54,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=o0m77Abc7Jo
   view_count: 106
 ---
+image: thumbnail.jpg
 

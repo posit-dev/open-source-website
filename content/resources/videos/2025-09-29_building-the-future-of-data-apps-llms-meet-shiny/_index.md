@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-09-29'
 description: 'GenAI in Pharma 2025 kicks off with Posit''s Phil Bowsher and Garrick Aiden-Buie sharing a technical overview of how LLMs can integrate with Shiny applications and much more!
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=w4tTF6QB4ZU
   view_count: 837
 ---
+image: thumbnail.jpg
 

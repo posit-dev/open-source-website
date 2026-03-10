@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-08-16'
 description: 'RStudio Meetup: Functional Data Analysis (Part 2)
 
@@ -114,4 +115,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=bcY1PyeJXx4
   view_count: 6247
 ---
+image: thumbnail.jpg
 

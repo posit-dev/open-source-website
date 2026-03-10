@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-03-04'
 description: Charlie Gao, Senior Software Engineer on Posit’s open source team will review some of the latest high-performance async tooling developed by Posit to support R Shiny in terms of performance, scalability and user experience.
 people:
@@ -31,4 +32,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vxai8TKd3Fk
   view_count: 24
 ---
+image: thumbnail.jpg
 

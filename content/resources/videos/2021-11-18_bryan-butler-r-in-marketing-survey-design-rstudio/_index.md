@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-11-18'
 description: 'R in Marketing - Survey Design for Applications of Machine Learning
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4Gt1VIP07nc
   view_count: 1845
 ---
+image: thumbnail.jpg
 

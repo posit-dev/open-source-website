@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'It can be daunting to start using R when no one else in your office is! Using a case study from an administrative higher education office, learn how you can begin to build your own R ecosystem, step by step, to increase the efficiency and impact of your work, even as a solo contributor. Start from scratch and get small wins by replacing common Excel tasks with reproducible code, and then continue to develop iteratively, incorporating more of R’s capabilities into your workflow until you’re humming along with internal packages and parameterized reporting. We’ll discuss how R can ease the burden of documentation and how to handle common challenges like when you can’t control how you get your data or in which tool it is ultimately presented.
 
@@ -40,4 +41,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=U0PxKGSVxHo
   view_count: 203
 ---
+image: thumbnail.jpg
 

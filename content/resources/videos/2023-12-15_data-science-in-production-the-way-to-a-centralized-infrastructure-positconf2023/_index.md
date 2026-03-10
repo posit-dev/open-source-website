@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Oliver Bracht\r\n\r\nIn this talk, the success story of Covestro's posit infrastructure is presented. The problem of the leading German material manufacturer was that no common development environment existed. With the help of eoda and Posit, a replicable, centralized development environment for R and Python was created. Although R and Python represent the core of the infrastructure, multiple languages and tools are unified. In addition to the collaboration of Covestro's data science teams, compliance guidelines could also be better fulfilled. The staging architecture hereby provides developers with a concept for testing and going live with their products. This project presents a best practice approach to a data science infrastructure using Covestro as an example.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Data science infrastructure for your org.\r\nSession Code: TALK-1113"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=KWszxViR8vg
   view_count: 190
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-03-10'
 description: '2:55 - A11Y in R: Adapting Sarah L. Fossheim''s 10 dos and don''ts to keep in mind when designing accessible data visualizations | Maya Gans
 
@@ -212,4 +213,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=l_U3hQ6mm60
   view_count: 2833
 ---
+image: thumbnail.jpg
 

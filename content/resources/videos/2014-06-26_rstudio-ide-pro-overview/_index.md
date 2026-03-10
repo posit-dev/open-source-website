@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2014-06-26'
 description: Overview of the RStudio Pro IDE
 people: []
@@ -32,4 +33,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=3yaqgHHj8Zk
   view_count: 888
 ---
+image: thumbnail.jpg
 

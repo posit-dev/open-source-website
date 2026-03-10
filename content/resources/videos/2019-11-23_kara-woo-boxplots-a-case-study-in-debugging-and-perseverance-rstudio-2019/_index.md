@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-11-23'
 description: "Come on a journey through pull request #2196. What started as a seemingly simple fix for a bug in ggplot2's box plots developed into an entirely new placement algorithm for ggplot2 geoms. This talk will cover tips and techniques for debugging, testing, and not smashing your computer when dealing with tricky bugs.\r\n\r\nVIEW MATERIALS https://github.com/karawoo/2019-01-17-rstudioconf\r\n\r\nAbout the Author\r\nKara Woo\r\nKara is a research scientist in data curation at Sage Bionetworks, where she helps other researchers document and share their data. She has previously worked as an information manager at Washington State University and at the National Center for Ecological Analysis and Synthesis (NCEAS), where she combined data management with fieldwork at a remote Siberian lake. Kara is an enthusiastic R programmer, and collects data visualizations gone beautifully wrong on a blog called accidental aRt."
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=UGAuXyxdrvA
   view_count: 3667
 ---
+image: thumbnail.jpg
 

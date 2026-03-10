@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Max Kuhn\r\n\r\nConformal inference theory enables any model to produce probabilistic predictions, such as prediction intervals. We'll demonstrate how these analytical methods can be used with tidymodels. Simulations will show that the results have good coverage (i.e., a 90% interval should include the real point 90% of the time).\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Tidy up your models.\r\nSession Code: TALK-1085"
 people:
@@ -80,4 +81,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vJ4BYJSg734
   view_count: 2359
 ---
+image: thumbnail.jpg
 

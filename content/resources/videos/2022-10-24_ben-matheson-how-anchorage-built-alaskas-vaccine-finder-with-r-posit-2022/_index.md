@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'In January 2021, Alaska residents seeking a COVID-19 vaccine appointment faced a convoluted maze of websites. The software was made for providers—not for residents.
 
@@ -62,4 +63,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_zNu6Fyv6q0
   view_count: 150
 ---
+image: thumbnail.jpg
 

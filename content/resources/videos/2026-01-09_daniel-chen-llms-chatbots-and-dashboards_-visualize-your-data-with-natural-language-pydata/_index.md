@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-01-09'
 description: LLMs have a lot of hype around them these days. Let's demystify how they work and see how we can put them in context for data science use. As data scientists, we want to make sure our results are inspectable, reliable, reproducible, and replicable. We already have many tools to help us in this front. However, LLMs provide a new challenge; we may not always be given the same results back from a query. This means trying to work out areas where LLMs excel in, and use those behaviors in our data science artifacts. This talk will introduce you to LLms, the Chatlas package, and how they can be integrated into a Shiny to create an AI-powered dashboard. We'll see how we can leverage the tasks LLMs are good at to better our data science products.
 people: []
@@ -44,4 +45,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-czwZ_t6VUU
   view_count: 86
 ---
+image: thumbnail.jpg
 

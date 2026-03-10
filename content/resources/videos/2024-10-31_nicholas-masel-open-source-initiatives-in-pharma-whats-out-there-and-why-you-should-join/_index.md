@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'The pharmaceutical industry has come a long way when it comes to using open-source and collaborating on initiatives to solve complex industry issues. The number of initiatives and working groups that are now available have grown so much over the last 5 to 10 years that understanding what to join, or even just what to keep track of, can feel like selecting an R package, you’ve got a lot of options! This is a good problem to have, but it can also feel like a barrier to entry for companies or individuals in the industry who are looking to learn and/or contribute. In this talk, I will present guidance to the pharmaceutical industry to help them navigate the open-source collaboration landscape to help companies and individuals get involved.
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vdwBTbaRYOg
   view_count: 253
 ---
+image: thumbnail.jpg
 

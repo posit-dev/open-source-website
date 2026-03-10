@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-02-25'
 description: 'Charlie Marsh built Ruff, uv, and Ty — the tools that mass-fixed Python''s worst pain points. Now he''s grappling with what happens when agents start writing most of the code. In this episode, Charlie gets real about his team trusting his PRs less, the gnarly middle of coding with agents, and whether Python is even the right language for an agentic future. It''s honest, a wee existential, and deeply relatable if you ship code for a living.
 
@@ -65,4 +66,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=NoxoQHhrkoc
   view_count: 1318
 ---
+image: thumbnail.jpg
 

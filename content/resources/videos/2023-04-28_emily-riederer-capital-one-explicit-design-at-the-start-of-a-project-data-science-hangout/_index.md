@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-04-28'
 description: 'We were recently joined by Emily Riederer, Senior Manager - Customer Management Data Science & Analytics at Capital One.
 
@@ -135,4 +136,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=VUgoaNhE4u0
   view_count: 843
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In Part 1 of our conversation with James Blair, we trace his delightfully non-linear path from childhood robotics dreams to journalism to R, with a few stops in between. We hear about the Shiny app that changed his career, plus a candid roundtable with Michael, Hadley, and Wes about whether a data-science master’s still pays off in the age of AI.
 
@@ -56,4 +57,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=paShnmg9N1U
   view_count: 259
 ---
+image: thumbnail.jpg
 

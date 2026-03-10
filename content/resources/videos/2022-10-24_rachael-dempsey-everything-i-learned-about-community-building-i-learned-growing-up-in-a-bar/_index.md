@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'In community conversations at the Data Science Hangout, we’ve talked about misalignment between what recruiters are looking for and who is actually a great fit for a role. At one point, people started sharing their own degrees in the chat: sociology, political science, finance, psychology, no degree, etc.
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=s0ZU4FDstfY
   view_count: 765
 ---
+image: thumbnail.jpg
 

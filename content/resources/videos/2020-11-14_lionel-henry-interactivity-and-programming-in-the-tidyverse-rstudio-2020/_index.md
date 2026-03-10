@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-14'
 description: In Tidyverse grammars such as dplyr you can refer to the columns in your data frames as if they were objects in the workspace. This syntax is optimised for interactivity and is a great fit for data analysis, but it makes it harder to write functions and reuse code. In this talk we present some advances in the tidy eval framework that make it easier to program around Tidyverse pipelines without having to learn a lot of theory.
 people:
@@ -81,4 +82,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=SW_TUkPXSmA
   view_count: 2577
 ---
+image: thumbnail.jpg
 

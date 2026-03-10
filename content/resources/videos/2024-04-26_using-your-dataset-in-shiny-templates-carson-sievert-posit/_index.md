@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-26'
 description: "Watch the Shiny team’s Carson Sievert change the dataset in a Shiny Template.  \n\nFind the right template for you at https://shiny.posit.co/py/templates/\n\n\n0:00 Intro with Carson Sievert\n0:19 How to load the template code\n1:14 Running your Shiny app in VS Code with a live reloading preview\n1:29 How this template works\n2:23 See the contents of your data in a data_frame\n2:53 How this template imports data\n3:33 A more optimized way to import a large amount of data  \n5:10 Changing the dataset\n5:44 Troubleshooting the inevitable errors when changing the dataset"
 people:
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ou-09NHcH5w
   view_count: 6869
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Full title: Cognitive speed: How the Tidyverse helped the British Red Cross respond quickly to COVID-19
 
@@ -107,4 +108,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=h_liRO1GweQ
   view_count: 209
 ---
+image: thumbnail.jpg
 

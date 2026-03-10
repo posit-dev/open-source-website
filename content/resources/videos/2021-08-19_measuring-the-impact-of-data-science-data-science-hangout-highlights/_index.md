@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-08-19'
 description: "RStudio is joined by Frank Corrigan, Director of Decision Intelligence, to discuss how data scientists can become leaders within their organizations. \n\nWatch the full recording: https://www.youtube.com/watch?v=KBs4b3Q2n8Y\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn: https://www.linkedin.com/company/rstudio-pbc\nTwitter: https://twitter.com/rstudio"
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gdqu_WbAezY
   view_count: 441
 ---
+image: thumbnail.jpg
 

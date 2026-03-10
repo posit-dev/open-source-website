@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-17'
 description: Originally posted to https://rstudio.com/resources/rstudioconf-2020/effective-visualizations/
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=BEnLLQaUyzQ
   view_count: 5104
 ---
+image: thumbnail.jpg
 

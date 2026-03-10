@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-11-04'
 description: 'You probably know that RStudio makes a free, open-source development environment for data scientists. It’s made with love and used by millions of people around the world.
 
@@ -125,4 +126,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_XNKSEQTo30
   view_count: 2918
 ---
+image: thumbnail.jpg
 

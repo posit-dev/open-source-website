@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-02-03'
 description: "00:00 Introduction\n00:25 Setting up a keyboard\n00:54 Using an HTML p tag to print out letter indicators\n01:56 Back to our keyboard!\n03:44 Setting up a search and replace\n06:32 Removing letters using regular expressions\n08:43 Making guesses a reactiveVal()\n11:00 Avoiding an infinite loop with reactiveVal()\n\nIn Part III of this four-part series, Winston walks through how to build a keyboard in a Shiny Wordle app. \n\nCode + word list: https://github.com/wch/shiny-wordle\nCheck out the full Shiny app here: https://winston.shinyapps.io/wordle/\nYou can learn more about Shiny here: https://shiny.rstudio.com/\n\nGot questions? The RStudio Community site is a great place to get assistance: https://community.rstudio.com/\n\nContent: Developer (@winston_chang)\nAnimation, design, and editing: Jesse Mostipak (@kierisi)\n\nWordle: https://www.powerlanguage.co.uk/wordle/"
 people:
@@ -81,4 +82,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=v3jHh-IKXLc
   view_count: 1364
 ---
+image: thumbnail.jpg
 

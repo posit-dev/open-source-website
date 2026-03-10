@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-11-18'
 description: "Learn about the latest packages and techniques that can help you access and analyze data found inside databases using R. Many of the techniques we will cover are based on our personal and the community’s experiences of implementing concepts introduced last year, such as offloading most of the data wrangling to the database using dplyr, and using the RStudio IDE to preview the database’s layout and data. Also, learn more about the most recent improvements to the RStudio products that are geared to aid developers in using R with databases effectively.\r\n\r\nVIEW MATERIALS https://github.com/edgararuiz/databases-w-r\r\n\r\nAbout the Author\r\nEdgar Ruiz\r\nEdgar is the author and administrator of the https://db.rstudio.com web site, and current administrator of the [sparklyr] web site: https://spark.rstudio.com. Author of the Data Science in Spark with sparklyr cheatsheet. Co-author of the dbplyr package and creator of the dbplot package."
 people:
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=aVI4YZ1CB2c
   view_count: 4432
 ---
+image: thumbnail.jpg
 

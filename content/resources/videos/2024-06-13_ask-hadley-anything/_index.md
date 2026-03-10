@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-13'
 description: 'A unique opportunity to gain insights directly from a leading expert in open source data science and a driving force behind many popular R packages like ggplot2 and dplyr.
 
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=YPnNNgv_t0A
   view_count: 806
 ---
+image: thumbnail.jpg
 

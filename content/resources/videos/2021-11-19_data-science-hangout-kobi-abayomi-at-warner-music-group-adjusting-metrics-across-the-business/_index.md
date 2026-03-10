@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-11-19'
 description: 'We were recently joined by Kobi Abayomi, Sr VP of Data Science & Analytics at Warner Music Group.
 
@@ -103,4 +104,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ROcH6YKzICw
   view_count: 629
 ---
+image: thumbnail.jpg
 

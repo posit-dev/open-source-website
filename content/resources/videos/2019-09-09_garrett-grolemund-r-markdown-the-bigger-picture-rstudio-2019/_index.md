@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-09-09'
 description: "Statistics has made science resemble math, so much so that we've begun to conflate p-values with mathematical proofs. We need to return to evaluating a scientific discovery by its reproducibility, which will require a change in how we report scientific results. This change will be a windfall to commercial data scientists because reproducible means repeatable, automatable, parameterizable, and schedulable.\r\n\r\nVIEW MATERIALS https://github.com/garrettgman/rmarkdown-the-bigger-picture\r\n\r\nAbout the Author\r\nGarrett Grolemund\r\nGarrett is a data scientist and master instructor for RStudio. He excels at teaching, statistics, and teaching statistics. He wrote the popular lubridate package and is the author of Hands On Programming with R and the upcoming book, Data Science with R, from O’Reilly Media. He holds a PhD in Statistics and specializes in Data Visualization."
 people: []
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=s9aWmU0atlQ
   view_count: 16669
 ---
+image: thumbnail.jpg
 

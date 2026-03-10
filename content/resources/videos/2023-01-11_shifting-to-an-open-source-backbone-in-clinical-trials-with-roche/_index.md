@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-01-11'
 description: 'To hear more about how Roche and other major pharmaceutical companies are transitioning to open source data science you can watch talks from this year’s R in Pharma conference: https://www.youtube.com/@RinPharma/playlists
 
@@ -51,4 +52,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=nqJsLSLd39A
   view_count: 12925
 ---
+image: thumbnail.jpg
 

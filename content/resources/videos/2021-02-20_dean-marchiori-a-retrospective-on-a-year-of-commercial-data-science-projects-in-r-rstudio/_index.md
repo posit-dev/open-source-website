@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Full title: How reproducible am I? A retrospective on a year of commercial data science projects in R
 
@@ -89,4 +90,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4T8gz9AmNOA
   view_count: 269
 ---
+image: thumbnail.jpg
 

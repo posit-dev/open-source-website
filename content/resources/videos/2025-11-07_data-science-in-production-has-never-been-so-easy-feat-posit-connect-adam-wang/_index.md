@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Data Science in Production Has Never Been So Easy | Feat: Posit Connect
 
@@ -47,4 +48,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=JAGZJtR2j6Q
   view_count: 213
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-08-04'
 description: 'Moving to Quarto from RMarkdown and Python Jupyter Notebooks by Daniel Chen
 
@@ -56,4 +57,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9oUR3LbXPxg
   view_count: 3187
 ---
+image: thumbnail.jpg
 

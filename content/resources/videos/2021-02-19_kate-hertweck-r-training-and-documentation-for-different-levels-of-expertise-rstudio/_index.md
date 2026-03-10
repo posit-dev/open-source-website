@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Full title: Making the jump from learning to applying: R training and documentation for different levels of expertise
 
@@ -101,4 +102,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wGrKbsagVtg
   view_count: 194
 ---
+image: thumbnail.jpg
 

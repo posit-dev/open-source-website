@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-29'
 description: Originally posted at https://rstudio.com/resources/rstudioconf-2020/updates-on-spark-mlflow-and-the-broader-ml-ecosystem/
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=e-wACDwvyvg
   view_count: 602
 ---
+image: thumbnail.jpg
 

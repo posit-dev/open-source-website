@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'No matter the requirements of the project, data are rarely ready for analysis without some intervention up front, often described as cleaning or tidying up your data. Researchers and data professionals employ many tools to make their data usable for their needs; but, there exist data that are so far beneath the threshold for usefulness that they cannot be used responsibly for analysis or decision-making, i.e. “bad data.” This talk proposes a framework for identifying bad data, with examples from both academic and industry; identifies challenges you might face from stakeholders when you identify bad data; and suggests concrete steps you can take to overcome those challenges now and in the future.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=PJUHRI30HBs
   view_count: 302
 ---
+image: thumbnail.jpg
 

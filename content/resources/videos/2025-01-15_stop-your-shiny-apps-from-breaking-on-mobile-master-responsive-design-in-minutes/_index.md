@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-01-15'
 description: 'A comprehensive guide to implementing responsive design in Shiny applications using UI layout columns. This tutorial covers how to create adaptive layouts that automatically adjust based on screen size, from desktop to mobile devices. Learn how to leverage Shiny''s bootstrap-based grid system to create professional, responsive applications that look great on any device.
 
@@ -174,4 +175,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=KkUpgeUIVvM
   view_count: 1942
 ---
+image: thumbnail.jpg
 

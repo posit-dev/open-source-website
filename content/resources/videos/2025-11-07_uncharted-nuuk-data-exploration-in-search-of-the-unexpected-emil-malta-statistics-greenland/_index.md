@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Uncharted Nuuk: Data Exploration in Search of the Unexpected
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9dACRTyfhLY
   view_count: 74
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-01'
 description: We observed a huge improvements of Machine Learning tools but the main effort were to help at post annotated dataset step. We still struggle to build a trusty pipeline to make these annotations. The package wavesurfer brings to R users the ability to annotate audio files with ease and reliability, exploring the friendly user interface of Shiny to make this hard and laborious part of the project more joyful and efficient. A 5-minute presentation in our Lightning Talks series
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fhf9NdacAo4
   view_count: 739
 ---
+image: thumbnail.jpg
 

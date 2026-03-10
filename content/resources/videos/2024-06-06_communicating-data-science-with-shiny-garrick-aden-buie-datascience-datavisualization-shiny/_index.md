@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-06'
 description: 'Ever seen this diagram? 📊 It''s from R for Data Science, outlining the journey of tackling new data problems.
 
@@ -117,4 +118,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=XishM8kaUj8
   view_count: 4397
 ---
+image: thumbnail.jpg
 

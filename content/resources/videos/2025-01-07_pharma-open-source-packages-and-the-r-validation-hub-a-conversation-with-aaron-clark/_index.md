@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-01-07'
 description: 'Posit''s Director of Life Sciences, Phil Bowsher, sat down with Aaron Clark, Senior Principal Clinical Scientist at Arcus Biosciences, to discuss various topics within the open-source clinical reporting space including Aaron''s career in pharma, the R Validation Hub, the open-source package riskmetric, and more.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=KX0mxwLj288
   view_count: 577
 ---
+image: thumbnail.jpg
 

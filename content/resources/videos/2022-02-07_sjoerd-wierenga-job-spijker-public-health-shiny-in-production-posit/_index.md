@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-02-07'
 description: 'R in Public Sector: Organizational & Technical Aspects of Shiny in Production with the Dutch National Institute for Public Health and the Environment.
 
@@ -192,4 +193,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9Nn9yjpivlE
   view_count: 1319
 ---
+image: thumbnail.jpg
 

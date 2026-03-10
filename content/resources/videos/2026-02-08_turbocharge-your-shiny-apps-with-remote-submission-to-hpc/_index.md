@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-02-08'
 description: 'Turbocharge your Shiny Apps with remote submission to HPC - Michael Mayer
 
@@ -44,4 +45,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9SrM4ZEt3bc
   view_count: 93
 ---
+image: thumbnail.jpg
 

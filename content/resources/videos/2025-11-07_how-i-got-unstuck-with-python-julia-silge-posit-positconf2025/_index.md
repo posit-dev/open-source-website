@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'How I got unstuck with Python
 
@@ -61,4 +62,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=pMVYl9fx1EE
   view_count: 6494
 ---
+image: thumbnail.jpg
 

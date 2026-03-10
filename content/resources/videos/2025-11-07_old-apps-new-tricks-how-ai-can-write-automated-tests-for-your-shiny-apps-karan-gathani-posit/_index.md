@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Old Apps, New Tricks: How AI can write Automated Tests for your Shiny Apps
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gxcAadq0Bmk
   view_count: 119
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-04-10'
 description: 'https://rstudio.com/resources/webinars/reproducibility-in-production/
 
@@ -100,4 +101,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=n04FjueWmj0
   view_count: 1596
 ---
+image: thumbnail.jpg
 

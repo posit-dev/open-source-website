@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In part two of our conversation with Julia Silge, we discuss how work actually ships: the boundaries, the glue, and the tools that turn noise into signal. From there, we go macro and wonder what the LLM era means for humanity’s contributions, plus how licensing is evolving to protect sustainability without abandoning openness.
 
@@ -63,4 +64,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WibR9Sumle4
   view_count: 254
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Getting involved in open source is an amazing learning experience and helps you grow your skills as a developer, but to a new contributor there are so many unknown factors about open source projects. In this talk, I''m going to discuss my journey from occasional open source contributor to full time project maintainer, and answer questions such as: what does it look like from the inside of an open-source project? What''s a good way to get involved, and really learn the internals of an R package? How can I navigate the social dynamics of an open source project? How do contributions look entirely different from the point of view of a contributor versus a maintainer?
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=CiETLJvJ5BQ
   view_count: 362
 ---
+image: thumbnail.jpg
 

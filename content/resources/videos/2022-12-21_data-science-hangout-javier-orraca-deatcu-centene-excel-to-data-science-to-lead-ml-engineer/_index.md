@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-12-21'
 description: 'We were joined by Javier Orraca-Deatcu, Lead Machine Learning Engineer at Centene.
 
@@ -176,4 +177,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-mm5tHQVPY8
   view_count: 2001
 ---
+image: thumbnail.jpg
 

@@ -16,7 +16,9 @@ people:
   description_field: "role"
   date_show: true
   people_show: false
-  image_class: "object-contain"
+  image_class: "object-contain rounded-lg"
+  title_class: "@max-venti:self-center"
+  description_class: "@max-venti:text-center"
 
 software:
   badge_text: "software"

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-09'
 description: "Register now: http://pos.it/conf\nInstructors: Eric Nantz and Mike Thomas\nWorkshop Duration: 1-Day Workshop\n\nThis course is for you if you: \n•   had a Shiny application work just fine on your machine, but encounters critical issues after deployment\n•   are eager to prospectively apply techniques before deployment to plan for the unexpected\n•   want to know the benefits and trade-offs between various ways of hosting Shiny applications\n\nShiny brings tremendous possibilities to share innovative data science workflows with others inside an intuitive web interface. Many in the Shiny community have shared effective development techniques for building a robust application. Even with the best intentions during application development, a myriad of issues can arise once it leaves the confines of your machine. In this one-day workshop, you will implement core techniques to account for common scenarios that arise once your application is used in production, such as accounting for thousands of simultaneous users, how effective profiling can address performance bottlenecks, and ensuring your application is doing as little as possible to ensure a smooth and responsive experience. \n\nThis course assumes intermediate knowledge of building Shiny applications in R and prior experience deploying an application to a platform such as the shinyapps.io service or products like Posit Connect."
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=MlRwhDYI5Ec
   view_count: 401
 ---
+image: thumbnail.jpg
 

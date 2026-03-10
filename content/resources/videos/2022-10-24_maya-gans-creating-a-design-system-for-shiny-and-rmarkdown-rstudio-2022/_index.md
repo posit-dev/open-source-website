@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'A design system is a set of standards to manage design at scale by reducing redundancy while creating a shared language and visual consistency across different pages and channels. This talk will go into detail about the history of design systems, what components to include when creating a design system, and lastly various examples of implementation. By the end of the talk, you should have the tools to create your own design system within Shiny/RMarkdown to be used by yourself, your brand, or your company.
 
@@ -38,4 +39,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=pjDw85Scwgc
   view_count: 760
 ---
+image: thumbnail.jpg
 

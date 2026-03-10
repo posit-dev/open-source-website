@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'CRAN, Bioconductor, and PyPI are incredible resources for packages that make performing data science in R and Python better. But there’s also a better way to obtain those packages! Companies like Databricks are leveraging Posit Public Package Manager to make their users’ package installation faster and more reproducible. Learn why, and how anyone – anywhere – can easily get started using Public Package Manager.
 
@@ -31,4 +32,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=NwZ4sVjNKlI
   view_count: 383
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-30'
 description: "Please join us for the live Q&A session for the October 30th Workflow Demo - this Q&A room will open up immediately following the demo.\n\nPlease note that the demo itself will play from here: \nSave time with dynamic & professional PDFs powered by Shiny & Posit: https://youtu.be/dCoHNIPQzJE\n\nAnonymous questions: https://pos.it/demo-questions\n\nDemo: 11 am ET\nQ&A: ~11:30 am ET\n\nHelpful resources for this workflow:\n✨ Repo: https://github.com/ryjohnson09/pdfpalooza\n✨ Recording: https://youtu.be/dCoHNIPQzJE"
 people: []
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=RTr5D4xV5_Q
   view_count: 572
 ---
+image: thumbnail.jpg
 

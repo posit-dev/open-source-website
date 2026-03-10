@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-11-15'
 description: 'NFL Big Data Bowl & Analyzing Tracking Data
 
@@ -70,4 +71,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=FggD93l7NmA
   view_count: 3031
 ---
+image: thumbnail.jpg
 

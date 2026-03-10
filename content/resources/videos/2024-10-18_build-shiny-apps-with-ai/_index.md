@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-18'
 description: 'View the full video here:
 
@@ -104,4 +105,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4nvoca0js8E
   view_count: 2853
 ---
+image: thumbnail.jpg
 

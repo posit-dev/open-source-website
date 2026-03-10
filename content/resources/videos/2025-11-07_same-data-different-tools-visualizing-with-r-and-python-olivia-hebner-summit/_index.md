@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Same Data, Different Tools: Visualizing with R and Python
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=OJBLpeuHQ4s
   view_count: 648
 ---
+image: thumbnail.jpg
 

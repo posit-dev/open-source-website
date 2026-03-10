@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-03-29'
 description: "This snippet is from Posit's short film, \"A Stroke of Innovation,\" detailing the incredible work done by the data science team at the City of Reykjavík. \n\nYou can watch the whole film and read the entire story here: https://posit.co/about/customer-stories/iceland/"
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=rmLzOs_cZX4
   view_count: 569
 ---
+image: thumbnail.jpg
 

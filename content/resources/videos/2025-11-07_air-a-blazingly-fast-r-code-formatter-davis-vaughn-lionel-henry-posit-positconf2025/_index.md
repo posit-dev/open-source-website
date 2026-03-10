@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Air - A blazingly fast R code formatter
 
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=DJVSEOjvwb8
   view_count: 342
 ---
+image: thumbnail.jpg
 

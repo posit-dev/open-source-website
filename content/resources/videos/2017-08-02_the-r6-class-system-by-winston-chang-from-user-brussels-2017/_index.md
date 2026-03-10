@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2017-08-02'
 description: 'R6 is an implementation of a classical object-oriented programming system for R. In classical OOP, objects have mutable state and they contain methods to modify and access internal state. This stands in contrast with the functional style of object-oriented programming provided by the S3 and S4 class systems, where the objects are (typically) not mutable, and the methods to modify and access their contents are external to the objects themselves.
 
@@ -44,4 +45,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=3GEFd8rZQgY
   view_count: 4763
 ---
+image: thumbnail.jpg
 

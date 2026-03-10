@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-05-16'
 description: 'We were joined by Michael Chow, Data Scientist and Software Engineer at RStudio. Michael also previously led a team at the California Integrated Travel Project.
 
@@ -167,4 +168,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=KubOBhiRfIY
   view_count: 535
 ---
+image: thumbnail.jpg
 

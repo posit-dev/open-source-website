@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Deploy with Confidence: Strategies to Minimize Failure and Maximize Success (on Posit Connect)
 
@@ -62,4 +63,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QEEGLWj0nas
   view_count: 72
 ---
+image: thumbnail.jpg
 

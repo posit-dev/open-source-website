@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-03'
 description: 'James Blair, Senior Product Manager, Cloud Integrations at Posit, will demonstrate using the R language to analyze and explore data stored in Snowflake. He will also show you how easy it is to set up an R environment inside Posit Workbench that runs as a native app on Snowpark Container Services.
 
@@ -92,4 +93,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=b-H0KdXOvGU
   view_count: 2528
 ---
+image: thumbnail.jpg
 

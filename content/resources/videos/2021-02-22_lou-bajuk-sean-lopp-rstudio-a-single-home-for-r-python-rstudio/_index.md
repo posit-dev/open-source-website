@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-22'
 description: 'Many Data Science teams today are bilingual, leveraging both R and Python in their work. While both languages are tremendously powerful, teams frequently struggle to use them together. We’ve heard from our customers how even experienced data scientists familiar with both languages often struggle to combine them without painful context switching and manual translations. Data Science leaders and business stakeholders find it difficult to make key data science content easily discoverable and available for decision-making, and IT Admins and DevOps engineers grapple with how to efficiently support these teams.
 
@@ -121,4 +122,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=0Ty4y3ZYA1M
   view_count: 4426
 ---
+image: thumbnail.jpg
 

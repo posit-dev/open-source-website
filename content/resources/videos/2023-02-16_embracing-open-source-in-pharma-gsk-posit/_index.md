@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-02-16'
 description: 'Many statistical and clinical programmers have spent their entire careers programming in one language. Major pharmaceutical companies like GSK are collaborating with each other to bring open-source into clinical workflows.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=6gykCAW8osM
   view_count: 827
 ---
+image: thumbnail.jpg
 

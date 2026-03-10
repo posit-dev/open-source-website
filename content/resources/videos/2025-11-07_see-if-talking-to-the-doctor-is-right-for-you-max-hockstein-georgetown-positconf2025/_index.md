@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'See if talking to the doctor is right for you.
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=x0AijVNlhg8
   view_count: 113
 ---
+image: thumbnail.jpg
 

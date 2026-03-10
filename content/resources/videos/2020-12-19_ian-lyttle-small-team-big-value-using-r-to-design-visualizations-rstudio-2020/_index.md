@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-19'
 description: 'Many R users can feel isolated due to the prevalence of Python or Tableau at their institutions. This talk will focus on how we use R to develop reference implementations of visualizations (using ggplot2), and to develop corporate-themed color maps (using the colorspace package) to bring value to the entire institution. Color maps can be translated into variety of formats, for Tableau, Qlik Sense, d3, etc., and deployed independently from R. For visualizations, our goal is to translate ggplot2 objects to Vega-Lite specifications, using a package we are developing: ggvega. Vega-Lite visualizations are web-native, and are rendered independently from R. Specifications can be designed to be extensible to new data, allowing them serve as templates, to be deployed and updated for use outside of R. Of course, despite isolation within an institution, our work with the larger R open-source communities provides a foundation on which to build; in fact, we have a lot of company and are having a lot of fun.'
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=MoFyXM7MIYQ
   view_count: 1838
 ---
+image: thumbnail.jpg
 

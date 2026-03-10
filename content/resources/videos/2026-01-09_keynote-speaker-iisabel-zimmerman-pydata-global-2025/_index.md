@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-01-09'
 description: Isabel is a Senior Software Engineer at Posit, PBC.
 people: []
@@ -39,4 +40,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=LvNKWYKbKHc
   view_count: 119
 ---
+image: thumbnail.jpg
 

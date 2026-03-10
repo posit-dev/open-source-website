@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-31'
 description: 'Version Control and RStudio
 
@@ -46,4 +47,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qNMOPWT8jSo
   view_count: 745
 ---
+image: thumbnail.jpg
 

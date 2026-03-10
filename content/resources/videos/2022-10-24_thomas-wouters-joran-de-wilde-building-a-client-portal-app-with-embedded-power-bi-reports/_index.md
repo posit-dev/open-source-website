@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'With the Dutch Mortgage Portfolio Management Group we built a client portal for their customers wanting insights into their mortgage investment portfolio. This was done with a Shiny app that runs in Azure App Service, with plumber APIs serving portfolio reports, and embedded power bi reports with clear and easy to maintain dashboards.
 
@@ -50,4 +51,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4vU95lBCfxo
   view_count: 648
 ---
+image: thumbnail.jpg
 

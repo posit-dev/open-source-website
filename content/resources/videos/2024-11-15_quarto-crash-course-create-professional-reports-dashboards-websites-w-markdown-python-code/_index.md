@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-11-15'
 description: "Welcome to this comprehensive Quarto crash course using Python! Whether you're a complete beginner or an experienced user, this tutorial covers the topics you need to know about the Quarto publishing system. \n\nWe'll explore:\n- Basic setup and installation\n- Creating HTML reports, PDFs, and interactive dashboards from your Python script or Jupyter notebook. \n- Building presentations with Revealjs\n- Customizing outputs with CSS and layouts (fenced divs, classes, and more)\n- Working with parameters for dynamic reports\n- Publishing to Posit Connect Cloud\n- Creating complete websites\n- Automated report generation\n\nPerfect for data scientists, analysts, and developers looking to create beautiful, reproducible reports from their code. We'll use Python throughout the tutorial with real-world examples using movie analytics data. Let's dive in!\n\nVideo by @KeithGalli  \n\nGithub repo: https://github.com/KeithGalli/quarto-crash-course\n\nDeploy with Posit Connect Cloud!\nhttps://pos.it/keith_qc\n\n#python #quarto #posit\n\n— Resources Mentioned —\nSlideshow example: https://quarto.org/docs/presentations/revealjs/demo/#/title-slide\nSlideshow example (source code): https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/revealjs/demo/index.qmd\nExample HTML report: https://019302a7-e9e3-3454-3575-23148999a7f7.share.connect.posit.cloud/\nQuarto Gallery: https://quarto.org/docs/gallery/\nBootstrap Icons: https://icons.getbootstrap.com/\n\nVideo timeline!\n0:00 - About the Crash Course\n0:50 - Quarto Overview\n2:12 - Installation & Setup\n6:22 - Markdown Basics\n8:46 - Quarto Markdown Features\n19:37 - Quarto Styling & Formatting (fenced divs, CSS classes, etc.)\n34:53 - Parameters & CLI Options\n40:46 - HTML & Publishing\n49:46 - Static Docs (PDFs, Docx)\n54:53 - Dashboards\n1:06:50 - Slideshows (Revealjs)\n1:16:11 - Websites\n1:19:52 - Automated Report Generation (Parameterized Reports)"
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_VKxTPWDhA4
   view_count: 21980
 ---
+image: thumbnail.jpg
 

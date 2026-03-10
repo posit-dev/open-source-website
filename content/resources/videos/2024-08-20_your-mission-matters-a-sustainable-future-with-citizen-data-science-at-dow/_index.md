@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-08-20'
 description: 'How do we keep food fresh? How do we use less water in our everyday lives? How do we make trash...valuable? How do we innovate to make the world a better place?
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Y5XWfqSnlUA
   view_count: 3884
 ---
+image: thumbnail.jpg
 

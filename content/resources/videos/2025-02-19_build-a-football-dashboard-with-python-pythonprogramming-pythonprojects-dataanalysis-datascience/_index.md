@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-02-19'
 description: 'Build a football dashboard with Python #pythonprogramming #pythonprojects #dataanalysis #datascience'
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Tg1xgHKfDGc
   view_count: 1481
 ---
+image: thumbnail.jpg
 

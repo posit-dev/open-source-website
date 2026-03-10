@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: Talk by Albert Rapp, https://albert-rapp.de/
 people: []
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wlPwTzpKOHQ
   view_count: 302
 ---
+image: thumbnail.jpg
 

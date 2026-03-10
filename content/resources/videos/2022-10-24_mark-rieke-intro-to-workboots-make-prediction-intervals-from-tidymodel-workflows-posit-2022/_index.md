@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Sometimes, we want a model that generates a range of possible outcomes around each prediction. Other times, we just care about point predictions and may opt to use a fancy model like XGBoost. But what if we want the best of both worlds: getting a range of predictions while still using a fancy model? That’s where bootstrapping comes to the rescue! By using bootstrap resampling, we can create many models that produce a prediction distribution – regardless of the model type! In this talk, I’ll give an overview of bootstrap resampling for prediction, the pros/cons of this method, and how to implement it as a part of a tidymodel workflow with the workboots package.
 
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=F4osY469UoY
   view_count: 523
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Shiny users can prototype an app in minutes, but... What if it also looked better almost immediately? In this talk, we''ll walk through a new look for Shiny''s UI, as well as some new functionality.
 
@@ -39,4 +40,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=66wssEdpR84
   view_count: 1846
 ---
+image: thumbnail.jpg
 

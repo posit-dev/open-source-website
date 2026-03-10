@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'IDE-ntity Crisis: Choosing the Right Tool for Me
 
@@ -61,4 +62,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=GrSWg8o_SFQ
   view_count: 228
 ---
+image: thumbnail.jpg
 

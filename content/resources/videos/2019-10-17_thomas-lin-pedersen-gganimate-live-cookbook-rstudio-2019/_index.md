@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-10-17'
 description: "Animation of data visualisation is becoming increasingly popular both as an attention grabber on social media and as a way to tell small data stories. gganimate is a package that extends ggplot2 for making animations and provides a grammar of animation on top of the grammar of graphics. This talk will quickly introduce gganimate, and then dive into a series of different animation and show how they were made and how they could be changed or expanded.\r\n\r\nSlides: https://data-imaginist.com/slides/rstudioconf2019 4\r\nResources: https://resources.rstudio.com/rstudio-conf-2019/gganimate-live-cookbook 4\r\nDiscussion https://community.rstudio.com/t/gganimate-live-cookbook-thomas-lin-pedersen-rstudio-conf-2019l-video/24852"
 people:
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=3UY7Or0v_dI
   view_count: 8361
 ---
+image: thumbnail.jpg
 

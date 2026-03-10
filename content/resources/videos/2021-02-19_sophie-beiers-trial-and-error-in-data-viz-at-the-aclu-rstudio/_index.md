@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Visualizing data the “right” way requires many considerations — the topic, the quality of your data, your audience, your time frame, and the various channels of (sometimes conflicting) feedback you received. In this presentation, I’ll introduce some reflections on these considerations and ways I’ve incorporated feedback (or not) into my work as Data Journalist at the ACLU. Lastly, I’ll present some of the sillier trials and errors I’ve made that were arguably necessary to my process in creating effective data visualizations using R.
 
@@ -83,4 +84,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=3fVOsY1DHT8
   view_count: 186
 ---
+image: thumbnail.jpg
 

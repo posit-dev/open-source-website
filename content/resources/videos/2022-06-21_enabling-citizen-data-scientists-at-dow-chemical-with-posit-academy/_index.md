@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-06-21'
 description: 'Led by James Wade, Associate Research Scientist at Dow Chemical
 
@@ -219,4 +220,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=lCrd3BMVVqQ
   view_count: 2184
 ---
+image: thumbnail.jpg
 

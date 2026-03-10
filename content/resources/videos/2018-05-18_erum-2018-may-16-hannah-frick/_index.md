@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2018-05-18'
 description: 'Hannah Frick: Navigating the Wealth of R Packages'
 people:
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=SHrQR5-5-Fw
   view_count: 122
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-12-16'
 description: 'We were recently joined by Eric Nantz, Director at Eli Lilly and Company.
 
@@ -103,4 +104,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gdzt05dSeC4
   view_count: 1408
 ---
+image: thumbnail.jpg
 

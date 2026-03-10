@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-01-22'
 description: 'Learn how to use QueryChat to add natural language querying to your Python data applications. This tutorial shows you how to let users ask questions about data without building complex filters or dashboards.
 
@@ -242,4 +243,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=AntqhLhw4BM
   view_count: 1045
 ---
+image: thumbnail.jpg
 

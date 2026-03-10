@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'Hadley will talk about how the tidyverse has evolved since its creation (just five years ago!). You''ll learn about our greatest successes, learn from our biggest failures, and get some hints of what''s coming down the pipeline for the future.
 
@@ -106,4 +107,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=izFssYRsLZs
   view_count: 11119
 ---
+image: thumbnail.jpg
 

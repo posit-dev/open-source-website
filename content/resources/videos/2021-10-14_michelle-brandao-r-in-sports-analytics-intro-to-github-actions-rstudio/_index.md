@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-10-14'
 description: 'Introduction to GitHub Actions
 
@@ -50,4 +51,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Id2H499q8IU
   view_count: 1944
 ---
+image: thumbnail.jpg
 

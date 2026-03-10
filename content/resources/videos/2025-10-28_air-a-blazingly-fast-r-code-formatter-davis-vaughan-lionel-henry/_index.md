@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-10-28'
 description: 'In Python, Rust, Go, and many other languages, code formatters are widely loved. They run on every save, on every pull request, and in git pre-commit hooks to ensure code consistently looks its best at all times.
 
@@ -63,4 +64,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=nBwgTT4QytE
   view_count: 153
 ---
+image: thumbnail.jpg
 

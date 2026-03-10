@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-08-31'
 description: 'JJ. Allaire
 
@@ -41,4 +42,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=0wB4K08ui4c
   view_count: 677
 ---
+image: thumbnail.jpg
 

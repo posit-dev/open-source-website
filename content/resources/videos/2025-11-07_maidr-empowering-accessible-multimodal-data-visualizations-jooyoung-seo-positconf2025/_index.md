@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'maidr: Empowering Accessible, Multimodal Data Visualizations
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QR7mdgM8Hf0
   view_count: 180
 ---
+image: thumbnail.jpg
 

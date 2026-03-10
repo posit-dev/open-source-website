@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-08-24'
 description: "The R objects used to represent model fits are notoriously inconsistent, making data analysis inconvenient and frustrating. The broom package resolves this issue by defining a consistent way to represent model fits. By summarizing essential information about fits in tidy tibbles, broom makes it easy to programmatically work with model objects. Combining broom with list-columns results in an especially powerful way to work with many model fits at once. This talk will feature several case studies demonstrating how broom resolves common problems in data analysis\r\n\r\nVIEW MATERIALS https://buff.ly/2FGKFkj\r\n\r\nAbout the Author\r\nAlex Hayes\r\nAlex is interested in how statistics can help people make better decisions. He's active in the R and data science communities, particularly interested in improving interfaces to modeling sofware. In his free time, he tries to get outside to climb and bike."
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gLZyvY5_kWQ
   view_count: 1886
 ---
+image: thumbnail.jpg
 

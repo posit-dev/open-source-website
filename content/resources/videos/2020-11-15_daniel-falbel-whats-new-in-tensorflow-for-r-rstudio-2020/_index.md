@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-15'
 description: TensorFlow is the most popular open-source platform for machine learning and it's ecosystem is evolving incredibly fast. In this talk we will explore what's new in TensorFlow 2.0 as well as how to build data pre-processing pipelines using the tfdatasets package and how to use pre-trained models with tfhub.
 people:
@@ -81,4 +82,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Oi8k8_Dyc3k
   view_count: 1519
 ---
+image: thumbnail.jpg
 

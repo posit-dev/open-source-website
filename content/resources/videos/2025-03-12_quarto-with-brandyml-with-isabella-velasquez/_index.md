@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-03-12'
 description: 'Slides: https://ivelasq-branded-quarto.share.connect.posit.cloud/
 
@@ -46,4 +47,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mTuhQ64P3qc
   view_count: 1100
 ---
+image: thumbnail.jpg
 

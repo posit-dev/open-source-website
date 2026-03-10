@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-10-21'
 description: Introduction to Tidymodels
 people:
@@ -31,4 +32,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=weqWXjGvYp4
   view_count: 311
 ---
+image: thumbnail.jpg
 

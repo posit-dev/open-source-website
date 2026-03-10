@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Ryan Johnson introduces Positron, an AI-ready multilingual IDE designed specifically for data science.
 
@@ -40,4 +41,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Ve7cNChzq5Q
   view_count: 974
 ---
+image: thumbnail.jpg
 

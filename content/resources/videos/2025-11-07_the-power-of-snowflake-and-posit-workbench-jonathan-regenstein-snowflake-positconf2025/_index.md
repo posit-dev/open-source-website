@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'The Power of Snowflake and Posit Workbench: Macroeconomic Data Exploration in the Cloud
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=c__jOYgess4
   view_count: 116
 ---
+image: thumbnail.jpg
 

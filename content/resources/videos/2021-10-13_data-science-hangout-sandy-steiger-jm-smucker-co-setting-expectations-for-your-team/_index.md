@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-10-13'
 description: "The Data Science Hangout is a weekly, free-to-join open conversation for current and aspiring data science leaders. \n\nAn accomplished leader in the space will join us each week and answer whatever questions the audience may have. \n\nWe were recently joined by Sandy Steiger, Director, Integrated Analytics, Pet at The J.M. Smucker Co.\n\nHere are a few snippets from our conversation:\n1:06 - Start of session\n5:29 - Transitioning to the mindset, \"Data science leader for the people\"\n10:48 - Setting expectations effectively on a data science team (Turning point as a people leader)\n20:11 - Developing data science talent profiles\n28:21 - Getting data scientists more exposure across the company\n30:00 - How to encourage data scientists more comfortable sharing their work\n35:05 - Taking up your space, being confident\n57:39 - Create better team environments to challenge each other\n\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n► Add the Data Science Hangout to your calendar: https://www.addevent.com/event/Qv9211919\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn:https://www.linkedin.com/company/rstudio-pbc\nTwitter: https://twitter.com/rstudio"
 people: []
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=45PGnkvMcHM
   view_count: 296
 ---
+image: thumbnail.jpg
 

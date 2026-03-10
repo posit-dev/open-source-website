@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-10-29'
 description: 'We''re so excited to introduce Positron, a free, next-generation data science IDE that makes it easy to work in both R and Python. Positron builds on our years of experience developing RStudio and is a fork of VS Code, designed specifically for data work. This means you get a modern coding interface with features tailored for data science, like a built-in data explorer, AI assistance, interpreter management, and more.
 
@@ -212,4 +213,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=TrN-FMcOsOA
   view_count: 8392
 ---
+image: thumbnail.jpg
 

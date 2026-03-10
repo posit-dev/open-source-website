@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: "Multiple Console Sessions in Positron\n\U0001F4AC Speaker(s): Dhruvi Sompura \n\nAbstract:\nWhen it comes to everyday data science work, having access to one interactive R or Python session is often just not enough to get meaningful work done. Having access to multiple interactive sessions has proven useful across a wide variety of data science IDEs, and it has recently become available in Positron! In this talk, learn why data science practitioners need to be able to fluently access more than one interactive session, the specifics of when you might reach for an additional console session to solve a problem, and how to manage multiple console sessions in Positron.\n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
 people: []
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=sItCFWvLDJQ
   view_count: 143
 ---
+image: thumbnail.jpg
 

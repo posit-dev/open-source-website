@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-08-01'
 description: "An important part of the process of package lifecycle and package development is not just adding new functions. It's equally important to remove functions.\n\nHadley Wickham shares about the package lifecycle process and what 'deprecation' means for functions.\n\nSee the full video about the purrr 1.0 release: https://youtu.be/EGAs7zuRutY\n\nMore about the package lifecycle stages: https://lifecycle.r-lib.org/articles/stages.html \n\nMaintaining the house that tidyverse built: https://youtu.be/izFssYRsLZs"
 people:
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4vrgRNFj5gc
   view_count: 2559
 ---
+image: thumbnail.jpg
 

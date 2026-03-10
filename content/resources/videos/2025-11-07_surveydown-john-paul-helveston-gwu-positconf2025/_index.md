@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'surveydown: A Markdown-Based Platform for Interactive and Reproducible Surveys Using Quarto and Shiny
 
@@ -64,4 +65,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=VwoeFKNvN5k
   view_count: 471
 ---
+image: thumbnail.jpg
 

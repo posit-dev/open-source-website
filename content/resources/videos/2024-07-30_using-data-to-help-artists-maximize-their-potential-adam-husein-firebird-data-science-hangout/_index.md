@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-07-30'
 description: 'We were recently joined by Adam Husein, SVP, Data and Analytics at Firebird Music to chat about using data and analytics to help artists maximize their potential by empowering artists and managers to create more fans, deepen relationships, and measure impact to create material growth and engagement.
 
@@ -92,4 +93,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ouuq2-HIGWw
   view_count: 511
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-05'
 description: Originally posted at https://rstudio.com/resources/rstudioconf-2020/data-science-education-as-an-economic-and-public-health-intervention-in-east-baltimore/
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=GG5Vl7N5vCo
   view_count: 710
 ---
+image: thumbnail.jpg
 

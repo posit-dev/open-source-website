@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-09'
 description: "Register now: http://pos.it/conf\nInstructor: Colin Rundel\nWorkshop Duration: 1-Day Workshop\n\nThis course is for you if you: \n•   are comfortable with the basics of R, such as writing functions, indexing vectors and lists, debugging simple errors, and working with data structures like data frames\n•   are interested in creating interactive web applications\n•   have no or minimal experience with Shiny for R\n\nShiny is an R package that makes it easy to build interactive web apps straight from R. This workshop will start at the beginning: designing and creating user interfaces, learning and mastering the reactive model that connects your R code to the interface, and deploying apps publicly and privately. We will wrap up with some intermediate-level tools: debugging and modularizing your apps and implementing dynamic user interfaces. In the end, you’ll be a confident Shiny user, able to design interactive apps to achieve your purpose and produce a polished and professional implementation. If you have a bit of experience, you’ll see things in a new way. If you don’t, we’ll get you started on the right footing."
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Hzp2Atmb-tw
   view_count: 301
 ---
+image: thumbnail.jpg
 

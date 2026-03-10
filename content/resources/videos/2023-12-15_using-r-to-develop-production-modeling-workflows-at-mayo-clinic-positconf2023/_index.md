@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Brendan Broderick\r\n\r\nDeveloping workflows that help train models and also help deploy them can be a difficult task. In this talk I will share some tools and workflow tips that I use to build production model pipelines using R. I will use a project of predicting patients who need specialized respiratory care after leaving the ICU as an example. I will show how to use the targets package to create a reproducible and easy to manage modeling and prediction pipeline, how to use the renv package to ensure a consistent environment for development and deployment, and how to use plumber, vetiver, and shiny applications to make the model accessible to care providers.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Leave it to the robots: automating your work.\r\nSession Code: TALK-1149"
 people: []
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=YwDdL_O7wSs
   view_count: 607
 ---
+image: thumbnail.jpg
 

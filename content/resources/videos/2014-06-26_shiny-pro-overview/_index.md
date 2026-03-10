@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2014-06-26'
 description: Overview of Shiny Pro
 people: []
@@ -31,4 +32,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=KdgyC34nQ2Y
   view_count: 2762
 ---
+image: thumbnail.jpg
 

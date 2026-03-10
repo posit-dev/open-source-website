@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-11-14'
 description: 'We were recently joined by Ben Arancibia, Director of Data Science at GSK to discuss Data Science Enablement in GSK Biostatistics, building tools, and teaching others how to use open-source tools.
 
@@ -73,4 +74,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ve51kb4ewxI
   view_count: 475
 ---
+image: thumbnail.jpg
 

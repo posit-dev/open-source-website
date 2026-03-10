@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-03-22'
 description: '✨ GitHub: https://github.com/bradlindblad/pro_reports_talk
 
@@ -108,4 +109,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=JsaGSrM8aZ0
   view_count: 7841
 ---
+image: thumbnail.jpg
 

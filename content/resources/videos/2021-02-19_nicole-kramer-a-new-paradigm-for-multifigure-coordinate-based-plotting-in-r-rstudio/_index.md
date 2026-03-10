@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'R is unparalleled in its ability to transform raw data into a wide array of beautiful graphics, all within the same environment. However, when it comes to complex, multi-paneled plots, users rely on 3rd party graphic design software to arrange plots. Here I present the new world of programmatic, coordinate-based multi-figure plotting in R. Employing grid Graphics and drawing from the paradigms of base plotting and ggplot2, I am developing a package that will revolutionize the way plots are laid out in R. Not only will individual plots be aesthetically customizable and tailored for speed, users will also be offered exquisite control over all aspects of page layout, plot placement, and arrangements. Come join me in changing how we plot in R!
 
@@ -85,4 +86,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=uoM8sYAyo_s
   view_count: 879
 ---
+image: thumbnail.jpg
 

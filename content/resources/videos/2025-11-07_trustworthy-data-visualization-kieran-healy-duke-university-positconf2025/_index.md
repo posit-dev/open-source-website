@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Trustworthy Data Visualization
 
@@ -55,4 +56,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ZamPCbvBAgE
   view_count: 5056
 ---
+image: thumbnail.jpg
 

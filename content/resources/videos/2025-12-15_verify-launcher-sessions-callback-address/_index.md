@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-15'
 description: In this video, we walk through the process of verifying that our Launcher Sessions Callback Address is correct. This ensures that we don’t run into any session-related issues.
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=soxOqpyiAa8
   view_count: 38
 ---
+image: thumbnail.jpg
 

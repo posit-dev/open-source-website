@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-11-16'
 description: 'Learn more about Shiny for Python: https://shiny.posit.co/py/'
 people: []
@@ -30,4 +31,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=FRIzx6iKZFg
   view_count: 2797
 ---
+image: thumbnail.jpg
 

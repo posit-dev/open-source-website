@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-20'
 description: 'Posit Connect Cloud makes it simple to share your data work online in just minutes. Applications or documents. R or Python. All in one place.
 
@@ -45,4 +46,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fwcZBiWXSto
   view_count: 256
 ---
+image: thumbnail.jpg
 

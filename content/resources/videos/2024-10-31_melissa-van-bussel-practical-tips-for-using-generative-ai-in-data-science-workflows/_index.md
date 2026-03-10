@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Now that we''re a couple of years into the age of Generative AI, it''s clear that this technology has the power to transform the way that we work. As Generative AI continues to evolve, the ways that we use these models should evolve, too. In this talk, we''ll explore how we, as data professionals, can maximize the benefits of these tools in 2024 and how they can be incorporated into our everyday workflows. We''ll also look at creative use cases that might not seem immediately obvious, but that will allow us to combine Generative AI with other data science tools that we already know and love, like Quarto and Shiny.
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=rPeOdc8jTSE
   view_count: 2544
 ---
+image: thumbnail.jpg
 

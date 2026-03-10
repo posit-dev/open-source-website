@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-08-11'
 description: 'Want to make building and deploying your Streamlit applications a breeze? In this video, we show you how to leverage the full power of the Positron platform to create, develop, and launch your data apps. Discover Positron features that make development easier than ever.
 
@@ -120,4 +121,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=VO2pBeX0g-U
   view_count: 2706
 ---
+image: thumbnail.jpg
 

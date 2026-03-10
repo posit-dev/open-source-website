@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-19'
 description: 'We were recently joined by Stephanie Lussier, Manager, Biostatistics at Moderna to discuss growing a new data science team at Moderna and developing a pipeline to enable internal clinical trial decision-making at rapid speeds.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fQK9yB8L2oA
   view_count: 635
 ---
+image: thumbnail.jpg
 

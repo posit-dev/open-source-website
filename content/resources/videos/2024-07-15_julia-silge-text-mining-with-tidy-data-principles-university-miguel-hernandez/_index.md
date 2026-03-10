@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-07-15'
 description: 'PROGRAM:https://revolution.servicioapps.com/w/xxxviiicongresoasepelt/186821/programa-cientifico-del-congreso-asepelt-1?preview=1
 
@@ -37,4 +38,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=nnv3WkRzyBk
   view_count: 276
 ---
+image: thumbnail.jpg
 

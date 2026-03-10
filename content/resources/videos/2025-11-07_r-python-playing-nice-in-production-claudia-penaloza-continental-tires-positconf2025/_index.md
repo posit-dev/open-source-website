@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'R & Python playing nice, in production
 
@@ -68,4 +69,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=hYKqgYNb3bc
   view_count: 127
 ---
+image: thumbnail.jpg
 

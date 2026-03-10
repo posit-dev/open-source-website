@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-19'
 description: "R Markdown is a document format based on the R language and Markdown to intermingle computing with narratives in the same document. With this simple format, you can actually do a lot of things. For example, you can generate reports dynamically (no need to cut-and-paste any results because all results can be dynamically generated from R), write papers and books, create websites, and make presentations. In this talk, I'll use a single R Markdown document to give demos of the R packages rmarkdown,\r\n\r\n- bookdown for authoring books (https://bookdown.org),\r\n- blogdown for creating websites (https://github.com/rstudio/blogdown),\r\n- rticles for writing journal papers (https://github.com/rstudio/rticles),\r\n- xaringan for making slides (https://github.com/yihui/xaringan),\r\n- flexdashboard for generating dashboards (https://github.com/rstudio/flexdashboard),\r\n- learnr for tutorials (https://github.com/rstudio/learnr),\r\n- rolldown for storytelling (https://github.com/yihui/rolldown),\r\n\r\nAnd the integration between Shiny and R Markdown. To make the best use of your time during the presentation, I recommend you to take a look at the rmarkdown website in advance: https://rmarkdown.rstudio.com."
 people: []
@@ -90,4 +91,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qLEkUjxk7e8
   view_count: 19082
 ---
+image: thumbnail.jpg
 

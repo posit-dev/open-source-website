@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-16'
 description: 'Have you ever had an idea for a great web application with Shiny but felt something holding you back from getting started? Maybe it’s that you don’t know where to start, or that you don’t know which packages use to build the app, or maybe it’s just that you can’t muster the energy to get started. Sometimes you just need a little help to get unstuck.
 
@@ -103,4 +104,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fJNKdwdVQ8Q
   view_count: 2726
 ---
+image: thumbnail.jpg
 

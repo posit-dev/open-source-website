@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-11-29'
 description: 'Gordon Shotwell, Senior Software Engineer at Posit walks through an end-to-end machine learning workflow with Posit Team. This demo will give you a robust pattern for hosting and sharing models on Connect before you deploy them to a customer-facing system.
 
@@ -206,4 +207,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ZkrR9i11mvk
   view_count: 1892
 ---
+image: thumbnail.jpg
 

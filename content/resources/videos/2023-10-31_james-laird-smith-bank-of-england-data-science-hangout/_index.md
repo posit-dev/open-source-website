@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-10-31'
 description: 'We were recently joined by James Laird-Smith from the Bank of England to chat about supporting 1,000 R users across 1 organization.
 
@@ -73,4 +74,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=l3qi9OMge-Y
   view_count: 528
 ---
+image: thumbnail.jpg
 

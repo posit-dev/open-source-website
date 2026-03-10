@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'From SDKs to Agents: Building with R and Python on Databricks
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qrOM9YLvjoM
   view_count: 154
 ---
+image: thumbnail.jpg
 

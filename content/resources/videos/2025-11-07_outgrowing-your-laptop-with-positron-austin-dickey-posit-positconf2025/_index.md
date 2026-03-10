@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Outgrowing Your Laptop with Positron
 
@@ -57,4 +58,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=I748784S7WI
   view_count: 308
 ---
+image: thumbnail.jpg
 

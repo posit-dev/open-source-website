@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'Last year, pins got released as a brand new R package to pin, discover and cache remote resources for R users. This package has matured to support many use cases; from caching remote URLs, and easily sharing datasets with other R users, to building automated pipelines.
 
@@ -97,4 +98,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=dsfEsJCiH-E
   view_count: 693
 ---
+image: thumbnail.jpg
 

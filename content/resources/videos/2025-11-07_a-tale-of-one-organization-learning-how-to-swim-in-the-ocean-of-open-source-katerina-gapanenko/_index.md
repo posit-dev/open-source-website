@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'A tale of one organization: learning how to swim in the ocean of open source
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=5Qli8vgVaDI
   view_count: 62
 ---
+image: thumbnail.jpg
 

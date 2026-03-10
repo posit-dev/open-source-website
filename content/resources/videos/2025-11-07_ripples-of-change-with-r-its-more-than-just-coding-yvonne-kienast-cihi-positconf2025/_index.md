@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Ripples of Change with R: It’s more than just coding
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=azQvYftzszk
   view_count: 137
 ---
+image: thumbnail.jpg
 

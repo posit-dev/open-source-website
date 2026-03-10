@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-02-27'
 description: 'Hi, there!
 
@@ -102,4 +103,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=kuEbRfmm4G4
   view_count: 515
 ---
+image: thumbnail.jpg
 

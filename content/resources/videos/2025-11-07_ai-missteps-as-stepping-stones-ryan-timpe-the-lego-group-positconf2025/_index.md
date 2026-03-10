@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'AI missteps as stepping stones: Opportunities gained when your LLM coding assistant gets it wrong
 
@@ -55,4 +56,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vJrIahZWCw4
   view_count: 395
 ---
+image: thumbnail.jpg
 

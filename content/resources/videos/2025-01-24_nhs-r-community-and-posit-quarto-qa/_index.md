@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-01-24'
 description: Informal Posit Quarto team Q&A with discussions with NHS-R Community members. Questions were opened up to the NHS-R Community via the Slack channel prior to the meeting.
 people: []
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=W8dMHYKrAII
   view_count: 162
 ---
+image: thumbnail.jpg
 

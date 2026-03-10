@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-25'
 description: 'Wes McKinney is the co-creator of pandas library and he is the cofounder of Voltron data. Currently he is a principal Architect at Posit and an investor in data systems. Subscribe to Daliana''s newsletter on www.dalianaliu.com for more on data science and career.
 
@@ -109,4 +110,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=6XahIfllSTw
   view_count: 1857
 ---
+image: thumbnail.jpg
 

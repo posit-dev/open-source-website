@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'This talk explores the creation of an advanced portfolio analysis system using Shiny and Plumber API. Focused on delivering real-time insights and interactive tools, the system transforms financial analysis with user-centric design and reusable Shiny modules. The talk will delve into how complex financial data is made dynamic and interactive via an internal R package integrating with an ag-grid javascript library to enhance user engagement and decision-making efficiency. A highlight is the Plumber API''s dual role: powering the current system and hosting other enterprise applications in other languages (python), demonstrating remarkable cross-platform integration. This system exemplifies the innovative potential of R in financial analytics.
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=59ztetVfmjg
   view_count: 276
 ---
+image: thumbnail.jpg
 

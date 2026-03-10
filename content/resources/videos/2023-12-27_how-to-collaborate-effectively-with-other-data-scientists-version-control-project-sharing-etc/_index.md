@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-27'
 description: '🌲 Tis the season for joy and connection, and what better time to extend that collaborative spirit into your data science endeavors 🌟
 
@@ -126,4 +127,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QHS0TVK6p9w
   view_count: 2220
 ---
+image: thumbnail.jpg
 

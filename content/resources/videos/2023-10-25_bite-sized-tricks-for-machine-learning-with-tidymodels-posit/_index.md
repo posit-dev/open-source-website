@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-10-25'
 description: "The tidymodels framework is a collection of R packages for modeling and machine learning using tidyverse principles. This video highlights a number of tidymodels features that could improve your modeling workflows. \n\n0:03 Switching modeling engines is easy\n0:21 Never lose your tuning results\n0:36 Built-in visualizations for modeling objects\n1:03 Grouped resampling\n1:16 Case weights\n1:32 Select variables based on role and type\n2:00 Spatial resampling\n2:16 Keep your tidymodels objects small\n\nLearn more at https://www.tidymodels.org/"
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qknAgk234Ts
   view_count: 2305
 ---
+image: thumbnail.jpg
 

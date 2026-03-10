@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-09'
 description: "Register now: http://pos.it/conf\nInstructor: Tracy Teal\nWorkshop Duration: 1-Day Workshop\n\nThis workshop is for you if you: \n•   are involved in maintaining an open source project and struggling to feel like it’s sustainable, or are looking for practice or guidance\n•  are starting out or interested in being involved in maintaining an open source project, and want to learn how to set up the project for the most effective engagement from contributors and users\n•   are interested in learning more about the people side of open source project maintenance and connecting with other maintainers"
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QnA9vwyxUh8
   view_count: 280
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'From messy to meaningful data: LLM-powered classification in R
 
@@ -57,4 +58,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Lo4vewuapI8
   view_count: 155
 ---
+image: thumbnail.jpg
 

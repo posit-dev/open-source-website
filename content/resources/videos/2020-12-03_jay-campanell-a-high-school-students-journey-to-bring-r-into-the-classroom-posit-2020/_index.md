@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-03'
 description: My 8th-grade capstone project introduced me to R. The project was a data visualization about breakfast tacos. I used R and other web-based tools. My lightning talk will focus on my experience about using R for class projects and getting support from my parents to help integrate R into the classroom. I will show how students can get started when they don't know how to use R. I will talk about the project’s toolkit, which includes Posit Cloud, Google Sheets, Chromebook, measurement tools, my phone, and how R is being used in my school. A 5-minute presentation in our Lightning Talks series
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=5gt7Jol9loU
   view_count: 758
 ---
+image: thumbnail.jpg
 

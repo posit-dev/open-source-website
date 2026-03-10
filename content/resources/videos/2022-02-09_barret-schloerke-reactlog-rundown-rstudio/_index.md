@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-02-09'
 description: '00:00 Introduction to Reactlog
 
@@ -247,4 +248,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=slXcW99ftk4
   view_count: 2891
 ---
+image: thumbnail.jpg
 

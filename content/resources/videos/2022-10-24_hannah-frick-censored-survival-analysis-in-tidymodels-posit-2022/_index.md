@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'tidymodels is extending support for survival analysis and censored is a new parsnip extension package for survival models. It offers various types of models: parametric models, semi-parametric models like the Cox model, and tree- based models like decision trees, boosted trees, and random forests. They all come with the consistent parsnip interface so that you can focus on the modelling instead of details of the syntax. Happy modelling!
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=E5XG1c7tNW0
   view_count: 2362
 ---
+image: thumbnail.jpg
 

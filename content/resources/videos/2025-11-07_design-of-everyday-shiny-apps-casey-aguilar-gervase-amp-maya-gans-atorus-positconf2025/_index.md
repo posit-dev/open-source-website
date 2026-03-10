@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Design of Everyday Shiny Apps
 
@@ -57,4 +58,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=RQod46DSkiA
   view_count: 210
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: "Approaching Positron from RStudio\n\U0001F4AC Speaker(s): Mauro Lepore \n\nAbstract:\nMany data science teams that traditionally worked with R and RStudio are now attracting developers with experience in Python and VS Code. Positron is a polyglot IDE supporting both R and Python and incorporating tools from both RStudio and VS Code. However, jumping straight from one familiar IDE to an unfamiliar one can be intimidating, slow down productivity, and impair adoption. \n\nIn this talk, I’ll show some tools and techniques you can use in RStudio and VS Code to start your transition to Positron today—with minimal friction—while staying productive in your preferred IDE.\n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
 people: []
@@ -36,4 +37,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=X6PZ_RiZp44
   view_count: 857
 ---
+image: thumbnail.jpg
 

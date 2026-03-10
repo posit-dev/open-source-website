@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Get your ducks in a row... faster Shiny apps with DuckDB
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=2sLJSosz1OY
   view_count: 283
 ---
+image: thumbnail.jpg
 

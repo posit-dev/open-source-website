@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This talk will trace the evolution of a report from a mostly text free dashboard into a text heavy R markdown report with dynamic text blocks. The report in question is provided to the largest financial institutions in the U.S., but the audience for the data largely is composed of compliance experts and lawyers.
 
@@ -50,4 +51,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=K2VYzU0XCmA
   view_count: 569
 ---
+image: thumbnail.jpg
 

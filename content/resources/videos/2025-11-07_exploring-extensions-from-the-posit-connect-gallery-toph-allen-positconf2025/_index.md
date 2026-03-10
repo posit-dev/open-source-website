@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Toph Allen, a software engineer at Posit, introduces the Posit Connect gallery, a platform for deploying applications, dashboards, and APIs.
 
@@ -37,4 +38,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=lLEMcxl5-yA
   view_count: 248
 ---
+image: thumbnail.jpg
 

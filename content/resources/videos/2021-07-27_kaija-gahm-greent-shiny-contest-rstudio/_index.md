@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-07-27'
 description: 'Kaija Gahm: greenT Shiny app
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gCbB3LleF_g
   view_count: 901
 ---
+image: thumbnail.jpg
 

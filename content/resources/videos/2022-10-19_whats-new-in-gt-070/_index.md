@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-19'
 description: "gt 0.7.0 was just released. Rich Iannone, maintainer of gt, dives into the 7 new features added. \n\nFor more details, \n⬢ Read the blog post on gt 0.7 https://www.rstudio.com/blog/all-new-things-in-gt-0-7-0/.\n⬢ Learn more about gt at https://gt.rstudio.com/.\n⬢ Follow the gt twitter account, https://twitter.com/gt_package.\n\n00:07 The new Word table output format, .docx output.\n00:34 A whole new family of vector formatting functions (vec_fmt_*()) has been added.\n01:03 Table presets/themes styling with the new opt_stylize() function.\n01:50 The new tab_stub_indent() for superfine control over row label indentation (in the stub)\n02:26 The new fmt_duration() function for formatting of time duration values. \n03:32 An upgraded gtsave() that uses {webshot2}, .png output looks better. \n04:14 Accessibility enhancements for HTML table outputs"
 people:
@@ -79,4 +80,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QbcAX3ayyzk
   view_count: 1773
 ---
+image: thumbnail.jpg
 

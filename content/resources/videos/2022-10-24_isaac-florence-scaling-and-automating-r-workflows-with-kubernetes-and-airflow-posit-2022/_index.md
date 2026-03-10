@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'During the pandemic, epidemiologists have been forced to adapt to the unprecedented scale of the data and high cadence of reporting.
 
@@ -37,4 +38,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=YtCVyEk5I1Q
   view_count: 509
 ---
+image: thumbnail.jpg
 

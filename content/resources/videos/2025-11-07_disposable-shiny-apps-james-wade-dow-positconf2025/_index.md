@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Disposable Shiny Apps
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=smnrmTtoiOM
   view_count: 153
 ---
+image: thumbnail.jpg
 

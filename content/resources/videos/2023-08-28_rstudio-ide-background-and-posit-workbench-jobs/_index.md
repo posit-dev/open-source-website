@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-08-28'
 description: 'This is a great feature for any long running scripts you may have, including, for example, a machine learning training step. It also allows you to run multiple jobs simultaneously.
 
@@ -84,4 +85,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=7F2bEXVm_LI
   view_count: 4598
 ---
+image: thumbnail.jpg
 

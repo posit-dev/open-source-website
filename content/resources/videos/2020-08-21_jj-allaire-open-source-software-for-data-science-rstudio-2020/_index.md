@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-08-21'
 description: "Open Source Software for Data Science\r\n\r\nJ.J. Allaire | February 1, 2020\r\nOpen-source software is fundamentally necessary to ensure that the tools of data science are broadly accessible, and to provide a reliable and trustworthy foundation for reproducible research. This talk will delve into why open source software is so important and discuss the role of corporations as stewards of open source software. I'll also talk about how RStudio is structured and organized to pursue its mission of creating open source software for data science.\r\n\r\nAbout the speaker\r\nJ.J. Allaire - JJ Allaire is a software engineer and entrepreneur who has created a wide variety of products including ColdFusion Open Live Writer Lose It! and RStudio."
 people:
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=DskltmWKOVY
   view_count: 7046
 ---
+image: thumbnail.jpg
 

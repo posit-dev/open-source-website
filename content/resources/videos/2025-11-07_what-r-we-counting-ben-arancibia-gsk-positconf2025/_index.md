@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'What R We Counting?
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=oRc_fF4Fhrk
   view_count: 80
 ---
+image: thumbnail.jpg
 

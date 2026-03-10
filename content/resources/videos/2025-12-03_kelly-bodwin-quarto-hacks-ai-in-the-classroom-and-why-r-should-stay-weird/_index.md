@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In this episode, we’re joined by Kelly Bodwin — candy corn defender, board game enthusiast, and Associate Professor of Statistics and Data Science at Cal Poly. We discuss her path from English and French to statistics, how she builds teaching tools and navigates AI in the classroom, and what it takes to keep a programming community weird in the best possible way.
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=v-uNP6MmU8U
   view_count: 1002
 ---
+image: thumbnail.jpg
 

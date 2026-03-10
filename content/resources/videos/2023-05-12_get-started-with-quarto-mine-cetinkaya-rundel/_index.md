@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-12'
 description: 'This video walks you through creating documents, presentations, and websites and publishing with Quarto. The video features authoring Quarto documents with executable R code chunks using the RStudio Visual Editor (https://quarto.org/docs/visual-editor/).
 
@@ -131,4 +132,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_f3latmOhew
   view_count: 78143
 ---
+image: thumbnail.jpg
 

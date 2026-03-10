@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-10-29'
 description: 'Over the past nine years, the R package {plumber} has simplified the creation of web APIs using annotations over existing R source code with roxygen2-like comments. During this time, the community has gathered valuable insights and identified numerous areas for improvement. To invest in a way forward, a new package called {plumber2} has been created.
 
@@ -47,4 +48,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qivCc7Jv29U
   view_count: 162
 ---
+image: thumbnail.jpg
 

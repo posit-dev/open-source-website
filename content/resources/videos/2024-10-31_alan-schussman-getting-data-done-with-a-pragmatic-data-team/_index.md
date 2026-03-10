@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Data work comes in lots of forms, and large organizations with reliable pipelines of similar problems can be very specialized in how they tackle this work. My contention is that many organizations doing data work don''t get to be so picky: Instead of specialized roles in focused parts of a data process, many of us work from end to end, and projects often differ in the tools and domain knowledge they require. Identifying and making use of good, reusable practices in this environment is hard, and there''s not a consistent supply of some of the work that''s most appealing to ambitious data people. This talk explores some successes and failures in building flexible, effective, empowered teams in this environment.
 
@@ -39,4 +40,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=k_BWKB6YohU
   view_count: 149
 ---
+image: thumbnail.jpg
 

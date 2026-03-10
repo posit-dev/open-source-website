@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'The Shiny team has made big steps to help apps'' UI and UX scale more thoughtfully and elegantly. We''ve built a cohesive theme that refreshes all of our colors and components. Our layouts will better serve your apps as they grow. And we''ve created Shiny Templates, which are opinionated boilerplate code to help users create small, simple apps or large, complicated, multi-page dashboards that just look right.
 
@@ -39,4 +40,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=FPc5PJRWHsk
   view_count: 2110
 ---
+image: thumbnail.jpg
 

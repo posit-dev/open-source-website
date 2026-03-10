@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-06-28'
 description: 'Live Q&A Session for the End-to-End Workflow Demo on June 28th
 
@@ -118,4 +119,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=JUgChPCa3vs
   view_count: 507
 ---
+image: thumbnail.jpg
 

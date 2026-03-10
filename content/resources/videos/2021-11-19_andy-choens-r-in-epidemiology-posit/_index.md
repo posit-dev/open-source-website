@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-11-19'
 description: 'Connecting Primary Care Providers to their own data
 
@@ -53,4 +54,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-zhTXiiCj58
   view_count: 3276
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-04-18'
 description: 'About the Talk:
 
@@ -59,4 +60,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WQ_sbmR-IPQ
   view_count: 596
 ---
+image: thumbnail.jpg
 

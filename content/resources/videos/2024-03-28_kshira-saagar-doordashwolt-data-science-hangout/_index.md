@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-03-28'
 description: 'We were recently joined by Kshira Saagar, Sr Director of Data Science & Analytics, International at Wolt & DoorDash to chat about getting Analytics & Data Science teams a seat at the table - by ensuring that the work done by the DS & Analytics folks impact real-world outcomes and there is credibility & trust built on all sides of an organization to treat Analytics as a True Partner.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wDKUhBxwmPw
   view_count: 285
 ---
+image: thumbnail.jpg
 

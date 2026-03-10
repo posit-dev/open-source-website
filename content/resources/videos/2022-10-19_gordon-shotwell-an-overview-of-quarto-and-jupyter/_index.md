@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-19'
 description: 'Gordon Shotwell
 
@@ -44,4 +45,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Qdq62tslDA8
   view_count: 766
 ---
+image: thumbnail.jpg
 

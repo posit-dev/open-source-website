@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-10-05'
 description: "Software dependencies can often be a double-edged sword. On one hand, they let you take advantage of others' work, giving your software marvelous new features and reducing bugs. On the other hand, they can change, causing your software to break unexpectedly and increasing your maintenance burden. These problems occur everywhere, in R scripts, R packages, Shiny applications and deployed ML pipelines. So when should you take a dependency and when should you avoid them? Well, it depends! This talk will show ways to weigh the pros and cons of a given dependency and provide tools for calculating the weights for your project. It will also provide strategies for dealing with dependency changes, and if needed, removing them. We will demonstrate these techniques with some real-life cases from packages in the tidyverse and r-lib.\r\n\r\nVIEW MATERIALS https://speakerdeck.com/jimhester/it-depends\r\n\r\nAbout the Author\r\nJim Hester\r\nJim is a software engineer at RStudio working with Hadley to build better tools for data science. He is the author of a number of R packages including lintr and covr, tools to provide code linting and test coverage for R."
 people: []
@@ -80,4 +81,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mum13N7CGUI
   view_count: 545
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Positron for Babies: Communicating Technical Concepts to all Audiences
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=NVOmCKPzokY
   view_count: 151
 ---
+image: thumbnail.jpg
 

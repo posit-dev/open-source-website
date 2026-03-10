@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-21'
 description: 'Recent progress in machine learning has raised a series of urgent questions: How can we train and debug deep learning models? How can we understand what is going on inside a neural network? And, perhaps most important, how can we design systems that serve people best? We''ll show a series of examples from the People+AI Research (PAIR) initiative at Google--ranging from data visualizations for researchers, to tools for medical practitioners, to guidelines for designers--that illustrate how thinking carefully about data can lead to better tools, more effective design, and help humans and AI work together.
 
@@ -95,4 +96,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=jvhxHYKzfa8
   view_count: 2704
 ---
+image: thumbnail.jpg
 

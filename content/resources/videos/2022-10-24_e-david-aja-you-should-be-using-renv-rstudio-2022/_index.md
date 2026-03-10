@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Dependencies don''t have to be hell. In this talk we''ll discuss how renv makes it easier to diagnose problems, move projects between environments, and collaborate with other R users.
 
@@ -36,4 +37,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=GwVx_pf2uz4
   view_count: 4458
 ---
+image: thumbnail.jpg
 

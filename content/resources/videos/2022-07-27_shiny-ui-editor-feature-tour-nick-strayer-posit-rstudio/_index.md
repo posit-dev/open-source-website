@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-07-27'
 description: 'The Shiny UI Editor is a dynamic drag-and drop interface to help you design beautiful Shiny apps. The Shiny UI Editor is a visual tool for building the UI portion of a Shiny application that generates clean and human-readable code.
 
@@ -114,4 +115,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Zac1qdaYNsY
   view_count: 5469
 ---
+image: thumbnail.jpg
 

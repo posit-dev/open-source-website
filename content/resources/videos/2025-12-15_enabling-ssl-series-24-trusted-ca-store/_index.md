@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-15'
 description: 'This series of videos walks through SSL Certificate Management with Posit products.
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=rCozjsBF6qs
   view_count: 53
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Elevating Public Health Decision-Making with R Packages
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=YzIiWg4rySA
   view_count: 110
 ---
+image: thumbnail.jpg
 

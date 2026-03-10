@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-06-18'
 description: 'Introducing The Test Set–a Posit podcast for data science, coming July 1, 2025.
 
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4v0rnLN0V3k
   view_count: 869
 ---
+image: thumbnail.jpg
 

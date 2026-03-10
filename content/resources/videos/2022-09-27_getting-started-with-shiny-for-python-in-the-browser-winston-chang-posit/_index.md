@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-09-27'
 description: 'Shiny makes it easy to build interactive web applications with the power of Python’s data and scientific stack. You can try out Shiny for Python without installing a single thing… All in the browser.
 
@@ -97,4 +98,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=--1edVmpF94
   view_count: 16646
 ---
+image: thumbnail.jpg
 

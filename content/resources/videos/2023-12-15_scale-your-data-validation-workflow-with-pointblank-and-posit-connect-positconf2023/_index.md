@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Michael Garcia\r\n\r\nFor the Data Services team at Medable, our number one priority is to ensure the data we collect and deliver to our clients is of the highest quality. The {pointblank} package, along with Posit Connect, modernizes how we tackle data validation within Data Services. \r\n\r\nIn this talk, I will briefly summarize how we develop test code with {pointblank}, share with {pins}, execute with {rmarkdown}, and report findings with {blastula}. Finally, I will show how we aggregate data from test results across projects into a holistic view using {shiny}.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Leave it to the robots: automating your work.\r\nSession Code: TALK-1058"
 people: []
@@ -80,4 +81,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=N9kaAiuAbWo
   view_count: 934
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-08'
 description: 'The R language is used extensively throughout the pharmaceutical industry. But its use within the tightly regulated clinical reporting workflows has remained limited. GSK Biostatistics has embarked upon a journey to embed R as a primary statistical analysis tool for clinical reporting.
 
@@ -110,4 +111,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=BNRMYRkwKDo
   view_count: 1336
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Justin Markel & Alyssa Burritt\r\n\r\nOne of the fastest movements in modern sports is a golf swing. Capturing this motion using a high-speed camera system creates many unique challenges in processing, analyzing, and visualizing the thousands of data points that are generated. These spatial coordinates can be quickly translated through Python scripts to well-known, industry-specific performance metrics and graphics in Shiny. Down the line, R utilities aid more complicated analyses and optimizations, driving new product innovations. \r\n\r\nThis talk will cover our company's process of implementing these tools into our workflow and highlight key program features that have helped successfully combine these applications for users with a variety of technical backgrounds.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: R or Python? Why not both!.\r\nSession Code: TALK-1120"
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=yBYBYDo-NlY
   view_count: 290
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Making the most of artificial and human intelligence for data science
 
@@ -57,4 +58,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=tSFHQWGyRzo
   view_count: 4780
 ---
+image: thumbnail.jpg
 

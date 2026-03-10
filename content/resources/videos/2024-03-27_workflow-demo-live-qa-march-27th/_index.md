@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-03-27'
 description: 'Q&A session from the March 27th Workflow Demo: Elevate your Quarto reports with styling and scheduled emails.
 
@@ -100,4 +101,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=bqk75igHo8M
   view_count: 633
 ---
+image: thumbnail.jpg
 

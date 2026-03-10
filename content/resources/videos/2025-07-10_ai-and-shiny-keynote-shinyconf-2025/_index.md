@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-07-10'
 description: '#ShinyConf #ShinyConf2025
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ioLuM0J3mQw
   view_count: 615
 ---
+image: thumbnail.jpg
 

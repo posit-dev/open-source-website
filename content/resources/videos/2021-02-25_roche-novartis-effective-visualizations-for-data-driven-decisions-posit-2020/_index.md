@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-25'
 description: 'Effective visual communication is a core task for all data scientists including statisticians, epidemiologists, machine learning experts, bioinformaticians, etc.
 
@@ -133,4 +134,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=RqGFMRQ3M-U
   view_count: 6600
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Enemies to lovers: How non-programmers can make sparks fly when using testthat during package development
 
@@ -51,4 +52,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=GEP61GjwTjE
   view_count: 88
 ---
+image: thumbnail.jpg
 

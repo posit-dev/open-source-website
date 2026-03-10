@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Oops! I accidentally made a production dashboard
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=dFkmJcIB5M8
   view_count: 138
 ---
+image: thumbnail.jpg
 

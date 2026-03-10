@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'R-multiverse: a new way to publish R packages
 
@@ -82,4 +83,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=UseltnRVoFo
   view_count: 180
 ---
+image: thumbnail.jpg
 

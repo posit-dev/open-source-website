@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-04-03'
 description: 'What is a reprex? It’s a reproducible example. Making a great reprex is both an art and a science and this webinar will cover both aspects. A reprex makes a conversation about code more efficient and pleasant for all. This comes up whenever you ask someone for help, report a bug in software, or propose a new feature. The reprex package (https://reprex.Tidyverse.org) makes it especially easy to prepare R code as a reprex, in order to share on sites such as https://community.rstudio.com, https://github.com, or https://stackoverflow.com. The habit of making little, rigorous, self-contained examples also has the great side effect of making you think more clearly about your programming problems.
 
@@ -100,4 +101,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=5gqksthQ0cM
   view_count: 3188
 ---
+image: thumbnail.jpg
 

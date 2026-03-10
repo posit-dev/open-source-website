@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Data 911: how Posit can support decision-makers in times of environmental crisis
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Cnk3770AzuA
   view_count: 64
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Everyone will have their own recipe for bRewing a great collaboration, but we wanted to share ours. Ingredients: equal parts learner and teacher, 90 kg of supportive management, 1 whole database, complete or incomplete, a dash of creativity, 60 hours of time (recipe included in the main presentation), fun to taste. First, make sure your ingredients are organized, and the prep area is tidy. Sift data into a central database and simmer and stir into separate R scripts. In a large cauldron, combine scripts and narrative into one giant Rmarkdown. Lubridate your pan and knit into the desired format. We want to share the rest of our recipe to make a delicious report that builds confidence in the learner, new and strong friendships, and lifelong skills.
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=SUTucSJFfXw
   view_count: 153
 ---
+image: thumbnail.jpg
 

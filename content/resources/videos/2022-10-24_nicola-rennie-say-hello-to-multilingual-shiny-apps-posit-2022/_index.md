@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Multilingual shiny apps are not straightforward to build. Translation affects almost every single aspect of an app. Although there are a few packages designed to automate the translation process, they tend to only work for the most widely spoken languages.
 
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=YBppl9UUZpg
   view_count: 288
 ---
+image: thumbnail.jpg
 

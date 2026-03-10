@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-05'
 description: 'In this webinar, I''ll introduce some of the major changes coming in testthat 3.0.0. The biggest new idea in testthat 3.0.0 is the idea of an edition. You must deliberately choose to use the 3rd edition, which allows us to make breaking changes without breaking old packages. testthat 3e deprecates a number of older functions that we no longer believe are a good idea, and tweaks the behaviour of expect_equal() and expect_identical() to give considerably more informative output (using the new waldo package).
 
@@ -129,4 +130,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=1ZrjWKcG1C4
   view_count: 7697
 ---
+image: thumbnail.jpg
 

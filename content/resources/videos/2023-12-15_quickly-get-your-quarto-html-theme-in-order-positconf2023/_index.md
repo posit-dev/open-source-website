@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Greg Swinehart\r\n\r\nA 5-minute talk to discuss how I've used Quarto and Bootstrap variables to quickly make Shiny's new website look as it should. The Quarto user I have in mind works at an organization with specific brand guidelines to follow. I‚ will discuss how to set up your theme, show some key Quarto settings, and how Bootstrap‚ Sass variables are your best friend.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Lightning talks.\r\nSession Code: TALK-1170"
 people:
@@ -79,4 +80,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=i2mdxfvm_VY
   view_count: 3079
 ---
+image: thumbnail.jpg
 

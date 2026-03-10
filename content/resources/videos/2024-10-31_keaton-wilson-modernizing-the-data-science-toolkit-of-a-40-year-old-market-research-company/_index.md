@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'This presentation outlines the efforts undertaken by the Decision Sciences and Innovation (DSI; which focuses on statistical consulting and end-to-end quantitative analysis) team at KS&R to modernize their data science toolkit over the past year. The main goals were to foster collaboration, improve our legacy codebase, and deliver high-quality data products. Key topics covered include teamwide adoption of version control and GitHub, building and deploying internal R packages, Quarto-based documentation, and strategies for gaining buy-in across teams and leadership. Attendees can expect practical insights and tools for instigating change in their own organizations.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=cgN3qj5Amhg
   view_count: 260
 ---
+image: thumbnail.jpg
 

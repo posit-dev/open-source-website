@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-07-23'
 description: "In current deep learning with Keras and TensorFlow, when you've mastered the basics and are ready to dive into more involved applications (such as generative networks, sequence-to-sequence or attention mechanisms), you may find that surprisingly, the learning curve doesn't get much flatter. This is largely due to restrictions imposed by TensorFlow's traditional static graph paradigm. With TensorFlow Eager Execution, available since summer and announced to be the default mode in the upcoming major release, model architectures become more flexible, readable, composable, and last not least, debuggable. In this session, we'll see how with Eager, we can code sophisticated architectures like Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs) in a straightforward way.\r\n\r\nVIEW MATERIALS https://github.com/skeydan/rstudio_conf_2019_eager_execution"
 people: []
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gQH5YvviKp8
   view_count: 523
 ---
+image: thumbnail.jpg
 

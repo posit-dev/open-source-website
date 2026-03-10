@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-20'
 description: 'Salesforce is not only a cloud software solution out of the box, but also a highly customizable platform that can be modified for a wide range of use cases. In addition to complexity, customer trust is our #1 company value and customer data privacy is abstracted from everyone outside of the customer. Product and Growth Analytics is an emerging field separate from business analytics and data science and focuses on building software product that improve user retention and engagement. Companies like Facebook and AirBnB have robust data science teams focused on product analytics. At Salesforce however, given the scale, customization, and privacy values, product data science is not so straightforward. Utilizing R and Rstudio tools for collaboration and reproducible analytics, the Data Intelligence team is able to solve complex problems at enterprise scale. This talk will preview anonymized predictive and growth analytics work while also highlighting how we work and collaborate cross platform and languages (Python via reticulate).'
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_cqdGK1wsVY
   view_count: 986
 ---
+image: thumbnail.jpg
 

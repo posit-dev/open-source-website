@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Talk by Christopher T. Kenny
 
@@ -35,4 +36,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=XS8Jrq7Ovds
   view_count: 223
 ---
+image: thumbnail.jpg
 

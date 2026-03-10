@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-03-01'
 description: 'We were recently joined by Matthias Mueller, Senior Director of Analytics at Campaign Monitor.
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vj70GHhYtc8
   view_count: 603
 ---
+image: thumbnail.jpg
 

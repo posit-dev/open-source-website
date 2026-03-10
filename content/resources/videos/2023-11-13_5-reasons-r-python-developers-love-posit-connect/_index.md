@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-11-13'
 description: "Posit Connect makes deployment the easiest step in your workflow. \n\nConnect saves data scientists time, accelerates productivity, and maximizes the impact data science teams have within their organization.\n\nWith Posit Connect, you can automate common recurring data science tasks, like:\n\n- Sending a daily or weekly report to your boss\n\n- Updating a machine learning model\n\n- Extracting new data from an API\n\n- Loading new data\n\n- Updating reports that your stakeholders rely on"
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=n4cCWd8n_Sc
   view_count: 2267
 ---
+image: thumbnail.jpg
 

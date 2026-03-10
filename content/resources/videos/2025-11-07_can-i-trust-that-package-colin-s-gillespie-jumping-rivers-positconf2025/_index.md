@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Can I trust that package?
 
@@ -55,4 +56,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=g6QU16jOt0g
   view_count: 153
 ---
+image: thumbnail.jpg
 

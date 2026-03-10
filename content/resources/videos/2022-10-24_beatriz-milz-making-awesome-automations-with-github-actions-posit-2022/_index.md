@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This talk is an introduction to GitHub Actions (GHA), which is a feature from GitHub that allows us to automate several tasks in R. In this presentation, I aim to answer these questions: "What is GitHub Actions? How can I run R Scripts with it?". I will list supplementary materials that are helpful to learn how to start automating tasks in R projects and packages.
 
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=sSeUsieIemM
   view_count: 460
 ---
+image: thumbnail.jpg
 

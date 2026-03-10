@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by James Blair\r\n\r\nIn an era of diverse cloud platforms, leveraging tools effectively is paramount. This talk highlights the adaptability of Posit Workbench within leading cloud platforms. Delve into strategic integrations, understand key challenges, and uncover practical solutions. By the end, attendees will be equipped with insights to harness Posit Workbench's capabilities seamlessly across varied cloud environments.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Data science infrastructure for your org.\r\nSession Code: TALK-1115"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=DzA2gRk4g2o
   view_count: 144
 ---
+image: thumbnail.jpg
 

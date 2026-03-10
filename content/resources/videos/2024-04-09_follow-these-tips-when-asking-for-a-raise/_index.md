@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-09'
 description: 'Data Science Hangout with Elizabeth Esarove, Lead Advanced Analytics, People Analytics at AT&T to chat about using data science to provide supporting evidence for decisions regarding employee outcomes and business objectives.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=PDa8-UD8U78
   view_count: 754
 ---
+image: thumbnail.jpg
 

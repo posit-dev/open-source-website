@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Failure (and Mistakes)
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=aQw38-ZxkXQ
   view_count: 60
 ---
+image: thumbnail.jpg
 

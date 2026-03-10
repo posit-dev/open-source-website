@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Advancing Epigenetic Predictors with Scalable Machine Learning: A Biologist’s Perspective on Efficient Model Development
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=JzDS3tadXC4
   view_count: 102
 ---
+image: thumbnail.jpg
 

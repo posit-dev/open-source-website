@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-01-04'
 description: 'Avoid App Failures Through Code Promotion by Alex Gold
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=shADSWhoIoo
   view_count: 121
 ---
+image: thumbnail.jpg
 

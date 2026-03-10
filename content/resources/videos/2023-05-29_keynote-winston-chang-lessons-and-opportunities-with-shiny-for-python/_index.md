@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-29'
 description: 'About the keynote:
 
@@ -61,4 +62,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=lUQiLe5oABg
   view_count: 844
 ---
+image: thumbnail.jpg
 

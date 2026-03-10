@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-08-06'
 description: 'Navigating the Analytics Journey at Smart DCC
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=l9lrRhFZs8Y
   view_count: 1501
 ---
+image: thumbnail.jpg
 

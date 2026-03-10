@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-04-09'
 description: 'In this community talk, Jeroen Janssens and Thijs Nieuwdorp share their experiences and best practices for migrating a large pandas codebase to Polars at one of the largest utility companies in the Netherlands. By implementing Polars, they achieved a 98% cost reduction. Watch the video to learn how you can start migrating your own codebase.
 
@@ -40,4 +41,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=7DV6gCBk-fg
   view_count: 1100
 ---
+image: thumbnail.jpg
 

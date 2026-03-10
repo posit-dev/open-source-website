@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Most Python packages that provide interactive web-based visualizations (e.g., altair, plotly, bokeh, ipyleaflet, etc.) can render in Jupyter notebooks via the ipywidgets standard. The shinywidgets package brings that ipywidgets standard to Shiny, enabling the use of 100s of Jupyter Widgets as Shiny outputs. In this talk, you''ll not only learn how to render Jupyter Widgets in Shiny to get interactive output, but also how to leverage user interaction with widgets to create delightful and bespoke experiences.
 
@@ -51,4 +52,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=pL44iKfcECU
   view_count: 439
 ---
+image: thumbnail.jpg
 

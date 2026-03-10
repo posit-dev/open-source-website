@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'duckplyr: Analyze large data with full dplyr compatibility
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gMQC9Thf958
   view_count: 360
 ---
+image: thumbnail.jpg
 

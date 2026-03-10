@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'If you find yourself waiting hours for your queries to run, this talk is for you. Learn from my query mistakes and avoid crashing your database.
 
@@ -46,4 +47,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=xdQ63mWrhT4
   view_count: 444
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-06-28'
 description: 'Operationalizing algorithms using Shiny and Flask
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=rK2N47r78hc
   view_count: 2584
 ---
+image: thumbnail.jpg
 

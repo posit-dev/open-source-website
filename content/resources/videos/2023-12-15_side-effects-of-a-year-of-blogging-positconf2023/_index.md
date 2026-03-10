@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Millie Symns\r\n\r\nA big part of being in the R community is sharing your knowledge in different forums, no matter how big or small. So what better way to do that than a blog? And what better way than using R and Posit products to build and maintain that blog and website? This was the route I took to challenge myself in putting myself out there more in the community to find my voice, share my knowledge and learn new things. \r\n \r\nIn this talk, I will reflect on lessons learned and gains I have spent the past year blogging and sharing my website for all to see. The side effects include professional and personal benefits - from a clear profile of my skills to the progression of the development of my art. You may leave inspired to try the challenge for yourself.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: It takes a village: building and sustaining communities.\r\nSession Code: TALK-1130"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=PQvnizEJ2eQ
   view_count: 446
 ---
+image: thumbnail.jpg
 

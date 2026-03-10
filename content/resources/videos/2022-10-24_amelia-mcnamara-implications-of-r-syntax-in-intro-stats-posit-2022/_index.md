@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This talk reports on a head-to-head comparison of the formula and tidyverse syntaxes in a full semester introductory statistics course, providing data to help guide other instructors in their pedagogical decision-making. The formula version of the class used the mosaic package for summary statistics, ggformula for graphics, and base functions such as t.test for inference. The tidyverse section used base functions inside summarize() calls for summary statistics, ggplot2 for graphics, and functions such as infer::t_test for inference. Analysis of materials allows us to determine the number of functions students were exposed to in each section, which functions they actually used, and how much time they spent on their assignments in each class.
 
@@ -38,4 +39,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ScpUmLfZBeA
   view_count: 342
 ---
+image: thumbnail.jpg
 

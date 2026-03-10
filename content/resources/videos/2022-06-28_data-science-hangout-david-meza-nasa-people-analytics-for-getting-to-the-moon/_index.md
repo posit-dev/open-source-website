@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-06-28'
 description: 'We were joined by David Meza, AIML R&D Lead, People Analytics at NASA.
 
@@ -218,4 +219,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mr3TmyXOG_g
   view_count: 895
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-09-19'
 description: 'With the Shiny for Python v1.0 release, controllers were exposed to provide a structured and consistent way for users to interact with and test UI components in Shiny applications. They offer an abstraction layer that encapsulates the complexity of interacting with specific UI elements, making it easier for developers to write robust tests and automate interactions with their Shiny apps.
 
@@ -91,4 +92,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ecVPjqsVSkU
   view_count: 625
 ---
+image: thumbnail.jpg
 

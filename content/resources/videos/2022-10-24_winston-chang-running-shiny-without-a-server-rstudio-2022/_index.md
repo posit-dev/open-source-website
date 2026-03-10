@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Shiny for Python has the ability to be deployed without a server that runs Python. These applications can be served by any web hosting service. They are easily deployed and can scale to handle large amounts of traffic.
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=kwLu3hxwn5M
   view_count: 6269
 ---
+image: thumbnail.jpg
 

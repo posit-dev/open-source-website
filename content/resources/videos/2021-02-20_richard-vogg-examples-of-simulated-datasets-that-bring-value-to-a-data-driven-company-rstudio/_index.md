@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Full title: How I became a Data Composer – examples of simulated datasets that bring value to a data-driven company
 
@@ -90,4 +91,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_ahUlw0HzSc
   view_count: 580
 ---
+image: thumbnail.jpg
 

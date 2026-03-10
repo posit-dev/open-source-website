@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Uli Muellner and Nicholas Snellgrove\r\n\r\nInvasive species are a huge threat to lake ecosystems in Minnesota. With over 10,000 water bodies across the state, having up-to-date data and decision support is critical. Researchers at the University of Minnesota have created four complex R and Python models to support lake managers, all pulled together and presented with the most recent infestation data available. \r\n\r\nCome along with us to see how we connected these models in the AIS Explorer, a decision support application built in Shiny to help prioritize risks and placing watercraft inspectors, using tools like OCPU and cloud toolings like Lambda, EventBridge and AWS S3.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: R or Python? Why not both!.\r\nSession Code: TALK-1118"
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=iFXslnnxqYk
   view_count: 552
 ---
+image: thumbnail.jpg
 

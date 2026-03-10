@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-07-19'
 description: "n practice there are two main flavors of tidy eval functions: functions that select columns, such as `dplyr::select()`, and functions that operate on columns, such as `dplyr::mutate()`. While sharing a common tidy eval foundation, these functions have distinct properties, good practices, and available tooling. In this talk, you'll learn your way around selecting and doing tidy eval style.\r\n\r\nMaterials: https://speakerdeck.com/lionelhenry/selecting-and-doing-with-tidy-eval"
 people:
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=2-gknoyjL3A
   view_count: 3281
 ---
+image: thumbnail.jpg
 

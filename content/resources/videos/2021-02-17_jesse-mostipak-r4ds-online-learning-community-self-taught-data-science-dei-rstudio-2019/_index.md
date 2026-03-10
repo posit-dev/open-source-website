@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-17'
 description: 'The first iteration of the R4DS Online Learning Community was created as an online space for learners and mentors to gather and work through the "R for Data Science" text in a collaborative and supportive environment. The creation of this group was inspired by my own success in transitioning to a career in data science coupled with the resources that I wanted to see in the R programming space. This talk will go through the learnings of creating an online learning space focused on R programming for data science, and how future iterations of similar groups can more proactively center on bringing about diversity, equity, and inclusion to data science spaces.
 
@@ -83,4 +84,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=haRPXmWX13c
   view_count: 650
 ---
+image: thumbnail.jpg
 

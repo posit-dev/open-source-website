@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-22'
 description: 'What You''ll Learn:
 
@@ -90,4 +91,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=OGMLpioGmog
   view_count: 963
 ---
+image: thumbnail.jpg
 

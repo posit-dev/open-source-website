@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Automating for Consistency
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=I6OtAXDcoMo
   view_count: 95
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-15'
 description: 'Hay ocasiones que, cuando trabajamos en un análisis en R, necesitamos dividir nuestros datos en grupos, y después tenemos que correr la misma operación sobre cada grupo.  Por ejemplo, puede ser que los datos que tenemos contienen varios países, y necesitamos crear un modelo por cada país. Otro caso sería el de correr múltiples operaciones sobre los mismos datos. Estos casos requieren que sepamos cómo usar iteraciones con R.  Este webinar se concentrará en cómo utilizar el paquete llamado purrr para ayudarnos a resolver este tipo de problema.
 
@@ -102,4 +103,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=EeLlIrqWwO4
   view_count: 890
 ---
+image: thumbnail.jpg
 

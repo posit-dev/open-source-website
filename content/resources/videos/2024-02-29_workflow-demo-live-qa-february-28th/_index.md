@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-02-29'
 description: 'Q&A session from the February 28th Workflow Demo -- Simplify Python web app development with Shiny Express and Posit Team: https://youtu.be/pBPF00M_bfU?feature=shared
 
@@ -44,4 +45,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=zg4LP4lkihM
   view_count: 547
 ---
+image: thumbnail.jpg
 

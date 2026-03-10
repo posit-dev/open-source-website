@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Is that LLM feature any good?
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=HciRoc9TzMc
   view_count: 386
 ---
+image: thumbnail.jpg
 

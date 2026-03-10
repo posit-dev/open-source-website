@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-04-06'
 description: "Why are open-source languages like R and Python becoming the default ways for pharmaceutical companies to complete clinical trials? \n\nPhil Bowsher sheds insight on this trend, including how we got here and what it means for major pharmaceutical companies moving forward.\n\nPhil Bowsher leads the Life Sciences practice at Posit and has helped almost every major pharma around the globe successfully adopt open source.\n\nLearn more at posit.co/pharma."
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Fp1t24kaFYQ
   view_count: 1153
 ---
+image: thumbnail.jpg
 

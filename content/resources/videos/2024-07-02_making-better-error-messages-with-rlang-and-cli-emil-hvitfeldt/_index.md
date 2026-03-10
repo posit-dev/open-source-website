@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-07-02'
 description: 'An important part of writing software revolves around functionality and features. A sometimes overlooked part is what happens when something goes wrong. There are many reasons something can go wrong. Faulty input, user error or deprecation are a few examples. Regardless of what the reason is, we should thrive towards letting the user know as soon and informative as possible so they can get back on track with what they are doing. This talks showcases how to make better error messages with the packages rlang and cli.
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=uu8KHXgagug
   view_count: 512
 ---
+image: thumbnail.jpg
 

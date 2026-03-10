@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'I''ll walk through a few potential uses of parsing out the functions and packages in projects.
 
@@ -62,4 +63,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=c9oU7ALJS3o
   view_count: 504
 ---
+image: thumbnail.jpg
 

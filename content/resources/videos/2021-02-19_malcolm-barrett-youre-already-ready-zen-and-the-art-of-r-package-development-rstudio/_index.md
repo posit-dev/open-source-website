@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'R packages make it easier to write robust, reproducible code, and modern tools in R development like usethis make it easy to work with packages. When you write R packages, you also unlock a whole ecosystem of tools that will make it easier to test, document, and share your code. Despite these benefits, many believe package development is too advanced for them or that they have nothing to offer. A fundamental belief in Zen is that you are already complete, that you already have everything you need. I’ll talk about why your project is already an R package, why you’re already an R package developer, and why you already have the skills to walk the path of development.
 
@@ -86,4 +87,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Mb7wZZ6nPLA
   view_count: 447
 ---
+image: thumbnail.jpg
 

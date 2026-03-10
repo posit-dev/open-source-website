@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-08-28'
 description: 'Full title: Making Beautiful, Publication Quality Tables in Python is Possible in 2024
 
@@ -46,4 +47,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=08yLWPpFdo4
   view_count: 956
 ---
+image: thumbnail.jpg
 

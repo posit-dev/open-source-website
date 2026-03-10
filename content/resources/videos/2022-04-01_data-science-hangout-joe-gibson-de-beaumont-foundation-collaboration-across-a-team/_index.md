@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-04-01'
 description: 'We were joined by Joe Gibson, Senior Project Director at de Beaumont Foundation.
 
@@ -162,4 +163,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=xkMt6aK0ZjE
   view_count: 474
 ---
+image: thumbnail.jpg
 

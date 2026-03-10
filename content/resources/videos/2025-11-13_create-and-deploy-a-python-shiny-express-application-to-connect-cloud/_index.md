@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-13'
 description: 'In this video, Daniel Chen demonstrates how to build a Shiny dashboard in Python using Positron. Dan starts by setting up the Python environment and adding necessary packages, then proceeds to create a histogram from the Palmer penguins dataset. Then, he explains how to implement input components, such as radio buttons, and connect them to the visual output. After finalizing the dashboard, Dan shows how to deploy the application to Connect Cloud and publish it for public access.
 
@@ -56,4 +57,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=pNJrAIoxLiE
   view_count: 1056
 ---
+image: thumbnail.jpg
 

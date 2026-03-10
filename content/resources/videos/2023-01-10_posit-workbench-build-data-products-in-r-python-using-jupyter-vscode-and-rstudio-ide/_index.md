@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-01-10'
 description: "More computing power. More possibilities. Less hassle. \n\nPosit Workbench is the preferred development environment for R and Python developers.\n\nCode in R. Code in Python. Develop in Jupyter, VSCode, and of course, the RStudio IDE. \n\nBuild all of the data products you can imagine: Reports, Dashboards, Applications, and APIs, with more computing power and no additional strain on IT. \n\nFor more information: Posit.co/products/enterprise/workbench"
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=yxiCdzjIXYc
   view_count: 6525
 ---
+image: thumbnail.jpg
 

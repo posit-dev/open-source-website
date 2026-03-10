@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-02-23'
 description: 'We were recently joined by Jamie Warner, Managing Director at Plymouth Rock Assurance and spoke about her passion for revolutionizing the way heavily regulated industries understand and adopt data science.
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9FussTE0MKw
   view_count: 549
 ---
+image: thumbnail.jpg
 

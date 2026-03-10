@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-10-21'
 description: "RStudio addins provide a mechanism to extend RStudio in various ways. Addins can interact with the RStudio IDE through RStudio API. It can also provide users a graphical interface with the power of Shiny. In practice, we found it very useful for enhancing or streamlining interaction with data and computing infrastructure. In this talk, we will demonstrate how our team develops and uses RStudio addins to empower our work. You will see some internal tools created to help us manage database connections, and an addin which helps us access external cloud computing resources. We will also show an example of using the addins in rcrossref and citr to download and manage citation and literature databases during rmarkdown document development.\r\n\r\nVIEW MATERIALS https://github.com/hebrewseniorlife/addin_demo\r\n\r\nAbout the Author\r\nHao Zhu\r\nHao is a data analyst and software developer working at the Hinda and Arthur Marcus Institute for Aging Research. He completed his training at Boston University School of Medicine in the program on Clinical Investigation. His interests include research reproducibility, data visualization and machine learning. At the Marcus Institute, he works with different teams on various topics, ranging from smartphone motion sensors to MRI images, and helps researchers understand their data by creating analytical reports and web applications. At the same time, Hao leads the development of R packages in the Biostatistics Core. He has contributed multiple R packages to the open source R community, such as kableExtra and memor. He also has a passion for teaching and has mentored several students at the Marcus Institute."
 people: []
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=B5OuV2CzuRQ
   view_count: 1281
 ---
+image: thumbnail.jpg
 

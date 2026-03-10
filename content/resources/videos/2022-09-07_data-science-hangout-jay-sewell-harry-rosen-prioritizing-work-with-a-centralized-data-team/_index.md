@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-09-07'
 description: 'We were be joined by Jay Sewell, Director of Analytics at Harry Rosen. Focused on plugging data into decisions and actions.
 
@@ -112,4 +113,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=xKvd_BG8xZM
   view_count: 459
 ---
+image: thumbnail.jpg
 

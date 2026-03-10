@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-08-28'
 description: "RStudio Job Launcher provides the ability to start processes within batch processing systems and container orchestration platforms. In this talk, we will explore what is possible when you have the ability to launch containerized R sessions including scaling, isolating, and customizing environments. We will review examples of launching ad-hoc jobs as well as dockerized R sessions in Kubernetes using the Job Launcher.\r\n\r\nAbout the Author\r\nDarby Hadley\r\nDarby is a QA engineer for multiple teams at RStudio. He has a passion for improving products, creating efficient processes, and helping people. Before joining RStudio he worked primarily in the video game industry."
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=tQ40oIiN-EQ
   view_count: 1499
 ---
+image: thumbnail.jpg
 

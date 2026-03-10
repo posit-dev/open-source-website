@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'I will share how we published an R Shiny application to AWS, the decisions we made, and what we learned in the process.
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Nd5uMHFsY88
   view_count: 547
 ---
+image: thumbnail.jpg
 

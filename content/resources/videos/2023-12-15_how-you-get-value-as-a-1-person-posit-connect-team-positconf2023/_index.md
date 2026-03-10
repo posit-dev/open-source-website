@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: 'Presented by Sean Nguyen
 
@@ -102,4 +103,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=lNEcM7l-nM8
   view_count: 263
 ---
+image: thumbnail.jpg
 

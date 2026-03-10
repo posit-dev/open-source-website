@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-12-22'
 description: 'The R Workflow
 
@@ -68,4 +69,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=zyLT7akvc8s
   view_count: 372
 ---
+image: thumbnail.jpg
 

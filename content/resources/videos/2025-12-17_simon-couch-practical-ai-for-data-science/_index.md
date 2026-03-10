@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-17'
 description: 'Practical AI for data science (Simon Couch)
 
@@ -97,4 +98,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=isLtPxWNNIA
   view_count: 133
 ---
+image: thumbnail.jpg
 

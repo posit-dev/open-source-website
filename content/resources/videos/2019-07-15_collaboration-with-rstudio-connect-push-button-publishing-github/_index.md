@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-07-15'
 description: "This tutorial shows you best practices for collaborating with colleague data scientists with RStudio Connect. It walks you through how add collaborators to your RStudio Connect output (Rmd, Shiny Apps, APIs, etc), and how to work with collaborators with version control like git.\n\nSteps to Collaboration:\n\nOriginal Author (Kelly)\n1. Create document and publish to RStudio Connect\n2. Add collaborator on RStudio Connect\n3. Share `rsconnect` folder via version control\n \nCollaborator (Alex)\n1. Pull down code and `rsconnect` folder from version control.\n2. Make changes.\n3. Publish back to RStudio Connect"
 people: []
@@ -35,4 +36,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=z_Iu5-ZQMuk
   view_count: 3753
 ---
+image: thumbnail.jpg
 

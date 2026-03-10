@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-11-09'
 description: 'Greg Lin is on RStudio (soon to be Posit''s) IDE team, and is the reactable maintainer. The reactable R package helps you create interactive data tables for R, based on the React Table JavaScript library, and made with reactR.
 
@@ -40,4 +41,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Qn6ojMkQFNw
   view_count: 4034
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-04'
 description: 'RStudio Cloud is a lightweight and easy to set up / use solution to teaching R online, in the browser. In this webinar we will walk you through the steps of setting up your course on RStudio Cloud, highlighting the various functionalities for teachers and students. We will also discuss best practices and provide an opportunity for the audience to experience the setup first hand. Additionally, we highlight a suite of ready to use resources for teaching an introduction to data science and statistical thinking course using R.
 
@@ -93,4 +94,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Fja5DIN3uTw
   view_count: 1112
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Having a personal website is a great way to share our experiences with other people, that also allows us to improve our communication skills and expand our networking groups. Besides, if the website is multilingual, the scope will be extended considerably by facilitating the exchange of ideas. I will give the key steps, some tips, and important considerations to bear in mind when creating a multilingual website using Blogdown, Hugo, and Netlify. Although having a multilingual website demands more effort, R enables us to build a website easily and keep it updated. I aim to help and encourage others to build their website to promote exchange experiences among people from different native languages.
 
@@ -85,4 +86,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=dbJV3niLym8
   view_count: 337
 ---
+image: thumbnail.jpg
 

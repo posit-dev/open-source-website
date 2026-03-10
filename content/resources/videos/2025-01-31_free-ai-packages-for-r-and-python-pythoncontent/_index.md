@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-01-31'
 description: 'Some free R and Python packages that can help when working with LLMs
 
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=2Rv9RMLFpg8
   view_count: 1206
 ---
+image: thumbnail.jpg
 

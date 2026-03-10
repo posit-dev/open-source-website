@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-02-25'
 description: 'Alenka Frim went from teaching yoga full-time to becoming a committer and PMC Member on Apache Arrow. In this episode, Alenka joins The Test Set hosts to talk about how Arrow grew from spec to critical infrastructure, and why she started contributing to a project she had never even used. She reflects on imposter syndrome, the discipline of showing up (on the mat and in GitHub), and how agents are changing what it means to write code. Plus: managing 4,000 open issues without losing your mind.
 
@@ -65,4 +66,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=laipEFmA17Y
   view_count: 259
 ---
+image: thumbnail.jpg
 

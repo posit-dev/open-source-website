@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-06-22'
 description: 'RStudio Healthcare Meetup:
 
@@ -213,4 +214,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Ino-SzgNHR4
   view_count: 731
 ---
+image: thumbnail.jpg
 

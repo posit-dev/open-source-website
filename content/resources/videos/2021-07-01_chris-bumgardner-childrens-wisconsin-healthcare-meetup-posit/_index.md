@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-07-01'
 description: 'Cultivating an R-based Analytic Practice in Healthcare
 
@@ -88,4 +89,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=pHZ8dsc0PhY
   view_count: 3572
 ---
+image: thumbnail.jpg
 

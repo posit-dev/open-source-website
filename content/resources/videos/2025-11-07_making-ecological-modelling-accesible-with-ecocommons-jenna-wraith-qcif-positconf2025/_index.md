@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Breaking Barriers: Making Ecological Modelling Accessible with EcoCommons
 
@@ -55,4 +56,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=FXmA0QxEX3c
   view_count: 131
 ---
+image: thumbnail.jpg
 

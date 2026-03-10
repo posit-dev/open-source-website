@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Demystifying MLOps with Vetiver
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=C9tTH1iTxvY
   view_count: 156
 ---
+image: thumbnail.jpg
 

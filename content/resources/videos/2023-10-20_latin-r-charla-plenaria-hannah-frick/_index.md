@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-10-20'
 description: 'Cognition: Programming Edition'
 people:
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=NWfRU2mqgbg
   view_count: 43
 ---
+image: thumbnail.jpg
 

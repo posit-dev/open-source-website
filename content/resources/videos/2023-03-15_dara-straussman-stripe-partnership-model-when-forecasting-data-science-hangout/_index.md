@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-03-15'
 description: 'We were joined by Data Straussman, Data Science Manager at Stripe. Dara''s team focuses on forecasting, machine learning, and analytics in the Finance and Operations spaces.
 
@@ -145,4 +146,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=NjHMlL_jYV8
   view_count: 881
 ---
+image: thumbnail.jpg
 

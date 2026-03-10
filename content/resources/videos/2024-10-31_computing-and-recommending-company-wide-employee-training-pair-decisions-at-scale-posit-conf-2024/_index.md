@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Regis A. James developed MAGNETRON AI, an innovative, patent-pending tool that automates at-scale generation of high-quality mentor/mentee matches at Regeneron to enable rapid, yet accurate, company-wide pairings between employees seeking skill training/growth in any domain and others specifically capable of facilitating it. Built using R, Python, LLMs, shiny, MySQL, Neo4j, JavaScript, CSS, HTML, and bash, it transforms months of manual collaborative work into days. The reticulate, bs4dash, DT, plumber API, dbplyr, and neo4r packages were particularly helpful in enabling its full-stack data science. The expert recommendation engine of the AI tool has been successfully used for training a 400-member data science community of practice, and also for larger career development mentoring cohorts for thousands of employees across the company, demonstrating its practical value and potential for wider application.
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=yTp15vJezF8
   view_count: 279
 ---
+image: thumbnail.jpg
 

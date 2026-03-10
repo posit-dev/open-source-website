@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-09-10'
 description: 'lil ai buddy #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter'
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=sdyxrCU77MY
   view_count: 2548
 ---
+image: thumbnail.jpg
 

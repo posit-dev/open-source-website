@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-03-01'
 description: 'Build a Bingo app with Python #pythoncontent #pythonprogramming #pythontutorial #pythonforbeginners'
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=CNa9oqhWaoU
   view_count: 1158
 ---
+image: thumbnail.jpg
 

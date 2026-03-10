@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-02-08'
 description: 'Posit Finance Meetup
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=zikxpOoEcLk
   view_count: 1353
 ---
+image: thumbnail.jpg
 

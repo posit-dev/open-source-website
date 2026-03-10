@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-03'
 description: 'Posit Workbench: https://posit.co/products/enterprise/workbench/
 
@@ -90,4 +91,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=0FK1sGg7WC0
   view_count: 1095
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-07-27'
 description: 'Introduction to Monte Carlo simulation, using Shiny
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=VMGQ3mVbYXI
   view_count: 2256
 ---
+image: thumbnail.jpg
 

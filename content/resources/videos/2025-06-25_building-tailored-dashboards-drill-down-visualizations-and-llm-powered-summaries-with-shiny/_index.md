@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-06-25'
 description: 'Led by Isabella Velásquez, Sr Product Marketing Manager at Posit PBC
 
@@ -94,4 +95,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=TL0OCJVDqtI
   view_count: 2787
 ---
+image: thumbnail.jpg
 

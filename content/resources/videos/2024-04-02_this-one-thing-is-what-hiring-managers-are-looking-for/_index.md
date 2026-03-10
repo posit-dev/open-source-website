@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-02'
 description: 'Data Science Hangout with Jamie Warner, Managing Director at Plymouth Rock Assurance.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=AoHUm3_CMMM
   view_count: 1392
 ---
+image: thumbnail.jpg
 

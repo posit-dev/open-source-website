@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-05-09'
 description: 'Github repo: https://github.com/posit-dev/python-tidytuesday'
 people: []
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=uEmNiklPYcc
   view_count: 3411
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Full title: With more learning occurring virtually or in hybrid mode, hands-on ways to remotely teach data science are invaluable
 
@@ -89,4 +90,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qaU2jXW2xcE
   view_count: 613
 ---
+image: thumbnail.jpg
 

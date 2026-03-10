@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-09-16'
 description: 'In this episode, Phil and Cole discuss using Copilot in clinical trial submissions.
 
@@ -83,4 +84,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fnfVCMsXTy0
   view_count: 573
 ---
+image: thumbnail.jpg
 

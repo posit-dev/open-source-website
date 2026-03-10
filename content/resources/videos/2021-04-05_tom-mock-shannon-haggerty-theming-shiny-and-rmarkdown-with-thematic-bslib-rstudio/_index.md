@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-04-05'
 description: 'From rstudio::global(2021) Shiny X-Sessions, sponsored by Appsilon: this presentation covers the basics of how the thematic and bslib packages can be used to consistently style all the components of a shiny app at once.
 
@@ -108,4 +109,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=z-uFVfsaVzc
   view_count: 5135
 ---
+image: thumbnail.jpg
 

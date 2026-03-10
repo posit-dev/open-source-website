@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-01-08'
 description: 'LLMs are changing how we write code, build tools, and analyze data. This talk is a practical introduction to working with LLM APIs in R and Python, including connecting to models, tool calling, and evaluation. We will also show how LLM-powered tools can support common data analysis tasks like exploratory data analysis, as well as briefly discuss privacy and security considerations when working with protected data.
 
@@ -31,4 +32,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=NiBoy76UjUA
   view_count: 131
 ---
+image: thumbnail.jpg
 

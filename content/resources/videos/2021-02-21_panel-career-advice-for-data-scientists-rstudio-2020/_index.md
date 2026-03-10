@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-21'
 description: 'Featuring: Gabriela de Queiroz, David Keyes, Sydeaka Watson, and Jen Hecht
 
@@ -122,4 +123,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=cF1JvbWtcj8
   view_count: 1186
 ---
+image: thumbnail.jpg
 

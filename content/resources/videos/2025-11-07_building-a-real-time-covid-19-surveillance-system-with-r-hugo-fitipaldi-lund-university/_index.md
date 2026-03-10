@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Building a Real-Time COVID-19 Surveillance System with R: Lessons from the COVID Symptom Study Sweden
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=3-UsetFXFlk
   view_count: 97
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Have you ever considered using the power and flexibility of Quarto for note-taking and knowledge management? I did, and now I use Quarto websites to track my PhD progress, document insights from conferences, manage collaborative research projects, and more. Let me show you how easy it is to implement standard knowledge management system features, such as cross-referencing, search indexing, and custom navigation. But what if you want more advanced features like glossaries, document listings and summaries of datasets? Well, with some creative use of Quarto''s many features and extensions, almost anything is possible. Whether you''re new to Quarto or a seasoned expert, consider adding Quarto to your note-taking toolkit.
 
@@ -46,4 +47,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4zy9R26B8kk
   view_count: 2948
 ---
+image: thumbnail.jpg
 

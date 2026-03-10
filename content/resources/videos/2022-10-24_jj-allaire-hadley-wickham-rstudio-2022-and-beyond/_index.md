@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: "RStudio's CEO & founder JJ Allaire and Chief Scientist Hadley Wickham walk through RStudio's journey so far, the most difficult problem RStudio has solved, and why that problem matters. JJ discusses the company's virtuous cycle (and core operative principle): Commercial software enables investment into open source. The line between those two things will always remain where it is, and your intellectual property will always be yours. \n\nCan RStudio impact the practice of science more broadly and not just the practice of data science with R? JJ says \"we can and we should.\"\n\nHadley continues, saying one language is already not enough, which has caused RStudio to contemplate a new name...\n\nSession: Keynote"
 people:
@@ -33,4 +34,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=u1Gzxg8Pd08
   view_count: 7781
 ---
+image: thumbnail.jpg
 

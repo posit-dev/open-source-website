@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-02-20'
 description: 'We were recently joined by Kevin and Raju @ the FDA to chat about democratizing data science by teaching people the basics of data wrangling, data science and the power of open source and utilizing principles of systems biology, pharmacology, toxicology, bioinformatics, and statistics to collaboratively develop open-source software solutions that support decision making and policy development.
 
@@ -117,4 +118,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qYuWHwWSzfg
   view_count: 503
 ---
+image: thumbnail.jpg
 

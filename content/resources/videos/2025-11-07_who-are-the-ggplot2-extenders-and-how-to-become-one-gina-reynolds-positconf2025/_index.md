@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Who are ''the ggplot2 extenders'' and how to become one
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=V6Cgsecotg8
   view_count: 127
 ---
+image: thumbnail.jpg
 

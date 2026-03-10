@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-28'
 description: "From rstudio::global(2021) Shiny X-Sessions, sponsored by Appsilon: \nBest practices for developing Shiny apps presentation covers organizing app's code with modules and R6 classes, setting up development environment, and testing.\n\nAbout Olga Mierzwa-Sulima:\nOlga is experienced in production applications of analytical solutions, especially for FMCG companies. Recently she developed a price elasticity model for Unilever.\n\nLearn more about the rstudio::global(2021) X-Sessions: https://blog.rstudio.com/2021/01/11/x-sessions-at-rstudio-global/"
 people: []
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=iUVyDr-TWyU
   view_count: 5473
 ---
+image: thumbnail.jpg
 

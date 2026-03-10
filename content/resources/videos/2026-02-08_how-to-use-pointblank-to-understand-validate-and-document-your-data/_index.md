@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-02-08'
 description: 'How to use {pointblank} to understand, validate, and document your data - Rich Iannone
 
@@ -55,4 +56,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=abvgK9VU7z0
   view_count: 111
 ---
+image: thumbnail.jpg
 

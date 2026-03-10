@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-01-27'
 description: 'Rebecca Barter, senior data scientist at Arine and adjunct assistant professor at the University of Utah, refuses to work on things she doesn’t care about. Lucky for us, she cares about a lot, most of all impact. In this episode, Rebecca joins The Test Set to talk about learning fast, building better tools, and staying motivated and adaptable.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qpaw2sHaR7Y
   view_count: 251
 ---
+image: thumbnail.jpg
 

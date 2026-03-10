@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-08-23'
 description: 'Julia Silge recently sat down with Michael Demsko Jr for an interview, the first in a new Voices of RStudio PBC series.
 
@@ -87,4 +88,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WOkBzQbkvBA
   view_count: 940
 ---
+image: thumbnail.jpg
 

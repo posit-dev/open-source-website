@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-12'
 description: 'GenAI in Pharma 2024 kicks off with Posit''s Phil Bowsher and Cole Arendt leading an interactive session on utilizing generative AI tools to enhance statistical programming.
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ysTSmxB5piY
   view_count: 720
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-14'
 description: 'Slides: https://garciamikep.github.io/rstudioglobal-2021-shiny-slides/slides.html#1
 
@@ -121,4 +122,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=eoeLn8SyDW8
   view_count: 15451
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'The blessing and the curse of open-source software is that it lacks the infrastructure of a corporation. It can often be difficult to ensure that projects have stability and longevity. In this talk, I will discuss ongoing work on an NSF "Pathways in Open-Source Ecosystems" grant focused on the {data.table} package. Like many R packages, {data.table} has incredible functionality and thousands of users - but no cohesive community or governance structure to support it long-term. We are working to build this ecosystem. I will provide my advice and insight for key aspects of a sustainable open-source project: Engaging casual users, supporting developers, generating content, emphasizing education, and creating a home base for the community.
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=u0d5w0Yt8tE
   view_count: 127
 ---
+image: thumbnail.jpg
 

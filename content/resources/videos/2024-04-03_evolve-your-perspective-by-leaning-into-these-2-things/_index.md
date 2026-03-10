@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-03'
 description: 'Data Science Hangout with Brad Zielke, Sr. Director Data Sciences at Target on leaning into empathy and humility to surround yourself with diverse perspectives and evolve your perspective as a leader.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vGUUSAZhaB8
   view_count: 762
 ---
+image: thumbnail.jpg
 

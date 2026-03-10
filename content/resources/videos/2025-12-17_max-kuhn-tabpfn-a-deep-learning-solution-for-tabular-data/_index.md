@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-17'
 description: 'TabPFN: A Deep-Learning Solution for Tabular Data (Max Kuhn)
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vJVB5N8-21c
   view_count: 309
 ---
+image: thumbnail.jpg
 

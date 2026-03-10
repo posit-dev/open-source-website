@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-09-09'
 description: 'We were recently joined by Jason Foster, Director at Marathon Asset Management.
 
@@ -109,4 +110,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=7Zrx1N2VgfM
   view_count: 401
 ---
+image: thumbnail.jpg
 

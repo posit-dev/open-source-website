@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-02-07'
 description: 'We were recently joined by Mehran Moghtadai, AI/ML Accelerator & Enablement at TD Bank Group to chat about working to enable data & machine learning scientists to focus on delivering high-value use cases with as little friction as possible.
 
@@ -73,4 +74,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=6K7GkOUjCEQ
   view_count: 410
 ---
+image: thumbnail.jpg
 

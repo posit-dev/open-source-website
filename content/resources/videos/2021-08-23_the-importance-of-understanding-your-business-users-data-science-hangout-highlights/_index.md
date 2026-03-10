@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-08-23'
 description: "RStudio is joined by Tori Oblad, Data Officer at WaFd bank, to discuss how data scientists can become leaders within their organizations. \n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn: https://www.linkedin.com/company/rstudio-pbc\nTwitter: https://twitter.com/rstudio"
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=126mAJ73vms
   view_count: 303
 ---
+image: thumbnail.jpg
 

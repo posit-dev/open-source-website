@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-17'
 description: 'Join us live for a presentation that details why Posit Academy is the best experience for professional data science teams who want to learn Python.
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=IpUhSZPqTaE
   view_count: 5381
 ---
+image: thumbnail.jpg
 

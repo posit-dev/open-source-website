@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-12'
 description: 'Tom recommended the book So Good They Can''t Ignore You in a recent Data Science Hangout. Libby also keeps this awesome list of Hangout book recommendations: https://datahumans.notion.site/2f4552fd18be4d439b6b6977077e6ca5?v=738d0654fd81490890b8f741a2ef0a3c'
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=djoAVyrRBdw
   view_count: 1416
 ---
+image: thumbnail.jpg
 

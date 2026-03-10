@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-11'
 description: 'We were joined by Zack Fragoso, Head of MLOPs at Domino''s Pizza to chat about his mission to Sell More Pizza and Have More Fun by making the business smarter with data.
 
@@ -119,4 +120,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=imscOVXrdSc
   view_count: 586
 ---
+image: thumbnail.jpg
 

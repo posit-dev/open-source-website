@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-08-07'
 description: "Turning your data work into applications and documents for others to consume is one of the most rewarding parts of data science. It can also be one of the most complex.\n\nYou shouldn’t need a systems engineer to deploy your Shiny application or publish your Quarto document. \n\nNow, in Public Alpha, Connect Cloud makes it simple to publish and share your favorite Python and R frameworks within a simple cloud environment in just a few minutes.\n\nAll you need is code in a public GitHub repository. Connect Cloud does the rest. \n\nThis live event will demonstrate how Connect Cloud fits into your workflow and returns a URL for your deployments that you can share with the world.\n\nTry Connect Cloud: https://connect.posit.cloud/"
 people: []
@@ -30,4 +31,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=HWCPLURWYgY
   view_count: 643
 ---
+image: thumbnail.jpg
 

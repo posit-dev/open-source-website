@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'I''m so excited to be back with the data science community at rstudio::conf! Data science is a field that touches nearly every part of our modern lives - from the shows we watch, to our jobs, to the economy, to sports and entertainment. Moreover, modern technologies like cloud computing and access to increasing volumes of data have opened the door to incredible new opportunities for those with data skill. RLadies, Bioconductor, Data Carpentry, and RStudio have also done an incredible job of creating a supportive community for these new data scientists to flourish. But not everyone gets equal access to the training that can pull them into this field.
 
@@ -40,4 +41,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Vf301YCxP1Q
   view_count: 1468
 ---
+image: thumbnail.jpg
 

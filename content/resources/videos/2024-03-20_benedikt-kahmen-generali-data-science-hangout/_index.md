@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-03-20'
 description: 'We were recently joined by Benedikt Kahmen, Head of Analytics, Data & AI at Generali Deutschland AG to chat about building new things with data: new insights, new algorithms, new teams.
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=v_sjHFa3UJ4
   view_count: 451
 ---
+image: thumbnail.jpg
 

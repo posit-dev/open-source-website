@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-01'
 description: "Posit Team is the bundle of our most popular products including: Workbench, Connect, and Package Manager. \n\nTogether, this bundle delivers an end-to-end toolchain for data science teams committed to R and Python, improving every step of a data scientist's workflow, from developing insights, to deploying data products, to managing environments.\n\nLearn more at https://posit.co/products/enterprise/team/"
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=GAU-a6Ik_2g
   view_count: 3900
 ---
+image: thumbnail.jpg
 

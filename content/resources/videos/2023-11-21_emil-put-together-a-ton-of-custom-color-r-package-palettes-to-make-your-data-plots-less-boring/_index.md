@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-11-21'
 description: Comprehensive list of color palettes available in R ❤️🧡💛💚💙💜  https://github.com/EmilHvitfeldt/r-color-palettes
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=39EKB1ecYjY
   view_count: 2733
 ---
+image: thumbnail.jpg
 

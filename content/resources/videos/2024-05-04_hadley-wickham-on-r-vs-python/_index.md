@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-05-04'
 description: 'Learn about tidyverse, ggplot2, and the secret to a tech company’s longevity as Hadley Wickham joins @JonKrohnLearns in this episode. He talks about Posit’s rebrand, why tidyverse needs to be in every data scientist’s toolkit, and why getting your hands dirty with open-source projects can be so lucrative for your career.
 
@@ -64,4 +65,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mVzDPxKagxk
   view_count: 5683
 ---
+image: thumbnail.jpg
 

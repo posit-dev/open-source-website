@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-15'
 description: In this video, we walk through the process of testing your database connections from the command line. This allows to ensure that our database is ready and accepting connections from our Posit products.
 people: []
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=eHWtBne0Rb8
   view_count: 234
 ---
+image: thumbnail.jpg
 

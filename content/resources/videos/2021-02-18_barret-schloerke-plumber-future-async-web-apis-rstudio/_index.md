@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'plumber is an R package that allows users to create web APIs by decorating R functions using roxygen2-like comments. In the latest release, asynchronous code (using future or promises) may be inserted at any stage of a plumber route execution, enabling parallel processing using multiple workers. In this talk, I will go through how you can set up your own asynchronous plumber API to leverage your full computing potential.
 
@@ -90,4 +91,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=UDGeLpiMSj4
   view_count: 1173
 ---
+image: thumbnail.jpg
 

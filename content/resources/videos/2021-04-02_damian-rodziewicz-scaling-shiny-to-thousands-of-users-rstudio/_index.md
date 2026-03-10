@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-04-02'
 description: 'From rstudio::global(2021) Shiny X-Sessions, sponsored by Appsilon: in this talk I will discuss how to scale Shiny dashboards to thousands of users.
 
@@ -91,4 +92,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wQi1A2eJ3i8
   view_count: 4302
 ---
+image: thumbnail.jpg
 

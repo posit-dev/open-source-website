@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-12-20'
 description: 'In this video we use real-world Airbnb data to put together a dashboard with Quarto & Python. We start with the basics of layout and simple components and then progress to more advanced topics such as integrating Shiny within your Quarto doc.
 
@@ -137,4 +138,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gCLCn4TVlWo
   view_count: 3031
 ---
+image: thumbnail.jpg
 

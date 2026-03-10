@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-06-06'
 description: "Did you know that you can use RStudio, the best IDE for R and Python users, with Amazon Sagemaker? \n\nRStudio on Amazon SageMaker makes it easy for R users to quickly and easily get started coding in RStudio on AWS from their browser, no server setup required, by using a new integration with Posit Workbench.\n\nIn this webinar, Posit team members will show you how to get started with RStudio on Amazon SageMaker to analyze your organization’s data in S3 and train ML models.\n\nAs a fully managed offering on Amazon SageMaker, this release makes it easy for DevOps teams and IT Admins to administer, secure, and scale their organization’s centralized data science infrastructure with familiar AWS tools and frameworks.\n\nLearn more at: https://posit.co/products/cloud/sagemaker/\nTalk to us about using RStudio and SageMaker: https://posit.co/schedule-a-call/?booking_calendar__c=Sagemaker"
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Fyc6qTApN9U
   view_count: 2920
 ---
+image: thumbnail.jpg
 

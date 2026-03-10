@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: '10 Years of Data Science Tools... and What Happens Next
 
@@ -62,4 +63,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=tGrePGYj7Uw
   view_count: 1228
 ---
+image: thumbnail.jpg
 

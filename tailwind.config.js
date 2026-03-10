@@ -9,6 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // These are for @container queries specifically
+      containers: {
+        'tall': '10rem',
+        'grande': '20rem',
+        'venti': '40rem',
+      },
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],
         mono: ['"Source Code Pro"', 'monospace'],

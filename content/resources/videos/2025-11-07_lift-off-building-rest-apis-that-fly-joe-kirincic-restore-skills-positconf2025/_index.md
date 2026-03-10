@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Lift Off! Building REST APIs that Fly
 
@@ -56,4 +57,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4el3AGk8SUE
   view_count: 106
 ---
+image: thumbnail.jpg
 

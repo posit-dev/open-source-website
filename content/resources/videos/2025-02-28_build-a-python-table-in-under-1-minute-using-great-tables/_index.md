@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-02-28'
 description: "Create wonderful-looking tables directly from Pandas or Polars DataFrames with the Great Tables package.\n\nTypically, Great Tables is used in a notebook environment or within a Quarto document and rendered in HTML or as an image file.\n\nReady to build some awesome tables?\nInstall from PyPI with: $ pip install great_tables.\n \nGitHub Repo: https://github.com/posit-dev/great-tables\nDesign Philosophy of Great Tables: https://posit-dev.github.io/great-tables/blog/design-philosophy/"
 people: []
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=MErvmw-LUDE
   view_count: 2904
 ---
+image: thumbnail.jpg
 

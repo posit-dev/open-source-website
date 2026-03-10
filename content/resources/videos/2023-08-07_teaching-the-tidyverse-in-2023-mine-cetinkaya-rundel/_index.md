@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-08-07'
 description: 'Recommendations for teaching the tidyverse in 2023, summarizing package updates most relevant for teaching data science with the tidyverse, particularly to new learners.
 
@@ -131,4 +132,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=KsBBRHAgAhM
   view_count: 22112
 ---
+image: thumbnail.jpg
 

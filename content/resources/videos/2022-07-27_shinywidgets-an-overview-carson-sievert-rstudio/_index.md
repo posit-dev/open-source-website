@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-07-27'
 description: 'Shiny makes it easy to build interactive web applications with the power of Python’s data and scientific stack.
 
@@ -114,4 +115,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=CRqsynADlbE
   view_count: 3248
 ---
+image: thumbnail.jpg
 

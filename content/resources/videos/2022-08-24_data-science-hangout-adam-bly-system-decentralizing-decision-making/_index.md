@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-08-24'
 description: 'We were joined by Adam Bly, Founder & CEO at System. Adam asks, why haven''t we seen it all connected yet?
 
@@ -110,4 +111,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Hh12BUAPnEM
   view_count: 872
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'In 2017, I had never exposed my code to anyone other than a select few before, and I was terrified. I had some functions made from a colleagues script that I thought might be useful for others, and dared myself to make a package and push it to github.
 
@@ -95,4 +96,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fWi9_DOlWkU
   view_count: 284
 ---
+image: thumbnail.jpg
 

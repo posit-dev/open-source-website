@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-21'
 description: 'It’s easier than ever to craft a complete R-centric data science pipeline thanks to packages like Shiny, Plumber, and Pins. In this talk, you’ll learn how to use R to bring your modeling and visualization work into production. You’ll walk away with recipes, tips, and tricks to deploy data, models, and apps to ensure your work is as impactful as possible.
 
@@ -87,4 +88,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=oEcJkBgA5J8
   view_count: 1315
 ---
+image: thumbnail.jpg
 

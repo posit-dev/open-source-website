@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-07-21'
 description: 'Join Wes McKinney (principal architect at Posit) and Jeroen Janssens (developer relations engineer at Posit) as they dive into deeply nested JSON. Using Python, Positron, Polars, and Altair, they look at scraped GitHub data and create some sort of pulse signal for various GitHub repos.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fsDiYAJ6lLc
   view_count: 1518
 ---
+image: thumbnail.jpg
 

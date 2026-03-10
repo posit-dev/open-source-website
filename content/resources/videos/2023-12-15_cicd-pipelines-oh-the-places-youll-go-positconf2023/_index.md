@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Trevor Nederlof\r\n\r\nData scientists are creating incredibly useful data products at an accelerating rate. These products are consumed by others who expect them to be accurate reliable and timely, often promises unfulfilled. In this talk, we will explore how to use common CI/CD pipeline tools already within reach of attendees to automatically test and deploy their apps, APIs, and reports.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Lightning talks.\r\nSession Code: TALK-1166"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ss5OkoZZHiw
   view_count: 947
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-06-26'
 description: 'Eric Pité, SVP of Product & Strategy, sat down with the Ravit Show at Databricks Data + AI Summit to have a conversation about the evolution of open source data science, the Posit and Databricks integration, and the place of AI in modern data science. Some highlights from the conversation are below:
 
@@ -130,4 +131,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=f3C4-meKD1o
   view_count: 320
 ---
+image: thumbnail.jpg
 

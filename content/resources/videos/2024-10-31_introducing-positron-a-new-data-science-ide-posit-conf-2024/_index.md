@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: "Positron is a next-generation data science IDE that is newly available to the community for early beta testing. This new IDE is an extensible tool built to facilitate exploratory data analysis, reproducible authoring, and publishing data artifacts. Positron currently supports these data workflows in either or both Python and R and is designed with a forward-looking architecture that can support other data science languages in the future. In this session, learn from the team-building Positron about how and why it is designed the way it is, what will feel familiar or new coming from other IDEs, and whether it might be a good fit for your own work. \n\nTalk by Julia Silge, Isabel Zimmerman, Tom Mock, Jonathan McPherson, Lionel Henry, Davis Vaughan, and Jenny Bryan\n\n\nSlide deck 1: https://speakerdeck.com/juliasilge/introducing-positron\nSlide deck 6: https://speakerdeck.com/jennybc/positron-for-r-and-rstudio-users"
 people:
@@ -41,4 +42,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=8uRcB34Hhsw
   view_count: 28153
 ---
+image: thumbnail.jpg
 

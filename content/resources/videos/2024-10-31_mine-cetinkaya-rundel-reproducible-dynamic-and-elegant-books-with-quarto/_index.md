@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Building on my experience writing books with Quarto for various audiences (R learners, statistics learners, and Quarto learners), for various venues (self-published and publisher-published), in various formats (HTML books hosted online and PDF books printed), I will share best practices and tips and tricks for authoring reproducible, dynamic, and elegant books with Quarto. I will also highlight a few features from the recent releases of Quarto that pertain to books (e.g., flexible and custom cross-references, embedding computations from notebooks, and inline code in multiple languages) as well as share examples of how to make your web-hosted books more interactive with tools like webR and shinylive.
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fsfoqpQYN2k
   view_count: 2920
 ---
+image: thumbnail.jpg
 

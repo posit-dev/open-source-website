@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'It can be difficult for small teams to make an impact in large organizations. In this talk I will discuss how my small team, at the National Institute of Allergy and Infectious Diseases (NIAID) has used Shiny to increase efficiency, enhance collaboration, and track biomedical research funding. In light of the recent pandemic, and the ongoing threat of emerging infectious diseases, our ability to understand a complex research portfolio and adapt quickly to changing research priorities has become increasingly important. I will highlight how automated workflows and Shiny dashboards have allowed my team to become more efficient and enabled us to have an outsized impact on our organization.
 
@@ -36,4 +37,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4arXe6XtCVE
   view_count: 142
 ---
+image: thumbnail.jpg
 

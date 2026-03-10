@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-15'
 description: 'Rivers have long been storytellers of human history. From the Nile to the Yangtze, they have shaped trade, migration, settlement, and the rise of civilizations. They reveal the traces of human ambition... and the costs of it. Today, from the Charles to the Golden Gate, US rivers continue to tell stories, especially through data.
 
@@ -66,4 +67,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gQBqxMVaNpA
   view_count: 64
 ---
+image: thumbnail.jpg
 

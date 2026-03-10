@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-21'
 description: 'From rstudio::global(2021) Pharma X-Sessions, sponsored by ProCogia: R/Pharma is an organization of R enthusiasts who work in the pharma and biotech industries. This presentation summarizes the group and presents some goals for 2021.
 
@@ -91,4 +92,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Vhk4YFJRenQ
   view_count: 892
 ---
+image: thumbnail.jpg
 

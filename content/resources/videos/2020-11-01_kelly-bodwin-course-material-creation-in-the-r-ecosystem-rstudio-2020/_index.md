@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-01'
 description: 'In this talk, I will introduce a suite of three packages designed to aid course material creation in R: {demoR} for displaying code in knitted R Markdown with custom highlighting and formatting; {shindig} for shortcuts to creating simple educational Shiny apps; and {curricular} for easy creation of syllabi, homework exercises, exams, etc. Together, we will explore how these new tools - in conjunction with other existing resources - have been used to create a clean and consistent ecosystem for my R-based Introductory Statistics course. I will share some metrics on student outcomes, as well as my own experiences with the advantages and challenges in building the course. A 5-minute presentation in our Lightning Talks series'
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=2lGednFDq6c
   view_count: 458
 ---
+image: thumbnail.jpg
 

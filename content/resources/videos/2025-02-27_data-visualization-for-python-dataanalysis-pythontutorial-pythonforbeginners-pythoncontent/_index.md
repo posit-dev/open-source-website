@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-02-27'
 description: 'Data Visualization for Python 🧑🏻‍💻#dataanalysis #pythontutorial #pythonforbeginners #pythoncontent'
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ft_vV6l66YM
   view_count: 2433
 ---
+image: thumbnail.jpg
 

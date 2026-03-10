@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-08-04'
 description: 'Slidecraft: The Art of Creating Pretty Presentations by Emil Hvitfeldt
 
@@ -67,4 +68,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=SAi8-P49F2Y
   view_count: 3901
 ---
+image: thumbnail.jpg
 

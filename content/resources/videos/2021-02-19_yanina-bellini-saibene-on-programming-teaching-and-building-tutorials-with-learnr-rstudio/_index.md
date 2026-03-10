@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Full title: On programming, teaching, and building interactive tutorials with learnr
 
@@ -92,4 +93,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=EBAvQkP9Kyc
   view_count: 387
 ---
+image: thumbnail.jpg
 
