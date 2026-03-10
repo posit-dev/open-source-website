@@ -52,3 +52,11 @@ unsafe = true
   [[menu.main]]
     name = 'Blog'
     url = '/blog/'
+
+[markup.goldmark.parser]
+autoHeadingID = true
+autoHeadingIDType = "github"
+
+[markup.goldmark.parser.attribute]
+block = true
+title = true

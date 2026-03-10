@@ -7,6 +7,38 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Heading anchor links */
+@layer components {
+  .heading-anchor {
+    position: relative;
+  }
+
+  .heading-anchor .anchor-link {
+    margin-left: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    text-decoration: none;
+    color: var(--color-blue-500);
+    font-weight: 400;
+  }
+
+  .heading-anchor:hover .anchor-link {
+    opacity: 1;
+  }
+
+  .dark .heading-anchor .anchor-link {
+    color: var(--color-blue-400);
+  }
+
+  .anchor-link:hover {
+    color: var(--color-blue-600);
+  }
+
+  .dark .anchor-link:hover {
+    color: var(--color-blue-300);
+  }
+}
+
 @theme {
   /* Posit Brand Colors */
   --color-blue: #447099;
