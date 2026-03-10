@@ -46,7 +46,7 @@
      DATE (formatted using block/date_range.html for events)
      ============================================================ */}}
 {{ $date_value := "" }}
-{{ if $isEvent }}
+{{ if eq $card_type "events" }}
   {{ $date_value = partial "block/date_range.html" $page }}
 {{ else if not $page.Date.IsZero }}
   {{ $date_value = time.Format "Jan 2, 2006" $page.Date }}
@@ -59,7 +59,7 @@
      DESCRIPTION (max 3 lines enforced via CSS line-clamp-3)
      ============================================================ */}}
 {{ $description_field := $card_settings.description_field | default "description" }}
-{{ $str_description := index $page.Params $description_field | strings.TrimSpace | strings.TrimSuffix "." }}
+{{ $str_description := index $page.Params $description_field | strings.TrimSpace | strings.TrimSuffix "." | replaceRE `[\x{1F600}-\x{1F64F}\x{1F300}-\x{1F5FF}\x{1F680}-\x{1F6FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}]` "" }}
 
 {{/* ============================================================
      AUTHOR (plain text names — no <a> tags since card is a link)
@@ -72,20 +72,20 @@
 {{/* ============================================================
      TAGS (combination of software, categories, tags taxonomies)
      ============================================================ */}}
-{{ $str_tags := slice }}
+{{ $tags_values := slice }}
 {{ range $page.GetTerms "software" }}
-  {{ $str_tags = $str_tags | append .LinkTitle }}
+  {{ $tags_values = $tags_values | append .LinkTitle }}
 {{ end }}
 {{ range $page.GetTerms "categories" }}
-  {{ $str_tags = $str_tags | append .LinkTitle }}
+  {{ $tags_values = $tags_values | append .LinkTitle }}
 {{ end }}
 {{ range $page.GetTerms "tags" }}
-  {{ $str_tags = $str_tags | append .LinkTitle }}
+  {{ $tags_values = $tags_values | append .LinkTitle }}
 {{ end }}
 
-{{ if and $isSoftware (not $str_tags) }}
+{{ if and $isSoftware (not $tags_values) }}
   {{ with $page.Params.languages }}
-    {{ $str_tags = . }}
+    {{ $tags_values = . }}
   {{ end }}
 {{ end }}
 
@@ -148,9 +148,9 @@
      ============================================================ */}}
 <div class="@container h-full">
   <a href="{{ $page.RelPermalink }}"
-     class="no-underline relative flex flex-col @venti:flex-row rounded-xl bg-white dark:bg-blue-950
+     class="no-underline relative flex flex-col @venti:flex-row rounded-xl bg-gray-100/50 dark:bg-blue-950
             hover:bg-gray-100
-            overflow-hidden h-full">
+            overflow-hidden h-full @venti:h-96">
 
       {{/* -- Size (absolute, top-left) --------------------------- */}}
       {{ if ne hugo.Environment "production" }}
@@ -167,7 +167,8 @@
       {{/* -- Badge (absolute, top-right) --------------------------- */}}
       {{ if not $hide_badge }}
       {{ with $card_settings.badge_text }}
-        <span class="hidden @xs:block absolute top-2 @max-venti:right-2 @venti:left-2 z-10 text-xs font-semibold uppercase tracking-wide
+        <span class="hidden @xs:block absolute top-2 @max-venti:right-2 @venti:left-2 z-10
+                    text-xs font-semibold uppercase tracking-wide
                     px-2 py-0.5 rounded-full
                     bg-blue-100 text-blue-700">
           {{ . }}
@@ -195,61 +196,56 @@
     </div>
 
     {{/* -- Content (hidden at tiny) ----------------------------- */}}
-    <div class="hidden @tall:block @venti:w-1/2 flex flex-col gap-y-4 p-3 @venti:pl-5 text-gray-700">
+    <div class="hidden gap-y-2 @tall:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700">
 
-      {{/* Title (always visible in content section) */}}
-      <div class="prose-sm @grande:prose-md @venti:prose-lg flex flex-col">
-        {{ with $str_title }}
-        <h2 class="line-clamp-2 {{ $card_settings.title_class }}">{{ . }}</h2>
-        {{ end }}
-
-        {{ with $str_description }}
-          <p class="line-clamp-3 {{ $card_settings.description_class }}">{{ . }}</p>
-        {{ end }}
-
-      </div>
-
-      {{ with $str_location }}
-        <p class="hidden @xs:flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300">
-          <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-          </svg>
-          {{ . }}
-        </p>
+      {{ with $str_title }}
+      <h3 class="m-0! text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . }}</h3>
       {{ end }}
 
-      {{ with $date_value }}
-        <p class="hidden @xs:block font-mono">
-          {{ . }}
-        </p>
-      {{ end }}
-
-      {{ with $str_tags }}
-        <div class="hidden @grande:flex flex-wrap gap-1 my-auto py-2">
-          {{ range . }}
-            <span class="text-sm px-2 py-0.5 rounded-full
-                         bg-teal-100
-                         font-semibold
-                         text-teal-600 uppercase tracking-wide">
-              {{ . }}
-            </span>
-          {{ end }}
-        </div>
-      {{ end }}
-
-      {{ with $str_stars }}
-        <div class="hidden @grande:flex items-center gap-1 text-xs text-gray-400 mt-auto">
-          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-          </svg>
-          {{ . }}
-        </div>
+      {{ with $str_description }}
+        <p class="m-0! text-sm @grande:text-md @venti:text-lg line-clamp-3 {{ $card_settings.description_class }}">{{ . }}</p>
       {{ end }}
 
       {{ with $people_value }}
-        <div>
+        <div class="text-sm @grande:text-md">
           {{ . }}
+        </div>
+      {{ end }}
+
+
+      {{ with $str_location }}
+        <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
+          <span class="icon-[material-symbols-light--pin-drop]"></span>
+          <div>{{ . }}</div>
+        </div>
+      {{ end }}
+
+      {{ with $date_value }}
+        <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
+          <span class="icon-[material-symbols-light--calendar-today]"></span>
+          <div>{{ . }}</div>
+        </div>
+      {{ end }}
+
+
+      {{ with $str_stars }}
+        <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
+          <span class="icon-[material-symbols-light--kid-star-outline]"></span>
+          <div>{{ . }}</div>
+        </div>
+      {{ end }}
+
+      <div class="grow"></div>
+      {{ with $tags_values }}
+        <div class="hidden @grande:flex flex-wrap gap-x-1 gap-y-4 py-2 overflow-hidden h-10 items-end">
+          {{ range . }}
+            <span class="
+                    text-xs font-semibold uppercase tracking-wide whitespace-nowrap
+                    px-2 py-0.5 rounded-full
+                    bg-blue-100 text-blue-700">
+              {{ . }}
+            </span>
+          {{ end }}
         </div>
       {{ end }}
     </div>

@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @config '../../tailwind.config.js';
+@plugin "@iconify/tailwind4";
 
 /* Smooth scrolling for TOC links */
 html {

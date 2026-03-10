@@ -1,7 +1,20 @@
 ---
-title: "Card Test Page"
+title: "Posit Conf 2025"
 layout: single
 ---
+
+## Production
+
+{{< insert-cards cols=3 >}}
+- videos/2025-11-07_building-multilingual-data-science-teams-michael-thomas-ketchbrook-analytics-positconf2025
+- videos/2025-11-07_building-multilingual-data-science-teams-michael-thomas-ketchbrook-analytics-positconf2025
+- videos/2025-11-07_building-multilingual-data-science-teams-michael-thomas-ketchbrook-analytics-positconf2025
+- videos/2025-11-07_r-python-playing-nice-in-production-claudia-penaloza-continental-tires-positconf2025
+- videos/2025-11-07_purrrfectly-parallel-purrrfectly-distributed-charlie-gao-posit-positconf2025
+- videos/2025-11-07_data-science-hangout-rachael-dempsey-posit-amp-matthew-montero-genre-positconf2025
+{{< /insert-cards >}}
+
+
 
 ### Blog Post
 
@@ -11,7 +24,7 @@ layout: single
 
 {{< insert-cards cols=3 >}}
 - blog/air
-- blog/air
+- people/jeroen-janssens
 - blog/air
 {{< /insert-cards >}}
 

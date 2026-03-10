@@ -17,7 +17,9 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
-<div class="flex flex-row gap-x-3 items-center">
+
+<div class="flex flex-row gap-x-5 items-center">
+
   {{- if $hasImages -}}
   <div class="flex flex-row">
     {{- range $index, $person := $people -}}
@@ -25,7 +27,7 @@
         <img 
           src="{{ .RelPermalink }}" 
           alt="{{ $person.Title }}" 
-          class="my-0! w-6 h-6 rounded-full object-cover ring-2 ring-white {{ if gt $index 0 }}-ml-1{{ end }}"
+          class="my-0! w-6 h-6 rounded-full object-cover ring-2 ring-white {{ if gt $index 0 }}-ml-2{{ end }}"
           style="z-index: {{ sub 10 $index }};"
         >
       {{- end -}}
@@ -33,23 +35,26 @@
   </div>
   {{- end -}}
 
-  <div class="flex flex-wrap gap-x-1 items-center">
-    {{- range $index, $person := $people -}}
-      {{- if $index -}}
-        <span class="text-slate-500 -ml-1">,</span>
+  {{- if $link -}}
+    <div class="flex flex-wrap gap-x-1 items-center">
+      {{- range $index, $person := $people -}}
+        {{- if $index -}}
+          <span class="text-slate-500 -ml-1">,</span>
+        {{- end -}}
+        
+          <a href="{{ $person.RelPermalink }}" class="hover:underline font-medium text-slate-900">
+            {{- $person.LinkTitle -}}
+          </a>
       {{- end -}}
-      
-      {{- if $link -}}
-        <a href="{{ $person.RelPermalink }}" class="hover:underline font-medium text-slate-900">
-          {{- $person.LinkTitle -}}
-        </a>
-      {{- else -}}
-        <span class="text-slate-900">{{- $person.LinkTitle -}}</span>
+    </div>
+  {{- else -}}
+    <div class="truncate text-slate-900">
+      {{- range $index, $person := $people -}}
+        {{- if $index -}},&nbsp;{{- end -}}
+        {{- $person.LinkTitle -}}
       {{- end -}}
+    </div>
     {{- end -}}
-  </div>
-
 </div>
-
 
 {{- end -}}
