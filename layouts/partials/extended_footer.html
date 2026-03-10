@@ -25,13 +25,7 @@
 
 {{ if .Params.asciinema }}{{ partial "asciinema.html" . }}{{ end }}
 
-{{- if (findRE "<img" .Content 1) }}
-{{- $jsLightbox := resources.Get "js/image-lightbox.js" | js.Build "image-lightbox.js" -}}
-{{- if not hugo.IsDevelopment }}
-  {{- $jsLightbox = $jsLightbox | minify | fingerprint -}}
-{{ end -}}
-<script src="{{ $jsLightbox.RelPermalink }}" defer></script>
-{{ end -}}
+{{- /* image-lightbox.js disabled */ -}}
 
 {{- partial "search-modal.html" . -}}
 {{- $jsSearch := resources.Get "js/search.js" -}}

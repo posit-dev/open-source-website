@@ -21,7 +21,7 @@
   const closeBtn = document.getElementById('lightbox-close');
 
   // Find all images in prose content
-  const proseImages = document.querySelectorAll('.prose img');
+  const proseImages = document.querySelectorAll('.prose img:not(a img)');
 
   proseImages.forEach(img => {
     // Make images clickable

@@ -1,0 +1,28 @@
+blog:
+  badge_text: "blog post"
+  image_class: "object-cover"
+
+cheatsheets:
+  badge_text: "cheatsheet"
+  image_class: "object-cover"
+
+events:
+  badge_text: "event"
+  people_show: false
+  image_class: "object-cover"
+
+people:
+  badge_text: "person"
+  description_field: "role"
+  date_show: true
+  people_show: false
+  image_class: "object-contain"
+
+software:
+  badge_text: "software"
+  people_show: false
+  image_class: "object-contain p-2"
+
+videos:
+  badge_text: "video"
+  image_class: "object-cover"

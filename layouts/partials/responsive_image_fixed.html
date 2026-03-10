@@ -52,7 +52,7 @@
     {{ $img1xWebp := $img1x.Process "webp" }}
     {{ $img2xWebp := $img2x.Process "webp" }}
     {{ $img3xWebp := $img3x.Process "webp" }}
-    <picture>
+    <picture class="block w-full h-full">
       <source
         type="image/webp"
         srcset="{{ $img1xWebp.RelPermalink }} 1x,

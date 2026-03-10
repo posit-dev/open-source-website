@@ -1,4 +1,12 @@
-{{- $people := .GetTerms "people" -}}
+{{- $pg := . -}}
+{{- $link := true -}}
+{{- if reflect.IsMap . -}}
+  {{- $pg = .page -}}
+  {{- if isset . "link" -}}
+    {{- $link = .link -}}
+  {{- end -}}
+{{- end -}}
+{{- $people := $pg.GetTerms "people" -}}
 {{- if $people -}}
 {{- $hasImages := false -}}
 {{- range $person := $people -}}
@@ -17,7 +25,7 @@
     {{ $image := .Resources.Get $person.Params.image }}
     {{ if $image }}
     <div class="flex-shrink-0 -mr-3">
-      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-6 h-6 rounded-full object-cover shadow-md">
+      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-6 h-6 rounded-full object-cover">
     </div>
     {{ end }}
     {{ end }}
@@ -27,9 +35,13 @@
 
     {{- range $index, $person := $people -}}
     {{- if $index -}}<span class="-ml-1">, </span>{{ end -}}
+    {{- if $link -}}
     <a href="{{ $person.RelPermalink }}" class="hover:underline">
       {{- $person.LinkTitle -}}
     </a>
+    {{- else -}}
+    <span>{{- $person.LinkTitle -}}</span>
+    {{- end -}}
     {{- end -}}
   </div>
 </div>

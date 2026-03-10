@@ -1,0 +1,259 @@
+{{ $debug := "" }}
+
+{{/* ============================================================
+     RESOLVE PAGE
+     ============================================================ */}}
+{{ $slug := .item }}
+
+{{/* Shorthand: prefix cheatsheets/ and videos/ with resources/ */}}
+{{ if or (hasPrefix $slug "cheatsheets/") (hasPrefix $slug "videos/") }}
+  {{ $slug = printf "resources/%s" $slug }}
+{{ end }}
+
+{{ $page := site.GetPage $slug }}
+{{ if not $page }}
+  {{ errorf "card partial: page not found for slug '%s' (resolved to '%s')" .item $slug }}
+{{ end }}
+
+
+{{/* ============================================================
+     CONTENT TYPE
+     ============================================================ */}}
+
+{{ $section := $page.Section }}
+{{ $isEvent := eq $section "events" }}
+{{ $isPerson := eq $section "people" }}
+{{ $isBlog := eq $section "blog" }}
+{{ $isSoftware := eq $section "software" }}
+{{ $isResource := eq $section "resources" }}
+
+{{/* ============================================================
+     TITLE
+     ============================================================ */}}
+{{ $str_title := $page.Title }}
+
+
+{{ $parts := split (strings.Trim $slug "/") "/" }}
+{{ $count := len $parts }}
+{{ $card_type := index $parts (sub $count 2) }}
+{{ $card_settings := index site.Data.cards $card_type }}
+
+{{ $debug = $card_settings }}
+{{ $debug = $page.Params }}
+{{ $debug = .badge }}
+
+{{/* ============================================================
+     DATE (formatted using block/date_range.html for events)
+     ============================================================ */}}
+{{ $date_value := "" }}
+{{ if $isEvent }}
+  {{ $date_value = partial "block/date_range.html" $page }}
+{{ else if not $page.Date.IsZero }}
+  {{ $date_value = time.Format "Jan 2, 2006" $page.Date }}
+{{ else if $page.Params.date }}
+  {{ $date_value = time.Format "Jan 2, 2006" $page.Params.date }}
+{{ end }}
+{{ $date_value = trim $date_value " \t\r\n" }}
+
+{{/* ============================================================
+     DESCRIPTION (max 3 lines enforced via CSS line-clamp-3)
+     ============================================================ */}}
+{{ $description_field := $card_settings.description_field | default "description" }}
+{{ $str_description := index $page.Params $description_field | strings.TrimSpace | strings.TrimSuffix "." }}
+
+{{/* ============================================================
+     AUTHOR (plain text names — no <a> tags since card is a link)
+     ============================================================ */}}
+{{ $people_value := "" }}
+{{ if or $card_settings.people_show (eq $card_settings.people_show nil) }}
+  {{ $names := slice }}
+  {{ range $page.GetTerms "people" }}
+    {{ $names = $names | append .LinkTitle }}
+  {{ end }}
+  {{ $people_value = delimit $names ", " }}
+
+  {{ $people_value = partial "block/author.html" (dict "page" $page "link" false) }} 
+
+
+{{ end }}
+
+{{/* ============================================================
+     TAGS (combination of software, categories, tags taxonomies)
+     ============================================================ */}}
+{{ $str_tags := slice }}
+{{ range $page.GetTerms "software" }}
+  {{ $str_tags = $str_tags | append .LinkTitle }}
+{{ end }}
+{{ range $page.GetTerms "categories" }}
+  {{ $str_tags = $str_tags | append .LinkTitle }}
+{{ end }}
+{{ range $page.GetTerms "tags" }}
+  {{ $str_tags = $str_tags | append .LinkTitle }}
+{{ end }}
+
+{{ if and $isSoftware (not $str_tags) }}
+  {{ with $page.Params.languages }}
+    {{ $str_tags = . }}
+  {{ end }}
+{{ end }}
+
+{{/* ============================================================
+     BADGE (content type label)
+     ============================================================ */}}
+{{ $showBadge := true }}
+{{ if isset . "show-badge" }}
+  {{ $showBadge = index . "show-badge" }}
+{{ end }}
+
+{{/* ============================================================
+     IMAGE (uses responsive_image_fixed.html — no <figure>/<a> wrappers)
+     ============================================================ */}}
+{{ $image := false }}
+{{ $imageURL := "" }}
+{{ $usePlaceholder := false }}
+
+{{/* Try page bundle image */}}
+{{ with $page.Params.image }}
+  {{ $image = $page.Resources.Get . }}
+{{ end }}
+
+{{ if eq $card_type "videos" }}
+{{ end }} 
+
+{{/* Software placeholder fallback */}}
+{{ if and (not $image) (not $imageURL) $isSoftware }}
+  {{ $usePlaceholder = true }}
+{{ end }}
+
+{{/* ============================================================
+     STARS (software only)
+     ============================================================ */}}
+{{ $str_stars := "" }}
+{{ if $isSoftware }}
+  {{ with $page.Params.external.stars }}
+    {{ if lt . 1000 }}
+      {{ $str_stars = printf "%d" . }}
+    {{ else }}
+      {{ $thousands := math.Round (div (float .) 100) }}
+      {{ $thousands = div $thousands 10.0 }}
+      {{ if eq $thousands (math.Floor $thousands) }}
+        {{ $str_stars = printf "%dk" (int $thousands) }}
+      {{ else }}
+        {{ $str_stars = printf "%.1fk" $thousands }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* ============================================================
+     LOCATION (events only)
+     ============================================================ */}}
+{{ $str_location := "" }}
+{{ if $isEvent }}
+  {{ $str_location = $page.Params.location | default "" }}
+{{ end }}
+
+{{/* ============================================================
+     MARKUP
+     ============================================================ */}}
+<div class="@container/card h-full">
+  <a href="{{ $page.RelPermalink }}"
+     class="no-underline relative flex flex-col rounded-xl bg-white dark:bg-blue-950
+            hover:bg-gray-100
+            border
+            overflow-hidden h-full">
+
+    {{/* -- Badge (absolute, top-right) --------------------------- */}}
+    {{ with $card_settings.badge_text }}
+      <span class="hidden @xs/card:block absolute top-2 right-2 z-10 text-xs font-semibold uppercase tracking-wide
+                   px-2 py-0.5 rounded-full
+                   bg-blue-100 text-blue-700">
+        {{ . }}
+      </span>
+    {{ end }}
+
+    {{/* -- Image ------------------------------------------------ */}}
+    <div class="w-full aspect-[16/9] flex items-center justify-center overflow-hidden">
+      {{ if $image }}
+        {{ partial "responsive_image_fixed.html" (dict
+          "image" $image
+          "baseHeight" 350
+          "alt" $page.Title
+          "class" (printf "w-full h-full %s" $card_settings.image_class)
+        ) }}
+      {{ else if $imageURL }}
+        <img src="{{ $imageURL }}" alt="{{ $page.Title }}"
+             class="w-full h-full object-cover" loading="lazy">
+      {{ else if $usePlaceholder }}
+        <img src="/images/hex-placeholder.svg" alt="{{ $page.Title }}"
+             class="max-h-full max-w-full object-contain p-4" loading="lazy">
+      {{ end }}
+    </div>
+
+    {{/* -- Content (hidden at tiny) ----------------------------- */}}
+    <div class="hidden @3xs/card:flex flex-col gap-y-2 p-4 flex-grow">
+
+      {{/* Title (always visible in content section) */}}
+      <h2 class="text-lg font-medium text-gray-500 dark:text-gray-100 line-clamp-2">
+        {{ $str_title }}
+      </h2>
+
+      {{/* Everything below: hidden at small, visible at medium+ */}}
+
+      {{ with $str_description }}
+        <p class="hidden @xs/card:block text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+          {{ . }}
+        </p>
+      {{ end }}
+
+      {{ with $debug }}
+        <pre>
+          {{ . }}
+        </pre>
+      {{ end }}
+
+      {{ with $str_location }}
+        <p class="hidden @xs/card:flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300">
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          {{ . }}
+        </p>
+      {{ end }}
+
+      {{ with $date_value }}
+        <p class="hidden @xs/card:block text-xs text-gray-400 dark:text-gray-500 font-mono">
+          {{ . }}
+        </p>
+      {{ end }}
+
+      {{ with $str_tags }}
+        <div class="hidden @xs/card:flex flex-wrap gap-1 mt-auto pt-2">
+          {{ range . }}
+            <span class="text-xs px-2 py-0.5 rounded-full
+                         bg-gray-100 dark:bg-blue-800
+                         text-gray-600 dark:text-gray-200">
+              {{ . }}
+            </span>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ with $str_stars }}
+        <div class="hidden @xs/card:flex items-center gap-1 text-xs text-gray-400 mt-auto pt-2">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          {{ . }}
+        </div>
+      {{ end }}
+
+      {{ with $people_value }}
+        <div class="hidden @xs/card:block text-sm mt-auto pt-2">
+          {{ . }}
+        </div>
+      {{ end }}
+    </div>
+  </a>
+</div>
