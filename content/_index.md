@@ -2,11 +2,13 @@
 title: "Welcome to Posit Open Source"
 ---
 
-We build open source software for data science, scientific research, and technical communication. Our tools are designed to help you do better work, whether you're analyzing data, building models, creating visualizations, or sharing insights.
+We build free open source software for data science, scientific research, and technical communication. Our tools are designed to help you do better work, whether you're analyzing data, building models, creating visualizations, or sharing insights.
 
 ## Our approach
 
-We believe powerful data science tools should be open, accessible, and community-driven. That's why our core tools are free and open source, from RStudio IDE and the Tidyverse to Quarto and Positron. We're committed to supporting multiple languages and workflows, because your choice of tools should fit your work, not the other way around.
+We believe powerful data science tools should be open, accessible, and community-driven. That's why our core tools are free and open source, from RStudio IDE and the Tidyverse to Quarto and Positron. We're committed to supporting multiple languages and workflows, because your choice of tools should fit your work, not the other way around. 
+
+Our open source work is supported by the mission of Posit: we are a PBC that both [sells](https://posit.co/products/enterprise/connect/) [software](https://posit.co/products/enterprise/workbench/) and supports the wider data science community with free software, open access books, and more.
 
 ## Explore
 
@@ -23,5 +25,3 @@ We believe powerful data science tools should be open, accessible, and community
 ## Get involved
 
 All our projects live on [GitHub](https://github.com/posit-dev). We welcome contributions, bug reports, and feedback. Whether you're fixing typos in documentation or proposing new features, your input helps make these tools better for everyone.
-
-
