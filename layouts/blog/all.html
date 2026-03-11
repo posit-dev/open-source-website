@@ -301,7 +301,8 @@
 
   function sortTable(column, direction) {
     const rows = Array.from(tbody.querySelectorAll('tr'));
-    const colIndex = Array.from(headers).findIndex(h => h.dataset.sort === column) + 1;
+    const allHeaders = table.querySelectorAll('th');
+    const colIndex = Array.from(allHeaders).findIndex(h => h.dataset.sort === column) + 1;
 
     rows.sort((a, b) => {
       const aVal = a.querySelector(`td:nth-child(${colIndex})`).dataset.value.toLowerCase();
