@@ -3,14 +3,16 @@ title: About the RStudio Project
 people:
   - RStudio Team
 date: '2011-02-27'
-nohero: true
-slug: about-the-rstudio-project
-image: thumbnail.png
-image-alt: "Screenshot of RStudio's Create Project window"
-ported_from: rstudio
-port_status: in-progress
 categories:
-  - news
+- News
+slug: about-the-rstudio-project
+blogcategories:
+- Company News and Events
+- Open Source
+events: blog
+image: thumbnail.png
+ported_from: rstudio
+port_status: raw
 ---
 
 

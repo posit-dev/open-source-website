@@ -113,6 +113,19 @@ Check for drafts with:
 grep -l "draft: true" content/blog/education/*/index.markdown
 ```
 
+## rstudio.com blog fields to evaluate
+
+The rstudio.com blog has additional frontmatter fields preserved during porting:
+
+- `blogcategories` - broader category groupings (e.g., "Products and Technology", "Open Source", "Company News and Events")
+- `events: blog` - appears on most posts, unclear purpose
+- `categories` / `tags` - topic tags (e.g., "Shiny", "Packages")
+
+Evaluate whether to:
+1. Map `blogcategories` to site categories
+2. Keep/remove `events` field
+3. Migrate `categories`/`tags` to site taxonomies
+
 ## Other observations
 
 Record any issues or notes discovered during porting here.
