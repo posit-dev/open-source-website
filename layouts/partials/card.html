@@ -136,6 +136,22 @@
 {{ end }}
 
 {{/* ============================================================
+     DURATION (videos only)
+     ============================================================ */}}
+{{ $str_duration := "" }}
+{{ if eq $card_type "videos" }}
+  {{ with $page.Params.external.duration }}
+    {{ $hours := div (int .) 3600 }}
+    {{ $minutes := div (mod (int .) 3600) 60 }}
+    {{ if gt $hours 0 }}
+      {{ $str_duration = printf "%dh %dmin" $hours $minutes }}
+    {{ else }}
+      {{ $str_duration = printf "%d min" $minutes }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* ============================================================
      LOCATION (events only)
      ============================================================ */}}
 {{ $str_location := "" }}
@@ -166,12 +182,14 @@
 
       {{/* -- Badge (absolute, top-right) --------------------------- */}}
       {{ if not $hide_badge }}
-      {{ with $card_settings.badge_text }}
-        <span class="hidden @xs:block absolute top-2 @max-venti:right-2 @venti:left-2 z-10
-                    text-xs font-semibold uppercase tracking-wide
+        {{ if or $card_settings.badge_icon $card_settings.badge_text }}
+        <span class="flex items-center absolute top-2 @max-venti:right-2 @venti:left-2 z-10
+                    text-xs gap-x-1
                     px-2 py-0.5 rounded-full
                     bg-blue-100 text-blue-700">
-          {{ . }}
+
+          <span class="icon-[{{ $card_settings.badge_icon }}]"></span>
+          <span class="font-semibold uppercase tracking-wide hidden @xs:inline">{{ $card_settings.badge_text }}</span>
 
         </span>
       {{ end }}
@@ -215,22 +233,29 @@
 
       {{ with $str_location }}
         <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[material-symbols-light--pin-drop]"></span>
+          <span class="icon-[boxicons--map-filled]"></span>
           <div>{{ . }}</div>
         </div>
       {{ end }}
 
       {{ with $date_value }}
         <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[material-symbols-light--calendar-today]"></span>
+          <span class="icon-[boxicons--calendar-filled]"></span>
           <div>{{ . }}</div>
         </div>
       {{ end }}
 
 
+      {{ with $str_duration }}
+        <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
+          <span class="icon-[boxicons--clock-4-filled]"></span>
+          <div>{{ . }}</div>
+        </div>
+      {{ end }}
+
       {{ with $str_stars }}
         <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[material-symbols-light--kid-star-outline]"></span>
+          <span class="icon-[boxicons--star-filled]"></span>
           <div>{{ . }}</div>
         </div>
       {{ end }}

@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@iconify-json/material-symbols-light": "^1.2.61",
+    "@iconify/json": "^2.2.448",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/cli": "^4.0.17",
     "@tailwindcss/typography": "^0.5.13",

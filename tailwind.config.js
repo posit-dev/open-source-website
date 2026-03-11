@@ -5,6 +5,7 @@ module.exports = {
     "./themes/**/layouts/**/*.html",
     "./layouts/**/*.html",
     "./content/**/*.md",
+    "./data/cards.yaml",
     "./safelist.txt"
   ],
   theme: {
