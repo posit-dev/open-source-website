@@ -8,7 +8,7 @@ date: '2024-04-22'
 image: images/sparklyr.png
 image-alt: "sparklyr package hex logo"
 ported_from: ai
-port_status: raw
+port_status: in-progress
 categories:
   - tidyverse
 ---
