@@ -102,9 +102,9 @@
             </td>
 
             <!-- People -->
-            <td class="px-3 py-2" data-value="{{ if .Params.people }}{{ delimit .Params.people ", " }}{{ end }}">
+            <td class="px-3 py-2 max-w-32" data-value="{{ if .Params.people }}{{ delimit .Params.people ", " }}{{ end }}">
               {{ with .Params.people }}
-                <div class="flex flex-wrap gap-1">
+                <div class="flex flex-wrap gap-1 text-xs">
                   {{ range . }}
                     {{- $personSlug := . | urlize -}}
                     {{- $personPage := site.GetPage (printf "/people/%s" $personSlug) -}}

@@ -145,3 +145,17 @@ The script:
 **Config:** `.Rmarkdown` files are ignored by Hugo via `ignoreFiles` in `hugo.toml`.
 
 **Note on author names:** Education posts often use first names only (e.g., "Alison" instead of "Alison Hill"). After porting, expand to full names for consistency with `/people/` pages.
+
+**Markdown author links:** Some education posts have author names as markdown links (e.g., `[Dewey Dunnington](https://fishandwhistle.net/)`). These are preserved in an `author:` field while `people:` contains just the name. Posts without markdown links only have `people:`.
+
+```yaml
+# Post with markdown author link:
+author:
+  - "[Dewey Dunnington](https://fishandwhistle.net/)"
+people:
+  - Dewey Dunnington
+
+# Post with plain text author:
+people:
+  - Alison
+```

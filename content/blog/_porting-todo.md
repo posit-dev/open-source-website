@@ -28,10 +28,17 @@ To address in bulk after porting:
 - [ ] Add `image-alt` to all ported posts
 - [ ] Populate `software` taxonomy to link posts to software pages
 - [ ] Consider adding `photo` attribution to templates (tidyverse posts have `photo.author` and `photo.url`)
+- [ ] Consider using `author:` URLs from education posts (preserved markdown links with author websites)
 
 ## Issues fixed during bulk port
 
 These were fixed to unblock the build. Please verify manually.
+
+### Education blog fixes
+
+**Tags as string instead of array:**
+- `2020-04-08-announcing-2020-interns` - changed `tags: internship` to `tags: [internship]`
+- `2020-02-24-applications-for-2020-intern-program-are-now-open` - changed `tags: internship` to `tags: [internship]`
 
 ### Duplicate YAML keys
 - `2019/dplyr-0-8-1/index.markdown` - had duplicate `tags:` key, removed duplicate
@@ -95,14 +102,15 @@ Some posts may be too blog-specific to port (e.g., welcome posts, blog announcem
 
 ### Draft posts
 
-Some source posts have `draft: true`. Evaluate whether to:
-- Port as drafts (won't appear on site)
-- Skip entirely
-- Port and publish if content is still relevant
+Some source posts have `draft: true` and won't appear on the site. Evaluate whether to skip or publish.
 
-Check for drafts before bulk porting with:
+| Source | Post | Notes |
+|--------|------|-------|
+| education | 2019-08-26-learner-personas | Was draft in source |
+
+Check for drafts with:
 ```bash
-grep -l "draft: true" _external-sources/education.rstudio.com/content/blog/*/index.markdown
+grep -l "draft: true" content/blog/education/*/index.markdown
 ```
 
 ## Other observations
