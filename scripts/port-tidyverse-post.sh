@@ -1,19 +1,25 @@
 #!/bin/bash
 # Port a single tidyverse.org blog post
-# Usage: ./scripts/port-tidyverse-post.sh <slug>
+# Usage: ./scripts/port-tidyverse-post.sh <path>
+# Examples:
+#   ./scripts/port-tidyverse-post.sh dplyr-performance
+#   ./scripts/port-tidyverse-post.sh 2022/roxygen2-7-2-0
 
 set -e
 
-SLUG="$1"
+PATH_ARG="$1"
 
-if [ -z "$SLUG" ]; then
-  echo "Usage: $0 <slug>"
-  echo "Example: $0 dplyr-performance"
+if [ -z "$PATH_ARG" ]; then
+  echo "Usage: $0 <path>"
+  echo "Examples:"
+  echo "  $0 dplyr-performance"
+  echo "  $0 2022/roxygen2-7-2-0"
   exit 1
 fi
 
-SOURCE="_external-sources/tidyverse.org/content/blog/$SLUG"
-DEST="content/blog/$SLUG"
+SOURCE="_external-sources/tidyverse.org/content/blog/$PATH_ARG"
+# Preserve full path structure (including year folders)
+DEST="content/blog/$PATH_ARG"
 
 if [ ! -d "$SOURCE" ]; then
   echo "Error: Source not found: $SOURCE"
@@ -25,9 +31,10 @@ if [ -d "$DEST" ]; then
   exit 1
 fi
 
-echo "Porting: $SLUG"
+echo "Porting: $PATH_ARG"
 
-# 1. Copy the folder
+# 1. Copy the folder (create parent dirs if needed)
+mkdir -p "$(dirname "$DEST")"
 cp -r "$SOURCE" "$DEST"
 echo "  Copied to $DEST"
 
@@ -116,4 +123,4 @@ if [ -f "$RMD_FILE" ]; then
   echo "  Updated $RMD_FILE"
 fi
 
-echo "Done: $SLUG"
+echo "Done: $PATH_ARG"

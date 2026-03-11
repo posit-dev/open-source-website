@@ -58,11 +58,14 @@ Blog source: `_external-sources/tidyverse.org/content/blog`
 
 Already uses Hugo (via hugodown). Posts have both `index.Rmd` (source) and `index.md` (rendered).
 
-**Script:** `scripts/port-tidyverse-post.sh <slug>`
+**Script:** `scripts/port-tidyverse-post.sh <path>`
 
 ```bash
 ./scripts/port-tidyverse-post.sh dplyr-performance
+./scripts/port-tidyverse-post.sh 2022/roxygen2-7-2-0
 ```
+
+Posts in year subfolders are ported preserving the folder structure.
 
 The script:
 1. Copies post folder to `content/blog/`
