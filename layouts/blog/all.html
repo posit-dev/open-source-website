@@ -7,6 +7,61 @@
     {{ .Content | safeHTML }}
   </p>
 
+  <!-- Summary by source and status -->
+  {{- $blogSection := site.GetPage "/blog" -}}
+  {{- $allPosts := where $blogSection.RegularPages ".BundleType" "eq" "leaf" -}}
+  <div class="mb-6 overflow-x-auto">
+    <table class="text-sm border border-gray-300 dark:border-blue-800">
+      <thead class="bg-gray-100 dark:bg-blue-900">
+        <tr>
+          <th class="px-3 py-2 text-left">Source</th>
+          <th class="px-3 py-2 text-center">Raw</th>
+          <th class="px-3 py-2 text-center">In Progress</th>
+          <th class="px-3 py-2 text-center">Review</th>
+          <th class="px-3 py-2 text-center">Complete</th>
+          <th class="px-3 py-2 text-center">No Status</th>
+          <th class="px-3 py-2 text-center font-bold">Total</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 dark:divide-blue-800">
+        {{- $sources := slice "tidyverse" "education" "ai" "shiny" "great_tables" "plotnine" "pointblank" "quarto" "rstudio" -}}
+        {{- range $source := $sources -}}
+          {{- $sourcePosts := where $allPosts "Params.ported_from" $source -}}
+          {{- if gt (len $sourcePosts) 0 -}}
+          <tr>
+            <td class="px-3 py-1">{{ $source }}</td>
+            <td class="px-3 py-1 text-center">{{ len (where $sourcePosts "Params.port_status" "raw") }}</td>
+            <td class="px-3 py-1 text-center">{{ len (where $sourcePosts "Params.port_status" "in-progress") }}</td>
+            <td class="px-3 py-1 text-center">{{ len (where $sourcePosts "Params.port_status" "review") }}</td>
+            <td class="px-3 py-1 text-center">{{ len (where $sourcePosts "Params.port_status" "complete") }}</td>
+            <td class="px-3 py-1 text-center">{{ len (where $sourcePosts "Params.port_status" nil) }}</td>
+            <td class="px-3 py-1 text-center font-bold">{{ len $sourcePosts }}</td>
+          </tr>
+          {{- end -}}
+        {{- end -}}
+        {{- $noSource := where $allPosts "Params.ported_from" nil -}}
+        <tr class="bg-gray-50 dark:bg-blue-900/50">
+          <td class="px-3 py-1 italic">No source</td>
+          <td class="px-3 py-1 text-center">-</td>
+          <td class="px-3 py-1 text-center">-</td>
+          <td class="px-3 py-1 text-center">-</td>
+          <td class="px-3 py-1 text-center">-</td>
+          <td class="px-3 py-1 text-center">{{ len $noSource }}</td>
+          <td class="px-3 py-1 text-center font-bold">{{ len $noSource }}</td>
+        </tr>
+        <tr class="bg-gray-100 dark:bg-blue-900 font-bold">
+          <td class="px-3 py-1">Total</td>
+          <td class="px-3 py-1 text-center">{{ len (where $allPosts "Params.port_status" "raw") }}</td>
+          <td class="px-3 py-1 text-center">{{ len (where $allPosts "Params.port_status" "in-progress") }}</td>
+          <td class="px-3 py-1 text-center">{{ len (where $allPosts "Params.port_status" "review") }}</td>
+          <td class="px-3 py-1 text-center">{{ len (where $allPosts "Params.port_status" "complete") }}</td>
+          <td class="px-3 py-1 text-center">{{ len (where $allPosts "Params.port_status" nil) }}</td>
+          <td class="px-3 py-1 text-center">{{ len $allPosts }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <div class="bg-white dark:bg-blue-950 rounded-lg shadow-sm border border-blue-300 dark:border-blue-800 overflow-hidden">
     <div class="overflow-x-auto">
       <table id="blog-table" class="w-full text-sm">
@@ -86,8 +141,7 @@
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-200 dark:divide-blue-800">
-          {{ $blogSection := site.GetPage "/blog" }}
-          {{ range where $blogSection.RegularPages.ByDate.Reverse ".BundleType" "eq" "leaf" }}
+          {{ range $allPosts.ByDate.Reverse }}
           <tr class="hover:bg-gray-50 dark:hover:bg-blue-900/50">
             <!-- Title (linked) -->
             <td class="px-3 py-2" data-value="{{ .Title }}">
