@@ -6,6 +6,7 @@ people:
 slug: sparklyr-updates-q1-2024
 date: '2024-04-22'
 image: images/sparklyr.png
+image-alt: "sparklyr package hex logo"
 categories:
   - tidyverse
 ---

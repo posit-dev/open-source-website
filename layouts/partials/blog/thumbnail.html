@@ -11,7 +11,7 @@
 */ -}}
 
 {{- $image := "" -}}
-{{- $alt := .Params.alttext | default .Title -}}
+{{- $alt := (index .Params "image-alt") | default .Title -}}
 
 {{- /* 1. Check for explicit image parameter */ -}}
 {{- if .Params.image -}}

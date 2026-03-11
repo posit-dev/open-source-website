@@ -5,6 +5,8 @@ people:
 date: '2011-02-27'
 nohero: true
 slug: about-the-rstudio-project
+image: thumbnail.png
+image-alt: "Screenshot of RStudio's Create Project window"
 categories:
   - news
 ---

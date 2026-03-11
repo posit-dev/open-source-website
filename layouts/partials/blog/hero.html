@@ -3,7 +3,7 @@
   Full-width hero image or video at top of post
 */ -}}
 
-{{- $alt := .Params.alttext | default .Title -}}
+{{- $alt := (index .Params "image-alt") | default .Title -}}
 
 <div class="w-full h-64 md:h-96 lg:h-[32rem] rounded-xl">
   {{- /* Check for hero_video parameter first */ -}}

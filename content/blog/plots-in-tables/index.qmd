@@ -5,6 +5,8 @@ people:
   - Michael Chow
 date: '2025-07-03'
 description: Exploring three approaches to add small plots to Great Tables using plotnine, svg.py, or HTML.
+image: greattables-og.png
+image-alt: "Great Tables hex logo"
 categories:
   - programming
 ---

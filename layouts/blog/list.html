@@ -38,7 +38,7 @@
                 {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
                   {{- /* It's a resource */ -}}
                   {{- if eq $featuredImg.MediaType.SubType "svg" -}}
-                    <img class="w-full h-full object-cover" src="{{ $featuredImg.RelPermalink }}" alt="{{ $.Params.alttext | default .Title }}" loading="lazy" />
+                    <img class="w-full h-full object-cover" src="{{ $featuredImg.RelPermalink }}" alt="{{ (index .Params "image-alt") | default .Title }}" loading="lazy" />
                   {{- else -}}
                     {{- $respSizes := slice "640" "960" "1280" -}}
                     <picture>
@@ -56,12 +56,12 @@
                             {{- ($featuredImg.Resize (print $size "x jpg box")).RelPermalink }} {{ $size }}w
                           {{- end -}}
                         {{- end -}}" sizes="(min-width: 1024px) 50vw, 100vw" />
-                      <img class="w-full h-full object-cover" src="{{ ($featuredImg.Resize "640x jpg box").RelPermalink }}" alt="{{ $.Params.alttext | default .Title }}" loading="lazy" />
+                      <img class="w-full h-full object-cover" src="{{ ($featuredImg.Resize "640x jpg box").RelPermalink }}" alt="{{ (index .Params "image-alt") | default .Title }}" loading="lazy" />
                     </picture>
                   {{- end -}}
                 {{- else -}}
                   {{- /* It's a URL string */ -}}
-                  <img class="w-full h-full object-cover" src="{{ $featuredImg }}" alt="{{ $.Params.alttext | default .Title }}" loading="lazy" />
+                  <img class="w-full h-full object-cover" src="{{ $featuredImg }}" alt="{{ (index .Params "image-alt") | default .Title }}" loading="lazy" />
                 {{- end -}}
               </div>
             </div>
@@ -106,7 +106,7 @@
                 {{- $imgType := printf "%T" $gridImg -}}
                 {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
                   {{- if eq $gridImg.MediaType.SubType "svg" -}}
-                    <img class="w-full h-full object-cover" src="{{ $gridImg.RelPermalink }}" alt="{{ $post.Params.alttext | default $post.Title }}" loading="lazy" />
+                    <img class="w-full h-full object-cover" src="{{ $gridImg.RelPermalink }}" alt="{{ (index $post.Params "image-alt") | default $post.Title }}" loading="lazy" />
                   {{- else -}}
                     {{- $respSizes := slice "320" "640" -}}
                     <picture>
@@ -124,11 +124,11 @@
                             {{- ($gridImg.Resize (print $size "x jpg box")).RelPermalink }} {{ $size }}w
                           {{- end -}}
                         {{- end -}}" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
-                      <img class="w-full h-full object-cover" src="{{ ($gridImg.Resize "640x jpg box").RelPermalink }}" alt="{{ $post.Params.alttext | default $post.Title }}" loading="lazy" />
+                      <img class="w-full h-full object-cover" src="{{ ($gridImg.Resize "640x jpg box").RelPermalink }}" alt="{{ (index $post.Params "image-alt") | default $post.Title }}" loading="lazy" />
                     </picture>
                   {{- end -}}
                 {{- else -}}
-                  <img class="w-full h-full object-cover" src="{{ $gridImg }}" alt="{{ $post.Params.alttext | default $post.Title }}" loading="lazy" />
+                  <img class="w-full h-full object-cover" src="{{ $gridImg }}" alt="{{ (index $post.Params "image-alt") | default $post.Title }}" loading="lazy" />
                 {{- end -}}
               </div>
             </div>

@@ -4,6 +4,8 @@ people:
   - Rich Iannone
 date: '2025-06-04'
 description: Exploring five Python validation libraries that support Polars DataFrames with distinct strengths for different validation challenges.
+image: pointbreak-og.png
+image-alt: "Pointblank logo"
 categories:
   - point blank
 ---

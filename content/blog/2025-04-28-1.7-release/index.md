@@ -7,7 +7,7 @@ people:
   - Charlotte Wickham
 date: '2025-04-28'
 image: thumbnail-1.7.jpeg
-image_alt: >-
+image-alt: >-
   Quarto 1.7: half the Quarto logo is light on dark, the other half dark on
   light
 categories:

@@ -5,7 +5,7 @@ people:
   - Shiny Team
 date: '2024-07-22'
 image: shinyforpython-1.0.jpg
-image_alt: "Announcing Shiny for Python 1.0"
+image-alt: "1.0 with fireworks behind it."
 hero_video: shinyforpython-1.0.mp4
 categories:
   - shiny

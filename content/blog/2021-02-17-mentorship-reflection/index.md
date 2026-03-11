@@ -8,6 +8,7 @@ categories:
 description: A mentorship experience during undergrad opens up opportunities for learning about text analysis, as well as meta-skills like debugging and reproducibility.
 slug: ncsu-mentorship-reflect
 image: hands-wd.jpg
+image-alt: "Hands typing on a laptop keyboard"
 photo:
   author: Christina @ wocintechchat.com
   url: https://unsplash.com/photos/x29idTmYGXg

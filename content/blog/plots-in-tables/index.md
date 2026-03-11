@@ -10,6 +10,8 @@ description: >-
 categories:
   - great tables
 featured: true
+image: greattables-og.png
+image-alt: "Great Tables hex logo"
 ---
 
 

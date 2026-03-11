@@ -67,7 +67,7 @@
               {{- $imgType := printf "%T" $relatedImg -}}
               {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
                 {{- if eq $relatedImg.MediaType.SubType "svg" -}}
-                  <img class="w-full h-full object-cover" src="{{ $relatedImg.RelPermalink }}" alt="{{ .Params.alttext | default .Title }}" loading="lazy" />
+                  <img class="w-full h-full object-cover" src="{{ $relatedImg.RelPermalink }}" alt="{{ (index .Params "image-alt") | default .Title }}" loading="lazy" />
                 {{- else -}}
                   {{- $respSizes := slice "320" "640" -}}
                   <picture>
@@ -85,11 +85,11 @@
                           {{- ($relatedImg.Resize (print $size "x jpg box")).RelPermalink }} {{ $size }}w
                         {{- end -}}
                       {{- end -}}" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
-                    <img class="w-full h-full object-cover" src="{{ ($relatedImg.Resize "640x jpg box").RelPermalink }}" alt="{{ .Params.alttext | default .Title }}" loading="lazy" />
+                    <img class="w-full h-full object-cover" src="{{ ($relatedImg.Resize "640x jpg box").RelPermalink }}" alt="{{ (index .Params "image-alt") | default .Title }}" loading="lazy" />
                   </picture>
                 {{- end -}}
               {{- else -}}
-                <img class="w-full h-full object-cover" src="{{ $relatedImg }}" alt="{{ .Params.alttext | default .Title }}" loading="lazy" />
+                <img class="w-full h-full object-cover" src="{{ $relatedImg }}" alt="{{ (index .Params "image-alt") | default .Title }}" loading="lazy" />
               {{- end -}}
             </div>
           </div>
