@@ -4,6 +4,12 @@
     Events
   </h1>
 
+  {{ with (site.GetPage "/featured/events").Content }}
+  <div class="prose dark:prose-invert max-w-none mb-8">
+    {{ . }}
+  </div>
+  {{ end }}
+
   {{ $eventsSection := site.GetPage "/events" }}
   {{ $now := now }}
   {{ $currentEvents := slice }}

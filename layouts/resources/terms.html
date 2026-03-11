@@ -4,6 +4,12 @@
     Resources
   </h1>
 
+  {{ with (site.GetPage "/featured/resources").Content }}
+  <div class="prose dark:prose-invert max-w-none mb-8">
+    {{ . }}
+  </div>
+  {{ end }}
+
   <!-- Resource Type Buttons -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <a href="/resources/cheatsheets/"

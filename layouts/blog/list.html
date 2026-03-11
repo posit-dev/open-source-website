@@ -23,69 +23,11 @@
 
   {{- /* Featured section - only on page 1 */ -}}
   {{- if eq $paginator.PageNumber 1 -}}
-    {{- $featuredPosts := where .RegularPages "Params.featured" true -}}
-    {{- with (index $featuredPosts 0) -}}
-      <section class="mb-12">
-        <h2 class="text-sm font-semibold mb-6 text-gray-600 dark:text-gray-400 uppercase tracking-wider">Featured</h2>
-        <article class="rounded-lg overflow-hidden bg-transparent transition-colors duration-200 border border-transparent hover:bg-blue-50 hover:border-blue-50 cursor-pointer hover:border-[4px] hover:-m-[3px] dark:border-gray-800 bg-blue-50 relative">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {{- /* Featured image */ -}}
-            <div class="w-full aspect-[1200/630] overflow-hidden">
-              <div class="block w-full h-full">
-                {{- $featuredImg := partial "blog/thumbnail.html" . -}}
-                {{- /* Check if it's a string (URL) or resource */ -}}
-                {{- $imgType := printf "%T" $featuredImg -}}
-                {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
-                  {{- /* It's a resource */ -}}
-                  {{- if eq $featuredImg.MediaType.SubType "svg" -}}
-                    <img class="w-full h-full object-cover" src="{{ $featuredImg.RelPermalink }}" alt="{{ $.Params.alttext | default .Title }}" loading="lazy" />
-                  {{- else -}}
-                    {{- $respSizes := slice "640" "960" "1280" -}}
-                    <picture>
-                      <source type="image/webp" srcset="
-                        {{- range $i, $size := $respSizes -}}
-                          {{- if ge $featuredImg.Width $size -}}
-                            {{- if $i }}, {{ end -}}
-                            {{- ($featuredImg.Resize (print $size "x webp photo box")).RelPermalink }} {{ $size }}w
-                          {{- end -}}
-                        {{- end -}}" sizes="(min-width: 1024px) 50vw, 100vw" />
-                      <source type="image/jpeg" srcset="
-                        {{- range $i, $size := $respSizes -}}
-                          {{- if ge $featuredImg.Width $size -}}
-                            {{- if $i }}, {{ end -}}
-                            {{- ($featuredImg.Resize (print $size "x jpg box")).RelPermalink }} {{ $size }}w
-                          {{- end -}}
-                        {{- end -}}" sizes="(min-width: 1024px) 50vw, 100vw" />
-                      <img class="w-full h-full object-cover" src="{{ ($featuredImg.Resize "640x jpg box").RelPermalink }}" alt="{{ $.Params.alttext | default .Title }}" loading="lazy" />
-                    </picture>
-                  {{- end -}}
-                {{- else -}}
-                  {{- /* It's a URL string */ -}}
-                  <img class="w-full h-full object-cover" src="{{ $featuredImg }}" alt="{{ $.Params.alttext | default .Title }}" loading="lazy" />
-                {{- end -}}
-              </div>
-            </div>
-
-            {{- /* Featured content */ -}}
-            <div class="flex flex-col gap-y-2 p-6 lg:p-8">
-              <div class="flex flex-row gap-x-4 items-center flex-wrap">
-                {{ partial "block/time.html" . }}
-                {{ partial "block/taxonomies.html" . }}
-              </div>
-              <h3 class="text-2xl font-medium text-gray-500 dark:text-gray-100">
-                <a href="{{ .RelPermalink }}" class="hover:text-blue-500 dark:hover:text-blue-400 after:absolute after:inset-0">{{ .Title | .RenderString }}</a>
-              </h3>
-
-              {{- partial "block/desc.html" . -}}
-
-              <div class="flex flex-col mt-6 gap-y-4 relative z-10">
-                {{ partial "block/author.html" . }}
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-    {{- end -}}
+    {{ with (site.GetPage "/featured/blog").Content }}
+    <div class="prose max-w-none mb-8">
+      {{ . }}
+    </div>
+    {{ end }}
   {{- end -}}
 
   {{- /* "Latest" section header */ -}}

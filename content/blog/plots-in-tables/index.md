@@ -1,5 +1,6 @@
 ---
 title: Adding Plots to Great Tables
+image: greattables-og.png
 people:
   - Jules Walzer-Goldfeld
   - Michael Chow
@@ -9,7 +10,6 @@ description: >-
   svg.py, or HTML.
 categories:
   - great tables
-featured: true
 ---
 
 
