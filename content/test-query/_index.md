@@ -3,6 +3,11 @@ title: "Test Query Items"
 layout: single
 ---
 
+## Videos with the most views
+
+{{< query-items path="resources/videos/*" sort-by="external.view_count" sort-direction="desc" limit="5" cols="3" >}}
+
+
 ## Blog Posts
 
 ### Latest 3 Blog Posts (3 Columns)

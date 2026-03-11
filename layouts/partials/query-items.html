@@ -19,6 +19,22 @@
 {{ $sortKey := printf "Params.%s" $sortBy }}
 {{ $pages = sort $pages $sortKey $sortDirection }}
 
+{{/* 2b. Push pages missing the sort field to end */}}
+{{ $withVal := slice }}
+{{ $withoutVal := slice }}
+{{ range $pages }}
+  {{ $val := partial "jsonlogic/resolve.html" (dict "args" $sortBy "data" .Params) }}
+  {{ if ne (printf "%T" $val) "<nil>" }}
+    {{ $withVal = $withVal | append . }}
+  {{ else }}
+    {{ $withoutVal = $withoutVal | append . }}
+  {{ end }}
+{{ end }}
+{{ $pages = $withVal }}
+{{ range $withoutVal }}
+  {{ $pages = $pages | append . }}
+{{ end }}
+
 {{/* 3. Apply json-logic filter */}}
 {{ with $filterJSON }}
   {{ $rule := transform.Unmarshal . }}
