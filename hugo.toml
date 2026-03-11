@@ -2,7 +2,7 @@ baseURL = 'https://posit-open-source.netlify.app'
 languageCode = 'en-us'
 title = 'Posit Open Source'
 theme = 'hugo-theme-tailwind'
-ignoreFiles = ['\.qmd$', '\.ipynb$']
+ignoreFiles = ['\.qmd$', '\.ipynb$', 'CLAUDE\.md$', '_porting-notes\.md$']
 
 [pagination]
 pagerSize = 50
