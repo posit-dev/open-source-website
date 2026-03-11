@@ -18,11 +18,27 @@ Shallow clones of all legacy blog repos are in `/_external-sources/` (ignored by
 | tidyverse.org | [Blog](https://www.tidyverse.org/blog/) | hugodown | [GitHub](https://github.com/tidyverse/tidyverse.org) |
 | AI blog | [Blog](https://blogs.rstudio.com/ai/) | Distill for R Markdown | [GitHub](https://github.com/rstudio/ai-blog) |
 | Shiny | [Blog](https://shiny.posit.co/blog/) | Quarto w/ freeze | [GitHub](https://github.com/rstudio/shiny-dev-center/) |
-| Great Tables | [Blog](https://posit-dev.github.io/great-tables/blog/) | Quarto w/ some freeze | [GitHub](https://github.com/posit-dev/great-tables/tree/main/docs/blog) |
+| Great Tables | [Blog](https://posit-dev.g ithub.io/great-tables/blog/) | Quarto w/ some freeze | [GitHub](https://github.com/posit-dev/great-tables/tree/main/doc s/blog) |
 | plotnine | [Blog](https://plotnine.org/blog.html) | Quarto w/ some freeze | [GitHub](https://github.com/has2k1/plotnine.org/tree/main/source/blog) |
 | pointblank | [Blog](https://posit-dev.github.io/pointblank/blog/) | Quarto w/o freeze | [GitHub](https://github.com/posit-dev/pointblank/tree/main/docs/blog) |
 | Quarto | [Blog](https://quarto.org/docs/blog/) | Quarto w/ freeze | [GitHub](https://github.com/quarto-dev/quarto-web) |
 | Education blog | [Blog](https://education.rstudio.com/blog/) | blogdown | [GitHub](https://github.com/rstudio/education.rstudio.com) |
+| RStudio blog | Some on <https://posit.co/blog/> | hugo | [GitHub](https://github.com/gregswinehart/rstudio.com) |
+
+### Content file types
+
+Blogs with pre-rendered static files (.md, .markdown, .html) are easier to port than those requiring code execution (.qmd, .Rmd, .ipynb).
+
+| Blog | Posts path | Static files | Needs rendering |
+|------|------------|--------------|-----------------|
+| education.rstudio.com | content/blog | 85 markdown + 5 md | 85 Rmarkdown (have rendered .markdown) |
+| ai-blog | _posts | 97 html | 140 Rmd |
+| shiny-dev-center | blog/posts | 1 html | 46 qmd |
+| quarto-web | docs/blog/posts | - | 37 qmd |
+| great-tables | docs/blog | - | 22 qmd |
+| pointblank | docs/blog | - | 6 qmd |
+| plotnine.org | source/blog | - | 3 qmd |
+| rstudio.com | content/blog | TBD | TBD |
 
 ## Image alt text: use `image-alt`
 
@@ -51,10 +67,30 @@ Currently, both the post thumbnail (on list pages) and the hero banner (on the p
 
 **Potential issue:** Some legacy blogs have two separate images — one for the thumbnail and one for the hero banner. May need to add support for distinct `thumbnail` and `image` (hero) fields if this is common.
 
+## Folder structure
+
+During porting, posts are organized by source blog:
+
+```
+content/blog/
+├── tidyverse/       # tidyverse.org posts
+│   ├── 2017/
+│   ├── 2018/
+│   └── ...
+├── education/       # education.rstudio.com posts
+│   ├── 2019-09-24-welcome/
+│   └── ...
+└── ...              # other posts (not ported)
+```
+
+This preserves original folder structures and makes it easy to track porting progress. Folder structure can be flattened later if desired.
+
+---
 
 ## tidyverse.org
 
 Blog source: `_external-sources/tidyverse.org/content/blog`
+Destination: `content/blog/tidyverse/`
 
 Already uses Hugo (via hugodown). Posts have both `index.Rmd` (source) and `index.md` (rendered).
 
@@ -68,7 +104,7 @@ Already uses Hugo (via hugodown). Posts have both `index.Rmd` (source) and `inde
 Posts in year subfolders are ported preserving the folder structure.
 
 The script:
-1. Copies post folder to `content/blog/`
+1. Copies post folder to `content/blog/tidyverse/`
 2. Updates frontmatter in both `.md` and `.Rmd`:
    - Changes `author` → `people`
    - Adds `image: thumbnail-wd.jpg`
@@ -82,6 +118,30 @@ The script:
 
 **Fix combined authors:** If `people` has names joined by "and" or commas, run:
 ```bash
-./scripts/fix-people.sh content/blog/<path>/index.md
-./scripts/fix-people.sh content/blog/<path>/index.Rmd
+./scripts/fix-people.sh content/blog/tidyverse/<path>/index.md
+./scripts/fix-people.sh content/blog/tidyverse/<path>/index.Rmd
 ```
+
+## education.rstudio.com
+
+Blog source: `_external-sources/education.rstudio.com/content/blog`
+Destination: `content/blog/education/`
+
+Uses blogdown (similar to hugodown). Posts have both `index.Rmarkdown` (source) and `index.markdown` (rendered).
+
+**Script:** `scripts/port-education-post.sh <folder-name>`
+
+```bash
+./scripts/port-education-post.sh 2019-09-24-welcome
+./scripts/port-education-post.sh 2020-05-19-learnr-for-remote
+```
+
+The script:
+1. Copies post folder to `content/blog/education/`
+2. Updates frontmatter in both `.markdown` and `.Rmarkdown`:
+   - Changes `author` → `people`
+   - Adds `ported_from: education` and `port_status: raw`
+
+**Config:** `.Rmarkdown` files are ignored by Hugo via `ignoreFiles` in `hugo.toml`.
+
+**Note on author names:** Education posts often use first names only (e.g., "Alison" instead of "Alison Hill"). After porting, expand to full names for consistency with `/people/` pages.

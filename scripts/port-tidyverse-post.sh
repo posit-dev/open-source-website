@@ -18,8 +18,8 @@ if [ -z "$PATH_ARG" ]; then
 fi
 
 SOURCE="_external-sources/tidyverse.org/content/blog/$PATH_ARG"
-# Preserve full path structure (including year folders)
-DEST="content/blog/$PATH_ARG"
+# Preserve full path structure (including year folders) under tidyverse/
+DEST="content/blog/tidyverse/$PATH_ARG"
 
 if [ ! -d "$SOURCE" ]; then
   echo "Error: Source not found: $SOURCE"
