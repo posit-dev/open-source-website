@@ -198,11 +198,14 @@
     {{/* -- Image ------------------------------------------------ */}}
     <div class="w-full @venti:w-1/2 aspect-[16/9] flex items-center justify-center overflow-hidden">
       {{ if $image }}
-        {{ partial "responsive_image_fixed.html" (dict
+        {{ partial "responsive_image_container.html" (dict
           "image" $image
-          "baseHeight" 350
           "alt" $page.Title
           "class" (printf "mx-auto h-full %s" $card_settings.image_class)
+          "short"  160
+          "tall"   320
+          "grande" 640
+          "venti"  640
         ) }}
       {{ else if $imageURL }}
         <img src="{{ $imageURL }}" alt="{{ $page.Title }}"

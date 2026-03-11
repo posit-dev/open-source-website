@@ -1,0 +1,72 @@
+{{/*
+  Renders responsive images optimized for container query breakpoints.
+
+  One <picture> element is rendered per breakpoint range (short, tall, grande, venti),
+  each shown/hidden via Tailwind container-query classes. Each <picture> carries 1x/2x
+  DPI srcset variants plus a webp <source>. Combined with loading="lazy", browsers
+  only download the image matching the current container size.
+
+  Parameters:
+  - image:   Hugo resource object (required)
+  - alt:     Alt text (required)
+  - class:   CSS classes for each <img> element (optional)
+  - short:   1x pixel width for containers < @tall  (160px)  (optional, default 160)
+  - tall:    1x pixel width for @tall–@grande  (160–320px)   (optional, default 320)
+  - grande:  1x pixel width for @grande–@venti (320–640px)   (optional, default 640)
+  - venti:   1x pixel width for @venti+        (640px+)      (optional, default 640)
+*/}}
+{{ $image := .image }}
+{{ $alt := .alt }}
+{{ $class := .class }}
+{{ $wShort  := default 160 .short }}
+{{ $wTall   := default 320 .tall }}
+{{ $wGrande := default 640 .grande }}
+{{ $wVenti  := default 640 .venti }}
+
+{{ if $image }}
+  {{ if eq $image.MediaType.SubType "svg" }}
+    <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
+  {{ else }}
+    {{/* Build a slice of (breakpoint-name, visibility-classes, 1x-width) tuples */}}
+    {{ $breakpoints := slice
+      (dict "name" "short"  "vis" "hidden @max-tall:block"              "w" $wShort)
+      (dict "name" "tall"   "vis" "hidden @tall:@max-grande:block"      "w" $wTall)
+      (dict "name" "grande" "vis" "hidden @grande:@max-venti:block"     "w" $wGrande)
+      (dict "name" "venti"  "vis" "hidden @venti:block"                 "w" $wVenti)
+    }}
+
+    {{ $sourceWidth := $image.Width }}
+
+    {{ range $breakpoints }}
+      {{ $w1x := .w }}
+      {{ $w2x := mul .w 2 }}
+
+      {{/* Clamp to source width — never upscale */}}
+      {{ if gt $w1x $sourceWidth }}
+        {{ $w1x = $sourceWidth }}
+      {{ end }}
+      {{ if gt $w2x $sourceWidth }}
+        {{ $w2x = $sourceWidth }}
+      {{ end }}
+
+      {{ $img1x := $image.Resize (printf "%dx" $w1x) }}
+      {{ $img2x := $image.Resize (printf "%dx" $w2x) }}
+      {{ $img1xWebp := $img1x.Process "webp" }}
+      {{ $img2xWebp := $img2x.Process "webp" }}
+
+      <picture class="{{ .vis }} w-full h-full">
+        <source
+          type="image/webp"
+          srcset="{{ $img1xWebp.RelPermalink }} 1x,
+                  {{ $img2xWebp.RelPermalink }} 2x" />
+        <img
+          src="{{ $img1x.RelPermalink }}"
+          srcset="{{ $img1x.RelPermalink }} 1x,
+                  {{ $img2x.RelPermalink }} 2x"
+          alt="{{ $alt }}"
+          class="{{ $class }}"
+          loading="lazy" />
+      </picture>
+    {{ end }}
+  {{ end }}
+{{ end }}
