@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-12-07'
 description: 'R/Pharma 2021 Day 1
 
@@ -41,4 +42,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=LwP21KMV3MA
   view_count: 440
 ---
+image: thumbnail.jpg
 

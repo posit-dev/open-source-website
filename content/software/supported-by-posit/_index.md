@@ -2,6 +2,7 @@
 description: Add a "Supported by Posit" badge to a package website
 github: posit-dev/supported-by-posit
 image: supported-by-posit.png
+color: "#EC7A53"
 languages:
 - JavaScript
 people:
@@ -16,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 0
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:13:45.280778+00:00'
+  last_updated: '2026-03-05T16:05:34.985164+00:00'
   license: NOASSERTION
   people:
   - Jeroen Janssens

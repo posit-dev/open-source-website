@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Leveraging Posit Connect, our company transforms client engagement by providing direct support, extensive documentation (built with Quarto), and no-code applications for data exploration and analysis of real-world oncology data. This strategy provides us the greatest flexibility for subject matter experts to deliver client value, provide client assistance, enhance self-service learning, and lower the technical barrier for data insights. Our commitment to client success and innovation is evidenced by our use of Posit Connect, providing tools for a competitive edge and data-driven culture.
 
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ctv0jOV8AXs
   view_count: 126
 ---
+image: thumbnail.jpg
 

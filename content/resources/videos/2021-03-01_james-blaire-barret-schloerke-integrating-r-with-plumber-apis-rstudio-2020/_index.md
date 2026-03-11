@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-01'
 description: 'Full title: Expanding R Horizons: Integrating R with Plumber APIs
 
@@ -113,4 +114,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=J0Th2QRZ7Rk
   view_count: 18414
 ---
+image: thumbnail.jpg
 

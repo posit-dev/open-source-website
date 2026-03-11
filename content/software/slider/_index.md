@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: Sliding Window Functions
 github: r-lib/slider
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-02-27T17:14:19.091903+00:00'
+  last_updated: '2026-03-05T16:28:57.882469+00:00'
   latest_release: '2025-11-14T20:31:30+00:00'
   license: NOASSERTION
   people:

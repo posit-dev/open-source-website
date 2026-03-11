@@ -2,6 +2,7 @@
 description: Fast reading of delimited files
 github: tidyverse/vroom
 image: logo.png
+color: "#096EF9"
 languages:
 - C++
 latest_release: '2026-01-25T17:49:54+00:00'
@@ -21,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 65
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:07.617192+00:00'
+  last_updated: '2026-03-05T16:21:38.089681+00:00'
   latest_release: '2026-01-25T17:49:54+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +34,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/vroom
-  stars: 642
+  stars: 643
   title: vroom
   website: https://vroom.tidyverse.org
 ---

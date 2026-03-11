@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-07-28'
 description: 'This is a recording of a virtual seminar on ''3 Reasons to use Tidymodels'' by Julia Silge! The event took place July 13, 2023 and was hosted by R-Ladies Philly and R-Ladies DC.
 
@@ -47,4 +48,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=sv5r7CVAVwo
   view_count: 4840
 ---
+image: thumbnail.jpg
 

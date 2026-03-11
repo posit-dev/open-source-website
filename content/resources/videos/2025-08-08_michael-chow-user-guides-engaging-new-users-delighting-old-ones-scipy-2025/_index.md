@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-08-08'
 description: 'User guides are the piece you often hit right after clicking the "Learn" or "Get Started" button in a package''s documentation. They''re responsible for onboarding new users, and providing a learning path through a package. Surprisingly, while pieces of documentation like the API Reference tend to be the same, the design of user guides tend to differ across packages.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=lHCOVqCZRFw
   view_count: 251
 ---
+image: thumbnail.jpg
 

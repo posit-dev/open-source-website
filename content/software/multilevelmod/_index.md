@@ -2,6 +2,7 @@
 description: Parsnip wrappers for mixed-level and hierarchical models
 github: tidymodels/multilevelmod
 image: logo.png
+color: "#FBB373"
 languages:
 - R
 latest_release: '2022-06-17T12:13:05+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 6
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.341357+00:00'
+  last_updated: '2026-03-05T16:23:17.485093+00:00'
   latest_release: '2022-06-17T12:13:05+00:00'
   license: NOASSERTION
   people:

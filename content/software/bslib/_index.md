@@ -2,6 +2,7 @@
 description: Tools for theming Shiny and R Markdown via Bootstrap 3, 4, or 5.
 github: rstudio/bslib
 image: logo.png
+color: "#2C0A33"
 languages:
 - SCSS
 latest_release: '2026-01-26T16:25:01+00:00'
@@ -12,18 +13,18 @@ people:
 - Winston Chang
 - Barret Schloerke
 - Liz Nelson
-- Carlos Scheidegger
 - Lionel Henry
+- Carlos Scheidegger
 title: bslib
 website: https://rstudio.github.io/bslib/
 
 external:  # updated automatically, do not edit
   description: Tools for theming Shiny and R Markdown via Bootstrap 3, 4, or 5.
   first_commit: '2019-11-01T22:21:50+00:00'
-  forks: 66
+  forks: 67
   languages:
   - SCSS
-  last_updated: '2026-02-27T17:14:02.715402+00:00'
+  last_updated: '2026-03-05T16:15:29.225165+00:00'
   latest_release: '2026-01-26T16:25:01+00:00'
   license: NOASSERTION
   people:
@@ -33,8 +34,8 @@ external:  # updated automatically, do not edit
   - Winston Chang
   - Barret Schloerke
   - Liz Nelson
-  - Carlos Scheidegger
   - Lionel Henry
+  - Carlos Scheidegger
   readme_image: man/figures/logo.png
   repo: rstudio/bslib
   stars: 551

@@ -2,14 +2,16 @@
 description: Quantify extrapolation of new samples given a training set
 github: tidymodels/applicable
 image: logo.png
+color: "#62BC3D"
 languages:
 - R
-latest_release: '2024-04-24T17:26:35+00:00'
+latest_release: '2026-02-26T03:05:08+00:00'
 people:
 - Max Kuhn
 - Emil Hvitfeldt
 - Julia Silge
 - Hannah Frick
+- Jeroen Janssens
 title: applicable
 website: https://applicable.tidymodels.org/
 
@@ -19,14 +21,15 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.164292+00:00'
-  latest_release: '2024-04-24T17:26:35+00:00'
+  last_updated: '2026-03-05T16:22:54.379847+00:00'
+  latest_release: '2026-02-26T03:05:08+00:00'
   license: NOASSERTION
   people:
   - Max Kuhn
   - Emil Hvitfeldt
   - Julia Silge
   - Hannah Frick
+  - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/applicable
   stars: 47

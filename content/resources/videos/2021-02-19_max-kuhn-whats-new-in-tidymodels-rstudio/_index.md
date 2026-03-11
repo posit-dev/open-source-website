@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'tidymodels is a collection of packages for modeling using a tidy interface. In the last year there have been numerous improvements and extensions. This talk gives an overview of additional tuning methods, new extension packages for models and recipes, and other features.
 
@@ -88,4 +89,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qEeF-ErtUAU
   view_count: 2902
 ---
+image: thumbnail.jpg
 

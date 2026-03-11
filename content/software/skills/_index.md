@@ -1,25 +1,29 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: A collection of Claude Skills from Posit
 github: posit-dev/skills
 languages:
 - Python
 people:
 - Garrick Aden-Buie
+- Barret Schloerke
 title: skills
 website: ''
 
 external:  # updated automatically, do not edit
   description: A collection of Claude Skills from Posit
   first_commit: '2025-11-21T15:27:13+00:00'
-  forks: 4
+  forks: 8
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:45.890674+00:00'
+  last_updated: '2026-03-05T16:06:42.307153+00:00'
   license: MIT
   people:
   - Garrick Aden-Buie
+  - Barret Schloerke
   repo: posit-dev/skills
-  stars: 126
+  stars: 148
   title: skills
   website: ''
 ---

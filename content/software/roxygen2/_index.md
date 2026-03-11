@@ -2,6 +2,7 @@
 description: Generate R package documentation from inline R comments
 github: r-lib/roxygen2
 image: logo.png
+color: "#4288C5"
 languages:
 - R
 latest_release: '2025-09-03T20:12:14+00:00'
@@ -12,10 +13,11 @@ people:
 - Jenny Bryan
 - Thomas Lin Pedersen
 - Davis Vaughan
-- Christophe Dervieux
 - Neal Richardson
+- Christophe Dervieux
 - Jeroen Ooms
 - Simon Couch
+- Jeroen Janssens
 title: roxygen2
 website: https://roxygen2.r-lib.org
 
@@ -25,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 238
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.326973+00:00'
+  last_updated: '2026-03-05T16:24:51.490576+00:00'
   latest_release: '2025-09-03T20:12:14+00:00'
   license: NOASSERTION
   people:
@@ -35,13 +37,14 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Thomas Lin Pedersen
   - Davis Vaughan
-  - Christophe Dervieux
   - Neal Richardson
+  - Christophe Dervieux
   - Jeroen Ooms
   - Simon Couch
+  - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/roxygen2
-  stars: 630
+  stars: 633
   title: roxygen2
   website: https://roxygen2.r-lib.org
 ---

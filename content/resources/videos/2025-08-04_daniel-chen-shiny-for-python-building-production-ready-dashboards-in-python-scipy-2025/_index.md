@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-08-04'
 description: 'Shiny is a framework for building web applications and data dashboards in Python.
 
@@ -92,4 +93,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=H4bbMfRlw88
   view_count: 353
 ---
+image: thumbnail.jpg
 

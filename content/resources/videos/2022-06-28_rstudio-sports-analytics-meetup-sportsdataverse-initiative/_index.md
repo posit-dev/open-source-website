@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-06-28'
 description: 'Led by Saiem Gilani, Director of Data Science and Engineering for the Houston Rockets & founder of the SportsDataverse
 
@@ -70,4 +71,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-FuEXMVbh4o
   view_count: 2228
 ---
+image: thumbnail.jpg
 

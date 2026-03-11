@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Documents to plan and discuss future development
 github: tidymodels/planning
 people:
@@ -14,7 +16,7 @@ external:  # updated automatically, do not edit
   description: Documents to plan and discuss future development
   first_commit: '2020-04-24T19:51:08+00:00'
   forks: 4
-  last_updated: '2026-02-27T17:14:11.358707+00:00'
+  last_updated: '2026-03-05T16:23:19.020772+00:00'
   license: MIT
   people:
   - Max Kuhn

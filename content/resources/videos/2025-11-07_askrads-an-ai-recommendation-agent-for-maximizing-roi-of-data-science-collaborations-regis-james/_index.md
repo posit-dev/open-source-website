@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'AskRADS: An AI Recommendation Agent for Maximizing the ROI of Data Science Collaborations
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=v3CCoq7j9Tk
   view_count: 56
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-05-27'
 description: '❓Can you use Shiny in production?
 
@@ -222,4 +223,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mgCQZmJdQaI
   view_count: 2091
 ---
+image: thumbnail.jpg
 

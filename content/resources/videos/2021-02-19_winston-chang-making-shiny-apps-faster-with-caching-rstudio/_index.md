@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Shiny''s 1.6 has a new function, bindCache(), which makes it easy to dramatically speed up reactive expressions and output rendering functions. This allows many applications to scale up to serve several times more users without an increase in server resources.
 
@@ -102,4 +103,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=diZ4Sdn7d0Q
   view_count: 2431
 ---
+image: thumbnail.jpg
 

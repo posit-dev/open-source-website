@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'This talk demonstrates how the formr study framework extends the power and flexibility of R to surveys. Using R and RMarkdown code, researchers and teachers can use the formr platform to generate both simple surveys and complex studies with individualized feedback. The platform is built on a web-based application programming interface for R via OpenCPU, enabling complex features such as automated email and text message reminders, adaptive testing, graphical and interactive feedback, and integration with external data sources. In this talk, I introduce some of the formr basics and showcase two examples of how I have used it, including making conjoint surveys with randomized images and timed, randomized quizzes for my students.
 
@@ -86,4 +87,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_dW7QIjH3tc
   view_count: 3241
 ---
+image: thumbnail.jpg
 

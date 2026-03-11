@@ -2,9 +2,10 @@
 description: A drop-in replacement for dplyr, powered by DuckDB for speed.
 github: tidyverse/duckplyr
 image: logo.png
+color: "#FBEB1E"
 languages:
 - R
-latest_release: '2025-11-03T23:28:28+00:00'
+latest_release: '2026-02-24T22:07:23+00:00'
 people:
 - Davis Vaughan
 - Hadley Wickham
@@ -16,11 +17,11 @@ website: https://duckplyr.tidyverse.org/
 external:  # updated automatically, do not edit
   description: A drop-in replacement for dplyr, powered by DuckDB for speed.
   first_commit: '2022-11-29T08:20:48+00:00'
-  forks: 26
+  forks: 27
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.672304+00:00'
-  latest_release: '2025-11-03T23:28:28+00:00'
+  last_updated: '2026-03-05T16:21:44.895824+00:00'
+  latest_release: '2026-02-24T22:07:23+00:00'
   license: NOASSERTION
   people:
   - Davis Vaughan
@@ -29,7 +30,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/duckplyr
-  stars: 373
+  stars: 376
   title: duckplyr
   website: https://duckplyr.tidyverse.org/
 ---

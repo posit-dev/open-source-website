@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-12-13'
 description: 'R en la Administración Pública & informes de técnicas psicométricas con R Markdown | RStudio
 
@@ -108,4 +109,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vIiQJY5V__E
   view_count: 745
 ---
+image: thumbnail.jpg
 

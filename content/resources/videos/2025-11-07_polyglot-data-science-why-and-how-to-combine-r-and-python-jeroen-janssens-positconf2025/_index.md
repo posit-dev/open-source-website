@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Polyglot Data Science: Why and How to Combine R and Python
 
@@ -59,4 +60,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4Lg6g1WA7Fw
   view_count: 261
 ---
+image: thumbnail.jpg
 

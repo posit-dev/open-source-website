@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-26'
 description: 'Most organizations are unfamiliar with the R programming language. As a result they often struggle to onboard and manage R in production. In this webinar we introduce the RStudio Quickstart which makes it easy to try RStudio professional products on your desktop for free. We also outline best practices for using R and RStudio in production.
 
@@ -91,4 +92,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=siIw5OHVR_o
   view_count: 1800
 ---
+image: thumbnail.jpg
 

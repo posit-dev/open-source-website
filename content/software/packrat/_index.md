@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Packrat is a dependency management system for R
 github: rstudio/packrat
 languages:
@@ -19,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 89
   languages:
   - R
-  last_updated: '2026-02-27T17:13:59.263432+00:00'
+  last_updated: '2026-03-05T16:08:35.747370+00:00'
   latest_release: '2025-06-16T19:36:33+00:00'
   people:
   - Joe Cheng

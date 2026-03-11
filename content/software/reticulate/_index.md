@@ -2,6 +2,7 @@
 description: R Interface to Python
 github: rstudio/reticulate
 image: reticulated_python.png
+color: "#2164B5"
 languages:
 - R
 latest_release: '2026-02-13T12:55:36+00:00'
@@ -24,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 347
   languages:
   - R
-  last_updated: '2026-02-27T17:14:00.772912+00:00'
+  last_updated: '2026-03-05T16:11:39.283126+00:00'
   latest_release: '2026-02-13T12:55:36+00:00'
   license: Apache-2.0
   people:

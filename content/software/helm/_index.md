@@ -1,9 +1,11 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Helm Resources for Posit Products
 github: rstudio/helm
 languages:
 - Markdown
-latest_release: '2026-02-11T15:11:35+00:00'
+latest_release: '2026-03-03T23:25:14+00:00'
 people:
 - Neal Richardson
 title: helm
@@ -15,8 +17,8 @@ external:  # updated automatically, do not edit
   forks: 35
   languages:
   - Markdown
-  last_updated: '2026-02-27T17:14:03.663686+00:00'
-  latest_release: '2026-02-11T15:11:35+00:00'
+  last_updated: '2026-03-05T16:17:17.523629+00:00'
+  latest_release: '2026-03-03T23:25:14+00:00'
   license: MIT
   people:
   - Neal Richardson

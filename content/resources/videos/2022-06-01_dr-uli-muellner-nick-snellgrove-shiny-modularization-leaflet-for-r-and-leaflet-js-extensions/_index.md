@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-06-01'
 description: 'Shiny modularization, Leaflet for R and Leaflet JS extensions
 
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=eKWXvXf0kwo
   view_count: 1304
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Materials collected from the First Shiny Developer Conference Palo Alto,
   CA January 30-31 2016
 github: rstudio/ShinyDeveloperConference
@@ -16,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 328
   languages:
   - HTML
-  last_updated: '2026-02-27T17:14:00.366129+00:00'
+  last_updated: '2026-03-05T16:10:45.350119+00:00'
   people:
   - Joe Cheng
   repo: rstudio/ShinyDeveloperConference

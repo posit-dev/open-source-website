@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Building Multilingual Data Science Teams
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=frxq6fz1JbM
   view_count: 244
 ---
+image: thumbnail.jpg
 

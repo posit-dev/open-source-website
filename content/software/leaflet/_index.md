@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: R Interface to Leaflet Maps
 github: rstudio/leaflet
 languages:
@@ -21,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 506
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:13:59.706601+00:00'
+  last_updated: '2026-03-05T16:09:33.261895+00:00'
   latest_release: '2025-09-04T11:43:34+00:00'
   license: NOASSERTION
   people:

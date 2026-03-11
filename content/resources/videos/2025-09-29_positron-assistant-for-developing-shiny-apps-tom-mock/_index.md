@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-09-29'
 description: 'Positron Assistant for Developing Shiny Apps - Tom Mock (Posit)
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4IU72IExQk8
   view_count: 548
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-11-30'
 description: See the code here! https://colorado.posit.co/rsc/tay-swift-tour/r.html#in-the-limelight
 people: []
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=0px8DG9Wwxc
   view_count: 3620
 ---
+image: thumbnail.jpg
 

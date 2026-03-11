@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: R Interface for GraphFrames
 github: rstudio/graphframes
 languages:
@@ -13,7 +15,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-27T17:14:01.505352+00:00'
+  last_updated: '2026-03-05T16:13:06.704601+00:00'
   latest_release: '2018-10-30T18:58:30+00:00'
   license: Apache-2.0
   repo: rstudio/graphframes

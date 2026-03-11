@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-11'
 description: Learn more about Quarto dashboards & check out the gallery! https://quarto.org/docs/dashboards/
 people: []
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=IlKad7XDV4s
   view_count: 9023
 ---
+image: thumbnail.jpg
 

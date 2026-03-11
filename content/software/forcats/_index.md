@@ -2,6 +2,7 @@
 description: '🐈🐈🐈🐈: tools for working with categorical variables (factors)'
 github: tidyverse/forcats
 image: logo.png
+color: "#523C2E"
 languages:
 - R
 latest_release: '2025-09-24T17:08:08+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 135
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.331316+00:00'
+  last_updated: '2026-03-05T16:21:01.433333+00:00'
   latest_release: '2025-09-24T17:08:08+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +32,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/forcats
-  stars: 554
+  stars: 555
   title: forcats
   website: https://forcats.tidyverse.org/
 ---

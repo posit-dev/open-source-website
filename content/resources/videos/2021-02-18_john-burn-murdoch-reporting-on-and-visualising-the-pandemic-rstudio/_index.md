@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'John will discuss the lessons he''s learned reporting on and visualising the pandemic, including the world of difference between making charts for a technical audience and making charts for a mass audience. You''ll learn from his experience navigating the highly personal and political context within which people consume and evaluate graphics and data, and how that can help us better design and communicate with visualisations down the pipeline for the future.
 
@@ -87,4 +88,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=L5_4kuoiiKU
   view_count: 2649
 ---
+image: thumbnail.jpg
 

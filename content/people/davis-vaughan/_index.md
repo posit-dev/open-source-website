@@ -2,6 +2,7 @@
 title: "Davis Vaughan"
 image: "davis.jpeg"
 role: "Principal Software Engineer"
+affiliation: "Posit, PBC"
 social:
   bluesky: ""
   github: "DavisVaughan"

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'I''ll discuss designing a socially-conscious and socially-critical data science course. This talk will be interesting to anyone who designs or delivers educational opportunities for young data scientists. The topic is important because data science is not value neutral. Learners should understand how data and data analyses can encode biases and assumptions. Particularly when we collect data from or about people, we should ask who is privileged or disadvantaged by how we gather and analyze that data? Attendees will learn how I’ve come to design and teach data science courses that emphasize morality and ethics. They’ll also learn how I design for inclusion and work to create reflective learning environments.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=cv14A5bok7g
   view_count: 153
 ---
+image: thumbnail.jpg
 

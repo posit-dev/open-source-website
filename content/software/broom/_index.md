@@ -2,6 +2,7 @@
 description: Convert statistical analysis objects from R into tidy format
 github: tidymodels/broom
 image: logo.png
+color: "#E17817"
 languages:
 - R
 latest_release: '2025-12-03T20:26:24+00:00'
@@ -24,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 305
   languages:
   - R
-  last_updated: '2026-02-27T17:14:10.771659+00:00'
+  last_updated: '2026-03-05T16:22:03.158276+00:00'
   latest_release: '2025-12-03T20:26:24+00:00'
   license: NOASSERTION
   people:

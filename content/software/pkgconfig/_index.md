@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Private configuration for R packages
 github: r-lib/pkgconfig
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.472097+00:00'
+  last_updated: '2026-03-05T16:25:13.832839+00:00'
   latest_release: '2019-09-22T08:42:05+00:00'
   license: NOASSERTION
   people:

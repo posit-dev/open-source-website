@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Finding files in project subdirectories
 github: r-lib/rprojroot
 languages:
@@ -16,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 23
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.688996+00:00'
+  last_updated: '2026-03-05T16:25:44.975670+00:00'
   latest_release: '2025-08-26T15:22:36+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-09-24'
 description: 'We''re thrilled to have you on board as we continue to explore Positron, Posit''s new Integrated Development Environment. Positron is designed to streamline development workflows and reduce context switching for data scientists working with Python, R, and other languages.
 
@@ -108,4 +109,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mru9z50IOhI
   view_count: 5735
 ---
+image: thumbnail.jpg
 

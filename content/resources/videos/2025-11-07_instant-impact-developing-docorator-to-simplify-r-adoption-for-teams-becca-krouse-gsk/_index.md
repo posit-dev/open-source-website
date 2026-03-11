@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Instant Impact: Developing {docorator} to Simplify R Adoption for Teams
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=SWt-lcnYlNM
   view_count: 128
 ---
+image: thumbnail.jpg
 

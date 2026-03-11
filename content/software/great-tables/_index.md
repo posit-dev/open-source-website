@@ -2,9 +2,10 @@
 description: Make awesome display tables using Python
 github: posit-dev/great-tables
 image: great-tables.svg
+color: "#FA00C3"
 languages:
 - Python
-latest_release: '2025-10-31T20:52:40+00:00'
+latest_release: '2026-03-02T20:52:39+00:00'
 people:
 - Rich Iannone
 - Michael Chow
@@ -23,8 +24,8 @@ external:  # updated automatically, do not edit
   forks: 119
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:44.108838+00:00'
-  latest_release: '2025-10-31T20:52:40+00:00'
+  last_updated: '2026-03-05T16:03:01.562432+00:00'
+  latest_release: '2026-03-02T20:52:39+00:00'
   license: MIT
   people:
   - Rich Iannone
@@ -34,7 +35,7 @@ external:  # updated automatically, do not edit
   - Carlos Scheidegger
   readme_image: https://posit-dev.github.io/great-tables/assets/GT_logo.svg
   repo: posit-dev/great-tables
-  stars: 2611
+  stars: 2614
   title: great-tables
   website: https://posit-dev.github.io/great-tables/
 ---

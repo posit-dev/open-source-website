@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Shiny is a package that makes it easy to create interactive web apps using R. It''s hard to believe, but it''s been ten whole years since the launch of Shiny! I''ll mark the occasion by sharing some stories about the creation of Shiny, the conditions that have made it a success over the years, and our plans for the near future.
 
@@ -89,4 +90,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=HpqLXB_TnpI
   view_count: 11795
 ---
+image: thumbnail.jpg
 

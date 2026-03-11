@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-11-21'
 description: 'We were recently joined by David Sluder, Data Science Sr. Program Manager at Institute of Nuclear Power Operations to to talk about what he’s learned from helping build out a new data science capability in a nuclear power organization.
 
@@ -73,4 +74,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=SEKI8N48ZbM
   view_count: 280
 ---
+image: thumbnail.jpg
 

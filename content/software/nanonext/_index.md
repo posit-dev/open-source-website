@@ -2,6 +2,7 @@
 description: R binding for NNG (Nanomsg Next Gen)
 github: r-lib/nanonext
 image: logo.png
+color: "#4AA1BF"
 languages:
 - C
 latest_release: '2026-02-09T19:24:09+00:00'
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - C
-  last_updated: '2026-02-27T17:14:19.589609+00:00'
+  last_updated: '2026-03-05T16:30:04.638668+00:00'
   latest_release: '2026-02-09T19:24:09+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +28,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/nanonext
-  stars: 77
+  stars: 79
   title: nanonext
   website: https://nanonext.r-lib.org/
 ---

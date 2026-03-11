@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-19'
 description: July 2022 in Washington DC
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=M6fis3yvygc
   view_count: 314
 ---
+image: thumbnail.jpg
 

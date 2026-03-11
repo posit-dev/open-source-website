@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-11-11'
 description: "From Kenya to Kentucky to outer space. Open source is changing the world. And so can you. \n\nLearn more at Posit.co"
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=IkbpZZsm87U
   view_count: 2133
 ---
+image: thumbnail.jpg
 

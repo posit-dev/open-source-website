@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-11-29'
 description: 'Please join us for the live Q&A session for the November 29th Workflow Demo - this will start immediately following the "Machine learning workflow with Python & Posit Team" session here: https://youtu.be/EGJ9DRJI4dY
 
@@ -41,4 +42,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=zhN8IZUBCAg
   view_count: 457
 ---
+image: thumbnail.jpg
 

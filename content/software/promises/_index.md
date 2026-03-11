@@ -2,6 +2,7 @@
 description: A promise library for R
 github: rstudio/promises
 image: logo.svg
+color: "#F0DB4F"
 languages:
 - R
 latest_release: '2025-11-05T18:06:35+00:00'
@@ -22,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - R
-  last_updated: '2026-02-27T17:14:00.860805+00:00'
+  last_updated: '2026-03-05T16:11:50.885954+00:00'
   latest_release: '2025-11-05T18:06:35+00:00'
   license: NOASSERTION
   people:

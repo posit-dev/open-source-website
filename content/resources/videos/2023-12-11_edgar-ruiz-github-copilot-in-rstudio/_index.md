@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-11'
 description: 'GitHub Copilot in RStudio - Edgar Ruiz
 
@@ -55,4 +56,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-Fjb8LZmTSI
   view_count: 218
 ---
+image: thumbnail.jpg
 

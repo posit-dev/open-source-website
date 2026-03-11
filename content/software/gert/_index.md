@@ -2,6 +2,7 @@
 description: Simple git client for R
 github: r-lib/gert
 image: logo.png
+color: "#4F8DDC"
 languages:
 - C
 latest_release: '2024-07-18T11:32:08+00:00'
@@ -19,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 36
   languages:
   - C
-  last_updated: '2026-02-27T17:14:18.840748+00:00'
+  last_updated: '2026-03-05T16:28:23.657716+00:00'
   latest_release: '2024-07-18T11:32:08+00:00'
   license: NOASSERTION
   people:

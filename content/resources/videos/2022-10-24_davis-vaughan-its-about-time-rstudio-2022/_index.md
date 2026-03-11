@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Dealing with date-times is hard. Dealing with date-times without the proper tooling is even harder! clock is an R package that aims to provide comprehensive and safe handling of date-times. It goes beyond the date and date-time types that base R provides, implementing new types for year-month, year-quarter, ISO year-week, and many other date-like formats, all with up to nanosecond precision. In this talk, you''ll see how clock emphasizes "safety first" when manipulating date-times, and how these new date-time types can be used in your own work.
 
@@ -45,4 +46,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=DPU7TJZXWvo
   view_count: 305
 ---
+image: thumbnail.jpg
 

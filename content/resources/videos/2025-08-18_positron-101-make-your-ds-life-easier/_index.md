@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-08-18'
 description: 'Personally, I think the Plots pane is 🔥 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter'
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=PxMGHBJU1X4
   view_count: 5089
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In this conversation, Mine Çetinkaya-Rundel, data science educator at Duke University and Posit, joins Michael, Hadley and Wes to talk about teaching data science at a time when AI can write the code for you. Mine shares her journey from actuarial science to academia, the teaching philosophy behind the “whole game” approach, and her experiments using LLMs for instant student feedback. Along the way, the group dives into the joys and risks of coding by hand, the role of open source in the classroom, and what it’s like to work across both the R and Python communities.
 
@@ -64,4 +65,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=amqScvQ9Jq8
   view_count: 333
 ---
+image: thumbnail.jpg
 

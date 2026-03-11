@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-10-05'
 description: 'We were recently joined by Anderson (Andey) Nunes-Brewster, EMS & Trauma Research Analyst at the Oregon Health Authority to managing a trauma data system and facilitating program improvements, while supporting decision makers.
 
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=8WWA6BOD3tc
   view_count: 286
 ---
+image: thumbnail.jpg
 

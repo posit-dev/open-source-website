@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-02-27'
 description: 'We were recently joined by Brad Zielke, Sr. Director Data Sciences at Target to chat about Data Sciences in Operations and supply chain at a Fortune 100 company.
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=LXFhfplgFAM
   view_count: 535
 ---
+image: thumbnail.jpg
 

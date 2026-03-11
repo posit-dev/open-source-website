@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Using Quarto to Improve Formatting and Automate the Generation of Hundreds of Reports
 
@@ -59,4 +60,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vHrI17AeYGs
   view_count: 627
 ---
+image: thumbnail.jpg
 

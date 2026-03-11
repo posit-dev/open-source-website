@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Visual regression testing and graphical diffing with testthat
 github: r-lib/vdiffr
 languages:
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 37
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:17.902416+00:00'
+  last_updated: '2026-03-05T16:26:14.003130+00:00'
   latest_release: '2026-02-13T12:48:44+00:00'
   license: NOASSERTION
   people:

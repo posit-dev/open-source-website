@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: "When gathering data from groups (e.g., surveys), where does it go, and who does it help? How can we deliver value directly back to all survey participants, not just top organizational decision-makers? \n\n In this talk, I discuss re-designing how we report on organizational feedback surveys, moving from a top-down to a bottom-up approach to organizational change. Interactive dashboards can make data and feedback accessible to all. This tackles challenges with data quality, privacy, and power - allowing everyone to benefit directly from their data. I examine how Quarto and Shiny enable the creation of \"flipped reports\", and describe takeaways from implementing them with two Fortune 500 companies. \n\n This talk teaches how personalized tools can make data accessible to all, and can alter the power dynamics around how organizations enact change.\n\nTalk by Brennan Antone\n\n\nSlides: https://github.com/BrennanAntone/positconf24\nProfessional Website: https://brennanantone.com/"
 people: []
@@ -30,4 +31,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ceW3nQssV88
   view_count: 363
 ---
+image: thumbnail.jpg
 

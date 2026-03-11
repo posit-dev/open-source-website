@@ -2,6 +2,7 @@
 description: Version, share, deploy, and monitor models.
 github: rstudio/vetiver-python
 image: logo.png
+color: "#F3CBAC"
 languages:
 - Python
 latest_release: '2024-12-17T02:43:43+00:00'
@@ -19,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - Python
-  last_updated: '2026-02-27T17:14:03.788486+00:00'
+  last_updated: '2026-03-05T16:17:31.950092+00:00'
   latest_release: '2024-12-17T02:43:43+00:00'
   license: MIT
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-09-11'
 description: 'If you’re an Apache Spark user, you benefit from its speed and scalability for big data processing.
 
@@ -132,4 +133,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=rz5j4bhHYIg
   view_count: 1503
 ---
+image: thumbnail.jpg
 

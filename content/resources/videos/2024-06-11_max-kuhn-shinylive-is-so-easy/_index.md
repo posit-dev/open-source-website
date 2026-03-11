@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-11'
 description: 'SHINYLIVE IS SO EASY by Max Kuhn
 
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=8SHTj5QYQuc
   view_count: 2114
 ---
+image: thumbnail.jpg
 

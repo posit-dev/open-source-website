@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-11'
 description: 'Serverless Quarto - Max Kuhn
 
@@ -61,4 +62,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=1mq9YgAEdXU
   view_count: 323
 ---
+image: thumbnail.jpg
 

@@ -2,6 +2,7 @@
 description: Static Code Analysis for R
 github: r-lib/lintr
 image: logo.png
+color: "#0699CE"
 languages:
 - R
 latest_release: '2025-11-27T15:14:26+00:00'
@@ -18,10 +19,10 @@ website: https://lintr.r-lib.org
 external:  # updated automatically, do not edit
   description: Static Code Analysis for R
   first_commit: '2014-09-28T02:48:15+00:00'
-  forks: 196
+  forks: 197
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.543461+00:00'
+  last_updated: '2026-03-05T16:25:24.746892+00:00'
   latest_release: '2025-11-27T15:14:26+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +34,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: r-lib/lintr
-  stars: 1269
+  stars: 1270
   title: lintr
   website: https://lintr.r-lib.org
 ---

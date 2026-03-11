@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-11-27'
 description: 'Nick Pelikan, Senior Solution Architect at Posit highlighted how you can:
 
@@ -80,4 +81,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=pnEjYNgOG9c
   view_count: 2006
 ---
+image: thumbnail.jpg
 

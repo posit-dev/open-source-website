@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This session highlights two anomaly detection use cases in production: identification of problematic life sciences manufacturing units and identification of significant newsworthy events. With both solutions, Shiny is integrated with live data to provide early detection for proactive intervention. Shiny’s intuitive user interface also allows for interaction with the data behind anomalies to uncover potential causes and paths to action or resolution.
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=6NH3Hxk3fWM
   view_count: 409
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: R Interface to the jQuery Plug-in DataTables
 github: rstudio/DT
 languages:
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 179
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:13:59.724859+00:00'
+  last_updated: '2026-03-05T16:09:36.322164+00:00'
   latest_release: '2025-09-03T13:49:20+00:00'
   license: NOASSERTION
   people:

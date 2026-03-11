@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Read Non-Rectangular Text Data
 github: r-lib/meltr
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:19.553989+00:00'
+  last_updated: '2026-03-05T16:29:57.985629+00:00'
   latest_release: '2022-09-10T19:37:00+00:00'
   license: NOASSERTION
   people:

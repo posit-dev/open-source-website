@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: cpp11 helps you to interact with R objects using C++ code.
 github: r-lib/cpp11
 languages:
@@ -21,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 54
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:19.305498+00:00'
+  last_updated: '2026-03-05T16:29:26.495396+00:00'
   latest_release: '2026-01-20T19:57:34+00:00'
   license: NOASSERTION
   people:

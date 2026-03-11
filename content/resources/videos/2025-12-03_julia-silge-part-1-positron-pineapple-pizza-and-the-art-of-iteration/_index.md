@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In part one of our conversation with Julia Silge, astronomer-turned–data science leader, we explore why data science needs a different kind of IDE. Julia takes us inside Positron, Posit’s next-generation, data-scientist-first environment, and unpacks the day-to-day realities that make data science work unlike software engineering. Along the way, we get a first-hand account of a legendary pineapple-pizza protest and how to juggle multiple projects at once.
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=8E2p5o07-EI
   view_count: 543
 ---
+image: thumbnail.jpg
 

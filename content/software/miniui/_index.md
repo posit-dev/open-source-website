@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: ''
 github: rstudio/miniUI
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 28
   languages:
   - R
-  last_updated: '2026-02-27T17:14:00.131689+00:00'
+  last_updated: '2026-03-05T16:10:20.843224+00:00'
   people:
   - Joe Cheng
   - JJ Allaire

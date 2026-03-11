@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This talk presents a gathering of resources from the RStudio community for industry job-seekers who are transitioning from academia. Examples include packages for resume-building and cover letter writing, quick starts for personal websites and GitHub profiles, and helpful R networks. A new website named after the talk (wtf-aita.com) will showcase and link to the discussed resources, and is open to further community contributions.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_RwsA8zS89U
   view_count: 220
 ---
+image: thumbnail.jpg
 

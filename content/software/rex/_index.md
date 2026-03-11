@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Friendly regular expressions for R.
 github: r-lib/rex
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 28
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.525801+00:00'
+  last_updated: '2026-03-05T16:25:20.591985+00:00'
   latest_release: '2021-11-24T20:50:29+00:00'
   license: NOASSERTION
   people:

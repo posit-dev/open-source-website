@@ -1,9 +1,11 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: write YAML for R Markdown, bookdown, blogdown, and more
 github: r-lib/ymlthis
 languages:
 - R
-latest_release: '2022-08-04T13:16:24+00:00'
+latest_release: '2026-02-16T23:52:38+00:00'
 people:
 - Carson Sievert
 - Rich Iannone
@@ -16,8 +18,8 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-27T17:14:19.055636+00:00'
-  latest_release: '2022-08-04T13:16:24+00:00'
+  last_updated: '2026-03-05T16:28:53.003963+00:00'
+  latest_release: '2026-02-16T23:52:38+00:00'
   license: NOASSERTION
   people:
   - Carson Sievert

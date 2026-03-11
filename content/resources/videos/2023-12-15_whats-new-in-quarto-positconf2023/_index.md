@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Charlotte Wickham\r\n\r\nIt's been over a year since Quarto 1.0, an open-source scientific and technical publishing system, was announced at rstudio::conf(2022). In this talk, I'll highlight some of the improvements to Quarto since then. You'll learn about new formats, options, tools, and ways to supercharge your content. And, if you haven't used Quarto yet, come to see some reasons to try it out.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Quarto (1).\r\nSession Code: TALK-1072"
 people:
@@ -79,4 +80,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WR08GESib9Y
   view_count: 2386
 ---
+image: thumbnail.jpg
 

@@ -2,14 +2,15 @@
 description: Positron, a next-generation data science IDE
 github: posit-dev/positron
 image: positron.png
+color: "#3C74B3"
 languages:
 - TypeScript
-latest_release: '2026-01-28T21:46:35+00:00'
+latest_release: '2026-02-26T00:19:35+00:00'
 people:
-- Isabel Zimmerman
 - Julia Silge
-- Lionel Henry
+- Isabel Zimmerman
 - Nick Strayer
+- Lionel Henry
 - Daniel Falbel
 - Davis Vaughan
 - JJ Allaire
@@ -27,14 +28,14 @@ external:  # updated automatically, do not edit
   forks: 141
   languages:
   - TypeScript
-  last_updated: '2026-02-27T17:13:44.126414+00:00'
-  latest_release: '2026-01-28T21:46:35+00:00'
+  last_updated: '2026-03-05T16:03:04.986230+00:00'
+  latest_release: '2026-02-26T00:19:35+00:00'
   license: NOASSERTION
   people:
-  - Isabel Zimmerman
   - Julia Silge
-  - Lionel Henry
+  - Isabel Zimmerman
   - Nick Strayer
+  - Lionel Henry
   - Daniel Falbel
   - Davis Vaughan
   - JJ Allaire
@@ -45,7 +46,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   readme_image: positron-product-icons/positron.png
   repo: posit-dev/positron
-  stars: 3979
+  stars: 3992
   title: positron
   website: https://positron.posit.co
 ---

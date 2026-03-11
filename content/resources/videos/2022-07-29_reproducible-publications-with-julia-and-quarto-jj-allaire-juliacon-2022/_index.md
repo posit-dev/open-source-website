@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-07-29'
 description: 'Quarto is an open-source scientific and technical publishing system that builds on standard markdown with features essential for scientific communication. The system has support for reproducible embedded computations, equations, citations, crossrefs, figure panels, callouts, advanced layout, and more. In this talk we''ll explore the use of Quarto with Julia, describing both integration with IJulia and the Julia VS Code extension, as well as areas for future improvement and exploration.
 
@@ -148,4 +149,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Y1uKNO32H_I
   view_count: 12076
 ---
+image: thumbnail.jpg
 

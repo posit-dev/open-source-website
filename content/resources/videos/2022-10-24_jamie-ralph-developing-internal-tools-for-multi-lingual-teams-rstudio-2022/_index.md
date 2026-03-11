@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Internal packages are great for boosting productivity and promoting good practice, but what kinds of challenges do we face when designing solutions for multi-lingual teams? Here I will advocate for a design approach we are using at Bumble to build Python and R packages with the same foundations. I will discuss the benefits of this approach for the developer and the wider organisation.
 
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=iEL1uLbiFys
   view_count: 194
 ---
+image: thumbnail.jpg
 

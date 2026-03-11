@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Carlos Scheidegger\r\n\r\nQuarto 1.4 will introduce support for Typst. Typst is a brand-new open-source typesetting system built from scratch to support the lessons we have learned over almost half a century of high-quality computer typesetting that TeX and LaTeX have enabled. If you've ever had to produce a PDF with Quarto and got stuck handling an inscrutable error message from LaTeX, or wanted to create a new template but were too intimated by LaTeX's arcane syntax, this talk is for you. I'll show you why we need an alternative for TeX and LaTeX , and why it will make Quarto even better.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Quarto (2).\r\nSession Code: TALK-1142"
 people:
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=t30sqFch2v0
   view_count: 12204
 ---
+image: thumbnail.jpg
 

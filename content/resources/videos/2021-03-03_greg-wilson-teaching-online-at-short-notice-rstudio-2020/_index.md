@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-03'
 description: 'So here you are: you planned to teach your class or deliver your workshop in person, and now you have to do it online or not at all.
 
@@ -99,4 +100,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-2enQV3Dfng
   view_count: 887
 ---
+image: thumbnail.jpg
 

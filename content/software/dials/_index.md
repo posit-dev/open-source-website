@@ -2,6 +2,7 @@
 description: Tools for creating tuning parameter values
 github: tidymodels/dials
 image: logo.png
+color: "#412817"
 languages:
 - R
 latest_release: '2025-09-04T09:26:12+00:00'
@@ -23,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 33
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.022437+00:00'
+  last_updated: '2026-03-05T16:22:36.230699+00:00'
   latest_release: '2025-09-04T09:26:12+00:00'
   license: NOASSERTION
   people:

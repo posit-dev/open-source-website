@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-09'
 description: "Register now: http://pos.it/conf\nInstructors: Posit Academy Instructors\nWorkshop Duration: 2-Day Workshop\n\nThis course is ideal for: \n•   those new to R or the Tidyverse\n•   anyone who has dabbled in R, but now wants a rigorous foundation in up-to-date data science best practices\n•   SAS and Excel users looking to switch their workflows to R\n\nThis is not a standard workshop, but a six-week online apprenticeship that culminates in two in-person days at posit::conf(2023). Begins August 7th, 2023. No knowledge of R required. Visit posit.co/academy to learn more about this uniquely effective learning format. \n\nHere, you will learn the foundations of R and the Tidyverse under the guidance of a Posit Academy mentor and in the company of a close group of fellow learners. You will be expected to complete a weekly curriculum of interactive tutorials, and to attend a weekly presentation meeting with your mentor and fellow students. Topics will include the basics of R, importing data, visualizing data with ggplot2, wrangling data with dplyr and tidyr, working with strings, factors, and date-times, modelling data with base R, and reporting reproducibly with quarto."
 people: []
@@ -80,4 +81,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Dastzmp-r1E
   view_count: 663
 ---
+image: thumbnail.jpg
 

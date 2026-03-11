@@ -2,9 +2,10 @@
 description: Ark, an R kernel
 github: posit-dev/ark
 image: logo.png
+color: "#E6B7A5"
 languages:
 - Rust
-latest_release: '2026-01-30T15:17:50+00:00'
+latest_release: '2026-03-03T20:32:26+00:00'
 people:
 - Lionel Henry
 - Davis Vaughan
@@ -23,8 +24,8 @@ external:  # updated automatically, do not edit
   forks: 25
   languages:
   - Rust
-  last_updated: '2026-02-27T17:13:44.250672+00:00'
-  latest_release: '2026-01-30T15:17:50+00:00'
+  last_updated: '2026-03-05T16:03:22.770521+00:00'
+  latest_release: '2026-03-03T20:32:26+00:00'
   license: MIT
   people:
   - Lionel Henry
@@ -37,7 +38,7 @@ external:  # updated automatically, do not edit
   - Simon Couch
   readme_image: doc/logo.png
   repo: posit-dev/ark
-  stars: 288
+  stars: 291
   title: ark
   website: ''
 ---

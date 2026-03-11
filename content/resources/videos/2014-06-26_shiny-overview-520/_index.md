@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2014-06-26'
 description: An overview of RStudio Shiny
 people: []
@@ -33,4 +34,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=c1sEvi_qrY4
   view_count: 9410
 ---
+image: thumbnail.jpg
 

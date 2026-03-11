@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-12'
 description: 'We were recently joined by Josh King, Director of Marketing Data Science & Analytics at The Knot Worldwide.
 
@@ -157,4 +158,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ql4uO9bw-TE
   view_count: 1174
 ---
+image: thumbnail.jpg
 

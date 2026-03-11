@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Patrick Tennant\r\n\r\nHow should you respond when your boss has too many good ideas for data science projects? In this talk, I'll review our use of an adapted version of the Eisenhower Matrix that lays out our projects according to the effort required and the value they will produce. Given the functionally unlimited number of data science projects a team could do, learn how we keep our team focused on valuable work while reducing the stress of a never-ending list of projects.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Building effective data science teams.\r\nSession Code: TALK-1065"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ywuzUVSvQ6o
   view_count: 213
 ---
+image: thumbnail.jpg
 

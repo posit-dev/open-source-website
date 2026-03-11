@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: "In clinical trials, we work in interdisciplinary teams where the discussion of outputs is often facilitated using static documents. We wanted to bring the advantages of modern tools (R, markdown, git) and software development practices to the production of company documents. We used an object-oriented approach to create classes for report items with a suite of tests. Finally, the report is rendered programmatically in docx format using a company template. This enables our statisticians to work in a truly end-to-end fashion within a GxP environment with the end product in a format suitable for interdisciplinary collaboration. We are currently piloting this package internally before we release it in the open-source community.\n\nTalk by Orla Doyle\n\nThis talk has also be presented under the title \"Automated Reporting With Quarto: Beyond Copy And Paste\". \n\n\nSlides: https://orladoylenvs.github.io/positconf24_rdocx/"
 people: []
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=HoTl0oYUX3c
   view_count: 2139
 ---
+image: thumbnail.jpg
 

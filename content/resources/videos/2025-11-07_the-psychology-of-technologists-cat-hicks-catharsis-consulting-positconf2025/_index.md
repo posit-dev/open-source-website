@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'The Psychology of Technologists
 
@@ -73,4 +74,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=B-bMX_l3nkk
   view_count: 1616
 ---
+image: thumbnail.jpg
 

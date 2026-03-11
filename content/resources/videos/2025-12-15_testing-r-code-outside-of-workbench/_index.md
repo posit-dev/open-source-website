@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-15'
 description: In this video, we walk through the process of testing R code outside of Posit Workbench. This can help determine if issues are related to R or related to the Posit product.
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=woJBoCvu7v8
   view_count: 153
 ---
+image: thumbnail.jpg
 

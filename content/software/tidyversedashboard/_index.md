@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Tidyverse activity dashboard
 github: tidyverse/tidyversedashboard
 languages:
@@ -14,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 24
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.526539+00:00'
+  last_updated: '2026-03-05T16:21:29.599618+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

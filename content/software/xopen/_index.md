@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Open System Files, URLs, Anything
 github: r-lib/xopen
 languages:
@@ -16,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 3
   languages:
   - Shell
-  last_updated: '2026-02-27T17:14:18.769848+00:00'
+  last_updated: '2026-03-05T16:28:15.174786+00:00'
   latest_release: '2024-04-25T08:48:47+00:00'
   license: NOASSERTION
   people:

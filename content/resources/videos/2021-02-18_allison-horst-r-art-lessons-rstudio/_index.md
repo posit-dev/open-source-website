@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'Art can be a welcoming bridge for learners and users to engage with and learn tools and skills in R. As RStudio’s first Artist-in-Residence, my goal has been to make the R landscape more welcoming for a broader community of users through engaging, didactic artwork. In this R, art, and heart-filled talk, I’ll share the motivation behind my R artwork and some lessons learned over the past year as Artist-in-Residence, including:
 
@@ -101,4 +102,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Si-luPC7cdA
   view_count: 981
 ---
+image: thumbnail.jpg
 

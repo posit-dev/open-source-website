@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2017-08-02'
 description: There is a lot happening at R Consortium! There are now 15 members, including the Gordon and Betty Moore Foundation which joined this year as a Platinum member, 21 active projects and a fired- up grant process. This March the ISC awarded grants to 10 new projects totaling nearly $240,000. In this talk they describe how the R Consortium is evolving to carry out its mission to provide support for the R language, the R Foundation and the R Community.
 people: []
@@ -29,4 +30,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=siYREBTzZTQ
   view_count: 140
 ---
+image: thumbnail.jpg
 

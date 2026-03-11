@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'George Stagg, Winston Chang, and Tomasz Kalinowski introduce AI capabilities in Positron, including Positron Assistant, a tool still in preview that enhances coding and data analysis.
 
@@ -79,4 +80,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9ZW2tx5fHjk
   view_count: 1517
 ---
+image: thumbnail.jpg
 

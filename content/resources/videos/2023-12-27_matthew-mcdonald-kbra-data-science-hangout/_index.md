@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-27'
 description: 'We were recently joined by Matt McDonald, Senior Managing Director at Kroll Bond Rating Agency (KBRA) to chat about “punching above your weight  and running a small, effective data science team.
 
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=x5EF8b2lvcI
   view_count: 449
 ---
+image: thumbnail.jpg
 

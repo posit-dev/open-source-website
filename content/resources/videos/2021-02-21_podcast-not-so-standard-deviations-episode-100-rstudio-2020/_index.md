@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-21'
 description: 'Featuring: Hilary Parker & Roger Peng
 
@@ -100,4 +101,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=1KT3eLcOIL4
   view_count: 1368
 ---
+image: thumbnail.jpg
 

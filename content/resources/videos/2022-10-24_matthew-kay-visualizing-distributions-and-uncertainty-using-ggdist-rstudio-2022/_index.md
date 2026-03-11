@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'I propose a talk on visualizing distributions and uncertainty using {ggdist}. I will describe how to think systematically about distributional visualization as mappings of PDFs, CDFs, and quantile functions onto aesthetics, and how support for this enables creative and easy exploration of the space of possible uncertainty visualizations. I will highlight features like true gradient support in R 4.1, support for distribution vector datatypes, and the automatic binwidth- selecting geom_dots(). I expect to leave the audience with: (1) a systemic way to think about visualizing distributions and uncertainty in the grammar of graphics and (2) an understanding of how to actually do it using ggdist.
 
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ChwczkfFsXM
   view_count: 710
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This talk marks the grand introduction of tidyclust, a new package that provides a tidy unified interface to clustering model within the tidymodels framework.
 
@@ -47,4 +48,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vsXJBO6-nQk
   view_count: 4153
 ---
+image: thumbnail.jpg
 

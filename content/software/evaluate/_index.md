@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: A version of eval for R that returns more information about what happened
 github: r-lib/evaluate
 languages:
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 36
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.210238+00:00'
+  last_updated: '2026-03-05T16:24:28.531998+00:00'
   latest_release: '2025-08-27T16:20:44+00:00'
   license: NOASSERTION
   people:

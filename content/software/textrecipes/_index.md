@@ -2,6 +2,7 @@
 description: Extra recipes for Text Processing
 github: tidymodels/textrecipes
 image: logo.png
+color: "#68CEA5"
 languages:
 - R
 latest_release: '2025-03-18T15:37:10+00:00'
@@ -21,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.057938+00:00'
+  last_updated: '2026-03-05T16:22:40.160811+00:00'
   latest_release: '2025-03-18T15:37:10+00:00'
   license: NOASSERTION
   people:

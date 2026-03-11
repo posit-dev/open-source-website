@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-11-14'
 description: Learn more about what's happening at URSA labs at https://wesmckinney.com/archives.html
 people: []
@@ -70,4 +71,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=f45F36fPg6I
   view_count: 997
 ---
+image: thumbnail.jpg
 

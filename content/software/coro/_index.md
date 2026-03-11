@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Coroutines for R
 github: r-lib/coro
 languages:
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.503758+00:00'
+  last_updated: '2026-03-05T16:27:36.271503+00:00'
   latest_release: '2024-11-05T09:52:00+00:00'
   license: NOASSERTION
   people:

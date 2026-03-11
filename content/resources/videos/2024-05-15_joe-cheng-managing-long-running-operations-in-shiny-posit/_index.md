@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-05-15'
 description: 'It’s been years since Shiny evolved to allow asynchronous operations within applications, improving scalability. The introduction of the {promises} package enabled concurrent processing between multiple Shiny sessions, a significant step forward in handling background tasks. However, this did not address the need for intra-session concurrency, where users expect to interact with the application while long-running calculations are executed in the background.
 
@@ -165,4 +166,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=GhX0PcEm3CY
   view_count: 4650
 ---
+image: thumbnail.jpg
 

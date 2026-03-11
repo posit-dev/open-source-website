@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-11-12'
 description: 'Long form discussion: https://www.tylermw.com/3d-printing-rayshader/'
 people: []
@@ -70,4 +71,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=sB8CYGlPN0o
   view_count: 2708
 ---
+image: thumbnail.jpg
 

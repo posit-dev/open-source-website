@@ -2,6 +2,7 @@
 description: Additional functions for model tuning
 github: tidymodels/finetune
 image: logo.png
+color: "#361535"
 languages:
 - R
 latest_release: '2025-05-20T21:08:32+00:00'
@@ -22,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.464334+00:00'
+  last_updated: '2026-03-05T16:23:30.548730+00:00'
   latest_release: '2025-05-20T21:08:32+00:00'
   license: NOASSERTION
   people:

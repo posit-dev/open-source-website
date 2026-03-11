@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2018-10-16'
 description: 'What is the 2-day Intermediate Shiny Workshop? That''s a great question, I''m glad you asked....
 
@@ -81,4 +82,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=U3ZaNcSkttw
   view_count: 615
 ---
+image: thumbnail.jpg
 

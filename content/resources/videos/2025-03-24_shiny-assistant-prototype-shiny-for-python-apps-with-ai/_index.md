@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-03-24'
 description: 'Ryan Johnson walks through how to use Shiny Assistant, an AI-powered tool for Shiny for Python app development. Learn how to quickly create and interact with a Shiny app based on your own description. Shiny Assistant is a powerful tool for rapid prototyping and iteration. You can also ask it questions about how to use Shiny.
 
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=yBl8UdSav5Y
   view_count: 1309
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-01'
 description: 'We''ve added a Databricks driver to our Professional Drivers. The RStudio Connections Pane allows users to connect to their Databricks clusters from the IDE. Select the Databricks driver from the list of available drivers. Select the Driver to establish the connection. The driver can be used with the new databricks() function from the odbc package to connect to Databricks clusters and SQL warehouses.
 
@@ -102,4 +103,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=IUO-FT_Lz3o
   view_count: 471
 ---
+image: thumbnail.jpg
 

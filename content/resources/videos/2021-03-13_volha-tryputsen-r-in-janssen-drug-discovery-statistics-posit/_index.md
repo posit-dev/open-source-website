@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-13'
 description: 'From rstudio::global(2021) Pharma X-Sessions, sponsored by ProCogia: this talk discusses how R is utilized in the Janssen drug discovery statistics workflow.
 
@@ -91,4 +92,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=oT8v7a2R9lA
   view_count: 2579
 ---
+image: thumbnail.jpg
 

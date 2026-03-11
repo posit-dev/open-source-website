@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-07-26'
 description: 'Do you need help making data tables in Python look interesting and attractive? How can you create beautiful display-ready tables as easily as charts and graphs in Python? This week on the show, we speak with Richard Iannone and Michael Chow from Posit about the Great Tables Python library.
 
@@ -191,4 +192,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=B38EGlWJyfY
   view_count: 1570
 ---
+image: thumbnail.jpg
 

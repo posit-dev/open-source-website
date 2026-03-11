@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-07-13'
 description: "Doug Linsmeyer, VP of Digital Technology at PING, clarifies how he thinks about digital transformation, adopting new technologies, and how Posit Connect helps data scientists at PING continue to innovate. \n\nRead and watch the full story here: https://posit.co/about/customer-stories/ping/\n\nLearn more about Posit Connect: https://posit.co/products/enterprise/connect/"
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wQdiKDg0Odw
   view_count: 740
 ---
+image: thumbnail.jpg
 

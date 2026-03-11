@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'If you''ve ever tried to run a workshop using R, you''ll be aware of the challenges of getting everyone''s laptop set up to able to run your R scripts, Rmarkdown documents, or Jupyter Notebooks without errors.
 
@@ -56,4 +57,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ZUuPJOe2q1o
   view_count: 997
 ---
+image: thumbnail.jpg
 

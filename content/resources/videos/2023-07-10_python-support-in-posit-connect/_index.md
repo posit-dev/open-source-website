@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-07-10'
 description: 'Posit Connect: Deploy everything you create in R & Python, including interactive applications (Shiny, Streamlit, Dash), documents, notebooks, and dashboards.
 
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=V2XTPfhqbMk
   view_count: 402
 ---
+image: thumbnail.jpg
 

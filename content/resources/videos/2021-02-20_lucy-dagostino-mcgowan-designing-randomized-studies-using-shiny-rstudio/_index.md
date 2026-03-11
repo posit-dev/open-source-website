@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'This talk will walk through building a self-contained randomized study using Shiny and learnr modules. We will discuss building informed consent, the randomization process, demographic surveys, and R-based studies into a single online framework to allow users to seamlessly enroll and participate in randomized studies via a single URL. The talk will include both practical recommendations as well as technical code snippets.
 
@@ -87,4 +88,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_-hY_YIrvzQ
   view_count: 275
 ---
+image: thumbnail.jpg
 

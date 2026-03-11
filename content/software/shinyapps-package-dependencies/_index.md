@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Collection of bash scripts that install R package system dependencies
 github: rstudio/shinyapps-package-dependencies
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 57
   languages:
   - R
-  last_updated: '2026-02-27T17:13:59.511828+00:00'
+  last_updated: '2026-03-05T16:09:09.706814+00:00'
   license: NOASSERTION
   people:
   - JJ Allaire

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-07-26'
 description: "RStudio is joined by Elaine McVey, VP of Data Science at The Looma Project, to discuss how data scientists can become leaders within their organizations. \n\nWatch the full recording here: https://www.youtube.com/watch?v=IkqItgPSPro\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn: https://www.linkedin.com/company/rstudio-pbc\nTwitter: https://twitter.com/rstudio"
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=a3ViJuhEthc
   view_count: 1443
 ---
+image: thumbnail.jpg
 

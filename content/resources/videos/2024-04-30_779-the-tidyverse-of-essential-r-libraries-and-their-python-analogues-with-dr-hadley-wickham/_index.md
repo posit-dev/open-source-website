@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-30'
 description: '#Tidyverse #RProgramming #RLibraries
 
@@ -113,4 +114,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fiYe7lZqF20
   view_count: 2563
 ---
+image: thumbnail.jpg
 

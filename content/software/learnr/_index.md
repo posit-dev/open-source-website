@@ -2,6 +2,7 @@
 description: Interactive Tutorials with R Markdown
 github: rstudio/learnr
 image: logo.png
+color: "#E0B987"
 languages:
 - R
 latest_release: '2025-11-13T15:23:19+00:00'
@@ -23,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 242
   languages:
   - R
-  last_updated: '2026-02-27T17:14:00.612968+00:00'
+  last_updated: '2026-03-05T16:11:13.730923+00:00'
   latest_release: '2025-11-13T15:23:19+00:00'
   license: Apache-2.0
   people:

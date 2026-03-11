@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: A re-styled version of the R manuals
 github: rstudio/r-manuals
 languages:
@@ -14,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - R
-  last_updated: '2026-02-27T17:14:03.825060+00:00'
+  last_updated: '2026-03-05T16:17:35.349016+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux

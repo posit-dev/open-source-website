@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Full title: How to do things with words: learning to program in R with a "communicative approach"
 
@@ -89,4 +90,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WlSRI22kpdg
   view_count: 501
 ---
+image: thumbnail.jpg
 

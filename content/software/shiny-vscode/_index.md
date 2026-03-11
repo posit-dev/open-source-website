@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Shiny VS Code Extension
 github: posit-dev/shiny-vscode
 languages:
@@ -19,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - TypeScript
-  last_updated: '2026-02-27T17:13:44.143701+00:00'
+  last_updated: '2026-03-05T16:03:07.578855+00:00'
   latest_release: '2025-06-12T21:06:04+00:00'
   license: MIT
   people:
@@ -29,7 +31,7 @@ external:  # updated automatically, do not edit
   - Julia Silge
   - Greg Swinehart
   repo: posit-dev/shiny-vscode
-  stars: 35
+  stars: 36
   title: shiny-vscode
   website: https://open-vsx.org/extension/posit/shiny
 ---

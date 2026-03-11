@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-08-12'
 description: 'What are you waiting for #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter'
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=kVpBJ_MQM1M
   view_count: 2090
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'This talk will discuss data contracts – agreements between data producers and data consumers that ensure data is always available in the expected form. We''ll delve into processes and techniques I''ve developed that can help teams easily create data contracts. This talk will also introduce a literate programming framework that can enable data producers and data consumers who work on different teams in completely different programming languages (or no programming language at all!) to collaborate on creating data contracts and allow them to be enforced automatically.
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_Us40MndOOU
   view_count: 319
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Liz Roten\r\n\r\nR users don't always come in sets. Often, you may be the only user on in the cubicle-block. But, one miraculous day, your manager finally fills the void and you welcome more folks on your team. Suddenly, the little R system you created to suit your needs, like a custom package, code styling, and file organization, isn't just for you.\r\n \r\nWant to suddenly overhaul that one package you wrote two years ago? It probably won't work when your colleagues try to update it.\r\n \r\nYour new teammates are data.table fans, but you prefer the tidyverse. Do you need to refactor? Are style choices, like indentation important when collaborating, or are you just being persnickety?\r\n \r\nIn this talk, you will learn how to bring new teammates on board and blend your respective styles without pulling your hair out.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Building effective data science teams.\r\nSession Code: TALK-1063"
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=F_xng3nFnXw
   view_count: 247
 ---
+image: thumbnail.jpg
 

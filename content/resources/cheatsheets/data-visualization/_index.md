@@ -1,5 +1,6 @@
 ---
 title: Data visualization with ggplot2
+image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
 description: Quick reference guide for data visualization with ggplot2.

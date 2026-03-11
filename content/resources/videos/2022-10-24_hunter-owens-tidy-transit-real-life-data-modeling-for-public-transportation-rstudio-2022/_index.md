@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'California Integrated Travel Project’s mission is to make transit across California simpler and more affordable. As part of this, we created an open source data warehouse to allow easy analysis of the travel data people often interact with every day.
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=MD5sKupHsTQ
   view_count: 547
 ---
+image: thumbnail.jpg
 

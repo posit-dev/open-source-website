@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: A dplyr backend that partitions a data frame over multiple processes
 github: tidyverse/multidplyr
 languages:
@@ -18,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 76
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.260893+00:00'
+  last_updated: '2026-03-05T16:20:51.039679+00:00'
   latest_release: '2025-11-13T13:40:03+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +29,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   - Carlos Scheidegger
   repo: tidyverse/multidplyr
-  stars: 648
+  stars: 649
   title: multidplyr
   website: https://multidplyr.tidyverse.org
 ---

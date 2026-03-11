@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: That's right, a LIVE IN PERSON Data Science Hangout! Rachel Dempsey introduces Matthew Montero, Chief Data Officer at GenRe, who shared his journey from actuary to technology leader. He emphasized the importance of effective communication between IT and business, as well as the need for a strong enterprise data architecture. Matthew discussed the challenges of productionalizing data models and the significance of community support in adopting new tools like R. If you'd like to attend a Data Science Hangout, we'd love you to join us. We meet (almost) every Thursday at 12PM ET, and you can register at pos.it/dsh. Everyone is welcome! It doesn't matter what your background, years of experience, or preferred tools are.
 people: []
@@ -30,4 +31,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mvb43mAcCL8
   view_count: 111
 ---
+image: thumbnail.jpg
 

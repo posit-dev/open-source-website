@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-10-24'
 description: "In this session, Atorus and Regeneron, and Posit showcase their innovative partnership.\n\nTopics covered: \n-Building a Unified Analytical Environment: Learn how to reduce friction by integrating fragmented SAS and R workflows.\n-Case Study: A Config-Driven App: See a live demo of how a simple configuration file can build a fully functional application for data review and safety monitoring.\n-Operational Shifts: Understand how internal teams are empowered to independently manage and extend their own applications in a regulated environment.\n\nThis isn’t just about technology—it’s about the strategic shift required to simplify development and accelerate insights within a regulated environment.\n\nLearn more about Posit's work in the pharma space: https://posit.co/use-cases/pharma/?utm_source=youtube&utm_medium=social&utm_term=pharma&utm_content=atorus-regeneron"
 people: []
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=nyKPsP6rgoE
   view_count: 537
 ---
+image: thumbnail.jpg
 

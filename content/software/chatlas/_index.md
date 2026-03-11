@@ -3,9 +3,10 @@ description: Your friendly guide to building LLM chat apps in Python with less e
   and more clarity.
 github: posit-dev/chatlas
 image: logo.png
+color: "#485A5C"
 languages:
 - Python
-latest_release: '2026-01-22T22:50:44+00:00'
+latest_release: '2026-02-27T15:13:17+00:00'
 people:
 - Carson Sievert
 - Garrick Aden-Buie
@@ -25,8 +26,8 @@ external:  # updated automatically, do not edit
   forks: 21
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:44.969790+00:00'
-  latest_release: '2026-01-22T22:50:44+00:00'
+  last_updated: '2026-03-05T16:04:55.664983+00:00'
+  latest_release: '2026-02-27T15:13:17+00:00'
   license: MIT
   people:
   - Carson Sievert

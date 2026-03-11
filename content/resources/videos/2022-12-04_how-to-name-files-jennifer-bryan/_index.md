@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-12-04'
 description: 'Low-tech common sense about filenames. The holy trinity is:
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ES1LTlnpLMk
   view_count: 6694
 ---
+image: thumbnail.jpg
 

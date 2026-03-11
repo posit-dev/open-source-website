@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-08-15'
 description: ''
 people:
@@ -31,4 +32,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=AuQOy06Dlr8
   view_count: 6669
 ---
+image: thumbnail.jpg
 

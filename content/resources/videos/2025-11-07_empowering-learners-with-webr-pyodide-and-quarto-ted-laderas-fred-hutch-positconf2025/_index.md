@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Empowering Learners with WebR, Pyodide, and Quarto
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=EQ9_MP2PYL8
   view_count: 204
 ---
+image: thumbnail.jpg
 

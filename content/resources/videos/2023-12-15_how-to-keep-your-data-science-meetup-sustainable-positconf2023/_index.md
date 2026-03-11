@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Ted Laderas\r\n\r\nMany data science meetup organizers struggle with burnout. It can be daunting to plan a meetup schedule, especially with the added burden of work and life.\r\n \r\nIn this talk, I want to highlight some strategies for keeping your data science meetup sustainable. Specifically, I want to highlight the role of self-care in growing and sustaining your group, as well as low-key activities like a data scavenger hunt, watching videos together, styling plots together, and sharing useful tidyverse functions. \r\n \r\nBy making it easy for your members to contribute and empowering them, it takes a lot of the burden off you as an organizer. You don't need to reinvent the wheel for meetups or have famous guests for each one. Let's start the conversation and make your meetup last.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: It takes a village: building and sustaining communities.\r\nSession Code: TALK-1129"
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QfcC56gSC9g
   view_count: 404
 ---
+image: thumbnail.jpg
 

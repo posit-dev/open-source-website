@@ -2,6 +2,7 @@
 description: High-Level Modeling Functions with 'torch'
 github: tidymodels/brulee
 image: logo.png
+color: "#F7AD63"
 languages:
 - R
 latest_release: '2025-09-02T10:44:03+00:00'
@@ -22,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 9
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.500183+00:00'
+  last_updated: '2026-03-05T16:23:35.271821+00:00'
   latest_release: '2025-09-02T10:44:03+00:00'
   license: NOASSERTION
   people:

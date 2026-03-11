@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-11-22'
 description: 'A practical guide to generating hundreds of customized reports using Quarto and Python. Learn how to leverage Quarto''s parameter system to create PDFs and HTML reports at scale. Using a movie dataset example, we''ll cover:
 
@@ -176,4 +177,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_kjs_u3Ctt4
   view_count: 8259
 ---
+image: thumbnail.jpg
 

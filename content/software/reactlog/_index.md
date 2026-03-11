@@ -2,6 +2,7 @@
 description: Shiny Reactivity Visualizer
 github: rstudio/reactlog
 image: logo.svg
+color: "#2171B5"
 languages:
 - JavaScript
 latest_release: '2022-09-26T16:21:09+00:00'
@@ -16,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:14:01.698384+00:00'
+  last_updated: '2026-03-05T16:13:30.306438+00:00'
   latest_release: '2022-09-26T16:21:09+00:00'
   license: NOASSERTION
   people:

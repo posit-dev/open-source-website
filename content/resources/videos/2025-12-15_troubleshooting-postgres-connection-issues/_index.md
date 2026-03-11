@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-15'
 description: In this video, we walk through the process of troubleshooting connectivity to a PostgreSQL database. This allows us to ensure that our Postgres DB is ready and accepting connections from our Posit suite.
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9y_lgMba7CU
   view_count: 84
 ---
+image: thumbnail.jpg
 

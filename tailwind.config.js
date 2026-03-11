@@ -2,13 +2,18 @@
 module.exports = {
   darkMode: 'class',
   content: [
-    "./themes/**/layouts/**/*.html",
     "./layouts/**/*.html",
     "./content/**/*.md",
     "./safelist.txt"
   ],
   theme: {
     extend: {
+      // These are for @container queries specifically
+      containers: {
+        'tall': '10rem',
+        'grande': '16rem',
+        'venti': '40rem',
+      },
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],
         mono: ['"Source Code Pro"', 'monospace'],

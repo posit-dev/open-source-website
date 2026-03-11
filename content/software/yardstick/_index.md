@@ -2,6 +2,7 @@
 description: Tidy methods for measuring model performance
 github: tidymodels/yardstick
 image: logo.png
+color: "#DB1E25"
 languages:
 - R
 latest_release: '2025-01-22T22:13:45+00:00'
@@ -19,10 +20,10 @@ website: https://yardstick.tidymodels.org/
 external:  # updated automatically, do not edit
   description: Tidy methods for measuring model performance
   first_commit: '2017-10-30T19:26:54+00:00'
-  forks: 60
+  forks: 61
   languages:
   - R
-  last_updated: '2026-02-27T17:14:10.916024+00:00'
+  last_updated: '2026-03-05T16:22:21.729383+00:00'
   latest_release: '2025-01-22T22:13:45+00:00'
   license: NOASSERTION
   people:

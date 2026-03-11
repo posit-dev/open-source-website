@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-01-30'
 description: 'This is the Live Q&A session for our Workflow Demo on January 29th on Model cards with vetiver for transparent, responsible reporting with Julia Silge.
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=tQsyImn18q4
   view_count: 310
 ---
+image: thumbnail.jpg
 

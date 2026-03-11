@@ -2,6 +2,7 @@
 description: Tools for post-processing class probability estimates
 github: tidymodels/probably
 image: logo.png
+color: "#FBEE7E"
 languages:
 - R
 latest_release: '2025-10-16T12:05:16+00:00'
@@ -24,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.075343+00:00'
+  last_updated: '2026-03-05T16:22:42.559640+00:00'
   latest_release: '2025-10-16T12:05:16+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-22'
 description: 'Data science teams face a challenging task. Not only do they have to gain insight from data, they also have to persuade others to make decisions based on those insights. To close this gap, teams rely on tools like dashboards, apps, and APIs. But unfortunately data organizations can suffer from their own success - how many of those dashboards are viewed once and forgotten? Is a dashboard of dashboards really the right solution? And what about that pesky, precisely formatted Excel spreadsheet finance still wants every week?
 
@@ -122,4 +123,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=q1C3QxHHC-Y
   view_count: 4330
 ---
+image: thumbnail.jpg
 

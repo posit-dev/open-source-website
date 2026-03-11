@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: R interface to dygraphs
 github: rstudio/dygraphs
 languages:
@@ -12,10 +14,10 @@ website: http://rstudio.github.io/dygraphs
 external:  # updated automatically, do not edit
   description: R interface to dygraphs
   first_commit: '2014-08-15T14:03:15+00:00'
-  forks: 191
+  forks: 190
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:13:59.529739+00:00'
+  last_updated: '2026-03-05T16:09:12.025628+00:00'
   latest_release: '2018-07-11T21:28:49+00:00'
   license: NOASSERTION
   people:

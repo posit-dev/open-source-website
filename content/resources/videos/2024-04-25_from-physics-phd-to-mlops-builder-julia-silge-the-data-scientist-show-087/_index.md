@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-25'
 description: 'Julia Silge⁠ is an engineering manager at Posit PBC, formerly know as R-studio, where she leads a team of developers building open source software MLOps. Before Posit, she finished a PhD in astrophysics, worked for several years in the nonprofit space, and was a data scientist at Stack Overflow where some of her most public work involved the annual developer survey. We talked about MLOps tools, challenges in survey data, text analysis, and balancing her interests in data science and engineering. Subscribe to Daliana''s newsletter on ⁠www.dalianaliu.com⁠ for more on data science and career.
 
@@ -88,4 +89,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=BvAWf9VbEac
   view_count: 606
 ---
+image: thumbnail.jpg
 

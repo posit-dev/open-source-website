@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Full title: Towards an integrated {verse}: lessons learned developing a library of validated packages
 
@@ -103,4 +104,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-6b_v0easXk
   view_count: 144
 ---
+image: thumbnail.jpg
 

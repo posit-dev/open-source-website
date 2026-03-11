@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-03-27'
 description: 'Join us for Live Q&A immediately following the Workflow Demo on March 26th at 11am ET with Max Patterson at Suffolk Construction.
 
@@ -37,4 +38,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=zU-bBUJMyQ4
   view_count: 334
 ---
+image: thumbnail.jpg
 

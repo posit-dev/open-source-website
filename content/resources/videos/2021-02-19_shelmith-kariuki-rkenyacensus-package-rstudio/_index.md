@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'The rKenyaCensus package contains the results of the 2019 Kenya Population Census. The census exercise was carried out in August 2019, and the results were released in February 2020. Kenya leveraged on technology to capture data during cartographic mapping, enumeration and data transmission, making the 2019 Census the first paperless census to be conducted in Kenya. The data was published in four different pdf files (Volume 1 - Volume 4) which can be found in the Kenya National Bureau of statistics website. The data in its current form was open and accessible, but not usable and so there was need to convert it into a machine readable format. This data can be used by the government, non-governmental organizations and any other entities for data driven policy making and development. During the talk, I will explain the reasons behind development of the package, take you through the steps I took during the process and finally showcase analysis of certain aspects of the data.
 
@@ -88,4 +89,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=yf0bZAE0ocY
   view_count: 222
 ---
+image: thumbnail.jpg
 

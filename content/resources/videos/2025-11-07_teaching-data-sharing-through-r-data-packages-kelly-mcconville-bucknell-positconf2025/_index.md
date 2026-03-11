@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Teaching Data Sharing through R Data Packages
 
@@ -59,4 +60,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=bzyGINaigyE
   view_count: 201
 ---
+image: thumbnail.jpg
 

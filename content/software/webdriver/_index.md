@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: WebDriver client in R
 github: rstudio/webdriver
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - R
-  last_updated: '2026-02-27T17:14:00.542281+00:00'
+  last_updated: '2026-03-05T16:11:04.138418+00:00'
   latest_release: '2021-01-12T20:32:10+00:00'
   license: NOASSERTION
   people:

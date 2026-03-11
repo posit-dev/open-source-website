@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-04-29'
 description: '0:00 Project introduction
 
@@ -156,4 +157,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=3VJ5cIxe408
   view_count: 4920
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-08-25'
 description: 'Don''t skimp 😡 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook'
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=EA1Q_VufmiQ
   view_count: 2473
 ---
+image: thumbnail.jpg
 

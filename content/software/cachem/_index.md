@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: Key-value caches for R
 github: r-lib/cachem
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.645356+00:00'
+  last_updated: '2026-03-05T16:27:59.403596+00:00'
   latest_release: '2024-05-15T15:53:45+00:00'
   license: NOASSERTION
   people:

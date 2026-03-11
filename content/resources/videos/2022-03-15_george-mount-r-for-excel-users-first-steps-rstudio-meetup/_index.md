@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-03-15'
 description: 'Abstract:
 
@@ -226,4 +227,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=hyvClyUOY04
   view_count: 4567
 ---
+image: thumbnail.jpg
 

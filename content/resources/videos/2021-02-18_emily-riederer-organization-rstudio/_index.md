@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'Many case studies demonstrate the benefits of organizations developing internal R packages. But how do you move your organization from individual internal packages to a coherent internal ecosystem?
 
@@ -96,4 +97,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=E887K1au5ug
   view_count: 921
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Keras 3 is a ground-up rewrite of Keras 2 that refines the API and reintroduces multi-backend support. In this talk, learn about all the features (new and old) in Keras that make it easy to build, train, evaluate, and deploy deep learning models.
 
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=A7kXXKij5GQ
   view_count: 1158
 ---
+image: thumbnail.jpg
 

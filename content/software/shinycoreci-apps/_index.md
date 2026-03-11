@@ -2,6 +2,7 @@
 description: SUPERSEDED - Apps for Shiny continuous integration testing
 github: rstudio/shinycoreci-apps
 image: view-test-results.png
+color: "#C92739"
 languages:
 - JavaScript
 people:
@@ -19,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 3
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:14:02.805868+00:00'
+  last_updated: '2026-03-05T16:15:39.044859+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke

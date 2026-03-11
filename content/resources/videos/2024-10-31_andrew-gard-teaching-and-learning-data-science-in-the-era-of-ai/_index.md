@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: Talk by Andrew Gard
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=kUh3ZAz-Zfg
   view_count: 385
 ---
+image: thumbnail.jpg
 

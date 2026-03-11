@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-10'
 description: "Learn how Shiny for Python's design philosophy sets it apart from Streamlit, Dash, and traditional web development frameworks.\n\nWith Shiny for Python out of alpha as of April, many have wondered how it stacks up against other popular alternatives. In this video, Gordon Shotwell -- developer advocate on the Shiny team at Posit -- explores the design philosophy behind Shiny for Python and how it compares to other frameworks for developing data science web applications. If you are a data scientist working mostly in Python, we hope this motivates you to take a serious look at Shiny for Python.\n\nLearn more on Posit blog, https://posit.co/blog/why-shiny-for-python/ \n\n00:00 What is Shiny for Python? \n03:05 What is Reactivity? \n04:19 How does Shiny compare to Streamlit? \n05:14 What are the main differences between Streamlit and Shiny for Python?\n07:05 Why should I prefer Shiny over Streamlit? \n09:09 How does Shiny compare to Dash?\n10:22 What is the difference between a stateless and a stateful application? \n12:19 Why consider Shiny for Python over Dash? \n13:37 Shiny for Python's Design Philosophy"
 people:
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=LDd2ao5KjKM
   view_count: 6997
 ---
+image: thumbnail.jpg
 

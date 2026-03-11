@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-12-12'
 description: 'To join future data science hangouts, add it to your calendar here: https://pos.it/dsh - All are welcome! We''d love to see you!
 
@@ -132,4 +133,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9_dmsendWeU
   view_count: 316
 ---
+image: thumbnail.jpg
 

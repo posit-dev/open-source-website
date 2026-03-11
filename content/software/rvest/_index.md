@@ -2,6 +2,7 @@
 description: Simple web scraping for R
 github: tidyverse/rvest
 image: logo.png
+color: "#DA2128"
 languages:
 - R
 latest_release: '2025-08-29T12:57:27+00:00'
@@ -19,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 353
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.152251+00:00'
+  last_updated: '2026-03-05T16:20:33.251578+00:00'
   latest_release: '2025-08-29T12:57:27+00:00'
   license: NOASSERTION
   people:

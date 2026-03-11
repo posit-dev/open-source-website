@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Manipulate DESCRIPTION files
 github: r-lib/desc
 languages:
@@ -19,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 35
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.760322+00:00'
+  last_updated: '2026-03-05T16:25:53.911887+00:00'
   latest_release: '2023-12-10T11:07:16+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Talk title: Practical {renv}
 
@@ -61,4 +62,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=l01u7Ue9pIQ
   view_count: 1068
 ---
+image: thumbnail.jpg
 

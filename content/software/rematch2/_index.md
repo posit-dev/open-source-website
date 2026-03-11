@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Tidy output from regular expression matches
 github: r-lib/rematch2
 languages:
@@ -16,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 6
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.433216+00:00'
+  last_updated: '2026-03-05T16:27:27.802068+00:00'
   latest_release: '2020-04-30T10:30:07+00:00'
   license: NOASSERTION
   people:

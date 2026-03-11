@@ -2,9 +2,10 @@
 description: 'renv: Project environments for R.'
 github: rstudio/renv
 image: logo.svg
+color: "#CCC165"
 languages:
 - R
-latest_release: '2025-07-24T22:49:27+00:00'
+latest_release: '2026-01-16T16:58:02+00:00'
 people:
 - Hadley Wickham
 - Christophe Dervieux
@@ -18,11 +19,11 @@ website: https://rstudio.github.io/renv/
 external:  # updated automatically, do not edit
   description: 'renv: Project environments for R.'
   first_commit: '2018-11-28T20:25:39+00:00'
-  forks: 163
+  forks: 164
   languages:
   - R
-  last_updated: '2026-02-27T17:14:01.980180+00:00'
-  latest_release: '2025-07-24T22:49:27+00:00'
+  last_updated: '2026-03-05T16:14:05.540078+00:00'
+  latest_release: '2026-01-16T16:58:02+00:00'
   license: MIT
   people:
   - Hadley Wickham
@@ -33,7 +34,7 @@ external:  # updated automatically, do not edit
   - Neal Richardson
   readme_image: man/figures/logo.svg
   repo: rstudio/renv
-  stars: 1136
+  stars: 1137
   title: renv
   website: https://rstudio.github.io/renv/
 ---

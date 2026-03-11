@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-10-01'
 description: 'Watch Charlotte Wickham''s Positron Quarto tutorial to see the full process of creating, rendering, and publishing your first Quarto document with ease.
 
@@ -95,4 +96,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QU0N--y-skA
   view_count: 4076
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-06-27'
 description: 'Jeroen Janssens talks with Vincent Warmerdam about marimo and the Quarto plugin that was recently released.
 
@@ -85,4 +86,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=dbPj3GOFa-g
   view_count: 5659
 ---
+image: thumbnail.jpg
 

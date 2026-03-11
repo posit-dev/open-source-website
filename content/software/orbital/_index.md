@@ -1,9 +1,11 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Turn SciKitLearn pipelines into SQL
 github: posit-dev/orbital
 languages:
 - Python
-latest_release: '2026-02-09T13:14:04+00:00'
+latest_release: '2026-03-02T18:19:46+00:00'
 title: orbital
 website: https://posit-dev.github.io/orbital/
 
@@ -13,8 +15,8 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:45.142676+00:00'
-  latest_release: '2026-02-09T13:14:04+00:00'
+  last_updated: '2026-03-05T16:05:17.929191+00:00'
+  latest_release: '2026-03-02T18:19:46+00:00'
   license: MIT
   repo: posit-dev/orbital
   stars: 111

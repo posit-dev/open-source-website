@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-08-04'
 description: 'The Post-Modeling Model to Fix the Model by Max Kuhn
 
@@ -61,4 +62,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=3omi4lm1da0
   view_count: 2219
 ---
+image: thumbnail.jpg
 

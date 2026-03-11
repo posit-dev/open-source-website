@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-07'
 description: 'Quarto has a host of exciting new features in release v1.4, with one of the most anticipated being Quarto Dashboards. In a recent internal presentation, Posit''s Charles Teague demonstrated the new capabilities and we wanted to share it with community.
 
@@ -88,4 +89,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_VGJIPRGTy4
   view_count: 28669
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by James Wade\r\n\r\nLarge language models (LLMs), such as ChatGPT, have shown the potential to transform how we code. As an R package developer, I have contributed to the creation of two packages -- gptstudio and gpttools -- specifically designed to incorporate LLMs into R workflows within the RStudio environment.\r\n \r\nThe integration of ChatGPT allows users to efficiently add code comments, debug scripts, and address complex coding challenges directly from RStudio. With text embedding and semantic search, we can teach ChatGPT new tricks, resulting in more precise and context-aware responses. This talk will delve into hands-on examples to showcase the practical application of these models, as well as offer my perspective as a recent entrant into public package development.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: I can't believe it's not magic: new tools for data science.\r\nSession Code: TALK-1154"
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ZCEadMMY6mE
   view_count: 1633
 ---
+image: thumbnail.jpg
 

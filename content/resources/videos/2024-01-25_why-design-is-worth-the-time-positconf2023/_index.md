@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-01-25'
 description: "Presented by Laura Gast\n\nHave you ever submitted a report or other product and wished you'd been given just a bit more time to clean up the look of it? Does it make your skin crawl to hear \"\"the data speaks for itself, don't waste your time making that deliverable 'pretty'\"\"? \n  \nAs a compliment to the many sessions this week in which you'll hear great methods for *how* to make your work more beautiful, in this talk, we'll walk through some of the scientific research that shows *why* taking the time to make design improvements is critical to communicating your point with data‚ for dashboards, reports, and even simple tables.\n\nPresented at Posit Conference, between Sept 19-20 2023,\nLearn more at posit.co/conference.\n--------------------------\nTalk Track: Compelling design for apps and reports.\nSession Code: TALK-1102"
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Kp-LQe3WgDU
   view_count: 839
 ---
+image: thumbnail.jpg
 

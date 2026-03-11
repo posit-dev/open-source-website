@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="flex flex-col w-full" data-pagefind-ignore>
+  <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200 mb-12">
+    People at Posit Open Source
+  </h1>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+    {{ $peopleSection := site.GetPage "/people" }}
+    {{ range $peopleSection.Pages.ByTitle }}
+      {{ if and (not .Params.people) (eq .Params.affiliation "Posit, PBC") }}
+      {{ partial "card.html" (dict "page" . "hide-badge" true) }}
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

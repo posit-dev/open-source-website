@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-26'
 description: 'While you''ve downloaded Positron on your desktop and are loving it, you may still have a few questions about using it at work:
 
@@ -122,4 +123,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=R1hpMzmBdSw
   view_count: 1596
 ---
+image: thumbnail.jpg
 

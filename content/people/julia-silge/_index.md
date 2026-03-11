@@ -2,6 +2,7 @@
 title: "Julia Silge"
 image: "profile.jpg"
 role: "Engineering Manager"
+affiliation: "Posit, PBC"
 social:
   bluesky: "juliasilge.com"
   github: "juliasilge"

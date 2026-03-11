@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-02-01'
 description: 'Capacity Planning for Microsoft Azure Data Centers | An Explainable Data Science Workflow using R & RStudio Connect | Presented by Paul Chang
 
@@ -126,4 +127,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=07j22d4B_hA
   view_count: 5005
 ---
+image: thumbnail.jpg
 

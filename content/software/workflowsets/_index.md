@@ -2,6 +2,7 @@
 description: Create a collection of modeling workflows
 github: tidymodels/workflowsets
 image: README-plot-1.png
+color: "#5289B1"
 languages:
 - R
 latest_release: '2025-05-28T13:18:33+00:00'
@@ -23,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.534649+00:00'
+  last_updated: '2026-03-05T16:23:39.102414+00:00'
   latest_release: '2025-05-28T13:18:33+00:00'
   license: NOASSERTION
   people:

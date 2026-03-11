@@ -2,6 +2,7 @@
 title: "Isabel Zimmerman"
 image: "profile.jpg"
 role: "Senior Software Engineer"
+affiliation: "Posit, PBC"
 social:
   bluesky: "did:plc:lws6rmd6puyy5s6in26qn34x"
   github: "isabelizimm"

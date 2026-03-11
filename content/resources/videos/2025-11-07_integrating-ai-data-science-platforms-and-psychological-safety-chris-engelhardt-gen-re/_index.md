@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'From Framework to Function: Integrating AI, Data Science Platforms, and Psychological Safety
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=jJ3IkgrVhWI
   view_count: 79
 ---
+image: thumbnail.jpg
 

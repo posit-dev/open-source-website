@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-11-08'
 description: "Posit Connect is our flagship professional product for data scientists that want to share their data products with other. \n\nLearn more at https://posit.co/products/enterprise/connect/\n\nWhether you're building a Shiny application, a Dash application, a Quarto report, or dashboard, you can host it on Posit Connect.\n\nPosit Connect supports all the languages that data scientists love, as well as the development environments they love to build in."
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=YdRa0ef9TGQ
   view_count: 5582
 ---
+image: thumbnail.jpg
 

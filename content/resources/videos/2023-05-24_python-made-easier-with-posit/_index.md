@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-24'
 description: 'Tom Mock, Workbench Product Manager at Posit, discusses our commitment to Python from open-source projects to enterprise support.
 
@@ -117,4 +118,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=uA4KK_p6Hm0
   view_count: 3725
 ---
+image: thumbnail.jpg
 

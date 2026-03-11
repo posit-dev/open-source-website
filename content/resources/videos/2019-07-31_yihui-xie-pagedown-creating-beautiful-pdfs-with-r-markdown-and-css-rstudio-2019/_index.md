@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-07-31'
 description: "The traditional way to beautiful PDFs is often through LaTeX or Word, but have you ever thought of printing a web page to PDF? Web technologies (HTML/CSS/JavaScript) are becoming more and more amazing. It is entirely possible to create high-quality PDFs through Google Chrome or Chromium now. Web pages are usually single-page documents, but they can be paginated thanks to the JavaScript library Paged.js, so that you can have elements like headers, footers, and page margins for the printing purpose. In this talk, we introduce a new R package, pagedown (https://github.com/rstudio/pagedown), to create PDF documents based on R Markdown and Paged.js. Applications of pagedown includes, but not limited to, books, articles, posters, resumes, letters, and business cards. With the power of CSS and JavaScript, you can typeset your documents with amazing elegance (e.g., a single line of CSS, \"tr:nth-child(even) { background: #eee; }\", will give you a striped table, and \"border-radius: 50%;\" gives you a circular element) and power (e.g., HTML Widgets).\r\n\r\nVIEW MATERIALS https://bit.ly/pagedown"
 people: []
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=GCmnvXXrpRk
   view_count: 17749
 ---
+image: thumbnail.jpg
 

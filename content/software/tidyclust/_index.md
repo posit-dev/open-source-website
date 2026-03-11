@@ -2,6 +2,7 @@
 description: A tidy unified interface to clustering models
 github: tidymodels/tidyclust
 image: logo.svg
+color: "#141227"
 languages:
 - R
 latest_release: '2025-01-27T23:10:34+00:00'
@@ -9,6 +10,7 @@ people:
 - Emil Hvitfeldt
 - Hannah Frick
 - Max Kuhn
+- Jeroen Janssens
 title: tidyclust
 website: https://tidyclust.tidymodels.org/
 
@@ -18,14 +20,15 @@ external:  # updated automatically, do not edit
   forks: 21
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.623753+00:00'
+  last_updated: '2026-03-05T16:23:49.720821+00:00'
   latest_release: '2025-01-27T23:10:34+00:00'
   license: NOASSERTION
   people:
   - Emil Hvitfeldt
   - Hannah Frick
   - Max Kuhn
-  readme_image: man/figures/logo.svg
+  - Jeroen Janssens
+  readme_image: man/figures/logo.png
   repo: tidymodels/tidyclust
   stars: 112
   title: tidyclust

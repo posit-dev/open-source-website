@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Attendees will recieve a broad overview of the encoding and decoding process in the human-to-computer loop, how bits are used, and the math that gets us to common bit values. A brief history of ASCII, Latin-1, and UTF-8 will be provided as well.
 
@@ -50,4 +51,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=A9SzzQ4pfJE
   view_count: 207
 ---
+image: thumbnail.jpg
 

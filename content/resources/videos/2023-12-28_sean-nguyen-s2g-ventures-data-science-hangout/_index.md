@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-28'
 description: 'We were recently joined by Sean Nguyen, Senior Staff Data Scientist at S2G Ventures to chat about guiding newcomers into the data science field and promoting business integration of various data science tools like Posit Connect.
 
@@ -83,4 +84,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WLhSqPxd8uE
   view_count: 463
 ---
+image: thumbnail.jpg
 

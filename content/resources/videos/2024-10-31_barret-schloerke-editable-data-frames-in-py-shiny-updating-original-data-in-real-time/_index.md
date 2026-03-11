@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Integrating editable data frames into Py-Shiny and Shinylive applications streamlines data scientists'' workflows by allowing real-time data manipulation directly within interactive web applications. This new feature enables users to edit cells within the data frame output. Using the empowered data frame renderer, we can facilitate immediate analysis and visualization feedback. It simplifies the process of data exploration and hypothesis testing, as changes to the data set can be instantly reflected in the application''s outputs without the requirement to update the original data, keeping data scientists “scientists”, not data janitors.
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=AXH52WNOErc
   view_count: 574
 ---
+image: thumbnail.jpg
 

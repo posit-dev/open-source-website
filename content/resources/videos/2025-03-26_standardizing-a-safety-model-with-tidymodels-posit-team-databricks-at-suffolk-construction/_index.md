@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-03-26'
 description: 'If you’ve ever struggled with standardizing machine learning workflows, ensuring secure data access, or scaling insights across your organization, this month’s Posit Team Workflow demo is for you.
 
@@ -108,4 +109,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=yavHEWpgrCQ
   view_count: 1193
 ---
+image: thumbnail.jpg
 

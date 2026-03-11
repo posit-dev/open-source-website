@@ -2,6 +2,7 @@
 description: Encapsulated object-oriented programming for R
 github: r-lib/R6
 image: logo.png
+color: "#E7DAB3"
 languages:
 - R
 latest_release: '2025-02-14T21:15:08+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 59
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.436260+00:00'
+  last_updated: '2026-03-05T16:25:09.434611+00:00'
   latest_release: '2025-02-14T21:15:08+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-09'
 description: "Register now: http://pos.it/conf\nInstructor: Rob J Hyndman\nWorkshop Duration: 2-Day Workshop\n\nThis course is for you if you: \n•   already use the tidyverse packages in R such as dplyr, tidyr, tibble and ggplot2\n•   need to analyze large collections of related time series\n•   would like to learn how to use some tidy tools for time series analysis including visualization, decomposition and forecasting\n\nIt is common for organizations to collect huge amounts of data over time, and existing time series analysis tools are not always suitable to handle the scale, frequency and structure of the data collected. In this workshop, we will look at some packages and methods that have been developed to handle the analysis of large collections of time series. \n\nOn day 1, we will look at the tsibble data structure for flexibly managing collections of related time series. We will look at how to do data wrangling, data visualizations and exploratory data analysis. We will explore feature-based methods to explore time series data in high dimensions. A similar feature-based approach can be used to identify anomalous time series within a collection of time series, or to cluster or classify time series. Primary packages for day 1 will be tsibble, lubridate and feasts (along with the tidyverse of course). \n\nDay 2 will be about forecasting. We will look at some classical time series models and how they are automated in the fable package, and we will explore the creation of ensemble forecasts and hybrid forecasts. Best practices for evaluating forecast accuracy will also be covered. Finally, we will look at forecast reconciliation, allowing millions of time series to be forecast in a relatively short time while accounting for constraints on how the series are related."
 people: []
@@ -82,4 +83,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Fo8aFDWchcY
   view_count: 989
 ---
+image: thumbnail.jpg
 

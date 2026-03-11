@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: A experimental SQL extension for declarative data visualisation based
   on the Grammar of Graphics.
 github: posit-dev/ggsql
@@ -19,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - Rust
-  last_updated: '2026-02-27T17:13:45.943272+00:00'
+  last_updated: '2026-03-05T16:06:48.129668+00:00'
   license: MIT
   people:
   - George Stagg

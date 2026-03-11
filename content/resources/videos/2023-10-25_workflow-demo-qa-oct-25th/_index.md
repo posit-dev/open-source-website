@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-10-25'
 description: 'Live Q&A for the end-to-end machine learning workflow with tidymodels & Posit Team on October 25th.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vwBVOBQfc_U
   view_count: 550
 ---
+image: thumbnail.jpg
 

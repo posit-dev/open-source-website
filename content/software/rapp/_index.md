@@ -2,6 +2,7 @@
 description: Build CLI applications in R
 github: r-lib/Rapp
 image: logo.png
+color: "#59F330"
 languages:
 - R
 latest_release: '2025-12-14T18:49:06+00:00'
@@ -16,14 +17,14 @@ external:  # updated automatically, do not edit
   forks: 1
   languages:
   - R
-  last_updated: '2026-02-27T17:14:19.643640+00:00'
+  last_updated: '2026-03-05T16:30:11.268779+00:00'
   latest_release: '2025-12-14T18:49:06+00:00'
   license: NOASSERTION
   people:
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: r-lib/Rapp
-  stars: 79
+  stars: 83
   title: Rapp
   website: ''
 ---

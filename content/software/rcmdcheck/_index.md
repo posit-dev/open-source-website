@@ -2,6 +2,7 @@
 description: Run R CMD check from R and collect the results
 github: r-lib/rcmdcheck
 image: rcmdcheck.svg
+color: "#282D35"
 languages:
 - R
 latest_release: '2021-09-23T11:00:56+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 34
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.884593+00:00'
+  last_updated: '2026-03-05T16:26:11.271871+00:00'
   latest_release: '2021-09-23T11:00:56+00:00'
   license: NOASSERTION
   people:

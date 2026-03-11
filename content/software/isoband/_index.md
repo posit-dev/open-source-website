@@ -2,6 +2,7 @@
 description: 'isoband: An R package to generate contour lines and polygons.'
 github: r-lib/isoband
 image: logo.png
+color: "#BB3654"
 languages:
 - C++
 latest_release: '2025-12-05T12:51:46+00:00'
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:18.967058+00:00'
+  last_updated: '2026-03-05T16:28:40.721947+00:00'
   latest_release: '2025-12-05T12:51:46+00:00'
   license: NOASSERTION
   people:

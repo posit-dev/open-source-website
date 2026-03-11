@@ -10,6 +10,7 @@ people:
 - Jeroen Ooms
 - George Stagg
 - Hadley Wickham
+- Jeroen Janssens
 - Mine Çetinkaya-Rundel
 title: systemfonts
 website: https://systemfonts.r-lib.org
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 18
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:19.074170+00:00'
+  last_updated: '2026-03-05T16:28:55.490559+00:00'
   latest_release: '2025-10-01T11:54:44+00:00'
   license: NOASSERTION
   people:
@@ -28,6 +29,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   - George Stagg
   - Hadley Wickham
+  - Jeroen Janssens
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: r-lib/systemfonts

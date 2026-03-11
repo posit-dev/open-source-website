@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-08-20'
 description: 'There are many programming languages that we might choose for scientific computing, and we each bring a complex set of preferences and experiences to such a decision. There are significant barriers to learning about other programming languages outside our comfort zone, and seeing another person or community make a different choice can be baffling. In this talk, hear about the costs that arise from exploring or using multiple programming languages, what we can gain by being open to different languages, and how curiosity and interest in other programming languages supports sharing across communities. We’ll explore these three points with practical examples from software built for flexible storage and model deployment, as well as a brand new project for scientific computing.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=MVuxbtERZMI
   view_count: 917
 ---
+image: thumbnail.jpg
 

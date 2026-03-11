@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-20'
 description: State of the Tidyverse 2020
 people:
@@ -35,4 +36,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=OwwYfxB8CA0
   view_count: 11692
 ---
+image: thumbnail.jpg
 

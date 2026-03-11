@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Materials for the RStudio webinar 'Beyond Dashboard Fatigue'
 github: rstudio/beyond-dashboard-fatigue
 languages:
@@ -14,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 24
   languages:
   - R
-  last_updated: '2026-02-27T17:14:03.128496+00:00'
+  last_updated: '2026-03-05T16:16:13.534769+00:00'
   license: CC0-1.0
   people:
   - Rich Iannone

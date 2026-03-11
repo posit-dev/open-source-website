@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'In the hype cycle of data science, I suggest that the "peak of inflated expectations" was in 2012, the "trough of disillusionment" was in 2016, and since then, we have climbed the "slope of enlightenment". Now, as we approach the "plateau of productivity", it''s a good time to figure out how we got here and what future we want. Can we use data to answer questions, resolve debates, and make better decisions? What tools and processes make data science work? What can we learn when it does, and what goes wrong when it doesn''t? In this talk, I will present my answers, and then I would like to hear yours.
 
@@ -39,4 +40,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=YKMZIzYBgTk
   view_count: 23213
 ---
+image: thumbnail.jpg
 

@@ -2,6 +2,7 @@
 description: Easy interactive web applications with Python
 github: posit-dev/py-shiny
 image: shiny-python.svg
+color: "#000000"
 languages:
 - Python
 latest_release: '2025-12-08T17:48:13+00:00'
@@ -30,7 +31,7 @@ external:  # updated automatically, do not edit
   forks: 121
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:43.985115+00:00'
+  last_updated: '2026-03-05T16:02:44.556251+00:00'
   latest_release: '2025-12-08T17:48:13+00:00'
   license: MIT
   people:

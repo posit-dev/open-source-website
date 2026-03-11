@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: Application-level automated tests for Shiny
 github: rstudio/shinycoreci
 languages:
@@ -18,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 7
   languages:
   - HTML
-  last_updated: '2026-02-27T17:14:02.787352+00:00'
+  last_updated: '2026-03-05T16:15:37.182088+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke

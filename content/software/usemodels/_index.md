@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Boilerplate Code for tidymodels
 github: tidymodels/usemodels
 languages:
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 7
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.411603+00:00'
+  last_updated: '2026-03-05T16:23:24.265252+00:00'
   latest_release: '2022-02-18T22:08:12+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'I would like to create (more) Shiny Dashboards, but...
 
@@ -66,4 +67,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Knnn6w5_g7w
   view_count: 5027
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-06-20'
 description: 'Thomas Neitmann, Associate Director at Denali Therapeutics, sat down with Posit to talk about open source in clinical trials, his work at Roche, the creation of admiral, career beginnings, and his future predictions for data science in the pharma space.
 
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=CPJn3Y-vI1A
   view_count: 2259
 ---
+image: thumbnail.jpg
 

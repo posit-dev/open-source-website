@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-05-15'
 description: 'For more on How Pharma is Pioneering WebAssembly with webR & Shiny for FDA Clinical Trial Submissions: https://posit.co/blog/webr-fda-pilot/'
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=2rMlOXXsd9s
   view_count: 1223
 ---
+image: thumbnail.jpg
 

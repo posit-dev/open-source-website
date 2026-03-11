@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-10-03'
 description: "The \"tidy eval\" framework is implemented in the rlang package and is rolling out in packages across the tidyverse and beyond. There is a lively conversation these days, as people come to terms with tidy eval and share their struggles and successes with the community. Why is this such a big deal? For starters, never before have so many people engaged with R's lazy evaluation model and been encouraged and/or required to manipulate it. I'll cover some background fundamentals that provide the rationale for tidy eval and that equip you to get the most from other talks.\r\n\r\nVIEW MATERIALS https://github.com/jennybc/tidy-eval-context#readme\r\n\r\nAbout the Author\r\nJenny Bryan\r\nJenny is a recovering biostatistician who takes special delight in eliminating the small agonies of data analysis. She’s part of Hadley’s team, working on R packages and integrating them into fluid workflows. She’s been working in R/S for over 20 years, serves in the leadership of rOpenSci and Forwards, and is an Ordinary Member of the R Foundation. Jenny is an Associate Professor of Statistics (on leave) at the University of British Columbia, where she created the course STAT 545."
 people:
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=2BXPLnLMTYo
   view_count: 5047
 ---
+image: thumbnail.jpg
 

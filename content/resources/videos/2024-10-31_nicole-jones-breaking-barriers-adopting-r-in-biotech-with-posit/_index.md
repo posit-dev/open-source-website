@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'In recent years, there has been a notable surge in R adoption in the pharmaceutical and biotech sectors, demanding regulated environments for R-based workflows. Posit offers a comprehensive ecosystem of tools designed to meet these needs. While these tools offer advantages, there is an additional burden placed on companies to maintain the environment. One notable challenge is integrating the Posit tools with a regulated Statistical Computing Environment(SCE) while ensuring standardized environments across the development and regulated systems. In this talk, we will share the benefits, challenges and lessons learned leveraging the Posit ecosystem in a mid-sized biotech company.
 
@@ -31,4 +32,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=SN3xmEP3R8M
   view_count: 201
 ---
+image: thumbnail.jpg
 

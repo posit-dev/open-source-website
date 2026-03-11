@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-15'
 description: Isabel is a Senior Software Engineer at Posit, PBC.
 people:
@@ -6,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software: []
-title: Keynote Speaker-Isabel Zimmerman-PyData Boston 2025
+title: Keynote Speaker Isabel Zimmerman PyData Boston 2025
 
 external:  # updated automatically, do not edit
   channel: PyData
@@ -38,8 +39,9 @@ external:  # updated automatically, do not edit
   - how to program
   - scientific programming
   thumbnail: https://i.ytimg.com/vi/0i-r3gl4WLU/maxresdefault.jpg
-  title: Keynote Speaker-Isabel Zimmerman-PyData Boston 2025
+  title: Keynote Speaker Isabel Zimmerman PyData Boston 2025
   url: https://www.youtube.com/watch?v=0i-r3gl4WLU
   view_count: 143
 ---
+image: thumbnail.jpg
 

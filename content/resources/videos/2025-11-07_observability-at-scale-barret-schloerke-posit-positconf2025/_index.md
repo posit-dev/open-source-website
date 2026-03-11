@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Observability at scale: Monitoring Shiny Applications with OpenTelemetry
 
@@ -73,4 +74,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=zwxhFKRlQLs
   view_count: 111
 ---
+image: thumbnail.jpg
 

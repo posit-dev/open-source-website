@@ -2,6 +2,7 @@
 description: Classes and functions to create and summarize resampling objects
 github: tidymodels/rsample
 image: logo.png
+color: "#14693A"
 languages:
 - R
 latest_release: '2026-01-30T11:52:49+00:00'
@@ -23,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 68
   languages:
   - R
-  last_updated: '2026-02-27T17:14:10.862249+00:00'
+  last_updated: '2026-03-05T16:22:14.168022+00:00'
   latest_release: '2026-01-30T11:52:49+00:00'
   license: NOASSERTION
   people:

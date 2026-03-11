@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-09'
 description: This talk is for R admins who want to learn how to set up Jupyter notebooks on RStudio Server Pro. We'll cover prerequisites, basic configuration, best practices for management, Jupyter Lab, and more.
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=30oPT43Y4-I
   view_count: 1815
 ---
+image: thumbnail.jpg
 

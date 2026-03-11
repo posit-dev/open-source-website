@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-04'
 description: 'Key takeaways from our conversation on the path to effective data stewardship:
 
@@ -99,4 +100,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=t7U_sUNv1I0
   view_count: 757
 ---
+image: thumbnail.jpg
 

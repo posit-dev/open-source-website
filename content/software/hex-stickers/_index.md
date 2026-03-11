@@ -2,6 +2,7 @@
 description: RStudio hex stickers
 github: rstudio/hex-stickers
 image: agua.png
+color: "#BA9A62"
 languages:
 - R
 people:
@@ -34,7 +35,7 @@ external:  # updated automatically, do not edit
   forks: 133
   languages:
   - R
-  last_updated: '2026-02-27T17:14:01.540593+00:00'
+  last_updated: '2026-03-05T16:13:11.413956+00:00'
   license: CC0-1.0
   people:
   - Hadley Wickham

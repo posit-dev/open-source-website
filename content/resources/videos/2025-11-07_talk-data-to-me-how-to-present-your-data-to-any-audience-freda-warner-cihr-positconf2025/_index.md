@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Talk data to me: How to present youR data to any audience
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=8G0r_JvkWME
   view_count: 224
 ---
+image: thumbnail.jpg
 

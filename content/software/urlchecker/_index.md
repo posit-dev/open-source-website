@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: Run CRAN URL checks from older versions of R
 github: r-lib/urlchecker
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 5
   languages:
   - R
-  last_updated: '2026-02-27T17:14:19.429619+00:00'
+  last_updated: '2026-03-05T16:29:41.804900+00:00'
   latest_release: '2021-11-30T00:26:11+00:00'
   license: GPL-3.0
   people:
@@ -25,7 +27,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   - Jeroen Janssens
   repo: r-lib/urlchecker
-  stars: 44
+  stars: 45
   title: urlchecker
   website: https://urlchecker.r-lib.org/
 ---

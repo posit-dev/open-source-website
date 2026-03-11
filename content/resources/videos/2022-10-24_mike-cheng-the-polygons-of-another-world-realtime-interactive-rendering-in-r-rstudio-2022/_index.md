@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'In this talk I want to explore R''s capabilities for fast, interactive graphical applications. This exploration is driven by my ongoing port of the 1991 action adventure game "Another World", but these capabilities also open up possibilities for new visualisations and applications in R.
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=LPotWAJnE_s
   view_count: 311
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-06'
 description: The InsightRX precision dosing platform tailors in-patient drug doses to individual patients' characteristics and biomarkers, leveraging pharmacological models of drug metabolism and drug effects. These models are implemented in R, exposed through APIs, and called from a cloud-based web application.
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=6q2U48zFOR0
   view_count: 925
 ---
+image: thumbnail.jpg
 

@@ -2,6 +2,7 @@
 description: Make websites with hugo and RMarkdown
 github: r-lib/hugodown
 image: logo.png
+color: "#AC3914"
 languages:
 - R
 people:
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 23
   languages:
   - R
-  last_updated: '2026-02-27T17:14:19.269773+00:00'
+  last_updated: '2026-03-05T16:29:21.189668+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

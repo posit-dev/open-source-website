@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-04-29'
 description: "Posit Workbench is the premier development experience for professional data scientists who use R and Python. \n\nOne of the many great features Workbench offers is the ability to run multiple sessions at once, across different languages and development environments. \n\nIn this video, we give you a glimpse of that feature. \n\nTo watch the full demo of our professional software, go here: https://youtu.be/1KEX3gZTQnE\n\nLearn more about Posit Workbench: https://posit.co/products/enterprise/workbench/"
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=s6voPVKQGls
   view_count: 1249
 ---
+image: thumbnail.jpg
 

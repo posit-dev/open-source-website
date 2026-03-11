@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by JD Long\r\n\r\nAbstractions rule everything around us. JD Long talks about abstractions from the board room to the silicon. \r\n\r\nOver 20 years ago Joel Spolsky famously wrote, \"All non-trivial abstractions, to some degree, are leaky.\" Unsurprisingly this has not changed. However, we have introduced more and more layers of abstraction into our workflows: Virtual Machines, AWS services, WASM, Docker, R, Python, data frames, and on and on. But then on top of the computational abstractions we have people abstractions: managers, colleagues, executives, stakeholders, etc. \r\n \r\nJD's presentation will be a wild romp through the mental models of abstractions and discuss how we, as technical analytical types, can gain skill in traversing abstractions and dealing with leaks.\r\n\r\nMaterials: https://github.com/CerebralMastication/Presentations/tree/master/2023_posit-conf\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: It's abstractions all the way down ....\r\nSession Code: KEY-1161"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Pa1PNfoOp-I
   view_count: 2846
 ---
+image: thumbnail.jpg
 

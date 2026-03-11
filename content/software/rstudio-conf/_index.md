@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Materials for rstudio::conf
 github: rstudio/rstudio-conf
 languages:
@@ -33,7 +35,7 @@ external:  # updated automatically, do not edit
   forks: 393
   languages:
   - HTML
-  last_updated: '2026-02-27T17:14:00.719192+00:00'
+  last_updated: '2026-03-05T16:11:30.002787+00:00'
   people:
   - Mine Çetinkaya-Rundel
   - Max Kuhn
@@ -56,7 +58,7 @@ external:  # updated automatically, do not edit
   - Garrick Aden-Buie
   - Daniel Falbel
   repo: rstudio/rstudio-conf
-  stars: 747
+  stars: 746
   title: rstudio-conf
   website: ''
 ---

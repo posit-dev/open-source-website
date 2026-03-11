@@ -2,6 +2,7 @@
 description: Tools for HTML generation and output
 github: rstudio/htmltools
 image: logo.png
+color: "#e44d25"
 languages:
 - R
 latest_release: '2025-12-08T17:18:25+00:00'
@@ -20,10 +21,10 @@ website: https://rstudio.github.io/htmltools/
 external:  # updated automatically, do not edit
   description: Tools for HTML generation and output
   first_commit: '2014-04-03T10:11:03+00:00'
-  forks: 71
+  forks: 70
   languages:
   - R
-  last_updated: '2026-02-27T17:13:59.440815+00:00'
+  last_updated: '2026-03-05T16:09:00.495879+00:00'
   latest_release: '2025-12-08T17:18:25+00:00'
   license: NOASSERTION
   people:

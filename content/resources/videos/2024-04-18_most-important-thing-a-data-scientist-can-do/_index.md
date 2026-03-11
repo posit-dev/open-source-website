@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-18'
 description: 'Data Science Hangout with Greg Shick, Director of Analytics at Charles Schwab.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=bKlnJO5J17g
   view_count: 1261
 ---
+image: thumbnail.jpg
 

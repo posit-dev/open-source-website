@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: "In this video, Greg Headley and Shun Mao introduce developers to AWS tools designed\nto support the creation of agentic AI applications. \n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
 people: []
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=jLyudeHXjJc
   view_count: 141
 ---
+image: thumbnail.jpg
 

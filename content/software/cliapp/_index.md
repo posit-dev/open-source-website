@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: Rich Command Line Applications
 github: r-lib/cliapp
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.787476+00:00'
+  last_updated: '2026-03-05T16:28:17.308043+00:00'
   latest_release: '2024-04-24T20:40:10+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-07-16'
 description: 'From Posit President, TAREEF KAWAF
 
@@ -83,4 +84,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=y_zkI-LkS58
   view_count: 2118
 ---
+image: thumbnail.jpg
 

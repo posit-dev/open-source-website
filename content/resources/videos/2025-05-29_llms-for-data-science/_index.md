@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-05-29'
 description: '[2025 - Day 1 - Data Science & Algos] Hadley Wickham shares insights from practical applications of LLMs in data science, exploring three key areas where these tools prove genuinely useful beyond the hype: writing code, writing prose, and rectangling non-rectangular data. For data scientists working with text, images, videos, or audio data, this talk offers valuable perspectives on leveraging LLMs effectively for real workflows and transforming fundamentally unstructured information.
 
@@ -95,4 +96,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=MaMQNbwd1MQ
   view_count: 1459
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-05-13'
 description: "We were recently joined by Laura Ellis, VP of Data at Rapid7 to chat about making artificial intelligence and analytics accessible to everyone in a secure and scalable manner.\n\nSpeaker bio: Laura Ellis is the Vice President of Data at Rapid7, a cybersecurity company. Her mission is to make artificial intelligence, data science and analytics accessible to everyone in a secure and scalable manner.\n\nShe has worked in the data field holding a variety of positions for almost 20 years. She holds a Bachelor of Software Engineering from the University of Western Ontario, a Master of Science in Predictive Analytics from Northwestern University and a Chief Data Officer executive certificate from Carnegie Mellon.\n\nShe is the co-founder of Data Mishaps Night (www.datamishapsnight.com), an evening for data practitioners to share their data mistakes and learning. She has a long time blog where she writes about all things data: www.littlemissdata.com\n\n________________\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.posit.co\nLinkedIn: https://www.linkedin.com/company/posit-software\n\nTo join future data science hangouts, add to your calendar here: https://pos.it/dsh \n\nWe'd love to have you join us in the conversation live!\n\nThanks for hanging out with us! \U0001F49B"
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=hy6wN8V3qa4
   view_count: 540
 ---
+image: thumbnail.jpg
 

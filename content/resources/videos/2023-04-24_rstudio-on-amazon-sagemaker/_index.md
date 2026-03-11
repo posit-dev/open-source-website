@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-04-24'
 description: "Working with analysis or a data set that exceeds the capabilities of your local workstation? One simple option for scaling up is RStudio on Amazon SageMaker. \n\nSee how you can get started quickly.\n\nLink to learn more: https://docs.aws.amazon.com/sagemaker/latest/dg/rstudio.html"
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=URfTFFFmcQw
   view_count: 3456
 ---
+image: thumbnail.jpg
 

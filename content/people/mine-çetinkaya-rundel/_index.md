@@ -2,6 +2,7 @@
 title: "Mine Çetinkaya-Rundel"
 image: "profile.jpg"
 role: "Senior Developer Advocate"
+affiliation: "Posit, PBC"
 social:
   bluesky: ""
   github: "mine-cetinkaya-rundel"

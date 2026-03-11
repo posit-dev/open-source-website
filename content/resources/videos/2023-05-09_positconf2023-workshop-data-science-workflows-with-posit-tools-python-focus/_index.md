@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-09'
 description: "Register now: http://pos.it/conf\nInstructors:Gagan Singh and Sam Edwardes\nWorkshop Duration: 1-Day Workshop\nWorkshop Duration: 1-Day Workshop\nThis course is for you if you: \n•   Build finished data products starting from raw data and are looking to improve your workflow\n•   Are looking to expand your knowledge of Posit open source and professional tools\n•   Want to improve interoperability between data products in your work or on your team\n•   Have experience developing in Python. An analogous course with an R focus is also offered\n\nIn this Python-focused workshop, we will discuss ways to improve your data science workflows! During the course, we will review packages for data validation, alerting, modeling, and more. We’ll use Posit’s open source and professional tools to string all the pieces together for an efficient workflow. We’ll discuss environments, managing deployed content, working with databases, and interoperability across data products."
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=kq0b8cPttTc
   view_count: 425
 ---
+image: thumbnail.jpg
 

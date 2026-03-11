@@ -2,6 +2,7 @@
 description: Extra recipes steps for dealing with unbalanced data
 github: tidymodels/themis
 image: logo.png
+color: "#242C3C"
 languages:
 - R
 latest_release: '2025-01-22T23:40:45+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.235180+00:00'
+  last_updated: '2026-03-05T16:23:03.449398+00:00'
   latest_release: '2025-01-22T23:40:45+00:00'
   license: NOASSERTION
   people:

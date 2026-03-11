@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'When building a predictive model in R, many of the functions (such as lm(), glm(), randomForest, xgboost, or neural networks in keras) require that all input variables are numeric. If your data has categorical variables, you may have to choose between ignoring some of your data and too many new columns.
 
@@ -95,4 +96,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=gZSTYE8ODbs
   view_count: 763
 ---
+image: thumbnail.jpg
 

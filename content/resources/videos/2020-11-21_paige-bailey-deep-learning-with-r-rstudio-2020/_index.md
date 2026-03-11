@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-21'
 description: 'Originally posted to https://rstudio.com/resources/rstudioconf-2020/deep-learning-with-r/
 
@@ -38,4 +39,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qF2fr-3rslE
   view_count: 4129
 ---
+image: thumbnail.jpg
 

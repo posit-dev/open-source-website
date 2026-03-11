@@ -53,3 +53,7 @@ hugo-serve:
 # Import cheatsheets from rstudio.github.io/cheatsheets
 import-cheatsheets:
     ./scripts/import-cheatsheets.py
+
+# Create thumbnails for a cheatsheet PDF
+create-cheatsheet-thumbnails *args:
+    ./scripts/create-cheatsheet-thumbnails.py {{args}}

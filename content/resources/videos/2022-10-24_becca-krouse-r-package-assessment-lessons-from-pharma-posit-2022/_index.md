@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'As R users, we make choices daily about what packages to use in our work. After discovering a package that may suit our needs, we consider its qualities and make a judgement about whether to invest in its use. Here at GSK, we are currently forging a path to using R in regulatory settings, which involves careful curation and assessment of R packages for use on clinical trials data. While this exercise is formalized for those of us in pharma, attendees will learn about how related principles can better inform decisions they make their own workflows, regardless of industry or experience. They will take away specific qualities that indicate trustworthiness, as well as the importance of considering the ecosystem as a whole.
 
@@ -31,4 +32,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=uP09-9KbAfo
   view_count: 323
 ---
+image: thumbnail.jpg
 

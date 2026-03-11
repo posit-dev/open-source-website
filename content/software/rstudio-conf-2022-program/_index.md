@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: rstudio::conf(2022, "program")
 github: rstudio/rstudio-conf-2022-program
 languages:
@@ -25,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 54
   languages:
   - R
-  last_updated: '2026-02-27T17:14:04.074987+00:00'
+  last_updated: '2026-03-05T16:18:01.054297+00:00'
   people:
   - Garrick Aden-Buie
   - Barret Schloerke

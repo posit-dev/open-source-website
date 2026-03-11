@@ -2,6 +2,7 @@
 description: Graphic Devices Based on AGG
 github: r-lib/ragg
 image: logo.png
+color: "#DFB97E"
 languages:
 - C++
 latest_release: '2025-09-02T06:41:38+00:00'
@@ -9,6 +10,7 @@ people:
 - Thomas Lin Pedersen
 - Jeroen Ooms
 - Hadley Wickham
+- Jeroen Janssens
 title: ragg
 website: https://ragg.r-lib.org
 
@@ -18,13 +20,14 @@ external:  # updated automatically, do not edit
   forks: 30
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:19.002330+00:00'
+  last_updated: '2026-03-05T16:28:45.807211+00:00'
   latest_release: '2025-09-02T06:41:38+00:00'
   license: NOASSERTION
   people:
   - Thomas Lin Pedersen
   - Jeroen Ooms
   - Hadley Wickham
+  - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/ragg
   stars: 181

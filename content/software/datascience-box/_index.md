@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Data Science Course in a Box
 github: tidyverse/datascience-box
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 457
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:14:07.509129+00:00'
+  last_updated: '2026-03-05T16:21:28.075472+00:00'
   latest_release: '2020-12-18T13:57:19+00:00'
   license: NOASSERTION
   people:

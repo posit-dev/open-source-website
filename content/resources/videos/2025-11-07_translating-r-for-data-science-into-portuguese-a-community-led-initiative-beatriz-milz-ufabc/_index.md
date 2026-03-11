@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Translating R for Data Science into Portuguese: A Community-Led Initiative
 
@@ -63,4 +64,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=yBC8rNvh3Ns
   view_count: 50
 ---
+image: thumbnail.jpg
 

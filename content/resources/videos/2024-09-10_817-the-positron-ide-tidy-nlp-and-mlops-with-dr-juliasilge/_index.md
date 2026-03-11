@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-09-10'
 description: '#PositronIDE #Tidyverse #MLOps
 
@@ -105,4 +106,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=jjpP35VL3-E
   view_count: 3065
 ---
+image: thumbnail.jpg
 

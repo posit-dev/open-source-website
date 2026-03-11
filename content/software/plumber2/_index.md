@@ -2,6 +2,7 @@
 description: Easy and Powerful Webservers in R
 github: posit-dev/plumber2
 image: logo.png
+color: "#CC509D"
 languages:
 - R
 latest_release: '2026-01-20T09:21:21+00:00'
@@ -17,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - R
-  last_updated: '2026-02-27T17:13:45.159673+00:00'
+  last_updated: '2026-03-05T16:05:20.332122+00:00'
   latest_release: '2026-01-20T09:21:21+00:00'
   license: NOASSERTION
   people:
@@ -25,7 +26,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   readme_image: man/figures/logo.png
   repo: posit-dev/plumber2
-  stars: 110
+  stars: 111
   title: plumber2
   website: http://plumber2.posit.co/
 ---

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: The first generation of Markdown rendering for R (born in 2012), based
   on commonmark. Note that this package is markdown, not *rmarkdown*.
 github: rstudio/markdown
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 78
   languages:
   - R
-  last_updated: '2026-02-27T17:13:58.966160+00:00'
+  last_updated: '2026-03-05T16:07:59.789305+00:00'
   latest_release: '2025-03-23T19:41:12+00:00'
   license: NOASSERTION
   people:

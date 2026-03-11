@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Trust, but Verify: Lessons from Deploying LLMs in a Large Health System
 
@@ -59,4 +60,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=HYQaZTLb2Co
   view_count: 420
 ---
+image: thumbnail.jpg
 

@@ -3,6 +3,7 @@ description: R package for creating Plumber APIs that function as Tableau Analyt
   Extensions
 github: rstudio/plumbertableau
 image: logo.svg
+color: "#87C9D8"
 languages:
 - R
 latest_release: '2021-08-05T14:49:01+00:00'
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 0
   languages:
   - R
-  last_updated: '2026-02-27T17:14:03.449623+00:00'
+  last_updated: '2026-03-05T16:16:50.048480+00:00'
   latest_release: '2021-08-05T14:49:01+00:00'
   license: NOASSERTION
   people:

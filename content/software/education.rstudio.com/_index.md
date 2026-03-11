@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: ''
 github: rstudio/education.rstudio.com
 languages:
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 35
   languages:
   - CSS
-  last_updated: '2026-02-27T17:14:01.997621+00:00'
+  last_updated: '2026-03-05T16:14:07.169901+00:00'
   license: CC-BY-SA-4.0
   people:
   - Mine Çetinkaya-Rundel

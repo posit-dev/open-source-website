@@ -2,6 +2,7 @@
 description: Connect to ODBC databases (using the DBI interface)
 github: r-dbi/odbc
 image: logo.png
+color: "#8BABDB"
 languages:
 - C++
 latest_release: '2025-12-08T14:40:41+00:00'
@@ -21,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 116
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:21.177951+00:00'
+  last_updated: '2026-03-05T16:31:37.488227+00:00'
   latest_release: '2025-12-08T14:40:41+00:00'
   license: NOASSERTION
   people:

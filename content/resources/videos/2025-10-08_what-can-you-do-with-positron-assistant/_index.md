@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-10-08'
 description: 'Positron Assistant is an AI client integrated within Positron, designed to enhance data science workflows.
 
@@ -108,4 +109,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=X_eqwFFH4jI
   view_count: 1856
 ---
+image: thumbnail.jpg
 

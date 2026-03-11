@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-27'
 description: 'We were joined by Patrick Tennant, Director of Evaluation and Analytics at Meadows Mental Health Policy Institute.
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=SfUCuXCo7Og
   view_count: 342
 ---
+image: thumbnail.jpg
 

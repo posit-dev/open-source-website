@@ -2,6 +2,7 @@
 description: Explore correlations in R
 github: tidymodels/corrr
 image: logo.png
+color: "#8CC4FC"
 languages:
 - R
 latest_release: '2022-08-16T19:52:49+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 58
   languages:
   - R
-  last_updated: '2026-02-27T17:14:10.800126+00:00'
+  last_updated: '2026-03-05T16:22:05.303962+00:00'
   latest_release: '2022-08-16T19:52:49+00:00'
   license: NOASSERTION
   people:

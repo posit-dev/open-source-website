@@ -2,6 +2,7 @@
 description: Helper functions for modelling
 github: tidyverse/modelr
 image: logo.png
+color: "#1D1D2A"
 languages:
 - R
 latest_release: '2023-03-21T14:12:45+00:00'
@@ -17,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 67
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.313715+00:00'
+  last_updated: '2026-03-05T16:20:58.525764+00:00'
   latest_release: '2023-03-21T14:12:45+00:00'
   license: GPL-3.0
   people:

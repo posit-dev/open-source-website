@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-10-12'
 description: 'At RStudio, we believe open source, code-first data science frameworks based on R and Python, centralized on-prem or in the cloud for ease of collaboration, sharing and administration, help data science teams be successful. However,  finding and retaining the right people is just as key for building a productive, effective, and collaborative data science team.
 
@@ -64,4 +65,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=F-JbkFc1uZ0
   view_count: 1563
 ---
+image: thumbnail.jpg
 

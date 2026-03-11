@@ -1,9 +1,11 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Record and expose Shiny app logic using metaprogramming
 github: rstudio/shinymeta
 languages:
 - R
-latest_release: '2021-11-17T15:48:16+00:00'
+latest_release: '2026-03-02T21:45:37+00:00'
 people:
 - Carson Sievert
 - Joe Cheng
@@ -18,8 +20,8 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-27T17:14:02.406788+00:00'
-  latest_release: '2021-11-17T15:48:16+00:00'
+  last_updated: '2026-03-05T16:14:53.561704+00:00'
+  latest_release: '2026-03-02T21:45:37+00:00'
   license: NOASSERTION
   people:
   - Carson Sievert

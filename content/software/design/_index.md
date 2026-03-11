@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Tidyverse design principles
 github: tidyverse/design
 languages:
@@ -14,10 +16,10 @@ website: https://design.tidyverse.org
 external:  # updated automatically, do not edit
   description: Tidyverse design principles
   first_commit: '2018-06-13T19:36:47+00:00'
-  forks: 57
+  forks: 58
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.561681+00:00'
+  last_updated: '2026-03-05T16:21:32.763786+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

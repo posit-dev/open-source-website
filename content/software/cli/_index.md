@@ -2,6 +2,7 @@
 description: Tools for making beautiful & useful command line interfaces
 github: r-lib/cli
 image: alert-success.svg
+color: "#859900"
 languages:
 - R
 latest_release: '2025-04-22T11:59:57+00:00'
@@ -24,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 83
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.362318+00:00'
+  last_updated: '2026-03-05T16:27:17.753225+00:00'
   latest_release: '2025-04-22T11:59:57+00:00'
   license: NOASSERTION
   people:

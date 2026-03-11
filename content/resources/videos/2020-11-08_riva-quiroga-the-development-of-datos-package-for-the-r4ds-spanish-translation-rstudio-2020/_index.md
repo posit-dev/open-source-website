@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-08'
 description: Originally posted at https://rstudio.com/resources/rstudioconf-2020/the-development-of-datos-package-for-the-r4ds-spanish-translation/
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=kuHjpdgkSxg
   view_count: 455
 ---
+image: thumbnail.jpg
 

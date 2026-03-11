@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Patrick van den Berg\r\n\r\nThe next pandemic may be caused by a flu strain, and with thousands of patients with the flu in Dutch hospitals annually it is important to have accurate and current data. The National Institute for Public Health and the Environment of the Netherlands (RIVM) collects and processes flu data to achieve pandemic preparedness. However, the flu reporting process used to be very laborious, stealing precious time from epidemiologists. In our journey of automating this data pipeline we learned that collaboration was the most important factor in getting to a working system. This talk will be at the cross-section of data science and epidemiology and will provide you with a valuable opportunity to learn from our experiences.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Leave it to the robots: automating your work.\r\nSession Code: TALK-1150"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=F8aDgKkXoxI
   view_count: 371
 ---
+image: thumbnail.jpg
 

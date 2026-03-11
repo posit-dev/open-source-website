@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-11'
 description: 'Data scientists are changing the world.
 
@@ -86,4 +87,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=XlEdUNRnoTg
   view_count: 2808
 ---
+image: thumbnail.jpg
 

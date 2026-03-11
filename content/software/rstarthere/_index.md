@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: A guide to some of the most useful R Packages that we know about
 github: rstudio/RStartHere
 languages:
@@ -12,7 +14,7 @@ external:  # updated automatically, do not edit
   forks: 219
   languages:
   - R
-  last_updated: '2026-02-27T17:14:00.384170+00:00'
+  last_updated: '2026-03-05T16:10:46.931569+00:00'
   license: NOASSERTION
   repo: rstudio/RStartHere
   stars: 663

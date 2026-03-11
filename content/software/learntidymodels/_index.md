@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Learn tidymodels with interactive learnr primers
 github: tidymodels/learntidymodels
 languages:
@@ -16,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.394163+00:00'
+  last_updated: '2026-03-05T16:23:22.099899+00:00'
   license: NOASSERTION
   people:
   - Julia Silge

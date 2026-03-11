@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-30'
 description: 'Many of us need to produce multiple PDF versions for monthly business reports. This workflow demonstrates how to save time by dynamically creating PDFs using Quarto and Shiny, while also showcasing the beautiful possibilities Typst offers for PDF design.
 
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=dCoHNIPQzJE
   view_count: 2894
 ---
+image: thumbnail.jpg
 

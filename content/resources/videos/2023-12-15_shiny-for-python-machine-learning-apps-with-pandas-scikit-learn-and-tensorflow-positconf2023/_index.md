@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Chelsea Parlett-Pelleriti\r\n\r\nWith the introduction of Shiny for Python in 2022, users can now use the power of reactivity with their favorite Python packages. Shiny can be used to build interactive reports, dashboards, and web apps, that make sharing insights and results both simple and dynamic. This includes apps to display and explore popular Machine Learning models built with staple Python packages like pandas, scikit-learn, and TensorFlow. This talk will demonstrate how to build simple Shiny for Python apps that interface with these packages, and discuss some of the benefits of using Shiny for Python to build your web apps.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: The future is Shiny.\r\nSession Code: TALK-1087"
 people: []
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=iQY24bWRDww
   view_count: 1175
 ---
+image: thumbnail.jpg
 

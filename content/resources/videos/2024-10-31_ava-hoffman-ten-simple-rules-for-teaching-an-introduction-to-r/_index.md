@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Many of us feel unprepared to teach R, either because of a lack of guidance or time to prepare. We’ve distilled our award-winning teaching experience into our top 10 takeaways so you can get up and running teaching R quickly. This includes advice for setting yourself up for success, keeping it practical, and knowing your learners. To see our tips in more detail, check out our paper: https://doi.org/10.1371/journal.pcbi.1012018
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wIt-ypW-a4M
   view_count: 689
 ---
+image: thumbnail.jpg
 

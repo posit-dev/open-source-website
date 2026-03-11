@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Bindings to libxml2
 github: r-lib/xml2
 languages:
@@ -19,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 83
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.616215+00:00'
+  last_updated: '2026-03-05T16:25:35.489217+00:00'
   latest_release: '2025-03-13T19:24:32+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: 'Repository for the RStudio AI Blog (formerly: TensorFlow for R Blog)'
 github: rstudio/ai-blog
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 33
   languages:
   - HTML
-  last_updated: '2026-02-27T17:14:01.715941+00:00'
+  last_updated: '2026-03-05T16:13:32.195016+00:00'
   people:
   - JJ Allaire
   - Daniel Falbel

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-11-07'
 description: 'We were recently joined by the Data Jam team at Biogen to chat about running an engaging data competition, connecting people across the organization of different skill sets, and generating enterprise-wide "buzz" about data and analytics. Their recent Data Jam had 260 participants across 22 teams!
 
@@ -89,4 +90,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QY2Kf4h58oE
   view_count: 357
 ---
+image: thumbnail.jpg
 

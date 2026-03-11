@@ -2,6 +2,7 @@
 description: Low-level API for programming with R
 github: r-lib/rlang
 image: logo.png
+color: "#D8B243"
 languages:
 - R
 latest_release: '2025-12-15T14:22:46+00:00'
@@ -10,10 +11,10 @@ people:
 - Hadley Wickham
 - Davis Vaughan
 - Jenny Bryan
+- Simon Couch
+- Teun Van den Brand
 - Barret Schloerke
 - Gábor Csárdi
-- Teun Van den Brand
-- Simon Couch
 - Neal Richardson
 - Charlie Gao
 - Max Kuhn
@@ -29,7 +30,7 @@ external:  # updated automatically, do not edit
   forks: 152
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.061091+00:00'
+  last_updated: '2026-03-05T16:26:39.303974+00:00'
   latest_release: '2025-12-15T14:22:46+00:00'
   license: NOASSERTION
   people:
@@ -37,10 +38,10 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   - Davis Vaughan
   - Jenny Bryan
+  - Simon Couch
+  - Teun Van den Brand
   - Barret Schloerke
   - Gábor Csárdi
-  - Teun Van den Brand
-  - Simon Couch
   - Neal Richardson
   - Charlie Gao
   - Max Kuhn
@@ -49,7 +50,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/rlang
-  stars: 558
+  stars: 559
   title: rlang
   website: https://rlang.r-lib.org
 ---

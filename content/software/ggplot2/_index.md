@@ -2,6 +2,7 @@
 description: An implementation of the Grammar of Graphics in R
 github: tidyverse/ggplot2
 image: ggplot2.png
+color: "#3D454E"
 languages:
 - R
 latest_release: '2026-02-02T09:41:41+00:00'
@@ -29,10 +30,10 @@ website: https://ggplot2.tidyverse.org
 external:  # updated automatically, do not edit
   description: An implementation of the Grammar of Graphics in R
   first_commit: '2008-05-25T01:21:32+00:00'
-  forks: 2135
+  forks: 2133
   languages:
   - R
-  last_updated: '2026-02-27T17:14:06.990210+00:00'
+  last_updated: '2026-03-05T16:19:59.506438+00:00'
   latest_release: '2026-02-02T09:41:41+00:00'
   license: NOASSERTION
   people:
@@ -55,7 +56,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/ggplot2
-  stars: 6883
+  stars: 6882
   title: ggplot2
   website: https://ggplot2.tidyverse.org
 ---

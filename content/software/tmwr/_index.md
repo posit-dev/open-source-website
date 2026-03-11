@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Code and content for "Tidy Modeling with R"
 github: tidymodels/TMwR
 languages:
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 314
   languages:
   - RMarkdown
-  last_updated: '2026-02-27T17:14:11.289028+00:00'
+  last_updated: '2026-03-05T16:23:10.635370+00:00'
   latest_release: '2022-07-22T15:57:37+00:00'
   license: NOASSERTION
   people:

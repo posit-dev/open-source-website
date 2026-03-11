@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-10-30'
 description: 'Leveraging R & Python in Tableau with RStudio Connect
 
@@ -102,4 +103,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=t25Lbi5D6kg
   view_count: 4579
 ---
+image: thumbnail.jpg
 

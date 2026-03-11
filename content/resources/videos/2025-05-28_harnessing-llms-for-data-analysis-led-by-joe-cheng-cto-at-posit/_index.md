@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-05-28'
 description: 'When we think of LLMs (large language models), usually what comes to mind are general purpose chatbots like ChatGPT or code assistants like GitHub Copilot. But as useful as ChatGPT and Copilot are, LLMs have so much more to offer—if you know how to code. In this demo Joe Cheng will explain LLM APIs from zero, and have you building and deploying custom LLM-empowered data workflows and apps in no time.
 
@@ -143,4 +144,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=owDd1CJ17uQ
   view_count: 13886
 ---
+image: thumbnail.jpg
 

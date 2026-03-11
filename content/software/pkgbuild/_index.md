@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: Find tools needed to build R packages
 github: r-lib/pkgbuild
 languages:
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 38
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.097055+00:00'
+  last_updated: '2026-03-05T16:26:44.994173+00:00'
   latest_release: '2025-05-26T10:36:19+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: Automated testing for shiny apps
 github: rstudio/shinytest
 languages:
@@ -21,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 51
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:14:00.577840+00:00'
+  last_updated: '2026-03-05T16:11:08.942253+00:00'
   latest_release: '2024-03-02T17:37:21+00:00'
   license: NOASSERTION
   people:

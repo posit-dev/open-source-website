@@ -2,6 +2,7 @@
 title: "Gábor Csárdi"
 image: "profile.jpg"
 role: "Senior Software Engineer"
+affiliation: "Posit, PBC"
 social:
   bluesky: ""
   github: "gaborcsardi"

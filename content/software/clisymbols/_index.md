@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Unicode symbols for CLI applications, with fallbacks
 github: r-lib/clisymbols
 languages:
@@ -14,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.653391+00:00'
+  last_updated: '2026-03-05T16:25:39.937949+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

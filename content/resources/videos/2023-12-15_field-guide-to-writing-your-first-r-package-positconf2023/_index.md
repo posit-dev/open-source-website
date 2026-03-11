@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Fonti Kar\r\n\r\nI recall writing my first package being an intimidating task. In my talk, I will share how a Biologist's mindset can make R package writing more approachable. This talk is an encouragement and a gentle stroll through the package building process. I will show you ways to be curious when you get stuck and how to prepare for the unexpected. I hope sharing my perspective will help others see package development as wonderful as the natural world and dispel any hesitation to start!\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Package development.\r\nSession Code: TALK-1135"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-bzgFg_bZXM
   view_count: 794
 ---
+image: thumbnail.jpg
 

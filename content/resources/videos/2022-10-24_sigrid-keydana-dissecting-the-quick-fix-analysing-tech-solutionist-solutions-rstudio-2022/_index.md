@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Machine learning models, applied in the real world, can have unanticipated, harmful side effects. Recommended counter-measures include structured documentation of models ("Model Cards for Model Reporting") and training data used ("Data Sheets for Datasets").
 
@@ -46,4 +47,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=oavEc_xArE8
   view_count: 276
 ---
+image: thumbnail.jpg
 

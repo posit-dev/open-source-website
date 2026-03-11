@@ -2,6 +2,7 @@
 description: Chat UI component for Shiny
 github: posit-dev/shinychat
 image: logo.svg
+color: "#0088DA"
 languages:
 - Python
 latest_release: '2026-02-09T15:54:52+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 23
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:44.882042+00:00'
+  last_updated: '2026-03-05T16:04:43.342945+00:00'
   latest_release: '2026-02-09T15:54:52+00:00'
   license: MIT
   people:

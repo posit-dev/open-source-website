@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Zero Tolerance for Dirty Data: A Pointblank Prescription for Data Hygiene
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=OEcpFF0VQ4A
   view_count: 213
 ---
+image: thumbnail.jpg
 

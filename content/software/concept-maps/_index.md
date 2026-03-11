@@ -2,6 +2,7 @@
 description: Concept maps for all things data science
 github: rstudio/concept-maps
 image: dplyr.svg
+color: "#000080"
 languages:
 - HTML
 people:
@@ -16,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 42
   languages:
   - HTML
-  last_updated: '2026-02-27T17:14:03.236018+00:00'
+  last_updated: '2026-03-05T16:16:25.360427+00:00'
   license: NOASSERTION
   people:
   - Jeroen Janssens

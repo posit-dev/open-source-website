@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-17'
 description: 'My brain is lazy, shallow and easily distracted. Learn how I use notebooks to keep my present-self organised, my future-self up to speed with what I was thinking months ago, and also how I use parameterised reports to share results for both quantitative and non-quantitative audiences across multiple endpoints. I can update and render outputs for a variety of outputs from a single markdown notebook or report. I’ll show you how I organise my work using the Tidyverse, use child documents with parameterisation and also how this is served out to my colleagues via RStudio Connect.
 
@@ -87,4 +88,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=p55q2szc3I8
   view_count: 2010
 ---
+image: thumbnail.jpg
 

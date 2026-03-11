@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Legacy DBI interface for MySQL
 github: r-dbi/RMySQL
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 108
   languages:
   - C
-  last_updated: '2026-02-27T17:14:21.036240+00:00'
+  last_updated: '2026-03-05T16:31:18.514301+00:00'
   latest_release: '2022-12-05T23:01:14+00:00'
   people:
   - Jeroen Ooms

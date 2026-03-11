@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: R interface to TensorFlow Probability
 github: rstudio/tfprobability
 languages:
@@ -16,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-02-27T17:14:02.211647+00:00'
+  last_updated: '2026-03-05T16:14:30.174232+00:00'
   latest_release: '2025-08-20T18:06:41+00:00'
   license: NOASSERTION
   people:

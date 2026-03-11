@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-11'
 description: 'Hello Community by Daniel Chen
 
@@ -62,4 +63,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mrNCLO9UmTw
   view_count: 130
 ---
+image: thumbnail.jpg
 

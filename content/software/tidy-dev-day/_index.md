@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Tidyverse developer day
 github: tidyverse/tidy-dev-day
 languages:
@@ -21,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 37
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.579759+00:00'
+  last_updated: '2026-03-05T16:21:34.337764+00:00'
   people:
   - Mine Çetinkaya-Rundel
   - Hadley Wickham

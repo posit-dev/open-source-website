@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-09-20'
 description: "Rich Iannone creates a gt table with Quarto, and publishes it on quarto.pub. \nYou'll see how to set up your .qmd file in the RStuido IDE, preview your table, publishing it to Quarto Pub, some admin settings, and how to share your table made in Quarto to the world."
 people:
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=l-AQ4yAQXy0
   view_count: 4004
 ---
+image: thumbnail.jpg
 

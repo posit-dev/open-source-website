@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Data-as-a-product: A framework for collaborative data wrangling
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=RrBdbbinS1E
   view_count: 122
 ---
+image: thumbnail.jpg
 

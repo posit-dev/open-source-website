@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Cross platform file locking in R
 github: r-lib/filelock
 languages:
@@ -16,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 7
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.379942+00:00'
+  last_updated: '2026-03-05T16:27:20.209132+00:00'
   latest_release: '2023-12-11T01:11:32+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'The R7 package is a new OOP system designed to be a successor to S3 and S4. It has been designed and implemented collaboratively by the RConsortium Object- Oriented Programming Working Group, which includes representatives from R-Core, BioConductor, RStudio/tidyverse, and the wider R community.
 
@@ -45,4 +46,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=P3FxCvSueag
   view_count: 11666
 ---
+image: thumbnail.jpg
 

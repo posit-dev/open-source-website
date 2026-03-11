@@ -2,6 +2,7 @@
 description: Markdown Parser and Renderer for R Graphics
 github: r-lib/marquee
 image: logo.png
+color: "#8E896E"
 languages:
 - C
 latest_release: '2025-09-15T13:31:09+00:00'
@@ -17,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - C
-  last_updated: '2026-02-27T17:14:19.715452+00:00'
+  last_updated: '2026-03-05T16:30:21.016785+00:00'
   latest_release: '2025-09-15T13:31:09+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-02-13'
 description: 'We were recently joined by Wes McKinney, Principal Architect at Posit PBC to chat about advocating for the needs of the PyData ecosystem, his experience as a software entrepreneur and long-time developer of open source projects for data science and analytical computing, and building open source sustainability.
 
@@ -108,4 +109,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=LSGgGzc3lPw
   view_count: 1593
 ---
+image: thumbnail.jpg
 

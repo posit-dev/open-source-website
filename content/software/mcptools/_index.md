@@ -2,6 +2,7 @@
 description: Model Context Protocol For R
 github: posit-dev/mcptools
 image: logo.png
+color: "#818B47"
 languages:
 - R
 latest_release: '2025-10-29T20:23:51+00:00'
@@ -21,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-02-27T17:13:45.194448+00:00'
+  last_updated: '2026-03-05T16:05:25.058636+00:00'
   latest_release: '2025-10-29T20:23:51+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +34,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: posit-dev/mcptools
-  stars: 156
+  stars: 158
   title: mcptools
   website: https://posit-dev.github.io/mcptools/
 ---

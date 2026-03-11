@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-04-05'
 description: 'Listen to Posit''s Chief Scientist Hadley Wickham talk about the future of Posit.
 
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fl5LP6QOjM0
   view_count: 5899
 ---
+image: thumbnail.jpg
 

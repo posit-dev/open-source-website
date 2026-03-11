@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-24'
 description: 'Many Data Science teams today leverage both R and Python in their work, but struggle to use them together. Data Science leaders and their business partners find it difficult to make key data science content easily discoverable and available for decision-making, while IT Admins and DevOps engineers grapple with how to efficiently support these teams without duplicating infrastructure. Even experienced data scientists familiar with both languages often struggle to combine them without painful context switching and manual translations.
 
@@ -120,4 +121,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_50yZxOome4
   view_count: 4914
 ---
+image: thumbnail.jpg
 

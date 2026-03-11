@@ -2,6 +2,7 @@
 description: Print Session Information
 github: r-lib/sessioninfo
 image: session-info2.svg
+color: "#282D35"
 languages:
 - R
 latest_release: '2025-02-05T12:57:20+00:00'
@@ -21,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 31
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.327953+00:00'
+  last_updated: '2026-03-05T16:27:12.723586+00:00'
   latest_release: '2025-02-05T12:57:20+00:00'
   license: GPL-2.0
   people:

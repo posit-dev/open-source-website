@@ -2,6 +2,7 @@
 description: Easily send great-looking HTML email messages from R
 github: rstudio/blastula
 image: logo.svg
+color: "#B573B5"
 languages:
 - R
 latest_release: '2025-04-03T12:52:40+00:00'
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 83
   languages:
   - R
-  last_updated: '2026-02-27T17:14:01.165272+00:00'
+  last_updated: '2026-03-05T16:12:26.023541+00:00'
   latest_release: '2025-04-03T12:52:40+00:00'
   license: NOASSERTION
   people:

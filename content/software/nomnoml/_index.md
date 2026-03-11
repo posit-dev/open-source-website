@@ -2,6 +2,7 @@
 description: Sassy 'UML' Diagrams for R
 github: rstudio/nomnoml
 image: logo.png
+color: "#FBB483"
 languages:
 - JavaScript
 title: nomnoml
@@ -13,7 +14,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:14:01.945070+00:00'
+  last_updated: '2026-03-05T16:13:59.253647+00:00'
   license: NOASSERTION
   readme_image: man/figures/logo.png
   repo: rstudio/nomnoml

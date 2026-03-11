@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-12-09'
 description: 'Data science and programming languages like R and Python are some of the most in demand skills in the world.
 
@@ -114,4 +115,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-kDO_Y8SctU
   view_count: 1409
 ---
+image: thumbnail.jpg
 

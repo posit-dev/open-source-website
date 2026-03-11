@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-01-26'
 description: 'Building a Blog With R
 
@@ -138,4 +139,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=MrW5XFf7aps
   view_count: 5570
 ---
+image: thumbnail.jpg
 

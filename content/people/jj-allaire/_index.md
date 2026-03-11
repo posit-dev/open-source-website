@@ -2,6 +2,7 @@
 title: "JJ Allaire"
 image: "jj.jpeg"
 role: "Founder and Executive Chairman"
+affiliation: "Posit, PBC"
 social:
   bluesky: ""
   github: "jjallaire"

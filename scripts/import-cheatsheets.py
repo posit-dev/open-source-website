@@ -5,8 +5,6 @@
 #     "requests>=2.31.0",
 #     "beautifulsoup4>=4.12.0",
 #     "pyyaml>=6.0",
-#     "pdf2image>=1.17.0",
-#     "pillow>=10.0.0",
 #     "lxml>=5.0.0",
 # ]
 # ///
@@ -17,6 +15,8 @@ Downloads PDFs and creates thumbnails.
 """
 
 import re
+import subprocess
+import sys
 from pathlib import Path
 from datetime import date
 from typing import Dict, List, Optional
@@ -24,8 +24,6 @@ from typing import Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup
 import yaml
-from pdf2image import convert_from_path
-from PIL import Image
 
 BASE_URL = "https://rstudio.github.io/cheatsheets"
 HTML_BASE_URL = f"{BASE_URL}/html"
@@ -208,39 +206,20 @@ def download_pdf(url: str, dest_path: Path) -> bool:
         return False
 
 
-def create_thumbnails(pdf_path: Path, output_dir: Path, width: int = 600) -> List[str]:
-    """Create thumbnails of all pages of a PDF."""
-    thumbnails = []
-
-    try:
-        print(f"    Creating thumbnails from: {pdf_path.name}")
-
-        images = convert_from_path(pdf_path, dpi=150)
-
-        if not images:
-            print("    ✗ No images extracted from PDF")
-            return []
-
-        print(f"    Processing {len(images)} pages...")
-
-        for page_num, image in enumerate(images, start=1):
-            aspect_ratio = image.height / image.width
-            new_height = int(width * aspect_ratio)
-
-            resized_image = image.resize((width, new_height), Image.Resampling.LANCZOS)
-
-            thumbnail_filename = f"page-{page_num}.png"
-            thumbnail_path = output_dir / thumbnail_filename
-            resized_image.save(thumbnail_path, "PNG", optimize=True)
-
-            thumbnails.append(thumbnail_filename)
-
-        print(f"    ✓ Created {len(thumbnails)} thumbnails")
-        return thumbnails
-
-    except Exception as e:
-        print(f"    ✗ Error creating thumbnails: {e}")
-        return []
+def run_create_thumbnails(pdf_path: Path) -> None:
+    """Run create-cheatsheet-thumbnails.py to generate thumbnails and update _index.md."""
+    script = Path(__file__).parent / "create-cheatsheet-thumbnails.py"
+    result = subprocess.run(
+        [sys.executable, str(script), "--pdf", str(pdf_path)],
+        capture_output=True,
+        text=True,
+    )
+    if result.stdout:
+        print(result.stdout, end="")
+    if result.stderr:
+        print(result.stderr, end="")
+    if result.returncode != 0:
+        print(f"    ✗ Thumbnail creation failed (exit code {result.returncode})")
 
 
 def create_cheatsheet_frontmatter(
@@ -248,7 +227,6 @@ def create_cheatsheet_frontmatter(
     title: str,
     description: str,
     pdf_filename: str,
-    thumbnail_filenames: List[str],
     translation_filenames: List[Dict[str, str]],
     software: List[str],
     languages: List[str],
@@ -261,9 +239,6 @@ def create_cheatsheet_frontmatter(
         "description": description,
         "download_url": pdf_filename,
     }
-
-    if thumbnail_filenames:
-        frontmatter["thumbnails"] = thumbnail_filenames
 
     if software:
         frontmatter["software"] = software
@@ -342,8 +317,6 @@ def process_cheatsheet(slug: str) -> None:
         print("  ✗ Failed to download main PDF, skipping...")
         return
 
-    thumbnail_filenames = create_thumbnails(pdf_path, cheatsheet_dir, width=600)
-
     translation_filenames = []
     for language, trans_url in translations:
         trans_filename = Path(trans_url).name
@@ -357,13 +330,13 @@ def process_cheatsheet(slug: str) -> None:
         title,
         description,
         pdf_filename,
-        thumbnail_filenames,
         translation_filenames,
         software,
         languages,
     )
 
     create_cheatsheet_file(slug, frontmatter)
+    run_create_thumbnails(pdf_path)
 
 
 def main():

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: ''
 github: tidyverse/ggbot2
 languages:
@@ -15,13 +17,13 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.760987+00:00'
+  last_updated: '2026-03-05T16:21:55.289196+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng
   - Davis Vaughan
   repo: tidyverse/ggbot2
-  stars: 36
+  stars: 37
   title: ggbot2
   website: ''
 ---

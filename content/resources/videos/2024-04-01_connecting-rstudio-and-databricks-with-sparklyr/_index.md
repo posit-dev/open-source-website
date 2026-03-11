@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-01'
 description: 'You can connect RStudio and Databricks with the sparklyr package.
 
@@ -122,4 +123,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=B1ZaEVfoq6g
   view_count: 2107
 ---
+image: thumbnail.jpg
 

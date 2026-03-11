@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Collection of low-level functions for working with vctrs
 github: tidyverse/funs
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 7
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.598421+00:00'
+  last_updated: '2026-03-05T16:21:35.957464+00:00'
   license: NOASSERTION
   people:
   - Davis Vaughan

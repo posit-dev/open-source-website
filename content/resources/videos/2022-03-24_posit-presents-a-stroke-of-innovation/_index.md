@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-03-24'
 description: 'Introducing "A Stroke of Innovation," a short film made possible by a team of innovators looking to make the world a better place.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Pm7ol3e0qdA
   view_count: 6955
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-22'
 description: 'This video highlights some of Quarto''s features that are especially useful for academics, as educators and as researchers.
 
@@ -141,4 +142,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=EbAAmrB0luA
   view_count: 28845
 ---
+image: thumbnail.jpg
 

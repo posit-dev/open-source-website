@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-02-08'
 description: 'Getting Started with LLM APIs in R - Sara Altman
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=1efPTy4TQ4Q
   view_count: 199
 ---
+image: thumbnail.jpg
 

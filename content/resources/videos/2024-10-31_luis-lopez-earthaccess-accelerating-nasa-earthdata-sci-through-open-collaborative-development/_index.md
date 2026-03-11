@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: "earthaccess is a python library to search, download or stream NASA Earth science data with just a few lines of code. \n\n Open science is a collaborative effort; it involves people from different technical backgrounds, and the data analysis to solve the pressing problems we face cannot be limited by the complexity of the underlying systems. Therefore, providing easy access to NASA Earthdata and reducing the complexity and \"time to science\" is the main motivation behind this Python library.\n\nTalk by Luis Lopez\n\n\nSlides: https://docs.google.com/presentation/d/1Ot879tfrjhok3BzSwSUr2Xpd26dX-hyVGHQzATLVRTo/\nGitHub Repo: https://github.com/nsidc/earthaccess"
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Pye4gYKhjwM
   view_count: 195
 ---
+image: thumbnail.jpg
 

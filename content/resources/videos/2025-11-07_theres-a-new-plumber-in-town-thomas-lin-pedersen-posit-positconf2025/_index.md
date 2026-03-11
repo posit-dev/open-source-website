@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'There''s a new Plumber in town
 
@@ -57,4 +58,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Ey_gXEBte-k
   view_count: 277
 ---
+image: thumbnail.jpg
 

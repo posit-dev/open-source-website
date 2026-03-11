@@ -1,5 +1,6 @@
 ---
 title: Package Development
+image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
 description: Quick reference guide for package development.

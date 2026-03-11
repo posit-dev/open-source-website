@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-01-30'
 description: 'Speed up your coding projects in the RStudio IDE on Posit Cloud with GitHub Copilot, an AI coding assistant.
 
@@ -92,4 +93,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Bq003X4TL8Q
   view_count: 1054
 ---
+image: thumbnail.jpg
 

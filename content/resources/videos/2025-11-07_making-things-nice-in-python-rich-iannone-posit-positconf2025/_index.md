@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Making Things Nice in Python
 
@@ -63,4 +64,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=J6e2BKjHyPg
   view_count: 393
 ---
+image: thumbnail.jpg
 

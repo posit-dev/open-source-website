@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: Examples of R Markdown Websites
 github: rstudio/rmarkdown-website-examples
 languages:
@@ -11,10 +13,10 @@ website: ''
 external:  # updated automatically, do not edit
   description: Examples of R Markdown Websites
   first_commit: '2016-04-04T13:11:27+00:00'
-  forks: 177
+  forks: 176
   languages:
   - HTML
-  last_updated: '2026-02-27T17:14:00.347866+00:00'
+  last_updated: '2026-03-05T16:10:43.676636+00:00'
   people:
   - JJ Allaire
   repo: rstudio/rmarkdown-website-examples

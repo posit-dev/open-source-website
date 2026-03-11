@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-02'
 description: 'Full title: Sharing on Short Notice: How to Get Your Teaching Materials Online With R Markdown
 
@@ -102,4 +103,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QcE4RBH2auQ
   view_count: 4693
 ---
+image: thumbnail.jpg
 

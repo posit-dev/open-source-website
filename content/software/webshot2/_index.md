@@ -2,6 +2,7 @@
 description: Take screenshots of web pages from R
 github: rstudio/webshot2
 image: README-demo-1.png
+color: "#324461"
 languages:
 - R
 latest_release: '2025-04-24T02:10:54+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - R
-  last_updated: '2026-02-27T17:14:02.300688+00:00'
+  last_updated: '2026-03-05T16:14:40.129719+00:00'
   latest_release: '2025-04-24T02:10:54+00:00'
   license: NOASSERTION
   people:

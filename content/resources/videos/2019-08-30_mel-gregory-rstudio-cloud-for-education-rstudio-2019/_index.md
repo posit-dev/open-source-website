@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-08-30'
 description: "RStudio Cloud aims to take the friction out of doing data science with R, allowing students (and instructors) to skip over installation, setup, and IT challenges and go straight to the good stuff. In this talk, you will learn about RStudio Cloud, how it can streamline the learning process, and how to use it to facilitate teaching classes, workshops, and other learning situations. Additionally, we will highlight some best practices for using RStudio Cloud in an educational setting, and talk about other learning resources available.\r\n\r\nAbout the Author\r\nMel Gregory\r\nMel is a software engineer and has been for a while. She likes simplicity."
 people: []
@@ -70,4 +71,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=PviVimazpz8
   view_count: 3979
 ---
+image: thumbnail.jpg
 

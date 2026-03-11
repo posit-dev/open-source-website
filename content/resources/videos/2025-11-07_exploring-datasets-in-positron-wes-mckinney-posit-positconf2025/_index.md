@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Exploring Datasets in Positron
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=R71WCIO6RyY
   view_count: 1066
 ---
+image: thumbnail.jpg
 

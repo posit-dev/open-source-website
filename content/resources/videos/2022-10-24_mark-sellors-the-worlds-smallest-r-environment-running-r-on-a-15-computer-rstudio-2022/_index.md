@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Is it possible to do meaningful work in R on a $35 computer? How about a $15 computer? And what does that mean for education, data science, and computing on small devices? In this talk, Mark introduces the R4Pi.org project, its background and why on earth you''d even want to run R at the opposite end of "scale" from everyone else.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=imYEdQ81JPk
   view_count: 214
 ---
+image: thumbnail.jpg
 

@@ -1,0 +1,32 @@
+{{/* insert-cards: Insert a grid of cards from a Markdown-style list. */}}
+{{ $cols := .Get "cols" | default "3" | string }}
+{{ $hide_badge := .Get "hide-badge" }}
+
+{{/* Map cols value to Tailwind grid class */}}
+{{ $gridClass := "grid-cols-3" }}
+{{ if eq $cols "2" }}{{ $gridClass = "grid-cols-2" }}
+{{ else if eq $cols "3" }}{{ $gridClass = "grid-cols-3" }}
+{{ else if eq $cols "4" }}{{ $gridClass = "grid-cols-4" }}
+{{ else if eq $cols "5" }}{{ $gridClass = "grid-cols-5" }}
+{{ else if eq $cols "6" }}{{ $gridClass = "grid-cols-6" }}
+{{ end }}
+
+{{/* Parse inner content: each line starting with - or * is an item */}}
+{{ $items := slice }}
+{{ range split .Inner "\n" }}
+  {{ $line := trim . " \t\r\n" }}
+  {{ $line = strings.TrimPrefix "- " $line }}
+  {{ $line = strings.TrimPrefix "* " $line }}
+  {{ $line = trim $line " \t" }}
+  {{ if $line }}
+    {{ $items = $items | append $line }}
+  {{ end }}
+{{ end }}
+
+<div class="grid {{ $gridClass }} gap-6">
+  {{ range $items }}
+    <div>
+      {{ partial "card.html" (dict "item" . "hide-badge" $hide_badge) }}
+    </div>
+  {{ end }}
+</div>

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-07-27'
 description: 'BIG THINGS happened on the Shiny team in 2022! Our team built out a new Shiny UI Editor, Shiny for Python, and Shiny for Python in the browser using WebAssembly. So we asked some of our Developers what their biggest learnings have been from building these products!
 
@@ -111,4 +112,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Yr40qPbMdEM
   view_count: 1228
 ---
+image: thumbnail.jpg
 

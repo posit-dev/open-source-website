@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In Part 2 of our conversation with Wes McKinney, we go beyond the code and into the mission-driven world of open source funding, community-building, and product strategy. Wes talks about what it takes to make critical tools like Arrow sustainable — from pitching to mavericks at Two Sigma to navigating the politics of Apache Software Foundation governance. Also, Wes gives a peek behind the curtain on the origins of Positron. And, yeah, metal.
 
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=jhCDGc5YlOw
   view_count: 176
 ---
+image: thumbnail.jpg
 

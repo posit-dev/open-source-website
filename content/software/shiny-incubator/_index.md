@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Examples and ideas that don't belong in the core Shiny package and aren't
   officially supported.
 github: rstudio/shiny-incubator
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 32
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:13:59.070645+00:00'
+  last_updated: '2026-03-05T16:08:12.515675+00:00'
   people:
   - Joe Cheng
   - Winston Chang

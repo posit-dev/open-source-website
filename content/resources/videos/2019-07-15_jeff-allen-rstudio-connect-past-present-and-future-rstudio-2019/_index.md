@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-07-15'
 description: "RStudio Connect is a publishing platform that helps to operationalize the data science work you're doing. We'll review the current state of RStudio including its ability to host Shiny applications and Plumber APIs, schedule and render R Markdown documents, and manage access. Then we'll unveil some exciting new features that we've been working on, and give you a sneak peek at what's coming up next.\r\n\r\nMaterials: http://rstd.io/rsc170"
 people: []
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=KnG3h41K5Xc
   view_count: 1768
 ---
+image: thumbnail.jpg
 

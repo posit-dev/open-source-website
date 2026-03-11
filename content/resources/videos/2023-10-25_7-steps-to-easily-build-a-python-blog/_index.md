@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-10-25'
 description: 'Learn more: https://quarto.org/docs/websites/'
 people: []
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=1et4tkISml0
   view_count: 4718
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'GitHub is more than just a version control tool, it''s a way of explaining your professional identity to prospective employers and collaborators – and you can build your profile now, before you''re looking for new opportunities. This talk is about how to think of GitHub as an opportunity, not a chore, and how to represent yourself well without making developing your GitHub profile into a part-time job. I''ll talk about why GitHub adds value beyond a personal website, what kinds of projects are helpful to share, and some good development practices to get in the habit of, regardless of your project specifics.
 
@@ -44,4 +45,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=R-bPjavai5A
   view_count: 1291
 ---
+image: thumbnail.jpg
 

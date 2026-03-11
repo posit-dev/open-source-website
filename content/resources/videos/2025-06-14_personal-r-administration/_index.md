@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-06-14'
 description: 'From R/Medicine 2025
 
@@ -81,4 +82,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=m2eihAhl8so
   view_count: 325
 ---
+image: thumbnail.jpg
 

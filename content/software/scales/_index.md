@@ -2,6 +2,7 @@
 description: Tools for ggplot2 scales
 github: r-lib/scales
 image: logo.png
+color: "#374251"
 languages:
 - R
 latest_release: '2025-04-23T14:42:43+00:00'
@@ -23,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 116
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.291195+00:00'
+  last_updated: '2026-03-05T16:24:45.258915+00:00'
   latest_release: '2025-04-23T14:42:43+00:00'
   license: NOASSERTION
   people:

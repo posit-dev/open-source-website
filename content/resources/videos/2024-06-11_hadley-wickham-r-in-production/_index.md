@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-11'
 description: 'R in Production by Hadley Wickham
 
@@ -101,4 +102,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=BQk2-3inViM
   view_count: 4194
 ---
+image: thumbnail.jpg
 

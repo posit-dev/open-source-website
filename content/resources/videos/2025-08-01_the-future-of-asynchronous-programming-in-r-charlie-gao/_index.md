@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-08-01'
 description: 'Asynchronous programming can be a powerful paradigm, whereby computations are allowed to run concurrently without blocking the main session. It is an opportune time to survey the current landscape, as R infrastructure in this respect has matured significantly over recent years.
 
@@ -59,4 +60,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=sGLD8oVquho
   view_count: 483
 ---
+image: thumbnail.jpg
 

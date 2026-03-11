@@ -2,6 +2,7 @@
 description: Database (DBI) backend for dplyr
 github: tidyverse/dbplyr
 image: logo.png
+color: "#EA4A41"
 languages:
 - R
 latest_release: '2025-09-09T16:38:02+00:00'
@@ -26,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 185
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.437605+00:00'
+  last_updated: '2026-03-05T16:21:18.227479+00:00'
   latest_release: '2025-09-09T16:38:02+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Templates for Shiny for Python
 github: posit-dev/py-shiny-templates
 languages:
@@ -15,10 +17,10 @@ website: 'https://shiny.posit.co/py/templates '
 external:  # updated automatically, do not edit
   description: Templates for Shiny for Python
   first_commit: '2023-12-06T18:26:49+00:00'
-  forks: 30
+  forks: 31
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:44.375586+00:00'
+  last_updated: '2026-03-05T16:03:36.679690+00:00'
   license: MIT
   people:
   - Carson Sievert
@@ -27,7 +29,7 @@ external:  # updated automatically, do not edit
   - Garrick Aden-Buie
   - Greg Swinehart
   repo: posit-dev/py-shiny-templates
-  stars: 45
+  stars: 44
   title: py-shiny-templates
   website: 'https://shiny.posit.co/py/templates '
 ---

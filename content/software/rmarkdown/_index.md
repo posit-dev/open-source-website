@@ -2,6 +2,7 @@
 description: Dynamic Documents for R
 github: rstudio/rmarkdown
 image: logo.png
+color: "#5CE8D3"
 languages:
 - R
 latest_release: '2025-09-29T14:17:29+00:00'
@@ -26,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 994
   languages:
   - R
-  last_updated: '2026-02-27T17:13:59.369299+00:00'
+  last_updated: '2026-03-05T16:08:50.223937+00:00'
   latest_release: '2025-09-29T14:17:29+00:00'
   license: GPL-3.0
   people:
@@ -43,7 +44,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: rstudio/rmarkdown
-  stars: 3024
+  stars: 3027
   title: rmarkdown
   website: https://rmarkdown.rstudio.com
 ---

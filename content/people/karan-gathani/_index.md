@@ -2,6 +2,7 @@
 title: "Karan Gathani"
 image: "karan.jpeg"
 role: ""
+affiliation: "Posit, PBC"
 social:
   bluesky: ""
   github: "kgathani"

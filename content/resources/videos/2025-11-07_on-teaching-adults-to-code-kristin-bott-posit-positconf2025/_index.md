@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'On teaching adults to code
 
@@ -55,4 +56,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=UZIB-JSdkLk
   view_count: 172
 ---
+image: thumbnail.jpg
 

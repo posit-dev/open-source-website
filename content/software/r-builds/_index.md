@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: an opinionated environment for compiling R
 github: rstudio/r-builds
 languages:
@@ -14,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - Shell
-  last_updated: '2026-02-27T17:14:02.353541+00:00'
+  last_updated: '2026-03-05T16:14:46.825911+00:00'
   license: GPL-3.0
   people:
   - Gábor Csárdi

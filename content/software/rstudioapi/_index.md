@@ -2,6 +2,7 @@
 description: Safely access RStudio's API (when available)
 github: rstudio/rstudioapi
 image: logo.png
+color: "#0F3DA1"
 languages:
 - R
 latest_release: '2024-10-16T22:39:47+00:00'
@@ -15,10 +16,10 @@ website: http://rstudio.github.io/rstudioapi
 external:  # updated automatically, do not edit
   description: Safely access RStudio's API (when available)
   first_commit: '2014-01-10T11:37:40+00:00'
-  forks: 36
+  forks: 37
   languages:
   - R
-  last_updated: '2026-02-27T17:13:59.351705+00:00'
+  last_updated: '2026-03-05T16:08:45.826716+00:00'
   latest_release: '2024-10-16T22:39:47+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +28,7 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   readme_image: man/figures/logo.png
   repo: rstudio/rstudioapi
-  stars: 173
+  stars: 174
   title: rstudioapi
   website: http://rstudio.github.io/rstudioapi
 ---

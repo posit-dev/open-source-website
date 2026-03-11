@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Leveraging LLMs for student feedback in introductory data science courses
 
@@ -57,4 +58,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=5gS7AUGwZPs
   view_count: 131
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Edgar Ruiz\r\n\r\nSpark Connect, and Databricks Connect, enable the ability to interact with Spark stand-alone clusters remotely. This improves our ability to perform Data Science at-scale. We will share the work in `sparklyr`, and other products, that will make it easier for R users to take advantage this new framework.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Tidy up your models.\r\nSession Code: TALK-1084"
 people:
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=n3Wf59MI1LI
   view_count: 2294
 ---
+image: thumbnail.jpg
 

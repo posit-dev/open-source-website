@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-22'
 description: 'Part of RStudio''s Data Science in the Cloud Webinar Series.
 
@@ -94,4 +95,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=8b_ikPWqyPM
   view_count: 278
 ---
+image: thumbnail.jpg
 

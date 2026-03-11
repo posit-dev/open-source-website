@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'We sought to create a dashboard to highlight some frequently asked statistics about the Affordable Connectivity Program. Although the program data were "available" to the public, they were not accessible. Wrangling messy datasets is not new to data scientists, and our work included pretty straightforward summary statistics, yet this work became a leading resource for advocacy groups, academics, and policymakers, and ultimately led us to a meeting where we shared guidance about the program funding needs with the White House. While I give a shout-out to a few of my favorite R packages, in this talk, I focus on the strategies you can employ to make your data tool have an impact.
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=HwA-yVESg_Q
   view_count: 243
 ---
+image: thumbnail.jpg
 

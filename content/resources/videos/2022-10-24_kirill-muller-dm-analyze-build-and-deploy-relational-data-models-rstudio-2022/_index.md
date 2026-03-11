@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'dm bridges the gap in the data pipeline between standalone data frames and relational databases. Implementing a "grammar of joined tables", it provides a consistent set of verbs for consuming, creating, and deploying relational data models. In this talk I present a short overview of how dm can help your data analysis and ETL processes, and highlight recent developments.
 
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=eGI-SJMiWgM
   view_count: 584
 ---
+image: thumbnail.jpg
 

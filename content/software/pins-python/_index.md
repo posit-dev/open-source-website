@@ -2,6 +2,7 @@
 description: ''
 github: rstudio/pins-python
 image: logo.png
+color: "#F1C8A2"
 languages:
 - Python
 latest_release: '2025-10-03T16:46:15+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - Python
-  last_updated: '2026-02-27T17:14:03.931363+00:00'
+  last_updated: '2026-03-05T16:17:46.933766+00:00'
   latest_release: '2025-10-03T16:46:15+00:00'
   license: MIT
   people:

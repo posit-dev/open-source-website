@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Extending the horizons of R with Rust
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=bAA_O_gNhfI
   view_count: 167
 ---
+image: thumbnail.jpg
 

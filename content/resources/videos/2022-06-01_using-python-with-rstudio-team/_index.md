@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-06-01'
 description: 'Using Python with RStudio Team
 
@@ -197,4 +198,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=o36425S1-VU
   view_count: 5729
 ---
+image: thumbnail.jpg
 

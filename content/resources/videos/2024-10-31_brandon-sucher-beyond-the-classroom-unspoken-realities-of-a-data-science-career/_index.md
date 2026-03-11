@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Embarking on a data science career extends well beyond academic knowledge. In many ways, the learning has just begun. Soft skills have become increasingly valuable, with effective collaboration being essential for success. Additionally, there may be moments when advocating for your own work is crucial, turning data scientists into persuasive salespeople for their own insights and contributions. In this talk, I''ll touch on some of the aspects of a data science job that aren''t talked about as frequently, including onboarding successfully, becoming a subject matter expert, and understanding the end-to-end data workflow.
 
@@ -44,4 +45,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=eGxs8ziNfQ8
   view_count: 210
 ---
+image: thumbnail.jpg
 

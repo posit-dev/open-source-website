@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-12'
 description: 'This episode dives into some of the most important data science libraries from the Python space with one of its pioneers: Wes McKinney. He''s the creator or co-creator of pandas, Apache Arrow, and Ibis projects and an entrepreneur in this space.
 
@@ -136,4 +137,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=iBe1-o8LYE4
   view_count: 2492
 ---
+image: thumbnail.jpg
 

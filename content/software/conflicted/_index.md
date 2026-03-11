@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: An alternative conflict resolution strategy for R
 github: r-lib/conflicted
 languages:
@@ -16,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.662434+00:00'
+  last_updated: '2026-03-05T16:28:01.929940+00:00'
   latest_release: '2023-01-31T19:50:16+00:00'
   license: NOASSERTION
   people:

@@ -2,6 +2,7 @@
 description: Companion R package to Data Science Course in a Box
 github: tidyverse/dsbox
 image: logo.png
+color: "#CB9FCB"
 languages:
 - R
 people:
@@ -15,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 26
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.543978+00:00'
+  last_updated: '2026-03-05T16:21:31.195124+00:00'
   license: NOASSERTION
   people:
   - Mine Çetinkaya-Rundel

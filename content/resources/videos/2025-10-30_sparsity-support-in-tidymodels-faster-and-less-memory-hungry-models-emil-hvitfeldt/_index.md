@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-10-30'
 description: 'Sparse data, data with a lot of 0s, appear quite often in modeling contexts. However, existing data structures such as data.frames or matrices doesn''t have a good way of controlling them. You were forced to represent all data as sparse or dense (non-sparse).
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=UFfTwTuNR2c
   view_count: 42
 ---
+image: thumbnail.jpg
 

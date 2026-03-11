@@ -13,7 +13,8 @@ people:
 software:
   - Positron
 resources:
-  - videos/isabel-zimmerman-pydata-boston-2025-keynote
+  - videos/2025-12-15_keynote-speaker-isabel-zimmerman-pydata-boston-2025
+  - videos/2025-12-15_rodrigo-silva-ferreira-when-rivers-speak-analyzing-massive-water-quality-datasets-pydata-boston-2025
 ---
 
 PyData Boston 2025 is a three-day conference bringing together the international community of data scientists, engineers, and developers working with Python and data analysis tools. The event takes place December 8-10, 2025 at the Microsoft NERD Center in Cambridge, Massachusetts.

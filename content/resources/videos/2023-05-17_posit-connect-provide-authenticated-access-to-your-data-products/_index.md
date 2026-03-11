@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-17'
 description: "Posit Connect is all about getting your data products into the hands of stakeholders and collaborators. \n\nHere, we demonstrate how to provide authenticated access to a Dash application. \n\nFor more information about Posit Connect, go to:\nhttps://posit.co/products/enterprise/connect/"
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=72t0KqTS4OQ
   view_count: 1777
 ---
+image: thumbnail.jpg
 

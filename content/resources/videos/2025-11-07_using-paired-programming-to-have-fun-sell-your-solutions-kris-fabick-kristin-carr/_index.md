@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Self-sufficient deployment: using pair programming to have fun and sell your solutions
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=tAo2nCwt-F0
   view_count: 126
 ---
+image: thumbnail.jpg
 

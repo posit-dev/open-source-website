@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-27'
 description: This talk will use a case study, most likely in hockey, to showcase the many ways in which R and the Tidyverse can be used to analyze sports data as well as the unique priorities and considerations that are involved in applying statistical tools to sports problems.
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=L-kRMiYwRC4
   view_count: 1098
 ---
+image: thumbnail.jpg
 

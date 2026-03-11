@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Infrastructure for calling Google APIs from R, including auth
 github: r-lib/gargle
 languages:
@@ -19,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 39
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.813548+00:00'
+  last_updated: '2026-03-05T16:26:00.822680+00:00'
   latest_release: '2026-01-28T21:11:46+00:00'
   license: NOASSERTION
   people:

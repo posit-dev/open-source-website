@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-27'
 description: 'We were joined by three leaders from Unity Health Toronto: Derek Beaton, Jamie Beverly, and Sebnem Sahin Kuzulugil (surprise special guest! we will be updating the hangout image!)
 
@@ -64,4 +65,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=LJXu_0vNiS0
   view_count: 622
 ---
+image: thumbnail.jpg
 

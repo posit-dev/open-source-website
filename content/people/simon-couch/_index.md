@@ -2,6 +2,7 @@
 title: "Simon Couch"
 image: "profile.jpg"
 role: ""
+affiliation: "Posit, PBC"
 social:
   bluesky: ""
   github: "simonpcouch"

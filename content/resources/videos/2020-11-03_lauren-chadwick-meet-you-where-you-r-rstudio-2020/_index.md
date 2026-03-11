@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-03'
 description: 'At RStudio, we wake up and go to bed thinking about the positive impact that open source work and data science has had and can have on the world. To maximize this impact, we find three areas of investment absolutely critical to ensure our open source community keeps up with the world’s changes and outlives us all: 1. Find ways to make R more approachable. 2. Enable teams of all types & sizes (educational, professional, etc.) to be able to leverage the work they’re doing in R, and effortlessly communicate that work to others. 3. Extend the language so our open-source community can continue to be at the forefront of innovation, no matter their preference of tool or language.'
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=25b3-To41Yc
   view_count: 1173
 ---
+image: thumbnail.jpg
 

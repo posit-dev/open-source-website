@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-11-27'
 description: 'We were recently joined by Julia Silge, Data Scientist & Software Engineer at Posit, PBC to talk about the skills and tools that data scientists need to deploy their models and scale their impact.
 
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=NBFooTXCnx0
   view_count: 1355
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-05-20'
 description: 'In this video Jeremey Allen walks through connecting Posit Package Manager to Workbench for fast and secure access to the organization’s R and Python libraries.
 
@@ -90,4 +91,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=RcAjfaGxIWk
   view_count: 1954
 ---
+image: thumbnail.jpg
 

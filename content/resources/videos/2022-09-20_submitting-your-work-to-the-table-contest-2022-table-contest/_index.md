@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-09-20'
 description: 'Rich Iannone walks through how to submit a table to the 2022 Table Contest. He explains considerations for each field, and how to update & edit your entry afterwards.
 
@@ -81,4 +82,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fgYgaYKpLO0
   view_count: 486
 ---
+image: thumbnail.jpg
 

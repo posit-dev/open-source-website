@@ -2,6 +2,7 @@
 description: R Interface to D3 Visualizations
 github: rstudio/r2d3
 image: r2d3-hex.png
+color: "#BF640E"
 languages:
 - R
 latest_release: '2018-12-18T18:00:22+00:00'
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 104
   languages:
   - R
-  last_updated: '2026-02-27T17:14:01.487364+00:00'
+  last_updated: '2026-03-05T16:13:04.308657+00:00'
   latest_release: '2018-12-18T18:00:22+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +28,7 @@ external:  # updated automatically, do not edit
   - Nick Strayer
   readme_image: man/figures/r2d3-hex.png
   repo: rstudio/r2d3
-  stars: 525
+  stars: 524
   title: r2d3
   website: https://rstudio.github.io/r2d3
 ---

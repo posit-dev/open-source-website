@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: Render ipywidgets inside a PyShiny app
 github: posit-dev/py-shinywidgets
 languages:
@@ -18,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 7
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:44.039523+00:00'
+  last_updated: '2026-03-05T16:02:52.093340+00:00'
   latest_release: '2026-01-22T01:15:31+00:00'
   license: MIT
   people:

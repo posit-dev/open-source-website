@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Basic R Input Output
 github: r-lib/brio
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - R
-  last_updated: '2026-02-27T17:14:19.163450+00:00'
+  last_updated: '2026-03-05T16:29:08.359839+00:00'
   latest_release: '2024-04-24T18:51:12+00:00'
   license: NOASSERTION
   people:

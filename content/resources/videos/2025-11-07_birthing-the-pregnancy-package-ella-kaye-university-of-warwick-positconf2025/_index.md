@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Birthing the pregnancy package
 
@@ -60,4 +61,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=d2KYt1JMjzQ
   view_count: 103
 ---
+image: thumbnail.jpg
 

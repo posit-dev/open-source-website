@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-01-28'
 description: 'Modern data engineering demands more. Move beyond the limitations of hosted notebooks and embrace the power of an IDE for modern data engineering.
 
@@ -122,4 +123,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=UKX6lcgka-w
   view_count: 757
 ---
+image: thumbnail.jpg
 

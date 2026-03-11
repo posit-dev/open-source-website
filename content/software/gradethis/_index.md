@@ -2,6 +2,7 @@
 description: Tools for teachers to use with learnr
 github: rstudio/gradethis
 image: logo.png
+color: "#B66D4B"
 languages:
 - R
 latest_release: '2023-06-27T02:54:24+00:00'
@@ -19,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 41
   languages:
   - R
-  last_updated: '2026-02-27T17:14:01.522856+00:00'
+  last_updated: '2026-03-05T16:13:09.219922+00:00'
   latest_release: '2023-06-27T02:54:24+00:00'
   license: NOASSERTION
   people:

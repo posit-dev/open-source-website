@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-09-26'
 description: 'On September 25th, we hosted a Workflow Demo on data-level permissions using Posit Connect (with Databricks, Snowflake, OAuth: https://youtu.be/ivEoeyWJzVY?feature=shared)
 
@@ -88,4 +89,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=TZQY6rm6hU4
   view_count: 431
 ---
+image: thumbnail.jpg
 

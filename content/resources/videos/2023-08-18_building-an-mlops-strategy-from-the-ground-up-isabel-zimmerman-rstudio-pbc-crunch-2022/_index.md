@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-08-18'
 description: 'This talk was recorded at Crunch Conference 2022. Isabel from RStudio PBC spoke about building an MLOps strategy from the ground up.
 
@@ -59,4 +60,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=I0tcVAdVPtw
   view_count: 133
 ---
+image: thumbnail.jpg
 

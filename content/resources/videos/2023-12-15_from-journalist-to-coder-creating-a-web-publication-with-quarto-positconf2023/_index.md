@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Brian Tarran\r\n\r\nThis is the story of how a Royal Statistical Society writer discovered Quarto, learned how to code (a bit), and built realworlddatascience.net, an online publication for the data science community.\r\n\r\nIn March 2022, I was tasked by the Royal Statistical Society with creating a new online publication: a data science website for data science professionals. I've been a print journalist for 20 years and have worked on websites in that time, but my coding ability began and ended with wrapping href tags around text and images. That is until I discovered Quarto. In this talk, I describe how I explored, learned, and fell in love with the Quarto publishing system, how I used it to build a website -- Real World Data Science (realworlddatascience.net) -- and how the open source community mindset helped shape my thinking about what a new publication could and should be!\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Quarto (1).\r\nSession Code: TALK-1071"
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ncDEqHxMWnE
   view_count: 3808
 ---
+image: thumbnail.jpg
 

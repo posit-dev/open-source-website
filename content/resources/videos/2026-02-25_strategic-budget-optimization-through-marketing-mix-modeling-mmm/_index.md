@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-02-25'
 description: 'Stop guessing which channels drive growth.
 
@@ -118,4 +119,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=7yMwT4likZU
   view_count: 245
 ---
+image: thumbnail.jpg
 

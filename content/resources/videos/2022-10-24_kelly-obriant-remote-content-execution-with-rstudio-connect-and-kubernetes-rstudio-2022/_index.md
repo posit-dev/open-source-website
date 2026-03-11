@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This summer the Posit Connect team will announce a feature which has been over two years in the making: “Remote” off-host content execution with launcher in Kubernetes.
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=7vpQWEUpNKk
   view_count: 461
 ---
+image: thumbnail.jpg
 

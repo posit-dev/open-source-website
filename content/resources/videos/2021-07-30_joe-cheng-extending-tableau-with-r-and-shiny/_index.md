@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-07-30'
 description: 'Cascadia R Conf 2021 Session Talks
 
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=M6_GOPofmg0
   view_count: 770
 ---
+image: thumbnail.jpg
 

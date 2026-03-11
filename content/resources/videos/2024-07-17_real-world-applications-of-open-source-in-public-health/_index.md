@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-07-17'
 description: 'Speakers from the following organizations joined to discuss how their team''s work has evolved after learning R or Python through Posit Academy:
 
@@ -59,4 +60,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=cCcpe25edxE
   view_count: 1186
 ---
+image: thumbnail.jpg
 

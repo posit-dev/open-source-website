@@ -2,6 +2,7 @@
 description: Easily generate information-rich, publication-quality tables from R
 github: rstudio/gt
 image: gt.svg
+color: "#fff949"
 languages:
 - R
 latest_release: '2026-01-22T14:22:09+00:00'
@@ -23,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 217
   languages:
   - R
-  last_updated: '2026-02-27T17:14:01.469979+00:00'
+  last_updated: '2026-03-05T16:13:01.948711+00:00'
   latest_release: '2026-01-22T14:22:09+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +38,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.svg
   repo: rstudio/gt
-  stars: 2139
+  stars: 2141
   title: gt
   website: https://gt.rstudio.com
 ---

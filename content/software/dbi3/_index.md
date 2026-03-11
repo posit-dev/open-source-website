@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: DBI revisited
 github: r-dbi/dbi3
 languages:
@@ -12,7 +14,7 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-02-27T17:14:21.317158+00:00'
+  last_updated: '2026-03-05T16:31:56.329782+00:00'
   repo: r-dbi/dbi3
   stars: 41
   title: dbi3

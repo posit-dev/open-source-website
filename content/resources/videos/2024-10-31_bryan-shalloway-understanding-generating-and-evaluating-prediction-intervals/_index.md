@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: "For many problems concerning prediction, providing intervals is more useful than just offering point estimates. This talk will provide an overview of: \n\n - How to think about uncertainty in your predictions (e.g., noise in the data vs uncertainty in estimation) \n- Approaches to producing prediction intervals (e.g., parametric vs conformal) \n- Measures and considerations when evaluating and training models for prediction intervals \n\n While I will touch on some similar topics as Max Kuhn’s posit::conf(2023) talk on conformal inference, my talk will cover different points and have a broader focus. I hope attendees gain an understanding of some of the key tools and concepts related to prediction intervals and that they leave inspired to learn more.\n\nTalk by Bryan Shalloway\n\n\nSlides: https://github.com/brshallo/posit-2024/blob/main/shalloway-posit-conf.pdf\nGitHub Repo: https://github.com/brshallo/posit-2024"
 people:
@@ -28,4 +29,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=QT3SsD1kTj8
   view_count: 564
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Brand YML and Dark Mode in Quarto
 
@@ -59,4 +60,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=WNwsgS-klMA
   view_count: 347
 ---
+image: thumbnail.jpg
 

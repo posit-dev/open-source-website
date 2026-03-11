@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'The majority of fire departments in the United States are volunteer-based organizations. As an emerging professional in the field of data science, I was able to help my local fire department track, manage, and analyze data using R Shiny, Python, and AWS. This has allowed for increased efficiency within the department, and better transparency for fire department and local government officials.
 
@@ -46,4 +47,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=kYnqxQvIFNQ
   view_count: 205
 ---
+image: thumbnail.jpg
 

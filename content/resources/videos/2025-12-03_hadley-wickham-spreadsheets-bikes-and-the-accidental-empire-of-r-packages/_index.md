@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-12-03'
 description: 'Before Hadley Wickham became a pillar of modern data science, he was a spreadsheet-loving teenager making databases for his dad’s job. In this episode, he reflects on the early days of his involvement with R, the birth of tidyverse, and how real-world unpredictability — like a bear in a field — shapes data science.
 
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=KxRnZTl2HVY
   view_count: 1344
 ---
+image: thumbnail.jpg
 

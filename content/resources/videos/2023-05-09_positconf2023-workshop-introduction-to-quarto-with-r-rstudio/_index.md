@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-09'
 description: "Register now: http://pos.it/conf\nInstructor: Andrew Bray\nWorkshop Duration: 1-Day Workshop\n\nThis course is for you if you: \n•   have a basic knowledge of how to use the RStudio IDE\n•   have some familiarity with markdown, or\n•   are excited to author flexible single documents like technical reports and slide presentations\n\n\nSeasoned users of R Markdown will get more out of the Advanced Quarto with R and RStudio: Projects, Websites, Books, and More workshop, which is focused on projects, a distinct strength of Quarto in authoring work that spans multiple documents.\n\nThis workshop will prepare you to author a rich array of documents in Quarto, the next generation of R Markdown. Quarto is an open-source scientific and technical publishing system that offers multilingual programming language support to create dynamic and static documents, books, presentations, blogs, and other online resources. \n\nThe focus for this workshop will be on single documents. You will learn to create static documents, to add interactivity to them with Shiny and htmlwidgets, or steer them in the direction of sophisticated scientific documents. In the afternoon you’ll take the same authoring approaches to create slide presentations in various formats such as reveal.js, beamer, and pptx."
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=x-V0-z6uNj8
   view_count: 680
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Lots of people I meet want to start their own business. "I know how to use R," they figure, "so I should be able to go out on my own, find clients, and work for myself."
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=FWPMUolmflA
   view_count: 441
 ---
+image: thumbnail.jpg
 

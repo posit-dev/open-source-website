@@ -2,6 +2,7 @@
 description: Create Blogs and Websites with R Markdown
 github: rstudio/blogdown
 image: logo.png
+color: "#FBA304"
 languages:
 - R
 latest_release: '2026-01-18T04:20:01+00:00'
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 323
   languages:
   - R
-  last_updated: '2026-02-27T17:14:00.630595+00:00'
+  last_updated: '2026-03-05T16:11:16.754453+00:00'
   latest_release: '2026-01-18T04:20:01+00:00'
   people:
   - Christophe Dervieux
@@ -26,7 +27,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: rstudio/blogdown
-  stars: 1780
+  stars: 1781
   title: blogdown
   website: https://pkgs.rstudio.com/blogdown/
 ---

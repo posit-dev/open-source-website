@@ -46,8 +46,7 @@ This is a data-driven static website serving as a comprehensive knowledge hub an
 ```
 open-source-website/
 ├── content/              # All site content (354 software, 45 people, 5 blog posts)
-├── themes/               # Hugo theme (hugo-theme-tailwind)
-├── layouts/              # Template overrides (wins over theme)
+├── layouts/              # All Hugo templates (theme merged into root)
 ├── assets/               # CSS source files
 ├── static/               # Static assets (images, logos)
 ├── data/                 # Data files (github-repos.toml, github-orgs.toml)
@@ -438,7 +437,6 @@ Referrer-Policy: strict-origin-when-cross-origin
 **Content Scanning Paths:**
 ```javascript
 content: [
-  './themes/hugo-theme-tailwind/**/*.{html,text}',
   './layouts/**/*.html',
   './content/**/*.{md,html}',
   './safelist.txt'
@@ -546,18 +544,13 @@ Based on git commit history and CSS examination:
    - Comfortable reading line heights
    - Proper text/background contrast
 
-### 5.5 Theme Structure
+### 5.5 Layout Structure
 
-**Base Theme:** `themes/hugo-theme-tailwind/`
-- layouts/ - Theme templates
-- assets/ - Theme CSS
-- archetypes/ - Content templates
-- i18n/ - Internationalization
+**Note:** The `themes/` directory has been removed. The theme (hugo-theme-tailwind) has been merged into the root directory, so all layouts, assets, archetypes, and i18n files live directly in their respective root-level directories.
 
-**Project Overrides:** `layouts/` (root level)
-- Takes precedence over theme layouts
-- Allows customization without modifying theme
-- 15 HTML layout files across theme and project
+**Layouts:** `layouts/` (root level)
+- All Hugo templates in one place
+- 15+ HTML layout files
 
 **Template Hierarchy:**
 ```
@@ -566,8 +559,6 @@ baseof.html (global structure)
 layouts/_default/ (default templates)
     ↓
 layouts/[section]/ (section-specific)
-    ↓
-layouts/ (project overrides - highest priority)
 ```
 
 ---
@@ -702,7 +693,7 @@ format:
 
 ### 6.5 Custom Hugo Shortcodes
 
-**Location:** `themes/hugo-theme-tailwind/layouts/shortcodes/`
+**Location:** `layouts/shortcodes/`
 
 **Available Shortcodes:**
 - **gist** - Embed GitHub gists
@@ -881,7 +872,7 @@ just build-search
 baseURL = "https://posit-open-source.netlify.app"
 languageCode = "en-us"
 title = "Posit Open Source"
-theme = "hugo-theme-tailwind"
+# theme = "hugo-theme-tailwind"  # Theme merged into root; no longer used
 
 [taxonomies]
 software = "software"
@@ -939,7 +930,6 @@ format:
 export default {
   darkMode: 'class',
   content: [
-    './themes/hugo-theme-tailwind/**/*.{html,text}',
     './layouts/**/*.html',
     './content/**/*.{md,html}',
     './safelist.txt'

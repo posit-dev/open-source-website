@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Docker images for RStudio Professional Products
 github: rstudio/rstudio-docker-products
 languages:
@@ -14,12 +16,12 @@ external:  # updated automatically, do not edit
   forks: 58
   languages:
   - Shell
-  last_updated: '2026-02-27T17:14:02.478019+00:00'
+  last_updated: '2026-03-05T16:15:01.386755+00:00'
   license: MIT
   people:
   - Neal Richardson
   repo: rstudio/rstudio-docker-products
-  stars: 71
+  stars: 72
   title: rstudio-docker-products
   website: https://hub.docker.com/u/rstudio
 ---

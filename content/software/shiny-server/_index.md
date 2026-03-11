@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Host Shiny applications over the web.
 github: rstudio/shiny-server
 languages:
@@ -13,10 +15,10 @@ website: https://rstudio.com/shiny/server
 external:  # updated automatically, do not edit
   description: Host Shiny applications over the web.
   first_commit: '2012-08-22T18:42:22+00:00'
-  forks: 292
+  forks: 291
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:13:59.052821+00:00'
+  last_updated: '2026-03-05T16:08:10.831098+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng

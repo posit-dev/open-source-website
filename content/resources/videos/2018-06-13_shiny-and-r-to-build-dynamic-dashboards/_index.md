@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2018-06-13'
 description: 'In a static report, you answer known questions. With a dynamic report, you give the reader the tools to answer their own questions. Unleash the full flexibility of analytic app development with Shiny.
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=tmHh89VTanw
   view_count: 67658
 ---
+image: thumbnail.jpg
 

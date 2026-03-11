@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: System requirements for R packages
 github: rstudio/r-system-requirements
 languages:
@@ -15,10 +17,10 @@ website: ''
 external:  # updated automatically, do not edit
   description: System requirements for R packages
   first_commit: '2019-02-11T21:01:15+00:00'
-  forks: 31
+  forks: 32
   languages:
   - Shell
-  last_updated: '2026-02-27T17:14:02.194427+00:00'
+  last_updated: '2026-03-05T16:14:27.655449+00:00'
   license: MIT
   people:
   - Gábor Csárdi

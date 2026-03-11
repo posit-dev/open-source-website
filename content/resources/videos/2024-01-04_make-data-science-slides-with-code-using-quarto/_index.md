@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-01-04'
 description: ''
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=2FieaERARDI
   view_count: 4506
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Building Web Apps and APIs in R with Ambiorix
 
@@ -62,4 +63,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=2xZwPJHx4z8
   view_count: 125
 ---
+image: thumbnail.jpg
 

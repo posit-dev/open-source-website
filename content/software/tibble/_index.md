@@ -2,6 +2,7 @@
 description: A modern re-imagining of the data frame
 github: tidyverse/tibble
 image: logo.png
+color: "#21202F"
 languages:
 - R
 latest_release: '2026-01-10T18:28:34+00:00'
@@ -23,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 135
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.242597+00:00'
+  last_updated: '2026-03-05T16:20:48.821447+00:00'
   latest_release: '2026-01-10T18:28:34+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +38,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   readme_image: man/figures/logo.png
   repo: tidyverse/tibble
-  stars: 738
+  stars: 739
   title: tibble
   website: https://tibble.tidyverse.org/
 ---

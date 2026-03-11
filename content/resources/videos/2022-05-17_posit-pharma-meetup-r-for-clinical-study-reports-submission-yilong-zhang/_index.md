@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-05-17'
 description: 'Presenter: Yilong Zhang, PhD
 
@@ -80,4 +81,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=RBVqKi3FV30
   view_count: 3141
 ---
+image: thumbnail.jpg
 

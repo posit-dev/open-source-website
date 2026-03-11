@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-04-04'
 description: 'From rstudio::global(2021) Shiny X-Sessions, sponsored by Appsilon: in the first part of this talk I will discuss how to use CSS to give your application a fresh and unique look, while keeping your codebase clean and organized with SASS. During the second half I will discuss how to leverage Shiny update functions, proxy objects and JavaScript messages to speed up your dashboards.
 
@@ -91,4 +92,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=a4ff4DHNpAQ
   view_count: 7889
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-02'
 description: "How do you capture your boss' imagination and show the value of your data science project? \n\nData Science Hangout with Michael Derstine, Vice President at Wells Fargo & Company. \n\n\U0001F64B‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh"
 people: []
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ra9SbjDYL9o
   view_count: 1337
 ---
+image: thumbnail.jpg
 

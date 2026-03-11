@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-01-15'
 description: Learn how to elevate your Shiny forms from basic to professional with dynamic accordions. This tutorial demonstrates how to implement intelligent form organization and visual feedback using Shiny's accordion components.
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=TBri6l9jORQ
   view_count: 817
 ---
+image: thumbnail.jpg
 

@@ -2,6 +2,7 @@
 description: High Precision Timing of R Expressions
 github: r-lib/bench
 image: README-autoplot-1.png
+color: "#F35C5D"
 languages:
 - R
 latest_release: '2025-01-16T22:42:26+00:00'
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 25
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.627425+00:00'
+  last_updated: '2026-03-05T16:27:57.219795+00:00'
   latest_release: '2025-01-16T22:42:26+00:00'
   license: NOASSERTION
   people:

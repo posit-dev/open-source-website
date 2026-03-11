@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Visualize R profiling data
 github: r-lib/profvis
 languages:
@@ -22,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 38
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:14:17.777660+00:00'
+  last_updated: '2026-03-05T16:25:56.268221+00:00'
   latest_release: '2024-09-19T19:25:49+00:00'
   license: NOASSERTION
   people:

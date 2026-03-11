@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: 'R Markdown: The Definitive Guide (published by Chapman & Hall/CRC in
   July 2018)'
 github: rstudio/rmarkdown-book
@@ -13,15 +15,15 @@ external:  # updated automatically, do not edit
   description: 'R Markdown: The Definitive Guide (published by Chapman & Hall/CRC
     in July 2018)'
   first_commit: '2018-02-10T06:26:39+00:00'
-  forks: 534
+  forks: 535
   languages:
   - RMarkdown
-  last_updated: '2026-02-27T17:14:01.398987+00:00'
+  last_updated: '2026-03-05T16:12:51.628169+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux
   repo: rstudio/rmarkdown-book
-  stars: 795
+  stars: 796
   title: rmarkdown-book
   website: https://yihui.org/rmarkdown/
 ---

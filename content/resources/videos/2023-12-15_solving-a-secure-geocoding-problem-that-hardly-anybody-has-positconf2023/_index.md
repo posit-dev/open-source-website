@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Tesla DuBois\r\n\r\nDue to data security concerns, the strictest health researchers won't send patient addresses to remote servers for geocoding. The only existing methods for offline geocoding are expensive, cumbersome, or require working with code - all limiting factors for many researchers. So, a couple of classmates and I made a standalone desktop application using shell, Docker, PostGIS, and Python to geocode addresses through a simple GUI without ever sending them off the local machine. Come for the technical ins and outs and stay for the anecdotes about how my R background played into the daunting, frustrating, but ultimately successful task of creating a data science tool using unfamiliar technologies.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Developing your skillset; building your career.\r\nSession Code: TALK-1111"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=BwrF1OsyNbo
   view_count: 249
 ---
+image: thumbnail.jpg
 

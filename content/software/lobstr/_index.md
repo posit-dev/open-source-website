@@ -2,13 +2,14 @@
 description: Understanding complex R objects with tools similar to str()
 github: r-lib/lobstr
 image: logo.png
+color: "#52336A"
 languages:
 - C
-latest_release: '2025-11-14T13:22:25+00:00'
+latest_release: '2026-02-19T16:31:47+00:00'
 people:
 - Hadley Wickham
-- Nick Strayer
 - Lionel Henry
+- Nick Strayer
 - Jeroen Janssens
 title: lobstr
 website: https://lobstr.r-lib.org/
@@ -19,13 +20,13 @@ external:  # updated automatically, do not edit
   forks: 30
   languages:
   - C
-  last_updated: '2026-02-27T17:14:17.634172+00:00'
-  latest_release: '2025-11-14T13:22:25+00:00'
+  last_updated: '2026-03-05T16:25:37.723767+00:00'
+  latest_release: '2026-02-19T16:31:47+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
-  - Nick Strayer
   - Lionel Henry
+  - Nick Strayer
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/lobstr

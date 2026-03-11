@@ -2,6 +2,7 @@
 description: Unified branding with a single YAML file
 github: posit-dev/brand-yml
 image: brand-yml-wide-color.svg
+color: "#B54A4E"
 languages:
 - Python
 latest_release: '2025-11-06T16:31:36+00:00'
@@ -19,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:44.499922+00:00'
+  last_updated: '2026-03-05T16:03:52.928287+00:00'
   latest_release: '2025-11-06T16:31:36+00:00'
   license: MIT
   people:
@@ -29,7 +30,7 @@ external:  # updated automatically, do not edit
   - Charlotte Wickham
   readme_image: https://github.com/posit-dev/brand-yml/raw/refs/heads/main/docs/logos/wide/brand-yml-wide-color.svg
   repo: posit-dev/brand-yml
-  stars: 94
+  stars: 96
   title: brand-yml
   website: https://posit-dev.github.io/brand-yml/
 ---

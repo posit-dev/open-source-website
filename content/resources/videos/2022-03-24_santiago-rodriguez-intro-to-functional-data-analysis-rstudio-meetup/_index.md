@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-03-24'
 description: 'Energy Meetup - Intro to functional data analysis
 
@@ -138,4 +139,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=nA9fVOCD8yM
   view_count: 13483
 ---
+image: thumbnail.jpg
 

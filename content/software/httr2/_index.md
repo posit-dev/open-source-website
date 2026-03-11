@@ -3,6 +3,7 @@ description: Make HTTP requests and process their responses. A modern reimaginin
   of httr.
 github: r-lib/httr2
 image: logo.png
+color: "#BA1A47"
 languages:
 - R
 latest_release: '2025-12-05T17:45:53+00:00'
@@ -12,8 +13,8 @@ people:
 - Jeroen Ooms
 - Jenny Bryan
 - Joe Cheng
-- Neal Richardson
 - Gábor Csárdi
+- Neal Richardson
 - Jeroen Janssens
 title: httr2
 website: https://httr2.r-lib.org
@@ -22,10 +23,10 @@ external:  # updated automatically, do not edit
   description: Make HTTP requests and process their responses. A modern reimagining
     of httr.
   first_commit: '2018-11-22T15:32:29+00:00'
-  forks: 85
+  forks: 84
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.930824+00:00'
+  last_updated: '2026-03-05T16:28:35.844155+00:00'
   latest_release: '2025-12-05T17:45:53+00:00'
   license: NOASSERTION
   people:
@@ -34,8 +35,8 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   - Jenny Bryan
   - Joe Cheng
-  - Neal Richardson
   - Gábor Csárdi
+  - Neal Richardson
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/httr2

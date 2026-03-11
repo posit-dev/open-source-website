@@ -1,0 +1,59 @@
+{{- $pg := . -}}
+{{- $link := true -}}
+{{- if reflect.IsMap . -}}
+  {{- $pg = .page -}}
+  {{- if isset . "link" -}}
+    {{- $link = .link -}}
+  {{- end -}}
+{{- end -}}
+{{- $people := $pg.GetTerms "people" -}}
+{{- if $people -}}
+{{- $hasImages := false -}}
+{{- range $person := $people -}}
+  {{- if $person.Params.image -}}
+    {{- $image := .Resources.Get $person.Params.image -}}
+    {{- if $image -}}
+      {{- $hasImages = true -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<div class="flex flex-row gap-x-5 items-center">
+
+  {{- if $hasImages -}}
+  <div class="flex flex-row">
+    {{- range $index, $person := $people -}}
+      {{- with .Resources.Get .Params.image -}}
+        <img 
+          src="{{ .RelPermalink }}" 
+          alt="{{ $person.Title }}" 
+          class="my-0! w-6 h-6 rounded-full object-cover ring-2 ring-white {{ if gt $index 0 }}-ml-2{{ end }}"
+          style="z-index: {{ sub 10 $index }};"
+        >
+      {{- end -}}
+    {{- end -}}
+  </div>
+  {{- end -}}
+
+  {{- if $link -}}
+    <div class="flex flex-wrap gap-x-1 items-center">
+      {{- range $index, $person := $people -}}
+        {{- if $index -}}
+          <span class="text-slate-500 -ml-1">,</span>
+        {{- end -}}
+          <a href="{{ $person.RelPermalink }}" class="hover:underline font-medium text-slate-900">
+            {{- $person.LinkTitle -}}
+          </a>
+      {{- end -}}
+    </div>
+  {{- else -}}
+    <div class="truncate text-slate-900">
+      {{- range $index, $person := $people -}}
+        {{- if $index -}},&nbsp;{{- end -}}
+        {{- $person.LinkTitle -}}
+      {{- end -}}
+    </div>
+    {{- end -}}
+</div>
+
+{{- end -}}

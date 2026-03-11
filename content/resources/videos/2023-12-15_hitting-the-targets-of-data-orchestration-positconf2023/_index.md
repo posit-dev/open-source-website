@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Alexandros Kouretsis\r\n\r\nWe are living at a time when the size of datasets can be overwhelming. Add to this that their process involves linking together different computing systems and software, and integrating dynamically changing reference data, and for sure, you have a problem. Reproducibility, traceability, and transparency have left the building.\r\n \r\nHere is where Posit Connect along with the vast R ecosystem comes to save the day, allowing the creation of reproducible pipelines. I will share with you my first-hand experience in this presentation. In particular, how we used Targets in Posit Connect combined with AWS technologies in a bioinformatics pipeline. The result? An effective and secure workflow orchestration that is scalable and advances knowledge.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Leave it to the robots: automating your work.\r\nSession Code: TALK-1148"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=PLKRd2pVFYA
   view_count: 565
 ---
+image: thumbnail.jpg
 

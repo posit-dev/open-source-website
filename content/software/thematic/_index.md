@@ -2,6 +2,7 @@
 description: Theme ggplot2, lattice, and base graphics based on a few simple settings.
 github: rstudio/thematic
 image: logo.png
+color: "#C295CC"
 languages:
 - R
 latest_release: '2025-06-16T15:29:51+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - R
-  last_updated: '2026-02-27T17:14:02.895778+00:00'
+  last_updated: '2026-03-05T16:15:49.134342+00:00'
   latest_release: '2025-06-16T15:29:51+00:00'
   license: NOASSERTION
   people:

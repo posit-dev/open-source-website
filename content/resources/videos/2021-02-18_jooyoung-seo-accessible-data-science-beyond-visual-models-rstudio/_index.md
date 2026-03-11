@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'Full title: Accessible Data Science Beyond Visual Models: Non-Visual Interactions with R and RStudio Packages
 
@@ -119,4 +120,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=0HvyNtltu-A
   view_count: 677
 ---
+image: thumbnail.jpg
 

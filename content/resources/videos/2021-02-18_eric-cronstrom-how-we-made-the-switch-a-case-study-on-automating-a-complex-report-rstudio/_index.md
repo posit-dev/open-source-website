@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'The Center for Charter Schools at Central Michigan University produces annual reports for about 60 schools. The reporting process used to be a cumbersome blend of many technologies. The Center used to use a blend of SQL, Excel, inDesign, and VBScript that would all culminate in a nice looking, branded report for each school. 2 years ago, staff turnover allowed the data team to rethink the process, having had experience in R from graduate work the team at the Center decided to go all in on R Studio and R Markdown for report production a mere 1 month before the reports were due to be published.
 
@@ -91,4 +92,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ks36zvNlk_k
   view_count: 327
 ---
+image: thumbnail.jpg
 

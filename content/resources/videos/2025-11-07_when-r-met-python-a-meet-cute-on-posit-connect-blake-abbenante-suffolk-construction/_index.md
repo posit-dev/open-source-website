@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'When R Met Python: A Meet Cute on Posit Connect
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Jui_T5yxbtE
   view_count: 85
 ---
+image: thumbnail.jpg
 

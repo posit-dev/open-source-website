@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Hacking Productivity with LLMs: What Works (and What Doesn’t)
 
@@ -55,4 +56,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_nhDYt0f5yc
   view_count: 213
 ---
+image: thumbnail.jpg
 

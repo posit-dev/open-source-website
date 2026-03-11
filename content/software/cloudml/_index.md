@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: R interface to Google Cloud Machine Learning Engine
 github: rstudio/cloudml
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 23
   languages:
   - R
-  last_updated: '2026-02-27T17:14:00.808238+00:00'
+  last_updated: '2026-03-05T16:11:44.234035+00:00'
   latest_release: '2025-08-18T22:42:41+00:00'
   people:
   - JJ Allaire

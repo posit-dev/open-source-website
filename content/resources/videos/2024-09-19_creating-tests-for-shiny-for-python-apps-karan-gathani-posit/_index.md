@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-09-19'
 description: 'With the Shiny for Python v1.0 release, Shiny provides a simple way to create a test file for your Shiny app. The shiny add test command is a helpful CLI tool for Shiny app developers. It simplifies the process of creating test files for their applications.
 
@@ -105,4 +106,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=oJ_B_NuFAwU
   view_count: 632
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-06-17'
 description: '0 - 50:20 Presentation
 
@@ -133,4 +134,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=rzs6aSr4XoU
   view_count: 6295
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-04-11'
 description: "https://rstudio.com/resources/webinars/interactivity-in-production/\n\nIn part 3 of this 3 part series, Kelly covers: \nInteractive products take your data science to a new level, but they require new coding decisions. This webinar will give you clear guidelines on when and how to add interactivity to your work. Here you’ll learn: when to use off-the-shelf interactive products like parameterized R Markdown and htmlwidgets, when to create bespoke interactivity with Shiny, how to make your Shiny apps as fast as possible, how to support interactivity in production, and much more.\n\nAbout Kelly:\nKelly is Solutions Engineer for RStudio and also an organizer of the Washington DC chapter of R-Ladies Global. It’s an R users group for lady-folk and friends."
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=dQAyASaH-Jo
   view_count: 786
 ---
+image: thumbnail.jpg
 

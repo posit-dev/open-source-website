@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-04'
 description: 'Data Science Hangout with Kevin Snyder & Raju Rayavarapu @ U.S. FDA to chat about democratizing data science and utilizing principles of systems biology, pharmacology, toxicology, bioinformatics, and statistics to collaboratively develop open-source software solutions that support decision making and policy development.
 
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=2DU5em-9TBU
   view_count: 660
 ---
+image: thumbnail.jpg
 

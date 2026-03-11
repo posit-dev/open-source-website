@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-08-05'
 description: 'Finding the data is the hardest part, prove me wrong 🙃 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook'
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=jX1gfOOsuLE
   view_count: 1454
 ---
+image: thumbnail.jpg
 

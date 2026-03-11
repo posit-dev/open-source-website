@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Have you ever cut an A/B test short? Maybe because of traffic constraints, your antsy boss, or early successful results. In reality, cutting your test short can be catastrophic, making your business decision no better than a coin flip. Learn some R-driven tips & tricks to get meaningful results quickly with a statistically rigorous methodology called sequential testing, an A/B testing enhancement my team employs at Intuit.
 
@@ -101,4 +102,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=A3vW1l0Juxo
   view_count: 754
 ---
+image: thumbnail.jpg
 

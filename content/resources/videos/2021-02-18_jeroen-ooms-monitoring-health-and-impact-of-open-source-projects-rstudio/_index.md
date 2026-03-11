@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'At rOpenSci, we have come to realize that in order to help researchers get the most out of R, we need better tooling to monitor the quality, health, and impact of R packages. This applies both to our internal projects, as well as other packages in the R ecosystem. But what exactly makes a good R package?
 
@@ -99,4 +100,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=kaoe7xuIJ1U
   view_count: 494
 ---
+image: thumbnail.jpg
 

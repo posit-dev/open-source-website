@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Common generic methods
 github: r-lib/generics
 languages:
@@ -18,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.679903+00:00'
+  last_updated: '2026-03-05T16:28:04.239359+00:00'
   latest_release: '2025-05-09T18:17:34+00:00'
   license: NOASSERTION
   people:

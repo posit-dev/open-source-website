@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: A backend for functions taking tidyverse selections
 github: r-lib/tidyselect
 languages:
@@ -18,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 40
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.415045+00:00'
+  last_updated: '2026-03-05T16:27:25.600036+00:00'
   latest_release: '2024-03-11T11:44:46+00:00'
   license: NOASSERTION
   people:

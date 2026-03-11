@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-07-29'
 description: 'Did you have a first? 💻#datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter'
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=6HxJRdqS6Jw
   view_count: 2885
 ---
+image: thumbnail.jpg
 

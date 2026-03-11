@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Election Night Reporting Using R & Quarto
 
@@ -62,4 +63,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=UCloM4GcfVY
   view_count: 662
 ---
+image: thumbnail.jpg
 

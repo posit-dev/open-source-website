@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-07-31'
 description: 'Modern data science workflows often face a critical challenge: how to efficiently deploy machine learning models where the data lives. Traditional approaches require moving large datasets out of the database for scoring, creating bottlenecks, security concerns, and unnecessary data movement costs.
 
@@ -152,4 +153,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=GApXqIkp6ck
   view_count: 1018
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: High Performance CommonMark and Github Markdown Rendering in R
 github: r-lib/commonmark
 languages:
@@ -18,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - C
-  last_updated: '2026-02-27T17:14:17.707532+00:00'
+  last_updated: '2026-03-05T16:25:47.101179+00:00'
   latest_release: '2025-07-07T12:31:35+00:00'
   license: NOASSERTION
   people:

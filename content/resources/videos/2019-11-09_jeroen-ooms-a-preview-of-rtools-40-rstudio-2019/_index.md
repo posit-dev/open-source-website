@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-11-09'
 description: "Rtools is getting a major upgrade. In addition to the latest gcc, it now includes a full build system and package manager to build, install, and distribute external c/c++/fortran libraries needed by R packages. Thereby it bridges the long-standing gap between Windows and MacOS/Linux with respect to the availability of high quality, up-to-date system libraries. In this talk, we will show how to build and install system libraries with Rtools, and manage your Rtools build environment. It should be interesting both for Windows users as well as non-Windows package authors that are interested in reducing the pain of making things work on Windows.\r\n\r\nVIEW MATERIALS https://resources.rstudio.com/rstudio-conf-2019/a-preview-of-rtools-4-0\r\n\r\nAbout the Author\r\nJeroen Ooms\r\nPostdoc hacker for @ropensci at UC Berkeley."
 people:
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fQx_zvjIT4Q
   view_count: 2431
 ---
+image: thumbnail.jpg
 

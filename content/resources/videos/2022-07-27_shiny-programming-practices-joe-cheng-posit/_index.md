@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-07-27'
 description: 'Have you ever wanted to sit down and talk with Joe Cheng, the creator of Shiny and CTO of Posit (RStudio) and ask him how he approaches programming? Look no further - we''ve got that conversation for you right here!
 
@@ -118,4 +119,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=B2JzHv4FOTU
   view_count: 6139
 ---
+image: thumbnail.jpg
 

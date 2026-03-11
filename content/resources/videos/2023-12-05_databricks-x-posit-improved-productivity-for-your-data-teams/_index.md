@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-05'
 description: 'Timestamps:
 
@@ -92,4 +93,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=iShpyDxzMeE
   view_count: 5622
 ---
+image: thumbnail.jpg
 

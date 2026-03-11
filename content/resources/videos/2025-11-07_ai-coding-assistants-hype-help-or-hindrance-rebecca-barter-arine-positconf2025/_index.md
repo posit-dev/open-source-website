@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'AI Coding Assistants: Hype, Help, or Hindrance?
 
@@ -65,4 +66,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=1hfu1AvQkLw
   view_count: 183
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-08-24'
 description: "We want to help data science leaders become better.\n\nThe Data Science Hangout is a weekly, free-to-join open conversation for current and aspiring data science leaders. \n\nAn accomplished leader in the space will join us each week and answer whatever questions the audience may have. \n\nWe were recently joined by Moody Hadi, Manager of New Product Development and Financial Engineering at S&P Intelligence\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn: https://www.linkedin.com/company/rstu...\nTwitter: https://twitter.com/rstudio"
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=sWG7nIrLoHM
   view_count: 1176
 ---
+image: thumbnail.jpg
 

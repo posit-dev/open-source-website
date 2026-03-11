@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'The inner workings of {ggplot2} are difficult to grasp even for experienced users because its internal object-oriented (ggproto) system is hidden from user- facing functions, by design. This is exacerbated by the foreignness of ggproto itself, which remains the largest hurdle in the user-to-developer transition. However this needs not to be the case: ggplot internals have clear parallels to data wrangling, where data is passed between methods that take inputs and return outputs. Capitalizing on this connection, package {ggtrace} exposes the familiar functional programming logic of ggplot with functions that inspect, capture, or modify steps in a ggplot object''s execution pipeline, enabling users to learn the internals through trial-and-error.
 
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=dUBnitXf5mk
   view_count: 2224
 ---
+image: thumbnail.jpg
 

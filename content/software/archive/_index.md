@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: R bindings to libarchive, supporting a large variety of archive formats
 github: r-lib/archive
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 18
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:18.256408+00:00'
+  last_updated: '2026-03-05T16:27:04.413320+00:00'
   latest_release: '2025-03-24T12:32:21+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-09-09'
 description: 'Writing regular R code is straightforward: you tell R to do something, it does it, and then it returns control back to you. This is called synchronous programming. However, if you use R to coordinate threads, processes, or network communication, the regular model may be unable to do what you want, or it may only be able to do it with a significant performance penalty. In this talk I&#39;ll explain how asynchronous programming with the later package can handle these kinds of programming problems. I&#39;ll also show how to provide a synchronous interface for asynchronous code, so that users will have a simple, familiar way to use your code. Materials - github repo'
 people:
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Vt6f3qMehXI
   view_count: 1758
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2017-08-02'
 description: 'Connecting to an external database from R can be challenging. This is made worse when you need to interact with a database from a live Shiny application. To demystify this process, I''ll do two things.
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ywXZp7guvRE
   view_count: 8328
 ---
+image: thumbnail.jpg
 

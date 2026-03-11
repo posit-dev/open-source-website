@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-03-11'
 description: '{shinylive}: Serverless Shiny applications workshop: An exercise in deploying your app to GitHub Pages - Barret Schloerke
 
@@ -53,4 +54,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=dW7TkLJ5Hyk
   view_count: 431
 ---
+image: thumbnail.jpg
 

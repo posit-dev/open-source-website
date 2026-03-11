@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-01-07'
 description: 'Posit''s Director of Life Sciences, Phil Bowsher, sat down with GSK''s Director of Data Science, Ben Arancibia, to discuss various topics within the open-source clinical reporting space.
 
@@ -83,4 +84,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=hNj9Zy9EQsM
   view_count: 529
 ---
+image: thumbnail.jpg
 

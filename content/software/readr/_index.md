@@ -2,9 +2,10 @@
 description: Read flat files (csv, tsv, fwf) into R
 github: tidyverse/readr
 image: logo.png
+color: "#144279"
 languages:
 - R
-latest_release: '2025-11-14T17:31:10+00:00'
+latest_release: '2026-02-19T07:06:02+00:00'
 people:
 - Hadley Wickham
 - Jenny Bryan
@@ -24,8 +25,8 @@ external:  # updated automatically, do not edit
   forks: 292
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.080395+00:00'
-  latest_release: '2025-11-14T17:31:10+00:00'
+  last_updated: '2026-03-05T16:20:19.687452+00:00'
+  latest_release: '2026-02-19T07:06:02+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -39,7 +40,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   readme_image: man/figures/logo.png
   repo: tidyverse/readr
-  stars: 1026
+  stars: 1027
   title: readr
   website: https://readr.tidyverse.org
 ---

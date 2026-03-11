@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-04-16'
 description: '🚨LEVEL UP your Python Skills with this WEEKLY Project #datascience #codingforbeginners #pydytuesday'
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wyH1xSTOx8Y
   view_count: 1427
 ---
+image: thumbnail.jpg
 

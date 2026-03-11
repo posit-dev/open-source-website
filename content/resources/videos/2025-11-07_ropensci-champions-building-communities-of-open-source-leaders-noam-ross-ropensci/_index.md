@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'rOpenSci Champions: Building Communities of Open-Source Leaders
 
@@ -48,4 +49,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-atDblWsOBU
   view_count: 46
 ---
+image: thumbnail.jpg
 

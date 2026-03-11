@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Course materials for "Introduction to Data Science with R", a video course
   by RStudio and O'Reilly Media
 github: rstudio/Intro
@@ -14,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 315
   languages:
   - R
-  last_updated: '2026-02-27T17:13:59.688912+00:00'
+  last_updated: '2026-03-05T16:09:30.345422+00:00'
   repo: rstudio/Intro
   stars: 236
   title: Intro

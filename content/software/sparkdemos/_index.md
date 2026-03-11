@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: ''
 github: rstudio/sparkDemos
 languages:
@@ -14,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 37
   languages:
   - HTML
-  last_updated: '2026-02-27T17:14:00.507545+00:00'
+  last_updated: '2026-03-05T16:10:59.403329+00:00'
   people:
   - Edgar Ruiz
   repo: rstudio/sparkDemos

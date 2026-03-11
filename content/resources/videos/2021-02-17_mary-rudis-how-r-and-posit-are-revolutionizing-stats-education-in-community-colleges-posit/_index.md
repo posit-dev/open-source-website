@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-17'
 description: 'Talk from rstudio::conf(2019)
 
@@ -90,4 +91,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=6ytv0Or7aW0
   view_count: 230
 ---
+image: thumbnail.jpg
 

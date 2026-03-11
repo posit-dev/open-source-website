@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Data visualisation frameworks have an inherent need for good API design in order to be effective due to the potential for unbounded features their creative problem space holds. This talk will go through some of the ways taking an API-first approach to package development can play out, drawing on the experience of developing and maintaining the patchwork package over many years. Through the talk, the audience will also get an introduction to the use of patchwork, a package designed to make it effortless to combine multiple plots into a single composite figure.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mtUKYGvkXm8
   view_count: 564
 ---
+image: thumbnail.jpg
 

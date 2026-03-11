@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-03-14'
 description: "Posit Workbench makes it easier than ever to code in Python. Launch the development environment you prefer, including VS Code, Jupyter, and the RStudio IDE. \n\nLearn more at Posit.co/workbench\n\nProfessional data scientists using both R and Python love Posit Workbench because of its enterprise-friendly benefits, including collaboration, centralized management, security, and commercial support."
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=hM9Wsg3RFPk
   view_count: 2115
 ---
+image: thumbnail.jpg
 

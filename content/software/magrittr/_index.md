@@ -2,6 +2,7 @@
 description: Improve the readability of R code with the pipe
 github: tidyverse/magrittr
 image: logo.png
+color: "#423928"
 languages:
 - R
 latest_release: '2025-09-11T16:42:35+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 161
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.098886+00:00'
+  last_updated: '2026-03-05T16:20:23.549386+00:00'
   latest_release: '2025-09-11T16:42:35+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +32,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   readme_image: man/figures/logo.png
   repo: tidyverse/magrittr
-  stars: 965
+  stars: 967
   title: magrittr
   website: https://magrittr.tidyverse.org
 ---

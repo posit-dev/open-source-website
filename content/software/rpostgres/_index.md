@@ -1,9 +1,11 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: A DBI-compliant interface to PostgreSQL
 github: r-dbi/RPostgres
 languages:
 - R
-latest_release: '2026-02-05T20:15:25+00:00'
+latest_release: '2026-02-15T18:53:30+00:00'
 people:
 - Hadley Wickham
 - Jeroen Ooms
@@ -16,8 +18,8 @@ external:  # updated automatically, do not edit
   forks: 79
   languages:
   - R
-  last_updated: '2026-02-27T17:14:21.125701+00:00'
-  latest_release: '2026-02-05T20:15:25+00:00'
+  last_updated: '2026-03-05T16:31:29.912027+00:00'
+  latest_release: '2026-02-15T18:53:30+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Code and slides for RStudio webinars
 github: rstudio/webinars
 languages:
@@ -23,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 1401
   languages:
   - HTML
-  last_updated: '2026-02-27T17:13:59.493481+00:00'
+  last_updated: '2026-03-05T16:09:06.909506+00:00'
   people:
   - Winston Chang
   - Edgar Ruiz

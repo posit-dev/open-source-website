@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: R interface for SQLite
 github: r-dbi/RSQLite
 languages:
@@ -18,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 80
   languages:
   - R
-  last_updated: '2026-02-27T17:14:21.086502+00:00'
+  last_updated: '2026-03-05T16:31:24.495426+00:00'
   latest_release: '2026-02-05T19:29:00+00:00'
   license: LGPL-2.1
   people:

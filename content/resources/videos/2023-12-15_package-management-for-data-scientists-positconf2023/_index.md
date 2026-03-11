@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Tyler Finethy\r\n\r\nIn my talk, \"Package Management for Data Scientists,\" we will discuss software dependencies for R and Python and the common issues faced during package installations. I will begin with an overview of package management, highlighting its crucial role in data science. We'll then focus on practical strategies to prevent dependency errors and address effective troubleshooting when these problems occur. Lastly, we will look towards the future, discussing potential package management improvements, focusing on reproducibility and accessibility for those new to the field.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Managing packages.\r\nSession Code: TALK-1081"
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=uYl6_Fo_jpA
   view_count: 578
 ---
+image: thumbnail.jpg
 

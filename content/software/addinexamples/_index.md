@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: An R package showcasing how RStudio addins can be registered and used.
 github: rstudio/addinexamples
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 65
   languages:
   - R
-  last_updated: '2026-02-27T17:14:00.078223+00:00'
+  last_updated: '2026-03-05T16:10:15.746963+00:00'
   license: NOASSERTION
   people:
   - JJ Allaire

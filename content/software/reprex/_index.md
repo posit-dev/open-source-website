@@ -2,6 +2,7 @@
 description: Render bits of R code for sharing, e.g., on GitHub or StackOverflow.
 github: tidyverse/reprex
 image: logo.png
+color: "#176D3C"
 languages:
 - R
 latest_release: '2024-07-06T00:20:34+00:00'
@@ -23,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 84
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.224834+00:00'
+  last_updated: '2026-03-05T16:20:44.879373+00:00'
   latest_release: '2024-07-06T00:20:34+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'The gtsummary R package empowers researchers and analysts to create publication-ready summary tables efficiently. Developed at Memorial Sloan Kettering Cancer Center, it quickly gained traction and has become the most downloaded package for summary tables on CRAN. 2024 marked a significant expansion for gtsummary. A comprehensive codebase update enhanced performance and introduced new features. Further, the adoption of CDISC’s Analysis Results Data standard enables compliance with emerging FDA submissions standards, maintaining relevance for various research and regulatory needs. gtsummary offers a robust solution for generating clear, informative tables, saving time, and ensuring quality for researchers and analysts across diverse fields.
 
@@ -39,4 +40,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=oYA_DXzN40A
   view_count: 1775
 ---
+image: thumbnail.jpg
 

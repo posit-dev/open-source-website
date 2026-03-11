@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-10-11'
 description: "We introduce the R API for MLflow, which is an open source platform for managing the machine learning lifecycle. We demonstrate each component of the platform–Tracking, Projects, and Models–and describe how they can be leveraged in practical data science workflows.\r\n\r\nAbout the Author\r\nKevin Kuo\r\nKevin is a software engineer working on open source packages for big data analytics and machine learning. He has held data science positions in a variety of industries and was a credentialed actuary. He likes mixing cocktails and studying about wine."
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qeRdrOPJAss
   view_count: 2634
 ---
+image: thumbnail.jpg
 

@@ -3,11 +3,13 @@ description: A lightweight, cross-platform, portable, and easy-to-maintain LaTeX
   based on TeX Live
 github: rstudio/tinytex
 image: logo-tinytex.png
+color: "#BF2A13"
 languages:
 - R
 latest_release: '2025-11-19T14:28:59+00:00'
 people:
 - Christophe Dervieux
+- Gordon Woodhull
 - JJ Allaire
 title: tinytex
 website: https://yihui.org/tinytex/
@@ -19,15 +21,16 @@ external:  # updated automatically, do not edit
   forks: 124
   languages:
   - R
-  last_updated: '2026-02-27T17:14:01.327816+00:00'
+  last_updated: '2026-03-05T16:12:44.076624+00:00'
   latest_release: '2025-11-19T14:28:59+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux
+  - Gordon Woodhull
   - JJ Allaire
   readme_image: https://yihui.org/images/logo-tinytex.png
   repo: rstudio/tinytex
-  stars: 1089
+  stars: 1092
   title: tinytex
   website: https://yihui.org/tinytex/
 ---

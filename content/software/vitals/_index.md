@@ -2,6 +2,7 @@
 description: Large language model evaluation for R
 github: tidyverse/vitals
 image: logo.png
+color: "#F3B95D"
 languages:
 - JavaScript
 latest_release: '2025-12-01T15:34:29+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:14:07.743653+00:00'
+  last_updated: '2026-03-05T16:21:53.717047+00:00'
   latest_release: '2025-12-01T15:34:29+00:00'
   license: NOASSERTION
   people:

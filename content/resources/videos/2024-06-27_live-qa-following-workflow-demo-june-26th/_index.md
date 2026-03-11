@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-06-27'
 description: 'Please join us for the live Q&A session for the June 26th Workflow Demo - this will start immediately following the demo.
 
@@ -50,4 +51,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wNI3AhHP7uM
   view_count: 282
 ---
+image: thumbnail.jpg
 

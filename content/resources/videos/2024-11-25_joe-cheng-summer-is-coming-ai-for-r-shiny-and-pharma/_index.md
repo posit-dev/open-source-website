@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-11-25'
 description: 'Summer is Coming: AI for R, Shiny, and Pharma - Joe Cheng
 
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=AfMa1CVUdXU
   view_count: 1118
 ---
+image: thumbnail.jpg
 

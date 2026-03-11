@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-04-19'
 description: 'Why should you join us for our new series: End-to-end workflows with Posit Team?
 
@@ -67,4 +68,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=taTXGVnDZeo
   view_count: 905
 ---
+image: thumbnail.jpg
 

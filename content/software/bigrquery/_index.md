@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: An interface to Google's BigQuery from R.
 github: r-dbi/bigrquery
 languages:
@@ -17,10 +19,10 @@ website: https://bigrquery.r-dbi.org
 external:  # updated automatically, do not edit
   description: An interface to Google's BigQuery from R.
   first_commit: '2013-05-22T14:04:16+00:00'
-  forks: 190
+  forks: 191
   languages:
   - R
-  last_updated: '2026-02-27T17:14:21.064346+00:00'
+  last_updated: '2026-03-05T16:31:21.523329+00:00'
   latest_release: '2025-09-10T12:43:44+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +33,7 @@ external:  # updated automatically, do not edit
   - Edgar Ruiz
   - Davis Vaughan
   repo: r-dbi/bigrquery
-  stars: 524
+  stars: 525
   title: bigrquery
   website: https://bigrquery.r-dbi.org
 ---

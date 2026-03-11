@@ -2,9 +2,10 @@
 description: Minimalist Async Evaluation Framework for R
 github: r-lib/mirai
 image: logo.png
+color: "#E66947"
 languages:
 - R
-latest_release: '2026-02-13T11:36:25+00:00'
+latest_release: '2026-03-02T23:38:02+00:00'
 people:
 - Charlie Gao
 - Joe Cheng
@@ -18,8 +19,8 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - R
-  last_updated: '2026-02-27T17:14:19.608493+00:00'
-  latest_release: '2026-02-13T11:36:25+00:00'
+  last_updated: '2026-03-05T16:30:07.141403+00:00'
+  latest_release: '2026-03-02T23:38:02+00:00'
   license: NOASSERTION
   people:
   - Charlie Gao
@@ -27,7 +28,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/mirai
-  stars: 301
+  stars: 302
   title: mirai
   website: https://mirai.r-lib.org/
 ---

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'R has come quite a long way to enable spatial analysis over the past few years. Packages such as sf have made spatial analysis and mapping easier for many. However, adoption of R for spatial statistics and econometrics has been limited. Many spatial analysts, researchers, and practitioners lean on Python libraries such as pysal.
 
@@ -50,4 +51,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9ijjOwDb_pE
   view_count: 577
 ---
+image: thumbnail.jpg
 

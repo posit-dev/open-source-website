@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-04-09'
 description: '0:00 Introduction
 
@@ -151,4 +152,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=NVO1Qpp414s
   view_count: 974
 ---
+image: thumbnail.jpg
 

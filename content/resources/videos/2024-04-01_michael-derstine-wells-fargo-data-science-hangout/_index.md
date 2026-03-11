@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-01'
 description: 'We were recently joined by Michael Derstine, Vice President at Wells Fargo & Company to chat about  an opinionated approach to modeling and analytics in mortgage banking.
 
@@ -119,4 +120,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=POqaMW-uiNU
   view_count: 443
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2017-08-02'
 description: What has Posit been up to?
 people: []
@@ -36,4 +37,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=w0SL8EbLW88
   view_count: 975
 ---
+image: thumbnail.jpg
 

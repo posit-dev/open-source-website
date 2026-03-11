@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Course contents for Master the Tidyverse
 github: rstudio/master-the-tidyverse
 title: master-the-tidyverse
@@ -8,7 +10,7 @@ external:  # updated automatically, do not edit
   description: Course contents for Master the Tidyverse
   first_commit: '2017-07-07T19:08:47+00:00'
   forks: 67
-  last_updated: '2026-02-27T17:14:01.040762+00:00'
+  last_updated: '2026-03-05T16:12:12.578909+00:00'
   license: NOASSERTION
   repo: rstudio/master-the-tidyverse
   stars: 162

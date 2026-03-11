@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Keeping Data Alive: Persistent Storage Options for Dynamic Cloud Applications
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Pe-XTCKUzV8
   view_count: 112
 ---
+image: thumbnail.jpg
 

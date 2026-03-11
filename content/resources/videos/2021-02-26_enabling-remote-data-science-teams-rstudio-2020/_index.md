@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-26'
 description: 'Whatever happens in the coming months, remote work is here to stay. The goal of this webinar is to provide data scientists and data science team leaders with the knowledge and tools to succeed as a distributed team. Some of the topics we will cover include:
 
@@ -144,4 +145,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=1RMf-C6GR7I
   view_count: 959
 ---
+image: thumbnail.jpg
 

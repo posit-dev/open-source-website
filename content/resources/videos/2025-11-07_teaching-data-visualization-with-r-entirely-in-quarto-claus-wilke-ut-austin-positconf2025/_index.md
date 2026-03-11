@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Teaching data visualization with R entirely in Quarto
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Q7y0YqCuvHc
   view_count: 418
 ---
+image: thumbnail.jpg
 

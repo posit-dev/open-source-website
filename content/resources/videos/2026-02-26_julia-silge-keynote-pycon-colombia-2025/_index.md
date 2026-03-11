@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-02-26'
 description: 'Julia Silge
 
@@ -52,4 +53,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=M3RfTD_p3LA
   view_count: 31
 ---
+image: thumbnail.jpg
 

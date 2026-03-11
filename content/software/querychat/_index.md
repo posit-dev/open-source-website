@@ -2,6 +2,7 @@
 description: Chat with your data in R and Python
 github: posit-dev/querychat
 image: logo.png
+color: "#D9B072"
 languages:
 - Python
 latest_release: '2026-01-23T23:04:44+00:00'
@@ -16,10 +17,10 @@ website: https://posit-dev.github.io/querychat/
 external:  # updated automatically, do not edit
   description: Chat with your data in R and Python
   first_commit: '2025-03-13T05:44:18+00:00'
-  forks: 26
+  forks: 28
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:45.176876+00:00'
+  last_updated: '2026-03-05T16:05:22.680311+00:00'
   latest_release: '2026-01-23T23:04:44+00:00'
   license: MIT
   people:

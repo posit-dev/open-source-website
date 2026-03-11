@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Tidy Finance merges financial economics research with the principles of transparency and reproducibility, offering a novel open-source toolkit in R and Python. Our multi-language approach simplifies empirical studies in finance and teaches reproducible research with clean, understandable code. In my talk, I''ll showcase how Tidy Finance improves finance research and education, aiding finance professionals in applying its principles for better teaching and research. Attendees from diverse backgrounds will learn about fostering open-source initiatives in their fields. Join us to support a transparent, reproducible research environment.
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4joDJDVzm0M
   view_count: 203
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Semantic Search for the Rest of Us with DuckDB
 
@@ -66,4 +67,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=casO6fLXxLw
   view_count: 202
 ---
+image: thumbnail.jpg
 

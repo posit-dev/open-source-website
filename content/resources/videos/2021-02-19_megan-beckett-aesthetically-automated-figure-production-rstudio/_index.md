@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Automation, reproducibility, data driven. These are not normally concepts one would associate with the traditional publishing industry, where designers normally manually produce every artefact in proprietary software. And, when you have 1000s of figures to produce and update for a single textbook, this becomes an insurmountable task, meaning our textbooks quickly become outdated, especially in our rapidly advancing world.
 
@@ -99,4 +100,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=u7dfUxONj6Q
   view_count: 1635
 ---
+image: thumbnail.jpg
 

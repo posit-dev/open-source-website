@@ -1,4 +1,0 @@
----
-title: CustomTag
-slug: custom
----

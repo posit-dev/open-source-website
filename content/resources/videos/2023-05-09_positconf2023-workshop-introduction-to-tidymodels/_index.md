@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-09'
 description: 'Register now: http://pos.it/conf
 
@@ -125,4 +126,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=NTtcTF2tFEA
   view_count: 490
 ---
+image: thumbnail.jpg
 

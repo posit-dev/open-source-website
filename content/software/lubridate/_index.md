@@ -2,6 +2,7 @@
 description: Make working with dates in R just that little bit easier
 github: tidyverse/lubridate
 image: logo.png
+color: "#32A559"
 languages:
 - R
 latest_release: '2026-02-03T09:21:47+00:00'
@@ -24,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 215
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.018607+00:00'
+  last_updated: '2026-03-05T16:20:03.828763+00:00'
   latest_release: '2026-02-03T09:21:47+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +40,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/lubridate
-  stars: 785
+  stars: 786
   title: lubridate
   website: https://lubridate.tidyverse.org
 ---

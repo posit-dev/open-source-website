@@ -2,6 +2,7 @@
 description: Easy interactive dashboards for R
 github: rstudio/flexdashboard
 image: logo.png
+color: "#2E6B5B"
 languages:
 - JavaScript
 latest_release: '2026-01-28T20:55:02+00:00'
@@ -20,10 +21,10 @@ website: https://pkgs.rstudio.com/flexdashboard/
 external:  # updated automatically, do not edit
   description: Easy interactive dashboards for R
   first_commit: '2016-02-03T18:41:52+00:00'
-  forks: 301
+  forks: 302
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:14:00.222157+00:00'
+  last_updated: '2026-03-05T16:10:30.721604+00:00'
   latest_release: '2026-01-28T20:55:02+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'ChalkTalk: Globalizing Data Science Education with AI-generated Videos
 
@@ -62,4 +63,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=_4fjuW4RTqw
   view_count: 80
 ---
+image: thumbnail.jpg
 

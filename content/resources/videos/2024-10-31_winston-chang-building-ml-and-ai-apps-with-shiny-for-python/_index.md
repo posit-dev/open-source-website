@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: "In the last few months, the best LLMs have taken a big step forward in their ability to help write code. We’ve been building a tool that uses an LLM to help you learn Shiny and build Shiny applications much faster than ever before. \n\n If you feel like you don’t have the time to invest in learning Shiny, this might change your mind. You’ll get up and running with Shiny in no time, and you’ll be able to learn from the AI as you go. If you already know Shiny, you’ll be able to dramatically accelerate your development process, and you’ll find yourself trying out new things that wouldn’t have been worth the effort before.\n\nTalk by Winston Chang"
 people:
@@ -33,4 +34,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=TYHiwWlpGOM
   view_count: 944
 ---
+image: thumbnail.jpg
 

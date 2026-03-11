@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: ''
 github: posit-dev/r-shinylive
 languages:
@@ -18,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 20
   languages:
   - R
-  last_updated: '2026-02-27T17:13:44.286054+00:00'
+  last_updated: '2026-03-05T16:03:26.832569+00:00'
   latest_release: '2024-11-13T16:30:05+00:00'
   license: NOASSERTION
   people:

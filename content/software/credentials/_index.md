@@ -2,6 +2,7 @@
 description: Tools for Managing SSH and Git Credentials
 github: r-lib/credentials
 image: logo.png
+color: "#4F8DDC"
 languages:
 - R
 latest_release: '2020-07-21T08:31:43+00:00'
@@ -17,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.894935+00:00'
+  last_updated: '2026-03-05T16:28:30.607711+00:00'
   latest_release: '2020-07-21T08:31:43+00:00'
   license: NOASSERTION
   people:

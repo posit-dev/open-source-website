@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Quarto for Business Collaboration and Technical Documentation in Word docx format
 
@@ -58,4 +59,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4-dQ2Q985A0
   view_count: 369
 ---
+image: thumbnail.jpg
 

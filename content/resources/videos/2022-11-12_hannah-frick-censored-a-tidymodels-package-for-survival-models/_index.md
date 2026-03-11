@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-11-12'
 description: '10 November 2022. "Censored: A tidymodels package for survival models" Hannah Frick, Software Engineer and Statistician, RStudio. CANSSI Ontario Statistical Software Conference.
 
@@ -45,4 +46,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=DVSFpLJgldo
   view_count: 229
 ---
+image: thumbnail.jpg
 

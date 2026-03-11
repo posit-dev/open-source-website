@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Are you curious about Quarto? Maybe you saw it on Twitter or the RStudio::conf agenda. Perhaps this raised questions like: What exactly is Quarto? What about RMarkdown? (don’t worry it’s not going away!) What features does Quarto add? What should I do with my existing Rmd/ipynb files?
 
@@ -53,4 +54,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=mrvhk2XUfWo
   view_count: 5758
 ---
+image: thumbnail.jpg
 

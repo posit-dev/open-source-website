@@ -2,6 +2,7 @@
 description: Turn your R code into a web API.
 github: rstudio/plumber
 image: logo.svg
+color: "#008272"
 languages:
 - R
 latest_release: '2026-02-09T15:06:24+00:00'
@@ -21,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 260
   languages:
   - R
-  last_updated: '2026-02-27T17:13:59.881806+00:00'
+  last_updated: '2026-03-05T16:09:53.345328+00:00'
   latest_release: '2026-02-09T15:06:24+00:00'
   license: NOASSERTION
   people:

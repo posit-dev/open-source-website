@@ -2,6 +2,7 @@
 description: parsnip extension for rule-based models
 github: tidymodels/rules
 image: logo.png
+color: "#53C37D"
 languages:
 - R
 latest_release: '2023-03-08T23:13:46+00:00'
@@ -22,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 7
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.253346+00:00'
+  last_updated: '2026-03-05T16:23:05.801447+00:00'
   latest_release: '2023-03-08T23:13:46+00:00'
   license: NOASSERTION
   people:

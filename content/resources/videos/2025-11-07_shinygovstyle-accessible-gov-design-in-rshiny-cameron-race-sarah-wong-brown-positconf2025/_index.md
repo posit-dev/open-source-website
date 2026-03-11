@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'shinyGovStyle - accessible government design in RShiny
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=33doZkPSUqY
   view_count: 131
 ---
+image: thumbnail.jpg
 

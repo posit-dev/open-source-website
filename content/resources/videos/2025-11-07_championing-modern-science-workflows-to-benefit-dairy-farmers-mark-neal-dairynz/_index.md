@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Championing modern science workflows to benefit dairy farmers
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=s2B-dwzXoFw
   view_count: 67
 ---
+image: thumbnail.jpg
 

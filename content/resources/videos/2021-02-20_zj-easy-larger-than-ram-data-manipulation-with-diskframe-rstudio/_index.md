@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Learn how to handle 100GBs of data with ease using {disk.frame} - the larger-than-RAM-data manipulation package.
 
@@ -98,4 +99,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=EOjObl_GSi4
   view_count: 5959
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Over the past year plus, generative AI has taken the world by storm. While use cases for helping people with writing, code generation, and creative endeavors are abundant, less attention has been paid to how generative AI tools can be used to do new things within data science workflows. This talk will cover how Google''s generative AI models, including Gemini, can be used to help data practitioners work with non-traditional data (text, images, videos) and create multimodal outputs from analysis, increasing the scale, velocity, and impact of data science results. Attendees should expect to come away with ideas of how to apply Google generative AI tools to real-world data science problems in both Python and R.
 
@@ -47,4 +48,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=4yOO2PoeBak
   view_count: 537
 ---
+image: thumbnail.jpg
 

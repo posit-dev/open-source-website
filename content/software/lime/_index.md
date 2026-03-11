@@ -3,6 +3,7 @@ description: Local Interpretable Model-Agnostic Explanations (R port of original
   package)
 github: tidymodels/lime
 image: logo.png
+color: "#94CC28"
 languages:
 - R
 latest_release: '2025-12-10T00:23:55+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 109
   languages:
   - R
-  last_updated: '2026-02-27T17:14:10.843537+00:00'
+  last_updated: '2026-03-05T16:22:11.261281+00:00'
   latest_release: '2025-12-10T00:23:55+00:00'
   license: NOASSERTION
   people:

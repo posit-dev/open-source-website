@@ -1,10 +1,12 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: A database interface (DBI) definition for communication between R and
   RDBMSs
 github: r-dbi/DBI
 languages:
 - R
-latest_release: '2024-06-02T20:25:49+00:00'
+latest_release: '2026-02-24T17:22:15+00:00'
 people:
 - Hadley Wickham
 - Charlie Gao
@@ -16,11 +18,11 @@ external:  # updated automatically, do not edit
   description: A database interface (DBI) definition for communication between R and
     RDBMSs
   first_commit: '2013-10-16T05:17:38+00:00'
-  forks: 78
+  forks: 79
   languages:
   - R
-  last_updated: '2026-02-27T17:14:21.106524+00:00'
-  latest_release: '2024-06-02T20:25:49+00:00'
+  last_updated: '2026-03-05T16:31:26.904378+00:00'
+  latest_release: '2026-02-24T17:22:15+00:00'
   license: LGPL-2.1
   people:
   - Hadley Wickham

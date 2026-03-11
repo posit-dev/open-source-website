@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: A fast & lightweight approach to logging in R based on the widely-emulated
   Apache Log4j project.
 github: r-lib/log4r
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 24
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.272669+00:00'
+  last_updated: '2026-03-05T16:24:42.638711+00:00'
   latest_release: '2024-10-12T00:20:05+00:00'
   people:
   - Hadley Wickham

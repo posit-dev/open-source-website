@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-01-05'
 description: Many models have structural parameters that cannot be directly estimated from the data. These tuning parameters can have a significant effect on model performance and require some mechanism for finding reasonable values. The tune and workflow packages enable tidymodels users to optimize these parameters using a variety of efficient grid search methods as well as with iterative search techniques (such as Bayesian optimization).
 people:
@@ -79,4 +80,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=amg8bByYwSY
   view_count: 2918
 ---
+image: thumbnail.jpg
 

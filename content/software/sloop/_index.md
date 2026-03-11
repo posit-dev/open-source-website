@@ -2,6 +2,7 @@
 description: S language OOP ⛵️
 github: r-lib/sloop
 image: logo.png
+color: "#F69029"
 languages:
 - R
 latest_release: '2019-02-17T15:12:20+00:00'
@@ -16,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.220956+00:00'
+  last_updated: '2026-03-05T16:26:59.651333+00:00'
   latest_release: '2019-02-17T15:12:20+00:00'
   people:
   - Hadley Wickham

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-12-03'
 description: 'We were recently joined by Edgar Gallo, Chief Data Officer at Daimler Trucks North America.
 
@@ -95,4 +96,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=SyFcCTcERqo
   view_count: 411
 ---
+image: thumbnail.jpg
 

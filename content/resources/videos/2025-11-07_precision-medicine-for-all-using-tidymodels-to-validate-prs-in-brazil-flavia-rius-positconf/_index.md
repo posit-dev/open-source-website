@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Precision Medicine for All: Using Tidymodels to Validate Breast Cancer PRS in Brazil
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=phh8p2ImBMQ
   view_count: 175
 ---
+image: thumbnail.jpg
 

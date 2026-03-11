@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Themes for Shiny
 github: rstudio/shinythemes
 languages:
@@ -16,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 76
   languages:
   - R
-  last_updated: '2026-02-27T17:13:59.759474+00:00'
+  last_updated: '2026-03-05T16:09:40.055227+00:00'
   license: NOASSERTION
   people:
   - Winston Chang

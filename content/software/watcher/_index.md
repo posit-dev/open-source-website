@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Watch the File System for Changes
 github: r-lib/watcher
 languages:
@@ -16,14 +18,14 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:19.788351+00:00'
+  last_updated: '2026-03-05T16:30:29.392476+00:00'
   latest_release: '2025-12-02T00:01:06+00:00'
   license: NOASSERTION
   people:
   - Charlie Gao
   - Jeroen Janssens
   repo: r-lib/watcher
-  stars: 34
+  stars: 35
   title: watcher
   website: https://watcher.r-lib.org/
 ---

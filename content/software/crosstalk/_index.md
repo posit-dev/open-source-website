@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Inter-htmlwidget communication for R (with and without Shiny)
 github: rstudio/crosstalk
 languages:
@@ -19,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 56
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:13:59.986987+00:00'
+  last_updated: '2026-03-05T16:10:04.554821+00:00'
   latest_release: '2025-08-27T14:56:29+00:00'
   license: NOASSERTION
   people:

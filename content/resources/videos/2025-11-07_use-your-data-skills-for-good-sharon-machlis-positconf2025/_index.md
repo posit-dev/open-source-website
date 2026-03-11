@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Use Your Data Skills for Good: Ideas for Community Service
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=fSAoCcZD--Y
   view_count: 185
 ---
+image: thumbnail.jpg
 

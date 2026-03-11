@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Last January I left my job to spend a year developing siuba, a python port of dplyr. At its core, this decision was driven by a decade of watching python and R users produce similar analyses, but in very different ways.
 
@@ -106,4 +107,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=w4Mi0u4urbQ
   view_count: 2745
 ---
+image: thumbnail.jpg
 

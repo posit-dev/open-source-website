@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: ''
 github: rstudio/shiny-examples
 languages:
@@ -20,10 +22,10 @@ website: ''
 external:  # updated automatically, do not edit
   description: ''
   first_commit: '2013-10-20T17:05:23+00:00'
-  forks: 3723
+  forks: 3722
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:13:59.280947+00:00'
+  last_updated: '2026-03-05T16:08:38.187601+00:00'
   latest_release: '2014-07-23T18:26:26+00:00'
   license: NOASSERTION
   people:

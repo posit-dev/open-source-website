@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Talk by Kelly O''Briant
 
@@ -35,4 +36,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=DrTCC9sorE8
   view_count: 481
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-02-17'
 description: 'Unearned confidence
 
@@ -82,4 +83,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=dKjjRGMKkBM
   view_count: 1734
 ---
+image: thumbnail.jpg
 

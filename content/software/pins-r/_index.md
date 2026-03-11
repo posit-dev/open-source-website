@@ -2,6 +2,7 @@
 description: Pin, discover, and share resources
 github: rstudio/pins-r
 image: logo.png
+color: "#F1C7A0"
 languages:
 - R
 latest_release: '2025-04-30T12:56:12+00:00'
@@ -25,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 67
   languages:
   - R
-  last_updated: '2026-02-27T17:14:02.335614+00:00'
+  last_updated: '2026-03-05T16:14:45.038961+00:00'
   latest_release: '2025-04-30T12:56:12+00:00'
   license: NOASSERTION
   people:
@@ -41,7 +42,7 @@ external:  # updated automatically, do not edit
   - Michael Chow
   readme_image: man/figures/logo.png
   repo: rstudio/pins-r
-  stars: 332
+  stars: 333
   title: pins-r
   website: https://pins.rstudio.com
 ---

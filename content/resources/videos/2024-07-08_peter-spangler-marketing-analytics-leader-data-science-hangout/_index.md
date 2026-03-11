@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-07-08'
 description: "We were recently joined by Peter Spangler, Former Head of Marketing Analytics at Lyft, Nextdoor, Toast to chat about marketing measurement and impact including metric selection, incrementality, attribution and experiment design.\n\nSpeaker bio: Peter Spangler is an analytics professional with 10+ years in the data science space with a heavy GTM focus that helped scale products at Lyft, Nextdoor and Toast by leveraging open-source tools to deliver business solutions driven by causal inference, propensity models, MMM (media mix models) and experimentation.\n\n________________________\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.posit.co\nLinkedIn: https://www.linkedin.com/company/posit-software\n\nThe Hangout is a gathering place for the whole data science community to chat about data science leadership and questions you're all facing that happens every Thursday at 12 ET.\n\nTo join future data science hangouts, add to your calendar here: https://pos.it/dsh \n\nWe'd love to have you join us in the conversation live!\n\nThanks for hanging out with us! \U0001F49B"
 people: []
@@ -25,4 +26,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=knPAWBC0Aac
   view_count: 407
 ---
+image: thumbnail.jpg
 

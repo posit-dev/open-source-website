@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: R package for converting objects to and from YAML
 github: r-lib/yaml
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 41
   languages:
   - C
-  last_updated: '2026-02-27T17:14:17.179915+00:00'
+  last_updated: '2026-03-05T16:24:26.182525+00:00'
   latest_release: '2024-07-22T15:23:35+00:00'
   license: NOASSERTION
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-02-02'
 description: "00:00 Introduction\n00:52 Setting up the problem with duplicate letters\n02:08 Coding the first pass for exact matches in the correct position\n06:29 Re-evaluating how to approach the problem\n12:28 Removing only one instance of a letter\n13:56 Testing our code\n14:54 Setting up the second pass\n19:08 Scoping with a double arrow\n19:52 Debugging with a browser() statement\n21:28 Checking our code\n\nIn Part II of this four-part series, Winston walks through how to handle duplicate letters when building your Shiny Wordle app. \n\nCode + word list: https://github.com/wch/shiny-wordle\nCheck out the full Shiny app here: https://winston.shinyapps.io/wordle/\nYou can learn more about Shiny here: https://shiny.rstudio.com/\n\nGot questions? The RStudio Community site is a great place to get assistance: https://community.rstudio.com/\n\nContent: Developer (@winston_chang)\nAnimation, design, and editing: Jesse Mostipak (@kierisi)\n\nWordle: https://www.powerlanguage.co.uk/wordle/"
 people:
@@ -81,4 +82,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=01VOq_GMEAA
   view_count: 1904
 ---
+image: thumbnail.jpg
 

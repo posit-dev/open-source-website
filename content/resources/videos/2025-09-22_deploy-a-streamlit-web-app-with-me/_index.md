@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-09-22'
 description: 'deploy all the things! #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook'
 people: []
@@ -74,4 +75,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=HHTzTlB7QHU
   view_count: 4707
 ---
+image: thumbnail.jpg
 

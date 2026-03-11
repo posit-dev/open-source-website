@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: ' Javascript Object Signing and Encryption for R'
 github: r-lib/jose
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.848574+00:00'
+  last_updated: '2026-03-05T16:26:06.479646+00:00'
   latest_release: '2021-11-06T13:38:21+00:00'
   license: NOASSERTION
   people:

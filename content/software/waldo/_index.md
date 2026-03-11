@@ -2,6 +2,7 @@
 description: Find differences between R objects
 github: r-lib/waldo
 image: unnamed-chunk-2.svg
+color: "#282D35"
 languages:
 - R
 latest_release: '2025-07-11T13:26:57+00:00'
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 21
   languages:
   - R
-  last_updated: '2026-02-27T17:14:19.181915+00:00'
+  last_updated: '2026-03-05T16:29:10.638360+00:00'
   latest_release: '2025-07-11T13:26:57+00:00'
   license: NOASSERTION
   people:

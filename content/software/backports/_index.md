@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Reimplementations of Functions Introduced Since R-3.0.0
 github: r-lib/backports
 languages:
@@ -13,7 +15,7 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.866917+00:00'
+  last_updated: '2026-03-05T16:26:08.648953+00:00'
   latest_release: '2024-08-12T09:35:38+00:00'
   repo: r-lib/backports
   stars: 66

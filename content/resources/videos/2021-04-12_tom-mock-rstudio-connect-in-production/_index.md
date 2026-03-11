@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-04-12'
 description: 'https://rstudio.com/resources/webinars/rstudio-connect-in-production/
 
@@ -94,4 +95,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=6TeySatiFx8
   view_count: 3463
 ---
+image: thumbnail.jpg
 

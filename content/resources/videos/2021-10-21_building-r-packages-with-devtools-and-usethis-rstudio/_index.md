@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-10-21'
 description: 'Package building doesn''t have to be scary! The tidyverse team has made it easy to get started with RStudio and the devtools/usethis packages. This hour long presentation will walk you through the basics of R package building, and hopefully leave you prepared to go out and build your own package!
 
@@ -102,4 +103,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=EpTkT6Rkgbs
   view_count: 23284
 ---
+image: thumbnail.jpg
 

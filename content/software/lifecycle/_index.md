@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: Manage the life cycle of your exported functions and arguments
 github: r-lib/lifecycle
 languages:
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 25
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.948672+00:00'
+  last_updated: '2026-03-05T16:28:38.358223+00:00'
   latest_release: '2026-01-09T14:10:39+00:00'
   license: NOASSERTION
   people:

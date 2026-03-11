@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: ''
 github: rstudio/cranwhales
 languages:
@@ -14,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 15
   languages:
   - R
-  last_updated: '2026-02-27T17:14:01.645734+00:00'
+  last_updated: '2026-03-05T16:13:23.920017+00:00'
   people:
   - Joe Cheng
   repo: rstudio/cranwhales

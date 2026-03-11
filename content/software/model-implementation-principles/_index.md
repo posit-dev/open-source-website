@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: recommendations for creating R modeling packages
 github: tidymodels/model-implementation-principles
 languages:
@@ -16,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - HTML
-  last_updated: '2026-02-27T17:14:11.040539+00:00'
+  last_updated: '2026-03-05T16:22:37.842765+00:00'
   people:
   - Max Kuhn
   - Davis Vaughan

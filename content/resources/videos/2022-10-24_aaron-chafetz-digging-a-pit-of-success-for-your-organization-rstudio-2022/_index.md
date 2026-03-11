@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'How does a US federal agency analyze tens of millions of records across 30,000 sites in over 50 countries analyze these data efficiently and effectively? Five years ago, our team ventured beyond the confines of (largely) Excel and towards leveraging R to be more efficient in our analysis and workflows since data is instrumental to the mission of ending the global HIV epidemic. We have created our own ''pit of success'', providing analysts the infrastructure and support needed to ease the learning of and working with R in our specific context. We will be sharing our experiences in digging this ''pit of success'' that organizations would benefit from.
 
@@ -40,4 +41,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Jqf6Z3p839M
   view_count: 379
 ---
+image: thumbnail.jpg
 

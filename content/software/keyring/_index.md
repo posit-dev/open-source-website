@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: ':closed_lock_with_key: Access the system credential store from R'
 github: r-lib/keyring
 languages:
@@ -18,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 31
   languages:
   - C
-  last_updated: '2026-02-27T17:14:18.202589+00:00'
+  last_updated: '2026-03-05T16:26:57.367683+00:00'
   latest_release: '2025-06-15T20:21:06+00:00'
   license: NOASSERTION
   people:

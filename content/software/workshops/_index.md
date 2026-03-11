@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: Website and materials for tidymodels workshops
 github: tidymodels/workshops
 languages:
@@ -18,10 +20,10 @@ website: https://workshops.tidymodels.org
 external:  # updated automatically, do not edit
   description: Website and materials for tidymodels workshops
   first_commit: '2022-04-10T14:43:31+00:00'
-  forks: 59
+  forks: 58
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:14:11.641587+00:00'
+  last_updated: '2026-03-05T16:23:52.033308+00:00'
   latest_release: '2025-10-07T00:40:39+00:00'
   license: CC-BY-SA-4.0
   people:

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'The rise of generative AI is fundamentally changing how we learn to code. At Dow, we''ve had nearly 200 learners participate in Posit Academy to learn R or Python and apply it to their work. As coders embrace these new tools, we are witnessing a "before and after" moment. This talk will share real-world examples of how researchers at Dow are learning by using code generation, highlighting the most effective tools including copilots and chat agents, to grapple with the challenges and opportunities of learning to code in this transformative era.
 
@@ -31,4 +32,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=7tcnho6PHOc
   view_count: 277
 ---
+image: thumbnail.jpg
 

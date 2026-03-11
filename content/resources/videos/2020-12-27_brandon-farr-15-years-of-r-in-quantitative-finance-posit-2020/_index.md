@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-27'
 description: Use of R in the investment industry is established and growing. This talk will discuss changes seen in 15 years of practice within asset management firms. I hope discussion of lessons learned and recommendations will benefit those currently in finance and those interested in hearing how the flexibility of R manifests in the financial world.
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=3sroV_RltQA
   view_count: 3435
 ---
+image: thumbnail.jpg
 

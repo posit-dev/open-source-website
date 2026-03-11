@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-11-25'
 description: 'From hours to minutes: Accelerating your tidymodels code - Simon Couch
 
@@ -65,4 +66,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=pTMiDHFIiPQ
   view_count: 270
 ---
+image: thumbnail.jpg
 

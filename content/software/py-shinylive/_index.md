@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Python package for deploying Shinylive applications
 github: posit-dev/py-shinylive
 languages:
@@ -19,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 5
   languages:
   - Python
-  last_updated: '2026-02-27T17:13:44.161327+00:00'
+  last_updated: '2026-03-05T16:03:11.079159+00:00'
   latest_release: '2025-12-08T21:03:47+00:00'
   license: MIT
   people:

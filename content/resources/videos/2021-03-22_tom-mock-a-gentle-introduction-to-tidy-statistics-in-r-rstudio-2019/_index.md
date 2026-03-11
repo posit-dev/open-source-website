@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-22'
 description: "R is a fantastic language for statistical programming, but making the jump from point and click interfaces to code can be intimidating for individuals new to R. In this webinar I will gently cover how to get started quickly with the basics of research statistics in R, providing an emphasis on reading data into R, exploratory data analysis with the Tidyverse, statistical testing with ANOVAs, and finally producing a publication-ready plot in ggplot2.\n\nUse the code presented instantly on RStudio Cloud!\n\nRStudio Cloud: rstudio.cloud \nWebinar materials: https://rstudio.com/resources/webinars/a-gentle-introduction-to-tidy-statistics-in-r/\n\nAbout Thomas:\nThomas is involved in the local and global data science community, serving as Outreach Coordinator for the Dallas R User Group, as a mentor for the R for Data Science Online Learning Community, as co-founder of #TidyTuesday, attending various Data Science and R-related conferences/meetups, and participated in Startup Weekend Fort Worth as a data scientist/entrepreneur."
 people: []
@@ -79,4 +80,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wfMAaXWHGog
   view_count: 23511
 ---
+image: thumbnail.jpg
 

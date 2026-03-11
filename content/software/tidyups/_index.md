@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: ''
 github: tidyverse/tidyups
 people:
@@ -11,12 +13,12 @@ external:  # updated automatically, do not edit
   description: ''
   first_commit: '2021-06-14T19:18:38+00:00'
   forks: 7
-  last_updated: '2026-02-27T17:14:07.654073+00:00'
+  last_updated: '2026-03-05T16:21:42.412468+00:00'
   people:
   - Davis Vaughan
   - Hadley Wickham
   repo: tidyverse/tidyups
-  stars: 35
+  stars: 36
   title: tidyups
   website: ''
 ---

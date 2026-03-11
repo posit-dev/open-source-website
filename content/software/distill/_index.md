@@ -2,6 +2,7 @@
 description: Distill for R Markdown
 github: rstudio/distill
 image: logo.png
+color: "#19536A"
 languages:
 - HTML
 latest_release: '2023-10-06T11:15:35+00:00'
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 57
   languages:
   - HTML
-  last_updated: '2026-02-27T17:14:01.575270+00:00'
+  last_updated: '2026-03-05T16:13:15.405791+00:00'
   latest_release: '2023-10-06T11:15:35+00:00'
   license: Apache-2.0
   people:

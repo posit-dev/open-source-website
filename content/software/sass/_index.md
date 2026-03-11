@@ -2,6 +2,7 @@
 description: Sass compiler package for R
 github: rstudio/sass
 image: logo.svg
+color: "#CC6699"
 languages:
 - C++
 latest_release: '2025-04-11T20:21:04+00:00'
@@ -25,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - C++
-  last_updated: '2026-02-27T17:14:01.820797+00:00'
+  last_updated: '2026-03-05T16:13:45.975195+00:00'
   latest_release: '2025-04-11T20:21:04+00:00'
   license: NOASSERTION
   people:

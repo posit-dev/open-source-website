@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: ''
 github: tidymodels/shinymodels
 languages:
@@ -20,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 6
   languages:
   - R
-  last_updated: '2026-02-27T17:14:11.570097+00:00'
+  last_updated: '2026-03-05T16:23:43.716679+00:00'
   latest_release: '2024-01-31T15:11:11+00:00'
   license: NOASSERTION
   people:

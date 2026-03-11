@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'If you''ve invested a lot of time and energy on a data science project, you might be ready to move on to new and exciting things. Don''t let your old projects wither away and die! There are some powerful and free resources from GitHub that you can leverage to help pay it forward to the next person looking to use your work.
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wzcz4xNGeTI
   view_count: 647
 ---
+image: thumbnail.jpg
 

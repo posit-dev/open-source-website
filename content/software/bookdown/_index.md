@@ -2,6 +2,7 @@
 description: Authoring Books and Technical Documents with R Markdown
 github: rstudio/bookdown
 image: logo.png
+color: "#F9EAC5"
 languages:
 - JavaScript
 latest_release: '2025-12-05T17:16:47+00:00'
@@ -19,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 1278
   languages:
   - JavaScript
-  last_updated: '2026-02-27T17:14:00.023289+00:00'
+  last_updated: '2026-03-05T16:10:10.729348+00:00'
   latest_release: '2025-12-05T17:16:47+00:00'
   license: GPL-3.0
   people:
@@ -29,7 +30,7 @@ external:  # updated automatically, do not edit
   - Carson Sievert
   readme_image: man/figures/logo.png
   repo: rstudio/bookdown
-  stars: 4014
+  stars: 4015
   title: bookdown
   website: https://pkgs.rstudio.com/bookdown/
 ---

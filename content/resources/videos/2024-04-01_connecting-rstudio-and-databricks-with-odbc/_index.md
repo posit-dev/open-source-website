@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-01'
 description: 'The odbc package, in conjunction with a driver, provides DBI support and an ODBC connection.
 
@@ -110,4 +111,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=0TrRqbuqM3k
   view_count: 1912
 ---
+image: thumbnail.jpg
 

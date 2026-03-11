@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-18'
 description: 'Tracking down performance issues in R code usually means using R''s built-in Rprof() profiler or one of the packages built around it. But the changing nature of the R community (towards more deployed applications) makes local profiling workflows frustrating, which is why I have written a new profiler: xrprof.
 
@@ -94,4 +95,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vC9-QJ2mUWw
   view_count: 862
 ---
+image: thumbnail.jpg
 

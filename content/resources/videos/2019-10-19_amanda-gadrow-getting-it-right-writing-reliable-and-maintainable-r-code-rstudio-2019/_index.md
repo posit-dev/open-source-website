@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-10-19'
 description: "How can you tell that your scripts, applications, and package functions are working as expected? Are you sure that when you make changes in one part of the code, it won't break something in another part? Have you thought deeply about how the consumers of your code (including Future You) will use it, maintain it, fix it, and improve it? Code quality is essential not only for reliable results but also for your script's maintainability and your users' satisfaction. Quality can be measured in part with targeted testing, and fortunately, there are several effective and easy-to-use code testing tools available in R. This talk will discuss some of the most useful testing packages, covering both concepts and examples.\r\n\r\nVIEW MATERIALS https://github.com/rstudio/rstudio-conf/tree/master/2019/Testing_R_Code--Amanda_Gadrow\r\n\r\nAbout the Author\r\nAmanda Gadrow\r\nAmanda is a software engineer with many years' experience writing automated test frameworks for enterprise software. She started learning R when she joined RStudio in 2016, and has been basking in its glory ever since. Amanda leads the QA and Support teams, and spends a significant amount of time analyzing customer data to improve the products and optimize support. She is a co-organizer of R-Ladies Columbus, and an avid musician on the side."
 people: []
@@ -72,4 +73,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=6aqudM2R02w
   view_count: 2294
 ---
+image: thumbnail.jpg
 

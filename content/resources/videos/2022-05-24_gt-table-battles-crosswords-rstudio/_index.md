@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-05-24'
 description: "00:00 Introduction\n00:34 Rich's gt table, with a focus on creating audio within a table\n07:28 Jesse's gt table, with a focus on sentiment analysis\n\nLearn more about the gt package here: \nhttps://gt.rstudio.com/\n\nGot questions? The RStudio Community site is a great place to get assistance:\nhttps://community.rstudio.com/\n\nContent: Rich Iannone (@riannone) & Jesse Mostipak (@kierisi)\nMotion Design & editing: Jesse Mostipak \nMusic: Nu Fornacis by Blue Dot Sessions https://app.sessions.blue/browse/track/98983"
 people:
@@ -80,4 +81,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=sRxdutTgyDE
   view_count: 2242
 ---
+image: thumbnail.jpg
 

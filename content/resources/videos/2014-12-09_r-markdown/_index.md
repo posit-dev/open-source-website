@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2014-12-09'
 description: Jeff Allen talks about recent R Markdown changes in a webinar from RStudio.
 people: []
@@ -32,4 +33,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=cWJzjHh_3kk
   view_count: 30666
 ---
+image: thumbnail.jpg
 

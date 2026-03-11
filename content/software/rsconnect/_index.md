@@ -3,6 +3,7 @@ description: Publish Shiny Applications, RMarkdown Documents, Jupyter Notebooks,
   APIs, and more
 github: rstudio/rsconnect
 image: logo.png
+color: "#E3D0B1"
 languages:
 - R
 latest_release: '2025-12-05T13:40:14+00:00'
@@ -27,7 +28,7 @@ external:  # updated automatically, do not edit
   forks: 85
   languages:
   - R
-  last_updated: '2026-02-27T17:13:59.476023+00:00'
+  last_updated: '2026-03-05T16:09:05.258675+00:00'
   latest_release: '2025-12-05T13:40:14+00:00'
   people:
   - JJ Allaire

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Running a polyglot data science community
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=A8tvYRK40rQ
   view_count: 121
 ---
+image: thumbnail.jpg
 

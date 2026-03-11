@@ -2,6 +2,7 @@
 description: Easily install and load packages from the tidyverse
 github: tidyverse/tidyverse
 image: tidyverse.png
+color: "#1D1D2B"
 languages:
 - R
 latest_release: '2023-02-21T13:20:32+00:00'
@@ -20,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 292
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.348927+00:00'
+  last_updated: '2026-03-05T16:21:04.174736+00:00'
   latest_release: '2023-02-21T13:20:32+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +32,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidyverse/tidyverse
-  stars: 1777
+  stars: 1779
   title: tidyverse
   website: https://tidyverse.tidyverse.org
 ---

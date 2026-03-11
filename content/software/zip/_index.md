@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Platform independent zip compression via miniz
 github: r-lib/zip
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 23
   languages:
   - C
-  last_updated: '2026-02-27T17:14:18.309685+00:00'
+  last_updated: '2026-03-05T16:27:10.450353+00:00'
   latest_release: '2025-05-13T13:31:24+00:00'
   license: NOASSERTION
   people:

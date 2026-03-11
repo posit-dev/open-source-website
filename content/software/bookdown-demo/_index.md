@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: A minimal book example using bookdown
 github: rstudio/bookdown-demo
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 1346
   languages:
   - CSS
-  last_updated: '2026-02-27T17:14:00.060860+00:00'
+  last_updated: '2026-03-05T16:10:14.120866+00:00'
   license: CC0-1.0
   people:
   - JJ Allaire

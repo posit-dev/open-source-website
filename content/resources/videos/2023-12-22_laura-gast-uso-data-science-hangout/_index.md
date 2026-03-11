@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-22'
 description: 'We were recently joined by Laura Gast, Data Science & Analytics Manager at USO to discuss figuring out the best ways to condense complex exploratory and explanatory analyses (without sacrificing nuance and detail) for rapid and confident data-driven decision-making.
 
@@ -83,4 +84,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=AwpjwbANo7k
   view_count: 443
 ---
+image: thumbnail.jpg
 

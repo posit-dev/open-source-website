@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-07'
 description: 'History repeats itself: What the Du Bois Challenge taught me about reproducing visualisations
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=RxwU1cZ5FiA
   view_count: 157
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: The tidyverse style guide for R code
 github: tidyverse/style
 languages:
@@ -16,10 +18,10 @@ website: https://style.tidyverse.org
 external:  # updated automatically, do not edit
   description: The tidyverse style guide for R code
   first_commit: '2017-03-07T20:15:49+00:00'
-  forks: 119
+  forks: 120
   languages:
   - SCSS
-  last_updated: '2026-02-27T17:14:07.420084+00:00'
+  last_updated: '2026-03-05T16:21:12.913756+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -29,7 +31,7 @@ external:  # updated automatically, do not edit
   - Hannah Frick
   - Mine Çetinkaya-Rundel
   repo: tidyverse/style
-  stars: 354
+  stars: 353
   title: style
   website: https://style.tidyverse.org
 ---

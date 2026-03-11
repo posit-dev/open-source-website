@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-12-09'
 description: 'Workshop recorded as part of the R/Pharma Workshop Series (October 27, 2022)
 
@@ -49,4 +50,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=hxkTbnIXI-o
   view_count: 1751
 ---
+image: thumbnail.jpg
 

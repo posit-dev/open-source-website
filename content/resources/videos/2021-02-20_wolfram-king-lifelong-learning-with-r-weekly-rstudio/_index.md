@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'R Weekly is a weekly newsletter with many great R blogs post, tutorials, and other formats of resources.
 
@@ -127,4 +128,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Y_32M4AeKoo
   view_count: 236
 ---
+image: thumbnail.jpg
 

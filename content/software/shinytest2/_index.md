@@ -2,14 +2,16 @@
 description: ''
 github: rstudio/shinytest2
 image: logo.svg
+color: "#438BCA"
 languages:
 - R
-latest_release: '2026-01-09T21:28:50+00:00'
+latest_release: '2026-02-25T21:12:17+00:00'
 people:
 - Barret Schloerke
 - Carson Sievert
 - Garrick Aden-Buie
 - Charlie Gao
+- Liz Nelson
 - Jeroen Ooms
 - Winston Chang
 title: shinytest2
@@ -21,14 +23,15 @@ external:  # updated automatically, do not edit
   forks: 21
   languages:
   - R
-  last_updated: '2026-02-27T17:14:03.628830+00:00'
-  latest_release: '2026-01-09T21:28:50+00:00'
+  last_updated: '2026-03-05T16:17:11.192335+00:00'
+  latest_release: '2026-02-25T21:12:17+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke
   - Carson Sievert
   - Garrick Aden-Buie
   - Charlie Gao
+  - Liz Nelson
   - Jeroen Ooms
   - Winston Chang
   readme_image: man/figures/logo.svg

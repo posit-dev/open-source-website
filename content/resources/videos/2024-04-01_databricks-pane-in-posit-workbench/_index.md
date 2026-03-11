@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-01'
 description: 'We''ve introduced a Databricks Pane in RStudio Pro for discovering and managing Databricks clusters.
 
@@ -108,4 +109,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=rnDdds4EZNQ
   view_count: 504
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-08-09'
 description: 'Presented by: Hadley Wickham (PositPBC)
 
@@ -63,4 +64,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ctc2kx3LxG8
   view_count: 4799
 ---
+image: thumbnail.jpg
 

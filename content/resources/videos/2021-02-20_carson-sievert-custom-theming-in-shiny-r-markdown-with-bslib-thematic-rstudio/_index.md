@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Custom theming in Shiny and R Markdown often requires writing styling rules in both CSS and R. In particular, styles for HTML content (e.g., actionButton(), tabsetPanel(), titlePanel(), etc) derive from Bootstrap CSS, so customization is traditionally done by overwriting that CSS, which is difficult to do 100% correctly. The {bslib} package helps solve this problem by making it easy to customize (any version of) Bootstrap CSS defaults from R. However, this only solves part of the problem since CSS doesn''t necessarily effect output(s) rendered by R, such as plotOutput(). The {thematic} package helps solve this problem by providing auto theming of plotOutput()s (based on CSS) as well as a simple interface for styling any R graphic for any output format.
 
@@ -96,4 +97,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=zAqoLCQ83Ns
   view_count: 3089
 ---
+image: thumbnail.jpg
 

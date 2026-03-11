@@ -2,6 +2,7 @@
 description: ''
 github: posit-dev/python-tidytuesday
 image: posit_round_logo.png
+color: "#EB7931"
 title: python-tidytuesday
 website: ''
 
@@ -9,7 +10,7 @@ external:  # updated automatically, do not edit
   description: ''
   first_commit: '2025-02-12T19:48:04+00:00'
   forks: 4
-  last_updated: '2026-02-27T17:13:45.125385+00:00'
+  last_updated: '2026-03-05T16:05:15.119251+00:00'
   readme_image: images/posit_round_logo.png
   repo: posit-dev/python-tidytuesday
   stars: 102

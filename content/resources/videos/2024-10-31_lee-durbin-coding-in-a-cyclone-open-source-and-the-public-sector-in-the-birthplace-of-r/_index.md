@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'When I started working at Te Kaunihera o Tāmaki Makaurau Auckland Council, I knew that R had been invented at the University of Auckland, and I knew that using R for data wrangling was a better way than using Excel. So I set about learning how to code with R, supported by the generosity of the R community and a plethora of freely-available online resources. During my journey, I discovered that a mature data culture is underpinned by three components, but when I was asked to use my data skills to help out during a cyclone, I realised that I was missing one of the three. In this talk I discuss how I reached that point, and what I did about it.
 
@@ -43,4 +44,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=PNee28jFRfY
   view_count: 140
 ---
+image: thumbnail.jpg
 

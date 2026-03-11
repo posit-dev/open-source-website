@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-11-01'
 description: I host a weekly R Office Hour on the R4DS Online Learning Community Slack. By doing so, I have learned more about R than I ever would have thought. Here I&#39;ll present concrete examples of how R users can participate in the R community to expand their skills. R users of all skill levels can develop their skills by helping one another learn. Committing to help people with their coding challenges leads to the exploration of answers in areas you might otherwise not examine. A 5-minute presentation in our Lightning Talks series
 people: []
@@ -75,4 +76,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=-lzVF_hfL3Q
   view_count: 305
 ---
+image: thumbnail.jpg
 

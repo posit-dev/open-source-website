@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-02-08'
 description: 'Creating Polished, Branded Documents with Quarto - Isabella Velasquez
 
@@ -54,4 +55,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=sVMgLKXJ4uc
   view_count: 460
 ---
+image: thumbnail.jpg
 

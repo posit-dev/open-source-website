@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-09-27'
 description: 'The Penobscot Nation has been around for millennia.
 
@@ -134,4 +135,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=8VCr_bohahw
   view_count: 7782
 ---
+image: thumbnail.jpg
 

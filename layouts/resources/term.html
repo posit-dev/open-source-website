@@ -56,7 +56,7 @@
     <div class="flex flex-col gap-y-4">
       <div class="flex items-center justify-between gap-4 flex-wrap">
         <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100 flex-1">
-          {{ .Title }}
+          {{ .Title | safeHTML }}
         </h1>
         {{ with .Params.resource_type }}
         <span class="text-sm px-3 py-1 rounded-full {{ if eq . " video" }}bg-red-700 dark:bg-red-800 text-white{{ else
@@ -448,7 +448,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
       {{ range $software }}
-      {{ partial "card_software.html" . }}
+      {{ partial "card.html" (dict "page" .) }}
       {{ end }}
     </div>
     {{ end }}
@@ -463,7 +463,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
       {{ range $resources }}
-      {{ partial "card_resource.html" . }}
+      {{ partial "card.html" (dict "page" .) }}
       {{ end }}
     </div>
     {{ end }}
@@ -478,7 +478,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
       {{ range $events }}
-      {{ partial "card_event.html" . }}
+      {{ partial "card.html" (dict "page" .) }}
       {{ end }}
     </div>
     {{ end }}

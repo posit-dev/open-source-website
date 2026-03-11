@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-01-24'
 description: 'Two talks!
 
@@ -112,4 +113,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=vRbUM0n_nb8
   view_count: 4202
 ---
+image: thumbnail.jpg
 

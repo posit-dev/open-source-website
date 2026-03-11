@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-24'
 description: 'We did things a bit different this week as our featured leader had to reschedule - and we were all the featured leaders for the week, asking questions to each other. Libby & Mike put Rachael, our Pro Community Lead in the hot seat to start and then we all answered the questions the came in 🙂
 
@@ -117,4 +118,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=qwkokAQ8rYk
   view_count: 768
 ---
+image: thumbnail.jpg
 

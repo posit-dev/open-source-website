@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: R bindings to libsodium
 github: r-lib/sodium
 languages:
@@ -15,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.795271+00:00'
+  last_updated: '2026-03-05T16:25:58.557832+00:00'
   latest_release: '2022-06-11T08:15:53+00:00'
   license: NOASSERTION
   people:

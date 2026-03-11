@@ -3,6 +3,7 @@ description: Glue strings to data in R. Small, fast, dependency free interpreted
   literals.
 github: tidyverse/glue
 image: logo.png
+color: "#EB4C0B"
 languages:
 - R
 latest_release: '2024-09-27T15:59:19+00:00'
@@ -21,10 +22,10 @@ external:  # updated automatically, do not edit
   description: Glue strings to data in R. Small, fast, dependency free interpreted
     string literals.
   first_commit: '2016-12-23T21:07:25+00:00'
-  forks: 64
+  forks: 63
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.401865+00:00'
+  last_updated: '2026-03-05T16:21:10.800424+00:00'
   latest_release: '2024-09-27T15:59:19+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +38,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/glue
-  stars: 743
+  stars: 745
   title: glue
   website: https://glue.tidyverse.org
 ---

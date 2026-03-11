@@ -1,5 +1,6 @@
 ---
 title: Adding Plots to Great Tables
+image: greattables-og.png
 people:
   - Jules Walzer-Goldfeld
   - Michael Chow
@@ -12,7 +13,6 @@ port_status: in-progress
 categories:
   - great tables
 featured: true
-image: greattables-og.png
 image-alt: "Great Tables hex logo"
 ---
 

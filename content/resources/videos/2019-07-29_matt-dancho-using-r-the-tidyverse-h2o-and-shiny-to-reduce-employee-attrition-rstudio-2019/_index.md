@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-07-29'
 description: 'An organization that loses 200 high-performing employees per year has a lost productivity cost of about $15M/year. This cost is massive, yet many organizations don’t know it exists. It doesn’t show up on a financial statement. Therefore, it goes unnoticed. This presentation showcases how several open source tools integrate to form a solution to the employee attrition problem. Specifically: (1) How the tidyverse enables problem identification through visualization. (2) How recipes + H2O can be combined to explain key relationships to attrition and predict employee attrition. (3) How Shiny can be used to create a powerful dashboard that empowers business leaders to make data-driven decisions across the organization.'
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9VztG5c1bwk
   view_count: 5618
 ---
+image: thumbnail.jpg
 

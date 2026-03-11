@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-06-05'
 description: 'The innovators at PING use Posit solutions such as Posit Connect to impact how golf data is analyzed and shared with golfers worldwide. High-level data, once only available to professional players, is now in the hands of everyday golfers thanks to public-facing apps like Ballnamic, which allows golfers to choose the golf ball that best suits their game.
 
@@ -84,4 +85,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=JcF-EbDV78k
   view_count: 2261
 ---
+image: thumbnail.jpg
 

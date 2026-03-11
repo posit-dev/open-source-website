@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-05-05'
 description: "Posit Connect is our flagship publishing platform for data products built in R and Python. \n\nLearn more: https://posit.co/products/enterprise/connect/\n\nBook a demo of Connect: https://posit.co/schedule-a-call/?booking_calendar__c=RSC_YT_Demo\n\nWith Connect, you can deploy, manage, and share your R and Python content, including Shiny applications, Dash, Streamlit, and Voilà applications, R Markdown reports, Jupyter Notebooks, Quarto documents, dashboards, APIs (Plumber, Flask), and more.\n\nGive stakeholders authenticated access to the content they need, and schedule reports to update automatically."
 people: []
@@ -76,4 +77,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=FCGqyaxiL74
   view_count: 4133
 ---
+image: thumbnail.jpg
 

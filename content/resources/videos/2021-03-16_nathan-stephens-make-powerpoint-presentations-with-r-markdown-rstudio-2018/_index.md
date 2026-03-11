@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-16'
 description: 'Data scientists use R Markdown documents to create reproducible code that can be rendered in a variety of output types. Some of the most common output types include HTML, Word, and PDF, but new improvements make it possible to create PowerPoint presentations as well. PowerPoint presentations are still common currency for sharing insights in most organizations today. This webinar demonstrates how to create feature rich PowerPoint presentations from R Markdown and how to use these presentations to share insights, visualizations, Shiny apps, and more.
 
@@ -85,4 +86,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=uiA3znJb4KM
   view_count: 41652
 ---
+image: thumbnail.jpg
 

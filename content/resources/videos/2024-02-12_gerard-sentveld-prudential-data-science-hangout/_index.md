@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-02-12'
 description: 'We were recently joined by Gerard Sentveld, Director Data Analytics Operational Risk Management at Prudential to chat about how to effectively manage data science initiatives in a highly matrixed organization.
 
@@ -69,4 +70,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=IU3g_NEmDHA
   view_count: 266
 ---
+image: thumbnail.jpg
 

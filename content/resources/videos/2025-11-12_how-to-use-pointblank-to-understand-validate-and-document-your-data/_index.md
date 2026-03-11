@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2025-11-12'
 description: 'R/Medicine Webinar
 
@@ -82,4 +83,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=s9hALMg3k2o
   view_count: 329
 ---
+image: thumbnail.jpg
 

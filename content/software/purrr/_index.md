@@ -2,6 +2,7 @@
 description: A functional programming toolkit for R
 github: tidyverse/purrr
 image: logo.png
+color: "#27341B"
 languages:
 - R
 latest_release: '2026-01-06T21:50:34+00:00'
@@ -26,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 292
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.170521+00:00'
+  last_updated: '2026-03-05T16:20:37.180060+00:00'
   latest_release: '2026-01-06T21:50:34+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +44,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/purrr
-  stars: 1381
+  stars: 1383
   title: purrr
   website: https://purrr.tidyverse.org/
 ---

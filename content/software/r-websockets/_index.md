@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: HTML 5 Websockets implementation for R
 github: rstudio/R-Websockets
 languages:
@@ -14,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 36
   languages:
   - R
-  last_updated: '2026-02-27T17:13:58.905378+00:00'
+  last_updated: '2026-03-05T16:07:52.744615+00:00'
   people:
   - Joe Cheng
   repo: rstudio/R-Websockets

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-04-02'
 description: 'Posit Team Bundle: Posit Workbench, Posit Connect, Posit Package Manager (the complete self-hosted solution for data science teams using Python or R)
 
@@ -83,4 +84,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=434PZ2nMiJE
   view_count: 3828
 ---
+image: thumbnail.jpg
 

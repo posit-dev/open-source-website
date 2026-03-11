@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'When people first learn about R’s capabilities to create fully integrated systems, automated visuals, and seamless data pipelines, the reaction can span from disbelief to amazement. R’s expansive capabilities can leave some feeling overwhelmed when tasked with larger projects like data pipelines. This talk invites the participant to hear the perspective of a self-taught R user who used curiosity and patience to create a functional data pipeline in R for a local health department. Specifically, this talk will touch on the following concepts:
 
@@ -63,4 +64,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=9w4WFe48rEg
   view_count: 2928
 ---
+image: thumbnail.jpg
 

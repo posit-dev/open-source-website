@@ -1,0 +1,288 @@
+{{ $debug := "" }}
+
+{{/* ============================================================
+     RESOLVE PAGE
+     ============================================================ */}}
+{{ $page := .page }}
+{{ $hide_badge := index . "hide-badge" | default false }}
+{{ $slug := "" }}
+
+{{ if $page }}
+  {{ $slug = $page.Path }}
+{{ else }}
+  {{ $slug = .item }}
+  {{/* Shorthand: prefix cheatsheets/ and videos/ with resources/ */}}
+  {{ if or (hasPrefix $slug "cheatsheets/") (hasPrefix $slug "videos/") }}
+    {{ $slug = printf "resources/%s" $slug }}
+  {{ end }}
+  {{ $page = site.GetPage $slug }}
+  {{ if not $page }}
+    {{ errorf "card partial: page not found for slug '%s' (resolved to '%s')" .item $slug }}
+  {{ end }}
+{{ end }}
+
+
+{{/* ============================================================
+     CONTENT TYPE
+     ============================================================ */}}
+
+{{ $section := $page.Section }}
+{{ $isEvent := eq $section "events" }}
+{{ $isPerson := eq $section "people" }}
+{{ $isBlog := eq $section "blog" }}
+{{ $isSoftware := eq $section "software" }}
+{{ $isResource := eq $section "resources" }}
+
+{{/* ============================================================
+     TITLE
+     ============================================================ */}}
+{{ $str_title := $page.Title }}
+
+
+{{ $parts := split (strings.Trim $slug "/") "/" }}
+{{ $count := len $parts }}
+{{ $card_type := index $parts (sub $count 2) }}
+{{ $card_settings := index site.Data.cards $card_type }}
+
+{{ $debug = $card_settings }}
+{{ $debug = $page.Params }}
+
+{{/* ============================================================
+     DATE (formatted using block/date_range.html for events)
+     ============================================================ */}}
+{{ $date_value := "" }}
+{{ if eq $card_type "events" }}
+  {{ $date_value = partial "block/date_range.html" $page }}
+{{ else if and (ne $card_type "software") (ne $card_type "people") }}
+  {{ if $page.Params.date }}
+    {{ $date_value = time.Format "Jan 2, 2006" $page.Params.date }}
+  {{ end }}
+{{ end }}
+{{ $date_value = trim $date_value " \t\r\n" }}
+
+{{/* ============================================================
+     DESCRIPTION (max 3 lines enforced via CSS line-clamp-3)
+     ============================================================ */}}
+{{ $description_field := $card_settings.description_field | default "description" }}
+{{ $str_description := index $page.Params $description_field | strings.TrimSpace | strings.TrimSuffix "." | replaceRE `[\x{1F600}-\x{1F64F}\x{1F300}-\x{1F5FF}\x{1F680}-\x{1F6FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}]` "" }}
+
+{{/* ============================================================
+     AUTHOR (plain text names — no <a> tags since card is a link)
+     ============================================================ */}}
+{{ $people_value := "" }}
+{{ if or $card_settings.people_show (eq $card_settings.people_show nil) }}
+  {{ $people_value = partial "block/author.html" (dict "page" $page "link" false) }} 
+{{ end }}
+
+{{/* ============================================================
+     TAGS (combination of software, categories, tags taxonomies)
+     ============================================================ */}}
+{{ $tags_values := slice }}
+{{ range $page.GetTerms "software" }}
+  {{ $tags_values = $tags_values | append .LinkTitle }}
+{{ end }}
+{{ range $page.GetTerms "categories" }}
+  {{ $tags_values = $tags_values | append .LinkTitle }}
+{{ end }}
+{{ range $page.GetTerms "tags" }}
+  {{ $tags_values = $tags_values | append .LinkTitle }}
+{{ end }}
+
+{{ if and $isSoftware (not $tags_values) }}
+  {{ with $page.Params.languages }}
+    {{ $tags_values = . }}
+  {{ end }}
+{{ end }}
+
+{{/* ============================================================
+     BADGE (content type label)
+     ============================================================ */}}
+
+
+
+{{/* ============================================================
+     IMAGE (uses responsive_image_fixed.html — no <figure>/<a> wrappers)
+     ============================================================ */}}
+{{ $image := false }}
+{{ $imageURL := "" }}
+{{ $usePlaceholder := false }}
+
+{{/* Try page bundle image */}}
+{{ with $page.Params.image }}
+  {{ $image = $page.Resources.Get . }}
+{{ end }}
+
+{{/* if eq $card_type "videos" }}
+  {{ with $page.Params.external.thumbnail }}
+    {{ $imageURL = . }}
+    {{ $image = false }}
+  {{ end }}
+{{ end */}}
+
+{{/* Software placeholder fallback */}}
+{{ if and (not $image) (not $imageURL) $isSoftware }}
+  {{ $usePlaceholder = true }}
+{{ end }}
+
+{{/* ============================================================
+     STARS (software only)
+     ============================================================ */}}
+{{ $str_stars := "" }}
+{{ if $isSoftware }}
+  {{ with $page.Params.external.stars }}
+    {{ if lt . 1000 }}
+      {{ $str_stars = printf "%d" . }}
+    {{ else }}
+      {{ $thousands := math.Round (div (float .) 100) }}
+      {{ $thousands = div $thousands 10.0 }}
+      {{ if eq $thousands (math.Floor $thousands) }}
+        {{ $str_stars = printf "%dk" (int $thousands) }}
+      {{ else }}
+        {{ $str_stars = printf "%.1fk" $thousands }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* ============================================================
+     DURATION (videos only)
+     ============================================================ */}}
+{{ $str_duration := "" }}
+{{ if eq $card_type "videos" }}
+  {{ with $page.Params.external.duration }}
+    {{ $hours := div (int .) 3600 }}
+    {{ $minutes := div (mod (int .) 3600) 60 }}
+    {{ if gt $hours 0 }}
+      {{ $str_duration = printf "%dh %dmin" $hours $minutes }}
+    {{ else }}
+      {{ $str_duration = printf "%d min" $minutes }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* ============================================================
+     LOCATION (events only)
+     ============================================================ */}}
+{{ $str_location := "" }}
+{{ if $isEvent }}
+  {{ $str_location = $page.Params.location | default "" }}
+{{ end }}
+
+{{/* ============================================================
+     MARKUP
+     ============================================================ */}}
+<div {{ with .id }}id="{{ . }}"{{ end }} class="@container h-full">
+  <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
+     class="no-underline relative flex flex-col @venti:flex-row rounded-xl
+            hover:brightness-110 brightness-100 transition duration-200
+            {{ $card_settings.card_class }}
+            overflow-hidden h-full @venti:h-96">
+
+      {{/* -- Size (absolute, top-left) --------------------------- */}}
+      {{ if ne hugo.Environment "production" }}
+        <span class="absolute top-2 @max-venti:left-2 @venti:right-2 z-10 text-xs font-semibold uppercase tracking-wide
+                    px-2 py-0.5 rounded-full
+                    bg-red-100 text-red-700">
+          <span class="hidden @max-tall:inline">short</span>
+          <span class="hidden @tall:@max-grande:inline">tall</span>
+          <span class="hidden @grande:@max-venti:inline">grande</span>
+          <span class="hidden @venti:inline">venti</span>
+        </span>
+      {{ end }}
+
+      {{/* -- Badge (absolute, top-right) --------------------------- */}}
+      {{ if not $hide_badge }}
+        {{ if or $card_settings.badge_icon $card_settings.badge_text }}
+        <span class="flex items-center absolute top-2 @max-venti:right-2 @venti:left-2 z-10
+                    text-xs gap-x-1
+                    px-2 py-0.5 rounded-full
+                    bg-blue-100 text-blue-700">
+
+          <span class="icon-[{{ $card_settings.badge_icon }}]"></span>
+          <span class="font-semibold uppercase tracking-wide hidden @xs:inline">{{ $card_settings.badge_text }}</span>
+
+        </span>
+      {{ end }}
+      {{ end }}
+
+    {{/* -- Image ------------------------------------------------ */}}
+    <div class="w-full @venti:w-1/2 aspect-[16/9] flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+      {{ if $image }}
+        {{ partial "responsive_image_container.html" (dict
+          "image" $image
+          "alt" $page.Title
+          "class" (printf "mx-auto h-full %s" $card_settings.image_class)
+          "short"  160
+          "tall"   320
+          "grande" 640
+          "venti"  640
+        ) }}
+      {{ else if $usePlaceholder }}
+        <img src="/images/hex-placeholder.svg" alt="{{ $page.Title }}"
+             class="max-h-full max-w-full object-contain p-4" loading="lazy">
+      {{ end }}
+    </div>
+
+    {{/* -- Content (hidden at tiny) ----------------------------- */}}
+    <div class="hidden gap-y-2 @tall:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700">
+
+      {{ with $str_title }}
+      <h3 class="m-0! font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
+      {{ end }}
+
+      {{ with $str_description }}
+        <p class="m-0! text-sm @grande:text-md @venti:text-lg line-clamp-3 {{ $card_settings.description_class }}">{{ . | safeHTML }}</p>
+      {{ end }}
+
+      {{ with $people_value }}
+        <div class="text-sm @grande:text-md">
+          {{ . }}
+        </div>
+      {{ end }}
+
+
+      {{ with $str_location }}
+        <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
+          <span class="icon-[boxicons--map-filled]"></span>
+          <div>{{ . }}</div>
+        </div>
+      {{ end }}
+
+      {{ with $date_value }}
+        <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
+          <span class="icon-[boxicons--calendar-filled]"></span>
+          <div>{{ . }}</div>
+        </div>
+      {{ end }}
+
+
+      {{ with $str_duration }}
+        <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
+          <span class="icon-[boxicons--clock-4-filled]"></span>
+          <div>{{ . }}</div>
+        </div>
+      {{ end }}
+
+      {{ with $str_stars }}
+        <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
+          <span class="icon-[boxicons--star-filled]"></span>
+          <div>{{ . }}</div>
+        </div>
+      {{ end }}
+
+      <div class="grow"></div>
+      {{ with $tags_values }}
+        <div class="hidden @grande:flex flex-wrap gap-x-1 gap-y-4 py-2 overflow-hidden h-10 items-end">
+          {{ range . }}
+            <span class="
+                    text-xs font-semibold uppercase tracking-wide whitespace-nowrap
+                    px-2 py-0.5 rounded-full
+                    bg-blue-100 text-blue-700">
+              {{ . }}
+            </span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </a>
+</div>

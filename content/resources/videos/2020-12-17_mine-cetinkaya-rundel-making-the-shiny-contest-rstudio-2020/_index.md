@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-17'
 description: "In January 2019 RStudio launched the first-ever Shiny contest to recognize outstanding Shiny applications and to share them with the community. We received 136 submissions for the contest and reviewing them was incredibly inspiring and humbling. In this talk, we shine a spotlight on the backstage: the inspiration behind the contest, the process of evaluation, what we learned about Shiny developers and how we can better support them, and what we learned about running contests and how we hope to improve the Shiny Contest experience. We also highlight some of the winning apps as well as the newly revamped Shiny Gallery, which features many noteworthy contest submissions. Finally, we introduce the new process for submitting your apps to the Shiny Gallery and, of course, to Shiny Contest 2020!\r\nhttps://rstudio.com/resources/rstudioconf-2020/making-the-shiny-contest/"
 people:
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=Tx90IBAmd-s
   view_count: 806
 ---
+image: thumbnail.jpg
 

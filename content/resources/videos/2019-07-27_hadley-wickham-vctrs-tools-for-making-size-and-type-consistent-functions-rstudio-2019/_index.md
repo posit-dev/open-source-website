@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-07-27'
 description: vctrs is a new package that provides tools (cognitive and computational) to ensure that functions behave consistently with respect to inputs of varying length and type. The end goal of vctrs is to be invisible to the end user of the tidyverse (simply enabling their predictions about function outputs to be more correct), but will help developers write functions that "just work".
 people:
@@ -80,4 +81,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=8_QoT3ygdI4
   view_count: 3575
 ---
+image: thumbnail.jpg
 

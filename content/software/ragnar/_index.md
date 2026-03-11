@@ -2,6 +2,7 @@
 description: RAG in R
 github: tidyverse/ragnar
 image: logo.png
+color: "#0D1234"
 languages:
 - R
 latest_release: '2026-01-23T17:26:32+00:00'
@@ -21,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 22
   languages:
   - R
-  last_updated: '2026-02-27T17:14:07.726414+00:00'
+  last_updated: '2026-03-05T16:21:51.365574+00:00'
   latest_release: '2026-01-23T17:26:32+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +34,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidyverse/ragnar
-  stars: 165
+  stars: 167
   title: ragnar
   website: http://ragnar.tidyverse.org
 ---

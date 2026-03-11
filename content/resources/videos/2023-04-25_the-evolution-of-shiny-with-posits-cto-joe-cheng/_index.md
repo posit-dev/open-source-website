@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-04-25'
 description: 'Posit’s Joe Cheng talks about the evolution of Shiny and the future of Shiny for Python.  Joe is one of the original architects of Shiny and leads Posit’s Open Source software development.
 
@@ -83,4 +84,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=STLVYzQXuO0
   view_count: 2635
 ---
+image: thumbnail.jpg
 

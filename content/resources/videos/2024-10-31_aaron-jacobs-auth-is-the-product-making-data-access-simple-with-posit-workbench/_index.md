@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Accessing data is a critical early step in data science projects, but is often complicated by security and technical challenges in enterprises. This talk will explore how Posit Workbench facilitates secure data access in IDEs like RStudio, JupyterLab, and VS Code through authentication and authorization aligned with existing data governance frameworks. Workbench manages and refreshes short-lived credentials on behalf of users for AWS, Azure, Databricks, and Snowflake, simplifying secure data access for open-source data science teams. Attendees will gain insights into overcoming data access challenges and leveraging Posit Workbench for secure, efficient data science workflows in an enterprise environment.
 
@@ -34,4 +35,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=A1Mg4culzZs
   view_count: 322
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2026-01-09'
 description: Polars is a lightning fast DataFrame library that is taking the data science community by storm. Its elegant and expressive API makes analyses pleasant to write and efficient to run. In this workshop, we’ll demonstrate how Polars enables data scientists to go from raw data to reports–by reading, transforming, and visualizing data.
 people:
@@ -42,4 +43,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=ZXOSW2rlOAc
   view_count: 614
 ---
+image: thumbnail.jpg
 

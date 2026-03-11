@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Easy memoisation for R
 github: r-lib/memoise
 languages:
@@ -17,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 58
   languages:
   - R
-  last_updated: '2026-02-27T17:14:17.308888+00:00'
+  last_updated: '2026-03-05T16:24:47.402210+00:00'
   latest_release: '2021-11-24T21:24:31+00:00'
   license: NOASSERTION
   people:

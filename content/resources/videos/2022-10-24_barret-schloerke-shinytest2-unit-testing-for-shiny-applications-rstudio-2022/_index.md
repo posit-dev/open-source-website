@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Manually testing Shiny applications is often laborious, inconsistent, and doesn’t scale well. Whether you are developing new features, fixing bug(s), or simply upgrading dependencies, it is critical to know when regressions are introduced. The new {shinytest2} R package provides a toolkit for unit testing Shiny apps and seamlessly integrates with {testthat}. Under the hood, it uses the new {chromote} R package to render apps in a headless Chrome browser with features such as live preview and built in debugging tools. In this talk, you’ll learn how to test Shiny apps by simply recording your actions as code and extending it to test more particular aspects of your app, resulting in fewer bugs and more confidence in future development.
 
@@ -53,4 +54,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=DMgAW4m5aTI
   view_count: 1477
 ---
+image: thumbnail.jpg
 

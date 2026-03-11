@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2021-03-09'
 description: 'As business and organizational needs expand, a centralized ecosystem such as the cloud is needed to securely store and access data, conduct analyses, and share results.
 
@@ -131,4 +132,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=rtGrMPwvWf0
   view_count: 604
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2022-04-15'
 description: '*Please note, this meetup was hosted in Spanish.
 
@@ -86,4 +87,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=wXiNaKxEbNI
   view_count: 705
 ---
+image: thumbnail.jpg
 

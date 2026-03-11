@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'How can we level up the R skills of a team with varied backgrounds and levels of experience in R? At PicnicHealth, a health tech company that collects and abstracts patient medical records for use in research, we''ve come up with a number of strategies to share. We''ll discuss building internal packages that assist with common tasks and distributing them with Posit Package Manager, hosting dashboards on Posit Connect and integrating them with other internal apps, maintaining a wiki, and holding regular Office HouRs to give folks a place to ask for advice. We''ll share examples and show some projects that have benefited from this approach. This talk is suitable for anyone who has at least one coworker using R.
 
@@ -39,4 +40,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=3AjR_3w5e3s
   view_count: 174
 ---
+image: thumbnail.jpg
 

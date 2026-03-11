@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Rose Franzen\r\n\r\nExplore accessibility for data scientists by uncovering some common barriers in open source tools with simple fixes that anyone can implement.\r\n\r\nDive into the often-overlooked world of accessibility for developers and data scientists! Uncover common accessibility barriers in open source tools, and learn simple steps to address them. Whether you’re a seasoned maintainer or a total novice, you’ll walk away with clear action items to implement right away. Join the movement of individuals championing the next frontier of disability inclusion in technology, shaping a more equitable future for all! \r\n\r\nMaterials: https://github.com/franzenr/commit-to-change\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Package development.\r\nSession Code: TALK-1134"
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=0qfzxHHCDfE
   view_count: 281
 ---
+image: thumbnail.jpg
 

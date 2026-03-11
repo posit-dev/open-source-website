@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-12-20'
 description: "The renv package helps you create reproducible environments for your R projects. With renv, you can make your R projects more:\r\n- Isolated: Installing a new or updated package for one project won’t break your other projects, and vice versa.\r\n- Portable: Easily transport your projects from one computer to another, even across different platforms. renv makes it easy to install the packages your project depends on.\r\n- Reproducible: renv records the exact package versions you depend on, and ensures those exact versions are the ones that get installed wherever you go.\r\n\r\nIn this presentation, I'll introduce renv and some of its main workflows."
 people: []
@@ -77,4 +78,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=yjlEbIDevOs
   view_count: 9035
 ---
+image: thumbnail.jpg
 

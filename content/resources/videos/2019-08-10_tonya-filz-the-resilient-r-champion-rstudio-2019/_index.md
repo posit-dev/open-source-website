@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2019-08-10'
 description: "Merriam-Webster defines resilience as the ability to recover from or adjust easily to misfortune or change. As a Customer Success Representative who works alongside data scientists using RStudio’s toolchain, I’ve had a front row seat to the challenges faced by data scientists as they aim to promote the use of RStudio’s toolchain in their organization. This talk will focus on effective strategies that have been used to overcome some of the most difficult organizational barriers that are faced by data scientists using R. Specific topics will include funding barriers, IT support, server space, the “open source mentality”, and political pressures within organizations.\r\n\r\n\r\nAbout the Author\r\nTonya Filz\r\nHelping data scientists and data analysts succeed by leveraging RStudio to clean, visualize, analyze, and communicate conclusions to key business leaders."
 people: []
@@ -71,4 +72,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=8i9h4tp2zNg
   view_count: 623
 ---
+image: thumbnail.jpg
 

@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2024-10-31'
 description: 'In this talk, Richie Moluno introduces a new tool called JSquarto, which solves common challenges developers face when documenting JavaScript projects, like the lack of support for multilingualism (especially for right-to-left languages and non-Latin scripts) and limited design flexibility. Inspired by quartodoc, Richie shows how Quarto can be used to solve these problems by generating flexible, multilingual JavaScript documentation. He also walks through how the whole process can be automated using GitHub, making it easier to keep docs up to date across different languages and formats & how it can be integrated with Crowdin, a translation management system.
 
@@ -46,4 +47,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=CySpBKJD5vY
   view_count: 252
 ---
+image: thumbnail.jpg
 

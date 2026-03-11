@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: ''
 github: tidyverse/code-review
 people:
@@ -12,7 +14,7 @@ external:  # updated automatically, do not edit
   description: ''
   first_commit: '2022-12-11T22:25:02+00:00'
   forks: 9
-  last_updated: '2026-02-27T17:14:07.689947+00:00'
+  last_updated: '2026-03-05T16:21:46.523265+00:00'
   people:
   - Davis Vaughan
   - Emil Hvitfeldt

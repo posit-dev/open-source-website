@@ -2,6 +2,7 @@
 description: Set up commonly used 📦 components
 github: r-lib/usethis
 image: logo.png
+color: "#6A2D25"
 languages:
 - R
 latest_release: '2025-09-05T20:26:57+00:00'
@@ -32,10 +33,10 @@ website: https://usethis.r-lib.org/
 external:  # updated automatically, do not edit
   description: Set up commonly used 📦 components
   first_commit: '2016-11-07T14:33:45+00:00'
-  forks: 303
+  forks: 302
   languages:
   - R
-  last_updated: '2026-02-27T17:14:18.043402+00:00'
+  last_updated: '2026-03-05T16:26:35.782059+00:00'
   latest_release: '2025-09-05T20:26:57+00:00'
   license: NOASSERTION
   people:

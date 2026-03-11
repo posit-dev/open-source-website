@@ -1,4 +1,5 @@
 ---
+image: thumbnail.jpg
 date: '2020-09-18'
 description: 'The Associated Press data team primarily uses R and the Tidyverse as the main tool for doing data processing and analysis. In this talk, some of the technology behind the published stories will be showcased: - Using dbplyr to work off a hosted database containing 380 million opioid records to identify "pill mills". - Using open-sourced AP style templates for R Markdown and ggplot to quickly produce graphics and reports off breaking news. - Using R Markdown and htmlwidgets to give reporters and editors interactive reports to identify reporting leads.'
 people: []
@@ -78,4 +79,5 @@ external:  # updated automatically, do not edit
   url: https://www.youtube.com/watch?v=0lUasIgzt9U
   view_count: 1769
 ---
+image: thumbnail.jpg
 
