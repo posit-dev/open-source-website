@@ -53,10 +53,10 @@
 {{ $date_value := "" }}
 {{ if eq $card_type "events" }}
   {{ $date_value = partial "block/date_range.html" $page }}
-{{ else if not $page.Date.IsZero }}
-  {{ $date_value = time.Format "Jan 2, 2006" $page.Date }}
-{{ else if $page.Params.date }}
-  {{ $date_value = time.Format "Jan 2, 2006" $page.Params.date }}
+{{ else if and (ne $card_type "software") (ne $card_type "people") }}
+  {{ if $page.Params.date }}
+    {{ $date_value = time.Format "Jan 2, 2006" $page.Params.date }}
+  {{ end }}
 {{ end }}
 {{ $date_value = trim $date_value " \t\r\n" }}
 
