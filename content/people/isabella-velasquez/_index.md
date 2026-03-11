@@ -1,6 +1,7 @@
 ---
 title: "Isabella Velásquez"
 image: "headshot.jpeg"
+role: "Sr. Product Marketing Manager"
 affiliation: "Posit, PBC"
 social:
   bluesky: "ivelasq3.bsky.social"
