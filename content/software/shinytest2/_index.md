@@ -2,6 +2,7 @@
 description: ''
 github: rstudio/shinytest2
 image: logo.svg
+color: "#438BCA"
 languages:
 - R
 latest_release: '2026-02-25T21:12:17+00:00'

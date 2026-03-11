@@ -2,6 +2,7 @@
 description: 'renv: Project environments for R.'
 github: rstudio/renv
 image: logo.svg
+color: "#CCC165"
 languages:
 - R
 latest_release: '2026-01-16T16:58:02+00:00'

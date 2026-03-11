@@ -2,6 +2,7 @@
 description: WebSocket client for R
 github: rstudio/websocket
 image: logo.svg
+color: "#CC6699"
 languages:
 - C++
 latest_release: '2025-04-10T10:24:20+00:00'

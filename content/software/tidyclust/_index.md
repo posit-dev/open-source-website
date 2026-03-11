@@ -2,6 +2,7 @@
 description: A tidy unified interface to clustering models
 github: tidymodels/tidyclust
 image: logo.svg
+color: "#141227"
 languages:
 - R
 latest_release: '2025-01-27T23:10:34+00:00'

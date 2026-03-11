@@ -2,6 +2,7 @@
 description: Shiny Reactivity Visualizer
 github: rstudio/reactlog
 image: logo.svg
+color: "#2171B5"
 languages:
 - JavaScript
 latest_release: '2022-09-26T16:21:09+00:00'
