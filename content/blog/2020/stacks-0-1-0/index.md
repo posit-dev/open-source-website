@@ -4,7 +4,8 @@ slug: stacks-0-1-0
 title: stacks 0.1.0
 date: 2020-11-30
 people:
-  - Simon Couch and Max Kuhn
+  - Simon Couch
+  - Max Kuhn
 description: >
     Introducing ensemble learning to the tidymodels.
 

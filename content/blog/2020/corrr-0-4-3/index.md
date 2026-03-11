@@ -4,7 +4,9 @@ slug: corrr-0-4-3
 title: corrr 0.4.3
 date: 2020-12-09
 people:
-  - Daryn Ramsden, James Laird-Smith, Max Kuhn
+  - Daryn Ramsden
+  - James Laird-Smith
+  - Max Kuhn
 description: >
     A new version of corrr features noteworthy improvements. 
 

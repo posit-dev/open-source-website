@@ -4,7 +4,8 @@ slug: air
 title: Air, an extremely fast R formatter
 date: 2025-02-21
 people:
-  - Davis Vaughan and Lionel Henry
+  - Davis Vaughan
+  - Lionel Henry
 description: >
     We are thrilled to announce Air, a new R formatter.
 

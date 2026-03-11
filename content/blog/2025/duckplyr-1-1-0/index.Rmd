@@ -5,7 +5,8 @@ slug: duckplyr-1-1-0
 title: duckplyr fully joins the tidyverse!
 date: 2025-06-19
 people:
-  - Kirill Müller and Maëlle Salmon
+  - Kirill Müller
+  - Maëlle Salmon
 description: >
     duckplyr 1.1.0 is on CRAN!
     A drop-in replacement for dplyr, powered by DuckDB for speed.

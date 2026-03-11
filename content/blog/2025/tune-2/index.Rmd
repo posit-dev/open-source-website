@@ -5,7 +5,10 @@ slug: tune-2
 title: "tune version 2.0.0"
 date: 2025-11-05
 people:
-  - Max Kuhn, Simon Couch, Emil Hvitfeldt, Hannah Frick
+  - Max Kuhn
+  - Simon Couch
+  - Emil Hvitfeldt
+  - Hannah Frick
 description: >
     A new version of tune brings significant updates for model tuning and 
     parallel processing. 

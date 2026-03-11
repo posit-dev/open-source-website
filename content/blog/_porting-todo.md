@@ -43,6 +43,23 @@ Converted `{r, ...}` code blocks to plain `r` blocks:
 ### Tweet shortcode
 - `2019/tidy-dev-day-toulouse/index.markdown` - replaced `{{% tweet %}}` with comment (shortcode format changed)
 
+### Combined author names
+Split "Name1 and Name2" or "Name1, Name2, and Name3" into separate `people` entries using `scripts/fix-people.sh`:
+- `2020/stacks-0-1-0`
+- `2022/tidyselect-1-2-0`
+- `2024/postprocessing-preview`
+- `2024/s7-0-2-0`
+- `2020/broom-0-7-0`
+- `2025/air`
+- `2025/air-0-7-0`
+- `2025/purrr-1-1-0-parallel`
+- `2025/duckplyr-1-1-0`
+- `2025/tune-2`
+- `2025/three-new-tidymodels-packages`
+- `2020/corrr-0-4-3`
+- `2020/dplyr-1-0-0-last-minute-additions`
+- `2023/data-trail`
+
 ## Missing shortcodes
 
 Created stub shortcodes in `layouts/shortcodes/` (need implementation):

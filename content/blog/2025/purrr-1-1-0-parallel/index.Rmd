@@ -5,7 +5,10 @@ slug: purrr-1-1-0-parallel
 title: Parallel processing in purrr 1.1.0
 date: 2025-07-10
 people:
-  - Charlie Gao, Hadley Wickham, Davis Vaughan and Lionel Henry
+  - Charlie Gao
+  - Hadley Wickham
+  - Davis Vaughan
+  - Lionel Henry
 description: >
     The functional programming toolkit for R gains new capabilities for
     parallel processing and distributed computing using mirai.

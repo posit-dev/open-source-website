@@ -4,7 +4,9 @@ slug: postprocessing-preview
 title: Postprocessing is coming to tidymodels
 date: 2024-10-08
 people:
-  - Simon Couch, Hannah Frick, and Max Kuhn
+  - Simon Couch
+  - Hannah Frick
+  - Max Kuhn
 description: >
     The tidymodels team has been hard at work on postprocessing, a set of
     features to adjust model predictions. The functionality includes a new

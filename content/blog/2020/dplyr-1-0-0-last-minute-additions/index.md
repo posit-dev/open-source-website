@@ -6,7 +6,8 @@ description: >
     `summarise()` with more options for controlling grouping of output,
     and new row manipulation functions inspired by SQL.
 people:
-  - Hadley Wickham, Kirill Müller
+  - Hadley Wickham
+  - Kirill Müller
 date: '2020-05-06'
 
 

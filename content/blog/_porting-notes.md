@@ -79,3 +79,9 @@ The script:
 **Config:** `.Rmd` files are ignored by Hugo via `ignoreFiles` in `hugo.toml`.
 
 **After porting:** Check for cross-blog links or other issues and record in `_porting-todo.md`.
+
+**Fix combined authors:** If `people` has names joined by "and" or commas, run:
+```bash
+./scripts/fix-people.sh content/blog/<path>/index.md
+./scripts/fix-people.sh content/blog/<path>/index.Rmd
+```

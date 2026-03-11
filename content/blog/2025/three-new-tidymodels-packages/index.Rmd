@@ -5,7 +5,8 @@ slug: two-new-tidymodels-packages
 title: "Two New tidymodels Packages"
 date: 2025-11-22
 people:
-  - Frances Lin, Max Kuhn
+  - Frances Lin
+  - Max Kuhn
 description: >
     Two new tidymodels packages focus on supervised feature selection. 
 

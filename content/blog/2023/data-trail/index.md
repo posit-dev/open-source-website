@@ -4,7 +4,10 @@ slug: data-trail
 title: Solutions for R4DS, 2e with Data Trail
 date: 2023-08-02
 people:
-  - Jabir Ghaffar, Davon Person, Mine Çetinkaya-Rundel, Tracy Teal
+  - Jabir Ghaffar
+  - Davon Person
+  - Mine Çetinkaya-Rundel
+  - Tracy Teal
 description: >
     Jabir and Davon from Data Trail worked with us to create the solutions manual for R for Data Science, 2nd edition.
     This blog post summarizes their experience and shares their reflections from working on this project.

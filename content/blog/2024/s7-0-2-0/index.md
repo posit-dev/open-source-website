@@ -4,7 +4,8 @@ slug: s7-0-2-0
 title: S7 0.2.0
 date: 2024-11-07
 people:
-  - Tomasz Kalinowski and Hadley Wickham
+  - Tomasz Kalinowski
+  - Hadley Wickham
 description: >
     S7 is a new package that simplifies object-oriented programming (OOP) in R.
     It combines the simplicity of S3 with the structure of S4 to create a
