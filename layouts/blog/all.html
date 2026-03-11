@@ -1,0 +1,282 @@
+{{ define "main" }}
+<div class="flex flex-col w-full mt-6" data-pagefind-ignore>
+  <h1 class="text-3xl font-medium text-gray-500 dark:text-gray-200 mb-2">
+    {{ .Title }}
+  </h1>
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+    {{ .Content | safeHTML }}
+  </p>
+
+  <div class="bg-white dark:bg-blue-950 rounded-lg shadow-sm border border-blue-300 dark:border-blue-800 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table id="blog-table" class="w-full text-sm">
+        <thead class="bg-gray-100 dark:bg-blue-900 border-b border-gray-300 dark:border-blue-700">
+          <tr>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="title">
+              <div class="flex items-center gap-1">
+                Title
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="date">
+              <div class="flex items-center gap-1">
+                Date
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="people">
+              <div class="flex items-center gap-1">
+                People
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="image">
+              <div class="flex items-center gap-1">
+                Image
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="image-alt">
+              <div class="flex items-center gap-1">
+                Alt
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="software">
+              <div class="flex items-center gap-1">
+                Software
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="categories">
+              <div class="flex items-center gap-1">
+                Categories
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="slug">
+              <div class="flex items-center gap-1">
+                Slug
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="ported-from">
+              <div class="flex items-center gap-1">
+                Source
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="port-status">
+              <div class="flex items-center gap-1">
+                Status
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 dark:divide-blue-800">
+          {{ $blogSection := site.GetPage "/blog" }}
+          {{ range where $blogSection.RegularPages.ByDate.Reverse ".BundleType" "eq" "leaf" }}
+          <tr class="hover:bg-gray-50 dark:hover:bg-blue-900/50">
+            <!-- Title (linked) -->
+            <td class="px-3 py-2" data-value="{{ .Title }}">
+              <a href="{{ .RelPermalink }}" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+                {{ .Title | truncate 50 }}
+              </a>
+            </td>
+
+            <!-- Date -->
+            <td class="px-3 py-2 text-sm tabular-nums" data-value="{{ .Date.Format "2006-01-02" }}">
+              {{ .Date.Format "2006-01-02" }}
+            </td>
+
+            <!-- People -->
+            <td class="px-3 py-2" data-value="{{ if .Params.people }}{{ delimit .Params.people ", " }}{{ end }}">
+              {{ with .Params.people }}
+                <div class="flex flex-wrap gap-1">
+                  {{ range . }}
+                    {{- $personSlug := . | urlize -}}
+                    {{- $personPage := site.GetPage (printf "/people/%s" $personSlug) -}}
+                    {{- $hasContentFile := and $personPage $personPage.File -}}
+                    {{ if $hasContentFile }}
+                      <a href="{{ $personPage.RelPermalink }}" class="text-xs px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 hover:underline">
+                        {{ . }}
+                      </a>
+                    {{ else }}
+                      <span class="text-xs px-1.5 py-0.5 rounded bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300">
+                        {{ . }}
+                      </span>
+                    {{ end }}
+                  {{ end }}
+                </div>
+              {{ else }}
+                <span class="text-red-500">✗</span>
+              {{ end }}
+            </td>
+
+            <!-- Has Image -->
+            {{- $hasExplicitImage := .Params.image -}}
+            {{- $hasThumbnailFile := false -}}
+            {{- $hasAnyImage := false -}}
+            {{- range .Resources.Match "**/*thumbnail*" -}}
+              {{- $hasThumbnailFile = true -}}
+            {{- end -}}
+            {{- range .Resources.ByType "image" -}}
+              {{- $hasAnyImage = true -}}
+            {{- end -}}
+            <td class="px-3 py-2 text-center" data-value="{{ if $hasExplicitImage }}2{{ else if $hasThumbnailFile }}1{{ else if $hasAnyImage }}1{{ else }}0{{ end }}">
+              {{ if $hasExplicitImage }}
+                <span class="text-green-600" title="Explicit image param">✓</span>
+              {{ else if $hasThumbnailFile }}
+                <span class="text-yellow-600" title="Auto: thumbnail file">~</span>
+              {{ else if $hasAnyImage }}
+                <span class="text-yellow-600" title="Auto: first image">~</span>
+              {{ else }}
+                <span class="text-red-500" title="No image">✗</span>
+              {{ end }}
+            </td>
+
+            <!-- Has Image Alt -->
+            <td class="px-3 py-2 text-center" data-value="{{ if (index .Params "image-alt") }}1{{ else }}0{{ end }}">
+              {{ if (index .Params "image-alt") }}
+                <span class="text-green-600">✓</span>
+              {{ else }}
+                <span class="text-red-500">✗</span>
+              {{ end }}
+            </td>
+
+            <!-- Software -->
+            <td class="px-3 py-2" data-value="{{ if .Params.software }}{{ delimit .Params.software ", " }}{{ end }}">
+              {{ with .Params.software }}
+                <div class="flex flex-wrap gap-1">
+                  {{ range . }}
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-800 text-gray-700 dark:text-gray-200">
+                      {{ . }}
+                    </span>
+                  {{ end }}
+                </div>
+              {{ else }}
+                <span class="text-gray-400">-</span>
+              {{ end }}
+            </td>
+
+            <!-- Categories -->
+            <td class="px-3 py-2" data-value="{{ if .Params.categories }}{{ delimit .Params.categories ", " }}{{ end }}">
+              {{ with .Params.categories }}
+                <div class="flex flex-wrap gap-1">
+                  {{ range . }}
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-800 text-gray-700 dark:text-gray-200">
+                      {{ . }}
+                    </span>
+                  {{ end }}
+                </div>
+              {{ else }}
+                <span class="text-gray-400">-</span>
+              {{ end }}
+            </td>
+
+            <!-- Slug -->
+            <td class="px-3 py-2 text-xs text-gray-600 dark:text-gray-400" data-value="{{ .Slug }}">
+              {{ if .Params.slug }}
+                {{ .Params.slug }}
+              {{ else }}
+                <span class="text-gray-400">-</span>
+              {{ end }}
+            </td>
+
+            <!-- Ported From -->
+            <td class="px-3 py-2" data-value="{{ with .Params.ported_from }}{{ . }}{{ end }}">
+              {{ with .Params.ported_from }}
+                <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
+                  {{ . }}
+                </span>
+              {{ else }}
+                <span class="text-gray-400">-</span>
+              {{ end }}
+            </td>
+
+            <!-- Port Status -->
+            <td class="px-3 py-2" data-value="{{ with .Params.port_status }}{{ . }}{{ else }}0{{ end }}">
+              {{ with .Params.port_status }}
+                {{ if eq . "raw" }}
+                  <span class="text-xs px-1.5 py-0.5 rounded bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300">raw</span>
+                {{ else if eq . "in-progress" }}
+                  <span class="text-xs px-1.5 py-0.5 rounded bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300">in-progress</span>
+                {{ else if eq . "review" }}
+                  <span class="text-xs px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">review</span>
+                {{ else if eq . "complete" }}
+                  <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300">complete</span>
+                {{ else }}
+                  <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-700">{{ . }}</span>
+                {{ end }}
+              {{ else }}
+                <span class="text-gray-400">-</span>
+              {{ end }}
+            </td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">
+    Click column headers to sort. Total: {{ len ($blogSection.RegularPages) }} posts
+  </p>
+</div>
+
+<script>
+(function() {
+  const table = document.getElementById('blog-table');
+  const tbody = table.querySelector('tbody');
+  const headers = table.querySelectorAll('th[data-sort]');
+  let currentSort = { column: 'date', direction: 'desc' };
+
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const column = header.dataset.sort;
+      const direction = currentSort.column === column && currentSort.direction === 'asc' ? 'desc' : 'asc';
+      sortTable(column, direction);
+    });
+  });
+
+  function sortTable(column, direction) {
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const colIndex = Array.from(headers).findIndex(h => h.dataset.sort === column) + 1;
+
+    rows.sort((a, b) => {
+      const aVal = a.querySelector(`td:nth-child(${colIndex})`).dataset.value.toLowerCase();
+      const bVal = b.querySelector(`td:nth-child(${colIndex})`).dataset.value.toLowerCase();
+
+      if (aVal < bVal) return direction === 'asc' ? -1 : 1;
+      if (aVal > bVal) return direction === 'asc' ? 1 : -1;
+      return 0;
+    });
+
+    tbody.innerHTML = '';
+    rows.forEach(row => tbody.appendChild(row));
+
+    headers.forEach(h => {
+      const icon = h.querySelector('.sort-icon');
+      if (h.dataset.sort === column) {
+        icon.textContent = direction === 'asc' ? '↑' : '↓';
+        icon.classList.remove('text-gray-400');
+        icon.classList.add('text-blue-600', 'dark:text-blue-400');
+      } else {
+        icon.textContent = '↕';
+        icon.classList.remove('text-blue-600', 'dark:text-blue-400');
+        icon.classList.add('text-gray-400');
+      }
+    });
+
+    currentSort = { column, direction };
+  }
+})();
+</script>
+
+<style>
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+</style>
+{{ end }}
