@@ -7,7 +7,7 @@
 
 {{ define "main" }}
 {{ $softwareSection := site.GetPage "/software" }}
-<div class="flex flex-col w-full mt-6" x-data="softwareFilter()" x-init="init()">
+<div class="flex flex-col w-full" x-data="softwareFilter()" x-init="init()">
   <div class="mb-8">
     <div class="flex items-end justify-between">
       <div>

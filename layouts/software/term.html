@@ -97,9 +97,9 @@
     </h2>
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10 mx-2 md:mx-0 mb-6">
+  <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-1 gap-y-10 mx-2 md:mx-0 mb-6">
     {{ range $people }}
-    {{ partial "card_person.html" (dict "page" . "showRole" false "size" "small") }}
+    {{ partial "card.html" (dict "page" . "hide-badge" true) }}
     {{ end }}
   </div>
   {{ end }}
@@ -115,23 +115,23 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $events }}
-    {{ partial "card_event.html" . }}
+    {{ partial "card.html" (dict "page" . "hide-badge" true) }}
     {{ end }}
   </div>
   {{ end }}
 
-  <!-- Resources using this Software -->
+  <!-- Resources featuring this Software -->
   {{ $resources := where .Pages "Section" "resources" }}
   {{ if gt (len $resources) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
     <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Resources using {{ .Title }}
+      Resources featuring {{ .Title }}
     </h2>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $resources }}
-    {{ partial "card_resource.html" . }}
+    {{ partial "card.html" (dict "page" . "hide-badge" false) }}
     {{ end }}
   </div>
   {{ end }}

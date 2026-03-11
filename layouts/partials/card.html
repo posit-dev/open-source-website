@@ -172,7 +172,7 @@
      MARKUP
      ============================================================ */}}
 <div {{ with .id }}id="{{ . }}"{{ end }} class="@container h-full">
-  <a href="{{ $page.RelPermalink }}"
+  <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
      class="no-underline relative flex flex-col @venti:flex-row rounded-xl
             hover:brightness-110 brightness-100 transition duration-200
             {{ $card_settings.card_class }}

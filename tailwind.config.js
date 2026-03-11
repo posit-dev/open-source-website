@@ -11,7 +11,7 @@ module.exports = {
       // These are for @container queries specifically
       containers: {
         'tall': '10rem',
-        'grande': '20rem',
+        'grande': '16rem',
         'venti': '40rem',
       },
       fontFamily: {
