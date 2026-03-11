@@ -10,6 +10,8 @@ image: thumbnail-1.7.jpeg
 image-alt: >-
   Quarto 1.7: half the Quarto logo is light on dark, the other half dark on
   light
+ported_from: quarto
+port_status: raw
 categories:
   - quarto
 ---

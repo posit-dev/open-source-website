@@ -3,6 +3,8 @@ title: "Reflecting on Mentorship Experience"
 people:
   - Christian Okoth
 date: '2021-02-17'
+ported_from: education
+port_status: raw
 categories:
   - education
 description: A mentorship experience during undergrad opens up opportunities for learning about text analysis, as well as meta-skills like debugging and reproducibility.

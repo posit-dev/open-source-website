@@ -7,6 +7,8 @@ nohero: true
 slug: about-the-rstudio-project
 image: thumbnail.png
 image-alt: "Screenshot of RStudio's Create Project window"
+ported_from: rstudio
+port_status: raw
 categories:
   - news
 ---
