@@ -14,7 +14,7 @@ photo:
   url: https://unsplash.com/photos/4Zk45jNyQS4
 image: aaron-durham-mentorship-wrapup-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 In the fall semester of 2020, RStudio piloted a program to provide mentorship to Black, Latinx, and Indigenous students in data science.

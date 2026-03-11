@@ -12,7 +12,7 @@ photo:
   author: Siora Photography
 image: learner-personas-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 A *[learner persona](http://teachtogether.tech/en/process/#s:process-personas)*

@@ -15,7 +15,7 @@ photo:
 tags: [internship]
 image: feature-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 Prior to this internship, my coding abilities were [amateur at best][first-reflection]. After this internship, I have not only become fluent in R, but also more confident in my software abilities in general. I have my mentors [Davis Vaughan][vaughan] and [Max Kuhn][kuhn] to thank for helping me build this agency, as well as the 2019 intern cohort and the #rstats community, but long story short, if you're interested in learning how to contribute to open source, ship production-level code, or build software products, I would highly recommend applying. The training I had was exceptional. 

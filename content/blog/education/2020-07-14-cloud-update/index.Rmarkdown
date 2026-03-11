@@ -18,7 +18,7 @@ photo:
   author: Nacho Rochon
 image: clouds-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 > RStudio Cloud spans across multiple teams at RStudio, so this is a joint post from the RStudio education, marketing, and Cloud teams.

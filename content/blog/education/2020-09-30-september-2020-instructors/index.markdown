@@ -15,7 +15,7 @@ photo:
   author: Robert Zunikoff
 image: september-2020-instructors-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 We welcomed 12 new instructors to our ranks in September 2020:

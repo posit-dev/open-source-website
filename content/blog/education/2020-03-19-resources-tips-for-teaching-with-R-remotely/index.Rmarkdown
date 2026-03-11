@@ -14,7 +14,7 @@ photo:
   author: Maya Maceka
 image: featured-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 Having to move your teaching from in person to online on short notice is a difficult task. Thankfully there are plenty of openly and freely available resources that might help ease this transition, and allow you to focus on the bits of your teaching that only you can do. Below is a list of resources as well as tips to help you shift your teaching of R online.

@@ -13,7 +13,7 @@ photo:
  author: Ryan Cooley
 image: featured-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 Instructors and learners alike have had to quickly adapt to virtual education due to the ongoing pandemic. The [learnr](https://rstudio.github.io/learnr/) package has become a popular tool to ease that transition (see Allison Horst's great [post](/blog/2020/05/learnr-for-remote/)).

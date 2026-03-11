@@ -11,7 +11,7 @@ photo:
   author: Drew Beamer
 image: feature-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 As RStudio’s resident Information Architect & Digital Librarian, I get asked a lot how to organize stuff with the goal of making content more findable.  Here are 10 suggestions to make your own work product (whatever it is) findable by yourself & others!

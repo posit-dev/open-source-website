@@ -15,7 +15,7 @@ photo:
   author: Lukas Blazek
 image: working-with-spreadsheets-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 Fancy algorithms, lots of code, and beautiful visualizations

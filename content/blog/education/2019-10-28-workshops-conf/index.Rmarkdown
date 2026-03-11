@@ -15,7 +15,7 @@ photo:
   author: Pedro Lastra
 image: feature-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 rstudio::conf(2020) is fast approaching, and in addition to the many fantastic 

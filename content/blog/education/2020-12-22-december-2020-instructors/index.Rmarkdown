@@ -15,7 +15,7 @@ photo:
   author: Robert Zunikoff
 image: december-2020-instructors-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 We welcomed 10 new instructors to our community in December 2020:

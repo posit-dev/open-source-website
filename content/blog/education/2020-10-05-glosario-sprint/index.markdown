@@ -16,7 +16,7 @@ photo:
   author: Joshua Hoehne
 image: glosario-sprint-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 In July we announced [Glosario][glosario],

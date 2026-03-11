@@ -16,7 +16,7 @@ photo:
   author: Elia Pellegrini
 image: a11y-midterm-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 As I am now halfway through my internship, I would like to share my work and experience.

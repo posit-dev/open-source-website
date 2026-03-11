@@ -21,7 +21,7 @@ photo:
   author: John Schnobrich
 image: featured-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 This article outlines the original R-Bootcamp, why we moved it to [the current platform](https://r-bootcamp.netlify.com/), and talks about our experiences setting it up on the new [mybinder.org](https://mybinder.org) based platform that was created by [Ines Montani](https://github.com/ines/course-starter-r).

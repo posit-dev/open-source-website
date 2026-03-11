@@ -17,7 +17,7 @@ photo:
   author: Debby Hudson
 image: reopening-training-applications-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 We temporarily put applications for RStudio's [instructor training program][training] on hold in December 2019

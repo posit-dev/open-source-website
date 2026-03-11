@@ -17,7 +17,7 @@ photo:
 tags: [internship]
 image: stones-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 ```{r include=FALSE}

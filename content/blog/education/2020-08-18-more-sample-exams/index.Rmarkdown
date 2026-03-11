@@ -14,7 +14,7 @@ photo:
   author: Greg Wilson
 image: more-sample-exams-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 To help everyone who is preparing to certify as an RStudio instructor,

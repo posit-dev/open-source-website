@@ -12,7 +12,7 @@ photo:
 description: Tips for making a new cheatsheet
 image: featured-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 Shortly after Winston Chang and I were hired by RStudio, I was surprised to spot his name at the bottom of a [LaTeX cheatsheet](https://wch.github.io/latexsheet/latexsheet.pdf) that I had used all through grad school. His idea was too good to waste; and soon after, the [first RStudio Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/old/pdfs/shiny-cheatsheet-old.pdf) was born! 

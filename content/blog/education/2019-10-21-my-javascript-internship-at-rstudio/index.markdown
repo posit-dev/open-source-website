@@ -14,7 +14,7 @@ photo:
 tags: [internship]
 image: java-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 > This post was written by [Maya Gans](https://maya.rbind.io/) about her 2019 RStudio internship where she built <https://tidyblocks.tech>. Maya also documented her project and progress at <https://maya.rbind.io/tidyblocks/>.

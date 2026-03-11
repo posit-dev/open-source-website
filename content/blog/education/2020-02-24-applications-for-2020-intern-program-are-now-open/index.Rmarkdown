@@ -12,7 +12,7 @@ description: |
   Want to apply to this year's summer intern program? Here's how.
 image: feature-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 As [we announced last year][preview],

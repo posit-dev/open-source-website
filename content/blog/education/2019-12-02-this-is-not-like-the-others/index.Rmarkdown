@@ -15,7 +15,7 @@ photo:
   author: Matt Nelson
 image: feature-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 This summer I had the opportunity of working as an intern for RStudio.

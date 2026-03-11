@@ -11,7 +11,7 @@ description: |
   Meet this year's interns.
 image: feature-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 We received almost two hundreds applications for

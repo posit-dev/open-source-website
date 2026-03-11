@@ -15,7 +15,7 @@ photo:
   author: Robert Zunikoff
 image: may-2020-instructors-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 We are very pleased to have welcomed eight new certified instructors in May 2020:

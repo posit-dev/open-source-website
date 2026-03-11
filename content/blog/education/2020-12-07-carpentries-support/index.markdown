@@ -15,7 +15,7 @@ photo:
   author: Hunter Haley
 image: carpentries-support-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 [The Carpentries](https://carpentries.org) is a volunteer organization

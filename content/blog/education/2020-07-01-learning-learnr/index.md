@@ -16,7 +16,7 @@ photo:
   url: https://unsplash.com/photos/z1c9juteR5c
 image: learning-learnr-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 > "Let us change our traditional attitude to the construction of

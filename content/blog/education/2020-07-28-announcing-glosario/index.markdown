@@ -24,7 +24,7 @@ photo:
   author: Joshua Hoehne
 image: announcing-glosario-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 [`glosario`](https://github.com/carpentries/glosario) is an open source glossary of terms used in data science

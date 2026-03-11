@@ -15,7 +15,7 @@ categories:
 tags: ["instructor training"]
 image: feature-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 I recently became a certified RStudio Instructor in both Shiny and the Tidyverse. I thought I would write a little about the experience. I haven't really had any formal pedagogical training, and having some of the state of the art and evidence-based practices were really helpful in extending my approaches to teaching.

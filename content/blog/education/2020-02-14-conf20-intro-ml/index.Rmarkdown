@@ -13,7 +13,7 @@ description: Here is your roadmap to our two-day rstudio::conf(2020) introductor
   learning with the tidyverse and tidymodels.
 image: featured-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 (ref:long) Video from [YouTube](https://www.youtube.com/watch?v=DUGN-12HHwQ).

@@ -14,7 +14,7 @@ photo:
   author: Mika Baumeister
 image: spreadsheet-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 There's so much to discover and learn when working with spreadsheets. 

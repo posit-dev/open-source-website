@@ -12,7 +12,7 @@ photo:
   url: https://unsplash.com/photos/wEL2zPX3jDg
   author: Fabio Ballasina
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 Welcome to the fourth (and final!) post in the "Teaching the Tidyverse in 2020" series. So far we have covered [getting started](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-1-getting-started/ "Teaching the Tidyverse in 2020: Getting started"), [data visualisation](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-2-data-visualisation/ "Teaching the Tidyverse in 2020: Data visualisation"), and [data wrangling and tidying](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/). Today the focus will be on when to introduce the [purrr](https://purrr.tidyverse.org/ "Link to purrr package website") package, or more widely, the notion of iteration and functional programming.

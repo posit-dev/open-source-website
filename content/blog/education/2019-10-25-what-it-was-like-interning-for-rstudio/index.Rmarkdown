@@ -13,7 +13,7 @@ photo:
 tags: [internship]
 image: featured-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 I spent the summer creating a series of lessons to teach statistics and data science to software engineers

@@ -17,7 +17,7 @@ photo:
   url: https://unsplash.com/photos/fpvUvv-VEuA
 image: data-latam-wd.jpg
 ported_from: education
-port_status: raw
+port_status: in-progress
 ---
 
 When we started with the first [Data Latam Podcast](http://www.datalatam.com/) in May 2016
