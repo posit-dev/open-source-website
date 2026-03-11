@@ -170,7 +170,7 @@
 
       {{/* -- Size (absolute, top-left) --------------------------- */}}
       {{ if ne hugo.Environment "production" }}
-        <span class="absolute top-2 left-2 z-10 text-xs font-semibold uppercase tracking-wide
+        <span class="absolute top-2 @max-venti:left-2 @venti:right-2 z-10 text-xs font-semibold uppercase tracking-wide
                     px-2 py-0.5 rounded-full
                     bg-red-100 text-red-700">
           <span class="hidden @max-tall:inline">short</span>
@@ -217,11 +217,11 @@
     <div class="hidden gap-y-2 @tall:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700">
 
       {{ with $str_title }}
-      <h3 class="m-0! text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . }}</h3>
+      <h3 class="m-0! text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
       {{ end }}
 
       {{ with $str_description }}
-        <p class="m-0! text-sm @grande:text-md @venti:text-lg line-clamp-3 {{ $card_settings.description_class }}">{{ . }}</p>
+        <p class="m-0! text-sm @grande:text-md @venti:text-lg line-clamp-3 {{ $card_settings.description_class }}">{{ . | safeHTML }}</p>
       {{ end }}
 
       {{ with $people_value }}
