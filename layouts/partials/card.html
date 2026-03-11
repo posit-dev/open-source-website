@@ -113,7 +113,11 @@
 {{ end }}
 
 {{ if eq $card_type "videos" }}
-{{ end }} 
+  {{ with $page.Params.external.thumbnail }}
+    {{ $imageURL = . }}
+    {{ $image = false }}
+  {{ end }}
+{{ end }}
 
 {{/* Software placeholder fallback */}}
 {{ if and (not $image) (not $imageURL) $isSoftware }}
@@ -167,7 +171,7 @@
 {{/* ============================================================
      MARKUP
      ============================================================ */}}
-<div class="@container h-full">
+<div {{ with .id }}id="{{ . }}"{{ end }} class="@container h-full">
   <a href="{{ $page.RelPermalink }}"
      class="no-underline relative flex flex-col @venti:flex-row rounded-xl bg-gray-100/50 dark:bg-blue-950
             hover:bg-gray-100
