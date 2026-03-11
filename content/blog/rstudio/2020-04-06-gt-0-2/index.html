@@ -1,0 +1,150 @@
+---
+title: 'Great Looking Tables: gt (v0.2)'
+authors: 
+- Richard Iannone
+authormeta:
+- rich-iannone
+date: '2020-04-08'
+slug: great-looking-tables-gt-0-2
+output:
+  md_document:
+    preserve_yaml: yes
+categories:
+- Packages
+tags:
+- news
+- packages
+- rmarkdown
+- Packages
+blogcategories:
+- Products and Technology
+- Open Source
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p align="center">
+<img src="gt_hex.svg" width=100%>
+</p>
+<p>We are extremely excited to have our first release of the <strong>gt</strong> package available in CRAN! The name <strong>gt</strong> is short for “grammar of tables” and the goal of <strong>gt</strong> is similar to that of <strong>ggplot2</strong>, serving to not just to make it easy to make specific tables, but to describe a set of underlying components that can be recombined in different ways to solve different problems.</p>
+<p>If you ever need to make beautiful customized <em>display</em> tables, I think you’ll find <strong>gt</strong> is up to the task. You can install <strong>gt</strong> 0.2 from CRAN with:</p>
+<pre class="r"><code>install.packages(&quot;gt&quot;)</code></pre>
+<p>For an initial release, it’s pretty big! There are so many ways to structure a table, apply formatting and annotations, and style it just the way you want. Currently <strong>gt</strong> renders tables to the HTML output format (and has the ability to export to image files). We plan to also support the LaTeX and RTF output formats in the near future.</p>
+<p>The <a href="https://gt.rstudio.com">website for the <strong>gt</strong> package</a> has walkthrough articles for getting started and a <a href="https://gt.rstudio.com/reference/index.html">function reference section</a> with plenty of examples and images to show you how the table output is meant to appear.</p>
+<div id="lets-get-acquainted-with-our-model-of-a-table" class="section level2">
+<h2>Let’s get acquainted with our model of a table</h2>
+<p>We decided to formalize the parts of a table—and give them names—so that we have some language to act on. The larger components of a table (roughly from top to bottom) include the <em>table header</em>, the <em>column labels</em>, the <em>stub</em> and <em>stub head</em>, the <em>table body</em>, and the <em>table footer</em>. Within each of these components, there may be subcomponents (e.g., the <em>table header</em> contains a <em>title</em> and <em>subtitle</em>, the <em>table body</em> contains individual <em>cells</em>, etc.). Understanding how the parts fit together will make more sense with this diagram:</p>
+<p align="center">
+<img src="gt_parts_of_a_table.svg" width=100%>
+</p>
+<p>Learning new vocabulary is definitely a pain, but we believe it’s worthwhile. Like <strong>ggplot2</strong>, the new words take some getting used to, but we believe learning them will improve your ability to analyze and understand existing tables, and then successfully recreate them in <strong>gt</strong>.</p>
+</div>
+<div id="examples-with-the-exibble-dataset" class="section level2">
+<h2>Examples with the <code>exibble</code> dataset</h2>
+<p>The <code>exibble</code> dataset is included in <strong>gt</strong> and its <em>raison d’etre</em> is to be a small dataset (8 rows and 9 columns) with different column types for experimenting with formatting. It fits easily on a single screen when printed as a tibble and rendered as a <strong>gt</strong> table, making it easy to see the results of our <strong>gt</strong> experimentation.</p>
+<pre class="r"><code>exibble</code></pre>
+<pre><code>## # A tibble: 8 × 9
+##           num char       fctr  date       time  datetime    currency row   group
+##         &lt;dbl&gt; &lt;chr&gt;      &lt;fct&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+## 1       0.111 apricot    one   2015-01-15 13:35 2018-01-01…    50.0  row_1 grp_a
+## 2       2.22  banana     two   2015-02-15 14:40 2018-02-02…    18.0  row_2 grp_a
+## 3      33.3   coconut    three 2015-03-15 15:45 2018-03-03…     1.39 row_3 grp_a
+## 4     444.    durian     four  2015-04-15 16:50 2018-04-04… 65100    row_4 grp_a
+## 5    5550     &lt;NA&gt;       five  2015-05-15 17:55 2018-05-05…  1326.   row_5 grp_b
+## 6      NA     fig        six   2015-06-15 &lt;NA&gt;  2018-06-06…    13.3  row_6 grp_b
+## 7  777000     grapefruit seven &lt;NA&gt;       19:10 2018-07-07…    NA    row_7 grp_b
+## 8 8880000     honeydew   eight 2015-08-15 20:20 &lt;NA&gt;            0.44 row_8 grp_b</code></pre>
+<div id="a-simple-table" class="section level3">
+<h3>A simple table</h3>
+<p>Let’s use that dataset to make the ‘Hello, World!’ of <strong>gt</strong> tables:</p>
+<pre class="r"><code>exibble %&gt;% gt()</code></pre>
+<p><img src="table_1.png" width=100%>
+<br></p>
+<p>Just like how the <code>ggplot()</code> function is the entry point to <strong>ggplot2</strong> plots, the <a href="https://gt.rstudio.com/reference/gt.html"><code>gt()</code></a> function serves as the first function to call for making <strong>gt</strong> tables.</p>
+</div>
+<div id="formatting-data-in-columns" class="section level3">
+<h3>Formatting data in columns</h3>
+<p>The <code>exibble</code> dataset is blessed with an array of column types. This makes it a snap to experiment with <strong>gt</strong>’s collection of <code>fmt_*()</code> functions, which format the input data values.</p>
+<p>Let’s test as many formatter functions as possible. Here’s the plan:</p>
+<ul>
+<li>have <code>num</code> display numbers with exactly 2 decimal places using <a href="https://gt.rstudio.com/reference/fmt_number.html"><code>fmt_number()</code></a></li>
+<li>show nicely formatted dates in <code>date</code> using <code>date_style</code> <code>6</code> (the <code>m_day_year</code> style) with <a href="https://gt.rstudio.com/reference/fmt_date.html"><code>fmt_date()</code></a></li>
+<li>format the 24-h time values in <code>time</code> to <code>time_style</code> <code>4</code> (the <code>hm_p</code> style) with <a href="https://gt.rstudio.com/reference/fmt_time.html"><code>fmt_time()</code></a></li>
+<li>make the datetimes in <code>datetime</code> formatted as such with the <a href="https://gt.rstudio.com/reference/fmt_datetime.html"><code>fmt_datetime()</code></a> function</li>
+<li>transform the <code>currency</code> column with <a href="https://gt.rstudio.com/reference/fmt_currency.html"><code>fmt_currency()</code></a> to show us values in the euro currency (<code>currency = "EUR"</code>)</li>
+</ul>
+<p>Phew! Here’s the code and the corresponding <strong>gt</strong> table:</p>
+<pre class="r"><code>exibble %&gt;%
+  gt() %&gt;%
+  fmt_number(columns = vars(num), decimals = 2) %&gt;%
+  fmt_date(columns = vars(date), date_style = 6) %&gt;%
+  fmt_time(columns = vars(time), time_style = 4) %&gt;%
+  fmt_datetime(columns = vars(datetime), date_style = 6, time_style = 4) %&gt;%
+  fmt_currency(columns = vars(currency), currency = &quot;EUR&quot;)</code></pre>
+<p><img src="table_2.png" width=100%>
+<br></p>
+<p>As can be seen, entire columns had formatting applied to them in very specific ways. There is some finer control available as well. We can style a subselection of rows in any given column and there are quite a few ways to specify the target rows (e.g., row indices, row names in the stub, conditional statement based on column data, etc.).</p>
+<p>This only scratches the surface of what is possible in formatting the <em>table body</em>, there are more <code>fmt_*()</code> functions. If they don’t exactly suit your needs you can use the general <a href="https://gt.rstudio.com/reference/fmt.html"><code>fmt()</code></a> function and provide your own transformation function.</p>
+</div>
+<div id="a-table-with-a-header-and-a-footer" class="section level3">
+<h3>A table with a <em>header</em> and a <em>footer</em></h3>
+<p>We can add components to the table. Let’s include a <em>header</em> with a title and subtitle, and, a <em>footer</em> with a source note. These parts are added with the <a href="https://gt.rstudio.com/reference/tab_header.html"><code>tab_header()</code></a> and <a href="https://gt.rstudio.com/reference/tab_source_note.html"><code>tab_source_note()</code></a> functions.</p>
+<pre class="r"><code>exibble %&gt;%
+  gt() %&gt;%
+  tab_header(
+    title = md(&quot;This is the `exibble` dataset in **gt**&quot;),
+    subtitle = &quot;It is one of six datasets in the package&quot;
+  ) %&gt;%
+  tab_source_note(md(&quot;More information is available at `?exibble`.&quot;))</code></pre>
+<p><img src="table_3.png" width=100%>
+<br></p>
+<p>Adding new parts to the table is typically done by using a few <code>tab_*()</code> functions. Notice that we could style our text using Markdown with the included <a href="https://gt.rstudio.com/reference/md.html"><code>md()</code></a> function.</p>
+</div>
+<div id="adding-a-stub-and-organizing-rows-into-row-groups" class="section level3">
+<h3>Adding a <em>stub</em> and organizing rows into <em>row groups</em></h3>
+<p>The <code>exibble</code> dataset has the <code>row</code> and <code>group</code> columns, which were purposefully included for experimentation with the table <em>stub</em> and with <em>row groups</em>. Rather than explaining those components at length, let’s revise the above code so that these columns are used to create those components:</p>
+<pre class="r"><code>exibble %&gt;%
+  gt(rowname_col = &quot;row&quot;, groupname_col = &quot;group&quot;) %&gt;%
+  tab_header(
+    title = md(&quot;This is the `exibble` dataset in **gt**&quot;),
+    subtitle = md(&quot;We can use the `row` and `group` columns to structure the table&quot;)
+  ) %&gt;%
+  tab_source_note(md(&quot;More information is available at `?exibble`.&quot;))</code></pre>
+<p><img src="table_4.png" width=100%>
+<br></p>
+<p>This change effectively gives us row labels in a separate area to the left (the <em>stub</em>), and, row group labels above each grouping of rows. This is great for data that naturally falls into groupings. And worry not, if the initial order isn’t what you expected or wanted, the <a href="https://gt.rstudio.com/reference/row_group_order.html"><code>row_group_order()</code></a> function can be used to reorder the groupings.</p>
+</div>
+<div id="using-spanner-column-labels" class="section level3">
+<h3>Using <em>spanner column labels</em></h3>
+<p>Just as with the <em>stub</em>, we can create groupings of columns with <em>spanner column labels</em> that encompass one or more columns. The <a href="https://gt.rstudio.com/reference/tab_spanner.html"><code>tab_spanner()</code></a> function makes this possible. By providing a <code>label</code> and a selection of <code>columns</code> the new label is placed above those columns and the associated horizontal rule will span across. Should the <code>columns</code> not be adjacent to each other, <a href="https://gt.rstudio.com/reference/tab_spanner.html"><code>tab_spanner()</code></a> will automatically gather them together.</p>
+<pre class="r"><code>exibble %&gt;%
+  gt(rowname_col = &quot;row&quot;, groupname_col = &quot;group&quot;) %&gt;%
+  tab_spanner(label = &quot;Dates and Times&quot;, columns = matches(&quot;date|time&quot;)) %&gt;%
+  tab_header(
+    title = md(&quot;This is the `exibble` dataset in **gt**&quot;),
+    subtitle = md(&quot;We can use the `tab_spanner()` function to organize and label columns&quot;)
+  ) %&gt;%
+  tab_source_note(md(&quot;More information is available at `?exibble`.&quot;))</code></pre>
+<p><img src="table_5.png" width=100%>
+<br></p>
+</div>
+<div id="more-so-much-more" class="section level3">
+<h3>More… so much more</h3>
+<p>It’s really not possible to explore much of what <strong>gt</strong> can do in a short blog post. You can do many more useful things like inserting footnotes, modifying text, borders, and fills, and, adding summary rows. Here’s an example of how the <code>pizzaplace</code> dataset can look with a little <strong>gt</strong> code (not shown here but <a href="https://gist.github.com/rich-iannone/1da1ae7a7203958a0c5b1bd1d4b24017">available in this gist</a>):</p>
+<p><img src="table_6.png" width=100%>
+<br></p>
+<p>Getting started with <strong>gt</strong> can be a risk-free experience with the <strong>gt Test Drive</strong>. Hit the button below to be transported to an <strong>RStudio Cloud</strong> project with examples galore:</p>
+<p align="center">
+<a href="https://rstudio.cloud/project/779965">
+<img src="gt-test-drive.svg" alt="RStudio Cloud Example" height="80px">
+</a>
+</p>
+<p>To make it easy to experiment with making <strong>gt</strong> tables, we included <a href="https://gt.rstudio.com/articles/gt-datasets.html">six datasets</a> in the package: <code>countrypops</code>, <code>sza</code>, <code>gtcars</code>, <code>sp500</code>, <code>pizzaplace</code> (your favorite), and <code>exibble</code>. Strangely enough, each of these datasets is celebrated with a circular logo.</p>
+<p align="center">
+<img src="gt_datasets_labeled.svg" width=100%>
+</p>
+<p>(Each of these datasets has a unique story in the world of <strong>gt</strong> so the deluxe graphics are warranted.)</p>
+<p>While we’re only getting started on this package we feel things are really coming along. But sure to visit and engage with us at the <a href="https://github.com/rstudio/gt/issues"><strong>gt</strong> issue tracker</a>. We want to hear of any bugs, usage questions, or great ideas you might have to make this package better. Thanks!</p>
+</div>
+</div>

@@ -38,7 +38,7 @@ Blogs with pre-rendered static files (.md, .markdown, .html) are easier to port 
 | great-tables | docs/blog | - | 22 qmd |
 | pointblank | docs/blog | - | 6 qmd |
 | plotnine.org | source/blog | - | 3 qmd |
-| rstudio.com | content/blog | TBD | TBD |
+| rstudio.com | content/blog | 544 md + 21 html | - (all pre-rendered) |
 
 ## Image alt text: use `image-alt`
 
@@ -159,3 +159,34 @@ people:
 people:
   - Alison
 ```
+
+## rstudio.com
+
+Blog source: `_external-sources/rstudio.com/content/blog`
+Destination: `content/blog/rstudio/`
+
+Uses Hugo. Mix of flat `.md` files and folder-based posts (`index.md` or `index.html`).
+
+**Script:** `scripts/port-rstudio-post.sh <path>`
+
+```bash
+./scripts/port-rstudio-post.sh 2011-02-27-about-the-rstudio-project
+./scripts/port-rstudio-post.sh 2012-11-08-introducing-shiny.md
+```
+
+The script handles both folder-based posts and flat `.md` files (converting flat files to folders).
+
+The script:
+1. Copies/creates post folder to `content/blog/rstudio/`
+2. Updates frontmatter:
+   - Changes `authors` → `people`
+   - Removes `authormeta` (internal linking slug)
+   - Preserves `categories`, `blogcategories`, `tags`, `events`
+   - Adds `image: thumbnail.png` if present
+   - Adds `ported_from: rstudio` and `port_status: raw`
+
+**Note:** Posts with `index.html` (rendered R Markdown) need the same frontmatter transformation - handled separately after bulk import.
+
+**Fixes applied during import:**
+- Created stub shortcode `layouts/shortcodes/conf-form.html`
+- Fixed duplicate `date:` key in `2021-08-23-pins-0-4-0-versioning`

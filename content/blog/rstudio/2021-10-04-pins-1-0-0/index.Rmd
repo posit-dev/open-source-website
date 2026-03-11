@@ -1,0 +1,109 @@
+---
+title: pins 1.0.0
+author: Hadley Wickham
+date: '2021-10-04'
+slug: pins-1-0-0
+blogcategories:
+  - Open Source
+tags:
+  - pins
+description: >
+    pins 1.0.0 is now available on CRAN! The pins package publishes data, 
+    models, and other R objects, making it easy to share them across projects 
+    and with your colleagues. Pins can be versioned, making it straightforward 
+    to track changes, re-run analyses on historical data, and undo mistakes.
+resources:
+  - name: hero
+    src: hero.jpg
+    title: A world map with many pins stuck in it
+events: blog
+---
+
+```r, include = FALSE
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+
+<img align="center" style="padding: 35px:" src="hero.jpg">
+<caption>
+Photo by <a href="https://unsplash.com/@kelsoknight" target="_blank" rel="noopener noreferrer">Kelsey Knight</a> on <a href="https://unsplash.com/">Unsplash</a>
+</caption>
+
+
+I'm delighted to announce that [pins](https://pins.rstudio.com) 1.0.0 is now available on CRAN.
+The pins package publishes data, models, and other R objects, making it easy to share them across projects and with your colleagues.
+You can pin objects to a variety of pin boards, including folders (to share on a networked drive or with services like DropBox), RStudio Connect, Amazon S3, and Azure blob storage.
+Pins can be versioned, making it straightforward to track changes, re-run analyses on historical data, and undo mistakes. Our users have found numerous ways to use this ability to fluently share and version data and other objects, such as [automating ETL for a Shiny app](https://pins.rstudio.com/dev/articles/rsc.html).
+
+You can install pins with:
+
+```r, eval = FALSE
+install.packages("pins")
+```
+
+pins 1.0.0 includes a major overhaul of the API.
+The legacy API (`pin()`, `pin_get()`, `board_register()`, and friends) will continue to work, but new features will only be implemented with the new API, so we encourage you to switch to the modern API as quickly as possible.
+If you're an existing pins user, you can learn more about the changes and how to update you code in [`vignette("pins-update")`](https://pins.rstudio.com/articles/pins-update.html).
+
+## Basics
+
+To use the pins package, you must first create a pin board.
+A good place to start is `board_folder()`, which stores pins in a directory you specify.
+Here I'll use a special version of `board_folder()` called `board_temp()` which creates a temporary board that's automatically deleted when your R session ends.
+This is great for examples, but obviously you shouldn't use it for real work!
+
+```r setup
+library(pins)
+
+board <- board_temp()
+board
+```
+
+You can "pin" (save) data to a board with `pin_write()`.
+It takes three arguments: the board to pin to, an object, and a name:
+
+```r
+board %>% pin_write(head(mtcars), "mtcars")
+```
+
+As you can see, the data saved as an `.rds` by default, but depending on what you're saving and who else you want to read it, you might use the `type` argument to instead save it as a `csv`, `json`, `arrow`, or `qs` file.
+
+You can later retrieve the pinned data with `pin_read()`:
+
+```r
+board %>% pin_read("mtcars")
+```
+
+## Sharing pins
+
+A board on your computer is good place to start, but the real power of pins comes when you use a board that's shared with multiple people.
+To get started, you can use [`board_folder()`](https://pins.rstudio.com/reference/board_folder.html) with a directory on a shared drive or using Dropbox, or if you use [RStudio Connect](https://www.rstudio.com/products/connect/) you can use [`board_rsconnect()`](https://pins.rstudio.com/reference/board_rsconnect.html):
+
+```r, eval = FALSE
+board <- board_rsconnect()
+#> Connecting to RSC 1.9.0.1 at <https://connect.rstudioservices.com>
+board %>% pin_write(tidy_sales_data, "sales-summary", type = "rds")
+#> Writing to pin 'hadley/sales-summary'
+```
+
+Then, someone else (or an automated Rmd report) can read and use your pin:
+
+```r, eval = FALSE
+board <- board_rsconnect()
+board %>% pin_read("hadley/sales-summary")
+```
+
+You can easily control who gets to access the data using the RStudio Connection permissions pane.
+
+## Other boards
+
+As well as `board_folder()` and `board_rsconnect()`, pins 1.0.0 provides:
+
+-   [`board_azure()`](https://pins.rstudio.com/reference/board_azure.html), which uses Azure's blob storage.
+
+-   [`board_s3()`](https://pins.rstudio.com/reference/board_s3.html), which uses Amazon's S3 storage platform.
+
+-   [`board_ms365()`](https://pins.rstudio.com/reference/board_ms365.html), which uses Microsoft's OneDrive or SharePoint.
+    (Thanks to contribution from [Hong Ooi](https://github.com/hongooi73))
+
+Future versions of the pins package are likely to include other backends as we learn from our users what would be most useful.

@@ -1,0 +1,322 @@
+---
+title: "Latest news from the R Markdown family"
+people:
+  - Alison Hill
+  - Christophe Dervieux
+  - Yihui Xie
+date: '2021-04-15'
+categories:
+  - R Markdown
+tags:
+  - rmarkdown
+  - pagedown
+  - blogdown
+  - knitr
+  - rticles
+  - distill
+slug: 2021-spring-rmd-news
+description: "Happy spring! In this post, we'll share the latest news from the R Markdown family of packages so that you know all you need to know to take advantage of the newest features. New releases include the rmarkdown and pagedown packages, among others.\n"
+blogcategories:
+  - Company News and Events
+  - Open Source
+events: blog
+alttext: a hedgehog
+ported_from: rstudio
+port_status: raw
+---
+
+<p>Happy spring from the R Markdown family! We are excited to share a few package updates that have been keeping us busy so far this year.</p>
+<div id="rmarkdown" class="level2">
+<h2>1. rmarkdown</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Latest release</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="https://img.shields.io/badge/CRAN-2.7-brightgreen" alt="Last rmarkdown release 2.7 cran badge" /></td>
+</tr>
+</tbody>
+</table>
+<p>We are proud to share that <strong>rmarkdown</strong> (<a href="https://pkgs.rstudio.com/rmarkdown/" class="uri">https://pkgs.rstudio.com/rmarkdown/</a>) version 2.7 is on CRAN. <strong>rmarkdown</strong> is a package that helps you create dynamic documents that combine code, rendered output (such as figures), and markdown-formatted text.</p>
+<p>You can install <strong>rmarkdown</strong> from CRAN with:</p>
+<pre class="r"><code>install.packages(&quot;rmarkdown&quot;)</code></pre>
+<p>First, the rmarkdown package’s documentation site recently got a makeover and new place to live, now at: <a href="https://pkgs.rstudio.com/rmarkdown/" class="uri">https://pkgs.rstudio.com/rmarkdown/</a></p>
+<p>You may also notice a new hex sticker design too — thanks to our artist <a href="https://www.allisonhorst.com/">Allison Horst</a> for reimagining our iconic quill!</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="https://pkgs.rstudio.com/rmarkdown/reference/figures/logo.png" alt="The new rmarkdown hex sticker design with a green quill, by Allison Horst" width="20%" />
+<p class="caption">
+Figure 1: rmarkdown hex by Allison Horst
+</p>
+</div>
+<p>Below, we share highlights from the latest release, but you might want to look at the <a href="https://pkgs.rstudio.com/rmarkdown/news/index.html#rmarkdown-2-7-2021-02-19">release notes</a> for the full details.</p>
+<div id="sass-and-scss-support-for-html-based-output" class="level3">
+<h3>Sass and SCSS support for HTML-based output</h3>
+<p>The biggest news is that it is now possible to use Sass (and, by extension, SCSS) to style your HTML-based outputs. This new functionality builds on the <a href="https://rstudio.github.io/sass/"><strong>sass</strong> package</a>, which provides bindings to <a href="https://github.com/sass/libsass">LibSass</a>, a fast <a href="https://sass-lang.com/">Sass</a> compiler written in C++. Sass is a mature and stable CSS extension language that makes styling modern websites less complex and more composable. If you want to learn more, this <a href="https://rstudio.github.io/sass/articles/sass.html"><strong>sass</strong> vignette</a> is a solid place to start.</p>
+<p>How is Sass useful for R markdown users?</p>
+<blockquote>
+<p>“Sass lets you use features that don’t exist in CSS yet like variables, nesting, mixins, inheritance and other nifty goodies that make writing CSS fun again.”</p>
+<p><a href="https://sass-lang.com/guide" class="uri">https://sass-lang.com/guide</a></p>
+</blockquote>
+<p>Files with <code>.sass</code> or <code>.scss</code> extension provided to <code>html_document</code>’s <code>css</code> parameter are now compiled to CSS using the <strong>sass</strong> package (thanks, <span class="citation">[@cpsievert]</span>(<a href="https://github.com/cpsievert" class="uri">https://github.com/cpsievert</a>), <a href="https://github.com/rstudio/rmarkdown/pull/1706">#1706</a>).</p>
+<p>In the rest of this post, we’ll walk through a simple way to start using Sass with R Markdown. Even if you never thought CSS was fun to write in the first place, we hope this will help you the value of using Sass to simplify your styling of R Markdown HTML-based outputs. And, in case you missed it, Pandoc has added support that makes it easier to style your markdown text with CSS. We’ll start with showing you those features first with plain CSS, then add in the Sass layer on top.</p>
+<div id="using-css-to-style-an-html_document" class="level4">
+<h4>Using CSS to style an <code>html_document</code></h4>
+<p>Let’s start with a simple single document with this in the YAML:</p>
+<pre class="yaml"><code>---
+output:
+  html_document:
+    css: custom.css
+---</code></pre>
+<p>Inside that <code>.css</code> file, you could define <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS custom properties</a> for some colors, then use them inside a simple CSS rule like <code>my-color</code>:</p>
+<pre class="css"><code>:root {
+  --green: #212D2C;
+  --sky: #A9FDFF;
+}
+
+.my-color {
+  background-color: var(--green);
+  color: var(--sky); 
+  padding: 1em;
+}</code></pre>
+<style type="text/css">
+:root {
+  --green: #212D2C;
+  --sky: #A9FDFF;
+}
+
+.my-color {
+  background-color: var(--green);
+  color: var(--sky); 
+  padding: 1em;
+}
+</style>
+<p>To apply your CSS rules in the body of your document, you could write raw HTML:</p>
+<pre><code>This is a &lt;span class=&quot;my-color&quot;&gt;color&lt;/span&gt; word.</code></pre>
+<p>would produce…</p>
+<p>This is a <span class="my-color">color</span> word.</p>
+<p>This works, but can clutter up your <code>.Rmd</code> with HTML. Instead, you may achieve the same result writing with Pandoc’s <a href="https://pandoc.org/MANUAL.html#extension-bracketed_spans">bracketed Spans</a>, which allows you to keep your markdown text cleaner:</p>
+<pre><code>This is a [color]{.my-color} word.</code></pre>
+<p>would produce…</p>
+<p>This is a <span class="my-color">color</span> word.</p>
+<p>To apply CSS to a full sentence, or even longer text, you can create divs using Pandoc’s <a href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced Div blocks</a>:</p>
+<pre><code>::: {.my-color}
+All of these words are colored.
+:::</code></pre>
+<p>would produce…</p>
+<div class="my-color">
+<p>All of these words are colored.</p>
+</div>
+<p>Now, so far this is still a plain <code>.css</code> file- nothing too fancy yet! Let’s make it a <code>.scss</code> file instead, and add some fancier logic.</p>
+</div>
+<div id="using-sass-to-style-an-html_document" class="level4">
+<h4>Using Sass to style an <code>html_document</code></h4>
+<p>We’ll refactor our previous CSS from above to sass-ify it. We’ll use the SCSS (Sassy CSS) syntax. Sassy CSS builds on the existing syntax of CSS, and is a good way to get started using Sass because any valid CSS is also valid SCSS. The first thing we’ll do is save our file now with the <code>.scss</code> file extension:</p>
+<pre class="yaml"><code>---
+output:
+  html_document:
+    css: custom.scss # update this!
+---</code></pre>
+<p>Just like CSS, SCSS uses semi-colons and curly braces. The main difference is that we’ll use the <code>$</code> symbol to make something a variable:</p>
+<pre class="scss"><code>$green: #212D2C;
+$sky: #A9FDFF;
+
+.my-color {
+  background-color: $green;
+  color: $sky;
+  padding: 1em;
+}</code></pre>
+<style type="text/css">
+.my-color{background-color:#212D2C;color:#A9FDFF;padding:1em}
+</style>
+<p>We apply the style in the exact same way as before:</p>
+<pre><code>This is a [color]{.my-color} word.</code></pre>
+<p>would produce…</p>
+<p>This is a <span class="my-color">color</span> word.</p>
+<p>But there is still a lot more that we can do. Among other things, Sass allows you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML. This can make your CSS rules easier to read and write. Let’s add a simple nested rule to change the link text color to a new variable <code>$green</code>:</p>
+<pre class="scss"><code>$green: #212D2C;
+$sky: #A9FDFF;
+$cyan: #36C9B4;
+  
+.my-color {
+  background-color: $green;
+  color: $sky;
+  padding: 1em;
+  
+  a {
+    color: $cyan;
+  }
+}</code></pre>
+<style type="text/css">
+.my-color{background-color:#212D2C;color:#A9FDFF;padding:1em}.my-color a{color:#36C9B4}
+</style>
+<p>Let’s switch to using Pandoc divs in the body of our document to apply this style:</p>
+<pre><code>::: {.my-color}
+This is a link that will be [green](https://pkgs.rstudio.com/rmarkdown/).
+:::</code></pre>
+<p>would produce…</p>
+<div class="my-color">
+<p>This is a link that will be <a href="https://pkgs.rstudio.com/rmarkdown/">green</a>.</p>
+</div>
+<p>Sass also provides additional processing abilities like <a href="http://www.sass-lang.com/documentation/at-rules/extend"><code>@extend</code> rules</a>, which you’d use when one class should have all the styles of another class, as well as its own specific styles.</p>
+<p>Let’s separate <code>my-color</code> now from a new class called <code>my-link</code>. This new class will do some clever, sassy things:</p>
+<ol style="list-style-type: decimal">
+<li><p>Build on the <code>my-color</code> class with the <a href="http://www.sass-lang.com/documentation/at-rules/extend"><code>@extend</code> rule</a>,</p></li>
+<li><p>Add a unique <code>$cyan</code> for link text,</p></li>
+<li><p>Add <code>hover</code> effects for links using the <a href="https://sass-lang.com/documentation/style-rules/parent-selector">Sass parent selector</a>, <code>&amp;</code>, and</p></li>
+<li><p>Use the Sass <code>rgba()</code> color function to apply an alpha level to our existing <code>$green</code> color variable (note that it begins life as a hex color!).</p></li>
+</ol>
+<pre class="scss"><code>$green: #212D2C;
+$sky: #A9FDFF;
+$cyan: #36C9B4;
+  
+.my-color {
+  background-color: $green;
+  color: $sky;
+  padding: 1em;
+}
+
+.my-link a {
+  @extend .my-color;
+  color: $cyan; 
+
+  &amp;:hover {
+      background-color: rgba( $green, .5 );  
+      color: white;
+  }
+}</code></pre>
+<style type="text/css">
+.my-color,.my-link a{background-color:#212D2C;color:#A9FDFF;padding:1em}.my-link a{color:#36C9B4}.my-link a:hover{background-color:rgba(33,45,44,0.5);color:white}
+</style>
+<pre><code>::: {.my-link}
+This is a link that will be [cyan](https://pkgs.rstudio.com/rmarkdown/).
+:::</code></pre>
+<p>would produce…</p>
+<div class="my-link">
+<p>This is a link that will be <a href="https://pkgs.rstudio.com/rmarkdown/">cyan</a>.</p>
+</div>
+<p>Now we’ve made it so links will have a lighter background color upon hover, and the text turns white. One more little thing: Pandoc also works with <code>ID</code> attributes. Let’s add a special ID selector for links with the cookbook <code>ID</code>. We’ll start the rule with the hash (<code>#</code>) character (instead of the <code>.</code> we used for classes), followed by the id of the element.</p>
+<pre class="scss"><code>#cookbook a {
+  text-decoration-style: wavy;
+}</code></pre>
+<style type="text/css">
+#cookbook a{text-decoration-style:wavy}
+</style>
+<pre><code>::: {#cookbook}
+This is a link that will be [wavy](https://bookdown.org/yihui/rmarkdown-cookbook/).
+:::</code></pre>
+<p>would produce…</p>
+<div id="cookbook">
+<p>This is a link that will be <a href="https://bookdown.org/yihui/rmarkdown-cookbook/">wavy</a>.</p>
+</div>
+<p>You can combine <code>ID</code>s, classes, and even nest bracketed spans inside fenced divs. Let’s do it all!</p>
+<pre><code>::: {.my-link}
+This is a link that will be [cyan](https://pkgs.rstudio.com/rmarkdown/), 
+but you can read more in [[The Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)]{#cookbook}.
+:::</code></pre>
+<p>would produce…</p>
+<div class="my-link">
+<p>This is a link that will be <a href="https://pkgs.rstudio.com/rmarkdown/">cyan</a>,
+but you can read more in the
+<span id="cookbook"><a href="https://bookdown.org/yihui/rmarkdown-cookbook/">Cookbook</a></span>.</p>
+</div>
+<p>We hope this short walk-through inspires you to test out this new feature, and consider how using Sass might help you customize your HTML-based outputs with R Markdown. To learn more, check out the <strong>sass</strong> <a href="https://rstudio.github.io/sass/articles/sass.html">R package vignette</a>. Look out for our future blog posts and resources that will showcase how to use these features with R Markdown.</p>
+<p>For shorter styling rules, you could instead use knitr’s <code>sass</code> or <code>scss</code> engines (also powered by the <strong>sass</strong> package) to provide those rules inline in a code chunk (without lugging around a separate external style file in your project). Thanks to <a href="https://github.com/emilyriederer">Emily Reiderer</a> for this <a href="https://github.com/yihui/knitr/pull/1666">contribution</a>!</p>
+<p>The <code>sass</code>/<code>scss</code> code chunks are compiled through the <code>sass::sass()</code> function. This means you can write Sass code directly into a code <code>sass</code> chunk and the resulting CSS will be included in the output document. For example, this kind of code chunk can exist anywhere in your <code>.Rmd</code> to add styles:</p>
+<pre><code>```{scss}
+$green: #212D2C;
+$sky: #A9FDFF;
+$cyan: #36C9B4;
+  
+.my-color {
+  background-color: $green;
+  color: $sky;
+  padding: 1em;
+}
+```</code></pre>
+<p>When you knit, the style will be applied to the whole document, so you can put these chunks at either the top or bottom of your <code>.Rmd</code> and they will work the same way (i.e., styles will be applied to all content, not just content below the <code>sass</code>/<code>scss</code> chunk). You can read more about these knitr engines <a href="https://bookdown.org/yihui/rmarkdown-cookbook/eng-sass.html">in the R Markdown Cookbook</a>.</p>
+</div>
+</div>
+<div id="simplified-custom-blocks-support-for-latex" class="level3">
+<h3>Simplified custom blocks support for LaTeX</h3>
+<p>The Pandoc syntax for fenced divs is a powerful feature (as shown above), but one limitation is that Pandoc currently only processes fenced divs for HTML output; fenced divs are silently ignored when rendering to other output formats. For R Markdown users, the <strong>rmarkdown</strong> package extends the fenced div syntax to better support LaTeX/PDF outputs. Since <strong>rmarkdown</strong> 1.16, it is possible to opt-in and use fenced divs to produce LaTeX environments by adding a special attribute.</p>
+<pre class="markdown"><code>::: {.verbatim data-latex=&quot;&quot;}
+We show some _verbatim_ text here.
+:::</code></pre>
+<p>Its LaTeX output will then be:</p>
+<pre class="latex"><code>\begin{verbatim}
+We show some \emph{verbatim} text here.
+\end{verbatim}</code></pre>
+<p><strong>rmarkdown</strong> 2.7 simplifies the opt-in of this feature by using a shorter name for the attribute: <code>latex</code>. This example would lead to the same result as above:</p>
+<pre class="markdown"><code>::: {.verbatim latex=true}
+We show some _verbatim_ text here.
+:::</code></pre>
+<p>In addition, <code>latex=1</code> could also be used as an alias for <code>latex=true</code>. This attribute accepts a string that will be appended to the opening line of the LaTeX environment:</p>
+<pre class="markdown"><code>::: {.name latex=&quot;[options]&quot;}
+content that can be Markdown syntax 
+:::</code></pre>
+<p>would produce</p>
+<pre class="latex"><code>\begin{name}[options]
+content that can be Markdown syntax
+\end{name}</code></pre>
+<p>In the R Markdown ecosystem, we call these <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html#custom-blocks">“Custom Blocks”</a>. For the <strong>bookdown</strong> package, custom blocks replace the special <code>block</code> and <code>block2</code> <strong>knitr</strong> engines (see: <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html" class="uri">https://bookdown.org/yihui/bookdown/custom-blocks.html</a>).</p>
+</div>
+</div>
+<div id="pagedown" class="level2">
+<h2>2. pagedown</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Latest release</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="https://img.shields.io/badge/CRAN-0.14-brightgreen" alt="Last pagedown release 0.14 cran badge" /></td>
+</tr>
+</tbody>
+</table>
+<p>We are proud to announce that <strong>pagedown</strong> version 0.14 is now on CRAN. <strong>pagedown</strong> is a package to help paginate HTML output with CSS print and <strong>paged.js</strong>.</p>
+<p>You can install <strong>pagedown</strong> from CRAN with:</p>
+<pre class="r"><code>install.packages(&quot;pagedown&quot;)</code></pre>
+<p>Below we share important highlights from the latest release, but you might want to look at the <a href="https://github.com/rstudio/pagedown/releases">release notes</a> for the full details.</p>
+<div id="paged.js-upgrade" class="level3">
+<h3>Paged.js upgrade</h3>
+<p><strong>pagedown</strong> is powered by the awesome <strong>paged.js</strong> (<a href="https://www.pagedjs.org/" class="uri">https://www.pagedjs.org/</a>) library and thanks to the help of <a href="https://github.com/RLesur">Romain Lesur</a>, it has been updated from <em>0.1.32</em> (03-2019) to <em>0.1.43</em> (10-2020). This is an important upgrade as it offers speed improvement and fixes several bugs.</p>
+<p>All features of <strong>paged.js</strong> <em>v0.1.43</em> can now be used with <strong>pagedown</strong>. To read up on these features, see the <a href="https://gitlab.pagedmedia.org/tools/pagedjs/-/tags">release notes</a> and a series of posts:</p>
+<ul>
+<li><a href="https://www.pagedjs.org/posts/2020-02-25-weekly/" class="uri">https://www.pagedjs.org/posts/2020-02-25-weekly/</a></li>
+<li><a href="https://www.pagedjs.org/posts/2020-03-03-update-pagedjs-0-1-39/" class="uri">https://www.pagedjs.org/posts/2020-03-03-update-pagedjs-0-1-39/</a></li>
+<li><a href="https://www.pagedjs.org/posts/2020-04-01-pagedjs-0-1-40/" class="uri">https://www.pagedjs.org/posts/2020-04-01-pagedjs-0-1-40/</a></li>
+<li><a href="https://www.pagedjs.org/posts/2020-06-22-pagedjs-0-1-42/" class="uri">https://www.pagedjs.org/posts/2020-06-22-pagedjs-0-1-42/</a></li>
+</ul>
+<p>On the R package side, this upgrade has fixed an issue with <code>counter-reset</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-reset">CSS property</a>. We have updated our templates accordingly, and we advise template authors to do the same. The default value of <code>counter-reset</code> is now correctly set to 0 instead of 1. This means that to reset the <code>page</code> CSS counter to 1, you now need to use <code>counter-reset: page 1;</code> instead of <code>counter-reset: page;</code></p>
+<pre class="css"><code>/* reset page numbering for main content */
+.main .level1:first-child h1 {
+  counter-reset: page 1;
+}</code></pre>
+</div>
+<div id="and-more-little-things" class="level3">
+<h3>And more little things…</h3>
+<p>We have also made some smaller but important changes to the <strong>pagedown</strong> formats:</p>
+<ul>
+<li>New <code>lot-unlisted</code> and <code>lof-unlisted</code> arguments to remove the list of figures and the list of tables in <code>html_paged()</code>.</li>
+<li>Support for <code>fig_caption = FALSE</code> in <code>html_resume()</code>.</li>
+<li>Better <a href="https://davidgohel.github.io/flextable/"><strong>flextable</strong></a> support in <code>html_paged()</code>.</li>
+</ul>
+</div>
+</div>
+<div id="last-but-not-least" class="level2">
+<h2>3. Last but not least!</h2>
+<p>Let’s not forget other packages in the R Markdown family that have been updated so far in 2021:</p>
+<ul>
+<li><p><a href="https://github.com/yihui/knitr/"><strong>knitr</strong></a> had 2 releases (<a href="https://github.com/yihui/knitr/releases/tag/v1.31">v1.31</a> and <a href="https://github.com/yihui/knitr/releases/tag/v1.32">v1.32</a>), which we’ll detail in a separate post on this blog—stay tuned! <small>See <a href="https://github.com/yihui/knitr/releases/">release notes</a> for details in the meantime</small></p></li>
+<li><p><a href="https://pkgs.rstudio.com/blogdown/"><strong>blogdown</strong></a> had 3 releases (<a href="https://pkgs.rstudio.com/blogdown/news/index.html#changes-in-blogdown-version-1-1-2021-01-19">v1.1</a>, <a href="https://pkgs.rstudio.com/blogdown/news/index.html#changes-in-blogdown-version-1-2-2021-03-04">v1.2</a>, <a href="https://pkgs.rstudio.com/blogdown/news/index.html#changes-in-blogdown-version-1-3-unreleased">v1.3</a>), following the <a href="/2021/01/18/blogdown-v1.0/">v1.0 release announcement</a> in January 2021. <small>See <a href="https://pkgs.rstudio.com/blogdown/news/index.html">release note</a> for details</small></p></li>
+<li><p><a href="https://rstudio.github.io/DT/"><strong>DT</strong></a> is now in version 0.18. Fixes and new features keep getting added regularly thanks to the help of <a href="https://github.com/shrektan">Xianying Tan</a>. <small>See <a href="https://github.com/rstudio/DT/releases">release note</a> for details</small></p></li>
+<li><p><a href="https://pkgs.rstudio.com/distill/"><strong>distill</strong></a> is in version 1.2 with several important fixes (like encoding issues) and new features (like support for alternate R Markdown formats in Distill websites). <small>See <a href="https://pkgs.rstudio.com/distill/news/index.html#distill-v1-2-cran-">release note</a> for details</small></p></li>
+<li><p><a href="https://github.com/rstudio/rticles"><strong>rticles</strong></a> had 2 releases (v0.18, v0.19) with a few bug fixes and improvements, as well as 2 new community contributed formats: <em>Papers in Historical Phonology</em> (<code>pihph_article()</code> - thanks <a href="https://github.com/stefanocoretta">@stefanocoretta</a>) and <em>Institute of Mathematical Statistics Journals</em> (<code>ims_article()</code> - thanks <a href="https://github.com/auzaheta">@auzaheta</a>). <small>See <a href="https://github.com/rstudio/rticles/releases">release note</a> for details</small></p></li>
+</ul>
+<p>We hope this round-up gives you some new ideas for your data science projects that use R Markdown. A big thank you to all the contributors who helped with these releases by discussing problems, proposing features, and contributing code. Happy spring!</p>
+</div>

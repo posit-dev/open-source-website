@@ -1,0 +1,135 @@
+---
+title: "Announcing bookdown v0.23"
+authors:
+- "Alison Hill, Christophe Dervieux, Yihui Xie"
+date: '2021-08-18'
+blogcategories:
+- Products and Technology
+tags:
+  - bookdown
+  - R Markdown
+blogcategories:
+- Company News and Events
+- Training and Education
+description: |
+  The latest version of the **bookdown** package is now on CRAN. A highlight of the version 0.23 release is a new HTML book output format based on Bootstrap 4 called `bs4_book()`. This release also includes improved search, customizable 404 pages, and new project templates.
+events: blog
+---
+
+<!--https://unsplash.com/photos/7Bgm-_Sn09c-->
+
+```r setup, include=FALSE
+knitr::opts_chunk$set(warning=FALSE, message=FALSE)
+```
+
+Happy summer from the R Markdown family! We are proud to share that **bookdown** (<https://pkgs.rstudio.com/bookdown/>) version 0.23 is on CRAN. **bookdown** is a package that helps you write books and long-form articles/reports, knitting together content from single or multiple R Markdown files as input.
+
+|                                        Latest release                                        |
+|:--------------------------------------------------------------------------------------------:|
+| ![Last bookdown release 0.23 cran badge](https://img.shields.io/badge/CRAN-0.23-brightgreen) |
+
+You can install **bookdown** from CRAN with:
+
+```
+install.packages("bookdown")
+# or if the v0.23 binary package for your platform is not ready yet, try
+# install.packages("bookdown", type = "source")
+```
+
+In this post, we'll share some highlights from the latest release, but you might want to look at the [release notes](https://pkgs.rstudio.com/bookdown/news/index.html#changes-in-bookdown-version-0-23-2021-08-13) for the full details.
+
+## New reference site
+
+Joining its R Markdown siblings like [blogdown](https://pkgs.rstudio.com/blogdown/), [distill](https://pkgs.rstudio.com/distill/), and [rmarkdown](https://pkgs.rstudio.com/rmarkdown/), **bookdown** has also gained a [reference site](https://pkgs.rstudio.com/bookdown/), built with **pkgdown**. There, you'll find:
+
+1.  📖 A [reference section](https://pkgs.rstudio.com/bookdown/reference/index.html),
+
+2.  🖼️ An [example gallery](https://pkgs.rstudio.com/bookdown/articles/articles/examples.html), plus
+
+3.  📣 The [latest news](https://pkgs.rstudio.com/bookdown/news/index.html).
+
+## New HTML book format based on Bootstrap 4
+
+This release includes a new HTML book output format called `bs4_book()`, contributed by [Hadley Wickham](https://github.com/hadley) and [Maëlle Salmon](https://github.com/maelle). Based on Bootstrap 4, `bs4_book()` includes carefully crafted features to provide a clean reading experience whether you are on a phone, tablet, or desktop. On a full-size screen, the layout includes three columns of content so readers can quickly see all chapters on the left, the current chapter in the middle, and sections within the the current chapter on the right. As an example, you can read a book using this format here: <https://mastering-shiny.org>
+
+```r echo=FALSE, fig.align='center', fig.link="https://mastering-shiny.org/", fig.alt="Home page for a bs4_book() showing the layoutwith a table of contents on the left, main chapter content in the center, and an 'on this page' sidebar on the right.", fig.cap="Screenshot of a bs4_book home page.", }
+knitr::include_graphics("https://bookdown.org/yihui/bookdown/images/bs4-book.png")
+```
+
+Learn more about the unique features of this output format in the book *"bookdown: Authoring Books and Technical Documents with R Markdown"*: <https://bookdown.org/yihui/bookdown/html.html#bs4-book>
+
+Our package reference site also has a documentation page for `bs4_book()`: <https://pkgs.rstudio.com/bookdown/reference/bs4_book.html>
+
+## New project template
+
+To make it easier for users to start new **bookdown** book projects, we added two functions to [create new bookdown projects](https://pkgs.rstudio.com/bookdown/reference/create_book.html):
+
+-   `create_gitbook()`, and
+-   `create_bs4_book()`.
+
+If you use RStudio, you can also access these two templates interactively from the **New Project Wizard** using *File > New Project > New Directory*.
+
+```r new-bs4-book, fig.align='center', echo=FALSE, fig.cap="Screenshot of the RStudio Project Wizard for creating a new bookdownproject.", fig.alt="Screenshot showing the fields and dropdown selection menu in the RStudio New Project Wizard."}
+knitr::include_graphics('https://bookdown.org/yihui/bookdown/images/new-bs4-book.png')
+```
+
+To help you build a new **bookdown** project faster, we also added some helpful pointers inside the template book itself to get you writing your book more quickly. You can think of the boilerplate content as a cheat sheet for the most useful features of **bookdown** so that you can easily access them if you are offline, or if you simply don't have the docs right in front of you as you work. For example, you'll find:
+
+1. How to use parts, chapters, sections, and subsections to organize your content.
+1. How to use cross-references, including to captioned figures and tables.
+1. How to add footnotes and citations.
+1. How to use custom blocks for equations, theorems and proofs, and callouts.
+1. How to prepare your book to be shared.
+
+We also included a `_common.R` script in the template project. By using `before_chapter_script` in your `bookdown.yml` file, this script is run at the beginning of each chapter:
+
+```.yaml
+before_chapter_script: _common.R
+```
+
+Importantly, this works with `new_session: true` since **bookdown** v0.18 (see [news](https://pkgs.rstudio.com/bookdown/news/index.html#bug-fixes-5)).
+
+We hope these templates make it easier to start a book with bookdown. As always, with any template, you can also just cut out the template contents and start customizing and writing straight away too - the overall file structure and YAML configurations will still provide a useful skeleton for your next book.
+
+## Create and customize 404 pages
+
+For all HTML book formats, bookdown now creates a default `404.html` page in your output directory using simple content (a header, and a body of 2 paragraphs). Learn more about 404 pages and how to create a custom page in our online docs: <https://bookdown.org/yihui/bookdown/features-for-html-publishing.html#html-404>
+
+## Improved search
+
+For all HTML books, we now support an alternative search engine called `fuse.js`, which provides a better user experience and more nuanced search capabilities than `lunr.js`. To enable `fuse.js` for gitbook, set the search engine to be `fuse` in `_output.yml`:
+
+```yaml
+output:
+  bookdown::gitbook:
+    config:
+      search:
+        engine: fuse # lunr is the default
+        options: null # can override, see: https://fusejs.io/api/options.html
+```
+  
+This is the only search engine supported by `bs4_book()` and, depending on user feedback, we may set `fuse` to be the default search engine in `gitbook()` as well. We will appreciate your testing and feedback!
+
+## In other news
+
+- The `render_book()` function has a new default behavior, and will now search for an `index.Rmd` file in the current working directory. Previously, this function required users to specify the name of this file. Now, `render_book()` is equivalent to `render_book("index.Rmd")`.
+
+- The `render_book()` function can also now be used to render your book in a subdirectory of your project: 
+
+  ```r eval=FALSE
+  render_book("book_in_a_folder")
+  ```
+
+- We updated the jQuery library to v3.x, which is now imported from the R package **jquerylib**.
+
+- Last but not least, we are continually working to update our documentation. For example, we have new instructions to help you deploy a bookdown book using Netlify Drop: <https://bookdown.org/yihui/bookdown/netlify-drop.html>
+
+## Acknowledgements
+
+A big thanks to the 32 contributors who helped with this release by discussing problems, proposing features, and contributing code:
+
+```r eval=FALSE, include=FALSE
+usethis::use_tidy_thanks("rstudio/bookdown", from = "2021-04-22")
+```
+
+[\@aimundo](https://github.com/aimundo), [\@apreshill](https://github.com/apreshill), [\@AstrickHarren](https://github.com/AstrickHarren), [\@avraam-1997](https://github.com/avraam-1997), [\@briandk](https://github.com/briandk), [\@cderv](https://github.com/cderv), [\@CrumpLab](https://github.com/CrumpLab), [\@danawanzer](https://github.com/danawanzer), [\@DavidLukeThiessen](https://github.com/DavidLukeThiessen), [\@dchiu911](https://github.com/dchiu911), [\@debruine](https://github.com/debruine), [\@edzer](https://github.com/edzer), [\@GuillaumeBiessy](https://github.com/GuillaumeBiessy), [\@hhmacedo](https://github.com/hhmacedo), [\@hnguyen19](https://github.com/hnguyen19), [\@johnbaums](https://github.com/johnbaums), [\@jtbayly](https://github.com/jtbayly), [\@judgelord](https://github.com/judgelord), [\@LDSamson](https://github.com/LDSamson), [\@maelle](https://github.com/maelle), [\@malcolmbarrett](https://github.com/malcolmbarrett), [\@N0rbert](https://github.com/N0rbert), [\@pschloss](https://github.com/pschloss), [\@rgaiacs](https://github.com/rgaiacs), [\@robjhyndman](https://github.com/robjhyndman), [\@salim-b](https://github.com/salim-b), [\@shirdekel](https://github.com/shirdekel), [\@ShixiangWang](https://github.com/ShixiangWang), [\@Shuliyey](https://github.com/Shuliyey), [\@strimmerlab](https://github.com/strimmerlab), [\@thisisnic](https://github.com/thisisnic), and [\@thosgood](https://github.com/thosgood).

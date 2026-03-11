@@ -1,0 +1,301 @@
+---
+title: 'Custom Google Analytics Dashboards with R: Downloading Data'
+people:
+  - Carl Howe
+date: '2020-11-27'
+slug: google-analytics-part1
+categories:
+  - Data Science Leadership
+description: This article, the first of three, describes how to use a code-oriented data science approach to Google Analytics data from a blog. It creates custom views of raw GA data while hiding the complexity of the Google Analytics data and interface
+blogcategories: 
+- Data Science Leadership
+events: blog
+ported_from: rstudio
+port_status: raw
+---
+
+
+<script src="index_files/header-attrs/header-attrs.js"></script>
+
+
+<style type="text/css"> 
+img.screenshot { border: 0.5px solid #888; padding: 3px; background-color: #eee;}
+</style>
+<p>This week, I’m taking a break from our regular blog content to write about some of the nitty-gritty data science we do within RStudio. Specifically, I’m going to address a question I was asked soon after joining the blogging team:</p>
+<blockquote>
+<p>Which of your blog articles received the most views in the first 15 days they were posted?</p>
+</blockquote>
+<p>I have access to Google Analytics for the blog, and it’s a powerful tool for understanding the flow of visitors through our web site. Nevertheless, the web interface makes it very difficult to compare 15- and 30-day windows of traffic that we need to evaluate blog posts. And given my need to report on the success of the blog to our stakeholders, this turned into a very tedious manual chore.</p>
+<div id="this-sounds-like-a-job-for-code-based-data-science" class="level2">
+<h2>This Sounds Like A Job For Code-Based Data Science</h2>
+<p>If you’ve been reading our blog over the past few months, we’ve been writing about how we like to use <a href="https://blog.rstudio.com/2020/11/17/an-interview-with-lou-bajuk/" target="_blank" rel="noopener noreferrer">code-based data science</a> to hide complexity and improve reproducibility. I decided that our tedious process for extracting Google Analytics data posed a great opportunity to practice what we preach and build a custom dashboard in R that will:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Download raw Google Analytics visitor data locally for analysis.</strong> Google provides fairly easy access to sampled visitor data through its Application Programming Interface (API), but I wanted to use the full data set.</li>
+<li><strong>Give stakeholders a simple graphical interface to interact with the data.</strong> I wanted to hide the complexity available in the Google Analytics user interface and give stakeholders one-click access to blog metrics. I also to give them a way to interact with and drill into the data. This also meant writing the code in such a way that it could run in production on a server.</li>
+<li><strong>Provide measurements of blog post viewership over their first 15 days of availability.</strong> Blog posts receive most of their traffic immediately after being posted and then experience a long-tail of diminishing visits. To properly compare the popularity of blog posts, we had to aggregate their metrics over fixed windows of time beginning on their posting dates.</li>
+</ol>
+<p>While it took a few weeks to get the first dashboard working, we now regularly use these R-based dashboards to measure our blog post effectiveness. However, the process of getting the Google Analytics API working was tricky enough that I thought others might find documentation of the process useful.</p>
+<p>To achieve this goal, I’ll address each of these steps listed above in its own blog post over the coming weeks. I’ll provide both code and screen shots along the way as well.</p>
+</div>
+<div id="getting-started-how-to-download-data-from-google-analytics" class="level2">
+<h2>Getting Started: How To Download Data From Google Analytics</h2>
+<p>Before we begin, I want to start with a few caveats:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Google APIs often change over time.</strong> The approach I’m showing you works with <a href="https://developers.google.com/analytics/devguides/reporting/core/v4/" target="_blank" rel="noopener noreferrer">Version 4 of the Google Analytics API</a>. Google APIs often change over time, and I can’t guarantee that the code I show will work months or years from now.</li>
+<li><strong>R isn’t one of the official Google languages listed in their documentation.</strong> I use the excellent <a href="https://code.markedmondson.me/googleAuthR/" target="_blank" rel="noopener noreferrer"><code>googleAnalyticsR</code></a> package written by Mark Edmondson in my dashboard, but Google only officially documents Java, Python, and PHP interfaces.</li>
+<li><strong>This may not be the most efficient or best solution.</strong> I hope readers who find simpler, easier, or better methods of authorizing the use Google Analytics API will document their methods as well. I encourage you to share them with the RStudio community using the googleAnalyticsR tag at <a href="https://community.rstudio.com/tag/googleanalyticsr" target="_blank" rel="noopener noreferrer">https://community.rstudio.com/tag/googleanalyticsr</a>.</li>
+</ol>
+<p>With all that said, the dashboards that use this API provide insights into our blog use that would require a great deal of manual work to reproduce using the GA web interface.</p>
+<div id="install-these-packages-if-you-dont-have-them-already" class="level3">
+<h3>Install These Packages If You Don’t Have Them Already</h3>
+<p>While the finished dashboards use 16 different R packages, the essential ones I use are:</p>
+<ul>
+<li><code>gargle</code>. This package helps us set up our Google Analytics (henceforth abbreviated as GA) authorization and credentials.</li>
+<li><code>googleAnalyticsR</code>. This essential package allows us to download the raw visitor data using the Google Analytics API.</li>
+<li><code>flexdashboard</code>. This package allows us to present the results in a simple Web interface using R Markdown.</li>
+<li><code>reactable</code>. This package allows users of the dashboard to browse, search, reorder, and interact with the data presented.</li>
+</ul>
+<p>All of these packages are available for download at CRAN using <code>install.packages()</code>.</p>
+<p>You should also create an R project for your dashboard at this time. We will need a place to store our Google Analytics credentials, and having a project ready to store them will keep things organized.</p>
+</div>
+<div id="google-analytics-credentials-the-secrets-to-success" class="level3">
+<h3>Google Analytics credentials: The secrets to success</h3>
+<hr />
+<p><strong>IMPORTANT UPDATE</strong>: Mark Edmonston, the author <code>googleAnalyticsR</code>, has created a new version of his package that eliminates the need for OAUTH credentials when running on a server. Once that update is available on CRAN, I’ll update this post to document the simpler process of only submitting service account credentials. In the meantime, all the code shown here works; it just does more authentication than is required.</p>
+<hr />
+<p>I want to begin by talking about what I found to be one of the most challenging pieces of the entire project: Creating, authorizing, and applying Google Analytics credentials. It’s not hugely difficult, but it does have a lot of steps you must get right before you can get any data.</p>
+<p>Here’s a high-level overview of what we’ll need to get the visitor data for our Google Analytics dashboard. To use the Google Analytics API, we need to present two types of credentials that represent:</p>
+<ol style="list-style-type: decimal">
+<li><strong>The user represented by the client:</strong> The API only provides service on behalf of an authorized <em>user</em>. Most people are pretty familiar with this type of authorization; it’s the equivalent of logging into Google with an email address and password. The trick in this case is that the email address we’ll use will be one Google creates for our particular client.</li>
+<li><strong>The client requesting service:</strong> The API requires that we authorize and provide credentials for each <em>client</em> making requests. In our case, our client will be an R program, which is considered a desktop client. We’ll request a <em>service account</em> to represent this our R program and allow direct server-to-server interactions without human interaction.</li>
+</ol>
+<p>For any of this to work, the author of the dashboard has to be an authorized user of Google Analytics. You can test this by going to the <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">Google Analytics Home page (analytics.google.com)</a>. If you are an authorized user, you’ll see the web dashboard. If you aren’t, you’ll get an error message and will have to ask for access from your Google Analytics Administrator. Keep the contact information for your Google Analytics administrator handy; we’ll need that information again later.</p>
+<p>We must perform six steps to download data using the GA API. We need to:</p>
+<ul>
+<li><a href="#step1">Step 1:</a> Request a service account from Google.</li>
+<li><a href="#step2">Step 2:</a> Download the service account key and securely store its JSON file.</li>
+<li><a href="#step3">Step 3:</a> Enable API access to your project.</li>
+<li><a href="#step4">Step 4:</a> Add your service account credentials to your project.</li>
+<li><a href="#step5">Step 5:</a> Create and download your project’s OAUTH credentials from Google. This step will no longer be required after the new version of <code>googleAnalyticsR</code> is available on CRAN (see Important Update notice at the beginning of this section)</li>
+<li><a href="#step6">Step 6:</a> Submit both pieces of information to the Google Analytics API and make a test data request.</li>
+</ul>
+<p>I’ll walk you through each step individually in the following sections. For readers not interested in the gory details, you can skip ahead to <a href="#conclusion">the conclusion of this piece</a> where I’ll recap what we got out of this process and what the next steps are.</p>
+<h3 id="step1">
+Step 1: Request a service account from Google
+</h3>
+<p>Google has written <a href="https://developers.google.com/analytics/devguides/reporting/core/v4/authorization" target="_blank" rel="noopener noreferrer">a comprehensive document on how to do API authentication</a>. Because we want to build a stand-alone dashboard, we’re going to use the service account option, which Google describes this way:</p>
+<blockquote>
+<p>Service accounts are useful for automated, offline, or scheduled access to Google Analytics data for your own account. For example, to build a live dashboard of your own Google Analytics data and share it with other users.</p>
+</blockquote>
+<p>This sounds like exactly what we want, so let’s use that option. It will take a few sub-steps, but they are fairly straightforward. Jenny Bryan has written a nice overview about how this process works as part of her <a href="https://gargle.r-lib.org/articles/get-api-credentials.html" target="_blank" rel="noopener noreferrer">gargle package</a>; the description of service accounts is at the bottom of the page.</p>
+<p>To create your service account, you should:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Go to <a href="https://console.cloud.google.com/cloud-resource-manager" target="_blank" rel="noopener noreferrer">https://console.cloud.google.com/cloud-resource-manager</a> and click on <em>Create Project</em></strong> (see figure below). While you could also use the <a href="https://console.developers.google.com/start/api?id=analytics&credential=client_key" target="_blank" rel="noopener noreferrer">web-based Google setup tool</a> recommended by the Google document, I find that using the cloud resource manager page referenced above simplifies naming your project something other than “My Project”.</li>
+</ol>
+<p><img class="screenshot" src="images/11-create-project.jpg" style="width: 400px;"/></p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Give your project a name.</strong> Here, we’ve named our project <em>Test Project.</em> Click <em>Create</em> once you’ve entered a name.</li>
+</ol>
+<p><img class="screenshot" src="images/12-name-project.jpg" style="width: 400px;"/></p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Click on <em>Go to project settings</em> on the Google Cloud Dashboard project card.</strong> Usually the new project’s card will be at the top left of the page and should have the project name and number. You’ll now go to your project settings page to create a service account to access this project.</li>
+</ol>
+<p><img class="screenshot" src="images/13-project-card.jpg" style="width: 300px;"/></p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Select <em>Create Service Account</em>.</strong> You now have a project created, but you don’t yet have a Google user account that can be used with that project. We’ll create that on the <em>Service Account Details</em> screen.</li>
+</ol>
+<p><img class="screenshot" src="images/14-create-service-account.jpg" style="width: 400px;"/></p>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Give your service account a name.</strong> The name will automatically populate the Service Account ID field. <strong>Record the full Service Account ID generated somewhere; we’ll need to register that account with your Google Analytics administrator.</strong> It’s also a good idea to provide a long description of what you intend to do with this account. When you’ve finished with filling in these fields, click <em>Create.</em></li>
+</ol>
+<p><img class="screenshot" src="images/15-service-account-details.jpg" style="width: 400px;"/></p>
+<p>This completes the creation of our service account.</p>
+<h3 id="step2">
+Step 2: Download the service account key
+</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Now that your service account exists, download your key from the three vertical dots menu.</strong> Once your account is created, the dashboard will take you back to the <em>Service Accounts</em> page as shown below.</li>
+</ol>
+<p><img class="screenshot" src="images/21-service-account-created.jpg" style="width: 600px;"/></p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Create your private service account key</strong>. Make your browser window wide enough to see the <em>Actions</em> menu with the three vertical dots. Click on those 3 vertical dots, and you’ll see a pop-up menu. Click on <em>Create key.</em></li>
+</ol>
+<p><img class="screenshot" src="images/22-create-service-account-key.jpg" style="width: 600px;"/></p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Select JSON as your key format.</strong> The <code>googleAnalyticsR</code> package requires the key to be in JSON format. Once you’ve selected that format, click <em>Create.</em></li>
+</ol>
+<p><img class="screenshot" src="images/23-select-JSON-form.jpg" style="width: 400px;"/></p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Store the downloaded key in a folder within your R project.</strong> I typically create a folder in my dashboard project named <em>.secrets</em> where I keep such keys.</li>
+</ol>
+<p><img class="screenshot" src="images/24-key-downloaded.jpg" style="width: 400px;"/></p>
+<p>At this point, you have the service key credentials you need to make requests. However, we still have a couple more steps to do before we can use the API.</p>
+<h3 id="step3">
+Step 3: Enable API access to your project
+</h3>
+<p>The fact you have a valid service key is not enough to start making requests. You still need to enable the API from the Google Dashboard. To do this you:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Go to <a href="https://console.cloud.google.com/apis" target="_blank" rel="noopener noreferrer">https://console.cloud.google.com/apis</a> as shown in the screenshot below and then click on <em>Enable APIs and Services</em>.</strong></li>
+</ol>
+<p><img class="screenshot" src="images/30-google-api-dashboard.jpg" style="width: 400px;"/></p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Search for and click on the Google Analytics API.</strong></li>
+</ol>
+<p><img class="screenshot" src="images/31-google-analytics-api-selection.jpg" style="width: 400px;"/></p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Click on <em>Enable</em> to make the API for your project active.</strong></li>
+</ol>
+<p><img class="screenshot" src="images/32-google-analytics-api-enable.jpg" style="width: 400px;"/></p>
+<p>Sadly, the fact you have a valid service key is not enough to start making requests yet. We still need to authorize the user account with GA.</p>
+<h3 id="step4">
+Step 4: Add your service account user credentials to your project
+</h3>
+<p>You now need to add the email associated with that key to the list of authenticated project users. To do this, we’re going to return to the Cloud Resource Manager pane at <a href="https://console.cloud.google.com/cloud-resource-manager" target="_blank" rel="noopener noreferrer">https://console.cloud.google.com/cloud-resource-manager</a>.</p>
+<p>Please note that for many Google Analytics configurations, <strong>only GA administrators may add new members to a project.</strong> If that is the case for you, you’ll will not see the screens shown below. Instead, you must contact your GA administrator and ask them to add your service account email to the project with Viewer rights.</p>
+<p>If you do have the appropriate permissions, however, perform the following 3 tasks:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Click on the <em>IAM</em> selection on the left-hand-side menu and select <em>ADD</em> from the top submenu</strong> as shown below:</li>
+</ol>
+<p><img class="screenshot" src="images/41-IAM-dash.jpg" style="width: 400px;"/></p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Add your service account user to the project.</strong> Enter the email address for your service account, select <em>Viewer</em> as the role, and click <em>Save</em> as shown below.</li>
+</ol>
+<p><img class="screenshot" src="images/42-IAM-add-email.jpg" style="width: 400px;"/></p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Verify that your service account email has now been added</strong> by observing it in the list of members for this project.</li>
+</ol>
+<p><img class="screenshot" src="images/43-IAM-show-users.jpg" style="width: 400px;"/></p>
+<h3 id="step5">
+Step 5: Create and download your project’s OAUTH credentials from Google
+</h3>
+<p>While you may be questioning why you ever started this seemingly endless project at this point, fear not; we’re almost done. All that remains to do is to create and download the OAUTH credentials for your service key.</p>
+<p>Now if you’re anything like me, you’re probably thinking “Wait a minute, I created a service key to bypass all this OAUTH complexity. Why do I need an OAUTH project file now?” I’m glad you asked; it’s because Google:</p>
+<ul>
+<li><strong>Gathers API statistics on a per-project basis.</strong> Google needs to know what project to aggregate your Google Analytics API calls under for reporting and accounting purposes.</li>
+<li><strong>Needs to defend against excessive API calls.</strong> Because you are accessing the API from a computer program, Google has to defend its API against infinite loops and automated attacks. Should Google detect excessive API calls associated with your project, it can throttle its responses to you without affecting other users.</li>
+</ul>
+<p>You don’t actually need a project client ID for debugging purposes because the <code>GoogleAnalyticsR</code> package has a default project associated with it. However, this project ID is shared among all programs using the package, and you may find your API calls denied because too many users are actively using the package. You can avoid this issue entirely by setting your own project client ID as shown below.</p>
+<p>In my opinion, acquiring an OAuth 2.0 client ID for a service account is poorly documented on the Google API dashboard, in the Google documentation, and in the <code>GoogleAnalyticsR</code> package. I found this process difficult to reproduce for our test project even though I’d been through it for my own dashboards. With that said, it’s fairly straightforward if you start in the proper place as shown below:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Go to the site <a href="https://console.developers.google.com/apis/api/analyticsreporting.googleapis.com/" target="_blank" rel="noopener noreferrer">https://console.developers.google.com/apis/api/analyticsreporting.googleapis.com/</a>.</strong> Please note that this is not the Google Cloud API dashboard we went to in Step 3; this is the Google Analytics Report API dashboard. You probably will have no OAuth 2.0 client IDs shown. Click on <em>+ CREATE CREDENTIALS</em> at the top of the page.</li>
+</ol>
+<p><img class="screenshot" src="images/51-GA-dashboard.jpg" style="width: 600px;"/></p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Select <em>OAuth client ID</em></strong> as the credential you wish to create.</li>
+</ol>
+<p><img class="screenshot" src="images/52-GA-add-credentials.jpg" style="width: 400px;"/></p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Select <em>Desktop app</em> as the application type and enter your a name for your client.</strong> I chose the name “Test Google Analytics script.”</li>
+</ol>
+<p><img class="screenshot" src="images/53-GA-add-client-id.jpg" style="width: 400px;"/></p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Click <em>OK</em> to acknowledge the ID being created</strong>, which will return you to the Google Analytics dashboard.</li>
+</ol>
+<p><img class="screenshot" src="images/54-GA-client-id-created.jpg" style="width: 400px;"/></p>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Click the down arrow button next to your new Client ID to download the client ID JSON file.</strong> I typically put this file into my <em>.secrets</em> folder where I also keep my service account private key.</li>
+</ol>
+<p><img class="screenshot" src="images/55-download-ID.jpg" style="width: 600px;"/></p>
+<h3 id="step6">
+Step 6: Submit both pieces of information to the Google Analytics API and make a test data request.
+</h3>
+<p>While this multi-step process which may have seemed like something out of <em>Lord of the Rings</em>, you now should have all the credentials and permission to make API requests to Google Analytics. So let’s write code to fetch one day’s Google Analytics data for the rstudio.com site.</p>
+<pre class="r"><code>library(googleAnalyticsR)
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+library(reactable)
+library(stringr)
+
+## First, authenticate with our client OAUTH credentials from step 5 of the blog post.
+googleAuthR::gar_set_client(json = &quot;secrets/oauth-account-key.json&quot;)
+
+## Now, provide the service account email and private key
+ga_auth(email = &quot;ga-analysis@test-project-291617.iam.gserviceaccount.com&quot;,
+        json_file = &quot;secrets/service-account-key.json&quot;)
+
+## At this point, we should be properly authenticated and ready to go. We can test this
+## by getting a list of all the accounts that this test project has access to. Typically,
+## this will be only one if you&#39;ve created your own service key. If it isn&#39;t your only
+## account, select the appropriate viewId from your list of accounts.
+
+my_accounts &lt;- ga_account_list()
+my_id &lt;- my_accounts$viewId     ## Modify this if you have more than one account
+
+## Let&#39;s look at all the visitors to our site. This segment is one of several provided
+## by Google Analytics by default.
+
+all_users &lt;- segment_ga4(&quot;AllTraffic&quot;, segment_id = &quot;gaid::-1&quot;)
+
+## Let&#39;s look at just one day.
+
+ga_start_date &lt;- today()
+ga_end_date &lt;- today()
+
+## Make the request to GA
+data_fetch &lt;- google_analytics(my_id,
+                               segments = all_users,
+                               date_range = c(ga_start_date, ga_end_date),
+                               metrics = c(&quot;pageviews&quot;),
+                               dimensions = c(&quot;landingPagePath&quot;),
+                               anti_sample = TRUE)
+
+## Let&#39;s just create a table of the most viewed posts
+
+most_viewed_posts &lt;- data_fetch %&gt;% 
+  mutate(Path = str_trunc(landingPagePath, width=40)) %&gt;% 
+  count(Path, wt=pageviews, sort=TRUE)
+head(most_viewed_posts, n=5)</code></pre>
+<p>Assuming you have the appropriate permissions, client ID, and service key, you should get a result that looks similar to this one I pulled from the rstudio.com web site.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Path</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>rstudio.cloud/index.html</td>
+<td align="right">22173</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>rstudio.com/index.html</td>
+<td align="right">18240</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>rstudio.com/products/rstudio/download…</td>
+<td align="right">16120</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>www.shinyapps.io/admin/index.html</td>
+<td align="right">8327</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>support.rstudio.com/hc/en-us/articles…</td>
+<td align="right">7486</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion">
+Wrapping Up Our First Custom Google Analytics Script
+</h2>
+<p>While many of the details of the Google Analytics API may seem elaborate and arcane, I want to emphasize some of the main ideas behind this process:</p>
+<ul>
+<li><strong>You don’t have to settle for what the Google Analytics user interface gives you.</strong> The GA UI contains many general-purpose analytical views. However, if your organization wants to manage to web metrics that its interface doesn’t provide, the GA API and custom code allows you to create your own web metrics from raw GA data.</li>
+<li><strong>Two credentials unlock your ability to create your own web analytics.</strong> While the setup process to access the GA API seems complicated, it really boils down to agreeing on two basic credentials: one for the user authorizing the request and the other for the client program running it.</li>
+<li><strong>Once you can download your own GA data, you can apply ordinary R code to understand it.</strong> While the Google Analytics UI may take you days to learn, once you can download the raw GA data, you can return to R and Python tools to wrangle that data into the web characteristics you want to measure. Best of all, once that code is written, you can hand it to others who don’t have to understand anything about GA or its APIs. Your program becomes a useful tool instead of just a big toolbox.</li>
+</ul>
+<p>This post has focused entirely on getting authorized to download Google Analytics data. The next post will focus on how to create a flex dashboard for stakeholders to interact with the data. The last post in this series will show how to create windowed views of this data and public a self-contained dashboard that can be used on demand from RStudio Connect.</p>
+</div>
+</div>
+<div id="to-learn-more" class="level2">
+<h2>To Learn More</h2>
+<p>This post only focused on using <code>GoogleAnalyticsR</code> to download data through the GA API, but the package is capable of much much more. I highly recommend taking a look at <a href="http://code.markedmondson.me/googleAnalyticsR/index.html" target="_blank" rel="noopener noreferrer">the extensive package documentation</a> and its <a href="https://github.com/MarkEdmondson1234/googleAuthR" target="_blank" rel="noopener noreferrer">github repository</a> as well as <a href="https://code.markedmondson.me" target="_blank" rel="noopener noreferrer">author Mark Edmondson’s blog</a>.</p>
+</div>
