@@ -1,8 +1,8 @@
 ---
+color: '#BB3654'
 description: 'isoband: An R package to generate contour lines and polygons.'
 github: r-lib/isoband
 image: logo.png
-color: "#BB3654"
 languages:
 - C++
 latest_release: '2025-12-05T12:51:46+00:00'

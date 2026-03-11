@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: Boilerplate Code for tidymodels
 github: tidymodels/usemodels
+image: logo.svg
 languages:
 - R
 latest_release: '2022-02-18T22:08:12+00:00'

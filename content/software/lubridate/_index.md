@@ -1,8 +1,8 @@
 ---
+color: '#32A559'
 description: Make working with dates in R just that little bit easier
 github: tidyverse/lubridate
 image: logo.png
-color: "#32A559"
 languages:
 - R
 latest_release: '2026-02-03T09:21:47+00:00'

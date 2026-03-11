@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: The tidyverse style guide for R code
 github: tidyverse/style
+image: logo.svg
 languages:
 - SCSS
 people:

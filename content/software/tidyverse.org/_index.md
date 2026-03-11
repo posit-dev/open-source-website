@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Source of tidyverse.org
 github: tidyverse/tidyverse.org
+image: logo.svg
 languages:
 - HTML
 people:

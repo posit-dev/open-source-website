@@ -1,8 +1,8 @@
 ---
+color: '#EB7931'
 description: ''
 github: posit-dev/python-tidytuesday
 image: posit_round_logo.png
-color: "#EB7931"
 title: python-tidytuesday
 website: ''
 

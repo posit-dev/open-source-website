@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: an opinionated environment for compiling R
 github: rstudio/r-builds
+image: logo.svg
 languages:
 - Shell
 people:

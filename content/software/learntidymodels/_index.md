@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: Learn tidymodels with interactive learnr primers
 github: tidymodels/learntidymodels
+image: logo.svg
 languages:
 - R
 people:

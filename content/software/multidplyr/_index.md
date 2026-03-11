@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: A dplyr backend that partitions a data frame over multiple processes
 github: tidyverse/multidplyr
+image: logo.svg
 languages:
 - R
 latest_release: '2025-11-13T13:40:03+00:00'

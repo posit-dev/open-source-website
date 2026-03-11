@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: recommendations for creating R modeling packages
 github: tidymodels/model-implementation-principles
+image: logo.svg
 languages:
 - HTML
 people:

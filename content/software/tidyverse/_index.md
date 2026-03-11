@@ -1,8 +1,8 @@
 ---
+color: '#1D1D2B'
 description: Easily install and load packages from the tidyverse
 github: tidyverse/tidyverse
 image: tidyverse.png
-color: "#1D1D2B"
 languages:
 - R
 latest_release: '2023-02-21T13:20:32+00:00'

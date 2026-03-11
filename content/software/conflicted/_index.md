@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: An alternative conflict resolution strategy for R
 github: r-lib/conflicted
+image: logo.svg
 languages:
 - R
 latest_release: '2023-01-31T19:50:16+00:00'

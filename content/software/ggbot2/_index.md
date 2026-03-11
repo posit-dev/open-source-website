@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: ''
 github: tidyverse/ggbot2
+image: logo.svg
 languages:
 - R
 people:

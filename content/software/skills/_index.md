@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: A collection of Claude Skills from Posit
 github: posit-dev/skills
+image: logo.svg
 languages:
 - Python
 people:

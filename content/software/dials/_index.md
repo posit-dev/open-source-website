@@ -1,8 +1,8 @@
 ---
+color: '#412817'
 description: Tools for creating tuning parameter values
 github: tidymodels/dials
 image: logo.png
-color: "#412817"
 languages:
 - R
 latest_release: '2025-09-04T09:26:12+00:00'

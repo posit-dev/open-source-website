@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: Create standalone functions for remote execution
 github: r-lib/carrier
+image: logo.svg
 languages:
 - R
 latest_release: '2025-09-11T09:52:03+00:00'

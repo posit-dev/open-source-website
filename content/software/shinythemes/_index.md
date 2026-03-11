@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Themes for Shiny
 github: rstudio/shinythemes
+image: logo.svg
 languages:
 - R
 people:

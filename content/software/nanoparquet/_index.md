@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: R package to read and write Parquet files
 github: r-lib/nanoparquet
+image: logo.svg
 languages:
 - C++
 latest_release: '2025-12-16T21:21:31+00:00'

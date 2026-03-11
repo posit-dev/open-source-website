@@ -1,8 +1,8 @@
 ---
+color: '#FF00D2'
 description: Run predictions inside the database
 github: tidymodels/tidypredict
 image: logo.png
-color: "#FF00D2"
 languages:
 - R
 latest_release: '2026-02-26T22:11:23+00:00'

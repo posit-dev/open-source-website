@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: ''
 github: r-lib/itdepends
+image: logo.svg
 languages:
 - R
 people:

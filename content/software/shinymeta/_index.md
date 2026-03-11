@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Record and expose Shiny app logic using metaprogramming
 github: rstudio/shinymeta
+image: logo.svg
 languages:
 - R
 latest_release: '2026-03-02T21:45:37+00:00'

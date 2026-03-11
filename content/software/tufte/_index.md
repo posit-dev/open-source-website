@@ -1,8 +1,8 @@
 ---
+color: '#849C6C'
 description: Tufte Styles for R Markdown Documents
 github: rstudio/tufte
 image: cover.png
-color: "#849C6C"
 languages:
 - R
 latest_release: '2025-07-29T20:01:50+00:00'

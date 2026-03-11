@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: Fast map implementation for R
 github: r-lib/fastmap
+image: logo.svg
 languages:
 - C++
 latest_release: '2024-05-14T17:53:33+00:00'

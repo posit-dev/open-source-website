@@ -1,8 +1,8 @@
 ---
+color: '#144279'
 description: Read flat files (csv, tsv, fwf) into R
 github: tidyverse/readr
 image: logo.png
-color: "#144279"
 languages:
 - R
 latest_release: '2026-02-19T07:06:02+00:00'

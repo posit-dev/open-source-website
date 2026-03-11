@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: ''
 github: tidyverse/tidyups
+image: logo.svg
 people:
 - Davis Vaughan
 - Hadley Wickham

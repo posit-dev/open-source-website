@@ -1,8 +1,8 @@
 ---
+color: '#4D5E76'
 description: Posit Cheat Sheets - Can also be found at https://posit.co/resources/cheatsheets/.
 github: rstudio/cheatsheets
 image: rstudio-ide.png
-color: "#4D5E76"
 languages:
 - TeX
 people:

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: R interface for SQLite
 github: r-dbi/RSQLite
+image: logo.svg
 languages:
 - R
 latest_release: '2026-02-05T19:29:00+00:00'

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Find tools needed to build R packages
 github: r-lib/pkgbuild
+image: logo.svg
 languages:
 - R
 latest_release: '2025-05-26T10:36:19+00:00'

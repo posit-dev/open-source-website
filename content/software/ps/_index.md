@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: R package to query, list, manipulate system processes
 github: r-lib/ps
+image: logo.svg
 languages:
 - C
 latest_release: '2025-04-12T09:22:49+00:00'

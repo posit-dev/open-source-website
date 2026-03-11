@@ -1,9 +1,9 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Materials collected from the First Shiny Developer Conference Palo Alto,
   CA January 30-31 2016
 github: rstudio/ShinyDeveloperConference
+image: logo.svg
 languages:
 - HTML
 people:

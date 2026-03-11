@@ -1,8 +1,8 @@
 ---
+color: '#E17817'
 description: Convert statistical analysis objects from R into tidy format
 github: tidymodels/broom
 image: logo.png
-color: "#E17817"
 languages:
 - R
 latest_release: '2025-12-03T20:26:24+00:00'

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: A simple S3 class for representing BLOBs
 github: tidyverse/blob
+image: logo.svg
 languages:
 - R
 latest_release: '2026-01-13T06:57:50+00:00'

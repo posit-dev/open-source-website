@@ -1,8 +1,8 @@
 ---
+color: '#FBB373'
 description: Parsnip wrappers for mixed-level and hierarchical models
 github: tidymodels/multilevelmod
 image: logo.png
-color: "#FBB373"
 languages:
 - R
 latest_release: '2022-06-17T12:13:05+00:00'

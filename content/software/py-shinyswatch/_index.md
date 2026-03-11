@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: Bootswatch themes for py-shiny
 github: posit-dev/py-shinyswatch
+image: logo.svg
 languages:
 - Python
 latest_release: '2025-03-03T19:13:26+00:00'

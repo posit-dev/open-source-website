@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: Easy memoisation for R
 github: r-lib/memoise
+image: logo.svg
 languages:
 - R
 latest_release: '2021-11-24T21:24:31+00:00'

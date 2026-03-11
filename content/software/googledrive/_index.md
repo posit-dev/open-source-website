@@ -1,8 +1,8 @@
 ---
+color: '#045493'
 description: Google Drive R API
 github: tidyverse/googledrive
 image: logo.png
-color: "#045493"
 languages:
 - R
 latest_release: '2025-09-10T06:09:30+00:00'

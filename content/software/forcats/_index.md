@@ -1,8 +1,8 @@
 ---
+color: '#523C2E'
 description: '🐈🐈🐈🐈: tools for working with categorical variables (factors)'
 github: tidyverse/forcats
 image: logo.png
-color: "#523C2E"
 languages:
 - R
 latest_release: '2025-09-24T17:08:08+00:00'

@@ -1,8 +1,8 @@
 ---
+color: '#F7AD63'
 description: High-Level Modeling Functions with 'torch'
 github: tidymodels/brulee
 image: logo.png
-color: "#F7AD63"
 languages:
 - R
 latest_release: '2025-09-02T10:44:03+00:00'

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Private configuration for R packages
 github: r-lib/pkgconfig
+image: logo.svg
 languages:
 - R
 latest_release: '2019-09-22T08:42:05+00:00'

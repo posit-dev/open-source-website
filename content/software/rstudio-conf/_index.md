@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Materials for rstudio::conf
 github: rstudio/rstudio-conf
+image: logo.svg
 languages:
 - HTML
 people:

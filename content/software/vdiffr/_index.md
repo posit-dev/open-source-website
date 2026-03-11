@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: Visual regression testing and graphical diffing with testthat
 github: r-lib/vdiffr
+image: logo.svg
 languages:
 - C++
 latest_release: '2026-02-13T12:48:44+00:00'

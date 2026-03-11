@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: Tidy output from regular expression matches
 github: r-lib/rematch2
+image: logo.svg
 languages:
 - R
 latest_release: '2020-04-30T10:30:07+00:00'

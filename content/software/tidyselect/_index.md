@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: A backend for functions taking tidyverse selections
 github: r-lib/tidyselect
+image: logo.svg
 languages:
 - R
 latest_release: '2024-03-11T11:44:46+00:00'

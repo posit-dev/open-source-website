@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Shiny Dashboarding framework
 github: rstudio/shinydashboard
+image: logo.svg
 languages:
 - CSS
 latest_release: '2025-04-22T14:03:07+00:00'

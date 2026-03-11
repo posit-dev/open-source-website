@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: R interface to TensorFlow Datasets API
 github: rstudio/tfdatasets
+image: logo.svg
 languages:
 - R
 latest_release: '2025-08-20T14:50:10+00:00'

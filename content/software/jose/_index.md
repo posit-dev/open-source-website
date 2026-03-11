@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: ' Javascript Object Signing and Encryption for R'
 github: r-lib/jose
+image: logo.svg
 languages:
 - R
 latest_release: '2021-11-06T13:38:21+00:00'

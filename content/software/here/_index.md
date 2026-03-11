@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: A simpler way to find your files
 github: r-lib/here
+image: logo.svg
 languages:
 - R
 latest_release: '2025-09-14T18:48:48+00:00'

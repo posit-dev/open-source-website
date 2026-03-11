@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Common generic methods
 github: r-lib/generics
+image: logo.svg
 languages:
 - R
 latest_release: '2025-05-09T18:17:34+00:00'

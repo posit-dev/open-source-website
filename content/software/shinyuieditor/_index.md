@@ -1,9 +1,9 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: A GUI for laying out a Shiny application that generates clean and human-readable
   UI code
 github: rstudio/shinyuieditor
+image: logo.svg
 languages:
 - JavaScript
 latest_release: '2024-06-27T16:34:57+00:00'

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: Bindings to libxml2
 github: r-lib/xml2
+image: logo.svg
 languages:
 - R
 latest_release: '2025-03-13T19:24:32+00:00'

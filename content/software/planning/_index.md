@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: Documents to plan and discuss future development
 github: tidymodels/planning
+image: logo.svg
 people:
 - Max Kuhn
 - Hannah Frick

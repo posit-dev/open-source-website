@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Course contents for Master the Tidyverse
 github: rstudio/master-the-tidyverse
+image: logo.svg
 title: master-the-tidyverse
 website: ''
 

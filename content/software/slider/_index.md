@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Sliding Window Functions
 github: r-lib/slider
+image: logo.svg
 languages:
 - R
 latest_release: '2025-11-14T20:31:30+00:00'

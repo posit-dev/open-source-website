@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Finding files in project subdirectories
 github: r-lib/rprojroot
+image: logo.svg
 languages:
 - R
 latest_release: '2025-08-26T15:22:36+00:00'

@@ -1,8 +1,8 @@
 ---
+color: '#27341B'
 description: A functional programming toolkit for R
 github: tidyverse/purrr
 image: logo.png
-color: "#27341B"
 languages:
 - R
 latest_release: '2026-01-06T21:50:34+00:00'

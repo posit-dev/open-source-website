@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Code and other documentation for apps in the Shiny Gallery ✨
 github: rstudio/shiny-gallery
+image: logo.svg
 languages:
 - HTML
 people:

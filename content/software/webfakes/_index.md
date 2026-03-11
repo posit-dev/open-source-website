@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: Fake web apps for HTTP testing R packages
 github: r-lib/webfakes
+image: logo.svg
 languages:
 - C
 latest_release: '2025-06-24T17:53:05+00:00'

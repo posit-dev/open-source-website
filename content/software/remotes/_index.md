@@ -1,9 +1,9 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Install R packages from GitHub, GitLab, Bitbucket, git, svn repositories,
   URLs
 github: r-lib/remotes
+image: logo.svg
 languages:
 - R
 latest_release: '2024-03-17T12:41:28+00:00'

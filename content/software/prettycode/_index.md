@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: Syntax highlight R code in the terminal
 github: r-lib/prettycode
+image: logo.svg
 languages:
 - R
 latest_release: '2019-12-16T13:00:40+00:00'

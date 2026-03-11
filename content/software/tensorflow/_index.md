@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: TensorFlow for R
 github: rstudio/tensorflow
+image: logo.svg
 languages:
 - R
 latest_release: '2025-08-18T20:19:49+00:00'

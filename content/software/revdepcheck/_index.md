@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: R package reverse dependency checking
 github: r-lib/revdepcheck
+image: logo.svg
 languages:
 - R
 people:

@@ -1,9 +1,9 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Schedule an R function or formula to run after a specified period of
   time
 github: r-lib/later
+image: logo.svg
 languages:
 - C++
 latest_release: '2026-03-05T12:53:35+00:00'

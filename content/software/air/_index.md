@@ -1,8 +1,8 @@
 ---
+color: '#F6C777'
 description: R formatter and language server
 github: posit-dev/air
 image: air.png
-color: "#F6C777"
 languages:
 - Rust
 - R

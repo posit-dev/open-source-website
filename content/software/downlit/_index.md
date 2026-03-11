@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Syntax Highlighting and Automatic Linking
 github: r-lib/downlit
+image: logo.svg
 languages:
 - R
 latest_release: '2025-11-13T22:37:02+00:00'

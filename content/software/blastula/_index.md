@@ -1,8 +1,8 @@
 ---
+color: '#B573B5'
 description: Easily send great-looking HTML email messages from R
 github: rstudio/blastula
 image: logo.svg
-color: "#B573B5"
 languages:
 - R
 latest_release: '2025-04-03T12:52:40+00:00'

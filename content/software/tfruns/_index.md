@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: Track, Visualize, and Manage TensorFlow Training Runs
 github: rstudio/tfruns
+image: logo.svg
 languages:
 - HTML
 latest_release: '2025-08-20T13:21:33+00:00'

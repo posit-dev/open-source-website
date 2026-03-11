@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Run CRAN URL checks from older versions of R
 github: r-lib/urlchecker
+image: logo.svg
 languages:
 - R
 latest_release: '2021-11-30T00:26:11+00:00'

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: Serverless R message queue using SQLite
 github: r-lib/liteq
+image: logo.svg
 languages:
 - R
 people:

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: ''
 github: rstudio/miniUI
+image: logo.svg
 languages:
 - R
 people:

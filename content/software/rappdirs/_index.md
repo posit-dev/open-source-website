@@ -1,9 +1,9 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Find OS-specific directories to store data, caches, and logs. A port
   of python's AppDirs
 github: r-lib/rappdirs
+image: logo.svg
 languages:
 - R
 latest_release: '2026-01-16T22:03:17+00:00'

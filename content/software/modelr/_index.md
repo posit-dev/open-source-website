@@ -1,8 +1,8 @@
 ---
+color: '#1D1D2A'
 description: Helper functions for modelling
 github: tidyverse/modelr
 image: logo.png
-color: "#1D1D2A"
 languages:
 - R
 latest_release: '2023-03-21T14:12:45+00:00'

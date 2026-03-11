@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: write YAML for R Markdown, bookdown, blogdown, and more
 github: r-lib/ymlthis
+image: logo.svg
 languages:
 - R
 latest_release: '2026-02-16T23:52:38+00:00'

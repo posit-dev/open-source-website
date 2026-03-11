@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: Simulate installing and loading a package
 github: r-lib/pkgload
+image: logo.svg
 languages:
 - R
 latest_release: '2025-09-23T10:17:36+00:00'

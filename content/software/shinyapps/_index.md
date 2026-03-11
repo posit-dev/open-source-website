@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Deploy Shiny applications to ShinyApps
 github: rstudio/shinyapps
+image: logo.svg
 people:
 - JJ Allaire
 - Joe Cheng

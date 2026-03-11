@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Key-value caches for R
 github: r-lib/cachem
+image: logo.svg
 languages:
 - R
 latest_release: '2024-05-15T15:53:45+00:00'

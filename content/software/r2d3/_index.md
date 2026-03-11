@@ -1,8 +1,8 @@
 ---
+color: '#BF640E'
 description: R Interface to D3 Visualizations
 github: rstudio/r2d3
 image: r2d3-hex.png
-color: "#BF640E"
 languages:
 - R
 latest_release: '2018-12-18T18:00:22+00:00'

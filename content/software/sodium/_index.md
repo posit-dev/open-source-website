@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: R bindings to libsodium
 github: r-lib/sodium
+image: logo.svg
 languages:
 - R
 latest_release: '2022-06-11T08:15:53+00:00'

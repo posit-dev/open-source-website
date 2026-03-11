@@ -1,8 +1,8 @@
 ---
+color: '#e44d25'
 description: Tools for HTML generation and output
 github: rstudio/htmltools
 image: logo.png
-color: "#e44d25"
 languages:
 - R
 latest_release: '2025-12-08T17:18:25+00:00'

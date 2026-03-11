@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: Manipulate DESCRIPTION files
 github: r-lib/desc
+image: logo.svg
 languages:
 - R
 latest_release: '2023-12-10T11:07:16+00:00'

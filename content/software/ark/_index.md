@@ -1,8 +1,8 @@
 ---
+color: '#E6B7A5'
 description: Ark, an R kernel
 github: posit-dev/ark
 image: logo.png
-color: "#E6B7A5"
 languages:
 - Rust
 latest_release: '2026-03-03T20:32:26+00:00'

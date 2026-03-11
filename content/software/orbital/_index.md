@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Turn SciKitLearn pipelines into SQL
 github: posit-dev/orbital
+image: logo.svg
 languages:
 - Python
 latest_release: '2026-03-02T18:19:46+00:00'

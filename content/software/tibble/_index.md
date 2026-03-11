@@ -1,8 +1,8 @@
 ---
+color: '#21202F'
 description: A modern re-imagining of the data frame
 github: tidyverse/tibble
 image: logo.png
-color: "#21202F"
 languages:
 - R
 latest_release: '2026-01-10T18:28:34+00:00'

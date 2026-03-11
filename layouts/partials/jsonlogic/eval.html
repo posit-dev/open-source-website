@@ -33,18 +33,18 @@
       {{ $args = slice $rawArgs }}
     {{ end }}
 
-    {{/* Recursively evaluate each arg */}}
+    {{/* Recursively evaluate each arg (wrap in dict to prevent append flattening slices) */}}
     {{ $evaluated := slice }}
     {{ range $args }}
       {{ $val := partial "jsonlogic/eval.html" (dict "rule" . "data" $data) }}
-      {{ $evaluated = $evaluated | append $val }}
+      {{ $evaluated = $evaluated | append (dict "v" $val) }}
     {{ end }}
 
     {{/* Safe access to first two evaluated args */}}
     {{ $a := index (dict) "" }}
     {{ $b := index (dict) "" }}
-    {{ if gt (len $evaluated) 0 }}{{ $a = index $evaluated 0 }}{{ end }}
-    {{ if gt (len $evaluated) 1 }}{{ $b = index $evaluated 1 }}{{ end }}
+    {{ if gt (len $evaluated) 0 }}{{ $a = (index $evaluated 0).v }}{{ end }}
+    {{ if gt (len $evaluated) 1 }}{{ $b = (index $evaluated 1).v }}{{ end }}
 
     {{/* Nil and type detection */}}
     {{ $aIsNil := eq (printf "%T" $a) "<nil>" }}
@@ -56,9 +56,7 @@
 
     {{/* Dispatch operators */}}
     {{ if eq $op "==" }}
-      {{ if and $aIsNil $bIsNil }}
-        {{ $result = true }}
-      {{ else if or $aIsNil $bIsNil }}
+      {{ if or $aIsNil $bIsNil }}
         {{ $result = false }}
       {{ else if and $aIsNum $bIsNum }}
         {{ $result = eq (float $a) (float $b) }}
@@ -67,10 +65,8 @@
       {{ end }}
 
     {{ else if eq $op "!=" }}
-      {{ if and $aIsNil $bIsNil }}
+      {{ if or $aIsNil $bIsNil }}
         {{ $result = false }}
-      {{ else if or $aIsNil $bIsNil }}
-        {{ $result = true }}
       {{ else if and $aIsNum $bIsNum }}
         {{ $result = ne (float $a) (float $b) }}
       {{ else }}
@@ -122,7 +118,7 @@
     {{ else if eq $op "and" }}
       {{ $result = true }}
       {{ range $evaluated }}
-        {{ if not . }}
+        {{ if not .v }}
           {{ $result = false }}
         {{ end }}
       {{ end }}
@@ -130,7 +126,7 @@
     {{ else if eq $op "or" }}
       {{ $result = false }}
       {{ range $evaluated }}
-        {{ if . }}
+        {{ if .v }}
           {{ $result = true }}
         {{ end }}
       {{ end }}

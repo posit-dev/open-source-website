@@ -1,8 +1,8 @@
 ---
+color: '#19536A'
 description: Distill for R Markdown
 github: rstudio/distill
 image: logo.png
-color: "#19536A"
 languages:
 - HTML
 latest_release: '2023-10-06T11:15:35+00:00'

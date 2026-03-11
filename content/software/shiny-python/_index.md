@@ -1,8 +1,8 @@
 ---
+color: '#000000'
 description: Easy interactive web applications with Python
 github: posit-dev/py-shiny
 image: shiny-python.svg
-color: "#000000"
 languages:
 - Python
 latest_release: '2025-12-08T17:48:13+00:00'

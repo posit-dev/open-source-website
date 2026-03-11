@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Application-level automated tests for Shiny
 github: rstudio/shinycoreci
+image: logo.svg
 languages:
 - HTML
 people:

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: HTML 5 Websockets implementation for R
 github: rstudio/R-Websockets
+image: logo.svg
 languages:
 - R
 people:

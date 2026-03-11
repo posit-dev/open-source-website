@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Reimplementations of Functions Introduced Since R-3.0.0
 github: r-lib/backports
+image: logo.svg
 languages:
 - R
 latest_release: '2024-08-12T09:35:38+00:00'

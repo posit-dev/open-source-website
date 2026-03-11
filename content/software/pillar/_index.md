@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Format columns with colour
 github: r-lib/pillar
+image: logo.svg
 languages:
 - R
 latest_release: '2025-09-17T03:59:06+00:00'

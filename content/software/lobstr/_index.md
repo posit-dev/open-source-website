@@ -1,8 +1,8 @@
 ---
+color: '#52336A'
 description: Understanding complex R objects with tools similar to str()
 github: r-lib/lobstr
 image: logo.png
-color: "#52336A"
 languages:
 - C
 latest_release: '2026-02-19T16:31:47+00:00'

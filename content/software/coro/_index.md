@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Coroutines for R
 github: r-lib/coro
+image: logo.svg
 languages:
 - R
 latest_release: '2024-11-05T09:52:00+00:00'

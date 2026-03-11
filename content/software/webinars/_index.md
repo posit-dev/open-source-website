@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Code and slides for RStudio webinars
 github: rstudio/webinars
+image: logo.svg
 languages:
 - HTML
 people:

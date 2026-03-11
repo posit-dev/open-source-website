@@ -1,8 +1,8 @@
 ---
+color: '#F37626'
 description: R interface to TensorFlow Estimators
 github: rstudio/tfestimators
 image: tensorflow-architecture.png
-color: "#F37626"
 languages:
 - R
 latest_release: '2025-08-18T20:39:02+00:00'
