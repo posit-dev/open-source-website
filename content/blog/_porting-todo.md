@@ -85,6 +85,26 @@ Created stub shortcodes in `layouts/shortcodes/` (need implementation):
 - Added `image: thumbnail-wd.jpg`
 - Added `ported_from: tidyverse` and `port_status: raw`
 
+## Posts to evaluate for porting
+
+Some posts may be too blog-specific to port (e.g., welcome posts, blog announcements):
+
+| Source | Post | Issue |
+|--------|------|-------|
+| education | 2019-09-24-welcome | "Welcome to education.rstudio.com" - very blog-specific |
+
+### Draft posts
+
+Some source posts have `draft: true`. Evaluate whether to:
+- Port as drafts (won't appear on site)
+- Skip entirely
+- Port and publish if content is still relevant
+
+Check for drafts before bulk porting with:
+```bash
+grep -l "draft: true" _external-sources/education.rstudio.com/content/blog/*/index.markdown
+```
+
 ## Other observations
 
 Record any issues or notes discovered during porting here.

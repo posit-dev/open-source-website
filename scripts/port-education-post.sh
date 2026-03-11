@@ -38,14 +38,23 @@ mkdir -p "$(dirname "$DEST")"
 cp -r "$SOURCE" "$DEST"
 echo "  Copied to $DEST"
 
+# 2. Find hero image (prefer -wd suffix, then thumbnail)
+IMAGE=""
+WD_IMAGE=$(ls "$DEST"/*-wd.jpg "$DEST"/*-wd.png 2>/dev/null | head -1)
+if [ -n "$WD_IMAGE" ]; then
+  IMAGE=$(basename "$WD_IMAGE")
+  echo "  Found hero image: $IMAGE"
+fi
+
 # Function to transform frontmatter
-# Args: $1 = file, $2 = "md" or "rmd" (md removes more fields)
+# Args: $1 = file, $2 = "md" or "rmd", $3 = image filename (optional)
 transform_frontmatter() {
   local FILE="$1"
   local TYPE="$2"
+  local IMAGE="$3"
   local TMP_FILE=$(mktemp)
 
-  awk -v type="$TYPE" '
+  awk -v type="$TYPE" -v image="$IMAGE" '
     BEGIN {
       in_fm = 0
       in_author = 0
@@ -60,6 +69,9 @@ transform_frontmatter() {
       } else {
         # Add new fields before closing ---
         if (!added) {
+          if (image != "") {
+            print "image: " image
+          }
           print "ported_from: education"
           print "port_status: raw"
           added = 1
@@ -99,24 +111,24 @@ transform_frontmatter() {
   mv "$TMP_FILE" "$FILE"
 }
 
-# 2. Transform index.markdown
+# 3. Transform index.markdown
 MD_FILE="$DEST/index.markdown"
 if [ -f "$MD_FILE" ]; then
-  transform_frontmatter "$MD_FILE" "md"
+  transform_frontmatter "$MD_FILE" "md" "$IMAGE"
   echo "  Updated $MD_FILE"
 fi
 
-# 3. Transform index.Rmarkdown
+# 4. Transform index.Rmarkdown
 RMD_FILE="$DEST/index.Rmarkdown"
 if [ -f "$RMD_FILE" ]; then
-  transform_frontmatter "$RMD_FILE" "rmd"
+  transform_frontmatter "$RMD_FILE" "rmd" "$IMAGE"
   echo "  Updated $RMD_FILE"
 fi
 
-# 4. Also handle index.md if present (some posts may have this)
+# 5. Also handle index.md if present (some posts may have this)
 MD_FILE2="$DEST/index.md"
 if [ -f "$MD_FILE2" ]; then
-  transform_frontmatter "$MD_FILE2" "md"
+  transform_frontmatter "$MD_FILE2" "md" "$IMAGE"
   echo "  Updated $MD_FILE2"
 fi
 
