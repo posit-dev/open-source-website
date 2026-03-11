@@ -112,12 +112,12 @@
   {{ $image = $page.Resources.Get . }}
 {{ end }}
 
-{{ if eq $card_type "videos" }}
+{{/* if eq $card_type "videos" }}
   {{ with $page.Params.external.thumbnail }}
     {{ $imageURL = . }}
     {{ $image = false }}
   {{ end }}
-{{ end }}
+{{ end */}}
 
 {{/* Software placeholder fallback */}}
 {{ if and (not $image) (not $imageURL) $isSoftware }}
@@ -173,8 +173,9 @@
      ============================================================ */}}
 <div {{ with .id }}id="{{ . }}"{{ end }} class="@container h-full">
   <a href="{{ $page.RelPermalink }}"
-     class="no-underline relative flex flex-col @venti:flex-row rounded-xl bg-gray-100/50 dark:bg-blue-950
-            hover:bg-gray-100
+     class="no-underline relative flex flex-col @venti:flex-row rounded-xl
+            hover:brightness-110 brightness-100 transition duration-200
+            {{ $card_settings.card_class }}
             overflow-hidden h-full @venti:h-96">
 
       {{/* -- Size (absolute, top-left) --------------------------- */}}
@@ -205,7 +206,7 @@
       {{ end }}
 
     {{/* -- Image ------------------------------------------------ */}}
-    <div class="w-full @venti:w-1/2 aspect-[16/9] flex items-center justify-center overflow-hidden">
+    <div class="w-full @venti:w-1/2 aspect-[16/9] flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
@@ -216,9 +217,6 @@
           "grande" 640
           "venti"  640
         ) }}
-      {{ else if $imageURL }}
-        <img src="{{ $imageURL }}" alt="{{ $page.Title }}"
-             class="w-full h-full object-cover" loading="lazy">
       {{ else if $usePlaceholder }}
         <img src="/images/hex-placeholder.svg" alt="{{ $page.Title }}"
              class="max-h-full max-w-full object-contain p-4" loading="lazy">
@@ -229,7 +227,7 @@
     <div class="hidden gap-y-2 @tall:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700">
 
       {{ with $str_title }}
-      <h3 class="m-0! text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
+      <h3 class="m-0! font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
       {{ end }}
 
       {{ with $str_description }}

@@ -1,18 +1,21 @@
 blog:
   badge_text: "blog post"
   badge_icon: "boxicons--message-filled"
-  image_class: "object-cover"
+  image_class: "w-full object-cover"
+  card_class: "bg-gray-100/25"
 
 cheatsheets:
   badge_text: "cheatsheet"
   badge_icon: "boxicons--file-code-filled"
-  image_class: "object-cover"
+  image_class: "w-full object-cover"
+  card_class: "bg-gray-100/25"
 
 events:
   badge_text: "event"
   badge_icon: "boxicons--calendar-event-filled"
   people_show: false
-  image_class: "object-cover"
+  image_class: "w-full object-cover"
+  card_class: "bg-gray-100/25"
 
 people:
   badge_text: "person"
@@ -20,18 +23,21 @@ people:
   description_field: "role"
   date_show: true
   people_show: false
-  image_class: "object-contain rounded-lg"
+  image_class: "object-contain rounded-xl"
   title_class: "@max-venti:self-center"
+  card_class: ""
   description_class: "@max-venti:text-center"
 
 software:
   badge_text: "software"
   badge_icon: "boxicons--hexagon-filled"
   people_show: false
-  image_class: "object-contain p-2"
+  image_class: "object-contain p-2 @grande:p-4"
+  card_class: "bg-gray-100/25"
 
 videos:
   badge_text: "video"
   badge_icon: "boxicons--video-filled"
-  image_class: "object-cover"
+  image_class: "w-full object-cover"
+  card_class: "bg-gray-100/25"
 

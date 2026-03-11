@@ -15,7 +15,6 @@ layout: single
 {{< /insert-cards >}}
 
 
-
 ### Blog Post
 
 {{< insert-card item="blog/anscombes-quartet" hide-badge=true >}}

@@ -2,6 +2,7 @@
 description: Graphic Devices Based on AGG
 github: r-lib/ragg
 image: logo.png
+color: "#DFB97E"
 languages:
 - C++
 latest_release: '2025-09-02T06:41:38+00:00'

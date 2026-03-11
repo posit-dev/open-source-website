@@ -3,7 +3,6 @@ title: Air, an extremely fast R formatter
 people:
   - Davis Vaughan
   - Lionel Henry
-  - Jeroen Janssens
 date: '2025-02-21'
 description: We are thrilled to announce Air, a new R formatter.
 image: thumbnail-wd.jpg
