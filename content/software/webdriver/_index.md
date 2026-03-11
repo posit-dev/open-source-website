@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: WebDriver client in R
 github: rstudio/webdriver
 languages:

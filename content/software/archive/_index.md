@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: R bindings to libarchive, supporting a large variety of archive formats
 github: r-lib/archive
 languages:

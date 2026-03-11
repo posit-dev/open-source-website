@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: cpp11 helps you to interact with R objects using C++ code.
 github: r-lib/cpp11
 languages:

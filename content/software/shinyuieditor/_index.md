@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: A GUI for laying out a Shiny application that generates clean and human-readable
   UI code
 github: rstudio/shinyuieditor

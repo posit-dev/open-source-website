@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: ICMP and TCP ping and related tools
 github: r-lib/pingr
 languages:

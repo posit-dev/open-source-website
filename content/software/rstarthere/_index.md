@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: A guide to some of the most useful R Packages that we know about
 github: rstudio/RStartHere
 languages:

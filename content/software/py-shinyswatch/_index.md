@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Bootswatch themes for py-shiny
 github: posit-dev/py-shinyswatch
 languages:

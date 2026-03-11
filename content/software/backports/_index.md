@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Reimplementations of Functions Introduced Since R-3.0.0
 github: r-lib/backports
 languages:

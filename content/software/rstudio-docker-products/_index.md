@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Docker images for RStudio Professional Products
 github: rstudio/rstudio-docker-products
 languages:

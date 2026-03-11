@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: R Package Dependency Resolution
 github: r-lib/pkgdepends
 languages:

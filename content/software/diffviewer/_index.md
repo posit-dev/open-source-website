@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: HTML widget to visually compare files
 github: r-lib/diffviewer
 languages:

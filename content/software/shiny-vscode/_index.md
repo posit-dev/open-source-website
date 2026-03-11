@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Shiny VS Code Extension
 github: posit-dev/shiny-vscode
 languages:

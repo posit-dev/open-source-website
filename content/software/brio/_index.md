@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Basic R Input Output
 github: r-lib/brio
 languages:

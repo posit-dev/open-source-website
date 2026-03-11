@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: ''
 github: rstudio/education.rstudio.com
 languages:

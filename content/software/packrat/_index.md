@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Packrat is a dependency management system for R
 github: rstudio/packrat
 languages:

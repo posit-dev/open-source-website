@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: Access the Gmail RESTful API from R.
 github: r-lib/gmailr
 languages:

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: R Interface to the jQuery Plug-in DataTables
 github: rstudio/DT
 languages:

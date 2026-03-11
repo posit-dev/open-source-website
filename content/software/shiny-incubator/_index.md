@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Examples and ideas that don't belong in the core Shiny package and aren't
   officially supported.
 github: rstudio/shiny-incubator

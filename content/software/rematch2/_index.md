@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Tidy output from regular expression matches
 github: r-lib/rematch2
 languages:

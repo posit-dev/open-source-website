@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: R Markdown Cookbook. A range of tips and tricks to make better use of
   R Markdown.
 github: rstudio/rmarkdown-cookbook

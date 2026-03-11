@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Sparklyr Extensions API
 github: rstudio/sparkapi
 languages:

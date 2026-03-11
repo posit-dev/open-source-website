@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: A database interface (DBI) definition for communication between R and
   RDBMSs
 github: r-dbi/DBI

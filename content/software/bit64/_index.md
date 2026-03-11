@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: An R package with an S3 Class for Vectors of 64bit Integers
 github: r-lib/bit64
 languages:

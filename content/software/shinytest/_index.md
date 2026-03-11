@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: Automated testing for shiny apps
 github: rstudio/shinytest
 languages:

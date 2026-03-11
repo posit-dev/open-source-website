@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: Shiny Dashboarding framework
 github: rstudio/shinydashboard
 languages:

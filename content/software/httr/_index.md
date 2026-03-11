@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: 'httr: a friendly http package for R'
 github: r-lib/httr
 languages:

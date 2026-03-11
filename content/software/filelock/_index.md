@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: Cross platform file locking in R
 github: r-lib/filelock
 languages:

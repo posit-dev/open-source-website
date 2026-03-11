@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Data Science Course in a Box
 github: tidyverse/datascience-box
 languages:

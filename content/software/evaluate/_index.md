@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: A version of eval for R that returns more information about what happened
 github: r-lib/evaluate
 languages:

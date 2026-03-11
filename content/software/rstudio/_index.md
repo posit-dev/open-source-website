@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: RStudio is an integrated development environment (IDE) for R
 github: rstudio/rstudio
 languages:

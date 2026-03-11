@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: TensorFlow for R
 github: rstudio/tensorflow
 languages:

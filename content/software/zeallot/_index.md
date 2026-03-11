@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: Variable assignment with zeal! (or multiple, unpacking, and destructuring
   assignment in R)
 github: r-lib/zeallot

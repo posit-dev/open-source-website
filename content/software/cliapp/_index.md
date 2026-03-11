@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: Rich Command Line Applications
 github: r-lib/cliapp
 languages:

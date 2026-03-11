@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: The Posit Connect command-line interface.
 github: posit-dev/rsconnect-python
 languages:

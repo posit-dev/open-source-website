@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Minimalistic GitHub API client in R
 github: r-lib/gh
 languages:

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Unicode symbols for CLI applications, with fallbacks
 github: r-lib/clisymbols
 languages:

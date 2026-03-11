@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: A experimental SQL extension for declarative data visualisation based
   on the Grammar of Graphics.
 github: posit-dev/ggsql

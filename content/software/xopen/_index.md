@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Open System Files, URLs, Anything
 github: r-lib/xopen
 languages:

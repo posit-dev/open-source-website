@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: Password Entry for R, Git, and SSH
 github: r-lib/askpass
 languages:

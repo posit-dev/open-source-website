@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: ''
 github: rstudio/rmarkdown-website
 languages:

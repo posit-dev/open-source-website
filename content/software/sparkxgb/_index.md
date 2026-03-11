@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: R interface for XGBoost on Spark
 github: rstudio/sparkxgb
 languages:

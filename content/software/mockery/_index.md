@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: A mocking library for R.
 github: r-lib/mockery
 languages:

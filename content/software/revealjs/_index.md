@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: R Markdown Format for reveal.js Presentations
 github: rstudio/revealjs
 languages:

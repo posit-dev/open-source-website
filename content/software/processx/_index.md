@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Execute and Control Subprocesses from R
 github: r-lib/processx
 languages:

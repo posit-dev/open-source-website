@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: This repo contains both the survey instruments, analysis documents, and
   data from the learning R survey.
 github: rstudio/r-community-survey

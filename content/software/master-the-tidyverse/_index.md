@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Course contents for Master the Tidyverse
 github: rstudio/master-the-tidyverse
 title: master-the-tidyverse

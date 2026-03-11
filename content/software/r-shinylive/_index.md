@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: ''
 github: posit-dev/r-shinylive
 languages:

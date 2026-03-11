@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Docker images for R
 github: rstudio/r-docker
 languages:

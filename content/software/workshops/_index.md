@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: Website and materials for tidymodels workshops
 github: tidymodels/workshops
 languages:

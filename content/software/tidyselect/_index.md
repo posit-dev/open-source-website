@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: A backend for functions taking tidyverse selections
 github: r-lib/tidyselect
 languages:

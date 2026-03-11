@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: R package to read and write Parquet files
 github: r-lib/nanoparquet
 languages:

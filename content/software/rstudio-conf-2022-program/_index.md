@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: rstudio::conf(2022, "program")
 github: rstudio/rstudio-conf-2022-program
 languages:

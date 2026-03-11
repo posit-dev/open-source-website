@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: ':closed_lock_with_key: Access the system credential store from R'
 github: r-lib/keyring
 languages:

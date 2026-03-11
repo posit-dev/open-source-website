@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: Two-day workshop that covers how to use R to interact databases and Spark
 github: rstudio/bigdataclass
 languages:

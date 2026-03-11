@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Boilerplate Code for tidymodels
 github: tidymodels/usemodels
 languages:

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Watch the File System for Changes
 github: r-lib/watcher
 languages:

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Chat assistant for Shiny
 github: posit-dev/shiny-assistant
 languages:

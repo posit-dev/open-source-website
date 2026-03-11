@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Visualize R profiling data
 github: r-lib/profvis
 languages:

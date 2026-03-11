@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Posit Open Source Website
 github: posit-dev/open-source-website
 languages:

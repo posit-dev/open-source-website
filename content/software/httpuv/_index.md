@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: HTTP and WebSocket server package for R
 github: rstudio/httpuv
 languages:

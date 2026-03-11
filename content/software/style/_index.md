@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: The tidyverse style guide for R code
 github: tidyverse/style
 languages:

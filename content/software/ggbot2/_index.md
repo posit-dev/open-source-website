@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: ''
 github: tidyverse/ggbot2
 languages:

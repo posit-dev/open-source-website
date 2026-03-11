@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Collection of low-level functions for working with vctrs
 github: tidyverse/funs
 languages:

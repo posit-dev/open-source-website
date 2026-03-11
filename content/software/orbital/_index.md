@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Turn SciKitLearn pipelines into SQL
 github: posit-dev/orbital
 languages:

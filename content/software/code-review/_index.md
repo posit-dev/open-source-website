@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: ''
 github: tidyverse/code-review
 people:

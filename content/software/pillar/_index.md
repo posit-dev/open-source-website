@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#72994E"
 description: Format columns with colour
 github: r-lib/pillar
 languages:

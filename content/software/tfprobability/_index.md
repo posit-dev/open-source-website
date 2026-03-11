@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: R interface to TensorFlow Probability
 github: rstudio/tfprobability
 languages:

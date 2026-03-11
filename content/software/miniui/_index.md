@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#D44000"
 description: ''
 github: rstudio/miniUI
 languages:

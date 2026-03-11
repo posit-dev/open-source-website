@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: R interface to Google Cloud Machine Learning Engine
 github: rstudio/cloudml
 languages:

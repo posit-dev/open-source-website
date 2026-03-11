@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: Pretty, human readable formatting of quantities
 github: r-lib/prettyunits
 languages:

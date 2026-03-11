@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Host Shiny applications over the web.
 github: rstudio/shiny-server
 languages:

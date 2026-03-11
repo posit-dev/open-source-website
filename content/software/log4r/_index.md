@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: A fast & lightweight approach to logging in R based on the widely-emulated
   Apache Log4j project.
 github: r-lib/log4r

@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#447099"
 description: R Interface to Leaflet Maps
 github: rstudio/leaflet
 languages:

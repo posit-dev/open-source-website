@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#419599"
 description: R Interface for GraphFrames
 github: rstudio/graphframes
 languages:

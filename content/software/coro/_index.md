@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: Coroutines for R
 github: r-lib/coro
 languages:
