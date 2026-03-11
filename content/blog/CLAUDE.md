@@ -43,8 +43,12 @@ people:
 
 | Field | Purpose |
 |-------|---------|
-| `ported_from` | Source blog (e.g., "tidyverse", "shiny", "quarto", "posit") |
+| `ported_from` | Source blog |
 | `port_status` | Porting progress: `raw`, `in-progress`, `review`, `complete` |
+
+**Valid `ported_from` values:** tidyverse, ai, shiny, great_tables, plotnine, pointblank, quarto, education, rstudio
+
+**Tracking page:** Use `/blog/all/` to monitor porting progress and metadata completeness.
 
 ### Taxonomies (for cross-linking)
 
@@ -90,4 +94,6 @@ slug: original-post-slug
 - `index.qmd` — Quarto (with executable code)
 - `index.ipynb` — Jupyter notebook (frontmatter goes in first raw cell as YAML)
 
-For `.ipynb` files, include frontmatter (including `image-alt`) in the first cell as a raw cell with YAML between `---` delimiters.
+**Notes:**
+- For `.ipynb` files, include frontmatter (including `image-alt`) in the first cell as a raw cell with YAML between `---` delimiters.
+- When a post has both `.qmd` and `.md` files, edit both to keep them in sync (avoids needing to re-render).

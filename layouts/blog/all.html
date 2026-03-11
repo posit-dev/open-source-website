@@ -54,6 +54,12 @@
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="tags">
+              <div class="flex items-center gap-1">
+                Tags
+                <span class="sort-icon text-gray-400">↕</span>
+              </div>
+            </th>
             <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="slug">
               <div class="flex items-center gap-1">
                 Slug
@@ -166,6 +172,21 @@
                 <div class="flex flex-wrap gap-1">
                   {{ range . }}
                     <span class="text-xs px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-800 text-gray-700 dark:text-gray-200">
+                      {{ . }}
+                    </span>
+                  {{ end }}
+                </div>
+              {{ else }}
+                <span class="text-gray-400">-</span>
+              {{ end }}
+            </td>
+
+            <!-- Tags -->
+            <td class="px-3 py-2" data-value="{{ if .Params.tags }}{{ delimit .Params.tags ", " }}{{ end }}">
+              {{ with .Params.tags }}
+                <div class="flex flex-wrap gap-1">
+                  {{ range . }}
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-orange-100 dark:bg-orange-800 text-gray-700 dark:text-gray-200">
                       {{ . }}
                     </span>
                   {{ end }}

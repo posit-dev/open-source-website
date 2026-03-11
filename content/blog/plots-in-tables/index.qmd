@@ -8,7 +8,7 @@ description: Exploring three approaches to add small plots to Great Tables using
 image: greattables-og.png
 image-alt: "Great Tables hex logo"
 ported_from: great_tables
-port_status: raw
+port_status: in-progress
 categories:
   - programming
 ---

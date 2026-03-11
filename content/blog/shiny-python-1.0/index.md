@@ -8,7 +8,7 @@ image: shinyforpython-1.0.jpg
 image-alt: "1.0 with fireworks behind it."
 hero_video: shinyforpython-1.0.mp4
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 categories:
   - shiny
 language: 

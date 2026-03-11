@@ -31,3 +31,6 @@ assets/css/index.css
 
 # Downloaded audio files
 content/resources/videos/**/audio.*
+
+# Legacy blog sources for porting
+/_external-sources/

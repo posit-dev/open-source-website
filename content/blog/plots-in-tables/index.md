@@ -8,7 +8,7 @@ description: >-
   Exploring three approaches to add small plots to Great Tables using plotnine,
   svg.py, or HTML.
 ported_from: great_tables
-port_status: raw
+port_status: in-progress
 categories:
   - great tables
 featured: true
