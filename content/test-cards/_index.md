@@ -18,12 +18,12 @@ layout: single
 
 ### Blog Post
 
-{{< insert-card item="blog/air" hide-badge=true >}}
+{{< insert-card item="blog/anscombes-quartet" hide-badge=true >}}
 
 ### 3 Columns
 
 {{< insert-cards cols=3 >}}
-- blog/air
+- blog/anscombes-quartet
 - people/jeroen-janssens
 - blog/air
 {{< /insert-cards >}}

@@ -3,17 +3,22 @@
 {{/* ============================================================
      RESOLVE PAGE
      ============================================================ */}}
-{{ $slug := .item }}
+{{ $page := .page }}
 {{ $hide_badge := index . "hide-badge" | default false }}
+{{ $slug := "" }}
 
-{{/* Shorthand: prefix cheatsheets/ and videos/ with resources/ */}}
-{{ if or (hasPrefix $slug "cheatsheets/") (hasPrefix $slug "videos/") }}
-  {{ $slug = printf "resources/%s" $slug }}
-{{ end }}
-
-{{ $page := site.GetPage $slug }}
-{{ if not $page }}
-  {{ errorf "card partial: page not found for slug '%s' (resolved to '%s')" .item $slug }}
+{{ if $page }}
+  {{ $slug = $page.Path }}
+{{ else }}
+  {{ $slug = .item }}
+  {{/* Shorthand: prefix cheatsheets/ and videos/ with resources/ */}}
+  {{ if or (hasPrefix $slug "cheatsheets/") (hasPrefix $slug "videos/") }}
+    {{ $slug = printf "resources/%s" $slug }}
+  {{ end }}
+  {{ $page = site.GetPage $slug }}
+  {{ if not $page }}
+    {{ errorf "card partial: page not found for slug '%s' (resolved to '%s')" .item $slug }}
+  {{ end }}
 {{ end }}
 
 
