@@ -1,6 +1,7 @@
 ---
 title: scales 1.1.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2019-11-18'
 slug: scales-1-1-0
 description: 
@@ -15,6 +16,9 @@ tags:
 photo: 
   url: https://unsplash.com/photos/d0CasEMHDQs
   author: David Clode
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

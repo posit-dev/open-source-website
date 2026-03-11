@@ -1,6 +1,8 @@
 ---
 title: Carpe Talk
-author: Jenny Bryan and Mara Averick
+people:
+  - Jenny Bryan
+  - Mara Averick
 date: '2018-07-08'
 slug: carpe-talk
 description: >
@@ -10,6 +12,9 @@ categories:
 photo:
   url: https://unsplash.com/photos/iIWCjgK3704
   author: Karine Germain
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 Summer conference season is in full swing, with [useR! 2018 Brisbane](https://user2018.r-project.org) nearly upon us!

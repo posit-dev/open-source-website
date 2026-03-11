@@ -1,6 +1,7 @@
 ---
 title: haven 2.1.0
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2019-02-19'
 slug: haven-2-1-0
 description: > 
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://www.pexels.com/photo/beach-lighthouse-3491/
   author: Skitterphoto
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

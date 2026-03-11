@@ -4,7 +4,8 @@ slug: readr-1-3-1
 description: >
   readr 1.3.1 is now on CRAN.
 date: '2018-12-27'
-author: Jim Hester
+people:
+  - Jim Hester
 photo:
   url: https://unsplash.com/photos/XOW1WqrWNKg
   author: Anastasia Zhenina
@@ -13,6 +14,9 @@ categories:
 tags:
   - readr
   - tidyverse
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

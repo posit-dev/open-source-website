@@ -1,7 +1,8 @@
 ---
 title: dplyr 0.8.3
 slug: dplyr-0-8-3
-author: Romain François
+people:
+  - Romain François
 description: >
   dplyr 0.8.3 is now on CRAN.
 date: '2019-07-04'
@@ -12,6 +13,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/OxK32aLJXWU
   author: Krzysztof Niewolny
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Tidy eval now supports glue strings
-author: Lionel Henry
+people:
+  - Lionel Henry
 date: '2020-02-11'
 slug: glue-strings-and-tidy-eval
 categories:
@@ -9,6 +10,9 @@ tags: [package, r-lib, tidyverse]
 photo:
   url: https://unsplash.com/photos/pcoKkN3NsX0
   author: Modestas Urbonas
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

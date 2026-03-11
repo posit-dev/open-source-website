@@ -1,6 +1,7 @@
 ---
 title: ggplot2 3.0.0
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2018-07-05'
 slug: ggplot2-3-0-0
 description: > 
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/wEL2zPX3jDg
   author: Fabio Ballasina
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

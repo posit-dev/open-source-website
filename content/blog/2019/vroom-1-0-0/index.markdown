@@ -1,6 +1,7 @@
 ---
 title: vroom 1.0.0
-author: Jim Hester
+people:
+  - Jim Hester
 date: '2019-05-07'
 slug: vroom-1-0-0
 description: Introducing the vroom package, extremely fast data import in R.
@@ -10,6 +11,9 @@ tags: [vroom, r-lib]
 photo:
   url: https://www.pexels.com/photo/12801/
   author: Chris Peeters
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

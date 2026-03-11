@@ -1,7 +1,8 @@
 ---
 title: gargle's debut on CRAN
 slug: gargle-hello-world
-author: Jenny Bryan
+people:
+  - Jenny Bryan
 description: >
   gargle is now on CRAN.
 date: '2019-08-20'
@@ -12,6 +13,9 @@ tags:
 photo:
   url: https://flic.kr/p/oe2LJ1
   author: North Carolina Christian advocate (1894)
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

@@ -4,7 +4,8 @@ slug: parsnip-adjacent
 description: >
     Three new tidymodels packages, baguette, poissonreg, and plsmod, were just released on CRAN.
 date: 2020-04-15
-author: Max Kuhn
+people:
+  - Max Kuhn
 photo:
   url: https://unsplash.com/photos/bph0kUmAoXc
   author: Mae Mu
@@ -15,6 +16,9 @@ tags:
   - poissonreg
   - plsmod
   - parsnip
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

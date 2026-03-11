@@ -1,6 +1,7 @@
 ---
 title: haven 2.2.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2019-11-08'
 slug: haven-2-2-0
 categories:
@@ -13,6 +14,9 @@ description:
 photo:
   url: https://unsplash.com/photos/R2bvzUYIdgY
   author: Tina Rolf
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

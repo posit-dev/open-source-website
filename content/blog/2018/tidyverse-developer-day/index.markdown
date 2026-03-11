@@ -1,6 +1,7 @@
 ---
 title: 'Save the date: tidyverse developer day'
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2018-08-27'
 slug: tidyverse-developer-day
 description: > 
@@ -11,6 +12,9 @@ tags: [tidyverse-dev-day]
 photo:
   url: https://unsplash.com/photos/ZMMXSRMSoI8
   author: rawpixel
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

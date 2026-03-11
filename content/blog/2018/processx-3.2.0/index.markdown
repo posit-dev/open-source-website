@@ -2,7 +2,8 @@
 title: processx 3.2.0
 date: 2018-09-06
 slug: processx-3.2.0
-author: Gábor Csárdi
+people:
+  - Gábor Csárdi
 categories: [package]
 tags:
   - processx
@@ -12,6 +13,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/PtgLGdMzi-Y
   author: Adam Sherez
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

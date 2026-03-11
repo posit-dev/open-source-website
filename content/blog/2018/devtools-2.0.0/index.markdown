@@ -2,7 +2,8 @@
 title: devtools 2.0.0
 date: 2018-10-30
 slug: devtools-2-0-0
-author: Jim Hester
+people:
+  - Jim Hester
 categories: [package]
 tags:
   - devtools
@@ -12,6 +13,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/wEJK4q_YlNQ
   author: Hunter Haley
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 ## Introduction

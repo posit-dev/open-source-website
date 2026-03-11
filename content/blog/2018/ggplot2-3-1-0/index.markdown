@@ -1,6 +1,8 @@
 ---
 title: 'ggplot2 3.1.0'
-author: Mara Averick and Claus Wilke
+people:
+  - Mara Averick
+  - Claus Wilke
 date: '2018-10-29'
 slug: ggplot2-3-1-0
 description: > 
@@ -13,6 +15,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/Ibq4B5iE_-4
   author: Stephan Henning
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

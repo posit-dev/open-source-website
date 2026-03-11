@@ -1,6 +1,7 @@
 ---
 title: forcats 0.5.0
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2020-03-02'
 slug: forcats-0-5-0
 description: >
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/YCPkW_r_6uA
   author: Jari Hytönen
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

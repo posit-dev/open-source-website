@@ -1,6 +1,7 @@
 ---
 title: bigrquery 1.1.0
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2019-02-15'
 slug: bigrquery-1-1-0
 description: > 
@@ -15,6 +16,9 @@ tags:
 photo:
   url: https://www.pexels.com/photo/green-and-red-abstract-painting-1070534/
   author: Steve Johnson
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

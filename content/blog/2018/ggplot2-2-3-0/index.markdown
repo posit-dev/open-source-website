@@ -1,6 +1,7 @@
 ---
 title: ggplot2 2.3.0 — upcoming release
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2018-05-21'
 slug: ggplot2-2-3-0
 description: >
@@ -12,6 +13,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/OhQhkkVJYhI
   author: chuttersnap
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

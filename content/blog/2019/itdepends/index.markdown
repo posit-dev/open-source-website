@@ -4,7 +4,8 @@ slug: itdepends
 description: >
     It depends - A dialog about dependencies
 date: 2019-05-29
-author: Jim Hester
+people:
+  - Jim Hester
 photo:
   url: https://unsplash.com/photos/24bzOuENxHc
   author: Ariana Prestes
@@ -12,6 +13,9 @@ categories: [programming]
 tags:
   - itdepends
   - r-lib
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

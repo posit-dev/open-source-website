@@ -2,7 +2,8 @@
 title: discrim 0.0.1
 date: 2019-10-17
 slug: discrim-0-0-1
-author: Max Kuhn
+people:
+  - Max Kuhn
 categories: [package]
 tags:
   - discrim
@@ -12,6 +13,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/4op9_2Bt2Eg
   author: Teo Duldulao
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

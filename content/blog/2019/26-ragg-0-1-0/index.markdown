@@ -1,6 +1,7 @@
 ---
 title: ragg 0.1.0
-author: Thomas Lin Pedersen
+people:
+  - Thomas Lin Pedersen
 date: '2019-07-15'
 slug: ragg-0-1-0
 description: >
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/sBkK2VWV8Kw
   author: Gordon Williams
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

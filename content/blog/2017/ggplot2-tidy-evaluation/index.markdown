@@ -2,7 +2,8 @@
 title: Tidy evaluation in ggplot2
 date: '2018-07-24'
 slug: ggplot2-tidy-evaluation
-author: Mara Averick
+people:
+  - Mara Averick
 categories: [package]
 tags:
   - ggplot2
@@ -12,6 +13,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/8KfCR12oeUM
   author: Christopher Burns
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

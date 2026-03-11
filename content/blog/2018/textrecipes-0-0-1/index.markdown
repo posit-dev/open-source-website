@@ -1,6 +1,7 @@
 ---
 title: 'textrecipes 0.0.1'
-author: Emil Hvitfeldt
+people:
+  - Emil Hvitfeldt
 date: '2018-12-26'
 slug: textrecipes-0-0-1
 description: >
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/X1exjxxBho4
   author: Roman Kraft
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

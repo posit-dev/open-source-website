@@ -1,7 +1,8 @@
 ---
 title: gmailr v1.0.0
 slug: gmailr-1-0-0
-author: Jim Hester
+people:
+  - Jim Hester
 description: >
   gmailr v1.0.0 is on CRAN.
 date: '2019-08-26'
@@ -12,6 +13,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/fb7yNPbT0l8
   author: Mathyas Kurmann
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

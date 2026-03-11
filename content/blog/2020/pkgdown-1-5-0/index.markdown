@@ -1,6 +1,7 @@
 ---
 title: pkgdown 1.5.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2020-03-25'
 slug: pkgdown-1-5-0
 photo:
@@ -11,6 +12,9 @@ categories:
 tags:
   - pkgdown
   - web
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 We're well chuffed to announce that [pkgdown](https://pkgdown.r-lib.org/) 1.5.0 is now available on CRAN. pkgdown is designed to make it quick and easy to build a website for your package. Install it with:

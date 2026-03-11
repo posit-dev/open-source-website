@@ -1,6 +1,7 @@
 ---
 title: hardhat 0.1.0
-author: Davis Vaughan
+people:
+  - Davis Vaughan
 date: '2019-12-16'
 slug: hardhat-0-1-0
 description: 
@@ -15,6 +16,9 @@ tags:
 photo: 
   url: https://unsplash.com/photos/YSxcf6C_SEg
   author: Silvia Brazzoduro
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

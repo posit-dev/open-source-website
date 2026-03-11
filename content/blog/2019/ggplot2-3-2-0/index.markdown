@@ -1,6 +1,7 @@
 ---
 title: 'ggplot2 3.2.0'
-author: Thomas Lin Pedersen
+people:
+  - Thomas Lin Pedersen
 date: '2019-06-16'
 slug: ggplot2-3-2-0
 description: >
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/eH_ftJYhaTY
   author: chuttersnap
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

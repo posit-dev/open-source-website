@@ -1,6 +1,7 @@
 ---
 title: 'ggplot2 3.0.0: community posts'
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2018-08-09'
 slug: ggplot2-community-posts
 categories:
@@ -13,6 +14,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/TZCppMjaOHU
   author: William White
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 ggplot2 3.0.0 has more changes and features than we could possibly cover in our [release announcement](https://www.tidyverse.org/articles/2018/07/ggplot2-3-0-0/#new-features). So, we asked you (the community) to share _your_ posts with us during the month following its release. 

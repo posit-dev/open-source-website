@@ -4,7 +4,8 @@ slug: httr-1-4-0
 description: > 
   httr 1.4.0 is now on CRAN!
 date: '2018-12-18'
-author: Mara Averick
+people:
+  - Mara Averick
 photo:
   url: https://unsplash.com/photos/0JhaVZUowWU
   author: Chris Yang
@@ -13,6 +14,9 @@ categories:
 tags:
   - httr
   - r-lib
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 We're well pleased to announce the release of [httr](https://httr.r-lib.org/) 1.4.0. The goal of httr is to provide a wrapper for the [curl](https://CRAN.R-project.org/package=curl) package, customised to the demands of modern web APIs.

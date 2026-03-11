@@ -1,7 +1,8 @@
 ---
 title: googledrive v1.0.0
 slug: googledrive-1-0-0
-author: Jenny Bryan
+people:
+  - Jenny Bryan
 description: >
   googledrive v1.0.0 is on CRAN.
 date: '2019-08-20'
@@ -12,6 +13,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/8EzNkvLQosk
   author: Maarten van den Heuvel
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

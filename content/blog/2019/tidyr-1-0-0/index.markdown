@@ -1,6 +1,7 @@
 ---
 title: tidyr 1.0.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2019-09-13'
 slug: tidyr-1-0-0
 categories:
@@ -11,6 +12,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/0yL6nXhn0pI
   author: Victor Garcia
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

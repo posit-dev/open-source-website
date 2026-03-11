@@ -1,6 +1,7 @@
 ---
 title: "scales 1.0.0"
-author: Dana Seidel
+people:
+  - Dana Seidel
 date: '2018-08-09'
 slug: scales-1-0-0
 description: >
@@ -14,6 +15,9 @@ tags:
   - scales
   - ggplot2
   - r-lib
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

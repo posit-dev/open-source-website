@@ -1,6 +1,7 @@
 ---
 title: broom 0.5.0
-author: Alex Hayes
+people:
+  - Alex Hayes
 date: "2018-07-17"
 slug: broom-0-5-0
 description: > 
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/vYcH7pI6v1Q
   author: Nagesh Badu
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

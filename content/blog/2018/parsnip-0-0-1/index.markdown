@@ -2,7 +2,8 @@
 title: parsnip
 date: 2018-11-28
 slug: parsnip-0-0-1
-author: Max Kuhn
+people:
+  - Max Kuhn
 categories: [package]
 tags:
   - parsnip
@@ -12,6 +13,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/ahB6ZhxHRtk
   author: rawpixel
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

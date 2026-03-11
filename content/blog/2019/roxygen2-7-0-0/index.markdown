@@ -1,6 +1,7 @@
 ---
 title: roxygen2 7.0.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2019-11-12'
 slug: roxygen2-7-0-0
 categories:
@@ -14,6 +15,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/8XddFc6NkBY
   author: Art Lasovsky
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 We're exceedingly happy to announce the release of [roxygen2 7.0.0](https://roxygen2.r-lib.org). roxygen2 allows you to write specially formatted R comments that generate R documentation files (`man/*.Rd`) and a `NAMESPACE` file. roxygen2 is used by over 8,000 CRAN packages.

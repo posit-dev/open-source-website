@@ -1,6 +1,9 @@
 ---
 title: "How parsnip works"
-author: Max Kuhn, Davis Vaughan, Alex Hayes
+people:
+  - Max Kuhn
+  - Davis Vaughan
+  - Alex Hayes
 date: '2019-04-30'
 output: pdf_document
 description: |
@@ -13,6 +16,9 @@ categories: [package]
 tags:
   - parsnip
   - tidymodels
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

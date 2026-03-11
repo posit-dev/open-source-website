@@ -1,6 +1,7 @@
 ---
 title: stringr 1.4.0
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2019-02-21'
 slug: stringr-1-4-0
 description: >
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/o-d37kiKqqc
   author: Maranda Vandergriff
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

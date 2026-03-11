@@ -1,6 +1,7 @@
 ---
 title: 'lobstr 1.0.0'
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2018-12-21'
 slug: lobstr
 description: > 
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/BmjuEqM4YOY
   author: Toa Heftiba
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

@@ -4,7 +4,8 @@ slug: usethis-1.5.0
 description: >
     usethis 1.5.0 is now on CRAN.
 date: 2019-04-09
-author: Jenny Bryan
+people:
+  - Jenny Bryan
 photo:
   url: https://unsplash.com/photos/MPu7kSboG8E
   author: Philip Veater
@@ -12,6 +13,9 @@ categories: [package]
 tags:
   - usethis
   - r-lib
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

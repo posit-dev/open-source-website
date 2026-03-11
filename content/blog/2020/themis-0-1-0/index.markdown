@@ -1,6 +1,7 @@
 ---
 title: themis 0.1.0
-author: Emil Hvitfeldt
+people:
+  - Emil Hvitfeldt
 date: '2020-02-11'
 slug: themis-0-1-0
 description: 
@@ -12,6 +13,9 @@ tags: [tidymodels, themis]
 photo: 
   url: https://unsplash.com/photos/RtDwtRDvYQg
   author: Roman Kraft
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

@@ -2,7 +2,8 @@
 title: roxygen2 6.1.0
 date: 2018-08-07
 slug: roxygen2-6-1-0
-author: Mara Averick
+people:
+  - Mara Averick
 categories: [package]
 tags:
   - roxygen2
@@ -12,6 +13,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/3KEJMfoHoMY
   author: Graeme Nicholl
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

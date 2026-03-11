@@ -2,7 +2,8 @@
 title: rlang 0.3.0
 date: 2018-10-29
 slug: rlang-0-3-0
-author: Lionel Henry
+people:
+  - Lionel Henry
 categories: [package]
 tags:
   - rlang
@@ -12,6 +13,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/nI7knd5sQfo
   author: Brandon Siu
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

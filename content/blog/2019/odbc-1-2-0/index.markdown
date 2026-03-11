@@ -1,6 +1,7 @@
 ---
 title: odbc 1.2.0
-author: Jim Hester
+people:
+  - Jim Hester
 date: '2019-12-02'
 slug: odbc-1-2-0
 description: >
@@ -12,6 +13,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/40XgDxBfYXM
   author: Photo by Jordan Harrison
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 odbc 1.2.0 is now on CRAN! The odbc package provides a [DataBase Interface (DBI)](https://dbi.r-dbi.org/) to [Open DataBase Connectivity (ODBC)](https://en.wikipedia.org/wiki/Open_Database_Connectivity) drivers.

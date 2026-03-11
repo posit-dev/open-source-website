@@ -1,7 +1,10 @@
 ---
 title: tidymodels updates
 slug: tidymodels-2019-09
-author: Max Kuhn, Edgar Ruiz, and Davis Vaughan 
+people:
+  - Max Kuhn
+  - Edgar Ruiz
+  - Davis Vaughan
 description: The latest updates to the tidymodels packages
 date: '2019-09-05'
 categories: [package]
@@ -17,6 +20,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/rqIfy1UyIzE
   author: Branden Harvey
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 We've sent a few packages to CRAN recently. Here's a recap of the changes (and some notes at the bottom): 

@@ -1,6 +1,7 @@
 ---
 title: dtplyr 1.0.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2019-11-12'
 slug: dtplyr-1-0-0
 description: |
@@ -15,6 +16,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/h13Y8vyIXNU
   author: Jay Ruzesky
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: forcats 0.4.0
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2019-05-10'
 slug: forcats-0-4-0
 description: > 
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://www.pexels.com/photo/close-up-photo-of-a-hand-holding-three-white-kittens-1643456/
   author: Peng Louis
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

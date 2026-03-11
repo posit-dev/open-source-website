@@ -2,7 +2,9 @@
 title: generics 0.0.1
 date: 2018-11-14
 slug: generics-0.0.1
-author: Max Kuhn, Davis Vaughan
+people:
+  - Max Kuhn
+  - Davis Vaughan
 categories: [package]
 tags:
   - generics
@@ -12,6 +14,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/9GMO0Sxyw_Y
   author: Jonathan Knepper
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: vroom 1.1.0
-author: Jim Hester
+people:
+  - Jim Hester
 date: '2020-01-15'
 slug: vroom-1-1-0
 description: vroom 1.1.0 is now on CRAN!
@@ -10,6 +11,9 @@ tags: [package, r-lib, vroom]
 photo:
   url: https://www.pexels.com/photo/12801/
   author: Chris Peeters
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

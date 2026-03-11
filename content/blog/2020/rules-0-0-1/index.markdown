@@ -4,7 +4,8 @@ slug: rules-0-0-1
 description: >
     The rules package is on CRAN and enables rule-based models for tidymodels.
 date: 2020-05-21
-author: Max Kuhn
+people:
+  - Max Kuhn
 photo:
   url: https://unsplash.com/photos/lu15z1m_KfM
   author: Lili Popper
@@ -13,6 +14,9 @@ categories:
 tags:
   - tidymodels
   - rules
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

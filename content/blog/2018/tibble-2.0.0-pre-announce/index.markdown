@@ -2,7 +2,9 @@
 title: "Coming soon: tibble 2.0.0"
 date: 2018-11-28
 slug: tibble-2.0.0-pre-announce
-author: Kirill Müller, Jenny Bryan
+people:
+  - Kirill Müller
+  - Jenny Bryan
 categories: [package]
 tags:
   - tibble
@@ -12,6 +14,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/yYawh30qf28
   author: Gabriel Porras
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: testthat 2.3.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2019-11-06'
 slug: testthat-2-3-0
 categories:
@@ -13,6 +14,9 @@ photo:
   url: https://unsplash.com/photos/n_vD-7RxA3Q
   author: Roman Kraft
 
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

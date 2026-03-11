@@ -1,6 +1,7 @@
 ---
 title: 'Tidyverse dev day at useR! 2019'
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2019-04-24'
 slug: tidyverse-dev-day-at-user-2019
 description: > 
@@ -11,6 +12,9 @@ tags: [tidyverse-dev-day]
 photo:
   url: https://photos.app.goo.gl/g5Fj6GmHVXZhTsPj8
   author: JD Long
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 Our first [tidyverse developer day](https://www.tidyverse.org/articles/2018/11/tidyverse-developer-day-2019/), held after rstudio::conf(2019), was a great success. We're excited to announce that we'll be holding another one -- this time the day before the start of useR! 2019 in Toulouse, France (__Monday, July 8th__).

@@ -1,6 +1,7 @@
 ---
 title: roxygen2 7.1.0
-author: Gábor Csárdi
+people:
+  - Gábor Csárdi
 date: '2020-03-11'
 slug: roxygen2-7-1-0
 categories:
@@ -14,6 +15,9 @@ tags:
 photo:
   url: https://pixabay.com/photos/fabric-wool-textile-texture-1031932/
   author: John Perrett
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 We're chuffed to announce the release of [roxygen2 7.1.0](https://roxygen2.r-lib.org).

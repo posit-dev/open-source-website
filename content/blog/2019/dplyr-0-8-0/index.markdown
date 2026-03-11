@@ -1,6 +1,7 @@
 ---
 title: dplyr 0.8.0
-author: Romain François
+people:
+  - Romain François
 date: '2019-02-15'
 slug: dplyr-0-8-0
 description: >
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/-WAiyQLGEEc
   author: Element5 Digital
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

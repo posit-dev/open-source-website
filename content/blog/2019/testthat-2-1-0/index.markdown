@@ -1,6 +1,7 @@
 ---
 title: testthat 2.1.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2019-04-23'
 slug: testthat-2-1-0
 description: Highlights include that `context()` is now optional, and 
@@ -11,6 +12,9 @@ tags: [testthat, r-lib]
 photo:
   url: https://www.pexels.com/photo/38070/
   author: Skitterphoto
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

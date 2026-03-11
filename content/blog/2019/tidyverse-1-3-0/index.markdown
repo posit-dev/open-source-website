@@ -1,6 +1,7 @@
 ---
 title: tidyverse 1.3.0
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2019-11-22'
 slug: tidyverse-1-3-0
 description: > 
@@ -12,6 +13,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/TIrXot28Znc
   author: Juskteez Vu
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 <html>

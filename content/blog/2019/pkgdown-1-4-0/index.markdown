@@ -1,6 +1,7 @@
 ---
 title: pkgdown 1.4.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2019-09-05'
 slug: pkgdown-1-4-0
 photo:
@@ -11,6 +12,9 @@ categories:
 tags:
   - pkgdown
   - r-lib
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 We're happy to announce that [pkgdown](https://pkgdown.r-lib.org/) 1.4.0 is now

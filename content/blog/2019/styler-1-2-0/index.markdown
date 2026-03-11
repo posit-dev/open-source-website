@@ -1,6 +1,7 @@
 ---
 title: "styler 1.2.0"
-author: "Lorenz Walthert"
+people:
+  - Lorenz Walthert
 date: '2019-11-04'
 description: |
   A major update of the styler package is available on CRAN now.
@@ -12,6 +13,9 @@ categories: ["package"]
 tags:
   - styler
   - r-lib
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: "tidyverse and r-lib: a year in review"
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2018-12-17'
 slug: tidyverse-and-r-lib-year-in-review
 description: > 
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/SshYpuf607g
   author: Aperture Vintage
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 It's been a banner year for the tidyverse and r-lib teams, and, as we close out 2018, we wanted to take a look back at some of our achievements.

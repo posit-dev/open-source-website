@@ -1,6 +1,7 @@
 ---
 title: The tidymodels Package
-author: Max Kuhn
+people:
+  - Max Kuhn
 date: '2018-08-06'
 slug: tidymodels-0-0-1
 description: > 
@@ -12,6 +13,9 @@ tags:
 photo:
   url: https://github.com/tidymodels
   author: tidymodels
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

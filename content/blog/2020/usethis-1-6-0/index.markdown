@@ -1,6 +1,7 @@
 ---
 title: usethis 1.6.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2020-04-11'
 slug: usethis-1-6-0
 categories:
@@ -11,6 +12,9 @@ tags:
 photo:
   author: Rock'n Roll Monkey
   url: https://unsplash.com/photos/R4WCbazrD1g
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: More 2020 tidy dev days!
-author: 'Mara Averick'
+people:
+  - Mara Averick
 date: '2020-02-28'
 slug: tidy-dev-days-2020
 description: > 
@@ -11,6 +12,9 @@ tags:
   - tidyverse-dev-day
 photo:
   author: Max Kuhn
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 ## Post-rstudio::conf(2020) dev day

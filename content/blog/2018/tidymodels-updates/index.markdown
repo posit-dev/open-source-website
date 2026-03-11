@@ -2,7 +2,10 @@
 title: tidymodels package updates
 date: 2018-11-29
 slug: tidymodels-update-nov-18
-author: Max Kuhn, Davis Vaughan, Alex Hayes
+people:
+  - Max Kuhn
+  - Davis Vaughan
+  - Alex Hayes
 categories: [package]
 tags:
   - recipes
@@ -15,6 +18,9 @@ description: >
 photo:
   url: https://unsplash.com/photos/O6N9RV2rzX8
   author: Jeremy Thomas
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

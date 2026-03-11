@@ -1,6 +1,7 @@
 ---
 title: 'pkgdown 1.3.0'
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2018-12-10'
 slug: pkgdown-1-3-0
 description: > 
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://pixabay.com/en/decoration-packages-gifts-ribbons-3229259/
   author: jackmac34
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

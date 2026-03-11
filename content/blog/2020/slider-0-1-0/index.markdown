@@ -1,6 +1,7 @@
 ---
 title: slider 0.1.0
-author: Davis Vaughan
+people:
+  - Davis Vaughan
 date: '2020-02-10'
 slug: slider-0-1-0
 description: 
@@ -13,6 +14,9 @@ tags:
 photo: 
   url: https://unsplash.com/photos/6RLa-tC7y0I
   author: Arie Wubben
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

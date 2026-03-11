@@ -1,6 +1,7 @@
 ---
 title: 'Tidyverse developer day 2019'
-author: Mara Averick
+people:
+  - Mara Averick
 date: '2018-11-28'
 slug: tidyverse-developer-day-2019
 description: > 
@@ -11,6 +12,9 @@ tags: [tidyverse-dev-day]
 photo:
   url: https://unsplash.com/photos/yB5cYEq7y2U
   author: fancycrave
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

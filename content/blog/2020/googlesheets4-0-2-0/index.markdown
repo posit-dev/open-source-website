@@ -1,6 +1,7 @@
 ---
 title: googlesheets4 0.2.0
-author: Jenny Bryan
+people:
+  - Jenny Bryan
 date: '2020-05-10'
 slug: googlesheets4-0-2-0
 categories:
@@ -11,6 +12,9 @@ tags:
 photo:
   author: Stephane YAICH
   url: https://unsplash.com/photos/ufxd6aU0w9U
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

@@ -4,7 +4,8 @@ slug: readxl-1-2-0
 description: > 
   readxl 1.2.0 is now on CRAN.
 date: '2018-12-20'
-author: Jenny Bryan
+people:
+  - Jenny Bryan
 photo:
   url: https://twitter.com/Thoughtfulnz/status/987900521309614080
   author: David Hood
@@ -13,6 +14,9 @@ categories:
 tags:
   - readxl
   - tidyverse
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

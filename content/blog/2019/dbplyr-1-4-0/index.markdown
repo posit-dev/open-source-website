@@ -1,6 +1,7 @@
 ---
 title: dbplyr 1.4.0
-author: Hadley Wickham
+people:
+  - Hadley Wickham
 date: '2019-04-30'
 slug: dbplyr-1-4-0
 categories:
@@ -12,6 +13,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/JuFcQxgCXwA
   author: Samuel Zeller
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

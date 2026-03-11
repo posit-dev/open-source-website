@@ -1,6 +1,7 @@
 ---
 title: dplyr 0.8.0 release candidate
-author: Romain François
+people:
+  - Romain François
 date: '2018-12-03'
 slug: dplyr-0-8-0-release-candidate
 description: > 
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/kU-WKSyTcp4
   author: Pau Casals
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 <style>

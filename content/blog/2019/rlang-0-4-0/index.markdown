@@ -1,6 +1,7 @@
 ---
 title: 'rlang 0.4.0'
-author: Lionel Henry
+people:
+  - Lionel Henry
 date: '2019-06-27'
 slug: rlang-0-4-0
 description: >
@@ -13,6 +14,9 @@ tags:
 photo:
   url: https://unsplash.com/photos/ar7ZWQ-r87g
   author: Caitlin Wynne
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 

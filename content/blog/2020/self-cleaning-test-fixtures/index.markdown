@@ -1,6 +1,7 @@
 ---
 title: Self-cleaning test fixtures
-author: Jenny Bryan
+people:
+  - Jenny Bryan
 date: '2020-04-27'
 slug: self-cleaning-test-fixtures
 categories:
@@ -14,6 +15,9 @@ description: |
 photo:
   url: https://twitter.com/MariannaFoos
   author: Marianna Foos
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
 ---
 
 
