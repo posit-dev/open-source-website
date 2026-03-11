@@ -2,6 +2,7 @@
 description: Easy interactive web applications with R
 github: rstudio/shiny
 image: shiny-r.png
+color: "#4388C6"
 languages:
 - R
 latest_release: '2026-02-24T20:58:46+00:00'

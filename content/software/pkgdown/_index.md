@@ -2,6 +2,7 @@
 description: Generate static html documentation for an R package
 github: r-lib/pkgdown
 image: logo.png
+color: "#A57F61"
 languages:
 - R
 latest_release: '2025-11-05T16:48:34+00:00'

@@ -2,6 +2,7 @@
 description: Tools for theming Shiny and R Markdown via Bootstrap 3, 4, or 5.
 github: rstudio/bslib
 image: logo.png
+color: "#2C0A33"
 languages:
 - SCSS
 latest_release: '2026-01-26T16:25:01+00:00'

@@ -2,6 +2,7 @@
 description: Make websites with hugo and RMarkdown
 github: r-lib/hugodown
 image: logo.png
+color: "#AC3914"
 languages:
 - R
 people:

@@ -2,6 +2,7 @@
 description: A drop-in replacement for dplyr, powered by DuckDB for speed.
 github: tidyverse/duckplyr
 image: logo.png
+color: "#FBEB1E"
 languages:
 - R
 latest_release: '2026-02-24T22:07:23+00:00'

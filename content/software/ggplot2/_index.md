@@ -2,6 +2,7 @@
 description: An implementation of the Grammar of Graphics in R
 github: tidyverse/ggplot2
 image: ggplot2.png
+color: "#3D454E"
 languages:
 - R
 latest_release: '2026-02-02T09:41:41+00:00'

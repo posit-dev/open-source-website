@@ -2,6 +2,7 @@
 description: Generic programming with typed R vectors
 github: r-lib/vctrs
 image: logo.png
+color: "#252B4D"
 languages:
 - C
 latest_release: '2026-01-27T14:09:03+00:00'

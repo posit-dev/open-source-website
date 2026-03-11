@@ -2,6 +2,7 @@
 description: 'dplyr: A grammar of data manipulation'
 github: tidyverse/dplyr
 image: dplyr.png
+color: "#D84B3A"
 languages:
 - R
 latest_release: '2026-02-04T11:30:38+00:00'

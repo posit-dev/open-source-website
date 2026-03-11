@@ -2,6 +2,7 @@
 description: Fast reading of delimited files
 github: tidyverse/vroom
 image: logo.png
+color: "#096EF9"
 languages:
 - C++
 latest_release: '2026-01-25T17:49:54+00:00'

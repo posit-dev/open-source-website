@@ -2,6 +2,7 @@
 description: Read SPSS, Stata and SAS files from R
 github: tidyverse/haven
 image: logo.png
+color: "#14497F"
 languages:
 - C
 latest_release: '2025-05-30T13:08:26+00:00'

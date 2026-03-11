@@ -2,6 +2,7 @@
 description: A Date-Time Library for R
 github: r-lib/clock
 image: logo.png
+color: "#046D0C"
 languages:
 - R
 latest_release: '2026-01-13T16:12:36+00:00'

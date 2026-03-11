@@ -2,6 +2,7 @@
 description: Tools for tidy parameter tuning
 github: tidymodels/tune
 image: logo.png
+color: "#A545B6"
 languages:
 - R
 latest_release: '2025-10-17T15:54:07+00:00'

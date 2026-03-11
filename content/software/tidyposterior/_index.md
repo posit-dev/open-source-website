@@ -2,6 +2,7 @@
 description: Bayesian comparisons of models using resampled statistics
 github: tidymodels/tidyposterior
 image: logo.png
+color: "#D7B79F"
 languages:
 - R
 latest_release: '2025-07-30T23:43:16+00:00'

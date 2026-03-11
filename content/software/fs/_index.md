@@ -2,6 +2,7 @@
 description: Provide cross platform file operations based on libuv.
 github: r-lib/fs
 image: logo.png
+color: "#53366B"
 languages:
 - C
 latest_release: '2025-04-12T09:38:14+00:00'

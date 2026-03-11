@@ -2,6 +2,7 @@
 description: Positron, a next-generation data science IDE
 github: posit-dev/positron
 image: positron.png
+color: "#3C74B3"
 languages:
 - TypeScript
 latest_release: '2026-02-26T00:19:35+00:00'

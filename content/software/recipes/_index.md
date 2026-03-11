@@ -3,6 +3,7 @@ description: Pipeable steps for feature engineering and data preprocessing to pr
   for modeling
 github: tidymodels/recipes
 image: logo.png
+color: "#311307"
 languages:
 - R
 latest_release: '2025-05-21T17:05:49+00:00'

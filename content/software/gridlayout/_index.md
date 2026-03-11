@@ -2,6 +2,7 @@
 description: Package for setting up CSS grid layouts in Shiny apps or RMarkdown documents
 github: rstudio/gridlayout
 image: geyser_demo.png
+color: "#26405F"
 languages:
 - HTML
 people:

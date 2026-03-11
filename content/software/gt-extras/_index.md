@@ -2,6 +2,7 @@
 description: A Collection of Helper Functions for the great-tables Package.
 github: posit-dev/gt-extras
 image: 2011-nfl-season.png
+color: "#14177E"
 languages:
 - Python
 latest_release: '2025-08-18T16:34:42+00:00'

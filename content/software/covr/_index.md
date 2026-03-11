@@ -2,6 +2,7 @@
 description: Test coverage reports for R
 github: r-lib/covr
 image: logo.png
+color: "#DA2229"
 languages:
 - R
 latest_release: '2022-08-24T14:15:38+00:00'

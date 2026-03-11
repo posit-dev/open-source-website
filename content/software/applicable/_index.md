@@ -2,6 +2,7 @@
 description: Quantify extrapolation of new samples given a training set
 github: tidymodels/applicable
 image: logo.png
+color: "#62BC3D"
 languages:
 - R
 latest_release: '2026-02-26T03:05:08+00:00'

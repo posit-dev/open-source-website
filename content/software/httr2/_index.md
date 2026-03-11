@@ -3,6 +3,7 @@ description: Make HTTP requests and process their responses. A modern reimaginin
   of httr.
 github: r-lib/httr2
 image: logo.png
+color: "#BA1A47"
 languages:
 - R
 latest_release: '2025-12-05T17:45:53+00:00'

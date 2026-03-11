@@ -3,6 +3,7 @@ description: Your friendly guide to building LLM chat apps in Python with less e
   and more clarity.
 github: posit-dev/chatlas
 image: logo.png
+color: "#485A5C"
 languages:
 - Python
 latest_release: '2026-02-27T15:13:17+00:00'

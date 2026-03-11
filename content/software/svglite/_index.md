@@ -2,6 +2,7 @@
 description: A lightweight svg graphics device for R
 github: r-lib/svglite
 image: logo.png
+color: "#F8B13B"
 languages:
 - C++
 latest_release: '2025-10-20T15:57:02+00:00'

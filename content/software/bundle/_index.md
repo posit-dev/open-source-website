@@ -2,6 +2,7 @@
 description: Prepare objects for serialization with a consistent interface
 github: rstudio/bundle
 image: diagram_04.png
+color: "#A98B80"
 languages:
 - R
 latest_release: '2025-12-10T20:15:43+00:00'

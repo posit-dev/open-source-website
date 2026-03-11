@@ -3,6 +3,7 @@ description: Swagger is a collection of HTML, Javascript, and CSS assets that dy
   generate beautiful documentation from a Swagger-compliant API.
 github: rstudio/swagger
 image: browse_swagger.png
+color: "#375852"
 languages:
 - HTML
 latest_release: '2024-06-29T17:13:31+00:00'

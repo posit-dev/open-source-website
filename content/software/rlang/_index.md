@@ -2,6 +2,7 @@
 description: Low-level API for programming with R
 github: r-lib/rlang
 image: logo.png
+color: "#D8B243"
 languages:
 - R
 latest_release: '2025-12-15T14:22:46+00:00'

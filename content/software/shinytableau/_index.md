@@ -2,6 +2,7 @@
 description: Extend Tableau dashboards using Shiny
 github: rstudio/shinytableau
 image: screenshot.png
+color: "#2F333F"
 languages:
 - JavaScript
 people:

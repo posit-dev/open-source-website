@@ -2,6 +2,7 @@
 description: Tidy methods for measuring model performance
 github: tidymodels/yardstick
 image: logo.png
+color: "#DB1E25"
 languages:
 - R
 latest_release: '2025-01-22T22:13:45+00:00'

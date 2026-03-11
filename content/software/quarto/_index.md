@@ -2,6 +2,7 @@
 description: Open-source scientific and technical publishing system built on Pandoc.
 github: quarto-dev/quarto-cli
 image: quarto.png
+color: "#74ACDC"
 languages:
 - JavaScript
 - Python

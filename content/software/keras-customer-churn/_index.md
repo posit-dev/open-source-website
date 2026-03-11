@@ -2,6 +2,7 @@
 description: Customer Churn Shiny Application
 github: rstudio/keras-customer-churn
 image: customer_churn.png
+color: "#326CBA"
 languages:
 - R
 people:

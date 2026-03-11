@@ -2,6 +2,7 @@
 description: 🖍️ R package for colored terminal output — now superseded by cli
 github: r-lib/crayon
 image: 102484487-41cd2900-405e-11eb-87d4-65793ad9db6a.png
+color: "#FC04FC"
 languages:
 - R
 latest_release: '2024-06-20T11:48:46+00:00'

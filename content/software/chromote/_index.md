@@ -2,6 +2,7 @@
 description: Chrome Remote Interface for R
 github: rstudio/chromote
 image: logo.png
+color: "#0C3C84"
 languages:
 - R
 latest_release: '2025-04-24T12:46:38+00:00'

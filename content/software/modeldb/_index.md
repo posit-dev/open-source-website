@@ -2,6 +2,7 @@
 description: Run models inside a database using R
 github: tidymodels/modeldb
 image: logo.png
+color: "#1E619C"
 languages:
 - R
 latest_release: '2025-08-22T17:22:28+00:00'

@@ -2,6 +2,7 @@
 description: RStudio hex stickers
 github: rstudio/hex-stickers
 image: agua.png
+color: "#BA9A62"
 languages:
 - R
 people:

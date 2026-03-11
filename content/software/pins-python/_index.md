@@ -2,6 +2,7 @@
 description: ''
 github: rstudio/pins-python
 image: logo.png
+color: "#F1C8A2"
 languages:
 - Python
 latest_release: '2025-10-03T16:46:15+00:00'

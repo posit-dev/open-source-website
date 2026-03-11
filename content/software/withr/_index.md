@@ -2,6 +2,7 @@
 description: Methods For Temporarily Modifying Global State
 github: r-lib/withr
 image: logo.png
+color: "#3AAC60"
 languages:
 - R
 latest_release: '2024-10-28T10:59:02+00:00'

@@ -2,6 +2,7 @@
 description: R htmlwidget for Sortable.js
 github: rstudio/sortable
 image: logo.png
+color: "#5E95D1"
 languages:
 - R
 people:

@@ -3,6 +3,7 @@ description: Glue strings to data in R. Small, fast, dependency free interpreted
   literals.
 github: tidyverse/glue
 image: logo.png
+color: "#EB4C0B"
 languages:
 - R
 latest_release: '2024-09-27T15:59:19+00:00'

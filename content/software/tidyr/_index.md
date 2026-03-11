@@ -2,6 +2,7 @@
 description: Tidy Messy Data
 github: tidyverse/tidyr
 image: logo.png
+color: "#D0C615"
 languages:
 - R
 latest_release: '2026-01-09T14:13:04+00:00'

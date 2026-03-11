@@ -2,6 +2,7 @@
 description: Extra recipes steps for dealing with unbalanced data
 github: tidymodels/themis
 image: logo.png
+color: "#242C3C"
 languages:
 - R
 latest_release: '2025-01-22T23:40:45+00:00'
