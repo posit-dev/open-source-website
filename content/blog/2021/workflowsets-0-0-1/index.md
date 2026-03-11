@@ -18,7 +18,7 @@ categories: [package]
 tags: [tidymodels, workflowsets, tidyposterior, workflows, Bayesian analysis]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 

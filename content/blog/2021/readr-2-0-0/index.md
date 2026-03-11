@@ -16,7 +16,7 @@ categories:
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're thrilled to announce the release of [readr](https://readr.tidyverse.org/) 2.0.0!

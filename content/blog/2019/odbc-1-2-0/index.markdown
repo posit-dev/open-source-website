@@ -15,7 +15,7 @@ photo:
   author: Photo by Jordan Harrison
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 odbc 1.2.0 is now on CRAN! The odbc package provides a [DataBase Interface (DBI)](https://dbi.r-dbi.org/) to [Open DataBase Connectivity (ODBC)](https://en.wikipedia.org/wiki/Open_Database_Connectivity) drivers.

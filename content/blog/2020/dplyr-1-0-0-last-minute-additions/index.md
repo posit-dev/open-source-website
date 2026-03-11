@@ -23,7 +23,7 @@ photo:
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 Today I wanted to talk about two cool new features that we've added since I started blogging about dplyr 1.0.0: `summarise()` now gives you greater control over how the results are grouped, and a new set of functions make it easier to modify rows.

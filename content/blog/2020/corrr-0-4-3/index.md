@@ -19,7 +19,7 @@ categories: [package]
 tags: [corrr, tidymodels, correlation]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 <!--

@@ -18,7 +18,7 @@ tags: [dplyr]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're happy to announce the release of [dplyr](https://dplyr.tidyverse.org) 1.0.4, featuring: two new functions [`if_all()`](https://dplyr.tidyverse.org/reference/across.html) and [`if_any()`](https://dplyr.tidyverse.org/reference/across.html), and improved performance improvements of [`across()`](https://dplyr.tidyverse.org/reference/across.html).

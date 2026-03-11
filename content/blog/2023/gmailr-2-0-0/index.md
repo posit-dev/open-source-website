@@ -19,7 +19,7 @@ tags: [gmailr, gargle]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're chuffed to announce the release of [gmailr](https://gmailr.r-lib.org/) 2.0.0. gmailr exposes the [Gmail API](https://developers.google.com/gmail/api/guides) from R.

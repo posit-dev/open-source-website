@@ -17,7 +17,7 @@ tags: [dplyr]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 In this technical post, we'll dive into some performance improvements we've made to dplyr 1.2.0 to make [`if_else()`](https://dplyr.tidyverse.org/reference/if_else.html) and [`case_when()`](https://dplyr.tidyverse.org/reference/case-and-replace-when.html) up to 30x faster and use up to 10x less memory.

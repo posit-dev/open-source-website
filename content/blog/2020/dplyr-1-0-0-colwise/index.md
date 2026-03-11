@@ -22,7 +22,7 @@ photo:
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 Today, I wanted to talk a little bit about the new `across()` function that makes it easy to perform the same operation on multiple columns.

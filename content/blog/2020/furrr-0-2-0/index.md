@@ -13,7 +13,7 @@ categories: [package]
 tags: []
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're stoked to announce the release of [furrr](https://davisvaughan.github.io/furrr/) 0.2.0. furrr is a bridge between [purrr](https://purrr.tidyverse.org/)'s family of mapping functions and [future](https://cran.r-project.org/web/packages/future/index.html)'s parallel processing capabilities. It attempts to make mapping in parallel as seamless as possible.

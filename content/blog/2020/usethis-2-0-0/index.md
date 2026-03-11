@@ -17,7 +17,7 @@ tags: [devtools,r-lib,usethis]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're ecstatic to announce the release of usethis v2.0.0 ([usethis.r-lib.org](https://usethis.r-lib.org/)). usethis is a package that facilitates interactive workflows for R project creation and development. It's mostly focussed on easing day-to-day package development, but many of its functions are also useful for non-package projects.

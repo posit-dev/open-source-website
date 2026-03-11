@@ -18,7 +18,7 @@ categories: [package]
 tags: [parsnip, tidymodels,]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're happy to announce the release of [parsnip](https://parsnip.tidymodels.org/) 0.1.2. parsnip is a unified tidy interface to many modeling techniques. 

@@ -14,7 +14,7 @@ photo:
   author: Karine Germain
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 Summer conference season is in full swing, with [useR! 2018 Brisbane](https://user2018.r-project.org) nearly upon us!

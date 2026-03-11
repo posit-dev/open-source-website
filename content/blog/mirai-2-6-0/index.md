@@ -16,7 +16,7 @@ tags: [mirai, parallelism, r-lib]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 [mirai](https://mirai.r-lib.org) 2.6.0 is now on CRAN. mirai is R's framework for parallel and asynchronous computing. If you're fitting models, running simulations, or building Shiny apps, mirai lets you spread that work across multiple processes -- locally or on remote infrastructure.

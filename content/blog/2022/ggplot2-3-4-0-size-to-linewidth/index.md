@@ -18,7 +18,7 @@ categories: [deep-dive]
 tags: [ggplot2]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We are hard at work finishing the next release of ggplot2. While this release is mostly about internal changes, there are a few quite user visible changes as well. One of these upends the idea that the `size` aesthetic is responsible for *both* the sizing of point/text and the width of lines. With the next release we will have a `linewidth` aesthetic to take care of the latter, while `size` will continue handling the former.

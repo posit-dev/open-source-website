@@ -21,7 +21,7 @@ tags: []
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 At Posit, we strive to write high quality code to ensure that you, our users, have the best experience possible. We feel that the code review process plays a critical role in delivering quality products, and in developing the skills of newer contributors, and we decided to make that process explicit through a [tidyteam code review principles](https://code-review.tidyverse.org/) guide.

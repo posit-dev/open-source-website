@@ -19,7 +19,7 @@ tags: [rvest]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 I'm tickled pink to announce the release of [rvest](https://rvest.tidyverse.org) 1.0.0. rvest is designed to make it easy to scrape (i.e. harvest) data from HTML web pages.

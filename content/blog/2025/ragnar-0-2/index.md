@@ -14,7 +14,7 @@ categories: [package]
 tags: [ragnar, ai]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 # ragnar 0.2

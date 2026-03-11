@@ -21,7 +21,7 @@ tags: [r-lib, package, programming, yaml]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're excited to share our first tidyverse blog post for Rapp, alongside the `0.3.0` release. Rapp helps you turn R scripts into polished command-line tools, with argument parsing and help generation built in.

@@ -14,7 +14,7 @@ photo:
 categories: [package]
 tags: [ragnar, ai]
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 # ragnar 0.3.0

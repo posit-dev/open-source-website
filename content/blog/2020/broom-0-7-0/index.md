@@ -20,7 +20,7 @@ tags:
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're excited to announce the release of broom 0.7.0 on CRAN!

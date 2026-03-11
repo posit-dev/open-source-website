@@ -18,7 +18,7 @@ categories: [package]
 tags: [tidymodels,tune]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're pleased to announce the release of [tune](https://tune.tidymodels.org/) 0.1.1. tune is a tidy interface for optimizing model tuning parameters. 

@@ -18,7 +18,7 @@ tags: [googledrive]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're jazzed to announce the release of googledrive 2.0.0 (<https://googledrive.tidyverse.org>).

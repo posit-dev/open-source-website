@@ -21,7 +21,7 @@ categories: [package]
 tags: [tidymodels,postprocessing,parallel processing]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 

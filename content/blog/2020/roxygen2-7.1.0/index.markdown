@@ -17,7 +17,7 @@ photo:
   author: John Perrett
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're chuffed to announce the release of [roxygen2 7.1.0](https://roxygen2.r-lib.org).

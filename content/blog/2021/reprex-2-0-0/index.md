@@ -14,7 +14,7 @@ categories: [package]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're overjoyed to announce the release of [reprex](https://reprex.tidyverse.org) 2.0.0. reprex is a package that helps you prepare **REPR**oducible **EX**amples to share in places where people talk about code, e.g., on GitHub, on Stack Overflow, and in Slack or email messages.

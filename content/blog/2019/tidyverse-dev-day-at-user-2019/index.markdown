@@ -14,7 +14,7 @@ photo:
   author: JD Long
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 Our first [tidyverse developer day](https://www.tidyverse.org/articles/2018/11/tidyverse-developer-day-2019/), held after rstudio::conf(2019), was a great success. We're excited to announce that we'll be holding another one -- this time the day before the start of useR! 2019 in Toulouse, France (__Monday, July 8th__).

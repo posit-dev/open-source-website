@@ -13,7 +13,7 @@ photo:
 categories: [package]
 tags: [dplyr]
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 [dplyr 1.2.0](https://dplyr.tidyverse.org) is out now! This large release of dplyr comes with two sets of exciting features:

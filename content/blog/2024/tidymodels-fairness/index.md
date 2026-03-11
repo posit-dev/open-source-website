@@ -19,7 +19,7 @@ bibliography: refs.bib
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're very, very excited to announce the introduction of tools for assessing model fairness in tidymodels. This effort involved coordination from various groups at Posit over the course of over a year and resulted in a toolkit that we believe is both principled and impactful.

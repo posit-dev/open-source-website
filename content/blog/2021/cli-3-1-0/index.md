@@ -19,7 +19,7 @@ tags: []
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're very chuffed to announce the release of [cli](https://cli.r-lib.org "cli homepage") 3.1.0. cli helps you create a consistent and convenient command line interface.

@@ -19,7 +19,7 @@ tags: [tidyverse]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 We're exceedingly happy to announce the release of [lifecycle](http://lifecycle.r-lib.org/) 1.0.0. The tidyverse team uses the lifecycle package to manage the lifecycle of functions and features within the tidyverse, letting you know what's still experimental and what we're moving away from in the future.

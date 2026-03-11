@@ -19,7 +19,7 @@ tags: [usethis, devtools, testthat]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 <!--

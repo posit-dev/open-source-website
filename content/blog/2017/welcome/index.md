@@ -14,7 +14,7 @@ photo:
 categories: [other]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 Welcome to the new and improved tidyverse website. We are working hard to make tidyverse.org __the__ place to go to learn the tidyverse and to keep up to date with it as it evolves. We want <https://tidyverse.org> to be your one stop shop for everything tidy!

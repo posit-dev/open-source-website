@@ -19,7 +19,7 @@ categories: [package]
 tags: [svglite, graphic-device, graphics]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
-port_status: raw
+port_status: in-progress
 ---
 
 <style type='text/css'>
