@@ -13,6 +13,14 @@ Links between legacy blogs that need updating once both posts are ported.
 | shiny-python-1.0 | `https://shiny.posit.co/blog/posts/shiny-python-general-availability/` | Shiny blog |
 | shiny-python-1.0 | `https://shiny.posit.co/blog/posts/shiny-express/` | Shiny blog |
 
+## Broken legacy links
+
+Posts where slug doesn't match original - investigate when porting that blog:
+
+| Post | Issue |
+|------|-------|
+| sparklyr-updates-q1-2024 | AI blog original slug is `sparklyr-updates` not `sparklyr-updates-q1-2024` |
+
 ## Missing metadata
 
 To address in bulk after porting:
@@ -65,6 +73,17 @@ Split "Name1 and Name2" or "Name1, Name2, and Name3" into separate `people` entr
 Created stub shortcodes in `layouts/shortcodes/` (need implementation):
 - `test-drive-cloud.html` - used by `2023/purrr-walk-this-way`
 - `webr-init.html` / `webr-editor.html` - used by webr posts
+
+### .markdown files not processed by porting script
+
+83 `.markdown` files (2017-2020) were copied but not transformed. Fixed with `scripts/fix-markdown-files.sh` which:
+
+### .html files not processed by porting script
+
+41 `index.html` files (2017-2019) had YAML frontmatter but weren't transformed. Fixed with `scripts/fix-html-files.sh` which:
+- Converted `author:` to `people:`
+- Added `image: thumbnail-wd.jpg`
+- Added `ported_from: tidyverse` and `port_status: raw`
 
 ## Other observations
 

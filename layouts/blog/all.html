@@ -72,6 +72,11 @@
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
+            <th class="px-3 py-2 text-left">
+              <div class="flex items-center gap-1">
+                Legacy
+              </div>
+            </th>
             <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="port-status">
               <div class="flex items-center gap-1">
                 Status
@@ -211,6 +216,39 @@
                 <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
                   {{ . }}
                 </span>
+              {{ else }}
+                <span class="text-gray-400">-</span>
+              {{ end }}
+            </td>
+
+            <!-- Legacy Link -->
+            <td class="px-3 py-2">
+              {{- $page := . -}}
+              {{ with .Params.ported_from }}
+                {{- $slug := $page.File.ContentBaseName -}}
+                {{- if $page.Params.slug }}{{ $slug = $page.Params.slug }}{{ end -}}
+                {{- $year := $page.Date.Format "2006" -}}
+                {{- $month := $page.Date.Format "01" -}}
+                {{- $day := $page.Date.Format "02" -}}
+                {{- $url := "" -}}
+                {{ if eq . "tidyverse" }}
+                  {{- $url = printf "https://www.tidyverse.org/blog/%s/%s/%s/" $year $month $slug -}}
+                {{ else if eq . "ai" }}
+                  {{- $url = printf "https://blogs.rstudio.com/ai/posts/%s-%s-%s-%s/" $year $month $day $slug -}}
+                {{ else if eq . "shiny" }}
+                  {{- $url = printf "https://shiny.posit.co/blog/posts/%s/" $slug -}}
+                {{ else if eq . "quarto" }}
+                  {{- $url = printf "https://quarto.org/docs/blog/posts/%s/" $slug -}}
+                {{ else if eq . "education" }}
+                  {{- $url = printf "https://education.rstudio.com/blog/%s/%s/%s/" $year $month $slug -}}
+                {{ end }}
+                {{ if $url }}
+                  <a href="{{ $url }}" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline text-xs">
+                    View
+                  </a>
+                {{ else }}
+                  <span class="text-gray-400">-</span>
+                {{ end }}
               {{ else }}
                 <span class="text-gray-400">-</span>
               {{ end }}
