@@ -171,7 +171,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $software }}
-    {{ partial "card.html" (dict "page" .) }}
+      {{ partial "card.html" (dict "page" .) }}
     {{ end }}
   </div>
   {{ end }}
@@ -195,7 +195,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $events }}
-    {{ partial "card.html" (dict "page" .) }}
+      {{ partial "card.html" (dict "page" .) }}
     {{ end }}
   </div>
   {{ end }}
@@ -222,26 +222,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $combined.ByDate.Reverse }}
-    {{ if eq .Section "resources" }}
-    {{ partial "card.html" (dict "page" .) }}
-    {{ else }}
-    <article class="flex flex-col rounded-lg overflow-hidden shadow-md bg-white dark:bg-blue-950">
-      <div>
-        <a href="{{ .RelPermalink }}">
-          {{ partial "block/image.html" . }}
-        </a>
-      </div>
-      <div class="flex flex-col gap-y-3 p-6">
-        <h3 class="text-3xl font-medium text-gray-800 dark:text-gray-200">
-          <a href="{{ .RelPermalink }}">{{ .Title | .RenderString }}</a>
-        </h3>
-
-        {{ partial "block/desc.html" . }}
-        {{ partial "block/taxonomies.html" . }}
-        {{ partial "block/time.html" . }}
-      </div>
-    </article>
-    {{ end }}
+      {{ partial "card.html" (dict "page" .) }}
     {{ end }}
   </div>
   {{ end }}
