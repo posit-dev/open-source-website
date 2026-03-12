@@ -1,43 +1,55 @@
 blog:
-  badge_text: "blog post"
   badge_icon: "boxicons--message-filled"
-  image_class: "w-full object-cover"
+  badge_text: "blog post"
   card_class: "bg-gray-100/25"
+  image_class: "w-full object-cover"
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
 
 cheatsheets:
-  badge_text: "cheatsheet"
   badge_icon: "boxicons--file-code-filled"
-  image_class: "w-full object-cover"
+  badge_text: "cheatsheet"
   card_class: "bg-gray-100/25"
+  image_class: "w-full object-cover"
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
 
 events:
-  badge_text: "event"
   badge_icon: "boxicons--calendar-event-filled"
-  people_show: false
-  image_class: "w-full object-cover"
+  badge_text: "event"
   card_class: "bg-gray-100/25"
+  image_class: "w-full object-cover"
+  people_show: false
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
 
 people:
-  badge_text: "person"
   badge_icon: "boxicons--face-filled"
-  description_field: "role"
-  date_show: true
-  people_show: false
-  image_class: "object-contain rounded-xl"
-  title_class: "@max-venti:self-center"
+  badge_text: "person"
   card_class: ""
+  date_show: true
   description_class: "@max-venti:text-center"
+  description_field: "role"
+  image_class: "object-contain rounded-xl"
+  people_show: false
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
+  title_class: "@max-venti:self-center"
 
 software:
-  badge_text: "software"
   badge_icon: "boxicons--hexagon-filled"
-  people_show: false
-  image_class: "object-contain p-2 @grande:p-4"
+  badge_text: "software"
   card_class: "bg-gray-100/25"
+  image_class: "object-contain px-[20%] py-[5%]"
+  people_show: false
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
 
 videos:
-  badge_text: "video"
   badge_icon: "boxicons--video-filled"
-  image_class: "w-full object-cover"
+  badge_text: "video"
   card_class: "bg-gray-100/25"
+  image_class: "w-full object-cover"
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
 
