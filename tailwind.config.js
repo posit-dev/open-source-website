@@ -10,9 +10,12 @@ module.exports = {
     extend: {
       // These are for @container queries specifically
       containers: {
-        'tall': '10rem',
-        'grande': '16rem',
+        'nip': '10rem',
+        'short': '15rem',
+        'tall': '20rem',
+        'grande': '30rem',
         'venti': '40rem',
+        'trenta': '50rem',
       },
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],
