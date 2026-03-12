@@ -39,6 +39,12 @@ Posts where slug doesn't match original - investigate when porting that blog:
 |------|-------|
 | sparklyr-updates-q1-2024 | AI blog original slug is `sparklyr-updates` not `sparklyr-updates-q1-2024` |
 
+## Draft posts (blank on legacy blog)
+
+| Source | Post | Notes |
+|--------|------|-------|
+| ai | 2018-07-17-activity-detection | Legacy blog page exists but is blank. Marked as draft. |
+
 ## Missing metadata
 
 To address in bulk after porting:
@@ -143,6 +149,30 @@ Evaluate whether to:
 1. Map `blogcategories` to site categories
 2. Keep/remove `events` field
 3. Migrate `categories`/`tags` to site taxonomies
+
+## AI blog: failed ports
+
+All initially failed posts have been fixed:
+- 2018-07-17-activity-detection - Used HTML extraction (no `.Rmd` source)
+- 2019-07-09-feature-columns - Added `emo` package to renv
+- 2020-07-30-state-of-the-art-nlp-models-from-r - Rendered manually
+
+## AI blog: missing References heading
+
+Posts with bibliographies don't get a "References" heading before the bibliography entries. The `_metadata.yml` approach didn't work (needs full Quarto project context).
+
+**Options to fix later:**
+1. Add `## References` during post-processing
+2. Create a Quarto project in `content/blog/ai/`
+3. Add manually during review
+
+## Broken external images
+
+Some legacy posts reference external images that are now dead. These are broken on the original blogs too.
+
+| Post | Image URL |
+|------|-----------|
+| ai/2017-09-06-keras-for-r | `https://keras.rstudio.com/images/training_history_ggplot2.png` |
 
 ## Other observations
 

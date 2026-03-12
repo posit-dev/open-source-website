@@ -288,7 +288,7 @@
                 {{ if eq . "tidyverse" }}
                   {{- $url = printf "https://www.tidyverse.org/blog/%s/%s/%s/" $year $month $slug -}}
                 {{ else if eq . "ai" }}
-                  {{- $url = printf "https://blogs.rstudio.com/ai/posts/%s-%s-%s-%s/" $year $month $day $slug -}}
+                  {{- $url = printf "https://blogs.rstudio.com/ai/posts/%s/" $slug -}}
                 {{ else if eq . "shiny" }}
                   {{- $url = printf "https://shiny.posit.co/blog/posts/%s/" $slug -}}
                 {{ else if eq . "quarto" }}

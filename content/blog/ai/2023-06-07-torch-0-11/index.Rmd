@@ -1,0 +1,175 @@
+---
+title: "torch 0.11.0"
+description: >
+  torch v0.11.0 is now on CRAN. This release features much-enhanced support for
+  executing JIT operations. We also amended loading of model parameters, and added
+  a few quality-of-life improvements, like support for temporarily modifying the default
+  torch device, support for specifying data types as strings, and many more. 
+author:
+  - name: Daniel Falbel
+    affiliation: Posit
+    affiliation_url: https://www.posit.co/
+slug: torch-0-11-0
+date: 2023-06-07
+categories:
+  - Torch
+  - Packages/Releases
+  - R
+preview: images/ian-schneider-PAykYb-8Er8-unsplash.jpg
+format: hugo-md
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 6)
+```
+
+torch v0.11.0 is now on CRAN! This blog post highlights some of the changes included
+in this release. But you can always find the full [changelog](https://torch.mlverse.org/docs/news/index.html)
+on the torch website.
+
+## Improved loading of state dicts
+
+For a long time it has been possible to use torch from R to load state dicts (i.e. 
+model weights) trained with PyTorch using the `load_state_dict()` function.
+However, it was common to get the error:
+
+```
+Error in cpp_load_state_dict(path) :  isGenericDict() INTERNAL ASSERT FAILED at
+```
+
+This happened because when saving the `state_dict` from Python, it wasn't really
+a dictionary, but an **ordered** dictionary. Weights in PyTorch are serialized as [Pickle](https://docs.python.org/3/library/pickle.html) files -- a Python-specific format similar to our RDS. To load them in C++, without a Python runtime,
+LibTorch implements a pickle reader that's able to read only a subset of the 
+file format, and this subset didn't include ordered dicts.
+
+This release adds support for reading the ordered dictionaries, so you won't see
+this error any longer. 
+
+Besides that, reading theses files requires half of the peak memory usage, and in
+consequence also is much faster. Here are the timings for reading a 3B parameter
+model (StableLM-3B) with v0.10.0:
+
+```{r}
+system.time({
+  x <- torch::load_state_dict("~/Downloads/pytorch_model-00001-of-00002.bin")
+  y <- torch::load_state_dict("~/Downloads/pytorch_model-00002-of-00002.bin")
+})
+```
+
+```
+   user  system elapsed 
+662.300  26.859 713.484 
+```
+
+and with v0.11.0
+
+```
+   user  system elapsed 
+  0.022   3.016   4.016 
+```
+
+Meaning that we went from minutes to just a few seconds.
+
+## Using JIT operations
+
+One of the most common ways of extending LibTorch/PyTorch is by implementing JIT
+operations. This allows developers to write custom, optimized code in C++ and
+use it directly in PyTorch, with full support for JIT tracing and scripting.
+See our ['Torch outside the box'](https://blogs.rstudio.com/ai/posts/2022-04-27-torch-outside-the-box/)
+blog post if you want to learn more about it.
+
+Using JIT operators in R used to require package developers to implement C++/Rcpp 
+for each operator if they wanted to be able to call them from R directly. 
+This release added support for calling JIT operators without requiring authors to 
+implement the wrappers.
+
+The only visible change is that we now have a new symbol in the torch namespace, called
+`jit_ops`. Let's load torchvisionlib, a torch extension that registers many different
+JIT operations. Just loading the package with `library(torchvisionlib)` will make
+its operators available for torch to use - this is because the mechanism that registers
+the operators acts when the package DLL (or shared library) is loaded.
+
+For instance, let's use the `read_file` operator that efficiently reads a file
+into a raw (bytes) torch tensor.
+
+```{r, eval = FALSE}
+library(torchvisionlib)
+torch::jit_ops$image$read_file("img.png")
+```
+
+```
+torch_tensor
+ 137
+  80
+  78
+  71
+ ...
+   0
+   0
+ 103
+... [the output was truncated (use n=-1 to disable)]
+[ CPUByteType{325862} ]
+```
+
+We've made it so autocomplete works nicely, such that you can interactively explore the available
+operators using `jit_ops$` and pressing <tab> to trigger RStudio's autocomplete.
+
+## Other small improvements
+
+This release also adds many small improvements that make torch more intuitive:
+
+- You can now specify the tensor dtype using a string, eg: `torch_randn(3, dtype = "float64")`. (Previously you had to specify the dtype using a torch function, such as `torch_float64()`).
+  
+  ```{r, eval = FALSE}
+  torch_randn(3, dtype = "float64")
+  ```
+  
+  ```
+  torch_tensor
+  -1.0919
+   1.3140
+   1.3559
+  [ CPUDoubleType{3} ]
+  ```
+
+- You can now use `with_device()` and `local_device()` to temporarily modify the device
+  on which tensors are created. Before, you had to use `device` in each tensor
+  creation function call. This allows for initializing a module on a specific device:
+  
+  ```{r}
+  with_device(device="mps", {
+    linear <- nn_linear(10, 1)
+  })
+  linear$weight$device
+  ```
+  
+  ```
+  torch_device(type='mps', index=0)
+  ```
+  
+- It's now possible to temporarily modify the torch seed, which makes creating
+  reproducible programs easier.
+  
+  ```{r}
+  with_torch_manual_seed(seed = 1, {
+    torch_randn(1)
+  })
+  ```
+  ```
+  torch_tensor
+   0.6614
+  [ CPUFloatType{1} ]
+  ```
+
+## Final remarks
+
+Thank you to all contributors to the torch ecosystem. This work would not be possible without
+all the helpful issues opened, PRs you created, and your hard work.
+
+If you are new to torch and want to learn more, we highly recommend the [recently announced](https://blogs.rstudio.com/ai/posts/2023-04-05-deep-learning-scientific-computing-r-torch/) book 'Deep Learning and Scientific Computing with R `torch`'.
+
+If you want to start contributing to torch, feel free to reach out on GitHub and see our [contributing guide](https://torch.mlverse.org/docs/contributing).
+
+The full changelog for this release can be found [here](https://torch.mlverse.org/docs/news/index.html#torch-0110).
+
+Photo by <a href="https://unsplash.com/@goian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ian Schneider</a> on <a href="https://unsplash.com/photos/PAykYb-8Er8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

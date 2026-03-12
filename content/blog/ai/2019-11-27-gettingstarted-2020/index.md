@@ -1,0 +1,138 @@
+---
+title: "Getting started with Keras from R - the 2020 edition"
+description: |
+  Looking for materials to get started with deep learning from R? This post presents useful tutorials, guides, and background documentation on the new TensorFlow for R website. Advanced users will find pointers to applications of new release 2.0 (or upcoming 2.1!) features alluded to in the recent TensorFlow 2.0 post.
+date: 2019-11-27
+categories:
+  - Packages/Releases
+  - TensorFlow/Keras
+author:
+  - name: Sigrid Keydana
+    affiliation: RStudio
+    affiliation_url: https://www.rstudio.com/
+people:
+  - Sigrid Keydana
+image: thumbnail.png
+ported_from: ai
+port_status: raw
+---
+
+
+
+If you've been thinking about diving into deep learning for a while -- using R, preferentially --, now is a good time. For TensorFlow / Keras, one of the predominant deep learning frameworks on the market, last year was a year of substantial changes; for users, this sometimes would mean ambiguity and confusion about the "right" (or: recommended) way to do things. By now, [TensorFlow 2.0](https://blogs.rstudio.com/tensorflow/posts/2019-10-08-tf2-whatchanges/) has been the current stable release for about two months; the mists have cleared away, and patterns have emerged, enabling leaner, more modular code that accomplishes a lot in just a few lines.
+
+To give the new features the space they deserve, and assemble central contributions from related packages all in one place, we have significantly remodeled the [TensorFlow for R website](https://tensorflow.rstudio.com/). So this post really has two objectives.
+
+First, it would like to do exactly what is suggested by the title: Point new users to resources that make for an effective start into the subject.
+
+Second, it could be read as a "best of new website content". Thus, as an existing user, you might still be interested in giving it a quick skim, checking for pointers to new features that appear in familiar contexts. To make this easier, we'll add side notes to highlight new features.
+
+Overall, the structure of what follows is this. We start from the core question: *How do you build a model?*, then frame it from both sides; i.e.: *What comes before?* (data loading / preprocessing) and *What comes after?* (model saving / deployment).
+
+After that, we quickly go into creating models for different types of data: images, text, tabular.
+
+Then, we touch on where to find background information, such as: How do I add a custom callback? How do I create a custom layer? How can I define my own training loop?
+
+Finally, we round up with something that looks like a tiny technical addition but has far greater impact: integrating modules from TensorFlow (TF) Hub.
+
+## Getting started
+
+### How to build a model?
+
+If linear regression is the Hello World of machine learning, non-linear regression has to be the Hello World of neural networks. The [Basic Regression tutorial](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_regression/) shows how to train a dense network on the Boston Housing dataset. This example uses the Keras [Functional API](https://tensorflow.rstudio.com/guide/keras/functional_api/), one of the two "classical" model-building approaches -- the one that tends to be used when some sort of flexibility is required. In this case, the desire for flexibility comes from the use of [feature columns](https://tensorflow.rstudio.com/guide/tfdatasets/feature_columns/) - a nice new addition to TensorFlow that allows for convenient integration of e.g. feature normalization (more about this in the next section).
+
+<aside>
+The [regression tutorial](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_regression/) now uses feature columns for convenient data preprocessing.
+</aside>
+
+This introduction to regression is complemented by a [tutorial on multi-class classification](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_classification/) using "Fashion MNIST". It is equally suited for a first encounter with Keras.
+
+A third tutorial in this section is dedicated to [text classification](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_text_classification/). Here too, there is a hidden gem in the current version that makes text preprocessing a lot easier: `layer_text_vectorization`, one of the brand new [Keras preprocessing layers](https://github.com/keras-team/governance/blob/master/rfcs/20190502-preprocessing-layers.md).[^1] If you've used Keras for NLP before: No more messing with `text_tokenizer`!
+
+<aside>
+Check out the new text vectorization layer in the [text classification tutorial](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_text_classification/).
+</aside>
+
+These tutorials are nice introductions explaining code as well as concepts. What if you're familiar with the basic procedure and just need a quick reminder (or: something to quickly copy-paste from)? The ideal document to consult for those purposes is the [Overview](https://tensorflow.rstudio.com/tutorials/beginners/).
+
+Now -- knowledge how to build models is fine, but as in data science overall, there is no modeling without data.
+
+### Data ingestion and preprocessing
+
+Two detailed, end-to-end tutorials show how to load [csv data](https://tensorflow.rstudio.com/tutorials/beginners/load/load_csv/) and
+[images](https://tensorflow.rstudio.com/tutorials/beginners/load/load_image/), respectively.
+
+In current Keras, two mechanisms are central to data preparation. One is the use of [tfdatasets pipelines](https://tensorflow.rstudio.com/guide/tfdatasets/introduction/). `tfdatasets` lets you load data in a streaming fashion (batch-by-batch), optionally applying transformations as you go. The other handy device here is [feature specs](https://tensorflow.rstudio.com/guide/tfdatasets/feature_spec/) and[feature columns](https://tensorflow.rstudio.com/guide/tfdatasets/feature_columns/). Together with a matching Keras layer, these allow for transforming the input data without having to think about what the new format will mean to Keras.
+
+While there are other types of data not discussed in the docs, the principles -- pre-processing pipelines and feature extraction -- generalize.
+
+### Model saving
+
+The best-performing model is of little use if ephemeral. Straightforward ways of saving Keras models are explained in a dedicated [tutorial](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_save_and_restore/).
+
+<aside>
+Advanced users: Additional options exist; see the [tutorial on checkpoints](https://tensorflow.rstudio.com/guide/saving/checkpoints/).
+</aside>
+
+And unless one's just tinkering around, the question will often be: How can I deploy my model?
+There is a complete new section on [deployment](https://tensorflow.rstudio.com/deploy/), featuring options like `plumber`, Shiny, TensorFlow Serving and RStudio Connect.
+
+<aside>
+Check out the new section on [deployment options](https://tensorflow.rstudio.com/deploy/).
+</aside>
+
+After this workflow-oriented run-through, let's see about different types of data you might want to model.
+
+## Neural networks for different kinds of data
+
+No introduction to deep learning is complete without image classification. The "Fashion MNIST" classification tutorial mentioned in the beginning is a good introduction, but it uses a fully connected neural network to make it easy to remain focused on the overall approach. Standard models for image recognition, however, are commonly based on a convolutional architecture. [Here](https://tensorflow.rstudio.com/tutorials/advanced/images/cnn/) is a nice introductory tutorial.
+
+For text data, the concept of *embeddings* -- distributed representations endowed with a measure of similarity -- is central. As in the aforementioned text classification tutorial, embeddings can be learned using the respective Keras layer (`layer_embedding`); in fact, the more idiosyncratic the dataset, the more recommendable this approach. Often though, it makes a lot of sense to use *pre-trained embeddings*, obtained from large language models trained on enormous amounts of data. With TensorFlow Hub, discussed in more detail in the last section, pre-trained embeddings can be made use of simply by integrating an adequate *hub layer*, as shown in [one of the Hub tutorials](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_text_classification_with_tfhub/).
+
+<aside>
+Models from TF Hub can now conveniently be integrated into a model as Keras layers.
+</aside>
+
+As opposed to images and text, "normal", a.k.a. *tabular*, a.k.a. *structured* data often seems like less of a candidate for deep learning. Historically, the mix of data types -- numeric, binary, categorical --, together with different handling in the network ("leave alone" or embed) used to require a fair amount of manual fiddling. In contrast, the [Structured data tutorial](https://tensorflow.rstudio.com/tutorials/advanced/structured/classify/) shows the, quote-unquote, modern way, again using feature columns and feature specs. The consequence: If you're not sure that in the area of tabular data, deep learning will lead to improved performance -- if it's as easy as that, why not give it a try?
+
+<aside>
+If you're working with structured data, definitely check out the [feature spec way to do it](https://tensorflow.rstudio.com/guide/tfdatasets/feature_spec/).
+</aside>
+
+Before rounding up with a special on TensorFlow Hub, let's quickly see where to get more information on immediate and background-level technical questions.
+
+## Guides: topic-related and background information
+
+The [Guide section](https://tensorflow.rstudio.com/guide/) has lots of additional information, covering specific questions that will come up when coding Keras models
+
+- How can I define a [custom layer](https://tensorflow.rstudio.com/guide/keras/custom_layers/)?
+- A [custom model](https://tensorflow.rstudio.com/guide/keras/custom_models/)?
+- What are [training callbacks](https://tensorflow.rstudio.com/guide/keras/training_callbacks/)?
+
+as well as background knowledge and terminology: What are [tensors](https://tensorflow.rstudio.com/guide/tensorflow/tensors/), [`Variables`](https://tensorflow.rstudio.com/guide/tensorflow/variables/), how does [automatic differentiation](https://tensorflow.rstudio.com/tutorials/advanced/customization/autodiff/) work in TensorFlow?
+
+Like for the basics, above we pointed out a document called "Quickstart", for advanced topics here too is a [Quickstart](https://tensorflow.rstudio.com/tutorials/advanced/) that in one end-to-end example, shows how to define and train a custom model. One especially nice aspect is the use of [tfautograph](https://github.com/t-kalinowski/tfautograph), a package developed by T. Kalinowski that -- among others -- allows for concisely iterating over a dataset in a `for` loop.
+
+<aside>
+Power users: Check out the custom training [Quickstart](https://tensorflow.rstudio.com/tutorials/advanced/) featuring custom models, `GradientTape`s and `tfautograph`.
+</aside>
+
+Finally, let's talk about TF Hub.
+
+## A special highlight: Hub layers
+
+One of the most interesting aspects of contemporary neural network architectures is the use of transfer learning. Not everyone has the data, or computing facilities, to train big networks on big data from scratch. Through transfer learning, existing pre-trained models can be used for similar (but not identical) applications and in similar (but not identical) domains.
+
+Depending on one's requirements, building on an existing model could be more or less cumbersome. Some time ago, TensorFlow Hub was created as a mechanism to publicly share models, or *modules*, that is, reusable building blocks that could be made use of by others.
+Until recently, there was no convenient way to incorporate these modules, though.
+
+Starting from TensorFlow 2.0, Hub modules can now seemlessly be integrated in Keras models, using `layer_hub`. This is demonstrated in two tutorials, for [text](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_text_classification_with_tfhub/) and [images](https://tensorflow.rstudio.com/tutorials/advanced/images/transfer-learning-hub/), respectively. But really, these two documents are just starting points: Starting points into a journey of experimentation, with other modules, combination of modules, areas of applications...
+
+<aside>
+Don't miss out on the new TensorFlow Hub layer available in Keras... potentially, an extremely powerful way to enhance your models.
+</aside>
+
+In sum, we hope you have fun with the "new" (TF 2.0) Keras and find the documentation useful.
+Thanks for reading!
+
+[^1]: In fact, it is so new that as of this writing, you will have to install the nightly build of TensorFlow -- as well as `tensorflow` from github -- to use it.

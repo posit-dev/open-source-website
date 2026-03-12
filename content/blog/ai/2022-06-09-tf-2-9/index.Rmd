@@ -1,0 +1,124 @@
+---
+title: "TensorFlow and Keras 2.9"
+description: > 
+  New TensorFlow and Keras releases bring improvements big and small.
+author:
+  - name: Tomasz Kalinowski
+    affiliation: RStudio
+    affiliation_url: https://www.rstudio.com/
+slug: kalinowskitf29
+date: 2022-06-09
+categories:
+  - TensorFlow/Keras
+  - Packages/Releases
+  - R
+editor_options:
+  markdown:
+    wrap: 72
+preview: images/chameleon.jpg
+format: hugo-md
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+```{r, echo = FALSE}
+library(tensorflow)
+library(keras)
+```
+
+The release of [*Deep Learning with R, 2nd
+Edition*](https://rstd.io/dlwr-2e) coincides with new releases of
+TensorFlow and Keras. These releases bring many refinements that allow
+for more idiomatic and concise R code.
+
+First, the set of Tensor methods for base R generics has greatly
+expanded. The set of R generics that work with TensorFlow Tensors is now
+quite extensive:
+
+```{r}
+methods(class = "tensorflow.tensor")
+```
+
+```{text}
+ [1] -           !           !=          [           [<-        
+ [6] *           /           &           %/%         %%         
+[11] ^           +           <           <=          ==         
+[16] >           >=          |           abs         acos       
+[21] all         any         aperm       Arg         asin       
+[26] atan        cbind       ceiling     Conj        cos        
+[31] cospi       digamma     dim         exp         expm1      
+[36] floor       Im          is.finite   is.infinite is.nan     
+[41] length      lgamma      log         log10       log1p      
+[46] log2        max         mean        min         Mod        
+[51] print       prod        range       rbind       Re         
+[56] rep         round       sign        sin         sinpi      
+[61] sort        sqrt        str         sum         t          
+[66] tan         tanpi      
+```
+
+This means that often you can write the same code for TensorFlow Tensors
+as you would for R arrays. For example, consider this small function
+from Chapter 11 of the book:
+
+```{r}
+reweight_distribution <-
+  function(original_distribution, temperature = 0.5) {
+    original_distribution %>%
+      { exp(log(.) / temperature) } %>%
+      { . / sum(.) }
+  }
+```
+
+Note that functions like `reweight_distribution()` work with both 1D R
+vectors and 1D TensorFlow Tensors, since `exp()`, `log()`, `/`, and
+`sum()` are all R generics with methods for TensorFlow Tensors.
+
+In the same vein, this Keras release brings with it a refinement to the
+way custom class extensions to Keras are defined. Partially inspired by
+the new [`R7`](https://rconsortium.github.io/OOP-WG/) syntax, there is a
+new family of functions: `new_layer_class()`, `new_model_class()`,
+`new_metric_class()`, and so on. This new interface substantially
+simplifies the amount of boilerplate code required to define custom
+Keras extensions---a pleasant R interface that serves as a facade over
+the mechanics of sub-classing Python classes. This new interface is the
+yang to the yin of `%py_class%`--a way to mime the Python class
+definition syntax in R. Of course, the "raw" API of converting an
+`R6Class()` to Python via `r_to_py()` is still available for users that
+require full control.
+
+This release also brings with it a cornucopia of small improvements
+throughout the Keras R interface: updated `print()` and `plot()` methods
+for models, enhancements to `freeze_weights()` and `load_model_tf()`,
+new exported utilities like `zip_lists()` and `%<>%`. And let's not
+forget to mention a new family of R functions for modifying the learning
+rate during training, with a suite of built-in schedules like
+`learning_rate_schedule_cosine_decay()`, complemented by an interface
+for creating custom schedules with `new_learning_rate_schedule_class()`.
+
+You can find the full release notes for the R packages here:
+
+-   [`tensorflow`](https://github.com/rstudio/tensorflow/releases/tag/v2.9.0)
+-   [`keras`](https://github.com/rstudio/keras/releases/tag/v2.9.0)
+
+The release notes for the R packages tell only half the story however.
+The R interfaces to Keras and TensorFlow work by embedding a full Python
+process in R (via the
+[`reticulate`](https://rstudio.github.io/reticulate/) package). One of
+the major benefits of this design is that R users have full access to
+everything in both R *and* Python. In other words, the R interface
+always has feature parity with the Python interface---anything you can
+do with TensorFlow in Python, you can do in R just as easily. This means
+the release notes for the Python releases of TensorFlow are just as
+relevant for R users:
+
+-   [TensorFlow 2.9.0 release notes (Python
+    edition)](https://github.com/tensorflow/tensorflow/releases/tag/v2.9.0)
+
+Thanks for reading!
+
+Photo by [Raphael
+Wild](https://unsplash.com/@veloradio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+on
+[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -1,0 +1,172 @@
+---
+title: "torch 0.10.0"
+description: >
+  torch v0.10.0 is now on CRAN. This version upgraded the underlying LibTorch to 1.13.1, and 
+  added support for Automatic Mixed Precision. As an experimental feature, we now
+  also support pre-built binaries, so you can install torch without having to deal
+  with the CUDA installation.
+author:
+  - name: Daniel Falbel
+    affiliation: Posit
+    affiliation_url: https://www.posit.co/
+slug: torch-0-9-0
+date: 2023-04-14
+categories:
+  - Torch
+  - Packages/Releases
+  - R
+preview: images/torch.png
+format: hugo-md
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 6)
+```
+
+We are happy to announce that torch v0.10.0 is now on CRAN. In this blog post we 
+highlight some of the changes that have been introduced in this version. You can
+check the full changelog [here](https://torch.mlverse.org/docs/news/index.html#torch-010).
+
+## Automatic Mixed Precision
+
+Automatic Mixed Precision (AMP) is a technique that enables faster training of deep learning models, while maintaining model accuracy by using a combination of single-precision (FP32) and half-precision (FP16) floating-point formats.
+
+In order to use automatic mixed precision with torch, you will need to use the `with_autocast`
+context switcher to allow torch to use different implementations of operations that can run
+with half-precision. In general it's also recommended to scale the loss function in order to
+preserve small gradients, as they get closer to zero in half-precision.
+
+Here's a minimal example, ommiting the data generation process. You can find more information in the [amp article](https://torch.mlverse.org/docs/articles/amp.html).
+
+```
+...
+loss_fn <- nn_mse_loss()$cuda()
+net <- make_model(in_size, out_size, num_layers)
+opt <- optim_sgd(net$parameters, lr=0.1)
+scaler <- cuda_amp_grad_scaler()
+
+for (epoch in seq_len(epochs)) {
+  for (i in seq_along(data)) {
+    with_autocast(device_type = "cuda", {
+      output <- net(data[[i]])
+      loss <- loss_fn(output, targets[[i]])  
+    })
+    
+    scaler$scale(loss)$backward()
+    scaler$step(opt)
+    scaler$update()
+    opt$zero_grad()
+  }
+}
+```
+
+In this example, using mixed precision led to a speedup of around 40%. This speedup is
+even bigger if you are just running inference, i.e., don't need to scale the loss.
+
+## Pre-built binaries
+
+With pre-built binaries, installing torch gets a lot easier and faster, especially if
+you are on Linux and use the CUDA-enabled builds. The pre-built binaries include
+LibLantern and LibTorch, both external dependencies necessary to run torch. Additionally,
+if you install the CUDA-enabled builds, the CUDA and 
+cuDNN libraries are already included..
+
+To install  the pre-built binaries, you can use:
+
+```r
+options(timeout = 600) # increasing timeout is recommended since we will be downloading a 2GB file.
+kind <- "cu117" # "cpu", "cu117" are the only currently supported.
+version <- "0.10.0"
+options(repos = c(
+  torch = sprintf("https://storage.googleapis.com/torch-lantern-builds/packages/%s/%s/", kind, version),
+  CRAN = "https://cloud.r-project.org" # or any other from which you want to install the other R dependencies.
+))
+install.packages("torch")
+```
+
+As a nice example, you can get up and running with a GPU on Google Colaboratory in
+less than 3 minutes!
+
+![Colaboratory running torch](images/colab.png)
+
+## Speedups
+
+Thanks to an [issue](https://github.com/mlverse/torch/issues/992) opened by @egillax, we could find and fix a bug that caused 
+torch functions returning a list of tensors to be very slow. The function in case
+was `torch_split()`.
+
+This issue has been fixed in v0.10.0, and relying on this behavior should be much
+faster now. Here's a minimal benchmark comparing both v0.9.1 with v0.10.0:
+
+```r
+bench::mark(
+  torch::torch_split(1:100000, split_size = 10)
+)
+```
+
+With v0.9.1 we get:
+
+```
+# A tibble: 1 × 13
+  expression      min  median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
+  <bch:expr> <bch:tm> <bch:t>     <dbl> <bch:byt>    <dbl> <int> <dbl>   <bch:tm>
+1 x             322ms   350ms      2.85     397MB     24.3     2    17      701ms
+# ℹ 4 more variables: result <list>, memory <list>, time <list>, gc <list>
+```
+
+while with v0.10.0:
+
+```
+# A tibble: 1 × 13
+  expression      min  median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
+  <bch:expr> <bch:tm> <bch:t>     <dbl> <bch:byt>    <dbl> <int> <dbl>   <bch:tm>
+1 x              12ms  12.8ms      65.7     120MB     8.96    22     3      335ms
+# ℹ 4 more variables: result <list>, memory <list>, time <list>, gc <list>
+```
+
+## Build system refactoring
+
+The torch R package depends on LibLantern, a C interface to LibTorch. Lantern is part of
+the torch repository, but until v0.9.1 one would need to build LibLantern in a separate 
+step before building the R package itself.
+
+This approach had several downsides, including:
+
+- Installing the package from GitHub was not reliable/reproducible, as you would depend
+on a transient pre-built binary.
+- Common `devtools` workflows like `devtools::load_all()` wouldn't work, if the user didn't build
+Lantern before, which made it harder to contribute to torch.
+
+From now on, building LibLantern is part of the R package-building workflow, and can be enabled
+by setting the `BUILD_LANTERN=1` environment variable. It's not enabled by default, because
+building Lantern requires `cmake` and other tools (specially if building the with GPU support), 
+and using the pre-built binaries is preferable in those cases. With this environment variable set, 
+users can run `devtools::load_all()` to locally build and test torch. 
+
+This flag can also be used when installing torch dev versions from GitHub. If it's set to `1`,
+Lantern will be built from source instead of installing the pre-built binaries, which should lead
+to better reproducibility with development versions.
+
+Also, as part of these changes, we have improved the torch automatic installation process. It now has
+improved error messages to help debugging issues related to the installation. It's also easier to customize
+using environment variables, see `help(install_torch)` for more information.
+
+## Final remarks
+
+Thank you to all contributors to the torch ecosystem. This work would not be possible without
+all the helpful issues opened, PRs you created and your hard work.
+
+If you are new to torch and want to learn more, we highly recommend the [recently announced](https://blogs.rstudio.com/ai/posts/2023-04-05-deep-learning-scientific-computing-r-torch/) book 'Deep Learning and Scientific Computing with R `torch`'.
+
+If you want to start contributing to torch, feel free to reach out on GitHub and see our [contributing guide](https://torch.mlverse.org/docs/contributing).
+
+The full changelog for this release can be found [here](https://torch.mlverse.org/docs/news/index.html#torch-010).
+
+
+
+
+
+
+
+
+

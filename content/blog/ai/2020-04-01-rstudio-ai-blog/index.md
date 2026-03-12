@@ -1,0 +1,56 @@
+---
+title: "Introducing: The RStudio AI Blog"
+description: |
+  This blog just got a new title: RStudio AI Blog. We explain why.
+date: 2020-03-30
+categories:
+  - Meta
+author:
+  - name: The Multiverse Team
+    affiliation: RStudio
+    affiliation_url: https://www.rstudio.com/
+people:
+  - The Multiverse Team
+image: thumbnail.jpg
+ported_from: ai
+port_status: raw
+---
+
+
+
+Why the new name, *RStudio AI Blog*? There is a straightforward reason. The
+previous title, "TensorFlow for R Blog", was a good match for the content
+we covered so far: technical or applied aspects of performing deep
+learning with TensorFlow and Keras. Yet, our team (the *Multiverse Team*) is not
+working exclusively in those areas; instead, enabling distributed computing from
+R ([sparklyr](https://github.com/sparklyr/sparklyr)), integrating automated
+machine learning workflows ([mlflow](https://github.com/mlflow/mlflow)), and
+optimizing data ingestion ([pins](https://github.com/rstudio/pins)) are
+substantial aspects of what we do. We would like to have a platform we can use
+to tell you about our work in these areas as well. Furthermore, regarding the
+hitherto dominant topic on this blog, *deep learning*, we might also want to
+reflect about it in a less technical way, focussing on impacts on
+society, ethics, or even "just" epistemic questions.
+
+Consequently, we needed a new name, but why "AI"? Maybe "data science" would work
+as well -- however, the *science* in data science brings up connotations of formality and
+theoretic ambitions which we would rather avoid. Instead, *AI* appeared to be a more rigorous
+definition, understood as outlined in an [article by Michael
+Jordan](https://hdsr.mitpress.mit.edu/pub/wot7mkc1). Jordan envisions AI as a
+new *engineering* discipline that builds on existing knowledge about inference,
+optimization, computation, and data processing the way that chemical engineering
+and civil engineering built upon chemistry and physics, respectively.
+Supplementing those building blocks (from mathematics, statistics, computer
+science), the goal of this new discipline is to include guidance from the social sciences
+and the humanities.
+
+By the way, as of this writing, the Multiverse Team consists of <a href="https://twitter.com/dfalbel" style="text-decoration:none;">Daniel
+Falbel</a>, <a href="https://twitter.com/zkajdan" style="text-decoration:none;">Sigrid
+Keydana</a>, <a href="https://github.com/yl790" style="text-decoration:none;">Yitao
+Li</a>, and J<a href="https://twitter.com/javierluraschi" style="text-decoration:none;">avier
+Luraschi</a>.
+You can find us on Twitter under the
+<a href="https://twitter.com/search?q=%23mlverse" style="text-decoration:none;">#mlverse</a>
+tag, or pass by our new <a href="https://www.youtube.com/c/mlverse" style="text-decoration:none;">mlverse
+channel</a> on
+YouTube. Thank you for your support!

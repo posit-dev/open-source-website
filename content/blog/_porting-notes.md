@@ -190,3 +190,103 @@ The script:
 **Fixes applied during import:**
 - Created stub shortcode `layouts/shortcodes/conf-form.html`
 - Fixed duplicate `date:` key in `2021-08-23-pins-0-4-0-versioning`
+
+## ai-blog (blogs.rstudio.com/ai)
+
+Blog source: `_external-sources/ai-blog/_posts`
+Destination: `content/blog/ai/`
+
+Uses Distill for R Markdown. Posts have `*.Rmd` source and `*.html` pre-rendered output (96 posts have both, 44 have Rmd only, 1 has HTML only).
+
+### Approach 1: HTML extraction (script: `port-ai-post.sh`)
+
+Extracts rendered content from the HTML file and converts to markdown via pandoc.
+
+**Script:** `scripts/port-ai-post.sh <folder-name>`
+
+```bash
+./scripts/port-ai-post.sh 2017-09-06-keras-for-r
+```
+
+**How it works:**
+1. Extracts content from `<div class="d-article">` in HTML
+2. Converts to markdown using pandoc
+3. Transforms frontmatter from Rmd
+4. Copies images and source files
+
+**Automatic cleanups:**
+- Citations: `[(Author [year](#ref)...)]{.citation cites="id"}` → `[@id]`
+- Figure anchors: `[]{#fig:...}` removed
+- Empty code blocks and layout divs removed
+
+**Manual fixes still needed:**
+- Twitter embeds → Hugo shortcode
+- Footnotes: content lost in conversion, copy from `.Rmd`
+- Code input vs output: no visual distinction after conversion
+- References section: may be out of order
+
+**Limitation:** Distill uses JavaScript to transform footnotes, references, and other elements. Static HTML extraction misses these transformations.
+
+### Approach 2: Quarto rendering (script: `port-ai-post-quarto.sh`)
+
+Renders the `.Rmd` with Quarto to `hugo-md` format. This produces clean markdown with proper footnotes, citations, and code block handling.
+
+**Script:** `scripts/port-ai-post-quarto.sh <folder-name>`
+
+```bash
+./scripts/port-ai-post-quarto.sh 2017-09-06-keras-for-r
+```
+
+**How it works:**
+1. Copies `.Rmd` and all supporting files to `content/blog/ai/<folder>/`
+2. Renders with `quarto render <file>.Rmd --to hugo-md`
+3. Transforms frontmatter (date format, author → people, etc.)
+4. Copies preview image as thumbnail
+5. Cleans up intermediate files (.html, *_files/)
+
+**Output:** Files are renamed to `index.md` and `index.Rmd` for Hugo page bundles.
+
+**Shared renv environment:**
+
+Posts in `content/blog/ai/` share an renv environment with common packages (keras, tensorflow, torch, tidyverse, etc.). Files:
+- `content/blog/ai/renv.lock` - Package lockfile
+- `content/blog/ai/.Rprofile` - Activates renv
+- `content/blog/ai/renv/` - Library (gitignored)
+
+To restore the environment:
+```r
+setwd("content/blog/ai")
+renv::restore(exclude = c("gert", "usethis", "devtools", "credentials", "gitcreds", "gh"))
+```
+
+The excludes bypass packages requiring libgit2.
+
+**Advantages over Approach 1:**
+- Footnotes and citations render correctly
+- Code input vs output visually distinct
+- No pandoc conversion artifacts
+
+**Known limitation:** The `_metadata.yml` with `reference-section-title: References` doesn't take effect without a full Quarto project. Posts with bibliographies won't have an explicit "References" heading. See `_porting-todo.md` for options.
+
+### Common setup
+
+**Frontmatter transformation:**
+- `title`, `description`, `categories` → keep as-is
+- `author:` with name/url/affiliation → preserve in `author:`, extract name to `people:`
+- `date: MM-DD-YYYY` → `date: YYYY-MM-DD` (ISO format)
+- `preview: <path>` → `image: thumbnail.png`
+- Add `image-alt`, `ported_from: ai`, `port_status: raw`
+
+**Files to copy:**
+- Preview image → `thumbnail.png`
+- `images/` folder if present
+- Source `.Rmd` for reference
+
+**Config:** `.Rmd` files are ignored by Hugo via `ignoreFiles` in `hugo.toml`.
+
+**Posts without HTML:** 44 posts have only `.Rmd`. List with:
+```bash
+for d in _external-sources/ai-blog/_posts/*/; do
+  [ -z "$(find "$d" -maxdepth 1 -name "*.html")" ] && echo "$(basename $d)"
+done
+```

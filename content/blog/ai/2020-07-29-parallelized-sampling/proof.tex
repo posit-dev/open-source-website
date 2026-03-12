@@ -1,0 +1,119 @@
+\documentclass[fleqn]{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\begin{document}
+
+Let $\mathcal{P}$ denote the probability of selecting $(r_1, ..., r_n)$ as samples, or equivalently, $(r_1, ..., r_n)$ being rows with the top $n$ largest keys, where $r_1$ has the largest key, $r_2$ has the second largest key, etc. We wish to show $\mathcal{P} = \prod\limits_{j = 1}^{n} \left( {w_j} \middle/ {\sum\limits_{k = j}^{N}{w_k}} \right)$.
+
+\bigskip
+
+Recall the key for the $j$-th row (denoted as $x_j$ from now on) is sampled from a probability distribution on $(-\infty, 0)$ with CDF $F_j(x) = e^{w_j \cdot x}$, and therefore the PDF of $x_j$ is $f_j(x) = F_j^\prime(x) = w_j e^{w_j \cdot x}$. Given that $x_1 \ge x_2 \ge \cdots \ge x_n$, and also, $x_n \ge x_j$ for $j \in \{ n + 1, \dots, N \}$, we have
+
+$$
+\mathcal{P} = \int_{-\infty}^{0}f_1(x_1)\int_{-\infty}^{x_1}f_2(x_2) \cdots \int_{-\infty}^{x_{n - 1}}f_n(x_n) \int_{-\infty}^{x_n} f_{n + 1}(x_{n + 1}) \cdots \int_{-\infty}^{x_n} f_{N}(x_{N}) d x_N \cdots d x_2 d x_1
+$$.
+
+Working through the multiple integrals above with `$\cdots$` in between and with intermediate steps containing more `$\cdots$`s would be a bit too hand-wavy! So, in the interest of greater clarity, let's be more pedantic and re-define $\mathcal{P}$ iteratively with $\mathcal{P}_0$, $\mathcal{P}_1$, ..., $\mathcal{P}_n$ instead. Let
+
+\bigskip
+
+$$
+\mathcal{P}_0(x_n) = \int_{-\infty}^{x_n} f_{n + 1}(x_{n + 1}) \cdots \int_{-\infty}^{x_n} f_N(x_N) d x_N \cdots d x_{n + 1}
+$$
+
+$$
+ = \prod\limits_{j = n + 1}^N\left(\int_{-\infty}^{x_n} f_j(x_j) d x_j\right)
+ = \prod\limits_{j = n + 1}^N\left(F_j(x)\bigg\rvert_{-\infty}^{x_n}\right)
+$$
+
+$$
+ = \prod\limits_{j = n + 1}^N\left(e^{w_j \cdot x} \bigg\rvert_{-\infty}^{x_n}\right)
+ = e^{\left(\sum\limits_{j = n + 1}^N w_j\right) \cdot x_n}
+$$
+
+\bigskip
+
+(i.e., $\mathcal{P}_0(x_n)$ is the inner-most bunch of integrals where the integrands are functions of $x_{n + 1}, \dots, x_N$),
+
+\bigskip
+
+and then define
+
+$$
+\mathcal{P}_j(x_{n - j}) = \int_{-\infty}^{x_{n-j}}f_{n - j + 1}(x_{n - j + 1}) \mathcal{P}_{j - 1}(x_{n - j + 1}) d x_{n - j + 1}
+$$
+
+for $j \in \{1, \cdots, n - 1\}$, then it follows
+
+$$
+\mathcal{P}_n(x_0) = \int_{-\infty}^{x_0} f_1(x_1)\mathcal{P}_{n - 1}(x_1) dx_1
+$$
+
+and $\mathcal{P} = \mathcal{P}_n(0)$
+.
+
+\clearpage
+
+Let's then find out what $\mathcal{P}_1$ is. By definition:
+
+$$
+\mathcal{P}_1(x_{n - 1}) = \int_{-\infty}^{x_{n - 1}}f_{n}(x_{n}) \mathcal{P}_{0}(x_{n}) d x_{n}
+= \int_{-\infty}^{x_{n - 1}} w_n \cdot e^{w_n \cdot x_n} \left[ e^{\left(\sum\limits_{j = n + 1}^N w_j\right) \cdot x_n} \right]d x_{n}
+$$
+
+$$
+= w_n \int_{-\infty}^{x_{n - 1}} e^{\left(\sum\limits_{j = n}^N w_j\right) \cdot x_n} d x_{n}
+= \left[w_n \middle/ \left(\sum\limits_{j = n}^N w_j\right)\right] \cdot e^{\left(\sum\limits_{j = n}^N w_j\right) \cdot x_n} \bigg\rvert_{-\infty}^{x_{n - 1}}
+$$
+
+$$
+= \left[w_n \middle/ \left(\sum\limits_{j = n}^N w_j\right)\right] \cdot e^{\left(\sum\limits_{j = n}^N w_j\right) \cdot x_{n - 1}}
+$$
+
+Now all that is remaining is simply an exercise of proof by mathematical induction, where given the induction hypothesis
+
+$$
+\mathcal{P}_j(x_{n - j}) = \left[ \prod\limits_{h = n - j + 1}^{n} \left( w_h \middle/ {\sum\limits_{k = h}^N w_k} \right) \right] \cdot e^{\left(\sum\limits_{k = n - j + 1}^N w_k\right) \cdot x_{n - j}}
+$$
+, which is true for $j = 1$, we shall show it is true for $j \in \{2, \dots, n\}$.
+
+Suppose the inudction hypothesis is true for $j = \mathcal{I} - 1$, then by definition
+
+$$
+\mathcal{P}_{\mathcal{I}}(x_{n - \mathcal{I}}) = \int_{-\infty}^{x_{n - \mathcal{I}}}f_{n - \mathcal{I} + 1}(x_{n - \mathcal{I} + 1}) \mathcal{P}_{\mathcal{I} - 1}(x_{n - \mathcal{I} + 1}) d x_{n - \mathcal{I} + 1}
+$$
+
+$$
+= \int_{-\infty}^{x_{n - \mathcal{I}}}w_{n - \mathcal{I} + 1}\cdot e^{w_{n - \mathcal{I} + 1}\cdot x_{n - \mathcal{I} + 1}} \cdot
+\left[ \prod\limits_{h = n - \mathcal{I} + 2}^{n} \left( w_h \middle/ {\sum\limits_{k = h}^N w_k} \right) \right] \cdot e^{\left(\sum\limits_{k = n - \mathcal{I} + 2}^N w_k\right) \cdot x_{n - \mathcal{I} + 1}} d x_{n - \mathcal{I} + 1}
+$$
+
+$$
+= w_{n - \mathcal{I} + 1} \left[ \prod\limits_{h = n - \mathcal{I} + 2}^{n} \left( w_h \middle/ {\sum\limits_{k = h}^N w_k} \right) \right] \cdot \int_{-\infty}^{x_{n - \mathcal{I}}} e^{\left(\sum\limits_{k = n - \mathcal{I} + 1}^N w_k\right) \cdot x_{n - \mathcal{I} + 1}} d x_{n - \mathcal{I} + 1}
+$$
+
+$$
+= \left[ w_{n - \mathcal{I} + 1} \middle/ \left(\sum\limits_{k = n - \mathcal{I} + 1}^N w_k \right)\right] \left[ \prod\limits_{h = n - \mathcal{I} + 2}^{n} \left( w_h \middle/ {\sum\limits_{k = h}^N w_k} \right) \right] \cdot \left[ e^{\left(\sum\limits_{k = n - \mathcal{I} + 1}^N w_k\right) \cdot x_{n - \mathcal{I} + 1}} \bigg\rvert_{-\infty}^{x_{n + \mathcal{I}}}\right]
+$$
+
+$$
+= \prod\limits_{h = n - \mathcal{I} + 1}^{n} \left( w_h \middle/ {\sum\limits_{k = h}^N w_k} \right) \cdot e^{\left(\sum\limits_{k = n - \mathcal{I} + 1}^N w_k\right) \cdot x_{n - \mathcal{I}}}
+$$
+
+which shows the induction hypothesis is true for $j = \mathcal{I}$.
+
+Therefore
+
+$$
+\mathcal{P}_j(x_{n - j}) = \left[ \prod\limits_{h = n - j + 1}^{n} \left( w_h \middle/ {\sum\limits_{k = h}^N w_k} \right) \right] \cdot e^{\left(\sum\limits_{k = n - j + 1}^N w_k\right) \cdot x_{n - j}}
+$$
+
+for $j \in \{1, \dots, n\}$ and
+
+$$
+\mathcal{P} = \mathcal{P}_n(0) = \left[ \prod\limits_{h = 1}^{n} \left( w_h \middle/ {\sum\limits_{k = h}^N w_k} \right) \right] \cdot e^{\left(\sum\limits_{k = 1}^N w_k\right) \cdot 0} = \prod\limits_{h = 1}^{n} \left( w_h \middle/ {\sum\limits_{k = h}^N w_k} \right)
+$$
+
+QED.
+
+\end{document}
