@@ -19,7 +19,7 @@ events: blog
 nohero: true
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 RStudio Connect helps teams of all sizes operationalize their data science work, and provides a single point of access to data products for decision makers. In this release, we have emphasized features that will help address maturing DevOps requirements within organizations seeking to deploy and scale data science.  

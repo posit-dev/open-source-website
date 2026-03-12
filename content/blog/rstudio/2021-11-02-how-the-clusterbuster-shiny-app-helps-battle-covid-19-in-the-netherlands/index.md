@@ -13,7 +13,7 @@ alttext: Clusterbuster logo
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 As 2020 closed, Eveline Geubbels, former COVID-19 Surveillance Coordinator at the Dutch National Institute for Public Health and the Environment (RIVM), faced an important question: How can we help the public health doctors and epidemiologists that work within the 25 Dutch regional health services gain insight into clusters of COVID-19 cases?

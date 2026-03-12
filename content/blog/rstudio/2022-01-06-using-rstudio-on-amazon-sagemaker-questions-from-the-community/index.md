@@ -20,7 +20,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 On December 6th, 2021, the <a href="https://www.meetup.com/RStudio-Enterprise-Community-Meetup/" target = "_blank">RStudio Enterprise Community Meetup</a> hosted an event, Using RStudio on Amazon SageMaker.

@@ -16,7 +16,7 @@ alttext: RStudio IDE showing code, diamond pricing graph
 description: RStudio Package Manager 1.1.2 introduces beta support for Windows package binaries. These binaries make it easier and faster to install R packages on Windows Desktop.
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 

@@ -16,7 +16,7 @@ alias:
   - 2021/11/02/announcing-rstudio-on-amazon-sagemaker/
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 ## Data Science in the Cloud

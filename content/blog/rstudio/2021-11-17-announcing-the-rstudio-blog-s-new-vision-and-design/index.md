@@ -13,7 +13,7 @@ description: Welcome to rstudio.com/blog! We are excited to announce updates to 
 alttext:
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 <caption>
 Photo by <a href="https://unsplash.com/@maksym_tymchyk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maksym Tymchyk</a> on <a href="https://unsplash.com/s/photos/hexagon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

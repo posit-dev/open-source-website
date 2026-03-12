@@ -17,7 +17,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 On August 5, 2020, <a href="https://blog.rstudio.com/2020/08/05/rstudio-cloud-announcement/" target="_blank" rel="noopener noreferrer">RStudio announced the general availability of RStudio Cloud</a>, its cloud-based platform for doing, teaching, and learning data science using only a browser. We often recommend RStudio Cloud to teachers because it simplifies course setup, makes it easy to distribute and manage exercises, and helps the instructor track student progress. With COVID-19 driving more courses online this fall, RStudio has developed a number of resources for instructors to use with RStudio Cloud, including:

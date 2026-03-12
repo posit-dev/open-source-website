@@ -13,7 +13,7 @@ alttext: RStudio Global 2021 event poster
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 

@@ -36,7 +36,7 @@ blogcategories:
 events: blog
 alttext: RStudio Cloud logo
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <style type="text/css">

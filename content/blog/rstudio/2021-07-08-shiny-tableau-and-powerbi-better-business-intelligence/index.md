@@ -23,7 +23,7 @@ events: blog
 alttext: The R Shiny logo
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <i>This is a guest post from Marcin Dubel, a 2021 Shiny Contest Grand Prize winner and Software Engineer at <a href="https://appsilon.com/" target="_blank" rel="noopener noreferrer">Appsilon</a>, a Full Service RStudio Partner.</i>

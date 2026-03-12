@@ -11,7 +11,7 @@ alttext: A robot next to the title Practical Advice for R in Production
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 *This is a guest post by Colin Gillespie from [Jumping Rivers](https://www.jumpingrivers.com/), a Full Service RStudio Partner.*

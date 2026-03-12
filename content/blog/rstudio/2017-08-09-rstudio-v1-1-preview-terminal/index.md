@@ -16,7 +16,7 @@ blogcategories:
 - Open Source
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Today we're excited to announce availability of our first Preview Release for RStudio 1.1, a major new release which includes the following new features:

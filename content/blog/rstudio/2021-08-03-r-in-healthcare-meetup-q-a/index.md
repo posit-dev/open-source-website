@@ -16,7 +16,7 @@ blogcategories:
 alttext: Cultivating an R-Based Analytic Practice title slide
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 <div class="lt-gray-box">
 <i>This is a guest post from Chris Bumgardner, Data Science Program Manager at Children’s Wisconsin. The RStudio Enterprise Community group recently hosted an <a href="https://www.youtube.com/watch?v=pHZ8dsc0PhY" target="_blank">R in Healthcare meetup</a> highlighting the powerful work that Chris and his team are doing to help ensure Wisconsin’s kids are healthy, happy, and safe.</i>

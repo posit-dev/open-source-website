@@ -13,7 +13,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 In case you missed the details of our recent release or would just like a quick tour, here's a set of videos highlighting our recent work on RStudio 1.4.

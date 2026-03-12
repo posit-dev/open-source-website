@@ -15,7 +15,7 @@ events: blog
 alttext: A painting titled "Data and Goliath" showing R on a cliff and a huge database in the distance.
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <sup> "Data and Goliath"-gouache painting by Jacqueline Nolis (image from her <a href="https://www.etsy.com/shop/NolisMusings" target="_blank">Etsy store</a>)</sup>

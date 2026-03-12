@@ -18,7 +18,7 @@ blogcategories:
 - Company News and Events
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 ![rstudio global](https://d33wubrfki0l68.cloudfront.net/7139b26ade68d57777287c324f87834291c1032e/43b2b/2020/10/16/rstudio-global-2021/global-logo-dark_hueec0ce32c918272640b157f9b6a86e05_48888_800x0_resize_q75_box.jpg)

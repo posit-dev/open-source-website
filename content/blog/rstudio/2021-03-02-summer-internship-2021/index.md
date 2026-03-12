@@ -14,7 +14,7 @@ description: We are excited to announce the fourth formal summer internship prog
 events: blog
 alttext: a photo of a mentor showing a mentee his laptop
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 <sup>Photo by [JD Long](https://twitter.com/CMastication)</sup>
 

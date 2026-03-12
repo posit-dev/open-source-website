@@ -19,7 +19,7 @@ resources:
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 <sup>
 Screenshot of a Tableau dashboard with a shinytableau extension

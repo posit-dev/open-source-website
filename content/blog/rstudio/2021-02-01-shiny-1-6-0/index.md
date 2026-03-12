@@ -25,7 +25,7 @@ events: blog
 alttext: Shiny logo
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 We are thrilled to announce that Shiny 1.6.0 is now on CRAN! Install it now with:

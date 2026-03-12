@@ -12,7 +12,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 Back in July we made the difficult decision to cancel rstudio:conf(2021) for the health and safety of our attendees and the broader community.
 

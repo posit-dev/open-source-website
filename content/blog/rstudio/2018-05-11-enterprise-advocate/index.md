@@ -11,7 +11,7 @@ blogcategories:
 - Company News and Events
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 We are looking for our next [Enterprise Advocate](https://hire.withgoogle.com/public/jobs/rstudiocom/view/P_AAAAAACAAADFZoly7Lojez?trackingTag=rStudioBlog) to join the RStudio team. See what [Pete Knast](https://www.linkedin.com/in/peter-knast-808828b/), Global Director of New Business, has to say about working at RStudio and the Enterprise Advocate role. 

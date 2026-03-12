@@ -19,7 +19,7 @@ blogcategories:
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 The inaugural 2020 RStudio Table Contest came to a close in mid-November and we were delighted to see that over 80 entries were submitted. With such enthusiasm for tables, it took some time to look over all of the entries but we do have a winner.

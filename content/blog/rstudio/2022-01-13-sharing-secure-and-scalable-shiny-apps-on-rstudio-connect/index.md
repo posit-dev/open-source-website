@@ -14,7 +14,7 @@ blogcategories:
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <a href="https://shiny.rstudio.com/" target = "_blank">Shiny</a> is an R package that makes it easy for data scientists to build interactive web apps straight from R, without having to learn any new languages or frameworks. Once you’ve created a Shiny app, it’s time to share your great work!

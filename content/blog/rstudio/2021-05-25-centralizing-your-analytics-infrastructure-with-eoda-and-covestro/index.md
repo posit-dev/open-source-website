@@ -15,7 +15,7 @@ events: blog
 alttext: the logos of Covestro and eoda
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <b>Guten Tag!</b> On June 16th, we’ll be teaming up with <a href="https://www.eoda.de/" target="_blank" rel="noopener noreferrer">eoda</a> and <a href="https://www.covestro.com/en" target="_blank" rel="noopener noreferrer">Covestro</a> to discuss—in German—how  they put their data science into production by developing a unified infrastructure. In addition to learning about Covestro’s success, participants will also receive hands-on guidance on deploying data products in highly structured environments. 

@@ -14,7 +14,7 @@ blogcategories:
 - Company News and Events
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 rstudio::conf 2019, the conference for all things R and RStudio, is less than two months away and we’re looking forward to seeing everyone January 15 - 18 in Austin, TX.

@@ -14,7 +14,7 @@ blogcategories:
 - Company News and Events
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 We are excited to announce the second formal summer internship program at RStudio. The goal of this program is to enable RStudio employees to collaborate with students to do work that will help both RStudio users and the broader R community, and help ensure that the community of R developers is as diverse as its community of users. Over the course of the internship, you will work with experienced data scientists, software developers, and educators to create and share new tools and ideas.

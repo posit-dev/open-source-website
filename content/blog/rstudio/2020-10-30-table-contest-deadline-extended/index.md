@@ -15,7 +15,7 @@ blogcategories:
 - Company News and Events
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 The original deadline for the [2020 Table Contest](https://blog.rstudio.com/2020/09/15/announcing-the-2020-rstudio-table-contest/) was scheduled for October 31, 2020.

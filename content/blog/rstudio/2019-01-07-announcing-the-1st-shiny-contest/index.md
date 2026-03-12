@@ -14,7 +14,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <img src="/blog-images/2019-01-07-shiny-contest.png" style="width: 40%; float: right"/>

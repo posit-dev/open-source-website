@@ -17,7 +17,7 @@ description: In an upcoming webinar on November 17th, Solita will showcase how t
 alttext: Using R & Python webinar announcement with speakers and a blue background with faded hexes
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <div class="lt-gray-box">

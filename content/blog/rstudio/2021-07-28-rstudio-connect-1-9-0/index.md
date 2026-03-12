@@ -16,7 +16,7 @@ alttext: A dashboard made with RStudio Connect
 nohero: true
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 As publishers add more content to RStudio Connect, content organization, distribution, and discovery can become a challenge. Distributing individual links to all your most important content is tiresome, and the default Connect dashboard contains more information than end users often want or need.

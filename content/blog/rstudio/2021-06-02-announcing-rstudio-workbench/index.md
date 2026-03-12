@@ -19,7 +19,7 @@ blogcategories:
 events: blog
 alttext: RStudio Workbench logo
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 We have renamed RStudio Server Pro to RStudio Workbench. This change reflects the product’s growing support for a wide range of different development environments. RStudio Workbench enables R and Python data scientists to use their preferred IDE in a secure, scalable, and collaborative environment--whether that is the RStudio IDE, JupyterLab, Jupyter Notebooks, or VS Code. We want RStudio Workbench to be the best single platform to support open source, code-first data science, whether your team is using R or Python. 

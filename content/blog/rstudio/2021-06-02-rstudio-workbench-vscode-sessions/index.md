@@ -10,7 +10,7 @@ events: blog
 alttext: RStudio Workbench logo
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 The RStudio Workbench Juliet Rose release introduces support for VS Code sessions. Previously released as a <a href="https://blog.rstudio.com/2020/11/16/rstudio-1-4-preview-server-pro/" target="_blank" rel="noopener noreferrer">preview feature in RStudio Server Pro v1.4</a>, VS Code sessions are now fully supported.

@@ -13,7 +13,7 @@ blogcategories:
 - Industry
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 We’re excited to announce that all rstudio::global(2021) X-Session recordings are now available for you to watch.

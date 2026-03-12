@@ -14,7 +14,7 @@ alttext: Purple flowers in the foreground with trees, shrubs, and a blue sky in 
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 <caption>
 Photo by Vineesh Ramayyan at <a href="https://nilgiris.nic.in/tourist-place/rose-garden-ooty/" target = "_blank" rel = "noopener noreferrer">Ooty Rose Garden</a>

@@ -18,7 +18,7 @@ blogcategories:
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 The day you've all been waiting for is almost here: rstudio::global(2021) starts tomorrow! This 24-hour virtual event will focus on all things R and RStudio, featuring 50+ speakers from around the world, and it begins at 1600GMT (11 am EST, 8 am PST) on January 21, 2021.
 

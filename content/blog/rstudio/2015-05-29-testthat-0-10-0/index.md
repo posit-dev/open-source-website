@@ -6,7 +6,7 @@ date: '2015-05-29'
 slug: testthat-0-10-0
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 

@@ -35,7 +35,7 @@ blogcategories:
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 One of our Full Service Partners, <a href="https://appsilon.com/shiny" target="_blank" rel="noopener noreferrer">Appsilon</a>, recently held an internal competition to help test an open source R package they developed called <a href="https://github.com/Appsilon/shiny.semantic" target="_blank" rel="noopener noreferrer">`shiny.semantic`</a>. This package is designed to quickly help create proof-of-concept Shiny apps using the Fomantic UI library. To make the competition a little more interesting, Appsilon reached out and asked if we would judge the submissions on their technical and creative merit. Here’s a sneak peek of the apps we got to review, and a summary of the winners. 

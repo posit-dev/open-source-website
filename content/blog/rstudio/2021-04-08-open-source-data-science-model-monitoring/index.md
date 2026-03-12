@@ -23,7 +23,7 @@ blogcategories:
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 ModelOps or MLOps (for "model/machine learning operations") focuses on the real-world processes involved in building, deploying, and maintaining a model within an organization's data infrastructure. Developing a model that meets your organizations needs and goals is a big accomplishment, but whether that model's purpose is <a href="https://www.tmwr.org/software-modeling.html#types-of-models" target="_blank" rel="noopener noreferrer">largely predictive, inferential, or descriptive</a>, the "care and feeding" of your model often doesn't end when you are done developing it. How is the model going to be deployed? Should you retrain the model on a schedule? Based on changes in model performance? When should you kick off retraining the same kind of model with fresh data versus go back to the drawing board for a full round of model development again? These are the kinds of questions that ModelOps deals with.

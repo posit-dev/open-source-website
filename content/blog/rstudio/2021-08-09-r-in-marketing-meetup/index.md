@@ -17,7 +17,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 <div align="right"><font size="2">View the R in Marketing meetup recording <a href="https://youtu.be/Y2zoRCXgPwk" target="_blank">here.</a></font></div>
 

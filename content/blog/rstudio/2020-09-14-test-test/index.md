@@ -17,7 +17,7 @@ description: Today we announce the 2020 RStudio Table Contest. One thing we love
 
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Here at RStudio, we love tables. No, not tables like the one pictured above, but data tables. 

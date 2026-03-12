@@ -17,7 +17,7 @@ tags:
 - RStudio IDE
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <p style="text-align: center;">We're excited to announce the <strong>official release of RStudio 1.2</strong>!</p>

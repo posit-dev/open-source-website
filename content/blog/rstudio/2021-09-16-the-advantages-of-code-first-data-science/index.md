@@ -13,7 +13,7 @@ alttext: Laptop with a code editor open on the screen.
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 <sup>
 Photo by <a href="https://unsplash.com/@cgower?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Christopher Gower</a> on <a href="https://unsplash.com/">Unsplash</a>

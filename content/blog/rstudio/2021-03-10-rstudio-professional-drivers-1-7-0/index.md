@@ -24,7 +24,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Data security is a strategic imperative in most organizations. In a world where data is under constant threat of malicious attacks, the security of your data pipeline is critical. One of the easiest ways to keep your data secure is by applying the latest software updates to your systems. This release of the [RStudio Professional Drivers](https://rstudio.com/products/drivers/) contains important updates that will help keep your data connections secure and easy to manage. Updating the drivers literally takes minutes and can help prevent future security and administrative issues. *We strongly encourage all customers to upgrade to the 1.7.0 release of the RStudio Professional Drivers*.

@@ -17,7 +17,7 @@ alttext: Trail in forest with a light at the end of the path during sunset
 description: In this series, we walk through lesser-known tips and tricks to help you work more effectively and efficiently in R Markdown. This first post focuses on working with R Markdown in the RStudio IDE.
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <caption>

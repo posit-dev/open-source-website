@@ -15,7 +15,7 @@ blogcategories:
 - Open Source
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Last week, we introduced RStudio's new [visual markdown editor](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/). Today, we're excited to introduce some of the expanded support for Python in the next release of RStudio.

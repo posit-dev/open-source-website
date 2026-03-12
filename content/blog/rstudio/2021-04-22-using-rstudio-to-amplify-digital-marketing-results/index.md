@@ -12,7 +12,7 @@ events: blog
 alttext: charts on a laptop
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 <sup><i>Photo by <a href="https://unsplash.com/@mjessier" target="_blank" rel="noopener noreferrer">Myriam Jessier</a> on Unsplash</i></small></sup>
 

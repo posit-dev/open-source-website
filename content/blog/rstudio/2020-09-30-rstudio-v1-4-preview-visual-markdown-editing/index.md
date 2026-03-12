@@ -20,7 +20,7 @@ blogcategories:
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Today we're excited to announce availability of our first [Preview Release](https://www.rstudio.com/products/rstudio/download/preview/) for RStudio 1.4, a major new release which includes the following new features:

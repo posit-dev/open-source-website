@@ -14,7 +14,7 @@ alttext: a journal, a pencil, and a coffee on top of a map
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 <sup>Photo by[ Clay Banks](https://unsplash.com/@claybanks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on[ Unsplash](https://unsplash.com/s/photos/journey-map?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)</sup>
 

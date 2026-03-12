@@ -21,7 +21,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Michael Lippis of The Outlook podcast recently interviewed RStudio's Lou Bajuk to discuss data science with R and Python, and why RStudio encourages its customers to adopt a multi-lingual data science approach. During the interview, Michael and Lou examined three main topics:

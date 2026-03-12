@@ -14,7 +14,7 @@ resources:
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 <sup>
 Logos of the National Science Foundation, Spelman College, and RStudio

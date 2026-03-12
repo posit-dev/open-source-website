@@ -16,7 +16,7 @@ blogcategories:
 - Company News and Events
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 This is a question that we at RStudio hear a lot. With the tremendous growth in both languages, and in the application of data science in general, there is a lot of interest and debate over which is the “best” language for data science. 

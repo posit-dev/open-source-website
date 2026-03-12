@@ -13,7 +13,7 @@ description: 2021 INSPIRE U2 participants Kathleen Bostic and Michel Ruiz-Fuente
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 > This is a guest post from Kathleen Bostic (Spelman College) and Michel Ruiz-Fuentes (Smith College), participants in the INSPIRE U2 summer site directed by <a   href="https://anayenablanksonphd.weebly.com/" target = "_blank" rel = "noopener noreferrer">Dr. A. Nayena Blankson</a>. The INSPIRE U2 Program provides a learning pathway for underrepresented female students to enter advanced degrees and careers in statistical fields. Learn more in our previous <a   href="https://blog.rstudio.com/2021/10/20/the-inspire-u2-program/" target = "_blank" rel = "noopener noreferrer">blog post</a> and on the <a   href="https://sites.spelman.edu/inspireu2-reu/" target = "_blank" rel = "noopener noreferrer">program website</a>.

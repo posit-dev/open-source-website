@@ -21,7 +21,7 @@ blogcategories:
 events: blog
 alttext: RStudio Global logo
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 It's been just over a week since we wrapped up the final session of rstudio::global(2021). This first virtual RStudio conference broke new ground with:

@@ -14,7 +14,7 @@ blogcategories:
 - Open Source
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <img src="/blog-images/2018-10-16-rstudio-1-2-preview-stan_files/stan_logo.png" width="100px" align="right" style="margin-left: 16px;" alt="Stan Logo" />

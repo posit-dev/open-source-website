@@ -16,7 +16,7 @@ description: Supply chain management presents a number of interesting and challe
 blogcategories: 
  - Company News and Events
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Supply chain management presents several unique challenges, with supply chain resilience particularly relevant due to disruptions from the pandemic. With thousands of SKUs and multi-tiered distribution networks, teams are using R and Python to improve forecasts, speed up operational planning, simulate variability, and design efficient supply chains. 

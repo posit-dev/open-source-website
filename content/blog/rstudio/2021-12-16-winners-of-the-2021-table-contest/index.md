@@ -18,7 +18,7 @@ events: blog
 nohero: true
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 ![2021 RStudio Table Contest. Put the able in table](winner.png)

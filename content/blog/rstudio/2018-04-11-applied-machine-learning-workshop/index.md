@@ -23,7 +23,7 @@ blogcategories:
 - Open Source
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Join Max Kuhn of RStudio for his popular Applied Machine Learning Workshop in Washington D.C.! If you’d missed his sold out course at rstudio::conf 2018 now is your chance.

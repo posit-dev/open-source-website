@@ -26,7 +26,7 @@ events: blog
 alttext: RStudio Cloud logo
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 We roll out new features and improvements regularly on RStudio Cloud, typically every week or two. You can always view the list of significant new features on Cloud’s <a href="https://rstudio.cloud/learn/whats-new" target="_blank" rel="noopener noreferrer">What’s New</a> page, which you can access via the left hand navigator in Cloud.

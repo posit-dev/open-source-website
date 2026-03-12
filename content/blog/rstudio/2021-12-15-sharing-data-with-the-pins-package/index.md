@@ -16,7 +16,7 @@ description: The pins package publishes R objects, such as data sets and predict
 alttext: White pins spread around on a dark grey background
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <caption>

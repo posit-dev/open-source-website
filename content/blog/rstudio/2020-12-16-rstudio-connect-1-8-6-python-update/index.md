@@ -14,7 +14,7 @@ events: blog
 nohero: true
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 ## Bokeh and Streamlit support is now generally available

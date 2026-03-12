@@ -17,7 +17,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 As RStudio's products have increasingly supported Python over the past year, some of our seasoned customers have given us quizzical looks and ask, "Why are you adding Python support? I thought you were an R company!"

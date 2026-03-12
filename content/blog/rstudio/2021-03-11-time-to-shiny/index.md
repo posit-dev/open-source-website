@@ -16,7 +16,7 @@ events: blog
 alttext: Shiny contest hexagon logo
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 We’re excited to announce Shiny Contest 2021! This marks the third year of the Shiny contest, and over the past two years we have been in awe of all of your submissions and we are very much looking forward to seeing what the Shiny community comes up with this year. 

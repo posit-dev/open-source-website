@@ -16,7 +16,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 On December 11, RStudio launched our third annual R Community Survey (formerly known as the Learning R Survey) to better understand how and why people learn and use the R language and associated tools. That survey closes TOMORROW, January 8, 2021. We encourage anyone who is interested in R to respond. The survey should only require 5 to 10 minutes to complete, depending on how little or how much information you choose to share with us. You can find the survey here:

@@ -17,7 +17,7 @@ blogcategories:
 - Company News and Events
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Over the years, we have loved interacting with the Shiny community and loved seeing and sharing all the exciting apps, dashboards, and interactive documents Shiny developers have produced. So last year we launched the Shiny contest and we were overwhelmed (in the best way possible!) by the [136 submissions](https://community.rstudio.com/tag/shiny-contest)! Reviewing all these submissions was incredibly inspiring and humbling. We really appreciate the time and effort each contestant put into building these apps, as well as submitting them as fully reproducible artifacts via [RStudio Cloud](https://rstudio.cloud/).

@@ -14,7 +14,7 @@ alttext: Blue background with a white speech bubble with three blue hexes as an 
 events: blog
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Whether you quickly scan RStudio information or are an active reader of everything we release, we want to hear from you!

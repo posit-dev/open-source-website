@@ -9,7 +9,7 @@ blogcategories:
 - Company News and Events
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 Last month our team assembled from 26 states and seven countries in Columbus, OH for our company Work Week. Though plain in name, this week is anything but. It is filled with stories, homemade goodies, big laughs, new experiences and lots of in-depth conversations. The layout varies a bit year to year but the same is true - each and every time we connect, communicate, and get things done!

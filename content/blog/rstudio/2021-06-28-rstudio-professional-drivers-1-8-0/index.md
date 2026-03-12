@@ -29,7 +29,7 @@ events: blog
 alttext: The Snowflake logo (a snowflake)
 image: thumbnail.png
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 ## Announcing full support for the Snowflake driver

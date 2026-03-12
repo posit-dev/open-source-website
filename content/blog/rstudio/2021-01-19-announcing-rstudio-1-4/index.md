@@ -20,7 +20,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 RStudio is excited to announce that we released RStudio 1.4 today! The many features of RStudio 1.4 will already be familiar to regular readers of this blog. These include: 

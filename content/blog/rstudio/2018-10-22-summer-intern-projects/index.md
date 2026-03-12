@@ -11,7 +11,7 @@ blogcategories:
 - Company News and Events
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 This summer we had [five interns](https://blog.rstudio.com/2018/04/18/summer-interns/) participate in our [internship program](https://blog.rstudio.com/2018/02/12/summer-interns/). Each intern was here for 10 weeks and worked closely with a mentor or team. Everyone jumped right in and contributed quickly. We are excited about the progress our interns made and wanted to share it with you here!

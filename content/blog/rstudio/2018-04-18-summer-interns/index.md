@@ -11,7 +11,7 @@ blogcategories:
 - Company News and Events
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 We were thrilled by the response to our [summer internship program](https://blog.rstudio.com/2018/02/12/summer-interns/). After carefully reviewing over 250 applications, we have made our final selections. Here is a brief description of each intern and the projects they will be working on this summer. 

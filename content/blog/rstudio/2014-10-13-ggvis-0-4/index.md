@@ -6,7 +6,7 @@ date: '2014-10-13'
 slug: ggvis-0-4
 events: blog
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 

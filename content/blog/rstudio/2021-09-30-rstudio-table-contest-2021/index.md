@@ -17,7 +17,7 @@ description: RStudio Table Contest 2021! We thought the 2020 Table Contest was q
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 ## The RStudio Table Contest: 2021 Edition

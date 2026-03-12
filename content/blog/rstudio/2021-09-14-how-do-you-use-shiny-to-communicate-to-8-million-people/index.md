@@ -15,7 +15,7 @@ alttext: a heatmap of the U.S.
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 <a class="no-icon" href="https://www.youtube.com/watch?v=BmpnfLLrr4w" target="_blank"><img src="atlanta.gif" class="mb-0" alt="6 second video snippet of Atlanta, GA view of buildings from sky from GA Tech COVID app spotlight video" style="height:auto; width:100%;"/></a>

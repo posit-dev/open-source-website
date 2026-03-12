@@ -21,7 +21,7 @@ blogcategories:
 events: blog
 image: thumbnail.jpg
 ported_from: rstudio
-port_status: raw
+port_status: in-progress
 ---
 
 ## The Root Problem: We Don't All Speak the Same Language
