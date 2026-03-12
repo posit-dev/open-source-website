@@ -1,4 +1,4 @@
-{{/* insert-cards: Insert a grid of cards from a Markdown-style list. */}}
+{{/* insert-items: Insert a grid of item cards from a Markdown-style list. */}}
 {{ $cols := .Get "cols" | default "3" | string }}
 {{ $hide_badge := .Get "hide-badge" }}
 
@@ -26,7 +26,7 @@
 <div class="grid {{ $gridClass }} gap-6">
   {{ range $items }}
     <div>
-      {{ partial "card.html" (dict "item" . "hide-badge" $hide_badge) }}
+      {{ partial "item.html" (dict "item" . "hide-badge" $hide_badge) }}
     </div>
   {{ end }}
 </div>

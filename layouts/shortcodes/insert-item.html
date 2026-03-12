@@ -1,0 +1,8 @@
+{{/* insert-item: Insert a single item card by slug. */}}
+{{ $item := .Get "item" }}
+{{ if not $item }}
+  {{ errorf "insert-item shortcode requires an 'item' argument" }}
+{{ end }}
+
+{{ $hide_badge := .Get "hide-badge" }}
+{{ partial "item.html" (dict "item" $item "hide-badge" $hide_badge) }}

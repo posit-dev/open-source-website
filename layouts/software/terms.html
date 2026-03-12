@@ -186,7 +186,7 @@
             {{ $fileID = .UniqueID }}
           {{ end }}
           {{ $uniqueID := printf "software-%s" ($fileID | default .RelPermalink | md5) }}
-          {{ partial "card.html" (dict "page" . "id" $uniqueID "hide-badge" "true") }}
+          {{ partial "item.html" (dict "page" . "id" $uniqueID "hide-badge" "true") }}
         {{ end }}
       </div>
 

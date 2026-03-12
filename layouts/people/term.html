@@ -146,7 +146,7 @@
     {{ range . }}
     {{ $person := site.GetPage (printf "/people/%s" (urlize .)) }}
     {{ if $person }}
-    {{ partial "card.html" (dict "page" $person) }}
+    {{ partial "item.html" (dict "page" $person) }}
     {{ end }}
     {{ end }}
   </div>
@@ -171,7 +171,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $software }}
-      {{ partial "card.html" (dict "page" .) }}
+      {{ partial "item.html" (dict "page" .) }}
     {{ end }}
   </div>
   {{ end }}
@@ -195,7 +195,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $events }}
-      {{ partial "card.html" (dict "page" .) }}
+      {{ partial "item.html" (dict "page" .) }}
     {{ end }}
   </div>
   {{ end }}
@@ -222,7 +222,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $combined.ByDate.Reverse }}
-      {{ partial "card.html" (dict "page" .) }}
+      {{ partial "item.html" (dict "page" .) }}
     {{ end }}
   </div>
   {{ end }}

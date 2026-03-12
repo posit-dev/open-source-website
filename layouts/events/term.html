@@ -149,7 +149,7 @@
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 mx-2 md:mx-0 mb-6">
     {{ range $people }}
-    {{ partial "card.html" (dict "page" . "hide-badge" true) }}
+    {{ partial "item.html" (dict "page" . "hide-badge" true) }}
     {{ end }}
   </div>
   {{ end }}
@@ -165,7 +165,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $software }}
-    {{ partial "card.html" (dict "page" . "hide-badge" true) }}
+    {{ partial "item.html" (dict "page" . "hide-badge" true) }}
     {{ end }}
   </div>
   {{ end }}
@@ -181,7 +181,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $resources }}
-    {{ partial "card.html" (dict "page" .) }}
+    {{ partial "item.html" (dict "page" .) }}
     {{ end }}
   </div>
   {{ end }}
