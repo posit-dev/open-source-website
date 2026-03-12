@@ -28,6 +28,30 @@ layout: single
 {{< query-items path="software/*" filter=`{"and": [{"in": ["R", {"var": "languages"}]}, {"in": ["Python", {"var": "languages"}]}]}` limit="10" cols="3" >}}
 
 
+## Software that supports both R and Python (contains_all)
+
+```
+{{</* query-items path="software/*" filter=`{"contains_all": [{"var": "languages"}, ["R", "Python"]]}` limit="10" cols="3" */>}}
+```
+
+{{< query-items path="software/*" filter=`{"contains_all": [{"var": "languages"}, ["R", "Python"]]}` limit="10" cols="3" >}}
+
+## Software that supports Julia or Rust (contains_any)
+
+```
+{{</* query-items path="software/*" filter=`{"contains_any": [{"var": "languages"}, ["Julia", "Rust"]]}` limit="10" cols="3" */>}}
+```
+
+{{< query-items path="software/*" filter=`{"contains_any": [{"var": "languages"}, ["Julia", "Rust"]]}` limit="10" cols="3" >}}
+
+## Software that supports neither Python nor JavaScript (contains_none)
+
+```
+{{</* query-items path="software/*" filter=`{"contains_none": [{"var": "languages"}, ["Python", "JavaScript"]]}` limit="10" cols="3" */>}}
+```
+
+{{< query-items path="software/*" filter=`{"contains_none": [{"var": "languages"}, ["Python", "JavaScript"]]}` limit="10" cols="3" >}}
+
 ## People with a personal website
 
 ```

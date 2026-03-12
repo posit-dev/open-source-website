@@ -134,6 +134,40 @@
     {{ else if eq $op "!" }}
       {{ $result = not $a }}
 
+    {{ else if eq $op "contains_all" }}
+      {{ $result = true }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else }}
+        {{ range $b }}
+          {{ if not (in $a .) }}
+            {{ $result = false }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+    {{ else if eq $op "contains_any" }}
+      {{ $result = false }}
+      {{ if not (or $aIsNil $bIsNil) }}
+        {{ range $b }}
+          {{ if in $a . }}
+            {{ $result = true }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+    {{ else if eq $op "contains_none" }}
+      {{ $result = true }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else }}
+        {{ range $b }}
+          {{ if in $a . }}
+            {{ $result = false }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
     {{ else }}
       {{ $result = false }}
     {{ end }}
