@@ -75,7 +75,7 @@ both Python and R.
 
 ---
 
-{{< query-items path="software/*" filter=`{"contains_all": [{"var": "languages"}, ["R", "Python"]]}` limit="3" cols="1" >}}
+{{< query-items path="software/*" filter=`{"contains_all": [{"var": "languages"}, ["R", "Python"]]}` limit="3" cols="1" format="tile" hide-badge="true" >}}
 {{< /columns >}}
 
 ## Columns: custom split (2,1)
