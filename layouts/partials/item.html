@@ -188,18 +188,22 @@
 
       {{/* -- Size (absolute, top-left) --------------------------- */}}
       {{ if ne hugo.Environment "production" }}
-        <span class="absolute top-2 right-2 z-10 text-xs font-semibold uppercase tracking-wide
+        <span class="absolute top-2 left-2 z-10 text-xs font-semibold uppercase tracking-wide
                     px-2 py-0.5 rounded-full
                     bg-red-100 text-red-700">
-          <span class="hidden @max-tall:inline">short</span>
+
+          <span class="hidden @max-nip:inline">sip</span>
+          <span class="hidden @nip:@max-short:inline">nip</span>
+          <span class="hidden @short:@max-tall:inline">short</span>
           <span class="hidden @tall:@max-grande:inline">tall</span>
           <span class="hidden @grande:@max-venti:inline">grande</span>
-          <span class="hidden @venti:inline">venti</span>
+          <span class="hidden @venti:@max-trenta:inline">venti</span>
+          <span class="hidden @trenta:inline">trenta</span>
         </span>
       {{ end }}
 
     {{/* -- Image — always visible, fixed height, 16:9 aspect -- */}}
-    <div class="h-full aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+    <div class="h-full @max-nip:w-full @nip:aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
@@ -214,61 +218,60 @@
     </div>
 
     {{/* -- Content — hidden at short, visible from tall+ -- */}}
-    <div class="hidden @tall:flex flex-col flex-auto gap-y-1 px-3 py-1 overflow-hidden">
+    <div class="hidden @nip:flex flex-col w-full px-2 overflow-hidden {{ $tileHeight }}">
 
-      <div class="flex items-center gap-x-2">
+      {{/* -- Top Row -- */}}
+      <div class="flex flex-1 items-center gap-x-3">
         {{ with $str_title }}
-          <h3 class="m-0! text-sm font-semibold truncate">{{ . | safeHTML }}</h3>
+          <h3 class="m-0! block flex-grow text-sm font-bold line-clamp-2! @tall:line-clamp-1!">{{ . | safeHTML }}</h3>
         {{ end }}
-      </div>
 
-      {{ with $str_description }}
-        <p class="m-0! text-xs text-gray-500 truncate">{{ . | safeHTML }}</p>
-      {{ end }}
-
-      {{/* -- Metadata row — visible from grande+ -- */}}
-      <div class="hidden @grande:flex gap-x-3 text-xs text-gray-500">
-        {{ with $str_location }}
-          <span class="flex items-center gap-1">
-            <span class="icon-[boxicons--map-filled]"></span>{{ . }}
-          </span>
-        {{ end }}
-        {{ with $date_value }}
-          <span class="flex items-center gap-1">
-            <span class="icon-[boxicons--calendar-filled]"></span>{{ . }}
-          </span>
-        {{ end }}
-        {{ with $str_duration }}
-          <span class="flex items-center gap-1">
-            <span class="icon-[boxicons--clock-4-filled]"></span>{{ . }}
-          </span>
-        {{ end }}
-        {{ with $str_stars }}
-          <span class="flex items-center gap-1">
-            <span class="icon-[boxicons--star-filled]"></span>{{ . }}
-          </span>
-        {{ end }}
-      </div>
-    </div>
-
-    {{/* -- Tags — visible from venti+ -- */}}
-    {{ with $tags_values }}
-      <div class="hidden @tall:flex gap-1 px-3 justify-items-end justify-end">
-
+        <div class="hidden @short:flex items-center justify-end justify-items-end pl-3">
         {{ if not $hide_badge }}
           {{ if or $card_settings.badge_icon $card_settings.badge_text }}
-            <span class="flex items-center flex-shrink-0 text-xs gap-x-1 px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">
-              <span class="icon-[{{ $card_settings.badge_icon }}]"></span>
-              <span class="font-semibold uppercase tracking-wide">{{ $card_settings.badge_text }}</span>
+            <span class="items-center flex-shrink-0 text-xs gap-x-1 px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">
+              <span class="-mb-[1px] icon-[{{ $card_settings.badge_icon }}]"></span>
+              <span class="hidden @grande:inline font-semibold uppercase tracking-wide">{{ $card_settings.badge_text }}</span>
             </span>
           {{ end }}
         {{ end }}
-
-        {{ range . }}
-          <span class="text-xs font-semibold uppercase tracking-wide whitespace-nowrap rounded-full px-2 py-0.5 bg-blue-100 text-blue-700">{{ . }}</span>
-        {{ end }}
+        </div>
       </div>
-    {{ end }}
+
+      {{/* -- Bottom Row -- */}}
+      <div class="hidden @tall:flex flex-1 w-full gap-x-3">
+
+        {{/* -- Metadata row — visible from grande+ -- */}}
+        <div class="flex flex-grow items-center gap-x-3 text-xs font-semibold text-gray-500 flex-wrap">
+          {{ with $date_value }}
+            <span class="flex items-center gap-1 whitespace-nowrap"><span class="flex-none icon-[boxicons--calendar-filled]"></span>{{ . }}</span>
+          {{ end }}
+          {{ with $str_location }}
+            <span class="hidden @grande:flex flex-1 items-center gap-1 whitespace-nowrap truncate"><span class="flex-none icon-[boxicons--map-filled]"></span><span class="truncate">{{ . }}</span></span>
+          {{ end }}
+          {{ with $str_duration }}
+            <span class="flex items-center gap-1 whitespace-nowrap"><span class="flex-none icon-[boxicons--clock-4-filled]"></span>{{ . }}</span>
+          {{ end }}
+          {{ with $str_stars }}
+            <span class="flex items-center gap-1 whitespace-nowrap"><span class="flex-none icon-[boxicons--star-filled]"></span>{{ . }}</span>
+          {{ end }}
+        </div>
+
+        {{/* -- Tags -- */}}
+        {{ with $tags_values }}
+          <div class="flex flex-auto items-center overflow-hidden justify-end justify-items-end">
+            <div class="flex gap-x-1 gap-y-10 items-center -justify-items-end justify-end flex-wrap content-between overflow-hidden h-6 pt-0.5">
+              {{ range . }}
+                <span class="text-xs font-semibold uppercase tracking-wide whitespace-nowrap rounded-full px-2 py-0.5 bg-blue-100 text-blue-700">{{ . }}</span>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+
+
+      </div>
+
+    </div>
   </a>
 </div>
 
@@ -371,10 +374,13 @@
         <span class="absolute top-2 @max-venti:left-2 @venti:right-2 z-10 text-xs font-semibold uppercase tracking-wide
                     px-2 py-0.5 rounded-full
                     bg-red-100 text-red-700">
-          <span class="hidden @max-tall:inline">short</span>
+          <span class="hidden @max-nip:inline">sip</span>
+          <span class="hidden @nip:@max-short:inline">nip</span>
+          <span class="hidden @short:@max-tall:inline">short</span>
           <span class="hidden @tall:@max-grande:inline">tall</span>
           <span class="hidden @grande:@max-venti:inline">grande</span>
-          <span class="hidden @venti:inline">venti</span>
+          <span class="hidden @venti:@max-trenta:inline">venti</span>
+          <span class="hidden @trenta:inline">trenta</span>
         </span>
       {{ end }}
 
