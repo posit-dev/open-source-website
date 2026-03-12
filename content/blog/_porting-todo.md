@@ -2,6 +2,24 @@
 
 Track specific issues found while porting posts. Address these after bulk porting is complete.
 
+## Responsive image processing disabled
+
+**File:** `layouts/_default/_markup/render-image.html`
+
+The responsive image processing (webp conversion, multiple sizes) was disabled due to memory errors when building with 700+ rstudio.com images. The CI environment ran out of memory during the webp conversion step.
+
+**What changed:** Markdown images (`![alt](image.png)`) now render as simple `<img>` tags instead of `<picture>` elements with multiple srcset sizes and webp variants.
+
+**What still works:** Hero images and other images processed via templates (not the markdown render hook) still get responsive processing.
+
+**To re-enable later:**
+1. Consider processing only images under a size threshold
+2. Or reduce the number of responsive sizes (was: 320, 640, 960, 1280, 1600, 1920)
+3. Or add caching/incremental builds
+4. Test on CI before merging
+
+**Original template:** Based on https://www.brycewray.com/posts/2023/05/better-code-image-processing-hugo-render-hook-edition/
+
 ## Cross-blog links
 
 Links between legacy blogs that need updating once both posts are ported.
