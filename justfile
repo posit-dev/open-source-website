@@ -2,6 +2,9 @@
 default:
     @just --list
 
+clean:
+    rm -rf public
+
 # Install Node.js dependencies
 install:
     npm install
