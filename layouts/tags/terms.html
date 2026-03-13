@@ -1,4 +1,9 @@
 {{ define "main" }}
+{{- $peopleNames := slice }}
+{{- range (site.GetPage "/people").Pages }}
+  {{- $peopleNames = $peopleNames | append (lower .Title) }}
+{{- end }}
+
 <div class="flex flex-col w-full" data-pagefind-ignore>
   <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200 mb-2">
     Tags
@@ -9,12 +14,14 @@
 
   <div class="flex flex-wrap gap-2">
     {{ range .Data.Terms.ByCount }}
-      {{ with $.Site.GetPage (printf "/tags/%s" .Term) }}
-        <a href="{{ .RelPermalink }}"
-           class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-blue-50 hover:border-blue-200 dark:hover:bg-gray-800 dark:hover:border-gray-600 transition-colors">
-          {{ .LinkTitle }}
-          <span class="text-gray-400 dark:text-gray-500">{{ .Pages.Len }}</span>
-        </a>
+      {{ if and (not (in $peopleNames (lower .Term))) (gt .Count 1) }}
+        {{ with $.Site.GetPage (printf "/tags/%s" .Term) }}
+          <a href="{{ .RelPermalink }}"
+             class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-blue-50 hover:border-blue-200 dark:hover:bg-gray-800 dark:hover:border-gray-600 transition-colors">
+            {{ .LinkTitle }}
+            <span class="text-gray-400 dark:text-gray-500">{{ .Pages.Len }}</span>
+          </a>
+        {{ end }}
       {{ end }}
     {{ end }}
   </div>
