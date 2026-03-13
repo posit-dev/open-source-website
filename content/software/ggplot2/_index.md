@@ -1,5 +1,5 @@
 ---
-color: '#3D454E'
+color: "#0363BD"
 description: An implementation of the Grammar of Graphics in R
 github: tidyverse/ggplot2
 image: ggplot2.png
