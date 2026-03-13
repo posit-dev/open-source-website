@@ -17,7 +17,7 @@ image-alt: >-
   Table 1: Example. Has two subtables: Subtable a, Cars, with columns for speed
   and dist; and subtable b, Pressure, with columns for temperature and pressure.
 ported_from: quarto
-port_status: raw
+port_status: in-progress
 ---
 
 

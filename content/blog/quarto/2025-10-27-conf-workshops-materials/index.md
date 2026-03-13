@@ -14,7 +14,7 @@ date: '2025-10-27'
 image: thumbnail.png
 image-alt: Quarto workshop materials @ posit::conf(2025)
 ported_from: quarto
-port_status: raw
+port_status: in-progress
 ---
 
 

@@ -14,7 +14,7 @@ image: annotation.png
 image-alt: "Screenshot a code chunk with annotations. Annotations appear in the code chunk as numbers within circles, and repeat below the code chunk along with the text content of the annotations."
 code-annotations: below
 ported_from: quarto
-port_status: raw
+port_status: in-progress
 ---
 
 {{< include ../_quarto-1.3-feature.qmd >}}

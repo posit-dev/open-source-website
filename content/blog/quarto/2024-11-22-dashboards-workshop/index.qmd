@@ -12,7 +12,7 @@ date: "2024-11-22"
 image: "quarto-dashboards.jpg"
 image-alt: "Build a dashboard workshop with Quarto, R and/or Python."
 ported_from: quarto
-port_status: raw
+port_status: in-progress
 ---
 
 If you've been looking to get your head around Quarto dashboards, 

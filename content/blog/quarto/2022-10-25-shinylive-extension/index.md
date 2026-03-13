@@ -14,7 +14,7 @@ date: '2022-10-25'
 image: shinylive-embedded-app.png
 image-alt: Screenshot of a Quarto document with an embedded Shinylive application.
 ported_from: quarto
-port_status: raw
+port_status: in-progress
 ---
 
 

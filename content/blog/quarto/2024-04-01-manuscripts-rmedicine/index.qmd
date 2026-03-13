@@ -10,7 +10,7 @@ image-alt: "From multiple Quarto documents and scripts in R and python to PDF or
 categories:
   - Learn
 ported_from: quarto
-port_status: raw
+port_status: in-progress
 ---
 
 Recently I gave a webinar for R/Medicine titled "Quarto for Reproducible Medical Manuscripts". You can watch the video below or on the R Consortium website at <https://www.r-consortium.org/r-medicine-quarto-for-reproducible-medical-manuscripts>.[^1]

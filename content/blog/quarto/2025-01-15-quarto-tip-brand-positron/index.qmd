@@ -12,7 +12,7 @@ people:
 date: "2025-01-15"
 image: brand.png
 ported_from: quarto
-port_status: raw
+port_status: in-progress
 ---
 
 In today's Quarto Tip, we show you how [Positron](https://positron.posit.co)

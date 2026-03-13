@@ -12,7 +12,7 @@ date: "2024-12-04"
 image: "quarto-websites.jpg"
 image-alt: "Quarto Websites Workshop"
 ported_from: quarto
-port_status: raw
+port_status: in-progress
 ---
 
 Do you need a professional website to showcase your work? If you’ve used Quarto to produce a document, you’ve already got the technical skills to create a Quarto website. In this video series, taught by [Charlotte Wickham](https://www.cwick.co.nz/) and [Emil Hvitfeldt](https://emilhvitfeldt.com/), you’ll learn everything else you need to build a website and customize its appearance.
