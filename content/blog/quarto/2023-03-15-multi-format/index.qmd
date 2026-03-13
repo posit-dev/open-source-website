@@ -13,7 +13,6 @@ date: "2023-03-15"
 image: multi-format.png
 image-alt: "Screenshot of a Quarto webpage showing a section entitled 'Other Formats' with items Jupyter and MS Word"
 format:
-  html: default
   ipynb: default
   docx: default
 ported_from: quarto
