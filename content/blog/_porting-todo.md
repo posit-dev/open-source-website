@@ -174,6 +174,19 @@ Some legacy posts reference external images that are now dead. These are broken 
 |------|-----------|
 | ai/2017-09-06-keras-for-r | `https://keras.rstudio.com/images/training_history_ggplot2.png` |
 
+## Shiny posts: tabsets/panels not rendering
+
+Posts using Quarto tabsets (`::: {.panel-tabset}`) don't render as tabs in Hugo. Example: `shinyswatch-0.7.0` makes heavy use of these.
+
+**Options to investigate:**
+- Hugo built-in tab shortcodes or partials
+- Lua filter to convert Quarto tabsets to Hugo-compatible HTML
+- CSS/JS solution for tab styling
+
+## Shiny posts: broken links sweep needed
+
+After porting all shiny posts (including executable ones), do a sweep for broken links. Known issue in `shiny-python-general-availability` — likely has links to other shiny blog posts that need updating.
+
 ## Shiny posts: `engine: markdown` added
 
 These posts needed `engine: markdown` to prevent Quarto from attempting code execution. This shouldn't normally be necessary — investigate why.
@@ -192,6 +205,21 @@ Hugo can't parse ```` ``` {python} ```` (with space) — expects ```` ```python 
 | shiny-side-of-llms-part-3 | `sed 's/``` {python}/```python/g; s/``` {r}/```r/g'` |
 
 **Root cause:** Quarto outputs code blocks with cell options (`#| eval: false` etc.) using ```` ``` {lang} ```` syntax. Consider adding post-processing to the porting script if this is common.
+
+## Shiny posts: shinylive embeds need CSS styling
+
+`introducing-component-layouts` has shinylive components that render but don't get enough space — often end up with scrollbars.
+
+**To investigate:** Add site-level CSS for shinylive iframes/embeds to ensure adequate height/width.
+
+## Shiny posts: code-fold show/hide not working
+
+`shiny-side-of-llms-part-3` uses Quarto's `#| code-fold: true` and `#| code-summary: "Show output"` to show/hide code output. This doesn't work in Hugo — the cell options are just rendered as comments in the code block.
+
+**Options to investigate:**
+- Hugo shortcode or partial for collapsible sections
+- Lua filter to convert code-fold blocks to `<details>` elements
+- Manual conversion during review
 
 ## Shiny posts: `# <<` line-highlight markers
 
