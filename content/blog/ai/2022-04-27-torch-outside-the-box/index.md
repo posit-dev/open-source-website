@@ -14,7 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.jpg
 ported_from: ai
-port_status: raw
+port_status: in-progress
 ---
 
 

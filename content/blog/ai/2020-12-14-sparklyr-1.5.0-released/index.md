@@ -17,7 +17,7 @@ people:
 image: thumbnail.jpg
 image-alt: "A hollywood star with the text 'sparklyr 1.5'"
 ported_from: ai
-port_status: raw
+port_status: in-progress
 ---
 
 

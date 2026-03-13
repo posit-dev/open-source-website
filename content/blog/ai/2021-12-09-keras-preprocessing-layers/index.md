@@ -18,7 +18,7 @@ people:
   - Tomasz Kalinowski
 image: thumbnail.jpg
 ported_from: ai
-port_status: raw
+port_status: in-progress
 ---
 
 
