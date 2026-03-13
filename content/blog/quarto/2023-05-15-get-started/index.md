@@ -1,0 +1,35 @@
+---
+title: Get Started with Quarto
+subtitle: A video to jumpstart your Quarto journey
+description: |
+  A new video for getting started with Quarto using R and RStudio.
+categories:
+  - Learn
+date: '2023-05-15'
+image: get-started-video-cover.png
+image-alt: >-
+  Quarto logo on a blue background and the title of the video - Get started with
+  Quarto
+people:
+  - Mine Çetinkaya-Rundel
+ported_from: quarto
+port_status: raw
+---
+
+
+Have you been hearing about Quarto but didn't give it a try yet? Perused the [Get Started](../docs/get-started/index.qmd) pages but would like another intro? Or have about 20 minutes to spare and want to pick up a few Quarto tips? You've come to the right place!
+
+<https://www.youtube.com/embed/_f3latmOhew>
+
+In this video, I walk you through creating documents, presentations, and websites and publishing with Quarto. The video features authoring Quarto documents with executable R code chunks using the [RStudio Visual Editor](../docs/visual-editor/index.qmd).
+
+Select highlights include:
+
+- Inserting [cross references](../docs/authoring/cross-references.qmd) to tables and figures
+- Adding a [citation](../docs/visual-editor/technical.qmd#citations) from a DOI
+- Seamlessly switching between output formats as well as creating [multi-format documents](../docs/output-formats/html-multi-format.qmd)
+- Customizing the [output location](../docs/presentations/revealjs/#output-location) of code in presentations
+- Creating a [website](../docs/websites/website-basics.qmd) from scratch
+- Publishing the website to [QuartoPub](../docs/publishing/quarto-pub.qmd)
+
+If you would like to follow along as you watch the video, you can find the source code for everything created in the video in [this GitHub repository](https://github.com/mine-cetinkaya-rundel/get-started-quarto) and the published [website on QuartoPub](https://mine.quarto.pub/welcome-to-quarto/).

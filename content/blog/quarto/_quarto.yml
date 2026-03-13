@@ -1,0 +1,11 @@
+project:
+  type: default
+
+format:
+  hugo-md: default
+
+filters:
+  - _extensions/escape-shortcodes/escape-shortcodes.lua
+
+bibliography: references.bib
+reference-section-title: References
