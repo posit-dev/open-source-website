@@ -30366,7 +30366,7 @@ url = "https://www.youtube.com/watch?v=QZ9mAzrNN3I"
 title = "Yihui Xie | Highlights of the Knitr Package | Posit (2022)"
 slug = "2022-10-24_yihui-xie-highlights-of-the-knitr-package-posit-2022"
 date = "2022-10-24T17:08:00Z"
-description = "In this talk, I will highlight a few selected new features of the knitr package introduced in the past two years including: 1) the new way to write chunk options as \"#|\" comments in the chunk body; 2) new ways to reuse both chunk body and chunk options from another code chunk; 3) a few useful new engines, namely comment (comment out arbitrary content), verbatim (write arbitrary verbatim content), embed (embed external files and display their content verbatim), and exec (execute an arbitrary command); and 4) a few new chunk options such as file (to include external files as the chunk body) and lang. Hopefully these new features can help both knitr users and developers make better use of knitr.\n\nSession: RMarkdown and Quarto"
+description = "In this talk, I will highlight a few selected new features of the knitr package introduced in the past two years including: 1) the new way to write chunk options as \"|\" comments in the chunk body; 2) new ways to reuse both chunk body and chunk options from another code chunk; 3) a few useful new engines, namely comment (comment out arbitrary content), verbatim (write arbitrary verbatim content), embed (embed external files and display their content verbatim), and exec (execute an arbitrary command); and 4) a few new chunk options such as file (to include external files as the chunk body) and lang. Hopefully these new features can help both knitr users and developers make better use of knitr.\n\nSession: RMarkdown and Quarto"
 duration = 1178
 channel = "Posit PBC"
 playlist = ""
@@ -58858,7 +58858,7 @@ url = "https://www.youtube.com/watch?v=ioLuM0J3mQw"
 title = "AI and Shiny | Keynote ShinyConf 2025"
 slug = "2025-07-10_ai-and-shiny-keynote-shinyconf-2025"
 date = "2025-07-10T07:46:05Z"
-description = "#ShinyConf #ShinyConf2025\n\nThis is a talk from ShinyConf 2025: https://www.shinyconf.com\n\nAbstract: As LLMs continue to get more and more capable, you might find yourself wanting to build web applications that make use of LLMs. Shiny is a great tool for doing this. I will talk about some of the tools we've developed at Posit to help you build applications that use LLMs, and I'll show you how simple it is to get started building your first AI chat application with Shiny.\n‍On the flip side, LLMs are great tools for helping to build Shiny applications, and I will show the AI-driven tools we've been working on at Posit that can help you build Shiny applications more quickly and with more fun.\n\n____________________\n\nWant to explore more sessions?\nSign up for replay access:"
+description = "ShinyConf #ShinyConf2025\n\nThis is a talk from ShinyConf 2025: https://www.shinyconf.com\n\nAbstract: As LLMs continue to get more and more capable, you might find yourself wanting to build web applications that make use of LLMs. Shiny is a great tool for doing this. I will talk about some of the tools we've developed at Posit to help you build applications that use LLMs, and I'll show you how simple it is to get started building your first AI chat application with Shiny.\n‍On the flip side, LLMs are great tools for helping to build Shiny applications, and I will show the AI-driven tools we've been working on at Posit that can help you build Shiny applications more quickly and with more fun.\n\n____________________\n\nWant to explore more sessions?\nSign up for replay access:"
 duration = 3560
 channel = "Appsilon"
 playlist = "PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati"
@@ -58948,7 +58948,7 @@ url = "https://www.youtube.com/watch?v=XZKs1CmJPb8"
 title = "885: Python Polars: The Definitive Guide — with Jeroen Janssens and Thijs Nieuwdorp"
 slug = "2025-05-06_885-python-polars-the-definitive-guide-with-jeroen-janssens-and-thijs-nieuwdorp"
 date = "2025-05-06T11:01:02Z"
-description = "#Python #Polars #Pandas\n\nJeroen Janssens and Thijs Nieuwdorp are data frame library Polars’ greatest advocates in this episode with @JonKrohnLearns where they discuss their book, Python Polars: The Definitive Guide, best practice for using Polars, why Pandas users are switching to Polars for data frame operations in Python, and how the library reduces memory usage and compute time up to 10x more than Pandas. Listen to the episode to be a part of an O’Reilly giveaway!\n\nThis episode is brought to you by: \n• Trainium2, the latest AI chip from AWS: https://aws.amazon.com/ai/machine-learning/trainium/\n• Adverity, the conversational analytics platform: https://eu1.hubs.ly/H0jxK210\n• Dell AI Factory with NVIDIA: https://www.dell.com/superdatascience\n\nInterested in sponsoring a SuperDataScience Podcast episode? Email natalie@superdatascience.com for sponsorship information.\n\nIn this episode you will learn:\n• (00:00:00) Introduction\n• (00:04:46) Why Jeroen and Thijs wrote Python Polars: The Definitive Guide  \n• (00:18:18) Best practices in Polars \n• (00:25:08) Why Polars has so many users\n• (00:32:37) The benefits of the Great Tables package \n• (00:50:05) Jeroen and Thijs’ partnership with NVIDIA and Dell for Python Polars: The Definitive Guide\n\nAdditional materials: https://www.superdatascience.com/885"
+description = "Python #Polars #Pandas\n\nJeroen Janssens and Thijs Nieuwdorp are data frame library Polars’ greatest advocates in this episode with @JonKrohnLearns where they discuss their book, Python Polars: The Definitive Guide, best practice for using Polars, why Pandas users are switching to Polars for data frame operations in Python, and how the library reduces memory usage and compute time up to 10x more than Pandas. Listen to the episode to be a part of an O’Reilly giveaway!\n\nThis episode is brought to you by: \n• Trainium2, the latest AI chip from AWS: https://aws.amazon.com/ai/machine-learning/trainium/\n• Adverity, the conversational analytics platform: https://eu1.hubs.ly/H0jxK210\n• Dell AI Factory with NVIDIA: https://www.dell.com/superdatascience\n\nInterested in sponsoring a SuperDataScience Podcast episode? Email natalie@superdatascience.com for sponsorship information.\n\nIn this episode you will learn:\n• (00:00:00) Introduction\n• (00:04:46) Why Jeroen and Thijs wrote Python Polars: The Definitive Guide  \n• (00:18:18) Best practices in Polars \n• (00:25:08) Why Polars has so many users\n• (00:32:37) The benefits of the Great Tables package \n• (00:50:05) Jeroen and Thijs’ partnership with NVIDIA and Dell for Python Polars: The Definitive Guide\n\nAdditional materials: https://www.superdatascience.com/885"
 duration = 4208
 channel = "Super Data Science: ML & AI Podcast with Jon Krohn"
 playlist = "PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati"
@@ -59226,21 +59226,21 @@ duration = 4142
 channel = "R-Ladies Rome"
 playlist = "PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati"
 tags = [
-    "#coding",
-    "#programming",
-    "#tech",
-    "#development",
-    "#webdevelopment",
-    "#softwareengineering",
-    "#datascience",
-    "#machinelearning",
-    "#artificialintelligence",
-    "#techcommunity",
-    "#rstats",
-    "#rladies",
-    "#womenwhocode",
-    "#whomenintech",
-    "#womeninstem",
+    "coding",
+    "programming",
+    "tech",
+    "development",
+    "webdevelopment",
+    "softwareengineering",
+    "datascience",
+    "machinelearning",
+    "artificialintelligence",
+    "techcommunity",
+    "rstats",
+    "rladies",
+    "womenwhocode",
+    "whomenintech",
+    "womeninstem",
 ]
 view_count = 989
 like_count = 27
@@ -59719,7 +59719,7 @@ url = "https://www.youtube.com/watch?v=fiYe7lZqF20"
 title = "779: The Tidyverse of Essential R Libraries and their Python Analogues — with Dr. Hadley Wickham"
 slug = "2024-04-30_779-the-tidyverse-of-essential-r-libraries-and-their-python-analogues-with-dr-hadley-wickham"
 date = "2024-04-30T11:00:38Z"
-description = "#Tidyverse #RProgramming #RLibraries\n\nTidyverse, ggplot2, and the secret to a tech company’s longevity: Hadley Wickham talks to @JonKrohnLearns about Posit’s rebrand, Tidyverse and why it needs to be in every data scientist’s toolkit, and why getting your hands dirty with open-source projects can be so lucrative for your career.\n\nThis episode is brought to you by Intel and HPE Ezmeral Software (https://bit.ly/hpeintel). Interested in sponsoring a SuperDataScience Podcast episode? Visit https://passionfroot.me/superdatascience for sponsorship information.\n\nIn this episode you will learn:\n• [00:00:00] Introduction\n• [00:02:55] All about the Tidyverse\n• [00:15:19] Hadley’s favorite R libraries\n• [00:28:39] The goal of Posit\n• [00:34:12] On bringing multiple programming languages together\n• [00:50:19] The principles for a long-lasting tech company\n• [00:53:34] How Hadley developed ggplot2\n• [01:03:52] How to contribute to the open-source community\n\nAdditional materials: https://www.superdatascience.com/779"
+description = "Tidyverse #RProgramming #RLibraries\n\nTidyverse, ggplot2, and the secret to a tech company’s longevity: Hadley Wickham talks to @JonKrohnLearns about Posit’s rebrand, Tidyverse and why it needs to be in every data scientist’s toolkit, and why getting your hands dirty with open-source projects can be so lucrative for your career.\n\nThis episode is brought to you by Intel and HPE Ezmeral Software (https://bit.ly/hpeintel). Interested in sponsoring a SuperDataScience Podcast episode? Visit https://passionfroot.me/superdatascience for sponsorship information.\n\nIn this episode you will learn:\n• [00:00:00] Introduction\n• [00:02:55] All about the Tidyverse\n• [00:15:19] Hadley’s favorite R libraries\n• [00:28:39] The goal of Posit\n• [00:34:12] On bringing multiple programming languages together\n• [00:50:19] The principles for a long-lasting tech company\n• [00:53:34] How Hadley developed ggplot2\n• [01:03:52] How to contribute to the open-source community\n\nAdditional materials: https://www.superdatascience.com/779"
 duration = 5169
 channel = "Super Data Science: ML & AI Podcast with Jon Krohn"
 playlist = "PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati"
@@ -59764,7 +59764,7 @@ url = "https://www.youtube.com/watch?v=jjpP35VL3-E"
 title = "817: The Positron IDE, Tidy NLP and MLOps — with Dr. @JuliaSilge"
 slug = "2024-09-10_817-the-positron-ide-tidy-nlp-and-mlops-with-dr-juliasilge"
 date = "2024-09-10T11:00:46Z"
-description = "#PositronIDE #Tidyverse #MLOps\n\nDr. Julia Silge, Engineering Manager at Posit, joins @JonKrohnLearns to introduce the brand-new Positron IDE, perfect for exploratory data analysis and visualization. She also lays out her top picks for LLMs that boost coding efficiency and discusses when traditional NLP methods might be the smarter choice over LLMs. Plus, Julia highlights some must-know open-source libraries that make managing MLOps easier than ever. Tune in for insights that every data scientist, ML engineer, and developer will find useful.\n\nThis episode is brought to you by Gurobi (https://www.gurobi.com/personas/optimization-for-data-scientists/), the Decision Intelligence Leader, and by ODSC (https://odsc.com/california), the Open Data Science Conference. Interested in sponsoring a SuperDataScience Podcast episode? Email natalie@superdatascience.com for sponsorship information.\n\nIn this episode you will learn:\n• [00:00:00] Introduction\n• [00:03:23] Overview of Posit and Positron IDE\n• [00:08:33] How the needs of a data scientist differ from those of a software developer\n• [00:17:56] How to contribute to the open-source Positron\n• [00:34:52] MLOps and Vetiver: Tools for deploying and maintaining ML models\n• [00:48:34] Natural Language Processing (NLP) and the Tidyverse approach\n• [01:22:18] The role of AI and LLMs in data science education\n\nAdditional materials: https://www.superdatascience.com/817"
+description = "PositronIDE #Tidyverse #MLOps\n\nDr. Julia Silge, Engineering Manager at Posit, joins @JonKrohnLearns to introduce the brand-new Positron IDE, perfect for exploratory data analysis and visualization. She also lays out her top picks for LLMs that boost coding efficiency and discusses when traditional NLP methods might be the smarter choice over LLMs. Plus, Julia highlights some must-know open-source libraries that make managing MLOps easier than ever. Tune in for insights that every data scientist, ML engineer, and developer will find useful.\n\nThis episode is brought to you by Gurobi (https://www.gurobi.com/personas/optimization-for-data-scientists/), the Decision Intelligence Leader, and by ODSC (https://odsc.com/california), the Open Data Science Conference. Interested in sponsoring a SuperDataScience Podcast episode? Email natalie@superdatascience.com for sponsorship information.\n\nIn this episode you will learn:\n• [00:00:00] Introduction\n• [00:03:23] Overview of Posit and Positron IDE\n• [00:08:33] How the needs of a data scientist differ from those of a software developer\n• [00:17:56] How to contribute to the open-source Positron\n• [00:34:52] MLOps and Vetiver: Tools for deploying and maintaining ML models\n• [00:48:34] Natural Language Processing (NLP) and the Tidyverse approach\n• [01:22:18] The role of AI and LLMs in data science education\n\nAdditional materials: https://www.superdatascience.com/817"
 duration = 5654
 channel = "Super Data Science: ML & AI Podcast with Jon Krohn"
 playlist = "PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati"
@@ -60582,21 +60582,21 @@ duration = 3940
 channel = "R-Ladies Rome"
 playlist = "PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati"
 tags = [
-    "#coding",
-    "#programming",
-    "#tech",
-    "#development",
-    "#webdevelopment",
-    "#softwareengineering",
-    "#datascience",
-    "#machinelearning",
-    "#artificialintelligence",
-    "#techcommunity",
-    "#rstats",
-    "#rladies",
-    "#womenwhocode",
-    "#whomenintech",
-    "#womeninstem",
+    "coding",
+    "programming",
+    "tech",
+    "development",
+    "webdevelopment",
+    "softwareengineering",
+    "datascience",
+    "machinelearning",
+    "artificialintelligence",
+    "techcommunity",
+    "rstats",
+    "rladies",
+    "womenwhocode",
+    "whomenintech",
+    "womeninstem",
 ]
 view_count = 318
 like_count = 16
@@ -61588,21 +61588,21 @@ duration = 1573
 channel = "JupyterCon"
 playlist = "PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati"
 tags = [
-    "#JupyterCon2023",
-    "#DataScienceInnovation",
-    "#JupyterCommunity",
-    "#PythonProgramming",
-    "#OpenSourceTools",
-    "#DataVisualization",
-    "#InteractiveComputing",
-    "#DataAnalysis",
-    "#NotebookWorkflow",
-    "#JupyterLove",
-    "#DataDrivenInsights",
-    "#MachineLearning",
-    "#AIinAction",
-    "#ResearchTools",
-    "#CodingInJupyter",
+    "JupyterCon2023",
+    "DataScienceInnovation",
+    "JupyterCommunity",
+    "PythonProgramming",
+    "OpenSourceTools",
+    "DataVisualization",
+    "InteractiveComputing",
+    "DataAnalysis",
+    "NotebookWorkflow",
+    "JupyterLove",
+    "DataDrivenInsights",
+    "MachineLearning",
+    "AIinAction",
+    "ResearchTools",
+    "CodingInJupyter",
 ]
 view_count = 1673
 like_count = 32

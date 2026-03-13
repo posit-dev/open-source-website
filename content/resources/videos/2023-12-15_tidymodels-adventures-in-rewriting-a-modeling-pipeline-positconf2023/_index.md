@@ -9,7 +9,7 @@ software:
 - rstudio
 - tidymodels
 tags:
-- AI/ML/modelling
+- AIMLmodelling
 - automation
 - humans
 - databricks
@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   - rstudio
   - tidymodels
   tags:
-  - AI/ML/modelling
+  - AIMLmodelling
   - automation
   - humans
   - databricks

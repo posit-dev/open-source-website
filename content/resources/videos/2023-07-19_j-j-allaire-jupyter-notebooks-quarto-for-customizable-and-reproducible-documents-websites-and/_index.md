@@ -12,21 +12,21 @@ software:
 - Quarto
 - Shiny
 tags:
-- '#JupyterCon2023'
-- '#DataScienceInnovation'
-- '#JupyterCommunity'
-- '#PythonProgramming'
-- '#OpenSourceTools'
-- '#DataVisualization'
-- '#InteractiveComputing'
-- '#DataAnalysis'
-- '#NotebookWorkflow'
-- '#JupyterLove'
-- '#DataDrivenInsights'
-- '#MachineLearning'
-- '#AIinAction'
-- '#ResearchTools'
-- '#CodingInJupyter'
+- JupyterCon2023
+- DataScienceInnovation
+- JupyterCommunity
+- PythonProgramming
+- OpenSourceTools
+- DataVisualization
+- InteractiveComputing
+- DataAnalysis
+- NotebookWorkflow
+- JupyterLove
+- DataDrivenInsights
+- MachineLearning
+- AIinAction
+- ResearchTools
+- CodingInJupyter
 title: J j  Allaire   Jupyter Notebooks + Quarto for customizable and reproducible documents, websites and
 
 external:  # updated automatically, do not edit
@@ -48,21 +48,21 @@ external:  # updated automatically, do not edit
   - Quarto
   - Shiny
   tags:
-  - 'JupyterCon2023'
-  - 'DataScienceInnovation'
-  - 'JupyterCommunity'
-  - 'PythonProgramming'
-  - 'OpenSourceTools'
-  - 'DataVisualization'
-  - 'InteractiveComputing'
-  - 'DataAnalysis'
-  - 'NotebookWorkflow'
-  - 'JupyterLove'
-  - 'DataDrivenInsights'
-  - 'MachineLearning'
-  - 'AIinAction'
-  - 'ResearchTools'
-  - 'CodingInJupyter'
+  - JupyterCon2023
+  - DataScienceInnovation
+  - JupyterCommunity
+  - PythonProgramming
+  - OpenSourceTools
+  - DataVisualization
+  - InteractiveComputing
+  - DataAnalysis
+  - NotebookWorkflow
+  - JupyterLove
+  - DataDrivenInsights
+  - MachineLearning
+  - AIinAction
+  - ResearchTools
+  - CodingInJupyter
   thumbnail: https://i.ytimg.com/vi/XPl-OxJRHsQ/maxresdefault.jpg
   title: J j  Allaire   Jupyter Notebooks + Quarto for customizable and reproducible documents, websites and
   url: https://www.youtube.com/watch?v=XPl-OxJRHsQ

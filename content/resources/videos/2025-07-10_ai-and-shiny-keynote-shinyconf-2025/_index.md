@@ -1,6 +1,6 @@
 ---
 date: '2025-07-10'
-description: '#ShinyConf #ShinyConf2025
+description: 'ShinyConf #ShinyConf2025
 
 
   This is a talk from ShinyConf 2025: https://www.shinyconf.com
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   comment_count: 2
   date: '2025-07-10T07:46:05Z'
   definition: hd
-  description: '#ShinyConf #ShinyConf2025
+  description: 'ShinyConf #ShinyConf2025
 
 
     This is a talk from ShinyConf 2025: https://www.shinyconf.com

@@ -1,6 +1,6 @@
 ---
 date: '2022-10-24'
-description: 'In this talk, I will highlight a few selected new features of the knitr package introduced in the past two years including: 1) the new way to write chunk options as "#|" comments in the chunk body; 2) new ways to reuse both chunk body and chunk options from another code chunk; 3) a few useful new engines, namely comment (comment out arbitrary content), verbatim (write arbitrary verbatim content), embed (embed external files and display their content verbatim), and exec (execute an arbitrary command); and 4) a few new chunk options such as file (to include external files as the chunk body) and lang. Hopefully these new features can help both knitr users and developers make better use of knitr.
+description: 'In this talk, I will highlight a few selected new features of the knitr package introduced in the past two years including: 1) the new way to write chunk options as "|" comments in the chunk body; 2) new ways to reuse both chunk body and chunk options from another code chunk; 3) a few useful new engines, namely comment (comment out arbitrary content), verbatim (write arbitrary verbatim content), embed (embed external files and display their content verbatim), and exec (execute an arbitrary command); and 4) a few new chunk options such as file (to include external files as the chunk body) and lang. Hopefully these new features can help both knitr users and developers make better use of knitr.
 
 
   Session: RMarkdown and Quarto'
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   comment_count: 3
   date: '2022-10-24T17:08:00Z'
   definition: hd
-  description: 'In this talk, I will highlight a few selected new features of the knitr package introduced in the past two years including: 1) the new way to write chunk options as "#|" comments in the chunk body; 2) new ways to reuse both chunk body and chunk options from another code chunk; 3) a few useful new engines, namely comment (comment out arbitrary content), verbatim (write arbitrary verbatim content), embed (embed external files and display their content verbatim), and exec (execute an arbitrary command); and 4) a few new chunk options such as file (to include external files as the chunk body) and lang. Hopefully these new features can help both knitr users and developers make better use of knitr.
+  description: 'In this talk, I will highlight a few selected new features of the knitr package introduced in the past two years including: 1) the new way to write chunk options as "|" comments in the chunk body; 2) new ways to reuse both chunk body and chunk options from another code chunk; 3) a few useful new engines, namely comment (comment out arbitrary content), verbatim (write arbitrary verbatim content), embed (embed external files and display their content verbatim), and exec (execute an arbitrary command); and 4) a few new chunk options such as file (to include external files as the chunk body) and lang. Hopefully these new features can help both knitr users and developers make better use of knitr.
 
 
     Session: RMarkdown and Quarto'

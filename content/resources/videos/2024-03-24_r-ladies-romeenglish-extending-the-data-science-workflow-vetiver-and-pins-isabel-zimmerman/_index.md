@@ -10,21 +10,21 @@ software:
 - Quarto
 - rstudio
 tags:
-- '#coding'
-- '#programming'
-- '#tech'
-- '#development'
-- '#webdevelopment'
-- '#softwareengineering'
-- '#datascience'
-- '#machinelearning'
-- '#artificialintelligence'
-- '#techcommunity'
-- '#rstats'
-- '#rladies'
-- '#womenwhocode'
-- '#whomenintech'
-- '#womeninstem'
+- coding
+- programming
+- tech
+- development
+- webdevelopment
+- softwareengineering
+- datascience
+- machinelearning
+- artificialintelligence
+- techcommunity
+- rstats
+- rladies
+- womenwhocode
+- whomenintech
+- womeninstem
 title: 'R-Ladies Rome(English) - Extending the data science workflow: {vetiver} and {pins}- Isabel Zimmerman'
 
 external:  # updated automatically, do not edit
@@ -45,21 +45,21 @@ external:  # updated automatically, do not edit
   - Quarto
   - rstudio
   tags:
-  - 'coding'
-  - 'programming'
-  - 'tech'
-  - 'development'
-  - 'webdevelopment'
-  - 'softwareengineering'
-  - 'datascience'
-  - 'machinelearning'
-  - 'artificialintelligence'
-  - 'techcommunity'
-  - 'rstats'
-  - 'rladies'
-  - 'womenwhocode'
-  - 'whomenintech'
-  - 'womeninstem'
+  - coding
+  - programming
+  - tech
+  - development
+  - webdevelopment
+  - softwareengineering
+  - datascience
+  - machinelearning
+  - artificialintelligence
+  - techcommunity
+  - rstats
+  - rladies
+  - womenwhocode
+  - whomenintech
+  - womeninstem
   thumbnail: https://i.ytimg.com/vi/i7sjeafdFqI/maxresdefault.jpg
   title: 'R-Ladies Rome(English) - Extending the data science workflow: {vetiver} and {pins}- Isabel Zimmerman'
   url: https://www.youtube.com/watch?v=i7sjeafdFqI

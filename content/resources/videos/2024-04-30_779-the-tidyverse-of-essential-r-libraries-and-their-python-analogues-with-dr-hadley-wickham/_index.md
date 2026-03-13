@@ -1,6 +1,6 @@
 ---
 date: '2024-04-30'
-description: '#Tidyverse #RProgramming #RLibraries
+description: 'Tidyverse #RProgramming #RLibraries
 
 
   Tidyverse, ggplot2, and the secret to a tech company’s longevity: Hadley Wickham talks to @JonKrohnLearns about Posit’s rebrand, Tidyverse and why it needs to be in every data scientist’s toolkit, and why getting your hands dirty with open-source projects can be so lucrative for your career.
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   comment_count: 4
   date: '2024-04-30T11:00:38Z'
   definition: hd
-  description: '#Tidyverse #RProgramming #RLibraries
+  description: 'Tidyverse #RProgramming #RLibraries
 
 
     Tidyverse, ggplot2, and the secret to a tech company’s longevity: Hadley Wickham talks to @JonKrohnLearns about Posit’s rebrand, Tidyverse and why it needs to be in every data scientist’s toolkit, and why getting your hands dirty with open-source projects can be so lucrative for your career.

@@ -40,21 +40,21 @@ software:
 - Shiny
 - shinylive
 tags:
-- '#coding'
-- '#programming'
-- '#tech'
-- '#development'
-- '#webdevelopment'
-- '#softwareengineering'
-- '#datascience'
-- '#machinelearning'
-- '#artificialintelligence'
-- '#techcommunity'
-- '#rstats'
-- '#rladies'
-- '#womenwhocode'
-- '#whomenintech'
-- '#womeninstem'
+- coding
+- programming
+- tech
+- development
+- webdevelopment
+- softwareengineering
+- datascience
+- machinelearning
+- artificialintelligence
+- techcommunity
+- rstats
+- rladies
+- womenwhocode
+- whomenintech
+- womeninstem
 title: R-Ladies Rome (English) - Interactive R, Python, and Shiny in the Browser with Quarto and Shinylive
 
 external:  # updated automatically, do not edit
@@ -104,21 +104,21 @@ external:  # updated automatically, do not edit
   - Shiny
   - shinylive
   tags:
-  - 'coding'
-  - 'programming'
-  - 'tech'
-  - 'development'
-  - 'webdevelopment'
-  - 'softwareengineering'
-  - 'datascience'
-  - 'machinelearning'
-  - 'artificialintelligence'
-  - 'techcommunity'
-  - 'rstats'
-  - 'rladies'
-  - 'womenwhocode'
-  - 'whomenintech'
-  - 'womeninstem'
+  - coding
+  - programming
+  - tech
+  - development
+  - webdevelopment
+  - softwareengineering
+  - datascience
+  - machinelearning
+  - artificialintelligence
+  - techcommunity
+  - rstats
+  - rladies
+  - womenwhocode
+  - whomenintech
+  - womeninstem
   thumbnail: https://i.ytimg.com/vi/59DSo_jjTpI/maxresdefault.jpg
   title: R-Ladies Rome (English) - Interactive R, Python, and Shiny in the Browser with Quarto and Shinylive
   url: https://www.youtube.com/watch?v=59DSo_jjTpI
