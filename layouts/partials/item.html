@@ -44,7 +44,7 @@
 {{ $parts := split (strings.Trim $slug "/") "/" }}
 {{ $count := len $parts }}
 {{ $card_type := index $parts (sub $count 2) }}
-{{ $card_settings := index site.Data.cards $card_type }}
+{{ $card_settings := index site.Data.items $card_type }}
 
 {{ $debug = $card_settings }}
 {{ $debug = $page.Params }}
