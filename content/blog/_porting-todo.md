@@ -2,6 +2,43 @@
 
 Track specific issues found while porting posts. Address these after bulk porting is complete.
 
+## Major remaining tasks
+
+Now that all legacy blogs have been ported (in some form), these major items need attention:
+
+### Link checking
+
+- [ ] Run comprehensive link check across all ported blogs (tidyverse, education, ai, rstudio, shiny, great-tables, pointblank, plotnine, quarto)
+- [ ] Fix or document broken external links
+- [ ] Update cross-blog links to use internal paths (see "Cross-blog links" section below)
+
+### Taxonomy cleanup
+
+- [ ] Audit, consolidate and separate: `tags`, `categories`, and `ported_from`. Decide on a consistent scheme
+- [ ] Populate `software` taxonomy to link posts to `/software/` pages
+- [ ] Consider whether to keep or migrate blog-specific taxonomies (e.g., `blogcategories` from rstudio.com)
+
+### People/authors
+
+- [ ] Audit `people` entries - find entries that aren't linking to `/people/` pages
+- [ ] Decide policy for former employees (keep page? different treatment?)
+- [ ] Decide policy for external contributors/guest authors
+- [ ] Handle combined author names that weren't split correctly
+- [ ] Consider whether to import author URLs from education posts
+
+### Hero images
+
+- [ ] Audit hero image quality - many ported images are low resolution
+- [ ] Decide minimum resolution/quality standards
+- [ ] Identify posts needing new/better hero images
+- [ ] Consider whether to generate placeholder images for posts without heroes
+
+### New post guide and templates
+
+- [ ] Create contributor guide for writing new blog posts
+- [ ] Document frontmatter fields and when to use them
+- [ ] Create archetypes
+
 ## Responsive image processing disabled
 
 **File:** `layouts/_default/_markup/render-image.html`
@@ -243,7 +280,7 @@ Some shiny posts have `# <<` markers at the end of code lines. These were used b
 
 ## Shiny posts: Bootstrap classes stripped
 
-A Lua filter (`content/blog/shiny/_extensions/strip-bootstrap/`) strips Bootstrap classes during rendering. These posts had Bootstrap-dependent HTML (buttons, icons, layout) that may need manual review:
+A Lua filter (`content/blog/shiny/_extensions/strip-bootstrap/`) strips Bootstrap classes during rendering. This filter was also copied to `content/blog/quarto/_extensions/strip-bootstrap/` for the Quarto blog. These posts had Bootstrap-dependent HTML (buttons, icons, layout) that may need manual review:
 
 | Post | Class count | Notes |
 |------|-------------|-------|
@@ -371,7 +408,7 @@ Run link checking on other ported blogs:
 
 ## Quarto blog: relative links to quarto.org docs
 
-**Status:** ✅ Fixed. Converted `../docs/` and `/docs/` links to `https://quarto.org/docs/...` and changed `.qmd` extensions to `.html`.
+**Status:** ✅ Fixed. Converted `../docs/` and `/docs/` links to `https://quarto.org/docs/...` and changed `.qmd` extensions to `.html`. Fixes applied to both `.qmd` source files and include files (`_quarto-1.3-feature.qmd`, `_quarto-1.9-feature.qmd`, `docs/authoring/_brand-example.qmd`) so they persist through re-renders.
 
 ## Quarto blog: broken external links
 
@@ -387,6 +424,18 @@ Discovered via `lychee --base http://localhost:1313 content/blog/quarto/*/index.
 
 **Malformed links (fixed manually):**
 - `2023-12-07-quarto-dashboards-demo` - YouTube link had incorrect format
+
+**Lychee false positives:**
+Running `lychee --base http://localhost:1313` against the `.md` files reports many image 404s (e.g., `/callouts.png`, `/2023-03-13-code-annotation/annotation.png`). These are false positives - lychee doesn't account for Hugo's `/blog/quarto/` URL prefix. The relative image paths resolve correctly when pages are rendered. Verify by checking actual URLs like `http://localhost:1313/blog/quarto/2023-03-13-code-annotation/annotation.png`.
+
+## Quarto blog: dark-content images
+
+Posts with light/dark image pairs (`.dark-content` / `.light-content` classes) have the dark versions removed during rendering. The strip-bootstrap Lua filter removes elements with `dark-content` class entirely since we don't support dark mode.
+
+**Affected posts:**
+- 2025-10-13-1.8-release
+- 2025-10-20-quarto-wizard-1-0-0
+- 2025-05-19-quarto-codespaces
 
 ## Quarto blog: shortcodes
 
