@@ -9,7 +9,7 @@ image-alt: "A screenshot of Nick Strayer's Weather Lookup Shiny app, which shows
 resources:
  - previous_city_button.mp4
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 ---
 
 :::{.bg-gray .p-3 .px-md-5 .pt-md-5 .pb-md-4 .mb-5 .p-85} 

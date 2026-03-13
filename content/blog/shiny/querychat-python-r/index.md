@@ -9,7 +9,7 @@ image-alt: 'Where Questions Become Queries: Meet querychat'
 resources:
   - querychat-python-r-header.png
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 ---
 
 

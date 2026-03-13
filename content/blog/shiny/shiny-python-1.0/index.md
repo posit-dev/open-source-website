@@ -10,7 +10,7 @@ image-video: shinyforpython-1.0.mp4
 image: shinyforpython-1.0.jpg
 image-alt: Announcing Shiny for Python 1.0
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 ---
 
 

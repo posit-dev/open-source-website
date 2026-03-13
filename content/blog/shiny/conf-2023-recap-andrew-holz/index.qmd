@@ -7,7 +7,7 @@ date: "2023-03-28"
 image: shinyconflogo.jpg
 image-alt: "The Shiny Conf Logo on a dark blue background"
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 ---
 
 Appsilon's Shiny Conf 2023 was a big success, with many incredible speakers (including 3 members of our team!) and many viewers tuning in from afar. 

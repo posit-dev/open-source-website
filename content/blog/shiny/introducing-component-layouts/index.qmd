@@ -9,7 +9,7 @@ date: "2024-02-26"
 image: layouts-thumb.jpg
 image-alt: "An illustration of Shiny layouts and components"
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 ---
 Reference documents are great if you know what you're looking for, but they make it hard to discover new components. For that reason, we've created Shiny for Python's [components gallery](https://shiny.posit.co/py/components/)
 and [layouts gallery](https://shiny.posit.co/py/layouts/).

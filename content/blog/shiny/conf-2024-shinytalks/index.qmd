@@ -8,7 +8,7 @@ image-header-disable: true
 image: shinytalks.jpg
 image-alt: "Collage of speakers with Shiny talks at posit::conf(2024)"
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 ---
 
 Videos of posit::conf(2024) talks are now posted [on YouTube](https://www.youtube.com/watch?v=s_Vh9HIeLVg&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn). We have also made [playlist of talks](https://youtube.com/playlist?list=PLitrm9UndxcsoP0pqVvteJWtAQ9TKT-mf) that are about building data driven applications with Shiny.

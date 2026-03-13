@@ -11,7 +11,7 @@ image-alt: Shiny 1.4 brings bookmarking and Generative AI docs
 lightbox:
   effect: fade
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 ---
 
 

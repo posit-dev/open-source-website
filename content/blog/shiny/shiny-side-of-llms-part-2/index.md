@@ -11,7 +11,7 @@ date: '2025-09-05'
 image: shiny-side-of-llms-header.png
 image-alt: The Shiny Side of LLMs part 2
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 ---
 
 

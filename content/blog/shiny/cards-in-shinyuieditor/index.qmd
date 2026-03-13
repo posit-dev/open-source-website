@@ -12,7 +12,7 @@ resources:
   - add-footer-to-card.webm
   - add-plot-to-card.webm
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 ---
 <style>
 .demo-video {

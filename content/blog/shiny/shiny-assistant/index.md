@@ -13,7 +13,7 @@ resources:
 image-video: shiny-assistant.mp4
 image: shiny-assistant.gif
 ported_from: shiny
-port_status: raw
+port_status: in-progress
 ---
 
 
