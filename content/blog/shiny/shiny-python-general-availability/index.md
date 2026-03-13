@@ -23,7 +23,7 @@ When we first introduced Shiny for Python at rstudio::conf last year, we labeled
 
 We've gotten some great feedback during the alpha phase of the project, leading to several enhancements:
 
-- We've added a [quickstart guide](../py/docs/r-quickstart.html) for R users.
+- We've added a [quickstart guide](https://shiny.posit.co/py/docs/r-quickstart.html) for R users.
 - You can now interact with plots created using matplotlib, seaborn, and plotnine. ([Example](https://shinylive.io/py/examples/#selecting-data))
 - We've improved the [API documentation](https://shiny.posit.co/py/api/).
 - We've created a new package, [shinyswatch](https://github.com/posit-dev/py-shinyswatch), which lets you modify an app's visual style with a single line of code. ([Example](https://shinylive.io/py/examples/#shinyswatch))

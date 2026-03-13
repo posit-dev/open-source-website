@@ -33,11 +33,11 @@ In this post, we'll talk about what v1.0 means to us, and then get into the feas
 
 For the Shiny team, bestowing the "v1.0" label on a piece of software is a declaration of a certain level of quality, feature completeness, and API stability.
 
-In April 2023, we [removed the alpha tag from Shiny for Python](https://shiny.posit.co/blog/posts/shiny-python-general-availability/), signaling our team's belief that its level of quality and runtime stability made it appropriate for production use.
+In April 2023, we [removed the alpha tag from Shiny for Python](/blog/shiny/shiny-python-general-availability/), signaling our team's belief that its level of quality and runtime stability made it appropriate for production use.
 And that belief has borne out: the feedback we've received from real-world users of the framework has been overwhelmingly positive.
 
 At that time, we chose not to use a 1.0 moniker, preferring to stick to 0.x until after we had shipped essential features like [interactive data tables](../shiny-python-0.4.0/) (June 2023) and [dashboard UI components](../shiny-python-0.6.0/) (Nov 2023).
-And soon after that, we came up with [Shiny Express](https://shiny.posit.co/blog/posts/shiny-express/), a completely new syntax for writing Shiny apps, which meant another period of heavy feedback and potential revisions of the API.
+And soon after that, we came up with [Shiny Express](/blog/shiny/shiny-express/), a completely new syntax for writing Shiny apps, which meant another period of heavy feedback and potential revisions of the API.
 
 Sitting here in July 2024, it feels like a great time to acknowledge Shiny for Python's maturity by bestowing it with the big 1-point-0.
 The API feels appropriately stable now, and most of the new features of the last few releases have been about building on top of Shiny's existing API design vocabulary, rather than extending or changing it (although one notable brand-new primitive is Modules for Shiny Express, which you can read about below).
@@ -257,7 +257,7 @@ Shiny Express now has support for using Shiny modules, and you can even create S
 
 <img src="shinyswatch.jpg" class="border rounded" />
 
-We're also happy to announce [the release of shinyswatch v0.7.0](../blog/posts/shinyswatch-0.7.0/index.qmd). shinyswatch brings Bootswatch themes to Shiny for Python, allowing you to customize the appearance of your Shiny apps with a variety of themes.
+We're also happy to announce [the release of shinyswatch v0.7.0](/blog/shiny/shinyswatch-0.7.0/). shinyswatch brings Bootswatch themes to Shiny for Python, allowing you to customize the appearance of your Shiny apps with a variety of themes.
 
 ------------------------------------------------------------------------
 

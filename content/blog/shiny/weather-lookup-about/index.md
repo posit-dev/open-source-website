@@ -15,10 +15,10 @@ port_status: raw
 ---
 
 
-The goal of this Shiny for R app story (in 3 posts) is to demonstrate new and advanced features in the context of a real-world application, detailing the functionality and design decisions used in its construction. These posts serve to tell a little story of developing nice looking and performant Shiny applications. The techniques here tend to be advanced, so if you're brand-new to Shiny, we recommend starting with the [Tutorials section](../r/getstarted/).
+The goal of this Shiny for R app story (in 3 posts) is to demonstrate new and advanced features in the context of a real-world application, detailing the functionality and design decisions used in its construction. These posts serve to tell a little story of developing nice looking and performant Shiny applications. The techniques here tend to be advanced, so if you're brand-new to Shiny, we recommend starting with the [Tutorials section](https://shiny.posit.co/r/getstarted/).
 
 The "Explore your weather" app allows a user to look up a city of choice in the United States, and see what the "normal" temperature and precipitation is for that city over the year. It takes advantage of new features in Shiny 1.6 that make it easier than ever to make fast and good looking apps with R.
-<a href="https://connect.rstudioservices.com/explore_your_weather/" target="_blank"> View the app here <i></i>.</a>
+<a href="https://connect.posit.it/explore_your_weather/" target="_blank"> View the app here <i></i>.</a>
 
 ![](full_app.png)
 

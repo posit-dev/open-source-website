@@ -347,7 +347,7 @@ This brings four important benefits:
 
 # How it works: tool calling
 
-If you read [The Shiny Side of LLMs](https://shiny.posit.co/blog/posts/shiny-side-of-llms-part-2/#when-llms-guess-tools-know) blog series, you already know a bit about tool calling. In that series we explored how LLMs can call external tools instead of trying to do everything themselves, and `querychat` is a very practical example of this idea in action.
+If you read [The Shiny Side of LLMs](/blog/shiny/shiny-side-of-llms-part-2/#when-llms-guess-tools-know) blog series, you already know a bit about tool calling. In that series we explored how LLMs can call external tools instead of trying to do everything themselves, and `querychat` is a very practical example of this idea in action.
 
 Tool calling is essentially a bridge between an LLM and your Python or R session. The model does not execute code. Instead, it requests your Python or R session execute a certain function with certain inputs (e.g., a SQL statement). Once Python or R performs the execution, the result is then passed back to the model for interpretation.
 

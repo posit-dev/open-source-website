@@ -16,17 +16,17 @@ port_status: raw
 ---
 
 
-Here we demonstrate the use of the new [`bindCache()`](../r/reference/shiny/latest/bindCache.html) function in Shiny to greatly speed up a Shiny app that parses NOAA weather station data for 12,636 locations around the United States. We will demonstrate the addition of `bindCache()` to existing reactive expressions, explaining where and why it should be used along with some potential gotchas of doing so.
+Here we demonstrate the use of the new [`bindCache()`](https://shiny.posit.co/r/reference/shiny/latest/bindCache.html) function in Shiny to greatly speed up a Shiny app that parses NOAA weather station data for 12,636 locations around the United States. We will demonstrate the addition of `bindCache()` to existing reactive expressions, explaining where and why it should be used along with some potential gotchas of doing so.
 
 To learn more about using caching in Shiny, see the [caching article](https://shiny.posit.co/articles/caching.html) and the reference documentation for [`bindCache()`](https://shiny.posit.co/r/reference/shiny/latest/bindCache.html).
 
 ## Weather App
 
-The code and results in this post come from the [weather lookup app.](https://connect.rstudioservices.com/explore_your_weather/) Here we will just briefly cover the relevant parts of the app, for a more complete intro check out the [accompanying post](../blog/posts/weather-lookup-about/) introducing it.
+The code and results in this post come from the [weather lookup app.](https://connect.posit.it/explore_your_weather/) Here we will just briefly cover the relevant parts of the app, for a more complete intro check out the [accompanying post](/blog/shiny/weather-lookup-about/) introducing it.
 
 ![](full_app.png)
 
-*Screenshot of the [weather lookup app.](https://connect.rstudioservices.com/explore_your_weather/)*
+*Screenshot of the [weather lookup app.](https://connect.posit.it/explore_your_weather/)*
 
 ## Performance
 
@@ -68,7 +68,7 @@ All of these reactive computations add up to an interactive experience of less-t
 
 A convenient fact about our app is that it will always look the same when a given city is selected. This means we can use **caching** to pull up the results for a city by simply remembering the output of our reactive the last time the city was seen.
 
-As of Shiny 1.6, adding caching to any reactive is as easy as piping the reactive to the function [`bindCache()`](../r/reference/shiny/latest/bindCache.html). You tell [`bindCache()`](../r/reference/shiny/latest/bindCache.html) what the important input variable is that determines the output of the reactive and Shiny will automatically setup a cache store and your app will ([most likely](#when-to-not-use-caching)) see large speed improvements.
+As of Shiny 1.6, adding caching to any reactive is as easy as piping the reactive to the function [`bindCache()`](https://shiny.posit.co/r/reference/shiny/latest/bindCache.html). You tell [`bindCache()`](https://shiny.posit.co/r/reference/shiny/latest/bindCache.html) what the important input variable is that determines the output of the reactive and Shiny will automatically setup a cache store and your app will ([most likely](#when-to-not-use-caching)) see large speed improvements.
 
 To take advantage of caching we will add it in three separate places in the app: our `city_data` reactive and the results plot `output$weather_plot`.
 
@@ -84,11 +84,11 @@ server <- function(input, output, session) {
 }
 ```
 
-The combination of [`renderPlot()`](../r/reference/shiny/latest/renderPlot.html) and [`bindCache()`](../r/reference/shiny/latest/bindCache.html) operates just like the function [`renderCachedPlot()`](../r/reference/shiny/latest/renderCachedPlot.html) that was introduced in Shiny 1.2, however now *any* reactive variable can be cached (in fact, [`renderCachedPlot()`](../r/reference/shiny/latest/renderCachedPlot.html) now uses [`bindCache()`](../r/reference/shiny/latest/bindCache.html) under-the-hood.)
+The combination of [`renderPlot()`](https://shiny.posit.co/r/reference/shiny/latest/renderPlot.html) and [`bindCache()`](https://shiny.posit.co/r/reference/shiny/latest/bindCache.html) operates just like the function [`renderCachedPlot()`](https://shiny.posit.co/r/reference/shiny/latest/renderCachedPlot.html) that was introduced in Shiny 1.2, however now *any* reactive variable can be cached (in fact, [`renderCachedPlot()`](https://shiny.posit.co/r/reference/shiny/latest/renderCachedPlot.html) now uses [`bindCache()`](https://shiny.posit.co/r/reference/shiny/latest/bindCache.html) under-the-hood.)
 
 ## Performance with caching
 
-So how much of a benefit do we get from adding those three [`bindCache()`](../r/reference/shiny/latest/bindCache.html) calls to our code? We can investigate this in two ways: a "real world" side-by-side test and a more formal scripted test scenario.
+So how much of a benefit do we get from adding those three [`bindCache()`](https://shiny.posit.co/r/reference/shiny/latest/bindCache.html) calls to our code? We can investigate this in two ways: a "real world" side-by-side test and a more formal scripted test scenario.
 
 ### Side-by-side comparison
 
@@ -138,7 +138,7 @@ It's important to note that the most time-consuming aspect of these tests is act
 
 ## A note on cache scope
 
-It's possible to change the scope of your caching (i.e. who/what can read from the cache) using the `cache` argument in [`bindCache()`](../r/reference/shiny/latest/bindCache.html).
+It's possible to change the scope of your caching (i.e. who/what can read from the cache) using the `cache` argument in [`bindCache()`](https://shiny.posit.co/r/reference/shiny/latest/bindCache.html).
 
 ### App-level caching
 

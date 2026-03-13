@@ -20,7 +20,7 @@ port_status: raw
 
 **Update:** As of version 1.0, Shiny now has a built-in LLM chat component, which supersedes the chatstream package described in this blog post.
 
-See the [Shiny 1.0 blog post](https://shiny.posit.co/blog/posts/shiny-python-1.0/#new-chat-component) for more information.
+See the [Shiny 1.0 blog post](/blog/shiny/shiny-python-1.0/#new-chat-component) for more information.
 
 :::
 

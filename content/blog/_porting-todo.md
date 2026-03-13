@@ -183,9 +183,9 @@ Posts using Quarto tabsets (`::: {.panel-tabset}`) don't render as tabs in Hugo.
 - Lua filter to convert Quarto tabsets to Hugo-compatible HTML
 - CSS/JS solution for tab styling
 
-## Shiny posts: broken links sweep needed
+## Shiny posts: broken links sweep
 
-After porting all shiny posts (including executable ones), do a sweep for broken links. Known issue in `shiny-python-general-availability` — likely has links to other shiny blog posts that need updating.
+**Status:** ✅ Complete. Updated all cross-references from `https://shiny.posit.co/blog/posts/<slug>/` to `/blog/shiny/<slug>/` in both `.md` and `.qmd` files.
 
 ## Shiny posts: `engine: markdown` added
 
@@ -287,6 +287,40 @@ Some ported blogs transformed frontmatter only in the rendered file (`.md`, `.ma
 The original post had an iframe embedding `feature/index.html` with complex scaling. This didn't render well in Hugo, so the iframe was removed and the post now relies on the hero image.
 
 The `feature/` folder with the interactive HTML demo is still present if needed later. Added `'shinychat-tool-ui/feature/'` to `ignoreFiles` in `hugo.toml` to prevent Hugo from rendering it as a page.
+
+## Shiny posts: broken external links
+
+Discovered via `lychee --base http://localhost:1313 content/blog/shiny/*/index.md`
+
+**404 - Dead links:**
+| URL | Post |
+|-----|------|
+| https://www1.ncdc.noaa.gov/pub/data/normals/1981-2010/... | weather-lookup-about |
+| https://www.ncdc.noaa.gov/data-access/land-based-station-data/... | weather-lookup-about |
+| https://rstudio.github.io/bslib/articles/layouts.html | bslib-dashboards |
+| https://rstudio.github.io/shinyuieditor/articles/ui-editor-live-demo.html | shinyuieditor-out-of-alpha |
+| https://shinyconf.appsilon.com/state-of-shiny-2023/ | shiny-python-0.6.1 |
+| https://github.com/rstudio/bslib/tree/main/inst/examples/flights | bslib-dashboards |
+| https://github.com/rstudio/otel | shiny-r-1.12 |
+| https://shiny.posit.co/py/api/express.ui.layout_columns.html | responsive-shiny-layouts |
+| https://shiny.posit.co/py/docs/workflow-server.html | shiny-on-hugging-face |
+| https://shiny.posit.co/py/api/ExTooltip.html | shiny-python-0.5.0 |
+| https://shiny.posit.co/py/docs/r-quickstart.html | shiny-python-general-availability |
+| https://shiny.posit.co/r/articles/build/bookmarking-state/ | shinychat-tool-ui |
+
+**Connection errors (may be temporary or blocking bots):**
+- `https://reg.conf.posit.co/flow/posit/positconf23/...` (conf-2023 posts)
+
+**GitHub user 404s (accounts deleted/renamed):**
+- kangjf1943, KRRLP-PL, MalteSteinCytel, oozbeker-onemagnify, jonathanmburns, ngoodkindGSI, bioinformzhang, howardbaek, MartinBaumga, TopBottomTau, toxintoxin, dependabot[bot]
+
+## Link checking for other blogs
+
+Run link checking on other ported blogs:
+- [ ] tidyverse
+- [ ] education
+- [ ] ai
+- [ ] rstudio
 
 ## Other observations
 

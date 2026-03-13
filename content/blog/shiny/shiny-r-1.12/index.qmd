@@ -300,7 +300,7 @@ While OpenTelemetry support is the star of this release, Shiny v1.12 includes se
 
 ## Learn more
 
-For more details on OpenTelemetry in Shiny, check out our [dedicated article on OpenTelemetry + Shiny](../../../r/articles/improve/opentelemetry/) article.
+For more details on OpenTelemetry in Shiny, check out our [dedicated article on OpenTelemetry + Shiny](https://shiny.posit.co/r/articles/improve/opentelemetry/) article.
 
 ## What's next?
 

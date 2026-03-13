@@ -17,7 +17,7 @@ The goal of this Shiny for R app story (in 3 posts) is to demonstrate new and ad
 ::: 
 
 The "Explore your weather" app allows a user to look up a city of choice in the United States, and see what the "normal" temperature and precipitation is for that city over the year. It takes advantage of new features in Shiny 1.6 that make it easier than ever to make fast and good looking apps with R.
-<a href="https://connect.rstudioservices.com/explore_your_weather/" target="_blank">  View the app here <i class="fas fa-desktop fa-fw"></i>.</a>
+<a href="https://connect.posit.it/explore_your_weather/" target="_blank">  View the app here <i class="fas fa-desktop fa-fw"></i>.</a>
 
 :::{.column-page-inset .lightbox}
 ![](full_app.png)

@@ -16,11 +16,11 @@ port_status: raw
 
 ## Weather App
 
-The code and results in this post come from the [weather lookup app.](https://connect.rstudioservices.com/explore_your_weather/) Here we will just briefly cover the relevant parts of the app, for a more complete intro check out the [accompanying post](https://shiny.posit.co/app-stories/weather-lookup-about.html) introducing it.
+The code and results in this post come from the [weather lookup app.](https://connect.posit.it/explore_your_weather/) Here we will just briefly cover the relevant parts of the app, for a more complete intro check out the [accompanying post](/blog/shiny/weather-lookup-about/) introducing it.
 
 ![](full_app.png)
 
-*Screenshot of the [weather lookup app.](https://connect.rstudioservices.com/explore_your_weather/)*
+*Screenshot of the [weather lookup app.](https://connect.posit.it/explore_your_weather/)*
 
 ## Why theme your app?
 
@@ -149,7 +149,7 @@ This auto-magic updating of styling is crucial when we start using one of `bslib
 
 ## Setting up a dark-mode option with dynamic theming
 
-Our app's custom styles already make it look bespoke and interesting. However, what if we wanted to let our users choose what theme they desire so they can have a "personalized" app? This functionality is made relatively easy thanks to the new function in Shiny: [`session$setCurrentTheme()`.](../r/reference/shiny/latest/session.html) This function essentially lets you swap out whatever theme you want, just like you would pass the `theme` argument in your ui function, except now, you can do it in real-time. We can use this to add a "dark-mode" toggle to flip our app between light (`"cerulean"`) and dark (`"darkly"`) modes.
+Our app's custom styles already make it look bespoke and interesting. However, what if we wanted to let our users choose what theme they desire so they can have a "personalized" app? This functionality is made relatively easy thanks to the new function in Shiny: [`session$setCurrentTheme()`.](https://shiny.posit.co/r/reference/shiny/latest/session.html) This function essentially lets you swap out whatever theme you want, just like you would pass the `theme` argument in your ui function, except now, you can do it in real-time. We can use this to add a "dark-mode" toggle to flip our app between light (`"cerulean"`) and dark (`"darkly"`) modes.
 
 All we have to do is create a theme toggle with the `radioButtons` input and pass the current choice to `session$setCurrentTheme()` within an observer...
 

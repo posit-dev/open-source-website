@@ -135,7 +135,7 @@ If you find it helpful, please rate the extension on [the marketplace][Shiny ext
     An extension setting can be used to disable devmode.
 
   [Shiny for Python]: https://shiny.posit.co/py
-  [Shiny for R]: ../../../getstarted.qmd
+  [Shiny for R]: https://shiny.posit.co/r/getstarted/
   [Shiny extension]: https://marketplace.visualstudio.com/items?itemName=Posit.shiny
   [1]: shiny-marketplace-header.png {fig-alt="The shiny extension page on vscode marketplace" fig-align="center" width="100%"}
   [Open VSX Registry]: https://open-vsx.org/extension/posit/shiny

@@ -48,7 +48,7 @@ remotes::install_github("rstudio/shinyuieditor")
 
 <img src="card.gif" data-fig-alt="A card, holding a bar chart, expanding to a full screen view" />
 
-Recently the `bslib` package added a card component that allows for the intuitive sizing of elements. These cards have powerful features like automatically growing their contents to fill the available space. This is especially useful for things like plots. Combined with an optional full-screen mode, it can make it super easy for users to dig into a specific view of your app without navigating to a different page or app. For more info, check out the [blog post announcing cards.](../blog/posts/announcing-new-r-shiny-ui-components/)
+Recently the `bslib` package added a card component that allows for the intuitive sizing of elements. These cards have powerful features like automatically growing their contents to fill the available space. This is especially useful for things like plots. Combined with an optional full-screen mode, it can make it super easy for users to dig into a specific view of your app without navigating to a different page or app. For more info, check out the [blog post announcing cards.](/blog/shiny/announcing-new-r-shiny-ui-components/)
 
 ### Adding cards to your app
 

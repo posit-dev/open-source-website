@@ -19,12 +19,12 @@ To learn more about using caching in Shiny, see the [caching article](https://sh
 
 ## Weather App
 
-The code and results in this post come from the [weather lookup app.](https://connect.rstudioservices.com/explore_your_weather/) Here we will just briefly cover the relevant parts of the app, for a more complete intro check out the [accompanying post](/blog/posts/weather-lookup-about/) introducing it.
+The code and results in this post come from the [weather lookup app.](https://connect.posit.it/explore_your_weather/) Here we will just briefly cover the relevant parts of the app, for a more complete intro check out the [accompanying post](/blog/posts/weather-lookup-about/) introducing it.
 
 :::{.column-page-inset .lightbox}
 ![](full_app.png)
 
-_Screenshot of the [weather lookup app.](https://connect.rstudioservices.com/explore_your_weather/)_
+_Screenshot of the [weather lookup app.](https://connect.posit.it/explore_your_weather/)_
 :::
 
 ## Performance

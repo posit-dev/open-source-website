@@ -20,7 +20,7 @@ port_status: raw
 >
 > **Update:** As of version 1.0, Shiny now has a built-in LLM chat component, which supersedes the chatstream package described in this blog post.
 >
-> See the [Shiny 1.0 blog post](https://shiny.posit.co/blog/posts/shiny-python-1.0/#new-chat-component) for more information.
+> See the [Shiny 1.0 blog post](/blog/shiny/shiny-python-1.0/#new-chat-component) for more information.
 
 In the short time since they've become publicly available, chat interfaces for Large Language Models (LLMs) have become incredibly popular. With Shiny for Python, you can easily create your own chat application with just a few lines of code. If you've wanted to make a web application for interacting with AI, you can do it with Shiny for Python.
 

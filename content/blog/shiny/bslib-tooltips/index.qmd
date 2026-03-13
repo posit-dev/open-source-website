@@ -32,7 +32,7 @@ That said, there are a few new features in `bslib` that we're particularly excit
 
 ## bslib
 
-In [the last release of `bslib` (0.5.0)](https://shiny.posit.co/blog/posts/bslib-dashboards/), we made significant strides towards `bslib` being our recommended way to [build modern Shiny dashboards](https://rstudio.github.io/bslib/articles/dashboards/index.html).
+In [the last release of `bslib` (0.5.0)](/blog/shiny/bslib-dashboards/), we made significant strides towards `bslib` being our recommended way to [build modern Shiny dashboards](https://rstudio.github.io/bslib/articles/dashboards/index.html).
 In this release, we've added more features to help you make even better dashboards.
 
 ### Tooltips and popovers

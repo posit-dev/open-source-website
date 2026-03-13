@@ -62,7 +62,7 @@ In this post, we'll cover three main topics: the [new shiny look](#new-shiny-loo
 
 ## A shiny new look
 
-In our [last post](../blog/posts/bslib-tooltips/#towards-a-new-shiny-theme), we previewed a new look for `bslib`-powered UIs, which is designed with dashboards in mind.
+In our [last post](/blog/shiny/bslib-tooltips/#towards-a-new-shiny-theme), we previewed a new look for `bslib`-powered UIs, which is designed with dashboards in mind.
 This release of `bslib` adds more polish to this new "preset" theme and makes it the default for `bslib` powered UIs.
 
 To use the new layouts, simply create an app using any `page_*()` function in bslib for the UI.

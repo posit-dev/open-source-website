@@ -23,7 +23,7 @@ port_status: raw
 </style>
 
 **We're excited to announce the new [Shiny extension](https://marketplace.visualstudio.com/items?itemName=Posit.shiny) for VS Code!**
-Along with a new name, the Shiny extension now supports running both [Shiny for R](../../../getstarted.qmd) and [Shiny for Python](https://shiny.posit.co/py) apps!
+Along with a new name, the Shiny extension now supports running both [Shiny for R](https://shiny.posit.co/r/getstarted/) and [Shiny for Python](https://shiny.posit.co/py) apps!
 
 When we introduced the Shiny for Python VS Code extension, its name made a lot of sense: the extension helped Shiny for Python developers run their apps in VS Code.
 But with the latest v1.0.0 release, we've expanded the extension to support running Shiny for R apps -- as well as a few new features for moving between local files and ShinyLive links -- and we wanted a name that reflected that.
@@ -52,7 +52,7 @@ Clicking the <i  aria-label="play button"></i> starts your app in a new terminal
 ## ShinyLive
 
 ShinyLive is a free service for sharing Shiny apps via static hosting, where Shiny apps run entirely in the browser without the need for a server.
-Head to [shinylive.io/py](https://shinylive.io/py) or [shinylive.io/r](shinylive.io/r) to get started with the language of your choice.
+Head to [shinylive.io/py](https://shinylive.io/py) or [shinylive.io/r](https://shinylive.io/r) to get started with the language of your choice.
 When your app is ready, share the ShinyLive link with others for instant deployment!
 
 While ShinyLive features an online editor (for [R](https://shinylive.io/r/editor) or [Python](https://shinylive.io/py/editor)), sometimes you might want to create a ShinyLive link from files you're editing in your IDE.

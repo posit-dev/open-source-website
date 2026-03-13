@@ -24,7 +24,7 @@ At Posit, we've been extremely impressed with the Hugging Face community, and th
 
 We think that Shiny is a great front-end for Hugging Face models because it is an efficient and developer-friendly GUI framework. Our reactive execution model allows Shiny to infer the relationships between inputs and outputs and minimally re-render application components.
 This means that you can quickly build intuitive and beautiful model demos without writing callback functions or caching data, and is particularly useful when calling expensive inference endpoints.
-Shiny is easy to learn, and there are great educational resources in both [R](../r/getstarted/) and [Python](https://shiny.posit.co/py/docs/overview.html).
+Shiny is easy to learn, and there are great educational resources in both [R](https://shiny.posit.co/r/getstarted/) and [Python](https://shiny.posit.co/py/docs/overview.html).
 
 Shiny is great for simple demos, but it also has all of the tools you need to build complex, mission-critical applications.
 You can design [delightful layouts](https://shiny.posit.co/py/docs/ui-page-layouts.html) and user interfaces, control [application routing](https://shiny.posit.co/py/docs/workflow-server.html), and encapsulate and share components using [modules](https://shiny.posit.co/py/docs/workflow-modules.html).
