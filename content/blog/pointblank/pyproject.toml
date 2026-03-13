@@ -1,0 +1,16 @@
+[project]
+name = "pointblank-blog"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "pointblank",
+    "polars",
+    "pandas",
+    "jupyter",
+    "ibis-framework[duckdb]",
+    "pandera",
+    "pyarrow",
+    "great_tables",
+    "patito",
+    "validoopsie",
+]

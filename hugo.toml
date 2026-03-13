@@ -1,7 +1,7 @@
 baseURL = 'https://posit-open-source.netlify.app'
 languageCode = 'en-us'
 title = 'Posit Open Source'
-ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-.*\.md$', '_external-sources', 'renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/']
+ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-.*\.md$', '_external-sources', 'renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$']
 
 [pagination]
 pagerSize = 50

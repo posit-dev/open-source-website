@@ -104,6 +104,11 @@ Split "Name1 and Name2" or "Name1, Name2, and Name3" into separate `people` entr
 Created stub shortcodes in `layouts/shortcodes/` (need implementation):
 - `test-drive-cloud.html` - used by `2023/purrr-walk-this-way`
 - `webr-init.html` / `webr-editor.html` - used by webr posts
+## Quarto video shortcodes render as links
+
+Quarto's `{{< video URL >}}` shortcode gets converted to bare URLs (e.g., `<https://youtu.be/ID>`) during hugo-md rendering. Hugo renders these as clickable links, not embedded video players.
+
+**To fix later:** Create a Hugo `video` shortcode and post-process rendered `.md` files to convert bare video URLs to shortcode calls.
 
 ### .markdown files not processed by porting script
 

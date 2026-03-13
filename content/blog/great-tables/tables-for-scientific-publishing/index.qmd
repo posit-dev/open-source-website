@@ -74,7 +74,7 @@ reactions_mini = (
     .cols_label(
         cmpd_formula="",
         OH_k298="OH",
-        NO3_k298="{{%NO3%}}",
+        NO3_k298="&#123;&#123;%NO3%&#125;&#125;",
         Cl_k298="Cl",
     )
     .opt_stylize(style=1, color="blue")
@@ -89,7 +89,7 @@ This is a nice-looking table! And note these pieces:
 * The `.fmt_units()` method converts values that are already in units notation in the table body. For example, a cell with text `"%CH4S%"` becomes CH<sub>4</sub>S (the surrounding `%` indicates that the text should be interpreted as chemistry notation).
 * The `.fmt_scientific()` method formats values (in this case, very small values) to scientific notation (e.g., 3.50 × 10<sup>–11</sup>). Not doing so would make the table look very strange to a researcher that is familiar with this sort of data.
 
-The combination of units notation (and chemistry notation, which is a part of that) really makes the presentation of this table complete and understandable to a practitioner of the field. **Great Tables** supports the use of units notation in spanner labels (with `.tab_spanner()`) and also in column labels (with `.cols_labels()`). The column label 'NO<sub>3</sub>' was created with the latter method by supplying the text `"{{%NO3%}}"` as the column label for the `NO3_k298` column.
+The combination of units notation (and chemistry notation, which is a part of that) really makes the presentation of this table complete and understandable to a practitioner of the field. **Great Tables** supports the use of units notation in spanner labels (with `.tab_spanner()`) and also in column labels (with `.cols_labels()`). The column label 'NO<sub>3</sub>' was created with the latter method by supplying the text `"&#123;&#123;%NO3%&#125;&#125;"` as the column label for the `NO3_k298` column.
 
 ## Nanoplots
 

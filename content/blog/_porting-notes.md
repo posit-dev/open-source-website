@@ -484,3 +484,61 @@ lychee --offline content/blog/shiny/*/index.md
 ### After porting each blog
 
 Run lychee and record broken external links in `_porting-todo.md`. Some links may have been broken on the legacy blog too.
+
+---
+
+## great-tables, pointblank, plotnine
+
+These three Python blogs are similar enough to port together using a shared approach.
+
+### Overview
+
+| Blog | Posts | With Python code | Static | Source path |
+|------|-------|-----------------|--------|-------------|
+| great-tables | 21 | 19 | 2 | `docs/blog/<slug>/` |
+| pointblank | 5 | 4 | 1 | `docs/blog/<slug>/` |
+| plotnine | 3 | 2 | 1 | `source/blog/<year>/<mo>/<slug>/` |
+
+**Total: 29 posts, 25 need Python execution, none have freeze files.**
+
+### Static posts (no code execution needed)
+
+- great-tables: `marimo-and-great-tables`, `pycon-2024-great-tables-are-possible`
+- pointblank: `lets-workshop-together`
+- plotnine: `about-plotnine` (in `2017/04/`)
+
+### Similarities
+
+1. All Quarto `.qmd` files with `jupyter: python3`
+2. Similar frontmatter: `title`, `author`, `date`
+3. No freeze directories — all need fresh rendering
+4. Same workflow: copy → transform frontmatter → render hugo-md
+
+### Frontmatter differences
+
+| Aspect | great-tables | pointblank | plotnine |
+|--------|-------------|------------|----------|
+| Author field | `author: Name` | `author: Name` | Often missing |
+| Extra fields | `html-table-processing: none`, `freeze: true` | same | `format:` block |
+
+### Python environments
+
+Each blog has a separate uv environment in `content/blog/<blog>/`:
+
+| Blog | Key dependencies |
+|------|-----------------|
+| great-tables | `great_tables`, `polars`, `pandas` |
+| pointblank | `pointblank`, `polars`, `pandas`, `ibis[duckdb]` |
+| plotnine | `plotnine`, `mizani`, `pandas` |
+
+Note: pointblank depends on great_tables internally.
+
+### Porting script
+
+A single parameterized script handles all three blogs. Key transformations:
+
+1. `author` → `people` (as list)
+2. Remove `freeze`, `html-table-processing`, `format` blocks
+3. Add `ported_from: <blog>`, `port_status: raw`
+
+No Bootstrap class stripping needed (unlike Shiny posts).
