@@ -45,7 +45,7 @@ This post shows you how to apply the same principles using Python: we'll walk th
 As an example, let's start with a Jupyter notebook analyzing climate data for Corvallis, Oregon.
 
 <figure id="corvallis-ipynb">
-<img src="corvallis-ipynb.png" class="column-margin" data-fig-alt="Screenshot of a Jupyter notebook with code cells and output, including a plot and text summary." alt="corvallis.ipynb" />
+<img src="corvallis-ipynb.png" data-fig-alt="Screenshot of a Jupyter notebook with code cells and output, including a plot and text summary." alt="corvallis.ipynb" />
 <figcaption aria-hidden="true"><a href="https://github.com/cwickham/one-notebook-many-reports/blob/main/01-one-notebook/corvallis.ipynb"><code>corvallis.ipynb</code></a></figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ quarto render corvallis.ipynb
 The result is a PDF file, `corvallis.pdf`, a simple report with the title "Corvallis" and a single sentence summary of the climate data, along with a plot highlighting the mean temperature for this year against the last 30 years.
 
 <figure>
-<img src="corvallis-pdf.png" class="column-margin" data-fig-alt="Screenshot of a PDF file with the title &#39;Corvallis&#39; that contains a single sentence summary and a plot." alt="corvallis.pdf" />
+<img src="corvallis-pdf.png" data-fig-alt="Screenshot of a PDF file with the title &#39;Corvallis&#39; that contains a single sentence summary and a plot." alt="corvallis.pdf" />
 <figcaption aria-hidden="true"><code>corvallis.pdf</code></figcaption>
 </figure>
 

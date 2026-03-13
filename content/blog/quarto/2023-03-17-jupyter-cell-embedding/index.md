@@ -23,7 +23,7 @@ port_status: raw
 
 > **Quarto 1.3 Feature**
 >
-> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](https://quarto.org/docs/download/index.html)
+> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](https://quarto.org/docs/download/)
 
 Starting in Quarto 1.3, you can include the output of an external Jupyter notebook in a Quarto document with the `embed` shortcode. To embed a notebook cell, provide the path to a Jupyter Notebook and a cell identifier. For example, this notebook called `penguins.ipynb` has a cell labelled `fig-bill-scatter`:
 

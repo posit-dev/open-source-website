@@ -74,25 +74,25 @@ When this `_brand.yml` is placed in a project, webpages, presentations, PDF repo
 <tr>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="https://quarto.org/docs/authoring/images/brand-html.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a webpage. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar." alt="Webpage: html" />
+<img src="https://quarto.org/docs/authoring/images/brand-html.png" data-group="brand-formats" data-fig-alt="Screenshot of a webpage. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar." alt="Webpage: html" />
 <figcaption aria-hidden="true">Webpage: <code>html</code></figcaption>
 </figure>
 </div></td>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="https://quarto.org/docs/authoring/images/brand-dashboard.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a dashboard. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar." alt="Dashboard dashboard" />
+<img src="https://quarto.org/docs/authoring/images/brand-dashboard.png" data-group="brand-formats" data-fig-alt="Screenshot of a dashboard. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar." alt="Dashboard dashboard" />
 <figcaption aria-hidden="true">Dashboard <code>dashboard</code></figcaption>
 </figure>
 </div></td>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="https://quarto.org/docs/authoring/images/brand-revealjs.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a presentation. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in bottom left of the slide." alt="Presentation: revealjs" />
+<img src="https://quarto.org/docs/authoring/images/brand-revealjs.png" data-group="brand-formats" data-fig-alt="Screenshot of a presentation. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in bottom left of the slide." alt="Presentation: revealjs" />
 <figcaption aria-hidden="true">Presentation: <code>revealjs</code></figcaption>
 </figure>
 </div></td>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="https://quarto.org/docs/authoring/images/brand-typst.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a PDF document. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in top right of the page." alt="PDF: typst" />
+<img src="https://quarto.org/docs/authoring/images/brand-typst.png" data-group="brand-formats" data-fig-alt="Screenshot of a PDF document. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in top right of the page." alt="PDF: typst" />
 <figcaption aria-hidden="true">PDF: <code>typst</code></figcaption>
 </figure>
 </div></td>

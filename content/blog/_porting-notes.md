@@ -451,7 +451,7 @@ Use [lychee](https://github.com/lycheeverse/lychee) to check links in ported pos
 **Against live dev server (recommended):**
 ```bash
 # Start Hugo dev server first: hugo server
-lychee --base http://localhost:1313 content/blog/shiny/*/index.md
+lychee --base-url http://localhost:1313 content/blog/shiny/*/index.md
 ```
 
 **Offline mode (limited):**

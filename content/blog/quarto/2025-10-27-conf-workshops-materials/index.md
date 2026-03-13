@@ -24,9 +24,9 @@ All materials from both workshops are available online. You can access the full 
 
 ## Branded Websites, Presentations, Dashboards, and PDFs with Quarto
 
-<a href="https://posit-conf-2025.github.io/quarto-brand/" class="btn btn-primary rounded">Workshop website</a>
-<a href="https://github.com/posit-conf-2025/quarto-brand/" class="btn btn-primary rounded"><i class="bi bi-github"></i> Source</a>
-<a href="https://github.com/posit-dev/quarto-brand-exercises/" class="btn btn-primary rounded"><i class="bi bi-github"></i> Exercises</a>
+<a href="https://posit-conf-2025.github.io/quarto-brand/" class="rounded">Workshop website</a>
+<a href="https://github.com/posit-conf-2025/quarto-brand/" class="rounded"><i></i> Source</a>
+<a href="https://github.com/posit-dev/quarto-brand-exercises/" class="rounded"><i></i> Exercises</a>
 
 Led by [Isabella Velásquez](https://ivelasq.rbind.io/), Posit, PBC and [Sara Altman](https://www.linkedin.com/in/sarakaltman), Posit, PBC.
 
@@ -45,9 +45,9 @@ Led by [Isabella Velásquez](https://ivelasq.rbind.io/), Posit, PBC and [Sara Al
 
 ## Extending Quarto
 
-<a href="https://posit-conf-2025.github.io/quarto-extend/" class="btn btn-primary rounded">Workshop website</a>
-<a href="https://github.com/posit-conf-2025/quarto-extend/" class="btn btn-primary rounded"><i class="bi bi-github"></i> Source</a>
-<a href="https://github.com/posit-conf-2025/quarto-extend-exercises/" class="btn btn-primary rounded"><i class="bi bi-github"></i> Exercises</a>
+<a href="https://posit-conf-2025.github.io/quarto-extend/" class="rounded">Workshop website</a>
+<a href="https://github.com/posit-conf-2025/quarto-extend/" class="rounded"><i></i> Source</a>
+<a href="https://github.com/posit-conf-2025/quarto-extend-exercises/" class="rounded"><i></i> Exercises</a>
 
 Led by [Mine Çetinkaya-Rundel](https://mine-cr.com/), Posit, PBC + Duke University and [Charlotte Wickham](https://www.cwick.co.nz/) Posit, PBC.
 

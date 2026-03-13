@@ -77,11 +77,6 @@ For example, you can get a summary of violations right in your document preview:
 <figcaption aria-hidden="true">A rendered webpage with an accessibility violation warning</figcaption>
 </figure>
 
-<figure>
-<img src="https://quarto.org/docs/output-formats/images/axe-violation.png" class="border autodark" data-fig-alt="A webpage with a box in the bottom left that warns &#39;Serious: Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds&#39;." alt="A rendered webpage with an accessibility violation warning" />
-<figcaption aria-hidden="true">A rendered webpage with an accessibility violation warning</figcaption>
-</figure>
-
 Read about your options in [HTML Accessibility Checks](https://quarto.org/docs/output-formats/html-accessibility.html)
 
 We know accessability is a big concern for many of our users, and more improvements will be coming in future releases.

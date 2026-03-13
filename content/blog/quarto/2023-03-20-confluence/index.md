@@ -20,7 +20,7 @@ port_status: raw
 
 > **Quarto 1.3 Feature**
 >
-> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](https://quarto.org/docs/download/index.html)
+> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](https://quarto.org/docs/download/)
 
 [Atlassian Confluence](https://www.atlassian.com/software/confluence) is a publishing platform for supporting team collaboration. Confluence has a variety of hosting options which include both free and paid subscription plans.
 

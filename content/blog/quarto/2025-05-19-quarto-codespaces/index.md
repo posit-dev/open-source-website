@@ -68,27 +68,10 @@ By doing nothing more than clicking that one link, participants create or resume
 <tbody>
 <tr>
 <td style="text-align: center;"><div width="50.0%" data-layout-align="center">
-<p><img src="quarto-codespaces-new-001-dark.png" class="lightbox" data-group="codespaces-dark" data-fig-alt="GitHub Codespaces interface showing the &#39;Create codespace&#39; page. The page includes a section with the repository &#39;mcanouil/quarto-codespaces&#39; and a message stating &#39;No codespace to resume&#39;. There are two buttons: &#39;Change options&#39; and &#39;Create new codespace&#39;." /></p>
+<p><img src="quarto-codespaces-new-001-light.png" data-group="codespaces-light" data-fig-alt="GitHub Codespaces interface showing the &#39;Create codespace&#39; page. The page includes a section with the repository &#39;mcanouil/quarto-codespaces&#39; and a message stating &#39;No codespace to resume&#39;. There are two buttons: &#39;Change options&#39; and &#39;Create new codespace&#39;." /></p>
 </div></td>
 <td style="text-align: center;"><div width="50.0%" data-layout-align="center">
-<p><img src="quarto-codespaces-new-002-dark.png" class="lightbox" data-group="codespaces-dark" data-fig-alt="image_url" alt="Screenshot of Visual Studio Code interface showing a GitHub Codespace for a project named &#39;quarto-codespaces&#39;. The left sidebar contains a file explorer with folders and files such as .devcontainer, .github, init-env.sh, LICENSE, and README.md. The terminal at the bottom displays logs related to configuring the codespace, including commands and their outcomes. The right sidebar has a section titled &#39;Edit with Copilot&#39; explaining how to use Copilot in agent mode." /></p>
-</div></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: center;"><div width="50.0%" data-layout-align="center">
-<p><img src="quarto-codespaces-new-001-light.png" class="lightbox" data-group="codespaces-light" data-fig-alt="GitHub Codespaces interface showing the &#39;Create codespace&#39; page. The page includes a section with the repository &#39;mcanouil/quarto-codespaces&#39; and a message stating &#39;No codespace to resume&#39;. There are two buttons: &#39;Change options&#39; and &#39;Create new codespace&#39;." /></p>
-</div></td>
-<td style="text-align: center;"><div width="50.0%" data-layout-align="center">
-<p><img src="quarto-codespaces-new-002-light.png" class="lightbox" data-group="codespaces-light" data-fig-alt="image_url" alt="Screenshot of Visual Studio Code interface showing a GitHub Codespace for a project named &#39;quarto-codespaces&#39;. The left sidebar contains a file explorer with folders and files such as .devcontainer, .github, init-env.sh, LICENSE, and README.md. The terminal at the bottom displays logs related to configuring the codespace, including commands and their outcomes. The right sidebar has a section titled &#39;Edit with Copilot&#39; explaining how to use Copilot in agent mode." /></p>
+<p><img src="quarto-codespaces-new-002-light.png" data-group="codespaces-light" data-fig-alt="image_url" alt="Screenshot of Visual Studio Code interface showing a GitHub Codespace for a project named &#39;quarto-codespaces&#39;. The left sidebar contains a file explorer with folders and files such as .devcontainer, .github, init-env.sh, LICENSE, and README.md. The terminal at the bottom displays logs related to configuring the codespace, including commands and their outcomes. The right sidebar has a section titled &#39;Edit with Copilot&#39; explaining how to use Copilot in agent mode." /></p>
 </div></td>
 </tr>
 </tbody>

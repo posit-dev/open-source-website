@@ -371,35 +371,22 @@ Run link checking on other ported blogs:
 
 ## Quarto blog: relative links to quarto.org docs
 
-24 posts have relative `../docs/` links that need converting to absolute `https://quarto.org/docs/...` URLs.
+**Status:** ✅ Fixed. Converted `../docs/` and `/docs/` links to `https://quarto.org/docs/...` and changed `.qmd` extensions to `.html`.
 
-**Posts affected:**
-- 2022-02-13-feature-callouts
-- 2022-02-15-feature-tables
-- 2022-02-17-advanced-layout
-- 2022-07-25-feature-extensions
-- 2023-03-13-code-annotation
-- 2023-03-15-multi-format
-- 2023-03-17-jupyter-cell-embedding
-- 2023-03-20-confluence
-- 2023-04-26-1.3-release
-- 2023-05-15-get-started
-- 2023-05-22-quarto-for-academics
-- 2023-12-07-quarto-dashboards-demo
-- 2024-01-24-1.4-release
-- 2024-07-02-beautiful-tables-in-typst
-- 2024-07-11-1.5-release
-- 2024-11-25-1.6-release
-- 2024-12-04-websites-workshop
-- 2024-12-12-includes-meta
-- 2025-01-15-quarto-tip-brand-positron
-- 2025-04-28-1.7-release
-- 2025-07-24-parameterized-reports-python
-- 2025-10-13-1.8-release
-- 2025-11-24-conf-talk-videos
-- 2026-03-05-pdf-accessibility-and-standards
+## Quarto blog: broken external links
 
-**Pattern:** `../docs/authoring/tables.qmd` → `https://quarto.org/docs/authoring/tables.html`
+Discovered via `lychee --base http://localhost:1313 content/blog/quarto/*/index.md`
+
+**404 - Dead links:**
+| URL | Post |
+|-----|------|
+| https://www.r-consortium.org/r-medicine-quarto-for-reproducible-medical-manuscripts | 2022-07-28-rstudio-conf-2022-quarto |
+
+**Connection errors (may be blocking bots):**
+- `https://reg.conf.posit.co/flow/posit/positconf24/...` (conf-2024 posts)
+
+**Malformed links (fixed manually):**
+- `2023-12-07-quarto-dashboards-demo` - YouTube link had incorrect format
 
 ## Quarto blog: shortcodes
 

@@ -105,7 +105,7 @@ port_status: raw
 >
 > In this post, he explains what it is and how it can help you manage Quarto extensions directly from Positron or Visual Studio Code.
 
-<img src="featured.png" class="hero-banner img-fluid" data-fig-align="center" data-fig-alt="Cartoon dog wizard wearing blue hat with red band holding magic wand creating HTML and CSS code scrolls in starry night scene." width="600" />
+<img src="featured.png" class="hero-banner" data-fig-align="center" data-fig-alt="Cartoon dog wizard wearing blue hat with red band holding magic wand creating HTML and CSS code scrolls in starry night scene." width="600" />
 
 I'm absolutely thrilled to announce **<span class="quarto-wizard" title="Quarto Wizard Logo" aria-label="Quarto Wizard Logo"></span> Quarto Wizard 1.0.0**, a groundbreaking extension for Visual Studio Code and Positron that transforms how you interact with the Quarto ecosystem.
 If you've ever found yourself wrestling with command-line extension management or struggling to discover the perfect template for your project, this tool is about to become your new best friend.
@@ -126,10 +126,8 @@ Install it today from the [VS Code marketplace](https://marketplace.visualstudio
 <li>Search for “Quarto Wizard”.</li>
 <li>Click “Install”.</li>
 </ul>
-<p><img src="assets/media/extensions-marketplace-dark.png" title="Extensions View: Marketplace" class="dark-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-dark" data-fig-alt="Visual Studio Code Extensions Marketplace showing Quarto Wizard search
-results with install button.
-" width="500" />
-<img src="assets/media/extensions-marketplace-light.png" title="Extensions View: Marketplace" class="light-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Visual Studio Code Extensions Marketplace showing Quarto Wizard search
+<p>
+<img src="assets/media/extensions-marketplace-light.png" title="Extensions View: Marketplace" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Visual Studio Code Extensions Marketplace showing Quarto Wizard search
 results with install button.
 " width="500" /></p></li>
 </ul>
@@ -179,11 +177,7 @@ I designed **Quarto Wizard** to address a fundamental challenge I've observed in
 **Quarto Wizard integrates beautifully with both the VS Code and Positron ecosystems**, appearing as a dedicated icon in the Activity Bar alongside your other development tools.
 This provides instant access to extension management without disrupting your coding flow, whether you're in Microsoft's VS Code or Posit's new Positron IDE.
 
-<img src="assets/media/vscode-activity-bar-dark.png" title="Quarto Wizard Explorer View (Dark)" class="dark-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-dark" data-fig-alt="Quarto Wizard Extensions Installed panel in Visual Studio Code showing
-no extensions installed message with green Install Extensions button.
-" width="500" />
-
-<img src="assets/media/vscode-activity-bar-light.png" title="Quarto Wizard Explorer View (Light)" class="light-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Wizard Extensions Installed panel in Visual Studio Code showing
+<img src="assets/media/vscode-activity-bar-light.png" title="Quarto Wizard Explorer View (Light)" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Wizard Extensions Installed panel in Visual Studio Code showing
 no extensions installed message with green Install Extensions button.
 " width="500" />
 
@@ -206,11 +200,7 @@ The solution is **multi-modal installation**: you can now install extensions thr
 </ol>
 </div></td>
 <td style="text-align: center;"><div width="50.0%" data-layout-align="center">
-<p><img src="assets/media/vscode-install-dark.png" title="Quarto Wizard: Install Extensions (Dark)" class="dark-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-dark" data-fig-alt="Quarto Wizard extension selection dialog showing list of available
-extensions with checkboxes including LIVE, HIGHLIGHT TEXT, GITHUB, and
-other Quarto extensions.
-" width="500" /></p>
-<p><img src="assets/media/vscode-install-light.png" title="Quarto Wizard: Install Extensions (Light)" class="light-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Wizard extension selection dialog showing list of available
+<p><img src="assets/media/vscode-install-light.png" title="Quarto Wizard: Install Extensions (Light)" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Wizard extension selection dialog showing list of available
 extensions with checkboxes including LIVE, HIGHLIGHT TEXT, GITHUB, and
 other Quarto extensions.
 " width="500" /></p>
@@ -229,11 +219,7 @@ This source tracking transforms extension maintenance from manual archaeology in
 The extension maintains detailed metadata about installed extensions, enabling batch operations and dependency tracking.
 The Explorer View provides a comprehensive overview of all installed extensions with visual indicators for updates and management options.
 
-<img src="assets/media/vscode-update-dark.png" title="Quarto Wizard: Explorer View Update (Dark)" class="dark-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-dark" data-fig-alt="Quarto Wizard Extensions Installed panel showing expanded iconify
-extension details with update button and version information.
-" width="500" />
-
-<img src="assets/media/vscode-update-light.png" title="Quarto Wizard: Explorer View Update (Light)" class="light-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Wizard Extensions Installed panel showing expanded iconify
+<img src="assets/media/vscode-update-light.png" title="Quarto Wizard: Explorer View Update (Light)" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Wizard Extensions Installed panel showing expanded iconify
 extension details with update button and version information.
 " width="500" />
 
@@ -260,10 +246,7 @@ The file is not created until you confirm, allowing you to adjust the filename a
 </ol>
 </div></td>
 <td style="text-align: center;"><div width="50.0%" data-layout-align="center">
-<p><img src="assets/media/vscode-template-dark.png" title="Quarto Wizard: Use Template (Dark)" class="dark-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-dark" data-fig-alt="Visual Studio Code showing Quarto Wizard with installed extensions list
-and document editor displaying invoice template with YAML frontmatter.
-" width="500" /></p>
-<p><img src="assets/media/vscode-template-light.png" title="Quarto Wizard: Use Template (Light)" class="light-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Visual Studio Code showing Quarto Wizard with installed extensions list
+<p><img src="assets/media/vscode-template-light.png" title="Quarto Wizard: Use Template (Light)" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Visual Studio Code showing Quarto Wizard with installed extensions list
 and document editor displaying invoice template with YAML frontmatter.
 " width="500" /></p>
 </div></td>
@@ -277,11 +260,7 @@ and document editor displaying invoice template with YAML frontmatter.
 
 At the heart of **Quarto Wizard** lies the [Quarto Extensions directory (m.canouil.dev/quarto-extensions/)](https://m.canouil.dev/quarto-extensions/), a comprehensive listing I maintain that catalogues extensions from across the entire Quarto ecosystem.
 
-<img src="assets/media/quarto-extensions-home-dark.png" title="Mickaël CANOUIL&#39;s Quarto Extensions directory" class="dark-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-dark" data-fig-alt="Quarto Extensions website displaying grid of extension cards including
-webr, Reveal.js Clean theme, and Hikmah Academic templates.
-" width="500" />
-
-<img src="assets/media/quarto-extensions-home-light.png" title="Mickaël CANOUIL&#39;s Quarto Extensions directory" class="light-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Extensions website displaying grid of extension cards including
+<img src="assets/media/quarto-extensions-home-light.png" title="Mickaël CANOUIL&#39;s Quarto Extensions directory" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Extensions website displaying grid of extension cards including
 webr, Reveal.js Clean theme, and Hikmah Academic templates.
 " width="500" />
 
@@ -297,12 +276,7 @@ Simply browse the directory, find the extension you need, and choose your prefer
 The website generates the appropriate commands or launches your IDE directly.
 This flexibility means teams with mixed technical backgrounds can all access the same powerful extensions.
 
-<img src="assets/media/quarto-extensions-modal-dark.png" title="Mickaël CANOUIL&#39;s Quarto Extensions install modal" class="dark-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-dark" data-fig-alt="Quarto Extensions website with Install Options popup showing manual
-terminal command and Quarto Wizard installation options for Visual
-Studio Code, Positron, and VSCodium.
-" width="500" />
-
-<img src="assets/media/quarto-extensions-modal-light.png" title="Mickaël CANOUIL&#39;s Quarto Extensions install modal" class="light-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Extensions website with Install Options popup showing manual
+<img src="assets/media/quarto-extensions-modal-light.png" title="Mickaël CANOUIL&#39;s Quarto Extensions install modal" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Extensions website with Install Options popup showing manual
 terminal command and Quarto Wizard installation options for Visual
 Studio Code, Positron, and VSCodium.
 " width="500" />
@@ -316,11 +290,7 @@ All of these extensions (and hundreds more) are just a click away.
 Additionally, the Quarto Extensions directory excels at **template discovery and deployment** which is enhanced with powerful filtering options: you can sort by recently updated, filter by popularity, browse by categories (*i.e.*, Shortcodes, Filters, Formats, Projects, Reveal.js Plugins), or search for specific functionality.
 Each extension clearly indicates whether it's a template with **"Use"** buttons alongside **"Install"** options.
 
-<img src="assets/media/quarto-extensions-template-dark.png" title="Mickaël CANOUIL&#39;s Quarto Extensions list view filtered by formats" class="dark-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-dark" data-fig-alt="Quarto Extensions website in list view showing Template extensions with
-install and use buttons.
-" width="500" />
-
-<img src="assets/media/quarto-extensions-template-light.png" title="Mickaël CANOUIL&#39;s Quarto Extensions list view filtered by formats" class="light-content img-fluid img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Extensions website in list view showing Template extensions with
+<img src="assets/media/quarto-extensions-template-light.png" title="Mickaël CANOUIL&#39;s Quarto Extensions list view filtered by formats" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Extensions website in list view showing Template extensions with
 install and use buttons.
 " width="500" />
 

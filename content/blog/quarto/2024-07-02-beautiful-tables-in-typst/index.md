@@ -8,6 +8,10 @@ date: '2024-07-02'
 image: beautiful-tables-typst.png
 image-alt: typst snapshot tk
 bibliography: []
+format:
+  html:
+    css: layout.css
+    number-sections: true
 categories:
   - Quarto 1.5
   - Tables

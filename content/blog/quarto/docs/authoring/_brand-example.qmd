@@ -24,19 +24,19 @@ When this `_brand.yml` is placed in a project, webpages, presentations, PDF repo
 
 ::::::: {.column-body-outset-right layout-ncol="4"}
 ::: {}
-![Webpage: `html`](/docs/authoring/images/brand-html.png){.lightbox group="brand-formats" fig-alt="Screenshot of a webpage. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar."}
+![Webpage: `html`](https://quarto.org/docs/authoring/images/brand-html.png){.lightbox group="brand-formats" fig-alt="Screenshot of a webpage. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar."}
 :::
 
 ::: {}
-![Dashboard `dashboard`](/docs/authoring/images/brand-dashboard.png){.lightbox group="brand-formats" fig-alt="Screenshot of a dashboard. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar."}
+![Dashboard `dashboard`](https://quarto.org/docs/authoring/images/brand-dashboard.png){.lightbox group="brand-formats" fig-alt="Screenshot of a dashboard. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar."}
 :::
 
 ::: {}
-![Presentation: `revealjs`](/docs/authoring/images/brand-revealjs.png){.lightbox group="brand-formats" fig-alt="Screenshot of a presentation. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in bottom left of the slide."}
+![Presentation: `revealjs`](https://quarto.org/docs/authoring/images/brand-revealjs.png){.lightbox group="brand-formats" fig-alt="Screenshot of a presentation. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in bottom left of the slide."}
 :::
 
 :::{}
-![PDF: `typst`](/docs/authoring/images/brand-typst.png){.lightbox group="brand-formats" fig-alt="Screenshot of a PDF document. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in top right of the page."}
+![PDF: `typst`](https://quarto.org/docs/authoring/images/brand-typst.png){.lightbox group="brand-formats" fig-alt="Screenshot of a PDF document. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in top right of the page."}
 ::: 
 :::
 

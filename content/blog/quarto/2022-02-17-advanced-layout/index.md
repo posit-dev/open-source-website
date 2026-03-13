@@ -6,10 +6,11 @@ subtitle: >-
 description: >
   This post demonstrates a few of the capabilities for positioning content in
   the margin of the page. You can read more about the complete capabilities in
-  the [Article Layout Guide](https://quarto.org/docs/authoring/article-layout.html).
+  the [Article Layout
+  Guide](https://quarto.org/docs/authoring/article-layout.html).
 people:
   - Charles Teague
-date: "2022-02-17"
+date: '2022-02-17'
 categories:
   - Features
   - Layout
@@ -18,6 +19,8 @@ image-alt: >-
   Screenshot of two sections of post: Margin Figures, which has a plot in the
   margin; and Arbitrary Margin Content, which has text with a LaTeX equation in
   the margin.
+reference-location: margin
+citation-location: margin
 ported_from: quarto
 port_status: raw
 ---
@@ -54,7 +57,9 @@ ggplot(mtcars2, aes(hp, mpg, color = am)) +
 ```
 ````
 
-<img src="index_files/figure-html/fig-mtcars-1.png" id="fig-mtcars"
+<img
+src="index.markdown_strict_files/figure-markdown_strict/fig-mtcars-1.png"
+id="fig-mtcars"
 alt="Figure 1: MPG vs horsepower, colored by transmission." />
 
 ## Margin Tables
@@ -136,7 +141,8 @@ ggplot(mtcars2, aes(hp, mpg, color = am)) +
 ```
 ````
 
-<img src="index_files/figure-html/fig-cap-margin-1.png"
+<img
+src="index.markdown_strict_files/figure-markdown_strict/fig-cap-margin-1.png"
 id="fig-cap-margin"
 alt="Figure 2: MPG vs horsepower, colored by transmission." />
 

@@ -23,7 +23,7 @@ Quarto 1.7 is out! You can get the current release from the [download page](http
 
 We are especially enthusiastic about the improvements 1.7 brings to dark mode: you can now specify light and dark themes via brand, map computational outputs to themes, and have your website theme follow your viewer's preference.
 To celebrate these changes, this site, [quarto.org](..), now has a light and dark mode.
-Toggle the switch in the navigation bar (<i class="bi bi-toggle-off"></i>) to see the difference.
+Toggle the switch in the navigation bar (<i></i>) to see the difference.
 
 You can read about these improvements and some other highlights below. You can find all the changes in this version in the [Release Notes](https://quarto.org/docs/download/changelog/1.7/).
 
@@ -99,9 +99,9 @@ plot(1:10) # Shown in `dark` mode
 ```
 ````
 
-<img src="index_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-1-1.png" width="768" />
 
-<img src="index_files/figure-html/unnamed-chunk-1-2.png" width="672" />
+<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-1-2.png" width="768" />
 
 Both outputs are produced, but you'll only see the one corresponding to the current state of the light switch.
 Toggle the switch in the navigation bar to see the image change to reflect the theme.
@@ -136,7 +136,7 @@ format:
   <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
   <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Rendered with Quarto {{&lt;/* version */&gt;}}</span></code></pre></div>
   </div></td>
-  <td style="text-align: left;"><div class="border p-1" width="50.0%" data-layout-align="left">
+  <td style="text-align: left;"><div class="border" width="50.0%" data-layout-align="left">
   <p>Rendered with Quarto 1.9.30</p>
   </div></td>
   </tr>

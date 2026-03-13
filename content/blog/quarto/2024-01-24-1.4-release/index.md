@@ -79,25 +79,25 @@ We are particularly excited about how easy it is to make templates for journal a
 <tr>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="images/typst-format-ieee.png" class="lightbox" data-group="custom-formats" data-fig-alt="Screenshot of a page showing a article styled according IEEE standards. The title is centered with authors below in two columns." alt="IEEE" />
+<img src="images/typst-format-ieee.png" data-group="custom-formats" data-fig-alt="Screenshot of a page showing a article styled according IEEE standards. The title is centered with authors below in two columns." alt="IEEE" />
 <figcaption aria-hidden="true">IEEE</figcaption>
 </figure>
 </div></td>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="images/typst-format-poster.png" class="lightbox" data-group="custom-formats" data-fig-alt="Screenshot of a poster in landscape orientiation. The poster includes a logo in the top right, a title in the top left, and content arranged in three columns." alt="Poster" />
+<img src="images/typst-format-poster.png" data-group="custom-formats" data-fig-alt="Screenshot of a poster in landscape orientiation. The poster includes a logo in the top right, a title in the top left, and content arranged in three columns." alt="Poster" />
 <figcaption aria-hidden="true">Poster</figcaption>
 </figure>
 </div></td>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="images/typst-format-letter.png" class="lightbox" data-group="custom-formats" data-fig-alt="Screenshot of a page showing a letter. A sender address is across the top of the page, followed by a recipient address left justified. The body of the letter includes a subject line in bold." alt="Letter" />
+<img src="images/typst-format-letter.png" data-group="custom-formats" data-fig-alt="Screenshot of a page showing a letter. A sender address is across the top of the page, followed by a recipient address left justified. The body of the letter includes a subject line in bold." alt="Letter" />
 <figcaption aria-hidden="true">Letter</figcaption>
 </figure>
 </div></td>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="images/typst-format-dept-news.png" class="lightbox" data-group="custom-formats" data-fig-alt="Screenshot of a page showing a department newsletter. The page is split vertically with a white column on the left and a red one on the right. An image spans across the column with the text &quot;Award Winning Science&quot; oriented to run vertically down its right side." alt="Dept News" />
+<img src="images/typst-format-dept-news.png" data-group="custom-formats" data-fig-alt="Screenshot of a page showing a department newsletter. The page is split vertically with a white column on the left and a red one on the right. An image spans across the column with the text &quot;Award Winning Science&quot; oriented to run vertically down its right side." alt="Dept News" />
 <figcaption aria-hidden="true">Dept News</figcaption>
 </figure>
 </div></td>
