@@ -108,7 +108,7 @@ Some other notable highlights include:
 
 - [Article Grid Customization](https://quarto.org/docs/output-formats/page-layout.html#grid-customization)---Customize the widths of layout components in HTML documents
 
-- [Quarto Book AsciiDoc Support](https://quarto.org/docs/books/book-basics.html)---Output Quarto books to AsciiDoc files
+- [Quarto Book AsciiDoc Support](https://quarto.org/docs/books/)---Output Quarto books to AsciiDoc files
 
 - [Website Navigation Improvements](https://quarto.org/docs/prerelease/1.3/website-nav.html)---Include tools in your navbar, and provide better navigation for Quarto websites on mobile devices
 

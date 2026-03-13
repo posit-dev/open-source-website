@@ -29,7 +29,7 @@ Select highlights include:
 - Adding a [citation](https://quarto.org/docs/visual-editor/technical.html#citations) from a DOI
 - Seamlessly switching between output formats as well as creating [multi-format documents](https://quarto.org/docs/output-formats/html-multi-format.html)
 - Customizing the [output location](https://quarto.org/docs/presentations/revealjs/#output-location) of code in presentations
-- Creating a [website](https://quarto.org/docs/websites/website-basics.html) from scratch
+- Creating a [website](https://quarto.org/docs/websites/) from scratch
 - Publishing the website to [QuartoPub](https://quarto.org/docs/publishing/quarto-pub.html)
 
 If you would like to follow along as you watch the video, you can find the source code for everything created in the video in [this GitHub repository](https://github.com/mine-cetinkaya-rundel/get-started-quarto) and the published [website on QuartoPub](https://mine.quarto.pub/welcome-to-quarto/).
