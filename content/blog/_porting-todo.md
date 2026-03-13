@@ -174,6 +174,52 @@ Some legacy posts reference external images that are now dead. These are broken 
 |------|-----------|
 | ai/2017-09-06-keras-for-r | `https://keras.rstudio.com/images/training_history_ggplot2.png` |
 
+## Shiny posts: Bootstrap classes stripped
+
+A Lua filter (`content/blog/shiny/_extensions/strip-bootstrap/`) strips Bootstrap classes during rendering. These posts had Bootstrap-dependent HTML (buttons, icons, layout) that may need manual review:
+
+| Post | Class count | Notes |
+|------|-------------|-------|
+| shiny-r-1.8.0 | 57 | Heavy Bootstrap usage |
+| bslib-dashboards | 20 | |
+| bslib-tooltips | 18 | |
+| introducing-component-layouts | 17 | |
+| shiny-side-of-llms-part-3 | 12 | |
+| conf-2025-shinytalks | 9 | |
+| announcing-new-r-shiny-ui-components | 8 | Also has Wistia embed (fixed) |
+| shiny-express | 4 | |
+| shiny-at-scipy-2025 | 4 | |
+| introducing-shiny-templates | 3 | |
+| shiny-vscode-1.0.0 | 2 | |
+| shinychat-tool-ui | 1 | |
+| shiny-r-1.8.1 | 1 | |
+| shiny-python-1.0 | 1 | |
+| conf-2023-recap-andrew-holz | 1 | |
+
+**What was stripped:**
+- Button styling (`btn btn-primary` → plain `<a>`)
+- Icons (`bi bi-*`, `fas fa-*` → empty `<i>`)
+- Spacing/layout utilities (`my-4`, `d-flex`, etc.)
+- Jekyll code classes (`language-plaintext highlighter-rouge`)
+
+**To verify:** Check these posts render acceptably without Bootstrap styling. Consider adding Bootstrap Icons CDN if icons are important.
+
+## Frontmatter mismatch: source vs rendered files
+
+Some ported blogs transformed frontmatter only in the rendered file (`.md`, `.markdown`), not the source (`.Rmd`, `.Rmarkdown`, `.qmd`). Re-rendering would lose changes like:
+- `author` → `people` conversion
+- Added `ported_from`, `port_status`
+- Added `image`, `image-alt`
+
+**Affected blogs:**
+- tidyverse (`.Rmd` source, `.md` rendered)
+- education (`.Rmarkdown` source, `.markdown` rendered)
+- ai (`.Rmd` source, `.md` rendered)
+
+**Shiny blog is OK** — script transforms `.qmd` first, then renders.
+
+**To fix:** Update source files to match rendered frontmatter, or accept that re-rendering requires re-applying transformations.
+
 ## Other observations
 
 Record any issues or notes discovered during porting here.

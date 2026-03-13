@@ -1,0 +1,4 @@
+filters:
+  - strip-bootstrap
+
+format: hugo-md

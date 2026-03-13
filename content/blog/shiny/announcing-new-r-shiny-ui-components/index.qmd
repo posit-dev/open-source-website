@@ -2,17 +2,13 @@
 title: Announcing new R Shiny UI components
 description: |
   The {bslib} R package recently added new user interface (UI) components, including (full-screen) Cards, Value Boxes, and a responsive column wrapping layout. Start using them today in Shiny, R Markdown, and/or Quarto.
-author: "Carson Sievert"
+people:
+  - Carson Sievert
 date: "2022-12-20"
-twitter-card:
-  image: bslib.jpg
-open-graph:
-  image: bslib.jpg
 image: bslib.jpg
 image-alt: "A picture of Bob Ross"
-
-lightbox:
-  effect: fade
+ported_from: shiny
+port_status: raw
 ---
 
 
@@ -28,11 +24,11 @@ install.packages("shiny")
 
 In the video below, I walk-through a Shiny app which quickly illustrates what's possible with these components. Note the [responsive full screen behavior](https://rstudio.github.io/bslib/articles/cards.html#responsive-sizing) of the cards and the "sidebar" layout made possible by the new `layout_column_wrap()`. It also makes use of the new [`{histoslider}` package](https://github.com/cpsievert/histoslider) for the histogram sliders in the sidebar. See [here](https://testing-apps.shinyapps.io/flights) for the live app and [here](https://github.com/rstudio/bslib/tree/main/inst/examples/flights) for the source code.
 
-::: {.column-page .pt-5}
-
-<script src="https://fast.wistia.com/embed/medias/mriliaufhx.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:57.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_mriliaufhx seo=false videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/mriliaufhx/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
-
-:::
+```{=html}
+<script src="https://fast.wistia.com/embed/medias/mriliaufhx.jsonp" async></script>
+<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+<div class="wistia_responsive_padding" style="padding:57.5% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_mriliaufhx seo=false videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/mriliaufhx/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
+```
 
 <div class="my-4"></div>
 

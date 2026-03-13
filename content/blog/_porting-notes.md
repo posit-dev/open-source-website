@@ -290,3 +290,125 @@ for d in _external-sources/ai-blog/_posts/*/; do
   [ -z "$(find "$d" -maxdepth 1 -name "*.html")" ] && echo "$(basename $d)"
 done
 ```
+
+---
+
+## shiny.posit.co (Shiny blog)
+
+Blog source: `_external-sources/shiny-dev-center/blog/posts`
+Destination: `content/blog/shiny/`
+
+Uses Quarto website/blog format with `.qmd` files. Has a `_freeze` directory at project level.
+
+### Structure
+
+- **47 posts** total (all `.qmd`)
+- **38 posts are fully static** (no executable code)
+- **9 posts have R code chunks**
+- **2 posts have Python code chunks** (shiny-side-of-llms-part-2, part-3)
+- **Only 4 posts have freeze files** (bslib-tooltips, shiny-r-1.8.0, shiny-r-1.8.1, shinychat-tool-ui)
+
+### Posts with executable code
+
+| Post | R chunks | Python chunks | Has freeze? |
+|------|----------|---------------|-------------|
+| bslib-0.9.0 | 3 | 0 | No |
+| bslib-dashboards | 1 | 0 | No |
+| bslib-tooltips | 1 | 0 | Yes |
+| chromote-0.5.0 | 1 | 0 | No |
+| shiny-r-1.8.0 | 6 | 0 | Yes |
+| shiny-r-1.8.1 | 2 | 0 | Yes |
+| shiny-side-of-llms-part-2 | 11 | 16 | No |
+| shiny-side-of-llms-part-3 | 2 | 2 | No |
+| shinychat-tool-ui | 13 | 0 | Yes |
+
+### Porting approach
+
+**Static posts (38):** Render with `quarto render index.qmd --to hugo-md`, transform frontmatter.
+
+**Posts with freeze (4):** Can use pre-rendered output from freeze files.
+
+**Posts with code but no freeze (5):** Need R/Python environment to render, or convert code to static display.
+
+### Script
+
+**Script:** `scripts/port-shiny-post.sh <folder-name>`
+
+```bash
+./scripts/port-shiny-post.sh shiny-on-hugging-face
+```
+
+The script:
+1. Copies post folder to `content/blog/shiny/`
+2. Transforms frontmatter in `.qmd` first:
+   - `author` → `people` (as list)
+   - `imagealt` → `image-alt`
+   - Removes `twitter-card`, `open-graph`, `format` blocks
+   - Adds `ported_from: shiny`, `port_status: raw`
+3. Renders from `content/blog/shiny/` with `quarto render <post>/index.qmd --to hugo-md`
+4. Warns about broken links (site-relative or relative paths that need fixing)
+
+**After porting:** Fix any flagged links in the `.qmd`, then re-render to update `.md`.
+
+### Shared environments
+
+Posts in `content/blog/shiny/` share renv (R) and uv (Python) environments. Render from within `content/blog/shiny/` to use them.
+
+Files:
+- `content/blog/shiny/renv.lock` - R package lockfile
+- `content/blog/shiny/.Rprofile` - Activates renv
+- `content/blog/shiny/pyproject.toml` - Python dependencies
+
+### Watch for: Quarto stripping nested HTML
+
+**Problem:** When rendering `.qmd` to `hugo-md`, Quarto/Pandoc strips nested `<div>` elements from inline HTML. This breaks embeds like Wistia videos.
+
+**Solution:** Wrap complex HTML in a raw HTML block:
+
+```qmd
+```{=html}
+<script src="..."></script>
+<div class="wrapper"><div class="inner">...</div></div>
+```
+```
+
+**Example:** The `announcing-new-r-shiny-ui-components` post had a Wistia embed that was stripped. Fixed by wrapping in `{=html}` block.
+
+### Watch for: Bootstrap-dependent HTML
+
+Some Shiny blog posts contain HTML designed for Bootstrap (the CSS framework used by Quarto sites). These won't render correctly on the Hugo/Tailwind site.
+
+**Bootstrap classes to strip:**
+
+| Category | Classes | Action |
+|----------|---------|--------|
+| Buttons | `btn`, `btn-primary`, `btn-outline-*` | Strip (becomes plain link) |
+| Icons | `bi bi-*`, `fas fa-*` | Strip (icon won't show) |
+| Spacing | `my-*`, `mx-*`, `mb-*`, `mt-*`, `me-*`, `ms-*`, `px-*`, `py-*`, `p-*`, `pt-*` | Strip |
+| Layout | `d-flex`, `align-items-*` | Strip |
+| Text | `text-muted`, `text-end`, `fw-bold` | Strip |
+| Images | `img-fluid`, `shadow`, `img-shadow` | Strip |
+| Nav | `nav-item`, `nav-link`, `tab-pane` | Strip (may break tabs) |
+| Code | `language-plaintext highlighter-rouge` | Strip (Jekyll artifact) |
+
+**Affected posts (15 of 47):**
+
+| Post | Bootstrap class count |
+|------|----------------------|
+| shiny-r-1.8.0 | 57 |
+| bslib-dashboards | 20 |
+| bslib-tooltips | 18 |
+| introducing-component-layouts | 17 |
+| shiny-side-of-llms-part-3 | 12 |
+| conf-2025-shinytalks | 9 |
+| announcing-new-r-shiny-ui-components | 8 |
+| shiny-express | 4 |
+| shiny-at-scipy-2025 | 4 |
+| introducing-shiny-templates | 3 |
+| shiny-vscode-1.0.0 | 2 |
+| shinychat-tool-ui | 1 |
+| shiny-r-1.8.1 | 1 |
+| shiny-python-1.0 | 1 |
+| conf-2023-recap-andrew-holz | 1 |
+
+**Solution:** Use a Quarto Lua filter (`_extensions/strip-bootstrap/strip-bootstrap.lua`) to remove these classes during rendering. See `content/blog/shiny/_quarto.yml` for usage.
