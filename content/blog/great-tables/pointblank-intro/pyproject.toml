@@ -1,0 +1,17 @@
+[project]
+name = "intro-pointblank-verification"
+version = "0.1.0"
+description = "Environment for verifying intro-pointblank blog post"
+requires-python = ">=3.12"
+dependencies = [
+    "ibis>=3.3.0",
+    "ibis-framework[duckdb]>=10.4.0",
+    "jupyter>=1.1.1",
+    "narwhals>=1.33.0",
+    "pandas>=2.2.3",
+    "pointblank>=0.8.0",
+    "polars>=1.26.0",
+]
+[tool.uv]
+exclude-newer = "2025-04-04T00:00:00Z"
+
