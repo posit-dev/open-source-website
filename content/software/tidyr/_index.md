@@ -5,6 +5,8 @@ github: tidyverse/tidyr
 image: logo.png
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2026-01-09T14:13:04+00:00'
 people:
 - Hadley Wickham

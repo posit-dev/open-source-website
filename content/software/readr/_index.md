@@ -5,6 +5,8 @@ github: tidyverse/readr
 image: logo.png
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2026-02-19T07:06:02+00:00'
 people:
 - Hadley Wickham

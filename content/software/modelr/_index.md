@@ -5,6 +5,8 @@ github: tidyverse/modelr
 image: logo.png
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2023-03-21T14:12:45+00:00'
 people:
 - Hadley Wickham

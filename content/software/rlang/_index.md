@@ -5,6 +5,8 @@ github: r-lib/rlang
 image: logo.png
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2025-12-15T14:22:46+00:00'
 people:
 - Lionel Henry

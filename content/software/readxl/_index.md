@@ -5,6 +5,8 @@ github: tidyverse/readxl
 image: logo.png
 languages:
 - C++
+tags:
+- tidyverse
 latest_release: '2025-03-07T07:25:18+00:00'
 people:
 - Jenny Bryan

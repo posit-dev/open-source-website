@@ -5,6 +5,8 @@ github: tidyverse/reprex
 image: logo.png
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2024-07-06T00:20:34+00:00'
 people:
 - Jenny Bryan

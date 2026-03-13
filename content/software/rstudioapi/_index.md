@@ -5,6 +5,8 @@ github: rstudio/rstudioapi
 image: logo.png
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2024-10-16T22:39:47+00:00'
 people:
 - JJ Allaire

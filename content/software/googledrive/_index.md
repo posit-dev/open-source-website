@@ -5,6 +5,8 @@ github: tidyverse/googledrive
 image: logo.png
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2025-09-10T06:09:30+00:00'
 people:
 - Jenny Bryan

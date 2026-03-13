@@ -5,6 +5,9 @@ github: tidyverse/ggplot2
 image: ggplot2.png
 languages:
 - R
+tags:
+- tidyverse
+- data visualization
 latest_release: '2026-02-02T09:41:41+00:00'
 people:
 - Hadley Wickham

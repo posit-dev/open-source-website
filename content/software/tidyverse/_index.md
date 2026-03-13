@@ -5,6 +5,8 @@ github: tidyverse/tidyverse
 image: tidyverse.png
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2023-02-21T13:20:32+00:00'
 people:
 - Hadley Wickham

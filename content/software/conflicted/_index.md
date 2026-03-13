@@ -5,6 +5,8 @@ github: r-lib/conflicted
 image: logo.svg
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2023-01-31T19:50:16+00:00'
 people:
 - Hadley Wickham
