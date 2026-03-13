@@ -1,0 +1,86 @@
+{{ define "main" }}
+<div class="flex flex-col w-full">
+  <div class="mt-6 mb-8">
+    <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200">
+      {{ .Title }}
+    </h1>
+
+    {{- with .Content -}}
+      <div class="text-gray-700 dark:text-gray-300 mt-2 max-w-3xl">
+        {{ . }}
+      </div>
+    {{- end -}}
+
+    {{- with .Params.link -}}
+      <div class="mt-2">
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium">
+          Visit {{ $.Title }} website
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    {{- end -}}
+  </div>
+
+  <!-- [category] Software -->
+  {{ $software := where .Pages "Section" "software" }}
+  {{ if gt (len $software) 0 }}
+  <div class="mt-8 mb-6">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      {{ .Title }} Software
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    {{ range $software }}
+      {{ partial "item.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- [category] Blog Posts -->
+  {{ $blog := where .Pages "Section" "blog" }}
+  {{ if gt (len $blog) 0 }}
+  <div class="mt-8 mb-6">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      {{ .Title }} Blog Posts
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    {{ range $blog.ByDate.Reverse }}
+      {{ partial "item.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- [category] Events -->
+  {{ $events := where .Pages "Section" "events" }}
+  {{ if gt (len $events) 0 }}
+  <div class="mt-8 mb-6">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      {{ .Title }} Events
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    {{ range $events }}
+      {{ partial "item.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- [category] Resources -->
+  {{ $resources := where .Pages "Section" "resources" }}
+  {{ if gt (len $resources) 0 }}
+  <div class="mt-8 mb-6">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      {{ .Title }} Resources
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    {{ range $resources.ByDate.Reverse }}
+      {{ partial "item.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
