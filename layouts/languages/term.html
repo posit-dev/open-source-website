@@ -1,0 +1,69 @@
+{{ define "main" }}
+<div class="flex flex-col w-full max-w-4xl lg:max-w-5xl">
+  <div class="mt-6 mb-8">
+    <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200">
+      {{ .Title }}
+    </h1>
+  </div>
+
+  <!-- [language] Software -->
+  {{ $software := where .Pages "Section" "software" }}
+  {{ if gt (len $software) 0 }}
+  <div class="mt-8 mb-6">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      {{ .Title }} Software
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    {{ range $software }}
+      {{ partial "item.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- [language] Blog Posts -->
+  {{ $blog := where .Pages "Section" "blog" }}
+  {{ if gt (len $blog) 0 }}
+  <div class="mt-8 mb-6">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      {{ .Title }} Blog Posts
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    {{ range $blog.ByDate.Reverse }}
+      {{ partial "item.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- [language] Events -->
+  {{ $events := where .Pages "Section" "events" }}
+  {{ if gt (len $events) 0 }}
+  <div class="mt-8 mb-6">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      {{ .Title }} Events
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    {{ range $events }}
+      {{ partial "item.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- [language] Resources -->
+  {{ $resources := where .Pages "Section" "resources" }}
+  {{ if gt (len $resources) 0 }}
+  <div class="mt-8 mb-6">
+    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
+      {{ .Title }} Resources
+    </h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    {{ range $resources.ByDate.Reverse }}
+      {{ partial "item.html" (dict "page" .) }}
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
