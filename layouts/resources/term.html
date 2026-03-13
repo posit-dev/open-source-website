@@ -30,18 +30,24 @@
       {{ $height := mul 64 4 }}
       {{ $widths := slice 600 800 1200 1600 }}
       {{ $images := dict }}
+      {{/* WebP disabled due to Hugo WASM memory issues
       {{ $imagesWebp := dict }}
+      */}}
       {{ range $widths }}
       {{ $w := . }}
       {{ $dimensions := printf "%dx%d" $w $height }}
       {{ $resized := $image.Fill $dimensions }}
       {{ $images = merge $images (dict (string $w) $resized) }}
+      {{/* WebP disabled
       {{ $imagesWebp = merge $imagesWebp (dict (string $w) ($resized.Process "webp")) }}
+      */}}
       {{ end }}
       <picture>
+        {{/* WebP disabled
         <source type="image/webp"
           srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $imagesWebp (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
           sizes="(min-width: 1024px) 1024px, 100vw" />
+        */}}
         <img src="{{ (index $images " 1200").RelPermalink }}"
           srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $images (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
           sizes="(min-width: 1024px) 1024px, 100vw" alt="{{ .Title }}" class="w-full h-full object-cover"

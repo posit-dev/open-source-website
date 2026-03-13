@@ -533,12 +533,66 @@ Each blog has a separate uv environment in `content/blog/<blog>/`:
 
 Note: pointblank depends on great_tables internally.
 
-### Porting script
+### Porting scripts
 
-A single parameterized script handles all three blogs. Key transformations:
+Each blog has its own script due to different source paths:
 
-1. `author` → `people` (as list)
-2. Remove `freeze`, `html-table-processing`, `format` blocks
+```bash
+./scripts/port-great-tables-post.sh design-philosophy
+./scripts/port-pointblank-post.sh intro-pointblank
+./scripts/port-plotnine-post.sh 2024/11/version-0.14.0
+```
+
+Key transformations:
+1. `author` → `people` (as list, splits on " and ")
+2. Remove `freeze`, `html-table-processing`, `jupyter`, `format`, `aliases` blocks
 3. Add `ported_from: <blog>`, `port_status: raw`
+4. Render with `uv run quarto render <post>/index.qmd --to hugo-md`
 
 No Bootstrap class stripping needed (unlike Shiny posts).
+
+### Watch for: shortcode-like text in code blocks
+
+Great Tables uses `{{%...%}}` notation for units/chemistry formatting. Hugo interprets `{{%` as a shortcode delimiter, even inside fenced code blocks.
+
+**Fix:** Replace `{{` with `&#123;&#123;` (HTML entities) in both `.qmd` and `.md` files.
+
+**Example:** `tables-for-scientific-publishing` has `{{%NO3%}}` which needed escaping.
+
+---
+
+## WebP processing disabled
+
+Hugo's WASM-based WebP image processor crashes with memory allocation errors when building this site:
+
+```
+Error allocating memory for blob data
+Error parsing JSON line
+panic: call with ID 0 not found
+```
+
+The site has ~16,000+ images across ~1,000 blog posts. Processing all of these through the WASM WebP converter exhausts memory.
+
+**Workaround:** Disabled WebP processing in all templates by commenting out `<source type="image/webp">` blocks. The site still serves responsive images via JPEG srcsets.
+
+### Files modified
+
+| File | Changes |
+|------|---------|
+| `layouts/partials/blog/hero.html` | Commented out WebP source; added GIF exclusion |
+| `layouts/partials/blog/related.html` | Commented out WebP source; added GIF exclusion |
+| `layouts/categories/list.html` | Commented out 2 WebP sources; added GIF exclusions |
+| `layouts/events/term.html` | Commented out WebP processing loop and sources |
+| `layouts/resources/term.html` | Commented out WebP processing loop and source |
+| `layouts/partials/block/image.html` | Commented out WebP source |
+| `layouts/partials/responsive_image_container.html` | Commented out WebP processing |
+| `layouts/partials/responsive_image_fixed.html` | Commented out WebP processing |
+
+### To re-enable WebP
+
+If Hugo fixes the WASM memory issue in a future version:
+
+1. Search for `WebP disabled due to Hugo WASM memory issues` in templates
+2. Uncomment the `<source type="image/webp">` blocks
+3. Uncomment the WebP processing loops (in events/term.html and resources/term.html)
+4. Test with a full build: `hugo`

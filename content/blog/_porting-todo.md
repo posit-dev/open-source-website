@@ -319,6 +319,24 @@ Discovered via `lychee --base http://localhost:1313 content/blog/shiny/*/index.m
 **GitHub user 404s (accounts deleted/renamed):**
 - kangjf1943, KRRLP-PL, MalteSteinCytel, oozbeker-onemagnify, jonathanmburns, ngoodkindGSI, bioinformzhang, howardbaek, MartinBaumga, TopBottomTau, toxintoxin, dependabot[bot]
 
+## great-tables, pointblank, plotnine: relative links
+
+These posts have relative links to docs/examples that need fixing:
+
+**great-tables:**
+- introduction-0.2.0
+- introduction-0.13.0
+- polars-styling (links to `../../../../get-started/...`)
+- bring-your-own-df
+- polars-dot-style
+- septa-timetables
+
+**pointblank:**
+- lets-workshop-together
+- overhauled-user-guide
+
+**Pattern:** Links like `../../../../get-started/basic-styling.qmd` should become `https://posit-dev.github.io/great-tables/get-started/basic-styling.html`
+
 ## Link checking for other blogs
 
 Run link checking on other ported blogs:
@@ -326,6 +344,9 @@ Run link checking on other ported blogs:
 - [ ] education
 - [ ] ai
 - [ ] rstudio
+- [ ] great-tables
+- [ ] pointblank
+- [ ] plotnine
 
 ## Other observations
 

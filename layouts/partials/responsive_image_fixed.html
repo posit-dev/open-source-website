@@ -49,15 +49,19 @@
       {{ $img2x = $image.Resize $dimensions2x }}
       {{ $img3x = $image.Resize $dimensions3x }}
     {{ end }}
+    {{/* WebP disabled due to Hugo WASM memory issues with large image count
     {{ $img1xWebp := $img1x.Process "webp" }}
     {{ $img2xWebp := $img2x.Process "webp" }}
     {{ $img3xWebp := $img3x.Process "webp" }}
+    */}}
     <picture class="block w-full h-full">
+      {{/* WebP source disabled
       <source
         type="image/webp"
         srcset="{{ $img1xWebp.RelPermalink }} 1x,
                 {{ $img2xWebp.RelPermalink }} 2x,
                 {{ $img3xWebp.RelPermalink }} 3x" />
+      */}}
       <img
         src="{{ $img1x.RelPermalink }}"
         srcset="{{ $img1x.RelPermalink }} 1x,

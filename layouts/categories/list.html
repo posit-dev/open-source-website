@@ -61,11 +61,13 @@
                 {{- $imgType := printf "%T" $featuredImg -}}
                 {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
                   {{- /* It's a resource */ -}}
-                  {{- if eq $featuredImg.MediaType.SubType "svg" -}}
+                  {{- if or (eq $featuredImg.MediaType.SubType "svg") (eq $featuredImg.MediaType.SubType "gif") -}}
+                    {{/* SVG and GIF: serve as-is without processing */}}
                     <img class="w-full h-full object-cover" src="{{ $featuredImg.RelPermalink }}" alt="{{ (index .Params "image-alt") | default .Title }}" loading="lazy" />
                   {{- else -}}
                     {{- $respSizes := slice "640" "960" "1280" -}}
                     <picture>
+                      {{/* WebP disabled due to Hugo WASM memory issues
                       <source type="image/webp" srcset="
                         {{- range $i, $size := $respSizes -}}
                           {{- if ge $featuredImg.Width $size -}}
@@ -73,6 +75,7 @@
                             {{- ($featuredImg.Resize (print $size "x webp photo box")).RelPermalink }} {{ $size }}w
                           {{- end -}}
                         {{- end -}}" sizes="(min-width: 1024px) 50vw, 100vw" />
+                      */}}
                       <source type="image/jpeg" srcset="
                         {{- range $i, $size := $respSizes -}}
                           {{- if ge $featuredImg.Width $size -}}
@@ -134,11 +137,13 @@
                 {{- $gridImg := partial "blog/thumbnail.html" $post -}}
                 {{- $imgType := printf "%T" $gridImg -}}
                 {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
-                  {{- if eq $gridImg.MediaType.SubType "svg" -}}
+                  {{- if or (eq $gridImg.MediaType.SubType "svg") (eq $gridImg.MediaType.SubType "gif") -}}
+                    {{/* SVG and GIF: serve as-is without processing */}}
                     <img class="w-full h-full object-cover" src="{{ $gridImg.RelPermalink }}" alt="{{ (index $post.Params "image-alt") | default $post.Title }}" loading="lazy" />
                   {{- else -}}
                     {{- $respSizes := slice "320" "640" -}}
                     <picture>
+                      {{/* WebP disabled due to Hugo WASM memory issues
                       <source type="image/webp" srcset="
                         {{- range $i, $size := $respSizes -}}
                           {{- if ge $gridImg.Width $size -}}
@@ -146,6 +151,7 @@
                             {{- ($gridImg.Resize (print $size "x webp photo box")).RelPermalink }} {{ $size }}w
                           {{- end -}}
                         {{- end -}}" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+                      */}}
                       <source type="image/jpeg" srcset="
                         {{- range $i, $size := $respSizes -}}
                           {{- if ge $gridImg.Width $size -}}

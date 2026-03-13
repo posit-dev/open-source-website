@@ -66,11 +66,13 @@
               {{- $relatedImg := partial "blog/thumbnail.html" . -}}
               {{- $imgType := printf "%T" $relatedImg -}}
               {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
-                {{- if eq $relatedImg.MediaType.SubType "svg" -}}
+                {{- if or (eq $relatedImg.MediaType.SubType "svg") (eq $relatedImg.MediaType.SubType "gif") -}}
+                  {{/* SVG and GIF: serve as-is without processing */}}
                   <img class="w-full h-full object-cover" src="{{ $relatedImg.RelPermalink }}" alt="{{ (index .Params "image-alt") | default .Title }}" loading="lazy" />
                 {{- else -}}
                   {{- $respSizes := slice "320" "640" -}}
                   <picture>
+                    {{/* WebP disabled due to Hugo WASM memory issues
                     <source type="image/webp" srcset="
                       {{- range $i, $size := $respSizes -}}
                         {{- if ge $relatedImg.Width $size -}}
@@ -78,6 +80,7 @@
                           {{- ($relatedImg.Resize (print $size "x webp photo box")).RelPermalink }} {{ $size }}w
                         {{- end -}}
                       {{- end -}}" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+                    */}}
                     <source type="image/jpeg" srcset="
                       {{- range $i, $size := $respSizes -}}
                         {{- if ge $relatedImg.Width $size -}}

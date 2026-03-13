@@ -36,6 +36,7 @@
   {{- $actualImg := $src.Resize (print "640x jpg " $filter) -}}
   <figure>
     <picture>
+      {{/* WebP disabled due to Hugo WASM memory issues
       <source type="image/webp" srcset="
       {{- with $respSizes -}}
         {{- range $i, $e := . -}}
@@ -44,6 +45,7 @@
           {{- end -}}
         {{- end -}}
       {{- end -}}" sizes="{{ $dataSzes }}" />
+      */}}
       <source type="image/jpeg" srcset="
       {{- with $respSizes -}}
         {{- range $i, $e := . -}}

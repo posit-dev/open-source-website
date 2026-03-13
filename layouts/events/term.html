@@ -27,8 +27,10 @@
       {{ $widths := slice 600 800 1200 1600 }}
       {{ $imagesMobile := dict }}
       {{ $imagesDesktop := dict }}
+      {{/* WebP disabled due to Hugo WASM memory issues
       {{ $imagesMobileWebp := dict }}
       {{ $imagesDesktopWebp := dict }}
+      */}}
       {{ range $widths }}
       {{ $w := . }}
       {{ $dimensionsMobile := printf "%dx%d" $w $heightMobile }}
@@ -37,16 +39,20 @@
       {{ $resizedDesktop := $image.Fill $dimensionsDesktop }}
       {{ $imagesMobile = merge $imagesMobile (dict (string $w) $resizedMobile) }}
       {{ $imagesDesktop = merge $imagesDesktop (dict (string $w) $resizedDesktop) }}
+      {{/* WebP disabled
       {{ $imagesMobileWebp = merge $imagesMobileWebp (dict (string $w) ($resizedMobile.Process "webp")) }}
       {{ $imagesDesktopWebp = merge $imagesDesktopWebp (dict (string $w) ($resizedDesktop.Process "webp")) }}
+      */}}
       {{ end }}
       <picture>
+        {{/* WebP disabled
         <source media="(min-width: 768px)" type="image/webp"
           srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $imagesDesktopWebp (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
           sizes="(min-width: 1024px) 1024px, 100vw" />
         <source type="image/webp"
           srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $imagesMobileWebp (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
           sizes="100vw" />
+        */}}
         <img src="{{ (index $imagesDesktop " 1200").RelPermalink }}"
           srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $imagesDesktop (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
           sizes="(min-width: 1024px) 1024px, 100vw" alt="{{ .Title }}" class="w-full h-full object-cover"

@@ -52,14 +52,18 @@
 
       {{ $img1x := $image.Resize (printf "%dx" $w1x) }}
       {{ $img2x := $image.Resize (printf "%dx" $w2x) }}
+      {{/* WebP disabled due to Hugo WASM memory issues with large image count
       {{ $img1xWebp := $img1x.Process "webp" }}
       {{ $img2xWebp := $img2x.Process "webp" }}
+      */}}
 
       <picture class="{{ .vis }} w-full h-full">
+        {{/* WebP source disabled
         <source
           type="image/webp"
           srcset="{{ $img1xWebp.RelPermalink }} 1x,
                   {{ $img2xWebp.RelPermalink }} 2x" />
+        */}}
         <img
           src="{{ $img1x.RelPermalink }}"
           srcset="{{ $img1x.RelPermalink }} 1x,
