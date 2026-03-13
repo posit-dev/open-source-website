@@ -8,11 +8,11 @@
 {{ $limit := .limit | default 0 }}
 {{ $filterJSON := index . "filter" | default "" }}
 
-{{/* 1. Collect pages matching the glob pattern (include both page and term kinds) */}}
+{{/* 1. Collect pages matching the path regex (include both page and term kinds) */}}
 {{ $candidates := where site.Pages "Kind" "in" (slice "page" "term") }}
 {{ $pages := $candidates }}
 {{ if ne $pattern "*" }}
-  {{ $pages = where $candidates "Path" "like" (printf "/%s" $pattern) }}
+  {{ $pages = where $candidates "Path" "like" $pattern }}
 {{ end }}
 
 {{/* 2. Sort by front matter field (auto-prefix with Params.) */}}

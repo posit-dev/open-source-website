@@ -9,7 +9,7 @@ At Posit, we believe R is one of the most powerful languages for statistical com
 
 \[Browse all R packages \-\>\] \[Explore learning resources \-\>\]
 
-{{< query-items path="software/*" filter=`{"and": [{"!=": [{"var": "title"}, "tidyverse"]}, {"contains_any": [{"var": "tags"}, ["tidyverse"]]}]}` sort-by="external.stars" limit="20" cols="1" format="tile" >}}
+{{< query-items path="/software/.*" filter=`{"and": [{"!=": [{"var": "title"}, "tidyverse"]}, {"contains_any": [{"var": "tags"}, ["tidyverse"]]}]}` sort-by="external.stars" limit="20" cols="1" format="tile" >}}
 
 ## **Choose your own adventuRe**
 
@@ -62,7 +62,7 @@ Streamline your R development experience with modern tools for package managemen
 
 Stay up to date with the latest R developments, package releases, and best practices from the Posit team.
 
-{{< query-items path="blog/*" filter=`{"contains_any": [{"var": "languages"}, ["R"]]}` sort-by="date" limit="3" cols="3" format="card" >}}
+{{< query-items path="/blog/.*" filter=`{"contains_any": [{"var": "languages"}, ["R"]]}` sort-by="date" limit="3" cols="3" format="card" >}}
 
 \[Read R blog posts \-\>\]
 

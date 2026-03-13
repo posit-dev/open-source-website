@@ -136,7 +136,7 @@ layout: single
 ## Row Format
 
 ### Row (software)
-{{< query-items path="software/*" sort-by="title" sort-direction="asc" limit=8 format="row" >}}
+{{< query-items path="/software/.*" sort-by="title" sort-direction="asc" limit=8 format="row" >}}
 
 ### Row (insert-items)
 {{< insert-items format="row" >}}
@@ -147,7 +147,7 @@ layout: single
 {{< /insert-items >}}
 
 ### Row (custom height h-20)
-{{< query-items path="software/*" sort-by="title" sort-direction="asc" limit=4 format="row" height="h-20" >}}
+{{< query-items path="/software/.*" sort-by="title" sort-direction="asc" limit=4 format="row" height="h-20" >}}
 
 ### Tile (custom height h-24)
 {{< insert-items format="tile" height="h-24" >}}
