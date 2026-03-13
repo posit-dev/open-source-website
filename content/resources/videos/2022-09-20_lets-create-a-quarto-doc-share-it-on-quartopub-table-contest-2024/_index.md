@@ -1,7 +1,7 @@
 ---
-image: thumbnail.jpg
 date: '2022-09-20'
 description: "Rich Iannone creates a gt table with Quarto, and publishes it on quarto.pub. \nYou'll see how to set up your .qmd file in the RStuido IDE, preview your table, publishing it to Quarto Pub, some admin settings, and how to share your table made in Quarto to the world."
+image: thumbnail.jpg
 people:
 - Rich Iannone
 resource_type: video
@@ -9,6 +9,51 @@ resources: []
 software:
 - gt
 - Quarto
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Let's Create a Quarto Doc & Share it on Quarto.Pub | Table Contest 2024
 
 external:  # updated automatically, do not edit

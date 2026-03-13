@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-03'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: 'How to: add Dark Mode on your Shiny R apps✨#datascience #datavisualization'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-02-09'
 description: '00:00 Introduction to Reactlog
 
@@ -84,6 +83,7 @@ description: '00:00 Introduction to Reactlog
   Content: Barret Schloerke (@schloerke)
 
   Design & editing: Jesse Mostipak (@kierisi)'
+image: thumbnail.jpg
 people:
 - Barret Schloerke
 resource_type: video
@@ -93,6 +93,53 @@ software:
 - reactlog
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- reactlog
+- reactivity
 title: Barret Schloerke || {reactlog} Rundown || RStudio
 
 external:  # updated automatically, do not edit

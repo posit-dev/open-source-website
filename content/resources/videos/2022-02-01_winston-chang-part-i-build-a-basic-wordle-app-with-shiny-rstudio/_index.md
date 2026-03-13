@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-02-01'
 description: '00:00 Introduction
 
@@ -59,6 +58,7 @@ description: '00:00 Introduction
 
 
   Wordle: https://www.powerlanguage.co.uk/wordle/'
+image: thumbnail.jpg
 people:
 - Winston Chang
 resource_type: video
@@ -67,6 +67,53 @@ software:
 - rstudio
 - Shiny
 - shinyapps
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- wordle
+- winston chang
 title: 'Winston Chang || Part I: Build a Basic Wordle App with Shiny || RStudio'
 
 external:  # updated automatically, do not edit

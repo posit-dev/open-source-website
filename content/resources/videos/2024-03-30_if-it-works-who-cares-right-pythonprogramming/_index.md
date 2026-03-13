@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-03-30'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'If it works, who cares right🥰 #pythonprogramming'
 
 external:  # updated automatically, do not edit

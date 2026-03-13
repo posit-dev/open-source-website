@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Breaking Barriers: Making Ecological Modelling Accessible with EcoCommons
 
@@ -14,10 +13,18 @@ description: 'Breaking Barriers: Making Ecological Modelling Accessible with Eco
 
 
   Answering complex questions like this requires robust and scalable technology. Enter EcoCommons, a cutting-edge platform built on an R package that’s scientifically rigorous and designed for scale. EcoCommons efficiently runs millions of models to help researchers, governments, and NGOs make data-driven decisions. Whether it''s predicting habitat loss, optimising conservation strategies, or advising policy, this platform turns R into a powerhouse for real-world impact—all while building a thriving community of practice. In this talk, we’ll explore the challenges of running R at scale, lessons learned, and how our community is shaping the future of modelling. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Making Ecological Modelling Accesible with EcoCommons (Jenna Wraith, QCIF) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

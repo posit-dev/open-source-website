@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-02'
 description: 'Posit Team Bundle: Posit Workbench, Posit Connect, Posit Package Manager (the complete self-hosted solution for data science teams using Python or R)
 
@@ -31,10 +30,12 @@ description: 'Posit Team Bundle: Posit Workbench, Posit Connect, Posit Package M
 
 
   Timeline: March 2024'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: What is Posit Team?
 
 external:  # updated automatically, do not edit

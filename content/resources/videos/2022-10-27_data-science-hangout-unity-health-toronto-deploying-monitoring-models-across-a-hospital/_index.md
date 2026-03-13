@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-27'
 description: 'We were joined by three leaders from Unity Health Toronto: Derek Beaton, Jamie Beverly, and Sebnem Sahin Kuzulugil (surprise special guest! we will be updating the hangout image!)
 
@@ -20,11 +19,13 @@ description: 'We were joined by three leaders from Unity Health Toronto: Derek B
 
 
   To join future data science hangouts, add to your calendar here: rstd.io/datasciencehangout (All are welcome! We''d love to see you!)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Data Science Hangout | Unity Health Toronto | Deploying & Monitoring Models Across a Hospital
 
 external:  # updated automatically, do not edit

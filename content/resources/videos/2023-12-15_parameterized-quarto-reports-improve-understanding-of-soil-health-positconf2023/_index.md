@@ -1,13 +1,60 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Jadey Ryan\r\n\r\nLearn how to use R and Quarto parameterized reporting in this four-step workflow to automate custom HTML and Word reports that are thoughtfully designed for audience interpretation and accessibility.\r\n\r\nSoil health data are notoriously challenging to tidy and effectively communicate to farmers. We used functional programming with the tidyverse to reproducibly streamline data cleaning and summarization. To improve project outreach, we developed a Quarto project to dynamically create interactive HTML reports and printable PDFs. Custom to every farmer, reports include project goals, measured parameter descriptions, summary statistics, maps, tables, and graphs. \r\n \r\nOur case study presents a workflow for data preparation and parameterized reporting, with best practices for effective data visualization, interpretation, and accessibility.\r\n\r\nTalk materials: https://jadeyryan.com/talks/2023-09-25_posit_parameterized-quarto/\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Elevating your reports.\r\nSession Code: TALK-1160"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - tidyverse
+tags:
+- databricks
+- data science
+- rstudio
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- quarto
+- posit
+- ml
 title: Parameterized Quarto Reports Improve Understanding of Soil Health - posit::conf(2023)
 
 external:  # updated automatically, do not edit

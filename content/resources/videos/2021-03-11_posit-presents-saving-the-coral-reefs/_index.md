@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-03-11'
 description: 'Data scientists are changing the world.
 
@@ -10,10 +9,57 @@ description: 'Data scientists are changing the world.
   About Pim:
 
   Pim Bongaerts is the McCosker Chair of Aquatic Biology, Assistant Curator at the California Academy of Sciences, where he applies genomics and field ecology to his research into coral reef biodiversity and evolution.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- shiny
+- rmarkdown
+- CRAN
+- interoperability
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- pim bongaerts
+- california academy of sciences
+- coral reefs
+- ocean conservation
 title: 'Posit Presents: Saving the Coral Reefs'
 
 external:  # updated automatically, do not edit

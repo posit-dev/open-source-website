@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'maidr: Empowering Accessible, Multimodal Data Visualizations
 
@@ -14,12 +13,20 @@ description: 'maidr: Empowering Accessible, Multimodal Data Visualizations
 
 
   📁 GitHub Repo - https://github.com/xability/py-maidr posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: 'maidr: Empowering Accessible, Multimodal Data Visualizations (JooYoung Seo) | posit::conf(2025)'
 
 external:  # updated automatically, do not edit

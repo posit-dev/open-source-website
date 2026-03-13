@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'The quality of data science insights is predicated on the practitioner’s understanding of the data. Data documentation is the key to unlocking this understanding; with minimal effort, this documentation can be natively embedded in R data frames via variable labels. Variable labels seamlessly provide valuable data context that reduces human error, fosters collaboration, and ultimately elevates the overall data analysis experience. As an avid, daily user of variable labels, I am excited to help you discover new workflows to create and leverage variable labels in R!
 
@@ -11,10 +10,12 @@ description: 'The quality of data science insights is predicated on the practiti
   Slides: https://shannonpileggi.github.io/context-is-king/
 
   GitHub Repo: https://github.com/shannonpileggi/context-is-king'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Shannon Pileggi - Context is King
 
 external:  # updated automatically, do not edit

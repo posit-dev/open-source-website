@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'There''s a new Plumber in town
 
@@ -11,6 +10,7 @@ description: 'There''s a new Plumber in town
 
 
   Announcing plumber2! The popular plumber package has gotten a successor. In this talk I''ll walk the audience through the "How" and the "Why", what it means for existing plumber APIs, and of course showcase a range of amazing things that are suddenly possible with the new iteration. If you are an existing plumber user I hope to leave you full of excitement about the future of plumber. If you have never used plumber before I hope this talk will show you just how easy it is to create modern and powerful web servers in R. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Thomas Lin Pedersen
 resource_type: video
@@ -18,6 +18,13 @@ resources: []
 software:
 - plumber
 - plumber2
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: There's a new Plumber in town (Thomas Lin Pedersen, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

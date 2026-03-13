@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-11-25'
 description: 'From hours to minutes: Accelerating your tidymodels code - Simon Couch
 
@@ -19,12 +18,14 @@ description: 'From hours to minutes: Accelerating your tidymodels code - Simon C
 
 
   Presented at the 2024 R/Pharma Conference'
+image: thumbnail.jpg
 people:
 - Simon Couch
 resource_type: video
 resources: []
 software:
 - tidymodels
+tags: []
 title: 'Simon Couch - From hours to minutes: Accelerating your tidymodels code'
 
 external:  # updated automatically, do not edit

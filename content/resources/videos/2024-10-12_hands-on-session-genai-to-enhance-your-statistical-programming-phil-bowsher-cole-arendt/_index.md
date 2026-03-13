@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-12'
 description: 'GenAI in Pharma 2024 kicks off with Posit''s Phil Bowsher and Cole Arendt leading an interactive session on utilizing generative AI tools to enhance statistical programming.
 
@@ -17,11 +16,13 @@ description: 'GenAI in Pharma 2024 kicks off with Posit''s Phil Bowsher and Cole
   * Introducing Shiny Templates: https://www.youtube.com/watch?v=zQJiMRStYE8&ab_channel=PositPBC
 
   * Introducing Shiny Express: https://shiny.posit.co/blog/posts/shiny-express/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: 'Hands-on Session: GenAI to Enhance Your Statistical Programming - Phil Bowsher & Cole Arendt'
 
 external:  # updated automatically, do not edit

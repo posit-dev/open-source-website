@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-02-08'
 description: 'Creating Polished, Branded Documents with Quarto - Isabella Velasquez
 
@@ -14,12 +13,14 @@ description: 'Creating Polished, Branded Documents with Quarto - Isabella Velasq
   * Figures in Quarto: https://quarto.org/docs/authoring/figures.html
 
   * Parameterized plots and reports in Quarto: https://nrennie.rbind.io/blog/parameterized-plots-reports-r-quarto'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - revealjs
+tags: []
 title: Creating Polished, Branded Documents with Quarto
 
 external:  # updated automatically, do not edit

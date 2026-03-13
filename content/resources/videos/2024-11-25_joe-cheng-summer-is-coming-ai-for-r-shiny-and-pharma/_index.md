@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-11-25'
 description: 'Summer is Coming: AI for R, Shiny, and Pharma - Joe Cheng
 
@@ -22,6 +21,7 @@ description: 'Summer is Coming: AI for R, Shiny, and Pharma - Joe Cheng
 
 
   Presented at the 2024 R/Pharma Conference'
+image: thumbnail.jpg
 people:
 - Joe Cheng
 resource_type: video
@@ -31,6 +31,7 @@ software:
 - shinychat
 - tidyverse
 - tidyverse.org
+tags: []
 title: 'Joe Cheng - Summer is Coming: AI for R, Shiny, and Pharma'
 
 external:  # updated automatically, do not edit

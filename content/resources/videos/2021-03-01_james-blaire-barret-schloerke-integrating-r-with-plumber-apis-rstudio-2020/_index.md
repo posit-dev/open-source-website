@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-03-01'
 description: 'Full title: Expanding R Horizons: Integrating R with Plumber APIs
 
@@ -18,6 +17,7 @@ description: 'Full title: Expanding R Horizons: Integrating R with Plumber APIs
   About Barret:
 
   I specialize in Large Data Visualization where I utilize the interactivity of a web browser, the fast iterations of the R programming language, and large data storage capacity of Hadoop.'
+image: thumbnail.jpg
 people:
 - Barret Schloerke
 resource_type: video
@@ -27,6 +27,51 @@ software:
 - plumber
 - rstudio
 - webinars
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
 title: James Blaire & Barret Schloerke | Integrating R with Plumber APIs | RStudio (2020)
 
 external:  # updated automatically, do not edit

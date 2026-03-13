@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-07'
 description: 'We were recently joined by the Data Jam team at Biogen to chat about running an engaging data competition, connecting people across the organization of different skill sets, and generating enterprise-wide "buzz" about data and analytics. Their recent Data Jam had 260 participants across 22 teams!
 
@@ -34,10 +33,12 @@ description: 'We were recently joined by the Data Jam team at Biogen to chat abo
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Biogen Data Jam Team | Data Science Hangout
 
 external:  # updated automatically, do not edit

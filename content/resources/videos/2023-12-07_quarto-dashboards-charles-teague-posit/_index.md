@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-07'
 description: 'Quarto has a host of exciting new features in release v1.4, with one of the most anticipated being Quarto Dashboards. In a recent internal presentation, Posit''s Charles Teague demonstrated the new capabilities and we wanted to share it with community.
 
@@ -10,11 +9,57 @@ description: 'Quarto has a host of exciting new features in release v1.4, with o
   Quarto Pre-release builds: https://quarto.org/docs/download/prerelease.html
 
   Quarto Dashboard Documentation: https://quarto.org/docs/dashboards/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Quarto Dashboards | Charles Teague | Posit
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-12-22'
 description: 'The R Workflow
 
@@ -20,6 +19,7 @@ description: 'The R Workflow
 
 
   Resource links can be found on the NHS-R Community website: https://nhsrcommunity.com/events/december-2022-webinar-the-r-workflow-dr-ryan-johnson-from-posit/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -27,6 +27,7 @@ software:
 - plumber
 - rstudio
 - Shiny
+tags: []
 title: 'December 2022 Webinar: The R Workflow – Dr Ryan Johnson from Posit'
 
 external:  # updated automatically, do not edit

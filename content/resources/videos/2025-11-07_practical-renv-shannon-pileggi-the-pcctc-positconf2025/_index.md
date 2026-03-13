@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Talk title: Practical {renv}
 
@@ -16,11 +15,18 @@ description: 'Talk title: Practical {renv}
   📁 Materials - https://github.com/shannonpileggi/practical-renv
 
   📁 Example - https://github.com/shannonpileggi/jsonlite-example posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - renv
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Practical {renv} (Shannon Pileggi, The PCCTC) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-07-27'
 description: 'Shiny makes it easy to build interactive web applications with the power of Python’s data and scientific stack.
 
@@ -14,6 +13,7 @@ description: 'Shiny makes it easy to build interactive web applications with the
   Producer: Jesse Mostipak (@kierisi)
 
   Editing and Motion Design: Tony Pelleriti (@TonyPelleriti)'
+image: thumbnail.jpg
 people:
 - Michael Chow
 resource_type: video
@@ -23,6 +23,55 @@ software:
 - Shiny for Python
 - Shiny
 - shinylive
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- rstats
+- open source
+- OSS
+- reticulate
+- pyshiny
+- shiny for python
+- jupyter
+- michael chow
+- tony pelleriti
+- posit
 title: Wrangling data for a Shiny app in Python || Michael Chow || Posit
 
 external:  # updated automatically, do not edit

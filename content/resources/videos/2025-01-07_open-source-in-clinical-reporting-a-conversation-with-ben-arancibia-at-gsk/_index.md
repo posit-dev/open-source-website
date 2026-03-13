@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-01-07'
 description: 'Posit''s Director of Life Sciences, Phil Bowsher, sat down with GSK''s Director of Data Science, Ben Arancibia, to discuss various topics within the open-source clinical reporting space.
 
@@ -8,10 +7,58 @@ description: 'Posit''s Director of Life Sciences, Phil Bowsher, sat down with GS
 
 
   Watch GSK''s latest web event with Posit: https://www.youtube.com/watch?v=xDrt6txplek'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- GSK
+- pharma SAS
+- pharma
+- clinical reporting
+- statistial programming
 title: Open Source in Clinical Reporting | A Conversation with Ben Arancibia at GSK
 
 external:  # updated automatically, do not edit

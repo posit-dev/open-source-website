@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Machine learning models, applied in the real world, can have unanticipated, harmful side effects. Recommended counter-measures include structured documentation of models ("Model Cards for Model Reporting") and training data used ("Data Sheets for Datasets").
 
@@ -11,11 +10,13 @@ description: 'Machine learning models, applied in the real world, can have unant
 
 
   Session: Machine learning'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'Sigrid Keydana | Dissecting the quick fix: Analysing tech-solutionist solutions | RStudio (2022)'
 
 external:  # updated automatically, do not edit

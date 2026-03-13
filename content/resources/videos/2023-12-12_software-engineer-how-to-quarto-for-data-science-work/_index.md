@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-12'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: 'Software Engineer How-to: Quarto for Data Science Work'
 
 external:  # updated automatically, do not edit

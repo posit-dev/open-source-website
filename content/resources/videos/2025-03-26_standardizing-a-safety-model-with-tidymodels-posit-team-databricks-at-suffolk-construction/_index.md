@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-03-26'
 description: 'If you’ve ever struggled with standardizing machine learning workflows, ensuring secure data access, or scaling insights across your organization, this month’s Posit Team Workflow demo is for you.
 
@@ -38,6 +37,7 @@ description: 'If you’ve ever struggled with standardizing machine learning wor
 
 
   ^ These demos happen the last Wednesday of every month.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -47,6 +47,7 @@ software:
 - Shiny
 - tidymodels
 - vetiver-r
+tags: []
 title: Standardizing a safety model with tidymodels, Posit Team & Databricks at Suffolk Construction
 
 external:  # updated automatically, do not edit

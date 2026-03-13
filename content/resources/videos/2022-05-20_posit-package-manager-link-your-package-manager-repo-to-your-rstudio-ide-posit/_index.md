@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-05-20'
 description: 'In this video Jeremey Allen walks through connecting Posit Package Manager to Workbench for fast and secure access to the organization’s R and Python libraries.
 
@@ -11,11 +10,57 @@ description: 'In this video Jeremey Allen walks through connecting Posit Package
 
 
   Got questions? Check out the Posit Package Manager Frequently Asked Questions page: https://docs.rstudio.com/rspm/admin/getting-started/faq/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Posit Package Manager || Link Your Package Manager Repo to Your RStudio IDE || Posit
 
 external:  # updated automatically, do not edit

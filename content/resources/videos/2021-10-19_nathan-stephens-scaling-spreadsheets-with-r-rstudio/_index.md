@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-10-19'
 description: 'Scaling Spreadsheets with R
 
@@ -52,11 +51,13 @@ description: 'Scaling Spreadsheets with R
 
 
   If you''d like to join future meetups, join this group here: https://www.meetup.com/RStudio-Enterprise-Community-Meetup/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Nathan Stephens | Scaling Spreadsheets with R | RStudio
 
 external:  # updated automatically, do not edit

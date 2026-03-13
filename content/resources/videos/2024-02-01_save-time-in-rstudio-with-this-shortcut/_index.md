@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-01'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Save time in RStudio with this shortcut⏰
 
 external:  # updated automatically, do not edit

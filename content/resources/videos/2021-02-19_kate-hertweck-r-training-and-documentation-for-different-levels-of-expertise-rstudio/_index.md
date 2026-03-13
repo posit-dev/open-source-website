@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Full title: Making the jump from learning to applying: R training and documentation for different levels of expertise
 
@@ -16,11 +15,58 @@ description: 'Full title: Making the jump from learning to applying: R training 
   About Kate:
 
   Kate Hertweck is the bioinformatics training manager at Fred Hutchinson Cancer Research Center, where they develop and teach courses on reproducible computational methods as a part of fredhutch.io. Kate''s graduate training at University of Missouri in genomic evolution of plants was followed by a postdoctoral fellowship at the National Evolutionary Synthesis Center (NESCent) at Duke University, where they fell in love with R and began working exclusively in computational biology. Kate then spent four years as an assistant professor teaching bioinformatics, genomics, and plant taxonomy before transitioning to biomedical research training. Kate has been involved in The Carpentries, a non-profit organization that teaches reproducible computational methods, since 2014, serving as a leader in community governance since 2016. When not being an overenthusiastic instructor, Kate likes to spend their time doing fiber arts (knitting, crochet) and enjoying all things science fiction.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Kate Hertweck
 title: Kate Hertweck | R training and documentation for different levels of expertise | RStudio
 
 external:  # updated automatically, do not edit

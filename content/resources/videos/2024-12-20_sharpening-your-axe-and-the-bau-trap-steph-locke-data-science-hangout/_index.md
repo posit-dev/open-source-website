@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-12-20'
 description: 'To join future data science hangouts, add it to your calendar here: https://pos.it/dsh - All are welcome! We''d love to see you!
 
@@ -41,12 +40,14 @@ description: 'To join future data science hangouts, add it to your calendar here
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Sharpening your axe and the BAU trap | Steph Locke | Data Science Hangout
 
 external:  # updated automatically, do not edit

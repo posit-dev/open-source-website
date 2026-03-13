@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'For production-grade Shiny applications, regression testing ensures that the application maintains its core functionality as new features are added to the app. With the help of various R and Python tools that programmatically interact with the UI and examine UI outputs, regression test logic can be represented programmatically and can run as often as needed. This gives the development team an opportunity to catch and fix bugs before they are pushed to production.
 
@@ -8,6 +7,7 @@ description: 'For production-grade Shiny applications, regression testing ensure
 
 
   Session: I like big apps: Shiny apps that scale'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -15,6 +15,7 @@ software:
 - rstudio
 - Shiny
 - shinytest2
+tags: []
 title: Sydeaka Watson | A Robust Framework for Automated Shiny App Testing | RStudio (2022)
 
 external:  # updated automatically, do not edit

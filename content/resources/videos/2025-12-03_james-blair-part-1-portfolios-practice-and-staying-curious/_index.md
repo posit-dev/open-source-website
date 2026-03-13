@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In Part 1 of our conversation with James Blair, we trace his delightfully non-linear path from childhood robotics dreams to journalism to R, with a few stops in between. We hear about the Shiny app that changed his career, plus a candid roundtable with Michael, Hadley, and Wes about whether a data-science master’s still pays off in the age of AI.
 
@@ -16,11 +15,13 @@ description: 'In Part 1 of our conversation with James Blair, we trace his delig
   • The value (and limits) of a data-science master’s in a shifting AI landscape
 
   • Fighting confirmation bias: good analysis resists the answer you want'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: 'James Blair: Part 1 — Portfolios, practice, and staying curious'
 
 external:  # updated automatically, do not edit

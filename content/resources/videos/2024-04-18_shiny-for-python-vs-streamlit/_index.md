@@ -1,13 +1,14 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-18'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny for Python
 - Shiny
+tags: []
 title: Shiny for Python vs Streamlit
 
 external:  # updated automatically, do not edit

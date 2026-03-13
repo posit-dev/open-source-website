@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-01-26'
 description: 'Building a Blog With R
 
@@ -56,12 +55,14 @@ description: 'Building a Blog With R
   Speaker Bio:
 
   Isabella Velásquez: Isabella is a content strategist, author, and active member of the R community. Currently, she works at RStudio as a Sr. Product Marketing Manager with the goal of driving engagement around all the awesome things happening at RStudio. In her previous role, she conducted data analysis and research, developed infrastructure to support use of data, and created resources to engage technical and non-technical audiences. She channels these experiences to illuminate what is possible with great products.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - blogdown
 - rstudio
+tags: []
 title: Isabella Velásquez | Building a Blog with R | RStudio
 
 external:  # updated automatically, do not edit

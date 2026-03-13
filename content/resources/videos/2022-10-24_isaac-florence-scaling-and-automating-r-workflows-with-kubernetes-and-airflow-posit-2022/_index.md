@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'During the pandemic, epidemiologists have been forced to adapt to the unprecedented scale of the data and high cadence of reporting.
 
@@ -8,10 +7,12 @@ description: 'During the pandemic, epidemiologists have been forced to adapt to 
 
 
   Session: R be nimble, R be quick, R help me plan my vaccine stick: Rapidly responding to world events with R.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Isaac Florence | Scaling and automating R workflows with Kubernetes and Airflow | Posit (2022)
 
 external:  # updated automatically, do not edit

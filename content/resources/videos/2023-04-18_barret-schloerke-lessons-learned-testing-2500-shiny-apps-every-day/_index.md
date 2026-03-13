@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-04-18'
 description: 'About the Talk:
 
@@ -9,6 +8,7 @@ description: 'About the Talk:
   Speaker''s bio:
 
   Dr. Barret Schloerke is a Software Engineer at Posit. He currently develops and maintains many R packages in the Shiny ecosystem at RStudio including shiny, reactlog, plumber, learnr, leaflet, and shinyloadtest. Dr. Schloerke received his PhD in Statistics from Purdue University under the direction of Dr. Ryan Hafen and Dr. William Cleveland, specializing in Large Data Visualization.'
+image: thumbnail.jpg
 people:
 - Barret Schloerke
 - Shiny Team
@@ -22,6 +22,7 @@ software:
 - rstudio
 - Shiny
 - shinyloadtest
+tags: []
 title: 'Barret Schloerke: Lessons Learned Testing 2500+ Shiny Apps Every Day'
 
 external:  # updated automatically, do not edit

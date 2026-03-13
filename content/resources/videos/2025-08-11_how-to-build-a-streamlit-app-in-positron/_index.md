@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-08-11'
 description: 'Want to make building and deploying your Streamlit applications a breeze? In this video, we show you how to leverage the full power of the Positron platform to create, develop, and launch your data apps. Discover Positron features that make development easier than ever.
 
@@ -48,11 +47,13 @@ description: 'Want to make building and deploying your Streamlit applications a 
 
 
   Keywords: Positron, Streamlit, Streamlit deployment, Positron platform, web application, data app, data science, Python, IDE, integrated development environment, Streamlit for beginners, build a web app, interactive apps, Python programming, data analysis, how to use Positron, Streamlit on Positron.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags: []
 title: How to Build a Streamlit App in Positron
 
 external:  # updated automatically, do not edit

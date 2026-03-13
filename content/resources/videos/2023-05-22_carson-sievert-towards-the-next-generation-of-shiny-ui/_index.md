@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-22'
 description: 'About the talk:
 
@@ -11,6 +10,7 @@ description: 'About the talk:
   Speakers'' bio:
 
   Carson is a software engineer on the Shiny team at Posit. He joined Posit in 2018, and in recent years, has focused primarily on Shiny for Python and improving Shiny UI. The Shiny UI work has manifested in the creation and development of many R packages such as bslib, thematic, htmltools, htmlwidgets, sass, shiny, rmarkdown, flexdashboard, and more. Carson also has a PhD in statistics, is a recipient of the ASA''s Chambers Statistical Software Award, has maintained the R package plotly since 2015, authored the book "Interactive data visualization with R, plotly, and shiny", and ran a successful freelance consulting service for numerous years.'
+image: thumbnail.jpg
 people:
 - Carson Sievert
 - Shiny Team
@@ -26,6 +26,7 @@ software:
 - Shiny for Python
 - Shiny
 - thematic
+tags: []
 title: 'Carson Sievert: Towards the next generation of Shiny UI'
 
 external:  # updated automatically, do not edit

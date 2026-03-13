@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'The Power of Snowflake and Posit Workbench: Macroeconomic Data Exploration in the Cloud
 
@@ -14,12 +13,20 @@ description: 'The Power of Snowflake and Posit Workbench: Macroeconomic Data Exp
 
 
   Starting with data sourced from the Snowflake marketplace, we will import, transform, visualize, and, finally, model data using the Orbital framework to push tidymodels down to the cloud. This is full-stack, R-driven macroeconomic research in the cloud. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - tidymodels
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: The Power of Snowflake and Posit Workbench (Jonathan Regenstein, Snowflake) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

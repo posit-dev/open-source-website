@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-09-16'
 description: 'In this episode, Phil and Cole discuss using Copilot in clinical trial submissions.
 
@@ -9,10 +8,56 @@ description: 'In this episode, Phil and Cole discuss using Copilot in clinical t
 
 
   More about open source in Pharma: https://posit.co/solutions/pharma/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'GenAI and Pharma: Learning as we go | Episode 1: Copilot'
 
 external:  # updated automatically, do not edit

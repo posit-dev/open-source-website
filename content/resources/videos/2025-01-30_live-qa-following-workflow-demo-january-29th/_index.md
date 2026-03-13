@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-01-30'
 description: 'This is the Live Q&A session for our Workflow Demo on January 29th on Model cards with vetiver for transparent, responsible reporting with Julia Silge.
 
@@ -18,11 +17,13 @@ description: 'This is the Live Q&A session for our Workflow Demo on January 29th
 
 
   GitHub Repo: https://github.com/juliasilge/model-card-workflow-demo'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Live Q&A following Workflow Demo - January 29th!
 
 external:  # updated automatically, do not edit

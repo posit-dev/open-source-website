@@ -1,12 +1,59 @@
 ---
-image: thumbnail.jpg
 date: '2020-11-06'
 description: 'More people are learning data science every day, and there are more ways for them to learn than ever before. To understand where we are and where we might be going, this talk looks at what data science education could look like two years from now: far enough away that we can dream, but close enough that we can only dream a little. We explore the balance between automated and collaborative learning, different ways to deliver different kinds of lessons to different kinds of people, and ways in which our tools and practices could improve.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio::conf(2020)
+- Carl Howe
+- Greg Wilson
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Carl Howe & Greg Wilson | Data Science Education in 2022 | RStudio (2020)
 
 external:  # updated automatically, do not edit

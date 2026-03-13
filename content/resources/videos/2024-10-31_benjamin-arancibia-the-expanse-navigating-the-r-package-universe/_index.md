@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: Talk by Benjamin Arancibia
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Benjamin Arancibia - The Expanse - Navigating the R Package Universe
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-10-14'
 description: 'Introduction to GitHub Actions
 
@@ -13,11 +12,13 @@ description: 'Introduction to GitHub Actions
 
 
   For future meetups, check out this group: https://www.meetup.com/RStudio-Enterprise-Community-Meetup'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Michelle Brandão | R in Sports Analytics - Intro to GitHub Actions | RStudio
 
 external:  # updated automatically, do not edit

@@ -1,11 +1,56 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-13'
 description: "Posit Connect makes deployment the easiest step in your workflow. \n\nConnect saves data scientists time, accelerates productivity, and maximizes the impact data science teams have within their organization.\n\nWith Posit Connect, you can automate common recurring data science tasks, like:\n\n- Sending a daily or weekly report to your boss\n\n- Updating a machine learning model\n\n- Extracting new data from an API\n\n- Loading new data\n\n- Updating reports that your stakeholders rely on"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 5 Reasons R & Python developers LOVE Posit Connect
 
 external:  # updated automatically, do not edit

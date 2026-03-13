@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This talk is an introduction to GitHub Actions (GHA), which is a feature from GitHub that allows us to automate several tasks in R. In this presentation, I aim to answer these questions: "What is GitHub Actions? How can I run R Scripts with it?". I will list supplementary materials that are helpful to learn how to start automating tasks in R projects and packages.
 
@@ -8,12 +7,14 @@ description: 'This talk is an introduction to GitHub Actions (GHA), which is a f
 
 
   Session: Lightning Talks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - rstudio-conf
+tags: []
 title: Beatriz Milz | Making Awesome Automations with GitHub Actions | Posit (2022)
 
 external:  # updated automatically, do not edit

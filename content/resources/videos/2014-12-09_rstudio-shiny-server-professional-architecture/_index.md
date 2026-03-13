@@ -1,13 +1,20 @@
 ---
-image: thumbnail.jpg
 date: '2014-12-09'
 description: Jeff Allen covers the differences between Open Source Shiny Server and the Shiny Server Professional product from RStudio.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags:
+- Shiny
+- RStudio
+- r programming
+- Visualization (Website Category)
+- r packages
+- Architecture (Industry)
 title: RStudio Shiny Server Professional Architecture
 
 external:  # updated automatically, do not edit

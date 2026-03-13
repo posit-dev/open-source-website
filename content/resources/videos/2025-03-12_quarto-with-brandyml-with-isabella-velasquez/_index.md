@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-03-12'
 description: 'Slides: https://ivelasq-branded-quarto.share.connect.posit.cloud/
 
@@ -11,11 +10,13 @@ description: 'Slides: https://ivelasq-branded-quarto.share.connect.posit.cloud/
 
 
   Join us to discover how brand.yml can elevate your Quarto documents to a new level of professionalism to ensure that your work is more impactful and on-brand.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: Quarto with brand.yml with Isabella Velásquez
 
 external:  # updated automatically, do not edit

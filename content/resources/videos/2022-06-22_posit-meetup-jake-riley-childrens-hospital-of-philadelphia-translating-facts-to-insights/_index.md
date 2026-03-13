@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-06-22'
 description: 'RStudio Healthcare Meetup:
 
@@ -89,6 +88,7 @@ description: 'RStudio Healthcare Meetup:
   Future events: rstd.io/community-events-calendar
 
   If anyone''s interested in speaking at a future meetup, we’d love to hear from you too! rstd.io/meetup-speaker-form'
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 - Jenny Bryan
@@ -99,6 +99,7 @@ software:
 - tidyverse
 - tidyverse.org
 - waldo
+tags: []
 title: Posit Meetup | Jake Riley, Children's Hospital of Philadelphia | Translating Facts to Insights
 
 external:  # updated automatically, do not edit

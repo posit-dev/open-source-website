@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-20'
 description: 'R Weekly is a weekly newsletter with many great R blogs post, tutorials, and other formats of resources.
 
@@ -29,11 +28,58 @@ description: 'R Weekly is a weekly newsletter with many great R blogs post, tuto
   About Wolfram:
 
   Wolfram King is the founder of the R Weekly project. He is an active member of the R community and has several popular R open-source projects on GitHub.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Wolfram King
 title: Wolfram King | Lifelong Learning with R Weekly | RStudio
 
 external:  # updated automatically, do not edit

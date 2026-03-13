@@ -166,7 +166,7 @@ def compute_top_level_keys(
     override: dict[str, Any],
 ) -> dict[str, Any]:
     result = {}
-    keys_to_process = ["title", "people", "software", "description"]
+    keys_to_process = ["title", "people", "software", "description", "tags"]
 
     for key in keys_to_process:
         value = external.get(key)
@@ -367,6 +367,7 @@ def process_video(
         frontmatter["description"] = top_level.get("description", video["description"])
         frontmatter["people"] = top_level.get("people", [])
         frontmatter["software"] = top_level.get("software", [])
+        frontmatter["tags"] = top_level.get("tags", [])
         if "resources" not in frontmatter:
             frontmatter["resources"] = []
 

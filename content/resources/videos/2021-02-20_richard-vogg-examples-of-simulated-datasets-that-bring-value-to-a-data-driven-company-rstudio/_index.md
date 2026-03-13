@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Full title: How I became a Data Composer – examples of simulated datasets that bring value to a data-driven company
 
@@ -10,11 +9,59 @@ description: 'Full title: How I became a Data Composer – examples of simulated
   About Richard:
 
   Richard Vogg studied mathematics at TU Kaiserslautern, Germany, where he focused on statistics and obtained a Master’s degree. He worked as a Senior Business Analyst at Evalueserve in Chile for the last years, analyzing data for a major US bank. At the end of 2020, he moved back to Germany. Richard is a fan of applied statistics and storytelling with data. Outside of R, he enjoys playing the ukulele, trumpet, and didgeridoo.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Richard Vogg
+- simulated data
 title: Richard Vogg | Examples of simulated datasets that bring value to a data-driven company | RStudio
 
 external:  # updated automatically, do not edit

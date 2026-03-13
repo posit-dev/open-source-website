@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-11'
 description: 'SHINYLIVE IS SO EASY by Max Kuhn
 
@@ -19,6 +18,7 @@ description: 'SHINYLIVE IS SO EASY by Max Kuhn
   Presented at the 2024 New York R Conference (May 17, 2024)
 
   Hosted by Lander Analytics (https://landeranalytics.com)'
+image: thumbnail.jpg
 people:
 - Max Kuhn
 resource_type: video
@@ -28,6 +28,7 @@ software:
 - rstudio
 - Shiny
 - shinylive
+tags: []
 title: Max Kuhn -SHINYLIVE IS SO EASY
 
 external:  # updated automatically, do not edit

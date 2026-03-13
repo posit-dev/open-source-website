@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'How I got unstuck with Python
 
@@ -14,12 +13,20 @@ description: 'How I got unstuck with Python
 
 
   📁 Materials - https://github.com/juliasilge/get-unstuck-with-python posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software:
 - positron
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: How I got unstuck with Python (Julia Silge, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

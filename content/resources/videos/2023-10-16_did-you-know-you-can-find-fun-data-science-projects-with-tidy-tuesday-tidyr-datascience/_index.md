@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-16'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - tidyr
+tags: []
 title: 'Did you know you can find fun data science projects with Tidy Tuesday? #tidyr #datascience'
 
 external:  # updated automatically, do not edit

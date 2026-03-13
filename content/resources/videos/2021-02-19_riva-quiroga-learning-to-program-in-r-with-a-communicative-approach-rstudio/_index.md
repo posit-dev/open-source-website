@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Full title: How to do things with words: learning to program in R with a "communicative approach"
 
@@ -10,11 +9,58 @@ description: 'Full title: How to do things with words: learning to program in R 
   About Riva:
 
   I like to organize R related things, like meetups (RLadies Santiago & RLadies Valparaíso), conferences (LatinR, satRday Santiago), book translations (R4DS in Spanish), and data projects (#DatosDeMiercoles). I am an editor at The Programming Historian, and I am currently pursuing a PhD in Linguistics.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Riva Quiroga
 title: Riva Quiroga | Learning to program in R with a "communicative approach" | RStudio
 
 external:  # updated automatically, do not edit

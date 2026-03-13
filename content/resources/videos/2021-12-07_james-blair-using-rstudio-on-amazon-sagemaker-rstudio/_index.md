@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-12-07'
 description: 'Using RStudio on Amazon SageMaker
 
@@ -30,11 +29,13 @@ description: 'Using RStudio on Amazon SageMaker
   Here are James'' slides as well: https://github.com/blairj09-talks/rstudio-sagemaker-webinar
 
   Answers to the Q&A are shared in this blog post: https://www.rstudio.com/blog/using-rstudio-on-amazon-sagemaker-faq/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: James Blair | Using RStudio on Amazon SageMaker | RStudio
 
 external:  # updated automatically, do not edit

@@ -1,10 +1,10 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'The Shiny team has made big steps to help apps'' UI and UX scale more thoughtfully and elegantly. We''ve built a cohesive theme that refreshes all of our colors and components. Our layouts will better serve your apps as they grow. And we''ve created Shiny Templates, which are opinionated boilerplate code to help users create small, simple apps or large, complicated, multi-page dashboards that just look right.
 
 
   Talk by Greg Swinehart'
+image: thumbnail.jpg
 people:
 - Greg Swinehart
 - Shiny Team
@@ -12,6 +12,7 @@ resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: 'Greg Swinehart - We CAN have nice Shiny apps: What''s new in Shiny''s UI & UX'
 
 external:  # updated automatically, do not edit

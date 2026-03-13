@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-11-12'
 description: 'Welcome back to the Data Science Hangout! This week, we''re joined by Marco Gorelli, a senior software engineer at Quansight Labs and a core developer of Pandas, Polars, and the author of Narwhals. Marco shares his insights on the evolving landscape of data frame libraries in Python, focusing on Polars, its advantages over Pandas, and the role of Narwhals in creating data frame agnostic tools.
 
@@ -72,11 +71,13 @@ description: 'Welcome back to the Data Science Hangout! This week, we''re joined
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Great Tables
+tags: []
 title: Polars, pandas, and Narwhals, oh my! | Marco Gorelli | Data Science Hangout
 
 external:  # updated automatically, do not edit

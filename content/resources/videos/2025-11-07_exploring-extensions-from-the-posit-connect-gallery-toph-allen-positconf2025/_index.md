@@ -1,14 +1,21 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Toph Allen, a software engineer at Posit, introduces the Posit Connect gallery, a platform for deploying applications, dashboards, and APIs.
 
 
   Posit Connect: https://posit.co/products/enterprise/connect/ posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Exploring Extensions from the Posit Connect Gallery (Toph Allen) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

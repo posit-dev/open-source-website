@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Even when we run the simplest of R scripts, we are using dozens of R packages. We use packages for data cleaning, writing reports, graphics and modelling. One of the strengths of R, is the depth of packages.
 
@@ -17,12 +16,14 @@ description: 'Even when we run the simplest of R scripts, we are using dozens of
 
 
   Session: Lightning Talks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - rstudio-conf
+tags: []
 title: Colin Gillespie | Comparing Package Versions with Diffify | Posit (2022)
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-10-07'
 description: 'You probably know that RStudio makes a free, open-source development environment for data scientists. It’s made with love and used by millions of people around the world.
 
@@ -64,12 +63,58 @@ description: 'You probably know that RStudio makes a free, open-source developme
 
 
   If you''d like to access presentation slides, sign up for future events, provide feedback and/or ask additional questions we''ve bundled everything together for you here: https://docs.google.com/document/d/1HGt7LSohhyxpCvETvVEFHugrdaSnTcZaXbI0jV5g9ok/edit?usp=sharing'
+image: thumbnail.jpg
 people:
 - RStudio Team
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: RStudio Team Demo | Build & Share Data Products Like The World’s Leading Companies
 
 external:  # updated automatically, do not edit

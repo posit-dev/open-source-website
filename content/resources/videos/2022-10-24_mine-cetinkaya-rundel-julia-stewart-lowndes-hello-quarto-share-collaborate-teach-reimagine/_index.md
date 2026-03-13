@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'What is Quarto? In this talk, in four acts, we will discuss how Quarto unifies and extends the R Markdown ecosystem. Through our work with NASA Openscapes, Duke University, and RStudio, we will share our experiences sharing, teaching, collaborating, and reimagining with Quarto. Full of demos with Quarto in RStudio and Jupyter and weaving together narrative and code, this talk will help you get the most out of Quarto regardless of your background with R Markdown, the computing language(s) you may use, and your tool of choice for authoring.
 
@@ -8,6 +7,7 @@ description: 'What is Quarto? In this talk, in four acts, we will discuss how Qu
 
 
   Session: Keynote'
+image: thumbnail.jpg
 people:
 - Mine Çetinkaya-Rundel
 resource_type: video
@@ -15,6 +15,51 @@ resources: []
 software:
 - Quarto
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'Mine Çetinkaya-Rundel & Julia Stewart Lowndes | Hello Quarto: Share, Collaborate, Teach, Reimagine'
 
 external:  # updated automatically, do not edit

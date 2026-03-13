@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-01-11'
 description: 'To hear more about how Roche and other major pharmaceutical companies are transitioning to open source data science you can watch talks from this year’s R in Pharma conference: https://www.youtube.com/@RinPharma/playlists
 
@@ -15,10 +14,12 @@ description: 'To hear more about how Roche and other major pharmaceutical compan
 
 
   At Posit, we have a dedicated Pharma team to help organizations migrate and utilize open source for drug development. To learn more about our support for life sciences, please see our dedicated Pharma page where you can book a call with our team. (https://posit.co/solutions/pharma)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Shifting to an Open-Source Backbone in Clinical Trials with Roche
 
 external:  # updated automatically, do not edit

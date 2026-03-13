@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-07-29'
 description: 'Quarto is an open-source scientific and technical publishing system that builds on standard markdown with features essential for scientific communication. The system has support for reproducible embedded computations, equations, citations, crossrefs, figure panels, callouts, advanced layout, and more. In this talk we''ll explore the use of Quarto with Julia, describing both integration with IJulia and the Julia VS Code extension, as well as areas for future improvement and exploration.
 
@@ -62,11 +61,13 @@ description: 'Quarto is an open-source scientific and technical publishing syste
 
 
   Interested in improving the auto generated captions? Get involved here: https://github.com/JuliaCommunity/YouTubeVideoSubtitles'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: Reproducible Publications with Julia and Quarto | J.J. Allaire | JuliaCon 2022
 
 external:  # updated automatically, do not edit

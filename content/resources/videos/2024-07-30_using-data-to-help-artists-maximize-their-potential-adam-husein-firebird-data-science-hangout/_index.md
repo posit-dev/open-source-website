@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-07-30'
 description: 'We were recently joined by Adam Husein, SVP, Data and Analytics at Firebird Music to chat about using data and analytics to help artists maximize their potential by empowering artists and managers to create more fans, deepen relationships, and measure impact to create material growth and engagement.
 
@@ -34,11 +33,13 @@ description: 'We were recently joined by Adam Husein, SVP, Data and Analytics at
   LinkedIn: https://www.linkedin.com/company/posit-software
 
   Twitter: https://twitter.com/posit_pbc'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: Using data to help artists maximize their potential | Adam Husein @ Firebird | Data Science Hangout
 
 external:  # updated automatically, do not edit

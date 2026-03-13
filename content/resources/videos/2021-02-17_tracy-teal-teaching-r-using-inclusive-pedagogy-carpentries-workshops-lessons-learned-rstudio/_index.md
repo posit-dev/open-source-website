@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-17'
 description: 'Talk from rstudio::conf(2019)
 
@@ -10,12 +9,59 @@ description: 'Talk from rstudio::conf(2019)
   About Tracy Teal:
 
   Executive Director of The Carpentries (https://carpentries.org) and co-founder of Data Carpentry (http://www.datacarpentry.org), a non-profit organization that develops and runs workshops training researchers in effective data analysis and visualization to enable data-driven discovery. Manages projects, operations and finances. Leads lesson development and volunteer coordination and is responsible for strategic and business planning.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - tidyverse
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Tracy Teal
 title: 'Tracy Teal | Teaching R using inclusive pedagogy: Carpentries workshops lessons learned | RStudio'
 
 external:  # updated automatically, do not edit

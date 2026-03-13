@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Creating engaging data content has never been easier, yet easily sharing remains a challenge. And that''s the point, right? You cleaned the data, wrangled it, and summarized everything for others to benefit. But where do you put that final result? If you''re still using R Markdown, perhaps it''s rpubs.com. If you''ve adopted Quarto, it could be quartopub.com. Have a Jupyter notebook? Well, that''s a different service. And this is just for docs. Want to deploy a streamlit app? Head to streamlit.io. Shiny? Log into shinyapps.io. Dash? You could use ploomber.io, if you have a docker file - and know what that is. This session summarizes the landscape for online data sharing and describes a new tool that Posit is working on to simplify your process.
 
@@ -9,6 +8,7 @@ description: 'Creating engaging data content has never been easier, yet easily s
 
 
   Slides: https://docs.google.com/presentation/d/1zulnuaT2Dm_vM0l9Gd3vS26KWJuAf0gJ1pcFKjTUNbI/edit?usp=sharing'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -16,6 +16,7 @@ software:
 - Quarto
 - Shiny
 - shinyapps
+tags: []
 title: Alex Chisholm - Deploying data applications and documents to the cloud
 
 external:  # updated automatically, do not edit

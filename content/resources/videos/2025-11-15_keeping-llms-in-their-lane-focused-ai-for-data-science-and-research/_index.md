@@ -1,7 +1,7 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-15'
 description: "From R+AI 2025, hosted by R Consortium\n\nKeynote\n\nLLMs are powerful, flexible, easy-to-use… and often wrong. This is a dangerous combination, especially for data analysis and scientific research, where correctness and reproducibility are core requirements. Fortunately, it turns out that by carefully applying LLMs to narrower use cases, we can turn them into surprisingly reliable assistants that accelerate and enhance, rather than undermine, scientific work. This is not just theory—I’ll showcase working examples of seamlessly integrating LLMs into analytic workflows, helping data scientists build interactive, intelligent applications without needing to be web developers. You’ll see firsthand how keeping LLMs focused lets us leverage their “intelligence” in a way that’s practical, rigorous, and reproducible.\n\nBio\n\nJoe Cheng is the CTO and first employee at Posit, PBC (formerly known as RStudio), where he helped create the RStudio IDE, Shiny web framework, and Databot agent for exploratory data analysis.\n\nR Consortium Resources\n\nMain R Consortium Site: https://www.r-consortium.org/ \nR+AI website: https://rconsortium.github.io/RplusAI_website\nR Consortium webinars: https://r-consortium.org/webinars/webinars.html\nBlog: https://r-consortium.org/blog/\nLinkedIn: https://www.linkedin.com/company/r-consortium/"
+image: thumbnail.jpg
 people:
 - Joe Cheng
 resource_type: video
@@ -10,6 +10,9 @@ software:
 - rstudio
 - Shiny
 - webinars
+tags:
+- rstats
+- rconsortium
 title: 'Keeping LLMs in Their Lane: Focused AI for Data Science and Research'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Leveraging LLMs for student feedback in introductory data science courses
 
@@ -14,11 +13,18 @@ description: 'Leveraging LLMs for student feedback in introductory data science 
 
 
   📁 Slides - http://duke.is/help-from-ai-conf25 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Mine Çetinkaya-Rundel
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Leveraging LLMs for student feedback in introductory data science courses (Mine Çetinkaya-Rundel)
 
 external:  # updated automatically, do not edit

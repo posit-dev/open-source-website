@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-06-17'
 description: '0 - 50:20 Presentation
 
@@ -30,12 +29,61 @@ description: '0 - 50:20 Presentation
   R for Data Science Online Learning Community (“chat-supply_chain”): r4ds.io/join
 
   RStudio Community: community.rstudio.com'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- supply chain
+- demand planning
+- meetup
 title: Nicolas Nguyen - ZEISS | Supply Chain Management Meetup | RStudio
 
 external:  # updated automatically, do not edit

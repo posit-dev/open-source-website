@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In part two of our conversation with Julia Silge, we discuss how work actually ships: the boundaries, the glue, and the tools that turn noise into signal. From there, we go macro and wonder what the LLM era means for humanity’s contributions, plus how licensing is evolving to protect sustainability without abandoning openness.
 
@@ -18,12 +17,14 @@ description: 'In part two of our conversation with Julia Silge, we discuss how w
   • Licenses in a new era: Threading the needle between MIT-style generosity and elastic-style sustainability for platformed software
 
   • Try Positron: Where to download, read docs, and give feedback'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software:
 - positron
+tags: []
 title: 'Julia Silge: Part 2 — Glue work, licensing, and open source in the age of LLMs'
 
 external:  # updated automatically, do not edit

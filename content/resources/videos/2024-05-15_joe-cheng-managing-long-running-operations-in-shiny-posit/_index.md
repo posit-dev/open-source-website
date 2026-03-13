@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-05-15'
 description: 'It’s been years since Shiny evolved to allow asynchronous operations within applications, improving scalability. The introduction of the {promises} package enabled concurrent processing between multiple Shiny sessions, a significant step forward in handling background tasks. However, this did not address the need for intra-session concurrency, where users expect to interact with the application while long-running calculations are executed in the background.
 
@@ -47,12 +46,58 @@ description: 'It’s been years since Shiny evolved to allow asynchronous operat
   26:35 {future} alternatives
 
   31:47 Wrapping up'
+image: thumbnail.jpg
 people:
 - Joe Cheng
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Joe Cheng | Managing long-running operations in Shiny | Posit
 
 external:  # updated automatically, do not edit

@@ -1,12 +1,59 @@
 ---
-image: thumbnail.jpg
 date: '2020-11-29'
 description: Originally posted at https://rstudio.com/resources/rstudioconf-2020/updates-on-spark-mlflow-and-the-broader-ml-ecosystem/
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio::conf(2020)
+- Javier Luraschi
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Javier Luraschi | Updates on Spark, MLflow, and the broader ML ecosystem | RStudio (2020)
 
 external:  # updated automatically, do not edit

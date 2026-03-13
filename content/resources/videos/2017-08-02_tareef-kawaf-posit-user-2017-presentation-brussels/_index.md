@@ -1,11 +1,23 @@
 ---
-image: thumbnail.jpg
 date: '2017-08-02'
 description: What has Posit been up to?
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- RStudio
+- R Markdown
+- Shiny
+- RStudio Connect
+- dplyr
+- blogdown
+- Packages
+- Notebooks
+- Sparklyr
+- useR!
+- Tareef Kawaf
 title: Tareef Kawaf | Posit useR! 2017 Presentation, Brussels
 
 external:  # updated automatically, do not edit

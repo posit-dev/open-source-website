@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'In this talk I introduce webR, a port of R to WebAssembly using Emscripten. WebR brings a full R environment to the browser, enabling R code execution, numerical analysis, loading packages and more. No local or cloud-based R servers are required as all computation is performed within the browser. I give a brief overview of our build process for webR, describing the toolchain and some of the issues we encountered. A publicly available web-based R session is demonstrated, with package and plotting support.
 
@@ -8,6 +7,7 @@ description: 'In this talk I introduce webR, a port of R to WebAssembly using Em
 
 
   Session: Lightning Talks'
+image: thumbnail.jpg
 people:
 - George Stagg
 resource_type: video
@@ -15,6 +15,7 @@ resources: []
 software:
 - rstudio
 - rstudio-conf
+tags: []
 title: 'George Stagg | WebR: R compiled for WebAssembly and running in the browser | RStudio (2022)'
 
 external:  # updated automatically, do not edit

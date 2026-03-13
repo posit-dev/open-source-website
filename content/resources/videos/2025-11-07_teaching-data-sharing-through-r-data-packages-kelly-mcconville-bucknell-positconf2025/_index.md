@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Teaching Data Sharing through R Data Packages
 
@@ -14,12 +13,19 @@ description: 'Teaching Data Sharing through R Data Packages
 
 
   📁 Materials - https://mcconvil.github.io/r-data-package-talk-f25/data_packages_talk posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - devtools
 - usethis
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Teaching Data Sharing through R Data Packages (Kelly McConville, Bucknell) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

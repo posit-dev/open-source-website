@@ -1,14 +1,59 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-02'
 description: 'Data Science Hangout with Jamie Warner, Managing Director at Plymouth Rock Assurance.
 
 
   🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: This ONE THING is what hiring managers are looking for🤯
 
 external:  # updated automatically, do not edit

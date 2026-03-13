@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Talk by Kelly O''Briant
 
@@ -7,10 +6,12 @@ description: 'Talk by Kelly O''Briant
   - Blog post: https://posit.co/blog/ml-posit-connect-airflow/
 
   - API cookbook: https://docs.posit.co/connect/cookbook/content/rendering-content/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Kelly O'Briant - Event Automation with Posit Connect
 
 external:  # updated automatically, do not edit

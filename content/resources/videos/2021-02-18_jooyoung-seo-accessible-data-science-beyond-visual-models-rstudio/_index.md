@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-18'
 description: 'Full title: Accessible Data Science Beyond Visual Models: Non-Visual Interactions with R and RStudio Packages
 
@@ -19,6 +18,7 @@ description: 'Full title: Accessible Data Science Beyond Visual Models: Non-Visu
   About JooYoung:
 
   JooYoung Seo is a Ph.D candidate in the Learning, Design, and Technology program at the Pennsylvania State University, and internationally certified accessibility professional whose research and development focuses on accessible computing for all. As an RStudio''s double-certified data science instructor (i.e., Tidyverse + Shiny), who is blind, he is committed to making data science ecosystem more accessible to people with and without dis/abilities using R. To this end, he has been actively contributing to R open-source projects including Shiny, RMarkdown, bookdown, and distill for accessibility, and interned on the RStudio IDE and Shiny team as an accessibility engineer in summer 2020.'
+image: thumbnail.jpg
 people:
 - Shiny Team
 resource_type: video
@@ -29,6 +29,53 @@ software:
 - rstudio
 - Shiny
 - tidyverse
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- JooYoung Seo
+- accessibility
 title: JooYoung Seo | Accessible Data Science Beyond Visual Models | RStudio
 
 external:  # updated automatically, do not edit

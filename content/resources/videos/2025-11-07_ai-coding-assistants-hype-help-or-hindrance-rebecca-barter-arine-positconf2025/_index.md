@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'AI Coding Assistants: Hype, Help, or Hindrance?
 
@@ -17,12 +16,19 @@ description: 'AI Coding Assistants: Hype, Help, or Hindrance?
 
 
   📁 Materials - https://rlbarter.github.io/posit-conf-2025/#0 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
 - rstudio
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: 'AI Coding Assistants: Hype, Help, or Hindrance? (Rebecca Barter, Arine) | posit::conf(2025)'
 
 external:  # updated automatically, do not edit

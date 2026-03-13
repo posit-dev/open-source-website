@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-27'
 description: 'We were recently joined by Julia Silge, Data Scientist & Software Engineer at Posit, PBC to talk about the skills and tools that data scientists need to deploy their models and scale their impact.
 
@@ -26,11 +25,13 @@ description: 'We were recently joined by Julia Silge, Data Scientist & Software 
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Julia Silge @ Posit | Data Science Hangout
 
 external:  # updated automatically, do not edit

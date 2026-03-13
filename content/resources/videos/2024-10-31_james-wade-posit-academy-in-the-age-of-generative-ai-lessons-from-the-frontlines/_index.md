@@ -1,14 +1,15 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'The rise of generative AI is fundamentally changing how we learn to code. At Dow, we''ve had nearly 200 learners participate in Posit Academy to learn R or Python and apply it to their work. As coders embrace these new tools, we are witnessing a "before and after" moment. This talk will share real-world examples of how researchers at Dow are learning by using code generation, highlighting the most effective tools including copilots and chat agents, to grapple with the challenges and opportunities of learning to code in this transformative era.
 
 
   Talk by James Wade'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: James Wade - Posit Academy in the Age of Generative AI - Lessons from the Frontlines
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-09-27'
 description: 'Shiny makes it easy to build interactive web applications with the power of Python’s data and scientific stack. You can try out Shiny for Python without installing a single thing… All in the browser.
 
@@ -13,6 +12,7 @@ description: 'Shiny makes it easy to build interactive web applications with the
 
 
   Content: Winston Chang (@winston_chang)'
+image: thumbnail.jpg
 people:
 - Winston Chang
 resource_type: video
@@ -22,6 +22,51 @@ software:
 - Shiny for Python
 - Shiny
 - shinylive
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Plot Outputs in Shiny for Python || Winston Chang || RStudio
 
 external:  # updated automatically, do not edit

@@ -1,10 +1,10 @@
 ---
-image: thumbnail.jpg
 date: '2024-05-04'
 description: 'Learn about tidyverse, ggplot2, and the secret to a tech company’s longevity as Hadley Wickham joins @JonKrohnLearns in this episode. He talks about Posit’s rebrand, why tidyverse needs to be in every data scientist’s toolkit, and why getting your hands dirty with open-source projects can be so lucrative for your career.
 
 
   Watch the full interview “779: The Tidyverse of Essential R Libraries and their Python Analogues — with Dr. Hadley Wickham” here: https://www.superdatascience.com/779'
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 resource_type: video
@@ -12,6 +12,32 @@ resources: []
 software:
 - ggplot2
 - tidyverse
+tags:
+- Hadley Wickham on R vs Python
+- The Tidyverse of Essential R Libraries and their Python Analogues
+- tidyverse
+- essential r libraries
+- r programming
+- python a
+- r python data science
+- posit rstudio
+- ggplot2
+- how to contribute to r open source community
+- arrow
+- dbplyr
+- testthat r
+- duckdb
+- keras for r
+- plotnine
+- siuba
+- quarto
+- quarto rstudio
+- shiny r programming
+- shiny for python
+- hadley wickham
+- hadley wickham r
+- data science podcast
+- jon krohn
 title: Hadley Wickham on R vs Python
 
 external:  # updated automatically, do not edit

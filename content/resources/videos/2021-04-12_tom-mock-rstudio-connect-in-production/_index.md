@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-04-12'
 description: 'https://rstudio.com/resources/webinars/rstudio-connect-in-production/
 
@@ -12,12 +11,58 @@ description: 'https://rstudio.com/resources/webinars/rstudio-connect-in-producti
   About Tom:
 
   Thomas is involved in the local and global data science community, serving as Outreach Coordinator for the Dallas R User Group, as a mentor for the R for Data Science Online Learning Community, as co-founder of #TidyTuesday, attending various Data Science and R-related conferences/meetups, and participated in Startup Weekend Fort Worth as a data scientist/entrepreneur.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - webinars
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Tom Mock | RStudio Connect in Production
 
 external:  # updated automatically, do not edit

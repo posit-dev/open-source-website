@@ -1,13 +1,14 @@
 ---
-image: thumbnail.jpg
 date: '2020-09-12'
 description: "Alex Gold | January 30, 2020\r\nIt’s easier than ever to craft a complete R-centric data science pipeline thanks to packages like Shiny, Plumber, and Pins. In this talk, you’ll learn how to use R to bring your modeling and visualization work into production. You’ll walk away with recipes, tips, and tricks to deploy data, models, and apps to ensure your work is as impactful as possible."
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - plumber
 - Shiny
+tags: []
 title: Deploying End-To-End Data Science with Shiny, Plumber, and Pins - Alex Gold
 
 external:  # updated automatically, do not edit

@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-03-29'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: If you’re a Python data scientist you should really start using this🤯
 
 external:  # updated automatically, do not edit

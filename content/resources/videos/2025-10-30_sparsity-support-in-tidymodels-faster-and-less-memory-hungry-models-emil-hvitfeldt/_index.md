@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-10-30'
 description: 'Sparse data, data with a lot of 0s, appear quite often in modeling contexts. However, existing data structures such as data.frames or matrices doesn''t have a good way of controlling them. You were forced to represent all data as sparse or dense (non-sparse).
 
@@ -11,12 +10,14 @@ description: 'Sparse data, data with a lot of 0s, appear quite often in modeling
 
 
   The best part is that most users doesn''t need to change anything in their code to benefit from these speed improvements.'
+image: thumbnail.jpg
 people:
 - Emil Hvitfeldt
 resource_type: video
 resources: []
 software:
 - tidymodels
+tags: []
 title: Sparsity support in tidymodels, faster and less memory hungry models - Emil Hvitfeldt
 
 external:  # updated automatically, do not edit

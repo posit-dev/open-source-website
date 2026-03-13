@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-07-23'
 description: 'R in Marketing: Serving Bespoke Insights Through Automation
 
@@ -20,11 +19,13 @@ description: 'R in Marketing: Serving Bespoke Insights Through Automation
 
 
   For future meetups: https://www.meetup.com/RStudio-Enterprise-Community-Meetup'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Matthias Mueller - Campaign Monitor | Marketing Meetup | RStudio
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-03-10'
 description: '2:55 - A11Y in R: Adapting Sarah L. Fossheim''s 10 dos and don''ts to keep in mind when designing accessible data visualizations | Maya Gans
 
@@ -93,12 +92,14 @@ description: '2:55 - A11Y in R: Adapting Sarah L. Fossheim''s 10 dos and don''ts
   🗺 Cynthia Brewer''s work on color palettes. https://colorbrewer2.org/#
 
   🗺 cartographers who use 3d printing for tactile maps: https://touch-mapper.org/en/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - ggplot2
 - rstudio
+tags: []
 title: Mara Averick & Maya Gans | Data Visualization Accessibility | RStudio Meetup
 
 external:  # updated automatically, do not edit

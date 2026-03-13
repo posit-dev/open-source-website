@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-08-01'
 description: 'Description
 
@@ -16,6 +15,7 @@ description: 'Description
   *Find us on GitHub at https://github.com/posit-dev/positron
 
   *Positron is currently available on Posit Workbench in preview'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
@@ -23,6 +23,7 @@ resources: []
 software:
 - positron
 - rstudio
+tags: []
 title: A first look at Positron - Julia Silge
 
 external:  # updated automatically, do not edit

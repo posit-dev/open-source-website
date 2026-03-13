@@ -1,11 +1,58 @@
 ---
-image: thumbnail.jpg
 date: '2020-12-06'
 description: The InsightRX precision dosing platform tailors in-patient drug doses to individual patients' characteristics and biomarkers, leveraging pharmacological models of drug metabolism and drug effects. These models are implemented in R, exposed through APIs, and called from a cloud-based web application.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio::conf(2020)
+- Ron Keizer
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Ron Keizer | Building a Medical Device with R | Posit (2020)
 
 external:  # updated automatically, do not edit

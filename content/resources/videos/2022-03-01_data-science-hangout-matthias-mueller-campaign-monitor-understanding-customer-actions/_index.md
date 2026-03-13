@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-03-01'
 description: 'We were recently joined by Matthias Mueller, Senior Director of Analytics at Campaign Monitor.
 
@@ -18,11 +17,13 @@ description: 'We were recently joined by Matthias Mueller, Senior Director of An
   LinkedIn:https://www.linkedin.com/company/posit
 
   Twitter: https://twitter.com/posit'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Data Science Hangout | Matthias Mueller, Campaign Monitor | Understanding Customer Actions
 
 external:  # updated automatically, do not edit

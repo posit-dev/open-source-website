@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-22'
 description: 'Many Data Science teams today are bilingual, leveraging both R and Python in their work. While both languages are tremendously powerful, teams frequently struggle to use them together. We’ve heard from our customers how even experienced data scientists familiar with both languages often struggle to combine them without painful context switching and manual translations. Data Science leaders and business stakeholders find it difficult to make key data science content easily discoverable and available for decision-making, and IT Admins and DevOps engineers grapple with how to efficiently support these teams.
 
@@ -25,11 +24,60 @@ description: 'Many Data Science teams today are bilingual, leveraging both R and
   About Sean:
 
   Sean has a degree in mathematics and statistics and worked as an analyst at the National Renewable Energy Lab before making the switch to customer success at RStudio. In his spare time he skis and mountain bikes and is a proud Colorado native.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- lou bajuk
+- sean lopp
+- webinar
 title: 'Lou Bajuk & Sean Lopp | RStudio: A Single Home for R & Python| RStudio'
 
 external:  # updated automatically, do not edit

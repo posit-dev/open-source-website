@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-09'
 description: 'Register now: http://pos.it/conf
 
@@ -41,6 +40,7 @@ description: 'Register now: http://pos.it/conf
 
 
   In addition to gaining technical knowledge, participants will engage in discussion around the decisions that go into developing a data science curriculum and choosing workflows and infrastructure that best support the curriculum and allow for scalability. We will also discuss best practices for configuring and deploying classroom infrastructures to support these tools.'
+image: thumbnail.jpg
 people:
 - Mine Çetinkaya-Rundel
 resource_type: video
@@ -49,6 +49,51 @@ software:
 - Quarto
 - rstudio
 - tidyverse
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'posit::conf(2023) Workshop: Teaching Data Science Masterclass'
 
 external:  # updated automatically, do not edit

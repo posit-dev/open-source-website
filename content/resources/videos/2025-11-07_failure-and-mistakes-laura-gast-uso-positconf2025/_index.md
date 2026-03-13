@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Failure (and Mistakes)
 
@@ -11,10 +10,18 @@ description: 'Failure (and Mistakes)
 
 
   In a field driven by precision, the power of failure is often overlooked. This talk digs into the paradoxical benefit of error in data science, drawing on high-profile missteps in data handling and personal anecdotes of falling short. Using examples from errors big and small leading to impacts big and small to the everyday misinterpretation or misuse of data that happens everywhere, we’ll focus on how to get the best out of failure. While some level of error is inevitable in data science, the most resilient and forward-thinking teams realize that errors can drive innovative and creative solutions that may not have been discovered if everything had gone as planned. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Failure (and Mistakes) (Laura Gast, USO) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

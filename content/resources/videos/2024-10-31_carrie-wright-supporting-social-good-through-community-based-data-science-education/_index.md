@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'In this data-centric era, the demand for responsible data science practitioners is more crucial than ever. However many data science education programs don’t adequately emphasize data ethics. To address this need, my colleagues, Ava Hoffman, Michael Rosenblum, and I have developed a course at Johns Hopkins, offering students hands-on experiences collaborating with community-based organizations on diverse data science projects. We''ve partnered with organizations championing various causes, including youth leadership, voting rights, transportation advocacy, and community tool banks. We''ve gained valuable insights about hands-on data ethics education and demonstrated that even data science education itself can support social good.
 
@@ -9,10 +8,12 @@ description: 'In this data-centric era, the demand for responsible data science 
 
 
   Slides: https://bit.ly/posit_community_data_science'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Carrie Wright - Supporting Social Good Through Community-Based Data Science Education
 
 external:  # updated automatically, do not edit

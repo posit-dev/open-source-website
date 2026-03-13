@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'R & Python playing nice, in production
 
@@ -19,11 +18,19 @@ description: 'R & Python playing nice, in production
   Rewriting 1000+ commits? No thanks. Instead, we got R and Python to play nice. With Renv, Poetry, and Docker, we keep things reproducible, portable, and deployable on various ML-Ops platforms.
 
   The takeaway? With the right tools, teams can mix and match languages, leveraging the best in each, and still build solid, scalable solutions. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - renv
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: R & Python playing nice, in Production (Claudia Penaloza, Continental Tires) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

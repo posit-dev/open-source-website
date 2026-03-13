@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-08-04'
 description: 'Learn exploratory data analysis (EDA) in R with this tutorial by Mine Çetinkaya-Rundel. Using Positron, Mine guides you through a real-world project, ''exploring deadlines,'' to analyze the impact of homework deadlines on student performance and stress levels. Discover how to effectively clean, filter, and visualize data using ggplot2 for insightful comparisons. This tutorial emphasizes best practices for data organization and clear data presentation while highlighting Positron''s features that streamline your data analysis workflow. Perfect for anyone looking to master data visualization in R and enhance their data science skills in this new IDE.
 
@@ -27,6 +26,7 @@ description: 'Learn exploratory data analysis (EDA) in R with this tutorial by M
 
 
   Air documentation: https://posit-dev.github.io/air/'
+image: thumbnail.jpg
 people:
 - Mine Çetinkaya-Rundel
 resource_type: video
@@ -35,6 +35,7 @@ software:
 - air
 - ggplot2
 - positron
+tags: []
 title: Exploratory Data Analysis with R in Positron
 
 external:  # updated automatically, do not edit

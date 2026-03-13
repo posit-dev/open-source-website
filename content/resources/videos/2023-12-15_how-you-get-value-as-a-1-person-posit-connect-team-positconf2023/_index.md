@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-15'
 description: 'Presented by Sean Nguyen
 
@@ -16,11 +15,59 @@ description: 'Presented by Sean Nguyen
   Talk Track: Getting %$!@ done: productive workflows for data science.
 
   Session Code: TALK-1093'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- databricks
+- data science
+- rstudio
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- quarto
+- posit
+- ml
 title: How You Get Value as a 1-Person Posit Connect Team - posit::conf(2023)
 
 external:  # updated automatically, do not edit

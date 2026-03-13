@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-13'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Masters in Data Science: 6 things you need to know'
 
 external:  # updated automatically, do not edit

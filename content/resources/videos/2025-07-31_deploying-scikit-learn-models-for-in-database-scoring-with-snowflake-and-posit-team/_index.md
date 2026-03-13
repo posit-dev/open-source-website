@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-07-31'
 description: 'Modern data science workflows often face a critical challenge: how to efficiently deploy machine learning models where the data lives. Traditional approaches require moving large datasets out of the database for scoring, creating bottlenecks, security concerns, and unnecessary data movement costs.
 
@@ -41,12 +40,58 @@ description: 'Modern data science workflows often face a critical challenge: how
 
 
   If you''d like to learn more about using Posit Team, you can always schedule time to chat with Posit here: https://posit.co/schedule-a-call/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
 - tidymodels
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Deploying Scikit-learn models for in-database scoring with Snowflake and Posit Team
 
 external:  # updated automatically, do not edit

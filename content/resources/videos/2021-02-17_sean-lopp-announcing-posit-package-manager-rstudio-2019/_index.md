@@ -1,12 +1,58 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-17'
 description: "Posit Package Manager is the newest professional product that helps teams, departments, and entire enterprises organize and centralize package management. If you've ever struggled with IT to get access to a new (any?) R package, reproduce an old result, or share your code with others, Posit Package Manager can help! We'll introduce the new product, discuss how R repositories can be used to solve problems and take a sneak peek at what is coming in 2019.\r\n\r\nVIEW MATERIALS https://github.com/slopp/rspm-rstudioconf\r\n\r\nAbout the Author\r\nSean Lopp\r\nSean has a degree in mathematics and statistics and worked as an analyst at the National Renewable Energy Lab before making the switch to customer success at RStudio. In his spare time he skis and mountain bikes and is a proud Colorado native.\n\n*Posit Package Manager, formerly known as RStudio Package Manager"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- Sean Lopp
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Sean Lopp | Announcing Posit Package Manager | RStudio (2019)
 
 external:  # updated automatically, do not edit

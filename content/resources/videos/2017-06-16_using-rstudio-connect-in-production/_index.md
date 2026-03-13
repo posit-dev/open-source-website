@@ -1,12 +1,15 @@
 ---
-image: thumbnail.jpg
 date: '2017-06-16'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- RStudio Connect
+- RStudio
 title: Using RStudio Connect in Production
 
 external:  # updated automatically, do not edit

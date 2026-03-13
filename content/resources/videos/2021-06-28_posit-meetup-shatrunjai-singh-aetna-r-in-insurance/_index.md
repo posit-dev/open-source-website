@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-06-28'
 description: 'Operationalizing algorithms using Shiny and Flask
 
@@ -17,12 +16,14 @@ description: 'Operationalizing algorithms using Shiny and Flask
 
 
   Q&A here: https://community.rstudio.com/t/meetup-recording-operationalizing-algorithms-using-shiny-and-flask/102463'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Posit Meetup | Shatrunjai Singh, Aetna | R In Insurance
 
 external:  # updated automatically, do not edit

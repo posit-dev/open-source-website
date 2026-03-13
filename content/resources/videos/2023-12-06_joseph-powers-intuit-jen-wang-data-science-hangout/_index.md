@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-06'
 description: 'We were recently joined by Joseph Powers, Principal Data Scientist at Intuit and Jen Wang, VP Product & Growth - formerly at thredUP to chat about transitioning from academia to tech roles, building inclusive & growth-oriented teams, and how organizations can improve their experimentation and causal inference processes to generate larger and faster insights that improve their product and marketing experiences.
 
@@ -30,10 +29,12 @@ description: 'We were recently joined by Joseph Powers, Principal Data Scientist
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Joseph Powers @ Intuit & Jen Wang | Data Science Hangout
 
 external:  # updated automatically, do not edit

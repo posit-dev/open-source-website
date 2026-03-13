@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-03-27'
 description: 'Q&A session from the March 27th Workflow Demo: Elevate your Quarto reports with styling and scheduled emails.
 
@@ -37,12 +36,14 @@ description: 'Q&A session from the March 27th Workflow Demo: Elevate your Quarto
   Demo: 11 am ET
 
   Q&A: ~11:30 am ET'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - cli
 - Quarto
+tags: []
 title: Workflow Demo Live Q&A - March 27th
 
 external:  # updated automatically, do not edit

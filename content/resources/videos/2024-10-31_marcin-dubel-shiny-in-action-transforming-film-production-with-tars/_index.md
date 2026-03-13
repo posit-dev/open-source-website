@@ -1,15 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Behind every ''Lights! Camera! Action!'' is a complex choreography of 20+ departments, complicated by the manual creation of 50+ weekly or monthly reports over each production''s 2-3 year span. Our R/Shiny app ("TARS") streamlines communication and coordination of this process via data integrations, interactive UIs, customizable notifications, and reports. This presentation will unpack the layers of our app''s functionality, spotlighting Shiny and R''s pivotal roles in modernizing the business of film production, data confidentiality, and inter-departmental synergy. Developers will learn about methodologies for enhancing data flow, security measures, and custom notifications, offering inspiration for navigating similar challenges.
 
 
   Talk by Marcin Dubel'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: 'Marcin Dubel - Shiny in Action: Transforming Film Production with TARS'
 
 external:  # updated automatically, do not edit

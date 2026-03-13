@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'The Psychology of Technologists
 
@@ -23,10 +22,18 @@ description: 'The Psychology of Technologists
   Center for Open Science (COS) - https://www.cos.io/
 
   Fight for the Human Newsletter - https://www.fightforthehuman.com/ posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: The Psychology of Technologists  (Cat Hicks, Catharsis Consulting) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

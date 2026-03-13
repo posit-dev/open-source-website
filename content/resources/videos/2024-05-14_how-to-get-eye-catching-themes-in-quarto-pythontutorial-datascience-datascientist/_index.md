@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2024-05-14'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: 'How to get eye catching themes in Quarto #pythontutorial #datascience #datascientist'
 
 external:  # updated automatically, do not edit

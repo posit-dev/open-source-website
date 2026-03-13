@@ -1,15 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'What data processing in your Shiny app is redundant or must happen within the app at all? What makes Shiny beautiful is how it blends data visualization into a compact bundle of code. That said, there are challenges to overcome to get from a developer’s console to users’ screens. Tools like Posit Connect help with this process, but as an app matures, developers and their users may encounter different performance issues. To address this, sometimes this means evolving and introducing separate data pipelines. In this presentation, we will overview some different types of scaling issues for a Shiny app. Additionally, we will introduce the new package {matte}, which provides support for adding data pipelines to your app that live outside Shiny.
 
 
   Talk by Andrew Bates'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: Andrew Bates (replacing Mike Stackhouse) - Making an App a System
 
 external:  # updated automatically, do not edit

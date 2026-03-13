@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-02-25'
 description: 'Alenka Frim went from teaching yoga full-time to becoming a committer and PMC Member on Apache Arrow. In this episode, Alenka joins The Test Set hosts to talk about how Arrow grew from spec to critical infrastructure, and why she started contributing to a project she had never even used. She reflects on imposter syndrome, the discipline of showing up (on the mat and in GitHub), and how agents are changing what it means to write code. Plus: managing 4,000 open issues without losing your mind.
 
@@ -22,10 +21,12 @@ description: 'Alenka Frim went from teaching yoga full-time to becoming a commit
   What the yoga mat teaches you about discipline and collaboration
 
   AI and the future of programming: 100x more software or 10x better software?'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Alenka Frim: What yoga teaches us about discipline and collaboration in data science'
 
 external:  # updated automatically, do not edit

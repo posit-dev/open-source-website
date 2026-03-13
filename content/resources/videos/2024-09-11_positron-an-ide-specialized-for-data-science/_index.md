@@ -1,16 +1,38 @@
 ---
-image: thumbnail.jpg
 date: '2024-09-11'
 description: 'Dr. Julia Silge, Engineering Manager at Posit, joins @JonKrohnLearns to introduce Positron, a fresh open-source IDE that’s perfect for exploratory data analysis and visualization. She also lays out her top picks for LLMs that boost coding efficiency and discusses when traditional NLP methods might be the smarter choice over LLMs. Plus, Julia highlights some must-know open-source libraries that make managing MLOps easier than ever. Tune in for insights that every data scientist, ML engineer, and developer will find useful.
 
 
   Watch the full interview “817: The Positron IDE, Tidy NLP and MLOps — with Dr. Julia Silge” here: https://www.superdatascience.com/817'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software:
 - positron
+tags:
+- positron an ide specialized for data science
+- The Positron IDE Tidy NLP and MLOps
+- Julia Silge
+- Julia Silge r
+- julia silge tidymodels
+- positron ide
+- tidy nlp
+- mlops
+- positron ide posit
+- Posit
+- open source ide
+- exploratory data analysis
+- llms
+- traditional nlp methods
+- data scientist
+- ml engineer
+- positron
+- data science podcast
+- jon krohn
+- vetiver
+- open source positron
 title: 'Positron: An IDE Specialized For Data Science'
 
 external:  # updated automatically, do not edit

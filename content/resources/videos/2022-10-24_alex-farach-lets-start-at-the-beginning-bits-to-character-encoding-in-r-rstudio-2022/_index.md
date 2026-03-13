@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Attendees will recieve a broad overview of the encoding and decoding process in the human-to-computer loop, how bits are used, and the math that gets us to common bit values. A brief history of ASCII, Latin-1, and UTF-8 will be provided as well.
 
@@ -11,6 +10,7 @@ description: 'Attendees will recieve a broad overview of the encoding and decodi
 
 
   Session: Lightning Talks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -18,6 +18,7 @@ software:
 - rstudio
 - rstudio-conf
 - tidyverse
+tags: []
 title: Alex Farach | Let's start at the beginning - bits to character encoding in R | RStudio (2022)
 
 external:  # updated automatically, do not edit

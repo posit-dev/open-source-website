@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-22'
 description: 'We were recently joined by Laura Gast, Data Science & Analytics Manager at USO to discuss figuring out the best ways to condense complex exploratory and explanatory analyses (without sacrificing nuance and detail) for rapid and confident data-driven decision-making.
 
@@ -31,10 +30,12 @@ description: 'We were recently joined by Laura Gast, Data Science & Analytics Ma
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Laura Gast @ USO | Data Science Hangout
 
 external:  # updated automatically, do not edit

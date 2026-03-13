@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-07-06'
 description: 'Presentations from:
 
@@ -36,11 +35,13 @@ description: 'Presentations from:
 
 
   Dr. Yu-Hung Chang is an Advanced Analytics Specialist working for AGCO’s Global Field Quality group. Her multi-disciplinary background combines technical fundamentals with leading-edge research and big data applications, using the most advanced technologies. She has authored numerous articles, published in inter-disciplinary journals, covering topics from Statistics and Computational Physics to Aeronautics and Automotive.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Yu-Hung Chang, Phillip Lear & Brendan Scully | R in Manufacturing & Consumer Products | RStudio
 
 external:  # updated automatically, do not edit

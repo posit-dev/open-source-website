@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-17'
 description: 'Talk from rstudio::conf(2019)
 
@@ -10,11 +9,58 @@ description: 'Talk from rstudio::conf(2019)
   About JD Long:
 
   I build models. And according to George E. P. Box, my models are wrong. My skill is understanding when and where my models are useful. I''m an experienced risk and data scientist with a background in insurance, reinsurance, market risk, and stochastic modeling. I''m the guy who can build a Monte Carlo model, help parallelize the model to run on Amazon''s cloud services and then stand in front of a general audience and put the work in context where everyone understands. My super power is thinking probabilistically, understanding risk, and communicating clearly. I have a history forming bridges between IT and business teams.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- JD Long
 title: 'JD Long | Empathy in action: Building community of practice for analytics in a global corp | RStudio'
 
 external:  # updated automatically, do not edit

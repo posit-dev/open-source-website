@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Demystifying MLOps with Vetiver
 
@@ -11,10 +10,18 @@ description: 'Demystifying MLOps with Vetiver
 
 
   MLOps is the process of setting up a Machine Learning lifecycle, including model training, deployment and monitoring. It is a complex topic which brings together an understanding of data processing, modelling and cloud architecture. It is therefore not surprising that many newcomers (myself included) can feel intimidated by the subject. In this talk I will draw on my experience as an organiser of local data science meetups. I will go into how MLOps is often presented within the data science community, how it could be made more accessible to students and beginners, and my current process for teaching MLOps in R and Python using my favourite package, vetiver. In summary: no, you do not have to be an expert in AWS or Azure to get started! posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: Demystifying MLOps with Vetiver (Myles Mitchell, Jumping Rivers) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

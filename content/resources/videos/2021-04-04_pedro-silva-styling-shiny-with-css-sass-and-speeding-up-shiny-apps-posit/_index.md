@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-04-04'
 description: 'From rstudio::global(2021) Shiny X-Sessions, sponsored by Appsilon: in the first part of this talk I will discuss how to use CSS to give your application a fresh and unique look, while keeping your codebase clean and organized with SASS. During the second half I will discuss how to leverage Shiny update functions, proxy objects and JavaScript messages to speed up your dashboards.
 
@@ -10,12 +9,59 @@ description: 'From rstudio::global(2021) Shiny X-Sessions, sponsored by Appsilon
 
 
   Learn more about the rstudio::global(2021) X-Sessions: https://blog.rstudio.com/2021/01/11/x-sessions-at-rstudio-global/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- appsilon
 title: Pedro Silva | Styling Shiny with CSS & SASS and Speeding Up Shiny Apps | Posit
 
 external:  # updated automatically, do not edit

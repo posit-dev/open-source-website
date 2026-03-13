@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-27'
 description: 'We were recently joined by Matt McDonald, Senior Managing Director at Kroll Bond Rating Agency (KBRA) to chat about “punching above your weight  and running a small, effective data science team.
 
@@ -28,10 +27,12 @@ description: 'We were recently joined by Matt McDonald, Senior Managing Director
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Matthew McDonald @ KBRA | Data Science Hangout
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-02-08'
 description: 'Posit Finance Meetup
 
@@ -24,10 +23,12 @@ description: 'Posit Finance Meetup
 
 
   Link to slides: https://github.com/RStudioEnterpriseMeetup/Presentations/blob/166452d28d61ef33faf8980c8f0f43426e72926b/The%20shift%20in%20data.pdf'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Dmitri Adler & Merav Yuravlivker | The shift to data: Industry trends in finance | Posit'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-07-28'
 description: 'This is a recording of a virtual seminar on ''3 Reasons to use Tidymodels'' by Julia Silge! The event took place July 13, 2023 and was hosted by R-Ladies Philly and R-Ladies DC.
 
@@ -10,12 +9,14 @@ description: 'This is a recording of a virtual seminar on ''3 Reasons to use Tid
   Talk description:
 
   Modeling and machine learning in R involves a bewildering array of heterogeneous packages, and establishing good statistical practice is challenging in any language. The tidymodels collection of packages offers a consistent, flexible framework for your modeling and machine learning work to address these problems. In this talk, we’ll focus on three specific reasons to consider using tidymodels. We will start with model characteristics themselves, move to the wise management of your data budget, and finish with feature engineering.'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software:
 - tidymodels
+tags: []
 title: 3 Reasons to Use Tidymodels with Julia Silge
 
 external:  # updated automatically, do not edit

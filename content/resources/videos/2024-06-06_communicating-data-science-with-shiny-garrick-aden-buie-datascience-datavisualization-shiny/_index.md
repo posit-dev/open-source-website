@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-06'
 description: 'Ever seen this diagram? 📊 It''s from R for Data Science, outlining the journey of tackling new data problems.
 
@@ -23,12 +22,58 @@ description: 'Ever seen this diagram? 📊 It''s from R for Data Science, outlin
 
 
   Get Started: https://shiny.posit.co'
+image: thumbnail.jpg
 people:
 - Garrick Aden-Buie
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'Communicating Data Science with Shiny! 🚀 Garrick Aden-Buie #datascience  #datavisualization  #shiny'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-06-14'
 description: 'From R/Medicine 2025
 
@@ -29,10 +28,14 @@ description: 'From R/Medicine 2025
   R/Medicine: https://rconsortium.github.io/RMedicine_website/
 
   R Consortium: https://www.r-consortium.org/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstats
+- rconsortium
 title: Personal R Administration
 
 external:  # updated automatically, do not edit

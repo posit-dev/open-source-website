@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-04-29'
 description: '0:00 Project introduction
 
@@ -37,6 +36,7 @@ description: '0:00 Project introduction
 
 
   tidymodels documentation: https://www.tidymodels.org/'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
@@ -47,6 +47,54 @@ software:
 - rmarkdown
 - rstudio
 - tidymodels
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- modelops
+- julia silge
+- model performance
+- pins
 title: Julia Silge | Monitoring Model Performance | RStudio
 
 external:  # updated automatically, do not edit

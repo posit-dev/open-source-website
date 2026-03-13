@@ -1,16 +1,17 @@
 ---
-image: thumbnail.jpg
 date: '2024-07-15'
 description: 'PROGRAM:https://revolution.servicioapps.com/w/xxxviiicongresoasepelt/186821/programa-cientifico-del-congreso-asepelt-1?preview=1
 
 
   Julia Silge is a data scientist and software engineer at Posit PBC (formerly RStudio), where she works on open source MLOps and modeling tools. She is an author, international speaker, and real-world professional focused on data analytics and machine learning. Julia loves analyzing text, making attractive graphs, and communicating on technical topics with diverse audiences.'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'JULIA SILGE: TEXT MINING WITH TIDY DATA PRINCIPLES  - UNIVERSITY MIGUEL HERNANDEZ'
 
 external:  # updated automatically, do not edit

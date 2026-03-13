@@ -1,13 +1,14 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-15'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny for Python
 - Shiny
+tags: []
 title: Rizz + shiny for python = masterpiece
 
 external:  # updated automatically, do not edit

@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-20'
 description: 'Cognition: Programming Edition'
+image: thumbnail.jpg
 people:
 - Hannah Frick
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Latin R Charla plenaria Hannah Frick
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-02-08'
 description: 'Getting Started with LLM APIs in R - Sara Altman
 
@@ -15,6 +14,7 @@ description: 'Getting Started with LLM APIs in R - Sara Altman
   * ellmer documentation: https://ellmer.tidyverse.org/
 
   * shinychat documentation: https://posit-dev.github.io/shinychat/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -23,6 +23,7 @@ software:
 - shinychat
 - tidyverse
 - tidyverse.org
+tags: []
 title: Getting Started with LLM APIs in R
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-03-13'
 description: 'From rstudio::global(2021) Pharma X-Sessions, sponsored by ProCogia: this talk discusses how R is utilized in the Janssen drug discovery statistics workflow.
 
@@ -10,11 +9,60 @@ description: 'From rstudio::global(2021) Pharma X-Sessions, sponsored by ProCogi
 
 
   Learn more about the rstudio::global(2021) X-Sessions: https://blog.rstudio.com/2021/01/11/x-sessions-at-rstudio-global/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- pharma
+- janssen
+- drug discovery
 title: Volha Tryputsen | R in Janssen Drug Discovery Statistics | Posit
 
 external:  # updated automatically, do not edit

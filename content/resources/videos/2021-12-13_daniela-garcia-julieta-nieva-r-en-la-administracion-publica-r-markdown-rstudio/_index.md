@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-12-13'
 description: 'R en la Administración Pública & informes de técnicas psicométricas con R Markdown | RStudio
 
@@ -42,11 +41,13 @@ description: 'R en la Administración Pública & informes de técnicas psicom�
   Julieta Nieva, Licenciada en Psicología. UX Researcher en Banco Galicia. Investigadora en ICRC.
 
   https://www.linkedin.com/in/julieta-nieva/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Daniela Garcia & Julieta Nieva | R en la Administración Pública & R Markdown | RStudio
 
 external:  # updated automatically, do not edit

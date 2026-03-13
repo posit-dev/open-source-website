@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-09-01'
 description: 'Joe Roberts
 
@@ -18,11 +17,13 @@ description: 'Joe Roberts
   Seattle, WA
 
   Joe is a Product Manager at Posit focused on R and Python package management for teams. He has a background in software engineering, and has spent his entire career developing enterprise data analysis software and tools for data scientists. He''s passionate about finding ways to make it easier for everyone to develop, share, and use packages across any organization, large or small.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'Joe Roberts: Taking CRAN to the Next Level with Posit Public Package Manager'
 
 external:  # updated automatically, do not edit

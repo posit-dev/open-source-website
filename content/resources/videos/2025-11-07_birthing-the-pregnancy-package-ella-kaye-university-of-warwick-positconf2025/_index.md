@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Birthing the pregnancy package
 
@@ -13,6 +12,7 @@ description: 'Birthing the pregnancy package
 
 
   📁 Slides: https://github.com/EllaKaye/pregnancy-lightning-talk posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -20,6 +20,13 @@ software:
 - cli
 - rlang
 - testthat
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Birthing the pregnancy package (Ella Kaye, University of Warwick) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-10-08'
 description: 'Positron Assistant is an AI client integrated within Positron, designed to enhance data science workflows.
 
@@ -20,11 +19,57 @@ description: 'Positron Assistant is an AI client integrated within Positron, des
   Learn more about Positron Assistant: https://positron.posit.co/assistant.html
 
   Sign up for our Workflow Demo on October 29, where we will demonstrate Positron Assistant: https://posit.co/workflow-demo/ai-powered-data-science-in-positron/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: What can you do with Positron Assistant?
 
 external:  # updated automatically, do not edit

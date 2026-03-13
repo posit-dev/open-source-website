@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-10-30'
 description: 'Leveraging R & Python in Tableau with RStudio Connect
 
@@ -35,6 +34,7 @@ description: 'Leveraging R & Python in Tableau with RStudio Connect
 
 
   James'' slides: https://github.com/blairj09-talks/rstudio-tableau-webinar'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -44,6 +44,7 @@ software:
 - rstudio
 - Shiny
 - shinytableau
+tags: []
 title: Leveraging R & Python in Tableau with RStudio Connect | James Blair | RStudio
 
 external:  # updated automatically, do not edit

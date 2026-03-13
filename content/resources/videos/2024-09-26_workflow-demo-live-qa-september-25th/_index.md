@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-09-26'
 description: 'On September 25th, we hosted a Workflow Demo on data-level permissions using Posit Connect (with Databricks, Snowflake, OAuth: https://youtu.be/ivEoeyWJzVY?feature=shared)
 
@@ -30,6 +29,7 @@ description: 'On September 25th, we hosted a Workflow Demo on data-level permiss
   ✨ Databricks Integrations with R Cookbook: https://docs.posit.co/connect/cookbook/content/integrations/databricks/r/
 
   ✨ Snowflake Integrations with Python Cookbook: https://docs.posit.co/connect/cookbook/content/integrations/snowflake/python/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -37,6 +37,7 @@ software:
 - DBI
 - odbc
 - Quarto
+tags: []
 title: Workflow Demo Live Q&A - September 25th!
 
 external:  # updated automatically, do not edit

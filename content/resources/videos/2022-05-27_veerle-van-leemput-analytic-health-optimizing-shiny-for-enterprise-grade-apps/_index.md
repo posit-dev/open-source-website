@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-05-27'
 description: '❓Can you use Shiny in production?
 
@@ -93,6 +92,7 @@ description: '❓Can you use Shiny in production?
   Info on Posit Connect: https://www.rstudio.com/products/connect/
 
   To chat with Posit: rstd.io/chat-with-rstudio'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -104,6 +104,7 @@ software:
 - Shiny
 - shinyloadtest
 - shinytest2
+tags: []
 title: Veerle van Leemput | Analytic Health | Optimizing Shiny for enterprise-grade apps
 
 external:  # updated automatically, do not edit

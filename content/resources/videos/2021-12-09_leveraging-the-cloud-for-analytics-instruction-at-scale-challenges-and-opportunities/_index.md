@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-12-09'
 description: 'Data science and programming languages like R and Python are some of the most in demand skills in the world.
 
@@ -23,11 +22,57 @@ description: 'Data science and programming languages like R and Python are some 
 
 
   Read more in the follow-up blog post: https://www.rstudio.com/blog/teaching-data-science-in-the-cloud/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'Leveraging the Cloud for Analytics Instruction at Scale: Challenges and Opportunities'
 
 external:  # updated automatically, do not edit

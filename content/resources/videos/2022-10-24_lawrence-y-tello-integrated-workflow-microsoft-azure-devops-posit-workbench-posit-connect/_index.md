@@ -1,14 +1,15 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'The California Department of Public Health’s (CDPH) COVID-19 response has required processing and communicating large amounts of data with quick turnaround times to inform strategic resource deployment in the state. To achieve this goal, the COVID-19 Data Processing and Informatics Section developed an integrated workflow that includes a combination of tools: Microsoft Azure DevOps, Posit Workbench, and Posit Connect. Attendees will walk away with an understanding of how these three tools helped our team prioritize, collaborate, decrease turnaround time, and scale our efforts to deploy and automate mission critical procedures and products.
 
 
   Session: R be nimble, R be quick, R help me plan my vaccine stick: Rapidly responding to world events with R.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Lawrence Y. Tello | Integrated Workflow: Microsoft Azure DevOps, Posit Workbench, Posit Connect'
 
 external:  # updated automatically, do not edit

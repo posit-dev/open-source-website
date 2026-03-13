@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-12-11'
 description: 'To join future data science hangouts, add it to your calendar here: https://pos.it/dsh - All are welcome! We''d love to see you!
 
@@ -51,11 +50,13 @@ description: 'To join future data science hangouts, add it to your calendar here
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: Data for good, mentoring, and stellar internships | Sebastien Ouellet | Data Science Hangout
 
 external:  # updated automatically, do not edit

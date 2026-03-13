@@ -1,11 +1,58 @@
 ---
-image: thumbnail.jpg
 date: '2020-12-03'
 description: My 8th-grade capstone project introduced me to R. The project was a data visualization about breakfast tacos. I used R and other web-based tools. My lightning talk will focus on my experience about using R for class projects and getting support from my parents to help integrate R into the classroom. I will show how students can get started when they don't know how to use R. I will talk about the project’s toolkit, which includes Posit Cloud, Google Sheets, Chromebook, measurement tools, my phone, and how R is being used in my school. A 5-minute presentation in our Lightning Talks series
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio::conf(2020)
+- Jay Campanell
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Jay Campanell | A high school student’s journey to bring R into the classroom | Posit (2020)
 
 external:  # updated automatically, do not edit

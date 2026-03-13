@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Jupyter Notebooks play a critical role in in the workflow of many users. Notebooks are used to document existing code, to quickly prototype and iterate on ideas, and as a medium of technical communication. However, package developers typically use an entirely separate set of more traditional development tools, and the context switching between these tools and notebooks can be frustrating. Not only do you lose the ability to iterate fast, but you lose the ability to document and test your code in-situ, requiring you to create documentation and tests separately from source code.
 
@@ -11,12 +10,14 @@ description: 'Jupyter Notebooks play a critical role in in the workflow of many 
 
 
   Session: Quarto deep dive'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - rstudio
+tags: []
 title: Hamel Husain | Literate Programming With Jupyter Notebooks and Quarto | RStudio (2022)
 
 external:  # updated automatically, do not edit

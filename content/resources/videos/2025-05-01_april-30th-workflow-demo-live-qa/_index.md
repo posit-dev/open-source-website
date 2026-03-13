@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-05-01'
 description: 'Join us for Live Q&A immediately following the Workflow Demo happening on April 30th at 11am ET / 8am PT with Edgar Ruiz @ Posit.
 
@@ -8,11 +7,13 @@ description: 'Join us for Live Q&A immediately following the Workflow Demo happe
 
 
   Q&A will start around 11:35 am ET / 8:35 am PT'
+image: thumbnail.jpg
 people:
 - Edgar Ruiz
 resource_type: video
 resources: []
 software: []
+tags: []
 title: April 30th Workflow Demo Live Q&A
 
 external:  # updated automatically, do not edit

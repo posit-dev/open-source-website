@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-12'
 description: 'We were recently joined by Josh King, Director of Marketing Data Science & Analytics at The Knot Worldwide.
 
@@ -68,10 +67,12 @@ description: 'We were recently joined by Josh King, Director of Marketing Data S
 
 
   To join future data science hangouts, add to your calendar here: pos.it/dsh (All are welcome! We''d love to see you!)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Josh King @ The Knot Worldwide | Creating your data and analytics roadmap | Data Science Hangout
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-01'
 description: 'After you connect to Databricks using sparklyr and create your content, you''ll want to deploy and share your work. With the new pysparklyr::deploy_databricks() function, you can deploy your content to Posit Connect. Run the function and confirm to start deployment. The deploy_databricks() function will gather your document location, credentials, and URLs. It uses this information to deploy to Posit Connect. After it''s done, click the URL to see the deployed content on Posit Connect. Open the content from the publisher view. Click around and check out your work. In Posit Connect, you can edit sharing permissions, create a vanity URL, and more. Open the content URL to see how your work would look to stakeholders.
 
@@ -18,10 +17,56 @@ description: 'After you connect to Databricks using sparklyr and create your con
 
 
   Contact our sales team to schedule a demo: https://posit.co/schedule-a-call/?booking_calendar__c=Databricks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Deploying Databricks-backed content on Posit Connect
 
 external:  # updated automatically, do not edit

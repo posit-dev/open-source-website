@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-03-27'
 description: 'Join us for Live Q&A immediately following the Workflow Demo on March 26th at 11am ET with Max Patterson at Suffolk Construction.
 
@@ -8,10 +7,12 @@ description: 'Join us for Live Q&A immediately following the Workflow Demo on Ma
 
 
   For questions, you can use the YouTube chat or Slido to ask anonymously: https://pos.it/demo-questions'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Live Q&A: March 26th Workflow Demo with Max Patterson @ Suffolk Construction'
 
 external:  # updated automatically, do not edit

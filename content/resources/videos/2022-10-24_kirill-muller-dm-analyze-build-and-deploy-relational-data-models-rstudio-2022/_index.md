@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'dm bridges the gap in the data pipeline between standalone data frames and relational databases. Implementing a "grammar of joined tables", it provides a consistent set of verbs for consuming, creating, and deploying relational data models. In this talk I present a short overview of how dm can help your data analysis and ETL processes, and highlight recent developments.
 
@@ -8,12 +7,14 @@ description: 'dm bridges the gap in the data pipeline between standalone data fr
 
 
   Session: Databases'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - rstudio-conf
+tags: []
 title: 'Kirill Müller | dm: Analyze, build and deploy relational data models | RStudio (2022)'
 
 external:  # updated automatically, do not edit

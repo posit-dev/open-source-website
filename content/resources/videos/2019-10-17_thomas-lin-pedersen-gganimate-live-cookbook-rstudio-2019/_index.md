@@ -1,7 +1,7 @@
 ---
-image: thumbnail.jpg
 date: '2019-10-17'
 description: "Animation of data visualisation is becoming increasingly popular both as an attention grabber on social media and as a way to tell small data stories. gganimate is a package that extends ggplot2 for making animations and provides a grammar of animation on top of the grammar of graphics. This talk will quickly introduce gganimate, and then dive into a series of different animation and show how they were made and how they could be changed or expanded.\r\n\r\nSlides: https://data-imaginist.com/slides/rstudioconf2019 4\r\nResources: https://resources.rstudio.com/rstudio-conf-2019/gganimate-live-cookbook 4\r\nDiscussion https://community.rstudio.com/t/gganimate-live-cookbook-thomas-lin-pedersen-rstudio-conf-2019l-video/24852"
+image: thumbnail.jpg
 people:
 - Thomas Lin Pedersen
 resource_type: video
@@ -10,6 +10,49 @@ software:
 - ggplot2
 - rstudio
 - rstudio-conf
+tags:
+- Thomas Lin Pedersen
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
 title: Thomas Lin Pedersen | gganimate live cookbook | RStudio (2019)
 
 external:  # updated automatically, do not edit

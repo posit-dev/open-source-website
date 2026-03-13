@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Running a polyglot data science community
 
@@ -11,10 +10,18 @@ description: 'Running a polyglot data science community
 
 
   Running a successful data science community is CHALLENGING! And it''s even more challenging when you have a very large group of people, especially if they use different programming languages or are at different steps in their data journeys. It can be done, though, and in my talk I''ll share the strategies that we''ve been using at Statistics Canada to keep the 1000+ members of our R and Python User Group interested and involved. I''ll also talk about why you don''t have to limit the target audience of your data science community to just one group -- creating polyglot communities that embrace multiple programming languages is a great way to ensure the long-term success and relevance of these groups. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Running a polyglot data science community (Melissa Van Bussel, StatCan) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

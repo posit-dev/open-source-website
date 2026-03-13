@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-08-08'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Lightning Talks (PyCascades 2024)
 
 external:  # updated automatically, do not edit

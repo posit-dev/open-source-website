@@ -1,16 +1,19 @@
 ---
-image: thumbnail.jpg
 date: '2020-11-21'
 description: 'Originally posted to https://rstudio.com/resources/rstudioconf-2020/deep-learning-with-r/
 
 
   Paige Bailey is the product manager for TensorFlow core as well as Swift for TensorFlow. Prior to her role as a PM in Google''s Research and Machine Intelligence org, Paige was developer advocate for TensorFlow core; a senior software engineer and machine learning engineer in the office of the Microsoft Azure CTO; and a data scientist at Chevron. Her academic research was focused on lunar ultraviolet, at the Laboratory for Atmospheric and Space Physics (LASP) in Boulder, CO, as well as Southwest Research Institute (SwRI) in San Antonio, TX.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - tensorflow
+tags:
+- rstudio::conf
+- rstudio::conf(2020)
 title: Paige Bailey | Deep Learning with R | RStudio (2020)
 
 external:  # updated automatically, do not edit

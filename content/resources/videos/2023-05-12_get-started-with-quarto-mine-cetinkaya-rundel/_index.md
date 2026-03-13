@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-12'
 description: 'This video walks you through creating documents, presentations, and websites and publishing with Quarto. The video features authoring Quarto documents with executable R code chunks using the RStudio Visual Editor (https://quarto.org/docs/visual-editor/).
 
@@ -28,6 +27,7 @@ description: 'This video walks you through creating documents, presentations, an
   19:19 Creating multi-format documents (https://quarto.org/docs/output-formats/html-multi-format.html)
 
   20:22 Publishing the website to QuartoPub (https://quarto.org/docs/publishing/quarto-pub.html)'
+image: thumbnail.jpg
 people:
 - Mine Çetinkaya-Rundel
 resource_type: video
@@ -36,6 +36,51 @@ software:
 - Quarto
 - revealjs
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Get started with Quarto | Mine Çetinkaya-Rundel
 
 external:  # updated automatically, do not edit

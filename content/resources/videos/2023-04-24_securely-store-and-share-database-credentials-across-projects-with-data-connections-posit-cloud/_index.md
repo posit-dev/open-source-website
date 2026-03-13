@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-04-24'
 description: 'This video introduces the new Data Connections feature in Posit Cloud that enables users to more quickly securely store and share database credentials across multiple data projects.
 
@@ -15,11 +14,13 @@ description: 'This video introduces the new Data Connections feature in Posit Cl
   Find the publicly available database credentials used in this tutorial: https://rnacentral.org/help/public-database
 
   Read more on the Posit Blog: https://posit.co/blog/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Securely store and share database credentials across projects with Data Connections | Posit Cloud
 
 external:  # updated automatically, do not edit

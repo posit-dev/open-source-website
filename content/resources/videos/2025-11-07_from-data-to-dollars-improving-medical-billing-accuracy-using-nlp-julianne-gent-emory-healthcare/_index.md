@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Protecting our Healthcare Heroes: Using Natural Language Processing to Prevent Billing Mistakes in Healthcare
 
@@ -11,12 +10,19 @@ description: 'Protecting our Healthcare Heroes: Using Natural Language Processin
 
 
   Maintaining accurate billing documentation in healthcare is essential to prevent revenue loss and preserve patient satisfaction. I’m Julianne Gent, Analytics Developer for Emory Digital, and I’m here to discuss the natural language processing algorithm we built utilizing an automated SQL-to-R pipeline. This algorithm uses packages ‘odbc’ and ‘stringr’ to import SQL queries into R, recognize billing patterns, and extract billing time. Our algorithm accurately captured billing data for 93% of over 250,000 notes. The billing provided by our hospital’s medical software? Only 40%. Our algorithm showed that an SQL-to-R pipeline can improve billing documentation and accuracy, and we are confident that it can be applied to many other industries. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - odbc
 - stringr
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: 'From Data to Dollars: Improving Medical Billing Accuracy Using NLP (Julianne Gent, Emory Healthcare)'
 
 external:  # updated automatically, do not edit

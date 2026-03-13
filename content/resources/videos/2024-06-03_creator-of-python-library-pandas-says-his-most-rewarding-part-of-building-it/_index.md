@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-03'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Creator of Python library Pandas says his most rewarding part of building it👨‍💻
 
 external:  # updated automatically, do not edit

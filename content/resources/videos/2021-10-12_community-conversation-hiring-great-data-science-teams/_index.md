@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-10-12'
 description: 'At RStudio, we believe open source, code-first data science frameworks based on R and Python, centralized on-prem or in the cloud for ease of collaboration, sharing and administration, help data science teams be successful. However,  finding and retaining the right people is just as key for building a productive, effective, and collaborative data science team.
 
@@ -20,11 +19,13 @@ description: 'At RStudio, we believe open source, code-first data science framew
 
 
   If you enjoyed this, you might want to attend our Data Science Hangouts. Every Thursday at 12:00 noon ET, current and aspiring data science leaders come together on an open zoom call to casually discuss data science, no registration required. Add the Data Science Hangout to my weekly calendar: https://www.addevent.com/event/Qv9211919'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'Community Conversation: Hiring Great Data Science Teams'
 
 external:  # updated automatically, do not edit

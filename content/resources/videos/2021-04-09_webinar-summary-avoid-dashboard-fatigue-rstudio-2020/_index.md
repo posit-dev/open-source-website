@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-04-09'
 description: '0:00 Introduction
 
@@ -37,6 +36,7 @@ description: '0:00 Introduction
   About Rich:
 
   My background is in programming, data analysis, and data visualization. Much of my current work involves a combination of data acquisition, statistical programming, tools development, and visualizing the results. I love creating software that helps people accomplish things. I regularly update several R package projects (all available on GitHub). One such package is called DiagrammeR and it''s great for creating network graphs and performing analyses on the graphs. One of the big draws for open-source development is the collaboration that comes with the process. I encourage anyone interested to ask questions, make recommendations, or even help out if so inclined!'
+image: thumbnail.jpg
 people:
 - Rich Iannone
 resource_type: video
@@ -46,6 +46,51 @@ software:
 - gt
 - rstudio
 - webinars
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Webinar Summary | Avoid Dashboard Fatigue | RStudio (2020)
 
 external:  # updated automatically, do not edit

@@ -1,13 +1,14 @@
 ---
-image: thumbnail.jpg
 date: '2025-01-15'
 description: "In this live event, we will utilize the Posit Workbench Native App to demonstrate that macroeconomic research can be run in the Snowflake cloud but powered by R and RStudio. \n\nStarting with data sourced from the Snowflake marketplace, we will import, transform, visualize, and, finally, model data using the Orbital framework to push tidymodels down to the cloud. This is full-stack, R-driven macroeconomic research in the cloud.\n\n\U0001F4CC Add the event to your calendar: https://evt.to/eugmedshw\n\U0001F4A1 Learn more about the Snowflake and Posit partnership: https://posit.co/use-cases/snowflake/"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - tidymodels
+tags: []
 title: 'The Power of Snowflake and Posit Workbench: Macroeconomic Data Exploration in the Cloud'
 
 external:  # updated automatically, do not edit

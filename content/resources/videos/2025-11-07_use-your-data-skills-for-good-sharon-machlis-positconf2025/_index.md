@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Use Your Data Skills for Good: Ideas for Community Service
 
@@ -21,10 +20,18 @@ description: 'Use Your Data Skills for Good: Ideas for Community Service
 
 
   📁 Materials - https://github.com/smach/positconf_2025 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Use Your Data Skills for Good (Sharon Machlis) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

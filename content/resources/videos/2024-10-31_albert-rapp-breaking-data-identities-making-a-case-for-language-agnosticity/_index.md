@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: Talk by Albert Rapp, https://albert-rapp.de/
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Rapp
+tags: []
 title: 'Albert Rapp - Breaking data identities: Making a case for language-agnosticity'
 
 external:  # updated automatically, do not edit

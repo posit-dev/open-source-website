@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-18'
 description: 'What are the critical factors for successful uptake of an application?
 
@@ -23,6 +22,7 @@ description: 'What are the critical factors for successful uptake of an applicat
   ⬢ RStudio Connect: https://www.rstudio.com/products/connect/
 
   ⬢ CRAN Task View for Reproducible Research: https://cran.r-project.org/web/views/ReproducibleResearch.html'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -30,6 +30,7 @@ software:
 - rstudio
 - Shiny
 - shinyapps
+tags: []
 title: Open Source Environmental Monitoring with Shiny! | Wayne Jones, Shell
 
 external:  # updated automatically, do not edit

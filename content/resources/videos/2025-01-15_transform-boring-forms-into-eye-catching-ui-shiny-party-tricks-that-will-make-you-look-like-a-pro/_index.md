@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-01-15'
 description: 'Learn how to elevate your Shiny forms from basic to professional with dynamic accordions. This tutorial demonstrates how to implement intelligent form organization and visual feedback using Shiny''s accordion components. We cover both basic accordion implementation and advanced dynamic features including status indicators, automatic title updates, and section validation. Perfect for developers looking to enhance their Shiny applications with modern, user-friendly form interfaces.
 
@@ -49,11 +48,57 @@ description: 'Learn how to elevate your Shiny forms from basic to professional w
   2:55 - Documentation resources
 
   3:18 - Conclusion'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'Transform Boring Forms into Eye-Catching UI: Shiny Party Tricks That Will Make You Look Like a Pro 🎉'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Championing modern science workflows to benefit dairy farmers
 
@@ -11,10 +10,18 @@ description: 'Championing modern science workflows to benefit dairy farmers
 
 
   Dairy research faces data volume and variability challenges. DairyNZ''s Modern Science Workflows project addressed this via infrastructure, capability, and business disciplines. Infrastructure: Snowflake cloud data warehouse and Posit Workbench for R. Capability: R data science courses (Uni of Waikato & internal). Business: Meetings, documented code, best practices, and moving towards open science with GitHub at organisational level. Results: We have enabled large dataset projects utilising machine learning which would not have been possible before (e.g., animal sensor data analysis). Training has been well-received. Modern workflows enable reproducibility, and data science skills should become standard scientific training. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Championing modern science workflows to benefit dairy farmers (Mark Neal, DairyNZ)
 
 external:  # updated automatically, do not edit

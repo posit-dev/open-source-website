@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'I will share how we published an R Shiny application to AWS, the decisions we made, and what we learned in the process.
 
@@ -14,12 +13,14 @@ description: 'I will share how we published an R Shiny application to AWS, the d
 
 
   Session: Data science in production'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Ivonne Carrillo Dominguez | R Shiny - From Conception to the Cloud | Posit (2022)
 
 external:  # updated automatically, do not edit

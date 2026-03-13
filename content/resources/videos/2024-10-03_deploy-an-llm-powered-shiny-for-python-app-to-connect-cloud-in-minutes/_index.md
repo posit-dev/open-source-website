@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-03'
 description: 'Connect Cloud lets you quickly deploy data applications and documents from public GitHub repositories for Python and R projects.
 
@@ -10,12 +9,58 @@ description: 'Connect Cloud lets you quickly deploy data applications and docume
   → Signup for a free Connect Cloud account → https://connect.posit.cloud/
 
   → View the how-to guide → https://docs.posit.co/connect-cloud/how-to/python/llm-shiny-python.html'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny for Python
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Deploy an LLM-powered Shiny for Python app to Connect Cloud in minutes!
 
 external:  # updated automatically, do not edit

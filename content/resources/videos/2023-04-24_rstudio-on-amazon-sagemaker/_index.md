@@ -1,12 +1,57 @@
 ---
-image: thumbnail.jpg
 date: '2023-04-24'
 description: "Working with analysis or a data set that exceeds the capabilities of your local workstation? One simple option for scaling up is RStudio on Amazon SageMaker. \n\nSee how you can get started quickly.\n\nLink to learn more: https://docs.aws.amazon.com/sagemaker/latest/dg/rstudio.html"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: RStudio on Amazon SageMaker
 
 external:  # updated automatically, do not edit

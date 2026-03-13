@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-11'
 description: "Improvements made to {gt} in 2023 - Richard Iannone\n\nPresentation slides available at https://github.com/rich-iannone/presentations/tree/main/2023-10-23-rpharma_gt_2023 \n\nBio: My background is in programming, data analysis, and data visualization. Much of my current software engineering work on R packages is intended to make working with data easier. I truly believe that with the right approach, tools like these can be both powerful and easy to use.\n\nPresented at the 2023 R/Pharma Conference (October 24, 2023)"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - gt
+tags: []
 title: Richard Iannone -  Improvements made to {gt} in 2023
 
 external:  # updated automatically, do not edit

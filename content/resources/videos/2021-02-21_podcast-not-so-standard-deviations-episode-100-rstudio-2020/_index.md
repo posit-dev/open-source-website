@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-21'
 description: 'Featuring: Hilary Parker & Roger Peng
 
@@ -15,11 +14,59 @@ description: 'Featuring: Hilary Parker & Roger Peng
   About Roger:
 
   Roger D. Peng is a Professor of Biostatistics at the Johns Hopkins Bloomberg School of Public Health where his research focuses on the development of statistical methods for addressing environmental health problems. He is the author of the popular book R Programming for Data Science and nine other books on data science and statistics. He is also the co-creator of the Johns Hopkins Data Science Specialization, the Simply Statistics blog where he writes about statistics for the public, the Not So Standard Deviations podcast with Hilary Parker, and The Effort Report podcast with Elizabeth Matsui. Roger is a Fellow of the American Statistical Association and is the recipient of the Mortimer Spiegelman Award from the American Public Health Association, which honors a statistician who has made outstanding contributions to public health. He can be found on Twitter and GitHub at @rdpeng.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- hilary parker
+- roger peng
 title: Podcast | Not So Standard Deviations Episode 100 | RStudio (2020)
 
 external:  # updated automatically, do not edit

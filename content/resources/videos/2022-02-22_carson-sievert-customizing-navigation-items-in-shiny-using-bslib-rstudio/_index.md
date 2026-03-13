@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-02-22'
 description: '00:00 Introduction
 
@@ -43,6 +42,7 @@ description: '00:00 Introduction
   Content: Carson Sievert (@cpsievert)
 
   Design & editing: Jesse Mostipak (@kierisi)'
+image: thumbnail.jpg
 people:
 - Carson Sievert
 resource_type: video
@@ -54,6 +54,53 @@ software:
 - pkgdown
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- bslib
+- carson sievert
 title: Carson Sievert || Customizing Navigation Items in Shiny using {bslib} || RStudio
 
 external:  # updated automatically, do not edit

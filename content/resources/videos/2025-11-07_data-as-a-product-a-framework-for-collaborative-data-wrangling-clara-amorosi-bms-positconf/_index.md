@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Data-as-a-product: A framework for collaborative data wrangling
 
@@ -14,10 +13,17 @@ description: 'Data-as-a-product: A framework for collaborative data wrangling
 
 
   📁 GitHub Repo - https://github.com/amashadihossein/daapr posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: 'Data-as-a-product: A framework for collaborative data wrangling (Clara Amorosi, BMS) | posit::conf'
 
 external:  # updated automatically, do not edit

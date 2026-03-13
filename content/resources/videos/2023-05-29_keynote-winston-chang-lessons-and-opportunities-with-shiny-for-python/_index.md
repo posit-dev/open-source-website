@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-29'
 description: 'About the keynote:
 
@@ -9,6 +8,7 @@ description: 'About the keynote:
   Speaker''s bio:
 
   Winston Chang is a software engineer at Posit, PBC, who has served in various roles on the Shiny team, including team lead. He has contributed to many widely-used packages in the R ecosystem, including Shiny, devtools, and ggplot2, and is the creator of several packages, including shinydashboard, R6, and profvis. Recently he has been busy working on Shiny and Shinylive for Python. Winston has a Ph.D. in psychology from Northwestern University and is the author of the R Graphics Cookbook, published by O’Reilly Media.'
+image: thumbnail.jpg
 people:
 - Shiny Team
 - Winston Chang
@@ -23,6 +23,7 @@ software:
 - Shiny
 - shinydashboard
 - shinylive
+tags: []
 title: 'Keynote, Winston Chang: Lessons and opportunities with Shiny for Python'
 
 external:  # updated automatically, do not edit

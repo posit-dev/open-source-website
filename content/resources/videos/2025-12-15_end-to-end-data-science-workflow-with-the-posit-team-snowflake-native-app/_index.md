@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-15'
 description: 'Posit Product Manager, Chetan Thapar, demonstrates how the Posit Team Native App for Snowflake delivers an end-to-end workflow—exploration, iteration, and deployment—in minutes, not weeks. Built directly inside the Snowflake security perimeter, the app gives data teams instant access to governed data, managed infrastructure, and familiar tools like Posit Workbench, Connect, and Shiny for Python.
 
@@ -10,6 +9,7 @@ description: 'Posit Product Manager, Chetan Thapar, demonstrates how the Posit T
   Learn more about the Posit partnership with Snowflake: https://posit.co/use-cases/snowflake/
 
   Get the Posit Team Native App: https://pos.it/Team-Native-App-Snowflake'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -17,6 +17,7 @@ software:
 - positron
 - Shiny for Python
 - Shiny
+tags: []
 title: End-to-End Data Science Workflow with the Posit Team Snowflake Native App
 
 external:  # updated automatically, do not edit

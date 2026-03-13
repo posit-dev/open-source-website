@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Web applications with Shiny and React (and AI)
 
@@ -18,6 +17,7 @@ description: 'Web applications with Shiny and React (and AI)
   📁 CLI tool - https://github.com/wch/create-shiny-react-app
 
   📁 Anthropic Dashboard - https://github.com/wch/anthropic_dashboard posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Winston Chang
 resource_type: video
@@ -25,6 +25,12 @@ resources: []
 software:
 - cli
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Web applications with Shiny and React and AI (Winston Chang, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

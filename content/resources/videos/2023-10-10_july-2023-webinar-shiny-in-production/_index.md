@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-10'
 description: "Shiny in Production   \nWednesday 19th July 2023\nWith Ryan Johnson, Data Science Advisor at Posit\n\nAbout the webinar:\nIn this session, we’ll discuss how to create production-ready Shiny apps in R that can scale to thousands of concurrent users."
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: 'July 2023 Webinar: Shiny in Production'
 
 external:  # updated automatically, do not edit

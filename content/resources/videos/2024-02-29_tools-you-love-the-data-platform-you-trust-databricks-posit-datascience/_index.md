@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-29'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Tools you love. The data platform you trust. #databricks #posit #datascience'
 
 external:  # updated automatically, do not edit

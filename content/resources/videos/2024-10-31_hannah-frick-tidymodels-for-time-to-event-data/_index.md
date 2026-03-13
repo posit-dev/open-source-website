@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Time-to-event data can show up in a broad variety of contexts: the event may be a customer churning, a machine needing repairs or replacement, a pet being adopted, or a complaint being dealt with. Survival analysis is a methodology that allows you to model both aspects, the time and the event status, at the same time. tidymodels now provides support for this kind of data across the framework.
 
@@ -11,12 +10,14 @@ description: 'Time-to-event data can show up in a broad variety of contexts: the
   Slides: https://hfrick.github.io/2024-posit-conf/
 
   GitHub Repo: https://github.com/hfrick/2024-posit-conf'
+image: thumbnail.jpg
 people:
 - Hannah Frick
 resource_type: video
 resources: []
 software:
 - tidymodels
+tags: []
 title: Hannah Frick - tidymodels for time-to-event data
 
 external:  # updated automatically, do not edit

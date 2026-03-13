@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-08-04'
 description: 'Moving to Quarto from RMarkdown and Python Jupyter Notebooks by Daniel Chen
 
@@ -14,6 +13,7 @@ description: 'Moving to Quarto from RMarkdown and Python Jupyter Notebooks by Da
 
 
   Presented at the 2023 New York R Conference (July 13, 2023)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -21,6 +21,7 @@ software:
 - Quarto
 - rmarkdown
 - rstudio
+tags: []
 title: Daniel Chen - Moving to Quarto from RMarkdown and Python Jupyter Notebooks
 
 external:  # updated automatically, do not edit

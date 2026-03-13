@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-10-01'
 description: 'Watch Charlotte Wickham''s Positron Quarto tutorial to see the full process of creating, rendering, and publishing your first Quarto document with ease.
 
@@ -32,6 +31,7 @@ description: 'Watch Charlotte Wickham''s Positron Quarto tutorial to see the ful
 
 
   #Quarto #Positron #DataScience #QuartoTutorial #PositronIDE #DataVisualization #Publishing #RStats #Python #CodingWorkflow'
+image: thumbnail.jpg
 people:
 - Charlotte Wickham
 resource_type: video
@@ -40,6 +40,7 @@ software:
 - cli
 - positron
 - Quarto
+tags: []
 title: Create a Quarto Document in Positron (Python Example)
 
 external:  # updated automatically, do not edit

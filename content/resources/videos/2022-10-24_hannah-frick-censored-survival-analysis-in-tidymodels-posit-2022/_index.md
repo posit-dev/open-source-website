@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'tidymodels is extending support for survival analysis and censored is a new parsnip extension package for survival models. It offers various types of models: parametric models, semi-parametric models like the Cox model, and tree- based models like decision trees, boosted trees, and random forests. They all come with the consistent parsnip interface so that you can focus on the modelling instead of details of the syntax. Happy modelling!
 
@@ -8,6 +7,7 @@ description: 'tidymodels is extending support for survival analysis and censored
 
 
   Session: Updates from the tidymodels team'
+image: thumbnail.jpg
 people:
 - Hannah Frick
 resource_type: video
@@ -17,6 +17,7 @@ software:
 - rstudio
 - rstudio-conf
 - tidymodels
+tags: []
 title: Hannah Frick | Censored - Survival Analysis in Tidymodels | Posit (2022)
 
 external:  # updated automatically, do not edit

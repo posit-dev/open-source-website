@@ -1,12 +1,59 @@
 ---
-image: thumbnail.jpg
 date: '2020-11-29'
 description: Steve Weston's foreach package defines a simple but powerful framework for map/reduce and list-comprehension-style parallel computation in R. One of its great innovations is the ability to support many interchangeable back-end computing systems so that *the same R code* can run sequentially, in parallel on your laptop, or across a supercomputer. Recent new packages like future package define elegant new programming approaches that can use the foreach framework to run across a wide variety of parallel computing systems. This talk introduces the basics of foreach and future packages with examples using a variety of back-end systems including MPI, Redis and R's default parallel package clusters.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio::conf(2020)
+- Bryan Lewis
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Bryan Lewis | Parallel computing with R using foreach, future, and other packages | RStudio (2020)
 
 external:  # updated automatically, do not edit

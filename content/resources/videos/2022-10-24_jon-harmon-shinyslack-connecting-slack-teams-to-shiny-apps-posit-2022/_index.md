@@ -1,15 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Slack is a useful communication tool for communities and businesses. Integrating it with Shiny can make it even more useful. I''ll show how my {shinyslack} package allows for connections between Shiny apps and Slack teams. I’ll show how users can wrap their existing Shiny UIs to quickly and easily add Slack authentication to their Shiny apps. I''ll also demonstrate how we’ve used {shinyslack} to manage and streamline the R4DS Online Learning Community, and how other R users might make the most of their Slack workspaces.
 
 
   Session: Lightning Talks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: 'Jon Harmon | {shinyslack}: Connecting Slack Teams to Shiny Apps | Posit (2022)'
 
 external:  # updated automatically, do not edit

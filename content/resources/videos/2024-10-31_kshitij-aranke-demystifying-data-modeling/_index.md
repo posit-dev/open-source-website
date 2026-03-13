@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: "Data Modeling – what is it, why is it useful, and how dbt makes it easy. \n\n As a previous R user, I was very skeptical of the value of data modeling when I first came across it. But over time, I realized that it helped organizations scale up analytics practices by standardizing consistent definitions for metrics, improving debuggability for data pipelines, and even enabling rapid experimentation. I want to share this magic with the posit::conf community, and especially how dbt is a tool that's oriented around this practice.\n\nTalk by Kshitij Aranke"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Kshitij Aranke - Demystifying Data Modeling
 
 external:  # updated automatically, do not edit

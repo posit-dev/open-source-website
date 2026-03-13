@@ -1,11 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2017-06-16'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- Winston Chang
+- Shiny
+- Shiny Dashboards
+- R Programming
 title: Interactive Graphics
 
 external:  # updated automatically, do not edit

@@ -1,12 +1,57 @@
 ---
-image: thumbnail.jpg
 date: '2023-01-10'
 description: "More computing power. More possibilities. Less hassle. \n\nPosit Workbench is the preferred development environment for R and Python developers.\n\nCode in R. Code in Python. Develop in Jupyter, VSCode, and of course, the RStudio IDE. \n\nBuild all of the data products you can imagine: Reports, Dashboards, Applications, and APIs, with more computing power and no additional strain on IT. \n\nFor more information: Posit.co/products/enterprise/workbench"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Posit Workbench | Build Data Products in R & Python Using Jupyter, VSCode, and RStudio IDE
 
 external:  # updated automatically, do not edit

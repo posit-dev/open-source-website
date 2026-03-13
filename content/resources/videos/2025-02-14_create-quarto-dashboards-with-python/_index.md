@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-02-14'
 description: 'Learn how to create Quarto dashboards with Python! Senior Product Marketing Manager Isabella Velásquez walks through building a Quarto dashboard from scratch, using water insecurity data from the TidyTuesday project. You''ll learn how to structure a Quarto document, preview dashboards, and customize layouts and themes. See Isabella''s code here: https://github.com/ivelasq/water-insecurity-dashboard And the dashboard here: https://ivelasq-water-insecurity-dashboard.share.connect.posit.cloud/
 
@@ -21,12 +20,59 @@ description: 'Learn how to create Quarto dashboards with Python! Senior Product 
 
 
   #pythoncontent'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - python-tidytuesday
 - Quarto
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- open source
+- OSS
+- reticulate
+- tidy tuesday
+- pythoncontent
 title: Create Quarto dashboards with Python
 
 external:  # updated automatically, do not edit

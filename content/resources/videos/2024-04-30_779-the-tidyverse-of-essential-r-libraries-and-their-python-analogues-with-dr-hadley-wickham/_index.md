@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-30'
 description: '#Tidyverse #RProgramming #RLibraries
 
@@ -30,6 +29,7 @@ description: '#Tidyverse #RProgramming #RLibraries
 
 
   Additional materials: https://www.superdatascience.com/779'
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 resource_type: video
@@ -37,6 +37,31 @@ resources: []
 software:
 - ggplot2
 - tidyverse
+tags:
+- The Tidyverse of Essential R Libraries and their Python Analogues
+- tidyverse
+- essential r libraries
+- r programming
+- python a
+- r python data science
+- posit rstudio
+- ggplot2
+- how to contribute to r open source community
+- arrow
+- dbplyr
+- testthat r
+- duckdb
+- keras for r
+- plotnine
+- siuba
+- quarto
+- quarto rstudio
+- shiny r programming
+- shiny for python
+- hadley wickham
+- hadley wickham r
+- data science podcast
+- jon krohn
 title: '779: The Tidyverse of Essential R Libraries and their Python Analogues — with Dr. Hadley Wickham'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-10-29'
 description: 'Over the past nine years, the R package {plumber} has simplified the creation of web APIs using annotations over existing R source code with roxygen2-like comments. During this time, the community has gathered valuable insights and identified numerous areas for improvement. To invest in a way forward, a new package called {plumber2} has been created.
 
@@ -8,6 +7,7 @@ description: 'Over the past nine years, the R package {plumber} has simplified t
 
 
   By incorporating these improvements and embracing a modern framework, {plumber2} offers a sustainable path forward for building web APIs in R. This new approach avoids the need for short-term fixes and ensures that {plumber2} can continue to evolve and adapt to the changing needs of developers.'
+image: thumbnail.jpg
 people:
 - Barret Schloerke
 resource_type: video
@@ -16,6 +16,7 @@ software:
 - plumber
 - plumber2
 - roxygen2
+tags: []
 title: '{plumber2}: Streamlining Web API Development in R - Barret Schloerke'
 
 external:  # updated automatically, do not edit

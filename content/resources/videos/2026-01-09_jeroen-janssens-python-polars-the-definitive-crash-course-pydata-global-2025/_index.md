@@ -1,12 +1,27 @@
 ---
-image: thumbnail.jpg
 date: '2026-01-09'
 description: Polars is a lightning fast DataFrame library that is taking the data science community by storm. Its elegant and expressive API makes analyses pleasant to write and efficient to run. In this workshop, we’ll demonstrate how Polars enables data scientists to go from raw data to reports–by reading, transforming, and visualizing data.
+image: thumbnail.jpg
 people:
 - Jeroen Janssens
 resource_type: video
 resources: []
 software: []
+tags:
+- Python
+- Tutorial
+- Education
+- NumFOCUS
+- PyData
+- Opensource
+- learn
+- software
+- python 3
+- Julia
+- coding
+- learn to code
+- how to program
+- scientific programming
 title: 'Jeroen Janssens - Python Polars: The Definitive Crash Course - PyData Global 2025'
 
 external:  # updated automatically, do not edit

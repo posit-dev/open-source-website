@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-12'
 description: 'We were recently joined by Gerard Sentveld, Director Data Analytics Operational Risk Management at Prudential to chat about how to effectively manage data science initiatives in a highly matrixed organization.
 
@@ -24,10 +23,12 @@ description: 'We were recently joined by Gerard Sentveld, Director Data Analytic
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Gerard Sentveld @ Prudential | Data Science Hangout
 
 external:  # updated automatically, do not edit

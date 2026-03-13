@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-08-28'
 description: 'This is a great feature for any long running scripts you may have, including, for example, a machine learning training step. It also allows you to run multiple jobs simultaneously.
 
@@ -8,11 +7,57 @@ description: 'This is a great feature for any long running scripts you may have,
 
 
   And workbench jobs run as a new session, either on the local server, or off host if you''re running in a multi server or clustered environment.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: RStudio IDE | Background and Posit Workbench Jobs
 
 external:  # updated automatically, do not edit

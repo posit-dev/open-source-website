@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Trustworthy Data Visualization
 
@@ -14,10 +13,18 @@ description: 'Trustworthy Data Visualization
 
 
   🔗 Link: Kieran Healy''s website - https://kieranhealy.org/ posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Trustworthy Data Visualization (Kieran Healy, Duke University) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

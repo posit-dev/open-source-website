@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-14'
 description: 'We were recently joined by Ben Arancibia, Director of Data Science at GSK to discuss Data Science Enablement in GSK Biostatistics, building tools, and teaching others how to use open-source tools.
 
@@ -26,10 +25,12 @@ description: 'We were recently joined by Ben Arancibia, Director of Data Science
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Ben Arancibia @ GSK | Data Science Hangout
 
 external:  # updated automatically, do not edit

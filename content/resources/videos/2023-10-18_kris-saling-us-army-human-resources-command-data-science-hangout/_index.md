@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-18'
 description: 'We were recently joined by COL Kris Saling, Director of Innovation at US Army Human Resources Command to discuss transforming human resources and talent management services for those who serve.
 
@@ -26,10 +25,12 @@ description: 'We were recently joined by COL Kris Saling, Director of Innovation
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Kris Saling @ US Army Human Resources Command | Data Science Hangout
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-02-08'
 description: 'Polars: The Blazing Fast Python Framework for Modern Clinical Trial Data Exploration - Michael Chow, Jeroen Janssens
 
@@ -19,6 +18,7 @@ description: 'Polars: The Blazing Fast Python Framework for Modern Clinical Tria
   * Examples of Great Tables and Pharma TFLs: https://github.com/machow/examples-great-tables-pharma
 
   * UV Python package manager: https://docs.astral.sh/uv'
+image: thumbnail.jpg
 people:
 - Jeroen Janssens
 - Michael Chow
@@ -27,6 +27,7 @@ resources: []
 software:
 - Great Tables
 - plotnine
+tags: []
 title: 'Polars: The Blazing Fast Python Framework for Modern Clinical Trial Data Exploration'
 
 external:  # updated automatically, do not edit

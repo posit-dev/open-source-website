@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-07-17'
 description: 'Speakers from the following organizations joined to discuss how their team''s work has evolved after learning R or Python through Posit Academy:
 
@@ -19,10 +18,12 @@ description: 'Speakers from the following organizations joined to discuss how th
   🔗 If you''d like to learn more about Posit Academy: https://posit.co/talk-to-us-about-academy/
 
   🔗 Q&A Panel Recording: https://youtube.com/live/9xTsNuLt3aQ?feature=share'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Real World Applications of Open Source in Public Health
 
 external:  # updated automatically, do not edit

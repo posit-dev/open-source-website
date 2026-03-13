@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Embarking on a data science career extends well beyond academic knowledge. In many ways, the learning has just begun. Soft skills have become increasingly valuable, with effective collaboration being essential for success. Additionally, there may be moments when advocating for your own work is crucial, turning data scientists into persuasive salespeople for their own insights and contributions. In this talk, I''ll touch on some of the aspects of a data science job that aren''t talked about as frequently, including onboarding successfully, becoming a subject matter expert, and understanding the end-to-end data workflow.
 
@@ -9,12 +8,14 @@ description: 'Embarking on a data science career extends well beyond academic kn
 
 
   Slides: https://github.com/rstudio/rstudio-conf/blob/master/2024/brandonsucher/Posit_Conf_2024_Slides.pdf'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - rstudio-conf
+tags: []
 title: 'Brandon Sucher - Beyond the Classroom: Unspoken Realities of a Data Science Career'
 
 external:  # updated automatically, do not edit

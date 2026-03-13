@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-04-01'
 description: 'We were joined by Joe Gibson, Senior Project Director at de Beaumont Foundation.
 
@@ -68,12 +67,14 @@ description: 'We were joined by Joe Gibson, Senior Project Director at de Beaumo
   LinkedIn:https://www.linkedin.com/company/rstudio
 
   Twitter: https://twitter.com/rstudio'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - tidyverse
+tags: []
 title: Data Science Hangout | Joe Gibson, de Beaumont Foundation | Collaboration Across a Team
 
 external:  # updated automatically, do not edit

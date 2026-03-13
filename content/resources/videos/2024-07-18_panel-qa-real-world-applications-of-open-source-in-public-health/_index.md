@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-07-18'
 description: 'Please join us for the live Q&A session at ~11:25 am ET for the July 17th Event: Real World Applications of Open Source in Public Health
 
@@ -21,10 +20,12 @@ description: 'Please join us for the live Q&A session at ~11:25 am ET for the Ju
 
 
   If you''d like to learn more about Posit Academy, you can book a meeting with the Posit team here: https://posit.co/talk-to-us-about-academy/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Panel Q&A: Real World Applications of Open Source in Public Health'
 
 external:  # updated automatically, do not edit

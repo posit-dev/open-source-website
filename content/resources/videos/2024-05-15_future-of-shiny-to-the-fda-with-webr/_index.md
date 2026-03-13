@@ -1,12 +1,57 @@
 ---
-image: thumbnail.jpg
 date: '2024-05-15'
 description: 'For more on How Pharma is Pioneering WebAssembly with webR & Shiny for FDA Clinical Trial Submissions: https://posit.co/blog/webr-fda-pilot/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Future of Shiny to the FDA with WebR ✨
 
 external:  # updated automatically, do not edit

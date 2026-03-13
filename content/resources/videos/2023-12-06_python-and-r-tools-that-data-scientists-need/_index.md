@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-06'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Python and R tools that data scientists need
 
 external:  # updated automatically, do not edit

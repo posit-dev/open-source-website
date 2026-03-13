@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-10-28'
 description: 'This talk introduces ''quickr'', an R package designed to make numerical R code faster by translating R functions to Fortran. While R code offers great flexibility, it often comes at the expense of performance, especially for computationally intensive tasks. To achieve better speed, users typically need to rewrite performance-critical code in compiled languages like C or Fortran, which adds complexity and creates maintenance overhead.
 
@@ -11,10 +10,12 @@ description: 'This talk introduces ''quickr'', an R package designed to make num
 
 
   https://github.com/t-kalinowski/quickr'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'quickr: Translate R to Fortran for Improved Performance - Tomaz Kalinowski'
 
 external:  # updated automatically, do not edit

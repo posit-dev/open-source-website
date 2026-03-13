@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2024-01-17'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: 'How to create engaging technical slides using Quarto! #quarto #datascience #code #opensource'
 
 external:  # updated automatically, do not edit

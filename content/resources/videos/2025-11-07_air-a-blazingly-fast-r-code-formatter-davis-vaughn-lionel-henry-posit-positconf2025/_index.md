@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Air - A blazingly fast R code formatter
 
@@ -17,6 +16,7 @@ description: 'Air - A blazingly fast R code formatter
 
 
   Once you start using Air, you''ll never worry about code style ever again! posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Davis Vaughan
 - Lionel Henry
@@ -26,6 +26,12 @@ software:
 - air
 - positron
 - rstudio
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Air - A blazingly fast R code formatter (Davis Vaughn & Lionel Henry, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

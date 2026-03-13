@@ -1,16 +1,17 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Are you a bilingual data scientist who wants to use Python in RStudio products? Or do you have colleagues who use Python for data science? In this talk, we will present an end to end data science use case including automated jobs, model training and monitoring, APIs, and interactive dashboards, entirely built and deployed in Python with RStudio Pro products.
 
 
   Session: Some of my best friends use Python'
+image: thumbnail.jpg
 people:
 - RStudio Team
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Gagandeep Singh & Xu Fei | Yes, you can use Python with RStudio Team! | RStudio (2022)
 
 external:  # updated automatically, do not edit

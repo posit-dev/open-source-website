@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-02-25'
 description: 'Stop guessing which channels drive growth.
 
@@ -45,6 +44,7 @@ description: 'Stop guessing which channels drive growth.
   Full Python Tutorial: Bayesian Marketing Mix Modeling (MMM) SPECIAL GUEST: PyMC Labs, Matt Dancho (https://www.youtube.com/watch?v=lJ_qq_IVUgg)
 
   Reading MMM Outputs: Dashboards and Decisions for Small Teams, SmartSMSSolutions (https://smartsmssolutions.com/resources/blog/business/reading-mmm-dashboards-article)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -52,6 +52,7 @@ software:
 - Quarto
 - Shiny
 - tidymodels
+tags: []
 title: Strategic Budget Optimization through Marketing Mix Modeling (MMM)
 
 external:  # updated automatically, do not edit

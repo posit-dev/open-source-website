@@ -1,12 +1,15 @@
 ---
-image: thumbnail.jpg
 date: '2014-06-26'
 description: An Overview of the RStudio IDE
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- RStudio
+- R Programming
 title: RStudio Overview - 1:30
 
 external:  # updated automatically, do not edit

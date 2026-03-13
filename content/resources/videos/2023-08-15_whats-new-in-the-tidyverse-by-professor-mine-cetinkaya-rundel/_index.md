@@ -1,13 +1,14 @@
 ---
-image: thumbnail.jpg
 date: '2023-08-15'
 description: ''
+image: thumbnail.jpg
 people:
 - Mine Çetinkaya-Rundel
 resource_type: video
 resources: []
 software:
 - tidyverse
+tags: []
 title: What's new in the tidyverse? by Professor Mine Çetinkaya-Rundel
 
 external:  # updated automatically, do not edit

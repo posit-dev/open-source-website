@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-12-20'
 description: 'In this video we use real-world Airbnb data to put together a dashboard with Quarto & Python. We start with the basics of layout and simple components and then progress to more advanced topics such as integrating Shiny within your Quarto doc.
 
@@ -44,12 +43,37 @@ description: 'In this video we use real-world Airbnb data to put together a dash
 
 
   #python #quarto #dashboards #pythoncontent'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - Shiny
+tags:
+- data science
+- machine learning
+- python
+- stats
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- shiny
+- rmarkdown
+- package manager
+- interoperability
+- serious data science
+- github
+- data wrangling
+- odbc
+- statistics
+- programming education
+- open source
+- OSS
+- quarto
 title: Real-World Python Dashboard Project w/ Quarto! (Airbnb Review Analysis)
 
 external:  # updated automatically, do not edit

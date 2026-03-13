@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-01-07'
 description: 'The future of analytics isn’t just about bigger models — it’s about building smarter, more interoperable data systems. Wes McKinney, Principal Architect of Posit PBC, Chief Scientist of Voltron Data and a General Partner at Composed Ventures, joins us to explore how the modern data stack is evolving and what it means for the future of analytics. Wes reflects on his journey building pandas and Apache Arrow, sharing how open-source ecosystems grow, transform and shape the way organizations work with data today. Wes also highlights the rising importance of semantic layers, agentic workflows and defensive coding practices as teams embrace AI-driven development.
 
@@ -116,10 +115,17 @@ description: 'The future of analytics isn’t just about bigger models — it’
 
 
   #DataStrategy #DataManagement #DataMastersPodcast'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- big data
+- data science
+- data analytics
+- machine learning
+- ai
 title: How Open Source, Python and AI Are Shaping the Data Future with Wes McKinney
 
 external:  # updated automatically, do not edit

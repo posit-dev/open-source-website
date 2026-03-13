@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-03-02'
 description: 'Full title: Sharing on Short Notice: How to Get Your Teaching Materials Online With R Markdown
 
@@ -15,12 +14,60 @@ description: 'Full title: Sharing on Short Notice: How to Get Your Teaching Mate
   About Desirée:
 
   I am neuroscience PhD student at Emory University and also a former summer intern at RStudio. This past summer, I worked with Alison Hill to develop a handbook filled with practical advice and resources for educators who teach with R and RStudio. I enjoy spending my time on collaborative projects that involve coding, teaching, and illustration.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - tidyverse
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- alison hill
+- desiree de leon
+- reproducibility
 title: Alison Hill & Desirée De Leon | How to Get Your Materials Online With R Markdown | RStudio (2020)
 
 external:  # updated automatically, do not edit

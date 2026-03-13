@@ -1,12 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2014-06-26'
 description: Overview of Shiny Pro
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- R Programming
+- RStudio
+- Visualization (Website Category)
 title: Shiny Pro Overview
 
 external:  # updated automatically, do not edit

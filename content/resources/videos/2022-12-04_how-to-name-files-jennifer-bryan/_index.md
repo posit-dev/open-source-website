@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-12-04'
 description: 'Low-tech common sense about filenames. The holy trinity is:
 
@@ -14,11 +13,13 @@ description: 'Low-tech common sense about filenames. The holy trinity is:
 
 
   https://normconf.com/'
+image: thumbnail.jpg
 people:
 - Jenny Bryan
 resource_type: video
 resources: []
 software: []
+tags: []
 title: How to name files  - Jennifer Bryan
 
 include:

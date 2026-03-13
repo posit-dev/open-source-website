@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Theming Made Easy: Introducing brand.yml
 
@@ -22,6 +21,7 @@ description: 'Theming Made Easy: Introducing brand.yml
   📁 Materials - https://github.com/gadenbuie/brand-yml-posit-conf-2025
 
   🛝 Slides - https://pkg.garrickadenbuie.com/brand-yml-posit-conf-2025 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Garrick Aden-Buie
 resource_type: video
@@ -30,6 +30,12 @@ software:
 - brand-yml
 - Quarto
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: 'Theming Made Easy: Introducing brand.yml (Garrick Aden-Buie, Posit) | posit::conf(2025)'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-08-16'
 description: 'RStudio Meetup: Functional Data Analysis (Part 2)
 
@@ -45,11 +44,13 @@ description: 'RStudio Meetup: Functional Data Analysis (Part 2)
   Speaker Bio:
 
   Matt is an associate research data scientist supporting new product development within the Packaging and Specialty Plastics business at The Dow Chemical Company. His specialty areas include functional data analysis, Bayesian hypothesis testing, computational statistics, and experimental design. Prior to joining Dow he earned a BS in Statistics and MS in Biostatistics at Grand Valley State University and a PhD in Statistics from Texas A&M University'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Intro to Functional Data Analysis - Part 2 | Matthew Malloure, Dow Chemical
 
 external:  # updated automatically, do not edit

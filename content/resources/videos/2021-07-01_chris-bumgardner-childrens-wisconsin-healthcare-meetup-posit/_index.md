@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-07-01'
 description: 'Cultivating an R-based Analytic Practice in Healthcare
 
@@ -30,6 +29,7 @@ description: 'Cultivating an R-based Analytic Practice in Healthcare
 
 
   RStudio Enterprise Community Meetup for future events: https://www.meetup.com/RStudio-Enterprise-Community-Meetup'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -37,6 +37,7 @@ software:
 - rmarkdown
 - rstudio
 - Shiny
+tags: []
 title: Chris Bumgardner, Children’s Wisconsin || Healthcare Meetup || Posit
 
 external:  # updated automatically, do not edit

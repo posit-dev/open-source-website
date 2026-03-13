@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-10-28'
 description: 'In Python, Rust, Go, and many other languages, code formatters are widely loved. They run on every save, on every pull request, and in git pre-commit hooks to ensure code consistently looks its best at all times.
 
@@ -13,6 +12,7 @@ description: 'In Python, Rust, Go, and many other languages, code formatters are
   https://www.tidyverse.org/blog/2025/02/air/
 
   https://github.com/posit-dev/air'
+image: thumbnail.jpg
 people:
 - Davis Vaughan
 - Lionel Henry
@@ -24,6 +24,7 @@ software:
 - rstudio
 - tidyverse
 - tidyverse.org
+tags: []
 title: 'Air: A blazingly fast R code formatter - Davis Vaughan, Lionel Henry'
 
 external:  # updated automatically, do not edit

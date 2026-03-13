@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-31'
 description: 'Version Control and RStudio
 
@@ -11,11 +10,13 @@ description: 'Version Control and RStudio
   About the webinar:
 
   In this 1-hour training, we’ll discuss what are version control and git, setting up Git, RStudio Projects + Version Control, RStudio IDE git integrations, and Git-backed deployment to Posit Connect.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'May 2023 Webinar: Version Control and RStudio'
 
 external:  # updated automatically, do not edit

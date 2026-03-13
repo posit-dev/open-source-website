@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-16'
 description: "Learning from our first *open week*, we've decided to hold these open weeks occasionally where we all are the featured leaders for the week, asking questions to each other. \n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.posit.co\nLinkedIn: https://www.linkedin.com/company/posit-software\nTwitter: https://twitter.com/posit_pbc\n\nTo join future data science hangouts, add to your calendar here: pos.it/dsh \n\nWe'd love to have you join us!\n\nThanks for hanging out with us! \U0001F49B"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Data Science Hangout featuring all of us!
 
 external:  # updated automatically, do not edit

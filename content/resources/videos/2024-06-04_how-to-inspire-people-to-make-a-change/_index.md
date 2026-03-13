@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-04'
 description: 'Key takeaways from our conversation on the path to effective data stewardship:
 
@@ -17,10 +16,56 @@ description: 'Key takeaways from our conversation on the path to effective data 
 
 
   5. Implementing effective data stewardship is a journey with companies at all different stages. Those further along the journey may have teams and infrastructure dedicated to this, along with executive buy-in. Others are working to make it happen at the individual level – where it often starts with writing down the definitions of your data (who created it, when it was sourced, intended use, etc.) and recognizing that someone else will use your data output, potentially not in the way you initially intended.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: How to inspire people to make a change ✨
 
 external:  # updated automatically, do not edit

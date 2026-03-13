@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2024-03-25'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: Debug your Shiny Apps with VS Code
 
 external:  # updated automatically, do not edit

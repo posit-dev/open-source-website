@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-03'
 description: 'Wes McKinney’s fingerprints are all over the modern data stack — from inventing Pandas to co-creating Arrow. But before all that, Wes was organizing speedrun communities and hacking together better ways to wrangle  datasets in finance. In this conversation, he shares his origin story and what makes good tools good.
 
@@ -26,10 +25,12 @@ description: 'Wes McKinney’s fingerprints are all over the modern data stack �
   • Shoutout to Philip Cloud, pandas’ resident pun master
 
   • Why open communities win — and what it takes to build them'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Wes Mckinney: Part 1 — Building Pandas, Arrow and a speedrunning legacy'
 
 external:  # updated automatically, do not edit

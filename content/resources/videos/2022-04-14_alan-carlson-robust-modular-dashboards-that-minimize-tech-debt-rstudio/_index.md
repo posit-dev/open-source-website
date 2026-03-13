@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-04-14'
 description: 'Robust, modular dashboards that minimize tech debt
 
@@ -41,6 +40,7 @@ description: 'Robust, modular dashboards that minimize tech debt
   ⬢ RStudio Connect: https://www.rstudio.com/products/connect/
 
   ⬢ Chat with RStudio about RStudio Team: rstd.io/chat-with-rstudio'
+image: thumbnail.jpg
 people:
 - RStudio Team
 resource_type: video
@@ -50,6 +50,7 @@ software:
 - Shiny
 - tidyverse
 - tidyverse.org
+tags: []
 title: Alan Carlson | Robust, modular dashboards that minimize tech debt | RStudio
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-02-13'
 description: 'Posit Package Manager is a repository management server to organize and centralize R and Python packages across your organization.
 
@@ -8,11 +7,57 @@ description: 'Posit Package Manager is a repository management server to organiz
 
 
   Use it to provide full mirrors of CRAN, Bioconductor, and PyPI. Restrict access to potentially harmful public packages by curating your own custom repository with only the packages you need. Support air-gapped environments by providing offline access to your package repository.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - air
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Posit Package Manager | Manage R and Python Packages Across Your Organization
 
 external:  # updated automatically, do not edit

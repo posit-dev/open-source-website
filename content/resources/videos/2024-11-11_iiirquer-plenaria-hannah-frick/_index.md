@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2024-11-11'
 description: ''
+image: thumbnail.jpg
 people:
 - Hannah Frick
 resource_type: video
 resources: []
 software: []
+tags: []
 title: IIIRqueR Plenaria Hannah Frick
 
 external:  # updated automatically, do not edit

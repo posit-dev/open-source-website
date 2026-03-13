@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-22'
 description: 'Data science teams face a challenging task. Not only do they have to gain insight from data, they also have to persuade others to make decisions based on those insights. To close this gap, teams rely on tools like dashboards, apps, and APIs. But unfortunately data organizations can suffer from their own success - how many of those dashboards are viewed once and forgotten? Is a dashboard of dashboards really the right solution? And what about that pesky, precisely formatted Excel spreadsheet finance still wants every week?
 
@@ -21,6 +20,7 @@ description: 'Data science teams face a challenging task. Not only do they have 
   About Rich:
 
   My background is in programming, data analysis, and data visualization. Much of my current work involves a combination of data acquisition, statistical programming, tools development, and visualizing the results. I love creating software that helps people accomplish things. I regularly update several R package projects (all available on GitHub). One such package is called DiagrammeR and it''s great for creating network graphs and performing analyses on the graphs. One of the big draws for open-source development is the collaboration that comes with the process. I encourage anyone interested to ask questions, make recommendations, or even help out if so inclined!'
+image: thumbnail.jpg
 people:
 - Rich Iannone
 resource_type: video
@@ -30,6 +30,54 @@ software:
 - gt
 - rstudio
 - webinars
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- dynamic emails
+- reporting
+- sean lopp
+- rich iannone
 title: Sean Lopp & Rich Iannone | Avoid Dashboard Fatigue | RStudio (2020)
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-05-17'
 description: 'Presenter: Yilong Zhang, PhD
 
@@ -28,11 +27,13 @@ description: 'Presenter: Yilong Zhang, PhD
   Link to speak with RStudio: rstd.io/chat-with-rstudio
 
   Link to slides: rstd.io/pharma-meetup-slides'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'Posit Pharma Meetup: R for Clinical Study Reports & Submission | Yilong Zhang'
 
 external:  # updated automatically, do not edit

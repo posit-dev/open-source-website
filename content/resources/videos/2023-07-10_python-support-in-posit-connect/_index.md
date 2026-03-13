@@ -1,15 +1,60 @@
 ---
-image: thumbnail.jpg
 date: '2023-07-10'
 description: 'Posit Connect: Deploy everything you create in R & Python, including interactive applications (Shiny, Streamlit, Dash), documents, notebooks, and dashboards.
 
 
   Learn more at https://posit.co/products/enterprise/connect/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Python support in Posit Connect
 
 external:  # updated automatically, do not edit

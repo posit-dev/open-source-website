@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Can I trust that package?
 
@@ -14,10 +13,18 @@ description: 'Can I trust that package?
 
 
   In this talk, I’ll discuss the litmusverse. A suite of packages for assessing a package risk. Importantly, it’s not one size fits all. Instead, it’s about defining your risk appetite and acting accordingly. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: Can I trust that package? (Colin S Gillespie, Jumping Rivers) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

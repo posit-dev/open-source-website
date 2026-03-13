@@ -1,12 +1,19 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: "Have you ever joined a Posit Data Science Hangout? In this Hangout-style event, co-hosts Rachel Dempsey & Libby Heeren moderated an hour-long Q&A with the posit::conf(2025) Virtual Day talk session speakers. Just like at the Hangout, questions came from the attendees, which is always a lot of fun! \n\nVirtual Day Speakers include:\nDylan Pieper\nGina Reynolds\nJohn Coene\nKennedy Mwavu\nRyszard Szymanski"
+image: thumbnail.jpg
 people:
 - Gina Reynolds
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: Virtual Day Q & A Hangout with Virtual Speakers | posit::conf(2025)
 
 external:  # updated automatically, do not edit

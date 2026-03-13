@@ -1,11 +1,59 @@
 ---
-image: thumbnail.jpg
 date: '2020-12-27'
 description: Use of R in the investment industry is established and growing. This talk will discuss changes seen in 15 years of practice within asset management firms. I hope discussion of lessons learned and recommendations will benefit those currently in finance and those interested in hearing how the flexibility of R manifests in the financial world.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio::conf(2020)
+- Brandon Farr
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- quant
 title: Brandon Farr | 15 Years of R in Quantitative Finance | Posit (2020)
 
 external:  # updated automatically, do not edit

@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-18'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Data Science portfolios that will get you hired 💵
 
 external:  # updated automatically, do not edit

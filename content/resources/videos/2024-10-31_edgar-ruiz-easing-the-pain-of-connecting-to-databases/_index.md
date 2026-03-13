@@ -1,10 +1,10 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Overview of the current and planned work to make it easier to connect to databases. We will review packages such as odbc, dbplyr, as well as the documentation found on our Solutions site (https://solutions.posit.co/connections/db/databases), which will soon include the best practices we find on how to connect to these vendors via Python.
 
 
   Talk by Edgar Ruiz'
+image: thumbnail.jpg
 people:
 - Edgar Ruiz
 resource_type: video
@@ -12,6 +12,7 @@ resources: []
 software:
 - dbplyr
 - odbc
+tags: []
 title: Edgar Ruiz - Easing the pain of connecting to databases
 
 external:  # updated automatically, do not edit

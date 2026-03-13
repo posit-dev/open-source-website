@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In Part 2 of our conversation with Wes McKinney, we go beyond the code and into the mission-driven world of open source funding, community-building, and product strategy. Wes talks about what it takes to make critical tools like Arrow sustainable — from pitching to mavericks at Two Sigma to navigating the politics of Apache Software Foundation governance. Also, Wes gives a peek behind the curtain on the origins of Positron. And, yeah, metal.
 
@@ -24,11 +23,13 @@ description: 'In Part 2 of our conversation with Wes McKinney, we go beyond the 
   • Day-to-day coding, advising, investing, and context-switching
 
   • Metalheads unite'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags: []
 title: 'Wes McKinney: Part 2 — The open source hustle and an insider view of Positron'
 
 external:  # updated automatically, do not edit

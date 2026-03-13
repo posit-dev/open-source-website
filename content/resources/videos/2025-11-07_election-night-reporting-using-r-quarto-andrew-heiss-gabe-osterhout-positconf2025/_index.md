@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Election Night Reporting Using R & Quarto
 
@@ -14,6 +13,7 @@ description: 'Election Night Reporting Using R & Quarto
 
 
   📁 GitHub Repo - https://github.com/andrewheiss/election-desk posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -21,6 +21,13 @@ software:
 - dbplyr
 - leaflet
 - Quarto
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: Election Night Reporting Using R & Quarto (Andrew Heiss & Gabe Osterhout) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-03-15'
 description: 'Abstract:
 
@@ -97,6 +96,7 @@ description: 'Abstract:
   RStudio conference/submit a talk: https://www.rstudio.com/conference/
 
   Recordings of all meetups: https://www.youtube.com/playlist?list=PL9HYL-VRX0oRKK9ByULWulAOO5jN70eXv'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -106,6 +106,7 @@ software:
 - rstudio
 - tidyverse
 - tidyverse.org
+tags: []
 title: George Mount | R for Excel Users - First Steps | RStudio Meetup
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-08-04'
 description: 'Slidecraft: The Art of Creating Pretty Presentations by Emil Hvitfeldt
 
@@ -17,6 +16,7 @@ description: 'Slidecraft: The Art of Creating Pretty Presentations by Emil Hvitf
 
 
   Presented at the 2023 New York R Conference (July 13, 2023)'
+image: thumbnail.jpg
 people:
 - Emil Hvitfeldt
 - Julia Silge
@@ -26,6 +26,7 @@ software:
 - Quarto
 - revealjs
 - tidymodels
+tags: []
 title: 'Emil Hvitfeldt - Slidecraft: The Art of Creating Pretty Presentations'
 
 external:  # updated automatically, do not edit

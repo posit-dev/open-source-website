@@ -1,15 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Users often want access to more advanced analytic capabilities in their Tableau dashboards. Together we will walk through an example that highlights how new open-source packages enable R, Python, Tableau, and RStudio Connect to work together to enhance business intelligence and deliver real-time insight.
 
 
   Session: Business intelligence'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'James Blair | R, Python, and Tableau: A Love Triangle | RStudio (2022)'
 
 external:  # updated automatically, do not edit

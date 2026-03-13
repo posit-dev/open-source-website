@@ -1,13 +1,14 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-21'
 description: Introduction to Tidymodels
+image: thumbnail.jpg
 people:
 - Max Kuhn
 resource_type: video
 resources: []
 software:
 - tidymodels
+tags: []
 title: 'Charla Plenaria: Max Kuhn'
 
 external:  # updated automatically, do not edit

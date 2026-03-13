@@ -1,11 +1,11 @@
 ---
-image: thumbnail.jpg
 date: '2023-08-31'
 description: 'JJ. Allaire
 
   CEO at Posit, PBC
 
   JJ is software engineer and entrepreneur who builds tools that empower people with technology. JJ has conceived and designed several industry leading products by balancing market, customer, and technical considerations, and by maintaining intimate involvement in all aspects of software design and construction. He is currently the founder and CEO of statistical computing company RStudio (now, a part of Posit, https://posit.co/). https://github.com/jjallaire https://mobile.twitter.com/fly_upside_down'
+image: thumbnail.jpg
 people:
 - JJ Allaire
 resource_type: video
@@ -13,6 +13,7 @@ resources: []
 software:
 - Quarto
 - rstudio
+tags: []
 title: 'Keynote, JJ Allaire:  Reproducible Manuscripts with Quarto'
 
 external:  # updated automatically, do not edit

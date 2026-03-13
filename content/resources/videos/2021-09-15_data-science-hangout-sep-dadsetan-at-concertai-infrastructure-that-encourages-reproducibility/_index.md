@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2021-09-15'
 description: "We want to help data science leaders become better.\n\nThe Data Science Hangout is a weekly, free-to-join open conversation for current and aspiring data science leaders. \n\nAn accomplished leader in the space will join us each week and answer whatever questions the audience may have. \n\nWe were recently joined by Sep Dadsetan, Executive Director, RWE Analytics at ConcertAI.\n\n01:35 - Start of session\n08:20 - Gaps in the data science space\n12:13 - How to show key stakeholders the value of data science\n23:23 - Setting up the infrastructure to encourage reproducibility\n29:38 - The importance of architecture and infrastructure to data quality\n35:34 - Adoption to formalized processes over individual processes\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nAdd the Data Science Hangout to my weekly calendar: https://www.addevent.com/event/Qv9211919\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn:https://www.linkedin.com/company/rstu...\nTwitter: https://twitter.com/rstudio"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Data Science Hangout | Sep Dadsetan at ConcertAI | Infrastructure that Encourages Reproducibility
 
 external:  # updated automatically, do not edit

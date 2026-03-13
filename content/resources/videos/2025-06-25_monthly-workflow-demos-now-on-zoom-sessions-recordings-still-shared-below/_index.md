@@ -1,11 +1,56 @@
 ---
-image: thumbnail.jpg
 date: '2025-06-25'
 description: "Please note while we previously hosted the Posit Workflow Demos here on YouTube, we have moved over to Zoom Sessions for a seamless event experience and more interactive Q&A. \n\nYou can view upcoming workflow demos and register to join us here:\n\nhttps://events.zoom.us/ev/Ajss5j9VeRMe0zw-AtFKf7AUAsthzYhaYjYPeEIu1uYAQe1K0ud1~Agb_hSt1UGxd9fUyIDC32e6jAdEtbl7G_AaLZUYhRvyZR5cGpY5Kp_A0-w"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Monthly Workflow Demos now on Zoom Sessions | Recordings still shared below
 
 external:  # updated automatically, do not edit

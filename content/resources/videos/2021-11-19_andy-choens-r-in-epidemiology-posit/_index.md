@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-11-19'
 description: 'Connecting Primary Care Providers to their own data
 
@@ -16,10 +15,12 @@ description: 'Connecting Primary Care Providers to their own data
 
 
   Acuitas is able to do this by using an agile, dynamic process and a collection of largely open-source tools including R and Python.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Andy Choens | R in Epidemiology | Posit
 
 external:  # updated automatically, do not edit

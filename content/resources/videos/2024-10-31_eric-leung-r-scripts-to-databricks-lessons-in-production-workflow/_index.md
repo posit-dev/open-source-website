@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'This talk is about how a team at The Walt Disney Company took the past year to take a local R workflow into production. This updated process uses a mix of R, Python, SQL, Databricks, and Tableau dashboard, all of which involves multiple teams and stakeholders. The project started as a manual monthly process to measure the effect of ESPN''s live TV marketing to get consumers to convert to cross-channel platforms related to ESPN. But then we not only needed to automate this process, but also to scale it to measure the effect of marketing. The few lessons shared are: don''t reinvent the wheel; use not only the best tool for the job, but the best available; take time to get used to new tools.
 
@@ -9,12 +8,14 @@ description: 'This talk is about how a team at The Walt Disney Company took the 
 
 
   Slides: https://github.com/rstudio/rstudio-conf/tree/master/2024/ericleung/Leung_PositConf_Lessons.pptx'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - rstudio-conf
+tags: []
 title: 'Eric Leung - R Scripts to Databricks: Lessons in Production Workflow'
 
 external:  # updated automatically, do not edit

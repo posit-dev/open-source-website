@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2025-02-27'
 description: 'Data Visualization for Python 🧑🏻‍💻#dataanalysis #pythontutorial #pythonforbeginners #pythoncontent'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Data Visualization for Python 🧑🏻‍💻#dataanalysis #pythontutorial #pythonforbeginners #pythoncontent'
 
 external:  # updated automatically, do not edit

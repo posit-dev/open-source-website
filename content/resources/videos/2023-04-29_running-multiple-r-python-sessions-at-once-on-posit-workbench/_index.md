@@ -1,11 +1,56 @@
 ---
-image: thumbnail.jpg
 date: '2023-04-29'
 description: "Posit Workbench is the premier development experience for professional data scientists who use R and Python. \n\nOne of the many great features Workbench offers is the ability to run multiple sessions at once, across different languages and development environments. \n\nIn this video, we give you a glimpse of that feature. \n\nTo watch the full demo of our professional software, go here: https://youtu.be/1KEX3gZTQnE\n\nLearn more about Posit Workbench: https://posit.co/products/enterprise/workbench/"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Running multiple R & Python sessions at once on Posit Workbench
 
 external:  # updated automatically, do not edit

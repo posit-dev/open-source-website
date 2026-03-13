@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-02-08'
 description: 'How to use {pointblank} to understand, validate, and document your data - Rich Iannone
 
@@ -13,6 +12,7 @@ description: 'How to use {pointblank} to understand, validate, and document your
   * Workshop GitHub repository: https://github.com/rich-iannone/pointblank-workshop
 
   * pointblank documentation: https://rstudio.github.io/pointblank/'
+image: thumbnail.jpg
 people:
 - Rich Iannone
 resource_type: video
@@ -20,6 +20,7 @@ resources: []
 software:
 - pointblank
 - rstudio
+tags: []
 title: How to use {pointblank} to understand, validate, and document your data
 
 external:  # updated automatically, do not edit

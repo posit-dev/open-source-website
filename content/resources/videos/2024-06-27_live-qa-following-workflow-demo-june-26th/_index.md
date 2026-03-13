@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-27'
 description: 'Please join us for the live Q&A session for the June 26th Workflow Demo - this will start immediately following the demo.
 
@@ -13,11 +12,13 @@ description: 'Please join us for the live Q&A session for the June 26th Workflow
   Demo: 11 am ET [Happening here! https://youtu.be/qIzKJKcmh-s?feature=shared]
 
   Q&A: ~11:35 am ET'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - tidymodels
+tags: []
 title: Live Q&A following Workflow Demo - June 26th
 
 external:  # updated automatically, do not edit

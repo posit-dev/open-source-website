@@ -1,7 +1,7 @@
 ---
-image: thumbnail.jpg
 date: '2020-12-20'
 description: State of the Tidyverse 2020
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 resource_type: video
@@ -9,6 +9,9 @@ resources: []
 software:
 - rstudio
 - tidyverse
+tags:
+- rstudio::conf(2020)
+- Hadley Wickham
 title: Hadley Wickham | State of the Tidyverse 2020 | RStudio (2020)
 
 external:  # updated automatically, do not edit

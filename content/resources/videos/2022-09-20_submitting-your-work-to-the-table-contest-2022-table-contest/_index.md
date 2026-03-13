@@ -1,16 +1,61 @@
 ---
-image: thumbnail.jpg
 date: '2022-09-20'
 description: 'Rich Iannone walks through how to submit a table to the 2022 Table Contest. He explains considerations for each field, and how to update & edit your entry afterwards.
 
 
   Learn more about the 2022 Table Contest at https://www.rstudio.com/blog/rstudio-table-contest-2022/'
+image: thumbnail.jpg
 people:
 - Rich Iannone
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Submitting Your Work to the Table Contest | 2022 Table Contest
 
 external:  # updated automatically, do not edit

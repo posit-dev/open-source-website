@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-04-19'
 description: 'Why should you join us for our new series: End-to-end workflows with Posit Team?
 
@@ -23,10 +22,12 @@ description: 'Why should you join us for our new series: End-to-end workflows wi
 
 
   Link to the first demo, Deploying a Dash App to Posit Connect: https://youtu.be/1KEX3gZTQnE'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: '3 reasons to join us at our new series: End-to-end workflows with Posit Team'
 
 external:  # updated automatically, do not edit

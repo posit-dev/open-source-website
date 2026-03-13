@@ -1,12 +1,17 @@
 ---
-image: thumbnail.jpg
 date: '2014-12-09'
 description: Jeff Allen talks about recent R Markdown changes in a webinar from RStudio.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- R Markdown
+- RStudio
+- R (Programming Language)
+- r packages
 title: R Markdown
 
 external:  # updated automatically, do not edit

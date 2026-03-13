@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Some of my best friends use Python...and all of my coworkers use SAS.
 
@@ -11,12 +10,14 @@ description: 'Some of my best friends use Python...and all of my coworkers use S
 
 
   Session: Some of my best friends use Python'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - rstudio-conf
+tags: []
 title: Melissa Van Bussel | Achieving a seamless workflow between R, Python and SAS from within RStudio
 
 external:  # updated automatically, do not edit

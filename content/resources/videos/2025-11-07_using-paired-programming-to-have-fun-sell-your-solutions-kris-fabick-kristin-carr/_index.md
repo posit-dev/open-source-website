@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Self-sufficient deployment: using pair programming to have fun and sell your solutions
 
@@ -14,10 +13,17 @@ description: 'Self-sufficient deployment: using pair programming to have fun and
 
 
   📁 Materials - https://github.com/kfabick03/positconf2025 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Using paired programming to have fun & sell your solutions (Kris Fabick & Kristin Carr)
 
 external:  # updated automatically, do not edit

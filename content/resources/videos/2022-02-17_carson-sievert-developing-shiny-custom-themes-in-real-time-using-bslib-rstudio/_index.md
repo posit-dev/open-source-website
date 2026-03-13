@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-02-17'
 description: '00:00 Introduction
 
@@ -38,6 +37,7 @@ description: '00:00 Introduction
   Content: Carson Sievert (@cpsievert)
 
   Design and editing: Jesse Mostipak (@kierisi)'
+image: thumbnail.jpg
 people:
 - Carson Sievert
 resource_type: video
@@ -48,6 +48,53 @@ software:
 - rstudio
 - Shiny
 - thematic
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- bslib
+- Carson Sievert
 title: Carson Sievert || Developing Shiny Custom Themes in Real Time Using {bslib}| RStudio
 
 external:  # updated automatically, do not edit

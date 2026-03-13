@@ -1,15 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Data suggests that less than 3% of data scientists are women of color. My journey and that of many other women who fall at the intersection of being underrepresented in this field is one that is often filled with pitfalls and curves that can result in continued exclusion in these spaces. My journey as a historically excluded double minority in STEM is one of triumph, but not without the community educational tools, online platforms and genuinely inclusive members of the R Studio and open science communities. My work explores how we can build on these tools and further propel the use of open science as a tool for equity and diversity in STEM, now more than ever.
 
 
   Session: It takes a village: building communities of practice'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'Ileana Fenwick | A Journey to Data Science: Tools for Equity and Diversity in STEM | RStudio (2022)'
 
 external:  # updated automatically, do not edit

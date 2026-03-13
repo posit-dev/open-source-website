@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-09-29'
 description: 'GenAI in Pharma 2025 kicks off with Posit''s Phil Bowsher and Garrick Aiden-Buie sharing a technical overview of how LLMs can integrate with Shiny applications and much more!
 
@@ -14,6 +13,7 @@ description: 'GenAI in Pharma 2025 kicks off with Posit''s Phil Bowsher and Garr
   * {mcptools} - Model Context Protocols servers and clients https://posit-dev.github.io/mcptools/
 
   * {vitals} - Large language model evaluation for R https://vitals.tidyverse.org/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -23,6 +23,7 @@ software:
 - tidyverse
 - tidyverse.org
 - vitals
+tags: []
 title: 'Building the Future of Data Apps: LLMs Meet Shiny'
 
 external:  # updated automatically, do not edit

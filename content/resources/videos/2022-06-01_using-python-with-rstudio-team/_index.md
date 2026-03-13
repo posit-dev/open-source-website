@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-06-01'
 description: 'Using Python with RStudio Team
 
@@ -84,6 +83,7 @@ description: 'Using Python with RStudio Team
   ⬢ RStudio Conference: https://lnkd.in/dcrz79y
 
   ⬢ System Admin Workshop at RStudio Conference: ​​https://lnkd.in/eB9FZt-c'
+image: thumbnail.jpg
 people:
 - RStudio Team
 resource_type: video
@@ -91,6 +91,7 @@ resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Using Python with RStudio Team
 
 external:  # updated automatically, do not edit

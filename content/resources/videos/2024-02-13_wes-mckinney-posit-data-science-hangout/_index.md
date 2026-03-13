@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-13'
 description: 'We were recently joined by Wes McKinney, Principal Architect at Posit PBC to chat about advocating for the needs of the PyData ecosystem, his experience as a software entrepreneur and long-time developer of open source projects for data science and analytical computing, and building open source sustainability.
 
@@ -41,12 +40,14 @@ description: 'We were recently joined by Wes McKinney, Principal Architect at Po
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - fs
 - Quarto
+tags: []
 title: Wes McKinney @ Posit | Data Science Hangout
 
 external:  # updated automatically, do not edit

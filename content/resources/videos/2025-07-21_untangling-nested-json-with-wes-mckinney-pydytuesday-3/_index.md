@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-07-21'
 description: 'Join Wes McKinney (principal architect at Posit) and Jeroen Janssens (developer relations engineer at Posit) as they dive into deeply nested JSON. Using Python, Positron, Polars, and Altair, they look at scraped GitHub data and create some sort of pulse signal for various GitHub repos.
 
@@ -24,12 +23,14 @@ description: 'Join Wes McKinney (principal architect at Posit) and Jeroen Jansse
 
 
   #polars #pydytuesday #datascience'
+image: thumbnail.jpg
 people:
 - Jeroen Janssens
 resource_type: video
 resources: []
 software:
 - positron
+tags: []
 title: 'Untangling Nested JSON With Wes McKinney | PydyTuesday #3'
 
 external:  # updated automatically, do not edit

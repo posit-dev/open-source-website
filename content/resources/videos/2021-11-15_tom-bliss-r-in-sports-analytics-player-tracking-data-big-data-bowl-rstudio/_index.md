@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-11-15'
 description: 'NFL Big Data Bowl & Analyzing Tracking Data
 
@@ -23,11 +22,13 @@ description: 'NFL Big Data Bowl & Analyzing Tracking Data
   Tracking Data Overview & Demo
 
   Q&A / Open Discussion'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Tom Bliss | R in Sports Analytics - Player Tracking Data & Big Data Bowl | RStudio
 
 external:  # updated automatically, do not edit

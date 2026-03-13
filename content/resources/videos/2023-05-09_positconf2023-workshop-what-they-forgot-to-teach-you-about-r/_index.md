@@ -1,12 +1,57 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-09'
 description: "Register now: http://pos.it/conf\nInstructors: Shannon Pileggi and David Aja\nWorkshop Duration: 1-Day Workshop\n\nThis course is for you if you answer yes to these questions: \n•   Have you been using R for a while and feel there might be better ways to organize your R life, but don’t know what they are?\n•   Do you want to put programming on pause and learn about actionable programming-adjacent workflows for streamlining analysis in R?\n•   Are you willing to feel a bit of (git) pain to leverage the benefits of version control for collaboration and time travel?\n\nThis 1-day What They Forgot (WTF) To Teach You About R workshop is for experienced R and RStudio users who want to (re)design their R lifestyle via project-oriented workflows and version control for data science (Git/GitHub). At the conclusion of the workshop, you will have strategies for organizing data science projects and workflows, employing robust file paths, constructing human and machine-readable file names, and facilitating collaboration with yourself or others via version control."
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'posit::conf(2023) Workshop: What They Forgot to Teach You About R'
 
 external:  # updated automatically, do not edit

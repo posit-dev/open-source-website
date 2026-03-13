@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-12-12'
 description: 'To join future data science hangouts, add it to your calendar here: https://pos.it/dsh - All are welcome! We''d love to see you!
 
@@ -53,12 +52,14 @@ description: 'To join future data science hangouts, add it to your calendar here
 
 
   Thanks for hanging out with us! 💛 Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - shiny-assistant
 - Shiny
+tags: []
 title: From paramedic to leading analytics in pharma | Dan Haight | Data Science Hangout
 
 external:  # updated automatically, do not edit

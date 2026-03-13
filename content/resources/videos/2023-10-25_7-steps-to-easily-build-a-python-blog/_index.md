@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-25'
 description: 'Learn more: https://quarto.org/docs/websites/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: 7 steps to easily build a Python blog🤠
 
 external:  # updated automatically, do not edit

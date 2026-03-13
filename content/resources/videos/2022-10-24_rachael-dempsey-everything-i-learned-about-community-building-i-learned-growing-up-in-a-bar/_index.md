@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'In community conversations at the Data Science Hangout, we’ve talked about misalignment between what recruiters are looking for and who is actually a great fit for a role. At one point, people started sharing their own degrees in the chat: sociology, political science, finance, psychology, no degree, etc.
 
@@ -17,11 +16,13 @@ description: 'In community conversations at the Data Science Hangout, we’ve ta
 
 
   Session: It takes a village: building communities of practice'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: Rachael Dempsey |  Everything I learned about community building, I learned growing up in a bar
 
 external:  # updated automatically, do not edit

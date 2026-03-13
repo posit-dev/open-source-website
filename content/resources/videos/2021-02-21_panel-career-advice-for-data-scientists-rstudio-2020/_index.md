@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-21'
 description: 'Featuring: Gabriela de Queiroz, David Keyes, Sydeaka Watson, and Jen Hecht
 
@@ -25,12 +24,60 @@ description: 'Featuring: Gabriela de Queiroz, David Keyes, Sydeaka Watson, and J
   About Jen Hecht:
 
   Jen Hecht is the VP of People Operations at RStudio. She was first introduced to R in 2013, as a non-programmer seeking better ways to manage analytical projects - a quest which was aided both by the RStudio toolchain and the welcoming support of R Ladies, R meetup groups, and other wonderful open resources. Ever since, she has been captivated by open data science tools and the communities that build them. Before joining RStudio in 2018, Jen held HR and People Analytics roles in a variety of industries, including financial services, biotech, and used record shops. Outside of work, Jen loves books and music of all kinds, and is a novice fly caster.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - tensorflow
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- data science career
+- career
 title: 'Panel: Career Advice for Data Scientists | RStudio (2020)'
 
 external:  # updated automatically, do not edit

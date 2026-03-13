@@ -1,7 +1,7 @@
 ---
-image: thumbnail.jpg
 date: '2020-12-12'
 description: 'Shiny makes it easy to take domain logic from an existing R script and wrap some reactive logic around it to produce an interactive webpage where others can quickly explore different variables, parameter values, models/algorithms, etc. Although the interactivity is great for many reasons, once an interesting result is found, it’s more difficult to prove the correctness of the result since: (1) the result can only be (easily) reproduced via the Shiny app and (2) the relevant domain logic which produced the result is obscured by Shiny’s reactive logic. The R package shinymeta provides tools for capturing and exporting domain logic for execution outside of a Shiny runtime (so that others can reproduce Shiny-based result(s) from a new R session).'
+image: thumbnail.jpg
 people:
 - Carson Sievert
 resource_type: video
@@ -10,6 +10,53 @@ software:
 - rstudio
 - Shiny
 - shinymeta
+tags:
+- rstudio::conf(2020)
+- Dr. Carson Sievert
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Dr. Carson Sievert | Reproducible Shiny apps with shinymeta | RStudio (2020)
 
 external:  # updated automatically, do not edit

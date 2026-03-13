@@ -1,10 +1,10 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Quarto is the next generation of RMarkdown, and comes with a new presentation format, revealjs. In this talk, I’ll show a few of my favorite things about making interactive HTML presentations with Quarto. Along the way you’ll learn about the visual editor, multiple columns, delivering an effective talk with speaker notes and mode, making your presentations pop with transitions, effective ways to incorporate code into your presentation, beautiful themes (and how to match your corporate style guide), and sharing it as pdf and HTML. I’ll finish off with a brief look at generating a powerpoint presentation from a template.
 
 
   Session: Quarto deep dive'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -13,6 +13,7 @@ software:
 - revealjs
 - rmarkdown
 - rstudio
+tags: []
 title: Tracy Teal | These are a few of my favorite things (about Quarto presentations) | RStudio (2022)
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-20'
 description: 'The R community is globally distributed and R itself is available with messages in 14 languages. Adding translations for non-native English-speaking users of your package can ease their experience and empower them to build better things with less frustration (though please note that ""object of type ''closure'' is not subsettable"" is equally inscrutable in all human languages).
 
@@ -10,11 +9,58 @@ description: 'The R community is globally distributed and R itself is available 
   About Michael:
 
   Michael Chirico is a data scientist working on compute memory efficiency at Google. Before that he worked at Grab in Singapore and earlier got his PhD in Economics at the University of Pennsylvania. He is passionate about making tools to empower others who work with data (most of this energy is directed towards data.tab ≤) and loves learning languages (at various middling levels of proficiency in Japanese, Spanish, and Mandarin, with goals to learn Cantonese, Hokkien, Vietnamese and Bahasa).'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Michael Chirico
 title: 'Michael Chirico | Making .pot-ery with R: Translations in R Packages | RStudio'
 
 external:  # updated automatically, do not edit

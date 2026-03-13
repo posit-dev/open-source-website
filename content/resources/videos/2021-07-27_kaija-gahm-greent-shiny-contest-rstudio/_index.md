@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-07-27'
 description: 'Kaija Gahm: greenT Shiny app
 
@@ -13,12 +12,14 @@ description: 'Kaija Gahm: greenT Shiny app
 
 
   When I''m not at my computer, you can usually find me outdoors (hiking or birdwatching) or spending entire days in the kitchen making up recipes. I tweet and blog, mostly about R.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Kaija Gahm | greenT (Shiny Contest) | RStudio
 
 external:  # updated automatically, do not edit

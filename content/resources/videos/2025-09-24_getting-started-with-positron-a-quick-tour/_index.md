@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-09-24'
 description: 'We''re thrilled to have you on board as we continue to explore Positron, Posit''s new Integrated Development Environment. Positron is designed to streamline development workflows and reduce context switching for data scientists working with Python, R, and other languages.
 
@@ -42,11 +41,13 @@ description: 'We''re thrilled to have you on board as we continue to explore Pos
   3. For "very advanced users" regarding multi-root workspaces: https://code.visualstudio.com/docs/editing/workspaces/multi-root-workspaces
 
   4. Great extension pack for Positron from Garrick: https://github.com/gadenbuie/positron-plus-1-e'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags: []
 title: 'Getting Started with Positron: A Quick Tour'
 
 external:  # updated automatically, do not edit

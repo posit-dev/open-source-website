@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-01-30'
 description: 'Speed up your coding projects in the RStudio IDE on Posit Cloud with GitHub Copilot, an AI coding assistant.
 
@@ -12,11 +11,57 @@ description: 'Speed up your coding projects in the RStudio IDE on Posit Cloud wi
   GitHub Copilot: https://github.com/features/copilot
 
   RStudio User Guide: https://docs.posit.co/ide/user/ide/guide/tools/copilot.html'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: GitHub Copilot on Posit Cloud
 
 external:  # updated automatically, do not edit

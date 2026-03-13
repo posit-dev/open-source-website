@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Full title: How reproducible am I? A retrospective on a year of commercial data science projects in R
 
@@ -10,11 +9,58 @@ description: 'Full title: How reproducible am I? A retrospective on a year of co
   About Dean:
 
   Dean Marchiori is a Statistician based in Sydney, Australia. He currently works with Endeavour Energy as a Senior Data Scientist modelling bushfire and vegetation risk on the electricity network. Dean''s career started in finance as an equities trader before moving into advanced analytics, where he has worked with some of Australia’s largest organisations. His professional interests are in geospatial analysis, time series modelling and the R programming language. In 2019, Dean was named one of the top 10 analytics leaders in Australia by IAPA. He is also recognised as an Accredited Statistician with the Statistical Society of Australia. He holds a Bachelor of Science in Mathematics (awarded with University Medal) and a Masters degree in Applied Finance. Outside of work Dean enjoys bodysurfing, running and spending time with his wife and two boys.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Dean Marchiori
 title: Dean Marchiori | A retrospective on a year of commercial data science projects in R | RStudio
 
 external:  # updated automatically, do not edit

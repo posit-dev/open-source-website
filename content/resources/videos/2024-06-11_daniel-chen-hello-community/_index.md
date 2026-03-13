@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-11'
 description: 'Hello Community by Daniel Chen
 
@@ -19,11 +18,13 @@ description: 'Hello Community by Daniel Chen
   Presented at the 2024 New York R Conference (May 17, 2024)
 
   Hosted by Lander Analytics (https://landeranalytics.com)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Daniel Chen - Hello Community
 
 external:  # updated automatically, do not edit

@@ -1,13 +1,14 @@
 ---
-image: thumbnail.jpg
 date: '2019-02-13'
 description: "This video complements the article at https://medium.com/@kelly.obriant/rstudio-connect-deployments-with-github-webhooks-and-jenkins-c0dd8a82b986\nTL;DR: New content management Connect server APIs are easy to integrate with programmatic deployment workflows.\n\n----\n\n\nContent Management API Resources: \n- API Reference: https://docs.rstudio.com/connect/api/\n- User Guide: https://docs.rstudio.com/connect/user/cookbook.html#recipes (Deploying Content)\n- Example deployment scripts: https://github.com/rstudio/connect-api-deploy-shiny"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: RStudio Connect Deployments with GitHub Webhooks and Jenkins
 
 external:  # updated automatically, do not edit

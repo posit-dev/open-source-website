@@ -1,13 +1,58 @@
 ---
-image: thumbnail.jpg
 date: '2022-11-08'
 description: "Posit Connect is our flagship professional product for data scientists that want to share their data products with other. \n\nLearn more at https://posit.co/products/enterprise/connect/\n\nWhether you're building a Shiny application, a Dash application, a Quarto report, or dashboard, you can host it on Posit Connect.\n\nPosit Connect supports all the languages that data scientists love, as well as the development environments they love to build in."
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: What is Posit Connect | Deploy All of Your R & Python Content
 
 external:  # updated automatically, do not edit

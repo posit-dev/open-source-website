@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-11-18'
 description: 'R in Marketing - Survey Design for Applications of Machine Learning
 
@@ -12,11 +11,13 @@ description: 'R in Marketing - Survey Design for Applications of Machine Learnin
   Speaker Bio:
 
   Bryan Butler is VP of Business Insights & Analytics at Eastern Bank'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Bryan Butler | R in Marketing - Survey Design | RStudio
 
 external:  # updated automatically, do not edit

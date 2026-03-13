@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Outgrowing Your Laptop with Positron
 
@@ -14,11 +13,18 @@ description: 'Outgrowing Your Laptop with Positron
 
 
   📁 Materials - https://github.com/austin3dickey/ssh-demo posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Outgrowing Your Laptop with Positron (Austin Dickey, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

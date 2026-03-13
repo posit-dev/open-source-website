@@ -1,12 +1,59 @@
 ---
-image: thumbnail.jpg
 date: '2020-11-05'
 description: Originally posted at https://rstudio.com/resources/rstudioconf-2020/data-science-education-as-an-economic-and-public-health-intervention-in-east-baltimore/
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio::conf(2020)
+- Jeff Leek
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Jeff Leek | Data science education as a public health intervention in E. Baltimore | RStudio (2020)
 
 external:  # updated automatically, do not edit

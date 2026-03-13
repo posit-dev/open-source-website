@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-03-03'
 description: 'So here you are: you planned to teach your class or deliver your workshop in person, and now you have to do it online or not at all.
 
@@ -13,12 +12,61 @@ description: 'So here you are: you planned to teach your class or deliver your w
   About Greg:
 
   Dr. Greg Wilson has worked for 35 years in both industry and academia, and is the author or editor of several books on computing and two for children. He is best known as the co-founder of Software Carpentry, a non-profit organization that teaches basic computing skills to researchers, and is now part of the education team at RStudio.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - webinars
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- greg wilson
+- teaching
+- remote learning
 title: Greg Wilson | Teaching Online at Short Notice | RStudio (2020)
 
 external:  # updated automatically, do not edit

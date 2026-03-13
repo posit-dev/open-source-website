@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2025-02-19'
 description: 'Build a football dashboard with Python #pythonprogramming #pythonprojects #dataanalysis #datascience'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Build a football dashboard with Python #pythonprogramming #pythonprojects #dataanalysis #datascience'
 
 external:  # updated automatically, do not edit

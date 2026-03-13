@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-08-04'
 description: 'The Post-Modeling Model to Fix the Model by Max Kuhn
 
@@ -17,12 +16,14 @@ description: 'The Post-Modeling Model to Fix the Model by Max Kuhn
 
 
   Presented at the 2023 New York R Conference (July 14, 2023)'
+image: thumbnail.jpg
 people:
 - Max Kuhn
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Max Kuhn - The Post-Modeling Model to Fix the Model
 
 external:  # updated automatically, do not edit

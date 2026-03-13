@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-05-10'
 description: '00:00 Introduction
 
@@ -34,6 +33,7 @@ description: '00:00 Introduction
 
 
   Theme song: Hakodate Line by Blue Dot Sessions (https://app.sessions.blue/browse/track/91291)'
+image: thumbnail.jpg
 people:
 - Barret Schloerke
 resource_type: video
@@ -41,6 +41,51 @@ resources: []
 software:
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- odbc
+- plumber
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- pgws
+- programming games with shiny
+- barret schloerke
+- jesse mostipak
 title: Programming Games with Shiny || Guess the Number || RStudio
 
 external:  # updated automatically, do not edit
