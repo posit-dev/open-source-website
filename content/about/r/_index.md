@@ -7,12 +7,9 @@ Whether you've been with us since the first version of RStudio or you're just st
 
 At Posit, we believe R is one of the most powerful languages for statistical communication and data exploration. Our commitment to the R community includes the maintenance of hundreds of open-source packages designed to ensure reproducible research and scalable statistical computing.
 
-\[Browse all R packages \-\>\] \[Explore learning resources \-\>\]
-
-{{< query-items path="/software/.*" filter=`{"and": [{"!=": [{"var": "title"}, "tidyverse"]}, {"contains_any": [{"var": "tags"}, ["tidyverse"]]}]}` sort-by="external.stars" limit="20" cols="1" format="tile" >}}
+\[[Browse all R packages](/software/?lang=R&filters=show) \-\>\] \[[Explore learning resources](/resources) \-\>\]
 
 ## **Choose your own adventuRe**
-
 
 {{< columns >}}
 
@@ -34,29 +31,69 @@ We recommend starting with the tidyverse, a collection of packages designed for 
 {{< /columns >}}
 
 
-\[Visit [tidyverse.org](http://tidyverse.org)\] \[Browse all tidyverse packages \-\>\]
+\[Visit [tidyverse.org](http://tidyverse.org)\] \[[Read R for Data Science](https://r4ds.hadley.nz/) \-\>\]
+
+<br>
+
+{{< columns >}}
 
 ### **Deepen your expertise**
 
 Already comfortable with dplyr and ggplot2? Take your work to the next level:
 
-\[listing\]
+---
 
-\[Visit [tidymodels.org](http://tidymodels.org) \] \[Visit [shiny.org](http://shiny.org)\] \[Visit [quarto.org](http://quarto.org)\]
+{{< insert-items cols="1" format="tile" hide-badge=true >}}
+- software/tidymodels
+- software/shiny
+- software/quarto
+{{< /insert-items>}}
+
+{{< /columns >}}
+
+\[Visit [tidymodels.org](https://tidymodels.org) \] \[Visit [shiny.org](https://shiny.posit.co/)\] \[Visit [quarto.org](https://quarto.org)\]
+
+<br>
+
+{{< columns >}}
 
 ### **Develop your own packages**
 
 Ready to create your own R package? We maintain foundational tools used by thousands of R users to create and distribute packages.
 
-\[listing\]
+---
 
-\[Read R packages book\]
+{{< insert-items cols="2" format="tile" hide-badge=true >}}
+- software/devtools
+- software/usethis
+- software/roxygen2
+- software/testthat
+- software/pkgdown
+- software/cli
+{{< /insert-items>}}
+
+{{< /columns >}}
+
+\[[Read R Packages book](https://r-pkgs.org/) \-\>\]
+
+<br>
+
+{{< columns >}}
 
 ### **Enhance your workflows**
 
 Streamline your R development experience with modern tools for package management, version control, and code editing.
 
-\[listing\]
+---
+
+{{< insert-items cols="2" format="tile" hide-badge=true >}}
+- software/pak
+- software/rig
+- software/air
+- software/ark
+{{< /insert-items>}}
+
+{{< /columns >}}
 
 ## **Read the latest on the blog**
 
@@ -64,12 +101,12 @@ Stay up to date with the latest R developments, package releases, and best pract
 
 {{< query-items path="/blog/.*" filter=`{"contains_any": [{"var": "languages"}, ["R"]]}` sort-by="date" limit="3" cols="3" format="card" >}}
 
-\[Read R blog posts \-\>\]
+\[[Read R blog posts](/blog) \-\>\]
 
 ## **Join us at an upcoming event**
 
 Learn about the latest developments in the R ecosystem through our workshops and conferences. We have hex stickers\!
 
-\[listing\]
+{{< query-items path="/events/.*" filter=`{"contains_any": [{"var": "languages"}, ["R"]]}` sort-by="date" limit="3" cols="3" format="card" >}}
 
-\[View upcoming events \-\>\]
+\[[View upcoming events](/events) \-\>\]
