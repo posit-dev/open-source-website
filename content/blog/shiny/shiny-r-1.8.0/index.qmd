@@ -1,0 +1,698 @@
+---
+title: "Shiny for R updates: new default look, dark mode, shinylive updates, and more"
+description: |
+  An overview of recent Shiny for R updates, a new default look, dark mode, shinylive updates, and more.
+people:
+  - Carson Sievert
+  - Garrick Aden-Buie
+date: "2023-11-30"
+image: feature.jpg
+ported_from: shiny
+port_status: raw
+---
+
+[shiny]: https://shiny.rstudio.com/
+[bslib]: https://rstudio.github.io/bslib/
+[shinylive]: https://posit-dev.github.io/r-shinylive/
+[flights-demo]: https://bslib.shinyapps.io/flights
+[flights-source]: https://github.com/rstudio/bslib/tree/main/inst/examples/flights
+[chiflights22]: https://github.com/cpsievert/chiflights22
+[bootswatch]: https://bootswatch.com/
+[thematic]: https://rstudio.github.io/thematic/
+[plotly]: https://plotly.com/r/
+[webr]: https://docs.r-wasm.org/webr/latest/
+
+```{=html}
+<style>
+img { border-radius: 8px; }
+.nav-centered > .nav {
+  justify-content: center;
+  border: none;
+}
+.nav-centered > .tab-content {
+  border: none;
+}
+.link-shinylive {
+  position: absolute;
+  bottom: 0;
+  right: 0.5em;
+  background-color: unset;
+  font-family: var(--bs-font-sans-serif);
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Add shinylive links to code blocks
+  document.querySelectorAll("[data-shinylive]").forEach(function(el) {
+    const pre = el.querySelector("pre");
+    const link = document.createElement("a");
+    link.classList.add("link-shinylive");
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.href = el.dataset.shinylive;
+    link.innerHTML = `<i class="bi bi-lightning-fill"></i> Run on shinylive`;
+    pre.appendChild(link);
+  });
+});
+</script>
+```
+
+```{r feature-image}
+#| echo: false
+#| eval: false
+library(shinytest2)
+
+app <- AppDriver$new(
+  system.file("examples", "flights", package = "bslib"),
+  # opengraph recommends 1200 * 630, but that's a little too squished
+  width = 1560,
+  height = 820
+)
+app$wait_for_idle()
+unlink("flights-new.png")
+app$get_screenshot("flights-new.png", selector = "viewport", screenshot_args = list(options = list(captureBeyondViewport = FALSE)))
+
+app$run_js("document.documentElement.dataset.bsTheme='dark'")
+unlink("flights-dark.png")
+app$get_screenshot("flights-dark.png", selector = "viewport", screenshot_args = list(options = list(captureBeyondViewport = FALSE)))
+```
+
+The Shiny team is pleased to announce another round of updates for 13 different R packages,
+including [shiny] and [bslib].
+There are too many improvements to cover in a single post, but we'd like to highlight some of the more notable additions.
+For a detailed list of changes, be sure to check out the [release notes](#release-notes) section of this post.
+
+[bslib] brings modern Bootstrap versions and new user layouts and inputs to [Shiny], the web framework for data scientists.
+Install the latest versions of shiny and bslib from CRAN with:
+
+```{r install-bslib}
+#| eval: false
+install.packages(c("shiny", "bslib"))
+```
+
+In this post, we'll cover three main topics: the [new shiny look](#new-shiny-look), [what's new in shinylive](#shinylive-updates) and a long-awaited [update to selectize.js in shiny](#selectize-js).
+
+
+## A shiny new look {#new-shiny-look}
+
+In our [last post](/blog/posts/bslib-tooltips/#towards-a-new-shiny-theme), we previewed a new look for `bslib`-powered UIs, which is designed with dashboards in mind.
+This release of `bslib` adds more polish to this new "preset" theme and makes it the default for `bslib` powered UIs.
+
+To use the new layouts, simply create an app using any `page_*()` function in bslib for the UI.
+Here's a very simple template you can use to get started.
+Notice that we've used [shinylive] to make this example interactive -- the entire app is running in your browser, no server required!
+You can even edit the app right here in this post and see the changes live when you press the <i class="bi bi-play-fill"></i> play button.
+We'll talk more about shinylive [later in this post](#shinylive-updates).
+
+::: {.column-page .mb-3}
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| viewerHeight: 400
+#| layout: vertical
+library(shiny)
+library(bslib)
+
+ui <- page_sidebar(
+  title = "My dashboard",
+  sidebar = sidebar(
+    title = "Settings",
+    sliderInput("n", "Observations", 1, 100, 50, ticks = FALSE),
+    sliderInput("bins", "Bins", 1, 10, 5, step = 1, ticks = FALSE),
+  ),
+  plotOutput("plot")
+)
+
+server <- function(input, output, session) {
+  output$plot <- renderPlot({
+    hist(rnorm(input$n), breaks = input$bins, col = "#007bc2")
+  })
+}
+
+shinyApp(ui, server)
+```
+:::
+
+We're calling this new look the shiny "preset" theme, because it's a great place to start building your own theme.
+Remember, you can always customize the preset by passing additional arguments to `bs_theme()`.
+You can even switch back to the default `preset = "bootstrap"` look by using the following `theme` value in your `page_*()` function[^bootswatch]:
+
+[^bootswatch]: `bs_theme()` still supports [Bootswatch] presets too, like `preset = "flatly"`.
+
+
+```{r}
+#| eval: false
+# use default Bootstrap styles
+theme = bs_theme(preset = "bootstrap")
+```
+
+The new shiny preset is designed with dashboards in mind.
+Here's a more complete example using a full dashboard app ([source][flights-source], [demo][flights-demo]) for exploring [flight data from Chicago][chiflights22].
+Toggle between the new and old look to see what's changed with this release.
+
+```{=html}
+<div class="column-screen py-3 my-3">
+  <div class="column-page">
+  <ul class="nav nav-pills justify-content-center" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#flights-old" type="button" role="tab" aria-controls="flights-old" aria-selected="false">Old</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#flights-new" type="button" role="tab" aria-controls="flights-new" aria-selected="true">New</button>
+    </li>
+  </ul>
+
+  <div class="tab-content p-3 border-0">
+    <div class="tab-pane fade show active" id="flights-new" role="tabpanel">
+      <img src="flights-new.png" class="img-fluid shadow" alt="Flights dashboard with the new styles, featuring a white navbar and white sidebar framing the dashboard area. Cards are also entirely white on a light gray background, with subtle depth created by drop shadows under the cards. Blue accents are found throughout the dashboard in plots and icons.">
+    </div>
+    <div class="tab-pane" id="flights-old" role="tabpanel">
+      <img src="flights-old.png" class="img-fluid shadow" alt="Flights dashboard with the old styles, features solid blue navbar and solid blue value boxes. The sidebar and card headers and footers all have a light gray background.">
+    </div>
+  </div>
+  </div>
+</div>
+```
+
+The rest of this section will explore a few highlights of the new default look, including:
+
+- New [page-level styling](#page-styling)
+- [Dark mode support](#dark-mode)
+- Improved [`value_box()` styling](#value-box-styling)
+- [Refreshed Shiny UI](#refreshed-shiny-ui) (inputs, modals, notifications, and more)
+
+::: {.callout-note}
+### Quarto and PyShiny dashboards
+
+Dashboards are coming to Quarto!
+
+The new [Quarto dashboard](https://quarto.org/docs/dashboards/) format, as well as newer [PyShiny](https://shiny.posit.co/py/) components, are built on the same foundation as `bslib`.
+Thus, the concepts you'll learn while building dashboards with `bslib` should also largely apply there as well.
+:::
+
+### Page-level styling {#page-styling}
+
+As we noted above, the new shiny preset is design with dashboards in mind, but it will make any shiny app look great.
+The new default look is designed to be light and minimal, with a white navbar and white sidebar framing the dashboard area.
+Cards are also entirely white, with subtle depth created by drop shadows under the cards.
+Value boxes provide colorful accents, as will the plots you add to showcase your data.
+
+Here's an example taken straight from the [getting started guide](https://rstudio.github.io/bslib/articles/dashboards/index.html) for `{bslib}` dashboards.
+
+```{=html}
+<div class="column-screen py-3 my-3">
+  <div class="column-page">
+  <ul class="nav nav-pills justify-content-center" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#simple-old" type="button" role="tab" aria-controls="simple-old" aria-selected="false">Old</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#simple-new" type="button" role="tab" aria-controls="simple-new" aria-selected="true">New</button>
+    </li>
+  </ul>
+
+  <div class="tab-content p-3 border-0">
+    <div class="tab-pane fade show active" id="simple-new" role="tabpanel">
+      <img src="simple-new.png" class="img-fluid shadow" alt="New page_sidebar() styling featuring a light, minimal look with a white title bar, white sidebar and white cards and value boxes. The cards and value boxes have subtle shadows on a light gray background. Value boxes icons are blue with a subtle gradient">
+
+    </div>
+    <div class="tab-pane" id="simple-old" role="tabpanel">
+      <img src="simple-old.png" class="img-fluid shadow" alt="Old page_sidebar() styling with a dark title bar. Sidebars and card headers and footers have a light gray background. Cards and value boxes do not have shadows and value box icons are solid dark gray.">
+    </div>
+  </div>
+  </div>
+</div>
+```
+
+
+To achieve the full dashboard effect, though, you have opt into the light gray background by adding `class = "bslib-page-dashboard"` to your `page_sidebar()` or the `nav_panel()` items in your `page_navbar()`.
+This class enables a few additional features, namely adding a soft gray background to the main content area under cards and value boxes that help them stand out.
+You can also add the `class` directly to `page_fillable()` or `page()` to get the same effect in apps with custom layouts.
+
+```{=html}
+<div class="column-page py-3 my-3 grid align-items-start">
+  <ul class="g-col-md-3 g-col-12 nav nav-pills flex-md-column justify-content-center" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active font-monospace" data-bs-toggle="tab" data-bs-target="#class-sidebar" type="button" role="tab" aria-controls="class-sidebar" aria-selected="true">page_sidebar()</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link font-monospace" data-bs-toggle="tab" data-bs-target="#class-navbar" type="button" role="tab" aria-controls="class-navbar" aria-selected="false">page_navbar()</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link font-monospace" data-bs-toggle="tab" data-bs-target="#class-fillable" type="button" role="tab" aria-controls="class-fillable" aria-selected="false">page_fillable()</button>
+    </li>
+  </ul>
+
+  <div class="g-col-md-9 g-col-12 tab-content p-3 border-0">
+    <div class="tab-pane fade show active" id="class-sidebar" role="tabpanel">
+      <div class="sourceCode R"><pre class="sourceCode r"><code class="sourceCode R">library(shiny)
+library(bslib)
+
+ui &lt;- page_sidebar(
+  title = "My Dashboard",
+  class = "bslib-page-dashboard",
+  sidebar = sidebar(
+    title = "Settings",
+    # ... sidebar inputs ...
+  ),
+  # ... dashboard content ...
+)</code></pre></div>
+    </div>
+    <div class="tab-pane" id="class-navbar" role="tabpanel">
+      <div class="sourceCode R"><pre class="sourceCode r"><code class="sourceCode R">library(shiny)
+library(bslib)
+
+ui &lt;- page_navbar(
+  title = "My Dashboard",
+  nav_panel(
+    title = "Page 1",
+    class = "bslib-page-dashboard",
+    # ... dashboard content ...
+  ),
+  nav_panel("About", "Regular content")
+)</code></pre></div>
+    </div>
+    <div class="tab-pane" id="class-fillable" role="tabpanel">
+      <div class="sourceCode R"><pre class="sourceCode r"><code class="sourceCode R">library(shiny)
+library(bslib)
+
+ui &lt;- page_fillable(
+  title = "My Dashboard",
+  class = "bslib-page-dashboard",
+  # ... custom layout and dashboard content ...
+)</code></pre></div>
+    </div>
+  </div>
+</div>
+```
+
+### Built-in dark mode support ☀️ 🌙 {#dark-mode}
+
+This release of bslib brings built-in dark mode support to any Shiny app that uses `bs_theme()`, thanks to Bootstrap 5.3's new [client-side color mode feature](https://getbootstrap.com/docs/5.3/customize/color-modes/)!
+To enable dark mode in your app, add `input_dark_mode()` somewhere in your UI.
+In the example below, we've [put in the navbar](https://github.com/rstudio/bslib/blob/f574b9f0/inst/examples/flights/app.R#L231-L233).
+
+```{=html}
+<div class="column-screen py-3 my-3">
+  <div class="column-page">
+  <ul class="nav nav-pills justify-content-center" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#flights-light" type="button" role="tab" aria-controls="flights-light" aria-selected="false">Light</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#flights-dark" type="button" role="tab" aria-controls="flights-dark" aria-selected="true">Dark</button>
+    </li>
+  </ul>
+
+  <div class="tab-content p-3 border-0">
+    <div class="tab-pane fade show active" id="flights-dark" role="tabpanel">
+      <img src="flights-dark.png" class="img-fluid shadow" alt="Flights dashboard in dark mode. All white areas are now a deep dark gray. The blue accents remain.">
+    </div>
+    <div class="tab-pane" id="flights-light" role="tabpanel">
+      <img src="flights-light.png" class="img-fluid shadow" alt="Flights dashboard in light mode as previously described.">
+    </div>
+  </div>
+  </div>
+</div>
+```
+
+For the best results, make sure you have the latest version of [shiny].
+Dark mode works with nearly any Bootstrap theme created with `bs_theme()`, including the new shiny preset, but it tends to work best when the theme is designed around light mode first.
+For matching plots and widgets to the current color mode, you can use [thematic] to automatically style plots or `shiny::getCurrentOutputInfo()` to manually set the colors of your R outputs.
+
+By default, the color mode is picked from the user's system settings -- i.e. choosing dark mode if their system is also in dark mode -- but you can choose the initial color mode via the `mode` argument.
+If you give `input_dark_mode()` an `id`, it reports the current color mode as either `"light"` or `"dark"`.
+
+```{r}
+#| eval: false
+#| attr.source: >
+#|   data-shinylive="https://shinylive.io/r/editor/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw71OY4RBEBXWgAIAPAFolqKAHM4AfWgA3ei3YilFpaVqlqcJQF4lQsABEoPekRYATF7nNLIz1OLQI4RnYBXCUAYk15HiUjJRs4GE4rIitue0ZabW5SQItgrQg4ajMwAAUdewBGf2c3D24vXyViMgpisGiS5KhDPTSYMwhLKdSIVHlSPR8WAGs9GCIfOHZaH0cWpcZV9c3m4-snFzpCvtkp2VkRTgjDCNUNADN5CAJrEm3Z+YxIjzOakGJPRgvRgCJQgQZEKTPOAAUReZH+oIAJAcjhs4DE4ZNphZaO8lBj5tiVms8Y4LmAcS4YYTicSeEQAO4AOSI1netAIUF+EGqAHVKsR4FkcvYcUpODs4ABCJmDKYAX0G6tkmrkECkem01ARUGoelIuXgUUevH4AEF0OxFOCkdCwOqALpAA"
+library(shiny)
+library(bslib)
+
+ui <- page_navbar(
+  title = "Dashboard",
+  nav_spacer(), # push nav items to the right
+  nav_panel("Page 1", "Dashboard content"),
+  nav_item(
+    input_dark_mode(id = "dark_mode", mode = "light")
+  )
+)
+
+server <- function(input, output, server) {
+  observeEvent(input$dark_mode, {
+    if (input$dark_mode == "dark") {
+      showNotification("Welcome to the dark side!")
+    }
+  })
+}
+
+shinyApp(ui, server)
+```
+
+### Value box styling {#value-box-styling}
+
+The new default look includes improved styling for `value_box()` outputs, which are commonly used in dashboards.
+We're also excited to announce a new [Build-a-Box app](https://bslib.shinyapps.io/build-a-box) to help build and explore value boxes themes and options in a live Shiny app.
+
+Use the tabs below to learn more about several new features and themes supported by `value_box()`.
+
+:::: {.panel-tabset .nav-pills .nav-centered}
+
+#### Text
+
+```{=html}
+<div class="column-page-inset overflow-auto mb-3">
+  <div class="d-flex align-items-center" style="height: 200px; min-width: 800px">
+    <img src="value-box-text.png" alt="Three value boxes, with made up statistics in purple, green and blue text. The value boxes feature unadorned plots that fill the bottom half of the box, each a sparkline in the same color as the card." class="img-fluid" />
+  </div>
+</div>
+```
+
+##### Showcase Bottom with Text-Color Theme
+
+The new `showcase_layout = "bottom"` option is perfect for sparkline-style plots that fill the value box width and expand into full screen plots when the user clicks the *expand* button (enabled by `full_screen = TRUE`).
+See the [Expandable sparklines](https://rstudio.github.io/bslib/articles/value-boxes/index.html#expandable-sparklines) section of the [value box article](https://rstudio.github.io/bslib/articles/value-boxes/index.html) for an example of how to create these plots with [plotly] and bslib.
+
+This example also highlights the `text-{color}` value box themes that set the color of the text to a [Bootstrap color](https://getbootstrap.com/docs/5.3/customize/color/#all-colors).
+
+```{r code-value-box-text}
+#| eval: false
+layout_columns(
+  value_box(
+    title = "Engagement rate",
+    value = "3.8%",
+    theme = "text-indigo",
+    showcase = plotOutput("plot_engagement"),
+    showcase_layout = "bottom",
+    full_screen = TRUE
+  ),
+  value_box(
+    title = "Project Funding",
+    value = "$2,805",
+    theme = "text-success",
+    showcase = plotOutput("plot_funding"),
+    showcase_layout = "bottom",
+    full_screen = TRUE
+  ),
+  value_box(
+    title = "Employee satisfaction",
+    value = "92.3%",
+    theme = "text-blue",
+    showcase = plotOutput("plot_satisfaction"),
+    showcase_layout = "bottom",
+    full_screen = TRUE
+  )
+)
+```
+
+#### Icons
+
+```{=html}
+<div class="column-page-inset overflow-auto mb-3">
+  <div class="d-flex align-items-center" style="height: 200px; min-width: 800px">
+    <img src="value-box-icons.png" alt="Three value boxes with made up statistics, each with an icon to the left of the box. The cards are not tall and fit neatly into small row. The icons are blue with a subtle gradient toward the bottom right corner, blending from blue into purple." class="img-fluid" />
+  </div>
+</div>
+```
+
+##### Showcase Left Center with Gradient Icons
+
+This example uses the default value box styles in the new shiny preset.
+Icons receive a subtle gradient and are placed to the left of the value box content thanks to the default `showcase_layout = "left center"`.
+
+```{r code-value-box-icons}
+#| eval: false
+layout_columns(
+  value_box(
+    title = "API Response Time",
+    value = "150ms",
+    showcase = bsicons::bs_icon("arrow-left-square-fill")
+  ),
+  value_box(
+    title = "Revenue growth",
+    value = "+15.2%",
+    showcase = bsicons::bs_icon("arrow-up-circle-fill")
+  ),
+  value_box(
+    title = "Market share",
+    value = "42%",
+    showcase = fontawesome::fa_i("magnifying-glass-dollar")
+  )
+)
+```
+
+#### Gradient
+
+```{=html}
+<div class="column-page-inset overflow-auto mb-3">
+  <div class="d-flex align-items-center" style="height: 200px; min-width: 800px">
+    <img src="value-box-gradient.png" alt="Three value boxes of made up statistics, with vibrant gradient backgrounds: purple-cyan, orange-indigo, and teal-purple. Each card has an icon in the upper right corner and the title and value in the lower left corner." class="img-fluid" />
+  </div>
+</div>
+```
+
+##### Showcase Top Right with Gradient Backgrounds
+
+This example uses `theme = "bg-gradient-{from}-{to}"` for value boxes with vibrant gradient backgrounds.
+You can use any of the [Bootstrap color names](https://getbootstrap.com/docs/5.3/customize/color/#all-colors) for the `from` or `to` colors.
+`showcase_layout = "top right"` places the icon in the top right corner of the value box.
+
+```{r code-value-box-gradient}
+#| eval: false
+layout_columns(
+  value_box(
+    title = "Average wait",
+    value = "4 minutes",
+    theme = "bg-gradient-purple-cyan",
+    showcase = bsicons::bs_icon("stopwatch"),
+    showcase_layout = "top right"
+  ),
+  value_box(
+    title = "Customer churn",
+    value = "5%",
+    theme = "bg-gradient-orange-indigo",
+    showcase = fontawesome::fa_i("tent-arrow-turn-left"),
+    showcase_layout = "top right"
+  ),
+  value_box(
+    title = "Daily Active Users",
+    value = "8,507",
+    theme = "bg-gradient-teal-purple",
+    showcase = fontawesome::fa_i("arrow-up-right-dots"),
+    showcase_layout = "top right"
+  )
+)
+```
+
+::::
+
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Make nav-pills work in Quarto without directly writing the markup
+  document.querySelectorAll(".nav-centered.nav-pills").forEach(function(el) {
+    el.classList.remove('nav-pills');
+    el.firstElementChild.classList.add('nav-pills');
+    el.firstElementChild.classList.remove('nav-tabs');
+  })
+})
+</script>
+```
+
+
+
+### Refreshed Shiny UI {#refreshed-shiny-ui}
+
+The new default look includes a refreshed Shiny UI, which includes new styling for inputs, modals, notifications, and more.
+
+```{=html}
+<div class="column-page py-3 my-3 grid">
+  <ul class="g-col-md-3 g-col-12 nav nav-pills flex-md-column justify-content-center" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#preset-inputs" type="button" role="tab" aria-controls="preset-inputs" aria-selected="true">Inputs</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#preset-notifications" type="button" role="tab" aria-controls="preset-notifications" aria-selected="false">Notifications</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#preset-progress-bar" type="button" role="tab" aria-controls="preset-progress-bar" aria-selected="false">Progress Bars</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#preset-modals" type="button" role="tab" aria-controls="preset-modals" aria-selected="false">Modals</button>
+    </li>
+  </ul>
+  <div class="g-col-md-9 g-col-12 tab-content p-3 border-0">
+    <div class="tab-pane fade show active" id="preset-inputs" role="tabpanel">
+      <img src="shiny-preset-inputs.gif" class="img-fluid" alt="New inputs styles, in particular a minimal slider input." />
+    </div>
+    <div class="tab-pane fade" id="preset-notifications" role="tabpanel">
+      <img src="shiny-preset-notifications.gif" class="img-fluid" alt="New notification styles for default, message, warning and error notifications. Notifications have shadows and have a large amount of padding around the edges compared with Shiny's default design." />
+    </div>
+    <div class="tab-pane fade" id="preset-progress-bar" role="tabpanel">
+      <img src="shiny-preset-progress-bar.gif" class="img-fluid" alt="New progress bar notification styles, which are similar to notifications." />
+    </div>
+    <div class="tab-pane fade" id="preset-modals" role="tabpanel">
+      <img src="shiny-preset-modal.png" class="img-fluid" alt="An example modal with the new shiny preset style. The modal is minimal with additional padding and the backdrop has a soft blur effect." />
+    </div>
+  </div>
+</div>
+```
+
+
+## Shinylive updates {#shinylive-updates}
+
+Thanks to the exceptional work by George Stagg on [webR][webr] in collaboration with the Shiny team, [shinylive] can now run Shiny applications entirely in a web browser, without the need for a separate server running R!
+
+While sharing a traditional Shiny app requires you to deploy the app to a server, such as [shinyapps.io](https://shinyapps.io), shinylive allows you to share your app by simply sharing a URL or by embedding the shinylive app in a Quarto webpage.
+The app runs entirely in the browser, directly on the user's device.
+
+We're please to announce several venues for writing and sharing Shiny apps via shinylive:
+
+1. **[shinylive.io/r](https://shinylive.io/r) contains a gallery of example Shiny apps** that you can run in your browser.
+   You can also use [shinylive.io/r/editor](https://shinylive.io/r/editor) as an online playground to write and share your own apps.
+
+2. **The [shinylive R package](https://posit-dev.github.io/r-shinylive) is now on CRAN!**
+   This package helps you turn an existing Shiny app into a ready-to-share shinylive app.
+
+3. **The [shinylive Quarto extension](https://quarto-ext.github.io/shinylive/) now supports both R and Python Shiny apps** -- even on the same page!
+   With the `shinylive-r` and `shinylive-python` code cells, you can embed Shiny apps directly in Quarto web documents.
+   This is perfect for blog posts, like this one!
+   See [the example](#new-shiny-look) near the start of this post.
+
+
+[webR] and [shinylive] are under active development, so expect ongoing updates and improvements.
+Currently, shinylive apps download packages from webR's CRAN-like repository at run time, which adds a delay to the initial startup time.
+In the future, we hope to make this faster and to allow package installation from more sources.
+We're also really excited that [R-universe now builds WASM binaries](https://ropensci.org/blog/2023/11/17/runiverse-wasm/) for R packages!
+
+## Selectize.js update {#selectize-js}
+
+Shiny's `selectInput()` and `selectizeInput()` functions create dropdown menus that allow users to select one or more items from a list.
+These inputs are powered by the [selectize.js](https://selectize.github.io/selectize.js/) library, and shiny 1.8.0 upgrades selectize.js from version 0.12.4 to 0.15.2.
+
+This upgrade resolved [a number of outstanding bugs and issues](https://github.com/rstudio/shiny/issues?q=is:issue+is:closed+selectize+sort:updated-desc+) with `selectizeInput()` (as well as introducing some new ones that we had to squash before release).
+Most users won't notice a difference in the select inputs -- now they'll just work _better_ -- but if you do notice a change in behavior, please let use know by [filing an issue](https://github.com/rstudio/shiny/issues).
+
+Power users will find even more selectize.js [options](https://selectize.dev/docs/usage) now available, including more [plugins](https://selectize.dev/docs/demos/plugins).
+We highly recommend trying both the [`clear_button`](https://selectize.dev/docs/plugins/clear-button) and [`remove_button`](https://selectize.dev/docs/plugins/remove-button) plugins to give users a clear visual cue for removing options:
+
+
+::: text-center
+![](selectize.gif){alt="A demo with two select inputs. The first allows a single value and uses the clear_button plugin. An X on the select input allows the user to clear the selection. The second input allows multiple values and uses the remove_button plugin. Each selected value has an X that allows the user to remove the value."}
+:::
+
+```{r}
+#| eval: false
+#| attr.source: >
+#|   data-shinylive="https://shinylive.io/r/editor/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw71OY4RBEBXWgAIAPAFolqKAHM4AfQBmtAB5wAJuxFLrSznGpwCpWgC84ASQip5pSxBsBSkJgnHzaDsG4QWAAymEOtvaOpJG2pFDkGNDwuFaB1kSoziScSgC8SnScvqjU8tp8pRXBBA4sevQ+pCTBsgECuf42dg5Orh5ePn751sEw8tTOtXCpwQCyC0sJI8mp1RlwWbBwgzNK84u0y+VKACpYAKoAoqczhcUQTZW01ey19Y0bsFGHAYEQAG76TqkbpyMB9GyyWQiOyMSGMVQaAzyCBjEjsPjeUhRIg+IlROycUIkARKEB5WYQAC+IhRvH4AEF0OxFBS4Gj+QIwEyALpAA"
+library(shiny)
+library(bslib)
+
+ui <- page_fixed(
+    selectizeInput(
+        "single", "Single select", state.name,
+        options = list(plugins = "clear_button")
+    ),
+    selectizeInput(
+        "multiple", "Multiple select", state.name,
+        multiple = TRUE,
+        options = list(plugins = "remove_button")
+    )
+)
+
+server <- function(input, output, session) {
+
+}
+
+shinyApp(ui, server)
+```
+
+::: {.column-screen .bg-light .mt-4}
+::: {.column-body}
+
+## Release notes {#release-notes}
+
+This post doesn't cover all of the changes and updates that happened in the Shiny universe in this release cycle.
+To learn more about specific changes in each package, dive into the release notes linked below!
+
+**Big shout out to everyone involved!** 💙
+We'd want to extend a huge thank you to everyone who contributed pull requests, bug reports and feature requests.
+Your contributions make Shiny brilliant!
+
+#### bslib [v0.6.0](https://rstudio.github.io/bslib/news/index.html#bslib-060)
+
+```{r}
+#| echo: false
+#| eval: false
+usethis::use_tidy_thanks("rstudio/bslib", from = "v0.5.1")
+```
+
+[&#x0040;antoine4ucsd](https://github.com/antoine4ucsd), [&#x0040;awcm0n](https://github.com/awcm0n), [&#x0040;barnesparker](https://github.com/barnesparker), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;ctrlxctrlc](https://github.com/ctrlxctrlc), [&#x0040;daattali](https://github.com/daattali), [&#x0040;DavZim](https://github.com/DavZim), [&#x0040;durraniu](https://github.com/durraniu), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;gsmolinski](https://github.com/gsmolinski), [&#x0040;jcheng5](https://github.com/jcheng5), [&#x0040;jmbarbone](https://github.com/jmbarbone), [&#x0040;JohnCoene](https://github.com/JohnCoene), [&#x0040;kelly-sovacool](https://github.com/kelly-sovacool), [&#x0040;lmullany](https://github.com/lmullany), [&#x0040;m-austen](https://github.com/m-austen), [&#x0040;MayaGans](https://github.com/MayaGans), [&#x0040;mhanf](https://github.com/mhanf), [&#x0040;ncullen93](https://github.com/ncullen93), [&#x0040;ngoodkindGSI](https://github.com/ngoodkindGSI), [&#x0040;oude-gao](https://github.com/oude-gao), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;scrapeable](https://github.com/scrapeable), [&#x0040;tuge98](https://github.com/tuge98), and [&#x0040;wch](https://github.com/wch).
+
+#### bsicons [v0.1.2](https://rstudio.github.io/bsicons/news/index.html#bsicons-012)
+
+[&#x0040;cpsievert](https://github.com/cpsievert).
+
+#### crosstalk [v1.2.1](https://cran.r-project.org/web/packages/crosstalk/news/news.html)
+
+[&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;ctedja](https://github.com/ctedja), [&#x0040;daattali](https://github.com/daattali), [&#x0040;danielludolf](https://github.com/danielludolf), [&#x0040;DataStrategist](https://github.com/DataStrategist), [&#x0040;dmresearch15](https://github.com/dmresearch15), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;helgasoft](https://github.com/helgasoft), [&#x0040;hlydecker](https://github.com/hlydecker), [&#x0040;JacobBraslaw22](https://github.com/JacobBraslaw22), [&#x0040;jcheng5](https://github.com/jcheng5), [&#x0040;jonathanmburns](https://github.com/jonathanmburns), [&#x0040;jonspring](https://github.com/jonspring), [&#x0040;LDSamson](https://github.com/LDSamson), [&#x0040;MichaelChirico](https://github.com/MichaelChirico), [&#x0040;mmfc](https://github.com/mmfc), [&#x0040;novotny1akub](https://github.com/novotny1akub), [&#x0040;oobd](https://github.com/oobd), [&#x0040;pfh](https://github.com/pfh), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;tbrittoborges](https://github.com/tbrittoborges), [&#x0040;ThierryO](https://github.com/ThierryO), [&#x0040;tomsing1](https://github.com/tomsing1), [&#x0040;ulyngs](https://github.com/ulyngs), [&#x0040;warnes](https://github.com/warnes), [&#x0040;yb2125](https://github.com/yb2125), and [&#x0040;yogat3ch](https://github.com/yogat3ch).
+
+#### histoslider [v0.1.1](https://cran.r-project.org/web/packages/histoslider/news/news.html)
+
+[&#x0040;cpsievert](https://github.com/cpsievert).
+
+#### htmltools [v0.5.7](https://rstudio.github.io/htmltools/news/index.html#htmltools-057)
+
+[&#x0040;bjcarothers](https://github.com/bjcarothers), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;HenningLorenzen-ext-bayer](https://github.com/HenningLorenzen-ext-bayer), [&#x0040;mgirlich](https://github.com/mgirlich), and [&#x0040;stla](https://github.com/stla).
+
+#### htmlwidgets [v1.6.3](https://cran.r-project.org/web/packages/htmlwidgets/news/news.html)
+
+[&#x0040;barracuda156](https://github.com/barracuda156), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;DavisVaughan](https://github.com/DavisVaughan), [&#x0040;dmurdoch](https://github.com/dmurdoch), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;pietrodito](https://github.com/pietrodito), and [&#x0040;yihui](https://github.com/yihui).
+
+#### httpuv [v1.6.12](https://cran.r-project.org/web/packages/httpuv/news/news.html)
+
+[&#x0040;Camilo-Mora](https://github.com/Camilo-Mora), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;jcheng5](https://github.com/jcheng5), [&#x0040;jeroen](https://github.com/jeroen), [&#x0040;nealrichardson](https://github.com/nealrichardson), and [&#x0040;wfulp](https://github.com/wfulp).
+
+#### leaflet.providers [v2.0.0](https://cran.r-project.org/web/packages/leaflet.providers/news/news.html)
+
+[&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;schloerke](https://github.com/schloerke), and [&#x0040;SimonGoring](https://github.com/SimonGoring).
+
+#### leaflet [v2.2.1](https://cran.r-project.org/web/packages/leaflet/news/news.html)
+
+```{r}
+#| echo: false
+#| eval: false
+usethis::use_tidy_thanks("rstudio/leaflet", from = "v2.2.0")
+```
+
+[&#x0040;barracuda156](https://github.com/barracuda156), [&#x0040;Bryan1qr](https://github.com/Bryan1qr), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;gtalavera](https://github.com/gtalavera), [&#x0040;jmelichar](https://github.com/jmelichar), [&#x0040;mjdzr](https://github.com/mjdzr), and [&#x0040;PietrH](https://github.com/PietrH).
+
+#### learnr [v0.11.4](https://rstudio.github.io/learnr/news/index.html#learnr-0115)
+
+[&#x0040;davidkane9](https://github.com/davidkane9), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;jimjam-slam](https://github.com/jimjam-slam), [&#x0040;katieravenwood](https://github.com/katieravenwood), and [&#x0040;NaturallyAsh](https://github.com/NaturallyAsh).
+
+#### plotly [v4.10.3](https://cran.r-project.org/web/packages/plotly/news/news.html)
+
+[&#x0040;AdroMine](https://github.com/AdroMine), [&#x0040;AlexisDerumigny](https://github.com/AlexisDerumigny), [&#x0040;Apompetti-Cori](https://github.com/Apompetti-Cori), [&#x0040;cashfields](https://github.com/cashfields), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;CristianRiccio](https://github.com/CristianRiccio), [&#x0040;davidhodge931](https://github.com/davidhodge931), [&#x0040;DrMattG](https://github.com/DrMattG), [&#x0040;geejaytee](https://github.com/geejaytee), [&#x0040;jacole3](https://github.com/jacole3), [&#x0040;jrbarber37](https://github.com/jrbarber37), [&#x0040;lennartraman](https://github.com/lennartraman), [&#x0040;LouisLeNezet](https://github.com/LouisLeNezet), [&#x0040;MichalLauer](https://github.com/MichalLauer), [&#x0040;mjdzr](https://github.com/mjdzr), [&#x0040;mumbarkar](https://github.com/mumbarkar), [&#x0040;Obsidian-user](https://github.com/Obsidian-user), [&#x0040;olivroy](https://github.com/olivroy), [&#x0040;OverLordGoldDragon](https://github.com/OverLordGoldDragon), [&#x0040;rsbivand](https://github.com/rsbivand), [&#x0040;stephanmg](https://github.com/stephanmg), [&#x0040;stla](https://github.com/stla), [&#x0040;TheAnalyticalEdge](https://github.com/TheAnalyticalEdge), [&#x0040;ThierryO](https://github.com/ThierryO), [&#x0040;tomasnobrega](https://github.com/tomasnobrega), [&#x0040;tvedebrink](https://github.com/tvedebrink), [&#x0040;uriahf](https://github.com/uriahf), [&#x0040;whitejf](https://github.com/whitejf), [&#x0040;wholmes105](https://github.com/wholmes105), [&#x0040;wmay](https://github.com/wmay), [&#x0040;yogat3ch](https://github.com/yogat3ch), and [&#x0040;zeehio](https://github.com/zeehio).
+
+#### shiny [v1.8.0](https://shiny.posit.co/r/reference/shiny/1.8.0/upgrade.html)
+
+```{r}
+#| eval: false
+#| echo: false
+usethis::use_tidy_thanks("rstudio/shiny", from = "v1.7.5.1")
+```
+
+[&#x0040;avsdev-cw](https://github.com/avsdev-cw), [&#x0040;bathyscapher](https://github.com/bathyscapher), [&#x0040;chlebowa](https://github.com/chlebowa), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;deining](https://github.com/deining), [&#x0040;flachboard](https://github.com/flachboard), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;jcheng5](https://github.com/jcheng5), [&#x0040;karangattu](https://github.com/karangattu), [&#x0040;nstrayer](https://github.com/nstrayer), [&#x0040;wbakerrobinson](https://github.com/wbakerrobinson), and [&#x0040;wch](https://github.com/wch).
+
+#### shinyvalidate [v0.1.3](https://rstudio.github.io/shinyvalidate/news/index.html#shinyvalidate-013)
+
+[&#x0040;BajczA475](https://github.com/BajczA475), [&#x0040;bhogan-mitre](https://github.com/bhogan-mitre), [&#x0040;chlebowa](https://github.com/chlebowa), [&#x0040;cleber-n-borges](https://github.com/cleber-n-borges), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;dependabot[bot]](https://github.com/dependabot[bot]), [&#x0040;DivadNojnarg](https://github.com/DivadNojnarg), [&#x0040;doncqueurs](https://github.com/doncqueurs), [&#x0040;Sebastian-T-T](https://github.com/Sebastian-T-T), [&#x0040;stefanoborini](https://github.com/stefanoborini), [&#x0040;stephenwilliams22](https://github.com/stephenwilliams22), [&#x0040;Teebusch](https://github.com/Teebusch), and [&#x0040;Wezz0234](https://github.com/Wezz0234).
+
+#### thematic [0.1.4](https://rstudio.github.io/thematic/news/index.html#thematic-014)
+
+[&#x0040;AlbertRapp](https://github.com/AlbertRapp), [&#x0040;cpsievert](https://github.com/cpsievert), and [&#x0040;jfulponi](https://github.com/jfulponi).
+
+:::
+:::

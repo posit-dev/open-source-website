@@ -194,7 +194,6 @@ These posts needed `engine: markdown` to prevent Quarto from attempting code exe
 | Post | Reason |
 |------|--------|
 | shiny-vscode-1.0.0 | Had it in original, preserved during port |
-| shiny-side-of-llms-part-3 | Added to fix render error — has `{.python}` and `{.r}` display blocks |
 
 ## Shiny posts: code block syntax fixed
 
@@ -206,19 +205,25 @@ Hugo can't parse ```` ``` {python} ```` (with space) — expects ```` ```python 
 
 **Root cause:** Quarto outputs code blocks with cell options (`#| eval: false` etc.) using ```` ``` {lang} ```` syntax. Consider adding post-processing to the porting script if this is common.
 
+## Shiny posts: shinylive code blocks need manual rendering
+
+`shiny-r-1.8.0` uses `{shinylive-r}` code blocks that require the shinylive Quarto extension. The extension's Lua filter spawns a separate Rscript process that doesn't pick up the renv from the parent directory, causing "no package called 'shinylive'" errors.
+
+**Workaround:** Render manually outside the renv environment (e.g., with global shinylive installed).
+
+**Status:** `shiny-r-1.8.0` was rendered manually, but shinylive components show no output — the extension is optimized for HTML output and doesn't work with hugo-md format.
+
 ## Shiny posts: shinylive embeds need CSS styling
 
 `introducing-component-layouts` has shinylive components that render but don't get enough space — often end up with scrollbars.
 
 **To investigate:** Add site-level CSS for shinylive iframes/embeds to ensure adequate height/width.
 
-## Shiny posts: code-fold show/hide not working
+## Shiny posts: code-fold show/hide
 
-`shiny-side-of-llms-part-3` uses Quarto's `#| code-fold: true` and `#| code-summary: "Show output"` to show/hide code output. This doesn't work in Hugo — the cell options are just rendered as comments in the code block.
+`shiny-side-of-llms-part-3` uses Quarto's `#| code-fold: true` and `#| code-summary: "Show output"` to show/hide code output.
 
-**Options to investigate:**
-- Hugo shortcode or partial for collapsible sections
-- Lua filter to convert code-fold blocks to `<details>` elements
+**Status:** Fixed by removing `engine: markdown` and re-rendering with knitr execution. The code-fold features now work correctly.
 - Manual conversion during review
 
 ## Shiny posts: `# <<` line-highlight markers
@@ -276,6 +281,12 @@ Some ported blogs transformed frontmatter only in the rendered file (`.md`, `.ma
 **Shiny blog is OK** — script transforms `.qmd` first, then renders.
 
 **To fix:** Update source files to match rendered frontmatter, or accept that re-rendering requires re-applying transformations.
+
+## Shiny posts: shinychat-tool-ui iframe removed
+
+The original post had an iframe embedding `feature/index.html` with complex scaling. This didn't render well in Hugo, so the iframe was removed and the post now relies on the hero image.
+
+The `feature/` folder with the interactive HTML demo is still present if needed later. Added `'shinychat-tool-ui/feature/'` to `ignoreFiles` in `hugo.toml` to prevent Hugo from rendering it as a page.
 
 ## Other observations
 

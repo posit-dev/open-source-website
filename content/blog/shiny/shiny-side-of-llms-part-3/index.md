@@ -5,11 +5,10 @@ description: >
   together in a polished Shiny app. From covering async, optimizing
   conversations, to handling loading and errors smoothly. Both Python and R!
 people:
-  - "Veerle Eeftink - van Leemput"
+  - Veerle Eeftink - van Leemput
 date: '2025-09-15'
 image: shiny-side-of-llms-header.png
 image-alt: The Shiny Side of LLMs part 3
-engine: markdown
 ported_from: shiny
 port_status: raw
 ---
@@ -196,11 +195,10 @@ async def main():
 asyncio.run(main())
 ```
 
-```python
-#| eval: false
-#| code-fold: true
-#| code-summary: Show output
+<details class="code-fold">
+<summary>Show output</summary>
 
+``` python
 """
  [                                                                                                          
    {                                                                                                        
@@ -233,6 +231,8 @@ asyncio.run(main())
 """
 ```
 
+</details>
+
 [`chat_async()`](https://posit-dev.github.io/chatlas/reference/Chat.html#chatlas.Chat.chat_async) returns a coroutine object, which is basically a special kind of function that runs asynchronously. It doesn't do the work right away when you call it, but it gives you this object that you can later "await" to actually get the result. If you're running regular (non-asynchronous) code, you use `asyncio.run()` to start and wait for the task to finish.
 
 ## R
@@ -264,13 +264,14 @@ Return your answer as a JSON array of objects, where each object has the followi
 ) %...>% print()
 ```
 
-```r
-#| eval: false
-#| code-fold: true
-#| code-summary: Show output
+<details class="code-fold">
+<summary>Show output</summary>
 
+``` r
 #> [1] "```json\n[\n  {\n    \"aspect\": \"clarity\",\n    \"feedback\": \"The title is somewhat ambiguous - 'shiny side' could mean positive aspects of LLMs or reference the Shiny framework. The wordplay may confuse rather than clarify the content focus.\",\n    \"suggestion\": \"Consider 'Building LLM Demos with Shiny' or 'Interactive LLM Exploration Using Shiny' to clearly communicate both the tool and topic.\"\n  },\n  {\n    \"aspect\": \"tone\",\n    \"feedback\": \"The playful wordplay fits well with the lightning talk format and conference atmosphere. It's approachable and not intimidating for audiences with varying technical backgrounds.\",\n    \"suggestion\": null\n  },\n  {\n    \"aspect\": \"relevance\",\n    \"feedback\": \"Highly relevant for posit::conf audience who are familiar with Shiny. The title connects a trending AI topic with a beloved R/Python tool, making LLMs accessible to the community.\",\n    \"suggestion\": \"Consider adding a subtitle for context: 'The Shiny Side of LLMs: Interactive Demos for AI Exploration' to enhance relevance while keeping the clever wordplay.\"\n  }\n]\n```"
 ```
+
+</details>
 
 [`chat_async()`](https://ellmer.tidyverse.org/reference/Chat.html#method-chat-async-) starts the work and returns a promise, this special kind of placeholder. Then [`%...>%`](https://rstudio.github.io/promises/reference/pipes.html) attaches the next step, like printing the result, once it's ready. This keeps your R session running without waiting or freezing. Note that it resolves to a string (probably Markdown), which is slightly different than just using the `chat()` method. This is also why the output looks a little bit different compared to [part two of this series](https://shiny.posit.co/blog/posts/shiny-side-of-llms-part-2/).
 
@@ -1791,10 +1792,10 @@ If we combine everything we talked about, we end up with a polished DeckCheck ap
 >
 > You can grab the code directly from [here](https://github.com/hypebright/the-shiny-side-of-llms/blob/d1094d2774f9d0c213c7ddf6e17f94da706b1b76/Py/deckcheck/app.py).
 
-```python
-#| eval: false
-#| code-fold: true
-#| code-summary: "See full app"
+<details class="code-fold">
+<summary>See full app</summary>
+
+``` python
 from shiny import App, reactive, render, ui, req
 from shinywidgets import output_widget, render_widget
 import shinyswatch
@@ -2426,16 +2427,18 @@ def server(input, output, session):
 app = App(app_ui, server)
 ```
 
+</details>
+
 ## R
 
 > **Get this code from GitHub**
 >
 > You can grab the code directly from [here](https://github.com/hypebright/the-shiny-side-of-llms/blob/d1094d2774f9d0c213c7ddf6e17f94da706b1b76/R/deckcheck/app.R).
 
-```r
-#| eval: false
-#| code-fold: true
-#| code-summary: "See full app"
+<details class="code-fold">
+<summary>See full app</summary>
+
+``` r
 library(shiny)
 library(bslib)
 library(ellmer)
@@ -3086,6 +3089,8 @@ server <- function(input, output, session) {
 
 shinyApp(ui, server)
 ```
+
+</details>
 
 # Ready for the world: deployment
 

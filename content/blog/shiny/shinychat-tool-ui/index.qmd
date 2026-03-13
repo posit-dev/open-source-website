@@ -1,0 +1,779 @@
+---
+title: Tool Calling UI in shinychat
+description: Rich tool calling displays are now available in shinychat!
+people:
+  - Garrick Aden-Buie
+  - Carson Sievert
+  - Barret Schloerke
+date: "2025-11-20"
+image: feature.png
+ported_from: shiny
+port_status: raw
+---
+
+```{=html}
+<style>
+.highlight-line {
+  font-weight: bold;
+}
+body:not(.modal-open) div.sourceCode pre code.has-line-highlights > span:not(.highlight-line) {
+  opacity: 0.6;
+}
+body:not(.modal-open) div.sourceCode:hover pre code.has-line-highlights > span:not(.highlight-line) {
+  opacity: 0.8;
+}
+.card-header {
+  --bs-card-cap-bg: transparent;
+}
+.shiny-tool-card {
+  margin-bottom: 1rem !important;
+}
+.code-copy-button > .bi::after {
+  display: none;
+}
+</style>
+```
+
+We're jazzed to announce that [shinychat](https://posit-dev.github.io/shinychat) now includes rich UI for tool calls!
+shinychat makes it easy to build LLM-powered chat interfaces in Shiny apps, and with tool calling UI, your users can see which tools are being executed and their outcomes.
+This feature is available in [shinychat for R](https://posit-dev.github.io/shinychat/r) (v0.3.0) and [shinychat for Python](https://posit-dev.github.io/shinychat/py/) (v0.2.0 or later).
+
+::: {.panel-tabset group="language"}
+## R
+
+``` r
+install.packages("shinychat")
+```
+
+## Python
+
+``` bash
+pip install shinychat
+```
+:::
+
+This release brings tool call displays that work with [ellmer](https://ellmer.tidyverse.org) (R) and [chatlas](https://github.com/posit-dev/chatlas) (Python).
+When the LLM calls a tool, shinychat automatically displays the request and result in a collapsible card interface.
+
+In this post we'll cover the new [Tool calling UI](#tool-calling-ui) features, how to set them up in your apps, and ways to customize the display.
+We'll also highlight some [chat bookmarking support](#bookmarking-support) and [other improvements in shinychat for R v0.3.0](#other-improvements-in-r-v0.3.0).
+As always, you can find the full list of changes in the [R release notes](https://posit-dev.github.io/shinychat/r/news/index.html#shinychat-030) and [Python release notes](https://github.com/posit-dev/shinychat/blob/main/pkg-py/CHANGELOG.md).
+
+## Tool calling UI
+
+Tool calling lets you extend an LLM's capabilities by giving it access to functions you define.
+When you provide a tool to the LLM, you're telling it "here's a function you can call if you need it."
+The key thing to understand is that the tool runs on _your machine_ (or wherever your Shiny app is running) — the LLM doesn't directly run the tool itself.
+Instead, it asks _you_ to run the function and return the result.
+
+Both ellmer and chatlas make it easy to define tools and register them with your chat client[^tools-ellmer-chatlas], and they also handle the back-and-forth of tool calls by receiving requests from the LLM, executing the tool, and sending the results back.
+This means you can focus on what you do best: writing code to solve problems.
+
+Any problem you can solve with a function can become a tool for an LLM!
+You can give the LLM access to live data, APIs, databases, or any other resources your app can reach.
+
+[^tools-ellmer-chatlas]: See the [ellmer tool calling documentation](https://ellmer.tidyverse.org/articles/tool-calling.html) for R and the [chatlas tool calling documentation](https://posit-dev.github.io/chatlas/tool-calling/how-it-works.html) for Python for more details on defining and registering tools.
+
+::: {.callout-tip title="btw: A complete toolkit for R"}
+If you're working in R, [btw](https://posit-dev.github.io/btw) is a complete toolkit to help LLMs work better with R.
+Whether you're copy-pasting to ChatGPT, chatting with an AI assistant in your IDE, or building LLM-powered apps with shinychat, btw makes it easy to give LLMs the context they need.
+
+And, most importantly, btw provides a full suite of tools for gathering context from R sessions, including tools to: read help pages and vignettes, describe data frames, search for packages on CRAN, read web pages, and more.
+
+Learn more at [posit-dev.github.io/btw](https://posit-dev.github.io/btw)!
+:::
+
+When the LLM decides to call a tool, shinychat displays the request and result in the chat interface.
+Users can see which tools are being invoked, what arguments are being passed, and what data is being returned.
+The tool display is designed to be customizable, so shinychat developers can customize the appearance and display of tool calls to best serve their users.
+
+### Basic tool display
+
+Let's start by creating a simple weather forecasting tool that fetches a weather data (in the United States) for a given latitude and longitude.
+
+::: {.panel-tabset group="language"}
+## R
+
+```{r}
+#| eval: false
+#| code-line-numbers: true
+library(shinychat)
+library(ellmer)
+library(weathR)
+
+get_weather_forecast <- tool(
+  function(lat, lon) {
+    point_tomorrow(lat, lon, short = FALSE)
+  },
+  name = "get_weather_forecast",
+  description = "Get the weather forecast for a location.",
+  arguments = list(
+    lat = type_number("Latitude"),
+    lon = type_number("Longitude")
+  )
+)
+
+# Register the tool with your chat client
+chat <- ellmer::chat("openai/gpt-4.1-nano")
+chat$register_tool(get_weather_forecast)
+```
+
+## Python
+
+``` python
+from chatlas import ChatOpenAI
+import requests
+
+def get_weather_forecast(lat: float, lon: float) -> dict:
+    """Get the weather forecast for a location."""
+    lat_lng = f"latitude={lat}&longitude={lon}"
+    url = f"https://api.open-meteo.com/v1/forecast?{lat_lng}&current=temperature_2m,wind_speed_10m"
+    response = requests.get(url)
+    return response.json()["current"]
+
+# Register the tool with your chat client
+chat = ChatOpenAI(model="gpt-4.1-nano")
+chat.register_tool(get_weather_forecast)
+```
+:::
+
+With this tool registered, when you ask a weather-related question, the LLM might decide to call the `get_weather_forecast()` tool to get the latest weather.
+
+In a chat conversation in your R console with ellmer, this might look like the following.
+
+```r
+chat$chat("Will I need an umbrella for my walk to the T?")
+#> ◯ [tool call] get_weather_forecast(lat = 42.3515, lon = -71.0552)
+#> ● #> [{"time":"2025-11-20 16:00:00 EST","temp":42,"dewpoint":0,"humidity":67,"p_rain":1,"wi…
+#>
+#> Based on the weather forecast, there is a chance of rain around 4 to 5 PM,
+#> with mostly cloudy to partly sunny skies. It seems there might be some rain
+#> during this time, so carrying an umbrella could be a good idea if you plan
+#> to go out around that time. Otherwise, the weather looks relatively clear
+#> in the evening.
+```
+
+Notice that I didn't provide many context clues, but the model correctly guessed that I'm walking to the MBTA in Boston, MA and picked [the latitude and longitude for Boston's South Station](https://www.openstreetmap.org/?mlat=42.35150&mlon=-71.05520#map=16/42.35150/-71.05520&layers=P).
+
+In shinychat, when the LLM calls the tool, shinychat automatically displays the tool request in a collapsed card:
+
+```{r}
+#| echo: false
+
+library(shinychat)
+library(ellmer)
+library(weathR)
+
+get_weather_forecast <- tool(
+  function(lat, lon) {
+    # Shim point_tomorrow with caching to speed up rendering
+    result <- NULL
+    if (is.null(result)) {
+      result <- weathR::point_tomorrow(lat, lon, short = FALSE)
+    }
+    result
+  },
+  name = "get_weather_forecast",
+  description = "Get the weather forecast for a location.",
+  arguments = list(
+    lat = type_number("Latitude"),
+    lon = type_number("Longitude")
+  )
+)
+
+# Simulate a tool request
+request <- ContentToolRequest(
+  id = "tool_call_001",
+  name = "get_weather_forecast",
+  arguments = list(
+    lat = 42.3515,
+    lon = -71.0552
+  ),
+  tool = get_weather_forecast
+)
+
+contents_shinychat(request)
+```
+
+Expanding the card shows the arguments passed to the tool.
+When the tool completes, shinychat replaces the request with a card containing the result:
+
+```{r}
+#| echo: false
+
+request@id <- "tool_call_002" # Don't match so we don't hide the request
+
+result <- ContentToolResult(
+  value = get_weather_forecast(42.3601, -71.0589),
+  request = request
+)
+
+contents_shinychat(result)
+```
+
+If the tool throws an error, the error is captured and the error message is shown to the LLM.
+Typically this happens when the model makes a mistake in calling the tool and often the error message is instructive.
+
+shinychat updates the card to show the error message:
+
+```{r}
+#| echo: false
+request@id <- "tool_call_001c"
+error_result <- ContentToolResult(
+  error = rlang::catch_cnd(mean[[1]]),
+  request = request
+)
+
+contents_shinychat(error_result)
+```
+
+### Setting up streaming
+
+To enable tool UI in your apps, you need to ensure that tool requests and results are streamed to shinychat:
+
+::: {.panel-tabset group="language"}
+## R
+
+You don't need to do anything if you're using `chat_app()` or the chat module via `chat_mod_ui()` and `chat_mod_server()`; tool UI is enabled automatically.
+
+If you're using `chat_ui()` with `chat_append()`, set `stream = "content"` when calling `$stream_async()`:
+
+```{r}
+#| eval: false
+server <- function(input, output, session) {
+  client <- ellmer::chat("openai/gpt-4.1-nano")
+  client$register_tool(get_weather_forecast)
+
+  observeEvent(input$chat_user_input, {
+    stream <- client$stream_async(input$chat_user_input, stream = "content")
+    chat_append("chat", stream)
+  })
+}
+```
+
+## Python
+
+In Python with Shiny Express, use `content="all"` when calling `stream_async()`:
+
+``` {.python filename="app.py"}
+from chatlas import ChatOpenAI
+from shiny.express import ui
+from shinychat.express import Chat
+
+client = ChatOpenAI(model="gpt-4.1-nano")
+client.register_tool(get_weather_forecast)
+
+chat = Chat(id="chat")
+chat.ui()
+
+@chat.on_user_submit
+async def handle_user_input(user_input: str):
+    response = await client.stream_async(user_input, content="all")
+    await chat.append_message_stream(response)
+```
+
+For Shiny Core mode:
+
+``` {.python filename="app.py"}
+from chatlas import ChatOpenAI
+from shiny import App, ui
+from shinychat import Chat
+
+client = ChatOpenAI(model="gpt-4.1-nano")
+client.register_tool(get_weather_forecast)
+
+app_ui = ui.page_fluid(
+    Chat(id="chat").ui()
+)
+
+def server(input, output, session):
+    chat = Chat(id="chat")
+
+    @chat.on_user_submit
+    async def handle_user_input(user_input: str):
+        response = await client.stream_async(user_input, content="all")
+        await chat.append_message_stream(response)
+
+app = App(app_ui, server)
+```
+:::
+
+### Customizing tool title and icon
+
+You can enhance the visual presentation of tool requests and results by adding custom titles and icons to your tools.
+This helps users quickly identify which tools are being called.
+
+::: {.panel-tabset group="language"}
+## R
+
+Use `tool_annotations()` to add a title and icon:
+
+```{r}
+#| eval: false
+#| code-line-numbers: "7-10"
+get_weather_forecast <- tool(
+  function(lat, lon) {
+    point_tomorrow(lat, lon, short = FALSE)
+  },
+  name = "get_weather_forecast",
+  description = "Get the weather forecast for a location.",
+  arguments = list(
+    lat = type_number("Latitude"),
+    lon = type_number("Longitude")
+  ),
+  annotations = tool_annotations(
+    title = "Weather Forecast",
+    icon = bsicons::bs_icon("cloud-sun")
+  )
+)
+```
+
+## Python
+
+With chatlas, you can customize the tool display in two ways:
+
+1. Use the `._display` attribute to customize the tool display:
+
+   ``` python
+   import faicons
+
+   def get_weather_forecast(lat: float, lon: float) -> dict:
+       """Get the weather forecast for a location."""
+       # ... implementation ...
+
+   get_weather_forecast._display = {
+       "title": "Weather Forecast",
+       "icon": faicons.icon_svg("cloud-sun")
+   }
+   ```
+
+   This approach sets the title and icon for all calls to this tool, so it's ideal for predefined tools or tools that are bundled in a Python module or package.
+
+1. Set the tool annotations at registration time:
+
+   ``` python
+   chat.register_tool(
+       get_weather_forecast,
+       annotations={
+           "title": "Weather Forecast",
+           "icon": faicons.icon_svg("cloud-sun")
+       }
+   )
+   ```
+
+   This approach allows you to customize the display for a specific chat client or application without modifying the tool function itself.
+:::
+
+Now the tool card shows your custom title and icon:
+
+```{r}
+#| echo: false
+
+get_weather_forecast <- tool(
+  function(lat, lon) {
+    result <- NULL
+    if (is.null(result)) {
+      result <- weathR::point_tomorrow(lat, lon, short = FALSE)
+    }
+    result
+  },
+  name = "get_weather_forecast",
+  description = "Get the weather forecast for a location.",
+  arguments = list(
+    lat = type_number("Latitude"),
+    lon = type_number("Longitude")
+  ),
+  annotations = tool_annotations(
+    title = "Weather Forecast",
+    icon = bsicons::bs_icon("cloud-sun")
+  )
+)
+
+request_with_annotations <- ContentToolRequest(
+  id = "tool_call_004",
+  name = "get_weather_forecast",
+  arguments = list(
+    lat = 42.3515,
+    lon = -71.0552
+  ),
+  tool = get_weather_forecast
+)
+
+result_with_annotations <- ContentToolResult(
+  value = get_weather_forecast(42.3601, -71.0589),
+  request = request_with_annotations
+)
+
+contents_shinychat(result_with_annotations)
+```
+
+### Custom display content
+
+By default, shinychat shows the raw tool result value as a code block.
+But often you'll want to present data to users in a more polished format—like a formatted table or a summary.
+
+You can customize the display by returning alternative content:
+
+::: {.panel-tabset group="language"}
+## R
+
+Return a `ContentToolResult` with `extra$display` containing alternative content:
+
+```{r}
+#| eval: false
+#| code-line-numbers: "3,7-14"
+get_weather_forecast <- tool(
+  function(lat, lon, location_name) {
+    forecast_data <- point_tomorrow(lat, lon, short = FALSE)
+    forecast_table <- gt::as_raw_html(gt::gt(forecast_data))
+
+    ContentToolResult(
+      forecast_data,  # This is what the LLM sees
+      extra = list(
+        display = list(
+          html = forecast_table,  # This is what users see
+          title = paste("Weather Forecast for", location_name)
+        )
+      )
+    )
+  },
+  name = "get_weather_forecast",
+  description = "Get the weather forecast for a location.",
+  arguments = list(
+    lat = type_number("Latitude"),
+    lon = type_number("Longitude"),
+    location_name = type_string("Name of the location")
+  ),
+  annotations = tool_annotations(
+    title = "Weather Forecast",
+    icon = bsicons::bs_icon("cloud-sun")
+  )
+)
+```
+
+## Python
+
+Return a `ToolResult` with display options:
+
+``` python
+from chatlas import ToolResult
+import pandas as pd
+
+def get_weather_forecast(lat: float, lon: float, location_name: str):
+    """Get the weather forecast for a location."""
+    # Get forecast data
+    data = fetch_weather_data(lat, lon)
+
+    # Create a DataFrame for the LLM
+    forecast_df = pd.DataFrame(data)
+
+    # Create HTML table for users
+    forecast_table = forecast_df.to_html(index=False)
+
+    return ToolResult(
+        value=forecast_df.to_dict(),  # LLM sees this
+        display={
+            "html": forecast_table,  # Users see this
+            "title": f"Weather Forecast for {location_name}"
+        }
+    )
+```
+:::
+
+The `display` options support three content types (in order of preference):
+
+1.  **`html`**: HTML content from packages like `{gt}`, `{reactable}`, or `{htmlwidgets}` (R), or Pandas/HTML strings (Python)
+2.  **`markdown`**: Markdown text that's automatically rendered
+3.  **`text`**: Plain text without code formatting
+
+Here's what a formatted table looks like in the tool result:
+
+```{r}
+#| echo: false
+
+get_weather_forecast_table <- tool(
+  function(lat, lon, location_name) {
+    forecast_data <- weathR::point_tomorrow(lat, lon, short = FALSE)
+    forecast_table <- gt::as_raw_html(gt::gt(forecast_data))
+
+    ContentToolResult(
+      forecast_data,
+      extra = list(
+        display = list(
+          html = forecast_table,
+          title = paste("Weather Forecast for", location_name)
+        )
+      )
+    )
+  },
+  name = "get_weather_forecast",
+  description = "Get the weather forecast for a location.",
+  arguments = list(
+    lat = type_number("Latitude"),
+    lon = type_number("Longitude"),
+    location_name = type_string("Name of the location")
+  ),
+  annotations = tool_annotations(
+    title = "Weather Forecast",
+    icon = bsicons::bs_icon("cloud-sun")
+  )
+)
+
+request_html <- ContentToolRequest(
+  id = "tool_call_007",
+  name = "get_weather_forecast",
+  arguments = list(location_name = "South Station in Boston, MA", lat = 42.3515, lon = -71.0552),
+  tool = get_weather_forecast_table
+)
+
+result_html <- do.call(get_weather_forecast_table, request_html@arguments)
+result_html@request <- request_html
+
+contents_shinychat(result_html)
+```
+
+### Additional display options
+
+You can control how tool results are presented using additional display options:
+
+-   `show_request = FALSE`: Hide the tool call details when they're obvious from the display
+-   `open = TRUE`: Expand the result panel by default (useful for rich content like maps or charts)
+-   `title` and `icon`: Override the tool's default title and icon for this specific result
+
+Another helpful feature is to include an `_intent` argument in your tool definition.
+When present in the tool arguments, shinychat shows the `_intent` value in the tool card header, helping users understand why the LLM is calling the tool.
+
+::: {.panel-tabset group="language"}
+## R
+
+```{r}
+#| eval: false
+tool_with_intent <- tool(
+  function(`_intent`) {
+    runif(1)
+  },
+  name = "random_number",
+  description = "Generate a random number.",
+  arguments = list(
+    `_intent` = type_string(
+      "Explain why you're generating this number"
+    )
+  )
+)
+```
+
+## Python
+
+``` python
+def random_number(_intent: str) -> float:
+    """Generate a random number.
+
+    Args:
+        _intent: Explain why you're generating this number
+    """
+    import random
+    return random.random()
+```
+:::
+
+Notice that the tool function itself doesn't actually use the `_intent` argument, but its presence allows shinychat to give the user additional context about the tool call.
+
+## Bookmarking support
+
+When a Shiny app reloads, the app returns to its initial state, unless the URL includes [bookmarked state](https://shiny.posit.co/r/articles/build/bookmarking-state/).[^shinyappsio-idle]
+Automatically updating the URL to include a bookmark of the chat state is a great way to help users return to their work if they accidentally refresh the page or unexpectedly lose their connection.
+
+[^shinyappsio-idle]: This can be especially frustrating behavior since hosted apps, by default, will close an idle session after a certain ([configurable](https://docs.posit.co/shinyapps.io/guide/applications/#advanced-settings)) amount of time.
+
+Both shinychat for R and Python provide helper functions that make it easy to restore conversations with bookmarks.
+This means users can refresh the page or share a URL and pick up right where they left off.
+
+::: {.panel-tabset group="language"}
+## R
+
+In R, the `chat_restore()` function restores the message history from the bookmark when the app starts up *and* ensures that the chat client state is automatically bookmarked on user input and assistant responses.
+
+```{r}
+#| eval: false
+library(shiny)
+library(shinychat)
+
+ui <- function(request) {
+  page_fillable(
+    chat_ui("chat")
+  )
+}
+
+server <- function(input, output, session) {
+  chat_client <- ellmer::chat_openai(model = "gpt-4o-mini")
+
+  # Automatically save chat state on user input and responses
+  chat_restore("chat", chat_client)
+
+  observeEvent(input$chat_user_input, {
+    stream <- chat_client$stream_async(input$chat_user_input)
+    chat_append("chat", stream)
+  })
+}
+
+# Enable URL-based bookmarking
+shinyApp(ui, server, enableBookmarking = "url")
+```
+
+`enableBookmarking = "url"` stores the chat state in encoded data in the query string of the app's URL.
+Because browsers have native limitations on the size of a URL, you should use `enableBookmarking = "server"` to store state server-side without URL size limitations for chatbots expected to have large conversation histories.
+
+And if you're using `chat_app()` for quick prototypes, bookmarking is already enabled automatically.
+
+## Python
+
+In Python, the `.enable_bookmarking()` method handles the where, when, and how of bookmarking chat state.
+
+### Express mode
+
+```python
+from chatlas import ChatOllama
+from shiny.express import ui
+
+chat_client = ChatOllama(model="llama3.2")
+
+chat = ui.Chat(id="chat")
+chat.ui(messages=["Welcome!"])
+
+chat.enable_bookmarking(
+    chat_client,
+    bookmark_store="url", # or "server"
+    bookmark_on="response", # or None
+)
+```
+
+### Core mode
+
+```python
+from chatlas import ChatOllama
+from shiny import ui, App
+
+app_ui = ui.page_fixed(
+    ui.chat_ui(id="chat", messages=["Welcome!"])
+)
+
+def server(input):
+    chat_client = ChatOllama(model="llama3.2")
+    chat = ui.Chat(id="chat")
+
+    chat.enable_bookmarking(
+        chat_client,
+        bookmark_on="response", # or None
+    )
+
+app = App(app_ui, server, bookmark_store="url")
+```
+
+### Configuration options
+
+The `.enable_bookmarking()` method handles three aspects of bookmarking:
+
+1. **Where** (`bookmark_store`)
+    - `"url"`: Store the state in the URL.
+    - `"server"`: Store the state on the server. Consider this over `"url"` if you want to support a large amount of state, or have other bookmark state that can't be serialized to JSON.
+2. **When** (`bookmark_on`)
+    - `"response"`: Triggers a bookmark when an `"assistant"` response is appended.
+    - `None`: Don't trigger a bookmark automatically. This assumes you'll be triggering bookmarks through other means (e.g., a button).
+3. **How** is handled automatically by registering the relevant `on_bookmark` and `on_restore` callbacks.
+
+When `.enable_bookmarking()` triggers a bookmark for you, it'll also update the URL query string to include the bookmark state.
+This way, when the user unexpectedly loses connection, they can load the current URL to restore the chat state, or go back to the original URL to start over.
+
+:::
+
+## Other improvements in shinychat for R
+
+Beyond tool calling UI and bookmarking support, shinychat for R v0.3.0 includes several other enhancements.
+
+### Better programmatic control
+
+`chat_mod_server()` now returns a set of reactive values and functions for controlling the chat interface:
+
+```{r}
+#| eval: false
+server <- function(input, output, session) {
+  chat <- chat_mod_server("chat", ellmer::chat_openai())
+
+  # React to user input
+  observe({
+    req(chat$last_input())
+    print(paste("User said:", chat$last_input()))
+  })
+
+  # React to assistant responses
+  observe({
+    req(chat$last_turn())
+    print("Assistant completed response")
+  })
+
+  # Programmatically control the chat
+  observeEvent(input$suggest_question, {
+    chat$update_user_input(
+      value = "What's the weather like today?",
+      submit = TRUE  # Automatically submit
+    )
+  })
+
+  observeEvent(input$reset, {
+    chat$clear()  # Clear history and UI
+  })
+}
+```
+
+The returned list includes:
+
+-   **`last_input`** and **`last_turn`** reactives for monitoring chat state
+-   **`update_user_input()`** for programmatically setting or submitting user input—great for suggested prompts or guided conversations
+-   **`append()`** for adding messages to the chat UI
+-   **`clear()`** for resetting the chat, with options to control how the client history is handled
+-   **`client`** for direct access to the ellmer chat client
+
+There's also a standalone `update_chat_user_input()` function if you're using `chat_ui()` directly, which supports updating the placeholder text and moving focus to the input.
+
+### Custom assistant icons
+
+You can now customize the icon shown next to assistant messages to better match your application's branding or to distinguish between different assistants:
+
+```{r}
+#| eval: false
+library(bsicons)
+
+# Set a custom icon for a specific response
+chat_append(
+  "chat",
+  "Here's some helpful information!",
+  icon = bs_icon("lightbulb")
+)
+
+# Or set a default icon for all assistant messages
+chat_ui("chat", icon_assistant = bs_icon("robot"))
+```
+
+This is especially useful when building multi-agent applications where different assistants might have different personalities or roles.
+
+### Safer external links
+
+External links in chat messages now open in a new tab with a confirmation dialog.
+This prevents users from accidentally navigating away from the chat session and losing their conversation.
+This is particularly helpful when LLMs include links in their responses, for example when shinychat is used in combination with Retrieval Augmented Generation via [ragnar](https://ragnar.tidyverse.org).
+
+## Learn more
+
+The tool calling UI opens up exciting possibilities for building transparent, user-friendly AI applications.
+Whether you're fetching data, running calculations, or integrating with external services, users can now see exactly what's happening.
+
+To dive deeper:
+
+-   Read the [tool calling UI article](https://posit-dev.github.io/shinychat/r/articles/tool-ui.html) for comprehensive examples in R
+-   Explore tool calling with [ellmer](https://ellmer.tidyverse.org/articles/tool-calling.html) (R) or [chatlas](https://posit-dev.github.io/chatlas/tool-calling/displays.html) (Python)
+
+## Acknowledgements
+
+A huge thank you to everyone who contributed to this release with bug reports, feature requests, and code contributions:
+
+[\@bianchenhao](https://github.com/bianchenhao), [\@cboettig](https://github.com/cboettig), [\@chendaniely](https://github.com/chendaniely), [\@cpsievert](https://github.com/cpsievert), [\@DavZim](https://github.com/DavZim), [\@DeepanshKhurana](https://github.com/DeepanshKhurana), [\@DivadNojnarg](https://github.com/DivadNojnarg), [\@gadenbuie](https://github.com/gadenbuie), [\@iainwallacebms](https://github.com/iainwallacebms), [\@janlimbeck](https://github.com/janlimbeck), [\@jcheng5](https://github.com/jcheng5), [\@jimrothstein](https://github.com/jimrothstein), [\@karangattu](https://github.com/karangattu), [\@ManuelSpinola](https://github.com/ManuelSpinola), [\@MohoWu](https://github.com/MohoWu), [\@nissinbo](https://github.com/nissinbo), [\@noamanemobidata](https://github.com/noamanemobidata), [\@parmsam](https://github.com/parmsam), [\@PaulC91](https://github.com/PaulC91), [\@rkennedy01](https://github.com/rkennedy01), [\@schloerke](https://github.com/schloerke), [\@selesnow](https://github.com/selesnow), [\@simonpcouch](https://github.com/simonpcouch), [\@skaltman](https://github.com/skaltman), [\@stefanlinner](https://github.com/stefanlinner), [\@t-kalinowski](https://github.com/t-kalinowski), [\@thendrix-trlm](https://github.com/thendrix-trlm), [\@wch](https://github.com/wch), [\@wlandau](https://github.com/wlandau), and [\@Yousuf28](https://github.com/Yousuf28).

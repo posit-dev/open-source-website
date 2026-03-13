@@ -1,0 +1,252 @@
+---
+title: "Shiny for R updates: tooltips, popovers, a new theme, and more"
+description: |
+  An overview of recent Shiny for R updates, including tooltips, popovers, a new theme, and more.
+people:
+  - Carson Sievert
+  - Garrick Aden-Buie
+date: "2023-08-16"
+image: feature.png
+ported_from: shiny
+port_status: raw
+---
+
+[bslib-tooltip]: https://rstudio.github.io/bslib/reference/tooltip.html
+[bslib-popover]: https://rstudio.github.io/bslib/reference/popover.html
+[bslib-card]: https://rstudio.github.io/bslib/articles/cards/index.html
+
+```{=html}
+<style>
+.quarto-video > div {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.cell-output-display {
+  padding-left: 1rem;
+}
+</style>
+```
+
+The Shiny team is delighted to share that we've just released updates for 12 different R packages that contribute to the Shiny experience.
+These updates include many improvements and bug fixes that aren't explicitly covered here, but the [release notes section](#release-notes) of this post provides links to the full list of changes for each package.
+That said, there are a few new features in `bslib` that we're particularly excited to highlight for you!
+
+## bslib
+
+In [the last release of `bslib` (0.5.0)](https://shiny.posit.co/blog/posts/bslib-dashboards/), we made significant strides towards `bslib` being our recommended way to [build modern Shiny dashboards](https://rstudio.github.io/bslib/articles/dashboards/index.html).
+In this release, we've added more features to help you make even better dashboards.
+
+### Tooltips and popovers
+
+One essential quality of any great website is that it provides the user with the right amount of information at the right time.
+In technically-oriented apps, you might want to provide a definition for a term, a description of a model parameter, or an input that updates a specific plot, but you don't want these details to overwhelm the user when they're not needed.
+
+In this release, we've added `bslib::tooltip()` and `bslib::popover()` to help you do just that.
+By putting this additional information in a tooltip or these additional controls in a popover, you can provide the detail your users need on demand, right where they need it.
+
+Here's a quick demo.
+In this example, we have a [card][bslib-card] containing a plot that compares the body mass of our favorite [penguins](https://allisonhorst.github.io/palmerpenguins/) across species.
+We've leveraged `bslib`'s new tooltip and popover features in a few ways:
+
+1. An info icon next to the card title includes a [tooltip][bslib-tooltip] that describes how the penguin body mass is measured.
+
+2. A gear icon in the upper left corner of the card includes a [popover][bslib-popover] with a few controls for customizing the plot.
+
+3. In the footer, a "Learn more" link opens a [popover][bslib-popover] with the full citation for the data used in the plot.
+
+::: {.column-screen .bg-blue .py-5 .mt-4 .mb-5}
+::: column-body-outset
+{{< video tooltips-popovers.mp4 title="Using bslib's tooltip and popover functionality to provide more detail on demand" >}}
+:::
+
+::: text-center
+```{=html}
+<p>
+<a class="btn btn-outline-primary" href="https://posit.cloud/content/6298796" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="01-tooltips-popovers.R"> <i class="bi bi-cloud-fill me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> Try on Posit Cloud </a> <a class="btn btn-outline-secondary ms-1 px-3" href="https://gist.github.com/cpsievert/7a93ff167aebf474873493d566ab9e07#file-01-tooltips-popovers-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code"> <i class="bi bi-file-code-fill" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> <span class="visually-hidden">Source</span></a>
+</p>
+
+<p class="mb-0">
+<i class="bi bi-book-fill"></i>
+Learn more in the new
+<a href="https://rstudio.github.io/bslib/articles/tooltips-popovers/index.html">Tooltips & Popovers article</a>.
+</p>
+```
+:::
+:::
+
+
+### Towards a new Shiny theme
+
+This release of `bslib` introduces a new theme that we intend on making the default experience for `bslib`-powered apps.
+Since this theme is still a work-in-progress, you must currently must be opt-in to use it by providing `bs_theme(preset = "shiny")` to the `theme` argument of the relevant page function, for example:
+
+``` r
+library(shiny)
+library(bslib)
+
+ui <- page_sidebar(
+  theme = bs_theme(preset = "shiny"),
+  # ...
+)
+```
+
+The screen recording below gives you a preview of the new Shiny preset theme.
+One exciting difference between the Shiny preset and other [Bootswatch themes](https://bootswatch.com/), is that we've taken this opportunity to re-think the appearance of Shiny-specific widgets, like `sliderInput()` and `selectInput()`.
+
+Want to see this theme in action? Just install the updated `bslib` package and run `bslib::bs_theme_preview()` in your R console!
+
+::: {.column-screen .bg-blue .py-5 .mt-4 .mb-5}
+::: column-body-outset
+{{< video shiny-theme.mp4 title="Changing from the current default theme to the new theme" >}}
+:::
+
+::: text-center
+```{=html}
+<p>
+<a class="btn btn-outline-primary" href="https://posit.cloud/content/6298796" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="02-new-theme.R">  <i class="bi bi-cloud-fill me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> Try on Posit Cloud </a> <a class="btn btn-outline-secondary ms-1 px-3" href="https://gist.github.com/cpsievert/7a93ff167aebf474873493d566ab9e07#file-02-new-theme-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code"> <i class="bi bi-file-code-fill" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> <span class="visually-hidden">Source</span></a>
+</p>
+
+<p class="mb-0">
+<i class="bi bi-book-fill"></i>
+Learn more about
+<a href="https://rstudio.github.io/bslib/articles/theming/index.html">real-time theming with bslib</a>.
+</p>
+```
+:::
+:::
+
+### Improved Quarto integration
+
+Since `bslib` components are designed to both work with Shiny and to render statically they can be added to [any Bootstrap-compatible page](https://rstudio.github.io/bslib/articles/any-project/index.html).
+
+In practice, however, due to nuances in how Quarto provides Boostrap, some `bslib` components weren't quite working as expected in Quarto documents.
+But this release fixes that issue!
+
+To demonstrate, here's an example of a fullscreen-capable [`bslib::card()`][bslib-card] in a Quarto document.
+
+::: {.column-screen .bg-blue .py-5 .mt-4 .mb-5}
+::: column-body-outset
+{{< video quarto-bslib.mp4 title="Putting a fullscreen-capable bslib card in a Quarto document" >}}
+:::
+
+::: text-center
+```{=html}
+<p>
+<a class="btn btn-outline-primary" href="https://posit.cloud/content/6298796" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="03-quarto-bslib.qmd"> <i class="bi bi-cloud-fill me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> Try on Posit Cloud </a> <a class="btn btn-outline-secondary ms-1 px-3" href="https://gist.github.com/cpsievert/7a93ff167aebf474873493d566ab9e07#file-03-quarto-bslib-qmd" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code"> <i class="bi bi-file-code-fill" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> <span class="visually-hidden">Source</span></a>
+</p>
+
+<p class="mb-0">
+<i class="bi bi-lightbulb-fill"></i>
+You can also
+<a href="https://rstudio.github.io/bslib/articles/any-project/index.html#r-markdown">use bslib components in R Markdown</a>.
+</p>
+```
+:::
+:::
+
+### New `input_switch()`
+
+Turning a feature on or off is a common action in many Shiny apps.
+With Shiny's default UI, this is typically done with a [`checkboxInput()`](https://shiny.rstudio.com/reference/shiny/latest/checkboxInput.html).
+But checkboxes don't always give an obvious visual cue of turning an option on or off.
+
+In this release, we've added a new `input_switch()` with a modern appearance.
+Here's a quick live preview of how it looks and feels:
+
+```{r}
+bslib::input_switch("switch", "Turn Up Awesomeness", FALSE)
+```
+
+::: {.callout .callout-note}
+The new `bslib` is [**extra, extra**]{#extra .d-none} awesome!
+:::
+
+```{=html}
+<script>
+document.getElementById("switch").addEventListener("click", (ev) => {
+  const extra = document.getElementById("extra");
+  extra.classList.toggle("d-none", !ev.target.checked);
+});
+</script>
+```
+
+## Looking forward
+
+We're excited to continue improving Shiny for R, and in the near-term we plan to focus on making `bslib` a more complete UI framework with great looking defaults.
+Here are a few things currently towards the top of our roadmap:
+
+-   Make the new Shiny preset theme the default for `bslib`-powered apps.
+    -   We have refreshed style updates in the works for `card()`s, `sidebar()`, and much more.
+    -   And we'd love to get your feedback on the new theme!
+-   More UI components, such as [offcanvas](https://getbootstrap.com/docs/5.3/components/offcanvas/), [button groups](https://getbootstrap.com/docs/5.3/components/button-group/), etc.
+-   More incorporation of `bslib` as part of the [Getting Started experience](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html) on [shiny.posit.co](https://shiny.posit.co/).
+-   More `bslib`-focused example galleries, starter templates, and articles.
+
+::: {.callout-note icon="false"}
+### Join us at posit::conf(2023)!
+
+We're also excited to see you at [posit::conf(2023)](https://posit.co/conference/) this September! Currently, there are [35 sessions](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=shiny) on the schedule that mention Shiny, including a handful of UI-focused [workshops](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=shiny&search.sessiontype=1675316728702001wr6r) and [talks](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=bslib&search.sessiontype=1684338401751002OADN&search.sessiontopics=1684779688709001hs5K).
+:::
+
+## Release notes {#release-notes}
+
+There are a lot of changes and updates in the Shiny universe that we haven't covered in this post.
+Dive into the release notes linked below to learn more about changes in each package.
+
+**Thank you, everyone!** 💙
+We'd like to thank everyone who contributed to all of the packages released in this cycle.
+Your contributions are what make Shiny great!
+
+### bslib [v0.5.1](https://rstudio.github.io/bslib/news/index.html#bslib-051)
+
+[&#x0040;ariebh](https://github.com/ariebh), [&#x0040;asadow](https://github.com/asadow), [&#x0040;chrisbrownlie](https://github.com/chrisbrownlie), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;ctrlxctrlc](https://github.com/ctrlxctrlc), [&#x0040;daattali](https://github.com/daattali), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;ideusoes](https://github.com/ideusoes), [&#x0040;Liripo](https://github.com/Liripo), [&#x0040;michael-dewar](https://github.com/michael-dewar), [&#x0040;nteetor](https://github.com/nteetor), [&#x0040;PaulC91](https://github.com/PaulC91), [&#x0040;philiph99](https://github.com/philiph99), [&#x0040;riskcede](https://github.com/riskcede), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;Teebusch](https://github.com/Teebusch), [&#x0040;tillea](https://github.com/tillea), and [&#x0040;wch](https://github.com/wch).
+
+### shiny [v1.7.5](https://shiny.posit.co/r/reference/shiny/1.7.5/upgrade.html)
+
+[&#x0040;AlexWaterboyBezzina](https://github.com/AlexWaterboyBezzina), [&#x0040;apalacio9502](https://github.com/apalacio9502), [&#x0040;aronatkins](https://github.com/aronatkins), [&#x0040;asadow](https://github.com/asadow), [&#x0040;BajczA475](https://github.com/BajczA475), [&#x0040;barracuda156](https://github.com/barracuda156), [&#x0040;brooksambrose](https://github.com/brooksambrose), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;daattali](https://github.com/daattali), [&#x0040;dipterix](https://github.com/dipterix), [&#x0040;dkori](https://github.com/dkori), [&#x0040;drag05](https://github.com/drag05), [&#x0040;dvg-p4](https://github.com/dvg-p4), [&#x0040;emillykkejensen](https://github.com/emillykkejensen), [&#x0040;EricKrantz](https://github.com/EricKrantz), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;galachad](https://github.com/galachad), [&#x0040;Gathuh](https://github.com/Gathuh), [&#x0040;GShotwell](https://github.com/GShotwell), [&#x0040;hadley](https://github.com/hadley), [&#x0040;hcsun1](https://github.com/hcsun1), [&#x0040;ifoxfoot](https://github.com/ifoxfoot), [&#x0040;ismirsehregal](https://github.com/ismirsehregal), [&#x0040;jcheng5](https://github.com/jcheng5), [&#x0040;jessekps](https://github.com/jessekps), [&#x0040;johnkarlen](https://github.com/johnkarlen), [&#x0040;juwitt](https://github.com/juwitt), [&#x0040;kathi-resan](https://github.com/kathi-resan), [&#x0040;kennedymwavu](https://github.com/kennedymwavu), [&#x0040;kevinushey](https://github.com/kevinushey), [&#x0040;king-of-poppk](https://github.com/king-of-poppk), [&#x0040;KRRLP-PL](https://github.com/KRRLP-PL), [&#x0040;Liripo](https://github.com/Liripo), [&#x0040;magarick](https://github.com/magarick), [&#x0040;MalteSteinCytel](https://github.com/MalteSteinCytel), [&#x0040;matt4815162342](https://github.com/matt4815162342), [&#x0040;maxheld83](https://github.com/maxheld83), [&#x0040;Mkranj](https://github.com/Mkranj), [&#x0040;nolanjj](https://github.com/nolanjj), [&#x0040;norahAlbarrak](https://github.com/norahAlbarrak), [&#x0040;pawelru](https://github.com/pawelru), [&#x0040;pbosetti](https://github.com/pbosetti), [&#x0040;RaviSekha](https://github.com/RaviSekha), [&#x0040;RosalynLP](https://github.com/RosalynLP), [&#x0040;sanjmeh](https://github.com/sanjmeh), [&#x0040;SarenT](https://github.com/SarenT), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;shahronak47](https://github.com/shahronak47), [&#x0040;stefanedwards](https://github.com/stefanedwards), [&#x0040;stla](https://github.com/stla), [&#x0040;stuvet](https://github.com/stuvet), [&#x0040;timbrock](https://github.com/timbrock), [&#x0040;tomjemmett](https://github.com/tomjemmett), [&#x0040;vivigirardin](https://github.com/vivigirardin), [&#x0040;vnijs](https://github.com/vnijs), [&#x0040;wch](https://github.com/wch), and [&#x0040;Zhenglei-BCS](https://github.com/Zhenglei-BCS).
+
+### htmltools [v0.5.6](https://rstudio.github.io/htmltools/news/index.html#htmltools-056)
+
+[&#x0040;ccamara](https://github.com/ccamara), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;daattali](https://github.com/daattali), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;PaulC91](https://github.com/PaulC91), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;ShixiangWang](https://github.com/ShixiangWang), and [&#x0040;warnes](https://github.com/warnes).
+
+### flexdashboard [v0.6.2](https://rstudio.github.io/flexdashboard/news/index.html#flexdashboard-062)
+
+[&#x0040;actuarial-lonewolf](https://github.com/actuarial-lonewolf), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;danielludolf](https://github.com/danielludolf), [&#x0040;DataStrategist](https://github.com/DataStrategist), [&#x0040;erm-eanway](https://github.com/erm-eanway), [&#x0040;gadenbuie](https://github.com/gadenbuie), and [&#x0040;nplatonov](https://github.com/nplatonov).
+
+### leaflet [v2.1.3](https://github.com/rstudio/leaflet/blob/main/NEWS#leaflet-213)
+
+[&#x0040;antoine4ucsd](https://github.com/antoine4ucsd), [&#x0040;daattali](https://github.com/daattali), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;Jakka](https://github.com/Jakka), [&#x0040;jaseeverett](https://github.com/jaseeverett), [&#x0040;johnbaums](https://github.com/johnbaums), [&#x0040;JosephStewart](https://github.com/JosephStewart), [&#x0040;Landon-Getting](https://github.com/Landon-Getting), [&#x0040;lime-n](https://github.com/lime-n), [&#x0040;Rafnuss](https://github.com/Rafnuss), [&#x0040;ramyareddy161](https://github.com/ramyareddy161), [&#x0040;rhijmans](https://github.com/rhijmans), [&#x0040;rl-utility-man](https://github.com/rl-utility-man), and [&#x0040;warnes](https://github.com/warnes).
+
+### leaflet.providers [v1.13.0](https://rstudio.github.io/leaflet.providers/news/index.html#leafletproviders-1130)
+
+[&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;jennybc](https://github.com/jennybc), [&#x0040;joker234](https://github.com/joker234), [&#x0040;kent37](https://github.com/kent37), [&#x0040;mgzjys](https://github.com/mgzjys), and [&#x0040;schloerke](https://github.com/schloerke).
+
+### shinytest2 [v0.3.0](https://rstudio.github.io/shinytest2/news/index.html#shinytest2-030)
+
+[&#x0040;andrewbaxter439](https://github.com/andrewbaxter439), [&#x0040;arepsz](https://github.com/arepsz), [&#x0040;AskPascal](https://github.com/AskPascal), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;epruesse](https://github.com/epruesse), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;gladkia](https://github.com/gladkia), [&#x0040;hugo-pH](https://github.com/hugo-pH), [&#x0040;matt-sd-watson](https://github.com/matt-sd-watson), [&#x0040;maxheld83](https://github.com/maxheld83), [&#x0040;parmsam-pfizer](https://github.com/parmsam-pfizer), [&#x0040;PaulinCharliquart](https://github.com/PaulinCharliquart), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;stla](https://github.com/stla), and [&#x0040;sybrohee](https://github.com/sybrohee).
+
+### chromote [v0.1.2](https://rstudio.github.io/chromote/news/index.html#chromote-012)
+
+[&#x0040;ashbythorpe](https://github.com/ashbythorpe), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;hadley](https://github.com/hadley), [&#x0040;Ljupch0](https://github.com/Ljupch0), [&#x0040;moladokun](https://github.com/moladokun), [&#x0040;mrcaseb](https://github.com/mrcaseb), [&#x0040;nick-youngblut](https://github.com/nick-youngblut), [&#x0040;stla](https://github.com/stla), [&#x0040;Waschoi](https://github.com/Waschoi), [&#x0040;wch](https://github.com/wch), and [&#x0040;yogat3ch](https://github.com/yogat3ch).
+
+### webshot2 [v0.1.1](https://rstudio.github.io/webshot2/news/index.html#webshot2-011)
+
+[&#x0040;aengels-git](https://github.com/aengels-git), [&#x0040;brunomioto](https://github.com/brunomioto), [&#x0040;cderv](https://github.com/cderv), [&#x0040;charleswidnall](https://github.com/charleswidnall), [&#x0040;egehankinik](https://github.com/egehankinik), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;iMissile](https://github.com/iMissile), [&#x0040;kangjf1943](https://github.com/kangjf1943), [&#x0040;lijinbio](https://github.com/lijinbio), [&#x0040;Liripo](https://github.com/Liripo), [&#x0040;Minh-AnhHuynh](https://github.com/Minh-AnhHuynh), [&#x0040;PatrickRWright](https://github.com/PatrickRWright), [&#x0040;RKonstantinR](https://github.com/RKonstantinR), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;trafficonese](https://github.com/trafficonese), and [&#x0040;tvqt](https://github.com/tvqt).
+
+### promises [v1.2.1](https://rstudio.github.io/promises/news/index.html#promises-121)
+
+[&#x0040;bakaburg1](https://github.com/bakaburg1), [&#x0040;bguillod](https://github.com/bguillod), [&#x0040;can-taslicukur](https://github.com/can-taslicukur), [&#x0040;CarlijnB](https://github.com/CarlijnB), [&#x0040;chris31415926535](https://github.com/chris31415926535), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;CrossD](https://github.com/CrossD), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;gdeoli](https://github.com/gdeoli), [&#x0040;HenrikBengtsson](https://github.com/HenrikBengtsson), [&#x0040;hf778](https://github.com/hf778), [&#x0040;jcheng5](https://github.com/jcheng5), [&#x0040;jennybc](https://github.com/jennybc), [&#x0040;king-of-poppk](https://github.com/king-of-poppk), [&#x0040;lz100](https://github.com/lz100), [&#x0040;maxheld83](https://github.com/maxheld83), [&#x0040;mrkaye97](https://github.com/mrkaye97), [&#x0040;pawelru](https://github.com/pawelru), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;tzakharko](https://github.com/tzakharko), and [&#x0040;vspinu](https://github.com/vspinu).
+
+### thematic [v0.1.3](https://rstudio.github.io/thematic/news/index.html#thematic-013)
+
+[&#x0040;biomystery](https://github.com/biomystery), [&#x0040;boram1024](https://github.com/boram1024), [&#x0040;cboettig](https://github.com/cboettig), [&#x0040;cbrnr](https://github.com/cbrnr), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;dmenne](https://github.com/dmenne), [&#x0040;Fluke95](https://github.com/Fluke95), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;gtritchie](https://github.com/gtritchie), [&#x0040;jennybc](https://github.com/jennybc), [&#x0040;kbzsl](https://github.com/kbzsl), [&#x0040;mvwestendorp](https://github.com/mvwestendorp), [&#x0040;PaulC91](https://github.com/PaulC91), [&#x0040;r2evans](https://github.com/r2evans), [&#x0040;rishabhshah-92](https://github.com/rishabhshah-92), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;stephan-koenig](https://github.com/stephan-koenig), [&#x0040;uhkeller](https://github.com/uhkeller), and [&#x0040;yixuan](https://github.com/yixuan).
+
+### bsicons [v0.1.1](https://rstudio.github.io/bsicons/news/index.html#bsicons-011)
+
+[&#x0040;cpsievert](https://github.com/cpsievert), and [&#x0040;sanjmeh](https://github.com/sanjmeh).
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+```
