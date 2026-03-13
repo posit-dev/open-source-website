@@ -1,4 +1,6 @@
 ---
+people:
+  - Mickaël CANOUIL, _Ph.D._
 title: How to use GitHub Codespaces to simplify your Quarto workshops
 description: >
   In this post, I'll teach you the basics of GitHub Codespaces and how to use
@@ -12,8 +14,6 @@ image: featured.png
 image-alt: |
   Quarto icon and text above GitHub Codespaces.
 lang: en-GB
-people:
-  - Mickaël CANOUIL, _Ph.D._
 ported_from: quarto
 port_status: raw
 ---

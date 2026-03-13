@@ -9,13 +9,13 @@ categories:
   - Features
   - Authoring
   - Quarto 1.3
+people:
+  - Charlotte Wickham
 date: '2023-03-17'
 image: embed.png
 image-alt: >-
   A screenshot of a Quarto page that includes a plot, below the plot is the
   phrase Source: penguins.ipynb.
-people:
-  - Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---
@@ -32,7 +32,7 @@ Starting in Quarto 1.3, you can include the output of an external Jupyter notebo
 You can use the following shortcode to embed the output of this cell:
 
 ``` markdown
-{{< embed penguins.ipynb#fig-bill-scatter >}}
+{{</* embed penguins.ipynb#fig-bill-scatter */>}}
 ```
 
 This will embed the plot as follows:

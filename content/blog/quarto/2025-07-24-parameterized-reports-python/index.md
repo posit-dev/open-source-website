@@ -1,4 +1,6 @@
 ---
+people:
+  - Charlotte Wickham
 title: >-
   From One Notebook to Many Reports: Parameterized reports with the `jupyter`
   engine
@@ -16,8 +18,6 @@ image-alt: >
   A slide with a screenshot of a Jupyter notebook with a graph and text, then an
   arrow pointing to a stack of PDF files each with a graph and text.
 lightbox: true
-people:
-  - Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---

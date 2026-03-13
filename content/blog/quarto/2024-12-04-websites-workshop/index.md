@@ -6,12 +6,12 @@ description: >
 categories:
   - Learn
   - Workshop
-date: '2024-12-04'
-image: quarto-websites.jpg
-image-alt: Quarto Websites Workshop
 people:
   - Charlotte Wickham
   - Mine Çetinkaya-Rundel
+date: '2024-12-04'
+image: quarto-websites.jpg
+image-alt: Quarto Websites Workshop
 ported_from: quarto
 port_status: raw
 ---

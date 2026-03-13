@@ -361,9 +361,70 @@ Run link checking on other ported blogs:
 - [ ] education
 - [ ] ai
 - [ ] rstudio
-- [ ] great-tables
-- [ ] pointblank
-- [ ] plotnine
+- [x] great-tables
+- [x] pointblank
+- [x] plotnine
+
+## Quarto blog: manual attention needed
+
+**`2024-07-02-beautiful-tables-in-typst`** - Has complex freeze structure with embedded examples in subdirectories rather than a main index freeze. Needs manual porting/rendering.
+
+## Quarto blog: relative links to quarto.org docs
+
+24 posts have relative `../docs/` links that need converting to absolute `https://quarto.org/docs/...` URLs.
+
+**Posts affected:**
+- 2022-02-13-feature-callouts
+- 2022-02-15-feature-tables
+- 2022-02-17-advanced-layout
+- 2022-07-25-feature-extensions
+- 2023-03-13-code-annotation
+- 2023-03-15-multi-format
+- 2023-03-17-jupyter-cell-embedding
+- 2023-03-20-confluence
+- 2023-04-26-1.3-release
+- 2023-05-15-get-started
+- 2023-05-22-quarto-for-academics
+- 2023-12-07-quarto-dashboards-demo
+- 2024-01-24-1.4-release
+- 2024-07-02-beautiful-tables-in-typst
+- 2024-07-11-1.5-release
+- 2024-11-25-1.6-release
+- 2024-12-04-websites-workshop
+- 2024-12-12-includes-meta
+- 2025-01-15-quarto-tip-brand-positron
+- 2025-04-28-1.7-release
+- 2025-07-24-parameterized-reports-python
+- 2025-10-13-1.8-release
+- 2025-11-24-conf-talk-videos
+- 2026-03-05-pdf-accessibility-and-standards
+
+**Pattern:** `../docs/authoring/tables.qmd` → `https://quarto.org/docs/authoring/tables.html`
+
+## Quarto blog: shortcodes not supported in Hugo
+
+Quarto shortcodes used in blog posts that Hugo cannot process. These cause build errors.
+
+| Shortcode | Count | Type | Post |
+|-----------|-------|------|------|
+| `meta` | 16 | Example in code block | `2024-12-12-includes-meta` |
+| `prerelease-docs-url` | 5 | **Real call** | `2026-03-05-pdf-accessibility-and-standards` |
+| `include` | 5 | Example in code block | `2024-12-12-includes-meta` |
+| `placeholder` | 1 | Example in code block | `2024-07-11-1.5-release` |
+| `lipsum` | 1 | Example in code block | `2024-07-11-1.5-release` |
+| `embed` | 1 | Example in code block | `2023-03-17-jupyter-cell-embedding` |
+| `contents` | 1 | **Real call** | `2024-11-25-1.6-release` |
+
+**Examples in code blocks:** Hugo parses `{{<` even inside fenced code blocks. Need to escape as `{{</*` and `*/>}}` for Hugo to treat as literal text.
+
+**Real calls:**
+- `prerelease-docs-url 1.9` → should output `pre-1-9.` to create URLs like `https://pre-1-9.quarto.org/...`
+- `contents a-cell` → should embed notebook cell content
+
+**Options:**
+1. Quarto Lua filter to resolve shortcodes during `hugo-md` render
+2. Create Hugo stub shortcodes
+3. Manually fix these 4 posts
 
 ## Other observations
 

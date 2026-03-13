@@ -1,4 +1,6 @@
 ---
+people:
+  - Mickaël CANOUIL, _Ph.D._
 title: 'Quarto Wizard 1.0.0: Democratising Quarto Extension Management'
 description: >
   Introducing a game-changing extension for VS Code and Positron that transforms
@@ -71,8 +73,6 @@ alt-text:
     document editor displaying invoice template with YAML frontmatter.
 editor:
   render-on-save: true
-people:
-  - Mickaël CANOUIL, _Ph.D._
 ported_from: quarto
 port_status: raw
 ---
@@ -146,7 +146,7 @@ results with install button.
 <div>
 <blockquote>
 <p><strong>Tip</strong></p>
-<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux)) if you haven’t done so already.</p>
+<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)) if you haven’t done so already.</p>
 </blockquote>
 </div>
 <h2>Positron</h2>
@@ -157,7 +157,7 @@ results with install button.
 <div>
 <blockquote>
 <p><strong>Tip</strong></p>
-<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux)) if you haven’t done so already.</p>
+<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)) if you haven’t done so already.</p>
 </blockquote>
 </div>
 </div></li>
@@ -198,7 +198,7 @@ The solution is **multi-modal installation**: you can now install extensions thr
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux)).</li>
+<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)).</li>
 <li>Type <code>Quarto Wizard: Install Extensions</code> and select it.</li>
 <li>Browse the list of available Quarto extensions.</li>
 <li>Select the Quarto extension(s) you want to install.</li>
@@ -252,7 +252,7 @@ The file is not created until you confirm, allowing you to adjust the filename a
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux)).</li>
+<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)).</li>
 <li>Type <code>Quarto Wizard: Use Template</code> and select it.</li>
 <li>Browse the list of available Quarto templates.</li>
 <li>Select the Quarto template(s) you want to use.</li>

@@ -134,7 +134,7 @@ format:
   <tbody>
   <tr>
   <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-  <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Rendered with Quarto {{&lt; version &gt;}}</span></code></pre></div>
+  <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Rendered with Quarto {{&lt;/* version */&gt;}}</span></code></pre></div>
   </div></td>
   <td style="text-align: left;"><div class="border p-1" width="50.0%" data-layout-align="left">
   <p>Rendered with Quarto 1.9.30</p>

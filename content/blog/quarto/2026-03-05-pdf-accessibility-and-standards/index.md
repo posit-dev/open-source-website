@@ -3,11 +3,11 @@ title: PDF Accessibility and Standards
 description: >
   Quarto 1.9 brings PDF accessibility and standards support, building on new
   tagging features in LaTeX and Typst.
+people:
+  - Gordon Woodhull
 date: '2026-03-05'
 image: thumbnail.png
 image-alt: Quarto icon, PDF file icon, accessibility icon, and validation shield
-people:
-  - Gordon Woodhull
 ported_from: quarto
 port_status: raw
 ---

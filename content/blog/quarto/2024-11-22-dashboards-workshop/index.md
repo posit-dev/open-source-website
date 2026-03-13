@@ -5,12 +5,12 @@ description: |
 categories:
   - Learn
   - Workshop
-date: '2024-11-22'
-image: quarto-dashboards.jpg
-image-alt: Build a dashboard workshop with Quarto, R and/or Python.
 people:
   - Charlotte Wickham
   - Mine Çetinkaya-Rundel
+date: '2024-11-22'
+image: quarto-dashboards.jpg
+image-alt: Build a dashboard workshop with Quarto, R and/or Python.
 ported_from: quarto
 port_status: raw
 ---

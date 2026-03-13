@@ -8,6 +8,8 @@ categories:
   - Features
   - Authoring
   - Quarto 1.3
+people:
+  - Charlotte Wickham
 date: '2023-03-13'
 image: annotation.png
 image-alt: >-
@@ -15,8 +17,6 @@ image-alt: >-
   as numbers within circles, and repeat below the code chunk along with the text
   content of the annotations.
 code-annotations: below
-people:
-  - Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---

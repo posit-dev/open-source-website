@@ -6,11 +6,11 @@ description: >
 categories:
   - Learn
   - Workshop
+people:
+  - Mine Çetinkaya-Rundel and Charlotte Wickham
 date: '2024-10-15'
 image: images/thumbnail.png
 image-alt: 'posit::conf(2024) logo '
-people:
-  - Mine Çetinkaya-Rundel and Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---

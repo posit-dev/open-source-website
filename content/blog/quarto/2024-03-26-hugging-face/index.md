@@ -3,11 +3,11 @@ title: Quarto on Hugging Face
 description: >
   You can now host Quarto sites on Hugging Face using the new Quarto Space
   template.
+people:
+  - Gordon Shotwell
 date: '2024-03-26'
 image: images/hugging-face-thumb.png
 image-alt: Hugging Face Logo
-people:
-  - Gordon Shotwell
 ported_from: quarto
 port_status: raw
 ---

@@ -8,16 +8,13 @@ categories:
   - Features
   - Authoring
   - Quarto 1.3
+people:
+  - Charlotte Wickham
 date: '2023-03-15'
 image: multi-format.png
 image-alt: >-
   Screenshot of a Quarto webpage showing a section entitled 'Other Formats' with
   items Jupyter and MS Word
-  html: default
-  ipynb: default
-  docx: default
-people:
-  - Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---

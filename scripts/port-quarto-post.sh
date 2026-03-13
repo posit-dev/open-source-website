@@ -99,46 +99,56 @@ if not match:
 
 fm_text, body = match.groups()
 
-# Parse YAML
+# Parse YAML to check for complex author structure
 try:
     fm = yaml.safe_load(fm_text)
 except:
-    print("  Warning: Could not parse YAML")
-    sys.exit(0)
-
-if fm is None:
     fm = {}
 
-# Transform author -> people
-if 'author' in fm:
-    author = fm.pop('author')
+# Check if author needs special handling (list of dicts)
+needs_yaml_rewrite = False
+if fm and 'author' in fm:
+    author = fm['author']
+    if isinstance(author, list) and any(isinstance(a, dict) for a in author):
+        needs_yaml_rewrite = True
+
+if needs_yaml_rewrite:
+    # Complex author - extract names and rebuild
     people = []
-    if isinstance(author, str):
-        people = [author]
-    elif isinstance(author, list):
-        for a in author:
-            if isinstance(a, str):
-                people.append(a)
-            elif isinstance(a, dict) and 'name' in a:
-                people.append(a['name'])
-    if people:
-        fm['people'] = people
+    for a in fm['author']:
+        if isinstance(a, str):
+            people.append(a)
+        elif isinstance(a, dict) and 'name' in a:
+            people.append(a['name'])
+
+    # Remove author block and add people
+    fm_text = re.sub(r'^author:\s*\n(?:[ \t]+[^\n]*\n)*', '', fm_text, flags=re.MULTILINE)
+    people_yaml = 'people:\n' + '\n'.join(f'  - {p}' for p in people) + '\n'
+    fm_text = people_yaml + fm_text
+else:
+    # Simple transformations with regex
+    # author: Name -> people:\n  - Name (inline author, same line)
+    fm_text = re.sub(r'^author:[ \t]*(\S[^\n]*?)[ \t]*$', r'people:\n  - \1', fm_text, flags=re.MULTILINE)
+    # author:\n  - Name -> people:\n  - Name (list format)
+    fm_text = re.sub(r'^author:[ \t]*\n', r'people:\n', fm_text, flags=re.MULTILINE)
 
 # Fix date format (M/D/YYYY -> YYYY-MM-DD)
-if 'date' in fm:
-    date_str = str(fm['date'])
+def fix_date(m):
+    date_str = m.group(1).strip('"\'')
     parts = date_str.split('/')
     if len(parts) == 3:
         month, day, year = parts
-        fm['date'] = f"{year}-{int(month):02d}-{int(day):02d}"
+        return f'date: "{year}-{int(month):02d}-{int(day):02d}"'
+    return m.group(0)
+fm_text = re.sub(r'^date:\s*(.+)$', fix_date, fm_text, flags=re.MULTILINE)
 
-# Add porting metadata
-fm['ported_from'] = 'quarto'
-fm['port_status'] = 'raw'
+# Add porting metadata if not present
+if 'ported_from:' not in fm_text:
+    fm_text = fm_text.rstrip() + '\nported_from: quarto\n'
+if 'port_status:' not in fm_text:
+    fm_text = fm_text.rstrip() + '\nport_status: raw\n'
 
-# Write back with proper YAML formatting
-new_fm = yaml.dump(fm, default_flow_style=False, allow_unicode=True, sort_keys=False)
-qmd_file.write_text(f'---\n{new_fm}---\n{body}')
+qmd_file.write_text(f'---\n{fm_text}---\n{body}')
 print("  .qmd frontmatter transformed")
 PYTHON
     fi
@@ -199,9 +209,10 @@ if 'ported_from:' not in frontmatter:
 if 'port_status:' not in frontmatter:
     frontmatter += '\nport_status: raw'
 
-# Remove quarto-specific fields that don't apply
+# Remove quarto-specific fields that don't apply (including nested content)
 for field in ['reference-location', 'citation-location', 'freeze', 'format']:
-    frontmatter = re.sub(rf'^{field}:.*\n?', '', frontmatter, flags=re.MULTILINE)
+    # Remove field and any indented lines that follow
+    frontmatter = re.sub(rf'^{field}:.*\n(?:[ \t]+.*\n)*', '', frontmatter, flags=re.MULTILINE)
 
 # Write back
 md_file.write_text(f'---\n{frontmatter}\n---\n{body}')

@@ -3,6 +3,8 @@ title: Quarto workshops at posit::conf(2024)
 description: >
   On August 12, we're hosting a day of workshops featuring three dedicated to
   Quarto at posit::conf(2024) in Seattle
+people:
+  - Isabella Velásquez and Mine Çetinkaya-Rundel
 date: '2024-05-28'
 image: images/conf-workshops-thumbnail.png
 image-alt: >-
@@ -11,8 +13,6 @@ image-alt: >-
 categories:
   - Learn
   - Workshop
-people:
-  - Isabella Velásquez and Mine Çetinkaya-Rundel
 ported_from: quarto
 port_status: raw
 ---

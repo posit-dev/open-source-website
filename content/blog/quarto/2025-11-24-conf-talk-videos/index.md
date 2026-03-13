@@ -7,11 +7,11 @@ categories:
   - Learn
   - Conference
   - Videos
+people:
+  - Andrew Holz
 date: '2025-11-24'
 image: thumbnail.png
 image-alt: Talk Recordings at posit::conf(2025)
-people:
-  - Andrew Holz
 ported_from: quarto
 port_status: raw
 ---

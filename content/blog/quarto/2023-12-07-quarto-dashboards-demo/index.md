@@ -4,13 +4,13 @@ subtitle: A brief tour of how to build a dashboard in Quarto v1.4.
 categories:
   - Demo
   - Quarto 1.4
+people:
+  - Andrew Holz
 date: '2023-12-07'
 image: quarto-dashboards-video-cover.png
 image-alt: >-
   Quarto logo on a blue background with the title Quarto Dashboards, Charles
   Teague and an abstract dashboard sketch
-people:
-  - Andrew Holz
 ported_from: quarto
 port_status: raw
 ---

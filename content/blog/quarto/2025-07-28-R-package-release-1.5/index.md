@@ -8,11 +8,11 @@ categories:
   - R package
   - knitr
   - Releases
+people:
+  - Christophe Dervieux
 date: '2025-07-28'
 image: thumbnail.png
 image-alt: quarto R logo with 1.5.0 release text
-people:
-  - Christophe Dervieux
 ported_from: quarto
 port_status: raw
 ---

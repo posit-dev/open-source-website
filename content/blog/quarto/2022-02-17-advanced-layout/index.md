@@ -140,4 +140,6 @@ ggplot(mtcars2, aes(hp, mpg, color = am)) +
 id="fig-cap-margin"
 alt="Figure 2: MPG vs horsepower, colored by transmission." />
 
+# References
+
 Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. *R Markdown: The Definitive Guide*. Chapman; Hall/CRC. <https://bookdown.org/yihui/rmarkdown>.

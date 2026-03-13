@@ -6,11 +6,11 @@ description: |
 categories:
   - Quarto 1.3
   - Releases
+people:
+  - Charlotte Wickham
 date: '2023-04-26'
 image: arthur-chauvineau-Dn7P1U26ZkE-unsplash.jpeg
 image-alt: Fireworks with a silhouette of an audience
-people:
-  - Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---

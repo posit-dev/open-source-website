@@ -1,18 +1,16 @@
 ---
 title: posit::conf(2025) Quarto talks
-description: 'Videos of talks from posit::conf(2025) are posted, and you can find
-  them all here!
-
-  '
+description: |
+  Videos of talks from posit::conf(2025) are posted, and you can find them all here!
 categories:
-- Learn
-- Conference
-- Videos
-date: '2025-11-24'
-image: thumbnail.png
-image-alt: Talk Recordings at posit::conf(2025)
+  - Learn
+  - Conference
+  - Videos
 people:
-- Andrew Holz
+  - Andrew Holz
+date: "2025-11-24"
+image: "thumbnail.png"
+image-alt: "Talk Recordings at posit::conf(2025)"
 ported_from: quarto
 port_status: raw
 ---

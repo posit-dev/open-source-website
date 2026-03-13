@@ -8,11 +8,11 @@ categories:
   - Features
   - Authoring
   - Quarto 1.3
+people:
+  - Charlotte Wickham
 date: '2023-03-20'
 image: confluence-logo-gradient-blue-attribution_rgb@2x.png
 image-alt: Atlassian Confluence Logo
-people:
-  - Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---

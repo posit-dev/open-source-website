@@ -6,13 +6,13 @@ description: >
 categories:
   - Quarto 1.8
   - Releases
+people:
+  - Charlotte Wickham
 date: '2025-10-13'
 draft: false
 image: thumbnail.png
 image-alt: Quarto 1.8 with a lightbulb emoji
 css: /docs/output-formats/autodark.css
-people:
-  - Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---

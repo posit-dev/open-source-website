@@ -1,17 +1,15 @@
 ---
 title: posit::conf(2024) Quarto talks
-description: 'Videos of talks from posit::conf(2024) are posted, we''ve compiled a
-  playlist of Quarto talks for you!
-
-  '
+description: |
+  Videos of talks from posit::conf(2024) are posted, we've compiled a playlist of Quarto talks for you!
 categories:
-- Learn
-- Conference
-date: '2024-11-06'
-image: images/thumbnail.jpg
-image-alt: Collage of speakers with Quarto talks at posit::conf(2024)
+  - Learn
+  - Conference
 people:
-- Mine Çetinkaya-Rundel and Charlotte Wickham
+  - Mine Çetinkaya-Rundel and Charlotte Wickham
+date: "2024-11-06"
+image: "images/thumbnail.jpg"
+image-alt: "Collage of speakers with Quarto talks at posit::conf(2024)"
 ported_from: quarto
 port_status: raw
 ---

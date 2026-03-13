@@ -1,19 +1,16 @@
 ---
-title: Tip - use Positron to choose colors for your project brand
-description: 'Use Positron''s integrated color picker for an easy way to choose colors
-  for
-
-  your next project''s `_brand.yml`.
-
-  '
+title: "Tip - use Positron to choose colors for your project brand"
+description: |
+  Use Positron's integrated color picker for an easy way to choose colors for
+  your next project's `_brand.yml`.
 categories:
-- Learn
-- Tip
-- brand
-date: '2025-01-15'
-image: brand.png
+  - Learn
+  - Tip
+  - brand
 people:
-- Carlos Scheidegger
+  - Carlos Scheidegger
+date: "2025-01-15"
+image: brand.png
 ported_from: quarto
 port_status: raw
 ---

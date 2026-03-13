@@ -2,6 +2,8 @@
 title: Quarto for Reproducible Medical Manuscripts
 description: |
   R/Medicine webinar on Quarto manuscripts
+people:
+  - Mine Çetinkaya-Rundel
 date: '2024-04-01'
 image: images/manuscripts-thumbnail.png
 image-alt: >-
@@ -9,8 +11,6 @@ image-alt: >-
   output.
 categories:
   - Learn
-people:
-  - Mine Çetinkaya-Rundel
 ported_from: quarto
 port_status: raw
 ---

@@ -7,11 +7,11 @@ description: >
 categories:
   - Quarto 1.6
   - Releases
+people:
+  - Charlotte Wickham
 date: '2024-11-25'
 image: thumbnail.png
 image-alt: Quarto 1.6 with a palette.
-people:
-  - Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---
@@ -131,7 +131,7 @@ Then use the `contents` shortcode to display that plot in a callout by referenci
 ::: callout-note
 ## Note the following plot
 
-{{< contents a-cell >}}
+{{</* contents a-cell */>}}
 
 :::
 ```

@@ -6,13 +6,13 @@ description: >
   academics, as educators and as researchers.
 categories:
   - Learn
+people:
+  - Mine Çetinkaya-Rundel
 date: '2023-05-22'
 image: quarto-for-academics-video-cover.png
 image-alt: >-
   Quarto logo on a blue background and the title of the video - Quarto for
   Academics
-people:
-  - Mine Çetinkaya-Rundel
 ported_from: quarto
 port_status: raw
 ---

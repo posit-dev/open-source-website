@@ -7,11 +7,11 @@ description: >
 categories:
   - Learn
   - Authoring
+people:
+  - Ashley Henry
 date: '2024-12-12'
 image: thumbnail.jpg
 image-alt: Quarto logo with single source publishing icon.
-people:
-  - Ashley Henry
 ported_from: quarto
 port_status: raw
 ---
@@ -25,7 +25,7 @@ port_status: raw
 
 There may be times when you would like to single-source content across multiple pages/files to reduce the risk of errors, produce consistent content that is easy to maintain, and ultimately save valuable time. [Quarto](../index.qmd) (an open-source technical publishing system), provides an [Includes](../docs/authoring/includes.html) feature (the equivalent of an R Markdown "child" document) that allows you to reuse content across multiple documents/files/pages.
 
-To achieve this, simply create chunks of content (text, tables, code, callouts, images, etc.) and then insert it using the Include shortcode: `{{< include _content.qmd >}}`.
+To achieve this, simply create chunks of content (text, tables, code, callouts, images, etc.) and then insert it using the Include shortcode: `{{</* include _content.qmd */>}}`.
 
 Typically, you must keep your content general enough so it can be reused in several places. In other words, if you needed to add a name or an image that is specific to that file, you would assume that you wouldn't be able to use an include, or you would have to use several smaller includes sewn into uniquely written content.
 
@@ -58,7 +58,7 @@ This content is general enough to use as each state's introduction but lacks the
 title: New York
 ---
 
-{{< include _snippets/state-intro.qmd >}}
+{{</* include _snippets/state-intro.qmd */>}}
 
 New York has a geographical size of 54,555, making it the 27th largest state with an estimated population size of 19.8 million.
 
@@ -76,7 +76,7 @@ Instead of copying and pasting this content into each file, and then updating it
 First, I create a file within my `_snippets` directory named `facts.qmd`. Throughout the file, I am going to insert a unique `meta` variable for each occurrence that I want the content to be specific to the state:
 
 ``` markdown
-{{< meta state >}} covers approximately {{< meta square-miles >}} making it the {{< meta size-rank >}} largest state in the United States. As of 2023, {{< meta state >}} has an approximate population of about {{< meta population >}}.
+{{</* meta state */>}} covers approximately {{</* meta square-miles */>}} making it the {{</* meta size-rank */>}} largest state in the United States. As of 2023, {{</* meta state */>}} has an approximate population of about {{</* meta population */>}}.
 ```
 
 I can define each of the `meta` variables within the individual file that I plan on reusing this content. So, in my `ny.qmd` file, I define each variable in the YAML metadata. Then, insert the `facts.qmd` file with the undefined meta shortcodes using an include:
@@ -92,7 +92,7 @@ population: 19.8 million
 ---
 
 
-{{< include _snippets/facts.qmd >}}
+{{</* include _snippets/facts.qmd */>}}
 ```
 
 As you can see, the rendered file has the meta shortcodes populated with the definitions that you assigned to each value in the file's YAML.
@@ -102,7 +102,7 @@ As you can see, the rendered file has the meta shortcodes populated with the def
 But, I would also like to add the state's flower and animal with images of each. You can achieve this by editing the document to add this information and images:
 
 ``` markdown
-{{< include _snippets/facts.qmd >}}
+{{</* include _snippets/facts.qmd */>}}
 
 New York's official flower is the Rose:
 
@@ -116,16 +116,16 @@ And the official animal is the Beaver:
 Or, you can get creative and use `meta` shortcodes in your image paths so you can continue to manage all of the content in a single file:
 
 ``` markdown
-{{< meta state >}}'s official flower is the {{< meta flower >}}, pictured below:
+{{</* meta state */>}}'s official flower is the {{</* meta flower */>}}, pictured below:
 
-![The official {{< meta state >}} state flower, the {{< meta flower >}}](../images/{{< meta state-abbr >}}/flower.png)
+![The official {{</* meta state */>}} state flower, the {{</* meta flower */>}}](../images/{{</* meta state-abbr */>}}/flower.png)
 
-Lastly, {{< meta state >}}'s official animal is the {{< meta animal >}}, pictured below:
+Lastly, {{</* meta state */>}}'s official animal is the {{</* meta animal */>}}, pictured below:
 
-![The official {{< meta state >}} state animal, the {{< meta animal >}}](../images/{{< meta state-abbr >}}/animal.png)
+![The official {{</* meta state */>}} state animal, the {{</* meta animal */>}}](../images/{{</* meta state-abbr */>}}/animal.png)
 ```
 
-As you can see, my image paths have `{{< meta state-abbr >}}` which is defined in the new-york file as "ny".
+As you can see, my image paths have `{{</* meta state-abbr */>}}` which is defined in the new-york file as "ny".
 
 When we render the project, the image path updates to /images/ny/flower.png pointing to the existing flower image in the `ny` directory:
 
@@ -148,7 +148,7 @@ Here is Pennsylvania's page:
 Each page was built using a single (shared) file:
 
 ``` markdown
-{{< include _snippets/facts.qmd >}}
+{{</* include _snippets/facts.qmd */>}}
 ```
 
 ## Learn more about Quarto Includes

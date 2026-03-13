@@ -8,11 +8,11 @@ description: >
 categories:
   - Quarto 1.4
   - Releases
+people:
+  - Charlotte Wickham
 date: '2024-01-24'
 image: images/thumbnail.png
 image-alt: Quarto 1.4 with a party popper
-people:
-  - Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---

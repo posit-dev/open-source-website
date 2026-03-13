@@ -7,11 +7,11 @@ description: >
 categories:
   - Quarto 1.5
   - Releases
+people:
+  - Charlotte Wickham
 date: '2024-07-11'
 image: images/thumbnail.png
 image-alt: Quarto 1.5 with a balloon
-people:
-  - Charlotte Wickham
 ported_from: quarto
 port_status: raw
 ---
@@ -85,8 +85,8 @@ Part of the reason we are excited about this feature is that it was an external 
 We've also added a couple of shortcodes that add placeholder content: `lipsum` for text, and `placeholder` for images:
 
 ``` markdown
-{{< placeholder 400 200 format=svg >}}
-{{< lipsum 1 >}}
+{{</* placeholder 400 200 format=svg */>}}
+{{</* lipsum 1 */>}}
 ```
 
 This example produces a 400px x 200px SVG image, and one paragraph of [Lorem Ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum) text:

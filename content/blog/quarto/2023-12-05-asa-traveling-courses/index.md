@@ -6,11 +6,11 @@ description: >
   R Markdown users.
 categories:
   - Learn
+people:
+  - Mine Çetinkaya-Rundel
 date: '2023-12-05'
 image: asa-traveling-courses.png
 image-alt: Screenshots of homepages of six courses titled From R Markdown to Quarto
-people:
-  - Mine Çetinkaya-Rundel
 ported_from: quarto
 port_status: raw
 ---

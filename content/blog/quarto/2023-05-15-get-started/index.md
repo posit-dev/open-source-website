@@ -5,13 +5,13 @@ description: |
   A new video for getting started with Quarto using R and RStudio.
 categories:
   - Learn
+people:
+  - Mine Çetinkaya-Rundel
 date: '2023-05-15'
 image: get-started-video-cover.png
 image-alt: >-
   Quarto logo on a blue background and the title of the video - Get started with
   Quarto
-people:
-  - Mine Çetinkaya-Rundel
 ported_from: quarto
 port_status: raw
 ---
