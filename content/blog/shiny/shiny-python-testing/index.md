@@ -1,0 +1,91 @@
+---
+title: Testing Shiny Apps in Python
+description: >-
+  The shiny add test command simplifies the process of creating test files for
+  Shiny apps, allowing developers to easily generate and run robust tests using
+  built-in UI testing controllers for various components.
+people:
+  - Shiny Team
+date: '2024-10-29'
+image: testing-og.jpg
+ported_from: shiny
+port_status: raw
+---
+
+
+Shiny for Python is a framework that helps you create interactive web applications using Python. It features reactive programming, allowing developers to build dynamic user interfaces without having to write JavaScript or HTML.
+
+Writing [end-to-end tests for your Shiny apps](https://shiny.posit.co/py/docs/end-to-end-testing.html) is essential to ensure the application works as intended from the user's perspective. These tests identify issues in the user interface and interactions, ensuring a seamless experience.
+
+> **Install Shiny for Python**
+>
+> To install the Shiny for Python package, users can use the following command in their terminal or command prompt:
+>
+> ``` sh
+> pip install "shiny>=1.0"
+> ```
+
+### Automatically create tests for Shiny apps using `shiny add test` command
+
+`shiny` for Python provides a simple way to create a test file for your Shiny app. To add a test, type `shiny add test` in your terminal/console and give the **path to the Shiny app file** along with the **path of the test file**. Shiny will create a test file for your Shiny app that the user can then run using `pytest`.
+
+``` bash
+shiny add test
+
+? Enter the path to the app file: basic-app/app.py
+? Enter the path to the test file: ./basic-app/tests/test_app.py
+
+Next steps:
+- Run `pytest` in your terminal to run all the tests
+```
+
+Once the test file is created, leverage the in-built controllers for each of the input and output components to expedite writing tests.
+
+<https://www.youtube.com/embed/oJ_B_NuFAwU>
+
+### Using controllers to write robust Shiny app tests
+
+`shiny` exposes UI testing controllers used to interact with existing Shiny components during tests.
+
+> Why did we expose controllers?
+
+Controllers were introduced to give users a clear and consistent way to interact with and test UI components in Shiny applications. They simplify the process by hiding the complexity of working with specific UI elements, making it easier for developers to create reliable tests and automate interactions with their Shiny apps.
+
+> What are the different controllers available?
+
+There are controllers for various UI components commonly used in Shiny applications, such as:
+
+- Input fields
+- Checkboxes and radio buttons
+- Date pickers
+- Sliders
+- Output Plots
+  and more.
+
+You can find the full list of available controllers in our [function reference](https://shiny.posit.co/py/api/testing/) page.
+
+Here's a preview of that feature.
+
+<https://www.youtube.com/embed/ecVPjqsVSkU>
+
+> Why are there so many controllers?
+
+There are many controllers designed to work with the wide variety of UI components in Shiny applications. Each UI element has its own unique properties, behaviors, and ways of interacting. By offering specific controllers for each type of component, developers have the right tools to interact with and test every part of their Shiny app's interface.
+
+> What are the benefits of using controllers?
+
+1.  ***Abstraction***: Controllers simplify interactions with UI elements by providing a cleaner, more intuitive API for developers.
+
+2.  ***Consistency***: They ensure a uniform interface for different UI components, making tests easier to write and maintain.
+
+3.  ***Reliability***: Controllers include robust waiting and expectation mechanisms, minimizing test flakiness from timing issues or asynchronous updates.
+
+4.  ***Readability***: Tests using controllers are more readable and self-documenting, as the methods clearly convey the purpose of each interaction or assertion.
+
+> How about expanding or collapsing the accordion panels in your shiny app for the tests?
+
+I am glad you asked. There is an `AccordionPanel` controller for that case.
+
+> Do you want to move the slider in your shiny app as part of the test?
+
+There is a controller of `InputSlider` that makes it a breeze to help with that.

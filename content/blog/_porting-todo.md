@@ -174,6 +174,35 @@ Some legacy posts reference external images that are now dead. These are broken 
 |------|-----------|
 | ai/2017-09-06-keras-for-r | `https://keras.rstudio.com/images/training_history_ggplot2.png` |
 
+## Shiny posts: `engine: markdown` added
+
+These posts needed `engine: markdown` to prevent Quarto from attempting code execution. This shouldn't normally be necessary — investigate why.
+
+| Post | Reason |
+|------|--------|
+| shiny-vscode-1.0.0 | Had it in original, preserved during port |
+| shiny-side-of-llms-part-3 | Added to fix render error — has `{.python}` and `{.r}` display blocks |
+
+## Shiny posts: code block syntax fixed
+
+Hugo can't parse ```` ``` {python} ```` (with space) — expects ```` ```python ````. Fixed manually with sed after rendering.
+
+| Post | Fix applied |
+|------|-------------|
+| shiny-side-of-llms-part-3 | `sed 's/``` {python}/```python/g; s/``` {r}/```r/g'` |
+
+**Root cause:** Quarto outputs code blocks with cell options (`#| eval: false` etc.) using ```` ``` {lang} ```` syntax. Consider adding post-processing to the porting script if this is common.
+
+## Shiny posts: `# <<` line-highlight markers
+
+Some shiny posts have `# <<` markers at the end of code lines. These were used by the `line-highlight` Quarto extension to highlight specific lines in HTML output. The extension was removed during porting (doesn't work in Hugo).
+
+**Affected posts:**
+- introducing-component-layouts
+- shinyswatch-0.7.0
+
+**To fix:** Manually remove `# <<` markers from code blocks, or leave them as-is if they serve as useful annotations.
+
 ## Shiny posts: Bootstrap classes stripped
 
 A Lua filter (`content/blog/shiny/_extensions/strip-bootstrap/`) strips Bootstrap classes during rendering. These posts had Bootstrap-dependent HTML (buttons, icons, layout) that may need manual review:

@@ -1,0 +1,107 @@
+---
+title: Shiny Talks from posit::conf(2025)
+description: >-
+  A curated playlist and overview of all Shiny-focused sessions from
+  posit::conf(2025), along with workshop materials and links.
+toc: false
+date: '2025-12-02'
+image-header-disable: true
+image: conf-recordings-banner.png
+image-alt: Shiny talks and workshops at posit::conf(2025)
+ported_from: shiny
+port_status: raw
+---
+
+
+Videos from posit::conf(2025) are now available. To make it easier to explore how people are building with Shiny across R and Python, we've put together a curated playlist of the Shiny-focused talks from the conference. These sessions highlight practical apps, new tooling, design patterns, AI workflows, and real-world deployments built with Shiny.
+
+## Shiny Talks Playlist:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Kh8xDym8sTg?si=trOED7T3iArnY7Kj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
+Talks included in the playlist, broken up into a few categories for easier browsing, are as follows:
+
+## Shiny + AI & Intelligent Automation
+
+| Speakers | Title | Link |
+|---------------------:|:---------------------------:|:---------------------|
+| **Winston Chang (Shiny Team)** | Web applications with Shiny and React (and AI) | [![thumb](https://img.youtube.com/vi/Kh8xDym8sTg/maxresdefault.jpg)](https://youtu.be/Kh8xDym8sTg) |
+| **Karan Gathani (Shiny Team)** | Old Apps, New Tricks: How AI can write Automated Tests for Shiny | [![thumb](https://img.youtube.com/vi/gxcAadq0Bmk/maxresdefault.jpg)](https://youtu.be/gxcAadq0Bmk) |
+| **Regis A. James** | AskRADS: An AI Recommendation Agent for Maximizing Shiny Development | [![thumb](https://img.youtube.com/vi/v3CCoq7j9Tk/maxresdefault.jpg)](https://youtu.be/v3CCoq7j9Tk) |
+
+## Shiny Architecture, Performance & Data
+
+| Speakers | Title | Link |
+|---------------------:|:---------------------------:|:---------------------|
+| **Alex Chisholm** | Keeping Data Alive: Persistent Storage Options for Shiny | [![thumb](https://img.youtube.com/vi/Pe-XTCKUzV8/maxresdefault.jpg)](https://youtu.be/Pe-XTCKUzV8) |
+| **Melissa Albino Hegeman** | Get your ducks in a row... faster Shiny apps with DuckDB | [![thumb](https://i.ytimg.com/vi/2sLJSosz1OY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBZKR5FG40MaA-0o4SMJg3cKepLdQ)](https://www.youtube.com/watch?v=2sLJSosz1OY) |
+| **Barret Schloerke (Shiny Team)** | Observability at scale: Monitoring Shiny Applications | [![thumb](https://img.youtube.com/vi/zwxhFKRlQLs/maxresdefault.jpg)](https://youtu.be/zwxhFKRlQLs) |
+
+## Shiny UX, UI Design & Accessibility
+
+| Speakers | Title | Link |
+|---------------------:|:---------------------------:|:---------------------|
+| **Cameron Race; Sarah Wong-Brown** | shinyGovStyle -- accessible government design in Shiny | [![thumb](https://img.youtube.com/vi/33doZkPSUqY/maxresdefault.jpg)](https://youtu.be/33doZkPSUqY) |
+| **Casey Aguilar-Gervase; Maya Gans** | Design of Everyday Shiny Apps | [![thumb](https://img.youtube.com/vi/RQod46DSkiA/maxresdefault.jpg)](https://youtu.be/RQod46DSkiA) |
+| **Jeremy Winget, PhD** | Death by Dropdown? Engineer Insightful Shiny Apps | [![thumb](https://img.youtube.com/vi/QvMnUZLQ-oo/maxresdefault.jpg)](https://youtu.be/QvMnUZLQ-oo) |
+| **Kim Schouten** | Modular, layout-as-code approach for customizable Shiny dashboards | [![thumb](https://img.youtube.com/vi/HJs2HVltpcs/maxresdefault.jpg)](https://youtu.be/HJs2HVltpcs) |
+
+## Shiny Extensions, Packages & Developer Tooling
+
+| Speakers | Title | Link |
+|---------------------:|:---------------------------:|:---------------------|
+| **Eric Nantz** | shinystate: Launching collaboration and session state | [![thumb](https://img.youtube.com/vi/69bnkXD3e6w/maxresdefault.jpg)](https://youtu.be/69bnkXD3e6w) |
+| **James Wade** | shinyEventLogger --- logging events in Shiny apps | [![thumb](https://img.youtube.com/vi/smnrmTtoiOM/maxresdefault.jpg)](https://youtu.be/smnrmTtoiOM) |
+
+## Applied Shiny Case Studies
+
+| Speakers | Title | Link |
+|---------------------:|:---------------------------:|:---------------------|
+| **Marcus Beck** | Shiny for ecological data workflows | [![thumb](https://img.youtube.com/vi/Cnk3770AzuA/maxresdefault.jpg)](https://youtu.be/Cnk3770AzuA) |
+| **Hugo Fitipaldi** | Building a Real-Time COVID-19 Surveillance System with Shiny | [![thumb](https://img.youtube.com/vi/3-UsetFXFlk/maxresdefault.jpg)](https://youtu.be/3-UsetFXFlk) |
+
+## Shiny Workshops from posit::conf(2025)
+
+Full workshop materials are now available, including slides, exercises, and code for all Shiny workshops.
+
+<h3 class="me-2">
+LLMs + Shiny Workshop
+</h3>
+/
+<p class="ms-2">
+Joe Cheng & Garrick Aden-Buie
+</p>
+
+<a href="https://posit-conf-2025.github.io/llm/" class="me-3">LLM Course Materials</a><a href="https://github.com/posit-conf-2025/llm"><img src="/images/github.svg" style="width:16px;height:auto;display:inline;"></a>
+
+<h3 class="me-2">
+Shiny for Python Workshop
+</h3>
+/
+<p class="ms-2">
+Daniel Chen
+</p>
+
+<a href="https://posit-conf-2025.github.io/shiny-py/" class="me-3">Shiny for R Materials</a><a href="https://github.com/posit-conf-2025/shiny-py"><img src="/images/github.svg" style="width:16px;height:auto;display:inline;"></a>
+
+<h3 class="me-2">
+Shiny for R Workshop
+</h3>
+/
+<p class="ms-2">
+Colin Rundel
+</p>
+
+<a href="https://posit-conf-2025.github.io/shiny-r/" class="me-3">Shiny for Python Materials</a><a href="https://github.com/posit-conf-2025/shiny-r/"><img src="/images/github.svg" style="width:16px;height:auto;display:inline;"></a>
+
+## Closing
+
+We hope you enjoy this roundup of Shiny talks from posit::conf(2025). The Shiny community continues to explore new patterns---AI-assisted development, real-time analytics, performance tooling, design systems, and more.
+We hope to see you next year at posit::conf---and maybe even see *your* Shiny work up on stage.
+
+<style>
+  td, th {text-align: left !important;}
+  /*tr:last-of-type td {border-bottom: 0px !important;}
+  table {border-bottom: 1px solid transparent !important;}*/
+</style>

@@ -1,4 +1,5 @@
 filters:
   - strip-bootstrap
+  - shinylive
 
 format: hugo-md

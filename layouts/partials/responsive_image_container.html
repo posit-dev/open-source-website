@@ -24,7 +24,8 @@
 {{ $wVenti  := default 640 .venti }}
 
 {{ if $image }}
-  {{ if eq $image.MediaType.SubType "svg" }}
+  {{ if or (eq $image.MediaType.SubType "svg") (eq $image.MediaType.SubType "gif") }}
+    {{/* SVG and GIF: serve as-is without processing */}}
     <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
   {{ else }}
     {{/* Build a slice of (breakpoint-name, visibility-classes, 1x-width) tuples */}}

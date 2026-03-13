@@ -1,0 +1,36 @@
+---
+title: posit::conf(2024) Shiny talks
+description: There were many great talks given at posit::conf(2024) about Shiny and they are now available on YouTube.
+people:
+  - Andrew Holz
+date: "2024-11-11"
+image-header-disable: true
+image: shinytalks.jpg
+image-alt: "Collage of speakers with Shiny talks at posit::conf(2024)"
+ported_from: shiny
+port_status: raw
+---
+
+Videos of posit::conf(2024) talks are now posted [on YouTube](https://www.youtube.com/watch?v=s_Vh9HIeLVg&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn). We have also made [playlist of talks](https://youtube.com/playlist?list=PLitrm9UndxcsoP0pqVvteJWtAQ9TKT-mf) that are about building data driven applications with Shiny.
+
+:::{.video-container .my-5}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=b5ZCT7LMUOXamjoR&amp;list=PLitrm9UndxcsoP0pqVvteJWtAQ9TKT-mf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+:::
+
+Talks included in this playlist are as follows:
+
+-  [**Charlie Gao and Will Landau** - {mirai} and {crew}: next-generation async to supercharge {promises}, Plumber, Shiny, and {targets}](https://youtu.be/s_cBi155ZIQ?si=RCXLXY0XHeVLFc4k)
+-  [**Eric Nantz** - A New Era for Shiny-based Clinical Submissions using WebAssembly](https://youtu.be/iC78WbnwnIs?si=2GDss6vGoWL-BSRm)
+-  [**Marcin Dubel** - Shiny in Action: Transforming Film Production with TARS](https://youtu.be/G2GNZZ8GQPY?si=m7WIT4-JJaG39Gtw)
+-  [**Kiegan Rice** - Wait, that’s Shiny? Building feature-full, user-friendly interactive data explorers with Shiny and friends](https://youtu.be/SAbV6d7Pn0U?si=AVd2M9a7yeZ67dIF)
+-  [**Greg Swinehart** - We CAN Have Nice Shiny Apps](https://youtu.be/FPc5PJRWHsk?si=W484jzz4EyouBCI8)
+-  [**Andrew Bates** - Making an App a System](https://youtu.be/zgcyGs9q06g?si=4iNmTxsoYy5FmWK-)
+-  [**Lovekumar Patel** - Empowering Decisions: Advanced Portfolio Analysis and Management through Shiny](https://youtu.be/59ztetVfmjg?si=uFD7nn6qEl38WtgW)
+-  [**Winston Chang** - Building ML and AI apps with Shiny for Python](https://youtu.be/TYHiwWlpGOM?si=72zm3YKjncZWE9xg)
+-  [**Carson Sievert** - Supercharge Your Shiny (for Python) App: Unleashing Interactive Jupyter Widgets](https://youtu.be/pL44iKfcECU?si=_iD8mvy76Vf6Kosy)
+-  [**Joe Cheng** - Shiny x AI](https://youtu.be/AP8BWGhCRZc?si=otdkZ1N1H0VD707k)
+-  [**Barret Schloerke** - Editable data frames in Py-Shiny: Updating original data in real-time](https://youtu.be/AXH52WNOErc?si=dCrLS3pJFd2wVTW-)
+-  [**Joseph Richey** - Leveraging Data in a Volunteer Fire Department](https://youtu.be/kYnqxQvIFNQ?si=Ai6bAjxhSxWt2c5h)
+-  [**Mark Wang** - Using GitHub Copilot in R Shiny Development](https://youtu.be/_AFa4DIGDJk?si=wdFmHswXNIVHYA3f)
+
+
