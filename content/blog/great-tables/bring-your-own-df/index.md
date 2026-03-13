@@ -13,7 +13,7 @@ port_status: raw
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-A few months ago, we released a [blog post](./polars-styling) about how much we loved the combination of Polars and Great Tables. We found that Polars lazy expression system opened up convenient ways to conditionally format tables for presentation. However, excited as we were, we were harboring a shameful secret: Great Tables enabled Polars as an optional dependency, but had a hard dependency on the alternative DataFrame library Pandas.
+A few months ago, we released a [blog post](/blog/great-tables/polars-styling/) about how much we loved the combination of Polars and Great Tables. We found that Polars lazy expression system opened up convenient ways to conditionally format tables for presentation. However, excited as we were, we were harboring a shameful secret: Great Tables enabled Polars as an optional dependency, but had a hard dependency on the alternative DataFrame library Pandas.
 
 We're happy to share that [Great Tables](https://github.com/posit-dev/great-tables) v0.5.0 makes Pandas an optional dependency.
 Using Pandas DataFrames as inputs is still fully supported.
@@ -255,8 +255,8 @@ Users are able to bring their DataFrame of choice without the collective baggage
 
 For more on the special things you can do with Polars expressions, see these resources:
 
-- [Guide: basic styling using Polars expressions](../../../../get-started/basic-styling.qmd#using-polars-expressions)
-- [Post: Great Tables, the Polars DataFrame Styler of Your Dreams](../../../../blog/polars-styling/index.qmd)
+- [Guide: basic styling using Polars expressions](https://posit-dev.github.io/great-tables/get-started/basic-styling.html#using-polars-expressions)
+- [Post: Great Tables, the Polars DataFrame Styler of Your Dreams](/blog/great-tables/polars-styling/)
 - [The narwhals library](https://github.com/MarcoGorelli/narwhals): a neat library for running Polars expressions on Pandas DataFrames.
 
 Hope you make some stylish, publication ready tables!

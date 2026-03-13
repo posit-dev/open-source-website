@@ -319,6 +319,16 @@ Discovered via `lychee --base http://localhost:1313 content/blog/shiny/*/index.m
 **GitHub user 404s (accounts deleted/renamed):**
 - kangjf1943, KRRLP-PL, MalteSteinCytel, oozbeker-onemagnify, jonathanmburns, ngoodkindGSI, bioinformzhang, howardbaek, MartinBaumga, TopBottomTau, toxintoxin, dependabot[bot]
 
+## great-tables: interlinks filter
+
+**Location:** `content/blog/great-tables/remove-interlinks.lua` and `_metadata.yml`
+
+The great-tables blog used Quarto's interlinks feature to create backtick-style links to API docs (e.g., `` [`cols_width()`](`~great_tables.GT.cols_width`) ``). These rendered as URL-encoded links like `%60great_tables.GT.cols_width%60` in the output.
+
+**Solution:** Added `remove-interlinks.lua` Lua filter that strips these during rendering. Re-render any posts that have `%60great_tables` in the output.
+
+**Note:** This only handles backtick-style interlinks. Regular reference paths (like `../../../../reference/google_font.qmd`) must be manually converted to full URLs (e.g., `https://posit-dev.github.io/great-tables/reference/google_font.html`).
+
 ## great-tables, pointblank, plotnine: relative links
 
 These posts have relative links to docs/examples that need fixing:

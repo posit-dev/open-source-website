@@ -116,7 +116,7 @@ gt_tbl
 
 Note these important pieces in the code:
 
-* setting monospace font: we used [`google_font()`](/reference/google_font.qmd) (added in the previous release) to apply the monospaced font IBM Plex Mono.
+* setting monospace font: we used [`google_font()`](https://posit-dev.github.io/great-tables/reference/google_font.html) (added in the previous release) to apply the monospaced font IBM Plex Mono.
 * filling unstable half lives to turquoise: because the half life cells with the value STABLE are actually missing in the underlying data, and filled in using `GT.sub_missing()`, we used the polars expression `pl.col("half_life").is_not_null()` to target everything that isn't STABLE.
 
 This is mainly a reminder that Polars expressions are quite something. And targeting cells in the body with `loc.body(rows=...)` can be powerful by extension.
@@ -191,7 +191,7 @@ gt_tbl = (
 gt_tbl
 ```
 
-The [`loc.column_header()`](/reference/loc.column_header.qmd) location always targets both `loc.column_labels()` and `loc.spanner_labels()`.
+The [`loc.column_header()`](https://posit-dev.github.io/great-tables/reference/loc.column_header.html) location always targets both `loc.column_labels()` and `loc.spanner_labels()`.
 
 A good strategy for your tables would be to style with combined location helpers first and then drill into the specific cells of those super locations with more fine-grained styles in a later `tab_style()` call.
 

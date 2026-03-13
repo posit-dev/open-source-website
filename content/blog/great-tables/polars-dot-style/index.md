@@ -37,7 +37,7 @@ for creating display tables. Initially, Great Tables only supported Pandas, but 
 For example, selecting columns and applying conditional styles took a surprising amount of code.
 
 As an experiment, we added support for Polars, and wrote a post called
-[Great Tables: The Polars DataFrame Styler of Your Dreams](../polars-styling/index.qmd).
+[Great Tables: The Polars DataFrame Styler of Your Dreams](/blog/great-tables/polars-styling/).
 
 Curious in what folks thought, we dropped it in the Polars discord, and got some Great Feedback:
 
@@ -51,7 +51,7 @@ It's true, we had baked Pandas in as a dependency. We were just kids back then w
 We didn't realize that the world was moving to DataFrame agnostic support 😓.
 
 But the more we used Polars with Great Tables, the happier we were.
-So we made some architectural tweaks to make Great Tables [BYODF (Bring Your Own DataFrame)](../bring-your-own-df/index.qmd).
+So we made some architectural tweaks to make Great Tables [BYODF (Bring Your Own DataFrame)](/blog/great-tables/bring-your-own-df/).
 With these changes, Polars users could install and use Great Tables without pulling in an unnecessary
 dependency on another DataFrame library (Pandas).
 

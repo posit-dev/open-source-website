@@ -625,7 +625,7 @@ Note two important pieces:
 
 Currently, Great Tables only supports styling the table body. In the (very near) future, other `loc.*` functions will allow styling other parts of the table (e.g. the title, column labels, etc..).
 
-For more details on styles, see [Styling the Table Body](../../../../get-started/basic-styling.qmd) in the Getting Started guide.
+For more details on styles, see [Styling the Table Body](https://posit-dev.github.io/great-tables/get-started/basic-styling.html) in the Getting Started guide.
 
 ## Set column spanners
 
@@ -927,7 +927,7 @@ mph</th>
 
 This is helpful because labels are often in a funky format (e.g. `cal_m_2`) because they're easier to work with programmatically, so need to be cleaned up for presentation.
 
-See the [Column Labels](../../../../get-started/basic-column-labels.qmd) page of the guide for more details.
+See the [Column Labels](https://posit-dev.github.io/great-tables/get-started/basic-column-labels.html) page of the guide for more details.
 
 ## Putting it all together
 
@@ -1175,6 +1175,6 @@ mph</th>
 
 Not too bad!
 
-Table styling is a surprisingly deep topic, and we've only scratched the surface on what Great Tables can do. A big one not covered here is the many [column formatting methods](../../../../get-started/basic-formatting.qmd), like `GT.fmt_currency()`.
+Table styling is a surprisingly deep topic, and we've only scratched the surface on what Great Tables can do. A big one not covered here is the many [column formatting methods](https://posit-dev.github.io/great-tables/get-started/basic-formatting.html), like `GT.fmt_currency()`.
 
 Thoughtfully styled tables tell viewers that you care as much about communicating the table, as much as the data wrangling behind it. Working with polars has been an absolute dream, and we're excited to explore different ways it and Great Tables make for easy table styling!
