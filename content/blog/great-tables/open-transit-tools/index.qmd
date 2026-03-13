@@ -4,7 +4,7 @@ date: 2024-12-19
 people:
   - Michael Chow
 ported_from: great-tables
-port_status: raw
+port_status: in-progress
 ---
 
 Hello! Michael Chow here. In 2025, I'll be focusing on contributing to open source data standards and tooling for public transit. If you work on analytics at a public transit agency, please reach out on [linkedin](https://www.linkedin.com/in/michael-a-chow/) or [bluesky](https://bsky.app/profile/mchow.com)---I would love to hear about your work, and how I could be useful!

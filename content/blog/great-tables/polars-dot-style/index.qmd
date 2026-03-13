@@ -4,7 +4,7 @@ people:
   - Michael Chow
 date: 2025-04-16
 ported_from: great-tables
-port_status: raw
+port_status: in-progress
 ---
 
 Roughly a year ago, the DataFrame library Polars made its v1.0.0 release.

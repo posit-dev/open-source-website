@@ -7,7 +7,7 @@ people:
 image: gt_marimo.gif
 image-alt: Screencast showing interactive Great Tables with marimo widgets
 ported_from: great-tables
-port_status: raw
+port_status: in-progress
 ---
 
 

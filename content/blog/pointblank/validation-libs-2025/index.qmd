@@ -4,7 +4,7 @@ people:
   - Rich Iannone
 date: 2025-06-04
 ported_from: pointblank
-port_status: raw
+port_status: in-progress
 ---
 
 Data validation is a very important part of any data pipeline. And with Polars gaining popularity as

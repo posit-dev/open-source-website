@@ -329,6 +329,13 @@ The great-tables blog used Quarto's interlinks feature to create backtick-style 
 
 **Note:** This only handles backtick-style interlinks. Regular reference paths (like `../../../../reference/google_font.qmd`) must be manually converted to full URLs (e.g., `https://posit-dev.github.io/great-tables/reference/google_font.html`).
 
+## great-tables: broken external links
+
+| Post | URL | Notes |
+|------|-----|-------|
+| introduction-0.4.0 | `https://docs.pola.rs/user-guide/expressions/lists/` | 404 - page may have moved |
+| polars-dot-style | `https://fastht.ml/gallery/split_view?category=visualizations&project=great_tables_tables` | 404 - FastHTML gallery link |
+
 ## great-tables, pointblank, plotnine: relative links
 
 These posts have relative links to docs/examples that need fixing:

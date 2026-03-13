@@ -4,7 +4,7 @@ people:
   - Rich Iannone
 date: 2024-09-30
 ported_from: great-tables
-port_status: raw
+port_status: in-progress
 ---
 
 In Great Tables `0.12.0` we focused on adding options for customizing the appearance of a table. In this post, we'll present two new features:

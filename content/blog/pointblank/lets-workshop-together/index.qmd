@@ -5,7 +5,7 @@ people:
 date: 2025-06-03
 toc: false
 ported_from: pointblank
-port_status: raw
+port_status: in-progress
 ---
 
 Recently, I've been giving free workshops to data teams on Pointblank. These sorts of engagements

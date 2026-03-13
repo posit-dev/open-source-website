@@ -7,7 +7,7 @@ format:
   html:
     code-summary: "Show the Code"
 ported_from: great-tables
-port_status: raw
+port_status: in-progress
 ---
 
 Rendering images in Great Tables is straightforward with `GT.fmt_image()` and `vals.fmt_image()`.

@@ -6,7 +6,7 @@ people:
 date: 2026-03-12
 format: html
 ported_from: great-tables
-port_status: raw
+port_status: in-progress
 ---
 
 Recently, Rich and I were poking around transit data, and we were struck by the amount of structuring that goes into transit timetables.
