@@ -10,8 +10,6 @@ description: "A three-day in-person gathering for the international community of
 people:
   - Isabel Zimmerman
   - Andrew Holz
-tages:
-  - Yo
 software:
   - Quarto
   - Positron
