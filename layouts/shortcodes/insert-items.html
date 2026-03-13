@@ -34,7 +34,7 @@
   </div>
 </div>
 {{ else if eq $format "tile" }}
-<div class="@container flex flex-col gap-2">
+<div class="@container grid {{ $gridClass }} gap-2">
   {{ range $items }}
     {{ partial "item.html" (dict "item" . "hide-badge" $hide_badge "format" "tile" "height" $height) }}
   {{ end }}
