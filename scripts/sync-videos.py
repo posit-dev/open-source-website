@@ -294,6 +294,8 @@ def build_external(
     external: dict[str, Any] = {
         f: video[f] for f in fields if f in video and video[f] is not None
     }
+    if "tags" in external and isinstance(external["tags"], list):
+        external["tags"] = [re.sub(r"[#?/]", "", t) for t in external["tags"] if re.sub(r"[#?/]", "", t)]
     if detected_people:
         external["people"] = detected_people
     if detected_software:
