@@ -413,6 +413,33 @@ Some Shiny blog posts contain HTML designed for Bootstrap (the CSS framework use
 
 **Solution:** Use a Quarto Lua filter (`_extensions/strip-bootstrap/strip-bootstrap.lua`) to remove these classes during rendering. See `content/blog/shiny/_quarto.yml` for usage.
 
+### Watch for: shinylive code blocks
+
+Posts using `{shinylive-r}` or `{shinylive-python}` code blocks (interactive Shiny apps in the browser) won't work with `hugo-md` output. The shinylive extension is optimized for HTML output.
+
+**Additional issue:** The shinylive Lua filter spawns a separate Rscript process that doesn't pick up the renv from the parent directory. May need to render these posts manually with global shinylive installed.
+
+**Example:** `shiny-r-1.8.0` was rendered manually.
+
+### Watch for: code-fold and engine: markdown
+
+If a post uses `#| code-fold: true` for collapsible code blocks, **do not** add `engine: markdown` to the frontmatter. The code-fold feature requires knitr execution to work.
+
+**What happened:** Initially added `engine: markdown` to `shiny-side-of-llms-part-3` to prevent execution of `{.python}` display blocks. This broke code-fold. Removing it and re-rendering fixed the issue.
+
+**Note:** `{.python}` (with dot) are display-only blocks that don't execute anyway.
+
+### Watch for: embedded HTML files (iframes)
+
+Some posts embed interactive HTML demos via iframes. These may need adjustment:
+
+1. **Complex scaling** - Original blog CSS/transforms may not work. Simplify or remove.
+2. **Subfolder rendering** - If the iframe points to a subfolder like `feature/index.html`, add the folder to `ignoreFiles` in `hugo.toml` to prevent Hugo from rendering it as a page:
+   ```toml
+   ignoreFiles = [..., 'shinychat-tool-ui/feature/']
+   ```
+3. **Consider removing** - If the iframe doesn't render well, rely on the hero image instead.
+
 ---
 
 ## Link checking
