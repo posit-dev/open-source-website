@@ -17,7 +17,7 @@ port_status: raw
 ---
 
 
-Quarto 1.6 has been officially released! You can get the current release from the [download page](../docs/download/index.qmd).
+Quarto 1.6 has been officially released! You can get the current release from the [download page](https://quarto.org/docs/download/index.html).
 
 We are particularly excited about:
 
@@ -31,7 +31,7 @@ We are particularly excited about:
 
 - Improvements in how you can specify subpanels of cross-references from code blocks.
 
-You can read about these new features and a couple of breaking changes in the sections below. You can find all the changes in this version in the [Release Notes](../docs/download/changelog/1.6/).
+You can read about these new features and a couple of breaking changes in the sections below. You can find all the changes in this version in the [Release Notes](https://quarto.org/docs/download/changelog/1.6/).
 
 ## Cross-format theming with **brand.yml**
 
@@ -74,25 +74,25 @@ When this `_brand.yml` is placed in a project, webpages, presentations, PDF repo
 <tr>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="../docs/authoring/images/brand-html.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a webpage. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar." alt="Webpage: html" />
+<img src="https://quarto.org/docs/authoring/images/brand-html.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a webpage. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar." alt="Webpage: html" />
 <figcaption aria-hidden="true">Webpage: <code>html</code></figcaption>
 </figure>
 </div></td>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="../docs/authoring/images/brand-dashboard.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a dashboard. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar." alt="Dashboard dashboard" />
+<img src="https://quarto.org/docs/authoring/images/brand-dashboard.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a dashboard. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar." alt="Dashboard dashboard" />
 <figcaption aria-hidden="true">Dashboard <code>dashboard</code></figcaption>
 </figure>
 </div></td>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="../docs/authoring/images/brand-revealjs.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a presentation. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in bottom left of the slide." alt="Presentation: revealjs" />
+<img src="https://quarto.org/docs/authoring/images/brand-revealjs.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a presentation. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in bottom left of the slide." alt="Presentation: revealjs" />
 <figcaption aria-hidden="true">Presentation: <code>revealjs</code></figcaption>
 </figure>
 </div></td>
 <td style="text-align: left;"><div width="25.0%" data-layout-align="left">
 <figure>
-<img src="../docs/authoring/images/brand-typst.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a PDF document. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in top right of the page." alt="PDF: typst" />
+<img src="https://quarto.org/docs/authoring/images/brand-typst.png" class="lightbox" data-group="brand-formats" data-fig-alt="Screenshot of a PDF document. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in top right of the page." alt="PDF: typst" />
 <figcaption aria-hidden="true">PDF: <code>typst</code></figcaption>
 </figure>
 </div></td>
@@ -102,15 +102,15 @@ When this `_brand.yml` is placed in a project, webpages, presentations, PDF repo
 
 View the example: [Source](https://github.com/quarto-dev/quarto-examples/tree/main/brand/brand-simple#brand-simple) \| [Live website](https://examples.quarto.pub/brand-simple)
 
-Get started by reading the Quarto [Guide to Brand](../docs/authoring/brand.qmd).
+Get started by reading the Quarto [Guide to Brand](https://quarto.org/docs/authoring/brand.html).
 
 ## RevealJS update
 
 Quarto v1.6 updates RevealJS to v5.1.0. With the update comes two notable features:
 
-[**Jump to Slide**](../docs/presentations/revealjs/presenting.qmd#jump-to-slide): Quickly navigate to a slide. Press `G` to activate, type a slide number or ID, and hit Enter/Return.
+[**Jump to Slide**](https://quarto.org/docs/presentations/revealjs/presenting.html#jump-to-slide): Quickly navigate to a slide. Press `G` to activate, type a slide number or ID, and hit Enter/Return.
 
-[**Scroll Mode**](../docs/presentations/revealjs/presenting.qmd#scroll-view): Scroll rather than click to advance slides. Press `R`, add `?view=scroll` to your URL, or use the Navigation menu to activate. Automatically activated on small screens.
+[**Scroll Mode**](https://quarto.org/docs/presentations/revealjs/presenting.html#scroll-view): Scroll rather than click to advance slides. Press `R`, add `?view=scroll` to your URL, or use the Navigation menu to activate. Automatically activated on small screens.
 
 ## Contents shortcode
 
@@ -136,11 +136,11 @@ Then use the `contents` shortcode to display that plot in a callout by referenci
 :::
 ```
 
-Find all the details on our guide page on the [contents shortcode](../docs/authoring/contents.qmd).
+Find all the details on our guide page on the [contents shortcode](https://quarto.org/docs/authoring/contents.html).
 
 ## Landscape mode
 
-In `pdf`, `docx,` and `typst` formats, you can now put content on a landscape page by placing it inside a [`landscape` block](../docs/authoring/article-layout.html#landscape-mode):
+In `pdf`, `docx,` and `typst` formats, you can now put content on a landscape page by placing it inside a [`landscape` block](https://quarto.org/docs/authoring/article-layout.html#landscape-mode):
 
 ``` markdown
 ::: {.landscape}
@@ -179,7 +179,7 @@ We try very hard to keep Quarto backward compatible. However, in this release, t
 
 - **You have TypeScript files (`*.ts`) that you use either with pre- or post-render scripts, or with `quarto run`, that import Deno standard libraries.**
 
-  The import syntax has changed. Please see [Deno Scripts](../docs/projects/scripts.html#deno-scripts) for the necessary changes.
+  The import syntax has changed. Please see [Deno Scripts](https://quarto.org/docs/projects/scripts.html#deno-scripts) for the necessary changes.
 
 - **You override the LaTeX `graphics.tex` partial, or you have a completely custom LaTeX template that doesn't use the `graphics.tex` partial.**
 

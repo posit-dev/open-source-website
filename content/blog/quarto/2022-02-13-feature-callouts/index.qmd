@@ -48,4 +48,4 @@ This is an example of a callout with a caption.
 :::
 ```
 
-See our documentation on [Callouts](/docs/authoring/callouts.qmd), to learn more, including more about how to customize the appearance and behavior of callouts.
+See our documentation on [Callouts](https://quarto.org/docs/authoring/callouts.html), to learn more, including more about how to customize the appearance and behavior of callouts.

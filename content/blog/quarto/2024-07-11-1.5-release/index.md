@@ -17,13 +17,13 @@ port_status: raw
 ---
 
 
-Quarto 1.5 is out! You can find the current release on the [download page](../docs/download/index.qmd).
+Quarto 1.5 is out! You can find the current release on the [download page](https://quarto.org/docs/download/index.html).
 
-Below, we'll highlight the improved Typst support, website enhancements like draft handling and announcement bars, the native Julia engine, and a couple of shortcodes for generating placeholder content. You can see all the changes in the [Release Notes](../docs/download/changelog/1.5/).
+Below, we'll highlight the improved Typst support, website enhancements like draft handling and announcement bars, the native Julia engine, and a couple of shortcodes for generating placeholder content. You can see all the changes in the [Release Notes](https://quarto.org/docs/download/changelog/1.5/).
 
 ## Typst CSS
 
-We've already blogged about one feature that is now available in 1.5: [Beautiful Tables in Typst](../docs/blog/posts/2024-07-02-beautiful-tables-in-typst/). The CSS properties from HTML tables produced in your code are translated to Typst properties, so the tables you lovingly craft for HTML should look just as good in PDFs produced using `format: typst`.
+We've already blogged about one feature that is now available in 1.5: [Beautiful Tables in Typst](https://quarto.org/docs/blog/posts/2024-07-02-beautiful-tables-in-typst/). The CSS properties from HTML tables produced in your code are translated to Typst properties, so the tables you lovingly craft for HTML should look just as good in PDFs produced using `format: typst`.
 
 Beyond tables, CSS properties on divs and spans are also translated to Typst properties. So, for example, you could get text with a green background like this:
 
@@ -31,7 +31,7 @@ Beyond tables, CSS properties on divs and spans are also translated to Typst pro
 Here is a [span with a green background]{style="background-color:green"}.
 ```
 
-You can read more about using CSS in Typst at [Typst Basics: Typst CSS](../docs/output-formats/typst.qmd#typst-css).
+You can read more about using CSS in Typst at [Typst Basics: Typst CSS](https://quarto.org/docs/output-formats/typst.html#typst-css).
 
 ## Improved Website Draft Support
 
@@ -52,7 +52,7 @@ Quarto 1.5 brings improved support for workflows involving draft posts and pages
 
 - Changes the behavior of `quarto preview` for drafts. Drafts will be `visible` in previews regardless of the `draft-mode` setting. In particular, this allows an easier way to preview the appearance of draft content in navigation and listings.
 
-Read more at [Website Drafts](../docs/websites/website-drafts.qmd).
+Read more at [Website Drafts](https://quarto.org/docs/websites/website-drafts.html).
 
 ## Website Announcements
 
@@ -63,7 +63,7 @@ You can now use an `announcement` option to add a customizable banner at the top
 <figcaption aria-hidden="true">An example announcement bar</figcaption>
 </figure>
 
-Read about your options at [Website Tools: Announcement Bar](../docs/websites/website-tools.qmd#announcement-bar).
+Read about your options at [Website Tools: Announcement Bar](https://quarto.org/docs/websites/website-tools.html#announcement-bar).
 
 ## Native Julia Engine
 
@@ -95,7 +95,7 @@ This example produces a 400px x 200px SVG image, and one paragraph of [Lorem Ips
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
-Read more about their options at [Placeholder Images](../docs/authoring/placeholder.qmd) and [Placeholder Text](../docs/authoring/lipsum.qmd).
+Read more about their options at [Placeholder Images](https://quarto.org/docs/authoring/placeholder.html) and [Placeholder Text](https://quarto.org/docs/authoring/lipsum.html).
 
 ## Acknowledgements
 

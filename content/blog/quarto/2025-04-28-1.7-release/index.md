@@ -19,13 +19,13 @@ port_status: raw
 ---
 
 
-Quarto 1.7 is out! You can get the current release from the [download page](../docs/download/index.qmd).
+Quarto 1.7 is out! You can get the current release from the [download page](https://quarto.org/docs/download/index.html).
 
 We are especially enthusiastic about the improvements 1.7 brings to dark mode: you can now specify light and dark themes via brand, map computational outputs to themes, and have your website theme follow your viewer's preference.
 To celebrate these changes, this site, [quarto.org](..), now has a light and dark mode.
 Toggle the switch in the navigation bar (<i class="bi bi-toggle-off"></i>) to see the difference.
 
-You can read about these improvements and some other highlights below. You can find all the changes in this version in the [Release Notes](../docs/download/changelog/1.7/).
+You can read about these improvements and some other highlights below. You can find all the changes in this version in the [Release Notes](https://quarto.org/docs/download/changelog/1.7/).
 
 ## Dark Mode Improvements
 
@@ -79,7 +79,7 @@ format:
 ---
 ```
 
-Read about other ways to set a light and dark brand in [Guide \> Brand](../docs/authoring/brand.qmd#dark-brand).
+Read about other ways to set a light and dark brand in [Guide \> Brand](https://quarto.org/docs/authoring/brand.html#dark-brand).
 
 ### Map computational outputs to themes
 
@@ -124,7 +124,7 @@ format:
 
 - Pandoc updated to 3.6.3
 
-- New [`version` shortcode](../docs/authoring/version.qmd) to insert the version of Quarto used to build your document:
+- New [`version` shortcode](https://quarto.org/docs/authoring/version.html) to insert the version of Quarto used to build your document:
 
   <table>
   <colgroup>
@@ -145,21 +145,21 @@ format:
 
 - Updated LaTeX and Beamer template partials:
 
-  - [LaTeX partials](../docs/journals/templates.html#latex-partials)
-  - [Beamer partials](../docs/journals/templates.html#beamer-partials)
+  - [LaTeX partials](https://quarto.org/docs/journals/templates.html#latex-partials)
+  - [Beamer partials](https://quarto.org/docs/journals/templates.html#beamer-partials)
 
   These changes reflect the updates made in Pandoc 3.5 to separate the LaTeX and Beamer document templates and introduce some additional partials for both.
   If you have custom formats that provide custom templates or partials, you may need to update them to work with the new partials.
 
 - Improvements to the `julia` engine:
 
-  - [`juliaup` integration](../docs/computations/julia.qmd#juliaup-integration): Use specific versions of Julia in your notebooks.
+  - [`juliaup` integration](https://quarto.org/docs/computations/julia.html#juliaup-integration): Use specific versions of Julia in your notebooks.
 
-  - [R and Python support](../docs/computations/julia.qmd#r-and-python-support): Include `{r}` and `{python}` executable code cells via the RCall and PythonCall packages.
+  - [R and Python support](https://quarto.org/docs/computations/julia.html#r-and-python-support): Include `{r}` and `{python}` executable code cells via the RCall and PythonCall packages.
 
-  - [Caching](../docs/computations/julia.qmd#caching-julia): Save time rendering long-running notebooks by caching results.
+  - [Caching](https://quarto.org/docs/computations/julia.html#caching-julia): Save time rendering long-running notebooks by caching results.
 
-  - [Revise.jl integration](../docs/computations/julia.qmd#revise.jl-integration): Automatically update function definitions in Julia sessions.
+  - [Revise.jl integration](https://quarto.org/docs/computations/julia.html#revise.jl-integration): Automatically update function definitions in Julia sessions.
 
 ## Acknowledgements
 

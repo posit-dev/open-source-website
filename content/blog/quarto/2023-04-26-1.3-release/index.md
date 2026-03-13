@@ -16,7 +16,7 @@ port_status: raw
 ---
 
 
-We are happy to announce that Quarto 1.3 has been released. You can grab the current release from the [download page](../docs/download/index.qmd).
+We are happy to announce that Quarto 1.3 has been released. You can grab the current release from the [download page](https://quarto.org/docs/download/index.html).
 
 If you are ever wondering which version of Quarto you are using, a quick way to check on the command line is:
 
@@ -37,7 +37,7 @@ You can now add line-based annotations to your code blocks using special code co
 <figcaption aria-hidden="true">Code Annotation in an HTML document</figcaption>
 </figure>
 
-To learn more, check out the [Code Annotation](../docs/authoring/code-annotation.qmd) documentation.
+To learn more, check out the [Code Annotation](https://quarto.org/docs/authoring/code-annotation.html) documentation.
 
 ## Multi-format Publishing
 
@@ -56,11 +56,11 @@ format:
 Results in an HTML page that includes a link to the additional notebook format in the right margin below the table of contents:
 
 <figure>
-<img src="../docs/output-formats/images/other-format.png" class="border" data-fig-alt="Screenshot of an HTML page that includes a link to the Jupyter format below the table of contents under the heading Other Formats." alt="An HTML document with a link to another format" />
+<img src="https://quarto.org/docs/output-formats/images/other-format.png" class="border" data-fig-alt="Screenshot of an HTML page that includes a link to the Jupyter format below the table of contents under the heading Other Formats." alt="An HTML document with a link to another format" />
 <figcaption aria-hidden="true">An HTML document with a link to another format</figcaption>
 </figure>
 
-Find out more in the documentation on [Including Other Formats](../docs/output-formats/html-multi-format.qmd).
+Find out more in the documentation on [Including Other Formats](https://quarto.org/docs/output-formats/html-multi-format.html).
 
 ## Jupyter Cell Embedding
 
@@ -71,7 +71,7 @@ Easily include the output of an external Jupyter notebook in a Quarto document w
 <figcaption aria-hidden="true">A plot embedded in a document from a Jupyter Notebook</figcaption>
 </figure>
 
-Learn more about the embed shortcode in [Embedding Jupyter Notebook Cells](../docs/authoring/notebook-embed.qmd) in the docs.
+Learn more about the embed shortcode in [Embedding Jupyter Notebook Cells](https://quarto.org/docs/authoring/notebook-embed.html) in the docs.
 
 ## Confluence Publishing
 
@@ -86,13 +86,13 @@ Learn more about the embed shortcode in [Embedding Jupyter Notebook Cells](../do
 <tr>
 <td style="text-align: left;"><div width="45.2%" data-layout-align="left">
 <figure>
-<img src="../docs/publishing/images/confluence-project.png" data-fig-alt="A screenshot of a Quarto project in VS Code. On the left in the Explorer, the project folder is called &#39;Guide-site&#39;, and contains folders &#39;authoring&#39;, and &#39;computation&#39;, along with some other files. A document from the folder &#39;python&#39; inside the folder &#39;computations&#39; with the title &#39;Using Python - site&#39; is open in the Source Pane. " alt="A Quarto Project" />
+<img src="https://quarto.org/docs/publishing/images/confluence-project.png" data-fig-alt="A screenshot of a Quarto project in VS Code. On the left in the Explorer, the project folder is called &#39;Guide-site&#39;, and contains folders &#39;authoring&#39;, and &#39;computation&#39;, along with some other files. A document from the folder &#39;python&#39; inside the folder &#39;computations&#39; with the title &#39;Using Python - site&#39; is open in the Source Pane. " alt="A Quarto Project" />
 <figcaption aria-hidden="true">A Quarto Project</figcaption>
 </figure>
 </div></td>
 <td style="text-align: left;"><div width="54.8%" data-layout-align="left">
 <figure>
-<img src="../docs/publishing/images/confluence-site.png" data-fig-alt="A screenshot of Space in Confluence. On the left in the Sdiebar under Pages is a page called &#39;Guide-site&#39;. Nested under this page are pages called &#39;authoring&#39;, and &#39;computation&#39;, along with some other pages. The &#39;computation&#39; page item is expanded and shows a page called &#39;Using Python - site&#39;, nested under a page called &#39;python&#39;. A page is displayed on the right with the title &#39;Using Python - site&#39;" alt="Published to Confluence" />
+<img src="https://quarto.org/docs/publishing/images/confluence-site.png" data-fig-alt="A screenshot of Space in Confluence. On the left in the Sdiebar under Pages is a page called &#39;Guide-site&#39;. Nested under this page are pages called &#39;authoring&#39;, and &#39;computation&#39;, along with some other pages. The &#39;computation&#39; page item is expanded and shows a page called &#39;Using Python - site&#39;, nested under a page called &#39;python&#39;. A page is displayed on the right with the title &#39;Using Python - site&#39;" alt="Published to Confluence" />
 <figcaption aria-hidden="true">Published to Confluence</figcaption>
 </figure>
 </div></td>
@@ -100,25 +100,25 @@ Learn more about the embed shortcode in [Embedding Jupyter Notebook Cells](../do
 </tbody>
 </table>
 
-To learn more, head to the documentation on [Confluence Publishing](../docs/publishing/confluence.qmd).
+To learn more, head to the documentation on [Confluence Publishing](https://quarto.org/docs/publishing/confluence.html).
 
 ## Other Highlights
 
 Some other notable highlights include:
 
-- [Article Grid Customization](../docs/output-formats/page-layout.qmd#grid-customization)---Customize the widths of layout components in HTML documents
+- [Article Grid Customization](https://quarto.org/docs/output-formats/page-layout.html#grid-customization)---Customize the widths of layout components in HTML documents
 
-- [Quarto Book AsciiDoc Support](../docs/books/book-basics.qmd)---Output Quarto books to AsciiDoc files
+- [Quarto Book AsciiDoc Support](https://quarto.org/docs/books/book-basics.html)---Output Quarto books to AsciiDoc files
 
-- [Website Navigation Improvements](../docs/prerelease/1.3/website-nav.qmd)---Include tools in your navbar, and provide better navigation for Quarto websites on mobile devices
+- [Website Navigation Improvements](https://quarto.org/docs/prerelease/1.3/website-nav.html)---Include tools in your navbar, and provide better navigation for Quarto websites on mobile devices
 
-- [Mermaid Diagram Theming](../docs/authoring/diagrams.qmd#mermaid-theming)---Use your document theme, or built-in Mermaid themes, for your Mermaid diagrams
+- [Mermaid Diagram Theming](https://quarto.org/docs/authoring/diagrams.html#mermaid-theming)---Use your document theme, or built-in Mermaid themes, for your Mermaid diagrams
 
-- [PDF: SVG and Remote Images](../docs/prerelease/1.3/pdf.qmd)---Include SVG images and remote images in PDF documents
+- [PDF: SVG and Remote Images](https://quarto.org/docs/prerelease/1.3/pdf.html)---Include SVG images and remote images in PDF documents
 
-- [`kbd` Shortcode](../docs/authoring/markdown-basics.qmd#keyboard-shortcuts)---Show well-formatted keyboard shortcuts in Quarto documents.
+- [`kbd` Shortcode](https://quarto.org/docs/authoring/markdown-basics.html#keyboard-shortcuts)---Show well-formatted keyboard shortcuts in Quarto documents.
 
-You can find all the other changes in 1.3, in the [Release Notes](../docs/download/index.qmd#download-section-news).
+You can find all the other changes in 1.3, in the [Release Notes](https://quarto.org/docs/download/index.html#download-section-news).
 
 ## Acknowledgements
 

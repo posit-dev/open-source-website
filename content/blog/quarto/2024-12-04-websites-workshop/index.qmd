@@ -25,7 +25,7 @@ In this video, you’ll get a running start by using a template we've designed t
 
 {{< video https://youtu.be/l7r24gTEkEY >}}
 
-Links: [About pages](/docs/websites/website-about.qmd) | [YAML appearance options](/docs/output-formats/html-themes.qmd#basic-options) 
+Links: [About pages](https://quarto.org/docs/websites/website-about.html) | [YAML appearance options](https://quarto.org/docs/output-formats/html-themes.html#basic-options) 
 
 Code: [Starter](https://github.com/EmilHvitfeldt/website-template ) | [Final](https://github.com/cwickham/quarto-website-video/tree/v0.1)
 
@@ -35,7 +35,7 @@ Now you’ve got a homepage, you’ll likely want to add some other pages. In th
 
 {{< video https://youtu.be/k65E-8PXZmA >}}
 
-Links: [Bootstrap icons](https://icons.getbootstrap.com/) | [Navigation bar options](/docs/websites/website-navigation.qmd#top-navigation) |  [Quarto website navigation](/docs/websites/website-navigation.qmd)
+Links: [Bootstrap icons](https://icons.getbootstrap.com/) | [Navigation bar options](https://quarto.org/docs/websites/website-navigation.html#top-navigation) |  [Quarto website navigation](https://quarto.org/docs/websites/website-navigation.html)
 
 Code: [Starter](Starter source code: https://github.com/cwickham/quarto-website-video/tree/v0.1) |  [Final](https://github.com/cwickham/quarto-website-video/tree/v0.2)
 
@@ -56,6 +56,6 @@ Adding a listing page to your website is a great way to showcase your projects, 
 
 {{< video https://www.youtube.com/watch?v=bv_Cw-3HI1Y >}}
 
-Links: [Listings](/docs/websites/website-listings.qmd) | [Andrew Heiss’ teaching listing](https://www.andrewheiss.com/teaching/ ) 
+Links: [Listings](https://quarto.org/docs/websites/website-listings.html) | [Andrew Heiss’ teaching listing](https://www.andrewheiss.com/teaching/ ) 
 
 Code: [Starter](https://github.com/cwickham/quarto-website-video/tree/v0.3) | [Final](https://github.com/cwickham/quarto-website-video/tree/v0.4)

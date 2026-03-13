@@ -20,7 +20,7 @@ port_status: raw
 
 > **Quarto 1.3 Feature**
 >
-> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](../docs/download/index.qmd)
+> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](https://quarto.org/docs/download/index.html)
 
 [Atlassian Confluence](https://www.atlassian.com/software/confluence) is a publishing platform for supporting team collaboration. Confluence has a variety of hosting options which include both free and paid subscription plans.
 
@@ -76,4 +76,4 @@ Managing Confluence content with Quarto allows you to author content in Markdown
 
 <!-- Quick overview of key features: new format and project type, local preview, `quarto publish confluence`. -->
 
-If you're curious about using Confluence Publishing for your own project, head to the [Confluence Publishing page](../docs/publishing/confluence.qmd) of the pre-release highlights to learn more.
+If you're curious about using Confluence Publishing for your own project, head to the [Confluence Publishing page](https://quarto.org/docs/publishing/confluence.html) of the pre-release highlights to learn more.

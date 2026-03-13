@@ -38,4 +38,4 @@ Managing Confluence content with Quarto allows you to author content in Markdown
 
 <!-- Quick overview of key features: new format and project type, local preview, `quarto publish confluence`. -->
 
-If you're curious about using Confluence Publishing for your own project, head to the [Confluence Publishing page](/docs/publishing/confluence.qmd) of the pre-release highlights to learn more.
+If you're curious about using Confluence Publishing for your own project, head to the [Confluence Publishing page](https://quarto.org/docs/publishing/confluence.html) of the pre-release highlights to learn more.

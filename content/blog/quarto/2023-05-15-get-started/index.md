@@ -17,19 +17,19 @@ port_status: raw
 ---
 
 
-Have you been hearing about Quarto but didn't give it a try yet? Perused the [Get Started](../docs/get-started/index.qmd) pages but would like another intro? Or have about 20 minutes to spare and want to pick up a few Quarto tips? You've come to the right place!
+Have you been hearing about Quarto but didn't give it a try yet? Perused the [Get Started](https://quarto.org/docs/get-started/index.html) pages but would like another intro? Or have about 20 minutes to spare and want to pick up a few Quarto tips? You've come to the right place!
 
 <https://www.youtube.com/embed/_f3latmOhew>
 
-In this video, I walk you through creating documents, presentations, and websites and publishing with Quarto. The video features authoring Quarto documents with executable R code chunks using the [RStudio Visual Editor](../docs/visual-editor/index.qmd).
+In this video, I walk you through creating documents, presentations, and websites and publishing with Quarto. The video features authoring Quarto documents with executable R code chunks using the [RStudio Visual Editor](https://quarto.org/docs/visual-editor/index.html).
 
 Select highlights include:
 
-- Inserting [cross references](../docs/authoring/cross-references.qmd) to tables and figures
-- Adding a [citation](../docs/visual-editor/technical.qmd#citations) from a DOI
-- Seamlessly switching between output formats as well as creating [multi-format documents](../docs/output-formats/html-multi-format.qmd)
-- Customizing the [output location](../docs/presentations/revealjs/#output-location) of code in presentations
-- Creating a [website](../docs/websites/website-basics.qmd) from scratch
-- Publishing the website to [QuartoPub](../docs/publishing/quarto-pub.qmd)
+- Inserting [cross references](https://quarto.org/docs/authoring/cross-references.html) to tables and figures
+- Adding a [citation](https://quarto.org/docs/visual-editor/technical.html#citations) from a DOI
+- Seamlessly switching between output formats as well as creating [multi-format documents](https://quarto.org/docs/output-formats/html-multi-format.html)
+- Customizing the [output location](https://quarto.org/docs/presentations/revealjs/#output-location) of code in presentations
+- Creating a [website](https://quarto.org/docs/websites/website-basics.html) from scratch
+- Publishing the website to [QuartoPub](https://quarto.org/docs/publishing/quarto-pub.html)
 
 If you would like to follow along as you watch the video, you can find the source code for everything created in the video in [this GitHub repository](https://github.com/mine-cetinkaya-rundel/get-started-quarto) and the published [website on QuartoPub](https://mine.quarto.pub/welcome-to-quarto/).

@@ -4,7 +4,7 @@ subtitle: Author and customize markdown tables using Quarto
 description: >
   This post provides an overview of these capabilities in Quarto. For more
   detail about all the features Quarto for authoring tables, see
-  [Tables](/docs/authoring/tables.qmd).
+  [Tables](https://quarto.org/docs/authoring/tables.html).
 categories:
   - Features
   - Authoring
@@ -27,7 +27,7 @@ Quarto includes a number of features aimed at making it easy to author and custo
 - Providing captions, subcaptions, and cross-references.
 - Generating tables dynamically from executable code cells.
 
-This post provides an overview of these capabilities in Quarto. For more detail about all the features Quarto for authoring tables, see [Tables](../docs/authoring/tables.qmd).
+This post provides an overview of these capabilities in Quarto. For more detail about all the features Quarto for authoring tables, see [Tables](https://quarto.org/docs/authoring/tables.html).
 
 ## Markdown Tables
 
@@ -102,4 +102,4 @@ kable(head(cars))
 ```
 ````
 
-In addition to the above, which focused on some of the features of Quarto when writing pipe tables in markdown, you can also author tables using grid syntax. You review the [documentation](../docs/authoring/tables.qmd). for more detail.
+In addition to the above, which focused on some of the features of Quarto when writing pipe tables in markdown, you can also author tables using grid syntax. You review the [documentation](https://quarto.org/docs/authoring/tables.html). for more detail.

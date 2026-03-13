@@ -6,7 +6,7 @@ subtitle: >-
 description: >
   This post demonstrates a few of the capabilities for positioning content in
   the margin of the page. You can read more about the complete capabilities in
-  the [Article Layout Guide](/docs/authoring/article-layout.qmd).
+  the [Article Layout Guide](https://quarto.org/docs/authoring/article-layout.html).
 people:
   - Charles Teague
 date: "2022-02-17"
@@ -30,7 +30,7 @@ Quarto supports a variety of page layout options that enable you to author conte
 - Spans the entire page
 - Occupies the document margin
 
-This post will demonstrate a few of the capabilities for positioning content in the margin of the page. You can read more about the complete capabilities in the [Article Layout Guide](../docs/authoring/article-layout.qmd).  
+This post will demonstrate a few of the capabilities for positioning content in the margin of the page. You can read more about the complete capabilities in the [Article Layout Guide](https://quarto.org/docs/authoring/article-layout.html).  
 
 ## Margin Figures
 

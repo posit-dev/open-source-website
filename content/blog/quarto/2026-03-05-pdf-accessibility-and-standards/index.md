@@ -15,7 +15,7 @@ port_status: raw
 
 > **Pre-release Feature**
 >
-> This feature is new in the upcoming Quarto 1.9 release. To use the feature now, you'll need to [download and install](../docs/download/prerelease.qmd) the Quarto pre-release.
+> This feature is new in the upcoming Quarto 1.9 release. To use the feature now, you'll need to [download and install](https://quarto.org/docs/download/prerelease.html) the Quarto pre-release.
 
 2025 was a big year for PDF accessibility. LaTeX and Typst both released support for PDF tagging and accessibility standards, just in time for new regulations in the [EU](https://en.wikipedia.org/wiki/European_Accessibility_Act) (June 2025) and [US](https://accessible.org/ada-title-ii-web-accessibility/) (April 2026).
 

@@ -25,9 +25,9 @@ systems.
 
 Additional links:
 
-- [Quarto 1.6 release post](/docs/blog/posts/2024-11-25-1.6-release/index.qmd)
+- [Quarto 1.6 release post](https://quarto.org/docs/blog/posts/2024-11-25-1.6-release/index.html)
 - [Download Positron](https://positron.posit.co/download.html)
-- [Quarto's `_brand.yml` documentation](/docs/authoring/brand.qmd)
+- [Quarto's `_brand.yml` documentation](https://quarto.org/docs/authoring/brand.html)
 
 
 

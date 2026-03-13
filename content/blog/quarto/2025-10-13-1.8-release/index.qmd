@@ -16,10 +16,10 @@ ported_from: quarto
 port_status: raw
 ---
 
-Quarto 1.8 is available! You can get the current release from the [download page](/docs/download/index.qmd).
+Quarto 1.8 is available! You can get the current release from the [download page](https://quarto.org/docs/download/index.html).
 
 Quarto 1.8 improves support for light and dark brand colors and logos, brand extensions for sharing brands across Quarto projects, HTML accessibility checks powered by Axe-core, and access to more information about execution context from your code cells.
-You can read about these improvements and some other highlights below. You can find all the changes in this version in the [Release Notes](/docs/download/changelog/1.8/).
+You can read about these improvements and some other highlights below. You can find all the changes in this version in the [Release Notes](https://quarto.org/docs/download/changelog/1.8/).
 
 ## Dark and light colors and logos in brand
 
@@ -42,11 +42,11 @@ logos:
 This works in `_brand.yml` files as well as `brand` specified directly in document metadata. 
 You can also present in dark mode by specifying `brand-mode: dark` in your `format: revealjs`  presentations.
 
-Read more in the updated [Guide > Brand](/docs/authoring/brand.qmd):
+Read more in the updated [Guide > Brand](https://quarto.org/docs/authoring/brand.html):
 
-- [Light and dark colors](/docs/authoring/brand.qmd#light-and-dark-colors)
-- [Light and dark logos](/docs/authoring/brand.qmd#light-and-dark-logos)
-- [Brand mode](/docs/authoring/brand.qmd#brand-mode)
+- [Light and dark colors](https://quarto.org/docs/authoring/brand.html#light-and-dark-colors)
+- [Light and dark logos](https://quarto.org/docs/authoring/brand.html#light-and-dark-logos)
+- [Brand mode](https://quarto.org/docs/authoring/brand.html#brand-mode)
 
 ## Brand extensions
 
@@ -58,7 +58,7 @@ Get started with:
 quarto create extension brand
 ```
 
-Read more in [Extensions > Brand](/docs/extensions/brand.qmd), and keep an eye out for other ways to reuse and share your brand in future releases.
+Read more in [Extensions > Brand](https://quarto.org/docs/extensions/brand.html), and keep an eye out for other ways to reuse and share your brand in future releases.
 
 ## Accessibility checks for HTML
 
@@ -67,14 +67,14 @@ You can add accessibility checks using the [Axe-core engine](https://github.com/
 For example, you can get a summary of violations right in your document preview:
 
 ::: {.light-content}
-![A rendered webpage with an accessibility violation warning](/docs/output-formats/images/axe-violation.png){.border fig-alt="A webpage with a box in the bottom left that warns 'Serious: Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'."}
+![A rendered webpage with an accessibility violation warning](https://quarto.org/docs/output-formats/images/axe-violation.png){.border fig-alt="A webpage with a box in the bottom left that warns 'Serious: Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'."}
 :::
 
 ::: {.dark-content}
-![A rendered webpage with an accessibility violation warning](/docs/output-formats/images/axe-violation.png){.border .autodark fig-alt="A webpage with a box in the bottom left that warns 'Serious: Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'."}
+![A rendered webpage with an accessibility violation warning](https://quarto.org/docs/output-formats/images/axe-violation.png){.border .autodark fig-alt="A webpage with a box in the bottom left that warns 'Serious: Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'."}
 :::
 
-Read about your options in [HTML Accessibility Checks](/docs/output-formats/html-accessibility.qmd)
+Read about your options in [HTML Accessibility Checks](https://quarto.org/docs/output-formats/html-accessibility.html)
 
 We know accessability is a big concern for many of our users, and more improvements will be coming in future releases. 
 
@@ -116,11 +116,11 @@ execute_info["document-path"]
 
 :::
 
-Read more in [Access execution settings from code cells](/docs/advanced/quarto-execute-info.qmd).
+Read more in [Access execution settings from code cells](https://quarto.org/docs/advanced/quarto-execute-info.html).
 
 ## Other Highlights
 
--  Access [metadata](/docs/extensions/lua-api.qmd#metadata-access) and [variables](/docs/extensions/lua-api.qmd#variables-access) in filters and shortcodes: Use the new `quarto.variables.get()` and `quarto.metadata.get()` APIs.
+-  Access [metadata](https://quarto.org/docs/extensions/lua-api.html#metadata-access) and [variables](https://quarto.org/docs/extensions/lua-api.html#variables-access) in filters and shortcodes: Use the new `quarto.variables.get()` and `quarto.metadata.get()` APIs.
 
 - The default LaTeX engine is now `lualatex`.
 

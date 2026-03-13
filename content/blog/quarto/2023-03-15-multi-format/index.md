@@ -22,7 +22,7 @@ port_status: raw
 
 > **Quarto 1.3 Feature**
 >
-> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](../docs/download/index.qmd)
+> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](https://quarto.org/docs/download/index.html)
 
 Starting in Quarto 1.3, HTML pages (either standalone or in a website) can automatically include links to other formats specified in the document front matter. For example, the following document front matter:
 
@@ -44,4 +44,4 @@ If a table of contents is enabled for the page, the additional formats will be a
 
 Links to additional formats are displayed by default, but you can control whether they are shown or even which specific formats are included with the `format-links` YAML option.
 
-Read more about this feature on the [Multi-format page](../docs/output-formats/html-multi-format.qmd) of the pre-release highlights.
+Read more about this feature on the [Multi-format page](https://quarto.org/docs/output-formats/html-multi-format.html) of the pre-release highlights.

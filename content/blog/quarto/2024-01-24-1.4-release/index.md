@@ -18,7 +18,7 @@ port_status: raw
 ---
 
 
-Quarto 1.4 has been officially released! You can get the current release from the [download page](../docs/download/index.qmd)
+Quarto 1.4 has been officially released! You can get the current release from the [download page](https://quarto.org/docs/download/index.html)
 
 This release has tons of new features. Some of the big ones we want to spotlight are: Dashboards, Typst, Inline Code Syntax, Cross-References and Manuscripts.
 
@@ -35,19 +35,19 @@ Quarto Dashboards streamline the creation of interactive dashboards, giving you 
 <tbody>
 <tr>
 <td style="text-align: center;"><div width="33.3%" data-layout-align="center">
-<p><a href="https://jjallaire.github.io/stock-explorer-dashboard/"><img src="../docs/dashboards/examples/thumbnails/stock-explorer-dashboard.png" class="border" data-fig-alt="Screenshot of a Stock Trader dashboard: a row of three values boxes, then a row with a stock ticker graph and a table of closing values. Navy blue and green theme." /></a></p>
+<p><a href="https://jjallaire.github.io/stock-explorer-dashboard/"><img src="https://quarto.org/docs/dashboards/examples/thumbnails/stock-explorer-dashboard.png" class="border" data-fig-alt="Screenshot of a Stock Trader dashboard: a row of three values boxes, then a row with a stock ticker graph and a table of closing values. Navy blue and green theme." /></a></p>
 </div></td>
 <td style="text-align: center;"><div width="33.3%" data-layout-align="center">
-<p><a href="https://jjallaire.github.io/customer-churn-dashboard/"><img src="../docs/dashboards/examples/thumbnails/customer-churn-dashboard.png" class="border" data-fig-alt="Screenshot of a Customer Churn dashboard: a row of three values boxes, then a row with two plots, then a row with a table. Light blue and yellow theme." /></a></p>
+<p><a href="https://jjallaire.github.io/customer-churn-dashboard/"><img src="https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png" class="border" data-fig-alt="Screenshot of a Customer Churn dashboard: a row of three values boxes, then a row with two plots, then a row with a table. Light blue and yellow theme." /></a></p>
 </div></td>
 <td style="text-align: center;"><div width="33.3%" data-layout-align="center">
-<p><a href="https://jjallaire.shinyapps.io/penguins-dashboard/"><img src="../docs/dashboards/examples/thumbnails/penguins-dashboard.png" class="border" data-fig-alt="Screenshot of a Palmer Penguins dashboard: a sidebar with checkboxes and a dropdown, and two plots in main panel. Blue theme." /></a></p>
+<p><a href="https://jjallaire.shinyapps.io/penguins-dashboard/"><img src="https://quarto.org/docs/dashboards/examples/thumbnails/penguins-dashboard.png" class="border" data-fig-alt="Screenshot of a Palmer Penguins dashboard: a sidebar with checkboxes and a dropdown, and two plots in main panel. Blue theme." /></a></p>
 </div></td>
 </tr>
 </tbody>
 </table>
 
-For the source code of these dashboards and additional examples see the [examples gallery](../docs/gallery/index.qmd#dashboards). When you are ready to build your own Quarto dashboard head to our guide on [Dashboards](../docs/dashboards/index.qmd).
+For the source code of these dashboards and additional examples see the [examples gallery](https://quarto.org/docs/gallery/index.html#dashboards). When you are ready to build your own Quarto dashboard head to our guide on [Dashboards](https://quarto.org/docs/dashboards/index.html).
 
 ## Typst
 
@@ -66,7 +66,7 @@ format: typst
 My first Typst document
 ```
 
-We are particularly excited about how easy it is to make templates for journal articles, conference posters, newsletters and more with Typst. Here are some examples you can use in Quarto as [custom formats](../docs/output-formats/typst-custom.qmd):
+We are particularly excited about how easy it is to make templates for journal articles, conference posters, newsletters and more with Typst. Here are some examples you can use in Quarto as [custom formats](https://quarto.org/docs/output-formats/typst-custom.html):
 
 <table>
 <colgroup>
@@ -105,7 +105,7 @@ We are particularly excited about how easy it is to make templates for journal a
 </tbody>
 </table>
 
-Start your Typst journey with Quarto in our guide on [Typst Basics](../docs/output-formats/typst.qmd).
+Start your Typst journey with Quarto in our guide on [Typst Basics](https://quarto.org/docs/output-formats/typst.html).
 
 ## Inline Code Syntax
 
@@ -148,13 +148,13 @@ Quarto 1.4 introduces a unified syntax for including computed values inline. The
 </tbody>
 </table>
 
-And don't worry if you are used to using `` `r ` `` that syntax remains fully supported. Read more at [Inline Code](../docs/computations/inline-code.qmd).
+And don't worry if you are used to using `` `r ` `` that syntax remains fully supported. Read more at [Inline Code](https://quarto.org/docs/computations/inline-code.html).
 
 ## Cross-References
 
 Cross-references have been overhauled in Quarto 1.4, enabling you to do things like:
 
-- Flexibly define the content of float cross-references (e.g. figures, tables and code listings) with the new [Cross-Reference Div Syntax](../docs/authoring/cross-references-divs.qmd). For example, <a href="#tbl-table" class="quarto-xref">Table 1</a> is an image treated like a table:
+- Flexibly define the content of float cross-references (e.g. figures, tables and code listings) with the new [Cross-Reference Div Syntax](https://quarto.org/docs/authoring/cross-references-divs.html). For example, <a href="#tbl-table" class="quarto-xref">Table 1</a> is an image treated like a table:
 
   <table>
   <colgroup>
@@ -182,9 +182,9 @@ Cross-references have been overhauled in Quarto 1.4, enabling you to do things l
 
   And notice if you hover over the reference as it appears in the text, e.g. hover over this link to <a href="#tbl-table" class="quarto-xref">Table 1</a>, you'll get a floating preview of the content---that's new too.
 
-- Define [custom types of float cross-reference](../docs/authoring/cross-references-custom.qmd), which you could use to create cross-references to Videos, Diagrams or [Supplemental Figures](../docs/authoring/cross-references-custom.qmd#example-supplemental-figures).
+- Define [custom types of float cross-reference](https://quarto.org/docs/authoring/cross-references-custom.html), which you could use to create cross-references to Videos, Diagrams or [Supplemental Figures](https://quarto.org/docs/authoring/cross-references-custom.html#example-supplemental-figures).
 
-- Cross-reference [executable code cells](../docs/authoring/cross-references.qmd#code-listings), [callouts](../docs/authoring/cross-references.qmd#callouts) and [remarks and solutions](../docs/authoring/cross-references.qmd#theorems-and-proofs).
+- Cross-reference [executable code cells](https://quarto.org/docs/authoring/cross-references.html#code-listings), [callouts](https://quarto.org/docs/authoring/cross-references.html#callouts) and [remarks and solutions](https://quarto.org/docs/authoring/cross-references.html#theorems-and-proofs).
 
 ## Manuscripts
 
@@ -215,31 +215,31 @@ The output of a manuscript project is a website containing the article in multip
 </tbody>
 </table>
 
-Read more about manuscripts and how to get started in our guide to [Manuscripts](../docs/manuscripts/index.qmd).
+Read more about manuscripts and how to get started in our guide to [Manuscripts](https://quarto.org/docs/manuscripts/index.html).
 
 ## Other Highlights
 
 Some other highlights include:
 
-- [Shiny for Python](../docs/dashboards/interactivity/shiny-python/index.qmd)---Support for using Shiny for Python within Quarto documents.
+- [Shiny for Python](https://quarto.org/docs/dashboards/interactivity/shiny-python/index.html)---Support for using Shiny for Python within Quarto documents.
 
-- [Script Rendering](../docs/computations/render-scripts.qmd)---Render specially formatted `.py`, `.jl` and `.r` script files.
+- [Script Rendering](https://quarto.org/docs/computations/render-scripts.html)---Render specially formatted `.py`, `.jl` and `.r` script files.
 
-- [Easy Binder Configuration for Quarto Projects](../docs/projects/binder.qmd)---Support for generating files required to deploy a Quarto project to <a href="https://mybinder.org/" class="external">Binder</a>.
+- [Easy Binder Configuration for Quarto Projects](https://quarto.org/docs/projects/binder.html)---Support for generating files required to deploy a Quarto project to <a href="https://mybinder.org/" class="external">Binder</a>.
 
 - <a href="https://docs.posit.co/connect/user/quarto/#email-customization" class="external">Connect Email Generation</a>---Extends the `html` output format so that HTML/text emails can be created and selectively delivered through Posit Connect.
 
-- [Publish to Posit Cloud](../docs/publishing/posit-cloud.qmd)---Adds `posit-cloud` as a venue for `quarto publish`.
+- [Publish to Posit Cloud](https://quarto.org/docs/publishing/posit-cloud.html)---Adds `posit-cloud` as a venue for `quarto publish`.
 
-- [Lightbox Treatment for Images and Figures](../docs/output-formats/html-lightbox-figures.qmd)---Support for zooming into images and figures as well as grouping multiple images into a gallery.
+- [Lightbox Treatment for Images and Figures](https://quarto.org/docs/output-formats/html-lightbox-figures.html)---Support for zooming into images and figures as well as grouping multiple images into a gallery.
 
 If you build Quarto extensions, you should also be aware of some developer-facing changes:
 
-- [Lua changes](../docs/prerelease/1.4/lua_changes.qmd)---New Support for crossreferenceable elements in filters, extensible renderers of quarto AST nodes such as `FloatRefTarget` and `Callout`, the use of relative paths in `require()` calls, and more precise specification of where a filter will be inserted.
+- [Lua changes](https://quarto.org/docs/prerelease/1.4/lua_changes.html)---New Support for crossreferenceable elements in filters, extensible renderers of quarto AST nodes such as `FloatRefTarget` and `Callout`, the use of relative paths in `require()` calls, and more precise specification of where a filter will be inserted.
 
-- [AST processing changes](../docs/prerelease/1.4/ast.qmd)---Improvements to the HTML table processing added in v1.3 and a way for LaTeX raw blocks to include Quarto-compatible markdown for processing.
+- [AST processing changes](https://quarto.org/docs/prerelease/1.4/ast.html)---Improvements to the HTML table processing added in v1.3 and a way for LaTeX raw blocks to include Quarto-compatible markdown for processing.
 
-You can find all the other changes in 1.4 in the [Release Notes](../docs/download/#download-section-news).
+You can find all the other changes in 1.4 in the [Release Notes](https://quarto.org/docs/download/#download-section-news).
 
 ## Acknowledgements
 

@@ -18,7 +18,7 @@ port_status: raw
 
 Quarto now allows HTML Tables with CSS styling to be output in Typst.
 
-It does this by translating CSS properties into Typst properties. You can read about the feature [in the Guide](../docs/output-formats/typst.qmd#typst-css).<span class="column-margin margin-aside">technical details [in the Advanced Docs](../docs/advanced/typst/typst-css.qmd)</span>
+It does this by translating CSS properties into Typst properties. You can read about the feature [in the Guide](https://quarto.org/docs/output-formats/typst.html#typst-css).<span class="column-margin margin-aside">technical details [in the Advanced Docs](https://quarto.org/docs/advanced/typst/typst-css.html)</span>
 
 Let's look at 6 HTML tables using a variety of CSS properties also supported by Typst in Quarto.
 

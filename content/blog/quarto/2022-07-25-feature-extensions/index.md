@@ -22,11 +22,11 @@ port_status: raw
 
 Quarto Extensions are a powerful way to modify or extend the behavior of Quarto, and can be created and distributed by anyone. There are three types of extensions available:
 
-- [Shortcodes](../docs/extensions/shortcodes.qmd) are special markdown directives that generate various types of content. For example, you could create shortcodes to embed tweets or videos in a document.
+- [Shortcodes](https://quarto.org/docs/extensions/shortcodes.html) are special markdown directives that generate various types of content. For example, you could create shortcodes to embed tweets or videos in a document.
 
-- [Filters](../docs/extensions/filters.qmd) are a flexible and powerful tool for introducing new global behaviors and/or new markdown rendering behaviors. For example, you could create filters to implement output folding, an image carousel, or just about anything you can imagine!
+- [Filters](https://quarto.org/docs/extensions/filters.html) are a flexible and powerful tool for introducing new global behaviors and/or new markdown rendering behaviors. For example, you could create filters to implement output folding, an image carousel, or just about anything you can imagine!
 
-- [Formats](../docs/extensions/formats.qmd) enable you to create new output formats by bundling together document options, templates, stylesheets, and other content.
+- [Formats](https://quarto.org/docs/extensions/formats.html) enable you to create new output formats by bundling together document options, templates, stylesheets, and other content.
 
 Here are some examples of extensions developed and maintained by the core Quarto team:
 
@@ -37,4 +37,4 @@ Here are some examples of extensions developed and maintained by the core Quarto
 | [fontawesome](https://github.com/quarto-ext/fontawesome) | Use Font Awesome icons in HTML and PDF documents. |
 | [latex-environment](https://github.com/quarto-ext/latex-environment) | Quarto extension to output custom LaTeX environments. |
 
-To learn more about using extensions, see the [Extensions](../docs/extensions/index.qmd) documentation on the Quarto website. If you want to dive in to creating your own extensions check out the articles on [Creating Shortcodes](../docs/extensions/shortcodes.qmd), [Creating Filters](../docs/extensions/filters.qmd), and [Creating Formats](../docs/extensions/formats.qmd).
+To learn more about using extensions, see the [Extensions](https://quarto.org/docs/extensions/index.html) documentation on the Quarto website. If you want to dive in to creating your own extensions check out the articles on [Creating Shortcodes](https://quarto.org/docs/extensions/shortcodes.html), [Creating Filters](https://quarto.org/docs/extensions/filters.html), and [Creating Formats](https://quarto.org/docs/extensions/formats.html).

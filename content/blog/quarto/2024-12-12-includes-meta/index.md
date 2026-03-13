@@ -23,7 +23,7 @@ port_status: raw
 >
 > The worked example below is also available at: [Source](https://github.com/quarto-dev/quarto-examples/tree/main/websites/quarto-meta-includes) \| [Live Website](https://examples.quarto.pub/quarto-meta-includes/)
 
-There may be times when you would like to single-source content across multiple pages/files to reduce the risk of errors, produce consistent content that is easy to maintain, and ultimately save valuable time. [Quarto](../index.qmd) (an open-source technical publishing system), provides an [Includes](../docs/authoring/includes.html) feature (the equivalent of an R Markdown "child" document) that allows you to reuse content across multiple documents/files/pages.
+There may be times when you would like to single-source content across multiple pages/files to reduce the risk of errors, produce consistent content that is easy to maintain, and ultimately save valuable time. [Quarto](../index.html) (an open-source technical publishing system), provides an [Includes](https://quarto.org/docs/authoring/includes.html) feature (the equivalent of an R Markdown "child" document) that allows you to reuse content across multiple documents/files/pages.
 
 To achieve this, simply create chunks of content (text, tables, code, callouts, images, etc.) and then insert it using the Include shortcode: `{{</* include _content.qmd */>}}`.
 
@@ -157,7 +157,7 @@ Quarto's Includes feature allows you to improve your content creation process by
 
 Learn more with these resources:
 
-- [Get Started - Quarto](../docs/get-started/)
-- [Quarto - Includes](../docs/authoring/includes.html)
-- [Quarto - meta Variables](../docs/authoring/variables.html#meta)
+- [Get Started - Quarto](https://quarto.org/docs/get-started/)
+- [Quarto - Includes](https://quarto.org/docs/authoring/includes.html)
+- [Quarto - meta Variables](https://quarto.org/docs/authoring/variables.html#meta)
 - An overview of <a href="https://technicalwriterhq.com/writing/technical-writing/single-source-authoring/" class="external">Single Source Authoring</a>

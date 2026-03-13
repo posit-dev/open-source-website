@@ -24,7 +24,7 @@ port_status: raw
 
 > **Quarto 1.3 Feature**
 >
-> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](../docs/download/index.qmd)
+> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](https://quarto.org/docs/download/index.html)
 
 Code blocks and executable code cells in Quarto may now include line-based annotations. Line-based annotations provide a way to attach explanation to lines of code much like footnotes.
 
@@ -96,4 +96,4 @@ penguins |>                                      # <1>
 2. add new columns for the bill ratio and bill area.
 ````
 
-You can read more about how to control the annotation style, and whether annotations appear at all on the [Code Annotation page](../docs/authoring/code-annotation.qmd) of the pre-release highlights.
+You can read more about how to control the annotation style, and whether annotations appear at all on the [Code Annotation page](https://quarto.org/docs/authoring/code-annotation.html) of the pre-release highlights.
