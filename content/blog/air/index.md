@@ -11,6 +11,8 @@ photo:
   url: https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI
 categories:
   - tidyverse
+languages:
+- R
 ---
 
 We're thrilled to announce [Air](https://posit-dev.github.io/air/), an extremely fast R formatter. Formatters are used to automatically style code, but I find that it's much easier to show what Air can do rather than tell, so we'll start with a few examples. In the video below, we're inside [Positron](https://positron.posit.co/) and we're looking at some unformatted code. Saving the file (yep, that's it!) invokes Air, which automatically and instantaneously formats the code.
