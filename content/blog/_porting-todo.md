@@ -401,30 +401,27 @@ Run link checking on other ported blogs:
 
 **Pattern:** `../docs/authoring/tables.qmd` → `https://quarto.org/docs/authoring/tables.html`
 
-## Quarto blog: shortcodes not supported in Hugo
+## Quarto blog: shortcodes
 
-Quarto shortcodes used in blog posts that Hugo cannot process. These cause build errors.
+### Solved: Examples in code blocks
 
-| Shortcode | Count | Type | Post |
-|-----------|-------|------|------|
-| `meta` | 16 | Example in code block | `2024-12-12-includes-meta` |
-| `prerelease-docs-url` | 5 | **Real call** | `2026-03-05-pdf-accessibility-and-standards` |
-| `include` | 5 | Example in code block | `2024-12-12-includes-meta` |
-| `placeholder` | 1 | Example in code block | `2024-07-11-1.5-release` |
-| `lipsum` | 1 | Example in code block | `2024-07-11-1.5-release` |
-| `embed` | 1 | Example in code block | `2023-03-17-jupyter-cell-embedding` |
-| `contents` | 1 | **Real call** | `2024-11-25-1.6-release` |
+Hugo parses `{{<` even inside fenced code blocks. Fixed with a Lua filter that escapes shortcodes during `hugo-md` render.
 
-**Examples in code blocks:** Hugo parses `{{<` even inside fenced code blocks. Need to escape as `{{</*` and `*/>}}` for Hugo to treat as literal text.
+**Filter:** `content/blog/quarto/_extensions/escape-shortcodes/escape-shortcodes.lua`
 
-**Real calls:**
-- `prerelease-docs-url 1.9` → should output `pre-1-9.` to create URLs like `https://pre-1-9.quarto.org/...`
-- `contents a-cell` → should embed notebook cell content
+Converts `{{< shortcode >}}` to `{{</* shortcode */>}}` in code blocks so Hugo displays them as literal text.
 
-**Options:**
-1. Quarto Lua filter to resolve shortcodes during `hugo-md` render
-2. Create Hugo stub shortcodes
-3. Manually fix these 4 posts
+### Stub shortcode: `prerelease-docs-url`
+
+**Post:** `2026-03-05-pdf-accessibility-and-standards` (5 uses)
+
+**Original behavior:** `{{< prerelease-docs-url 1.9 >}}` outputs `prerelease.` to create URLs like `https://prerelease.quarto.org/...`
+
+**Current fix:** Empty stub shortcode at `layouts/shortcodes/prerelease-docs-url.html` outputs nothing. Links point to `https://quarto.org/...` instead of prerelease docs.
+
+**To implement properly:** Output version prefix like `prerelease.` based on argument.
+
+
 
 ## Other observations
 
