@@ -2,11 +2,7 @@
 
 [build]
   publish = "public"
-  command = "npm ci && npm run build-tailwind && hugo --minify && npm run build-search"
-
-[build.environment]
-  HUGO_VERSION = "0.153.2"
-  NODE_VERSION = "20"
+  ignore = "exit 0"
 
 # Redirects and headers
 [[headers]]
