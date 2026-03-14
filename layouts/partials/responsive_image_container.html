@@ -1,7 +1,7 @@
 {{/*
   Renders responsive images optimized for container query breakpoints.
 
-  One <picture> element is rendered per breakpoint range (short, tall, grande, venti),
+  One <picture> element is rendered per breakpoint range (short, tall, grande),
   each shown/hidden via Tailwind container-query classes. Each <picture> carries 1x/2x
   DPI srcset variants plus a webp <source>. Combined with loading="lazy", browsers
   only download the image matching the current container size.
@@ -12,8 +12,7 @@
   - class:   CSS classes for each <img> element (optional)
   - short:   1x pixel width for containers < @tall  (160px)  (optional, default 160)
   - tall:    1x pixel width for @tall–@grande  (160–320px)   (optional, default 320)
-  - grande:  1x pixel width for @grande–@venti (320–640px)   (optional, default 640)
-  - venti:   1x pixel width for @venti+        (640px+)      (optional, default 640)
+  - grande:  1x pixel width for @grande (320–640px)   (optional, default 640)
 */}}
 {{ $image := .image }}
 {{ $alt := .alt }}
@@ -21,7 +20,6 @@
 {{ $wShort  := default 160 .short }}
 {{ $wTall   := default 320 .tall }}
 {{ $wGrande := default 640 .grande }}
-{{ $wVenti  := default 640 .venti }}
 
 {{ if $image }}
   {{ if eq $image.MediaType.SubType "svg" }}
@@ -31,8 +29,7 @@
     {{ $breakpoints := slice
       (dict "name" "short"  "vis" "hidden @max-tall:block"              "w" $wShort)
       (dict "name" "tall"   "vis" "hidden @tall:@max-grande:block"      "w" $wTall)
-      (dict "name" "grande" "vis" "hidden @grande:@max-venti:block"     "w" $wGrande)
-      (dict "name" "venti"  "vis" "hidden @venti:block"                 "w" $wVenti)
+      (dict "name" "grande" "vis" "hidden @grande:block"     "w" $wGrande)
     }}
 
     {{ $sourceWidth := $image.Width }}
