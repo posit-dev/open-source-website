@@ -1,13 +1,13 @@
 ---
 title: "Max Kuhn"
 image: "max_harkness_sq.jpg"
-role: "Principal Software Engineer, Leads tidymodels Group"
+role: "Principal Software Engineer"
 affiliation: "Posit, PBC"
 social:
   bluesky: "topepo.bsky.social"
   github: "topepo"
   linkedin: "max-kuhn-864a9110"
-  mastodon: "topepo"
+  mastodon: "https://fosstodon.org/@topepo"
   orcid: "0000-0003-2402-136X"
   website: "https://max-kuhn.org/"
 ---
