@@ -11,7 +11,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.153.2
+      HUGO_VERSION: 0.157.0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,6 +33,14 @@ jobs:
 
       - name: Build Tailwind CSS
         run: npm run build-tailwind
+
+      - name: Cache Hugo resources
+        uses: actions/cache@v4
+        with:
+          path: resources
+          key: hugo-resources-${{ github.run_id }}
+          restore-keys: |
+            hugo-resources-
 
       - name: Build with Hugo
         env:
