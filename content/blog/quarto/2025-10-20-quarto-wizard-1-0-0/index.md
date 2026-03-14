@@ -18,7 +18,6 @@ image: featured.png
 image-alt: >-
   Cartoon dog wizard wearing blue hat with red band holding magic wand creating
   HTML and CSS code scrolls in starry night scene.
-lang: en-GB
 number-sections: false
 link-external-newwindow: true
 lightbox: true

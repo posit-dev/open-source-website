@@ -13,7 +13,6 @@ categories:
 image: featured.png
 image-alt: |
   Quarto icon and text above GitHub Codespaces.
-lang: en-GB
 ported_from: quarto
 port_status: in-progress
 ---
