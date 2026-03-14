@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'AI missteps as stepping stones: Opportunities gained when your LLM coding assistant gets it wrong
 
@@ -14,10 +13,18 @@ description: 'AI missteps as stepping stones: Opportunities gained when your LLM
 
 
   This talk focuses on embracing coding assistants as imperfect companions and succeeding when they fail. I''ll share insights from using these assistants to facilitate my transition to Python, highlighting the pitfalls of accepting their recommendations without question. Through real examples where LLMs fell short, I''ll demonstrate how these challenges provided frameworks for problem-solving and led to a deeper understanding of data science tools and methodologies. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: AI missteps as stepping stones (Ryan Timpe, The LEGO Group) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

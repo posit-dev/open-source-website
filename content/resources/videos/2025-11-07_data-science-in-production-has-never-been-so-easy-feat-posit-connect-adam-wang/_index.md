@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Data Science in Production Has Never Been So Easy | Feat: Posit Connect
 
@@ -10,10 +9,18 @@ description: 'Data Science in Production Has Never Been So Easy | Feat: Posit Co
   Abstract:
 
   Data science is most impactful when it''s in production. However, there''s often a disconnect between local development and a production system. I''ll show how to leverage **Posit Connect** to reduce the friction between development and production, automate and reproduce your data science at scale, and empower decision makers. We’ll uncover the production architecture that powers data science at NMDP.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: 'Data Science in Production Has Never Been So Easy | Feat: Posit Connect (Adam Wang)'
 
 external:  # updated automatically, do not edit

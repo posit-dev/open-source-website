@@ -1,7 +1,6 @@
 ---
-image: thumbnail.jpg
 date: '2025-07-10'
-description: '#ShinyConf #ShinyConf2025
+description: 'ShinyConf #ShinyConf2025
 
 
   This is a talk from ShinyConf 2025: https://www.shinyconf.com
@@ -18,11 +17,13 @@ description: '#ShinyConf #ShinyConf2025
   Want to explore more sessions?
 
   Sign up for replay access:'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: AI and Shiny | Keynote ShinyConf 2025
 
 external:  # updated automatically, do not edit
@@ -30,7 +31,7 @@ external:  # updated automatically, do not edit
   comment_count: 2
   date: '2025-07-10T07:46:05Z'
   definition: hd
-  description: '#ShinyConf #ShinyConf2025
+  description: 'ShinyConf #ShinyConf2025
 
 
     This is a talk from ShinyConf 2025: https://www.shinyconf.com

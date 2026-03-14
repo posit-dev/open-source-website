@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: Run Shiny on Python and R (compiled to wasm) in the browser
 github: posit-dev/shinylive
+image: logo.svg
 languages:
 - TypeScript
 latest_release: '2025-12-08T20:54:30+00:00'

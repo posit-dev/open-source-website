@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-27'
 description: 'We were recently joined by Brad Zielke, Sr. Director Data Sciences at Target to chat about Data Sciences in Operations and supply chain at a Fortune 100 company.
 
@@ -24,10 +23,12 @@ description: 'We were recently joined by Brad Zielke, Sr. Director Data Sciences
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Brad Zielke @ Target | Data Science Hangout
 
 external:  # updated automatically, do not edit

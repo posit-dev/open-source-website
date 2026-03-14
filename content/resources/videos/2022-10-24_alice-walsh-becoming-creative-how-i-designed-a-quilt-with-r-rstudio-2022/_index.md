@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'When someone asks about essential skills for data careers, I often hear responses like R, Python, and machine learning. However, I argue that creativity is an underrated skill that you can and should practice. In this talk, I want to tell you a story about a project I did to stretch my creative brain and use my favorite tool, R. I designed a quilt in R using generative art ideas. Then I created individual blocks that make up the larger design. I used foundation paper piecing, a method that allows for intricate designs but has geometrical constraints. I hope my talk will entertain and inspire folks to exercise their creative muscles to improve their performance and enjoyment of their day jobs.
 
@@ -8,11 +7,13 @@ description: 'When someone asks about essential skills for data careers, I often
 
 
   Session: Eye candy: surprising and delightful uses of R'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'Alice Walsh | Becoming Creative: How I Designed a Quilt with R | RStudio (2022)'
 
 external:  # updated automatically, do not edit

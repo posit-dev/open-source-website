@@ -1,8 +1,8 @@
 ---
+color: '#B66D4B'
 description: Tools for teachers to use with learnr
 github: rstudio/gradethis
 image: logo.png
-color: "#B66D4B"
 languages:
 - R
 latest_release: '2023-06-27T02:54:24+00:00'

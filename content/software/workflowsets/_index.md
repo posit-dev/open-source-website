@@ -1,8 +1,8 @@
 ---
+color: '#5289B1'
 description: Create a collection of modeling workflows
 github: tidymodels/workflowsets
 image: README-plot-1.png
-color: "#5289B1"
 languages:
 - R
 latest_release: '2025-05-28T13:18:33+00:00'

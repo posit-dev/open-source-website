@@ -1,16 +1,17 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Have you ever had so much fun building a data visualization that it felt like a thrill ride? What if your dataviz actually WAS a thrill ride—a 3D virtual reality rollercoaster through your dataset? In this talk, I’ll show you how to create incredibly engaging and informative 3D visualizations in R, and demonstrate what makes a good 3D dataviz. Using the rayrender package, you’ll see how you can interactively fly through 3D scenes in real-time, without ever leaving RStudio. Learn how you can use code to create 3D structures, plot data, and even make generative art: visualizing everything from the smallest molecule to the vast reaches of space, in only a few lines of code.
 
 
   Session: Eye candy: surprising and delightful uses of R'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - ggplot2
 - rstudio
+tags: []
 title: 'Tyler Morgan-Wall | Building a ggplot2 rollercoaster: Creating amazing 3D data visualizations in R'
 
 external:  # updated automatically, do not edit

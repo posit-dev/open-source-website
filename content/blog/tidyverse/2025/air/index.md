@@ -12,10 +12,10 @@ description: >
 photo:
   url: https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI
   author: Taylor Van Riper
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [programming] 
+categories: [programming]
 tags: []
+languages:
+  - R
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

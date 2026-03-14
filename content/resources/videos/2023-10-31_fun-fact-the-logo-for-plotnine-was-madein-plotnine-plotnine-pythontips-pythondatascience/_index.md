@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-31'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - plotnine
+tags: []
 title: 'Fun fact, the logo for plotnine was made…in plotnine😎 #plotnine #pythontips #pythondatascience'
 
 external:  # updated automatically, do not edit

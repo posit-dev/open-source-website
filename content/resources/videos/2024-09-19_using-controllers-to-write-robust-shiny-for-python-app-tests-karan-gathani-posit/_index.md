@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-09-19'
 description: 'With the Shiny for Python v1.0 release, controllers were exposed to provide a structured and consistent way for users to interact with and test UI components in Shiny applications. They offer an abstraction layer that encapsulates the complexity of interacting with specific UI elements, making it easier for developers to write robust tests and automate interactions with their Shiny apps.
 
@@ -9,6 +8,7 @@ description: 'With the Shiny for Python v1.0 release, controllers were exposed t
   https://shiny.posit.co/py/api/testing/
 
   https://shiny.posit.co/py/docs/playwright-testing.html'
+image: thumbnail.jpg
 people:
 - Karan Gathani
 resource_type: video
@@ -16,6 +16,51 @@ resources: []
 software:
 - Shiny for Python
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Using controllers to write robust Shiny for Python app tests | Karan Gathani | Posit
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Talk by Christopher T. Kenny
 
@@ -7,10 +6,12 @@ description: 'Talk by Christopher T. Kenny
   Post: https://alarm-redist.org/fifty-states/
 
   GitHub Repo: https://github.com/alarm-redist/fifty-states'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Christopher T. Kenny - Templated Analyses within R Packages for Collaborative, Reproducible Research
 
 external:  # updated automatically, do not edit

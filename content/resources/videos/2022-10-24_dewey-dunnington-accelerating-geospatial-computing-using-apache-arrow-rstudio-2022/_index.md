@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'The ‘arrow’ R package and wider Apache Arrow ecosystem provide an end-to- end solution for querying and computing on in-memory and bigger-than-memory data sets using the Apache Arrow C++ library. In this talk we introduce the ‘geoarrow’ package, which extends Arrow to provide efficient columnar storage for spatial types and functions to support spatial queries in the Arrow compute engine. We focus on a workflow where (1) data are stored in multiple files that can be hosted remotely (e.g., on S3-compatible storage), (2) queries are processed batchwise and in parallel allowing for efficient processing of bigger- than-memory geospatial data and (3) results can be passed without copying to Rust, Python, or other R packages for further analysis.
 
@@ -8,12 +7,14 @@ description: 'The ‘arrow’ R package and wider Apache Arrow ecosystem provide
 
 
   Session: Lightning Talks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - rstudio-conf
+tags: []
 title: Dewey Dunnington | Accelerating geospatial computing using Apache Arrow | RStudio (2022)
 
 external:  # updated automatically, do not edit

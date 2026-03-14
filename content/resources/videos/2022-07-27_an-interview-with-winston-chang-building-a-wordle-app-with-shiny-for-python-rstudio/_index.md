@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-07-27'
 description: 'Shiny makes it easy to build interactive web applications with the power of Python’s data and scientific stack.
 
@@ -14,6 +13,7 @@ description: 'Shiny makes it easy to build interactive web applications with the
   Producer: Jesse Mostipak (@kierisi)
 
   Editing and Motion Design: Tony Pelleriti (@TonyPelleriti)'
+image: thumbnail.jpg
 people:
 - Winston Chang
 resource_type: video
@@ -23,6 +23,56 @@ software:
 - Shiny for Python
 - Shiny
 - shinylive
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- rstats
+- open source
+- OSS
+- reticulate
+- shiny for python
+- pyshiny
+- wordle
+- winston chang
+- jesse mostipak
+- tony pelleriti
+- posit
 title: 'An Interview with Winston Chang: Building a Wordle App with Shiny for Python || RStudio'
 
 external:  # updated automatically, do not edit

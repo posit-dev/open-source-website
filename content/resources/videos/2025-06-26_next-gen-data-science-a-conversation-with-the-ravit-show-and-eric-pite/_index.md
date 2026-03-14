@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-06-26'
 description: 'Eric Pité, SVP of Product & Strategy, sat down with the Ravit Show at Databricks Data + AI Summit to have a conversation about the evolution of open source data science, the Posit and Databricks integration, and the place of AI in modern data science. Some highlights from the conversation are below:
 
@@ -30,12 +29,58 @@ description: 'Eric Pité, SVP of Product & Strategy, sat down with the Ravit Sho
 
 
   Learn more about the Databricks and Posit partnership by exploring the partnership page and resources: https://posit.co/use-cases/databricks/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'Next-gen data science: a conversation with the Ravit Show and Eric Pité'
 
 external:  # updated automatically, do not edit

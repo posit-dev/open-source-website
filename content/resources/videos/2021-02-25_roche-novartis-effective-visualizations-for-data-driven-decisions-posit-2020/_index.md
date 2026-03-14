@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-25'
 description: 'Effective visual communication is a core task for all data scientists including statisticians, epidemiologists, machine learning experts, bioinformaticians, etc.
 
@@ -31,11 +30,60 @@ description: 'Effective visual communication is a core task for all data scienti
   About Marc:
 
   Marc is a biostatistics group head at Novartis. He is interested in advancing the methods and practice of clinical development, for instance through effective use of graphics. https://graphicsprinciples.github.io/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - tidyverse
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- roche
+- novartis
+- pharma
 title: 'Roche & Novartis: Effective Visualizations for Data Driven Decisions || Posit (2020)'
 
 external:  # updated automatically, do not edit

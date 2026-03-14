@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-19'
 description: 'Gordon Shotwell
 
@@ -7,10 +6,18 @@ description: 'Gordon Shotwell
 
 
   Gordon is a data scientist and product manager at Socure, where he helps data people build better software.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
+- Quarto
+tags:
+- Halihax
+- Halifax
+- Startups
+- Technology
+- Data science
 - Quarto
 title: Gordon Shotwell - An overview of Quarto, and Jupyter
 

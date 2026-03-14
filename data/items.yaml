@@ -1,0 +1,55 @@
+blog:
+  badge_icon: "boxicons--message-filled"
+  badge_text: "blog post"
+  card_class: "bg-gray-100/25"
+  image_class: "w-full object-cover"
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
+
+cheatsheets:
+  badge_icon: "boxicons--file-code-filled"
+  badge_text: "cheatsheet"
+  card_class: "bg-gray-100/25"
+  image_class: "w-full object-cover"
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
+
+events:
+  badge_icon: "boxicons--calendar-event-filled"
+  badge_text: "event"
+  card_class: "bg-gray-100/25"
+  image_class: "w-full object-cover"
+  people_show: false
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
+
+people:
+  badge_icon: "boxicons--face-filled"
+  badge_text: "person"
+  card_class: ""
+  date_show: true
+  description_class: "@max-venti:text-center"
+  description_field: "role"
+  image_class: "object-contain rounded-xl"
+  people_show: false
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
+  title_class: "@max-venti:self-center"
+
+software:
+  badge_icon: "boxicons--hexagon-filled"
+  badge_text: "software"
+  card_class: "bg-gray-100/25"
+  image_class: "object-contain px-[20%] py-[5%]"
+  people_show: false
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
+
+videos:
+  badge_icon: "boxicons--video-filled"
+  badge_text: "video"
+  card_class: "bg-gray-100/25"
+  image_class: "w-full object-cover"
+  row_class: "bg-gray-100/25"
+  tile_class: "bg-gray-100/25"
+

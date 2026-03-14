@@ -1,10 +1,12 @@
 ---
+color: '#14497F'
 description: Read SPSS, Stata and SAS files from R
 github: tidyverse/haven
 image: logo.png
-color: "#14497F"
 languages:
 - C
+tags:
+- tidyverse
 latest_release: '2025-05-30T13:08:26+00:00'
 people:
 - Hadley Wickham

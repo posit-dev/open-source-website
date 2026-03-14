@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-04-10'
 description: 'https://rstudio.com/resources/webinars/reproducibility-in-production/
 
@@ -13,6 +12,7 @@ description: 'https://rstudio.com/resources/webinars/reproducibility-in-producti
   About Garrett:
 
   Garrett is the author of Hands-On Programming with R and co-author of R for Data Science and R Markdown: The Definitive Guide. He is a Data Scientist at RStudio and holds a Ph.D. in Statistics, but specializes in teaching. He''s taught people how to use R at over 50 government agencies, small businesses, and multi-billion dollar global companies; and he''s designed RStudio''s training materials for R, Shiny, R Markdown and more. Garrett wrote the popular lubridate package for dates and times in R and creates the RStudio cheat sheets.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -21,6 +21,51 @@ software:
 - rstudio
 - Shiny
 - webinars
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Garrett Grolemund | Reproducibility in Production | RStudio (2019)
 
 external:  # updated automatically, do not edit

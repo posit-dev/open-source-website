@@ -1,15 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-25'
 description: 'Live Q&A for the end-to-end machine learning workflow with tidymodels & Posit Team on October 25th.
 
 
   Machine Learning with Tidymodels & Posit Team Demo: https://www.youtube.com/watch?v=O0Dklq-IZhw&list=PL9HYL-VRX0oRsUB5AgNMQuKuHPpNDLBVt&index=1'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - tidymodels
+tags: []
 title: Workflow Demo Q&A - Oct 25th
 
 external:  # updated automatically, do not edit

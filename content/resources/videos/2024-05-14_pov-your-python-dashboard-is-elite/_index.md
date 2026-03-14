@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-05-14'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'POV: your python dashboard is elite✨'
 
 external:  # updated automatically, do not edit

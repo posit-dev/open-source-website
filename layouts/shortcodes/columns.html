@@ -1,0 +1,47 @@
+{{/* columns.html — Responsive multi-column layout.
+     Split inner content on "---" lines.
+     Optional "split" param: comma-separated fr values (e.g., "2,1").
+     Default: equal-width columns. Stacks on mobile.
+*/}}
+{{ $split := .Get "split" }}
+{{ $id := printf "cols-%d" .Ordinal }}
+
+{{/* Split inner content on --- lines, filter empty chunks */}}
+{{ $raw := split .Inner "\n---\n" }}
+{{ $columns := slice }}
+{{ range $raw }}
+  {{ $trimmed := trim . "\n\r\t " }}
+  {{ if $trimmed }}
+    {{ $columns = $columns | append $trimmed }}
+  {{ end }}
+{{ end }}
+{{ $numCols := len $columns }}
+
+{{/* Build grid-template-columns value */}}
+{{ $frParts := slice }}
+{{ if $split }}
+  {{ range split $split "," }}
+    {{ $frParts = $frParts | append (printf "%sfr" (strings.TrimSpace .)) }}
+  {{ end }}
+{{ else }}
+  {{ range $columns }}
+    {{ $frParts = $frParts | append "1fr" }}
+  {{ end }}
+{{ end }}
+{{ $gridTemplate := delimit $frParts " " }}
+
+<style>
+#{{ $id }} { display: grid; gap: 1.5rem; align-items: start; }
+@media (min-width: 768px) {
+  #{{ $id }} { grid-template-columns: {{ $gridTemplate | safeCSS }}; }
+}
+</style>
+<div id="{{ $id }}">
+  {{ range $columns }}
+    {{ if findRE "<div" . }}
+      <div>{{ . | safeHTML }}</div>
+    {{ else }}
+      <div class="prose">{{ . | markdownify }}</div>
+    {{ end }}
+  {{ end }}
+</div>

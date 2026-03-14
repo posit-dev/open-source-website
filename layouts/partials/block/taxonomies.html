@@ -10,18 +10,15 @@
       </li>
       {{ end }}
     {{ end }}
-    <!-- {{ if .Params.tags }}
+    {{ if .Params.tags }}
       {{ range (.GetTerms "tags") }}
       <li>
         <a href="{{ .RelPermalink }}"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            {{ partial "icon.html" site.Params.taxonomies.icons.tags }}
-          </i>
-          <span class="ml-0">{{ .LinkTitle }}</span>
+          class="text-xs mr-2 px-2 py-1 rounded-lg font-medium font-mono uppercase bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+          {{ .LinkTitle }}
         </a>
       </li>
       {{ end }}
-    {{ end }} -->
+    {{ end }}
   </ul>
 {{ end }}

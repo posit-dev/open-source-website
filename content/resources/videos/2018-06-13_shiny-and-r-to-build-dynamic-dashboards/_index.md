@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2018-06-13'
 description: 'In a static report, you answer known questions. With a dynamic report, you give the reader the tools to answer their own questions. Unleash the full flexibility of analytic app development with Shiny.
 
@@ -8,6 +7,7 @@ description: 'In a static report, you answer known questions. With a dynamic rep
 
 
   Related blog post: https://blog.rstudio.com/2017/05/18/shinydashboard-0-6-0/'
+image: thumbnail.jpg
 people:
 - Winston Chang
 resource_type: video
@@ -17,6 +17,12 @@ software:
 - Shiny
 - shinyapps
 - shinydashboard
+tags:
+- shiny
+- rstats
+- dashboard
+- '[r]'
+- data science
 title: Shiny and R to Build Dynamic Dashboards
 
 external:  # updated automatically, do not edit

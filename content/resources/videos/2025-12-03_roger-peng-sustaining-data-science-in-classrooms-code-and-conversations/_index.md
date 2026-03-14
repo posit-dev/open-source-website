@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-03'
 description: 'Michael, Hadley, and Wes welcome Roger Peng, professor of statistics and data science at UT Austin and co-host of Not So Standard Deviations. Together they trace Roger’s journey from early R adopter to pioneering online educator and prolific podcaster. The conversation ranges from the accidental rise of “data science” as a field, to the tension between research papers and software maintenance, to what makes for meaningful, lasting creative work.
 
@@ -20,10 +19,12 @@ description: 'Michael, Hadley, and Wes welcome Roger Peng, professor of statisti
   • Reflections on Coursera, MOOCs, and opening education to the world
 
   • What keeps a podcast (and a career) going strong after a decade-plus'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Roger Peng: Sustaining data science — in classrooms, code, and conversations'
 
 external:  # updated automatically, do not edit

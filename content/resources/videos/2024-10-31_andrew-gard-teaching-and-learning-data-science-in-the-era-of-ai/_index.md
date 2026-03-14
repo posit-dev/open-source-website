@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: Talk by Andrew Gard
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Andrew Gard - Teaching and learning data science in the era of AI
 
 external:  # updated automatically, do not edit

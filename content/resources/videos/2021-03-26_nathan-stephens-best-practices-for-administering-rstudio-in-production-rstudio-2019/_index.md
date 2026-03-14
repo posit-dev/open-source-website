@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-03-26'
 description: 'Most organizations are unfamiliar with the R programming language. As a result they often struggle to onboard and manage R in production. In this webinar we introduce the RStudio Quickstart which makes it easy to try RStudio professional products on your desktop for free. We also outline best practices for using R and RStudio in production.
 
@@ -10,12 +9,59 @@ description: 'Most organizations are unfamiliar with the R programming language.
   About Nathan:
 
   Nathan has a background in analytic solutions and consulting. He has experience building data science teams, architecting analytic infrastructure, and delivering innovative data products. He is a long time user of R.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - webinars
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- nathan stephens
 title: Nathan Stephens | Best Practices for Administering RStudio in Production | RStudio (2019)
 
 external:  # updated automatically, do not edit

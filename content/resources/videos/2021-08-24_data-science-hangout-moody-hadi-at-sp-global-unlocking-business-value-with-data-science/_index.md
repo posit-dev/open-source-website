@@ -1,12 +1,57 @@
 ---
-image: thumbnail.jpg
 date: '2021-08-24'
 description: "We want to help data science leaders become better.\n\nThe Data Science Hangout is a weekly, free-to-join open conversation for current and aspiring data science leaders. \n\nAn accomplished leader in the space will join us each week and answer whatever questions the audience may have. \n\nWe were recently joined by Moody Hadi, Manager of New Product Development and Financial Engineering at S&P Intelligence\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn: https://www.linkedin.com/company/rstu...\nTwitter: https://twitter.com/rstudio"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Data Science Hangout | Moody Hadi at S&P Global | Unlocking Business Value with Data Science
 
 external:  # updated automatically, do not edit

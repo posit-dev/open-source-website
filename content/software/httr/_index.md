@@ -1,10 +1,12 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: 'httr: a friendly http package for R'
 github: r-lib/httr
+image: logo.svg
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2026-02-13T13:25:34+00:00'
 people:
 - Hadley Wickham

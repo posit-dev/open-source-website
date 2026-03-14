@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-01-27'
 description: 'Rebecca Barter, senior data scientist at Arine and adjunct assistant professor at the University of Utah, refuses to work on things she doesn’t care about. Lucky for us, she cares about a lot, most of all impact. In this episode, Rebecca joins The Test Set to talk about learning fast, building better tools, and staying motivated and adaptable.
 
@@ -27,10 +26,12 @@ description: 'Rebecca Barter, senior data scientist at Arine and adjunct assista
   • Teaching beginners and earning trust
 
   • The uncertain future of code'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Rebecca Barter: Persistent learning, tool building, and ‘Will code even exist?’'
 
 external:  # updated automatically, do not edit

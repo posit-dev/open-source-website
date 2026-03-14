@@ -1,8 +1,8 @@
 ---
+color: '#F1C7A0'
 description: Pin, discover, and share resources
 github: rstudio/pins-r
 image: logo.png
-color: "#F1C7A0"
 languages:
 - R
 latest_release: '2025-04-30T12:56:12+00:00'

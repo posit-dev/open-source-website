@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2021-12-17'
 description: "The Data Science Hangout is a weekly, free-to-join open conversation for current and aspiring data science leaders. \n\nAn accomplished leader in the space will join us each week and answer whatever questions the audience may have. \n\nWe were recently joined by Jarus Singh, Director, Quantitative Analytics at Pandora.\n\nA few key snippets from our conversation:\n01:28 - Start of session\n6:33 - Human in the loop\n14:14 - Working with stakeholders and teaching communication\n25:47 - What does your tech environment look like?\n28:46 - Presenting work; pretty vs. impactful\n33:18 - Skills for data science leadership\n43:01 - Having data science rolling up to the CFO\n51:41 - Getting motivated by personal projects\n49:00 - Applying our hobbies to work: cooking\n1:01:25 - Going with your passion\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n► Add the Data Science Hangout to your calendar: https://www.addevent.com/event/Qv9211919\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn:https://www.linkedin.com/company/rstu...\nTwitter: https://twitter.com/rstudio"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Data Science Hangout | Jarus Singh, Pandora | Human in the Loop
 
 external:  # updated automatically, do not edit

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: Materials for the RStudio webinar 'Beyond Dashboard Fatigue'
 github: rstudio/beyond-dashboard-fatigue
+image: logo.svg
 languages:
 - R
 people:

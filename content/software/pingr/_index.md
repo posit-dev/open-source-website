@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: ICMP and TCP ping and related tools
 github: r-lib/pingr
+image: logo.svg
 languages:
 - C
 latest_release: '2024-12-12T09:17:13+00:00'

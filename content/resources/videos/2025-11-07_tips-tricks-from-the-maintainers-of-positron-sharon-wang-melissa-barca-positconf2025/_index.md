@@ -1,12 +1,19 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: "Tips & tricks from the maintainers of Positron\n\n\U0001F4AC Speaker(s): Melissa Barca; Sharon Wang\n\n\U0001F4DD Abstract:\n\nPositron is Posit’s next-generation IDE for data science. Finding your groove in a new IDE takes time, so we’ve got some tips and tricks to help you feel more at home in Positron!\n\nWe’ll cover key navigation concepts, helpful features for different workflows, and configuration settings for a pleasant IDE experience. Plus, we’ll show you how to explore what Positron is doing under the hood – so you can understand it more deeply and solve problems with confidence.\n\nWhether you’re just getting started or already using Positron, these tips will help you settle into your data science workflow and get the most out of everything Positron has to offer. \n\n\U0001F4C1 Materials - https://github.com/sharon-wang/positron-tips-and-tricks posit::conf(2025)\n\nSubscribe to posit::conf updates: https://posit.co/about/subscription-management/"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: Tips & tricks from the maintainers of Positron (Sharon Wang & Melissa Barca) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

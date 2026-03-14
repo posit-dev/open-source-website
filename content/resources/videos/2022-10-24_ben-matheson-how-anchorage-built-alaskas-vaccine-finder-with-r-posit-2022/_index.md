@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'In January 2021, Alaska residents seeking a COVID-19 vaccine appointment faced a convoluted maze of websites. The software was made for providers—not for residents.
 
@@ -18,12 +17,14 @@ description: 'In January 2021, Alaska residents seeking a COVID-19 vaccine appoi
 
 
   Session: R be nimble, R be quick, R help me plan my vaccine stick: Rapidly responding to world events with R.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - httr
 - rvest
+tags: []
 title: Ben Matheson | How Anchorage Built Alaska’s Vaccine Finder with R | Posit (2022)
 
 external:  # updated automatically, do not edit

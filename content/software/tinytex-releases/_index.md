@@ -1,8 +1,8 @@
 ---
+color: '#BF2A13'
 description: Windows/macOS/Linux binaries and installation methods of TinyTeX
 github: rstudio/tinytex-releases
 image: logo-tinytex.png
-color: "#BF2A13"
 languages:
 - PowerShell
 latest_release: '2026-03-02T11:24:43+00:00'

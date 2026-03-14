@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-02-08'
 description: 'Turbocharge your Shiny Apps with remote submission to HPC - Michael Mayer
 
@@ -10,11 +9,13 @@ description: 'Turbocharge your Shiny Apps with remote submission to HPC - Michae
   * Workshop site: https://pub.current.posit.team/public/shiny-remote-hpc/
 
   * Workshop GitHub repository: https://github.com/sol-eng/shiny-hpc-offload'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: Turbocharge your Shiny Apps with remote submission to HPC
 
 external:  # updated automatically, do not edit

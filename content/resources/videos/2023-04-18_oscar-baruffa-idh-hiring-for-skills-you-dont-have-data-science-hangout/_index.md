@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-04-18'
 description: 'We were joined by Oscar Baruffa, Senior Analytics Manager at IDH.
 
@@ -73,10 +72,12 @@ description: 'We were joined by Oscar Baruffa, Senior Analytics Manager at IDH.
 
 
   To join future data science hangouts, add to your calendar here: pos.it/dsh (All are welcome! We''d love to see you!)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Oscar Baruffa @ IDH | Hiring for skills you don't have | Data Science Hangout
 
 external:  # updated automatically, do not edit

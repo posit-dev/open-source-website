@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-30'
 description: 'Package Management in R Studio
 
@@ -11,10 +10,12 @@ description: 'Package Management in R Studio
   About the webinar:
 
   Managing packages in your R environment can be challenging. We’ll introduce R Packages, Libraries, and Repositories for this training and discuss strategies for managing your environment.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'October 2023 Webinar: Package Management in R Studio'
 
 external:  # updated automatically, do not edit

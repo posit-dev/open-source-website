@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Render ipywidgets inside a PyShiny app
 github: posit-dev/py-shinywidgets
+image: logo.svg
 languages:
 - Python
 latest_release: '2026-01-22T01:15:31+00:00'

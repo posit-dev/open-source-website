@@ -1,12 +1,55 @@
 ---
-image: thumbnail.jpg
 date: '2025-06-05'
 description: "In this video, let's get your project set up. Learn how to install Positron, create a new Python project, and set up a virtual environment.\n\nWe hope you join us in participating in PydyTuesday!\n\nDon't forget to use the hashtags #TidyTuesday and #PydyTuesday wherever you like to hangout online - Bluesky, Mastodon, LinkedIn, etc. - have fun out there!  We can't wait to see the predictive models, visualizations, dashboards, and data apps that you create ✨\n\n\nResources and Repos to star:\n\nTidyTuesday GitHub Repo: https://github.com/rfordatascience/ti...\nPosit PydyTuesday GitHub Repo: https://github.com/posit-dev/python-t...\nTidyTuesday hashtag search on Bluesky: https://bsky.app/search?q=tidytuesday\nOther videos in this PydyTuesday playlist:    • PydyTuesday | Python How-to Videos  \n\n#pythoncontent"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- blogdown
+- gt
+- tidymodels
+- statistics
+- debugging
+- programming education
+- open source
+- reticulate
+- python tutorial
+- positron ide
+- python for beginners
+- pydytuesday
 title: Let's set up your Python environment with only 2 steps | PydyTuesday Python Projects
 
 external:  # updated automatically, do not edit

@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-03'
 description: Dan Chen guides viewers through the process of creating a dashboard in Python using Dash, starting from scratch in Positron. He sketches out the dashboard, incorporating Plotly for visualizations. The video also covers how to connect user inputs, like radio buttons, to dynamic figures and includes steps for deploying the application for free on Posit Connect Cloud.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags: []
 title: Create a Python Dash Application in Positron
 
 external:  # updated automatically, do not edit

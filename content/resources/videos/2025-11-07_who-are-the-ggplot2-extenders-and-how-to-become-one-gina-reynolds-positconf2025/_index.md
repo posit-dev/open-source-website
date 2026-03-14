@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Who are ''the ggplot2 extenders'' and how to become one
 
@@ -18,12 +17,20 @@ description: 'Who are ''the ggplot2 extenders'' and how to become one
   📁 Join Form - https://docs.google.com/forms/d/e/1FAIpQLSe3M1KwUPrmTfEGuuQp0fZ0J7dZkk_82gb310JCvdouMTa_7Q/viewform
 
   📁 Website - https://ggplot2-extenders.github.io/ggplot-extension-club/ posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Gina Reynolds
 resource_type: video
 resources: []
 software:
 - ggplot2
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Who are 'the ggplot2 extenders' and how to become one (Gina Reynolds) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

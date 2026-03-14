@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-03-15'
 description: 'We were joined by Data Straussman, Data Science Manager at Stripe. Dara''s team focuses on forecasting, machine learning, and analytics in the Finance and Operations spaces.
 
@@ -62,10 +61,12 @@ description: 'We were joined by Data Straussman, Data Science Manager at Stripe.
 
 
   To join future data science hangouts, add to your calendar here: pos.it/dsh (All are welcome! We''d love to see you!)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Dara Straussman @ Stripe | Partnership-model when forecasting | Data Science Hangout
 
 external:  # updated automatically, do not edit

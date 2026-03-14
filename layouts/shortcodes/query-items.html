@@ -1,0 +1,47 @@
+{{/* query-items: Render a grid of cards from a dynamic page query. */}}
+{{ $path := .Get "path" | default "*" }}
+{{ $sortBy := .Get "sort-by" | default "date" }}
+{{ $sortDirection := .Get "sort-direction" | default "desc" }}
+{{ $limit := .Get "limit" | default 0 }}
+{{ $filter := .Get "filter" | default "" }}
+{{ $cols := .Get "cols" | default "3" | string }}
+{{ $hide_badge := .Get "hide-badge" }}
+{{ $format := .Get "format" | default "card" }}
+{{ $height := .Get "height" | default "" }}
+
+{{/* Map cols value to Tailwind grid class */}}
+{{ $gridClass := "grid-cols-3" }}
+{{ if eq $cols "1" }}{{ $gridClass = "grid-cols-1" }}
+{{ else if eq $cols "2" }}{{ $gridClass = "grid-cols-2" }}
+{{ else if eq $cols "3" }}{{ $gridClass = "grid-cols-3" }}
+{{ else if eq $cols "4" }}{{ $gridClass = "grid-cols-4" }}
+{{ else if eq $cols "5" }}{{ $gridClass = "grid-cols-5" }}
+{{ else if eq $cols "6" }}{{ $gridClass = "grid-cols-6" }}
+{{ end }}
+
+{{/* Query pages via the partial */}}
+{{ $pages := partial "query-items" (dict "path" $path "sort-by" $sortBy "sort-direction" $sortDirection "limit" $limit "filter" $filter) }}
+
+{{ if eq $format "row" }}
+<div class="@container">
+  <div class="grid grid-cols-[3.5rem] @tall:grid-cols-[3.5rem_3fr_2fr] @grande:grid-cols-[3.5rem_3fr_2fr_auto] @venti:grid-cols-[3.5rem_3fr_2fr_auto_auto] gap-y-2">
+    {{ range $pages }}
+      {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "format" "row" "height" $height) }}
+    {{ end }}
+  </div>
+</div>
+{{ else if eq $format "tile" }}
+<div class="@container flex flex-col gap-2">
+  {{ range $pages }}
+    {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "format" "tile" "height" $height) }}
+  {{ end }}
+</div>
+{{ else }}
+<div class="grid {{ $gridClass }} gap-6">
+  {{ range $pages }}
+    <div>
+      {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "format" $format "height" $height) }}
+    </div>
+  {{ end }}
+</div>
+{{ end }}

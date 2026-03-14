@@ -1,0 +1,18 @@
+{{/* insert-item: Insert a single item card by slug. */}}
+{{ $item := .Get "item" }}
+{{ if not $item }}
+  {{ errorf "insert-item shortcode requires an 'item' argument" }}
+{{ end }}
+
+{{ $hide_badge := .Get "hide-badge" }}
+{{ $format := .Get "format" | default "card" }}
+{{ $height := .Get "height" | default "" }}
+{{ if eq $format "row" }}
+<div class="@container">
+  <div class="grid grid-cols-[3.5rem] @tall:grid-cols-[3.5rem_3fr_2fr] @grande:grid-cols-[3.5rem_2fr_4fr_auto] @venti:grid-cols-[3.5rem_2fr_6fr_1fr_1fr]">
+    {{ partial "item.html" (dict "item" $item "hide-badge" $hide_badge "format" "row" "height" $height) }}
+  </div>
+</div>
+{{ else }}
+{{ partial "item.html" (dict "item" $item "hide-badge" $hide_badge "format" $format "height" $height) }}
+{{ end }}

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'R-multiverse: a new way to publish R packages
 
@@ -28,10 +27,17 @@ description: 'R-multiverse: a new way to publish R packages
   R-multiverse originated from the R Consortium Repositories Working Group.
 
   It has transparent governance, and it operates in a collaborative and open way. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: 'R-multiverse: a new way to publish R packages (Will Landau, Eli Lilly) | posit::conf(2025)'
 
 external:  # updated automatically, do not edit

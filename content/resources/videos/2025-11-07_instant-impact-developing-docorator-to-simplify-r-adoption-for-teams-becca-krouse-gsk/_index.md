@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Instant Impact: Developing {docorator} to Simplify R Adoption for Teams
 
@@ -11,12 +10,20 @@ description: 'Instant Impact: Developing {docorator} to Simplify R Adoption for 
 
 
   Although R supports comprehensive analysis workflows, creating polished, production-ready PDFs directly from R remained a challenge for our pharma teams. With teams facing looming deadlines, our R enablement team swiftly created {docorator}—an open-source R package that transforms R-based tables and figures into production-level PDFs. By adorning results with “decorations” like headers, footers, and page numbers, {docorator} produces seamless, polished documents. Powered by Quarto, it also auto-sizes {gt} tables for user ease. Attendees will learn how {docorator} became the missing piece in GSK’s R workflows and learn how focusing on quick, simple solutions can have a lasting impact. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - gt
 - Quarto
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: 'Instant Impact: Developing {docorator} to Simplify R Adoption for Teams (Becca Krouse, GSK)'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'California Integrated Travel Project’s mission is to make transit across California simpler and more affordable. As part of this, we created an open source data warehouse to allow easy analysis of the travel data people often interact with every day.
 
@@ -14,11 +13,13 @@ description: 'California Integrated Travel Project’s mission is to make transi
 
 
   Session: Cat herding: solving big problems by bringing people together'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'Hunter Owens | Tidy Transit: Real Life Data Modeling for Public Transportation | RStudio (2022)'
 
 external:  # updated automatically, do not edit

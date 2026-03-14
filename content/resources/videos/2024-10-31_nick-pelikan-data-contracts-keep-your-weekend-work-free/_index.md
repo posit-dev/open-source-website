@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'This talk will discuss data contracts – agreements between data producers and data consumers that ensure data is always available in the expected form. We''ll delve into processes and techniques I''ve developed that can help teams easily create data contracts. This talk will also introduce a literate programming framework that can enable data producers and data consumers who work on different teams in completely different programming languages (or no programming language at all!) to collaborate on creating data contracts and allow them to be enforced automatically.
 
@@ -11,10 +10,12 @@ description: 'This talk will discuss data contracts – agreements between data 
   Slides: https://docs.google.com/presentation/d/1R9nm_8LHJpkc32XAf3LYRbh9Sr97-Y8OFHHE7Ds5L18/edit
 
   GitHub Repo: https://github.com/npelikan/positconf2024-datacontracts'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Nick Pelikan - Data Contracts: Keep Your Weekend Work-Free!'
 
 external:  # updated automatically, do not edit

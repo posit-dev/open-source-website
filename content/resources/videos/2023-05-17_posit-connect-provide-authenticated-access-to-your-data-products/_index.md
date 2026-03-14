@@ -1,11 +1,56 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-17'
 description: "Posit Connect is all about getting your data products into the hands of stakeholders and collaborators. \n\nHere, we demonstrate how to provide authenticated access to a Dash application. \n\nFor more information about Posit Connect, go to:\nhttps://posit.co/products/enterprise/connect/"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Posit Connect | Provide Authenticated Access to Your Data Products
 
 external:  # updated automatically, do not edit

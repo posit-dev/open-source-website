@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2025-04-16'
 description: '🚨LEVEL UP your Python Skills with this WEEKLY Project #datascience #codingforbeginners #pydytuesday'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: '🚨LEVEL UP your Python Skills with this WEEKLY Project #datascience #codingforbeginners #pydytuesday'
 
 external:  # updated automatically, do not edit

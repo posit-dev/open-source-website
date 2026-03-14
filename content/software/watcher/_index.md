@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Watch the File System for Changes
 github: r-lib/watcher
+image: logo.svg
 languages:
 - C++
 latest_release: '2025-12-02T00:01:06+00:00'

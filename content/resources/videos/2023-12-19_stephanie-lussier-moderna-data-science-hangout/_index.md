@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-19'
 description: 'We were recently joined by Stephanie Lussier, Manager, Biostatistics at Moderna to discuss growing a new data science team at Moderna and developing a pipeline to enable internal clinical trial decision-making at rapid speeds.
 
@@ -27,10 +26,12 @@ description: 'We were recently joined by Stephanie Lussier, Manager, Biostatisti
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Stephanie Lussier @ Moderna | Data Science Hangout
 
 external:  # updated automatically, do not edit

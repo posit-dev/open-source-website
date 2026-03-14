@@ -52,3 +52,8 @@ unsafe = true
   [[menu.main]]
     name = 'Blog'
     url = '/blog/'
+    weight = 6
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 7

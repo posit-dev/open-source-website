@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-06-28'
 description: 'Led by Saiem Gilani, Director of Data Science and Engineering for the Houston Rockets & founder of the SportsDataverse
 
@@ -23,11 +22,13 @@ description: 'Led by Saiem Gilani, Director of Data Science and Engineering for 
   Bio:
 
   Saiem Gilani is the Director of Data Science and Engineering for the Houston Rockets and founder of the SportsDataverse, a community of developers building easy-to-use sports analytics packages and open-source data repositories. He holds a MS in Analytics from Georgia Tech and a BS in Mathematics from Florida State.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'RStudio Sports Analytics Meetup: SportsDataverse Initiative'
 
 external:  # updated automatically, do not edit

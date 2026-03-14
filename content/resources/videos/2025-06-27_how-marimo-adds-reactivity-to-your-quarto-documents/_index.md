@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-06-27'
 description: 'Jeroen Janssens talks with Vincent Warmerdam about marimo and the Quarto plugin that was recently released.
 
@@ -29,12 +28,14 @@ description: 'Jeroen Janssens talks with Vincent Warmerdam about marimo and the 
   42:45 Data sources
 
   53:24 Marimo plugin for Quarto'
+image: thumbnail.jpg
 people:
 - Jeroen Janssens
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: How marimo adds reactivity to your Quarto documents
 
 external:  # updated automatically, do not edit

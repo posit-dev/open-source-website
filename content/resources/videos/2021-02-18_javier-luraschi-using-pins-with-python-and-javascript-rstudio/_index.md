@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-18'
 description: 'Last year, pins got released as a brand new R package to pin, discover and cache remote resources for R users. This package has matured to support many use cases; from caching remote URLs, and easily sharing datasets with other R users, to building automated pipelines.
 
@@ -13,11 +12,60 @@ description: 'Last year, pins got released as a brand new R package to pin, disc
   About Javier:
 
   Javier is the author of “Mastering Spark with R”, pins, sparklyr, mlflow and torch. He holds a double degree in Math and Software Engineer and decades of industry experience with a focus on data analysis. Javier is currently working on a project of his own; and previously worked in RStudio, Microsoft Research and SAP.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Javier Luraschi
+- JavaScript
+- pins
 title: Javier Luraschi | Using pins with Python and JavaScript | RStudio
 
 external:  # updated automatically, do not edit

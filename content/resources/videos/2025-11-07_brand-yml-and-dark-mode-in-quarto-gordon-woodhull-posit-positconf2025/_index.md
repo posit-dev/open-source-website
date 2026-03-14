@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Brand YML and Dark Mode in Quarto
 
@@ -12,6 +11,7 @@ description: 'Brand YML and Dark Mode in Quarto
 
 
   📁 Materials - https://gordonwoodhull.github.io/brand-yml-lightning-talk/#/title-slide posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Gordon Woodhull
 resource_type: video
@@ -19,6 +19,13 @@ resources: []
 software:
 - brand-yml
 - Quarto
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Brand YML and Dark Mode in Quarto (Gordon Woodhull, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

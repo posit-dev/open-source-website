@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'After a visit to the ER, I discovered an ocean of personal data: more than 3 million rows of data about one of my favorite subjects: me. My watch averages almost 5,000 measurements a day. That experience led me to explore the Apple Health Export in more detail. It’s the largest dataset I’ve ever worked with. The variety of sources and the quantity data can be overwhelming. I will describe the basic measurements that are available and some of the things one needs to be on the lookout for. A ggplot of a full day of heart rate data provided me (and my doctor) important context on two occasions when I went to the ER. Fortunately there’s no great medical drama involved, but the plots are pretty neat and actually turned out to be helpful.
 
@@ -8,10 +7,12 @@ description: 'After a visit to the ER, I discovered an ocean of personal data: m
 
 
   Session: Unexpected uses of R'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: John Goldin | Apple Health Exports | Posit (2022)
 
 external:  # updated automatically, do not edit

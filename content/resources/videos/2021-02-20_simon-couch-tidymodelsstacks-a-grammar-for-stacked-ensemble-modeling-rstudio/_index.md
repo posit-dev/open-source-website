@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Full title: tidymodels/stacks, Or, In Preparation for Pesto: A Grammar for Stacked Ensemble Modeling
 
@@ -10,6 +9,7 @@ description: 'Full title: tidymodels/stacks, Or, In Preparation for Pesto: A Gra
   About Simon:
 
   Simon Couch is an R developer and statistics student at Reed College, where he is entering the final semester of his undergraduate degree. He co-authors and maintains R packages including broom, infer, and stacks, leads trainings and workshops as an RStudio-certified tidyverse trainer, and researches in algorithmic data privacy. He interned on the RStudio tidymodels team in summer 2020, and is currently applying to doctoral programs in statistics.'
+image: thumbnail.jpg
 people:
 - Simon Couch
 resource_type: video
@@ -19,6 +19,53 @@ software:
 - rstudio
 - tidymodels
 - tidyverse
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Simon Couch
+- stacks
 title: 'Simon Couch | tidymodels/stacks: A Grammar for Stacked Ensemble Modeling | RStudio'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Observability at scale: Monitoring Shiny Applications with OpenTelemetry
 
@@ -20,12 +19,20 @@ description: 'Observability at scale: Monitoring Shiny Applications with OpenTel
 
 
   📁 Materials - https://github.com/schloerke/presentation-2025-09-17-posit-conf-otel posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Barret Schloerke
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Observability at scale (Barret Schloerke, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

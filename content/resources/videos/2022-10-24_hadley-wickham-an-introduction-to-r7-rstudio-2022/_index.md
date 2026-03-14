@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'The R7 package is a new OOP system designed to be a successor to S3 and S4. It has been designed and implemented collaboratively by the RConsortium Object- Oriented Programming Working Group, which includes representatives from R-Core, BioConductor, RStudio/tidyverse, and the wider R community.
 
@@ -8,6 +7,7 @@ description: 'The R7 package is a new OOP system designed to be a successor to S
 
 
   Session: Just typing R code: advanced R programming'
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 resource_type: video
@@ -15,6 +15,7 @@ resources: []
 software:
 - rstudio
 - tidyverse
+tags: []
 title: Hadley Wickham | An introduction to R7 | RStudio (2022)
 
 external:  # updated automatically, do not edit

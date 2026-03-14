@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-07-02'
 description: 'An important part of writing software revolves around functionality and features. A sometimes overlooked part is what happens when something goes wrong. There are many reasons something can go wrong. Faulty input, user error or deprecation are a few examples. Regardless of what the reason is, we should thrive towards letting the user know as soon and informative as possible so they can get back on track with what they are doing. This talks showcases how to make better error messages with the packages rlang and cli.
 
@@ -8,6 +7,7 @@ description: 'An important part of writing software revolves around functionalit
 
 
   Emil Hvitfeldt is a software engineer at Posit and part of the tidymodels team’s effort to improve R’s modeling capabilities. He maintains several packages within the realms of modeling, text analysis, and color palettes. Trying to make slidecrafting a well respecting verb. He co-authored the book Supervised Machine Learning for Text Analysis in R with Julia Silge. Working on book titled "Feature Engineering A-Z"'
+image: thumbnail.jpg
 people:
 - Emil Hvitfeldt
 - Julia Silge
@@ -17,6 +17,7 @@ software:
 - cli
 - rlang
 - tidymodels
+tags: []
 title: Making Better Error Messages with Rlang and Cli - Emil Hvitfeldt
 
 external:  # updated automatically, do not edit

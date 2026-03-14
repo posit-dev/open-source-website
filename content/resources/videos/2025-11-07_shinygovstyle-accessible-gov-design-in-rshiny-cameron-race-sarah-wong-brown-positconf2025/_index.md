@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'shinyGovStyle - accessible government design in RShiny
 
@@ -10,11 +9,18 @@ description: 'shinyGovStyle - accessible government design in RShiny
   Abstract:
 
   In the UK, public sector websites are required to be accessible to all users. Government analysts are increasingly turning to R Shiny to enhance data dissemination. Enter **shinyGovstyle**, a package crafted by UK government analysts that seamlessly incorporates **GOV.UK''s frontend design components into shiny functions**, allowing R users to effortlessly emulate the design of other GOV.UK services.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: shinyGovStyle- accessible gov design in RShiny (Cameron Race & Sarah Wong-Brown) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

@@ -1,13 +1,17 @@
 ---
-image: thumbnail.jpg
 date: '2014-06-26'
 description: An overview of RStudio Shiny
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags:
+- RStudio
+- Shiny
+- R Programming
 title: Shiny Overview - 5:20
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-07-27'
 description: 'Introduction to Monte Carlo simulation, using Shiny
 
@@ -12,6 +11,7 @@ description: 'Introduction to Monte Carlo simulation, using Shiny
   Bio:
 
   I am Ralph Asher, and I am the founder of Data Driven Supply Chain LLC, a Minnesota-based consultancy that helps organizations apply data science and AI methods, including simulation, to design and improve their supply chain. Prior to founding Data Driven Supply Chain, I worked as an Operations Research Scientist at Target, designing e-commerce supply chain networks, and at General Mills, designing warehousing networks. I have used R for supply chain analytics for over eight years at these companies. I live in the Minneapolis, MN area and love running in the (usually cool) Minnesota air. I can be reached at ralph@datadrivensupplychain.com'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -19,6 +19,7 @@ software:
 - air
 - rstudio
 - Shiny
+tags: []
 title: Ralph Asher | Intro to Monte Carlo Simulation | RStudio
 
 external:  # updated automatically, do not edit

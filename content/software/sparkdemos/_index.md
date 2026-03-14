@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: ''
 github: rstudio/sparkDemos
+image: logo.svg
 languages:
 - HTML
 people:

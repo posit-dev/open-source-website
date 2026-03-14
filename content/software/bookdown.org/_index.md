@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Source documents to generate the bookdown.org website
 github: rstudio/bookdown.org
+image: logo.svg
 languages:
 - R
 people:

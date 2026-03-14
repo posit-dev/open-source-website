@@ -1,13 +1,14 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-03'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny for Python
 - Shiny
+tags: []
 title: 'How-to: Dark Mode on Shiny for Python apps✨'
 
 external:  # updated automatically, do not edit

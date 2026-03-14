@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Internal packages are great for boosting productivity and promoting good practice, but what kinds of challenges do we face when designing solutions for multi-lingual teams? Here I will advocate for a design approach we are using at Bumble to build Python and R packages with the same foundations. I will discuss the benefits of this approach for the developer and the wider organisation.
 
@@ -8,12 +7,14 @@ description: 'Internal packages are great for boosting productivity and promotin
 
 
   Session: Some of my best friends use Python'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - rstudio-conf
+tags: []
 title: Jamie Ralph | Developing internal tools for multi-lingual teams | RStudio (2022)
 
 external:  # updated automatically, do not edit

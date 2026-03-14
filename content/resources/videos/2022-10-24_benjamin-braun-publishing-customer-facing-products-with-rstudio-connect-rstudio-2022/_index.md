@@ -1,10 +1,10 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Benjy Braun, Chief Architect for 202 Group, shows why he and the 202 Group team decided to use RStudio Connect to build customer facing applications and secure websites while focusing on data science and not having to worry about hiring for—or learning—a bunch of web tools like JavaScript and php. With well organized git repos and Rmarkdown, you can build websites for customers with embedded shiny apps and dynamic visualizations and publish and deploy them using RStudio Connect. Using this method, you won’t confine your analysis to static documents like PowerPoint and pdfs and your customers will always see the latest and most up do date information. The tools are out there to do this and it’s easy to start and iterate with more features overtime.
 
 
   Session: Data science in production'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -12,6 +12,7 @@ software:
 - rmarkdown
 - rstudio
 - Shiny
+tags: []
 title: Benjamin Braun | Publishing Customer Facing Products with RStudio Connect | RStudio (2022)
 
 external:  # updated automatically, do not edit

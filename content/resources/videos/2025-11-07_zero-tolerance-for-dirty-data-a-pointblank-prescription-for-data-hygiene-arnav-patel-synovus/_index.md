@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Zero Tolerance for Dirty Data: A Pointblank Prescription for Data Hygiene
 
@@ -11,11 +10,19 @@ description: 'Zero Tolerance for Dirty Data: A Pointblank Prescription for Data 
 
 
   Data validation is an exercise that is commonly forgotten. It can be difficult to start the exercise, let alone figure out a holistic approach to cleaning and understanding data. This is a problem that affects us all regardless of experience, expertise, or complexity of work. With Pointblank’s suite of validation functions, you can scan your data, present that scan in a visually appealing and unique report, and then define validation rules at scale in a methodical manner. I want to show why pointblank, above other validation packages, is the best validation approach through its simple yet appealing reporting features and comprehensive validation schema. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - pointblank
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: 'Zero Tolerance for Dirty Data: A Pointblank Prescription for Data Hygiene (Arnav Patel, Synovus)'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'R has come quite a long way to enable spatial analysis over the past few years. Packages such as sf have made spatial analysis and mapping easier for many. However, adoption of R for spatial statistics and econometrics has been limited. Many spatial analysts, researchers, and practitioners lean on Python libraries such as pysal.
 
@@ -11,6 +10,7 @@ description: 'R has come quite a long way to enable spatial analysis over the pa
 
 
   Session: Lightning Talks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -18,6 +18,7 @@ software:
 - rstudio
 - rstudio-conf
 - tidyverse
+tags: []
 title: Josiah Parry | Exploratory Spatial Data Analysis in the tidyverse | RStudio (2022)
 
 external:  # updated automatically, do not edit

@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-15'
 description: In this video, we walk through the process of testing your database connections from the command line. This allows to ensure that our database is ready and accepting connections from our Posit products.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - odbc
+tags: []
 title: Connecting to ODBC sources - SQL Server from the Linux Command Line
 
 external:  # updated automatically, do not edit

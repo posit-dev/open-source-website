@@ -1,11 +1,56 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-01'
 description: "Posit Team is the bundle of our most popular products including: Workbench, Connect, and Package Manager. \n\nTogether, this bundle delivers an end-to-end toolchain for data science teams committed to R and Python, improving every step of a data scientist's workflow, from developing insights, to deploying data products, to managing environments.\n\nLearn more at https://posit.co/products/enterprise/team/"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: What is Posit Team? [in less than 2 minutes]
 
 external:  # updated automatically, do not edit

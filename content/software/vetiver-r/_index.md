@@ -1,8 +1,8 @@
 ---
+color: '#F2CCAD'
 description: Version, share, deploy, and monitor models
 github: rstudio/vetiver-r
 image: logo.png
-color: "#F2CCAD"
 languages:
 - R
 latest_release: '2025-12-13T20:36:56+00:00'

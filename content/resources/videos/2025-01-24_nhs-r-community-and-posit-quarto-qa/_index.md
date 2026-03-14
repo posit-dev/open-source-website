@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2025-01-24'
 description: Informal Posit Quarto team Q&A with discussions with NHS-R Community members. Questions were opened up to the NHS-R Community via the Slack channel prior to the meeting.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: NHS R Community and Posit Quarto Q&A
 
 external:  # updated automatically, do not edit

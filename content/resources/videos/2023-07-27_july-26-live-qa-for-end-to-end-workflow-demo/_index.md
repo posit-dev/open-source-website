@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-07-27'
 description: 'Live Q&A Session for the End-to-End Workflow Demo on July 26th.
 
@@ -23,10 +22,12 @@ description: 'Live Q&A Session for the End-to-End Workflow Demo on July 26th.
   * Source code for example: https://github.com/ryjohnson09/fastAPI_demo
 
   * Posit Team demo resources: pos.it/demo-resources'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: July 26 | Live Q&A for End-to-End Workflow Demo
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-02-24'
 description: '00:00 Introduction
 
@@ -38,6 +37,7 @@ description: '00:00 Introduction
   Content: Developer (@winston_chang)
 
   Animation, design, and editing: Jesse Mostipak (@kierisi)'
+image: thumbnail.jpg
 people:
 - Carson Sievert
 resource_type: video
@@ -46,6 +46,54 @@ software:
 - htmltools
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- htmltools
+- carson sievert
+- tagquery
+- tagquery()
 title: Carson Sievert || Using tagQuery() from {htmltools} to modify HTML snippets in R || RStudio
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In part one of our conversation with Julia Silge, astronomer-turned–data science leader, we explore why data science needs a different kind of IDE. Julia takes us inside Positron, Posit’s next-generation, data-scientist-first environment, and unpacks the day-to-day realities that make data science work unlike software engineering. Along the way, we get a first-hand account of a legendary pineapple-pizza protest and how to juggle multiple projects at once.
 
@@ -20,6 +19,7 @@ description: 'In part one of our conversation with Julia Silge, astronomer-turne
   • How Julia measures success by smoothing the boundaries between tools and teams
 
   • The applied, people-and-process side of data science that keeps Julia energized'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
@@ -27,6 +27,7 @@ resources: []
 software:
 - positron
 - rstudio
+tags: []
 title: 'Julia Silge: Part 1 — Positron, pineapple pizza, and the art of iteration'
 
 external:  # updated automatically, do not edit

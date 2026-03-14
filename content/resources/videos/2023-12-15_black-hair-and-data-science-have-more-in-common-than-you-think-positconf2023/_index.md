@@ -1,11 +1,58 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Kari Jordan\r\n\r\nData science is often difficult to define because of its many intersections, including statistics, programming, analytics, and other domain knowledge. Would you believe it if I told you Black hair and data science have much in common?\r\n\r\nThis talk is for those considering learning about, studying, or pursuing data science. In it, Dr. Kari L. Jordan draws parallels between approaches to caring for Black hair and approaches to learning data science. We start with the roots and end by picking the right tools and products to maintain our coiffure.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: It takes a village: building and sustaining communities.\r\nSession Code: TALK-1131"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- quarto
+- posit
+- python
+- ml
 title: Black Hair and Data Science Have More in Common Than You Think - posit::conf(2023)
 
 external:  # updated automatically, do not edit

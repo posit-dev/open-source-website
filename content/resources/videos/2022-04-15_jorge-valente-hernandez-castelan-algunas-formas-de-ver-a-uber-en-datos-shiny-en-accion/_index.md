@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-04-15'
 description: '*Please note, this meetup was hosted in Spanish.
 
@@ -30,12 +29,14 @@ description: '*Please note, this meetup was hosted in Spanish.
 
 
   The application "Uber App" in fact has that objective: To tell a story through statistics and geography, to know the logic and the trend of Uber trips within the city of New York, but how did the idea of ​​making this app come about? It was actually an interesting experience, since one day I was viewing examples of apps made within Python, so one in particular seemed quite interesting to me and at that moment I asked myself the question: Is it possible to do something similar in R? The answer to the previous question was the following: Not only is it possible, it is also possible to do it better.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - flexdashboard
 - Shiny
+tags: []
 title: 'Jorge Valente Hernández Castelán | Algunas formas de ver a Uber en datos: Shiny en acción'
 
 external:  # updated automatically, do not edit

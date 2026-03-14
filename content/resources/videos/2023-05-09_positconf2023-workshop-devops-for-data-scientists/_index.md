@@ -1,11 +1,56 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-09'
 description: "Register now: http://pos.it/conf\nInstructor: Rika Gorn\nWorkshop Duration: 2-Day Workshop\n\nThis workshop is for you if you: \n•   are a data scientist or analyst who wants to put their work into production,\n•   want to learn a more about Docker containers and virtual machines, or\n•   want to better understand importance of networking, security, storage, and different server architectures to deploying data apps.\n\nIn this workshop, we will discuss ways to better containerize, deploy, and scale your data products. We'll use both R and shell scripting to virtualize Posit products in the cloud. You'll learn about servers, networking, security, and authorization to be dangerous -- or at least to understand your DevSecOps teams. By the end of the workshop you will have the tools to start deploying your own data science assets into production."
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'posit::conf(2023) Workshop: DevOps for Data Scientists'
 
 external:  # updated automatically, do not edit

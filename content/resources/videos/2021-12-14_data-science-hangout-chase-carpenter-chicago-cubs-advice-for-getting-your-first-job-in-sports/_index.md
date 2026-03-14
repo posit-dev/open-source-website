@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2021-12-14'
 description: "The Data Science Hangout is a weekly, free-to-join open conversation for current and aspiring data science leaders. \n\nAn accomplished leader in the space will join us each week and answer whatever questions the audience may have. \n\nWe were recently joined by Chase Carpenter, Director of Strategy & Analytics at the Chicago Cubs.\n\nThe Cubs are also hiring for a Database Marketing Analyst: https://my1060wd.wd5.myworkdayjobs.com/en-US/Chicago_Cubs_FO/job/Chicago-Illinois/Analyst--Database-Marketing_R000445\n\nA few key snippets from our conversation:\n01:33 - Start of session\n13:52 - Defining areas of analysis (scoping projects)\n             1. What's the size of the prize? What’s the size of the problem?\n             2. Do we actually have data that can help understand or improve the problem?\n             3. When does that work need to be done? What's the timing?\n22:32 - How are models evaluated and over what time period\n28:32 - What does the last mile look like? Delivering results back to the business\n31:40 - Techniques for approaching ambiguity\n36:28 - Finding quick wins to build relationships\n41:49 - Perspective on getting your first job in sports analytics\n50:15 - Adjusting sports models in a world after the pandemic\n59:06 - Advice for aspiring data science leaders\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n► Add the Data Science Hangout to your calendar: https://www.addevent.com/event/Qv9211919\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn:https://www.linkedin.com/company/rstu...\nTwitter: https://twitter.com/rstudio"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Data Science Hangout | Chase Carpenter, Chicago Cubs | Advice for Getting your First Job in Sports
 
 external:  # updated automatically, do not edit

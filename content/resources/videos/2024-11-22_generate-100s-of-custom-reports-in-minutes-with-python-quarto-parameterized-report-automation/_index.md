@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-11-22'
 description: 'A practical guide to generating hundreds of customized reports using Quarto and Python. Learn how to leverage Quarto''s parameter system to create PDFs and HTML reports at scale. Using a movie dataset example, we''ll cover:
 
@@ -54,11 +53,57 @@ description: 'A practical guide to generating hundreds of customized reports usi
   17:54 - Tying everything together
 
   21:47 - Adding fenced divs & styling/formatting dynamically with code'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Generate 100s of custom reports in minutes with Python & Quarto! (Parameterized report automation)
 
 external:  # updated automatically, do not edit

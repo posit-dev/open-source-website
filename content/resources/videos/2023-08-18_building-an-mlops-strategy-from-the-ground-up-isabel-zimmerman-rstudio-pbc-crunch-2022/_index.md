@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-08-18'
 description: 'This talk was recorded at Crunch Conference 2022. Isabel from RStudio PBC spoke about building an MLOps strategy from the ground up.
 
@@ -16,12 +15,14 @@ description: 'This talk was recorded at Crunch Conference 2022. Isabel from RStu
   If you are interested in more speakers, tickets and details of the conference, check out our website: https://crunchconf.com/
 
   If you are interested in more events from our company: https://crafthub.events/'
+image: thumbnail.jpg
 people:
 - Isabel Zimmerman
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Building an MLOps strategy from the ground up - Isabel Zimmerman, RStudio PBC | Crunch 2022
 
 external:  # updated automatically, do not edit

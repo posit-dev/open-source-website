@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-24'
 description: 'Tom Mock, Workbench Product Manager at Posit, discusses our commitment to Python from open-source projects to enterprise support.
 
@@ -26,10 +25,56 @@ description: 'Tom Mock, Workbench Product Manager at Posit, discusses our commit
   Posit Connect: https://posit.co/products/enterprise/connect/
 
   Posit Package Manager: https://posit.co/products/enterprise/package-manager/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Python made easier with Posit
 
 external:  # updated automatically, do not edit

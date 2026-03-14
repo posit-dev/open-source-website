@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-19'
 description: 'The Apache Arrow project enables data scientists using R, Python, and other languages to work with large datasets efficiently and with interactive speed. Arrow is so fast at some workflows that it seems to defy reality--or at least the limits of R''s capabilities. This talk examines the unique characteristics of the Arrow project that enable it to redefine what is possible in R. The talk also highlights some of the latest developments in the arrow R package, including how you can query and manipulate multi-file datasets, and it presents strategies for speeding up workflows by up to 100x.
 
@@ -7,12 +6,61 @@ description: 'The Apache Arrow project enables data scientists using R, Python, 
   About Neal:
 
   Currently Director of Engineering at Ursa Labs / RStudio. Previously led product and engineering at Crunch.io. Ph.D. in Political Science from the University of California, Berkeley.'
+image: thumbnail.jpg
 people:
 - Neal Richardson
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Neal Richardson
+- Apache
+- Apache Arrow
+- big data
 title: Neal Richardson | Bigger Data With Ease Using Apache Arrow | RStudio
 
 external:  # updated automatically, do not edit

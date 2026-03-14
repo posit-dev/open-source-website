@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'From SDKs to Agents: Building with R and Python on Databricks
 
@@ -14,11 +13,19 @@ description: 'From SDKs to Agents: Building with R and Python on Databricks
 
 
   📁 Materials posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - ellmer
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: 'From SDKs to Agents: Building with R and Python on Databricks (Rafi Kurlansik & Zac Davies)'
 
 external:  # updated automatically, do not edit

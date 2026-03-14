@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'George Stagg, Winston Chang, and Tomasz Kalinowski introduce AI capabilities in Positron, including Positron Assistant, a tool still in preview that enhances coding and data analysis.
 
@@ -18,6 +17,7 @@ description: 'George Stagg, Winston Chang, and Tomasz Kalinowski introduce AI ca
 
 
   posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Carson Sievert
 - George Stagg
@@ -29,6 +29,13 @@ software:
 - chatlas
 - positron
 - ragnar
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Positron AI Session (George Stagg, Winston Chang, Tomasz Kalinowski , Carson Sievert) | posit::conf
 
 external:  # updated automatically, do not edit

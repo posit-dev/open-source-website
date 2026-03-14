@@ -1,8 +1,8 @@
 ---
+color: '#6A2D25'
 description: Set up commonly used 📦 components
 github: r-lib/usethis
 image: logo.png
-color: "#6A2D25"
 languages:
 - R
 latest_release: '2025-09-05T20:26:57+00:00'

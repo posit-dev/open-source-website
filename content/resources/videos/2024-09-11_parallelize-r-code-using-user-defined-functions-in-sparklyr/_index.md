@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-09-11'
 description: 'If you’re an Apache Spark user, you benefit from its speed and scalability for big data processing.
 
@@ -32,11 +31,57 @@ description: 'If you’re an Apache Spark user, you benefit from its speed and s
 
 
   📺  Watch other tutorials on using Databricks and RStudio: https://youtube.com/playlist?list=PL9HYL-VRX0oR-3AgWbXtlfdr29626EjRJ&feature=shared'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Parallelize R code using user-defined functions in sparklyr
 
 external:  # updated automatically, do not edit

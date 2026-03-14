@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-07-27'
 description: 'The Shiny UI Editor is a dynamic drag-and drop interface to help you design beautiful Shiny apps. The Shiny UI Editor is a visual tool for building the UI portion of a Shiny application that generates clean and human-readable code.
 
@@ -17,6 +16,7 @@ description: 'The Shiny UI Editor is a dynamic drag-and drop interface to help y
   Producer: Jesse Mostipak (@kierisi)
 
   Editing and Motion Design: Tony Pelleriti (@TonyPelleriti)'
+image: thumbnail.jpg
 people:
 - Nick Strayer
 resource_type: video
@@ -26,6 +26,54 @@ software:
 - rstudio
 - Shiny
 - shinyuieditor
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- rstats
+- open source
+- OSS
+- reticulate
+- drag and drop
+- shiny ui
+- shiny ui editor
+- nick strayer
+- tony pelleriti
+- posit
 title: Shiny UI Editor Project Walkthrough || Nick Strayer || RStudio
 
 external:  # updated automatically, do not edit

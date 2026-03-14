@@ -1,15 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Deep Learning models help answer scientific questions, but they are only as accurate as the data we feed them. To ensure accurate models, we can implement quality control (QC) methods to ensure only high-quality data is used in training these models. Scientists generate thousands of images as part of Image-Based High Content Screening assays. To help them quickly assess the quality of these images before considerable time is spent analyzing them, we developed an interactive tool using Shiny that displays which images were flagged as part of QC. In this talk, I’ll explain how we created this QC tool and share ideas on how you could leverage your existing code and turn it into a stand-alone web app your stakeholders can use.
 
 
   Talk by Vasant Marur'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: Vasant Marur - Quality Control to avoid GIGO in Deep Learning Models
 
 external:  # updated automatically, do not edit

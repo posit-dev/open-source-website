@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Learn how to handle 100GBs of data with ease using {disk.frame} - the larger-than-RAM-data manipulation package.
 
@@ -13,12 +12,60 @@ description: 'Learn how to handle 100GBs of data with ease using {disk.frame} - 
   About ZJ:
 
   ZJ is a machine learning developer based in Melbourne, Australia. He regularly contributes to open source projects. He has more than 10 years of experience in banking before joining the tech sector. In his free time, he enjoys playing Go/Baduk/Weiqi.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - dplyr
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- ZJ
+- disk.frame
 title: ZJ | Easy larger-than-RAM data manipulation with {disk.frame} | RStudio
 
 external:  # updated automatically, do not edit

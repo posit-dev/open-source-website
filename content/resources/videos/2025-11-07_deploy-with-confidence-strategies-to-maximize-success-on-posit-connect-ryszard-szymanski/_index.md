@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Deploy with Confidence: Strategies to Minimize Failure and Maximize Success (on Posit Connect)
 
@@ -18,10 +17,17 @@ description: 'Deploy with Confidence: Strategies to Minimize Failure and Maximiz
   📁 Package - https://github.com/szymanskir/featureflag
 
   📁 Links - https://gist.github.com/rszymanski/4b17170a9630dd8e9af191d7e5d6b2c7 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: 'Deploy with Confidence: Strategies to Maximize Success (on Posit Connect) (Ryszard Szymański)'
 
 external:  # updated automatically, do not edit

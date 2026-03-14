@@ -1,10 +1,10 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Shiny users can prototype an app in minutes, but... What if it also looked better almost immediately? In this talk, we''ll walk through a new look for Shiny''s UI, as well as some new functionality.
 
 
   Session: Pour some glitter on it: Polishing the design of your shiny apps'
+image: thumbnail.jpg
 people:
 - Greg Swinehart
 resource_type: video
@@ -12,6 +12,7 @@ resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Greg Swinehart | Designing for people is hard | RStudio (2022)
 
 external:  # updated automatically, do not edit

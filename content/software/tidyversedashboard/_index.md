@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: Tidyverse activity dashboard
 github: tidyverse/tidyversedashboard
+image: logo.svg
 languages:
 - R
 people:

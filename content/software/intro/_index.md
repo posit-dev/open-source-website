@@ -1,9 +1,9 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: Course materials for "Introduction to Data Science with R", a video course
   by RStudio and O'Reilly Media
 github: rstudio/Intro
+image: logo.svg
 languages:
 - R
 title: Intro

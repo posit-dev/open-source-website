@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-06-25'
 description: 'Led by Isabella Velásquez, Sr Product Marketing Manager at Posit PBC
 
@@ -33,6 +32,7 @@ description: 'Led by Isabella Velásquez, Sr Product Marketing Manager at Posit 
 
 
   If you have specific follow-up questions about using Posit in your organization, we''d love to chat with you: https://posit.co/schedule-a-call/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -40,6 +40,7 @@ software:
 - pointblank
 - querychat
 - Shiny
+tags: []
 title: 'Building Tailored Dashboards: Drill Down Visualizations and LLM-Powered Summaries with Shiny'
 
 external:  # updated automatically, do not edit

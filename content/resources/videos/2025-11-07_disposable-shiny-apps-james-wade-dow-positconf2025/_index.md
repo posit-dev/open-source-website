@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Disposable Shiny Apps
 
@@ -14,11 +13,19 @@ description: 'Disposable Shiny Apps
 
 
   📁 Materials - https://github.com/JamesHWade/posit-conf-2025 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Disposable Shiny Apps (James Wade, Dow) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

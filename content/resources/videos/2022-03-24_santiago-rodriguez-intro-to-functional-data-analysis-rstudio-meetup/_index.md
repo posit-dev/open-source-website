@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-03-24'
 description: 'Energy Meetup - Intro to functional data analysis
 
@@ -57,11 +56,13 @@ description: 'Energy Meetup - Intro to functional data analysis
   ✨ Refund package: https://lnkd.in/gXGcT79t
 
   ✨ FDA.USC: https://lnkd.in/ggHdUaEe'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Santiago Rodriguez | Intro to functional data analysis | RStudio Meetup
 
 external:  # updated automatically, do not edit

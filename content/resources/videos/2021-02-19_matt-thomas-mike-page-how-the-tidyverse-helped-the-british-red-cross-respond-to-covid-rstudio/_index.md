@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Full title: Cognitive speed: How the Tidyverse helped the British Red Cross respond quickly to COVID-19
 
@@ -15,6 +14,7 @@ description: 'Full title: Cognitive speed: How the Tidyverse helped the British 
   About Mike:
 
   Mike Page is a data scientist on the Strategic Insight and Foresight team at the British Red Cross. Here, he helps to develop a suite of open source tools and dashboards including the Vulnerability Index (https://britishredcrosssociety.github.io/covid-19-vulnerability/) and Resilience Index (https://britishredcross.shinyapps.io/resilience-index/). Mike is also the author of several R packages including mortyr and newsrivr. In his spare time you can find him rock climbing around the Alps.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -22,6 +22,56 @@ software:
 - rstudio
 - shinyapps
 - tidyverse
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- matt thomas
+- mike page
+- covid
+- covid-19
+- pandemic
+- red cross
 title: Matt Thomas & Mike Page | How the Tidyverse helped the British Red Cross respond to COVID | RStudio
 
 external:  # updated automatically, do not edit

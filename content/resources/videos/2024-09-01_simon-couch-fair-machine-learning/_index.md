@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-09-01'
 description: 'Simon Couch
 
@@ -19,6 +18,7 @@ description: 'Simon Couch
   Chicago, IL
 
   Simon Couch is a software engineer at Posit PBC (formerly RStudio) where he works on open source statistical software. With an academic background in statistics and sociology, Simon believes that principled tooling has a profound impact on our ability to think rigorously about data. He authors and maintains a number of R packages and blogs about the process at simonpcouch.com.'
+image: thumbnail.jpg
 people:
 - Simon Couch
 resource_type: video
@@ -26,6 +26,7 @@ resources: []
 software:
 - rstudio
 - tidymodels
+tags: []
 title: 'Simon Couch: Fair machine learning'
 
 external:  # updated automatically, do not edit

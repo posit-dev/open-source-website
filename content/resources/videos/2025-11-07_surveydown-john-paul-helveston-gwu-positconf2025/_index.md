@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'surveydown: A Markdown-Based Platform for Interactive and Reproducible Surveys Using Quarto and Shiny
 
@@ -16,12 +15,20 @@ description: 'surveydown: A Markdown-Based Platform for Interactive and Reproduc
   📁 GitHub Repo - https://github.com/surveydown-dev/surveydown
 
   📁 Materials - https://github.com/jhelvy/2025-posit-conf-surveydown posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: surveydown (John Paul Helveston, GWU) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

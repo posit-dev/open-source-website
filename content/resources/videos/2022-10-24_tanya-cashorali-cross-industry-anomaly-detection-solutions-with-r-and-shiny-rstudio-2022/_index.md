@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This session highlights two anomaly detection use cases in production: identification of problematic life sciences manufacturing units and identification of significant newsworthy events. With both solutions, Shiny is integrated with live data to provide early detection for proactive intervention. Shiny’s intuitive user interface also allows for interaction with the data behind anomalies to uncover potential causes and paths to action or resolution.
 
@@ -11,12 +10,14 @@ description: 'This session highlights two anomaly detection use cases in product
 
 
   Session: Working with people is hard'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Tanya Cashorali | Cross-Industry Anomaly Detection Solutions with R and Shiny | RStudio (2022)
 
 external:  # updated automatically, do not edit

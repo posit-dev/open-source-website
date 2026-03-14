@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-05-19'
 description: '00:00 Introduction
 
@@ -32,6 +31,7 @@ description: '00:00 Introduction
 
 
   Theme song: Contrarian by Blue Dot Sessions (https://app.sessions.blue/browse/track/64281)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -39,6 +39,54 @@ software:
 - rmarkdown
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- pins
+- codenames
+- katie masiello
 title: Katie Masiello || Build a Codenames app using {pins} and Shiny! || RStudio
 
 external:  # updated automatically, do not edit

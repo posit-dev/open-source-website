@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-08-28'
 description: 'Full title: Making Beautiful, Publication Quality Tables in Python is Possible in 2024
 
@@ -11,11 +10,13 @@ description: 'Full title: Making Beautiful, Publication Quality Tables in Python
 
 
   Let''s review the state of ‘display tables’ in 2024. We’ll go over which table components make for effective displays of information. It’s surprising but there are many considerations that go into making a well-crafted table. We’ll take a look at the combinations of Python packages that fit together to make this important task possible, and marvel together at the tabular results they can provide.'
+image: thumbnail.jpg
 people:
 - Michael Chow
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Talks - Michael Chow, Richard Iannone: Making Beautiful, Publication Quality Tables in Python...'
 
 external:  # updated automatically, do not edit

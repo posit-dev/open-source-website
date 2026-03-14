@@ -11,6 +11,7 @@ people:
   - Isabel Zimmerman
   - Andrew Holz
 software:
+  - Quarto
   - Positron
 resources:
   - videos/2025-12-15_keynote-speaker-isabel-zimmerman-pydata-boston-2025

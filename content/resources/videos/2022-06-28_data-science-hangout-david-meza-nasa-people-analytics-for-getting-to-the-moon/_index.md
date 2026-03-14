@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-06-28'
 description: 'We were joined by David Meza, AIML R&D Lead, People Analytics at NASA.
 
@@ -96,12 +95,14 @@ description: 'We were joined by David Meza, AIML R&D Lead, People Analytics at N
   LinkedIn:https://www.linkedin.com/company/rstudio
 
   Twitter: https://twitter.com/rstudio'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Data Science Hangout | David Meza, NASA | People analytics for getting to the moon
 
 external:  # updated automatically, do not edit

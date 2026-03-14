@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'As we work in open data science spaces, we frequently peer-teach coding and collaboration skills. The setup work is often grossly underestimated and unseen. I’ll share how Openscapes automates setup with the Kyber R package that uses googlesheets4 and creates RMarkdown documents that become collaborative Google Doc agendas, and sets up repositories and organizes people on GitHub. Kyber replaces manual steps with R functions while maintaining the ability to edit outputs so we’re not constrained by the automation. It has enabled us to teach workshops repeatedly in less time – in 2022, we led four concurrent learning cohorts with 160 government scientists! Kyber is openly available to fork, reuse, and extend, and other groups are doing just that.
 
@@ -13,12 +12,14 @@ description: 'As we work in open data science spaces, we frequently peer-teach c
   Kyber GitHub Repo: https://github.com/openscapes/kyber
 
   Openscapes: https://openscapes.org/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - googlesheets4
 - rmarkdown
+tags: []
 title: Using the Kyber R package to connect Google Sheets, RMarkdown, GitHub, & Agenda docs for open edu
 
 external:  # updated automatically, do not edit

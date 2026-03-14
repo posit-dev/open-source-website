@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This talk will trace the evolution of a report from a mostly text free dashboard into a text heavy R markdown report with dynamic text blocks. The report in question is provided to the largest financial institutions in the U.S., but the audience for the data largely is composed of compliance experts and lawyers.
 
@@ -11,6 +10,7 @@ description: 'This talk will trace the evolution of a report from a mostly text 
 
 
   Session: RMarkdown and Quarto'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -18,6 +18,7 @@ software:
 - Quarto
 - rmarkdown
 - rstudio
+tags: []
 title: Lewis Kirvan | Sometimes you just need words | RStudio (2022)
 
 external:  # updated automatically, do not edit

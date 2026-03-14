@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Automating for Consistency
 
@@ -11,10 +10,17 @@ description: 'Automating for Consistency
 
 
   In pharma, our data can be limited, inconsistent or incomplete, and data cleaning can be time-consuming. In addition, the industry is highly regulated, and data transformations must be transparent. At Pfizer, we developed a custom R package that enables us to automatically quality control our clinical biomarker data. Our package allows for flexible data structures and external input by non-coders, producing consistent reports and clear documentation. In this session I will share some features of our package, as well as how automating our process has been a powerful tool enabling us to achieve consistency, with the hope that this helps others automate their own pipelines. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Automating for Consistency (Kristin Mussar, Pfizer) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

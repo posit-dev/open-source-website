@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'I would like to create (more) Shiny Dashboards, but...
 
@@ -20,12 +19,14 @@ description: 'I would like to create (more) Shiny Dashboards, but...
 
 
   Session: Pour some glitter on it: Polishing the design of your shiny apps'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: 'Peter Gandenberger | Dashboard-Builder: Building Shiny Apps without writing any code | RStudio'
 
 external:  # updated automatically, do not edit

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: A DBI-compliant interface to PostgreSQL
 github: r-dbi/RPostgres
+image: logo.svg
 languages:
 - R
 latest_release: '2026-02-15T18:53:30+00:00'

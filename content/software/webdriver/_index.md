@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: WebDriver client in R
 github: rstudio/webdriver
+image: logo.svg
 languages:
 - R
 latest_release: '2021-01-12T20:32:10+00:00'

@@ -1,11 +1,11 @@
 ---
-image: thumbnail.jpg
 date: '2021-12-07'
 description: 'R/Pharma 2021 Day 1
 
   Rich Iannone (RStudio)
 
   The gt Package: Past, Present, and Future'
+image: thumbnail.jpg
 people:
 - Rich Iannone
 resource_type: video
@@ -13,6 +13,7 @@ resources: []
 software:
 - gt
 - rstudio
+tags: []
 title: 'R/Pharma 2021 Day 1.  Rich Iannone.  The gt Package: Past, Present, and Future'
 
 external:  # updated automatically, do not edit

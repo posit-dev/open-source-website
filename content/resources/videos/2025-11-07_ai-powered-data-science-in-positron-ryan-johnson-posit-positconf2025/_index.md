@@ -1,15 +1,22 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Ryan Johnson introduces Positron, an AI-ready multilingual IDE designed specifically for data science.
 
 
   posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: AI-Powered Data Science in Positron (Ryan Johnson, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

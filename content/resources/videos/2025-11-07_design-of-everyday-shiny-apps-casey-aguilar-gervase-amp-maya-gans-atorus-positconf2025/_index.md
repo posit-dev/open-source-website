@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Design of Everyday Shiny Apps
 
@@ -14,11 +13,18 @@ description: 'Design of Everyday Shiny Apps
 
 
   📁 Materials - https://github.com/caseyag/Posit-Conf-25 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Design of Everyday Shiny Apps (Casey Aguilar-Gervase &amp; Maya Gans, Atorus) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Create a map of functions for an R package - WORK IN PROGRESS!
 github: r-lib/pkgapi
+image: logo.svg
 languages:
 - R
 people:

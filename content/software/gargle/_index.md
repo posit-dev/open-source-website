@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: Infrastructure for calling Google APIs from R, including auth
 github: r-lib/gargle
+image: logo.svg
 languages:
 - R
 latest_release: '2026-01-28T21:11:46+00:00'

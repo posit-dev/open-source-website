@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Elevating Public Health Decision-Making with R Packages
 
@@ -11,10 +10,17 @@ description: 'Elevating Public Health Decision-Making with R Packages
 
 
   Supporting public health decisions in high-stakes environments requires transparency, reproducibility, and efficiency. Analyzing real-world health data with complex models helps policymakers mitigate infectious disease spread. Structuring projects as R packages provides a consistent framework that enhances organization, integrates documentation, and facilitates collaboration. This approach improves coding practices, ensures reproducibility, and enables seamless sharing of tools—empowering colleagues without the resources to develop their own. This talk will demonstrate how adopting R package structures can enhance workflows and impact without requiring advanced software development skills. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Elevating Public Health Decision-Making with R Packages (Kylie Ainslie, RIVM) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: An R package showcasing how RStudio addins can be registered and used.
 github: rstudio/addinexamples
+image: logo.svg
 languages:
 - R
 people:

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-03-11'
 description: 'Tables in Python with Great Tables - Rich Iannone, Michael Chow
 
@@ -27,6 +26,7 @@ description: 'Tables in Python with Great Tables - Rich Iannone, Michael Chow
 
 
   Workshop recorded as part of the 2024 R/Pharma Workshop Series'
+image: thumbnail.jpg
 people:
 - Michael Chow
 - Rich Iannone
@@ -36,6 +36,7 @@ software:
 - Great Tables
 - gt
 - rstudio
+tags: []
 title: Tables in Python with Great Tables
 
 external:  # updated automatically, do not edit

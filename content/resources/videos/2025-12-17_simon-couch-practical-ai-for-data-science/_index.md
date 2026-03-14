@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-17'
 description: 'Practical AI for data science (Simon Couch)
 
@@ -28,6 +27,7 @@ description: 'Practical AI for data science (Simon Couch)
   - {kapa}: RAG-based search via the kapa.ai API https://github.com/simonpcouch/kapa
 
   - Databot https://positron.posit.co/dat'
+image: thumbnail.jpg
 people:
 - Simon Couch
 resource_type: video
@@ -41,6 +41,7 @@ software:
 - tidyverse
 - tidyverse.org
 - vitals
+tags: []
 title: Simon Couch - Practical AI for data science
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-17'
 description: 'Talk from rstudio::conf(2019)
 
@@ -10,11 +9,59 @@ description: 'Talk from rstudio::conf(2019)
   About Mary Rudis:
 
   After graduating from Lehigh University in Bethlehem, PA with a degree in Mathematics, Mary began as a high school mathematics and computer science teacher, developing technology infrastructure for a small, private high school in Pennsylvania. Throughout her career, she brings innovative approaches and enjoys the role of trailblazer. Mary''s most recent accomplishments as math department chair included developing mathematics curriculum and coordinating engineering, bioengineering and data science degrees at Great Bay Community College in Portsmouth, NH. Mary''s primary interests are learning and instruction, developing data science curricula for two-year colleges and 4-year liberal arts colleges, and working with area high school students in STEM at the University of NH Tech Camp each summer.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- mary rudis
+- education
 title: Mary Rudis | How R and Posit are revolutionizing Stats Education in Community Colleges | Posit
 
 external:  # updated automatically, do not edit

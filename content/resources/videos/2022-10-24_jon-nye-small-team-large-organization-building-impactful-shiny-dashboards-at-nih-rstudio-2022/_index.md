@@ -1,16 +1,17 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'It can be difficult for small teams to make an impact in large organizations. In this talk I will discuss how my small team, at the National Institute of Allergy and Infectious Diseases (NIAID) has used Shiny to increase efficiency, enhance collaboration, and track biomedical research funding. In light of the recent pandemic, and the ongoing threat of emerging infectious diseases, our ability to understand a complex research portfolio and adapt quickly to changing research priorities has become increasingly important. I will highlight how automated workflows and Shiny dashboards have allowed my team to become more efficient and enabled us to have an outsized impact on our organization.
 
 
   Session: Working with code is hard'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: 'Jon Nye | Small Team Large Organization: Building Impactful Shiny Dashboards at NIH | RStudio (2022)'
 
 external:  # updated automatically, do not edit

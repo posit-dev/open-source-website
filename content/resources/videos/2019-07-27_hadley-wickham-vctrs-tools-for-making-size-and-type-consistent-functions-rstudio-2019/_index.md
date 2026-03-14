@@ -1,7 +1,7 @@
 ---
-image: thumbnail.jpg
 date: '2019-07-27'
 description: vctrs is a new package that provides tools (cognitive and computational) to ensure that functions behave consistently with respect to inputs of varying length and type. The end goal of vctrs is to be invisible to the end user of the tidyverse (simply enabling their predictions about function outputs to be more correct), but will help developers write functions that "just work".
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 resource_type: video
@@ -10,6 +10,52 @@ software:
 - rstudio
 - tidyverse
 - vctrs
+tags:
+- Hadley Wickham
+- vctrs
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
 title: Hadley Wickham | vctrs Tools for making size and type consistent functions | RStudio (2019)
 
 external:  # updated automatically, do not edit

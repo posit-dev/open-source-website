@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'The blessing and the curse of open-source software is that it lacks the infrastructure of a corporation. It can often be difficult to ensure that projects have stability and longevity. In this talk, I will discuss ongoing work on an NSF "Pathways in Open-Source Ecosystems" grant focused on the {data.table} package. Like many R packages, {data.table} has incredible functionality and thousands of users - but no cohesive community or governance structure to support it long-term. We are working to build this ecosystem. I will provide my advice and insight for key aspects of a sustainable open-source project: Engaging casual users, supporting developers, generating content, emphasizing education, and creating a home base for the community.
 
@@ -11,10 +10,12 @@ description: 'The blessing and the curse of open-source software is that it lack
   Slides: https://github.com/kbodwin/positconf_2024
 
   GitHub Repo: https://github.com/kbodwin/positconf_2024'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Building sustainable open-source ecosystems: Lessons from the #rstats community and an NSF grant'
 
 external:  # updated automatically, do not edit

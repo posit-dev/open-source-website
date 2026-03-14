@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: ''
 github: rstudio/shiny-examples
+image: logo.svg
 languages:
 - JavaScript
 latest_release: '2014-07-23T18:26:26+00:00'

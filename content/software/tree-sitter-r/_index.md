@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: Tree-sitter grammar for R
 github: r-lib/tree-sitter-r
+image: logo.svg
 languages:
 - R
 latest_release: '2025-06-05T19:17:25+00:00'

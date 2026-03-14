@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: A Hugo theme for teams
 github: rstudio/hugo-graphite
+image: logo.svg
 languages:
 - CSS
 latest_release: '2020-07-08T22:34:15+00:00'

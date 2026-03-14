@@ -1,8 +1,8 @@
 ---
+color: '#fff949'
 description: Easily generate information-rich, publication-quality tables from R
 github: rstudio/gt
 image: gt.svg
-color: "#fff949"
 languages:
 - R
 latest_release: '2026-01-22T14:22:09+00:00'

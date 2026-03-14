@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-11'
 description: 'R in Production by Hadley Wickham
 
@@ -31,6 +30,7 @@ description: 'R in Production by Hadley Wickham
   Presented at the 2024 New York R Conference (May 17, 2024)
 
   Hosted by Lander Analytics (https://landeranalytics.com)'
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 resource_type: video
@@ -43,6 +43,7 @@ software:
 - testthat
 - tidyr
 - tidyverse
+tags: []
 title: Hadley Wickham - R in Production
 
 external:  # updated automatically, do not edit

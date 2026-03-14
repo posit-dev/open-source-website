@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-04-02'
 description: 'From rstudio::global(2021) Shiny X-Sessions, sponsored by Appsilon: in this talk I will discuss how to scale Shiny dashboards to thousands of users.
 
@@ -10,12 +9,59 @@ description: 'From rstudio::global(2021) Shiny X-Sessions, sponsored by Appsilon
 
 
   Learn more about the rstudio::global(2021) X-Sessions: https://blog.rstudio.com/2021/01/11/x-sessions-at-rstudio-global/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- appsilon
 title: Damian Rodziewicz | Scaling Shiny to Thousands of Users | RStudio
 
 external:  # updated automatically, do not edit

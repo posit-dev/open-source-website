@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-12-03'
 description: 'We were recently joined by Edgar Gallo, Chief Data Officer at Daimler Trucks North America.
 
@@ -37,10 +36,12 @@ description: 'We were recently joined by Edgar Gallo, Chief Data Officer at Daim
   LinkedIn:https://www.linkedin.com/company/posit
 
   Twitter: https://twitter.com/posit'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Data Science Hangout | Edgar Gallo, Daimler Trucks | Training a Team of Data Scientists
 
 external:  # updated automatically, do not edit

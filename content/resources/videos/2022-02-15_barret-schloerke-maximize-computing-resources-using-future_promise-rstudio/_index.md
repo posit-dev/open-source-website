@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-02-15'
 description: '00:00 Introduction
 
@@ -49,6 +48,7 @@ description: '00:00 Introduction
   Content: Barret Schloerke (@schloerke)
 
   Design and editing: Jesse Mostipak (@kierisi)'
+image: thumbnail.jpg
 people:
 - Barret Schloerke
 resource_type: video
@@ -57,6 +57,53 @@ software:
 - plumber
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- promises
+- Barret Schloerke
+- future_promise()
 title: Barret Schloerke || Maximize computing resources using future_promise() || RStudio
 
 external:  # updated automatically, do not edit

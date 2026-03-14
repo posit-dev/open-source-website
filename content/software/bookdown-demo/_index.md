@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: A minimal book example using bookdown
 github: rstudio/bookdown-demo
+image: logo.svg
 languages:
 - CSS
 people:

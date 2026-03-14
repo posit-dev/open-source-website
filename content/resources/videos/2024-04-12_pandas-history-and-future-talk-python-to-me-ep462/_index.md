@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-12'
 description: 'This episode dives into some of the most important data science libraries from the Python space with one of its pioneers: Wes McKinney. He''s the creator or co-creator of pandas, Apache Arrow, and Ibis projects and an entrepreneur in this space.
 
@@ -56,11 +55,13 @@ description: 'This episode dives into some of the most important data science li
   ▬▬▬▬ Dive deeper ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
   Listen to the Talk Python To Me podcast at https://talkpython.fm Over 250 hours of Python courses at https://training.talkpython.fm/courses Follow us on on Mastodon. Michael: https://fosstodon.org/@mkennedy & Talk Python https://fosstodon.org/@talkpython'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: Pandas - History and Future - Talk Python to Me Ep.462
 
 external:  # updated automatically, do not edit

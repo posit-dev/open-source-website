@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Building Web Apps and APIs in R with Ambiorix
 
@@ -18,10 +17,17 @@ description: 'Building Web Apps and APIs in R with Ambiorix
   📁 Website - https://ambiorix.dev/
 
   📁 Talk Repo - https://github.com/ambiorix-web/positconf2025 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Building Web Apps and APIs in R with Ambiorix (Kennedy Mwavu & John Coene) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

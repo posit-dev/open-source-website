@@ -1,9 +1,9 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: A database interface (DBI) definition for communication between R and
   RDBMSs
 github: r-dbi/DBI
+image: logo.svg
 languages:
 - R
 latest_release: '2026-02-24T17:22:15+00:00'

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-27'
 description: 'We were joined by Patrick Tennant, Director of Evaluation and Analytics at Meadows Mental Health Policy Institute.
 
@@ -17,11 +16,13 @@ description: 'We were joined by Patrick Tennant, Director of Evaluation and Anal
 
 
   To join future data science hangouts, add to your calendar here: rstd.io/datasciencehangout (All are welcome! We''d love to see you!)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Data Science Hangout | Patrick Tennant, MMHPI | Welcoming People into Conversations to Make Change
 
 external:  # updated automatically, do not edit

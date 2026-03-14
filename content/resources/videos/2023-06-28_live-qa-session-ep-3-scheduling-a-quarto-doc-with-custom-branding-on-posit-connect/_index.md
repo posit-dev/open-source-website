@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-06-28'
 description: 'Live Q&A Session for the End-to-End Workflow Demo on June 28th
 
@@ -25,11 +24,57 @@ description: 'Live Q&A Session for the End-to-End Workflow Demo on June 28th
   * Source code for example: To be added
 
   * Posit Team demo resources: pos.it/demo-resources'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Live Q&A Session - Ep 3. Scheduling a Quarto Doc (with custom branding) on Posit Connect
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-02-26'
 description: 'Julia Silge
 
@@ -14,11 +13,13 @@ description: 'Julia Silge
 
 
   More About PyCon Colombia at http://www.pycon.co'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Julia Silge - Keynote PyCon Colombia 2025
 
 external:  # updated automatically, do not edit

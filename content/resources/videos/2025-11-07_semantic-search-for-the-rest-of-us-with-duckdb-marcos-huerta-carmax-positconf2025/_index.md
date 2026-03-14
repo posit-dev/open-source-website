@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Semantic Search for the Rest of Us with DuckDB
 
@@ -17,12 +16,20 @@ description: 'Semantic Search for the Rest of Us with DuckDB
 
 
   I will show how a web app (such as Shiny for Python) using just a few hundred megabytes of memory can enable live search using the fixed array support in DuckDB, and the open source library LlamaCPP. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny for Python
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: Semantic Search for the Rest of Us with DuckDB (Marcos Huerta, Carmax) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

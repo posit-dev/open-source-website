@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-20'
 description: 'Full title: With more learning occurring virtually or in hybrid mode, hands-on ways to remotely teach data science are invaluable
 
@@ -10,11 +9,58 @@ description: 'Full title: With more learning occurring virtually or in hybrid mo
   About Chelsea:
 
   Chelsea Parlett-Pelleriti is a PhD Candidate and full-time instructional faculty teaching Data Science at Chapman University. Her research centers around how we can use statistics and machine learning to improve the way we analyze behavioral data. In her free time, you can find Chelsea on Twitter making stats memes or statsTikTok''s. She also writes about statistics, machine learning, and using R for various blogs.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Chelsea Parlett-Pelleriti
 title: Chelsea Parlett-Pelleriti | Hands-on ways to remotely teach data science are invaluable | RStudio
 
 external:  # updated automatically, do not edit

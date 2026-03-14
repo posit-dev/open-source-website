@@ -1,8 +1,8 @@
 ---
+color: '#8BABDB'
 description: Connect to ODBC databases (using the DBI interface)
 github: r-dbi/odbc
 image: logo.png
-color: "#8BABDB"
 languages:
 - C++
 latest_release: '2025-12-08T14:40:41+00:00'

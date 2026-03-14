@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-17'
 description: 'TabPFN: A Deep-Learning Solution for Tabular Data (Max Kuhn)
 
@@ -14,11 +13,13 @@ description: 'TabPFN: A Deep-Learning Solution for Tabular Data (Max Kuhn)
 
 
   - Presentation slides: https://topepo.github.io/2025-r-pharma/'
+image: thumbnail.jpg
 people:
 - Max Kuhn
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Max Kuhn - TabPFN: A Deep-Learning Solution for Tabular Data'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-11-19'
 description: 'We were recently joined by Kobi Abayomi, Sr VP of Data Science & Analytics at Warner Music Group.
 
@@ -41,10 +40,12 @@ description: 'We were recently joined by Kobi Abayomi, Sr VP of Data Science & A
   LinkedIn:https://www.linkedin.com/company/posit
 
   Twitter: https://twitter.com/posit'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Data Science Hangout | Kobi Abayomi at Warner Music Group | Adjusting Metrics Across the Business
 
 external:  # updated automatically, do not edit

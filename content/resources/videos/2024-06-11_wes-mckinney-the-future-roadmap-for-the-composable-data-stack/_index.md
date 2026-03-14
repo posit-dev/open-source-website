@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-11'
 description: 'The Future Roadmap for the Composable Data Stack by Wes McKinney
 
@@ -19,11 +18,13 @@ description: 'The Future Roadmap for the Composable Data Stack by Wes McKinney
   Presented at the 2024 New York R Conference (May 17, 2024)
 
   Hosted by Lander Analytics (https://landeranalytics.com)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - tidyverse
+tags: []
 title: Wes McKinney - The Future Roadmap for the Composable Data Stack
 
 external:  # updated automatically, do not edit

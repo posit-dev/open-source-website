@@ -1,8 +1,8 @@
 ---
+color: '#14693A'
 description: Classes and functions to create and summarize resampling objects
 github: tidymodels/rsample
 image: logo.png
-color: "#14693A"
 languages:
 - R
 latest_release: '2026-01-30T11:52:49+00:00'

@@ -1,8 +1,8 @@
 ---
+color: '#6897CE'
 description: Tools for load testing Shiny applications
 github: rstudio/shinyloadtest
 image: slt_report_screenshot.png
-color: "#6897CE"
 languages:
 - HTML
 latest_release: '2026-02-09T14:55:05+00:00'

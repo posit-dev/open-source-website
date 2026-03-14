@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-25'
 description: "First Steps in Learning the Use of Git & GitHub in RStudio\nLed by Mouna Belaid\n\nSlides for presentation: https://mounabelaid.github.io/First-Steps-in-Learning-the-Use-of-Git-and-GitHub-in-RStudio/#1\n\nAbstract:\nCollaborating on code development and tracking changes in code across versions are daily issues for big teams. \n\nThis hands-on workshop will be a gentle introduction to learning how to manage and keep tracking your source code history by walking through basic Git and GitHub fundamentals. Mount will also share with you her experience in creating the {git-github} cheatsheet which focuses on the essential git commands in a good visual design.   \n\nRequirements: \n✔️ R & RStudio installed \n✔️ Please sign up for a free GitHub account here https://github.com/ \n✔️ Download and install Git by following this link https://git-scm.com/downloads"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: First Steps in Learning the Use of Git & GitHub in RStudio
 
 external:  # updated automatically, do not edit

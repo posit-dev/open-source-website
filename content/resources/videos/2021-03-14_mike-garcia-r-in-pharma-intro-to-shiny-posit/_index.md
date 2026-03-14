@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-03-14'
 description: 'Slides: https://garciamikep.github.io/rstudioglobal-2021-shiny-slides/slides.html#1
 
@@ -22,6 +21,7 @@ description: 'Slides: https://garciamikep.github.io/rstudioglobal-2021-shiny-sli
 
 
   At Posit, we have a dedicated Pharma team to help organizations migrate and utilize open source for drug development. To learn more about our support for life sciences, please see our dedicated Pharma page where you can book a call with our team. (https://posit.co/solutions/pharma)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -30,6 +30,54 @@ software:
 - ggplot2
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- mike garcia
+- pharma
+- how to
 title: 'Mike Garcia | R in Pharma: Intro to Shiny | Posit'
 
 external:  # updated automatically, do not edit

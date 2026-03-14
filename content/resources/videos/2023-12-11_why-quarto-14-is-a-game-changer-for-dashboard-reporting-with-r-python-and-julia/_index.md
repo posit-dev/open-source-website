@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-11'
 description: Learn more about Quarto dashboards & check out the gallery! https://quarto.org/docs/dashboards/
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: Why Quarto 1.4 is a game changer for dashboard reporting with R, Python, and Julia
 
 external:  # updated automatically, do not edit

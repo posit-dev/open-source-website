@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Keeping Data Alive: Persistent Storage Options for Dynamic Cloud Applications
 
@@ -14,11 +13,19 @@ description: 'Keeping Data Alive: Persistent Storage Options for Dynamic Cloud A
 
 
   📁 Aquarium Search App - https://github.com/alex-chisholm/aquarium-search posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: 'Keeping Data Alive: Persistent Storage Options for Dynamic Cloud Applications (Alex Chisholm, Posit)'
 
 external:  # updated automatically, do not edit

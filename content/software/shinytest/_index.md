@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Automated testing for shiny apps
 github: rstudio/shinytest
+image: logo.svg
 languages:
 - JavaScript
 latest_release: '2024-03-02T17:37:21+00:00'

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-02-17'
 description: 'Abstract:
 
@@ -46,12 +45,14 @@ description: 'Abstract:
   ✨ Sports channel on the R for Data Science Online Learning
 
   ✨ Community Slack: r4ds.io/join # chat-sports_analytics'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - gt
 - rstudio
+tags: []
 title: Alok Pattani - Google | Sports Analytics Meetup | RStudio
 
 external:  # updated automatically, do not edit

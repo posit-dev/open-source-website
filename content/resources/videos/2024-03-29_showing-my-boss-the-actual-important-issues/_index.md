@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-03-29'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Showing my boss the ACTUAL important issues😤
 
 external:  # updated automatically, do not edit

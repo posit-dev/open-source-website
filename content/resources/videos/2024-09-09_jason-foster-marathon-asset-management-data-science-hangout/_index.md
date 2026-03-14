@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-09-09'
 description: 'We were recently joined by Jason Foster, Director at Marathon Asset Management.
 
@@ -44,10 +43,12 @@ description: 'We were recently joined by Jason Foster, Director at Marathon Asse
   R in Finance Conference: https://www.rinfinance.com/
 
   Jason''s {roll} package: https://github.com/jasonjfoster/roll (it''s also on CRAN!)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Jason Foster @ Marathon Asset Management | Data Science Hangout
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'The friendly competition between R and python has gifted us with two stellar packages for workflow-style predictive modeling: tidymodels in R, and scikit- learn in python. When I had to choose between them for a Machine Learning Course, I said: ¿Porque no los dos? (Why not both?)
 
@@ -14,11 +13,13 @@ description: 'The friendly competition between R and python has gifted us with t
 
 
   Session: Teaching data science'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - tidymodels
+tags: []
 title: 'Kelly Bodwin | Translating from {tidymodels} and scikit-learn: Lessons from a ''bilingual'' course'
 
 external:  # updated automatically, do not edit

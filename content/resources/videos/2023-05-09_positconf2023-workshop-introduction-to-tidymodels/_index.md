@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-09'
 description: 'Register now: http://pos.it/conf
 
@@ -21,6 +20,7 @@ description: 'Register now: http://pos.it/conf
 
 
   This workshop will teach you core tidymodels packages and their uses: data splitting/resampling with rsample, model fitting with parsnip, measuring model performance with yardstick, and basic pre-processing with recipes. Time permitting, you’ll be introduced to model optimization using the tune package. You’ll learn tidymodels syntax as well as the process of predictive modeling for tabular data.'
+image: thumbnail.jpg
 people:
 - Emil Hvitfeldt
 - Hannah Frick
@@ -33,6 +33,51 @@ software:
 - tidymodels
 - tidyverse
 - yardstick
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'posit::conf(2023) Workshop: Introduction to tidymodels'
 
 external:  # updated automatically, do not edit

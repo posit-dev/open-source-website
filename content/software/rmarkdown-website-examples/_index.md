@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Examples of R Markdown Websites
 github: rstudio/rmarkdown-website-examples
+image: logo.svg
 languages:
 - HTML
 people:

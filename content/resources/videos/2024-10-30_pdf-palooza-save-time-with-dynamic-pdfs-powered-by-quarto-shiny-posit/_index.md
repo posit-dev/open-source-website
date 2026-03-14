@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-30'
 description: 'Many of us need to produce multiple PDF versions for monthly business reports. This workflow demonstrates how to save time by dynamically creating PDFs using Quarto and Shiny, while also showcasing the beautiful possibilities Typst offers for PDF design.
 
@@ -23,12 +22,14 @@ description: 'Many of us need to produce multiple PDF versions for monthly busin
 
 
   We host these Workflow Demos the last Wednesday of every month, and you can add them to your calendar with this link: https://www.addevent.com/event/Eg16505674'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - Shiny
+tags: []
 title: PDF Palooza 🎉 Save time with dynamic PDFs powered by Quarto, Shiny & Posit
 
 external:  # updated automatically, do not edit

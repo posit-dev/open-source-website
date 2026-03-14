@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Trust, but Verify: Lessons from Deploying LLMs in a Large Health System
 
@@ -14,12 +13,19 @@ description: 'Trust, but Verify: Lessons from Deploying LLMs in a Large Health S
 
 
   This talk will present a framework for evaluating and monitoring LLM systems, drawing from a real-world deployment at Stanford Health Care. We will describe how we built and assessed an LLM-powered system for real-time, automated chart abstraction within patients’ electronic health records, focusing on methods for measuring accuracy, consistency, and safety. Additionally, we will discuss how open-source tools like Chatlas and Quarto powered the work across our team’s combined Python- and R-based workflows. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - chatlas
 - Quarto
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: 'Trust, but Verify: Lessons from Deploying LLMs in a Large Health System (Timothy Keyes)'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'My organization currently has over 250 oceanographic sensors deployed around the coast of Nova Scotia, Canada. Together, these generate around 4 million rows of data every year. I was shocked when I discovered my colleagues manually compiled, formatted, and analyzed these data using hundreds of Excel spreadsheets. This was highly time consuming, error prone, and lacked traceability. To improve this workflow, I developed an R package that reduced processing time by 95%. The package has since become integral to our data pipeline, including quality control, analysis, visualization, and report generation in RMarkdown. The resulting datasets have already proven invaluable to industry leaders looking to invest in Nova Scotia’s coastal resources.
 
@@ -8,12 +7,14 @@ description: 'My organization currently has over 250 oceanographic sensors deplo
 
 
   Session: Cat herding: solving big problems by bringing people together'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rmarkdown
 - rstudio
+tags: []
 title: 'Danielle Dempsey | Save an ocean of time: streamline data wrangling with R | RStudio (2022)'
 
 external:  # updated automatically, do not edit

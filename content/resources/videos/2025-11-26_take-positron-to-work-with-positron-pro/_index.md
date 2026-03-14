@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-26'
 description: 'While you''ve downloaded Positron on your desktop and are loving it, you may still have a few questions about using it at work:
 
@@ -26,12 +25,58 @@ description: 'While you''ve downloaded Positron on your desktop and are loving i
   Positron: https://posit.co/products/ide/positron/
 
   Posit Workbench: https://posit.co/products/enterprise/workbench/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Take Positron to Work with Positron Pro
 
 external:  # updated automatically, do not edit

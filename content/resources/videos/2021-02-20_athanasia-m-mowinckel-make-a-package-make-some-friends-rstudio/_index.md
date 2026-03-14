@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-20'
 description: 'In 2017, I had never exposed my code to anyone other than a select few before, and I was terrified. I had some functions made from a colleagues script that I thought might be useful for others, and dared myself to make a package and push it to github.
 
@@ -13,11 +12,58 @@ description: 'In 2017, I had never exposed my code to anyone other than a select
   About Athanasia:
 
   Athanasia M. Mowinckel is a staff scientist at the Center for Lifespan Changes in Brain and Cognition, at the University of Oslo. She has a background on cognitive psychology, and uses R for almost everything. She goes by the nickname "Mo" (closer to ''Mou'' than ''Moe''), and is a member of the R-Ladies Global team.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Athanasia M. Mowinckel
+- package development
 title: Athanasia M. Mowinckel | Make a package - Make some friends | RStudio
 
 external:  # updated automatically, do not edit

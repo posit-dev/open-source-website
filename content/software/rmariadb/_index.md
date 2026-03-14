@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: An R interface to MariaDB
 github: r-dbi/RMariaDB
+image: logo.svg
 languages:
 - R
 latest_release: '2025-02-24T18:19:14+00:00'

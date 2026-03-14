@@ -1,7 +1,6 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-30'
-description: '#Tidyverse #RProgramming #RLibraries
+description: 'Tidyverse #RProgramming #RLibraries
 
 
   Tidyverse, ggplot2, and the secret to a tech company’s longevity: Hadley Wickham talks to @JonKrohnLearns about Posit’s rebrand, Tidyverse and why it needs to be in every data scientist’s toolkit, and why getting your hands dirty with open-source projects can be so lucrative for your career.
@@ -30,6 +29,7 @@ description: '#Tidyverse #RProgramming #RLibraries
 
 
   Additional materials: https://www.superdatascience.com/779'
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 resource_type: video
@@ -37,6 +37,31 @@ resources: []
 software:
 - ggplot2
 - tidyverse
+tags:
+- The Tidyverse of Essential R Libraries and their Python Analogues
+- tidyverse
+- essential r libraries
+- r programming
+- python a
+- r python data science
+- posit rstudio
+- ggplot2
+- how to contribute to r open source community
+- arrow
+- dbplyr
+- testthat r
+- duckdb
+- keras for r
+- plotnine
+- siuba
+- quarto
+- quarto rstudio
+- shiny r programming
+- shiny for python
+- hadley wickham
+- hadley wickham r
+- data science podcast
+- jon krohn
 title: '779: The Tidyverse of Essential R Libraries and their Python Analogues — with Dr. Hadley Wickham'
 
 external:  # updated automatically, do not edit
@@ -44,7 +69,7 @@ external:  # updated automatically, do not edit
   comment_count: 4
   date: '2024-04-30T11:00:38Z'
   definition: hd
-  description: '#Tidyverse #RProgramming #RLibraries
+  description: 'Tidyverse #RProgramming #RLibraries
 
 
     Tidyverse, ggplot2, and the secret to a tech company’s longevity: Hadley Wickham talks to @JonKrohnLearns about Posit’s rebrand, Tidyverse and why it needs to be in every data scientist’s toolkit, and why getting your hands dirty with open-source projects can be so lucrative for your career.

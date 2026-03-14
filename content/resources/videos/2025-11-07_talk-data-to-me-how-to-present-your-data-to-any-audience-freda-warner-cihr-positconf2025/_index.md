@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Talk data to me: How to present youR data to any audience
 
@@ -11,12 +10,20 @@ description: 'Talk data to me: How to present youR data to any audience
 
 
   Translating data and analytics to diverse audiences is a vital part of any data scientists’ job, no matter what level. Strong data communication skills are valuable for every shiny app or quarto-generated presentation you give, and involve more than just avoiding pie charts! This presentation will cover creating a narrative with your data, identifying key messages, creating effective slides and visuals, and delivering an oral presentation that is not only articulate, but will help your audience understand and remember your message. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: 'Talk data to me: How to present youR data to any audience (Freda Warner, CIHR) | posit::conf(2025)'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-10-29'
 description: 'We''re so excited to introduce Positron, a free, next-generation data science IDE that makes it easy to work in both R and Python. Positron builds on our years of experience developing RStudio and is a fork of VS Code, designed specifically for data work. This means you get a modern coding interface with features tailored for data science, like a built-in data explorer, AI assistance, interpreter management, and more.
 
@@ -70,6 +69,7 @@ description: 'We''re so excited to introduce Positron, a free, next-generation d
   ✨ Posit AI Newsletter: https://posit.co/blog/2025-09-26-ai-newsletter/
 
   ✨ Positron Assistant: https://positron.posit.co/assistant.html'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -77,6 +77,51 @@ software:
 - positron
 - Quarto
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: AI-Powered Data Science in Positron
 
 external:  # updated automatically, do not edit

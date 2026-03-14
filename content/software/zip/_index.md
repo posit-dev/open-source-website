@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: Platform independent zip compression via miniz
 github: r-lib/zip
+image: logo.svg
 languages:
 - C
 latest_release: '2025-05-13T13:31:24+00:00'

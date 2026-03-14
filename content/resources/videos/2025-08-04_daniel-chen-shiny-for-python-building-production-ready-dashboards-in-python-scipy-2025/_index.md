@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-08-04'
 description: 'Shiny is a framework for building web applications and data dashboards in Python.
 
@@ -33,12 +32,14 @@ description: 'Shiny is a framework for building web applications and data dashbo
   - Write unit tests and end-to-end tests for your shiny application
 
   - Deploy and share your application (for free!)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny for Python
 - Shiny
+tags: []
 title: 'Daniel Chen - Shiny for Python: Building Production-Ready Dashboards in Python | SciPy 2025'
 
 external:  # updated automatically, do not edit

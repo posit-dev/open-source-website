@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-30'
 description: See the code here! https://colorado.posit.co/rsc/tay-swift-tour/r.html#in-the-limelight
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - ggplot2
+tags: []
 title: Tree maps are easy to make in R with ggplot2
 
 external:  # updated automatically, do not edit

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: A mocking library for R.
 github: r-lib/mockery
+image: logo.svg
 languages:
 - R
 latest_release: '2025-09-03T20:06:59+00:00'

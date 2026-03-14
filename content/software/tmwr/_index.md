@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: Code and content for "Tidy Modeling with R"
 github: tidymodels/TMwR
+image: logo.svg
 languages:
 - RMarkdown
 latest_release: '2022-07-22T15:57:37+00:00'

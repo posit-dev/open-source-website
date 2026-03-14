@@ -367,6 +367,7 @@ def compute_top_level_keys(
         "website",
         "latest_release",
         "languages",
+        "tags",
     ]
 
     for key in keys_to_process:

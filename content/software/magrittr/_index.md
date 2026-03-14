@@ -1,10 +1,12 @@
 ---
+color: '#423928'
 description: Improve the readability of R code with the pipe
 github: tidyverse/magrittr
 image: logo.png
-color: "#423928"
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2025-09-11T16:42:35+00:00'
 people:
 - Lionel Henry

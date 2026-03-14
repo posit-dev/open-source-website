@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: Minimalistic GitHub API client in R
 github: r-lib/gh
+image: logo.svg
 languages:
 - R
 latest_release: '2025-05-26T09:31:40+00:00'

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-24'
 description: 'Many Data Science teams today leverage both R and Python in their work, but struggle to use them together. Data Science leaders and their business partners find it difficult to make key data science content easily discoverable and available for decision-making, while IT Admins and DevOps engineers grapple with how to efficiently support these teams without duplicating infrastructure. Even experienced data scientists familiar with both languages often struggle to combine them without painful context switching and manual translations.
 
@@ -25,12 +24,58 @@ description: 'Many Data Science teams today leverage both R and Python in their 
   About Sean:
 
   Sean has a degree in mathematics and statistics and worked as an analyst at the National Renewable Energy Lab before making the switch to customer success at RStudio. In his spare time he skis and mountain bikes and is a proud Colorado native.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - webinars
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'Sean Lopp & Lou Bajuk | R & Python: A Data Science Love Story | RStudio (2020)'
 
 external:  # updated automatically, do not edit

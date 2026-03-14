@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-08-01'
 description: 'Please join us for the live Q&A session for the July 31st Workflow Demo - this Q&A room will open up immediately following the demo.
 
@@ -13,12 +12,14 @@ description: 'Please join us for the live Q&A session for the July 31st Workflow
   Demo: 11 am ET [https://youtu.be/zDJc8sXh2qw?feature=shared]
 
   Q&A: ~11:30 am ET'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny for Python
 - Shiny
+tags: []
 title: Workflow Demo Live Q&A - July 31st
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-29'
 description: 'Please join us for the live Q&A session for the November 29th Workflow Demo - this will start immediately following the "Machine learning workflow with Python & Posit Team" session here: https://youtu.be/EGJ9DRJI4dY
 
@@ -10,10 +9,12 @@ description: 'Please join us for the live Q&A session for the November 29th Work
   Demo: 11 am ET
 
   Q&A: ~11:40am ET'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Workflow Demo Live Q&A - Nov 29th
 
 external:  # updated automatically, do not edit

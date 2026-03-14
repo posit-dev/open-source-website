@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Bold indicates negative?
 
@@ -14,11 +13,18 @@ description: 'Bold indicates negative?
 
 
   📁 Slides - https://liomys.mx/posit25.html posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - gt
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Bold indicates negative? (Luis D. Verde Arregoitia, Instituto De Ecología, A.c.) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

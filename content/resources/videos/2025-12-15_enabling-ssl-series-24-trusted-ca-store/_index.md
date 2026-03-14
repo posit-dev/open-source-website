@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-15'
 description: 'This series of videos walks through SSL Certificate Management with Posit products.
 
@@ -11,10 +10,12 @@ description: 'This series of videos walks through SSL Certificate Management wit
   • SSL Certs Chain Full vs Partial: In this video, we walk through the process of ensuring that your SSL certificate chain is complete.
 
   • SSL Cert File Permissions: In this video, we walk through the process of verifying the correct file permissions on your SSL certificate.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Enabling SSL SERIES 2/4: Trusted CA store'
 
 external:  # updated automatically, do not edit

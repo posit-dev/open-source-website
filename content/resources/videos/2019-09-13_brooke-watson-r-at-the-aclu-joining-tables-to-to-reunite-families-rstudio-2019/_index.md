@@ -1,13 +1,57 @@
 ---
-image: thumbnail.jpg
 date: '2019-09-13'
 description: "Last year, over 2500 immigrant children were separated from their family while in government custody. Information about their status is scattered across several government agencies, and throughout the national class-action lawsuit “Ms. L vs ICE,” the Analytics team of the ACLU has been using R to join, deduplicate, validate, and analyze it. Using specifics of this case, this talk will address common challenges arising from human-generated data in spreadsheets. With generalizable examples, I will discuss data tidying, standardization, deduplication, and validation using the tidyverse, janitor, assertthat, and other packages. Finally, I will share best practices for requesting useful data from non-quantitative subject matter experts.\r\n\r\nAbout the Author\r\nBrooke Watson\r\nI am a Data Scientist at the ACLU, where I use code and statistics to support civil rights litigation and advocacy. Previously, I worked in public health and disease research, most recently as a Research Scientist with the EcoHealth Alliance. I completed my Master’s degree in epidemiology from the London School of Hygiene and Tropical Medicine and swam for Tennessee’s Lady Vols as an undergrad."
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - tidyverse
+tags:
+- Brooke Watson
+- ACLU
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
 title: Brooke Watson | R at the ACLU Joining tables to to reunite families | RStudio (2019)
 
 external:  # updated automatically, do not edit

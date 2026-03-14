@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Shiny for Python has the ability to be deployed without a server that runs Python. These applications can be served by any web hosting service. They are easily deployed and can scale to handle large amounts of traffic.
 
@@ -8,6 +7,7 @@ description: 'Shiny for Python has the ability to be deployed without a server t
 
 
   Session: Some of my best friends use Python'
+image: thumbnail.jpg
 people:
 - Winston Chang
 resource_type: video
@@ -17,6 +17,7 @@ software:
 - Shiny for Python
 - Shiny
 - shinylive
+tags: []
 title: Winston Chang | Running Shiny without a server | RStudio (2022)
 
 external:  # updated automatically, do not edit

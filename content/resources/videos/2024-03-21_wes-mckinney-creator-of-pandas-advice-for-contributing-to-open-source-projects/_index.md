@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-03-21'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Wes McKinney, creator of pandas’ advice for contributing to open source projects
 
 external:  # updated automatically, do not edit

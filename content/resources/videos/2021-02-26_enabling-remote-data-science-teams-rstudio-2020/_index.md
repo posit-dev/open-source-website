@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-26'
 description: 'Whatever happens in the coming months, remote work is here to stay. The goal of this webinar is to provide data scientists and data science team leaders with the knowledge and tools to succeed as a distributed team. Some of the topics we will cover include:
 
@@ -35,12 +34,62 @@ description: 'Whatever happens in the coming months, remote work is here to stay
   About Pedro:
 
   Pedro has nearly a decade of experience combining frontend and backend technologies, and is an expert on augmenting R Shiny dashboards with CSS and JavaScript.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- version control
+- scrum
+- rstudio connect
+- dashboards
+- remote work
 title: Enabling Remote Data Science Teams | RStudio (2020)
 
 external:  # updated automatically, do not edit

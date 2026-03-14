@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Have you ever cut an A/B test short? Maybe because of traffic constraints, your antsy boss, or early successful results. In reality, cutting your test short can be catastrophic, making your business decision no better than a coin flip. Learn some R-driven tips & tricks to get meaningful results quickly with a statistically rigorous methodology called sequential testing, an A/B testing enhancement my team employs at Intuit.
 
@@ -16,11 +15,58 @@ description: 'Have you ever cut an A/B test short? Maybe because of traffic cons
   About Shirbi:
 
   Shirbi Ish-Shalom is a human person.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Shirbi Ish-Shalom
 title: Shirbi Ish-Shalom | Using R to Up Your Experimentation Game | RStudio
 
 external:  # updated automatically, do not edit

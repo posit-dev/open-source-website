@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-12'
 description: 'R/Medicine Webinar
 
@@ -27,12 +26,16 @@ description: 'R/Medicine Webinar
 
 
   Rich is a software engineer at Posit that enjoys creating useful R and Python packages. He trained and worked as an atmospheric scientist and discovered working with R to be a breath of fresh air compared to the Excel-based analysis workflows common in that field. Since joining Posit he has been focused on developing packages that help organizations with data management and data visualization/publishing. When not working on R and Python packages, Rich also enjoys other things like playing and listening to music, watching movies, and getting outside.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - air
 - pointblank
+tags:
+- rstats
+- rconsortium
 title: How to use pointblank to understand, validate, and document your data
 
 external:  # updated automatically, do not edit

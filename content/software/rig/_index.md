@@ -1,8 +1,8 @@
 ---
+color: '#24345D'
 description: The R Installation Manager
 github: r-lib/rig
 image: rig-app.png
-color: "#24345D"
 languages:
 - Rust
 latest_release: '2025-10-22T17:35:17+00:00'

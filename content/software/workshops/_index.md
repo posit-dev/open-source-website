@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Website and materials for tidymodels workshops
 github: tidymodels/workshops
+image: logo.svg
 languages:
 - JavaScript
 latest_release: '2025-10-07T00:40:39+00:00'

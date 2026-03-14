@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Tools for Working with ...
 github: r-lib/ellipsis
+image: logo.svg
 languages:
 - R
 latest_release: '2021-04-29T12:05:34+00:00'

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-02-27'
 description: 'Hi, there!
 
@@ -35,6 +34,7 @@ description: 'Hi, there!
 
 
   If you''d like to ask questions anonymously, you can use: https://pos.it/demo-questions'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -44,6 +44,7 @@ software:
 - pkgdown
 - Quarto
 - rstudio
+tags: []
 title: Company Branding Workflow Demo Live Q&A - February 26th
 
 external:  # updated automatically, do not edit

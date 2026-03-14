@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-29'
 description: 'Q&A session from the February 28th Workflow Demo -- Simplify Python web app development with Shiny Express and Posit Team: https://youtu.be/pBPF00M_bfU?feature=shared
 
@@ -10,11 +9,13 @@ description: 'Q&A session from the February 28th Workflow Demo -- Simplify Pytho
   Demo: 11 am ET
 
   Q&A: ~11:30 am ET'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags: []
 title: Workflow Demo Live Q&A - February 28th
 
 external:  # updated automatically, do not edit

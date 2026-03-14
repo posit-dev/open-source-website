@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-06'
 description: 'In the rapidly evolving landscape of web technologies, the integration of R (and Python) with modern web frameworks has become increasingly important for data scientists and developers. This presentation introduces {shinylive}, a new R package that exports Shiny applications to be run within statically hosted websites. We will explore the capabilities of {shinylive} through its use of the innovative R package {webR}, which allows for the execution of R code in the browser (via WebAssembly and service workers) without the need for a centralized server.
 
@@ -19,6 +18,7 @@ description: 'In the rapidly evolving landscape of web technologies, the integra
   Shinylive website: https://posit-dev.github.io/r-shinylive/
 
   {webr} docs: https://docs.r-wasm.org/webr/latest/'
+image: thumbnail.jpg
 people:
 - Barret Schloerke
 resource_type: video
@@ -28,6 +28,51 @@ software:
 - r-shinylive
 - Shiny
 - shinylive
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: '{shinylive}: Serverless Shiny Apps | Barret Schloerke | Posit'
 
 external:  # updated automatically, do not edit

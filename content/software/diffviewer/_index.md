@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: HTML widget to visually compare files
 github: r-lib/diffviewer
+image: logo.svg
 languages:
 - JavaScript
 latest_release: '2024-06-12T16:12:44+00:00'

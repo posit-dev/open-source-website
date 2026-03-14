@@ -1,8 +1,8 @@
 ---
+color: '#2164B5'
 description: R Interface to Python
 github: rstudio/reticulate
 image: reticulated_python.png
-color: "#2164B5"
 languages:
 - R
 latest_release: '2026-02-13T12:55:36+00:00'

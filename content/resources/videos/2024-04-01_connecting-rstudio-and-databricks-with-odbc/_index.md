@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-01'
 description: 'The odbc package, in conjunction with a driver, provides DBI support and an ODBC connection.
 
@@ -19,6 +18,7 @@ description: 'The odbc package, in conjunction with a driver, provides DBI suppo
 
 
   Contact our sales team to schedule a demo: https://posit.co/schedule-a-call/?booking_calendar__c=Databricks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -26,6 +26,51 @@ software:
 - DBI
 - odbc
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Connecting RStudio and Databricks with ODBC
 
 external:  # updated automatically, do not edit

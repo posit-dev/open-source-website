@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-03'
 description: 'James Blair, Senior Product Manager, Cloud Integrations at Posit, will demonstrate using the R language to analyze and explore data stored in Snowflake. He will also show you how easy it is to set up an R environment inside Posit Workbench that runs as a native app on Snowpark Container Services.
 
@@ -11,12 +10,58 @@ description: 'James Blair, Senior Product Manager, Cloud Integrations at Posit, 
 
 
   🔗 Learn more about the Snowflake and Posit integration: https://posit.co/solutions/snowflake/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - dbplyr
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Analyze and explore data stored in Snowflake using R
 
 external:  # updated automatically, do not edit

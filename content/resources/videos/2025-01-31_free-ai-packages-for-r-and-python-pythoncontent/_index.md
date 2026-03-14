@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-01-31'
 description: 'Some free R and Python packages that can help when working with LLMs
 
@@ -7,10 +6,55 @@ description: 'Some free R and Python packages that can help when working with LL
 
 
   #datascience #artificialintelligence #machinelearning #openai #pythonprogramming #pythonprojects #dataanalysis #dataanalytics'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- lazy evaluation
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- artificial intelligence
+- python packages
+- free python tools
 title: 'Free AI packages for R and Python #pythoncontent'
 
 external:  # updated automatically, do not edit

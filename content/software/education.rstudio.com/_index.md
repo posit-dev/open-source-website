@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: ''
 github: rstudio/education.rstudio.com
+image: logo.svg
 languages:
 - CSS
 people:

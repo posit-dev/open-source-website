@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2018-10-16'
 description: 'What is the 2-day Intermediate Shiny Workshop? That''s a great question, I''m glad you asked....
 
@@ -25,6 +24,7 @@ description: 'What is the 2-day Intermediate Shiny Workshop? That''s a great que
 
 
   Speakers: Aimee Gott (Mango Solutions), with Winston Chang (RStudio)'
+image: thumbnail.jpg
 people:
 - Joe Cheng
 - Winston Chang
@@ -33,6 +33,7 @@ resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Intermediate Shiny   2-Day-Workshop - rstudio::conf(2019L)
 
 external:  # updated automatically, do not edit

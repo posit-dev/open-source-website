@@ -1,8 +1,8 @@
 ---
+color: '#657B83'
 description: Call R from R
 github: r-lib/callr
 image: simple.svg
-color: "#657B83"
 languages:
 - R
 latest_release: '2024-03-25T12:09:25+00:00'

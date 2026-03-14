@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-08-23'
 description: 'Julia Silge recently sat down with Michael Demsko Jr for an interview, the first in a new Voices of RStudio PBC series.
 
@@ -8,12 +7,58 @@ description: 'Julia Silge recently sat down with Michael Demsko Jr for an interv
 
 
   Read the full interview at https://blog.rstudio.com/tags/rstudio-voices/'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Dr. Julia Silge | RStudio Voices | RStudio
 
 external:  # updated automatically, do not edit

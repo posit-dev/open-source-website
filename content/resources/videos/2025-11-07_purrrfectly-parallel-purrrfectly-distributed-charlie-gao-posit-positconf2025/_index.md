@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Purrrfectly parallel, purrrfectly distributed
 
@@ -20,6 +19,7 @@ description: 'Purrrfectly parallel, purrrfectly distributed
 
 
   📁 Materials - https://shikokuchuo-posit2025.share.connect.posit.cloud/ posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Charlie Gao
 resource_type: video
@@ -28,6 +28,12 @@ software:
 - mirai
 - purrr
 - tidyverse
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Purrrfectly parallel, purrrfectly distributed (Charlie Gao, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

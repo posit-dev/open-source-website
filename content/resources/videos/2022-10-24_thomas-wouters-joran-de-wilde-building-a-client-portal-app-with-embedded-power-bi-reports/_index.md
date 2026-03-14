@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'With the Dutch Mortgage Portfolio Management Group we built a client portal for their customers wanting insights into their mortgage investment portfolio. This was done with a Shiny app that runs in Azure App Service, with plumber APIs serving portfolio reports, and embedded power bi reports with clear and easy to maintain dashboards.
 
@@ -11,6 +10,7 @@ description: 'With the Dutch Mortgage Portfolio Management Group we built a clie
 
 
   Session: Business intelligence'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -18,6 +18,7 @@ software:
 - plumber
 - rstudio
 - Shiny
+tags: []
 title: Thomas Wouters & Joran De Wilde | Building a client portal app with embedded Power BI reports
 
 external:  # updated automatically, do not edit

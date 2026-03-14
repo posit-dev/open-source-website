@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-22'
 description: 'What You''ll Learn:
 
@@ -9,12 +8,59 @@ description: 'What You''ll Learn:
   About Alex:
 
   Alex is a Solutions Engineer at RStudio, where he helps organizations succeed using R and RStudio products. Before coming to RStudio, Alex was a data scientist and worked on economic policy research, political campaigns, and federal consulting.'
+image: thumbnail.jpg
 people:
 - RStudio Team
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
+- alex gold
 title: Alex Gold | Managing Packages for Open Source Data Science | RStudio
 
 external:  # updated automatically, do not edit

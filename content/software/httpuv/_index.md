@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: HTTP and WebSocket server package for R
 github: rstudio/httpuv
+image: logo.svg
 languages:
 - C
 latest_release: '2025-04-16T08:39:59+00:00'

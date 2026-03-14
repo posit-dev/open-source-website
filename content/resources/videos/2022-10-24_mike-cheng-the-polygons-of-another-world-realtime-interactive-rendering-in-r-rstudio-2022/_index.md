@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'In this talk I want to explore R''s capabilities for fast, interactive graphical applications. This exploration is driven by my ongoing port of the 1991 action adventure game "Another World", but these capabilities also open up possibilities for new visualisations and applications in R.
 
@@ -17,11 +16,13 @@ description: 'In this talk I want to explore R''s capabilities for fast, interac
 
 
   Session: Eye candy: surprising and delightful uses of R'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Mike Cheng | The Polygons of Another World - realtime interactive rendering in R | RStudio (2022)
 
 external:  # updated automatically, do not edit

@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2025-10-11'
 description: 'Rather than writing an entire R package or carrying out a data analysis in one fell swoop, I’m interested in large language models (LLMs) doing things for me that I don’t like to do: tedious little refactors, transitioning from deprecated APIs, and templating out boilerplate. Chores, if you will. This talk introduces chores, an R package implementing an extensible library of LLM assistants to help with repetitive but hard-to-automate tasks. I’ll demonstrate that LLMs are quite good at turning some 45-second tasks into 5-second ones and show you how to start automating drudgery from your work with a markdown file and a dollar on an API key.'
+image: thumbnail.jpg
 people:
 - Simon Couch
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Small boosts here and there - Simon Couch
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Lots of people I meet want to start their own business. "I know how to use R," they figure, "so I should be able to go out on my own, find clients, and work for myself."
 
@@ -17,11 +16,13 @@ description: 'Lots of people I meet want to start their own business. "I know ho
 
 
   Session: What they forgot to teach you about your career'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: David Keyes | What they forgot to teach you about starting a business with R | RStudio (2022)
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-20'
 description: 'We were recently joined by Kevin and Raju @ the FDA to chat about democratizing data science by teaching people the basics of data wrangling, data science and the power of open source and utilizing principles of systems biology, pharmacology, toxicology, bioinformatics, and statistics to collaboratively develop open-source software solutions that support decision making and policy development.
 
@@ -48,10 +47,12 @@ description: 'We were recently joined by Kevin and Raju @ the FDA to chat about 
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Kevin Snyder & Raju Rayavarapu @ U.S. FDA | Data Science Hangout
 
 external:  # updated automatically, do not edit

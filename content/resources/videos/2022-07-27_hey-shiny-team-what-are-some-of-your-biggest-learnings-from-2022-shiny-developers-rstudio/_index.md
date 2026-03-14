@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-07-27'
 description: 'BIG THINGS happened on the Shiny team in 2022! Our team built out a new Shiny UI Editor, Shiny for Python, and Shiny for Python in the browser using WebAssembly. So we asked some of our Developers what their biggest learnings have been from building these products!
 
@@ -12,6 +11,7 @@ description: 'BIG THINGS happened on the Shiny team in 2022! Our team built out 
   Producer: Jesse Mostipak (@kierisi)
 
   Video editing + motion design: Tony Pelleriti (@TonyPelleriti)'
+image: thumbnail.jpg
 people:
 - Carson Sievert
 - Michael Chow
@@ -24,6 +24,55 @@ software:
 - rstudio
 - Shiny for Python
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- CRAN
+- interoperability
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- plumber
+- blogdown
+- gt
+- tidymodels
+- statistics
+- debugging
+- rstats
+- open source
+- OSS
+- winston chang
+- nick strayer
+- carson sievert
+- michael chow
+- shiny for python
+- shiny ui editor
+- posit
+- drag and drop
+- pyshiny
+- tony pelleriti
 title: Hey Shiny Team, what are some of your biggest learnings from 2022? || Shiny Developers || RStudio
 
 external:  # updated automatically, do not edit

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: System requirements for R packages
 github: rstudio/r-system-requirements
+image: logo.svg
 languages:
 - Shell
 people:

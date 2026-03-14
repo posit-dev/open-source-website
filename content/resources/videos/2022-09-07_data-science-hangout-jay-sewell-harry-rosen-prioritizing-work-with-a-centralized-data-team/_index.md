@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-09-07'
 description: 'We were be joined by Jay Sewell, Director of Analytics at Harry Rosen. Focused on plugging data into decisions and actions.
 
@@ -44,11 +43,13 @@ description: 'We were be joined by Jay Sewell, Director of Analytics at Harry Ro
 
 
   To join future data science hangouts, add to your calendar here: rstd.io/datasciencehangout'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Data Science Hangout | Jay Sewell, Harry Rosen | Prioritizing work with a centralized data team
 
 external:  # updated automatically, do not edit

@@ -1,12 +1,17 @@
 ---
-image: thumbnail.jpg
 date: '2014-06-26'
 description: Overview of the RStudio Pro IDE
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- RStudio
+- R Programming
+- IDE
+- Integrated Development Environment (Software Genre)
 title: RStudio IDE Pro Overview
 
 external:  # updated automatically, do not edit

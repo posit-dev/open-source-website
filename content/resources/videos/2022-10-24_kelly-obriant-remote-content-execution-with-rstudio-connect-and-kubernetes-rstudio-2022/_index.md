@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This summer the Posit Connect team will announce a feature which has been over two years in the making: “Remote” off-host content execution with launcher in Kubernetes.
 
@@ -14,12 +13,14 @@ description: 'This summer the Posit Connect team will announce a feature which h
 
 
   Session: Data science in production'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - rstudio
+tags: []
 title: Kelly O'Briant | Remote Content Execution with RStudio Connect and Kubernetes | RStudio (2022)
 
 external:  # updated automatically, do not edit

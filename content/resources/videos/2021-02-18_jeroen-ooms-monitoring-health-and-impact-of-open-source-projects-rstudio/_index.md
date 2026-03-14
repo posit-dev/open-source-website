@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-18'
 description: 'At rOpenSci, we have come to realize that in order to help researchers get the most out of R, we need better tooling to monitor the quality, health, and impact of R packages. This applies both to our internal projects, as well as other packages in the R ecosystem. But what exactly makes a good R package?
 
@@ -13,12 +12,60 @@ description: 'At rOpenSci, we have come to realize that in order to help researc
   About Jeroen:
 
   Postdoc hacker for @ropensci at UC Berkeley.'
+image: thumbnail.jpg
 people:
 - Jeroen Ooms
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Jeroen Ooms
+- ropensci
 title: Jeroen Ooms | Monitoring health and impact of open-source projects | RStudio
 
 external:  # updated automatically, do not edit

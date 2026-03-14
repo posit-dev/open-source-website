@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-13'
 description: 'A unique opportunity to gain insights directly from a leading expert in open source data science and a driving force behind many popular R packages like ggplot2 and dplyr.
 
@@ -22,6 +21,7 @@ description: 'A unique opportunity to gain insights directly from a leading expe
   Bayer SAS to R: https://bayer-group.github.io/sas2r/
 
   Roche Coursera course: https://www.coursera.org/learn/making-data-science-work-for-clinical-reporting'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -31,6 +31,7 @@ software:
 - gh
 - tidyverse
 - tidyverse.org
+tags: []
 title: Ask Hadley Anything
 
 external:  # updated automatically, do not edit

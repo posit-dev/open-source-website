@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Is that LLM feature any good?
 
@@ -14,11 +13,19 @@ description: 'Is that LLM feature any good?
 
 
   📁 Materials - https://github.com/simonpcouch/conf-25 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - ellmer
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Is that LLM feature any good? (Simon P. Couch, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

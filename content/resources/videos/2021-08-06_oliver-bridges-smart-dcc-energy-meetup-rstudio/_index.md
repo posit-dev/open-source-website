@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-08-06'
 description: 'Navigating the Analytics Journey at Smart DCC
 
@@ -23,6 +22,7 @@ description: 'Navigating the Analytics Journey at Smart DCC
 
 
   Smart DCC''s mission is to help digitise Britain’s energy network, and make a critical contribution in the effort to achieve net-zero greenhouse gas emissions, and improve the nation’s connectivity'
+image: thumbnail.jpg
 people:
 - RStudio Team
 resource_type: video
@@ -30,6 +30,7 @@ resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Oliver Bridges - Smart DCC | Energy Meetup | RStudio
 
 external:  # updated automatically, do not edit

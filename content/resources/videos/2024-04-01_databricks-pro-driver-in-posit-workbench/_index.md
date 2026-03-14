@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-01'
 description: 'We''ve added a Databricks driver to our Professional Drivers. The RStudio Connections Pane allows users to connect to their Databricks clusters from the IDE. Select the Databricks driver from the list of available drivers. Select the Driver to establish the connection. The driver can be used with the new databricks() function from the odbc package to connect to Databricks clusters and SQL warehouses.
 
@@ -16,12 +15,58 @@ description: 'We''ve added a Databricks driver to our Professional Drivers. The 
 
 
   Contact our sales team to schedule a demo: https://posit.co/schedule-a-call/?booking_calendar__c=Databricks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - odbc
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Databricks Pro Driver in Posit Workbench
 
 external:  # updated automatically, do not edit

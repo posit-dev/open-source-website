@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-22'
 description: 'Part of RStudio''s Data Science in the Cloud Webinar Series.
 
@@ -12,11 +11,59 @@ description: 'Part of RStudio''s Data Science in the Cloud Webinar Series.
   About Oisin:
 
   Oisin is a data science and AWS Cloud Architect for ProCogia'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- kevin bolger
+- oisin bates
+- cloud
+- cloud-based data science
+- data science cloud
 title: Kevin Bolger & Oisin Bates | Architecting RStudio Products in the Cloud | RStudio (2020)
 
 external:  # updated automatically, do not edit

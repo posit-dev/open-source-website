@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2016-08-25'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 5 Reasons To Go Pro HD 3
 
 external:  # updated automatically, do not edit

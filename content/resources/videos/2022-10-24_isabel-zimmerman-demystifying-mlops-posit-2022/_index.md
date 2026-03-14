@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Data scientists have an intuition of what goes into training a machine learning model, but building an MLOps strategy to deploy that model can sound daunting for data science teams. Model services are not one-size-fits-all, so it is imperative to know a range of tools available. One option, Vetiver, is a framework for R and Python created to make model deployment feel like a natural extension of a data scientist’s skill set.
 
@@ -8,12 +7,14 @@ description: 'Data scientists have an intuition of what goes into training a mac
 
 
   Session: Updates from the tidymodels team'
+image: thumbnail.jpg
 people:
 - Isabel Zimmerman
 resource_type: video
 resources: []
 software:
 - tidymodels
+tags: []
 title: Isabel Zimmerman | Demystifying MLOps | Posit (2022)
 
 external:  # updated automatically, do not edit

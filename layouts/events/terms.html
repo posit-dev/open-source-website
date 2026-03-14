@@ -51,7 +51,7 @@
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {{ range $currentEvents }}
-          {{ partial "card.html" (dict "page" . "hide-badge" "true") }}
+          {{ partial "item.html" (dict "page" . "hide-badge" "true") }}
         {{ end }}
       </div>
     </div>
@@ -65,7 +65,7 @@
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {{ range $upcomingEvents.ByParam "start_date" }}
-          {{ partial "card.html" (dict "page" . "hide-badge" "true") }}
+          {{ partial "item.html" (dict "page" . "hide-badge" "true") }}
         {{ end }}
       </div>
     </div>
@@ -79,7 +79,7 @@
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {{ range ($pastEvents.ByParam "start_date").Reverse }}
-          {{ partial "card.html" (dict "page" . "hide-badge" "true") }}
+          {{ partial "item.html" (dict "page" . "hide-badge" "true") }}
         {{ end }}
       </div>
     </div>

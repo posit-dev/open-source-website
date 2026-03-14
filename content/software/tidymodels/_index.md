@@ -1,8 +1,8 @@
 ---
+color: '#1C1C29'
 description: Easily install and load the tidymodels packages
 github: tidymodels/tidymodels
 image: logo.png
-color: "#1C1C29"
 languages:
 - R
 latest_release: '2025-09-09T00:55:36+00:00'

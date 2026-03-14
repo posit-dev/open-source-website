@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'When R Met Python: A Meet Cute on Posit Connect
 
@@ -11,11 +10,19 @@ description: 'When R Met Python: A Meet Cute on Posit Connect
 
 
   Data teams often leverage multiple programming languages—driven by a multitude of reasons, be it task-specific requirements or personal preference. In this talk, I''ll share how we enabled our developer base to build in the language of their choice, and how we leverage Posit Connect to unify them. By exposing core functionality as APIs using R’s plumber and Python’s FastAPI packages, and building parity in internal packages for both languages, we created a shared toolkit that streamlines workflows and fosters collaboration. Join me to explore our journey in breaking down language barriers and empowering data innovation. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - plumber
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: 'When R Met Python: A Meet Cute on Posit Connect (Blake Abbenante, Suffolk Construction)'
 
 external:  # updated automatically, do not edit

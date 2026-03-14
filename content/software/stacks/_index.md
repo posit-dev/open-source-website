@@ -1,8 +1,8 @@
 ---
+color: '#783F23'
 description: An R package for tidy stacked ensemble modeling
 github: tidymodels/stacks
 image: logo.png
-color: "#783F23"
 languages:
 - R
 latest_release: '2025-05-27T19:55:03+00:00'

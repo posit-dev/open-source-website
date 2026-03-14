@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-08-31'
 description: "**IF YOU ARE HERE FIRST, PLEASE JOIN US IN THE DEMO ROOM AT 11 ET ON AUGUST 30TH - https://youtu.be/t8A-ysXinpE?feature=shared ** \n\nThe Q&A portion will begin at 11:30 ET in this YouTube Room and the demo *should* automatically bring you over here.\n\nThanks so much for joining us! \n- Rachael\n____________________________________________\n\nPlease join Ryan Johnson, Isabel Zimmerman, and Rachael Dempsey here for live Q&A following the end-to-end workflow demo on pins on August 30th.\n\nIf you end up here first, here's the link to the demo room: https://youtu.be/t8A-ysXinpE?feature=shared\n\nPlease use the YouTube Chat for Q&A or feel free to ask questions anonymously here: pos.it/demo-questions\n\nIf you'd like to add future end-to-end workflow demos to your calendar you can use this link: pos.it/team-demo\n\nFollow-up links:\n* Demo recording will be here: https://youtu.be/t8A-ysXinpE?feature=shared\n* Posit Team: https://posit.co/products/enterprise/team/\n* Talk to us directly: https://posit.co/schedule-a-call/?booking_calendar__c=RST_YT_Demo\n* Posit Team demo resources: pos.it/demo-resources\n\nThanks for joining us!"
+image: thumbnail.jpg
 people:
 - Isabel Zimmerman
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Live Q&A: August 30th at 11:30 ET | Pins Workflow Demo Q&A Session'
 
 external:  # updated automatically, do not edit

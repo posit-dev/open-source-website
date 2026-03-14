@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: Friendly regular expressions for R.
 github: r-lib/rex
+image: logo.svg
 languages:
 - R
 latest_release: '2021-11-24T20:50:29+00:00'

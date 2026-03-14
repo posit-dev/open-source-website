@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Using Quarto to Improve Formatting and Automate the Generation of Hundreds of Reports
 
@@ -14,12 +13,19 @@ description: 'Using Quarto to Improve Formatting and Automate the Generation of 
 
 
   📁 Materials - https://github.com/ksrinc/posit_conf_2025_quarto_automation posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
 - tidyverse
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Using Quarto to Improve Formatting/Automate the Generation of Hundreds of Reports (Keaton Wilson)
 
 external:  # updated automatically, do not edit

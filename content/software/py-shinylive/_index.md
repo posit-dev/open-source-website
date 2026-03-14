@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: Python package for deploying Shinylive applications
 github: posit-dev/py-shinylive
+image: logo.svg
 languages:
 - Python
 latest_release: '2025-12-08T21:03:47+00:00'

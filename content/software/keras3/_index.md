@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: R Interface to Keras
 github: rstudio/keras3
+image: logo.svg
 languages:
 - R
 latest_release: '2026-02-13T02:51:33+00:00'

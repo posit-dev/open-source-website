@@ -1,13 +1,14 @@
 ---
-image: thumbnail.jpg
 date: '2024-03-22'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny for Python
 - Shiny
+tags: []
 title: Resources for Python Data Scientists | Shiny for Python is here✨
 
 external:  # updated automatically, do not edit

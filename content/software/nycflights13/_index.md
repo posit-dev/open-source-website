@@ -1,9 +1,9 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: An R data package containing all out-bound flights from NYC in 2013 +
   useful metdata
 github: tidyverse/nycflights13
+image: logo.svg
 languages:
 - R
 latest_release: '2021-04-12T12:50:46+00:00'

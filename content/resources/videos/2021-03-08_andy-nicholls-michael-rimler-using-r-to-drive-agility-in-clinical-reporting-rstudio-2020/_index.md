@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-03-08'
 description: 'The R language is used extensively throughout the pharmaceutical industry. But its use within the tightly regulated clinical reporting workflows has remained limited. GSK Biostatistics has embarked upon a journey to embed R as a primary statistical analysis tool for clinical reporting.
 
@@ -18,12 +17,62 @@ description: 'The R language is used extensively throughout the pharmaceutical i
   About Michael:
 
   Michael Rimler is a clinical programmer in GSK Biostatistics and passionate about influencing the evolving role of open source technologies and data science capabilities on clinical data analytics. He is involved with numerous internal initiatives aimed at moving the organization in this direction, including leading the effort to fully integrate R into the clinical reporting process. Michael is a co-lead of the Open Source Technologies in Clinical Research PHUSE working group project, has chaired a PHUSE US Single Day Event on Data Visualization, and will serve as a co-chair for the 2021 PHUSE US Connect.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - tidyverse
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- clinical reporting
+- GSK
+- pharma
+- andy nicholls
+- michael rimler
 title: Andy Nicholls & Michael Rimler | Using R to Drive Agility in Clinical Reporting | RStudio (2020)
 
 external:  # updated automatically, do not edit

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: A re-styled version of the R manuals
 github: rstudio/r-manuals
+image: logo.svg
 languages:
 - R
 people:

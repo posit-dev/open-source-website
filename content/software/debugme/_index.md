@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: Easy and efficient debugging for R packages
 github: r-lib/debugme
+image: logo.svg
 languages:
 - R
 latest_release: '2024-04-25T07:24:47+00:00'

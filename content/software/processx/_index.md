@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Execute and Control Subprocesses from R
 github: r-lib/processx
+image: logo.svg
 languages:
 - R
 latest_release: '2025-02-19T21:20:17+00:00'

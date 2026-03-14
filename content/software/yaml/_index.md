@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: R package for converting objects to and from YAML
 github: r-lib/yaml
+image: logo.svg
 languages:
 - C
 latest_release: '2024-07-22T15:23:35+00:00'

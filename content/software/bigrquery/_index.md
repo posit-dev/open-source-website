@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: An interface to Google's BigQuery from R.
 github: r-dbi/bigrquery
+image: logo.svg
 languages:
 - R
 latest_release: '2025-09-10T12:43:44+00:00'

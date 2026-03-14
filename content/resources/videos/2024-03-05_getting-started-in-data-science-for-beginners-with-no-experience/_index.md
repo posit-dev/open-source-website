@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-03-05'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 💡Getting started in data science for beginners with no experience
 
 external:  # updated automatically, do not edit

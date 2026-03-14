@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: Helm Resources for Posit Products
 github: rstudio/helm
+image: logo.svg
 languages:
 - Markdown
 latest_release: '2026-03-03T23:25:14+00:00'

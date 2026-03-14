@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-11-27'
 description: 'Nick Pelikan, Senior Solution Architect at Posit highlighted how you can:
 
@@ -28,11 +27,13 @@ description: 'Nick Pelikan, Senior Solution Architect at Posit highlighted how y
 
 
   To add future Workflow Demo events to your calendar → https://www.addevent.com/event/Eg16505674'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - tidymodels
+tags: []
 title: Tidymodel prediction workflows inside databases with orbital and Snowflake
 
 external:  # updated automatically, do not edit

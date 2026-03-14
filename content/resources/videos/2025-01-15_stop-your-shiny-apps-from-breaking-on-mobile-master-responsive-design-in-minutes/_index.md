@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-01-15'
 description: 'A comprehensive guide to implementing responsive design in Shiny applications using UI layout columns. This tutorial covers how to create adaptive layouts that automatically adjust based on screen size, from desktop to mobile devices. Learn how to leverage Shiny''s bootstrap-based grid system to create professional, responsive applications that look great on any device.
 
@@ -53,11 +52,57 @@ description: 'A comprehensive guide to implementing responsive design in Shiny a
   3:21 - Documentation resources
 
   3:45 - Conclusion'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Stop Your Shiny Apps from Breaking on Mobile! Master Responsive Design in Minutes 📱💻
 
 external:  # updated automatically, do not edit

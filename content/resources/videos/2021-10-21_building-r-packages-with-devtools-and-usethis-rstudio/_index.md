@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-10-21'
 description: 'Package building doesn''t have to be scary! The tidyverse team has made it easy to get started with RStudio and the devtools/usethis packages. This hour long presentation will walk you through the basics of R package building, and hopefully leave you prepared to go out and build your own package!
 
@@ -14,6 +13,7 @@ description: 'Package building doesn''t have to be scary! The tidyverse team has
   usethis: https://usethis.r-lib.org/
 
   R Packages book: https://r-pkgs.org/index.html'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -22,6 +22,51 @@ software:
 - rstudio
 - tidyverse
 - usethis
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Building R packages with devtools and usethis | RStudio
 
 external:  # updated automatically, do not edit

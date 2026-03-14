@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-01-04'
 description: 'Avoid App Failures Through Code Promotion by Alex Gold
 
@@ -17,11 +16,13 @@ description: 'Avoid App Failures Through Code Promotion by Alex Gold
 
 
   Presented at the 2022 Government & Public Sector R Conference (December 1, 2022)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Alex Gold - Avoid App Failures Through Code Promotion
 
 external:  # updated automatically, do not edit

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Open System Files, URLs, Anything
 github: r-lib/xopen
+image: logo.svg
 languages:
 - Shell
 latest_release: '2024-04-25T08:48:47+00:00'

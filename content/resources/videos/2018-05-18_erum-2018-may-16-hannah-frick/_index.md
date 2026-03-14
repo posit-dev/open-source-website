@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2018-05-18'
 description: 'Hannah Frick: Navigating the Wealth of R Packages'
+image: thumbnail.jpg
 people:
 - Hannah Frick
 resource_type: video
 resources: []
 software: []
+tags: []
 title: eRum 2018 - May 16 - Hannah Frick
 
 external:  # updated automatically, do not edit

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: R Package Dependency Resolution
 github: r-lib/pkgdepends
+image: logo.svg
 languages:
 - C
 latest_release: '2025-05-27T06:57:46+00:00'

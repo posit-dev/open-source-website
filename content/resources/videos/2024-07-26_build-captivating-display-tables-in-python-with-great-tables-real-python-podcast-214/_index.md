@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-07-26'
 description: 'Do you need help making data tables in Python look interesting and attractive? How can you create beautiful display-ready tables as easily as charts and graphs in Python? This week on the show, we speak with Richard Iannone and Michael Chow from Posit about the Great Tables Python library.
 
@@ -75,12 +74,28 @@ description: 'Do you need help making data tables in Python look interesting and
 
 
   👉 Links from the show: https://realpython.com/podcasts/rpp/214/'
+image: thumbnail.jpg
 people:
 - Michael Chow
 resource_type: video
 resources: []
 software:
 - Great Tables
+tags:
+- python
+- realpython
+- posit
+- richard iannone
+- michael chow
+- great tables
+- great_tables
+- display
+- presentation
+- nanoplots
+- heatmaps
+- quartodoc
+- plotnine
+- grammar of tables
 title: 'Build Captivating Display Tables in Python With Great Tables | Real Python Podcast #214'
 
 external:  # updated automatically, do not edit

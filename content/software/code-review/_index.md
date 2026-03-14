@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: ''
 github: tidyverse/code-review
+image: logo.svg
 people:
 - Davis Vaughan
 - Emil Hvitfeldt

@@ -1,8 +1,8 @@
 ---
+color: '#000080'
 description: Concept maps for all things data science
 github: rstudio/concept-maps
 image: dplyr.svg
-color: "#000080"
 languages:
 - HTML
 people:

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Death by Dropdown? Engineer Insightful Shiny Apps with Behavioral Science
 
@@ -16,11 +15,18 @@ description: 'Death by Dropdown? Engineer Insightful Shiny Apps with Behavioral 
   📁 BID Framework - https://github.com/jrwinget/bid-framework
 
   📁 bidux docs - https://github.com/jrwinget/bidux posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: Engineer Insightful Shiny Apps with Behavioral Science (Jeremy Winget, CrossStack) | posit::conf
 
 external:  # updated automatically, do not edit

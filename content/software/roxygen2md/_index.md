@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Convert elements of roxygen documentation to markdown
 github: r-lib/roxygen2md
+image: logo.svg
 languages:
 - R
 latest_release: '2024-02-18T17:50:05+00:00'

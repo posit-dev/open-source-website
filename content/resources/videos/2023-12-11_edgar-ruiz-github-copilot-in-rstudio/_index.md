@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-11'
 description: 'GitHub Copilot in RStudio - Edgar Ruiz
 
@@ -11,6 +10,7 @@ description: 'GitHub Copilot in RStudio - Edgar Ruiz
 
 
   Presented at the 2023 R/Pharma Conference (October 26, 2023)'
+image: thumbnail.jpg
 people:
 - Edgar Ruiz
 resource_type: video
@@ -20,6 +20,7 @@ software:
 - modeldb
 - rstudio
 - tidypredict
+tags: []
 title: Edgar Ruiz - GitHub Copilot in RStudio
 
 external:  # updated automatically, do not edit

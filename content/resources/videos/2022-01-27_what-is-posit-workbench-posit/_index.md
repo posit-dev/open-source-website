@@ -1,11 +1,43 @@
 ---
-image: thumbnail.jpg
 date: '2022-01-27'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- interoperability
+- serious data science
+- ggplot2
+- github
+- data wrangling
+- odbc
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- open source
+- OSS
+- reticulate
+- rstudio workbench
+- workbench
+- git
 title: What is Posit Workbench? || Posit
 
 external:  # updated automatically, do not edit

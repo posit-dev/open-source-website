@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: ''
 github: tidymodels/shinymodels
+image: logo.svg
 languages:
 - R
 latest_release: '2024-01-31T15:11:11+00:00'

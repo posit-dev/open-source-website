@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-15'
 description: In this video, we walk through the process of testing Quarto markdown outside of Posit Connect. This can help determine if issues are related to Quarto or related to the Posit product.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: Testing Quarto outside of Connect
 
 external:  # updated automatically, do not edit

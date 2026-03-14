@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'When people first learn about R’s capabilities to create fully integrated systems, automated visuals, and seamless data pipelines, the reaction can span from disbelief to amazement. R’s expansive capabilities can leave some feeling overwhelmed when tasked with larger projects like data pipelines. This talk invites the participant to hear the perspective of a self-taught R user who used curiosity and patience to create a functional data pipeline in R for a local health department. Specifically, this talk will touch on the following concepts:
 
@@ -21,10 +20,12 @@ description: 'When people first learn about R’s capabilities to create fully i
 
 
   Session: Generating high quality data'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Meghan Harris | Making Data Pipelines in R: A Story From A “Self-Taught” Perspective | Posit (2022)'
 
 external:  # updated automatically, do not edit

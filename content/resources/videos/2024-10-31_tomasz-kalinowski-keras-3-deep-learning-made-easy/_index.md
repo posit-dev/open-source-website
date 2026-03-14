@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Keras 3 is a ground-up rewrite of Keras 2 that refines the API and reintroduces multi-backend support. In this talk, learn about all the features (new and old) in Keras that make it easy to build, train, evaluate, and deploy deep learning models.
 
@@ -9,11 +8,13 @@ description: 'Keras 3 is a ground-up rewrite of Keras 2 that refines the API and
 
 
   GitHub Repo: https://github.com/t-kalinowski/posit-conf-2024'
+image: thumbnail.jpg
 people:
 - Tomasz Kalinowski
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Tomasz Kalinowski - Keras 3: Deep Learning made easy'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-01-28'
 description: 'Modern data engineering demands more. Move beyond the limitations of hosted notebooks and embrace the power of an IDE for modern data engineering.
 
@@ -27,11 +26,57 @@ description: 'Modern data engineering demands more. Move beyond the limitations 
   Lakeflow Declarative Pipelines: http://docs.databricks.com/aws/en/ldp
 
   Talk to us about integrating Posit & Databricks: https://posit.co/schedule-a-call/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'AI-Powered Data Engineering Workflows: Positron for Databricks Users'
 
 external:  # updated automatically, do not edit

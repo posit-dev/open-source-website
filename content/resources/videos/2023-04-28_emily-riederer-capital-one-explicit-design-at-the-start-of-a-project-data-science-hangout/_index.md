@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-04-28'
 description: 'We were recently joined by Emily Riederer, Senior Manager - Customer Management Data Science & Analytics at Capital One.
 
@@ -57,10 +56,12 @@ description: 'We were recently joined by Emily Riederer, Senior Manager - Custom
 
 
   To join future data science hangouts, add to your calendar here: pos.it/dsh (All are welcome! We''d love to see you!)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Emily Riederer @ Capital One | Explicit design at the start of a project | Data Science Hangout
 
 external:  # updated automatically, do not edit

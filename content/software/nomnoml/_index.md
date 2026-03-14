@@ -1,8 +1,8 @@
 ---
+color: '#FBB483'
 description: Sassy 'UML' Diagrams for R
 github: rstudio/nomnoml
 image: logo.png
-color: "#FBB483"
 languages:
 - JavaScript
 title: nomnoml

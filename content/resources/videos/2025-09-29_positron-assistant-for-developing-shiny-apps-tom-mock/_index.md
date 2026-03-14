@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-09-29'
 description: 'Positron Assistant for Developing Shiny Apps - Tom Mock (Posit)
 
@@ -12,6 +11,7 @@ description: 'Positron Assistant for Developing Shiny Apps - Tom Mock (Posit)
   * Positron - https://positron.posit.co/
 
   * Positron Assistant -  https://positron.posit.co/assistant.html'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -22,6 +22,7 @@ software:
 - querychat
 - Shiny
 - shinychat
+tags: []
 title: Positron Assistant for Developing Shiny Apps - Tom Mock
 
 external:  # updated automatically, do not edit

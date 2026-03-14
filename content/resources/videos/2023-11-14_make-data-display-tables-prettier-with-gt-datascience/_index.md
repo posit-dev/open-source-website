@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-14'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - gt
+tags: []
 title: 'Make data display tables prettier with {gt} #datascience'
 
 external:  # updated automatically, do not edit

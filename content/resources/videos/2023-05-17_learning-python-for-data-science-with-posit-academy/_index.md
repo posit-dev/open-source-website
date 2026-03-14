@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-17'
 description: 'Join us live for a presentation that details why Posit Academy is the best experience for professional data science teams who want to learn Python.
 
@@ -11,10 +10,12 @@ description: 'Join us live for a presentation that details why Posit Academy is 
 
 
   There’s no need to register. Just add the event to your calendar and show up on the presentation day.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Learning Python for Data Science with Posit Academy
 
 external:  # updated automatically, do not edit

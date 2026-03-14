@@ -1,8 +1,8 @@
 ---
+color: '#E0B987'
 description: Interactive Tutorials with R Markdown
 github: rstudio/learnr
 image: logo.png
-color: "#E0B987"
 languages:
 - R
 latest_release: '2025-11-13T15:23:19+00:00'

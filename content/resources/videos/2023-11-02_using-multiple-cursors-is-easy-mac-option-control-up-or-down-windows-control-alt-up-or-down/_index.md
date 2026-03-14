@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-02'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Using multiple cursors is easy! Mac: Option, Control, Up or Down. Windows: Control, Alt, Up or Down'
 
 external:  # updated automatically, do not edit

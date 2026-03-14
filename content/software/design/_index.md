@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Tidyverse design principles
 github: tidyverse/design
+image: logo.svg
 languages:
 - R
 people:

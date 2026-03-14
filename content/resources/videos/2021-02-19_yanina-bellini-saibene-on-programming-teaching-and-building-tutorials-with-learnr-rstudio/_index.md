@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Full title: On programming, teaching, and building interactive tutorials with learnr
 
@@ -10,12 +9,60 @@ description: 'Full title: On programming, teaching, and building interactive tut
   About Yanina:
 
   Yanina Bellini Saibene is a researcher at INTA (National Institute of Agricultural Technology) dedicated to applying data science to the agricultural sector and a professor in several regional specializations about Digital Agriculture and Data Analysis. Yanina is formally trained as a Licenciate in Information System with a Master degree in Data Mining and Knowledge Management. She is an active member of the R Community as an R-Ladies organizer and part of the R-Ladies Global Team. She also is a co-founder and co-chair of LatinR and part of the organizing team of useR!2020 and user!2021 (co-chair). She is also co-founder of MetaDocencia, a open, free, volunteer-lead, not-for-profit educational organization and part of the teams that translate educational and technical material to Spanish.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - learnr
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Yanina Bellina Saibene
+- learnr
 title: Yanina Bellini Saibene | On programming, teaching, and building tutorials with learnr | RStudio
 
 external:  # updated automatically, do not edit

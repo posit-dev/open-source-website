@@ -1,12 +1,60 @@
 ---
-image: thumbnail.jpg
 date: '2020-11-01'
 description: I host a weekly R Office Hour on the R4DS Online Learning Community Slack. By doing so, I have learned more about R than I ever would have thought. Here I&#39;ll present concrete examples of how R users can participate in the R community to expand their skills. R users of all skill levels can develop their skills by helping one another learn. Committing to help people with their coding challenges leads to the exploration of answers in areas you might otherwise not examine. A 5-minute presentation in our Lightning Talks series
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio::conf(2020)
+- Jon Harmon
+- R4DS
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'Jon Harmon | Learning by Teaching: Mentoring at the R4DS Online Learning Community | RStudio (2020)'
 
 external:  # updated automatically, do not edit

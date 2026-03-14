@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: GitHub Actions for the R community
 github: r-lib/actions
+image: logo.svg
 languages:
 - TypeScript
 latest_release: '2025-10-08T15:48:57+00:00'

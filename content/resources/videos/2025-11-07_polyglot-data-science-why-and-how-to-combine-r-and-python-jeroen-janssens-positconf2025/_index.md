@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Polyglot Data Science: Why and How to Combine R and Python
 
@@ -11,6 +10,7 @@ description: 'Polyglot Data Science: Why and How to Combine R and Python
 
 
   Doing everything in one language is convenient but not always possible. For example, your Python app might need an algorithm only available as an R package. Or your R analysis might need to fit into a Python pipeline. What do you do? You take a polyglot approach! Many data scientists hesitate to explore beyond their main language, but combining R and Python can be powerful. In my talk, I’ll explain why polyglot data science is beneficial and address common concerns. Then, I’ll show you how to make it happen using tools like Quarto, Positron, Reticulate, and the Unix command line. By the end, you’ll gain a fresh perspective and practical ideas to start. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Jeroen Janssens
 resource_type: video
@@ -19,6 +19,13 @@ software:
 - positron
 - Quarto
 - reticulate
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: 'Polyglot Data Science: Why and How to Combine R and Python (Jeroen Janssens) | posit::conf(2025)'
 
 external:  # updated automatically, do not edit

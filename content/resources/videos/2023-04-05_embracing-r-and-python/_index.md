@@ -1,15 +1,60 @@
 ---
-image: thumbnail.jpg
 date: '2023-04-05'
 description: 'Listen to Posit''s Chief Scientist Hadley Wickham talk about the future of Posit.
 
 
   Visit www.posit.co to learn more.'
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Embracing R and Python
 
 external:  # updated automatically, do not edit

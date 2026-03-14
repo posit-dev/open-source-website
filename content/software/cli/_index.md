@@ -1,10 +1,12 @@
 ---
+color: '#859900'
 description: Tools for making beautiful & useful command line interfaces
 github: r-lib/cli
 image: alert-success.svg
-color: "#859900"
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2025-04-22T11:59:57+00:00'
 people:
 - Gábor Csárdi

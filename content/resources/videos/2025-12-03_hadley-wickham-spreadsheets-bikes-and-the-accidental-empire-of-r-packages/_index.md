@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-03'
 description: 'Before Hadley Wickham became a pillar of modern data science, he was a spreadsheet-loving teenager making databases for his dad’s job. In this episode, he reflects on the early days of his involvement with R, the birth of tidyverse, and how real-world unpredictability — like a bear in a field — shapes data science.
 
@@ -24,6 +23,7 @@ description: 'Before Hadley Wickham became a pillar of modern data science, he w
   • Current obsession: using LLMs  to make data science faster, easier, and more fun
 
   • How writing books is a form of tidying ideas, and how a Shiny textbook led to a custom bike'
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 resource_type: video
@@ -31,6 +31,7 @@ resources: []
 software:
 - Shiny
 - tidyverse
+tags: []
 title: 'Hadley Wickham: Spreadsheets, bikes, and the accidental empire of R packages'
 
 external:  # updated automatically, do not edit

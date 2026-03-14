@@ -1,8 +1,8 @@
 ---
+color: '#282D35'
 description: Run R CMD check from R and collect the results
 github: r-lib/rcmdcheck
 image: rcmdcheck.svg
-color: "#282D35"
 languages:
 - R
 latest_release: '2021-09-23T11:00:56+00:00'

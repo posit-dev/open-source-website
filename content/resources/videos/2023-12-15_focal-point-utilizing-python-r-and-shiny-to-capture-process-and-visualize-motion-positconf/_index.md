@@ -1,12 +1,59 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-15'
 description: "Presented by Justin Markel & Alyssa Burritt\r\n\r\nOne of the fastest movements in modern sports is a golf swing. Capturing this motion using a high-speed camera system creates many unique challenges in processing, analyzing, and visualizing the thousands of data points that are generated. These spatial coordinates can be quickly translated through Python scripts to well-known, industry-specific performance metrics and graphics in Shiny. Down the line, R utilities aid more complicated analyses and optimizations, driving new product innovations. \r\n\r\nThis talk will cover our company's process of implementing these tools into our workflow and highlight key program features that have helped successfully combine these applications for users with a variety of technical backgrounds.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: R or Python? Why not both!.\r\nSession Code: TALK-1120"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- databricks
+- data science
+- rstudio
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- quarto
+- posit
+- ml
 title: 'FOCAL Point: Utilizing Python, R, and Shiny to Capture, Process, and Visualize Motion - posit::conf'
 
 external:  # updated automatically, do not edit

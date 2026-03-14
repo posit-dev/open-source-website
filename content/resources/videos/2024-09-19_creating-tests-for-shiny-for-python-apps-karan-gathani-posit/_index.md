@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-09-19'
 description: 'With the Shiny for Python v1.0 release, Shiny provides a simple way to create a test file for your Shiny app. The shiny add test command is a helpful CLI tool for Shiny app developers. It simplifies the process of creating test files for their applications.
 
@@ -15,6 +14,7 @@ description: 'With the Shiny for Python v1.0 release, Shiny provides a simple wa
   https://shiny.posit.co/py/docs/unit-testing.html
 
   https://shiny.posit.co/py/docs/playwright-testing.html'
+image: thumbnail.jpg
 people:
 - Karan Gathani
 resource_type: video
@@ -23,6 +23,51 @@ software:
 - cli
 - Shiny for Python
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Creating tests for Shiny for Python apps | Karan Gathani | Posit
 
 external:  # updated automatically, do not edit

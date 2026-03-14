@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'How did posit::conf(2023) influence my role as coordinator of a nationwide bioinformatics training programme in Aotearoa New Zealand? Inspired by the talks and workshops I attended at last year''s conference, I set myself 17 tasks that would strengthen the local data science community, showcase Posit tools, and improve my own skill set. Post-conference enthusiasm was at an all-time high. Could I translate this enthusiasm into action to improve the data science training community? This talk will demonstrate how I was able to implement skills and tools from posit::conf to improve my community and highlight the current state of training in New Zealand, including the methods used to connect a small but widely dispersed group of researchers.
 
@@ -9,10 +8,12 @@ description: 'How did posit::conf(2023) influence my role as coordinator of a na
 
 
   Slides: https://drive.google.com/drive/folders/1pwYni_LFFCifS5ANlFOePbFkfjoLVyeP'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Tyler McInnes - Converting Posit-Enthusiasm into Posit-Action
 
 external:  # updated automatically, do not edit

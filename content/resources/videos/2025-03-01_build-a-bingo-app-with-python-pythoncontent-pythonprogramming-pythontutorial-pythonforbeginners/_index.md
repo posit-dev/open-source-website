@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2025-03-01'
 description: 'Build a Bingo app with Python #pythoncontent #pythonprogramming #pythontutorial #pythonforbeginners'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Build a Bingo app with Python #pythoncontent #pythonprogramming #pythontutorial #pythonforbeginners'
 
 external:  # updated automatically, do not edit

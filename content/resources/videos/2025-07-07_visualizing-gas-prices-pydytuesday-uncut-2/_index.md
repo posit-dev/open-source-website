@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-07-07'
 description: 'Join Michael Chow (open source developer at Posit) and Jeroen Janssens (developer relations engineer at Posit) as they dive into this week''s #PydyTuesday dataset. This time, they visualize gas prices using the four P''s: Positron, Python, Polars, and Plotnine.
 
@@ -20,6 +19,7 @@ description: 'Join Michael Chow (open source developer at Posit) and Jeroen Jans
 
 
   #python #polars #tidytuesday #datascience'
+image: thumbnail.jpg
 people:
 - Jeroen Janssens
 - Michael Chow
@@ -28,6 +28,7 @@ resources: []
 software:
 - plotnine
 - positron
+tags: []
 title: 'Visualizing Gas Prices | PydyTuesday Uncut #2'
 
 external:  # updated automatically, do not edit

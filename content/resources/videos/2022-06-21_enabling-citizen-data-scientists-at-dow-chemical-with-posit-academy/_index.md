@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-06-21'
 description: 'Led by James Wade, Associate Research Scientist at Dow Chemical
 
@@ -95,6 +94,7 @@ description: 'Led by James Wade, Associate Research Scientist at Dow Chemical
   For more information on RStudio Academy: rstudio.com/academy
 
   Link to speak with RStudio: rstd.io/chat-with-rstudio'
+image: thumbnail.jpg
 people:
 - RStudio Team
 resource_type: video
@@ -102,6 +102,7 @@ resources: []
 software:
 - rstudio
 - tidyverse
+tags: []
 title: Enabling Citizen Data Scientists at Dow Chemical with Posit Academy
 
 external:  # updated automatically, do not edit

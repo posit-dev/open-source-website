@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Making Things Nice in Python
 
@@ -14,6 +13,7 @@ description: 'Making Things Nice in Python
 
 
   However, I argue it''s good to be doing this! People are benefitting from these approaches. I''ll share a few of these developer stories with the takeaway being that Python packages could and should pay attention to good user experience. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Rich Iannone
 resource_type: video
@@ -21,6 +21,13 @@ resources: []
 software:
 - Great Tables
 - pointblank
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Making Things Nice in Python (Rich Iannone, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

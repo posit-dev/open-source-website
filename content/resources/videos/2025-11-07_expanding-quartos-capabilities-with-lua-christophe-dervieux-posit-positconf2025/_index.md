@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Beyond the Basics: Expanding Quarto''s Capabilities with Lua
 
@@ -20,12 +19,20 @@ description: 'Beyond the Basics: Expanding Quarto''s Capabilities with Lua
 
 
   📁 Materials - https://cderv.quarto.pub/posit-conf-2025-quarto-lua/ posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Christophe Dervieux
 resource_type: video
 resources: []
 software:
 - Quarto
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: Expanding Quarto's Capabilities with Lua (Christophe Dervieux, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

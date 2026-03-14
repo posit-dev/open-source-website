@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-27'
 description: '🌲 Tis the season for joy and connection, and what better time to extend that collaborative spirit into your data science endeavors 🌟
 
@@ -49,6 +48,7 @@ description: '🌲 Tis the season for joy and connection, and what better time t
 
 
   Happy holidays! Cheers to 2024!'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -56,6 +56,7 @@ software:
 - bslib
 - rstudio
 - Shiny
+tags: []
 title: How to collaborate effectively with other data scientists (version control, project sharing, etc.)
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-12-21'
 description: 'We were joined by Javier Orraca-Deatcu, Lead Machine Learning Engineer at Centene.
 
@@ -73,6 +72,7 @@ description: 'We were joined by Javier Orraca-Deatcu, Lead Machine Learning Engi
 
 
   To join future data science hangouts, add to your calendar here: pos.it/dsh (All are welcome! We''d love to see you!)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -81,6 +81,7 @@ software:
 - Quarto
 - reticulate
 - Shiny
+tags: []
 title: Data Science Hangout | Javier Orraca-Deatcu, Centene | Excel to data science to lead ML engineer
 
 external:  # updated automatically, do not edit

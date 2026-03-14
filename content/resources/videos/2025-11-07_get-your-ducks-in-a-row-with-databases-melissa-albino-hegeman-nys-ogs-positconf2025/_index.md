@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Get your ducks in a row... faster Shiny apps with DuckDB
 
@@ -11,11 +10,19 @@ description: 'Get your ducks in a row... faster Shiny apps with DuckDB
 
 
   Our small team tackled sluggish Shiny applications by implementing DuckDB as a cache layer, transforming slow, resource-intensive operations into responsive user experiences. Initially, our application pulled data directly from SQL Server, performing real-time aggregations that resulted in poor response times. By restructuring our pipeline to pre-compute results in DuckDB, we significantly improved performance. This presentation demonstrates how we identified bottlenecks, implemented DuckDB integration, and measured improvements. We''ll share practical examples of DuckDB integration with R, discuss trade-offs, and show how this accessible solution can benefit other small teams with limited resources. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Get Your Ducks in a Row with Databases (Melissa Albino Hegeman, NYS OGS) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

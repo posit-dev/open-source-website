@@ -1,8 +1,8 @@
 ---
+color: '#E7DAB3'
 description: Encapsulated object-oriented programming for R
 github: r-lib/R6
 image: logo.png
-color: "#E7DAB3"
 languages:
 - R
 latest_release: '2025-02-14T21:15:08+00:00'

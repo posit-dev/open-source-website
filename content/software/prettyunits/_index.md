@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Pretty, human readable formatting of quantities
 github: r-lib/prettyunits
+image: logo.svg
 languages:
 - JavaScript
 latest_release: '2023-09-24T10:52:33+00:00'

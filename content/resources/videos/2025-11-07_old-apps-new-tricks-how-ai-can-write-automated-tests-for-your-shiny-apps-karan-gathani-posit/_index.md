@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Old Apps, New Tricks: How AI can write Automated Tests for your Shiny Apps
 
@@ -14,12 +13,19 @@ description: 'Old Apps, New Tricks: How AI can write Automated Tests for your Sh
 
 
   📁 Materials - https://docs.google.com/presentation/d/130bJNGp3XIlKPaouA8K0Lv0O3P7OFesW/edit?usp=sharing&ouid=105060716153365836674&rtpof=true&sd=true posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Karan Gathani
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: 'Old Apps, New Tricks: How AI can write Automated Tests for your Shiny Apps (Karan Gathani, Posit)'
 
 external:  # updated automatically, do not edit

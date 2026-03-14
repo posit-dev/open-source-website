@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-01-24'
 description: 'Two talks!
 
@@ -43,12 +42,14 @@ description: 'Two talks!
 
 
   At this meetup, we also proposed the formation of a community working group focused on developing and popularizing open source solutions for data scientists and analysts working in supply chain management. We''d love to start by creating a home – initially a website – which hosts resources for supply chain data scientists. More to come. Form to be part of the working group: rstd.io/supply-chain-community-org'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - Shiny
+tags: []
 title: Ralph Asher & Laura Darby Rose | R in Supply Chain Management | RStudio
 
 external:  # updated automatically, do not edit

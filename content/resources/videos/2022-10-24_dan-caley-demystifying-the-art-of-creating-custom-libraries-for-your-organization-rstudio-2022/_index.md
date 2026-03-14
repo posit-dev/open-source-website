@@ -1,15 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Demystifying the Art of creating custom Libraries for your organization. Imagine a world where a company has its own R library, this stores the most common functions an analytical team uses. From connecting to the Database to reading in SQL from a SQL file to creating custom graphs that only take in a few inputs. In today''s world, we find that code is siloed on many Analyst machines. Even though the same code is being used over and over again by the same person or multiple people carry on with this architecture. We scramble to figure out where we save that nice code chunk so that we can use it on another package. Instead, we can all leverage creating our own libraries that store and document the cool features we''ve created.
 
 
   Session: Working with code is hard'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Dan Caley | Demystifying the art of creating custom libraries for your organization | RStudio (2022)
 
 external:  # updated automatically, do not edit

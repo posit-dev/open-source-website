@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-02-07'
 description: 'R in Public Sector: Organizational & Technical Aspects of Shiny in Production with the Dutch National Institute for Public Health and the Environment.
 
@@ -82,6 +81,7 @@ description: 'R in Public Sector: Organizational & Technical Aspects of Shiny in
 
 
   Job Spijker: Job Spijker is a senior research and data scientist at the Dutch National Institute of Public Health and the Environment. He has a PhD in Earth Sciences with a focus on computational and statistical methods of spatial data. He is currently involved in projects about how the institute’s environmental and health data can be leveraged to create insightful actionable information to assist policy makers at local, regional, and national level.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -89,6 +89,7 @@ software:
 - rstudio
 - Shiny
 - shinyapps
+tags: []
 title: Sjoerd Wierenga & Job Spijker | Public Health | Shiny in Production | Posit
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Hacking Productivity with LLMs: What Works (and What Doesn’t)
 
@@ -14,10 +13,18 @@ description: 'Hacking Productivity with LLMs: What Works (and What Doesn’t)
 
 
   In this talk, I''ll share what worked, what didn''t, and what I learned. I''ll explore important questions to ask around the kinds of tasks LLMs are good for and where they fall short, how to use LLMs to build lasting skills, and why in some cases, investing in human connection pays off more than AI assistance. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Hacking Productivity with LLMs (Nic Crane, NC Data Labs) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

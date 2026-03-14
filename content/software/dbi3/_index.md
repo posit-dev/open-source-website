@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: DBI revisited
 github: r-dbi/dbi3
+image: logo.svg
 languages:
 - R
 title: dbi3

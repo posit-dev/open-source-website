@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-25'
 description: 'Julia Silge⁠ is an engineering manager at Posit PBC, formerly know as R-studio, where she leads a team of developers building open source software MLOps. Before Posit, she finished a PhD in astrophysics, worked for several years in the nonprofit space, and was a data scientist at Stack Overflow where some of her most public work involved the annual developer survey. We talked about MLOps tools, challenges in survey data, text analysis, and balancing her interests in data science and engineering. Subscribe to Daliana''s newsletter on ⁠www.dalianaliu.com⁠ for more on data science and career.
 
@@ -32,11 +31,13 @@ description: 'Julia Silge⁠ is an engineering manager at Posit PBC, formerly kn
   00:39:14 Python vs. R for data analysis
 
   00:44:35 Exciting aspects in career and personal life'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software: []
+tags: []
 title: From Physics PhD to MLOps builder - Julia Silge - The Data Scientist Show #087
 
 external:  # updated automatically, do not edit

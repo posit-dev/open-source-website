@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'ChalkTalk: Globalizing Data Science Education with AI-generated Videos
 
@@ -16,11 +15,19 @@ description: 'ChalkTalk: Globalizing Data Science Education with AI-generated Vi
   📁 GitHub - https://github.com/the-graph-courses/chalktalk_studio
 
   📁 Slides - https://www.dropbox.com/scl/fi/flsb81eznl8ypuwpxi53t/Posit-Conf-Prezi-Chalktalk-Kene-David-Nwosu.pptx?rlkey=hxmeyb9vijp0ucgpjqmod5qwt&e=4&dl=0 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: 'ChalkTalk: Globalizing Data Science Education with AI-generated Videos (Kene David Nwosu)'
 
 external:  # updated automatically, do not edit

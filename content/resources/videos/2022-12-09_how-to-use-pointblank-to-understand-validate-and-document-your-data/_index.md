@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-12-09'
 description: 'Workshop recorded as part of the R/Pharma Workshop Series (October 27, 2022)
 
@@ -11,12 +10,14 @@ description: 'Workshop recorded as part of the R/Pharma Workshop Series (October
   - https://github.com/rich-iannone/pointblank-workshop
 
   - https://github.com/kmasiello/pointblank_demo'
+image: thumbnail.jpg
 people:
 - Rich Iannone
 resource_type: video
 resources: []
 software:
 - pointblank
+tags: []
 title: How to Use {pointblank} to Understand, Validate, and Document your Data
 
 external:  # updated automatically, do not edit

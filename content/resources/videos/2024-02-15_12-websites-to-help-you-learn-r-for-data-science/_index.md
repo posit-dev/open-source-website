@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-15'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 12 websites to help you learn R for Data Science🙌
 
 external:  # updated automatically, do not edit

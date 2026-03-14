@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2025-05-09'
 description: 'Github repo: https://github.com/posit-dev/python-tidytuesday'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - python-tidytuesday
+tags: []
 title: 'Projects to build your Python portfolio #pydytuesday #pythonprojects #datascience #dataanalysis'
 
 external:  # updated automatically, do not edit

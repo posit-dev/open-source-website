@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-08-01'
 description: 'Asynchronous programming can be a powerful paradigm, whereby computations are allowed to run concurrently without blocking the main session. It is an opportune time to survey the current landscape, as R infrastructure in this respect has matured significantly over recent years.
 
@@ -14,6 +13,7 @@ description: 'Asynchronous programming can be a powerful paradigm, whereby compu
 
 
   In addition to these existing tools, exciting developments in asynchronous programming are just around the corner. These will be previewed, together with speculation on what might be possible at some point in the future.'
+image: thumbnail.jpg
 people:
 - Charlie Gao
 resource_type: video
@@ -22,6 +22,7 @@ software:
 - ellmer
 - httr2
 - mirai
+tags: []
 title: The Future of Asynchronous Programming in R - Charlie Gao
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-02-27'
 description: 'To join future data science hangouts, add it to your calendar here: https://pos.it/dsh - All are welcome! We''d love to see you!
 
@@ -36,10 +35,12 @@ description: 'To join future data science hangouts, add it to your calendar here
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Pure math to data science at YouTube | Mrinal Raghupathi | Data Science Hangout
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Translating R for Data Science into Portuguese: A Community-Led Initiative
 
@@ -14,6 +13,7 @@ description: 'Translating R for Data Science into Portuguese: A Community-Led In
 
 
   📁 Materials - https://beamilz.com/talks/en/2025-posit-conf/ posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 - Mine Çetinkaya-Rundel
@@ -21,6 +21,13 @@ resource_type: video
 resources: []
 software:
 - tidyverse
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: 'Translating R for Data Science into Portuguese: A Community-Led Initiative (Beatriz Milz, UFABC)'
 
 external:  # updated automatically, do not edit

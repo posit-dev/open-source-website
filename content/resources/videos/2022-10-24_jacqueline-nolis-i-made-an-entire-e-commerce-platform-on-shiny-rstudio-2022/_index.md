@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'E-commerce requires passing data between many components like managing a shopping cart, taking payment, fulfilling orders, and sending emails. I''ve successfully created a full e-commerce platform entirely in R for a quirky side project. The R package ggirl lets users order ggplot2 plots as postcards and more via R functions. Those R functions pass data to a separate Shiny app, which then passes data other services like Stripe payment APIs and printing APIs. In this talk I will walk through how to use packages like httr, callr, and brochure to have your Shiny apps call external services and do many tasks in parallel. You’ll leave the talk with more ways to use Shiny than dashboards plus the knowledge to monetize your existing dashboards!
 
@@ -8,6 +7,7 @@ description: 'E-commerce requires passing data between many components like mana
 
 
   Session: Unexpected uses of R'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -17,6 +17,7 @@ software:
 - httr
 - rstudio
 - Shiny
+tags: []
 title: Jacqueline Nolis | I made an entire e-commerce platform on Shiny | RStudio (2022)
 
 external:  # updated automatically, do not edit

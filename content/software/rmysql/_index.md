@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: Legacy DBI interface for MySQL
 github: r-dbi/RMySQL
+image: logo.svg
 languages:
 - C
 latest_release: '2022-12-05T23:01:14+00:00'

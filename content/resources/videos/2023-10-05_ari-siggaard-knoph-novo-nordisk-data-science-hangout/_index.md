@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-05'
 description: 'We were recently joined by Ari Siggaard Knoph, International Lead Programmer, Statistical Programming Specialist at Novo Nordisk to discuss developing and maintaining packages for clinical reporting and submission. Ari is the primary driver for the use of R in clinical submissions at Novo Nordisk and holds a council seat on the pharmaverse council.
 
@@ -28,10 +27,12 @@ description: 'We were recently joined by Ari Siggaard Knoph, International Lead 
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Ari Siggaard Knoph @ Novo Nordisk | Data Science Hangout
 
 external:  # updated automatically, do not edit

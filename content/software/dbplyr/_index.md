@@ -1,10 +1,12 @@
 ---
+color: '#EA4A41'
 description: Database (DBI) backend for dplyr
 github: tidyverse/dbplyr
 image: logo.png
-color: "#EA4A41"
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2025-09-09T16:38:02+00:00'
 people:
 - Hadley Wickham

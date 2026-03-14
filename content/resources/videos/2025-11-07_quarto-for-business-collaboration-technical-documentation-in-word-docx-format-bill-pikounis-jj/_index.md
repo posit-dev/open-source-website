@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Quarto for Business Collaboration and Technical Documentation in Word docx format
 
@@ -14,11 +13,19 @@ description: 'Quarto for Business Collaboration and Technical Documentation in W
 
 
   Quarto provides an efficient solution to address these needs.  This presentation illustrates and covers concepts of the solution that builds upon R and the Posit platform to reliably produce an automated and flexible workflow for figure and table captions, autonumbering, and cross-referencing in docx format. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Quarto for Business Collaboration & Technical Documentation in Word docx format (Bill Pikounis, J&J)
 
 external:  # updated automatically, do not edit

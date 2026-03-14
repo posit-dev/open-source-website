@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: Read Non-Rectangular Text Data
 github: r-lib/meltr
+image: logo.svg
 languages:
 - C++
 latest_release: '2022-09-10T19:37:00+00:00'

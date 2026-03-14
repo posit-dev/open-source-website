@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: The most recent version of the Applied Machine Learning notes
 github: tidymodels/aml-training
+image: logo.svg
 languages:
 - HTML
 latest_release: '2019-05-27T19:19:27+00:00'

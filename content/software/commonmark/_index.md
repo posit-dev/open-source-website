@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: High Performance CommonMark and Github Markdown Rendering in R
 github: r-lib/commonmark
+image: logo.svg
 languages:
 - C
 latest_release: '2025-07-07T12:31:35+00:00'

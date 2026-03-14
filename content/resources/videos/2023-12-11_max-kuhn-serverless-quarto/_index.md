@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-12-11'
 description: 'Serverless Quarto - Max Kuhn
 
@@ -15,6 +14,7 @@ description: 'Serverless Quarto - Max Kuhn
 
 
   Presented at the 2023 R/Pharma Conference (October 25, 2023)'
+image: thumbnail.jpg
 people:
 - Max Kuhn
 resource_type: video
@@ -23,6 +23,7 @@ software:
 - Quarto
 - rstudio
 - shinylive
+tags: []
 title: Max Kuhn - Serverless Quarto
 
 external:  # updated automatically, do not edit

@@ -1,0 +1,178 @@
+{{/* eval.html — Recursive json-logic evaluator.
+     Input: dict "rule" $rule "data" $data
+     Returns: evaluation result (bool, number, string, or nil)
+*/}}
+{{ $rule := .rule }}
+{{ $data := .data }}
+{{ $ruleType := printf "%T" $rule }}
+{{ $result := index (dict) "" }}
+
+{{/* Primitives — return as-is */}}
+{{ if not (strings.Contains $ruleType "map") }}
+  {{ $result = $rule }}
+{{ else }}
+
+  {{/* Extract single operator key and args */}}
+  {{ $op := "" }}
+  {{ $rawArgs := index (dict) "" }}
+  {{ range $k, $v := $rule }}
+    {{ $op = $k }}
+    {{ $rawArgs = $v }}
+  {{ end }}
+
+  {{ if eq $op "var" }}
+    {{/* var: resolve directly, no recursive eval of args */}}
+    {{ $result = partial "jsonlogic/resolve.html" (dict "args" $rawArgs "data" $data) }}
+  {{ else }}
+
+    {{/* Normalize $rawArgs to slice (handles bare values like {"!": true}) */}}
+    {{ $args := slice }}
+    {{ if strings.Contains (printf "%T" $rawArgs) "[]" }}
+      {{ $args = $rawArgs }}
+    {{ else }}
+      {{ $args = slice $rawArgs }}
+    {{ end }}
+
+    {{/* Recursively evaluate each arg (wrap in dict to prevent append flattening slices) */}}
+    {{ $evaluated := slice }}
+    {{ range $args }}
+      {{ $val := partial "jsonlogic/eval.html" (dict "rule" . "data" $data) }}
+      {{ $evaluated = $evaluated | append (dict "v" $val) }}
+    {{ end }}
+
+    {{/* Safe access to first two evaluated args */}}
+    {{ $a := index (dict) "" }}
+    {{ $b := index (dict) "" }}
+    {{ if gt (len $evaluated) 0 }}{{ $a = (index $evaluated 0).v }}{{ end }}
+    {{ if gt (len $evaluated) 1 }}{{ $b = (index $evaluated 1).v }}{{ end }}
+
+    {{/* Nil and type detection */}}
+    {{ $aIsNil := eq (printf "%T" $a) "<nil>" }}
+    {{ $bIsNil := eq (printf "%T" $b) "<nil>" }}
+    {{ $aType := printf "%T" $a }}
+    {{ $bType := printf "%T" $b }}
+    {{ $aIsNum := or (strings.Contains $aType "int") (strings.Contains $aType "float") }}
+    {{ $bIsNum := or (strings.Contains $bType "int") (strings.Contains $bType "float") }}
+
+    {{/* Dispatch operators */}}
+    {{ if eq $op "==" }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else if and $aIsNum $bIsNum }}
+        {{ $result = eq (float $a) (float $b) }}
+      {{ else }}
+        {{ $result = eq $a $b }}
+      {{ end }}
+
+    {{ else if eq $op "!=" }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else if and $aIsNum $bIsNum }}
+        {{ $result = ne (float $a) (float $b) }}
+      {{ else }}
+        {{ $result = ne $a $b }}
+      {{ end }}
+
+    {{ else if eq $op ">" }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else }}
+        {{ $result = gt (float $a) (float $b) }}
+      {{ end }}
+
+    {{ else if eq $op ">=" }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else }}
+        {{ $result = ge (float $a) (float $b) }}
+      {{ end }}
+
+    {{ else if eq $op "<" }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else }}
+        {{ $result = lt (float $a) (float $b) }}
+      {{ end }}
+
+    {{ else if eq $op "<=" }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else }}
+        {{ $result = le (float $a) (float $b) }}
+      {{ end }}
+
+    {{ else if eq $op "in" }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else }}
+        {{ $bTypeIn := printf "%T" $b }}
+        {{ if strings.Contains $bTypeIn "[]" }}
+          {{ $result = in $b $a }}
+        {{ else if strings.Contains $bTypeIn "string" }}
+          {{ $result = strings.Contains (string $b) (string $a) }}
+        {{ else }}
+          {{ $result = false }}
+        {{ end }}
+      {{ end }}
+
+    {{ else if eq $op "and" }}
+      {{ $result = true }}
+      {{ range $evaluated }}
+        {{ if not .v }}
+          {{ $result = false }}
+        {{ end }}
+      {{ end }}
+
+    {{ else if eq $op "or" }}
+      {{ $result = false }}
+      {{ range $evaluated }}
+        {{ if .v }}
+          {{ $result = true }}
+        {{ end }}
+      {{ end }}
+
+    {{ else if eq $op "!" }}
+      {{ $result = not $a }}
+
+    {{ else if eq $op "contains_all" }}
+      {{ $result = true }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else }}
+        {{ range $b }}
+          {{ if not (in $a .) }}
+            {{ $result = false }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+    {{ else if eq $op "contains_any" }}
+      {{ $result = false }}
+      {{ if not (or $aIsNil $bIsNil) }}
+        {{ range $b }}
+          {{ if in $a . }}
+            {{ $result = true }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+    {{ else if eq $op "contains_none" }}
+      {{ $result = true }}
+      {{ if or $aIsNil $bIsNil }}
+        {{ $result = false }}
+      {{ else }}
+        {{ range $b }}
+          {{ if in $a . }}
+            {{ $result = false }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+    {{ else }}
+      {{ $result = false }}
+    {{ end }}
+
+  {{ end }}
+{{ end }}
+
+{{ return $result }}

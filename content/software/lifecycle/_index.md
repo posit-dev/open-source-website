@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Manage the life cycle of your exported functions and arguments
 github: r-lib/lifecycle
+image: logo.svg
 languages:
 - R
 latest_release: '2026-01-09T14:10:39+00:00'

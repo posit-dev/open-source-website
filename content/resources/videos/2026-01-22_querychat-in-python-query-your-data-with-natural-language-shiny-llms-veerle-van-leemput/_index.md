@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2026-01-22'
 description: 'Learn how to use QueryChat to add natural language querying to your Python data applications. This tutorial shows you how to let users ask questions about data without building complex filters or dashboards.
 
@@ -85,6 +84,7 @@ description: 'Learn how to use QueryChat to add natural language querying to you
   14:52 - Safety and security deep dive
 
   16:22 - Resources and links'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -92,6 +92,51 @@ software:
 - querychat
 - Shiny for Python
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: 'querychat in Python: Query Your Data with Natural Language | Shiny + LLMs | Veerle van Leemput'
 
 external:  # updated automatically, do not edit

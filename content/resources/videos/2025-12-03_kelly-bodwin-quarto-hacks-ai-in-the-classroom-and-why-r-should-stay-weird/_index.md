@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-03'
 description: 'In this episode, we’re joined by Kelly Bodwin — candy corn defender, board game enthusiast, and Associate Professor of Statistics and Data Science at Cal Poly. We discuss her path from English and French to statistics, how she builds teaching tools and navigates AI in the classroom, and what it takes to keep a programming community weird in the best possible way.
 
@@ -18,11 +17,13 @@ description: 'In this episode, we’re joined by Kelly Bodwin — candy corn def
   • Applied stats meets history: analyzing social networks from the Polish Revolution
 
   • Why remarkable, welcoming communities matter more than perfect code'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags: []
 title: 'Kelly Bodwin: Quarto hacks, AI in the classroom, and why R should stay weird'
 
 external:  # updated automatically, do not edit

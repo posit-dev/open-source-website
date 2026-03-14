@@ -1,10 +1,12 @@
 ---
+color: '#31A459'
 description: A fresh approach to string manipulation in R
 github: tidyverse/stringr
 image: logo.png
-color: "#31A459"
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2025-11-03T22:09:36+00:00'
 people:
 - Hadley Wickham

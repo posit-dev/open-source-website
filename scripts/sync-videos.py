@@ -166,7 +166,7 @@ def compute_top_level_keys(
     override: dict[str, Any],
 ) -> dict[str, Any]:
     result = {}
-    keys_to_process = ["title", "people", "software", "description"]
+    keys_to_process = ["title", "people", "software", "description", "tags"]
 
     for key in keys_to_process:
         value = external.get(key)
@@ -294,6 +294,8 @@ def build_external(
     external: dict[str, Any] = {
         f: video[f] for f in fields if f in video and video[f] is not None
     }
+    if "tags" in external and isinstance(external["tags"], list):
+        external["tags"] = [re.sub(r"[#?/]", "", t) for t in external["tags"] if re.sub(r"[#?/]", "", t)]
     if detected_people:
         external["people"] = detected_people
     if detected_software:
@@ -367,6 +369,7 @@ def process_video(
         frontmatter["description"] = top_level.get("description", video["description"])
         frontmatter["people"] = top_level.get("people", [])
         frontmatter["software"] = top_level.get("software", [])
+        frontmatter["tags"] = top_level.get("tags", [])
         if "resources" not in frontmatter:
             frontmatter["resources"] = []
 

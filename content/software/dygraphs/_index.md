@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: R interface to dygraphs
 github: rstudio/dygraphs
+image: logo.svg
 languages:
 - JavaScript
 latest_release: '2018-07-11T21:28:49+00:00'

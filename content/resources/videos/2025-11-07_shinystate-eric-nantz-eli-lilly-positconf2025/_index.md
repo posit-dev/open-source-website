@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'shinystate: Launching collaboration and session management to new heights in Shiny applications
 
@@ -14,11 +13,19 @@ description: 'shinystate: Launching collaboration and session management to new 
 
 
   📁 Materials - https://rpodcast.github.io/shinystate-positconf2025/ posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Shinystate (Eric Nantz, Eli Lilly) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

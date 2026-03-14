@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-02-27'
 description: 'In this session, Isabella Velásquez walks us through Quarto Live and Shinylive, powerful tools that allow us to create interactive R, Python, and Shiny applications without a server. These technologies make it easier than ever to share dynamic, engaging data science projects directly in the browser.
 
@@ -32,6 +31,7 @@ description: 'In this session, Isabella Velásquez walks us through Quarto Live 
 
 
   Please visit: https://rladiesrome.org'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -39,6 +39,22 @@ software:
 - Quarto
 - Shiny
 - shinylive
+tags:
+- coding
+- programming
+- tech
+- development
+- webdevelopment
+- softwareengineering
+- datascience
+- machinelearning
+- artificialintelligence
+- techcommunity
+- rstats
+- rladies
+- womenwhocode
+- whomenintech
+- womeninstem
 title: R-Ladies Rome (English) - Interactive R, Python, and Shiny in the Browser with Quarto and Shinylive
 
 external:  # updated automatically, do not edit
@@ -88,21 +104,21 @@ external:  # updated automatically, do not edit
   - Shiny
   - shinylive
   tags:
-  - '#coding'
-  - '#programming'
-  - '#tech'
-  - '#development'
-  - '#webdevelopment'
-  - '#softwareengineering'
-  - '#datascience'
-  - '#machinelearning'
-  - '#artificialintelligence'
-  - '#techcommunity'
-  - '#rstats'
-  - '#rladies'
-  - '#womenwhocode'
-  - '#whomenintech'
-  - '#womeninstem'
+  - coding
+  - programming
+  - tech
+  - development
+  - webdevelopment
+  - softwareengineering
+  - datascience
+  - machinelearning
+  - artificialintelligence
+  - techcommunity
+  - rstats
+  - rladies
+  - womenwhocode
+  - whomenintech
+  - womeninstem
   thumbnail: https://i.ytimg.com/vi/59DSo_jjTpI/maxresdefault.jpg
   title: R-Ladies Rome (English) - Interactive R, Python, and Shiny in the Browser with Quarto and Shinylive
   url: https://www.youtube.com/watch?v=59DSo_jjTpI

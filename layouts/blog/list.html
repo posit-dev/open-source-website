@@ -40,7 +40,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {{- range $post := $posts -}}
         {{- if not $post.Params.featured -}}
-          {{ partial "card.html" (dict "page" $post "hide-badge" true) }}
+          {{ partial "item.html" (dict "page" $post "hide-badge" true) }}
         {{- end -}}
       {{- end -}}
     </div>

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-29'
 description: 'Gordon Shotwell, Senior Software Engineer at Posit walks through an end-to-end machine learning workflow with Posit Team. This demo will give you a robust pattern for hosting and sharing models on Connect before you deploy them to a customer-facing system.
 
@@ -88,6 +87,7 @@ description: 'Gordon Shotwell, Senior Software Engineer at Posit walks through a
 
 
   Ps. We host these end-to-end workflow demos on the last Wednesday of every month. If you ever have ideas for topics or questions about them, leave a comment below :)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -96,6 +96,7 @@ software:
 - Quarto
 - Shiny for Python
 - Shiny
+tags: []
 title: How to build a model annotation tool with FastAPI, Quarto & Shiny for Python
 
 external:  # updated automatically, do not edit

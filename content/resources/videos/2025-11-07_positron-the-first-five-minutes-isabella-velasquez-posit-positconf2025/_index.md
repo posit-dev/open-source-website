@@ -1,12 +1,19 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: "Isabella Velásquez from the developer relations team at Posit introduces Positron, a comprehensive tool that integrates coding, documentation, and command line functionalities. \n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - positron
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: 'Positron: The First Five Minutes (Isabella Velásquez, Posit) | posit::conf(2025)'
 
 external:  # updated automatically, do not edit

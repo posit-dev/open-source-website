@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2025-12-15'
 description: In this video, we walk through the process of joining an Active Directory realm. This is important for authentication in Posit Workbench.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Active Directory Join
 
 external:  # updated automatically, do not edit

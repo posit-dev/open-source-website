@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-05-28'
 description: 'When we think of LLMs (large language models), usually what comes to mind are general purpose chatbots like ChatGPT or code assistants like GitHub Copilot. But as useful as ChatGPT and Copilot are, LLMs have so much more to offer—if you know how to code. In this demo Joe Cheng will explain LLM APIs from zero, and have you building and deploying custom LLM-empowered data workflows and apps in no time.
 
@@ -50,6 +49,7 @@ description: 'When we think of LLMs (large language models), usually what comes 
 
 
   If you have specific follow-up questions about our professional products, you can schedule time to chat with our team: pos.it/llm-demo'
+image: thumbnail.jpg
 people:
 - Joe Cheng
 resource_type: video
@@ -64,6 +64,7 @@ software:
 - shinychat
 - tidyverse
 - tidyverse.org
+tags: []
 title: Harnessing LLMs for Data Analysis | Led by Joe Cheng, CTO at Posit
 
 external:  # updated automatically, do not edit

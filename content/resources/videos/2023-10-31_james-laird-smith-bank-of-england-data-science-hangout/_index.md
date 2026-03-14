@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-31'
 description: 'We were recently joined by James Laird-Smith from the Bank of England to chat about supporting 1,000 R users across 1 organization.
 
@@ -26,10 +25,12 @@ description: 'We were recently joined by James Laird-Smith from the Bank of Engl
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: James Laird-Smith @ Bank of England | Data Science Hangout
 
 external:  # updated automatically, do not edit

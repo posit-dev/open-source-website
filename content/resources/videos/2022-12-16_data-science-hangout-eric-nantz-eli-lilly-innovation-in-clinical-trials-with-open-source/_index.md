@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-12-16'
 description: 'We were recently joined by Eric Nantz, Director at Eli Lilly and Company.
 
@@ -41,10 +40,12 @@ description: 'We were recently joined by Eric Nantz, Director at Eli Lilly and C
 
 
   To join future data science hangouts, add to your calendar here: pos.it/dsh (All are welcome! We''d love to see you!)'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Data Science Hangout | Eric Nantz, Eli Lilly | Innovation in clinical trials with open source
 
 external:  # updated automatically, do not edit

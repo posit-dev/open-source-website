@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-07-27'
 description: 'Have you ever wanted to sit down and talk with Joe Cheng, the creator of Shiny and CTO of Posit (RStudio) and ask him how he approaches programming? Look no further - we''ve got that conversation for you right here!
 
@@ -19,6 +18,7 @@ description: 'Have you ever wanted to sit down and talk with Joe Cheng, the crea
   Producer: Jesse Mostipak (@kierisi)
 
   Editing and Motion Design: Tony Pelleriti (@TonyPelleriti)'
+image: thumbnail.jpg
 people:
 - Joe Cheng
 resource_type: video
@@ -28,6 +28,54 @@ software:
 - Shiny for Python
 - Shiny
 - shinylive
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- rstats
+- open source
+- OSS
+- reticulate
+- pyshiny
+- shiny for python
+- posit
+- joe cheng
+- tony pelleriti
 title: Shiny Programming Practices || Joe Cheng || Posit
 
 external:  # updated automatically, do not edit

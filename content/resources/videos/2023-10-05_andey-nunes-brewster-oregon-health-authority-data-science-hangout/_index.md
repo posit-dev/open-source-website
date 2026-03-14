@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-05'
 description: 'We were recently joined by Anderson (Andey) Nunes-Brewster, EMS & Trauma Research Analyst at the Oregon Health Authority to managing a trauma data system and facilitating program improvements, while supporting decision makers.
 
@@ -25,10 +24,12 @@ description: 'We were recently joined by Anderson (Andey) Nunes-Brewster, EMS & 
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Andey Nunes-Brewster @ Oregon Health Authority | Data Science Hangout
 
 external:  # updated automatically, do not edit

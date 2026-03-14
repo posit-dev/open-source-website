@@ -1,8 +1,8 @@
 ---
+color: '#D23D45'
 description: Extra recipes for predictor embeddings
 github: tidymodels/embed
 image: logo.png
-color: "#D23D45"
 languages:
 - R
 latest_release: '2026-01-29T21:24:25+00:00'

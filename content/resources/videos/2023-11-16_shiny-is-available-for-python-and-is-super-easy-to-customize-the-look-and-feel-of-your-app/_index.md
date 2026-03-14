@@ -1,13 +1,14 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-16'
 description: 'Learn more about Shiny for Python: https://shiny.posit.co/py/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Shiny for Python
 - Shiny
+tags: []
 title: Shiny is available for Python and is super easy to customize the look and feel of your app😍
 
 external:  # updated automatically, do not edit

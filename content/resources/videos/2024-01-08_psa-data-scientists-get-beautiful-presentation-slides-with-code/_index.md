@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-01-08'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'PSA Data Scientists: Get beautiful presentation slides with code'
 
 external:  # updated automatically, do not edit

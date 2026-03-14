@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-06-18'
 description: 'Introducing The Test Set–a Posit podcast for data science, coming July 1, 2025.
 
@@ -8,12 +7,14 @@ description: 'Introducing The Test Set–a Posit podcast for data science, comin
 
 
   Subscribe to receive updates: https://pos.it/thetestset'
+image: thumbnail.jpg
 people:
 - Hadley Wickham
 - Michael Chow
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'The Test Set: A Posit Podcast Trailer'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'From messy to meaningful data: LLM-powered classification in R
 
@@ -14,11 +13,18 @@ description: 'From messy to meaningful data: LLM-powered classification in R
 
 
   📁 Materials - https://github.com/dylanpieper/posit-25 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - ellmer
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
 title: 'From messy to meaningful data: LLM-powered classification in R (Dylan Pieper) | posit::conf(2025)'
 
 external:  # updated automatically, do not edit

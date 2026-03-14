@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-06-23'
 description: 'Join Michael Chow (open source developer at Posit) and Jeroen Janssens (developer relations engineer at Posit) as they dive into this week''s #PydyTuesday dataset about Web APIs. Tools include uv, Positron, Polars, Plotnine, Great Tables, and the Unix command line.
 
@@ -50,6 +49,7 @@ description: 'Join Michael Chow (open source developer at Posit) and Jeroen Jans
   58:56 Crafting a great table
 
   1:38:48 Reflection'
+image: thumbnail.jpg
 people:
 - Jeroen Janssens
 - Michael Chow
@@ -59,6 +59,7 @@ software:
 - Great Tables
 - plotnine
 - positron
+tags: []
 title: 'Exploring Web APIs | PydyTuesday Uncut #1'
 
 external:  # updated automatically, do not edit

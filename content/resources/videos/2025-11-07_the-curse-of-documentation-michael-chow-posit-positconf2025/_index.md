@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'The Curse of Documentation
 
@@ -17,11 +16,19 @@ description: 'The Curse of Documentation
 
 
   In this talk, I''ll discuss how effective user guides--like R for Data Science and the React.js guide--break the curse. I''ll focus on three factors behind effective guides: strategic information, inductive learning, and task sequencing. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Michael Chow
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: The Curse of Documentation (Michael Chow, Posit) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

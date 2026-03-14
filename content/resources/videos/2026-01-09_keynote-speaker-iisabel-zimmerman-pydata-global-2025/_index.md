@@ -1,11 +1,26 @@
 ---
-image: thumbnail.jpg
 date: '2026-01-09'
 description: Isabel is a Senior Software Engineer at Posit, PBC.
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- Python
+- Tutorial
+- Education
+- NumFOCUS
+- PyData
+- Opensource
+- learn
+- software
+- python 3
+- Julia
+- coding
+- learn to code
+- how to program
+- scientific programming
 title: Keynote Speaker-IIsabel Zimmerman-PyData Global 2025
 
 external:  # updated automatically, do not edit

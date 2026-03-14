@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'If you find yourself waiting hours for your queries to run, this talk is for you. Learn from my query mistakes and avoid crashing your database.
 
@@ -10,12 +9,14 @@ description: 'If you find yourself waiting hours for your queries to run, this t
 
 
   Session: Databases'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
 - rstudio-conf
+tags: []
 title: 'Rebecca Hadi | Exploring Query Optimization: How a few lines of code can save hours of time'
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-07'
 description: 'We were recently joined by Mehran Moghtadai, AI/ML Accelerator & Enablement at TD Bank Group to chat about working to enable data & machine learning scientists to focus on delivering high-value use cases with as little friction as possible.
 
@@ -26,10 +25,12 @@ description: 'We were recently joined by Mehran Moghtadai, AI/ML Accelerator & E
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Mehran Moghtadai @ TD Bank Group | Data Science Hangout
 
 external:  # updated automatically, do not edit

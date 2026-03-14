@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-01'
 description: 'We were recently joined by Michael Derstine, Vice President at Wells Fargo & Company to chat about  an opinionated approach to modeling and analytics in mortgage banking.
 
@@ -49,10 +48,12 @@ description: 'We were recently joined by Michael Derstine, Vice President at Wel
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Michael Derstine @ Wells Fargo | Data Science Hangout
 
 external:  # updated automatically, do not edit

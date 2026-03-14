@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: R bindings to libarchive, supporting a large variety of archive formats
 github: r-lib/archive
+image: logo.svg
 languages:
 - C++
 latest_release: '2025-03-24T12:32:21+00:00'

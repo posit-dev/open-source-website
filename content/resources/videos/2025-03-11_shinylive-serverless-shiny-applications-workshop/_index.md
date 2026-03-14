@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-03-11'
 description: '{shinylive}: Serverless Shiny applications workshop: An exercise in deploying your app to GitHub Pages - Barret Schloerke
 
@@ -12,6 +11,7 @@ description: '{shinylive}: Serverless Shiny applications workshop: An exercise i
 
 
   Workshop recorded as part of the 2024 R/Pharma Workshop Series'
+image: thumbnail.jpg
 people:
 - Barret Schloerke
 resource_type: video
@@ -19,6 +19,7 @@ resources: []
 software:
 - Shiny
 - shinylive
+tags: []
 title: '{shinylive}: Serverless Shiny applications workshop'
 
 external:  # updated automatically, do not edit

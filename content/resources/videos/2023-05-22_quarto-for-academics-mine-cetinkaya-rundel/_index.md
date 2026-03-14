@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-22'
 description: 'This video highlights some of Quarto''s features that are especially useful for academics, as educators and as researchers.
 
@@ -33,6 +32,7 @@ description: 'This video highlights some of Quarto''s features that are especial
   16:49 Inserting citations from Zotero or from a DOI with the RStudio Visual Editor
 
   19:59 Wrap up and learning resources'
+image: thumbnail.jpg
 people:
 - Mine Çetinkaya-Rundel
 resource_type: video
@@ -41,6 +41,51 @@ software:
 - Quarto
 - revealjs
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Quarto for Academics | Mine Çetinkaya-Rundel
 
 external:  # updated automatically, do not edit

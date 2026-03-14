@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-02-23'
 description: 'We were recently joined by Jamie Warner, Managing Director at Plymouth Rock Assurance and spoke about her passion for revolutionizing the way heavily regulated industries understand and adopt data science.
 
@@ -24,10 +23,12 @@ description: 'We were recently joined by Jamie Warner, Managing Director at Plym
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Jamie Warner @ Plymouth Rock Assurance | Data Science Hangout
 
 external:  # updated automatically, do not edit

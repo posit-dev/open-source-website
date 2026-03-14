@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-03'
 description: 'Posit Workbench: https://posit.co/products/enterprise/workbench/
 
@@ -11,11 +10,57 @@ description: 'Posit Workbench: https://posit.co/products/enterprise/workbench/
 
 
   Workbench is also exceptional for managing compute resources. Use Kubernetes and Slurm and adjust the CPU and memory to match the job you''re trying to run.'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: Launch different development environments and manage cluster options with Posit Workbench
 
 external:  # updated automatically, do not edit

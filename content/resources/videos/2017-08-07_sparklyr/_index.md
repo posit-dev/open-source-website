@@ -1,11 +1,16 @@
 ---
-image: thumbnail.jpg
 date: '2017-08-07'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- rstudio
+- spark
+- R Programming
+- sparklyR
 title: SparklyR
 
 external:  # updated automatically, do not edit

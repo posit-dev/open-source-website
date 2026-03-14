@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2025-02-23'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'Build a Python Web App #pythoncontent #python #datavisualization #datascientists #shinyforpython'
 
 external:  # updated automatically, do not edit

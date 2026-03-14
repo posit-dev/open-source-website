@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: Basic R Input Output
 github: r-lib/brio
+image: logo.svg
 languages:
 - R
 latest_release: '2024-04-24T18:51:12+00:00'

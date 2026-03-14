@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-09-27'
 description: 'The Penobscot Nation has been around for millennia.
 
@@ -33,11 +32,57 @@ description: 'The Penobscot Nation has been around for millennia.
   Content Producer & Writer: Shannon McGarvey
 
   Sound Mixer: Caleb Theimer'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- forcats
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- rstats
+- open source
+- OSS
+- reticulate
 title: The River is our Relative | The Story of the Penobscot Nation
 
 external:  # updated automatically, do not edit

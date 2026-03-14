@@ -1,8 +1,8 @@
 ---
+color: '#F0DB4F'
 description: A promise library for R
 github: rstudio/promises
 image: logo.svg
-color: "#F0DB4F"
 languages:
 - R
 latest_release: '2025-11-05T18:06:35+00:00'

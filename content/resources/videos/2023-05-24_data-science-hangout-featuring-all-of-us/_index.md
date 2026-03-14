@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-05-24'
 description: 'We did things a bit different this week as our featured leader had to reschedule - and we were all the featured leaders for the week, asking questions to each other. Libby & Mike put Rachael, our Pro Community Lead in the hot seat to start and then we all answered the questions the came in 🙂
 
@@ -48,10 +47,12 @@ description: 'We did things a bit different this week as our featured leader had
 
 
   Data Science Hangout site: posit.co/data-science-hangout'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Data Science Hangout featuring all of us!
 
 external:  # updated automatically, do not edit

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: A version of eval for R that returns more information about what happened
 github: r-lib/evaluate
+image: logo.svg
 languages:
 - R
 latest_release: '2025-08-27T16:20:44+00:00'

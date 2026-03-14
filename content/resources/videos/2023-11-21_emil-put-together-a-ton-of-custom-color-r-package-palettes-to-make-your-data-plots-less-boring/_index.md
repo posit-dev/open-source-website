@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-21'
 description: Comprehensive list of color palettes available in R ❤️🧡💛💚💙💜  https://github.com/EmilHvitfeldt/r-color-palettes
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Emil put together a ton of custom color r package palettes to make your data plots less boring
 
 external:  # updated automatically, do not edit

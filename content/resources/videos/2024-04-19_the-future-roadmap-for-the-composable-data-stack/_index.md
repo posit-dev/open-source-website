@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-04-19'
 description: 'Discover cutting-edge advancements in data processing stacks. Listen in as Wes McKinney dives into pivotal projects like Parquet and Arrow, alongside essential interface libraries like Ibis and tidyverse. Wes navigates through the current state of these projects, highlighting areas for further innovation and growth.
 
@@ -24,11 +23,16 @@ description: 'Discover cutting-edge advancements in data processing stacks. List
   LinkedIn: https://www.linkedin.com/company/datacouncil-ai/
 
   Website: https://www.datacouncil.ai/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - tidyverse
+tags:
+- machine learning
+- computer vision
+- AI
 title: The Future Roadmap for the Composable Data Stack
 
 external:  # updated automatically, do not edit

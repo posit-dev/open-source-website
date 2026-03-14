@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'IDE-ntity Crisis: Choosing the Right Tool for Me
 
@@ -14,12 +13,20 @@ description: 'IDE-ntity Crisis: Choosing the Right Tool for Me
 
 
   Understanding these trade-offs helps you find the best fit. By the end of the session, you''ll have a clear framework for choosing the right IDE for your data science and analytics tasks. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people:
 - Isabel Zimmerman
 resource_type: video
 resources: []
 software:
 - positron
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: 'IDE-ntity Crisis: Choosing the Right Tool for Me (Isabel Zimmerman, Posit) | posit::conf(2025)'
 
 external:  # updated automatically, do not edit

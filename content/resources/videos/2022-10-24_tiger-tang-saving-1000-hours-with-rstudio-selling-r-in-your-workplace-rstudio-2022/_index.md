@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'There are many benefits to using R and no lack of packages that help you solve technical difficulties, but you may still get stuck at selling it to decision-makers or implementing it at work. Tiger''s recommendation is to start a project that focuses on automating work with R and gets everyone involved. Once the value of R has been established, selecting RStudio Workbench and RStudio Connect for streamlining tasks would not be a difficult choice.
 
@@ -14,11 +13,13 @@ description: 'There are many benefits to using R and no lack of packages that he
 
 
   Session: Take a sad process and make it better: project and process makeovers'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: 'Tiger Tang | Saving 1,000 hours with RStudio: selling R in your workplace | RStudio (2022)'
 
 external:  # updated automatically, do not edit

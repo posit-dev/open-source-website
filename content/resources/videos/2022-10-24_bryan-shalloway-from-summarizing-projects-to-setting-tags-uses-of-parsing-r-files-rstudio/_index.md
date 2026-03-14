@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'I''ll walk through a few potential uses of parsing out the functions and packages in projects.
 
@@ -18,12 +17,14 @@ description: 'I''ll walk through a few potential uses of parsing out the functio
 
 
   Session: Just typing R code: advanced R programming'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - blogdown
 - rstudio
+tags: []
 title: Bryan Shalloway | From summarizing projects to setting tags, uses of parsing R files | RStudio
 
 external:  # updated automatically, do not edit

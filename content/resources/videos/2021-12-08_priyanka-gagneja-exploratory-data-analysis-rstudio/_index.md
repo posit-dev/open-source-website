@@ -1,12 +1,13 @@
 ---
-image: thumbnail.jpg
 date: '2021-12-08'
 description: "Priyanka Gagneja | Exploratory Data Analysis | RStudio\n\nExploratory Data Analysis with:\n✨ {DataExplorer}: https://github.com/boxuancui/DataExplorer\n✨ {Skimr}: https://github.com/ropensci/skimr\n✨ {rpivotTable}: https://github.com/smartinsightsfromdata/rpivotTable \n✨ {esquisse}: https://github.com/dreamRs/esquisse\n✨ {chronicle}: https://github.com/pheymanss/chronicle\nand more.\n\nWith a plethora of packages that can help us with exploratory data analysis (EDA), it can be difficult to know where to start! Some packages are specific for a given data type, while others are more general.\n\nIn this talk, Priyanka Gagneja (github.com/priyankagagneja) will walk us through her EDA workflow and share a few of her favorite packages in doing so.\n\nSpeaker Bio:\nPriyanka Gagneja is a Data Scientist/Freelance Analytics Professional. Priyanka graduated from Boston College with a Masters in Applied Economics and holds an MBA and Bachelor's in Computer Science from India. She has experience providing supply chain-related solutions to retail clients.\n\nPriyanka's slides: https://github.com/priyankagagneja/Talks/blob/main/EDA_Workflow/EDA_workflow_Boston_useR_talk.pdf"
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Priyanka Gagneja | Exploratory Data Analysis | RStudio
 
 external:  # updated automatically, do not edit

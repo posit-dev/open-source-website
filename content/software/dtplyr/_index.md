@@ -1,10 +1,12 @@
 ---
+color: '#04FAA3'
 description: Data table backend for dplyr
 github: tidyverse/dtplyr
 image: logo.png
-color: "#04FAA3"
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2026-02-10T17:24:35+00:00'
 people:
 - Hadley Wickham

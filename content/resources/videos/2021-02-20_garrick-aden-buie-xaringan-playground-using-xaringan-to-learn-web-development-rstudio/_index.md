@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-20'
 description: 'xaringan is a quirky package that extends R Markdown to create beautiful web-based HTML slides. Some of xaringan’s quirks come from the JavaScript library it uses, remarkjs, and some of it from the unusual naming scheme xaringan uses for its functions. But under this quirky exterior lies a powerful tool for learning and practicing web development, especially when combined with infinite_moon_reader() for immediate feedback. In this talk I''ll cover some basic web concepts that illustrate how fun and rewarding it can to learn HTML, CSS and JavaScript while building awesome slides in R Markdown.
 
@@ -7,6 +6,7 @@ description: 'xaringan is a quirky package that extends R Markdown to create bea
   About Garrick:
 
   The workshop will be led by friend of RStudio, Garrick Aden-Buie, R developer and educator and Data Scientist at Moffitt Cancer Center, where he uses Shiny to enable and accelerate cancer research.'
+image: thumbnail.jpg
 people:
 - Garrick Aden-Buie
 resource_type: video
@@ -14,6 +14,54 @@ resources: []
 software:
 - rstudio
 - Shiny
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- Garrick Aden-Buie
+- xaringan
+- HTML
 title: 'Garrick Aden-Buie | xaringan Playground: Using xaringan to learn web development | RStudio'
 
 external:  # updated automatically, do not edit

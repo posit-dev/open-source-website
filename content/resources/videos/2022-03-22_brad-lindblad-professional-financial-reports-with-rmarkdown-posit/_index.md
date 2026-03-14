@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-03-22'
 description: '✨ GitHub: https://github.com/bradlindblad/pro_reports_talk
 
@@ -38,6 +37,7 @@ description: '✨ GitHub: https://github.com/bradlindblad/pro_reports_talk
   ✨ More information on RStudio Connect: https://www.rstudio.com/products/connect/
 
   ✨ To chat with RStudio about Connect: rstd.io/chat-with-rstudio'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -47,6 +47,7 @@ software:
 - pagedown
 - rmarkdown
 - rstudio
+tags: []
 title: Brad Lindblad | Professional Financial Reports with {rmarkdown} | Posit
 
 external:  # updated automatically, do not edit

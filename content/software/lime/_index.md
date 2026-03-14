@@ -1,9 +1,9 @@
 ---
+color: '#94CC28'
 description: Local Interpretable Model-Agnostic Explanations (R port of original Python
   package)
 github: tidymodels/lime
 image: logo.png
-color: "#94CC28"
 languages:
 - R
 latest_release: '2025-12-10T00:23:55+00:00'

@@ -1,0 +1,56 @@
+{{/* query-items: Return a filtered, sorted, optionally limited collection of pages.
+     Accepts: path (glob, default "*"), sort-by (default "date"), sort-direction (default "desc"),
+              filter (json-logic JSON string), limit (optional).
+*/}}
+{{ $pattern := .path | default "*" }}
+{{ $sortBy := index . "sort-by" | default "date" }}
+{{ $sortDirection := index . "sort-direction" | default "desc" }}
+{{ $limit := .limit | default 0 }}
+{{ $filterJSON := index . "filter" | default "" }}
+
+{{/* 1. Collect pages matching the path regex (include both page and term kinds) */}}
+{{ $candidates := where site.Pages "Kind" "in" (slice "page" "term") }}
+{{ $pages := $candidates }}
+{{ if ne $pattern "*" }}
+  {{ $pages = where $candidates "Path" "like" $pattern }}
+{{ end }}
+
+{{/* 2. Sort by front matter field using dot-notation resolver */}}
+{{ $withVal := slice }}
+{{ $withoutVal := slice }}
+{{ range $pages }}
+  {{ $val := partial "jsonlogic/resolve.html" (dict "args" $sortBy "data" .Params) }}
+  {{ if ne (printf "%T" $val) "<nil>" }}
+    {{ $withVal = $withVal | append (dict "page" . "sortVal" $val) }}
+  {{ else }}
+    {{ $withoutVal = $withoutVal | append . }}
+  {{ end }}
+{{ end }}
+{{ $sorted := sort $withVal "sortVal" $sortDirection }}
+{{ $pages = slice }}
+{{ range $sorted }}
+  {{ $pages = $pages | append .page }}
+{{ end }}
+{{ range $withoutVal }}
+  {{ $pages = $pages | append . }}
+{{ end }}
+
+{{/* 3. Apply json-logic filter */}}
+{{ with $filterJSON }}
+  {{ $rule := transform.Unmarshal . }}
+  {{ $filtered := slice }}
+  {{ range $pages }}
+    {{ $pass := partial "jsonlogic/eval.html" (dict "rule" $rule "data" .Params) }}
+    {{ if $pass }}
+      {{ $filtered = $filtered | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $pages = $filtered }}
+{{ end }}
+
+{{/* 4. Limit results */}}
+{{ with $limit }}
+  {{ $pages = first (int .) $pages }}
+{{ end }}
+
+{{ return $pages }}

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'Teaching data visualization with R entirely in Quarto
 
@@ -14,11 +13,19 @@ description: 'Teaching data visualization with R entirely in Quarto
 
 
   📁 Materials - https://github.com/clauswilke/PositConf2025 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - Quarto
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data
+- data science
+- ai
 title: Teaching data visualization with R entirely in Quarto (Claus Wilke, UT Austin) | posit::conf(2025)
 
 external:  # updated automatically, do not edit

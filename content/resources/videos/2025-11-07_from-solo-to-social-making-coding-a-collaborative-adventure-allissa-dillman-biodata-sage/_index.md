@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-11-07'
 description: 'From Solo to Social: Making Coding a Collaborative Adventure
 
@@ -14,10 +13,18 @@ description: 'From Solo to Social: Making Coding a Collaborative Adventure
 
 
   By reimagining how we teach technical skills, I''m not just delivering education—I''m fostering a movement that makes data science accessible to all. Join me to discover how we can democratize coding and create pathways for everyone to become active members of the data science community. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags:
+- posit::conf(2025)
+- rstats
+- python
+- data science
+- data
+- ai
 title: 'From Solo to Social: Making Coding a Collaborative Adventure (Allissa Dillman, BioData Sage)'
 
 external:  # updated automatically, do not edit

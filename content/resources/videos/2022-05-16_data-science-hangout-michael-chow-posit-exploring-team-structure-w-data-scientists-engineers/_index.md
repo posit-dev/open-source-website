@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-05-16'
 description: 'We were joined by Michael Chow, Data Scientist and Software Engineer at RStudio. Michael also previously led a team at the California Integrated Travel Project.
 
@@ -67,6 +66,7 @@ description: 'We were joined by Michael Chow, Data Scientist and Software Engine
   LinkedIn:https://www.linkedin.com/company/rstudio-pbc
 
   Twitter: https://twitter.com/rstudio'
+image: thumbnail.jpg
 people:
 - Michael Chow
 resource_type: video
@@ -76,6 +76,7 @@ software:
 - Shiny
 - shinyapps
 - tidymodels
+tags: []
 title: Data Science Hangout | Michael Chow, Posit | Exploring Team Structure w/ Data Scientists & Engineers
 
 external:  # updated automatically, do not edit

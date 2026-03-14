@@ -1,11 +1,12 @@
 ---
-image: thumbnail.jpg
 date: '2024-06-03'
 description: ''
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: 'What to optimize for when looking for a new job 📝 #datascience #careeradvice'
 
 external:  # updated automatically, do not edit

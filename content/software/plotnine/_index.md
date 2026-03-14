@@ -1,8 +1,8 @@
 ---
+color: '#892C5A'
 description: A Grammar of Graphics for Python
 github: has2k1/plotnine
 image: plotnine.png
-color: "#892C5A"
 languages:
 - Python
 latest_release: '2026-01-28T16:26:21+00:00'

@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: scrypt cryptographic functions for R
 github: rstudio/rscrypt
+image: logo.svg
 languages:
 - C
 title: rscrypt

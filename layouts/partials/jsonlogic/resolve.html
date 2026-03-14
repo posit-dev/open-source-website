@@ -1,0 +1,33 @@
+{{/* resolve.html — Resolve a dot-notation "var" path against a data map.
+     Input: dict "args" $args "data" $data
+     Returns: resolved value, or default (nil if not supplied)
+*/}}
+{{ $args := .args }}
+{{ $data := .data }}
+
+{{ $path := "" }}
+{{ $default := index (dict) "" }}
+{{ $argsType := printf "%T" $args }}
+{{ if strings.Contains $argsType "[]" }}
+  {{ $path = index $args 0 | string }}
+  {{ if gt (len $args) 1 }}
+    {{ $default = index $args 1 }}
+  {{ end }}
+{{ else }}
+  {{ $path = $args | string }}
+{{ end }}
+
+{{ $value := $data }}
+{{ range split $path "." }}
+  {{ if strings.Contains (printf "%T" $value) "map" }}
+    {{ $value = index $value . }}
+  {{ else }}
+    {{ $value = index (dict) "" }}
+  {{ end }}
+{{ end }}
+
+{{ if eq (printf "%T" $value) "<nil>" }}
+  {{ $value = $default }}
+{{ end }}
+
+{{ return $value }}

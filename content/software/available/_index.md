@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Check if a package name is available to use
 github: r-lib/available
+image: logo.svg
 languages:
 - R
 latest_release: '2022-07-10T18:39:42+00:00'

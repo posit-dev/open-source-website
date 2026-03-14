@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: ''
 github: posit-dev/r-shinylive
+image: logo.svg
 languages:
 - R
 latest_release: '2024-11-13T16:30:05+00:00'

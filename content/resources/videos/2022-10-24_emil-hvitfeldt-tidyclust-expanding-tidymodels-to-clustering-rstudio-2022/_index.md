@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'This talk marks the grand introduction of tidyclust, a new package that provides a tidy unified interface to clustering model within the tidymodels framework.
 
@@ -8,6 +7,7 @@ description: 'This talk marks the grand introduction of tidyclust, a new package
 
 
   Session: Updates from the tidymodels team'
+image: thumbnail.jpg
 people:
 - Emil Hvitfeldt
 resource_type: video
@@ -16,6 +16,7 @@ software:
 - rstudio
 - tidyclust
 - tidymodels
+tags: []
 title: Emil Hvitfeldt | tidyclust - expanding tidymodels to clustering | RStudio (2022)
 
 external:  # updated automatically, do not edit

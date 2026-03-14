@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: Rich Command Line Applications
 github: r-lib/cliapp
+image: logo.svg
 languages:
 - R
 latest_release: '2024-04-24T20:40:10+00:00'

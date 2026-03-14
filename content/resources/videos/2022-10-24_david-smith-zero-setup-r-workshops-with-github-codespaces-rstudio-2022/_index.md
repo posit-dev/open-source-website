@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'If you''ve ever tried to run a workshop using R, you''ll be aware of the challenges of getting everyone''s laptop set up to able to run your R scripts, Rmarkdown documents, or Jupyter Notebooks without errors.
 
@@ -14,6 +13,7 @@ description: 'If you''ve ever tried to run a workshop using R, you''ll be aware 
 
 
   Session: Lightning Talks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -21,6 +21,7 @@ software:
 - rmarkdown
 - rstudio
 - rstudio-conf
+tags: []
 title: David Smith | Zero-setup R workshops with GitHub Codespaces | RStudio (2022)
 
 external:  # updated automatically, do not edit

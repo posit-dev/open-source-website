@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-10-29'
 description: 'Have you ever run out of memory or time when tidying data, making a visualization, or training a model? An R user may find their laptop more than sufficient to start their journey with statistical computing, but as datasets grow in size and complexity, so does the necessity for more sophisticated tooling. This talk will step through a set of approaches to scale your tasks beyond in-memory analysis on your local machine, using the Postron IDE: adopting a lazy evaluation engine like DuckDB, connecting to remote databases with fluent workflows, and even migrating from desktop analysis entirely to server or cloud compute using SSH tunnelling.
 
@@ -8,12 +7,14 @@ description: 'Have you ever run out of memory or time when tidying data, making 
 
 
   https://positron.posit.co'
+image: thumbnail.jpg
 people:
 - Julia Silge
 resource_type: video
 resources: []
 software:
 - positron
+tags: []
 title: Outgrowing your laptop with Positron - Julia Silge
 
 external:  # updated automatically, do not edit

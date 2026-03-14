@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2021-02-19'
 description: 'Last January I left my job to spend a year developing siuba, a python port of dplyr. At its core, this decision was driven by a decade of watching python and R users produce similar analyses, but in very different ways.
 
@@ -13,6 +12,7 @@ description: 'Last January I left my job to spend a year developing siuba, a pyt
   About Michael:
 
   Michael Chow is a data scientist and learning researcher. He serves as a co-director at Code for Philly. In past lives, he worked on adaptive assessment tools in ed tech, and received a PhD in cognitive psychology from Princeton University.'
+image: thumbnail.jpg
 people:
 - Michael Chow
 resource_type: video
@@ -22,6 +22,54 @@ software:
 - plotnine
 - rstudio
 - tidyverse
+tags:
+- rstudio
+- data science
+- machine learning
+- python
+- stats
+- tidyverse
+- data visualization
+- data viz
+- ggplot
+- technology
+- coding
+- connect
+- server pro
+- shiny
+- rmarkdown
+- package manager
+- CRAN
+- interoperability
+- serious data science
+- dplyr
+- ggplot2
+- tibble
+- readr
+- stringr
+- tidyr
+- purrr
+- github
+- data wrangling
+- tidy data
+- odbc
+- rayshader
+- plumber
+- blogdown
+- gt
+- lazy evaluation
+- tidymodels
+- statistics
+- debugging
+- programming education
+- forcats
+- rstats
+- open source
+- OSS
+- reticulate
+- siuba
+- Michael Chow
+- SQL
 title: Michael Chow | Bringing the Tidyverse to Python with Siuba | RStudio
 
 external:  # updated automatically, do not edit

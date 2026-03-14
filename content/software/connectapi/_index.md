@@ -1,8 +1,8 @@
 ---
+color: '#75AADB'
 description: An R package for interacting with the Posit Connect server API
 github: posit-dev/connectapi
 image: logo.svg
-color: "#75AADB"
 languages:
 - R
 latest_release: '2026-02-25T19:49:06+00:00'

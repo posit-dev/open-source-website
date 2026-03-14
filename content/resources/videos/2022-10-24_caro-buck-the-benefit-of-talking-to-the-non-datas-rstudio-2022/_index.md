@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Data literacy is a tool to build understanding- of the world and ourselves. Data, AI and tech are sometimes portrayed as scary and unknowable; however, data can be for everyone. Data, and decisions based off data, have enormous implications in our daily lives. We (data practitioners) likely have some baseline understanding of numbers and how to read a chart. But others, whether our friends, family members or coworkers, might not have the same level of understanding.
 
@@ -11,11 +10,13 @@ description: 'Data literacy is a tool to build understanding- of the world and o
 
 
   Session: Working with people is hard'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Caro Buck | The Benefit of Talking to the \"Non-Datas\" | RStudio (2022)
 
 external:  # updated automatically, do not edit

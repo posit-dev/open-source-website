@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#EE6331"
+color: '#EE6331'
 description: Visualize R profiling data
 github: r-lib/profvis
+image: logo.svg
 languages:
 - JavaScript
 latest_release: '2024-09-19T19:25:49+00:00'

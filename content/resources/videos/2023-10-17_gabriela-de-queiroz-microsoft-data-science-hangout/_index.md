@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-10-17'
 description: 'We were recently joined by Gabriela de Queiroz, Principal Cloud Advocate at Microsoft to discuss connecting with people, learning and sharing your knowledge with others.
 
@@ -24,10 +23,12 @@ description: 'We were recently joined by Gabriela de Queiroz, Principal Cloud Ad
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Gabriela de Queiroz @ Microsoft | Data Science Hangout
 
 external:  # updated automatically, do not edit

@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2025-02-26'
 description: 'You will learn: How to apply consistent company branding across reports, dashboards, and apps
 
@@ -54,6 +53,7 @@ description: 'You will learn: How to apply consistent company branding across re
 
 
   Thank you for joining us!'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -63,6 +63,7 @@ software:
 - pkgdown
 - Quarto
 - rstudio
+tags: []
 title: Company-branded reports, apps, and dashboards made easier with brand.yml & Posit
 
 external:  # updated automatically, do not edit

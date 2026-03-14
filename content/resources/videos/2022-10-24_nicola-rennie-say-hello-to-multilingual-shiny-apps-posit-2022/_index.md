@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-10-24'
 description: 'Multilingual shiny apps are not straightforward to build. Translation affects almost every single aspect of an app. Although there are a few packages designed to automate the translation process, they tend to only work for the most widely spoken languages.
 
@@ -23,6 +22,7 @@ description: 'Multilingual shiny apps are not straightforward to build. Translat
 
 
   Session: Lightning Talks'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
@@ -30,6 +30,7 @@ software:
 - rstudio
 - rstudio-conf
 - Shiny
+tags: []
 title: Nicola Rennie | Say Hello! to Multilingual Shiny Apps | Posit (2022)
 
 external:  # updated automatically, do not edit

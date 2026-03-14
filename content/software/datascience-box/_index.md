@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: Data Science Course in a Box
 github: tidyverse/datascience-box
+image: logo.svg
 languages:
 - JavaScript
 latest_release: '2020-12-18T13:57:19+00:00'

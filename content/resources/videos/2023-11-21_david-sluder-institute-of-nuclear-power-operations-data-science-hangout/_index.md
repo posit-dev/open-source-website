@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2023-11-21'
 description: 'We were recently joined by David Sluder, Data Science Sr. Program Manager at Institute of Nuclear Power Operations to to talk about what he’s learned from helping build out a new data science capability in a nuclear power organization.
 
@@ -26,10 +25,12 @@ description: 'We were recently joined by David Sluder, Data Science Sr. Program 
 
 
   Thanks for hanging out with us! 💛'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: David Sluder @ Institute of Nuclear Power Operations | Data Science Hangout
 
 external:  # updated automatically, do not edit

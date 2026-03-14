@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2022-08-24'
 description: 'We were joined by Adam Bly, Founder & CEO at System. Adam asks, why haven''t we seen it all connected yet?
 
@@ -43,11 +42,13 @@ description: 'We were joined by Adam Bly, Founder & CEO at System. Adam asks, wh
   LinkedIn:https://www.linkedin.com/company/rstudio
 
   Twitter: https://twitter.com/rstudio'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
 - rstudio
+tags: []
 title: Data Science Hangout | Adam Bly, System | Decentralizing decision making
 
 external:  # updated automatically, do not edit

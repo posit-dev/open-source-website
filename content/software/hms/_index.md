@@ -1,10 +1,12 @@
 ---
+color: '#34A55B'
 description: A simple class for storing time-of-day values
 github: tidyverse/hms
 image: logo.png
-color: "#34A55B"
 languages:
 - R
+tags:
+- tidyverse
 latest_release: '2025-10-16T19:10:13+00:00'
 people:
 - Hadley Wickham

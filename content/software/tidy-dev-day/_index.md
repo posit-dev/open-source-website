@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Tidyverse developer day
 github: tidyverse/tidy-dev-day
+image: logo.svg
 languages:
 - R
 people:

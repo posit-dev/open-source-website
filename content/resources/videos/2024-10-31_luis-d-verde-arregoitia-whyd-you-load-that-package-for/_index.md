@@ -1,5 +1,4 @@
 ---
-image: thumbnail.jpg
 date: '2024-10-31'
 description: 'Packages enhance programming languages, and working with code makes workflows repeatable. However, the number of existing packages can be overwhelming to the point of obscuring their roles within projects. This talk discusses the importance of scripts, and introduces ways to enhance package load calls. First, by building annotations with the annotater R package and also by learning from code comments across GitHub. The value of recording information such as package source, version, title, or even which functions or data are used in a script is discussed in both data science and teaching environments.
 
@@ -11,10 +10,12 @@ description: 'Packages enhance programming languages, and working with code make
   Slides: https://liomys.mx/posit24.html
 
   annotater: https://annotater.liomys.mx/'
+image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software: []
+tags: []
 title: Luis D. Verde Arregoitia - Why’d you load that package for?
 
 external:  # updated automatically, do not edit

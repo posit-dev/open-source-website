@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#9A4665"
+color: '#9A4665'
 description: Object Pooling in R
 github: rstudio/pool
+image: logo.svg
 languages:
 - R
 latest_release: '2024-10-07T14:57:52+00:00'
