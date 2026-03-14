@@ -1,0 +1,8 @@
+{{/* item-id.html — Return a stable unique DOM id for a page.
+     Input: a Page object.
+     Returns: string like "item-a1b2c3d4" */}}
+{{ $fileID := "" }}
+{{ with .File }}
+  {{ $fileID = .UniqueID }}
+{{ end }}
+{{ return printf "item-%s" ($fileID | default .RelPermalink | md5) }}

@@ -7,6 +7,7 @@
      ============================================================ */}}
 {{ $page := .page }}
 {{ $hide_badge := index . "hide-badge" | default false }}
+{{ $item_id := "" }}
 {{ $slug := "" }}
 
 {{ if $page }}
@@ -23,6 +24,7 @@
   {{ end }}
 {{ end }}
 
+{{ $item_id = partialCached "item-id.html" $page $page }}
 
 {{/* ============================================================
      CONTENT TYPE
@@ -179,7 +181,7 @@
 {{/* ============================================================
      TILE FORMAT — compact horizontal strip
      ============================================================ */}}
-<div {{ with .id }}id="{{ . }}"{{ end }} class="@container {{ $tileHeight }}">
+<div id="{{ $item_id }}" class="@container {{ $tileHeight }}">
   <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
      class="no-underline relative flex flex-row items-center
             rounded-lg hover:brightness-110 brightness-100
@@ -205,14 +207,13 @@
     {{/* -- Image — always visible, fixed height, 16:9 aspect -- */}}
     <div class="h-full @max-nip:w-full @nip:aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
-        {{ partial "responsive_image_container.html" (dict
+        {{ partialCached "responsive_image_container.html" (dict
           "image" $image
           "alt" $page.Title
           "class" (printf "mx-auto h-full %s" $card_settings.image_class)
           "short"  80
           "tall"   160
           "grande" 160
-          "venti"  160
         ) }}
       {{ end }}
     </div>
@@ -279,7 +280,7 @@
 {{/* ============================================================
      ROW FORMAT — clickable row with grid columns for alignment
      ============================================================ */}}
-<a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
+<a id="{{ $item_id }}" href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
    class="no-underline col-span-full grid grid-cols-subgrid items-center {{ $rowHeight }}
           rounded-lg hover:brightness-110 brightness-100
           transition duration-200 overflow-hidden text-gray-700
@@ -301,14 +302,13 @@
   {{/* Image */}}
   <div class="h-full w-full flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
     {{ if $image }}
-      {{ partial "responsive_image_container.html" (dict
+      {{ partialCached "responsive_image_container.html" (dict
         "image" $image
         "alt" $page.Title
         "class" (printf "mx-auto h-full %s" $card_settings.image_class)
         "short"  40
         "tall"   40
         "grande" 40
-        "venti"  40
       ) }}
     {{ else if $usePlaceholder }}
       <img src="/images/hex-placeholder.svg" alt="{{ $page.Title }}"
@@ -362,7 +362,7 @@
 {{/* ============================================================
      CARD FORMAT (default) — existing markup
      ============================================================ */}}
-<div {{ with .id }}id="{{ . }}"{{ end }} class="@container h-full">
+<div id="{{ $item_id }}" class="@container h-full">
   <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
      class="no-underline relative flex flex-col @venti:flex-row rounded-xl
             hover:brightness-110 brightness-100 transition duration-200
@@ -402,14 +402,13 @@
     {{/* -- Image ------------------------------------------------ */}}
     <div class="w-full @venti:w-1/2 aspect-[16/9] flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
-        {{ partial "responsive_image_container.html" (dict
+        {{ partialCached "responsive_image_container.html" (dict
           "image" $image
           "alt" $page.Title
           "class" (printf "mx-auto h-full %s" $card_settings.image_class)
           "short"  160
           "tall"   320
           "grande" 640
-          "venti"  640
         ) }}
       {{ else if $usePlaceholder }}
         <img src="/images/hex-placeholder.svg" alt="{{ $page.Title }}"
