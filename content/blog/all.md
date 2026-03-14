@@ -1,7 +1,7 @@
 ---
 title: All Blog Posts
 layout: all
-_build:
+build:
   list: never
 ---
 
