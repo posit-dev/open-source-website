@@ -3,7 +3,7 @@ title: 'Great Tables `v0.3.0`: So Many Style Options!'
 people:
   - Rich Iannone
 date: 2024-02-16T00:00:00.000Z
-ported_from: great-tables
+ported_from: great_tables
 port_status: in-progress
 ---
 

@@ -3,7 +3,7 @@ title: 'PyCon 2024: Making Beautiful, Publication Quality Tables is Possible in 
 date: 2024-05-16T00:00:00.000Z
 people:
   - Michael Chow
-ported_from: great-tables
+ported_from: great_tables
 port_status: in-progress
 ---
 

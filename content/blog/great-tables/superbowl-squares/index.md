@@ -3,7 +3,7 @@ title: Using Polars to Win at Super Bowl Squares
 people:
   - Michael Chow
 date: 2024-02-08T00:00:00.000Z
-ported_from: great-tables
+ported_from: great_tables
 port_status: in-progress
 ---
 

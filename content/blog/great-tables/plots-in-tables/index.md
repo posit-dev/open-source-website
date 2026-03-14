@@ -4,7 +4,7 @@ people:
   - Jules Walzer-Goldfeld
   - Michael Chow
 date: 2025-07-03T00:00:00.000Z
-ported_from: great-tables
+ported_from: great_tables
 port_status: in-progress
 ---
 

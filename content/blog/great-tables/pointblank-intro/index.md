@@ -3,7 +3,7 @@ title: How We Used Great Tables to Supercharge Reporting in Pointblank
 people:
   - Rich Iannone
 date: 2025-02-11T00:00:00.000Z
-ported_from: great-tables
+ported_from: great_tables
 port_status: in-progress
 ---
 

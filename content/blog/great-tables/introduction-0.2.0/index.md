@@ -3,7 +3,7 @@ title: 'Great Tables `v0.2.0`: Easy Data Coloring'
 people:
   - Rich Iannone
 date: 2024-01-24T00:00:00.000Z
-ported_from: great-tables
+ported_from: great_tables
 port_status: in-progress
 ---
 

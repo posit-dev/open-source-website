@@ -7,7 +7,7 @@ format:
   html:
     code-fold: true
     code-summary: Show the Code
-ported_from: great-tables
+ported_from: great_tables
 port_status: in-progress
 ---
 
