@@ -27,7 +27,7 @@
 
 {{- /* image-lightbox.js disabled */ -}}
 
-{{- partialCached "search-modal.html" . -}}
+{{- partial "search-modal.html" . -}}
 {{- $jsSearch := resources.Get "js/search.js" -}}
 {{- if not hugo.IsDevelopment }}
   {{- $jsSearch = $jsSearch | minify | fingerprint -}}

@@ -24,7 +24,7 @@
   {{ end }}
 {{ end }}
 
-{{ $item_id = partialCached "item-id.html" $page $page }}
+{{ $item_id = partial "item-id.html" $page }}
 
 {{/* ============================================================
      CONTENT TYPE
@@ -207,7 +207,7 @@
     {{/* -- Image — always visible, fixed height, 16:9 aspect -- */}}
     <div class="h-full @max-nip:w-full @nip:aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
-        {{ partialCached "responsive_image_container.html" (dict
+        {{ partial "responsive_image_container.html" (dict
           "image" $image
           "alt" $page.Title
           "class" (printf "mx-auto h-full %s" $card_settings.image_class)
@@ -302,7 +302,7 @@
   {{/* Image */}}
   <div class="h-full w-full flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
     {{ if $image }}
-      {{ partialCached "responsive_image_container.html" (dict
+      {{ partial "responsive_image_container.html" (dict
         "image" $image
         "alt" $page.Title
         "class" (printf "mx-auto h-full %s" $card_settings.image_class)
@@ -402,7 +402,7 @@
     {{/* -- Image ------------------------------------------------ */}}
     <div class="w-full @venti:w-1/2 aspect-[16/9] flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
-        {{ partialCached "responsive_image_container.html" (dict
+        {{ partial "responsive_image_container.html" (dict
           "image" $image
           "alt" $page.Title
           "class" (printf "mx-auto h-full %s" $card_settings.image_class)

@@ -181,7 +181,7 @@
       <div id="software-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {{ $softwareSection := site.GetPage "/software" }}
         {{ range sort $softwareSection.Pages "Title" }}
-          {{ partialCached "item.html" (dict "page" . "hide-badge" true) }}
+          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
         {{ end }}
       </div>
 
@@ -209,7 +209,7 @@ window.softwareData = [
   {{ $sortedPages := sort $softwareSection.Pages "Title" }}
   {{ range $index, $page := $sortedPages }}
     {
-      id: "{{ partialCached "item-id.html" . . }}",
+      id: "{{ partial "item-id.html" . }}",
       title: "{{ .Title }}",
       stars: {{ with .Params.external }}{{ .stars | default 0 }}{{ else }}0{{ end }},
       languages: [{{ range $i, $lang := .Params.languages }}{{ if $i }},"{{ $lang }}"{{ else }}"{{ $lang }}"{{ end }}{{ end }}],

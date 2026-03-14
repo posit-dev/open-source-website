@@ -171,7 +171,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $software }}
-      {{ partialCached "item.html" (dict "page" . "hide-badge" true) }}
+      {{ partial "item.html" (dict "page" . "hide-badge" true) }}
     {{ end }}
   </div>
   {{ end }}
