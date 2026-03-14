@@ -37,8 +37,7 @@ jobs:
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
-        run: hugo --minify
-
+        run: hugo --minify --stepAnalysis --templateMetrics --templateMetricsHints
       - name: Build search index
         run: npm run build-search
 
