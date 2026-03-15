@@ -11,6 +11,7 @@ people:
   - Julia Silge
 resources:
   - videos/2026-02-26_julia-silge-keynote-pycon-colombia-2025
+  - videos/2025-09-12_julia-silge-keynote-pycon-colombia-2025
 languages:
 - Python
 ---
