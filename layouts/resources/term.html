@@ -377,7 +377,7 @@
     <div class="flex flex-col lg:flex-row gap-8 mt-8 mx-2 md:mx-0">
       <div class="flex-1 min-w-0">
         <div class="w-full prose">
-          <h2 id="transcript" class="">Transcript</h2>
+          {{ partial "heading.html" (dict "level" 2 "text" "Transcript") }}
           <p class="mb-6 italic">This transcript was generated automatically and may contain errors.</p>
           <div data-pagefind-body id="video-transcript"
             class="[&_a[data-t]]:hover:bg-gray-100 [&_a[data-t]]:hover:no-underline! [&_a[data-t]]:rounded [&_a[data-t]]:text-inherit! [&_a[data-t]]:transition-colors [&_a[data-t]]:duration-200">
@@ -441,9 +441,7 @@
     <!-- Software used in this Resource -->
     {{ if $software }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 id="featured-software" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-        Featured software
-      </h2>
+      {{ partial "heading.html" (dict "level" 2 "text" "Featured software" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -456,9 +454,7 @@
     <!-- Related Resources -->
     {{ if $resources }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 id="related-resources" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-        Related resources
-      </h2>
+      {{ partial "heading.html" (dict "level" 2 "text" "Related resources" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -471,9 +467,7 @@
     <!-- Events related to this Resource -->
     {{ if $events }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 id="related-events" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-        Related events
-      </h2>
+      {{ partial "heading.html" (dict "level" 2 "text" "Related events" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
