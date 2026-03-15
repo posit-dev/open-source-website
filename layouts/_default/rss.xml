@@ -19,7 +19,7 @@
     {{- end -}}
     {{- $filtered := slice -}}
     {{- range $pages -}}
-      {{- if ge (len .Plain) 300 -}}
+      {{- if and (eq .Section "blog") (ge (len .Plain) 300) -}}
         {{- $filtered = $filtered | append . -}}
       {{- end -}}
     {{- end -}}
