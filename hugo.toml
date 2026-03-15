@@ -19,6 +19,10 @@ showReadingTime = false
   event = 'events'
   resource = 'resources'
 
+[services]
+  [services.rss]
+    limit = 20
+
 [markup]
 
 [markup.highlight]
