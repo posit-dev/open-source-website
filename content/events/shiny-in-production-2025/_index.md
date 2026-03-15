@@ -1,5 +1,5 @@
 ---
-title: "Shiny in Production"
+title: "Shiny in Production 2025"
 event_type: conference
 location: "Newcastle Upon Tyne, UK"
 start_date: 2025-10-08

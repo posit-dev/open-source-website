@@ -1,5 +1,5 @@
 ---
-title: "PyCascades 2025"
+title: "PyCascades 2026"
 event_type: conference
 location: "Vancouver, BC, Canada"
 start_date: 2026-03-20
