@@ -24,10 +24,18 @@
     {{ partial "heading.html" (dict "level" 2 "text" "By Category" "class" "text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4") }}
     <ul class="list-disc list-inside space-y-2 text-lg">
       {{- range $name, $pages := . }}
+      {{- $count := 0 -}}
+      {{- range $pages -}}
+        {{- if and (eq .Page.Section "blog") (ge (len .Page.Plain) 300) -}}
+          {{- $count = add $count 1 -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if gt $count 0 }}
       <li>
         <a href="/categories/{{ $name | urlize }}/index.xml" class="text-blue-600 dark:text-blue-400 hover:underline">{{ $name | title }}</a>
-        <span class="text-gray-500 dark:text-gray-500 text-sm">({{ len $pages }})</span>
+        <span class="text-gray-500 dark:text-gray-500 text-sm">({{ $count }})</span>
       </li>
+      {{- end }}
       {{- end }}
     </ul>
   </section>
@@ -38,10 +46,18 @@
     {{ partial "heading.html" (dict "level" 2 "text" "By Language" "class" "text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4") }}
     <ul class="list-disc list-inside space-y-2 text-lg">
       {{- range $name, $pages := . }}
+      {{- $count := 0 -}}
+      {{- range $pages -}}
+        {{- if and (eq .Page.Section "blog") (ge (len .Page.Plain) 300) -}}
+          {{- $count = add $count 1 -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if gt $count 0 }}
       <li>
         <a href="/languages/{{ $name | urlize }}/index.xml" class="text-blue-600 dark:text-blue-400 hover:underline">{{ $name | title }}</a>
-        <span class="text-gray-500 dark:text-gray-500 text-sm">({{ len $pages }})</span>
+        <span class="text-gray-500 dark:text-gray-500 text-sm">({{ $count }})</span>
       </li>
+      {{- end }}
       {{- end }}
     </ul>
   </section>
