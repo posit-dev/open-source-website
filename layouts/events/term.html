@@ -142,9 +142,7 @@
   {{ $people := .GetTerms "people" }}
   {{ if $people }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Attendees
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" "Attendees" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 mx-2 md:mx-0 mb-6">
@@ -158,9 +156,7 @@
   {{ $software := .GetTerms "software" }}
   {{ if $software }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Featured software
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" "Featured software" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -174,9 +170,7 @@
   {{ $resources := .GetTerms "resources" }}
   {{ if $resources }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Resources from this event
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" "Resources from this event" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">

@@ -137,9 +137,7 @@
   <!-- People in this Team -->
   {{ with .Params.people }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      People
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" "People" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 mx-2 md:mx-0 mb-6">
@@ -164,9 +162,7 @@
   {{ end }}
   {{ if gt (len $software) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Software by {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Software by %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -188,9 +184,7 @@
   {{ end }}
   {{ if gt (len $events) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Events attended by {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Events attended by %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -215,9 +209,7 @@
   {{ end }}
   {{ if gt (len $combined) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Posts and resources by {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Posts and resources by %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
