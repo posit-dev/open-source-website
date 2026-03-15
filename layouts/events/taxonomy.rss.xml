@@ -47,7 +47,7 @@
       {{- with .Params.event_type }}
       <category>{{ . }}</category>
       {{- end }}
-      {{- $content := .Content -}}
+      {{- $content := replaceRE `<a class="heading-anchor"[^>]*>#</a>` "" .Content -}}
       {{- $siteBase := strings.TrimSuffix "/" $.Site.BaseURL -}}
       {{- $content = replaceRE `(src|href)="(/[^"]*)"` (printf `$1="%s$2"` $siteBase) $content -}}
       {{- $content = replaceRE `(src|href)="(\.\./[^"]*)"` (printf `$1="%s$2"` .Permalink) $content -}}
