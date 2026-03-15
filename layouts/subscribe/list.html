@@ -3,14 +3,18 @@
   <h1 class="text-4xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Subscribe via RSS</h1>
 
   <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
-    Follow our content using your favorite RSS reader. Choose the main feed or subscribe to specific categories or languages.
+    Follow our content using your favorite RSS reader. Choose the main feed or subscribe to specific categories, languages, or events.
   </p>
 
   <section class="mb-10">
-    {{ partial "heading.html" (dict "level" 2 "text" "Main Feed" "class" "text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" "Main Feeds" "class" "text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4") }}
     <ul class="list-disc list-inside space-y-2 text-lg">
       <li>
         <a href="/blog/index.xml" class="text-blue-600 dark:text-blue-400 hover:underline">All blog posts</a>
+      </li>
+      <li>
+        <a href="/events/index.xml" class="text-blue-600 dark:text-blue-400 hover:underline">Events</a>
+        <span class="text-gray-500 dark:text-gray-500 text-sm">(upcoming and recent)</span>
       </li>
     </ul>
   </section>
