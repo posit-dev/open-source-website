@@ -1,5 +1,5 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>{{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }}</title>
     <link>{{ .Permalink }}</link>
@@ -27,11 +27,16 @@
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <guid>{{ .Permalink }}</guid>
+      {{- range .GetTerms "people" }}
+      <dc:creator>{{ .LinkTitle }}</dc:creator>
+      {{- end }}
       {{- $content := .Content -}}
       {{- $siteBase := strings.TrimSuffix "/" $.Site.BaseURL -}}
       {{- $content = replaceRE `(src|href)="(/[^"]*)"` (printf `$1="%s$2"` $siteBase) $content -}}
       {{- $content = replaceRE `(src|href)="(\.\./[^"]*)"` (printf `$1="%s$2"` .Permalink) $content -}}
       {{- $content = replaceRE `src="([^":/][^"]*)"` (printf `src="%s$1"` .Permalink) $content -}}
+      {{- $content = replace $content (printf `src="%shttps://` .Permalink) `src="https://` -}}
+      {{- $content = replace $content (printf `src="%shttp://` .Permalink) `src="http://` -}}
       <description>{{ printf `<![CDATA[%s]]>` $content | safeHTML }}</description>
       {{- with .Resources.GetMatch (.Params.image) }}
       <enclosure url="{{ .Permalink }}" length="{{ .Content | len }}" type="{{ .MediaType }}" />
