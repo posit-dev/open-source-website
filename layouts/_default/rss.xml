@@ -17,6 +17,13 @@
     {{- else -}}
       {{- $pages = $pctx.Pages -}}
     {{- end -}}
+    {{- $filtered := slice -}}
+    {{- range $pages -}}
+      {{- if ge (len .Plain) 300 -}}
+        {{- $filtered = $filtered | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $pages = $filtered -}}
     {{- $limit := .Site.Config.Services.RSS.Limit -}}
     {{- if ge $limit 1 -}}
       {{- $pages = $pages | first $limit -}}
