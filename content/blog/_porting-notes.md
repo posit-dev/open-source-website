@@ -15,6 +15,7 @@ Shallow clones of all legacy blog repos are in `/_external-sources/` (ignored by
 
 | Blog | Live | Current Tech | Source |
 |------|------|--------------|--------|
+| positron | [Blog](https://positron.posit.co/blog/) | Quarto | [GitHub](https://github.com/posit-dev/positron-website) |
 | tidyverse.org | [Blog](https://www.tidyverse.org/blog/) | hugodown | [GitHub](https://github.com/tidyverse/tidyverse.org) |
 | AI blog | [Blog](https://blogs.rstudio.com/ai/) | Distill for R Markdown | [GitHub](https://github.com/rstudio/ai-blog) |
 | Shiny | [Blog](https://shiny.posit.co/blog/) | Quarto w/ freeze | [GitHub](https://github.com/rstudio/shiny-dev-center/) |
@@ -31,6 +32,7 @@ Blogs with pre-rendered static files (.md, .markdown, .html) are easier to port 
 
 | Blog | Posts path | Static files | Needs rendering |
 |------|------------|--------------|-----------------|
+| positron-website | blog/posts | - | 1 qmd (static, no code) |
 | education.rstudio.com | content/blog | 85 markdown + 5 md | 85 Rmarkdown (have rendered .markdown) |
 | ai-blog | _posts | 97 html | 140 Rmd |
 | shiny-dev-center | blog/posts | 1 html | 46 qmd |
@@ -439,6 +441,38 @@ Some posts embed interactive HTML demos via iframes. These may need adjustment:
    ignoreFiles = [..., 'shinychat-tool-ui/feature/']
    ```
 3. **Consider removing** - If the iframe doesn't render well, rely on the hero image instead.
+
+---
+
+## positron.posit.co (Positron blog)
+
+Blog source: `_external-sources/positron-website/blog/posts`
+Destination: `content/blog/positron/`
+
+Uses Quarto website/blog format with `.qmd` files. Currently has 1 post.
+
+### Structure
+
+- **1 post** (static, no executable code)
+- No freeze files needed
+
+### Porting approach
+
+Simple static posts render directly with `quarto render index.qmd --to hugo-md`.
+
+**Manual porting steps:**
+1. Create post folder in `content/blog/positron/<slug>/`
+2. Copy `index.qmd`, transform frontmatter:
+   - `author` → `people` (as list)
+   - Convert site-relative links (`/page.qmd`) to absolute URLs (`https://positron.posit.co/page.html`)
+   - Add `ported_from: positron`, `port_status: raw`
+3. Render: `cd content/blog/positron && quarto render <slug>/index.qmd --to hugo-md`
+
+**Config:** `content/blog/positron/_quarto.yml` scopes the Quarto project to avoid interference from other blog projects.
+
+### Watch for: video shortcodes
+
+Quarto's `{{< video URL >}}` shortcode renders as a bare URL link (e.g., `<https://youtu.be/ID>`). See "Quarto video shortcodes render as links" in `_porting-todo.md`.
 
 ---
 

@@ -46,7 +46,7 @@ people:
 | `ported_from` | Source blog |
 | `port_status` | Porting progress: `raw`, `in-progress`, `review`, `complete` |
 
-**Valid `ported_from` values:** tidyverse, ai, shiny, great_tables, plotnine, pointblank, quarto, education, rstudio
+**Valid `ported_from` values:** positron, tidyverse, ai, shiny, great_tables, plotnine, pointblank, quarto, education, rstudio
 
 **Tracking page:** Use `/blog/all/` to monitor porting progress and metadata completeness.
 

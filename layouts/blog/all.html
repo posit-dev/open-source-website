@@ -24,7 +24,7 @@
         </tr>
       </thead>
       <tbody class="divide-y divide-gray-200 dark:divide-blue-800">
-        {{- $sources := slice "tidyverse" "education" "ai" "shiny" "great_tables" "plotnine" "pointblank" "quarto" "rstudio" -}}
+        {{- $sources := slice "positron" "tidyverse" "education" "ai" "shiny" "great_tables" "plotnine" "pointblank" "quarto" "rstudio" -}}
         {{- range $source := $sources -}}
           {{- $sourcePosts := where $allPosts "Params.ported_from" $source -}}
           {{- if gt (len $sourcePosts) 0 -}}
@@ -285,7 +285,9 @@
                 {{- $month := $page.Date.Format "01" -}}
                 {{- $day := $page.Date.Format "02" -}}
                 {{- $url := "" -}}
-                {{ if eq . "tidyverse" }}
+                {{ if eq . "positron" }}
+                  {{- $url = printf "https://positron.posit.co/blog/posts/%s-%s-%s-%s/" $year $month $day $slug -}}
+                {{ else if eq . "tidyverse" }}
                   {{- $url = printf "https://www.tidyverse.org/blog/%s/%s/%s/" $year $month $slug -}}
                 {{ else if eq . "ai" }}
                   {{- $url = printf "https://blogs.rstudio.com/ai/posts/%s/" $slug -}}
