@@ -6,11 +6,6 @@ people:
 date: '2023-05-12'
 image: shiny-ai-chatbot.jpg
 image-alt: an image with lines representing ai computing lie behind a chatbox icon
-resources:
-  - basic.mp4
-  - 20-questions.mp4
-  - recipes.mp4
-  - recipes-card.mp4
 ported_from: shiny
 port_status: in-progress
 ---

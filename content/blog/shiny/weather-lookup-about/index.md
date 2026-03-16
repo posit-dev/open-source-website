@@ -8,8 +8,6 @@ image: about.jpg
 image-alt: >-
   A screenshot of Nick Strayer's Weather Lookup Shiny app, which shows
   themperature over time of a specific location
-resources:
-  - previous_city_button.mp4
 ported_from: shiny
 port_status: in-progress
 ---

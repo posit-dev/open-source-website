@@ -6,8 +6,6 @@ people:
 date: '2026-01-22'
 image: querychat-python-r-header.png
 image-alt: 'Where Questions Become Queries: Meet querychat'
-resources:
-  - querychat-python-r-header.png
 ported_from: shiny
 port_status: in-progress
 ---

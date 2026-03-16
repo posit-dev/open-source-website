@@ -10,12 +10,6 @@ image-header: shiny-090.png
 image-header-alt: Shiny for Python 0.9.0
 image: edit-your-data.gif
 image-alt: Editable data tables in Shiny for Python 0.9.0
-resources:
-  - shiny-090.png
-  - edit-your-data.gif
-  - error-console.png
-  - shiny-template.png
-  - quarto-and-shiny-express.png
 ported_from: shiny
 port_status: in-progress
 ---

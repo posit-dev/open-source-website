@@ -8,9 +8,6 @@ people:
   - Nick Strayer
 image: out-of-alpha-main.jpeg
 image-alt: Code next to the ShinyUIEditor that generated it
-resources:
-  - render-function-cleanup-small.mp4
-  - synced-ids-small.mp4
 ported_from: shiny
 port_status: in-progress
 ---

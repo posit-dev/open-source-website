@@ -10,11 +10,6 @@ people:
   - Nick Strayer
 image: cards-thumbnail.png
 image-alt: bslib cards shown inside shinyuieditor
-resources:
-  - add-button-in-full-screen.webm
-  - add-card-to-app.webm
-  - add-footer-to-card.webm
-  - add-plot-to-card.webm
 ported_from: shiny
 port_status: in-progress
 ---

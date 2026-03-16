@@ -8,9 +8,6 @@ people:
 date: 2021-01-22T00:00:00.000Z
 image: caching.jpg
 image-alt: A plot showing how much faster an app will load with caching
-resources:
-  - no_caching_performance.mp4
-  - speed_comparison.mp4
 ported_from: shiny
 port_status: in-progress
 ---

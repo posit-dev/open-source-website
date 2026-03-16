@@ -14,14 +14,6 @@ people:
 date: '2025-07-31'
 image: shiny-side-of-llms-header.png
 image-alt: The Shiny Side of LLMs part 1
-resources:
-  - shiny-side-of-llms-header.png
-  - shiny-side-of-llms-back-propagation-1.png
-  - shiny-side-of-llms-back-propagation-2.png
-  - shiny-side-of-llms-stats.png
-  - shiny-side-of-llms-chat.png
-  - shiny-side-of-llms-code-gen.png
-  - shiny-side-of-llms-image-gen.png
 ported_from: shiny
 port_status: in-progress
 ---
