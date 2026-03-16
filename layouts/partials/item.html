@@ -1,4 +1,3 @@
-{{ $debug := "" }}
 {{ $format := .format | default "card" }}
 {{ $height := .height | default "" }}
 
@@ -31,118 +30,112 @@
      ============================================================ */}}
 
 {{ $section := $page.Section }}
-{{ $isEvent := eq $section "events" }}
-{{ $isPerson := eq $section "people" }}
-{{ $isBlog := eq $section "blog" }}
-{{ $isSoftware := eq $section "software" }}
-{{ $isResource := eq $section "resources" }}
+{{ $is_event := eq $section "events" }}
+{{ $is_person := eq $section "people" }}
+{{ $is_blog := eq $section "blog" }}
+{{ $is_software := eq $section "software" }}
+{{ $is_resource := eq $section "resources" }}
+
+{{/* ============================================================
+     CARD TYPE — use section, fall back to slug for resource
+     sub-sections (cheatsheets, videos) that have their own
+     entry in data/items.yaml
+     ============================================================ */}}
+{{ $card_type := $section }}
+{{ if not (index site.Data.items $card_type) }}
+  {{ $parts := split (strings.Trim $slug "/") "/" }}
+  {{ if ge (len $parts) 2 }}
+    {{ $card_type = index $parts (sub (len $parts) 2) }}
+  {{ end }}
+{{ end }}
+
+{{ $card_settings := index site.Data.items $card_type }}
+{{ if not $card_settings }}
+  {{ errorf "item partial: no card_settings in data/items.yaml for card_type '%s' (slug: '%s')" $card_type $slug }}
+{{ end }}
 
 {{/* ============================================================
      TITLE
      ============================================================ */}}
-{{ $str_title := $page.Title }}
-
-
-{{ $parts := split (strings.Trim $slug "/") "/" }}
-{{ $count := len $parts }}
-{{ $card_type := index $parts (sub $count 2) }}
-{{ $card_settings := index site.Data.items $card_type }}
-
-{{ $debug = $card_settings }}
-{{ $debug = $page.Params }}
+{{ $title := $page.Title }}
 
 {{/* ============================================================
      DATE (formatted using block/date_range.html for events)
      ============================================================ */}}
-{{ $date_value := "" }}
+{{ $date := "" }}
 {{ if eq $card_type "events" }}
-  {{ $date_value = partial "block/date_range.html" $page }}
+  {{ $date = partial "block/date_range.html" $page }}
 {{ else if and (ne $card_type "software") (ne $card_type "people") }}
   {{ if $page.Params.date }}
-    {{ $date_value = time.Format "Jan 2, 2006" $page.Params.date }}
+    {{ $date = time.Format "Jan 2, 2006" $page.Params.date }}
   {{ end }}
 {{ end }}
-{{ $date_value = trim $date_value " \t\r\n" }}
+{{ $date = trim $date " \t\r\n" }}
 
 {{/* ============================================================
      DESCRIPTION (max 3 lines enforced via CSS line-clamp-3)
      ============================================================ */}}
 {{ $description_field := $card_settings.description_field | default "description" }}
-{{ $str_description := index $page.Params $description_field | strings.TrimSpace | strings.TrimSuffix "." | replaceRE `[\x{1F600}-\x{1F64F}\x{1F300}-\x{1F5FF}\x{1F680}-\x{1F6FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}]` "" }}
+{{ $description := index $page.Params $description_field | strings.TrimSpace | strings.TrimSuffix "." | replaceRE `[\x{1F600}-\x{1F64F}\x{1F300}-\x{1F5FF}\x{1F680}-\x{1F6FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}]` "" }}
+{{ if and $is_person $description }}
+  {{ with $page.Params.affiliation }}
+    {{ $description = printf "%s at %s" $description . }}
+  {{ end }}
+{{ end }}
 
 {{/* ============================================================
-     AUTHOR (plain text names — no <a> tags since card is a link)
+     AUTHOR (linked in hero, plain text in card/tile/row since
+     those are already wrapped in an <a> tag)
      ============================================================ */}}
-{{ $people_value := "" }}
-{{ if or $card_settings.people_show (eq $card_settings.people_show nil) }}
-  {{ $people_value = partial "block/author.html" (dict "page" $page "link" false) }} 
+{{ $people := "" }}
+{{ $people_link := eq $format "hero" }}
+{{ if $card_settings.people_show }}
+  {{ $people = partial "block/author.html" (dict "page" $page "link" $people_link) }}
 {{ end }}
 
 {{/* ============================================================
      TAGS (combination of software, categories, tags taxonomies)
      ============================================================ */}}
-{{ $tags_values := slice }}
+{{ $tags := slice }}
 {{ range $page.GetTerms "software" }}
-  {{ $tags_values = $tags_values | append .LinkTitle }}
+  {{ $tags = $tags | append .LinkTitle }}
 {{ end }}
 {{ range $page.GetTerms "categories" }}
-  {{ $tags_values = $tags_values | append .LinkTitle }}
+  {{ $tags = $tags | append .LinkTitle }}
 {{ end }}
 {{ range $page.GetTerms "tags" }}
-  {{ $tags_values = $tags_values | append .LinkTitle }}
+  {{ $tags = $tags | append .LinkTitle }}
 {{ end }}
 
-{{ if and $isSoftware (not $tags_values) }}
+{{ if and $is_software (not $tags) }}
   {{ with $page.Params.languages }}
-    {{ $tags_values = . }}
+    {{ $tags = . }}
   {{ end }}
 {{ end }}
 
 {{/* ============================================================
-     BADGE (content type label)
-     ============================================================ */}}
-
-
-
-{{/* ============================================================
-     IMAGE (uses responsive_image_fixed.html — no <figure>/<a> wrappers)
+     IMAGE (uses responsive_image_container.html)
      ============================================================ */}}
 {{ $image := false }}
-{{ $imageURL := "" }}
-{{ $usePlaceholder := false }}
-
-{{/* Try page bundle image */}}
 {{ with $page.Params.image }}
   {{ $image = $page.Resources.Get . }}
-{{ end }}
-
-{{/* if eq $card_type "videos" }}
-  {{ with $page.Params.external.thumbnail }}
-    {{ $imageURL = . }}
-    {{ $image = false }}
-  {{ end }}
-{{ end */}}
-
-{{/* Software placeholder fallback */}}
-{{ if and (not $image) (not $imageURL) $isSoftware }}
-  {{ $usePlaceholder = true }}
 {{ end }}
 
 {{/* ============================================================
      STARS (software only)
      ============================================================ */}}
-{{ $str_stars := "" }}
-{{ if $isSoftware }}
+{{ $stars := "" }}
+{{ if $is_software }}
   {{ with $page.Params.external.stars }}
     {{ if lt . 1000 }}
-      {{ $str_stars = printf "%d" . }}
+      {{ $stars = printf "%d" . }}
     {{ else }}
       {{ $thousands := math.Round (div (float .) 100) }}
       {{ $thousands = div $thousands 10.0 }}
       {{ if eq $thousands (math.Floor $thousands) }}
-        {{ $str_stars = printf "%dk" (int $thousands) }}
+        {{ $stars = printf "%dk" (int $thousands) }}
       {{ else }}
-        {{ $str_stars = printf "%.1fk" $thousands }}
+        {{ $stars = printf "%.1fk" $thousands }}
       {{ end }}
     {{ end }}
   {{ end }}
@@ -151,15 +144,15 @@
 {{/* ============================================================
      DURATION (videos only)
      ============================================================ */}}
-{{ $str_duration := "" }}
+{{ $duration := "" }}
 {{ if eq $card_type "videos" }}
   {{ with $page.Params.external.duration }}
     {{ $hours := div (int .) 3600 }}
     {{ $minutes := div (mod (int .) 3600) 60 }}
     {{ if gt $hours 0 }}
-      {{ $str_duration = printf "%dh %dmin" $hours $minutes }}
+      {{ $duration = printf "%dh %dmin" $hours $minutes }}
     {{ else }}
-      {{ $str_duration = printf "%d min" $minutes }}
+      {{ $duration = printf "%d min" $minutes }}
     {{ end }}
   {{ end }}
 {{ end }}
@@ -167,42 +160,115 @@
 {{/* ============================================================
      LOCATION (events only)
      ============================================================ */}}
-{{ $str_location := "" }}
-{{ if $isEvent }}
-  {{ $str_location = $page.Params.location | default "" }}
+{{ $location := "" }}
+{{ if $is_event }}
+  {{ $location = $page.Params.location | default "" }}
+{{ end }}
+
+{{/* ============================================================
+     HERO-SPECIFIC FIELDS
+     ============================================================ */}}
+{{ $links := slice }}
+{{ $stats := slice }}
+{{ $hero_languages := slice }}
+{{ $hero_categories := slice }}
+{{ $hero_tags := slice }}
+{{ $teams := slice }}
+{{ if eq $format "hero" }}
+
+  {{/* GitHub link — software */}}
+  {{ with $page.Params.github }}
+    {{ $links = $links | append (dict "icon" "simple-icons--github" "url" (printf "https://github.com/%s" .) "text" .) }}
+  {{ end }}
+
+  {{/* Website link — software and events */}}
+  {{ with $page.Params.website }}
+    {{ $links = $links | append (dict "icon" "boxicons--globe" "url" . "text" (replaceRE `^https?://` "" . | strings.TrimRight "/")) }}
+  {{ end }}
+
+  {{/* Social links — people (nested under .Params.social) */}}
+  {{ with $page.Params.social }}
+    {{ with .website }}
+      {{ $links = $links | append (dict "icon" "boxicons--globe" "url" . "text" (replaceRE `^https?://` "" . | strings.TrimRight "/")) }}
+    {{ end }}
+    {{ with .bluesky }}
+      {{ $links = $links | append (dict "icon" "simple-icons--bluesky" "url" (printf "https://bsky.app/profile/%s" .) "text" .) }}
+    {{ end }}
+    {{ with .github }}
+      {{ $links = $links | append (dict "icon" "simple-icons--github" "url" (printf "https://github.com/%s" .) "text" .) }}
+    {{ end }}
+    {{ with .linkedin }}
+      {{ $links = $links | append (dict "icon" "simple-icons--linkedin" "url" (printf "https://linkedin.com/in/%s" .) "text" .) }}
+    {{ end }}
+    {{ with .mastodon }}
+      {{ $links = $links | append (dict "icon" "simple-icons--mastodon" "url" . "text" (replaceRE `^https?://` "" . | strings.TrimRight "/")) }}
+    {{ end }}
+    {{ with .orcid }}
+      {{ $links = $links | append (dict "icon" "simple-icons--orcid" "url" (printf "https://orcid.org/%s" .) "text" .) }}
+    {{ end }}
+    {{ with .youtube }}
+      {{ $links = $links | append (dict "icon" "simple-icons--youtube" "url" (printf "https://youtube.com/%s" .) "text" .) }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Software stats */}}
+  {{ if $is_software }}
+    {{ with $page.Params.external.stars }}
+      {{ $stats = $stats | append (dict "icon" "boxicons--star-filled" "value" (printf "%d stars" .)) }}
+    {{ end }}
+    {{ with $page.Params.external.forks }}
+      {{ $stats = $stats | append (dict "icon" "boxicons--git-repo-forked" "value" (printf "%d forks" .)) }}
+    {{ end }}
+    {{ with $page.Params.external.license }}
+      {{ if ne . "NOASSERTION" }}
+        {{ $stats = $stats | append (dict "icon" "boxicons--file-filled" "value" .) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Team membership — people */}}
+  {{ if and $is_person (not $page.Params.people) }}
+    {{ $currentTitle := $page.Title }}
+    {{ $peopleSection := site.GetPage "/people" }}
+    {{ range $peopleSection.Pages }}
+      {{ if .Params.people }}
+        {{ if in .Params.people $currentTitle }}
+          {{ $teams = $teams | append . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Taxonomy links */}}
+  {{ range $page.GetTerms "languages" }}
+    {{ $hero_languages = $hero_languages | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+  {{ end }}
+  {{ range $page.GetTerms "categories" }}
+    {{ $hero_categories = $hero_categories | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+  {{ end }}
+  {{ range $page.GetTerms "tags" }}
+    {{ $hero_tags = $hero_tags | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+  {{ end }}
+
 {{ end }}
 
 {{/* ============================================================
      MARKUP
      ============================================================ */}}
-{{ $tileHeight := $height | default "h-16" }}
-{{ $rowHeight := $height | default "h-12" }}
+{{ $tile_height := $height | default "h-16" }}
+{{ $row_height := $height | default "h-12" }}
 {{ if eq $format "tile" }}
 {{/* ============================================================
      TILE FORMAT — compact horizontal strip
      ============================================================ */}}
-<div id="{{ $item_id }}" class="@container {{ $tileHeight }}">
+<div id="{{ $item_id }}" class="@container {{ $tile_height }}">
   <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
      class="no-underline relative flex flex-row items-center
             rounded-lg hover:brightness-110 brightness-100
             transition duration-200 overflow-hidden h-full
             {{ $card_settings.tile_class }}">
 
-      {{/* -- Size (absolute, top-left) --------------------------- */}}
-      {{ if ne hugo.Environment "production" }}
-        <span class="absolute top-2 left-2 z-10 text-xs font-semibold uppercase tracking-wide
-                    px-2 py-0.5 rounded-full
-                    bg-red-100 text-red-700">
-
-          <span class="hidden @max-nip:inline">sip</span>
-          <span class="hidden @nip:@max-short:inline">nip</span>
-          <span class="hidden @short:@max-tall:inline">short</span>
-          <span class="hidden @tall:@max-grande:inline">tall</span>
-          <span class="hidden @grande:@max-venti:inline">grande</span>
-          <span class="hidden @venti:@max-trenta:inline">venti</span>
-          <span class="hidden @trenta:inline">trenta</span>
-        </span>
-      {{ end }}
+      {{ partial "dev-size-label.html" (dict "class" "top-2 left-2") }}
 
     {{/* -- Image — always visible, fixed height, 16:9 aspect -- */}}
     <div class="h-full @max-nip:w-full @nip:aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
@@ -219,11 +285,11 @@
     </div>
 
     {{/* -- Content — hidden at short, visible from tall+ -- */}}
-    <div class="hidden @nip:flex flex-col w-full px-2 overflow-hidden {{ $tileHeight }}">
+    <div class="hidden @nip:flex flex-col w-full px-2 overflow-hidden {{ $tile_height }}">
 
       {{/* -- Top Row -- */}}
       <div class="flex flex-1 items-center gap-x-3">
-        {{ with $str_title }}
+        {{ with $title }}
           <h3 class="m-0! block flex-grow text-sm font-bold line-clamp-2! @tall:line-clamp-1!">{{ . | safeHTML }}</h3>
         {{ end }}
 
@@ -244,22 +310,22 @@
 
         {{/* -- Metadata row — visible from grande+ -- */}}
         <div class="flex flex-grow items-center gap-x-3 text-xs font-semibold text-gray-500 flex-wrap">
-          {{ with $date_value }}
+          {{ with $date }}
             <span class="flex items-center gap-1 whitespace-nowrap"><span class="flex-none icon-[boxicons--calendar-filled]"></span>{{ . }}</span>
           {{ end }}
-          {{ with $str_location }}
+          {{ with $location }}
             <span class="hidden @grande:flex flex-1 items-center gap-1 whitespace-nowrap truncate"><span class="flex-none icon-[boxicons--map-filled]"></span><span class="truncate">{{ . }}</span></span>
           {{ end }}
-          {{ with $str_duration }}
+          {{ with $duration }}
             <span class="flex items-center gap-1 whitespace-nowrap"><span class="flex-none icon-[boxicons--clock-4-filled]"></span>{{ . }}</span>
           {{ end }}
-          {{ with $str_stars }}
+          {{ with $stars }}
             <span class="flex items-center gap-1 whitespace-nowrap"><span class="flex-none icon-[boxicons--star-filled]"></span>{{ . }}</span>
           {{ end }}
         </div>
 
         {{/* -- Tags -- */}}
-        {{ with $tags_values }}
+        {{ with $tags }}
           <div class="flex flex-auto items-center overflow-hidden justify-end justify-items-end">
             <div class="flex gap-x-1 gap-y-10 items-center -justify-items-end justify-end flex-wrap content-between overflow-hidden h-6 pt-0.5">
               {{ range . }}
@@ -281,23 +347,13 @@
      ROW FORMAT — clickable row with grid columns for alignment
      ============================================================ */}}
 <a id="{{ $item_id }}" href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
-   class="no-underline col-span-full grid grid-cols-subgrid items-center {{ $rowHeight }}
+   class="no-underline col-span-full grid grid-cols-subgrid items-center {{ $row_height }}
           rounded-lg hover:brightness-110 brightness-100
           transition duration-200 overflow-hidden text-gray-700
           relative
           {{ $card_settings.row_class }}">
 
-      {{/* -- Size (absolute, top-left) --------------------------- */}}
-      {{ if ne hugo.Environment "production" }}
-        <span class="absolute top-2 right-2 z-10 text-xs font-semibold uppercase tracking-wide
-                    px-2 py-0.5 rounded-full
-                    bg-red-100 text-red-700">
-          <span class="hidden @max-tall:inline">short</span>
-          <span class="hidden @tall:@max-grande:inline">tall</span>
-          <span class="hidden @grande:@max-venti:inline">grande</span>
-          <span class="hidden @venti:inline">venti</span>
-        </span>
-      {{ end }}
+      {{ partial "dev-size-label.html" (dict "class" "top-2 right-2" "sizes" "compact") }}
 
   {{/* Image */}}
   <div class="h-full w-full flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
@@ -310,15 +366,12 @@
         "tall"   40
         "grande" 40
       ) }}
-    {{ else if $usePlaceholder }}
-      <img src="/images/hex-placeholder.svg" alt="{{ $page.Title }}"
-           class="max-h-full max-w-full object-contain p-1" loading="lazy">
     {{ end }}
   </div>
 
   {{/* Title + Badge — hidden at short */}}
   <span class="hidden @tall:flex items-center gap-x-2 px-2 min-w-0">
-    <span class="text-sm font-semibold truncate">{{ $str_title }}</span>
+    <span class="text-sm font-semibold truncate">{{ $title }}</span>
     {{ if not $hide_badge }}
       {{ if or $card_settings.badge_icon $card_settings.badge_text }}
         <span class="flex items-center flex-shrink-0 text-xs gap-x-1 px-1.5 py-0.5 rounded-full bg-blue-100 text-blue-700">
@@ -330,33 +383,243 @@
   </span>
 
   {{/* Description — hidden at short */}}
-  <span class="hidden @tall:block px-2 text-xs text-gray-500 truncate min-w-0">{{ $str_description }}</span>
+  <span class="hidden @tall:block px-2 text-xs text-gray-500 truncate min-w-0">{{ $description }}</span>
 
   {{/* Metadata — hidden below grande */}}
   <span class="hidden @grande:flex px-2 text-xs text-gray-500 whitespace-nowrap gap-x-2">
-    {{ with $str_location }}
+    {{ with $location }}
       <span class="inline-flex items-center gap-1"><span class="icon-[boxicons--map-filled]"></span>{{ . }}</span>
     {{ end }}
-    {{ with $date_value }}
+    {{ with $date }}
       <span class="inline-flex items-center gap-1"><span class="icon-[boxicons--calendar-filled]"></span>{{ . }}</span>
     {{ end }}
-    {{ with $str_duration }}
+    {{ with $duration }}
       <span class="inline-flex items-center gap-1"><span class="icon-[boxicons--clock-4-filled]"></span>{{ . }}</span>
     {{ end }}
-    {{ with $str_stars }}
+    {{ with $stars }}
       <span class="inline-flex items-center gap-1"><span class="icon-[boxicons--star-filled]"></span>{{ . }}</span>
     {{ end }}
   </span>
 
   {{/* Tags — hidden below venti */}}
   <span class="hidden @venti:flex flex-shrink-0 gap-1 px-2">
-    {{ with $tags_values }}
+    {{ with $tags }}
       {{ range . }}
         <span class="text-xs font-semibold uppercase tracking-wide whitespace-nowrap rounded-full px-2 py-0.5 bg-blue-100 text-blue-700">{{ . }}</span>
       {{ end }}
     {{ end }}
   </span>
 </a>
+
+{{ else if eq $format "hero" }}
+{{/* ============================================================
+     HERO FORMAT — detail page header
+     ============================================================ */}}
+{{ $hero_layout := $card_settings.hero_layout | default "banner" }}
+
+<div id="{{ $item_id }}" class="@container flex flex-col
+            rounded-xl overflow-hidden {{ $card_settings.card_class }} {{ $card_settings.hero_class }}">
+
+  {{ if eq $hero_layout "banner" }}
+  {{/* ---- BANNER: full-width image, content below ---- */}}
+  {{ if $image }}
+  <div class="w-full h-64 md:h-96">
+    {{ partial "responsive_image_container.html" (dict
+      "image" $image
+      "alt" $page.Title
+      "class" "mx-auto h-full w-full object-cover"
+      "short"  640
+      "tall"   960
+      "grande" 1280
+    ) }}
+  </div>
+  {{ end }}
+
+  <div class="flex flex-col gap-y-4 p-6">
+    <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100">
+      {{ $title | safeHTML }}
+    </h1>
+
+    {{ with $description }}
+      <p class="text-lg text-gray-600 dark:text-gray-300">{{ . | safeHTML }}</p>
+    {{ end }}
+
+    {{/* Unified metadata list */}}
+    <div class="flex flex-col gap-y-3">
+      {{ with $people }}
+      <div class="flex items-center text-base">{{ . }}</div>
+      {{ end }}
+      {{ with $date }}
+      <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+        <span class="icon-[boxicons--calendar] w-5 h-5 flex-none text-gray-400"></span>
+        <span>{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with $location }}
+      <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+        <span class="icon-[boxicons--map] w-5 h-5 flex-none text-gray-400"></span>
+        <span>{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with $duration }}
+      <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+        <span class="icon-[boxicons--clock-filled] w-5 h-5 flex-none text-gray-400"></span>
+        <span>{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ range $links }}
+      <div class="flex items-center gap-2 text-base">
+        <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+           class="text-gray-600 dark:text-gray-300 hover:underline">{{ .text }}</a>
+      </div>
+      {{ end }}
+      {{ range $stats }}
+      <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+        <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+        <span>{{ .value }}</span>
+      </div>
+      {{ end }}
+      {{ with $hero_languages }}
+      <div class="flex items-center gap-2 text-base">
+        <span class="icon-[boxicons--code-alt] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ with $hero_categories }}
+      <div class="flex items-center gap-2 text-base">
+        <span class="icon-[boxicons--categories] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ with $hero_tags }}
+      <div class="flex items-center gap-2 text-base">
+        <span class="icon-[boxicons--tag] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+
+  {{ else }}
+  {{/* ---- PROFILE: image left, content right ---- */}}
+  <div class="flex flex-col md:flex-row">
+
+    {{/* -- Image area (same structure as card) -- */}}
+    <div class="w-full md:w-1/3 aspect-square flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+      {{ if $image }}
+        {{ partial "responsive_image_fixed.html" (dict
+          "image" $image
+          "baseWidth" 192
+          "baseHeight" 192
+          "alt" $page.Title
+          "class" (printf "mx-auto h-full %s" $card_settings.image_class)
+          "method" "fit"
+        ) }}
+      {{ end }}
+    </div>
+
+    {{/* -- Content area -- */}}
+    <div class="flex flex-col gap-y-3 flex-grow p-6">
+      <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100">
+        {{ $title | safeHTML }}
+      </h1>
+
+      {{ with $description }}
+        <p class="text-lg text-gray-600 dark:text-gray-300">{{ . | safeHTML }}</p>
+      {{ end }}
+
+      {{/* Team membership — people */}}
+      {{ if gt (len $teams) 0 }}
+      <div class="text-base text-gray-600 dark:text-gray-300">Member of{{- range $i, $team := $teams -}}{{- if gt $i 0 -}}{{- if eq $i (sub (len $teams) 1) -}}{{- if gt (len $teams) 2 }}, and {{ else }} and {{ end -}}{{- else }}, {{ end -}}{{- else }} {{ end -}}<a href="{{ $team.RelPermalink }}" class="inline-flex items-center whitespace-nowrap hover:underline">{{- if $team.Params.image -}}{{- $teamImage := $team.Resources.Get $team.Params.image -}}{{- if $teamImage }}{{- partial "responsive_image_fixed.html" (dict "image" $teamImage "baseWidth" 24 "baseHeight" 24 "alt" $team.Title "class" "w-6 h-6 ml-1 mr-0.5 rounded inline object-cover" "method" "fit") -}}{{ end -}}{{ end -}}<span>{{ $team.Title }}</span></a>{{- end -}}</div>
+      {{ end }}
+
+      {{/* Unified metadata list */}}
+      <div class="flex flex-col gap-y-3">
+        {{ with $people }}
+        <div class="flex items-center text-base">{{ . }}</div>
+        {{ end }}
+        {{ with $date }}
+        <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+          <span class="icon-[boxicons--calendar] w-5 h-5 flex-none text-gray-400"></span>
+          <span>{{ . }}</span>
+        </div>
+        {{ end }}
+        {{ with $location }}
+        <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+          <span class="icon-[boxicons--map] w-5 h-5 flex-none text-gray-400"></span>
+          <span>{{ . }}</span>
+        </div>
+        {{ end }}
+        {{ with $duration }}
+        <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+          <span class="icon-[boxicons--clock-filled] w-5 h-5 flex-none text-gray-400"></span>
+          <span>{{ . }}</span>
+        </div>
+        {{ end }}
+        {{ range $links }}
+        <div class="flex items-center gap-2 text-base">
+          <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+             class="text-gray-600 dark:text-gray-300 hover:underline">{{ .text }}</a>
+        </div>
+        {{ end }}
+        {{ range $stats }}
+        <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+          <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+          <span>{{ .value }}</span>
+        </div>
+        {{ end }}
+        {{ with $hero_languages }}
+        <div class="flex items-center gap-2 text-base">
+          <span class="icon-[boxicons--code-alt] w-5 h-5 flex-none text-gray-400"></span>
+          <div class="flex flex-wrap gap-1">
+            {{ range . }}
+            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+        {{ with $hero_categories }}
+        <div class="flex items-center gap-2 text-base">
+          <span class="icon-[boxicons--categories] w-5 h-5 flex-none text-gray-400"></span>
+          <div class="flex flex-wrap gap-1">
+            {{ range . }}
+            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+        {{ with $hero_tags }}
+        <div class="flex items-center gap-2 text-base">
+          <span class="icon-[boxicons--tag] w-5 h-5 flex-none text-gray-400"></span>
+          <div class="flex flex-wrap gap-1">
+            {{ range . }}
+            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+  {{ end }}
+
+</div>
 
 {{ else }}
 {{/* ============================================================
@@ -369,20 +632,7 @@
             {{ $card_settings.card_class }}
             overflow-hidden h-full @venti:h-96">
 
-      {{/* -- Size (absolute, top-left) --------------------------- */}}
-      {{ if ne hugo.Environment "production" }}
-        <span class="absolute top-2 @max-venti:left-2 @venti:right-2 z-10 text-xs font-semibold uppercase tracking-wide
-                    px-2 py-0.5 rounded-full
-                    bg-red-100 text-red-700">
-          <span class="hidden @max-nip:inline">sip</span>
-          <span class="hidden @nip:@max-short:inline">nip</span>
-          <span class="hidden @short:@max-tall:inline">short</span>
-          <span class="hidden @tall:@max-grande:inline">tall</span>
-          <span class="hidden @grande:@max-venti:inline">grande</span>
-          <span class="hidden @venti:@max-trenta:inline">venti</span>
-          <span class="hidden @trenta:inline">trenta</span>
-        </span>
-      {{ end }}
+      {{ partial "dev-size-label.html" (dict "class" "top-2 @max-venti:left-2 @venti:right-2") }}
 
       {{/* -- Badge (absolute, top-right) --------------------------- */}}
       {{ if not $hide_badge }}
@@ -410,38 +660,35 @@
           "tall"   320
           "grande" 640
         ) }}
-      {{ else if $usePlaceholder }}
-        <img src="/images/hex-placeholder.svg" alt="{{ $page.Title }}"
-             class="max-h-full max-w-full object-contain p-4" loading="lazy">
       {{ end }}
     </div>
 
     {{/* -- Content (hidden at tiny) ----------------------------- */}}
     <div class="hidden gap-y-2 @nip:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700">
 
-      {{ with $str_title }}
+      {{ with $title }}
       <h3 class="m-0! font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
       {{ end }}
 
-      {{ with $str_description }}
+      {{ with $description }}
         <p class="m-0! text-sm @grande:text-md @venti:text-lg line-clamp-3 {{ $card_settings.description_class }}">{{ . | safeHTML }}</p>
       {{ end }}
 
-      {{ with $people_value }}
+      {{ with $people }}
         <div class="text-sm @grande:text-md">
           {{ . }}
         </div>
       {{ end }}
 
 
-      {{ with $str_location }}
+      {{ with $location }}
         <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
           <span class="icon-[boxicons--map-filled]"></span>
           <div>{{ . }}</div>
         </div>
       {{ end }}
 
-      {{ with $date_value }}
+      {{ with $date }}
         <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
           <span class="icon-[boxicons--calendar-filled]"></span>
           <div>{{ . }}</div>
@@ -449,14 +696,14 @@
       {{ end }}
 
 
-      {{ with $str_duration }}
+      {{ with $duration }}
         <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
           <span class="icon-[boxicons--clock-4-filled]"></span>
           <div>{{ . }}</div>
         </div>
       {{ end }}
 
-      {{ with $str_stars }}
+      {{ with $stars }}
         <div class="hidden @xs:flex text-sm @grande:text-md font-semibold gap-2 items-center">
           <span class="icon-[boxicons--star-filled]"></span>
           <div>{{ . }}</div>
@@ -464,7 +711,7 @@
       {{ end }}
 
       <div class="grow"></div>
-      {{ with $tags_values }}
+      {{ with $tags }}
         <div class="hidden @grande:flex flex-wrap gap-x-1 gap-y-4 py-2 overflow-hidden h-10 items-end">
           {{ range . }}
             <span class="

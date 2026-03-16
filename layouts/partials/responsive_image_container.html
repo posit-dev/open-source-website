@@ -10,6 +10,7 @@
   - image:   Hugo resource object (required)
   - alt:     Alt text (required)
   - class:   CSS classes for each <img> element (optional)
+  - caption: Optional caption text; when set, output is wrapped in <figure>/<figcaption>
   - short:   1x pixel width for containers < @tall  (160px)  (optional, default 160)
   - tall:    1x pixel width for @tall–@grande  (160–320px)   (optional, default 320)
   - grande:  1x pixel width for @grande (320–640px)   (optional, default 640)
@@ -17,13 +18,14 @@
 {{ $image := .image }}
 {{ $alt := .alt }}
 {{ $class := .class }}
+{{ $caption := .caption }}
 {{ $wShort  := default 160 .short }}
 {{ $wTall   := default 320 .tall }}
 {{ $wGrande := default 640 .grande }}
 
 {{ if $image }}
-  {{ if or (eq $image.MediaType.SubType "svg") (eq $image.MediaType.SubType "gif") }}
-    {{/* SVG and GIF: serve as-is without processing */}}
+  {{ if $caption }}<figure>{{ end }}
+  {{ if eq $image.MediaType.SubType "svg" }}
     <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
   {{ else }}
     {{/* Build a slice of (breakpoint-name, visibility-classes, 1x-width) tuples */}}
@@ -49,18 +51,14 @@
 
       {{ $img1x := $image.Resize (printf "%dx" $w1x) }}
       {{ $img2x := $image.Resize (printf "%dx" $w2x) }}
-      {{/* WebP disabled due to Hugo WASM memory issues with large image count
       {{ $img1xWebp := $img1x.Process "webp" }}
       {{ $img2xWebp := $img2x.Process "webp" }}
-      */}}
 
       <picture class="{{ .vis }} w-full h-full">
-        {{/* WebP source disabled
         <source
           type="image/webp"
           srcset="{{ $img1xWebp.RelPermalink }} 1x,
                   {{ $img2xWebp.RelPermalink }} 2x" />
-        */}}
         <img
           src="{{ $img1x.RelPermalink }}"
           srcset="{{ $img1x.RelPermalink }} 1x,
@@ -70,5 +68,9 @@
           loading="lazy" />
       </picture>
     {{ end }}
+  {{ end }}
+  {{ if $caption }}
+    <figcaption class="text-xs text-gray-500 dark:text-gray-400 mt-2">{{ $caption | safeHTML }}</figcaption>
+  </figure>
   {{ end }}
 {{ end }}

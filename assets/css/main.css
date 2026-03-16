@@ -178,6 +178,43 @@ html {
     text-underline-offset: 5px;
   }
 
+  /* Scroll offset for anchor links */
+  h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
+    scroll-margin-top: 1rem;
+  }
+
+  /* Heading anchor links */
+  .heading-anchor {
+    margin-left: 0.35em;
+    color: var(--color-gray-300);
+    text-decoration: none;
+    font-weight: 400;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  h1:hover .heading-anchor,
+  h2:hover .heading-anchor,
+  h3:hover .heading-anchor,
+  h4:hover .heading-anchor,
+  h5:hover .heading-anchor,
+  h6:hover .heading-anchor,
+  .heading-anchor:focus {
+    opacity: 1;
+  }
+
+  .heading-anchor:hover {
+    color: var(--color-blue-500);
+  }
+
+  .dark .heading-anchor {
+    color: var(--color-gray-600);
+  }
+
+  .dark .heading-anchor:hover {
+    color: var(--color-blue-400);
+  }
+
   /* Reset letter-spacing for monospace/Source Code Pro */
   .font-mono,
   code,

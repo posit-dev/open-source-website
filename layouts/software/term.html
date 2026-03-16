@@ -13,88 +13,27 @@
   {{ end }}
   {{ end }}
 
-  <!-- Software Profile Section -->
-  <div class="flex flex-col pb-8 mt-6 mx-2 md:mx-0 border-b-2 border-blue-100">
-    <div class="flex flex-col md:flex-row gap-6 p-6">
-      <div class="flex-shrink-0 w-48 h-48 flex items-center justify-center bg-white dark:bg-blue-900 rounded-lg p-4">
-        {{ $hasImage := false }}
-        {{ if .Params.image }}
-        {{ $image := .Resources.Get .Params.image }}
-        {{ if $image }}
-        {{ $hasImage = true }}
-        {{ $baseSize := mul 40 4 }}
-        {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt"
-        .Title "class" "max-h-full max-w-full object-contain" "method" "fit") }}
-        {{ end }}
-        {{ end }}
-        {{ if not $hasImage }}
-        <img src="/images/hex-placeholder.svg" alt="Placeholder" class="max-h-full max-w-full object-contain"
-          data-pagefind-meta="image[src]" />
-        {{ end }}
-      </div>
-
-      <div class="flex flex-col gap-y-3 flex-grow">
-        <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100">
-          {{ .Title }}
-        </h1>
-
-        {{ with .Params.description }}
-        <p data-pagefind-body class="text-lg text-gray-600 dark:text-gray-300">
-          {{ . }}
-        </p>
-        {{ end }}
-
-        <!-- Links -->
-        <div class="flex flex-row gap-3 mt-2">
-          {{ with .Params.github }}
-          <a href="https://github.com/{{ . }}" target="_blank" title="GitHub Repository"
-            class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
-            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-github" }}</i>
-          </a>
-          {{ end }}
-          {{ with .Params.website }}
-          <a href="{{ . }}" target="_blank" title="Website"
-            class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
-            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "world" }}</i>
-          </a>
-          {{ end }}
-        </div>
-
-        <!-- Languages -->
-        {{ with .Params.languages }}
-        <div class="flex flex-row flex-wrap gap-2 mt-2">
-          {{ range . }}
-          <span
-            class="text-sm px-3 py-1 rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 font-medium">
-            {{ . }}
-          </span>
-          {{ end }}
-        </div>
-        {{ end }}
-
-        {{ if .Content }}
-        <div data-pagefind-body class="prose dark:prose-invert max-w-none mt-4">
-          {{ .Content }}
-        </div>
-        {{ end }}
-
-
-        <div data-pagefind-body data-pagefind-weight="10" class="hidden">
-          {{ .Title }}
-          {{ .Title }}
-          {{ .Title }}
-        </div>
-      </div>
-    </div>
+  <div class="mt-6 mx-2 md:mx-0">
+    {{ partial "item.html" (dict "page" . "format" "hero") }}
   </div>
+
+  <div data-pagefind-body data-pagefind-weight="10" class="hidden">
+    {{ .Title }}
+    {{ .Title }}
+    {{ .Title }}
+  </div>
+
+  {{ if .Content }}
+  <div data-pagefind-body class="prose dark:prose-invert max-w-none mt-8 mx-2 md:mx-0">
+    {{ .Content }}
+  </div>
+  {{ end }}
 
   <!-- Contributors Section -->
   {{ $people := .GetTerms "people" }}
   {{ if $people }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium dark:text-gray-200 mb-4">
-      Contributors
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" "Contributors" "class" "text-2xl font-medium dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-1 gap-y-10 mx-2 md:mx-0 mb-6">
@@ -108,9 +47,7 @@
   {{ $events := where .Pages "Section" "events" }}
   {{ if gt (len $events) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Events featuring {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Events featuring %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -124,9 +61,7 @@
   {{ $resources := where .Pages "Section" "resources" }}
   {{ if gt (len $resources) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Resources featuring {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Resources featuring %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -140,9 +75,7 @@
   {{ $posts := where .Pages "Section" "blog" }}
   {{ if gt (len $posts) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Posts about {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Posts about %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="flex flex-col">

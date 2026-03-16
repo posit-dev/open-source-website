@@ -10,9 +10,7 @@
   {{ $software := where .Pages "Section" "software" }}
   {{ if gt (len $software) 0 }}
   <div class="mt-8 mb-6">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Software tagged {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Software tagged %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
     {{ range $software }}
@@ -25,9 +23,7 @@
   {{ $blog := where .Pages "Section" "blog" }}
   {{ if gt (len $blog) 0 }}
   <div class="mt-8 mb-6">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Blog Posts tagged {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Blog Posts tagged %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
     {{ range $blog.ByDate.Reverse }}
@@ -40,9 +36,7 @@
   {{ $events := where .Pages "Section" "events" }}
   {{ if gt (len $events) 0 }}
   <div class="mt-8 mb-6">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Events tagged {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Events tagged %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
     {{ range $events }}
@@ -55,9 +49,7 @@
   {{ $resources := where .Pages "Section" "resources" }}
   {{ if gt (len $resources) 0 }}
   <div class="mt-8 mb-6">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Resources tagged {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Resources tagged %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
     {{ range $resources.ByDate.Reverse }}

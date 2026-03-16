@@ -3,6 +3,8 @@ color: '#485A5C'
 description: Your friendly guide to building LLM chat apps in Python with less effort
   and more clarity.
 github: posit-dev/chatlas
+tags:
+- AI
 image: logo.png
 languages:
 - Python

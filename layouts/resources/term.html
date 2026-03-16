@@ -17,177 +17,92 @@
   {{ end }}
   {{ end }}
 
-  <!-- Resource Profile Section -->
-  <div class="flex flex-col mt-6 overflow-hidden border-b-2 pb-8 border-gray-200">
-    {{ if ne .Params.resource_type "video" }}
-    {{ if .Params.image }}
-    {{ $image := .Resources.Get .Params.image }}
-    {{ if $image }}
-    <div class="w-full h-64 bg-gray-200 dark:bg-blue-900">
-      {{ if eq $image.MediaType.SubType "svg" }}
-      <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy">
-      {{ else }}
-      {{ $height := mul 64 4 }}
-      {{ $widths := slice 600 800 1200 1600 }}
-      {{ $images := dict }}
-      {{/* WebP disabled due to Hugo WASM memory issues
-      {{ $imagesWebp := dict }}
-      */}}
-      {{ range $widths }}
-      {{ $w := . }}
-      {{ $dimensions := printf "%dx%d" $w $height }}
-      {{ $resized := $image.Fill $dimensions }}
-      {{ $images = merge $images (dict (string $w) $resized) }}
-      {{/* WebP disabled
-      {{ $imagesWebp = merge $imagesWebp (dict (string $w) ($resized.Process "webp")) }}
-      */}}
-      {{ end }}
-      <picture>
-        {{/* WebP disabled
-        <source type="image/webp"
-          srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $imagesWebp (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
-          sizes="(min-width: 1024px) 1024px, 100vw" />
-        */}}
-        <img src="{{ (index $images " 1200").RelPermalink }}"
-          srcset="{{ range $i, $w := $widths }}{{ if $i }}, {{ end }}{{ (index $images (string $w)).RelPermalink }} {{ $w }}w{{ end }}"
-          sizes="(min-width: 1024px) 1024px, 100vw" alt="{{ .Title }}" class="w-full h-full object-cover"
-          loading="lazy" />
-      </picture>
-      {{ end }}
+  <div class="mt-6 mx-2 md:mx-0">
+    {{ partial "item.html" (dict "page" . "format" "hero") }}
+  </div>
+
+  <!-- Resource-specific sections below the hero -->
+  <div class="flex flex-col mt-6 mx-2 md:mx-0">
+
+    {{ if eq .Params.resource_type "cheatsheet" }}
+    {{ with .Params.thumbnails }}
+    <div class="mt-3">
+      <div class="flex gap-4 overflow-x-auto pb-2">
+        {{ range . }}
+        {{ $thumbnail := $.Resources.Get . }}
+        {{ if $thumbnail }}
+        <div class="shrink-0">
+          <img src="{{ $thumbnail.RelPermalink }}" alt="Page preview"
+            class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy" />
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
     </div>
     {{ end }}
     {{ end }}
-    {{ end }}
 
-    <div class="flex flex-col gap-y-4">
-      <div class="flex items-center justify-between gap-4 flex-wrap">
-        <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100 flex-1">
-          {{ .Title | safeHTML }}
-        </h1>
-        {{ with .Params.resource_type }}
-        <span class="text-sm px-3 py-1 rounded-full {{ if eq . " video" }}bg-red-700 dark:bg-red-800 text-white{{ else
-          if eq . "cheatsheet" }}bg-orange-700 text-white{{ else if eq . "demo" }}bg-teal-700 text-white{{ else if eq
-          . "tutorial" }}bg-orange-700 dark:bg-orange-800 text-white{{ else }}bg-gray-700 dark:bg-gray-600 text-white{{
-          end }} capitalize font-medium whitespace-nowrap">
-          {{ . }}
-        </span>
-        {{ end }}
-      </div>
-
+    <!-- Resource Links -->
+    <div class="flex flex-wrap gap-1">
       {{ if ne .Params.resource_type "video" }}
-      {{ with .Params.description }}
-      <p class="prose" data-pagefind-body>
-        {{ . }}
-      </p>
+      {{ $resourceUrl := or .Params.video_url .Params.url .Params.external.url }}
+      {{ with $resourceUrl }}
+      <a href="{{ . }}" target="_blank"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+        View Resource
+      </a>
       {{ end }}
       {{ end }}
 
-      <!-- Resource Metadata -->
-      <div class="flex flex-wrap gap-4">
-        {{ with .Params.date }}
-        <div class="flex items-center gap-1">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          {{ . | time.Format "Jan 2, 2006" }}
-        </div>
-        {{ end }}
-
-        {{ with .Params.external.duration }}
-        <div class="flex items-center gap-1">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          {{ partial "video_duration.html" . }}
-        </div>
-        {{ end }}
-      </div>
-
-      <!-- Authors -->
-      {{ partial "block/author.html" . }}
-
-      {{ if eq .Params.resource_type "cheatsheet" }}
-      {{ with .Params.thumbnails }}
-      <div class="mt-3">
-        <div class="flex gap-4 overflow-x-auto pb-2">
-          {{ range . }}
-          {{ $thumbnail := $.Resources.Get . }}
-          {{ if $thumbnail }}
-          <div class="shrink-0">
-            <img src="{{ $thumbnail.RelPermalink }}" alt="Page preview"
-              class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy" />
-          </div>
-          {{ end }}
-          {{ end }}
-        </div>
-      </div>
-      {{ end }}
+      {{ with .Params.download_url }}
+      {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
+      <a href="{{ . }}" target="_blank"
+        class="inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        Download{{ if $ext }} {{ $ext }}{{ end }}
+      </a>
       {{ end }}
 
-      <!-- Resource Links -->
-      <div class="flex flex-wrap gap-1">
-        {{ if ne .Params.resource_type "video" }}
-        {{ $resourceUrl := or .Params.video_url .Params.url .Params.external.url }}
-        {{ with $resourceUrl }}
-        <a href="{{ . }}" target="_blank"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-          View Resource
-        </a>
-        {{ end }}
-        {{ end }}
+      {{ with .Params.source_url }}
+      <a href="{{ . }}" target="_blank"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 dark:bg-gray-500 dark:hover:bg-gray-600 text-white font-medium transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+        Source Code
+      </a>
+      {{ end }}
+    </div>
 
-        {{ with .Params.download_url }}
-        {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
-        <a href="{{ . }}" target="_blank"
-          class="inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    {{ with .Params.translations }}
+    <div class="mt-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        Available Translations
+      </h3>
+      <div class="flex flex-wrap gap-2">
+        {{ range . }}
+        {{ range $lang, $file := . }}
+        <a href="{{ $file }}" target="_blank"
+          class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
-          Download{{ if $ext }} {{ $ext }}{{ end }}
+          {{ $lang }}
         </a>
         {{ end }}
-
-        {{ with .Params.source_url }}
-        <a href="{{ . }}" target="_blank"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 dark:bg-gray-500 dark:hover:bg-gray-600 text-white font-medium transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-          </svg>
-          Source Code
-        </a>
         {{ end }}
       </div>
-
-      {{ with .Params.translations }}
-      <div class="mt-4">
-        <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          Available Translations
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          {{ range . }}
-          {{ range $lang, $file := . }}
-          <a href="{{ $file }}" target="_blank"
-            class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 transition-colors">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            {{ $lang }}
-          </a>
-          {{ end }}
-          {{ end }}
-        </div>
-      </div>
-      {{ end }}
     </div>
+    {{ end }}
   </div>
 
   <!-- Video Section (if resource_type is video) -->
@@ -383,7 +298,7 @@
     <div class="flex flex-col lg:flex-row gap-8 mt-8 mx-2 md:mx-0">
       <div class="flex-1 min-w-0">
         <div class="w-full prose">
-          <h2 id="transcript" class="">Transcript</h2>
+          {{ partial "heading.html" (dict "level" 2 "text" "Transcript") }}
           <p class="mb-6 italic">This transcript was generated automatically and may contain errors.</p>
           <div data-pagefind-body id="video-transcript"
             class="[&_a[data-t]]:hover:bg-gray-100 [&_a[data-t]]:hover:no-underline! [&_a[data-t]]:rounded [&_a[data-t]]:text-inherit! [&_a[data-t]]:transition-colors [&_a[data-t]]:duration-200">
@@ -447,9 +362,7 @@
     <!-- Software used in this Resource -->
     {{ if $software }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 id="featured-software" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-        Featured software
-      </h2>
+      {{ partial "heading.html" (dict "level" 2 "text" "Featured software" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -462,9 +375,7 @@
     <!-- Related Resources -->
     {{ if $resources }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 id="related-resources" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-        Related resources
-      </h2>
+      {{ partial "heading.html" (dict "level" 2 "text" "Related resources" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -477,9 +388,7 @@
     <!-- Events related to this Resource -->
     {{ if $events }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      <h2 id="related-events" class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-        Related events
-      </h2>
+      {{ partial "heading.html" (dict "level" 2 "text" "Related events" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">

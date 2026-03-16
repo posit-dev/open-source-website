@@ -1,0 +1,8 @@
+{{- $level := .level | default 2 -}}
+{{- $text := .text -}}
+{{- $id := $text | anchorize -}}
+{{- $class := .class | default "" -}}
+<h{{ $level }} id="{{ $id }}"{{ with $class }} class="{{ . }}"{{ end }}>
+  {{- $text -}}
+  <a class="heading-anchor" href="#{{ $id }}" aria-label="Link to this section: {{ $text }}">#</a>
+</h{{ $level }}>

@@ -13,133 +13,24 @@
   {{ end }}
   {{ end }}
 
-  <!-- Person Profile Section -->
-  <div class="flex flex-col mt-6 md:mx-0 overflow-hidden border-b-2 pb-8 border-blue-100">
-    <div class="flex flex-col md:flex-row gap-6">
-      {{ if .Params.image }}
-      {{ $image := .Resources.Get .Params.image }}
-      {{ if $image }}
-      <div class="shrink-0">
-        {{ $baseSize := mul 48 4 }}
-        {{ partial "responsive_image_fixed.html" (dict "image" $image "baseWidth" $baseSize "baseHeight" $baseSize "alt"
-        .Title "class" "w-48 h-48 rounded-full object-cover" "method" "fit") }}
-      </div>
-      {{ end }}
-      {{ end }}
-
-      <div class="flex flex-col gap-y-3 grow">
-        <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100">
-          {{ .Title }}
-        </h1>
-
-        {{ with .Params.role }}
-        <p class="text-lg text-gray-600 dark:text-gray-300">
-          {{ . }}{{ with $.Params.affiliation }} at {{ . }}{{ end }}
-        </p>
-        {{ end }}
-
-        <!-- Team Membership -->
-        {{ if not .Params.people }}
-        {{ $currentTitle := .Title }}
-        {{ $peopleSection := site.GetPage "/people" }}
-        {{ $teams := slice }}
-        {{ range $peopleSection.Pages }}
-        {{ if .Params.people }}
-        {{ if in .Params.people $currentTitle }}
-        {{ $teams = $teams | append . }}
-        {{ end }}
-        {{ end }}
-        {{ end }}
-        {{ if gt (len $teams) 0 }}
-        <p class="text-lg text-gray-600 dark:text-gray-300">Member of
-          {{- range $i, $team := $teams -}}
-          {{- if gt $i 0 -}}
-          {{- if eq $i (sub (len $teams) 1) -}}
-          {{- if gt (len $teams) 2 }}, and {{ else }} and {{ end -}}
-          {{- else }}, {{ end -}}
-          {{- else }} {{ end -}}
-          <a href="{{ $team.RelPermalink }}" class="hover:underline">
-            {{- if $team.Params.image -}}
-            {{- $teamImage := $team.Resources.Get $team.Params.image -}}
-            {{- if $teamImage }}
-            {{- partial "responsive_image_fixed.html" (dict "image" $teamImage "baseWidth" 24 "baseHeight" 24 "alt"
-            $team.Title "class" "w-6 h-6 ml-1 -mt-1 rounded inline object-cover" "method" "fit")
-            -}}{{ end -}}{{- end
-            -}}<span>{{ $team.Title }}</span></a>
-          {{- end -}}
-        </p>
-        {{ end }}
-        {{ end }}
-
-        <!-- Social Links -->
-        {{ with .Params.social }}
-        {{ if or .bluesky .github .linkedin .mastodon .orcid .website .youtube }}
-        <div class="flex flex-row gap-3">
-          {{ with .website }}
-          <a href="{{ . }}" target="_blank" title="Website"
-            class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
-            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "world" }}</i>
-          </a>
-          {{ end }}
-          {{ with .bluesky }}
-          <a href="https://bsky.app/profile/{{ . }}" target="_blank" title="Bluesky"
-            class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
-            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-bluesky" }}</i>
-          </a>
-          {{ end }}
-          {{ with .github }}
-          <a href="https://github.com/{{ . }}" target="_blank" title="GitHub"
-            class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
-            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-github" }}</i>
-          </a>
-          {{ end }}
-          {{ with .linkedin }}
-          <a href="https://linkedin.com/in/{{ . }}" target="_blank" title="LinkedIn"
-            class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
-            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-linkedin" }}</i>
-          </a>
-          {{ end }}
-          {{ with .mastodon }}
-          <a href="{{ . }}" target="_blank" title="Mastodon"
-            class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
-            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-mastodon" }}</i>
-          </a>
-          {{ end }}
-          {{ with .orcid }}
-          <a href="https://orcid.org/{{ . }}" target="_blank" title="ORCID"
-            class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
-            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-orcid" }}</i>
-          </a>
-          {{ end }}
-          {{ with .youtube }}
-          <a href="https://youtube.com/{{ . }}" target="_blank" title="YouTube"
-            class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
-            <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-youtube" }}</i>
-          </a>
-          {{ end }}
-        </div>
-        {{ end }}
-        {{ end }}
-
-        {{ if .Content }}
-        <div data-pagefind-body class="prose dark:prose-invert max-w-none mt-2">
-          {{ .Content }}
-        </div>
-        {{ end }}
-
-        <div data-pagefind-body data-pagefind-weight="10" class="hidden">
-          {{ .Title }}
-        </div>
-      </div>
-    </div>
+  <div class="mt-6 md:mx-0">
+    {{ partial "item.html" (dict "page" . "format" "hero") }}
   </div>
+
+  <div data-pagefind-body data-pagefind-weight="10" class="hidden">
+    {{ .Title }}
+  </div>
+
+  {{ if .Content }}
+  <div data-pagefind-body class="prose dark:prose-invert max-w-none mt-8 mx-2 md:mx-0">
+    {{ .Content }}
+  </div>
+  {{ end }}
 
   <!-- People in this Team -->
   {{ with .Params.people }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      People
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" "People" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 mx-2 md:mx-0 mb-6">
@@ -164,9 +55,7 @@
   {{ end }}
   {{ if gt (len $software) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Software by {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Software by %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -188,9 +77,7 @@
   {{ end }}
   {{ if gt (len $events) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Events attended by {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Events attended by %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -215,9 +102,7 @@
   {{ end }}
   {{ if gt (len $combined) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    <h2 class="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4">
-      Posts and resources by {{ .Title }}
-    </h2>
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Posts and resources by %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
