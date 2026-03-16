@@ -3,6 +3,8 @@ color: '#AE9750'
 description: A complete toolkit for connecting R and LLMs
 github: posit-dev/btw
 image: logo.png
+tags:
+- AI
 languages:
 - R
 latest_release: '2025-12-23T13:00:45+00:00'

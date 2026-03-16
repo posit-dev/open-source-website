@@ -3,6 +3,8 @@ color: '#F3B95D'
 description: Large language model evaluation for R
 github: tidyverse/vitals
 image: logo.png
+tags:
+- AI
 languages:
 - JavaScript
 latest_release: '2025-12-01T15:34:29+00:00'
