@@ -1,0 +1,92 @@
+---
+title: pins 1.0.0
+people:
+  - Hadley Wickham
+date: '2021-10-04'
+slug: pins-1-0-0
+blogcategories:
+- Open Source
+tags:
+  - pins
+description: >
+    pins 1.0.0 is now available on CRAN! The pins package publishes data, 
+    models, and other R objects, making it easy to share them across projects 
+    and with your colleagues. Pins can be versioned, making it straightforward 
+    to track changes, re-run analyses on historical data, and undo mistakes.
+resources:
+  - name: hero
+    src: hero.jpg
+    title: A world map with many pins stuck in it
+alttext: A world map with many pins stuck in it
+events: blog
+ported_from: rstudio
+port_status: in-progress
+---
+<sup>
+Photo by <a href="https://unsplash.com/@kelsoknight" target="_blank" rel="noopener noreferrer">Kelsey Knight</a> on <a href="https://unsplash.com/">Unsplash</a>
+</sup>
+
+<p>I’m delighted to announce that <a href="https://pins.rstudio.com">pins</a> 1.0.0 is now available on CRAN.
+The pins package publishes data, models, and other R objects, making it easy to share them across projects and with your colleagues.
+You can pin objects to a variety of pin boards, including folders (to share on a networked drive or with services like DropBox), RStudio Connect, Amazon S3, and Azure blob storage.
+Pins can be versioned, making it straightforward to track changes, re-run analyses on historical data, and undo mistakes. Our users have found numerous ways to use this ability to fluently share and version data and other objects, such as <a href="https://pins.rstudio.com/dev/articles/rsc.html">automating ETL for a Shiny app</a>.</p>
+<p>You can install pins with:</p>
+<pre class="r"><code>install.packages(&quot;pins&quot;)</code></pre>
+<p>pins 1.0.0 includes a major overhaul of the API.
+The legacy API (<code>pin()</code>, <code>pin_get()</code>, <code>board_register()</code>, and friends) will continue to work, but new features will only be implemented with the new API, so we encourage you to switch to the modern API as quickly as possible.
+If you’re an existing pins user, you can learn more about the changes and how to update you code in <a href="https://pins.rstudio.com/articles/pins-update.html"><code>vignette("pins-update")</code></a>.</p>
+<div id="basics" class="level2">
+
+<h2>Basics</h2>
+<p>To use the pins package, you must first create a pin board.
+A good place to start is <code>board_folder()</code>, which stores pins in a directory you specify.
+Here I’ll use a special version of <code>board_folder()</code> called <code>board_temp()</code> which creates a temporary board that’s automatically deleted when your R session ends.
+This is great for examples, but obviously you shouldn’t use it for real work!</p>
+<pre class="r"><code>library(pins)
+
+board &lt;- board_temp()
+board
+#&gt; Pin board &lt;pins_board_folder&gt;
+#&gt; Path: &#39;/tmp/RtmpLu2Bkx/pins-114af466104ab&#39;
+#&gt; Cache size: 0</code></pre>
+<p>You can “pin” (save) data to a board with <code>pin_write()</code>.
+It takes three arguments: the board to pin to, an object, and a name:</p>
+<pre class="r"><code>board %&gt;% pin_write(head(mtcars), &quot;mtcars&quot;)
+#&gt; Guessing `type = &#39;rds&#39;`
+#&gt; Creating new version &#39;20211004T155644Z-f8797&#39;
+#&gt; Writing to pin &#39;mtcars&#39;</code></pre>
+<p>As you can see, the data saved as an <code>.rds</code> by default, but depending on what you’re saving and who else you want to read it, you might use the <code>type</code> argument to instead save it as a <code>csv</code>, <code>json</code>, <code>arrow</code>, or <code>qs</code> file.</p>
+<p>You can later retrieve the pinned data with <code>pin_read()</code>:</p>
+<pre class="r"><code>board %&gt;% pin_read(&quot;mtcars&quot;)
+#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+#&gt; Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+#&gt; Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+#&gt; Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+#&gt; Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+#&gt; Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+#&gt; Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+<div id="sharing-pins" class="level2">
+<h2>Sharing pins</h2>
+<p>A board on your computer is good place to start, but the real power of pins comes when you use a board that’s shared with multiple people.
+To get started, you can use <a href="https://pins.rstudio.com/reference/board_folder.html"><code>board_folder()</code></a> with a directory on a shared drive or using Dropbox, or if you use <a href="https://www.rstudio.com/products/connect/">RStudio Connect</a> you can use <a href="https://pins.rstudio.com/reference/board_rsconnect.html"><code>board_rsconnect()</code></a>:</p>
+<pre class="r"><code>board &lt;- board_rsconnect()
+#&gt; Connecting to RSC 1.9.0.1 at &lt;https://connect.rstudioservices.com&gt;
+board %&gt;% pin_write(tidy_sales_data, &quot;sales-summary&quot;, type = &quot;rds&quot;)
+#&gt; Writing to pin &#39;hadley/sales-summary&#39;</code></pre>
+<p>Then, someone else (or an automated Rmd report) can read and use your pin:</p>
+<pre class="r"><code>board &lt;- board_rsconnect()
+board %&gt;% pin_read(&quot;hadley/sales-summary&quot;)</code></pre>
+<p>You can easily control who gets to access the data using the RStudio Connection permissions pane.</p>
+</div>
+<div id="other-boards" class="level2">
+<h2>Other boards</h2>
+<p>As well as <code>board_folder()</code> and <code>board_rsconnect()</code>, pins 1.0.0 provides:</p>
+<ul>
+<li><p><a href="https://pins.rstudio.com/reference/board_azure.html"><code>board_azure()</code></a>, which uses Azure’s blob storage.</p></li>
+<li><p><a href="https://pins.rstudio.com/reference/board_s3.html"><code>board_s3()</code></a>, which uses Amazon’s S3 storage platform.</p></li>
+<li><p><a href="https://pins.rstudio.com/reference/board_ms365.html"><code>board_ms365()</code></a>, which uses Microsoft’s OneDrive or SharePoint.
+(Thanks to contribution from <a href="https://github.com/hongooi73">Hong Ooi</a>)</p></li>
+</ul>
+<p>Future versions of the pins package are likely to include other backends as we learn from our users what would be most useful.</p>
+</div>

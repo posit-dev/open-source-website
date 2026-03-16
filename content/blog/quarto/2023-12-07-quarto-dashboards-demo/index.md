@@ -1,0 +1,23 @@
+---
+title: Quarto Dashboards Demonstration
+subtitle: A brief tour of how to build a dashboard in Quarto v1.4.
+categories:
+  - Demo
+  - Quarto 1.4
+people:
+  - Andrew Holz
+date: '2023-12-07'
+image: quarto-dashboards-video-cover.png
+image-alt: >-
+  Quarto logo on a blue background with the title Quarto Dashboards, Charles
+  Teague and an abstract dashboard sketch
+ported_from: quarto
+port_status: in-progress
+---
+
+
+Quarto has a host of exciting new features in release v1.4 with one of the most anticipated being Quarto Dashboards. In a recent internal presentation, Charles Teague demonstrated the new capabilities and we wanted to share it with community.
+
+Please note that you can use this feature today, but to access it you need to be running on a recent [Quarto prerelease build](https://quarto.org/docs/download/prerelease.html). We also encourage users to review our [pre-release documentation](https://quarto.org/docs/dashboards/index.html) which offers additional information and examples of the dashboard functionality.
+
+<https://www.youtube.com/watch?v=_VGJIPRGTy4&ab_channel=PositPBC>

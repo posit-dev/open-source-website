@@ -6,7 +6,7 @@ people:
 description: >
   Brief description of the post for list pages and social media
 image: ""
-alttext: ""
+image-alt: ""
 categories:
   -
 tags:

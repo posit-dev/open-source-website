@@ -1,0 +1,6 @@
+title: Escape Shortcodes
+author: Posit
+version: 1.0.0
+contributes:
+  filters:
+    - escape-shortcodes.lua

@@ -1,0 +1,41 @@
+---
+title: Thinking about rstudio::conf 2020? See the full conference schedule!
+authors: 
+- Anne Carome
+authormeta:
+- anne-carome
+date: '2019-11-25'
+slug: thinking-about-rstudio-conf-2020-see-the-full-conference-schedule
+categories:
+- rstudio::conf
+blogcategories:
+- Company News and Events
+tags:
+- rstudio::conf
+events: blog
+---
+
+
+rstudio::conf 2020, the conference on all things R and RStudio, is only two months away and we’ve already surpassed last year’s registration! If you’re a dedicated R user or one of the many people and teams who use RStudio with R and Python, now is the time to claim your spot in San Francisco. 
+  
+<p align="center">
+<a href="https://web.cvent.com/event/36ebe042-0113-44f1-8e36-b9bc5d0733bf/websitePage:34f3c2eb-9def-44a7-b324-f2d226e25011?RefId=conference&utm_campaign=Site%20Promo&utm_medium=Ste&utm_source=ConfPage">
+![Learn more and register for the RStudio 2020 conference here](learn-more-and-reg.png){width=60%}
+</a></p>
+
+Today we’re delighted to announce the [full conference schedule](https://web.cvent.com/event/36ebe042-0113-44f1-8e36-b9bc5d0733bf/websitePage:34f3c2eb-9def-44a7-b324-f2d226e25011?RefId=conference&utm_campaign=Site%20Promo&utm_medium=Ste&utm_source=ConfPage), so that you can plan your days. rstudio::conf 2020 takes place at the Hilton San Francisco Union Square January 29-30, preceded by Training Days on the 27th and 28th.
+This year we have over 80 talks, 18 lightning talks, and 20 posters.
+
+- Join host Hadley Wickham, Chief Scientist at RStudio, in welcoming our keynote speakers:
+  - [Hilary Parker](https://hilaryparker.com/about-hilary-parker/) (Stitch Fix) and [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/) (Johns Hopkins)
+  - [Martin Wattenberg](http://www.bewitched.com/about.html) and [Fernanda Viegas](http://www.fernandaviegas.com/) (Research Scientists, Google)
+  - [Jenny Bryan](https://jennybryan.org/) (Engineer, RStudio)
+  - [JJ Allaire](https://github.com/jjallaire) (CEO, RStudio)
+  
+- 16 invited talks from outstanding speakers, innovators, and data scientists.
+- Over 50 contributed talks from the R and open-source data science community.
+- And 30 talks by RStudio employees on the latest developments in shiny, the tidyverse, R and python integration, and more!
+
+
+We also have [18 two day workshops](https://web.cvent.com/event/36ebe042-0113-44f1-8e36-b9bc5d0733bf/websitePage:34f3c2eb-9def-44a7-b324-f2d226e25011?RefId=conference&utm_campaign=Site%20Promo&utm_medium=Ste&utm_source=ConfPage) (for both beginners and experts!) if you want to go deep into a topic. We look forward to seeing you there!
+

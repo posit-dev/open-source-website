@@ -1,0 +1,74 @@
+---
+title: Creating Responsive Layouts in Shiny with `layout_columns()`
+description: Learn how to use Shiny's `layout_columns()` to build adaptive web apps that look great on any screen size.
+people:
+  - Shiny Team
+date: "2025-02-08"
+image: shiny-layouts.jpg
+ported_from: shiny
+port_status: in-progress
+---
+
+
+## Shiny Layouts for Different Screen Sizes
+
+Creating web applications that look good on any device is crucial. Shiny offers tools to make your dashboards responsive.  In this post, we'll explore how to use `layout_columns()` to tailor your app's layout for desktops, tablets, and smartphones.
+
+### The Problem: Default Layout Behavior
+
+When first starting with Shiny, developers might create UI elements without explicitly defining columns.  Shiny's default behavior is responsive in that it will stretch elements to fill the available space.  However, this can lead to layouts that look great on a large monitor but become squashed or unwieldy on smaller screens.
+
+### The Solution: ui.layout_columns()
+
+`ui.layout_columns()` is a powerful function that lets you define column-based layouts that adjust based on screen width. It leverages the Bootstrap grid system, dividing the screen into 12 virtual columns.  You can then specify how many of these columns each element should occupy at different breakpoints.
+
+### Key Concepts
+
+*   **Breakpoints:** These define the screen widths at which the layout changes. Shiny provides common breakpoints:
+    *   `lg`: Large (desktop, typically 992px and wider)
+    *   `md`: Medium (tablets, typically 768px and wider)
+    *   `sm`: Small (smartphones)
+    *   `xs`: Extra Small (smaller smartphones)
+*   **`col_widths`:**  This argument within `ui.layout_columns()` is where the magic happens. You provide a list or dictionary that specifies the number of columns for each UI element at each breakpoint.
+
+### Example: Two-Column Layout on Desktop, Single-Column on Mobile
+
+Let's say we want two cards to appear side-by-side on a desktop, but stacked vertically on a mobile device. Here's how we can achieve that using Shiny Express mode (the same principle applies to core Shiny):
+
+:::{.column-page .py-4}
+
+{{< video https://www.youtube.com/embed/KkUpgeUIVvM >}}
+
+:::
+
+```python
+with ui.layout_columns(
+    # Responsive widths
+    col_widths={
+        "lg": (6, 6, 12), # Large screens
+        "md": (12, 12, 12), # Medium screens
+        "sm": (12, 12, 12), # Small screens
+        "xs": (12, 12, 12), # Extra small screens
+    },
+    card1
+    card2
+    card3
+```
+
+
+**Explanation:**
+
+*  `ui.layout_columns()`: We use this function to wrap our three cards.
+
+*   `col_widths`:
+    *   `"lg": (6, 6, 12)`: On large screens, the first two cards each take up 6 out of 12 columns (half the width), and the third card takes up all 12 columns (full width). This positions the first two cards side-by-side and the third card below them.
+    *   `"md": (12, 12, 12)`, `"sm": (12, 12, 12)`, `"xs": (12, 12, 12)`:  On medium, small, and extra-small screens, *all* cards take up the full 12 columns. This stacks them vertically.
+
+### Going Further
+
+The `ui.layout_columns()` function is quite flexible. You can:
+
+*   Use a list instead of a dictionary for `col_widths` if you want the same layout for all breakpoints.
+*   Use a dictionary of column widths at different breakpoints. The keys should be one of "xs", "sm", "md", "lg", or "xl", or "xxl", and the values are either of the above. For example, `col_widths={"lg": (4, 8, 12)}`
+
+This technique allows you to create sophisticated, responsive layouts that adapt gracefully to different screen sizes, providing an optimal user experience across all devices. Check out the [Shiny documentation](https://shiny.posit.co/py/api/express.ui.layout_columns.html) for more details and advanced options.

@@ -1,0 +1,118 @@
+---
+title: "luz 0.4.0"
+description: >
+  luz v0.4.0 is now on CRAN. This release adds support for training models on ARM Mac GPUs, reduces the overhead of using luz, and makes it easier to checkpoint and resume failed runs.
+author:
+  - name: Daniel Falbel
+    affiliation: Posit
+    affiliation_url: https://www.posit.co/
+slug: luz-0-4
+date: 2023-04-17
+categories:
+  - Torch
+  - Packages/Releases
+  - R
+preview: images/luz.jpg
+format: hugo-md
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 6)
+```
+
+A new version of luz is now available on CRAN. luz is a high-level interface for torch. It aims to reduce the boilerplate code necessary to train torch models while being as flexible as possible,
+so you can adapt it to run all kinds of deep learning models.
+
+If you want to get started with luz we recommend reading the
+[previous release blog post](/blog/ai/2022-08-24-luz-0-3/#whats-luz) as well as the ['Training with luz'](https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/training_with_luz.html) chapter of the ['Deep Learning and Scientific Computing with R torch'](/blog/ai/2023-04-05-deep-learning-scientific-computing-r-torch/) book.
+
+This release adds numerous smaller features, and you can check the full changelog [here](https://mlverse.github.io/luz/news/index.html). In this blog post we highlight the features we are most excited for.
+
+## Support for Apple Silicon
+
+Since [torch v0.9.0](/blog/ai/2022-10-25-torch-0-9/#support-for-apple-silicon), it's possible to run computations on the GPU of Apple Silicon equipped Macs. luz wouldn't automatically make use of the GPUs though, and instead used to run the models on CPU. 
+
+Starting from this release, luz will automatically use the 'mps' device when running models on Apple Silicon computers, and thus let you benefit from the speedups of running models on the GPU.
+
+To get an idea, running a simple CNN model on MNIST from [this example](https://mlverse.github.io/luz/articles/examples/mnist-cnn.html) for one epoch on an Apple M1 Pro chip would take 24 seconds when using the GPU:
+
+```
+  user  system elapsed 
+19.793   1.463  24.231 
+```
+
+While it would take 60 seconds on the CPU:
+
+```
+  user  system elapsed 
+83.783  40.196  60.253 
+```
+
+That is a nice speedup!
+
+Note that this feature is still somewhat experimental, and not every torch operation is supported to run on MPS. It's likely that you see a warning message explaining that it might need to use the CPU fallback for some operator:
+
+```
+[W MPSFallback.mm:11] Warning: The operator 'at:****' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (function operator())
+```
+
+## Checkpointing
+
+The checkpointing functionality has been refactored in luz, and
+it's now easier to restart training runs if they crash for some
+unexpected reason. All that's needed is to add a `resume` callback
+when training the model:
+
+```{r}
+# ... model definition omitted
+# ...
+# ...
+resume <- luz_callback_resume_from_checkpoint(path = "checkpoints/")
+
+results <- model %>% fit(
+  list(x, y),
+  callbacks = list(resume),
+  verbose = FALSE
+)
+```
+
+It's also easier now to save model state at 
+every epoch, or if the model has obtained better validation results.
+Learn more with the ['Checkpointing'](https://mlverse.github.io/luz/articles/checkpoints.html) article.
+
+## Bug fixes
+
+This release also includes a few small bug fixes, like respecting usage of the CPU (even when there's a faster device available), or making the metrics environments more consistent. 
+
+There's one bug fix though that we would like to especially highlight in this blog post. We found that the algorithm that we were using to accumulate the loss during training had exponential complexity; thus if you had many steps per epoch during your model training, 
+luz would be very slow.
+
+For instance, considering a dummy model running for 500 steps, luz would take 61 seconds for one epoch:
+
+```
+Epoch 1/1
+Train metrics: Loss: 1.389                                                                
+   user  system elapsed 
+ 35.533   8.686  61.201 
+```
+
+The same model with the bug fixed now takes 5 seconds:
+
+```
+Epoch 1/1
+Train metrics: Loss: 1.2499                                                                                             
+   user  system elapsed 
+  4.801   0.469   5.209
+```
+
+This bugfix results in a 10x speedup for this model. However, the speedup may vary depending on the model type. Models that are faster per batch and have more iterations per epoch will benefit more from this bugfix.
+
+## Final remarks
+
+Thank you very much for reading this blog post. As always, we welcome every contribution to the torch ecosystem. Feel free to open issues to suggest new features, improve documentation, or extend the code base. 
+
+Last week, we announced the torch v0.10.0 release -- here's a [link](/blog/ai/2023-04-14-torch-0-10/) to the release blog post, in case you missed it.
+
+Photo by <a href="https://unsplash.com/@pj24dm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Peter John Maridable</a> on <a href="https://unsplash.com/photos/C2a4RGapd8s?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+

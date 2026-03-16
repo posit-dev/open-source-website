@@ -1,0 +1,216 @@
+---
+title: "(Re-)introducing Distill for R Markdown"
+date: '2020-12-07'
+categories:
+- r-markdown
+- packages
+people:
+  - Alison Hill
+  - JJ Allaire
+slug: distill
+description: We are proud to announce the latest release of the distill package is now on CRAN. This version contains a number of major upgrades including the introduction of themed articles and websites, search, and improved accessibility.
+bibliography: distill.bib
+link-citations: yes
+blogcategories:
+- Products and Technology
+- Open Source
+events: blog
+alttext: Under the Wave off Kanagawa by Hokusai
+ported_from: rstudio
+port_status: in-progress
+---
+
+<p>We are proud to announce that version 1.0 of the <a href="https://pkgs.rstudio.com/distill/">distill package</a> is now on <a href="https://cran.r-project.org/web/packages/distill/index.html">CRAN</a>. While Distill has been around for awhile (and you may remember it by its original name, <a href="/2018/09/19/radix-for-r-markdown/">Radix</a>), this latest version includes so many new features that we wanted to take a moment to re-introduce you to Distill.</p>
+<p>If you just want to jump in and get starting using Distill, you can install the latest version from CRAN:</p>
+<pre class="r"><code>install.packages(&quot;distill&quot;)</code></pre>
+<p>The package website (also built with Distill) is the best place to start: <a href="https://rstudio.github.io/distill/" class="uri">https://rstudio.github.io/distill/</a></p>
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="site.png" alt="The Distill website" width="50%" />
+<p class="caption">
+Figure 1: The Distill website
+</p>
+</div>
+
+<p>If you are not ready to commit <em>just</em> yet, read on to <a href="#what-is-distill">find out more about Distill</a> and <a href="#distill-v1.0">discover new features</a> from the latest release.</p>
+
+<div id="what-is-distill" class="level2">
+<h2>What is Distill?</h2>
+<p>Distill is a package built for <a href="https://rmarkdown.rstudio.com/">R Markdown</a>, an ecosystem of packages for creating computational documents in R. The goal of the Distill package is to provide an output format optimized for online scientific and technical communication. The Distill R package provides two HTML <a href="https://pkgs.rstudio.com/distill/reference/index.html#section-output-formats">output formats</a> for R Markdown documents:</p>
+<ul>
+<li><p>Single HTML articles (<a href="https://pkgs.rstudio.com/distill/reference/distill_article.html"><code>distill_article</code></a>), and</p></li>
+<li><p>Multi-page HTML websites, including blogs (<a href="https://pkgs.rstudio.com/distill/reference/distill_website.html"><code>distill_website</code></a>).</p></li>
+</ul>
+<p>These formats are based on the Distill web framework used by the Distill Machine Learning Journal <span class="citation">(<a href="#ref-olah2018the" role="doc-biblioref">Olah et al. 2018</a>)</span>. The Distill web framework was originally developed to catalyze more engaging and effective scientific, technical communication. The idea was to create a platform to help scientists harness the benefits of modern HTML-based communication, which digital designers and journalists have been using to create interactive and engaging articles that meet readers where they are: online.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="distill-pub.png" alt="A Distill publication" width="75%" />
+<p class="caption">
+Figure 2: A Distill publication
+</p>
+</div>
+
+<p>If you are keen to learn more about how visual aesthetics and interactivity can improve readers’ engagement and learning, we recommend reading <span class="citation"><a href="#ref-hohman2020communicating" role="doc-biblioref">Hohman et al.</a> (<a href="#ref-hohman2020communicating" role="doc-biblioref">2020</a>)</span>.</p>
+
+<div id="distill-article" class="level3">
+<h3>Distill for single HTML articles</h3>
+<p>If you have ever knit an R Markdown file to <code>html_document()</code>, then you can think of <code>distill_article()</code> as its scientific alter-ego.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="https://media.giphy.com/media/w73hhH9c8vmbS/giphy.gif" alt="PBS Full-Time Kid Egg in a Bottle Experiment"  />
+<p class="caption">
+Figure 3: PBS Full-Time Kid Egg in a Bottle Experiment
+</p>
+</div>
+
+<p>Distill articles offer users an R Markdown format with built-in bells and whistles that make scientific communication easier, including:</p>
+<ul>
+<li><p>Ability to incorporate JavaScript and D3-based <a href="https://rstudio.github.io/distill/interactivity.html">interactive visualizations</a> made with R.</p></li>
+<li><p>Support for <a href="https://rstudio.github.io/distill/#citations">citations</a>, <a href="https://rstudio.github.io/distill/#appendices">appendices</a>, <a href="https://rstudio.github.io/distill/#footnotes-and-asides">hover-able footnotes, and asides.</a></p></li>
+<li><p>Tools for making articles <a href="https://rstudio.github.io/distill/citations.html">easily citeable</a>, as well as for generating <a href="https://rstudio.github.io/distill/citations.html#google-scholar">Google Scholar</a> compatible citation metadata.</p></li>
+<li><p>Auto-numbering of <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html">figures</a> and <a href="https://bookdown.org/yihui/bookdown/tables.html">tables</a>, and <a href="https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html">cross-referencing</a> of figures and tables.</p></li>
+<li><p>Built-in support for <a href="https://rstudio.github.io/distill/basics.html#creating-an-article">multiple authors</a> with affiliations and <a href="https://orcid.org/">ORCID iD</a>.</p></li>
+<li><p>Adding <a href="https://rstudio.github.io/distill/metadata.html#creative-commons">creative commons licensed content</a> with specific reuse instructions.</p></li>
+</ul>
+<p>Each of these features are designed to help scientists use the web and R to communicate about their work more effectively. But you can also use Distill to publish any HTML content, like <a href="https://stats.andrewheiss.com/bread/bagels.html">instructions for making bagels</a>- Distill works great for that too.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a><br />
+</p>
+
+</div>
+<div id="distill-site" class="level3">
+<h3>Distill for websites and blogs</h3>
+<p>While a single article may often be all that you need, many data science projects involve a <em>collection</em> of multiple R Markdown documents. When you have more than one R Markdown file knitted to HTML in your collection, it’s a good time to think about knitting them together into a single, navigable website. It is much easier for folks to engage with your work when you can share a link directly to it that they can see and explore it themselves.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="https://media.giphy.com/media/3ohze1V5m8q6Fs2d7a/giphy.gif" alt="PBS Full Time Kid DIY Bird Feeder" width="50%" />
+<p class="caption">
+Figure 4: PBS Full Time Kid DIY Bird Feeder
+</p>
+</div>
+
+<p>Distill can knit together a collection of distill articles into a cohesive and navigable website. Distill sites feature an <a href="https://rstudio.github.io/distill/website.html#site-navigation">upper navigation bar</a> with links (which may also include dropdown menus). In addition, Distill blogs offer page layout options like <a href="https://rstudio.github.io/distill/blog.html#listing-pages">listing pages</a> and the ability to <a href="https://rstudio.github.io/distill/blog.html#custom-listings">customize them</a>. A listing page doesn’t have to be populated manually; instead, it creates a clickable, sequential list of all your posts (usually with nice thumbnail images and some post metadata like author, date, etc.). Blog posts also get <a href="https://rstudio.github.io/distill/blog.html#website-or-blog">special treatment</a> by Distill — they are never automatically re-rendered when your site is re-built.</p>
+<p>Here is a Distill blog in action, from the <a href="https://blogs.rstudio.com/ai/">RStudio AI blog</a>:</p>
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="https://pkgs.rstudio.com/distill/articles/images/rstudio-ai.png" alt="The RStudio AI blog, built with distill" width="75%" />
+<p class="caption">
+Figure 5: The RStudio AI blog, built with distill
+</p>
+</div>
+
+<p>Distill adds several built-in features to make websites better-suited for scientific communication:</p>
+<ul>
+<li><p><a href="https://rstudio.github.io/distill/website.html#site-search">Site-wide search.</a></p></li>
+<li><p><a href="https://rstudio.github.io/distill/metadata.html#preview-images">Per-article sharing preview images</a> (for OpenGraph, Twitter, Slack, etc.).</p></li>
+<li><p><a href="https://rstudio.github.io/distill/blog_workflow.html#importing-posts">Import posts from other external sources.</a></p></li>
+<li><p><a href="https://rstudio.github.io/distill/blog_workflow.html#canonical-urls">Canonical urls</a> - handy for when your own post is re-published elsewhere.</p></li>
+<li><p>Customizable <a href="https://rstudio.github.io/distill/blog.html#rss-feed">RSS feeds</a> (either with summaries or full post content).</p></li>
+<li><p><a href="https://rstudio.github.io/distill/website.html#site-navigation">Site logo</a> in the upper navbar.</p></li>
+<li><p>Integrated <a href="https://rstudio.github.io/distill/website.html#google-analytics">Google Analytics</a> support.</p></li>
+<li><p><a href="https://rstudio.github.io/distill/website.html#site-metadata">Favicon support</a>.</p></li>
+</ul>
+<p>These are all on top of the features we listed for individual <a href="#distill-article">Distill articles</a>. You can also use RStudio’s <a href="/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/">visual markdown editor</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> to compose Distill articles, which provides a WYSIWYG (What You See Is What You Get) writing experience as well as the ability to <a href="/2020/11/09/rstudio-1-4-preview-citations/">insert citations</a> from a document bibliography, reference management software, and even open-source bibliographic databases like <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a>.</p>
+<p>Importantly, Distill websites are built without any kind of static site generator (like <a href="https://jekyllrb.com/">Jekyll</a> or <a href="https://gohugo.io/">Hugo</a>), which means that Distill websites offer users the bliss of building a website without any additional software dependencies (this means, all you need is R and the distill package to make it work).</p>
+
+</div>
+</div>
+<div id="distill-v1.0" class="level2">
+<h2>Distill version 1.0</h2>
+<p>So, what is new with Distill? In the rest of this post, we’ll share some highlights from the latest release, but you might want to look at the <a href="https://pkgs.rstudio.com/distill/news/index.html#distill-v10-cran">release notes</a> for the full details.</p>
+<div id="theming" class="level3">
+<h3>Theming</h3>
+<p>In this latest release, we have introduced the ability to theme your Distill article, website, or blog without needing to write your own <a href="https://en.wikipedia.org/wiki/CSS">CSS</a> from scratch. Distill output formats have a modern and streamlined theme “out of the box,” but we also know that it is important for users to be able to create a non-cookie-cutter site with less friction (i.e., less CSS).</p>
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif" alt="A totally relatable CSS editing experience." width="30%" />
+<p class="caption">
+Figure 6: A totally relatable CSS editing experience.
+</p>
+</div>
+
+<p>To sidestep CSS wrangling, you can now <a href="https://rstudio.github.io/distill/website.html?panelset=themed-site&amp;panelset1=theme.css#create-theme">create</a> and <a href="https://rstudio.github.io/distill/website.html?panelset=themed-site&amp;panelset1=theme.css#apply-theme">apply</a> a Distill theme, which allows you to customize common elements without needing to create a CSS file from scratch. To get started, you can use the new <a href="https://distill.netlify.app/reference/create_theme.html"><code>create_theme()</code></a> function:</p>
+<pre class="r"><code>create_theme(name = &quot;bespoke-theme&quot;) </code></pre>
+
+<p>Follow the docs on <a href="https://rstudio.github.io/distill/website.html#theming">theming</a> to learn more. There, we provide a demo with code for going from the default theme (left) to a bespoke theme (right) by changing only a few fields in <code>bespoke-theme.css</code>:</p>
+
+<p><img src="theme-before.png" width="49%" /><img src="theme-after.png" width="49%" /></p>
+
+<p>But themes aren’t just for full websites! You can also theme a <a href="https://rstudio.github.io/distill/basics.html#theming">single Distill article</a>, and you can change the theme for an <a href="https://rstudio.github.io/distill/website.html#apply-theme">individual article</a> within a Distill website. As before, you can always use <a href="https://rstudio.github.io/distill/website.html#custom-style">custom CSS styles</a> to go fully custom; the theme allows you to bypass the detective work typically involved in discovering which CSS selectors are needed to change the key elements most users wish to control. Finally, we provided some <a href="https://rstudio.github.io/distill/website.html#example-themes">example Distill themes</a> for inspiration.</p>
+
+</div>
+<div id="other-highlights" class="level3">
+<h3>Other highlights</h3>
+<ul>
+<li><p>Added built-in search functionality, based on <a href="https://fusejs.io/">Fuse.js</a>. Search will be enabled by default for new distill blogs, and can be <a href="https://rstudio.github.io/distill/website.html#site-search">enabled</a> on websites as well.</p></li>
+<li><p>Headings provide anchor links upon hover, making it easier to find and share the URL for a specific of a webpage or article.</p></li>
+<li><p>Improved default syntax highlighting theme, optimized for accessibility based on the <a href="https://github.com/ericwbailey/a11y-syntax-highlighting">a11y syntax highlighting themes</a> by Eric Bailey. All colors in the theme meet the minimum <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">WCAG 2.0 guidelines for contrast accessibility</a> of &gt; 4.5 (AA).</p></li>
+<li><p>Improved handling and display of article categories for blogs, allowing readers to more easily see the categories for each individual post on listing pages.</p></li>
+<li><p>Support for ORCID integration in article metadata:</p>
+<pre class="yaml"><code>---
+authors:
+- name: Dianne Cook
+  affiliation: Monash University
+  orcid_id: 0000-0002-3813-7155
+---</code></pre></li>
+<li><p><a href="https://downlit.r-lib.org/">Downlit</a> integration for automatic linking of R code in code chunks to function reference documentation.</p>
+<div class="figure">
+<video class="w-100" src="downlit.mp4" controls=""><a href="downlit.mp4"></a></video>
+<p class="caption">Downlit links to any package’s reference pages directly.</p>
+</div></li>
+</ul>
+
+</div>
+</div>
+<div id="distill-reference-site" class="level2">
+<h2>Distill reference site</h2>
+<p>In addition to the <a href="https://rstudio.github.io/distill/">documentation site</a>, Distill also gained a <a href="https://pkgs.rstudio.com/distill">reference site</a>, built with <a href="https://pkgdown.r-lib.org/">pkgdown</a>. There, you’ll find a <a href="https://pkgs.rstudio.com/distill/reference/index.html">reference section</a>, <a href="https://pkgs.rstudio.com/distill/articles/examples.html">example gallery</a>, and the <a href="https://pkgs.rstudio.com/distill/news/index.html">latest news</a>. Our sincere thanks to the members of the #rstats community who agreed to have their sites featured in the <a href="https://pkgs.rstudio.com/distill/articles/examples.html">example gallery</a>:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="examples.png" alt="The Distill example gallery" width="75%" />
+<p class="caption">
+Figure 7: The Distill example gallery
+</p>
+</div>
+
+</div>
+<div id="a-hex-sticker" class="level2">
+<h2>A hex sticker</h2>
+<p>Last but definitely not least, distill also gained a hex sticker — thanks to our artist <a href="https://www.jungjulie.com/">Julie Jung</a>!</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="distill.png" alt="distill hex by Julie Jung" width="25%" />
+<p class="caption">
+Figure 8: distill hex by Julie Jung
+</p>
+</div>
+
+<p>Phew! If you’ve made it this far, thanks for reading and we hope you give Distill version 1.0 a whirl!</p>
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
+<img src="https://media.giphy.com/media/ToMjGpns6x9Fv3b5C00/giphy.gif" alt="PBS Full Time Kid" width="50%" />
+<p class="caption">
+Figure 9: PBS Full Time Kid
+</p>
+</div>
+
+</div>
+<div id="acknowledgements" class="level2">
+<h2>Acknowledgements</h2>
+<p>A big thanks to the 31 contributors who helped with this release by discussing problems, proposing features, and contributing code:</p>
+<p><a href="https://github.com/ADernild">@ADernild</a>, <a href="https://github.com/clauswilke">@clauswilke</a>, <a href="https://github.com/CRLNP">@CRLNP</a>, <a href="https://github.com/henry090">@henry090</a>, <a href="https://github.com/jarrodscott">@jarrodscott</a>, <a href="https://github.com/javierluraschi">@javierluraschi</a>, <a href="https://github.com/jenrichmond">@jenrichmond</a>, <a href="https://github.com/jmbuhr">@jmbuhr</a>, <a href="https://github.com/jthomasmock">@jthomasmock</a>, <a href="https://github.com/kevinushey">@kevinushey</a>, <a href="https://github.com/m-clark">@m-clark</a>, <a href="https://github.com/maelle">@maelle</a>, <a href="https://github.com/mfdf">@mfdf</a>, <a href="https://github.com/michiexile">@michiexile</a>, <a href="https://github.com/mihagazvoda">@mihagazvoda</a>, <a href="https://github.com/MilesMcBain">@MilesMcBain</a>, <a href="https://github.com/mondpanther">@mondpanther</a>, <a href="https://github.com/mrcaseb">@mrcaseb</a>, <a href="https://github.com/mrworthington">@mrworthington</a>, <a href="https://github.com/mvuorre">@mvuorre</a>, <a href="https://github.com/nunompmoniz">@nunompmoniz</a>, <a href="https://github.com/pneuvial">@pneuvial</a>, <a href="https://github.com/relund">@relund</a>, <a href="https://github.com/RodrigoCerqueira">@RodrigoCerqueira</a>, <a href="https://github.com/RRemelgado">@RRemelgado</a>, <a href="https://github.com/slopp">@slopp</a>, <a href="https://github.com/stared">@stared</a>, <a href="https://github.com/taraskaduk">@taraskaduk</a>, <a href="https://github.com/tonytrevisan">@tonytrevisan</a>, <a href="https://github.com/umarcor">@umarcor</a>, and <a href="https://github.com/wordsmith189">@wordsmith189</a>.</p>
+</div>
+<div id="references" class="level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-hohman2020communicating" class="csl-entry">
+Hohman, Fred, Matthew Conlen, Jeffrey Heer, and Duen Horng (Polo) Chau. 2020. <span>“Communicating with Interactive Articles.”</span> <em>Distill</em>. <a href="https://doi.org/10.23915/distill.00028">https://doi.org/10.23915/distill.00028</a>.
+</div>
+<div id="ref-olah2018the" class="csl-entry">
+Olah, Chris, Arvind Satyanarayan, Ian Johnson, Shan Carter, Ludwig Schubert, Katherine Ye, and Alexander Mordvintsev. 2018. <span>“The Building Blocks of Interpretability.”</span> <em>Distill</em>. <a href="https://doi.org/10.23915/distill.00010">https://doi.org/10.23915/distill.00010</a>.
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Thank you, <a href="https://www.andrewheiss.com/">Andrew Heiss</a>!<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>At the time of publishing, the visual markdown editor is included in the RStudio IDE Preview v1.4. Read the documentation for the most up-to-date status of the editor: <a href="https://rstudio.github.io/visual-markdown-editing/#/" class="uri">https://rstudio.github.io/visual-markdown-editing/#/</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>

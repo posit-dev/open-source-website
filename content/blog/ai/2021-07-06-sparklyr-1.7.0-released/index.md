@@ -1,0 +1,408 @@
+---
+title: "sparklyr 1.7: New data sources and spark_apply() capabilities, better interfaces for sparklyr extensions, and more!"
+description: |
+  Sparklyr 1.7 delivers much-anticipated improvements, including R interfaces for image and binary data sources, several new spark_apply() capabilities, and better integration with sparklyr extensions.
+date: 2021-07-06
+slug: sparklyr-1.7
+categories:
+  - R
+  - Packages/Releases
+  - Distributed Computing
+author:
+  - name: Yitao Li
+    url: https://github.com/yitao-li
+    affiliation: RStudio
+    affiliation_url: https://www.rstudio.com
+people:
+  - Yitao Li
+image: thumbnail.png
+ported_from: ai
+port_status: in-progress
+---
+
+
+
+[`Sparklyr`](https://sparklyr.ai) 1.7 is now available on [CRAN](https://cran.r-project.org/web/packages/sparklyr/index.html)!
+
+To install `sparklyr` 1.7 from CRAN, run
+
+``` r
+install.packages("sparklyr")
+```
+
+In this blog post, we wish to present the following highlights from the `sparklyr` 1.7 release:
+
+- [Image and binary data sources](#image-and-binary-data-sources)
+- [New spark_apply() capabilities](#new-spark_apply-capabilities)
+- [Better integration with sparklyr extensions](#better-integration-with-sparklyr-extensions)
+- [Other exciting news](#other-exciting-news)
+
+## Image and binary data sources
+
+As a unified analytics engine for large-scale data processing, [Apache Spark](https://spark.apache.org)
+is well-known for its ability to tackle challenges associated with the volume, velocity, and last but
+not least, the variety of big data. Therefore it is hardly surprising to see that -- in response to recent
+advances in deep learning frameworks -- Apache Spark has introduced built-in support for
+[image data sources](https://issues.apache.org/jira/browse/SPARK-22666)
+and [binary data sources](https://issues.apache.org/jira/browse/SPARK-25348) (in releases 2.4 and 3.0, respectively).
+The corresponding R interfaces for both data sources, namely,
+[`spark_read_image()`](https://spark.rstudio.com/reference/spark_read_image.html) and
+[`spark_read_binary()`](https://spark.rstudio.com/reference/spark_read_binary.html), were shipped
+recently as part of `sparklyr` 1.7.
+
+The usefulness of data source functionalities such as `spark_read_image()` is perhaps best illustrated
+by a quick demo below, where `spark_read_image()`, through the standard Apache Spark
+[`ImageSchema`](https://spark.apache.org/docs/latest/api/java/org/apache/spark/ml/image/ImageSchema.html),
+helps connecting raw image inputs to a sophisticated feature extractor and a classifier, forming a powerful
+Spark application for image classifications.
+
+### The demo
+
+![](images/photo-1571324524859-899fbd151860.jpeg)
+Photo by [Daniel Tuttle](https://unsplash.com/@danieltuttle) on
+[Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+In this demo, we shall construct a scalable Spark ML pipeline capable of classifying images of cats and dogs
+accurately and efficiently, using `spark_read_image()` and a pre-trained convolutional neural network
+code-named `Inception` (Szegedy et al. (2015)).
+
+The first step to building such a demo with maximum portability and repeatability is to create a
+[sparklyr extension](https://spark.rstudio.com/extensions/) that accomplishes the following:
+
+- Specifying the required MVN dependencies of this demo (namely, the
+  [Spark Deep Learning library](https://spark-packages.org/package/databricks/spark-deep-learning)
+  (Databricks, Inc. (2019)), which contains an `Inception`-V3-based image feature extractor accessible through
+  the [Spark ML Transformer interface](https://spark.apache.org/docs/latest/ml-pipeline.html#transformers))
+- Bundling with itself two [randomly selected](https://xkcd.com/221)
+  [^1] and disjoint subsets of the
+  dogs-vs-cats dataset (Elson et al. (2007)) as train and test data, which are stored in the `extdata/{train,test}` sub
+  directories of the package)
+
+A reference implementation of such a `sparklyr` extension can be found in
+[here](https://github.com/mlverse/sparklyr-image-classification-demo).
+
+The second step, of course, is to make use of the above-mentioned `sparklyr` extension to perform some feature
+engineering. We will see very high-level features being extracted intelligently from each cat/dog image based
+on what the pre-built `Inception`-V3 convolutional neural network has already learned from classifying a much
+broader collection of images:
+
+``` r
+library(sparklyr)
+library(sparklyr.deeperer)
+
+# NOTE: the correct spark_home path to use depends on the configuration of the
+# Spark cluster you are working with.
+spark_home <- "/usr/lib/spark"
+sc <- spark_connect(master = "yarn", spark_home = spark_home)
+
+data_dir <- copy_images_to_hdfs()
+
+# extract features from train- and test-data
+image_data <- list()
+for (x in c("train", "test")) {
+  # import
+  image_data[[x]] <- c("dogs", "cats") %>%
+    lapply(
+      function(label) {
+        numeric_label <- ifelse(identical(label, "dogs"), 1L, 0L)
+        spark_read_image(
+          sc, dir = file.path(data_dir, x, label, fsep = "/")
+        ) %>%
+          dplyr::mutate(label = numeric_label)
+      }
+    ) %>%
+      do.call(sdf_bind_rows, .)
+
+  dl_featurizer <- invoke_new(
+    sc,
+    "com.databricks.sparkdl.DeepImageFeaturizer",
+    random_string("dl_featurizer") # uid
+  ) %>%
+    invoke("setModelName", "InceptionV3") %>%
+    invoke("setInputCol", "image") %>%
+    invoke("setOutputCol", "features")
+  image_data[[x]] <-
+    dl_featurizer %>%
+    invoke("transform", spark_dataframe(image_data[[x]])) %>%
+    sdf_register()
+}
+```
+
+Third step: equipped with features that summarize the content of each image well, we can
+build a Spark ML pipeline that recognizes cats and dogs using only logistic regression
+[^2]
+
+``` r
+label_col <- "label"
+prediction_col <- "prediction"
+pipeline <- ml_pipeline(sc) %>%
+  ml_logistic_regression(
+    features_col = "features",
+    label_col = label_col,
+    prediction_col = prediction_col
+  )
+model <- pipeline %>% ml_fit(image_data$train)
+```
+
+Finally, we can evaluate the accuracy of this model on the test images:
+
+``` r
+predictions <- model %>%
+  ml_transform(image_data$test) %>%
+  dplyr::compute()
+
+cat("Predictions vs. labels:\n")
+predictions %>%
+  dplyr::select(!!label_col, !!prediction_col) %>%
+  print(n = sdf_nrow(predictions))
+
+cat("\nAccuracy of predictions:\n")
+predictions %>%
+  ml_multiclass_classification_evaluator(
+    label_col = label_col,
+    prediction_col = prediction_col,
+    metric_name = "accuracy"
+  ) %>%
+    print()
+```
+
+    ## Predictions vs. labels:
+    ## # Source: spark<?> [?? x 2]
+    ##    label prediction
+    ##    <int>      <dbl>
+    ##  1     1          1
+    ##  2     1          1
+    ##  3     1          1
+    ##  4     1          1
+    ##  5     1          1
+    ##  6     1          1
+    ##  7     1          1
+    ##  8     1          1
+    ##  9     1          1
+    ## 10     1          1
+    ## 11     0          0
+    ## 12     0          0
+    ## 13     0          0
+    ## 14     0          0
+    ## 15     0          0
+    ## 16     0          0
+    ## 17     0          0
+    ## 18     0          0
+    ## 19     0          0
+    ## 20     0          0
+    ##
+    ## Accuracy of predictions:
+    ## [1] 1
+
+## New `spark_apply()` capabilities
+
+### Optimizations & custom serializers
+
+Many `sparklyr` users who have tried to run
+[`spark_apply()`](https://spark.rstudio.com/reference/spark_apply.html) or
+[`doSpark`](https://blog.rstudio.com/2020/05/06/sparklyr-1-2/#foreach) to
+parallelize R computations among Spark workers have probably encountered some
+challenges arising from the serialization of R closures.
+In some scenarios, the
+serialized size of the R closure can become too large, often due to the size
+of the enclosing R environment required by the closure. In other
+scenarios, the serialization itself may take too much time, partially offsetting
+the performance gain from parallelization. Recently, multiple optimizations went
+into `sparklyr` to address those challenges. One of the optimizations was to
+make good use of the
+[broadcast variable](https://spark.apache.org/docs/latest/rdd-programming-guide.html#broadcast-variables)
+construct in Apache Spark to reduce the overhead of distributing shared and
+immutable task states across all Spark workers. In `sparklyr` 1.7, there is
+also support for custom `spark_apply()` serializers, which offers more fine-grained
+control over the trade-off between speed and compression level of serialization
+algorithms. For example, one can specify
+
+``` r
+options(sparklyr.spark_apply.serializer = "qs")
+```
+
+,
+
+which will apply the default options of `qs::qserialize()` to achieve a high
+compression level, or
+
+``` r
+options(sparklyr.spark_apply.serializer = function(x) qs::qserialize(x, preset = "fast"))
+options(sparklyr.spark_apply.deserializer = function(x) qs::qdeserialize(x))
+```
+
+,
+
+which will aim for faster serialization speed with less compression.
+
+### Inferring dependencies automatically
+
+In `sparklyr` 1.7, `spark_apply()` also provides the experimental
+`auto_deps = TRUE` option. With `auto_deps` enabled, `spark_apply()` will
+examine the R closure being applied, infer the list of required R packages,
+and only copy the required R packages and their transitive dependencies
+to Spark workers. In many scenarios, the `auto_deps = TRUE` option will be a
+significantly better alternative compared to the default `packages = TRUE`
+behavior, which is to ship everything within `.libPaths()` to Spark worker
+nodes, or the advanced `packages = <package config>` option, which requires
+users to supply the list of required R packages or manually create a
+`spark_apply()` bundle.
+
+## Better integration with sparklyr extensions
+
+Substantial effort went into `sparklyr` 1.7 to make lives easier for `sparklyr`
+extension authors. Experience suggests two areas where any `sparklyr` extension
+can go through a frictional and non-straightforward path integrating with
+`sparklyr` are the following:
+
+- The [`dbplyr` SQL translation environment](https://github.com/sparklyr/sparklyr/blob/1242adb632c881f0a8dd234898af84a76614f590/R/dplyr_spark_connection.R#L184)
+- [Invocation of Java/Scala functions from R](https://spark.rstudio.com/extensions/#calling-spark-from-r)
+
+We will elaborate on recent progress in both areas in the sub-sections below.
+
+### Customizing the `dbplyr` SQL translation environment
+
+`sparklyr` extensions can now customize `sparklyr`'s `dbplyr` SQL translations
+through the
+[`spark_dependency()`](https://spark.rstudio.com/reference/spark_dependency.html)
+specification returned from `spark_dependencies()` callbacks.
+This type of flexibility becomes useful, for instance, in scenarios where a
+`sparklyr` extension needs to insert type casts for inputs to custom Spark
+UDFs. We can find a concrete example of this in
+[`sparklyr.sedona`](https://github.com/apache/incubator-sedona/tree/master/R/sparklyr.sedona#sparklyrsedona),
+a `sparklyr` extension to facilitate geo-spatial analyses using
+[Apache Sedona](https://sedona.apache.org/). Geo-spatial UDFs supported by Apache
+Sedona such as `ST_Point()` and `ST_PolygonFromEnvelope()` require all inputs to be
+`DECIMAL(24, 20)` quantities rather than `DOUBLE`s. Without any customization to
+`sparklyr`'s `dbplyr` SQL variant, the only way for a `dplyr`
+query involving `ST_Point()` to actually work in `sparklyr` would be to explicitly
+implement any type cast needed by the query using `dplyr::sql()`, e.g.,
+
+``` r
+my_geospatial_sdf <- my_geospatial_sdf %>%
+  dplyr::mutate(
+    x = dplyr::sql("CAST(`x` AS DECIMAL(24, 20))"),
+    y = dplyr::sql("CAST(`y` AS DECIMAL(24, 20))")
+  ) %>%
+  dplyr::mutate(pt = ST_Point(x, y))
+```
+
+.
+
+This would, to some extent, be antithetical to `dplyr`'s goal of freeing R users from
+laboriously spelling out SQL queries. Whereas by customizing `sparklyr`'s `dplyr` SQL
+translations (as implemented in
+[here](https://github.com/apache/incubator-sedona/blob/d8c2aae0678b7262660bda68eb0a2048b849e438/R/sparklyr.sedona/R/dependencies.R#L55)
+and
+[here](https://github.com/apache/incubator-sedona/blob/d8c2aae0678b7262660bda68eb0a2048b849e438/R/sparklyr.sedona/R/dependencies.R#L135)
+), `sparklyr.sedona` allows users to simply write
+
+``` r
+my_geospatial_sdf <- my_geospatial_sdf %>% dplyr::mutate(pt = ST_Point(x, y))
+```
+
+instead, and the required Spark SQL type casts are generated automatically.
+
+### Improved interface for invoking Java/Scala functions
+
+In `sparklyr` 1.7, the R interface for Java/Scala invocations saw a number of
+improvements.
+
+With previous versions of `sparklyr`, many `sparklyr` extension authors would
+run into trouble when attempting to invoke Java/Scala functions accepting an
+`Array[T]` as one of their parameters, where `T` is any type bound more specific
+than `java.lang.Object` / `AnyRef`. This was because any array of objects passed
+through `sparklyr`'s Java/Scala invocation interface will be interpreted as simply
+an array of `java.lang.Object`s in absence of additional type information.
+For this reason, a helper function
+[`jarray()`](https://spark.rstudio.com/reference/jarray.html) was implemented as
+part of `sparklyr` 1.7 as a way to overcome the aforementioned problem.
+For example, executing
+
+``` r
+sc <- spark_connect(...)
+
+arr <- jarray(
+  sc,
+  seq(5) %>% lapply(function(x) invoke_new(sc, "MyClass", x)),
+  element_type = "MyClass"
+)
+```
+
+will assign to `arr` a *reference* to an `Array[MyClass]` of length 5, rather
+than an `Array[AnyRef]`. Subsequently, `arr` becomes suitable to be passed as a
+parameter to functions accepting only `Array[MyClass]`s as inputs. Previously,
+some possible workarounds of this `sparklyr` limitation included changing
+function signatures to accept `Array[AnyRef]`s instead of `Array[MyClass]`s, or
+implementing a "wrapped" version of each function accepting `Array[AnyRef]`
+inputs and converting them to `Array[MyClass]` before the actual invocation.
+None of such workarounds was an ideal solution to the problem.
+
+Another similar hurdle that was addressed in `sparklyr` 1.7 as well involves
+function parameters that must be single-precision floating point numbers or
+arrays of single-precision floating point numbers.
+For those scenarios,
+[`jfloat()`](https://spark.rstudio.com/reference/jfloat.html) and
+[`jfloat_array()`](https://spark.rstudio.com/reference/jfloat_array.html)
+are the helper functions that allow numeric quantities in R to be passed to
+`sparklyr`'s Java/Scala invocation interface as parameters with desired types.
+
+In addition, while previous verisons of `sparklyr` failed to serialize
+parameters with `NaN` values correctly, `sparklyr` 1.7 preserves `NaN`s as
+expected in its Java/Scala invocation interface.
+
+## Other exciting news
+
+There are numerous other new features, enhancements, and bug fixes made to
+`sparklyr` 1.7, all listed in the
+[NEWS.md](https://github.com/sparklyr/sparklyr/blob/main/NEWS.md#sparklyr-170)
+file of the `sparklyr` repo and documented in `sparklyr`'s
+[HTML reference](https://spark.rstudio.com/reference/) pages.
+In the interest of brevity, we will not describe all of them in great detail
+within this blog post.
+
+## Acknowledgement
+
+In chronological order, we would like to thank the following individuals who
+have authored or co-authored pull requests that were part of the `sparklyr` 1.7
+release:
+
+- [@yitao-li](https://github.com/yitao-li)
+- [@mzorko](https://github.com/mzorko)
+- [@jozefhajnala](https://github.com/jozefhajnala)
+- [@lresende](https://github.com/lresende)
+
+We're also extremely grateful to everyone who has submitted
+feature requests or bug reports, many of which have been tremendously helpful in
+shaping `sparklyr` into what it is today.
+
+Furthermore, the author of this blog post is indebted to
+[@skeydan](https://github.com/skeydan) for her awesome editorial suggestions.
+Without her insights about good writing and story-telling, expositions like this
+one would have been less readable.
+
+If you wish to learn more about `sparklyr`, we recommend visiting
+[sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com),
+and also reading some previous `sparklyr` release posts such as
+[sparklyr 1.6](/blog/ai/2021-03-25-sparklyr-1.6.0-released/)
+and
+[sparklyr 1.5](/blog/ai/2020-12-14-sparklyr-1.5.0-released/).
+
+That is all. Thanks for reading!
+
+Databricks, Inc. 2019. *Deep Learning Pipelines for Apache Spark*. V. 1.5.0. Released January 25. <https://spark-packages.org/package/databricks/spark-deep-learning>.
+
+Elson, Jeremy, John (JD) Douceur, Jon Howell, and Jared Saul. 2007. "Asirra: A CAPTCHA That Exploits Interest-Aligned Manual Image Categorization." *Proceedings of 14th ACM Conference on Computer and Communications Security (CCS)*, Proceedings of 14th ACM Conference on Computer and Communications Security (CCS) Editions. <https://www.microsoft.com/en-us/research/publication/asirra-a-captcha-that-exploits-interest-aligned-manual-image-categorization/>.
+
+Szegedy, Christian, Wei Liu, Yangqing Jia, et al. 2015. "Going Deeper with Convolutions." *Computer Vision and Pattern Recognition (CVPR)*. <http://arxiv.org/abs/1409.4842>.
+
+[^1]: Fun exercise for our readers: why not experiment with different subsets of cats-vs-dogs images for training
+    and testing, or even better, replace train and test images with your own images of cats and dogs, and see what
+    happens?
+
+[^2]: Another way to see why it works: in fact the pre-built `Inception`-based feature
+    extractor simply applies all transformations `Inception` would have applied to its input,
+    except for the last logistic-regression-esque affine transformation plus non-linearity
+    producing the final categorical output, and `Inception` is a highly successful
+    convolutional neural network trained to recognize 1000 categories of animals and objects,
+    including multiple types of cats and dogs.

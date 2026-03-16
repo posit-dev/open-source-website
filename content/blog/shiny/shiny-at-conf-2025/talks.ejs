@@ -1,0 +1,116 @@
+```{=html}
+<div class="grid">
+  <% items.forEach(function(talk, index) { %>
+    <div class="g-col-12 g-col-lg-6">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-8">
+              <h3 class="card-title text-primary mb-3 mt-0">
+                <% if (talk.conf_link && talk.conf_link !=='~' ) { %>
+                  <a href="<%= talk.conf_link %>" class="text-decoration-none" target="_blank">
+                    <%= talk.title %>
+                      <i class="bi bi-box-arrow-up-right small"></i>
+                  </a>
+                  <% } else { %>
+                    <%= talk.title %>
+                      <% } %>
+              </h3>
+
+              <div class="mb-3">
+                <div class="mb-2">
+                  <div class="d-flex align-items-start mb-2">
+                    <div class="me-2">
+                      <i class="bi bi-person-fill"></i>
+                    </div>
+                    <div>
+                      <span class="fw-bold">Speaker:</span>
+                      <%= talk.speaker %>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-start mb-2">
+                    <div class="me-2">
+                      <i class="bi bi-diagram-3-fill"></i>
+                    </div>
+                    <div>
+                      <span class="fw-bold">Track:</span>
+                      <%= talk.track %>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-start mb-2">
+                    <div class="me-2">
+                      <i class="bi bi-calendar-event-fill"></i>
+                    </div>
+                    <div>
+                      <span class="fw-bold">Date</span>
+                      <%= talk.date_display %>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-start mb-2">
+                    <div class="me-2">
+                      <i class="bi bi-clock-fill"></i>
+                    </div>
+                    <div>
+                      <span class="fw-bold">Time</span>
+                      <%= talk.time %>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-start">
+                    <div class="me-2">
+                      <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div>
+                      <span class="fw-bold">Room:</span>
+                      <%= talk.room %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+```
+
+```{=html}
+            </div>
+          </div>
+        </div>
+        <div class="card-footer" style="background-color: var(--bs-body-bg);">
+          <div class="d-flex flex-row gap-2 h-100 justify-content-start">
+            <% if (talk.conf_link && talk.conf_link !=='~' ) { %>
+              <a href="<%= talk.conf_link %>" class="btn btn-outline-primary btn-sm" target="_blank">
+                <i class="bi bi-link-45deg me-1"></i>
+                Conf Talk Page
+              </a>
+              <% } %>
+
+                <% if (talk.slides_link && talk.slides_link !=='~' ) { %>
+                  <a href="<%= talk.slides_link %>" class="btn btn-primary btn-sm" target="_blank">
+                    <i class="bi bi-file-earmark-slides me-1"></i>
+                    View Slides
+                  </a>
+                  <% } else { %>
+                    <button class="btn btn-outline-secondary btn-sm" disabled>
+                      <i class="bi bi-file-earmark-slides me-1"></i>
+                      Slides Coming Soon
+                    </button>
+                    <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+</div>
+
+<% if (items.length===0) { %>
+  <div class="text-center py-5">
+    <div class="mb-3">
+      <i class="bi bi-calendar-x display-1 text-muted"></i>
+    </div>
+    <h4 class="text-muted">No talks available</h4>
+    <p class="text-muted">Check back soon for upcoming talks and presentations.</p>
+  </div>
+<% } %>
+```

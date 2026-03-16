@@ -1,0 +1,121 @@
+---
+title: "Benchmarks to prove claims made in post"
+authors: 
+- Carl Howe
+authormeta: 
+- carl-howe
+date: "7/17/2020"
+output: html_document
+---
+
+The purpose of this file is simply to verify the claims of speed increases in the code presented in the post.
+
+```r setup, include=FALSE
+knitr::opts_chunk$set(echo = TRUE)
+library(microbenchmark)
+```
+
+### Profvis graphic
+
+```r profvis
+profvis({
+  plot(price ~ carat, data = diamonds)
+  m <- lm(price ~ caret, data = diamonds)
+  abline(m, col = red)
+})
+```
+
+
+### First example
+
+```r first_example
+fsum <- function(n) {
+  sum((1:n) ^ 2)
+}
+
+floop <- function(n) {
+  sum_value <- 0
+  for (i in 1:n) {
+    sum_value <- sum_value + i ^ 2
+  }
+}
+
+res <- microbenchmark::microbenchmark(
+  fsum(100000),
+  floop(100000)
+)
+print(res)
+```
+
+### Second example without benchmark
+
+```r second_example
+
+# Create a data frame of random numbers
+frame <- data.frame (col1 = runif (10000, 0, 2),
+                     col2 = rnorm (10000, 0, 2))
+output <- character(nrow(frame))
+
+  for (i in 1:nrow(frame)) {
+    if (frame[i, 'col1'] + frame[i, 'col2'] > 1) {
+      output[i] <- "big"
+    } else {
+      output[i] <- "small"
+    }
+  }
+
+  output <- ifelse(frame$col1 + frame$col2 > 1, "bigger", "smaller")
+  
+```
+
+### Second example functionalized so we can benchmark it easily.
+
+```r benchmark_second_example
+# Create a data frame of random numbers
+frame <- data.frame (col1 = runif (10000, 0, 2),
+                     col2 = rnorm (10000, 0, 2))
+output <- character(nrow(frame))
+
+floop <- function() {
+  for (i in 1:nrow(frame)) {
+    if (frame[i, 'col1'] + frame[i, 'col2'] > 1) {
+      output[i] <- "big"
+    } else {
+      output[i] <- "small"
+    }
+  }
+}
+
+fvec <- function() {
+  output <- ifelse(frame$col1 + frame$col2 > 1, "bigger", "smaller")
+}
+
+results <- microbenchmark::microbenchmark(
+ floop(),
+ fvec()
+)
+print(results)
+
+```
+
+### Example demonstrating memoise caching
+
+```r memoise_caching
+library(memoise)
+
+# Define an example expensive to calculate function
+expensive_function <- function(x) {
+    sum((1:x) ^ 2)
+    Sys.sleep(5)    # make it seem to take even longer
+  }
+
+system.time(expensive_function(1000)) # Takes at least 5 seconds
+system.time(expensive_function(1000)) # Still takes at least 5 seconds
+
+# Now let's cache results using memoise and its default cache_memory
+
+memoised_expensive_function <- memoise(expensive_function)
+system.time(memoised_expensive_function(1000)) # Takes at least 5 seconds
+system.time(memoised_expensive_function(1000)) # Returns much faster
+```
+

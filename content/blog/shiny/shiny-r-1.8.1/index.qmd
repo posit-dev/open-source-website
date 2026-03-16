@@ -1,0 +1,226 @@
+---
+title: "Shiny for R updates: Extended tasks, JavaScript errors, and many bslib improvements"
+description: |
+  An overview of recent Shiny for R updates, including extended tasks, JavaScript errors, and many bslib improvements.
+people:
+  - Carson Sievert
+date: "2024-03-27"
+image: feature.png
+ported_from: shiny
+port_status: in-progress
+---
+
+```{=html}
+<style>
+img { border-radius: 8px; }
+</style>
+```
+
+The Shiny team is delighted to announce another round of updates for 9 different R packages.
+In this post, we'll introduce three notable things: [non-blocking operations](#nonblocking), a [JavaScript error dialog](#js-errors) and many [bslib improvements](#bslib).
+For a detailed list of changes, be sure to check out the [release notes](#release-notes) section of this post.
+
+Although 9 packages received updates, the focus of this post is on `{shiny}` and `{bslib}`, which you can install with the following command:
+
+```{r install-bslib}
+#| eval: false
+install.packages(c("shiny", "bslib"))
+```
+
+
+## Non-blocking operations {#nonblocking}
+
+The biggest new feature in this release is the ability to run **truly non-blocking operations** in Shiny via `ExtendedTask`.
+
+### The promise of async programming
+
+For years, we've promoted asynchronous programming with the `{promises}` package as a way to improve the performance of large Shiny apps.
+`{promises}` can be used to prevent operations in one user session from blocking operations in another user's session, helping scale your app to multiple concurrent users supported by a single R process.
+
+However, `{promises}` alone won't prevent an operation in one session from blocking other operations in that same session.
+
+### Introducing ExtendedTask
+
+We're introducing `ExtendedTask` as a new way to manage long-running operations that won't block within or across sessions, meaning that a user can launch an `ExtendedTask` and still interact with the app while it's running.
+
+Additionally, we've found that `ExtendedTask` provides an elegant way to manage async operations.
+Within the task, you'll use `{promises}` to create the async operation, but in the rest of your app you can use `ExtendedTask` methods to start the task or react to results when they arrive.
+
+As a result, `ExtendedTask` is now our recommended starting point for non-blocking tasks in Shiny.
+We'd love to show you a full example right now, but for the sake of space in this blog post we'll urge you to visit the [Non-blocking operations article](https://shiny.posit.co/r/articles/improve/nonblocking), also on this blog, for a complete introduction.
+
+### A new task button
+
+As a companion to `ExtendedTask`, we've created `bslib::input_task_button()`, a special button that displays visual feedback when a task is in progress.
+As it turns out, `input_task_button()` provides a nice experience for any long-running task, not just `ExtendedTask`.
+Think of it like an `actionButton()` that, when clicked, shows a busy indicator (and prevents further clicks) up until the next time the server is idle.
+Here's an example of it in action in a basic Shiny app:
+
+```r
+library(shiny)
+library(bslib)
+
+ui <- page_fixed(
+  input_task_button("launch_task", "Launch task"),
+  textOutput("result")
+)
+
+server <- function(input, output) {
+
+  output$result <- renderText({
+    req(input$launch_task)     # require a button press to launch
+
+    Sys.sleep(3)               # simulate expensive operation
+    paste("Number of clicks:", input$launch_task)
+  })
+
+}
+
+shinyApp(ui, server)
+```
+
+![The task button showing a busy indication while the result is still processing](task-button.gif){.shadow}
+
+<br class="mb-4">
+
+
+
+
+## JS error dialog {#js-errors}
+
+Another exciting new feature is Shiny's JavaScript error dialog, which makes critical client-side errors more discoverable.
+To use the error dialog, turn on Shiny's developer features by calling `shiny::devmode()` before running your app locally[^devmode].
+
+[^devmode]: Read more about [shiny devmode in our docs](https://shiny.posit.co/r/reference/shiny/latest/devmode.html). If you'd like to turn on dev mode for all of your local interactive session, you can add the following snippet your `.Rprofile` either in your home directory or your project directory (use `usethis::edit_r_profile()` to open either):
+
+    ```
+    if (interactive() && requireNamespace("shiny", quietly = TRUE)) {
+      shiny::devmode()
+    }
+    ```
+
+In addition to the dialog, we've also started throwing more errors in situations where behavior is undefined, such as when two inputs (or outputs) have the same ID.
+For example:
+
+```r
+library(shiny)
+library(bslib)
+
+ui <- page_fixed(
+  textInput("x", NULL),
+  textInput("x", NULL)
+)
+
+shinyApp(ui, \(...) {})
+```
+
+![The error dialog displaying the duplicate IDs error](error-dialog.png)
+
+
+## bslib improvements {#bslib}
+
+In addition to the new `input_task_button()`, `bslib` received many [improvements and fixes in this release](https://rstudio.github.io/bslib/news/index.html#bslib-070).
+Most of these improvements are focused on `sidebar()`s, `cards()`s, `layout_columns()`s, and the default `bs_theme()`.
+
+To highlight a new feature, `card()` now reports its `full_screen` state to the server, which can be useful for various things like providing more context in a full-screen view.
+Just give the card an `id` and read `input${id}_full_screen` in the server, replacing `{id}` with the actual `id` value of your card.
+
+![An expandable card that shows some additional text when it goes full screen.](full-screen.gif){.shadow}
+
+```{r}
+#| eval: false
+#| code-fold: true
+library(shiny)
+library(bslib)
+library(ggplot2)
+
+ui <- page_fixed(
+  card(
+    full_screen = TRUE,
+    id = "my_card",
+    card_header("My plot"),
+    # fill ensures the plot fills when full_screen
+    uiOutput("visual", fill = TRUE)
+  )
+)
+
+server <- function(input, output, session) {
+
+  output$visual <- renderUI({
+    plot <- plotOutput("plot")
+
+    if (isTRUE(input$my_card_full_screen)) {
+      # In full screen mode, show the plot plus some additional text
+      layout_columns(
+        plot,
+        lorem::ipsum(2),
+        col_widths = c(8, 4)
+      )
+    } else {
+      # otherwise, just show the plot
+      plot
+    }
+  })
+
+  output$plot <- renderPlot({
+    ggplot(mtcars, aes(mpg, wt)) +
+      geom_point() +
+      theme_minimal(base_size = 20)
+  })
+
+}
+
+shinyApp(ui, server)
+```
+
+
+## Release notes {#release-notes}
+
+This post doesn't cover all of the changes and updates that happened in the Shiny universe in this release cycle.
+To learn more about specific changes in each package, dive into the release notes linked below!
+
+**Big shout out to everyone involved!** 💙
+We'd want to extend a huge thank you to everyone who contributed pull requests, bug reports and feature requests.
+Your contributions make Shiny brilliant!
+
+#### bslib [v0.7.0](https://rstudio.github.io/bslib/news/index.html#bslib-070)
+
+```{r}
+#| echo: false
+#| eval: false
+usethis::use_tidy_thanks("rstudio/bslib", from = "v0.6.1")
+```
+
+[&#x0040;benubah](https://github.com/benubah), [&#x0040;CIOData](https://github.com/CIOData), [&#x0040;clementlefevre](https://github.com/clementlefevre), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;Damonsoul](https://github.com/Damonsoul), [&#x0040;davemcg](https://github.com/davemcg), [&#x0040;davos-i](https://github.com/davos-i), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;howardbaek](https://github.com/howardbaek), [&#x0040;ideusoes](https://github.com/ideusoes), [&#x0040;jcheng5](https://github.com/jcheng5), [&#x0040;kalimu](https://github.com/kalimu), [&#x0040;lukebandy](https://github.com/lukebandy), [&#x0040;malcolmbarrett](https://github.com/malcolmbarrett), [&#x0040;Milko-B](https://github.com/Milko-B), [&#x0040;ocstringham](https://github.com/ocstringham), [&#x0040;rickhelmus](https://github.com/rickhelmus), [&#x0040;royfrancis](https://github.com/royfrancis), [&#x0040;stla](https://github.com/stla), [&#x0040;tai-mi](https://github.com/tai-mi), [&#x0040;tanho63](https://github.com/tanho63), [&#x0040;toxintoxin](https://github.com/toxintoxin), [&#x0040;TymekDev](https://github.com/TymekDev), [&#x0040;udurraniAtPresage](https://github.com/udurraniAtPresage), [&#x0040;WickM](https://github.com/WickM), [&#x0040;wish1832](https://github.com/wish1832), and [&#x0040;zross](https://github.com/zross).
+
+#### htmltools [v0.5.8](https://rstudio.github.io/htmltools/news/index.html#htmltools-058)
+
+[&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;Emanuel-1986](https://github.com/Emanuel-1986), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;olivroy](https://github.com/olivroy), [&#x0040;romainfrancois](https://github.com/romainfrancois), and [&#x0040;russHyde](https://github.com/russHyde).
+
+#### httpuv [v1.6.12](https://cran.r-project.org/web/packages/httpuv/news/news.html)
+
+[&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;gadenbuie](https://github.com/gadenbuie), and [&#x0040;nunotexbsd](https://github.com/nunotexbsd).
+
+#### leaflet [v2.2.2](https://cran.r-project.org/web/packages/leaflet/news/news.html)
+
+[&#x0040;ainefairbrother](https://github.com/ainefairbrother), [&#x0040;amegbor](https://github.com/amegbor), [&#x0040;asitemade4u](https://github.com/asitemade4u), [&#x0040;bmaitner](https://github.com/bmaitner), [&#x0040;cderv](https://github.com/cderv), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;jebyrnes](https://github.com/jebyrnes), [&#x0040;mkoohafkan](https://github.com/mkoohafkan), [&#x0040;olivroy](https://github.com/olivroy), [&#x0040;olyerickson](https://github.com/olyerickson), [&#x0040;SpeckledJim2](https://github.com/SpeckledJim2), and [&#x0040;yoelii](https://github.com/yoelii).
+
+#### plotly [v4.10.4](https://cran.r-project.org/web/packages/plotly/news/news.html)
+
+[&#x0040;AdroMine](https://github.com/AdroMine), [&#x0040;AlexisDerumigny](https://github.com/AlexisDerumigny), [&#x0040;aloboa](https://github.com/aloboa), [&#x0040;aniskara](https://github.com/aniskara), [&#x0040;Balaika](https://github.com/Balaika), [&#x0040;baranovskypd](https://github.com/baranovskypd), [&#x0040;brennanfalcy](https://github.com/brennanfalcy), [&#x0040;Brishan200](https://github.com/Brishan200), [&#x0040;byandell](https://github.com/byandell), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;dgrignol](https://github.com/dgrignol), [&#x0040;dvg-p4](https://github.com/dvg-p4), [&#x0040;FunctionalUrology](https://github.com/FunctionalUrology), [&#x0040;jeffandcyrus](https://github.com/jeffandcyrus), [&#x0040;Jensxy](https://github.com/Jensxy), [&#x0040;JinTonique](https://github.com/JinTonique), [&#x0040;KarlKaise](https://github.com/KarlKaise), [&#x0040;KatChampion](https://github.com/KatChampion), [&#x0040;lukelockley](https://github.com/lukelockley), [&#x0040;meldarionqeusse](https://github.com/meldarionqeusse), [&#x0040;morrisseyj](https://github.com/morrisseyj), [&#x0040;mot12341234](https://github.com/mot12341234), [&#x0040;msgoussi](https://github.com/msgoussi), [&#x0040;nlooije](https://github.com/nlooije), [&#x0040;noamross](https://github.com/noamross), [&#x0040;olivroy](https://github.com/olivroy), [&#x0040;OverLordGoldDragon](https://github.com/OverLordGoldDragon), [&#x0040;peter-atkinson](https://github.com/peter-atkinson), [&#x0040;salim-b](https://github.com/salim-b), [&#x0040;syeddans](https://github.com/syeddans), [&#x0040;TheAnalyticalEdge](https://github.com/TheAnalyticalEdge), [&#x0040;tomasnobrega](https://github.com/tomasnobrega), and [&#x0040;TopBottomTau](https://github.com/TopBottomTau).
+
+#### plumber [v1.2.2](https://www.rplumber.io/news/index.html)
+
+[&#x0040;alexverse](https://github.com/alexverse), [&#x0040;apalacio9502](https://github.com/apalacio9502), [&#x0040;apriandito](https://github.com/apriandito), [&#x0040;ArcadeAntics](https://github.com/ArcadeAntics), [&#x0040;aronatkins](https://github.com/aronatkins), [&#x0040;BioTimHaley](https://github.com/BioTimHaley), [&#x0040;ColinFay](https://github.com/ColinFay), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;edavidaja](https://github.com/edavidaja), [&#x0040;enriquecaballero](https://github.com/enriquecaballero), [&#x0040;ex0ticOne](https://github.com/ex0ticOne), [&#x0040;feodosiikraft](https://github.com/feodosiikraft), [&#x0040;fmalk](https://github.com/fmalk), [&#x0040;GraphZal](https://github.com/GraphZal), [&#x0040;hedsnz](https://github.com/hedsnz), [&#x0040;howardbaek](https://github.com/howardbaek), [&#x0040;ihamod](https://github.com/ihamod), [&#x0040;jangorecki](https://github.com/jangorecki), [&#x0040;jasonheffner](https://github.com/jasonheffner), [&#x0040;jonthegeek](https://github.com/jonthegeek), [&#x0040;jpdugo](https://github.com/jpdugo), [&#x0040;jwebbsoma](https://github.com/jwebbsoma), [&#x0040;king-of-poppk](https://github.com/king-of-poppk), [&#x0040;m-muecke](https://github.com/m-muecke), [&#x0040;meztez](https://github.com/meztez), [&#x0040;MJSchut](https://github.com/MJSchut), [&#x0040;mmuurr](https://github.com/mmuurr), [&#x0040;pietervosnl](https://github.com/pietervosnl), [&#x0040;pinduzera](https://github.com/pinduzera), [&#x0040;r2evans](https://github.com/r2evans), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;sdgd165](https://github.com/sdgd165), [&#x0040;slodge](https://github.com/slodge), [&#x0040;slodge-work](https://github.com/slodge-work), [&#x0040;statasaurus](https://github.com/statasaurus), [&#x0040;timeddilation](https://github.com/timeddilation), [&#x0040;tylerlittlefield](https://github.com/tylerlittlefield), and [&#x0040;wikithink](https://github.com/wikithink).
+
+#### sass [v0.4.9](https://rstudio.github.io/sass/news/index.html)
+
+[&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;jeroen](https://github.com/jeroen), and [&#x0040;yulric](https://github.com/yulric).
+
+#### shiny [v1.8.1](https://shiny.posit.co/r/reference/shiny/1.8.1/upgrade.html)
+
+[&#x0040;apalacio9502](https://github.com/apalacio9502), [&#x0040;Arthfael](https://github.com/Arthfael), [&#x0040;avoidaway](https://github.com/avoidaway), [&#x0040;bioinformzhang](https://github.com/bioinformzhang), [&#x0040;chendaniely](https://github.com/chendaniely), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;Daishoulu](https://github.com/Daishoulu), [&#x0040;davidmacro](https://github.com/davidmacro), [&#x0040;etbrand](https://github.com/etbrand), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;gunawebs](https://github.com/gunawebs), [&#x0040;hadley](https://github.com/hadley), [&#x0040;HugoGit39](https://github.com/HugoGit39), [&#x0040;ismirsehregal](https://github.com/ismirsehregal), [&#x0040;jcheng5](https://github.com/jcheng5), [&#x0040;JohnCoene](https://github.com/JohnCoene), [&#x0040;jsendak](https://github.com/jsendak), [&#x0040;laresbernardo](https://github.com/laresbernardo), [&#x0040;MartinBaumga](https://github.com/MartinBaumga), [&#x0040;nstrayer](https://github.com/nstrayer), [&#x0040;olivroy](https://github.com/olivroy), [&#x0040;Roleren](https://github.com/Roleren), [&#x0040;RSchwinn](https://github.com/RSchwinn), [&#x0040;saleforecast1](https://github.com/saleforecast1), [&#x0040;sharitian](https://github.com/sharitian), [&#x0040;skaltman](https://github.com/skaltman), [&#x0040;stla](https://github.com/stla), [&#x0040;trafficonese](https://github.com/trafficonese), [&#x0040;TymekDev](https://github.com/TymekDev), [&#x0040;ugurdar](https://github.com/ugurdar), and [&#x0040;wch](https://github.com/wch).
+
+#### thematic [v0.1.5](https://rstudio.github.io/thematic/news/index.html#thematic-015)
+
+[&#x0040;cpsievert](https://github.com/cpsievert), and [&#x0040;teunbrand](https://github.com/teunbrand).

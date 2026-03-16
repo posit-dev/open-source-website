@@ -1,0 +1,117 @@
+---
+title: "Hugging Face Integrations"
+description: >
+  Hugging Face rapidly became a very popular platform to build, share and collaborate on 
+  deep learning applications. We have worked on integrating the torch for R ecosystem
+  with Hugging Face tools, allowing users to load and execute language models from their
+  platform.
+author:
+  - name: Daniel Falbel
+    affiliation: Posit
+    affiliation_url: https://www.posit.co/
+slug: hugging-face-integrations
+date: 2023-07-12
+categories:
+  - Torch
+  - Releases
+  - R
+preview: images/install.png
+format: hugo-md
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 6)
+```
+
+We are happy to announce the first releases of [hfhub](https://github.com/mlverse/hfhub) and [tok](https://github.com/mlverse/tok) are now on CRAN. 
+hfhub is an R interface to [Hugging Face Hub](https://huggingface.co/docs/hub/index), allowing users to download and cache files
+from Hugging Face Hub while tok implements R bindings for the [Hugging Face tokenizers](https://github.com/huggingface/tokenizers)
+library.
+
+[Hugging Face](https://huggingface.co) rapidly became **the** platform to build, share and collaborate on 
+deep learning applications and we hope these integrations will help R users to
+get started using Hugging Face tools as well as building novel applications.
+
+We also have previously announced the [safetensors](https://github.com/mlverse/safetensors) 
+package allowing to read and write files in the safetensors format.
+
+## hfhub
+
+hfhub is an R interface to the Hugging Face Hub. hfhub currently implements a single
+functionality: downloading files from Hub repositories. Model Hub repositories are
+mainly used to store pre-trained model weights together with any other metadata 
+necessary to load the model, such as the hyperparameters configurations and the 
+tokenizer vocabulary.
+
+Downloaded files are ached using the same layout as the Python library, thus cached
+files can be shared between the R and Python implementation, for easier and quicker
+switching between languages.
+
+We already use hfhub in the [minhub](https://github.com/mlverse/minhub) package and
+in the ['GPT-2 from scratch with torch' blog post](/blog/ai/2023-06-20-gpt2-torch/) to
+download pre-trained weights from Hugging Face Hub.
+
+You can use `hub_download()` to download any file from a Hugging Face Hub repository
+by specifying the repository id and the path to file that you want to download. 
+If the file is already in the cache, then the function returns the file path imediately,
+otherwise the file is downloaded, cached and then the access path is returned.
+
+``` r
+path <- hfhub::hub_download("gpt2", "model.safetensors")
+path
+#> /Users/dfalbel/.cache/huggingface/hub/models--gpt2/snapshots/11c5a3d5811f50298f278a704980280950aedb10/model.safetensors
+```
+
+## tok
+
+Tokenizers are responsible for converting raw text into the sequence of integers that 
+is often used as the input for NLP models, making them an critical component of the
+NLP pipelines. If you want a higher level overview of NLP pipelines, you might want to read
+our previous [blog post 'What are Large Language Models? What are they not?'](/blog/ai/2023-06-20-llm-intro/#overall-architecture).
+
+When using a pre-trained model (both for inference or for fine tuning) it's very 
+important that you use the exact same tokenization process that has been used during
+training, and the Hugging Face team has done an amazing job making sure that its algorithms
+match the tokenization strategies used most LLM's. 
+
+tok provides R bindings to the 🤗 tokenizers library. The tokenizers library is itself
+implemented in Rust for performance and our bindings use the [extendr project](https://github.com/extendr/extendr)
+to help interfacing with R. Using tok we can tokenize text the exact same way most
+NLP models do, making it easier to load pre-trained models in R as well as sharing
+our models with the broader NLP community.
+
+tok can be installed from CRAN, and currently it's usage is restricted to loading
+tokenizers vocabularies from files. For example, you can load the tokenizer for the GPT2
+model with:
+
+``` r
+tokenizer <- tok::tokenizer$from_pretrained("gpt2")
+ids <- tokenizer$encode("Hello world! You can use tokenizers from R")$ids
+ids
+#> [1] 15496   995     0   921   460   779 11241 11341   422   371
+tokenizer$decode(ids)
+#> [1] "Hello world! You can use tokenizers from R"
+```
+
+## Spaces
+
+[Remember that you can already host](https://shiny.posit.co/blog/posts/shiny-on-hugging-face/) 
+Shiny (for R and Python) on Hugging Face Spaces. As an example, we have built a Shiny
+app that uses:
+
+- torch to implement GPT-NeoX (the neural network architecture of [StableLM](https://huggingface.co/stabilityai/stablelm-tuned-alpha-3b) - the model used for chatting)
+- hfhub to download and cache pre-trained weights from the [StableLM repository](https://huggingface.co/stabilityai/stablelm-tuned-alpha-3b)
+- tok to tokenize and pre-process text as input for the torch model. tok also uses hfhub to download the tokenizer's vocabulary.
+
+The app is hosted at in this [Space](https://huggingface.co/spaces/posit/gptneox-chat).
+It currently runs on CPU, but you can easily switch the the Docker image if you want
+to run it on a GPU for faster inference.
+
+The app source code is also open-source and can be found in the Spaces [file tab](https://huggingface.co/spaces/dfalbel/gptneox-chat/tree/main).
+
+## Looking forward
+
+It's the very early days of hfhub and tok and there's still a lot of work to do
+and functionality to implement. We hope to get community help to prioritize work,
+thus, if there's a feature that you are missing, please open an issue in the 
+[GitHub repositories](https://github.com/mlverse/tok).

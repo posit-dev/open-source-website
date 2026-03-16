@@ -1,0 +1,125 @@
+- title: "Programming with LLM APIs: A Beginner's Guide in R and Python"
+  track: Workshop
+  speaker: Joe Cheng, Garrick Aden-Buie
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1732722180041001iVBe
+  slides_link: https://posit-conf-2025.github.io/llm/
+  date_display: Tue, Sep 16
+  time: 9:00 AM
+  room: Regency VII
+
+- title: 'Shiny for Python'
+  track: Workshop
+  speaker: Daniel Chen
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1734707407405001PB1c
+  slides_link:
+  date_display: Tue, Sep 16
+  time: 9:00 AM
+  room: Chicago E
+
+- title: 'Shiny for R'
+  track: Workshop
+  speaker: Colin Rundel
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1733331481838001OnxY
+  slides_link:
+  date_display: Tue, Sep 16
+  time: 9:00 AM
+  room: Hanover D
+
+- title: "Modular, layout-as-code approach for customizable Shiny dashboards"
+  track: Shiny for Humans
+  speaker: Kim Schouten
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351602179001akB6
+  slides_link:
+  date_display: Wed, Sep 17
+  time: 10:20 AM
+  room: Regency VII
+
+- title: "shinyGovStyle - accessible government design in RShiny"
+  track: Shiny for Humans
+  speaker: Cameron Race
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351602179001akB6
+  slides_link:
+  date_display: Wed, Sep 17
+  time: 10:40 AM
+  room: Regency VII
+
+- title: "Death by Dropdown? Engineer Insightful Shiny Apps with Behavioral Science"
+  track: Shiny for Humans
+  speaker: Jeremy Winget, PhD
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351602179001akB6
+  slides_link:
+  date_display: Wed, Sep 17
+  time: 11:00 AM
+  room: Regency VII
+
+- title: "Design of Everyday Shiny Apps"
+  track: Shiny for Humans
+  speaker: Casey Aguilar-Gervase, Maya Gans
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351602179001akB6
+  slides_link:
+  date_display: Wed, Sep 17
+  time: 11:20 AM
+  room: Regency VII
+
+- title: 'Old Apps, New Tricks: How AI can write Automated Tests for your Shiny Apps'
+  track: Shiny New Tricks
+  speaker: Karan Gathani
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351602260001az1A
+  slides_link: https://docs.google.com/presentation/d/130bJNGp3XIlKPaouA8K0Lv0O3P7OFesW/edit?usp=sharing&ouid=105060716153365836674
+  date_display: Wed, Sep 17
+  time: 1:00 PM
+  room: Regency VII
+
+- title: 'Web applications with Shiny and React (and AI)'
+  track: Shiny New Tricks
+  speaker: Winston Chang
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351602260001az1A
+  slides_link:
+  date_display: Wed, Sep 17
+  time: 1:20 PM
+  room: Regency VII
+
+- title: 'Observability at scale: Monitoring Shiny Applications with OpenTelemetry'
+  track: Shiny New Tricks
+  speaker: Barret Schloerke
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351602260001az1A
+  slides_link: https://github.com/schloerke/presentation-2025-09-17-posit-conf-otel
+  date_display: Wed, Sep 17
+  time: 1:40 PM
+  room: Regency VII
+
+- title: 'shinystate: Launching collaboration and session management to new heights in Shiny applications'
+  track: Shiny New Tricks
+  speaker: Eric Nantz
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351602260001az1A
+  slides_link:
+  date_display: Wed, Sep 17
+  time: 2:20 PM
+  room: Regency VII
+
+- title: 'Disposable Shiny Apps'
+  track: The Power of Presentation
+  speaker: James Wade
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351601272001atTE
+  slides_link:
+  date_display: Thu, Sep 18
+  time: 10:20 AM
+  room: Regency VII
+
+- title: 'Talk data to me: How to present youR data to any audience'
+  track: The Power of Presentation
+  speaker: Freda Warner
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351601272001atTE
+  slides_link:
+  date_display: Thu, Sep 18
+  time: 11:00 AM
+  room: Regency VII
+
+- title: 'Theming Made Easy: Introducing brand.yml'
+  track: The Power of Presentation
+  speaker: Garrick Aden-Buie
+  conf_link: https://reg.rainfocus.com/flow/posit/positconf25/attendee-portal/page/sessioncatalog/session/1745351601272001atTE
+  slides_link:
+  date_display: Thu, Sep 18
+  time: 11:20 AM
+  room: Regency VII

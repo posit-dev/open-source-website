@@ -1,0 +1,425 @@
+---
+title: "So, how come we can use TensorFlow from R?"
+description: |
+  Have you ever wondered why you can call TensorFlow - mostly known as a Python framework - from R? If not - that's how it should be, as the R packages keras and tensorflow aim to make this process as transparent as possible to the user. But for them to be those helpful genies, someone else first has to tame the Python.
+date: 2019-08-29
+slug: keydana2019tffromr
+categories:
+  - TensorFlow/Keras
+  - Meta
+  - Concepts
+author:
+  - name: Sigrid Keydana
+    affiliation: RStudio
+    affiliation_url: https://www.rstudio.com/
+people:
+  - Sigrid Keydana
+image: thumbnail.png
+ported_from: ai
+port_status: in-progress
+---
+
+
+
+Which computer language is most closely associated with *TensorFlow*? While on the *TensorFlow for R blog*, we would of course like the answer to be *R*, chances are it is Python (though TensorFlow has official [^1] bindings for C++, Swift, Javascript, Java, and Go as well).
+
+So why is it you can define a Keras model as
+
+``` r
+library(keras)
+model <- keras_model_sequential() %>%
+  layer_dense(units = 32, activation = "relu") %>%
+  layer_dense(units = 1)
+```
+
+(nice with `%>%`s and all!) -- then train and evaluate it, get predictions and plot them, all that without ever leaving R?
+
+The short answer is, you have `keras`, `tensorflow` and `reticulate` installed.
+`reticulate` *embeds* a Python session *within* the R process. A single process means a single address space: The same objects exist, and can be operated upon, regardless of whether they're seen by R or by Python. On that basis, `tensorflow` and `keras` then wrap the respective Python libraries [^2] and let you write R code that, in fact, looks like R.
+
+This post first elaborates a bit on the short answer. We then go deeper into what happens in the background.
+
+One note on terminology before we jump in: On the R side, we're making a clear distinction between the packages `keras` and `tensorflow`. For Python we are going to use *TensorFlow* and *Keras* interchangeably. Historically, these have been different, and TensorFlow was commonly thought of as one possible backend to run Keras on, besides the pioneering, now discontinued Theano, and CNTK. Standalone Keras does still [exist](https://github.com/keras-team/keras), but recent work has been, and is being, done in [tf.keras](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python/keras). Of course, this makes Python `Keras` a subset of Python `TensorFlow`, but all examples in this post will use that subset so we can use both to refer to the same thing.
+
+## So keras, tensorflow, reticulate, what are they for?
+
+Firstly, nothing of this would be possible without `reticulate`. [^3] [reticulate](https://rstudio.github.io/reticulate/) is an R package designed to allow seemless interoperability between R and Python. If we absolutely wanted, we could construct a Keras model like this:
+
+``` r
+library(reticulate)
+tf <- import("tensorflow")
+m <- tf$keras$models$Sequential()
+m$`__class__`
+```
+
+    <class 'tensorflow.python.keras.engine.sequential.Sequential'>
+
+We could go on adding layers ...
+
+``` r
+m$add(tf$keras$layers$Dense(32, "relu"))
+m$add(tf$keras$layers$Dense(1))
+m$layers
+```
+
+    [[1]]
+    <tensorflow.python.keras.layers.core.Dense>
+
+    [[2]]
+    <tensorflow.python.keras.layers.core.Dense>
+
+But who would want to? If this were the only way, it'd be less cumbersome to directly write Python instead. Plus, as a user you'd have to know the complete Python-side module structure (now where do optimizers live, currently: `tf.keras.optimizers`, `tf.optimizers` ...?), and keep up with all path and name changes in the Python API. [^4]
+
+This is where `keras` comes into play. `keras` is where the TensorFlow-specific usability, re-usability, and convenience features live. [^5]
+Functionality provided by `keras` spans the whole range between boilerplate-avoidance over enabling elegant, R-like idioms to providing means of advanced feature usage. As an example for the first two, consider `layer_dense` which, among others, converts its `units` argument to an integer, and takes arguments in an order that allow it to be "pipe-added" to a model: Instead of
+
+``` r
+model <- keras_model_sequential()
+model$add(layer_dense(units = 32L))
+```
+
+we can just say
+
+``` r
+model <- keras_model_sequential()
+model %>% layer_dense(units = 32)
+```
+
+While these are nice to have, there is more. Advanced functionality in (Python) Keras mostly depends on the ability to subclass objects. One example is custom callbacks. If you were using Python, you'd have to subclass `tf.keras.callbacks.Callback`. From R, you can create an R6 class inheriting from `KerasCallback`, like so
+
+``` r
+CustomCallback <- R6::R6Class("CustomCallback",
+    inherit = KerasCallback,
+    public = list(
+      on_train_begin = function(logs) {
+        # do something
+      },
+      on_train_end = function(logs) {
+        # do something
+      }
+    )
+  )
+```
+
+This is because `keras` defines an actual Python class, `RCallback`, and maps your R6 class' methods to it.
+Another example is [custom models](https://tensorflow.rstudio.com/keras/articles/custom_models.html), introduced on this blog [about a year ago](/blog/ai/2018-07-30-attention-layer/).
+These models can be trained with custom training loops. In R, you use `keras_model_custom` to create one, for example, like this:
+
+``` r
+m <- keras_model_custom(name = "mymodel", function(self) {
+  self$dense1 <- layer_dense(units = 32, activation = "relu")
+  self$dense2 <- layer_dense(units = 10, activation = "softmax")
+  
+  function(inputs, mask = NULL) {
+    self$dense1(inputs) %>%
+      self$dense2()
+  }
+})
+```
+
+Here, `keras` will make sure an actual Python object is created which subclasses `tf.keras.Model` and when called, runs the above anonymous `function()`.
+
+So that's `keras`. What about the `tensorflow` package? As a user you only need it when you have to do advanced stuff, like configure TensorFlow device usage or (in TF 1.x) access elements of the `Graph` or the `Session`. Internally, it is used by `keras` heavily. Essential internal functionality includes, e.g., implementations of S3 methods, like `print`, `[` or `+`, on `Tensor`s, so you can operate on them like on R vectors.
+
+Now that we know what each of the packages is "for", let's dig deeper into what makes this possible.
+
+## Show me the magic: reticulate
+
+Instead of exposing the topic top-down, we follow a by-example approach, building up complexity as we go. We'll have three scenarios.
+
+First, we assume we already have a Python object (that has been constructed in whatever way) and need to convert that to R. Then, we'll investigate how we can create a Python object, calling its constructor. Finally, we go the other way round: We ask how we can pass an R function to Python for later usage.
+
+### Scenario 1: R-to-Python conversion
+
+Let's assume we have created a Python object in the global namespace, like this:
+
+``` r
+py_run_string("x = 1")
+```
+
+So: There is a variable, called x, with value 1, living in Python world. Now how do we bring this thing into R?
+
+We know the main entry point to conversion is `py_to_r`, defined as a generic in `conversion.R`:
+
+``` r
+py_to_r <- function(x) {
+  ensure_python_initialized()
+  UseMethod("py_to_r")
+}
+```
+
+... with the default implementation calling a function named `py_ref_to_r`:
+
+``` r
+#' @export
+py_to_r.default <- function(x) {
+  [...]
+  x <- py_ref_to_r(x)
+  [...]
+}
+```
+
+To find out more about what is going on, debugging on the R level won't get us far. We start `gdb` so we can set breakpoints in C++ functions: [^6]
+
+    $ R -d gdb
+
+    GNU gdb (GDB) Fedora 8.3-6.fc30
+    [... some more gdb saying hello ...]
+    Reading symbols from /usr/lib64/R/bin/exec/R...
+    Reading symbols from /usr/lib/debug/usr/lib64/R/bin/exec/R-3.6.0-1.fc30.x86_64.debug...
+
+Now start R, load `reticulate`, and execute the assignment we're going to presuppose:
+
+    (gdb) run
+    Starting program: /usr/lib64/R/bin/exec/R 
+    [...]
+    R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+    Copyright (C) 2019 The R Foundation for Statistical Computing
+    [...]
+    > library(reticulate)
+    > py_run_string("x = 1")
+
+So that set up our scenario, the Python object (named `x`) we want to convert to R. Now, use Ctrl-C to "escape" to `gdb`, set a breakpoint in `py_to_r` and type `c` to get back to R:
+
+    (gdb) b py_to_r
+    Breakpoint 1 at 0x7fffe48315d0 (2 locations)
+    (gdb) c
+
+Now what are we going to see when we access that `x`?
+
+    > py$x
+
+    Thread 1 "R" hit Breakpoint 1, 0x00007fffe48315d0 in py_to_r(libpython::_object*, bool)@plt () from /home/key/R/x86_64-redhat-linux-gnu-library/3.6/reticulate/libs/reticulate.so
+
+Here are the relevant (for our investigation) frames of the backtrace:
+
+    Thread 1 "R" hit Breakpoint 3, 0x00007fffe48315d0 in py_to_r(libpython::_object*, bool)@plt () from /home/key/R/x86_64-redhat-linux-gnu-library/3.6/reticulate/libs/reticulate.so
+    (gdb) bt
+    #0  0x00007fffe48315d0 in py_to_r(libpython::_object*, bool)@plt () from /home/key/R/x86_64-redhat-linux-gnu-library/3.6/reticulate/libs/reticulate.so
+    #1  0x00007fffe48588a0 in py_ref_to_r_with_convert (x=..., convert=true) at reticulate_types.h:32
+    #2  0x00007fffe4858963 in py_ref_to_r (x=...) at /home/key/R/x86_64-redhat-linux-gnu-library/3.6/Rcpp/include/RcppCommon.h:120
+    #3  0x00007fffe483d7a9 in _reticulate_py_ref_to_r (xSEXP=0x55555daa7e50) at /home/key/R/x86_64-redhat-linux-gnu-library/3.6/Rcpp/include/Rcpp/as.h:151
+    ...
+    ...
+    #14 0x00007ffff7cc5fc7 in Rf_usemethod (generic=0x55555757ce70 "py_to_r", obj=obj@entry=0x55555daa7e50, call=call@entry=0x55555a0fe198, args=args@entry=0x55555557c4e0, 
+        rho=rho@entry=0x55555dab2ed0, callrho=0x55555dab48d8, defrho=0x5555575a4068, ans=0x7fffffff69e8) at objects.c:486
+
+We've removed a few intermediate frames related to (R-level) method dispatch.
+
+As we already saw in the source code, `py_to_r.default` will delegate to a method called `py_ref_to_r`, which we see appears in #2. But what is `_reticulate_py_ref_to_r` in #3, the frame just below? Here is where the magic, unseen by the user, begins.
+
+Let's look at this from a bird's eye's view. To translate an object from one language to another, we need to find a common ground, that is, a third language "spoken" by both of them. In the case of R and Python (as well as in a lot of other cases) this will be C / C++. So assuming we are going to write a C function to talk to Python, how can we use this function in R?
+
+While R users have the ability to call into C directly, using `.Call` or `.External` [^7], this is made much more convenient by [Rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html) [^8]: You just write your C++ function, and Rcpp takes care of compilation and provides the glue code necessary to call this function from R.
+
+So `py_ref_to_r` really is written in C++:
+
+``` cpp
+// [[Rcpp::export]]
+SEXP py_ref_to_r(PyObjectRef x) {
+  return py_ref_to_r_with_convert(x, x.convert());
+}
+```
+
+but the comment `// [[Rcpp::export]]` tells Rcpp to generate an R wrapper, `py_ref_to_R`, that itself calls a C++ wrapper, `_reticulate_py_ref_to_r` ...
+
+``` r
+py_ref_to_r <- function(x) {
+  .Call(`_reticulate_py_ref_to_r`, x)
+}
+```
+
+which finally wraps the "real" thing, the C++ function `py_ref_to_R` we saw above.
+
+Via `py_ref_to_r_with_convert` in #1, a one-liner that extracts an object's "convert" feature (see below)
+
+``` cpp
+// [[Rcpp::export]]
+SEXP py_ref_to_r_with_convert(PyObjectRef x, bool convert) {
+  return py_to_r(x, convert);
+}
+```
+
+we finally arrive at `py_to_r` in #0.
+
+Before we look at that, let's contemplate that C/C++ "bridge" from the other side - Python.
+While strictly, Python is a language specification, its reference implementation is CPython, with a core written in C and much more functionality built on top in Python. In CPython, every Python object (including integers or other numeric types) is a `PyObject`. `PyObject`s are allocated through and operated on using pointers; most C API functions return a pointer to one, `PyObject *`.
+
+So this is what we expect to work with, from R. What then is `PyObjectRef` doing in `py_ref_to_r`?
+`PyObjectRef` is not part of the C API, it is part of the functionality introduced by `reticulate` to manage Python objects. Its main purpose is to make sure the Python object is automatically cleaned up when the R object (an `Rcpp::Environment`) goes out of scope.
+Why use an R environment to wrap the Python-level pointer? This is because R environments can have finalizers: functions that are called before objects are garbage collected.
+We use this R-level finalizer to ensure the Python-side object gets finalized as well:
+
+``` cpp
+Rcpp::RObject xptr = R_MakeExternalPtr((void*) object, R_NilValue, R_NilValue);
+R_RegisterCFinalizer(xptr, python_object_finalize);
+```
+
+`python_object_finalize` is interesting, as it tells us something crucial about Python -- about CPython, to be precise: To find out if an object is still needed, or could be garbage collected, it uses reference counting, thus placing on the user the burden of correctly incrementing and decrementing references according to language semantics.
+
+``` cpp
+inline void python_object_finalize(SEXP object) {
+  PyObject* pyObject = (PyObject*)R_ExternalPtrAddr(object);
+  if (pyObject != NULL)
+    Py_DecRef(pyObject);
+}
+```
+
+Resuming on `PyObjectRef`, note that it also stores the "convert" feature of the Python object, used to determine whether that object should be converted to R automatically.
+
+Back to `py_to_r`. This one now really gets to work with (a pointer to the) Python object,
+
+``` cpp
+SEXP py_to_r(PyObject* x, bool convert) {
+  //...
+}
+```
+
+and -- but wait. Didn't `py_ref_to_r_with_convert` pass it a `PyObjectRef`? So how come it receives a `PyObject` instead? This is because `PyObjectRef` inherits from `Rcpp::Environment`, and its implicit conversion operator is used to extract the Python object from the `Environment`. Concretely, that operator tells the compiler that a `PyObjectRef` can be used as though it were a `PyObject*` in some concepts, and the associated code specifies how to convert from `PyObjectRef` to `PyObject*`:
+
+``` cpp
+operator PyObject*() const {
+  return get();
+}
+
+PyObject* get() const {
+  SEXP pyObject = getFromEnvironment("pyobj");
+  if (pyObject != R_NilValue) {
+    PyObject* obj = (PyObject*)R_ExternalPtrAddr(pyObject);
+    if (obj != NULL)
+      return obj;
+  }
+  Rcpp::stop("Unable to access object (object is from previous session and is now invalid)");
+}
+```
+
+So `py_to_r` works with a pointer to a Python object and returns what we want, an R object (a `SEXP`).
+The function checks for the type of the object, and then uses Rcpp to construct the adequate R object, in our case, an integer:
+
+``` cpp
+
+else if (scalarType == INTSXP)
+  return IntegerVector::create(PyInt_AsLong(x));
+```
+
+For other objects, typically there's more action required; but essentially, the function is "just" a big `if`-`else` tree.
+
+So this was scenario 1: converting a Python object to R. Now in scenario 2, we assume we still need to create that Python object.
+
+### Scenario 2:
+
+As this scenario is considerably more complex than the previous one, we will explicitly concentrate on some aspects and leave out others. Importantly, we'll not go into module loading, which would deserve separate treatment of its own. Instead, we try to shed a light on what's involved using a concrete example: the ubiquitous, in `keras` code, `keras_model_sequential()`. All this R function does is
+
+``` r
+function(layers = NULL, name = NULL) {
+  keras$models$Sequential(layers = layers, name = name)
+}
+```
+
+How can `keras$models$Sequential()` give us an object? When in Python, you run the equivalent
+
+``` python
+tf.keras.models.Sequential()
+```
+
+this calls the constructor, that is, the `__init__` method of the class:
+
+``` python
+class Sequential(training.Model):
+  def __init__(self, layers=None, name=None):
+    # ...
+  # ...
+```
+
+So this time, before -- as always, in the end -- getting an R object back from Python, we need to call that constructor, that is, a Python *callable*. (Python `callable`s subsume functions, constructors, and objects created from a class that has a `call` method.)
+
+So when `py_to_r`, inspecting its argument's type, sees it is a Python callable (wrapped in a `PyObjectRef`, the `reticulate`-specific subclass of `Rcpp::Environment` we talked about above), it wraps it (the `PyObjectRef`) in an R function, using Rcpp:
+
+``` cpp
+Rcpp::Function f = py_callable_as_function(pyFunc, convert);
+```
+
+The cpython-side action starts when `py_callable_as_function` then calls `py_call_impl`. `py_call_impl` executes the actual call and returns an R object, a `SEXP`. Now you may be asking, how does the Python runtime know it shouldn't deallocate that object, now that its work is done? This is taken of by the same `PyObjectRef` class used to wrap instances of `PyObject *`: It can wrap `SEXP`s as well.
+
+While a lot more could be said about what happens before we finally get to work with that `Sequential` model from R, let's stop here and look at our third scenario.
+
+### Scenario 3: Calling R from Python
+
+Not surprisingly, sometimes we need to pass R callbacks to Python. An example are R data generators that can be used with `keras` models [^9].
+
+In general, for R objects to be passed to Python, the process is somewhat opposite to what we described in example 1. Say we type:
+
+``` r
+py$a <- 1
+```
+
+This assigns `1` to a variable `a` in the python main module.
+To enable assignment, `reticulate` provides an implementation of the S3 generic `$<-`, `$<-.python.builtin.object`, which delegates to `py_set_attr`, which then calls `py_set_attr_impl` -- yet another C++ function exported via Rcpp.
+
+Let's focus on a different aspect here, though. A prerequisite for the assignment to happen is getting that `1` converted to Python. (We're using the simplest possible example, obviously; but you can imagine this getting a lot more complex if the object isn't a simple number).
+
+For our "minimal example", we see a stacktrace like the following
+
+    #0 0x00007fffe4832010 in r_to_py_cpp(Rcpp::RObject_Impl<Rcpp::PreserveStorage>, bool)@plt () from /home/key/R/x86_64-redhat-linux-gnu-library/3.6/reticulate/libs/reticulate.so
+    #1  0x00007fffe4854f38 in r_to_py_impl (object=..., convert=convert@entry=true) at /home/key/R/x86_64-redhat-linux-gnu-library/3.6/Rcpp/include/RcppCommon.h:120
+    #2  0x00007fffe48418f3 in _reticulate_r_to_py_impl (objectSEXP=0x55555ec88fa8, convertSEXP=<optimized out>) at /home/key/R/x86_64-redhat-linux-gnu-library/3.6/Rcpp/include/Rcpp/as.h:151
+    ...
+    #12 0x00007ffff7cc5c03 in dispatchMethod (sxp=0x55555d0cf1a0, dotClass=<optimized out>, cptr=cptr@entry=0x7ffffffeaae0, method=method@entry=0x55555bfe06c0, 
+        generic=0x555557634458 "r_to_py", rho=0x55555d1d98a8, callrho=0x5555555af2d0, defrho=0x555557947430, op=<optimized out>, op=<optimized out>) at objects.c:436
+    #13 0x00007ffff7cc5fc7 in Rf_usemethod (generic=0x555557634458 "r_to_py", obj=obj@entry=0x55555ec88fa8, call=call@entry=0x55555c0317b8, args=args@entry=0x55555557cc60, 
+        rho=rho@entry=0x55555d1d98a8, callrho=0x5555555af2d0, defrho=0x555557947430, ans=0x7ffffffe9928) at objects.c:486
+
+Whereas `r_to_py` is a generic (like `py_to_r` above), `r_to_py_impl` is wrapped by Rcpp and `r_to_py_cpp` is a C++ function that branches on the type of the object -- basically the counterpart of the C++ `r_to_py`.
+
+In addition to that general process, there is more going on when we call an R function from Python. As Python doesn't "speak" R, we need to wrap the R function in CPython - basically, we are extending Python here! How to do this is described in the official [Extending Python Guide](https://docs.python.org/3/extending/index.html#extending-index).
+
+In official terms, what `reticulate` does it *embed* and *extend* Python.
+Embed, because it lets you use Python from inside R. Extend, because to enable Python to call back into R it needs to wrap R functions in C, so Python can understand them.
+
+As part of the former, the desired Python is loaded (`Py_Initialize()`); as part of the latter, two functions are defined in a new module named `rpycall`, that will be loaded when Python itself is loaded.
+
+``` cpp
+PyImport_AppendInittab("rpycall", &initializeRPYCall);
+```
+
+These methods are `call_r_function`, used by default, and `call_python_function_on_main_thread`, used in cases where we need to make sure the R function is called on the main thread:
+
+``` cpp
+PyMethodDef RPYCallMethods[] = {
+  { "call_r_function", (PyCFunction)call_r_function,
+    METH_VARARGS | METH_KEYWORDS, "Call an R function" },
+  { "call_python_function_on_main_thread", (PyCFunction)call_python_function_on_main_thread,
+    METH_VARARGS | METH_KEYWORDS, "Call a Python function on the main thread" },
+  { NULL, NULL, 0, NULL }
+};
+```
+
+`call_python_function_on_main_thread` is especially interesting. The R runtime is single-threaded; while the CPython implementation of Python effectively is as well, due to the [Global Interpreter Lock](https://en.wikipedia.org/wiki/Global_interpreter_lock), this is not automatically the case when other implementations are used, or C is used directly. So `call_python_function_on_main_thread` makes sure that unless we can execute on the main thread, we wait.
+
+That's it for our three "spotlights on `reticulate`".
+
+## Wrapup
+
+It goes without saying that there's a lot about `reticulate` we didn't cover in this article, such as memory management, initialization, or specifics of data conversion. Nonetheless, we hope we were able to shed a bit of light on the *magic* involved in calling TensorFlow from R.
+
+R is a concise and elegant language, but to a high degree its power comes from its packages, including those that allow you to call into, and interact with, the outside world, such as deep learning frameworks or distributed processing engines. In this post, it was a special pleasure to focus on a central building block that makes much of this possible: `reticulate`.
+
+Thanks for reading!
+
+[^1]: or semi-official, dependent on the language; see the [TensorFlow website](https://www.tensorflow.org/api_docs) to track status
+
+[^2]: but see the "note on terminology" below
+
+[^3]: Not without `Rcpp` either, but we'll save that for the "Digging deeper" section.
+
+[^4]: of which there are many, currently, accompanying the substantial changes related to the introduction of TF 2.0.
+
+[^5]: It goes without saying that as a generic mediator between R and Python, `reticulate` can not provide convenience features for all R packages that use it.
+
+[^6]: For a very nice introduction to debugging R with a debugger like `gdb`, see [Kevin Ushey's "Debugging with LLDB"](http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/.) That post uses `lldb` which is the standard debugger on Macintosh, while here we're using `gdb` on linux; but mostly the behaviors are very similar.
+
+[^7]: For a nice introduction, see [version 1 of Advanced R](http://adv-r.had.co.nz/C-interface.html).
+
+[^8]: Not a copy-paste error: For a nice introduction, see [version 2 of Advanced R](https://adv-r.hadley.nz/rcpp.html).
+
+[^9]: For performance reasons, it is often advisable to use [tfdatasets](https://tensorflow.rstudio.com/tools/tfdatasets/articles/introduction.html) instead.

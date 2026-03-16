@@ -1,0 +1,168 @@
+---
+title: "bslib v0.9.0 brings branded theming to Shiny for R"
+description: Unified theming is here for R users!
+people:
+  - Garrick Aden-Buie
+date: "2025-01-31"
+image: feature.jpg
+image-alt: "bslib + brand.yml"
+ported_from: shiny
+port_status: in-progress
+---
+
+[brand.yml]: https://posit-dev.github.io/brand-yml
+[shiny]: https://shiny.posit.co
+[r markdown]: https://rmarkdown.rstudio.com
+[bslib]: https://rstudio.github.io/bslib
+[pkgdown]: https://pkgdown.r-lib.org/
+[flexdashboard]: https://pkgs.rstudio.com/flexdashboard/
+
+
+::: lead
+We are excited to share that with [bslib] v0.9.0, Shiny for R now supports [brand.yml], providing a simple and unified theming experience through a single YAML file!
+:::
+
+## What is brand.yml?
+
+[brand.yml] simplifies brand management by consolidating your visual identity—colors, typography, and styling—into a single, easy-to-maintain YAML file.
+Last year, we launched brand.yml with initial support in [Quarto](https://quarto.org/docs/authoring/brand.html) and [Shiny for Python](/blog/shiny/shiny-python-1.2-brand-yml/), and we're happy to be bringing brand.yml to R as well.
+
+If you haven't seen [brand.yml] in action yet, here's an example `_brand.yml` file that includes metadata about the company, its logos, color palette, theme, and the fonts and typographic settings used by the brand.
+
+```{.yaml filename="_brand.yml"}
+meta:
+  name: brand.yml
+  link: https://posit-dev.github.io/brand-yml
+
+logo: 
+  small: brand-yml-icon.svg
+  medium: brand-yml-tall.svg
+  large: brand-yml-wide.svg
+
+color:
+  palette:
+    orange: "#FF6F20"
+    pink: "#FF3D7F"
+  primary: orange
+  danger: pink
+
+typography:
+  fonts:
+    - family: Open Sans
+      source: google
+  base: Open Sans
+```
+
+This one file can be used to maintain consistent branding across your Shiny apps, Quarto projects, and now any R-based project that uses [bslib for theming](https://rstudio.github.io/bslib/articles/theming/index.html), including [shiny], [R Markdown], [pkgdown], [flexdashboard], and more!
+
+
+## Getting Started
+
+bslib is a package maintained by the Shiny team to provide [Bootstrap] styles and components for the R ecosystem.
+With bslib, using brand.yml to theme your Shiny app is straightforward.
+To get started, make sure you've installed the latest version of bslib:
+
+```r
+install.packages("bslib")
+```
+
+Then, create a `_brand.yml` file in your project directory, either alongside your `app.R` or in a parent folder of the project containing your app.
+
+If your app uses any of the [page functions from bslib](https://rstudio.github.io/bslib/reference/index.html#page-layouts) like `page_sidebar()` or `page_navbar()`, then you're all set!
+bslib will automatically find the `_brand.yml` file and apply it to the app's theme.
+For page functions from Shiny---like `fluidPage()` or `navbarPage()`---set `theme = bs_theme()` in the page function.
+
+If you want to use another file name, like `acme-brand.yml`, or you want to be explicit, you can call `bs_theme()` and provide the path to the brand.yml file to the `brand` argument:
+
+```{r}
+#| eval: false
+
+ui <- page_sidebar(
+  title = "Acme Sales Dashboard",
+  theme = bs_theme(brand = "acme-brand.yml"),
+  # ... the rest of your app ...
+)
+```
+
+
+::: {.column-screen .bg-gradient-blue-teal .mt-4 .pt-5 .pb-4 .d-md-flex .text-center}
+![[Shiny without branding]{.text-white}](shiny-no-branding.png)
+
+![[Brand-themed Shiny]{.text-white}](shiny-branding.png)
+:::
+
+## Try brand.yml in Shiny now!
+
+Try brand.yml now with the [brand.yml Demo App](https://bslib.shinyapps.io/brand-yml/).
+You can create and preview your own brand.yml files with this app, and it's included with bslib so that you can try it locally, too.
+
+```{r}
+#| eval: false
+
+# requires shiny v1.8.1 or later
+shiny::runExample("brand.yml", package = "bslib")
+```
+
+This app can also be used as a template; see [Unified theming with brand.yml](https://rstudio.github.io/bslib/articles/brand-yml/index.html#try-brand-yml) on the bslib website for instructions.
+
+## brand.yml in R Markdown
+
+The R Markdown ecosystem widely [use bslib for theming](https://rstudio.github.io/bslib/articles/any-project/index.html#r-markdown).
+Anywhere that `theme` is passed to bslib, you can use brand.yml, either by placing a file named `_brand.yml` in the project or by passing a path to your brand.yml file to `brand`.
+Note that brand.yml works best with Bootstrap version 5.
+
+For R Markdown, use `brand` under `output.html_document.theme`:
+
+```{.yaml filename="report.Rmd"}
+output:
+  html_document:
+    theme:
+      version: 5
+      brand: acme-brand.yml
+```
+
+Similarly, in pkgdown, you can use `brand` under `template.bslib`:
+
+```{.yaml filename="_pkgdown.yml"}
+template:
+  bslib:
+    version: 5
+    brand: acme-brand.yml
+```
+
+Note that `brand` isn't strictly necessary: if you name your brand.yml file `_brand.yml`, bslib will automatically find it in your project[^automatic].
+
+[^automatic]: If you don't want bslib to use a project-level `_brand.yml` file, you can use `brand: false` to disable automatic discovery. Or you can use `brand: true` to ensure that a project `_brand.yml` is found. Finally, you could also use `brand` to provide an entire brand.yml definition in-line!
+
+## Looking Forward
+
+We look forward to seeing how the community uses this feature and welcome your feedback!
+You can learn more about brand.yml and its features at the [official brand.yml website](https://posit-dev.github.io/brand-yml).
+Find more specific information about [branded and custom theming with bslib](https://rstudio.github.io/bslib/articles/brand-yml/index.html) at the bslib website, or learn about [unified branding across Posit tools with brand.yml](https://posit.co/blog/unified-branding-across-posit-tools-with-brand-yml/) on the Posit blog.
+
+As a final tip,
+we know that writing YAML isn't everyone's cup of tea!
+If you want to enlist the help of a friendly large language model (LLM), we've written up [a guide to using LLMs to write brand.yml](https://posit-dev.github.io/brand-yml/articles/llm-brand-yml-prompt/).
+
+::: {.column-screen .bg-light .mt-4}
+::: {.column-body}
+
+## Thank you 💙 {#release-notes}
+
+This post doesn't cover all of the changes and updates that happened in bslib in this release.
+To learn more about specific changes in each package, dive into the release notes linked below!
+
+**A huge thank you** to everyone who contributed pull requests, bug reports and feature requests.
+
+#### bslib [v0.9.0](https://rstudio.github.io/bslib/news/index.html#bslib-090)
+
+```{r}
+#| echo: false
+#| eval: false
+usethis::use_tidy_thanks("rstudio/bslib", from = "v0.8.0")
+```
+
+[&#x0040;al-obrien](https://github.com/al-obrien), [&#x0040;AlbertRapp](https://github.com/AlbertRapp), [&#x0040;CharlesBordet](https://github.com/CharlesBordet), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;cscheid](https://github.com/cscheid), [&#x0040;daattali](https://github.com/daattali), [&#x0040;danielloader](https://github.com/danielloader), [&#x0040;DavZim](https://github.com/DavZim), [&#x0040;DeepanshKhurana](https://github.com/DeepanshKhurana), [&#x0040;dsen6644](https://github.com/dsen6644), [&#x0040;dvg-p4](https://github.com/dvg-p4), [&#x0040;eheinzen](https://github.com/eheinzen), [&#x0040;furrrpanda](https://github.com/furrrpanda), [&#x0040;gadenbuie](https://github.com/gadenbuie), [&#x0040;grcatlin](https://github.com/grcatlin), [&#x0040;ismirsehregal](https://github.com/ismirsehregal), [&#x0040;jack-davison](https://github.com/jack-davison), [&#x0040;LDSamson](https://github.com/LDSamson), [&#x0040;lmullany](https://github.com/lmullany), [&#x0040;luisDVA](https://github.com/luisDVA), [&#x0040;lukebandy](https://github.com/lukebandy), [&#x0040;matt-dray](https://github.com/matt-dray), [&#x0040;meztez](https://github.com/meztez), [&#x0040;natashanath](https://github.com/natashanath), [&#x0040;olivroy](https://github.com/olivroy), [&#x0040;RealKai42](https://github.com/RealKai42), [&#x0040;royfrancis](https://github.com/royfrancis), [&#x0040;see24](https://github.com/see24), [&#x0040;SokolovAnatoliy](https://github.com/SokolovAnatoliy), [&#x0040;Teebusch](https://github.com/Teebusch), [&#x0040;udurraniAtPresage](https://github.com/udurraniAtPresage), and [&#x0040;wulj5](https://github.com/wulj5).
+
+:::
+:::

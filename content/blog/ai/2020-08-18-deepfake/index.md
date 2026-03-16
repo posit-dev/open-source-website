@@ -1,0 +1,245 @@
+---
+title: "Deepfake detection challenge from R"
+description: |
+  A couple of months ago, Amazon, Facebook, Microsoft, and other contributors initiated a challenge consisting of telling apart real and AI-generated ("fake") videos. We show how to approach this challenge from R.
+date: 2020-08-18
+categories:
+  - Image Recognition & Image Processing
+author:
+  - name: Turgut Abdullayev
+    url: https://github.com/henry090
+    affiliation: QSS Analytics
+    affiliation_url: http://www.qss.az/
+people:
+  - Turgut Abdullayev
+image: thumbnail.jpg
+ported_from: ai
+port_status: in-progress
+---
+
+
+
+<style type="text/css">
+.colab-root {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px!important;
+    text-decoration: none;
+    color: #aaa;
+    border: none;
+    font-weight: 300;
+    border: solid 1px rgba(0, 0, 0, 0.08);
+    border-bottom-color: rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    line-height: 16px;
+}
+span.colab-span {
+    background-image: url(https://distill.pub/2020/growing-ca/images/colab.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-y: 2px;
+    display: inline-block;
+    padding-left: 24px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+</style>
+
+## Introduction
+
+Working with video datasets, particularly with respect to detection of AI-based fake objects, is very challenging due to proper frame selection and face detection. To approach this challenge from R, one can make use of capabilities offered by OpenCV, `magick`, and `keras`.
+
+Our approach consists of the following consequent steps:
+
+- read all the videos
+- capture and extract images from the videos
+- detect faces from the extracted images
+- crop the faces
+- build an image classification model with Keras
+
+Let's quickly introduce the non-deep-learning libraries we're using. OpenCV is a computer vision library that includes:
+
+- Facial recognition technology
+- [Motion tracking](https://en.wikipedia.org/wiki/Video_tracking)
+- [Augmented reality](https://en.wikipedia.org/wiki/Augmented_reality)
+- and more.
+
+On the other hand, `magick` is the open-source image-processing library that will help to read and extract useful features from video datasets:
+
+- Read video files
+- Extract images per second from the video
+- Crop the faces from the images
+
+Before we go into a detailed explanation, readers should know that there is no need to copy-paste code chunks. Because at the end of the post one can find a link to Google Colab with GPU acceleration. This kernel allows everyone to run and reproduce the same results.
+
+## Data exploration
+
+[The dataset](https://www.kaggle.com/c/deepfake-detection-challenge/overview/description) that we are going to analyze is provided by AWS, Facebook, Microsoft, the Partnership on AI's Media Integrity Steering Committee, and various academics.
+
+It contains both real and AI-generated fake videos. The total size is over 470 GB. However, the sample 4 GB dataset is separately available.
+
+## Frame extraction
+
+The videos in the folders are in the format of *mp4* and have various lengths. Our task is to determine the number of images to capture per second of a video. We usually took 1-3 fps for every video.
+
+> Note: Set fps to NULL if you want to extract all frames.
+
+``` r
+video = magick::image_read_video("aagfhgtpmv.mp4",fps = 2)
+vid_1 = video[[1]]
+vid_1 = magick::image_read(vid_1) %>% image_resize('1000x1000')
+```
+
+<center>
+
+<figure>
+<img src="files/frame_1.jpg" width="500" alt="Deepfake detection challenge" />
+<figcaption aria-hidden="true"><a href="https://www.kaggle.com/c/deepfake-detection-challenge/data">Deepfake detection challenge</a></figcaption>
+</figure>
+
+</center>
+
+We saw just the first frame. What about the rest of them?
+
+<figure>
+<img src="files/self.gif" alt="Deepfake detection challenge" />
+<figcaption aria-hidden="true"><a href="https://www.kaggle.com/c/deepfake-detection-challenge/data">Deepfake detection challenge</a></figcaption>
+</figure>
+
+Looking at the gif one can observe that some fakes are very easy to differentiate, but a small fraction looks pretty realistic. This is another challenge during data preparation.
+
+## Face detection
+
+At first, face locations need to be determined via bounding boxes, using OpenCV. Then, magick is used to automatically extract them from all images.
+
+``` r
+# get face location and calculate bounding box
+library(opencv)
+unconf <- ocv_read('frame_1.jpg')
+faces <- ocv_face(unconf)
+facemask <- ocv_facemask(unconf)
+df = attr(facemask, 'faces')
+rectX = (df$x - df$radius) 
+rectY = (df$y - df$radius)
+x = (df$x + df$radius) 
+y = (df$y + df$radius)
+
+# draw with red dashed line the box
+imh  = image_draw(image_read('frame_1.jpg'))
+rect(rectX, rectY, x, y, border = "red", 
+     lty = "dashed", lwd = 2)
+dev.off()
+```
+
+<center>
+
+<figure>
+<img src="files/frame_2.jpg" width="500" alt="Deepfake detection challenge" />
+<figcaption aria-hidden="true"><a href="https://www.kaggle.com/c/deepfake-detection-challenge/data">Deepfake detection challenge</a></figcaption>
+</figure>
+
+</center>
+
+## Face extraction
+
+If face locations are found, then it is very easy to extract them all.
+
+``` r
+edited = image_crop(imh, "49x49+66+34")
+edited = image_crop(imh, paste(x-rectX+1,'x',x-rectX+1,'+',rectX, '+',rectY,sep = ''))
+edited
+```
+
+<center>
+
+<figure>
+<img src="files/frame_1_face.png" width="64" alt="Deepfake detection challenge" />
+<figcaption aria-hidden="true"><a href="https://www.kaggle.com/c/deepfake-detection-challenge/data">Deepfake detection challenge</a></figcaption>
+</figure>
+
+</center>
+
+## Deep learning model
+
+After dataset preparation, it is time to build a deep learning model with Keras. We can quickly place all the images into folders and, using image generators, feed faces to a pre-trained Keras model.
+
+``` r
+train_dir = 'fakes_reals'
+width = 150L
+height = 150L
+epochs = 10
+
+train_datagen = image_data_generator(
+  rescale = 1/255,
+  rotation_range = 40,
+  width_shift_range = 0.2,
+  height_shift_range = 0.2,
+  shear_range = 0.2,
+  zoom_range = 0.2,
+  horizontal_flip = TRUE,
+  fill_mode = "nearest",
+  validation_split=0.2
+)
+
+
+train_generator <- flow_images_from_directory(
+  train_dir,                  
+  train_datagen,             
+  target_size = c(width,height), 
+  batch_size = 10,
+  class_mode = "binary"
+)
+
+# Build the model ---------------------------------------------------------
+
+conv_base <- application_vgg16(
+  weights = "imagenet",
+  include_top = FALSE,
+  input_shape = c(width, height, 3)
+)
+
+model <- keras_model_sequential() %>% 
+  conv_base %>% 
+  layer_flatten() %>% 
+  layer_dense(units = 256, activation = "relu") %>% 
+  layer_dense(units = 1, activation = "sigmoid")
+
+model %>% compile(
+  loss = "binary_crossentropy",
+  optimizer = optimizer_rmsprop(lr = 2e-5),
+  metrics = c("accuracy")
+)
+
+history <- model %>% fit_generator(
+  train_generator,
+  steps_per_epoch = ceiling(train_generator$samples/train_generator$batch_size),
+  epochs = 10
+)
+```
+
+<center>
+
+<br><br> <a href="https://colab.research.google.com/drive/1Wf9aTdcC_YtigjQIYcG8zJqq2q_vpZR9?usp=sharing" class="colab-root">Reproduce in a <span class="colab-span">Notebook</span></a>
+
+</center>
+
+## Conclusion
+
+This post shows how to do video classification from R. The steps were:
+
+- Read videos and extract images from the dataset
+- Apply OpenCV to detect faces
+- Extract faces via bounding boxes
+- Build a deep learning model
+
+However, readers should know that the implementation of the following steps may drastically improve model performance:
+
+- extract all of the frames from the video files
+- load different pre-trained weights, or use different pre-trained models
+- use another technology to detect faces -- e.g., ["MTCNN face detector"](https://github.com/ipazc/mtcnn)
+
+Feel free to try these options on the Deepfake detection challenge and share your results in the comments section!
+
+Thanks for reading!

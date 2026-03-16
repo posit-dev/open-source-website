@@ -4,6 +4,9 @@ people:
   - Jeroen Janssens
 date: '2024-07-02'
 image: ruthson-zimmerman-FVwG5OzPuzo-unsplash.jpg
+image-alt: "Hands typing on a laptop showing a data dashboard on the screen"
+ported_from: plotnine
+port_status: in-progress
 categories:
   - plotnine
 ---

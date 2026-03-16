@@ -1,0 +1,251 @@
+---
+title: shinyswatch 0.7.0
+description: Customizable shinyswatch themes and an improved theme picker round out shinyswatch v0.7.0.
+people:
+  - Garrick Aden-Buie
+date: "2024-07-19"
+image: feature.jpg
+ported_from: shiny
+port_status: in-progress
+---
+
+```{=html}
+<style>
+.highlight-line {
+  font-weight: bold;
+}
+body:not(.modal-open) div.sourceCode pre code.has-line-highlights > span:not(.highlight-line) {
+  opacity: 0.6;
+}
+body:not(.modal-open) div.sourceCode:hover pre code.has-line-highlights > span:not(.highlight-line) {
+  opacity: 0.8;
+}
+</style>
+```
+
+We're happy to announce the release of [shinyswatch](https://posit-dev.github.io/py-shinyswatch) v0.7.0.
+shinyswatch brings [Bootstwatch themes](https://bootswatch.com) to [Shiny for Python](https://shiny.posit.co/py), allowing you to easily customize the appearance of your Shiny apps with a variety of themes.
+
+You can install the latest version of shinyswatch from PyPI with:
+
+```bash
+pip install shinyswatch
+```
+
+This release includes a number of new features that we're excited to share with you.
+Some of these changes may require you to update your existing code, so please read on to learn more!
+
+Prior to shinyswatch v0.7.0, the Shiny themes provided by shinyswatch were fixed and could not be customized.
+With this release, we're taking advantage of new theming features added in [Shiny v1.0](/blog/shiny/shiny-python-1.0/) to allow you to customize the shinyswatch themes!
+
+This change, however, necessitated a few small breaking changes in shinyswatch that we'll cover first.
+
+## Migrating to v0.7.0
+
+### Setting the app theme
+
+Prior to v0.7.0, to set the theme of a Shiny app, you could add the shinyswatch theme object to your app's UI anywhere you wanted.
+
+::: {.panel-tabset .shiny-mode-tabset group="shiny-app-mode"}
+#### Express
+
+```{.python filename="app.py"}
+from shiny.express import input, ui
+
+import shinyswatch
+
+shinyswatch.theme.darkly  # No longer allowed # <<
+
+ui.input_slider("num", "Number:", min=10, max=100, value=30)
+ui.output_text_verbatim("slider_val")
+
+
+# the rest of your app ...
+```
+
+#### Core
+
+```{.python filename="app.py"}
+from shiny import App, Inputs, Outputs, Session, render, ui
+
+import shinyswatch
+
+app_ui = ui.page_fluid(
+    shinyswatch.theme.darkly,  # No longer allowed # <<
+    ui.input_slider("num", "Number:", min=10, max=100, value=30),
+    ui.output_text_verbatim("slider_val"),
+)
+
+# server ...
+```
+:::
+
+**With shinyswatch v0.7.0,** you now need to pass the `shinyswatch.theme` object to the `theme` argument of `shiny.express.ui.page_opts()` or of any `shiny.ui.page_*()` function.
+
+
+::: {.panel-tabset .shiny-mode-tabset group="shiny-app-mode"}
+#### Express
+
+```{.python filename="app.py"}
+from shiny.express import input, ui
+
+import shinyswatch
+
+ui.page_opts(theme=shinyswatch.theme.darkly)  # <<
+
+ui.input_slider("num", "Number:", min=10, max=100, value=30)
+ui.output_text_verbatim("slider_val")
+
+
+# the rest of your app ...
+```
+
+#### Core
+
+```{.python filename="app.py"}
+from shiny import App, Inputs, Outputs, Session, render, ui
+
+import shinyswatch
+
+app_ui = ui.page_fluid(
+    ui.input_slider("num", "Number:", min=10, max=100, value=30),
+    ui.output_text_verbatim("slider_val"),
+    theme=shinyswatch.theme.darkly,  # <<
+)
+
+# server ...
+```
+:::
+
+Read about the [customizable theme features](#customizing-theme) below to learn about the feature that required this change.
+
+### Choosing an initial theme with the theme picker
+
+In shinyswatch v0.6.0 we added a `default` argument to `shinyswatch.theme_picker_ui()` that could be used to choose the initial theme.
+This short-lived argument is now deprecated.
+
+**Instead, in shinyswatch v0.7.0**, the initial app theme must be set separately from the theme picker UI, using the same method described above.
+
+::: {.panel-tabset .shiny-mode-tabset group="shiny-app-mode"}
+#### Express
+
+::: {.panel-tabset}
+
+##### Before
+
+```{.python filename="app.py"}
+from shiny.express import input, ui
+
+import shinyswatch
+
+shinyswatch.theme_picker_ui(default="darkly")  # <<
+
+ui.input_slider("num", "Number:", min=10, max=100, value=30)
+ui.output_text_verbatim("slider_val")
+
+# the rest of your app ...
+```
+
+##### After
+
+```{.python filename="app.py"}
+from shiny.express import input, ui
+
+import shinyswatch
+
+shinyswatch.theme_picker_ui()  # <<
+ui.page_opts(theme=shinyswatch.theme.darkly)  # <<
+
+ui.input_slider("num", "Number:", min=10, max=100, value=30)
+ui.output_text_verbatim("slider_val")
+
+# the rest of your app ...
+```
+:::
+
+#### Core
+
+::: {.panel-tabset}
+##### Before
+
+```{.python filename="app.py"}
+from shiny import App, Inputs, Outputs, Session, render, ui
+
+import shinyswatch
+
+app_ui = ui.page_fluid(
+    shinyswatch.theme_picker_ui(default="darkly"),  # <<
+    ui.input_slider("num", "Number:", min=10, max=100, value=30),
+    ui.output_text_verbatim("slider_val"),
+)
+
+# server ...
+```
+
+##### After
+
+```{.python filename="app.py"}
+from shiny import App, Inputs, Outputs, Session, render, ui
+
+import shinyswatch
+
+app_ui = ui.page_fluid(
+    shinyswatch.theme_picker_ui(),  # <<
+    ui.input_slider("num", "Number:", min=10, max=100, value=30),
+    ui.output_text_verbatim("slider_val"),
+    theme=shinyswatch.theme.darkly,  # <<
+)
+
+# server ...
+```
+:::
+:::
+
+This change accompanies a set of [new theme picker features described below](#theme-picker-improvements).
+
+## Customizing a shinyswatch theme {#customizing-theme}
+
+Each [`shinyswatch.theme`](https://posit-dev.github.io/py-shinyswatch/reference/index.html#themes) is now a subclass of `shiny.ui.Theme`, an abstraction around the [Sass files](https://sass-lang.com) that compile to a complete Shiny theme.
+
+This means that you can now customize the themes by changing the Sass variables that define the theme's colors, fonts, and other properties, using the `.add_defaults()`, `.add_mixins()` and `.add_rules()` methods.
+Each of these chainable methods take Sass variables or Sass rules as strings and insert them into the theme's Sass file:
+
+* `.add_defaults()` adds Sass variables to the theme, _prior_ to the theme's own variables.
+* `.add_mixins()` adds Sass mixins or rules to the theme, _after_ the theme's own mixins. (Mixins are _after_ defaults.)
+* `.add_rules()` adds Sass rules to the theme, _after_ the theme's own rules.
+
+```{.python}
+import shinyswatch
+
+(
+  shinyswatch.theme.zephyr
+  .add_defaults(
+    primary="#aa00ff",  # purple
+    secondary="#bfff00",  # lime green
+  )
+  .add_rules(
+    """
+    strong {
+      color: $primary;
+    }
+    """
+  )
+)
+```
+
+You can use this approach to tweak an existing shinyswatch theme to better match your organizations branding or your personal preferences.
+Pass the customized theme object to the `theme` argument of `shiny.express.ui.page_opts()` or of any `shiny.ui.page_*()` function to apply the changes to your app.
+
+## Theme picker improvements
+
+The theme picker has been updated in two notable ways:
+
+1. **Additional options.** The theme picker dropdown will now automatically select the app's initial theme, i.e. the theme passed to the page-level `theme` argument.
+   This initial theme could be the default Shiny theme, a shinyswatch theme, or a custom theme created with `shiny.ui.Theme()`.
+   We also include `shiny` and `bootstrap` themes in the picker by default, so your users can return to Shiny's default theme if they want.
+
+2. **Remembering the user's choice.** The theme picker will now remember the user's theme choice across sessions.
+   This means that if a user selects a theme, closes the app, and reopens it later, the app will remember the user's theme choice.
+   This feature uses the browser's local storage[^local-storage] to remember the user's choice.
+
+[^local-storage]: Local storage is a browser feature that allows web applications to store data locally within the user's browser. This data persists even after the user closes the browser, but is scoped in two important ways. First, the data is only accessible to Shiny apps on the same domain, i.e. all apps on `myusername.shinyapps.io` using the theme picker will share the same local storage. Second, the data is only accessible in the browser that stored it, i.e. the user's theme choice will not be remembered if they open the app in a different browser or on a different device.

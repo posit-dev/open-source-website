@@ -1,0 +1,62 @@
+---
+title: "Deep Learning and Scientific Computing with R torch: the book"
+description: |
+  Please allow us to introduce Deep Learning and Scientific Computing with R torch. Released in e-book format today, and available freely online, this book starts out by introducing torch basics. From there, it moves on to various deep-learning use cases. Finally, it shows how to use torch for more general topics, such as matrix computations and the Fourier Transform.
+date: 2023-04-05T00:00:00.000Z
+slug: keydanatorchbook
+categories:
+  - Torch
+  - R
+  - Meta
+  - Concepts
+  - Packages/Releases
+author:
+  - name: Sigrid Keydana
+    affiliation: Posit
+    affiliation_url: https://www.posit.co/
+people:
+  - Sigrid Keydana
+image: thumbnail.jpg
+ported_from: ai
+port_status: in-progress
+---
+
+
+
+First things first: Where can you get it? As of today, you can download the [e-book](https://www.taylorfrancis.com/books/mono/10.1201/9781003275923/deep-learning-scientific-computing-torch-sigrid-keydana) or order a [print copy](https://www.routledge.com/Deep-Learning-and-Scientific-Computing-with-R-torch/Keydana/p/book/9781032231396) from the publisher, CRC Press; the free online edition is [here](https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/). There is, to my knowledge, no problem to perusing the online version -- besides one: It doesn't have the squirrel that's on the book cover.
+
+<img src="images/squirrel.png" data-fig-alt="A red squirrel on a tree, looking attentively." width="290" />
+
+So if you're a lover of amazing creatures...
+
+### What's in the book?
+
+Deep Learning and Scientific Computing with R `torch` has three parts.
+
+The first covers the indispensible basics: tensors, and how to manipulate them; automatic differentiation, the *sine qua non* of deep learning; optimization, the strategy that drives most of what we call artificial intelligence; and neural-network modules, `torch's` way of encapsulating algorithmic flow. The focus is on understanding the concepts, on how things "work" -- that's why we do things like code a neural network from scratch, something you'll probably never do in later use.
+
+Foundations laid, part two -- considerably more sizeable -- dives into deep-learning applications. It is here that the ecosystem surrounding core `torch` enters the spotlight. First, we see how `luz` automates and considerably simplifies many programming tasks related to network training, performance evaluation, and prediction. Making use of the wrappers and instrumentation facilities it provides, we next learn about two aspects of deep learning no real-world application can afford to neglect: How to make models generalize to unseen data, and how to accelerate training. Techniques we introduce keep re-appearing throughout the use cases we then look at: image classification and segmentation, regression on tabular data, time-series forecasting, and classifying speech utterances. It's in working with images and sound that essential ecosystem libraries, namely, `torchvision` and `torchaudio`, make their appearance, to be used for domain-dependent functionality.
+
+In part three, we move beyond deep learning, and explore how `torch` can figure in general mathematical or scientific applications. Prominent topics are regression using matrix decompositions, the Discrete Fourier Transform, and the Wavelet Transform. The primary goal here is to understand the underlying ideas, and why they are so important. That's why, here just like in part one, we code algorithms from scratch, before introducing the speed-optimized `torch` equivalents.
+
+Now that you know about the book's content, you may be asking:
+
+### Who's it for?
+
+In short, Deep Learning and Scientific Computing with R `torch` -- being the only comprehensive text, as of this writing, on this topic -- addresses a wide audience. The hope is that there's something in it for everyone (well, most everyone).
+
+If you've never used `torch`, nor any other deep-learning framework, starting right from the beginning is the thing to do. No prior knowledge of deep learning is expected. The assumption is that you know some basic R, and are familiar with machine-learning terms such as supervised vs. unsupervised learning, training-validation-test set, et cetera. Having worked through part one, you'll find that parts two and three -- independently -- continue right from where you left off.
+
+If, on the other hand, you do have basic experience with `torch` and/or other automatic-differentiation frameworks, and are mostly interested in applied deep learning, you may be inclined to skim part one, and go to part two, checking out the applications that interest you most (or just browse, looking for inspiration). The domain-dependent examples were chosen to be rather generic and straightforward, so as to have the code generalize to a whole range of similar applications.
+
+Finally, if it was the "scientific computing" in the title that caught your attention, I certainly hope that part three has something for you! (As the book's author, I may say that writing this part was an extremely satisfying, incredibly engaging experience.[^1]) Part three really is where it makes sense to talk of "browsing" -- its topics hardly depend on each other, just look around for what appeals to you.
+
+To wrap up, then:
+
+### What do I get?
+
+Content-wise, I think I can consider this question answered. If there were other books on `torch` with R, I'd probably stress two things: First, the already-referred-to focus on concepts and understanding. Second, the usefulness of the code examples. By using off-the-shelf datasets, and performing the usual types of tasks, we write code fit to serve as a start in your own applications -- providing templates ready to copy-paste and adapt to a purpose.
+
+Thanks for reading, and I hope you enjoy the book!
+
+[^1]: though challenging, as well (*though* ... or *because*?)

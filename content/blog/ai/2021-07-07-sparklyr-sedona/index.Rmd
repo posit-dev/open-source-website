@@ -1,0 +1,233 @@
+---
+title: "sparklyr.sedona: A sparklyr extension for analyzing geospatial data"
+description: |
+  We are excited to announce the availability of sparklyr.sedona, a sparklyr extension making geospatial functionalities of the Apache Sedona library easily accessible from R.
+author:
+  - name: Yitao Li
+    url: https://github.com/yitao-li
+    affiliation: RStudio
+    affiliation_url: https://www.rstudio.com/
+slug: sparklyr-sedona
+date: 07-07-2021
+categories:
+  - R
+  - Packages/Releases
+  - Distributed Computing
+  - Spatial Data
+preview: images/nasa-Q1p7bh3SHj8-unsplash.jpg
+
+format: hugo-md
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+[`sparklyr.sedona`](https://github.com/apache/incubator-sedona/tree/master/R/sparklyr.sedona) is now available
+as the `sparklyr`-based R interface for [Apache Sedona](https://sedona.apache.org/).
+
+To install `sparklyr.sedona` from GitHub using
+the [`remotes`](https://cran.r-project.org/web/packages/remotes/index.html) package
+^[`sparklyr.sedona` was not released to CRAN yet at the time of writing.], run
+
+```{r echo=TRUE, eval=FALSE}
+remotes::install_github(repo = "apache/incubator-sedona", subdir = "R/sparklyr.sedona")
+```
+
+In this blog post, we will provide a quick introduction to `sparklyr.sedona`, outlining the motivation behind
+this `sparklyr` extension, and presenting some example `sparklyr.sedona` use cases involving Spark spatial RDDs,
+Spark dataframes, and visualizations.
+
+## Motivation for `sparklyr.sedona`
+
+A suggestion from the
+[mlverse survey results](/blog/ai/2021-02-17-survey/) earlier
+this year mentioned the need for up-to-date R interfaces for Spark-based GIS frameworks.
+While looking into this suggestion, we learned about
+[Apache Sedona](https://sedona.apache.org/), a geospatial data system powered by Spark
+that is modern, efficient, and easy to use. We also realized that while our friends from the
+Spark open-source community had developed a
+[`sparklyr` extension](https://github.com/harryprince/geospark) for GeoSpark, the
+predecessor of Apache Sedona, there was no similar extension making more recent Sedona
+functionalities easily accessible from R yet.
+We therefore decided to work on `sparklyr.sedona`, which aims to bridge the gap between
+Sedona and R.
+
+## The lay of the land^[Yes, pun intended]
+
+We hope you are ready for a quick tour through some of the RDD-based and
+Spark-dataframe-based functionalities in `sparklyr.sedona`, and also, some bedazzling
+visualizations derived from geospatial data in Spark.
+
+In Apache Sedona,
+[Spatial Resilient Distributed Datasets](https://sedona.apache.org/api/javadoc/core/org/apache/sedona/core/spatialRDD/SpatialRDD.html)(SRDDs)
+are basic building blocks of distributed spatial data encapsulating
+"vanilla" [RDD](https://spark.apache.org/docs/latest/api/java/index.html?org/apache/spark/api/java/JavaRDD.html)s of
+geometrical objects and indexes. SRDDs support low-level operations such as Coordinate Reference System (CRS)
+transformations, spatial partitioning, and spatial indexing. For example, with `sparklyr.sedona`, SRDD-based operations we can perform include the following:
+
+* Importing some external data source into a SRDD:
+
+```{r echo=TRUE, eval=FALSE}
+library(sparklyr)
+library(sparklyr.sedona)
+
+sedona_git_repo <- normalizePath("~/incubator-sedona")
+data_dir <- file.path(sedona_git_repo, "core", "src", "test", "resources")
+
+sc <- spark_connect(master = "local")
+
+pt_rdd <- sedona_read_dsv_to_typed_rdd(
+  sc,
+  location = file.path(data_dir, "arealm.csv"),
+  type = "point"
+)
+```
+
+* Applying spatial partitioning to all data points:
+
+```{r echo=TRUE, eval=FALSE}
+sedona_apply_spatial_partitioner(pt_rdd, partitioner = "kdbtree")
+
+```
+
+* Building spatial index on each partition:
+
+```{r echo=TRUE, eval=FALSE}
+sedona_build_index(pt_rdd, type = "quadtree")
+```
+
+* Joining one spatial data set with another using "contain" or "overlap" as the join predicate:
+
+```{r echo=TRUE, eval=FALSE}
+polygon_rdd <- sedona_read_dsv_to_typed_rdd(
+  sc,
+  location = file.path(data_dir, "primaryroads-polygon.csv"),
+  type = "polygon"
+)
+
+pts_per_region_rdd <- sedona_spatial_join_count_by_key(
+  pt_rdd,
+  polygon_rdd,
+  join_type = "contain",
+  partitioner = "kdbtree"
+)
+
+```
+
+It is worth mentioning that `sedona_spatial_join()` will perform spatial partitioning
+and indexing on the inputs using the `partitioner` and `index_type` only if the inputs
+are not partitioned or indexed as specified already.
+
+From the examples above, one can see that SRDDs are great for spatial operations requiring
+fine-grained control, e.g., for ensuring a spatial join query is executed as efficiently
+as possible with the right types of spatial partitioning and indexing.
+
+Finally, we can try visualizing the join result above, using a choropleth map:
+
+```{r echo=TRUE, eval=FALSE}
+sedona_render_choropleth_map(
+  pts_per_region_rdd,
+  resolution_x = 1000,
+  resolution_y = 600,
+  output_location = tempfile("choropleth-map-"),
+  boundary = c(-126.790180, -64.630926, 24.863836, 50.000),
+  base_color = c(63, 127, 255)
+)
+```
+
+which gives us the following:
+
+![Example choropleth map output](images/choropleth-map.png)
+
+Wait, but something seems amiss. To make the visualization above look nicer, we can
+overlay it with the contour of each polygonal region:
+
+```{r echo=TRUE, eval=FALSE}
+contours <- sedona_render_scatter_plot(
+  polygon_rdd,
+  resolution_x = 1000,
+  resolution_y = 600,
+  output_location = tempfile("scatter-plot-"),
+  boundary = c(-126.790180, -64.630926, 24.863836, 50.000),
+  base_color = c(255, 0, 0),
+  browse = FALSE
+)
+
+sedona_render_choropleth_map(
+  pts_per_region_rdd,
+  resolution_x = 1000,
+  resolution_y = 600,
+  output_location = tempfile("choropleth-map-"),
+  boundary = c(-126.790180, -64.630926, 24.863836, 50.000),
+  base_color = c(63, 127, 255),
+  overlay = contours
+)
+```
+
+which gives us the following:
+
+![Choropleth map with overlay](images/choropleth-map-with-overlay.png)
+
+With some low-level spatial operations taken care of using the SRDD API and
+the right spatial partitioning and indexing data structures, we can then
+import the results from SRDDs to Spark dataframes. When working with spatial
+objects within Spark dataframes, we can write high-level, declarative queries
+on these objects using `dplyr` verbs in conjunction with Sedona
+[spatial UDFs](https://sedona.apache.org/api/sql/Function/), e.g.
+^[This demo requires sparklyr 1.7 or above to generate the required Spark SQL type casts for `ST_Point()` automatically.]
+, the
+following query tells us whether each of the `8` nearest polygons to the
+query point contains that point, and also, the convex hull of each polygon.
+
+```{r echo=TRUE, eval=FALSE}
+tbl <- DBI::dbGetQuery(
+  sc, "SELECT ST_GeomFromText(\"POINT(-66.3 18)\") AS `pt`"
+)
+pt <- tbl$pt[[1]]
+knn_rdd <- sedona_knn_query(
+  polygon_rdd, x = pt, k = 8, index_type = "rtree"
+)
+
+knn_sdf <- knn_rdd %>%
+  sdf_register() %>%
+  dplyr::mutate(
+    contains_pt = ST_contains(geometry, ST_Point(-66.3, 18)),
+    convex_hull = ST_ConvexHull(geometry)
+  )
+
+knn_sdf %>% print()
+```
+
+```
+# Source: spark<?> [?? x 3]
+  geometry                         contains_pt convex_hull
+  <list>                           <lgl>       <list>
+1 <POLYGON ((-66.335674 17.986328… TRUE        <POLYGON ((-66.335674 17.986328,…
+2 <POLYGON ((-66.335432 17.986626… TRUE        <POLYGON ((-66.335432 17.986626,…
+3 <POLYGON ((-66.335432 17.986626… TRUE        <POLYGON ((-66.335432 17.986626,…
+4 <POLYGON ((-66.335674 17.986328… TRUE        <POLYGON ((-66.335674 17.986328,…
+5 <POLYGON ((-66.242489 17.988637… FALSE       <POLYGON ((-66.242489 17.988637,…
+6 <POLYGON ((-66.242489 17.988637… FALSE       <POLYGON ((-66.242489 17.988637,…
+7 <POLYGON ((-66.24221 17.988799,… FALSE       <POLYGON ((-66.24221 17.988799, …
+8 <POLYGON ((-66.24221 17.988799,… FALSE       <POLYGON ((-66.24221 17.988799, …
+```
+
+
+## Acknowledgements
+
+The author of this blog post would like to thank [Jia Yu](https://github.com/jiayuasu),
+the creator of Apache Sedona, and [Lorenz Walthert](https://github.com/lorenzwalthert) for
+their suggestion to contribute `sparklyr.sedona` to the upstream
+[incubator-sedona](https://github.com/apache/incubator-sedona) repository. Jia has provided
+extensive code-review feedback to ensure `sparklyr.sedona` complies with coding standards
+and best practices of the Apache Sedona project, and has also been very helpful in the
+instrumentation of CI workflows verifying `sparklyr.sedona` works as expected with snapshot
+versions of Sedona libraries from development branches.
+
+The author is also grateful for his colleague [Sigrid Keydana](https://github.com/skeydan)
+for valuable editorial suggestions on this blog post.
+
+That's all. Thank you for reading!
+
+Photo by [NASA](https://unsplash.com/@nasa) on [Unsplash](https://unsplash.com/)

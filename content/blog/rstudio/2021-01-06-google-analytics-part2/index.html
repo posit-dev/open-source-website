@@ -1,0 +1,163 @@
+---
+title: 'Custom Google Analytics Dashboards with R: Building The Dashboard'
+people:
+  - Carl Howe
+date: '2021-01-06'
+slug: google-analytics-part2
+categories:
+  - Data Science Leadership
+tags:
+  - data science
+  - dashboards
+  - flexdashboard
+description: In this post, I continue our series on how to create your own Google Analytics dashboard in R. Using the data we downloaded in our last post, we'll now create a simple dashboard showing blog page views over time and highlighting the most popular ones.
+resources:
+- name: "dashboard"
+  src: "dashboard-hero.jpg"
+  title: "Automobile Dashboard"
+blogcategories:
+- Data Science Leadership
+events: blog
+ported_from: rstudio
+port_status: in-progress
+---
+
+<script src="index_files/header-attrs/header-attrs.js"></script>
+<script src="index_files/core-js/shim.min.js"></script>
+<script src="index_files/react/react.min.js"></script>
+<script src="index_files/react/react-dom.min.js"></script>
+<script src="index_files/reactwidget/react-tools.js"></script>
+<script src="index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="index_files/reactable-binding/reactable.js"></script>
+
+
+<sup>
+<p>Photo by <a href="https://unsplash.com/@abiglow?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alan Biglow</a> on <a href="https://unsplash.com/s/photos/tesla-dashboard?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+</sup>
+<style type="text/css"> 
+img.screenshot { border: 0.5px solid #888; padding: 5px; background-color: #eee;}
+</style>
+<p>Back in November, I took readers step by step through the somewhat long process of <a href="https://blog.rstudio.com/2020/11/27/google-analytics-part1/" target="_blank" rel="noopener noreferrer">authenticating and downloading Google Analytics web site data into R</a>. This post will be much simpler; I’m going to walk you through creating a dashboard showing blog post popularity using the <code>flexdashboard</code> package.</p>
+<p>Before we go there, however, I want to re-emphasize a correction that we made to the original credentials post. Mark Edmonston, the author of the terrific <code>googleAnalyticsR</code> package, has created a new version of his package that eliminates the need for OAUTH credentials when running on a server. Once that update is available on CRAN, I’ll update this post to document the simpler process of only submitting service account credentials. In the meantime, though, we’ll continue using both OAUTH and service account credentials.</p>
+<div id="where-to-find-the-code-and-data" class="level2">
+<h3>Where to Find The Code and Data</h3>
+<p>All the code and data presented in this post is in a GitHub repository at <a href="https://github.com/rstudio/a-flexdashboard-for-google-analytics/" target="_blank" rel="noopener noreferrer">https://github.com/rstudio/a-flexdashboard-for-google-analytics</a> in the <em>Part2</em> folder. The code from Part 1 of this blog series is also available in the <em>Part1</em> folder; however, users should be aware that they’ll need to provide their own authentication secrets for that code to work. My previous article, <a href="https://blog.rstudio.com/2020/11/27/google-analytics-part1/" target="_blank" rel="noopener noreferrer">Custom Google Analytics Dashboards with R: Downloading Data</a>, provides detailed instructions for how to obtain those credentials.</p>
+<p>To make it easy for readers to reproduce this dashboard, I’ve constructed a synthetic set of Google Analytics data named <em>clickbait_GA_data.csv</em> for a hypothetical blog at the address <em>clickbait.com</em>. At the time of this writing, that domain was currently for sale and therefore shouldn’t be confused with any real blog. While the synthetic traffic comes from the Google Analytics log from an actual blog, the titles and URLs of all the articles are made up (although I wish I could find out the <em>3 Ways That Birds Are Confused About Bacon</em>). The dataset contains more than 32,000 visits and 105,000 page views conducted over one month.</p>
+</div>
+<div id="creating-our-dashboard" class="level1">
+<h2>Creating Our Dashboard</h2>
+<p>So let’s begin building our dashboard. To do this, we’re going to open a new <code>flexdashboard</code> R file. We do that by selecting File &gt; New File &gt; R Markdown…. as shown below.</p>
+<p><img class="screenshot" style="width: 477px;" src="01-menu-rmarkdown.jpg"></p>
+<p>We next select From Template &gt; Flex Dashboard.</p>
+<p><img class="screenshot" src="02-from-template.jpg" style="width: 477px;"></p>
+<p>That selection yields a new file which looks like this:</p>
+<p><img class="screenshot" src="03-flexdashboard-template.jpg" style="width: 298px;"></p>
+<p>If you <em>knit</em> that file, you end up with this output in your Preview window.</p>
+<p><img class="screenshot" src="04-flexdashboard-template-result.jpg" style="width: 468px;"></p>
+<p>The preconfigured template has provided us with window panes in which to put our Google Analytics graphs and tables. We simply have to fill them in!</p>
+<p>Our process for building our Google Analytics (GA) dashboard will go like this:</p>
+<ol style="list-style-type: decimal">
+<li>Read in the Google Analytics data in the setup chunk of our document.</li>
+<li>Use <code>dplyr</code> and <code>ggplot2</code> to create a graph of pageviews by day for Chart A.</li>
+<li>Build a table of the top 10 most popular titles in Chart B using the <code>reactable</code> package.</li>
+<li>Delete the R Markdown code for Chart C.</li>
+</ol>
+<p>So let’s build this dashboard.</p>
+<div id="reading-in-the-data" class="level2">
+<h3>Reading in the Data</h3>
+<p>We begin our dashboard by reading in the data from Google Analytics. <a href="https://blog.rstudio.com/2020/11/27/google-analytics-part1/" target="_blank" rel="noopener noreferrer">In our last post</a>, we built code to authenticate and read in the GA data using the Google Analytics API. In a production dashboard, we would put that code in the setup here.</p>
+<p>However, because we have our synthetic data in a .csv file, reading in the data will be a much simpler process. We will simply load the libraries we intend to use, apply the <em>read_csv</em> function from the <code>readr</code> package to our dataset, and put all of this in the <em>setup</em> chunk of our R Markdown file as shown below. I’ve shown the first few lines of the output to provide a sense of what that content looks like.</p>
+<pre class="r"><code>library(flexdashboard)
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(reactable)
+
+gadata &lt;- read_csv(&quot;./data/clickbait_GA_data.csv&quot;)
+show(gadata %&gt;% head(7))</code></pre>
+<pre><code>## # A tibble: 7 x 5
+##   date       pageviews users pageTitle            landingPagePath               
+##   &lt;date&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                &lt;chr&gt;                         
+## 1 2020-12-01         2     2 3 Ways That Turtles… www.clickbait.com/2011/02/28/…
+## 2 2020-12-01         2     1 3 Ways That Turtles… www.clickbait.com/2011/02/28/…
+## 3 2020-12-01         3     3 Shocking Finding: W… www.clickbait.com/2012/06/04/…
+## 4 2020-12-01         1     1 Unexpected Research… www.clickbait.com/2012/11/29/…
+## 5 2020-12-01        11    10 Unexpected Research… www.clickbait.com/2013/06/10/…
+## 6 2020-12-01         1     1 3 Ways That Europea… www.clickbait.com/2013/10/22/…
+## 7 2020-12-01         2     2 Why Monkeys Deal wi… www.clickbait.com/2014/01/17/…</code></pre>
+</div>
+<div id="plotting-blog-traffic-by-day" class="level2">
+<h3>Plotting Blog Traffic by Day</h3>
+<p>With the GA data in a tibble, we can use <code>dplyr</code> to group and sum the page views by day and then plot the data over time with <code>ggplot2</code>. This code will go in the R chunk under the heading <em>Chart A</em>.</p>
+<pre class="r"><code>theme_set(theme_minimal())
+
+gadata_by_day &lt;- gadata %&gt;% 
+  group_by(date) %&gt;% 
+  summarize(pagesums = sum(pageviews))
+
+g &lt;- ggplot(gadata_by_day, aes(x = date, y = pagesums)) +
+  geom_point(color = &quot;blue&quot;) +
+  geom_line(color = &quot;blue&quot;) +
+  scale_x_date() +
+  labs(x = &quot;&quot;, y = &quot;&quot;, title = &quot;&quot;)
+show(g)</code></pre>
+<p><img src="unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="building-a-table-of-the-most-popular-results" class="level2">
+<h3>Building a Table of the Most Popular Results</h3>
+<p>We’d also like to present a table of the most popular blog posts on our blog. We could do this with a variety of packages such as <code>kable</code> or <code>DT</code>, but for this example, we’ll use the <code>reactable</code> package. <code>Reactable</code> gives users interactive features such as the ability to search and sort the table. All this is done using client-side Javascript, which makes the table interactive without requiring server involvement.</p>
+<p>We can compute and display the most popular blog posts by inserting this code into the chunk under <em>Chart B</em>. We added arguments to change the column names, specify the widths of the columns, and permit scrolling, searching, and striping just to make it prettier. Those could have been omitted if we weren’t fussy about the formatting.</p>
+<pre class="r"><code>gadata_most_popular &lt;- gadata %&gt;% 
+  count(pageTitle, wt = pageviews, sort=TRUE) %&gt;% 
+  head(10)
+
+## For those who aren&#39;t as comfortable with the options in count, the following
+## code would also work
+# gadata_most_popular &lt;- gadata %&gt;% 
+#   group_by(pageTitle) %&gt;% 
+#   summarize(n = sum(pageviews)) %&gt;% 
+#   arrange(desc(n))
+
+reactable(gadata_most_popular,
+           columns = list(pageTitle     = colDef(name = &quot;Title&quot;,
+                                            align = &quot;left&quot;, 
+                                            maxWidth = 250),
+                          n             = colDef(name = &quot;Page Views&quot;,
+                                             maxWidth = 100)),
+            pagination = FALSE,
+            searchable = TRUE,
+            striped = TRUE)</code></pre>
+<div id="htmlwidget-1" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"pageTitle":["Amazing Ways That Elephants Embrace Squirrels","Unexpected Research Results: Pandas Don't Comprehend Puppies","3 Ways That Birds Avoid Friends","New Discovery: Americans Experience Friends","3 Ways That Birds Are Confused About Bacon","Unexpected Research Results: Birds Like Birthdays","New Discovery: Monkeys Observe Their Past","13 Ways That Koalas Observe Carbs","Discover How Dogs Can't Get Enough of Carbs","Learn How Cats Embrace Kittens"],"n":[16412,8888,6015,4858,3751,2823,2741,2452,2270,2220]},"columns":[{"accessor":"pageTitle","name":"Title","type":"character","maxWidth":250,"align":"left"},{"accessor":"n","name":"Page Views","type":"numeric","maxWidth":100}],"searchable":true,"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"striped":true,"dataKey":"e21fde16a6509bc62084d4fb648b3f06","key":"e21fde16a6509bc62084d4fb648b3f06"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="the-final-result" class="level2">
+<h3>The Final Result</h3>
+<p>Finally, we change the heading of our R Markdown code to have a meaningful title, rename the headings from Chart A and Chart B to something more reasonable, delete the heading and chunk for Chart C, and add some explanatory text about what our dashboard is about. Our finished dashboard R Markdown code should look like the code in <a href="https://github.com/rstudio/a-flexdashboard-for-google-analytics/blob/main/Part2/dashboard1.Rmd" target="_blank" rel="noopener noreferrer">dashboard1.Rmd</a></p>
+<p>When we knit the results, we see this:</p>
+<p><img class="screenshot" src="05-dashboard-final.jpg" style="width: 600px"></p>
+<p>If we have access to an RStudio Connect server, we can publish this dashboard to that server by clicking the <em>Publish</em> button at the top right of the Viewer window. On the RStudio Connect server, we can schedule the dashboard to regularly download and analyze the Google Analytics data and allow others to interact with it. We can literally go from a desktop R Markdown document to a dashboard running in production for others to see in just a few clicks.</p>
+</div>
+</div>
+<div id="conclusions" class="level1">
+<h2>Conclusions</h2>
+<p>This post shows how:</p>
+<ol style="list-style-type: decimal">
+<li><strong>A little R Markdown code can create a Google Analytics dashboard.</strong> Overall, the process of creating this dashboard is not really any more difficult than creating a report in R Markdown. The <code>flexdashboard</code> framework uses the same headings and code chunk structure as a regular R Markdown document. This means that we don’t have to learn a new language to build our dashboard.</li>
+<li><strong>Flexdashboard allows us to exploit other tools we already know.</strong> The R Markdown template for <code>flexdashboard</code> provides visual containers into which we can drop code that uses other packages that we know such as <code>ggplot2</code>, <code>dplyr</code>, and <code>reactable</code>. Again, we don’t have to learn new and unfamiliar tools to create our dashboard.</li>
+<li><strong>We can publish our dashboard and add new features incrementally.</strong> For organizations with an RStudio Connect server, we can put our dashboard into scheduled production with only a few clicks. Any time we wish to add another insight or plot to our dashboard, we simply change the R Markdown document on our desktop and republish the result.</li>
+</ol>
+<p>However, while we’ve successfully created a simple Google Analytics dashboard, we haven’t tackled the question that kicked off this series of blog posts, namely:</p>
+<blockquote>
+<p>Which of your blog articles received the most views in the first 15 days they were posted?</p>
+</blockquote>
+<p>That’s the question we’ll tackle in part 3 of this series, where we’ll derive the dates of publication for our blog posts and create a dashboard that ranks blog posts on the basis of a 15-day window of visitors. This approach will ensure that we don’t favor older blog posts that have just had more time to gather views.</p>
+<div id="for-more-information" class="level2">
+<h3>For More Information</h3>
+<p>If you would like to learn more about some of the packages and products we’ve used, we recommend:</p>
+<ul>
+<li><a href="https://rmarkdown.rstudio.com/flexdashboard/" target="_blank" rel="noopener noreferrer">flexdashboard: Easy interactive dashboards for R</a>, a web site that gives a broad overview of the many capabilities of the <code>flexdashboard</code> package.</li>
+<li><a href="https://rmarkdown.rstudio.com" target="_blank" rel="noopener noreferrer">R Markdown</a>, RStudio’s web site that describes the many ways you can use R Markdown to create reports, slides, web sites, and more.</li>
+<li><a href="https://rstudio.com/products/connect/" target="_blank" rel="noopener noreferrer">RStudio Connect</a>, RStudio’s publishing platform for R and Python, which provides push-button publishing from the RStudio IDE, scheduled execution of reports, and a host of other production capabilities.</li>
+</ul>
+</div>
+</div>

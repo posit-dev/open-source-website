@@ -1,0 +1,3015 @@
+---
+title: Exploring US COVID-19 Cases and Deaths
+people:
+  - Art Steinmetz
+date: '2020-12-23'
+slug: exploring-us-covid-19-cases
+categories:
+  - Data Science Leadership
+  - Data visualization
+tags:
+  - ggplot2
+  - dplyr
+  - R
+description: Arthur Steinmetz, former Chairman, CEO, and President of OppenheimerFunds, uses R and the tidymodels package to explore the relationship between COVID-19 cases and mortality in the US.
+blogcategories:
+- Data Science Leadership
+events: blog
+ported_from: rstudio
+port_status: in-progress
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<style type="text/css"> 
+h2 { margin-inline-start: 0; padding: 36px 0 0 0; line-height: 30px; }
+h3 { margin-inline-start: 0; padding: 24px 0 0 0; }
+</style>
+<div class="lt-gray-box">
+<p>In this post, RStudio is pleased to once again feature Arthur Steinmetz, former Chairman, CEO, and President of OppenheimerFunds. Art is an avid amateur data scientist and is active in the R statistical programming language community.</p>
+<p>We’ve reformatted and lightly edited Art’s post for clarity here. You can read Art’s original post and other articles he’s written at <a href="https://outsiderdata.netlify.app/post/covid-cases-vs-deaths/" target="_blank" rel="noopener noreferrer">Outsider Data Science</a>. Art has also published his code and data on his <a href="https://github.com/apsteinmetz/covid_cases_vs_deaths" target="_blank" rel="noopener noreferrer">Covid Cases Versus Deaths</a> GitHub repository.</p>
+</div>
+<div id="introduction" class="level1">
+<h2>Introduction</h2>
+<p>I have a macabre fascination with tracking the course of the COVID-19 pandemic. I suspect there are two reasons for this. One, by delving into the numbers I imagine I have some control over this thing. Second, it feels like lighting a candle to show that science can reveal truth at a time when the darkness of anti-science is creeping across the land.</p>
+<p>The purpose of this project is, as usual, twofold. First, to explore an interesting data science question and, second, to explore some techniques and packages in the R universe. We will be looking at the relationship of COVID-19 cases to mortality. What is the lag between a positive case and a death? How does that vary among states? How has it varied as the pandemic has progressed? This is an interesting project because is combines elements of time series forecasting and dependent variable prediction.</p>
+<p>I have been thinking about how to measure mortality lags for a while now. What prompted to do a write-up was discovering a new function in Matt Dancho’s <code>timetk</code> package, <code>tk_augment_lags</code>, which makes short work of building multiple lags. Not too long ago, managing models for multiple lags and multiple states would have been a bit messy. The emerging <code>tidymodels</code> framework from RStudio using <em>list columns</em> is immensely powerful for this sort of thing. It’s great to reduce so much analysis into so few lines of code.</p>
+<p>This was an exciting project because I got some validation of my approach. I am NOT an epidemiologist or a professional data scientist. None of the results I show here should be considered authoritative. Still, while I was working on this project I saw <a href="https://www.wsj.com/livecoverage/covid-2020-12-02/card/kdSg0ILBfalJHzXvX0bF"  target="_blank" rel="noopener noreferrer">this article</a> in the <em>Wall Street Journal</em> which referenced the work by <a href="https://epi.washington.edu/faculty/bedford-trevor" target="_blank" rel="noopener noreferrer">Dr. Trevor Bedford</a>, an epidemiologist at the University of Washington. He took the same approach I did and got about the same result.</p>
+<p>I’ve broken down this analysis into three major parts:</p>
+<ol style="list-style-type: decimal">
+<li>Understanding the data</li>
+<li>Modeling cases versus deaths</li>
+<li>Validating the model against individual case data</li>
+</ol>
+</div>
+<div id="understanding-the-data" class="level1">
+<h2>1. Understanding the Data</h2>
+<p>There is no shortage of data to work with. Here we will use the NY Times COVID tracking data set which is updated daily. The package <code>covid19nytimes</code> lets us refresh the data on demand.</p>
+<pre class="r"><code>knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+
+# correlate deaths and cases by state
+library(tidyverse)
+library(covid19nytimes)
+library(timetk)
+library(lubridate)
+library(broom)
+library(knitr)
+library(gt)
+
+table_style &lt;- list(cell_text(font = &quot;Arial&quot;, size = &quot;small&quot;))
+
+# source https://github.com/nytimes/covid-19-data.git
+us_states_long &lt;- covid19nytimes::refresh_covid19nytimes_states()
+
+# The following filter is to restrict the data to that originally posted at
+# https://outsiderdata.netlify.app/post/covid-cases-vs-deaths/
+# Should you wish to update the models with the latest data, remove the
+# following statement.
+us_states_long &lt;- us_states_long %&gt;% filter(date &lt; ymd(&quot;2020-12-06&quot;))
+
+# if link is broken
+# load(&quot;../data/us_states_long.rdata&quot;)
+
+# use data from November 15 to stay consistent with text narrative
+cutoff_start &lt;- as.Date(&quot;2020-03-15&quot;) # not widespread enough until then
+cutoff_end &lt;- max(us_states_long$date) - 7 # discard last week since there are reporting lags
+
+us_states_long &lt;- us_states_long %&gt;% filter(date &gt;= cutoff_start)
+us_states_long &lt;- us_states_long %&gt;% filter(date &lt;= cutoff_end)
+# Remove tiny territories
+territories &lt;- c(&quot;Guam&quot;, &quot;Northern Mariana Islands&quot;)
+us_states_long &lt;- us_states_long %&gt;% filter(!(location %in% territories))
+save(us_states_long, file = &quot;us_states_long.rdata&quot;)
+us_states_long %&gt;%
+  head() %&gt;%
+  gt() %&gt;%
+  tab_options(table.width = &quot;100%&quot;) %&gt;%
+  tab_style(style = table_style, 
+            locations = cells_body()) %&gt;% 
+  opt_all_caps()</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#jydtshcvtq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jydtshcvtq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jydtshcvtq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jydtshcvtq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jydtshcvtq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jydtshcvtq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jydtshcvtq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jydtshcvtq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jydtshcvtq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jydtshcvtq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jydtshcvtq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jydtshcvtq .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jydtshcvtq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jydtshcvtq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jydtshcvtq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jydtshcvtq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jydtshcvtq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#jydtshcvtq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jydtshcvtq .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#jydtshcvtq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jydtshcvtq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jydtshcvtq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jydtshcvtq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jydtshcvtq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jydtshcvtq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#jydtshcvtq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jydtshcvtq .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#jydtshcvtq .gt_left {
+  text-align: left;
+}
+
+#jydtshcvtq .gt_center {
+  text-align: center;
+}
+
+#jydtshcvtq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jydtshcvtq .gt_font_normal {
+  font-weight: normal;
+}
+
+#jydtshcvtq .gt_font_bold {
+  font-weight: bold;
+}
+
+#jydtshcvtq .gt_font_italic {
+  font-style: italic;
+}
+
+#jydtshcvtq .gt_super {
+  font-size: 65%;
+}
+
+#jydtshcvtq .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="jydtshcvtq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">location</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">location_type</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">location_code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">location_code_type</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">data_type</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">value</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-11-28</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">Alabama</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">state</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">01</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">fips_code</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">cases_total</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">244993</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-11-28</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">Alabama</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">state</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">01</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">fips_code</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">deaths_total</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">3572</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-11-28</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">Alaska</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">state</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">02</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">fips_code</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">cases_total</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">31279</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-11-28</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">Alaska</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">state</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">02</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">fips_code</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">deaths_total</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">115</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-11-28</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">Arizona</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">state</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">04</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">fips_code</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">cases_total</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">322774</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-11-28</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">Arizona</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">state</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">04</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">fips_code</td>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">deaths_total</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">6624</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<p>The NY Times data is presented in a “long” format. When we start modeling, long will suit us well but first we have to add features to help us and that will require <code>pivot</code>ing to wide, adding features and then back to long. The daily data is so irregular the first features we will add are 7-day moving averages to smooth the series. We’ll also do a nation-level analysis first so we aggregate the state data as well.</p>
+<pre class="r"><code># Create rolling average changes
+# pivot wider
+# this will also be needed when we create lags
+us_states &lt;- us_states_long %&gt;%
+  # discard dates before cases were tracked.
+  filter(date &gt; as.Date(&quot;2020-03-01&quot;)) %&gt;%
+  pivot_wider(names_from = &quot;data_type&quot;, values_from = &quot;value&quot;) %&gt;%
+  rename(state = location) %&gt;%
+  select(date, state, cases_total, deaths_total) %&gt;%
+  mutate(state = as_factor(state)) %&gt;%
+  arrange(state, date) %&gt;%
+  group_by(state) %&gt;%
+  # smooth the data with 7 day moving average
+  mutate(cases_7day = (cases_total - lag(cases_total, 7)) / 7) %&gt;%
+  mutate(deaths_7day = (deaths_total - lag(deaths_total, 7)) / 7)
+
+# national analysis
+# ----------------------------------------------
+# aggregate state to national
+us &lt;- us_states %&gt;%
+  group_by(date) %&gt;%
+  summarize(across(
+    .cols = where(is.double),
+    .fns = function(x) sum(x, na.rm = T),
+    .names = &quot;{col}&quot;
+  ))
+
+us[10:20, ] %&gt;%
+  gt() %&gt;%
+  tab_options(table.width = &quot;80%&quot;) %&gt;%
+  tab_style(style = table_style, 
+            locations = cells_body()) %&gt;% 
+  opt_all_caps()</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#gqqexhllba .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 80%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gqqexhllba .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gqqexhllba .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gqqexhllba .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gqqexhllba .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gqqexhllba .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gqqexhllba .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gqqexhllba .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gqqexhllba .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gqqexhllba .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gqqexhllba .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gqqexhllba .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gqqexhllba .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gqqexhllba .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gqqexhllba .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gqqexhllba .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gqqexhllba .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#gqqexhllba .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gqqexhllba .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#gqqexhllba .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gqqexhllba .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gqqexhllba .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gqqexhllba .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gqqexhllba .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gqqexhllba .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#gqqexhllba .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gqqexhllba .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#gqqexhllba .gt_left {
+  text-align: left;
+}
+
+#gqqexhllba .gt_center {
+  text-align: center;
+}
+
+#gqqexhllba .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gqqexhllba .gt_font_normal {
+  font-weight: normal;
+}
+
+#gqqexhllba .gt_font_bold {
+  font-weight: bold;
+}
+
+#gqqexhllba .gt_font_italic {
+  font-style: italic;
+}
+
+#gqqexhllba .gt_super {
+  font-size: 65%;
+}
+
+#gqqexhllba .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="gqqexhllba" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">cases_total</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">deaths_total</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">cases_7day</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">deaths_7day</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-24</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">53906</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">784</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">6858</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">95.29</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-25</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">68540</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">1053</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">8600</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">127.29</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-26</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">85521</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">1352</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">10449</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">162.86</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-27</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">102847</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">1769</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">12121</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">213.14</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-28</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">123907</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">2299</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">14199</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">277.00</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-29</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">142426</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">2717</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">15626</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">322.86</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-30</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">163893</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">3367</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">17202</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">398.43</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-31</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">188320</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">4302</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">19202</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">502.57</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-04-01</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">215238</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">5321</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">20957</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">609.71</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-04-02</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">244948</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">6537</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">22775</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">740.71</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-04-03</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">277264</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">7927</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">24917</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">879.71</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<div id="exploratory-data-analysis" class="level2">
+<h3>Exploratory Data Analysis</h3>
+<p>We might be tempted to simply plot deaths vs. cases but a scatter plot shows us that would not be satisfactory. As it turns out, the relationship of cases and deaths is strongly conditioned on date. This reflects the declining mortality rate as we have come to better understand the disease.</p>
+<pre class="r"><code># does a simple scatterplot tell us anything
+# about the relationship of deaths to cases? No.
+g &lt;- us %&gt;%
+  ggplot(aes(deaths_7day, cases_7day)) +
+  geom_point() +
+  labs(
+    title = &quot;Not Useful: Simple Scatterplot of U.S. Cases vs. Deaths&quot;,
+    caption = &quot;Source: NY Times, Arthur Steinmetz&quot;
+  )
+show(g)</code></pre>
+<p><img src="silly-plot-1.png" width="672" /></p>
+<p>We can get much more insight plotting smoothed deaths and cases over time. It is generally bad form to use two different y axes on a single plot but but this example adds insight.</p>
+<p>A couple of observations are obvious. First when cases start to rise, deaths follow with a lag. Second, we have had three spikes in cases so far and in each successive instance the mortality has risen by a smaller amount. This suggests that, thankfully, we are getting better at treating this disease. It is NOT a function of increased testing because <a href="http://91-divoc.com/pages/covid-visualization/?chart=countries&highlight=United%20States&show=highlight-only&y=highlight&scale=linear&data=testPositivity-daily-7&data-source=merged&xaxis=right-12wk#countries">positivity rates</a> have not been falling.</p>
+<pre class="r"><code># visualize the relationship between rolling average of weekly cases and deaths
+coeff &lt;- 30
+g &lt;- us %&gt;%
+  ggplot(aes(date, cases_7day)) +
+  geom_line(color = &quot;orange&quot;) +
+  theme(legend.position = &quot;none&quot;) +
+  geom_line(aes(x = date, y = deaths_7day * coeff), color = &quot;red&quot;) +
+  scale_y_continuous(
+    labels = scales::comma,
+    name = &quot;Cases&quot;,
+    sec.axis = sec_axis(deaths_7day ~ . / coeff,
+      name = &quot;Deaths&quot;,
+      labels = scales::comma
+    )
+  ) +
+  theme(
+    axis.title.y = element_text(color = &quot;orange&quot;, size = 13),
+    axis.title.y.right = element_text(color = &quot;red&quot;, size = 13)
+  ) +
+  labs(
+    title = &quot;U.S. Cases vs. Deaths&quot;,
+    subtitle = &quot;7-Day Average&quot;,
+    caption = &quot;Source: NY Times, Arthur Steinmetz&quot;,
+    x = &quot;Date&quot;
+  )
+show(g)</code></pre>
+<p><img src="unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+</div>
+<div id="modeling-cases-versus-deaths" class="level1">
+<h2>2. Modeling Cases versus Deaths</h2>
+<p>This illustrates a problem for any modeling we might do. It looks like the more cases surge, the less the impact on deaths. This is NOT a valid conclusion. A simple regression of deaths vs. cases and time shows the passage of time has more explanatory power than cases in predicting deaths so we have to take that into account.</p>
+<pre class="r"><code># passage of time affects deaths more than cases
+lm(deaths_7day ~ cases_7day + date, data = us) %&gt;%
+  tidy() %&gt;%
+  gt() %&gt;% 
+  tab_options(table.width = &quot;60%&quot;) %&gt;%
+  tab_style(style = table_style, 
+            locations = cells_body()) %&gt;% 
+  opt_all_caps()</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#ohxjnjrdfj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 60%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ohxjnjrdfj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ohxjnjrdfj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ohxjnjrdfj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ohxjnjrdfj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ohxjnjrdfj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ohxjnjrdfj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ohxjnjrdfj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ohxjnjrdfj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ohxjnjrdfj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ohxjnjrdfj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ohxjnjrdfj .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ohxjnjrdfj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ohxjnjrdfj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ohxjnjrdfj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ohxjnjrdfj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ohxjnjrdfj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#ohxjnjrdfj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ohxjnjrdfj .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#ohxjnjrdfj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ohxjnjrdfj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ohxjnjrdfj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ohxjnjrdfj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ohxjnjrdfj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ohxjnjrdfj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#ohxjnjrdfj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ohxjnjrdfj .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#ohxjnjrdfj .gt_left {
+  text-align: left;
+}
+
+#ohxjnjrdfj .gt_center {
+  text-align: center;
+}
+
+#ohxjnjrdfj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ohxjnjrdfj .gt_font_normal {
+  font-weight: normal;
+}
+
+#ohxjnjrdfj .gt_font_bold {
+  font-weight: bold;
+}
+
+#ohxjnjrdfj .gt_font_italic {
+  font-style: italic;
+}
+
+#ohxjnjrdfj .gt_super {
+  font-size: 65%;
+}
+
+#ohxjnjrdfj .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="ohxjnjrdfj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">term</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">estimate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">std.error</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">statistic</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">p.value</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">(Intercept)</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">7.654e+04</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">1.005e+04</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">7.613</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">5.153e-13</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">cases_7day</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">8.279e-03</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">1.118e-03</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">7.408</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">1.859e-12</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">date</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">-4.113e+00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">5.467e-01</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">-7.523</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">9.109e-13</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<p>We’ll approach this by running regression models of deaths and varying lags (actually leads) of cases. We chose to lead deaths as opposed to lagging cases because it will allow us to make predictions about the future of deaths given cases today. We include the date as a variable as well. Once we’ve run regressions against each lead period, we’ll chose the lead period that has the best fit (R-Squared) to the data.</p>
+<p>The requires a lot of leads and a lot of models. Fortunately, R provides the tools to make this work very simple and well organized. First we add new columns for each lead period using <code>timetk::tk_augment_lags</code>. This one function call does all the work but it only does lags so we have to futz with it a bit to get leads.</p>
+<p>I chose to add forty days of leads. I don’t really think that long a lead is realistic and, given the pandemic has been around only nine months, there aren’t as many data points forty days ahead. Still, I want to see the behavior of the models. Once we have created the leads we remove any dates for which we don’t have led deaths.</p>
+<p>Here are the first 10 leads:</p>
+<pre class="r"><code># create columns for deaths led 0 to 40 days ahead
+max_lead &lt;- 40
+us_lags &lt;- us %&gt;%
+  # create lags by day
+  tk_augment_lags(deaths_7day, .lags = 0:-max_lead, .names = &quot;auto&quot;)
+# fix names to remove minus sign
+names(us_lags) &lt;- names(us_lags) %&gt;% str_replace_all(&quot;lag-|lag&quot;, &quot;lead&quot;)
+
+# use only case dates where we have complete future knowledge of deaths for all lead times.
+us_lags &lt;- us_lags %&gt;% filter(date &lt; cutoff_end - max_lead)
+
+us_lags[1:10, 1:7] %&gt;%
+  gt() %&gt;% 
+  tab_options(table.width = &quot;100%&quot;) %&gt;%
+  tab_style(style = table_style, 
+            locations = cells_body()) %&gt;% 
+  opt_all_caps()</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#rmldchqezd .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rmldchqezd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rmldchqezd .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rmldchqezd .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rmldchqezd .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rmldchqezd .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rmldchqezd .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rmldchqezd .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rmldchqezd .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rmldchqezd .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rmldchqezd .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rmldchqezd .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rmldchqezd .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rmldchqezd .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rmldchqezd .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rmldchqezd .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rmldchqezd .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#rmldchqezd .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rmldchqezd .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#rmldchqezd .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rmldchqezd .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rmldchqezd .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rmldchqezd .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rmldchqezd .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rmldchqezd .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#rmldchqezd .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rmldchqezd .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#rmldchqezd .gt_left {
+  text-align: left;
+}
+
+#rmldchqezd .gt_center {
+  text-align: center;
+}
+
+#rmldchqezd .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rmldchqezd .gt_font_normal {
+  font-weight: normal;
+}
+
+#rmldchqezd .gt_font_bold {
+  font-weight: bold;
+}
+
+#rmldchqezd .gt_font_italic {
+  font-style: italic;
+}
+
+#rmldchqezd .gt_super {
+  font-size: 65%;
+}
+
+#rmldchqezd .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="rmldchqezd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">cases_total</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">deaths_total</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">cases_7day</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">deaths_7day</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">deaths_7day_lead0</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">deaths_7day_lead1</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-15</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">3597</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">68</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-16</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">4504</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">91</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-17</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">5903</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">117</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-18</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">8342</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">162</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-19</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">12381</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">212</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-20</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">17998</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">277</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-21</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">24513</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">360</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.00</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">55.57</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-22</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">33046</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">457</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">4205</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">55.57</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">55.57</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">69.57</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-23</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">43476</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">578</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">5565</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">69.57</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">69.57</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">95.29</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">2020-03-24</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">53906</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">784</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">6858</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">95.29</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">95.29</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">127.29</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<p>Now we start the job of actually building the linear models and seeing the real power of the <code>tidymodels</code> framework. Since we have our lead days in columns we revert back to long-form data. For each date we have a case count and 40 lead days with the corresponding death count. As will be seen below, the decline in the fatality rate has been non-linear, so we use a second-order polynomial to regress the <code>date</code> variable.</p>
+<p>Our workflow looks like this:</p>
+<ol style="list-style-type: decimal">
+<li>Create the lags using <code>tk_augment_lag</code> (above).</li>
+<li><code>pivot</code> to long form.</li>
+<li><code>nest</code> the data by lead day and state.</li>
+<li><code>map</code> the data set for each lead day to a regression model.</li>
+<li>Pull out the adjusted R-Squared using <code>glance</code> for each model to determine the best fit lead time.</li>
+</ol>
+<p>The result is a data frame with our lead times, the nested raw data, model and R-squared for each lead time.</p>
+<pre class="r"><code># make long form to nest
+# initialize models data frame
+models &lt;- us_lags %&gt;%
+  ungroup() %&gt;%
+  pivot_longer(
+    cols = contains(&quot;lead&quot;),
+    names_to = &quot;lead&quot;,
+    values_to = &quot;led_deaths&quot;
+  ) %&gt;%
+  select(date, cases_7day, lead, led_deaths) %&gt;%
+  mutate(lead = as.numeric(str_remove(lead, &quot;deaths_7day_lead&quot;))) %&gt;%
+  nest(data = c(date, cases_7day, led_deaths)) %&gt;%
+  # Run a regression on lagged cases and date vs deaths
+  mutate(model = map(
+    data,
+    function(df) {
+      lm(led_deaths ~ cases_7day + poly(date, 2), data = df)
+    }
+  ))
+
+# Add regression coefficient
+# get adjusted r squared
+models &lt;- models %&gt;%
+  mutate(adj_r = map(model, function(x) {
+    glance(x) %&gt;%
+      pull(adj.r.squared)
+  })
+  %&gt;% unlist())
+print(models)</code></pre>
+<pre><code>## # A tibble: 41 x 4
+##     lead data               model  adj_r
+##    &lt;dbl&gt; &lt;list&gt;             &lt;list&gt; &lt;dbl&gt;
+##  1     0 &lt;tibble [218 × 3]&gt; &lt;lm&gt;   0.164
+##  2     1 &lt;tibble [218 × 3]&gt; &lt;lm&gt;   0.187
+##  3     2 &lt;tibble [218 × 3]&gt; &lt;lm&gt;   0.212
+##  4     3 &lt;tibble [218 × 3]&gt; &lt;lm&gt;   0.241
+##  5     4 &lt;tibble [218 × 3]&gt; &lt;lm&gt;   0.272
+##  6     5 &lt;tibble [218 × 3]&gt; &lt;lm&gt;   0.307
+##  7     6 &lt;tibble [218 × 3]&gt; &lt;lm&gt;   0.343
+##  8     7 &lt;tibble [218 × 3]&gt; &lt;lm&gt;   0.383
+##  9     8 &lt;tibble [218 × 3]&gt; &lt;lm&gt;   0.424
+## 10     9 &lt;tibble [218 × 3]&gt; &lt;lm&gt;   0.467
+## # … with 31 more rows</code></pre>
+<p>To decide the best-fit lead time we choose the model with the highest R-squared.</p>
+<pre class="r"><code># Show model fit by lead time
+# make predictions using best model
+best_fit &lt;- models %&gt;%
+  summarize(adj_r = max(adj_r)) %&gt;%
+  left_join(models, by = &quot;adj_r&quot;)
+
+g &lt;- models %&gt;%
+  ggplot(aes(lead, adj_r)) +
+  geom_line() +
+  labs(
+    subtitle = paste(&quot;Best fit lead =&quot;, best_fit$lead, &quot;days&quot;),
+    title = &quot;Model Fit By Lag Days&quot;,
+    x = &quot;Lead Time in Days for Deaths&quot;,
+    caption = &quot;Source: NY Times, Arthur Steinmetz&quot;,
+    y = &quot;Adjusted R-squared&quot;
+  )
+show(g)</code></pre>
+<p><img src="unnamed-chunk-5-1.png" width="672" /></p>
+<p>We can have some confidence that we are not overfitting the <code>date</code> variable because the significance of the case count remains. With a high enough degree polynomial on the <code>date</code> variable, cases would vanish in importance.</p>
+<pre class="r"><code>best_fit$model[[1]] %&gt;% 
+  tidy() %&gt;% 
+  gt() %&gt;% 
+  tab_options(table.width = &quot;80%&quot;) %&gt;%
+  tab_style(style = table_style, 
+            locations = cells_body()) %&gt;% 
+  opt_all_caps()</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#fypngpikkj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 80%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fypngpikkj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fypngpikkj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fypngpikkj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fypngpikkj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fypngpikkj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fypngpikkj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fypngpikkj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fypngpikkj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fypngpikkj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fypngpikkj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fypngpikkj .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fypngpikkj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fypngpikkj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fypngpikkj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fypngpikkj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fypngpikkj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#fypngpikkj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fypngpikkj .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#fypngpikkj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fypngpikkj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#fypngpikkj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fypngpikkj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fypngpikkj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fypngpikkj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#fypngpikkj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fypngpikkj .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#fypngpikkj .gt_left {
+  text-align: left;
+}
+
+#fypngpikkj .gt_center {
+  text-align: center;
+}
+
+#fypngpikkj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fypngpikkj .gt_font_normal {
+  font-weight: normal;
+}
+
+#fypngpikkj .gt_font_bold {
+  font-weight: bold;
+}
+
+#fypngpikkj .gt_font_italic {
+  font-style: italic;
+}
+
+#fypngpikkj .gt_super {
+  font-size: 65%;
+}
+
+#fypngpikkj .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="fypngpikkj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">term</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">estimate</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">std.error</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">statistic</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">p.value</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">(Intercept)</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">4.363e+02</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">3.799e+01</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">11.49</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">4.207e-24</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">cases_7day</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">1.669e-02</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">9.925e-04</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">16.81</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">5.448e-41</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">poly(date, 2)1</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">-7.306e+03</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">2.270e+02</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">-32.18</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">5.869e-84</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="font-family: Arial; font-size: small;">poly(date, 2)2</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">4.511e+03</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">1.674e+02</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">26.95</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">1.016e-70</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<div id="making-predictions" class="level2">
+<h3>Making Predictions</h3>
+<p>The best-fit lead time is 23 days but let’s use <code>predict</code> to see how well our model fits to the actual deaths.</p>
+<pre class="r"><code># ------------------------------------------
+# see how well our model predicts
+# Function to create prediction plot
+show_predictions &lt;- function(single_model, n.ahead) {
+  predicted_deaths &lt;- predict(single_model$model[[1]], newdata = us)
+  date &lt;- seq.Date(from = min(us$date) + n.ahead, to = max(us$date) + n.ahead, by = 1)
+  display &lt;- full_join(us, tibble(date, predicted_deaths))
+
+  gg &lt;- display %&gt;%
+    pivot_longer(cols = where(is.numeric)) %&gt;%
+    filter(name %in% c(&quot;deaths_7day&quot;, &quot;predicted_deaths&quot;)) %&gt;%
+    ggplot(aes(date, value, color = name)) +
+    geom_line() +
+    labs(
+      title = &quot;Actual vs. Predicted Deaths&quot;,
+      x = &quot;Date&quot;,
+      y = &quot;Count&quot;,
+      caption = &quot;Source: NY Times, Arthur Steinmetz&quot;
+    )
+  gg
+}
+show_predictions(best_fit, best_fit$lead)</code></pre>
+<p><img src="unnamed-chunk-7-1.png" width="672" /></p>
+<p>This is a satisfying result, but sadly shows deaths about to spike. This is despite accounting for the improvements in treatment outcomes we’ve accomplished over the past several months. The 23-day lead time model shows a 1.7% mortality rate over the whole length of observations but conditioned on deaths falling steadily over time.</p>
+</div>
+<div id="understanding-the-declining-mortality-rate" class="level2">
+<h3>Understanding the Declining Mortality Rate</h3>
+<p>Once we’ve settled on the appropriate lag time, we can look at the fatality rate per identified case. This is but one possible measure of fatality rate, certainly not THE fatality rate. Testing rate, positivity rate and others variables will affect this measure. We also assume our best-fit lag is stable over time so take the result with a grain of salt. The takeaway should be how it is declining, not exactly what it is.</p>
+<p>Early on, only people who were very sick or met strict criteria were tested so, of course, fatality rates (on this metric) were much, much higher. To minimize this we start our measure at the middle of April.</p>
+<p>Sadly, we see that fatality rates are creeping up again.</p>
+<pre class="r"><code>fatality &lt;- best_fit$data[[1]] %&gt;%
+  filter(cases_7day &gt; 0) %&gt;%
+  filter(date &gt; as.Date(&quot;2020-04-15&quot;)) %&gt;%
+  mutate(rate = led_deaths / cases_7day)
+
+g &lt;- fatality %&gt;% ggplot(aes(date, rate)) +
+  geom_line() +
+  geom_smooth() +
+  labs(
+    x = &quot;Date&quot;, y = &quot;Fatality Rate&quot;,
+    title = &quot;Fatality Rates are Creeping Up&quot;,
+    subtitle = &quot;Fatality Rate as a Percentage of Lagged Cases&quot;,
+    caption = &quot;Source: NY Times, Arthur Steinmetz&quot;
+  ) +
+  scale_y_continuous(labels = scales::percent)
+show(g)</code></pre>
+<p><img src="unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="state-level-analysis" class="level2">
+<h3>State-Level Analysis</h3>
+<p>One problem with the national model is each state saw the arrival of the virus at different times, which suggests there might also be different relationships between cases and deaths. Looking at a few selected states illustrates this.</p>
+<pre class="r"><code># ------------------------------------------
+# state by state analysis
+
+state_subset &lt;- c(&quot;New York&quot;, &quot;Texas&quot;, &quot;California&quot;, &quot;Ohio&quot;)
+
+# illustrate selected states
+g &lt;- us_states %&gt;%
+  filter(state %in% state_subset) %&gt;%
+  ggplot(aes(date, cases_7day)) +
+  geom_line(color = &quot;orange&quot;) +
+  facet_wrap(~state, scales = &quot;free&quot;) +
+  theme(legend.position = &quot;none&quot;) +
+  geom_line(aes(y = deaths_7day * coeff), color = &quot;red&quot;) +
+  scale_y_continuous(
+    labels = scales::comma,
+    name = &quot;Cases&quot;,
+    sec.axis = sec_axis(deaths_7day ~ . / coeff,
+      name = &quot;Deaths&quot;,
+      labels = scales::comma
+    )
+  ) +
+  theme(
+    axis.title.y = element_text(color = &quot;orange&quot;, size = 13),
+    axis.title.y.right = element_text(color = &quot;red&quot;, size = 13)
+  ) +
+  labs(
+    title = &quot;U.S. Cases vs. Deaths&quot;,
+    subtitle = &quot;7-Day Average&quot;,
+    caption = &quot;Source: NY Times, Arthur Steinmetz&quot;,
+    x = &quot;Date&quot;
+  )
+show(g)</code></pre>
+<p><img src="unnamed-chunk-9-1.png" width="576" /></p>
+<p>In particular we note New York, where the virus arrived early and circulated undetected for weeks. Testing was rare and we did not know much about the course of the disease so the death toll was much worse. Tests were often not conducted until the disease was in advanced stages so we would expect the lag to be shorter.</p>
+<p>In Texas, the virus arrived later. There it looks like the consequences of the first wave were less dire and the lag was longer.</p>
+</div>
+<div id="running-state-by-state-models" class="level2">
+<h3>Running State-by-State Models</h3>
+<p>Now we can run the same workflow we used above over the state-by-state data. Our data set is much larger because we have a full set of lags for each state but building our data frame of list columns is just as easy.</p>
+<p>Looking at the lags by state shows similar results to the national model, on average, as we assume, but the dispersion is large. Early in the pandemic, in New York, cases were diagnosed only for people who were already sick so the lead time before death was much shorter.</p>
+<pre class="r"><code># create lags
+us_states_lags &lt;- us_states %&gt;%
+  # create lags by day
+  tk_augment_lags(deaths_7day, .lags = -max_lead:0, .names = &quot;auto&quot;)
+# fix names to remove minus sign
+names(us_states_lags) &lt;- names(us_states_lags) %&gt;% str_replace_all(&quot;lag-&quot;, &quot;lead&quot;)
+
+# make long form to nest
+# initialize models data frame
+models_st &lt;- us_states_lags %&gt;%
+  ungroup() %&gt;%
+  pivot_longer(
+    cols = contains(&quot;lead&quot;),
+    names_to = &quot;lead&quot;,
+    values_to = &quot;led_deaths&quot;
+  ) %&gt;%
+  select(state, date, cases_7day, lead, led_deaths) %&gt;%
+  mutate(lead = as.numeric(str_remove(lead, &quot;deaths_7day_lead&quot;)))
+
+# make separate tibbles for each regression
+models_st &lt;- models_st %&gt;%
+  nest(data = c(date, cases_7day, led_deaths)) %&gt;%
+  arrange(lead)
+
+# Run a linear regression on lagged cases and date vs deaths
+models_st &lt;- models_st %&gt;%
+  mutate(model = map(
+    data,
+    function(df) {
+      lm(led_deaths ~ cases_7day + poly(date, 2), data = df)
+    }
+  ))
+
+
+# Add regression coefficient
+# get adjusted r squared
+models_st &lt;- models_st %&gt;%
+  mutate(adj_r = map(model, function(x) {
+    glance(x) %&gt;%
+      pull(adj.r.squared)
+  })
+  %&gt;% unlist())
+
+g &lt;- models_st %&gt;%
+  filter(state %in% state_subset) %&gt;%
+  ggplot(aes(lead, adj_r)) +
+  geom_line() +
+  facet_wrap(~state) +
+  labs(
+    title = &quot;Best Fit Lead Time&quot;,
+    caption = &quot;Source: NY Times, Arthur Steinmetz&quot;
+  )
+show(g)</code></pre>
+<p><img src="unnamed-chunk-10-1.png" width="576" /></p>
+<p>To see how the fit looks for the data set as a whole we look at a histogram of all the state R-squareds. We see many of the state models have a worse accuracy than the national model.</p>
+<pre class="r"><code># best fit lag by state
+best_fit_st &lt;- models_st %&gt;%
+  group_by(state) %&gt;%
+  summarize(adj_r = max(adj_r)) %&gt;%
+  left_join(models_st)
+
+g &lt;- best_fit_st %&gt;% ggplot(aes(adj_r)) +
+  geom_histogram(bins = 10, color = &quot;white&quot;) +
+  geom_vline(xintercept = best_fit$adj_r[[1]], color = &quot;red&quot;) +
+  annotate(geom = &quot;text&quot;, x = 0.75, y = 18, label = &quot;Adj-R in National Model&quot;) +
+  labs(
+    y = &quot;State Count&quot;,
+    x = &quot;Adjusted R-Squared&quot;,
+    title = &quot;Goodness of Fit of State Models&quot;,
+    caption = &quot;Source:NY Times,Arthur Steinmetz&quot;
+  )
+show(g)</code></pre>
+<p><img src="unnamed-chunk-11-1.png" width="672" /></p>
+<p>There are vast differences in the best-fit lead times across the states but the distribution is in agreement with our national model.</p>
+<pre class="r"><code>g &lt;- best_fit_st %&gt;% ggplot(aes(lead)) +
+  geom_histogram(binwidth = 5, color = &quot;white&quot;) +
+  scale_y_continuous(labels = scales::label_number(accuracy = 1)) +
+  geom_vline(xintercept = best_fit$lead[[1]], color = &quot;red&quot;) +
+  annotate(geom = &quot;text&quot;, x = best_fit$lead[[1]] + 7, y = 10, label = &quot;Lead in National Model&quot;) +
+  labs(
+    y = &quot;State Count&quot;,
+    x = &quot;Best Fit Model Days from Case to Death&quot;,
+    title = &quot;COVID-19 Lag Time From Cases to Death&quot;,
+    caption = &quot;Source:NY Times,Arthur Steinmetz&quot;
+  )
+show(g)</code></pre>
+<p><img src="unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+</div>
+<div id="validating-the-model-against-individual-case-data" class="level1">
+<h2>3. Validating the Model against Individual Case Data</h2>
+<p>This whole exercise has involved proxying deaths by time and quantity of positive tests. Ideally, we should look at longitudinal data which follows each individual. The state of Ohio provides that so we’ll look at just this one state to provide a reality check on the foregoing analysis. In our proxy model, Ohio shows a best-fit lead time of 31 days, which is much longer than our national-level model.</p>
+<pre class="r"><code># ----------------------------------------------------
+best_fit_st %&gt;%
+  select(-data, -model) %&gt;%
+  filter(state == &quot;Ohio&quot;) %&gt;%
+  gt() %&gt;% 
+  tab_options(table.width = &quot;50%&quot;) %&gt;%
+  tab_style(style = table_style, 
+            locations = cells_body()) %&gt;% 
+  opt_all_caps()</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#andyjdqprw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 50%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#andyjdqprw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#andyjdqprw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#andyjdqprw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#andyjdqprw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#andyjdqprw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#andyjdqprw .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#andyjdqprw .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#andyjdqprw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#andyjdqprw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#andyjdqprw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#andyjdqprw .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#andyjdqprw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#andyjdqprw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#andyjdqprw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#andyjdqprw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#andyjdqprw .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#andyjdqprw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#andyjdqprw .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#andyjdqprw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#andyjdqprw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#andyjdqprw .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#andyjdqprw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#andyjdqprw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#andyjdqprw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#andyjdqprw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#andyjdqprw .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#andyjdqprw .gt_left {
+  text-align: left;
+}
+
+#andyjdqprw .gt_center {
+  text-align: center;
+}
+
+#andyjdqprw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#andyjdqprw .gt_font_normal {
+  font-weight: normal;
+}
+
+#andyjdqprw .gt_font_bold {
+  font-weight: bold;
+}
+
+#andyjdqprw .gt_font_italic {
+  font-style: italic;
+}
+
+#andyjdqprw .gt_super {
+  font-size: 65%;
+}
+
+#andyjdqprw .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="andyjdqprw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">state</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">adj_r</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">lead</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_center" style="font-family: Arial; font-size: small;">Ohio</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">0.7548</td>
+      <td class="gt_row gt_right" style="font-family: Arial; font-size: small;">31</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<p>The caveat here is the NY Times data uses the “case” date which is presumably the date a positive test is recorded. The Ohio data uses “onset” date, which is the date the “illness began.” That is not necessarily the same as the test date.</p>
+<pre class="r"><code># source: https://coronavirus.ohio.gov/static/dashboards/COVIDSummaryData.csv
+ohio_raw &lt;- read_csv(&quot;https://coronavirus.ohio.gov/static/dashboards/COVIDSummaryData.csv&quot;,
+  col_types = cols(
+    `Admission Date` = col_date(format = &quot;%m/%d/%Y&quot;),
+    `Date Of Death` = col_date(format = &quot;%m/%d/%Y&quot;),
+    `Onset Date` = col_date(format = &quot;%m/%d/%Y&quot;)
+  )
+)
+
+# helper function to fix column names to best practice
+fix_df_colnames &lt;- function(df) {
+  names(df) &lt;- names(df) %&gt;%
+    str_replace_all(c(&quot; &quot; = &quot;_&quot;, &quot;,&quot; = &quot;&quot;)) %&gt;%
+    tolower()
+  return(df)
+}
+
+# clean up the data
+ohio &lt;- ohio_raw %&gt;%
+  rename(death_count = `Death Due to Illness Count`) %&gt;%
+  filter(County != &quot;Grand Total&quot;) %&gt;%
+  fix_df_colnames() %&gt;%
+  # data not clean before middle of march
+  filter(onset_date &gt;= cutoff_start)</code></pre>
+<p>How comparable are these data sets? Let’s compare the NY Times case count and dates to the Ohio “Illness Onset” dates.</p>
+<pre class="r"><code># create rolling average function
+mean_roll_7 &lt;- slidify(mean, .period = 7, .align = &quot;right&quot;)
+
+comps &lt;- ohio %&gt;%
+  group_by(onset_date) %&gt;%
+  summarise(OH = sum(case_count), .groups = &quot;drop&quot;) %&gt;%
+  mutate(OH = mean_roll_7(OH)) %&gt;%
+  ungroup() %&gt;%
+  mutate(state = &quot;Ohio&quot;) %&gt;%
+  rename(date = onset_date) %&gt;%
+  left_join(us_states, by = c(&quot;date&quot;, &quot;state&quot;)) %&gt;%
+  transmute(date, OH, NYTimes = cases_7day)
+
+g &lt;- comps %&gt;%
+  pivot_longer(c(&quot;OH&quot;, &quot;NYTimes&quot;), names_to = &quot;source&quot;, values_to = &quot;count&quot;) %&gt;%
+  ggplot(aes(date, count, color = source)) +
+  geom_line() +
+  labs(
+    title = &quot;Case Counts from Different Sources&quot;,
+    caption = &quot;Source: State of Ohio, NY Times&quot;,
+    subtitle = &quot;NY Times and State of Ohio&quot;,
+    x = &quot;Date&quot;,
+    y = &quot;Daily Case Count (7-day Rolling Average)&quot;
+  )
+show(g)</code></pre>
+<p><img src="unnamed-chunk-14-1.png" width="672" /></p>
+<p>We clearly see the numbers line up almost exactly but the Ohio data runs about 4 days ahead of the NY Times data.</p>
+<p>For each individual death, we subtract the onset date from the death date. Then we aggregate the county-level data to statewide and daily data to weekly. Then take the weekly mean of deaths.</p>
+<pre class="r"><code># aggregate the data to weekly
+ohio &lt;- ohio %&gt;%
+  mutate(
+    onset_to_death = as.numeric(date_of_death - onset_date),
+    onset_year = year(onset_date),
+    onset_week = epiweek(onset_date)
+  )
+
+onset_to_death &lt;- ohio %&gt;%
+  filter(death_count &gt; 0) %&gt;%
+  group_by(onset_year, onset_week) %&gt;%
+  summarise(
+    death_count_sum = sum(death_count),
+    mean_onset_to_death = weighted.mean(onset_to_death,
+      death_count,
+      na.rm = TRUE
+    )
+  ) %&gt;%
+  mutate(date = as.Date(paste(onset_year, onset_week, 1), &quot;%Y %U %u&quot;))
+
+g &lt;- onset_to_death %&gt;% ggplot(aes(date, death_count_sum)) +
+  geom_col() +
+  labs(
+    title = &quot;Ohio Weekly Deaths&quot;,
+    caption = &quot;Source: State of Ohio, Arthur Steinmetz&quot;,
+    subtitle = &quot;Based on Illness Onset Date&quot;,
+    x = &quot;Date of Illness Onset&quot;,
+    y = &quot;Deaths&quot;
+  )
+show(g)</code></pre>
+<p><img src="unnamed-chunk-15-1.png" width="672" /></p>
+<p>When we measure the average lag, we find that it has been fairly stable over time in Ohio. Unfortunately, it differs substantially from our proxy model using untracked cases.</p>
+<pre class="r"><code># helper function to annotate plots
+pos_index &lt;- function(index_vec, fraction) {
+  return(index_vec[round(length(index_vec) * fraction)])
+}
+
+avg_lag &lt;- round(mean(onset_to_death$mean_onset_to_death))
+
+onset_to_death %&gt;% ggplot(aes(date, mean_onset_to_death)) +
+  geom_col() +
+  geom_hline(yintercept = avg_lag) +
+  annotate(
+    geom = &quot;text&quot;,
+    label = paste(&quot;Average Lag =&quot;, round(avg_lag)),
+    y = 20, x = pos_index(onset_to_death$date, .8)
+  ) +
+  labs(
+    x = &quot;Onset Date&quot;,
+    y = &quot;Mean Onset to Death&quot;,
+    title = &quot;Ohio Days from Illness Onset Until Death Over Time&quot;,
+    caption = &quot;Source: State of Ohio, Arthur Steinmetz&quot;,
+    subtitle = paste(
+      &quot;Average =&quot;,
+      avg_lag, &quot;Days&quot;
+    )
+  )</code></pre>
+<p><img src="unnamed-chunk-16-1.png" width="672" /></p>
+<p>Note the drop off at the end of the date range. This is because we don’t yet know the outcome of the most recently recorded cases. Generally, while we have been successful in lowering the fatality rate of this disease, the duration from onset to death for those cases which are fatal has not changed much, at least in Ohio.</p>
+<p>Since we have the actual number of deaths associated with every onset date we can calculate the “true” fatality rate. As mentioned, the fatality rate of the more recent cases is not yet known. Also the data is too sparse at the front of the series so we cut off the head and the tail of the data.</p>
+<pre class="r"><code>ohio_fatality_rate &lt;- ohio %&gt;%
+  group_by(onset_date) %&gt;%
+  summarize(
+    case_count = sum(case_count),
+    death_count = sum(death_count), .groups = &quot;drop&quot;
+  ) %&gt;%
+  mutate(fatality_rate = death_count / case_count) %&gt;%
+  mutate(fatality_rate_7day = mean_roll_7(fatality_rate)) %&gt;%
+  # filter out most recent cases we we don&#39;t know outcome yet
+  filter(onset_date &lt; max(onset_date) - 30)
+
+ohio_fatality_rate %&gt;%
+  filter(onset_date &gt; as.Date(&quot;2020-04-15&quot;)) %&gt;%
+  ggplot(aes(onset_date, fatality_rate_7day)) +
+  geom_line() +
+  geom_smooth() +
+  labs(
+    x = &quot;Illness Onset Date&quot;, y = &quot;Ohio Fatality Rate&quot;,
+    caption = &quot;Source: State of Ohio, Arthur Steinmetz&quot;,
+    title = &quot;Ohio Fatality Rate as a Percentage of Tracked Cases&quot;
+  ) +
+  scale_y_continuous(labels = scales::percent, breaks = seq(0, 0.12, by = .01))</code></pre>
+<p><img src="unnamed-chunk-17-1.png" width="672" /></p>
+<p>The fatality rate in Ohio seems to have been worse than our national model but it is coming down. Again, this result comes from a different methodology than our proxy model.</p>
+</div>
+<div id="conclusion" class="level1">
+<h2>Conclusion</h2>
+<p>Among the vexing aspects of this terrible pandemic is that we don’t know what the gold standard is for treatment and prevention. We are learning as we go. The good news is we ARE learning. For a data analyst the challenge is the evolving relationship of of all of the disparate data. Here we have gotten some insight into the duration between a positive test and mortality. We can’t have high confidence that our proxy model using aggregate cases is strictly accurate because the longitudinal data from Ohio shows a different lag. We have clearly seen that mortality has been declining but our model suggests that death will nonetheless surge along with the autumn surge in cases.</p>
+<p>What are the further avenues for modeling? There is a wealth of data around behavior and demographics with this disease that we don’t fully understand yet. On the analytics side, we might get more sophisticated with our modeling. We have only scratched the surface of the <code>tidymodels</code> framework and we might apply fancier predictive models than linear regression. Is the drop in the fatality rate we saw early in the pandemic real? Only people who were actually sick got tested in the early days. Now, many positive tests are from asymptomatic people. Finally, the disagreement between the case proxy model and the longitudinal data in Ohio shows there is more work to be done.</p>
+<hr />
+<div id="about-art-steinmetz" class="level3">
+<h4>About Art Steinmetz</h4>
+<p>Art Steinmetz is the former Chairman, CEO and President of OppenheimerFunds. After joining the firm in 1986, Art was an analyst, portfolio manager and Chief Investment Officer. Art was named President in 2013, CEO in 2014, and, in 2015, Chairman of the firm with $250 billion under management. He stepped down when the firm was folded into Invesco.</p>
+<p>Currently, Art is a private investor located in New York City. He is an avid amateur data scientist and is active in the R statistical programming language community.</p>
+</div>
+</div>

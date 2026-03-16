@@ -1,0 +1,27 @@
+---
+title: Shiny Conf 2023 Recap
+description: Appsilon's Shiny Conf 2023 was a big success, with many incredible speakers (including 3 members of our team!)
+people:
+  - Andrew Holz
+date: "2023-03-28"
+image: shinyconflogo.jpg
+image-alt: "The Shiny Conf Logo on a dark blue background"
+ported_from: shiny
+port_status: in-progress
+---
+
+Appsilon's Shiny Conf 2023 was a big success, with many incredible speakers (including 3 members of our team!) and many viewers tuning in from afar. 
+
+One of the highlights was Barret Schloerke's talk on the "Lessons learned from testing 2500+ Shiny Apps every day". This talk provided valuable insights on how to improve the quality of Shiny apps through automated testing and some of the hard lessons learned building out the infrastructure the team uses to maintain quality every day.   
+
+Another noteworthy talk was by Carson Sievert, who presented "Towards the next generation of Shiny UI". His talk delved into some of the new `bslib` features that we're most excited about (e.g., expandable cards, accordions, (sidebar) layouts, input controls, etc.), discussed some best design practices for improving user experience with these tools, and presented some real world examples of these tools in action. 
+
+Winston Chang's keynote on "Lessons and opportunities with Shiny for Python" was also a major highlight of the conference. His talk focused on the many lessons learned from his last 10 years of building Shiny for R, and leveraging those lessons while building the latest member of the Shiny family, Shiny for Python.  
+
+We will be sharing videos for all of these talks as they become available, so keep an eye out for them. We would also like to thank [Appsilon](https://appsilon.com/) for their tireless work making the conference such a great success. 
+
+Finally, we would like to invite you to participate in the [survey being conducted along with the conference](https://shinyconf.appsilon.com/state-of-shiny-2023/) on the state of Shiny. Everyone who fills it out will get first crack at the data, so don't miss out on this opportunity.
+
+<div style="padding-top: 20px;">
+  <a class="btn btn-primary no-icon" href="https://shinyconf.appsilon.com/state-of-shiny-2023/" target="_blank">Fill out the survey</a>
+</div>

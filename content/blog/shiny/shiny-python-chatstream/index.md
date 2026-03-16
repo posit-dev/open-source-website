@@ -1,0 +1,92 @@
+---
+title: AI chat apps with Shiny for Python
+description: The easiest way to build an AI chat app.
+people:
+  - Winston Chang
+date: '2023-05-12'
+image: shiny-ai-chatbot.jpg
+image-alt: an image with lines representing ai computing lie behind a chatbox icon
+ported_from: shiny
+port_status: in-progress
+---
+
+
+> **None**
+>
+> **Update:** As of version 1.0, Shiny now has a built-in LLM chat component, which supersedes the chatstream package described in this blog post.
+>
+> See the [Shiny 1.0 blog post](/blog/shiny/shiny-python-1.0/#new-chat-component) for more information.
+
+In the short time since they've become publicly available, chat interfaces for Large Language Models (LLMs) have become incredibly popular. With Shiny for Python, you can easily create your own chat application with just a few lines of code. If you've wanted to make a web application for interacting with AI, you can do it with Shiny for Python.
+
+Here's a very basic chat app that uses the OpenAI API:
+
+![A basic AI chat app](basic.mp4)
+
+It makes use of a [Shiny module](https://shiny.posit.co/py/docs/workflow-modules.html) in a Python package called [chatstream](https://github.com/wch/chatstream). All you need is one call to `chatstream.chat_ui()` and one call to `chatstream.chat_server()`, and to give them the same ID. Here's the code for [that app](https://github.com/wch/chatstream/tree/main/examples/basic):
+
+``` python
+from shiny import App, Inputs, Outputs, Session, ui
+import chatstream
+
+app_ui = ui.page_fixed(
+    chatstream.chat_ui("mychat"),
+)
+
+def server(input: Inputs, output: Outputs, session: Session):
+    chatstream.chat_server("mychat")
+
+app = App(app_ui, server)
+```
+
+The user types in some text and clicks the button, which tells the server side of the Shiny app to send a request to the [OpenAI API](https://platform.openai.com/docs/api-reference). The OpenAI API endpoint sends a streaming response back, and the server side of the Shiny app then sends the result to the client (browser) side of the Shiny app.
+
+Using an LLM to generate text takes some time, and showing the streaming response as it comes in provides for a much better user experience than having it sit there for several seconds before the response shows up all at once.
+
+The live streaming update is possible because the Shiny's reactive engine is built using Python's asyncio library. The streaming HTTP response from the OpenAI server is wrapped into an async generator, which, on each iteration, yields a word of the response.
+
+Because the chat component is in a Shiny module, you can easily add multiple modules and even have them talk to each other. Here are two of them playing 20 questions:
+
+![Two chatbots play 20 questions](20-questions.mp4)
+
+The chat app is built using the [chatstream](https://github.com/wch/chatstream) library. At the moment, chatstream is not on PyPI, but you can install it directly from GitHub. Please keep in mind that chatstream is in the very early stages and may have significant API changes in the future as we learn more about which abstractions are the right ones to use.
+
+Now, the chat app above is neat, but it doesn't do anything more than the standard web chat inferface provided by OpenAI. We can do something more interesting, though, by using Python to things that Python is good at, and combining that with the LLM for the things that the LLM is good at.
+
+### Using Shiny to combine the power of a programming language, LLM, and you
+
+You probably already know that LLMs are extremely useful for generating text and computer code, but they also have another often-overlooked strength: you can feed unstructured data into an LLM and ask it to produce structured data, which you can then do something useful with.
+
+On the flip side, the LLM is not a panacea. One of the drawbacks of LLMs is that the output is not completely predictable -- even in the best of circumstances, a human is often needed to verify that the LLM did what we wanted it to do.
+
+An interactive web application can combine the strengths of a programming language, an LLM, and a human. I'll demonstrate with a Shiny application. If you've ever looked for recipes on the internet, you know that many recipe web pages consist mostly of filler material, with a small amount of actual recipe information inside. We can use Shiny to build an app that works this way:
+
+- The programming language (Python) fetches a web page and extracts text from it.
+- The LLM converts the unstructured data (the text of the web page) to structured data.
+- The human verifies that the LLM did the right thing, and if so, tells the app to save the recipe.
+
+With Shiny, we can build an application that scrapes text from a recipe website using the BeautifulSoup library, then feeds the (unstructured) text to the OpenAI API along with a prompt that describes the structured data that we want. The prompt tells it to generate a JSON representation of the recipe, and provides an example of what the output should look like.
+
+![Scraping recipes from a website to JSON](recipes.mp4)
+
+In my experience, the LLM almost always does a good job producing JSON, but it is not 100% perfect. This is where the human comes in. You can take a look at the output, decide if it looks correct, and if so, choose to do something with the data.
+
+You can see the code for this app [here](https://github.com/wch/chatstream/tree/main/examples/recipes).
+
+In the next version of this app, we'll process the data while it's streaming to produce HTML that displays in a card-like format so that it's easier to read, and at the end, we'll add a button that the user can click on to save it to a database.
+
+![Scraping recipes with card output and an add button](recipes-card.mp4)
+
+The code for this app is [here](https://github.com/wch/chatstream/tree/main/examples/recipes_card).
+
+Of course, this technique isn't limited to recipes -- you could do something similar with user product reviews, for example.
+
+If you've wanted to build an interactive AI chat app using Python, Shiny and chatstream can help make it happen. Take a look at the [source](https://github.com/wch/chatstream) and feel free to adapt it to your own use case.
+
+In a future blog post, I'll show how to use Shiny build an app that lets you ask questions about a document or set of documents. Stay tuned!
+
+<style>
+    .quarto-video {
+        margin-bottom: 0px;
+    }
+</style>

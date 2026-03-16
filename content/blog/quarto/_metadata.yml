@@ -1,0 +1,6 @@
+filters:
+  - escape-shortcodes
+  - strip-bootstrap
+
+bibliography: references.bib
+reference-section-title: References

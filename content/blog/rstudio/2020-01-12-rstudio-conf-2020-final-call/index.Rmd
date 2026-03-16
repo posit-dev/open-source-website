@@ -1,0 +1,50 @@
+---
+title: Start 2020 with mad new skills you learned at rstudio::conf 2020. Final Call
+authors: 
+- Anne Carome
+authormeta:
+- anne-carome
+date: '2020-01-12'
+slug: rstudio-conf-2020-final-call
+categories:
+- rstudio::conf
+blogcategories:
+- Company News and Events
+tags:
+- rstudio::conf
+---
+
+
+There will be no better time or place this year to accelerate your knowledge of all things R and RStudio than at rstudio::conf 2020 in San Francisco. While we’re approaching capacity, there’s still room for you! Whether you’re a dedicated R user or one of the many people who use R and Python, come join us and more than 2,000 fellow data scientists and data science team leaders in San Francisco January 27 - 30.
+
+<p align="center">
+<a href="https://web.cvent.com/event/36ebe042-0113-44f1-8e36-b9bc5d0733bf/websitePage:34f3c2eb-9def-44a7-b324-f2d226e25011?RefId=conference&utm_campaign=Site%20Promo&utm_medium=Ste&utm_source=ConfPage">
+![Learn more and register for the RStudio 2020 conference here](learn-more-and-reg.png){width=60%}
+</a></p>
+
+You can still [register for a workshop (January 27 - 28)](https://web.cvent.com/event/36ebe042-0113-44f1-8e36-b9bc5d0733bf/websitePage:34f3c2eb-9def-44a7-b324-f2d226e25011), the conference (January 29 - 30), or both! 
+With a little more than 2 weeks to go, we expect to reach conference capacity soon. 
+
+Here are the career-building workshops with seats still available for you as of January 9, 2020. We apologize in advance if a workshop listed here is sold out before you have the chance to register.
+
+
+- A Practical Introduction to Data Visualization with ggplot2
+- Modern Geospatial Data Analysis with R
+- Designing the Data Science Classroom
+- Text Mining with Tidy Data Principles
+- Big Data with R
+- R Markdown and Interactive Dashboards
+- R for Excel Users
+- What They Forgot to Teach You about R Workshop
+- My Organization's First R Package Workshop
+- Shiny from Start to Finish
+
+**Note: Childcare for registered attendees is also still available for children 6 months to 8 years of age from 8am - 6pm daily. The cost is $20/day.**
+
+## Hear what other data scientists have to say about rstudio::conf!
+
+
+<p align="center">
+<script src="https://fast.wistia.com/embed/medias/vjc5ow55nv.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="display:block;margin-left:auto;margin-right:auto;width:70%;padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="width:100%;height:100%;left:0;position:absolute;top:0;"><div class="wistia_embed wistia_async_vjc5ow55nv videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/vjc5ow55nv/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:80%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
+</p>
+

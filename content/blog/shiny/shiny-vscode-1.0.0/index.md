@@ -1,0 +1,118 @@
+---
+title: Reintroducing the Shiny Extension for VS Code
+description: >
+  The v1.0.0 release of the Shiny extension for VS Code now supports running
+  both
+
+  Shiny for Python and Shiny for R apps, as well as new ShinyLive features.
+people:
+  - Garrick Aden-Buie
+date: '2024-05-22'
+image: feature.png
+engine: markdown
+ported_from: shiny
+port_status: in-progress
+---
+
+
+<style>
+  video {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+</style>
+
+**We're excited to announce the new [Shiny extension](https://marketplace.visualstudio.com/items?itemName=Posit.shiny) for VS Code!**
+Along with a new name, the Shiny extension now supports running both [Shiny for R](https://shiny.posit.co/r/getstarted/) and [Shiny for Python](https://shiny.posit.co/py) apps!
+
+When we introduced the Shiny for Python VS Code extension, its name made a lot of sense: the extension helped Shiny for Python developers run their apps in VS Code.
+But with the latest v1.0.0 release, we've expanded the extension to support running Shiny for R apps -- as well as a few new features for moving between local files and ShinyLive links -- and we wanted a name that reflected that.
+In this post, we'll talk through the new features and show you how to use them.
+
+## Installing the Shiny extension
+
+<img src="shiny-marketplace-header.png" style="width:100.0%" data-fig-alt="The shiny extension page on vscode marketplace" data-fig-align="center" />
+
+**If you're a new Shiny + VS Code user**, you can install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Posit.shiny) or the [Open VSX Registry](https://open-vsx.org/extension/posit/shiny), or by searching for "Shiny" in the Extensions view in VS Code.
+Be sure to avoid the extension named "Shiny (deprecated)" 😉
+
+**If you're already using the Shiny for Python extension**, you can simply update the old extension to kick off a seamless transition in which the new extension will be automatically installed.
+Once installed, the new extension will prompt you to uninstall the older version.
+
+## Shiny for R Support
+
+With the Shiny extension installed, whenever you open an `app.R` file --- or another appropriately named Shiny for R app file[^1] --- the editor's play button (<i  aria-label="play button"></i>) becomes a "Run Shiny App" button.
+Clicking the <i  aria-label="play button"></i> starts your app in a new terminal session and even enables [Shiny's developer mode](https://shiny.posit.co/r/reference/shiny/latest/devmode.html) for a better local development experience, including automatically restarting your app when you update and save the app's source files[^2].
+
+<video controls>
+  <source src="videos/run-shiny-r-app.webm" type="video/webm">
+  <source src="videos/run-shiny-r-app.mp4" type="video/mp4">
+</video>
+
+## ShinyLive
+
+ShinyLive is a free service for sharing Shiny apps via static hosting, where Shiny apps run entirely in the browser without the need for a server.
+Head to [shinylive.io/py](https://shinylive.io/py) or [shinylive.io/r](https://shinylive.io/r) to get started with the language of your choice.
+When your app is ready, share the ShinyLive link with others for instant deployment!
+
+While ShinyLive features an online editor (for [R](https://shinylive.io/r/editor) or [Python](https://shinylive.io/py/editor)), sometimes you might want to create a ShinyLive link from files you're editing in your IDE.
+The Shiny extension now gives you two ways to do this.
+
+### Create a ShinyLive link from the active file
+
+For single-file apps, run the **Create ShinyLive Link from Active File** from the command palette with an `app.py` or `app.R` open and active in the editor.
+
+<video controls>
+  <source src="videos/create-shiny-r-single.webm" type="video/webm">
+  <source src="videos/create-shiny-r-single.mp4" type="video/mp4">
+</video>
+
+### Create a ShinyLive link from multiple files
+
+For multi-file apps, select all of the files or directories you want to include in your ShinyLive app in the Explorer pane.
+Then right click on the selection and choose **Create ShinyLive Link from Selected Files**.
+
+<video controls>
+  <source src="videos/create-shiny-py-multiple.webm" type="video/webm">
+  <source src="videos/create-shiny-py-multiple.mp4" type="video/mp4">
+</video>
+
+After picking your file(s) for the ShinyLive link, the Shiny extension will ask you which app mode you want to use (display the *app* or show an *editor* next to the app) and what action to take (to *open* or *copy* the link).
+You can also configure these options in the extension settings.
+
+### Save the app from a ShinyLive link
+
+You can also create local files from a ShinyLive link using the **Save App from ShinyLive Link** command in the command palette.
+You'll be prompted to paste the ShinyLive link and then to choose where the app will be saved in your workspace.
+
+<video controls>
+  <source src="videos/save-shiny-py.webm" type="video/webm">
+  <source src="videos/save-shiny-py.mp4" type="video/mp4">
+</video>
+
+## New snippets and settings
+
+[Snippets in VS Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets) are templates of reusable code accessible via the **Insert snippet** command in the Command Palette or as a tab-completion when you type out the snippet trigger text.
+The Shiny extension includes three text snippets to help you quickly create a Shiny app or Shiny module:
+
+- `shinyapp` creates a new Shiny application template
+
+- `shinymod` creates a new Shiny module template
+
+- `shinyexpress` creates a new Shiny Express app template (in Python)
+
+We've also expanded the settings available to the Shiny extension.
+Most notably, the added `shiny.previewType` setting determines whether the app preview is opened inside VS Code (`internal`), in an `external` browser, or not at all (`none`).
+A number of ShinyLive settings allow you to choose default values to speed up link creation.
+The full list of extension settings are available in the extension page in VS Code or in [the extension repository](https://github.com/posit-dev/shiny-vscode#extension-settings).
+
+## Thanks!
+
+Thank you for trying out the Shiny extension for VS Code!
+If you find it helpful, please rate the extension on [the marketplace](https://marketplace.visualstudio.com/items?itemName=Posit.shiny) or [the open-vsx registry](https://open-vsx.org/extension/posit/shiny).
+
+[^1]: A valid Shiny for R app is an R file that includes the word "shiny" in its contents and is named `app.R`, `ui.R`, `server.R`, or has a name that starts or ends with `app`.
+
+[^2]: Developer mode enables a few Shiny options that improve the local development experience and can be turned on at the R console by calling `shiny::devmode()`.
+    Notable among these options is setting `options(shiny.autoreload = TRUE)` to automatically reload the app whenever its source files change.
+    An extension setting can be used to disable devmode.

@@ -1,0 +1,636 @@
+---
+title: "NumPy-style broadcasting for R TensorFlow users"
+description: > 
+ Broadcasting, as done by Python's scientific computing library NumPy, involves dynamically extending shapes so that arrays of different sizes may be passed to operations that expect conformity - such as adding or multiplying elementwise. In NumPy, the way broadcasting works is specified exactly; the same rules apply to TensorFlow operations. For anyone who finds herself, occasionally, consulting Python code, this post strives to explain.
+ 
+author:
+  - name: Sigrid Keydana
+    affiliation: RStudio
+    affiliation_url: https://www.rstudio.com/
+slug: keydana2020broadcast
+date: 01-24-2020
+categories:
+  - TensorFlow/Keras
+  - Concepts
+preview: images/thumb.jpg
+format: hugo-md
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+We develop, train, and deploy TensorFlow models from R. But that doesn't mean we don't make use of documentation, blog posts, and examples written in Python. We look up specific functionality in the [official TensorFlow API docs](https://www.tensorflow.org/api_docs/python/tf); we get inspiration from other people's code.
+
+Depending on how comfortable you are with Python, there's a problem. For example: You're supposed to know how _broadcasting_ works. And perhaps, you'd say you're vaguely familiar with it: So when arrays have different shapes, some elements get duplicated until their shapes match and ... and isn't R vectorized anyway?
+
+While such a global notion may work in general, like when skimming a blog post, it's not enough to understand, say, examples in the TensorFlow API docs. In this post, we'll try to arrive at a more exact understanding, and check it on concrete examples.
+
+Speaking of examples, here are two motivating ones.
+
+
+## Broadcasting in action
+
+
+The first uses TensorFlow's `matmul` to multiply two tensors. Would you like to guess the result -- not the numbers, but how it comes about in general? Does this even run without error -- shouldn't matrices be two-dimensional (_rank_-2 tensors, in TensorFlow speak)?
+
+```{r}
+a <- tf$constant(keras::array_reshape(1:12, dim = c(2, 2, 3)))
+a 
+# tf.Tensor(
+# [[[ 1.  2.  3.]
+#   [ 4.  5.  6.]]
+# 
+#  [[ 7.  8.  9.]
+#   [10. 11. 12.]]], shape=(2, 2, 3), dtype=float64)
+
+b <- tf$constant(keras::array_reshape(101:106, dim = c(1, 3, 2)))
+b  
+# tf.Tensor(
+# [[[101. 102.]
+#   [103. 104.]
+#   [105. 106.]]], shape=(1, 3, 2), dtype=float64)
+
+c <- tf$matmul(a, b)
+```
+
+
+Second, here is a "real example" from a TensorFlow Probability (TFP) [github issue](https://github.com/tensorflow/probability/issues/716). (Translated to R, but keeping the semantics).
+In TFP, we can have _batches_ of distributions. That, per se, is not surprising. But look at this:
+
+```{r}
+library(tfprobability)
+d <- tfd_normal(loc = c(0, 1), scale = matrix(1.5:4.5, ncol = 2, byrow = TRUE))
+d
+# tfp.distributions.Normal("Normal", batch_shape=[2, 2], event_shape=[], dtype=float64)
+```
+
+We create a batch of four normal distributions: each with a different _scale_ (1.5, 2.5, 3.5, 4.5). But wait: there are only two _location_ parameters given. So what are their _scales_, respectively?
+Thankfully, TFP developers Brian Patton and Chris Suter explained how it works: TFP actually does broadcasting -- with distributions -- just like with tensors!
+
+We get back to both examples at the end of this post. Our main focus will be to explain broadcasting as done in NumPy, as NumPy-style broadcasting is what numerous other frameworks have adopted (e.g., TensorFlow).
+
+Before though, let's quickly review a few basics about NumPy arrays: How to index or _slice_ them (indexing normally referring to single-element extraction, while slicing would yield -- well -- slices containing several elements); how to parse their shapes; some terminology and related background.
+Though not complicated per se, these are the kinds of things that can be confusing to infrequent Python users; yet they're often a prerequisite to successfully making use of Python documentation.
+
+Stated upfront, we'll really restrict ourselves to the basics here; for example, we won't touch [advanced indexing](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing) which -- just like lots more --, can be looked up in detail in the [NumPy documentation](https://docs.scipy.org/doc/numpy/reference/index.html).
+
+## Few facts about NumPy
+
+### Basic slicing
+
+For simplicity, we'll use the terms indexing and slicing more or less synonymously from now on. The basic device here is a _slice_, namely, a `start:stop` ^[or `start:stop:step`, if applicable] structure indicating, for a single dimension, which range of elements to include in the selection.
+
+In contrast to R, Python indexing is zero-based, and the end index is exclusive:
+
+```{python}
+import numpy as np
+x = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+x[1:7] 
+# array([1, 2, 3, 4, 5, 6])
+```
+
+_Minus_, to R users, is a false friend; it means we start counting from the end (the last element being -1):
+
+```{python}
+x[-2:10] 
+# array([8, 9])
+```
+
+Leaving out `start` (`stop`, resp.) selects all elements from the start (till the end).
+This may feel so convenient that Python users might miss it in R:
+
+```{python}
+x[5:] 
+# array([5, 6, 7, 8, 9])
+
+x[:7]
+# array([0, 1, 2, 3, 4, 5, 6])
+```
+
+Just to make a point about the syntax, we could leave out _both_ the `start` and the `stop` indices, in this one-dimensional case effectively resulting in a no-op:
+
+```{python}
+x[:] 
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+```
+
+Going on to two dimensions -- without commenting on array creation just yet --, we can immediately apply the "semicolon trick" here too. This will select the second row with all its columns:
+
+```{python}
+x = np.array([[1, 2], [3, 4], [5, 6]])
+x
+# array([[1, 2],
+#        [3, 4],
+#        [5, 6]])
+
+x[1, :] 
+# array([3, 4])
+```
+
+While this, arguably, makes for the easiest way to achieve that result and thus, would be the way you'd write it yourself, it's good to know that these are two alternative ways that do the same:
+
+```{python}
+x[1] 
+# array([3, 4])
+
+x[1, ] 
+# array([3, 4])
+```
+
+While the second one sure looks a bit like R, the mechanism is different. Technically, these `start:stop` things are parts of a Python _tuple_ -- that list-like, but immutable data structure that can be written with or without parentheses, e.g., `1,2` or `(1,2`) --, and whenever we have more dimensions in the array than elements in the tuple NumPy will assume we meant `:` for that dimension: Just select everything.
+
+We can see that moving on to three dimensions. Here is a 2 x 3 x 1-dimensional array:
+
+```{python}
+x = np.array([[[1],[2],[3]], [[4],[5],[6]]])
+x
+# array([[[1],
+#         [2],
+#         [3]],
+# 
+#        [[4],
+#         [5],
+#         [6]]])
+
+x.shape
+# (2, 3, 1)
+
+```
+
+In R, this would throw an error, while in Python it works:
+
+```{python}
+x[0,]
+#array([[1],
+#       [2],
+#       [3]])
+```
+
+In such a case, for enhanced readability we could instead use the so-called `Ellipsis`, explicitly asking Python to "use up all dimensions required to make this work":
+
+```{python}
+x[0, ...]
+#array([[1],
+#       [2],
+#       [3]])
+```
+
+We stop here with our selection of essential (yet confusing, possibly, to infrequent Python users) Numpy indexing features; re. "possibly confusing" though, here are a few remarks about array creation.
+
+### Syntax for array creation
+
+
+Creating a more-dimensional NumPy array is not that hard -- depending on how you do it. The trick is to use `reshape` to tell NumPy exactly what shape you want. For example, to create an array of all zeros, of dimensions 3 x 4 x 2:
+
+
+```{python}
+np.zeros(24).reshape(4, 3, 2)
+```
+
+But we also want to understand what others might write. And then, you might see things like these:
+
+```{python}
+c1 = np.array([[[0, 0, 0]]])
+c2 = np.array([[[0], [0], [0]]]) 
+c3 = np.array([[[0]], [[0]], [[0]]])
+```
+
+These are all 3-dimensional, and all have three elements, so their shapes must be 1 x 1 x 3, 1 x 3 x 1, and 3 x 1 x 1, in some order. Of course, `shape` is there to tell us:
+
+```{python}
+c1.shape # (1, 1, 3)
+c2.shape # (1, 3, 1)
+c3.shape # (3, 1, 1) 
+```
+
+but we'd like to be able to "parse" internally without executing the code. One way to think about it would be processing the brackets like a state machine, every opening bracket moving one axis to the right and every closing bracket moving back left by one axis. Let us know if you can think of other -- possibly more helpful -- mnemonics!
+
+In the very last sentence, we on purpose used "left" and "right" referring to the array axes; "out there" though, you'll also hear "outmost" and "innermost". Which, then, is which?
+
+### A bit of terminology
+
+In common Python (TensorFlow, for example) usage, when talking of an array shape like `(2, 6, 7)`, _outmost_ is _left_ and _innermost_ is _right_. Why? 
+Let's take a simpler, two-dimensional example of shape `(2, 3)`. 
+
+```{python}
+a = np.array([[1, 2, 3], [4, 5, 6]])
+a
+# array([[1, 2, 3],
+#        [4, 5, 6]])
+```
+
+Computer memory is conceptually one-dimensional, a sequence of locations; so when we create arrays in a high-level programming language, their contents are effectively "flattened" into a vector. That flattening could occur "by row" (_row-major_, _C-style_, the default in NumPy), resulting in the above array ending up like this
+
+```
+1 2 3 4 5 6
+```
+
+or "by column" (_column-major_, _Fortran-style_, the ordering used in R), yielding
+
+```
+1 4 2 5 3 6
+
+```
+
+for the above example. 
+
+Now if we see "outmost" as the axis whose index varies the least often, and "innermost" as the one that changes most quickly, in row-major ordering the left axis is "outer", and the right one is "inner".
+
+Just as a (cool!) aside, NumPy arrays have an attribute called `strides` that stores how many bytes have to be traversed, for each axis, to arrive at its next element. For our above example:
+
+```{python}
+c1 = np.array([[[0, 0, 0]]])
+c1.shape   # (1, 1, 3)
+c1.strides # (24, 24, 8)
+
+c2 = np.array([[[0], [0], [0]]]) 
+c2.shape   # (1, 3, 1)
+c2.strides # (24, 8, 8)
+
+c3 = np.array([[[0]], [[0]], [[0]]])
+c3.shape   # (3, 1, 1) 
+c3.strides # (8, 8, 8)
+```
+
+
+For array `c3`, every element is on its own on the outmost level; so for axis 0, to jump from one element to the next, it's just 8 bytes. For `c2` and `c1` though, everything is "squished" in the first element of axis 0 (there is just a single element there). So if we wanted to jump to another, nonexisting-as-yet, outmost item, it'd take us 3 * 8 = 24 bytes.
+
+At this point, we're ready to talk about broadcasting. We first stay with NumPy and then, examine some TensorFlow examples.
+
+## NumPy Broadcasting 
+
+What happens if we add a scalar to an array? This won't be surprising for R users:
+
+```{python}
+a = np.array([1,2,3])
+b = 1
+a + b
+```
+
+```
+array([2, 3, 4])
+```
+
+Technically, this is already broadcasting in action; `b` is virtually (not physically!) expanded to shape `(3,)` in order to match the shape of `a`.
+
+How about two arrays, one of shape `(2, 3)` -- two rows, three columns --, the other one-dimensional, of shape `(3,)`? 
+
+```{python}
+a = np.array([1,2,3])
+b = np.array([[1,2,3], [4,5,6]])
+a + b
+```
+
+
+```
+array([[2, 4, 6],
+       [5, 7, 9]])
+```
+
+The one-dimensional array gets added to both rows. If `a` were length-two instead, would it get added to every column?
+
+```{python}
+a = np.array([1,2,3])
+b = np.array([[1,2,3], [4,5,6]])
+a + b
+```
+
+```
+ValueError: operands could not be broadcast together with shapes (2,) (2,3) 
+```
+
+So now it is time for the broadcasting rule. For broadcasting (virtual expansion) to happen, the following is required.
+
+1. We align array shapes, starting from the right.
+
+```
+   # array 1, shape:     8  1  6  1
+   # array 2, shape:        7  1  5
+```
+
+2. Starting to look from the right, the sizes along aligned axes either have to _match exactly_, or one of them has to be `1`: In which case the latter is broadcast to the one not equal to `1`.
+
+3. If on the left, one of the arrays has an additional axis (or more than one), the other is virtually expanded to have a `1` in that place, in which case broadcasting will happen as stated in (2).
+
+Stated like this, it probably sounds incredibly simple. Maybe it is, and it only seems complicated because it presupposes correct parsing of array shapes (which as shown above, can be confusing)?
+
+Here again is a quick example to test our understanding:
+
+```{python}
+a = np.zeros([2, 3]) # shape (2, 3)
+b = np.zeros([2])    # shape (2,)
+c = np.zeros([3])    # shape (3,)
+
+a + b # error
+
+a + c
+# array([[0., 0., 0.],
+#        [0., 0., 0.]])
+```
+
+All in accord with the rules. Maybe there's something else that makes it confusing? 
+From linear algebra, we are used to thinking in terms of column vectors (often seen as the default) and row vectors (accordingly, seen as their transposes). What now is 
+
+```{python}
+np.array([0, 0])
+```
+
+, of shape -- as we've seen a few times by now -- `(2,)`? Really it's neither, it's just some one-dimensional array structure. We can create row vectors and column vectors though, in the sense of 1 x n and n x 1 matrices, by explicitly adding a second axis. Any of these would create a column vector:
+
+```{python}
+# start with the above "non-vector"
+c = np.array([0, 0])
+c.shape
+# (2,)
+
+# way 1: reshape
+c.reshape(2, 1).shape
+# (2, 1)
+
+# np.newaxis inserts new axis
+c[ :, np.newaxis].shape
+# (2, 1)
+
+# None does the same
+c[ :, None].shape
+# (2, 1)
+
+# or construct directly as (2, 1), paying attention to the parentheses...
+c = np.array([[0], [0]])
+c.shape
+# (2, 1)
+```
+
+And analogously for row vectors. Now these "more explicit", to a human reader, shapes should make it easier to assess where broadcasting will work, and where it won't.
+
+```{python}
+c = np.array([[0], [0]])
+c.shape
+# (2, 1)
+
+a = np.zeros([2, 3])
+a.shape
+# (2, 3)
+a + c
+# array([[0., 0., 0.],
+#       [0., 0., 0.]])
+
+a = np.zeros([3, 2])
+a.shape
+# (3, 2)
+a + c
+# ValueError: operands could not be broadcast together with shapes (3,2) (2,1) 
+```
+
+Before we jump to TensorFlow, let's see a simple practical application: computing an outer product.
+
+```{python}
+a = np.array([0.0, 10.0, 20.0, 30.0])
+a.shape
+# (4,)
+
+b = np.array([1.0, 2.0, 3.0])
+b.shape
+# (3,)
+
+a[:, np.newaxis] * b
+# array([[ 0.,  0.,  0.],
+#        [10., 20., 30.],
+#        [20., 40., 60.],
+#        [30., 60., 90.]])
+```
+
+
+## TensorFlow
+
+If by now, you're feeling less than enthusiastic about hearing a detailed exposition of how TensorFlow broadcasting differs from NumPy's, there is good news: Basically, the rules are the same. However, when matrix operations work on batches -- as in the case of `matmul` and friends -- , things may still get complicated; the best advice here probably is to carefully read the documentation (and as always, try things out).
+
+Before revisiting our introductory `matmul` example, we quickly check that really, things work just like in NumPy. Thanks to the `tensorflow` R package, there is no reason to do this in Python; so at this point, we switch to R -- attention, it's 1-based indexing from here.
+
+First check -- `(4, 1)` added to `(4,)` should yield `(4, 4)`:
+
+```{r}
+a <- tf$ones(shape = c(4L, 1L))
+a
+# tf.Tensor(
+# [[1.]
+#  [1.]
+#  [1.]
+#  [1.]], shape=(4, 1), dtype=float32)
+
+b <- tf$constant(c(1, 2, 3, 4))
+b
+# tf.Tensor([1. 2. 3. 4.], shape=(4,), dtype=float32)
+
+a + b
+# tf.Tensor(
+# [[2. 3. 4. 5.]
+# [2. 3. 4. 5.]
+# [2. 3. 4. 5.]
+# [2. 3. 4. 5.]], shape=(4, 4), dtype=float32)
+```
+
+And second, when we add tensors with shapes `(3, 3)` and `(3,)`, the 1-d tensor should get added to every row (not every column):
+
+
+```{r}
+a <- tf$constant(matrix(1:9, ncol = 3, byrow = TRUE), dtype = tf$float32)
+a
+# tf.Tensor(
+# [[1. 2. 3.]
+#  [4. 5. 6.]
+#  [7. 8. 9.]], shape=(3, 3), dtype=float32)
+
+b <- tf$constant(c(100, 200, 300))
+b
+# tf.Tensor([100. 200. 300.], shape=(3,), dtype=float32)
+
+a + b
+# tf.Tensor(
+# [[101. 202. 303.]
+#  [104. 205. 306.]
+#  [107. 208. 309.]], shape=(3, 3), dtype=float32)
+```
+
+Now back to the initial `matmul` example. 
+
+## Back to the puzzles
+
+The [documentation for matmul says](https://www.tensorflow.org/api_docs/python/tf/linalg/matmul),
+
+> The inputs must, following any transpositions, be tensors of rank >= 2 where the inner 2 dimensions specify valid matrix multiplication dimensions, and any further outer dimensions specify matching batch size.
+
+So here (see code just below), the inner two dimensions look good -- `(2, 3)` and `(3, 2)` -- while the one (one and only, in this case) batch dimension shows mismatching values `2` and `1`, respectively.
+A case for broadcasting thus: Both "batches" of `a` get matrix-multiplied with `b`.
+
+```{r}
+a <- tf$constant(keras::array_reshape(1:12, dim = c(2, 2, 3)))
+a 
+# tf.Tensor(
+# [[[ 1.  2.  3.]
+#   [ 4.  5.  6.]]
+# 
+#  [[ 7.  8.  9.]
+#   [10. 11. 12.]]], shape=(2, 2, 3), dtype=float64)
+
+b <- tf$constant(keras::array_reshape(101:106, dim = c(1, 3, 2)))
+b  
+# tf.Tensor(
+# [[[101. 102.]
+#   [103. 104.]
+#   [105. 106.]]], shape=(1, 3, 2), dtype=float64)
+
+c <- tf$matmul(a, b)
+c
+# tf.Tensor(
+# [[[ 622.  628.]
+#   [1549. 1564.]]
+# 
+#  [[2476. 2500.]
+#   [3403. 3436.]]], shape=(2, 2, 2), dtype=float64) 
+```
+
+
+Let's quickly check this really is what happens, by multiplying both batches separately:
+
+```{r}
+
+tf$matmul(a[1, , ], b)
+# tf.Tensor(
+# [[[ 622.  628.]
+#   [1549. 1564.]]], shape=(1, 2, 2), dtype=float64)
+
+tf$matmul(a[2, , ], b)
+# tf.Tensor(
+# [[[2476. 2500.]
+#   [3403. 3436.]]], shape=(1, 2, 2), dtype=float64)
+```
+
+
+Is it too weird to be wondering if broadcasting would also happen for matrix dimensions? E.g., could we try `matmul`ing tensors of shapes `(2, 4, 1)` and `(2, 3, 1)`, where the `4 x 1` matrix would be broadcast to `4 x 3`? -- A quick test shows that no.
+
+To see how really, when dealing with TensorFlow operations, it pays off overcoming one's initial reluctance and actually consult the documentation, let's try another one.
+
+In the documentation for [matvec](https://www.tensorflow.org/api_docs/python/tf/linalg/matvec), we are told: 
+
+> Multiplies matrix a by vector b, producing a * b. 
+The matrix a must, following any transpositions, be a tensor of rank >= 2, with shape(a)[-1] == shape(b)[-1], and shape(a)[:-2] able to broadcast with shape(b)[:-1].
+
+In our understanding, given input tensors of shapes `(2, 2, 3)` and `(2, 3)`, `matvec` should perform two matrix-vector multiplications: once for each batch, as indexed by each input's leftmost dimension. Let's check this -- so far, there is no broadcasting involved:
+
+
+```{r}
+# two matrices
+a <- tf$constant(keras::array_reshape(1:12, dim = c(2, 2, 3)))
+a
+# tf.Tensor(
+# [[[ 1.  2.  3.]
+#   [ 4.  5.  6.]]
+# 
+#  [[ 7.  8.  9.]
+#   [10. 11. 12.]]], shape=(2, 2, 3), dtype=float64)
+
+b = tf$constant(keras::array_reshape(101:106, dim = c(2, 3)))
+b
+# tf.Tensor(
+# [[101. 102. 103.]
+#  [104. 105. 106.]], shape=(2, 3), dtype=float64)
+
+c <- tf$linalg$matvec(a, b)
+c
+# tf.Tensor(
+# [[ 614. 1532.]
+#  [2522. 3467.]], shape=(2, 2), dtype=float64)
+
+
+```
+
+Doublechecking, we manually multiply the corresponding matrices and vectors, and get:
+
+```{r}
+tf$linalg$matvec(a[1,  , ], b[1, ])
+# tf.Tensor([ 614. 1532.], shape=(2,), dtype=float64)
+
+tf$linalg$matvec(a[2,  , ], b[2, ])
+# tf.Tensor([2522. 3467.], shape=(2,), dtype=float64)
+```
+
+The same. Now, will we see broadcasting if `b` has just a single batch?
+
+```{r}
+b = tf$constant(keras::array_reshape(101:103, dim = c(1, 3)))
+b
+# tf.Tensor([[101. 102. 103.]], shape=(1, 3), dtype=float64)
+
+c <- tf$linalg$matvec(a, b)
+c
+# tf.Tensor(
+# [[ 614. 1532.]
+#  [2450. 3368.]], shape=(2, 2), dtype=float64)
+```
+
+Multiplying every batch of `a` with `b`, for comparison:
+
+```{r}
+tf$linalg$matvec(a[1,  , ], b)
+# tf.Tensor([ 614. 1532.], shape=(2,), dtype=float64)
+
+tf$linalg$matvec(a[2,  , ], b)
+# tf.Tensor([[2450. 3368.]], shape=(1, 2), dtype=float64)
+```
+
+It worked!
+
+Now, on to the other motivating example, using _tfprobability_.
+
+
+### Broadcasting everywhere 
+
+
+Here again is the setup:
+
+```{r}
+library(tfprobability)
+d <- tfd_normal(loc = c(0, 1), scale = matrix(1.5:4.5, ncol = 2, byrow = TRUE))
+d
+# tfp.distributions.Normal("Normal", batch_shape=[2, 2], event_shape=[], dtype=float64)
+```
+
+What is going on? Let's inspect _location_ and _scale_ separately:
+
+```{r}
+d$loc
+# tf.Tensor([0. 1.], shape=(2,), dtype=float64)
+
+d$scale
+# tf.Tensor(
+# [[1.5 2.5]
+#  [3.5 4.5]], shape=(2, 2), dtype=float64)
+```
+
+Just focusing on these tensors and their shapes, and having been told that there's broadcasting going on, we can reason like this: Aligning both shapes on the right and extending `loc`'s shape by `1` (on the left), we have `(1, 2)` which may be broadcast with `(2,2)` - in matrix-speak, `loc` is treated as a row and duplicated.
+
+Meaning: We have two distributions with mean $0$ (one of scale $1.5$, the other of scale $3.5$), and also two with mean $1$ (corresponding scales being $2.5$ and $4.5$).
+
+Here's a more direct way to see this:
+
+```{r}
+d$mean()
+# tf.Tensor(
+# [[0. 1.]
+#  [0. 1.]], shape=(2, 2), dtype=float64)
+
+d$stddev()
+# tf.Tensor(
+# [[1.5 2.5]
+#  [3.5 4.5]], shape=(2, 2), dtype=float64)
+```
+
+Puzzle solved!
+
+Summing up, broadcasting is simple "in theory" (its rules are), but may need some practicing to get it right. Especially in conjunction with the fact that functions / operators do have their own views on which parts of its inputs should broadcast, and which shouldn't. Really, there is no way around looking up the actual behaviors in the documentation.
+
+Hopefully though, you've found this post to be a good start into the topic. Maybe, like the author, you feel like you might see broadcasting going on anywhere in the world now. Thanks for reading!

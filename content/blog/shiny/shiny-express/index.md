@@ -1,0 +1,150 @@
+---
+title: 'Introducing: Shiny Express'
+description: A brand new way to write Shiny apps in Python
+people:
+  - Shiny Team
+date: '2024-01-29'
+image: shiny-express-v2.jpg
+image-alt: Shiny Express logo
+ported_from: shiny
+port_status: in-progress
+---
+
+
+<style>
+figcaption {
+  text-align: right;
+  margin-top: 0;
+}
+</style>
+
+Today we're officially announcing the most important addition to Shiny for Python since its inception: **Shiny Express**, a new way to write Shiny apps in Python!
+
+Shiny Express is designed to make it significantly easier to get started with Shiny, and to write simple apps with a minimum of boilerplate.
+
+Here's what a simple "Hello, World" app looks like in Shiny Express:
+
+``` python
+from shiny.express import input, render, ui
+
+ui.input_text("name", "What's your name?", value="World")
+
+@render.text
+def greeting():
+    return f"Hello, {input.name()}!"
+```
+
+<figure>
+<img src="hello-world.png" class="border figure-img" data-fig-alt="A screenshot of a simple app that prompts for the user&#39;s name, and displays a greeting" alt=" View app on shinylive.io." />
+<figcaption aria-hidden="true"><a href="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbDOAD1R04LFkw4xUxOmTERUAVzJ4mQiABM4dZfI4AdCPp0YuCsgH0KfMgApdkWHDvK7AdTZQyAclHZi8ukzQ8AD8TkwAblAANvJwALyuUlFqdgCU+voAAqoadBiWZPoaNEwA5kJwZFyl1qmI+kyNKpX+EEw0dgAScFFRxMogJooYQXC1AL4AhHb6YOMAukA"><i></i> View app on shinylive.io.</a></figcaption>
+</figure>
+
+The `ui.input_text()` function creates a text input, and the `@render.text` decorator makes the output of the `greeting()` function appear on the page.
+
+After installing Shiny with `pip install shiny`, you can save this code as `app.py` and start the app with `shiny run app.py`.
+Or, skip the install and [try the app in our online editor](https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbDOAD1R04LFkw4xUxOmTERUAVzJ4mQiABM4dZfI4AdCPp0YuCsgH0KfMgApdkWHDvK7AdTZQyAclHZi8ukzQ8AD8TkwAblAANvJwALyuUlFqdgCU+voAAqoadBiWZPoaNEwA5kJwZFyl1qmI+kyNKpX+EEw0dgAScFFRxMogJooYQXC1AL4AhHb6YOMAukA).
+
+Here's another example with more features of Shiny Express, including UI container components (sidebar and card) and a plot:
+
+<figure>
+<img src="plot.png" class="border figure-img" data-fig-alt="A screenshot of an app with a sidebar and a plot" alt=" View app on shinylive.io." />
+<figcaption aria-hidden="true"><a href="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbJjmVYnTJM6cKITIcAbnAA6Eeo1aduGOAA9Uoli179BwrqgCuZPCMoATOHXPGO8xc3ZdsAdw6WA5nDK6+AkIWENZ0APqoADbEZJHY8vL2WFA+YcSofgAUkrFwALyyYAAKlF72ELqWUOwARsRQdJaF5jQckZFQNZH5ACp0xnAAlAkQHmRsTEksnnA1DZmDiPJMK5McGEamYSxw3RIcAF5wmcurZ4VSDc1MhQDKu3ASTJd0HJ3dzadnK8CFNW2RMLdCBecZhGAwa5-AFhawZNjgyH4G60SIcdA2IGlMEQqFgOqWbDg6osMJePHYMR0QoAXS+TGGEDOSU2ZDCEGM8FehBO+K4LDxADlOTUbExiDQmP8KtcAMwABkZ8gAAqJxJIZBhCFBIoR5NZJZYaAslkzVk4mKgdVzUKVyv59EFolBLBE7fz6aIyMY6Ezna7bSD7QtgKyMC8FnSIPIxhMktrGpkaMZ2ttCKJKHk+gNFvTVVZMVEYnF6QamJwWGQTfSzgEDJborFsGpNNpdNVLeoa6tUEw8p2MBWyMQvHRYJkjQtzBBpSw8mHZwtGd8exgOthiKYMMZUFUKJl2MQ3N0fCE8gAxHU7Zcrize32WsAAXxpQA"><i></i> View app on shinylive.io.</a></figcaption>
+</figure>
+
+``` python
+from shiny import reactive
+from shiny.express import input, render, ui
+from shinywidgets import render_plotly
+
+ui.page_opts(title="Penguins dashboard", fillable=True)
+
+with ui.sidebar():
+    ui.input_selectize(
+        "var", "Select variable",
+        ["bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g", "year"]
+    )
+    ui.input_numeric("bins", "Number of bins", 30)
+
+@reactive.calc
+def df():
+    from palmerpenguins import load_penguins
+    return load_penguins()[input.var()]
+
+with ui.card(full_screen=True):
+    @render_plotly
+    def hist():
+        import plotly.express as px
+        p = px.histogram(df(), nbins=input.bins())
+        p.layout.update(showlegend=False)
+        return p
+```
+
+## Simple, yet powerful
+
+While Shiny Express is easy to pick up, it's powered by Shiny's proven [reactive programming framework](https://shiny.posit.co/py/docs/overview.html#reactivity), extensive (and growing) suite of [components](https://shiny.posit.co/py/components/), and deeply customizable [approach to UI](https://shiny.posit.co/py/docs/ui-html.html)---just in a more approachable syntax that minimizes the fuss.
+It's suitable for writing everything from throwaway prototypes, to realtime dashboards, to cutting edge model demos, to production-quality business workflow apps.
+
+<!--
+It can be deployed in the same ways as before: [cloud hosted](https://shiny.posit.co/py/docs/deploy-cloud.html), [self hosted](https://shiny.posit.co/py/docs/deploy-on-prem.html), [WASM](https://shiny.posit.co/py/docs/shinylive.html).
+-->
+
+<figure>
+<img src="tipping-dashboard.png" class="border figure-img" data-fig-alt="A screenshot of a full-featured dashboard" alt=" Build this app in our User Interfaces tutorial.  View app on shinylive.io." />
+<figcaption aria-hidden="true"><a href="https://shiny.posit.co/py/docs/user-interfaces.html"><i></i> Build this app in our <em>User Interfaces</em> tutorial.</a><br><a href="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMASxlWICcyACAMyhpIgGcWo+HADoQ6DZi1QAbYmSnYMcAB6pGcHnwGSlIto2IwWPABY0I2AO40AJgHM4ZPmKas1Ea3EYB9abPkjdfUMTM2wWZwk1KEIyGgA3ODwWNw9GJLUAR0CDI1NzRRU1DXD6F3CIVABXMiTKmgCIAGIWABliKGsWaygyKH53FhJ6argjXtjCFjioKUr1EVjUPgBebQxu3oxFngAKAEoRACMaKSkvRghbFlWdmDMd7a3ZGa9j072kmCglB5olp96ZzeUj2BwgImaAEFrJ1UFB7CxYnJRlABjwbHBDlBGCI6lh4XAvMRUI5fsjlkIwAAldS9SqMVGsRaoMy2SlJNgnKRQQ5SODLAAqjDmYKsZGMLDx6I8WMYO2JlApYA8PAA1mRiZS9ogRCw9ZKaBgzFUyF4eFIMXLKRrAa8ueyWJSAEJc-gwYiVcgOu4QZbA86XYAABgAup9vn6uQHbMAAIxhqYzOaR07RpKqfmUgAkWt1+rxxuqXkIxjghFVh2ISi8tn0lVQO2tdDgDspADFiMROjxPHEuC38CxgJSWp6S62wAARMwQTyUhM9vkxODWZbDsCjiDjweU6cQWc4sAJswW2eC4VwMH6g1GipF6KxUivaoaiCNsBFBwTmk91icqQUIeYIQiw0KdF8ZiDKQFBehAACSADCADyAByADK1wsCAeZ6pSlQ9oeiDsFARrcGacS2O++FzjuH5wLYlTckBeA4Y6YAWDMfJkJSREcKRT48BR74cacX5gB8rGUoQ9JuIQ2AALTWMQpzYjxxH8RA5GUZSSkqYw8norY4LiSxEDXpS9iqUg6lcAJQkWXAVlggAvg0YoSni3LYB6pokLMMC8Ds-5SMsbYzD22oNNe7k3tMsyEpWPwmMQFiEAI-KIahaHrtRh4hpFZnXvqlICs8UiIn8qCeDwlKsdeAACKSeAUGYaHV+oeGwiJlV4zLVfsOqFUVRXbF4GxQPsGAmGgcDBiGUX6jFeJxXMrxVjsyWpelyyZeh64iVx84FcNuFgJCCQMgiiy1UNRWNZQqQtUUNW3denX8BdBK9X8A3tcNnSrKN437H9RU0F11hTcYM1zSwAB8LBBoNJ0o5IniTKskOLCwAD0XQAi8wKgyjbCUiAVWMIQGDwKiA0YLGACkrlgAtepLYaK0Jetm1pT2O3IXtUkyZQcmKcpTFHcjJ2UudngEiwRMs69+r3e4zXKK1L0o+9UCffYdqnL9yv-ZhQM9BNV6o3q4P49NVWwwjSPEydwKYVjPXAtTjlvpbVvXqTYBZiAwKIBgABMbDMw0IjsxgXk+cWymVAFux+V4VjWOKPBrgAbEkecsLGYf5YNrGx2ljDWEFjFnDwhBqIqQoilLw14hX1heKWHSeO+Ap-Hw425sbLCq4941eHosAtsP729LycBG37yQOPSZlNYwGCTubADijA2L8Sxjeb+zAbd5fYlXbA12a9dwI3F7HSd5+V53jmpDshDchoXhKtY8lsHyJQLAABW+FYhsAUtwGCZB5KHAcBYO+ZkZg0CMvJGgFAYA8HkoQSggEtQt1RiVMqCtXRxD4NdJWS9Y4MAYBdMkfIlRgX4FBGQjBEx7x5HyB00hohwHgOQJUGpUD4OdsNXa2UHJWXmsPFGBY7ymgZNYGgxBnxkFfLsURhCwB1x6IBROrCHQoVIIkTRKN1wQGMROHsOhaI8HdKqGiSQdJQGwBOWI8B5ymSXijE8Zh+RN2nt4-Up8Uaj08D4GQchXEzzgF1HRajPC+DIIvP2fkmCYULGQKaaUEneDSXKX2qM1BkFXmseJgFGwyJOmbXo+wvFBJYEoQRHt7T4FMfqbAgi-jsnaXqfJywjGznCF1fJ1xViUgsbOSkLA4BSB7Cwpg9SglkBSKeTMYAZAILapQv2ITFroI8oadu1dUx1wbr6AJj9hrPw7l3d+n8BA8B-jpf+gCQFgPBpA6CuDYHwMQfwC0qD0F8KwTg8gNErlaL7qgNGlNcEEhqjsq21DiTEDoUiBhMsYTMNGdMDh88RFVLEQLCRYBLJ5V6TeTJ5wOjKNUeoypDSipNlQD4dGXhXG0TQtIdBCtsA6jaUS1G65rFWPsY4ti3ROVOLAO4gcYZKXXkXGWCgq5nHSsVfqXxZ4AmUr2cNMJ3gkn+BiV1RYbLKYpKtnoHIe87BwCSSUcQrgbD2CSZojYpt+5H1qYU7WPR1wUzBdxI8bsehbD+LjLo4abSE3tEK7AeKMnyIjayoNHKQZCsqHFFY0ayDAETdiEMGBPQ0AyHMTNmieCwGkOoTCw4hXXmAHmrA6NcHAA2AWvFIYxmJikD26RTK2DpLiuUSUObNHSM0dIVgqw7VusiYyhp1b6B8mziu2tPAkjcjgXM5Y2bwpJCxO4DO4plhBgwEGWMSzvH5J0ZisAfY7U0ERUkfJ7oPBKn0BYNBasbGaP1ajGdJbUAbEJPHaoS6gl8nsO4ZYSiYjyj3vCx8vpKTGAdNgVEJYmBKkrGogwmHlixkvWHJIShsPGFw1JXBEqmkXoAKx+pOoBlGxTSkzujk0Fg8leN8f4wJwTQnhMidE-JECNIHzxFGGlKQ0luSoc0AMWJbAVUvWaGJzTWntOCYaPdKTCQMCycICIWe3rgaQtdqsTJBMgRckzdeGwShYxev+LGuzpwMBwLIAgygOxgRzSPVyOM+VWJObDq5ngEb4BGnRG+GzcqT6sXYxcCqSxgBOZcwAMnCNYJQxc9NRBiNJxQbBVMxBEPp4rhm4AJHIDsGzn4yBgnel4K1N56xgbNBad+1oWmnAdJzFMZwLi2EKXiTrPRCQljLBWKsNY6wNibB4wcyrlyrnXJubcMq9wHiOiIMAzk8DgGgPAagmQ6hqH4Y4LYSgyD4CIN8qgyB50OsiYdkMQA"><i></i> View app on shinylive.io.</a></figcaption>
+</figure>
+
+## One framework, two ways to author
+
+Our traditional syntax for writing Shiny apps is now called Shiny Core.
+**If you're already happily using Shiny, no need to change what you're doing!**
+We think of Shiny Express and Shiny Core as complementary, and intend to support both syntaxes indefinitely.
+
+Shiny Core is a more structured approach to writing Shiny apps, and we think it's still the best choice for larger, more complex apps.
+Here's what that same "Hello, World" app looks like in Shiny Core:
+
+``` python
+from shiny import App, ui, render
+
+app_ui = ui.page_fluid(
+    ui.input_text("name", "What's your name?", value="World"),
+    ui.output_text("greeting"),
+)
+
+def server(input, output, session):
+    @render.text
+    def greeting():
+        return f"Hello, {input.name()}!"
+
+app = App(app_ui, server)
+```
+
+Although there's more to learn and more to type, the enforced discipline of separating UI and server logic can be a benefit for larger apps.
+
+That being said, we think most new Shiny users will be more successful starting their learning journey with Shiny Express, so we've overhauled our [main tutorial](https://shiny.posit.co/py/docs/overview.html) to encourage people to start there.
+The more advanced topics are written for both Express and Core, as are our [Component](https://shiny.posit.co/py/components/) and [Layout](https://shiny.posit.co/py/layouts/) galleries.
+
+## Learn more
+
+You can get started with Shiny today by jumping into the [tutorial](https://shiny.posit.co/py/docs/overview.html).
+Thanks to Shiny Express, it's never been easier!
+
+Or if you're already experienced with Shiny, you find out more about the [differences between Express and Core](https://shiny.posit.co/py/docs/express-vs-core.html).
+
+Questions? Comments? We'd love to hear from you! Please [join us on Discord](https://discord.gg/yMGCamUMnS).
+
+## Questions
+
+**How do I install Shiny Express? Is it an add-on package?**  
+Shiny Express is built into [shiny](https://pypi.org/project/shiny/) 0.7.0.
+You can install it with `pip install shiny` (or upgrade with `pip install -U shiny`).
+
+**Is Shiny Core syntax really going to stay around in the future?**  
+Shiny Express is not intended to replace Shiny Core. In fact, Shiny Express could not exist without Shiny Core, because it is implemented using Shiny Core! As we were building Shiny Express, we were very pleased to find that Shiny Core provides a solid foundation on which to build this new set of abstractions.
+
+**Is Shiny Express available for R?**  
+We don't have immediate plans to bring Shiny Express to R.
+Given the size and maturity of the Shiny for R ecosystem, it would be a much larger undertaking to introduce a new syntax.
+
+That being said, we're excited to see how the Python community responds to Shiny Express, and we'll be watching closely to see if there's interest in a similar syntax for R.
+
+In the meantime, if you're a Shiny for R user and the syntax changes in Shiny Express resonate with you, the [Shiny Document](https://bookdown.org/yihui/rmarkdown/shiny-documents.html) syntax is actually extremely similar to Shiny Express.

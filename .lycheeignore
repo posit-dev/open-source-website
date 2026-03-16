@@ -1,0 +1,14 @@
+# GitHub user and org profile URLs (often 404 due to deleted/renamed accounts)
+https://github.com/[^/]+$
+
+# LinkedIn (always returns 999 for bots)
+https://www.linkedin.com/
+
+# Conference registration (blocks bots)
+https://reg.conf.posit.co/
+
+# Relative paths - lychee misresolves these to site root, but they work in Hugo
+# Images and media
+http://localhost:1313/.*\.(png|jpg|jpeg|gif|svg|webp|mp4|webm)$
+# R Markdown artifacts
+http://localhost:1313/.*_files/

@@ -1,0 +1,112 @@
+---
+output: hugodown::hugo_document
+
+slug: scales-1-3-0
+title: scales 1.3.0
+date: 2023-11-27
+people:
+  - Thomas Lin Pedersen
+description: >
+    scales 1.3.0 is a minor release focusing on streamlining the API and gradual
+    improvements of the existing utilities
+
+photo:
+  url: https://unsplash.com/photos/gold-and-silver-round-frame-magnifying-glass-j06gLuKK0GM
+  author: Elena Mozhvilo
+
+# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
+categories: [package] 
+tags: [scales]
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
+---
+
+```{=html}
+<!--
+TODO:
+* [x] Look over / edit the post's title in the yaml
+* [x] Edit (or delete) the description; note this appears in the Twitter card
+* [x] Pick category and tags (see existing with `hugodown::tidy_show_meta()`)
+* [x] Find photo & update yaml metadata
+* [x] Create `thumbnail-sq.jpg`; height and width should be equal
+* [x] Create `thumbnail-wd.jpg`; width should be >5x height
+* [x] `hugodown::use_tidy_thumbnails()`
+* [x] Add intro sentence, e.g. the standard tagline for the package
+* [x] `usethis::use_tidy_thanks()`
+-->
+```
+We're delighted to announce the release of [scales](https://scales.r-lib.org) 1.3.0. scales is a packages that extracts much of the scaling logic that is used in ggplot2 to a general framework, along with utility functions for e.g. formatting labels or creating color palettes.
+
+You can install it from CRAN with:
+
+```{r, eval = FALSE}
+install.packages("scales")
+```
+
+This blog post will give a quick overview of the 1.3.0 release, which is mainly an upkeep release but does contain a few interesting tidbits.
+
+You can see a full list of changes in the [release notes](https://scales.r-lib.org/news/index.html)
+
+```{r setup}
+library(scales)
+set.seed(1)
+```
+
+## Proper support for difftime objects
+
+While scales had rudimentary support for objects from the hms package, I did not support the more common base R difftime objects. This is now rectified with the introduction of `label_timespan()`, `breaks_timespan()`, and `transform_timespan()`. While the labels and breaks function can be used on their own, all the behavior is encapsulated in the timespan transform object which is kin to `transform_hms()`.
+
+```{r}
+library(ggplot2)
+
+events <- data.frame(
+  time = as.difftime(runif(30, max = 200), units = "secs"),
+  magnitude = rnorm(30) + 2
+)
+
+ggplot(events) + 
+  geom_point(
+    aes(time, y = 0, size = magnitude), 
+    position = position_jitter(width = 0)
+  ) + 
+  scale_x_continuous(trans = transform_timespan())
+```
+
+As we can see the timespan transform automatically picks the unit of the difftime object. Further it identifies that for this range, adding breaks for minutes makes most sense.
+
+If we had recorded time as hours rather than seconds, we can see how that affects the labelling:
+
+```{r}
+events$time <- as.difftime(runif(30, max = 200), units = "hours")
+ggplot(events) + 
+  geom_point(
+    aes(time, y = 0, size = magnitude), 
+    position = position_jitter(width = 0)
+  ) + 
+  scale_x_continuous(trans = transform_timespan())
+```
+
+## API brush-up
+
+scales has gone through a number of touch-ups on its API, such as revamping the labels functions to all start with `label_`. This release we continue (and hopefully conclude) the touch-ups by using a common prefix for the transformation utilities (`transform_`) and palettes (`pal_`). We have also rename `label_dollar()` to `label_currency()` to make it clear that this can be used for any type of currency, not just dollars (US or otherwise). All the old functions have been kept around with no plan of deprecation but we advise you to update your code to use the new names.
+
+## More transformation power
+
+This release also includes some other updates to the transformations. They have received a fair amount of bug fixes and a new built-in transformation type has joined the group: `transform_asinh()`, the inverse hyperbolic sine transformation, can be used much like log transformations, but it also supports negative values.
+
+```{r, warning=FALSE}
+plot(transform_asinh(), xlim = c(-100, 100))
+lines(seq(-100, 100), transform_log()$transform(seq(-100, 100)), col = "red")
+text(50, 3, label = "log-transform", col = "red", adj = 0)
+```
+
+Transformation objects can now also (optionally) record the derivatives and inverse derivative which makes it possible to properly correct density estimations of transformed values.
+
+## Fixes to range training in discrete scales
+
+The training of discrete ranges has seen a few changes that hopefully makes it more predictable what happens when you train a range based on factors or character vectors. When training based on factors the ordering of the range will follow the order of the levels in the factor as they are encountered. New values will be appended to the end of the range. For character vectors the range will always stay sorted alphanumerically. Mixing of character and factors during training will lead to undefined ordering. This has always been the advertised behavior but it was not applied consistently up until now. As a result you may see the occational reordering of e.g. legends in ggplot2 after upgrading scales.
+
+## Acknowledgements
+
+[\@AndreeWarby](https://github.com/AndreeWarby), [\@ari-nz](https://github.com/ari-nz), [\@BioinformaNicks](https://github.com/BioinformaNicks), [\@bwiernik](https://github.com/bwiernik), [\@ccsarapas](https://github.com/ccsarapas), [\@CMKnott](https://github.com/CMKnott), [\@DanChaltiel](https://github.com/DanChaltiel), [\@davidhodge931](https://github.com/davidhodge931), [\@DavisVaughan](https://github.com/DavisVaughan), [\@dmurdoch](https://github.com/dmurdoch), [\@EricMarcon](https://github.com/EricMarcon), [\@Generalized](https://github.com/Generalized), [\@hadley](https://github.com/hadley), [\@JJHelly](https://github.com/JJHelly), [\@joshuaylevy](https://github.com/joshuaylevy), [\@jzadra](https://github.com/jzadra), [\@kuriwaki](https://github.com/kuriwaki), [\@larmarange](https://github.com/larmarange), [\@laurejo1](https://github.com/laurejo1), [\@lz1nwm](https://github.com/lz1nwm), [\@MikkoVihtakari](https://github.com/MikkoVihtakari), [\@mjskay](https://github.com/mjskay), [\@pearsonca](https://github.com/pearsonca), [\@Saadi4469](https://github.com/Saadi4469), [\@teunbrand](https://github.com/teunbrand), [\@thomasp85](https://github.com/thomasp85), and [\@zeehio](https://github.com/zeehio).

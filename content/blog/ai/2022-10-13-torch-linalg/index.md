@@ -1,0 +1,593 @@
+---
+title: "Five ways to do least squares (with torch)"
+description: |
+  Get to know torch's linalg module, all while learning about different ways to do least-squares regression from scratch. This post is a condensed version of the corresponding chapter in the forthcoming book, Deep Learning and Scientific Computing with R torch, to be published by CRC Press.
+date: 2022-10-13T00:00:00.000Z
+slug: keydanatorchlinalg
+categories:
+  - Torch
+  - R
+  - Concepts
+  - Tabular Data
+author:
+  - name: Sigrid Keydana
+    affiliation: RStudio
+    affiliation_url: https://www.rstudio.com/
+people:
+  - Sigrid Keydana
+image: thumbnail.jpg
+ported_from: ai
+port_status: in-progress
+---
+
+
+
+*Note: This post is a condensed version of a chapter from part three of the forthcoming book, Deep Learning and Scientific Computing with R torch. Part three is dedicated to scientific computation beyond deep learning. Throughout the book, I focus on the underlying concepts, striving to explain them in as "verbal" a way as I can. This does not mean skipping the equations; it means taking care to explain why they are the way they are.*
+
+How do you compute linear least-squares regression? In R, using `lm()`; in `torch`, there is `linalg_lstsq()`.
+
+Where R, sometimes, hides complexity from the user, high-performance computation frameworks like `torch` tend to ask for a bit more effort up front, be it careful reading of documentation, or playing around some, or both. For example, here is the central piece of documentation for `linalg_lstsq()`, elaborating on the `driver` parameter to the function:
+
+    `driver` chooses the LAPACK/MAGMA function that will be used.
+    For CPU inputs the valid values are 'gels', 'gelsy', 'gelsd, 'gelss'.
+    For CUDA input, the only valid driver is 'gels', which assumes that A is full-rank.
+    To choose the best driver on CPU consider:
+      -   If A is well-conditioned (its condition number is not too large), or you do not mind some precision loss:
+         -   For a general matrix: 'gelsy' (QR with pivoting) (default)
+         -   If A is full-rank: 'gels' (QR)
+      -   If A is not well-conditioned:
+         -   'gelsd' (tridiagonal reduction and SVD)
+         -   But if you run into memory issues: 'gelss' (full SVD).
+
+Whether you'll need to know this will depend on the problem you're solving. But if you do, it certainly will help to have an idea of what is alluded to there, if only in a high-level way.
+
+In our example problem below, we're going to be lucky. All drivers will return the same result -- but only once we'll have applied a "trick", of sorts. The book analyzes why that works; I won't do that here, to keep the post reasonably short. What we'll do instead is dig deeper into the various methods used by `linalg_lstsq()`, as well as a few others of common use.
+
+## The plan
+
+The way we'll organize this exploration is by solving a least-squares problem from scratch, making use of various matrix factorizations. Concretely, we'll approach the task:
+
+1.  By means of the so-called *normal equations*, the most direct way, in the sense that it immediately results from a mathematical statement of the problem.
+
+2.  Again, starting from the normal equations, but making use of *Cholesky factorization* in solving them.
+
+3.  Yet again, taking the normal equations for a point of departure, but proceeding by means of *LU* decomposition.
+
+4.  Next, employing another type of factorization -- *QR* -- that, together with the final one, accounts for the vast majority of decompositions applied "in the real world". With QR decomposition, the solution algorithm does not start from the normal equations.
+
+5.  And, finally, making use of *Singular Value Decomposition* (SVD). Here, too, the normal equations are not needed.
+
+## Regression for weather prediction
+
+The dataset we'll use is available from the [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/machine-learning-dAtAbases/00514/Bias_correction_ucl.csv).
+
+``` r
+library(torch)
+library(dplyr)
+library(readr)
+library(zeallot)
+
+uci <- "https://archive.ics.uci.edu"
+ds_path <- "ml/machine-learning-databases/00514"
+ds_file <- "Bias_correction_ucl.csv"
+
+download.file(
+ file.path(uci, ds_path, ds_file),
+ destfile = "resources/matrix-weather.csv"
+)
+
+weather_df <- read_csv("resources/matrix-weather.csv") %>%
+  na.omit()
+weather_df %>% glimpse()
+```
+
+    Rows: 7,588
+    Columns: 25
+    $ station           <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,…
+    $ Date              <date> 2013-06-30, 2013-06-30,…
+    $ Present_Tmax      <dbl> 28.7, 31.9, 31.6, 32.0, 31.4, 31.9,…
+    $ Present_Tmin      <dbl> 21.4, 21.6, 23.3, 23.4, 21.9, 23.5,…
+    $ LDAPS_RHmin       <dbl> 58.25569, 52.26340, 48.69048,…
+    $ LDAPS_RHmax       <dbl> 91.11636, 90.60472, 83.97359,…
+    $ LDAPS_Tmax_lapse  <dbl> 28.07410, 29.85069, 30.09129,…
+    $ LDAPS_Tmin_lapse  <dbl> 23.00694, 24.03501, 24.56563,…
+    $ LDAPS_WS          <dbl> 6.818887, 5.691890, 6.138224,…
+    $ LDAPS_LH          <dbl> 69.45181, 51.93745, 20.57305,…
+    $ LDAPS_CC1         <dbl> 0.2339475, 0.2255082, 0.2093437,…
+    $ LDAPS_CC2         <dbl> 0.2038957, 0.2517714, 0.2574694,…
+    $ LDAPS_CC3         <dbl> 0.1616969, 0.1594441, 0.2040915,…
+    $ LDAPS_CC4         <dbl> 0.1309282, 0.1277273, 0.1421253,…
+    $ LDAPS_PPT1        <dbl> 0.0000000, 0.0000000, 0.0000000,…
+    $ LDAPS_PPT2        <dbl> 0.000000, 0.000000, 0.000000,…
+    $ LDAPS_PPT3        <dbl> 0.0000000, 0.0000000, 0.0000000,…
+    $ LDAPS_PPT4        <dbl> 0.0000000, 0.0000000, 0.0000000,…
+    $ lat               <dbl> 37.6046, 37.6046, 37.5776, 37.6450,…
+    $ lon               <dbl> 126.991, 127.032, 127.058, 127.022,…
+    $ DEM               <dbl> 212.3350, 44.7624, 33.3068, 45.7160,…
+    $ Slope             <dbl> 2.7850, 0.5141, 0.2661, 2.5348,…
+    $ `Solar radiation` <dbl> 5992.896, 5869.312, 5863.556,…
+    $ Next_Tmax         <dbl> 29.1, 30.5, 31.1, 31.7, 31.2, 31.5,…
+    $ Next_Tmin         <dbl> 21.2, 22.5, 23.9, 24.3, 22.5, 24.0,…
+
+The way we're framing the task, nearly everything in the dataset serves as a predictor. As a target, we'll use `Next_Tmax`, the maximal temperature reached on the subsequent day. This means we need to remove `Next_Tmin` from the set of predictors, as it would make for too powerful of a clue. We'll do the same for `station`, the weather station id, and `Date`. This leaves us with twenty-one predictors, including measurements of actual temperature (`Present_Tmax`, `Present_Tmin`), model forecasts of various variables (`LDAPS_*`), and auxiliary information (`lat`, `lon`, and `` `Solar radiation` ``, among others).
+
+``` r
+weather_df <- weather_df %>%
+  select(-c(station, Next_Tmin, Date)) %>%
+  # standardize predictors
+  mutate(across(.fns = scale))
+```
+
+Note how, above, I've added a line to *standardize* the predictors. This is the "trick" I was alluding to above. To see what happens without standardization, please check out the book. (The bottom line is: You would have to call `linalg_lstsq()` with non-default arguments.)
+
+For `torch`, we split up the data into two tensors: a matrix `A`, containing all predictors, and a vector `b` that holds the target.
+
+``` r
+weather <- torch_tensor(weather_df %>% as.matrix())
+A <- weather[ , 1:-2]
+b <- weather[ , -1]
+
+dim(A)
+```
+
+    [1] 7588   21
+
+Now, first let's determine the expected output.
+
+## Setting expectations with `lm()`
+
+If there's a least squares implementation we "believe in", it surely must be `lm()`.
+
+``` r
+fit <- lm(Next_Tmax ~ . , data = weather_df)
+fit %>% summary()
+```
+
+    Call:
+    lm(formula = Next_Tmax ~ ., data = weather_df)
+
+    Residuals:
+         Min       1Q   Median       3Q      Max
+    -1.94439 -0.27097  0.01407  0.28931  2.04015
+
+    Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)    
+    (Intercept)        2.605e-15  5.390e-03   0.000 1.000000    
+    Present_Tmax       1.456e-01  9.049e-03  16.089  < 2e-16 ***
+    Present_Tmin       4.029e-03  9.587e-03   0.420 0.674312    
+    LDAPS_RHmin        1.166e-01  1.364e-02   8.547  < 2e-16 ***
+    LDAPS_RHmax       -8.872e-03  8.045e-03  -1.103 0.270154    
+    LDAPS_Tmax_lapse   5.908e-01  1.480e-02  39.905  < 2e-16 ***
+    LDAPS_Tmin_lapse   8.376e-02  1.463e-02   5.726 1.07e-08 ***
+    LDAPS_WS          -1.018e-01  6.046e-03 -16.836  < 2e-16 ***
+    LDAPS_LH           8.010e-02  6.651e-03  12.043  < 2e-16 ***
+    LDAPS_CC1         -9.478e-02  1.009e-02  -9.397  < 2e-16 ***
+    LDAPS_CC2         -5.988e-02  1.230e-02  -4.868 1.15e-06 ***
+    LDAPS_CC3         -6.079e-02  1.237e-02  -4.913 9.15e-07 ***
+    LDAPS_CC4         -9.948e-02  9.329e-03 -10.663  < 2e-16 ***
+    LDAPS_PPT1        -3.970e-03  6.412e-03  -0.619 0.535766    
+    LDAPS_PPT2         7.534e-02  6.513e-03  11.568  < 2e-16 ***
+    LDAPS_PPT3        -1.131e-02  6.058e-03  -1.866 0.062056 .  
+    LDAPS_PPT4        -1.361e-03  6.073e-03  -0.224 0.822706    
+    lat               -2.181e-02  5.875e-03  -3.713 0.000207 ***
+    lon               -4.688e-02  5.825e-03  -8.048 9.74e-16 ***
+    DEM               -9.480e-02  9.153e-03 -10.357  < 2e-16 ***
+    Slope              9.402e-02  9.100e-03  10.331  < 2e-16 ***
+    `Solar radiation`  1.145e-02  5.986e-03   1.913 0.055746 .  
+    ---
+    Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+    Residual standard error: 0.4695 on 7566 degrees of freedom
+    Multiple R-squared:  0.7802,    Adjusted R-squared:  0.7796
+    F-statistic:  1279 on 21 and 7566 DF,  p-value: < 2.2e-16
+
+With an explained variance of 78%, the forecast is working pretty well. This is the baseline we want to check all other methods against. To that purpose, we'll store respective predictions and prediction errors (the latter being operationalized as root mean squared error, RMSE). For now, we just have entries for `lm()`:
+
+``` r
+rmse <- function(y_true, y_pred) {
+  (y_true - y_pred)^2 %>%
+    sum() %>%
+    sqrt()
+}
+
+all_preds <- data.frame(
+  b = weather_df$Next_Tmax,
+  lm = fit$fitted.values
+)
+all_errs <- data.frame(lm = rmse(all_preds$b, all_preds$lm))
+all_errs
+```
+
+           lm
+    1 40.8369
+
+## Using `torch`, the quick way: `linalg_lstsq()`
+
+Now, for a moment let's assume this was not about exploring different approaches, but getting a quick result. In `torch`, we have `linalg_lstsq()`, a function dedicated specifically to solving least-squares problems. (This is the function whose documentation I was citing, above.) Just like we did with `lm()`, we'd probably just go ahead and call it, making use of the default settings:
+
+``` r
+x_lstsq <- linalg_lstsq(A, b)$solution
+
+all_preds$lstsq <- as.matrix(A$matmul(x_lstsq))
+all_errs$lstsq <- rmse(all_preds$b, all_preds$lstsq)
+
+tail(all_preds)
+```
+
+                  b         lm      lstsq
+    7583 -1.1380931 -1.3544620 -1.3544616
+    7584 -0.8488721 -0.9040997 -0.9040993
+    7585 -0.7203294 -0.9675286 -0.9675281
+    7586 -0.6239224 -0.9044044 -0.9044040
+    7587 -0.5275154 -0.8738639 -0.8738635
+    7588 -0.7846007 -0.8725795 -0.8725792
+
+Predictions resemble those of `lm()` very closely -- so closely, in fact, that we may guess those tiny differences are just due to numerical errors surfacing from deep down the respective call stacks. RMSE, thus, should be equal as well:
+
+``` r
+all_errs
+```
+
+           lm    lstsq
+    1 40.8369 40.8369
+
+It is; and this is a satisfying outcome. However, it only really came about due to that "trick": normalization. (Again, I have to ask you to consult the book for details.)
+
+Now, let's explore what we can do without using `linalg_lstsq()`.
+
+## Least squares (I): The normal equations
+
+We start by stating the goal. Given a matrix, $\mathbf{A}$, that holds features in its columns and observations in its rows, and a vector of observed outcomes, $\mathbf{b}$, we want to find regression coefficients, one for each feature, that allow us to approximate $\mathbf{b}$ as well as possible. Call the vector of regression coefficients $\mathbf{x}$. To obtain it, we need to solve a simultaneous system of equations, that in matrix notation appears as
+
+$$\mathbf{Ax} = \mathbf{b}$$
+
+If $\mathbf{A}$ were a square, invertible matrix, the solution could directly be computed as $\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}$. This will hardly ever be possible, though; we'll (hopefully) always have more observations than predictors. Another approach is needed. It directly starts from the problem statement.
+
+When we use the columns of $\mathbf{A}$ for $\mathbf{Ax}$ to approximate $\mathbf{b}$, that approximation necessarily is in the column space of $\mathbf{A}$. $\mathbf{b}$, on the other hand, normally won't be. We want those two to be as close as possible. In other words, we want to minimize the distance between them. Choosing the 2-norm for the distance, this yields the objective
+
+$$minimize \ ||\mathbf{Ax}-\mathbf{b}||^2$$
+
+This distance is the (squared) length of the vector of prediction errors. That vector necessarily is orthogonal to $\mathbf{A}$ itself. That is, when we multiply it with $\mathbf{A}$, we get the zero vector:
+
+$$\mathbf{A}^T(\mathbf{Ax} - \mathbf{b}) = \mathbf{0}$$
+
+A rearrangement of this equation yields the so-called *normal equations*:
+
+$$\mathbf{A}^T \mathbf{A} \mathbf{x} = \mathbf{A}^T \mathbf{b}$$
+
+These may be solved for $\mathbf{x}$, computing the inverse of $\mathbf{A}^T\mathbf{A}$:
+
+$$\mathbf{x} = (\mathbf{A}^T \mathbf{A})^{-1} \mathbf{A}^T \mathbf{b}$$
+
+$\mathbf{A}^T\mathbf{A}$ is a square matrix. It still might not be invertible, in which case the so-called pseudoinverse would be computed instead. In our case, this will not be needed; we already know $\mathbf{A}$ has full rank, and so does $\mathbf{A}^T\mathbf{A}$.
+
+Thus, from the normal equations we have derived a recipe for computing $\mathbf{b}$. Let's put it to use, and compare with what we got from `lm()` and `linalg_lstsq()`.
+
+``` r
+AtA <- A$t()$matmul(A)
+Atb <- A$t()$matmul(b)
+inv <- linalg_inv(AtA)
+x <- inv$matmul(Atb)
+
+all_preds$neq <- as.matrix(A$matmul(x))
+all_errs$neq <- rmse(all_preds$b, all_preds$neq)
+
+all_errs
+```
+
+           lm   lstsq     neq
+    1 40.8369 40.8369 40.8369
+
+Having confirmed that the direct way works, we may allow ourselves some sophistication. Four different matrix factorizations will make their appearance: Cholesky, LU, QR, and Singular Value Decomposition. The goal, in every case, is to avoid the expensive computation of the (pseudo-) inverse. That's what all methods have in common. However, they do not differ "just" in the way the matrix is factorized, but also, in *which* matrix is. This has to do with the constraints the various methods impose. Roughly speaking, the order they're listed in above reflects a falling slope of preconditions, or put differently, a rising slope of generality. Due to the constraints involved, the first two (Cholesky, as well as LU decomposition) will be performed on $\mathbf{A}^T\mathbf{A}$, while the latter two (QR and SVD) operate on $\mathbf{A}$ directly. With them, there never is a need to compute $\mathbf{A}^T\mathbf{A}$.
+
+## Least squares (II): Cholesky decomposition
+
+In Cholesky decomposition, a matrix is factored into two triangular matrices of the same size, with one being the transpose of the other. This commonly is written either
+
+$$\mathbf{A} = \mathbf{L} \mathbf{L}^T$$
+or
+
+$$\mathbf{A} = \mathbf{R}^T\mathbf{R}$$
+
+Here symbols $\mathbf{L}$ and $\mathbf{R}$ denote lower-triangular and upper-triangular matrices, respectively.
+
+For Cholesky decomposition to be possible, a matrix has to be both symmetric and positive definite. These are pretty strong conditions, ones that will not often be fulfilled in practice. In our case, $\mathbf{A}$ is not symmetric. This immediately implies we have to operate on $\mathbf{A}^T\mathbf{A}$ instead. And since $\mathbf{A}$ already is positive definite, we know that $\mathbf{A}^T\mathbf{A}$ is, as well.
+
+In `torch`, we obtain the Cholesky decomposition of a matrix using `linalg_cholesky()`. By default, this call will return $\mathbf{L}$, a lower-triangular matrix.
+
+``` r
+# AtA = L L_t
+AtA <- A$t()$matmul(A)
+L <- linalg_cholesky(AtA)
+```
+
+Let's check that we can reconstruct $\mathbf{A}$ from $\mathbf{L}$:
+
+``` r
+LLt <- L$matmul(L$t())
+diff <- LLt - AtA
+linalg_norm(diff, ord = "fro")
+```
+
+    torch_tensor
+    0.00258896
+    [ CPUFloatType{} ]
+
+Here, I've computed the Frobenius norm of the difference between the original matrix and its reconstruction. The Frobenius norm individually sums up all matrix entries, and returns the square root. In theory, we'd like to see zero here; but in the presence of numerical errors, the result is sufficient to indicate that the factorization worked fine.
+
+Now that we have $\mathbf{L}\mathbf{L}^T$ instead of $\mathbf{A}^T\mathbf{A}$, how does that help us? It's here that the magic happens, and you'll find the same type of magic at work in the remaining three methods. The idea is that due to some decomposition, a more performant way arises of solving the system of equations that constitute a given task.
+
+With $\mathbf{L}\mathbf{L}^T$, the point is that $\mathbf{L}$ is triangular, and when that's the case the linear system can be solved by simple substitution. That is best visible with a tiny example:
+
+$$\begin{bmatrix}
+  1 & 0 & 0\\
+  2 & 3 & 0\\
+  3 & 4 & 1
+\end{bmatrix}
+\begin{bmatrix}
+  x1\\
+  x2\\
+  x3
+\end{bmatrix}
+=
+\begin{bmatrix}
+  1\\
+  11\\
+  15
+\end{bmatrix}$$
+
+Starting in the top row, we immediately see that $x1$ equals $1$; and once we know *that* it is straightforward to calculate, from row two, that $x2$ must be $3$. The last row then tells us that $x3$ must be $0$.
+
+In code, `torch_triangular_solve()` is used to efficiently compute the solution to a linear system of equations where the matrix of predictors is lower- or upper-triangular. An additional requirement is for the matrix to be symmetric -- but that condition we already had to satisfy in order to be able to use Cholesky factorization.
+
+By default, `torch_triangular_solve()` expects the matrix to be upper- (not lower-) triangular; but there is a function parameter, `upper`, that lets us correct that expectation. The return value is a list, and its first item contains the desired solution. To illustrate, here is `torch_triangular_solve()`, applied to the toy example we manually solved above:
+
+``` r
+some_L <- torch_tensor(
+  matrix(c(1, 0, 0, 2, 3, 0, 3, 4, 1), nrow = 3, byrow = TRUE)
+)
+some_b <- torch_tensor(matrix(c(1, 11, 15), ncol = 1))
+
+x <- torch_triangular_solve(
+  some_b,
+  some_L,
+  upper = FALSE
+)[[1]]
+x
+```
+
+    torch_tensor
+     1
+     3
+     0
+    [ CPUFloatType{3,1} ]
+
+Returning to our running example, the normal equations now look like this:
+
+$$\mathbf{L}\mathbf{L}^T \mathbf{x} = \mathbf{A}^T \mathbf{b}$$
+
+We introduce a new variable, $\mathbf{y}$, to stand for $\mathbf{L}^T \mathbf{x}$,
+
+$$\mathbf{L}\mathbf{y} = \mathbf{A}^T \mathbf{b}$$
+
+and compute the solution to *this* system:
+
+``` r
+Atb <- A$t()$matmul(b)
+
+y <- torch_triangular_solve(
+  Atb$unsqueeze(2),
+  L,
+  upper = FALSE
+)[[1]]
+```
+
+Now that we have $y$, we look back at how it was defined:
+
+$$\mathbf{y} = \mathbf{L}^T \mathbf{x}$$
+
+To determine $\mathbf{x}$, we can thus again use `torch_triangular_solve()`:
+
+``` r
+x <- torch_triangular_solve(y, L$t())[[1]]
+```
+
+And there we are.
+
+As usual, we compute the prediction error:
+
+``` r
+all_preds$chol <- as.matrix(A$matmul(x))
+all_errs$chol <- rmse(all_preds$b, all_preds$chol)
+
+all_errs
+```
+
+           lm   lstsq     neq    chol
+    1 40.8369 40.8369 40.8369 40.8369
+
+Now that you've seen the rationale behind Cholesky factorization -- and, as already suggested, the idea carries over to all other decompositions -- you might like to save yourself some work making use of a dedicated convenience function, `torch_cholesky_solve()`. This will render obsolete the two calls to `torch_triangular_solve()`.
+
+The following lines yield the same output as the code above -- but, of course, they *do* hide the underlying magic.
+
+``` r
+L <- linalg_cholesky(AtA)
+
+x <- torch_cholesky_solve(Atb$unsqueeze(2), L)
+
+all_preds$chol2 <- as.matrix(A$matmul(x))
+all_errs$chol2 <- rmse(all_preds$b, all_preds$chol2)
+all_errs
+```
+
+           lm   lstsq     neq    chol   chol2
+    1 40.8369 40.8369 40.8369 40.8369 40.8369
+
+Let's move on to the next method -- equivalently, to the next factorization.
+
+## Least squares (III): LU factorization
+
+LU factorization is named after the two factors it introduces: a lower-triangular matrix, $\mathbf{L}$, as well as an upper-triangular one, $\mathbf{U}$. In theory, there are no restrictions on LU decomposition: Provided we allow for row exchanges, effectively turning $\mathbf{A} = \mathbf{L}\mathbf{U}$ into $\mathbf{A} = \mathbf{P}\mathbf{L}\mathbf{U}$ (where $\mathbf{P}$ is a permutation matrix), we can factorize any matrix.
+
+In practice, though, if we want to make use of `torch_triangular_solve()` , the input matrix has to be symmetric. Therefore, here too we have to work with $\mathbf{A}^T\mathbf{A}$, not $\mathbf{A}$ directly. (And that's why I'm showing LU decomposition right after Cholesky -- they're similar in what they make us do, though not at all similar in spirit.)
+
+Working with $\mathbf{A}^T\mathbf{A}$ means we're again starting from the normal equations. We factorize $\mathbf{A}^T\mathbf{A}$, then solve two triangular systems to arrive at the final solution. Here are the steps, including the not-always-needed permutation matrix $\mathbf{P}$:
+
+$$\begin{aligned}
+\mathbf{A}^T \mathbf{A} \mathbf{x} &= \mathbf{A}^T \mathbf{b} \\
+\mathbf{P} \mathbf{L}\mathbf{U} \mathbf{x} &= \mathbf{A}^T \mathbf{b} \\
+\mathbf{L} \mathbf{y} &= \mathbf{P}^T \mathbf{A}^T \mathbf{b} \\
+\mathbf{y} &= \mathbf{U} \mathbf{x}
+\end{aligned}$$
+
+We see that when $\mathbf{P}$ *is* needed, there is an additional computation: Following the same strategy as we did with Cholesky, we want to move $\mathbf{P}$ from the left to the right. Luckily, what may look expensive -- computing the inverse -- is not: For a permutation matrix, its transpose reverses the operation.
+
+Code-wise, we're already familiar with most of what we need to do. The only missing piece is `torch_lu()`. `torch_lu()` returns a list of two tensors, the first a compressed representation of the three matrices $\mathbf{P}$, $\mathbf{L}$, and $\mathbf{U}$. We can uncompress it using `torch_lu_unpack()` :
+
+``` r
+lu <- torch_lu(AtA)
+
+c(P, L, U) %<-% torch_lu_unpack(lu[[1]], lu[[2]])
+```
+
+We move $\mathbf{P}$ to the other side:
+
+``` r
+Atb <- P$t()$matmul(Atb)
+```
+
+All that remains to be done is solve two triangular systems, and we are done:
+
+``` r
+y <- torch_triangular_solve(
+  Atb$unsqueeze(2),
+  L,
+  upper = FALSE
+)[[1]]
+x <- torch_triangular_solve(y, U)[[1]]
+
+all_preds$lu <- as.matrix(A$matmul(x))
+all_errs$lu <- rmse(all_preds$b, all_preds$lu)
+all_errs[1, -5]
+```
+
+           lm   lstsq     neq    chol      lu
+    1 40.8369 40.8369 40.8369 40.8369 40.8369
+
+As with Cholesky decomposition, we can save ourselves the trouble of calling `torch_triangular_solve()` twice. `torch_lu_solve()` takes the decomposition, and directly returns the final solution:
+
+``` r
+lu <- torch_lu(AtA)
+x <- torch_lu_solve(Atb$unsqueeze(2), lu[[1]], lu[[2]])
+
+all_preds$lu2 <- as.matrix(A$matmul(x))
+all_errs$lu2 <- rmse(all_preds$b, all_preds$lu2)
+all_errs[1, -5]
+```
+
+           lm   lstsq     neq    chol      lu      lu
+    1 40.8369 40.8369 40.8369 40.8369 40.8369 40.8369
+
+Now, we look at the two methods that don't require computation of $\mathbf{A}^T\mathbf{A}$.
+
+## Least squares (IV): QR factorization
+
+Any matrix can be decomposed into an orthogonal matrix, $\mathbf{Q}$, and an upper-triangular matrix, $\mathbf{R}$. QR factorization is probably the most popular approach to solving least-squares problems; it is, in fact, the method used by R's `lm()`. In what ways, then, does it simplify the task?
+
+As to $\mathbf{R}$, we already know how it is useful: By virtue of being triangular, it defines a system of equations that can be solved step-by-step, by means of mere substitution. $\mathbf{Q}$ is even better. An orthogonal matrix is one whose columns are orthogonal -- meaning, mutual dot products are all zero -- and have unit norm; and the nice thing about such a matrix is that its inverse equals its transpose. In general, the inverse is hard to compute; the transpose, however, is easy. Seeing how computation of an inverse -- solving $\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}$ -- is just the central task in least squares, it's immediately clear how significant this is.
+
+Compared to our usual scheme, this leads to a slightly shortened recipe. There is no "dummy" variable $\mathbf{y}$ anymore. Instead, we directly move $\mathbf{Q}$ to the other side, computing the transpose (which *is* the inverse). All that remains, then, is back-substitution. Also, since every matrix has a QR decomposition, we now directly start from $\mathbf{A}$ instead of $\mathbf{A}^T\mathbf{A}$:
+
+$$\begin{aligned}
+\mathbf{A}\mathbf{x} &= \mathbf{b}\\
+\mathbf{Q}\mathbf{R}\mathbf{x} &= \mathbf{b}\\
+\mathbf{R}\mathbf{x} &= \mathbf{Q}^T\mathbf{b}\\
+\end{aligned}$$
+
+In `torch`, `linalg_qr()` gives us the matrices $\mathbf{Q}$ and $\mathbf{R}$.
+
+``` r
+c(Q, R) %<-% linalg_qr(A)
+```
+
+On the right side, we used to have a "convenience variable" holding $\mathbf{A}^T\mathbf{b}$ ; here, we skip that step, and instead, do something "immediately useful": move $\mathbf{Q}$ to the other side.
+
+``` r
+Qtb <- Q$t()$matmul(b)
+```
+
+The only remaining step now is to solve the remaining triangular system.
+
+``` r
+x <- torch_triangular_solve(Qtb$unsqueeze(2), R)[[1]]
+
+all_preds$qr <- as.matrix(A$matmul(x))
+all_errs$qr <- rmse(all_preds$b, all_preds$qr)
+all_errs[1, -c(5,7)]
+```
+
+           lm   lstsq     neq    chol      lu      qr
+    1 40.8369 40.8369 40.8369 40.8369 40.8369 40.8369
+
+By now, you'll be expecting for me to end this section saying "there is also a dedicated solver in `torch`/`torch_linalg`, namely ..."). Well, not literally, no; but effectively, yes. If you call `linalg_lstsq()` passing `driver = "gels"`, QR factorization will be used.
+
+## Least squares (V): Singular Value Decomposition (SVD)
+
+In true climactic order, the last factorization method we discuss is the most versatile, most diversely applicable, most semantically meaningful one: *Singular Value Decomposition (SVD)*. The third aspect, fascinating though it is, does not relate to our current task, so I won't go into it here. Here, it is universal applicability that matters: Every matrix can be composed into components SVD-style.
+
+Singular Value Decomposition factors an input $\mathbf{A}$ into two orthogonal matrices, called $\mathbf{U}$ and $\mathbf{V}^T$, and a diagonal one, named $\mathbf{\Sigma}$, such that $\mathbf{A} = \mathbf{U} \mathbf{\Sigma} \mathbf{V}^T$. Here $\mathbf{U}$ and $\mathbf{V}^T$ are the *left* and *right singular vectors*, and $\mathbf{\Sigma}$ holds the *singular values*.
+
+$$\begin{aligned}
+\mathbf{A}\mathbf{x} &= \mathbf{b}\\
+\mathbf{U}\mathbf{\Sigma}\mathbf{V}^T\mathbf{x} &= \mathbf{b}\\
+\mathbf{\Sigma}\mathbf{V}^T\mathbf{x} &= \mathbf{U}^T\mathbf{b}\\
+\mathbf{V}^T\mathbf{x} &= \mathbf{y}\\
+\end{aligned}$$
+
+We start by obtaining the factorization, using `linalg_svd()`. The argument `full_matrices = FALSE` tells `torch` that we want a $\mathbf{U}$ of dimensionality same as $\mathbf{A}$, not expanded to 7588 x 7588.
+
+``` r
+c(U, S, Vt) %<-% linalg_svd(A, full_matrices = FALSE)
+
+dim(U)
+dim(S)
+dim(Vt)
+```
+
+    [1] 7588   21
+    [1] 21
+    [1] 21 21
+
+We move $\mathbf{U}$ to the other side -- a cheap operation, thanks to $\mathbf{U}$ being orthogonal.
+
+``` r
+Utb <- U$t()$matmul(b)
+```
+
+With both $\mathbf{U}^T\mathbf{b}$ and $\mathbf{\Sigma}$ being same-length vectors, we can use element-wise multiplication to do the same for $\mathbf{\Sigma}$. We introduce a temporary variable, `y`, to hold the result.
+
+``` r
+y <- Utb / S
+```
+
+Now left with the final system to solve, $\mathbf{\mathbf{V}^T\mathbf{x} = \mathbf{y}}$, we again profit from orthogonality -- this time, of the matrix $\mathbf{V}^T$.
+
+``` r
+x <- Vt$t()$matmul(y)
+```
+
+Wrapping up, let's calculate predictions and prediction error:
+
+``` r
+all_preds$svd <- as.matrix(A$matmul(x))
+all_errs$svd <- rmse(all_preds$b, all_preds$svd)
+
+all_errs[1, -c(5, 7)]
+```
+
+           lm   lstsq     neq    chol      lu     qr      svd
+    1 40.8369 40.8369 40.8369 40.8369 40.8369 40.8369 40.8369
+
+That concludes our tour of important least-squares algorithms. Next time, I'll present excerpts from the chapter on the Discrete Fourier Transform (DFT), again reflecting the focus on understanding what it's all about. Thanks for reading!
+
+Photo by <a href="https://unsplash.com/@pearseoh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pearse O'Halloran</a> on <a href="https://unsplash.com/s/photos/squirrel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

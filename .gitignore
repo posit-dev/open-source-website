@@ -31,3 +31,14 @@ assets/css/index.css
 
 # Downloaded audio files
 content/resources/videos/**/audio.*
+
+# Legacy blog sources for porting
+/_external-sources/
+
+/.luarc.json
+
+# Python environments (uv)
+**/.venv/
+
+# Link checking output
+content/blog/_lychee/

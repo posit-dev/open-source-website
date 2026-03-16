@@ -1,0 +1,177 @@
+---
+title: "promises v1.5.0"
+description: &desc |
+  The latest promises release brings hybrid sync/async execution, OpenTelemetry
+  integration for distributed tracing, and significant performance improvements.
+people:
+  - Barret Schloerke
+date: "2025-11-07"
+image: feature.png
+image-alt: "promises v1.5.0"
+
+editor:
+  markdown:
+    wrap: sentence
+ported_from: shiny
+port_status: in-progress
+---
+
+[promises]: https://rstudio.github.io/promises/
+
+::: lead
+We're excited to announce the release of [promises] v1.5.0. The [promises] package provides fundamental abstractions for asynchronous programming in R using JavaScript-style promises, enabling a single R process to orchestrate multiple concurrent tasks.
+:::
+
+
+# Getting Started
+
+[promises] provides fundamental abstractions for asynchronous programming in R using JavaScript-style promises. It enables a single R process to orchestrate multiple tasks in the background while remaining responsive to other operations. Key features include:
+
+- **Promise chaining** with [`then()`](https://rstudio.github.io/promises/reference/then.html), [`catch()`](https://rstudio.github.io/promises/reference/then.html), and [`finally()`](https://rstudio.github.io/promises/reference/then.html) for handling asynchronous results
+- **Combinators** like [`promise_all()`](https://rstudio.github.io/promises/reference/promise_all.html) and [`promise_race()`](https://rstudio.github.io/promises/reference/promise_all.html) for coordinating multiple async operations
+- **Promise domains** for managing execution context across asynchronous boundaries (e.g., graphics devices, reactive contexts)
+
+The package uses semantics similar to JavaScript promises but with idiomatic R syntax, making it particularly useful for building responsive Shiny applications, coordinating parallel computations, and managing complex asynchronous workflows.
+
+Install the latest version with:
+
+```r
+install.packages("promises")
+```
+
+
+## New Features
+
+This release includes several new features for more flexible asynchronous programming, OpenTelemetry integration for distributed tracing, and important performance improvements.
+
+### Hybrid Synchronous/Asynchronous Execution with `hybrid_then()`
+
+The new `hybrid_then()` function intelligently handles both synchronous values and asynchronous promises, executing callbacks either immediately or asynchronously as appropriate. This is particularly useful when writing functions that need to work seamlessly with mixed inputs:
+
+```r
+# Works with both regular values and promises
+result <- hybrid_then(
+  expr = possible_promise_or_value(),
+  on_success = function(x) x * 2,
+  on_failure = function(err) stop("Error occurred")
+)
+```
+
+When `expr` evaluates to a regular value, callbacks execute synchronously on the same tick. When it's a promise, execution is delegated to `then()` for proper asynchronous handling.
+
+### Side-Effect Operations with `tee`
+
+The `then()` function gains a `tee` parameter for performing side-effect operations without modifying the promise chain. When `tee = TRUE`, the callback's return value is discarded and the original value is propagated:
+
+```r
+promise_that_works() |>
+  then(function(value) {
+    # Log for debugging without affecting the chain
+    cat("Current value:", value, "\n")
+  }, tee = TRUE) |>
+  then(function(value) {
+    # Original value is still available here
+    process(value)
+  })
+```
+
+### OpenTelemetry Integration
+
+[promises] now integrates with the [otel](https://github.com/rstudio/otel) package to provide observability and distributed tracing for asynchronous operations. Three new functions help manage OpenTelemetry spans across asynchronous boundaries:
+
+* **`with_otel_span(name, expr, ..., tracer)`**: Creates an OpenTelemetry span that automatically handles both synchronous and asynchronous operations. A `tracer=` parameter must be supplied for proper span creation and maximizing performance for when both tracing is enabled and disabled.
+* **`with_otel_promise_domain(expr)`**: Creates a promise domain that preserves the active OpenTelemetry span context across asynchronous operations.
+* **`local_otel_promise_domain()`**: A `local_*()` variant of `with_otel_promise_domain()` that sets up a local promise domain for the current environment.
+
+Here's how to use `with_otel_promise_domain()` and `with_otel_span()` in concert:
+```r
+# Setup a consistent OpenTelemetry tracer
+my_tracer <- otel::get_tracer("my-tracer")
+
+# When using OpenTelemetry (otel) spans that must be active across async
+# boundaries, wrap the entire promise chain creation within
+# `with_otel_promise_domain()`. Once is enough, but it may be nested.
+with_otel_promise_domain({
+
+  # Makes an otel span that persists until the promise chain is resolved.
+  # This otel span will be reactivated for each step in the promise chain.
+  # This otel span will end when the encapsulated promise chain completes.
+  with_otel_span("my-promise-chain", tracer = my_tracer, {
+
+    promise1() |>
+      then(\(x) {
+        # Make an OpenTelemetry span around `promise2()` promise chain
+        # whose parent span is `my-promise-chain`
+        with_otel_span("middle-span", tracer = my_tracer, {
+          promise2(x) |>
+            then(sideeffect2, tee = TRUE)
+        })
+      }) |>
+      then(\(x) {
+        # `with_otel_span()` is not needed for _purely_ synchronous work
+        # (but may be used if desired!)
+        otel::start_local_active_span("last-span", tracer = my_tracer)
+        sync3(x)
+      })
+
+  }) # `my-promise-chain` span ends here
+
+})
+```
+
+When ever the `then()` callbacks are invoked, the <u>currently active</u> OpenTelemetry span will be captured and reactivated as the active parent for the followup async operation, ensuring accurate tracing across asynchronous operations.
+
+When used correctly, OpenTelemetry traces will show nested spans that accurately represent the asynchronous execution flow:
+
+![Nested OpenTelemetry spans](logfire-nested.png)
+
+When `with_otel_promise_domain()` does not wrap `with_otel_span()`, the active span context will be lost across asynchronous boundaries, resulting in disconnected traces with a very fast parent span duration:
+
+![Disconnected OpenTelemetry spans](logfire-disconnected.png)
+
+OpenTelemetry support will be integrated into the next releases of [Shiny](https://shiny.posit.co/r/) and [plumber2](https://plumber2.posit.co/) (via [routr](https://routr.data-imaginist.com/)). Users of those packages will not need to directly call `with_otel_promise_domain()` or `local_otel_promise_domain()`.
+
+## Breaking Changes
+
+### Fixed Nested Promise Domain Behavior
+
+Nested promise domains now correctly invoke in reverse order. Previously, when promise domains were nested, the outer domain would incorrectly take precedence over the inner domain. The innermost (most recently added) domain now properly wraps callbacks first, ensuring consistent scoping behavior:
+
+```r
+# Inner domain now correctly takes precedence
+with_promise_domain(outer_domain, {
+  with_promise_domain(inner_domain, {
+    promise() |> then(callback)  # inner_domain wraps first
+  })
+})
+```
+
+If your code relied on the previous (incorrect) behavior, you will need to adjust the ordering of your promise domains.
+
+## Other Improvements
+
+### Performance Enhancements
+
+Promise creation is now faster due to removal of the R6 data structures in favor of lightweight environments, resulting in reduced memory overhead and improved speed for creating and resolving promises.
+
+We've also improved the performance of `promise_all()` by maintaining an internal completion counter, reducing time complexity from `O(n²)` to `O(n)` for determining when all promises complete.
+Additionally, we've fixed `promise_all()` to handle arguments with the same name, ensuring we get a result for every promise provided.
+
+The promises package no longer requires compilation and is now a pure R package, simplifying and reducing installation time, as well as avoiding any additional build requirements.
+
+### API Improvements
+
+The package now requires R 4.1 or later, and we're excited to adopt R 4.1+ recommended syntax!
+The native pipe (`|>`) and function shorthand (`\(x) fn(x)`) are now preferred over promise pipe methods (`%...>%`, `%...!%`, `%...T>%`), which are now superseded.
+
+We've also tightened up some of the function signatures: for the argument `tee`, this is now required to be specified as a named argument `catch(promise, onRejected, ..., tee = FALSE)`.
+The `tee` value must also now be a logical value rather than any truthy value. This named argument is available for `then()`, `catch()`, and `hybrid_then()`.
+
+### Documentation
+
+**Updated for mirai**: The package documentation and vignettes have been comprehensively updated to feature [mirai](https://mirai.r-lib.org/) as the recommended approach for launching asynchronous tasks. A new vignette, "Launching tasks with mirai," provides a complete introduction to using mirai with promises. mirai offers a lightweight, modern alternative to the [future](https://future.futureverse.org/) package, utilizing background R processes (daemons) without polling overhead. Examples throughout the documentation now demonstrate mirai usage alongside or in place of future examples.
+
+
+## Acknowledgements
+
+For a complete list of changes, see the [release notes for v1.5.0](https://rstudio.github.io/promises/news/index.html#promises-150) and [v1.4.0](https://rstudio.github.io/promises/news/index.html#promises-140).

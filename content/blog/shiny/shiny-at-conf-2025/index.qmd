@@ -1,0 +1,28 @@
+---
+title: "Shiny at posit::conf(2025)"
+subtitle: Atlanta, GA (September 2025)
+people:
+  - Shiny Team
+date: "2025-09-12"
+
+image: shiny-team.jpg
+image-alt: "Shiny team photo from SciPy 2025"
+
+listing:
+  - id: talks
+    template: talks.ejs
+    contents:
+      - talks.yml
+ported_from: shiny
+port_status: in-progress
+---
+
+::: {lead}
+There are many talks and workshops about Shiny by the community and Shiny team at posit::conf(2025).
+We'd love to chat and say hello!
+:::
+
+## Talks by Posit Folks
+
+::: {#talks}
+:::

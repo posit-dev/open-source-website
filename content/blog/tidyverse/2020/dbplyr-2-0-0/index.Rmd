@@ -1,0 +1,207 @@
+---
+output: hugodown::hugo_document
+
+slug: dbplyr-2-0-0
+title: dbplyr 2.0.0
+date: 2020-11-04
+people:
+  - Hadley Wickham
+description: >
+    dbplyr 2.0.0 adds missing features from dplyr 1.0.0, numerous
+    improvements to SQL translation (including new Amazon Redshift and 
+    SAP HANA backends), and an improved system for extending dbplyr to work
+    with other databases.
+
+photo:
+  url: https://unsplash.com/photos/r2A6WYI8YIg
+  author: Shawn Ang
+
+categories: [package] 
+tags: [dbplyr, dplyr]
+image: thumbnail-wd.jpg
+ported_from: tidyverse
+port_status: raw
+---
+
+```{r, include = FALSE}
+library(dplyr, warn.conflicts = FALSE)
+```
+
+We're pleased to announce the release of [dbplyr](https://dbplyr.tidyverse.org/) 2.0.0.
+dbplyr is a database backend for [dplyr](https://dplyr.tidyverse.org/) that allows you to use a remote database as if it was a collection of local data frames: you write ordinary dplyr code and dbplyr translates it to SQL for you.
+
+You can install it from CRAN with:
+
+```{r, eval = FALSE}
+install.packages("dbplyr")
+```
+
+This blog post covers the major improvements in this version:
+
+-   dplyr 1.0.0 compatibility so you can now use `across()`, `relocate()`, `rename_with()`, and more.
+
+-   Major improvements to SQL translation.
+
+-   A snazzy new logo from [Allison Horst](https://www.allisonhorst.com).
+
+-   An improved extension system.
+
+Please see the [release notes](https://github.com/tidyverse/dbplyr/releases/tag/v2.0.0) for a full list of changes.
+
+```{r setup, message = FALSE}
+library(dbplyr)
+library(dplyr, warn.conflicts = FALSE)
+```
+
+## dplyr 1.0.0 compatibility
+
+dbplyr now supports all relevant features added in dplyr 1.0.0:
+
+-   `across()` is now translated into individual SQL statements.
+
+    ```{r}
+    lf <- lazy_frame(g = 1, a = 1, b = 2, c = 3)
+    lf %>% 
+      group_by(g) %>% 
+      summarise(across(everything(), mean, na.rm = TRUE))
+    ```
+
+-   `rename()` and `select()` support dplyr tidyselect syntax, apart from predicate functions which can't easily work on computed queries.
+    You can now use `rename_with()` to programmatically rename columns.
+
+    ```{r}
+    lf <- lazy_frame(x1 = 1, x2 = 2, x3 = 3, y1 = 4, y2 = 3)
+    lf %>% select(starts_with("x") & !"x3")
+    lf %>% select(ends_with("2") | ends_with("3"))
+    lf %>% rename_with(toupper)
+    ```
+
+-   `relocate()` makes it easy to move columns around:
+
+    ```{r}
+    lf <- lazy_frame(x1 = 1, x2 = 2, y1 = 4, y2 = 3)
+    lf %>% relocate(starts_with("y"))
+    ```
+
+-   `slice_min()`, `slice_max()`, and `slice_sample()` are now supported, and `slice_head()` and `slice_tail()` throw informative error messages (since they don't make sense for databases).
+
+    ```{r}
+    lf <- lazy_frame(g = rep(1:2, 5), x = 1:10)
+    lf %>% 
+      group_by(g) %>% 
+      slice_min(x, prop = 0.5)
+
+    lf %>% 
+      group_by(g) %>% 
+      slice_sample(x, n = 10, with_ties = TRUE)
+    ```
+
+    Note that these slices are translated into window functions, and because you can't use a window function directly inside a `WHERE` clause, they must be wrapped in a subquery.
+
+## SQL translation
+
+The dbplyr documentation now does a much better job of providing the details of its SQL translation.
+Each backend and each major verb has a documentation page giving the basics of the translation.
+This will hopefully make it much easier to learn what is and isn't supported by dbplyr.
+Visit <https://dbplyr.tidyverse.org/reference/index.html> to see the new docs.
+
+There are also many improvements to SQL generation.
+Here are a few of the most important:
+
+-   Join functions gain an `na_matches` argument that allows you to control whether or not `NA` (`NULL`) values match other `NA` values.
+    The default is `"never"`, which is the usual behaviour in databases.
+    You can set `na_matches = "na"` to match R's usual join behaviour.
+
+    ```{r}
+    df1 <- tibble(x = c(1, 2, NA))
+    df2 <- tibble(x = c(NA, 1), y = 1:2)
+    df1 %>% inner_join(df2, by = "x")
+
+    db1 <- memdb_frame(x = c(1, 2, NA))
+    db2 <- memdb_frame(x = c(NA, 1), y = 1:2)
+    db1 %>% inner_join(db2, by = "x")
+
+    db1 %>% inner_join(db2, by = "x", na_matches = "na")
+    ```
+
+    This translation is powered by the new `sql_expr_matches()` generic, because every database seems to have a slightly different way to express this idea.
+    Learn more at <https://modern-sql.com/feature/is-distinct-from>.
+
+    ```{r}
+    db1 %>% inner_join(db2, by = "x") %>% show_query()
+    db1 %>% inner_join(db2, by = "x", na_matches = "na") %>% show_query()
+    ```
+
+-   Subqueries no longer include an `ORDER BY` clause.
+    This is not part of the formal SQL specification so it has very limited support across databases.
+    Now such queries generate a warning suggesting that you move your `arrange()` call later in the pipeline.
+
+    ```{r}
+    lf <- lazy_frame(g = rep(1:2, each = 5), x = sample(1:10))
+    lf %>% 
+      group_by(g) %>% 
+      summarise(n = n()) %>% 
+      arrange(desc(n)) %>% 
+      filter(n > 1)
+    ```
+
+    As the warning suggests, there's one exception: `ORDER BY` is still generated if a `LIMIT` is present.
+    Across databases, this tends to change which rows are returned, but not necessarily their order.
+
+    ```{r}
+    lf %>% 
+      group_by(g) %>% 
+      summarise(n = n()) %>% 
+      arrange(desc(n)) %>% 
+      head(5) %>% 
+      filter(n > 1)
+    ```
+
+-   dbplyr includes built-in backends for Redshift (which only differs from PostgreSQL in a few places) and SAP HANA. These require the development versions of [RPostgres](https://github.com/r-dbi/RPostgres) and [odbc](https://github.com/r-dbi/odbc) respectively.
+
+    ```{r}
+    lf <- lazy_frame(x = "a", y = "b", con = simulate_redshift())
+    lf %>% mutate(z = paste0(x, y))
+    ```
+
+There are a number of minor changes that affect the translation of individual functions.
+Here are a few of the most important:
+
+-   All backends now translate `n()` to `count(*)` and support `::`
+
+    ```{r}
+    lf <- lazy_frame(x = 1:10)
+    lf %>% summarise(n = dplyr::n())
+    ```
+
+-   PostgreSQL gets translations for lubridate period functions:
+
+    ```{r}
+    lf <- lazy_frame(x = Sys.Date(), con = simulate_postgres())
+    lf %>%
+      mutate(year = x + years(1))
+    ```
+
+-   Oracle assumes version 12c is available so we can use a simpler translation for `head()` that works in more places:
+
+    ```{r}
+    lf <- lazy_frame(x = 1, con = simulate_oracle())
+    lf %>% head(5)
+    ```
+
+## New logo
+
+Thanks to the artistic talents of [Allison Horst](https://www.allisonhorst.com), dbplyr has a beautiful new logo:
+
+<img src="dbplyr.png" width="250"/>
+
+## Extensibility
+
+Finally, dbplyr introduces a number of new generics to help tease apart the currently overly complicated relationship with dplyr.
+This should make creating new backends much easier, but does require some changes from existing backends.
+These changes should be invisible to the end user and will play out slowly over the next 12 months.
+See `vignette("backend-2", package = "dbplyr")` for details.
+
+## Acknowledgements
+
+A big thanks to everyone who helped with this release by reporting bugs, discussing issues, and contributing code: [&#x0040;abalter](https://github.com/abalter), [&#x0040;adhi-r](https://github.com/adhi-r), [&#x0040;adithya604](https://github.com/adithya604), [&#x0040;admoseremic](https://github.com/admoseremic), [&#x0040;ahmed-alhindawi](https://github.com/ahmed-alhindawi), [&#x0040;alexfun](https://github.com/alexfun), [&#x0040;alexkyllo](https://github.com/alexkyllo), [&#x0040;alistaire47](https://github.com/alistaire47), [&#x0040;batpigandme](https://github.com/batpigandme), [&#x0040;BenCarlsen](https://github.com/BenCarlsen), [&#x0040;bengowan](https://github.com/bengowan), [&#x0040;bersbersbers](https://github.com/bersbersbers), [&#x0040;bertrandh](https://github.com/bertrandh), [&#x0040;bkkkk](https://github.com/bkkkk), [&#x0040;boshek](https://github.com/boshek), [&#x0040;bradenkinard](https://github.com/bradenkinard), [&#x0040;cderv](https://github.com/cderv), [&#x0040;CerebralMastication](https://github.com/CerebralMastication), [&#x0040;chris-billingham](https://github.com/chris-billingham), [&#x0040;cmichaud92](https://github.com/cmichaud92), [&#x0040;cole-johanson](https://github.com/cole-johanson), [&#x0040;copernican](https://github.com/copernican), [&#x0040;daattali](https://github.com/daattali), [&#x0040;Daveyr](https://github.com/Daveyr), [&#x0040;davidchall](https://github.com/davidchall), [&#x0040;DavidPatShuiFong](https://github.com/DavidPatShuiFong), [&#x0040;dereksonderegger](https://github.com/dereksonderegger), [&#x0040;dfrankow](https://github.com/dfrankow), [&#x0040;dkulp2](https://github.com/dkulp2), [&#x0040;dpprdan](https://github.com/dpprdan), [&#x0040;dsen6644](https://github.com/dsen6644), [&#x0040;DSLituiev](https://github.com/DSLituiev), [&#x0040;EarlGlynn](https://github.com/EarlGlynn), [&#x0040;edgararuiz](https://github.com/edgararuiz), [&#x0040;edoardomichielon](https://github.com/edoardomichielon), [&#x0040;elbamos](https://github.com/elbamos), [&#x0040;ericemc3](https://github.com/ericemc3), [&#x0040;fahadshery](https://github.com/fahadshery), [&#x0040;fh-jgutman](https://github.com/fh-jgutman), [&#x0040;ftoresh](https://github.com/ftoresh), [&#x0040;GrayAlex49](https://github.com/GrayAlex49), [&#x0040;gregleleu](https://github.com/gregleleu), [&#x0040;hadley](https://github.com/hadley), [&#x0040;halpo](https://github.com/halpo), [&#x0040;hannes101](https://github.com/hannes101), [&#x0040;hansvancalster](https://github.com/hansvancalster), [&#x0040;hrbrmstr](https://github.com/hrbrmstr), [&#x0040;huelf](https://github.com/huelf), [&#x0040;iangow](https://github.com/iangow), [&#x0040;ianmcook](https://github.com/ianmcook), [&#x0040;jakeybob](https://github.com/jakeybob), [&#x0040;Janlow](https://github.com/Janlow), [&#x0040;jarodmeng](https://github.com/jarodmeng), [&#x0040;javierluraschi](https://github.com/javierluraschi), [&#x0040;jerisalan](https://github.com/jerisalan), [&#x0040;jessekps](https://github.com/jessekps), [&#x0040;jimhester](https://github.com/jimhester), [&#x0040;jkylearmstrong](https://github.com/jkylearmstrong), [&#x0040;jmerone](https://github.com/jmerone), [&#x0040;jonkeane](https://github.com/jonkeane), [&#x0040;kmishra9](https://github.com/kmishra9), [&#x0040;kohleth](https://github.com/kohleth), [&#x0040;kondofersky](https://github.com/kondofersky), [&#x0040;krlmlr](https://github.com/krlmlr), [&#x0040;lionel-](https://github.com/lionel-), [&#x0040;lorenzwalthert](https://github.com/lorenzwalthert), [&#x0040;LukasWallrich](https://github.com/LukasWallrich), [&#x0040;lukerobert](https://github.com/lukerobert), [&#x0040;lymanmark](https://github.com/lymanmark), [&#x0040;machow](https://github.com/machow), [&#x0040;martin-a-wade](https://github.com/martin-a-wade), [&#x0040;mgirlich](https://github.com/mgirlich), [&#x0040;MikeJohnPage](https://github.com/MikeJohnPage), [&#x0040;millerh1](https://github.com/millerh1), [&#x0040;mkirzon](https://github.com/mkirzon), [&#x0040;moodymudskipper](https://github.com/moodymudskipper), [&#x0040;mskyttner](https://github.com/mskyttner), [&#x0040;Naareman](https://github.com/Naareman), [&#x0040;natbprice](https://github.com/natbprice), [&#x0040;okhoma](https://github.com/okhoma), [&#x0040;OssiLehtinen](https://github.com/OssiLehtinen), [&#x0040;PauloJhonny](https://github.com/PauloJhonny), [&#x0040;r2evans](https://github.com/r2evans), [&#x0040;ramnathv](https://github.com/ramnathv), [&#x0040;returnString](https://github.com/returnString), [&#x0040;rjpat](https://github.com/rjpat), [&#x0040;rlh1994](https://github.com/rlh1994), [&#x0040;robchallen](https://github.com/robchallen), [&#x0040;roboton](https://github.com/roboton), [&#x0040;romainfrancois](https://github.com/romainfrancois), [&#x0040;rundel](https://github.com/rundel), [&#x0040;saadaslam](https://github.com/saadaslam), [&#x0040;samssann](https://github.com/samssann), [&#x0040;samstiyer](https://github.com/samstiyer), [&#x0040;schradj](https://github.com/schradj), [&#x0040;sheepworrier](https://github.com/sheepworrier), [&#x0040;shosaco](https://github.com/shosaco), [&#x0040;shyams80](https://github.com/shyams80), [&#x0040;stiberger](https://github.com/stiberger), [&#x0040;stvrd](https://github.com/stvrd), [&#x0040;tarunn90](https://github.com/tarunn90), [&#x0040;tedmoorman](https://github.com/tedmoorman), [&#x0040;tgvaughan](https://github.com/tgvaughan), [&#x0040;tonyk7440](https://github.com/tonyk7440), [&#x0040;trevorcampbell](https://github.com/trevorcampbell), [&#x0040;TuomoNieminen](https://github.com/TuomoNieminen), [&#x0040;tvedebrink](https://github.com/tvedebrink), [&#x0040;vadimus202](https://github.com/vadimus202), [&#x0040;vnijs](https://github.com/vnijs), [&#x0040;wangyuchen](https://github.com/wangyuchen), [&#x0040;yitao-li](https://github.com/yitao-li), and [&#x0040;ZahraEconomist](https://github.com/ZahraEconomist).

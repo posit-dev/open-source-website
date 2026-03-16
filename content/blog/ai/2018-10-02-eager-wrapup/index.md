@@ -1,0 +1,253 @@
+---
+title: "More flexible models with TensorFlow eager execution and Keras"
+description: |
+  Advanced applications like generative adversarial networks, neural style transfer, and the attention mechanism ubiquitous in natural language processing used to be not-so-simple to implement with the Keras declarative coding paradigm. Now, with the advent of TensorFlow eager execution, things have changed. This post explores using eager execution with R.
+date: 2018-10-02
+slug: keydana2018eager-wrapup
+categories:
+  - TensorFlow/Keras
+author:
+  - name: Sigrid Keydana
+    affiliation: RStudio
+    affiliation_url: https://www.rstudio.com/
+people:
+  - Sigrid Keydana
+image: thumbnail.png
+ported_from: ai
+port_status: in-progress
+---
+
+
+
+If you have used Keras to create neural networks you are no doubt familiar with the [Sequential API](https://tensorflow.rstudio.com/keras/articles/sequential_model.html), which represents models as a linear stack of layers. The [Functional API](https://tensorflow.rstudio.com/keras/articles/functional_api.html) gives you additional options: Using separate input layers, you can combine text input with tabular data. Using multiple outputs, you can perform regression and classification at the same time. Furthermore, you can reuse layers within and between models.
+
+With TensorFlow eager execution, you gain even more flexibility. Using [custom models](https://tensorflow.rstudio.com/keras/articles/custom_models.html), you define the forward pass through the model completely *ad libitum*. This means that a lot of architectures get a lot easier to implement, including the applications mentioned above: generative adversarial networks, neural style transfer, various forms of sequence-to-sequence models.
+In addition, because you have direct access to values, not tensors, model development and debugging are greatly sped up.
+
+## How does it work?
+
+In eager execution, operations are not compiled into a graph, but directly defined in your R code. They return values, not symbolic handles to nodes in a computational graph - meaning, you don't need access to a TensorFlow `session` to evaluate them.
+
+``` r
+m1 <- matrix(1:8, nrow = 2, ncol = 4)
+m2 <- matrix(1:8, nrow = 4, ncol = 2)
+tf$matmul(m1, m2)
+```
+
+    tf.Tensor(
+    [[ 50 114]
+     [ 60 140]], shape=(2, 2), dtype=int32)
+
+Eager execution, recent though it is, is already supported in the current CRAN releases of `keras` and `tensorflow`.
+The [eager execution guide](https://tensorflow.rstudio.com/keras/articles/eager_guide.html) describes the workflow in detail.
+
+Here's a quick outline:
+You define a [model](https://tensorflow.rstudio.com/keras/articles/custom_models.html), an optimizer, and a loss function.
+Data is streamed via [tfdatasets](https://tensorflow.rstudio.com/tools/tfdatasets/articles/introduction.html), including any preprocessing such as image resizing.
+Then, model training is just a loop over epochs, giving you complete freedom over when (and whether) to execute any actions.
+
+How does backpropagation work in this setup? The forward pass is recorded by a `GradientTape`, and during the backward pass we explicitly calculate gradients of the loss with respect to the model's weights. These weights are then adjusted by the optimizer.
+
+``` r
+with(tf$GradientTape() %as% tape, {
+     
+  # run model on current batch
+  preds <- model(x)
+ 
+  # compute the loss
+  loss <- mse_loss(y, preds, x)
+  
+})
+    
+# get gradients of loss w.r.t. model weights
+gradients <- tape$gradient(loss, model$variables)
+
+# update model weights
+optimizer$apply_gradients(
+  purrr::transpose(list(gradients, model$variables)),
+  global_step = tf$train$get_or_create_global_step()
+)
+```
+
+See the [eager execution guide](https://tensorflow.rstudio.com/keras/articles/eager_guide.html) for a complete example. Here, we want to answer the question: Why are we so excited about it? At least three things come to mind:
+
+- Things that used to be complicated become much easier to accomplish.
+- Models are easier to develop, and easier to debug.
+- There is a much better match between our mental models and the code we write.
+
+We'll illustrate these points using a set of eager execution case studies that have recently appeared on this blog.
+
+## Complicated stuff made easier
+
+A good example of architectures that become much easier to define with eager execution are attention models.
+Attention is an important ingredient of sequence-to-sequence models, e.g. (but not only) in machine translation.
+
+When using LSTMs on both the encoding and the decoding sides, the decoder, being a recurrent layer, knows about the sequence it has generated so far. It also (in all but the simplest models) has access to the complete input sequence. But where in the input sequence is the piece of information it needs to generate the next output token?
+It is this question that attention is meant to address.
+
+Now consider implementing this in code. Each time it is called to produce a new token, the decoder needs to get current input from the attention mechanism. This means we can't just squeeze an attention layer between the encoder and the decoder LSTM. Before the advent of eager execution, a solution would have been to implement this in low-level TensorFlow code. With eager execution and custom models, we can just [use Keras](/blog/ai/2018-07-30-attention-layer/).
+
+<aside>
+[<img src="/blog/ai/2018-07-30-attention-layer/images/attention.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-07-30-attention-layer/)
+</aside>
+
+Attention is not just relevant to sequence-to-sequence problems, though. In [image captioning](/blog/ai/2018-09-17-eager-captioning/), the output is a sequence, while the input is a complete image. When generating a caption, attention is used to focus on parts of the image relevant to different time steps in the text-generating process.
+
+<aside>
+[<img src="/blog/ai/2018-09-17-eager-captioning/images/showattendandtell.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-09-17-eager-captioning/)
+</aside>
+
+## Easy inspection
+
+In terms of debuggability, just using custom models (without eager execution) already simplifies things.
+If we have a custom model like `simple_dot` from the recent [embeddings post](/blog/ai/2018-09-26-embeddings-recommender) and are unsure if we've got the shapes correct, we can simply add logging statements, like so:
+
+<aside>
+[<img src="/blog/ai/2018-09-26-embeddings-recommender/images/m.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-09-26-embeddings-recommender)
+</aside>
+
+``` r
+function(x, mask = NULL) {
+  
+  users <- x[, 1]
+  movies <- x[, 2]
+  
+  user_embedding <- self$user_embedding(users)
+  cat(dim(user_embedding), "\n")
+  
+  movie_embedding <- self$movie_embedding(movies)
+  cat(dim(movie_embedding), "\n")
+  
+  dot <- self$dot(list(user_embedding, movie_embedding))
+  cat(dim(dot), "\n")
+  dot
+}
+```
+
+With eager execution, things get even better: We can print the tensors' values themselves.[^1]
+
+But convenience does not end there. In the training loop we showed above, we can obtain losses, model weights, and gradients just by printing them.
+For example, add a line after the call to `tape$gradient` to print the gradients for all layers as a list.
+
+``` r
+gradients <- tape$gradient(loss, model$variables)
+print(gradients)
+```
+
+## Matching the mental model
+
+If you've read [Deep Learning with R](https://www.amazon.com/Deep-Learning-R-Francois-Chollet/dp/161729554X), you know that it's possible to program less straightforward workflows, such as those required for training GANs or doing neural style transfer, using the Keras functional API. However, the graph code does not make it easy to keep track of where you are in the workflow.
+
+Now compare the example from the [generating digits with GANs](/blog/ai/2018-08-26-eager-dcgan) post. Generator and discriminator each get set up as actors in a drama:
+
+<aside>
+[<img src="/blog/ai/2018-08-26-eager-dcgan/images/thumb.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-08-26-eager-dcgan)
+</aside>
+
+``` r
+generator <- function(name = NULL) {
+  keras_model_custom(name = name, function(self) {
+    # ...
+  }
+}
+```
+
+``` r
+discriminator <- function(name = NULL) {
+  keras_model_custom(name = name, function(self) {
+    # ...
+  }
+}
+```
+
+Both are informed about their respective loss functions and optimizers.
+
+Then, the duel starts. The training loop is just a succession of generator actions, discriminator actions, and backpropagation through both models. No need to worry about freezing/unfreezing weights in the appropriate places.
+
+``` r
+with(tf$GradientTape() %as% gen_tape, { with(tf$GradientTape() %as% disc_tape, {
+  
+ # generator action
+ generated_images <- generator(# ...
+   
+ # discriminator assessments
+ disc_real_output <- discriminator(# ... 
+ disc_generated_output <- discriminator(# ...
+      
+ # generator loss
+ gen_loss <- generator_loss(# ...                        
+ # discriminator loss
+ disc_loss <- discriminator_loss(# ...
+   
+})})
+   
+# calcucate generator gradients   
+gradients_of_generator <- gen_tape$gradient(#...
+  
+# calcucate discriminator gradients   
+gradients_of_discriminator <- disc_tape$gradient(# ...
+ 
+# apply generator gradients to model weights       
+generator_optimizer$apply_gradients(# ...
+
+# apply discriminator gradients to model weights 
+discriminator_optimizer$apply_gradients(# ...
+```
+
+The code ends up so close to how we mentally picture the situation that hardly any memorization is needed to keep in mind the overall design.
+
+Relatedly, this way of programming lends itself to extensive modularization. This is illustrated by the [second post on GANs](/blog/ai/2018-09-20-eager-pix2pix/images/pix2pixlosses.png) that includes U-Net like downsampling and upsampling steps.
+
+<aside>
+[<img src="/blog/ai/2018-09-20-eager-pix2pix/images/pix2pixlosses.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-09-20-eager-pix2pix)
+</aside>
+
+Here, the downsampling and upsampling layers are each factored out into their own models
+
+``` r
+downsample <- function(# ...
+  keras_model_custom(name = NULL, function(self) { # ...
+```
+
+such that they can be readably composed in the generator's call method:
+
+``` r
+# model fields
+self$down1 <- downsample(# ...
+self$down2 <- downsample(# ...
+# ...
+# ...
+
+# call method
+function(x, mask = NULL, training = TRUE) {       
+     
+  x1 <- x %>% self$down1(training = training)         
+  x2 <- self$down2(x1, training = training)           
+  # ...
+  # ...
+```
+
+## Wrapping up
+
+Eager execution is still a very recent feature and under development. We are convinced that many interesting use cases will still turn up as this paradigm gets adopted more widely among deep learning practitioners.
+
+However, now already we have a list of use cases illustrating the vast options, gains in usability, modularization and elegance offered by eager execution code.
+
+For quick reference, these cover:
+
+- [Neural machine translation with attention](/blog/ai/2018-07-30-attention-layer/). This post provides a detailed introduction to eager execution and its building blocks, as well as an in-depth explanation of the attention mechanism used. Together with the next one, it occupies a very special role in this list: It uses eager execution to solve a problem that otherwise could only be solved with hard-to-read, hard-to-write low-level code.
+
+- [Image captioning with attention](/blog/ai/2018-09-17-eager-captioning/).
+  This post builds on the first in that it does not re-explain attention in detail; however, it ports the concept to spatial attention applied over image regions.
+
+- [Generating digits with convolutional generative adversarial networks (DCGANs)](/blog/ai/2018-08-26-eager-dcgan). This post introduces using two custom models, each with their associated loss functions and optimizers, and having them go through forward- and backpropagation in sync. It is perhaps the most impressive example of how eager execution simplifies coding by better alignment to our mental model of the situation.
+
+- [Image-to-image translation with pix2pix](/blog/ai/2018-09-20-eager-pix2pix) is another application of generative adversarial networks, but uses a more complex architecture based on U-Net-like downsampling and upsampling. It nicely demonstrates how eager execution allows for modular coding, rendering the final program much more readable.
+
+- [Neural style transfer](/blog/ai/2018-09-10-eager-style-transfer/). Finally, this post reformulates the style transfer problem in an eager way, again resulting in readable, concise code.
+
+When diving into these applications, it is a good idea to also refer to the [eager execution guide](https://tensorflow.rstudio.com/keras/articles/eager_guide.html) so you don't lose sight of the forest for the trees.
+
+We are excited about the use cases our readers will come up with!
+
+[^1]: Note that the embeddings example uses standard (graph) execution; refactoring would be needed in order to enable eager execution on it.

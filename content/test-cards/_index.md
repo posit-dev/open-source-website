@@ -24,7 +24,7 @@ layout: single
 {{< insert-items cols=3 >}}
 - blog/anscombes-quartet
 - people/jeroen-janssens
-- blog/air
+- blog/tidyverse/air
 {{< /insert-items >}}
 
 ## Grids
@@ -34,7 +34,7 @@ layout: single
 - people/greg-swinehart
 - software/ggplot2
 - events/pydata-boston-2025
-- blog/air
+- blog/tidyverse/air
 {{< /insert-items >}}
 
 ### 3 Columns
@@ -63,7 +63,7 @@ layout: single
 {{< insert-items cols=3 hide-badge=true >}}
 - people/hadley-wickham
 - software/ggplot2
-- blog/air
+- blog/tidyverse/air
 {{< /insert-items >}}
 
 ### 5 Columns
