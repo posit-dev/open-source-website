@@ -1,5 +1,5 @@
 ---
-title: "PyCon US"
+title: "PyCon US 2026"
 event_type: conference
 location: "Long Beach, CA, USA"
 start_date: 2026-05-13
