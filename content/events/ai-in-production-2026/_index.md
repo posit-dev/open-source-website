@@ -12,4 +12,4 @@ people:
   - Neal Richardson
 ---
 
-The first Jumping Rivers AI in Production will delve into the world of AI and Machine Learning.
+The first Jumping Rivers AI in Production conference will delve into the world of AI and Machine Learning.
