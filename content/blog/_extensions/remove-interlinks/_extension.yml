@@ -1,0 +1,6 @@
+title: Remove Interlinks
+author: Posit
+version: 1.0.0
+contributes:
+  filters:
+    - remove-interlinks.lua

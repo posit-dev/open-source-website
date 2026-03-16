@@ -1,6 +1,0 @@
-title: Strip Bootstrap Classes
-author: Posit
-version: 1.0.0
-contributes:
-  filters:
-    - strip-bootstrap.lua

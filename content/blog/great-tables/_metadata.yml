@@ -1,2 +1,2 @@
-filters: 
-  - remove-interlinks.lua
+filters:
+  - remove-interlinks
