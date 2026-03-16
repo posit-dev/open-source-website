@@ -44,13 +44,15 @@ lychee --offline content/blog/shiny/*/index.md
 
 ### How Quarto processes links
 
+Quarto's `_quarto.yml` is at `content/` (not `content/blog/`), so site-root links resolve correctly:
+
 | In source file | Rendered `.md` output |
 |----------------|----------------------|
 | Absolute URL (`https://...`) | Unchanged |
-| Site-root (`/blog/foo/`) | Converted to relative (`../foo/`) |
+| Site-root (`/blog/foo/`) | Converted to relative (e.g., `../../../blog/foo/`) |
 | Relative (`../foo/`) | Unchanged |
 
-Quarto converts site-root links to relative paths based on the output file's location. This is fine — Hugo resolves both correctly. The key is keeping source files clear and maintainable.
+Quarto converts site-root links to relative paths based on the output file's location. The paths may look verbose but resolve correctly. Hugo handles both site-root and relative links.
 
 ### What to use
 
@@ -85,9 +87,9 @@ Quarto converts site-root links to relative paths based on the output file's loc
 | plotnine | ✅ Done | |
 | tidyverse | ⬜ TODO | |
 | education | ⬜ TODO | |
-| ai | ⬜ TODO | |
+| ai | ✅ Done | Dead doc sites documented, malformed URLs need fixing |
 | rstudio | ⬜ TODO | |
-| positron | ⬜ TODO | |
+| positron | ✅ Done | |
 
 ---
 
@@ -147,8 +149,36 @@ kangjf1943, KRRLP-PL, MalteSteinCytel, oozbeker-onemagnify, jonathanmburns, ngoo
 
 ### ai
 
-**Slug mismatch:**
+**Dead documentation sites (entire domains 404):**
 
-| Post | Issue |
-|------|-------|
-| [sparklyr-updates-q1-2024](ai/sparklyr-updates-q1-2024/index.md) | Original slug was `sparklyr-updates` |
+| Domain | Link count | Notes |
+|--------|------------|-------|
+| tensorflow.rstudio.com | 121 | Old TensorFlow for R docs |
+| pins.rstudio.com | 11 | Old pins docs |
+| spark.rstudio.com | 8 | Old sparklyr docs |
+| keras.rstudio.com | 5 | Old Keras for R docs |
+
+**Malformed URLs to fix:**
+
+| Issue | Post |
+|-------|------|
+| `https:://github.com/...` (double colon) | [2020-09-30-sparklyr-1.4.0-released](ai/2020-09-30-sparklyr-1.4.0-released/index.md), [2020-12-14-sparklyr-1.5.0-released](ai/2020-12-14-sparklyr-1.5.0-released/index.md) |
+| `https://Hugging%20Face.co/...` (space in domain) | [2023-06-20-gpt2-torch](ai/2023-06-20-gpt2-torch/index.md) |
+| `https://mlverse.github.io/tohttps://...` (concatenated URLs) | [2020-10-01-torch-network-from-scratch](ai/2020-10-01-torch-network-from-scratch/index.md) |
+
+**Other dead external links (404):**
+
+| URL | Post |
+|-----|------|
+| https://ai.google/research/teams/brain | multiple posts |
+| https://topepo.github.io/recipes | [2018-01-11-keras-customer-churn](ai/2018-01-11-keras-customer-churn/index.md) |
+| https://topepo.github.io/rsample/ | [2018-01-11-keras-customer-churn](ai/2018-01-11-keras-customer-churn/index.md) |
+| https://cloud.google.com/ml-engine | [2018-01-10-r-interface-to-cloudml](ai/2018-01-10-r-interface-to-cloudml/index.md) |
+| https://jjallaire.github.io/deep-learning-with-r-notebooks/... | [2017-12-22-word-embeddings-with-keras](ai/2017-12-22-word-embeddings-with-keras/index.md) |
+| http://archive.ics.uci.edu/ml/... | multiple posts |
+| https://github.com/rstudio/keras/tree/master/vignettes/examples/... | multiple posts |
+| https://github.com/huggingface/transformers/tree/master/examples/... | [2020-07-30-state-of-the-art-nlp-models-from-r](ai/2020-07-30-state-of-the-art-nlp-models-from-r/index.md) |
+
+**False positives (ignore):**
+- 425 `localhost:1313/images/...` errors are relative image paths that work correctly in Hugo
+- 63 GitHub 429 errors are rate limiting, not broken links

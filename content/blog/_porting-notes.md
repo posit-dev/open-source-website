@@ -270,6 +270,8 @@ The excludes bypass packages requiring libgit2.
 
 **Known limitation:** The `_metadata.yml` with `reference-section-title: References` doesn't take effect without a full Quarto project. Posts with bibliographies won't have an explicit "References" heading. See `_porting-todo.md` for options.
 
+**Known issue:** Some rendered `.md` files are missing `slug` from the source `.Rmd`. Example: `content/blog/ai/2024-04-04-chat-with-llms-using-chattr/index.md`. Needs investigation and fix to ensure URLs match the original blog.
+
 ### Common setup
 
 **Frontmatter transformation:**
@@ -413,7 +415,7 @@ Some Shiny blog posts contain HTML designed for Bootstrap (the CSS framework use
 | shiny-python-1.0 | 1 |
 | conf-2023-recap-andrew-holz | 1 |
 
-**Solution:** Use a Quarto Lua filter (`content/blog/_extensions/strip-bootstrap/`) to remove these classes during rendering. See `content/blog/shiny/_metadata.yml` for usage.
+**Solution:** Use a Quarto Lua filter (`content/_extensions/strip-bootstrap/`) to remove these classes during rendering. See `content/blog/shiny/_metadata.yml` for usage.
 
 ### Watch for: shinylive code blocks
 
@@ -466,9 +468,9 @@ Simple static posts render directly with `quarto render index.qmd --to hugo-md`.
    - `author` → `people` (as list)
    - Convert site-relative links (`/page.qmd`) to absolute URLs (`https://positron.posit.co/page.html`)
    - Add `ported_from: positron`, `port_status: raw`
-3. Render: `cd content/blog/positron && quarto render <slug>/index.qmd --to hugo-md`
+3. Render: `cd content && quarto render blog/positron/<slug>/index.qmd`
 
-**Config:** `content/blog/positron/_quarto.yml` scopes the Quarto project to avoid interference from other blog projects.
+**Config:** Quarto config is at `content/_quarto.yml` (shared by all blogs). Blog-specific settings go in `_metadata.yml` files.
 
 ### Watch for: video shortcodes
 
