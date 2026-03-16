@@ -77,13 +77,20 @@
      ============================================================ */}}
 {{ $description_field := $card_settings.description_field | default "description" }}
 {{ $description := index $page.Params $description_field | strings.TrimSpace | strings.TrimSuffix "." | replaceRE `[\x{1F600}-\x{1F64F}\x{1F300}-\x{1F5FF}\x{1F680}-\x{1F6FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}]` "" }}
+{{ if and $is_person $description }}
+  {{ with $page.Params.affiliation }}
+    {{ $description = printf "%s at %s" $description . }}
+  {{ end }}
+{{ end }}
 
 {{/* ============================================================
-     AUTHOR (plain text names — no <a> tags since card is a link)
+     AUTHOR (linked in hero, plain text in card/tile/row since
+     those are already wrapped in an <a> tag)
      ============================================================ */}}
 {{ $people := "" }}
+{{ $people_link := eq $format "hero" }}
 {{ if $card_settings.people_show }}
-  {{ $people = partial "block/author.html" (dict "page" $page "link" false) }}
+  {{ $people = partial "block/author.html" (dict "page" $page "link" $people_link) }}
 {{ end }}
 
 {{/* ============================================================
@@ -156,6 +163,93 @@
 {{ $location := "" }}
 {{ if $is_event }}
   {{ $location = $page.Params.location | default "" }}
+{{ end }}
+
+{{/* ============================================================
+     HERO-SPECIFIC FIELDS
+     ============================================================ */}}
+{{ $links := slice }}
+{{ $stats := slice }}
+{{ $hero_languages := slice }}
+{{ $hero_categories := slice }}
+{{ $hero_tags := slice }}
+{{ $teams := slice }}
+{{ if eq $format "hero" }}
+
+  {{/* GitHub link — software */}}
+  {{ with $page.Params.github }}
+    {{ $links = $links | append (dict "icon" "simple-icons--github" "url" (printf "https://github.com/%s" .) "text" .) }}
+  {{ end }}
+
+  {{/* Website link — software and events */}}
+  {{ with $page.Params.website }}
+    {{ $links = $links | append (dict "icon" "boxicons--globe" "url" . "text" (replaceRE `^https?://` "" . | strings.TrimRight "/")) }}
+  {{ end }}
+
+  {{/* Social links — people (nested under .Params.social) */}}
+  {{ with $page.Params.social }}
+    {{ with .website }}
+      {{ $links = $links | append (dict "icon" "boxicons--globe" "url" . "text" (replaceRE `^https?://` "" . | strings.TrimRight "/")) }}
+    {{ end }}
+    {{ with .bluesky }}
+      {{ $links = $links | append (dict "icon" "simple-icons--bluesky" "url" (printf "https://bsky.app/profile/%s" .) "text" .) }}
+    {{ end }}
+    {{ with .github }}
+      {{ $links = $links | append (dict "icon" "simple-icons--github" "url" (printf "https://github.com/%s" .) "text" .) }}
+    {{ end }}
+    {{ with .linkedin }}
+      {{ $links = $links | append (dict "icon" "simple-icons--linkedin" "url" (printf "https://linkedin.com/in/%s" .) "text" .) }}
+    {{ end }}
+    {{ with .mastodon }}
+      {{ $links = $links | append (dict "icon" "simple-icons--mastodon" "url" . "text" (replaceRE `^https?://` "" . | strings.TrimRight "/")) }}
+    {{ end }}
+    {{ with .orcid }}
+      {{ $links = $links | append (dict "icon" "simple-icons--orcid" "url" (printf "https://orcid.org/%s" .) "text" .) }}
+    {{ end }}
+    {{ with .youtube }}
+      {{ $links = $links | append (dict "icon" "simple-icons--youtube" "url" (printf "https://youtube.com/%s" .) "text" .) }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Software stats */}}
+  {{ if $is_software }}
+    {{ with $page.Params.external.stars }}
+      {{ $stats = $stats | append (dict "icon" "boxicons--star-filled" "value" (printf "%d stars" .)) }}
+    {{ end }}
+    {{ with $page.Params.external.forks }}
+      {{ $stats = $stats | append (dict "icon" "boxicons--git-repo-forked" "value" (printf "%d forks" .)) }}
+    {{ end }}
+    {{ with $page.Params.external.license }}
+      {{ if ne . "NOASSERTION" }}
+        {{ $stats = $stats | append (dict "icon" "boxicons--file-filled" "value" .) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Team membership — people */}}
+  {{ if and $is_person (not $page.Params.people) }}
+    {{ $currentTitle := $page.Title }}
+    {{ $peopleSection := site.GetPage "/people" }}
+    {{ range $peopleSection.Pages }}
+      {{ if .Params.people }}
+        {{ if in .Params.people $currentTitle }}
+          {{ $teams = $teams | append . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Taxonomy links */}}
+  {{ range $page.GetTerms "languages" }}
+    {{ $hero_languages = $hero_languages | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+  {{ end }}
+  {{ range $page.GetTerms "categories" }}
+    {{ $hero_categories = $hero_categories | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+  {{ end }}
+  {{ range $page.GetTerms "tags" }}
+    {{ $hero_tags = $hero_tags | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+  {{ end }}
+
 {{ end }}
 
 {{/* ============================================================
@@ -316,6 +410,216 @@
     {{ end }}
   </span>
 </a>
+
+{{ else if eq $format "hero" }}
+{{/* ============================================================
+     HERO FORMAT — detail page header
+     ============================================================ */}}
+{{ $hero_layout := $card_settings.hero_layout | default "banner" }}
+
+<div id="{{ $item_id }}" class="@container flex flex-col
+            rounded-xl overflow-hidden {{ $card_settings.card_class }} {{ $card_settings.hero_class }}">
+
+  {{ if eq $hero_layout "banner" }}
+  {{/* ---- BANNER: full-width image, content below ---- */}}
+  {{ if $image }}
+  <div class="w-full h-64 md:h-96">
+    {{ partial "responsive_image_container.html" (dict
+      "image" $image
+      "alt" $page.Title
+      "class" "mx-auto h-full w-full object-cover"
+      "short"  640
+      "tall"   960
+      "grande" 1280
+    ) }}
+  </div>
+  {{ end }}
+
+  <div class="flex flex-col gap-y-4 p-6">
+    <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100">
+      {{ $title | safeHTML }}
+    </h1>
+
+    {{ with $description }}
+      <p class="text-lg text-gray-600 dark:text-gray-300">{{ . | safeHTML }}</p>
+    {{ end }}
+
+    {{/* Unified metadata list */}}
+    <div class="flex flex-col gap-y-3">
+      {{ with $people }}
+      <div class="flex items-center text-base">{{ . }}</div>
+      {{ end }}
+      {{ with $date }}
+      <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+        <span class="icon-[boxicons--calendar] w-5 h-5 flex-none text-gray-400"></span>
+        <span>{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with $location }}
+      <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+        <span class="icon-[boxicons--map] w-5 h-5 flex-none text-gray-400"></span>
+        <span>{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with $duration }}
+      <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+        <span class="icon-[boxicons--clock-filled] w-5 h-5 flex-none text-gray-400"></span>
+        <span>{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ range $links }}
+      <div class="flex items-center gap-2 text-base">
+        <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+           class="text-gray-600 dark:text-gray-300 hover:underline">{{ .text }}</a>
+      </div>
+      {{ end }}
+      {{ range $stats }}
+      <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+        <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+        <span>{{ .value }}</span>
+      </div>
+      {{ end }}
+      {{ with $hero_languages }}
+      <div class="flex items-center gap-2 text-base">
+        <span class="icon-[boxicons--code-alt] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ with $hero_categories }}
+      <div class="flex items-center gap-2 text-base">
+        <span class="icon-[boxicons--categories] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ with $hero_tags }}
+      <div class="flex items-center gap-2 text-base">
+        <span class="icon-[boxicons--tag] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+
+  {{ else }}
+  {{/* ---- PROFILE: image left, content right ---- */}}
+  <div class="flex flex-col md:flex-row">
+
+    {{/* -- Image area (same structure as card) -- */}}
+    <div class="w-full md:w-1/3 aspect-square flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+      {{ if $image }}
+        {{ partial "responsive_image_fixed.html" (dict
+          "image" $image
+          "baseWidth" 192
+          "baseHeight" 192
+          "alt" $page.Title
+          "class" (printf "mx-auto h-full %s" $card_settings.image_class)
+          "method" "fit"
+        ) }}
+      {{ end }}
+    </div>
+
+    {{/* -- Content area -- */}}
+    <div class="flex flex-col gap-y-3 flex-grow p-6">
+      <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-100">
+        {{ $title | safeHTML }}
+      </h1>
+
+      {{ with $description }}
+        <p class="text-lg text-gray-600 dark:text-gray-300">{{ . | safeHTML }}</p>
+      {{ end }}
+
+      {{/* Team membership — people */}}
+      {{ if gt (len $teams) 0 }}
+      <div class="text-base text-gray-600 dark:text-gray-300">Member of{{- range $i, $team := $teams -}}{{- if gt $i 0 -}}{{- if eq $i (sub (len $teams) 1) -}}{{- if gt (len $teams) 2 }}, and {{ else }} and {{ end -}}{{- else }}, {{ end -}}{{- else }} {{ end -}}<a href="{{ $team.RelPermalink }}" class="inline-flex items-center whitespace-nowrap hover:underline">{{- if $team.Params.image -}}{{- $teamImage := $team.Resources.Get $team.Params.image -}}{{- if $teamImage }}{{- partial "responsive_image_fixed.html" (dict "image" $teamImage "baseWidth" 24 "baseHeight" 24 "alt" $team.Title "class" "w-6 h-6 ml-1 mr-0.5 rounded inline object-cover" "method" "fit") -}}{{ end -}}{{ end -}}<span>{{ $team.Title }}</span></a>{{- end -}}</div>
+      {{ end }}
+
+      {{/* Unified metadata list */}}
+      <div class="flex flex-col gap-y-3">
+        {{ with $people }}
+        <div class="flex items-center text-base">{{ . }}</div>
+        {{ end }}
+        {{ with $date }}
+        <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+          <span class="icon-[boxicons--calendar] w-5 h-5 flex-none text-gray-400"></span>
+          <span>{{ . }}</span>
+        </div>
+        {{ end }}
+        {{ with $location }}
+        <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+          <span class="icon-[boxicons--map] w-5 h-5 flex-none text-gray-400"></span>
+          <span>{{ . }}</span>
+        </div>
+        {{ end }}
+        {{ with $duration }}
+        <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+          <span class="icon-[boxicons--clock-filled] w-5 h-5 flex-none text-gray-400"></span>
+          <span>{{ . }}</span>
+        </div>
+        {{ end }}
+        {{ range $links }}
+        <div class="flex items-center gap-2 text-base">
+          <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+             class="text-gray-600 dark:text-gray-300 hover:underline">{{ .text }}</a>
+        </div>
+        {{ end }}
+        {{ range $stats }}
+        <div class="flex items-center gap-2 text-base text-gray-600 dark:text-gray-300">
+          <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+          <span>{{ .value }}</span>
+        </div>
+        {{ end }}
+        {{ with $hero_languages }}
+        <div class="flex items-center gap-2 text-base">
+          <span class="icon-[boxicons--code-alt] w-5 h-5 flex-none text-gray-400"></span>
+          <div class="flex flex-wrap gap-1">
+            {{ range . }}
+            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+        {{ with $hero_categories }}
+        <div class="flex items-center gap-2 text-base">
+          <span class="icon-[boxicons--categories] w-5 h-5 flex-none text-gray-400"></span>
+          <div class="flex flex-wrap gap-1">
+            {{ range . }}
+            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+        {{ with $hero_tags }}
+        <div class="flex items-center gap-2 text-base">
+          <span class="icon-[boxicons--tag] w-5 h-5 flex-none text-gray-400"></span>
+          <div class="flex flex-wrap gap-1">
+            {{ range . }}
+            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+  {{ end }}
+
+</div>
 
 {{ else }}
 {{/* ============================================================
