@@ -6,17 +6,65 @@ Track link checking progress and document broken links found across ported blogs
 
 Use [lychee](https://github.com/lycheeverse/lychee) to check links in ported posts.
 
-### Against live dev server (recommended)
+### Basic usage
 
 ```bash
 # Start Hugo dev server first: hugo server
-lychee --base-url http://localhost:1313 content/blog/shiny/*/index.md
+lychee --base-url http://localhost:1313 content/blog/<blog>/*/index.md
 ```
 
-### Offline mode (limited)
+### Recommended workflow: JSON output
+
+Output to JSON for easier analysis:
 
 ```bash
-lychee --offline content/blog/shiny/*/index.md
+lychee --base-url http://localhost:1313 --format json content/blog/<blog>/*/index.md \
+  > content/blog/_lychee/<blog>.json
+```
+
+**Step 1: Fix `localhost` errors first**
+
+These are usually fixable issues in the content (malformed URLs, missing `https://`):
+
+```bash
+cat content/blog/_lychee/<blog>.json | jq -r '
+  .error_map | to_entries[] | .key as $file | .value[] |
+  select(.url | startswith("http://localhost:1313")) |
+  "\($file)\t\(.url)"'
+```
+
+Common localhost issues:
+- Missing protocol: `[link](example.com)` → `[link](https://example.com)`
+- R code as URL: `[Issue 13](options(...))` → `[Issue 13](https://github.com/.../issues/13)`
+- Relative paths that don't exist (vs valid ones like `images/foo.png`)
+
+**Step 2: Group external errors by domain**
+
+Generate a table of remaining errors grouped by domain:
+
+```bash
+cat content/blog/_lychee/<blog>.json | jq -r '
+  .error_map | to_entries[] | .key as $file | .value[] |
+  select(.url | startswith("http://localhost") | not) |
+  "\(.url)\t\($file | gsub("content/blog/<blog>/"; "") | gsub("/index.md"; ""))"
+' | sort | awk -F'\t' '
+BEGIN {
+  print "| Domain | URL | Posts | Count |"
+  print "|--------|-----|-------|-------|"
+}
+{
+  url = $1; file = $2
+  if (url in files) { files[url] = files[url] ", " file; counts[url]++ }
+  else { files[url] = file; counts[url] = 1; order[++n] = url }
+}
+END {
+  for (i = 1; i <= n; i++) {
+    url = order[i]; domain = url
+    sub(/https?:\/\//, "", domain); sub(/\/.*/, "", domain)
+    count_str = counts[url] > 1 ? counts[url] : ""
+    print "| " domain " | " url " | " files[url] " | " count_str " |"
+  }
+}' > content/blog/_lychee/<blog>-errors.md
 ```
 
 ## Interpreting results
@@ -87,7 +135,7 @@ Quarto converts site-root links to relative paths based on the output file's loc
 | plotnine | ✅ Done | |
 | tidyverse | ⬜ TODO | |
 | education | ⬜ TODO | |
-| ai | ✅ Done | Dead doc sites documented, malformed URLs need fixing |
+| ai | ✅ Done | Dead doc sites documented, internal links fixed |
 | rstudio | ⬜ TODO | |
 | positron | ✅ Done | |
 
@@ -158,13 +206,13 @@ kangjf1943, KRRLP-PL, MalteSteinCytel, oozbeker-onemagnify, jonathanmburns, ngoo
 | spark.rstudio.com | 8 | Old sparklyr docs |
 | keras.rstudio.com | 5 | Old Keras for R docs |
 
-**Malformed URLs to fix:**
+**Malformed URLs (fixed):**
 
 | Issue | Post |
 |-------|------|
-| `https:://github.com/...` (double colon) | [2020-09-30-sparklyr-1.4.0-released](ai/2020-09-30-sparklyr-1.4.0-released/index.md), [2020-12-14-sparklyr-1.5.0-released](ai/2020-12-14-sparklyr-1.5.0-released/index.md) |
-| `https://Hugging%20Face.co/...` (space in domain) | [2023-06-20-gpt2-torch](ai/2023-06-20-gpt2-torch/index.md) |
-| `https://mlverse.github.io/tohttps://...` (concatenated URLs) | [2020-10-01-torch-network-from-scratch](ai/2020-10-01-torch-network-from-scratch/index.md) |
+| `https:://github.com/...` (double colon) | 2020-09-30-sparklyr-1.4.0-released, 2020-12-14-sparklyr-1.5.0-released |
+| `https://Hugging%20Face.co/...` (space in domain) | 2023-06-20-gpt2-torch |
+| `https://mlverse.github.io/tohttps://...` (concatenated URLs) | 2020-09-29-introducing-torch-for-r |
 
 **Other dead external links (404):**
 
