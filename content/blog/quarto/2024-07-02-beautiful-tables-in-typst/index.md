@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Beautiful Tables in Typst
 description: |
   You can use HTML Tables with CSS styling in Typst via Quarto.

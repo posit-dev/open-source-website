@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Classifying physical activity from smartphone data"
 description: >
   Using Keras to train a convolutional neural network to classify physical
