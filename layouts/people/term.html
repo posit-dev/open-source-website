@@ -21,6 +21,12 @@
     {{ .Title }}
   </div>
 
+  {{ if .Content }}
+  <div data-pagefind-body class="prose dark:prose-invert max-w-none mt-8 mx-2 md:mx-0">
+    {{ .Content }}
+  </div>
+  {{ end }}
+
   <!-- People in this Team -->
   {{ with .Params.people }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
