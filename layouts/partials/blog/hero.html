@@ -26,13 +26,11 @@
     {{- $imgType := printf "%T" $heroImg -}}
     {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
       {{- /* It's a resource */ -}}
-      {{- if or (eq $heroImg.MediaType.SubType "svg") (eq $heroImg.MediaType.SubType "gif") -}}
-        {{/* SVG and GIF: serve as-is without processing */}}
+      {{- if eq $heroImg.MediaType.SubType "svg" -}}
         <img class="w-full h-full object-cover rounded-xl" src="{{ $heroImg.RelPermalink }}" alt="{{ $alt }}" />
       {{- else -}}
         {{- $respSizes := slice "640" "960" "1280" "1600" "1920" -}}
         <picture>
-          {{/* WebP disabled due to Hugo WASM memory issues
           <source type="image/webp" srcset="
             {{- range $i, $size := $respSizes -}}
               {{- if ge $heroImg.Width $size -}}
@@ -40,7 +38,6 @@
                 {{- ($heroImg.Resize (print $size "x webp photo box")).RelPermalink }} {{ $size }}w
               {{- end -}}
             {{- end -}}" sizes="100vw" />
-          */}}
           <source type="image/jpeg" srcset="
             {{- range $i, $size := $respSizes -}}
               {{- if ge $heroImg.Width $size -}}

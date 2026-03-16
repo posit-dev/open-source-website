@@ -1,4 +1,6 @@
-{{/* Simplified image rendering - responsive processing disabled due to memory issues with large image count */}}
+{{/* Responsive image rendering for markdown images
+     Blog section uses simplified rendering due to memory issues with large image count (~16k images)
+     Other sections get full responsive/WebP processing */}}
 {{- $alt := .Text -}}
 {{- $caption := .Title -}}
 
@@ -6,7 +8,9 @@
 {{- $dest = path.Join (path.Dir $dest) (path.Base $dest) -}}
 
 <div class="not-prose">
-{{- $resource := .Page.Resources.Get $dest -}}
+{{- if eq .Page.Section "blog" -}}
+  {{/* Simplified rendering for blog - no responsive processing */}}
+  {{- $resource := .Page.Resources.Get $dest -}}
   <figure>
     <img class="h-auto max-w-full rounded-lg"
       src="{{ with $resource }}{{ .RelPermalink }}{{ else }}{{ $.Destination | safeURL }}{{ end }}"
@@ -15,4 +19,44 @@
     >
   {{- with $caption -}}<figcaption class="text-sm text-center text-gray-500 dark:text-gray-300">{{ $caption | $.Page.RenderString }}</figcaption>{{- end }}
   </figure>
+{{- else -}}
+  {{/* Full responsive processing for non-blog sections */}}
+  {{- $respSizes := slice "320" "640" "960" "1280" "1600" "1920" -}}
+  {{- $hint := "photo" -}}
+  {{- $filter := "box" -}}
+  {{- if and (.Page.Resources.Get $dest) (ne (.Page.Resources.Get $dest).MediaType.SubType "svg") -}}
+    {{- $src := .Page.Resources.Get $dest -}}
+    {{- $dataSzes := "(min-width: 1024px) 100vw, 50vw" -}}
+    {{- $actualImg := $src.Resize (print "640x jpg " $filter) -}}
+    <picture>
+      <source type="image/webp" srcset="
+      {{- with $respSizes -}}
+        {{- range $i, $e := . -}}
+          {{- if ge $src.Width . -}}
+            {{- if $i }}, {{ end -}}{{- ($src.Resize (print . "x webp " $hint " " $filter) ).RelPermalink }} {{ . }}w
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}" sizes="{{ $dataSzes }}" />
+      <source type="image/jpeg" srcset="
+      {{- with $respSizes -}}
+        {{- range $i, $e := . -}}
+          {{- if ge $src.Width . -}}
+            {{- if $i }}, {{ end -}}{{- ($src.Resize (print . "x jpg " $filter) ).RelPermalink }} {{ . }}w
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}" sizes="{{ $dataSzes }}" />
+      <img class="h-auto max-w-full rounded-lg" src="{{ $actualImg.RelPermalink }}" width="{{ $src.Width }}" height="{{ $src.Height }}" alt="{{ $alt }}" title="{{ $alt }}" loading="lazy" />
+    </picture>
+    {{- with $caption -}}<p class="text-sm text-center text-gray-500 dark:text-gray-300">{{ $caption | $.Page.RenderString }}</p>{{- end }}
+  {{- else -}}
+    <figure>
+      <img class="h-auto max-w-full rounded-lg"
+        src="{{ .Destination | safeURL }}"
+        alt="{{ .Text }}" {{ with .Title }} title="{{ . }}" {{ end }}
+        loading="lazy"
+      >
+    {{- with $caption -}}<figcaption class="text-sm text-center text-gray-500 dark:text-gray-300">{{ $caption | $.Page.RenderString }}</figcaption>{{- end }}
+    </figure>
+  {{- end -}}
+{{- end -}}
 </div>
