@@ -15,7 +15,7 @@ validation. If *your* team is interested, I would love to schedule something wit
 reach out at rich@posit.co or message me on the ([Pointblank Discord](https://discord.com/invite/YH7CybCNCQ)).
 
 Workshops have been especially helpful for understanding how people use and share Pointblank's
-[validation results table](https://posit-dev.github.io/pointblank/user-guide/). For example, I learned that people like to
+[validation results table](https://posit-dev.github.io/pointblank/user-guide/index.html). For example, I learned that people like to
 email or pull up the table for stakeholders so they can walk through problem cases (it's a great
 conversation starter for getting to the heart of data quality issues).
 

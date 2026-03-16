@@ -10,7 +10,7 @@ port_status: in-progress
 
 
 The Pointblank documentation just got a major upgrade! We've completely overhauled our
-[**User Guide**](https://posit-dev.github.io/pointblank/user-guide/). Our goal was to enable readers to start fast on
+[**User Guide**](https://posit-dev.github.io/pointblank/user-guide/index.html). Our goal was to enable readers to start fast on
 validation and work through the many pieces needed in realistic situations.
 
 We realized that at the core of Pointblank is the validation plan. Its made up of rules, results,
@@ -29,12 +29,12 @@ In this post, we'll cover:
 - rounding out API coverage for cross-linking
 - surfacing advanced topics
 
-Let us walk you through the key improvements in our refreshed [**User Guide**](https://posit-dev.github.io/pointblank/user-guide/)!
+Let us walk you through the key improvements in our refreshed [**User Guide**](https://posit-dev.github.io/pointblank/user-guide/index.html)!
 
 ## Introduction: Embracing the Spiral Sequence
 
-We chose to use a spiral sequence for our [Introduction](https://posit-dev.github.io/pointblank/user-guide/) and
-*Validation Plan* section. The [Introduction](https://posit-dev.github.io/pointblank/user-guide/) quickly covers parts of
+We chose to use a spiral sequence for our [Introduction](https://posit-dev.github.io/pointblank/user-guide/index.html) and
+*Validation Plan* section. The [Introduction](https://posit-dev.github.io/pointblank/user-guide/index.html) quickly covers parts of
 validation plan, while each article of the *Validation Plan* section dives
 deeper into different aspects of defining validation rules.
 
@@ -46,7 +46,7 @@ the *Validation Plan* section in the guide, where each concept is discussed in d
 
 ## Improving Examples
 
-Examples are everywhere in the [**User Guide**](https://posit-dev.github.io/pointblank/user-guide/). We've tightened up our
+Examples are everywhere in the [**User Guide**](https://posit-dev.github.io/pointblank/user-guide/index.html). We've tightened up our
 approach to examples by:
 
 - presenting example code, output, or both, early in each section
@@ -72,7 +72,7 @@ Documentation has to balance jobs between a user guide and an API Reference:
 
 Importantly, user guides often link to the API reference so, as part of this work, we made sure that
 all individual API entries are well-documented and linked to from the guide.
-Here's an excerpt from the [**User Guide**](https://posit-dev.github.io/pointblank/user-guide/) that shows links marked:
+Here's an excerpt from the [**User Guide**](https://posit-dev.github.io/pointblank/user-guide/index.html) that shows links marked:
 
 <img src="links-in-guide.png" style="width:80.0%" />
 
@@ -80,13 +80,13 @@ Here's an excerpt from the [**User Guide**](https://posit-dev.github.io/pointbla
 
 There's a lot of potential slicing and dicing involved in validation, as well as work after
 validation (post interrogation) to make sense of the results. We added pages to the
-[**User Guide**](https://posit-dev.github.io/pointblank/user-guide/) for some core situations.
+[**User Guide**](https://posit-dev.github.io/pointblank/user-guide/index.html) for some core situations.
 In this section, I'll highlight two advanced topics we added pages for:
 
 - segmentation: splitting a column into groups, and validating each group
 - step reports: view failing cases (e.g., view rows of data that failed validation)
 
-These are marked in the [**User Guide**](https://posit-dev.github.io/pointblank/user-guide/) sidebar screenshot below:
+These are marked in the [**User Guide**](https://posit-dev.github.io/pointblank/user-guide/index.html) sidebar screenshot below:
 
 <img src="advanced-in-sidebar.png" style="width:35.0%" />
 
@@ -121,8 +121,8 @@ know we have failures, it's important to take action and discover *why* data is 
 failing cases in step reports often uncovers obvious causes behind failures.
 
 The `get_step_report()` entry is one of 50 in the API Reference. Here it is listed the API
-Reference, in the [Interrogation and Reporting section](https://posit-dev.github.io/pointblank/reference/#interrogation-and-reporting).
-Critically, it's only one of 20 entries in the [User Guide](https://posit-dev.github.io/pointblank/user-guide/), which
+Reference, in the [Interrogation and Reporting section](https://posit-dev.github.io/pointblank/reference/index.html#interrogation-and-reporting).
+Critically, it's only one of 20 entries in the [User Guide](https://posit-dev.github.io/pointblank/user-guide/index.html), which
 emphasizes its importance in validation workflows.
 
 ## Looking Forward

@@ -8,9 +8,7 @@ Now that all legacy blogs have been ported (in some form), these major items nee
 
 ### Link checking
 
-- [ ] Run comprehensive link check across all ported blogs (tidyverse, education, ai, rstudio, shiny, great-tables, pointblank, plotnine, quarto)
-- [ ] Fix or document broken external links
-- [ ] Update cross-blog links to use internal paths (see "Cross-blog links" section below)
+See `_link-checks.md` for progress tracking and broken link documentation.
 
 ### Taxonomy cleanup
 
@@ -56,25 +54,6 @@ The responsive image processing (webp conversion, multiple sizes) was disabled d
 4. Test on CI before merging
 
 **Original template:** Based on https://www.brycewray.com/posts/2023/05/better-code-image-processing-hugo-render-hook-edition/
-
-## Cross-blog links
-
-Links between legacy blogs that need updating once both posts are ported.
-
-| Post | Link | Target |
-|------|------|--------|
-| plumber2-0-2-0 | `https://shiny.posit.co/blog/posts/shiny-r-1.12/` | Shiny blog |
-| dplyr-performance | `https://tidyverse.org/blog/2026/02/dplyr-1-2-0/` | tidyverse blog (ported as dplyr-1-2-0) |
-| shiny-python-1.0 | `https://shiny.posit.co/blog/posts/shiny-python-general-availability/` | Shiny blog |
-| shiny-python-1.0 | `https://shiny.posit.co/blog/posts/shiny-express/` | Shiny blog |
-
-## Broken legacy links
-
-Posts where slug doesn't match original - investigate when porting that blog:
-
-| Post | Issue |
-|------|-------|
-| sparklyr-updates-q1-2024 | AI blog original slug is `sparklyr-updates` not `sparklyr-updates-q1-2024` |
 
 ## Draft posts (blank on legacy blog)
 
@@ -225,10 +204,6 @@ Posts using Quarto tabsets (`::: {.panel-tabset}`) don't render as tabs in Hugo.
 - Lua filter to convert Quarto tabsets to Hugo-compatible HTML
 - CSS/JS solution for tab styling
 
-## Shiny posts: broken links sweep
-
-**Status:** ✅ Complete. Updated all cross-references from `https://shiny.posit.co/blog/posts/<slug>/` to `/blog/shiny/<slug>/` in both `.md` and `.qmd` files.
-
 ## Shiny posts: `engine: markdown` added
 
 These posts needed `engine: markdown` to prevent Quarto from attempting code execution. This shouldn't normally be necessary — investigate why.
@@ -280,7 +255,7 @@ Some shiny posts have `# <<` markers at the end of code lines. These were used b
 
 ## Shiny posts: Bootstrap classes stripped
 
-A Lua filter (`content/blog/shiny/_extensions/strip-bootstrap/`) strips Bootstrap classes during rendering. This filter was also copied to `content/blog/quarto/_extensions/strip-bootstrap/` for the Quarto blog. These posts had Bootstrap-dependent HTML (buttons, icons, layout) that may need manual review:
+A Lua filter (`content/blog/_extensions/strip-bootstrap/`) strips Bootstrap classes during rendering. These posts had Bootstrap-dependent HTML (buttons, icons, layout) that may need manual review:
 
 | Post | Class count | Notes |
 |------|-------------|-------|
@@ -330,35 +305,9 @@ The original post had an iframe embedding `feature/index.html` with complex scal
 
 The `feature/` folder with the interactive HTML demo is still present if needed later. Added `'shinychat-tool-ui/feature/'` to `ignoreFiles` in `hugo.toml` to prevent Hugo from rendering it as a page.
 
-## Shiny posts: broken external links
-
-Discovered via `lychee --base http://localhost:1313 content/blog/shiny/*/index.md`
-
-**404 - Dead links:**
-| URL | Post |
-|-----|------|
-| https://www1.ncdc.noaa.gov/pub/data/normals/1981-2010/... | weather-lookup-about |
-| https://www.ncdc.noaa.gov/data-access/land-based-station-data/... | weather-lookup-about |
-| https://rstudio.github.io/bslib/articles/layouts.html | bslib-dashboards |
-| https://rstudio.github.io/shinyuieditor/articles/ui-editor-live-demo.html | shinyuieditor-out-of-alpha |
-| https://shinyconf.appsilon.com/state-of-shiny-2023/ | shiny-python-0.6.1 |
-| https://github.com/rstudio/bslib/tree/main/inst/examples/flights | bslib-dashboards |
-| https://github.com/rstudio/otel | shiny-r-1.12 |
-| https://shiny.posit.co/py/api/express.ui.layout_columns.html | responsive-shiny-layouts |
-| https://shiny.posit.co/py/docs/workflow-server.html | shiny-on-hugging-face |
-| https://shiny.posit.co/py/api/ExTooltip.html | shiny-python-0.5.0 |
-| https://shiny.posit.co/py/docs/r-quickstart.html | shiny-python-general-availability |
-| https://shiny.posit.co/r/articles/build/bookmarking-state/ | shinychat-tool-ui |
-
-**Connection errors (may be temporary or blocking bots):**
-- `https://reg.conf.posit.co/flow/posit/positconf23/...` (conf-2023 posts)
-
-**GitHub user 404s (accounts deleted/renamed):**
-- kangjf1943, KRRLP-PL, MalteSteinCytel, oozbeker-onemagnify, jonathanmburns, ngoodkindGSI, bioinformzhang, howardbaek, MartinBaumga, TopBottomTau, toxintoxin, dependabot[bot]
-
 ## great-tables: interlinks filter
 
-**Location:** `content/blog/great-tables/remove-interlinks.lua` and `_metadata.yml`
+**Location:** `content/blog/_extensions/remove-interlinks/` and `content/blog/great-tables/_metadata.yml`
 
 The great-tables blog used Quarto's interlinks feature to create backtick-style links to API docs (e.g., `` [`cols_width()`](`~great_tables.GT.cols_width`) ``). These rendered as URL-encoded links like `%60great_tables.GT.cols_width%60` in the output.
 
@@ -366,67 +315,9 @@ The great-tables blog used Quarto's interlinks feature to create backtick-style 
 
 **Note:** This only handles backtick-style interlinks. Regular reference paths (like `../../../../reference/google_font.qmd`) must be manually converted to full URLs (e.g., `https://posit-dev.github.io/great-tables/reference/google_font.html`).
 
-## great-tables: broken external links
-
-| Post | URL | Notes |
-|------|-----|-------|
-| introduction-0.4.0 | `https://docs.pola.rs/user-guide/expressions/lists/` | 404 - page may have moved |
-| polars-dot-style | `https://fastht.ml/gallery/split_view?category=visualizations&project=great_tables_tables` | 404 - FastHTML gallery link |
-
-## great-tables, pointblank, plotnine: relative links
-
-These posts have relative links to docs/examples that need fixing:
-
-**great-tables:**
-- introduction-0.2.0
-- introduction-0.13.0
-- polars-styling (links to `../../../../get-started/...`)
-- bring-your-own-df
-- polars-dot-style
-- septa-timetables
-
-**pointblank:**
-- lets-workshop-together
-- overhauled-user-guide
-
-**Pattern:** Links like `../../../../get-started/basic-styling.qmd` should become `https://posit-dev.github.io/great-tables/get-started/basic-styling.html`
-
-## Link checking for other blogs
-
-Run link checking on other ported blogs:
-- [ ] tidyverse
-- [ ] education
-- [ ] ai
-- [ ] rstudio
-- [x] great-tables
-- [x] pointblank
-- [x] plotnine
-
 ## Quarto blog: manual attention needed
 
 **`2024-07-02-beautiful-tables-in-typst`** - Has complex freeze structure with embedded examples in subdirectories rather than a main index freeze. Needs manual porting/rendering.
-
-## Quarto blog: relative links to quarto.org docs
-
-**Status:** ✅ Fixed. Converted `../docs/` and `/docs/` links to `https://quarto.org/docs/...` and changed `.qmd` extensions to `.html`. Fixes applied to both `.qmd` source files and include files (`_quarto-1.3-feature.qmd`, `_quarto-1.9-feature.qmd`, `docs/authoring/_brand-example.qmd`) so they persist through re-renders.
-
-## Quarto blog: broken external links
-
-Discovered via `lychee --base http://localhost:1313 content/blog/quarto/*/index.md`
-
-**404 - Dead links:**
-| URL | Post |
-|-----|------|
-| https://www.r-consortium.org/r-medicine-quarto-for-reproducible-medical-manuscripts | 2022-07-28-rstudio-conf-2022-quarto |
-
-**Connection errors (may be blocking bots):**
-- `https://reg.conf.posit.co/flow/posit/positconf24/...` (conf-2024 posts)
-
-**Malformed links (fixed manually):**
-- `2023-12-07-quarto-dashboards-demo` - YouTube link had incorrect format
-
-**Lychee false positives:**
-Running `lychee --base http://localhost:1313` against the `.md` files reports many image 404s (e.g., `/callouts.png`, `/2023-03-13-code-annotation/annotation.png`). These are false positives - lychee doesn't account for Hugo's `/blog/quarto/` URL prefix. The relative image paths resolve correctly when pages are rendered. Verify by checking actual URLs like `http://localhost:1313/blog/quarto/2023-03-13-code-annotation/annotation.png`.
 
 ## Quarto blog: dark-content images
 
@@ -443,7 +334,7 @@ Posts with light/dark image pairs (`.dark-content` / `.light-content` classes) h
 
 Hugo parses `{{<` even inside fenced code blocks. Fixed with a Lua filter that escapes shortcodes during `hugo-md` render.
 
-**Filter:** `content/blog/quarto/_extensions/escape-shortcodes/escape-shortcodes.lua`
+**Filter:** `content/blog/_extensions/escape-shortcodes/`
 
 Converts `{{< shortcode >}}` to `{{</* shortcode */>}}` in code blocks so Hugo displays them as literal text.
 

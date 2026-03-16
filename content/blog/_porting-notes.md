@@ -413,7 +413,7 @@ Some Shiny blog posts contain HTML designed for Bootstrap (the CSS framework use
 | shiny-python-1.0 | 1 |
 | conf-2023-recap-andrew-holz | 1 |
 
-**Solution:** Use a Quarto Lua filter (`_extensions/strip-bootstrap/strip-bootstrap.lua`) to remove these classes during rendering. See `content/blog/shiny/_quarto.yml` for usage.
+**Solution:** Use a Quarto Lua filter (`content/blog/_extensions/strip-bootstrap/`) to remove these classes during rendering. See `content/blog/shiny/_metadata.yml` for usage.
 
 ### Watch for: shinylive code blocks
 
@@ -478,46 +478,12 @@ Quarto's `{{< video URL >}}` shortcode renders as a bare URL link (e.g., `<https
 
 ## Link checking
 
-Use [lychee](https://github.com/lycheeverse/lychee) to check links in ported posts.
-
-### Running lychee
-
-**Against live dev server (recommended):**
-```bash
-# Start Hugo dev server first: hugo server
-lychee --base-url http://localhost:1313 content/blog/shiny/*/index.md
-```
-
-**Offline mode (limited):**
-```bash
-lychee --offline content/blog/shiny/*/index.md
-```
-
-### Interpreting results
-
-**False positives to ignore:**
-- **Relative image paths** (e.g., `[500] http://localhost:1313/image.png`) - lychee misresolves relative paths like `![](image.png)` to site root instead of post folder. These work correctly in Hugo.
-- **429 Too Many Requests** - GitHub rate limiting. Not broken, just throttled.
-- **403 Forbidden** - Some sites block automated requests (NOAA, academic journals).
-
-**Actual issues to fix:**
-- **404 Not Found** - Dead external links
-- **Relative paths to other site sections** - e.g., `../r/getstarted/` should be `https://shiny.posit.co/r/getstarted/`
-- **Root-relative blog links** - e.g., `../blog/posts/foo/` should be `/blog/shiny/foo/`
-- **Malformed URLs** - e.g., `../../https://` from sed replacement gone wrong
-
-### Link types to fix during porting
-
-| Pattern | Fix |
-|---------|-----|
-| `https://shiny.posit.co/blog/posts/<slug>/` | `/blog/shiny/<slug>/` |
-| `../blog/posts/<slug>/` | `/blog/shiny/<slug>/` |
-| `../r/...` or `../py/...` | `https://shiny.posit.co/r/...` or `https://shiny.posit.co/py/...` |
-| `https://connect.rstudioservices.com/...` | `https://connect.posit.it/...` |
-
-### After porting each blog
-
-Run lychee and record broken external links in `_porting-todo.md`. Some links may have been broken on the legacy blog too.
+See `_link-checks.md` for:
+- Instructions on running lychee
+- How to interpret results (false positives vs real issues)
+- Common link patterns to fix during porting
+- Progress tracking by blog
+- Documented broken external links
 
 ---
 
