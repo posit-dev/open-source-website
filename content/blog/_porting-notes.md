@@ -50,7 +50,7 @@ This preserves original folder structures and makes it easy to track porting pro
 
 ## Cross-blog links
 
-Posts may contain links to other legacy blogs (e.g., a tidyverse post linking to a Shiny blog post). These need updating to point to the new locations on this site. See "Related issues" above.
+Posts may contain links to other legacy blogs (e.g., a tidyverse post linking to a Shiny blog post). These need updating to point to the new locations on this site.
 
 ## Thumbnail and hero use the same image
 
