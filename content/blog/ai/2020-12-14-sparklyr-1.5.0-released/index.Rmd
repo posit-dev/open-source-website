@@ -512,7 +512,7 @@ We would also like to express our gratitude towards numerous bug reports and fea
 `sparklyr` from a fantastic open-source community.
 
 Finally, the author of this blog post is indebted to
-[\@javierluraschi](https:://github.com/javierluraschi),
+[\@javierluraschi](https://github.com/javierluraschi),
 [\@batpigandme](https://github.com/batpigandme),
 and [\@skeydan](https://github.com/skeydan) for their valuable editorial inputs.
 

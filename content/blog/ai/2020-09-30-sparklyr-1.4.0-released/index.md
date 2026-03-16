@@ -335,16 +335,16 @@ print(sq_desc)
 
 In chronological order, we would like to thank the following individuals for their contributions to `sparklyr` 1.4:
 
-- [@javierluraschi](https:://github.com/javierluraschi)
-- [@nealrichardson](https:://github.com/nealrichardson)
-- [@yitao-li](https:://github.com/yitao-li)
-- [@wkdavis](https:://github.com/wkdavis)
-- [@Loquats](https:://github.com/Loquats)
-- [@zero323](https:://github.com/zero323)
+- [@javierluraschi](https://github.com/javierluraschi)
+- [@nealrichardson](https://github.com/nealrichardson)
+- [@yitao-li](https://github.com/yitao-li)
+- [@wkdavis](https://github.com/wkdavis)
+- [@Loquats](https://github.com/Loquats)
+- [@zero323](https://github.com/zero323)
 
-We also appreciate bug reports, feature requests, and valuable other feedback about `sparklyr` from our awesome open-source community (e.g., the weighted sampling feature in `sparklyr` 1.4 was largely motivated by this [Github issue](https://github.com/sparklyr/sparklyr/issues/2592) filed by [@ajing](https://github.com/ajing), and some `dplyr`-related bug fixes in this release were initiated in [#2648](https://github.com/sparklyr/sparklyr/issues/2648) and completed with this [pull request](https://github.com/sparklyr/sparklyr/pull/2651) by [@wkdavis](https:://github.com/wkdavis)).
+We also appreciate bug reports, feature requests, and valuable other feedback about `sparklyr` from our awesome open-source community (e.g., the weighted sampling feature in `sparklyr` 1.4 was largely motivated by this [Github issue](https://github.com/sparklyr/sparklyr/issues/2592) filed by [@ajing](https://github.com/ajing), and some `dplyr`-related bug fixes in this release were initiated in [#2648](https://github.com/sparklyr/sparklyr/issues/2648) and completed with this [pull request](https://github.com/sparklyr/sparklyr/pull/2651) by [@wkdavis](https://github.com/wkdavis)).
 
-Last but not least, the author of this blog post is extremely grateful for fantastic editorial suggestions from [@javierluraschi](https:://github.com/javierluraschi), [@batpigandme](https://github.com/batpigandme), and [@skeydan](https://github.com/skeydan).
+Last but not least, the author of this blog post is extremely grateful for fantastic editorial suggestions from [@javierluraschi](https://github.com/javierluraschi), [@batpigandme](https://github.com/batpigandme), and [@skeydan](https://github.com/skeydan).
 
 If you wish to learn more about `sparklyr`, we recommend checking out [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and also some of the previous release posts such as [sparklyr 1.3](https://blog.rstudio.com/2020/07/16/sparklyr-1-3/) and [sparklyr 1.2](https://blogs.rstudio.com/ai/posts/2020-04-21-sparklyr-1.2.0-released/).
 

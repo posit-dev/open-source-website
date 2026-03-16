@@ -29,9 +29,9 @@ The code I'm going to present is found in the [`minhub`](https://github.com/mlve
 
 > *minhub* is a collection of minimal implementations of deep learning models, inspired by [minGPT](https://github.com/karpathy/minGPT/blob/master/mingpt/model.py). All models are designed to be self-contained, single-file, and devoid of external dependencies, making them easy to copy and integrate into your own projects.
 
-Evidently, this makes them excellent learning material; but that is not all. Models also come with the option to load pre-trained weights from Hugging Face's [model hub](https://Hugging Face.co/models). And if that weren't enormously convenient already, you don't have to worry about how to get tokenization right: Just download the matching tokenizer from Hugging Face, as well. I'll show how this works in the [final section](#end-to-end-usage-using-pre-trained-weights) of this post. As noted in the `minhub` README, these facilities are provided by packages [`hfhub`](https://github.com/mlverse/hfhub) and [`tok`](https://github.com/mlverse/tok).
+Evidently, this makes them excellent learning material; but that is not all. Models also come with the option to load pre-trained weights from Hugging Face's [model hub](https://huggingface.co/models). And if that weren't enormously convenient already, you don't have to worry about how to get tokenization right: Just download the matching tokenizer from Hugging Face, as well. I'll show how this works in the [final section](#end-to-end-usage-using-pre-trained-weights) of this post. As noted in the `minhub` README, these facilities are provided by packages [`hfhub`](https://github.com/mlverse/hfhub) and [`tok`](https://github.com/mlverse/tok).
 
-As realized in `minhub`, [gpt2.R](https://github.com/mlverse/minhub/blob/main/R/gpt2.R) is, mostly, a port of Karpathy's [MinGPT](https://github.com/karpathy/minGPT/blob/master/mingpt/model.py). Hugging Face's (more sophisticated) [implementation](https://github.com/Hugging Face/transformers/blob/v4.29.1/src/transformers/models/gpt2/modeling_gpt2.py) has also been consulted. For a Python code walk-through, see <https://amaarora.github.io/posts/2020-02-18-annotatedGPT2.html>. This text also consolidates links to blog posts and learning materials on language modeling with deep learning that have become "classics" in the short time since they were written.
+As realized in `minhub`, [gpt2.R](https://github.com/mlverse/minhub/blob/main/R/gpt2.R) is, mostly, a port of Karpathy's [MinGPT](https://github.com/karpathy/minGPT/blob/master/mingpt/model.py). Hugging Face's (more sophisticated) [implementation](https://github.com/huggingface/transformers/blob/v4.29.1/src/transformers/models/gpt2/modeling_gpt2.py) has also been consulted. For a Python code walk-through, see <https://amaarora.github.io/posts/2020-02-18-annotatedGPT2.html>. This text also consolidates links to blog posts and learning materials on language modeling with deep learning that have become "classics" in the short time since they were written.
 
 ## A minimal GPT-2
 
@@ -266,7 +266,7 @@ It's unlikely that many users will want to train GPT-2 from scratch. Let's see, 
 
 #### Create model, load weights, get tokenizer
 
-The Hugging Face [model hub](https://Hugging Face.co/models) lets you access (and download) all required files ([weights](https://Hugging Face.co/gpt2/blob/main/model.safetensors) and [tokenizer](https://Hugging Face.co/gpt2/blob/main/tokenizer.json)) directly from the [GPT-2 page](https://Hugging Face.co/gpt2/tree/main). All files are versioned; we use the most recent version.
+The Hugging Face [model hub](https://huggingface.co/models) lets you access (and download) all required files ([weights](https://huggingface.co/gpt2/blob/main/model.safetensors) and [tokenizer](https://huggingface.co/gpt2/blob/main/tokenizer.json)) directly from the [GPT-2 page](https://huggingface.co/gpt2/tree/main). All files are versioned; we use the most recent version.
 
 ```{r}
  identifier <- "gpt2"

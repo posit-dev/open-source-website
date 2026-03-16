@@ -498,7 +498,7 @@ Note three important pieces:
 3.  **The nanoplot** on the right shows a tiny bargraph for monthly sales over the past year. This makes
     it easy to spot trends, and can be hovered over to get exact values.
 
-Critically, the code for this table used the DataFrame library [Polars](https://pola.rs/), which makes it really [easy to select rows and columns for styling](../../blog/great-tables/polars-styling/).
+Critically, the code for this table used the DataFrame library [Polars](https://pola.rs/), which makes it really [easy to select rows and columns for styling](../../../blog/great-tables/polars-styling/).
 
 ## What's next?
 
@@ -528,7 +528,7 @@ We covered the following table topics:
 Check out these resources to learn more about the wild and beautiful life of display tables:
 
 - [Great Tables example gallery](https://posit-dev.github.io/great-tables/examples/)
-- [The Design Philosophy of Great Tables (blog post)](../../blog/great-tables/design-philosophy/)
+- [The Design Philosophy of Great Tables (blog post)](../../../blog/great-tables/design-philosophy/)
 - [20 Minute Table Tutorial by Albert Rapp](https://youtu.be/ESyWcOFuMQc?si=1_bBRZEKENFKVNpB)
 - [PyCon talk: Making Beautiful, Publication Quality Tables is Possible in 2024](https://youtu.be/08yLWPpFdo4?si=vBK9h-ObXNKp9tHH)
 

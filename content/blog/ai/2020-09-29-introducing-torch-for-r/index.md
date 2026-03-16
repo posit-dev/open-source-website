@@ -375,7 +375,7 @@ That's it for our first `torch` example. Where to from here?
 
 To learn more, check out our vignettes on the [`torch` website](https://mlverse.github.io/torch). To begin, you may want to check out these in particular:
 
-- "Getting started" series: Build a simple neural network from scratch, starting from [low-level tensor manipulation](https://mlverse.github.io/tohttps://mlverse.github.io/torch/articles/getting-started/tensors.html) and gradually adding in higher-level features like [automatic differentiation](https://mlverse.github.io/torch/articles/getting-started/tensors-and-autograd.html) and [network modules](https://mlverse.github.io/torch/articles/getting-started/nn.html).
+- "Getting started" series: Build a simple neural network from scratch, starting from [low-level tensor manipulation](https://mlverse.github.io/torch/articles/getting-started/tensors.html) and gradually adding in higher-level features like [automatic differentiation](https://mlverse.github.io/torch/articles/getting-started/tensors-and-autograd.html) and [network modules](https://mlverse.github.io/torch/articles/getting-started/nn.html).
 - More on tensors: [Tensor creation](https://mlverse.github.io/torch/articles/tensor-creation.html) and [indexing](https://mlverse.github.io/torch/articles/indexing.html)
 - Backpropagation in `torch`: [autograd](https://mlverse.github.io/torch/articles/using-autograd.html)
 
