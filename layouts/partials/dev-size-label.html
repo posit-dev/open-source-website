@@ -1,0 +1,27 @@
+{{/* Dev-only container size indicator.
+     Parameters:
+       class   — positioning classes (e.g. "top-2 left-2")
+       sizes   — "full" (7 breakpoints) or "compact" (4 breakpoints)
+*/}}
+{{ if ne hugo.Environment "production" }}
+  {{ $class := .class | default "top-2 left-2" }}
+  {{ $sizes := .sizes | default "full" }}
+  <span class="absolute z-10 text-xs font-semibold uppercase tracking-wide
+              px-2 py-0.5 rounded-full
+              bg-red-100 text-red-700 {{ $class }}">
+    {{ if eq $sizes "compact" }}
+      <span class="hidden @max-tall:inline">short</span>
+      <span class="hidden @tall:@max-grande:inline">tall</span>
+      <span class="hidden @grande:@max-venti:inline">grande</span>
+      <span class="hidden @venti:inline">venti</span>
+    {{ else }}
+      <span class="hidden @max-nip:inline">sip</span>
+      <span class="hidden @nip:@max-short:inline">nip</span>
+      <span class="hidden @short:@max-tall:inline">short</span>
+      <span class="hidden @tall:@max-grande:inline">tall</span>
+      <span class="hidden @grande:@max-venti:inline">grande</span>
+      <span class="hidden @venti:@max-trenta:inline">venti</span>
+      <span class="hidden @trenta:inline">trenta</span>
+    {{ end }}
+  </span>
+{{ end }}

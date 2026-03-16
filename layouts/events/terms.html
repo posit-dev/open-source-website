@@ -49,7 +49,7 @@
       {{ partial "heading.html" (dict "level" 2 "text" "Current Events" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200") }}
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {{ range $currentEvents }}
-          {{ partial "item.html" (dict "page" . "hide-badge" "true") }}
+          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
         {{ end }}
       </div>
     </div>
@@ -61,7 +61,7 @@
       {{ partial "heading.html" (dict "level" 2 "text" "Upcoming Events" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200") }}
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {{ range $upcomingEvents.ByParam "start_date" }}
-          {{ partial "item.html" (dict "page" . "hide-badge" "true") }}
+          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
         {{ end }}
       </div>
     </div>
@@ -73,7 +73,7 @@
       {{ partial "heading.html" (dict "level" 2 "text" "Past Events" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200") }}
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {{ range ($pastEvents.ByParam "start_date").Reverse }}
-          {{ partial "item.html" (dict "page" . "hide-badge" "true") }}
+          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
         {{ end }}
       </div>
     </div>
