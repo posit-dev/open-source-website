@@ -11,13 +11,9 @@ At Posit, we’re committed to advancing Python as a powerful language for data 
 
 ## Featured Python projects
 
-These tools span the data science workflow, from interactive applications to reproducible publishing to AI-powered chat interfaces.
+Our most popular Python tools right now, ranked by community adoption and GitHub stars.
 
-{{< insert-items >}}
-- software/shiny
-- software/quarto
-- software/chatlas
-{{< /insert-items>}}
+{{< query-items path="/software/.*" filter=`{"and": [{"contains_any": [{"var": "languages"}, ["Python"]]}, {"!=": [{"var": "title"}, "positron"]}]}` sort-by="stars" limit="5" cols="5" format="card" >}}
 
 <br>
 <br>
@@ -47,11 +43,12 @@ We bring proven data science patterns to the Python ecosystem. If you’re a Pyt
 ---
 
 {{< insert-items cols="2" format="tile" hide-badge=true >}}
-- software/plotnine
-- software/pointblank
-- software/great-tables
-- software/gt-extras
+- software/querychat
+- software/chatlas
+- software/shinychat
 - software/orbital
+- software/gt-extras
+- software/brand-yml
 {{< /insert-items>}}
 
 {{< /columns >}}

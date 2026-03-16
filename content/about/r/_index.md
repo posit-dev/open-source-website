@@ -24,8 +24,8 @@ We recommend starting with the tidyverse, a collection of packages designed for 
 - software/dplyr
 - software/tidyr
 - software/purrr
-- software/stringr
-- software/lubridate
+- software/readr
+- software/tidyverse
 {{< /insert-items>}}
 
 {{< /columns >}}
@@ -39,15 +39,17 @@ We recommend starting with the tidyverse, a collection of packages designed for 
 
 ### Deepen your expertise
 
-Already comfortable with dplyr and ggplot2? Take your work to the next level:
+Already comfortable with dplyr and ggplot2? Take your work to the next level.
 
 ---
 
 {{< insert-items cols="2" format="tile" hide-badge=true >}}
-- software/tidymodels
 - software/shiny
 - software/quarto
+- software/rvest
 - software/gt
+- software/tidymodels
+- software/plumber
 {{< /insert-items>}}
 
 {{< /columns >}}
