@@ -16,29 +16,12 @@
   {{ end }}
   {{ end }}
 
-  {{- /* Hero image (unless nohero is true) */ -}}
+  {{- /* Hero (unless nohero is true) */ -}}
   {{- if not .Params.nohero -}}
-  {{ partial "blog/hero.html" . }}
+  {{ partial "item.html" (dict "page" . "format" "hero") }}
   {{- end -}}
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    {{- /* Article header - Full width */ -}}
-    <div class="flex flex-col gap-y-4 mt-8 lg:pl-24">
-      {{- /* Meta information */ -}}
-      <div class="flex flex-row gap-x-4 items-center flex-wrap">
-        {{ partial "blog/time.html" . }}
-        {{ partial "blog/taxonomies.html" . }}
-      </div>
-
-      <h1 class="text-4xl lg:text-5xl font-semibold text-gray-800 dark:text-gray-100">
-        {{ .Title | .RenderString }}
-      </h1>
-
-      <div class="mt-3">
-        {{ partial "block/author.html" . }}
-      </div>
-    </div>
-
     {{- /* Two-column layout for content and TOC */ -}}
     <div class="flex flex-col lg:flex-row gap-16 lg:pl-24 mt-8">
       {{- /* Main content column */ -}}

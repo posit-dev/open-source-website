@@ -10,6 +10,7 @@
   - image:   Hugo resource object (required)
   - alt:     Alt text (required)
   - class:   CSS classes for each <img> element (optional)
+  - caption: Optional caption text; when set, output is wrapped in <figure>/<figcaption>
   - short:   1x pixel width for containers < @tall  (160px)  (optional, default 160)
   - tall:    1x pixel width for @tall–@grande  (160–320px)   (optional, default 320)
   - grande:  1x pixel width for @grande (320–640px)   (optional, default 640)
@@ -17,11 +18,13 @@
 {{ $image := .image }}
 {{ $alt := .alt }}
 {{ $class := .class }}
+{{ $caption := .caption }}
 {{ $wShort  := default 160 .short }}
 {{ $wTall   := default 320 .tall }}
 {{ $wGrande := default 640 .grande }}
 
 {{ if $image }}
+  {{ if $caption }}<figure>{{ end }}
   {{ if eq $image.MediaType.SubType "svg" }}
     <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
   {{ else }}
@@ -65,5 +68,9 @@
           loading="lazy" />
       </picture>
     {{ end }}
+  {{ end }}
+  {{ if $caption }}
+    <figcaption class="text-xs text-gray-500 dark:text-gray-400 mt-2">{{ $caption | safeHTML }}</figcaption>
+  </figure>
   {{ end }}
 {{ end }}
