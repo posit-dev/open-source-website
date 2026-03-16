@@ -300,7 +300,7 @@ Shiny Express now has support for using Shiny modules, and you can even create S
 :::
 
 
-We’re also happy to announce [the release of shinyswatch v0.7.0](/blog/posts/shinyswatch-0.7.0/index.qmd). shinyswatch brings Bootswatch themes to Shiny for Python, allowing you to customize the appearance of your Shiny apps with a variety of themes.
+We’re also happy to announce [the release of shinyswatch v0.7.0](/blog/shiny/shinyswatch-0.7.0/index.qmd). shinyswatch brings Bootswatch themes to Shiny for Python, allowing you to customize the appearance of your Shiny apps with a variety of themes.
 
 :::{.pt-2 .pb-1}
 

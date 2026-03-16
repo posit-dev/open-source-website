@@ -52,7 +52,7 @@ We're thrilled to announce the release of Shiny v1.12! This release brings a pow
 
 ## What is Shiny?
 
-If you're new to Shiny, welcome! [Shiny](/r/) is an R package that makes it easy to build interactive web applications directly from R. You don't need to be a web developer—if you can write R code, you can create beautiful, interactive dashboards, data explorers, and analytical tools. Shiny handles all the web programming complexity behind the scenes, letting you focus on what you do best: working with data and building analyses.
+If you're new to Shiny, welcome! [Shiny](https://shiny.posit.co/r/) is an R package that makes it easy to build interactive web applications directly from R. You don't need to be a web developer—if you can write R code, you can create beautiful, interactive dashboards, data explorers, and analytical tools. Shiny handles all the web programming complexity behind the scenes, letting you focus on what you do best: working with data and building analyses.
 
 Since its launch in 2012, Shiny has become the go-to framework for creating data-driven web applications in R, powering everything from internal company dashboards to public-facing data visualization tools. With this latest release, we're making it easier than ever to understand what's happening inside your Shiny apps, especially when they're deployed in production environments.
 
@@ -296,7 +296,7 @@ Whether you're developing apps locally or managing production deployments, OpenT
 
 We're excited to see how the community uses this powerful new capability. Try it out, and let us know what you think!
 
-While OpenTelemetry support is the star of this release, Shiny v1.12 includes several other nice improvements. For a complete list of changes, check out the NEWS entries for [Shiny v1.12.0](/r/reference/shiny/1.12.0/upgrade.html) and [Shiny v1.12.1](/r/reference/shiny/1.12.1/upgrade.html).
+While OpenTelemetry support is the star of this release, Shiny v1.12 includes several other nice improvements. For a complete list of changes, check out the NEWS entries for [Shiny v1.12.0](https://shiny.posit.co/r/reference/shiny/1.12.0/upgrade.html) and [Shiny v1.12.1](https://shiny.posit.co/r/reference/shiny/1.12.1/upgrade.html).
 
 ## Learn more
 

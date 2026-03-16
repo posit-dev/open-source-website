@@ -41,7 +41,7 @@ and edit it—right in the browser,
 without the need to create or host your own Shiny app.
 This makes it easy to experiment and see the results! 
 
-Here is an example of the Value Box preview and code. Use the tabs to switch between the new [Shiny Express syntax](/blog/posts/shiny-express/) and the original Shiny Core syntax.
+Here is an example of the Value Box preview and code. Use the tabs to switch between the new [Shiny Express syntax](/blog/shiny/shiny-express/) and the original Shiny Core syntax.
 
 :::{.column-page .py-4}
 
