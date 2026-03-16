@@ -59,7 +59,7 @@ You can find the basic package documentation and vignettes at
 [this site](https://kbodwin.github.io/flair/index.html). Today, though, I want to take the time to show you a few of my favorite examples of flair in action, to give you an idea of how it might be useful in your classroom or presentation.
 
 These examples all use the `baby_names` dataset from 
-[https://www.kaggle.com/kaggle/us-baby-names](https://www.kaggle.com/kaggle/us-baby-names), which contains counts of babies born with each given name, in each state, since the 1800s. We'll restrict our data only to babies born in California with the first name "Kelly". You can download [this data](kellys_ca.txt) to follow along.
+[https://www.kaggle.com/kaggle/us-baby-names](https://www.kaggle.com/kaggle/us-baby-names), which contains counts of babies born with each given name, in each state, since the 1800s. We'll restrict our data only to babies born in California with the first name "Kelly". You can download [this data](./kellys_ca.txt) to follow along.
 
 
 

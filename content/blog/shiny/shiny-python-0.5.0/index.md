@@ -73,7 +73,7 @@ These theme changes will be available to Shiny for R as well, via a new [bslib](
 
 ## Data table filtering
 
-In case you missed it, [last month we introduced](../shiny-python-0.4.0/) an interactive data table output that's designed to easily scale to tens of thousands of rows. This month, we've added the ability to let viewers filter the data table by column.
+In case you missed it, [last month we introduced](/blog/shiny/shiny-python-0.4.0/) an interactive data table output that's designed to easily scale to tens of thousands of rows. This month, we've added the ability to let viewers filter the data table by column.
 
 ![Filtering a data table](data-grid-filter.mp4)
 

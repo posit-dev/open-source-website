@@ -37,7 +37,7 @@ This release includes a number of new features that we're excited to share with 
 Some of these changes may require you to update your existing code, so please read on to learn more!
 
 Prior to shinyswatch v0.7.0, the Shiny themes provided by shinyswatch were fixed and could not be customized.
-With this release, we're taking advantage of new theming features added in [Shiny v1.0](../shiny-python-1.0/index.qmd) to allow you to customize the shinyswatch themes!
+With this release, we're taking advantage of new theming features added in [Shiny v1.0](/blog/shiny/shiny-python-1.0/) to allow you to customize the shinyswatch themes!
 
 This change, however, necessitated a few small breaking changes in shinyswatch that we'll cover first.
 

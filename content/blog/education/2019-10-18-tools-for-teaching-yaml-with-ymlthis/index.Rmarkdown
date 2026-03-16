@@ -45,7 +45,7 @@ yml() %>%
   yml_latex_opts(fontsize = "12pt")
 ```
 
-By default, this simply prints to your console. (You can also write it to files or place it on your clipboard; see the [vignette introducing ymlthis](http://ymlthis.r-lib.org/articles/introduction-to-ymlthis.html)). ymlthis includes a function, `asis_yaml_output()`, that will take the result of `yml_*()` functions (which all return objects of class `yml`) and turns them into knitr YAML chunks. YAML chunks display the output as proper YAML (not R output, as above) with correct syntax highlighting. Since ymlthis produces safe, correct YAML, you won't have to double-guess your teaching materials. For example, [Alison Hill](/author/alison/) uses it [in her recent workshop, R Markdown for Medicine](https://github.com/rstudio-education/rmd4medicine/blob/master/static/slides/01-rmd-anatomy.Rmd#L412-L422).
+By default, this simply prints to your console. (You can also write it to files or place it on your clipboard; see the [vignette introducing ymlthis](http://ymlthis.r-lib.org/articles/introduction-to-ymlthis.html)). ymlthis includes a function, `asis_yaml_output()`, that will take the result of `yml_*()` functions (which all return objects of class `yml`) and turns them into knitr YAML chunks. YAML chunks display the output as proper YAML (not R output, as above) with correct syntax highlighting. Since ymlthis produces safe, correct YAML, you won't have to double-guess your teaching materials. For example, [Alison Hill](https://education.rstudio.com/author/alison/) uses it [in her recent workshop, R Markdown for Medicine](https://github.com/rstudio-education/rmd4medicine/blob/master/static/slides/01-rmd-anatomy.Rmd#L412-L422).
 
 ```{r}
 last_yml() %>% # use the most recent `yml` object

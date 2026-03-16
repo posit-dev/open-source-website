@@ -31,7 +31,7 @@ In this blog post I’ll share a run down of my experience. If you’re consider
 
 ## I started writing a book.
 
-I worked on a project with [Alison Hill](/author/alison/) called “rstudio4edu”, a bookdown book for educators that bundled tutorials and practical advice about how to wrangle RStudio’s tools (e.g. R Markdown, packages, templates, etc.) to make life in the classroom (virtual or physical) easier.
+I worked on a project with [Alison Hill](https://education.rstudio.com/author/alison/) called “rstudio4edu”, a bookdown book for educators that bundled tutorials and practical advice about how to wrangle RStudio’s tools (e.g. R Markdown, packages, templates, etc.) to make life in the classroom (virtual or physical) easier.
 
 ```{r, out.width="600px", fig.align = 'center', echo = FALSE}
 knitr::include_graphics("book.jpg")

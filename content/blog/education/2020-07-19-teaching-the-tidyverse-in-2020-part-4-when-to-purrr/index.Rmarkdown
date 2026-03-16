@@ -265,7 +265,7 @@ I think I can summarise this post on "when to purrr?" in four bullet points:
 
 That's the end of the "Teaching the Tidyverse in 2020" series, thank you for sticking with me! Over the four posts in the series we talked a lot about tooling. Before we wrap things up I also want to give a list (in no particular order) of resources that can enhance and supplement your teaching materials:
 
--   [Illustrations os statistical topics and R packages](Allison%20Horst's "Allison Horst's illustrations os statistical topics and R packages") by Allison Horst
+-   [Illustrations of statistical topics and R packages](https://github.com/allisonhorst/stats-illustrations "Allison Horst's illustrations of statistical topics and R packages") by Allison Horst
 -   [Animations of tidyverse verbs using R, the tidyverse, and gganimate](https://www.garrickadenbuie.com/project/tidyexplain/ "Garrick Aden-Buie's animations of tidyverse verbs") by Garrick Aden-Buie
 -   [\#TwoFunctionsMostDays](https://twitter.com/search?q=%23TwoFunctionsMostDays%20from%3Asharlagelfand&src=recent_search_click&f=live "Two functions most days by Sharla Gelfand") by Sharla Gelfand (not actively updated, but lots of gems nonetheless!)
 -   [TidyTuesday](https://github.com/rfordatascience/tidytuesday "Tidy Tuesday by the R for Data Science Community") by the R for Data Science Community

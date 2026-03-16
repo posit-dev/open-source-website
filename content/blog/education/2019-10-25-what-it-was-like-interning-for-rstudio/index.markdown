@@ -128,5 +128,5 @@ and with a quick lightning talk about the project—I hope to see you there.
 [conf]: https://rstudio.com/conference/
 [ds4se]: https://ds4se.tech/
 [original]: https://medium.com/bits-and-behavior/what-it-was-like-interning-for-rstudio-ca0193e64bf5
-[rochester]: [https://www.nytimes.com/2017/09/15/nyregion/rochester-university-sexual-harassment.html
+[rochester]: https://www.nytimes.com/2017/09/15/nyregion/rochester-university-sexual-harassment.html
 [video-needs]: https://www.microsoft.com/en-us/research/uploads/prod/2019/08/Video_Calling_Challenges_for_Autism_camera-ready.pdf

@@ -76,7 +76,7 @@ I cannot say that this necessarily adds to student learning, but it sure draws s
 
 The important thing to note here is that I don't recommend bringing up the [non-core packages](https://www.tidyverse.org/packages/), i.e. those installed with the tidyverse, but not loaded along with it. 
 Regardless of the level at which you're teaching, chances are you won't be using *all* of those packages in a single course. 
-I recommend introducing other packages used in your course (whether they are a part of the tidyverse or not) as they become relevant to the topic you're covering, and simply highlight that the packages from the wider tidyverse share the design philosophy, grammar, and data structures as the core packages, e.g. the [rvest](rvest.tidyverse.org) package for web scraping plays nicely with pipes.
+I recommend introducing other packages used in your course (whether they are a part of the tidyverse or not) as they become relevant to the topic you're covering, and simply highlight that the packages from the wider tidyverse share the design philosophy, grammar, and data structures as the core packages, e.g. the [rvest](https://rvest.tidyverse.org) package for web scraping plays nicely with pipes.
 
 ## Use `library(tidyverse)`
 

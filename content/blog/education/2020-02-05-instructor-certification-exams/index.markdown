@@ -125,7 +125,7 @@ Please answer the following questions:
 
 ### Question 2
 
-A student has sent you the file [`rmd-country-profile.Rmd`](/blog/2020-01-20-instructor-certification-exams/rmd-country-profile.Rmd), which is an R Markdown document analyzing the data in [`at_health_facilities.csv`](./at_health_facilities.csv) for Bangladesh. They could not knit the file, and are providing you with the raw `.Rmd` file instead of a rendered file.
+A student has sent you the file [`rmd-country-profile.Rmd`](https://education.rstudio.com/blog/2020/01/instructor-certification-exams/rmd-country-profile.Rmd), which is an R Markdown document analyzing the data in [`at_health_facilities.csv`](./at_health_facilities.csv) for Bangladesh. They could not knit the file, and are providing you with the raw `.Rmd` file instead of a rendered file.
 
 1.  Go through the file, fixing things that are preventing it from knitting cleanly.
 2.  Change the two lines of bold text to H2-level headers to organize the document, and add a table of contents.

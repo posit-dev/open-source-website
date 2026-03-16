@@ -40,7 +40,7 @@ From the first discussions of this project we had a few non-negotiables. The con
 2. be plain-text
 3. have videos that were _actually_ updateable
 
-We wanted this content to be as accessible as possible. Chromebooks are available at most libraries and are _way_ more affordable than typical laptops. Jeff carried out a [proof of concept experiment](https://simplystatistics.org/2017/08/29/data-science-on-a-chromebook/), working exclusively on a Chromebook for months to ensure that doing data science is possible on a Chromebook. With positive results, we were committed. So committed in fact, we initially named the program Chromebook Data Science, which was later changed to Cloud-Based Data Science [^2]. Regardless, it was settled: anyone with an Internet connection would be able to complete this program.
+We wanted this content to be as accessible as possible. Chromebooks are available at most libraries and are _way_ more affordable than typical laptops. Jeff carried out a [proof of concept experiment](https://simplystatistics.org/posts/2017-08-29-data-science-on-a-chromebook/), working exclusively on a Chromebook for months to ensure that doing data science is possible on a Chromebook. With positive results, we were committed. So committed in fact, we initially named the program Chromebook Data Science, which was later changed to Cloud-Based Data Science [^2]. Regardless, it was settled: anyone with an Internet connection would be able to complete this program.
 
 [^2]: We're not marketers. We didn't really consider the fact that Chromebook Data Science makes it sound like you _need_ a Chromebook, not just that it's _possible_ to complete a Chromebook. This probably should have been more obvious to us.
 

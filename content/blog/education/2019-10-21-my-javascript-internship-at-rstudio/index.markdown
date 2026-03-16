@@ -25,7 +25,7 @@ But programming was only a byproduct of my Master's work and I began to realize 
 
 ![](img1.png)
 
-Enter the [TidyBlocks](tidyblocks.tech) project. I remember in my interview telling [Greg Wilson](/author/greg) my primary goal for the summer: to know more about JavaScript. When applying, I felt comfortable with as much JavaScript as you'd find in the first chapter of any book: arrays, lists, strings, and basic operations. I also had created some [d3.js](https://d3js.org/) visualizations by Frankenstein-ing open source code snippets together. I was reading a lot about coding but hadn't written much. I certainly never started a project from nothing.
+Enter the [TidyBlocks](https://tidyblocks.tech) project. I remember in my interview telling [Greg Wilson](https://education.rstudio.com/author/greg) my primary goal for the summer: to know more about JavaScript. When applying, I felt comfortable with as much JavaScript as you'd find in the first chapter of any book: arrays, lists, strings, and basic operations. I also had created some [d3.js](https://d3js.org/) visualizations by Frankenstein-ing open source code snippets together. I was reading a lot about coding but hadn't written much. I certainly never started a project from nothing.
 
 ![](img2.png)
 

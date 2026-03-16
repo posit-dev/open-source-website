@@ -28,7 +28,7 @@ port_status: in-progress
 
 We were thrilled to deliver our workshop, “My Organization’s First R Package,” at `rstudio::conf(2020L)`. Packages are the [fundamental unit of shareable code in R](https://r-pkgs.org/), and the modern ecosystem for developing and sharing packages is efficient and user-friendly. While many R packages are distributed through CRAN, they are also useful for sharing code within your organization, [organizing](https://github.com/benmarwick/rrtools) [analysis](https://zenartofrpkgs.netlify.app) [projects](https://emilyriederer.netlify.app/post/rmarkdown-driven-development/), and [deploying data science products](https://thinkr-open.github.io/golem/).
 
-Many great resources exist for learning R package development, including the [R Packages book](https://r-pkgs.org/) and workshops like [Building Tidy Tools](blog/2020/02/conf20-tidy-tools/). Our workshop was unique, however, in that it focused on developing R packages for use within your organization---whether you’re a data science team, an academic research lab, or a lone R user in a sea of [Excel users](/blog/2020/02/conf20-r-excel/). We taught participants how to use devtools, usethis, and other useful package development tools to develop and share R packages for internal use. We made R packages for two fictional organizations, AVALANCHE and Intendo, to learn best practices in R development and useful tricks for internal packages. 
+Many great resources exist for learning R package development, including the [R Packages book](https://r-pkgs.org/) and workshops like [Building Tidy Tools](/blog/education/conf20-tidy-tools/). Our workshop was unique, however, in that it focused on developing R packages for use within your organization---whether you’re a data science team, an academic research lab, or a lone R user in a sea of [Excel users](/blog/education/conf20-r-excel/). We taught participants how to use devtools, usethis, and other useful package development tools to develop and share R packages for internal use. We made R packages for two fictional organizations, AVALANCHE and Intendo, to learn best practices in R development and useful tricks for internal packages. 
 
 ## Day 1
 
@@ -77,5 +77,5 @@ We had a great time interacting with the learners during the two days of the wor
 Learners told us during and after the workshop that they got a lot out of it, and working with this group of enthusiastic useRs was an excellent experience for us, too. We wanted to empower everyone in attendance to be able to create useful R packages. With these new R skills, both they and the organizations they represent will invariably be more successful.
 
 <div class="hline-top">
-<i class="fas fa-binoculars"></i>&nbsp;&nbsp;&nbsp;<a href='/blog/2020/02/conf2020-workshops/'><em>Check out materials from the 18 other rstudio::conf(2020) workshops...</em></a>
+<i class="fas fa-binoculars"></i>&nbsp;&nbsp;&nbsp;<a href='/blog/education/conf2020-workshops/'><em>Check out materials from the 18 other rstudio::conf(2020) workshops...</em></a>
 </div>

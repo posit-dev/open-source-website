@@ -372,7 +372,7 @@ Thanks to all our instructors, teaching assistants, and workshop attendees this 
     <tr>
       <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='https://rstd.io/conf20-dataviz'>A Practical Introduction to Data Visualization with ggplot2 Workshop</a></p>
 </div></td>
-      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/2020/02/conf20-dataviz/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
+      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/education/conf20-dataviz/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
 </div></td>
       <td class="gt_row gt_left"><div class='gt_from_md'><p>Kieran Healy</p>
 </div></td>
@@ -394,7 +394,7 @@ Thanks to all our instructors, teaching assistants, and workshop attendees this 
     <tr>
       <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='https://rstd.io/conf20-tidy-tools'>Building Tidy Tools Workshop</a></p>
 </div></td>
-      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/2020/02/conf20-tidy-tools/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
+      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/education/conf20-tidy-tools/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
 </div></td>
       <td class="gt_row gt_left"><div class='gt_from_md'><p>Charlotte Wickham, Hadley Wickham</p>
 </div></td>
@@ -402,7 +402,7 @@ Thanks to all our instructors, teaching assistants, and workshop attendees this 
     <tr>
       <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='https://rstd.io/conf20-dl'>Deep Learning with Keras and TensorFlow in R Workshop</a></p>
 </div></td>
-      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/2020/05/conf20-dl/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
+      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/education/conf20-dl/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
 </div></td>
       <td class="gt_row gt_left"><div class='gt_from_md'><p>Bradley Boehmke</p>
 </div></td>
@@ -424,7 +424,7 @@ Thanks to all our instructors, teaching assistants, and workshop attendees this 
     <tr>
       <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='https://rstd.io/conf20-intro-ml'>Introduction to Machine Learning with the Tidyverse Workshop</a></p>
 </div></td>
-      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/2020/02/conf20-intro-ml/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
+      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/education/conf20-intro-ml/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
 </div></td>
       <td class="gt_row gt_left"><div class='gt_from_md'><p>Alison Hill, Garrett Grolemund</p>
 </div></td>
@@ -446,7 +446,7 @@ Thanks to all our instructors, teaching assistants, and workshop attendees this 
     <tr>
       <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='https://rstd.io/conf20-org-pkg'>My Organization's First R Package Workshop</a></p>
 </div></td>
-      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/2020/06/conf20-org-first-pkg/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
+      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/education/conf20-org-first-pkg/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
 </div></td>
       <td class="gt_row gt_left"><div class='gt_from_md'><p>Rich Iannone, Malcolm Barrett</p>
 </div></td>
@@ -454,7 +454,7 @@ Thanks to all our instructors, teaching assistants, and workshop attendees this 
     <tr>
       <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='https://rstd.io/conf20-r-excel'>R for Excel Users Workshop</a></p>
 </div></td>
-      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/2020/02/conf20-r-excel/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
+      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/education/conf20-r-excel/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
 </div></td>
       <td class="gt_row gt_left"><div class='gt_from_md'><p>Julia Lowndes, Allison Horst</p>
 </div></td>
@@ -490,7 +490,7 @@ Thanks to all our instructors, teaching assistants, and workshop attendees this 
     <tr>
       <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='https://rstd.io/conf20-tidytext'>Text Mining with Tidy Data Principles Workshop</a></p>
 </div></td>
-      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/2020/02/conf20-tidytext/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
+      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/education/conf20-tidytext/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
 </div></td>
       <td class="gt_row gt_left"><div class='gt_from_md'><p>Julia Silge</p>
 </div></td>
@@ -498,7 +498,7 @@ Thanks to all our instructors, teaching assistants, and workshop attendees this 
     <tr>
       <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='https://rstd.io/conf20-ts'>Tidy Time Series and Forecasting in R Workshop</a></p>
 </div></td>
-      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/2020/02/conf20-ts/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
+      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/education/conf20-ts/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
 </div></td>
       <td class="gt_row gt_left"><div class='gt_from_md'><p>Rob Hyndman</p>
 </div></td>
@@ -506,7 +506,7 @@ Thanks to all our instructors, teaching assistants, and workshop attendees this 
     <tr>
       <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='https://rstd.io/conf20-wtf'>What They Forgot to Teach You about R Workshop</a></p>
 </div></td>
-      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/2020/02/conf20-wtf/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
+      <td class="gt_row gt_center"><div class='gt_from_md'><p><a href='/blog/education/conf20-wtf/'><!--html_preserve--><i class="fas  fa-paperclip "></i><!--/html_preserve--></a></p>
 </div></td>
       <td class="gt_row gt_left"><div class='gt_from_md'><p>Kara Woo, Jenny Bryan, Jim Hester</p>
 </div></td>

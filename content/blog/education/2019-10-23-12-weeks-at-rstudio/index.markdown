@@ -27,7 +27,7 @@ In this blog post I’ll share a run down of my experience. If you’re consider
 
 ## I started writing a book.
 
-I worked on a project with [Alison Hill](/author/alison/) called “rstudio4edu”, a bookdown book for educators that bundled tutorials and practical advice about how to wrangle RStudio’s tools (e.g. R Markdown, packages, templates, etc.) to make life in the classroom (virtual or physical) easier.
+I worked on a project with [Alison Hill](https://education.rstudio.com/author/alison/) called “rstudio4edu”, a bookdown book for educators that bundled tutorials and practical advice about how to wrangle RStudio’s tools (e.g. R Markdown, packages, templates, etc.) to make life in the classroom (virtual or physical) easier.
 
 <img src="book.jpg" width="600px" style="display: block; margin: auto;" />
 I dove deep into the guts of different R Markdown collections and then wrote up cookbooks about how to customize each of these. The goal was to do this in a way that would make it *fun* for folks to read--especially for educators (or anyone, really) who might be comfortable in R but might not have a hardcore technical background to want to sink their teeth into a seemingly grizzly piece of documentation.

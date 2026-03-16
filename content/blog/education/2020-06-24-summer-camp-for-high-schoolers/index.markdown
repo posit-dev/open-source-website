@@ -16,7 +16,7 @@ ported_from: education
 port_status: in-progress
 ---
 
-Instructors and learners alike have had to quickly adapt to virtual education due to the ongoing pandemic. The [learnr](https://rstudio.github.io/learnr/) package has become a popular tool to ease that transition (see Allison Horst's great [post](/blog/2020/05/learnr-for-remote/)).
+Instructors and learners alike have had to quickly adapt to virtual education due to the ongoing pandemic. The [learnr](https://rstudio.github.io/learnr/) package has become a popular tool to ease that transition (see Allison Horst's great [post](/blog/education/learnr-for-remote/)).
 
 Before our lives were completely changed by the pandemic, however; I was fortunate enough to conduct an introductory R session with a group of teenagers in person. I was able to create the materials for this session, [Understanding Injury Data with R](https://suchestoncampbell-lab.shinyapps.io/SummerCamp2019/), with the learnr package and the source code is available on [GitHub](https://github.com/karaesmen/SummerCamp2019/tree/master/tutorial). Although in person examples of teaching may not be the most relevant topic under these circumstances, I thought that sharing my experience of teaching a younger audience using learnr could offer a unique perspective. 
 

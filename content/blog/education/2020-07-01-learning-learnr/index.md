@@ -28,7 +28,7 @@ port_status: in-progress
 
 Data scientists engage in and develop tools for literate programming. A
 variant of Markdown called R Markdown has provided the foundation for
-several R packages to assist in writing books ([bookdown](https://bookdown.org/home/)), blogs/websites
+several R packages to assist in writing books ([bookdown](https://bookdown.org/)), blogs/websites
 ([blogdown](https://bookdown.org/yihui/blogdown/), [hugodown](https://hugodown.r-lib.org)), scientific reports for the web ([distill](https://rstudio.github.io/distill/)) and
 presentations ([xaringan](https://bookdown.org/yihui/rmarkdown/xaringan.html)). The trend with these packages and tools is to
 take the base R Markdown document and *extend* it to provide a powerful
@@ -58,7 +58,7 @@ technologies it combines for interactive lessons.
 ## What is learnr?
 
 learnr's
-[documentation](https://rstudio.github.io/learnr/index.HTML#Overview)
+[documentation](https://pkgs.rstudio.com/learnr/index.html)
 says that:
 
 > The learnr package makes it easy to turn any R Markdown document into

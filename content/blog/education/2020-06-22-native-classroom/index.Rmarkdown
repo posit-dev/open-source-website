@@ -42,7 +42,7 @@ For this workshop, I've chosen the route of letting students choose among datase
 
 [^cancer]: [Cancer in Indigenous Populations](https://www.thelancet.com/series/cancer-in-indigenous-populations)
 
-[^suicide]: [The Native American Identity Crisis and the Rise of Suicide](:https://blog.nativehope.org/february-spotlight-native-american-identity)
+[^suicide]: [The Native American Identity Crisis and the Rise of Suicide](https://blog.nativehope.org/february-spotlight-native-american-identity)
 
 [^guns]: [Gun Violence Has a Major Impact on Native Communities in the United States](https://www.teenvogue.com/story/gun-violence-has-a-major-impact-on-native-communities-in-the-united-states) 
 

@@ -37,7 +37,7 @@ For the Shiny team, bestowing the "v1.0" label on a piece of software is a decla
 In April 2023, we [removed the alpha tag from Shiny for Python](/blog/shiny/shiny-python-general-availability/), signaling our team's belief that its level of quality and runtime stability made it appropriate for production use.
 And that belief has borne out: the feedback we've received from real-world users of the framework has been overwhelmingly positive.
 
-At that time, we chose not to use a 1.0 moniker, preferring to stick to 0.x until after we had shipped essential features like [interactive data tables](../shiny-python-0.4.0/) (June 2023) and [dashboard UI components](../shiny-python-0.6.0/) (Nov 2023).
+At that time, we chose not to use a 1.0 moniker, preferring to stick to 0.x until after we had shipped essential features like [interactive data tables](/blog/shiny/shiny-python-0.4.0/) (June 2023) and [dashboard UI components](/blog/shiny/shiny-python-0.6.0/) (Nov 2023).
 And soon after that, we came up with [Shiny Express](/blog/shiny/shiny-express/), a completely new syntax for writing Shiny apps, which meant another period of heavy feedback and potential revisions of the API.
 
 Sitting here in July 2024, it feels like a great time to acknowledge Shiny for Python's maturity by bestowing it with the big 1-point-0.

@@ -37,7 +37,7 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 library(nanonext)
 ```
 
-When we [introduced nanonext](/blog/2025/09/nanonext-1-7-0/) last year, we showed how it connects R directly to Python, Go, Rust, and other languages through NNG's messaging protocols. We hinted at its web capabilities -- but that was just the beginning.
+When we [introduced nanonext](/blog/tidyverse/2025/nanonext-1-7-0/) last year, we showed how it connects R directly to Python, Go, Rust, and other languages through NNG's messaging protocols. We hinted at its web capabilities -- but that was just the beginning.
 
 R already has excellent web infrastructure. [Shiny](https://shiny.posit.co/) and [plumber2](https://plumber2.posit.co/) are the go-to tools for building interactive applications and REST APIs in R. They are both powered by [httpuv](https://rstudio.github.io/httpuv/). [nanonext](https://nanonext.r-lib.org) adds a complementary option at the httpuv level of the stack -- a low-level streaming HTTP and WebSocket server built on NNG, giving developers fine-grained control over connections, streaming, and static file serving over TLS. nanonext is for when you need lower-level control -- custom protocols, infrastructure endpoints, or embedding a server alongside an existing Shiny or plumber2 application.
 
