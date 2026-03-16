@@ -64,19 +64,19 @@ See `content/blog/CLAUDE.md` for full frontmatter documentation.
 
 See `_link-checks.md` for instructions on running lychee and interpreting results.
 
-## Known limitations
+## Known limitations (blog only)
 
-### WebP processing disabled
+These limitations apply only to the blog section to avoid memory issues from processing ~16,000 images.
 
-Hugo's WASM-based WebP image processor crashes with memory allocation errors when building this site (~16,000+ images). Markdown images render as simple `<img>` tags. Hero images still get responsive JPEG processing.
+### Image processing disabled for blog list pages and markdown images
 
-**Files affected:** Search templates for `WebP disabled due to Hugo WASM memory issues`
+Hugo's WASM-based image processor crashes with memory errors when processing many images at once (e.g., blog list pages). Blog list item thumbnails and markdown images in blog posts are served as-is without responsive srcsets or WebP conversion.
 
-### Responsive images disabled for markdown
+Blog hero images and related post thumbnails still get full responsive/WebP processing (these render one post at a time, not in bulk).
 
-Memory errors on CI with 700+ images. Markdown images now render as simple `<img>` tags.
-
-**File:** `layouts/_default/_markup/render-image.html`
+**Files affected:**
+- `layouts/partials/item.html` — skips `responsive_image_container.html` for blog items
+- `layouts/_default/_markup/render-image.html` — simplified for blog section
 
 ## Archived porting scripts
 

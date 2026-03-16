@@ -61,7 +61,7 @@ Source files (`.Rmd`, `.Rmarkdown`) don't have the same frontmatter as rendered 
 
 Memory errors on CI with 700+ images. Markdown images now render as simple `<img>` tags. Hero images still get responsive processing.
 
-**File:** `layouts/_default/_markup/render-image.html`
+Opened: opened https://github.com/posit-dev/open-source-website/issues/44  
 
 ### Bootstrap classes stripped
 
