@@ -19,7 +19,7 @@ See `_link-checks.md` for workflow.
 
 Source files (`.Rmd`, `.Rmarkdown`) don't have the same frontmatter as rendered files (`.md`, `.markdown`). Re-rendering would lose `people`, `ported_from`, `image`, etc.
 
-- [ ] Sync source frontmatter for: tidyverse, education, ai blogs
+- [x] ~~Sync source frontmatter for: tidyverse, education, ai blogs~~ — Created `_editing-ported-posts.md` guide instead. Syncing all posts upfront isn't worth the effort; guide documents what to do before re-rendering.
 
 ## Priority 2: Should do
 
