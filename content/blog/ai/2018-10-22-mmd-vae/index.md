@@ -3,6 +3,7 @@ title: "Representation learning with MMD-VAE"
 description: |
   Like GANs, variational autoencoders (VAEs) are often used to generate images. However, VAEs add an additional promise: namely, to model an underlying latent space. Here, we first look at a typical implementation that maximizes the evidence lower bound. Then, we compare it to one of the more recent competitors, MMD-VAE, from the Info-VAE (information maximizing VAE) family.
 date: 2018-10-22
+slug: keydana2018mmdvae
 categories:
   - TensorFlow/Keras
   - Unsupervised Learning
@@ -20,7 +21,7 @@ port_status: in-progress
 
 
 
-Recently, we showed how to [generate images](https://blogs.rstudio.com/tensorflow/posts/2018-08-26-eager-dcgan/) using generative adversarial networks (GANs). GANs may yield amazing results, but the contract there basically is: what you see is what you get.
+Recently, we showed how to [generate images](/blog/ai/2018-08-26-eager-dcgan/) using generative adversarial networks (GANs). GANs may yield amazing results, but the contract there basically is: what you see is what you get.
 Sometimes this may be all we want. In other cases, we may be more interested in actually modelling a domain. We don't just want to generate realistic-looking samples - we want our samples to be located at specific coordinates in domain space.
 
 For example, imagine our domain to be the space of facial expressions. Then our latent space might be conceived as two-dimensional: In accordance with underlying emotional states, expressions vary on a positive-negative scale. At the same time, they vary in intensity. Now if we trained a VAE on a set of facial expressions adequately covering the ranges, and it did in fact "discover" our hypothesized dimensions, we could then use it to generate previously-nonexisting incarnations of points (faces, that is) in latent space.

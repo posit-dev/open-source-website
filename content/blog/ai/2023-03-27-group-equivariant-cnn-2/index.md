@@ -3,6 +3,7 @@ title: "Implementing rotation equivariance: Group-equivariant CNN from scratch"
 description: |
   We code up a simple group-equivariant convolutional neural network (GCNN) that is equivariant to rotation. The world may be upside down, but the network will know.
 date: 2023-03-27T00:00:00.000Z
+slug: keydanagcnn1
 categories:
   - Torch
   - R
@@ -23,7 +24,7 @@ port_status: in-progress
 
 Convolutional neural networks (CNNs) are great -- they're able to detect features in an image no matter where. Well, not exactly. They're not indifferent to just any kind of movement. Shifting up or down, or left or right, is fine; rotating around an axis is not. That's because of how convolution works: traverse by row, then traverse by column (or the other way round). If we want "more" (e.g., successful detection of an upside-down object), we need to extend convolution to an operation that is *rotation-equivariant*. An operation that is *equivariant* to some type of action will not only register the moved feature per se, but also, keep track of which concrete action made it appear where it is.
 
-**This is the second post in a series that introduces group-equivariant CNNs (GCNNs)***.* The [first](https://blogs.rstudio.com/ai/posts/2023-03-09-group-equivariant-cnn-1/) was a high-level introduction to why we'd want them, and how they work. There, we introduced the key player, the symmetry group, which specifies what kinds of transformations are to be treated equivariantly. If you haven't, please take a look at that post first, since here I'll make use of terminology and concepts it introduced.
+**This is the second post in a series that introduces group-equivariant CNNs (GCNNs)***.* The [first](/blog/ai/2023-03-09-group-equivariant-cnn-1/) was a high-level introduction to why we'd want them, and how they work. There, we introduced the key player, the symmetry group, which specifies what kinds of transformations are to be treated equivariantly. If you haven't, please take a look at that post first, since here I'll make use of terminology and concepts it introduced.
 
 Today, we code a simple GCNN from scratch. Code and presentation tightly follow a [notebook](https://github.com/phlippe/uvadlc_notebooks/blob/master/docs/tutorial_notebooks/DL2/Geometric_deep_learning/tutorial1_regular_group_convolutions.ipynb) provided as part of University of Amsterdam's 2022 [Deep Learning Course](https://uvadl2c.github.io/). They can't be thanked enough for making available such excellent learning materials.
 

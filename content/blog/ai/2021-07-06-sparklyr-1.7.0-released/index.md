@@ -3,6 +3,7 @@ title: "sparklyr 1.7: New data sources and spark_apply() capabilities, better in
 description: |
   Sparklyr 1.7 delivers much-anticipated improvements, including R interfaces for image and binary data sources, several new spark_apply() capabilities, and better integration with sparklyr extensions.
 date: 2021-07-06
+slug: sparklyr-1.7
 categories:
   - R
   - Packages/Releases
@@ -383,9 +384,9 @@ one would have been less readable.
 If you wish to learn more about `sparklyr`, we recommend visiting
 [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com),
 and also reading some previous `sparklyr` release posts such as
-[sparklyr 1.6](https://blogs.rstudio.com/ai/posts/2021-03-25-sparklyr-1.6.0-released/)
+[sparklyr 1.6](/blog/ai/2021-03-25-sparklyr-1.6.0-released/)
 and
-[sparklyr 1.5](https://blogs.rstudio.com/ai/posts/2020-12-14-sparklyr-1.5.0-released/).
+[sparklyr 1.5](/blog/ai/2020-12-14-sparklyr-1.5.0-released/).
 
 That is all. Thanks for reading!
 

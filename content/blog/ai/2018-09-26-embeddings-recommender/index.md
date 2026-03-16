@@ -3,6 +3,7 @@ title: "Collaborative filtering with embeddings"
 description: |
   Embeddings are not just for use in natural language processing. Here we apply embeddings to a common task in collaborative filtering - predicting user ratings - and on our way, strive for a better understanding of what an embedding layer really does.
 date: 2018-09-26
+slug: keydana2018embeddings-recommender
 categories:
   - TensorFlow/Keras
   - Tabular Data
@@ -19,7 +20,7 @@ port_status: in-progress
 
 
 
-What's your first association when you read the word *embeddings*? For most of us, the answer will probably be *word embeddings*, or *word vectors*. A quick search for recent papers on [arxiv](www.arxiv.org) shows what else can be embedded: equations(Krstovski and Blei 2018), vehicle sensor data(Hallac et al. 2018), graphs(Ahmed et al. 2018), code(Alon et al. 2018), spatial data(Jean et al. 2018), biological entities(Zohra Smaili et al. 2018) ... - and what not.
+What's your first association when you read the word *embeddings*? For most of us, the answer will probably be *word embeddings*, or *word vectors*. A quick search for recent papers on [arxiv](https://www.arxiv.org) shows what else can be embedded: equations(Krstovski and Blei 2018), vehicle sensor data(Hallac et al. 2018), graphs(Ahmed et al. 2018), code(Alon et al. 2018), spatial data(Jean et al. 2018), biological entities(Zohra Smaili et al. 2018) ... - and what not.
 
 What is so attractive about this concept? Embeddings incorporate the concept of *distributed representations*, an encoding of information not at specialized locations (dedicated neurons, say), but as a pattern of activations spread out over a network.
 No better source to cite than Geoffrey Hinton, who played an important role in the development of the concept(Rumelhart et al. 1986):

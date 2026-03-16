@@ -3,6 +3,7 @@ title: "tfprobability 0.8 on CRAN: Now how can you use it?"
 description: |
   Part of the r-tensorflow ecosystem, tfprobability is an R wrapper to TensorFlow Probability, the Python probabilistic programming framework developed by Google. We take the occasion of tfprobability's acceptance on CRAN to give a high-level introduction, highlighting interesting use cases and applications.
 date: 2019-11-07
+slug: keydana2019tfpcran
 categories:
   - Probabilistic ML/DL
   - Packages/Releases
@@ -119,18 +120,18 @@ model <- keras_model_sequential() %>%
 In essence, this means the network's predictions will reflect any existing heteroscedasticity in the data. Here is an example: Given simulated training data of shape
 
 <figure>
-<img src="images/simdata.png" width="500" alt="Simulated data (from https://blogs.rstudio.com/tensorflow/posts/2019-06-05-uncertainty-estimates-tfprobability/)" />
-<figcaption aria-hidden="true">Simulated data (from https://blogs.rstudio.com/tensorflow/posts/2019-06-05-uncertainty-estimates-tfprobability/)</figcaption>
+<img src="images/simdata.png" width="500" alt="Simulated data (from /blog/ai/2019-06-05-uncertainty-estimates-tfprobability/)" />
+<figcaption aria-hidden="true">Simulated data (from /blog/ai/2019-06-05-uncertainty-estimates-tfprobability/)</figcaption>
 </figure>
 
 the network's predictions show the same spread:
 
 <figure>
-<img src="images/g_aleatoric_relu_8.png" width="500" alt="Aleatoric uncertainty on simulated data (from https://blogs.rstudio.com/tensorflow/posts/2019-06-05-uncertainty-estimates-tfprobability/)" />
-<figcaption aria-hidden="true">Aleatoric uncertainty on simulated data (from https://blogs.rstudio.com/tensorflow/posts/2019-06-05-uncertainty-estimates-tfprobability/)</figcaption>
+<img src="images/g_aleatoric_relu_8.png" width="500" alt="Aleatoric uncertainty on simulated data (from /blog/ai/2019-06-05-uncertainty-estimates-tfprobability/)" />
+<figcaption aria-hidden="true">Aleatoric uncertainty on simulated data (from /blog/ai/2019-06-05-uncertainty-estimates-tfprobability/)</figcaption>
 </figure>
 
-Please see [Adding uncertainty estimates to Keras models with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-06-05-uncertainty-estimates-tfprobability/) for a detailed explanation.
+Please see [Adding uncertainty estimates to Keras models with tfprobability](/blog/ai/2019-06-05-uncertainty-estimates-tfprobability/) for a detailed explanation.
 
 Using a normal distribution layer as the output, we can capture irreducible variability in the data, also known as *aleatoric uncertainty*. A different type of probabilistic layer allows to model what is called *epistemic uncertainty*.
 
@@ -155,38 +156,38 @@ This defines a network with a single dense layer, containing a single neuron, th
 As a consequence of this setup, each test run will now yield different predictions. For the above simulated data, we might get an ensemble of predictions, like so:
 
 <figure>
-<img src="images/g_epistemic_linear_kl150.png" width="500" alt="Epistemic uncertainty on simulated data (from https://blogs.rstudio.com/tensorflow/posts/2019-06-05-uncertainty-estimates-tfprobability/)" />
-<figcaption aria-hidden="true">Epistemic uncertainty on simulated data (from https://blogs.rstudio.com/tensorflow/posts/2019-06-05-uncertainty-estimates-tfprobability/)</figcaption>
+<img src="images/g_epistemic_linear_kl150.png" width="500" alt="Epistemic uncertainty on simulated data (from /blog/ai/2019-06-05-uncertainty-estimates-tfprobability/)" />
+<figcaption aria-hidden="true">Epistemic uncertainty on simulated data (from /blog/ai/2019-06-05-uncertainty-estimates-tfprobability/)</figcaption>
 </figure>
 
 Variational layers for non-dense layers exist, and we'll see an example next week. Now let's move on to the next type of use cases, from big data to small data, in a way.
 
 ## Use case 2: Fitting Bayesian models with Monte Carlo methods
 
-In sciences where data aren't abound, Markov Chain Monte Carlo (MCMC) methods are common. We've shown some examples how to this with TFP ([Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-05-06-tadpoles-on-tensorflow/), [Hierarchical partial pooling, continued: Varying slopes models with TensorFlow Probability](https://blogs.rstudio.com/tensorflow/posts/2019-05-24-varying-slopes/), [Modeling censored data with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-07-31-censored-data/), best read in this order), as well as tried to explain, in an accessible way, some of the background ([On leapfrogs, crashing satellites, and going nuts: A very first conceptual introduction to Hamiltonian Monte Carlo](https://blogs.rstudio.com/tensorflow/posts/2019-10-03-intro-to-hmc/)).
+In sciences where data aren't abound, Markov Chain Monte Carlo (MCMC) methods are common. We've shown some examples how to this with TFP ([Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](/blog/ai/2019-05-06-tadpoles-on-tensorflow/), [Hierarchical partial pooling, continued: Varying slopes models with TensorFlow Probability](/blog/ai/2019-05-24-varying-slopes/), [Modeling censored data with tfprobability](/blog/ai/2019-07-31-censored-data/), best read in this order), as well as tried to explain, in an accessible way, some of the background ([On leapfrogs, crashing satellites, and going nuts: A very first conceptual introduction to Hamiltonian Monte Carlo](/blog/ai/2019-10-03-intro-to-hmc/)).
 
 MCMC software may roughly be divided into two flavors: "low-level" and "high-level". Low-level software, like [Stan](https://mc-stan.org/) -- or TFP, for that matter -- requires you to write code in either some programming language, or in a DSL that is pretty close in syntax and semantics to an existing programming language. High-level tools, on the other hand, are DSLs that resemble the way you'd express a model using mathematical notation. (Put differently, the former read like C or Python; the latter read like LaTeX.)
 
-In general, low-level software tends to offer more flexibility, while high-level interfaces may be more convenient to use and easier to learn. To start with MCMC in TFP, we recommend checking out the first of the posts listed above, [Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-05-06-tadpoles-on-tensorflow/). If you prefer a higher-level interface, you might be interested in [greta](https://greta-stats.org/), which is built on TFP.
+In general, low-level software tends to offer more flexibility, while high-level interfaces may be more convenient to use and easier to learn. To start with MCMC in TFP, we recommend checking out the first of the posts listed above, [Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](/blog/ai/2019-05-06-tadpoles-on-tensorflow/). If you prefer a higher-level interface, you might be interested in [greta](https://greta-stats.org/), which is built on TFP.
 
 Our last use case is of a Bayesian nature as well.
 
 ## Use case 3: State space models
 
-State space models are a perhaps lesser used, but highly conceptually attractive way of performing inference and prediction on signals evolving in time. [Dynamic linear models with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-06-25-dynamic_linear_models_tfprobability/) is an introduction to dynamic linear models with TFP, showcasing two of their (many) great strengths: ease of performing dynamic regression and additive (de)composition.
+State space models are a perhaps lesser used, but highly conceptually attractive way of performing inference and prediction on signals evolving in time. [Dynamic linear models with tfprobability](/blog/ai/2019-06-25-dynamic_linear_models_tfprobability/) is an introduction to dynamic linear models with TFP, showcasing two of their (many) great strengths: ease of performing dynamic regression and additive (de)composition.
 
 In dynamic regression, coefficients are allowed to vary over time. Here is an example from the above-mentioned post showing, for both a single predictor and the regression intercept, the filtered (in the sense of Kálmán filtering) estimates over time:
 
 <figure>
-<img src="images/capm_filtered.png" width="500" alt="Filtering estimates from the Kálmán filter (from: https://blogs.rstudio.com/tensorflow/posts/2019-06-25-dynamic_linear_models_tfprobability/)." />
-<figcaption aria-hidden="true">Filtering estimates from the Kálmán filter (from: https://blogs.rstudio.com/tensorflow/posts/2019-06-25-dynamic_linear_models_tfprobability/).</figcaption>
+<img src="images/capm_filtered.png" width="500" alt="Filtering estimates from the Kálmán filter (from: /blog/ai/2019-06-25-dynamic_linear_models_tfprobability/)." />
+<figcaption aria-hidden="true">Filtering estimates from the Kálmán filter (from: /blog/ai/2019-06-25-dynamic_linear_models_tfprobability/).</figcaption>
 </figure>
 
 And here is the ubiquitous *AirPassengers* dataset, decomposed into a trend and a seasonal component:
 
 <figure>
-<img src="images/airp_components.png" width="500" alt="AirPassengers, decomposition into a linear trend and a seasonal component (from: https://blogs.rstudio.com/tensorflow/posts/2019-06-25-dynamic_linear_models_tfprobability/)." />
-<figcaption aria-hidden="true">AirPassengers, decomposition into a linear trend and a seasonal component (from: https://blogs.rstudio.com/tensorflow/posts/2019-06-25-dynamic_linear_models_tfprobability/).</figcaption>
+<img src="images/airp_components.png" width="500" alt="AirPassengers, decomposition into a linear trend and a seasonal component (from: /blog/ai/2019-06-25-dynamic_linear_models_tfprobability/)." />
+<figcaption aria-hidden="true">AirPassengers, decomposition into a linear trend and a seasonal component (from: /blog/ai/2019-06-25-dynamic_linear_models_tfprobability/).</figcaption>
 </figure>
 
 If this interests you, you might want to take a look at [available state space models](https://rstudio.github.io/tfprobability/reference/index.html#section-structural-time-series-models). Given how rapidly TFP is evolving, plus the model-inherent composability, we expect the number of options in this area to grow quite a bit.
@@ -197,7 +198,7 @@ That is it for our tour of use cases. To wrap up, let's talk about the basic bui
 
 No probabilistic framework without probability distributions -- that's for sure. In release 0.8, TFP has [about 80 distributions](https://rstudio.github.io/tfprobability/reference/index.html#section-distributions). But what are bijectors?
 
-Bijectors are invertible, differentiable maps. [Getting into the flow: Bijectors in TensorFlow Probability](https://blogs.rstudio.com/tensorflow/posts/2019-04-05-bijectors-flows/) introduces the main ideas and shows how to chain such bijective transformations into a *flow*. Bijectors are being used by TFP internally all the time, and as a user too you'll likely encounter situations where you need them.
+Bijectors are invertible, differentiable maps. [Getting into the flow: Bijectors in TensorFlow Probability](/blog/ai/2019-04-05-bijectors-flows/) introduces the main ideas and shows how to chain such bijective transformations into a *flow*. Bijectors are being used by TFP internally all the time, and as a user too you'll likely encounter situations where you need them.
 
 One example is doing MCMC (for example, Hamiltonian Monte Carlo) with TFP. In your model, you might have a prior on a standard deviation. Standard deviations are positive, so you'd like to specify, for example, an exponential distribution for it, resulting in exclusively positive values. But Hamiltonian Monte Carlo has to run in unconstrained space to work. This is where a bijector comes in, mapping between the two spaces used for model specification and sampling.
 
@@ -238,8 +239,8 @@ Thanks for reading!
 
 [^1]: By default, just sampling from the distribution -- but this is something the user can influence if desired, making use of the `convert_to_tensor_fn` argument.
 
-[^2]: See [Representation learning with MMD-VAE](https://blogs.rstudio.com/tensorflow/posts/2018-10-22-mmd-vae/) for an example.
+[^2]: See [Representation learning with MMD-VAE](/blog/ai/2018-10-22-mmd-vae/) for an example.
 
-[^3]: Done so, for example, in [Getting started with TensorFlow Probability from R](https://blogs.rstudio.com/tensorflow/posts/2019-01-08-getting-started-with-tf-probability/).
+[^3]: Done so, for example, in [Getting started with TensorFlow Probability from R](/blog/ai/2019-01-08-getting-started-with-tf-probability/).
 
 [^4]: For a complete running example, see the [tfprobability README](https://rstudio.github.io/tfprobability/).

@@ -3,6 +3,7 @@ title: "torch time series, take three: Sequence-to-sequence prediction"
 description: |
   In our overview of techniques for time-series forecasting, we move on to sequence-to-sequence models. Architectures in this family are commonly used in natural language processing (NLP) tasks, such as machine translation. With NLP, however, significant pre-processing is required before proceeding to model definition and training. In staying with our familiar numerical series, we can fully concentrate on the concepts.
 date: 2021-03-16
+slug: keydanatorchts2
 categories:
   - Torch
   - R
@@ -22,9 +23,9 @@ port_status: in-progress
 
 Today, we continue our exploration of multi-step time-series forecasting with `torch`. This post is the third in a series.
 
-- [Initially](https://blogs.rstudio.com/ai/posts/2021-03-10-forecasting-time-series-with-torch_1/), we covered basics of recurrent neural networks (RNNs), and trained a model to predict the very next value in a sequence. We also found we could forecast quite a few steps ahead by feeding back individual predictions in a loop.
+- [Initially](/blog/ai/2021-03-10-forecasting-time-series-with-torch_1/), we covered basics of recurrent neural networks (RNNs), and trained a model to predict the very next value in a sequence. We also found we could forecast quite a few steps ahead by feeding back individual predictions in a loop.
 
-- [Next](https://blogs.rstudio.com/ai/posts/2021-03-11-forecasting-time-series-with-torch_2/), we built a model "natively" for multi-step prediction. A small multi-layer-perceptron (MLP) was used to project RNN output to several time points in the future.
+- [Next](/blog/ai/2021-03-11-forecasting-time-series-with-torch_2/), we built a model "natively" for multi-step prediction. A small multi-layer-perceptron (MLP) was used to project RNN output to several time points in the future.
 
 Of both approaches, the latter was the more successful. But conceptually, it has an unsatisfying touch to it: When the MLP extrapolates and generates output for, say, ten consecutive points in time, there is no causal relation between those. (Imagine a weather forecast for ten days that never got updated.)
 

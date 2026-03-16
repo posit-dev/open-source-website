@@ -3,6 +3,7 @@ title: "Modeling censored data with tfprobability"
 description: |
   In this post we use tfprobability, the R interface to TensorFlow Probability, to model censored data. Again, the exposition is inspired by the treatment of this topic in Richard McElreath's Statistical Rethinking. Instead of cute cats though, we model immaterial entities from the cold world of technology: This post explores durations of CRAN package checks, a dataset that comes with Max Kuhn's parsnip.
 date: 2019-07-31
+slug: keydana2019tfpcensored
 categories:
   - Bayesian Modeling
   - TensorFlow/Keras
@@ -586,4 +587,4 @@ We've shown how to model censored data -- or rather, a frequent subtype thereof 
 
 [^2]: Here and in the following tables, we report the unnormalized, original values as contained in `check_times`.
 
-[^3]: For a first introduction to MCMC sampling with `tfprobability`, see [Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-05-06-tadpoles-on-tensorflow/)
+[^3]: For a first introduction to MCMC sampling with `tfprobability`, see [Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](/blog/ai/2019-05-06-tadpoles-on-tensorflow/)

@@ -3,6 +3,7 @@ title: "Entity embeddings for fun and profit"
 description: |
   Embedding layers are not just useful when working with language data. As "entity embeddings", they've recently become famous for applications on tabular, small-scale data. In this post, we exemplify two possible use cases, also drawing attention to what not to expect.
 date: 2018-11-26
+slug: keydana2018dembeddingsfunandprofit
 categories:
   - TensorFlow/Keras
   - Tabular Data
@@ -28,7 +29,7 @@ What's useful about embeddings? Depending on who you ask, answers may vary. For 
 
 Others will probably bring up *entity embeddings*, the magic tool that helped win the Rossmann competition(Guo and Berkhahn 2016) and was greatly popularized by [fast.ai's deep learning course](https://course.fast.ai/). Here, the idea is to make use of data that is not normally helpful in prediction, like high-dimensional categorical variables.
 
-Another (related) idea, also widely spread by fast.ai and explained in [this blog](https://blogs.rstudio.com/tensorflow/posts/2018-09-26-embeddings-recommender/), is to apply embeddings to collaborative filtering. This basically builds up entity embeddings of users and items based on the criterion how well these "match" (as indicated by existing ratings).
+Another (related) idea, also widely spread by fast.ai and explained in [this blog](/blog/ai/2018-09-26-embeddings-recommender/), is to apply embeddings to collaborative filtering. This basically builds up entity embeddings of users and items based on the criterion how well these "match" (as indicated by existing ratings).
 
 So what are embeddings good for? The way we see it, embeddings are what you make of them. The goal in this post is to provide examples of how to use embeddings to uncover relationships and improve prediction. The examples are just that - examples, chosen to demonstrate a method. The most interesting thing really will be what you make of these methods in *your* area of work or interest.
 

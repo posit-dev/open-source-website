@@ -3,6 +3,7 @@ title: "sparklyr 1.6: weighted quantile summaries, power iteration clustering, s
 description: |
   The sparklyr 1.6 release introduces weighted quantile summaries, an R interface to power iteration clustering, spark_write_rds(), as well as a number of dplyr-related improvements.
 date: 2021-03-25
+slug: sparklyr-1.6
 categories:
   - R
   - Packages/Releases
@@ -438,8 +439,8 @@ valuable editorial suggestions from [@skeydan](https://github.com/skeydan).
 If you wish to learn more about `sparklyr`, we recommend checking out
 [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com),
 and also some previous `sparklyr` release posts such as
-[sparklyr 1.5](https://blogs.rstudio.com/ai/posts/2020-12-14-sparklyr-1.5.0-released/)
-and [sparklyr 1.4](https://blogs.rstudio.com/ai/posts/2020-09-30-sparklyr-1.4.0-released/).
+[sparklyr 1.5](/blog/ai/2020-12-14-sparklyr-1.5.0-released/)
+and [sparklyr 1.4](/blog/ai/2020-09-30-sparklyr-1.4.0-released/).
 
 That is all. Thanks for reading!
 

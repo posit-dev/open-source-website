@@ -23,7 +23,7 @@ Thank you everyone who participated in our first *mlverse* survey!
 
 Wait: What even is the *mlverse*?
 
-The mlverse originated as an abbreviation of *multiverse*[^1], which, on its part, came into being as an intended allusion to the well-known *tidyverse.* As such, although *mlverse* software aims for seamless interoperability with the tidyverse, or even integration when feasible (see our recent [post](https://blogs.rstudio.com/ai/posts/2021-02-11-tabnet/) featuring a wholly tidymodels-integrated `torch` network architecture), the priorities are probably a bit different: Often, mlverse software's raison d'être is to allow R users to do things that are commonly known to be done with other languages, such as Python.
+The mlverse originated as an abbreviation of *multiverse*[^1], which, on its part, came into being as an intended allusion to the well-known *tidyverse.* As such, although *mlverse* software aims for seamless interoperability with the tidyverse, or even integration when feasible (see our recent [post](/blog/ai/2021-02-11-tabnet/) featuring a wholly tidymodels-integrated `torch` network architecture), the priorities are probably a bit different: Often, mlverse software's raison d'être is to allow R users to do things that are commonly known to be done with other languages, such as Python.
 
 [^1]: Calling it an abbreviation is, in fact, itself abbreviating things. The main motivation is more practical, as in: being able to obtain not-yet-reserved URLs and not-too-frequently-used hashtags.
 
@@ -120,7 +120,7 @@ On the other hand, `torch`, a recent addition to *mlverse* software, is an R por
 
 Now, this is not the place for recommendations. Here are a few thoughts though.
 
-Clearly, as one respondent remarked, as of today the `torch` ecosystem does not offer functionality on par with TensorFlow, and for that to change time and -- hopefully! more on that below -- your, the community's, help is needed. Why? Because `torch` is so young, for one; but also, there is a "systemic" reason! With TensorFlow, as we can access any symbol via the `tf` object, it is always possible, if inelegant, to do from R what you see done in Python. Respective R wrappers nonexistent[^5], quite a few blog posts (see, e.g., <https://blogs.rstudio.com/ai/posts/2020-04-29-encrypted_keras_with_syft/>, or [A first look at federated learning with TensorFlow](https://blogs.rstudio.com/ai/posts/2020-04-08-tf-federated-intro/)) relied on this!
+Clearly, as one respondent remarked, as of today the `torch` ecosystem does not offer functionality on par with TensorFlow, and for that to change time and -- hopefully! more on that below -- your, the community's, help is needed. Why? Because `torch` is so young, for one; but also, there is a "systemic" reason! With TensorFlow, as we can access any symbol via the `tf` object, it is always possible, if inelegant, to do from R what you see done in Python. Respective R wrappers nonexistent[^5], quite a few blog posts (see, e.g., </blog/ai/2020-04-29-encrypted_keras_with_syft/>, or [A first look at federated learning with TensorFlow](/blog/ai/2020-04-08-tf-federated-intro/)) relied on this!
 
 [^5]: For TensorFlow Federated and PySyft, that is.
 
@@ -130,13 +130,13 @@ Switching to the topic of `tensorflow`'s Python dependencies causing problems wi
 
 The second most frequent mention clearly was the wish for tighter `tidymodels` integration. Here, we wholeheartedly agree. As of today, there is no automated way to accomplish this for `torch` models generically, but it can be done for specific model implementations.
 
-Last week, [torch, tidymodels, and high-energy physics](https://blogs.rstudio.com/ai/posts/2021-02-11-tabnet/) featured the first `tidymodels`-integrated `torch` package. And there's more to come. In fact, if you are developing a package in the `torch` ecosystem, why not consider doing the same? Should you run into problems, the growing `torch` community will be happy to help.
+Last week, [torch, tidymodels, and high-energy physics](/blog/ai/2021-02-11-tabnet/) featured the first `tidymodels`-integrated `torch` package. And there's more to come. In fact, if you are developing a package in the `torch` ecosystem, why not consider doing the same? Should you run into problems, the growing `torch` community will be happy to help.
 
 ##### Documentation, examples, teaching materials
 
 Thirdly, several respondents expressed the wish for more documentation, examples, and teaching materials. Here, the situation is different for TensorFlow than for `torch`.
 
-For [`tensorflow`](https://tensorflow.rstudio.com/), the website has a multitude of guides, tutorials, and examples. For [`torch`](torch.mlverse.org), reflecting the discrepancy in respective lifecycles, materials are not that abundant (yet). However, after a recent refactoring, the website has a new, four-part [Get started](https://torch.mlverse.org/start/) section addressed to both beginners in DL and experienced TensorFlow users curious to learn about `torch`. After this hands-on introduction, a good place to get more technical background would be the section on [tensors, autograd, and neural network modules](https://torch.mlverse.org/technical/).
+For [`tensorflow`](https://tensorflow.rstudio.com/), the website has a multitude of guides, tutorials, and examples. For [`torch`](https://torch.mlverse.org), reflecting the discrepancy in respective lifecycles, materials are not that abundant (yet). However, after a recent refactoring, the website has a new, four-part [Get started](https://torch.mlverse.org/start/) section addressed to both beginners in DL and experienced TensorFlow users curious to learn about `torch`. After this hands-on introduction, a good place to get more technical background would be the section on [tensors, autograd, and neural network modules](https://torch.mlverse.org/technical/).
 
 Truth be told, though, nothing would be more helpful here than contributions from the community. Whenever you solve even the tiniest problem (which is often how things appear to oneself), consider creating a vignette explaining what you did. Future users will be thankful, and a growing user base means that over time, it'll be your turn to find that some things have already been solved for you!
 

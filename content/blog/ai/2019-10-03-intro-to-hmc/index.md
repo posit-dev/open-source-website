@@ -3,6 +3,7 @@ title: "On leapfrogs, crashing satellites, and going nuts: A very first conceptu
 description: |
   TensorFlow Probability, and its R wrapper tfprobability, provide Markov Chain Monte Carlo (MCMC) methods that were used in a number of recent posts on this blog. These posts were directed to users already comfortable with the method, and terminology, per se, which readers mainly interested in deep learning won't necessarily be. Here we try to make up leeway, introducing Hamitonian Monte Carlo (HMC) as well as a few often-heard "buzzwords" accompanying it, always striving to keep in mind what it is all "for".
 date: 2019-10-03
+slug: keydana2019hmc
 categories:
   - Bayesian Modeling
   - Concepts
@@ -58,7 +59,7 @@ In theory, straightforward(-ish) methods exist that could be used to generate sa
 
 ## HMC
 
-So HMC is popular because compared to random-walk-based algorithms, it is a *lot* more efficient. Unfortunately, it is also a lot more difficult to "get". [^6] As discussed in [Math, code, concepts: A third road to deep learning](https://blogs.rstudio.com/tensorflow/posts/2019-03-15-concepts-way-to-dl/), there seem to be (at least) three languages to express an algorithm: Math; code (including pseudo-code, which may or may not be on the verge to math notation); and one I call *conceptual* which spans the whole range from very abstract to very concrete, even visual. To me personally, HMC is different from most other cases in that even though I find the conceptual explanations fascinating, they result in less "perceived understanding" than either the equations or the code. For people with backgrounds in physics, statistical mechanics and/or differential geometry this will probably be different!
+So HMC is popular because compared to random-walk-based algorithms, it is a *lot* more efficient. Unfortunately, it is also a lot more difficult to "get". [^6] As discussed in [Math, code, concepts: A third road to deep learning](/blog/ai/2019-03-15-concepts-way-to-dl/), there seem to be (at least) three languages to express an algorithm: Math; code (including pseudo-code, which may or may not be on the verge to math notation); and one I call *conceptual* which spans the whole range from very abstract to very concrete, even visual. To me personally, HMC is different from most other cases in that even though I find the conceptual explanations fascinating, they result in less "perceived understanding" than either the equations or the code. For people with backgrounds in physics, statistical mechanics and/or differential geometry this will probably be different!
 
 In any case, physical analogies make for the best start.
 
@@ -264,7 +265,7 @@ McElreath, Richard. 2016. *Statistical Rethinking: A Bayesian Course with Exampl
 
 Neal, Radford M. 2012. "<span class="nocase">MCMC using Hamiltonian dynamics</span>." *arXiv e-Prints*, June, arXiv:1206.1901. <https://arxiv.org/abs/1206.1901>.
 
-[^1]: See e.g. [Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-05-06-tadpoles-on-tensorflow/) and [Hierarchical partial pooling, continued: Varying slopes models with TensorFlow Probability](https://blogs.rstudio.com/tensorflow/posts/2019-05-24-varying-slopes/)
+[^1]: See e.g. [Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](/blog/ai/2019-05-06-tadpoles-on-tensorflow/) and [Hierarchical partial pooling, continued: Varying slopes models with TensorFlow Probability](/blog/ai/2019-05-24-varying-slopes/)
 
 [^2]: [tfd_joint_distribution_sequential](https://rstudio.github.io/tfprobability/reference/tfd_joint_distribution_sequential.html)
 

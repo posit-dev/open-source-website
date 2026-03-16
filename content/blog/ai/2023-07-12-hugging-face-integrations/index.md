@@ -3,6 +3,7 @@ title: "Hugging Face Integrations"
 description: |
   Hugging Face rapidly became a very popular platform to build, share and collaborate on deep learning applications. We have worked on integrating the torch for R ecosystem with Hugging Face tools, allowing users to load and execute language models from their platform.
 date: 2023-07-12T00:00:00.000Z
+slug: hugging-face-integrations
 categories:
   - Torch
   - Releases
@@ -45,7 +46,7 @@ files can be shared between the R and Python implementation, for easier and quic
 switching between languages.
 
 We already use hfhub in the [minhub](https://github.com/mlverse/minhub) package and
-in the ['GPT-2 from scratch with torch' blog post](https://blogs.rstudio.com/ai/posts/2023-06-20-gpt2-torch/) to
+in the ['GPT-2 from scratch with torch' blog post](/blog/ai/2023-06-20-gpt2-torch/) to
 download pre-trained weights from Hugging Face Hub.
 
 You can use `hub_download()` to download any file from a Hugging Face Hub repository
@@ -64,7 +65,7 @@ path
 Tokenizers are responsible for converting raw text into the sequence of integers that
 is often used as the input for NLP models, making them an critical component of the
 NLP pipelines. If you want a higher level overview of NLP pipelines, you might want to read
-our previous [blog post 'What are Large Language Models? What are they not?'](https://blogs.rstudio.com/ai/posts/2023-06-20-llm-intro/#overall-architecture).
+our previous [blog post 'What are Large Language Models? What are they not?'](/blog/ai/2023-06-20-llm-intro/#overall-architecture).
 
 When using a pre-trained model (both for inference or for fine tuning) it's very
 important that you use the exact same tokenization process that has been used during

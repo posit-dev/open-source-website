@@ -3,6 +3,7 @@ title: "tfhub: R interface to TensorFlow Hub"
 description: |
   TensorFlow Hub is a library for the publication, discovery, and consumption of reusable parts of machine learning models. A module is a self-contained piece of a TensorFlow graph, along with its weights and assets, that can be reused across different tasks in a process known as transfer learning.
 date: 2019-12-18
+slug: tfhub
 categories:
   - TensorFlow/Keras
   - Packages/Releases

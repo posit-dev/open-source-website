@@ -3,6 +3,7 @@ title: "sparklyr 1.4: Weighted Sampling, Tidyr Verbs, Robust Scaler, RAPIDS, and
 description: |
   Sparklyr 1.4 is now available! This release comes with delightful new features such as weighted sampling and tidyr verbs support for Spark dataframes, robust scaler for standardizing data based on median and interquartile range, spark_connect interface for RAPIDS GPU acceleration plugin, as well as a number of dplyr-related improvements.
 date: 2020-09-30
+slug: sparklyr-1.4
 categories:
   - R
   - Packages/Releases
@@ -76,7 +77,7 @@ will return a random subset of size 5 from the Spark dataframe `mtcars_sdf`.
 
 More importantly, the sampling algorithm implemented in `sparklyr` 1.4 is something that fits perfectly into the MapReduce paradigm: as we have split our `mtcars` data into 4 partitions of `mtcars_sdf` by specifying `repartition = 4L`, the algorithm will first process each partition independently and in parallel, selecting a sample set of size up to 5 from each, and then reduce all 4 sample sets into a final sample set of size 5 by choosing records having the top 5 highest sampling priorities among all.
 
-How is such parallelization possible, especially for the sampling without replacement scenario, where the desired result is defined as the outcome of a sequential process? A detailed answer to this question is in [this blog post](https://blogs.rstudio.com/ai/posts/2020-07-29-parallelized-sampling/), which includes a definition of the problem (in particular, the exact meaning of sampling weights in term of probabilities), a high-level explanation of the current solution and the motivation behind it, and also, some mathematical details all hidden in one link to a PDF file, so that non-math-oriented readers can get the gist of everything else without getting scared away, while math-oriented readers can enjoy working out all the integrals themselves before peeking at the answer.
+How is such parallelization possible, especially for the sampling without replacement scenario, where the desired result is defined as the outcome of a sequential process? A detailed answer to this question is in [this blog post](/blog/ai/2020-07-29-parallelized-sampling/), which includes a definition of the problem (in particular, the exact meaning of sampling weights in term of probabilities), a high-level explanation of the current solution and the motivation behind it, and also, some mathematical details all hidden in one link to a PDF file, so that non-math-oriented readers can get the gist of everything else without getting scared away, while math-oriented readers can enjoy working out all the integrals themselves before peeking at the answer.
 
 ## Tidyr Verbs
 
@@ -346,6 +347,6 @@ We also appreciate bug reports, feature requests, and valuable other feedback ab
 
 Last but not least, the author of this blog post is extremely grateful for fantastic editorial suggestions from [@javierluraschi](https://github.com/javierluraschi), [@batpigandme](https://github.com/batpigandme), and [@skeydan](https://github.com/skeydan).
 
-If you wish to learn more about `sparklyr`, we recommend checking out [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and also some of the previous release posts such as [sparklyr 1.3](https://blog.rstudio.com/2020/07/16/sparklyr-1-3/) and [sparklyr 1.2](https://blogs.rstudio.com/ai/posts/2020-04-21-sparklyr-1.2.0-released/).
+If you wish to learn more about `sparklyr`, we recommend checking out [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and also some of the previous release posts such as [sparklyr 1.3](https://blog.rstudio.com/2020/07/16/sparklyr-1-3/) and [sparklyr 1.2](/blog/ai/2020-04-21-sparklyr-1.2.0-released/).
 
 Thanks for reading!

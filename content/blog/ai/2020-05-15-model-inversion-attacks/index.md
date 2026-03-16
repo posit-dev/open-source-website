@@ -3,6 +3,7 @@ title: "Hacking deep learning: model inversion attack by example"
 description: |
   Compared to other applications, deep learning models might not seem too likely as victims of privacy attacks. However, methods exist to determine whether an entity was used in the training set (an adversarial attack called member inference), and techniques subsumed under "model inversion" allow to reconstruct raw data input given just model output (and sometimes, context information). This post shows an end-to-end example of model inversion, and explores mitigation strategies using TensorFlow Privacy.
 date: 2020-05-15
+slug: keydanamodelinversion
 categories:
   - R
   - Privacy & Security
@@ -46,7 +47,7 @@ In this post, we'll demonstrate such a model inversion attack, basically porting
 [notebook](https://github.com/OpenMined/PySyft/blob/master/examples/tutorials/advanced/privacy_attacks/Tutorial%201%20-%20Black%20box%20model%20inversion.ipynb%20Sy)
 found in the [PySyft](https://github.com/OpenMined/PySyft) repository. We then experiment with different levels of
 $\epsilon$-privacy, exploring impact on reconstruction success. This second part will make use of TensorFlow Privacy,
-introduced in a [previous blog post](https://blogs.rstudio.com/ai/posts/2019-12-20-differential-privacy/).
+introduced in a [previous blog post](/blog/ai/2019-12-20-differential-privacy/).
 
 ## Part 1: Model inversion in action
 

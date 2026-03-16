@@ -3,6 +3,7 @@ title: "Differential Privacy with TensorFlow"
 description: |
   Differential Privacy guarantees that results of a database query are basically independent of the presence in the data of a single individual. Applied to machine learning, we expect that no single training example influences the parameters of the trained model in a substantial way. This post introduces TensorFlow Privacy, a library built on top of TensorFlow, that can be used to train differentially private deep learning models from R.
 date: 2019-12-20
+slug: keydana2019diffpriv
 categories:
   - Privacy & Security
   - TensorFlow/Keras

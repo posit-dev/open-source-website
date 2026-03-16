@@ -3,6 +3,7 @@ title: "Innocent unicorns considered harmful? How to experiment with GPT-2 from 
 description: |
   Is society ready to deal with challenges brought about by artificially-generated information - fake images, fake videos, fake text? While this post won't answer that question, it should help form an opinion on the threat exerted by fake text as of this writing, autumn 2019. We introduce gpt2, an R package that wraps OpenAI's public implementation of GPT-2, the language model that early this year surprised the NLP community with the unprecedented quality of its creations.
 date: 2019-10-23
+slug: keydanaluraschi2019gpt2
 categories:
   - Natural Language Processing
   - Packages/Releases
@@ -313,7 +314,7 @@ Vaswani, Ashish, Noam Shazeer, Niki Parmar, et al. 2017. "Attention Is All You N
 
 [^3]: For a detailed, and exceptionally visual, explanation of the Transformer, *the* place to go is [Jay Alammar's post](https://jalammar.github.io/illustrated-transformer/). Also check out [The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning](http://jalammar.github.io/illustrated-bert/), the article that might be held mainly responsible for the pervasive sesame-streetification of NLP.
 
-[^4]: For an introduction to how softmax activation behaves, see [Winner takes all: A look at activations and cost functions](https://blogs.rstudio.com/tensorflow/posts/2018-10-11-activations-intro/).
+[^4]: For an introduction to how softmax activation behaves, see [Winner takes all: A look at activations and cost functions](/blog/ai/2018-10-11-activations-intro/).
 
 [^5]: $k$ is the Boltzmann constant
 

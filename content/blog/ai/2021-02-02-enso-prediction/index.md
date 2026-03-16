@@ -3,6 +3,7 @@ title: "Forecasting El Niño-Southern Oscillation (ENSO)"
 description: |
   El Niño-Southern Oscillation (ENSO) is an atmospheric phenomenon, located in the tropical Pacific, that greatly affects ecosystems as well as human well-being on a large portion of the globe. We use the convLSTM introduced in a prior post to predict the Niño 3.4 Index from spatially-ordered sequences of sea surface temperatures.
 date: 2021-02-02
+slug: keydanaenso
 categories:
   - Torch
   - R
@@ -22,7 +23,7 @@ port_status: in-progress
 
 
 
-Today, we use the convLSTM introduced in a [previous](https://blogs.rstudio.com/ai/posts/2020-12-17-torch-convlstm/) post to predict [El Niño-Southern Oscillation (ENSO).](https://en.wikipedia.org/wiki/El_Ni%C3%B1o%E2%80%93Southern_Oscillation)
+Today, we use the convLSTM introduced in a [previous](/blog/ai/2020-12-17-torch-convlstm/) post to predict [El Niño-Southern Oscillation (ENSO).](https://en.wikipedia.org/wiki/El_Ni%C3%B1o%E2%80%93Southern_Oscillation)
 
 # El Niño, la Niña
 
@@ -344,7 +345,7 @@ Next, we proceed to model creation.
 
 # Model
 
-The model's main ingredient is the convLSTM introduced in a [prior post](https://blogs.rstudio.com/ai/posts/2020-12-17-torch-convlstm/). For convenience, we reproduce the code in the appendix.
+The model's main ingredient is the convLSTM introduced in a [prior post](/blog/ai/2020-12-17-torch-convlstm/). For convenience, we reproduce the code in the appendix.
 
 Besides the convLSTM, the model makes use of three convolutional layers, a batchnorm layer and five linear layers. The logic is the following.
 
@@ -2250,7 +2251,7 @@ To be put into a text file for use with `purrr::walk( … download.file … )`.
 
 ## A2: `convlstm` code
 
-For an in-depth explanation of `convlstm`, see [the blog post](https://blogs.rstudio.com/ai/posts/2020-12-17-torch-convlstm/).
+For an in-depth explanation of `convlstm`, see [the blog post](/blog/ai/2020-12-17-torch-convlstm/).
 
 ``` r
 library(torch)

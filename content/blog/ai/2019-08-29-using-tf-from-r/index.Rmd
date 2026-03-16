@@ -110,7 +110,7 @@ CustomCallback <- R6::R6Class("CustomCallback",
 ```
 
 This is because `keras` defines an actual Python class, `RCallback`, and maps your R6 class' methods to it.
-Another example is [custom models](https://tensorflow.rstudio.com/keras/articles/custom_models.html), introduced on this blog [about a year ago](https://blogs.rstudio.com/tensorflow/posts/2018-07-30-attention-layer/).
+Another example is [custom models](https://tensorflow.rstudio.com/keras/articles/custom_models.html), introduced on this blog [about a year ago](/blog/ai/2018-07-30-attention-layer/).
 These models can be trained with custom training loops. In R, you use `keras_model_custom` to create one, for example, like this:
 
 ```{r}

@@ -3,6 +3,7 @@ title: "Starting to think about AI Fairness"
 description: |
   The topic of AI fairness metrics is as important to society as it is confusing. Confusing it is due to a number of reasons: terminological proliferation, abundance of formulae, and last not least the impression that everyone else seems to know what they're talking about. This text hopes to counteract some of that confusion by starting from a common-sense approach of contrasting two basic positions: On the one hand, the assumption that dataset features may be taken as reflecting the underlying concepts ML practitioners are interested in; on the other, that there inevitably is a gap between concept and measurement, a gap that may be bigger or smaller depending on what is being measured. In contrasting these fundamental views, we bring together concepts from ML, legal science, and political philosophy.
 date: 2021-07-15
+slug: keydanafairnessmetrics
 categories:
   - R
   - Concepts

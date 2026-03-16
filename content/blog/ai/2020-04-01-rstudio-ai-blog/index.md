@@ -3,6 +3,7 @@ title: "Introducing: The RStudio AI Blog"
 description: |
   This blog just got a new title: RStudio AI Blog. We explain why.
 date: 2020-03-30
+slug: team2020rstudioaiblog
 categories:
   - Meta
 author:

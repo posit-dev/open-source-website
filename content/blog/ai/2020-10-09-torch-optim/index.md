@@ -3,6 +3,7 @@ title: "Optimizers in torch"
 description: |
   Today, we wrap up our mini-series on torch basics, adding to our toolset two abstractions: loss functions and optimizers.
 date: 2020-10-09
+slug: keydanatorchoptim
 categories:
   - Torch
   - R
@@ -19,11 +20,11 @@ port_status: in-progress
 
 
 
-This is the fourth and last installment in a series introducing `torch` basics. Initially, we [focused on *tensors*](https://blogs.rstudio.com/ai/posts/2020-10-01-torch-network-from-scratch/). To illustrate their power, we coded a complete (if toy-size) neural network from scratch. We didn't make use of any of `torch`'s higher-level capabilities -- not even *autograd*, its automatic-differentiation feature.
+This is the fourth and last installment in a series introducing `torch` basics. Initially, we [focused on *tensors*](/blog/ai/2020-10-01-torch-network-from-scratch/). To illustrate their power, we coded a complete (if toy-size) neural network from scratch. We didn't make use of any of `torch`'s higher-level capabilities -- not even *autograd*, its automatic-differentiation feature.
 
-This changed in the [follow-up post](https://blogs.rstudio.com/ai/posts/2020-10-05-torch-network-with-autograd). No more thinking about derivatives and the chain rule; a single call to `backward()` did it all.
+This changed in the [follow-up post](/blog/ai/2020-10-05-torch-network-with-autograd). No more thinking about derivatives and the chain rule; a single call to `backward()` did it all.
 
-[In the third post](https://blogs.rstudio.com/ai/posts/2020-10-07-torch-modules), the code again saw a major simplification. Instead of tediously assembling a DAG[^1] by hand, we let *modules* take care of the logic.
+[In the third post](/blog/ai/2020-10-07-torch-modules), the code again saw a major simplification. Instead of tediously assembling a DAG[^1] by hand, we let *modules* take care of the logic.
 
 Based on that last state, there are just two more things to do. For one, we still compute the loss by hand. And secondly, even though we get the gradients all nicely computed from *autograd*, we still loop over the model's parameters, updating them all ourselves. You won't be surprised to hear that none of this is necessary.
 

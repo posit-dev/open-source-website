@@ -3,6 +3,7 @@ title: "Neural style transfer with eager execution and Keras"
 description: |
   Continuing our series on combining Keras with TensorFlow eager execution, we show how to implement neural style transfer in a straightforward way. Based on this easy-to-adapt example, you can easily perform style transfer on your own images.
 date: 2018-09-10
+slug: keydana2018eagerstyletransfer
 categories:
   - TensorFlow/Keras
   - Generative Models

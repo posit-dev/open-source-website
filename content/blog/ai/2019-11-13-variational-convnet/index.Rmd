@@ -26,19 +26,19 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
 
-A bit more than a year ago, in his beautiful [guest post](https://blogs.rstudio.com/tensorflow/posts/2018-07-17-activity-detection/), Nick Strayer showed how to classify a set of everyday activities using smartphone-recorded gyroscope and accelerometer data. Accuracy was very good, but Nick went on to inspect classification results more closely. Were there activities more prone to misclassification than others? And how about those erroneous results: Did the network report them with equal, or less confidence than those that were correct?
+A bit more than a year ago, in his beautiful [guest post](/blog/ai/2018-07-17-activity-detection/), Nick Strayer showed how to classify a set of everyday activities using smartphone-recorded gyroscope and accelerometer data. Accuracy was very good, but Nick went on to inspect classification results more closely. Were there activities more prone to misclassification than others? And how about those erroneous results: Did the network report them with equal, or less confidence than those that were correct?
 
-Technically, when we speak of _confidence_ in that manner, we're referring to the _score_ obtained for the "winning" class after softmax activation ^[see [Winner takes all: A look at activations and cost functions](https://blogs.rstudio.com/tensorflow/posts/2018-10-11-activations-intro/)]. If that winning score is 0.9, we might say "the network is sure that's a gentoo penguin"; if it's 0.2, we'd instead conclude "to the network, neither option seemed fitting, but cheetah looked best".
+Technically, when we speak of _confidence_ in that manner, we're referring to the _score_ obtained for the "winning" class after softmax activation ^[see [Winner takes all: A look at activations and cost functions](/blog/ai/2018-10-11-activations-intro/)]. If that winning score is 0.9, we might say "the network is sure that's a gentoo penguin"; if it's 0.2, we'd instead conclude "to the network, neither option seemed fitting, but cheetah looked best".
 
 This use of "confidence" is convincing, but it has nothing to do with confidence -- or credibility, or prediction, what have you -- intervals. What we'd really like to be able to do is put distributions over the network's weights and make it _Bayesian_. Using _tfprobability_'s variational Keras-compatible layers, this is something we actually can do.
 
-[Adding uncertainty estimates to Keras models with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-06-05-uncertainty-estimates-tfprobability/) shows how to use a variational dense layer to obtain estimates of epistemic uncertainty. In this post, we modify the convnet used in Nick's post to be variational throughout. Before we start, let's quickly summarize the task.
+[Adding uncertainty estimates to Keras models with tfprobability](/blog/ai/2019-06-05-uncertainty-estimates-tfprobability/) shows how to use a variational dense layer to obtain estimates of epistemic uncertainty. In this post, we modify the convnet used in Nick's post to be variational throughout. Before we start, let's quickly summarize the task.
 
 ## The task
 
 To create the [Smartphone-Based Recognition of Human Activities and Postural Transitions Data Set](http://archive.ics.uci.edu/ml/datasets/Smartphone-Based+Recognition+of+Human+Activities+and+Postural+Transitions) [@Reyes-Ortiz], the researchers had subjects walk, sit, stand, and transition from one of those activities to another. Meanwhile, two types of smartphone sensors were used to record motion data: _Accelerometers_ measure linear acceleration in three ^[or two, depending on the application] dimensions, while _gyroscopes_ are used to track angular velocity around the coordinate axes. Here are the respective raw sensor data for six types of activities from Nick's original post:
 
-```{r, eval=TRUE, echo=FALSE, layout="l-body-outset", fig.cap = "Source: https://blogs.rstudio.com/tensorflow/posts/2018-07-17-activity-detection/"}
+```{r, eval=TRUE, echo=FALSE, layout="l-body-outset", fig.cap = "Source: /blog/ai/2018-07-17-activity-detection/"}
 knitr::include_graphics("images/raw-data.png")
 ```
 
@@ -327,7 +327,7 @@ one_shot_sds <- tfd_stddev(one_shot_preds) %>%
   gather(class, sd, -obs) 
 ```
 
-The standard deviations thus obtained could be said to reflect the overall _predictive uncertainty_. We can estimate another kind of uncertainty, called _epistemic_ ^[see [Adding uncertainty estimates to Keras models with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-06-05-uncertainty-estimates-tfprobability/)], by making a number of passes through the network and then, calculating -- again, per test sample -- the standard deviations of the predicted means.
+The standard deviations thus obtained could be said to reflect the overall _predictive uncertainty_. We can estimate another kind of uncertainty, called _epistemic_ ^[see [Adding uncertainty estimates to Keras models with tfprobability](/blog/ai/2019-06-05-uncertainty-estimates-tfprobability/)], by making a number of passes through the network and then, calculating -- again, per test sample -- the standard deviations of the predicted means.
 
 
 ```{r}
@@ -490,7 +490,7 @@ Thanks for reading!
 
 ### Appendix 
 
-To be executed before running this post's code. Copied from [Classifying physical activity from smartphone data](https://blogs.rstudio.com/tensorflow/posts/2018-07-17-activity-detection/).
+To be executed before running this post's code. Copied from [Classifying physical activity from smartphone data](/blog/ai/2018-07-17-activity-detection/).
 
 ```{r}
 library(keras)     

@@ -3,6 +3,7 @@ title: "Getting started with Keras from R - the 2020 edition"
 description: |
   Looking for materials to get started with deep learning from R? This post presents useful tutorials, guides, and background documentation on the new TensorFlow for R website. Advanced users will find pointers to applications of new release 2.0 (or upcoming 2.1!) features alluded to in the recent TensorFlow 2.0 post.
 date: 2019-11-27
+slug: keydana2019gettingstarted2020
 categories:
   - Packages/Releases
   - TensorFlow/Keras
@@ -19,7 +20,7 @@ port_status: in-progress
 
 
 
-If you've been thinking about diving into deep learning for a while -- using R, preferentially --, now is a good time. For TensorFlow / Keras, one of the predominant deep learning frameworks on the market, last year was a year of substantial changes; for users, this sometimes would mean ambiguity and confusion about the "right" (or: recommended) way to do things. By now, [TensorFlow 2.0](https://blogs.rstudio.com/tensorflow/posts/2019-10-08-tf2-whatchanges/) has been the current stable release for about two months; the mists have cleared away, and patterns have emerged, enabling leaner, more modular code that accomplishes a lot in just a few lines.
+If you've been thinking about diving into deep learning for a while -- using R, preferentially --, now is a good time. For TensorFlow / Keras, one of the predominant deep learning frameworks on the market, last year was a year of substantial changes; for users, this sometimes would mean ambiguity and confusion about the "right" (or: recommended) way to do things. By now, [TensorFlow 2.0](/blog/ai/2019-10-08-tf2-whatchanges/) has been the current stable release for about two months; the mists have cleared away, and patterns have emerged, enabling leaner, more modular code that accomplishes a lot in just a few lines.
 
 To give the new features the space they deserve, and assemble central contributions from related packages all in one place, we have significantly remodeled the [TensorFlow for R website](https://tensorflow.rstudio.com/). So this post really has two objectives.
 

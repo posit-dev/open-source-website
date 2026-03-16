@@ -3,6 +3,7 @@ title: "A first look at federated learning with TensorFlow"
 description: |
   The term "federated learning" was coined to describe a form of distributed model training where the data remains on client devices, i.e., is never shipped to the coordinating server. In this post, we introduce central concepts and run first experiments with TensorFlow Federated, using R.
 date: 2020-04-08
+slug: keydanatffederatedintro
 categories:
   - Privacy & Security
   - TensorFlow/Keras
@@ -123,7 +124,7 @@ still remains. The model -- especially a high-capacity one, with many parameters
 -- could still memorize individual training data. Here is where *differential
 privacy* comes into play. In differential privacy, noise is added to the
 gradients to decouple them from actual training examples. ([This
-post](https://blogs.rstudio.com/tensorflow/posts/2019-12-20-differential-privacy/)
+post](/blog/ai/2019-12-20-differential-privacy/)
 gives an introduction to differential privacy with TensorFlow, from R.)
 
 As of this writing, TFF's federal averaging mechanism (McMahan et al. 2016) does not

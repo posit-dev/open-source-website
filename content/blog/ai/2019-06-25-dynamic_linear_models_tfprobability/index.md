@@ -3,6 +3,7 @@ title: "Dynamic linear models with tfprobability"
 description: |
   Previous posts featuring tfprobability - the R interface to TensorFlow Probability - have focused on enhancements to deep neural networks (e.g., introducing Bayesian uncertainty estimates) and fitting hierarchical models with Hamiltonian Monte Carlo. This time, we show how to fit time series using dynamic linear models (DLMs), yielding posterior predictive forecasts as well as the smoothed and filtered estimates from the Kálmán filter.
 date: 2019-06-24
+slug: keydana2019dlmtfp
 categories:
   - Probabilistic ML/DL
   - Time Series
@@ -352,7 +353,7 @@ Curious about the results? We'll see them in a second, but before let's just qui
 
 #### Putting it all together (the HMC edition)
 
-`tfprobability` provides [sts_fit_with_hmc](https://rstudio.github.io/tfprobability/reference/sts_fit_with_hmc.html) to fit a DLM using Hamiltonian Monte Carlo. Recent posts (e.g., [Hierarchical partial pooling, continued: Varying slopes models with TensorFlow Probability](https://blogs.rstudio.com/tensorflow/posts/2019-05-24-varying-slopes/)) showed how to set up HMC to fit hierarchical models; here a single function does it all.
+`tfprobability` provides [sts_fit_with_hmc](https://rstudio.github.io/tfprobability/reference/sts_fit_with_hmc.html) to fit a DLM using Hamiltonian Monte Carlo. Recent posts (e.g., [Hierarchical partial pooling, continued: Varying slopes models with TensorFlow Probability](/blog/ai/2019-05-24-varying-slopes/)) showed how to set up HMC to fit hierarchical models; here a single function does it all.
 
 Here is `fit_with_hmc`, wrapping `sts_fit_with_hmc` as well as the (unchanged) techniques for obtaining forecasts and smoothed/filtered parameters:
 

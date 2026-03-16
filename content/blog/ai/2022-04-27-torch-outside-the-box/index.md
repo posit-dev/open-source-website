@@ -3,6 +3,7 @@ title: "torch outside the box"
 description: |
   Sometimes, a software's best feature is the one you've added yourself. This post shows by example why you may want to extend torch, and how to proceed. It also explains a bit of what is going on in the background.
 date: 2022-04-27
+slug: keydanatorchoutbox
 categories:
   - Torch
   - R
@@ -43,7 +44,7 @@ Now, what holds for `torch` applies to every R-side extension that adds custom c
 
 ### TorchScript: Allows for code generation "on the fly"
 
-We've already encountered TorchScript in a [prior post](https://blogs.rstudio.com/ai/posts/2021-08-10-jit-trace-module), albeit from a different angle, and highlighting a different set of terms. In that post, we showed how you can train a model in R and *trace* it, resulting in an intermediate, optimized representation that may then be saved and loaded in a different (possibly R-less) environment. There, the conceptual focus was on the agent enabling this workflow: the PyTorch Just-in-time Compiler (JIT) which generates the representation in question. We quickly mentioned that on the Python-side, there is another way to invoke the JIT: not on an instantiated, "living" model, but on *scripted model-defining code*. It is that second way, accordingly named *scripting*, that is relevant in the current context.
+We've already encountered TorchScript in a [prior post](/blog/ai/2021-08-10-jit-trace-module), albeit from a different angle, and highlighting a different set of terms. In that post, we showed how you can train a model in R and *trace* it, resulting in an intermediate, optimized representation that may then be saved and loaded in a different (possibly R-less) environment. There, the conceptual focus was on the agent enabling this workflow: the PyTorch Just-in-time Compiler (JIT) which generates the representation in question. We quickly mentioned that on the Python-side, there is another way to invoke the JIT: not on an instantiated, "living" model, but on *scripted model-defining code*. It is that second way, accordingly named *scripting*, that is relevant in the current context.
 
 Even though scripting is not available from R (unless the scripted code is written in Python[^2]), we still benefit from its existence. When Python-side extension libraries use TorchScript (instead of normal C++ code), *we don't need to add bindings to the respective functions on the R (C++) side*. Instead, everything is taken care of by PyTorch.
 

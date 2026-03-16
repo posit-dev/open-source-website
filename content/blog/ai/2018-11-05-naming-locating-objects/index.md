@@ -3,6 +3,7 @@ title: "Naming and locating objects in images"
 description: |
   Object detection (the act of classifying and localizing multiple objects in a scene) is one of the more difficult, but very relevant in practice deep learning tasks. We'll build up to it in several posts. Here we start with the simpler tasks of naming and locating a single object.
 date: 2018-11-05
+slug: keydana2018naminglocatingobjects
 categories:
   - TensorFlow/Keras
   - Image Recognition & Image Processing
@@ -449,7 +450,7 @@ Now, the most interesting change is to the model - even though it's a change to 
 Were we to use `categorical_crossentropy` now (the non-sparse variant of the above), combined with a `softmax` activation, we would effectively tell the model to pick just one, namely, the most probable object.
 
 <aside>
-See the [introduction to loss functions and activations](https://blogs.rstudio.com/tensorflow/posts/2018-10-11-activations-intro/) on this blog for a demonstration.
+See the [introduction to loss functions and activations](/blog/ai/2018-10-11-activations-intro/) on this blog for a demonstration.
 </aside>
 
 Instead, we want to decide: For each object class, is it present in the image or not? Thus, instead of `softmax` we use `sigmoid`, paired with `binary_crossentropy`, to obtain an independent verdict on every class.

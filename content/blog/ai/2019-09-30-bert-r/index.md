@@ -22,7 +22,7 @@ port_status: in-progress
 
 *Today, we're happy to feature a guest post written by Turgut Abdullayev, showing how to use BERT from R. Turgut is a data scientist at AccessBank Azerbaijan. Currently, he is pursuing a Ph.D. in economics at Baku State University, Azerbaijan.*
 
-[In the previous post, Sigrid Keydana](https://blogs.rstudio.com/tensorflow/posts/2019-08-29-using-tf-from-r/) explained the logic behind the [reticulate package](https://rstudio.github.io/reticulate/) and how it enables interoperability between Python and R. So, this time we will build a classification model with [BERT](https://github.com/google-research/bert), taking into account one of the powerful capabilities of the reticulate package -- calling Python from R via importing Python modules.
+[In the previous post, Sigrid Keydana](/blog/ai/2019-08-29-using-tf-from-r/) explained the logic behind the [reticulate package](https://rstudio.github.io/reticulate/) and how it enables interoperability between Python and R. So, this time we will build a classification model with [BERT](https://github.com/google-research/bert), taking into account one of the powerful capabilities of the reticulate package -- calling Python from R via importing Python modules.
 
 Before we start, make sure that the Python version used is 3, as Python 2 can introduce lots of difficulties while working with BERT, such as Unicode issues related to the input text.
 

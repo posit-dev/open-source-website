@@ -3,6 +3,7 @@ title: "Audio classification with torch"
 description: |
   Learn how to classify speech utterances with torch, making use of domain knowledge and deep learning. This post is a condensed version of the corresponding chapter in the forthcoming book, Deep Learning and Scientific Computing with R torch, to be published by CRC Press.
 date: 2022-10-06T00:00:00.000Z
+slug: keydanatorchaudio
 categories:
   - Torch
   - R
@@ -22,7 +23,7 @@ port_status: in-progress
 
 ## Variations on a theme
 
-[Simple audio classification with Keras](https://blogs.rstudio.com/ai/posts/2018-06-06-simple-audio-classification-keras/), [Audio classification with Keras: Looking closer at the non-deep learning parts](https://blogs.rstudio.com/ai/posts/2019-02-07-audio-background/), [Simple audio classification with torch](https://blogs.rstudio.com/ai/posts/2021-02-04-simple-audio-classification-with-torch/): No, this is not the first post on this blog that introduces speech classification using deep learning. With two of those posts (the "applied" ones) it shares the general setup, the type of deep-learning architecture employed, and the dataset used. With the third, it has in common the interest in the ideas and concepts involved. Each of these posts has a different focus -- should you read this one?
+[Simple audio classification with Keras](/blog/ai/2018-06-06-simple-audio-classification-keras/), [Audio classification with Keras: Looking closer at the non-deep learning parts](/blog/ai/2019-02-07-audio-background/), [Simple audio classification with torch](/blog/ai/2021-02-04-simple-audio-classification-with-torch/): No, this is not the first post on this blog that introduces speech classification using deep learning. With two of those posts (the "applied" ones) it shares the general setup, the type of deep-learning architecture employed, and the dataset used. With the third, it has in common the interest in the ideas and concepts involved. Each of these posts has a different focus -- should you read this one?
 
 Well, of course I can't say "no" -- all the more so because, here, you have an abbreviated and condensed version of the chapter on this topic in the forthcoming book from CRC Press, *Deep Learning and Scientific Computing with R `torch`*. By way of comparison with the previous post that used `torch`, written by the creator and maintainer of `torchaudio`, Athos Damiani, significant developments have taken place in the `torch` ecosystem, the end result being that the code got a lot easier (especially in the model training part). That said, let's end the preamble already, and plunge into the topic!
 

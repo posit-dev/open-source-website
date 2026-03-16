@@ -80,7 +80,7 @@ In our experiments, we'll be using the biggest as-yet released pretrained model,
 
 ## Sampling options with GPT-2
 
-Whenever a new token is to be predicted, a _softmax_ is taken over the vocabulary ^[For an introduction to how softmax activation behaves, see [Winner takes all: A look at activations and cost functions](https://blogs.rstudio.com/tensorflow/posts/2018-10-11-activations-intro/).]. Directly taking the softmax output amounts to maximum likelihood estimation. In reality, however, always choosing the maximum likelihood estimate results in highly repetitive output. 
+Whenever a new token is to be predicted, a _softmax_ is taken over the vocabulary ^[For an introduction to how softmax activation behaves, see [Winner takes all: A look at activations and cost functions](/blog/ai/2018-10-11-activations-intro/).]. Directly taking the softmax output amounts to maximum likelihood estimation. In reality, however, always choosing the maximum likelihood estimate results in highly repetitive output. 
 
 A natural option seems to be using the softmax outputs as probabilities: Instead of just taking the _argmax_, we sample from the output distribution. Unfortunately, this procedure has negative ramifications of its own. In a big vocabulary, very improbable words together make up a substantial part of the probability mass; at every step of generation, there is thus a non-negligible probability that an improbable word may be chosen. This word will now exert great influence on what is chosen next. In that manner, highly improbable sequences can build up. 
 

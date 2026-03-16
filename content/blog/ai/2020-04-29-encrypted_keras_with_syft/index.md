@@ -3,6 +3,7 @@ title: "Towards privacy: Encrypted deep learning with Syft and Keras"
 description: |
   Deep learning need not be irreconcilable with privacy protection. Federated learning enables on-device, distributed model training; encryption keeps model and gradient updates private; differential privacy prevents the training data from leaking. As of today, private and secure deep learning is an emerging technology. In this post, we introduce Syft, an open-source framework that integrates with PyTorch as well as TensorFlow. In an example use case, we obtain private predictions from a Keras model.
 date: 2020-04-29
+slug: keydanaprivacysyftkeras
 categories:
   - R
   - Privacy & Security
@@ -44,7 +45,7 @@ regulations. So, the first requirement is: The data has to stay where it is; e.g
 #### Federated learning
 
 This first *sine qua non* is addressed by [federated
-learning](https://blogs.rstudio.com/tensorflow/posts/2020-04-08-tf-federated-intro/) (McMahan et al. 2016). Federated learning is
+learning](/blog/ai/2020-04-08-tf-federated-intro/) (McMahan et al. 2016). Federated learning is
 not "just" desirable for privacy reasons. On the contrary, in many use cases, it may be the only viable way (like with
 smartphones or sensors, which collect gigantic amounts of data). In federated learning, each participant receives a copy of
 the model, trains on their own data, and sends back the gradients obtained to the central server, where gradients are averaged
@@ -154,7 +155,7 @@ So with encryption available on an all-you-need basis, are we completely safe, p
 still leak information. For example, in some cases it is possible to perform *model inversion* \[@abs-1805-04049\], that is,
 with just black-box access to a model, train an *attack model* that allows reconstructing some of the original training data.
 Needless to say, this kind of leakage has to be avoided. [Differential
-privacy](https://blogs.rstudio.com/tensorflow/posts/2019-12-20-differential-privacy/) (Dwork et al. 2006), (Dwork 2006)
+privacy](/blog/ai/2019-12-20-differential-privacy/) (Dwork et al. 2006), (Dwork 2006)
 demands that results obtained from querying a model be independent from the presence or absence, in the dataset employed for
 training, of a single individual. In general, this is ensured by adding noise to the answer to every query. In training deep
 learning models, we add noise to the gradients, as well as clip them according to some chosen norm.
@@ -398,7 +399,7 @@ setting up a Syft/TFE cluster of workers that together, provide the infrastructu
 client data.
 
 In case you've read our previous post on [TensorFlow
-Federated](https://blogs.rstudio.com/tensorflow/posts/2019-12-20-differential-privacy/) -- that, too, a framework under
+Federated](/blog/ai/2019-12-20-differential-privacy/) -- that, too, a framework under
 development -- you may have gotten an impression similar to the one I got: Setting up Syft was a lot more straightforward,
 concepts were easy to grasp, and surprisingly little code was required. As we may gather from a [recent blog
 post](https://blog.openmined.org/introducing-pysyft-tensorflow/), integration of Syft with TensorFlow Federated and TensorFlow

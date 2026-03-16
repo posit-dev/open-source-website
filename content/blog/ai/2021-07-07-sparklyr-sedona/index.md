@@ -3,6 +3,7 @@ title: "sparklyr.sedona: A sparklyr extension for analyzing geospatial data"
 description: |
   We are excited to announce the availability of sparklyr.sedona, a sparklyr extension making geospatial functionalities of the Apache Sedona library easily accessible from R.
 date: 2021-07-07
+slug: sparklyr-sedona
 categories:
   - R
   - Packages/Releases
@@ -40,7 +41,7 @@ Spark dataframes, and visualizations.
 ## Motivation for `sparklyr.sedona`
 
 A suggestion from the
-[mlverse survey results](https://blogs.rstudio.com/ai/posts/2021-02-17-survey/) earlier
+[mlverse survey results](/blog/ai/2021-02-17-survey/) earlier
 this year mentioned the need for up-to-date R interfaces for Spark-based GIS frameworks.
 While looking into this suggestion, we learned about
 [Apache Sedona](https://sedona.apache.org/), a geospatial data system powered by Spark

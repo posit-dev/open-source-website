@@ -3,6 +3,7 @@ title: "Hierarchical partial pooling, continued: Varying slopes models with Tens
 description: |
   This post builds on our recent introduction to multi-level modeling with tfprobability, the R wrapper to TensorFlow Probability. We show how to pool not just mean values ("intercepts"), but also relationships ("slopes"), thus enabling models to learn from data in an even broader way. Again, we use an example from Richard McElreath's "Statistical Rethinking"; the terminology as well as the way we present this topic are largely owed to this book.
 date: 2019-05-24
+slug: keydana2019cafes
 categories:
   - Bayesian Modeling
   - TensorFlow/Keras
@@ -19,7 +20,7 @@ port_status: in-progress
 
 
 
-In a [previous post](https://blogs.rstudio.com/tensorflow/posts/2019-01-08-getting-started-with-tf-probability/), we showed how to use [tfprobability](https://rstudio.github.io/tfprobability/) -- the R interface to TensorFlow Probability -- to build a *multilevel*, or *partial pooling* model of tadpole survival in differently sized (and thus, differing in inhabitant number) tanks.
+In a [previous post](/blog/ai/2019-01-08-getting-started-with-tf-probability/), we showed how to use [tfprobability](https://rstudio.github.io/tfprobability/) -- the R interface to TensorFlow Probability -- to build a *multilevel*, or *partial pooling* model of tadpole survival in differently sized (and thus, differing in inhabitant number) tanks.
 
 A completely *pooled* model would have resulted in a global estimate of survival count, irrespective of tank, while an *unpooled* model would have learned to predict survival count for each tank separately. The former approach does not take into account different circumstances; the latter does not make use of common information. (Also, it clearly has no predictive use unless we want to make predictions for the very same entities we used to train the model.)
 
@@ -136,7 +137,7 @@ On to building the model.
 
 ## The model
 
-As in the [previous post on multi-level modeling](https://blogs.rstudio.com/tensorflow/posts/2019-05-06-tadpoles-on-tensorflow/), we use [tfd_joint_distribution_sequential](https://rstudio.github.io/tfprobability/reference/tfd_joint_distribution_sequential.html) to define the model and [Hamiltonian Monte Carlo](https://rstudio.github.io/tfprobability/reference/mcmc_hamiltonian_monte_carlo.html) for sampling. Consider taking a look at the first section of that post for a quick reminder of the overall procedure.
+As in the [previous post on multi-level modeling](/blog/ai/2019-05-06-tadpoles-on-tensorflow/), we use [tfd_joint_distribution_sequential](https://rstudio.github.io/tfprobability/reference/tfd_joint_distribution_sequential.html) to define the model and [Hamiltonian Monte Carlo](https://rstudio.github.io/tfprobability/reference/mcmc_hamiltonian_monte_carlo.html) for sampling. Consider taking a look at the first section of that post for a quick reminder of the overall procedure.
 
 Before we code the model, let's quickly get library loading out of the way. Importantly, again just like in the previous post, we need to install a `master` build of TensorFlow Probability, as we're making use of very new features not yet available in the current release version. The same goes for the R packages `tensorflow` and `tfprobability`: Please install the respective development versions from github.
 

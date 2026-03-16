@@ -3,6 +3,7 @@ title: "So, how come we can use TensorFlow from R?"
 description: |
   Have you ever wondered why you can call TensorFlow - mostly known as a Python framework - from R? If not - that's how it should be, as the R packages keras and tensorflow aim to make this process as transparent as possible to the user. But for them to be those helpful genies, someone else first has to tame the Python.
 date: 2019-08-29
+slug: keydana2019tffromr
 categories:
   - TensorFlow/Keras
   - Meta
@@ -101,7 +102,7 @@ CustomCallback <- R6::R6Class("CustomCallback",
 ```
 
 This is because `keras` defines an actual Python class, `RCallback`, and maps your R6 class' methods to it.
-Another example is [custom models](https://tensorflow.rstudio.com/keras/articles/custom_models.html), introduced on this blog [about a year ago](https://blogs.rstudio.com/tensorflow/posts/2018-07-30-attention-layer/).
+Another example is [custom models](https://tensorflow.rstudio.com/keras/articles/custom_models.html), introduced on this blog [about a year ago](/blog/ai/2018-07-30-attention-layer/).
 These models can be trained with custom training loops. In R, you use `keras_model_custom` to create one, for example, like this:
 
 ``` r

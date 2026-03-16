@@ -3,6 +3,7 @@ title: "torch time series, final episode: Attention"
 description: |
   We conclude our mini-series on time-series forecasting with torch by augmenting last time's sequence-to-sequence architecture with a technique both immensely popular in natural language processing and inspired by human (and animal) cognition: attention.
 date: 2021-03-19
+slug: keydanatorchts4
 categories:
   - Torch
   - R
@@ -22,11 +23,11 @@ port_status: in-progress
 
 This is the final post in a four-part introduction to time-series forecasting with `torch`. These posts have been the story of a quest for multiple-step prediction, and by now, we've seen three different approaches: forecasting in a loop, incorporating a multi-layer perceptron (MLP), and sequence-to-sequence models. Here's a quick recap.
 
-- As one should when one sets out for an adventurous journey, we started with an [in-depth study](https://blogs.rstudio.com/ai/posts/2021-03-10-forecasting-time-series-with-torch_1/) of the tools at our disposal: recurrent neural networks (RNNs). We trained a model to predict the very next observation in line, and then, thought of a clever hack: How about we use this for multi-step prediction, feeding back individual predictions in a loop? The result , it turned out, was quite acceptable.
+- As one should when one sets out for an adventurous journey, we started with an [in-depth study](/blog/ai/2021-03-10-forecasting-time-series-with-torch_1/) of the tools at our disposal: recurrent neural networks (RNNs). We trained a model to predict the very next observation in line, and then, thought of a clever hack: How about we use this for multi-step prediction, feeding back individual predictions in a loop? The result , it turned out, was quite acceptable.
 
-- Then, the adventure really started. We built our first model ["natively" for multi-step prediction,](https://blogs.rstudio.com/ai/posts/2021-03-11-forecasting-time-series-with-torch_2/) relieving the RNN a bit of its workload and involving a second player, a tiny-ish MLP. Now, it was the MLP's task to project RNN output to several time points in the future. Although results were pretty satisfactory, we didn't stop there.
+- Then, the adventure really started. We built our first model ["natively" for multi-step prediction,](/blog/ai/2021-03-11-forecasting-time-series-with-torch_2/) relieving the RNN a bit of its workload and involving a second player, a tiny-ish MLP. Now, it was the MLP's task to project RNN output to several time points in the future. Although results were pretty satisfactory, we didn't stop there.
 
-- Instead, we applied to numerical time series a technique commonly used in natural language processing (NLP): [sequence-to-sequence (*seq2seq*)](https://blogs.rstudio.com/ai/posts/2021-03-16-forecasting-time-series-with-torch_3/) prediction. While forecast performance was not much different from the previous case, we found the technique to be more intuitively appealing, since it reflects the *causal* relationship between successive forecasts.
+- Instead, we applied to numerical time series a technique commonly used in natural language processing (NLP): [sequence-to-sequence (*seq2seq*)](/blog/ai/2021-03-16-forecasting-time-series-with-torch_3/) prediction. While forecast performance was not much different from the previous case, we found the technique to be more intuitively appealing, since it reflects the *causal* relationship between successive forecasts.
 
 Today we'll enrich the seq2seq approach by adding a new component: the *attention* module. Originally introduced around 2014[^1], attention mechanisms have gained enormous traction, so much so that a recent paper title starts out "Attention is Not All You Need"[^2].
 
@@ -354,7 +355,7 @@ decoder_module <- nn_module(
 
 ### `seq2seq` module
 
-The `seq2seq` module is basically unchanged (apart from the fact that now, it allows for attention module configuration). For a detailed explanation of what happens here, please consult the [previous post](https://blogs.rstudio.com/ai/posts/2021-03-16-forecasting-time-series-with-torch_3/).
+The `seq2seq` module is basically unchanged (apart from the fact that now, it allows for attention module configuration). For a detailed explanation of what happens here, please consult the [previous post](/blog/ai/2021-03-16-forecasting-time-series-with-torch_3/).
 
 ``` r
 seq2seq_module <- nn_module(

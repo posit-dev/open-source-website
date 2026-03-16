@@ -3,6 +3,7 @@ title: "Upside down, a cat's still a cat: Evolving image recognition with Geomet
 description: |
   In this first in a series of posts on group-equivariant convolutional neural networks (GCNNs), meet the main actors — groups — and concepts (equivariance). With GCNNs, we finally revisit the topic of Geometric Deep Learning, a principled, math-driven approach to neural networks that has consistently been rising in scope and impact.
 date: 2023-03-09T00:00:00.000Z
+slug: keydanagcnn1
 categories:
   - Torch
   - R
@@ -22,7 +23,7 @@ port_status: in-progress
 
 
 
-This is the first in a series of posts on group-equivariant convolutional neural networks (GCNNs). Today, we keep it short, high-level, and conceptual; examples and implementations will follow. In looking at GCNNs, we are resuming a topic we first [wrote about](https://blogs.rstudio.com/ai/posts/2021-08-26-geometric-deep-learning/) in 2021: [Geometric Deep Learning](https://geometricdeeplearning.com/), a principled, math-driven approach to network design that, since then, has only risen in scope and impact.
+This is the first in a series of posts on group-equivariant convolutional neural networks (GCNNs). Today, we keep it short, high-level, and conceptual; examples and implementations will follow. In looking at GCNNs, we are resuming a topic we first [wrote about](/blog/ai/2021-08-26-geometric-deep-learning/) in 2021: [Geometric Deep Learning](https://geometricdeeplearning.com/), a principled, math-driven approach to network design that, since then, has only risen in scope and impact.
 
 ## From alchemy to science: Geometric Deep Learning in two minutes
 

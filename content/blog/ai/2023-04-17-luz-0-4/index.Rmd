@@ -24,13 +24,13 @@ A new version of luz is now available on CRAN. luz is a high-level interface for
 so you can adapt it to run all kinds of deep learning models.
 
 If you want to get started with luz we recommend reading the
-[previous release blog post](https://blogs.rstudio.com/ai/posts/2022-08-24-luz-0-3/#whats-luz) as well as the ['Training with luz'](https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/training_with_luz.html) chapter of the ['Deep Learning and Scientific Computing with R torch'](https://blogs.rstudio.com/ai/posts/2023-04-05-deep-learning-scientific-computing-r-torch/) book.
+[previous release blog post](/blog/ai/2022-08-24-luz-0-3/#whats-luz) as well as the ['Training with luz'](https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/training_with_luz.html) chapter of the ['Deep Learning and Scientific Computing with R torch'](/blog/ai/2023-04-05-deep-learning-scientific-computing-r-torch/) book.
 
 This release adds numerous smaller features, and you can check the full changelog [here](https://mlverse.github.io/luz/news/index.html). In this blog post we highlight the features we are most excited for.
 
 ## Support for Apple Silicon
 
-Since [torch v0.9.0](https://blogs.rstudio.com/ai/posts/2022-10-25-torch-0-9/#support-for-apple-silicon), it's possible to run computations on the GPU of Apple Silicon equipped Macs. luz wouldn't automatically make use of the GPUs though, and instead used to run the models on CPU. 
+Since [torch v0.9.0](/blog/ai/2022-10-25-torch-0-9/#support-for-apple-silicon), it's possible to run computations on the GPU of Apple Silicon equipped Macs. luz wouldn't automatically make use of the GPUs though, and instead used to run the models on CPU. 
 
 Starting from this release, luz will automatically use the 'mps' device when running models on Apple Silicon computers, and thus let you benefit from the speedups of running models on the GPU.
 
@@ -111,7 +111,7 @@ This bugfix results in a 10x speedup for this model. However, the speedup may va
 
 Thank you very much for reading this blog post. As always, we welcome every contribution to the torch ecosystem. Feel free to open issues to suggest new features, improve documentation, or extend the code base. 
 
-Last week, we announced the torch v0.10.0 release -- here's a [link](https://blogs.rstudio.com/ai/posts/2023-04-14-torch-0-10/) to the release blog post, in case you missed it.
+Last week, we announced the torch v0.10.0 release -- here's a [link](/blog/ai/2023-04-14-torch-0-10/) to the release blog post, in case you missed it.
 
 Photo by <a href="https://unsplash.com/@pj24dm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Peter John Maridable</a> on <a href="https://unsplash.com/photos/C2a4RGapd8s?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   

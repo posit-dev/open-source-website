@@ -3,6 +3,7 @@ title: "Time series prediction with FNN-LSTM"
 description: |
   In a recent post, we showed how an LSTM autoencoder, regularized by false nearest neighbors (FNN) loss, can be used to reconstruct the attractor of a nonlinear, chaotic dynamical system. Here, we explore how that same technique assists in prediction. Matched up with a comparable, capacity-wise, "vanilla LSTM", FNN-LSTM improves performance on a set of very different, real-world datasets, especially for the initial steps in a multi-step forecast.
 date: 2020-07-20
+slug: keydanafnnlstm
 categories:
   - R
   - TensorFlow/Keras
@@ -22,7 +23,7 @@ port_status: in-progress
 
 
 Today, we pick up on the plan alluded to in the conclusion of the recent [Deep attractors: Where deep learning meets
-chaos](https://blogs.rstudio.com/ai/posts/2020-06-24-deep-attractors/): employ that same technique to generate *forecasts* for
+chaos](/blog/ai/2020-06-24-deep-attractors/): employ that same technique to generate *forecasts* for
 empirical time series data.
 
 "That same technique", which for conciseness, I'll take the liberty of referring to as FNN-LSTM, is due to William Gilpin's
@@ -45,7 +46,7 @@ This is where Gilpin's idea comes in: Train an autoencoder, whose intermediate r
 attractor. Not just any MSE-optimized autoencoder though. The latent representation is regularized by *false nearest
 neighbors* (FNN) loss, a technique commonly used with delay coordinate embedding to determine an adequate embedding dimension.
 False neighbors are those who are close in `n`-dimensional space, but significantly farther apart in `n+1`-dimensional space.
-In the aforementioned introductory [post](https://blogs.rstudio.com/ai/posts/2020-06-24-deep-attractors/), we showed how this
+In the aforementioned introductory [post](/blog/ai/2020-06-24-deep-attractors/), we showed how this
 technique allowed to reconstruct the attractor of the (synthetic) Lorenz system. Now, we want to move on to prediction.
 
 We first describe the setup, including model definitions, training procedures, and data preparation. Then, we tell you how it

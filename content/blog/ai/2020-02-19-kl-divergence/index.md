@@ -3,6 +3,7 @@ title: "Infinite surprise - the iridescent personality of Kullback-Leibler diver
 description: |
   Kullback-Leibler divergence is not just used to train variational autoencoders or Bayesian networks (and not just a hard-to-pronounce thing). It is a fundamental concept in information theory, put to use in a vast range of applications. Most interestingly, it's not always about constraint, regularization or compression. Quite on the contrary, sometimes it is about novelty, discovery and surprise.
 date: 2020-02-19
+slug: keydana2020kldiv
 categories:
   - Probabilistic ML/DL
   - Concepts
@@ -188,7 +189,7 @@ Sun, Yi, Faustino J. Gomez, and Juergen Schmidhuber. 2011. "Planning to Be Surpr
 
 Zanardo, Enrico. 2017. "HOW TO MEASURE DISAGREEMENT ?"
 
-[^1]: See [Representation learning with MMD-VAE](https://blogs.rstudio.com/tensorflow/posts/2018-10-22-mmd-vae/) for an introduction.
+[^1]: See [Representation learning with MMD-VAE](/blog/ai/2018-10-22-mmd-vae/) for an introduction.
 
 [^2]: As you probably guessed, these epitheta are not to be taken entirely seriously...
 

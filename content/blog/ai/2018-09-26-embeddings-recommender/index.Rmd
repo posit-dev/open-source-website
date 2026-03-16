@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
 
-What's your first association when you read the word _embeddings_? For most of us, the answer will probably be _word embeddings_, or _word vectors_. A quick search for recent papers on [arxiv](www.arxiv.org) shows what else can be embedded: equations[@2018arXiv180309123K], vehicle sensor data[@2018arXiv180604795H], graphs[@2018arXiv180202896A], code[@abs-1803-09473], spatial data[@abs-1805-02855], biological entities[@2018arXiv180200864Z]  ... - and what not.
+What's your first association when you read the word _embeddings_? For most of us, the answer will probably be _word embeddings_, or _word vectors_. A quick search for recent papers on [arxiv](https://www.arxiv.org) shows what else can be embedded: equations[@2018arXiv180309123K], vehicle sensor data[@2018arXiv180604795H], graphs[@2018arXiv180202896A], code[@abs-1803-09473], spatial data[@abs-1805-02855], biological entities[@2018arXiv180200864Z]  ... - and what not.
 
 What is so attractive about this concept? Embeddings incorporate the concept of _distributed representations_, an encoding of information not at specialized locations (dedicated neurons, say), but as a pattern of activations spread out over a network.
 No better source to cite than Geoffrey Hinton, who played an important role in the development of the concept[@Rumelhart]:

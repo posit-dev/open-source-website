@@ -35,7 +35,7 @@ library(ggplot2)
 library(stringr)
 ```
 
-A few weeks ago, we provided an introduction to the task of [naming and locating objects in images](https://blogs.rstudio.com/tensorflow/posts/2018-11-05-naming-locating-objects/).
+A few weeks ago, we provided an introduction to the task of [naming and locating objects in images](/blog/ai/2018-11-05-naming-locating-objects/).
 Crucially, we confined ourselves to detecting a single object in an image. Reading that article, you might have thought "can't we just extend this approach to several objects"? The short answer is, not in a straightforward way. We'll see a longer answer shortly.
 
 In this post, we want to detail one viable approach, explaining (and coding) the steps involved. We won't, however, end up with a production-ready model. So if you read on, you won't have a model you can export and put on your smartphone, for use in the wild. You should, however, have learned a bit about how this - object detection - is even possible. After all, it might look like magic!
@@ -74,7 +74,7 @@ In this post, we show how to code a _very basic_ single-shot approach, inspired 
 ## A basic single-shot detector
 
 
-We're using the same dataset as in [Naming and locating objects in images](https://blogs.rstudio.com/tensorflow/posts/2018-11-05-naming-locating-objects/) - Pascal VOC, the 2007 edition - and we start out with the same preprocessing steps, up and until we have an object `imageinfo` that contains, in every row, information about a single object in an image.^[We won't need `imageinfo_maxbb` in this post.]
+We're using the same dataset as in [Naming and locating objects in images](/blog/ai/2018-11-05-naming-locating-objects/) - Pascal VOC, the 2007 edition - and we start out with the same preprocessing steps, up and until we have an object `imageinfo` that contains, in every row, information about a single object in an image.^[We won't need `imageinfo_maxbb` in this post.]
 
 ### Further preprocessing 
 

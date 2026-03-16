@@ -3,6 +3,7 @@ title: "LLaMA in R with Keras and TensorFlow"
 description: |
   Implementation and walk-through of LLaMA, a Large Language Model, in R, with TensorFlow and Keras.
 date: 2023-05-25T00:00:00.000Z
+slug: kalinowskillama
 categories:
   - TensorFlow/Keras
   - R
@@ -1207,9 +1208,9 @@ exploring this exciting LLM terrain!
 
 Photo by <a href="https://unsplash.com/@sebastiengoldberg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sébastien Goldberg</a> on <a href="https://unsplash.com/photos/xgQZ1rXbYa4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-Biderman, Stella, Sid Black, Charles Foster, et al. 2021. *Rotary Embeddings: A Relative Revolution*. <a href="blog.eleuther.ai/rotary-embeddings/" class="uri">Blog.eleuther.ai/rotary-embeddings/</a>.
+Biderman, Stella, Sid Black, Charles Foster, et al. 2021. *Rotary Embeddings: A Relative Revolution*. <a href="https://blog.eleuther.ai/rotary-embeddings/" class="uri">https://blog.eleuther.ai/rotary-embeddings/</a>.
 
-Falbel, Daniel, and Sigrid Keydana. 2023. *Posit AI Blog: De-Noising Diffusion with Torch*. <https://blogs.rstudio.com/tensorflow/posts/2023-04-13-denoising-diffusion/>.
+Falbel, Daniel, and Sigrid Keydana. 2023. *Posit AI Blog: De-Noising Diffusion with Torch*. </blog/ai/2023-04-13-denoising-diffusion/>.
 
 Hoffmann, Jordan, Sebastian Borgeaud, Arthur Mensch, et al. 2022. *Training Compute-Optimal Large Language Models*. <https://arxiv.org/abs/2203.15556>.
 

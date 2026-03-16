@@ -3,6 +3,7 @@ title: "News from the sparkly-verse"
 description: |
   Highlights to the most recent updates to `sparklyr` and friends
 date: 2024-04-22T00:00:00.000Z
+slug: sparklyr-updates-q1-2024
 categories:
   - Packages/Releases
   - Spark

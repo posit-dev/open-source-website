@@ -3,6 +3,7 @@ title: "torch time series continued: A first go at multi-step prediction"
 description: |
   We continue our exploration of time-series forecasting with torch, moving on to architectures designed for multi-step prediction. Here, we augment the "workhorse RNN" by a multi-layer perceptron (MLP) to extrapolate multiple timesteps into the future.
 date: 2021-03-11
+slug: keydanatorchts2
 categories:
   - Torch
   - R
@@ -20,7 +21,7 @@ port_status: in-progress
 
 
 
-We pick up where the [first post in this series](https://blogs.rstudio.com/ai/posts/2021-03-10-forecasting-time-series-with-torch_1/) left us: confronting the task of multi-step time-series forecasting.
+We pick up where the [first post in this series](/blog/ai/2021-03-10-forecasting-time-series-with-torch_1/) left us: confronting the task of multi-step time-series forecasting.
 
 Our first attempt was a workaround of sorts. The model had been trained to deliver a single prediction, corresponding to the very next point in time. Thus, if we needed a longer forecast, all we could do is use that prediction and feed it back to the model, moving the input sequence by one value (from $[x_{t-n}, ..., x_t]$ to $[x_{t-n-1}, ..., x_{t+1}]$, say).
 
@@ -105,7 +106,7 @@ test_dl <- test_ds %>% dataloader(batch_size = 1)
 
 The model replaces the single linear layer that, in the previous post, had been tasked with outputting the final prediction, with a small network, complete with two linear layers and -- optional -- dropout.
 
-In `forward()`, we first apply the RNN, and just like in the previous post, we make use of the `outputs` only; or more specifically, the `output` corresponding to the final time step. (See that previous post for a [detailed discussion](https://blogs.rstudio.com/ai/posts/2021-03-10-forecasting-time-series-with-torch_1/#model) of what a `torch` RNN returns.)
+In `forward()`, we first apply the RNN, and just like in the previous post, we make use of the `outputs` only; or more specifically, the `output` corresponding to the final time step. (See that previous post for a [detailed discussion](/blog/ai/2021-03-10-forecasting-time-series-with-torch_1/#model) of what a `torch` RNN returns.)
 
 ``` r
 model <- nn_module(

@@ -379,11 +379,11 @@ At each $t$, a hidden state is generated, and so is an output. Normally, if our 
 
 Indeed, return $o_{t+1}$ is what a Keras LSTM or GRU would do by default.[^1] Not so its `torch` counterparts. In `torch`, the output tensor comprises all of $o$. This is why, in step two above, we select the single time step we're interested in -- namely, the last one.
 
-[^1]: By default means that if the optional `return_sequences` argument is not passed. See [here](https://blogs.rstudio.com/ai/posts/2020-12-17-torch-convlstm/#interlude-outputs-states-hidden-values-whats-what) for a systematic comparison of RNN return values for both `torch` and Keras.
+[^1]: By default means that if the optional `return_sequences` argument is not passed. See [here](/blog/ai/2020-12-17-torch-convlstm/#interlude-outputs-states-hidden-values-whats-what) for a systematic comparison of RNN return values for both `torch` and Keras.
 
 In later posts, we will make use of more than the last time step. Sometimes, we'll use the sequence of hidden states (the $h$s) instead of the outputs (the $o$s). So you may feel like asking, what if we used $h_{t+1}$ here instead of $o_{t+1}$? The answer is: With a GRU, this would not make a difference, as those two are identical. With LSTM though, it would, as LSTM keeps a second, namely, the "cell", state[^2].
 
-[^2]: Again, see [this post](https://blogs.rstudio.com/ai/posts/2020-12-17-torch-convlstm/#interlude-outputs-states-hidden-values-whats-what) for more details.
+[^2]: Again, see [this post](/blog/ai/2020-12-17-torch-convlstm/#interlude-outputs-states-hidden-values-whats-what) for more details.
 
 On to `initialize()`. For ease of experimentation, we instantiate either a GRU or an LSTM based on user input. Two things are worth noting:
 

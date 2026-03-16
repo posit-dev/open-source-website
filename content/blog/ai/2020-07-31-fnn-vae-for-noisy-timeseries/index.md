@@ -3,6 +3,7 @@ title: "FNN-VAE for noisy time series forecasting"
 description: |
   In the last part of this mini-series on forecasting with false nearest neighbors (FNN) loss, we replace the LSTM autoencoder from the previous post by a convolutional VAE, resulting in equivalent prediction performance but significantly lower training time. In addition, we find that FNN regularization is of great help when an underlying deterministic process is obscured by substantial noise.
 date: 2020-07-31
+slug: keydanafnnvae
 categories:
   - R
   - TensorFlow/Keras
@@ -22,7 +23,7 @@ port_status: in-progress
 
 
 This post did not end up quite the way I'd imagined. A quick follow-up on the recent [Time series prediction with
-FNN-LSTM](https://blogs.rstudio.com/ai/posts/2020-07-20-fnn-lstm/), it was supposed to demonstrate how *noisy* time series (so common in
+FNN-LSTM](/blog/ai/2020-07-20-fnn-lstm/), it was supposed to demonstrate how *noisy* time series (so common in
 practice) could profit from a change in architecture: Instead of FNN-LSTM, an LSTM autoencoder regularized by false nearest
 neighbors (FNN) loss, use FNN-VAE, a variational autoencoder constrained by the same. However, FNN-VAE did not seem to handle
 noise better than FNN-LSTM. No plot, no post, then?
@@ -44,11 +45,11 @@ to pursue in their own experimentation?
 
 This post is the third in a mini-series.
 
-In [Deep attractors: Where deep learning meets chaos](https://blogs.rstudio.com/ai/posts/2020-06-24-deep-attractors/), we
+In [Deep attractors: Where deep learning meets chaos](/blog/ai/2020-06-24-deep-attractors/), we
 explained, with a substantial detour into chaos theory, the idea of FNN loss, introduced in (Gilpin 2020). Please consult
 that first post for theoretical background and intuitions behind the technique.
 
-The subsequent post, [Time series prediction with FNN-LSTM](https://blogs.rstudio.com/ai/posts/2020-07-20-fnn-lstm/), showed
+The subsequent post, [Time series prediction with FNN-LSTM](/blog/ai/2020-07-20-fnn-lstm/), showed
 how to use an LSTM autoencoder, constrained by FNN loss, for forecasting (as opposed to reconstructing an attractor). The results were stunning: In multi-step prediction (12-120 steps, with that number varying by
 dataset), the short-term forecasts were drastically improved by adding in FNN regularization. See that second post for
 experimental setup and results on four very different, non-synthetic datasets.

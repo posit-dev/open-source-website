@@ -3,6 +3,7 @@ title: "Group-equivariant neural networks with escnn"
 description: |
   Escnn, built on PyTorch, is a library that, in the spirit of Geometric Deep Learning, provides a high-level interface to designing and training group-equivariant neural networks. This post introduces important mathematical concepts, the library's key actors, and essential library use.
 date: 2023-05-09T00:00:00.000Z
+slug: keydanagcnn3
 categories:
   - Torch
   - R
@@ -21,7 +22,7 @@ port_status: in-progress
 
 
 
-Today, we resume our exploration of group equivariance. This is the third post in the series. The [first](https://blogs.rstudio.com/ai/posts/2023-03-09-group-equivariant-cnn-1/) was a high-level introduction: what this is all about; how equivariance is operationalized; and why it is of relevance to many deep-learning applications. The [second](https://blogs.rstudio.com/ai/posts/2023-03-27-group-equivariant-cnn-2/) sought to concretize the key ideas by developing a group-equivariant CNN from scratch. That being instructive, but too tedious for practical use, today we look at a carefully designed, highly-performant [library](https://github.com/QUVA-Lab/escnn) that hides the technicalities and enables a convenient workflow.
+Today, we resume our exploration of group equivariance. This is the third post in the series. The [first](/blog/ai/2023-03-09-group-equivariant-cnn-1/) was a high-level introduction: what this is all about; how equivariance is operationalized; and why it is of relevance to many deep-learning applications. The [second](/blog/ai/2023-03-27-group-equivariant-cnn-2/) sought to concretize the key ideas by developing a group-equivariant CNN from scratch. That being instructive, but too tedious for practical use, today we look at a carefully designed, highly-performant [library](https://github.com/QUVA-Lab/escnn) that hides the technicalities and enables a convenient workflow.
 
 First though, let me again set the context. In physics, an all-important concept is that of symmetry[^1], a symmetry being present whenever some quantity is being conserved. But we don't even need to look to science. Examples arise in daily life, and -- otherwise why write about it - in the tasks we apply deep learning to.
 
@@ -78,7 +79,7 @@ py_list_attributes(gspaces) |> (\(vec) grep("On", vec, value = TRUE))() |> sort(
 
 The methods I've listed instantiate a `gspace`. If you look closely, you see that they're all composed of two strings, joined by "On". In all instances, the second part is either `R2` or `R3`. These two are the available base spaces -- $\mathbb{R}^2$ and $\mathbb{R}^3$ -- an input signal can live in. Signals can, thus, be images, made up of pixels, or three-dimensional volumes, composed of voxels. The first part refers to the group you'd like to use. Choosing a group means choosing the symmetries to be respected. For example, `rot2dOnR2()` implies equivariance as to rotations, `flip2dOnR2()` guarantees the same for mirroring actions, and `flipRot2dOnR2()` subsumes both.
 
-Let's define such a `gspace`. Here we ask for rotation equivariance on the Euclidean plane, making use of the same cyclic group -- $C_4$ -- we developed in our [from-scratch implementation](https://blogs.rstudio.com/ai/posts/2023-03-27-group-equivariant-cnn-2/):
+Let's define such a `gspace`. Here we ask for rotation equivariance on the Euclidean plane, making use of the same cyclic group -- $C_4$ -- we developed in our [from-scratch implementation](/blog/ai/2023-03-27-group-equivariant-cnn-2/):
 
 ``` r
 r2_act <- gspaces$rot2dOnR2(N = 4L)

@@ -3,6 +3,7 @@ title: "sparklyr.flint 0.2: ASOF Joins, OLS Regression, and additional summarize
 description: |
   We are excited to announce a number of powerful, new functionalities and improvements which are now part of sparklyr.flint 0.2!
 date: 2020-10-12
+slug: sparklyr.flint-0.2.0
 categories:
   - R
   - Packages/Releases
@@ -21,7 +22,7 @@ port_status: in-progress
 
 
 
-Since [`sparklyr.flint`](https://cran.r-project.org/web/packages/sparklyr.flint/index.html), a [`sparklyr`](https://sparklyr.ai) extension for leveraging [Flint](https://github.com/twosigma/flint) time series functionalities through `sparklyr`, was [introduced](https://blogs.rstudio.com/ai/posts/2020-09-07-sparklyr-flint) in September, we have made a number of enhancements to it, and have successfully submitted `sparklyr.flint` 0.2 to CRAN.
+Since [`sparklyr.flint`](https://cran.r-project.org/web/packages/sparklyr.flint/index.html), a [`sparklyr`](https://sparklyr.ai) extension for leveraging [Flint](https://github.com/twosigma/flint) time series functionalities through `sparklyr`, was [introduced](/blog/ai/2020-09-07-sparklyr-flint) in September, we have made a number of enhancements to it, and have successfully submitted `sparklyr.flint` 0.2 to CRAN.
 
 In this blog post, we highlight the following new features and improvements from `sparklyr.flint` 0.2:
 

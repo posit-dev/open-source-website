@@ -118,7 +118,7 @@ Back to our original task of speech classification. Now that we've gained a bit 
 # Preprocessing for audio classification using TensorFlow
 
 Code will be represented in snippets according to the functionality it provides, so we may directly map it to what was explained conceptually above.
-A complete example is available [here](https://github.com/skeydan/audio_classification/blob/master/audio_classification_tf.R). The complete example builds on Daniel's [original code](https://blogs.rstudio.com/tensorflow/posts/2018-06-06-simple-audio-classification-keras/) as much as possible ^[In particular, we're leaving the convnet and training code itself nearly unchanged.], with two exceptions:
+A complete example is available [here](https://github.com/skeydan/audio_classification/blob/master/audio_classification_tf.R). The complete example builds on Daniel's [original code](/blog/ai/2018-06-06-simple-audio-classification-keras/) as much as possible ^[In particular, we're leaving the convnet and training code itself nearly unchanged.], with two exceptions:
 
 - The code runs in eager as well as in static graph mode. If you decide you only ever need eager mode, there are a few places that can be simplified. This is partly related to the fact that in eager mode, TensorFlow operations in place of tensors return values, which we can directly pass on to TensorFlow functions expecting values, not tensors. In addition, less conversion code is needed when manipulating intermediate values in R.
 

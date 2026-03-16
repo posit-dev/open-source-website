@@ -34,7 +34,7 @@ date back to that version.
 ## What's `luz`?
 
 Since it is [relatively new
-package](https://blogs.rstudio.com/ai/posts/2021-06-17-luz/), we are
+package](/blog/ai/2021-06-17-luz/), we are
 starting this blog post with a quick recap of how `luz` works. If you
 already know what `luz` is, feel free to move on to the next section.
 

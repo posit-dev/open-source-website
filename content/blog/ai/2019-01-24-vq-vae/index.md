@@ -3,6 +3,7 @@ title: "Discrete Representation Learning with VQ-VAE and TensorFlow Probability"
 description: |
   Mostly when thinking of Variational Autoencoders (VAEs), we picture the prior as an isotropic Gaussian. But this is by no means a necessity. The Vector Quantised Variational Autoencoder (VQ-VAE) described in van den Oord et al's "Neural Discrete Representation Learning" features a discrete latent space that allows to learn impressively concise latent representations. In this post, we combine elements of Keras, TensorFlow, and TensorFlow Probability to see if we can generate convincing letters resembling those in Kuzushiji-MNIST.
 date: 2019-01-24
+slug: keydana2019vqvae
 categories:
   - TensorFlow/Keras
   - Probabilistic ML/DL
@@ -20,7 +21,7 @@ port_status: in-progress
 
 
 
-About two weeks ago, we [introduced TensorFlow Probability (TFP)](https://blogs.rstudio.com/tensorflow/posts/2019-01-08-getting-started-with-tf-probability/), showing how to create and sample from *distributions* and put them to use in a Variational Autoencoder (VAE) that learns its prior. Today, we move on to a different specimen in the VAE model zoo: the Vector Quantised Variational Autoencoder (VQ-VAE) described in *Neural Discrete Representation Learning* (Oord et al. 2017). This model differs from most VAEs in that its approximate posterior is not continuous, but discrete - hence the "quantised" in the article's title. We'll quickly look at what this means, and then dive directly into the code, combining Keras layers, eager execution, and TFP.
+About two weeks ago, we [introduced TensorFlow Probability (TFP)](/blog/ai/2019-01-08-getting-started-with-tf-probability/), showing how to create and sample from *distributions* and put them to use in a Variational Autoencoder (VAE) that learns its prior. Today, we move on to a different specimen in the VAE model zoo: the Vector Quantised Variational Autoencoder (VQ-VAE) described in *Neural Discrete Representation Learning* (Oord et al. 2017). This model differs from most VAEs in that its approximate posterior is not continuous, but discrete - hence the "quantised" in the article's title. We'll quickly look at what this means, and then dive directly into the code, combining Keras layers, eager execution, and TFP.
 
 # Discrete codes
 
@@ -67,7 +68,7 @@ library(curry)
 ```
 
 As in our previous post on doing VAE with TFP, we'll use [Kuzushiji-MNIST](https://github.com/rois-codh/kmnist)(Clanuwat et al. 2018) as input.
-Now is the time to look at [what we ended up generating that time](https://blogs.rstudio.com/tensorflow/posts/2019-01-08-getting-started-with-tf-probability/images/results.png) and place your bet: How will that compare against the discrete latent space of VQ-VAE?
+Now is the time to look at [what we ended up generating that time](/blog/ai/2019-01-08-getting-started-with-tf-probability/images/results.png) and place your bet: How will that compare against the discrete latent space of VQ-VAE?
 
 ``` r
 np <- import("numpy")

@@ -3,6 +3,7 @@ title: "Adding uncertainty estimates to Keras models with tfprobability"
 description: |
   As of today, there is no mainstream road to obtaining uncertainty estimates from neural networks. All that can be said is that, normally, approaches tend to be Bayesian in spirit, involving some way of putting a prior over model weights. This holds true as well for the method presented in this post: We show how to use tfprobability, the R interface to TensorFlow Probability, to add uncertainty estimates to a Keras model in an elegant and conceptually plausible way.
 date: 2019-06-05
+slug: keydana2019uncertaintytfp
 categories:
   - Probabilistic ML/DL
   - TensorFlow/Keras
@@ -20,7 +21,7 @@ port_status: in-progress
 
 
 
-About six months ago, we showed [how to create a custom wrapper](https://blogs.rstudio.com/tensorflow/posts/2018-11-12-uncertainty_estimates_dropout/) to obtain uncertainty estimates from a Keras network. Today we present a less laborious, as well faster-running way using [tfprobability](https://rstudio.github.io/tfprobability/), the R wrapper to TensorFlow Probability. Like most posts on this blog, this one won't be short, so let's quickly state what you can expect in return of reading time.
+About six months ago, we showed [how to create a custom wrapper](/blog/ai/2018-11-12-uncertainty_estimates_dropout/) to obtain uncertainty estimates from a Keras network. Today we present a less laborious, as well faster-running way using [tfprobability](https://rstudio.github.io/tfprobability/), the R wrapper to TensorFlow Probability. Like most posts on this blog, this one won't be short, so let's quickly state what you can expect in return of reading time.
 
 ## What to expect from this post
 
@@ -468,7 +469,7 @@ Keeping everything else constant, here we vary that parameter between `0.01` and
 
 Evidently, this is another parameter we should be prepared to experiment with.
 
-Now that we've introduced all three types of presenting uncertainty -- aleatoric only, epistemic only, or both -- let's see them on the aforementioned [Combined Cycle Power Plant Data Set](http://archive.ics.uci.edu/ml/datasets/Combined+Cycle+Power+Plant). Please see [our previous post on uncertainty](https://blogs.rstudio.com/tensorflow/posts/2018-11-12-uncertainty_estimates_dropout/) for a quick characterization, as well as visualization, of the dataset.
+Now that we've introduced all three types of presenting uncertainty -- aleatoric only, epistemic only, or both -- let's see them on the aforementioned [Combined Cycle Power Plant Data Set](http://archive.ics.uci.edu/ml/datasets/Combined+Cycle+Power+Plant). Please see [our previous post on uncertainty](/blog/ai/2018-11-12-uncertainty_estimates_dropout/) for a quick characterization, as well as visualization, of the dataset.
 
 ## Combined Cycle Power Plant Data Set
 

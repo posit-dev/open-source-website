@@ -3,6 +3,7 @@ title: "sparklyr 1.5: better dplyr interface, more sdf_* functions, and RDS-base
 description: |
   Unlike all three previous sparklyr releases, the recent release of sparklyr 1.5 placed much more emphasis on enhancing existing sparklyr features rather than creating new ones. As a result, many valuable suggestions from sparklyr users were taken into account and were successfully addressed in a long list of bug fixes and improvements.
 date: 2020-12-14
+slug: sparklyr-1.5
 categories:
   - R
   - Packages/Releases
@@ -494,7 +495,7 @@ and [@skeydan](https://github.com/skeydan) for their valuable editorial inputs.
 
 If you wish to learn more about `sparklyr`, check out [sparklyr.ai](https://sparklyr.ai),
 [spark.rstudio.com](https://spark.rstudio.com), and some of the previous release posts such as
-[sparklyr 1.4](https://blogs.rstudio.com/ai/posts/2020-09-30-sparklyr-1.4.0-released) and
+[sparklyr 1.4](/blog/ai/2020-09-30-sparklyr-1.4.0-released) and
 [sparklyr 1.3](https://blog.rstudio.com/2020/07/16/sparklyr-1-3/).
 
 Thanks for reading!

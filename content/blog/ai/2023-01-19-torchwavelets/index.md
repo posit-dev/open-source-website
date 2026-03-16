@@ -3,6 +3,7 @@ title: "AO, NAO, ENSO: A wavelet analysis example"
 description: |
   El Niño-Southern Oscillation (ENSO), North Atlantic Oscillation (NAO), and Arctic Oscillation (AO) are atmospheric phenomena of global impact that strongly affect people's lives. ENSO, first and foremost, brings with it floods, droughts, and ensuing poverty, in developing countries in the Southern Hemisphere. Here, we use the new torchwavelets package to comparatively inspect patterns in the three series.
 date: 2023-01-19T00:00:00.000Z
+slug: keydanatorchwavelets
 categories:
   - Torch
   - R
@@ -21,7 +22,7 @@ port_status: in-progress
 
 
 
-Recently, we showed how to use `torch` for [wavelet analysis](https://blogs.rstudio.com/ai/posts/2022-10-27-wavelets/). A member of the family of spectral analysis methods, wavelet analysis bears some similarity to the Fourier Transform, and specifically, to its popular two-dimensional application, the spectrogram.
+Recently, we showed how to use `torch` for [wavelet analysis](/blog/ai/2022-10-27-wavelets/). A member of the family of spectral analysis methods, wavelet analysis bears some similarity to the Fourier Transform, and specifically, to its popular two-dimensional application, the spectrogram.
 
 As explained in that book excerpt, though, there are significant differences. For the purposes of the current post, it suffices to know that frequency-domain patterns are discovered by having a little "wave" (that, really, can be of any shape) "slide" over the data, computing degree of match (or mismatch) in the neighborhood of every sample.
 
@@ -197,7 +198,7 @@ The result is two-dimensional. The second dimension holds measurement times, i.e
 Namely, we have here the set of scales the transform has been computed for. If you're familiar with the Fourier Transform and its analogue, the spectrogram, you'll probably think in terms of time versus frequency. With wavelets, there is an additional parameter, the scale, that determines the spread of the analysis pattern.
 
 <aside>
-The aforementioned [book excerpt](https://blogs.rstudio.com/ai/posts/2022-10-27-wavelets/) discusses this in detail.
+The aforementioned [book excerpt](/blog/ai/2022-10-27-wavelets/) discusses this in detail.
 </aside>
 
 Some wavelets have both a scale and a frequency, in which case these can interact in complex ways. Others are defined such that no separate frequency appears. In the latter case, you immediately end up with the time vs. scale layout we see in wavelet diagrams (scaleograms). In the former, most software hides the complexity by merging scale and frequency into one, leaving just scale as a user-visible parameter. In `torchwavelets`, too, the wavelet frequency (if existent) has been "streamlined away". Consequently, we'll end up plotting time versus scale, as well. I'll say more when we actually see such a scaleogram.
@@ -275,7 +276,7 @@ Summing up, the two-dimensional analysis nicely complements the more compressed 
 In a nutshell, the spectrogram splits the data into several "windows", and computes the DFT independently on all of them. To compute the scaleogram, on the other hand, the analysis wavelet slides continuously over the data, resulting in a spectrum-equivalent for the neighborhood of each sample in the series. With the spectrogram, a fixed window size means that not all frequencies are resolved equally well: The higher frequencies appear more frequently in the interval than the lower ones, and thus, will allow for better resolution. Wavelet analysis, in contrast, is done on a set of scales deliberately arranged so as to capture a broad range of frequencies theoretically visible in a series of given length.
 
 <aside>
-Take a look at the aforementioned [book excerpt](https://blogs.rstudio.com/ai/posts/2022-10-27-wavelets/) to see spectrogram and scaleogram compared in a nice application.
+Take a look at the aforementioned [book excerpt](/blog/ai/2022-10-27-wavelets/) to see spectrogram and scaleogram compared in a nice application.
 </aside>
 
 ## Analysis: NAO

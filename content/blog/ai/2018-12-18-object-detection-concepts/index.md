@@ -3,6 +3,7 @@ title: "Concepts in object detection"
 description: |
   As shown in a previous post, naming and locating a single object in an image is a task that may be approached in a straightforward way. This is not the same with general object detection, though - naming and locating several objects at once, with no prior information about how many objects are supposed to be detected. In this post, we explain the steps involved in coding a basic single-shot object detector: Not unlike SSD (Single-shot Multibox Detector), but simplified and designed not for best performance, but comprehensibility.
 date: 2018-12-18
+slug: keydana2018conceptsobjectdetection
 categories:
   - TensorFlow/Keras
   - Image Recognition & Image Processing
@@ -19,7 +20,7 @@ port_status: in-progress
 
 
 
-A few weeks ago, we provided an introduction to the task of [naming and locating objects in images](https://blogs.rstudio.com/tensorflow/posts/2018-11-05-naming-locating-objects/).
+A few weeks ago, we provided an introduction to the task of [naming and locating objects in images](/blog/ai/2018-11-05-naming-locating-objects/).
 Crucially, we confined ourselves to detecting a single object in an image. Reading that article, you might have thought "can't we just extend this approach to several objects"? The short answer is, not in a straightforward way. We'll see a longer answer shortly.
 
 In this post, we want to detail one viable approach, explaining (and coding) the steps involved. We won't, however, end up with a production-ready model. So if you read on, you won't have a model you can export and put on your smartphone, for use in the wild. You should, however, have learned a bit about how this - object detection - is even possible. After all, it might look like magic!
@@ -58,7 +59,7 @@ In this post, we show how to code a *very basic* single-shot approach, inspired 
 
 ## A basic single-shot detector
 
-We're using the same dataset as in [Naming and locating objects in images](https://blogs.rstudio.com/tensorflow/posts/2018-11-05-naming-locating-objects/) - Pascal VOC, the 2007 edition - and we start out with the same preprocessing steps, up and until we have an object `imageinfo` that contains, in every row, information about a single object in an image.[^1]
+We're using the same dataset as in [Naming and locating objects in images](/blog/ai/2018-11-05-naming-locating-objects/) - Pascal VOC, the 2007 edition - and we start out with the same preprocessing steps, up and until we have an object `imageinfo` that contains, in every row, information about a single object in an image.[^1]
 
 ### Further preprocessing
 

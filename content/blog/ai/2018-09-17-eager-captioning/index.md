@@ -22,7 +22,7 @@ port_status: in-progress
 
 In image captioning, an algorithm is given an image and tasked with producing a sensible caption. It is a challenging task for several reasons, not the least being that it involves a notion of *saliency* or *relevance*. This is why recent deep learning approaches mostly include some "attention" mechanism (sometimes even more than one) to help focusing on relevant image features.
 
-In this post, we demonstrate a formulation of image captioning as an encoder-decoder problem, enhanced by spatial attention over image grid cells. The idea comes from a recent paper on *Neural Image Caption Generation with Visual Attention* (Xu et al. 2015), and employs the same kind of attention algorithm as detailed in our post on [machine translation](https://blogs.rstudio.com/tensorflow/posts/2018-07-30-attention-layer/).
+In this post, we demonstrate a formulation of image captioning as an encoder-decoder problem, enhanced by spatial attention over image grid cells. The idea comes from a recent paper on *Neural Image Caption Generation with Visual Attention* (Xu et al. 2015), and employs the same kind of attention algorithm as detailed in our post on [machine translation](/blog/ai/2018-07-30-attention-layer/).
 
 We're porting Python code from a recent [Google Colaboratory notebook](https://colab.research.google.com/github/tensorflow/tensorflow/blob/master/tensorflow/contrib/eager/python/examples/generative_examples/image_captioning_with_attention.ipynb?linkId=54343050&pli=1#scrollTo=io7ws3ReRPGv), using Keras with TensorFlow eager execution to simplify our lives.
 
@@ -321,7 +321,7 @@ train_dataset <-
 
 ## Captioning model
 
-The model is basically the same as that discussed in the [machine translation post](https://blogs.rstudio.com/tensorflow/posts/2018-07-30-attention-layer/). Please refer to that article for an explanation of the concepts, as well as a detailed walk-through of the tensor shapes involved at every step. Here, we provide the tensor shapes as comments in the code snippets, for quick overview/comparison.
+The model is basically the same as that discussed in the [machine translation post](/blog/ai/2018-07-30-attention-layer/). Please refer to that article for an explanation of the concepts, as well as a detailed walk-through of the tensor shapes involved at every step. Here, we provide the tensor shapes as comments in the code snippets, for quick overview/comparison.
 
 However, if you develop your own models, with eager execution you can simply insert debugging/logging statements at arbitrary places in the code - even in model definitions. So you can have a function
 

@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
 
-The wait is over -- TensorFlow 2.0 (TF 2) is now officially here! What does this mean for us, users of R packages `keras` and/or `tensorflow`, which, as we know, [rely on the Python TensorFlow backend](https://blogs.rstudio.com/tensorflow/posts/2019-08-29-using-tf-from-r/)?
+The wait is over -- TensorFlow 2.0 (TF 2) is now officially here! What does this mean for us, users of R packages `keras` and/or `tensorflow`, which, as we know, [rely on the Python TensorFlow backend](/blog/ai/2019-08-29-using-tf-from-r/)?
 
 Before we go into details and explanations, here is an _all-clear_, for the concerned user who fears their `keras` code might become obsolete (it won't).
 
@@ -59,7 +59,7 @@ That's it for some background. In sum, we're happy most existing code will run j
 
 ## TF 2 in a nutshell, from an R perspective
 
-In fact, the most evident-on-user-level change is something we wrote several posts about, more than a year ago ^[See [More flexible models with TensorFlow eager execution and Keras](https://blogs.rstudio.com/tensorflow/posts/2018-10-02-eager-wrapup/) for an overview and annotated links.]. By then, _eager execution_ was a brand-new option that had to be turned on explicitly; TF 2 now makes it the default. Along with it came _custom models_ (a.k.a. subclassed models, in Python land) and _custom training_, making use of `tf$GradientTape`. Let's talk about what those termini refer to, and how they are relevant to R users.
+In fact, the most evident-on-user-level change is something we wrote several posts about, more than a year ago ^[See [More flexible models with TensorFlow eager execution and Keras](/blog/ai/2018-10-02-eager-wrapup/) for an overview and annotated links.]. By then, _eager execution_ was a brand-new option that had to be turned on explicitly; TF 2 now makes it the default. Along with it came _custom models_ (a.k.a. subclassed models, in Python land) and _custom training_, making use of `tf$GradientTape`. Let's talk about what those termini refer to, and how they are relevant to R users.
 
 ### Eager Execution
 
@@ -109,7 +109,7 @@ So that's eager execution. In our last year's _Eager_-category blog posts, it wa
 
 As a `keras` user, probably you're familiar with the _sequential_ and _functional_ styles of building a model. Custom models allow for even greater flexibility than functional-style ones. Check out the [documentation](https://tensorflow.rstudio.com/keras/articles/custom_models.html) for how to create one.
 
-Last year's series on eager execution has plenty of examples using custom models, featuring not just their flexibility, but another important aspect as well: the way they allow for modular, easily-intelligible code. ^[For example, see [Generating images with Keras and TensorFlow eager execution](https://blogs.rstudio.com/tensorflow/posts/2018-08-26-eager-dcgan/) on GANs, [Neural style transfer with eager execution and Keras](https://blogs.rstudio.com/tensorflow/posts/2018-09-10-eager-style-transfer/) on neural style transfer, or [Representation learning with MMD-VAE](https://blogs.rstudio.com/tensorflow/posts/2018-10-22-mmd-vae/) on Variational Autoencoders.]
+Last year's series on eager execution has plenty of examples using custom models, featuring not just their flexibility, but another important aspect as well: the way they allow for modular, easily-intelligible code. ^[For example, see [Generating images with Keras and TensorFlow eager execution](/blog/ai/2018-08-26-eager-dcgan/) on GANs, [Neural style transfer with eager execution and Keras](/blog/ai/2018-09-10-eager-style-transfer/) on neural style transfer, or [Representation learning with MMD-VAE](/blog/ai/2018-10-22-mmd-vae/) on Variational Autoencoders.]
 
 Encoder-decoder scenarios are a natural match. If you have seen, or written, "old-style" code for a Generative Adversarial Network (GAN), imagine something like this instead:
 
@@ -216,7 +216,7 @@ For 2 years now, the [tfdatasets](https://tensorflow.rstudio.com/tools/tfdataset
 
 Logically, there are three steps involved:
 
-1. First, data has to be loaded from some place. This could be a csv file, a directory containing images, or other sources. In this recent example from [Image segmentation with U-Net](https://blogs.rstudio.com/tensorflow/posts/2019-08-23-unet/), information about file names was first stored into an R `tibble`, and then [tensor_slices_dataset](https://tensorflow.rstudio.com/tools/tfdatasets/reference/tensor_slices_dataset.html) was used to create a `dataset` from it:
+1. First, data has to be loaded from some place. This could be a csv file, a directory containing images, or other sources. In this recent example from [Image segmentation with U-Net](/blog/ai/2019-08-23-unet/), information about file names was first stored into an R `tibble`, and then [tensor_slices_dataset](https://tensorflow.rstudio.com/tools/tfdatasets/reference/tensor_slices_dataset.html) was used to create a `dataset` from it:
 
 ```{r}
 data <- tibble(
@@ -299,7 +299,7 @@ spec <- feature_spec(hearts, target ~ .) %>%
 spec %>% fit()
 ```
 
-What happened here is that we told TensorFlow, please take all numeric columns (besides a few ones listed exprès) and scale them; take column `thal`, treat it as categorical and create an embedding for it; discretize `age` according to the given ranges; and finally, create a _crossed column_ to capture interaction between `thal` and that discretized age-range column. ^[`step_indicator_column` is there (twice) for technical reasons. Our [post on feature columns](https://blogs.rstudio.com/tensorflow/posts/2019-07-09-feature-columns/) explains.]
+What happened here is that we told TensorFlow, please take all numeric columns (besides a few ones listed exprès) and scale them; take column `thal`, treat it as categorical and create an embedding for it; discretize `age` according to the given ranges; and finally, create a _crossed column_ to capture interaction between `thal` and that discretized age-range column. ^[`step_indicator_column` is there (twice) for technical reasons. Our [post on feature columns](/blog/ai/2019-07-09-feature-columns/) explains.]
 
 This is nice, but when creating the model, we'll still have to define all those layers, right? (Which would be pretty cumbersome, having to figure out all the right dimensions...)
 Luckily, we don't have to. In sync with `tfdatasets`, `keras` now provides [layer_dense_features](https://tensorflow.rstudio.com/keras/reference/layer_dense_features.html) to create a layer tailor-made to accommodate the specification.
@@ -314,7 +314,7 @@ output <- input %>%
   layer_dense(units = 1, activation = "sigmoid")
 ```
 
-From then on, it's just normal `keras` `compile` and `fit`. See the [vignette](https://tensorflow.rstudio.com/tools/tfdatasets/articles/feature_columns.html) for the complete example. There also is a [post on feature columns](https://blogs.rstudio.com/tensorflow/posts/2019-07-09-feature-columns/) explaining more of how this works, and illustrating the time-and-nerve-saving effect by comparing with the pre-feature-spec way of working with heterogeneous datasets.
+From then on, it's just normal `keras` `compile` and `fit`. See the [vignette](https://tensorflow.rstudio.com/tools/tfdatasets/articles/feature_columns.html) for the complete example. There also is a [post on feature columns](/blog/ai/2019-07-09-feature-columns/) explaining more of how this works, and illustrating the time-and-nerve-saving effect by comparing with the pre-feature-spec way of working with heterogeneous datasets.
 
 As a last item on the topics of preprocessing and feature engineering, let's look at a promising thing to come in what we hope is the near future.
 
@@ -380,7 +380,7 @@ Both usage modes illustrate the high potential of working with Hub modules. Just
 
 As explained above, the default execution mode in TF 2 is eager. For performance reasons however, in many cases it will be desirable to compile parts of your code into a graph. Calls to Keras layers, for example, are run in graph mode.
 
-To compile a function into a graph, wrap it in a call to `tf_function`, as done e.g. in the post [Modeling censored data with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-07-31-censored-data/):
+To compile a function into a graph, wrap it in a call to `tf_function`, as done e.g. in the post [Modeling censored data with tfprobability](/blog/ai/2019-07-31-censored-data/):
 
 ```{r}
 run_mcmc <- function(kernel) {

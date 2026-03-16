@@ -3,6 +3,7 @@ title: "Audio classification with Keras: Looking closer at the non-deep learning
 description: |
   Sometimes, deep learning is seen - and welcomed - as a way to avoid laborious preprocessing of data. However, there are cases where preprocessing of sorts does not only help improve prediction, but constitutes a fascinating topic in itself. One such case is audio classification. In this post, we build on a previous post on this blog, this time focusing on explaining some of the non-deep learning background. We then link the concepts explained to updated for near-future releases TensorFlow code.
 date: 2019-02-07
+slug: keydana2019audiobackground
 categories:
   - TensorFlow/Keras
   - Concepts
@@ -114,7 +115,7 @@ Back to our original task of speech classification. Now that we've gained a bit 
 # Preprocessing for audio classification using TensorFlow
 
 Code will be represented in snippets according to the functionality it provides, so we may directly map it to what was explained conceptually above.
-A complete example is available [here](https://github.com/skeydan/audio_classification/blob/master/audio_classification_tf.R). The complete example builds on Daniel's [original code](https://blogs.rstudio.com/tensorflow/posts/2018-06-06-simple-audio-classification-keras/) as much as possible [^6], with two exceptions:
+A complete example is available [here](https://github.com/skeydan/audio_classification/blob/master/audio_classification_tf.R). The complete example builds on Daniel's [original code](/blog/ai/2018-06-06-simple-audio-classification-keras/) as much as possible [^6], with two exceptions:
 
 - The code runs in eager as well as in static graph mode. If you decide you only ever need eager mode, there are a few places that can be simplified. This is partly related to the fact that in eager mode, TensorFlow operations in place of tensors return values, which we can directly pass on to TensorFlow functions expecting values, not tensors. In addition, less conversion code is needed when manipulating intermediate values in R.
 

@@ -22,7 +22,7 @@ format: hugo-md
 knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
-Among deep learning practitioners, _Kullback-Leibler divergence_ (KL divergence) is perhaps best known for its role in training variational autoencoders (VAEs) ^[See [Representation learning with MMD-VAE](https://blogs.rstudio.com/tensorflow/posts/2018-10-22-mmd-vae/) for an introduction.]. To learn an informative latent space, we don't just optimize for good reconstruction. Rather, we also impose a prior on the latent distribution, and aim to keep them close -- often, by minimizing KL divergence. 
+Among deep learning practitioners, _Kullback-Leibler divergence_ (KL divergence) is perhaps best known for its role in training variational autoencoders (VAEs) ^[See [Representation learning with MMD-VAE](/blog/ai/2018-10-22-mmd-vae/) for an introduction.]. To learn an informative latent space, we don't just optimize for good reconstruction. Rather, we also impose a prior on the latent distribution, and aim to keep them close -- often, by minimizing KL divergence. 
 
 In this role, KL divergence acts like a watchdog; it is a constraining, regularizing factor, and if anthropomorphized, would seem stern and severe. If we leave it at that, however, we've seen just one side of its character, and are missing out on its complement, a picture of playfulness, adventure, and curiosity. In this post, we'll take a look at that other side.
 

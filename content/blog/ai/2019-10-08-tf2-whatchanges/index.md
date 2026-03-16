@@ -3,6 +3,7 @@ title: "TensorFlow 2.0 is here - what changes for R users?"
 description: |
   TensorFlow 2.0 was finally released last week. As R users we have two kinds of questions. First, will my keras code still run? And second, what is it that changes? In this post, we answer both and, then, give a tour of exciting new developments in the r-tensorflow ecosystem.
 date: 2019-10-08
+slug: keydana2019tf2
 categories:
   - TensorFlow/Keras
   - Packages/Releases
@@ -19,7 +20,7 @@ port_status: in-progress
 
 
 
-The wait is over -- TensorFlow 2.0 (TF 2) is now officially here! What does this mean for us, users of R packages `keras` and/or `tensorflow`, which, as we know, [rely on the Python TensorFlow backend](https://blogs.rstudio.com/tensorflow/posts/2019-08-29-using-tf-from-r/)?
+The wait is over -- TensorFlow 2.0 (TF 2) is now officially here! What does this mean for us, users of R packages `keras` and/or `tensorflow`, which, as we know, [rely on the Python TensorFlow backend](/blog/ai/2019-08-29-using-tf-from-r/)?
 
 Before we go into details and explanations, here is an *all-clear*, for the concerned user who fears their `keras` code might become obsolete (it won't).
 
@@ -207,7 +208,7 @@ For 2 years now, the [tfdatasets](https://tensorflow.rstudio.com/tools/tfdataset
 
 Logically, there are three steps involved:
 
-1.  First, data has to be loaded from some place. This could be a csv file, a directory containing images, or other sources. In this recent example from [Image segmentation with U-Net](https://blogs.rstudio.com/tensorflow/posts/2019-08-23-unet/), information about file names was first stored into an R `tibble`, and then [tensor_slices_dataset](https://tensorflow.rstudio.com/tools/tfdatasets/reference/tensor_slices_dataset.html) was used to create a `dataset` from it:
+1.  First, data has to be loaded from some place. This could be a csv file, a directory containing images, or other sources. In this recent example from [Image segmentation with U-Net](/blog/ai/2019-08-23-unet/), information about file names was first stored into an R `tibble`, and then [tensor_slices_dataset](https://tensorflow.rstudio.com/tools/tfdatasets/reference/tensor_slices_dataset.html) was used to create a `dataset` from it:
 
 ``` r
 data <- tibble(
@@ -300,7 +301,7 @@ output <- input %>%
   layer_dense(units = 1, activation = "sigmoid")
 ```
 
-From then on, it's just normal `keras` `compile` and `fit`. See the [vignette](https://tensorflow.rstudio.com/tools/tfdatasets/articles/feature_columns.html) for the complete example. There also is a [post on feature columns](https://blogs.rstudio.com/tensorflow/posts/2019-07-09-feature-columns/) explaining more of how this works, and illustrating the time-and-nerve-saving effect by comparing with the pre-feature-spec way of working with heterogeneous datasets.
+From then on, it's just normal `keras` `compile` and `fit`. See the [vignette](https://tensorflow.rstudio.com/tools/tfdatasets/articles/feature_columns.html) for the complete example. There also is a [post on feature columns](/blog/ai/2019-07-09-feature-columns/) explaining more of how this works, and illustrating the time-and-nerve-saving effect by comparing with the pre-feature-spec way of working with heterogeneous datasets.
 
 As a last item on the topics of preprocessing and feature engineering, let's look at a promising thing to come in what we hope is the near future.
 
@@ -364,7 +365,7 @@ Both usage modes illustrate the high potential of working with Hub modules. Just
 
 As explained above, the default execution mode in TF 2 is eager. For performance reasons however, in many cases it will be desirable to compile parts of your code into a graph. Calls to Keras layers, for example, are run in graph mode.
 
-To compile a function into a graph, wrap it in a call to `tf_function`, as done e.g. in the post [Modeling censored data with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-07-31-censored-data/):
+To compile a function into a graph, wrap it in a call to `tf_function`, as done e.g. in the post [Modeling censored data with tfprobability](/blog/ai/2019-07-31-censored-data/):
 
 ``` r
 run_mcmc <- function(kernel) {
@@ -400,15 +401,15 @@ In any case, stay tuned for upcoming posts showing some of the above-mentioned f
 
 [^3]: E.g., parameters like *learning_rate* may have to be adapted.
 
-[^4]: See [More flexible models with TensorFlow eager execution and Keras](https://blogs.rstudio.com/tensorflow/posts/2018-10-02-eager-wrapup/) for an overview and annotated links.
+[^4]: See [More flexible models with TensorFlow eager execution and Keras](/blog/ai/2018-10-02-eager-wrapup/) for an overview and annotated links.
 
 [^5]: Here the nominal input is an R vector that gets converted to a Python list by `reticulate`, and to a tensor by TensorFlow.
 
 [^6]: This is still a tensor though. To continue working with its values in R, we need to convert it to R using `as.numeric`, `as.matrix`, `as.array` etc.
 
-[^7]: For example, see [Generating images with Keras and TensorFlow eager execution](https://blogs.rstudio.com/tensorflow/posts/2018-08-26-eager-dcgan/) on GANs, [Neural style transfer with eager execution and Keras](https://blogs.rstudio.com/tensorflow/posts/2018-09-10-eager-style-transfer/) on neural style transfer, or [Representation learning with MMD-VAE](https://blogs.rstudio.com/tensorflow/posts/2018-10-22-mmd-vae/) on Variational Autoencoders.
+[^7]: For example, see [Generating images with Keras and TensorFlow eager execution](/blog/ai/2018-08-26-eager-dcgan/) on GANs, [Neural style transfer with eager execution and Keras](/blog/ai/2018-09-10-eager-style-transfer/) on neural style transfer, or [Representation learning with MMD-VAE](/blog/ai/2018-10-22-mmd-vae/) on Variational Autoencoders.
 
-[^8]: `step_indicator_column` is there (twice) for technical reasons. Our [post on feature columns](https://blogs.rstudio.com/tensorflow/posts/2019-07-09-feature-columns/) explains.
+[^8]: `step_indicator_column` is there (twice) for technical reasons. Our [post on feature columns](/blog/ai/2019-07-09-feature-columns/) explains.
 
 [^9]: As readers working in e.g. image segmentation will know, data augmentation is not as easy as just using `image_data_generator` on the input images, as analogous distortions have to be applied to the masks.
 

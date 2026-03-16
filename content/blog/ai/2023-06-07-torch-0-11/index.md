@@ -3,6 +3,7 @@ title: "torch 0.11.0"
 description: |
   torch v0.11.0 is now on CRAN. This release features much-enhanced support for executing JIT operations. We also amended loading of model parameters, and added a few quality-of-life improvements, like support for temporarily modifying the default torch device, support for specifying data types as strings, and many more.
 date: 2023-06-07T00:00:00.000Z
+slug: torch-0-11-0
 categories:
   - Torch
   - Packages/Releases
@@ -66,7 +67,7 @@ Meaning that we went from minutes to just a few seconds.
 One of the most common ways of extending LibTorch/PyTorch is by implementing JIT
 operations. This allows developers to write custom, optimized code in C++ and
 use it directly in PyTorch, with full support for JIT tracing and scripting.
-See our ['Torch outside the box'](https://blogs.rstudio.com/ai/posts/2022-04-27-torch-outside-the-box/)
+See our ['Torch outside the box'](/blog/ai/2022-04-27-torch-outside-the-box/)
 blog post if you want to learn more about it.
 
 Using JIT operators in R used to require package developers to implement C++/Rcpp
@@ -150,7 +151,7 @@ This release also adds many small improvements that make torch more intuitive:
 Thank you to all contributors to the torch ecosystem. This work would not be possible without
 all the helpful issues opened, PRs you created, and your hard work.
 
-If you are new to torch and want to learn more, we highly recommend the [recently announced](https://blogs.rstudio.com/ai/posts/2023-04-05-deep-learning-scientific-computing-r-torch/) book 'Deep Learning and Scientific Computing with R `torch`'.
+If you are new to torch and want to learn more, we highly recommend the [recently announced](/blog/ai/2023-04-05-deep-learning-scientific-computing-r-torch/) book 'Deep Learning and Scientific Computing with R `torch`'.
 
 If you want to start contributing to torch, feel free to reach out on GitHub and see our [contributing guide](https://torch.mlverse.org/docs/contributing).
 

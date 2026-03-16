@@ -3,6 +3,7 @@ title: "Winner takes all: A look at activations and cost functions"
 description: |
   Why do we use the activations we use, and how do they relate to the cost functions they tend to co-appear with? In this post we provide a conceptual introduction.
 date: 2018-10-11
+slug: keydana2018activationsintro
 categories:
   - TensorFlow/Keras
   - Concepts

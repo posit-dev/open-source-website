@@ -3,6 +3,7 @@ title: "sparklyr 1.3: Higher-order Functions, Avro and Custom Serializers"
 description: |
   Sparklyr 1.3 is now available, featuring exciting new functionalities such as integration of Spark higher-order functions and data import/export in Avro and in user-defined serialization formats.
 date: 2020-07-16
+slug: sparklyr-1.3
 categories:
   - Packages/Releases
   - Distributed Computing
@@ -187,6 +188,6 @@ We are also grateful for valuable input on the sparklyr 1.3 roadmap, [#2434](htt
 
 Please note if you believe you are missing from the acknowledgement above, it may be because your contribution has been considered part of the next sparklyr release rather than part of the current release. We do make every effort to ensure all contributors are mentioned in this section. In case you believe there is a mistake, please feel free to contact the author of this blog post via e-mail (yitao at rstudio dot com) and request a correction.
 
-If you wish to learn more about `sparklyr`, we recommend visiting [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and some of the previous release posts such as [sparklyr 1.2](https://blogs.rstudio.com/ai/posts/2020-04-21-sparklyr-1.2.0-released/) and [sparklyr 1.1](https://blog.rstudio.com/2020/01/29/sparklyr-1-1/).
+If you wish to learn more about `sparklyr`, we recommend visiting [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and some of the previous release posts such as [sparklyr 1.2](/blog/ai/2020-04-21-sparklyr-1.2.0-released/) and [sparklyr 1.1](https://blog.rstudio.com/2020/01/29/sparklyr-1-1/).
 
 Thanks for reading!

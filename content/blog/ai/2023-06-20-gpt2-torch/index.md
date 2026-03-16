@@ -3,6 +3,7 @@ title: "GPT-2 from scratch with torch"
 description: |
   Implementing a language model from scratch is, arguably, the best way to develop an accurate idea of how its engine works. Here, we use torch to code GPT-2, the immediate successor to the original GPT. In the end, you'll dispose of an R-native model that can make direct use of Hugging Face's pre-trained GPT-2 model weights.
 date: 2023-06-20T00:00:00.000Z
+slug: keydanagpt2
 categories:
   - Torch
   - R
@@ -20,7 +21,7 @@ port_status: in-progress
 
 
 
-Whatever your take on Large Language Models (LLMs) -- are they beneficial? dangerous? a short-lived fashion, like crypto? -- they are *here*, *now*. And that means, it is a good thing to know (at a level one needs to decide for oneself) how they work. On this same day, I am publishing [What are Large Language Models? What are they not?](https://blogs.rstudio.com/ai/posts/2023-06-20-llm-intro), intended for a more general audience. In this post, I'd like to address deep learning practitioners, walking through a `torch` implementation of GPT-2 (Radford et al. 2019), the second in OpenAI's succession of ever-larger models trained on ever-more-vast text corpora. You'll see that a complete model implementation fits in fewer than 250 lines of R code.
+Whatever your take on Large Language Models (LLMs) -- are they beneficial? dangerous? a short-lived fashion, like crypto? -- they are *here*, *now*. And that means, it is a good thing to know (at a level one needs to decide for oneself) how they work. On this same day, I am publishing [What are Large Language Models? What are they not?](/blog/ai/2023-06-20-llm-intro), intended for a more general audience. In this post, I'd like to address deep learning practitioners, walking through a `torch` implementation of GPT-2 (Radford et al. 2019), the second in OpenAI's succession of ever-larger models trained on ever-more-vast text corpora. You'll see that a complete model implementation fits in fewer than 250 lines of R code.
 
 ## Sources, resources
 

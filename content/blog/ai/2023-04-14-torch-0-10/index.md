@@ -3,6 +3,7 @@ title: "torch 0.10.0"
 description: |
   torch v0.10.0 is now on CRAN. This version upgraded the underlying LibTorch to 1.13.1, and added support for Automatic Mixed Precision. As an experimental feature, we now also support pre-built binaries, so you can install torch without having to deal with the CUDA installation.
 date: 2023-04-14T00:00:00.000Z
+slug: torch-0-9-0
 categories:
   - Torch
   - Packages/Releases
@@ -150,7 +151,7 @@ using environment variables, see `help(install_torch)` for more information.
 Thank you to all contributors to the torch ecosystem. This work would not be possible without
 all the helpful issues opened, PRs you created and your hard work.
 
-If you are new to torch and want to learn more, we highly recommend the [recently announced](https://blogs.rstudio.com/ai/posts/2023-04-05-deep-learning-scientific-computing-r-torch/) book 'Deep Learning and Scientific Computing with R `torch`'.
+If you are new to torch and want to learn more, we highly recommend the [recently announced](/blog/ai/2023-04-05-deep-learning-scientific-computing-r-torch/) book 'Deep Learning and Scientific Computing with R `torch`'.
 
 If you want to start contributing to torch, feel free to reach out on GitHub and see our [contributing guide](https://torch.mlverse.org/docs/contributing).
 

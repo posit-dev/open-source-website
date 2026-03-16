@@ -21,7 +21,7 @@ format: hugo-md
 knitr::opts_chunk$set(echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 6)
 ```
 
-Whatever your take on Large Language Models (LLMs) -- are they beneficial? dangerous? a short-lived fashion, like crypto? -- they are *here*, *now*. And that means, it is a good thing to know (at a level one needs to decide for oneself) how they work. On this same day, I am publishing [What are Large Language Models? What are they not?](https://blogs.rstudio.com/ai/posts/2023-06-20-llm-intro), intended for a more general audience. In this post, I'd like to address deep learning practitioners, walking through a `torch` implementation of GPT-2 [@Radford2019LanguageMA], the second in OpenAI's succession of ever-larger models trained on ever-more-vast text corpora. You'll see that a complete model implementation fits in fewer than 250 lines of R code.
+Whatever your take on Large Language Models (LLMs) -- are they beneficial? dangerous? a short-lived fashion, like crypto? -- they are *here*, *now*. And that means, it is a good thing to know (at a level one needs to decide for oneself) how they work. On this same day, I am publishing [What are Large Language Models? What are they not?](/blog/ai/2023-06-20-llm-intro), intended for a more general audience. In this post, I'd like to address deep learning practitioners, walking through a `torch` implementation of GPT-2 [@Radford2019LanguageMA], the second in OpenAI's succession of ever-larger models trained on ever-more-vast text corpora. You'll see that a complete model implementation fits in fewer than 250 lines of R code.
 
 ## Sources, resources
 

@@ -25,7 +25,7 @@ In a sense, image segmentation is not that different from image classification. 
 
 The present post is not the first on this blog to treat that topic; and like all prior[^1] ones, it makes use of a U-Net architecture[^2] to achieve its goal. Central characteristics (of this post, not U-Net) are:
 
-[^1]: Cf. [Brain image segmentation with torch](https://blogs.rstudio.com/ai/posts/2020-11-30-torch-brain-segmentation/) (using, non-surprisingly, `torch`), and [Image segmentation with U-Net](https://blogs.rstudio.com/ai/posts/2019-08-23-unet/) (using TensorFlow/Keras).
+[^1]: Cf. [Brain image segmentation with torch](/blog/ai/2020-11-30-torch-brain-segmentation/) (using, non-surprisingly, `torch`), and [Image segmentation with U-Net](/blog/ai/2019-08-23-unet/) (using TensorFlow/Keras).
 
 [^2]: @RonnebergerFB15
 
@@ -33,7 +33,7 @@ The present post is not the first on this blog to treat that topic; and like all
 
 2.  It uses [luz](https://mlverse.github.io/luz/), `torch`'s high-level interface, to train the model.
 
-3.  It [JIT-traces](https://blogs.rstudio.com/ai/posts/2021-08-10-jit-trace-module/) the trained model and saves it for deployment on mobile devices. (JIT being the acronym commonly used for the `torch` just-in-time compiler.)
+3.  It [JIT-traces](/blog/ai/2021-08-10-jit-trace-module/) the trained model and saves it for deployment on mobile devices. (JIT being the acronym commonly used for the `torch` just-in-time compiler.)
 
 4.  It includes proof-of-concept code (though not a discussion) of the saved model being run on Android.
 
@@ -382,7 +382,7 @@ Tracing the trained model will convert it to a form that can be loaded in R-less
 
 <aside>
 
-Please see our [introduction to the torch JIT compiler](https://blogs.rstudio.com/ai/posts/2021-08-10-jit-trace-module/).
+Please see our [introduction to the torch JIT compiler](/blog/ai/2021-08-10-jit-trace-module/).
 
 </aside>
 

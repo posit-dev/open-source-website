@@ -3,6 +3,7 @@ title: "luz 0.3.0"
 description: |
   luz version 0.3.0 is now on CRAN. luz is a high-level interface for torch.
 date: 2022-08-24T00:00:00.000Z
+slug: luz-0-3-0
 categories:
   - Torch
   - Packages/Releases
@@ -30,7 +31,7 @@ date back to that version.
 ## What's `luz`?
 
 Since it is [relatively new
-package](https://blogs.rstudio.com/ai/posts/2021-06-17-luz/), we are
+package](/blog/ai/2021-06-17-luz/), we are
 starting this blog post with a quick recap of how `luz` works. If you
 already know what `luz` is, feel free to move on to the next section.
 

@@ -3,6 +3,7 @@ title: "Revisiting Keras for R"
 description: |
   It's been a while since this blog featured content about Keras for R, so you might've thought that the project was dormant. It's not! In fact, Keras for R is better than ever, with two recent releases adding powerful capabilities that considerably lighten previously tedious tasks. This post provides a high-level overview. Future posts will go into more detail on some of the most helpful new features, as well as dive into the powerful low-level enhancements that make the former possible.
 date: 2021-11-18
+slug: keydanakalinowskikeras
 categories:
   - Packages/Releases
   - TensorFlow/Keras
@@ -42,7 +43,7 @@ Matching their tight integration, the aforementioned packages tend to follow a c
 
 In R, between present-from-the-outset packages `tensorflow` and `keras`, responsibilities have always been distributed the way they are now: `tensorflow` providing indispensable basics, but often, remaining completely transparent to the user; `keras` being the thing you use in your code. In fact, it is possible to train a Keras model without ever consciously using `tensorflow`.
 
-On the Python side, things have been undergoing significant changes, ones where, in some sense, the latter development has been inverting the first. In the beginning, TensorFlow and [Keras](keras.io) were separate libraries, with TensorFlow providing a backend -- one among several -- for Keras to make use of. At some point, Keras code got incorporated into the TensorFlow codebase. Finally (as of today), following an extended period of slight confusion, Keras got moved out again, and has started to -- again -- considerably grow in features.
+On the Python side, things have been undergoing significant changes, ones where, in some sense, the latter development has been inverting the first. In the beginning, TensorFlow and [Keras](https://keras.io) were separate libraries, with TensorFlow providing a backend -- one among several -- for Keras to make use of. At some point, Keras code got incorporated into the TensorFlow codebase. Finally (as of today), following an extended period of slight confusion, Keras got moved out again, and has started to -- again -- considerably grow in features.
 
 It is just that quick growth that has created, on the R side, the need for extensive low-level refactoring and enhancements. (Of course, the user-facing new functionality itself also had to be implemented!)
 
@@ -52,7 +53,7 @@ Before we get to the promised highlights, a word on how we think about Keras.
 
 If you've used Keras in the past, you know what it's always been intended to be: a high-level library, making it easy (as far as such a thing *can* be easy) to train neural networks in R. Actually, it's not just about *ease*. Keras enables users to write natural-feeling, idiomatic-looking code. This, to a high degree, is achieved by its allowing for object composition though the pipe operator; it is also a consequence of its abundant wrappers, convenience functions, and functional (stateless) semantics.[^3]
 
-However, due to the way TensorFlow and Keras have developed on the Python side -- referring to the big architectural and semantic changes between versions 1.x and 2.x, first comprehensively characterized on this blog [here](https://blogs.rstudio.com/ai/posts/2019-10-08-tf2-whatchanges/) -- it has become more challenging to provide all of the functionality available on the Python side to the R user. In addition, maintaining compatibility with several versions of Python TensorFlow -- something R Keras has always done -- by necessity gets more and more challenging, the more wrappers and convenience functions you add.
+However, due to the way TensorFlow and Keras have developed on the Python side -- referring to the big architectural and semantic changes between versions 1.x and 2.x, first comprehensively characterized on this blog [here](/blog/ai/2019-10-08-tf2-whatchanges/) -- it has become more challenging to provide all of the functionality available on the Python side to the R user. In addition, maintaining compatibility with several versions of Python TensorFlow -- something R Keras has always done -- by necessity gets more and more challenging, the more wrappers and convenience functions you add.
 
 So this is where we complement the above "make it R-like and natural, where possible" with "make it easy to port from Python, where necessary". With the new low-level functionality, you won't have to wait for R wrappers to make use of Python-defined objects. Instead, Python objects may be sub-classed directly from R; and any additional functionality you'd like to add to the subclass is defined in a Python-like syntax. What this means, concretely, is that translating Python code to R has become a lot easier. We'll catch a glimpse of this in the second of our three highlights.
 

@@ -677,7 +677,7 @@ estimates_keras_tbl
 ```
 
 
-Now that we have the data formatted, we can take advantage of the `yardstick` package. The only other thing we need to do is to set `options(yardstick.event_first = FALSE)`. As pointed out by [ad1729](https://github.com/ad1729) in [GitHub Issue 13](options(yardstick.event_first = FALSE)), the default is to classify 0 as the positive class instead of 1. 
+Now that we have the data formatted, we can take advantage of the `yardstick` package. The only other thing we need to do is to set `options(yardstick.event_first = FALSE)`. As pointed out by [ad1729](https://github.com/ad1729) in [GitHub Issue 13](https://github.com/tidymodels/yardstick/issues/13), the default is to classify 0 as the positive class instead of 1. 
 
 ```{r}
 options(yardstick.event_first = FALSE)

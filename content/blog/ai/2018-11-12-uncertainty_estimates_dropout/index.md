@@ -3,6 +3,7 @@ title: "You sure? A Bayesian approach to obtaining uncertainty estimates from ne
 description: |
   In deep learning, there is no obvious way of obtaining uncertainty estimates. In 2016, Gal and Ghahramani proposed a method that is both theoretically grounded and practical: use dropout at test time. In this post, we introduce a refined version of this method (Gal et al. 2017) that has the network itself learn how uncertain it is.
 date: 2018-11-12
+slug: keydana2018dropoutuncertainty
 categories:
   - Image Recognition & Image Processing
   - Probabilistic ML/DL

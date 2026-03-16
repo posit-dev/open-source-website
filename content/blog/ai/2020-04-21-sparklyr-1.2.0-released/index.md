@@ -3,6 +3,7 @@ title: "sparklyr 1.2: Foreach, Spark 3.0 and Databricks Connect"
 description: |
   A new sparklyr release is now available. This sparklyr 1.2 release features new functionalities such as support for Databricks Connect, a Spark backend for the 'foreach' package, inter-op improvements for working with Spark 3.0 preview, as well as a number of bug fixes and improvements addressing user-visible pain points.
 date: 2020-04-21
+slug: sparklyr-1.2
 categories:
   - R
   - Packages/Releases

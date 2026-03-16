@@ -3,6 +3,7 @@ title: "Using torch modules"
 description: |
   In this third installment of our mini-series introducing torch basics, we replace hand-coded matrix operations by modules, considerably simplifying our toy network's code.
 date: 2020-10-07
+slug: keydanatorchmodules
 categories:
   - Torch
   - R
@@ -19,11 +20,11 @@ port_status: in-progress
 
 
 
-[Initially](https://blogs.rstudio.com/ai/posts/2020-10-01-torch-network-from-scratch),
+[Initially](/blog/ai/2020-10-01-torch-network-from-scratch),
 we started learning about `torch` basics by coding a simple neural
 network from scratch, making use of just a single of `torch`'s features:
 *tensors*.
-[Then](https://blogs.rstudio.com/ai/posts/2020-10-05-torch-network-with-autograd),
+[Then](/blog/ai/2020-10-05-torch-network-with-autograd),
 we immensely simplified the task, replacing manual backpropagation with
 *autograd*. Today, we *modularize* the network - in both the habitual
 and a very literal sense: Low-level matrix operations are swapped out

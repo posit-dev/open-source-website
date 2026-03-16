@@ -3,6 +3,7 @@ title: "Que haja luz: More light for torch!"
 description: |
   Today, we're introducing luz, a high-level interface to torch that lets you train neural networks in a concise, declarative style. In some sense, it is to torch what Keras is to TensorFlow: It provides both a streamlined workflow and powerful ways for customization.
 date: 2021-06-17
+slug: keydanaluz
 categories:
   - Torch
   - R

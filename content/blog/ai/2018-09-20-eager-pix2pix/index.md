@@ -3,6 +3,7 @@ title: "Image-to-image translation with pix2pix"
 description: |
   Conditional GANs (cGANs) may be used to generate one type of object based on another - e.g., a map based on a photo, or a color video based on black-and-white. Here, we show how to implement the pix2pix approach with Keras and eager execution.
 date: 2018-09-20
+slug: keydana2018eagerpix2pix
 categories:
   - TensorFlow/Keras
   - Image Recognition & Image Processing
@@ -28,7 +29,7 @@ As computer programs work with numbers, the cost function has to be pretty speci
 In some cases it may be straightforward to map a task to a measure of error, in others, it may not. Consider the task of generating non-existing objects of a certain type (like a face, a scene, or a video clip). How do we quantify success?
 The trick with *generative adversarial networks* (GANs) is to let the network learn the cost function.
 
-As shown in [Generating images with Keras and TensorFlow eager execution](https://blogs.rstudio.com/tensorflow/posts/2018-08-26-eager-dcgan/), in a simple GAN the setup is this: One agent, the *generator*, keeps on producing fake objects. The other, the *discriminator*, is tasked to tell apart the real objects from the fake ones. For the generator, loss is augmented when its fraud gets discovered, meaning that the generator's cost function depends on what the discriminator does. For the discriminator, loss grows when it fails to correctly tell apart generated objects from authentic ones.
+As shown in [Generating images with Keras and TensorFlow eager execution](/blog/ai/2018-08-26-eager-dcgan/), in a simple GAN the setup is this: One agent, the *generator*, keeps on producing fake objects. The other, the *discriminator*, is tasked to tell apart the real objects from the fake ones. For the generator, loss is augmented when its fraud gets discovered, meaning that the generator's cost function depends on what the discriminator does. For the discriminator, loss grows when it fails to correctly tell apart generated objects from authentic ones.
 
 In a GAN of the type just described, creation starts from white noise. However in the real world, what is required may be a form of transformation, not creation. Take, for example, colorization of black-and-white images, or conversion of aerials to maps. For applications like those, we *condition* on additional input: Hence the name, *conditional adversarial networks*.
 

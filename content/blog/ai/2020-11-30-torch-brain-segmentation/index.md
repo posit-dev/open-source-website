@@ -3,6 +3,7 @@ title: "Brain image segmentation with torch"
 description: |
   The need to segment images arises in various sciences and their applications, many of which are vital to human (and animal) life. In this introductory post, we train a U-Net to mark lesioned regions on MRI brain scans.
 date: 2020-11-30
+slug: keydanatorchtabular
 categories:
   - Torch
   - R
@@ -510,7 +511,7 @@ calc_dice_loss <- function(y_pred, y_true) {
 dice_weight <- 0.3
 ```
 
-Optimization uses stochastic gradient descent (SGD), together with the one-cycle learning rate scheduler introduced in the context of [image classification with torch](https://blogs.rstudio.com/ai/posts/2020-10-19-torch-image-classification/).
+Optimization uses stochastic gradient descent (SGD), together with the one-cycle learning rate scheduler introduced in the context of [image classification with torch](/blog/ai/2020-10-19-torch-image-classification/).
 
 ``` r
 optimizer <- optim_sgd(model$parameters, lr = 0.1, momentum = 0.9)

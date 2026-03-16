@@ -3,6 +3,7 @@ title: "Introductory time-series forecasting with torch"
 description: |
   This post is an introduction to time-series forecasting with torch. Central topics are data input, and practical usage of RNNs (GRUs/LSTMs). Upcoming posts will build on this, and introduce increasingly involved architectures.
 date: 2021-03-10
+slug: keydanatorchts1
 categories:
   - Torch
   - R
@@ -706,6 +707,6 @@ Photo by <a href="https://unsplash.com/@wanderlustralia?utm_source=unsplash&amp;
 
 Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. 2016. *Deep Learning*. MIT Press.
 
-[^1]: By default means that if the optional `return_sequences` argument is not passed. See [here](https://blogs.rstudio.com/ai/posts/2020-12-17-torch-convlstm/#interlude-outputs-states-hidden-values-whats-what) for a systematic comparison of RNN return values for both `torch` and Keras.
+[^1]: By default means that if the optional `return_sequences` argument is not passed. See [here](/blog/ai/2020-12-17-torch-convlstm/#interlude-outputs-states-hidden-values-whats-what) for a systematic comparison of RNN return values for both `torch` and Keras.
 
-[^2]: Again, see [this post](https://blogs.rstudio.com/ai/posts/2020-12-17-torch-convlstm/#interlude-outputs-states-hidden-values-whats-what) for more details.
+[^2]: Again, see [this post](/blog/ai/2020-12-17-torch-convlstm/#interlude-outputs-states-hidden-values-whats-what) for more details.

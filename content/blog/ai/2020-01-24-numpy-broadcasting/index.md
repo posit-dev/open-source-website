@@ -3,6 +3,7 @@ title: "NumPy-style broadcasting for R TensorFlow users"
 description: |
   Broadcasting, as done by Python's scientific computing library NumPy, involves dynamically extending shapes so that arrays of different sizes may be passed to operations that expect conformity - such as adding or multiplying elementwise. In NumPy, the way broadcasting works is specified exactly; the same rules apply to TensorFlow operations. For anyone who finds herself, occasionally, consulting Python code, this post strives to explain.
 date: 2020-01-24
+slug: keydana2020broadcast
 categories:
   - TensorFlow/Keras
   - Concepts

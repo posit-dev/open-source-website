@@ -3,6 +3,7 @@ title: "Experimenting with autoregressive flows in TensorFlow Probability"
 description: |
   Continuing from the recent introduction to bijectors in TensorFlow Probability (TFP), this post brings autoregressivity to the table. Using TFP through the new R package tfprobability, we look at the implementation of masked autoregressive flows (MAF) and put them to use on two different datasets.
 date: 2019-04-24
+slug: keydana2019autoregressive
 categories:
   - Probabilistic ML/DL
   - Generative Models
@@ -20,7 +21,7 @@ port_status: in-progress
 
 
 
-In the [first part of this mini-series on autoregressive flow models](https://blogs.rstudio.com/tensorflow/posts/2019-04-05-bijectors-flows/), we looked at *bijectors* in TensorFlow Probability (TFP), and saw how to use them for sampling and density estimation. We singled out the *affine bijector* to demonstrate the mechanics of flow construction: We start from a distribution that is easy to sample from, and that allows for straightforward calculation of its density. Then, we attach some number of invertible transformations, optimizing for data-likelihood under the final transformed distribution. The efficiency of that (log)likelihood calculation is where normalizing flows excel: Loglikelihood under the (unknown) target distribution is obtained as a sum of the density under the base distribution of the inverse-transformed data plus the absolute log determinant of the inverse Jacobian.
+In the [first part of this mini-series on autoregressive flow models](/blog/ai/2019-04-05-bijectors-flows/), we looked at *bijectors* in TensorFlow Probability (TFP), and saw how to use them for sampling and density estimation. We singled out the *affine bijector* to demonstrate the mechanics of flow construction: We start from a distribution that is easy to sample from, and that allows for straightforward calculation of its density. Then, we attach some number of invertible transformations, optimizing for data-likelihood under the final transformed distribution. The efficiency of that (log)likelihood calculation is where normalizing flows excel: Loglikelihood under the (unknown) target distribution is obtained as a sum of the density under the base distribution of the inverse-transformed data plus the absolute log determinant of the inverse Jacobian.
 
 Now, an affine flow will seldom be powerful enough to model nonlinear, complex transformations. In constrast, autoregressive models have shown substantive success in density estimation as well as sample generation. Combined with more involved architectures, feature engineering, and extensive compute, the concept of autoregressivity has powered -- and is powering -- state-of-the-art architectures in areas such as image, speech and video modeling.
 
@@ -463,7 +464,7 @@ With these training results, we regard the proof of concept as basically success
 
 *Batch normalization* here was obligatory - and this might go for flows in general. The permutation bijectors, on the other hand, did not make much of a difference on this dataset. Overall the impression is that for flows, we might either need a "bag of tricks" (like is commonly said about GANs), or more involved architectures (see "Outlook" below).
 
-Finally, we wind up with an experiment, coming back to our favorite audio data, already featured in two posts: [Simple Audio Classification with Keras](https://blogs.rstudio.com/tensorflow/posts/2018-06-06-simple-audio-classification-keras/) and [Audio classification with Keras: Looking closer at the non-deep learning parts](https://blogs.rstudio.com/tensorflow/posts/2019-02-07-audio-background/).
+Finally, we wind up with an experiment, coming back to our favorite audio data, already featured in two posts: [Simple Audio Classification with Keras](/blog/ai/2018-06-06-simple-audio-classification-keras/) and [Audio classification with Keras: Looking closer at the non-deep learning parts](/blog/ai/2019-02-07-audio-background/).
 
 ## Analysing audio data with MAF
 
@@ -520,7 +521,7 @@ df_train <- df_[idx_train, ]
 df_test <- df_[-idx_train, ]
 ```
 
-Following the approach detailed in [Audio classification with Keras: Looking closer at the non-deep learning parts](https://blogs.rstudio.com/tensorflow/posts/2019-02-07-audio-background/), we'd like to train the network on spectrograms instead of the raw time domain data.
+Following the approach detailed in [Audio classification with Keras: Looking closer at the non-deep learning parts](/blog/ai/2019-02-07-audio-background/), we'd like to train the network on spectrograms instead of the raw time domain data.
 Using the same settings for `frame_length` and `frame_step` of the Short Term Fourier Transform as in that post, we'd arrive at data shaped `number of frames x number of FFT coefficients`. To make this work with the `masked_dense()` employed in `tfb_masked_autoregressive_flow()`, the data would then have to be flattened, yielding an impressive 25186 features in the joint distribution.
 
 With the architecture defined as above in the GAS example, this lead to the network not making much progress. Neither did leaving the data in time domain form, with 16000 features in the joint distribution. Thus, we decided to work with the FFT coefficients computed over the complete window instead, resulting in 257 joint features.[^4]

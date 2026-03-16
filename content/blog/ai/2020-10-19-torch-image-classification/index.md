@@ -3,6 +3,7 @@ title: "Classifying images with torch"
 description: |
   We learn about transfer learning, input pipelines, and learning rate schedulers, all while using torch to tell apart species of beautiful birds.
 date: 2020-10-19
+slug: keydanatorchimageclassification
 categories:
   - Torch
   - R
@@ -20,7 +21,7 @@ port_status: in-progress
 
 
 
-In recent posts, we've been exploring essential `torch` functionality: [tensors](https://blogs.rstudio.com/ai/posts/2020-10-01-torch-network-from-scratch/), the sine qua non of every deep learning framework; [autograd](https://blogs.rstudio.com/ai/posts/2020-10-05-torch-network-with-autograd), `torch`'s implementation of reverse-mode automatic differentiation; [modules](https://blogs.rstudio.com/ai/posts/2020-10-07-torch-modules), composable building blocks of neural networks; and [optimizers](https://blogs.rstudio.com/ai/posts/2020-10-09-torch-optim/), the -- well -- optimization algorithms that `torch` provides.
+In recent posts, we've been exploring essential `torch` functionality: [tensors](/blog/ai/2020-10-01-torch-network-from-scratch/), the sine qua non of every deep learning framework; [autograd](/blog/ai/2020-10-05-torch-network-with-autograd), `torch`'s implementation of reverse-mode automatic differentiation; [modules](/blog/ai/2020-10-07-torch-modules), composable building blocks of neural networks; and [optimizers](/blog/ai/2020-10-09-torch-optim/), the -- well -- optimization algorithms that `torch` provides.
 
 But we haven't really had our "hello world" moment yet, at least not if by "hello world" you mean the inevitable *deep learning experience of classifying pets*. Cat or dog? Beagle or boxer? Chinook or Chihuahua? We'll distinguish ourselves by asking a (slightly) different question: What kind of bird?
 

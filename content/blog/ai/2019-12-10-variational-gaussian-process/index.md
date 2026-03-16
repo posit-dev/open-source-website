@@ -3,6 +3,7 @@ title: "Gaussian Process Regression with tfprobability"
 description: |
   Continuing our tour of applications of TensorFlow Probability (TFP), after Bayesian Neural Networks, Hamiltonian Monte Carlo and State Space Models, here we show an example of Gaussian Process Regression. In fact, what we see is a rather "normal" Keras network, defined and trained in pretty much the usual way, with TFP's Variational Gaussian Process layer pulling off all the magic.
 date: 2019-12-10
+slug: keydana2019vgp
 categories:
   - Probabilistic ML/DL
   - TensorFlow/Keras
@@ -540,7 +541,7 @@ Titsias, Michalis. 2009. "Variational Learning of Inducing Variables in Sparse G
 
 [^1]: In the book, it's "two communities", not "two cultures"; we choose L. Breiman's (Breiman 2001) more punchy expression just ... because.
 
-[^2]: So far, we have seen uses of TensorFlow Probability for such different applications as [adding uncertainty estimates to neural networks](https://blogs.rstudio.com/tensorflow/posts/2019-11-13-variational-convnet/), [Bayesian model estimation using Hamiltonian Monte Carlo](https://blogs.rstudio.com/tensorflow/posts/2019-05-24-varying-slopes/), or [linear-Gaussian state space models](https://blogs.rstudio.com/tensorflow/posts/2019-06-25-dynamic_linear_models_tfprobability/).
+[^2]: So far, we have seen uses of TensorFlow Probability for such different applications as [adding uncertainty estimates to neural networks](/blog/ai/2019-11-13-variational-convnet/), [Bayesian model estimation using Hamiltonian Monte Carlo](/blog/ai/2019-05-24-varying-slopes/), or [linear-Gaussian state space models](/blog/ai/2019-06-25-dynamic_linear_models_tfprobability/).
 
 [^3]: See David Duvenaud's https://www.cs.toronto.edu/~duvenaud/cookbook/ for an excellent synopsis of kernels and kernel composition.
 
@@ -548,4 +549,4 @@ Titsias, Michalis. 2009. "Variational Learning of Inducing Variables in Sparse G
 
 [^5]: Performance being used in the sense of "lower regression error", not running speed. As to the latter, there definitely is a (negative) relationship between number of inducing points and training speed.
 
-[^6]: This may sound like a matter of course; it isn't necessarily, as shown by prior experiments with variational layers e.g. in [Adding uncertainty estimates to Keras models with tfprobability](https://blogs.rstudio.com/tensorflow/posts/2019-06-05-uncertainty-estimates-tfprobability/).
+[^6]: This may sound like a matter of course; it isn't necessarily, as shown by prior experiments with variational layers e.g. in [Adding uncertainty estimates to Keras models with tfprobability](/blog/ai/2019-06-05-uncertainty-estimates-tfprobability/).

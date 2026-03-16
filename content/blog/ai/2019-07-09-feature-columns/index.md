@@ -3,6 +3,7 @@ title: "TensorFlow feature columns: Transforming your data recipes-style"
 description: |
   TensorFlow feature columns provide useful functionality for preprocessing categorical data and chaining transformations, like bucketization or feature crossing. From R, we use them in popular "recipes" style, creating and subsequently refining a feature specification. In this post, we show how using feature specs frees cognitive resources and lets you focus on what you really want to accomplish. What's more, because of its elegance, feature-spec code reads nice and is fun to write as well.
 date: 2019-07-09
+slug: falbelkeydana2019featurecols
 categories:
   - TensorFlow/Keras
   - Tabular Data
@@ -550,7 +551,7 @@ Just as a sanity check, the final loss on the validation set for this code was ~
 
 Yan, Lian, Robert H Dodier, Michael Mozer, and Richard H Wolniewicz. 2003. "Optimizing Classifier Performance via an Approximation to the Wilcoxon-Mann-Whitney Statistic." *Proceedings of the 20th International Conference on Machine Learning (ICML-03)*, 848--55.
 
-[^1]: see e.g. [Entity embeddings for fun and profit](https://blogs.rstudio.com/tensorflow/posts/2018-11-26-embeddings-fun-and-profit/)
+[^1]: see e.g. [Entity embeddings for fun and profit](/blog/ai/2018-11-26-embeddings-fun-and-profit/)
 
 [^2]: Having mentioned, above, that these really may be continuous or ordinal, from now on we'll just call them numeric as we won't make further use of the distinction. However, fitting ordinal data with neural networks is definitely a topic that would deserve its own post.
 

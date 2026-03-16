@@ -370,7 +370,7 @@ Curious about the results? We'll see them in a second, but before let's just qui
 
 #### Putting it all together (the HMC edition)
 
-`tfprobability` provides [sts_fit_with_hmc](https://rstudio.github.io/tfprobability/reference/sts_fit_with_hmc.html) to fit a DLM using Hamiltonian Monte Carlo. Recent posts (e.g., [Hierarchical partial pooling, continued: Varying slopes models with TensorFlow Probability](https://blogs.rstudio.com/tensorflow/posts/2019-05-24-varying-slopes/)) showed how to set up HMC to fit hierarchical models; here a single function does it all.
+`tfprobability` provides [sts_fit_with_hmc](https://rstudio.github.io/tfprobability/reference/sts_fit_with_hmc.html) to fit a DLM using Hamiltonian Monte Carlo. Recent posts (e.g., [Hierarchical partial pooling, continued: Varying slopes models with TensorFlow Probability](/blog/ai/2019-05-24-varying-slopes/)) showed how to set up HMC to fit hierarchical models; here a single function does it all.
 
 Here is `fit_with_hmc`, wrapping `sts_fit_with_hmc` as well as the (unchanged) techniques for obtaining forecasts and smoothed/filtered parameters:
 

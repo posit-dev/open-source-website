@@ -3,6 +3,7 @@ title: "Getting started with TensorFlow Probability from R"
 description: |
   TensorFlow Probability offers a vast range of functionality ranging from distributions over probabilistic network layers to probabilistic inference. It works seamlessly with core TensorFlow and (TensorFlow) Keras. In this post, we provide a short introduction to the distributions layer and then, use it for sampling and calculating probabilities in a Variational Autoencoder.
 date: 2019-01-08
+slug: keydana2019tfprobability
 categories:
   - TensorFlow/Keras
   - Probabilistic ML/DL
@@ -29,7 +30,7 @@ With the abundance of great libraries, in R, for statistical computing, why woul
 Now imagine all these working seamlessly with the TensorFlow framework - core, Keras, contributed modules - and also, running distributed and on GPU. The field of possible applications is vast - and far too diverse to cover as a whole in an introductory blog post.
 
 Instead, our aim here is to provide a first introduction to *TFP*, focusing on direct applicability to and interoperability with deep learning.
-We'll quickly show how to get started with one of the basic building blocks: `distributions`. Then, we'll build a variational autoencoder similar to that in [Representation learning with MMD-VAE](https://blogs.rstudio.com/tensorflow/posts/2018-10-22-mmd-vae/). This time though, we'll make use of *TFP* to sample from the prior and approximate posterior distributions.
+We'll quickly show how to get started with one of the basic building blocks: `distributions`. Then, we'll build a variational autoencoder similar to that in [Representation learning with MMD-VAE](/blog/ai/2018-10-22-mmd-vae/). This time though, we'll make use of *TFP* to sample from the prior and approximate posterior distributions.
 
 We'll regard this post as a "proof on concept" for using *TFP* with Keras - from R - and plan to follow up with more elaborate examples from the area of semi-supervised representation learning.
 
@@ -215,7 +216,7 @@ With this basic understanding of *TFP* distributions, we're ready to see them us
 
 # Variational autoencoder using *TFP*
 
-We'll take the (not so) deep convolutional architecture from [Representation learning with MMD-VAE](https://blogs.rstudio.com/tensorflow/posts/2018-10-22-mmd-vae/) and use `distributions` for sampling and computing probabilities. Optionally, our new VAE will be able to *learn the prior distribution*.
+We'll take the (not so) deep convolutional architecture from [Representation learning with MMD-VAE](/blog/ai/2018-10-22-mmd-vae/) and use `distributions` for sampling and computing probabilities. Optionally, our new VAE will be able to *learn the prior distribution*.
 
 Concretely, the following exposition will consist of three parts.
 First, we present common code applicable to both a VAE with a static prior, and one that learns the parameters of the prior distribution.

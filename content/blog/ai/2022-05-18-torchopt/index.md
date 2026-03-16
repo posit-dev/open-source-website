@@ -3,6 +3,7 @@ title: "Community spotlight: Fun with torchopt"
 description: |
   Today, we want to call attention to a highly useful package in the torch ecosystem: torchopt. It extends torch by providing a set of popular optimization algorithms not available in the base library. As this post will show, it is also fun to use!
 date: 2022-05-18
+slug: keydanatorchoptim
 categories:
   - Torch
   - R
@@ -32,7 +33,7 @@ By the look of it, the package's reason of being is rather self-evident. `torch`
 
 I'm going to introduce the package by highlighting something that technically, is "merely" a utility function, but to the user, can be extremely helpful: the ability to, for an arbitrary optimizer and an arbitrary test function, plot the steps taken in optimization.
 
-While it's true that I have no intent of comparing (let alone analyzing) different strategies, there is one that, to me, stands out in the list: ADAHESSIAN (Yao et al. 2020), a second-order algorithm designed to scale to large neural networks. I'm especially curious to see how it behaves as compared to L-BFGS, the second-order "classic" available from base `torch` we've had a [dedicated blog post](https://blogs.rstudio.com/ai/posts/2021-04-22-torch-for-optimization/) about last year.
+While it's true that I have no intent of comparing (let alone analyzing) different strategies, there is one that, to me, stands out in the list: ADAHESSIAN (Yao et al. 2020), a second-order algorithm designed to scale to large neural networks. I'm especially curious to see how it behaves as compared to L-BFGS, the second-order "classic" available from base `torch` we've had a [dedicated blog post](/blog/ai/2021-04-22-torch-for-optimization/) about last year.
 
 ## The way it works
 
@@ -42,7 +43,7 @@ The utility function in question is named `test_optim()`. The only required argu
 - `steps`: To set the number of optimization steps.
 - `opt_hparams`: To modify optimizer hyperparameters; most notably, the learning rate.
 
-Here, I'm going to use the `flower()` function that already prominently figured in the aforementioned post on [L-BFGS](https://blogs.rstudio.com/ai/posts/2021-04-22-torch-for-optimization/). It approaches its minimum as it gets closer and closer to `(0,0)` (but is undefined at the origin itself).
+Here, I'm going to use the `flower()` function that already prominently figured in the aforementioned post on [L-BFGS](/blog/ai/2021-04-22-torch-for-optimization/). It approaches its minimum as it gets closer and closer to `(0,0)` (but is undefined at the origin itself).
 
 Here it is:
 
@@ -194,7 +195,7 @@ Now we've heard that argument twice already, it's time to verify the explicit as
 
 ## Best of the classics: Revisiting L-BFGS
 
-To use `test_optim()` with L-BFGS, we need to take a little detour. If you've read the post on [L-BFGS](https://blogs.rstudio.com/ai/posts/2021-04-22-torch-for-optimization/), you may remember that with this optimizer, it is necessary to wrap both the call to the test function and the evaluation of the gradient in a closure. (The reason being that both have to be callable several times per iteration.)
+To use `test_optim()` with L-BFGS, we need to take a little detour. If you've read the post on [L-BFGS](/blog/ai/2021-04-22-torch-for-optimization/), you may remember that with this optimizer, it is necessary to wrap both the call to the test function and the evaluation of the gradient in a closure. (The reason being that both have to be callable several times per iteration.)
 
 Now, seeing how L-BFGS is a very special case, and few people are likely to use `test_optim()` with it in the future, it wouldn't seem worthwhile to make that function handle different cases. For this on-off test, I simply copied and modified the code as required. The result, `test_optim_lbfgs()`, is found in the [appendix](#appendix).
 
@@ -374,8 +375,8 @@ Yao, Zhewei, Amir Gholami, Sheng Shen, Kurt Keutzer, and Michael W. Mahoney. 202
 
 [^1]: For example, by creating an issue on GitHub, in either the [blog's repo](https://github.com/rstudio/ai-blog) or that of the respective software (e.g., [keras](https://github.com/rstudio/keras), [torch](https://github.com/mlverse/torch), ...)
 
-[^2]: For why it shouldn't, and an overview of (some of) the things `torch` users can do, see also our recent post on [extending `torch`](https://blogs.rstudio.com/ai/posts/2022-04-27-torch-outside-the-box/).
+[^2]: For why it shouldn't, and an overview of (some of) the things `torch` users can do, see also our recent post on [extending `torch`](/blog/ai/2022-04-27-torch-outside-the-box/).
 
 [^3]: See the [Readme](https://github.com/e-sensing/torchopt) for an up-to-date listing.
 
-[^4]: Alluding to strange attractors here. If you're interested, you might want to check out the mini-series on chaos and deep learning: [Deep attractors: Where deep learning meets chaos](https://blogs.rstudio.com/ai/posts/2020-06-24-deep-attractors/), [Time series prediction with FNN-LSTM](https://blogs.rstudio.com/ai/posts/2020-07-20-fnn-lstm/), and [FNN-VAE for noisy time series forecasting](https://blogs.rstudio.com/ai/posts/2020-07-31-fnn-vae-for-noisy-timeseries/).
+[^4]: Alluding to strange attractors here. If you're interested, you might want to check out the mini-series on chaos and deep learning: [Deep attractors: Where deep learning meets chaos](/blog/ai/2020-06-24-deep-attractors/), [Time series prediction with FNN-LSTM](/blog/ai/2020-07-20-fnn-lstm/), and [FNN-VAE for noisy time series forecasting](/blog/ai/2020-07-31-fnn-vae-for-noisy-timeseries/).

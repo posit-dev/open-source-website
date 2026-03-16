@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
 Last week, we saw how to code [a simple network from
-scratch](https://blogs.rstudio.com/ai/posts/2020-10-01-torch-network-from-scratch),
+scratch](/blog/ai/2020-10-01-torch-network-from-scratch),
 using nothing but `torch` *tensors*. Predictions, loss, gradients,
 weight updates -- all these things we've been computing ourselves.
 Today, we make a significant change: Namely, we spare ourselves the
