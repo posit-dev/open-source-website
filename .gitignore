@@ -39,3 +39,6 @@ content/resources/videos/**/audio.*
 
 # Python environments (uv)
 **/.venv/
+
+# Link checking output
+content/blog/_lychee/
