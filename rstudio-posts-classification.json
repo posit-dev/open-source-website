@@ -508,8 +508,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-conf-2019-workshops/",
     "path": "content/blog/rstudio/2019-02-06-rstudio-conf-2019-workshops/",
     "description": null,
-    "decision": "EXCLUDE",
-    "reason": "Conference registration/promotion"
+    "decision": "KEEP",
+    "reason": "Open-source teaching materials"
   },
   {
     "title": "Try out RStudio Connect on Your Desktop for Free",
@@ -596,8 +596,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-connect-1-7-6/",
     "path": "content/blog/rstudio/2019-06-24-rstudio-connect-1-7-6/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Educational content about OSS renv package"
+    "decision": "EXCLUDE",
+    "reason": "RStudio Connect (commercial product)"
   },
   {
     "title": "rstudio::conf(2020) is open for registration!",
@@ -700,8 +700,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/package-manager-1-1-0-1-patch-release/",
     "path": "content/blog/rstudio/2019-11-25-rstudio-package-manager-1-1-0-1-patch-release/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Tutorial about OSS tools (Plumber, pins, yardstick)"
+    "decision": "EXCLUDE",
+    "reason": "RStudio Package Manager (commercial product)"
   },
   {
     "title": "RStudio Connect 1.8.0 ",
@@ -740,16 +740,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/- serious-data-science/",
     "path": "content/blog/rstudio/2020-05-19-driving-real-lasting-value-with-serious-data-science/",
     "description": "Driving lasting value in an organization with data scienc...",
-    "decision": "EXCLUDE",
-    "reason": "Enterprise marketing/thought leadership"
+    "decision": "KEEP",
+    "reason": "Data science philosophy/best practices"
   },
   {
     "title": "Why You Need a World Class IDE to Do Serious Data Science",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/- ide-for-serious-data-science/",
     "path": "content/blog/rstudio/2020-07-09-why-you-need-a-world-class-ide-to-do-serious-data-science/",
     "description": "Data Science presents challenges in the iteration of new ...",
-    "decision": "EXCLUDE",
-    "reason": "Enterprise marketing/thought leadership"
+    "decision": "KEEP",
+    "reason": "Data science philosophy/best practices"
   },
   {
     "title": "RStudio Connect 1.8.4",
@@ -772,8 +772,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/why-package-environment-management-is-critical-for-serious-data-science/",
     "path": "content/blog/rstudio/2020-08-20-why-package-environment-management-is-critical-for-serious-data-science/",
     "description": "The renv package helps create reproducible project enviro...",
-    "decision": "KEEP",
-    "reason": "Educational content about OSS renv package"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "RStudio Named Strong Performer in the Forrester Wave\u2122: Notebook-Based Predictive Analytics and Machine Learning, Q3 2020",
@@ -804,8 +804,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/using-shiny-in-production-to-monitor-covid-19/",
     "path": "content/blog/rstudio/2020-11-17-calcat-shiny-in-production/",
     "description": "RStudio analyzes how the California Department of Public ...",
-    "decision": "EXCLUDE",
-    "reason": "RStudio Connect (commercial product)"
+    "decision": "KEEP",
+    "reason": "Shiny application case study"
   },
   {
     "title": "RStudio Connect 1.8.6",
@@ -868,8 +868,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/model-monitoring-with-r-markdown/",
     "path": "content/blog/rstudio/2021-04-08-open-source-data-science-model-monitoring/",
     "description": "Model monitoring is a key component of ModelOps, and the ...",
-    "decision": "KEEP",
-    "reason": "Tutorial about OSS tools (Plumber, pins, yardstick)"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Code-First Data Science for the Enterprise",
@@ -1260,8 +1260,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/introduction-to-data-science-with-r-video-workshop/",
     "path": "content/blog/rstudio/2014-11-06-introduction-to-data-science-with-r-video-workshop/",
     "description": null,
-    "decision": "EXCLUDE",
-    "reason": "Commercial O'Reilly product promotion"
+    "decision": "KEEP",
+    "reason": "Educational video series using open source tools"
   },
   {
     "title": "Announcing shinyapps.io beta",
@@ -1652,8 +1652,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/r-vs-python-what-s-the-best-for-language-for-data-science/",
     "path": "content/blog/rstudio/2019-12-11-r-vs-python-what-s-the-best-for-language-for-data-science/",
     "description": "We will briefly examine the debates over R vs. Python, an...",
-    "decision": "KEEP",
-    "reason": "Thought leadership on open source data science languages"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "RStudio, PBC",
@@ -1676,8 +1676,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/effective-visualizations-for-credible-data-driven-decision-making/",
     "path": "content/blog/rstudio/2020-04-16-effective-visualizations-for-credible-data-driven-decision-making/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Educational content about data visualization best practices"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Getting to the Right Question",
@@ -1700,8 +1700,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/wrangling-unruly-data/",
     "path": "content/blog/rstudio/2020-04-30-wrangling-unruly-data-the-bane-of-every-data-science-team/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Educational content about data wrangling and tidyverse"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "sparklyr 1.2: Foreach, Spark 3.0 and Databricks Connect",
@@ -1772,8 +1772,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/interoperability-july/",
     "path": "content/blog/rstudio/2020-07-07-interoperability-in-july/",
     "description": "RStudio will be focusing on interoperability in this blog...",
-    "decision": "KEEP",
-    "reason": "Educational content on R multi-language capabilities"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Interoperability: Getting the Most Out of Your Analytic Investments",
@@ -1796,8 +1796,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/practical-interoperability/",
     "path": "content/blog/rstudio/2020-07-28-practical-interoperability/",
     "description": "In this post I present three \"wild-caught\" examples solic...",
-    "decision": "KEEP",
-    "reason": "Real-world R/Python interoperability examples"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "RStudio Adds New R Features in Qubole's Open Data Lake",
@@ -1828,8 +1828,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/r-and-rstudio-the-interoperability-environment-for-data-analytics/",
     "path": "content/blog/rstudio/2020-08-18-r-the-interoperability-environment-for-data-analytics/",
     "description": "From design philosophies to current development prioritie...",
-    "decision": "KEEP",
-    "reason": "Educational content about R design philosophy"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "3 Ways to Expand Your Data Science Compute Resources",
@@ -1852,8 +1852,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/dispelling-r-and-python-myths-qanda/",
     "path": "content/blog/rstudio/2020-09-10-dispelling-r-and-python-myths-qanda/",
     "description": "In this post, we answer questions raised by participants ...",
-    "decision": "KEEP",
-    "reason": "Educational Q&A about R/Python interoperability"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Learning Data Science with RStudio Cloud: A Student's Perspective",
@@ -1876,8 +1876,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/open-source-data-science-in-investment-management/",
     "path": "content/blog/rstudio/2020-10-12-open-source-data-science-in-investment-management/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Case study of using OSS R/Python in finance"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "rstudio::global(2021) Updates",
@@ -1900,8 +1900,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/why-rstudio-supports-python/",
     "path": "content/blog/rstudio/2020-10-30-why-rstudio-supports-python/",
     "description": "When our customers ask us why RStudio's products support ...",
-    "decision": "KEEP",
-    "reason": "Educational content about R/Python usage patterns"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "rstudio::global(2021) Diversity Scholarships",
@@ -1916,8 +1916,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/2020-survey-announcement/",
     "path": "content/blog/rstudio/2020-12-11-2020-survey-announcement/",
     "description": "Want data about how people learn and use R? If so, please...",
-    "decision": "KEEP",
-    "reason": "Community survey with open data commitment"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Last Call for the 2020 R Community Survey",
@@ -1980,16 +1980,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/pkg-mgmt-prime-directive/",
     "path": "content/blog/rstudio/2021-02-05-pkg-mgmt-prime-directive/",
     "description": "Data Scientists and the IT Admins or DevOps engineers who...",
-    "decision": "KEEP",
-    "reason": "Educational content on package management concepts"
+    "decision": "EXCLUDE",
+    "reason": "RStudio Package Manager (commercial product)"
   },
   {
     "title": "Painful Package Management",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/pkg-mgmt-pain/",
     "path": "content/blog/rstudio/2021-02-11-pkg-mgmt-pain/",
     "description": "Data science teams are often frustrated by poorly-designe...",
-    "decision": "KEEP",
-    "reason": "Educational content on package management challenges"
+    "decision": "EXCLUDE",
+    "reason": "RStudio Package Manager (commercial product)"
   },
   {
     "title": "Introducing Shiny App Stories",
@@ -2060,16 +2060,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-and-apis/",
     "path": "content/blog/rstudio/2021-05-04-rstudio-and-apis/",
     "description": "APIs can dramatically increase the impact of data analyti...",
-    "decision": "KEEP",
-    "reason": "Educational content about APIs with OSS tools"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Low Friction Package Management in Three Parts",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/pkg-mgmt-admins/",
     "path": "content/blog/rstudio/2021-05-06-package-mgmt-plan/",
     "description": "Successful package management strategies are usually a th...",
-    "decision": "KEEP",
-    "reason": "Educational guide on package management strategy"
+    "decision": "EXCLUDE",
+    "reason": "RStudio Package Manager (commercial product)"
   },
   {
     "title": "ASA DataFest 2021",
@@ -2092,16 +2092,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/building-effective-data-science-teams/",
     "path": "content/blog/rstudio/2021-06-03-building-effective-data-science-teams/",
     "description": "Last month\u2019s webinar featured data science leaders from C...",
-    "decision": "KEEP",
-    "reason": "Educational content on data science leadership"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Building Effective Data Science Teams: Answering Your Questions",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/building-effective-data-science-team-answering-your-questions/",
     "path": "content/blog/rstudio/2021-06-10-building-effective-data-science-team-answering-your-questions/",
     "description": "From establishing your first data science team, to growin...",
-    "decision": "KEEP",
-    "reason": "Educational Q&A on data science team management"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "R in Supply Chain Management: Meetup Q&A",
@@ -2124,8 +2124,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/shiny-tableau-and-powerbi-better-business-intelligence/",
     "path": "content/blog/rstudio/2021-07-08-shiny-tableau-and-powerbi-better-business-intelligence/",
     "description": "We compared the features and capabilities of Shiny, Table...",
-    "decision": "KEEP",
-    "reason": "Comparative analysis of OSS Shiny vs BI tools"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "R in Healthcare Meetup Q&A",
@@ -2148,8 +2148,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/r-in-marketing-meetup/",
     "path": "content/blog/rstudio/2021-08-09-r-in-marketing-meetup/",
     "description": "In connection with R, Python, Slack and RStudio Connect, ...",
-    "decision": "KEEP",
-    "reason": "Technical tutorial using R, Python, and Slack API"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Practical Advice for R in Production -  Answering Your Questions",
@@ -2164,16 +2164,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/my-excel-and-r-journey-in-financial-services/",
     "path": "content/blog/rstudio/2021-09-01-my-excel-and-r-journey-in-financial-services/",
     "description": "Pritam Dalal from the RStudio Customer Success team share...",
-    "decision": "KEEP",
-    "reason": "Perspective on when OSS code-first approaches make sense"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "How do you use Shiny to communicate to 8 million people?",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/how-do-you-use-shiny-to-communicate-to-8-million-people/",
     "path": "content/blog/rstudio/2021-09-14-how-do-you-use-shiny-to-communicate-to-8-million-people/",
     "description": "Georgia Institute of Technology faculty, scientists, GIS ...",
-    "decision": "KEEP",
-    "reason": "Case study of OSS Shiny COVID-19 app"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "The Advantages of Code-First Data Science",
@@ -2204,8 +2204,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/why-your-ds-team-might-need-a-shiny-deployment-engineer/",
     "path": "content/blog/rstudio/2021-10-14-why-your-ds-team-might-need-a-shiny-deployment-engineer/",
     "description": "We interviewed Vergil Weatherford from Guidehouse to lear...",
-    "decision": "KEEP",
-    "reason": "Technical discussion of deploying production Shiny apps"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "The INSPIRE U2 Program: Training Students in Big Data and Statistics Using RStudio",
@@ -2228,16 +2228,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/the-inspire-u2-program-student-reflections/",
     "path": "content/blog/rstudio/2021-10-22-the-inspire-u2-program-student-reflections/",
     "description": "2021 INSPIRE U2 participants Kathleen Bostic and Michel R...",
-    "decision": "KEEP",
-    "reason": "Student perspectives on learning R and data science"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "How Data Scientists and Security Teams Can Effectively Work Together",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/how-data-scientists-and-security-teams-can-work-together/",
     "path": "content/blog/rstudio/2021-10-26-how-data-scientists-and-security-teams-can-work-together/",
     "description": "At a recent RStudio Enterprise Meetup, Gordon Shotwell fr...",
-    "decision": "KEEP",
-    "reason": "Technical discussion about OSS data science workflows"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "RStudio at R/Pharma 2021",
@@ -3340,8 +3340,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/see-rstudio-sparklyr-for-big-data-at-strata-hadoop-world/",
     "path": "content/blog/rstudio/2017-02-13-see-rstudio-sparklyr-for-big-data-at-strata-hadoop-world/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "Conference announcement"
   },
   {
     "title": "rstudio::conf 2017 session recordings are now available",
@@ -4028,8 +4028,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/driving-agility-in-clinical-reporting-q-a/",
     "path": "content/blog/rstudio/2020-10-08-driving-agility-in-clinical-reporting-q-a/",
     "description": "Andy Nicholls and Michael Rimler from healthcare firm Gla...",
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "RStudio v1.4 Preview: Command Palette",
@@ -4100,8 +4100,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/winners-of-the-2020-rstudio-table-contest/",
     "path": "content/blog/rstudio/2020-12-23-winners-of-the-2020-rstudio-table-contest/",
     "description": "Tables are a fantastic way to communicate lists of quanti...",
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Shiny Server 1.5.16 Update",
@@ -4148,8 +4148,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/bi-and-ds2-strengths-challenges/",
     "path": "content/blog/rstudio/2021-03-11-bi-and-ds2-strengths-challenges/",
     "description": "Continuing our series on self-service BI tools and code-f...",
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Time to get your Shiny on, Shiny Contest 2021 is here!",
@@ -4164,16 +4164,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/bi-and-data-science-the-handoff/",
     "path": "content/blog/rstudio/2021-03-18-bi-and-data-science-the-handoff/",
     "description": "One powerful approach for BI and data science collaborati...",
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "BI and Data Science: Matching Approaches to Applications",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/bi-and-data-science-the-tradeoffs/",
     "path": "content/blog/rstudio/2021-03-18-bi-and-data-science-the-tradeoffs/",
     "description": "In this post, we'll provide some insights from organizati...",
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "plumber 1.1.0",
@@ -4196,8 +4196,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/incorporating-r-into-your-clinical-legacy-workflows/",
     "path": "content/blog/rstudio/2021-06-08-incorporating-r-into-your-clinical-legacy-workflows/",
     "description": "When it comes to adopting open source tools into clinical...",
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "RStudio v1.4 Update: What's New",
