@@ -1,0 +1,10 @@
+{{/* video: Embed a video from YouTube, Vimeo, or a local/remote file.
+     Mimics the Quarto {{< video >}} shortcode. */}}
+{{ partial "video.html" (dict
+  "src" (.Get "src" | default "")
+  "title" (.Get "title" | default "")
+  "width" (.Get "width" | default "")
+  "height" (.Get "height" | default "")
+  "start" (.Get "start" | default "")
+  "aspect-ratio" (.Get "aspect-ratio" | default "16x9")
+) }}
