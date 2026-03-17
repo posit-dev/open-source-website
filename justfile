@@ -61,3 +61,7 @@ import-cheatsheets:
 # Create thumbnails for a cheatsheet PDF
 create-cheatsheet-thumbnails *args:
     ./scripts/create-cheatsheet-thumbnails.py {{args}}
+
+# Resize oversized images in content/ to reduce Hugo memory usage
+resize-images *args:
+    ./scripts/resize-images.py {{args}}
