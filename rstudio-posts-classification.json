@@ -1236,8 +1236,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/data-management-with-shinyapps-io/",
     "path": "content/blog/rstudio/2014-09-29-data-management-with-shinyapps-io/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Technical article about data management in Shiny apps"
+    "decision": "EXCLUDE",
+    "reason": "shinyapps.io (commercial hosting service)"
   },
   {
     "title": "Meet us at R Day and at the Strata+Hadoop World NYC Oct 15-17, 2014",
@@ -1740,8 +1740,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/announcing-public-package-manager/",
     "path": "content/blog/rstudio/2020-06-03-announcing-public-package-manager/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Public Package Manager free features for R community"
+    "decision": "EXCLUDE",
+    "reason": "RStudio Package Manager (commercial product)"
   },
   {
     "title": "Is Your Data Science Team Agile?",
@@ -1844,8 +1844,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/3-fun-shiny-apps-for-your-long-labor-day-weekend/",
     "path": "content/blog/rstudio/2020-09-04-3-fun-shiny-apps-for-your-long-labor-day-weekend/",
     "description": "We offer 3 entertaining Shiny apps plus a bonus app from ...",
-    "decision": "KEEP",
-    "reason": "Showcases creative Shiny Contest submissions"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Debunking R and Python Myths: Answering Your Questions",
@@ -3660,8 +3660,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/first-bookdown-contest/",
     "path": "content/blog/rstudio/2018-07-27-first-bookdown-contest/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Radix for R Markdown",
@@ -3780,8 +3780,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/first-shiny-contest/",
     "path": "content/blog/rstudio/2019-01-07-announcing-the-1st-shiny-contest/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Summer Internships 2019",
@@ -3820,16 +3820,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/first-shiny-contest-winners/",
     "path": "content/blog/rstudio/2019-04-05-1st-shiny-contest-results.Rmd/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Winners of the 1st Shiny Contest",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/first-shiny-contest-winners/",
     "path": "content/blog/rstudio/2019-04-05-1st-shiny-contest-results.html/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Shiny v1.3.2",
@@ -3908,8 +3908,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/shiny-contest-2020-is-here/",
     "path": "content/blog/rstudio/2020-02-12-shiny-contest-2020-is-here/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "RStudio 1.3 Preview: Configuration and Settings",
@@ -3948,8 +3948,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/shiny-contest-2020-deadline-extended/",
     "path": "content/blog/rstudio/2020-03-18-shiny-contest-2020-deadline-extended/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Shiny open source"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Great Looking Tables: gt (v0.2)",
@@ -3996,8 +3996,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/announcing-the-2020-rstudio-table-/",
     "path": "content/blog/rstudio/2020-09-14-test-test/",
     "description": "Today we announce the 2020 RStudio Table Contest. One thi...",
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Introducing torch for R",
@@ -4052,8 +4052,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/table-contest-deadline-extended/",
     "path": "content/blog/rstudio/2020-10-30-table-contest-deadline-extended/",
     "description": "The original deadline for the Table Contest was scheduled...",
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "RStudio 1.4 Preview: Rainbow Parentheses",
@@ -4068,8 +4068,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/the-appsilon-shiny-semantic-pocontest/",
     "path": "content/blog/rstudio/2020-11-06-the-appsilon-shiny-semantic-pocontest/",
     "description": "One of our Full Service Partners, Appsilon, recently held...",
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "RStudio 1.4 Preview: Citations",
@@ -4156,8 +4156,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/time-to-shiny/",
     "path": "content/blog/rstudio/2021-03-11-time-to-shiny/",
     "description": "Like the sun rising in the East, the Shiny Contest return...",
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "BI and Data Science: Collaboration Using Data Handoffs",
@@ -4212,16 +4212,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/three-shiny-best-practices-seen-in-the-shiny-contest/",
     "path": "content/blog/rstudio/2021-07-22-three-shiny-best-practices-seen-in-the-shiny-contest/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Using Shiny in Healthcare: Examples from the 2021 Shiny Contest",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/using-shiny-in-healthcare/",
     "path": "content/blog/rstudio/2021-08-16-using-shiny-in-healthcare/",
     "description": "Explore three Shiny applications that healthcare organiza...",
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Cheatsheet Updates",
@@ -4252,8 +4252,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-table-contest-2021/",
     "path": "content/blog/rstudio/2021-09-30-rstudio-table-contest-2021/",
     "description": "RStudio Table Contest 2021! We thought the 2020 Table Con...",
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Announcing the RStudio 2021 Communications Survey",
@@ -4316,8 +4316,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/winners-of-the-2021-table-contest/",
     "path": "content/blog/rstudio/2021-12-16-winners-of-the-2021-table-contest/",
     "description": "We are excited to announce this year's winners of the 202...",
-    "decision": "KEEP",
-    "reason": "Community contest"
+    "decision": "EXCLUDE",
+    "reason": "Contest announcement"
   },
   {
     "title": "Integrating Dynamic R and Python Models in Tableau Using plumbertableau",
