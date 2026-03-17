@@ -18,7 +18,7 @@ port_status: in-progress
 
 Recently I gave a webinar for R/Medicine titled "Quarto for Reproducible Medical Manuscripts". You can watch the video below or on the R Consortium website at <https://www.r-consortium.org/r-medicine-quarto-for-reproducible-medical-manuscripts>.[^1]
 
-<https://www.youtube.com/embed/NK1onTLcgY4>
+{{< video src="https://www.youtube.com/embed/NK1onTLcgY4" >}}
 
 Some highlights from the webinar include:
 

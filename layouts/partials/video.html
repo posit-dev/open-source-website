@@ -1,0 +1,96 @@
+{{/* video: Render a responsive video embed (YouTube, Vimeo, or local/remote file).
+     Required: src (URL or file path)
+     Optional: title, width, height, start (YouTube only), aspect-ratio (1x1, 4x3, 16x9, 21x9)
+*/}}
+{{ $src := .src | default "" }}
+{{ $title := .title | default "" }}
+{{ $width := .width | default "" }}
+{{ $height := .height | default "" }}
+{{ $start := .start | default "" }}
+{{ $aspectRatio := index . "aspect-ratio" | default "16x9" }}
+
+{{/* Detect source type */}}
+{{ $isYouTube := false }}
+{{ $isVimeo := false }}
+{{ $embedURL := "" }}
+
+{{ if or (strings.Contains $src "youtube.com") (strings.Contains $src "youtu.be") (strings.Contains $src "youtube-nocookie.com") }}
+  {{ $isYouTube = true }}
+
+  {{/* Extract video ID from various YouTube URL formats */}}
+  {{ $videoID := "" }}
+  {{ if strings.Contains $src "youtu.be/" }}
+    {{/* https://youtu.be/VIDEO_ID */}}
+    {{ $videoID = replaceRE `.*youtu\.be/([^?&/]+).*` "$1" $src }}
+  {{ else if strings.Contains $src "/embed/" }}
+    {{/* https://www.youtube.com/embed/VIDEO_ID */}}
+    {{ $videoID = replaceRE `.*/embed/([^?&/]+).*` "$1" $src }}
+  {{ else if strings.Contains $src "watch" }}
+    {{/* https://www.youtube.com/watch?v=VIDEO_ID */}}
+    {{ $videoID = replaceRE `.*[?&]v=([^&]+).*` "$1" $src }}
+  {{ end }}
+
+  {{ $embedURL = printf "https://www.youtube.com/embed/%s" $videoID }}
+  {{ with $start }}
+    {{ $embedURL = printf "%s?start=%s" $embedURL . }}
+  {{ end }}
+
+{{ else if strings.Contains $src "vimeo.com" }}
+  {{ $isVimeo = true }}
+  {{ $videoID := replaceRE `.*vimeo\.com/([0-9]+).*` "$1" $src }}
+  {{ $embedURL = printf "https://player.vimeo.com/video/%s" $videoID }}
+
+{{ end }}
+
+{{/* Map aspect-ratio to Tailwind class */}}
+{{ $aspectClass := "aspect-video" }}
+{{ if eq $aspectRatio "1x1" }}{{ $aspectClass = "aspect-square" }}
+{{ else if eq $aspectRatio "4x3" }}{{ $aspectClass = "aspect-4/3" }}
+{{ else if eq $aspectRatio "21x9" }}{{ $aspectClass = "aspect-[21/9]" }}
+{{ end }}
+
+{{ $useFixedSize := and (ne $width "") (ne $height "") }}
+
+{{ if or $isYouTube $isVimeo }}
+  {{/* iframe embed for YouTube/Vimeo */}}
+  {{ if $useFixedSize }}
+    <iframe
+      src="{{ $embedURL }}"
+      width="{{ $width }}"
+      height="{{ $height }}"
+      {{ with $title }}title="{{ . }}"{{ end }}
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  {{ else }}
+    <div class="w-full {{ $aspectClass }}">
+      <iframe
+        src="{{ $embedURL }}"
+        class="w-full h-full"
+        {{ with $title }}title="{{ . }}"{{ end }}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  {{ end }}
+
+{{ else }}
+  {{/* video element for local/remote files */}}
+  {{ if $useFixedSize }}
+    <video
+      src="{{ $src }}"
+      width="{{ $width }}"
+      height="{{ $height }}"
+      {{ with $title }}title="{{ . }}"{{ end }}
+      controls></video>
+  {{ else }}
+    <div class="w-full {{ $aspectClass }}">
+      <video
+        src="{{ $src }}"
+        class="w-full h-full object-contain"
+        {{ with $title }}title="{{ . }}"{{ end }}
+        controls></video>
+    </div>
+  {{ end }}
+
+{{ end }}

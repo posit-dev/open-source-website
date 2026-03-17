@@ -22,7 +22,7 @@ file. Quarto 1.6 includes [support for `_brand.yml`](https://posit-dev.github.io
 standard for creating a single style configuration file that is usable across formats and
 systems.
 
-<https://youtu.be/Mly_DK-2BnI>
+{{< video src="https://youtu.be/Mly_DK-2BnI" >}}
 
 Additional links:
 

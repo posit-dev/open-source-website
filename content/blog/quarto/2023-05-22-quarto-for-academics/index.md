@@ -20,7 +20,7 @@ port_status: in-progress
 
 Quarto offers a myriad of features that are especially useful for academics, as educators and as researchers. These range from chunk options that enable automatic linking of code to documentation, to article templates for manuscript submission to multiple journals. The following video walks you through some of these features.
 
-<https://www.youtube.com/embed/EbAAmrB0luA>
+{{< video src="https://www.youtube.com/embed/EbAAmrB0luA" >}}
 
 Select highlights include:
 

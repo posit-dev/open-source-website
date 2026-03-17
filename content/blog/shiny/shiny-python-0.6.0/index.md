@@ -69,7 +69,7 @@ ui.page_sidebar(
 
 In addition to `sidebar`, we have added `ui.page_fillable()` to help users create applications that fill the available space in the window. This is great for applications where the plot should fill the entire contents fo the window. `ui.page_sidebar()` is a wrapper around `ui.page_fillable()`. In addition to the filling layout method, many UI output methods have added `fill=` or `fillable=` parameters to allow for the component to fill the available area (`fill=True`) or to allow for contained components to fill the available content area (`fillable=`). The handshake of `fill=True` and `fillable=True` must occur to achieve a filling layout. Let's take a look at the new layout in action:
 
-![Resize ui.page_sidebar()](page_sidebar_resize.mp4)
+{{< video src="page_sidebar_resize.mp4" title="Resize ui.page_sidebar()" >}}
 
 ## New components
 

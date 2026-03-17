@@ -6,9 +6,6 @@ people:
 date: "2023-11-15"
 image: shiny-060.png
 image-alt: "Shiny for Python 0.6.0"
-resources:
-    - shiny-060.png
-    - page_sidebar_resize.mp4
 ported_from: shiny
 port_status: in-progress
 ---
