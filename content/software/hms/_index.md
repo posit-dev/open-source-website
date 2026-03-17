@@ -5,13 +5,13 @@ github: tidyverse/hms
 image: logo.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2025-10-16T19:10:13+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
 - Jeroen Ooms
+tags:
+- tidyverse
 title: hms
 website: https://hms.tidyverse.org/
 

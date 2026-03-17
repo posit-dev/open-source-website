@@ -12,6 +12,7 @@ people:
 - Emil Hvitfeldt
 - George Stagg
 - Hannah Frick
+- Isabella Velásquez
 - Jenny Bryan
 - Joe Cheng
 - Julia Silge
@@ -35,6 +36,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   - George Stagg
   - Hannah Frick
+  - Isabella Velásquez
   - Jenny Bryan
   - Joe Cheng
   - Julia Silge

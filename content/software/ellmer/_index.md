@@ -3,8 +3,6 @@ color: '#E14825'
 description: Call LLM APIs from R
 github: tidyverse/ellmer
 image: logo.png
-tags:
-- AI
 languages:
 - R
 latest_release: '2025-11-14T20:30:45+00:00'
@@ -21,6 +19,8 @@ people:
 - Hannah Frick
 - Jeroen Janssens
 - Tomasz Kalinowski
+tags:
+- AI
 title: ellmer
 website: https://ellmer.tidyverse.org/
 

@@ -5,8 +5,6 @@ github: tidyverse/haven
 image: logo.png
 languages:
 - C
-tags:
-- tidyverse
 latest_release: '2025-05-30T13:08:26+00:00'
 people:
 - Hadley Wickham
@@ -14,6 +12,8 @@ people:
 - Jeroen Ooms
 - Jeroen Janssens
 - JJ Allaire
+tags:
+- tidyverse
 title: haven
 website: https://haven.tidyverse.org
 

@@ -1,13 +1,10 @@
 ---
-color: "#0363BD"
+color: '#0363BD'
 description: An implementation of the Grammar of Graphics in R
 github: tidyverse/ggplot2
 image: ggplot2.png
 languages:
 - R
-tags:
-- tidyverse
-- data visualization
 latest_release: '2026-02-02T09:41:41+00:00'
 people:
 - Hadley Wickham
@@ -27,6 +24,9 @@ people:
 - Gábor Csárdi
 - Jeroen Janssens
 - Jeroen Ooms
+tags:
+- tidyverse
+- data visualization
 title: ggplot2
 website: https://ggplot2.tidyverse.org
 

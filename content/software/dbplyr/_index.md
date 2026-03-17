@@ -5,8 +5,6 @@ github: tidyverse/dbplyr
 image: logo.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2025-09-09T16:38:02+00:00'
 people:
 - Hadley Wickham
@@ -20,6 +18,8 @@ people:
 - Joe Cheng
 - Jeroen Janssens
 - Garrick Aden-Buie
+tags:
+- tidyverse
 title: dbplyr
 website: https://dbplyr.tidyverse.org
 

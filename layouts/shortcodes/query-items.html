@@ -3,6 +3,7 @@
 {{ $sortBy := .Get "sort-by" | default "date" }}
 {{ $sortDirection := .Get "sort-direction" | default "desc" }}
 {{ $limit := .Get "limit" | default 0 }}
+{{ $offset := .Get "offset" | default 0 }}
 {{ $filter := .Get "filter" | default "" }}
 {{ $cols := .Get "cols" | default "3" | string }}
 {{ $hide_badge := .Get "hide-badge" }}
@@ -20,7 +21,7 @@
 {{ end }}
 
 {{/* Query pages via the partial */}}
-{{ $pages := partial "query-items" (dict "path" $path "sort-by" $sortBy "sort-direction" $sortDirection "limit" $limit "filter" $filter) }}
+{{ $pages := partial "query-items" (dict "path" $path "sort-by" $sortBy "sort-direction" $sortDirection "offset" $offset "limit" $limit "filter" $filter) }}
 
 {{ if eq $format "row" }}
 <div class="@container">

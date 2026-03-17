@@ -5,8 +5,6 @@ github: tidyverse/lubridate
 image: logo.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2026-02-03T09:21:47+00:00'
 people:
 - Hadley Wickham
@@ -18,6 +16,8 @@ people:
 - JJ Allaire
 - Jeroen Janssens
 - Jeroen Ooms
+tags:
+- tidyverse
 title: lubridate
 website: https://lubridate.tidyverse.org
 

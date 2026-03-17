@@ -4,9 +4,9 @@ description: Positron, a next-generation data science IDE
 github: posit-dev/positron
 image: positron.png
 languages:
-- TypeScript
 - Python
 - R
+- SQL
 latest_release: '2026-02-26T00:19:35+00:00'
 people:
 - Julia Silge
@@ -21,13 +21,15 @@ people:
 - Simon Couch
 - Winston Chang
 - Joe Cheng
-title: positron
+title: Positron
 website: https://positron.posit.co
 
-include:
+override:
   languages:
   - Python
   - R
+  - SQL
+  title: Positron
 
 external:  # updated automatically, do not edit
   description: Positron, a next-generation data science IDE

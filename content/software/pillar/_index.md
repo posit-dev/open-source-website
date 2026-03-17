@@ -5,13 +5,13 @@ github: r-lib/pillar
 image: logo.svg
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2025-09-17T03:59:06+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
 - Teun Van den Brand
+tags:
+- tidyverse
 title: pillar
 website: https://pillar.r-lib.org/
 

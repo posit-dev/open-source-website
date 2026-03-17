@@ -1,7 +1,7 @@
 baseURL = 'https://posit-open-source.netlify.app'
 languageCode = 'en-us'
 title = 'Posit Open Source'
-ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_external-sources', 'renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/']
+ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_external-sources', 'renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/', '\.original$']
 
 [pagination]
 pagerSize = 50
@@ -18,6 +18,16 @@ showReadingTime = false
   languages = 'languages'
   event = 'events'
   resource = 'resources'
+
+[outputs]
+  home = ['html']
+  section = ['html']
+  taxonomy = ['html']
+  term = ['html']
+
+[services]
+  [services.rss]
+    limit = 20
 
 [markup]
 

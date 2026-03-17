@@ -5,8 +5,6 @@ github: tidyverse/dplyr
 image: dplyr.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2026-02-04T11:30:38+00:00'
 people:
 - Hadley Wickham
@@ -24,6 +22,8 @@ people:
 - Barret Schloerke
 - Jeroen Janssens
 - Joe Cheng
+tags:
+- tidyverse
 title: dplyr
 website: https://dplyr.tidyverse.org/
 

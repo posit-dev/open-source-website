@@ -5,14 +5,14 @@ github: r-lib/ragg
 image: logo.png
 languages:
 - C++
-tags:
-- tidyverse
 latest_release: '2025-09-02T06:41:38+00:00'
 people:
 - Thomas Lin Pedersen
 - Jeroen Ooms
 - Hadley Wickham
 - Jeroen Janssens
+tags:
+- tidyverse
 title: ragg
 website: https://ragg.r-lib.org
 

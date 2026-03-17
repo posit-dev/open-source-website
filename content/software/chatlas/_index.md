@@ -3,8 +3,6 @@ color: '#485A5C'
 description: Your friendly guide to building LLM chat apps in Python with less effort
   and more clarity.
 github: posit-dev/chatlas
-tags:
-- AI
 image: logo.png
 languages:
 - Python
@@ -18,6 +16,8 @@ people:
 - Jeroen Janssens
 - Joe Cheng
 - Neal Richardson
+tags:
+- AI
 title: chatlas
 website: https://posit-dev.github.io/chatlas/
 

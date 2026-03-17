@@ -3,8 +3,6 @@ color: '#818B47'
 description: Model Context Protocol For R
 github: posit-dev/mcptools
 image: logo.png
-tags:
-- AI
 languages:
 - R
 latest_release: '2025-10-29T20:23:51+00:00'
@@ -15,6 +13,8 @@ people:
 - Garrick Aden-Buie
 - Hannah Frick
 - Tomasz Kalinowski
+tags:
+- AI
 title: mcptools
 website: https://posit-dev.github.io/mcptools/
 

@@ -5,8 +5,6 @@ github: r-lib/xml2
 image: logo.svg
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2025-03-13T19:24:32+00:00'
 people:
 - Hadley Wickham
@@ -14,6 +12,8 @@ people:
 - Gábor Csárdi
 - Jenny Bryan
 - Jeroen Janssens
+tags:
+- tidyverse
 title: xml2
 website: https://xml2.r-lib.org/
 

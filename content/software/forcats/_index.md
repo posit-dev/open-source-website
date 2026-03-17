@@ -5,8 +5,6 @@ github: tidyverse/forcats
 image: logo.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2025-09-24T17:08:08+00:00'
 people:
 - Hadley Wickham
@@ -14,6 +12,8 @@ people:
 - Lionel Henry
 - Mine Çetinkaya-Rundel
 - Jeroen Janssens
+tags:
+- tidyverse
 title: forcats
 website: https://forcats.tidyverse.org/
 

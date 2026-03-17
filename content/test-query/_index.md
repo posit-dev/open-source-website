@@ -3,13 +3,13 @@ title: "Test Query Items"
 layout: single
 ---
 
-## Videos with the most views
+## Videos with the most views (except the top 2)
 
 ```
-{{</* query-items path="/resources/videos/.*" sort-by="external.view_count" sort-direction="desc" limit="3" cols="3" */>}}
+{{</* query-items path="/resources/videos/.*" sort-by="external.view_count" sort-direction="desc" offset="2" limit="3" cols="3" */>}}
 ```
 
-{{< query-items path="/resources/videos/.*" sort-by="external.view_count" sort-direction="desc" limit="3" cols="3" >}}
+{{< query-items path="/resources/videos/.*" sort-by="external.view_count" sort-direction="desc" offset="2" limit="3" cols="3" >}}
 
 ## Longest videos by Joe Cheng
 
