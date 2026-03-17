@@ -273,10 +273,6 @@
     {{/* -- Image — always visible, fixed height, 16:9 aspect -- */}}
     <div class="h-full @max-nip:w-full @nip:aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
-        {{ if and false $is_blog }}
-          {{/* Blog: skip responsive processing due to memory issues */}}
-          <img src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}" class="{{ printf "mx-auto h-full %s" $card_settings.image_class }}" loading="lazy">
-        {{ else }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
           "alt" $page.Title
@@ -285,7 +281,6 @@
           "tall"   160
           "grande" 160
         ) }}
-        {{ end }}
       {{ end }}
     </div>
 
@@ -363,10 +358,6 @@
   {{/* Image */}}
   <div class="h-full w-full flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
     {{ if $image }}
-      {{ if and false $is_blog }}
-        {{/* Blog: skip responsive processing due to memory issues */}}
-        <img src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}" class="{{ printf "mx-auto h-full %s" $card_settings.image_class }}" loading="lazy">
-      {{ else }}
       {{ partial "responsive_image_container.html" (dict
         "image" $image
         "alt" $page.Title
@@ -375,7 +366,6 @@
         "tall"   40
         "grande" 40
       ) }}
-      {{ end }}
     {{ end }}
   </div>
 
@@ -434,10 +424,6 @@
   {{/* ---- BANNER: full-width image, content below ---- */}}
   {{ if $image }}
   <div class="w-full h-64 md:h-96">
-    {{ if and false $is_blog }}
-      {{/* Blog: skip responsive processing due to memory issues */}}
-      <img src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}" class="mx-auto h-full w-full object-cover" loading="lazy">
-    {{ else }}
     {{ partial "responsive_image_container.html" (dict
       "image" $image
       "alt" $page.Title
@@ -446,7 +432,6 @@
       "tall"   960
       "grande" 1280
     ) }}
-    {{ end }}
   </div>
   {{ end }}
 
@@ -667,10 +652,6 @@
     {{/* -- Image ------------------------------------------------ */}}
     <div class="w-full @venti:w-1/2 aspect-[16/9] flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
-        {{ if and false $is_blog }}
-          {{/* Blog: skip responsive processing due to memory issues */}}
-          <img src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}" class="{{ printf "mx-auto h-full %s" $card_settings.image_class }}" loading="lazy">
-        {{ else }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
           "alt" $page.Title
@@ -679,7 +660,6 @@
           "tall"   320
           "grande" 640
         ) }}
-        {{ end }}
       {{ end }}
     </div>
 
