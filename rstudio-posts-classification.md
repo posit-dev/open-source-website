@@ -3,8 +3,8 @@
 ## Summary
 
 - **Total posts:** 543
-- ✅ **KEEP:** 285
-- ❌ **EXCLUDE:** 258
+- ✅ **KEEP:** 283
+- ❌ **EXCLUDE:** 260
 
 ## ✅ KEEP Posts
 
@@ -310,7 +310,7 @@ Open source package releases, technical tutorials, and educational content.
 | [Cheatsheet Updates](https://posit-open-source.netlify.app/blog/rstudio/cheat-sheet-updates/) | `content/blog/rstudio/2021-08-23-cheat-sheet-updates/` | Many RStudio cheatsheets have been updated or reworked ba... | ✅ | Cheat sheet (educational resource) |
 | [How To Augment Tableau With R & Python - A Webinar and Case Study from Sweden](https://posit-open-source.netlify.app/blog/rstudio/augment-tableau-with-r-python/) | `content/blog/rstudio/2021-11-15-augment-tableau-with-r-python/` | In an upcoming webinar on November 17th, Solita will show... | ✅ | Technical tutorial |
 
-### Community (8 posts)
+### Community (6 posts)
 
 | Title | Path | Description | Decision | Reason |
 |-------|------|-------------|----------|--------|
@@ -320,8 +320,6 @@ Open source package releases, technical tutorials, and educational content.
 | [Announcing RPubs: A New Web Publishing Service for R](https://posit-open-source.netlify.app/blog/rstudio/announcing-rpubs/) | `content/blog/rstudio/2012-06-04-announcing-rpubs/` |  | ✅ | Community/open source initiative |
 | [Accelerating R: RStudio and the new R Consortium](https://posit-open-source.netlify.app/blog/rstudio/accelerating-r-rstudio-and-the-new-r-consortium/) | `content/blog/rstudio/2015-06-30-accelerating-r-rstudio-and-the-new-r-consortium/` |  | ✅ | Community/open source initiative |
 | [community.rstudio.com](https://posit-open-source.netlify.app/blog/rstudio/rstudio-community/) | `content/blog/rstudio/2017-09-14-rstudio-community/` |  | ✅ | Community/open source initiative |
-| [Summer interns](https://posit-open-source.netlify.app/blog/rstudio/summer-interns/) | `content/blog/rstudio/2018-02-12-summer-interns/` |  | ✅ | Internship announcement (open source work) |
-| [Summer Internships 2021](https://posit-open-source.netlify.app/blog/rstudio/summer-internship-2021/) | `content/blog/rstudio/2021-03-02-summer-internship-2021/` | We are excited to announce the fourth formal summer inter... | ✅ | Internship announcement (open source work) |
 
 ### Other OSS (2 posts)
 
@@ -599,7 +597,7 @@ Commercial products, workshops, conferences, and enterprise marketing.
 | [An RStudio Table Contest for 2021](https://posit-open-source.netlify.app/blog/rstudio/rstudio-table-contest-2021/) | `content/blog/rstudio/2021-09-30-rstudio-table-contest-2021/` | RStudio Table Contest 2021! We thought the 2020 Table Con... | ❌ | Contest announcement |
 | [Winners of the 2021 Table Contest](https://posit-open-source.netlify.app/blog/rstudio/winners-of-the-2021-table-contest/) | `content/blog/rstudio/2021-12-16-winners-of-the-2021-table-contest/` | We are excited to announce this year's winners of the 202... | ❌ | Contest announcement |
 
-### Other (13 posts)
+### Other (15 posts)
 
 | Title | Path | Description | Decision | Reason |
 |-------|------|-------------|----------|--------|
@@ -611,8 +609,10 @@ Commercial products, workshops, conferences, and enterprise marketing.
 | [Ease Uncertainty by Boosting Your Data Science Team's Skills](https://posit-open-source.netlify.app/blog/rstudio/ease-uncertainty/) | `content/blog/rstudio/2020-09-23-ease-uncertainty/` | To help address some of the uncertainty data science lead... | ❌ | Thin content linking to external resources |
 | [Last Call for the 2020 R Community Survey](https://posit-open-source.netlify.app/blog/rstudio/last-call-for-the-2020-r-community-survey/) | `content/blog/rstudio/2021-01-07-last-call-for-the-2020-r-community-survey/` | Only 2 days left before our survey closes! Please fill ou... | ❌ | Outdated survey deadline reminder |
 | [Announcing the RStudio Blog’s New Vision and Design](https://posit-open-source.netlify.app/blog/rstudio/announcing-the-rstudio-blog-s-new-vision-and-design/) | `content/blog/rstudio/2021-11-17-announcing-the-rstudio-blog-s-new-vision-and-design/` | Welcome to rstudio.com/blog! We are excited to announce u... | ❌ | Company news about blog redesign |
+| [Summer interns](https://posit-open-source.netlify.app/blog/rstudio/summer-interns/) | `content/blog/rstudio/2018-02-12-summer-interns/` |  | ❌ | Company news (internship announcement) |
 | [Summer Interns](https://posit-open-source.netlify.app/blog/rstudio//) | `content/blog/rstudio/2018-04-18-summer-interns/` |  | ❌ | Company news (internship announcement) |
 | [Summer Intern Projects](https://posit-open-source.netlify.app/blog/rstudio//) | `content/blog/rstudio/2018-10-22-summer-intern-projects/` |  | ❌ | Company news (internship announcement) |
 | [Summer Internships 2019](https://posit-open-source.netlify.app/blog/rstudio//) | `content/blog/rstudio/2019-01-18-summer-internships-2019/` |  | ❌ | Education/certification content |
 | [Summer Interns 2019](https://posit-open-source.netlify.app/blog/rstudio//) | `content/blog/rstudio/2019-03-25-summer-interns-2019/` |  | ❌ | Education/certification content |
 | [Shiny Server 1.5.16 Update](https://posit-open-source.netlify.app/blog/rstudio/shiny-server-1-5-16-update/) | `content/blog/rstudio/2021-01-13-shiny-server-1-5-16-update/` |  | ❌ | Shiny Server release announcement |
+| [Summer Internships 2021](https://posit-open-source.netlify.app/blog/rstudio/summer-internship-2021/) | `content/blog/rstudio/2021-03-02-summer-internship-2021/` | We are excited to announce the fourth formal summer inter... | ❌ | Company news (internship announcement) |

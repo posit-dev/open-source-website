@@ -3580,8 +3580,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/summer-interns/",
     "path": "content/blog/rstudio/2018-02-12-summer-interns/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Internship announcement (open source work)"
+    "decision": "EXCLUDE",
+    "reason": "Company news (internship announcement)"
   },
   {
     "title": "reticulate: R interface to Python",
@@ -4140,8 +4140,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/summer-internship-2021/",
     "path": "content/blog/rstudio/2021-03-02-summer-internship-2021/",
     "description": "We are excited to announce the fourth formal summer inter...",
-    "decision": "KEEP",
-    "reason": "Internship announcement (open source work)"
+    "decision": "EXCLUDE",
+    "reason": "Company news (internship announcement)"
   },
   {
     "title": "BI and Open Source Data Science: Strengths and Challenges",
