@@ -4342,5 +4342,173 @@
     "description": "In this series, we show you lesser-known tips and tricks ...",
     "decision": "KEEP",
     "reason": "R Markdown (open source)"
+  },
+  {
+    "title": "Emails from R: Blastula 0.3",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/emails-from-r-blastula-0-3/",
+    "path": "content/blog/rstudio/2019-11-07-emails-from-r-announcing-blastula-0-3/",
+    "description": null,
+    "decision": "KEEP",
+    "reason": "blastula package release"
+  },
+  {
+    "title": "Custom Google Analytics Dashboards with R: Downloading Data",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/google-analytics-part1/",
+    "path": "content/blog/rstudio/2020-11-27-google-analytics-part1/",
+    "description": null,
+    "decision": "KEEP",
+    "reason": "R tutorial using open source packages (googleAnalyticsR, flexdashboard)"
+  },
+  {
+    "title": "(Re-)introducing Distill for R Markdown",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/distill/",
+    "path": "content/blog/rstudio/2020-12-04-distill/",
+    "description": null,
+    "decision": "KEEP",
+    "reason": "distill 1.0 package release"
+  },
+  {
+    "title": "Exploring US COVID-19 Cases and Deaths",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/exploring-us-covid-19-cases/",
+    "path": "content/blog/rstudio/2020-12-23-exploring-us-covid-19-cases/",
+    "description": null,
+    "decision": "KEEP",
+    "reason": "Tutorial using R/tidymodels"
+  },
+  {
+    "title": "Custom Google Analytics Dashboards with R: Building The Dashboard",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/google-analytics-part2/",
+    "path": "content/blog/rstudio/2021-01-06-google-analytics-part2/",
+    "description": null,
+    "decision": "KEEP",
+    "reason": "R tutorial using flexdashboard"
+  },
+  {
+    "title": "Latest news from the R Markdown family",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/2021-spring-rmd-news/",
+    "path": "content/blog/rstudio/2021-04-14-rmd-news/",
+    "description": null,
+    "decision": "KEEP",
+    "reason": "R Markdown family package updates (rmarkdown, pagedown, blogdown, knitr)"
+  },
+  {
+    "title": "Announcing bookdown v0.23",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/bookdown-release/",
+    "path": "content/blog/rstudio/2021-08-18-bookdown-release/",
+    "description": null,
+    "decision": "KEEP",
+    "reason": "bookdown v0.23 release"
+  },
+  {
+    "title": "pins 1.0.0",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/pins-1-0-0/",
+    "path": "content/blog/rstudio/2021-10-04-pins-1-0-0/",
+    "description": null,
+    "decision": "KEEP",
+    "reason": "pins 1.0.0 package release"
+  },
+  {
+    "title": "[R]eady for Production: a Joint Event with RStudio and EODA",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/r-eady-for-production-a-joint-event-with-rstudio-and-eoda/",
+    "path": "content/blog/rstudio/2019-05-15-r-eady-for-production-a-joint-event-with-rstudio-and-eoda/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Partner event promotion"
+  },
+  {
+    "title": "Thinking about rstudio::conf 2020? See the full conference schedule!",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/thinking-about-rstudio-conf-2020-see-the-full-conference-schedule/",
+    "path": "content/blog/rstudio/2019-11-25-thinking-about-rstudio-conf-2020-see-the-full-conference-schedule/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Conference promotion"
+  },
+  {
+    "title": "Start 2020 with mad new skills you learned at rstudio::conf 2020. Final Call",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-conf-2020-final-call/",
+    "path": "content/blog/rstudio/2020-01-12-rstudio-conf-2020-final-call/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Conference promotion"
+  },
+  {
+    "title": "Winners of the 2nd Annual Shiny Contest",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/winners-of-the-2nd-shiny-contest/",
+    "path": "content/blog/rstudio/2020-07-13-winners-of-the-2nd-shiny-contest/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Contest/event"
+  },
+  {
+    "title": "Managing COVID Vaccine Distribution, With a Little Help From Shiny",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/managing-covid-vaccine-distribution-with-a-little-help-from-shiny/",
+    "path": "content/blog/rstudio/2021-05-14-managing-covid-vaccine-distribution-with-a-little-help-from-shiny/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Customer story"
+  },
+  {
+    "title": "(Re)Introducing the Solutions website",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/re-introducing-the-solutions-website/",
+    "path": "content/blog/rstudio/2021-05-19-re-introducing-the-solutions-website/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Company/commercial"
+  },
+  {
+    "title": "Debunking the Myths of R vs. Python",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/debunking-the-myths-of-r-vs-python/",
+    "path": "content/blog/rstudio/2021-06-15-debunking-the-myths-of-r-vs-python/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Marketing for commercial products"
+  },
+  {
+    "title": "Winners of the 3rd annual Shiny Contest",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/winners-of-the-3rd-annual-shiny-contest/",
+    "path": "content/blog/rstudio/2021-06-24-winners-of-the-3rd-annual-shiny-contest/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Contest/event"
+  },
+  {
+    "title": "A CEO's View of Open Source Data Science in the Enterprise",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/a-ceo-s-view-of-open-source-data-science-in-the-enterprise/",
+    "path": "content/blog/rstudio/2021-07-15-a-ceo-s-view-of-open-source-data-science-in-the-enterprise/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Customer story/marketing"
+  },
+  {
+    "title": "Advice to Aspiring Sports Analytics Professionals",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/advice-to-aspiring-sports-analytics-professionals/",
+    "path": "content/blog/rstudio/2021-07-20-advice-to-aspiring-sports-analytics-professionals/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Career advice"
+  },
+  {
+    "title": "Shiny Apps from Concept to Production - An RStudio Community X-Session with Appsilon",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/shiny-apps-from-concept-to-production-rsutdio-community-x-session/",
+    "path": "content/blog/rstudio/2021-07-27-shiny-apps-from-concept-to-production-rsutdio-community-x-session/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Workshop/event promotion"
+  },
+  {
+    "title": "RStudio Voices - Julia Silge",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-voices-julia-silge/",
+    "path": "content/blog/rstudio/2021-08-12-rstudio-voices-julia-silge/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Company interview series"
+  },
+  {
+    "title": "Curating for @WeAreRLadies on Twitter",
+    "url": "https://posit-open-source.netlify.app/blog/rstudio/curating-for-wearerladies-on-twitter/",
+    "path": "content/blog/rstudio/2021-09-23-curating-for-wearerladies-on-twitter/",
+    "description": null,
+    "decision": "EXCLUDE",
+    "reason": "Community/Twitter, not open source"
   }
 ]

@@ -2,9 +2,9 @@
 
 ## Summary
 
-- **Total posts:** 543
-- ✅ **KEEP:** 283
-- ❌ **EXCLUDE:** 260
+- **Total posts:** 564
+- ✅ **KEEP:** 291
+- ❌ **EXCLUDE:** 273
 
 ## ✅ KEEP Posts
 
@@ -62,7 +62,7 @@ Open source package releases, technical tutorials, and educational content.
 | [Shiny 1.6](https://posit-open-source.netlify.app/blog/rstudio/shiny-1-6-0/) | `content/blog/rstudio/2021-02-01-shiny-1-6-0/` | Shiny 1.6 is now on CRAN! This release includes significa... | ✅ | Open source package release/update |
 | [Top 3 Coding Best Practices from the Shiny Contest](https://posit-open-source.netlify.app/blog/rstudio/three-shiny-best-practices-seen-in-the-shiny-contest/) | `content/blog/rstudio/2021-07-22-three-shiny-best-practices-seen-in-the-shiny-contest/` |  | ✅ | Shiny best practices tutorial |
 
-### R Markdown & knitr (9 posts)
+### R Markdown & knitr (12 posts)
 
 | Title | Path | Description | Decision | Reason |
 |-------|------|-------------|----------|--------|
@@ -75,8 +75,11 @@ Open source package releases, technical tutorials, and educational content.
 | [Radix for R Markdown](https://posit-open-source.netlify.app/blog/rstudio/radix-for-r-markdown/) | `content/blog/rstudio/2018-09-19-radix-for-r-markdown/` |  | ✅ | R Markdown (open source) |
 | [Latest News from the R Markdown Family](https://posit-open-source.netlify.app/blog/rstudio/rmd-news/) | `content/blog/rstudio/2020-12-21-rmd-news/` | An end-of-2020 round-up of all the latest news from the R... | ✅ | R Markdown (open source) |
 | [R Markdown Lesser-Known Tips & Tricks #2: Cleaning Up Your Code](https://posit-open-source.netlify.app/blog/rstudio/r-markdown-tips-tricks-2-cleaning-up-your-code/) | `content/blog/rstudio/2022-01-06-r-markdown-lesser-known-tips-tricks-2-cleaning-up-your-code/` | In this series, we show you lesser-known tips and tricks ... | ✅ | R Markdown (open source) |
+| [(Re-)introducing Distill for R Markdown](https://posit-open-source.netlify.app/blog/rstudio/distill/) | `content/blog/rstudio/2020-12-04-distill/` |  | ✅ | distill 1.0 package release |
+| [Latest news from the R Markdown family](https://posit-open-source.netlify.app/blog/rstudio/2021-spring-rmd-news/) | `content/blog/rstudio/2021-04-14-rmd-news/` |  | ✅ | R Markdown family package updates (rmarkdown, pagedown, blogdown, knitr) |
+| [Announcing bookdown v0.23](https://posit-open-source.netlify.app/blog/rstudio/bookdown-release/) | `content/blog/rstudio/2021-08-18-bookdown-release/` |  | ✅ | bookdown v0.23 release |
 
-### Package Development (145 posts)
+### Package Development (150 posts)
 
 | Title | Path | Description | Decision | Reason |
 |-------|------|-------------|----------|--------|
@@ -527,8 +530,12 @@ Commercial products, workshops, conferences, and enterprise marketing.
 | [BI and Data Science: Collaboration Using Data Handoffs](https://posit-open-source.netlify.app/blog/rstudio/bi-and-data-science-the-handoff/) | `content/blog/rstudio/2021-03-18-bi-and-data-science-the-handoff/` | One powerful approach for BI and data science collaborati... | ❌ | Data Science Leadership (enterprise marketing) |
 | [BI and Data Science: Matching Approaches to Applications](https://posit-open-source.netlify.app/blog/rstudio/bi-and-data-science-the-tradeoffs/) | `content/blog/rstudio/2021-03-18-bi-and-data-science-the-tradeoffs/` | In this post, we'll provide some insights from organizati... | ❌ | Data Science Leadership (enterprise marketing) |
 | [Upcoming Webinar - Incorporating R into your Clinical Legacy Workflows](https://posit-open-source.netlify.app/blog/rstudio/incorporating-r-into-your-clinical-legacy-workflows/) | `content/blog/rstudio/2021-06-08-incorporating-r-into-your-clinical-legacy-workflows/` | When it comes to adopting open source tools into clinical... | ❌ | Data Science Leadership (enterprise marketing) |
+| [Managing COVID Vaccine Distribution, With a Little Help From Shiny](https://posit-open-source.netlify.app/blog/rstudio/managing-covid-vaccine-distribution-with-a-little-help-from-shiny/) | `content/blog/rstudio/2021-05-14-managing-covid-vaccine-distribution-with-a-little-help-from-shiny/` |  | ❌ | Customer story |
+| [(Re)Introducing the Solutions website](https://posit-open-source.netlify.app/blog/rstudio/re-introducing-the-solutions-website/) | `content/blog/rstudio/2021-05-19-re-introducing-the-solutions-website/` |  | ❌ | Company/commercial |
+| [Debunking the Myths of R vs. Python](https://posit-open-source.netlify.app/blog/rstudio/debunking-the-myths-of-r-vs-python/) | `content/blog/rstudio/2021-06-15-debunking-the-myths-of-r-vs-python/` |  | ❌ | Marketing for commercial products |
+| [A CEO's View of Open Source Data Science in the Enterprise](https://posit-open-source.netlify.app/blog/rstudio/a-ceo-s-view-of-open-source-data-science-in-the-enterprise/) | `content/blog/rstudio/2021-07-15-a-ceo-s-view-of-open-source-data-science-in-the-enterprise/` |  | ❌ | Customer story/marketing |
 
-### Conferences & Training (37 posts)
+### Conferences & Training (40 posts)
 
 | Title | Path | Description | Decision | Reason |
 |-------|------|-------------|----------|--------|
@@ -569,6 +576,10 @@ Commercial products, workshops, conferences, and enterprise marketing.
 | [RStudio Community Monthly Events - November 2021](https://posit-open-source.netlify.app/blog/rstudio/rstudio-community-monthly-events-november-2021/) | `content/blog/rstudio/2021-11-03-rstudio-community-monthly-events-november-2021/` | Welcome to the RStudio Community Monthly Events Roundup! ... | ❌ | Event calendar announcement |
 | [RStudio Community Monthly Events - December 2021](https://posit-open-source.netlify.app/blog/rstudio/rstudio-community-monthly-events-december-2021/) | `content/blog/rstudio/2021-12-02-rstudio-community-monthly-events-december-2021/` | Welcome to the RStudio Community Monthly Events Roundup! ... | ❌ | Event calendar announcement |
 | [RStudio Community Monthly Events - January 2022](https://posit-open-source.netlify.app/blog/rstudio/rstudio-community-monthly-events-january-2022/) | `content/blog/rstudio/2022-01-05-rstudio-community-monthly-events-january-2022/` | Welcome to the RStudio Community Monthly Events Roundup! ... | ❌ | Event calendar announcement |
+| [[R]eady for Production: a Joint Event with RStudio and EODA](https://posit-open-source.netlify.app/blog/rstudio/r-eady-for-production-a-joint-event-with-rstudio-and-eoda/) | `content/blog/rstudio/2019-05-15-r-eady-for-production-a-joint-event-with-rstudio-and-eoda/` |  | ❌ | Partner event promotion |
+| [Thinking about rstudio::conf 2020? See the full conference schedule!](https://posit-open-source.netlify.app/blog/rstudio/thinking-about-rstudio-conf-2020-see-the-full-conference-schedule/) | `content/blog/rstudio/2019-11-25-thinking-about-rstudio-conf-2020-see-the-full-conference-schedule/` |  | ❌ | Conference promotion |
+| [Start 2020 with mad new skills you learned at rstudio::conf 2020. Final Call](https://posit-open-source.netlify.app/blog/rstudio/rstudio-conf-2020-final-call/) | `content/blog/rstudio/2020-01-12-rstudio-conf-2020-final-call/` |  | ❌ | Conference promotion |
+| [Shiny Apps from Concept to Production - An RStudio Community X-Session with Appsilon](https://posit-open-source.netlify.app/blog/rstudio/shiny-apps-from-concept-to-production-rsutdio-community-x-session/) | `content/blog/rstudio/2021-07-27-shiny-apps-from-concept-to-production-rsutdio-community-x-session/` |  | ❌ | Workshop/event promotion |
 
 ### Enterprise Marketing (3 posts)
 
@@ -578,7 +589,7 @@ Commercial products, workshops, conferences, and enterprise marketing.
 | [2020 at RStudio: A Year in Review](https://posit-open-source.netlify.app/blog/rstudio/2020-a-year-in-review/) | `content/blog/rstudio/2021-01-19-2020-a-year-in-review/` | In this blog post, I take a look back at some of the many... | ❌ | Company annual review marketing |
 | [2021 at RStudio: A Year in Review](https://posit-open-source.netlify.app/blog/rstudio/2021-a-year-in-review/) | `content/blog/rstudio/2022-01-04-2021-at-rstudio-a-year-in-review/` | Happy New Year! In this blog post, we round up some of th... | ❌ | Company year-in-review marketing |
 
-### Contests (14 posts)
+### Contests (16 posts)
 
 | Title | Path | Description | Decision | Reason |
 |-------|------|-------------|----------|--------|
@@ -596,8 +607,10 @@ Commercial products, workshops, conferences, and enterprise marketing.
 | [Using Shiny in Healthcare: Examples from the 2021 Shiny Contest](https://posit-open-source.netlify.app/blog/rstudio/using-shiny-in-healthcare/) | `content/blog/rstudio/2021-08-16-using-shiny-in-healthcare/` | Explore three Shiny applications that healthcare organiza... | ❌ | Contest announcement |
 | [An RStudio Table Contest for 2021](https://posit-open-source.netlify.app/blog/rstudio/rstudio-table-contest-2021/) | `content/blog/rstudio/2021-09-30-rstudio-table-contest-2021/` | RStudio Table Contest 2021! We thought the 2020 Table Con... | ❌ | Contest announcement |
 | [Winners of the 2021 Table Contest](https://posit-open-source.netlify.app/blog/rstudio/winners-of-the-2021-table-contest/) | `content/blog/rstudio/2021-12-16-winners-of-the-2021-table-contest/` | We are excited to announce this year's winners of the 202... | ❌ | Contest announcement |
+| [Winners of the 2nd Annual Shiny Contest](https://posit-open-source.netlify.app/blog/rstudio/winners-of-the-2nd-shiny-contest/) | `content/blog/rstudio/2020-07-13-winners-of-the-2nd-shiny-contest/` |  | ❌ | Contest/event |
+| [Winners of the 3rd annual Shiny Contest](https://posit-open-source.netlify.app/blog/rstudio/winners-of-the-3rd-annual-shiny-contest/) | `content/blog/rstudio/2021-06-24-winners-of-the-3rd-annual-shiny-contest/` |  | ❌ | Contest/event |
 
-### Other (15 posts)
+### Other (18 posts)
 
 | Title | Path | Description | Decision | Reason |
 |-------|------|-------------|----------|--------|
@@ -616,3 +629,6 @@ Commercial products, workshops, conferences, and enterprise marketing.
 | [Summer Interns 2019](https://posit-open-source.netlify.app/blog/rstudio//) | `content/blog/rstudio/2019-03-25-summer-interns-2019/` |  | ❌ | Education/certification content |
 | [Shiny Server 1.5.16 Update](https://posit-open-source.netlify.app/blog/rstudio/shiny-server-1-5-16-update/) | `content/blog/rstudio/2021-01-13-shiny-server-1-5-16-update/` |  | ❌ | Shiny Server release announcement |
 | [Summer Internships 2021](https://posit-open-source.netlify.app/blog/rstudio/summer-internship-2021/) | `content/blog/rstudio/2021-03-02-summer-internship-2021/` | We are excited to announce the fourth formal summer inter... | ❌ | Company news (internship announcement) |
+| [Advice to Aspiring Sports Analytics Professionals](https://posit-open-source.netlify.app/blog/rstudio/advice-to-aspiring-sports-analytics-professionals/) | `content/blog/rstudio/2021-07-20-advice-to-aspiring-sports-analytics-professionals/` |  | ❌ | Career advice |
+| [RStudio Voices - Julia Silge](https://posit-open-source.netlify.app/blog/rstudio/rstudio-voices-julia-silge/) | `content/blog/rstudio/2021-08-12-rstudio-voices-julia-silge/` |  | ❌ | Company interview series |
+| [Curating for @WeAreRLadies on Twitter](https://posit-open-source.netlify.app/blog/rstudio/curating-for-wearerladies-on-twitter/) | `content/blog/rstudio/2021-09-23-curating-for-wearerladies-on-twitter/` |  | ❌ | Community/Twitter, not open source |
