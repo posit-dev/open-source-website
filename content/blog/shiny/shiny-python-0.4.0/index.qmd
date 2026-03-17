@@ -6,9 +6,6 @@ people:
 date: "2023-06-28"
 image: shiny-040.png
 image-alt: "Shiny for Python 0.4.0"
-resources:
-    - data-grid.mp4
-    - data-grid-select.mp4
 ported_from: shiny
 port_status: in-progress
 ---

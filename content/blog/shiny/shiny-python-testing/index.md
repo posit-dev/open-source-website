@@ -41,7 +41,7 @@ Next steps:
 
 Once the test file is created, leverage the in-built controllers for each of the input and output components to expedite writing tests.
 
-<https://www.youtube.com/embed/oJ_B_NuFAwU>
+{{< video src="https://www.youtube.com/embed/oJ_B_NuFAwU" >}}
 
 ### Using controllers to write robust Shiny app tests
 
@@ -66,7 +66,7 @@ You can find the full list of available controllers in our [function reference](
 
 Here's a preview of that feature.
 
-<https://www.youtube.com/embed/ecVPjqsVSkU>
+{{< video src="https://www.youtube.com/embed/ecVPjqsVSkU" >}}
 
 > Why are there so many controllers?
 

@@ -34,7 +34,7 @@ That said, there are a few new features in `bslib` that we're particularly excit
 
 ## bslib
 
-In [the last release of `bslib` (0.5.0)](/blog/shiny/bslib-dashboards/), we made significant strides towards `bslib` being our recommended way to [build modern Shiny dashboards](https://rstudio.github.io/bslib/articles/dashboards/index.html).
+In [the last release of `bslib` (0.5.0)](../../../blog/shiny/bslib-dashboards/), we made significant strides towards `bslib` being our recommended way to [build modern Shiny dashboards](https://rstudio.github.io/bslib/articles/dashboards/index.html).
 In this release, we've added more features to help you make even better dashboards.
 
 ### Tooltips and popovers
@@ -55,7 +55,7 @@ We've leveraged `bslib`'s new tooltip and popover features in a few ways:
 
 3.  In the footer, a "Learn more" link opens a [popover](https://rstudio.github.io/bslib/reference/popover.html) with the full citation for the data used in the plot.
 
-![Using bslib\'s tooltip and popover functionality to provide more detail on demand](tooltips-popovers.mp4)
+{{< video src="tooltips-popovers.mp4" title="Using bslib's tooltip and popover functionality to provide more detail on demand" >}}
 
 <p>
 <a  href="https://posit.cloud/content/6298796" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="01-tooltips-popovers.R"> <i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> Try on Posit Cloud </a> <a class="ms-1" href="https://gist.github.com/cpsievert/7a93ff167aebf474873493d566ab9e07#file-01-tooltips-popovers-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code"> <i  style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> <span>Source</span></a>
@@ -87,7 +87,7 @@ One exciting difference between the Shiny preset and other [Bootswatch themes](h
 
 Want to see this theme in action? Just install the updated `bslib` package and run `bslib::bs_theme_preview()` in your R console!
 
-![Changing from the current default theme to the new theme](shiny-theme.mp4)
+{{< video src="shiny-theme.mp4" title="Changing from the current default theme to the new theme" >}}
 
 <p>
 <a  href="https://posit.cloud/content/6298796" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="02-new-theme.R">  <i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> Try on Posit Cloud </a> <a class="ms-1" href="https://gist.github.com/cpsievert/7a93ff167aebf474873493d566ab9e07#file-02-new-theme-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code"> <i  style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> <span>Source</span></a>
@@ -108,7 +108,7 @@ But this release fixes that issue!
 
 To demonstrate, here's an example of a fullscreen-capable [`bslib::card()`](https://rstudio.github.io/bslib/articles/cards/index.html) in a Quarto document.
 
-![Putting a fullscreen-capable bslib card in a Quarto document](quarto-bslib.mp4)
+{{< video src="quarto-bslib.mp4" title="Putting a fullscreen-capable bslib card in a Quarto document" >}}
 
 <p>
 <a  href="https://posit.cloud/content/6298796" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="03-quarto-bslib.qmd"> <i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> Try on Posit Cloud </a> <a class="ms-1" href="https://gist.github.com/cpsievert/7a93ff167aebf474873493d566ab9e07#file-03-quarto-bslib-qmd" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code"> <i  style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i> <span>Source</span></a>
