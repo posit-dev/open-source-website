@@ -3596,8 +3596,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio//",
     "path": "content/blog/rstudio/2018-04-18-summer-interns/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Internship announcement (open source work)"
+    "decision": "EXCLUDE",
+    "reason": "Company news (internship announcement)"
   },
   {
     "title": "Arrow and beyond: Collaborating on next generation tools for open source data science",
@@ -3740,8 +3740,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio//",
     "path": "content/blog/rstudio/2018-10-22-summer-intern-projects/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Internship announcement (open source work)"
+    "decision": "EXCLUDE",
+    "reason": "Company news (internship announcement)"
   },
   {
     "title": "RStudio 1.2 Preview: Plumber Integration",
