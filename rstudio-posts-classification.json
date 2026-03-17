@@ -740,16 +740,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/- serious-data-science/",
     "path": "content/blog/rstudio/2020-05-19-driving-real-lasting-value-with-serious-data-science/",
     "description": "Driving lasting value in an organization with data scienc...",
-    "decision": "KEEP",
-    "reason": "Data science philosophy/best practices"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "Why You Need a World Class IDE to Do Serious Data Science",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/- ide-for-serious-data-science/",
     "path": "content/blog/rstudio/2020-07-09-why-you-need-a-world-class-ide-to-do-serious-data-science/",
     "description": "Data Science presents challenges in the iteration of new ...",
-    "decision": "KEEP",
-    "reason": "Data science philosophy/best practices"
+    "decision": "EXCLUDE",
+    "reason": "Data Science Leadership (enterprise marketing)"
   },
   {
     "title": "RStudio Connect 1.8.4",
@@ -804,8 +804,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/using-shiny-in-production-to-monitor-covid-19/",
     "path": "content/blog/rstudio/2020-11-17-calcat-shiny-in-production/",
     "description": "RStudio analyzes how the California Department of Public ...",
-    "decision": "KEEP",
-    "reason": "Shiny application case study"
+    "decision": "EXCLUDE",
+    "reason": "Case study/marketing"
   },
   {
     "title": "RStudio Connect 1.8.6",
@@ -1532,8 +1532,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/come-see-rstudio-at-an-event-near-you-next-week/",
     "path": "content/blog/rstudio/2017-05-12-come-see-rstudio-at-an-event-near-you-next-week/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Free educational artwork for R community"
+    "decision": "EXCLUDE",
+    "reason": "Conference/event announcement"
   },
   {
     "title": "R-Admins Community",
@@ -2012,16 +2012,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/mastering-shiny-with-appsilon-x-session-recordings-are-now-available/",
     "path": "content/blog/rstudio/2021-03-15-mastering-shiny-with-appsilon-x-session-recordings-are-now-available/",
     "description": "We\u2019re excited to announce that all rstudio::global(2021) ...",
-    "decision": "KEEP",
-    "reason": "Educational Shiny tutorial recordings"
+    "decision": "EXCLUDE",
+    "reason": "Conference session recordings"
   },
   {
     "title": "R in Pharma with ProCogia X-Session Recordings are Now Available",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/r-in-pharma-with-procogia-x-session-recordings-are-now-available/",
     "path": "content/blog/rstudio/2021-03-16-r-in-pharma-with-procogia-x-session-recordings-are-now-available/",
     "description": "We\u2019re excited to announce that all rstudio::global(2021) ...",
-    "decision": "KEEP",
-    "reason": "Educational R in pharma content"
+    "decision": "EXCLUDE",
+    "reason": "Conference session recordings"
   },
   {
     "title": "BI and Data Science: Deliver Insights Through Embedded Analytics",
@@ -2108,8 +2108,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/r-in-supply-chain-management-meetup-q-a/",
     "path": "content/blog/rstudio/2021-06-17-r-in-supply-chain-management-meetup-q-a/",
     "description": "Supply chain management presents a number of interesting ...",
-    "decision": "KEEP",
-    "reason": "Technical Q&A about using OSS Shiny for supply chain"
+    "decision": "EXCLUDE",
+    "reason": "Meetup Q&A"
   },
   {
     "title": "Strategic Analytics at Monash University: How RStudio Accelerated the Transformation",
@@ -3348,8 +3348,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudioconf-2017-session-recordings-are-now-available/",
     "path": "content/blog/rstudio/2017-02-15-rstudioconf-2017-session-recordings-are-now-available/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Conference recordings (educational content)"
+    "decision": "EXCLUDE",
+    "reason": "Conference/event announcement"
   },
   {
     "title": "leaflet 1.1.0",
@@ -3788,8 +3788,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio//",
     "path": "content/blog/rstudio/2019-01-18-summer-internships-2019/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Internship announcement (open source work)"
+    "decision": "EXCLUDE",
+    "reason": "Education/certification content"
   },
   {
     "title": "sparklyr 1.0: Apache Arrow, XGBoost, Broom and TFRecords",
@@ -3812,8 +3812,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio//",
     "path": "content/blog/rstudio/2019-03-25-summer-interns-2019/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Internship announcement (open source work)"
+    "decision": "EXCLUDE",
+    "reason": "Education/certification content"
   },
   {
     "title": "Winners of the 1st Shiny Contest",
@@ -4108,8 +4108,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/shiny-server-1-5-16-update/",
     "path": "content/blog/rstudio/2021-01-13-shiny-server-1-5-16-update/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Shiny open source"
+    "decision": "EXCLUDE",
+    "reason": "Shiny Server release announcement"
   },
   {
     "title": "Announcing blogdown v1.0",
@@ -4212,8 +4212,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/three-shiny-best-practices-seen-in-the-shiny-contest/",
     "path": "content/blog/rstudio/2021-07-22-three-shiny-best-practices-seen-in-the-shiny-contest/",
     "description": null,
-    "decision": "EXCLUDE",
-    "reason": "Contest announcement"
+    "decision": "KEEP",
+    "reason": "Shiny best practices tutorial"
   },
   {
     "title": "Using Shiny in Healthcare: Examples from the 2021 Shiny Contest",
@@ -4268,8 +4268,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-community-monthly-events-november-2021/",
     "path": "content/blog/rstudio/2021-11-03-rstudio-community-monthly-events-november-2021/",
     "description": "Welcome to the RStudio Community Monthly Events Roundup! ...",
-    "decision": "KEEP",
-    "reason": "Community/open source initiative"
+    "decision": "EXCLUDE",
+    "reason": "Event calendar announcement"
   },
   {
     "title": "How To Augment Tableau With R & Python - A Webinar and Case Study from Sweden",
@@ -4292,8 +4292,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-community-monthly-events-december-2021/",
     "path": "content/blog/rstudio/2021-12-02-rstudio-community-monthly-events-december-2021/",
     "description": "Welcome to the RStudio Community Monthly Events Roundup! ...",
-    "decision": "KEEP",
-    "reason": "Community/open source initiative"
+    "decision": "EXCLUDE",
+    "reason": "Event calendar announcement"
   },
   {
     "title": "Using Keras for Deep Learning with R",
@@ -4332,8 +4332,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-community-monthly-events-january-2022/",
     "path": "content/blog/rstudio/2022-01-05-rstudio-community-monthly-events-january-2022/",
     "description": "Welcome to the RStudio Community Monthly Events Roundup! ...",
-    "decision": "KEEP",
-    "reason": "Community/open source initiative"
+    "decision": "EXCLUDE",
+    "reason": "Event calendar announcement"
   },
   {
     "title": "R Markdown Lesser-Known Tips & Tricks #2: Cleaning Up Your Code",
