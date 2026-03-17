@@ -1,0 +1,22 @@
+{{/* button: Render a styled link as a button.
+     Required: url
+     Optional: text, target, icon (iconify name), alt (aria-label), class
+*/}}
+{{ $url := .url }}
+{{ $text := .text | default "" }}
+{{ $target := .target | default "" }}
+{{ $icon := .icon | default "" }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+
+{{ $baseClass := "inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white font-semibold text-sm hover:bg-blue-600 transition no-underline" }}
+{{ $finalClass := trim (printf "%s %s" $baseClass $class) " " }}
+
+<a href="{{ $url }}"
+  {{- if $target }} target="{{ $target }}"{{ end -}}
+  {{- if eq $target "_blank" }} rel="noopener noreferrer"{{ end -}}
+  {{- if $alt }} aria-label="{{ $alt }}"{{ end }}
+  class="{{ $finalClass }}">
+  {{- with $icon }}<span class="icon-[{{ . }}] w-5 h-5 flex-none"></span>{{ end -}}
+  {{- with $text }}{{ . }}{{ end -}}
+</a>
