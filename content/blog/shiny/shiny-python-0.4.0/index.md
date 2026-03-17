@@ -17,7 +17,7 @@ Hello, Shiny for Python users. We have some great new features for you in the la
 
 We've added a new, fast-scrolling data table output.
 
-![Data table](data-grid.mp4)
+{{< video src="data-grid.mp4" title="Data table" >}}
 
 It can easily handle tables with tens of thousands of rows, and supports sorting by columns -- just click on the column header to sort.
 
@@ -27,7 +27,7 @@ In addition to the grid-style appearance, the data can be displayed with a more 
 
 These tables aren't just for displaying data -- they can also allow you to select rows, use that selection as an input, as shown here:
 
-![Selecting rows in a data table](data-grid-select.mp4)
+{{< video src="data-grid-select.mp4" title="Selecting rows in a data table" >}}
 
 To use the new tables, put this in your application's UI:
 

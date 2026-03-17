@@ -66,9 +66,9 @@ These theme changes will be available to Shiny for R as well, via a new [bslib](
 
 ## Data table filtering
 
-In case you missed it, [last month we introduced](/blog/shiny/shiny-python-0.4.0/) an interactive data table output that's designed to easily scale to tens of thousands of rows. This month, we've added the ability to let viewers filter the data table by column.
+In case you missed it, [last month we introduced](../../../blog/shiny/shiny-python-0.4.0/) an interactive data table output that's designed to easily scale to tens of thousands of rows. This month, we've added the ability to let viewers filter the data table by column.
 
-![Filtering a data table](data-grid-filter.mp4)
+{{< video src="data-grid-filter.mp4" title="Filtering a data table" >}}
 
 Currently, the filter feature must be enabled by passing `filters=True` when creating your `render.DataGrid` or `render.DataTable` object:
 
@@ -127,7 +127,7 @@ ui.input_text(
 
 I had a great time talking with [Michael Kennedy](https://mkennedy.codes/) on the [Talk Python to Me podcast](https://talkpython.fm/episodes/show/424/shiny-for-python) about Shiny for Python. We covered a lot of ground, including who Shiny is designed for, how Shiny differs from Jupyter notebooks, and how it compares to other Python web frameworks. [Check it out!](https://talkpython.fm/episodes/show/424/shiny-for-python)
 
-<https://www.youtube.com/watch?v=YN0hnAmid7A>
+{{< video src="https://www.youtube.com/watch?v=YN0hnAmid7A" >}}
 
 ------------------------------------------------------------------------
 

@@ -97,3 +97,19 @@ slug: original-post-slug
 **Notes:**
 - For `.ipynb` files, include frontmatter (including `image-alt`) in the first cell as a raw cell with YAML between `---` delimiters.
 - When a post has both `.qmd` and `.md` files, edit both to keep them in sync (avoids needing to re-render).
+
+## Embedding Videos
+
+Use Quarto's video shortcode in `.qmd` files:
+
+```
+{{< video my-video.mp4 >}}
+{{< video https://www.youtube.com/watch?v=VIDEO_ID >}}
+{{< video my-video.mp4 title="Description for accessibility" >}}
+```
+
+**Supported sources:** YouTube, Vimeo, local files (.mp4, .webm, .ogg)
+
+**Optional parameters:** `title`, `width`, `height`, `start` (YouTube only), `aspect-ratio` (1x1, 4x3, 16x9, 21x9)
+
+A Lua filter automatically converts these to Hugo's `video` shortcode when rendering to `hugo-md`. No `resources:` frontmatter needed for local video files.

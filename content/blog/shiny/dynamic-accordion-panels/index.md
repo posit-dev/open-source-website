@@ -84,7 +84,7 @@ def update_accordion_1():
     ui.update_accordion_panel("info_accordion", "professional", show=True)
 ```
 
-<https://www.youtube.com/embed/v26E2_1cSa8>
+{{< video src="https://www.youtube.com/embed/v26E2_1cSa8" >}}
 
 Specifically, the video showcases how to:
 
