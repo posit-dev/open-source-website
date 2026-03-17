@@ -3,8 +3,6 @@ color: '#0D1234'
 description: RAG in R
 github: tidyverse/ragnar
 image: logo.png
-tags:
-- AI
 languages:
 - R
 latest_release: '2026-01-23T17:26:32+00:00'
@@ -15,6 +13,8 @@ people:
 - Garrick Aden-Buie
 - Jeroen Janssens
 - Max Kuhn
+tags:
+- AI
 title: ragnar
 website: http://ragnar.tidyverse.org
 

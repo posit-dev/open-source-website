@@ -5,8 +5,6 @@ github: tidyverse/purrr
 image: logo.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2026-01-06T21:50:34+00:00'
 people:
 - Hadley Wickham
@@ -20,6 +18,8 @@ people:
 - Neal Richardson
 - Mine Çetinkaya-Rundel
 - Jeroen Janssens
+tags:
+- tidyverse
 title: purrr
 website: https://purrr.tidyverse.org/
 

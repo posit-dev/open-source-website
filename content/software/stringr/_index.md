@@ -5,8 +5,6 @@ github: tidyverse/stringr
 image: logo.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2025-11-03T22:09:36+00:00'
 people:
 - Hadley Wickham
@@ -17,6 +15,8 @@ people:
 - Garrick Aden-Buie
 - Jeroen Janssens
 - Joe Cheng
+tags:
+- tidyverse
 title: stringr
 website: https://stringr.tidyverse.org
 

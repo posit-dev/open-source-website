@@ -5,8 +5,6 @@ github: tidyverse/tibble
 image: logo.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2026-01-10T18:28:34+00:00'
 people:
 - Hadley Wickham
@@ -17,6 +15,8 @@ people:
 - Max Kuhn
 - Jeroen Janssens
 - Christophe Dervieux
+tags:
+- tidyverse
 title: tibble
 website: https://tibble.tidyverse.org/
 

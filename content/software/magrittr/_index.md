@@ -5,8 +5,6 @@ github: tidyverse/magrittr
 image: logo.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2025-09-11T16:42:35+00:00'
 people:
 - Lionel Henry
@@ -14,6 +12,8 @@ people:
 - Jeroen Janssens
 - Gábor Csárdi
 - Davis Vaughan
+tags:
+- tidyverse
 title: magrittr
 website: https://magrittr.tidyverse.org
 

@@ -4,7 +4,7 @@ description: Ark, an R kernel
 github: posit-dev/ark
 image: logo.png
 languages:
-- Rust
+- R
 latest_release: '2026-03-03T20:32:26+00:00'
 people:
 - Lionel Henry
@@ -15,8 +15,13 @@ people:
 - Isabel Zimmerman
 - JJ Allaire
 - Simon Couch
-title: ark
+title: Ark
 website: ''
+
+override:
+  languages:
+  - R
+  title: Ark
 
 external:  # updated automatically, do not edit
   description: Ark, an R kernel

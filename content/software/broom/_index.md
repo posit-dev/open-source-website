@@ -5,8 +5,6 @@ github: tidymodels/broom
 image: logo.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2025-12-03T20:26:24+00:00'
 people:
 - Simon Couch
@@ -18,6 +16,8 @@ people:
 - Hannah Frick
 - Jenny Bryan
 - Jeroen Janssens
+tags:
+- tidyverse
 title: broom
 website: https://broom.tidymodels.org
 

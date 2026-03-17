@@ -6,6 +6,7 @@ image: logo.svg
 languages:
 - HTML
 people:
+- Isabella Velásquez
 - Mine Çetinkaya-Rundel
 - Max Kuhn
 - Winston Chang
@@ -37,6 +38,7 @@ external:  # updated automatically, do not edit
   - HTML
   last_updated: '2026-03-05T16:11:30.002787+00:00'
   people:
+  - Isabella Velásquez
   - Mine Çetinkaya-Rundel
   - Max Kuhn
   - Winston Chang

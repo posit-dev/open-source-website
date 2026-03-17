@@ -5,14 +5,14 @@ github: tidyverse/rvest
 image: logo.png
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2025-08-29T12:57:27+00:00'
 people:
 - Hadley Wickham
 - Jeroen Ooms
 - Charlie Gao
 - Charlotte Wickham
+tags:
+- tidyverse
 title: rvest
 website: https://rvest.tidyverse.org
 

@@ -5,8 +5,6 @@ github: r-lib/cli
 image: alert-success.svg
 languages:
 - R
-tags:
-- tidyverse
 latest_release: '2025-04-22T11:59:57+00:00'
 people:
 - Gábor Csárdi
@@ -18,6 +16,8 @@ people:
 - Jeroen Ooms
 - Jeroen Janssens
 - George Stagg
+tags:
+- tidyverse
 title: cli
 website: https://cli.r-lib.org/
 

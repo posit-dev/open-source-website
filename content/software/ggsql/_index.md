@@ -5,7 +5,7 @@ description: A experimental SQL extension for declarative data visualisation bas
 github: posit-dev/ggsql
 image: logo.svg
 languages:
-- Rust
+- SQL
 people:
 - George Stagg
 - Thomas Lin Pedersen
@@ -13,6 +13,10 @@ people:
 - Carson Sievert
 title: ggsql
 website: http://ggsql.org/
+
+override:
+  languages:
+  - SQL
 
 external:  # updated automatically, do not edit
   description: A experimental SQL extension for declarative data visualisation based
