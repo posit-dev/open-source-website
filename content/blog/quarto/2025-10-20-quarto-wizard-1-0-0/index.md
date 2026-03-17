@@ -135,7 +135,11 @@ results with install button.
 <ul>
 <li><p>Via the command line:</p>
 <div class="panel-tabset">
-<h2>Visual Studio Code</h2>
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-1-1">Visual Studio Code</a></li>
+<li><a href="#tabset-1-2">Positron</a></li>
+</ul>
+<div id="tabset-1-1">
 <div class="code-with-filename">
 <strong>Terminal</strong>
 <div class="sourceCode" id="cb1" data-filename="Terminal"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--install-extension</span> mcanouil.quarto-wizard</span></code></pre></div>
@@ -143,10 +147,11 @@ results with install button.
 <div>
 <blockquote>
 <p><strong>Tip</strong></p>
-<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)) if you haven’t done so already.</p>
+<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)) if you haven’t done so already.</p>
 </blockquote>
 </div>
-<h2>Positron</h2>
+</div>
+<div id="tabset-1-2">
 <div class="code-with-filename">
 <strong>Terminal</strong>
 <div class="sourceCode" id="cb2" data-filename="Terminal"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">positron</span> <span class="at">--install-extension</span> mcanouil.quarto-wizard</span></code></pre></div>
@@ -154,8 +159,9 @@ results with install button.
 <div>
 <blockquote>
 <p><strong>Tip</strong></p>
-<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)) if you haven’t done so already.</p>
+<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)) if you haven’t done so already.</p>
 </blockquote>
+</div>
 </div>
 </div></li>
 </ul>
@@ -191,7 +197,7 @@ The solution is **multi-modal installation**: you can now install extensions thr
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)).</li>
+<li>Open the Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)).</li>
 <li>Type <code>Quarto Wizard: Install Extensions</code> and select it.</li>
 <li>Browse the list of available Quarto extensions.</li>
 <li>Select the Quarto extension(s) you want to install.</li>
@@ -237,7 +243,7 @@ The file is not created until you confirm, allowing you to adjust the filename a
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)).</li>
+<li>Open the Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)).</li>
 <li>Type <code>Quarto Wizard: Use Template</code> and select it.</li>
 <li>Browse the list of available Quarto templates.</li>
 <li>Select the Quarto template(s) you want to use.</li>

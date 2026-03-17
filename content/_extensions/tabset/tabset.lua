@@ -47,7 +47,7 @@ end
 
 -- Build blocks for Tabby.js tabset
 -- Returns a list of Pandoc blocks with HTML wrappers but AST content
-local function render_tabset(tabs, tabset_id)
+local function render_tabset(tabs, tabset_id, group)
   local blocks = pandoc.List()
 
   -- Default first tab to active if none specified
@@ -60,7 +60,8 @@ local function render_tabset(tabs, tabset_id)
   end
 
   -- Opening container and tab navigation
-  local nav_html = {'<div class="panel-tabset">'}
+  local group_attr = group and (' data-tabset-group="' .. group .. '"') or ''
+  local nav_html = {'<div class="panel-tabset"' .. group_attr .. '>'}
   table.insert(nav_html, '<ul id="' .. tabset_id .. '" class="panel-tabset-tabby">')
   for i, tab in ipairs(tabs) do
     local panel_id = tabset_id .. "-" .. i
@@ -103,5 +104,8 @@ function Div(div)
   tabset_counter = tabset_counter + 1
   local tabset_id = "tabset-" .. tabset_counter
 
-  return render_tabset(tabs, tabset_id)
+  -- Extract group attribute if present
+  local group = div.attributes["group"]
+
+  return render_tabset(tabs, tabset_id, group)
 end

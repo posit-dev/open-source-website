@@ -16,7 +16,7 @@ port_status: in-progress
 
 You've made it to third part of "The Shiny Side of LLMs" series, where we turn everything we've learned into something real and interactive! Our weapon of choice: Shiny, of course.
 
-In the first part, [What LLMs Actually Do (and What They Don't)](/blog/shiny/shiny-side-of-llms-part-1/), we explored what LLMs actually do. We covered how they generate text, what they're good (and bad) at, and we covered most of the jargon that gets thrown around. Then in part two, [Talking to LLMs: From Prompt to Response](/blog/shiny/shiny-side-of-llms-part-2/), we got practical. You learned how to structure prompts, send them to a model via an API using [`chatlas`](https://posit-dev.github.io/chatlas/) or [`ellmer`](https://ellmer.tidyverse.org), and handle the responses in your code. Now it's time to wrap that logic in an interface your users can love and can actually interact with!
+In the first part, [What LLMs Actually Do (and What They Don't)](../../../blog/shiny/shiny-side-of-llms-part-1/), we explored what LLMs actually do. We covered how they generate text, what they're good (and bad) at, and we covered most of the jargon that gets thrown around. Then in part two, [Talking to LLMs: From Prompt to Response](../../../blog/shiny/shiny-side-of-llms-part-2/), we got practical. You learned how to structure prompts, send them to a model via an API using [`chatlas`](https://posit-dev.github.io/chatlas/) or [`ellmer`](https://ellmer.tidyverse.org), and handle the responses in your code. Now it's time to wrap that logic in an interface your users can love and can actually interact with!
 
 In this post, we'll cover how to:
 
@@ -59,7 +59,7 @@ Alright, enough with the sales pitch. Shiny it is!
 
 > **Getting your API key**
 >
-> Remember you need to [grab an API key for your chosen LLM provider](/blog/shiny/shiny-side-of-llms-part-2/#what-do-you-need). You need this key to authenticate. Store this key as an environment variable. For example, to use Claude from Anthropic, `ANTHROPIC_API_KEY=yourkey` needs to be in `.Renviron` or `.env` file.
+> Remember you need to [grab an API key for your chosen LLM provider](../../../blog/shiny/shiny-side-of-llms-part-2/#what-do-you-need). You need this key to authenticate. Store this key as an environment variable. For example, to use Claude from Anthropic, `ANTHROPIC_API_KEY=yourkey` needs to be in `.Renviron` or `.env` file.
 
 Going from a script-like workflow to an app requires a different way of thinking. We simply have other expectations from a web app compared to just a regular Python or R script. We want things to be interactive, and ideally we want to have the result instantly. If we click on something, we expect something to happen, fast. Ever encountered a web page that stayed blank for just 5 seconds? How long did that feel? Like 10 minutes? Or didn't you even stick out the 5 seconds? Yes, you are impatient! You need to see something is happening, and get some visual feedback.
 
@@ -71,7 +71,12 @@ Where the `chat()` method does not return any results until the entire response 
 2.  Pause between chunks without blocking other things.
 3.  Keep its place so it can pick up right where it left off when the next chunk arrives.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-1-1">Python</a></li>
+<li><a href="#tabset-1-2">R</a></li>
+</ul>
+<div id="tabset-1-1">
 
 In the `chatlas` documentation you can read more about [streams](https://posit-dev.github.io/chatlas/get-started/stream.html).
 
@@ -110,7 +115,8 @@ for chunk in stream:
 
 The object that gets returned by the [`stream()`](https://posit-dev.github.io/chatlas/reference/Chat.html#stream) method is a [generator](https://wiki.python.org/moin/Generators).
 
-## R
+</div>
+<div id="tabset-1-2">
 
 In the `ellmer` documentation you can read more about [streaming](https://ellmer.tidyverse.org/articles/streaming-async.html).
 
@@ -151,6 +157,9 @@ coro::loop(
 
 The object that gets returned by the [`stream()`](https://ellmer.tidyverse.org/reference/Chat.html#method-stream-) method is a [coro generator](https://coro.r-lib.org/articles/generator.html#generators).
 
+</div>
+</div>
+
 Streaming is great for things like chatbots, live transcription, or anything where seeing text appear in real time feels natural. It's perfect for conversations, or when the answer is long and you don't want to keep users staring at a blank screen.
 
 In apps like "DeckCheck", where we're analysing a Quarto presentation behind the scenes and then showing a finished result, streaming doesn't really add much. Users expect a clear, polished answer all at once. Not a JSON, but ready-to-go value boxes, graphs and tables. So in this case, a smooth loading indicator or progress bar will probably satisfy impatient users and we can stick to our `chat()` method. Don't forget the `stream()` method though: we'll use that a little bit later in a small demo chatbot.
@@ -159,7 +168,12 @@ Whether we're streaming or not, users simply have to wait for an LLM response an
 
 So ideally, asking a question to an LLM would look something like this in our Shiny application:
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-2-1">Python</a></li>
+<li><a href="#tabset-2-2">R</a></li>
+</ul>
+<div id="tabset-2-1">
 
 > **Note for Positron/Jupyter users**
 >
@@ -235,7 +249,8 @@ asyncio.run(main())
 
 [`chat_async()`](https://posit-dev.github.io/chatlas/reference/Chat.html#chatlas.Chat.chat_async) returns a coroutine object, which is basically a special kind of function that runs asynchronously. It doesn't do the work right away when you call it, but it gives you this object that you can later "await" to actually get the result. If you're running regular (non-asynchronous) code, you use `asyncio.run()` to start and wait for the task to finish.
 
-## R
+</div>
+<div id="tabset-2-2">
 
 ``` r
 library(ellmer)
@@ -273,15 +288,23 @@ Return your answer as a JSON array of objects, where each object has the followi
 
 </details>
 
-[`chat_async()`](https://ellmer.tidyverse.org/reference/Chat.html#method-chat-async-) starts the work and returns a promise, this special kind of placeholder. Then [`%...>%`](https://rstudio.github.io/promises/reference/pipes.html) attaches the next step, like printing the result, once it's ready. This keeps your R session running without waiting or freezing. Note that it resolves to a string (probably Markdown), which is slightly different than just using the `chat()` method. This is also why the output looks a little bit different compared to [part two of this series](/blog/shiny/shiny-side-of-llms-part-2/).
+[`chat_async()`](https://ellmer.tidyverse.org/reference/Chat.html#method-chat-async-) starts the work and returns a promise, this special kind of placeholder. Then [`%...>%`](https://rstudio.github.io/promises/reference/pipes.html) attaches the next step, like printing the result, once it's ready. This keeps your R session running without waiting or freezing. Note that it resolves to a string (probably Markdown), which is slightly different than just using the `chat()` method. This is also why the output looks a little bit different compared to [part two of this series](../../../blog/shiny/shiny-side-of-llms-part-2/).
 
-And before you're thinking: "hey, we were using structured output [in the last part](/blog/shiny/shiny-side-of-llms-part-2/), right?" Yes! Luckily there's also a method called `chat_structured_async()` (see docs for [Python](https://posit-dev.github.io/chatlas/reference/Chat.html#chatlas.Chat.chat_structured_async) and [R](https://ellmer.tidyverse.org/reference/Chat.html#method-extract-data-async-)). How convenient! We'll use that a little bit later.
+</div>
+</div>
+
+And before you're thinking: "hey, we were using structured output [in the last part](../../../blog/shiny/shiny-side-of-llms-part-2/), right?" Yes! Luckily there's also a method called `chat_structured_async()` (see docs for [Python](https://posit-dev.github.io/chatlas/reference/Chat.html#chatlas.Chat.chat_structured_async) and [R](https://ellmer.tidyverse.org/reference/Chat.html#method-extract-data-async-)). How convenient! We'll use that a little bit later.
 
 # Chatting with an LLM via Shiny
 
 Never developed a Shiny app before? That's ok! Before building our DeckCheck app, we'll start with a very basic example that allows you to chat with any LLM, just like you type in your question at ChatGPT. And while this series isn't about building "just a chatbot", you can perfectly do so with Shiny. Minimal code required to get started. If you have experience with Shiny this code won't have much surprises, but if you're new to Shiny there's a mini crash-course-like explanation below the code.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-3" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-3-1">Python</a></li>
+<li><a href="#tabset-3-2">R</a></li>
+</ul>
+<div id="tabset-3-1">
 
 ``` python
 from shiny import App, ui
@@ -325,7 +348,8 @@ When we asks a question (e.g. our simple "I'm working on a presentation with th
 
 ![](shiny-side-of-llms-chat-py.png)
 
-## R
+</div>
+<div id="tabset-3-2">
 
 ``` r
 library(shiny)
@@ -378,6 +402,9 @@ When we asks a question (e.g. our simple "I'm working on a presentation with th
 
 ![](shiny-side-of-llms-chat-r.png)
 
+</div>
+</div>
+
 # Building DeckCheck
 
 All the ingredients are there now: we know how to programmatically talk to an LLM, we can make an informed choice when it comes to streaming (or not streaming) and async usage, and we've seen how to combine it in a simple chat interface (with a bit of help from `shinychat`). Time to apply that knowledge to our DeckCheck app.
@@ -396,7 +423,12 @@ To bring this design to life, here's what we're working towards:
 
 But first things first: let's start with building the basic UI before we connect the server part to it.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-4" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-4-1">Python</a></li>
+<li><a href="#tabset-4-2">R</a></li>
+</ul>
+<div id="tabset-4-1">
 
 ``` python
 from shiny import App, ui
@@ -511,7 +543,8 @@ def server(input, output, session):
 app = App(app_ui, server)
 ```
 
-## R
+</div>
+<div id="tabset-4-2">
 
 ``` r
 library(shiny)
@@ -612,11 +645,14 @@ server <- function(input, output, session) {}
 shinyApp(ui, server)
 ```
 
+</div>
+</div>
+
 No matter what language you use to display this basic UI, the result is the same:
 
 ![](shiny-side-of-llms-ui-only.png)
 
-That's already a start! Of course it doesn't do anything yet and is filled with placeholders, so we need some logic in the server part. The main engine behind DeckCheck is our conversation with the LLM. This logic is *almost* a copy-paste from part two, [Talking to LLMs: From Prompt to Response](/blog/shiny/shiny-side-of-llms-part-2/), combined with what we learned earlier in this article about async.
+That's already a start! Of course it doesn't do anything yet and is filled with placeholders, so we need some logic in the server part. The main engine behind DeckCheck is our conversation with the LLM. This logic is *almost* a copy-paste from part two, [Talking to LLMs: From Prompt to Response](../../../blog/shiny/shiny-side-of-llms-part-2/), combined with what we learned earlier in this article about async.
 
 The star of this main engine is something called "extended task". As mentioned previously, by default, Shiny runs code synchronously. That means if we ask it to render a Quarto presentation or send a request to an LLM, the app would block until that job is done. The whole interface would freeze. That's no fun for the user. That's why Shiny has an option to run extended tasks ([`extended_task`](https://shiny.posit.co/py/docs/nonblocking.html) in Python, [`ExtendedTask`](https://shiny.posit.co/r/articles/improve/nonblocking/) in R). It lets us run non-blocking jobs asynchronously in the background, so our app can stay responsive. It works together with a special action button, `input_task_button`, which is designed to trigger long running tasks. In order for this button to work you need to **bind** the button to the extended task with `bind_task_button`.
 
@@ -655,7 +691,12 @@ This setup keeps the app responsive, ensures tasks run in the right order, and m
 >
 > Big chunks of code are generally not nice to look at. So, to make sure it's not too overwhelming we'll take a look at some snippets from the finalised DeckCheck app. Note that you can't run these snippets on their own. If you want to run the full DeckCheck application you can head over to the [the end result](#the-end-result).
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-5" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-5-1">Python</a></li>
+<li><a href="#tabset-5-2">R</a></li>
+</ul>
+<div id="tabset-5-1">
 
 ``` python
 # ======================
@@ -827,7 +868,8 @@ app = App(app_ui, server)
 
 Note that `quarto_task` is marked `async`, so it automatically returns a coroutine. You need a coroutine for `extended_task` to work. The subprocess call to Quarto runs without blocking (`await asyncio.create_subprocess_exec`). Once Quarto finishes, the task resolves with the path to the Markdown file. The async chat tasks from `chatlas` return a coroutine too.
 
-## R
+</div>
+<div id="tabset-5-2">
 
 ``` r
 # ======================
@@ -1025,6 +1067,9 @@ shinyApp(ui, server)
 
 Note that we wrap the Quarto task in `mirai` because we need a promise. Basically an object that says: "I don't have the answer yet, but I will later". `ExtendedTask` is built to work with promises and it expects whatever you give it to eventually resolve with a value. The async chat tasks from `ellmer` return a promise too.
 
+</div>
+</div>
+
 In this case, we choose to start a fresh chat session each time. Another way to do this would be to bring up the code that initialises the chat client, set model parameters, and registers our tool so it only runs once at the start of the session. Then, we could use [`chat.set_turns([])`](https://posit-dev.github.io/chatlas/reference/Chat.html#chatlas.Chat.set_turns) (Python) / [`chat$set_turns([])`](https://ellmer.tidyverse.org/reference/Chat.html#method-set-turns-) (R) before each new "chat task". This way, we won't accumulate chat history.
 
 # Towards a better UI
@@ -1039,7 +1084,12 @@ We already talked about the impatience of users and how visual feedback can make
 
 A nice way to add such a custom loading experience is with the help of [`output_ui`](https://shiny.posit.co/py/api/core/ui.output_ui.html) (Python) / [`uiOutput`](https://shiny.posit.co/r/reference/shiny/latest/renderui.html) (R). It serves as a placeholder in your UI that gets filled later with server-generated UI via `render.ui()` (Python) / `renderUI()` (R). This lets you create dynamic interfaces that change depending on app state. For example, we can start by rendering a loading animation (like a bouncing icon), and once the results are ready, replace it with more complex UI elements such as value boxes, a graph, and a table.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-6" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-6-1">Python</a></li>
+<li><a href="#tabset-6-2">R</a></li>
+</ul>
+<div id="tabset-6-1">
 
 ``` python
 # ======================
@@ -1091,7 +1141,8 @@ def server(input, output, session):
 app = App(app_ui, server)
 ```
 
-## R
+</div>
+<div id="tabset-6-2">
 
 ``` r
 # ======================
@@ -1149,6 +1200,9 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
+</div>
+</div>
+
 Using extended task, we can easily monitor the status with `quarto_task$status()` and `chat_task$status()`. The status can be `"initial"`, `"running"`, `"success"`, or `"error"`. So whenever our Quarto task is running, we can display a bouncing presentation easel (or whatever you like). And once that task is finished and we start with our chat task, we can show a bouncing robot. The HTML for those bouncing icons is pretty straightforward: a simple div that puts the icon in the middle. For the bounce effect we need some custom CSS that we can add with the `.bounce` class. It looks like this:
 
 ``` css
@@ -1182,7 +1236,12 @@ With value boxes you can display key numbers. The idea is simple: show a number 
 
 Value boxes can be enhanced with tooltips. Tooltips are one of those small details that make a big difference. They're perfect for adding extra information without cluttering up your interface. Think of them as extra context that appears when someone hovers or taps. You can use them to explain numbers or tricky terms, add short instructions, highlight what a button actually does, or even drop in a quick example. In our case, we could add tooltips to the value boxes to tell our users how the numbers were calculated.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-7" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-7-1">Python</a></li>
+<li><a href="#tabset-7-2">R</a></li>
+</ul>
+<div id="tabset-7-1">
 
 UI:
 
@@ -1223,7 +1282,8 @@ The result:
 
 ![](shiny-side-of-llms-tooltips-py.gif)
 
-## R
+</div>
+<div id="tabset-7-2">
 
 UI:
 
@@ -1262,6 +1322,9 @@ The result:
 
 ![](shiny-side-of-llms-tooltips-r.gif)
 
+</div>
+</div>
+
 ## Interactive plots
 
 Is it even a data-powered app if there isn't a good plot?!
@@ -1270,7 +1333,12 @@ There are plenty of options when it comes to visualisation libraries, and many o
 
 To keep the demo light, we're not going to focus too much on these events. But there's one thing that we can add very easily and is supported by most interactive visualisation libraries: tooltips on hover! When you hover over a bar (or a line, or a point, you get it), you'll see a quick popup with more information. In our case: the score and the justification. Even this small touch already makes the chart feel more alive, and it's easy to imagine how combining clicks, brushing, and tooltips could make DeckCheck even cooler.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-8" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-8-1">Python</a></li>
+<li><a href="#tabset-8-2">R</a></li>
+</ul>
+<div id="tabset-8-1">
 
 > **Tip**
 >
@@ -1372,7 +1440,8 @@ The result is simple, but effective:
 
 ![](shiny-side-of-llms-plot-py.gif)
 
-## R
+</div>
+<div id="tabset-8-2">
 
 > **Cross-widget interactions**
 >
@@ -1462,11 +1531,19 @@ And that's how you add interactivity to your `ggplot2` fast:
 
 ![](shiny-side-of-llms-plot-r.gif)
 
+</div>
+</div>
+
 ## Tables
 
 Another element that you'll see in web apps: tables. The good news is: displaying your data in Shiny is super easy. Got a pandas/polars/narwhals DataFrame in Python? Or a data.frame/tibble/data.table in R? You can drop it straight into [`render.data_frame`](https://shiny.posit.co/py/api/core/render.data_frame.html) / [`output_data_frame`](https://shiny.posit.co/py/api/core/ui.output_data_frame.html) (Python) or [`renderTable`](https://shiny.posit.co/r/reference/shiny/latest/rendertable.html) / [`tableOutput`](https://shiny.posit.co/r/reference/shiny/latest/rendertable.html) (R) (and many other similar functions for some variety).
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-9" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-9-1">Python</a></li>
+<li><a href="#tabset-9-2">R</a></li>
+</ul>
+<div id="tabset-9-1">
 
 > **Other ways to render your table**
 >
@@ -1515,7 +1592,8 @@ def suggested_improvements():
     return result_table
 ```
 
-## R
+</div>
+<div id="tabset-9-2">
 
 > **More fun table libraries**
 >
@@ -1557,6 +1635,9 @@ output$suggested_improvements <- renderTable({
 })
 ```
 
+</div>
+</div>
+
 ## Error catching
 
 An error. The thing we don't want to see in our app. Errors reduce user experience, big time. A frozen app or red error messages don't make your users happy. And for you, as a developer, you're not too happy about them either. Unfortunately, it's hard to completely avoid getting errors: you'll always see that there's a specific scenario that you haven't thought about. But that doesn't mean you have to just let it happen: you can catch errors so your users are not confronted with a frozen app or messages they can't understand. Instead, you can confront your users with a friendly (and hopefully useful) message.
@@ -1565,7 +1646,12 @@ One thing worth knowing: in Shiny, if an error happens inside a reactive express
 
 However, in a bespoke app like DeckCheck, where we're streaming inside our own reactive expression or observer, you'll want to think about setting up your own error handling. The idea is simple: don't crash the app, and let the user know what went wrong in a friendly way. In our case, we split up our error messages: we can display one when something goes wrong with processing the Quarto file, and we can display one when our chat didn't go as planned. These two error-catching "wrappers" serve as some inspiration for your next friendly error message.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-10" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-10-1">Python</a></li>
+<li><a href="#tabset-10-2">R</a></li>
+</ul>
+<div id="tabset-10-1">
 
 To demonstrate what an error-catching "wrapper" could look like, let's take a look at error handling for the chat task:
 
@@ -1622,7 +1708,8 @@ The Quarto task and the chat task chain together various tasks: copying an uploa
 >     raise NotifyException(msg) from e
 > ```
 
-## R
+</div>
+<div id="tabset-10-2">
 
 To demonstrate what an error-catching "wrapper" could look like, let's take a look at error handling for the chat task:
 
@@ -1681,6 +1768,9 @@ The same error handling gets applied to the Quarto task.
 
 The Quarto task and the chat task chain together various tasks: copying an uploaded Quarto file, rendering it to Markdown and HTML, building a system prompt, and then invoking a conversation with an LLM. Any of these steps could fail (a bad upload, Quarto not rendering, the model returning something unexpected), but the `tryCatch` wrapper makes sure the app doesn't just crash or leave the user hanging. Instead, if something goes wrong, it logs the error for debugging and then shows the user a clean modal with a simple message.
 
+</div>
+</div>
+
 ![](shiny-side-of-llms-error-msg.png)
 
 Note that the error messages just say "something went wrong" and a little direction as to what to do next. This is the cleanest and most "sanitised" way of handling errors. If you were to pass the real error message straight through to the modal, you'd risk showing users technical details they're not supposed to see.
@@ -1701,7 +1791,12 @@ In Shiny, adding that CSS/Sass is easy. There are actually a few options:
 
 In DeckCheck, we add the styles of the `.bounce` class that we use for our [bouncing robot](#loading-experience).
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-11" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-11-1">Python</a></li>
+<li><a href="#tabset-11-2">R</a></li>
+</ul>
+<div id="tabset-11-1">
 
 > **Custom CSS in Shiny**
 >
@@ -1739,7 +1834,8 @@ app_ui = ui.page_fillable(
 
 Looking for more "high-level" styling? Check out [brand.yml](https://posit-dev.github.io/brand-yml/) for branding with a simple YAML file.
 
-## R
+</div>
+<div id="tabset-11-2">
 
 > **Custom CSS in Shiny**
 >
@@ -1780,13 +1876,21 @@ ui <- page_fillable(
 
 Note that these are fairly "low-level" techniques for achieving custom styling. To learn more about higher-level options you can take a look at [theming](https://rstudio.github.io/bslib/articles/theming/index.html) or [brand.yml](https://rstudio.github.io/bslib/articles/brand-yml/index.html).
 
+</div>
+</div>
+
 # The end result
 
 If we combine everything we talked about, we end up with a polished DeckCheck app! A sidebar layout with users inputs, a nice loading experience, non-blocking async operations, fancy looking graphs and tables, tooltips, you name it.
 
 ![](shiny-side-of-llms-deckcheck-full.gif)
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-12" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-12-1">Python</a></li>
+<li><a href="#tabset-12-2">R</a></li>
+</ul>
+<div id="tabset-12-1">
 
 > **Get this code from GitHub**
 >
@@ -2428,8 +2532,8 @@ app = App(app_ui, server)
 ```
 
 </details>
-
-## R
+</div>
+<div id="tabset-12-2">
 
 > **Get this code from GitHub**
 >
@@ -3091,6 +3195,8 @@ shinyApp(ui, server)
 ```
 
 </details>
+</div>
+</div>
 
 # Ready for the world: deployment
 

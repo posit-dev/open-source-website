@@ -93,7 +93,12 @@ pip install "shiny[theme]"
 Then, create a `_brand.yml` file in your project directory (either alongside your `app.py` or in a parent folder).
 Finally, use the [new `ui.Theme.from_brand()` function](https://shiny.posit.co/py/api/core/ui.Theme.html#shiny.ui.Theme.from_brand) to set your page `theme`.
 
-#### Express
+<div class="panel-tabset" data-tabset-group="shiny-app-mode">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-1-1">Express</a></li>
+<li><a href="#tabset-1-2">Core</a></li>
+</ul>
+<div id="tabset-1-1">
 
 **app.py**
 
@@ -103,7 +108,8 @@ from shiny.express import input, render, ui
 ui.page_opts(theme=ui.Theme.from_brand(__file__))
 ```
 
-#### Core
+</div>
+<div id="tabset-1-2">
 
 **app.py**
 
@@ -115,6 +121,9 @@ app_ui = ui.page_fluid(
     theme=ui.Theme.from_brand(__file__)
 )
 ```
+
+</div>
+</div>
 
 We've added a [complete branded theming example](https://shinylive.io/py/examples/#branded-theming) to [shinylive.io](https://shinylive.io/py/examples/#branded-theming) that you can run directly in your browser.
 Use it to explore brand.yml features or to preview your own company's `_brand.yml` look in Shiny.

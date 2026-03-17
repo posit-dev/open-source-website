@@ -32,13 +32,22 @@ To bring `querychat` to life, we will keep returning to two examples:
 - The classic diamonds dataset. After all, diamonds are a girl's best friend, and a data scientist's too! The familiar dataset offers a mix of variables such as cut, colour, clarity and price, which makes it ideal for all sorts of natural language questions. You might wonder about average prices for particular cuts, or you want to compare colours, look at how clarity affects value, or explore simple patterns in the data. In other words, it is a perfect playground for testing how well natural language queries behave on structured data.
 - SheScores, the soccer dashboard that you were so proud of earlier. This app originates from the shiny::conf(2024) workshop ["Shiny 101: The Modular App Blueprint"](https://github.com/hypebright/shinyconf2024-shiny101), although it has been tweaked to make it a bit more interesting and updated with matches through to November 2025.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-1-1">Python</a></li>
+<li><a href="#tabset-1-2">R</a></li>
+</ul>
+<div id="tabset-1-1">
 
 ![](shescores-original-py.png)
 
-## R
+</div>
+<div id="tabset-1-2">
 
 ![](shescores-original-r.png)
+
+</div>
+</div>
 
 Both datasets set the stage nicely, so let's roll the ball and see how `querychat` plays. We're talking about soccer after all!
 
@@ -66,7 +75,12 @@ So, what do we need?
 
 Once you've made your choice and registered, you can get an API key. You need this key to authenticate with the LLM provider. One important note: never, ever hardcode the key directly into your script. You'll be amazed how many keys are publicly available on GitHub repos. Don't be that developer. As always with secrets, store it as an environment variable. Just note that the exact name of the key depends on the provider. For example, Anthropic expects `ANTHROPIC_API_KEY=yourkey`, while OpenAI uses `OPENAI_API_KEY=yourkey`.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-2-1">Python</a></li>
+<li><a href="#tabset-2-2">R</a></li>
+</ul>
+<div id="tabset-2-1">
 
 In Python, the recommended approach is to create a `.env` file in your project folder:
 
@@ -83,7 +97,8 @@ load_dotenv()
 
 To keep the demo code concise we'll omit these lines from subsequent code examples.
 
-## R
+</div>
+<div id="tabset-2-2">
 
 In R, environment variables are typically stored in a `.Renviron` file. You can create this file in your project root or in your home directory (`~/.Renviron`). Or, if you want to make it yourself really easy: you can also open/edit the relevant file with `usethis::edit_r_environ()`.
 
@@ -91,9 +106,17 @@ In R, environment variables are typically stored in a `.Renviron` file. You ca
 ANTHROPIC_API_KEY=yourkey
 ```
 
+</div>
+</div>
+
 Of course we can't use `querychat` without installing it, so that's the next step:
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-3" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-3-1">Python</a></li>
+<li><a href="#tabset-3-2">R</a></li>
+</ul>
+<div id="tabset-3-1">
 
 For Python, `querychat` is available on PyPI, so you can install it easily with `pip`:
 
@@ -113,7 +136,8 @@ Once installed, import it like this:
 import querychat
 ```
 
-## R
+</div>
+<div id="tabset-3-2">
 
 You can get `querychat` from CRAN using:
 
@@ -133,9 +157,17 @@ Once installed, load the package as usual:
 library(querychat)
 ```
 
+</div>
+</div>
+
 Wouldn't it be great if you can use `querychat` straight away without much code? Just to see what it's all about? Luckily you can with the "quick launch" Shiny app! You can simply call `app()` which spins up an app with `querychat` chat interface. Let's try it out for our diamonds dataset:
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-4" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-4-1">Python</a></li>
+<li><a href="#tabset-4-2">R</a></li>
+</ul>
+<div id="tabset-4-1">
 
 ``` python
 from seaborn import load_dataset
@@ -156,7 +188,8 @@ To run this app, you need to save the code above in a file (and call it [`diamon
 shiny run --reload diamonds-app.py 
 ```
 
-## R
+</div>
+<div id="tabset-4-2">
 
 ``` r
 library(ellmer)
@@ -186,19 +219,31 @@ Both result in the same outcome, the first one is just a simplified version.
 
 Want to change the provider and/or model? No problem, just change the `client` argument accordingly. For example, to use GPT-4.1 from OpenAI, you would write: `client = "openai/gpt-4.1"`. You can learn more about the different options in the [`querychat` documentation](https://posit-dev.github.io/querychat/r/index.html#use-a-different-llm-provider).
 
+</div>
+</div>
+
 The result: a Shiny app that allows users to interact with a data source using natural language queries.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-5" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-5-1">Python</a></li>
+<li><a href="#tabset-5-2">R</a></li>
+</ul>
+<div id="tabset-5-1">
 
 ![](diamonds-py.png)
 
-## R
+</div>
+<div id="tabset-5-2">
 
 ![](diamonds-r.png)
 
 > **Custom branding**
 >
 > Do you notice the nice green touches and custom font in this demo app? That's because the project we'll be using in this article uses [brand.yml](https://posit-dev.github.io/brand-yml/): a simple, portable YAML file that codifies brand guidelines into a format that can be used by Quarto, Python and R. And in this case, it works beautifully for Shiny. Curious to see what such a `_brand.yml` file looks like? You can check it out [here](https://github.com/hypebright/shescores-dashboard/blob/0cd4e3f3ae52bcf4a39f7d63fb26e555de9a6b5e/_brand.yml).
+
+</div>
+</div>
 
 You can ask the diamonds dataset some surprisingly rich questions, and `querychat` handles them with ease. A simple place to begin is something like "show the 10 most expensive diamonds". It produces straightforward SQL and updates the table in the app instantly.
 
@@ -335,17 +380,26 @@ This brings four important benefits:
 - **Reproducibility:** since every SQL query is visible, analyses can be reused, shared, and audited.
 - **Safety**: `querychat`'s tools are designed with read-only actions in mind, meaning the LLM is essentially unable to perform destructive actions. However, to fully guarantee no destructive actions on your production database, make sure `querychat`'s database permissions are read-only!
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-6" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-6-1">Python</a></li>
+<li><a href="#tabset-6-2">R</a></li>
+</ul>
+<div id="tabset-6-1">
 
 <img src="diamonds-drop-py.png" style="width:50.0%" data-fig-align="center" />
 
-## R
+</div>
+<div id="tabset-6-2">
 
 <img src="diamonds-drop-r.png" style="width:50.0%" data-fig-align="center" />
 
+</div>
+</div>
+
 # How it works: tool calling
 
-If you read [The Shiny Side of LLMs](/blog/shiny/shiny-side-of-llms-part-2/#when-llms-guess-tools-know) blog series, you already know a bit about tool calling. In that series we explored how LLMs can call external tools instead of trying to do everything themselves, and `querychat` is a very practical example of this idea in action.
+If you read [The Shiny Side of LLMs](../../../blog/shiny/shiny-side-of-llms-part-2/#when-llms-guess-tools-know) blog series, you already know a bit about tool calling. In that series we explored how LLMs can call external tools instead of trying to do everything themselves, and `querychat` is a very practical example of this idea in action.
 
 Tool calling is essentially a bridge between an LLM and your Python or R session. The model does not execute code. Instead, it requests your Python or R session execute a certain function with certain inputs (e.g., a SQL statement). Once Python or R performs the execution, the result is then passed back to the model for interpretation.
 
@@ -369,17 +423,26 @@ The main component is the `QueryChat` object, which has different arguments and 
 
 You call `QueryChat` to initialise a `QueryChat` object (often called `qc`), like so:
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-7" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-7-1">Python</a></li>
+<li><a href="#tabset-7-2">R</a></li>
+</ul>
+<div id="tabset-7-1">
 
 ``` python
 qc = QueryChat(...)
 ```
 
-## R
+</div>
+<div id="tabset-7-2">
 
 ``` r
 qc <- QueryChat$new(...)
 ```
+
+</div>
+</div>
 
 You can pass `QueryChat` several arguments:
 
@@ -387,13 +450,19 @@ You can pass `QueryChat` several arguments:
 
   These are the two most important arguments: they specify your data source and the name of your table that can be used for the SQL queries. The data source can be your data frame, a tibble, a table or any other Python or R data object, and the table name is usually the variable name of your data frame. In our example our `data_source` was `diamonds`, which we also stored in a variable called `diamonds`.
 
-  ## Python
+  <div class="panel-tabset" data-tabset-group="language">
+  <ul id="tabset-8" class="panel-tabset-tabby">
+  <li><a data-tabby-default href="#tabset-8-1">Python</a></li>
+  <li><a href="#tabset-8-2">R</a></li>
+  </ul>
+  <div id="tabset-8-1">
 
   ``` python
   qc = QueryChat(diamonds, "diamonds")
   ```
 
-  ## R
+  </div>
+  <div id="tabset-8-2">
 
   Generally, in R, the table name isn't required as it can be inferred from the variable name. However, it is required when you use a database connection, which we'll use later.
 
@@ -404,13 +473,21 @@ You can pass `QueryChat` several arguments:
   )
   ```
 
+  </div>
+  </div>
+
   You're not limited to data objects: you can also pass a database connection to `data_source`. We'll come back to that later.
 
 - `client`
 
   We used the `client` argument before: we use it to tell `querychat` that we want to use Claude Sonnet 4.5 (or any other model). This gets us back at the starting point of our Diamonds "quick launch" app.
 
-  ## Python
+  <div class="panel-tabset" data-tabset-group="language">
+  <ul id="tabset-9" class="panel-tabset-tabby">
+  <li><a data-tabby-default href="#tabset-9-1">Python</a></li>
+  <li><a href="#tabset-9-2">R</a></li>
+  </ul>
+  <div id="tabset-9-1">
 
   ``` python
   qc = QueryChat(diamonds, "diamonds", client="anthropic/claude-sonnet-4-5")
@@ -418,7 +495,8 @@ You can pass `QueryChat` several arguments:
 
   Alternatively, you can set the client in options the `QUERYCHAT_CLIENT` environment variable.
 
-  ## R
+  </div>
+  <div id="tabset-9-2">
 
   ``` r
   qc <- QueryChat$new(
@@ -430,6 +508,9 @@ You can pass `QueryChat` several arguments:
 
   Alternatively, you can set the client in options with `options(querychat.client = "claude/claude-sonnet-4-5")`.
 
+  </div>
+  </div>
+
 - `id`
 
   This is an optional argument, and if it's not given it's derived from the `table_name`. When to use it? If you want to work with [multiple QueryChat instances](https://posit-dev.github.io/querychat/py/build.html#multiple-datasets), for example.
@@ -438,13 +519,19 @@ You can pass `QueryChat` several arguments:
 
   A nice greeting message to display to your users. It's the first thing your users see, so you better make it good! If not provided, one is generated at the start. While this one looks fine on first sight, it's rather slow and wasteful (it costs extra tokens because it's generated every single time). Also, because it's generated on the fly, it's far from consistent. Earlier, when we ran the "quick launch" app, you already might have noticed that it generated a warning message:
 
-  ## Python
+  <div class="panel-tabset" data-tabset-group="language">
+  <ul id="tabset-10" class="panel-tabset-tabby">
+  <li><a data-tabby-default href="#tabset-10-1">Python</a></li>
+  <li><a href="#tabset-10-2">R</a></li>
+  </ul>
+  <div id="tabset-10-1">
 
   ``` txt
   Warning: No greeting provided; the LLM will be invoked at conversation start to generate one. For faster startup, lower cost, and determinism, please save a greeting and pass it to init(). You can also use `querychat.greeting()` to help generate a greeting.
   ```
 
-  ## R
+  </div>
+  <div id="tabset-10-2">
 
   ``` txt
   Warning message:
@@ -453,13 +540,21 @@ You can pass `QueryChat` several arguments:
   ℹ You can generate a greeting with $generate_greeting(). 
   ```
 
+  </div>
+  </div>
+
   So yes, we need a greeting! You can add your own greeting by providing a string in Markdown format.
 
   Some inspiration on what you can put in there: basic instructions, suggestions for filtering, sorting or analysing the data, addressing data privacy concerns, or letting people know where they can get support if something goes wrong.
 
   And if you don't feel like writing your own greeting, or if you feel uninspired, you can let `querychat` handle it! Simply use `generate_greeting()`:
 
-  ## Python
+  <div class="panel-tabset" data-tabset-group="language">
+  <ul id="tabset-11" class="panel-tabset-tabby">
+  <li><a data-tabby-default href="#tabset-11-1">Python</a></li>
+  <li><a href="#tabset-11-2">R</a></li>
+  </ul>
+  <div id="tabset-11-1">
 
   ``` python
   qc = QueryChat(diamonds, "diamonds", client="anthropic/claude-sonnet-4-5")
@@ -499,7 +594,8 @@ You can pass `QueryChat` several arguments:
   What would you like to explore first?
   ```
 
-  ## R
+  </div>
+  <div id="tabset-11-2">
 
   ``` r
   qc <- QueryChat$new(
@@ -546,6 +642,9 @@ You can pass `QueryChat` several arguments:
   What would you like to explore?
   ```
 
+  </div>
+  </div>
+
   You can see that the generated greeting contains a span HTML tag: `<span class="suggestion">…</span>`. If you make your own greeting, you can use this tag to automatically populate the chatbox when it's being clicked.
 
 - `data_description`
@@ -574,7 +673,12 @@ You can pass `QueryChat` several arguments:
 
   We can save this in a Markdown file and pass it on to `querychat`:
 
-  ## Python
+  <div class="panel-tabset" data-tabset-group="language">
+  <ul id="tabset-12" class="panel-tabset-tabby">
+  <li><a data-tabby-default href="#tabset-12-1">Python</a></li>
+  <li><a href="#tabset-12-2">R</a></li>
+  </ul>
+  <div id="tabset-12-1">
 
   ``` python
   qc = QueryChat(
@@ -586,7 +690,8 @@ You can pass `QueryChat` several arguments:
   )
   ```
 
-  ## R
+  </div>
+  <div id="tabset-12-2">
 
   ``` r
   qc <- QueryChat$new(
@@ -597,6 +702,9 @@ You can pass `QueryChat` several arguments:
     data_description = "diamonds_data_description.md"
   )
   ```
+
+  </div>
+  </div>
 
 - `extra_instructions`
 
@@ -610,7 +718,12 @@ You can pass `QueryChat` several arguments:
   - Maintain consistent spelling in British English.
   ```
 
-  ## Python
+  <div class="panel-tabset" data-tabset-group="language">
+  <ul id="tabset-13" class="panel-tabset-tabby">
+  <li><a data-tabby-default href="#tabset-13-1">Python</a></li>
+  <li><a href="#tabset-13-2">R</a></li>
+  </ul>
+  <div id="tabset-13-1">
 
   ``` python
   qc = QueryChat(
@@ -623,7 +736,8 @@ You can pass `QueryChat` several arguments:
   )
   ```
 
-  ## R
+  </div>
+  <div id="tabset-13-2">
 
   ``` r
   qc <- QueryChat$new(
@@ -636,6 +750,9 @@ You can pass `QueryChat` several arguments:
   )
   ```
 
+  </div>
+  </div>
+
 - `categorical_threshold`
 
   This threshold applies to text columns, and sets the maximum number of unique values to consider it as a categorical variable. The default is 20.
@@ -646,17 +763,26 @@ You can pass `QueryChat` several arguments:
 
 Besides arguments, you can also call methods on the `QueryChat` object. One of them is `cleanup()`, which releases any resources (e.g. database connections) associated with the data source. You should call this when you are done using the `QueryChat` object to avoid resource leaks:
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-14" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-14-1">Python</a></li>
+<li><a href="#tabset-14-2">R</a></li>
+</ul>
+<div id="tabset-14-1">
 
 ``` python
 qc.cleanup()
 ```
 
-## R
+</div>
+<div id="tabset-14-2">
 
 ``` r
 qc$cleanup()
 ```
+
+</div>
+</div>
 
 That's... A lot! And all you need to chat safely with your data. As you've seen in our earlier examples, you don't need a lot to get started (`data_source` and `table_name` are enough, and in R you can even omit the `table_name`). But knowing the possibilities makes it easier to customise `querychat` to your liking.
 
@@ -679,7 +805,12 @@ If we want to do something with the results that get returned by `querychat`, we
 
 Let's take a look at a minimal example that rebuilds the "quick launch" app:
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-15" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-15-1">Python</a></li>
+<li><a href="#tabset-15-2">R</a></li>
+</ul>
+<div id="tabset-15-1">
 
 ``` python
 from shiny import App, render, ui
@@ -776,7 +907,8 @@ This actually happens in the source code for the quick launch app. It would give
 
 ![](diamonds-bespoke-py.png)
 
-## R
+</div>
+<div id="tabset-15-2">
 
 ``` r
 library(shiny)
@@ -850,6 +982,9 @@ shinyApp(ui, server)
 
 ![](diamonds-bespoke-r.png)
 
+</div>
+</div>
+
 Looks pretty similar to the quick launch app, right?! So that's how it was build. Note that there a few aesthetic differences though. The quick launch app has a few extra sparks here and there, and our app makes use of custom theming with `brand.yml`.
 
 So far in our diamonds adventure we have only looked at a simple table, but we can extent this idea much further and build an entire dashboard around it: value boxes, graphs, tables, maps, you name it! This is also what [sidebot](https://shiny.posit.co/py/templates/sidebot/) does, and this template is available to get you started quickly. A nice touch is the inclusion of the ✨ icon, which sends a screenshot of the visuals to the LLM for an explanation. How cool is that!
@@ -869,7 +1004,12 @@ So what does SheScores look like behind the scenes? We're not going into the nit
 
 The reactive, `filtered_data()`, forms the basis for all the elements in the dashboard: the value boxes, the map, the graph, and the table.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-16" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-16-1">Python</a></li>
+<li><a href="#tabset-16-2">R</a></li>
+</ul>
+<div id="tabset-16-1">
 
 > **Tip**
 >
@@ -964,7 +1104,8 @@ def server(input, output, session):
 app = App(app_ui, server)
 ```
 
-## R
+</div>
+<div id="tabset-16-2">
 
 > **Tip**
 >
@@ -1071,6 +1212,9 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
+</div>
+</div>
+
 Now we want to get rid of all those filters. We want a chat window instead. What do we need to change in order to use `querychat`? Spoiler alert: not much.
 
 Of course we need to initialise our `QueryChat` object. And since we're not talking about diamonds, we need to make sure to provide a proper soccer-themed greeting, a data description, and extra instructions:
@@ -1149,7 +1293,12 @@ major tournaments are mostly complete.
 
 Now, adding `querychat` into the mix is as simple as replacing our inputs in the sidebar with the `querychat` sidebar component (`sidebar()`), and our reactive with the results of `server()`.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-17" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-17-1">Python</a></li>
+<li><a href="#tabset-17-2">R</a></li>
+</ul>
+<div id="tabset-17-1">
 
 > **Tip**
 >
@@ -1212,7 +1361,8 @@ def server(input, output, session):
 app = App(app_ui, server)
 ```
 
-## R
+</div>
+<div id="tabset-17-2">
 
 > **Tip**
 >
@@ -1264,6 +1414,9 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
+</div>
+</div>
+
 It results in a lot less code and logic too. Win-win. Thanks `querychat` !
 
 <figure>
@@ -1283,7 +1436,12 @@ But what if you don't want to work with in-memory tables at all? What if you alr
 
 Let's take a look at how to set up `querychat` with another backend (SQLite) using the `data_source` argument.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-18" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-18-1">Python</a></li>
+<li><a href="#tabset-18-2">R</a></li>
+</ul>
+<div id="tabset-18-1">
 
 For demonstration purposes, we'll create a SQLite database from the SheScores data (`results_with_scorers.csv`).
 
@@ -1343,7 +1501,8 @@ You can also create a DuckDB database from a CSV file or a pandas DataFrame, whi
 
 Even if you have a database that isn't supported by SQLAlchemy or isn't suited for DuckDB, you can still let `querychat` access it. In that case, you need to implement the [DataSource](https://posit-dev.github.io/querychat/py/reference/types.DataSource.html) interface/protocol.
 
-## R
+</div>
+<div id="tabset-18-2">
 
 For demonstration purposes, we'll create a SQLite database from the SheScores data (`results_with_scorers.csv`). To create a new SQLite database, you simply supply the filename to [`dbConnect()`](https://dbi.r-dbi.org/reference/dbConnect.html). And with `dbWriteTable(`), you can easily copy an R dataframe into that newly generated SQLite database:
 
@@ -1400,6 +1559,9 @@ qc$app()
 
 Looking for more examples? Check out these [database setup examples for querychat](https://github.com/posit-dev/querychat/tree/main/pkg-r/inst/examples-shiny/sqlite).
 
+</div>
+</div>
+
 `querychat` knows how to deal with databases, and it has some convenient features for it too, especially when things go wrong: it validates whether tables actually exist and handles any issues gracefully (without cryptic error messages).
 
 One thing to keep in mind when you move from in-memory data to real databases, especially inside Shiny apps, is proper connection management. Whenever your app opens a database connection, it also needs to close it. In Python that usually means calling `engine.dispose()` when the app shuts down. In R you would use `dbDisconnect(conn)`, or rely on a connection pool. SQLAlchemy already provides pooling on the Python side, but in R you'll want the `pool` package to handle this in a nice manner.
@@ -1410,7 +1572,12 @@ You've seen what `querychat` can do, and you know a bit how it works conceptuall
 
 To talk with an LLM you need a good prompt: prompt design is crucial for a good outcome. A prompt contains context and instructions that an LLM will use to come up with its answer. `querychat` has a set of instructions for the LLM too, the system prompt, which is stored in a Markdown file (`prompt.md`).
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-19" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-19-1">Python</a></li>
+<li><a href="#tabset-19-2">R</a></li>
+</ul>
+<div id="tabset-19-1">
 
 You can check out the `prompt.md` file [here](https://github.com/posit-dev/querychat/blob/fea52e4e2b56a2cc0a042140dbe5ce194aca8ac6/pkg-py/src/querychat/prompts/prompt.md), or you can simply print it out:
 
@@ -1418,13 +1585,17 @@ You can check out the `prompt.md` file [here](https://github.com/posit-dev/query
 print(qc.system_prompt)
 ```
 
-## R
+</div>
+<div id="tabset-19-2">
 
 You can check out the `prompt.md` file [here](https://github.com/posit-dev/querychat/blob/main/pkg-r/inst/prompts/prompt.md), or you can simply print it out:
 
 ``` r
 print(qc$system_prompt())
 ```
+
+</div>
+</div>
 
 So, what's in this prompt? Let's highlight a few bits:
 
