@@ -56,3 +56,4 @@ layout: single
 {{< button url="https://posit.co" text="Primary" >}}
 {{< button url="https://posit.co" text="Secondary" class="bg-gray-500 hover:bg-gray-600" >}}
 {{< button url="https://posit.co" icon="simple-icons--github" text="GitHub" class="bg-gray-800 hover:bg-gray-900" >}}
+{{< button url="https://posit.co" icon="simple-icons--linkedin" text="GitHub" class="bg-gray-800 hover:bg-gray-900" >}}
