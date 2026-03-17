@@ -19,6 +19,16 @@ showReadingTime = false
   event = 'events'
   resource = 'resources'
 
+[outputs]
+  home = ['html']
+  section = ['html']
+  taxonomy = ['html']
+  term = ['html']
+
+[services]
+  [services.rss]
+    limit = 20
+
 [markup]
 
 [markup.highlight]

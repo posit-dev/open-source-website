@@ -1,0 +1,54 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>{{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>Recent content {{ if eq .Title .Site.Title }}{{ else }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>{{ .Site.LanguageCode }}</language>{{ with .Site.Copyright }}
+    <copyright>{{ . }}</copyright>{{ end }}{{ if not .Date.IsZero }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    {{ with .OutputFormats.Get "RSS" }}{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}{{ end }}
+    {{- $pctx := . -}}
+    {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+    {{- $pages := slice -}}
+    {{- if or $.IsHome $.IsSection -}}
+      {{- $pages = $pctx.RegularPages -}}
+    {{- else -}}
+      {{- $pages = $pctx.Pages -}}
+    {{- end -}}
+    {{- $filtered := slice -}}
+    {{- range $pages -}}
+      {{- if and (eq .Section "blog") (ge (len .Plain) 300) -}}
+        {{- $filtered = $filtered | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $pages = $filtered -}}
+    {{- $limit := .Site.Config.Services.RSS.Limit -}}
+    {{- if ge $limit 1 -}}
+      {{- $pages = $pages | first $limit -}}
+    {{- end -}}
+    {{- range $pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      {{- range .GetTerms "people" }}
+      <dc:creator>{{ .LinkTitle }}</dc:creator>
+      {{- end }}
+      {{- $content := replaceRE `<a class="heading-anchor"[^>]*>#</a>` "" .Content -}}
+      {{- $siteBase := strings.TrimSuffix "/" $.Site.BaseURL -}}
+      {{- $content = replaceRE `(src|href)="(/[^"]*)"` (printf `$1="%s$2"` $siteBase) $content -}}
+      {{- $content = replaceRE `(src|href)="(\.\./[^"]*)"` (printf `$1="%s$2"` .Permalink) $content -}}
+      {{- $content = replaceRE `src="([^":/][^"]*)"` (printf `src="%s$1"` .Permalink) $content -}}
+      {{- $content = replace $content (printf `src="%shttps://` .Permalink) `src="https://` -}}
+      {{- $content = replace $content (printf `src="%shttp://` .Permalink) `src="http://` -}}
+      <description>{{ printf `<![CDATA[%s]]>` $content | safeHTML }}</description>
+      {{- with .Resources.GetMatch (.Params.image) }}
+      <enclosure url="{{ .Permalink }}" length="{{ .Content | len }}" type="{{ .MediaType }}" />
+      {{- end }}
+    </item>
+    {{- end }}
+  </channel>
+</rss>
