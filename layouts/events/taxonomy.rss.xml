@@ -1,0 +1,64 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Events on {{ .Site.Title }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>Upcoming and recent events on {{ .Site.Title }}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>{{ .Site.LanguageCode }}</language>
+    {{ with .OutputFormats.Get "RSS" }}{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}{{ end }}
+    {{- $now := now -}}
+    {{- $upcoming := slice -}}
+    {{- $past := slice -}}
+    {{- range .Pages -}}
+      {{- $startDate := .Params.start_date -}}
+      {{- if $startDate -}}
+        {{- $start := time $startDate -}}
+        {{- if ge $start.Unix $now.Unix -}}
+          {{- $upcoming = $upcoming | append . -}}
+        {{- else -}}
+          {{- $past = $past | append . -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $past = $past | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $upcoming = sort $upcoming ".Params.start_date" "asc" -}}
+    {{- $past = sort $past ".Params.start_date" "desc" -}}
+    {{- $limit := .Site.Config.Services.RSS.Limit -}}
+    {{- if ge $limit 1 -}}
+      {{- $past = $past | first (sub $limit (len $upcoming)) -}}
+    {{- end -}}
+    {{- $events := $upcoming | append $past -}}
+    {{- range $events }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      {{- with .Params.start_date }}
+      <pubDate>{{ (time .).Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{- end }}
+      <guid>{{ .Permalink }}</guid>
+      {{- range .GetTerms "people" }}
+      <dc:creator>{{ .LinkTitle }}</dc:creator>
+      {{- end }}
+      {{- with .Params.location }}
+      <category>{{ . }}</category>
+      {{- end }}
+      {{- with .Params.event_type }}
+      <category>{{ . }}</category>
+      {{- end }}
+      {{- $content := replaceRE `<a class="heading-anchor"[^>]*>#</a>` "" .Content -}}
+      {{- $siteBase := strings.TrimSuffix "/" $.Site.BaseURL -}}
+      {{- $content = replaceRE `(src|href)="(/[^"]*)"` (printf `$1="%s$2"` $siteBase) $content -}}
+      {{- $content = replaceRE `(src|href)="(\.\./[^"]*)"` (printf `$1="%s$2"` .Permalink) $content -}}
+      {{- $content = replaceRE `src="([^":/][^"]*)"` (printf `src="%s$1"` .Permalink) $content -}}
+      {{- $content = replace $content (printf `src="%shttps://` .Permalink) `src="https://` -}}
+      {{- $content = replace $content (printf `src="%shttp://` .Permalink) `src="http://` -}}
+      <description>{{ printf `<![CDATA[%s]]>` $content | safeHTML }}</description>
+      {{- with .Resources.GetMatch (.Params.image) }}
+      <enclosure url="{{ .Permalink }}" length="{{ .Content | len }}" type="{{ .MediaType }}" />
+      {{- end }}
+    </item>
+    {{- end }}
+  </channel>
+</rss>
