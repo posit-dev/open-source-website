@@ -31,6 +31,11 @@ showReadingTime = false
 
 [markup]
 
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
+  ordered = false
+
 [markup.highlight]
   lineNos = true
   noClasses = false
