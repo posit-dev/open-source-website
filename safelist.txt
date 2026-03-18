@@ -24,6 +24,16 @@ hover:border-gray-100
 hover:border-gray-200
 hover:border-gray-300
 hover:border-gray-50
+md:order-1
+md:order-2
+md:order-3
+md:order-4
+md:grid-cols-[1fr_2fr]
+md:grid-cols-[1fr_3fr]
+md:grid-cols-[2fr_1fr]
+md:grid-cols-[2fr_3fr]
+md:grid-cols-[3fr_1fr]
+md:grid-cols-[3fr_2fr]
 icon-[boxicons--calendar]
 icon-[boxicons--calendar-event-filled]
 icon-[boxicons--categories]
@@ -35,6 +45,7 @@ icon-[boxicons--file-filled]
 icon-[boxicons--git-repo-forked]
 icon-[boxicons--globe]
 icon-[boxicons--arrow-right]
+icon-[boxicons--arrow-left]
 icon-[boxicons--link-alt]
 icon-[boxicons--hexagon-filled]
 icon-[boxicons--map]
