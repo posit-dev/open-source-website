@@ -68,16 +68,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-0-99-preview-vim-mode-improvements/",
     "path": "content/blog/rstudio/2015-02-23-rstudio-0-99-preview-vim-mode-improvements/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "OSS IDE Vim mode improvements, not Pro-specific"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio v0.99 Preview: Data Viewer Improvements",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-99-preview-data-viewer-improvements/",
     "path": "content/blog/rstudio/2015-02-24-rstudio-v0-99-preview-data-viewer-improvements/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "OSS IDE data viewer improvements, not Pro-specific"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Hadley Wickham Master R Developer Workshop in Chicago \u2013 Space Limited",
@@ -996,8 +996,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/about-the-rstudio-project/",
     "path": "content/blog/rstudio/2011-02-27-about-the-rstudio-project/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Historical context about open-source RStudio IDE mission"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Welcome to our Weblog",
@@ -1012,32 +1012,32 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-new-open-source-ide-for-r/",
     "path": "content/blog/rstudio/2011-02-28-rstudio-new-open-source-ide-for-r/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Launch announcement of open-source RStudio IDE"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio Beta 2 (v0.93)",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-beta2/",
     "path": "content/blog/rstudio/2011-04-11-rstudio-beta2/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Release announcement for open-source IDE"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio Beta 3 (v0.94)",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-beta-3-v0-94/",
     "path": "content/blog/rstudio/2011-06-14-rstudio-beta-3-v0-94/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Release announcement for open-source IDE"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio Update",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-update/",
     "path": "content/blog/rstudio/2011-10-27-rstudio-update/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Updates on open-source IDE compatibility"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "MathJax Syntax Change",
@@ -1076,8 +1076,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-and-rcpp/",
     "path": "content/blog/rstudio/2012-11-29-rstudio-and-rcpp/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Technical content about OSS Rcpp integration"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "An update on Shiny",
@@ -1100,16 +1100,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-and-os-x-10-9-mavericks/",
     "path": "content/blog/rstudio/2013-10-22-rstudio-and-os-x-10-9-mavericks/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Technical compatibility info for OSS IDE users"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio OS X Mavericks Issues Resolved",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-os-x-mavericks-issues-resolved/",
     "path": "content/blog/rstudio/2013-11-12-rstudio-os-x-mavericks-issues-resolved/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Technical issue resolution for OSS IDE users"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Upcoming courses: Dec 2013",
@@ -1356,8 +1356,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/spark-1-4-for-rstudio/",
     "path": "content/blog/rstudio/2015-07-14-spark-1-4-for-rstudio/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Technical tutorial on Spark setup"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Article Spotlight: Persistent data storage in Shiny apps",
@@ -1380,8 +1380,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/secure-https-connections-for-r/",
     "path": "content/blog/rstudio/2015-08-17-secure-https-connections-for-r/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Technical guidance on secure package downloads"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio adds a new Starter Plan, More Active Hours, and a Performance Boost to shinyapps.io",
@@ -1492,8 +1492,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/r-notebooks/",
     "path": "content/blog/rstudio/2016-10-05-r-notebooks/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Technical educational content about OSS R Notebooks"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "shinythemes 1.1.1",
@@ -1604,8 +1604,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/shinytest-automated-testing-for-shiny-apps/",
     "path": "content/blog/rstudio/2018-10-17-shinytest-automated-testing-for-shiny-apps/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "OSS package announcement with technical tutorial"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Building tidy tools workshop",
@@ -2276,8 +2276,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/three-ways-to-program-in-python-with-rstudio/",
     "path": "content/blog/rstudio/2021-12-06-three-ways-to-program-in-python-with-rstudio/",
     "description": "RStudio has many tools for both R and Python programmers....",
-    "decision": "KEEP",
-    "reason": "Tutorial about reticulate and OSS RStudio IDE Python support"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "2021 at RStudio: A Year in Review",
@@ -2300,24 +2300,24 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-95-preview/",
     "path": "content/blog/rstudio/2012-01-10-rstudio-v0-95-preview/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio v0.95 Released",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-95-released/",
     "path": "content/blog/rstudio/2012-01-25-rstudio-v0-95-released/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "New Version of RStudio (v0.96)",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v096/",
     "path": "content/blog/rstudio/2012-05-14-rstudio-v096/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "NYC Meetup: What's Next for R Markdown",
@@ -2332,8 +2332,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-96-225-update/",
     "path": "content/blog/rstudio/2012-05-24-rstudio-v0-96-225-update/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Announcing RPubs: A New Web Publishing Service for R",
@@ -2388,8 +2388,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/new-version-of-rstudio-v0-97/",
     "path": "content/blog/rstudio/2012-11-01-new-version-of-rstudio-v0-97/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "ggplot2 0.9.3 and plyr 1.8 have been released!",
@@ -2444,8 +2444,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-98-preview/",
     "path": "content/blog/rstudio/2013-09-24-rstudio-v0-98-preview/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Announcing Packrat",
@@ -2476,8 +2476,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/new-version-of-rstudio-v0-98/",
     "path": "content/blog/rstudio/2013-12-03-new-version-of-rstudio-v0-98/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Shiny Server 0.4",
@@ -2588,8 +2588,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/new-version-of-rstudio-r-markdown-v2-and-more/",
     "path": "content/blog/rstudio/2014-06-18-new-version-of-rstudio-r-markdown-v2-and-more/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "R Markdown v2",
@@ -2780,8 +2780,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-99-preview-code-completion/",
     "path": "content/blog/rstudio/2015-02-23-rstudio-v0-99-preview-code-completion/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "haven 0.1.0",
@@ -2820,16 +2820,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-99-preview-code-snippets/",
     "path": "content/blog/rstudio/2015-04-13-rstudio-v0-99-preview-code-snippets/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio v0.99 Preview: Tools for Rcpp",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-99-preview-tools-for-rcpp/",
     "path": "content/blog/rstudio/2015-04-14-rstudio-v0-99-preview-tools-for-rcpp/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Get data out of excel and into R with readxl",
@@ -2852,16 +2852,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-99-preview-code-diagnostics/",
     "path": "content/blog/rstudio/2015-04-28-rstudio-v0-99-preview-code-diagnostics/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio v0.99 Preview: Graphviz and DiagrammeR",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-99-preview-graphviz-and-diagrammer/",
     "path": "content/blog/rstudio/2015-05-01-rstudio-v0-99-preview-graphviz-and-diagrammer/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "stringr 1.0.0",
@@ -2876,8 +2876,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v0-99-preview-more-editor-enhancements/",
     "path": "content/blog/rstudio/2015-05-06-rstudio-v0-99-preview-more-editor-enhancements/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "devtools 1.8.0",
@@ -2892,8 +2892,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/new-version-of-rstudio-v0-99/",
     "path": "content/blog/rstudio/2015-05-26-new-version-of-rstudio-v0-99/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "testthat 0.10.0",
@@ -3076,8 +3076,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/new-release-of-rstudio-v0-99-878/",
     "path": "content/blog/rstudio/2016-02-09-new-release-of-rstudio-v0-99-878/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "ggplot2 2.1.0",
@@ -3148,8 +3148,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/profiling-with-rstudio-and-profvis/",
     "path": "content/blog/rstudio/2016-05-23-profiling-with-rstudio-and-profvis/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "tidyr 0.5.0",
@@ -3292,8 +3292,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/announcing-rstudio-v1-0/",
     "path": "content/blog/rstudio/2016-11-01-announcing-rstudio-v1-0/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "ggplot2 2.2.0",
@@ -3452,8 +3452,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v1-1-preview-terminal/",
     "path": "content/blog/rstudio/2017-08-09-rstudio-v1-1-preview-terminal/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Shiny 1.0.4",
@@ -3484,16 +3484,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-preview-connections/",
     "path": "content/blog/rstudio/2017-08-16-rstudio-preview-connections/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio v1.1 Preview - Object Explorer",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v1-1-preview-object-explorer/",
     "path": "content/blog/rstudio/2017-08-22-rstudio-v1-1-preview-object-explorer/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Shiny Dev Center gets a shiny new update",
@@ -3508,8 +3508,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-dark-theme/",
     "path": "content/blog/rstudio/2017-08-30-i-only-work-in-black/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Keras for R",
@@ -3532,8 +3532,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio//",
     "path": "content/blog/rstudio/2017-09-13-rstudio-v1-1-little-things/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "community.rstudio.com",
@@ -3684,56 +3684,56 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-2-preview-sql/",
     "path": "content/blog/rstudio/2018-10-02-rstudio-1-2-preview/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "r2d3 - R Interface to D3 Visualizations",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/r2d3-r-interface-to-d3-visualizations/",
     "path": "content/blog/rstudio/2018-10-05-r2d3-r-interface-to-d3-visualizations/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio 1.2 Preview: Reticulated Python",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-2-preview-reticulated-python/",
     "path": "content/blog/rstudio/2018-10-09-rstudio-1-2-preview-reticulated-python/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio 1.2 Preview: C/C++ and Rcpp",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-2-preview-cpp/",
     "path": "content/blog/rstudio/2018-10-11-rstudio-1-2-preview-cpp/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio 1.2 Preview: C/C++ and Rcpp",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-2-preview-cpp/",
     "path": "content/blog/rstudio/2018-10-11-rstudio-1-2-preview-cpp.Rmd/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio 1.2 Preview: C/C++ and Rcpp",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-2-preview-cpp/",
     "path": "content/blog/rstudio/2018-10-11-rstudio-1-2-preview-cpp.html/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio 1.2 Preview: Stan",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-2-preview-stan/",
     "path": "content/blog/rstudio/2018-10-16-rstudio-1-2-preview-stan/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Summer Intern Projects",
@@ -3748,16 +3748,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-2-preview-plumber-integration/",
     "path": "content/blog/rstudio/2018-10-23-rstudio-1-2-preview-plumber-integration/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "Open source package release/update"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio IDE Custom Theme Support",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-ide-custom-theme-support/",
     "path": "content/blog/rstudio/2018-10-29-rstudio-ide-custom-theme-support/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Shiny 1.2.0: Plot caching",
@@ -3772,8 +3772,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-2-preview-the-little-things/",
     "path": "content/blog/rstudio/2018-11-19-rstudio-1-2-the-little-things/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Announcing the 1st Shiny Contest",
@@ -3804,8 +3804,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-2-jobs/",
     "path": "content/blog/rstudio/2019-03-14-rstudio-1-2-jobs/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Summer Interns 2019",
@@ -3844,8 +3844,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-2-release/",
     "path": "content/blog/rstudio/2019-04-30-rstudio-1.2/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "pins: Pin, Discover and Share Resources",
@@ -3900,8 +3900,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-3-preview-real-time-spellchecking/",
     "path": "content/blog/rstudio/2020-02-11-rstudio-1-3-preview-real-time-spellchecking/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Shiny Contest 2020 is here!",
@@ -3916,32 +3916,32 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-3-preview-configuration/",
     "path": "content/blog/rstudio/2020-02-18-rstudio-1-3-preview-configuration/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio 1.3 Preview: Integrated Tutorials",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-3-integrated-tutorials/",
     "path": "content/blog/rstudio/2020-02-25-rstudio-1-3-preview-integrated-tutorials/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio 1.3 Preview: Accessibility",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-3-preview-accessibility/",
     "path": "content/blog/rstudio/2020-03-04-rstudio-1-3-preview-accessibility/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio 1.3 Preview: The Little Things",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-3-the-little-things/",
     "path": "content/blog/rstudio/2020-03-17-rstudio-1-3-preview-the-little-things/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Shiny Contest 2020 deadline extended",
@@ -3964,8 +3964,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-3-release/",
     "path": "content/blog/rstudio/2020-05-27-rstudio-1-3-release/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "sparklyr 1.3: Higher-order Functions, Avro and Custom Serializers",
@@ -4012,16 +4012,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v1-4-preview-visual-markdown-editing/",
     "path": "content/blog/rstudio/2020-09-30-rstudio-v1-4-preview-visual-markdown-editing/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio v1.4 Preview: Python Support",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v1-4-preview-python-support/",
     "path": "content/blog/rstudio/2020-10-07-rstudio-v1-4-preview-python-support/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Using R to Drive Agility in Clinical Reporting: Questions and Answers",
@@ -4036,16 +4036,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v1-4-preview-command-palette/",
     "path": "content/blog/rstudio/2020-10-14-rstudio-v1-4-preview-command-palette/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio 1.4 Preview: Multiple Source Columns",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-4-preview-multiple-source-columns/",
     "path": "content/blog/rstudio/2020-10-21-rstudio-1-4-preview-multiple-source-columns/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "2020 Table Contest Deadline Extended",
@@ -4060,8 +4060,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-4-preview-rainbow-parentheses/",
     "path": "content/blog/rstudio/2020-11-04-rstudio-1-4-preview-rainbow-parentheses/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "The Appsilon shiny.semantic PoContest",
@@ -4076,16 +4076,16 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-4-preview-citations/",
     "path": "content/blog/rstudio/2020-11-09-rstudio-1-4-preview-citations/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio v1.4 Preview: The Little Things",
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v1-4-preview-little-things/",
     "path": "content/blog/rstudio/2020-12-02-rstudio-1-4-preview-little-things/",
     "description": null,
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Latest News from the R Markdown Family",
@@ -4124,8 +4124,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/announcing-rstudio-1-4/",
     "path": "content/blog/rstudio/2021-01-19-announcing-rstudio-1-4/",
     "description": "RStudio 1.4 has now officially been released. We think th...",
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Shiny 1.6",
@@ -4188,8 +4188,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-1-4-a-quick-tour/",
     "path": "content/blog/rstudio/2021-04-06-rstudio-1-4-a-quick-tour/",
     "description": "In case you missed the details of our recent release or w...",
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Upcoming Webinar - Incorporating R into your Clinical Legacy Workflows",
@@ -4204,8 +4204,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/rstudio-v1-4-update-whats-new/",
     "path": "content/blog/rstudio/2021-06-09-rstudio-v1-4-update-whats-new/",
     "description": "The RStudio 1.4 \"Juliet Rose\" update includes many improv...",
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "Top 3 Coding Best Practices from the Shiny Contest",
@@ -4260,8 +4260,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/announcing-the-2021-rstudio-communications-survey/",
     "path": "content/blog/rstudio/2021-10-27-announcing-the-2021-rstudio-communications-survey/",
     "description": "We are announcing the RStudio 2021 Communications Survey!...",
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio Community Monthly Events - November 2021",
@@ -4284,8 +4284,8 @@
     "url": "https://posit-open-source.netlify.app/blog/rstudio/r-markdown-tips-tricks-1-rstudio-ide/",
     "path": "content/blog/rstudio/2021-11-22-r-markdown-lesser-known-tips-tricks-1-working-in-the-rstudio-ide/",
     "description": "In this series, we walk through lesser-known tips and tri...",
-    "decision": "KEEP",
-    "reason": "RStudio IDE open source release"
+    "decision": "EXCLUDE",
+    "reason": "RStudio IDE"
   },
   {
     "title": "RStudio Community Monthly Events - December 2021",
