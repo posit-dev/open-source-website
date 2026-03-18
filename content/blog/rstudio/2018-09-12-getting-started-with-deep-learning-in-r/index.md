@@ -69,7 +69,7 @@ If you're not pursuing a specific goal, but in general curious about what can be
 
 <figure>
 <a href="https://blogs.rstudio.com/tensorflow/">
-<img src="/blog-images/2018-09-12-tensorflow-blog.png" style="border: 1px solid rgba(0, 0, 0, 0.2);"/>
+<img src="2018-09-12-tensorflow-blog.png" style="border: 1px solid rgba(0, 0, 0, 0.2);"/>
 </a>
 </figure>
 
