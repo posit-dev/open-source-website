@@ -61,7 +61,7 @@ To quantify the performance difference between the cached and uncached versions,
 
 I tested the `renderPlot` version of the app with 5 concurrent users, and the `renderCachedPlot` version with 25, 50, and 100 concurrent users. The difference in performance is as dramatic as we'd expect:
 
-<img src="/blog-images/2018-11-05-shiny-1-2-0.png" width="500" alt="A chart showing that renderCachedPlot with 100 users is faster than renderPlot with 5 users"/>
+<img src="2018-11-05-shiny-1-2-0.png" width="500" alt="A chart showing that renderCachedPlot with 100 users is faster than renderPlot with 5 users"/>
 
 With only five concurrent users, the latency is already pretty bad with the `renderPlot` version. (Note that this isn't intended to represent typical performance with Shiny apps in general! We chose a particularly torturous ggplot on purpose.)
 
