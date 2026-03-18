@@ -37,7 +37,7 @@ Recent releases, project deep dives, and updates from across our open-source eco
 
 Join us at conferences, meetups, and workshops around the world where we share our latest work and connect with the community.
 
-{{< query-items path="/events/.*" sort-by="date" limit="3" cols="3" format="card" >}}
+{{< query-items path="^/events/.*" filter=`{">": [{"var": "start_date"}, "$today"]}` sort-by="start_date" sort-direction="ascending" limit="3" cols="3" format="card" hide-badge=true >}}
 
 [[See all events](/events/) ->]
 

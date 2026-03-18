@@ -13,7 +13,7 @@ At Posit, we’re committed to advancing Python as a powerful language for data 
 
 Our most popular Python tools right now, ranked by community adoption and GitHub stars.
 
-{{< query-items path="/software/.*" filter=`{"and": [{"contains_any": [{"var": "languages"}, ["Python"]]}, {"!=": [{"var": "title"}, "positron"]}]}` sort-by="stars" limit="5" cols="5" format="card" >}}
+{{< query-items path="/software/.*" filter=`{"and": [{"contains_any": [{"var": "languages"}, ["Python"]]}, {"!=": [{"var": "title"}, "Positron"]}]}` sort-by="external.stars" limit="5" cols="5" format="card" hide-badge="true" >}}
 
 <br>
 <br>

@@ -110,6 +110,6 @@ Stay up to date with the latest R developments, package releases, and best pract
 
 Learn about the latest developments in the R ecosystem through our workshops and conferences. We have hex stickers\!
 
-{{< query-items path="/events/.*" filter=`{"contains_any": [{"var": "languages"}, ["R"]]}` sort-by="date" limit="3" cols="3" format="card" >}}
+{{< query-items path="^/events/.*" filter=`{"and": [{"contains_any": [{"var": "languages"}, ["R"]]}, {">": [{"var": "start_date"}, "$today"]}]}` sort-by="start_date" sort-direction="ascending" limit="3" cols="3" format="card" hide-badge=true >}}
 
 \[[View all events](/events) \-\>\]
