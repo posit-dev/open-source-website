@@ -35,7 +35,17 @@ We recommend starting with the tidyverse, a collection of packages designed for 
 {{< /columns >}}
 
 
-{{< columns split="2,3" >}}
+{{< columns split="2,3" reverse=true >}}
+
+### Deepen your expertise
+
+Already comfortable with dplyr and ggplot2? Take your work to the next level.
+
+{{< button url="https://tidymodels.org" text="Visit tidymodels.org" >}}
+{{< button url="https://shiny.posit.co/" text="Visit shiny.org" >}}
+{{< button url="https://quarto.org" text="Visit quarto.org" >}}
+
+---
 
 {{< insert-items cols="2" format="tile" hide-badge=true >}}
 - software/shiny-r
@@ -45,16 +55,6 @@ We recommend starting with the tidyverse, a collection of packages designed for 
 - software/tidymodels
 - software/plumber
 {{< /insert-items>}}
-
----
-
-### Deepen your expertise
-
-Already comfortable with dplyr and ggplot2? Take your work to the next level.
-
-{{< button url="https://tidymodels.org" text="Visit tidymodels.org" >}}
-{{< button url="https://shiny.posit.co/" text="Visit shiny.org" >}}
-{{< button url="https://quarto.org" text="Visit quarto.org" >}}
 
 {{< /columns >}}
 
@@ -82,7 +82,13 @@ Ready to create your own R package? We maintain foundational tools used by thous
 
 
 
-{{< columns split="2,3" >}}
+{{< columns split="2,3" reverse=true >}}
+
+### Enhance your workflows
+
+Streamline your R development experience with modern tools for package management, version control, and code editing.
+
+---
 
 {{< insert-items cols="2" format="tile" hide-badge=true >}}
 - software/pak
@@ -90,13 +96,6 @@ Ready to create your own R package? We maintain foundational tools used by thous
 - software/air
 - software/renv
 {{< /insert-items>}}
-
----
-
-### Enhance your workflows
-
-Streamline your R development experience with modern tools for package management, version control, and code editing.
-
 
 {{< /columns >}}
 
