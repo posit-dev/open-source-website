@@ -664,6 +664,11 @@ mark[data-pagefind-highlight],
   border-left: 2px solid var(--color-gray-100) !important;
 }
 
+/* Allow consecutive button shortcodes to sit inline inside prose paragraphs */
+.prose p:has(> a.btn-shortcode:only-child) {
+  display: inline;
+}
+
 /* Button Components */
 @layer components {
   /* Primary button */

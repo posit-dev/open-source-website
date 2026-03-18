@@ -3,7 +3,7 @@ title: "Test: Button Shortcode"
 layout: single
 ---
 
-## Basic button
+## Basic button (external URL auto-gets external icon and target="_blank")
 
 ```
 {{</* button url="https://posit.co" text="Visit Posit" */>}}
@@ -11,7 +11,7 @@ layout: single
 
 {{< button url="https://posit.co" text="Visit Posit" >}}
 
-## Button with icon and text
+## Button with icon-left and text
 
 ```
 {{</* button url="https://github.com/posit-dev" icon="simple-icons--github" text="GitHub" */>}}
@@ -27,13 +27,29 @@ layout: single
 
 {{< button url="https://github.com/posit-dev" icon="simple-icons--github" alt="Posit on GitHub" >}}
 
-## Button with target="_blank"
+## Button with icon-right
 
 ```
-{{</* button url="https://posit.co" text="Open in new tab" target="_blank" icon="boxicons--link-external" */>}}
+{{</* button url="/events/" text="See all events" icon-right="boxicons--arrow-right" */>}}
 ```
 
-{{< button url="https://posit.co" text="Open in new tab" target="_blank" icon="boxicons--link-external" >}}
+{{< button url="/events/" text="See all events" icon-right="boxicons--arrow-right" >}}
+
+## Button with both icon-left and icon-right
+
+```
+{{</* button url="https://github.com/posit-dev" icon-left="simple-icons--github" icon-right="boxicons--arrow-right" text="GitHub" */>}}
+```
+
+{{< button url="https://github.com/posit-dev" icon-left="simple-icons--github" icon-right="boxicons--arrow-right" text="GitHub" >}}
+
+## External button with suppressed external icon
+
+```
+{{</* button url="https://posit.co" text="No external icon" icon-right="false" */>}}
+```
+
+{{< button url="https://posit.co" text="No external icon" icon-right="false" >}}
 
 ## Button with custom class
 
@@ -56,4 +72,4 @@ layout: single
 {{< button url="https://posit.co" text="Primary" >}}
 {{< button url="https://posit.co" text="Secondary" class="bg-gray-500 hover:bg-gray-600" >}}
 {{< button url="https://posit.co" icon="simple-icons--github" text="GitHub" class="bg-gray-800 hover:bg-gray-900" >}}
-{{< button url="https://posit.co" icon="simple-icons--linkedin" text="GitHub" class="bg-gray-800 hover:bg-gray-900" >}}
+{{< button url="https://posit.co" icon="simple-icons--linkedin" text="LinkedIn" class="bg-gray-800 hover:bg-gray-900" >}}

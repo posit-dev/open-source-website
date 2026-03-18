@@ -24,7 +24,7 @@
 {{ $pages := partial "query-items" (dict "path" $path "sort-by" $sortBy "sort-direction" $sortDirection "offset" $offset "limit" $limit "filter" $filter) }}
 
 {{ if eq $format "row" }}
-<div class="@container">
+<div class="@container mb-6">
   <div class="grid grid-cols-[3.5rem] @tall:grid-cols-[3.5rem_3fr_2fr] @grande:grid-cols-[3.5rem_3fr_2fr_auto] @venti:grid-cols-[3.5rem_3fr_2fr_auto_auto] gap-y-2">
     {{ range $pages }}
       {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "format" "row" "height" $height) }}
@@ -32,13 +32,13 @@
   </div>
 </div>
 {{ else if eq $format "tile" }}
-<div class="@container flex flex-col gap-2">
+<div class="@container flex flex-col gap-2 mb-6">
   {{ range $pages }}
     {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "format" "tile" "height" $height) }}
   {{ end }}
 </div>
 {{ else }}
-<div class="grid {{ $gridClass }} gap-6">
+<div class="grid {{ $gridClass }} gap-6 mb-6">
   {{ range $pages }}
     <div>
       {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "format" $format "height" $height) }}
