@@ -1,9 +1,32 @@
 {{- /*
   Returns the image resource for a page, or false if none.
-  Usage: {{ $image := partial "get-image.html" $page }}
+
+  Usage:
+    {{ $image := partial "get-image.html" $page }}
+    {{ $image := partial "get-image.html" (dict "page" $page "fallback" true) }}
+
+  With fallback: true, looks for default-image.* in parent section.
 */ -}}
-{{- $image := false -}}
-{{- with .Params.image -}}
-  {{- $image = $.Resources.Get . -}}
+
+{{- $page := . -}}
+{{- $fallback := false -}}
+{{- if reflect.IsMap . -}}
+  {{- $page = .page -}}
+  {{- $fallback = .fallback | default false -}}
 {{- end -}}
+
+{{- $image := false -}}
+
+{{- /* 1. Check page's .Params.image */ -}}
+{{- with $page.Params.image -}}
+  {{- $image = $page.Resources.Get . -}}
+{{- end -}}
+
+{{- /* 2. Fallback: look for default-image.* in parent section */ -}}
+{{- if and (not $image) $fallback -}}
+  {{- with $page.Parent -}}
+    {{- $image = .Resources.GetMatch "default-image.*" -}}
+  {{- end -}}
+{{- end -}}
+
 {{- return $image -}}

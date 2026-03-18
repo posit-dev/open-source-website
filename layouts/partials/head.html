@@ -13,13 +13,18 @@
 
 {{- /* Custom Open Graph and Twitter images for blog posts */ -}}
 {{- if eq .Section "blog" -}}
-  {{- with partial "get-image.html" . -}}
-    <meta property="og:image" content="{{ .Permalink }}" />
-    <meta name="twitter:image" content="{{ .Permalink }}" />
-    {{- with $.Params.alttext -}}
-      <meta property="og:image:alt" content="{{ . }}" />
-      <meta name="twitter:image:alt" content="{{ . }}" />
-    {{- end -}}
+  {{- $blogImg := partial "get-image.html" . -}}
+  {{- $imgURL := "" -}}
+  {{- if $blogImg -}}
+    {{- $imgURL = $blogImg.Permalink -}}
+  {{- else -}}
+    {{- $imgURL = "/images/blog-placeholder.svg" | absURL -}}
+  {{- end -}}
+  <meta property="og:image" content="{{ $imgURL }}" />
+  <meta name="twitter:image" content="{{ $imgURL }}" />
+  {{- with .Params.alttext -}}
+    <meta property="og:image:alt" content="{{ . }}" />
+    <meta name="twitter:image:alt" content="{{ . }}" />
   {{- end -}}
 {{- end -}}
 

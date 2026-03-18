@@ -110,8 +110,10 @@
 
 {{/* ============================================================
      IMAGE (uses responsive_image_container.html)
+     — heroes have no fallback; cards/tiles/rows fall back to parent default
      ============================================================ */}}
-{{ $image := partial "get-image.html" $page }}
+{{ $use_fallback := ne $format "hero" }}
+{{ $image := partial "get-image.html" (dict "page" $page "fallback" $use_fallback) }}
 
 {{/* ============================================================
      STARS (software only)
