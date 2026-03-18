@@ -3,6 +3,34 @@
 @config '../../tailwind.config.js';
 @plugin "@iconify/tailwind4";
 
+/* Self-hosted fonts (variable, Latin subset) */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url('/fonts/open-sans-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url('/fonts/open-sans-latin-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url('/fonts/source-code-pro-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* Smooth scrolling for TOC links */
 html {
   scroll-behavior: smooth;
@@ -207,14 +235,6 @@ html {
     color: var(--color-blue-500);
   }
 
-  .dark .heading-anchor {
-    color: var(--color-gray-600);
-  }
-
-  .dark .heading-anchor:hover {
-    color: var(--color-blue-400);
-  }
-
   /* Reset letter-spacing for monospace/Source Code Pro */
   .font-mono,
   code,
@@ -229,15 +249,6 @@ html {
   .footnote-backref {
     text-decoration: none !important;
   }
-  .darkmode-toggle .icon-tabler.icon-tabler-brightness-down {
-    fill: white;
-    stroke: white;
-  }
-  .darkmode-toggle .icon-tabler.icon-tabler-moon-stars {
-    fill: white;
-    stroke: white;
-  }
-
   @keyframes grow-progress {
     from {
       transform: scaleX(0);
@@ -333,73 +344,6 @@ html {
 /* GenericInserted */ .chroma .gi { color:var(--color-green-800);background-color:var(--color-green-50) }
 /* GenericStrong */ .chroma .gs { font-weight:bold }
 
-/* Generated using: hugo gen chromastyles --style=monokai */
-
-.dark /* Background */ .bg { color:#f8f8f2;background-color:var(--color-gray-900); }
-.dark /* PreWrapper */ .chroma { color:#f8f8f2;background-color:var(--color-gray-900); }
-.dark /* Error */ .chroma .err { color:#960050;background-color:#1e0010 }
-.dark /* LineLink */ .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
-.dark /* LineTableTD */ .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
-.dark /* LineTable */ .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
-.dark /* LineHighlight */ .chroma .hl { background-color:#3c3d38 }
-.dark /* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
-.dark /* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
-.dark /* Line */ .chroma .line { display:flex; }
-.dark /* Keyword */ .chroma .k { color:#66d9ef }
-.dark /* KeywordConstant */ .chroma .kc { color:#66d9ef }
-.dark /* KeywordDeclaration */ .chroma .kd { color:#66d9ef }
-.dark /* KeywordNamespace */ .chroma .kn { color:#f92672 }
-.dark /* KeywordPseudo */ .chroma .kp { color:#66d9ef }
-.dark /* KeywordReserved */ .chroma .kr { color:#66d9ef }
-.dark /* KeywordType */ .chroma .kt { color:#66d9ef }
-.dark /* NameAttribute */ .chroma .na { color:#a6e22e }
-.dark /* NameClass */ .chroma .nc { color:#a6e22e }
-.dark /* NameConstant */ .chroma .no { color:#66d9ef }
-.dark /* NameDecorator */ .chroma .nd { color:#a6e22e }
-.dark /* NameException */ .chroma .ne { color:#a6e22e }
-.dark /* NameOther */ .chroma .nx { color:#a6e22e }
-.dark /* NameTag */ .chroma .nt { color:#f92672 }
-.dark /* NameFunction */ .chroma .nf { color:#a6e22e }
-.dark /* NameFunctionMagic */ .chroma .fm { color:#a6e22e }
-.dark /* Literal */ .chroma .l { color:#ae81ff }
-.dark /* LiteralDate */ .chroma .ld { color:#e6db74 }
-.dark /* LiteralString */ .chroma .s { color:#e6db74 }
-.dark /* LiteralStringAffix */ .chroma .sa { color:#e6db74 }
-.dark /* LiteralStringBacktick */ .chroma .sb { color:#e6db74 }
-.dark /* LiteralStringChar */ .chroma .sc { color:#e6db74 }
-.dark /* LiteralStringDelimiter */ .chroma .dl { color:#e6db74 }
-.dark /* LiteralStringDoc */ .chroma .sd { color:#e6db74 }
-.dark /* LiteralStringDouble */ .chroma .s2 { color:#e6db74 }
-.dark /* LiteralStringEscape */ .chroma .se { color:#ae81ff }
-.dark /* LiteralStringHeredoc */ .chroma .sh { color:#e6db74 }
-.dark /* LiteralStringInterpol */ .chroma .si { color:#e6db74 }
-.dark /* LiteralStringOther */ .chroma .sx { color:#e6db74 }
-.dark /* LiteralStringRegex */ .chroma .sr { color:#e6db74 }
-.dark /* LiteralStringSingle */ .chroma .s1 { color:#e6db74 }
-.dark /* LiteralStringSymbol */ .chroma .ss { color:#e6db74 }
-.dark /* LiteralNumber */ .chroma .m { color:#ae81ff }
-.dark /* LiteralNumberBin */ .chroma .mb { color:#ae81ff }
-.dark /* LiteralNumberFloat */ .chroma .mf { color:#ae81ff }
-.dark /* LiteralNumberHex */ .chroma .mh { color:#ae81ff }
-.dark /* LiteralNumberInteger */ .chroma .mi { color:#ae81ff }
-.dark /* LiteralNumberIntegerLong */ .chroma .il { color:#ae81ff }
-.dark /* LiteralNumberOct */ .chroma .mo { color:#ae81ff }
-.dark /* Operator */ .chroma .o { color:#f92672 }
-.dark /* OperatorWord */ .chroma .ow { color:#f92672 }
-.dark /* Comment */ .chroma .c { color:#75715e }
-.dark /* CommentHashbang */ .chroma .ch { color:#75715e }
-.dark /* CommentMultiline */ .chroma .cm { color:#75715e }
-.dark /* CommentSingle */ .chroma .c1 { color:#75715e }
-.dark /* CommentSpecial */ .chroma .cs { color:#75715e }
-.dark /* CommentPreproc */ .chroma .cp { color:#75715e }
-.dark /* CommentPreprocFile */ .chroma .cpf { color:#75715e }
-.dark /* GenericDeleted */ .chroma .gd { color:#f92672 }
-.dark /* GenericEmph */ .chroma .ge { font-style:italic }
-.dark /* GenericInserted */ .chroma .gi { color:#a6e22e }
-.dark /* GenericStrong */ .chroma .gs { font-weight:bold }
-.dark /* GenericSubheading */ .chroma .gu { color:#75715e }
-
-
 .highlight {
   position: relative;
   border-radius: 0.75rem;
@@ -417,19 +361,6 @@ html {
 
 .highlight .icon-tabler.icon-tabler-check {
   stroke: var(--color-green-700);
-}
-
-/* Copy button icons - dark mode */
-.dark .highlight button .icon-tabler.icon-tabler-copy {
-  stroke: var(--color-gray-200);
-}
-
-.dark .highlight button:hover .icon-tabler.icon-tabler-copy {
-  stroke: var(--color-gray-100);
-}
-
-.dark .highlight .icon-tabler.icon-tabler-check {
-  stroke: var(--color-green-400);
 }
 
 /* fix highlight with line number */
@@ -527,15 +458,6 @@ html {
   z-index: 10 !important;
 }
 
-.dark .prose {
-  --tw-prose-body: var(--color-gray-300) !important;
-  --tw-prose-headings: var(--color-gray-100) !important;
-  --tw-prose-links: var(--color-blue-400) !important;
-  --tw-prose-bold: var(--color-gray-200) !important;
-  --tw-prose-code: var(--color-gray-200) !important;
-  --tw-prose-quotes: var(--color-gray-200) !important;
-}
-
 /* Pagefind search highlight override */
 mark,
 mark[data-pagefind-highlight],
@@ -564,10 +486,6 @@ mark[data-pagefind-highlight],
   margin-top: 0 !important;
   margin-bottom: 0.5rem !important;
   padding-top: 0 !important;
-}
-
-.dark .blog-toc-heading {
-  color: var(--color-gray-100);
 }
 
 .blog-toc-content > ul {
@@ -620,17 +538,9 @@ mark[data-pagefind-highlight],
   transition: color 0.15s ease, border-left-color 0.15s ease;
 }
 
-.dark .blog-toc-content ul li a {
-  color: color-mix(in srgb, #707073, white 4.5%);
-}
-
 .blog-toc-content ul li a:hover {
   color: var(--color-gray-950);
   background-color: transparent;
-}
-
-.dark .blog-toc-content ul li a:hover {
-  color: var(--color-gray-100);
 }
 
 /* Nested TOC items - level 2 */
@@ -650,18 +560,9 @@ mark[data-pagefind-highlight],
   border-left-color: var(--color-gray-950);
 }
 
-.dark .blog-toc-content ul li a.active {
-  color: var(--color-gray-100);
-  border-left-color: var(--color-gray-100);
-}
-
 /* Active nested items (h3s) - explicit override */
 .blog-toc-content ul ul li a.active {
   border-left: 2px solid var(--color-gray-950) !important;
-}
-
-.dark .blog-toc-content ul ul li a.active {
-  border-left: 2px solid var(--color-gray-100) !important;
 }
 
 /* Allow consecutive button shortcodes to sit inline inside prose paragraphs */
@@ -706,14 +607,6 @@ mark[data-pagefind-highlight],
     background-color: var(--color-blue-50);
   }
 
-  .dark .btn-secondary {
-    border-color: var(--color-blue-400);
-    color: var(--color-blue-400);
-  }
-
-  .dark .btn-secondary:hover {
-    background-color: var(--color-blue-900);
-  }
 }
 
 /* Blog-specific styles */
@@ -765,10 +658,6 @@ mark[data-pagefind-highlight],
   border-bottom: 1px solid var(--color-gray-200);
 }
 
-.dark .panel-tabset-tabby {
-  border-bottom-color: var(--color-gray-700);
-}
-
 .panel-tabset-tabby li {
   margin: 0;
   padding: 0;
@@ -790,22 +679,8 @@ mark[data-pagefind-highlight],
   color: var(--color-gray-700);
 }
 
-.dark .panel-tabset-tabby li a {
-  color: var(--color-gray-400);
-}
-
-.dark .panel-tabset-tabby li a:hover {
-  color: var(--color-gray-200);
-}
-
 .panel-tabset-tabby li.active a,
 .panel-tabset-tabby li a[aria-selected="true"] {
   color: var(--color-blue-600);
   border-bottom-color: var(--color-blue-600);
-}
-
-.dark .panel-tabset-tabby li.active a,
-.dark .panel-tabset-tabby li a[aria-selected="true"] {
-  color: var(--color-blue-400);
-  border-bottom-color: var(--color-blue-400);
 }

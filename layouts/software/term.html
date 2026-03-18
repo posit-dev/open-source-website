@@ -24,7 +24,7 @@
   </div>
 
   {{ if .Content }}
-  <div data-pagefind-body class="prose dark:prose-invert max-w-none mt-8 mx-2 md:mx-0">
+  <div data-pagefind-body class="prose max-w-none mt-8 mx-2 md:mx-0">
     {{ .Content }}
   </div>
   {{ end }}
@@ -33,7 +33,7 @@
   {{ $people := .GetTerms "people" }}
   {{ if $people }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    {{ partial "heading.html" (dict "level" 2 "text" "Contributors" "class" "text-2xl font-medium dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" "Contributors" "class" "text-2xl font-medium mb-4") }}
   </div>
 
   <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-1 gap-y-10 mx-2 md:mx-0 mb-6">
@@ -47,7 +47,7 @@
   {{ $events := where .Pages "Section" "events" }}
   {{ if gt (len $events) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    {{ partial "heading.html" (dict "level" 2 "text" (printf "Events featuring %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Events featuring %s" .Title) "class" "text-2xl font-medium text-gray-800 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -61,7 +61,7 @@
   {{ $resources := where .Pages "Section" "resources" }}
   {{ if gt (len $resources) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    {{ partial "heading.html" (dict "level" 2 "text" (printf "Resources featuring %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Resources featuring %s" .Title) "class" "text-2xl font-medium text-gray-800 mb-4") }}
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -75,19 +75,19 @@
   {{ $posts := where .Pages "Section" "blog" }}
   {{ if gt (len $posts) 0 }}
   <div class="mt-8 mb-6 mx-2 md:mx-0">
-    {{ partial "heading.html" (dict "level" 2 "text" (printf "Posts about %s" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "Posts about %s" .Title) "class" "text-2xl font-medium text-gray-800 mb-4") }}
   </div>
 
   <div class="flex flex-col">
     {{ range $posts }}
-    <article class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-blue-950">
+    <article class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white">
       <div>
         <a href="{{ .RelPermalink }}">
           {{ partial "block/image.html" . }}
         </a>
       </div>
       <div class="flex flex-col gap-y-3 p-6">
-        <h3 class="text-3xl font-medium text-gray-800 dark:text-gray-200">
+        <h3 class="text-3xl font-medium text-gray-800">
           <a href="{{ .RelPermalink }}">{{ .Title | .RenderString }}</a>
         </h3>
 

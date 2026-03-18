@@ -6,9 +6,9 @@
   // Create lightbox modal
   const lightbox = document.createElement('div');
   lightbox.id = 'image-lightbox';
-  lightbox.className = 'fixed inset-0 z-50 hidden items-center justify-center bg-blue-100/80 dark:bg-blue-300/25 transition-opacity';
+  lightbox.className = 'fixed inset-0 z-50 hidden items-center justify-center bg-blue-100/80 transition-opacity';
   lightbox.innerHTML = `
-    <button id="lightbox-close" class="absolute top-4 right-4 text-gray-700 dark:text-gray-300 text-4xl font-light hover:text-gray-900 dark:hover:text-gray-100 transition-colors z-10" aria-label="Close lightbox">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-gray-700 text-4xl font-light hover:text-gray-900 transition-colors z-10" aria-label="Close lightbox">
       <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>

@@ -1,72 +1,72 @@
 {{ define "main" }}
 <div class="flex flex-col w-full mt-6" data-pagefind-ignore>
-  <h1 class="text-3xl font-medium text-gray-500 dark:text-gray-200 mb-2">
+  <h1 class="text-3xl font-medium text-gray-500 mb-2">
     {{ .Title }}
   </h1>
-  <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+  <p class="text-sm text-gray-600 mb-6">
     {{ .Content | safeHTML }}
   </p>
 
-  <div class="bg-white dark:bg-blue-950 rounded-lg shadow-sm border border-blue-300 dark:border-blue-800 overflow-hidden">
+  <div class="bg-white rounded-lg shadow-sm border border-blue-300 overflow-hidden">
     <div class="overflow-x-auto">
       <table id="software-table" class="w-full text-sm">
-        <thead class="bg-gray-100 dark:bg-blue-900 border-b border-gray-300 dark:border-blue-700">
+        <thead class="bg-gray-100 border-b border-gray-300">
           <tr>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="logo">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="logo">
               <div class="flex items-center gap-1">
                 Logo
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="title">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="title">
               <div class="flex items-center gap-1">
                 Title
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="stars">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="stars">
               <div class="flex items-center gap-1">
                 Stars
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="license">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="license">
               <div class="flex items-center gap-1">
                 License
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="github">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="github">
               <div class="flex items-center gap-1">
                 GitHub
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="website">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="website">
               <div class="flex items-center gap-1">
                 Website
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="languages">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="languages">
               <div class="flex items-center gap-1">
                 Languages
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="people">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="people">
               <div class="flex items-center gap-1">
                 People
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="latest-release">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="latest-release">
               <div class="flex items-center gap-1">
                 Latest Release
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="first-commit">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="first-commit">
               <div class="flex items-center gap-1">
                 First Commit
                 <span class="sort-icon text-gray-400">↕</span>
@@ -74,10 +74,10 @@
             </th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-gray-200 dark:divide-blue-800">
+        <tbody class="divide-y divide-gray-200">
           {{ $softwareSection := site.GetPage "/software" }}
           {{ range $softwareSection.Pages.ByTitle }}
-          <tr class="hover:bg-gray-50 dark:hover:bg-blue-900/50">
+          <tr class="hover:bg-gray-50">
             <!-- Logo -->
             <td class="px-3 py-2">
               <div class="w-12 h-12 flex items-center justify-center">
@@ -98,7 +98,7 @@
 
             <!-- Title (linked) -->
             <td class="px-3 py-2" data-value="{{ .Title }}">
-              <a href="{{ .RelPermalink }}" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+              <a href="{{ .RelPermalink }}" class="text-blue-600 hover:underline font-medium">
                 {{ .Title }}
               </a>
             </td>
@@ -120,7 +120,7 @@
             <td class="px-3 py-2" data-value="{{ with .Params.external }}{{ .license }}{{ else }}{{ end }}">
               {{ with .Params.external }}
                 {{ if and .license (ne .license "NOASSERTION") }}
-                  <span class="text-xs px-2 py-1 rounded bg-gray-200 dark:bg-gray-700">
+                  <span class="text-xs px-2 py-1 rounded bg-gray-200">
                     {{ .license }}
                   </span>
                 {{ else }}
@@ -134,7 +134,7 @@
             <!-- GitHub -->
             <td class="px-3 py-2" data-value="{{ if .Params.github }}{{ .Params.github }}{{ end }}">
               {{ with .Params.github }}
-                <a href="https://github.com/{{ . }}" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline text-xs">
+                <a href="https://github.com/{{ . }}" target="_blank" rel="noopener" class="text-blue-600 hover:underline text-xs">
                   {{ . }}
                 </a>
               {{ else }}
@@ -145,7 +145,7 @@
             <!-- Website -->
             <td class="px-3 py-2" data-value="{{ if .Params.website }}{{ .Params.website }}{{ end }}">
               {{ with .Params.website }}
-                <a href="{{ . }}" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline text-xs break-all">
+                <a href="{{ . }}" target="_blank" rel="noopener" class="text-blue-600 hover:underline text-xs break-all">
                   {{ . | replaceRE "^https?://(www\\.)?" "" | replaceRE "/$" "" | truncate 30 }}
                 </a>
               {{ else }}
@@ -158,7 +158,7 @@
               {{ with .Params.languages }}
                 <div class="flex flex-wrap gap-1">
                   {{ range . }}
-                    <span class="text-xs px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-800 text-gray-700 dark:text-gray-200">
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-blue-100 text-gray-700">
                       {{ . }}
                     </span>
                   {{ end }}
@@ -180,7 +180,7 @@
             <!-- Latest Release -->
             <td class="px-3 py-2 text-sm" data-value="{{ if .Params.latest_release }}{{ .Params.latest_release }}{{ end }}">
               {{ with .Params.latest_release }}
-                <span class="text-gray-700 dark:text-gray-300">
+                <span class="text-gray-700">
                   {{ dateFormat "2006-01-02" . }}
                 </span>
               {{ else }}
@@ -192,7 +192,7 @@
             <td class="px-3 py-2 text-sm" data-value="{{ with .Params.external }}{{ if .first_commit }}{{ .first_commit }}{{ end }}{{ end }}">
               {{ with .Params.external }}
                 {{ with .first_commit }}
-                  <span class="text-gray-700 dark:text-gray-300">
+                  <span class="text-gray-700">
                     {{ dateFormat "2006-01-02" . }}
                   </span>
                 {{ else }}
@@ -209,7 +209,7 @@
     </div>
   </div>
 
-  <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">
+  <p class="text-xs text-gray-500 mt-4">
     Click column headers to sort. Total: {{ len ($softwareSection.Pages) }} projects
   </p>
 </div>
@@ -290,10 +290,10 @@
       if (h.dataset.sort === column) {
         icon.textContent = direction === 'asc' ? '↑' : '↓';
         icon.classList.remove('text-gray-400');
-        icon.classList.add('text-blue-600', 'dark:text-blue-400');
+        icon.classList.add('text-blue-600');
       } else {
         icon.textContent = '↕';
-        icon.classList.remove('text-blue-600', 'dark:text-blue-400');
+        icon.classList.remove('text-blue-600');
         icon.classList.add('text-gray-400');
       }
     });

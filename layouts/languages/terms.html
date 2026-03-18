@@ -1,9 +1,9 @@
 {{ define "main" }}
 <div class="flex flex-col w-full" data-pagefind-ignore>
-  <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200 mb-2">
+  <h1 class="text-4xl font-medium text-gray-500 mb-2">
     Languages
   </h1>
-  <p class="text-gray-600 dark:text-gray-400 mb-8">
+  <p class="text-gray-600 mb-8">
     {{ len .Data.Terms }} languages across {{ len .Site.AllPages }} pages
   </p>
 
@@ -11,9 +11,9 @@
     {{ range .Data.Terms.ByCount }}
       {{ with $.Site.GetPage (printf "/languages/%s" .Term) }}
         <a href="{{ .RelPermalink }}"
-           class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-blue-50 hover:border-blue-200 dark:hover:bg-gray-800 dark:hover:border-gray-600 transition-colors">
+           class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:border-blue-200 transition-colors">
           {{ .LinkTitle }}
-          <span class="text-gray-400 dark:text-gray-500">{{ .Pages.Len }}</span>
+          <span class="text-gray-400">{{ .Pages.Len }}</span>
         </a>
       {{ end }}
     {{ end }}
