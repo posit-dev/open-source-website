@@ -87,7 +87,13 @@ Quarto sets the `QUARTO_EXECUTE_INFO` environment variable, which allows you to 
 
 Read the JSON file located at `QUARTO_EXECUTE_INFO` and access properties such as `document-path`, `format`, `metadata` and more:
 
-## R
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-1-1">R</a></li>
+<li><a href="#tabset-1-2">Python</a></li>
+<li><a href="#tabset-1-3">Julia</a></li>
+</ul>
+<div id="tabset-1-1">
 
 ``` r
 library(jsonlite)
@@ -95,7 +101,8 @@ execute_info <- read_json(Sys.getenv("QUARTO_EXECUTE_INFO"))
 execute_info$`document-path`
 ```
 
-## Python
+</div>
+<div id="tabset-1-2">
 
 ``` python
 import json
@@ -106,7 +113,8 @@ with open(os.getenv("QUARTO_EXECUTE_INFO")) as f:
 execute_info["document-path"]
 ```
 
-## Julia
+</div>
+<div id="tabset-1-3">
 
 ``` julia
 using JSON
@@ -114,6 +122,9 @@ using JSON
 execute_info = JSON.parsefile(ENV["QUARTO_EXECUTE_INFO"])
 execute_info["document-path"]
 ```
+
+</div>
+</div>
 
 Read more in [Access execution settings from code cells](https://quarto.org/docs/advanced/quarto-execute-info.html).
 

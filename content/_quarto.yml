@@ -7,3 +7,4 @@ format: hugo-md
 
 filters:
   - video-embed
+  - tabset

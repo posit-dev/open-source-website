@@ -750,3 +750,62 @@ mark[data-pagefind-highlight],
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
+
+/* Tabsets */
+.panel-tabset {
+  margin: 1.5rem 0;
+}
+
+.panel-tabset-tabby {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.dark .panel-tabset-tabby {
+  border-bottom-color: var(--color-gray-700);
+}
+
+.panel-tabset-tabby li {
+  margin: 0;
+  padding: 0;
+}
+
+.panel-tabset-tabby li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-500);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.panel-tabset-tabby li a:hover {
+  color: var(--color-gray-700);
+}
+
+.dark .panel-tabset-tabby li a {
+  color: var(--color-gray-400);
+}
+
+.dark .panel-tabset-tabby li a:hover {
+  color: var(--color-gray-200);
+}
+
+.panel-tabset-tabby li.active a,
+.panel-tabset-tabby li a[aria-selected="true"] {
+  color: var(--color-blue-600);
+  border-bottom-color: var(--color-blue-600);
+}
+
+.dark .panel-tabset-tabby li.active a,
+.dark .panel-tabset-tabby li a[aria-selected="true"] {
+  color: var(--color-blue-400);
+  border-bottom-color: var(--color-blue-400);
+}

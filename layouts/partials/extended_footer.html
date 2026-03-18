@@ -27,6 +27,17 @@
 
 {{- /* image-lightbox.js disabled */ -}}
 
+{{- if (findRE "panel-tabset-tabby" .Content 1) }}
+{{- $jsTabby := resources.Get "js/tabby.min.js" -}}
+{{- $jsTabsets := resources.Get "js/tabsets.js" -}}
+{{- if not hugo.IsDevelopment }}
+  {{- $jsTabby = $jsTabby | fingerprint -}}
+  {{- $jsTabsets = $jsTabsets | minify | fingerprint -}}
+{{ end -}}
+<script src="{{ $jsTabby.RelPermalink }}" defer></script>
+<script src="{{ $jsTabsets.RelPermalink }}" defer></script>
+{{ end -}}
+
 {{- partial "search-modal.html" . -}}
 {{- $jsSearch := resources.Get "js/search.js" -}}
 {{- if not hugo.IsDevelopment }}

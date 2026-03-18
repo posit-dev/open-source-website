@@ -17,7 +17,7 @@ port_status: in-progress
 
 Welcome back to "The Shiny Side of LLMs": a blog series for Python and R users who want to build real, useful LLM-powered apps without getting buried in jargon or deep learning theory.
 
-In [Part 1: What LLMs Actually Do (and What They Don't)](/blog/shiny/shiny-side-of-llms-part-1/), we looked at how large language models generate responses, why they sometimes seem so smart (and other times so confidently wrong), and what kinds of tasks they're actually good at. Now it's time to get hands-on!
+In [Part 1: What LLMs Actually Do (and What They Don't)](../../../blog/shiny/shiny-side-of-llms-part-1/), we looked at how large language models generate responses, why they sometimes seem so smart (and other times so confidently wrong), and what kinds of tasks they're actually good at. Now it's time to get hands-on!
 
 In this part, we'll focus on what it means to talk to an LLM. We'll cover crafting prompts to parsing responses, and everything in between. You'll learn:
 
@@ -71,7 +71,12 @@ To keep things simple, we'll go with Anthropic for the examples in this blog ser
 
 ## Where to store your API key
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-1-1">Python</a></li>
+<li><a href="#tabset-1-2">R</a></li>
+</ul>
+<div id="tabset-1-1">
 
 In Python, the recommended approach is to create a `.env` file in your project folder:
 
@@ -87,7 +92,8 @@ from dotenv import load_dotenv
 load_dotenv()
 ```
 
-## R
+</div>
+<div id="tabset-1-2">
 
 In R, environment variables are typically stored in a `.Renviron` file. You can create this file in your project root or in your home directory (`~/.Renviron`). Or, if you want to make it yourself really easy: you can also open/edit the relevant file with `usethis::edit_r_environ()`.
 
@@ -95,13 +101,21 @@ In R, environment variables are typically stored in a `.Renviron` file. You can 
 ANTHROPIC_API_KEY=yourkey
 ```
 
+</div>
+</div>
+
 Just be sure to add `.env` and `.Renviron` to your `.gitignore` file so you don't accidentally publish your keys.
 
 ## Installing `chatlas` or `ellmer`
 
 Working with different LLM providers can be a pain, but luckily there is the perfect solution: [`chatlas`](https://posit-dev.github.io/chatlas/) for Python and [`ellmer`](https://ellmer.tidyverse.org) for R. Hello simple and consistent interface! From Anthropic's Claude to (Azure) OpenAI and Google Gemini: it's all possible. And bonus: `chatlas` and `ellmer` both have the same interface, making it easy to translate your LLM projects between Python and R!
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-2-1">Python</a></li>
+<li><a href="#tabset-2-2">R</a></li>
+</ul>
+<div id="tabset-2-1">
 
 For Python, `chatlas` is available on PyPI, so you can install it easily with `pip`:
 
@@ -123,7 +137,8 @@ import chatlas
 
 Depending on the LLM provider you will choose, you might need to install additional packages (e.g. `anthropic` for, surprise, models from Anthropic). For every provider, the relevant function reference page in the [`chatlas` docs](https://posit-dev.github.io/chatlas/reference/) will tell you what's necessary together with credential acquisition tips (e.g. [`ChatAnthropic`](https://posit-dev.github.io/chatlas/reference/ChatAnthropic.html)).
 
-## R
+</div>
+<div id="tabset-2-2">
 
 You can install `ellmer` from CRAN using:
 
@@ -137,6 +152,9 @@ Once installed, load the package as usual:
 library(ellmer)
 ```
 
+</div>
+</div>
+
 > **Switching between Python and R**
 >
 > Did you know you can very easily switch between Python and R in [Positron](https://positron.posit.co)? Just select the interpreter you want (you can even choose between Python and R installs), and you're good to go!
@@ -145,7 +163,12 @@ library(ellmer)
 
 Time to chat! Whether you're using Python or R, the workflow is the same. First, you need to create a chat object. You can give it any name you like, but `chat` seems the most obvious choice here. This `chat` object is created with a specific function for your chosen provider, where you (optionally) can specify the model. While the `model` argument isn't required, it is strongly recommended you do specify it. After all, we're looking for consistent behaviour in our Shiny app, and a change in default model choice isn't going to give us that. In our case we will go for claude-sonnet-4-20250514 from [Anthropic](https://docs.anthropic.com/en/docs/about-claude/models/overview), which is the latest (reasonably priced) model at the time of writing.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-3" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-3-1">Python</a></li>
+<li><a href="#tabset-3-2">R</a></li>
+</ul>
+<div id="tabset-3-1">
 
 ``` python
 from dotenv import load_dotenv
@@ -156,7 +179,8 @@ load_dotenv()  # Loads key from the .env file
 chat = ChatAnthropic(model="claude-sonnet-4-20250514")
 ```
 
-## R
+</div>
+<div id="tabset-3-2">
 
 ``` r
 library(ellmer)
@@ -170,6 +194,9 @@ In `ellmer` 0.3.0 you can also use `chat()` using a string like `chat("anthropic
 
 Not sure what models are available? You can use `models_*()`, e.g. `models_anthropic()`, to get a list of available models.
 
+</div>
+</div>
+
 > **API keys and environment variables**
 >
 > There's no need to explicitly provide your API key to `chatlas` or `ellmer`. If you specify it with the correct name in your environment file (`.env` or `.Renviron`), `chatlas` or `ellmer` will automatically find it. There's an `api_key` argument, but generally you won't use this. For Python, it's recommended to use the `dotenv` package to load the `.env` file into your environment.
@@ -181,7 +208,12 @@ You can call the `chat` method on the `chat` object. When you use the `chat` met
 
 For simplicity, let's start with our very basic first prompt: "I'm working on a presentation with the title: 'The Shiny Side of LLMs'. What's your feedback just based on that title?"
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-4" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-4-1">Python</a></li>
+<li><a href="#tabset-4-2">R</a></li>
+</ul>
+<div id="tabset-4-1">
 
 ``` python
 from dotenv import load_dotenv
@@ -231,8 +263,8 @@ and capabilities. You might consider a subtitle if you want to hint at your spec
 ```
 
 </details>
-
-## R
+</div>
+<div id="tabset-4-2">
 
 ``` r
 library(ellmer)
@@ -273,14 +305,21 @@ chat$chat(
 ```
 
 </details>
+</div>
+</div>
 
-The `chat` object is a stateful object, which means it "remembers stuff". It accumulates conversation history by default. This history is provided to the LLM with every subsequent question. So if you send a second question, it will package your prompt so it contains the first question, the first answer, and your second question. This is desired behaviour for multi-turn conversations since it allows the model to "remember" previous interactions. That's important, because out of the box, the model doesn't remember what you said two messages ago. It only has the input you provide, right here, right now. That's its entire world. So every time (with every request) you have to remind the LLM of prior context. You can learn more about this in [the first part of this series](/blog/shiny/shiny-side-of-llms-part-1/).
+The `chat` object is a stateful object, which means it "remembers stuff". It accumulates conversation history by default. This history is provided to the LLM with every subsequent question. So if you send a second question, it will package your prompt so it contains the first question, the first answer, and your second question. This is desired behaviour for multi-turn conversations since it allows the model to "remember" previous interactions. That's important, because out of the box, the model doesn't remember what you said two messages ago. It only has the input you provide, right here, right now. That's its entire world. So every time (with every request) you have to remind the LLM of prior context. You can learn more about this in [the first part of this series](../../../blog/shiny/shiny-side-of-llms-part-1/).
 
 > **Some chat terminology**
 >
 > Let's get some terms straight: you (the user) have a chat with the LLM (the assistant). Every chat, aka conversation, consists of pairs of user and assistant turns. The questions you ask correspond to an HTTP request, and the response that gets returned corresponds to an HTTP response.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-5" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-5-1">Python</a></li>
+<li><a href="#tabset-5-2">R</a></li>
+</ul>
+<div id="tabset-5-1">
 
 ``` python
 from dotenv import load_dotenv
@@ -305,7 +344,8 @@ Your presentation title is: "The Shiny Side of LLMs"
 
 In the remainder of this article, we will leave the `dotenv` part out for brevity. You do need it for the `.env` approach, but there are also other ways to load environment variables, like setting them in your bash/zsh profile.
 
-## R
+</div>
+<div id="tabset-5-2">
 
 ``` r
 library(ellmer)
@@ -325,6 +365,9 @@ chat$chat("What is my presentation title?")
 ``` r
 #> Your presentation title is: "The Shiny Side of LLMs"
 ```
+
+</div>
+</div>
 
 # Designing effective prompts
 
@@ -381,7 +424,12 @@ And related user prompt for the task at hand:
 Evaluate the title: 'The Shiny Side of LLMs'
 ```
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-6" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-6-1">Python</a></li>
+<li><a href="#tabset-6-2">R</a></li>
+</ul>
+<div id="tabset-6-1">
 
 ``` python
 from chatlas import ChatAnthropic
@@ -441,8 +489,8 @@ chat.chat("Evaluate the title: 'The Shiny Side of LLMs'")
 ```
 
 </details>
-
-## R
+</div>
+<div id="tabset-6-2">
 
 ``` r
 library(ellmer)
@@ -494,6 +542,8 @@ chat$chat("Evaluate the title: 'The Shiny Side of LLMs'")
 ```
 
 </details>
+</div>
+</div>
 
 That's already something we can programmatically work with. Note that there are still differences between runs and between Python and R (just take a look at both examples). That is expected, even though our prompt is exactly the same. We'll come back to that a bit later.
 
@@ -772,7 +822,12 @@ This presentation would be suitable for a lightning talk (a maximum of 10 minute
 
 To turn this `.qmd` file programmatically into markdown (`.md`) we would need to call quarto from our system. This can be done via the CLI or, in the case of R, via the [`quarto` package](https://quarto-dev.github.io/quarto-r/). Note that our simple presentation doesn't make much use of the fancy stuff you can do with Quarto, so our `.md` file will almost look exactly the same as our `.qmd` file. But keep in mind we're building for a wider audience!
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-7" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-7-1">Python</a></li>
+<li><a href="#tabset-7-2">R</a></li>
+</ul>
+<div id="tabset-7-1">
 
 We can run quarto from the CLI with `subprocess`:
 
@@ -782,7 +837,8 @@ import subprocess
 subprocess.run(["quarto", "render", "my-presentation.qmd", "--to", "markdown"])
 ```
 
-## R
+</div>
+<div id="tabset-7-2">
 
 Using the `quarto` package:
 
@@ -795,6 +851,9 @@ or as a sytem command:
 ``` r
 system("quarto render my-presentation.qmd --to markdown")
 ```
+
+</div>
+</div>
 
 Now our system prompt can look something like this:
 
@@ -1017,7 +1076,12 @@ Note: if your user prompt is long you might want to put this in a separate promp
 
 Those are prompts we can work with! So let's chat away:
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-8" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-8-1">Python</a></li>
+<li><a href="#tabset-8-2">R</a></li>
+</ul>
+<div id="tabset-8-1">
 
 ``` python
 from chatlas import ChatAnthropic, interpolate_file, interpolate
@@ -1137,8 +1201,8 @@ chat.chat(interpolate("Here are the slides in Markdown: {{ markdown_content }}")
 ```
 
 </details>
-
-## R
+</div>
+<div id="tabset-8-2">
 
 ``` r
 library(ellmer)
@@ -1260,10 +1324,12 @@ chat$chat(interpolate(
 ```
 
 </details>
+</div>
+</div>
 
 > **Inconsistencies in the output**
 >
-> Did you already notice that some meta-data, like the percentage of slides with code and/or images is inconsistent? For example, the "percent_with_code" is 40, but other times it's 37.5 or 45. It seems like a broken calculator! To understand why this happens you can read [part 1](/blog/shiny/shiny-side-of-llms-part-1/) again, where we talk about why LLMs are really good at some tasks, and others, well... Not so much. That doesn't mean it's completely out of our hands. We can help the LLM with a "tool". Keep on reading to learn more about that concept.
+> Did you already notice that some meta-data, like the percentage of slides with code and/or images is inconsistent? For example, the "percent_with_code" is 40, but other times it's 37.5 or 45. It seems like a broken calculator! To understand why this happens you can read [part 1](../../../blog/shiny/shiny-side-of-llms-part-1/) again, where we talk about why LLMs are really good at some tasks, and others, well... Not so much. That doesn't mean it's completely out of our hands. We can help the LLM with a "tool". Keep on reading to learn more about that concept.
 
 It's not too bad for a first try and it serves as a basis we can depart from. We can go back and forth many times, aka do some "prompt engineering", to make sure we are getting results that are usable. The prompt that we used mostly returns a broad analysis (makes sense, we asked it to), but if we want our users to take action we need to provide specific improvements. So we could extend our prompt with "provide specific and actionable improvements" and provide specific instructions like "keep each suggestion concise and mention the slide number(s) if applicable":
 
@@ -1383,8 +1449,12 @@ Always return your answer as a JSON object with the following structure:
 ```
 
 </details>
-
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-9" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-9-1">Python</a></li>
+<li><a href="#tabset-9-2">R</a></li>
+</ul>
+<div id="tabset-9-1">
 
 ``` python
 # Define prompt file
@@ -1546,8 +1616,8 @@ chat.chat(interpolate("Here are the slides in Markdown: {{ markdown_content }}")
 ```
 
 </details>
-
-## R
+</div>
+<div id="tabset-9-2">
 
 ``` r
 # Define prompt file
@@ -1718,8 +1788,10 @@ chat$chat(interpolate(
 ```
 
 </details>
+</div>
+</div>
 
-And of course Claude believes that all the suggested improvements increase the relevant scores. However, don't be surprised if the numbers are off. Remember from [part 1](/blog/shiny/shiny-side-of-llms-part-1/) that it's just a model that predicts a next token. It's good to do some sanity checks.
+And of course Claude believes that all the suggested improvements increase the relevant scores. However, don't be surprised if the numbers are off. Remember from [part 1](../../../blog/shiny/shiny-side-of-llms-part-1/) that it's just a model that predicts a next token. It's good to do some sanity checks.
 
 # Ensuring structured and consistent output
 
@@ -1802,7 +1874,12 @@ Always return the result as a JSON object that conforms to the provided data mod
 
 We'll come back to why the Don't-Repeat-Yourself (DRY) principle might be worthwhile for the token count and cost too.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-10" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-10-1">Python</a></li>
+<li><a href="#tabset-10-2">R</a></li>
+</ul>
+<div id="tabset-10-1">
 
 To use structured output, you give the model some input and a [Pydantic model](https://docs.pydantic.dev/latest/concepts/models/) that describes the kind of data you want. The Pydantic model is like a form with specific fields and types, like `title: string` or `duration: integer`.
 
@@ -2046,7 +2123,8 @@ chat.chat_structured(
 
 The code above defines a set of Pydantic models that describe the expected structure of our output.`ScoringCategory` is a reusable model containing a score (an integer constrained between 0 and 10), a justification string, optional improvement suggestions, and an estimated score after implementing the improvements. Numeric fields in the top-level model, `DeckAnalysis`, are validated using `Annotated` types with constraints defined via `Field(...)` . For example, to ensure percentages are between 0.0 and 100.0, and counts are non-negative. The `DeckAnalysis` model nests eight `ScoringCategory` models. It saves some duplication. The top-level model is given to the `chat_structured()` method: `chat.chat_structured(interpolate("Here are the slides in Markdown: {{ markdown_content }}"), data_model=DeckAnalysis)` .
 
-## R
+</div>
+<div id="tabset-10-2">
 
 To use structured output, you use `$chat_structured()` instead of the `$chat()`method. You'll also need to define a type specification that describes the structure of the data that you want.
 
@@ -2366,6 +2444,9 @@ You can also specify the full schema that you want to get back from the LLM as a
 >
 > `type_object()` returns a named list in R. If you want to extract a data frame from a single prompt (e.g. reading information from a markdown table), you can wrap `type_object()` in `type_array()` and create an array of objects. We do something similar here for the scoring categories. It can be hard to wrap your head around as an R user. The `ellmer` documentation contains some more [good examples](https://ellmer.tidyverse.org/articles/structured-data.html#data-frames).
 
+</div>
+</div>
+
 # When LLMs guess, tools know
 
 As you've seen in our conversation with Claude so far, LLMs struggle with tasks like counting slides. This is because they don't actually run code or parse content structurally like a proper parser would. LLMs aren't doing magic, they are simply predicting the next word based on patterns in text. So when you ask an LLM, "how many slides contain code?", it's making an educated guess based on the wording of the slides. It does not actually scan them line-by-line and checking for code blocks. The result: inconsistent answers. In our example, there are 16 slides, 6 with code, and 1 with an image (aka 37.5% code slides and 6.25% image slides). The LLM gets close, but its answers vary and we're not aiming for "close enough." The solution: build something on top of the LLM that does this reliably for us. Hello something fancy called "tool calling"!
@@ -2374,7 +2455,12 @@ Everyone talks about tool calling these days, and for a good reason: it's that e
 
 So how would this work of we want to improve the slide counts for DeckCheck? First, we construct a simple Python or R function that reads our slides, spots code blocks and images, and gives exact percentages. To make our life a little bit easier, we're opting for the HTML version of Quarto slides here, and not Markdown. In this case, HTML is handy because each slide is neatly contained in a `<section>` tag, and code is clearly marked with a `sourceCode` class. For an LLM, HTML is noisy (full of CSS, scripts, and other distractions). But for a parsing function like we're going to write, it's straightforward to process. The nice thing about such a function is that you can fully customise it: maybe you only want to count Python or R code chunks only, or ignore very short examples. We call our function `calculate_slide_metric`:
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-11" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-11-1">Python</a></li>
+<li><a href="#tabset-11-2">R</a></li>
+</ul>
+<div id="tabset-11-1">
 
 ``` python
 def calculate_slide_metric(metric: str) -> Union[int, float]:
@@ -2420,7 +2506,8 @@ def calculate_slide_metric(metric: str) -> Union[int, float]:
     return result
 ```
 
-## R
+</div>
+<div id="tabset-11-2">
 
 ``` r
 #' Calculates the total number of slides, percentage of slides with code blocks,
@@ -2462,6 +2549,9 @@ calculate_slide_metric <- function(metric) {
   return(result)
 }
 ```
+
+</div>
+</div>
 
 This function is the tool the LLM can call to accurately count slides. It has one input argument: `metric`. To let the model know that this tool is available, we register it with `register_tool` before we start talking to the LLM.
 
@@ -2546,7 +2636,12 @@ Because the `chat` object stateful (and therefore remembers previous responses),
 
 Altogether, this results in the following workflow:
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-12" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-12-1">Python</a></li>
+<li><a href="#tabset-12-2">R</a></li>
+</ul>
+<div id="tabset-12-1">
 
 ``` python
 # Initialise chat with Claude Sonnet 4 model
@@ -2829,8 +2924,8 @@ We can clearly see that our tool was being called 3 times for our 3 metrics, jus
 ```
 
 </details>
-
-## R
+</div>
+<div id="tabset-12-2">
 
 ``` r
 # Initialise chat with Claude Sonnet 4 model
@@ -3175,6 +3270,8 @@ We can clearly see that our tool was being called 3 times for our 3 metrics, jus
 ```
 
 </details>
+</div>
+</div>
 
 So how does the LLM know that it needs to use a tool? We didn't specifically tell it to use it. We just registered it and let the LLM figure it out for itself. How does that work? The first step in the process is turning a vague, human-friendly request into something a tool can actually run. In our case, our prompt contained this:
 
@@ -3237,7 +3334,12 @@ And to come back to some jargon, changing any of these model parameters is calle
 
 Model parameters are supported by most providers and with `chatlas` and `ellmer` you can quickly set them in a provider-agnostic way.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-13" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-13-1">Python</a></li>
+<li><a href="#tabset-13-2">R</a></li>
+</ul>
+<div id="tabset-13-1">
 
 ``` python
 # Set model parameters (optional)
@@ -3248,7 +3350,8 @@ chat.set_model_params(
 
 By using the [`set_model_params()`](https://posit-dev.github.io/chatlas/reference/Chat.html#set_model_params.qmd) method on the chat object, you can quickly set things like `temperature`, `max_tokens` or `top_p`. These model parameters apply to the whole chat. If you want to revert to the default parameters, you can pass `None` to the relevant parameter.
 
-## R
+</div>
+<div id="tabset-13-2">
 
 ``` r
 chat <- chat_anthropic(
@@ -3263,13 +3366,22 @@ Adding parameters to our model is easy: we use the [`params` argument](https://e
 
 Note: since `ellmer` 0.3.0 you can also use [`chat()`](https://ellmer.tidyverse.org/reference/chat-any.html) and pass the `params` argument there.
 
+</div>
+</div>
+
 Besides model parameters, which are commonly used across providers, there's also something called [chat parameters](https://posit-dev.github.io/chatlas/get-started/parameters.html#chat-parameters). The difference is that the latter are specific to the model provider you're using.
 
 # Full workflow
 
 A nice prompt, structured output, tool calling, model parameters... It all led us to the following workflow:
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-14" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-14-1">Python</a></li>
+<li><a href="#tabset-14-2">R</a></li>
+<li><a href="#tabset-14-3">System prompt</a></li>
+</ul>
+<div id="tabset-14-1">
 
 > **Get this code from GitHub**
 >
@@ -3447,8 +3559,8 @@ chat.chat_structured(prompt_complete_2, data_model=DeckAnalysis)
 ```
 
 </details>
-
-## R
+</div>
+<div id="tabset-14-2">
 
 > **Get this code from GitHub**
 >
@@ -3639,9 +3751,8 @@ chat$chat_structured(
 ```
 
 </details>
-
-## System prompt
-
+</div>
+<div id="tabset-14-3">
 <details class="code-fold">
 <summary>Show full prompt</summary>
 
@@ -3693,6 +3804,8 @@ You bundle your results with the results from the first task. Always return the 
 ```
 
 </details>
+</div>
+</div>
 
 But there's one questions that might still be lingering in your mind: how much does this cost?!
 
@@ -3713,7 +3826,12 @@ Manually keeping track of your tokens would be annoying, so with `chatlas` or `e
 
 Now for the real thing you want to know: for our full workflow, we pay around 0.06 USD.
 
-## Python
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-15" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-15-1">Python</a></li>
+<li><a href="#tabset-15-2">R</a></li>
+</ul>
+<div id="tabset-15-1">
 
 ``` python
 chat.get_tokens()
@@ -3733,7 +3851,8 @@ chat.get_cost()
 0.058350000000000006
 ```
 
-## R
+</div>
+<div id="tabset-15-2">
 
 ``` r
 chat$get_tokens()
@@ -3747,6 +3866,9 @@ chat$get_tokens()
 chat$get_cost()
 #>[1] $0.06
 ```
+
+</div>
+</div>
 
 > **Costs differ between runs!**
 >

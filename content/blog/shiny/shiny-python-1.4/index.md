@@ -54,7 +54,12 @@ Notice how it:
 3.  When a bookmark happens, the URL is updated with the current state of the app (via `session.bookmark.update_query_string()`).
     - Updating the URL is optional, but almost always desirable (alternatively, you could open a modal with the bookmark URL).
 
-#### Express
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-1-1">Express</a></li>
+<li><a href="#tabset-1-2">Core</a></li>
+</ul>
+<div id="tabset-1-1">
 
 ``` python
 from shiny.express import app_opts, input, render, session, ui
@@ -74,7 +79,8 @@ async def _(url: str):
     await session.bookmark.update_query_string(url)
 ```
 
-#### Core
+</div>
+<div id="tabset-1-2">
 
 ``` python
 from starlette.requests import Request
@@ -100,6 +106,9 @@ def server(input: Inputs, output: Outputs, session: Session):
 
 app = App(app_ui, server, bookmark_store="url")
 ```
+
+</div>
+</div>
 
 More generally, some of the key things to keep in mind when bookmarking:
 
