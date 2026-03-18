@@ -1,6 +1,6 @@
 ---
 title: "Teun Van den Brand"
-image: "profile.jpg"
+image: "teun-van-den-brand.jpg"
 role: "Software Engineer"
 affiliation: "Posit, PBC"
 social:

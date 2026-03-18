@@ -1,7 +1,7 @@
 ---
 title: "Brian Lambert"
 image: "brian.jpeg"
-role: ""
+role: "Senior Principal Software Engineer"
 affiliation: "Posit, PBC"
 social:
   bluesky: ""

@@ -1,7 +1,7 @@
 ---
 title: "Nick Strayer"
 image: "profile.jpg"
-role: ""
+role: "Principal Software Engineer"
 affiliation: "Posit, PBC"
 social:
   bluesky: ""

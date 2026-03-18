@@ -1,7 +1,7 @@
 ---
 title: "Simon Couch"
 image: "profile.jpg"
-role: ""
+role: "Senior Software Engineer"
 affiliation: "Posit, PBC"
 social:
   bluesky: ""

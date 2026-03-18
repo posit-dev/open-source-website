@@ -1,7 +1,7 @@
 ---
 title: "Karan Gathani"
 image: "karan.jpeg"
-role: ""
+role: "Senior Quality Assurance Engineer"
 affiliation: "Posit, PBC"
 social:
   bluesky: ""
