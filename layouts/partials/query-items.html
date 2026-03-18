@@ -38,7 +38,10 @@
 
 {{/* 3. Apply json-logic filter */}}
 {{ with $filterJSON }}
-  {{ $rule := transform.Unmarshal . }}
+  {{ $filterJSON = replace $filterJSON "$tomorrow" ((now.AddDate 0 0 1).Format "2006-01-02") }}
+  {{ $filterJSON = replace $filterJSON "$yesterday" ((now.AddDate 0 0 -1).Format "2006-01-02") }}
+  {{ $filterJSON = replace $filterJSON "$today" (now.Format "2006-01-02") }}
+  {{ $rule := transform.Unmarshal $filterJSON }}
   {{ $filtered := slice }}
   {{ range $pages }}
     {{ $pass := partial "jsonlogic/eval.html" (dict "rule" $rule "data" .Params) }}
