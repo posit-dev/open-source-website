@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="flex flex-col w-full max-w-4xl lg:max-w-5xl">
+<div class="flex flex-col w-full max-w-7xl">
   <!-- Hidden Pagefind Image -->
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
@@ -13,9 +13,7 @@
   {{ end }}
   {{ end }}
 
-  <div class="mt-6 mx-2 md:mx-0">
-    {{ partial "item.html" (dict "page" . "format" "hero") }}
-  </div>
+  {{ partial "item.html" (dict "page" . "format" "hero") }}
 
   {{ if .Content }}
   <div data-pagefind-body class="prose dark:prose-invert max-w-none mt-8 mx-2 md:mx-0">
