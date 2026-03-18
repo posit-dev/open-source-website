@@ -13,23 +13,9 @@
 
 {{- /* Custom Open Graph and Twitter images for blog posts */ -}}
 {{- if eq .Section "blog" -}}
-  {{- $blogImg := partial "blog/thumbnail.html" . -}}
-  {{- $imgURL := "" -}}
-  {{- $imgType := printf "%T" $blogImg -}}
-  {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
-    {{- /* It's a resource - get absolute URL */ -}}
-    {{- $imgURL = $blogImg.Permalink -}}
-  {{- else -}}
-    {{- /* It's a URL string - make it absolute if relative */ -}}
-    {{- if hasPrefix $blogImg "http" -}}
-      {{- $imgURL = $blogImg -}}
-    {{- else -}}
-      {{- $imgURL = absURL $blogImg -}}
-    {{- end -}}
-  {{- end -}}
-  {{- with $imgURL -}}
-    <meta property="og:image" content="{{ . }}" />
-    <meta name="twitter:image" content="{{ . }}" />
+  {{- with partial "get-image.html" . -}}
+    <meta property="og:image" content="{{ .Permalink }}" />
+    <meta name="twitter:image" content="{{ .Permalink }}" />
     {{- with $.Params.alttext -}}
       <meta property="og:image:alt" content="{{ . }}" />
       <meta name="twitter:image:alt" content="{{ . }}" />

@@ -111,10 +111,7 @@
 {{/* ============================================================
      IMAGE (uses responsive_image_container.html)
      ============================================================ */}}
-{{ $image := false }}
-{{ with $page.Params.image }}
-  {{ $image = $page.Resources.Get . }}
-{{ end }}
+{{ $image := partial "get-image.html" $page }}
 
 {{/* ============================================================
      STARS (software only)

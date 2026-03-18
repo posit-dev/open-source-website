@@ -1,0 +1,9 @@
+{{- /*
+  Returns the image resource for a page, or false if none.
+  Usage: {{ $image := partial "get-image.html" $page }}
+*/ -}}
+{{- $image := false -}}
+{{- with .Params.image -}}
+  {{- $image = $.Resources.Get . -}}
+{{- end -}}
+{{- return $image -}}
