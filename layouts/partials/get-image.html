@@ -1,11 +1,14 @@
 {{- /*
-  Returns the image resource for a page, or false if none.
+  Returns the image resource and alt text for a page.
 
   Usage:
-    {{ $image := partial "get-image.html" $page }}
-    {{ $image := partial "get-image.html" (dict "page" $page "fallback" true) }}
+    {{ $result := partial "get-image.html" $page }}
+    {{ $result := partial "get-image.html" (dict "page" $page "fallback" true) }}
+    {{ $result.image }}  — image resource or false
+    {{ $result.alt }}    — alt text (from image-alt param or title)
 
-  With fallback: true, looks for default-image.* in parent section.
+  With fallback: true, checks parent section's image/image-alt params.
+  Alt text is sourced from wherever the image came from.
 */ -}}
 
 {{- $page := . -}}
@@ -16,17 +19,27 @@
 {{- end -}}
 
 {{- $image := false -}}
+{{- $alt := $page.Title -}}
 
 {{- /* 1. Check page's .Params.image */ -}}
 {{- with $page.Params.image -}}
   {{- $image = $page.Resources.Get . -}}
-{{- end -}}
-
-{{- /* 2. Fallback: look for default-image.* in parent section */ -}}
-{{- if and (not $image) $fallback -}}
-  {{- with $page.Parent -}}
-    {{- $image = .Resources.GetMatch "default-image.*" -}}
+  {{- if $image -}}
+    {{- $alt = index $page.Params "image-alt" | default $page.Title -}}
   {{- end -}}
 {{- end -}}
 
-{{- return $image -}}
+{{- /* 2. Fallback: check parent's .Params.image */ -}}
+{{- if and (not $image) $fallback -}}
+  {{- $parent := $page.Parent -}}
+  {{- with $parent -}}
+    {{- with .Params.image -}}
+      {{- $image = $parent.Resources.Get . -}}
+      {{- if $image -}}
+        {{- $alt = index $parent.Params "image-alt" | default $parent.Title -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (dict "image" $image "alt" $alt) -}}

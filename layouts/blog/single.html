@@ -5,12 +5,13 @@
 {{ define "main" }}
 <article class="flex flex-col w-full relative">
   <!-- Hidden Pagefind Image -->
-  {{- with partial "get-image.html" . -}}
+  {{- $img_result := partial "get-image.html" . -}}
+  {{- with $img_result.image -}}
     {{- if ne .MediaType.SubType "svg" -}}
       {{- $pagefindImg := .Fit "128x128" -}}
-      <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ $.Title }}" class="hidden" data-pagefind-meta="image[src]">
+      <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ $img_result.alt }}" class="hidden" data-pagefind-meta="image[src]">
     {{- else -}}
-      <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="hidden" data-pagefind-meta="image[src]">
+      <img src="{{ .RelPermalink }}" alt="{{ $img_result.alt }}" class="hidden" data-pagefind-meta="image[src]">
     {{- end -}}
   {{- end -}}
 

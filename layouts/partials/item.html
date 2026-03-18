@@ -113,7 +113,9 @@
      — heroes have no fallback; cards/tiles/rows fall back to parent default
      ============================================================ */}}
 {{ $use_fallback := ne $format "hero" }}
-{{ $image := partial "get-image.html" (dict "page" $page "fallback" $use_fallback) }}
+{{ $img_result := partial "get-image.html" (dict "page" $page "fallback" $use_fallback) }}
+{{ $image := $img_result.image }}
+{{ $image_alt := $img_result.alt }}
 
 {{/* ============================================================
      STARS (software only)
@@ -269,7 +271,7 @@
       {{ if $image }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
-          "alt" $page.Title
+          "alt" $image_alt
           "class" (printf "mx-auto h-full %s" $card_settings.image_class)
           "short"  80
           "tall"   160
@@ -354,7 +356,7 @@
     {{ if $image }}
       {{ partial "responsive_image_container.html" (dict
         "image" $image
-        "alt" $page.Title
+        "alt" $image_alt
         "class" (printf "mx-auto h-full %s" $card_settings.image_class)
         "short"  40
         "tall"   40
@@ -420,7 +422,7 @@
   <div class="w-full h-64 md:h-96">
     {{ partial "responsive_image_container.html" (dict
       "image" $image
-      "alt" $page.Title
+      "alt" $image_alt
       "class" "mx-auto h-full w-full object-cover"
       "short"  640
       "tall"   960
@@ -519,7 +521,7 @@
           "image" $image
           "baseWidth" 192
           "baseHeight" 192
-          "alt" $page.Title
+          "alt" $image_alt
           "class" (printf "mx-auto h-full %s" $card_settings.image_class)
           "method" "fit"
         ) }}
@@ -648,7 +650,7 @@
       {{ if $image }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
-          "alt" $page.Title
+          "alt" $image_alt
           "class" (printf "mx-auto h-full %s" $card_settings.image_class)
           "short"  160
           "tall"   320
