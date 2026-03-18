@@ -11,7 +11,6 @@ people:
 blogcategories:
   - Products and Technology
   - Open Source
-events: blog
 description: The pins package publishes R objects, such as data sets and predictive models, on a virtual corkboard so that you can share and reuse them easily and safely.
 alttext: White pins spread around on a dark grey background
 image: thumbnail.png

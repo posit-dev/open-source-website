@@ -11,7 +11,6 @@ categories:
 - News
 blogcategories:
 - Company News and Events
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

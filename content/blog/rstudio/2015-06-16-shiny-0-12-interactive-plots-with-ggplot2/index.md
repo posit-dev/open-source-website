@@ -14,7 +14,6 @@ slug: shiny-0-12-interactive-plots-with-ggplot2
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

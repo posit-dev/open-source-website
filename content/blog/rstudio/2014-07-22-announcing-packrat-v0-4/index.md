@@ -13,7 +13,6 @@ blogcategories:
 tags:
 - Packages
 - RStudio IDE
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

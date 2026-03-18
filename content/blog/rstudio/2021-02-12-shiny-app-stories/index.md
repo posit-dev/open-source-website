@@ -14,7 +14,6 @@ description: "App Stories are a bit different from the User Showcase: an App Sto
 blogcategories:
   - Products and Technology
   - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

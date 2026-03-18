@@ -15,7 +15,6 @@ tags:
   - Google Cloud Platform
   - packages
 alttext: pins logo
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

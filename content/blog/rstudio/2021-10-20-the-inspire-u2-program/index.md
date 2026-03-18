@@ -11,7 +11,6 @@ resources:
   - name: featured
     src: image.png
     title: NSF, Spelman College, and RStudio logos on a grey grid background
-events: blog
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress

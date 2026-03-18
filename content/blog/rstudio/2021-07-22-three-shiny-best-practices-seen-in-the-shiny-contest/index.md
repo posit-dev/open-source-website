@@ -2,7 +2,6 @@
 title: Top 3 Coding Best Practices from the Shiny Contest
 people:
   - Nick Strayer
-events: blog
 date: '2021-07-22'
 slug: three-shiny-best-practices-seen-in-the-shiny-contest
 categories:

@@ -11,7 +11,6 @@ people:
   - Isabella Velásquez
 blogcategories:
   - Products and Technology
-events: blog
 description: We are excited to announce new developments in Keras for R. Data scientists can use the most popular and powerful deep learning frameworks to guide data-driven decisions, all within R.
 alttext: Leafless tree branches with red buds against a snowy background
 image: thumbnail.jpg

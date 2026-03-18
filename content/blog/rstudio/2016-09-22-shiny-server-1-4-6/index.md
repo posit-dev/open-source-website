@@ -11,7 +11,6 @@ tags:
 slug: shiny-server-1-4-6
 blogcategories:
 - Products and Technology
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

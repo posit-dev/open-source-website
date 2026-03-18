@@ -4,7 +4,6 @@ people:
   - Hadley Wickham
 date: '2015-01-09'
 slug: dplyr-0-4-0
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

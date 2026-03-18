@@ -15,7 +15,6 @@ slug: shiny-1-3-2
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

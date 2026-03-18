@@ -6,7 +6,6 @@ date: '2017-11-03'
 slug: r-admins-community
 categories: []
 tags: []
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

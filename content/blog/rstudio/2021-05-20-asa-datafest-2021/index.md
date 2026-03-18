@@ -13,7 +13,6 @@ tags:
   - RStudio Cloud
 blogcategories:
   - Company News and Events
-events: blog
 alttext: American Statistical Association DataFest logo
 image: thumbnail.png
 ported_from: rstudio

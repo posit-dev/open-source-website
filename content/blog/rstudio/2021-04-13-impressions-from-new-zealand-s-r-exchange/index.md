@@ -9,7 +9,6 @@ categories:
 description: In March of 2021, Epi-Interactive hosted one of the first in-person R events in Wellington, New Zealand. Here are some takeaways from their experience. 
 blogcategories:
 - Company News and Events
-events: blog
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress

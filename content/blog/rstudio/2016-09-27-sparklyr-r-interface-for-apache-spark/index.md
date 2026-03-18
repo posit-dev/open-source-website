@@ -12,7 +12,6 @@ blogcategories:
 - Company News and Events
 tags:
 - Packages
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

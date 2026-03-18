@@ -13,7 +13,6 @@ slug: article-spotlight-persistent-data-storage-in-shiny-apps
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

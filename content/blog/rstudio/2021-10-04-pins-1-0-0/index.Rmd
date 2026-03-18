@@ -16,7 +16,6 @@ resources:
   - name: hero
     src: hero.jpg
     title: A world map with many pins stuck in it
-events: blog
 ---
 
 ```r, include = FALSE

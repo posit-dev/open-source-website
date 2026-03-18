@@ -21,7 +21,6 @@ blogcategories:
 - Company News and Events
 - Products and Technology
 - Open Source
-events: blog
 alttext: Shiny logo
 image: thumbnail.jpg
 ported_from: rstudio
