@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="flex flex-col w-full max-w-7xl">
-  <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200 mx-2 md:mx-0 mb-2">{{ .Title }}</h1>
+  <h1 class="text-4xl font-medium text-gray-500 mx-2 md:mx-0 mb-2">{{ .Title }}</h1>
 
   {{ with .Description }}
   <div class="prose mb-6">
@@ -24,7 +24,7 @@
   </div>
   {{ else }}
   <div class="text-center py-12 mx-2 md:mx-0">
-    <p class="text-xl text-gray-600 dark:text-gray-400">No {{ lower .Title }} found yet. Check back soon!</p>
+    <p class="text-xl text-gray-600">No {{ lower .Title }} found yet. Check back soon!</p>
   </div>
   {{ end }}
 </div>

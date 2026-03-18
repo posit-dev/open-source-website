@@ -1,9 +1,9 @@
 {{ define "main" }}
 <div class="flex flex-col w-full mt-6" data-pagefind-ignore>
-  <h1 class="text-3xl font-medium text-gray-500 dark:text-gray-200 mb-2">
+  <h1 class="text-3xl font-medium text-gray-500 mb-2">
     {{ .Title }}
   </h1>
-  <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+  <p class="text-sm text-gray-600 mb-6">
     {{ .Content | safeHTML }}
   </p>
 
@@ -11,8 +11,8 @@
   {{- $blogSection := site.GetPage "/blog" -}}
   {{- $allPosts := where $blogSection.RegularPages ".BundleType" "eq" "leaf" -}}
   <div class="mb-6 overflow-x-auto">
-    <table class="text-sm border border-gray-300 dark:border-blue-800">
-      <thead class="bg-gray-100 dark:bg-blue-900">
+    <table class="text-sm border border-gray-300">
+      <thead class="bg-gray-100">
         <tr>
           <th class="px-3 py-2 text-left">Source</th>
           <th class="px-3 py-2 text-center">Raw</th>
@@ -23,7 +23,7 @@
           <th class="px-3 py-2 text-center font-bold">Total</th>
         </tr>
       </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-blue-800">
+      <tbody class="divide-y divide-gray-200">
         {{- $sources := slice "positron" "tidyverse" "education" "ai" "shiny" "great_tables" "plotnine" "pointblank" "quarto" "rstudio" -}}
         {{- range $source := $sources -}}
           {{- $sourcePosts := where $allPosts "Params.ported_from" $source -}}
@@ -40,7 +40,7 @@
           {{- end -}}
         {{- end -}}
         {{- $noSource := where $allPosts "Params.ported_from" nil -}}
-        <tr class="bg-gray-50 dark:bg-blue-900/50">
+        <tr class="bg-gray-50">
           <td class="px-3 py-1 italic">No source</td>
           <td class="px-3 py-1 text-center">-</td>
           <td class="px-3 py-1 text-center">-</td>
@@ -49,7 +49,7 @@
           <td class="px-3 py-1 text-center">{{ len $noSource }}</td>
           <td class="px-3 py-1 text-center font-bold">{{ len $noSource }}</td>
         </tr>
-        <tr class="bg-gray-100 dark:bg-blue-900 font-bold">
+        <tr class="bg-gray-100 font-bold">
           <td class="px-3 py-1">Total</td>
           <td class="px-3 py-1 text-center">{{ len (where $allPosts "Params.port_status" "raw") }}</td>
           <td class="px-3 py-1 text-center">{{ len (where $allPosts "Params.port_status" "in-progress") }}</td>
@@ -62,66 +62,66 @@
     </table>
   </div>
 
-  <div class="bg-white dark:bg-blue-950 rounded-lg shadow-sm border border-blue-300 dark:border-blue-800 overflow-hidden">
+  <div class="bg-white rounded-lg shadow-sm border border-blue-300 overflow-hidden">
     <div class="overflow-x-auto">
       <table id="blog-table" class="w-full text-sm">
-        <thead class="bg-gray-100 dark:bg-blue-900 border-b border-gray-300 dark:border-blue-700">
+        <thead class="bg-gray-100 border-b border-gray-300">
           <tr>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="title">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="title">
               <div class="flex items-center gap-1">
                 Title
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="date">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="date">
               <div class="flex items-center gap-1">
                 Date
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="people">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="people">
               <div class="flex items-center gap-1">
                 People
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="image">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="image">
               <div class="flex items-center gap-1">
                 Image
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="image-alt">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="image-alt">
               <div class="flex items-center gap-1">
                 Alt
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="software">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="software">
               <div class="flex items-center gap-1">
                 Software
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="categories">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="categories">
               <div class="flex items-center gap-1">
                 Categories
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="tags">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="tags">
               <div class="flex items-center gap-1">
                 Tags
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="slug">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="slug">
               <div class="flex items-center gap-1">
                 Slug
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="ported-from">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="ported-from">
               <div class="flex items-center gap-1">
                 Source
                 <span class="sort-icon text-gray-400">↕</span>
@@ -132,7 +132,7 @@
                 Legacy
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 dark:hover:bg-blue-800 select-none" data-sort="port-status">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="port-status">
               <div class="flex items-center gap-1">
                 Status
                 <span class="sort-icon text-gray-400">↕</span>
@@ -140,12 +140,12 @@
             </th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-gray-200 dark:divide-blue-800">
+        <tbody class="divide-y divide-gray-200">
           {{ range $allPosts.ByDate.Reverse }}
-          <tr class="hover:bg-gray-50 dark:hover:bg-blue-900/50">
+          <tr class="hover:bg-gray-50">
             <!-- Title (linked) -->
             <td class="px-3 py-2" data-value="{{ .Title }}">
-              <a href="{{ .RelPermalink }}" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+              <a href="{{ .RelPermalink }}" class="text-blue-600 hover:underline font-medium">
                 {{ .Title | truncate 50 }}
               </a>
             </td>
@@ -164,11 +164,11 @@
                     {{- $personPage := site.GetPage (printf "/people/%s" $personSlug) -}}
                     {{- $hasContentFile := and $personPage $personPage.File -}}
                     {{ if $hasContentFile }}
-                      <a href="{{ $personPage.RelPermalink }}" class="text-xs px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 hover:underline">
+                      <a href="{{ $personPage.RelPermalink }}" class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-800 hover:underline">
                         {{ . }}
                       </a>
                     {{ else }}
-                      <span class="text-xs px-1.5 py-0.5 rounded bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300">
+                      <span class="text-xs px-1.5 py-0.5 rounded bg-red-100 text-red-700">
                         {{ . }}
                       </span>
                     {{ end }}
@@ -215,7 +215,7 @@
               {{ with .Params.software }}
                 <div class="flex flex-wrap gap-1">
                   {{ range . }}
-                    <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-800 text-gray-700 dark:text-gray-200">
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-gray-700">
                       {{ . }}
                     </span>
                   {{ end }}
@@ -230,7 +230,7 @@
               {{ with .Params.categories }}
                 <div class="flex flex-wrap gap-1">
                   {{ range . }}
-                    <span class="text-xs px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-800 text-gray-700 dark:text-gray-200">
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-purple-100 text-gray-700">
                       {{ . }}
                     </span>
                   {{ end }}
@@ -245,7 +245,7 @@
               {{ with .Params.tags }}
                 <div class="flex flex-wrap gap-1">
                   {{ range . }}
-                    <span class="text-xs px-1.5 py-0.5 rounded bg-orange-100 dark:bg-orange-800 text-gray-700 dark:text-gray-200">
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-orange-100 text-gray-700">
                       {{ . }}
                     </span>
                   {{ end }}
@@ -256,7 +256,7 @@
             </td>
 
             <!-- Slug -->
-            <td class="px-3 py-2 text-xs text-gray-600 dark:text-gray-400" data-value="{{ .Slug }}">
+            <td class="px-3 py-2 text-xs text-gray-600" data-value="{{ .Slug }}">
               {{ if .Params.slug }}
                 {{ .Params.slug }}
               {{ else }}
@@ -267,7 +267,7 @@
             <!-- Ported From -->
             <td class="px-3 py-2" data-value="{{ with .Params.ported_from }}{{ . }}{{ end }}">
               {{ with .Params.ported_from }}
-                <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
+                <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-700">
                   {{ . }}
                 </span>
               {{ else }}
@@ -299,7 +299,7 @@
                   {{- $url = printf "https://education.rstudio.com/blog/%s/%s/%s/" $year $month $slug -}}
                 {{ end }}
                 {{ if $url }}
-                  <a href="{{ $url }}" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline text-xs">
+                  <a href="{{ $url }}" target="_blank" rel="noopener" class="text-blue-600 hover:underline text-xs">
                     View
                   </a>
                 {{ else }}
@@ -314,15 +314,15 @@
             <td class="px-3 py-2" data-value="{{ with .Params.port_status }}{{ . }}{{ else }}0{{ end }}">
               {{ with .Params.port_status }}
                 {{ if eq . "raw" }}
-                  <span class="text-xs px-1.5 py-0.5 rounded bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300">raw</span>
+                  <span class="text-xs px-1.5 py-0.5 rounded bg-red-100 text-red-700">raw</span>
                 {{ else if eq . "in-progress" }}
-                  <span class="text-xs px-1.5 py-0.5 rounded bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300">in-progress</span>
+                  <span class="text-xs px-1.5 py-0.5 rounded bg-yellow-100 text-yellow-700">in-progress</span>
                 {{ else if eq . "review" }}
-                  <span class="text-xs px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">review</span>
+                  <span class="text-xs px-1.5 py-0.5 rounded bg-blue-100 text-blue-700">review</span>
                 {{ else if eq . "complete" }}
-                  <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300">complete</span>
+                  <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-green-700">complete</span>
                 {{ else }}
-                  <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-700">{{ . }}</span>
+                  <span class="text-xs px-1.5 py-0.5 rounded bg-gray-100">{{ . }}</span>
                 {{ end }}
               {{ else }}
                 <span class="text-gray-400">-</span>
@@ -335,7 +335,7 @@
     </div>
   </div>
 
-  <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">
+  <p class="text-xs text-gray-500 mt-4">
     Click column headers to sort. Total: {{ len ($blogSection.RegularPages) }} posts
   </p>
 </div>
@@ -377,10 +377,10 @@
       if (h.dataset.sort === column) {
         icon.textContent = direction === 'asc' ? '↑' : '↓';
         icon.classList.remove('text-gray-400');
-        icon.classList.add('text-blue-600', 'dark:text-blue-400');
+        icon.classList.add('text-blue-600');
       } else {
         icon.textContent = '↕';
-        icon.classList.remove('text-blue-600', 'dark:text-blue-400');
+        icon.classList.remove('text-blue-600');
         icon.classList.add('text-gray-400');
       }
     });

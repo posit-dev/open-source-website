@@ -1,15 +1,15 @@
 <div class="flex flex-row gap justify-between w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-12 my-4 relative z-50">
   <div class="flex-none content-center relative z-50">
-    <a href="{{ relLangURL "" }}" class="block dark:hidden">
+    <a href="{{ relLangURL "" }}" class="block">
       {{ partial "responsive_image_fixed.html" (dict "imagePath" "posit-open-source-logo-light.png" "baseHeight" 26 "alt" "Posit Open Source" "class" "h-6.5") }}
     </a>
-    <a href="{{ relLangURL "" }}" class="hidden dark:block">
+    <a href="{{ relLangURL "" }}" class="hidden">
       {{ partial "responsive_image_fixed.html" (dict "imagePath" "posit-open-source-logo-dark.png" "baseHeight" 26 "alt" "Posit Open Source" "class" "h-6.5") }}
     </a>
   </div>
   {{ if .Site.Params.header.title }}
   <h1 class="hidden md:flex flex-col justify-center mx-2">
-    <a href="{{ relLangURL "" }}" class="text-2xl font-semibold text-gray-800 dark:text-gray-200">
+    <a href="{{ relLangURL "" }}" class="text-2xl font-semibold text-gray-800">
       {{ .Site.Params.header.title }}
     </a>
   </h1>
@@ -17,14 +17,14 @@
   <div class="flex-1"></div>
   <div class="flex-none flex items-center md:hidden relative z-50">
     <a href="https://github.com/posit-dev/open-source-website" target="_blank" rel="noopener"
-      class="inline-flex items-center p-2 text-sm text-gray-800 dark:text-gray-200 rounded-lg"
+      class="inline-flex items-center p-2 text-sm text-gray-800 rounded-lg"
       aria-label="GitHub repository">
       <i class="w-6 h-6">
         {{ partial "icon.html" "brand-github" }}
       </i>
     </a>
     <button id="search-toggle-mobile" type="button"
-      class="inline-flex items-center p-2 text-sm text-gray-800 dark:text-gray-200 rounded-lg cursor-pointer"
+      class="inline-flex items-center p-2 text-sm text-gray-800 rounded-lg cursor-pointer"
       aria-label="Search">
       <span class="sr-only">{{ T "search.title" }}</span>
       <i class="w-6 h-6">
@@ -39,7 +39,7 @@
   <div class="flex-none">
     <div class="h-full static">
       <button id="navbar-lang-toggle" type="button"
-        class="inline-flex items-center p-2 text-sm text-gray-800 dark:text-gray-200 cursor-pointer"
+        class="inline-flex items-center p-2 text-sm text-gray-800 cursor-pointer"
         aria-controls="navbar-menu" aria-expanded="false">
         <span class="sr-only">{{ T "open_lang_switcher" }}</span>
         <i class="w-8 h-8">
@@ -48,7 +48,7 @@
       </button>
       <div class="absolute hidden top-16 z-50" id="navbar-lang">
         <ul
-          class="flex flex-col px-3 text-base font-medium text-gray-800 dark:text-gray-200 shadow-lg bg-white dark:bg-gray-600 shadow-gray-800/5 dark:shadow-gray-200/5 ring-1 ring-gray-900/5 dark:ring-gray-100/5">
+          class="flex flex-col px-3 text-base font-medium text-gray-800 shadow-lg bg-white shadow-gray-800/5 ring-1 ring-gray-900/5">
           {{- $page := . -}}
           {{ range .AllTranslations }}
           <li class="">

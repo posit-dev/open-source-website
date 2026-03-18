@@ -10,8 +10,8 @@
         All Posts
       </a>
       {{- range $name, $taxonomy := $categories -}}
-      <a href="/categories/{{ $name | urlize }}/" class="px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-blue-50 hover:border-blue-200 dark:hover:bg-gray-800 dark:hover:border-gray-600 transition-colors">
-        {{ $name | title }} <span class="text-gray-500 dark:text-gray-400">({{ len $taxonomy.Pages }})</span>
+      <a href="/categories/{{ $name | urlize }}/" class="px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+        {{ $name | title }} <span class="text-gray-500">({{ len $taxonomy.Pages }})</span>
       </a>
       {{- end -}}
     </div>
@@ -32,7 +32,7 @@
 
   {{- /* "Latest" section header */ -}}
   <section>
-    <h2 class="text-sm font-semibold mb-6 text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+    <h2 class="text-sm font-semibold mb-6 text-gray-600 uppercase tracking-wider">
       {{- if eq $paginator.PageNumber 1 -}}Latest{{- else -}}All Posts{{- end -}}
     </h2>
 

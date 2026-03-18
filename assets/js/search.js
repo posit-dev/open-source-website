@@ -183,7 +183,7 @@
 
     const link = document.createElement('a');
     link.href = result.url;
-    link.className = 'flex gap-3 px-4 py-3 hover:bg-blue-50 dark:hover:bg-blue-900 transition-colors';
+    link.className = 'flex gap-3 px-4 py-3 hover:bg-blue-50 transition-colors';
 
     if (result.meta.image) {
       const imageContainer = document.createElement('div');
@@ -206,18 +206,18 @@
     titleRow.className = 'flex items-start justify-between gap-2';
 
     const title = document.createElement('div');
-    title.className = 'text-sm font-medium text-gray-900 dark:text-gray-100';
+    title.className = 'text-sm font-medium text-gray-900';
     title.innerHTML = result.meta.title || 'Untitled';
 
     const score = document.createElement('div');
-    score.className = 'text-xs text-gray-500 dark:text-gray-400 flex-shrink-0';
+    score.className = 'text-xs text-gray-500 flex-shrink-0';
     score.textContent = result._score ? result._score.toFixed(2) : '0.00';
 
     titleRow.appendChild(title);
     titleRow.appendChild(score);
 
     const excerpt = document.createElement('div');
-    excerpt.className = 'mt-1 text-sm text-gray-600 dark:text-gray-400 line-clamp-2';
+    excerpt.className = 'mt-1 text-sm text-gray-600 line-clamp-2';
     excerpt.innerHTML = result.excerpt || '';
 
     contentContainer.appendChild(titleRow);
@@ -303,10 +303,10 @@
     const items = searchResultsList.querySelectorAll('.search-result-item');
     items.forEach((item, index) => {
       if (index === selectedIndex) {
-        item.querySelector('a').classList.add('bg-blue-100', 'dark:bg-blue-800');
+        item.querySelector('a').classList.add('bg-blue-100');
         item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       } else {
-        item.querySelector('a').classList.remove('bg-blue-100', 'dark:bg-blue-800');
+        item.querySelector('a').classList.remove('bg-blue-100');
       }
     });
   }

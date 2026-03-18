@@ -5,7 +5,7 @@
 {{ with site.Menus.main }}
 <nav class="h-full static flex items-center">
   <button id="navbar-menu-toggle" type="button"
-    class="inline-flex items-center p-2 text-sm text-gray-800 dark:text-gray-200 rounded-lg md:hidden z-[60] relative"
+    class="inline-flex items-center p-2 text-sm text-gray-800 rounded-lg md:hidden z-[60] relative"
     aria-controls="navbar-menu" aria-expanded="false">
     <span class="sr-only">{{ T "open_main_menu" }}</span>
     <i class="w-6 h-6" id="menu-icon-hamburger">
@@ -16,22 +16,22 @@
     </i>
   </button>
   <div class="fixed md:static top-20 md:top-auto left-0 right-0 bottom-0 md:bottom-auto z-40 w-full h-0 md:h-auto md:w-auto md:opacity-100 md:visible transition-all duration-300 ease-in-out overflow-hidden md:overflow-visible" id="navbar-menu" style="transition-property: height, opacity;">
-    <div class="absolute inset-0 bg-white dark:bg-blue-1000 md:bg-transparent md:dark:bg-transparent"></div>
+    <div class="absolute inset-0 bg-white md:bg-transparent"></div>
     <ul
-      class="absolute top-4/9 -translate-y-1/2 left-0 right-0 flex flex-col mx-2 md:static md:top-auto md:translate-y-0 md:mx-0 md:flex-row md:items-center md:gap-x-0 md:border-0 text-base font-regular opacity-0 md:opacity-100 transition-opacity duration-300 md:bg-transparent md:dark:bg-transparent md:shadow-none md:rounded-none md:border-0" id="navbar-menu-content">
+      class="absolute top-4/9 -translate-y-1/2 left-0 right-0 flex flex-col mx-2 md:static md:top-auto md:translate-y-0 md:mx-0 md:flex-row md:items-center md:gap-x-0 md:border-0 text-base font-regular opacity-0 md:opacity-100 transition-opacity duration-300 md:bg-transparent md:shadow-none md:rounded-none md:border-0" id="navbar-menu-content">
       {{ range . }}
       {{- $isCurrent := or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .) (and $page.IsHome (and .Page (eq
       $contentTypeName .Page.Type))) -}}
       {{ if not .HasChildren }}
       <li id="{{ .Identifier }}" class="">
-        <a class="block text-center md:text-left text-2xl md:text-[0.9125rem] px-2 lg:px-3 py-5 md:py-3 font-mono font-medium uppercase hover:text-blue-500 dark:hover:text-white {{- if $isCurrent }} text-green-600{{ end -}}"
+        <a class="block text-center md:text-left text-2xl md:text-[0.9125rem] px-2 lg:px-3 py-5 md:py-3 font-mono font-medium uppercase hover:text-blue-500 {{- if $isCurrent }} text-green-600{{ end -}}"
           href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
       </li>
       {{ end }}
       {{ end }}
       <li class="hidden md:block">
         <a href="https://github.com/posit-dev/open-source-website" target="_blank" rel="noopener"
-          class="block text-center md:text-left text-2xl md:text-[0.9125rem] px-2 lg:px-3 py-5 md:py-3 font-medium hover:text-blue-500 dark:hover:text-white"
+          class="block text-center md:text-left text-2xl md:text-[0.9125rem] px-2 lg:px-3 py-5 md:py-3 font-medium hover:text-blue-500"
           aria-label="GitHub repository">
           <i class="w-6 h-6 inline-block align-text-bottom">
             {{ partial "icon.html" "brand-github" }}
@@ -40,7 +40,7 @@
       </li>
       <li class="hidden md:block">
         <button id="search-toggle" type="button"
-          class="block text-center md:text-left text-2xl md:text-[0.9125rem] px-2 md:pl-3 md:pr-0 py-5 md:py-3 font-medium hover:text-blue-500 dark:hover:text-white cursor-pointer"
+          class="block text-center md:text-left text-2xl md:text-[0.9125rem] px-2 md:pl-3 md:pr-0 py-5 md:py-3 font-medium hover:text-blue-500 cursor-pointer"
           aria-label="Search">
           <i class="w-6 h-6 inline-block align-text-bottom">
             {{ partial "icon.html" "search" }}

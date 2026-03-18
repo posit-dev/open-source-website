@@ -1,27 +1,27 @@
 {{ define "main" }}
 <div class="flex flex-col w-full max-w-3xl mx-auto mt-6 mb-12">
-  <h1 class="text-4xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Subscribe via RSS</h1>
+  <h1 class="text-4xl font-semibold text-gray-800 mb-6">Subscribe via RSS</h1>
 
-  <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+  <p class="text-lg text-gray-600 mb-8">
     Follow our content using your favorite RSS reader. Choose the main feed or subscribe to specific categories, languages, or events.
   </p>
 
   <section class="mb-10">
-    {{ partial "heading.html" (dict "level" 2 "text" "Main Feeds" "class" "text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" "Main Feeds" "class" "text-2xl font-semibold text-gray-800 mb-4") }}
     <ul class="list-disc list-inside space-y-2 text-lg">
       <li>
-        <a href="/blog/index.xml" class="text-blue-600 dark:text-blue-400 hover:underline">All blog posts</a>
+        <a href="/blog/index.xml" class="text-blue-600 hover:underline">All blog posts</a>
       </li>
       <li>
-        <a href="/events/index.xml" class="text-blue-600 dark:text-blue-400 hover:underline">Events</a>
-        <span class="text-gray-500 dark:text-gray-500 text-sm">(upcoming and recent)</span>
+        <a href="/events/index.xml" class="text-blue-600 hover:underline">Events</a>
+        <span class="text-gray-500 text-sm">(upcoming and recent)</span>
       </li>
     </ul>
   </section>
 
   {{ with site.Taxonomies.categories }}
   <section class="mb-10">
-    {{ partial "heading.html" (dict "level" 2 "text" "By Category" "class" "text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" "By Category" "class" "text-2xl font-semibold text-gray-800 mb-4") }}
     <ul class="list-disc list-inside space-y-2 text-lg">
       {{- range $name, $pages := . }}
       {{- $count := 0 -}}
@@ -32,8 +32,8 @@
       {{- end -}}
       {{- if gt $count 0 }}
       <li>
-        <a href="/categories/{{ $name | urlize }}/index.xml" class="text-blue-600 dark:text-blue-400 hover:underline">{{ $name | title }}</a>
-        <span class="text-gray-500 dark:text-gray-500 text-sm">({{ $count }})</span>
+        <a href="/categories/{{ $name | urlize }}/index.xml" class="text-blue-600 hover:underline">{{ $name | title }}</a>
+        <span class="text-gray-500 text-sm">({{ $count }})</span>
       </li>
       {{- end }}
       {{- end }}
@@ -43,7 +43,7 @@
 
   {{ with site.Taxonomies.languages }}
   <section class="mb-10">
-    {{ partial "heading.html" (dict "level" 2 "text" "By Language" "class" "text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" "By Language" "class" "text-2xl font-semibold text-gray-800 mb-4") }}
     <ul class="list-disc list-inside space-y-2 text-lg">
       {{- range $name, $pages := . }}
       {{- $count := 0 -}}
@@ -54,8 +54,8 @@
       {{- end -}}
       {{- if gt $count 0 }}
       <li>
-        <a href="/languages/{{ $name | urlize }}/index.xml" class="text-blue-600 dark:text-blue-400 hover:underline">{{ $name | title }}</a>
-        <span class="text-gray-500 dark:text-gray-500 text-sm">({{ $count }})</span>
+        <a href="/languages/{{ $name | urlize }}/index.xml" class="text-blue-600 hover:underline">{{ $name | title }}</a>
+        <span class="text-gray-500 text-sm">({{ $count }})</span>
       </li>
       {{- end }}
       {{- end }}
