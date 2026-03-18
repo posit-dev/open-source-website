@@ -411,13 +411,14 @@
      HERO FORMAT — detail page header
      ============================================================ */}}
 {{ $hero_layout := $card_settings.hero_layout | default "banner" }}
+{{ $hero_image_show := $card_settings.hero_image_show | default true }}
 
 <div id="{{ $item_id }}" class="@container flex flex-col
             rounded-xl overflow-hidden {{ $card_settings.card_class }} {{ $card_settings.hero_class }}">
 
   {{ if eq $hero_layout "banner" }}
   {{/* ---- BANNER: full-width image, content below ---- */}}
-  {{ if $image }}
+  {{ if and $image $hero_image_show }}
   <div class="w-full h-64 md:h-96">
     {{ partial "responsive_image_container.html" (dict
       "image" $image
@@ -514,6 +515,7 @@
   <div class="flex flex-col md:flex-row">
 
     {{/* -- Image area (same structure as card) -- */}}
+    {{ if $hero_image_show }}
     <div class="w-full md:w-1/3 aspect-square flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
         {{ partial "responsive_image_fixed.html" (dict
@@ -526,6 +528,7 @@
         ) }}
       {{ end }}
     </div>
+    {{ end }}
 
     {{/* -- Content area -- */}}
     <div class="flex flex-col gap-y-3 flex-grow p-6">
