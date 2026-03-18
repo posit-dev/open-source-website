@@ -27,7 +27,7 @@
   {{ $iconRight = "" }}
 {{ end }}
 
-{{ $baseClass := "btn-shortcode inline-flex mr-5 items-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white font-semibold text-sm leading-5 align-middle hover:bg-blue-600 transition no-underline" }}
+{{ $baseClass := "btn-shortcode inline-flex mb-5 mr-5 items-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white font-semibold text-sm leading-5 align-middle hover:bg-blue-600 transition no-underline" }}
 {{ $finalClass := trim (printf "%s %s" $baseClass $class) " " }}
 
 <a href="{{ $url }}"
