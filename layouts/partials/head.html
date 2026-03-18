@@ -21,6 +21,7 @@
     {{- $imgAlt = $img_result.alt -}}
   {{- else -}}
     {{- $imgURL = "/images/blog-placeholder.svg" | absURL -}}
+    {{- $imgAlt = "Posit Open Source Blog" -}}
   {{- end -}}
   <meta property="og:image" content="{{ $imgURL }}" />
   <meta name="twitter:image" content="{{ $imgURL }}" />
