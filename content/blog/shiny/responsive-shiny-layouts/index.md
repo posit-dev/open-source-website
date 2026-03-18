@@ -37,7 +37,7 @@ When first starting with Shiny, developers might create UI elements without expl
 
 Let's say we want two cards to appear side-by-side on a desktop, but stacked vertically on a mobile device. Here's how we can achieve that using Shiny Express mode (the same principle applies to core Shiny):
 
-<https://www.youtube.com/embed/KkUpgeUIVvM>
+{{< video src="https://www.youtube.com/embed/KkUpgeUIVvM" >}}
 
 ``` python
 with ui.layout_columns(

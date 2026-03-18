@@ -66,7 +66,7 @@ def pa_df():
 
 For a quick demo, Barret Schloerke will talk about the example above and more!
 
-<https://youtu.be/W-_0rkcuB_8>
+{{< video src="https://youtu.be/W-_0rkcuB_8" >}}
 
 ------------------------------------------------------------------------
 

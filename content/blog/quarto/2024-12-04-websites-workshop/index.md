@@ -25,7 +25,7 @@ Do you need a professional website to showcase your work? If you've used Quarto 
 
 In this video, you'll get a running start by using a template we've designed to be functional and attractive, and that will serve as a foundation for the rest of the video series. You'll customize the content of your homepage, and how it looks, and along the way learn about the two key files in a Quarto website index.qmd and \_quarto.yml. Finally, you'll learn one way to publish your website so other people can see it.
 
-<https://youtu.be/l7r24gTEkEY>
+{{< video src="https://youtu.be/l7r24gTEkEY" >}}
 
 Links: [About pages](https://quarto.org/docs/websites/website-about.html) \| [YAML appearance options](https://quarto.org/docs/output-formats/html-themes.html#basic-options)
 
@@ -35,7 +35,7 @@ Code: [Starter](https://github.com/EmilHvitfeldt/website-template) \| [Final](ht
 
 Now you've got a homepage, you'll likely want to add some other pages. In this video, learn how to add pages to your website, and help people find them, by adding them to your website navigation.
 
-<https://youtu.be/k65E-8PXZmA>
+{{< video src="https://youtu.be/k65E-8PXZmA" >}}
 
 Links: [Bootstrap icons](https://icons.getbootstrap.com/) \| [Navigation bar options](https://quarto.org/docs/websites/website-navigation.html#top-navigation) \| [Quarto website navigation](https://quarto.org/docs/websites/website-navigation.html)
 
@@ -45,7 +45,7 @@ Code: [Starter](Starter%20source%20code:%20https://github.com/cwickham/quarto-we
 
 You now have a set of content you are happy with on your website, but how do you customize the look and feel of your site beyond options set in YAML? In this video, you'll start by learning the basics of CSS and SCSS and how to make good design choices. Then, you'll see how to apply these choices to your Quarto website.
 
-<https://youtu.be/pAN2Hiq0XGs>
+{{< video src="https://youtu.be/pAN2Hiq0XGs" >}}
 
 Links: [Color contrast checker](https://colourcontrast.cc/) \| [Google fonts](https://fonts.google.com/)
 
@@ -55,7 +55,7 @@ Code: [Starter](https://github.com/cwickham/quarto-website-video/tree/v0.2) \| [
 
 Adding a listing page to your website is a great way to showcase your projects, talks, publications or blog posts. In this video you'll learn how to create a listing page in Quarto and see two ways to populate it with content: Quarto documents, or a yaml file.
 
-<https://www.youtube.com/watch?v=bv_Cw-3HI1Y>
+{{< video src="https://www.youtube.com/watch?v=bv_Cw-3HI1Y" >}}
 
 Links: [Listings](https://quarto.org/docs/websites/website-listings.html) \| [Andrew Heiss' teaching listing](https://www.andrewheiss.com/teaching/)
 

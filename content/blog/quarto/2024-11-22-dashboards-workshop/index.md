@@ -25,16 +25,16 @@ Materials: [YouTube playlist](https://youtube.com/playlist?list=PLitrm9UndxcsapD
 
 Start by getting to know Quarto dashboards and make your very first dashboard using either R or Python and share it online. [Slides](https://mine.quarto.pub/quarto-dashboards/1-hello-dashboards/#/title-slide)
 
-<https://www.youtube.com/watch?v=HW7QbqI4fH0>
+{{< video src="https://www.youtube.com/watch?v=HW7QbqI4fH0" >}}
 
 ## 2. Quarto Dashboards Components
 
 Then, build up your arsenal of dashboard components to add navigation, sidebars, tabsets, value boxes, and fine-tune layout. [Slides](https://mine.quarto.pub/quarto-dashboards/2-dashboard-components/#/title-slide)
 
-<https://www.youtube.com/watch?v=KdsQgwaY950>
+{{< video src="https://www.youtube.com/watch?v=KdsQgwaY950" >}}
 
 ## 3. Quarto Dashboards Theming and Styling
 
 Finally, make your dashboard pop by adding a theme and making styling tweaks. [Slides](https://mine.quarto.pub/quarto-dashboards/3-theming-styling/#/title-slide)
 
-<https://www.youtube.com/watch?v=NigWSB-jG4Y>
+{{< video src="https://www.youtube.com/watch?v=NigWSB-jG4Y" >}}

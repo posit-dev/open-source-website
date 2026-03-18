@@ -4,7 +4,7 @@ title: "Welcome to Posit Open Source"
 
 We build open source software for data science, scientific research, and technical communication. Our tools are designed to help you do better work, whether you're analyzing data, building models, creating visualizations, or sharing insights.
 
-[[Learn more about us](about/posit/) ->]
+{{< button url="about/posit/" text="Learn more about us" icon="boxicons--globe" >}}
 
 ## Core projects
 
@@ -25,21 +25,23 @@ Explore some of our newest and most innovative packages. These tools represent o
 - software/orbital
 {{< /insert-items>}}
 
+{{< button url="/software/" text="Browse all software" icon="boxicons--hexagon-filled" >}}
+
 ## Latest from the blog
 
 Recent releases, project deep dives, and updates from across our open-source ecosystem.
 
 {{< query-items path="/blog/.*" sort-by="date" limit="3" cols="3" format="card" >}}
 
-[[Read all blog posts](blog) /-/>]
+{{< button url="blog" text="Read all blog posts" icon="boxicons--message-filled" >}}
 
 ## Upcoming events
 
 Join us at conferences, meetups, and workshops around the world where we share our latest work and connect with the community.
 
-{{< query-items path="/events/.*" sort-by="date" limit="3" cols="3" format="card" >}}
+{{< query-items path="^/events/.*" filter=`{">": [{"var": "start_date"}, "$today"]}` sort-by="start_date" sort-direction="ascending" limit="3" cols="3" format="card" hide-badge=true >}}
 
-[[See all events](/events/) ->]
+{{< button url="/events/" text="See all events" icon="boxicons--calendar-event-filled" >}}
 
 ## About us
 
@@ -47,14 +49,14 @@ RStudio (now Posit, PBC) was founded in 2009 with the vision of creating high qu
 
 Our open source work is supported by the mission of Posit: we are a PBC that both [sells](https://posit.co/products/enterprise/connect/) [software](https://posit.co/products/enterprise/workbench/) and supports the wider data science community with free software, open access books, and more.
 
-[[Learn more about our mission](about/posit/) ->]
+{{< button url="about/posit/" text="Learn more about our mission" icon="boxicons--globe" >}}
 
 The Open Source team is a global team of engineers, educators, and data scientists. We build better tools for data science and participate in the open source community that use them.
 
-[[Meet the team](/people/) ->]
+{{< button url="/people/" text="Meet the team" icon="boxicons--face-filled" >}}
 
 ## Get involved
 
 This website is open source! We welcome contributions, bug reports, and feedback. Your input helps make this resource better for everyone.
 
-[[Contribute on GitHub](https://github.com/posit-dev/open-source-website) /-/>]
+{{< button url="https://github.com/posit-dev/open-source-website" text="Contribute on GitHub" icon="simple-icons--github" >}}

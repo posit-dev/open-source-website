@@ -5,11 +5,6 @@ people:
   - Winston Chang
 date: "2024-10-09"
 image-alt: "an image with lines representing ai computing lie behind a chatbox icon"
-resources:
-    - mortgage-calculator-1.mp4
-    - mortgage-calculator-2.mp4
-    - mortgage-calculator-3.mp4
-    - mortgage-calculator-4.mp4
 image-video: shiny-assistant.mp4
 image: shiny-assistant.gif
 

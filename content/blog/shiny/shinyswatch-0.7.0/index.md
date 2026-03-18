@@ -37,7 +37,7 @@ This release includes a number of new features that we're excited to share with 
 Some of these changes may require you to update your existing code, so please read on to learn more!
 
 Prior to shinyswatch v0.7.0, the Shiny themes provided by shinyswatch were fixed and could not be customized.
-With this release, we're taking advantage of new theming features added in [Shiny v1.0](/blog/shiny/shiny-python-1.0/) to allow you to customize the shinyswatch themes!
+With this release, we're taking advantage of new theming features added in [Shiny v1.0](../../../blog/shiny/shiny-python-1.0/) to allow you to customize the shinyswatch themes!
 
 This change, however, necessitated a few small breaking changes in shinyswatch that we'll cover first.
 
@@ -47,7 +47,12 @@ This change, however, necessitated a few small breaking changes in shinyswatch t
 
 Prior to v0.7.0, to set the theme of a Shiny app, you could add the shinyswatch theme object to your app's UI anywhere you wanted.
 
-#### Express
+<div class="panel-tabset" data-tabset-group="shiny-app-mode">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-1-1">Express</a></li>
+<li><a href="#tabset-1-2">Core</a></li>
+</ul>
+<div id="tabset-1-1">
 
 **app.py**
 
@@ -65,7 +70,8 @@ ui.output_text_verbatim("slider_val")
 # the rest of your app ...
 ```
 
-#### Core
+</div>
+<div id="tabset-1-2">
 
 **app.py**
 
@@ -83,9 +89,17 @@ app_ui = ui.page_fluid(
 # server ...
 ```
 
+</div>
+</div>
+
 **With shinyswatch v0.7.0,** you now need to pass the `shinyswatch.theme` object to the `theme` argument of `shiny.express.ui.page_opts()` or of any `shiny.ui.page_*()` function.
 
-#### Express
+<div class="panel-tabset" data-tabset-group="shiny-app-mode">
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-2-1">Express</a></li>
+<li><a href="#tabset-2-2">Core</a></li>
+</ul>
+<div id="tabset-2-1">
 
 **app.py**
 
@@ -103,7 +117,8 @@ ui.output_text_verbatim("slider_val")
 # the rest of your app ...
 ```
 
-#### Core
+</div>
+<div id="tabset-2-2">
 
 **app.py**
 
@@ -121,6 +136,9 @@ app_ui = ui.page_fluid(
 # server ...
 ```
 
+</div>
+</div>
+
 Read about the [customizable theme features](#customizing-theme) below to learn about the feature that required this change.
 
 ### Choosing an initial theme with the theme picker
@@ -130,9 +148,18 @@ This short-lived argument is now deprecated.
 
 **Instead, in shinyswatch v0.7.0**, the initial app theme must be set separately from the theme picker UI, using the same method described above.
 
-#### Express
-
-#### Before
+<div class="panel-tabset" data-tabset-group="shiny-app-mode">
+<ul id="tabset-5" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-5-1">Express</a></li>
+<li><a href="#tabset-5-2">Core</a></li>
+</ul>
+<div id="tabset-5-1">
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-3-1">Before</a></li>
+<li><a href="#tabset-3-2">After</a></li>
+</ul>
+<div id="tabset-3-1">
 
 **app.py**
 
@@ -149,7 +176,8 @@ ui.output_text_verbatim("slider_val")
 # the rest of your app ...
 ```
 
-#### After
+</div>
+<div id="tabset-3-2">
 
 **app.py**
 
@@ -167,9 +195,16 @@ ui.output_text_verbatim("slider_val")
 # the rest of your app ...
 ```
 
-#### Core
-
-#### Before
+</div>
+</div>
+</div>
+<div id="tabset-5-2">
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-4-1">Before</a></li>
+<li><a href="#tabset-4-2">After</a></li>
+</ul>
+<div id="tabset-4-1">
 
 **app.py**
 
@@ -187,7 +222,8 @@ app_ui = ui.page_fluid(
 # server ...
 ```
 
-#### After
+</div>
+<div id="tabset-4-2">
 
 **app.py**
 
@@ -205,6 +241,11 @@ app_ui = ui.page_fluid(
 
 # server ...
 ```
+
+</div>
+</div>
+</div>
+</div>
 
 This change accompanies a set of [new theme picker features described below](#theme-picker-improvements).
 

@@ -1,0 +1,41 @@
+{{/* button: Render a styled link as a button.
+     Required: url
+     Optional: text, target, icon (alias for icon-left), icon-left, icon-right, alt (aria-label), class
+     External URLs (http/https) automatically get target="_blank" and a tabler--external-link icon on the right.
+     Set icon-right="false" to suppress the automatic external icon.
+*/}}
+{{ $url := .url }}
+{{ $text := .text | default "" }}
+{{ $target := .target | default "" }}
+{{ $iconLeft := index . "icon-left" | default (index . "icon" | default "") }}
+{{ $iconRight := index . "icon-right" | default "" }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+
+{{ $isExternal := or (hasPrefix $url "http://") (hasPrefix $url "https://") }}
+
+{{/* Auto-set target="_blank" for external URLs unless explicitly overridden */}}
+{{ if and $isExternal (eq $target "") }}
+  {{ $target = "_blank" }}
+{{ end }}
+
+{{/* Auto-set external icon on the right unless suppressed */}}
+{{ if and $isExternal (ne $iconRight "false") (eq $iconRight "") }}
+  {{ $iconRight = "tabler--external-link" }}
+{{ end }}
+{{ if eq $iconRight "false" }}
+  {{ $iconRight = "" }}
+{{ end }}
+
+{{ $baseClass := "btn-shortcode inline-flex mr-5 items-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white font-semibold text-sm leading-5 align-middle hover:bg-blue-600 transition no-underline" }}
+{{ $finalClass := trim (printf "%s %s" $baseClass $class) " " }}
+
+<a href="{{ $url }}"
+  {{- if $target }} target="{{ $target }}"{{ end -}}
+  {{- if eq $target "_blank" }} rel="noopener noreferrer"{{ end -}}
+  {{- if $alt }} aria-label="{{ $alt }}"{{ end }}
+  class="{{ $finalClass }}">
+  {{- with $iconLeft }}<span class="icon-[{{ . }}] w-5 h-5 flex-none"></span>{{ end -}}
+  {{- with $text }}{{ . }}{{ end -}}
+  {{- with $iconRight }}<span class="icon-[{{ . }}] w-4 h-4 flex-none"></span>{{ end -}}
+</a>

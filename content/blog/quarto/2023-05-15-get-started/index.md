@@ -19,7 +19,7 @@ port_status: in-progress
 
 Have you been hearing about Quarto but didn't give it a try yet? Perused the [Get Started](https://quarto.org/docs/get-started/index.html) pages but would like another intro? Or have about 20 minutes to spare and want to pick up a few Quarto tips? You've come to the right place!
 
-<https://www.youtube.com/embed/_f3latmOhew>
+{{< video src="https://www.youtube.com/embed/_f3latmOhew" >}}
 
 In this video, I walk you through creating documents, presentations, and websites and publishing with Quarto. The video features authoring Quarto documents with executable R code chunks using the [RStudio Visual Editor](https://quarto.org/docs/visual-editor/index.html).
 

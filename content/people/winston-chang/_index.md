@@ -1,7 +1,7 @@
 ---
 title: "Winston Chang"
 image: "profile.jpg"
-role: ""
+role: "Principal Software Engineer"
 affiliation: "Posit, PBC"
 social:
   bluesky: ""

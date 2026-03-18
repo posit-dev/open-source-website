@@ -31,17 +31,17 @@
 {{ $gridTemplate := delimit $frParts " " }}
 
 <style>
-#{{ $id }} { display: grid; gap: 1.5rem; align-items: start; }
+#{{ $id }} { display: grid; gap: 3rem; align-items: start; }
 @media (min-width: 768px) {
   #{{ $id }} { grid-template-columns: {{ $gridTemplate | safeCSS }}; }
 }
 </style>
-<div id="{{ $id }}">
+<div id="{{ $id }}" class="mt-12">
   {{ range $columns }}
     {{ if findRE "<div" . }}
       <div>{{ . | safeHTML }}</div>
     {{ else }}
-      <div class="prose">{{ . | markdownify }}</div>
+      <div class="prose max-w-none">{{ . | markdownify }}</div>
     {{ end }}
   {{ end }}
 </div>

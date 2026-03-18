@@ -25,19 +25,11 @@ port_status: in-progress
 ```{=html}
 <style>
 img { border-radius: 8px; }
-.nav-centered > .nav {
-  justify-content: center;
-  border: none;
-}
-.nav-centered > .tab-content {
-  border: none;
-}
 .link-shinylive {
   position: absolute;
   bottom: 0;
   right: 0.5em;
   background-color: unset;
-  font-family: var(--bs-font-sans-serif);
 }
 </style>
 <script>
@@ -150,29 +142,15 @@ The new shiny preset is designed with dashboards in mind.
 Here's a more complete example using a full dashboard app ([source][flights-source], [demo][flights-demo]) for exploring [flight data from Chicago][chiflights22].
 Toggle between the new and old look to see what's changed with this release.
 
-```{=html}
-<div class="column-screen py-3 my-3">
-  <div class="column-page">
-  <ul class="nav nav-pills justify-content-center" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#flights-old" type="button" role="tab" aria-controls="flights-old" aria-selected="false">Old</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#flights-new" type="button" role="tab" aria-controls="flights-new" aria-selected="true">New</button>
-    </li>
-  </ul>
+::: {.panel-tabset}
+## New
 
-  <div class="tab-content p-3 border-0">
-    <div class="tab-pane fade show active" id="flights-new" role="tabpanel">
-      <img src="flights-new.png" class="img-fluid shadow" alt="Flights dashboard with the new styles, featuring a white navbar and white sidebar framing the dashboard area. Cards are also entirely white on a light gray background, with subtle depth created by drop shadows under the cards. Blue accents are found throughout the dashboard in plots and icons.">
-    </div>
-    <div class="tab-pane" id="flights-old" role="tabpanel">
-      <img src="flights-old.png" class="img-fluid shadow" alt="Flights dashboard with the old styles, features solid blue navbar and solid blue value boxes. The sidebar and card headers and footers all have a light gray background.">
-    </div>
-  </div>
-  </div>
-</div>
-```
+![Flights dashboard with the new styles, featuring a white navbar and white sidebar framing the dashboard area. Cards are also entirely white on a light gray background, with subtle depth created by drop shadows under the cards. Blue accents are found throughout the dashboard in plots and icons.](flights-new.png)
+
+## Old
+
+![Flights dashboard with the old styles, features solid blue navbar and solid blue value boxes. The sidebar and card headers and footers all have a light gray background.](flights-old.png)
+:::
 
 The rest of this section will explore a few highlights of the new default look, including:
 
@@ -199,56 +177,29 @@ Value boxes provide colorful accents, as will the plots you add to showcase your
 
 Here's an example taken straight from the [getting started guide](https://rstudio.github.io/bslib/articles/dashboards/index.html) for `{bslib}` dashboards.
 
-```{=html}
-<div class="column-screen py-3 my-3">
-  <div class="column-page">
-  <ul class="nav nav-pills justify-content-center" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#simple-old" type="button" role="tab" aria-controls="simple-old" aria-selected="false">Old</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#simple-new" type="button" role="tab" aria-controls="simple-new" aria-selected="true">New</button>
-    </li>
-  </ul>
+::: {.panel-tabset}
+## New
 
-  <div class="tab-content p-3 border-0">
-    <div class="tab-pane fade show active" id="simple-new" role="tabpanel">
-      <img src="simple-new.png" class="img-fluid shadow" alt="New page_sidebar() styling featuring a light, minimal look with a white title bar, white sidebar and white cards and value boxes. The cards and value boxes have subtle shadows on a light gray background. Value boxes icons are blue with a subtle gradient">
+![New page_sidebar() styling featuring a light, minimal look with a white title bar, white sidebar and white cards and value boxes. The cards and value boxes have subtle shadows on a light gray background. Value boxes icons are blue with a subtle gradient](simple-new.png)
 
-    </div>
-    <div class="tab-pane" id="simple-old" role="tabpanel">
-      <img src="simple-old.png" class="img-fluid shadow" alt="Old page_sidebar() styling with a dark title bar. Sidebars and card headers and footers have a light gray background. Cards and value boxes do not have shadows and value box icons are solid dark gray.">
-    </div>
-  </div>
-  </div>
-</div>
-```
+## Old
+
+![Old page_sidebar() styling with a dark title bar. Sidebars and card headers and footers have a light gray background. Cards and value boxes do not have shadows and value box icons are solid dark gray.](simple-old.png)
+:::
 
 
 To achieve the full dashboard effect, though, you have opt into the light gray background by adding `class = "bslib-page-dashboard"` to your `page_sidebar()` or the `nav_panel()` items in your `page_navbar()`.
 This class enables a few additional features, namely adding a soft gray background to the main content area under cards and value boxes that help them stand out.
 You can also add the `class` directly to `page_fillable()` or `page()` to get the same effect in apps with custom layouts.
 
-```{=html}
-<div class="column-page py-3 my-3 grid align-items-start">
-  <ul class="g-col-md-3 g-col-12 nav nav-pills flex-md-column justify-content-center" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active font-monospace" data-bs-toggle="tab" data-bs-target="#class-sidebar" type="button" role="tab" aria-controls="class-sidebar" aria-selected="true">page_sidebar()</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link font-monospace" data-bs-toggle="tab" data-bs-target="#class-navbar" type="button" role="tab" aria-controls="class-navbar" aria-selected="false">page_navbar()</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link font-monospace" data-bs-toggle="tab" data-bs-target="#class-fillable" type="button" role="tab" aria-controls="class-fillable" aria-selected="false">page_fillable()</button>
-    </li>
-  </ul>
+::: {.panel-tabset}
+## page_sidebar()
 
-  <div class="g-col-md-9 g-col-12 tab-content p-3 border-0">
-    <div class="tab-pane fade show active" id="class-sidebar" role="tabpanel">
-      <div class="sourceCode R"><pre class="sourceCode r"><code class="sourceCode R">library(shiny)
+```r
+library(shiny)
 library(bslib)
 
-ui &lt;- page_sidebar(
+ui <- page_sidebar(
   title = "My Dashboard",
   class = "bslib-page-dashboard",
   sidebar = sidebar(
@@ -256,13 +207,16 @@ ui &lt;- page_sidebar(
     # ... sidebar inputs ...
   ),
   # ... dashboard content ...
-)</code></pre></div>
-    </div>
-    <div class="tab-pane" id="class-navbar" role="tabpanel">
-      <div class="sourceCode R"><pre class="sourceCode r"><code class="sourceCode R">library(shiny)
+)
+```
+
+## page_navbar()
+
+```r
+library(shiny)
 library(bslib)
 
-ui &lt;- page_navbar(
+ui <- page_navbar(
   title = "My Dashboard",
   nav_panel(
     title = "Page 1",
@@ -270,21 +224,22 @@ ui &lt;- page_navbar(
     # ... dashboard content ...
   ),
   nav_panel("About", "Regular content")
-)</code></pre></div>
-    </div>
-    <div class="tab-pane" id="class-fillable" role="tabpanel">
-      <div class="sourceCode R"><pre class="sourceCode r"><code class="sourceCode R">library(shiny)
+)
+```
+
+## page_fillable()
+
+```r
+library(shiny)
 library(bslib)
 
-ui &lt;- page_fillable(
+ui <- page_fillable(
   title = "My Dashboard",
   class = "bslib-page-dashboard",
   # ... custom layout and dashboard content ...
-)</code></pre></div>
-    </div>
-  </div>
-</div>
+)
 ```
+:::
 
 ### Built-in dark mode support ☀️ 🌙 {#dark-mode}
 
@@ -292,29 +247,15 @@ This release of bslib brings built-in dark mode support to any Shiny app that us
 To enable dark mode in your app, add `input_dark_mode()` somewhere in your UI.
 In the example below, we've [put in the navbar](https://github.com/rstudio/bslib/blob/f574b9f0/inst/examples/flights/app.R#L231-L233).
 
-```{=html}
-<div class="column-screen py-3 my-3">
-  <div class="column-page">
-  <ul class="nav nav-pills justify-content-center" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#flights-light" type="button" role="tab" aria-controls="flights-light" aria-selected="false">Light</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#flights-dark" type="button" role="tab" aria-controls="flights-dark" aria-selected="true">Dark</button>
-    </li>
-  </ul>
+::: {.panel-tabset}
+## Dark
 
-  <div class="tab-content p-3 border-0">
-    <div class="tab-pane fade show active" id="flights-dark" role="tabpanel">
-      <img src="flights-dark.png" class="img-fluid shadow" alt="Flights dashboard in dark mode. All white areas are now a deep dark gray. The blue accents remain.">
-    </div>
-    <div class="tab-pane" id="flights-light" role="tabpanel">
-      <img src="flights-light.png" class="img-fluid shadow" alt="Flights dashboard in light mode as previously described.">
-    </div>
-  </div>
-  </div>
-</div>
-```
+![Flights dashboard in dark mode. All white areas are now a deep dark gray. The blue accents remain.](flights-dark.png)
+
+## Light
+
+![Flights dashboard in light mode as previously described.](flights-light.png)
+:::
 
 For the best results, make sure you have the latest version of [shiny].
 Dark mode works with nearly any Bootstrap theme created with `bs_theme()`, including the new shiny preset, but it tends to work best when the theme is designed around light mode first.
@@ -487,57 +428,27 @@ layout_columns(
 
 ::::
 
-```{=html}
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Make nav-pills work in Quarto without directly writing the markup
-  document.querySelectorAll(".nav-centered.nav-pills").forEach(function(el) {
-    el.classList.remove('nav-pills');
-    el.firstElementChild.classList.add('nav-pills');
-    el.firstElementChild.classList.remove('nav-tabs');
-  })
-})
-</script>
-```
-
-
-
 ### Refreshed Shiny UI {#refreshed-shiny-ui}
 
 The new default look includes a refreshed Shiny UI, which includes new styling for inputs, modals, notifications, and more.
 
-```{=html}
-<div class="column-page py-3 my-3 grid">
-  <ul class="g-col-md-3 g-col-12 nav nav-pills flex-md-column justify-content-center" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#preset-inputs" type="button" role="tab" aria-controls="preset-inputs" aria-selected="true">Inputs</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#preset-notifications" type="button" role="tab" aria-controls="preset-notifications" aria-selected="false">Notifications</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#preset-progress-bar" type="button" role="tab" aria-controls="preset-progress-bar" aria-selected="false">Progress Bars</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#preset-modals" type="button" role="tab" aria-controls="preset-modals" aria-selected="false">Modals</button>
-    </li>
-  </ul>
-  <div class="g-col-md-9 g-col-12 tab-content p-3 border-0">
-    <div class="tab-pane fade show active" id="preset-inputs" role="tabpanel">
-      <img src="shiny-preset-inputs.gif" class="img-fluid" alt="New inputs styles, in particular a minimal slider input." />
-    </div>
-    <div class="tab-pane fade" id="preset-notifications" role="tabpanel">
-      <img src="shiny-preset-notifications.gif" class="img-fluid" alt="New notification styles for default, message, warning and error notifications. Notifications have shadows and have a large amount of padding around the edges compared with Shiny's default design." />
-    </div>
-    <div class="tab-pane fade" id="preset-progress-bar" role="tabpanel">
-      <img src="shiny-preset-progress-bar.gif" class="img-fluid" alt="New progress bar notification styles, which are similar to notifications." />
-    </div>
-    <div class="tab-pane fade" id="preset-modals" role="tabpanel">
-      <img src="shiny-preset-modal.png" class="img-fluid" alt="An example modal with the new shiny preset style. The modal is minimal with additional padding and the backdrop has a soft blur effect." />
-    </div>
-  </div>
-</div>
-```
+::: {.panel-tabset}
+## Inputs
+
+![New inputs styles, in particular a minimal slider input.](shiny-preset-inputs.gif)
+
+## Notifications
+
+![New notification styles for default, message, warning and error notifications. Notifications have shadows and have a large amount of padding around the edges compared with Shiny's default design.](shiny-preset-notifications.gif)
+
+## Progress Bars
+
+![New progress bar notification styles, which are similar to notifications.](shiny-preset-progress-bar.gif)
+
+## Modals
+
+![An example modal with the new shiny preset style. The modal is minimal with additional padding and the backdrop has a soft blur effect.](shiny-preset-modal.png)
+:::
 
 
 ## Shinylive updates {#shinylive-updates}

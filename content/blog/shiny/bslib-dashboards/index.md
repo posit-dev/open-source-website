@@ -35,9 +35,9 @@ You can run the examples in this post yourself (without having to install anythi
 
 ### Hello dashboards
 
-`{bslib}`'s [last release](/blog/shiny/announcing-new-r-shiny-ui-components/) first introduced some important dashboard components (e.g., cards, value boxes, etc), but this release adds other essential pieces such as sidebar layouts, filling layouts, new column-wise layouts, accordions, and more. `{bslib}`'s new [Getting Started with dashboards](https://rstudio.github.io/bslib/articles/dashboards.html) article introduces all these pieces by first starting with a basic app and working towards some non-trivial dashboards, like the one below:
+`{bslib}`'s [last release](../../../blog/shiny/announcing-new-r-shiny-ui-components/) first introduced some important dashboard components (e.g., cards, value boxes, etc), but this release adds other essential pieces such as sidebar layouts, filling layouts, new column-wise layouts, accordions, and more. `{bslib}`'s new [Getting Started with dashboards](https://rstudio.github.io/bslib/articles/dashboards.html) article introduces all these pieces by first starting with a basic app and working towards some non-trivial dashboards, like the one below:
 
-![A Shiny dashboard for exploring the palmerpenguins dataset built using bslib](dashboard.mp4)
+{{< video src="dashboard.mp4" title="A Shiny dashboard for exploring the palmerpenguins dataset built using bslib" >}}
 
 <a  href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="01-hello-dashboards.R">
 <i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
@@ -63,7 +63,7 @@ we're choosing to expand the footprint of bslib.
 It now provides themable and modern Bootstrap components that are perfect for dashboard apps,
 meaning that you can expect [real time themes](https://rstudio.github.io/bslib/articles/theming.html#real-time), [Bootswatch themes](https://rstudio.github.io/bslib/articles/theming.html#bootswatch), and [custom themes](https://rstudio.github.io/bslib/articles/theming.html#main-colors) to "just work" like they do for most other Shiny apps and R Markdown docs powered by `{bslib}`.
 
-![Real-time theming a Shiny dashboard with bslib](dashboard-real-time.mp4)
+{{< video src="dashboard-real-time.mp4" title="Real-time theming a Shiny dashboard with bslib" >}}
 
 <a  href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="02-themable-dashboards.R">
 <i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
@@ -80,7 +80,7 @@ This release includes two big improvements to layouts. First, `{bslib}` has been
 
 Second, we've added `layout_columns()`, a new approach to [column-wise layout](https://rstudio.github.io/bslib/articles/dashboards.html#multi-column). Compared to `shiny::fluidRow()`/`shiny::column()`, this newer interface to Bootstrap's 12-column grid layout system is much more expressive and is compatible with filling layouts. For example, in just one function call, you can express a 12-column layout with multiple rows (and control the row heights), define negative space, and even responsively change the layout depending on screen size with a new `breakpoints()` helper function.
 
-![A Shiny dashboard with a responsive, filling, layout](layout-columns.mp4)
+{{< video src="layout-columns.mp4" title="A Shiny dashboard with a responsive, filling, layout" >}}
 
 <a  href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="03-layout-tooling.R">
 <i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
@@ -95,7 +95,7 @@ Source
 
 In addition to page-level sidebars (via `page_sidebar()` and `page_navbar()`), `{bslib}` also provides [card-level sidebars](https://rstudio.github.io/bslib/articles/dashboards.html#cards-with-sidebars). This provides a convenient way to create keep visual proximity between the sidebar (input) controls and outputs that they effect, and as a result, helps users to better navigate more complex apps. This can be done through the `layout_sidebar()` function, which can either render standalone or inside of a `card()` (making it easy to add full-screen expansion, a header, footer, etc).
 
-![A couple examples of putting a sidebar inside a card](layout-sidebar.mp4)
+{{< video src="layout-sidebar.mp4" title="A couple examples of putting a sidebar inside a card" >}}
 
 <a  href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="04-card-level-sidebars.R">
 <i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
@@ -111,7 +111,7 @@ Source
 This release also includes a new [accordion](https://rstudio.github.io/bslib/reference/accordion.html) component, which is a great way to save space by hiding content behind a collapsible header.
 Accordions can be useful in a variety of apps, but in the context of dashboards, they're quite useful for grouping numerous related inputs together.
 
-![Using an accordion inside a sidebar to group multiple input controls together](accordion-sidebar.mp4)
+{{< video src="accordion-sidebar.mp4" title="Using an accordion inside a sidebar to group multiple input controls together" >}}
 
 <a  href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="05-accordions.R">
 <i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>

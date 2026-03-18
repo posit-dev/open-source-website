@@ -1,0 +1,11 @@
+{{/* button: Render a styled link as a button. */}}
+{{ partial "button.html" (dict
+  "url" (.Get "url")
+  "text" (.Get "text" | default "")
+  "target" (.Get "target" | default "")
+  "icon" (.Get "icon" | default "")
+  "icon-left" (.Get "icon-left" | default "")
+  "icon-right" (.Get "icon-right" | default "")
+  "alt" (.Get "alt" | default "")
+  "class" (.Get "class" | default "")
+) }}

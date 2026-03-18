@@ -1,7 +1,7 @@
 ---
 title: "Neal Richardson"
 image: "profile.jpg"
-role: ""
+role: "Vice President, Engineering"
 affiliation: "Posit, PBC"
 social:
   bluesky: ""

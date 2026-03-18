@@ -1,1 +1,10 @@
+project: 
+  type: default
+  render:
+    - "*.qmd"
+
 format: hugo-md
+
+filters:
+  - video-embed
+  - tabset

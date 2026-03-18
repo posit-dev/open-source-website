@@ -76,29 +76,37 @@
     {{ else if eq $op ">" }}
       {{ if or $aIsNil $bIsNil }}
         {{ $result = false }}
-      {{ else }}
+      {{ else if and $aIsNum $bIsNum }}
         {{ $result = gt (float $a) (float $b) }}
+      {{ else }}
+        {{ $result = gt (string $a) (string $b) }}
       {{ end }}
 
     {{ else if eq $op ">=" }}
       {{ if or $aIsNil $bIsNil }}
         {{ $result = false }}
-      {{ else }}
+      {{ else if and $aIsNum $bIsNum }}
         {{ $result = ge (float $a) (float $b) }}
+      {{ else }}
+        {{ $result = ge (string $a) (string $b) }}
       {{ end }}
 
     {{ else if eq $op "<" }}
       {{ if or $aIsNil $bIsNil }}
         {{ $result = false }}
-      {{ else }}
+      {{ else if and $aIsNum $bIsNum }}
         {{ $result = lt (float $a) (float $b) }}
+      {{ else }}
+        {{ $result = lt (string $a) (string $b) }}
       {{ end }}
 
     {{ else if eq $op "<=" }}
       {{ if or $aIsNil $bIsNil }}
         {{ $result = false }}
-      {{ else }}
+      {{ else if and $aIsNum $bIsNum }}
         {{ $result = le (float $a) (float $b) }}
+      {{ else }}
+        {{ $result = le (string $a) (string $b) }}
       {{ end }}
 
     {{ else if eq $op "in" }}
