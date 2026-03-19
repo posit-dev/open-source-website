@@ -1,9 +1,12 @@
 ---
-title: "sparklyr 1.7: New data sources and spark_apply() capabilities, better interfaces for sparklyr extensions, and more!"
+title: 'sparklyr 1.7: New data sources and spark_apply() capabilities, better interfaces
+  for sparklyr extensions, and more!'
 description: |
   Sparklyr 1.7 delivers much-anticipated improvements, including R interfaces for image and binary data sources, several new spark_apply() capabilities, and better integration with sparklyr extensions.
-date: 2021-07-06
+date: '2021-07-06'
 slug: sparklyr-1.7
+categories:
+  - MLOps & Admin
 author:
   - name: Yitao Li
     url: https://github.com/yitao-li
@@ -15,8 +18,6 @@ image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
-categories:
-  - MLOps & Admin
 ported_categories:
   - R
   - Packages/Releases

@@ -3,17 +3,18 @@ title: Epoch.com sponsors RMySQL development
 people:
   - Hadley Wickham
 date: '2015-02-11'
+categories:
+  - Community
+  - Data Wrangling
 slug: epoch-rmysql
 blogcategories:
-- Products and Technology
+  - Products and Technology
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["rmysql"]
 languages: ["R"]
-categories:
-  - Community
-  - Data Wrangling
 ported_categories:
   - Packages
 ---

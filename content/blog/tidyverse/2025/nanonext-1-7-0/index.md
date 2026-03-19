@@ -1,27 +1,23 @@
 ---
-
 slug: nanonext-1-7-0
 title: nanonext 1.7.0
-date: 2025-09-02
+date: '2025-09-02'
 people:
   - Charlie Gao
-description: >
-    nanonext is a communications and concurrency toolbox that facilitates fast,
-    powerful and reliable data exchange in polyglot data science workflows.
+description: |
+  nanonext is a communications and concurrency toolbox that facilitates fast, powerful and reliable data exchange in polyglot data science workflows.
 photo:
   url: https://unsplash.com/photos/photo-of-tower-during-daytime-i4ZF_4FTLL4
   author: Chuttersnap
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [nanonext]
-
+categories:
+  - Best Practices
+tags:
+  - nanonext
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "nanonext"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

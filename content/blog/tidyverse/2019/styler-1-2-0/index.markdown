@@ -1,5 +1,5 @@
 ---
-title: "styler 1.2.0"
+title: styler 1.2.0
 people:
   - Lorenz Walthert
 date: '2019-11-04'
@@ -9,6 +9,8 @@ photo:
   author: Heng Films
   url: https://unsplash.com/photos/mpdIPhYqZ4Y
 slug: styler-1-2-0
+categories:
+  - Best Practices
 tags:
   - styler
   - r-lib
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "styler"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

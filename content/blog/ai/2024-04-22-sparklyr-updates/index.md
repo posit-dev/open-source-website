@@ -1,9 +1,12 @@
 ---
-title: "News from the sparkly-verse"
+title: News from the sparkly-verse
 description: |
   Highlights to the most recent updates to `sparklyr` and friends
-date: 2024-04-22T00:00:00.000Z
+date: '2024-04-22T00:00:00.000Z'
 slug: sparklyr-updates-q1-2024
+categories:
+  - MLOps & Admin
+  - Data Wrangling
 author:
   - name: Edgar Ruiz
     affiliation: Posit
@@ -14,9 +17,6 @@ image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
-categories:
-  - MLOps & Admin
-  - Data Wrangling
 ported_categories:
   - Packages/Releases
   - Spark

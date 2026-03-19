@@ -1,9 +1,11 @@
 ---
-title: "Community spotlight: Fun with torchopt"
+title: 'Community spotlight: Fun with torchopt'
 description: |
   Today, we want to call attention to a highly useful package in the torch ecosystem: torchopt. It extends torch by providing a set of popular optimization algorithms not available in the base library. As this post will show, it is also fun to use!
-date: 2022-05-18
+date: '2022-05-18'
 slug: keydanatorchoptim
+categories:
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -14,8 +16,6 @@ image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Torch
   - R

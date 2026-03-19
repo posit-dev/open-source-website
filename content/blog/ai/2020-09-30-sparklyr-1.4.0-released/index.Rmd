@@ -1,5 +1,5 @@
 ---
-title: "sparklyr 1.4: Weighted Sampling, Tidyr Verbs, Robust Scaler, RAPIDS, and more"
+title: 'sparklyr 1.4: Weighted Sampling, Tidyr Verbs, Robust Scaler, RAPIDS, and more'
 description: |
   Sparklyr 1.4 is now available! This release comes with delightful new features such as weighted sampling and tidyr verbs support for Spark dataframes, robust scaler for standardizing data based on median and interquartile range, spark_connect interface for RAPIDS GPU acceleration plugin, as well as a number of dplyr-related improvements.
 author:
@@ -9,17 +9,15 @@ author:
     affiliation_url: https://www.rstudio.com
 slug: sparklyr-1.4
 date: 09-30-2020
-preview: images/sparklyr-1.4.jpg
-format: hugo-md
 categories:
   - MLOps & Admin
+preview: images/sparklyr-1.4.jpg
+format: hugo-md
+languages: ["R"]
 ported_categories:
   - R
   - Packages/Releases
   - Distributed Computing
-preview: images/sparklyr-1.4.jpg
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

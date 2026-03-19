@@ -1,10 +1,12 @@
 ---
 title: Data analysis for social justice in a Native classroom
 author:
-  - "[Nic Thompson Gonzalez](http://www.nicolethompsongonzalez.com/)"
+  - '[Nic Thompson Gonzalez](http://www.nicolethompsongonzalez.com/)'
 people:
   - Nic Thompson Gonzalez
 date: '2020-06-22'
+categories:
+  - Community
 slug: native-classroom
 description: |
   My personal experience teaching data science at an exclusively Native American community college in New Mexico.
@@ -16,8 +18,6 @@ ported_from: education
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
 ---

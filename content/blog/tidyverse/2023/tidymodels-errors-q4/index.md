@@ -1,27 +1,26 @@
 ---
-
 slug: tidymodels-errors-q4
-title: "Three ways errors are about to get better in tidymodels"
-date: 2023-11-10
+title: Three ways errors are about to get better in tidymodels
+date: '2023-11-10'
 people:
   - Simon Couch
-description: >
-    The tidymodels team's biannual spring cleaning gave us a chance to revisit 
-    the way we raise some error messages.
-
+description: |
+  The tidymodels team's biannual spring cleaning gave us a chance to revisit  the way we raise some error messages.
 photo:
   url: https://unsplash.com/photos/vYcH7pI6v1Q
   author: Nagesh Badu
-
-tags: [tidymodels, package maintenance, tune, parsnip]
-
+categories:
+  - Best Practices
+tags:
+  - tidymodels
+  - package maintenance
+  - tune
+  - parsnip
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tune", "parsnip"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - programming
 ---

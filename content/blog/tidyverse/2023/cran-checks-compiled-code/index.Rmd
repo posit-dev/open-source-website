@@ -1,28 +1,22 @@
 ---
 output: hugodown::hugo_document
-
 slug: cran-checks-compiled-code
-title: "New CRAN requirements for packages with C and C++"
-date: 2023-03-30
+title: New CRAN requirements for packages with C and C++
+date: '2023-03-30'
 people:
   - Andy Teucher
-description: >
-    A few recent changes in CRAN requirements for packages containing C or C++
-    code have caused package developers some headaches. This post outlines
-    the issues and provides solutions the tidyverse team has used to address them.
-
+description: |
+  A few recent changes in CRAN requirements for packages containing C or C++ code have caused package developers some headaches. This post outlines the issues and provides solutions the tidyverse team has used to address them.
 photo:
   url: https://unsplash.com/photos/dhGFLj3rI0Q
   author: Quino Al
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
+categories:
+  - Community
+  - Best Practices
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 languages: ["R"]
-categories:
-  - Community
-  - Best Practices
 ported_categories:
   - learn
   - programming

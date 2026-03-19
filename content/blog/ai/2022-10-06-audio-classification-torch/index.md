@@ -1,9 +1,11 @@
 ---
-title: "Audio classification with torch"
+title: Audio classification with torch
 description: |
   Learn how to classify speech utterances with torch, making use of domain knowledge and deep learning. This post is a condensed version of the corresponding chapter in the forthcoming book, Deep Learning and Scientific Computing with R torch, to be published by CRC Press.
-date: 2022-10-06T00:00:00.000Z
+date: '2022-10-06T00:00:00.000Z'
 slug: keydanatorchaudio
+categories:
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -14,8 +16,6 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Torch
   - R

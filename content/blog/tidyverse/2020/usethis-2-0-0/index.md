@@ -1,26 +1,25 @@
 ---
-
 slug: usethis-2-0-0
 title: usethis 2.0.0
-date: 2020-12-10
+date: '2020-12-10'
 people:
   - Jenny Bryan
-description: >
-    This is a big release aimed at improving usability, especially around Git
-    and GitHub functionality.
-
+description: |
+  This is a big release aimed at improving usability, especially around Git and GitHub functionality.
 photo:
   url: https://unsplash.com/photos/knzXwBCtEeM
   author: Kiana Bosman
-tags: [devtools,r-lib,usethis]
-
+categories:
+  - Best Practices
+tags:
+  - devtools
+  - r-lib
+  - usethis
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "usethis"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

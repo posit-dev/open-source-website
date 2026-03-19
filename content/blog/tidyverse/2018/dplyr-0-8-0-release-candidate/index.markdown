@@ -4,8 +4,10 @@ people:
   - Romain François
 date: '2018-12-03'
 slug: dplyr-0-8-0-release-candidate
-description: > 
+description: |
   What you need to know about upcoming changes in dplyr 0.8.0.
+categories:
+  - Data Wrangling
 tags:
   - dplyr
   - tidyverse
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

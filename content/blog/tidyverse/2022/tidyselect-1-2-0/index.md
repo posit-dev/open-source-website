@@ -1,28 +1,25 @@
 ---
-
 slug: tidyselect-1-2-0
 title: tidyselect 1.2.0
-date: 2022-10-18
+date: '2022-10-18'
 people:
   - Lionel Henry
   - Hadley Wickham
-description: >
-    tidyselect 1.2.0 hit CRAN last week and includes a few updates to the syntax of selections in tidyverse functions.
-
+description: |
+  tidyselect 1.2.0 hit CRAN last week and includes a few updates to the syntax of selections in tidyverse functions.
 photo:
   url: https://unsplash.com/photos/xZxZxiceD8s
   author: Laura Gilchrist
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [lifecycle, tidyselect]
-
+categories:
+  - Data Wrangling
+tags:
+  - lifecycle
+  - tidyselect
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "lifecycle", "tidyselect"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

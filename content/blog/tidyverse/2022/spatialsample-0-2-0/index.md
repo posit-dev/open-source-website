@@ -1,27 +1,25 @@
 ---
-
 slug: spatialsample-0-2-0
 title: spatialsample 0.2.0
-date: 2022-06-21
+date: '2022-06-21'
 people:
   - Mike Mahoney
-description: >
-    spatialsample 0.2.0 is now on CRAN! This release provides a bunch of new features, including new spatial resampling methods, visualization helpers, and spatial buffering.
-
+description: |
+  spatialsample 0.2.0 is now on CRAN! This release provides a bunch of new features, including new spatial resampling methods, visualization helpers, and spatial buffering.
 photo:
   url: https://unsplash.com/photos/1-29wyvvLJA
   author: Andrew Neel
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [spatialsample, rsample, tidymodels]
-
+categories:
+  - Machine Learning
+tags:
+  - spatialsample
+  - rsample
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "spatialsample", "rsample", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

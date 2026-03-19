@@ -1,22 +1,23 @@
 ---
 slug: tidyr-1-2-0
 title: tidyr 1.2.0
-date: 2022-02-01
+date: '2022-02-01'
 people:
   - Davis Vaughan
-description: >
-    tidyr 1.2.0 includes a bunch of new features and bug fixes, particularly for pivoting, rectangling, and grid specific tools.
+description: |
+  tidyr 1.2.0 includes a bunch of new features and bug fixes, particularly for pivoting, rectangling, and grid specific tools.
 photo:
   url: https://unsplash.com/photos/Qv0d5LJCxgo
   author: Brina Blum
-tags: [tidyr]
+categories:
+  - Data Wrangling
+tags:
+  - tidyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

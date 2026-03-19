@@ -3,6 +3,8 @@ title: The Hippocratic License
 people:
   - greg
 date: '2020-08-03'
+categories:
+  - Community
 tags:
   - teach
 description: |
@@ -14,8 +16,6 @@ photo:
 image: hippocratic-license-wd.jpg
 ported_from: education
 port_status: in-progress
-categories:
-  - Community
 ported_categories:
   - teach
 ---

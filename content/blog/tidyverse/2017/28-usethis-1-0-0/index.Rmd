@@ -4,6 +4,8 @@ people:
   - Hadley Wickham
 date: '2017-11-28'
 slug: usethis-1.0.0
+categories:
+  - Best Practices
 photo:
   url: https://unsplash.com/photos/IClZBVw5W5A
   author: Todd Quackenbush
@@ -12,8 +14,6 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "usethis"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

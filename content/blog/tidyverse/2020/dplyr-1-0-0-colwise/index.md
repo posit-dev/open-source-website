@@ -4,27 +4,21 @@ title: 'dplyr 1.0.0: working across columns'
 people:
   - Hadley Wickham
 date: '2020-04-03'
-description: >
-  A new `across()` function makes it much easier to apply the same operation
-  to multiple columns. It supersedes the `_if()`, `_at()`, and `_all()`
-  function variants.
-
-
+description: |
+  A new `across()` function makes it much easier to apply the same operation to multiple columns. It supersedes the `_if()`, `_at()`, and `_all()` function variants.
+categories:
+  - Data Wrangling
 tags:
-- dplyr
-- dplyr-1-0-0
-
+  - dplyr
+  - dplyr-1-0-0
 photo:
   author: Alexey Derevtsov
   url: https://unsplash.com/photos/Atl1BCVM2fo
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

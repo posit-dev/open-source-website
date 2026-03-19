@@ -1,11 +1,11 @@
 ---
-title: "bslib v0.9.0 brings branded theming to Shiny for R"
+title: bslib v0.9.0 brings branded theming to Shiny for R
 description: Unified theming is here for R users!
 people:
   - Garrick Aden-Buie
-date: "2025-01-31"
+date: '2025-01-31'
 image: feature.jpg
-image-alt: "bslib + brand.yml"
+image-alt: bslib + brand.yml
 ported_from: shiny
 port_status: in-progress
 software: ["bslib", "shiny-r", "brand-yml"]

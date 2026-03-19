@@ -1,28 +1,24 @@
 ---
-
 slug: tidymodels-2024-survey
 title: Take the tidymodels survey for 2024 priorities
-date: 2024-02-28
+date: '2024-02-28'
 people:
   - Emil Hvitfeldt
-description: >
-    We are conducting our third tidymodels priorities survey. Please give us your
-    feedback!
-
+description: |
+  We are conducting our third tidymodels priorities survey. Please give us your feedback!
 photo:
   url: https://unsplash.com/photos/white-flowers-under-blue-sky-during-daytime-peN6l68AWaw
   author: Aamyr
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [survey,tidymodels]
-
+categories:
+  - Community
+tags:
+  - survey
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - other
 ---

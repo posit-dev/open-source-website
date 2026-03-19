@@ -1,19 +1,19 @@
 ---
-title: "Math, code, concepts: A third road to deep learning"
-description: >
- Not everybody who wants to get into deep learning has a strong background in math or programming. This post elaborates on a concepts-driven, abstraction-based way to learn what it's all about.
+title: 'Math, code, concepts: A third road to deep learning'
+description: |
+  Not everybody who wants to get into deep learning has a strong background in math or programming. This post elaborates on a concepts-driven, abstraction-based way to learn what it's all about.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com/
 slug: keydana2019mathcodeconcepts
 date: 03-15-2019
+categories:
+  - Best Practices
 preview: images/prev.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - Meta
   - Concepts

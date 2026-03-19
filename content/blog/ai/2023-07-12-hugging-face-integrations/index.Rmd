@@ -1,27 +1,22 @@
 ---
-title: "Hugging Face Integrations"
-description: >
-  Hugging Face rapidly became a very popular platform to build, share and collaborate on 
-  deep learning applications. We have worked on integrating the torch for R ecosystem
-  with Hugging Face tools, allowing users to load and execute language models from their
-  platform.
+title: Hugging Face Integrations
+description: |
+  Hugging Face rapidly became a very popular platform to build, share and collaborate on  deep learning applications. We have worked on integrating the torch for R ecosystem with Hugging Face tools, allowing users to load and execute language models from their platform.
 author:
   - name: Daniel Falbel
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: hugging-face-integrations
-date: 2023-07-12
-preview: images/install.png
-format: hugo-md
+date: '2023-07-12'
 categories:
   - Machine Learning
+preview: images/install.png
+format: hugo-md
+languages: ["R"]
 ported_categories:
   - Torch
   - Releases
   - R
-preview: images/install.png
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

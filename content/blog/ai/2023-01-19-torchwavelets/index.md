@@ -1,9 +1,11 @@
 ---
-title: "AO, NAO, ENSO: A wavelet analysis example"
+title: 'AO, NAO, ENSO: A wavelet analysis example'
 description: |
   El Niño-Southern Oscillation (ENSO), North Atlantic Oscillation (NAO), and Arctic Oscillation (AO) are atmospheric phenomena of global impact that strongly affect people's lives. ENSO, first and foremost, brings with it floods, droughts, and ensuing poverty, in developing countries in the Southern Hemisphere. Here, we use the new torchwavelets package to comparatively inspect patterns in the three series.
-date: 2023-01-19T00:00:00.000Z
+date: '2023-01-19T00:00:00.000Z'
 slug: keydanatorchwavelets
+categories:
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: Posit
@@ -14,8 +16,6 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Torch
   - R

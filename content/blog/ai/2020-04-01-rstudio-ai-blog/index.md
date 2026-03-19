@@ -1,9 +1,11 @@
 ---
-title: "Introducing: The RStudio AI Blog"
+title: 'Introducing: The RStudio AI Blog'
 description: |
   This blog just got a new title: RStudio AI Blog. We explain why.
-date: 2020-03-30
+date: '2020-03-30'
 slug: team2020rstudioaiblog
+categories:
+  - Community
 author:
   - name: The Multiverse Team
     affiliation: RStudio
@@ -13,8 +15,6 @@ people:
 image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
-categories:
-  - Community
 ported_categories:
   - Meta
 ---

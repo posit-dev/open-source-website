@@ -1,27 +1,24 @@
 ---
 output: hugodown::hugo_document
-
 slug: r4ds-2e
 title: R for Data Science, 2nd edition
-date: 2023-07-11
+date: '2023-07-11'
 people:
   - Mine Çetinkaya-Rundel
-description: >
-    The second edition of R for Data Science is out,
-    and it's a major reworking of the first edition.
+description: |
+  The second edition of R for Data Science is out, and it's a major reworking of the first edition.
 photo:
   url: http://www2.stat.duke.edu/~cr173/
   author: Colin Rundel
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [book]
+categories:
+  - Community
+tags:
+  - book
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

@@ -1,13 +1,13 @@
 ---
-title: "chromote v0.5.0"
+title: chromote v0.5.0
 description: |
   With the latest chromote release, you can stay up to date with Chrome
   or pin your scripts to a specific version of Chrome easily.
 people:
   - Garrick Aden-Buie
-date: "2025-03-21"
+date: '2025-03-21'
 image: feature.png
-image-alt: "chromote v0.5.0"
+image-alt: chromote v0.5.0
 ported_from: shiny
 port_status: in-progress
 software: ["chromote"]

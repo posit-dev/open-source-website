@@ -1,12 +1,11 @@
 ---
 title: posit::conf(2024) Shiny talks
-description: >-
-  There were many great talks given at posit::conf(2024) about Shiny and they
-  are now available on YouTube.
+description: There were many great talks given at posit::conf(2024) about Shiny and
+  they are now available on YouTube.
 people:
   - Andrew Holz
 date: '2024-11-11'
-image-header-disable: true
+image-header-disable: yes
 image: shinytalks.jpg
 image-alt: Collage of speakers with Shiny talks at posit::conf(2024)
 ported_from: shiny

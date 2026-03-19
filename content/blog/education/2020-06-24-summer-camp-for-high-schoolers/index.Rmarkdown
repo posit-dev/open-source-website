@@ -1,21 +1,21 @@
 ---
 title: Data science summer camp for high schoolers
 date: '2020-06-24'
+categories:
+  - Community
 tags:
- - learnr
+  - learnr
 description: |
- How I introduced R to a group of teenagers, and how learnr saved me from boring students to death.
+  How I introduced R to a group of teenagers, and how learnr saved me from boring students to death.
 slug: summer-camp-hs
 photo:
- url: https://unsplash.com/photos/VxyAJybjZ3s
- author: Ryan Cooley
+  url: https://unsplash.com/photos/VxyAJybjZ3s
+  author: Ryan Cooley
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 software: ["learnr"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
 ---

@@ -1,29 +1,23 @@
 ---
-
 slug: tidyr-1-3-0
 title: tidyr 1.3.0
-date: 2023-01-24
+date: '2023-01-24'
 people:
   - Hadley Wickham
-description: >
-    tidyr 1.3.0 brings a new family of string separating functions,
-    along with improvements to `unnest_longer()`, `unnest_wider()`,
-    `pivot_longer()`, and `nest()`.
-
+description: |
+  tidyr 1.3.0 brings a new family of string separating functions, along with improvements to `unnest_longer()`, `unnest_wider()`, `pivot_longer()`, and `nest()`.
 photo:
   url: https://unsplash.com/photos/TEDo1eO8te4
   author: Jan Kopřiva
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidyr]
-
+categories:
+  - Data Wrangling
+tags:
+  - tidyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

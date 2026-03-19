@@ -4,20 +4,21 @@ people:
   - Javier Luraschi
 date: '2019-03-15'
 slug: sparklyr-1-0
-tags:
-- sparklyr
-- big data
-- Spark
-- Arrow
-blogcategories:
-- Products and Technology
-- Open Source
-ported_from: rstudio
-port_status: in-progress
-languages: ["R"]
 categories:
   - Machine Learning
   - Data Wrangling
+tags:
+  - sparklyr
+  - big data
+  - Spark
+  - Arrow
+  - Packages
+blogcategories:
+  - Products and Technology
+  - Open Source
+ported_from: rstudio
+port_status: in-progress
+languages: ["R"]
 ported_categories:
   - Packages
 ---

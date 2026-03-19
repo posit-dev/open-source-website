@@ -1,14 +1,17 @@
 ---
-title: "(Re)building the R Bootcamp and generating R tutorials"
+title: (Re)building the R Bootcamp and generating R tutorials
 description: |
   Our experience (re-)building the R bootcamp and generating interactive R tutorials.
 date: '2020-03-06'
 slug: r-bootcamp
-tags: [online]
+categories:
+  - Community
+tags:
+  - online
 author:
-  - "[Ted Laderas](https://laderast.github.io/)"
-  - "[Jessica Minnier](http://jessicaminnier.com/)"
-  - "[Florencia D'Andrea](https://florencia.netlify.com/)"
+  - '[Ted Laderas](https://laderast.github.io/)'
+  - '[Jessica Minnier](http://jessicaminnier.com/)'
+  - '[Florencia D''Andrea](https://florencia.netlify.com/)'
 people:
   - Ted Laderas
   - Jessica Minnier
@@ -20,8 +23,6 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
   - learn

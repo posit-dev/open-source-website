@@ -3,19 +3,19 @@ title: New R Markdown articles section, plus .Rmd to .docx super powers!
 people:
   - Garrett Grolemund
 date: '2015-07-22'
+categories:
+  - Publishing
 tags:
-- Article
-- R Markdown
+  - Article
+  - R Markdown
 slug: new-r-markdown-articles-section-plus-rmd-to-docx-super-powers
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
-categories:
-  - Publishing
 ported_categories:
   - R Markdown
 ---

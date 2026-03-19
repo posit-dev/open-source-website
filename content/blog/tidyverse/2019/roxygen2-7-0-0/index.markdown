@@ -4,7 +4,9 @@ people:
   - Hadley Wickham
 date: '2019-11-12'
 slug: roxygen2-7-0-0
-description: >
+categories:
+  - Best Practices
+description: |
   A massive update to roxygen2 now on CRAN.
 tags:
   - r-lib
@@ -18,8 +20,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "roxygen2"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

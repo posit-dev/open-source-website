@@ -1,17 +1,17 @@
 ---
-title: "First mlverse survey results – software, applications, and beyond"
-description: > 
- Last month, we conducted our first survey on mlverse software, covering topics ranging from area of application through software usage to user wishes and suggestions. In addition, the survey asked about thoughts on social impacts of AI/ML. This post presents the results, and tries to address some of the things that came up.
+title: First mlverse survey results – software, applications, and beyond
+description: |
+  Last month, we conducted our first survey on mlverse software, covering topics ranging from area of application through software usage to user wishes and suggestions. In addition, the survey asked about thoughts on social impacts of AI/ML. This post presents the results, and tries to address some of the things that came up.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com/
 slug: keydanasurvey2021
 date: 02-17-2021
-preview: images/preview.jpg
-format: hugo-md
 categories:
   - Community
+preview: images/preview.jpg
+format: hugo-md
 ported_categories:
   - Meta
   - R

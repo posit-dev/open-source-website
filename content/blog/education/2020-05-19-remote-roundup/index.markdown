@@ -3,6 +3,8 @@ title: A Remote Learning Roundup
 people:
   - alison
 date: '2020-05-19'
+categories:
+  - Community
 tags:
   - online
 description: |
@@ -14,8 +16,6 @@ photo:
 image: remote-wd.jpg
 ported_from: education
 port_status: in-progress
-categories:
-  - Community
 ported_categories:
   - learn
   - teach

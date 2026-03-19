@@ -1,6 +1,8 @@
 ---
-title: "Latest News from the R Markdown Family"
+title: Latest News from the R Markdown Family
 date: '2020-12-21'
+categories:
+  - Publishing
 people:
   - Alison Hill
   - Christophe Dervieux
@@ -9,15 +11,13 @@ slug: rmd-news
 description: |
   An end-of-2020 round-up of all the latest news from the R Markdown family of packages so that you know all you need to know to take advantage of the newest features.
 blogcategories:
-- Company News and Events
-- Open Source
+  - Company News and Events
+  - Open Source
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
-categories:
-  - Publishing
 ported_categories:
   - R Markdown
   - Packages

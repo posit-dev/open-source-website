@@ -1,26 +1,26 @@
 ---
-
 slug: usemodels-0-0-1
 title: usemodels 0.0.1
-date: 2020-09-29
+date: '2020-09-29'
 people:
   - Max Kuhn
-description: >
-    The new usemodels R package is a helpful way to automatically generate 
-    tidymodels code. 
-
+description: "The new usemodels R package is a helpful way to automatically generate
+  \ tidymodels code. \n"
 photo:
   url: https://unsplash.com/photos/0TH1H1rq_eY
   author: Neven Krcmarek
-
-tags: [tidymodels,parsnip,recipes,tune]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - parsnip
+  - recipes
+  - tune
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "recipes", "tune"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

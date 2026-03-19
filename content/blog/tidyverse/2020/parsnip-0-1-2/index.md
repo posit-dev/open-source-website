@@ -1,27 +1,24 @@
 ---
-
 slug: parsnip-0-1-2
 title: parsnip 0.1.2
-date: 2020-07-09
+date: '2020-07-09'
 people:
   - Max Kuhn
-description: >
-    A new version of parsnip bring improvements in how predictors are handled and
-    a few other neat features.  
-
+description: "A new version of parsnip bring improvements in how predictors are handled
+  and a few other neat features.  \n"
 photo:
   url: https://unsplash.com/photos/kJxinkriuB4
   author: Kevin Lanceplaine
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [parsnip, tidymodels,]
+categories:
+  - Machine Learning
+tags:
+  - parsnip
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

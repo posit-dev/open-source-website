@@ -3,20 +3,21 @@ title: 'DT: An R interface to the DataTables library'
 people:
   - Yihui Xie
 date: '2015-06-24'
+categories:
+  - Visualization
+  - Interactive Apps
 tags:
-- DataTables
-- htmlwidgets
+  - DataTables
+  - htmlwidgets
+  - Packages
 slug: dt-an-r-interface-to-the-datatables-library
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["dt"]
 languages: ["R"]
-categories:
-  - Visualization
-  - Interactive Apps
 ported_categories:
   - Packages
 ---

@@ -4,18 +4,18 @@ people:
   - JJ Allaire
 date: '2018-09-19'
 slug: radix-for-r-markdown
+categories:
+  - Publishing
 tags:
-- rmarkdown
-- R Markdown
+  - rmarkdown
+  - R Markdown
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
-categories:
-  - Publishing
 ported_categories:
   - R Markdown
 ---

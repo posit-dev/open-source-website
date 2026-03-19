@@ -1,7 +1,9 @@
 ---
-title: "Teaching the Tidyverse in 2020 - Part 1: Getting started"
-date: "2020-07-13"
+title: 'Teaching the Tidyverse in 2020 - Part 1: Getting started'
+date: '2020-07-13'
 slug: teaching-the-tidyverse-in-2020-part-1-getting-started
+categories:
+  - Community
 tags:
   - tidyverse
 people:
@@ -13,8 +15,6 @@ ported_from: education
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
 ---

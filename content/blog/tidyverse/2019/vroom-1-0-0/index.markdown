@@ -5,7 +5,11 @@ people:
 date: '2019-05-07'
 slug: vroom-1-0-0
 description: Introducing the vroom package, extremely fast data import in R.
-tags: [vroom, r-lib]
+categories:
+  - Data Wrangling
+tags:
+  - vroom
+  - r-lib
 photo:
   url: https://www.pexels.com/photo/12801/
   author: Chris Peeters
@@ -14,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "vroom"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

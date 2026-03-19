@@ -3,17 +3,17 @@ title: Comment sections and help instructions at the Shiny Dev Center
 people:
   - Garrett Grolemund
 date: '2014-05-28'
+categories:
+  - Interactive Apps
 slug: comment-sections-and-help-instructions-at-the-shiny-dev-center
 blogcategories:
-- Products and Technology
+  - Products and Technology
 tags:
-- Shiny
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Shiny
 ---

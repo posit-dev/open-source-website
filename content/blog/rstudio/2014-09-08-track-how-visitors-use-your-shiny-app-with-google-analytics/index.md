@@ -3,18 +3,18 @@ title: Track how visitors use your Shiny app with Google Analytics
 people:
   - Garrett Grolemund
 date: '2014-09-08'
+categories:
+  - Interactive Apps
 slug: track-how-visitors-use-your-shiny-app-with-google-analytics
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Shiny
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Shiny
 ---

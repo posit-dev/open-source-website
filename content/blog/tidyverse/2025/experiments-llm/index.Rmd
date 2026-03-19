@@ -1,27 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: experiments-llm
 title: Three experiments in LLM code assist with RStudio and Positron
-date: 2025-01-29
+date: '2025-01-29'
 people:
   - Simon Couch
-description: >
-    We've been experimenting with LLM-powered tools to streamline R
-    data science and package development.
-    
+description: |
+  We've been experimenting with LLM-powered tools to streamline R data science and package development.
 photo:
   url: https://unsplash.com/photos/AgxNjvE8KTE
   author: Dibya Jyoti Ghosh
-
-tags: [ellmer, ai]
+categories:
+  - Artificial Intelligence
+tags:
+  - ellmer
+  - ai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ellmer"]
 languages: ["R"]
-categories:
-  - Artificial Intelligence
 ported_categories:
   - roundup
 ---

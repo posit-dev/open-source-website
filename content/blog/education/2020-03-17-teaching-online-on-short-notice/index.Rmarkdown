@@ -3,6 +3,8 @@ title: Teaching online on short notice
 people:
   - greg
 date: '2020-03-17'
+categories:
+  - Community
 tags:
   - online
   - teach
@@ -15,8 +17,6 @@ photo:
 image: teaching-online-on-short-notice-wd.jpg
 ported_from: education
 port_status: in-progress
-categories:
-  - Community
 ported_categories:
   - teach
 ---

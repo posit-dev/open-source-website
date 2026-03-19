@@ -1,29 +1,23 @@
 ---
-
 slug: haven-2-4-0
 title: haven 2.4.0
-date: 2021-04-24
+date: '2021-04-24'
 people:
   - Hadley Wickham
-description: >
-    This version provides much improved `labelled_spss()` support, improved
-    date-time handling, the latest ReadStat, and a bunch of other small 
-    improvements.
-
+description: |
+  This version provides much improved `labelled_spss()` support, improved date-time handling, the latest ReadStat, and a bunch of other small  improvements.
 photo:
   url: https://unsplash.com/photos/SHA85I0G8K4
   author: Evgeni Tcherkasski
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [haven]
-
+categories:
+  - Data Wrangling
+tags:
+  - haven
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "haven"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

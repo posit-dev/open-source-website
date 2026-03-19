@@ -1,29 +1,23 @@
 ---
-
 slug: nanoparquet-0-4-0
 title: nanoparquet 0.4.0
-date: 2025-01-28
+date: '2025-01-28'
 people:
   - Gábor Csárdi
-description: >
-    nanoparquet 0.4.0 comes with a new and much faster `read_parquet()`,
-    configurable type mappings in `write_parquet()`, and a new
-    `append_parquet()`.
-
+description: |
+  nanoparquet 0.4.0 comes with a new and much faster `read_parquet()`, configurable type mappings in `write_parquet()`, and a new `append_parquet()`.
 photo:
   url: https://www.pexels.com/photo/person-running-in-the-hallway-796545/
   author: Michael Foster
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [parquet]
-
+categories:
+  - Data Wrangling
+tags:
+  - parquet
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["nanoparquet"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

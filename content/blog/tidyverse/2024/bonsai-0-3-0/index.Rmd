@@ -1,27 +1,26 @@
 ---
 output: hugodown::hugo_document
-
 slug: bonsai-0-3-0
 title: bonsai 0.3.0
-date: 2024-06-25
+date: '2024-06-25'
 people:
   - Simon Couch
-description: >
-    A new release of the parsnip extension package bonsai introduces support for 
-    oblique random forests for classification and regression to tidymodels.
-
+description: |
+  A new release of the parsnip extension package bonsai introduces support for  oblique random forests for classification and regression to tidymodels.
 photo:
   url: https://unsplash.com/photos/QD-mtViB5Ks
   author: Scott Webb
-
-tags: [tidymodels, parsnip, bonsai]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - parsnip
+  - bonsai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "parsnip", "bonsai"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

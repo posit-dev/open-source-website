@@ -1,9 +1,9 @@
 ---
-title: "Level Up Your Shiny Forms: Accordions + Dynamic Goodness"
-description: "Mastering Shiny Forms: Dynamic Updates with Accordion Panels"
+title: 'Level Up Your Shiny Forms: Accordions + Dynamic Goodness'
+description: 'Mastering Shiny Forms: Dynamic Updates with Accordion Panels'
 people:
   - Shiny Team
-date: "2025-02-05"
+date: '2025-02-05'
 image: forms.jpg
 ported_from: shiny
 port_status: in-progress

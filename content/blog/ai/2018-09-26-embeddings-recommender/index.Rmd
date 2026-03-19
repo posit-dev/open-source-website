@@ -1,7 +1,7 @@
 ---
-title: "Collaborative filtering with embeddings"
-description: >
- Embeddings are not just for use in natural language processing. Here we apply embeddings to a common task in collaborative filtering - predicting user ratings - and on our way, strive for a better understanding of what an embedding layer really does.
+title: Collaborative filtering with embeddings
+description: |
+  Embeddings are not just for use in natural language processing. Here we apply embeddings to a common task in collaborative filtering - predicting user ratings - and on our way, strive for a better understanding of what an embedding layer really does.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -9,12 +9,12 @@ author:
 bibliography: bibliography.bib
 slug: keydana2018embeddings-recommender
 date: 09-26-2018
+categories:
+  - Machine Learning
 preview: images/m.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - TensorFlow/Keras
   - Tabular Data

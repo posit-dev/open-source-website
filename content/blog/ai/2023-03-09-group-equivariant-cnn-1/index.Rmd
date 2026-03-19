@@ -1,26 +1,25 @@
 ---
-title: "Upside down, a cat's still a cat: Evolving image recognition with Geometric Deep Learning"
-description: >
+title: 'Upside down, a cat''s still a cat: Evolving image recognition with Geometric
+  Deep Learning'
+description: |
   In this first in a series of posts on group-equivariant convolutional neural networks (GCNNs), meet the main actors — groups — and concepts (equivariance). With GCNNs, we finally revisit the topic of Geometric Deep Learning, a principled, math-driven approach to neural networks that has consistently been rising in scope and impact.
 author:
   - name: Sigrid Keydana
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: keydanagcnn1
-date: 2023-03-09
-preview: images/preview.jpg
-format: hugo-md
+date: '2023-03-09'
 categories:
   - Machine Learning
   - Best Practices
+preview: images/preview.jpg
+format: hugo-md
+languages: ["R"]
 ported_categories:
   - Torch
   - R
   - Spatial Data
   - Concepts
-preview: images/preview.jpg
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

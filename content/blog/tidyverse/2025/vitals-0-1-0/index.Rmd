@@ -1,26 +1,24 @@
 ---
 output: hugodown::hugo_document
-
 slug: vitals-0-1-0
 title: Introducing vitals, a toolkit for evaluating LLM products in R
-date: 2025-06-27
+date: '2025-06-27'
 people:
   - Simon Couch
-description: >
-    The first release of vitals, a package for large language model evaluation
-    in R, just made it to CRAN.
-
+description: |
+  The first release of vitals, a package for large language model evaluation in R, just made it to CRAN.
 photo:
   author: Google Imagen 4
-
-tags: [ellmer, ai]
+categories:
+  - Artificial Intelligence
+tags:
+  - ellmer
+  - ai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ellmer"]
 languages: ["R"]
-categories:
-  - Artificial Intelligence
 ported_categories:
   - package
 ---

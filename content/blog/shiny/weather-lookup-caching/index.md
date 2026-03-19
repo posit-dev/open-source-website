@@ -1,11 +1,10 @@
 ---
 title: 'Weather App Story Pt. 2: Caching'
-description: >-
-  Here we demonstrate how the bindCache() function can greatly speed up a Shiny
-  app with little effort.
+description: Here we demonstrate how the bindCache() function can greatly speed up
+  a Shiny app with little effort.
 people:
   - Nick Strayer
-date: 2021-01-22T00:00:00.000Z
+date: '2021-01-22T00:00:00.000Z'
 image: caching.jpg
 image-alt: A plot showing how much faster an app will load with caching
 ported_from: shiny

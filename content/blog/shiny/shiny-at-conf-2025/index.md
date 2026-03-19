@@ -9,8 +9,7 @@ image-alt: Shiny team photo from SciPy 2025
 listing:
   - id: talks
     template: talks.ejs
-    contents:
-      - talks.yml
+    contents: talks.yml
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "shiny-r"]

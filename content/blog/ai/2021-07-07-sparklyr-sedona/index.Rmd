@@ -1,5 +1,5 @@
 ---
-title: "sparklyr.sedona: A sparklyr extension for analyzing geospatial data"
+title: 'sparklyr.sedona: A sparklyr extension for analyzing geospatial data'
 description: |
   We are excited to announce the availability of sparklyr.sedona, a sparklyr extension making geospatial functionalities of the Apache Sedona library easily accessible from R.
 author:
@@ -9,20 +9,16 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: sparklyr-sedona
 date: 07-07-2021
-preview: images/nasa-Q1p7bh3SHj8-unsplash.jpg
-
-format: hugo-md
 categories:
   - MLOps & Admin
+preview: images/nasa-Q1p7bh3SHj8-unsplash.jpg
+format: hugo-md
+languages: ["R"]
 ported_categories:
   - R
   - Packages/Releases
   - Distributed Computing
   - Spatial Data
-preview: images/nasa-Q1p7bh3SHj8-unsplash.jpg
-
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

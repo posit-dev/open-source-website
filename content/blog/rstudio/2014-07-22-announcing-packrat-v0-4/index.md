@@ -3,18 +3,19 @@ title: Announcing Packrat v0.4
 people:
   - Kevin Ushey
 date: '2014-07-22'
+categories:
+  - Best Practices
 slug: announcing-packrat-v0-4
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- RStudio IDE
+  - Packages
+  - RStudio IDE
 ported_from: rstudio
 port_status: in-progress
 software: ["packrat"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - Packages
   - RStudio IDE

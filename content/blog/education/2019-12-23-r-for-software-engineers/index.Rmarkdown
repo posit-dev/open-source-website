@@ -3,6 +3,8 @@ title: Learning R for Software Engineers
 people:
   - Hadley Wickham
 date: '2019-12-23'
+categories:
+  - Community
 draft: no
 slug: r-for-software-engineers
 description: |
@@ -14,8 +16,6 @@ image: r4se-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

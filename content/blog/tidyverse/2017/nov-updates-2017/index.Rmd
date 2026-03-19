@@ -4,6 +4,8 @@ slug: nov-updates-2017
 date: '2017-12-29'
 people:
   - Mara Averick
+categories:
+  - Community
 photo:
   url: https://unsplash.com/photos/lPQIndZz8Mo
   author: Pablo Garcia Saldaña
@@ -12,8 +14,6 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - other
 ---

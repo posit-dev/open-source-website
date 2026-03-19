@@ -4,6 +4,8 @@ people:
   - Hadley Wickham
 date: '2019-04-30'
 slug: dbplyr-1-4-0
+categories:
+  - Data Wrangling
 tags:
   - dbplyr
   - dplyr
@@ -16,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

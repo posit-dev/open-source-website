@@ -1,10 +1,10 @@
 ---
 title: posit::conf(2025) Quarto workshop materials
-description: >
-  At posit::conf(2025) we hosted two Quarto workshops: Branded Websites,
-  Presentations, Dashboards, and PDFs with Quarto; and Extending Quarto. The
-  materials from both workshops are freely available for anyone to learn from or
-  use in their own teaching.
+description: |
+  At posit::conf(2025) we hosted two Quarto workshops: Branded Websites, Presentations, Dashboards, and PDFs with Quarto; and Extending Quarto. The materials from both workshops are freely available for anyone to learn from or use in their own teaching.
+categories:
+  - Publishing
+  - Community
 people:
   - Charlotte Wickham
 date: '2025-10-27'
@@ -14,9 +14,6 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
-  - Community
 ported_categories:
   - Learn
   - Workshop

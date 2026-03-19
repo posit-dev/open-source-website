@@ -1,9 +1,10 @@
 ---
 title: Quarto 1.5
-description: >
-  Quarto 1.5 improves Typst support, has some website enhancements like draft
-  handling and announcement bars, adds a native Julia engine, and adds a couple
-  of shortcodes for generating placeholder content. 
+description: "Quarto 1.5 improves Typst support, has some website enhancements like
+  draft handling and announcement bars, adds a native Julia engine, and adds a couple
+  of shortcodes for generating placeholder content. \n"
+categories:
+  - Publishing
 people:
   - Charlotte Wickham
 date: '2024-07-11'
@@ -13,8 +14,6 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
 ported_categories:
   - Quarto 1.5
   - Releases

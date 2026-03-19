@@ -1,9 +1,8 @@
 ---
 title: 'ShinyUiEditor: Out of Alpha'
-description: >-
-  We're excited to announce that ShinyUiEditor, a drag-and-drop interface for
-  building Shiny apps, is officially out of its "alpha" stage.
-date: 2023-10-30T00:00:00.000Z
+description: We're excited to announce that ShinyUiEditor, a drag-and-drop interface
+  for building Shiny apps, is officially out of its "alpha" stage.
+date: '2023-10-30T00:00:00.000Z'
 people:
   - Nick Strayer
 image: out-of-alpha-main.jpeg

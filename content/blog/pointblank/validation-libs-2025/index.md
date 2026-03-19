@@ -2,7 +2,7 @@
 title: Data Validation Libraries for Polars (2025 Edition)
 people:
   - Rich Iannone
-date: 2025-06-04T00:00:00.000Z
+date: '2025-06-04T00:00:00.000Z'
 ported_from: pointblank
 port_status: in-progress
 software: ["pointblank"]

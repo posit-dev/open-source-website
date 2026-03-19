@@ -1,8 +1,8 @@
 ---
-title: "Great Tables: Becoming the Polars `.style` Property"
+title: 'Great Tables: Becoming the Polars `.style` Property'
 people:
   - Michael Chow
-date: 2025-04-16
+date: '2025-04-16'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]

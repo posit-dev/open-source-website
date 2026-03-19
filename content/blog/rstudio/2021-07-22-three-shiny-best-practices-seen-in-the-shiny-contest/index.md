@@ -4,6 +4,8 @@ people:
   - Nick Strayer
 date: '2021-07-22'
 slug: three-shiny-best-practices-seen-in-the-shiny-contest
+categories:
+  - Interactive Apps
 tags:
   - Shiny
   - best-practices
@@ -17,8 +19,6 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r", "reactlog"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Shiny
 ---

@@ -1,30 +1,26 @@
 ---
-
 slug: rapp-0-3-0
 title: Rapp 0.3.0
-date: 2026-02-18
+date: '2026-02-18'
 people:
   - Tomasz Kalinowski
-description: >
-  Rapp is an R front-end (like Rscript) that turns simple scripts into polished CLIs,
-  with automatic argument parsing, generated help, and support for
-  commands and installable launchers.
-
+description: |
+  Rapp is an R front-end (like Rscript) that turns simple scripts into polished CLIs, with automatic argument parsing, generated help, and support for commands and installable launchers.
 photo:
   url: https://unsplash.com/photos/two-yellow-red-blue-papers-Ay7Nkvc49ag
   author: Carolina Garcia Tavizon
-
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [r-lib, package, programming, yaml]
-
+categories:
+  - Best Practices
+tags:
+  - r-lib
+  - package
+  - programming
+  - yaml
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "yaml"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

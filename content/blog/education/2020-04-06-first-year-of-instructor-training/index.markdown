@@ -3,6 +3,8 @@ title: First year of instructor training
 people:
   - greg
 date: '2020-04-06'
+categories:
+  - Community
 tags:
   - certify
 description: |
@@ -15,8 +17,6 @@ image: first-year-of-instructor-training-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - certify
 ---

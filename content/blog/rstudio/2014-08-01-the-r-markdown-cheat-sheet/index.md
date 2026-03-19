@@ -3,17 +3,18 @@ title: The R Markdown Cheat Sheet
 people:
   - Garrett Grolemund
 date: '2014-08-01'
+categories:
+  - MLOps & Admin
 slug: the-r-markdown-cheat-sheet
 blogcategories:
-- Products and Technology
-- Training and Education
+  - Products and Technology
+  - Training and Education
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown", "cheatsheets"]
 languages: ["R"]
-categories:
-  - MLOps & Admin
 ported_categories:
   - Packages
   - Training

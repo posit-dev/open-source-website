@@ -1,10 +1,10 @@
 ---
 title: Shinylive Extension
 subtitle: Embed Shinylive applications in Quarto documents
-description: >
-  With Shinylive, you can embed Shiny for Python applications into Quarto
-  documents and run the entire application (including the Python runtime) inside
-  the user's web browser.
+description: |
+  With Shinylive, you can embed Shiny for Python applications into Quarto documents and run the entire application (including the Python runtime) inside the user's web browser.
+categories:
+  - Publishing
 people:
   - Winston Chang
 date: '2022-10-25'
@@ -14,8 +14,6 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto", "shinylive", "shiny-python"]
 languages: ["Python"]
-categories:
-  - Publishing
 ported_categories:
   - Extensions
   - Features

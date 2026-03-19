@@ -3,18 +3,19 @@ title: readxl 1.0.0
 people:
   - Jenny Bryan
 date: '2017-04-19'
+categories:
+  - Data Wrangling
 slug: readxl-1-0-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- tidyverse
+  - Packages
+  - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - Packages
   - tidyverse

@@ -1,19 +1,18 @@
 ---
-title: "safetensors 0.1.0"
-description: >
-  Announcing safetensors, a new R package allowing for reading and writing files
-  in the safetensors format.
+title: safetensors 0.1.0
+description: |
+  Announcing safetensors, a new R package allowing for reading and writing files in the safetensors format.
 author:
   - name: Daniel Falbel
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: safetensors
-date: 2023-06-15
+date: '2023-06-15'
+categories:
+  - Machine Learning
 preview: images/nick-fewings-4pZu15OeTXA-unsplash.jpg
 format: hugo-md
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Packages/Releases
   - R

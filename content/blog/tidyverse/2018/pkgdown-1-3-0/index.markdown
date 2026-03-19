@@ -1,11 +1,13 @@
 ---
-title: 'pkgdown 1.3.0'
+title: pkgdown 1.3.0
 people:
   - Mara Averick
 date: '2018-12-10'
 slug: pkgdown-1-3-0
-description: > 
+description: |
   pkgdown 1.3.0 is now on CRAN!
+categories:
+  - Best Practices
 tags:
   - pkgdown
   - r-lib
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

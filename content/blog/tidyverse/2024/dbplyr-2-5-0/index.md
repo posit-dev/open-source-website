@@ -1,28 +1,23 @@
 ---
-
 slug: dbplyr-2-5-0
 title: dbplyr 2.5.0
-date: 2024-04-08
+date: '2024-04-08'
 people:
   - Hadley Wickham
-description: >
-    dbplyr 2.5.0 brings improved syntax for referring to tables nested 
-    in schemas and catalogs along with a bunch of minor SQL generation
-    improvements.
+description: |
+  dbplyr 2.5.0 brings improved syntax for referring to tables nested  in schemas and catalogs along with a bunch of minor SQL generation improvements.
 photo:
   url: https://unsplash.com/photos/gray-metal-drawers-h6xNSDlgciU
   author: jesse orrico
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [dbplyr]
-
+categories:
+  - Data Wrangling
+tags:
+  - dbplyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dbplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

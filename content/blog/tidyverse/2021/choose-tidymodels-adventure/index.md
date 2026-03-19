@@ -1,27 +1,26 @@
 ---
 slug: choose-tidymodels-adventure
 title: Choose your own tidymodels adventure
-date: 2021-05-24
+date: '2021-05-24'
 people:
   - Julia Silge
-description: >
-    The tidymodels ecosystem is modular and flexible, which can sometimes make
-    choosing an approach overwhelming for newcomers. This post offers opinionated 
-    guidance on where to start!
-
+description: |
+  The tidymodels ecosystem is modular and flexible, which can sometimes make choosing an approach overwhelming for newcomers. This post offers opinionated  guidance on where to start!
 photo:
   url: https://unsplash.com/photos/0LXFLzDOfuA
   author: Jonathan Fox
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [tidymodels, workflowsets, workflows, parsnip]
+categories:
+  - Community
+tags:
+  - tidymodels
+  - workflowsets
+  - workflows
+  - parsnip
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "workflowsets", "workflows", "parsnip"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

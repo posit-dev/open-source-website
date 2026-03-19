@@ -1,30 +1,24 @@
 ---
-
 slug: pkgdown-2-1-0
 title: pkgdown 2.1.0
-date: 2024-07-08
+date: '2024-07-08'
 people:
   - Hadley Wickham
-description: >
-    pkgdown 2.1.0 includes two major new features: support for quarto vignettes
-    and a "light switch" that lets the reader switch between light and dark 
-    mode. It also contains a bunch of other improvements to both the user
-    and the developer experience.
-
+description: |
+  pkgdown 2.1.0 includes two major new features: support for quarto vignettes and a "light switch" that lets the reader switch between light and dark  mode. It also contains a bunch of other improvements to both the user and the developer experience.
 photo:
   url: https://chatgpt.com/
   author: ChatGPT 4o
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [devtools, pkgdown]
-
+categories:
+  - Best Practices
+tags:
+  - devtools
+  - pkgdown
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "pkgdown"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

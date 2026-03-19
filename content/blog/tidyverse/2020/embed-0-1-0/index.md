@@ -1,18 +1,17 @@
 ---
-title: "embed 0.1.0"
-
-description: > 
+title: embed 0.1.0
+description: |
   An update to embed adds two new steps.
 people:
   - Max Kuhn
 date: '2020-06-09'
 slug: embed-0-1-0
-
+categories:
+  - Machine Learning
 tags:
   - tidymodels
   - embed
   - embed-0-1-0
-
 photo:
   url: https://unsplash.com/photos/rNhL85ocOGg
   author: Clark Van Der Beken
@@ -21,8 +20,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "embed"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

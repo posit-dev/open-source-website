@@ -1,7 +1,7 @@
 ---
-title: "Tidymodels Internship"
+title: Tidymodels Internship
 author:
-  - "[Simon Couch](https://education.rstudio.com/trainers/people/couch+simon/)"
+  - '[Simon Couch](https://education.rstudio.com/trainers/people/couch+simon/)'
 people:
   - Simon Couch
 date: '2020-06-30'

@@ -3,9 +3,11 @@ title: googledrive v1.0.0
 slug: googledrive-1-0-0
 people:
   - Jenny Bryan
-description: >
+description: |
   googledrive v1.0.0 is on CRAN.
 date: '2019-08-20'
+categories:
+  - Data Wrangling
 tags:
   - googledrive
   - tidyverse
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googledrive"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

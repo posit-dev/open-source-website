@@ -1,27 +1,24 @@
 ---
-
 slug: two-new-tidymodels-packages
-title: "Two New tidymodels Packages"
-date: 2025-11-22
+title: Two New tidymodels Packages
+date: '2025-11-22'
 people:
   - Frances Lin
   - Max Kuhn
-description: >
-    Two new tidymodels packages focus on supervised feature selection. 
-
+description: "Two new tidymodels packages focus on supervised feature selection. \n"
 photo:
   url: https://unsplash.com/photos/three-french-macaroons-on-plate-71jYZb6Ag7M
   author: Keila Hötzel
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels,feature-selection]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - feature-selection
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

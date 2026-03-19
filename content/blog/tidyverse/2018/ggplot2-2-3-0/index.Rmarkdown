@@ -1,17 +1,18 @@
 ---
 title: ggplot2 2.3.0 — upcoming release
-author: Mara Averick
+author:
+  - Mara Averick
 date: '2018-05-21'
 slug: ggplot2-2-3-0
-description: >
-    What you need to know about upcoming changes for ggplot2 2.3.0.
+description: |
+  What you need to know about upcoming changes for ggplot2 2.3.0.
+categories:
+  - Visualization
 photo:
   url: https://unsplash.com/photos/OhQhkkVJYhI
   author: chuttersnap
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

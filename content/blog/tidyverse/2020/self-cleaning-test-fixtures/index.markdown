@@ -4,6 +4,9 @@ people:
   - Jenny Bryan
 date: '2020-04-27'
 slug: self-cleaning-test-fixtures
+categories:
+  - Best Practices
+  - Community
 tags:
   - r-lib
 description: |
@@ -17,9 +20,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["withr", "testthat"]
 languages: ["R"]
-categories:
-  - Best Practices
-  - Community
 ported_categories:
   - programming
   - learn

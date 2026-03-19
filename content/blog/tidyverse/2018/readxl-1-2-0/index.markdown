@@ -1,7 +1,7 @@
 ---
-title: 'readxl 1.2.0'
+title: readxl 1.2.0
 slug: readxl-1-2-0
-description: > 
+description: |
   readxl 1.2.0 is now on CRAN.
 date: '2018-12-20'
 people:
@@ -9,6 +9,8 @@ people:
 photo:
   url: https://twitter.com/Thoughtfulnz/status/987900521309614080
   author: David Hood
+categories:
+  - Data Wrangling
 tags:
   - readxl
   - tidyverse
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "readxl"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

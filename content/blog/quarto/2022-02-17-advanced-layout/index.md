@@ -1,29 +1,24 @@
 ---
 title: Positioning Content in the Margin
-subtitle: >-
-  Create 'Tufte' style documents with sidenotes, margin tables and figures, and
-  other margin content
-description: >
-  This post demonstrates a few of the capabilities for positioning content in
-  the margin of the page. You can read more about the complete capabilities in
-  the [Article Layout
-  Guide](https://quarto.org/docs/authoring/article-layout.html).
+subtitle: Create 'Tufte' style documents with sidenotes, margin tables and figures,
+  and other margin content
+description: |
+  This post demonstrates a few of the capabilities for positioning content in the margin of the page. You can read more about the complete capabilities in the [Article Layout Guide](https://quarto.org/docs/authoring/article-layout.html).
 people:
   - Charles Teague
 date: '2022-02-17'
+categories:
+  - Publishing
 image: margin-content.png
-image-alt: >-
-  Screenshot of two sections of post: Margin Figures, which has a plot in the
-  margin; and Arbitrary Margin Content, which has text with a LaTeX equation in
-  the margin.
+image-alt: 'Screenshot of two sections of post: Margin Figures, which has a plot in
+  the margin; and Arbitrary Margin Content, which has text with a LaTeX equation in
+  the margin.'
 reference-location: margin
 citation-location: margin
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
 ported_categories:
   - Features
   - Layout

@@ -1,28 +1,22 @@
 ---
 slug: pak-0-6-0
 title: pak 0.6.0
-date: 2023-09-05
+date: '2023-09-05'
 people:
   - Gábor Csárdi
-description: >
-    pak installs R packages from various sources. pak is fast, safe and
-    convenient. This post shows the improvements in system requirements
-    support on Linux, in the just released pak 0.6.0 version.
-
+description: |
+  pak installs R packages from various sources. pak is fast, safe and convenient. This post shows the improvements in system requirements support on Linux, in the just released pak 0.6.0 version.
 photo:
   url: https://www.pexels.com/photo/blue-white-orange-and-brown-container-van-163726/
   author: Pixabay
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
+categories:
+  - Best Practices
 tags: []
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["pak"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

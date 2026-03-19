@@ -2,7 +2,7 @@
 title: 'Great Tables `v0.12.0`: Google Fonts and zebra stripes'
 people:
   - Rich Iannone
-date: 2024-09-30T00:00:00.000Z
+date: '2024-09-30T00:00:00.000Z'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]

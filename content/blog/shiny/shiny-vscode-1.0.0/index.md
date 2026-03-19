@@ -1,9 +1,7 @@
 ---
 title: Reintroducing the Shiny Extension for VS Code
-description: >
-  The v1.0.0 release of the Shiny extension for VS Code now supports running
-  both
-
+description: |
+  The v1.0.0 release of the Shiny extension for VS Code now supports running both
   Shiny for Python and Shiny for R apps, as well as new ShinyLive features.
 people:
   - Garrick Aden-Buie

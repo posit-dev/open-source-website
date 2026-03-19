@@ -1,5 +1,5 @@
 ---
-title: "How parsnip works"
+title: How parsnip works
 people:
   - Max Kuhn
   - Davis Vaughan
@@ -12,6 +12,8 @@ photo:
   author: Sharon McCutcheon
   url: https://unsplash.com/photos/wRoyrBjSBzM
 slug: parsnip-internals
+categories:
+  - Machine Learning
 tags:
   - parsnip
   - tidymodels
@@ -20,8 +22,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

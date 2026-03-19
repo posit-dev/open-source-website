@@ -1,7 +1,9 @@
 ---
-title: "Que haja luz: More light for torch!"
-description: > 
- Today, we're introducing luz, a high-level interface to torch that lets you train neural networks in a concise, declarative style. In some sense, it is to torch what Keras is to TensorFlow: It provides both a streamlined workflow and powerful ways for customization. 
+title: 'Que haja luz: More light for torch!'
+description: "Today, we're introducing luz, a high-level interface to torch that lets
+  you train neural networks in a concise, declarative style. In some sense, it is
+  to torch what Keras is to TensorFlow: It provides both a streamlined workflow and
+  powerful ways for customization. \n"
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -9,17 +11,15 @@ author:
 bibliography: bibliography.bib
 slug: keydanaluz
 date: 06-17-2021
-preview: images/preview.jpg
-format: hugo-md
 categories:
   - Machine Learning
+preview: images/preview.jpg
+format: hugo-md
+languages: ["R"]
 ported_categories:
   - Torch
   - R
   - Packages/Releases
-preview: images/preview.jpg
-format: hugo-md
-languages: ["R"]
 ---
 
 

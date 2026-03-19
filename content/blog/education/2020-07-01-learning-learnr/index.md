@@ -1,7 +1,7 @@
 ---
-title: "Learning learnr"
+title: Learning learnr
 author:
-  - "[Nischal Shrestha](http://nischalshrestha.me/)"
+  - '[Nischal Shrestha](http://nischalshrestha.me/)'
 people:
   - Nischal Shrestha
 date: '2020-07-01'

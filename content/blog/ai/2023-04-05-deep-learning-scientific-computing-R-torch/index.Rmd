@@ -1,27 +1,25 @@
 ---
-title: "Deep Learning and Scientific Computing with R torch: the book"
-description: >
+title: 'Deep Learning and Scientific Computing with R torch: the book'
+description: |
   Please allow us to introduce Deep Learning and Scientific Computing with R torch. Released in e-book format today, and available freely online, this book starts out by introducing torch basics. From there, it moves on to various deep-learning use cases. Finally, it shows how to use torch for more general topics, such as matrix computations and the Fourier Transform.
 author:
   - name: Sigrid Keydana
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: keydanatorchbook
-date: 2023-04-05
-preview: images/book.jpg
-format: hugo-md
+date: '2023-04-05'
 categories:
   - Machine Learning
   - Best Practices
+preview: images/book.jpg
+format: hugo-md
+languages: ["R"]
 ported_categories:
   - Torch
   - R
   - Meta
   - Concepts
   - Packages/Releases
-preview: images/book.jpg
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

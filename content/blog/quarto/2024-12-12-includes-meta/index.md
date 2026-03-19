@@ -1,9 +1,10 @@
 ---
 title: Use `meta` + `include` to customize reusable content
-description: >
-  The "Includes" feature in Quarto lets you efficiently reuse content across
-  multiple files. Combined with the "meta" shortcode, it enables you to set
-  precise, file-specific values.
+description: |
+  The "Includes" feature in Quarto lets you efficiently reuse content across multiple files. Combined with the "meta" shortcode, it enables you to set precise, file-specific values.
+categories:
+  - Publishing
+  - Community
 people:
   - Ashley Henry
 date: '2024-12-12'
@@ -13,9 +14,6 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
-  - Community
 ported_categories:
   - Learn
   - Authoring

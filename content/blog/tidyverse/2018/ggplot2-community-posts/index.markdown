@@ -4,10 +4,13 @@ people:
   - Mara Averick
 date: '2018-08-09'
 slug: ggplot2-community-posts
+categories:
+  - Visualization
+  - Community
 tags:
   - ggplot2
   - tidyverse
-description: >
+description: |
   Blog posts from the community using ggplot2 3.0.0.
 photo:
   url: https://unsplash.com/photos/TZCppMjaOHU
@@ -17,9 +20,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
-  - Community
 ported_categories:
   - other
 ---

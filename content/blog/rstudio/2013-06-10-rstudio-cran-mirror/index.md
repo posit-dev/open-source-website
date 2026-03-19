@@ -3,14 +3,14 @@ title: The RStudio CRAN mirror
 people:
   - Hadley Wickham
 date: '2013-06-10'
+categories:
+  - Community
 slug: rstudio-cran-mirror
 blogcategories:
-- Company News and Events
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - News
 ---

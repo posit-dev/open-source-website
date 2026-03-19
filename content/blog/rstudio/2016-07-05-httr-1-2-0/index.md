@@ -3,17 +3,18 @@ title: httr 1.2.0
 people:
   - Hadley Wickham
 date: '2016-07-05'
+categories:
+  - Data Wrangling
 slug: httr-1-2-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["httr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - Packages
 ---

@@ -2,6 +2,8 @@
 title: Spreadsheet workflows in R
 date: '2020-08-17'
 slug: spreadsheets-using-r
+categories:
+  - Community
 tags:
   - spreadsheets
   - tidyverse
@@ -15,8 +17,6 @@ ported_from: education
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

@@ -1,8 +1,7 @@
 ---
 title: 'Shiny for R updates: tooltips, popovers, a new theme, and more'
-description: >
-  An overview of recent Shiny for R updates, including tooltips, popovers, a new
-  theme, and more.
+description: |
+  An overview of recent Shiny for R updates, including tooltips, popovers, a new theme, and more.
 people:
   - Carson Sievert
   - Garrick Aden-Buie

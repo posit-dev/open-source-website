@@ -4,12 +4,13 @@ people:
   - Davis Vaughan
 date: '2020-02-10'
 slug: slider-0-1-0
-description: 
-  slider 0.1.0 is now available on CRAN. It provides a family of general purpose
-  sliding window functions.
+description: slider 0.1.0 is now available on CRAN. It provides a family of general
+  purpose sliding window functions.
+categories:
+  - Data Wrangling
 tags:
   - slider
-photo: 
+photo:
   url: https://unsplash.com/photos/6RLa-tC7y0I
   author: Arie Wubben
 image: thumbnail-wd.jpg
@@ -17,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "slider"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

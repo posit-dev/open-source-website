@@ -1,26 +1,24 @@
 ---
-
 slug: vdiffr-1-0-0
 title: vdiffr 1.0.0
-date: 2021-06-21
+date: '2021-06-21'
 people:
   - Lionel Henry
-description: >
-    This major release of vdiffr includes an updated SVG engine and integrates with the snapshot management mechanism of testthat 3.
-
+description: |
+  This major release of vdiffr includes an updated SVG engine and integrates with the snapshot management mechanism of testthat 3.
 photo:
   url: https://unsplash.com/photos/e8rfcKAx1Rk
   author: Jakob Owens
-
-tags: [ggplot2, testthat]
-
+categories:
+  - Best Practices
+tags:
+  - ggplot2
+  - testthat
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2", "testthat"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

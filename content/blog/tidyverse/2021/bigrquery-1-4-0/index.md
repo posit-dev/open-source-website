@@ -1,26 +1,26 @@
 ---
-
 slug: bigrquery-1-4-0
 title: bigrquery 1.4.0
-date: 2021-08-04
+date: '2021-08-04'
 people:
   - Jenny Bryan
-description: >
-    bigrquery 1.4.0 fixes a bug in `bq_table_download()`.
-
+description: |
+  bigrquery 1.4.0 fixes a bug in `bq_table_download()`.
 photo:
   url: https://unsplash.com/photos/uzw4MvfG5ps
   author: Henry & Co.
-
-tags: [bigrquery, gargle, dbplyr, databases]
-
+categories:
+  - Data Wrangling
+tags:
+  - bigrquery
+  - gargle
+  - dbplyr
+  - databases
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "bigrquery", "gargle", "dbplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

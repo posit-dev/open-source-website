@@ -1,12 +1,16 @@
 ---
-title: 'The INSPIRE U2 Program: Training Students in Big Data and Statistics Using RStudio'
+title: 'The INSPIRE U2 Program: Training Students in Big Data and Statistics Using
+  RStudio'
 people:
   - Dr. A. Nayena Blankson
 date: '2021-10-20'
 slug: the-inspire-u2-program
 blogcategories:
   - Training and Education
-description: Dr. A. Nayena Blankson, Professor of Psychology at Spelman College, introduces the INSPIRE U2 Program and describes the 2021 partnership with RStudio. The INSPIRE U2 Program provides a learning pathway for underrepresented female students to enter advanced degrees and careers in statistical fields. 
+description: Dr. A. Nayena Blankson, Professor of Psychology at Spelman College, introduces
+  the INSPIRE U2 Program and describes the 2021 partnership with RStudio. The INSPIRE
+  U2 Program provides a learning pathway for underrepresented female students to enter
+  advanced degrees and careers in statistical fields.
 resources:
   - name: featured
     src: image.png

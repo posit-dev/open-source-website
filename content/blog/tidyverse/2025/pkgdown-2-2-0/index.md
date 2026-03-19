@@ -1,28 +1,23 @@
 ---
-
 slug: pkgdown-2-2-0
 title: pkgdown 2.2.0
-date: 2025-11-06
+date: '2025-11-06'
 people:
   - Hadley Wickham
-description: >
-    The latest version of pkgdown automatically builds markdown files that 
-    make it easy for LLMs to use your website.
-
+description: |
+  The latest version of pkgdown automatically builds markdown files that  make it easy for LLMs to use your website.
 photo:
   url: https://unsplash.com/photos/cardboard-box-lot-fyaTq-fIlro
   author: CHUTTERSNAP
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [pkgdown]
-
+categories:
+  - Best Practices
+tags:
+  - pkgdown
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

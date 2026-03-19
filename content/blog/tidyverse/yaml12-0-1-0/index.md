@@ -1,29 +1,26 @@
 ---
-
 slug: yaml12-0-1-0
-title: "yaml12: YAML 1.2 for R and Python"
-date: 2026-01-07
+title: 'yaml12: YAML 1.2 for R and Python'
+date: '2026-01-07'
 people:
   - Tomasz Kalinowski
-description: >
-    We’re pleased to announce two new YAML 1.2 packages: `yaml12` for R and
-    `py-yaml12` for Python. Both are implemented in Rust and designed for
-    fast, predictable YAML 1.2 parsing, with safe opt-in tag handling and document stream support.
-
+description: |
+  We’re pleased to announce two new YAML 1.2 packages: `yaml12` for R and `py-yaml12` for Python. Both are implemented in Rust and designed for fast, predictable YAML 1.2 parsing, with safe opt-in tag handling and document stream support.
 photo:
   url: https://unsplash.com/photos/green-plant-on-brown-clay-pot-PAEwrnasOvY
   author: Devin H
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [yaml, r, python, rust]
-
+categories:
+  - Best Practices
+tags:
+  - yaml
+  - r
+  - python
+  - rust
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "yaml"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

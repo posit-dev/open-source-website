@@ -1,12 +1,15 @@
 ---
-title: 'Tidyverse dev day at useR! 2019'
+title: Tidyverse dev day at useR! 2019
 people:
   - Mara Averick
 date: '2019-04-24'
 slug: tidyverse-dev-day-at-user-2019
-description: > 
+description: |
   Join us for a pre-useR! tidyverse developer day on July 8!
-tags: [tidyverse-dev-day]
+categories:
+  - Community
+tags:
+  - tidyverse-dev-day
 photo:
   url: https://photos.app.goo.gl/g5Fj6GmHVXZhTsPj8
   author: JD Long
@@ -15,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - other
 ---

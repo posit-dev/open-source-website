@@ -1,11 +1,13 @@
 ---
-title: 'purrr 0.3.0'
+title: purrr 0.3.0
 people:
   - Lionel Henry
 date: '2019-02-06'
 slug: purrr-0-3-0
-description: >
+description: |
   purrr 0.3.0 is now on CRAN.
+categories:
+  - Data Wrangling
 photo:
   url: https://unsplash.com/photos/NodtnCsLdTE
   author: Mikhail Vasilyev
@@ -14,8 +16,6 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "purrr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

@@ -1,9 +1,7 @@
 ---
 title: Announcing new R Shiny UI components
-description: >
-  The {bslib} R package recently added new user interface (UI) components,
-  including (full-screen) Cards, Value Boxes, and a responsive column wrapping
-  layout. Start using them today in Shiny, R Markdown, and/or Quarto.
+description: |
+  The {bslib} R package recently added new user interface (UI) components, including (full-screen) Cards, Value Boxes, and a responsive column wrapping layout. Start using them today in Shiny, R Markdown, and/or Quarto.
 people:
   - Carson Sievert
 date: '2022-12-20'

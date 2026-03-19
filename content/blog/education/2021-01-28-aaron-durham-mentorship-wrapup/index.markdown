@@ -1,8 +1,11 @@
 ---
-title: 'Learning R Coding by Building Something Cool'
+title: Learning R Coding by Building Something Cool
 people:
   - Aaron Durham
 date: '2021-01-28'
+categories:
+  - Community
+  - Interactive Apps
 description: |
   Learning how to build a shiny dashboard,
   and through that gaining a deeper understanding of R coding.
@@ -14,9 +17,6 @@ image: aaron-durham-mentorship-wrapup-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
-  - Interactive Apps
 ported_categories:
   - mentorship
 ---

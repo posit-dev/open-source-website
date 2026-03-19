@@ -4,6 +4,8 @@ people:
   - Hadley Wickham
 date: '2018-02-13'
 slug: tidyr-0-8-0
+categories:
+  - Data Wrangling
 tags: []
 photo:
   url: https://unsplash.com/photos/byXFt2LwVac
@@ -13,8 +15,6 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

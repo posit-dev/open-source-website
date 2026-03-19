@@ -1,9 +1,11 @@
 ---
-title: "Deep Learning with R, 2nd Edition"
+title: Deep Learning with R, 2nd Edition
 description: |
   Announcing the release of "Deep Learning with R, 2nd Edition," a book that shows you how to get started with deep learning in R.
-date: 2022-05-31T00:00:00.000Z
+date: '2022-05-31T00:00:00.000Z'
 slug: kalinowskiDLwR2e
+categories:
+  - Machine Learning
 author:
   - name: Tomasz Kalinowski
     affiliation: RStudio
@@ -15,8 +17,6 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - TensorFlow/Keras
   - R

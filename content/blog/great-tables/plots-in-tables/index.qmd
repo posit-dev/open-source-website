@@ -1,9 +1,9 @@
 ---
-title: "Adding Plots to Great Tables"
+title: Adding Plots to Great Tables
 people:
   - Jules Walzer-Goldfeld
   - Michael Chow
-date: 2025-07-03
+date: '2025-07-03'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]

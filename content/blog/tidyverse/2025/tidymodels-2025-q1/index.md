@@ -1,25 +1,22 @@
 ---
-
 slug: tidymodels-2025-q1
 title: Q1 2025 tidymodels digest
-date: 2025-02-27
+date: '2025-02-27'
 people:
   - Max Kuhn
-description: >
-    A summary of the goings on for the tidymodels group in later 2024 and early 2025.
-
+description: |
+  A summary of the goings on for the tidymodels group in later 2024 and early 2025.
 photo:
   author: George Stagg and Max Kuhn
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - roundup
 ---

@@ -1,11 +1,10 @@
 ---
-title: "State-of-the-art NLP models from R"
-description: >
-  Nowadays, Microsoft, Google, Facebook, and OpenAI are sharing lots of
-  state-of-the-art models in the field of Natural Language Processing. However,
-  fewer materials exist how to use these models from R. In this post, we will
-  show how R users can access and benefit from these models as well.
-date: 2020-07-30
+title: State-of-the-art NLP models from R
+description: |
+  Nowadays, Microsoft, Google, Facebook, and OpenAI are sharing lots of state-of-the-art models in the field of Natural Language Processing. However, fewer materials exist how to use these models from R. In this post, we will show how R users can access and benefit from these models as well.
+date: '2020-07-30'
+categories:
+  - Machine Learning
 author:
   - name: Turgut Abdullayev
     url: https://github.com/henry090
@@ -18,8 +17,6 @@ ported_from: ai
 port_status: in-progress
 software: ["reticulate"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Natural Language Processing
 ---

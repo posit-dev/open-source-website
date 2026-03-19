@@ -1,23 +1,24 @@
 ---
 slug: dplyr-1-1-0-vctrs
-title: "dplyr 1.1.0: The power of vctrs"
-date: 2023-02-02
+title: 'dplyr 1.1.0: The power of vctrs'
+date: '2023-02-02'
 people:
   - Davis Vaughan
-description: >
-    All of the dplyr vector functions, like `between()` and `case_when()`, are now powered by
-    vctrs. We've also added two powerful new helpers: `case_match()` and `consecutive_id()`.
+description: |
+  All of the dplyr vector functions, like `between()` and `case_when()`, are now powered by vctrs. We've also added two powerful new helpers: `case_match()` and `consecutive_id()`.
 photo:
   url: https://unsplash.com/photos/n6vS3xlnsCc
   author: Armand Khoury
-tags: [dplyr, dplyr-1-1-0]
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

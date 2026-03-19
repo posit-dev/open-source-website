@@ -1,5 +1,5 @@
 ---
-title: "Simple Audio Classification with Keras"
+title: Simple Audio Classification with Keras
 description: |
   In this tutorial we will build a deep learning model to classify words. We will use the Speech Commands dataset which consists of 65,000 one-second audio files of people saying 30 different words.
 author:
@@ -9,15 +9,14 @@ author:
     affiliation_url: http://curso-r.com/
 date: 06-06-2018
 preview: https://upload.wikimedia.org/wikipedia/commons/6/61/FFT-Time-Frequency-View.png
-format: hugo-md
 categories:
   - Machine Learning
-ported_categories:
-  - TensorFlow/Keras
-  - Audio Processing
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Audio Processing
 ---
 
 ```{r setup, include=FALSE}

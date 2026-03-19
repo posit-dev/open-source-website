@@ -1,27 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: mcptools-0-1-0
 title: R and the Model Context Protocol
-date: 2025-07-21
+date: '2025-07-21'
 people:
   - Simon Couch
-description: >
-    The newly released mcptools package makes coding assistants better at
-    writing R code and applications built with ellmer more powerful.
-
+description: |
+  The newly released mcptools package makes coding assistants better at writing R code and applications built with ellmer more powerful.
 photo:
   url: https://unsplash.com/photos/PacWLzKKTso
   author: Chad Peltola
-
-tags: [ellmer, ai]
+categories:
+  - Artificial Intelligence
+tags:
+  - ellmer
+  - ai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ellmer"]
 languages: ["R"]
-categories:
-  - Artificial Intelligence
 ported_categories:
   - package
 ---

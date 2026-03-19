@@ -1,17 +1,18 @@
 ---
 title: ggplot2 3.0.0
-author: Mara Averick
+author:
+  - Mara Averick
 date: '2018-07-05'
 slug: ggplot2-3-0-0
-description: > 
+description: |
   ggplot2 3.0.0 is on CRAN.
+categories:
+  - Visualization
 photo:
   url: https://unsplash.com/photos/wEL2zPX3jDg
   author: Fabio Ballasina
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

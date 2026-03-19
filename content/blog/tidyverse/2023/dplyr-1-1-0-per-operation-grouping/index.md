@@ -1,24 +1,24 @@
 ---
 slug: dplyr-1-1-0-per-operation-grouping
-title: "dplyr 1.1.0: Per-operation grouping"
-date: 2023-02-01
+title: 'dplyr 1.1.0: Per-operation grouping'
+date: '2023-02-01'
 people:
   - Davis Vaughan
-description: >
-    dplyr now supports an experimental per-operation grouping syntax. This serves as an
-    alternative to `group_by()` and always returns an ungrouped data frame, meaning that you
-    never need to remember to `ungroup()`.
+description: |
+  dplyr now supports an experimental per-operation grouping syntax. This serves as an alternative to `group_by()` and always returns an ungrouped data frame, meaning that you never need to remember to `ungroup()`.
 photo:
   url: https://www.pexels.com/photo/fruit-stand-375897/
   author: Clem Onojeghuo
-tags: [dplyr, dplyr-1-1-0]
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

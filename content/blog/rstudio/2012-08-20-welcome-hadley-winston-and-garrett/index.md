@@ -3,15 +3,15 @@ title: Welcome Hadley, Winston, and Garrett!
 people:
   - RStudio Team
 date: '2012-08-20'
-slug: welcome-hadley-winston-and-garrett
-blogcategories:
-- Company News and Events
-- Open Source
-nohero: true
-ported_from: rstudio
-port_status: in-progress
 categories:
   - Community
+slug: welcome-hadley-winston-and-garrett
+blogcategories:
+  - Company News and Events
+  - Open Source
+nohero: yes
+ported_from: rstudio
+port_status: in-progress
 ported_categories:
   - News
 ---

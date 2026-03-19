@@ -1,28 +1,23 @@
 ---
-
 slug: scales-1-4-0
 title: scales 1.4.0
-date: 2025-04-23
+date: '2025-04-23'
 people:
   - Teun van den Brand
-description: >
-    The new 1.4.0 release of the scales package adds some colourful updates.
-    Read about colour manipulation, palettes and new label functions.
-
+description: |
+  The new 1.4.0 release of the scales package adds some colourful updates. Read about colour manipulation, palettes and new label functions.
 photo:
   url: https://unsplash.com/photos/a-close-up-of-a-person-holding-a-paintbrush-Xrelr7cTYm4
   author: Jennie Razumnaya
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [scales]
-
+categories:
+  - Visualization
+tags:
+  - scales
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "scales"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

@@ -1,14 +1,16 @@
 ---
 title: roxygen2 6.1.0
-date: 2018-08-07
+date: '2018-08-07'
 slug: roxygen2-6-1-0
 people:
   - Mara Averick
+categories:
+  - Best Practices
 tags:
   - roxygen2
   - r-lib
-description: >
-    roxygen2 6.1.0 is now on CRAN!
+description: |
+  roxygen2 6.1.0 is now on CRAN!
 photo:
   url: https://unsplash.com/photos/3KEJMfoHoMY
   author: Graeme Nicholl
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "roxygen2"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

@@ -1,19 +1,18 @@
 ---
-title: "Getting familiar with torch tensors"
-description: > 
- In this first installment of a four-part miniseries, we present the main things you will want to know about torch tensors. As an illustrative example, we'll code a simple neural network from scratch.
-
+title: Getting familiar with torch tensors
+description: |
+  In this first installment of a four-part miniseries, we present the main things you will want to know about torch tensors. As an illustrative example, we'll code a simple neural network from scratch.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchnetworkfromscratch
 date: 10-01-2020
+categories:
+  - Machine Learning
 preview: images/pic.jpg
 format: hugo-md
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Torch
   - R

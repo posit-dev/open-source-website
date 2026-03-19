@@ -1,26 +1,26 @@
 ---
-
 slug: tidymodels-2023-q1
-title: "Q1 2023 tidymodels digest"
-date: 2023-04-28
+title: Q1 2023 tidymodels digest
+date: '2023-04-28'
 people:
   - Emil Hvitfeldt
-description: >
-    The tidymodels team has been busy working on all sorts of new features across the ecosystem.
+description: |
+  The tidymodels team has been busy working on all sorts of new features across the ecosystem.
 photo:
   url: https://unsplash.com/photos/l-rtCtc_4c0
   author: Chi Liu
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, recipes, yardstick, dials]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - recipes
+  - yardstick
+  - dials
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes", "yardstick", "dials"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - roundup
 ---

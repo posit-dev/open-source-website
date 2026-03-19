@@ -1,30 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: testthat-3-2-0
 title: testthat 3.2.0
-date: 2023-10-08
+date: '2023-10-08'
 people:
   - Hadley Wickham
-description: >
-    Catch up on the last two years of testthat development which includes 
-    improved documentation, new expectations, a new style for error snapshots,
-    support for mocking, a new way to detect if a test has changed global state, 
-    and a handful of UI improvements.
-
+description: |
+  Catch up on the last two years of testthat development which includes  improved documentation, new expectations, a new style for error snapshots, support for mocking, a new way to detect if a test has changed global state,  and a handful of UI improvements.
 photo:
   url: https://unsplash.com/photos/PtabTe6iJ_8
   author: Mika Baumeister
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [testthat, devtools]
+categories:
+  - Best Practices
+tags:
+  - testthat
+  - devtools
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "testthat", "devtools"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

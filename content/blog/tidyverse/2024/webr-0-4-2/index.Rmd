@@ -1,30 +1,24 @@
 ---
 output: hugodown::hugo_document
-
 slug: webr-0-4-2
-title: "WebAssembly roundup part 1: webR 0.4.2"
-date: 2024-10-11
+title: 'WebAssembly roundup part 1: webR 0.4.2'
+date: '2024-10-11'
 people:
   - George Stagg
-description: >
-    First in a series of blog posts about what's new in R for WebAssembly.
-    The latest release of webR 0.4.2 is now available, with updates to the
-    viewer mechanism, support for displaying htmlwidgets, an IndexedDB virtual
-    filesystem driver, and improved packaging for WebAssembly R binaries.
-
+description: |
+  First in a series of blog posts about what's new in R for WebAssembly. The latest release of webR 0.4.2 is now available, with updates to the viewer mechanism, support for displaying htmlwidgets, an IndexedDB virtual filesystem driver, and improved packaging for WebAssembly R binaries.
 photo:
   url: https://unsplash.com/@gatisv
   author: Gatis Vilaks
-  
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [webr, wasm]
+categories:
+  - Interactive Apps
+tags:
+  - webr
+  - wasm
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - roundup
 ---

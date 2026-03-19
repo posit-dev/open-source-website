@@ -3,6 +3,8 @@ title: Upcoming Instructor Training Events
 people:
   - Greg
 date: '2019-09-25'
+categories:
+  - Community
 tags:
   - instructor training
 slug: upcoming-instructor-training-events
@@ -15,8 +17,6 @@ image: train-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - events
   - teach

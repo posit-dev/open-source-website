@@ -3,16 +3,17 @@ title: 'RcppParallel: Getting R and C++ to work (some more) in parallel'
 people:
   - RStudio Team
 date: '2016-01-15'
+categories:
+  - Best Practices
 slug: rcppparallel-getting-r-and-c-to-work-some-more-in-parallel
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - Packages
 ---

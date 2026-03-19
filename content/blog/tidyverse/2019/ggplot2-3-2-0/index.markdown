@@ -1,11 +1,13 @@
 ---
-title: 'ggplot2 3.2.0'
+title: ggplot2 3.2.0
 people:
   - Thomas Lin Pedersen
 date: '2019-06-16'
 slug: ggplot2-3-2-0
-description: >
+description: |
   ggplot2 3.2.0 is now on CRAN!
+categories:
+  - Visualization
 tags:
   - ggplot2
   - tidyverse
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

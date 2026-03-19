@@ -1,28 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: tidymodels-fairness
 title: Fair machine learning with tidymodels
-date: 2024-03-21
+date: '2024-03-21'
 people:
   - Simon Couch
-description: >
-    Recent tidymodels releases integrated a set of tools for assessing whether
-    machine learning models treat groups of people differently.
-
+description: |
+  Recent tidymodels releases integrated a set of tools for assessing whether machine learning models treat groups of people differently.
 photo:
   url: https://unsplash.com/photos/JBghIzjbuLs
   author: Patrick Fore
-
-tags: [tidymodels, yardstick, tune]
+categories:
+  - Community
+tags:
+  - tidymodels
+  - yardstick
+  - tune
 bibliography: refs.bib
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "yardstick", "tune"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

@@ -1,27 +1,23 @@
 ---
-
 slug: learn-tidyverse-ai
 title: Learning the tidyverse with the help of AI tools
-date: 2025-04-04
+date: '2025-04-04'
 people:
   - Mine Çetinkaya-Rundel
-description: >
-    Tips and recommendations for learning the tidyverse with AI tools.
-
+description: |
+  Tips and recommendations for learning the tidyverse with AI tools.
 photo:
   url: https://chatgpt.com/g/g-c8rPAhJRP-image-creator
   author: ChatGPT
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [ai]
-
+categories:
+  - Community
+tags:
+  - ai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

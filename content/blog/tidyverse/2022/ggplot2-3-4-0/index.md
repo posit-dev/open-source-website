@@ -1,28 +1,24 @@
 ---
-
 slug: ggplot2-3-4-0
 title: ggplot2 3.4.0
-date: 2022-11-07
+date: '2022-11-07'
 people:
   - Thomas Lin Pedersen
-description: >
-    ggplot2 3.4.0 is now on CRAN. Read all about the (mostly internal) changes
-    that make up this release.
-
+description: |
+  ggplot2 3.4.0 is now on CRAN. Read all about the (mostly internal) changes that make up this release.
 photo:
   url: https://data-imaginist.com/art
   author: Thomas Lin Pedersen
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [ggplot2, graphics]
-
+categories:
+  - Visualization
+tags:
+  - ggplot2
+  - graphics
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

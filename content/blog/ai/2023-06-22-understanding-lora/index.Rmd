@@ -1,28 +1,23 @@
 ---
-title: "Understanding LoRA with a minimal example"
-description: >
-  LoRA (Low Rank Adaptation) is a new technique for fine-tuning deep learning models
-  that works by reducing the number of trainable parameters and enables efficient
-  task switching. In this blog post we will talk about the key ideas behind LoRA in
-  a very minimal torch example.
+title: Understanding LoRA with a minimal example
+description: |
+  LoRA (Low Rank Adaptation) is a new technique for fine-tuning deep learning models that works by reducing the number of trainable parameters and enables efficient task switching. In this blog post we will talk about the key ideas behind LoRA in a very minimal torch example.
 author:
   - name: Daniel Falbel
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: safetensors
-date: 2023-06-22
-preview: images/lora.png
-format: hugo-md
+date: '2023-06-22'
 categories:
   - Machine Learning
   - Best Practices
+preview: images/lora.png
+format: hugo-md
+languages: ["R"]
 ported_categories:
   - Torch
   - Concepts
   - R
-preview: images/lora.png
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

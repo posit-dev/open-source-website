@@ -1,27 +1,23 @@
 ---
-
 slug: googledrive-2-0-0
 title: googledrive 2.0.0
-date: 2021-07-08
+date: '2021-07-08'
 people:
   - Jenny Bryan
-description: >
-    googledrive 2.0.0 adapts to Drive's pivot from Team Drives to shared drives
-    and its shift to a "single parent" model of file organization.
-
+description: |
+  googledrive 2.0.0 adapts to Drive's pivot from Team Drives to shared drives and its shift to a "single parent" model of file organization.
 photo:
   url: https://unsplash.com/photos/Uf-c4u1usFQ
   author: Tim Evans
-
-tags: [googledrive]
-
+categories:
+  - Data Wrangling
+tags:
+  - googledrive
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googledrive"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

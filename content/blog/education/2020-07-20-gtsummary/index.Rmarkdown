@@ -1,18 +1,20 @@
 ---
 title: Presentation-Ready Summary Tables with gtsummary
 author:
-  - "[Daniel Sjoberg](http://www.danieldsjoberg.com/)"
-  - "[Margie Hannum](https://margarethannum.github.io/about.html)"
-  - "[Karissa Whiting](https://github.com/karissawhiting)"
+  - '[Daniel Sjoberg](http://www.danieldsjoberg.com/)'
+  - '[Margie Hannum](https://margarethannum.github.io/about.html)'
+  - '[Karissa Whiting](https://github.com/karissawhiting)'
 people:
   - Daniel Sjoberg
   - Margie Hannum
   - Karissa Whiting
 date: '2020-07-20'
+categories:
+  - Community
 tags:
   - rmarkdown
-description: |
-  The gtsummary package is for making beautiful summary tables with R, in R Markdown documents. 
+description: "The gtsummary package is for making beautiful summary tables with R,
+  in R Markdown documents. \n"
 slug: gtsummary
 photo:
   url: https://unsplash.com/photos/hk2gSD_S5j0
@@ -22,8 +24,6 @@ ported_from: education
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - package

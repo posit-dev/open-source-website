@@ -1,5 +1,5 @@
 ---
-title: 'Using Keras for Deep Learning with R'
+title: Using Keras for Deep Learning with R
 date: '2021-12-08'
 slug: deep-learning-with-r-keras-for-r-updates
 tags:
@@ -11,7 +11,9 @@ people:
   - Isabella Velásquez
 blogcategories:
   - Products and Technology
-description: We are excited to announce new developments in Keras for R. Data scientists can use the most popular and powerful deep learning frameworks to guide data-driven decisions, all within R.
+description: We are excited to announce new developments in Keras for R. Data scientists
+  can use the most popular and powerful deep learning frameworks to guide data-driven
+  decisions, all within R.
 alttext: Leafless tree branches with red buds against a snowy background
 image: thumbnail.jpg
 ported_from: rstudio

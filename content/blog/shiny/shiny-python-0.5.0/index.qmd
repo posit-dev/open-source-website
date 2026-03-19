@@ -1,11 +1,12 @@
 ---
 title: Shiny for Python 0.5.0
-description: Style tweaks, table filtering, tooltips--and an appearance on the Talk Python podcast!
+description: Style tweaks, table filtering, tooltips--and an appearance on the Talk
+  Python podcast!
 people:
   - Joe Cheng
-date: "2023-08-09"
+date: '2023-08-09'
 image: shiny-050.png
-image-alt: "Shiny for Python 0.5.0"
+image-alt: Shiny for Python 0.5.0
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]

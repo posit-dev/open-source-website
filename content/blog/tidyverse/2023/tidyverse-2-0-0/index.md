@@ -1,27 +1,23 @@
 ---
-
 slug: tidyverse-2-0-0
 title: tidyverse 2.0.0
-date: 2023-03-08
+date: '2023-03-08'
 people:
   - Hadley Wickham
-description: >
-    Now including lubridate!
-
+description: |
+  Now including lubridate!
 photo:
   url: https://unsplash.com/photos/fUnfEz3VLv4
   author: Graham Holtshausen
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidyverse]
-
+categories:
+  - Data Wrangling
+tags:
+  - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

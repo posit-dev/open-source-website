@@ -6,21 +6,16 @@ people:
 date: '2025-02-21'
 description: We are thrilled to announce Air, a new R formatter.
 image: thumbnail-wd.jpg
-image-alt: "Blue sky and clouds seen from above"
+image-alt: Blue sky and clouds seen from above
 photo:
   author: Taylor Van Riper
   url: https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI
 ported_from: tidyverse
 port_status: in-progress
 categories:
-- tidyverse
+  - Data Wrangling
 software: ["air"]
 languages: ["R"]
-languages:
-- R
-- tidyverse
-categories:
-  - Data Wrangling
 ported_categories:
   - tidyverse
 ---

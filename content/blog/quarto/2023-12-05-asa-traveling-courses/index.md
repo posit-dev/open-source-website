@@ -1,9 +1,11 @@
 ---
 title: ASA Traveling Courses on Quarto
 subtitle: From R Markdown to Quarto
-description: >
-  Series of workshops for learning Quarto with R and RStudio, aimed primarily at
-  R Markdown users.
+description: |
+  Series of workshops for learning Quarto with R and RStudio, aimed primarily at R Markdown users.
+categories:
+  - Publishing
+  - Community
 people:
   - Mine Çetinkaya-Rundel
 date: '2023-12-05'
@@ -13,9 +15,6 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
-  - Community
 ported_categories:
   - Learn
 ---

@@ -4,6 +4,8 @@ people:
   - Hadley Wickham
 date: '2018-05-03'
 slug: pkgdown-1-0-0
+categories:
+  - Best Practices
 photo:
   url: https://unsplash.com/photos/rx1iJ59jRyU
   author: Annie Spratt
@@ -12,8 +14,6 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

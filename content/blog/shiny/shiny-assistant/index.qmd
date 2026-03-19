@@ -3,11 +3,10 @@ title: Shiny Assistant
 description: Prototype and build Shiny applications with the help of AI
 people:
   - Winston Chang
-date: "2024-10-09"
-image-alt: "an image with lines representing ai computing lie behind a chatbox icon"
+date: '2024-10-09'
+image-alt: an image with lines representing ai computing lie behind a chatbox icon
 image-video: shiny-assistant.mp4
 image: shiny-assistant.gif
-
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-assistant", "shiny-python", "shiny-r"]

@@ -1,9 +1,11 @@
 ---
-title: "Modeling censored data with tfprobability"
+title: Modeling censored data with tfprobability
 description: |
   In this post we use tfprobability, the R interface to TensorFlow Probability, to model censored data. Again, the exposition is inspired by the treatment of this topic in Richard McElreath's Statistical Rethinking. Instead of cute cats though, we model immaterial entities from the cold world of technology: This post explores durations of CRAN package checks, a dataset that comes with Max Kuhn's parsnip.
-date: 2019-07-31
+date: '2019-07-31'
 slug: keydana2019tfpcensored
+categories:
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -15,8 +17,6 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Bayesian Modeling
   - TensorFlow/Keras

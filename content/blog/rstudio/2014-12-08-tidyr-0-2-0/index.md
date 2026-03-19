@@ -3,18 +3,19 @@ title: tidyr 0.2.0 (and reshape2 1.4.1)
 people:
   - Hadley Wickham
 date: '2014-12-08'
+categories:
+  - Data Wrangling
 slug: tidyr-0-2-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- tidyverse
+  - Packages
+  - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - Packages
   - tidyverse

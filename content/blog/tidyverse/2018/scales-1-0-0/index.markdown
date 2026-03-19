@@ -1,11 +1,13 @@
 ---
-title: "scales 1.0.0"
+title: scales 1.0.0
 people:
   - Dana Seidel
 date: '2018-08-09'
 slug: scales-1-0-0
-description: >
+description: |
   scales 1.0.0 is now on CRAN.
+categories:
+  - Visualization
 photo:
   url: https://unsplash.com/photos/3kzlCL3rj8A
   author: Ricardo Gomez Angel
@@ -18,8 +20,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "scales", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

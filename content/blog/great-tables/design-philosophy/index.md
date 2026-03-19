@@ -3,7 +3,7 @@ title: The Design Philosophy of Great Tables
 people:
   - Rich Iannone
   - Michael Chow
-date: 2024-04-04T00:00:00.000Z
+date: '2024-04-04T00:00:00.000Z'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]

@@ -3,16 +3,17 @@ title: New data packages
 people:
   - Hadley Wickham
 date: '2014-07-23'
+categories:
+  - Data Wrangling
 slug: new-data-packages
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - Packages
 ---

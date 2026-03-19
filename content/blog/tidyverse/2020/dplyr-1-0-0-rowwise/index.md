@@ -4,27 +4,21 @@ title: 'dplyr 1.0.0: working within rows'
 people:
   - Hadley Wickham
 date: '2020-04-10'
-description: >
-  `rowwise()` has been renewed and revamped to make it easier to perform
-  operations row-by-row. This makes it much easier to solve problems that
-  previously required `lapply()`, `map()`, or friends.
-
-
+description: |
+  `rowwise()` has been renewed and revamped to make it easier to perform operations row-by-row. This makes it much easier to solve problems that previously required `lapply()`, `map()`, or friends.
+categories:
+  - Data Wrangling
 tags:
-- dplyr
-- dplyr-1-0-0
-
+  - dplyr
+  - dplyr-1-0-0
 photo:
   author: Oleksandr Hrebelnyk
   url: https://unsplash.com/photos/ckZU2xZUjO8
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

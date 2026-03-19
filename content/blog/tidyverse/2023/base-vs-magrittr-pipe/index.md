@@ -1,25 +1,23 @@
 ---
 slug: base-vs-magrittr-pipe
 title: Differences between the base R and magrittr pipes
-date: 2023-04-21
+date: '2023-04-21'
 people:
   - Hadley Wickham
-description: >
-    A discussion of the (relatively minor) differences between the native R pipe, 
-    `|>`, and the magrittr pipe, `%>%`.
+description: |
+  A discussion of the (relatively minor) differences between the native R pipe,  `|>`, and the magrittr pipe, `%>%`.
 photo:
   url: https://unsplash.com/photos/4CNNH2KEjhc
   author: Sigmund
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [magrittr]
-
+categories:
+  - Best Practices
+tags:
+  - magrittr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "magrittr"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - other
 ---

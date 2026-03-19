@@ -6,22 +6,23 @@ people:
   - Yitao Li
 slug: sparklyr-1-3
 date: '2020-07-16'
+categories:
+  - Data Wrangling
 tags:
-- big data
-- sparklyr
-- Spark
+  - big data
+  - sparklyr
+  - Spark
+  - Packages
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 resources:
-- name: sparklyr
-  src: sparklyr.png
-  title: SparklyR
+  - name: sparklyr
+    src: sparklyr.png
+    title: SparklyR
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - Packages
 ---

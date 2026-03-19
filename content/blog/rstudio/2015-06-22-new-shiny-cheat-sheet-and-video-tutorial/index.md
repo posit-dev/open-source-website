@@ -3,21 +3,21 @@ title: New Shiny cheat sheet and video tutorial
 people:
   - Garrett Grolemund
 date: '2015-06-22'
+categories:
+  - Interactive Apps
+  - MLOps & Admin
 tags:
-- cheatsheet
-- Shiny
+  - cheatsheet
+  - Shiny
 slug: new-shiny-cheat-sheet-and-video-tutorial
 blogcategories:
-- Products and Technology
-- Training and Education
-- Open Source
+  - Products and Technology
+  - Training and Education
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
-  - MLOps & Admin
 ported_categories:
   - Shiny
   - Training

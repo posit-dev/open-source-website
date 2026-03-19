@@ -1,24 +1,22 @@
 ---
-title: "luz 0.4.0"
-description: >
+title: luz 0.4.0
+description: |
   luz v0.4.0 is now on CRAN. This release adds support for training models on ARM Mac GPUs, reduces the overhead of using luz, and makes it easier to checkpoint and resume failed runs.
 author:
   - name: Daniel Falbel
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: luz-0-4
-date: 2023-04-17
-preview: images/luz.jpg
-format: hugo-md
+date: '2023-04-17'
 categories:
   - Machine Learning
+preview: images/luz.jpg
+format: hugo-md
+languages: ["R"]
 ported_categories:
   - Torch
   - Packages/Releases
   - R
-preview: images/luz.jpg
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

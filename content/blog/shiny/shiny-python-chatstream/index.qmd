@@ -3,9 +3,9 @@ title: AI chat apps with Shiny for Python
 description: The easiest way to build an AI chat app.
 people:
   - Winston Chang
-date: "2023-05-12"
+date: '2023-05-12'
 image: shiny-ai-chatbot.jpg
-image-alt: "an image with lines representing ai computing lie behind a chatbox icon"
+image-alt: an image with lines representing ai computing lie behind a chatbox icon
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "chatlas"]

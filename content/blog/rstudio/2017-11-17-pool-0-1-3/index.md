@@ -4,19 +4,20 @@ people:
   - Bárbara Borges Ribeiro
 date: '2017-11-17'
 slug: pool-0-1-3
+categories:
+  - Interactive Apps
 tags:
-- databases
-- shiny
-- Shiny
+  - databases
+  - shiny
+  - Packages
+  - Shiny
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Packages
   - Shiny

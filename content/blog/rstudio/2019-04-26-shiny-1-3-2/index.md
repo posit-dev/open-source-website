@@ -3,20 +3,21 @@ title: Shiny v1.3.2
 people:
   - Joe Cheng
 date: '2019-04-26'
+categories:
+  - Interactive Apps
 tags:
-- shiny
-- reactlog
-- Shiny
+  - shiny
+  - reactlog
+  - Packages
+  - Shiny
 slug: shiny-1-3-2
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r", "reactlog"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Packages
   - Shiny

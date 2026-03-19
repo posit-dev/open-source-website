@@ -3,18 +3,18 @@ title: ggplot2 2.2.0 coming soon!
 people:
   - Hadley Wickham
 date: '2016-09-30'
+categories:
+  - Data Wrangling
 slug: ggplot2-2-2-0-coming-soon
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- tidyverse
+  - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - tidyverse
 ---

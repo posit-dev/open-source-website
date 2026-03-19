@@ -1,22 +1,22 @@
 ---
-title: "luz 0.3.0"
+title: luz 0.3.0
 description: |
   luz version 0.3.0 is now on CRAN. luz is a high-level interface for torch.
 author:
   - name: Daniel Falbel
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com/
-date: 2022-08-24
+date: '2022-08-24'
 bibliography: bibliography.bib
-editor_options: 
-  markdown: 
+categories:
+  - Machine Learning
+editor_options:
+  markdown:
     wrap: 72
 preview: images/bulbs.jpeg
 slug: luz-0-3-0
 format: hugo-md
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Torch
   - Packages/Releases

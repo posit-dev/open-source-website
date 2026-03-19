@@ -4,6 +4,8 @@ people:
   - alison
   - greg
 date: '2020-11-16'
+categories:
+  - Community
 description: |
   Learn, celebrate, and amplify Black voices in informatics, data science, and coding around the world.
 slug: blackindataweek
@@ -14,8 +16,6 @@ image: data-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

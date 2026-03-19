@@ -1,27 +1,23 @@
 ---
-
 slug: tidymodels-2025-q3
 title: Q3 2025 tidymodels digest
-date: 2025-11-18
+date: '2025-11-18'
 people:
   - Emil Hvitfeldt
-description: >
-    A summary of what has been going on for the tidymodels group in the mid 2025.
-
+description: |
+  A summary of what has been going on for the tidymodels group in the mid 2025.
 photo:
   url: https://unsplash.com/photos/autumn-trees-with-colorful-leaves-in-a-park-Qx6Ojv9WPo8
   author: Anurag Jamwal
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - roundup
 ---

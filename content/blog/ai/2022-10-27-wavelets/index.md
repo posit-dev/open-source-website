@@ -1,9 +1,12 @@
 ---
-title: "Wavelet Transform - with torch"
+title: Wavelet Transform - with torch
 description: |
   torch does not have built-in functionality to do wavelet analysis. But we can efficiently implement what we need, making use of the Fast Fourier Transform (FFT). This post is a very first introduction to wavelets, suitable for readers that have not encountered it before. At the same time, it provides useful starter code, showing an (extensible) way to perform wavelet analysis in torch. It is an excerpt from the corresponding chapter in the forthcoming book, Deep Learning and Scientific Computing with R torch, to be published by CRC Press.
-date: 2022-10-27T00:00:00.000Z
+date: '2022-10-27T00:00:00.000Z'
 slug: keydanatorchwavelets
+categories:
+  - Machine Learning
+  - Best Practices
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -14,9 +17,6 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Machine Learning
-  - Best Practices
 ported_categories:
   - Torch
   - R

@@ -1,25 +1,22 @@
 ---
-
 slug: tdd-2025
 title: Tidyverse developer day 2025
-date: 2025-07-21
+date: '2025-07-21'
 people:
   - Max Kuhn
-description: >
-     Join us in Atlanta for tidyverse developer day on September 19, 2025!
-
+description: |
+  Join us in Atlanta for tidyverse developer day on September 19, 2025!
 photo:
   author: George Stagg
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidyverse-dev-day]
+categories:
+  - Community
+tags:
+  - tidyverse-dev-day
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - other
 ---

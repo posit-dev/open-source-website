@@ -1,24 +1,24 @@
 ---
 slug: dplyr-1-1-0-is-coming-soon
 title: dplyr 1.1.0 is coming soon
-date: 2022-11-28
+date: '2022-11-28'
 people:
   - Davis Vaughan
-description: >
-    dplyr 1.1.0 is coming soon! This post introduces some of the exciting new
-    features coming in 1.1.0, and includes a call-for-feedback as we finalize
-    the release.
+description: |
+  dplyr 1.1.0 is coming soon! This post introduces some of the exciting new features coming in 1.1.0, and includes a call-for-feedback as we finalize the release.
 photo:
   url: https://unsplash.com/photos/aId-xYRTlEc
   author: Markus Winkler
-tags: [dplyr, dplyr-1-1-0]
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

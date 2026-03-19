@@ -1,10 +1,10 @@
 ---
-title: "Working with Spreadsheets"
+title: Working with Spreadsheets
 author:
-  - "[Devin Johnson](https://twitter.com/Devin_lj)"
+  - '[Devin Johnson](https://twitter.com/Devin_lj)'
 people:
   - Devin Johnson
-date: "2020-06-29"
+date: '2020-06-29'
 tags:
   - internship
 slug: working-with-spreadsheets

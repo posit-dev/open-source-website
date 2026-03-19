@@ -1,26 +1,23 @@
 ---
-
 slug: brulee-0-2-0
 title: brulee 0.2.0
-date: 2022-09-26
+date: '2022-09-26'
 people:
   - Max Kuhn
-description: >
-    Version 0.2.0 of brulee introduces learning rate schedulers. 
-
+description: "Version 0.2.0 of brulee introduces learning rate schedulers. \n"
 photo:
   url: https://unsplash.com/photos/wiTWDYLURr8
   author: Alex Munsell
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, brulee]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - brulee
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "brulee"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

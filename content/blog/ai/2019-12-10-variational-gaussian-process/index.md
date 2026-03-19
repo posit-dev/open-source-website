@@ -1,9 +1,11 @@
 ---
-title: "Gaussian Process Regression with tfprobability"
+title: Gaussian Process Regression with tfprobability
 description: |
   Continuing our tour of applications of TensorFlow Probability (TFP), after Bayesian Neural Networks, Hamiltonian Monte Carlo and State Space Models, here we show an example of Gaussian Process Regression. In fact, what we see is a rather "normal" Keras network, defined and trained in pretty much the usual way, with TFP's Variational Gaussian Process layer pulling off all the magic.
-date: 2019-12-10
+date: '2019-12-10'
 slug: keydana2019vgp
+categories:
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -15,8 +17,6 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Probabilistic ML/DL
   - TensorFlow/Keras

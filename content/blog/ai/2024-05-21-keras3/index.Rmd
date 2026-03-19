@@ -1,22 +1,19 @@
 ---
-title: "Introducing Keras 3 for R"
-description: >
-  We are thrilled to introduce {keras3}, the next version of the Keras R
-  package. {keras3} is a ground-up rebuild of {keras}, maintaining the
-  beloved features of the original while refining and simplifying the API
-  based on valuable insights gathered over the past few years.
+title: Introducing Keras 3 for R
+description: |
+  We are thrilled to introduce {keras3}, the next version of the Keras R package. {keras3} is a ground-up rebuild of {keras}, maintaining the beloved features of the original while refining and simplifying the API based on valuable insights gathered over the past few years.
 author:
   - name: Tomasz Kalinowski
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: kalinowskikeras3
-date: 2024-05-21
+date: '2024-05-21'
+categories:
+  - Machine Learning
 preview: images/preview.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - TensorFlow/Keras
   - R

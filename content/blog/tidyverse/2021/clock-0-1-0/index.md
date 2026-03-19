@@ -1,23 +1,23 @@
 ---
 slug: clock-0-1-0
 title: Comprehensive Date-Time Handling for R
-date: 2021-03-31
+date: '2021-03-31'
 people:
   - Davis Vaughan
-description: >
-    Introducing, clock, a new package for working with date-times.
+description: |
+  Introducing, clock, a new package for working with date-times.
 photo:
-  
   url: https://unsplash.com/photos/FlHdnPO6dlw
   author: Jon Tyson
-tags: ["r-lib"]
+categories:
+  - Data Wrangling
+tags:
+  - r-lib
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["clock"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

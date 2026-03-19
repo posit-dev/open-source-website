@@ -1,26 +1,26 @@
 ---
-
 slug: tidymodels-2022-q4
-title: "Q4 2022 tidymodels digest"
-date: 2022-12-29
+title: Q4 2022 tidymodels digest
+date: '2022-12-29'
 people:
   - Simon Couch
-description: >
-    The tidymodels team has been busy working on all sorts of new features across the ecosystem.
+description: |
+  The tidymodels team has been busy working on all sorts of new features across the ecosystem.
 photo:
   url: https://unsplash.com/photos/WKWENifHmJw
-  author:  Ilona Frey
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, recipes, parsnip, rsample]
-
+  author: Ilona Frey
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - recipes
+  - parsnip
+  - rsample
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes", "parsnip", "rsample"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - roundup
 ---

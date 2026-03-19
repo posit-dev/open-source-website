@@ -1,6 +1,6 @@
 ---
-title: "Pre-processing layers in keras: What they are and how to use them"
-description: > 
+title: 'Pre-processing layers in keras: What they are and how to use them'
+description: |
   For keras, the last two releases have brought important new functionality, in terms of both low-level infrastructure and workflow enhancements. This post focuses on an outstanding example of the latter category: a new family of layers designed to help with pre-processing, data-augmentation, and feature-engineering tasks.
 author:
   - name: Sigrid Keydana
@@ -11,12 +11,12 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: kkkspreproclayers
 date: 12-09-2021
+categories:
+  - Machine Learning
 preview: images/preview.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - TensorFlow/Keras
   - R

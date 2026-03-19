@@ -1,29 +1,27 @@
 ---
-
 slug: shinylive-0-8-0
-title: "WebAssembly roundup part 2: Shinylive 0.8.0"
-date: 2024-10-14
+title: 'WebAssembly roundup part 2: Shinylive 0.8.0'
+date: '2024-10-14'
 people:
   - George Stagg
-description: >
-    Shinylive deploys Shiny apps that run completely in the browser. Shinylive
-    0.8.0 has now been released, with a bunch of bug-fixes, changes to better
-    support multiple apps in a Quarto project, and a new system for including
-    package binaries as part of a fully self-contained bundle.
+description: |
+  Shinylive deploys Shiny apps that run completely in the browser. Shinylive 0.8.0 has now been released, with a bunch of bug-fixes, changes to better support multiple apps in a Quarto project, and a new system for including package binaries as part of a fully self-contained bundle.
 photo:
   url: https://unsplash.com/@declansun
   author: Declan Sun
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [webr, webassembly, wasm, shiny, shinylive]
-
+categories:
+  - Interactive Apps
+tags:
+  - webr
+  - webassembly
+  - wasm
+  - shiny
+  - shinylive
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "shiny-r", "shinylive"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - roundup
 ---

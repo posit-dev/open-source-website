@@ -3,18 +3,19 @@ title: Shiny 0.10
 people:
   - Joe Cheng
 date: '2014-06-20'
+categories:
+  - Interactive Apps
 slug: shiny-0-10
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Shiny
+  - Packages
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Packages
   - Shiny

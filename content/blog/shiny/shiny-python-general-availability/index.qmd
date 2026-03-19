@@ -3,9 +3,10 @@ title: Shiny for Python out of alpha
 description: Shiny for Python has moved from alpha to general availability.
 people:
   - Winston Chang
-date: "2023-04-18"
+date: '2023-04-18'
 image: shiny-for-python.jpg
-image-alt: "The Shiny hex sticker next to the Python language logo, saying Shiny for Python"
+image-alt: The Shiny hex sticker next to the Python language logo, saying Shiny for
+  Python
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]

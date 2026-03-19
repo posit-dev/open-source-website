@@ -1,5 +1,5 @@
 ---
-title: "Deep Learning for Text Classification with Keras"
+title: Deep Learning for Text Classification with Keras
 description: |
   Two-class classification, or binary classification, may be the most widely applied kind of machine-learning problem. In this excerpt from the book Deep Learning with R, you'll learn to classify movie reviews as positive or negative, based on the text content of the reviews.
 author:
@@ -12,14 +12,14 @@ author:
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com
 date: 12-07-2017
+categories:
+  - Machine Learning
 preview: images/training-history.png
 slug: chollet2017dlrtext
-creative_commons: null
+creative_commons: ~
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - TensorFlow/Keras
   - Natural Language Processing

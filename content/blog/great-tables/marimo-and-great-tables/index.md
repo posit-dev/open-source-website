@@ -1,6 +1,6 @@
 ---
 title: Great Tables + marimo = Interactive Tables
-date: 2025-06-24T00:00:00.000Z
+date: '2025-06-24T00:00:00.000Z'
 people:
   - Rich Iannone
   - Jerry Wu

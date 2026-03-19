@@ -7,6 +7,8 @@ slug: pkgdown-1-4-0
 photo:
   url: https://unsplash.com/photos/ytMmedc6y44
   author: noodle kimm
+categories:
+  - Best Practices
 tags:
   - pkgdown
   - r-lib
@@ -15,8 +17,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

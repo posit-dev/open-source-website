@@ -1,29 +1,23 @@
 ---
-
 slug: bundle-0-1-0
 title: Announcing bundle
-date: 2022-09-16
+date: '2022-09-16'
 people:
   - Julia Silge
-description: >
-    Some models store information in locations that cannot be saved via 
-    regular R serialization. The new bundle package provides a consistent 
-    interface for bundling model objects with their references so that they 
-    can be safely saved and re-loaded in production.
-
+description: |
+  Some models store information in locations that cannot be saved via  regular R serialization. The new bundle package provides a consistent  interface for bundling model objects with their references so that they  can be safely saved and re-loaded in production.
 photo:
   url: https://unsplash.com/photos/B6yDtYs2IgY
   author: Joanna Kosinska
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [bundle]
+categories:
+  - MLOps & Admin
+tags:
+  - bundle
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "bundle"]
 languages: ["R"]
-categories:
-  - MLOps & Admin
 ported_categories:
   - package
 ---

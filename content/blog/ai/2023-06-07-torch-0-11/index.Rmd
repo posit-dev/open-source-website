@@ -1,27 +1,24 @@
 ---
-title: "torch 0.11.0"
-description: >
-  torch v0.11.0 is now on CRAN. This release features much-enhanced support for
-  executing JIT operations. We also amended loading of model parameters, and added
+title: torch 0.11.0
+description: "torch v0.11.0 is now on CRAN. This release features much-enhanced support
+  for executing JIT operations. We also amended loading of model parameters, and added
   a few quality-of-life improvements, like support for temporarily modifying the default
-  torch device, support for specifying data types as strings, and many more. 
+  torch device, support for specifying data types as strings, and many more. \n"
 author:
   - name: Daniel Falbel
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: torch-0-11-0
-date: 2023-06-07
-preview: images/ian-schneider-PAykYb-8Er8-unsplash.jpg
-format: hugo-md
+date: '2023-06-07'
 categories:
   - Machine Learning
+preview: images/ian-schneider-PAykYb-8Er8-unsplash.jpg
+format: hugo-md
+languages: ["R"]
 ported_categories:
   - Torch
   - Packages/Releases
   - R
-preview: images/ian-schneider-PAykYb-8Er8-unsplash.jpg
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

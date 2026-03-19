@@ -2,8 +2,8 @@
 title: 'C''mon C''mon: Let''s Do a Pointblank Workshop!'
 people:
   - Rich Iannone
-date: 2025-06-03T00:00:00.000Z
-toc: false
+date: '2025-06-03T00:00:00.000Z'
+toc: no
 ported_from: pointblank
 port_status: in-progress
 software: ["pointblank"]

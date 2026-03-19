@@ -3,18 +3,19 @@ title: Package Development cheatsheet, plus Chinese translations
 people:
   - Garrett Grolemund
 date: '2015-03-12'
+categories:
+  - MLOps & Admin
 slug: package-development-cheatsheet-plus-chinese-translations
 blogcategories:
-- Products and Technology
-- Training and Education
-- Open Source
+  - Products and Technology
+  - Training and Education
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["cheatsheets"]
 languages: ["R"]
-categories:
-  - MLOps & Admin
 ported_categories:
   - Packages
   - Training

@@ -1,20 +1,24 @@
 ---
-title: How the "Clusterbuster" Shiny App Helps Hundreds of Doctors and Epidemiologists Battle COVID-19 in the Netherlands
+title: How the "Clusterbuster" Shiny App Helps Hundreds of Doctors and Epidemiologists
+  Battle COVID-19 in the Netherlands
 people:
   - Isabella Velásquez
 date: '2021-11-02'
 slug: how-the-clusterbuster-shiny-app-helps-battle-covid-19-in-the-netherlands
+categories:
+  - Interactive Apps
 tags:
   - Use Cases
-description: In this post, we explore the creation and evolution of the Clusterbuster, a Shiny app developed by the Dutch National Institute for Public Health and the Environment. Hundreds of doctors and epidemiologists use the Clusterbuster to gain insight into COVID-19 clusters in the Netherlands.
+description: In this post, we explore the creation and evolution of the Clusterbuster,
+  a Shiny app developed by the Dutch National Institute for Public Health and the
+  Environment. Hundreds of doctors and epidemiologists use the Clusterbuster to gain
+  insight into COVID-19 clusters in the Netherlands.
 alttext: Clusterbuster logo
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Shiny
 ---

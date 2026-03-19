@@ -3,6 +3,8 @@ title: Lucerne Workshops
 people:
   - greg
 date: '2020-06-01'
+categories:
+  - Community
 tags:
   - Shiny
 description: |
@@ -16,8 +18,6 @@ ported_from: education
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
 ---

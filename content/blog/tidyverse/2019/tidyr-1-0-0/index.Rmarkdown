@@ -1,8 +1,11 @@
 ---
 title: tidyr 1.0.0
-author: Hadley Wickham
+author:
+  - Hadley Wickham
 date: '2019-09-13'
 slug: tidyr-1-0-0
+categories:
+  - Data Wrangling
 tags:
   - tidyr
 photo:
@@ -10,8 +13,6 @@ photo:
   author: Victor Garcia
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

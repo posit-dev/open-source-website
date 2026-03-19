@@ -1,37 +1,32 @@
 ---
-
 slug: ggplot2-styling
 title: ggplot2 styling
-date: 2025-10-01
+date: '2025-10-01'
 people:
   - Teun van den Brand
-description: >
-    This post discusses one function in ggplot2: `theme()`. Find out about the glamour of graphics in this deep-dive article.
-
+description: |
+  This post discusses one function in ggplot2: `theme()`. Find out about the glamour of graphics in this deep-dive article.
 photo:
   url: https://www.pexels.com/photo/people-dressed-in-elaborate-costumes-for-venetian-masqueade-5932619
   author: Helena Jankovičová Kováčová
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
+categories:
+  - Visualization
 tags: []
 html_dependencies:
-- <link href="htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
-- <script src="htmlwidgets-1.6.4/htmlwidgets.js"></script>
-- <script src="d3-bundle-5.16.0/d3-bundle.min.js"></script>
-- <script src="d3-lasso-0.0.5/d3-lasso.min.js"></script>
-- <script src="save-svg-as-png-1.4.17/save-svg-as-png.min.js"></script>
-- <script src="flatbush-4.4.0/flatbush.min.js"></script>
-- <link href="ggiraphjs-0.8.10/ggiraphjs.min.css" rel="stylesheet" />
-- <script src="ggiraphjs-0.8.10/ggiraphjs.min.js"></script>
-- <script src="girafe-binding-0.9.1/girafe.js"></script>
-
+  - <link href="htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+  - <script src="htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  - <script src="d3-bundle-5.16.0/d3-bundle.min.js"></script>
+  - <script src="d3-lasso-0.0.5/d3-lasso.min.js"></script>
+  - <script src="save-svg-as-png-1.4.17/save-svg-as-png.min.js"></script>
+  - <script src="flatbush-4.4.0/flatbush.min.js"></script>
+  - <link href="ggiraphjs-0.8.10/ggiraphjs.min.css" rel="stylesheet" />
+  - <script src="ggiraphjs-0.8.10/ggiraphjs.min.js"></script>
+  - <script src="girafe-binding-0.9.1/girafe.js"></script>
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

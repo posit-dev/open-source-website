@@ -1,23 +1,21 @@
 ---
-
 slug: reprex-2-0-0
 title: reprex 2.0.0
-date: 2021-04-05
+date: '2021-04-05'
 people:
   - Jenny Bryan
-description: >
-    reprex is now much easier to use on RStudio Server and RStudio Cloud.
+description: |
+  reprex is now much easier to use on RStudio Server and RStudio Cloud.
 photo:
   url: https://unsplash.com/photos/NROHA1B-NYk
   author: Mitchell Luo
-
+categories:
+  - Best Practices
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["reprex"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

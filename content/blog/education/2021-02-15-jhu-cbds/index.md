@@ -1,5 +1,5 @@
 ---
-title: "Online Educational Content Development: Pain Points & the Future"
+title: 'Online Educational Content Development: Pain Points & the Future'
 people:
   - Shannon Ellis
 date: '2021-02-15'
@@ -8,11 +8,10 @@ tags:
   - online
   - online education
 slug: cbds
-description: |
-  Frustrations and possible solutions for online course development 
+description: "Frustrations and possible solutions for online course development \n"
 photo:
   url: https://unsplash.com/photos/DKix6Un55mw
-  author: Johannes Plenio 
+  author: Johannes Plenio
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress

@@ -1,6 +1,6 @@
 ---
-title: "Simple audio classification with torch"
-description: > 
+title: Simple audio classification with torch
+description: |
   This article translates Daniel Falbel's post on "Simple Audio Classification" from TensorFlow/Keras to torch/torchaudio.
 author:
   - name: Athos Damiani
@@ -8,13 +8,13 @@ author:
     affiliation_url: https://curso-r.com/
 slug: athossimpleaudioclassification
 date: 02-04-2021
+categories:
+  - Machine Learning
 preview: images/preview.jpg
-editor_options: 
+editor_options:
   chunk_output_type: console
 format: hugo-md
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Torch
   - R

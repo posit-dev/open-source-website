@@ -4,20 +4,19 @@ people:
   - Mara Averick
 date: '2018-04-12'
 slug: upvoting-issues
-description: >
-  If you go to a GitHub repo to file an issue/request a feature and find an open 
-  thread, give it a thumbs up: we are listening!
+categories:
+  - Community
+description: |
+  If you go to a GitHub repo to file an issue/request a feature and find an open  thread, give it a thumbs up: we are listening!
 photo:
   url: https://unsplash.com/photos/Ze3l02aRwmE
   author: Annie Spratt
 output:
   blogdown::html_page:
-    css: "/css/article-image.css"
+    css: /css/article-image.css
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-categories:
-  - Community
 ported_categories:
   - other
 ---

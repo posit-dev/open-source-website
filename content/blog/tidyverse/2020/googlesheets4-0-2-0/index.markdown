@@ -4,6 +4,8 @@ people:
   - Jenny Bryan
 date: '2020-05-10'
 slug: googlesheets4-0-2-0
+categories:
+  - Data Wrangling
 tags:
   - googlesheets4
   - google
@@ -15,8 +17,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googlesheets4"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

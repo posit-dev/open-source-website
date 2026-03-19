@@ -4,8 +4,14 @@ people:
   - Edgar Ruiz
 date: '2018-01-08'
 slug: dbplyr-1-2
-tags: [package, tidyverse, databases]
-description: "New version now on CRAN. It features new database backends, an enhanced copy_to(), and initial stringr support"
+categories:
+  - Data Wrangling
+tags:
+  - package
+  - tidyverse
+  - databases
+description: New version now on CRAN. It features new database backends, an enhanced
+  copy_to(), and initial stringr support
 photo:
   url: https://unsplash.com/photos/y7rGTFyOzxc
   author: Giulia Bertelli
@@ -14,8 +20,6 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

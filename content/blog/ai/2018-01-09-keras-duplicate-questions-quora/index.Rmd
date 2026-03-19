@@ -1,5 +1,5 @@
 ---
-title: "Classifying Duplicate Questions from Quora with Keras"
+title: Classifying Duplicate Questions from Quora with Keras
 description: |
   In this post we will use Keras to classify duplicated questions from Quora. Our implementation is inspired by the Siamese Recurrent Architecture, with modifications to the similarity measure and the embedding layers (the original paper uses pre-trained word vectors)
 author:
@@ -8,12 +8,12 @@ author:
     affiliation: Curso-R
     affiliation_url: http://curso-r.com/
 date: 01-09-2018
+categories:
+  - Machine Learning
 preview: keras-duplicate-questions-quora.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - TensorFlow/Keras
   - Natural Language Processing

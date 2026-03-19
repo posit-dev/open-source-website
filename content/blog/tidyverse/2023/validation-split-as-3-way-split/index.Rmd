@@ -1,28 +1,26 @@
 ---
 output: hugodown::hugo_document
-
 slug: validation-split-as-3-way-split
 title: New interface to validation splits
-date: 2023-08-25
+date: '2023-08-25'
 people:
   - Hannah Frick
-description: >
-    The latest releases of rsample and tune provide a new interface to 
-    validation sets as a three-way split.
-
+description: |
+  The latest releases of rsample and tune provide a new interface to  validation sets as a three-way split.
 photo:
   url: https://unsplash.com/photos/68GdK1Aoc8g
   author: Scott Webb
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, rsample, tune]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - rsample
+  - tune
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "rsample", "tune"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

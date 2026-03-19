@@ -1,30 +1,23 @@
 ---
-
 slug: roxygen2-7-3-0
 title: roxygen2 7.3.0
-date: 2024-01-11
+date: '2024-01-11'
 people:
   - Hadley Wickham
-description: >
-    This release automatically warns if you forget to export an S3 method,
-    regenerates the `NAMESPACE` before documenting the rest of the package,
-    and does a better job generating aliases for the package documentation
-    topic.
-
+description: |
+  This release automatically warns if you forget to export an S3 method, regenerates the `NAMESPACE` before documenting the rest of the package, and does a better job generating aliases for the package documentation topic.
 photo:
   url: https://unsplash.com/photos/Hli3R6LKibo
   author: Adi Goldstein
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [roxygen2]
-
+categories:
+  - Best Practices
+tags:
+  - roxygen2
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "roxygen2"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

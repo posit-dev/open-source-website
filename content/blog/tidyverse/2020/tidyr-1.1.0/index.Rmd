@@ -1,27 +1,23 @@
 ---
 output: hugodown::hugo_document
-  
 title: tidyr 1.1.0
-date: 2020-05-26
+date: '2020-05-26'
 people:
   - Hadley Wickham
-description: >
-    tidyr 1.1.0 includes a bunch of quality of life improvements, particularly
-    for pivoting and rectangling.
-
+description: |
+  tidyr 1.1.0 includes a bunch of quality of life improvements, particularly for pivoting and rectangling.
 photo:
   url: https://unsplash.com/photos/__ZMnefoI3k
   author: Jan Vasek
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [tidyr]
+categories:
+  - Data Wrangling
+tags:
+  - tidyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

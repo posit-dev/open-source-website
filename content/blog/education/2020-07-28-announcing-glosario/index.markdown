@@ -1,16 +1,18 @@
 ---
 title: Announcing Glosario
 author:
-  - "[Ian Flores Siaca](https://ianfs.dev/)"
-  - "[François Michonneau](https://francoismichonneau.net/)"
-  - "[Zhian Kamvar](https://zkamvar.netlify.app/)"
-  - "[Greg Wilson](http://third-bit.com)"
+  - '[Ian Flores Siaca](https://ianfs.dev/)'
+  - '[François Michonneau](https://francoismichonneau.net/)'
+  - '[Zhian Kamvar](https://zkamvar.netlify.app/)'
+  - '[Greg Wilson](http://third-bit.com)'
 people:
   - Ian Flores Siaca
   - François Michonneau
   - Zhian Kamvar
   - Greg Wilson
 date: '2020-07-28'
+categories:
+  - Community
 tags:
   - glosario
 description: |
@@ -22,8 +24,6 @@ photo:
 image: announcing-glosario-wd.jpg
 ported_from: education
 port_status: in-progress
-categories:
-  - Community
 ported_categories:
   - learn
   - package

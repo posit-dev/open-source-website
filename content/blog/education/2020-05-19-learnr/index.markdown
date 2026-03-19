@@ -1,10 +1,12 @@
 ---
 title: 'Teach R with learnr: a powerful tool for remote teaching'
 author:
-  - "[Allison Horst](https://www.allisonhorst.com/)"
+  - '[Allison Horst](https://www.allisonhorst.com/)'
 people:
   - Allison Horst
 date: '2020-05-19'
+categories:
+  - Community
 tags:
   - learnr
   - rmarkdown
@@ -19,8 +21,6 @@ ported_from: education
 port_status: in-progress
 software: ["learnr", "rmarkdown"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
 ---

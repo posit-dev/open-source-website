@@ -3,17 +3,14 @@ title: Posit at SciPy 2025
 subtitle: Tacoma, WA (July 2025)
 people:
   - Shiny Team
-date: "2025-07-14"
-
+date: '2025-07-14'
 image-video: scipy-og.mp4
 image: scipy-og.jpg
-image-alt: "Shiny at SciPy 2025"
-
+image-alt: Shiny at SciPy 2025
 listing:
   - id: talks
     template: talks.ejs
-    contents:
-      - talks.yml
+    contents: talks.yml
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]

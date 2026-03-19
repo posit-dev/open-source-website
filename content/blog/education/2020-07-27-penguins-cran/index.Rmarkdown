@@ -1,14 +1,16 @@
 ---
 title: Release the penguins
 author:
-  - "[Alison Hill](https://alison.rbind.io)"
-  - "[Allison Horst](https://www.allisonhorst.com/)"
-  - "[Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php)"
+  - '[Alison Hill](https://alison.rbind.io)'
+  - '[Allison Horst](https://www.allisonhorst.com/)'
+  - '[Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php)'
 people:
   - Alison Hill
   - Allison Horst
   - Kristen Gorman
 date: '2020-07-27'
+categories:
+  - Community
 description: |
   The palmerpenguins data package is now on CRAN! Here are some examples to highlight why it is a great replacement for the iris dataset.
 slug: palmerpenguins-cran
@@ -19,8 +21,6 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - package

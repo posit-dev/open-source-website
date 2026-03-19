@@ -1,29 +1,24 @@
 ---
-
 slug: stringr-1-5-0
 title: stringr 1.5.0
-date: 2022-12-05
+date: '2022-12-05'
 people:
   - Hadley Wickham
-description: >
-    It's been a long three years but a new version of stringr is now on
-    CRAN! This release includes a bunch of small but useful new functions
-    and some increased consistency with the rest of the tidyverse.
-
+description: |
+  It's been a long three years but a new version of stringr is now on CRAN! This release includes a bunch of small but useful new functions and some increased consistency with the rest of the tidyverse.
 photo:
   url: https://unsplash.com/photos/XGqS569rdgk
   author: Amie Bell
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [stringr, tidyverse]
-
+categories:
+  - Data Wrangling
+tags:
+  - stringr
+  - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "stringr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

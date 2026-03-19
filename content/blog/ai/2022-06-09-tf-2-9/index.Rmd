@@ -1,13 +1,15 @@
 ---
-title: "TensorFlow and Keras 2.9"
-description: > 
+title: TensorFlow and Keras 2.9
+description: |
   New TensorFlow and Keras releases bring improvements big and small.
 author:
   - name: Tomasz Kalinowski
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com/
 slug: kalinowskitf29
-date: 2022-06-09
+date: '2022-06-09'
+categories:
+  - Machine Learning
 editor_options:
   markdown:
     wrap: 72
@@ -15,8 +17,6 @@ preview: images/chameleon.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - TensorFlow/Keras
   - Packages/Releases

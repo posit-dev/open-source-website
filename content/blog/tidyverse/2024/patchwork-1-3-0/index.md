@@ -1,28 +1,25 @@
 ---
-
 slug: patchwork-1-3-0
 title: patchwork 1.3.0
-date: 2024-09-13
+date: '2024-09-13'
 people:
   - Thomas Lin Pedersen
-description: >
-    patchwork 1.3.0 has just been released bringing refinements to the `free()`
-    function and full on support for gt tables
-
+description: |
+  patchwork 1.3.0 has just been released bringing refinements to the `free()` function and full on support for gt tables
 photo:
   url: https://unsplash.com/photos/sewing-silk-and-scissors-dG35-kUxv34
   author: Dihn Pham
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [patchwork, gt, ggplot2]
-
+categories:
+  - Visualization
+tags:
+  - patchwork
+  - gt
+  - ggplot2
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "gt", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

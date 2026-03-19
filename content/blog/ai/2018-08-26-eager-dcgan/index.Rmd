@@ -1,5 +1,5 @@
 ---
-title: "Generating images with Keras and TensorFlow eager execution"
+title: Generating images with Keras and TensorFlow eager execution
 description: |
   Generative adversarial networks (GANs) are a popular deep learning approach to generating new entities (often but not always images). We show how to code them using Keras and TensorFlow eager execution.
 author:
@@ -9,12 +9,12 @@ author:
 bibliography: bibliography.bib
 slug: keydana2018eagerdcgan
 date: 08-26-2018
+categories:
+  - Machine Learning
 preview: images/thumb.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - TensorFlow/Keras
   - Generative Models

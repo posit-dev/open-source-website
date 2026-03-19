@@ -3,18 +3,19 @@ title: R Markdown Custom Formats
 people:
   - RStudio Team
 date: '2016-03-21'
+categories:
+  - Publishing
 slug: r-markdown-custom-formats
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- R Markdown
+  - Packages
+  - R Markdown
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
-categories:
-  - Publishing
 ported_categories:
   - Packages
   - R Markdown

@@ -1,28 +1,25 @@
 ---
-
 slug: svglite-2-2-0
 title: svglite 2.2.0
-date: 2025-05-07
+date: '2025-05-07'
 people:
   - Thomas Lin Pedersen
-description: >
-    A new release of svglite has arrived, and with it full support for all the
-    latest capabilities of the R Graphics Engine. Further, it finalizes the new
-    approach to handling web fonts and font embedding in the created SVGs.
-
+description: |
+  A new release of svglite has arrived, and with it full support for all the latest capabilities of the R Graphics Engine. Further, it finalizes the new approach to handling web fonts and font embedding in the created SVGs.
 photo:
   url: https://unsplash.com/photos/an-abstract-background-with-a-purple-and-blue-pattern-2I0x5N0P_d8?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash
   author: Rushikesh Gaikwad
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [svglite, graphic-device, graphics]
+categories:
+  - Visualization
+tags:
+  - svglite
+  - graphic-device
+  - graphics
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "svglite"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

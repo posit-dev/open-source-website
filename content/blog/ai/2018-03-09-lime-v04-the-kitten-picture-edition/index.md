@@ -1,8 +1,10 @@
 ---
-title: "lime v0.4: The Kitten Picture Edition"
+title: 'lime v0.4: The Kitten Picture Edition'
 description: |
   A new major release of lime has landed on CRAN. lime is an R port of the Python library of the same name by Marco Ribeiro that allows the user to pry open black box machine learning models and explain their outcomes on a per-observation basis
-date: 2018-03-09
+date: '2018-03-09'
+categories:
+  - Machine Learning
 author:
   - name: Thomas Lin Pedersen
     url: https://github.com/thomasp85
@@ -13,8 +15,6 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Packages/Releases
   - TensorFlow/Keras

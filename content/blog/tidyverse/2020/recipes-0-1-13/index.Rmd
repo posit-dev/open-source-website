@@ -1,27 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: recipes-0-1-13
 title: recipes 0.1.13
-date: 2020-06-25
+date: '2020-06-25'
 people:
   - Max Kuhn
-description: >
-    Version 0.1.13 of recipes is on CRAN.
-
+description: |
+  Version 0.1.13 of recipes is on CRAN.
 photo:
   url: https://unsplash.com/photos/pGM4sjt_BdQ
   author: Brooke Lark
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [tidymodels, recipes]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - recipes
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

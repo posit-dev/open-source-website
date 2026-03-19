@@ -3,18 +3,19 @@ title: haven 1.0.0
 people:
   - Hadley Wickham
 date: '2016-10-04'
+categories:
+  - Data Wrangling
 slug: haven-1-0-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- tidyverse
+  - Packages
+  - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - Packages
   - tidyverse

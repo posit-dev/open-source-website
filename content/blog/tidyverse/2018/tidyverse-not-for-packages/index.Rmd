@@ -4,8 +4,10 @@ people:
   - Mara Averick
 date: '2018-06-20'
 slug: tidyverse-not-for-packages
-description: >
-    Why the tidyverse package shouldn't be in your dependencies.
+description: |
+  Why the tidyverse package shouldn't be in your dependencies.
+categories:
+  - Best Practices
 photo:
   url: https://unsplash.com/photos/dQLgop4tnsc
   author: Jamie Street
@@ -14,8 +16,6 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - other
 ---

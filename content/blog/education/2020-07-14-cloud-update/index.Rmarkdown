@@ -6,6 +6,8 @@ people:
   - Robby Shaver
   - Pete Knast
 date: '2020-07-14'
+categories:
+  - Community
 tags:
   - rstudio-cloud
 slug: cloud-plans
@@ -18,8 +20,6 @@ image: clouds-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
 ---

@@ -1,28 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: tune-0-1-1
 title: tune 0.1.1
-date: 2020-07-13
+date: '2020-07-13'
 people:
   - Max Kuhn
-description: >
-    A new version of the tune package brings better visualizations, 
-    engine-specific parameter tuning, and other features. 
-
+description: "A new version of the tune package brings better visualizations,  engine-specific
+  parameter tuning, and other features. \n"
 photo:
   url: https://unsplash.com/photos/Q2S0IIXtExU
   author: Giuseppe Azzon
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [tidymodels,tune]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - tune
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "tune"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

@@ -3,17 +3,17 @@ title: ShinyDevCon videos now available
 people:
   - Joe Cheng
 date: '2016-05-05'
+categories:
+  - Interactive Apps
 slug: shinydevcon-videos-now-available
 blogcategories:
-- Products and Technology
+  - Products and Technology
 tags:
-- Shiny
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Shiny
 ---

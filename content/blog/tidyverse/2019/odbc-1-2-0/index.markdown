@@ -4,8 +4,10 @@ people:
   - Jim Hester
 date: '2019-12-02'
 slug: odbc-1-2-0
-description: >
+description: |
   odbc 1.2.0 is now on CRAN. It includes improvements to dealing with schemas, an API for immediate execution, and a new parameter to control timezone outputs.
+categories:
+  - Data Wrangling
 tags:
   - odbc
 photo:
@@ -16,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "odbc"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

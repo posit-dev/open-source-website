@@ -1,26 +1,25 @@
 ---
-
 slug: tune-parallel
-title: Parallel processing with tune 
-date: 2020-11-27
+title: Parallel processing with tune
+date: '2020-11-27'
 people:
   - Max Kuhn
-description: >
-    With version 0.1.2 of tune, there are more options for parallel processing.  
-
+description: "With version 0.1.2 of tune, there are more options for parallel processing.
+  \ \n"
 photo:
   url: https://unsplash.com/photos/mJ35U595uhA
   author: Joss Woodhead
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [tidymodels,tune, parallelism]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - tune
+  - parallelism
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tune"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

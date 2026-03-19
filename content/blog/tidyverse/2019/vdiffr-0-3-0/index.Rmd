@@ -1,11 +1,13 @@
 ---
-title: 'vdiffr 0.3.0'
+title: vdiffr 0.3.0
 people:
   - Lionel Henry
 date: '2019-01-03'
 slug: vdiffr-0-3-0
-description: >
+description: |
   vdiffr 0.3.0 is now on CRAN.
+categories:
+  - Best Practices
 photo:
   url: https://unsplash.com/photos/jHjjWSmnznc
   author: Jakob Owens
@@ -14,8 +16,6 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "vdiffr"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

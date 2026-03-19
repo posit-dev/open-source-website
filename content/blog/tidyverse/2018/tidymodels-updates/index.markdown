@@ -1,19 +1,21 @@
 ---
 title: tidymodels package updates
-date: 2018-11-29
+date: '2018-11-29'
 slug: tidymodels-update-nov-18
 people:
   - Max Kuhn
   - Davis Vaughan
   - Alex Hayes
+categories:
+  - Machine Learning
 tags:
   - recipes
   - yardstick
   - embed
   - tidyposterior
   - tidymodels
-description: >
-    A variety of updates for tidymodels packages.
+description: |
+  A variety of updates for tidymodels packages.
 photo:
   url: https://unsplash.com/photos/O6N9RV2rzX8
   author: Jeremy Thomas
@@ -22,8 +24,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "recipes", "yardstick", "embed", "tidyposterior", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

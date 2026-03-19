@@ -1,6 +1,6 @@
 ---
-title: "torch outside the box"
-description: > 
+title: torch outside the box
+description: |
   Sometimes, a software's best feature is the one you've added yourself. This post shows by example why you may want to extend torch, and how to proceed. It also explains a bit of what is going on in the background.
 author:
   - name: Sigrid Keydana
@@ -8,11 +8,11 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchoutbox
 date: 04-27-2022
+categories:
+  - Machine Learning
 preview: images/preview.jpg
 format: hugo-md
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Torch
   - R

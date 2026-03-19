@@ -1,12 +1,13 @@
 ---
 title: Quarto 1.8
-description: >
-  Quarto 1.8 improves brand support, introduces brand extensions, adds HTML
-  accessibility checks, and gives access to execution context.
+description: |
+  Quarto 1.8 improves brand support, introduces brand extensions, adds HTML accessibility checks, and gives access to execution context.
+categories:
+  - Publishing
 people:
   - Charlotte Wickham
 date: '2025-10-13'
-draft: false
+draft: no
 image: thumbnail.png
 image-alt: Quarto 1.8 with a lightbulb emoji
 css: /docs/output-formats/autodark.css
@@ -14,8 +15,6 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
 ported_categories:
   - Quarto 1.8
   - Releases

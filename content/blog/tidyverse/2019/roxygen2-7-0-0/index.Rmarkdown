@@ -1,9 +1,12 @@
 ---
 title: roxygen2 7.0.0
-author: Hadley Wickham
+author:
+  - Hadley Wickham
 date: '2019-11-12'
 slug: roxygen2-7-0-0
-description: >
+categories:
+  - Best Practices
+description: |
   A massive update to roxygen2 now on CRAN.
 tags:
   - r-lib
@@ -14,8 +17,6 @@ photo:
   author: Art Lasovsky
 software: ["tidyverse", "devtools", "roxygen2"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

@@ -1,21 +1,21 @@
 ---
-title: "Deepfake detection challenge from R"
+title: Deepfake detection challenge from R
 description: |
   A couple of months ago, Amazon, Facebook, Microsoft, and other contributors initiated a challenge consisting of telling apart real and AI-generated ("fake") videos. We show how to approach this challenge from R.
 author:
-  - name: Turgut Abdullayev 
+  - name: Turgut Abdullayev
     url: https://github.com/henry090
     affiliation: QSS Analytics
     affiliation_url: http://www.qss.az/
 date: 08-18-2020
+categories:
+  - Machine Learning
 creative_commons: CC BY
 repository_url: https://github.com/henry090/Deepfake-from-R
 preview: files/frame_2.jpg
 format: hugo-md
 software: ["reticulate"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Image Recognition & Image Processing
 ---

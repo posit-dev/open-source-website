@@ -1,21 +1,20 @@
 ---
-title: "Infinite surprise - the iridescent personality of Kullback-Leibler divergence"
-description: > 
- Kullback-Leibler divergence is not just used to train variational autoencoders or Bayesian networks (and not just a hard-to-pronounce thing). It is a fundamental concept in information theory, put to use in a vast range of applications. Most interestingly, it's not always about constraint, regularization or compression. Quite on the contrary, sometimes it is about novelty, discovery and surprise.
- 
+title: Infinite surprise - the iridescent personality of Kullback-Leibler divergence
+description: |
+  Kullback-Leibler divergence is not just used to train variational autoencoders or Bayesian networks (and not just a hard-to-pronounce thing). It is a fundamental concept in information theory, put to use in a vast range of applications. Most interestingly, it's not always about constraint, regularization or compression. Quite on the contrary, sometimes it is about novelty, discovery and surprise.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com/
 slug: keydana2020kldiv
 date: 02-19-2020
+categories:
+  - Machine Learning
+  - Best Practices
 bibliography: bibliography.bib
 preview: images/ultimatemachine.jpg
 format: hugo-md
 languages: ["R"]
-categories:
-  - Machine Learning
-  - Best Practices
 ported_categories:
   - Probabilistic ML/DL
   - Concepts

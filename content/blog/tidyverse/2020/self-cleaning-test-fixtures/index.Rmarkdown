@@ -1,8 +1,12 @@
 ---
 title: Self-cleaning test fixtures
-author: Jenny Bryan
+author:
+  - Jenny Bryan
 date: '2020-04-27'
 slug: self-cleaning-test-fixtures
+categories:
+  - Best Practices
+  - Community
 tags:
   - r-lib
 description: |
@@ -13,9 +17,6 @@ photo:
   author: Marianna Foos
 software: ["withr", "testthat"]
 languages: ["R"]
-categories:
-  - Best Practices
-  - Community
 ported_categories:
   - programming
   - learn

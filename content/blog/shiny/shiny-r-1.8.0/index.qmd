@@ -1,11 +1,11 @@
 ---
-title: "Shiny for R updates: new default look, dark mode, shinylive updates, and more"
+title: 'Shiny for R updates: new default look, dark mode, shinylive updates, and more'
 description: |
   An overview of recent Shiny for R updates, a new default look, dark mode, shinylive updates, and more.
 people:
   - Carson Sievert
   - Garrick Aden-Buie
-date: "2023-11-30"
+date: '2023-11-30'
 image: feature.jpg
 ported_from: shiny
 port_status: in-progress

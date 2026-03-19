@@ -1,28 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: its-about-time
-title: "It's about time"
-date: 2022-09-28
+title: It's about time
+date: '2022-09-28'
 people:
   - Mara Averick
-description: >
-    Davis Vaughan's talk from rstudio::conf(2022) on clock, an R package that aims to provide
-    comprehensive and safe handling of date-times.
-
+description: |
+  Davis Vaughan's talk from rstudio::conf(2022) on clock, an R package that aims to provide comprehensive and safe handling of date-times.
 photo:
   url: https://www.pexels.com/photo/collection-of-retro-wall-clocks-in-antique-store-2168241/
   author: Teddy Yang
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [clock, r-lib]
+categories:
+  - Community
+tags:
+  - clock
+  - r-lib
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "clock"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

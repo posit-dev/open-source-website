@@ -1,27 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: rsample-1-1-0
 title: rsample 1.1.0
-date: 2022-08-08
+date: '2022-08-08'
 people:
   - Mike Mahoney
-description: >
-    rsample 1.1.0 is now on CRAN! This release provides a ton of new functions for grouped resampling, as well as a few long-awaited utility functions.
-
+description: |
+  rsample 1.1.0 is now on CRAN! This release provides a ton of new functions for grouped resampling, as well as a few long-awaited utility functions.
 photo:
   url: https://unsplash.com/photos/bukjsECgmeU
   author: Paul Teysen
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [rsample, tidymodels]
+categories:
+  - Machine Learning
+tags:
+  - rsample
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "rsample", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

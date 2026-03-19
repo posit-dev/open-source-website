@@ -3,6 +3,8 @@ title: Online teaching Q&A
 people:
   - greg
 date: '2020-03-23'
+categories:
+  - Community
 tags:
   - online
   - teach
@@ -15,8 +17,6 @@ photo:
 image: online-teaching-qa-wd.jpg
 ported_from: education
 port_status: in-progress
-categories:
-  - Community
 ported_categories:
   - teach
 ---

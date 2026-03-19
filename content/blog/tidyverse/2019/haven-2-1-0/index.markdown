@@ -4,8 +4,10 @@ people:
   - Mara Averick
 date: '2019-02-19'
 slug: haven-2-1-0
-description: > 
+description: |
   haven 2.1.0 is now on CRAN!
+categories:
+  - Data Wrangling
 tags:
   - haven
   - tidyverse
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "haven"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

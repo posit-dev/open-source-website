@@ -4,18 +4,19 @@ people:
   - Javier Luraschi
 date: '2020-01-29'
 slug: sparklyr-1-1
-tags:
-- sparklyr
-- big data
-- Spark
-blogcategories:
-- Products and Technology
-ported_from: rstudio
-port_status: in-progress
-languages: ["R"]
 categories:
   - Data Wrangling
   - MLOps & Admin
+tags:
+  - sparklyr
+  - big data
+  - Spark
+  - Packages
+blogcategories:
+  - Products and Technology
+ported_from: rstudio
+port_status: in-progress
+languages: ["R"]
 ported_categories:
   - Packages
 ---

@@ -1,14 +1,16 @@
 ---
 title: It depends - A dialog about dependencies
 slug: itdepends
-description: >
-    It depends - A dialog about dependencies
-date: 2019-05-29
+description: |
+  It depends - A dialog about dependencies
+date: '2019-05-29'
 people:
   - Jim Hester
 photo:
   url: https://unsplash.com/photos/24bzOuENxHc
   author: Ariana Prestes
+categories:
+  - Best Practices
 tags:
   - itdepends
   - r-lib
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "itdepends"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - programming
 ---

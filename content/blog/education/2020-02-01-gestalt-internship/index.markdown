@@ -1,11 +1,13 @@
 ---
 title: Gestalt Internship
 author:
-  - "[Daniel Chen](https://chendaniely.github.io/)"
+  - '[Daniel Chen](https://chendaniely.github.io/)'
 people:
   - Daniel Chen
 date: '2020-02-04'
 slug: gestalt-internship
+categories:
+  - Community
 tags:
   - internship
 photo:
@@ -18,8 +20,6 @@ image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ---
 
 Of all the

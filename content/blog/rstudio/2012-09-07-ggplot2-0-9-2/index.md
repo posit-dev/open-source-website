@@ -3,17 +3,18 @@ title: ggplot2 0.9.2 has been released!
 people:
   - Hadley Wickham
 date: '2012-09-07'
+categories:
+  - Visualization
 slug: ggplot2-0-9-2
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - Packages
 ---

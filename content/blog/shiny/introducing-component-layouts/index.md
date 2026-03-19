@@ -4,9 +4,8 @@ people:
   - Daniel Chen
   - Sara Altman
   - Garrett Grolemund
-description: >-
-  Qucikly see and choose Shiny for Python's Components and Layouts in these new
-  galleries.
+description: Qucikly see and choose Shiny for Python's Components and Layouts in these
+  new galleries.
 date: '2024-02-26'
 image: layouts-thumb.jpg
 image-alt: An illustration of Shiny layouts and components

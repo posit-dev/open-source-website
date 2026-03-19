@@ -1,13 +1,14 @@
 ---
-title: "Applications for 2020 Intern Program Are Now Open"
+title: Applications for 2020 Intern Program Are Now Open
 date: '2020-02-20'
-draft: false
+draft: no
 photo:
   author: Grant Durr
   url: https://unsplash.com/photos/1N7yzqjCLes
 publishDate: '2020-02-24'
 slug: applications-for-2020-intern-program-are-now-open
-tags: [internship]
+tags:
+  - internship
 description: |
   Want to apply to this year's summer intern program? Here's how.
 image: feature-wd.jpg

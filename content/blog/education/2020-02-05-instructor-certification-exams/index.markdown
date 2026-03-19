@@ -3,9 +3,11 @@ title: Instructor Certification Exams
 people:
   - greg
 date: '2020-02-05'
+categories:
+  - Community
 tags:
   - instructor training
-draft: false
+draft: no
 slug: instructor-certification-exams
 description: |
   Here are some of the questions we've been using in instructor certification exams.
@@ -16,8 +18,6 @@ image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - certify
 ---

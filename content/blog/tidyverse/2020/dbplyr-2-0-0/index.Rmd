@@ -1,29 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: dbplyr-2-0-0
 title: dbplyr 2.0.0
-date: 2020-11-04
+date: '2020-11-04'
 people:
   - Hadley Wickham
-description: >
-    dbplyr 2.0.0 adds missing features from dplyr 1.0.0, numerous
-    improvements to SQL translation (including new Amazon Redshift and 
-    SAP HANA backends), and an improved system for extending dbplyr to work
-    with other databases.
-
+description: |
+  dbplyr 2.0.0 adds missing features from dplyr 1.0.0, numerous improvements to SQL translation (including new Amazon Redshift and  SAP HANA backends), and an improved system for extending dbplyr to work with other databases.
 photo:
   url: https://unsplash.com/photos/r2A6WYI8YIg
   author: Shawn Ang
-
-tags: [dbplyr, dplyr]
+categories:
+  - Data Wrangling
+tags:
+  - dbplyr
+  - dplyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

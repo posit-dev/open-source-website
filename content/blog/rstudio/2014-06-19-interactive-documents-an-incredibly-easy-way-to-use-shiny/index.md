@@ -3,19 +3,19 @@ title: 'Interactive documents: An incredibly easy way to use Shiny'
 people:
   - Garrett Grolemund
 date: '2014-06-19'
+categories:
+  - Interactive Apps
 slug: interactive-documents-an-incredibly-easy-way-to-use-shiny
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Shiny
-- shinyapps.io
+  - Shiny
+  - shinyapps.io
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Shiny
   - shinyapps.io

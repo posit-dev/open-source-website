@@ -4,7 +4,11 @@ people:
   - Hadley Wickham
 date: '2017-12-19'
 slug: testthat-2-0-0
-tags: [package, r-lib]
+categories:
+  - Best Practices
+tags:
+  - package
+  - r-lib
 photo:
   url: https://unsplash.com/photos/Lu2pfy_8VKg
   author: Cameron Kirby
@@ -13,8 +17,6 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "testthat"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

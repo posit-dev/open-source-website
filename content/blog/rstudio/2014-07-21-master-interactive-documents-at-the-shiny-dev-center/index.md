@@ -3,20 +3,20 @@ title: Master interactive documents at the Shiny Dev Center
 people:
   - Garrett Grolemund
 date: '2014-07-21'
+categories:
+  - Interactive Apps
+  - MLOps & Admin
 slug: master-interactive-documents-at-the-shiny-dev-center
 blogcategories:
-- Products and Technology
-- Training and Education
-- Open Source
+  - Products and Technology
+  - Training and Education
+  - Open Source
 tags:
-- Shiny
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
-  - MLOps & Admin
 ported_categories:
   - Shiny
   - Training

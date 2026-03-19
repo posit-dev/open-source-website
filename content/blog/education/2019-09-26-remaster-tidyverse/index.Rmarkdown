@@ -3,6 +3,8 @@ title: Remastering 'Master the Tidyverse'
 people:
   - Garrett
 date: '2019-09-26'
+categories:
+  - Community
 slug: remaster-tidyverse
 description: |
   Looking for teaching material for intro to #rstats and the #tidyverse? I've made mine easier to reuse. Please help yourself!
@@ -14,8 +16,6 @@ ported_from: education
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
 ---

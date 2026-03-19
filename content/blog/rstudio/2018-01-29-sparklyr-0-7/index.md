@@ -3,21 +3,22 @@ title: 'sparklyr 0.7: Spark Pipelines and Machine Learning'
 people:
   - Kevin Kuo
 date: '2018-01-29'
-tags:
-- data science
-- Distributed Computing
-- Spark
-- sparklyr
-slug: sparklyr-0-7
-blogcategories:
-- Products and Technology
-- Open Source
-ported_from: rstudio
-port_status: in-progress
-languages: ["R"]
 categories:
   - Machine Learning
   - MLOps & Admin
+tags:
+  - data science
+  - Distributed Computing
+  - Spark
+  - sparklyr
+  - Packages
+slug: sparklyr-0-7
+blogcategories:
+  - Products and Technology
+  - Open Source
+ported_from: rstudio
+port_status: in-progress
+languages: ["R"]
 ported_categories:
   - Packages
 ---

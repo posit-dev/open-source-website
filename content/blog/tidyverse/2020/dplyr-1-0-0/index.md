@@ -1,28 +1,24 @@
 ---
 title: dplyr 1.0.0 available now!
-
-description: > 
+description: |
   dplyr 1.0.0 is now available from CRAN!
 people:
   - Hadley Wickham
 date: '2020-06-01'
 slug: dplyr-1-0-0
-
 photo:
   url: https://unsplash.com/photos/W8BNwvOvW4M
   author: Helinton Fantin
-
+categories:
+  - Data Wrangling
 tags:
   - dplyr
   - dplyr-1-0-0
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

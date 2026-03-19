@@ -1,24 +1,24 @@
 ---
 slug: dplyr-1-1-0-joins
-title: "dplyr 1.1.0: Joins"
-date: 2023-01-31
+title: 'dplyr 1.1.0: Joins'
+date: '2023-01-31'
 people:
   - Davis Vaughan
-description: >
-    In dplyr 1.1.0, joins have been greatly reworked, including a new way to
-    specify join columns, support for inequality, rolling, and overlap joins, and two new
-    quality control arguments.
+description: |
+  In dplyr 1.1.0, joins have been greatly reworked, including a new way to specify join columns, support for inequality, rolling, and overlap joins, and two new quality control arguments.
 photo:
   url: https://unsplash.com/photos/Cecb0_8Hx-o
   author: Duy Pham
-tags: [dplyr, dplyr-1-1-0]
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

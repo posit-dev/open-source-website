@@ -1,7 +1,9 @@
 ---
-title: "Teaching the Tidyverse in 2020 - Part 4: When to purrr?"
-date: "2020-07-19"
+title: 'Teaching the Tidyverse in 2020 - Part 4: When to purrr?'
+date: '2020-07-19'
 slug: teaching-the-tidyverse-in-2020-part-4-when-to-purrr
+categories:
+  - Community
 tags:
   - tidyverse
 people:
@@ -13,8 +15,6 @@ ported_from: education
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
 ---

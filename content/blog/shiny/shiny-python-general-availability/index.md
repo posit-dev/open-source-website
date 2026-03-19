@@ -5,8 +5,7 @@ people:
   - Winston Chang
 date: '2023-04-18'
 image: shiny-for-python.jpg
-image-alt: >-
-  The Shiny hex sticker next to the Python language logo, saying Shiny for
+image-alt: The Shiny hex sticker next to the Python language logo, saying Shiny for
   Python
 ported_from: shiny
 port_status: in-progress

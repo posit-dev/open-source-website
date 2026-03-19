@@ -1,28 +1,26 @@
 ---
-
 slug: text-rendering-updates
 title: Updates to Text Rendering in R Graphics
-date: 2025-01-17
+date: '2025-01-17'
 people:
   - Thomas Lin Pedersen
-description: >
-    There has been a recent flurry of updates to packages involved in rendering
-    text from R. This blog post will go through what this means for you as a
-    user and developer.
-
+description: |
+  There has been a recent flurry of updates to packages involved in rendering text from R. This blog post will go through what this means for you as a user and developer.
 photo:
   url: https://unsplash.com/photos/a-sign-on-the-side-of-a-building-in-a-foreign-language-O5TLxKaOZUs
   author: Tim Mossholder
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [systemfonts, textshaping, marquee, graphics]
+categories:
+  - Visualization
+tags:
+  - systemfonts
+  - textshaping
+  - marquee
+  - graphics
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "systemfonts", "marquee"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - roundup
 ---

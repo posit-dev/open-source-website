@@ -1,10 +1,12 @@
 ---
 title: Deep Learning Workshop at rstudio::conf(2020)
 author:
-  - "[Brad Boehmke](http://bradleyboehmke.github.io/)"
+  - '[Brad Boehmke](http://bradleyboehmke.github.io/)'
 people:
   - Brad Boehmke
 date: '2020-05-28'
+categories:
+  - Community
 tags:
   - conf2020
 slug: conf20-dl
@@ -18,8 +20,6 @@ ported_from: education
 port_status: in-progress
 software: ["keras3", "tensorflow"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - teach

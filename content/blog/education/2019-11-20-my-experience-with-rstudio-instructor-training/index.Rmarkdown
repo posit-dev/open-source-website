@@ -1,6 +1,5 @@
 ---
-title: My Experience with RStudio Instructor Training
- - "[Ted Laderas](http://laderast.github.io/)"
+title: My Experience with RStudio Instructor Training - "[Ted Laderas](http://laderast.github.io/)"
 date: '2019-11-19'
 publishDate: '2019-11-19'
 slug: my-experience-with-rstudio-instructor-training
@@ -9,13 +8,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/mngnzwHi0yo
   author: Charles Etoroma
-tags: ["instructor training"]
+categories:
+  - Community
+tags:
+  - instructor training
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
   - certify

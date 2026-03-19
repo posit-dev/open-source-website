@@ -1,26 +1,25 @@
 ---
-
 slug: desirability2
 title: desirability2
-date: 2023-05-17
+date: '2023-05-17'
 people:
   - Max Kuhn
-description: >
-    The desirability2 package, for multivariable optimization, is now on CRAN.
-
+description: |
+  The desirability2 package, for multivariable optimization, is now on CRAN.
 photo:
   url: https://unsplash.com/photos/8cvksz5mmnE
   author: Joel Naren
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels,desirability,optimization]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - desirability
+  - optimization
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

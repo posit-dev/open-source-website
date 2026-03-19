@@ -3,19 +3,20 @@ title: 'htmlwidgets: JavaScript data visualization for R'
 people:
   - RStudio Team
 date: '2014-12-18'
+categories:
+  - Interactive Apps
 slug: htmlwidgets-javascript-data-visualization-for-r
 blogcategories:
-- Products and Technology
-- Company News and Events
-- Open Source
+  - Products and Technology
+  - Company News and Events
+  - Open Source
 tags:
-- Shiny
+  - Packages
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - News
   - Packages

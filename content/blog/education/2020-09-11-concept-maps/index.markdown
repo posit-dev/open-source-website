@@ -3,6 +3,8 @@ title: Concept Maps
 people:
   - greg
 date: '2020-09-11'
+categories:
+  - Community
 tags:
   - certify
 description: |
@@ -16,8 +18,6 @@ ported_from: education
 port_status: in-progress
 software: ["concept-maps"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - certify
 ---

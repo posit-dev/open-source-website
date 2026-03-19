@@ -3,6 +3,8 @@ title: Tips for Making a New Cheatsheet
 people:
   - garrett
 date: '2020-03-27'
+categories:
+  - Community
 photo:
   url: https://unsplash.com/photos/rPOmLGwai2w
   author: Marius Masalar
@@ -12,8 +14,6 @@ ported_from: education
 port_status: in-progress
 software: ["cheatsheets"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - teach

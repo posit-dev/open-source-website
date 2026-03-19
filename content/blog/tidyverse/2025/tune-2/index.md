@@ -1,30 +1,28 @@
 ---
-
 slug: tune-2
-title: "tune version 2.0.0"
-date: 2025-11-05
+title: tune version 2.0.0
+date: '2025-11-05'
 people:
   - Max Kuhn
   - Simon Couch
   - Emil Hvitfeldt
   - Hannah Frick
-description: >
-    A new version of tune brings significant updates for model tuning and 
-    parallel processing. 
-
+description: "A new version of tune brings significant updates for model tuning and
+  \ parallel processing. \n"
 photo:
   url: https://unsplash.com/photos/black-car-stereo-turned-on-at-7-qHbg3DKB1Y0
   author: Stephen Andrews
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels,postprocessing,parallel processing]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - postprocessing
+  - parallel processing
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

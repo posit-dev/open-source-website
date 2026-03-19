@@ -3,14 +3,14 @@ title: 'Announcing RPubs: A New Web Publishing Service for R'
 people:
   - RStudio Team
 date: '2012-06-04'
+categories:
+  - Publishing
 slug: announcing-rpubs
 blogcategories:
-- Company News and Events
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Publishing
 ported_categories:
   - News
 ---

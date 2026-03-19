@@ -1,11 +1,7 @@
 ---
-title: >-
-  Towards easy, delightful, and customizable dashboards in Shiny for R with
-  {bslib}
-description: >
-  The {bslib} R package nows makes it very easy to make delightful and
-  customizable dashboard in Shiny for R. This post walks through a Shiny app
-  which quickly illustrates what's possible with these components.
+title: Towards easy, delightful, and customizable dashboards in Shiny for R with {bslib}
+description: |
+  The {bslib} R package nows makes it very easy to make delightful and customizable dashboard in Shiny for R. This post walks through a Shiny app which quickly illustrates what's possible with these components.
 people:
   - Carson Sievert
 date: '2023-06-07'

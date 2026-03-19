@@ -1,26 +1,23 @@
 ---
-
 slug: tidymodels-xgboost
 title: tidymodels & xgboost
-date: 2025-12-15
+date: '2025-12-15'
 people:
   - Emil Hvitfeldt
-description: >
-    The tidymodels ecosystem is prepared for big xgboost CRAN release.
-
+description: |
+  The tidymodels ecosystem is prepared for big xgboost CRAN release.
 photo:
   url: https://unsplash.com/photos/person-in-green-jacket-and-black-pants-riding-black-snowboard-on-snow-covered-mountain-during-daytime-l6ZJR-7ZpQY
   author: Markos Mant
-
-tags: [tidymodels]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - other
 ---

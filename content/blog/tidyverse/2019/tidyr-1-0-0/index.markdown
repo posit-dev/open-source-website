@@ -4,6 +4,8 @@ people:
   - Hadley Wickham
 date: '2019-09-13'
 slug: tidyr-1-0-0
+categories:
+  - Data Wrangling
 tags:
   - tidyr
   - tidyverse
@@ -15,8 +17,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

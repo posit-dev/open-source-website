@@ -1,11 +1,14 @@
 ---
 title: Text Mining Workshop Materials from rstudio::conf(2020)
 author:
-  - "[Julia Silge](https://juliasilge.com/)"
+  - '[Julia Silge](https://juliasilge.com/)'
 people:
   - Julia Silge
 date: '2020-02-13'
-tags: [conf2020]
+categories:
+  - Community
+tags:
+  - conf2020
 slug: conf20-tidytext
 description: |
   Check out slides and other materials on text mining and modeling using tidy data principles.
@@ -16,8 +19,6 @@ image: books-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - teach

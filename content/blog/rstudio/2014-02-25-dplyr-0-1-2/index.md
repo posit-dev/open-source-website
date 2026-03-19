@@ -3,17 +3,18 @@ title: dplyr 0.1.2
 people:
   - Hadley Wickham
 date: '2014-02-25'
+categories:
+  - Data Wrangling
 slug: dplyr-0-1-2
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - Packages
 ---

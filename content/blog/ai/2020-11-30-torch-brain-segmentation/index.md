@@ -1,9 +1,11 @@
 ---
-title: "Brain image segmentation with torch"
+title: Brain image segmentation with torch
 description: |
   The need to segment images arises in various sciences and their applications, many of which are vital to human (and animal) life. In this introductory post, we train a U-Net to mark lesioned regions on MRI brain scans.
-date: 2020-11-30
+date: '2020-11-30'
 slug: keydanatorchtabular
+categories:
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -14,8 +16,6 @@ image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Torch
   - R

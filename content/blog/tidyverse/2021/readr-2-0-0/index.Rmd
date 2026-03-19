@@ -1,24 +1,22 @@
 ---
 output: hugodown::hugo_document
-
 slug: readr-2-0-0
 title: readr 2.0.0
-date: 2021-07-20
+date: '2021-07-20'
 people:
   - Jim Hester
-description: |
-  This major release of readr includes a new multi-threaded parsing engine powered by vroom and a 
-  number of user interface improvements.
+description: "This major release of readr includes a new multi-threaded parsing engine
+  powered by vroom and a \nnumber of user interface improvements.\n"
 photo:
   url: https://unsplash.com/photos/XOW1WqrWNKg
   author: Anastasia Zhenina
+categories:
+  - Data Wrangling
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["readr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

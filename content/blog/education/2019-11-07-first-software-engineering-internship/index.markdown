@@ -1,18 +1,19 @@
 ---
 title: My First Software Engineering Internship
 author:
-  - "[Joyce Cahoon](https://jcahoon.netlify.com/)"
+  - '[Joyce Cahoon](https://jcahoon.netlify.com/)'
 people:
   - Joyce Cahoon
 date: '2019-11-07'
 publishDate: '2019-11-07'
 slug: my-first-software-engineering-internship
 description: |
-   How I went from being an amateur coder to being confident in my software development abilities.
+  How I went from being an amateur coder to being confident in my software development abilities.
 photo:
   url: https://unsplash.com/photos/ywz_3Qc0xdw
   author: Geoff Park
-tags: [internship]
+tags:
+  - internship
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress

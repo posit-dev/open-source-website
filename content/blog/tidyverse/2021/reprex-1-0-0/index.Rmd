@@ -1,28 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: reprex-1-0-0
 title: reprex 1.0.0
-date: 2021-02-01
+date: '2021-02-01'
 people:
   - Jenny Bryan
-description: >
-    We've never blogged about reprex before, so the release of v1.0.0 seems
-    like a good occasion for it.
-
+description: |
+  We've never blogged about reprex before, so the release of v1.0.0 seems like a good occasion for it.
 photo:
   url: https://www.flickr.com/photos/iamagenious/6251271390/sizes/o/
   author: Eric Molina
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [reprex,tidyverse]
+categories:
+  - Best Practices
+tags:
+  - reprex
+  - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "reprex"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

@@ -1,12 +1,12 @@
 ---
-title: "Build Your First LLM App with Shiny for Python or R"
+title: Build Your First LLM App with Shiny for Python or R
 description: |
   In the third and final part of The Shiny Side of LLMs, we'll bring everything together in a polished Shiny app. From covering async, optimizing conversations, to handling loading and errors smoothly. Both Python and R!
 people:
-  - "Veerle Eeftink - van Leemput"
-date: "2025-09-15"
+  - Veerle Eeftink - van Leemput
+date: '2025-09-15'
 image: shiny-side-of-llms-header.png
-image-alt: "The Shiny Side of LLMs part 3"
+image-alt: The Shiny Side of LLMs part 3
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "shiny-r", "chatlas", "ellmer"]

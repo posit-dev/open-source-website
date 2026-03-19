@@ -3,7 +3,7 @@ title: 'Great Tables `v0.13.0`: Applying styles to all table locations'
 people:
   - Rich Iannone
   - Michael Chow
-date: 2024-10-10T00:00:00.000Z
+date: '2024-10-10T00:00:00.000Z'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]

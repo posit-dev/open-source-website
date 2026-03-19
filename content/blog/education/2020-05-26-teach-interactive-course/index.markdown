@@ -1,11 +1,13 @@
 ---
 title: Teach R with Interactive Courses
 author:
-  - "[Julia Silge](https://juliasilge.com/)"
+  - '[Julia Silge](https://juliasilge.com/)'
 people:
   - Julia Silge
 date: '2020-05-26'
-tags: 
+categories:
+  - Community
+tags:
   - online
 slug: teach-interactive-course
 description: |
@@ -18,8 +20,6 @@ ported_from: education
 port_status: in-progress
 software: ["learnr"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - teach

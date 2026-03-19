@@ -1,9 +1,9 @@
 ---
-title: "C'mon C'mon: Let's Do a Pointblank Workshop!"
+title: 'C''mon C''mon: Let''s Do a Pointblank Workshop!'
 people:
   - Rich Iannone
-date: 2025-06-03
-toc: false
+date: '2025-06-03'
+toc: no
 ported_from: pointblank
 port_status: in-progress
 software: ["pointblank"]

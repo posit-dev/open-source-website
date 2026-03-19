@@ -1,14 +1,16 @@
 ---
 title: processx 3.2.0
-date: 2018-09-06
+date: '2018-09-06'
 slug: processx-3.2.0
 people:
   - Gábor Csárdi
+categories:
+  - Best Practices
 tags:
   - processx
   - r-lib
-description: >
-    Run external processes with processx
+description: |
+  Run external processes with processx
 photo:
   url: https://unsplash.com/photos/PtgLGdMzi-Y
   author: Adam Sherez
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "processx"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

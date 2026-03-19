@@ -1,17 +1,18 @@
 ---
-title: 'ggplot2 3.1.0'
-author: Mara Averick and Claus Wilke
+title: ggplot2 3.1.0
+author:
+  - Mara Averick and Claus Wilke
 date: '2018-10-29'
 slug: ggplot2-3-1-0
-description: > 
+description: |
   ggplot2 3.1.0 is now on CRAN!
+categories:
+  - Visualization
 photo:
   url: https://unsplash.com/photos/Ibq4B5iE_-4
   author: Stephan Henning
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

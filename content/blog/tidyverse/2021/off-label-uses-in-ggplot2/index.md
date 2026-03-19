@@ -1,28 +1,24 @@
 ---
-
 slug: off-label-uses-in-ggplot2
 title: Off-label uses in ggplot2
-date: 2021-06-24
+date: '2021-06-24'
 people:
   - Thomas Lin Pedersen
-description: >
-    How can ggplot2 break with no breaking changes? This short post goes into detail with how
-    and why the latest ggplot2 release disrupted some users workflow.
-
+description: |
+  How can ggplot2 break with no breaking changes? This short post goes into detail with how and why the latest ggplot2 release disrupted some users workflow.
 photo:
   url: https://data-imaginist.com
   author: Thomas Lin Pedersen
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [ggplot2, off-label]
-
+categories:
+  - Best Practices
+tags:
+  - ggplot2
+  - off-label
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - programming
 ---

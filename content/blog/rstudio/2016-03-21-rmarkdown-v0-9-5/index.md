@@ -3,19 +3,20 @@ title: R Markdown v0.9.5
 people:
   - RStudio Team
 date: '2016-03-21'
+categories:
+  - Publishing
 slug: rmarkdown-v0-9-5
 blogcategories:
-- Products and Technology
-- Company News and Events
-- Open Source
+  - Products and Technology
+  - Company News and Events
+  - Open Source
 tags:
-- R Markdown
+  - Packages
+  - R Markdown
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
-categories:
-  - Publishing
 ported_categories:
   - News
   - Packages

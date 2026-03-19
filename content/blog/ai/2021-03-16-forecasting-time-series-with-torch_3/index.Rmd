@@ -1,6 +1,6 @@
 ---
-title: "torch time series, take three: Sequence-to-sequence prediction"
-description: > 
+title: 'torch time series, take three: Sequence-to-sequence prediction'
+description: |
   In our overview of techniques for time-series forecasting, we move on to sequence-to-sequence models. Architectures in this family are commonly used in natural language processing (NLP) tasks, such as machine translation. With NLP, however, significant pre-processing is required before proceeding to model definition and training. In staying with our familiar numerical series, we can fully concentrate on the concepts.
 author:
   - name: Sigrid Keydana
@@ -8,17 +8,15 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchts2
 date: 03-16-2021
-preview: images/preview.jpg
-format: hugo-md
 categories:
   - Machine Learning
+preview: images/preview.jpg
+format: hugo-md
+languages: ["R"]
 ported_categories:
   - Torch
   - R
   - Time Series
-preview: images/preview.jpg
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

@@ -1,9 +1,12 @@
 ---
-title: 'Workshop wrap-up from rstudio::conf(2020)'
+title: Workshop wrap-up from rstudio::conf(2020)
 date: '2020-02-13'
-description: 'rstudio::conf(2020) workshop materials now available.'
+description: rstudio::conf(2020) workshop materials now available.
 slug: conf2020-workshops
-tags: [conf2020]
+categories:
+  - Community
+tags:
+  - conf2020
 people:
   - alison
 photo:
@@ -13,8 +16,6 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - teach

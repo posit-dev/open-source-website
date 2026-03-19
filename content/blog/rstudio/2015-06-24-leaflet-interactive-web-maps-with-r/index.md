@@ -3,19 +3,20 @@ title: 'Leaflet: Interactive web maps with R'
 people:
   - Yihui Xie
 date: '2015-06-24'
+categories:
+  - Visualization
+  - Interactive Apps
 tags:
-- htmlwidgets
-- spatial
+  - htmlwidgets
+  - spatial
+  - Packages
 slug: leaflet-interactive-web-maps-with-r
 blogcategories:
-- Products and Technology
+  - Products and Technology
 ported_from: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]
-categories:
-  - Visualization
-  - Interactive Apps
 ported_categories:
   - Packages
 ---

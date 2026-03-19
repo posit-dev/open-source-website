@@ -1,29 +1,24 @@
 ---
-
 slug: pkgdown-2-0-0
 title: pkgdown 2.0.0
-date: 2021-12-03
+date: '2021-12-03'
 people:
   - Hadley Wickham
-description: >
-    pkgdown 2.0.0 includes a major refresh of the default template (now 
-    using bootstrap 5), many new ways to customise your site, improvements
-    to code styling, and much, much, more.
-    
+description: |
+  pkgdown 2.0.0 includes a major refresh of the default template (now  using bootstrap 5), many new ways to customise your site, improvements to code styling, and much, much, more.
 photo:
   url: https://unsplash.com/photos/1HIKnKtXEU0
   author: Edgar Soto
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [pkgdown, devtools]
-
+categories:
+  - Best Practices
+tags:
+  - pkgdown
+  - devtools
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "pkgdown", "devtools"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

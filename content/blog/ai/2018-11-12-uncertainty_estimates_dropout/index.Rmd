@@ -1,7 +1,8 @@
 ---
-title: "You sure? A Bayesian approach to obtaining uncertainty estimates from neural networks"
-description: >
- In deep learning, there is no obvious way of obtaining uncertainty estimates. In 2016, Gal and Ghahramani proposed a method that is both theoretically grounded and practical: use dropout at test time. In this post, we introduce a refined version of this method (Gal et al. 2017) that has the network itself learn how uncertain it is.
+title: You sure? A Bayesian approach to obtaining uncertainty estimates from neural
+  networks
+description: |
+  In deep learning, there is no obvious way of obtaining uncertainty estimates. In 2016, Gal and Ghahramani proposed a method that is both theoretically grounded and practical: use dropout at test time. In this post, we introduce a refined version of this method (Gal et al. 2017) that has the network itself learn how uncertain it is.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -9,18 +10,16 @@ author:
 bibliography: bibliography.bib
 slug: keydana2018dropoutuncertainty
 date: 11-12-2018
-preview: images/thumb.png
-format: hugo-md
 categories:
   - Machine Learning
-ported_categories:
-  - Image Recognition & Image Processing
-  - Probabilistic ML/DL
-  - TensorFlow/Keras
 preview: images/thumb.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - Image Recognition & Image Processing
+  - Probabilistic ML/DL
+  - TensorFlow/Keras
 ---
 
 ```{r setup, include=FALSE}

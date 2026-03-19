@@ -1,8 +1,8 @@
 ---
-title: "Great Tables: The Polars DataFrame Styler of Your Dreams"
+title: 'Great Tables: The Polars DataFrame Styler of Your Dreams'
 people:
   - Michael Chow
-date: 2024-01-08
+date: '2024-01-08'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]

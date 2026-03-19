@@ -1,9 +1,12 @@
 ---
-title: "Five ways to do least squares (with torch)"
+title: Five ways to do least squares (with torch)
 description: |
   Get to know torch's linalg module, all while learning about different ways to do least-squares regression from scratch. This post is a condensed version of the corresponding chapter in the forthcoming book, Deep Learning and Scientific Computing with R torch, to be published by CRC Press.
-date: 2022-10-13T00:00:00.000Z
+date: '2022-10-13T00:00:00.000Z'
 slug: keydanatorchlinalg
+categories:
+  - Machine Learning
+  - Best Practices
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -14,9 +17,6 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Machine Learning
-  - Best Practices
 ported_categories:
   - Torch
   - R

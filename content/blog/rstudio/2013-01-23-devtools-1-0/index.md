@@ -3,17 +3,18 @@ title: Version 1.0 of devtools released!
 people:
   - Hadley Wickham
 date: '2013-01-23'
+categories:
+  - Best Practices
 slug: devtools-1-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["devtools"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - Packages
 ---

@@ -1,30 +1,27 @@
 ---
-
 slug: purrr-1-1-0-parallel
 title: Parallel processing in purrr 1.1.0
-date: 2025-07-10
+date: '2025-07-10'
 people:
   - Charlie Gao
   - Hadley Wickham
   - Davis Vaughan
   - Lionel Henry
-description: >
-    The functional programming toolkit for R gains new capabilities for
-    parallel processing and distributed computing using mirai.
+description: |
+  The functional programming toolkit for R gains new capabilities for parallel processing and distributed computing using mirai.
 photo:
   url: https://unsplash.com/photos/chart-bar-chart-14XDMqDmCq0
   author: Martin Woortman
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [parallelism, purrr]
-
+categories:
+  - Data Wrangling
+tags:
+  - parallelism
+  - purrr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "purrr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

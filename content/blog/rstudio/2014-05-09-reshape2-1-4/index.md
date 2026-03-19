@@ -3,18 +3,19 @@ title: reshape2 1.4; Kevin Ushey joins Rstudio
 people:
   - Hadley Wickham
 date: '2014-05-09'
-slug: reshape2-1-4
-blogcategories:
-- Products and Technology
-- Company News and Events
-- Open Source
-tags:
-ported_from: rstudio
-port_status: in-progress
-languages: ["R"]
 categories:
   - Data Wrangling
   - Community
+slug: reshape2-1-4
+blogcategories:
+  - Products and Technology
+  - Company News and Events
+  - Open Source
+tags:
+  - Packages
+ported_from: rstudio
+port_status: in-progress
+languages: ["R"]
 ported_categories:
   - News
   - Packages

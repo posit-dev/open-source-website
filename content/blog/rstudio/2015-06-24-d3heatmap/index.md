@@ -3,19 +3,20 @@ title: 'd3heatmap: Interactive heat maps'
 people:
   - Joe Cheng
 date: '2015-06-24'
-tags:
-- d3
-- htmlwidgets
-slug: d3heatmap
-blogcategories:
-- Products and Technology
-- Open Source
-ported_from: rstudio
-port_status: in-progress
-languages: ["R"]
 categories:
   - Visualization
   - Interactive Apps
+tags:
+  - d3
+  - htmlwidgets
+  - Packages
+slug: d3heatmap
+blogcategories:
+  - Products and Technology
+  - Open Source
+ported_from: rstudio
+port_status: in-progress
+languages: ["R"]
 ported_categories:
   - Packages
 ---

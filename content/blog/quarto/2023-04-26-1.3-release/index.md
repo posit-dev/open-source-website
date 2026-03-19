@@ -3,6 +3,8 @@ title: Quarto 1.3
 subtitle: Quarto 1.3 is officially released
 description: |
   Quarto 1.3 brings new features, improvements, and fixes.
+categories:
+  - Publishing
 people:
   - Charlotte Wickham
 date: '2023-04-26'
@@ -12,8 +14,6 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
 ported_categories:
   - Quarto 1.3
   - Releases

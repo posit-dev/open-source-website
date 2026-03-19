@@ -2,7 +2,7 @@
 title: 'Great Tables `v0.15.0`: Flags, Icons, and Other Formatting Goodies'
 people:
   - Rich Iannone
-date: 2024-12-19T00:00:00.000Z
+date: '2024-12-19T00:00:00.000Z'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]

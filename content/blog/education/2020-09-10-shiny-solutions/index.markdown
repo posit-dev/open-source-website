@@ -1,12 +1,14 @@
 ---
 title: Shiny Solutions
 author:
-  - "[Maya Gans](https://maya.rbind.io/)"
-  - "[Marly Gotti](http://www.marlygotti.com/)"
+  - '[Maya Gans](https://maya.rbind.io/)'
+  - '[Marly Gotti](http://www.marlygotti.com/)'
 people:
   - Maya Gans
   - Marly Gotti
 date: '2020-09-10'
+categories:
+  - Community
 tags:
   - Shiny
 description: |
@@ -20,8 +22,6 @@ ported_from: education
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - teach

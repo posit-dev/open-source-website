@@ -1,27 +1,23 @@
 ---
-
 slug: webr-0-5-4
 title: webR 0.5.4
-date: 2025-07-11
+date: '2025-07-11'
 people:
   - George Stagg
-description: >
-    webR 0.5.4 brings the latest version of R to the browser, with sharing URLs,
-    an upgraded Emscripten runtime, and filesystem support for JupyterLite.
-
+description: |
+  webR 0.5.4 brings the latest version of R to the browser, with sharing URLs, an upgraded Emscripten runtime, and filesystem support for JupyterLite.
 photo:
   url: https://unsplash.com/photos/a-close-up-of-a-cell-phone-on-a-black-background-q_zV6O2h9vs
   author: Dima Solomin
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [webr, wasm]
-
+categories:
+  - Interactive Apps
+tags:
+  - webr
+  - wasm
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - package
 ---

@@ -6,6 +6,8 @@ people:
   - Barret Schloerke
 date: '2021-02-01'
 slug: shiny-1-6-0
+categories:
+  - Interactive Apps
 tags:
   - shiny
   - caching
@@ -13,19 +15,18 @@ tags:
   - accessibility
   - bslib
   - thematic
-description: Shiny 1.6 is now on CRAN! This release includes significant improvements to theming, caching, accessibility, and more.
+description: Shiny 1.6 is now on CRAN! This release includes significant improvements
+  to theming, caching, accessibility, and more.
 blogcategories:
-- Company News and Events
-- Products and Technology
-- Open Source
+  - Company News and Events
+  - Products and Technology
+  - Open Source
 alttext: Shiny logo
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r", "bslib", "thematic"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Packages
   - Shiny

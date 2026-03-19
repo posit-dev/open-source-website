@@ -1,17 +1,18 @@
 ---
 title: 12 weeks at RStudio
 author:
-  - "[Desirée De Leon](https://desiree.rbind.io/)"
+  - '[Desirée De Leon](https://desiree.rbind.io/)'
 people:
   - Desirée De Leon
 date: '2019-10-30'
 slug: twelve-weeks
 description: |
-   This summer I interned for RStudio’s education team. It was a total departure from my routine as a PhD student, and the perfect brew of the things I enjoy: building stuff, drawing stuff, and teaching stuff.
+  This summer I interned for RStudio’s education team. It was a total departure from my routine as a PhD student, and the perfect brew of the things I enjoy: building stuff, drawing stuff, and teaching stuff.
 photo:
   url: https://unsplash.com/photos/z-lh7Mz7wFQ
   author: Cris DiNoto
-tags: [internship]
+tags:
+  - internship
 image: colors-wd.jpg
 ported_from: education
 port_status: in-progress

@@ -1,22 +1,23 @@
 ---
 slug: workflows-0-2-0
 title: workflows 0.2.0
-date: 2020-09-16
+date: '2020-09-16'
 people:
   - Davis Vaughan
-description: >
-    workflows 0.2.0 is now on CRAN!
+description: |
+  workflows 0.2.0 is now on CRAN!
 photo:
   url: https://unsplash.com/photos/nN5L5GXKFz8
   author: Mark Fletcher-Brown
-tags: [tidymodels]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

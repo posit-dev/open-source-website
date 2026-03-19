@@ -1,28 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: dtplyr-1-3-0
 title: dtplyr 1.3.0
-date: 2023-02-24
+date: '2023-02-24'
 people:
   - Hadley Wickham
-description: >
-    dtplyr brings initial support for dplyr 1.1.0 features, new translations, 
-    and a breaking change.
-
+description: |
+  dtplyr brings initial support for dplyr 1.1.0 features, new translations,  and a breaking change.
 photo:
   url: https://unsplash.com/photos/uwI8R_FyLrI
   author: Neil Cooper
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [dplyr, dtplyr]
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dtplyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dplyr", "dtplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

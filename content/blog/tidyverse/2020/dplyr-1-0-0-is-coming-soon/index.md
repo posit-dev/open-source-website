@@ -4,27 +4,21 @@ title: dplyr 1.0.0 is coming soon
 people:
   - Hadley Wickham
 date: '2020-03-09'
-description: >
-  This post focusses on the idea of the "function lifecycle" which helps 
-  you understand where functions in dplyr are going. Particularly important
-  is the idea of a "superseded" function. A superseded function is not going
-  away, but we no longer recommend using it in new code.
-
+description: |
+  This post focusses on the idea of the "function lifecycle" which helps  you understand where functions in dplyr are going. Particularly important is the idea of a "superseded" function. A superseded function is not going away, but we no longer recommend using it in new code.
+categories:
+  - Data Wrangling
 tags:
-- dplyr
-- dplyr-1-0-0
-
+  - dplyr
+  - dplyr-1-0-0
 photo:
   url: https://unsplash.com/photos/7KLa-xLbSXA
   author: Paul Skorupskas
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

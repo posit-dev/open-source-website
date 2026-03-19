@@ -1,14 +1,15 @@
 ---
 title: dials 0.0.3
-date: 2019-10-01
+date: '2019-10-01'
 slug: dials-0-0-3
 people:
   - Max Kuhn
+categories:
+  - Machine Learning
 tags:
   - dials
   - tidymodels
-description: >
-    A major update to the tuning parameter package. 
+description: "A major update to the tuning parameter package. \n"
 photo:
   url: https://unsplash.com/photos/QfN0l0MZCyc
   author: Adi Goldstein
@@ -17,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dials", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

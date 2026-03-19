@@ -1,30 +1,23 @@
 ---
-
 slug: spring-cleaning-2023
-title: "Package spring cleaning"
-date: 2023-06-07
+title: Package spring cleaning
+date: '2023-06-07'
 people:
   - Andy Teucher
-description: >
-    When Spring comes around, it's time to embark on some Spring
-    Cleaning to take care of the package maintenance tasks 
-    that you never seem to get around to. This post outlines
-    the processes and tools that the tidyverse team uses to make 
-    this job fun and efficient.
-
+description: |
+  When Spring comes around, it's time to embark on some Spring Cleaning to take care of the package maintenance tasks  that you never seem to get around to. This post outlines the processes and tools that the tidyverse team uses to make  this job fun and efficient.
 photo:
   url: https://unsplash.com/photos/urUdKCxsTUI
   author: Anthony Delanoix
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: ["spring cleaning", "package maintenance"]
-
+categories:
+  - Best Practices
+tags:
+  - spring cleaning
+  - package maintenance
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - other
 ---

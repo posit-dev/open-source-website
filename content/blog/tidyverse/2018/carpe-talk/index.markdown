@@ -5,16 +5,16 @@ people:
   - Mara Averick
 date: '2018-07-08'
 slug: carpe-talk
-description: >
+description: |
   Seize the day and show off your work!
+categories:
+  - Community
 photo:
   url: https://unsplash.com/photos/iIWCjgK3704
   author: Karine Germain
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-categories:
-  - Community
 ported_categories:
   - other
 ---

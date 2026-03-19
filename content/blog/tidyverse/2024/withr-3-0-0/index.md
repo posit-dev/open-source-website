@@ -1,27 +1,24 @@
 ---
-
 slug: withr-3-0-0
 title: withr 3.0.0
-date: 2024-01-18
+date: '2024-01-18'
 people:
   - Lionel Henry
-description: >
-    withr is the tidyverse solution for automatically cleaning
-    up after yourselves (temporary files, options, etc). This milestone makes withr much faster.
-
+description: |
+  withr is the tidyverse solution for automatically cleaning up after yourselves (temporary files, options, etc). This milestone makes withr much faster.
 photo:
   url: https://unsplash.com/photos/brown-and-black-brush-on-brown-wooden-table-V0cSTljC92k
   author: Neal E. Johnson
-
-tags: [r-lib, withr]
-
+categories:
+  - Best Practices
+tags:
+  - r-lib
+  - withr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "withr"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

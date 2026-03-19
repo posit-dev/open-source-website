@@ -3,22 +3,23 @@ title: Shiny 0.10.2
 people:
   - Yihui Xie
 date: '2014-10-02'
+categories:
+  - Interactive Apps
 tags:
-- DataTables
-- Internet Explorer
-- Progress
-- shiny
-- Shiny
+  - DataTables
+  - Internet Explorer
+  - Progress
+  - shiny
+  - Packages
+  - Shiny
 slug: shiny-0-10-2
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["progress", "shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Packages
   - Shiny

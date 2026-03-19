@@ -1,27 +1,23 @@
 ---
 title: Using Callouts
-subtitle: >-
-  Use callouts to draw attention to important complementary content without
+subtitle: Use callouts to draw attention to important complementary content without
   interupting the document flow
-description: >
-  Callouts are an excellent way to draw extra attention to certain concepts, or
-  to more clearly indicate that certain content is supplemental or applicable to
-  only some scenarios.
+description: |
+  Callouts are an excellent way to draw extra attention to certain concepts, or to more clearly indicate that certain content is supplemental or applicable to only some scenarios.
+categories:
+  - Publishing
 people:
   - Charles Teague
 date: '2022-02-13'
 image: callouts.png
-image-alt: >-
-  Three calout boxes: A note (has a blue banner with info icon preceding the
-  header), a tip (has a green banner with lightbulb icon preceding the header),
-  and an important (has a red banner with info exclamation-point icon preceding
-  the header).
+image-alt: 'Three calout boxes: A note (has a blue banner with info icon preceding
+  the header), a tip (has a green banner with lightbulb icon preceding the header),
+  and an important (has a red banner with info exclamation-point icon preceding the
+  header).'
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
 ported_categories:
   - Features
   - Authoring

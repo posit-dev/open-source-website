@@ -4,19 +4,18 @@ people:
   - Lorenz Walthert, Kirill Müller
 date: '2017-12-20'
 slug: styler-1.0.0
+categories:
+  - Best Practices
 photo:
   url: https://unsplash.com/photos/mpdIPhYqZ4Y
   author: Heng Films
-description: >
+description: |
   styler, a package that can format your code according to the tidyverse style guide, is now on CRAN.
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["styler"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

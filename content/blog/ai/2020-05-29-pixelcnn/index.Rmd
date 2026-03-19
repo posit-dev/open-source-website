@@ -1,6 +1,6 @@
 ---
-title: "Easy PixelCNN with tfprobability"
-description: > 
+title: Easy PixelCNN with tfprobability
+description: |
   PixelCNN is a deep learning architecture - or bundle of architectures - designed to generate highly realistic-looking images. To use it, no reverse-engineering of arXiv papers or search for reference implementations is required: TensorFlow Probability and its R wrapper, tfprobability, now include a PixelCNN distribution that can be used to train a straightforwardly-defined neural network in a parameterizable way.
 author:
   - name: Sigrid Keydana
@@ -9,20 +9,18 @@ author:
 slug: keydanapixelcnn
 bibliography: bibliography.bib
 date: 05-29-2020
-preview: images/thumb.png
-format: hugo-md
 categories:
   - Machine Learning
+preview: images/thumb.png
+format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ported_categories:
   - R
   - Image Recognition & Image Processing
   - TensorFlow/Keras
   - Probabilistic ML/DL
   - Generative Models
-preview: images/thumb.png
-format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

@@ -1,8 +1,7 @@
 ---
 title: The Past and Future of Shiny
-description: >-
-  To celebrate Shiny's 10th anniversary, let's talk about how we started and
-  where we're going.
+description: To celebrate Shiny's 10th anniversary, let's talk about how we started
+  and where we're going.
 people:
   - Joe Cheng
 date: '2022-12-15'

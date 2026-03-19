@@ -1,26 +1,24 @@
 ---
-
 slug: ggplot2-3-5-0
 title: ggplot2 3.5.0
-date: 2024-02-23
+date: '2024-02-23'
 people:
   - Teun van den Brand
-description: >
-    ggplot2 3.5.0 is now on CRAN. Discover what is new in this release.
+description: |
+  ggplot2 3.5.0 is now on CRAN. Discover what is new in this release.
 photo:
   url: https://unsplash.com/photos/assorted-color-and-pattern-blanket-lot-dl-Lb5TMxF0
   author: Megan Bucknall
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [ggplot2, ggplot2-3-5-0]
-
+categories:
+  - Visualization
+tags:
+  - ggplot2
+  - ggplot2-3-5-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

@@ -4,17 +4,16 @@ people:
   - Hadley Wickham
 date: '2017-09-14'
 slug: rstudio-community
+categories:
+  - Community
 tags: []
 photo:
   url: https://unsplash.com/photos/9FDKj-FrfA4
   author: Rebekah Howell
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

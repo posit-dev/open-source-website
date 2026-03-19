@@ -1,9 +1,7 @@
 ---
 title: Build Your First LLM App with Shiny for Python or R
-description: >
-  In the third and final part of The Shiny Side of LLMs, we'll bring everything
-  together in a polished Shiny app. From covering async, optimizing
-  conversations, to handling loading and errors smoothly. Both Python and R!
+description: |
+  In the third and final part of The Shiny Side of LLMs, we'll bring everything together in a polished Shiny app. From covering async, optimizing conversations, to handling loading and errors smoothly. Both Python and R!
 people:
   - Veerle Eeftink - van Leemput
 date: '2025-09-15'

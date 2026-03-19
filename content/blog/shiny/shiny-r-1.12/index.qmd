@@ -1,39 +1,17 @@
 ---
-title: "OpenTelemetry + Shiny for R v1.12"
-description: &desc |
+title: OpenTelemetry + Shiny for R v1.12
+description: |
   Shiny has added OpenTelemetry support! Now you can pear into your Shiny app's
   reactive graph and performance characteristics at scale.
 people:
-  - 
-  - "Barret Schloerke"
-date: "2025-12-10"
-# resources:
-#   - error-dialog.png
-#   - task-button.gif
-#   - full-screen.gif
-
-# https://github.com/open-telemetry/opentelemetry.io/blob/c6ecfe7e0597ae9d29739ac9341a4ae8b6dbcbad/static/img/logos/opentelemetry-horizontal-color.png
+  - ~
+  - Barret Schloerke
+date: '2025-12-10'
 image: feature.png
 image-header: feature-header.png
-image-alt: "OpenTelemetry + Shiny for R v1.12"
-
-# open-graph:
-#   image: feature.png
-#   description: *desc
-# twitter-card:
-#   image: feature.png
-#   description: *desc
-
+image-alt: OpenTelemetry + Shiny for R v1.12
 editor:
-  render-on-save: true
-
-# engine: knitr
-
-# filters:
-#   - shinylive
-
-# freeze: true
-
+  render-on-save: yes
 code-annotations: hover
 ported_from: shiny
 port_status: in-progress

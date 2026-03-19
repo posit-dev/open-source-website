@@ -1,27 +1,25 @@
 ---
-
 slug: censored-0-1-0
 title: censored 0.1.0
-date: 2022-08-10
+date: '2022-08-10'
 people:
   - Hannah Frick
-description: >
-    censored 0.1.0 is a new tidymodels package for survival models.
-
+description: |
+  censored 0.1.0 is a new tidymodels package for survival models.
 photo:
   url: https://unsplash.com/photos/UDlXygG0pgA
   author: Ranae Smith
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, parsnip, censored]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - parsnip
+  - censored
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "censored"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

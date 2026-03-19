@@ -1,30 +1,23 @@
 ---
-
 slug: stringr-1-6-0
 title: stringr 1.6.0
-date: 2025-11-04
+date: '2025-11-04'
 people:
   - Hadley Wickham
-description: >
-  This release deprecates `str_like(ignore_case)` and changes the behaviour of
-  `str_replace_all()` for function replacements. It also introduces `str_ilike()` 
-  for case-insensitive SQL-like pattern matching, three new case conversion 
-  functions (`str_to_camel()`, `str_to_snake()`, and `str_to_kebab()`), and 
-  preserves names in all relevant functions.
+description: |
+  This release deprecates `str_like(ignore_case)` and changes the behaviour of `str_replace_all()` for function replacements. It also introduces `str_ilike()`  for case-insensitive SQL-like pattern matching, three new case conversion  functions (`str_to_camel()`, `str_to_snake()`, and `str_to_kebab()`), and  preserves names in all relevant functions.
 photo:
   url: https://unsplash.com/photos/white-yarn-on-white-surface-iYMSv8sf1uA
   author: Adam Valstar
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [stringr]
-
+categories:
+  - Data Wrangling
+tags:
+  - stringr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "stringr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

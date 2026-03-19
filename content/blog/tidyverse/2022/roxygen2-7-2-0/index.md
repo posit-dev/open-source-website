@@ -1,27 +1,24 @@
 ---
-
 slug: roxygen2-7-2-0
 title: roxygen2 7.2.0
-date: 2022-05-13
+date: '2022-05-13'
 people:
   - Hadley Wickham
-description: >
-    roxygen2 7.2.0 brings improvements to `NAMESPACE` generation, 
-    better multiparameter argument inheritance, and improved warnings.
+description: |
+  roxygen2 7.2.0 brings improvements to `NAMESPACE` generation,  better multiparameter argument inheritance, and improved warnings.
 photo:
   url: https://unsplash.com/photos/hpTH5b6mo2s
   author: ian dooley
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [roxygen2, devtools]
-
+categories:
+  - Best Practices
+tags:
+  - roxygen2
+  - devtools
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "roxygen2", "devtools"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

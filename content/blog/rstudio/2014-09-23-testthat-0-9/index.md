@@ -3,17 +3,18 @@ title: testthat 0.9
 people:
   - Hadley Wickham
 date: '2014-09-23'
+categories:
+  - Best Practices
 slug: testthat-0-9
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["testthat"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - Packages
 ---

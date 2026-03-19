@@ -1,26 +1,26 @@
 ---
 output: hugodown::hugo_document
-
 slug: bonsai-0-1-0
 title: bonsai 0.1.0
-date: 2022-06-30
+date: '2022-06-30'
 people:
   - Simon Couch
-description: >
-    A new parsnip extension package for tree-based models is now on CRAN.
-
+description: |
+  A new parsnip extension package for tree-based models is now on CRAN.
 photo:
   url: https://unsplash.com/photos/-OBffuUekfQ
   author: 五玄土
-
-tags: [tidymodels, parsnip, bonsai]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - parsnip
+  - bonsai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "parsnip", "bonsai"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

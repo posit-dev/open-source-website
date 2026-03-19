@@ -1,8 +1,10 @@
 ---
-title: 'ThinkR Shiny Training'
+title: ThinkR Shiny Training
 people:
   - greg
 date: '2020-05-25'
+categories:
+  - Community
 tags:
   - Shiny
 description: |
@@ -16,8 +18,6 @@ ported_from: education
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
 ---

@@ -1,11 +1,11 @@
 ---
-title: "Rendering images anywhere in Great Tables"
+title: Rendering images anywhere in Great Tables
 people:
   - Jerry Wu
-date: 2024-12-13
+date: '2024-12-13'
 format:
   html:
-    code-summary: "Show the Code"
+    code-summary: Show the Code
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]

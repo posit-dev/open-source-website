@@ -4,9 +4,12 @@ people:
   - Mara Averick
 date: '2018-08-27'
 slug: tidyverse-developer-day
-description: > 
+description: |
   Save the date for tidyverse developer day the Saturday following rstudio::conf!
-tags: [tidyverse-dev-day]
+categories:
+  - Community
+tags:
+  - tidyverse-dev-day
 photo:
   url: https://unsplash.com/photos/ZMMXSRMSoI8
   author: rawpixel
@@ -15,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - other
 ---

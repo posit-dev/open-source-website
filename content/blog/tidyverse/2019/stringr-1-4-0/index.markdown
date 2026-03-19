@@ -4,8 +4,10 @@ people:
   - Mara Averick
 date: '2019-02-21'
 slug: stringr-1-4-0
-description: >
-    stringr 1.4.0 is now on CRAN!
+description: |
+  stringr 1.4.0 is now on CRAN!
+categories:
+  - Data Wrangling
 tags:
   - stringr
   - tidyverse
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "stringr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

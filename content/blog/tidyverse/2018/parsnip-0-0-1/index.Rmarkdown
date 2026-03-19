@@ -1,17 +1,18 @@
 ---
 title: parsnip
-date: 2018-11-28
+date: '2018-11-28'
 slug: parsnip-0-0-1
-author: Max Kuhn
-description: >
-    A tidy unified interface to models
+author:
+  - Max Kuhn
+categories:
+  - Machine Learning
+description: |
+  A tidy unified interface to models
 photo:
   url: https://unsplash.com/photos/ahB6ZhxHRtk
   author: rawpixel
 software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

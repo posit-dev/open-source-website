@@ -1,27 +1,23 @@
 ---
-
 slug: air-0-7-0
 title: Air 0.7.0
-date: 2025-06-11
+date: '2025-06-11'
 people:
   - Davis Vaughan
   - Lionel Henry
-description: >
-    Read all about Air 0.7.0, including: even better Positron support, a new feature we call autobracing, and an official GitHub Action!
-
+description: |
+  Read all about Air 0.7.0, including: even better Positron support, a new feature we call autobracing, and an official GitHub Action!
 photo:
   url: https://unsplash.com/photos/photo-of-island-and-thunder-E-Zuyev2XWo
   author: Johannes Plenio
-
+categories:
+  - Best Practices
 tags: []
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["air", "positron"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - programming
 ---

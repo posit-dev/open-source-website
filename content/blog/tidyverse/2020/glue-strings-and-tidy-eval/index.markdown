@@ -4,7 +4,12 @@ people:
   - Lionel Henry
 date: '2020-02-11'
 slug: glue-strings-and-tidy-eval
-tags: [package, r-lib, tidyverse]
+categories:
+  - Best Practices
+tags:
+  - package
+  - r-lib
+  - tidyverse
 photo:
   url: https://unsplash.com/photos/pcoKkN3NsX0
   author: Modestas Urbonas
@@ -13,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["rlang", "glue"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

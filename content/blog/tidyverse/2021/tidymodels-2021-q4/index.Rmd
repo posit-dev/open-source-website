@@ -1,29 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: tidymodels-2021-q4
 title: Closing out our year with a Q4 2021 tidymodels update
-date: 2021-12-16
+date: '2021-12-16'
 people:
   - Julia Silge
-description: >
-    New features like an R Markdown template and Shiny app offer more robust
-    support for modeling analyses, and our survey results outline some 
-    priorities for next year.
-
+description: |
+  New features like an R Markdown template and Shiny app offer more robust support for modeling analyses, and our survey results outline some  priorities for next year.
 photo:
   url: https://unsplash.com/photos/X3kzGOdSwo4
   author: Daria Gordova
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, rsample, shinymodels, survey]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - rsample
+  - shinymodels
+  - survey
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "rsample", "shinymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - roundup
 ---

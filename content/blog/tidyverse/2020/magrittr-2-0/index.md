@@ -1,26 +1,22 @@
 ---
-
 slug: magrittr-2-0
 title: magrittr 2.0 is coming soon
-date: 2020-08-26
+date: '2020-08-26'
 people:
   - Lionel Henry
-description: >
-    A new version of the magrittr package brings laziness, better performance, and leaner backtraces for debugging errors.
-
+description: |
+  A new version of the magrittr package brings laziness, better performance, and leaner backtraces for debugging errors.
 photo:
   url: https://unsplash.com/photos/X-NAMq6uP3Q
   author: Mike Benna
-
+categories:
+  - Data Wrangling
 tags: []
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["magrittr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

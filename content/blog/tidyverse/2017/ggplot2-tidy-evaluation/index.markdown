@@ -4,10 +4,13 @@ date: '2018-07-24'
 slug: ggplot2-tidy-evaluation
 people:
   - Mara Averick
+categories:
+  - Visualization
+  - Best Practices
 tags:
   - ggplot2
   - tidyverse
-description: >
+description: |
   Using tidy evaluation in ggplot2 3.0.0.
 photo:
   url: https://unsplash.com/photos/8KfCR12oeUM
@@ -17,9 +20,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
-  - Best Practices
 ported_categories:
   - package
 ---

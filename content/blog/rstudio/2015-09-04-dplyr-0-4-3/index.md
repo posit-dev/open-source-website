@@ -3,18 +3,19 @@ title: dplyr 0.4.3
 people:
   - Hadley Wickham
 date: '2015-09-04'
+categories:
+  - Data Wrangling
 slug: dplyr-0-4-3
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- tidyverse
+  - Packages
+  - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - Packages
   - tidyverse

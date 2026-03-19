@@ -1,28 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: ggplot2-3-5-0-legends
-title: "ggplot2 3.5.0: Legends"
-date: 2024-02-26
+title: 'ggplot2 3.5.0: Legends'
+date: '2024-02-26'
 people:
   - Teun van den Brand
-description: >
-    The 3.5.0 version of ggplot2 comes with an overhaul of the guide system.
-    Read here what is new for legends.
-
+description: |
+  The 3.5.0 version of ggplot2 comes with an overhaul of the guide system. Read here what is new for legends.
 photo:
   url: https://unsplash.com/photos/close-up-photo-of-black-camera-lens-hqCEQTc5gZA
   author: Markus Spiske
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [ggplot2, ggplot2-3-5-0]
+categories:
+  - Visualization
+tags:
+  - ggplot2
+  - ggplot2-3-5-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

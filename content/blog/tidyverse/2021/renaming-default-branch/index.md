@@ -1,29 +1,24 @@
 ---
-
 slug: renaming-default-branch
 title: Renaming the default branch
-date: 2021-10-27
+date: '2021-10-27'
 people:
   - Jenny Bryan
-description: >
-    We are renaming the default branch of many Git(Hub) repositories and this
-    post explains how contributors can adapt, using new functionality in
-    usethis.
-
+description: |
+  We are renaming the default branch of many Git(Hub) repositories and this post explains how contributors can adapt, using new functionality in usethis.
 photo:
   url: https://unsplash.com/photos/jA264x_MkCI
   author: Natalie Chaney
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [usethis, devtools]
-
+categories:
+  - Community
+tags:
+  - usethis
+  - devtools
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "usethis", "devtools"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - package

@@ -4,20 +4,21 @@ people:
   - Richard Iannone
 date: '2020-04-08'
 slug: great-looking-tables-gt-0-2
+categories:
+  - Visualization
 tags:
-- news
-- packages
-- rmarkdown
+  - news
+  - packages
+  - rmarkdown
+  - Packages
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - Packages
 ---

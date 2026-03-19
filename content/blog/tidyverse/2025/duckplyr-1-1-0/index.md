@@ -1,33 +1,26 @@
 ---
-
 slug: duckplyr-1-1-0
 title: duckplyr fully joins the tidyverse!
-date: 2025-06-19
+date: '2025-06-19'
 people:
   - Kirill Müller
   - Maëlle Salmon
-description: >
-    duckplyr 1.1.0 is on CRAN!
-    A drop-in replacement for dplyr, powered by DuckDB for speed.
-    It is the most dplyr-like of dplyr backends.
-
+description: |
+  duckplyr 1.1.0 is on CRAN! A drop-in replacement for dplyr, powered by DuckDB for speed. It is the most dplyr-like of dplyr backends.
 photo:
   url: https://www.pexels.com/photo/a-mallard-duck-on-water-6918877/
   author: Kiril Gruev
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
+categories:
+  - Data Wrangling
 tags:
   - duckplyr
   - dplyr
   - tidyverse
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "duckplyr", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

@@ -3,17 +3,18 @@ title: roxygen2 4.0.1
 people:
   - Hadley Wickham
 date: '2014-05-19'
+categories:
+  - Best Practices
 slug: roxygen2-4-0-1
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["roxygen2"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - Packages
 ---

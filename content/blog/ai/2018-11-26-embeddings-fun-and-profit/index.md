@@ -1,9 +1,11 @@
 ---
-title: "Entity embeddings for fun and profit"
+title: Entity embeddings for fun and profit
 description: |
   Embedding layers are not just useful when working with language data. As "entity embeddings", they've recently become famous for applications on tabular, small-scale data. In this post, we exemplify two possible use cases, also drawing attention to what not to expect.
-date: 2018-11-26
+date: '2018-11-26'
 slug: keydana2018dembeddingsfunandprofit
+categories:
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -15,8 +17,6 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - TensorFlow/Keras
   - Tabular Data

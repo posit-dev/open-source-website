@@ -1,7 +1,12 @@
 ---
-title: "Towards privacy: Encrypted deep learning with Syft and Keras"
-description: > 
-  Deep learning need not be irreconcilable with privacy protection. Federated learning enables on-device, distributed model training; encryption keeps model and gradient updates private; differential privacy prevents the training data from leaking. As of today, private and secure deep learning is an emerging technology. In this post, we introduce Syft, an open-source framework that integrates with PyTorch as well as TensorFlow. In an example use case, we obtain private predictions from a Keras model.  
+title: 'Towards privacy: Encrypted deep learning with Syft and Keras'
+description: "Deep learning need not be irreconcilable with privacy protection. Federated
+  learning enables on-device, distributed model training; encryption keeps model and
+  gradient updates private; differential privacy prevents the training data from leaking.
+  As of today, private and secure deep learning is an emerging technology. In this
+  post, we introduce Syft, an open-source framework that integrates with PyTorch as
+  well as TensorFlow. In an example use case, we obtain private predictions from a
+  Keras model.  \n"
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -9,18 +14,16 @@ author:
 slug: keydanaprivacysyftkeras
 bibliography: bibliography.bib
 date: 04-29-2020
-preview: images/thumb.jpg
-format: hugo-md
 categories:
   - Machine Learning
-ported_categories:
-  - R
-  - Privacy & Security
-  - TensorFlow/Keras
 preview: images/thumb.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - R
+  - Privacy & Security
+  - TensorFlow/Keras
 ---
 
 ```{r setup, include=FALSE}

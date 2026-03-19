@@ -1,11 +1,13 @@
 ---
-title: 'textrecipes 0.0.1'
+title: textrecipes 0.0.1
 people:
   - Emil Hvitfeldt
 date: '2018-12-26'
 slug: textrecipes-0-0-1
-description: >
-    textrecipes 0.0.1 is now on CRAN!
+description: |
+  textrecipes 0.0.1 is now on CRAN!
+categories:
+  - Machine Learning
 tags:
   - textrecipes
   - tidymodels
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "textrecipes", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

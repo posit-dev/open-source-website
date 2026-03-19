@@ -3,17 +3,18 @@ title: Introducing tidyr
 people:
   - Hadley Wickham
 date: '2014-07-22'
+categories:
+  - Data Wrangling
 slug: introducing-tidyr
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - Packages
 ---

@@ -1,27 +1,24 @@
 ---
-
 slug: svglite-2-0-0
 title: svglite 2.0.0
-date: 2021-02-08
+date: '2021-02-08'
 people:
   - Thomas Lin Pedersen
-description: >
-    svglite 2.0.0 is now on CRAN. This is a huge feature release and part rewrite, and should excite anyone who cares about vector graphics. Read on to find out what is new!
-
+description: |
+  svglite 2.0.0 is now on CRAN. This is a huge feature release and part rewrite, and should excite anyone who cares about vector graphics. Read on to find out what is new!
 photo:
   url: https://unsplash.com/photos/pVoEPpLw818
   author: Rodion Kutsaev
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [graphic-device, svglite]
-
+categories:
+  - Visualization
+tags:
+  - graphic-device
+  - svglite
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "svglite"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

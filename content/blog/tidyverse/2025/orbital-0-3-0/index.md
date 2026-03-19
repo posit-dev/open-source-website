@@ -1,27 +1,24 @@
 ---
-
 slug: orbital-0-3-0
 title: orbital 0.3.0
-date: 2025-01-13
+date: '2025-01-13'
 people:
   - Emil Hvitfeldt
-description: >
-    orbital 0.3.0 is on CRAN! orbital now has classification support.
-
+description: |
+  orbital 0.3.0 is on CRAN! orbital now has classification support.
 photo:
   url: https://www.pexels.com/photo/aerial-view-earth-exploration-flying-60132/
   author: SpaceX
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, orbital]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - orbital
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "orbital"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

@@ -1,9 +1,11 @@
 ---
-title: "Variational convnets with tfprobability"
+title: Variational convnets with tfprobability
 description: |
   In a Bayesian neural network, layer weights are distributions, not tensors. Using tfprobability, the R wrapper to TensorFlow Probability, we can build regular Keras models that have probabilistic layers, and thus get uncertainty estimates "for free". In this post, we show how to define, train and obtain predictions from a probabilistic convolutional neural network.
-date: 2019-11-13
+date: '2019-11-13'
 slug: keydana2019variationalconv
+categories:
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -15,8 +17,6 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Probabilistic ML/DL
   - Time Series

@@ -1,29 +1,24 @@
 ---
 slug: dplyr-1-0-0-package-dev
 title: dplyr 1.0.0 for package developers
-description: > 
-  dplyr 1.0.0 is scheduled for release on May 15. This blog post talks
-  about what package maintainers can do to prepare.
+description: |
+  dplyr 1.0.0 is scheduled for release on May 15. This blog post talks about what package maintainers can do to prepare.
 people:
   - Hadley Wickham
 date: '2020-04-29'
-
-
+categories:
+  - Best Practices
 tags:
-- dplyr
-- dplyr-1-0-0
-
+  - dplyr
+  - dplyr-1-0-0
 photo:
   author: Tekton
   url: https://unsplash.com/photos/LtphNTXHQAc
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

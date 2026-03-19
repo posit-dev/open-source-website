@@ -1,28 +1,27 @@
 ---
-
 slug: gargle-1-2-0
 title: gargle 1.2.0
-date: 2021-07-04
+date: '2021-07-04'
 people:
   - Jenny Bryan
-description: >
-    gargle has seen a lot of development over the past two years and five
-    releases: cache relocation, credential rolling, a new auth method, an
-     improved user interface, better verbosity control, and retries.
-
+description: |
+  gargle has seen a lot of development over the past two years and five releases: cache relocation, credential rolling, a new auth method, an
+   improved user interface, better verbosity control, and retries.
 photo:
   url: https://unsplash.com/photos/KDJ1TbLDoOo
   author: Mishaal Zahed
-
-tags: [gargle, bigrquery, googledrive, googlesheets4]
-
+categories:
+  - Data Wrangling
+tags:
+  - gargle
+  - bigrquery
+  - googledrive
+  - googlesheets4
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "gargle", "bigrquery", "googledrive", "googlesheets4"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

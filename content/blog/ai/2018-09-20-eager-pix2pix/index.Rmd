@@ -1,6 +1,6 @@
 ---
-title: "Image-to-image translation with pix2pix"
-description: >
+title: Image-to-image translation with pix2pix
+description: |
   Conditional GANs (cGANs) may be used to generate one type of object based on another - e.g., a map based on a photo, or a color video based on black-and-white. Here, we show how to implement the pix2pix approach with Keras and eager execution.
 author:
   - name: Sigrid Keydana
@@ -9,18 +9,16 @@ author:
 bibliography: bibliography.bib
 slug: keydana2018eagerpix2pix
 date: 09-20-2018
-preview: images/pix2pixlosses.png
-format: hugo-md
 categories:
   - Machine Learning
-ported_categories:
-  - TensorFlow/Keras
-  - Image Recognition & Image Processing
-  - Generative Models
 preview: images/pix2pixlosses.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Image Recognition & Image Processing
+  - Generative Models
 ---
 
 ```{r setup, include=FALSE}

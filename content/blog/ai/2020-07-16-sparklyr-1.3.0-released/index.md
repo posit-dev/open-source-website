@@ -1,9 +1,11 @@
 ---
-title: "sparklyr 1.3: Higher-order Functions, Avro and Custom Serializers"
+title: 'sparklyr 1.3: Higher-order Functions, Avro and Custom Serializers'
 description: |
   Sparklyr 1.3 is now available, featuring exciting new functionalities such as integration of Spark higher-order functions and data import/export in Avro and in user-defined serialization formats.
-date: 2020-07-16
+date: '2020-07-16'
 slug: sparklyr-1.3
+categories:
+  - MLOps & Admin
 author:
   - name: Yitao Li
     url: https://github.com/yl790
@@ -15,8 +17,6 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
-categories:
-  - MLOps & Admin
 ported_categories:
   - Packages/Releases
   - Distributed Computing

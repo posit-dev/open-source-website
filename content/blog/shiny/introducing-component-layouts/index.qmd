@@ -1,13 +1,14 @@
 ---
-title: "Introducing Component and Layout Galleries for Shiny for Python"
+title: Introducing Component and Layout Galleries for Shiny for Python
 people:
   - Daniel Chen
   - Sara Altman
   - Garrett Grolemund
-description: "Qucikly see and choose Shiny for Python's Components and Layouts in these new galleries."
-date: "2024-02-26"
+description: Qucikly see and choose Shiny for Python's Components and Layouts in these
+  new galleries.
+date: '2024-02-26'
 image: layouts-thumb.jpg
-image-alt: "An illustration of Shiny layouts and components"
+image-alt: An illustration of Shiny layouts and components
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]

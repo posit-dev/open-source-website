@@ -4,11 +4,12 @@ people:
   - Hadley Wickham
 date: '2019-11-08'
 slug: haven-2-2-0
+categories:
+  - Data Wrangling
 tags:
   - tidyverse
   - haven
-description:
-  A new version of haven makes it easy to read only parts of a file.
+description: A new version of haven makes it easy to read only parts of a file.
 photo:
   url: https://unsplash.com/photos/R2bvzUYIdgY
   author: Tina Rolf
@@ -17,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "haven"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

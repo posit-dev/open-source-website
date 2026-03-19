@@ -5,10 +5,15 @@ people:
   - Nick Strayer
 date: '2021-02-12'
 slug: shiny-app-stories
+categories:
+  - Interactive Apps
 tags:
   - shiny
   - caching
-description: "App Stories are a bit different from the User Showcase: an App Story will center around a Shiny application, but the application will be designed specifically to show off specific features, and it will also include explanations of how to use those features."
+description: 'App Stories are a bit different from the User Showcase: an App Story
+  will center around a Shiny application, but the application will be designed specifically
+  to show off specific features, and it will also include explanations of how to use
+  those features.'
 blogcategories:
   - Products and Technology
   - Open Source
@@ -16,8 +21,6 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Shiny
 ---

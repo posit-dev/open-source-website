@@ -1,27 +1,24 @@
 ---
-
 slug: purrr-walk-this-way
-title: "`purrr::walk()` this way"
-date: 2023-05-26
+title: '`purrr::walk()` this way'
+date: '2023-05-26'
 people:
   - Mara Averick
-description: >
-    How to use `purrr::walk()` to write many files, 
-    featuring file-system navigation with the fs package.
+description: |
+  How to use `purrr::walk()` to write many files,  featuring file-system navigation with the fs package.
 photo:
   url: https://unsplash.com/photos/TRJjPc0wss0
   author: Ryoji Iwata
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [purrr, fs]
-
+categories:
+  - Community
+tags:
+  - purrr
+  - fs
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "purrr", "fs"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

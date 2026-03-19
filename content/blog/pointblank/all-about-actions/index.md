@@ -2,7 +2,7 @@
 title: Level Up Your Data Validation with `Actions` and `FinalActions`
 people:
   - Rich Iannone
-date: 2025-05-02T00:00:00.000Z
+date: '2025-05-02T00:00:00.000Z'
 ported_from: pointblank
 port_status: in-progress
 software: ["pointblank"]

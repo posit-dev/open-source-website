@@ -4,8 +4,10 @@ people:
   - Mara Averick
 date: '2019-11-05'
 slug: tidyverse-dev-day-2020
-description: > 
+description: |
   Join us for tidyverse developer day in San Francisco on January 31, 2020!
+categories:
+  - Community
 tags:
   - tidyverse-dev-day
 photo:
@@ -16,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - other
 ---

@@ -1,22 +1,22 @@
 ---
 slug: furrr-0-2-0
 title: furrr 0.2.0
-date: 2020-10-19
+date: '2020-10-19'
 people:
   - Davis Vaughan
-description: >
-    furrr 0.2.0 is now on CRAN!
+description: |
+  furrr 0.2.0 is now on CRAN!
 photo:
   url: https://unsplash.com/photos/0pDUGYuDYWw
   author: Bhargava Srivari
+categories:
+  - Data Wrangling
 tags: []
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["purrr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

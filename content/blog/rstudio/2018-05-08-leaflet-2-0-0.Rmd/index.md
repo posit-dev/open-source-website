@@ -4,20 +4,22 @@ people:
   - Barret Schloerke
 date: '2018-05-10'
 slug: leaflet-2-0-0
+categories:
+  - Visualization
+  - Interactive Apps
 tags:
-- leaflet
-- data visualization
+  - leaflet
+  - data visualization
+  - Packages
+  - Packages
 editor_options:
   chunk_output_type: console
 blogcategories:
-- Products and Technology
+  - Products and Technology
 ported_from: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]
-categories:
-  - Visualization
-  - Interactive Apps
 ported_categories:
   - Packages
 ---

@@ -3,19 +3,19 @@ title: New Shiny website launched; Shiny 0.9 released
 people:
   - Joe Cheng
 date: '2014-03-27'
+categories:
+  - Interactive Apps
 slug: shiny-website-and-0-9
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Shiny
-- shinyapps.io
+  - Shiny
+  - shinyapps.io
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Shiny
   - shinyapps.io

@@ -3,18 +3,19 @@ title: Interactive time series with dygraphs
 people:
   - RStudio Team
 date: '2015-04-14'
+categories:
+  - Interactive Apps
 slug: interactive-time-series-with-dygraphs
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Shiny
+  - Packages
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Packages
   - Shiny

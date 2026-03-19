@@ -1,28 +1,23 @@
 ---
-
 slug: archive-1-1-2
 title: archive 1.1.2
-date: 2021-11-04
+date: '2021-11-04'
 people:
   - Jim Hester
-description: >
-    archive 1.1.2 is now on CRAN! archive lets you work with file archives, such as ZIP, tar, 7-Zip and RAR and compression formats like gzip, bzip2, XZ and Zstandard.
-
+description: |
+  archive 1.1.2 is now on CRAN! archive lets you work with file archives, such as ZIP, tar, 7-Zip and RAR and compression formats like gzip, bzip2, XZ and Zstandard.
 photo:
   url: https://unsplash.com/photos/IEiAmhXehwE
   author: Nana Smirnova
-  
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [r-lib]
-
+categories:
+  - Data Wrangling
+tags:
+  - r-lib
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["archive"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

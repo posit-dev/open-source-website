@@ -1,9 +1,12 @@
 ---
-title: "What are Large Language Models? What are they not?"
+title: What are Large Language Models? What are they not?
 description: |
   This is a high-level, introductory article about Large Language Models (LLMs), the core technology that enables the much-en-vogue chatbots as well as other Natural Language Processing (NLP) applications. It is directed at a general audience, possibly with some technical and/or scientific background, but no knowledge is assumed of either deep learning or NLP. Having looked at major model ingredients, training workflow, and mechanics of output generation, we also talk about what these models are not.
-date: 2023-06-20T00:00:00.000Z
+date: '2023-06-20T00:00:00.000Z'
 slug: keydanallm
+categories:
+  - Best Practices
+  - Artificial Intelligence
 author:
   - name: Sigrid Keydana
     affiliation: Posit
@@ -13,9 +16,6 @@ people:
 image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
-categories:
-  - Best Practices
-  - Artificial Intelligence
 ported_categories:
   - Meta
   - Concepts

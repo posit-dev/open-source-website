@@ -1,25 +1,25 @@
 ---
 slug: mirai-2-6-0
 title: mirai 2.6.0
-date: 2026-02-12
+date: '2026-02-12'
 people:
   - Charlie Gao
-description: >
-    mirai 2.6.0 brings an HTTP launcher for cloud and Posit Workbench,
-    a C-level dispatcher for near-zero overhead task dispatch, and new
-    tools for racing and debugging async tasks.
+description: |
+  mirai 2.6.0 brings an HTTP launcher for cloud and Posit Workbench, a C-level dispatcher for near-zero overhead task dispatch, and new tools for racing and debugging async tasks.
 photo:
   url: https://unsplash.com/photos/GywJOPMjBqY
   author: Alexandra Diaconu
-tags: [mirai, parallelism, r-lib]
-
+categories:
+  - Best Practices
+tags:
+  - mirai
+  - parallelism
+  - r-lib
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "mirai"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

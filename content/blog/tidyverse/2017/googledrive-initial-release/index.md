@@ -4,8 +4,10 @@ people:
   - Jenny Bryan
 date: '2017-08-29'
 slug: googledrive-initial-release
-description: >
+description: |
   The first release of googledrive is now on CRAN. Operate on Google Drive files from R.
+categories:
+  - Data Wrangling
 tags:
   - googledrive
   - tidyverse
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googledrive"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

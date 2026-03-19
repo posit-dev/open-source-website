@@ -1,11 +1,9 @@
 ---
 title: 'New to the ShinyUiEditor: bslib Cards!'
-description: >-
-  The latest version of {shinyuieditor} includes the new card component from
-  {bslib}. In this post, we describe how you can use these cards and a new
-  static-text component to easily organize your app's content in a visually
-  appealing way.
-date: 2023-03-15T00:00:00.000Z
+description: The latest version of {shinyuieditor} includes the new card component
+  from {bslib}. In this post, we describe how you can use these cards and a new static-text
+  component to easily organize your app's content in a visually appealing way.
+date: '2023-03-15T00:00:00.000Z'
 people:
   - Nick Strayer
 image: cards-thumbnail.png

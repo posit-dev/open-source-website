@@ -4,12 +4,12 @@ people:
   - Hadley Wickham
 date: '2017-11-03'
 slug: r-admins-community
+categories:
+  - Community
 tags: []
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ---
 
 

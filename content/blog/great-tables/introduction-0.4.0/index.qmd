@@ -1,8 +1,8 @@
 ---
-title: "Great Tables `v0.4.0`: Nanoplots and More"
+title: 'Great Tables `v0.4.0`: Nanoplots and More'
 people:
   - Rich Iannone
-date: 2024-03-19
+date: '2024-03-19'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]

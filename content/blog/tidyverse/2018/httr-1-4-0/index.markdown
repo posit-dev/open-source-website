@@ -1,7 +1,7 @@
 ---
-title: 'httr 1.4.0'
+title: httr 1.4.0
 slug: httr-1-4-0
-description: > 
+description: |
   httr 1.4.0 is now on CRAN!
 date: '2018-12-18'
 people:
@@ -9,6 +9,8 @@ people:
 photo:
   url: https://unsplash.com/photos/0JhaVZUowWU
   author: Chris Yang
+categories:
+  - Data Wrangling
 tags:
   - httr
   - r-lib
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "httr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

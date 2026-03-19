@@ -1,27 +1,23 @@
 ---
 output: hugodown::md_document
-
 slug: ggplot2-styling
 title: ggplot2 styling
-date: 2025-10-01
+date: '2025-10-01'
 people:
   - Teun van den Brand
-description: >
-    This post discusses one function in ggplot2: `theme()`. Find out about the glamour of graphics in this deep-dive article.
-
+description: |
+  This post discusses one function in ggplot2: `theme()`. Find out about the glamour of graphics in this deep-dive article.
 photo:
   url: https://www.pexels.com/photo/people-dressed-in-elaborate-costumes-for-venetian-masqueade-5932619
   author: Helena Jankovičová Kováčová
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
+categories:
+  - Visualization
 tags: []
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

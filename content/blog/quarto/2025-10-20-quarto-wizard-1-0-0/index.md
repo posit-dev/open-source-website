@@ -2,18 +2,17 @@
 people:
   - Mickaël CANOUIL, _Ph.D._
 title: 'Quarto Wizard 1.0.0: Democratising Quarto Extension Management'
-description: >
-  Introducing a game-changing extension for VS Code and Positron that transforms
-  Quarto extensions management with an intuitive GUI for extensions and
-  templates.
+description: |
+  Introducing a game-changing extension for VS Code and Positron that transforms Quarto extensions management with an intuitive GUI for extensions and templates.
 date: '2025-10-20'
+categories:
+  - Publishing
 image: featured.png
-image-alt: >-
-  Cartoon dog wizard wearing blue hat with red band holding magic wand creating
+image-alt: Cartoon dog wizard wearing blue hat with red band holding magic wand creating
   HTML and CSS code scrolls in starry night scene.
-number-sections: false
-link-external-newwindow: true
-lightbox: true
+number-sections: no
+link-external-newwindow: yes
+lightbox: yes
 include-in-header:
   - text: |
       <style>
@@ -35,42 +34,31 @@ include-in-header:
          margin-bottom: 2rem;
        }
        </style>
-quarto-wizard: '[]{.quarto-wizard title="Quarto Wizard Logo" aria-label="Quarto Wizard Logo"}'
+quarto-wizard: '[]{.quarto-wizard title="Quarto Wizard Logo" aria-label="Quarto Wizard
+  Logo"}'
 alt-text:
-  extensions-marketplace: >
-    Visual Studio Code Extensions Marketplace showing Quarto Wizard search
-    results with install button.
-  quarto-extensions-home: >
-    Quarto Extensions website displaying grid of extension cards including webr,
-    Reveal.js Clean theme, and Hikmah Academic templates.
-  quarto-extensions-modal: >
-    Quarto Extensions website with Install Options popup showing manual terminal
-    command and Quarto Wizard installation options for Visual Studio Code,
-    Positron, and VSCodium.
-  quarto-extensions-template: >
-    Quarto Extensions website in list view showing Template extensions with
-    install and use buttons.
-  vscode-activity-bar: >
-    Quarto Wizard Extensions Installed panel in Visual Studio Code showing no
-    extensions installed message with green Install Extensions button.
-  vscode-install: >
-    Quarto Wizard extension selection dialog showing list of available
-    extensions with checkboxes including LIVE, HIGHLIGHT TEXT, GITHUB, and other
-    Quarto extensions.
-  vscode-update: >
-    Quarto Wizard Extensions Installed panel showing expanded iconify extension
-    details with update button and version information.
-  vscode-template: >
-    Visual Studio Code showing Quarto Wizard with installed extensions list and
-    document editor displaying invoice template with YAML frontmatter.
+  extensions-marketplace: |
+    Visual Studio Code Extensions Marketplace showing Quarto Wizard search results with install button.
+  quarto-extensions-home: |
+    Quarto Extensions website displaying grid of extension cards including webr, Reveal.js Clean theme, and Hikmah Academic templates.
+  quarto-extensions-modal: |
+    Quarto Extensions website with Install Options popup showing manual terminal command and Quarto Wizard installation options for Visual Studio Code, Positron, and VSCodium.
+  quarto-extensions-template: |
+    Quarto Extensions website in list view showing Template extensions with install and use buttons.
+  vscode-activity-bar: |
+    Quarto Wizard Extensions Installed panel in Visual Studio Code showing no extensions installed message with green Install Extensions button.
+  vscode-install: |
+    Quarto Wizard extension selection dialog showing list of available extensions with checkboxes including LIVE, HIGHLIGHT TEXT, GITHUB, and other Quarto extensions.
+  vscode-update: |
+    Quarto Wizard Extensions Installed panel showing expanded iconify extension details with update button and version information.
+  vscode-template: |
+    Visual Studio Code showing Quarto Wizard with installed extensions list and document editor displaying invoice template with YAML frontmatter.
 editor:
-  render-on-save: true
+  render-on-save: yes
 ported_from: quarto
 port_status: in-progress
 software: ["quarto", "positron"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
 ported_categories:
   - community
   - quarto

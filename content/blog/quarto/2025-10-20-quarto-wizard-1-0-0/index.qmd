@@ -1,37 +1,41 @@
 ---
 people:
   - Mickaël CANOUIL, _Ph.D._
-title: "Quarto Wizard 1.0.0: Democratising Quarto Extension Management"
+title: 'Quarto Wizard 1.0.0: Democratising Quarto Extension Management'
 description: |
   Introducing a game-changing extension for VS Code and Positron that transforms Quarto extensions management with an intuitive GUI for extensions and templates.
-date: "2025-10-20"
+date: '2025-10-20'
+categories:
+  - Publishing
 image: featured.png
-image-alt: "Cartoon dog wizard wearing blue hat with red band holding magic wand creating HTML and CSS code scrolls in starry night scene."
-number-sections: false
-link-external-newwindow: true
-lightbox: true
+image-alt: Cartoon dog wizard wearing blue hat with red band holding magic wand creating
+  HTML and CSS code scrolls in starry night scene.
+number-sections: no
+link-external-newwindow: yes
+lightbox: yes
 include-in-header:
   - text: |
-     <style>
-     .quarto-wizard {
-        display: inline-block;
-        aspect-ratio: 1 / 1;
-        height: 1em;
-        margin-bottom: -0.15em;
-        mask-image: url('assets/media/quarto-wizard.svg');
-        mask-size: contain;
-        mask-repeat: no-repeat;
-        mask-position: center;
-        background-color: currentColor;
-        vertical-align: baseline;
-      }
-      .hero-banner {
-        border-radius: 1.5rem;
-        box-shadow: 0 4px 24px #060c37;
-        margin-bottom: 2rem;
-      }
-      </style>
-quarto-wizard: '[]{.quarto-wizard title="Quarto Wizard Logo" aria-label="Quarto Wizard Logo"}'
+      <style>
+      .quarto-wizard {
+         display: inline-block;
+         aspect-ratio: 1 / 1;
+         height: 1em;
+         margin-bottom: -0.15em;
+         mask-image: url('assets/media/quarto-wizard.svg');
+         mask-size: contain;
+         mask-repeat: no-repeat;
+         mask-position: center;
+         background-color: currentColor;
+         vertical-align: baseline;
+       }
+       .hero-banner {
+         border-radius: 1.5rem;
+         box-shadow: 0 4px 24px #060c37;
+         margin-bottom: 2rem;
+       }
+       </style>
+quarto-wizard: '[]{.quarto-wizard title="Quarto Wizard Logo" aria-label="Quarto Wizard
+  Logo"}'
 alt-text:
   extensions-marketplace: |
     Visual Studio Code Extensions Marketplace showing Quarto Wizard search results with install button.
@@ -50,13 +54,11 @@ alt-text:
   vscode-template: |
     Visual Studio Code showing Quarto Wizard with installed extensions list and document editor displaying invoice template with YAML frontmatter.
 editor:
-  render-on-save: true
+  render-on-save: yes
 ported_from: quarto
 port_status: in-progress
 software: ["quarto", "positron"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
 ported_categories:
   - community
   - quarto

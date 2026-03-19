@@ -1,6 +1,7 @@
 ---
 title: 'Where Questions Become Queries: Meet querychat'
-description: "querychat\_is a multilingual drop-in component for Shiny that allows you to chat with your data using natural language queries. No more clicking, no more limited filters, just you and your questions!\n"
+description: |
+  querychat is a multilingual drop-in component for Shiny that allows you to chat with your data using natural language queries. No more clicking, no more limited filters, just you and your questions!
 people:
   - Veerle Eeftink - van Leemput
 date: '2026-01-22'

@@ -1,27 +1,24 @@
 ---
 output: hugodown::hugo_document
-
 slug: readr-2-1-0-lazy
 title: Eager vs lazy reading in readr 2.1.0
-date: 2021-11-11
+date: '2021-11-11'
 people:
   - Jim Hester
-description: >
-    readr 2.1.0 is now on CRAN. This post explains the change for default reading to be eager rather than lazy.
-
+description: |
+  readr 2.1.0 is now on CRAN. This post explains the change for default reading to be eager rather than lazy.
 photo:
   url: https://unsplash.com/photos/ilRuQcu9czw
   author: June
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [readr]
+categories:
+  - Data Wrangling
+tags:
+  - readr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "readr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

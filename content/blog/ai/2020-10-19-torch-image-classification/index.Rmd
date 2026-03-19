@@ -1,19 +1,19 @@
 ---
-title: "Classifying images with torch"
-description: > 
- We learn about transfer learning, input pipelines, and learning rate schedulers, all while using torch to tell apart species of beautiful birds.
+title: Classifying images with torch
+description: |
+  We learn about transfer learning, input pipelines, and learning rate schedulers, all while using torch to tell apart species of beautiful birds.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchimageclassification
 date: 10-19-2020
+categories:
+  - Machine Learning
 bibliography: bibliography.bib
 preview: images/image_classif_birds.png
 format: hugo-md
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Torch
   - R

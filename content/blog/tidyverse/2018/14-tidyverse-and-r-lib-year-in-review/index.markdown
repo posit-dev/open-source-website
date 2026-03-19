@@ -1,11 +1,13 @@
 ---
-title: "tidyverse and r-lib: a year in review"
+title: 'tidyverse and r-lib: a year in review'
 people:
   - Mara Averick
 date: '2018-12-17'
 slug: tidyverse-and-r-lib-year-in-review
-description: > 
+description: |
   A look back on 2018 in the tidyverse and beyond.
+categories:
+  - Community
 tags:
   - r-lib
   - tidyverse
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - other
 ---

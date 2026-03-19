@@ -4,17 +4,18 @@ people:
   - Kevin Kuo
 date: '2018-05-14'
 slug: sparklyr-0-8
-tags:
-- sparklyr
-blogcategories:
-- Products and Technology
-- Open Source
-ported_from: rstudio
-port_status: in-progress
-languages: ["R"]
 categories:
   - Data Wrangling
   - MLOps & Admin
+tags:
+  - sparklyr
+  - Packages
+blogcategories:
+  - Products and Technology
+  - Open Source
+ported_from: rstudio
+port_status: in-progress
+languages: ["R"]
 ported_categories:
   - Packages
 ---

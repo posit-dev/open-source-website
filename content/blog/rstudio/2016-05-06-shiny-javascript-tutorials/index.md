@@ -3,20 +3,20 @@ title: Shiny JavaScript Tutorials
 people:
   - Garrett Grolemund
 date: '2016-05-06'
+categories:
+  - Interactive Apps
+  - MLOps & Admin
 slug: shiny-javascript-tutorials
 blogcategories:
-- Products and Technology
-- Training and Education
-- Open Source
+  - Products and Technology
+  - Training and Education
+  - Open Source
 tags:
-- Shiny
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
-  - MLOps & Admin
 ported_categories:
   - Shiny
   - Training

@@ -1,8 +1,7 @@
 ---
 title: Announcing Shiny for Python 1.0
-description: >-
-  Shiny for Python's level of quality, runtime stability, API and feature set
-  make it ready for a big announcement.
+description: Shiny for Python's level of quality, runtime stability, API and feature
+  set make it ready for a big announcement.
 people:
   - Shiny Team
 date: '2024-07-22'

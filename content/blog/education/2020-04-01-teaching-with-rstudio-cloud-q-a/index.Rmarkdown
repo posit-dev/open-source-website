@@ -4,6 +4,8 @@ description: |
   Q&A from the Teaching online with RStudio Cloud webinar.
 date: '2020-04-01'
 slug: teaching-with-rstudio-cloud-q-a
+categories:
+  - Community
 tags:
   - rstudio-cloud
   - teach
@@ -16,8 +18,6 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
 ---

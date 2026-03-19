@@ -1,10 +1,7 @@
 ---
 title: 'Talking to LLMs: From Prompt to Response'
-description: >
-  In this second part of The Shiny Side of LLMs we get into the fun of actually
-  talking to an LLM. From crafting prompts that get the responses you want, to
-  turning messy outputs into something useful, giving models extra powers with
-  tools, and figuring out what all the chatter really costs.
+description: |
+  In this second part of The Shiny Side of LLMs we get into the fun of actually talking to an LLM. From crafting prompts that get the responses you want, to turning messy outputs into something useful, giving models extra powers with tools, and figuring out what all the chatter really costs.
 people:
   - Veerle Eeftink - van Leemput
 date: '2025-09-05'

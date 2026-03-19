@@ -3,6 +3,8 @@ title: Newly certified instructors in July 2020
 people:
   - greg
 date: '2020-08-05'
+categories:
+  - Community
 tags:
   - certify
 description: |
@@ -15,8 +17,6 @@ image: july-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - certify
 ---

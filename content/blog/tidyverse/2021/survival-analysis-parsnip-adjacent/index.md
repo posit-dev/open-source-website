@@ -1,29 +1,24 @@
 ---
-
 slug: survival-analysis-parsnip-adjacent
 title: Survival Analysis in tidymodels
-date: 2021-11-02
+date: '2021-11-02'
 people:
   - Hannah Frick
-description: >
-    We are working on extending support for survival analysis in tidymodels. We
-    are looking for early adopters to try out the new package called censored 
-    and give feedback.
-
+description: |
+  We are working on extending support for survival analysis in tidymodels. We are looking for early adopters to try out the new package called censored  and give feedback.
 photo:
   url: https://unsplash.com/photos/A-fubu9QJxE
   author: Luca Bravo
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [tidymodels, parsnip]
-
+categories:
+  - Best Practices
+tags:
+  - tidymodels
+  - parsnip
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - deep-dive
 ---

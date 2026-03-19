@@ -3,18 +3,19 @@ title: 'Announcing bookdown: Authoring Books and Technical Documents with R Mark
 people:
   - Yihui Xie
 date: '2016-12-02'
+categories:
+  - Publishing
 slug: announcing-bookdown
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- R Markdown
+  - Packages
+  - R Markdown
 ported_from: rstudio
 port_status: in-progress
 software: ["bookdown"]
 languages: ["R"]
-categories:
-  - Publishing
 ported_categories:
   - Packages
   - R Markdown

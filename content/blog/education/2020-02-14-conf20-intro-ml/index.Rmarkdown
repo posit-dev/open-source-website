@@ -3,20 +3,21 @@ title: Introduction to Machine Learning with the Tidyverse
 people:
   - alison
 date: '2020-02-14'
-tags: [conf2020]
+categories:
+  - Community
+tags:
+  - conf2020
 slug: conf20-intro-ml
 photo:
   url: https://unsplash.com/photos/2YPSfYQA6Z0
   author: Brunel Johnson
-description: Here is your roadmap to our two-day rstudio::conf(2020) introductory workshop on machine
-  learning with the tidyverse and tidymodels.
+description: Here is your roadmap to our two-day rstudio::conf(2020) introductory
+  workshop on machine learning with the tidyverse and tidymodels.
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 software: ["tidymodels"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - teach

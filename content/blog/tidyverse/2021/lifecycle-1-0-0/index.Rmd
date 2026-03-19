@@ -1,28 +1,24 @@
 ---
 output: hugodown::hugo_document
-
 slug: lifecycle-1-0-0
 title: lifecycle 1.0.0
-date: 2021-02-15
+date: '2021-02-15'
 people:
   - Hadley Wickham
-description: >
-    The lifecycle package documentation received a major overhaul
-    based on what I learned preparing for my rstudio::global
-    keynote.
-
+description: |
+  The lifecycle package documentation received a major overhaul based on what I learned preparing for my rstudio::global keynote.
 photo:
   url: https://unsplash.com/photos/VMKBFR6r_jg
   author: Suzanne D. Williams
-
-tags: [tidyverse]
+categories:
+  - Best Practices
+tags:
+  - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["lifecycle"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

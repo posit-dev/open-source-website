@@ -1,10 +1,12 @@
 ---
-title: "Reflecting on Mentorship Experience"
+title: Reflecting on Mentorship Experience
 author:
-  - "[Christian Okoth](https://www.linkedin.com/in/christian-okoth/)"
+  - '[Christian Okoth](https://www.linkedin.com/in/christian-okoth/)'
 people:
   - Christian Okoth
 date: '2021-02-17'
+categories:
+  - Community
 description: |
   A mentorship experience during undergrad opens up opportunities for learning
   about text analysis, as well as meta-skills like debugging and reproducibility.
@@ -15,8 +17,6 @@ photo:
 image: hands-wd.jpg
 ported_from: education
 port_status: in-progress
-categories:
-  - Community
 ported_categories:
   - learn
 ---

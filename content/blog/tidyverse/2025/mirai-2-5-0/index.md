@@ -1,27 +1,24 @@
 ---
-
 slug: mirai-2-5-0
 title: mirai 2.5.0
-date: 2025-09-05
+date: '2025-09-05'
 people:
   - Charlie Gao
-description: >
-    mirai - minimalist async evaluation framework for R - brings production-grade
-    parallel and distributed computing to the ecosystem.
+description: |
+  mirai - minimalist async evaluation framework for R - brings production-grade parallel and distributed computing to the ecosystem.
 photo:
   url: https://unsplash.com/photos/a-bunch-of-different-colored-sashes-hanging-on-a-wall-OEiN_lSyQqE
   author: Matt Benson
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [mirai, parallelism]
-
+categories:
+  - Best Practices
+tags:
+  - mirai
+  - parallelism
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "mirai"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

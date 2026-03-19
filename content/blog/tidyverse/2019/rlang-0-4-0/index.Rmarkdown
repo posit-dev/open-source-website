@@ -1,17 +1,18 @@
 ---
-title: 'rlang 0.4.0'
-author: Lionel Henry
+title: rlang 0.4.0
+author:
+  - Lionel Henry
 date: '2019-06-27'
 slug: rlang-0-4-0
-description: >
+description: |
   rlang 0.4.0 is now on CRAN!
+categories:
+  - Best Practices
 photo:
   url: https://unsplash.com/photos/ar7ZWQ-r87g
   author: Caitlin Wynne
 software: ["tidyverse", "rlang"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

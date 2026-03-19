@@ -3,16 +3,17 @@ title: R on Travis-CI
 people:
   - Jim Hester
 date: '2016-03-09'
+categories:
+  - Best Practices
 slug: r-on-travis-ci
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - Packages
 ---

@@ -3,19 +3,20 @@ title: 'Shiny 1.2.0: Plot caching'
 people:
   - Joe Cheng
 date: '2018-11-13'
+categories:
+  - Interactive Apps
 tags:
-- shiny
-- Shiny
+  - shiny
+  - Packages
+  - Shiny
 slug: shiny-1-2-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Packages
   - Shiny

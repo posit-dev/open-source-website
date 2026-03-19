@@ -3,6 +3,8 @@ title: Reopening applications for instructor training
 people:
   - greg
 date: '2020-03-24'
+categories:
+  - Community
 tags:
   - teach
   - certify
@@ -16,8 +18,6 @@ image: reopening-training-applications-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - teach
   - certify

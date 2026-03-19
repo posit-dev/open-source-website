@@ -1,29 +1,25 @@
 ---
-
 slug: stacks-0-1-0
 title: stacks 0.1.0
-date: 2020-11-30
+date: '2020-11-30'
 people:
   - Simon Couch
   - Max Kuhn
-description: >
-    Introducing ensemble learning to the tidymodels.
-
+description: |
+  Introducing ensemble learning to the tidymodels.
 photo:
   url: https://unsplash.com/photos/3Xd5j9-drDA
   author: Derek Oyen
-
+categories:
+  - Machine Learning
 tags:
   - tidymodels
   - stacks
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "stacks"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

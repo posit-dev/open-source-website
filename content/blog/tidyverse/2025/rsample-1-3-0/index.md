@@ -1,29 +1,24 @@
 ---
-
 slug: rsample-1-3-0
 title: rsample 1.3.0
-date: 2025-04-03
+date: '2025-04-03'
 people:
   - Hannah Frick
-description: >
-    This release brings more flexibilty to the grouping of bootstrap confidence 
-    intervals. It also contains many contributions from the tidyverse developer 
-    day.
-
+description: |
+  This release brings more flexibilty to the grouping of bootstrap confidence  intervals. It also contains many contributions from the tidyverse developer  day.
 photo:
   url: https://unsplash.com/photos/a-row-of-shelves-filled-with-lots-of-shoes-yZxBkDr73AM
   author: Erik Mclean
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, rsample]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - rsample
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "rsample"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

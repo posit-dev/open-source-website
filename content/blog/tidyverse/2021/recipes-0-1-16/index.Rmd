@@ -1,27 +1,24 @@
 ---
 output: hugodown::hugo_document
-
 slug: recipes-0-1-16
 title: recipes 0.1.16
-date: 2021-04-23
+date: '2021-04-23'
 people:
   - Max Kuhn
-description: >
-    The new version of recipes contains several helpful improvements.  
-
+description: "The new version of recipes contains several helpful improvements.  \n"
 photo:
   url: https://unsplash.com/photos/5K5Nc3AGF1w
   author: American Heritage Chocolate
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [tidymodels, recipes]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - recipes
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

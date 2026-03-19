@@ -1,24 +1,22 @@
 ---
-
 slug: python-open-source-developer
 title: Python Open-Source Developer
-date: 2025-11-12
+date: '2025-11-12'
 people:
   - Max Kuhn
-description: >
-    Posit is hiring a Python open-source developer to create more data analysis tools.
-
+description: |
+  Posit is hiring a Python open-source developer to create more data analysis tools.
 photo:
   author: Dan Kuhn and Max Kuhn. The subject is Doodle Ramen Noodle.
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [python, modeling]
+categories:
+  - Community
+tags:
+  - python
+  - modeling
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["Python"]
-categories:
-  - Community
 ported_categories:
   - other
 ---

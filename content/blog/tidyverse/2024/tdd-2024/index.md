@@ -1,27 +1,23 @@
 ---
-
 slug: tdd-2024
 title: Tidyverse developer day 2024
-date: 2024-04-09
+date: '2024-04-09'
 people:
   - Hadley Wickham
-description: >
-    Join the tidyverse team in Seattle on August 15 for a day of 
-    fun and programming to improve the tidyverse!
+description: |
+  Join the tidyverse team in Seattle on August 15 for a day of  fun and programming to improve the tidyverse!
 photo:
   author: JD Long
   url: https://cerebralmastication.com
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidyverse-dev-day]
-
+categories:
+  - Community
+tags:
+  - tidyverse-dev-day
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - package
 ---

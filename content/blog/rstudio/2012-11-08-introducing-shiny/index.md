@@ -3,18 +3,18 @@ title: 'Introducing Shiny: Easy web applications in R'
 people:
   - Joe Cheng
 date: '2012-11-08'
+categories:
+  - Interactive Apps
 slug: introducing-shiny
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Shiny
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
-  - Interactive Apps
 ported_categories:
   - Shiny
 ---

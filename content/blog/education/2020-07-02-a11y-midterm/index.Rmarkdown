@@ -1,7 +1,7 @@
 ---
 title: Accessibility Internship
 author:
-  - "[JooYoung Seo](https://jooyoungseo.com/)"
+  - '[JooYoung Seo](https://jooyoungseo.com/)'
 people:
   - JooYoung Seo
 date: '2020-07-02'

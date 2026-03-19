@@ -3,11 +3,10 @@ title: 'Weather App Story Pt. 1: About'
 description: Functionality and architecture overview of the Weather Lookup app.
 people:
   - Nick Strayer
-date: 2021-01-04T00:00:00.000Z
+date: '2021-01-04T00:00:00.000Z'
 image: about.jpg
-image-alt: >-
-  A screenshot of Nick Strayer's Weather Lookup Shiny app, which shows
-  themperature over time of a specific location
+image-alt: A screenshot of Nick Strayer's Weather Lookup Shiny app, which shows themperature
+  over time of a specific location
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-r"]

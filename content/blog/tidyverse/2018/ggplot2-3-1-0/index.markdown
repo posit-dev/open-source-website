@@ -1,12 +1,14 @@
 ---
-title: 'ggplot2 3.1.0'
+title: ggplot2 3.1.0
 people:
   - Mara Averick
   - Claus Wilke
 date: '2018-10-29'
 slug: ggplot2-3-1-0
-description: > 
+description: |
   ggplot2 3.1.0 is now on CRAN!
+categories:
+  - Visualization
 tags:
   - ggplot2
   - tidyverse
@@ -18,8 +20,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

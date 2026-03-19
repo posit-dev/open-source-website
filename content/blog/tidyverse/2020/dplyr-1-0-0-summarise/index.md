@@ -4,27 +4,21 @@ title: 'dplyr 1.0.0: new `summarise()` features'
 people:
   - Hadley Wickham
 date: '2020-03-20'
-description: >
-  In `summarise()`, a single summary expression can now create both
-  multiple rows and multiple columns. This significantly increases its power
-  and flexibility.
-
-
+description: |
+  In `summarise()`, a single summary expression can now create both multiple rows and multiple columns. This significantly increases its power and flexibility.
+categories:
+  - Data Wrangling
 tags:
-- dplyr
-- dplyr-1-0-0
-
+  - dplyr
+  - dplyr-1-0-0
 photo:
   url: https://unsplash.com/photos/OmCUSp8o7a4
   author: Brigitte Tohm
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

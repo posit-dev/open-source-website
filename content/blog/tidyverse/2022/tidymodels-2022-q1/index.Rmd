@@ -1,28 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: tidymodels-2022-q1
-title: "Q1 2022 tidymodels digest"
-date: 2022-04-01
+title: Q1 2022 tidymodels digest
+date: '2022-04-01'
 people:
   - Julia Silge
-description: >
-    There were 21 releases of tidymodels packages during Q1 of this year,
-    and this post shares some highlights!
-
+description: |
+  There were 21 releases of tidymodels packages during Q1 of this year, and this post shares some highlights!
 photo:
   url: https://unsplash.com/photos/nSTFkVywiCU
   author: Aiden Frazier
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, textrecipes, workflowsets, dials]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - textrecipes
+  - workflowsets
+  - dials
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "textrecipes", "workflowsets", "dials"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - roundup
 ---

@@ -1,18 +1,18 @@
 ---
 title: Updates to ragg and systemfonts
-description: |
-  We have recently updated some of our low-level graphics packages. Read on 
-  about what is new in ragg and systemfonts
+description: "We have recently updated some of our low-level graphics packages. Read
+  on \nabout what is new in ragg and systemfonts\n"
 people:
   - Thomas Lin Pedersen
 date: '2020-05-15'
 output: hugodown::hugo_document
 slug: updates-to-ragg-and-systemfonts
+categories:
+  - Visualization
 tags:
   - ragg
   - systemfonts
-authors:
-  - Thomas Lin Pedersen
+authors: Thomas Lin Pedersen
 photo:
   url: https://unsplash.com/photos/BVyNlchWqzs
   author: Amador Loureiro
@@ -21,8 +21,6 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ragg", "systemfonts"]
 languages: ["R"]
-categories:
-  - Visualization
 ported_categories:
   - package
 ---

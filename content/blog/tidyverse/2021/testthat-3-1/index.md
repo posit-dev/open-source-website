@@ -1,28 +1,23 @@
 ---
-
 slug: testthat-3-1
 title: testthat 3.1.0
-date: 2021-10-04
+date: '2021-10-04'
 people:
   - Hadley Wickham
-description: >
-    testthat 3.1.0 brings improvements to snapshot testing and one breaking
-    change.
-
+description: |
+  testthat 3.1.0 brings improvements to snapshot testing and one breaking change.
 photo:
   url: https://unsplash.com/photos/vasU4-TlC5I
   author: Ethan Hoover
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-tags: [testthat]
-
+categories:
+  - Best Practices
+tags:
+  - testthat
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

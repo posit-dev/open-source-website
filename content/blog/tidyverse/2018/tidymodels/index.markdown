@@ -4,8 +4,10 @@ people:
   - Max Kuhn
 date: '2018-08-06'
 slug: tidymodels-0-0-1
-description: > 
+description: |
   tidymodels 0.0.1 is on CRAN.
+categories:
+  - Machine Learning
 tags:
   - tidymodels
 photo:
@@ -16,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

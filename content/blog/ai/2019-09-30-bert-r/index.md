@@ -1,8 +1,10 @@
 ---
-title: "BERT from R"
+title: BERT from R
 description: |
   A deep learning model - BERT from Google AI Research - has yielded state-of-the-art results in a wide variety of Natural Language Processing (NLP) tasks. In this tutorial, we will show how to load and train the BERT model from R, using Keras.
-date: 2019-09-30
+date: '2019-09-30'
+categories:
+  - Machine Learning
 author:
   - name: Turgut Abdullayev
     url: https://github.com/henry090
@@ -15,8 +17,6 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Natural Language Processing
   - TensorFlow/Keras

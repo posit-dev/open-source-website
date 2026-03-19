@@ -1,27 +1,24 @@
 ---
-
 slug: waldo
 title: waldo
-date: 2020-10-15
+date: '2020-10-15'
 people:
   - Hadley Wickham
-description: >
-    waldo is a new package that makes it easier to see the differences
-    between a pair of complex R objects.
-
+description: |
+  waldo is a new package that makes it easier to see the differences between a pair of complex R objects.
 photo:
   url: https://unsplash.com/photos/JVD3XPqjLaQ
   author: Jason Dent
-
-tags: [testthat, waldo]
-
+categories:
+  - Best Practices
+tags:
+  - testthat
+  - waldo
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat", "waldo"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

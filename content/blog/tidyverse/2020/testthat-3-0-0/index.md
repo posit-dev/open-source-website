@@ -1,29 +1,23 @@
 ---
-
 slug: testthat-3-0-0
 title: testthat 3.0.0
-date: 2020-10-31
+date: '2020-10-31'
 people:
   - Hadley Wickham
-description: >
-    testhat 3.0.0 brings a raft of major improvements including snapshot 
-    testing and parallel testing. It also includes a new "edition" that
-    allows you opt-in to a set of substantial improvements that are
-    not backward compatible.
-
+description: |
+  testhat 3.0.0 brings a raft of major improvements including snapshot  testing and parallel testing. It also includes a new "edition" that allows you opt-in to a set of substantial improvements that are not backward compatible.
 photo:
   url: https://unsplash.com/photos/209FvE_57H8
   author: NeONBRAND
-
-tags: [testthat]
-
+categories:
+  - Best Practices
+tags:
+  - testthat
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

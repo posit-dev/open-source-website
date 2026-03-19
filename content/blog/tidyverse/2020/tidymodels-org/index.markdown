@@ -1,14 +1,16 @@
 ---
 title: Announcing tidymodels.org
 slug: tidymodels-org
-description: >
-    We're thrilled to announce the launch of tidymodels.org! The site is a central location for learning and using the tidymodels packages. 
-date: 2020-04-21
+description: "We're thrilled to announce the launch of tidymodels.org! The site is
+  a central location for learning and using the tidymodels packages. \n"
+date: '2020-04-21'
 people:
   - Max Kuhn
 photo:
   url: https://unsplash.com/photos/Hli3R6LKibo
   author: Adi Goldstein
+categories:
+  - Community
 tags:
   - tidymodels
 image: thumbnail-wd.jpg
@@ -16,8 +18,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
 ---

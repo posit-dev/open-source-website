@@ -1,27 +1,23 @@
 ---
-
 slug: infer-1-0-0
 title: infer 1.0.0
-date: 2021-08-17
+date: '2021-08-17'
 people:
   - Simon Couch
-description: >
-    The first major release of infer, a package implementing a unified approach
-    to statistical inference, is now on CRAN.
-
+description: |
+  The first major release of infer, a package implementing a unified approach to statistical inference, is now on CRAN.
 photo:
   url: https://simonpcouch.com
   author: Simon Couch
-
-tags: [tidymodels]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

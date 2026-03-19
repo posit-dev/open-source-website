@@ -7,6 +7,8 @@ slug: pkgdown-1-5-0
 photo:
   url: https://unsplash.com/photos/5R5Trsu1aIM
   author: Kelly Sikkema
+categories:
+  - Best Practices
 tags:
   - pkgdown
   - web
@@ -15,8 +17,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

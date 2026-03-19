@@ -1,27 +1,25 @@
 ---
-
 slug: tidymodels-2022-q2
-title: "Q2 2022 tidymodels digest"
-date: 2022-07-19
+title: Q2 2022 tidymodels digest
+date: '2022-07-19'
 people:
   - Emil Hvitfeldt
-description: >
-    Q2 marks the end of the season of case weights, with 25 new releases.
-
+description: |
+  Q2 marks the end of the season of case weights, with 25 new releases.
 photo:
   url: https://unsplash.com/photos/BBR_zigEmyQ
-  author:  Samuel Girven
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, parsnip, recipes]
-
+  author: Samuel Girven
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - parsnip
+  - recipes
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "recipes"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - roundup
 ---

@@ -1,22 +1,19 @@
 ---
-title: "Introducing mall for R...and Python"
-description: >
-  We are proud to introduce the {mall} package. With {mall}, you can use a 
-  local LLM to run NLP operations across a data frame. (sentiment, 
-  summarization, translation, etc). {mall} has been simultaneously released
-  to CRAN and PyPi (as an extension to Polars).
-  
+title: Introducing mall for R...and Python
+description: |
+  We are proud to introduce the {mall} package. With {mall}, you can use a  local LLM to run NLP operations across a data frame. (sentiment,  summarization, translation, etc). {mall} has been simultaneously released to CRAN and PyPi (as an extension to Polars).
 author:
   - name: Edgar Ruiz
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: edgarmallintro
-date: 2024-10-30
-preview: images/article.png
-format: hugo-md
+date: '2024-10-30'
 categories:
   - Artificial Intelligence
   - Machine Learning
+preview: images/article.png
+format: hugo-md
+languages: ["R", "Python"]
 ported_categories:
   - Python
   - R
@@ -24,9 +21,6 @@ ported_categories:
   - Polars
   - Natural Language Processing
   - Tabular Data
-preview: images/article.png
-format: hugo-md
-languages: ["R", "Python"]
 ---
 
 ## The beginning

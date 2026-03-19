@@ -1,21 +1,21 @@
 ---
-title: "State-of-the-art NLP models from R"
+title: State-of-the-art NLP models from R
 description: |
   Nowadays, Microsoft, Google, Facebook, and OpenAI are sharing lots of state-of-the-art models in the field of Natural Language Processing. However, fewer materials exist how to use these models from R. In this post, we will show how R users can access and benefit from these models as well.
 author:
-  - name: Turgut Abdullayev 
+  - name: Turgut Abdullayev
     url: https://github.com/henry090
     affiliation: QSS Analytics
     affiliation_url: http://www.qss.az/
 date: 07-30-2020
+categories:
+  - Machine Learning
 creative_commons: CC BY
 repository_url: https://github.com/henry090/transformers
 preview: files/dino.jpg
 format: hugo-md
 software: ["reticulate"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Natural Language Processing
 ---

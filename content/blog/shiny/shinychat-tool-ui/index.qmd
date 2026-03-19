@@ -5,7 +5,7 @@ people:
   - Garrick Aden-Buie
   - Carson Sievert
   - Barret Schloerke
-date: "2025-11-20"
+date: '2025-11-20'
 image: feature.png
 ported_from: shiny
 port_status: in-progress

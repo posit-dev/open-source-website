@@ -1,14 +1,16 @@
 ---
 title: rlang 0.3.0
-date: 2018-10-29
+date: '2018-10-29'
 slug: rlang-0-3-0
 people:
   - Lionel Henry
+categories:
+  - Best Practices
 tags:
   - rlang
   - r-lib
-description: >
-    API for working with tidy evaluation, base R types, and errors
+description: |
+  API for working with tidy evaluation, base R types, and errors
 photo:
   url: https://unsplash.com/photos/nI7knd5sQfo
   author: Brandon Siu
@@ -17,8 +19,6 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "rlang"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - package
 ---

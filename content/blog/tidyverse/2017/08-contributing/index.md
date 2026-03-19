@@ -3,23 +3,19 @@ title: Contributing code to the tidyverse
 people:
   - Jim Hester
 slug: contributing
-date: 2017-08-14
+date: '2017-08-14'
 photo:
   url: https://unsplash.com/photos/qFxS5FkUSAQ
   author: Yuriy Rzhemovskiy
-description: >
-  Contributing code to open source projects can be intimidating. These projects
-  are often widely used and have well known maintainers. Contributing code and
-  having it accepted seems an almost insurmountable task. However if you follow a
-  few simple strategies you can have your code accepted into even the most
-  popular projects in the tidyverse.
+categories:
+  - Best Practices
+description: |
+  Contributing code to open source projects can be intimidating. These projects are often widely used and have well known maintainers. Contributing code and having it accepted seems an almost insurmountable task. However if you follow a few simple strategies you can have your code accepted into even the most popular projects in the tidyverse.
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
-categories:
-  - Best Practices
 ported_categories:
   - programming
 ---

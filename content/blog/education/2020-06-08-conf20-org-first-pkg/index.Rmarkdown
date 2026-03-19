@@ -1,13 +1,16 @@
 ---
-title: "My Organization's First R Package Workshop at rstudio::conf(2020)"
+title: My Organization's First R Package Workshop at rstudio::conf(2020)
 author:
-  - "[Malcolm Barrett](https://malco.io/)"
-  - "[Richard Iannone](https://randr.rocks/)"
+  - '[Malcolm Barrett](https://malco.io/)'
+  - '[Richard Iannone](https://randr.rocks/)'
 people:
   - Malcolm Barrett
   - Richard Iannone
 date: '2020-06-08'
-tags: [conf2020]
+categories:
+  - Community
+tags:
+  - conf2020
 slug: conf20-org-first-pkg
 description: |
   A tour of the rstudio::conf() workshop 'My Organization’s First R Package'
@@ -19,8 +22,6 @@ ported_from: education
 port_status: in-progress
 software: ["devtools", "usethis"]
 languages: ["R"]
-categories:
-  - Community
 ported_categories:
   - learn
   - teach

@@ -3,17 +3,18 @@ title: TensorFlow for R
 people:
   - Tareef Kawaf
 date: '2018-02-06'
+categories:
+  - Machine Learning
 tags:
-- data science
+  - data science
+  - Packages
 slug: tensorflow-for-r
 blogcategories:
-- Products and Technology
+  - Products and Technology
 ported_from: rstudio
 port_status: in-progress
 software: ["tensorflow"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - Packages
 ---

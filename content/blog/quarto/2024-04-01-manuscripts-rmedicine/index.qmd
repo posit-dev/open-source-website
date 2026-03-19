@@ -1,19 +1,20 @@
 ---
-title: Quarto for Reproducible Medical Manuscripts 
+title: Quarto for Reproducible Medical Manuscripts
 description: |
   R/Medicine webinar on Quarto manuscripts
 people:
   - Mine Çetinkaya-Rundel
-date: "2024-04-01"
-image: "images/manuscripts-thumbnail.png"
-image-alt: "From multiple Quarto documents and scripts in R and python to PDF or Word output."
+date: '2024-04-01'
+image: images/manuscripts-thumbnail.png
+image-alt: From multiple Quarto documents and scripts in R and python to PDF or Word
+  output.
+categories:
+  - Publishing
+  - Community
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
-  - Publishing
-  - Community
 ported_categories:
   - Learn
 ---

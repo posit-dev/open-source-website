@@ -1,25 +1,22 @@
 ---
 output: hugodown::hugo_document
-
 slug: devrel-hiring-2022
 title: Come work with us in Developer Relations
-date: 2022-09-22
+date: '2022-09-22'
 people:
   - Tracy Teal
-description: >
-    We're hiring a Developer Educator for tidyverse package development and a Quarto Developer Advocate. Come work with us!
-
+description: |
+  We're hiring a Developer Educator for tidyverse package development and a Quarto Developer Advocate. Come work with us!
 photo:
   url: https://unsplash.com/photos/dFohf_GUZJ0
   author: 2y.kang
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [hiring]
+categories:
+  - Community
+tags:
+  - hiring
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-categories:
-  - Community
 ported_categories:
   - other
 ---

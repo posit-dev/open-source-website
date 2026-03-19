@@ -1,27 +1,24 @@
 ---
-
 slug: recipes-1-1-0
 title: recipes 1.1.0
-date: 2024-07-08
+date: '2024-07-08'
 people:
   - Emil Hvitfeldt
-description: >
-    recipes 1.1.0 is on CRAN! recipes now have better input checking and quality of life errors.
-
+description: |
+  recipes 1.1.0 is on CRAN! recipes now have better input checking and quality of life errors.
 photo:
   url: https://unsplash.com/photos/close-up-photo-of-baked-cookies-OfdDiqx8Cz8
   author: Food Photographer | Jennifer Pallian
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, recipes]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - recipes
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

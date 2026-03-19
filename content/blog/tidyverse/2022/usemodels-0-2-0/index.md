@@ -1,26 +1,23 @@
 ---
-
 slug: usemodels-0-2-0
 title: usemodels 0.2.0
-date: 2022-03-23
+date: '2022-03-23'
 people:
   - Max Kuhn
-description: >
-    A new release of the usemodels package makes it even easier to use tidymodels.
-
+description: |
+  A new release of the usemodels package makes it even easier to use tidymodels.
 photo:
   url: https://unsplash.com/photos/r1sTNKz0omE
   author: Eugenia Kozyr
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---

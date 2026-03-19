@@ -1,28 +1,23 @@
 ---
-
 slug: bigrquery-1-5-0
 title: bigrquery 1.5.0
-date: 2024-01-22
+date: '2024-01-22'
 people:
   - Hadley Wickham
-description: >
-    This release fixes a bunch of annoyances and catches up with 
-    innovations in DBI and dbplyr.
-
+description: |
+  This release fixes a bunch of annoyances and catches up with  innovations in DBI and dbplyr.
 photo:
   url: https://unsplash.com/photos/gr06IVY2YpM
   author: Aaron Santelices
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [bigrquery]
-
+categories:
+  - Data Wrangling
+tags:
+  - bigrquery
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "bigrquery"]
 languages: ["R"]
-categories:
-  - Data Wrangling
 ported_categories:
   - package
 ---

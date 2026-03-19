@@ -1,28 +1,24 @@
 ---
-
 slug: tidyclust-0-1-0
 title: tidyclust is on CRAN
-date: 2022-12-06
+date: '2022-12-06'
 people:
   - Emil Hvitfeldt
-description: >
-    Tidyclust is on CRAN. tidyclust provides a common interface for specifying 
-    clustering models, in the same style as parsnip.
-
+description: |
+  Tidyclust is on CRAN. tidyclust provides a common interface for specifying  clustering models, in the same style as parsnip.
 photo:
   url: https://unsplash.com/photos/4Xy08NbMBLM
   author: Ankush Minda
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-tags: [tidymodels, tidyclust]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - tidyclust
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tidyclust"]
 languages: ["R"]
-categories:
-  - Machine Learning
 ported_categories:
   - package
 ---
