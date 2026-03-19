@@ -12,6 +12,8 @@ software: ["py-shinyswatch"]
 languages: ["Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 ```{=html}

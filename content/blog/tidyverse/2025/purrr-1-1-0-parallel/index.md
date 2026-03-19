@@ -15,8 +15,9 @@ photo:
 categories:
   - Data Wrangling
 tags:
-  - parallelism
-  - purrr
+  - Parallelism
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

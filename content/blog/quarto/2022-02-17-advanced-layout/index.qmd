@@ -22,6 +22,10 @@ languages: ["R", "Python", "Julia"]
 ported_categories:
   - Features
   - Layout
+tags:
+  - Quarto
+  - Features
+  - Layout
 ---
 
 Quarto supports a variety of page layout options that enable you to author content that

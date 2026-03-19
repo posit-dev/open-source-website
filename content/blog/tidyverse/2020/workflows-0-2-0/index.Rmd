@@ -13,7 +13,8 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
+  - tidyverse
+  - Packages
 editor_options:
   chunk_output_type: console
 image: thumbnail-wd.jpg

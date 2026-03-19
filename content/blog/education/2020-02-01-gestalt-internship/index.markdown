@@ -9,7 +9,8 @@ slug: gestalt-internship
 categories:
   - Community
 tags:
-  - internship
+  - Internship
+  - Education
 photo:
   url: https://unsplash.com/photos/dG35-kUxv34
   author: Dinh Pham

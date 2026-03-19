@@ -7,8 +7,9 @@ slug: testthat-2-0-0
 categories:
   - Best Practices
 tags:
-  - package
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/Lu2pfy_8VKg
   author: Cameron Kirby

@@ -9,8 +9,8 @@ description: themis 0.1.0 is now available on CRAN. Provides additional steps fo
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - themis
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/RtDwtRDvYQg
   author: Roman Kraft

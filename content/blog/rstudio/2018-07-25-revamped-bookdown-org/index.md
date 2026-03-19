@@ -6,9 +6,10 @@ date: '2018-07-25'
 categories:
   - Publishing
 tags:
-  - bookdown
-  - website
+  - Website
   - R Markdown
+  - RStudio
+  - News
 slug: revamped-bookdown-org
 blogcategories:
   - Products and Technology

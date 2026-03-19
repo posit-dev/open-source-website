@@ -11,7 +11,10 @@ categories:
 photo:
   url: https://unsplash.com/photos/3kzlCL3rj8A
   author: Ricardo Gomez Angel
-tags: []
+tags:
+  - rlib
+  - tidyverse
+  - Packages
 software: ["tidyverse", "scales", "ggplot2"]
 languages: ["R"]
 ported_categories:

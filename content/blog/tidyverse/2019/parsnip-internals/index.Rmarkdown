@@ -16,6 +16,9 @@ software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]
 ported_categories:
   - package
+tags:
+  - tidyverse
+  - Packages
 ---
 
 

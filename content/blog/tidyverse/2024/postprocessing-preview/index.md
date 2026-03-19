@@ -14,9 +14,9 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - postprocessing
-  - workflows
+  - Postprocessing
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

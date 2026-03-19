@@ -8,7 +8,10 @@ categories:
   - Best Practices
   - Community
 tags:
-  - r-lib
+  - rlib
+  - tidyverse
+  - Programming
+  - Learn
 description: |
   A wild romp through environments -- namely, the environments associated with
   functions and tests. How to adopt a low-impact lifestyle.

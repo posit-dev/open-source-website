@@ -19,6 +19,9 @@ languages: ["R"]
 ported_categories:
   - R
   - Time Series
+tags:
+  - AI
+  - Time series
 ---
 
 

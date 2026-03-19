@@ -12,11 +12,11 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - baguette
-  - poissonreg
-  - plsmod
-  - parsnip
+  - Baguette
+  - Poissonreg
+  - Plsmod
+  - tidyverse
+  - Packages
 software: ["tidyverse", "tidymodels", "parsnip"]
 languages: ["R"]
 ported_categories:

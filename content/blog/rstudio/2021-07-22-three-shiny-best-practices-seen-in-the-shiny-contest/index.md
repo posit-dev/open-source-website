@@ -8,10 +8,10 @@ categories:
   - Interactive Apps
 tags:
   - Shiny
-  - best-practices
-  - CSS
-  - reactlog
-  - shiny-modules
+  - Best-practices
+  - Css
+  - Shiny-modules
+  - RStudio
 blogcategories:
   - Training and Education
 alttext: a wedding invitation

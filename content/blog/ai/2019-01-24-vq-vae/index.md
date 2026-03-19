@@ -21,6 +21,13 @@ ported_categories:
   - TensorFlow/Keras
   - Probabilistic ML/DL
   - Generative Models
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Probabilistic machine learning
+  - Probabilistic deep learning
+  - Generative models
 ---
 
 

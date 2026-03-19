@@ -8,7 +8,10 @@ date: '2020-05-28'
 categories:
   - Community
 tags:
-  - conf2020
+  - Conf2020
+  - Education
+  - Learn
+  - Teaching
 slug: conf20-dl
 description: |
   Synopsis of the two-day rstudio::conf(2020) workshop on deep learning.

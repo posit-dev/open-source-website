@@ -12,11 +12,9 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - workflowsets
-  - tidyposterior
-  - workflows
   - Bayesian analysis
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

@@ -24,6 +24,10 @@ languages: ["R"]
 ported_categories:
   - learn
   - package
+tags:
+  - Education
+  - Learn
+  - Packages
 ---
 
 

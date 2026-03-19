@@ -7,8 +7,10 @@ categories:
   - Interactive Apps
   - MLOps and Admin
 tags:
-  - cheatsheet
+  - Cheatsheet
   - Shiny
+  - RStudio
+  - Training
 slug: new-shiny-cheat-sheet-and-video-tutorial
 blogcategories:
   - Products and Technology

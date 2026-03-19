@@ -21,6 +21,12 @@ ported_categories:
   - Polars
   - Natural Language Processing
   - Tabular Data
+tags:
+  - AI
+  - LLM
+  - Polars
+  - Natural language processing
+  - Tabular data
 ---
 
 [mall](https://mlverse.github.io/mall/) uses Large Language Models (LLM) to run 

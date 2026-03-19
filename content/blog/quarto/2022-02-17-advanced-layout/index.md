@@ -22,6 +22,10 @@ languages: ["R", "Python", "Julia"]
 ported_categories:
   - Features
   - Layout
+tags:
+  - Quarto
+  - Features
+  - Layout
 ---
 
 

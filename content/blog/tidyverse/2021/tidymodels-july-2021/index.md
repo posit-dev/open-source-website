@@ -12,13 +12,8 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - parsnip
-  - tune
-  - workflows
-  - hardhat
-  - discrim
-  - finetune
-  - workflowsets
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

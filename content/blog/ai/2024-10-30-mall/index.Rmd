@@ -21,6 +21,12 @@ ported_categories:
   - Polars
   - Natural Language Processing
   - Tabular Data
+tags:
+  - AI
+  - LLM
+  - Polars
+  - Natural language processing
+  - Tabular data
 ---
 
 ## The beginning

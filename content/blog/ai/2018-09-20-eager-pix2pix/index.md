@@ -21,6 +21,13 @@ ported_categories:
   - TensorFlow/Keras
   - Image Recognition & Image Processing
   - Generative Models
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Image recognition
+  - Image processing
+  - Generative models
 ---
 
 

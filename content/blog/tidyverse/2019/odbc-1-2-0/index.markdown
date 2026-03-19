@@ -9,7 +9,8 @@ description: |
 categories:
   - Data Wrangling
 tags:
-  - odbc
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/40XgDxBfYXM
   author: Photo by Jordan Harrison

@@ -20,6 +20,11 @@ languages: ["R"]
 ported_categories:
   - Probabilistic ML/DL
   - Time Series
+tags:
+  - AI
+  - Probabilistic machine learning
+  - Probabilistic deep learning
+  - Time series
 ---
 
 

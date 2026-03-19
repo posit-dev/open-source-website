@@ -9,10 +9,9 @@ description: |
 categories:
   - Data Wrangling
 tags:
-  - bigrquery
-  - dplyr
-  - dbplyr
-  - databases
+  - Databases
+  - tidyverse
+  - Packages
 photo:
   url: https://www.pexels.com/photo/green-and-red-abstract-painting-1070534/
   author: Steve Johnson

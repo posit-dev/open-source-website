@@ -9,8 +9,9 @@ date: '2020-04-29'
 categories:
   - Best Practices
 tags:
-  - dplyr
-  - dplyr-1-0-0
+  - Dplyr-1-0-0
+  - tidyverse
+  - Packages
 photo:
   author: Tekton
   url: https://unsplash.com/photos/LtphNTXHQAc

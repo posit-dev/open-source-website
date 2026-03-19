@@ -21,6 +21,11 @@ languages: ["R"]
 ported_categories:
   - Bayesian Modeling
   - TensorFlow/Keras
+tags:
+  - AI
+  - Bayesian modeling
+  - TensorFlow
+  - Keras
 ---
 
 

@@ -7,11 +7,12 @@ categories:
   - Machine Learning
   - MLOps and Admin
 tags:
-  - data science
-  - Distributed Computing
+  - Data science
+  - Distributed computing
   - Spark
-  - sparklyr
+  - Sparklyr
   - Packages
+  - RStudio
 slug: sparklyr-0-7
 blogcategories:
   - Products and Technology

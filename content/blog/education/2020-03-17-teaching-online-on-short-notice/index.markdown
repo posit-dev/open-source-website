@@ -6,8 +6,9 @@ date: '2020-03-17'
 categories:
   - Community
 tags:
-  - online
-  - teach
+  - Online
+  - Teaching
+  - Education
 description: |
   Our experience teaching classes online may help people who have to do so on short notice.
 slug: teaching-online-on-short-notice

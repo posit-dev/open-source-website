@@ -8,7 +8,7 @@ categories:
   - Best Practices
 tags:
   - Packages
-  - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

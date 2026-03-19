@@ -10,7 +10,10 @@ date: '2020-06-08'
 categories:
   - Community
 tags:
-  - conf2020
+  - Conf2020
+  - Education
+  - Learn
+  - Teaching
 slug: conf20-org-first-pkg
 description: |
   A tour of the rstudio::conf() workshop 'My Organization’s First R Package'

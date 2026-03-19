@@ -22,6 +22,12 @@ ported_categories:
   - TensorFlow/Keras
   - Time Series
   - Generative Models
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Time series
+  - Generative models
 ---
 
 

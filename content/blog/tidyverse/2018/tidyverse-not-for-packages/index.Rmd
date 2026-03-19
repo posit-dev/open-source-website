@@ -18,6 +18,8 @@ software: ["tidyverse"]
 languages: ["R"]
 ported_categories:
   - other
+tags:
+  - tidyverse
 ---
 
 ```{r setup, include=FALSE}

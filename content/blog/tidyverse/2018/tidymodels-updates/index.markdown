@@ -9,11 +9,8 @@ people:
 categories:
   - Machine Learning
 tags:
-  - recipes
-  - yardstick
-  - embed
-  - tidyposterior
-  - tidymodels
+  - tidyverse
+  - Packages
 description: |
   A variety of updates for tidymodels packages.
 photo:

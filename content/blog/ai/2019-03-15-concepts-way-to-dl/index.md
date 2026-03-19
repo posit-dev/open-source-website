@@ -20,6 +20,10 @@ languages: ["R"]
 ported_categories:
   - Meta
   - Concepts
+tags:
+  - AI
+  - Meta
+  - Concepts
 ---
 
 

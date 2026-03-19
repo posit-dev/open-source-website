@@ -13,6 +13,8 @@ software: ["shiny-python"]
 languages: ["Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 We are thrilled to announce that [Shiny for Python](https://shiny.posit.co/py/) has moved from the alpha stage to general availability. With Shiny for Python, data scientists can build interactive web applications with the expressiveness and power of reactive programming, and combine that with the extensive array of data analysis tools and visualization libraries in Python.

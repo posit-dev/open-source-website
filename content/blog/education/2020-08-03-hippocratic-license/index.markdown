@@ -6,7 +6,8 @@ date: '2020-08-03'
 categories:
   - Community
 tags:
-  - teach
+  - Teaching
+  - Education
 description: |
   A new open license is intended to prevent unethical use of software.
 slug: hippocratic-license

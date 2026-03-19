@@ -6,7 +6,8 @@ date: '2020-08-05'
 categories:
   - Community
 tags:
-  - certify
+  - Certify
+  - Education
 description: |
   Welcome the latest cohort of instructors to complete certification.
 slug: july-2020-instructors

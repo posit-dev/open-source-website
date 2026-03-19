@@ -20,6 +20,11 @@ languages: ["R"]
 ported_categories:
   - TensorFlow/Keras
   - Audio Processing
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Audio processing
 ---
 
 

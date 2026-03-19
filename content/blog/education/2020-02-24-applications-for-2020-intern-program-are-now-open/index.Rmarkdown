@@ -8,7 +8,8 @@ photo:
 publishDate: '2020-02-24'
 slug: applications-for-2020-intern-program-are-now-open
 tags:
-  - internship
+  - Internship
+  - Education
 description: |
   Want to apply to this year's summer intern program? Here's how.
 image: feature-wd.jpg

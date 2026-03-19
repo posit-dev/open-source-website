@@ -10,7 +10,8 @@ slug: tidy-dev-day-toulouse
 categories:
   - Community
 tags:
-  - tidyverse-dev-day
+  - Tidyverse-dev-day
+  - tidyverse
 photo:
   author: Romain François
 image: thumbnail-wd.jpg

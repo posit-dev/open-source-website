@@ -5,8 +5,9 @@ slug: spreadsheets-using-r
 categories:
   - Community
 tags:
-  - spreadsheets
-  - tidyverse
+  - Spreadsheets
+  - Education
+  - Learn
 people:
   - Devin Johnson
 photo:

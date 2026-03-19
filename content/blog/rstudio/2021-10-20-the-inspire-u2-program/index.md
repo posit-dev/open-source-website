@@ -21,6 +21,8 @@ port_status: in-progress
 languages: ["R"]
 categories:
   - Community
+tags:
+  - RStudio
 ---
 <sup>
 Logos of the National Science Foundation, Spelman College, and RStudio

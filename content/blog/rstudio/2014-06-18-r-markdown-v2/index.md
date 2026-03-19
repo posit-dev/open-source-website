@@ -6,13 +6,13 @@ date: '2014-06-18'
 categories:
   - Publishing
 tags:
-  - dynamic documents
-  - interactive documents
-  - knitr
-  - Markdown
+  - Dynamic documents
+  - Interactive documents
+  - Knitr
   - Pandoc
-  - rmarkdown
   - Packages
+  - RStudio
+  - News
 slug: r-markdown-v2
 blogcategories:
   - Products and Technology

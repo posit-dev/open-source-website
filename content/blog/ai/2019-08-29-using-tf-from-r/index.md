@@ -22,6 +22,12 @@ ported_categories:
   - TensorFlow/Keras
   - Meta
   - Concepts
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Meta
+  - Concepts
 ---
 
 

@@ -12,10 +12,8 @@ photo:
 categories:
   - Community
 tags:
-  - tidymodels
-  - workflowsets
-  - workflows
-  - parsnip
+  - tidyverse
+  - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

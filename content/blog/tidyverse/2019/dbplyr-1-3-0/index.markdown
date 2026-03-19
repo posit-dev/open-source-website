@@ -9,9 +9,8 @@ description: |
 categories:
   - Data Wrangling
 tags:
-  - dbplyr
-  - dplyr
   - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/sk59I1qRfEM
   author: Scott Webb

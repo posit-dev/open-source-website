@@ -6,7 +6,8 @@ date: '2020-07-06'
 categories:
   - Community
 tags:
-  - certify
+  - Certify
+  - Education
 slug: instructor-certification-findings
 description: |
   What do our certified instructors think of the program?

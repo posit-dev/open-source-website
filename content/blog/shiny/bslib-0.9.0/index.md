@@ -12,6 +12,8 @@ software: ["bslib", "shiny-r", "brand-yml"]
 languages: ["R"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 

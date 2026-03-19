@@ -12,9 +12,11 @@ photo:
 categories:
   - Interactive Apps
 tags:
-  - webr
-  - webassembly
-  - wasm
+  - Webr
+  - Webassembly
+  - Wasm
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

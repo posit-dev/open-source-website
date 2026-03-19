@@ -9,8 +9,8 @@ description: |
 categories:
   - Visualization
 tags:
-  - ggplot2
   - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/OhQhkkVJYhI
   author: chuttersnap

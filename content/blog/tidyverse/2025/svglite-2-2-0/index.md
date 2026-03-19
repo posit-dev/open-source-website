@@ -12,9 +12,10 @@ photo:
 categories:
   - Visualization
 tags:
-  - svglite
-  - graphic-device
-  - graphics
+  - Graphic-device
+  - Graphics
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

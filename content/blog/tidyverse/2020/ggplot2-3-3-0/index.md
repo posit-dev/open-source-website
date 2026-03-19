@@ -18,6 +18,9 @@ software: ["ggplot2"]
 languages: ["R"]
 ported_categories:
   - package
+tags:
+  - tidyverse
+  - Packages
 ---
 
 

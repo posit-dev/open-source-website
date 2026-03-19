@@ -19,6 +19,9 @@ software: ["reticulate"]
 languages: ["R"]
 ported_categories:
   - Natural Language Processing
+tags:
+  - AI
+  - Natural language processing
 ---
 
 

@@ -21,6 +21,11 @@ languages: ["R"]
 ported_categories:
   - TensorFlow/Keras
   - Concepts
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Concepts
 ---
 
 

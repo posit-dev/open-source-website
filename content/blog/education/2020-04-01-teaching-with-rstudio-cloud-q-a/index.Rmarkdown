@@ -7,8 +7,9 @@ slug: teaching-with-rstudio-cloud-q-a
 categories:
   - Community
 tags:
-  - rstudio-cloud
-  - teach
+  - RStudio Cloud
+  - Teaching
+  - Education
 people:
   - mine
 photo:

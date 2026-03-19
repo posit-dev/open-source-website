@@ -8,7 +8,10 @@ date: '2020-02-13'
 categories:
   - Community
 tags:
-  - conf2020
+  - Conf2020
+  - Education
+  - Learn
+  - Teaching
 slug: conf20-wtf
 photo:
   url: https://unsplash.com/photos/okvqMfl78YE

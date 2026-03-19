@@ -6,7 +6,9 @@ date: '2018-02-13'
 slug: tidyr-0-8-0
 categories:
   - Data Wrangling
-tags: []
+tags:
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/byXFt2LwVac
   author: Samuel Zeller

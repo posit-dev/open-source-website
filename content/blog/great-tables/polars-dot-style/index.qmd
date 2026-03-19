@@ -9,6 +9,8 @@ software: ["great-tables"]
 languages: ["Python"]
 categories:
   - Visualization
+tags:
+  - Great Tables
 ---
 
 Roughly a year ago, the DataFrame library Polars made its v1.0.0 release.

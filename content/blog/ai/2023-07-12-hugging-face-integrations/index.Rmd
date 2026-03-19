@@ -17,6 +17,10 @@ ported_categories:
   - Torch
   - Releases
   - R
+tags:
+  - AI
+  - Torch
+  - Releases
 ---
 
 ```{r setup, include=FALSE}

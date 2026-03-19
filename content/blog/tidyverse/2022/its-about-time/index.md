@@ -12,8 +12,9 @@ photo:
 categories:
   - Community
 tags:
-  - clock
-  - r-lib
+  - rlib
+  - tidyverse
+  - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

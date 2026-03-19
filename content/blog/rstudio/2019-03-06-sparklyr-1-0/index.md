@@ -8,11 +8,12 @@ categories:
   - Machine Learning
   - Data Wrangling
 tags:
-  - sparklyr
-  - big data
+  - Sparklyr
+  - Big data
   - Spark
   - Arrow
   - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

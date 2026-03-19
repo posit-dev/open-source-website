@@ -7,10 +7,9 @@ slug: great-looking-tables-gt-0-2
 categories:
   - Visualization
 tags:
-  - news
-  - packages
-  - rmarkdown
+  - News
   - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

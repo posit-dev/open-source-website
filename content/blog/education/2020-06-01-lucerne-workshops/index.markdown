@@ -7,6 +7,8 @@ categories:
   - Community
 tags:
   - Shiny
+  - Education
+  - Teaching
 description: |
   Data science training in English and German
 slug: lucerne-workshops

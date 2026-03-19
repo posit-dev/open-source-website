@@ -6,9 +6,9 @@ date: '2018-07-13'
 categories:
   - Publishing
 tags:
-  - book
-  - rmarkdown
+  - Book
   - R Markdown
+  - RStudio
 slug: announcing-the-r-markdown-book
 blogcategories:
   - Products and Technology

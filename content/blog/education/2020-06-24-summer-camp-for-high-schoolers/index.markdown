@@ -4,7 +4,8 @@ date: '2020-06-24'
 categories:
   - Community
 tags:
-  - learnr
+  - Education
+  - Teaching
 description: |
   How I introduced R to a group of teenagers, and how learnr saved me from boring students to death.
 slug: summer-camp-hs

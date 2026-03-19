@@ -7,8 +7,8 @@ people:
 categories:
   - Machine Learning
 tags:
-  - discrim
-  - tidymodels
+  - tidyverse
+  - Packages
 description: "The first version of discrim (0.0.1) is on CRAN. \n"
 photo:
   url: https://unsplash.com/photos/4op9_2Bt2Eg

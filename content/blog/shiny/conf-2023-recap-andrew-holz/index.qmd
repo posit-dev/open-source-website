@@ -13,6 +13,8 @@ software: ["shiny-r", "bslib"]
 languages: ["R"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 Appsilon's Shiny Conf 2023 was a big success, with many incredible speakers (including 3 members of our team!) and many viewers tuning in from afar. 

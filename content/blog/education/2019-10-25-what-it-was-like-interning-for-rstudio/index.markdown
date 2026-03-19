@@ -11,7 +11,8 @@ photo:
   url: https://unsplash.com/photos/KLJX9HmdVbw
   author: Danika Perkinson
 tags:
-  - internship
+  - Internship
+  - Education
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress

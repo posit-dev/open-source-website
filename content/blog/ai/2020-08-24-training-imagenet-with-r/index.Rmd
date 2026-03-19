@@ -20,6 +20,12 @@ ported_categories:
   - TensorFlow/Keras
   - Distributed Computing
   - Data Management
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Distributed computing
+  - Data management
 ---
 
 ```{r setup, include=FALSE}

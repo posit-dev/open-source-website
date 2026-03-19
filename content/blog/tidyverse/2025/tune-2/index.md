@@ -15,9 +15,10 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - postprocessing
-  - parallel processing
+  - Postprocessing
+  - Parallel processing
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

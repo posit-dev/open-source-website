@@ -13,8 +13,9 @@ photo:
 categories:
   - Data Wrangling
 tags:
-  - dplyr
-  - dplyr-1-1-0
+  - Dplyr-1-1-0
+  - tidyverse
+  - Packages
 editor_options:
   chunk_output_type: console
 image: thumbnail-wd.jpg

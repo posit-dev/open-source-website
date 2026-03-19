@@ -18,6 +18,10 @@ languages: ["R", "Python", "Julia"]
 ported_categories:
   - Learn
   - Workshop
+tags:
+  - Quarto
+  - Learn
+  - Workshop
 ---
 
 Join us for posit::conf(2024) in Seattle! On August 12, we're hosting a day of workshops featuring three dedicated to Quarto. Check out the options below and find the workshop that's just right for you. Already found your ideal Quarto workshop? [Register today](https://posit.co/conference/)!

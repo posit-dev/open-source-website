@@ -6,8 +6,9 @@ date: '2020-03-24'
 categories:
   - Community
 tags:
-  - teach
-  - certify
+  - Teaching
+  - Certify
+  - Education
 description: |
   Applications for RStudio's instructor training and certification program have reopened.
 slug: reopening-training-applications

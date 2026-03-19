@@ -15,6 +15,10 @@ software: ["tidyverse", "roxygen2"]
 languages: ["R"]
 ported_categories:
   - package
+tags:
+  - rlib
+  - tidyverse
+  - Packages
 ---
 
 ```{r setup, include = FALSE}

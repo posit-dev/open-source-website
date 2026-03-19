@@ -19,6 +19,9 @@ ported_from: education
 port_status: in-progress
 ported_categories:
   - learn
+tags:
+  - Education
+  - Learn
 ---
 
 My name is Christian Okoth and I am a senior at NC State studying statistics and English. This past semester, I participated in a mentorship collaboration between the NC State statistics department and [Dr. Julia Silge](https://juliasilge.com/) from RStudio. This project used data from the paper ["Persuasion for Good"](https://doi.org/10.18653/v1/p19-1566), which includes a large set of quantitative data as well as free text. The original paper attempted to collect samples for speech to teach AIs and chatbots how to better persuade people using personalized information to target their bots more efficiently. Our approach was more to understand the participants through examining the words they said and see if there were any significant or interesting relationships between word use and group qualities.

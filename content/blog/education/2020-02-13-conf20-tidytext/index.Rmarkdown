@@ -8,7 +8,10 @@ date: '2020-02-13'
 categories:
   - Community
 tags:
-  - conf2020
+  - Conf2020
+  - Education
+  - Learn
+  - Teaching
 slug: conf20-tidytext
 description: |
   Check out slides and other materials on text mining and modeling using tidy data principles.

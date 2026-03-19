@@ -13,6 +13,8 @@ software: ["shiny-r", "shiny-python"]
 languages: ["R", "Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 Videos from posit::conf(2025) are now available. To make it easier to explore how people are building with Shiny across R and Python, we’ve put together a curated playlist of the Shiny-focused talks from the conference. These sessions highlight practical apps, new tooling, design patterns, AI workflows, and real-world deployments built with Shiny.

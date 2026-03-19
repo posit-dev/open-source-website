@@ -21,6 +21,11 @@ languages: ["R"]
 ported_categories:
   - Cloud
   - Packages/Releases
+tags:
+  - AI
+  - Cloud
+  - Packages
+  - Releases
 ---
 
 

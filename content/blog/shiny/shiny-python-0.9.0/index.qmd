@@ -21,6 +21,8 @@ software: ["shiny-python"]
 languages: ["Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 Shiny for Python 0.9.0 is out! This version brings some exciting new features and improvements to the Shiny ecosystem. You can read the full [changelog](https://github.com/posit-dev/py-shiny/blob/main/CHANGELOG.md#090---2024-04-16) for a complete list of changes.

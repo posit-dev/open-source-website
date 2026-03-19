@@ -18,6 +18,10 @@ languages: ["R", "Python", "Julia"]
 ported_categories:
   - Extensions
   - Features
+tags:
+  - Quarto
+  - Extensions
+  - Features
 ---
 
 

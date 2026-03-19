@@ -10,8 +10,9 @@ date: '2020-05-06'
 categories:
   - Data Wrangling
 tags:
-  - dplyr
-  - dplyr-1-0-0
+  - Dplyr-1-0-0
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/FfbVFLAVscw
   author: Malvestida Magazine

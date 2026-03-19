@@ -9,8 +9,9 @@ categories:
 tags:
   - Livy
   - Spark
-  - sparklyr
+  - Sparklyr
   - Packages
+  - RStudio
 slug: sparklyr-0-5
 blogcategories:
   - Products and Technology

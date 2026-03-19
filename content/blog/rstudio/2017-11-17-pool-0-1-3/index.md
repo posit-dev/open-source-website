@@ -7,10 +7,10 @@ slug: pool-0-1-3
 categories:
   - Interactive Apps
 tags:
-  - databases
-  - shiny
-  - Packages
+  - Databases
   - Shiny
+  - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

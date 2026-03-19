@@ -12,6 +12,8 @@ software: ["shiny-python", "bslib"]
 languages: ["Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 

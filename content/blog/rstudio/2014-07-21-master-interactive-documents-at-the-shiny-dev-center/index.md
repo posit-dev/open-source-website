@@ -13,6 +13,8 @@ blogcategories:
   - Open Source
 tags:
   - Shiny
+  - RStudio
+  - Training
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]

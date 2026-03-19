@@ -9,6 +9,8 @@ software: ["pointblank"]
 languages: ["Python"]
 categories:
   - Data Wrangling
+tags:
+  - Pointblank
 ---
 
 

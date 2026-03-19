@@ -23,6 +23,14 @@ ported_categories:
   - TensorFlow/Keras
   - Concepts
   - Generative Models
+tags:
+  - AI
+  - Probabilistic machine learning
+  - Probabilistic deep learning
+  - TensorFlow
+  - Keras
+  - Concepts
+  - Generative models
 ---
 
 

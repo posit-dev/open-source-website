@@ -7,8 +7,8 @@ people:
 categories:
   - Machine Learning
 tags:
-  - parsnip
-  - tidymodels
+  - tidyverse
+  - Packages
 description: |
   A tidy unified interface to models
 photo:

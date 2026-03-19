@@ -13,6 +13,8 @@ software: ["querychat", "shiny-python", "shiny-r", "chatlas", "ellmer"]
 languages: ["R", "Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 You love data. And you love building dashboards with it, especially with your favourite tool Shiny. But even with a bullet-proof design, dozens of user stories, feedback loops, and adjustments, you also know that there are always questions that your dashboard leaves unanswered. 

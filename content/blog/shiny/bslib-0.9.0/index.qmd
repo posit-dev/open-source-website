@@ -12,6 +12,8 @@ software: ["bslib", "shiny-r", "brand-yml"]
 languages: ["R"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 [brand.yml]: https://posit-dev.github.io/brand-yml

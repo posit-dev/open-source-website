@@ -14,7 +14,8 @@ categories:
   - Community
 tags:
   - tidyverse
-  - teaching
+  - Teaching
+  - Learn
 editor_options:
   chunk_output_type: console
 image: thumbnail-wd.jpg

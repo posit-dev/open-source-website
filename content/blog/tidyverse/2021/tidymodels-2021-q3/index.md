@@ -12,10 +12,9 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - dials
-  - modeldata
-  - recipes
+  - Modeldata
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

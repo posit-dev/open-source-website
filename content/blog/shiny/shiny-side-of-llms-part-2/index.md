@@ -13,6 +13,8 @@ software: ["shiny-python", "shiny-r", "chatlas", "ellmer"]
 languages: ["R", "Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 

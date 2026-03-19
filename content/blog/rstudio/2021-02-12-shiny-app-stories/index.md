@@ -8,8 +8,9 @@ slug: shiny-app-stories
 categories:
   - Interactive Apps
 tags:
-  - shiny
-  - caching
+  - Shiny
+  - Caching
+  - RStudio
 description: 'App Stories are a bit different from the User Showcase: an App Story
   will center around a Shiny application, but the application will be designed specifically
   to show off specific features, and it will also include explanations of how to use

@@ -21,6 +21,10 @@ languages: ["R", "Python", "Julia"]
 ported_categories:
   - Features
   - Authoring
+tags:
+  - Quarto
+  - Features
+  - Authoring
 ---
 
 

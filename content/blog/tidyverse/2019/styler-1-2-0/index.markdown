@@ -12,8 +12,9 @@ slug: styler-1-2-0
 categories:
   - Best Practices
 tags:
-  - styler
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

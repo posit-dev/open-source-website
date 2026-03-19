@@ -5,6 +5,7 @@ slug: sharing-data-with-the-pins-package
 tags:
   - Pins
   - Packages
+  - RStudio
 people:
   - Katie Masiello
   - Isabella Velásquez

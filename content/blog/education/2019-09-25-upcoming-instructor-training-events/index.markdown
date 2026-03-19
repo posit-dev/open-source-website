@@ -6,7 +6,11 @@ date: '2019-09-25'
 categories:
   - Community
 tags:
-  - instructor training
+  - Instructor training
+  - Education
+  - Events
+  - Teaching
+  - Certify
 slug: upcoming-instructor-training-events
 description: |
   RStudio's instructor training and certification program will be running two upcoming online classes in September 2019. We hope you'll consider joining us.

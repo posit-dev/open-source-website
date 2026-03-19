@@ -17,6 +17,10 @@ languages: ["R", "Python", "Julia"]
 ported_categories:
   - Quarto 1.3
   - Releases
+tags:
+  - Quarto
+  - Quarto 1.3
+  - Releases
 ---
 
 We are happy to announce that Quarto 1.3 has been released. You can grab the current release from the [download page](https://quarto.org/docs/download/index.html).

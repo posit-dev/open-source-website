@@ -11,7 +11,8 @@ blogcategories:
   - Open Source
 tags:
   - Shiny
-  - shinyapps.io
+  - Shinyapps.io
+  - RStudio
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]

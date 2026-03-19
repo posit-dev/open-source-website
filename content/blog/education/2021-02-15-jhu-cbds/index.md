@@ -4,9 +4,10 @@ people:
   - Shannon Ellis
 date: '2021-02-15'
 tags:
-  - teach
-  - online
-  - online education
+  - Teaching
+  - Online
+  - Online education
+  - Education
 slug: cbds
 description: "Frustrations and possible solutions for online course development \n"
 photo:

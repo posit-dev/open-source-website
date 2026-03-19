@@ -14,6 +14,8 @@ software: ["chromote"]
 languages: ["R"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 

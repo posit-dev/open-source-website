@@ -6,12 +6,11 @@ date: '2014-10-02'
 categories:
   - Interactive Apps
 tags:
-  - DataTables
-  - Internet Explorer
-  - Progress
-  - shiny
-  - Packages
+  - Datatables
+  - Internet explorer
   - Shiny
+  - Packages
+  - RStudio
 slug: shiny-0-10-2
 blogcategories:
   - Products and Technology

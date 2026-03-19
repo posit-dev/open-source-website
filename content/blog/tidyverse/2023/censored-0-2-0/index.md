@@ -12,9 +12,8 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - parsnip
-  - censored
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

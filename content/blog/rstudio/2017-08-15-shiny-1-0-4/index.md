@@ -9,6 +9,7 @@ categories:
 tags:
   - Packages
   - Shiny
+  - RStudio
 blogcategories:
   - Products and Technology
 ported_from: rstudio

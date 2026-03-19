@@ -24,6 +24,10 @@ languages: ["R"]
 ported_categories:
   - TensorFlow/Keras
   - R
+tags:
+  - AI
+  - TensorFlow
+  - Keras
 ---
 
 

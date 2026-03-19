@@ -18,6 +18,11 @@ ported_categories:
   - Learn
   - Conference
   - Videos
+tags:
+  - Quarto
+  - Learn
+  - Conference
+  - Videos
 ---
 
 

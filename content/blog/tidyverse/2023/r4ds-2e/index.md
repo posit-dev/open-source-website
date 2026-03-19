@@ -12,7 +12,9 @@ photo:
 categories:
   - Community
 tags:
-  - book
+  - Book
+  - tidyverse
+  - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

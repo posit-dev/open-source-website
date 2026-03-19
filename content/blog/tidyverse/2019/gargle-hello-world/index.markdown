@@ -9,8 +9,9 @@ date: '2019-08-20'
 categories:
   - Data Wrangling
 tags:
-  - gargle
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://flic.kr/p/oe2LJ1
   author: North Carolina Christian advocate (1894)

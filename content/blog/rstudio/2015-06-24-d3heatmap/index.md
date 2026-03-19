@@ -7,9 +7,10 @@ categories:
   - Visualization
   - Interactive Apps
 tags:
-  - d3
-  - htmlwidgets
+  - D3
+  - Htmlwidgets
   - Packages
+  - RStudio
 slug: d3heatmap
 blogcategories:
   - Products and Technology

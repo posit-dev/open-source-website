@@ -13,7 +13,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - s7
+  - S7
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

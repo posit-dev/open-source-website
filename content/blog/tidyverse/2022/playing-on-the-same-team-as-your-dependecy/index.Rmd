@@ -12,7 +12,9 @@ photo:
   author: Florian Schmetz
 categories:
   - Community
-tags: []
+tags:
+  - tidyverse
+  - Learn
 editor_options:
   markdown:
     wrap: 72

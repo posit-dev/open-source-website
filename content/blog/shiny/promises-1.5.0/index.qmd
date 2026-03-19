@@ -17,6 +17,8 @@ software: ["promises"]
 languages: ["R"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 [promises]: https://rstudio.github.io/promises/

@@ -20,6 +20,12 @@ languages: ["R"]
 ported_categories:
   - TensorFlow/Keras
   - Image Recognition & Image Processing
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Image recognition
+  - Image processing
 ---
 
 

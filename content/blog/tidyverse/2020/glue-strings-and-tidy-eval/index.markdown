@@ -7,8 +7,8 @@ slug: glue-strings-and-tidy-eval
 categories:
   - Best Practices
 tags:
-  - package
-  - r-lib
+  - Packages
+  - rlib
   - tidyverse
 photo:
   url: https://unsplash.com/photos/pcoKkN3NsX0

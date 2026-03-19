@@ -10,14 +10,8 @@ date: '2019-09-05'
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - recipes
-  - embed
-  - rsample
-  - parsnip
-  - corrr
-  - tidypredict
-  - yardstick
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/rqIfy1UyIzE
   author: Branden Harvey

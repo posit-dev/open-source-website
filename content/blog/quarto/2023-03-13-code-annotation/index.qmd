@@ -21,6 +21,11 @@ ported_categories:
   - Features
   - Authoring
   - Quarto 1.3
+tags:
+  - Quarto
+  - Features
+  - Authoring
+  - Quarto 1.3
 ---
 
 {{< include ../_quarto-1.3-feature.qmd >}}

@@ -8,9 +8,9 @@ slug: plumber-v1-1-0
 categories:
   - Interactive Apps
 tags:
-  - Plumber
-  - async
-  - packages
+  - Async
+  - Packages
+  - RStudio
 resources:
   - name: hex sticker
     src: a-plumber-hex.png

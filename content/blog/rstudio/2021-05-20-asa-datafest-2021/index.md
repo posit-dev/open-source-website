@@ -7,9 +7,12 @@ slug: asa-datafest-2021
 categories:
   - Community
 tags:
-  - contest
-  - data science
+  - Contest
+  - Data science
   - RStudio Cloud
+  - RStudio
+  - Education
+  - Events
 blogcategories:
   - Company News and Events
 alttext: American Statistical Association DataFest logo

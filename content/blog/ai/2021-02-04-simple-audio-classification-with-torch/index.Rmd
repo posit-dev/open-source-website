@@ -19,6 +19,10 @@ ported_categories:
   - Torch
   - R
   - Audio Processing
+tags:
+  - AI
+  - Torch
+  - Audio processing
 ---
 
 

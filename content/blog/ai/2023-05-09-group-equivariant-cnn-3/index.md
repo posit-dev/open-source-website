@@ -22,6 +22,12 @@ ported_categories:
   - R
   - Concepts
   - Image Recognition & Image Processing
+tags:
+  - AI
+  - Torch
+  - Concepts
+  - Image recognition
+  - Image processing
 ---
 
 

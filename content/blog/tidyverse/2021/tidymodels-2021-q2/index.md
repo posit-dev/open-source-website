@@ -12,12 +12,8 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - parsnip
-  - recipes
-  - butcher
-  - yardstick
-  - probably
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

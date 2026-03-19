@@ -8,14 +8,11 @@ categories:
   - Publishing
   - Interactive Apps
 tags:
-  - learnr
-  - sortable
-  - shiny
-  - rmarkdown
-  - Packages
+  - Shiny
   - Packages
   - R Markdown
-  - Shiny
+  - RStudio
+  - Education
 blogcategories:
   - Training and Education
   - Products and Technology

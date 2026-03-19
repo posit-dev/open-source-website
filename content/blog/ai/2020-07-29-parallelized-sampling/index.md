@@ -19,6 +19,10 @@ languages: ["R"]
 ported_categories:
   - Concepts
   - Distributed Computing
+tags:
+  - AI
+  - Concepts
+  - Distributed computing
 ---
 
 

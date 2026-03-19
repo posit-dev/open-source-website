@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: yes
 title: Beautiful Tables in Typst
 description: |
   You can use HTML Tables with CSS styling in Typst via Quarto.
@@ -12,14 +12,20 @@ bibliography: []
 format:
   html:
     css: layout.css
-    number-sections: true
+    number-sections: yes
 categories:
   - Publishing
-ported_categories: ["Quarto 1.5", "Tables"]
+ported_categories:
+  - Quarto 1.5
+  - Tables
 ported_from: quarto
 port_status: raw
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+tags:
+  - Quarto
+  - Quarto 1.5
+  - Tables
 ---
 
 

@@ -20,6 +20,13 @@ ported_categories:
   - Natural Language Processing
   - TensorFlow/Keras
   - Image Recognition & Image Processing
+tags:
+  - AI
+  - Natural language processing
+  - TensorFlow
+  - Keras
+  - Image recognition
+  - Image processing
 ---
 
 

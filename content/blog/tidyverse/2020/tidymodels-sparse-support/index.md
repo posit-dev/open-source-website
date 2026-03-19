@@ -12,10 +12,8 @@ photo:
 categories:
   - Community
 tags:
-  - tidymodels
-  - tune
-  - parsnip
-  - hardhat
+  - tidyverse
+  - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

@@ -22,6 +22,12 @@ ported_categories:
   - TensorFlow/Keras
   - Time Series
   - Spatial Data
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Time series
+  - Spatial data
 ---
 
 

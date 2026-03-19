@@ -21,6 +21,13 @@ ported_categories:
   - TensorFlow/Keras
   - Unsupervised Learning
   - Image Recognition & Image Processing
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Unsupervised learning
+  - Image recognition
+  - Image processing
 ---
 
 

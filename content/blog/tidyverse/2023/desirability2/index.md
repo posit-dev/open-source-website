@@ -12,9 +12,10 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - desirability
-  - optimization
+  - Desirability
+  - Optimization
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

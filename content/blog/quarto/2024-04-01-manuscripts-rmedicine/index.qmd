@@ -17,6 +17,9 @@ software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:
   - Learn
+tags:
+  - Quarto
+  - Learn
 ---
 
 Recently I gave a webinar for R/Medicine titled "Quarto for Reproducible Medical Manuscripts". You can watch the video below or on the R Consortium website at <https://www.r-consortium.org/r-medicine-quarto-for-reproducible-medical-manuscripts>.[^1]

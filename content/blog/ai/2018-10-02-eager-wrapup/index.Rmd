@@ -19,6 +19,10 @@ software: ["keras3"]
 languages: ["R"]
 ported_categories:
   - TensorFlow/Keras
+tags:
+  - AI
+  - TensorFlow
+  - Keras
 ---
 
 ```{r setup, include=FALSE}

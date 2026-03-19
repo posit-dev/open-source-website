@@ -10,7 +10,7 @@ blogcategories:
   - Products and Technology
 tags:
   - Packages
-  - tidyverse
+  - RStudio
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]

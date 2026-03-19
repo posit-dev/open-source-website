@@ -22,6 +22,12 @@ ported_categories:
   - Packages/Releases
   - Distributed Computing
   - Spatial Data
+tags:
+  - AI
+  - Packages
+  - Releases
+  - Distributed computing
+  - Spatial data
 ---
 
 

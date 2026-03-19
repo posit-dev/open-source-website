@@ -12,9 +12,8 @@ photo:
 categories:
   - Community
 tags:
-  - tidymodels
-  - yardstick
-  - tune
+  - tidyverse
+  - Learn
 bibliography: refs.bib
 image: thumbnail-wd.jpg
 ported_from: tidyverse

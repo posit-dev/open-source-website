@@ -21,6 +21,13 @@ ported_categories:
   - Probabilistic ML/DL
   - Time Series
   - TensorFlow/Keras
+tags:
+  - AI
+  - Probabilistic machine learning
+  - Probabilistic deep learning
+  - Time series
+  - TensorFlow
+  - Keras
 ---
 
 

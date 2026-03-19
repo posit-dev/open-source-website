@@ -21,6 +21,12 @@ ported_categories:
   - TensorFlow/Keras
   - Packages/Releases
   - R
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Packages
+  - Releases
 ---
 
 ```{r setup, include=FALSE}

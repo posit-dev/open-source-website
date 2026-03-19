@@ -18,6 +18,10 @@ languages: ["R", "Python", "Julia"]
 ported_categories:
   - Learn
   - Workshop
+tags:
+  - Quarto
+  - Learn
+  - Workshop
 ---
 
 

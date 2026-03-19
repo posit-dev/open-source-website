@@ -7,8 +7,11 @@ slug: torch
 categories:
   - Machine Learning
 tags:
-  - data science
-  - deep learning
+  - Data science
+  - Deep learning
+  - RStudio
+  - Packages
+  - News
 editor_options:
   markdown:
     wrap: 72

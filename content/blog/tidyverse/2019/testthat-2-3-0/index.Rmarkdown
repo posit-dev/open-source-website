@@ -7,9 +7,9 @@ slug: testthat-2-3-0
 categories:
   - Best Practices
 tags:
-  - r-lib
-  - devtools
-  - testthat
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/n_vD-7RxA3Q
   author: Roman Kraft

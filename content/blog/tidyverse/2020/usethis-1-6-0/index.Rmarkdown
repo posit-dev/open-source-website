@@ -7,8 +7,8 @@ slug: usethis-1-6-0
 categories:
   - Best Practices
 tags:
-  - devtools
-  - usethis
+  - tidyverse
+  - Packages
 photo:
   author: Rock'n Roll Monkey
   url: https://unsplash.com/photos/R4WCbazrD1g

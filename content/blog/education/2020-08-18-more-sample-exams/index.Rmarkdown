@@ -6,7 +6,8 @@ date: '2020-08-18'
 categories:
   - Community
 tags:
-  - certify
+  - Certify
+  - Education
 description: |
   More examples of the kinds of questions we ask on the tidyverse and teaching exams.
 slug: more-example-exams

@@ -21,6 +21,10 @@ ported_categories:
   - Torch
   - R
   - Natural Language Processing
+tags:
+  - AI
+  - Torch
+  - Natural language processing
 ---
 
 

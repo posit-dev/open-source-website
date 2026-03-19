@@ -12,9 +12,9 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - tune
-  - parallelism
+  - Parallelism
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

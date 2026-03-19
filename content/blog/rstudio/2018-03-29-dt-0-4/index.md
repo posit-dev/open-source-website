@@ -7,10 +7,10 @@ categories:
   - Visualization
   - Interactive Apps
 tags:
-  - DT
-  - DataTables
-  - shiny
+  - Datatables
+  - Shiny
   - Packages
+  - RStudio
 slug: dt-0-4
 blogcategories:
   - Products and Technology

@@ -7,8 +7,10 @@ slug: rstudio-conf-2019-workshops
 categories:
   - MLOps and Admin
 tags:
-  - R Conference
+  - R conference
   - rstudio::conf
+  - RStudio
+  - Training
 blogcategories:
   - Training and Education
   - Company News and Events

@@ -17,6 +17,11 @@ ported_categories:
   - R package
   - knitr
   - Releases
+tags:
+  - Quarto
+  - Packages
+  - Knitr
+  - Releases
 ---
 
 

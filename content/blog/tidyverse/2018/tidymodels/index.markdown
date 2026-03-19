@@ -9,7 +9,8 @@ description: |
 categories:
   - Machine Learning
 tags:
-  - tidymodels
+  - tidyverse
+  - Packages
 photo:
   url: https://github.com/tidymodels
   author: tidymodels

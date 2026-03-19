@@ -11,7 +11,10 @@ photo:
 categories:
   - Community
 tags:
-  - instructor training
+  - Instructor training
+  - Education
+  - Teaching
+  - Certify
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress

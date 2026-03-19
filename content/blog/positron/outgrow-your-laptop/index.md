@@ -16,6 +16,9 @@ languages: ["R", "Python"]
 ported_categories:
   - R
   - Talks
+tags:
+  - Positron
+  - Talks
 ---
 
 

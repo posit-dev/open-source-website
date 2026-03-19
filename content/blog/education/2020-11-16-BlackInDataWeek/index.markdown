@@ -18,6 +18,9 @@ port_status: in-progress
 languages: ["R"]
 ported_categories:
   - learn
+tags:
+  - Education
+  - Learn
 ---
 
 

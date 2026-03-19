@@ -6,9 +6,11 @@ date: '2015-05-28'
 categories:
   - MLOps and Admin
 tags:
-  - big data
+  - Big data
   - Spark
-  - SparkR
+  - Sparkr
+  - RStudio
+  - Training
 slug: sparkr-preview-by-vincent-warmerdam
 blogcategories:
   - Training and Education

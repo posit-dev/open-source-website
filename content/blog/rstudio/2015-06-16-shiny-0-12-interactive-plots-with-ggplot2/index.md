@@ -6,9 +6,9 @@ date: '2015-06-16'
 categories:
   - Interactive Apps
 tags:
-  - ggplot2
   - Packages
   - Shiny
+  - RStudio
 slug: shiny-0-12-interactive-plots-with-ggplot2
 blogcategories:
   - Products and Technology

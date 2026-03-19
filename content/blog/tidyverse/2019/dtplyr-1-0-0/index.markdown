@@ -10,9 +10,8 @@ description: |
 categories:
   - Data Wrangling
 tags:
-  - dtplyr
-  - dplyr
   - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/h13Y8vyIXNU
   author: Jay Ruzesky

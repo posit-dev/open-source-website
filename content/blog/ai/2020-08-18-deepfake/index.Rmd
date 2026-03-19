@@ -18,6 +18,10 @@ software: ["reticulate"]
 languages: ["R"]
 ported_categories:
   - Image Recognition & Image Processing
+tags:
+  - AI
+  - Image recognition
+  - Image processing
 ---
 
 

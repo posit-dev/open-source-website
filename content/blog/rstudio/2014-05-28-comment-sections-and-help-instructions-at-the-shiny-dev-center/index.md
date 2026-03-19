@@ -10,6 +10,7 @@ blogcategories:
   - Products and Technology
 tags:
   - Shiny
+  - RStudio
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]

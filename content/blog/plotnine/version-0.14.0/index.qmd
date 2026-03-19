@@ -9,6 +9,9 @@ software: ["plotnine"]
 languages: ["Python"]
 ported_categories:
   - releases
+tags:
+  - Plotnine
+  - Releases
 ---
 
 

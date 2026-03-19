@@ -12,7 +12,9 @@ photo:
   author: Bhargava Srivari
 categories:
   - Data Wrangling
-tags: []
+tags:
+  - tidyverse
+  - Packages
 editor_options:
   chunk_output_type: console
 image: thumbnail-wd.jpg

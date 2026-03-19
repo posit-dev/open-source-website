@@ -7,8 +7,8 @@ slug: radix-for-r-markdown
 categories:
   - Publishing
 tags:
-  - rmarkdown
   - R Markdown
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

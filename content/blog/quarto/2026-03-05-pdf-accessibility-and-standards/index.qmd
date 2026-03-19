@@ -13,6 +13,8 @@ software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 categories:
   - Publishing
+tags:
+  - Quarto
 ---
 
 {{< include ../_quarto-1.9-feature.qmd >}}

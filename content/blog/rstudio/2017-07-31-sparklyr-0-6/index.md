@@ -9,9 +9,10 @@ categories:
   - MLOps and Admin
 tags:
   - Spark
-  - sparklyr
-  - Distributed Computing
+  - Sparklyr
+  - Distributed computing
   - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

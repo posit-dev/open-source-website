@@ -17,6 +17,10 @@ languages: ["Python"]
 ported_categories:
   - Extensions
   - Features
+tags:
+  - Quarto
+  - Extensions
+  - Features
 ---
 
 

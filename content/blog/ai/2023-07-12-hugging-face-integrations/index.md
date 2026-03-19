@@ -20,6 +20,10 @@ ported_categories:
   - Torch
   - Releases
   - R
+tags:
+  - AI
+  - Torch
+  - Releases
 ---
 
 

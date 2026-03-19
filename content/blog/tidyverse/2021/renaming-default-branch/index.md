@@ -12,8 +12,9 @@ photo:
 categories:
   - Community
 tags:
-  - usethis
-  - devtools
+  - tidyverse
+  - Learn
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

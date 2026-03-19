@@ -9,6 +9,8 @@ software: ["great-tables"]
 languages: ["Python"]
 categories:
   - Visualization
+tags:
+  - Great Tables
 ---
 
 A few months ago, we released a [blog post](/blog/great-tables/polars-styling/) about how much we loved the combination of Polars and Great Tables. We found that Polars lazy expression system opened up convenient ways to conditionally format tables for presentation. However, excited as we were, we were harboring a shameful secret: Great Tables enabled Polars as an optional dependency, but had a hard dependency on the alternative DataFrame library Pandas.

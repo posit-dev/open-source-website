@@ -12,8 +12,8 @@ photo:
 categories:
   - Community
 tags:
-  - tidymodels
-  - internship
+  - Internship
+  - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

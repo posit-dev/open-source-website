@@ -6,7 +6,8 @@ date: '2020-10-02'
 categories:
   - Community
 tags:
-  - certify
+  - Certify
+  - Education
 description: |
   Examples of the kinds of questions we ask on the Shiny exam.
 slug: example-shiny-exam

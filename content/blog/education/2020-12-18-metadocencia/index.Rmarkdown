@@ -21,6 +21,10 @@ languages: ["R"]
 ported_categories:
   - learn
   - teach
+tags:
+  - Education
+  - Learn
+  - Teaching
 ---
 
 ## What?

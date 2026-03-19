@@ -16,6 +16,10 @@ languages: ["R", "Python", "Julia"]
 ported_categories:
   - Demo
   - Quarto 1.4
+tags:
+  - Quarto
+  - Demo
+  - Quarto 1.4
 ---
 
 

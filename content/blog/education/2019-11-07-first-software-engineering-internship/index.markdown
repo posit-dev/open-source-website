@@ -13,7 +13,8 @@ photo:
   url: https://unsplash.com/photos/ywz_3Qc0xdw
   author: Geoff Park
 tags:
-  - internship
+  - Internship
+  - Education
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress

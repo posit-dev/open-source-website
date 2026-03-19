@@ -7,8 +7,10 @@ categories:
   - Interactive Apps
   - MLOps and Admin
 tags:
-  - data
+  - Data
   - Shiny
+  - RStudio
+  - Training
 slug: article-spotlight-persistent-data-storage-in-shiny-apps
 blogcategories:
   - Products and Technology

@@ -7,6 +7,8 @@ software: ["plotnine"]
 languages: ["Python"]
 categories:
   - Visualization
+tags:
+  - Plotnine
 ---
 
 

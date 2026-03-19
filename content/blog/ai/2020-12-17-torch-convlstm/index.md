@@ -22,6 +22,13 @@ ported_categories:
   - Image Recognition & Image Processing
   - Time Series
   - Spatial Data
+tags:
+  - AI
+  - Torch
+  - Image recognition
+  - Image processing
+  - Time series
+  - Spatial data
 ---
 
 

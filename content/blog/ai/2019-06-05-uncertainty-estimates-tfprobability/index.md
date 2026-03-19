@@ -22,6 +22,13 @@ ported_categories:
   - Probabilistic ML/DL
   - TensorFlow/Keras
   - Concepts
+tags:
+  - AI
+  - Probabilistic machine learning
+  - Probabilistic deep learning
+  - TensorFlow
+  - Keras
+  - Concepts
 ---
 
 

@@ -12,9 +12,8 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - rsample
-  - tidyclust
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

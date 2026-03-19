@@ -13,6 +13,8 @@ software: ["shiny-r", "shinylive", "bslib"]
 languages: ["R"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 

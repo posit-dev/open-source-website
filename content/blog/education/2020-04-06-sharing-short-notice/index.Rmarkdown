@@ -6,8 +6,9 @@ date: '2020-04-06'
 categories:
   - Community
 tags:
-  - online
-  - teach
+  - Online
+  - Teaching
+  - Education
 people:
   - alison
   - Desirée De Leon

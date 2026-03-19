@@ -6,7 +6,10 @@ date: '2020-02-14'
 categories:
   - Community
 tags:
-  - conf2020
+  - Conf2020
+  - Education
+  - Learn
+  - Teaching
 slug: conf20-intro-ml
 photo:
   url: https://unsplash.com/photos/2YPSfYQA6Z0

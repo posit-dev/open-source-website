@@ -9,9 +9,9 @@ slug: embed-0-1-0
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - embed
-  - embed-0-1-0
+  - Embed-0-1-0
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/rNhL85ocOGg
   author: Clark Van Der Beken

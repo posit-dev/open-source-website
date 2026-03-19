@@ -13,6 +13,9 @@ port_status: in-progress
 languages: ["R"]
 ported_categories:
   - News
+tags:
+  - RStudio
+  - News
 ---
 
 

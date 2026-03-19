@@ -20,6 +20,10 @@ ported_categories:
   - Torch
   - R
   - Time Series
+tags:
+  - AI
+  - Torch
+  - Time series
 ---
 
 

@@ -8,7 +8,8 @@ date: '2020-09-21'
 categories:
   - Community
 tags:
-  - community
+  - Community
+  - Education
 description: |
   A brief history of Data Latam and its role in offering educational resources to Spanish-speaking R users.
 slug: data-latam

@@ -8,8 +8,9 @@ people:
 categories:
   - Best Practices
 tags:
-  - generics
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 description: |
   Reduce package dependencies by using common lightweight S3 generics.
 photo:

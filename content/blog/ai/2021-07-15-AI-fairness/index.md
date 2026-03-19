@@ -20,6 +20,11 @@ ported_categories:
   - Concepts
   - Meta
   - AI & Society
+tags:
+  - AI
+  - Concepts
+  - Meta
+  - Society
 ---
 
 

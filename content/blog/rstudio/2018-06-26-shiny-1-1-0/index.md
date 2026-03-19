@@ -6,10 +6,10 @@ date: '2018-06-26'
 categories:
   - Interactive Apps
 tags:
-  - async
-  - shiny
-  - Packages
+  - Async
   - Shiny
+  - Packages
+  - RStudio
 slug: shiny-1-1-0
 blogcategories:
   - Products and Technology

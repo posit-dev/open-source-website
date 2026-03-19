@@ -8,7 +8,6 @@ categories:
   - Visualization
   - Community
 tags:
-  - ggplot2
   - tidyverse
 description: |
   Blog posts from the community using ggplot2 3.0.0.

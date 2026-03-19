@@ -18,6 +18,10 @@ software: ["tidyverse", "pkgdown"]
 languages: ["R"]
 ported_categories:
   - package
+tags:
+  - rlib
+  - tidyverse
+  - Packages
 ---
 
 ```{r setup, include = FALSE}

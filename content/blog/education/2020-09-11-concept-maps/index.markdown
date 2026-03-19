@@ -6,7 +6,8 @@ date: '2020-09-11'
 categories:
   - Community
 tags:
-  - certify
+  - Certify
+  - Education
 description: |
   Some examples of a useful technique for designing lessons.
 slug: concept-maps

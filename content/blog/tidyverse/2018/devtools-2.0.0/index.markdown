@@ -7,8 +7,9 @@ people:
 categories:
   - Best Practices
 tags:
-  - devtools
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 description: |
   Make package development easier by providing R functions that simplify and expedite common tasks.
 photo:

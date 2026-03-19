@@ -8,6 +8,7 @@ categories:
 tags:
   - Security
   - Shiny
+  - RStudio
 slug: shiny-server-1-4-6
 blogcategories:
   - Products and Technology

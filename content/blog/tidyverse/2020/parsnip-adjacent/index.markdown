@@ -12,11 +12,11 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - baguette
-  - poissonreg
-  - plsmod
-  - parsnip
+  - Baguette
+  - Poissonreg
+  - Plsmod
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

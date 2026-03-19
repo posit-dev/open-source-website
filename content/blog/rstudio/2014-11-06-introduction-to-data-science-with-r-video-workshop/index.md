@@ -15,6 +15,10 @@ languages: ["R"]
 ported_categories:
   - News
   - Training
+tags:
+  - RStudio
+  - News
+  - Training
 ---
 
 

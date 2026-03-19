@@ -13,8 +13,9 @@ photo:
 categories:
   - Artificial Intelligence
 tags:
-  - ragnar
-  - ai
+  - AI
+  - tidyverse
+  - Packages
 editor:
   markdown:
     canonical: yes

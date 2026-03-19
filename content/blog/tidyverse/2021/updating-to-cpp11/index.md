@@ -12,8 +12,9 @@ photo:
 categories:
   - Community
 tags:
-  - cpp11
-  - internship
+  - Internship
+  - tidyverse
+  - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

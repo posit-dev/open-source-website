@@ -13,8 +13,9 @@ photo:
 categories:
   - Interactive Apps
 tags:
-  - plumber2
-  - web
+  - Web
+  - tidyverse
+  - Packages
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "plumber2"]

@@ -6,7 +6,8 @@ people:
   - Simon Couch
 date: '2020-06-30'
 tags:
-  - internship
+  - Internship
+  - Education
 slug: tidymodels-internship
 description: |
   A midpoint report on work with broom and model stacking.

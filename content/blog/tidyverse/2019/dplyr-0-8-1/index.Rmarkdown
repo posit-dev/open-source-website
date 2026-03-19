@@ -9,7 +9,8 @@ date: '2019-05-17'
 categories:
   - Data Wrangling
 tags:
-  - dplyr
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/BiZ-_6kNjbI
   author: Sophie Elvis

@@ -9,8 +9,8 @@ description: |
 categories:
   - Machine Learning
 tags:
-  - textrecipes
-  - tidymodels
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/X1exjxxBho4
   author: Roman Kraft

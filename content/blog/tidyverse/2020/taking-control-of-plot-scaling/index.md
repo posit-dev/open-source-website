@@ -6,8 +6,9 @@ description: |
 people:
   - Thomas Lin Pedersen
 tags:
-  - graphics
-  - ragg
+  - Graphics
+  - tidyverse
+  - Learn
 categories:
   - Community
 photo:

@@ -11,6 +11,7 @@ blogcategories:
   - Products and Technology
 tags:
   - Packages
+  - RStudio
 ported_from: rstudio
 port_status: in-progress
 languages: ["R", "Python"]

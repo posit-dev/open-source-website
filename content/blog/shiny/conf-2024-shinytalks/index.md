@@ -14,6 +14,8 @@ software: ["shiny-r", "shiny-python"]
 languages: ["R", "Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 

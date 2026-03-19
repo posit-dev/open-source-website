@@ -24,6 +24,12 @@ ported_categories:
   - R
   - Privacy & Security
   - TensorFlow/Keras
+tags:
+  - AI
+  - Privacy
+  - Security
+  - TensorFlow
+  - Keras
 ---
 
 ```{r setup, include=FALSE}

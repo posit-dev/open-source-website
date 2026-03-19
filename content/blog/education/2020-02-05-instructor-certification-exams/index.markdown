@@ -6,7 +6,9 @@ date: '2020-02-05'
 categories:
   - Community
 tags:
-  - instructor training
+  - Instructor training
+  - Education
+  - Certify
 draft: no
 slug: instructor-certification-exams
 description: |

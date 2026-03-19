@@ -13,7 +13,8 @@ categories:
   - Community
 tags:
   - tidyverse
-  - teaching
+  - Teaching
+  - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

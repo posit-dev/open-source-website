@@ -13,6 +13,8 @@ software: ["plotnine"]
 languages: ["Python"]
 ported_categories:
   - plotnine
+tags:
+  - Plotnine
 ---
 
 

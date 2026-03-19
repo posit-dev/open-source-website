@@ -12,6 +12,7 @@ blogcategories:
 tags:
   - Packages
   - RStudio IDE
+  - RStudio
 ported_from: rstudio
 port_status: in-progress
 software: ["packrat"]

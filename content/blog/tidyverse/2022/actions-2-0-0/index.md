@@ -12,7 +12,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - GitHub Actions
+  - Github actions
+  - tidyverse
+  - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

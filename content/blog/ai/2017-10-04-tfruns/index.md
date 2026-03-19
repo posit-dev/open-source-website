@@ -20,6 +20,10 @@ software: ["tfruns", "keras3", "tfestimators"]
 languages: ["R"]
 ported_categories:
   - Packages/Releases
+tags:
+  - AI
+  - Packages
+  - Releases
 ---
 
 

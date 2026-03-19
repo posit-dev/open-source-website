@@ -13,7 +13,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - GitHub Actions
+  - Github actions
+  - tidyverse
+  - Programming
 editor_options:
   markdown:
     wrap: sentence

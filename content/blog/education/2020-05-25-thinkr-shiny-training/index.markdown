@@ -7,6 +7,8 @@ categories:
   - Community
 tags:
   - Shiny
+  - Education
+  - Teaching
 description: |
   Shiny training from our friends at ThinkR
 slug: thinkr-shiny-training

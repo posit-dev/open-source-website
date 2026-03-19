@@ -9,8 +9,8 @@ slug: updates-to-ragg-and-systemfonts
 categories:
   - Visualization
 tags:
-  - ragg
-  - systemfonts
+  - tidyverse
+  - Packages
 authors: Thomas Lin Pedersen
 photo:
   url: https://unsplash.com/photos/BVyNlchWqzs

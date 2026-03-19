@@ -4,7 +4,8 @@ people:
   - Greg
 date: '2019-11-25'
 tags:
-  - internship
+  - Internship
+  - Education
 publishDate: '2019-11-21'
 slug: rstudio-internships-2020-preview
 description: |

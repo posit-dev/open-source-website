@@ -29,6 +29,9 @@ languages: ["R"]
 ported_categories:
   - Natural Language Processing
   - R
+tags:
+  - AI
+  - Natural language processing
 ---
 
 
