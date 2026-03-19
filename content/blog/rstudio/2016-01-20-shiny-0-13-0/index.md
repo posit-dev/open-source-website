@@ -14,7 +14,6 @@ blogcategories:
 tags:
 - Packages
 - Shiny
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

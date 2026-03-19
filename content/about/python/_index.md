@@ -30,7 +30,13 @@ Positron is a polyglot IDE designed specifically for data science. Built on Code
 
 {{< /columns >}}
 
-{{< columns split="2,3" >}}
+{{< columns split="2,3" reverse=true >}}
+
+## Familiar concepts, Python-native implementation
+
+We bring proven data science patterns to the Python ecosystem. If you’re a Python-first developer, these tools are built as native Python libraries to fit your existing workflows. If you’re transitioning from R to Python, we provide familiar touchpoints to make your move more productive.
+
+---
 
 {{< insert-items cols="2" format="tile" hide-badge=true >}}
 - software/querychat
@@ -40,12 +46,6 @@ Positron is a polyglot IDE designed specifically for data science. Built on Code
 - software/gt-extras
 - software/brand-yml
 {{< /insert-items>}}
-
----
-
-## Familiar concepts, Python-native implementation
-
-We bring proven data science patterns to the Python ecosystem. If you’re a Python-first developer, these tools are built as native Python libraries to fit your existing workflows. If you’re transitioning from R to Python, we provide familiar touchpoints to make your move more productive.
 
 {{< /columns >}}
 

@@ -14,7 +14,6 @@ slug: revamped-bookdown-org
 blogcategories:
 - Products and Technology
 - Company News and Events
-events: blog
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress

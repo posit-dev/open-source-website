@@ -13,7 +13,6 @@ tags:
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---
@@ -27,7 +26,7 @@ install.packages("shiny")
 
 For most Shiny users, the most exciting news is that file inputs now support dragging and dropping:
 
-   ![](/blog-images/2017-08-15-shiny-1-0-4-drag-drop.gif){ style="box-shadow: 0 0 8px #666;" }
+   ![](2017-08-15-shiny-1-0-4-drag-drop.gif){ style="box-shadow: 0 0 8px #666;" }
 
 It is now possible to add and remove tabs from a `tabPanel`, with the new functions `insertTab()`, `appendTab()`, `prependTab()`, and `removeTab()`. It is also possible to hide and show tabs with `hideTab()` and `showTab()`.
 

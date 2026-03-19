@@ -14,7 +14,6 @@ resources:
 - name: legos
   src: legos.jpeg
   title: Lego characters coming together
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

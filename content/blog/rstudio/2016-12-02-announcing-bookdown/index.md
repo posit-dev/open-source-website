@@ -13,7 +13,6 @@ blogcategories:
 tags:
 - Packages
 - R Markdown
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

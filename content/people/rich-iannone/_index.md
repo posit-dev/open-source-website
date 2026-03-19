@@ -1,6 +1,6 @@
 ---
 title: "Rich Iannone"
-image: "profile.jpg"
+image: "rich-headshot.png"
 role: "Senior Software Engineer"
 affiliation: "Posit, PBC"
 social:

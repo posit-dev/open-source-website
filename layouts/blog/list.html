@@ -1,22 +1,12 @@
+{{ define "head" }}
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+{{ end }}
+
 {{ define "main" }}
 <div class="flex flex-col w-full relative mt-6 max-w-7xl mx-auto" data-pagefind-ignore>
 
-  {{- /* Categories filter section */ -}}
-  {{- $categories := .Site.Taxonomies.categories -}}
-  {{- if gt (len $categories) 0 -}}
-  <section class="mb-8">
-    <div class="flex flex-wrap gap-2">
-      <a href="/blog/" class="px-4 py-2 rounded-full border text-sm font-medium transition-colors bg-blue-500 border-blue-500 text-white">
-        All Posts
-      </a>
-      {{- range $name, $taxonomy := $categories -}}
-      <a href="/categories/{{ $name | urlize }}/" class="px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-blue-50 hover:border-blue-200 dark:hover:bg-gray-800 dark:hover:border-gray-600 transition-colors">
-        {{ $name | title }} <span class="text-gray-500 dark:text-gray-400">({{ len $taxonomy.Pages }})</span>
-      </a>
-      {{- end -}}
-    </div>
-  </section>
-  {{- end -}}
+  {{- /* Blog filters */ -}}
+  {{ partial "blog-filters.html" (dict) }}
 
   {{- $paginator := .Paginate .RegularPages 20 -}}
   {{- $posts := $paginator.Pages -}}
@@ -32,7 +22,7 @@
 
   {{- /* "Latest" section header */ -}}
   <section>
-    <h2 class="text-sm font-semibold mb-6 text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+    <h2 class="text-sm font-semibold mb-6 text-gray-600 uppercase tracking-wider">
       {{- if eq $paginator.PageNumber 1 -}}Latest{{- else -}}All Posts{{- end -}}
     </h2>
 

@@ -18,7 +18,6 @@ description: "{plumber} v1.1.0 is now on CRAN! In this post, we'll highlight som
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

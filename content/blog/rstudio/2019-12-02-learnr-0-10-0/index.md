@@ -22,7 +22,6 @@ blogcategories:
 - Training and Education
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

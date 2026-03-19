@@ -12,7 +12,6 @@ tags:
   - pins
   - Connect
 alttext: an old frazzled man holds a huge remote next to a frightened boy
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

@@ -14,7 +14,6 @@ slug: new-shiny-article-style-your-apps-with-css
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

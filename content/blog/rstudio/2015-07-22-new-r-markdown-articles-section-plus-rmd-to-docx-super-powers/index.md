@@ -12,7 +12,6 @@ slug: new-r-markdown-articles-section-plus-rmd-to-docx-super-powers
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

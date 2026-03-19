@@ -16,7 +16,6 @@ resources:
   - name: featured
     src: image1.png
     title: Screenshot of Tableau visualization and ggviolin plot in a Tableau dashboard
-events: blog
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress

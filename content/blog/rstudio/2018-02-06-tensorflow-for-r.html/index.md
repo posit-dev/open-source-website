@@ -12,7 +12,6 @@ slug: tensorflow-for-r
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---
@@ -34,9 +33,9 @@ port_status: in-progress
 <li><p><a href="https://tensorflow.rstudio.com/tools/tfdatasets/">tfdatasets</a>—Scalable input pipelines for TensorFlow models.</p></li>
 </ul>
 <p>Besides the various R interfaces to TensorFlow, there are tools to help with training workflow, including real time feedback on training metrics within the RStudio IDE:</p>
-<p><img src="/blog-images/2018-02-06-keras-training-metrics.gif" /></p>
+<p><img src="2018-02-06-keras-training-metrics.gif" /></p>
 <p>The <a href="https://tensorflow.rstudio.com/tools/tfruns/">tfruns package</a> provides tools to track, and manage TensorFlow training runs and experiments:</p>
-<p><img src="/blog-images/2018-02-06-tfruns.png" style="border: solid 1px #cccccc;" /></p>
+<p><img src="2018-02-06-tfruns.png" style="border: solid 1px #cccccc;" /></p>
 </div>
 <div id="access-to-gpus" class="section level2">
 <h2>Access to GPUs</h2>

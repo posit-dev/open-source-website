@@ -8,7 +8,6 @@ categories:
 slug: nyc-meetup-r-markdown
 blogcategories:
 - Company News and Events
-events: blog
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress

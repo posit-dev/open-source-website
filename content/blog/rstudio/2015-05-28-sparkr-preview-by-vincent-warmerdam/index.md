@@ -12,7 +12,6 @@ tags:
 slug: sparkr-preview-by-vincent-warmerdam
 blogcategories:
 - Training and Education
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

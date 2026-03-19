@@ -10,7 +10,6 @@ blogcategories:
 - Products and Technology
 tags:
 - Packages
-events: blog
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress

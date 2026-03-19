@@ -1,10 +1,12 @@
 {{/* columns.html — Responsive multi-column layout.
      Split inner content on "---" lines.
      Optional "split" param: comma-separated fr values (e.g., "2,1").
+     Optional "class" param: additional Tailwind classes for the grid container.
      Default: equal-width columns. Stacks on mobile.
 */}}
 {{ $split := .Get "split" }}
-{{ $id := printf "cols-%d" .Ordinal }}
+{{ $class := .Get "class" | default "" }}
+{{ $reverse := .Get "reverse" | default false }}
 
 {{/* Split inner content on --- lines, filter empty chunks */}}
 {{ $raw := split .Inner "\n---\n" }}
@@ -15,33 +17,30 @@
     {{ $columns = $columns | append $trimmed }}
   {{ end }}
 {{ end }}
-{{ $numCols := len $columns }}
 
-{{/* Build grid-template-columns value */}}
-{{ $frParts := slice }}
+{{/* Build Tailwind grid-cols class */}}
+{{ $gridClass := "" }}
 {{ if $split }}
+  {{ $frParts := slice }}
   {{ range split $split "," }}
     {{ $frParts = $frParts | append (printf "%sfr" (strings.TrimSpace .)) }}
   {{ end }}
+  {{ $gridClass = printf "md:grid-cols-[%s]" (delimit $frParts "_") }}
 {{ else }}
-  {{ range $columns }}
-    {{ $frParts = $frParts | append "1fr" }}
-  {{ end }}
+  {{ $gridClass = printf "md:grid-cols-%d" (len $columns) }}
 {{ end }}
-{{ $gridTemplate := delimit $frParts " " }}
 
-<style>
-#{{ $id }} { display: grid; gap: 3rem; align-items: start; }
-@media (min-width: 768px) {
-  #{{ $id }} { grid-template-columns: {{ $gridTemplate | safeCSS }}; }
-}
-</style>
-<div id="{{ $id }}" class="mt-12">
-  {{ range $columns }}
-    {{ if findRE "<div" . }}
-      <div>{{ . | safeHTML }}</div>
+<div class="grid gap-12 items-start mt-12 {{ $gridClass }} {{ $class }}">
+  {{ $numCols := len $columns }}
+  {{ range $i, $col := $columns }}
+    {{ $orderClass := "" }}
+    {{ if $reverse }}
+      {{ $orderClass = printf "md:order-%d" (sub $numCols $i) }}
+    {{ end }}
+    {{ if findRE "<div" $col }}
+      <div class="{{ $orderClass }}">{{ $col | safeHTML }}</div>
     {{ else }}
-      <div class="prose max-w-none">{{ . | markdownify }}</div>
+      <div class="prose max-w-none {{ $orderClass }}">{{ $col | markdownify }}</div>
     {{ end }}
   {{ end }}
 </div>

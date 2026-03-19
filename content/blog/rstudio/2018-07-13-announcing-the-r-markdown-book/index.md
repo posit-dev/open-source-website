@@ -13,7 +13,6 @@ slug: announcing-the-r-markdown-book
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

@@ -12,7 +12,6 @@ blogcategories:
 tags:
 - Packages
 - tidyverse
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

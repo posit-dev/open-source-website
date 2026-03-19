@@ -1,6 +1,6 @@
 ---
 title: "Carlos Scheidegger"
-image: "profile.jpg"
+image: "carlos.jpg"
 role: "Senior Principal Software Engineer"
 affiliation: "Posit, PBC"
 social:

@@ -14,6 +14,7 @@ cheatsheets:
   badge_text: "cheatsheet"
   card_class: "bg-gray-100/25"
   hero_class: ""
+  hero_image_show: false
   hero_layout: "banner"
   image_class: "w-full object-cover"
   people_show: true
@@ -62,6 +63,7 @@ videos:
   badge_text: "video"
   card_class: "bg-gray-100/25"
   hero_class: ""
+  hero_image_show: false
   hero_layout: "banner"
   image_class: "w-full object-cover"
   people_show: true

@@ -15,7 +15,6 @@ tags:
   - Internships
 description: Many RStudio cheatsheets have been updated or reworked based on recent package updates, and we've updated the cheatsheet contribution process as well. You'll also see some small changes to the cheatsheet website reflecting these changes.
 alttext: sticky notes
-events: blog
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress

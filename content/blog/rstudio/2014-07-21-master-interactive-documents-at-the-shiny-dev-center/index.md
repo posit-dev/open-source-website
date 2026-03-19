@@ -13,7 +13,6 @@ blogcategories:
 - Open Source
 tags:
 - Shiny
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

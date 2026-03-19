@@ -10,7 +10,6 @@ tags:
   - Use Cases
 description: In this post, we explore the creation and evolution of the Clusterbuster, a Shiny app developed by the Dutch National Institute for Public Health and the Environment. Hundreds of doctors and epidemiologists use the Clusterbuster to gain insight into COVID-19 clusters in the Netherlands.
 alttext: Clusterbuster logo
-events: blog
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress

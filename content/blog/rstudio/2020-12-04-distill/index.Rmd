@@ -15,7 +15,6 @@ description: |
   We are proud to announce the latest release of the distill package is now on CRAN. This version contains a number of major upgrades including the introduction of themed articles and websites, search, and improved accessibility.
 bibliography: distill.bib
 link-citations: yes
-events: blog
 ---
 
 We are proud to announce that version 1.0 of the [distill package](https://pkgs.rstudio.com/distill/) is now on [CRAN](https://cran.r-project.org/web/packages/distill/index.html). While Distill has been around for awhile (and you may remember it by its original name, [Radix](/2018/09/19/radix-for-r-markdown/)), this latest version includes so many new features that we wanted to take a moment to re-introduce you to Distill.

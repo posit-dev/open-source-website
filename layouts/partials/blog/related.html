@@ -47,9 +47,9 @@
 
 {{- /* Only show section if we have related posts */ -}}
 {{- if gt (len $related) 0 -}}
-<section class="w-full py-12 mt-12 border-t-2 border-blue-100 dark:border-blue-900">
+<section class="w-full py-12 mt-12 border-t-2 border-blue-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-2xl font-semibold mb-8 text-gray-800 dark:text-gray-100">
+    <h2 class="text-2xl font-semibold mb-8 text-gray-800">
       {{- if $primaryCategory -}}
         More On {{ $primaryCategory | title }}
       {{- else -}}

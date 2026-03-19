@@ -12,7 +12,6 @@ people:
 blogcategories:
   - Training and Education
   - Open Source
-events: blog
 alttext: Spools of yarn in a variety of colors neatly stacked
 description: In this series, we show you lesser-known tips and tricks to help you work more effectively and efficiently in R Markdown. This second post focuses on cleaning up your R Markdown code.
 image: thumbnail.jpg

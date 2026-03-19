@@ -1,19 +1,23 @@
+{{ define "head" }}
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+{{ end }}
+
 {{ define "main" }}
-<div class="flex flex-col w-full">
+<div class="flex flex-col w-full max-w-7xl mx-auto">
   <div class="mt-6 mb-8">
-    <h1 class="text-4xl font-medium text-gray-500 dark:text-gray-200">
+    <h1 class="text-4xl font-medium text-gray-500">
       {{ .Title }}
     </h1>
 
     {{- with .Content -}}
-      <div class="text-gray-700 dark:text-gray-300 mt-2 max-w-3xl">
+      <div class="text-gray-700 mt-2 max-w-3xl">
         {{ . }}
       </div>
     {{- end -}}
 
     {{- with .Params.link -}}
       <div class="mt-2">
-        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium">
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 font-medium">
           Visit {{ $.Title }} website
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -27,7 +31,7 @@
   {{ $software := where .Pages "Section" "software" }}
   {{ if gt (len $software) 0 }}
   <div class="mt-8 mb-6">
-    {{ partial "heading.html" (dict "level" 2 "text" (printf "%s Software" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "%s Software" .Title) "class" "text-2xl font-medium text-gray-800 mb-4") }}
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
     {{ range $software }}
@@ -39,8 +43,11 @@
   <!-- [category] Blog Posts -->
   {{ $blog := where .Pages "Section" "blog" }}
   {{ if gt (len $blog) 0 }}
+  {{- /* Blog filters */ -}}
+  {{ partial "blog-filters.html" (dict "currentCategory" .Title) }}
+
   <div class="mt-8 mb-6">
-    {{ partial "heading.html" (dict "level" 2 "text" (printf "%s Blog Posts" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "%s Blog Posts" .Title) "class" "text-2xl font-medium text-gray-800 mb-4") }}
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
     {{ range $blog.ByDate.Reverse }}
@@ -53,7 +60,7 @@
   {{ $events := where .Pages "Section" "events" }}
   {{ if gt (len $events) 0 }}
   <div class="mt-8 mb-6">
-    {{ partial "heading.html" (dict "level" 2 "text" (printf "%s Events" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "%s Events" .Title) "class" "text-2xl font-medium text-gray-800 mb-4") }}
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
     {{ range $events }}
@@ -66,7 +73,7 @@
   {{ $resources := where .Pages "Section" "resources" }}
   {{ if gt (len $resources) 0 }}
   <div class="mt-8 mb-6">
-    {{ partial "heading.html" (dict "level" 2 "text" (printf "%s Resources" .Title) "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
+    {{ partial "heading.html" (dict "level" 2 "text" (printf "%s Resources" .Title) "class" "text-2xl font-medium text-gray-800 mb-4") }}
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
     {{ range $resources.ByDate.Reverse }}

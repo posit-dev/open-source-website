@@ -72,7 +72,7 @@
 
       {{ with .Params.source_url }}
       <a href="{{ . }}" target="_blank"
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 dark:bg-gray-500 dark:hover:bg-gray-600 text-white font-medium transition-colors">
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -84,14 +84,14 @@
 
     {{ with .Params.translations }}
     <div class="mt-4">
-      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+      <h3 class="text-sm font-medium text-gray-700 mb-2">
         Available Translations
       </h3>
       <div class="flex flex-wrap gap-2">
         {{ range . }}
         {{ range $lang, $file := . }}
         <a href="{{ $file }}" target="_blank"
-          class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 transition-colors">
+          class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -109,7 +109,7 @@
   {{ if eq .Params.resource_type "video" }}
   {{ $videoUrl := or .Params.video_url .Params.url .Params.external.url }}
   {{ with $videoUrl }}
-  <div class="mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-blue-950">
+  <div class="mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white">
     <div class="aspect-video w-full">
       {{ if or (in . "youtube.com") (in . "youtu.be") }}
       <!-- YouTube embed -->
@@ -161,7 +161,7 @@
   {{ with $body }}
   <div class="mt-8 mx-2 md:mx-0">
     <div id="video-description" data-pagefind-body
-      class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
+      class="prose max-w-none [&_li]:marker:text-gray-600">
       {{ . }}
     </div>
   </div>
@@ -309,7 +309,7 @@
       {{ if $tocItems }}
       <aside class="hidden lg:block w-64 shrink-0">
         <div class="sticky top-8">
-          <nav class="prose dark:prose-invert prose-sm">
+          <nav class="prose prose-sm">
             <h2 class="text-lg font-semibold mb-4 text-gray-600">On this page</h2>
             <ul
               class="text-sm [&_a]:no-underline [&_a]:text-gray-600 [&_a]:hover:underline [&_ul]:my-0 [&_li]:marker:text-gray-600">
@@ -339,7 +339,7 @@
     <div class="flex flex-col lg:flex-row gap-8 mt-8">
       <div class="flex-1 max-w-4xl mx-2 md:mx-0">
         <div class="">
-          <div class="prose dark:prose-invert max-w-none [&_li]:marker:text-gray-600">
+          <div class="prose max-w-none [&_li]:marker:text-gray-600">
             {{ .Content }}
           </div>
         </div>
@@ -347,7 +347,7 @@
 
       <aside class="hidden lg:block w-64 shrink-0">
         <div class="sticky top-8">
-          <nav class="prose dark:prose-invert prose-sm">
+          <nav class="prose prose-sm">
             <h2 class="text-lg font-semibold mb-4 text-gray-600">On this page</h2>
             <div
               class="text-sm [&_a]:no-underline [&_a]:text-gray-600 [&_a]:hover:underline [&_ul]:my-0 [&_li]:marker:text-gray-600">
@@ -362,7 +362,7 @@
     <!-- Software used in this Resource -->
     {{ if $software }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      {{ partial "heading.html" (dict "level" 2 "text" "Featured software" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
+      {{ partial "heading.html" (dict "level" 2 "text" "Featured software" "class" "text-2xl font-medium text-gray-800 mb-4") }}
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -375,7 +375,7 @@
     <!-- Related Resources -->
     {{ if $resources }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      {{ partial "heading.html" (dict "level" 2 "text" "Related resources" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
+      {{ partial "heading.html" (dict "level" 2 "text" "Related resources" "class" "text-2xl font-medium text-gray-800 mb-4") }}
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">
@@ -388,7 +388,7 @@
     <!-- Events related to this Resource -->
     {{ if $events }}
     <div class="mt-8 mb-6 mx-2 md:mx-0">
-      {{ partial "heading.html" (dict "level" 2 "text" "Related events" "class" "text-2xl font-medium text-gray-800 dark:text-gray-200 mb-4") }}
+      {{ partial "heading.html" (dict "level" 2 "text" "Related events" "class" "text-2xl font-medium text-gray-800 mb-4") }}
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 md:mx-0 mb-6">

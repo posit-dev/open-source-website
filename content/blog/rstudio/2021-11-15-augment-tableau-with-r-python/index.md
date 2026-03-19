@@ -12,7 +12,6 @@ people:
 blogcategories:
   - Company News and Events
   - Industry
-events: blog
 description: In an upcoming webinar on November 17th, Solita will showcase how they successfully combined the strengths of RStudio and Tableau at one of Sweden’s largest government agencies.
 alttext: Using R & Python webinar announcement with speakers and a blue background with faded hexes
 image: thumbnail.png

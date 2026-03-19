@@ -13,7 +13,6 @@ slug: dt-an-r-interface-to-the-datatables-library
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

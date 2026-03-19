@@ -4,7 +4,6 @@ people:
   - Hadley Wickham
 date: '2014-12-14'
 slug: httr-0-6-0
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

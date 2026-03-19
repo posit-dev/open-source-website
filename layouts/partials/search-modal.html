@@ -1,11 +1,11 @@
 <!-- Search Modal -->
 <div id="search-modal" class="hidden fixed inset-0 z-[100] overflow-y-auto" aria-labelledby="search-modal-title" role="dialog" aria-modal="true" data-pagefind-ignore>
   <!-- Backdrop -->
-  <div class="fixed inset-0 bg-blue-100/80 dark:bg-blue-300/25 transition-opacity" id="search-backdrop"></div>
+  <div class="fixed inset-0 bg-blue-100/80 transition-opacity" id="search-backdrop"></div>
 
   <!-- Modal Content -->
   <div class="flex min-h-full items-start justify-center p-4 sm:p-6 md:p-20">
-    <div class="relative w-full max-w-4xl transform overflow-hidden rounded-lg bg-white dark:bg-blue-950 shadow-2xl transition-all">
+    <div class="relative w-full max-w-4xl transform overflow-hidden rounded-lg bg-white shadow-2xl transition-all">
       <!-- Search Input -->
       <div class="relative">
         <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-6">
@@ -16,7 +16,7 @@
         <input
           type="text"
           id="search-input"
-          class="block w-full border-0 bg-transparent py-4 pl-14 pr-6 text-gray-500 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-400 focus:ring-0 text-base sm:text-lg outline-none"
+          class="block w-full border-0 bg-transparent py-4 pl-14 pr-6 text-gray-500 placeholder:text-gray-400 focus:ring-0 text-base sm:text-lg outline-none"
           placeholder="Search..."
           autocomplete="off"
           spellcheck="false"
@@ -24,8 +24,8 @@
       </div>
 
       <!-- Mobile filter toggle button -->
-      <div class="sm:hidden w-full border-t border-blue-200 dark:border-blue-200 p-6">
-        <button id="mobile-filter-toggle" class="flex items-center justify-between w-full text-sm text-gray-500 dark:text-gray-300">
+      <div class="sm:hidden w-full border-t border-blue-200 p-6">
+        <button id="mobile-filter-toggle" class="flex items-center justify-between w-full text-sm text-gray-500">
           <span class="font-medium">Filters</span>
           <svg class="h-5 w-5 transition-transform" id="mobile-filter-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -34,19 +34,19 @@
       </div>
 
       <!-- Two-column layout: Filters + Results -->
-      <div class="flex border-t border-blue-200 dark:border-blue-200">
+      <div class="flex border-t border-blue-200">
 
         <!-- Left Sidebar: Filters -->
-        <aside id="search-filters" aria-label="Search filters" role="group" class="flex-none w-full sm:w-56 border-r border-blue-200 dark:border-blue-200 bg-[color-mix(in_srgb,theme(colors.blue.50)_50%,theme(colors.blue.100)_50%)] dark:bg-blue-100 p-6 overflow-y-auto hidden sm:block">
-          <h3 id="filter-heading" class="text-xs font-semibold text-gray-500 dark:text-gray-100 uppercase tracking-wide mb-3">Filter by Type</h3>
+        <aside id="search-filters" aria-label="Search filters" role="group" class="flex-none w-full sm:w-56 border-r border-blue-200 bg-[color-mix(in_srgb,theme(colors.blue.50)_50%,theme(colors.blue.100)_50%)] p-6 overflow-y-auto hidden sm:block">
+          <h3 id="filter-heading" class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Filter by Type</h3>
 
           <!-- Clear/Select All buttons -->
-          <div class="flex gap-2 mb-3 pb-3 border-b border-blue-200 dark:border-blue-200">
-            <button id="select-all-filters" class="text-xs text-blue-500 dark:text-blue-400 hover:underline" aria-label="Select all filter types">
+          <div class="flex gap-2 mb-3 pb-3 border-b border-blue-200">
+            <button id="select-all-filters" class="text-xs text-blue-500 hover:underline" aria-label="Select all filter types">
               Select All
             </button>
-            <span class="text-xs text-gray-300 dark:text-gray-400" aria-hidden="true">|</span>
-            <button id="clear-all-filters" class="text-xs text-gray-500 dark:text-gray-400 hover:underline" aria-label="Clear all filter types">
+            <span class="text-xs text-gray-300" aria-hidden="true">|</span>
+            <button id="clear-all-filters" class="text-xs text-gray-500 hover:underline" aria-label="Clear all filter types">
               Clear All
             </button>
           </div>
@@ -62,11 +62,11 @@
                   value="Software"
                   checked
                   aria-label="Show Software results"
-                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500 dark:border-blue-200 dark:bg-blue-950"
+                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500"
                 >
-                <span class="ml-2 text-sm text-gray-500 dark:text-gray-300 group-hover:text-gray-600 dark:group-hover:text-gray-100">Software</span>
+                <span class="ml-2 text-sm text-gray-500 group-hover:text-gray-600">Software</span>
               </div>
-              <span id="count-software" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+              <span id="count-software" class="text-xs text-gray-500" aria-live="polite">(0)</span>
             </label>
 
             <!-- People -->
@@ -78,11 +78,11 @@
                   value="People"
                   checked
                   aria-label="Show People results"
-                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500 dark:border-blue-200 dark:bg-blue-950"
+                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500"
                 >
-                <span class="ml-2 text-sm text-gray-500 dark:text-gray-300 group-hover:text-gray-600 dark:group-hover:text-gray-100">People</span>
+                <span class="ml-2 text-sm text-gray-500 group-hover:text-gray-600">People</span>
               </div>
-              <span id="count-people" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+              <span id="count-people" class="text-xs text-gray-500" aria-live="polite">(0)</span>
             </label>
 
             <!-- Events -->
@@ -94,11 +94,11 @@
                   value="Events"
                   checked
                   aria-label="Show Events results"
-                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500 dark:border-blue-200 dark:bg-blue-950"
+                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500"
                 >
-                <span class="ml-2 text-sm text-gray-500 dark:text-gray-300 group-hover:text-gray-600 dark:group-hover:text-gray-100">Events</span>
+                <span class="ml-2 text-sm text-gray-500 group-hover:text-gray-600">Events</span>
               </div>
-              <span id="count-events" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+              <span id="count-events" class="text-xs text-gray-500" aria-live="polite">(0)</span>
             </label>
 
             <!-- Resources -->
@@ -110,11 +110,11 @@
                   value="Resources"
                   checked
                   aria-label="Show Resources results"
-                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500 dark:border-blue-200 dark:bg-blue-950"
+                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500"
                 >
-                <span class="ml-2 text-sm text-gray-500 dark:text-gray-300 group-hover:text-gray-600 dark:group-hover:text-gray-100">Resources</span>
+                <span class="ml-2 text-sm text-gray-500 group-hover:text-gray-600">Resources</span>
               </div>
-              <span id="count-resources" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+              <span id="count-resources" class="text-xs text-gray-500" aria-live="polite">(0)</span>
             </label>
 
             <!-- Blog -->
@@ -126,11 +126,11 @@
                   value="Blog"
                   checked
                   aria-label="Show Blog results"
-                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500 dark:border-blue-200 dark:bg-blue-950"
+                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500"
                 >
-                <span class="ml-2 text-sm text-gray-500 dark:text-gray-300 group-hover:text-gray-600 dark:group-hover:text-gray-100">Blog</span>
+                <span class="ml-2 text-sm text-gray-500 group-hover:text-gray-600">Blog</span>
               </div>
-              <span id="count-blog" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+              <span id="count-blog" class="text-xs text-gray-500" aria-live="polite">(0)</span>
             </label>
 
             <!-- Other -->
@@ -142,11 +142,11 @@
                   value="Other"
                   checked
                   aria-label="Show Other results"
-                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500 dark:border-blue-200 dark:bg-blue-950"
+                  class="h-4 w-4 rounded border-blue-200 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 accent-blue-500"
                 >
-                <span class="ml-2 text-sm text-gray-500 dark:text-gray-300 group-hover:text-gray-600 dark:group-hover:text-gray-100">Other</span>
+                <span class="ml-2 text-sm text-gray-500 group-hover:text-gray-600">Other</span>
               </div>
-              <span id="count-other" class="text-xs text-gray-500 dark:text-gray-400" aria-live="polite">(0)</span>
+              <span id="count-other" class="text-xs text-gray-500" aria-live="polite">(0)</span>
             </label>
           </div>
         </aside>
@@ -154,46 +154,46 @@
         <!-- Right Side: Results -->
         <div class="flex-1 min-w-0">
           <!-- Results header -->
-          <div id="search-results-header" class="hidden px-6 py-2 border-b border-blue-200 dark:border-blue-200">
-            <p class="text-xs text-gray-500 dark:text-gray-400">
+          <div id="search-results-header" class="hidden px-6 py-2 border-b border-blue-200">
+            <p class="text-xs text-gray-500">
               <span id="results-count-text"></span>
             </p>
           </div>
 
           <div id="search-results" class="max-h-[65vh] scroll-py-2 overflow-y-auto" role="region" aria-live="polite" aria-label="Search results">
             <!-- Loading state -->
-            <div id="search-loading" class="hidden py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+            <div id="search-loading" class="hidden py-8 text-center text-sm text-gray-500">
               Searching...
             </div>
 
             <!-- Empty state -->
-            <div id="search-empty" class="py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+            <div id="search-empty" class="py-8 text-center text-sm text-gray-500">
               Type to search
             </div>
 
             <!-- No results state -->
-            <div id="search-no-results" class="hidden py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+            <div id="search-no-results" class="hidden py-8 text-center text-sm text-gray-500">
               No results found
             </div>
 
             <!-- Results list -->
-            <ul id="search-results-list" class="divide-y divide-blue-200 dark:divide-blue-200"></ul>
+            <ul id="search-results-list" class="divide-y divide-blue-200"></ul>
           </div>
         </div>
       </div>
 
       <!-- Footer -->
-      <div class="flex items-center justify-between border-t border-blue-200 dark:border-blue-200 px-6 py-4 text-xs text-gray-500 dark:text-gray-400">
+      <div class="flex items-center justify-between border-t border-blue-200 px-6 py-4 text-xs text-gray-500">
         <div class="flex items-center gap-3">
-          <kbd class="rounded border border-blue-200 dark:border-blue-200 bg-blue-100 dark:bg-blue-100 px-2 py-1 font-mono">↑↓</kbd>
+          <kbd class="rounded border border-blue-200 bg-blue-100 px-2 py-1 font-mono">↑↓</kbd>
           <span>Navigate</span>
         </div>
         <div class="flex items-center gap-3">
-          <kbd class="rounded border border-blue-200 dark:border-blue-200 bg-blue-100 dark:bg-blue-100 px-2 py-1 font-mono">↵</kbd>
+          <kbd class="rounded border border-blue-200 bg-blue-100 px-2 py-1 font-mono">↵</kbd>
           <span>Select</span>
         </div>
         <div class="flex items-center gap-3">
-          <kbd class="rounded border border-blue-200 dark:border-blue-200 bg-blue-100 dark:bg-blue-100 px-2 py-1 font-mono">ESC</kbd>
+          <kbd class="rounded border border-blue-200 bg-blue-100 px-2 py-1 font-mono">ESC</kbd>
           <span>Close</span>
         </div>
       </div>

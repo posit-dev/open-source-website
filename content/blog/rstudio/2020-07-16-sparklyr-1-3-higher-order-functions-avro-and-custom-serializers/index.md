@@ -20,7 +20,6 @@ resources:
 - name: sparklyr
   src: sparklyr.png
   title: SparklyR
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---

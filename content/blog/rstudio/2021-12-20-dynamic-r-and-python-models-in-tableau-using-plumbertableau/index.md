@@ -11,7 +11,6 @@ alttext: Tableau dashboard showcasing a model's predicted values at a particular
 description: The plumbertableau and fastapitableau packages allow you to integrate dynamic R and Python models in Tableau, enhancing your organization’s preferred dashboard tool.
 blogcategories:
   - Products and Technology
-events: blog
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress

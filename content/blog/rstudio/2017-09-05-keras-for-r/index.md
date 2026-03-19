@@ -11,7 +11,6 @@ blogcategories:
 - Open Source
 tags:
 - Packages
-events: blog
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress

@@ -14,7 +14,6 @@ tags:
 blogcategories:
 - Products and Technology
 - Open Source
-events: blog
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress

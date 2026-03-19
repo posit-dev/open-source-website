@@ -13,7 +13,6 @@ blogcategories:
 tags:
 - Shiny
 - shinyapps.io
-events: blog
 ported_from: rstudio
 port_status: in-progress
 ---
