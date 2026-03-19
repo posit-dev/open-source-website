@@ -2,24 +2,27 @@
 output: hugodown::hugo_document
 slug: clock-0-1-0
 title: Comprehensive Date-Time Handling for R
-date: 2021-03-31
+date: '2021-03-31'
 people:
   - Davis Vaughan
-description: >
-    Introducing, clock, a new package for working with date-times.
+description: |
+  Introducing, clock, a new package for working with date-times.
 photo:
-  
   url: https://unsplash.com/photos/FlHdnPO6dlw
   author: Jon Tyson
-categories: [package] 
-tags: ["r-lib"]
-editor_options: 
+categories:
+  - Data Wrangling
+tags:
+  - r-lib
+editor_options:
   chunk_output_type: console
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["clock"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r, echo=FALSE, message=FALSE}

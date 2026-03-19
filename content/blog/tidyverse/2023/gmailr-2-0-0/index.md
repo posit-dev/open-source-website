@@ -1,27 +1,26 @@
 ---
-
 slug: gmailr-2-0-0
 title: gmailr 2.0.0
-date: 2023-06-29
+date: '2023-06-29'
 people:
   - Jennifer Bryan
-description: >
-    gmailr 2.0.0 streamlines the auth process and makes it easier to use gmailr
-    in a cloud or deployed context.
-
+description: |
+  gmailr 2.0.0 streamlines the auth process and makes it easier to use gmailr in a cloud or deployed context.
 photo:
   url: https://unsplash.com/photos/VybzKEUMhbw
   author: Hiroshi Kimura
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [gmailr, gargle]
-
+categories:
+  - Data Wrangling
+tags:
+  - gmailr
+  - gargle
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "gmailr", "gargle"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're chuffed to announce the release of [gmailr](https://gmailr.r-lib.org/) 2.0.0. gmailr exposes the [Gmail API](https://developers.google.com/gmail/api/guides) from R.

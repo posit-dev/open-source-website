@@ -1,8 +1,7 @@
 ---
-title: "Winner takes all: A look at activations and cost functions"
-description: >
- Why do we use the activations we use, and how do they relate to the cost functions they tend to co-appear with?
- In this post we provide a conceptual introduction.
+title: 'Winner takes all: A look at activations and cost functions'
+description: |
+  Why do we use the activations we use, and how do they relate to the cost functions they tend to co-appear with? In this post we provide a conceptual introduction.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -11,12 +10,15 @@ bibliography: bibliography.bib
 slug: keydana2018activationsintro
 date: 10-11-2018
 categories:
-  - TensorFlow/Keras
-  - Concepts
+  - Machine Learning
+  - Best Practices
 preview: images/output.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Concepts
 ---
 
 ```{r setup, include=FALSE}

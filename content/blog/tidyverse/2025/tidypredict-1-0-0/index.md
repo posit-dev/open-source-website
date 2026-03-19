@@ -1,26 +1,28 @@
 ---
-
 slug: tidypredict-1-0-0
 title: tidypredict 1.0.0
-date: 2025-12-10
+date: '2025-12-10'
 people:
   - Emil Hvitfeldt
-description: >
-    tidypredict 1.0.0 brings faster computations for tree-based models, more efficient tree representations, glmnet model support, and a change in how random forests are handled. 
-
+description: "tidypredict 1.0.0 brings faster computations for tree-based models,
+  more efficient tree representations, glmnet model support, and a change in how random
+  forests are handled. \n"
 photo:
   url: https://unsplash.com/photos/brown-leaves-covered-in-snow-on-a-branch-9XKkkeUwBhY
   author: Monique Caraballo
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [tidymodels, tidypredict, orbital]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - tidypredict
+  - orbital
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tidypredict", "orbital"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

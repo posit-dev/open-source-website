@@ -3,13 +3,15 @@ title: Introducing Shiny for Python Templates
 people:
   - Shiny Team
 description: Get started quickly with Shiny for Python's new app templates.
-date: 2024-04-05
+date: '2024-04-05'
 image: templates2.jpg
 image-alt: An illustration of a Shiny Template
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "py-shiny-templates"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

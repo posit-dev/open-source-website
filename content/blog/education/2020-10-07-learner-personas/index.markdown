@@ -2,10 +2,10 @@
 title: Learner Personas
 date: '2020-10-07'
 slug: learner-personas
-description: >
-    These nine fictional characters capture key features of the audiences for data science training.
+description: |
+  These nine fictional characters capture key features of the audiences for data science training.
 categories:
-  - teach
+  - Community
 tags: []
 photo:
   url: https://unsplash.com/photos/hXXjwXVyUVo
@@ -13,6 +13,8 @@ photo:
 image: learner-personas-wd.jpg
 ported_from: education
 port_status: in-progress
+ported_categories:
+  - teach
 ---
 
 A *[learner persona](http://teachtogether.tech/en/process/#s:process-personas)*

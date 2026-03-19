@@ -1,27 +1,25 @@
 ---
-
 slug: dtplyr-1-2-0
 title: dtplyr 1.2.0
-date: 2021-12-06
+date: '2021-12-06'
 people:
   - Hadley Wickham
-description: >
-    dtplyr 1.2.0 adds three new authors, a bunch of tidyr translations,
-    new join translations, and many minor translation improvements.
-    
+description: |
+  dtplyr 1.2.0 adds three new authors, a bunch of tidyr translations, new join translations, and many minor translation improvements.
 photo:
   url: https://unsplash.com/photos/uRQlCmfOCRg
   author: Zdeněk Macháček
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [dplyr]
-
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

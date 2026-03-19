@@ -1,31 +1,27 @@
 ---
 slug: dplyr-1-0-0-last-minute-additions
 title: 'dplyr 1.0.0: last minute additions'
-description: >
-    Learn about two last-minute additions to dplyr 1.0.0: a chattier 
-    `summarise()` with more options for controlling grouping of output,
-    and new row manipulation functions inspired by SQL.
+description: |
+  Learn about two last-minute additions to dplyr 1.0.0: a chattier  `summarise()` with more options for controlling grouping of output, and new row manipulation functions inspired by SQL.
 people:
   - Hadley Wickham
   - Kirill Müller
 date: '2020-05-06'
-
-
 categories:
-- package
+  - Data Wrangling
 tags:
-- dplyr
-- dplyr-1-0-0
-
+  - dplyr
+  - dplyr-1-0-0
 photo:
   url: https://unsplash.com/photos/FfbVFLAVscw
   author: Malvestida Magazine
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 Today I wanted to talk about two cool new features that we've added since I started blogging about dplyr 1.0.0: `summarise()` now gives you greater control over how the results are grouped, and a new set of functions make it easier to modify rows.

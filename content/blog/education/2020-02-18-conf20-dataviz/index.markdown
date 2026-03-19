@@ -1,12 +1,14 @@
 ---
 title: Data Visualization Workshop at rstudio::conf(2020)
 author:
-  - "[Kieran Healy](https://kieranhealy.org/)"
+  - '[Kieran Healy](https://kieranhealy.org/)'
 people:
   - Kieran Healy
 date: '2020-02-18'
-categories: [learn, teach]
-tags: [conf2020]
+categories:
+  - Community
+tags:
+  - conf2020
 slug: conf20-dataviz
 description: |
   What we covered in our rstudio::conf(2020) workshop on data visualization.
@@ -18,6 +20,9 @@ ported_from: education
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+ported_categories:
+  - learn
+  - teach
 ---
 
 > tl;dr: all workshop materials are available here: <br>

@@ -1,11 +1,10 @@
 ---
-title: "Analyzing rtweet Data with kerasformula"
+title: Analyzing rtweet Data with kerasformula
 description: |
   The kerasformula package offers a high-level interface for the R interface to Keras. It’s main interface is the kms function, a regression-style interface to keras_model_sequential that uses formulas and sparse matrices. We use kerasformula to predict how popular tweets will be based on how often the tweet was retweeted and favorited.
-date: 2018-01-24
+date: '2018-01-24'
 categories:
-  - TensorFlow/Keras
-  - Natural Language Processing
+  - Machine Learning
 author:
   - name: Pete Mohanty
     url: https://sites.google.com/site/petemohanty/
@@ -18,6 +17,9 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Natural Language Processing
 ---
 
 

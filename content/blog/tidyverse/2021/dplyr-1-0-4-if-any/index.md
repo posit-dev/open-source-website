@@ -1,26 +1,25 @@
 ---
-
 slug: dplyr-1-0-4-if-any
-title: "dplyr 1.0.4: if_any() and if_all()"
-date: 2021-02-02
+title: 'dplyr 1.0.4: if_any() and if_all()'
+date: '2021-02-02'
 people:
   - Romain Francois
-description: >
-    Minor release with major performance improvements for `across()` and 
-    two new functions `if_any()` and `if_all()`.
-
+description: |
+  Minor release with major performance improvements for `across()` and  two new functions `if_any()` and `if_all()`.
 photo:
   url: https://unsplash.com/photos/nQz49efZEFs
   author: Mattias Olsson
-
-categories: [package] 
-tags: [dplyr]
-
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're happy to announce the release of [dplyr](https://dplyr.tidyverse.org) 1.0.4, featuring: two new functions [`if_all()`](https://dplyr.tidyverse.org/reference/across.html) and [`if_any()`](https://dplyr.tidyverse.org/reference/across.html), and improved performance improvements of [`across()`](https://dplyr.tidyverse.org/reference/across.html).

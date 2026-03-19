@@ -4,17 +4,20 @@ people:
   - Winston Chang
 date: '2012-12-06'
 categories:
-- Packages
+  - Visualization
+  - Data Wrangling
 slug: ggplot2-plyr-release
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

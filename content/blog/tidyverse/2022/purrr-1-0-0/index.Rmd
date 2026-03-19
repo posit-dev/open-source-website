@@ -1,29 +1,26 @@
 ---
 output: hugodown::hugo_document
-
 slug: purrr-1-0-0
 title: purrr 1.0.0
-date: 2022-12-20
+date: '2022-12-20'
 people:
   - Hadley Wickham
-description: >
-    purrr 1.0.0 brings a basket of updates. We deprecated a number of
-    seldom used functions to hone in on the core purpose of purrr and 
-    implemented a swath of new features including progress bars, improved 
-    error reporting, and much much more!
-
+description: |
+  purrr 1.0.0 brings a basket of updates. We deprecated a number of seldom used functions to hone in on the core purpose of purrr and  implemented a swath of new features including progress bars, improved  error reporting, and much much more!
 photo:
   url: https://unsplash.com/photos/YCPkW_r_6uA
   author: Jari Hytönen
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [purrr]
+categories:
+  - Data Wrangling
+tags:
+  - purrr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "purrr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{=html}

@@ -1,20 +1,23 @@
 ---
 title: My JavaScript Internship at RStudio
 author:
-  - "[Maya Gans](https://maya.rbind.io/)"
+  - '[Maya Gans](https://maya.rbind.io/)'
 people:
   - Maya Gans
 date: '2019-10-21'
 slug: my-javascript-internship-at-rstudio
 description: |
-   This summer I built a blocks based coding language for data transformation and visualization. But interning for RStudio gave me so much more than a project. Here's what I learned.
+  This summer I built a blocks based coding language for data transformation and visualization. But interning for RStudio gave me so much more than a project. Here's what I learned.
 photo:
   url: https://unsplash.com/photos/TYIzeCiZ_60
   author: Karl Fredrickson
-tags: [internship]
+tags:
+  - internship
 image: java-wd.jpg
 ported_from: education
 port_status: in-progress
+categories:
+  - Community
 ---
 
 > This post was written by [Maya Gans](https://maya.rbind.io/) about her 2019 RStudio internship where she built <https://tidyblocks.tech>. Maya also documented her project and progress at <https://maya.rbind.io/tidyblocks/>.

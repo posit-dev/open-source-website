@@ -4,16 +4,19 @@ subtitle: From R Markdown to Quarto
 description: |
   Series of workshops for learning Quarto with R and RStudio, aimed primarily at R Markdown users.
 categories:
-  - Learn
+  - Publishing
+  - Community
 people:
   - Mine Çetinkaya-Rundel
-date: "2023-12-05"
-image: "asa-traveling-courses.png"
-image-alt: "Screenshots of homepages of six courses titled From R Markdown to Quarto"
+date: '2023-12-05'
+image: asa-traveling-courses.png
+image-alt: Screenshots of homepages of six courses titled From R Markdown to Quarto
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+ported_categories:
+  - Learn
 ---
 
 In 2023, [Dr. Andrew Bray](https://andrewpbray.github.io/) and I gave a series of six workshops on Quarto as part of the [Traveling Courses](https://community.amstat.org/coc/chapterresources/travelingcourse) program sponsored by the [American Statistical Association](https://www.amstat.org/).

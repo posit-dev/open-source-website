@@ -3,10 +3,11 @@ title: gmailr v1.0.0
 slug: gmailr-1-0-0
 people:
   - Jim Hester
-description: >
+description: |
   gmailr v1.0.0 is on CRAN.
 date: '2019-08-26'
-categories: [package]
+categories:
+  - Data Wrangling
 tags:
   - gmailr
   - r-lib
@@ -18,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "gmailr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

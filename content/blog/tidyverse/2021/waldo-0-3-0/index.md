@@ -1,28 +1,27 @@
 ---
-
 slug: waldo-0-3-0
 title: waldo 0.3.0
-date: 2021-08-24
+date: '2021-08-24'
 people:
   - Hadley Wickham
-description: >
-    waldo 0.3.0 improves the display of data frame differences, and gives the 
-    objects being compared the ability to control the detail of their 
-    comparisons.
-
+description: |
+  waldo 0.3.0 improves the display of data frame differences, and gives the  objects being compared the ability to control the detail of their  comparisons.
 photo:
   url: https://unsplash.com/photos/E9tFH39iRPE
   author: NordWood Themes
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package, programming] 
-tags: [testthat, waldo]
-
+categories:
+  - Best Practices
+tags:
+  - testthat
+  - waldo
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat", "waldo"]
 languages: ["R"]
+ported_categories:
+  - package
+  - programming
 ---
 
 <!--

@@ -4,20 +4,23 @@ people:
   - Yihui Xie
 date: '2018-03-29'
 categories:
-- Packages
+  - Visualization
+  - Interactive Apps
 tags:
-- DT
-- DataTables
-- shiny
-- Packages
+  - DT
+  - DataTables
+  - shiny
+  - Packages
 slug: dt-0-4
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["dt", "shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

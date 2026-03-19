@@ -4,17 +4,20 @@ people:
   - Yihui Xie
 date: '2016-08-09'
 categories:
-- Packages
+  - Visualization
+  - Interactive Apps
 slug: a-new-version-of-dt-0-2-on-cran
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["dt"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

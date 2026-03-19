@@ -4,19 +4,22 @@ people:
   - Garrett Grolemund
 date: '2015-07-15'
 categories:
-- Shiny
-- Training
+  - Interactive Apps
+  - MLOps and Admin
 tags:
-- data
-- Shiny
+  - data
+  - Shiny
 slug: article-spotlight-persistent-data-storage-in-shiny-apps
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
+  - Training
 ---
 
 

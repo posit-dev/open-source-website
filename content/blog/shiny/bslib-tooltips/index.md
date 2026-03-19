@@ -1,8 +1,7 @@
 ---
 title: 'Shiny for R updates: tooltips, popovers, a new theme, and more'
-description: >
-  An overview of recent Shiny for R updates, including tooltips, popovers, a new
-  theme, and more.
+description: |
+  An overview of recent Shiny for R updates, including tooltips, popovers, a new theme, and more.
 people:
   - Carson Sievert
   - Garrick Aden-Buie
@@ -12,6 +11,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["bslib", "shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 
 

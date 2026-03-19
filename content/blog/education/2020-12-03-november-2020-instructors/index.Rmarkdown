@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-12-03'
 categories:
-  - certify
+  - Community
 tags:
   - certify
 description: |
@@ -17,6 +17,8 @@ image: november-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - certify
 ---
 
 We welcomed 6 new instructors to our ranks in November 2020:

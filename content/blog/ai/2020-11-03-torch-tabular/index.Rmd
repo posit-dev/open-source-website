@@ -1,8 +1,7 @@
 ---
-title: "torch for tabular data"
-description: > 
+title: torch for tabular data
+description: |
   How not to die from poisonous mushrooms. Also: How to use torch for deep learning on tabular data, including a mix of categorical and numerical features.
-
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -10,12 +9,14 @@ author:
 slug: keydanatorchtabular
 date: 11-03-2020
 categories:
-  - Torch
-  - R
-  - Tabular Data
+  - Machine Learning
 preview: images/preview.jpeg
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Tabular Data
 ---
 
 ```{r setup, include=FALSE}

@@ -2,25 +2,28 @@
 output: hugodown::hugo_document
 slug: dplyr-1-1-0-is-coming-soon
 title: dplyr 1.1.0 is coming soon
-date: 2022-11-28
+date: '2022-11-28'
 people:
   - Davis Vaughan
-description: >
-    dplyr 1.1.0 is coming soon! This post introduces some of the exciting new
-    features coming in 1.1.0, and includes a call-for-feedback as we finalize
-    the release.
+description: |
+  dplyr 1.1.0 is coming soon! This post introduces some of the exciting new features coming in 1.1.0, and includes a call-for-feedback as we finalize the release.
 photo:
   url: https://unsplash.com/photos/aId-xYRTlEc
   author: Markus Winkler
-categories: [package] 
-tags: [dplyr, dplyr-1-1-0]
-editor_options: 
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
+editor_options:
   chunk_output_type: console
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 [dplyr](https://dplyr.tidyverse.org/dev/) 1.1.0 is coming soon!

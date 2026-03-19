@@ -4,19 +4,21 @@ people:
   - Yihui Xie
 date: '2018-07-13'
 categories:
-- R Markdown
+  - Publishing
 tags:
-- book
-- rmarkdown
-- R Markdown
+  - book
+  - rmarkdown
+  - R Markdown
 slug: announcing-the-r-markdown-book
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+ported_categories:
+  - R Markdown
 ---
 
 

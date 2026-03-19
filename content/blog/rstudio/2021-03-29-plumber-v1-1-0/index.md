@@ -6,22 +6,26 @@ people:
 date: '2021-03-29'
 slug: plumber-v1-1-0
 categories:
-  - Packages
+  - Interactive Apps
 tags:
   - Plumber
   - async
   - packages
 resources:
-- name:  "hex sticker"
-  src:   "a-plumber-hex.png"
-description: "{plumber} v1.1.0 is now on CRAN! In this post, we'll highlight some of the most exciting new features in both the v1.1.0 and v1.0.0 releases, including: parallel endpoint execution, a tidy interface, and request body parsing"
+  - name: hex sticker
+    src: a-plumber-hex.png
+description: '{plumber} v1.1.0 is now on CRAN! In this post, we''ll highlight some
+  of the most exciting new features in both the v1.1.0 and v1.0.0 releases, including:
+  parallel endpoint execution, a tidy interface, and request body parsing'
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["plumber"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

@@ -1,14 +1,16 @@
 ---
-title: "Level Up Your Shiny Forms: Accordions + Dynamic Goodness"
-description: "Mastering Shiny Forms: Dynamic Updates with Accordion Panels"
+title: 'Level Up Your Shiny Forms: Accordions + Dynamic Goodness'
+description: 'Mastering Shiny Forms: Dynamic Updates with Accordion Panels'
 people:
   - Shiny Team
-date: "2025-02-05"
+date: '2025-02-05'
 image: forms.jpg
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 Shiny for Python makes building web apps easy. This framework simplifies creating interactive applications with Python—no need for JavaScript or HTML. Its secret lies in reactive programming, which keeps your UI dynamic with minimal effort. Just focus on your Python code, and let Shiny take care of the rest!

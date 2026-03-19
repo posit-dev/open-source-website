@@ -5,7 +5,7 @@ people:
 date: '2020-05-10'
 slug: googlesheets4-0-2-0
 categories:
-  - package
+  - Data Wrangling
 tags:
   - googlesheets4
   - google
@@ -17,6 +17,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googlesheets4"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

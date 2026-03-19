@@ -1,23 +1,26 @@
 ---
 slug: dplyr-1-1-0-pick-reframe-arrange
-title: "dplyr 1.1.0: `pick()`, `reframe()`, and `arrange()`"
-date: 2023-02-07
+title: 'dplyr 1.1.0: `pick()`, `reframe()`, and `arrange()`'
+date: '2023-02-07'
 people:
   - Davis Vaughan
-description: >
-    This final post contains a grab-bag of new features, including: `pick()` for column
-    selection inside of data-masking functions, `reframe()` as the new home for
-    `summarise()`'s multi-row behavior, and major performance improvements to `arrange()`.
+description: |
+  This final post contains a grab-bag of new features, including: `pick()` for column selection inside of data-masking functions, `reframe()` as the new home for `summarise()`'s multi-row behavior, and major performance improvements to `arrange()`.
 photo:
   url: https://unsplash.com/photos/XgoHMMkE02I
   author: Priscilla Du Preez
-categories: [package] 
-tags: [dplyr, dplyr-1-1-0]
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 In this final [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110) post, we'll take a look at two new verbs, [`pick()`](https://dplyr.tidyverse.org/reference/pick.html) and [`reframe()`](https://dplyr.tidyverse.org/reference/reframe.html), along with some changes to [`arrange()`](https://dplyr.tidyverse.org/reference/arrange.html) that improve both reproducibility and performance. If you missed our previous posts, you should definitely go back and [check them out](https://www.tidyverse.org/tags/dplyr-1-1-0/)!

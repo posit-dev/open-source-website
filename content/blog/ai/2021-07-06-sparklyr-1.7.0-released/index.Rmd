@@ -1,5 +1,6 @@
 ---
-title: "sparklyr 1.7: New data sources and spark_apply() capabilities, better interfaces for sparklyr extensions, and more!"
+title: 'sparklyr 1.7: New data sources and spark_apply() capabilities, better interfaces
+  for sparklyr extensions, and more!'
 description: |
   Sparklyr 1.7 delivers much-anticipated improvements, including R interfaces for image and binary data sources, several new spark_apply() capabilities, and better integration with sparklyr extensions.
 author:
@@ -11,12 +12,14 @@ slug: sparklyr-1.7
 date: 07-06-2021
 bibliography: bibliography.bib
 categories:
-  - R
-  - Packages/Releases
-  - Distributed Computing
+  - MLOps and Admin
 preview: images/sparklyr-1.7.png
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - R
+  - Packages/Releases
+  - Distributed Computing
 ---
 
 ```{r setup, include=FALSE}

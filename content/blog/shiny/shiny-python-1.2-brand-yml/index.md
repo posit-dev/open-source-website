@@ -6,11 +6,13 @@ people:
 date: '2024-11-25'
 image: brand-yml-feature.svg
 image-alt: brand.yml logo
-image-header-disable: true
+image-header-disable: yes
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "brand-yml"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

@@ -2,20 +2,22 @@
 title: Data science summer camp for high schoolers
 date: '2020-06-24'
 categories:
- - teach
+  - Community
 tags:
- - learnr
+  - learnr
 description: |
- How I introduced R to a group of teenagers, and how learnr saved me from boring students to death.
+  How I introduced R to a group of teenagers, and how learnr saved me from boring students to death.
 slug: summer-camp-hs
 photo:
- url: https://unsplash.com/photos/VxyAJybjZ3s
- author: Ryan Cooley
+  url: https://unsplash.com/photos/VxyAJybjZ3s
+  author: Ryan Cooley
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 software: ["learnr"]
 languages: ["R"]
+ported_categories:
+  - teach
 ---
 
 Instructors and learners alike have had to quickly adapt to virtual education due to the ongoing pandemic. The [learnr](https://rstudio.github.io/learnr/) package has become a popular tool to ease that transition (see Allison Horst's great [post](/blog/education/learnr-for-remote/)).

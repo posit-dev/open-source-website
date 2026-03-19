@@ -1,14 +1,12 @@
 ---
-title: "LLaMA in R with Keras and TensorFlow"
+title: LLaMA in R with Keras and TensorFlow
 description: |
   Implementation and walk-through of LLaMA, a Large Language Model, in R, with TensorFlow and Keras.
-date: 2023-05-25T00:00:00.000Z
+date: '2023-05-25T00:00:00.000Z'
 slug: kalinowskillama
 categories:
-  - TensorFlow/Keras
-  - R
-  - Generative Models
-  - Natural Language Processing
+  - Machine Learning
+  - Artificial Intelligence
 author:
   - name: Tomasz Kalinowski
     affiliation: Posit
@@ -20,6 +18,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - R
+  - Generative Models
+  - Natural Language Processing
 ---
 
 

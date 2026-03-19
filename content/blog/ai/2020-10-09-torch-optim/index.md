@@ -1,12 +1,11 @@
 ---
-title: "Optimizers in torch"
+title: Optimizers in torch
 description: |
   Today, we wrap up our mini-series on torch basics, adding to our toolset two abstractions: loss functions and optimizers.
-date: 2020-10-09
+date: '2020-10-09'
 slug: keydanatorchoptim
 categories:
-  - Torch
-  - R
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -17,6 +16,9 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
 ---
 
 

@@ -4,18 +4,21 @@ people:
   - Joe Cheng
 date: '2015-06-24'
 categories:
-- Packages
+  - Visualization
+  - Interactive Apps
 tags:
-- d3
-- htmlwidgets
-- Packages
+  - d3
+  - htmlwidgets
+  - Packages
 slug: d3heatmap
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

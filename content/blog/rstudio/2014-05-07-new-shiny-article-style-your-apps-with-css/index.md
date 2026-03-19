@@ -4,20 +4,22 @@ people:
   - Garrett Grolemund
 date: '2014-05-07'
 categories:
-- Shiny
+  - Interactive Apps
 tags:
-- Article
-- CSS
-- shiny
-- Shiny
+  - Article
+  - CSS
+  - shiny
+  - Shiny
 slug: new-shiny-article-style-your-apps-with-css
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
 ---
 
 

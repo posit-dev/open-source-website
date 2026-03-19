@@ -1,24 +1,26 @@
 ---
 slug: nanonext-1-8-0
 title: nanonext 1.8.0
-date: 2026-02-09
+date: '2026-02-09'
 people:
   - Charlie Gao
-description: >
-    nanonext 1.8.0 adds a low-level streaming HTTP/WebSocket server to R's web
-    infrastructure, with TLS support, new async primitives, and redesigned
-    documentation.
+description: |
+  nanonext 1.8.0 adds a low-level streaming HTTP/WebSocket server to R's web infrastructure, with TLS support, new async primitives, and redesigned documentation.
 photo:
   url: https://unsplash.com/photos/yhJVLxcquEY
   author: Albert Stoynov
-categories: [package]
-tags: [nanonext, r-lib]
-
+categories:
+  - Best Practices
+tags:
+  - nanonext
+  - r-lib
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "nanonext"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

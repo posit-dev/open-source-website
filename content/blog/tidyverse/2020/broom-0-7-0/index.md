@@ -1,28 +1,26 @@
 ---
-
 slug: broom-0-7-0
 title: broom 0.7.0
-date: 2020-07-17
+date: '2020-07-17'
 people:
   - Simon Couch
   - Alex Hayes
-description: >
-    The newest release of broom features many new tidier methods, bug fixes, and
-    improvements to internal consistency.
-
+description: |
+  The newest release of broom features many new tidier methods, bug fixes, and improvements to internal consistency.
 photo:
   url: https://unsplash.com/photos/3gS-lDkOuJ4
   author: Timothy Dykes
-
-categories: [package] 
+categories:
+  - Data Wrangling
 tags:
   - tidymodels
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're excited to announce the release of broom 0.7.0 on CRAN!

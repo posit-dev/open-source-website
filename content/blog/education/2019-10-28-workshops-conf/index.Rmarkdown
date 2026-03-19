@@ -4,10 +4,10 @@ people:
   - mine
 date: '2019-10-28'
 categories:
-  - learn
-  - events
+  - Community
 slug: conf-workshops
-tags: [conf2020]
+tags:
+  - conf2020
 description: |
   A closer look at rstudio::conf(2020) workshops
 photo:
@@ -17,6 +17,9 @@ image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - learn
+  - events
 ---
 
 rstudio::conf(2020) is fast approaching, and in addition to the many fantastic 

@@ -1,26 +1,30 @@
 ---
 title: 'Custom Google Analytics Dashboards with R: Building The Dashboard'
-authors: 
-- Carl Howe
-authormeta:
-- carl-howe
+authors: Carl Howe
+authormeta: carl-howe
 date: '2021-01-06'
 slug: google-analytics-part2
 categories:
-  - Data Science Leadership
+  - Visualization
+  - Interactive Apps
 tags:
   - data science
   - dashboards
   - flexdashboard
-description: In this post, I continue our series on how to create your own Google Analytics dashboard in R. Using the data we downloaded in our last post, we'll now create a simple dashboard showing blog page views over time and highlighting the most popular ones.
+description: In this post, I continue our series on how to create your own Google
+  Analytics dashboard in R. Using the data we downloaded in our last post, we'll now
+  create a simple dashboard showing blog page views over time and highlighting the
+  most popular ones.
 resources:
-- name: "dashboard"
-  src: "dashboard-hero.jpg"
-  title: "Automobile Dashboard"
+  - name: dashboard
+    src: dashboard-hero.jpg
+    title: Automobile Dashboard
 blogcategories:
-- Data Science Leadership
+  - Data Science Leadership
 software: ["flexdashboard"]
 languages: ["R"]
+ported_categories:
+  - Data Science Leadership
 ---
 <sup>Photo by <a href="https://unsplash.com/@abiglow?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alan Biglow</a> on <a href="https://unsplash.com/s/photos/tesla-dashboard?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a> </sup>
 

@@ -1,5 +1,5 @@
 ---
-title: "Introducing sparklyr.flint: A time-series extension for sparklyr"
+title: 'Introducing sparklyr.flint: A time-series extension for sparklyr'
 description: |
   We are pleased to announce that sparklyr.flint, a sparklyr extension for analyzing time series at scale with Flint, is now available on CRAN. Flint is an open-source library for working with time-series in Apache Spark which supports aggregates and joins on time-series datasets.
 author:
@@ -9,11 +9,13 @@ author:
 slug: sparklyr.flint-0.1.1
 date: 09-07-2020
 categories:
-  - R
-  - Time Series
+  - Machine Learning
 preview: images/thumb.png
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - R
+  - Time Series
 ---
 
 In this blog post, we will showcase [`sparklyr.flint`](https://cran.r-project.org/web/packages/sparklyr.flint/index.html), a brand new [`sparklyr`](https://sparklyr.ai) extension providing a simple and intuitive R interface to the [`Flint`](https://github.com/twosigma/flint) time series library. `sparklyr.flint` is available on [CRAN](https://cran.r-project.org/web/packages/sparklyr.flint/index.html) today and can be installed as follows:

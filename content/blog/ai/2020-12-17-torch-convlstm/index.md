@@ -1,15 +1,11 @@
 ---
-title: "Convolutional LSTM for spatial forecasting"
+title: Convolutional LSTM for spatial forecasting
 description: |
   In forecasting spatially-determined phenomena (the weather, say, or the next frame in a movie), we want to model temporal evolution, ideally using recurrence relations. At the same time, we'd like to efficiently extract spatial features, something that is normally done with convolutional filters. Ideally then, we'd have at our disposal an architecture that is both recurrent and convolutional. In this post, we build a convolutional LSTM with torch.
-date: 2020-12-17
+date: '2020-12-17'
 slug: keydanatorchconvlstm
 categories:
-  - Torch
-  - R
-  - Image Recognition & Image Processing
-  - Time Series
-  - Spatial Data
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -20,6 +16,12 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Image Recognition & Image Processing
+  - Time Series
+  - Spatial Data
 ---
 
 

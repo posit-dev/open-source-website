@@ -1,10 +1,7 @@
 ---
-title: >-
-  Shiny for R updates: Extended tasks, JavaScript errors, and many bslib
-  improvements
-description: >
-  An overview of recent Shiny for R updates, including extended tasks,
-  JavaScript errors, and many bslib improvements.
+title: 'Shiny for R updates: Extended tasks, JavaScript errors, and many bslib improvements'
+description: |
+  An overview of recent Shiny for R updates, including extended tasks, JavaScript errors, and many bslib improvements.
 people:
   - Carson Sievert
 date: '2024-03-27'
@@ -13,6 +10,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-r", "bslib"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 
 

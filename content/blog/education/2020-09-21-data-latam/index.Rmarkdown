@@ -1,12 +1,12 @@
 ---
-title: "Data Latam: A community of data practitioners"
+title: 'Data Latam: A community of data practitioners'
 author:
-  - "[Frans van Dunné](https://www.ixpantia.com/)"
+  - '[Frans van Dunné](https://www.ixpantia.com/)'
 people:
   - Frans van Dunné
 date: '2020-09-21'
 categories:
-  - community
+  - Community
 tags:
   - community
 description: |
@@ -19,6 +19,8 @@ image: data-latam-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - community
 ---
 
 When we started with the first [Data Latam Podcast](http://www.datalatam.com/) in May 2016

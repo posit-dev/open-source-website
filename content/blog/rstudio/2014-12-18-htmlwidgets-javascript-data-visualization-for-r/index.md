@@ -4,21 +4,23 @@ people:
   - RStudio Team
 date: '2014-12-18'
 categories:
-- News
-- Packages
-- Shiny
+  - Interactive Apps
 slug: htmlwidgets-javascript-data-visualization-for-r
 blogcategories:
-- Products and Technology
-- Company News and Events
-- Open Source
+  - Products and Technology
+  - Company News and Events
+  - Open Source
 tags:
-- Packages
-- Shiny
+  - Packages
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - News
+  - Packages
+  - Shiny
 ---
 
 

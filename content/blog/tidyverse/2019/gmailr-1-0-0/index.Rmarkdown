@@ -1,11 +1,13 @@
 ---
 title: gmailr v1.0.0
 slug: gmailr-1-0-0
-author: Jim Hester
-description: >
+author:
+  - Jim Hester
+description: |
   gmailr v1.0.0 is on CRAN.
 date: '2019-08-30'
-categories: [package]
+categories:
+  - Data Wrangling
 tags:
   - gmailr
 photo:
@@ -13,6 +15,8 @@ photo:
   author: Mathyas Kurmann
 software: ["tidyverse", "gmailr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

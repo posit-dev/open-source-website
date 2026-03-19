@@ -1,10 +1,10 @@
 ---
 title: Announcing Glosario
 author:
-  - "[Ian Flores Siaca](https://ianfs.dev/)"
-  - "[François Michonneau](https://francoismichonneau.net/)"
-  - "[Zhian Kamvar](https://zkamvar.netlify.app/)"
-  - "[Greg Wilson](http://third-bit.com)"
+  - '[Ian Flores Siaca](https://ianfs.dev/)'
+  - '[François Michonneau](https://francoismichonneau.net/)'
+  - '[Zhian Kamvar](https://zkamvar.netlify.app/)'
+  - '[Greg Wilson](http://third-bit.com)'
 people:
   - Ian Flores Siaca
   - François Michonneau
@@ -12,8 +12,7 @@ people:
   - Greg Wilson
 date: '2020-07-28'
 categories:
-  - learn
-  - package
+  - Community
 tags:
   - glosario
 description: |
@@ -25,6 +24,9 @@ photo:
 image: announcing-glosario-wd.jpg
 ported_from: education
 port_status: in-progress
+ported_categories:
+  - learn
+  - package
 ---
 
 [`glosario`](https://github.com/carpentries/glosario) is an open source glossary of terms used in data science

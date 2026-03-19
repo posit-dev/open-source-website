@@ -1,5 +1,5 @@
 ---
-title: "Attention-based Image Captioning with Keras"
+title: Attention-based Image Captioning with Keras
 description: |
   Image captioning is a challenging task at intersection of vision and language. Here, we demonstrate using Keras and eager execution to incorporate an attention mechanism that allows the network to concentrate on image features relevant to the current state of text generation.
 author:
@@ -9,13 +9,15 @@ author:
 bibliography: bibliography.bib
 date: 09-17-2018
 categories:
-  - Natural Language Processing
-  - TensorFlow/Keras
-  - Image Recognition & Image Processing
+  - Machine Learning
 preview: images/showattendandtell.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - Natural Language Processing
+  - TensorFlow/Keras
+  - Image Recognition & Image Processing
 ---
 
 ```{r setup, include=FALSE}

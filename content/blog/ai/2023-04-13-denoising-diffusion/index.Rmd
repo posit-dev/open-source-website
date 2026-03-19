@@ -1,6 +1,6 @@
 ---
-title: "De-noising Diffusion with torch"
-description: >
+title: De-noising Diffusion with torch
+description: |
   Currently, in generative deep learning, no other approach seems to outperform the family of diffusion models. Would you like to try for yourself? If so, our torch implementation of de-noising diffusion  provides an easy-to-use, easy-to-configure interface.
 author:
   - name: Daniel Falbel
@@ -10,19 +10,21 @@ author:
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: falbelkeydiffusion
-date: 2023-04-13
+date: '2023-04-13'
 bibliography: references.bib
 categories:
+  - Machine Learning
+preview: images/flowers.png
+editor_options:
+  markdown:
+    wrap: 72
+format: hugo-md
+languages: ["R"]
+ported_categories:
   - Torch
   - R
   - Image Recognition & Image Processing
   - Generative Models
-preview: images/flowers.png
-editor_options: 
-  markdown: 
-    wrap: 72
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

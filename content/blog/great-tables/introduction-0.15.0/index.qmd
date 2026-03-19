@@ -1,12 +1,14 @@
 ---
-title: "Great Tables `v0.15.0`: Flags, Icons, and Other Formatting Goodies"
+title: 'Great Tables `v0.15.0`: Flags, Icons, and Other Formatting Goodies'
 people:
   - Rich Iannone
-date: 2024-12-19
+date: '2024-12-19'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
+categories:
+  - Visualization
 ---
 
 The development of Great Tables is really moving along these days. We just released version `0.15.0` and it adds quite a few nice things to the package. The features we'll highlight in this post are:

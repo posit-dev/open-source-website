@@ -1,15 +1,16 @@
 ---
 title: tibble 2.0.1
 slug: tibble-2.0.1
-description: >
-    Tibbles are a modern reimagining of the data frame, keeping what time has shown to be effective, and throwing out what is not, with nicer default output too! This article describes the latest major release and provides an outlook on further developments
-date: 2019-01-15
+description: |
+  Tibbles are a modern reimagining of the data frame, keeping what time has shown to be effective, and throwing out what is not, with nicer default output too! This article describes the latest major release and provides an outlook on further developments
+date: '2019-01-15'
 people:
   - Kirill Müller
 photo:
   url: https://unsplash.com/photos/KA89yJKYtjE
   author: Marcello Gennari
-categories: [package]
+categories:
+  - Data Wrangling
 tags:
   - tibble
   - tidyverse
@@ -18,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tibble"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

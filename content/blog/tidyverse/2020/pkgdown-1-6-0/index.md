@@ -1,28 +1,25 @@
 ---
-
 slug: pkgdown-1-6-0
 title: pkgdown 1.6.0
-date: 2020-09-12
+date: '2020-09-12'
 people:
   - Hadley Wickham
-description: >
-    This release mostly contains bug fixes and minor improvements, but
-    it now uses the downlit and ragg packages for syntax highlighting and
-    graphical output, respectively.
-
+description: |
+  This release mostly contains bug fixes and minor improvements, but it now uses the downlit and ragg packages for syntax highlighting and graphical output, respectively.
 photo:
   url: https://unsplash.com/photos/GOQ32dlahDk
   author: Vitor Santos
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
-tags: [pkgdown]
-
+categories:
+  - Best Practices
+tags:
+  - pkgdown
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're stoked to announce the release of [pkgdown](%7B%20home%20%7D) 1.6.0. pkgdown is designed to make it quick and easy to build a website for your package. Install it with:

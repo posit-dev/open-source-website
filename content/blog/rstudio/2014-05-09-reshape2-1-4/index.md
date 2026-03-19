@@ -4,18 +4,21 @@ people:
   - Hadley Wickham
 date: '2014-05-09'
 categories:
-- News
-- Packages
+  - Data Wrangling
+  - Community
 slug: reshape2-1-4
 blogcategories:
-- Products and Technology
-- Company News and Events
-- Open Source
+  - Products and Technology
+  - Company News and Events
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - News
+  - Packages
 ---
 
 

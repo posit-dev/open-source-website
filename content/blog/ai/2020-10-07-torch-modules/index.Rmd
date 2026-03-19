@@ -1,7 +1,8 @@
 ---
-title: "Using torch modules"
-description: > 
- In this third installment of our mini-series introducing torch basics, we replace hand-coded matrix operations by modules, considerably simplifying our toy network's code. 
+title: Using torch modules
+description: "In this third installment of our mini-series introducing torch basics,
+  we replace hand-coded matrix operations by modules, considerably simplifying our
+  toy network's code. \n"
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -9,14 +10,16 @@ author:
 slug: keydanatorchmodules
 date: 10-07-2020
 categories:
-  - Torch
-  - R
+  - Machine Learning
 preview: images/preview.jpg
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
 ---
 
 ```{r setup, include=FALSE}

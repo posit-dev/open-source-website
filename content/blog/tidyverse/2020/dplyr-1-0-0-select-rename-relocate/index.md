@@ -4,27 +4,23 @@ title: 'dplyr 1.0.0: select, rename, relocate'
 people:
   - Hadley Wickham
 date: '2020-03-27'
-description: >
-  `select()` and `rename()` can now select by position, name, function of
-  name, type, and any combination thereof. A new `relocate()` function 
-  makes it easy to change the position of columns.
-
-
+description: |
+  `select()` and `rename()` can now select by position, name, function of name, type, and any combination thereof. A new `relocate()` function  makes it easy to change the position of columns.
 categories:
-- package
+  - Data Wrangling
 tags:
-- dplyr
-- dplyr-1-0-0
-
+  - dplyr
+  - dplyr-1-0-0
 photo:
   url: https://unsplash.com/photos/sxNt9g77PE0
   author: Erda Estremera
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 [dplyr 1.0.0 is coming soon](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-is-coming-soon/), and last week we showed how [`summarise()` is growing](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-summarise/). Today, I wanted to talk a little bit about functions for selecting, renaming, and relocating columns.

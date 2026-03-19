@@ -1,26 +1,28 @@
 ---
-
 slug: tidymodels-sparsity
 title: Improved sparsity support in tidymodels
-date: 2025-03-19
+date: '2025-03-19'
 people:
   - Emil Hvitfeldt
-description: >
- The tidymodels ecosystem now fully supports sparse data as input, output, and in creation.
-
+description: |
+  The tidymodels ecosystem now fully supports sparse data as input, output, and in creation.
 photo:
   url: https://unsplash.com/photos/green-tree-in-the-middle-of-grass-field-KD8nzFznQQ0
   author: Oliver Olah
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [tidymodels, recipes, parsnip, workflows]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - recipes
+  - parsnip
+  - workflows
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes", "parsnip", "workflows"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 Photo by <a href="https://unsplash.com/@oxygenvisuals?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Oliver Olah</a> on <a href="https://unsplash.com/photos/green-tree-in-the-middle-of-grass-field-KD8nzFznQQ0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>

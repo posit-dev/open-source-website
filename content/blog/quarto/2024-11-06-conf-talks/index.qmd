@@ -3,17 +3,20 @@ title: posit::conf(2024) Quarto talks
 description: |
   Videos of talks from posit::conf(2024) are posted, we've compiled a playlist of Quarto talks for you!
 categories:
-  - Learn
-  - Conference
+  - Publishing
+  - Community
 people:
   - Mine Çetinkaya-Rundel and Charlotte Wickham
-date: "2024-11-06"
-image: "images/thumbnail.jpg"
-image-alt: "Collage of speakers with Quarto talks at posit::conf(2024)"
+date: '2024-11-06'
+image: images/thumbnail.jpg
+image-alt: Collage of speakers with Quarto talks at posit::conf(2024)
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+ported_categories:
+  - Learn
+  - Conference
 ---
 
 Videos of posit::conf(2024) talks are now posted [on YouTube](https://www.youtube.com/watch?v=s_Vh9HIeLVg&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn). We have also made playlist of talks that are about using, building with, and building on Quarto.

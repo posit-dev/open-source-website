@@ -1,11 +1,10 @@
 ---
 title: Quarto website video series
-description: >
-  Build a personal website with Quarto by following this four-part video series
-  on YouTube.
+description: |
+  Build a personal website with Quarto by following this four-part video series on YouTube.
 categories:
-  - Learn
-  - Workshop
+  - Publishing
+  - Community
 people:
   - Charlotte Wickham
   - Mine Çetinkaya-Rundel
@@ -16,6 +15,9 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+ported_categories:
+  - Learn
+  - Workshop
 ---
 
 

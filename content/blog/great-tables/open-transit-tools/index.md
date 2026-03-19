@@ -1,12 +1,14 @@
 ---
 title: Contributing to Public Transit Data Analysis and Tooling
-date: 2024-12-19T00:00:00.000Z
+date: '2024-12-19T00:00:00.000Z'
 people:
   - Michael Chow
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
+categories:
+  - Visualization
 ---
 
 

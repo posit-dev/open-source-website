@@ -5,19 +5,22 @@ people:
 date: '2018-10-01'
 slug: sparklyr-0-9
 categories:
-- Packages
+  - Data Wrangling
+  - MLOps and Admin
 tags:
-- Spark
-- sparklyr
-- streaming
-- big data
-- Packages
+  - Spark
+  - sparklyr
+  - streaming
+  - big data
+  - Packages
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

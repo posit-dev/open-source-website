@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2014-10-25'
 categories:
-- Packages
+  - Data Wrangling
 slug: rsqlite-1-0-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["rsqlite"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

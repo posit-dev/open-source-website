@@ -5,8 +5,8 @@ people:
 date: '2019-11-12'
 slug: roxygen2-7-0-0
 categories:
-  - package
-description: >
+  - Best Practices
+description: |
   A massive update to roxygen2 now on CRAN.
 tags:
   - r-lib
@@ -20,6 +20,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "roxygen2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're exceedingly happy to announce the release of [roxygen2 7.0.0](https://roxygen2.r-lib.org). roxygen2 allows you to write specially formatted R comments that generate R documentation files (`man/*.Rd`) and a `NAMESPACE` file. roxygen2 is used by over 8,000 CRAN packages.

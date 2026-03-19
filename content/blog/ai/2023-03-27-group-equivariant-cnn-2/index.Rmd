@@ -1,21 +1,23 @@
 ---
-title: "Implementing rotation equivariance: Group-equivariant CNN from scratch"
-description: >
+title: 'Implementing rotation equivariance: Group-equivariant CNN from scratch'
+description: |
   We code up a simple group-equivariant convolutional neural network (GCNN) that is equivariant to rotation. The world may be upside down, but the network will know.
 author:
   - name: Sigrid Keydana
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: keydanagcnn1
-date: 2023-03-27
+date: '2023-03-27'
 categories:
+  - Machine Learning
+preview: images/preview.jpg
+format: hugo-md
+languages: ["R"]
+ported_categories:
   - Torch
   - R
   - Spatial Data
   - Image Recognition & Image Processing
-preview: images/preview.jpg
-format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

@@ -1,27 +1,27 @@
 ---
-
 slug: tidymodels-2021-q1
 title: Catch up with tidymodels
-date: 2021-03-10
+date: '2021-03-10'
 people:
   - Julia Silge
-description: >
-    Releases of tidymodels packages in Q1 of 2021 offer new functions for 
-    easier model building and resampling, along with a new package for 
-    resampling spatial data.
-
+description: |
+  Releases of tidymodels packages in Q1 of 2021 offer new functions for  easier model building and resampling, along with a new package for  resampling spatial data.
 photo:
   url: https://unsplash.com/photos/4Zk45jNyQS4
   author: Timo Wielink
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [roundup] 
-tags: [tidymodels, parsnip, rsample]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - parsnip
+  - rsample
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "rsample"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 

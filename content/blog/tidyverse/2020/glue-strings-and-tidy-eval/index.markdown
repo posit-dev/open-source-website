@@ -5,8 +5,11 @@ people:
 date: '2020-02-11'
 slug: glue-strings-and-tidy-eval
 categories:
+  - Best Practices
+tags:
   - package
-tags: [package, r-lib, tidyverse]
+  - r-lib
+  - tidyverse
 photo:
   url: https://unsplash.com/photos/pcoKkN3NsX0
   author: Modestas Urbonas
@@ -15,6 +18,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["rlang", "glue"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

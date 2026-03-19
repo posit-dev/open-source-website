@@ -5,14 +5,17 @@ people:
 date: '2021-04-14'
 slug: impressions-from-new-zealand-s-r-exchange
 categories:
-  - Events
-description: In March of 2021, Epi-Interactive hosted one of the first in-person R events in Wellington, New Zealand. Here are some takeaways from their experience. 
+  - Community
+description: In March of 2021, Epi-Interactive hosted one of the first in-person R
+  events in Wellington, New Zealand. Here are some takeaways from their experience.
 blogcategories:
-- Company News and Events
+  - Company News and Events
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Events
 ---
 
 <i>This is a guest post from Uli Muellner, Director of IT & Learning, at <a href="https://www.epi-interactive.com/" target="_blank" rel="noopener noreferrer">Epi-Interactive</a>, a Full Service RStudio Partner.</i>

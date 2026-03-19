@@ -1,8 +1,7 @@
 ---
 title: 'Shiny for R updates: new default look, dark mode, shinylive updates, and more'
-description: >
-  An overview of recent Shiny for R updates, a new default look, dark mode,
-  shinylive updates, and more.
+description: |
+  An overview of recent Shiny for R updates, a new default look, dark mode, shinylive updates, and more.
 people:
   - Carson Sievert
   - Garrick Aden-Buie
@@ -12,6 +11,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-r", "shinylive", "bslib"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 
 

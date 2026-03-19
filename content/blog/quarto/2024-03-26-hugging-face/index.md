@@ -1,8 +1,7 @@
 ---
 title: Quarto on Hugging Face
-description: >
-  You can now host Quarto sites on Hugging Face using the new Quarto Space
-  template.
+description: |
+  You can now host Quarto sites on Hugging Face using the new Quarto Space template.
 people:
   - Gordon Shotwell
 date: '2024-03-26'
@@ -12,6 +11,8 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
 ---
 
 

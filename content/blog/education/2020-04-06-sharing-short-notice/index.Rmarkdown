@@ -4,7 +4,7 @@ description: |
   Q&A from the 'Sharing on Short Notice' webinar.
 date: '2020-04-06'
 categories:
-  - teach
+  - Community
 tags:
   - online
   - teach
@@ -17,6 +17,8 @@ photo:
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
+ported_categories:
+  - teach
 ---
 
 ```{r include = FALSE}

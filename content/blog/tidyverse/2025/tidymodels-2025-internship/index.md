@@ -1,24 +1,26 @@
 ---
-
 slug: tidymodels-2025-internship
 title: tidymodels Internship for 2025
-date: 2025-01-08
+date: '2025-01-08'
 people:
   - Max Kuhn
-description: >
-    The tidymodels team is sponsoring a summer internship in 2025.
-
+description: |
+  The tidymodels team is sponsoring a summer internship in 2025.
 photo:
   url: https://unsplash.com/photos/black-and-red-pendant-lamp-9rrtd2z5jdg
   author: Jordane Mathieu
-
-categories: [other] 
-tags: [tidymodels, internship]
+categories:
+  - Community
+tags:
+  - tidymodels
+  - internship
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - other
 ---
 
 We are chuffed once again to offer a summer internship with the tidymodels team. 

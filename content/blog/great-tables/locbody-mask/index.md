@@ -2,7 +2,7 @@
 title: Style Table Body with `mask=` in `loc.body()`
 people:
   - Jerry Wu
-date: 2025-01-24T00:00:00.000Z
+date: '2025-01-24T00:00:00.000Z'
 format:
   html:
     code-summary: Show the Code
@@ -10,6 +10,8 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
+categories:
+  - Visualization
 ---
 
 

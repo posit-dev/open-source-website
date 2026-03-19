@@ -4,20 +4,22 @@ people:
   - Joe Cheng
 date: '2018-11-13'
 categories:
-- Packages
-- Shiny
+  - Interactive Apps
 tags:
-- shiny
-- Packages
-- Shiny
+  - shiny
+  - Packages
+  - Shiny
 slug: shiny-1-2-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

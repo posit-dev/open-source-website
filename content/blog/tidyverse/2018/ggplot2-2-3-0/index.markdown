@@ -4,9 +4,10 @@ people:
   - Mara Averick
 date: '2018-05-21'
 slug: ggplot2-2-3-0
-description: >
-    What you need to know about upcoming changes for ggplot2 2.3.0.
-categories: [package]
+description: |
+  What you need to know about upcoming changes for ggplot2 2.3.0.
+categories:
+  - Visualization
 tags:
   - ggplot2
   - tidyverse
@@ -18,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

@@ -4,13 +4,15 @@ people:
   - RStudio Team
 date: '2015-06-30'
 categories:
-- News
+  - Community
 slug: accelerating-r-rstudio-and-the-new-r-consortium
 blogcategories:
-- Company News and Events
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - News
 ---
 
 

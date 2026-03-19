@@ -1,7 +1,7 @@
 ---
-title: 'readr 1.3.1'
+title: readr 1.3.1
 slug: readr-1-3-1
-description: >
+description: |
   readr 1.3.1 is now on CRAN.
 date: '2018-12-27'
 people:
@@ -10,7 +10,7 @@ photo:
   url: https://unsplash.com/photos/XOW1WqrWNKg
   author: Anastasia Zhenina
 categories:
-  - package
+  - Data Wrangling
 tags:
   - readr
   - tidyverse
@@ -19,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "readr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

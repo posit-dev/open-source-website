@@ -1,27 +1,25 @@
 ---
-
 slug: rvest-1-0-0
 title: rvest 1.0.0
-date: 2021-03-10
+date: '2021-03-10'
 people:
   - Hadley Wickham
-description: >
-    The latest version of rvest brings new tools for extracting text,
-    a radically improved `html_table()`, and a bunch of interface changes
-    to better align rvest with the rest of the tidyverse.
-
+description: |
+  The latest version of rvest brings new tools for extracting text, a radically improved `html_table()`, and a bunch of interface changes to better align rvest with the rest of the tidyverse.
 photo:
   url: https://unsplash.com/photos/b1FS5jQrsLo
   author: Bence Balla-Schottner
-
-categories: [package] 
-tags: [rvest]
-
+categories:
+  - Data Wrangling
+tags:
+  - rvest
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "rvest"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 I'm tickled pink to announce the release of [rvest](https://rvest.tidyverse.org) 1.0.0. rvest is designed to make it easy to scrape (i.e. harvest) data from HTML web pages.

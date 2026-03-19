@@ -1,15 +1,16 @@
 ---
 title: usethis 1.5.0
 slug: usethis-1.5.0
-description: >
-    usethis 1.5.0 is now on CRAN.
-date: 2019-04-09
+description: |
+  usethis 1.5.0 is now on CRAN.
+date: '2019-04-09'
 people:
   - Jenny Bryan
 photo:
   url: https://unsplash.com/photos/MPu7kSboG8E
   author: Philip Veater
-categories: [package]
+categories:
+  - Best Practices
 tags:
   - usethis
   - r-lib
@@ -18,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "usethis"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

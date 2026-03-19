@@ -1,26 +1,26 @@
 ---
-
 slug: waldo
 title: waldo
-date: 2020-10-15
+date: '2020-10-15'
 people:
   - Hadley Wickham
-description: >
-    waldo is a new package that makes it easier to see the differences
-    between a pair of complex R objects.
-
+description: |
+  waldo is a new package that makes it easier to see the differences between a pair of complex R objects.
 photo:
   url: https://unsplash.com/photos/JVD3XPqjLaQ
   author: Jason Dent
-
-categories: [package] 
-tags: [testthat, waldo]
-
+categories:
+  - Best Practices
+tags:
+  - testthat
+  - waldo
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat", "waldo"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're stoked to announce the [waldo](http://waldo.r-lib.org/) package. waldo is designed to find and concisely describe the difference between a pair of R objects. It was designed primarily to improve failure messages for [`testthat::expect_equal()`](https://testthat.r-lib.org/reference/equality-expectations.html), but it turns out to be useful in a number of other situations.

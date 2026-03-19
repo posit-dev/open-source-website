@@ -1,11 +1,9 @@
 ---
 title: Outgrowing your laptop with R and Positron
-description: >
-  R-Ladies Abuja has posted a recording of a recent talk on Positron, and you
-  can find it here!
+description: |
+  R-Ladies Abuja has posted a recording of a recent talk on Positron, and you can find it here!
 categories:
-  - R
-  - Talks
+  - MLOps and Admin
 people:
   - Julia Silge
 date: '2026-03-05'
@@ -15,6 +13,9 @@ ported_from: positron
 port_status: in-progress
 software: ["positron"]
 languages: ["R", "Python"]
+ported_categories:
+  - R
+  - Talks
 ---
 
 

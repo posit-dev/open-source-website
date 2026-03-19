@@ -1,20 +1,23 @@
 ---
-title: "News from the sparkly-verse"
-description: >
+title: News from the sparkly-verse
+description: |
   Highlights to the most recent updates to `sparklyr` and friends
 author:
   - name: Edgar Ruiz
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: sparklyr-updates-q1-2024
-date: 2024-04-22
+date: '2024-04-22'
 categories:
-  - Packages/Releases  
-  - Spark
-  - R
+  - MLOps and Admin
+  - Data Wrangling
 preview: images/sparklyr.png
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - Packages/Releases
+  - Spark
+  - R
 ---
 
 ```{r setup, include=FALSE}

@@ -1,26 +1,25 @@
 ---
-
 slug: haven-2-5-0
 title: haven 2.5.0
-date: 2022-04-15
+date: '2022-04-15'
 people:
   - Hadley Wickham
-description: >
-  haven 2.5.0 adds support for custom character widths, creates FDA-compliant
-  XPT files, and can use Stata's `strL` variable type.
+description: |
+  haven 2.5.0 adds support for custom character widths, creates FDA-compliant XPT files, and can use Stata's `strL` variable type.
 photo:
   url: https://unsplash.com/photos/VsPsf4F5Pi0
   author: Nathan Jennings
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [haven]
-
+categories:
+  - Data Wrangling
+tags:
+  - haven
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "haven"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

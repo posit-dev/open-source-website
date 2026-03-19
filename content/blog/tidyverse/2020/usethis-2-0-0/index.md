@@ -1,25 +1,27 @@
 ---
-
 slug: usethis-2-0-0
 title: usethis 2.0.0
-date: 2020-12-10
+date: '2020-12-10'
 people:
   - Jenny Bryan
-description: >
-    This is a big release aimed at improving usability, especially around Git
-    and GitHub functionality.
-
+description: |
+  This is a big release aimed at improving usability, especially around Git and GitHub functionality.
 photo:
   url: https://unsplash.com/photos/knzXwBCtEeM
   author: Kiana Bosman
-categories: [package] 
-tags: [devtools,r-lib,usethis]
-
+categories:
+  - Best Practices
+tags:
+  - devtools
+  - r-lib
+  - usethis
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "usethis"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're ecstatic to announce the release of usethis v2.0.0 ([usethis.r-lib.org](https://usethis.r-lib.org/)). usethis is a package that facilitates interactive workflows for R project creation and development. It's mostly focussed on easing day-to-day package development, but many of its functions are also useful for non-package projects.

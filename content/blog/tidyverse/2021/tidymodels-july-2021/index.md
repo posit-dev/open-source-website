@@ -1,25 +1,31 @@
 ---
-
 slug: tidymodels-july-2021
 title: New tidymodels releases for July 2021
-date: 2021-07-27
+date: '2021-07-27'
 people:
   - Max Kuhn
-description: >
-    We highlight a series of new tidymodels package versions and their improvements.  
-
+description: "We highlight a series of new tidymodels package versions and their improvements.
+  \ \n"
 photo:
   url: https://unsplash.com/photos/AChwtt3tBPU
   author: Danil Shostak
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [roundup] 
-tags: [parsnip, tune, workflows, hardhat, discrim, finetune, workflowsets]
+categories:
+  - Machine Learning
+tags:
+  - parsnip
+  - tune
+  - workflows
+  - hardhat
+  - discrim
+  - finetune
+  - workflowsets
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "parsnip", "tune", "workflows", "hardhat", "discrim", "finetune", "workflowsets"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 <!--

@@ -4,19 +4,21 @@ people:
   - Joe Cheng
 date: '2014-03-27'
 categories:
-- Shiny
-- shinyapps.io
+  - Interactive Apps
 slug: shiny-website-and-0-9
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Shiny
-- shinyapps.io
+  - Shiny
+  - shinyapps.io
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
+  - shinyapps.io
 ---
 
 

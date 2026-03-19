@@ -8,7 +8,7 @@ description: |
   A total rewrite of dtplyr is now available on CRAN; it performs
   computation lazily (like dbplyr), making it much more performant.
 categories:
-  - package
+  - Data Wrangling
 tags:
   - dtplyr
   - dplyr
@@ -21,6 +21,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dtplyr", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

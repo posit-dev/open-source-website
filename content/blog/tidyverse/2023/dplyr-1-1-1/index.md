@@ -1,21 +1,26 @@
 ---
 slug: dplyr-1-1-1
 title: dplyr 1.1.1
-date: 2023-03-22
+date: '2023-03-22'
 people:
   - Davis Vaughan
-description: >
-    dplyr 1.1.1 is on CRAN! This patch release includes a number of performance regression fixes along with refinements to the multiple match join warnings that result in warnings being thrown much less often.
+description: |
+  dplyr 1.1.1 is on CRAN! This patch release includes a number of performance regression fixes along with refinements to the multiple match join warnings that result in warnings being thrown much less often.
 photo:
   url: https://unsplash.com/photos/jy8z4NBIYSQ
   author: Jon Tyson
-categories: [package] 
-tags: [dplyr, dplyr-1-1-0]
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're stoked to announce the release of [dplyr 1.1.1](https://dplyr.tidyverse.org/). We don't typically blog about patch releases, because they generally only fix bugs without significantly changing behavior, but this one includes two important updates:

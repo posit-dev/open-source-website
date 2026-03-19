@@ -5,8 +5,8 @@ people:
 date: '2020-04-27'
 slug: self-cleaning-test-fixtures
 categories:
-  - programming
-  - learn
+  - Best Practices
+  - Community
 tags:
   - r-lib
 description: |
@@ -20,6 +20,9 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["withr", "testthat"]
 languages: ["R"]
+ported_categories:
+  - programming
+  - learn
 ---
 
 

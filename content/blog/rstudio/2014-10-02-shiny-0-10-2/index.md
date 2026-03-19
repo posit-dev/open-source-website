@@ -4,23 +4,25 @@ people:
   - Yihui Xie
 date: '2014-10-02'
 categories:
-- Packages
-- Shiny
+  - Interactive Apps
 tags:
-- DataTables
-- Internet Explorer
-- Progress
-- shiny
-- Packages
-- Shiny
+  - DataTables
+  - Internet Explorer
+  - Progress
+  - shiny
+  - Packages
+  - Shiny
 slug: shiny-0-10-2
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["progress", "shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

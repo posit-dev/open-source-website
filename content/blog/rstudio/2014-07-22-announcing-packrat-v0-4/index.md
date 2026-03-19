@@ -4,19 +4,21 @@ people:
   - Kevin Ushey
 date: '2014-07-22'
 categories:
-- Packages
-- RStudio IDE
+  - Best Practices
 slug: announcing-packrat-v0-4
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
-- RStudio IDE
+  - Packages
+  - RStudio IDE
 ported_from: rstudio
 port_status: in-progress
 software: ["packrat"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - RStudio IDE
 ---
 
 

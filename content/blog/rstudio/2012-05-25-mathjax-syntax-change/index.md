@@ -4,13 +4,15 @@ people:
   - RStudio Team
 date: '2012-05-25'
 categories:
-- News
+  - Publishing
 slug: mathjax-syntax-change
 blogcategories:
-- Company News and Events
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - News
 ---
 
 

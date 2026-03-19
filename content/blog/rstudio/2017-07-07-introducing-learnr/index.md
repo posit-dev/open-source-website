@@ -4,21 +4,23 @@ people:
   - Garrett Grolemund
 date: '2017-07-11'
 categories:
-- Packages
-- R Markdown
+  - Publishing
 tags:
-- shiny
-- tutorial
-- Packages
-- R Markdown
+  - shiny
+  - tutorial
+  - Packages
+  - R Markdown
 slug: introducing-learnr
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - R Markdown
 ---
 
 

@@ -1,28 +1,28 @@
 ---
 output: hugodown::hugo_document
-
 slug: parsnip-roundup-2022
 title: Updates for parsnip packages
-date: 2022-03-24
+date: '2022-03-24'
 people:
   - Max Kuhn
-description: >
-    The parsnip package and six of its extension packages were recently updated 
-    on CRAN. One of the extensions is a new package for fitting multilevel 
-    statistical models. 
-
+description: "The parsnip package and six of its extension packages were recently
+  updated  on CRAN. One of the extensions is a new package for fitting multilevel
+  \ statistical models. \n"
 photo:
   url: https://unsplash.com/photos/vrbZVyX2k4I
   author: Markus Spiske
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [parsnip, multilevelmod]
+categories:
+  - Machine Learning
+tags:
+  - parsnip
+  - multilevelmod
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "parsnip", "multilevelmod"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

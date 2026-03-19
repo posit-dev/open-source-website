@@ -1,26 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: recipes-0-2-0
 title: recipes 0.2.0
-date: 2022-02-22
+date: '2022-02-22'
 people:
   - Max Kuhn
-description: >
-    Recipes has added a few new steps along with many improvements.
-
+description: |
+  Recipes has added a few new steps along with many improvements.
 photo:
   url: https://unsplash.com/photos/xZa4JUE7EdM
   author: Jonny Clow
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [recipes, tidymodels]
+categories:
+  - Machine Learning
+tags:
+  - recipes
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "recipes", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

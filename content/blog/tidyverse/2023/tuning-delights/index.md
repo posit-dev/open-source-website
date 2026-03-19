@@ -1,26 +1,27 @@
 ---
-
 slug: tuning-delights
 title: Tuning hyperparameters with tidymodels is a delight
-date: 2023-04-20
+date: '2023-04-20'
 people:
   - Simon Couch
-description: >
-    New releases of the tune, finetune, and workflowsets packages have made 
-    optimizing model parameters with tidymodels even more pleasant.
-
+description: |
+  New releases of the tune, finetune, and workflowsets packages have made  optimizing model parameters with tidymodels even more pleasant.
 photo:
   url: https://unsplash.com/photos/Wrx0iVcYKmM
   author: Mario La Pergola
-
-categories: [roundup] 
-tags: [tidymodels, tune, workflowsets]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - tune
+  - workflowsets
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tune", "workflowsets"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 The tidymodels team recently released new versions of the tune, finetune, and workflowsets packages, and we're super stoked about it! Each of these three packages facilitates tuning hyperparameters in tidymodels, and their new releases work to make the experience of hyperparameter tuning more joyful.

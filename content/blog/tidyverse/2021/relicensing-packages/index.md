@@ -1,25 +1,23 @@
 ---
-
 slug: relicensing-packages
-title: "Re-licensing packages: a retrospective"
-date: 2021-12-07
+title: 'Re-licensing packages: a retrospective'
+date: '2021-12-07'
 people:
   - Mara Averick
-description: >
-    Over the past year and change we re-licensed the vast majority of tidyverse, tidymodels, and r-lib packages to use the MIT license. Here, we discuss the mechanics and rationale.
-
+description: |
+  Over the past year and change we re-licensed the vast majority of tidyverse, tidymodels, and r-lib packages to use the MIT license. Here, we discuss the mechanics and rationale.
 photo:
   url: https://unsplash.com/photos/ymf4_9Y9S_A
   author: Randy Fath
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [other] 
+categories:
+  - Community
 tags: []
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - other
 ---
 
 <!--

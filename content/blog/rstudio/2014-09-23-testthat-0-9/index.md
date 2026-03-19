@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2014-09-23'
 categories:
-- Packages
+  - Best Practices
 slug: testthat-0-9
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["testthat"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

@@ -1,24 +1,27 @@
 ---
-
 slug: finetune-0-0-1
 title: finetune 0.0.1
-date: 2020-12-02
+date: '2020-12-02'
 people:
   - Max Kuhn
-description: >
-    finetune is a new package that adds a few more model tuning methods. 
-
+description: "finetune is a new package that adds a few more model tuning methods.
+  \n"
 photo:
   url: https://unsplash.com/photos/nQYqEwimp5o
   author: Rob Wingate
-
-categories: [package] 
-tags: [tidymodels,finetune,tune]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - finetune
+  - tune
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "finetune", "tune"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

@@ -4,20 +4,23 @@ people:
   - Garrett Grolemund
 date: '2015-06-22'
 categories:
-- Shiny
-- Training
+  - Interactive Apps
+  - MLOps and Admin
 tags:
-- cheatsheet
-- Shiny
+  - cheatsheet
+  - Shiny
 slug: new-shiny-cheat-sheet-and-video-tutorial
 blogcategories:
-- Products and Technology
-- Training and Education
-- Open Source
+  - Products and Technology
+  - Training and Education
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
+  - Training
 ---
 
 

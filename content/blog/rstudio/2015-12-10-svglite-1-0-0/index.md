@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2015-12-10'
 categories:
-- Packages
+  - Visualization
 slug: svglite-1-0-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["svglite"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

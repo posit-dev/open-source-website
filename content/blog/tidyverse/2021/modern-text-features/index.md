@@ -1,29 +1,27 @@
 ---
-
 slug: modern-text-features
 title: Modern Text Features in R
-date: 2021-02-06
+date: '2021-02-06'
 people:
   - Thomas Lin Pedersen
-description: >
-  ragg has taken a major leap forward in text-rendering capabilities with the
-  latest releases of systemfonts, textshaping, and ragg itself. This post will
-  go into detail with what is now possible and how it compares to the build in 
-  devices.
-
+description: |
+  ragg has taken a major leap forward in text-rendering capabilities with the latest releases of systemfonts, textshaping, and ragg itself. This post will go into detail with what is now possible and how it compares to the build in  devices.
 photo:
   url: https://unsplash.com/photos/bMybTSV7RFY
   author: Natalia Y
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [deep-dive] 
-tags: [graphic-device, ragg, systemfonts]
-
+categories:
+  - Best Practices
+tags:
+  - graphic-device
+  - ragg
+  - systemfonts
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg", "systemfonts"]
 languages: ["R"]
+ported_categories:
+  - deep-dive
 ---
 
 I'm extremely pleased to present the culmination of several years of work spanning the [systemfonts](https://github.com/r-lib/systemfonts), [textshaping](https://github.com/r-lib/textshaping), and [ragg](https://ragg.r-lib.org) packages. These releases complete our efforts to create a high-quality, performant raster graphics device that works the same way on every operating system.

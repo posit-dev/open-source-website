@@ -5,25 +5,27 @@ people:
 date: '2020-09-29'
 slug: torch
 categories:
-  - Packages
-  - News
+  - Machine Learning
 tags:
   - data science
   - deep learning
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
 resoruces:
-- name: torch
-  src: torch.jpg
-  title: Torch
+  - name: torch
+    src: torch.jpg
+    title: Torch
 blogcategories:
-- Products and Technology
-- Company News and Events
-- Open Source
+  - Products and Technology
+  - Company News and Events
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Packages
+  - News
 ---
 
 

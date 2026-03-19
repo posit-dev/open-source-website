@@ -1,26 +1,28 @@
 ---
 title: What LLMs Actually Do (and What They Don’t)
-description: &desc |
+description: |
   Welcome to The Shiny Side of LLMs: a blog series explaining large language models
   in plain English, without the fancy and difficult buzzwords. In this first part:
   what LLMs are, how they work, what they’re good at, and why they don't magically solve all your problems.
 people:
   - Veerle Eeftink - van Leemput
-date: "2025-07-31"
+date: '2025-07-31'
 image: shiny-side-of-llms-header.png
-image-alt: "The Shiny Side of LLMs part 1"
+image-alt: The Shiny Side of LLMs part 1
 resources:
-    - shiny-side-of-llms-header.png
-    - shiny-side-of-llms-back-propagation-1.png
-    - shiny-side-of-llms-back-propagation-2.png
-    - shiny-side-of-llms-stats.png
-    - shiny-side-of-llms-chat.png
-    - shiny-side-of-llms-code-gen.png
-    - shiny-side-of-llms-image-gen.png
+  - shiny-side-of-llms-header.png
+  - shiny-side-of-llms-back-propagation-1.png
+  - shiny-side-of-llms-back-propagation-2.png
+  - shiny-side-of-llms-stats.png
+  - shiny-side-of-llms-chat.png
+  - shiny-side-of-llms-code-gen.png
+  - shiny-side-of-llms-image-gen.png
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "shiny-r", "chatlas", "ellmer"]
 languages: ["R", "Python"]
+categories:
+  - Interactive Apps
 ---
 
 # Welcome to the Shiny Side of LLMs!

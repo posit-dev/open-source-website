@@ -1,12 +1,11 @@
 ---
-title: "Introducing torch autograd"
+title: Introducing torch autograd
 description: |
   With torch, there is hardly ever a reason to code backpropagation from scratch. Its automatic differentiation feature, called autograd, keeps track of operations that need their gradients computed, as well as how to compute them. In this second post of a four-part series, we update our simple, hand-coded network to make use of autograd.
-date: 2020-10-05
+date: '2020-10-05'
 slug: keydanatorchnetworkwithautograd
 categories:
-  - Torch
-  - R
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -17,6 +16,9 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
 ---
 
 

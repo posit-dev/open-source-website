@@ -1,25 +1,28 @@
 ---
-
 slug: tidymodels-2022-q3
-title: "Q3 2022 tidymodels digest"
-date: 2022-10-19
+title: Q3 2022 tidymodels digest
+date: '2022-10-19'
 people:
   - Max Kuhn
-description: >
-    Our post-RStudio conference productivity has been high! This post talks about tidymodels updates from the last few months. 
+description: "Our post-RStudio conference productivity has been high! This post talks
+  about tidymodels updates from the last few months. \n"
 photo:
   url: https://unsplash.com/photos/PyDaL4PcLoQ
-  author:  Simon Spieske
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
-tags: [tidymodels, agua, recipes, h2o]
-
+  author: Simon Spieske
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - agua
+  - recipes
+  - h2o
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles.

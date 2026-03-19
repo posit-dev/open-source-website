@@ -1,7 +1,7 @@
 ---
-title: "Representation learning with MMD-VAE"
-description: >
- Like GANs, variational autoencoders (VAEs) are often used to generate images. However, VAEs add an additional promise: namely, to model an underlying latent space. Here, we first look at a typical implementation that maximizes the evidence lower bound. Then, we compare it to one of the more recent competitors, MMD-VAE, from the Info-VAE (information maximizing VAE) family.
+title: Representation learning with MMD-VAE
+description: |
+  Like GANs, variational autoencoders (VAEs) are often used to generate images. However, VAEs add an additional promise: namely, to model an underlying latent space. Here, we first look at a typical implementation that maximizes the evidence lower bound. Then, we compare it to one of the more recent competitors, MMD-VAE, from the Info-VAE (information maximizing VAE) family.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -10,13 +10,15 @@ bibliography: bibliography.bib
 slug: keydana2018mmdvae
 date: 10-22-2018
 categories:
-  - TensorFlow/Keras
-  - Unsupervised Learning
-  - Image Recognition & Image Processing
+  - Machine Learning
 preview: images/thumb.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Unsupervised Learning
+  - Image Recognition & Image Processing
 ---
 
 ```{r setup, include=FALSE}

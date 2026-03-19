@@ -1,6 +1,7 @@
 ---
-title: "styler 1.2.0"
-author: "Lorenz Walthert"
+title: styler 1.2.0
+author:
+  - Lorenz Walthert
 date: '2019-11-04'
 description: |
   A major update of the styler package is available on CRAN now.
@@ -8,9 +9,12 @@ photo:
   author: Heng Films
   url: https://unsplash.com/photos/mpdIPhYqZ4Y
 slug: styler-1-2-0
-categories: ["package"]
+categories:
+  - Best Practices
 software: ["tidyverse", "styler"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

@@ -3,13 +3,15 @@ title: Shiny for Python 0.6.0
 description: Fewer decorators, new page functions and, many new components
 people:
   - Shiny Team
-date: "2023-11-15"
+date: '2023-11-15'
 image: shiny-060.png
-image-alt: "Shiny for Python 0.6.0"
+image-alt: Shiny for Python 0.6.0
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 We recently released Shiny for Python 0.6.0, this is a big release so it's a good idea to check out the [changelog](https://github.com/posit-dev/py-shiny/blob/main/CHANGELOG.md) for a full set of new features. This post is going to focus on the four most important changes in 0.6.0.

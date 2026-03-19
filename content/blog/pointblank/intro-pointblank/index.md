@@ -2,11 +2,13 @@
 title: Introducing Pointblank
 people:
   - Rich Iannone
-date: 2025-04-04T00:00:00.000Z
+date: '2025-04-04T00:00:00.000Z'
 ported_from: pointblank
 port_status: in-progress
 software: ["pointblank"]
 languages: ["Python"]
+categories:
+  - Data Wrangling
 ---
 
 

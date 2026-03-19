@@ -1,26 +1,26 @@
 ---
-
 slug: model-calibration
 title: Model Calibration
-date: 2022-11-29
+date: '2022-11-29'
 people:
   - Edgar Ruiz
-description: >
-    Model Calibration is coming to tidymodels. This post covers the new plotting
-    functions, and our plans for future enhancements. 
-
+description: "Model Calibration is coming to tidymodels. This post covers the new
+  plotting functions, and our plans for future enhancements. \n"
 photo:
   url: https://unsplash.com/photos/s3B_pjK7UIs
   author: Graphic Node
-
-categories: [package]
-tags: [model, plots]
-
+categories:
+  - Machine Learning
+tags:
+  - model
+  - plots
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["probably", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

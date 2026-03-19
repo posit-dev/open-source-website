@@ -1,6 +1,6 @@
 ---
-title: "torch time series, final episode: Attention"
-description: > 
+title: 'torch time series, final episode: Attention'
+description: |
   We conclude our mini-series on time-series forecasting with torch by augmenting last time's sequence-to-sequence architecture with a technique both immensely popular in natural language processing and inspired by human (and animal) cognition: attention.
 author:
   - name: Sigrid Keydana
@@ -9,13 +9,15 @@ author:
 slug: keydanatorchts4
 date: 03-19-2021
 categories:
-  - Torch
-  - R
-  - Time Series
+  - Machine Learning
 bibliography: bibliography.bib
 preview: images/preview.jpg
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Time Series
 ---
 
 ```{r setup, include=FALSE}

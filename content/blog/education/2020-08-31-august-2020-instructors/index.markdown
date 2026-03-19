@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-08-31'
 categories:
-  - certify
+  - Community
 tags:
   - certify
 description: |
@@ -17,6 +17,8 @@ image: august-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - certify
 ---
 
 We welcomed ten new instructors to our ranks in August 2020,

@@ -4,18 +4,20 @@ people:
   - Garrett Grolemund
 date: '2015-04-07'
 categories:
-- Shiny
+  - Interactive Apps
 tags:
-- Article
-- Shiny
+  - Article
+  - Shiny
 slug: design-patterns-for-action-buttons
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
 ---
 
 

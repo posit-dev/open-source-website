@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-03-23'
 categories:
-  - teach
+  - Community
 tags:
   - online
   - teach
@@ -17,6 +17,8 @@ photo:
 image: online-teaching-qa-wd.jpg
 ported_from: education
 port_status: in-progress
+ported_categories:
+  - teach
 ---
 
 Thanks to everyone who took part in our webinar on [teaching online on short notice][tosn] — we hope you'll be able to join us for the next in the series on [resources and tips for teaching (with) R remotely][rttr]. We weren't able to answer all of the questions that came up in the first webinar while we were online, so here are some from [the community discussion][community]; if you have others, please add them to that forum and we'll tell you what we can.

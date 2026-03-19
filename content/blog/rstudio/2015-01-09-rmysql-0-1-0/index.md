@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2015-01-09'
 categories:
-- Packages
+  - Data Wrangling
 slug: rmysql-0-1-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["rmysql"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

@@ -5,7 +5,7 @@ people:
 date: '2021-07-22'
 slug: three-shiny-best-practices-seen-in-the-shiny-contest
 categories:
-  - Shiny
+  - Interactive Apps
 tags:
   - Shiny
   - best-practices
@@ -19,6 +19,8 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r", "reactlog"]
 languages: ["R"]
+ported_categories:
+  - Shiny
 ---
 
 

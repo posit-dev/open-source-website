@@ -4,13 +4,15 @@ people:
   - Hadley Wickham
 date: '2012-10-01'
 categories:
-- News
+  - Community
 slug: where-in-the-world
 blogcategories:
-- Company News and Events
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - News
 ---
 
 

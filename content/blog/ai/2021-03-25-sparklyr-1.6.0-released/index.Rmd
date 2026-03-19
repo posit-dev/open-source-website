@@ -1,5 +1,6 @@
 ---
-title: "sparklyr 1.6: weighted quantile summaries, power iteration clustering, spark_write_rds(), and more"
+title: 'sparklyr 1.6: weighted quantile summaries, power iteration clustering, spark_write_rds(),
+  and more'
 description: |
   The sparklyr 1.6 release introduces weighted quantile summaries, an R interface to power iteration clustering, spark_write_rds(), as well as a number of dplyr-related improvements.
 author:
@@ -11,12 +12,14 @@ slug: sparklyr-1.6
 date: 03-25-2021
 bibliography: bibliography.bib
 categories:
-  - R
-  - Packages/Releases
-  - Distributed Computing
+  - MLOps and Admin
 preview: images/sparklyr-1.6.jpg
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - R
+  - Packages/Releases
+  - Distributed Computing
 ---
 
 ```{r setup, include=FALSE}

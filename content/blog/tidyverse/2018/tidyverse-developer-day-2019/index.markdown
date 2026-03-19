@@ -1,14 +1,15 @@
 ---
-title: 'Tidyverse developer day 2019'
+title: Tidyverse developer day 2019
 people:
   - Mara Averick
 date: '2018-11-28'
 slug: tidyverse-developer-day-2019
-description: > 
+description: |
   Join us for tidyverse developer day on January 19!
 categories:
-  - other
-tags: [tidyverse-dev-day]
+  - Community
+tags:
+  - tidyverse-dev-day
 photo:
   url: https://unsplash.com/photos/yB5cYEq7y2U
   author: fancycrave
@@ -17,6 +18,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+ported_categories:
+  - other
 ---
 
 

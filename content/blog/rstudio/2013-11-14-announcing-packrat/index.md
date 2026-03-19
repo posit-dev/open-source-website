@@ -4,17 +4,19 @@ people:
   - Jonathan McPherson
 date: '2013-11-14'
 categories:
-- Packages
+  - Best Practices
 slug: announcing-packrat
 blogcategories:
-- Products and Technology
+  - Products and Technology
 tags:
-- Packages
+  - Packages
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress
 software: ["packrat"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

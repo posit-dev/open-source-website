@@ -4,22 +4,24 @@ people:
   - Yihui Xie
 date: '2014-08-01'
 categories:
-- Packages
-- Shiny
+  - Interactive Apps
 tags:
-- shiny
-- Unicode
-- UTF-8
-- Packages
-- Shiny
+  - shiny
+  - Unicode
+  - UTF-8
+  - Packages
+  - Shiny
 slug: shiny-0-10-1
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

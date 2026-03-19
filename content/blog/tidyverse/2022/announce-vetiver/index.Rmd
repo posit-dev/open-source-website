@@ -1,29 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: announce-vetiver
 title: Announcing vetiver for MLOps in R and Python
-date: 2022-06-09
+date: '2022-06-09'
 people:
   - Julia Silge
-description: >
-  We are thrilled to announce the release of vetiver, a framework for MLOps 
-  tasks in R and Python. Use vetiver to version, share, deploy, and monitor a 
-  trained model.
-
+description: |
+  We are thrilled to announce the release of vetiver, a framework for MLOps  tasks in R and Python. Use vetiver to version, share, deploy, and monitor a  trained model.
 photo:
   url: https://unsplash.com/photos/3C5ZfCLSGC4
-  author: "21 swan"
-
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [tidymodels, vetiver]
+  author: 21 swan
+categories:
+  - MLOps and Admin
+tags:
+  - tidymodels
+  - vetiver
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "vetiver-r"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

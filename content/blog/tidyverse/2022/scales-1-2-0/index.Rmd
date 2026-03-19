@@ -1,27 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: scales-1-2-0
 title: scales 1.2.0
-date: 2022-04-13
+date: '2022-04-13'
 people:
   - Hadley Wickham
-description: >
-    scales 1.2.0 brings a number of small but useful improvements 
-    to numeric labels.
-
+description: |
+  scales 1.2.0 brings a number of small but useful improvements  to numeric labels.
 photo:
   url: https://unsplash.com/photos/98MbUldcDJY
   author: Piret Ilver
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [ggplot2, scales]
+categories:
+  - Visualization
+tags:
+  - ggplot2
+  - scales
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ggplot2", "scales"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r, include = FALSE}

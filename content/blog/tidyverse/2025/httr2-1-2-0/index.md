@@ -1,28 +1,25 @@
 ---
-
 slug: httr2-1-2-0
 title: httr2 1.2.0
-date: 2025-07-14
+date: '2025-07-14'
 people:
   - Hadley Wickham
-description: >
-    httr2 1.2.0 improves security for redacted headers, improves URL parsing
-    and building, enhances debugging, and includes a bunch of other quality
-    of life improvements.
-
+description: |
+  httr2 1.2.0 improves security for redacted headers, improves URL parsing and building, enhances debugging, and includes a bunch of other quality of life improvements.
 photo:
   url: https://chatgpt.com/share/6870349d-20cc-8009-84b0-dd026c75cbb2
   author: chatGPT
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [httr2]
-
+categories:
+  - Data Wrangling
+tags:
+  - httr2
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "httr2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

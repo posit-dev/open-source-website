@@ -1,25 +1,25 @@
 ---
-
 slug: dplyr-performance
-title: "`dplyr::if_else()` and `dplyr::case_when()` are up to 30x faster"
-date: 2026-02-10
+title: '`dplyr::if_else()` and `dplyr::case_when()` are up to 30x faster'
+date: '2026-02-10'
 people:
   - Davis Vaughan
-description: >
-    dplyr 1.2.0 comes with much faster and more memory efficient `if_else()` and `case_when()` functions!
-
+description: |
+  dplyr 1.2.0 comes with much faster and more memory efficient `if_else()` and `case_when()` functions!
 photo:
   url: https://unsplash.com/photos/ZbFoi92fyzY
   author: Jahanzeb Ahsan
-
-categories: [package]
-tags: [dplyr]
-
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 In this technical post, we'll dive into some performance improvements we've made to dplyr 1.2.0 to make [`if_else()`](https://dplyr.tidyverse.org/reference/if_else.html) and [`case_when()`](https://dplyr.tidyverse.org/reference/case-and-replace-when.html) up to 30x faster and use up to 10x less memory.

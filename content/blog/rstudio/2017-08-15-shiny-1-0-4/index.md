@@ -5,17 +5,19 @@ people:
 date: '2017-08-15'
 slug: shiny-1-0-4
 categories:
-- Packages
-- Shiny
+  - Interactive Apps
 tags:
-- Packages
-- Shiny
+  - Packages
+  - Shiny
 blogcategories:
-- Products and Technology
+  - Products and Technology
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

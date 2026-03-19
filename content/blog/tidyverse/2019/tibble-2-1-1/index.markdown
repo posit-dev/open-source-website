@@ -1,16 +1,17 @@
 ---
 title: tibble 2.1.1
 slug: tibble-2.1.1
-description: >
-    tibble 2.1.1 is on CRAN now! This article describes and motivates the latest minor release of the tibble package.
-date: 2019-03-19
+description: |
+  tibble 2.1.1 is on CRAN now! This article describes and motivates the latest minor release of the tibble package.
+date: '2019-03-19'
 people:
   - Kirill Müller
   - Jenny Bryan
 photo:
   url: https://unsplash.com/photos/yaiy4mCbzw0
   author: Ganapathy Kumar
-categories: [package]
+categories:
+  - Data Wrangling
 tags:
   - tibble
   - tidyverse
@@ -19,6 +20,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tibble"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

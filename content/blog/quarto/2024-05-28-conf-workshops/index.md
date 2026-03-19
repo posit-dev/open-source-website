@@ -1,22 +1,23 @@
 ---
 title: Quarto workshops at posit::conf(2024)
-description: >
-  On August 12, we're hosting a day of workshops featuring three dedicated to
-  Quarto at posit::conf(2024) in Seattle
+description: |
+  On August 12, we're hosting a day of workshops featuring three dedicated to Quarto at posit::conf(2024) in Seattle
 people:
   - Isabella Velásquez and Mine Çetinkaya-Rundel
 date: '2024-05-28'
 image: images/conf-workshops-thumbnail.png
-image-alt: >-
-  posit::conf(2024) iconography including Seattle skyline on the left and the
-  words 'Quarto workshops' on the right.
+image-alt: posit::conf(2024) iconography including Seattle skyline on the left and
+  the words 'Quarto workshops' on the right.
 categories:
-  - Learn
-  - Workshop
+  - Publishing
+  - Community
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+ported_categories:
+  - Learn
+  - Workshop
 ---
 
 

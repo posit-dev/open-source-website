@@ -1,18 +1,21 @@
 ---
 title: 'Custom Google Analytics Dashboards with R: Downloading Data'
-authors: 
-- Carl Howe
-authormeta:
-- carl-howe
+authors: Carl Howe
+authormeta: carl-howe
 date: '2020-11-27'
 slug: google-analytics-part1
 categories:
-  - Data Science Leadership
-description: This article, the first of three, describes how to use a code-oriented data science approach to Google Analytics data from a blog. It creates custom views of raw GA data while hiding the complexity of the Google Analytics data and interface
+  - Data Wrangling
+  - Visualization
+description: This article, the first of three, describes how to use a code-oriented
+  data science approach to Google Analytics data from a blog. It creates custom views
+  of raw GA data while hiding the complexity of the Google Analytics data and interface
 blogcategories:
-- Data Science Leadership
+  - Data Science Leadership
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Data Science Leadership
 ---
 
 ```{=html}

@@ -1,7 +1,7 @@
 ---
-title: "Learning learnr"
+title: Learning learnr
 author:
-  - "[Nischal Shrestha](http://nischalshrestha.me/)"
+  - '[Nischal Shrestha](http://nischalshrestha.me/)'
 people:
   - Nischal Shrestha
 date: '2020-07-01'
@@ -19,6 +19,9 @@ ported_from: education
 port_status: in-progress
 software: ["learnr"]
 languages: ["R"]
+categories:
+  - Community
+  - Publishing
 ---
 
 > "Let us change our traditional attitude to the construction of

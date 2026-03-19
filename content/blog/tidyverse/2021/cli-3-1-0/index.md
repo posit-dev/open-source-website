@@ -1,27 +1,24 @@
 ---
-
 slug: cli-3-1-0
 title: cli 3.1.0
-date: 2021-11-19
+date: '2021-11-19'
 people:
   - Gábor Csárdi
-description: >
-    cli 3.1.0 introduces customizable color palettes plus it
-    comes with a number of other smaller improvements. 
-
+description: "cli 3.1.0 introduces customizable color palettes plus it comes with
+  a number of other smaller improvements. \n"
 photo:
   url: https://www.pexels.com/photo/colorful-hot-air-balloon-3580627
   author: Yumi
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
+categories:
+  - Best Practices
 tags: []
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["cli"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're very chuffed to announce the release of [cli](https://cli.r-lib.org "cli homepage") 3.1.0. cli helps you create a consistent and convenient command line interface.

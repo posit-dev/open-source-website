@@ -1,27 +1,25 @@
 ---
-
 slug: lifecycle-1-0-0
 title: lifecycle 1.0.0
-date: 2021-02-15
+date: '2021-02-15'
 people:
   - Hadley Wickham
-description: >
-    The lifecycle package documentation received a major overhaul
-    based on what I learned preparing for my rstudio::global
-    keynote.
-
+description: |
+  The lifecycle package documentation received a major overhaul based on what I learned preparing for my rstudio::global keynote.
 photo:
   url: https://unsplash.com/photos/VMKBFR6r_jg
   author: Suzanne D. Williams
-
-categories: [package] 
-tags: [tidyverse]
-
+categories:
+  - Best Practices
+tags:
+  - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["lifecycle"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're exceedingly happy to announce the release of [lifecycle](http://lifecycle.r-lib.org/) 1.0.0. The tidyverse team uses the lifecycle package to manage the lifecycle of functions and features within the tidyverse, letting you know what's still experimental and what we're moving away from in the future.

@@ -4,17 +4,19 @@ people:
   - RStudio Team
 date: '2013-12-03'
 categories:
-- Shiny
+  - Interactive Apps
 slug: shiny-server-0-4
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Shiny
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
 ---
 
 

@@ -4,19 +4,21 @@ people:
   - Hadley Wickham
 date: '2015-09-04'
 categories:
-- Packages
-- tidyverse
+  - Data Wrangling
 slug: dplyr-0-4-3
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
-- tidyverse
+  - Packages
+  - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - tidyverse
 ---
 
 

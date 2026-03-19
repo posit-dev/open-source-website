@@ -1,23 +1,26 @@
 ---
 slug: dplyr-1-1-0-joins
-title: "dplyr 1.1.0: Joins"
-date: 2023-01-31
+title: 'dplyr 1.1.0: Joins'
+date: '2023-01-31'
 people:
   - Davis Vaughan
-description: >
-    In dplyr 1.1.0, joins have been greatly reworked, including a new way to
-    specify join columns, support for inequality, rolling, and overlap joins, and two new
-    quality control arguments.
+description: |
+  In dplyr 1.1.0, joins have been greatly reworked, including a new way to specify join columns, support for inequality, rolling, and overlap joins, and two new quality control arguments.
 photo:
   url: https://unsplash.com/photos/Cecb0_8Hx-o
   author: Duy Pham
-categories: [package] 
-tags: [dplyr, dplyr-1-1-0]
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110) is out now! This is a giant release, so we're splitting the release announcement up into four blog posts which we'll post over the course of this week. Today, we're focusing on joins, including the new [`join_by()`](https://dplyr.tidyverse.org/reference/join_by.html) syntax, new warnings for multiple matches, inequality joins, rolling joins, and new tools for handling unmatched rows. To learn more about joins, you might want to read the updated [joins chapter](https://r4ds.hadley.nz/joins.html) in the upcoming 2nd edition of [R for Data Science](https://r4ds.hadley.nz).

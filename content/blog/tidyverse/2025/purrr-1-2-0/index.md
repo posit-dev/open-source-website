@@ -1,30 +1,25 @@
 ---
-
 slug: purrr-1-2-0
 title: purrr 1.2.0
-date: 2025-11-04
+date: '2025-11-04'
 people:
   - Hadley Wickham
-description: >
-    This release tightens up the package by removing long-deprecated functions, 
-    making `map_chr()` and predicate functions more type-safe, and requiring a
-    newer version of carrier to make `in_parallel()` use easier. It also 
-    includes performance improvements to `every()`, `some()`, and `none()`, 
-    as well as a new getting started vignette.
-
+description: |
+  This release tightens up the package by removing long-deprecated functions,  making `map_chr()` and predicate functions more type-safe, and requiring a newer version of carrier to make `in_parallel()` use easier. It also  includes performance improvements to `every()`, `some()`, and `none()`,  as well as a new getting started vignette.
 photo:
   url: https://unsplash.com/photos/orange-tabby-kitten-in-grasses-RCfi7vgJjUY
   author: Andriyko Podilnyk
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [purrr]
-
+categories:
+  - Data Wrangling
+tags:
+  - purrr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "purrr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

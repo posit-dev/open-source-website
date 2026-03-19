@@ -4,16 +4,19 @@ people:
   - Hadley Wickham
 date: '2015-02-11'
 categories:
-- Packages
+  - Community
+  - Data Wrangling
 slug: epoch-rmysql
 blogcategories:
-- Products and Technology
+  - Products and Technology
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["rmysql"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

@@ -1,27 +1,25 @@
 ---
-
 slug: lintr-3-0-0
 title: lintr 3.0.0
-date: 2022-07-15
+date: '2022-07-15'
 people:
   - Michael Chirico
-description: >
-    lintr 3.0.0 is a major release featuring a more consistent
-    API for using linter and dozens of new linters included
-
+description: |
+  lintr 3.0.0 is a major release featuring a more consistent API for using linter and dozens of new linters included
 photo:
   url: https://unsplash.com/photos/tt_HFMMae1w
   author: Hai Tran
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [lintr]
-
+categories:
+  - Best Practices
+tags:
+  - lintr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "lintr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We are very excited to announce the release of [lintr](https://lintr.r-lib.org) 3.0.0! lintr

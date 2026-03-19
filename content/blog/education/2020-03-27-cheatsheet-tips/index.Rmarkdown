@@ -4,8 +4,7 @@ people:
   - garrett
 date: '2020-03-27'
 categories:
-  - learn
-  - teach
+  - Community
 photo:
   url: https://unsplash.com/photos/rPOmLGwai2w
   author: Marius Masalar
@@ -15,6 +14,9 @@ ported_from: education
 port_status: in-progress
 software: ["cheatsheets"]
 languages: ["R"]
+ported_categories:
+  - learn
+  - teach
 ---
 
 Shortly after Winston Chang and I were hired by RStudio, I was surprised to spot his name at the bottom of a [LaTeX cheatsheet](https://wch.github.io/latexsheet/latexsheet.pdf) that I had used all through grad school. His idea was too good to waste; and soon after, the [first RStudio Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/old/pdfs/shiny-cheatsheet-old.pdf) was born! 

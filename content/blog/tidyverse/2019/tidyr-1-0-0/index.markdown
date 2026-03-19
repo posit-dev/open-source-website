@@ -5,7 +5,7 @@ people:
 date: '2019-09-13'
 slug: tidyr-1-0-0
 categories:
-  - package
+  - Data Wrangling
 tags:
   - tidyr
   - tidyverse
@@ -17,6 +17,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-08-03'
 categories:
-  - teach
+  - Community
 tags:
   - teach
 description: |
@@ -16,6 +16,8 @@ photo:
 image: hippocratic-license-wd.jpg
 ported_from: education
 port_status: in-progress
+ported_categories:
+  - teach
 ---
 
 Over the past few years,

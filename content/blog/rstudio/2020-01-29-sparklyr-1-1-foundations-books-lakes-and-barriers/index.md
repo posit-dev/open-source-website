@@ -5,17 +5,20 @@ people:
 date: '2020-01-29'
 slug: sparklyr-1-1
 categories:
-- Packages
+  - Data Wrangling
+  - MLOps and Admin
 tags:
-- sparklyr
-- big data
-- Spark
-- Packages
+  - sparklyr
+  - big data
+  - Spark
+  - Packages
 blogcategories:
-- Products and Technology
+  - Products and Technology
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

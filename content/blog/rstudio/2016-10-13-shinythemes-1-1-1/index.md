@@ -4,19 +4,21 @@ people:
   - Winston Chang
 date: '2016-10-13'
 categories:
-- Packages
-- Shiny
+  - Interactive Apps
 slug: shinythemes-1-1-1
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
-- Shiny
+  - Packages
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

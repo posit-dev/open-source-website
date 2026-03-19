@@ -4,15 +4,17 @@ people:
   - Garrett Grolemund
 date: '2014-11-06'
 categories:
-- News
-- Training
+  - MLOps and Admin
 slug: introduction-to-data-science-with-r-video-workshop
 blogcategories:
-- Training and Education
-- Company News and Events
+  - Training and Education
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - News
+  - Training
 ---
 
 

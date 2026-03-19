@@ -1,22 +1,26 @@
 ---
 slug: ragnar-0-2
 title: ragnar 0.2
-date: 2025-08-20
+date: '2025-08-20'
 people:
   - Tomasz Kalinowski
-description: >
-  ragnar 0.2 introduces a tidy, transparent toolkit for building
-  Retrieval-Augmented Generation (RAG) pipelines in R.
+description: |
+  ragnar 0.2 introduces a tidy, transparent toolkit for building Retrieval-Augmented Generation (RAG) pipelines in R.
 photo:
   url: https://unsplash.com/photos/person-holding-silver-and-black-scissors-rNsRAHLhrHc
   author: Tekton
-categories: [package]
-tags: [ragnar, ai]
+categories:
+  - Artificial Intelligence
+tags:
+  - ragnar
+  - ai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragnar"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 # ragnar 0.2

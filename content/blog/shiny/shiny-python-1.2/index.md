@@ -1,7 +1,6 @@
 ---
 title: Shiny for Python 1.2.0
-description: >-
-  Shiny's `@render.data_frame` has a new integration with `narwhals`, gaining
+description: Shiny's `@render.data_frame` has a new integration with `narwhals`, gaining
   support for multiple data frame types!
 people:
   - Shiny Team
@@ -12,6 +11,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

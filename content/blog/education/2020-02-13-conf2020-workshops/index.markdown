@@ -1,10 +1,12 @@
 ---
-title: 'Workshop wrap-up from rstudio::conf(2020)'
+title: Workshop wrap-up from rstudio::conf(2020)
 date: '2020-02-13'
-description: 'rstudio::conf(2020) workshop materials now available.'
+description: rstudio::conf(2020) workshop materials now available.
 slug: conf2020-workshops
-categories: [learn, teach]
-tags: [conf2020]
+categories:
+  - Community
+tags:
+  - conf2020
 people:
   - alison
 photo:
@@ -14,6 +16,9 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - learn
+  - teach
 ---
 
 In January, we wrapped up [rstudio::conf(2020)](https://rstudio.com/conference/)&mdash;our fourth conference about all things R, RStudio, and data science. This year, the conference was held in San Francisco, California. Before the conference, we offered 19 (mostly) two-day workshops taught by RStudio staff as well as experts throughout the R community. Topics ranged from R for Excel Users, Javascript for Shiny Users, to Deep Learning with Keras and Tensorflow. With a teaching staff of 102 and 1307 workshop attendees, our instructors worked overtime to craft learning experiences that both challenged and empowered learners.

@@ -1,7 +1,8 @@
 ---
-title: "Introductory time-series forecasting with torch"
-description: > 
- This post is an introduction to time-series forecasting with torch. Central topics are data input, and practical usage of RNNs (GRUs/LSTMs). Upcoming posts will build on this, and introduce increasingly involved architectures. 
+title: Introductory time-series forecasting with torch
+description: "This post is an introduction to time-series forecasting with torch.
+  Central topics are data input, and practical usage of RNNs (GRUs/LSTMs). Upcoming
+  posts will build on this, and introduce increasingly involved architectures. \n"
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -10,12 +11,14 @@ slug: keydanatorchts1
 date: 03-10-2021
 bibliography: bibliography.bib
 categories:
-  - Torch
-  - R
-  - Time Series
+  - Machine Learning
 preview: images/preview.jpg
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Time Series
 ---
 
 ```{r setup, include=FALSE}

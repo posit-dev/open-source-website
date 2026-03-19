@@ -1,5 +1,5 @@
 ---
-title: "Image Classification on Small Datasets with Keras"
+title: Image Classification on Small Datasets with Keras
 description: |
   Having to train an image-classification model using very little data is a common situation, in this article we review three techniques for tackling this problem including feature extraction and fine tuning from a pretrained network.
 author:
@@ -13,13 +13,15 @@ author:
     affiliation_url: https://www.rstudio.com
 date: 12-14-2017
 categories:
-  - TensorFlow/Keras
-  - Image Recognition & Image Processing
+  - Machine Learning
 preview: images/swapping_fc_classifier.png
-creative_commons: null
+creative_commons: ~
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Image Recognition & Image Processing
 ---
 
 ```{r setup, include=FALSE}

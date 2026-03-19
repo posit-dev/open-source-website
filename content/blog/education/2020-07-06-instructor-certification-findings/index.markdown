@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-07-06'
 categories:
-  - certify
+  - Community
 tags:
   - certify
 slug: instructor-certification-findings
@@ -16,6 +16,8 @@ image: instructor-certification-findings-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - certify
 ---
 
 

@@ -1,17 +1,20 @@
 ---
-title: 'lobstr 1.0.0'
-author: Mara Averick
+title: lobstr 1.0.0
+author:
+  - Mara Averick
 date: '2018-12-21'
 slug: lobstr
-description: > 
+description: |
   lobstr is now on CRAN. lobstr provides tools that allow you to dig into the detail of an object.
 categories:
-  - package
+  - Best Practices
 photo:
   url: https://unsplash.com/photos/BmjuEqM4YOY
   author: Toa Heftiba
 software: ["tidyverse", "lobstr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

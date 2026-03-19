@@ -1,7 +1,7 @@
 ---
-title: "Experimenting with autoregressive flows in TensorFlow Probability"
-description: > 
- Continuing from the recent introduction to bijectors in TensorFlow Probability (TFP), this post brings autoregressivity to the table. Using TFP through the new R package tfprobability, we look at the implementation of masked autoregressive flows (MAF) and put them to use on two different datasets.
+title: Experimenting with autoregressive flows in TensorFlow Probability
+description: |
+  Continuing from the recent introduction to bijectors in TensorFlow Probability (TFP), this post brings autoregressivity to the table. Using TFP through the new R package tfprobability, we look at the implementation of masked autoregressive flows (MAF) and put them to use on two different datasets.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -9,14 +9,16 @@ author:
 slug: keydana2019autoregressive
 date: 04-24-2019
 categories:
-  - Probabilistic ML/DL 
-  - Generative Models
-  - TensorFlow/Keras
+  - Machine Learning
 bibliography: bibliography.bib
 preview: images/made.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - Probabilistic ML/DL
+  - Generative Models
+  - TensorFlow/Keras
 ---
 
 

@@ -4,10 +4,10 @@ people:
   - Mara Averick
 date: '2019-05-10'
 slug: forcats-0-4-0
-description: > 
+description: |
   What's new in forcats 0.4.0?
 categories:
-  - package
+  - Data Wrangling
 tags:
   - forcats
   - tidyverse
@@ -19,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "forcats"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

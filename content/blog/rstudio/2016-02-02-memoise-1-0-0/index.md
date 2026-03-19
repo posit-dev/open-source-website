@@ -4,17 +4,19 @@ people:
   - Jim Hester
 date: '2016-02-02'
 categories:
-- Packages
+  - Best Practices
 slug: memoise-1-0-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["memoise"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

@@ -4,8 +4,7 @@ people:
   - greg
 date: '2020-03-24'
 categories:
-  - teach
-  - certify
+  - Community
 tags:
   - teach
   - certify
@@ -19,6 +18,9 @@ image: reopening-training-applications-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - teach
+  - certify
 ---
 
 We temporarily put applications for RStudio's [instructor training program][training] on hold in December 2019

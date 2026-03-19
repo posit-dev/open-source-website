@@ -1,20 +1,23 @@
 ---
 title: lubridate 1.7.0
 slug: lubridate-1.7.0
-description: >
+description: |
   A new version of lubridate is on CRAN!
 people:
   - Vitalie Spinu
-date: 2017-11-01
+date: '2017-11-01'
 photo:
   url: https://unsplash.com/photos/yBzrPGLjMQw
   author: Heather Zabriskie
-categories: [package]
+categories:
+  - Data Wrangling
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "lubridate"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

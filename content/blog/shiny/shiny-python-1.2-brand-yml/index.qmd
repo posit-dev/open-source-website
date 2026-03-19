@@ -3,14 +3,16 @@ title: Branded theming for Shiny for Python apps
 description: Unified theming via brand.yml is now available in Shiny for Python.
 people:
   - Garrick Aden-Buie
-date: "2024-11-25"
+date: '2024-11-25'
 image: brand-yml-feature.svg
-image-alt: "brand.yml logo"
-image-header-disable: true
+image-alt: brand.yml logo
+image-header-disable: yes
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "brand-yml"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 [brand.yml]: https://posit-dev.github.io/brand-yml

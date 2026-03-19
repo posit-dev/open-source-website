@@ -3,10 +3,11 @@ title: dplyr 0.8.3
 slug: dplyr-0-8-3
 people:
   - Romain François
-description: >
+description: |
   dplyr 0.8.3 is now on CRAN.
 date: '2019-07-04'
-categories: [package]
+categories:
+  - Data Wrangling
 tags:
   - dplyr
   - tidyverse
@@ -18,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

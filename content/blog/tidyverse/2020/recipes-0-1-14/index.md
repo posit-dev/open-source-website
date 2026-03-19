@@ -1,26 +1,26 @@
 ---
-
 slug: recipes-0-1-14
 title: recipes 0.1.14
-date: 2020-10-22
+date: '2020-10-22'
 people:
   - Max Kuhn
-description: >
-    A new version of the recipes package contains a signficant API update and 
-    some additional features. 
-
+description: "A new version of the recipes package contains a signficant API update
+  and  some additional features. \n"
 photo:
   url: https://unsplash.com/photos/ToswmEekSFI
   author: Holly Stratton
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
-tags: [tidymodels, recipes]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - recipes
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

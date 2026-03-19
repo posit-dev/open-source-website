@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2016-09-30'
 categories:
-- tidyverse
+  - Data Wrangling
 slug: ggplot2-2-2-0-coming-soon
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- tidyverse
+  - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+ported_categories:
+  - tidyverse
 ---
 
 

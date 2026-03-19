@@ -4,17 +4,19 @@ people:
   - Garrett Grolemund
 date: '2012-10-08'
 categories:
-- Packages
+  - Data Wrangling
 slug: lubridate-1-2-0-now-on-cran
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["lubridate"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

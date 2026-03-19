@@ -4,10 +4,10 @@ people:
   - Mara Averick
 date: '2019-02-15'
 slug: bigrquery-1-1-0
-description: > 
+description: |
   bigrquery 1.1.0 is now on CRAN.
 categories:
-  - package
+  - Data Wrangling
 tags:
   - bigrquery
   - dplyr
@@ -21,6 +21,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "bigrquery", "dplyr", "dbplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

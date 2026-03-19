@@ -1,13 +1,12 @@
 ---
-title: "Discrete Fourier Transform - with torch"
+title: Discrete Fourier Transform - with torch
 description: |
   About the Fourier Transform, it has been said that it is one of the greatest wonders of the universe. At the same time, it can be realized in a mere half-dozen lines of code. Even if in the end, you're just going to call torch's built-in functions directly, it helps to understand, and be able to reproduce in code, the ideas that underlie the magic. This post is an excerpt from the forthcoming book, Deep Learning and Scientific Computing with R torch, to be published by CRC Press.
-date: 2022-10-20T00:00:00.000Z
+date: '2022-10-20T00:00:00.000Z'
 slug: keydanatorchdft
 categories:
-  - Torch
-  - R
-  - Concepts
+  - Machine Learning
+  - Best Practices
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +17,10 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Concepts
 ---
 
 

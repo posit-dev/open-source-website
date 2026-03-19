@@ -1,26 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: plumber2-0-1-0
 title: plumber2 0.1.0
-date: 2025-09-23
+date: '2025-09-23'
 people:
   - Thomas Lin Pedersen
-description: >
-    plumber2, a complete rewrite of plumber, has landed on CRAN, providing a modern, future proof solution for creating web servers in R. Read all about the new features here.
-
+description: |
+  plumber2, a complete rewrite of plumber, has landed on CRAN, providing a modern, future proof solution for creating web servers in R. Read all about the new features here.
 photo:
   url: https://unsplash.com/photos/a-blue-pipe-laying-on-top-of-a-pile-of-dirt-MzPnzK3prTU
   author: Rose Galloway Green
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [plumber2, web]
+categories:
+  - Interactive Apps
+tags:
+  - plumber2
+  - web
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "plumber2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

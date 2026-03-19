@@ -1,27 +1,26 @@
 ---
-
 slug: reprex-1-0-0
 title: reprex 1.0.0
-date: 2021-02-01
+date: '2021-02-01'
 people:
   - Jenny Bryan
-description: >
-    We've never blogged about reprex before, so the release of v1.0.0 seems
-    like a good occasion for it.
-
+description: |
+  We've never blogged about reprex before, so the release of v1.0.0 seems like a good occasion for it.
 photo:
   url: https://www.flickr.com/photos/iamagenious/6251271390/sizes/o/
   author: Eric Molina
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
-tags: [reprex,tidyverse]
-
+categories:
+  - Best Practices
+tags:
+  - reprex
+  - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "reprex"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're exhilarated to announce the release of reprex 1.0.0 ([reprex.tidyverse.org](https://reprex.tidyverse.org)). reprex is a package that helps you prepare **REPR**oducible **EX**amples to share in places where people talk about code, e.g., on GitHub, on Stack Overflow, and in Slack or email messages.

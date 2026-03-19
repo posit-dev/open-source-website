@@ -1,29 +1,27 @@
 ---
-
 slug: quarto-live-0-1-1
-title: "WebAssembly roundup part 3: Quarto Live 0.1.1"
-date: 2024-10-15
+title: 'WebAssembly roundup part 3: Quarto Live 0.1.1'
+date: '2024-10-15'
 people:
   - George Stagg
-description: >
-    Quarto Live is a new Quarto extension that uses WebAssembly to bring
-    interactive examples and dynamic code exercises to documents. Create highly
-    engaging interactive elements for readers using standard Quarto markdown
-    syntax.
-
+description: |
+  Quarto Live is a new Quarto extension that uses WebAssembly to bring interactive examples and dynamic code exercises to documents. Create highly engaging interactive elements for readers using standard Quarto markdown syntax.
 photo:
   url: https://unsplash.com/@sharonmccutcheon
   author: Alexander Grey
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
-tags: [webr, quarto]
-
+categories:
+  - Interactive Apps
+  - Publishing
+tags:
+  - webr
+  - quarto
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "quarto"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 <!--

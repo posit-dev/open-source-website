@@ -1,17 +1,20 @@
 ---
 title: stringr 1.4.0
-author: Mara Averick
+author:
+  - Mara Averick
 date: '2019-02-21'
 slug: stringr-1-4-0
-description: >
-    stringr 1.4.0 is now on CRAN!
+description: |
+  stringr 1.4.0 is now on CRAN!
 categories:
-  - package
+  - Data Wrangling
 photo:
   url: https://unsplash.com/photos/o-d37kiKqqc
   author: Maranda Vandergriff
 software: ["tidyverse", "stringr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

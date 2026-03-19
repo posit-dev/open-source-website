@@ -1,26 +1,25 @@
 ---
 slug: ggplot2-3-4-0-size-to-linewidth
 title: Make your ggplot2 extension package understand the new linewidth aesthetic
-date: 2022-08-24
+date: '2022-08-24'
 people:
   - Thomas Lin Pedersen
-description: >
-    The next release of ggplot2 will contain a number of internal improvements 
-    and fixes long-time inconsistencies. One of these are the conflation of 
-    point size and linewidth into the same aesthetic. This post will go into 
-    detail with how you can make your extension package work well with the new
-    linewidth aesthetic.
+description: |
+  The next release of ggplot2 will contain a number of internal improvements  and fixes long-time inconsistencies. One of these are the conflation of  point size and linewidth into the same aesthetic. This post will go into  detail with how you can make your extension package work well with the new linewidth aesthetic.
 photo:
   url: https://unsplash.com/photos/GsZLXA4JPcM
   author: Ricardo Gomez Angel
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [deep-dive] 
-tags: [ggplot2]
+categories:
+  - Best Practices
+tags:
+  - ggplot2
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+ported_categories:
+  - deep-dive
 ---
 
 We are hard at work finishing the next release of ggplot2. While this release is mostly about internal changes, there are a few quite user visible changes as well. One of these upends the idea that the `size` aesthetic is responsible for *both* the sizing of point/text and the width of lines. With the next release we will have a `linewidth` aesthetic to take care of the latter, while `size` will continue handling the former.

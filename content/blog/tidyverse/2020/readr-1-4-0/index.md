@@ -1,26 +1,26 @@
 ---
-
 slug: readr-1-4-0
 title: readr 1.4.0
-date: 2020-10-06
+date: '2020-10-06'
 people:
   - Jim Hester
-description: >
-    The newest release of readr brings improved argument consistency, better
-    messages and more flexible output options.
+description: |
+  The newest release of readr brings improved argument consistency, better messages and more flexible output options.
 photo:
   url: https://unsplash.com/photos/XOW1WqrWNKg
   author: Anastasia Zhenina
-categories: [package]
+categories:
+  - Data Wrangling
 tags:
   - readr
   - tidyverse
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "readr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 [readr](http://readr.tidyverse.org) 1.4.0 is now available on CRAN! Learn more about readr at <a href="https://readr.tidyverse.org" class="uri">https://readr.tidyverse.org</a>. Detailed notes are always in the [change log](https://readr.tidyverse.org/news/index.html#readr-1-4-0).

@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-08-18'
 categories:
-  - certify
+  - Community
 tags:
   - certify
 description: |
@@ -16,6 +16,8 @@ image: more-sample-exams-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - certify
 ---
 
 To help everyone who is preparing to certify as an RStudio instructor,

@@ -1,7 +1,10 @@
 ---
-title: "More flexible models with TensorFlow eager execution and Keras"
-description: >
- Advanced applications like generative adversarial networks, neural style transfer, and the attention mechanism ubiquitous in natural language processing used to be not-so-simple to implement with the Keras declarative coding paradigm. Now, with the advent of TensorFlow eager execution, things have changed. This post explores using eager execution with R. 
+title: More flexible models with TensorFlow eager execution and Keras
+description: "Advanced applications like generative adversarial networks, neural style
+  transfer, and the attention mechanism ubiquitous in natural language processing
+  used to be not-so-simple to implement with the Keras declarative coding paradigm.
+  Now, with the advent of TensorFlow eager execution, things have changed. This post
+  explores using eager execution with R. \n"
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -9,11 +12,13 @@ author:
 slug: keydana2018eager-wrapup
 date: 10-02-2018
 categories:
-  - TensorFlow/Keras
+  - Machine Learning
 preview: images/m.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
 ---
 
 ```{r setup, include=FALSE}

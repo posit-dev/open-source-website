@@ -1,17 +1,20 @@
 ---
-title: "Introducing Component and Layout Galleries for Shiny for Python"
+title: Introducing Component and Layout Galleries for Shiny for Python
 people:
   - Daniel Chen
   - Sara Altman
   - Garrett Grolemund
-description: "Qucikly see and choose Shiny for Python's Components and Layouts in these new galleries."
-date: "2024-02-26"
+description: Qucikly see and choose Shiny for Python's Components and Layouts in these
+  new galleries.
+date: '2024-02-26'
 image: layouts-thumb.jpg
-image-alt: "An illustration of Shiny layouts and components"
+image-alt: An illustration of Shiny layouts and components
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 Reference documents are great if you know what you're looking for, but they make it hard to discover new components. For that reason, we've created Shiny for Python's [components gallery](https://shiny.posit.co/py/components/)
 and [layouts gallery](https://shiny.posit.co/py/layouts/).

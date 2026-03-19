@@ -4,16 +4,15 @@ people:
   - Hadley Wickham
 date: '2019-11-18'
 slug: scales-1-1-0
-description: 
-  scales 1.1.0 now available on CRAN. It includes a new naming scheme 
-  (with `breaks_` and `labels_` prefixes) and greatly improved documentation.
+description: scales 1.1.0 now available on CRAN. It includes a new naming scheme (with
+  `breaks_` and `labels_` prefixes) and greatly improved documentation.
 categories:
-  - package
+  - Visualization
 tags:
   - ggplot2
   - scales
   - r-lib
-photo: 
+photo:
   url: https://unsplash.com/photos/d0CasEMHDQs
   author: David Clode
 image: thumbnail-wd.jpg
@@ -21,6 +20,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2", "scales"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

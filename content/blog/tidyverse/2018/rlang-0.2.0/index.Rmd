@@ -1,14 +1,13 @@
 ---
 title: rlang 0.2.0
 slug: rlang-0.2.0
-description: >
-  rlang 0.2.0 is on CRAN! This version brings many improvements to
-  tidy evaluation: improved !! syntax and printing of quosures in
-  colours.
+description: |
+  rlang 0.2.0 is on CRAN! This version brings many improvements to tidy evaluation: improved !! syntax and printing of quosures in colours.
 people:
   - Lionel Henry
-date: 2018-03-02
-categories: [package]
+date: '2018-03-02'
+categories:
+  - Best Practices
 photo:
   url: https://unsplash.com/photos/K5gBXHSvtkc
   author: Denise Johnson
@@ -17,6 +16,8 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "rlang"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2013-04-17'
 categories:
-- Packages
+  - Best Practices
 slug: devtools-1-2
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["devtools"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

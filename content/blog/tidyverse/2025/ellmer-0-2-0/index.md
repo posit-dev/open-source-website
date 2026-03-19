@@ -1,30 +1,26 @@
 ---
-
 slug: ellmer-0-2-0
 title: ellmer 0.2.0
-date: 2025-05-28
+date: '2025-05-28'
 people:
   - Hadley Wickham
-description: >
-    ellmer 0.2.0 lands with a swag of upgrades: Garrick Aden‑Buie joins the 
-    team, we make a couple of breaking changes, and add serious scale with 
-    `parallel_chat()` and `batch_chat()`. A new `params()` helper standardises 
-    model settings across providers and chats now report how much they cost. 
-    The release also tidies `chat_*` names, bumps default models and adds 
-    Hugging Face, Mistral AI, and Portkey connectors.
+description: |
+  ellmer 0.2.0 lands with a swag of upgrades: Garrick Aden‑Buie joins the  team, we make a couple of breaking changes, and add serious scale with  `parallel_chat()` and `batch_chat()`. A new `params()` helper standardises  model settings across providers and chats now report how much they cost.  The release also tidies `chat_*` names, bumps default models and adds  Hugging Face, Mistral AI, and Portkey connectors.
 photo:
   url: https://unsplash.com/photos/elephant-walking-during-daytime-QJbyG6O0ick
   author: Nam Anh
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [ellmer, ai]
-
+categories:
+  - Artificial Intelligence
+tags:
+  - ellmer
+  - ai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ellmer"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

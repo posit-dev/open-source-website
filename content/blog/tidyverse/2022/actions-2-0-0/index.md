@@ -1,26 +1,25 @@
 ---
-
 slug: actions-2-0-0
 title: GitHub Actions for R developers, v2
-date: 2022-06-01
+date: '2022-06-01'
 people:
   - Gábor Csárdi
-description: >
-    We have updated our GitHub Actions at `r-lib/actions`. Consider upgrading
-    to the new `v2` version, for faster and more reliable GHA jobs.
-
+description: |
+  We have updated our GitHub Actions at `r-lib/actions`. Consider upgrading to the new `v2` version, for faster and more reliable GHA jobs.
 photo:
   url: https://www.pexels.com/photo/industry-technology-power-clock-4069389
   author: Ronaldo Galeano
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [programming] 
-tags: ["GitHub Actions"]
+categories:
+  - Best Practices
+tags:
+  - GitHub Actions
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["actions"]
 languages: ["R"]
+ported_categories:
+  - programming
 ---
 
 <!--

@@ -1,26 +1,29 @@
 ---
 output: hugodown::hugo_document
 slug: dplyr-1-1-0-joins
-title: "dplyr 1.1.0: Joins"
-date: 2023-01-31
+title: 'dplyr 1.1.0: Joins'
+date: '2023-01-31'
 people:
   - Davis Vaughan
-description: >
-    In dplyr 1.1.0, joins have been greatly reworked, including a new way to
-    specify join columns, support for inequality, rolling, and overlap joins, and two new
-    quality control arguments.
+description: |
+  In dplyr 1.1.0, joins have been greatly reworked, including a new way to specify join columns, support for inequality, rolling, and overlap joins, and two new quality control arguments.
 photo:
   url: https://unsplash.com/photos/Cecb0_8Hx-o
   author: Duy Pham
-categories: [package] 
-tags: [dplyr, dplyr-1-1-0]
-editor_options: 
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
+editor_options:
   chunk_output_type: console
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110) is out now!

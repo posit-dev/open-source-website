@@ -3,8 +3,7 @@ title: How to deliver learnr tutorials in a package
 date: '2020-09-28'
 slug: delivering-learnr-tutorials-in-a-package
 categories:
-  - package
-  - teach
+  - Community
 tags:
   - rmarkdown
   - teach
@@ -19,6 +18,9 @@ ported_from: education
 port_status: in-progress
 software: ["rmarkdown", "learnr"]
 languages: ["R"]
+ported_categories:
+  - package
+  - teach
 ---
 
 

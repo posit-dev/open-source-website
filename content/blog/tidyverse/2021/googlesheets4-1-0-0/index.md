@@ -1,26 +1,26 @@
 ---
-
 slug: googlesheets4-1-0-0
 title: googlesheets4 1.0.0
-date: 2021-07-26
+date: '2021-07-26'
 people:
   - Jenny Bryan
-description: >
-    Version 1.0.0 marks the graduation of googlesheets4 from experimental to
-    stable.
-
+description: |
+  Version 1.0.0 marks the graduation of googlesheets4 from experimental to stable.
 photo:
   url: https://unsplash.com/photos/VqYzKAviJ10
   author: Hendri Sabri
-
-categories: [package]
-tags: [googlesheets4, gargle]
-
+categories:
+  - Data Wrangling
+tags:
+  - googlesheets4
+  - gargle
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googlesheets4", "gargle"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're over the moon to announce the release of googlesheets4, version 1.0.0 (<https://googlesheets4.tidyverse.org>).

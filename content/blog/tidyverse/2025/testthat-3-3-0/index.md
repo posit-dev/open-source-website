@@ -1,27 +1,26 @@
 ---
-
 slug: testthat-3-3-0
 title: testthat 3.3.0
-date: 2025-11-13
+date: '2025-11-13'
 people:
   - Hadley Wickham
-description: >
-    testthat 3.3.0 brings improved expectations with better error messages,
-    new expectations for common testing patterns, and lifecycle changes including the removal of `local_mock()` and `with_mock()`. It also includes
-    a write-up of my experience doing package development with Claude Code.
+description: |
+  testthat 3.3.0 brings improved expectations with better error messages, new expectations for common testing patterns, and lifecycle changes including the removal of `local_mock()` and `with_mock()`. It also includes a write-up of my experience doing package development with Claude Code.
 photo:
   url: https://unsplash.com/photos/a-rack-filled-with-lots-of-yellow-hard-hats-wp81DxKUd1Ez
   author: Pop & Zebra
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [testthat, devtools]
-
+categories:
+  - Best Practices
+tags:
+  - testthat
+  - devtools
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat", "devtools"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

@@ -5,19 +5,21 @@ people:
 date: '2019-09-09'
 slug: pin-discover-and-share-resources
 categories:
-- Packages
+  - MLOps and Admin
 tags:
-- pins
-- reproducible
-- Packages
+  - pins
+  - reproducible
+  - Packages
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 software: ["pins-r"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

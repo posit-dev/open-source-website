@@ -7,7 +7,8 @@ people:
   - Davis Vaughan
 description: The latest updates to the tidymodels packages
 date: '2019-09-05'
-categories: [package]
+categories:
+  - Machine Learning
 tags:
   - tidymodels
   - recipes
@@ -25,6 +26,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes", "embed", "rsample", "parsnip", "corrr", "tidypredict", "yardstick"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We've sent a few packages to CRAN recently. Here's a recap of the changes (and some notes at the bottom): 

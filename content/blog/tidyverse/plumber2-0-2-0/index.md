@@ -1,23 +1,26 @@
 ---
 title: plumber2 0.2.0
 slug: plumber2-0-2-0
-date: 2026-01-20
+date: '2026-01-20'
 people:
   - Thomas Lin Pedersen
-description: >
-    The next version of plumber2 has hit CRAN. Read all about the new features
-    such as OpenTelemetry (OTEL) support, authentication, new tags, and performance
-    improvements here.
+description: |
+  The next version of plumber2 has hit CRAN. Read all about the new features such as OpenTelemetry (OTEL) support, authentication, new tags, and performance improvements here.
 image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/black-and-gray-metal-pipe-4CNNH2KEjhc
   author: Sigmund
-categories: [package]
-tags: [plumber2, web]
+categories:
+  - Interactive Apps
+tags:
+  - plumber2
+  - web
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "plumber2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

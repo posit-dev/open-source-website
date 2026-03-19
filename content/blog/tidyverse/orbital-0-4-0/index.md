@@ -1,26 +1,26 @@
 ---
-
 slug: orbital-0-4-0
 title: orbital 0.4.0
-date: 2026-01-12
+date: '2026-01-12'
 people:
   - Emil Hvitfeldt
-description: >
-    orbital 0.4.0 is on CRAN! orbital now has post processing support.
-
+description: |
+  orbital 0.4.0 is on CRAN! orbital now has post processing support.
 photo:
   url: https://unsplash.com/photos/a-wispy-nebula-glows-with-purple-and-orange-hues-KLFP4HwaXyk
   author: Scott Lord
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [tidymodels, orbital]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - orbital
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "orbital"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

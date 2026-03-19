@@ -1,12 +1,11 @@
 ---
-title: "Writing Data Science in Education Using R in the Open"
+title: Writing Data Science in Education Using R in the Open
 people:
   - Ryan Estrellado
   - Joshua Rosenberg
 date: '2020-10-05'
 categories:
-  - teach
-  - learn
+  - Community
 tags:
   - bookdown
 description: |
@@ -15,14 +14,17 @@ slug: ds-in-edu
 photo:
   url: https://unsplash.com/photos/SYTO3xs06fU
   author: Marvin Meyer
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
 image: banner-wd.jpg
 ported_from: education
 port_status: in-progress
 software: ["bookdown"]
 languages: ["R"]
+ported_categories:
+  - teach
+  - learn
 ---
 
 

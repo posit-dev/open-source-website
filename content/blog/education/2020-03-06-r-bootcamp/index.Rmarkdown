@@ -1,17 +1,17 @@
 ---
-title: "(Re)building the R Bootcamp and generating R tutorials"
+title: (Re)building the R Bootcamp and generating R tutorials
 description: |
   Our experience (re-)building the R bootcamp and generating interactive R tutorials.
 date: '2020-03-06'
 slug: r-bootcamp
 categories:
-  - teach
-  - learn
-tags: [online]
+  - Community
+tags:
+  - online
 author:
-  - "[Ted Laderas](https://laderast.github.io/)"
-  - "[Jessica Minnier](http://jessicaminnier.com/)"
-  - "[Florencia D'Andrea](https://florencia.netlify.com/)"
+  - '[Ted Laderas](https://laderast.github.io/)'
+  - '[Jessica Minnier](http://jessicaminnier.com/)'
+  - '[Florencia D''Andrea](https://florencia.netlify.com/)'
 people:
   - Ted Laderas
   - Jessica Minnier
@@ -23,6 +23,9 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - teach
+  - learn
 ---
 
 This article outlines the original R-Bootcamp, why we moved it to [the current platform](https://r-bootcamp.netlify.com/), and talks about our experiences setting it up on the new [mybinder.org](https://mybinder.org) based platform that was created by [Ines Montani](https://github.com/ines/course-starter-r).

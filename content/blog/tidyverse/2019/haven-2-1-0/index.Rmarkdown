@@ -1,17 +1,20 @@
 ---
 title: haven 2.1.0
-author: Mara Averick
+author:
+  - Mara Averick
 date: '2019-02-19'
 slug: haven-2-1-0
-description: > 
+description: |
   haven 2.1.0 is now on CRAN!
 categories:
-  - package
+  - Data Wrangling
 photo:
   url: https://www.pexels.com/photo/beach-lighthouse-3491/
   author: Skitterphoto
 software: ["tidyverse", "haven"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

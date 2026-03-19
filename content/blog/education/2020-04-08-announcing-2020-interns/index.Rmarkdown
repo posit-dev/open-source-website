@@ -1,18 +1,21 @@
 ---
-title: "Announcing 2020 Interns"
+title: Announcing 2020 Interns
 date: '2020-04-08'
 photo:
   author: Grant Durr
   url: https://unsplash.com/photos/1N7yzqjCLes
 publishDate: '2020-04-08'
 slug: announcing-2020-interns
-tags: [internship]
+tags:
+  - internship
 description: |
   Meet this year's interns.
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
 ---
 
 We received almost two hundreds applications for

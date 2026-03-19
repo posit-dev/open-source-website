@@ -1,12 +1,14 @@
 ---
 title: Building Tidy Tools Workshop at rstudio::conf(2020)
 author:
-  - "[Charlotte Wickham](https://cwick.co.nz/)"
+  - '[Charlotte Wickham](https://cwick.co.nz/)'
 people:
   - Charlotte Wickham
 date: '2020-02-18'
-categories: [learn, teach]
-tags: [conf2020]
+categories:
+  - Community
+tags:
+  - conf2020
 slug: conf20-tidy-tools
 description: |
   A guide to the content and guiding principles of the Building Tidy Tools Workshop.
@@ -17,6 +19,9 @@ image: building-tidy-tools-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - learn
+  - teach
 ---
 
 

@@ -1,13 +1,11 @@
 ---
-title: "Discrete Representation Learning with VQ-VAE and TensorFlow Probability"
+title: Discrete Representation Learning with VQ-VAE and TensorFlow Probability
 description: |
   Mostly when thinking of Variational Autoencoders (VAEs), we picture the prior as an isotropic Gaussian. But this is by no means a necessity. The Vector Quantised Variational Autoencoder (VQ-VAE) described in van den Oord et al's "Neural Discrete Representation Learning" features a discrete latent space that allows to learn impressively concise latent representations. In this post, we combine elements of Keras, TensorFlow, and TensorFlow Probability to see if we can generate convincing letters resembling those in Kuzushiji-MNIST.
-date: 2019-01-24
+date: '2019-01-24'
 slug: keydana2019vqvae
 categories:
-  - TensorFlow/Keras
-  - Probabilistic ML/DL
-  - Generative Models
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -19,6 +17,10 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Probabilistic ML/DL
+  - Generative Models
 ---
 
 

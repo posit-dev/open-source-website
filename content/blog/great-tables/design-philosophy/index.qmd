@@ -1,13 +1,15 @@
 ---
-title: "The Design Philosophy of Great Tables"
+title: The Design Philosophy of Great Tables
 people:
   - Rich Iannone
   - Michael Chow
-date: 2024-04-04
+date: '2024-04-04'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
+categories:
+  - Visualization
 ---
 
 We've spent a lot of time thinking about tables. Tables---like plots---are crucial as a last step toward presenting information. There is surprising sophistication and nuance in designing effective tables. Over the past 5,000 years, they've evolved from simple grids to highly structured displays of data. Although we argue that the mid-1900s served as a high point, the popularization and wider accessibility of computing seemingly brought us back to the simple, ancient times.

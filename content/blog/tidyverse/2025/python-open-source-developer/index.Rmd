@@ -1,24 +1,25 @@
 ---
 output: hugodown::hugo_document
-
 slug: python-open-source-developer
 title: Python Open-Source Developer
-date: 2025-11-12
+date: '2025-11-12'
 people:
   - Max Kuhn
-description: >
-    Posit is hiring a Python open-source developer to create more data analysis tools.
-
+description: |
+  Posit is hiring a Python open-source developer to create more data analysis tools.
 photo:
   author: Dan Kuhn and Max Kuhn. The subject is Doodle Ramen Noodle.
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [other] 
-tags: [python, modeling]
+categories:
+  - Community
+tags:
+  - python
+  - modeling
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 languages: ["Python"]
+ported_categories:
+  - other
 ---
 
 We are hiring a Python open-source developer with a specialization in data analysis and modeling tools. Since deep learning models already have extensive support in Python, our focus is on the analysis and modeling of _tabular data_. Our primary goal is to develop packages that enhance the existing capabilities of frameworks such as scikit-learn. Note that the current position doesn't involve building or publishing models created here; _this is a pure package developer role_. 

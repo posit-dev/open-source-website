@@ -1,23 +1,23 @@
 ---
 slug: playing-on-the-same-team-as-your-dependecy
 title: Playing on the same team as your dependency
-date: 2022-09-29
+date: '2022-09-29'
 people:
   - Thomas Lin Pedersen
-description: >
-    Using another package as a dependency is a two-way street, but the
-    expectations can be murky. This blog post guides you towards becoming a 
-    stellar reverse dependency.
+description: |
+  Using another package as a dependency is a two-way street, but the expectations can be murky. This blog post guides you towards becoming a  stellar reverse dependency.
 photo:
   url: https://unsplash.com/photos/G1hIBdjQoAA
   author: Florian Schmetz
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn] 
+categories:
+  - Community
 tags: []
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - learn
 ---
 
 <!--

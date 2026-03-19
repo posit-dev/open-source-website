@@ -1,11 +1,13 @@
 ---
-title: "New to the ShinyUiEditor: bslib Cards!"
-description: "The latest version of {shinyuieditor} includes the new card component from {bslib}. In this post, we describe how you can use these cards and a new static-text component to easily organize your app's content in a visually appealing way."
-date: 2023-03-15
+title: 'New to the ShinyUiEditor: bslib Cards!'
+description: The latest version of {shinyuieditor} includes the new card component
+  from {bslib}. In this post, we describe how you can use these cards and a new static-text
+  component to easily organize your app's content in a visually appealing way.
+date: '2023-03-15'
 people:
   - Nick Strayer
 image: cards-thumbnail.png
-image-alt: "bslib cards shown inside shinyuieditor"
+image-alt: bslib cards shown inside shinyuieditor
 resources:
   - add-button-in-full-screen.webm
   - add-card-to-app.webm
@@ -15,6 +17,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shinyuieditor", "bslib", "shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 <style>
 .demo-video {

@@ -1,6 +1,6 @@
 ---
-title: "pins 0.4: Versioning"
-description: > 
+title: 'pins 0.4: Versioning'
+description: |
   A new release of pins is available on CRAN today. This release adds support to time travel across dataset versions, which improves collaboration and protects your code from breaking when remote resources change unexpectedly.
 author:
   - name: Javier Luraschi
@@ -9,13 +9,15 @@ author:
 slug: pins-0.4
 date: 04-13-2020
 categories:
-  - R
-  - Packages/Releases
-  - Data Management
+  - MLOps and Admin
 preview: images/thumb.jpg
 format: hugo-md
 software: ["pins-r"]
 languages: ["R"]
+ported_categories:
+  - R
+  - Packages/Releases
+  - Data Management
 ---
 
 ```{r setup, include=FALSE}

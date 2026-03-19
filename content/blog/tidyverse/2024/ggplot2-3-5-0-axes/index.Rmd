@@ -1,27 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: ggplot2-3-5-0-axes
-title: "ggplot2 3.5.0: Axes"
-date: 2024-02-28
+title: 'ggplot2 3.5.0: Axes'
+date: '2024-02-28'
 people:
   - Teun van den Brand
-description: >
-    The 3.5.0 version of ggplot2 comes with an overhaul of the guide system.
-    Read here what is new for axes.
-
+description: |
+  The 3.5.0 version of ggplot2 comes with an overhaul of the guide system. Read here what is new for axes.
 photo:
   url: https://unsplash.com/photos/white-and-black-measuring-tape-9rSP3SRUYh4
   author: CHUTTERSNAP
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [ggplot2, ggplot2-3-5-0]
+categories:
+  - Visualization
+tags:
+  - ggplot2
+  - ggplot2-3-5-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

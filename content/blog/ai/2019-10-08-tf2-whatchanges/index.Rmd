@@ -1,6 +1,6 @@
 ---
-title: "TensorFlow 2.0 is here - what changes for R users?"
-description: > 
+title: TensorFlow 2.0 is here - what changes for R users?
+description: |
   TensorFlow 2.0 was finally released last week. As R users we have two kinds of questions. First, will my keras code still run? And second, what is it that changes? In this post, we answer both and, then, give a tour of exciting new developments in the r-tensorflow ecosystem.
 author:
   - name: Sigrid Keydana
@@ -9,12 +9,14 @@ author:
 slug: keydana2019tf2
 date: 10-08-2019
 categories:
-  - TensorFlow/Keras
-  - Packages/Releases
+  - Machine Learning
 preview: images/thumb.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Packages/Releases
 ---
 
 ```{r setup, include=FALSE}

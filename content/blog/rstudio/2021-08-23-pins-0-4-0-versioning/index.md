@@ -1,6 +1,6 @@
 ---
 title: 'pins 0.4.0: Versioning'
-description: > 
+description: |
   A new release of pins is available on CRAN today. This release adds support to time travel across dataset versions, which improves collaboration and protects your code from breaking when remote resources change unexpectedly.
 people:
   - Javier Luraschi
@@ -16,6 +16,8 @@ ported_from: rstudio
 port_status: in-progress
 software: ["pins-r"]
 languages: ["R"]
+categories:
+  - MLOps and Admin
 ---
 
 

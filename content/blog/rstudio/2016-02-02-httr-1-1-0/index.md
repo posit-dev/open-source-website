@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2016-02-02'
 categories:
-- Packages
+  - Data Wrangling
 slug: httr-1-1-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["httr"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

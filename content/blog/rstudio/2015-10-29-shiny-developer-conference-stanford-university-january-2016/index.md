@@ -4,18 +4,20 @@ people:
   - Joe Cheng
 date: '2015-10-29'
 categories:
-- News
-- Shiny
+  - Interactive Apps
 slug: shiny-developer-conference-stanford-university-january-2016
 blogcategories:
-- Products and Technology
-- Company News and Events
+  - Products and Technology
+  - Company News and Events
 tags:
-- Shiny
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - News
+  - Shiny
 ---
 
 

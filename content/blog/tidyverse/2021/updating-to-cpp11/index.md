@@ -1,27 +1,26 @@
 ---
-
 slug: updating-to-cpp11
 title: Pathway to success - updating your package to cpp11
-date: 2021-09-10
+date: '2021-09-10'
 people:
   - Shelby Bearrows
-description: >
-    The cpp11 summer intern reviews the process they used to convert readxl to using 
-    cpp11.
-
+description: |
+  The cpp11 summer intern reviews the process they used to convert readxl to using  cpp11.
 photo:
   url: https://unsplash.com/photos/9MMd2uRpfvc
   author: John Salzarulo
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [learn] 
-tags: [cpp11, internship]
-
+categories:
+  - Community
+tags:
+  - cpp11
+  - internship
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "cpp11"]
 languages: ["R"]
+ported_categories:
+  - learn
 ---
 
 <!--

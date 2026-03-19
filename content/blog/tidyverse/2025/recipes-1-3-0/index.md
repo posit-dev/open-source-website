@@ -1,26 +1,26 @@
 ---
-
 slug: recipes-1-3-0
 title: recipes 1.3.0
-date: 2025-04-28
+date: '2025-04-28'
 people:
   - Emil Hvitfeldt
-description: >
-    This release brings changes for strings_as_factors, step_select(), step_dummy(), and step_impute_bag().
-
+description: |
+  This release brings changes for strings_as_factors, step_select(), step_dummy(), and step_impute_bag().
 photo:
   url: https://unsplash.com/photos/background-pattern-3b7sos3CD2c
   author: James Trenda
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [tidymodels, recipes]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - recipes
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

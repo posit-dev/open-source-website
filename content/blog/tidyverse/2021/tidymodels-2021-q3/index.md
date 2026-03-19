@@ -1,25 +1,28 @@
 ---
-
 slug: tidymodels-2021-q3
-title: "Q3 2021 tidymodels roundup"
-date: 2021-09-28
+title: Q3 2021 tidymodels roundup
+date: '2021-09-28'
 people:
   - Julia Silge
-description: >
-    Use new tuning parameters, new recipe steps, and a new example dataset!
-
+description: |
+  Use new tuning parameters, new recipe steps, and a new example dataset!
 photo:
   url: https://unsplash.com/photos/QA2clzv9E8c
   author: CHUTTERSNAP
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [roundup] 
-tags: [tidymodels, dials, modeldata, recipes]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - dials
+  - modeldata
+  - recipes
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "dials", "recipes"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles. We now publish [regular updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing recent developments in the tidymodels ecosystem. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including those that focus on a single package or more major releases. The purpose of these roundup posts is to keep you informed about any releases you may have missed and useful new functionality as we maintain these packages.

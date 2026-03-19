@@ -1,12 +1,10 @@
 ---
-title: "Deep Learning With Keras To Predict Customer Churn"
+title: Deep Learning With Keras To Predict Customer Churn
 description: |
   Using Keras to predict customer churn based on the IBM Watson Telco Customer Churn dataset. We also demonstrate using the lime package to help explain which features drive individual model predictions. In addition, we use three new packages to assist with Machine Learning: recipes for preprocessing, rsample for sampling data and yardstick for model metrics.
-date: 2018-01-11
+date: '2018-01-11'
 categories:
-  - TensorFlow/Keras
-  - Tabular Data
-  - Explainability
+  - Machine Learning
 author:
   - name: Matt Dancho
     url: https://github.com/mdancho84
@@ -19,6 +17,10 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Tabular Data
+  - Explainability
 ---
 
 

@@ -4,10 +4,9 @@ people:
   - Mara Averick
 date: '2020-03-02'
 slug: forcats-0-5-0
-description: >
-    Announcing the release of forcats 0.5.0 on CRAN. 
+description: "Announcing the release of forcats 0.5.0 on CRAN. \n"
 categories:
-  - package
+  - Data Wrangling
 tags:
   - tidyverse
   - forcats
@@ -19,6 +18,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "forcats"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

@@ -1,21 +1,25 @@
 ---
 title: dplyr 1.2.0
 slug: dplyr-1-2-0
-date: 2026-02-04
+date: '2026-02-04'
 people:
   - Davis Vaughan
-description: >
-    dplyr 1.2.0 fills in some important gaps in dplyr's API: we've added a new complement to `filter()` focused on dropping rows, and we've expanded the `case_when()` family with three new recoding and replacing functions!
+description: |
+  dplyr 1.2.0 fills in some important gaps in dplyr's API: we've added a new complement to `filter()` focused on dropping rows, and we've expanded the `case_when()` family with three new recoding and replacing functions!
 image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/eksqjXTLpak
   author: Nathan Dumlao
-categories: [package]
-tags: [dplyr]
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 [dplyr 1.2.0](https://dplyr.tidyverse.org) is out now! This large release of dplyr comes with two sets of exciting features:

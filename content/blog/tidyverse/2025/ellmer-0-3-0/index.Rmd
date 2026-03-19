@@ -1,28 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: ellmer-0-3-0
 title: ellmer 0.3.0
-date: 2025-07-25
+date: '2025-07-25'
 people:
   - Hadley Wickham
-description: >
-    The newest version of ellmer introduces a simpler `chat()` interface that 
-    can works with any provider, a bunch of improvements to tool calling,
-    and a handful of smaller quality of life improvements.
-
+description: |
+  The newest version of ellmer introduces a simpler `chat()` interface that  can works with any provider, a bunch of improvements to tool calling, and a handful of smaller quality of life improvements.
 photo:
   url: https://chatgpt.com/share/68824585-91dc-8009-a84b-82451f71ef65
   author: ChatGPT
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [ellmer, ai]
+categories:
+  - Artificial Intelligence
+tags:
+  - ellmer
+  - ai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ellmer"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

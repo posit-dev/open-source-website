@@ -1,25 +1,26 @@
 ---
-
 slug: tune-0-1-2
 title: tune 0.1.2
-date: 2020-11-23
+date: '2020-11-23'
 people:
   - Max Kuhn
-description: >
-    A new version of the tune package contains numerous new features. 
-
+description: "A new version of the tune package contains numerous new features. \n"
 photo:
   url: https://unsplash.com/photos/75UqJ3X4VwA
   author: Leo Wieling
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
-tags: [tidymodels,workflows,tune]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - workflows
+  - tune
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "workflows", "tune"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

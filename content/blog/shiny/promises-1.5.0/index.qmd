@@ -1,14 +1,13 @@
 ---
-title: "promises v1.5.0"
-description: &desc |
+title: promises v1.5.0
+description: |
   The latest promises release brings hybrid sync/async execution, OpenTelemetry
   integration for distributed tracing, and significant performance improvements.
 people:
   - Barret Schloerke
-date: "2025-11-07"
+date: '2025-11-07'
 image: feature.png
-image-alt: "promises v1.5.0"
-
+image-alt: promises v1.5.0
 editor:
   markdown:
     wrap: sentence
@@ -16,6 +15,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["promises"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 
 [promises]: https://rstudio.github.io/promises/

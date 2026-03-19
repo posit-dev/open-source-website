@@ -1,20 +1,16 @@
 ---
 title: Multi-format Publishing
 subtitle: Automatically link to other formats in HTML documents
-description: >
-  In Quarto 1.3, additional formats listed in HTML documents will automatically
-  be linked in an "Other Formats" section near the top of the page.
+description: |
+  In Quarto 1.3, additional formats listed in HTML documents will automatically be linked in an "Other Formats" section near the top of the page.
 categories:
-  - Features
-  - Authoring
-  - Quarto 1.3
+  - Publishing
 people:
   - Charlotte Wickham
 date: '2023-03-15'
 image: multi-format.png
-image-alt: >-
-  Screenshot of a Quarto webpage showing a section entitled 'Other Formats' with
-  items Jupyter and MS Word
+image-alt: Screenshot of a Quarto webpage showing a section entitled 'Other Formats'
+  with items Jupyter and MS Word
 format:
   ipynb: default
   docx: default
@@ -22,6 +18,10 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+ported_categories:
+  - Features
+  - Authoring
+  - Quarto 1.3
 ---
 
 

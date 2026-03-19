@@ -3,18 +3,21 @@ title: posit::conf(2025) Quarto talks
 description: |
   Videos of talks from posit::conf(2025) are posted, and you can find them all here!
 categories:
-  - Learn
-  - Conference
-  - Videos
+  - Publishing
+  - Community
 people:
   - Andrew Holz
-date: "2025-11-24"
-image: "thumbnail.png"
-image-alt: "Talk Recordings at posit::conf(2025)"
+date: '2025-11-24'
+image: thumbnail.png
+image-alt: Talk Recordings at posit::conf(2025)
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+ported_categories:
+  - Learn
+  - Conference
+  - Videos
 ---
 
 The posit::conf(2025) session videos are now live! We’ve created a curated playlist highlighting all the talks that showcase Quarto—how it is evolving, how people are using it, and how they’re building on top of it.

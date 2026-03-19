@@ -6,15 +6,17 @@ people:
   - Mine Çetinkaya-Rundel
 date: '2024-04-01'
 image: images/manuscripts-thumbnail.png
-image-alt: >-
-  From multiple Quarto documents and scripts in R and python to PDF or Word
+image-alt: From multiple Quarto documents and scripts in R and python to PDF or Word
   output.
 categories:
-  - Learn
+  - Publishing
+  - Community
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+ported_categories:
+  - Learn
 ---
 
 

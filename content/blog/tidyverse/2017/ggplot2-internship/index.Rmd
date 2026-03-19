@@ -1,21 +1,23 @@
 ---
 title: The summer of ggplot2 - wooooo!
 slug: ggplot2-internship
-description: >
-  This summer I had the great fortune to accept the ggplot2 internship baton and
-  spend ten weeks developing new features and fixing bugs in ggplot2.
+description: |
+  This summer I had the great fortune to accept the ggplot2 internship baton and spend ten weeks developing new features and fixing bugs in ggplot2.
 people:
   - Kara Woo
-date: 2017-09-08
-photo: 
+date: '2017-09-08'
+photo:
   url: https://unsplash.com/photos/DpF8nI-dQKA
   author: Joe Shillington
-categories: [learn]
+categories:
+  - Community
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+ported_categories:
+  - learn
 ---
 
 This summer I had the great fortune to accept the

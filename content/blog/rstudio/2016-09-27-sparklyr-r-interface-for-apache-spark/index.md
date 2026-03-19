@@ -4,17 +4,20 @@ people:
   - RStudio Team
 date: '2016-09-27'
 categories:
-- News
-- Packages
+  - Data Wrangling
+  - MLOps and Admin
 slug: sparklyr-r-interface-for-apache-spark
 blogcategories:
-- Products and Technology
-- Company News and Events
+  - Products and Technology
+  - Company News and Events
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - News
+  - Packages
 ---
 
 

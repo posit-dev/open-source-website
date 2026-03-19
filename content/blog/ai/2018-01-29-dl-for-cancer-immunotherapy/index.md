@@ -1,11 +1,10 @@
 ---
-title: "Deep Learning for Cancer Immunotherapy"
+title: Deep Learning for Cancer Immunotherapy
 description: |
   The aim of this post is to illustrate how deep learning is being applied in cancer immunotherapy (Immuno-oncology or Immunooncology) - a cancer treatment strategy, where the aim is to utilize the cancer patient's own immune system to fight the cancer.
-date: 2018-01-29
+date: '2018-01-29'
 categories:
-  - TensorFlow/Keras
-  - Tabular Data
+  - Machine Learning
 author:
   - name: Leon Eyrich Jessen
     url: https://twitter.com/jessenleon
@@ -16,6 +15,9 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Tabular Data
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "sparklyr.flint 0.2: ASOF Joins, OLS Regression, and additional summarizers"
+title: 'sparklyr.flint 0.2: ASOF Joins, OLS Regression, and additional summarizers'
 description: |
   We are excited to announce a number of powerful, new functionalities and improvements which are now part of sparklyr.flint 0.2!
 author:
@@ -10,12 +10,14 @@ author:
 slug: sparklyr.flint-0.2.0
 date: 10-12-2020
 categories:
-  - R
-  - Packages/Releases
-  - Time Series
+  - Machine Learning
 preview: images/sparklyr-flint-0.2.jpg
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - R
+  - Packages/Releases
+  - Time Series
 ---
 
 ```{r setup, include=FALSE}

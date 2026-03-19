@@ -1,7 +1,8 @@
 ---
-title: "Distill it down"
+title: Distill it down
 date: '2021-02-08'
-categories: null
+categories:
+  - Publishing
 description: |
   My experiences with building webpages and websites using some of the simpler R Studio tools.
 photo:

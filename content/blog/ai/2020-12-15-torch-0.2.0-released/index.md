@@ -1,13 +1,11 @@
 ---
-title: "torch 0.2.0 - Initial JIT support and many bug fixes"
+title: torch 0.2.0 - Initial JIT support and many bug fixes
 description: |
   The torch 0.2.0 release includes many bug fixes and some nice new features like initial JIT support, multi-worker dataloaders, new optimizers and a new print method for nn_modules.
-date: 2020-12-15
+date: '2020-12-15'
 slug: torchzero2
 categories:
-  - Torch
-  - R
-  - Packages/Releases
+  - Machine Learning
 author:
   - name: Daniel Falbel
     affiliation: RStudio
@@ -18,6 +16,10 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Packages/Releases
 ---
 
 

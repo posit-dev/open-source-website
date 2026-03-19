@@ -4,17 +4,20 @@ people:
   - Joe Cheng
 date: '2017-02-22'
 categories:
-- Packages
+  - Visualization
+  - Interactive Apps
 slug: leaflet-1-1-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

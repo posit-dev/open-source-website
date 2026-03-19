@@ -7,7 +7,8 @@ slug: pins-0-3-0-azure-gcloud-and-s3
 blogcategories:
   - Products and Technology
   - Open Source
-description: New CRAN release for pins adds support for cloud boards (Azure, Google Cloud and S3), new functions, use cases and many other improvements.
+description: New CRAN release for pins adds support for cloud boards (Azure, Google
+  Cloud and S3), new functions, use cases and many other improvements.
 tags:
   - pins
   - Connect
@@ -19,6 +20,8 @@ ported_from: rstudio
 port_status: in-progress
 software: ["pins-r"]
 languages: ["R"]
+categories:
+  - MLOps and Admin
 ---
 
 

@@ -4,10 +4,10 @@ people:
   - Jim Hester
 date: '2019-12-02'
 slug: odbc-1-2-0
-description: >
+description: |
   odbc 1.2.0 is now on CRAN. It includes improvements to dealing with schemas, an API for immediate execution, and a new parameter to control timezone outputs.
 categories:
-  - package
+  - Data Wrangling
 tags:
   - odbc
 photo:
@@ -18,6 +18,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "odbc"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 odbc 1.2.0 is now on CRAN! The odbc package provides a [DataBase Interface (DBI)](https://dbi.r-dbi.org/) to [Open DataBase Connectivity (ODBC)](https://en.wikipedia.org/wiki/Open_Database_Connectivity) drivers.

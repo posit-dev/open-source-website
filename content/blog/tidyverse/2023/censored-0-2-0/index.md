@@ -1,27 +1,27 @@
 ---
-
 slug: censored-0-2-0
 title: censored 0.2.0
-date: 2023-04-19
+date: '2023-04-19'
 people:
   - Hannah Frick
-description: >
-    censored 0.2.0 is on CRAN! censored has two new engines for random forests 
-    and parametric survival models.
-
+description: |
+  censored 0.2.0 is on CRAN! censored has two new engines for random forests  and parametric survival models.
 photo:
   url: https://unsplash.com/photos/TuAZPj1uaZs
   author: Sam Poullain
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [tidymodels, parsnip, censored]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - parsnip
+  - censored
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "censored"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

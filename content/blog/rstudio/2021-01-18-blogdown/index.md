@@ -1,11 +1,10 @@
 ---
-title: "Announcing blogdown v1.0"
+title: Announcing blogdown v1.0
 date: '2021-01-18'
-categories: 
-- R Markdown 
-- Packages
+categories:
+  - Publishing
 tags:
-- blogdown
+  - blogdown
 people:
   - Alison Hill
   - Christophe Dervieux
@@ -14,14 +13,17 @@ slug: blogdown-v1.0
 description: |
   The blogdown package is now on CRAN. Read on for highlights from the version 1.0 release, including smoother workflows, new checking functions to guide you into the pit of success, the ability to pin Hugo versions, better organization of content files via page bundles, and the new Markdown mode for R Markdown posts.
 blogcategories:
-    - Company News and Events
-    - Products and Technology
-    - Open Source 
+  - Company News and Events
+  - Products and Technology
+  - Open Source
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress
 software: ["blogdown"]
 languages: ["R"]
+ported_categories:
+  - R Markdown
+  - Packages
 ---
 
 The R Markdown team is happy to share that **blogdown** version 1.0 is now available on CRAN. **blogdown** was [originally released](/2017/09/11/announcing-blogdown/) in the fall of 2017. The latest version of the package includes some significant improvements to the user experience, and some under-the-hood improvements that you'll benefit from without even knowing!

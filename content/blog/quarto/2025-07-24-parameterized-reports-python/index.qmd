@@ -1,22 +1,26 @@
 ---
 people:
   - Charlotte Wickham
-title: "From One Notebook to Many Reports: Parameterized reports with the `jupyter` engine"
-description: |
-  Learn how to transform a single Jupyter notebook into a parameterized report generator that automatically creates customized outputs for different scenarios. 
-date: "2025-07-24"
+title: 'From One Notebook to Many Reports: Parameterized reports with the `jupyter`
+  engine'
+description: "Learn how to transform a single Jupyter notebook into a parameterized
+  report generator that automatically creates customized outputs for different scenarios.
+  \n"
+date: '2025-07-24'
 categories:
-  - Authoring
-  - Teaching
-  - Jupyter
+  - Publishing
 image: thumbnail.png
 image-alt: |
   A slide with a screenshot of a Jupyter notebook with a graph and text, then an arrow pointing to a stack of PDF files each with a graph and text.
-lightbox: true
+lightbox: yes
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["Python"]
+ported_categories:
+  - Authoring
+  - Teaching
+  - Jupyter
 ---
 
 ::: callout-tip

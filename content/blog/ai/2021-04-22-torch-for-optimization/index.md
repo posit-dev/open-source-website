@@ -1,12 +1,11 @@
 ---
-title: "torch for optimization"
+title: torch for optimization
 description: |
   Torch is not just for deep learning. Its L-BFGS optimizer, complete with Strong-Wolfe line search, is a powerful tool in unconstrained as well as constrained optimization.
-date: 2021-04-27
+date: '2021-04-27'
 slug: keydanatorchoptimization
 categories:
-  - Torch
-  - R
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -17,6 +16,9 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
 ---
 
 

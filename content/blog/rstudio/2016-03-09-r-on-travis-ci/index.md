@@ -4,16 +4,18 @@ people:
   - Jim Hester
 date: '2016-03-09'
 categories:
-- Packages
+  - Best Practices
 slug: r-on-travis-ci
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

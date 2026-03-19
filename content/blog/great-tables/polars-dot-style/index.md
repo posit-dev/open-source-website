@@ -2,11 +2,13 @@
 title: 'Great Tables: Becoming the Polars `.style` Property'
 people:
   - Michael Chow
-date: 2025-04-16T00:00:00.000Z
+date: '2025-04-16T00:00:00.000Z'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
+categories:
+  - Visualization
 ---
 
 

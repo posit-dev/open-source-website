@@ -1,27 +1,25 @@
 ---
-
 slug: ellmer-0-4-0
 title: ellmer 0.4.0
-date: 2025-11-18
+date: '2025-11-18'
 people:
   - Hadley Wickham
-description: >
-    ellmer 0.4.0 includes important lifecycle updates, new Claude features
-    (caching, file uploads, web tools), OpenAI improvements, and enhancements
-    to error handling, pricing tracking, and security.
+description: |
+  ellmer 0.4.0 includes important lifecycle updates, new Claude features (caching, file uploads, web tools), OpenAI improvements, and enhancements to error handling, pricing tracking, and security.
 photo:
   url: https://unsplash.com/photos/a-herd-of-elephants-standing-next-to-each-other-CzIwSXedUGM
   author: Evan Jones
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package]
-tags: [ellmer]
-
+categories:
+  - Artificial Intelligence
+tags:
+  - ellmer
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ellmer"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

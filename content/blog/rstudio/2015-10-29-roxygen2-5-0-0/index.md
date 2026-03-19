@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2015-10-29'
 categories:
-- Packages
+  - Best Practices
 slug: roxygen2-5-0-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["roxygen2"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

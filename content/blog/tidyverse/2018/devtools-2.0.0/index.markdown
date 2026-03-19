@@ -1,15 +1,16 @@
 ---
 title: devtools 2.0.0
-date: 2018-10-30
+date: '2018-10-30'
 slug: devtools-2-0-0
 people:
   - Jim Hester
-categories: [package]
+categories:
+  - Best Practices
 tags:
   - devtools
   - r-lib
-description: >
-    Make package development easier by providing R functions that simplify and expedite common tasks.
+description: |
+  Make package development easier by providing R functions that simplify and expedite common tasks.
 photo:
   url: https://unsplash.com/photos/wEJK4q_YlNQ
   author: Hunter Haley
@@ -18,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ## Introduction

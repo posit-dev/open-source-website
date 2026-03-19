@@ -1,20 +1,18 @@
 ---
 output: hugodown::hugo_document
-
 slug: stacks-0-1-0
 title: stacks 0.1.0
-date: 2020-11-30
+date: '2020-11-30'
 people:
   - Simon Couch
   - Max Kuhn
-description: >
-    Introducing ensemble learning to the tidymodels.
-
+description: |
+  Introducing ensemble learning to the tidymodels.
 photo:
   url: https://unsplash.com/photos/3Xd5j9-drDA
   author: Derek Oyen
-
-categories: [package] 
+categories:
+  - Machine Learning
 tags:
   - tidymodels
   - stacks
@@ -23,6 +21,8 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "stacks"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 A few months ago, the tidymodels team coordinated a [community survey](https://connect.rstudioservices.com/tidymodels-priorities-survey/README.html) to get a sense for what users most wanted to see next in the [tidymodels](https://www.tidymodels.org/) package ecosystem. One resounding theme from responses was that tidymodels users wanted a framework for tidymodels-aligned model stacking.

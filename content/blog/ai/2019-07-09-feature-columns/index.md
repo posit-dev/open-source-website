@@ -1,12 +1,11 @@
 ---
-title: "TensorFlow feature columns: Transforming your data recipes-style"
+title: 'TensorFlow feature columns: Transforming your data recipes-style'
 description: |
   TensorFlow feature columns provide useful functionality for preprocessing categorical data and chaining transformations, like bucketization or feature crossing. From R, we use them in popular "recipes" style, creating and subsequently refining a feature specification. In this post, we show how using feature specs frees cognitive resources and lets you focus on what you really want to accomplish. What's more, because of its elegance, feature-spec code reads nice and is fun to write as well.
-date: 2019-07-09
+date: '2019-07-09'
 slug: falbelkeydana2019featurecols
 categories:
-  - TensorFlow/Keras
-  - Tabular Data
+  - Machine Learning
 author:
   - name: Daniel Falbel
     affiliation: RStudio
@@ -22,6 +21,9 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Tabular Data
 ---
 
 

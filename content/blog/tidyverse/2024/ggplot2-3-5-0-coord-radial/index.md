@@ -1,27 +1,26 @@
 ---
-
 slug: ggplot2-3-5-0-coord-radial
-title: "ggplot2 3.5.0: Introducing: coord_radial()"
-date: 2024-03-01
+title: 'ggplot2 3.5.0: Introducing: coord_radial()'
+date: '2024-03-01'
 people:
   - Teun van den Brand
-description: >
-    Introducing a new polar coordinate system that supersedes the old 
-    `coord_polar()`. Read on about the new `coord_radial()`.
-
+description: |
+  Introducing a new polar coordinate system that supersedes the old  `coord_polar()`. Read on about the new `coord_radial()`.
 photo:
   url: https://unsplash.com/photos/ferris-wheel-beside-body-of-water-under-blue-sky-during-daytime-IWOo59NUXBk
   author: Ismail Merad
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [ggplot2, ggplot2-3-5-0]
-
+categories:
+  - Visualization
+tags:
+  - ggplot2
+  - ggplot2-3-5-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

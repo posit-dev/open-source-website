@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-04-06'
 categories:
-  - certify
+  - Community
 tags:
   - certify
 description: |
@@ -17,6 +17,8 @@ image: first-year-of-instructor-training-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - certify
 ---
 
 ```{r setup, include=FALSE}

@@ -1,21 +1,25 @@
 ---
 slug: workflows-0-2-0
 title: workflows 0.2.0
-date: 2020-09-16
+date: '2020-09-16'
 people:
   - Davis Vaughan
-description: >
-    workflows 0.2.0 is now on CRAN!
+description: |
+  workflows 0.2.0 is now on CRAN!
 photo:
   url: https://unsplash.com/photos/nN5L5GXKFz8
   author: Mark Fletcher-Brown
-categories: [package] 
-tags: [tidymodels]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're excited to announce the release of [workflows](https://workflows.tidymodels.org/) 0.2.0. workflows is a [tidymodels](https://www.tidymodels.org/) package for bundling a model specification from [parsnip](https://parsnip.tidymodels.org/) with a preprocessor, such as a formula or [recipe](https://recipes.tidymodels.org/). Doing this can streamline the model fitting workflow and combines nicely with [tune](https://tune.tidymodels.org/) for performing hyperparameter tuning.

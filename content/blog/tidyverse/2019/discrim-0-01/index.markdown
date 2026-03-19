@@ -1,15 +1,15 @@
 ---
 title: discrim 0.0.1
-date: 2019-10-17
+date: '2019-10-17'
 slug: discrim-0-0-1
 people:
   - Max Kuhn
-categories: [package]
+categories:
+  - Machine Learning
 tags:
   - discrim
   - tidymodels
-description: >
-    The first version of discrim (0.0.1) is on CRAN. 
+description: "The first version of discrim (0.0.1) is on CRAN. \n"
 photo:
   url: https://unsplash.com/photos/4op9_2Bt2Eg
   author: Teo Duldulao
@@ -18,6 +18,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "discrim", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

@@ -7,20 +7,21 @@ people:
 date: '2020-05-15'
 slug: updates-to-ragg-and-systemfonts
 categories:
-- package
+  - Visualization
 tags:
-- ragg
-- systemfonts
+  - ragg
+  - systemfonts
 authors: Thomas Lin Pedersen
 photo:
   url: https://unsplash.com/photos/BVyNlchWqzs
   author: Amador Loureiro
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg", "systemfonts"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

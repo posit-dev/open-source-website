@@ -4,17 +4,19 @@ people:
   - Joe Cheng
 date: '2013-01-22'
 categories:
-- Shiny
+  - Interactive Apps
 slug: shiny-server-now-available
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Shiny
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
 ---
 
 

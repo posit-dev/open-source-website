@@ -1,26 +1,27 @@
 ---
-
 slug: bonsai-0-3-0
 title: bonsai 0.3.0
-date: 2024-06-25
+date: '2024-06-25'
 people:
   - Simon Couch
-description: >
-    A new release of the parsnip extension package bonsai introduces support for 
-    oblique random forests for classification and regression to tidymodels.
-
+description: |
+  A new release of the parsnip extension package bonsai introduces support for  oblique random forests for classification and regression to tidymodels.
 photo:
   url: https://unsplash.com/photos/QD-mtViB5Ks
   author: Scott Webb
-
-categories: [package] 
-tags: [tidymodels, parsnip, bonsai]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - parsnip
+  - bonsai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "bonsai"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're brimming with glee to announce the release of [bonsai](https://bonsai.tidymodels.org) 0.3.0. bonsai is a parsnip extension package for tree-based models, and includes support for random forest and gradient-boosted tree frameworks like partykit and LightGBM. This most recent release of the package introduces support for the `"aorsf"` engine, which implements accelerated oblique random forests (Jaeger et al. 2022, Jaeger et al. 2024).

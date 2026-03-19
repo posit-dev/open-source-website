@@ -1,22 +1,26 @@
 ---
 slug: dplyr-1-1-0-vctrs
-title: "dplyr 1.1.0: The power of vctrs"
-date: 2023-02-02
+title: 'dplyr 1.1.0: The power of vctrs'
+date: '2023-02-02'
 people:
   - Davis Vaughan
-description: >
-    All of the dplyr vector functions, like `between()` and `case_when()`, are now powered by
-    vctrs. We've also added two powerful new helpers: `case_match()` and `consecutive_id()`.
+description: |
+  All of the dplyr vector functions, like `between()` and `case_when()`, are now powered by vctrs. We've also added two powerful new helpers: `case_match()` and `consecutive_id()`.
 photo:
   url: https://unsplash.com/photos/n6vS3xlnsCc
   author: Armand Khoury
-categories: [package] 
-tags: [dplyr, dplyr-1-1-0]
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 Today's [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110) post is focused on various updates to vector functions, like [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) and [`between()`](https://dplyr.tidyverse.org/reference/between.html). If you missed our previous posts, you can also see the other [blog posts](https://www.tidyverse.org/tags/dplyr-1-1-0/) in this series. All of dplyr's vector functions are now backed by [vctrs](https://vctrs.r-lib.org/), which typically results in better error messages, better performance, and greater versatility.

@@ -1,5 +1,5 @@
 ---
-title: 'Integrating Dynamic R and Python Models in Tableau Using plumbertableau'
+title: Integrating Dynamic R and Python Models in Tableau Using plumbertableau
 date: '2021-12-20'
 slug: dynamic-r-and-python-models-in-tableau-using-plumbertableau
 tags:
@@ -7,8 +7,11 @@ tags:
   - Product How-to
 people:
   - Isabella Velásquez
-alttext: Tableau dashboard showcasing a model's predicted values at a particular location, bar chart of the predicted values at various locations, and a map of predicted values
-description: The plumbertableau and fastapitableau packages allow you to integrate dynamic R and Python models in Tableau, enhancing your organization’s preferred dashboard tool.
+alttext: Tableau dashboard showcasing a model's predicted values at a particular location,
+  bar chart of the predicted values at various locations, and a map of predicted values
+description: The plumbertableau and fastapitableau packages allow you to integrate
+  dynamic R and Python models in Tableau, enhancing your organization’s preferred
+  dashboard tool.
 blogcategories:
   - Products and Technology
 image: thumbnail.png
@@ -16,6 +19,9 @@ ported_from: rstudio
 port_status: in-progress
 software: ["plumbertableau"]
 languages: ["R", "Python"]
+categories:
+  - Interactive Apps
+  - MLOps and Admin
 ---
 
 RStudio believes that you can attain greater business intelligence with interoperable tools that <a href="https://www.rstudio.com/solutions/interoperability/" target = "_blank">take the full advantage of open-source data science</a>. Your organization may rely on Tableau for reporting purposes, but how can you ensure that you're using the full power of your data science team's R and Python models in your dashboards?

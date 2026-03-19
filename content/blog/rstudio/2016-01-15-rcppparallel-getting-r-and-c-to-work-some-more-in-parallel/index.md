@@ -4,16 +4,18 @@ people:
   - RStudio Team
 date: '2016-01-15'
 categories:
-- Packages
+  - Best Practices
 slug: rcppparallel-getting-r-and-c-to-work-some-more-in-parallel
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

@@ -1,27 +1,26 @@
 ---
 output: hugodown::hugo_document
-
 slug: readxl-1-4-0
 title: readxl 1.4.0
-date: 2022-03-28
+date: '2022-03-28'
 people:
   - Jenny Bryan
-description: >
-    readxl 1.4.0 is a maintenance release with practically no user-facing
-    changes, but extensive change to package internals.
-
+description: |
+  readxl 1.4.0 is a maintenance release with practically no user-facing changes, but extensive change to package internals.
 photo:
   url: https://unsplash.com/photos/tpAyLp9Ro50
   author: Ryan
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [readxl]
+categories:
+  - Data Wrangling
+tags:
+  - readxl
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "readxl"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're pleased to announce the release of [readxl](https://readxl.tidyverse.org) 1.4.0.

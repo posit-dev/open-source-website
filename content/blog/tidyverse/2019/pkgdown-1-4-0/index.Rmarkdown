@@ -1,17 +1,20 @@
 ---
 title: pkgdown 1.4.0
-author: Hadley Wickham
+author:
+  - Hadley Wickham
 date: '2019-09-05'
 slug: pkgdown-1-4-0
 photo:
   url: https://unsplash.com/photos/ytMmedc6y44
   author: noodle kimm
 categories:
-  - package
+  - Best Practices
 tags:
   - pkgdown
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're happy to announce that [pkgdown](https://pkgdown.r-lib.org/) 1.4.0 is now

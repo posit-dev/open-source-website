@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2015-01-09'
 categories:
-- Packages
+  - Visualization
 slug: ggplot2-updates
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

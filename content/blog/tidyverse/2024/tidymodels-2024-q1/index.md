@@ -1,27 +1,28 @@
 ---
-
 slug: tidymodels-2024-q1
-title: "Q1 2024 tidymodels digest"
-date: 2024-04-24
+title: Q1 2024 tidymodels digest
+date: '2024-04-24'
 people:
   - Hannah Frick
-description: >
-    The tidymodels team has been busy working on all sorts of new features 
-    across the framework.
-
+description: |
+  The tidymodels team has been busy working on all sorts of new features  across the framework.
 photo:
   url: https://unsplash.com/photos/orange-petaled-flowers-koy6FlCCy5s
   author: Sergey Shmidt
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
-tags: [tidymodels, censored, workflows, workflowsets]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - censored
+  - workflows
+  - workflowsets
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "censored", "workflows", "workflowsets"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 <!--

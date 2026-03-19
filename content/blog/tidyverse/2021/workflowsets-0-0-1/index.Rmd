@@ -1,27 +1,30 @@
 ---
 output: hugodown::hugo_document
-
 slug: workflowsets-0-0-1
 title: workflowsets 0.0.1
-date: 2021-03-30
+date: '2021-03-30'
 people:
   - Max Kuhn
-description: >
-    A new package for evaluating many models at once is now on CRAN, along with 
-    a corresponding update to the tidyposterior package. 
-
+description: "A new package for evaluating many models at once is now on CRAN, along
+  with  a corresponding update to the tidyposterior package. \n"
 photo:
   url: https://unsplash.com/photos/a-DiiL0leKk
   author: Martin Longin
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
-tags: [tidymodels, workflowsets, tidyposterior, workflows, Bayesian analysis]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - workflowsets
+  - tidyposterior
+  - workflows
+  - Bayesian analysis
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "workflowsets", "tidyposterior", "workflows"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

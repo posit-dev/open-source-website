@@ -1,15 +1,17 @@
 ---
 title: R for Excel Users Workshop
 author:
-  - "[Allison Horst](https://allisonhorst.github.io/)"
-  - "[Julie Lowndes](https://jules32.github.io/)"
+  - '[Allison Horst](https://allisonhorst.github.io/)'
+  - '[Julie Lowndes](https://jules32.github.io/)'
 people:
   - Allison Horst
   - Julie Lowndes
 date: '2020-02-18'
 slug: conf20-r-excel
-categories: [learn, teach]
-tags: [conf2020]
+categories:
+  - Community
+tags:
+  - conf2020
 photo:
   url: https://unsplash.com/photos/rx7O2WsJ89w
   author: Johnson Wang
@@ -19,6 +21,9 @@ image: r-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - learn
+  - teach
 ---
 
 > tl;dr: all workshop materials are available here: <br>

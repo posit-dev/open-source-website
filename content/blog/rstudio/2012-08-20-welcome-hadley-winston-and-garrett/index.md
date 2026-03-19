@@ -4,14 +4,16 @@ people:
   - RStudio Team
 date: '2012-08-20'
 categories:
-- News
+  - Community
 slug: welcome-hadley-winston-and-garrett
 blogcategories:
-- Company News and Events
-- Open Source
-nohero: true
+  - Company News and Events
+  - Open Source
+nohero: yes
 ported_from: rstudio
 port_status: in-progress
+ported_categories:
+  - News
 ---
 
 

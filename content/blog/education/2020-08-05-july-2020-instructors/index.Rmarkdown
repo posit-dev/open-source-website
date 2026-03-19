@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-08-05'
 categories:
-  - certify
+  - Community
 tags:
   - certify
 description: |
@@ -17,6 +17,8 @@ image: july-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - certify
 ---
 
 July was a slow month for instructor certification thanks to some much-needed holiday time,

@@ -2,15 +2,17 @@
 title: 'Great Tables: Generating LaTeX Output for PDF'
 people:
   - Rich Iannone
-date: 2024-11-13T00:00:00.000Z
+date: '2024-11-13T00:00:00.000Z'
 format:
   html:
-    code-fold: true
+    code-fold: yes
     code-summary: Show the Code
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
+categories:
+  - Visualization
 ---
 
 

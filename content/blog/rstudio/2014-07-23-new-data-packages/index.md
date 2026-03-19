@@ -4,16 +4,18 @@ people:
   - Hadley Wickham
 date: '2014-07-23'
 categories:
-- Packages
+  - Data Wrangling
 slug: new-data-packages
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

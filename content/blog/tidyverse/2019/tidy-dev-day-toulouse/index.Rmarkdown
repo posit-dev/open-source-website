@@ -1,17 +1,21 @@
 ---
 title: 'Tidy dev day take two: Toulouse'
-author: Mara Averick and Hadley Wickham
-description: >
+author:
+  - Mara Averick and Hadley Wickham
+description: |
   Reflections on tidyverse dev day at useR! 2019.
 date: '2019-09-06'
 slug: tidy-dev-day-toulouse
 categories:
-  - other
-tags: [tidyverse-dev-day]
+  - Community
+tags:
+  - tidyverse-dev-day
 photo:
   author: Romain François
 software: ["tidyverse"]
 languages: ["R"]
+ported_categories:
+  - other
 ---
 
 ```{r setup, include = FALSE}

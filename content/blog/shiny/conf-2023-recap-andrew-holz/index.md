@@ -1,7 +1,6 @@
 ---
 title: Shiny Conf 2023 Recap
-description: >-
-  Appsilon's Shiny Conf 2023 was a big success, with many incredible speakers
+description: Appsilon's Shiny Conf 2023 was a big success, with many incredible speakers
   (including 3 members of our team!)
 people:
   - Andrew Holz
@@ -12,6 +11,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-r", "bslib"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 
 

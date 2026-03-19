@@ -3,8 +3,8 @@ title: Quarto dashboards video series
 description: |
   Learn how to build a Quarto dashboard with a three-part video series.
 categories:
-  - Learn
-  - Workshop
+  - Publishing
+  - Community
 people:
   - Charlotte Wickham
   - Mine Çetinkaya-Rundel
@@ -15,6 +15,9 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+ported_categories:
+  - Learn
+  - Workshop
 ---
 
 

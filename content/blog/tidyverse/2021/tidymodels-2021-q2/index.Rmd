@@ -1,28 +1,31 @@
 ---
 output: hugodown::hugo_document
-
 slug: tidymodels-2021-q2
 title: Q2 2021 tidymodels digest
-date: 2021-07-02
+date: '2021-07-02'
 people:
   - Julia Silge
-description: >
-    Releases of tidymodels packages in Q2 of 2021 include more streamlined
-    memory footprints for feature-engineering recipes, new model engine options,
-    and better support for post-processing predictions.
-
+description: |
+  Releases of tidymodels packages in Q2 of 2021 include more streamlined memory footprints for feature-engineering recipes, new model engine options, and better support for post-processing predictions.
 photo:
   url: https://unsplash.com/photos/UsZNiW6LyQ0
   author: SHOT
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [roundup] 
-tags: [tidymodels, parsnip, recipes, butcher, yardstick, probably]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - parsnip
+  - recipes
+  - butcher
+  - yardstick
+  - probably
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "parsnip", "recipes", "butcher", "yardstick", "probably"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 ```{r include=FALSE}

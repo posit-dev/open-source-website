@@ -4,18 +4,20 @@ people:
   - Tareef Kawaf
 date: '2018-02-06'
 categories:
-- Packages
+  - Machine Learning
 tags:
-- data science
-- Packages
+  - data science
+  - Packages
 slug: tensorflow-for-r
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["tensorflow"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

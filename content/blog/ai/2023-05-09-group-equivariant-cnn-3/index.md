@@ -1,14 +1,12 @@
 ---
-title: "Group-equivariant neural networks with escnn"
+title: Group-equivariant neural networks with escnn
 description: |
   Escnn, built on PyTorch, is a library that, in the spirit of Geometric Deep Learning, provides a high-level interface to designing and training group-equivariant neural networks. This post introduces important mathematical concepts, the library's key actors, and essential library use.
-date: 2023-05-09T00:00:00.000Z
+date: '2023-05-09T00:00:00.000Z'
 slug: keydanagcnn3
 categories:
-  - Torch
-  - R
-  - Concepts
-  - Image Recognition & Image Processing
+  - Machine Learning
+  - Best Practices
 author:
   - name: Sigrid Keydana
     affiliation: Posit
@@ -19,6 +17,11 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Concepts
+  - Image Recognition & Image Processing
 ---
 
 

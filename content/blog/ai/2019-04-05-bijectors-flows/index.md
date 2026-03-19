@@ -1,14 +1,12 @@
 ---
-title: "Getting into the flow: Bijectors in TensorFlow Probability"
+title: 'Getting into the flow: Bijectors in TensorFlow Probability'
 description: |
   Normalizing flows are one of the lesser known, yet fascinating and successful architectures in unsupervised deep learning. In this post we provide a basic introduction to flows using tfprobability, an R wrapper to TensorFlow Probability. Upcoming posts will build on this, using more complex flows on more complex data.
-date: 2019-04-05
+date: '2019-04-05'
 slug: keydana2019flows
 categories:
-  - Probabilistic ML/DL
-  - TensorFlow/Keras
-  - Concepts
-  - Generative Models
+  - Machine Learning
+  - Best Practices
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -20,6 +18,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - Probabilistic ML/DL
+  - TensorFlow/Keras
+  - Concepts
+  - Generative Models
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Getting started with deep learning in R"
+title: Getting started with deep learning in R
 description: |
   Many fields are benefiting from the use of deep learning, and with the R keras, tensorflow and related packages, you can now easily do state of the art deep learning in R. In this post, we want to give some orientation as to how to best get started.
 author:
@@ -9,11 +9,13 @@ author:
 slug: keydana2018gettingstarted
 date: 09-07-2018
 categories:
-  - TensorFlow/Keras
+  - Machine Learning
 preview: images/digits.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
 ---
 
 

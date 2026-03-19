@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2015-04-15'
 categories:
-- Packages
+  - Data Wrangling
 slug: readxl-0-1-0
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["readxl"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

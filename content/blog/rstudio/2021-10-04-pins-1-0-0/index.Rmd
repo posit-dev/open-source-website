@@ -1,23 +1,23 @@
 ---
 title: pins 1.0.0
-author: Hadley Wickham
+author:
+  - Hadley Wickham
 date: '2021-10-04'
 slug: pins-1-0-0
 blogcategories:
   - Open Source
 tags:
   - pins
-description: >
-    pins 1.0.0 is now available on CRAN! The pins package publishes data, 
-    models, and other R objects, making it easy to share them across projects 
-    and with your colleagues. Pins can be versioned, making it straightforward 
-    to track changes, re-run analyses on historical data, and undo mistakes.
+description: |
+  pins 1.0.0 is now available on CRAN! The pins package publishes data,  models, and other R objects, making it easy to share them across projects  and with your colleagues. Pins can be versioned, making it straightforward  to track changes, re-run analyses on historical data, and undo mistakes.
 resources:
   - name: hero
     src: hero.jpg
     title: A world map with many pins stuck in it
 software: ["pins-r"]
 languages: ["R"]
+categories:
+  - MLOps and Admin
 ---
 
 ```r, include = FALSE

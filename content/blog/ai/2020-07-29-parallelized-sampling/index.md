@@ -1,11 +1,11 @@
 ---
-title: "Parallelized sampling using exponential variates"
+title: Parallelized sampling using exponential variates
 description: |
   How can the seemingly iterative process of weighted sampling without replacement be transformed into something highly parallelizable? Turns out a well-known technique based on exponential variates accomplishes exactly that.
-date: 2020-07-29
+date: '2020-07-29'
 categories:
-  - Concepts
-  - Distributed Computing
+  - Best Practices
+  - MLOps and Admin
 author:
   - name: Yitao Li
     affiliation: RStudio
@@ -16,6 +16,9 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Concepts
+  - Distributed Computing
 ---
 
 

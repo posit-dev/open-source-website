@@ -1,25 +1,24 @@
 ---
-
 slug: rlang-1-0-0-errors
 title: New error style coming up in rlang 1.0.0
-date: 2021-12-22
+date: '2021-12-22'
 people:
   - Lionel Henry
-description: >
-    rlang 1.0.0 is near and introduces a new style of error display. Feedback welcome!
-
+description: |
+  rlang 1.0.0 is near and introduces a new style of error display. Feedback welcome!
 photo:
   url: https://unsplash.com/photos/-eDpBjt6UL0
   author: Bryan Goff
-
-categories: [package]
+categories:
+  - Best Practices
 tags: []
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["rlang", "cli"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

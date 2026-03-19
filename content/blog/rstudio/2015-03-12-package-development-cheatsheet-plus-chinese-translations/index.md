@@ -4,19 +4,21 @@ people:
   - Garrett Grolemund
 date: '2015-03-12'
 categories:
-- Packages
-- Training
+  - MLOps and Admin
 slug: package-development-cheatsheet-plus-chinese-translations
 blogcategories:
-- Products and Technology
-- Training and Education
-- Open Source
+  - Products and Technology
+  - Training and Education
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["cheatsheets"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - Training
 ---
 
 

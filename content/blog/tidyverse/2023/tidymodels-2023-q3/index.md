@@ -1,26 +1,27 @@
 ---
-
 slug: tidymodels-2023-q3
-title: "Q3 2023 tidymodels digest"
-date: 2023-10-05
+title: Q3 2023 tidymodels digest
+date: '2023-10-05'
 people:
   - Emil Hvitfeldt
-description: >
-    The tidymodels team has been busy working on all sorts of new features 
-    across the ecosystem.
+description: |
+  The tidymodels team has been busy working on all sorts of new features  across the ecosystem.
 photo:
   url: https://unsplash.com/photos/PGRwUQQhzMQ
   author: Tai's Captures
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
-tags: [tidymodels, rsample, tidyclust]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - rsample
+  - tidyclust
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "rsample", "tidyclust"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 <!--

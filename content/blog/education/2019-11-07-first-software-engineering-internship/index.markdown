@@ -1,22 +1,25 @@
 ---
 title: My First Software Engineering Internship
 author:
-  - "[Joyce Cahoon](https://jcahoon.netlify.com/)"
+  - '[Joyce Cahoon](https://jcahoon.netlify.com/)'
 people:
   - Joyce Cahoon
 date: '2019-11-07'
 publishDate: '2019-11-07'
 slug: my-first-software-engineering-internship
 description: |
-   How I went from being an amateur coder to being confident in my software development abilities.
+  How I went from being an amateur coder to being confident in my software development abilities.
 photo:
   url: https://unsplash.com/photos/ywz_3Qc0xdw
   author: Geoff Park
-tags: [internship]
+tags:
+  - internship
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
 ---
 
 Prior to this internship, my coding abilities were [amateur at best][first-reflection]. After this internship, I have not only become fluent in R, but also more confident in my software abilities in general. I have my mentors [Davis Vaughan][vaughan] and [Max Kuhn][kuhn] to thank for helping me build this agency, as well as the 2019 intern cohort and the #rstats community, but long story short, if you're interested in learning how to contribute to open source, ship production-level code, or build software products, I would highly recommend applying. The training I had was exceptional. 

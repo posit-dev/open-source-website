@@ -1,27 +1,25 @@
 ---
-
 slug: forcats-1-0-0
 title: forcats 1.0.0
-date: 2023-01-30
+date: '2023-01-30'
 people:
   - Hadley Wickham
-description: >
-    There are no major new features in this version of forcats, but the 1.0.0
-    label now clearly advertises that this a stable member of the tidyverse.
-
+description: |
+  There are no major new features in this version of forcats, but the 1.0.0 label now clearly advertises that this a stable member of the tidyverse.
 photo:
   url: https://unsplash.com/photos/NWwv0ETyzxc
   author: Diego Morales
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [forcats]
-
+categories:
+  - Data Wrangling
+tags:
+  - forcats
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "forcats"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

@@ -1,16 +1,19 @@
 ---
 title: posit::conf(2024) Shiny talks
-description: There were many great talks given at posit::conf(2024) about Shiny and they are now available on YouTube.
+description: There were many great talks given at posit::conf(2024) about Shiny and
+  they are now available on YouTube.
 people:
   - Andrew Holz
-date: "2024-11-11"
-image-header-disable: true
+date: '2024-11-11'
+image-header-disable: yes
 image: shinytalks.jpg
-image-alt: "Collage of speakers with Shiny talks at posit::conf(2024)"
+image-alt: Collage of speakers with Shiny talks at posit::conf(2024)
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-r", "shiny-python"]
 languages: ["R", "Python"]
+categories:
+  - Interactive Apps
 ---
 
 Videos of posit::conf(2024) talks are now posted [on YouTube](https://www.youtube.com/watch?v=s_Vh9HIeLVg&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn). We have also made [playlist of talks](https://youtube.com/playlist?list=PLitrm9UndxcsoP0pqVvteJWtAQ9TKT-mf) that are about building data driven applications with Shiny.

@@ -5,7 +5,7 @@ date: '2017-12-29'
 people:
   - Mara Averick
 categories:
-  - other
+  - Community
 photo:
   url: https://unsplash.com/photos/lPQIndZz8Mo
   author: Pablo Garcia Saldaña
@@ -14,6 +14,8 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse"]
 languages: ["R"]
+ported_categories:
+  - other
 ---
 
 ```{r setup, include = FALSE}

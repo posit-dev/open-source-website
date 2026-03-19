@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2014-03-16'
 categories:
-- Packages
+  - Data Wrangling
 slug: dplyr-0-1-3
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["dplyr"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

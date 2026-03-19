@@ -5,18 +5,20 @@ people:
 date: '2019-12-20'
 slug: reticulate-1-14
 categories:
-- Packages
+  - Best Practices
 tags:
-- reticulate
-- Python
-- Packages
+  - reticulate
+  - Python
+  - Packages
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["reticulate"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

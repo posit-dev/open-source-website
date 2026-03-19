@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-10-02'
 categories:
-  - certify
+  - Community
 tags:
   - certify
 description: |
@@ -17,6 +17,8 @@ ported_from: education
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - certify
 ---
 
 To help everyone who is preparing to certify as a Shiny instructor,

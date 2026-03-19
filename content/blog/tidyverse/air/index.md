@@ -6,16 +6,18 @@ people:
 date: '2025-02-21'
 description: We are thrilled to announce Air, a new R formatter.
 image: thumbnail-wd.jpg
-image-alt: "Blue sky and clouds seen from above"
+image-alt: Blue sky and clouds seen from above
 photo:
   author: Taylor Van Riper
   url: https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI
 ported_from: tidyverse
 port_status: in-progress
 categories:
-- tidyverse
+  - Data Wrangling
 software: ["air"]
 languages: ["R"]
+ported_categories:
+  - tidyverse
 ---
 
 We're thrilled to announce [Air](https://posit-dev.github.io/air/), an extremely fast R formatter. Formatters are used to automatically style code, but I find that it's much easier to show what Air can do rather than tell, so we'll start with a few examples. In the video below, we're inside [Positron](https://positron.posit.co/) and we're looking at some unformatted code. Saving the file (yep, that's it!) invokes Air, which automatically and instantaneously formats the code.

@@ -4,18 +4,20 @@ people:
   - JJ Allaire
 date: '2017-09-05'
 categories:
-- Packages
+  - Machine Learning
 slug: keras-for-r
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

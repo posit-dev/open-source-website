@@ -1,8 +1,7 @@
 ---
-title: "Image segmentation with U-Net"
-description: > 
- In image segmentation, every pixel of an image is assigned a class. Depending on the application, classes could be different cell types; or the task could be binary, as in "cancer cell yes or no?". Area of application notwithstanding, the established neural network architecture of choice is U-Net. In this post, we show how to preprocess data and train a U-Net model on the Kaggle Carvana image segmentation data.
- 
+title: Image segmentation with U-Net
+description: |
+  In image segmentation, every pixel of an image is assigned a class. Depending on the application, classes could be different cell types; or the task could be binary, as in "cancer cell yes or no?". Area of application notwithstanding, the established neural network architecture of choice is U-Net. In this post, we show how to preprocess data and train a U-Net model on the Kaggle Carvana image segmentation data.
 author:
   - name: Daniel Falbel
     affiliation: RStudio
@@ -13,13 +12,15 @@ author:
 slug: falbelkeydana2019unet
 date: 08-23-2019
 categories:
-  - Image Recognition & Image Processing
-  - TensorFlow/Keras
+  - Machine Learning
 bibliography: bibliography.bib
 preview: images/unet.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - Image Recognition & Image Processing
+  - TensorFlow/Keras
 ---
 
 ```{r setup, include=FALSE}

@@ -1,17 +1,20 @@
 ---
 title: broom 0.5.0
-author: Alex Hayes
-date: "2018-07-17"
+author:
+  - Alex Hayes
+date: '2018-07-17'
 slug: broom-0-5-0
-description: > 
+description: |
   broom 0.5.0 is on CRAN.
 categories:
-  - package
+  - Data Wrangling
 photo:
   url: https://unsplash.com/photos/vYcH7pI6v1Q
   author: Nagesh Badu
 software: ["tidyverse", "broom", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include=FALSE}

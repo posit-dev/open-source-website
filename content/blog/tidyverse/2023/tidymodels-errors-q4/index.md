@@ -1,26 +1,28 @@
 ---
-
 slug: tidymodels-errors-q4
-title: "Three ways errors are about to get better in tidymodels"
-date: 2023-11-10
+title: Three ways errors are about to get better in tidymodels
+date: '2023-11-10'
 people:
   - Simon Couch
-description: >
-    The tidymodels team's biannual spring cleaning gave us a chance to revisit 
-    the way we raise some error messages.
-
+description: |
+  The tidymodels team's biannual spring cleaning gave us a chance to revisit  the way we raise some error messages.
 photo:
   url: https://unsplash.com/photos/vYcH7pI6v1Q
   author: Nagesh Badu
-
-categories: [programming] 
-tags: [tidymodels, package maintenance, tune, parsnip]
-
+categories:
+  - Best Practices
+tags:
+  - tidymodels
+  - package maintenance
+  - tune
+  - parsnip
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tune", "parsnip"]
 languages: ["R"]
+ported_categories:
+  - programming
 ---
 
 Twice a year, the tidymodels team comes together for "spring cleaning," a week-long project devoted to package maintenance. Ahead of the week, we come up with a list of maintenance tasks that we'd like to see consistently implemented across our packages. Many of these tasks can be completed by running one usethis function, while others are much more involved, like issue triage.[^1] In tidymodels, triaging issues in our core packages helps us to better understand common ways that users struggle to wrap their heads around an API choice we've made or find the information they need. So, among other things, refinements to the wording of our error messages is a common output of our spring cleanings. This blog post will call out three kinds of changes to our erroring that came out of this spring cleaning:

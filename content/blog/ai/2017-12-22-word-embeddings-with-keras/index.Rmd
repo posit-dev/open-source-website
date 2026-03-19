@@ -1,5 +1,5 @@
 ---
-title: "Word Embeddings with Keras"
+title: Word Embeddings with Keras
 description: |
   Word embedding is a method used to map words of a vocabulary to dense vectors of real numbers where semantically similar words are mapped to nearby points. In this example we'll use Keras to generate word embeddings for the Amazon Fine Foods Reviews dataset.
 author:
@@ -8,13 +8,15 @@ author:
     affiliation: Curso-R
     affiliation_url: http://curso-r.com/
 date: 12-22-2017
-categories: 
-  - TensorFlow/Keras
-  - Natural Language Processing 
+categories:
+  - Machine Learning
 preview: word-embeddings-with-keras.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Natural Language Processing
 ---
 
 ```{r setup, include=FALSE}

@@ -1,13 +1,11 @@
 ---
-title: "Please allow me to introduce myself: Torch for R"
+title: 'Please allow me to introduce myself: Torch for R'
 description: |
   Today, we are excited to introduce torch, an R package that allows you to use PyTorch-like functionality natively from R. No Python installation is required: torch is built directly on top of libtorch, a C++ library that provides the tensor-computation and automatic-differentiation capabilities essential to building neural networks.
-date: 2020-09-29
+date: '2020-09-29'
 slug: keydanaintroducingtorchforR
 categories:
-  - Packages/Releases
-  - Torch
-  - R
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +16,10 @@ image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Packages/Releases
+  - Torch
+  - R
 ---
 
 

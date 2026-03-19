@@ -1,26 +1,26 @@
 ---
-
 slug: tidymodels-2022-survey
 title: Take the tidymodels survey for 2022 priorities
-date: 2021-10-06
+date: '2021-10-06'
 people:
   - Max Kuhn
-description: >
-    We are conducting our second tidymodels priorities survey. Please give us your
-    feedback!
-
+description: |
+  We are conducting our second tidymodels priorities survey. Please give us your feedback!
 photo:
   url: https://unsplash.com/photos/ChUHmPPTnLQ
   author: Djim Loic
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [other] 
-tags: [survey,tidymodels]
+categories:
+  - Community
+tags:
+  - survey
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - other
 ---
 
 In 2020, we created a survey to get community input on how we prioritize our projects. [The results](https://connect.rstudioservices.com/tidymodels-priorities-survey/README.html) gave us a good sense of which items people were most interested in. The top three requests were:

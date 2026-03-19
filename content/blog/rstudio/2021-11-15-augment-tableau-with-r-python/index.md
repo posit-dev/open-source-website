@@ -1,6 +1,7 @@
 ---
 title: How To Augment Tableau With R & Python - A Webinar and Case Study from Sweden
-author: Filip Wästberg, Jesper Ludvigsen and Vilgot Österlund
+author:
+  - Filip Wästberg, Jesper Ludvigsen and Vilgot Österlund
 date: '2021-11-15'
 slug: augment-tableau-with-r-python
 tags:
@@ -12,12 +13,18 @@ people:
 blogcategories:
   - Company News and Events
   - Industry
-description: In an upcoming webinar on November 17th, Solita will showcase how they successfully combined the strengths of RStudio and Tableau at one of Sweden’s largest government agencies.
-alttext: Using R & Python webinar announcement with speakers and a blue background with faded hexes
+description: In an upcoming webinar on November 17th, Solita will showcase how they
+  successfully combined the strengths of RStudio and Tableau at one of Sweden’s largest
+  government agencies.
+alttext: Using R & Python webinar announcement with speakers and a blue background
+  with faded hexes
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
+categories:
+  - Interactive Apps
+  - Visualization
 ---
 
 <div class="lt-gray-box">

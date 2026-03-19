@@ -2,23 +2,28 @@
 output: hugodown::hugo_document
 slug: tidymodels-sparse-support
 title: Sparse data structures in tidymodels
-date: 2020-11-25
+date: '2020-11-25'
 people:
   - Julia Silge
-description: >
-    Sparse data is common in many domains, and now tidymodels supports using 
-    sparse matrix structures throughout the fitting and tuning stages of modeling.
+description: |
+  Sparse data is common in many domains, and now tidymodels supports using  sparse matrix structures throughout the fitting and tuning stages of modeling.
 photo:
   url: https://unsplash.com/photos/7JX0-bfiuxQ
   author: JJ Ying
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [learn] 
-tags: [tidymodels,tune,parsnip,hardhat]
+categories:
+  - Community
+tags:
+  - tidymodels
+  - tune
+  - parsnip
+  - hardhat
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "tune", "parsnip", "hardhat"]
 languages: ["R"]
+ported_categories:
+  - learn
 ---
 
 

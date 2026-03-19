@@ -5,28 +5,30 @@ people:
 date: '2020-07-21'
 slug: 4-tips-to-make-your-shiny-dashboard-faster
 categories:
-- Shiny
+  - Interactive Apps
 tags:
-- shiny
-- Shiny
+  - shiny
+  - Shiny
 description: Yes, Shiny apps can be fast and scalable. But only if you build them
   in the right way and use the proper tools.
 resources:
-- name: shiny-comparisons
-  src: shiny-comparisons.gif
-  title: Slow versus Fast Shiny
-- name: profvis
-  src: profvis.jpg
-  title: Profvis screenshot
-- name: logo
-  src: appsilon-logo.png
-  title: Appsilon Logo
+  - name: shiny-comparisons
+    src: shiny-comparisons.gif
+    title: Slow versus Fast Shiny
+  - name: profvis
+    src: profvis.jpg
+    title: Profvis screenshot
+  - name: logo
+    src: appsilon-logo.png
+    title: Appsilon Logo
 blogcategories:
-- Products and Technology
+  - Products and Technology
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
 ---
 
 

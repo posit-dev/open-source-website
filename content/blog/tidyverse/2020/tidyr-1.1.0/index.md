@@ -9,15 +9,16 @@ photo:
   url: https://unsplash.com/photos/__ZMnefoI3k
   author: Jan Vasek
 categories:
-- package
+  - Data Wrangling
 tags:
-- tidyr
-
+  - tidyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

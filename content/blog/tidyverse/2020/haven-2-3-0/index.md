@@ -1,26 +1,26 @@
 ---
-
 slug: haven-2-3-0
 title: haven 2.3.0
-date: 2020-06-01
+date: '2020-06-01'
 people:
   - Hadley Wickham
-description: >
-    haven now uses vctrs which means labelled classes will be preserved in
-    tidyr and dplyr operation.
-
+description: |
+  haven now uses vctrs which means labelled classes will be preserved in tidyr and dplyr operation.
 photo:
   url: https://unsplash.com/photos/45GmTCcW8Hk
   author: Sergey Nikolaev
-
-categories: [package] 
-tags: [tidyverse, haven]
-
+categories:
+  - Data Wrangling
+tags:
+  - tidyverse
+  - haven
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "haven"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're tickled pink to announce the release of [haven](https://haven.tidyverse.org) 2.3.0. haven allows you to read and write SAS, SPSS, and Stata data formats from R, thanks to the wonderful [ReadStat](https://github.com/WizardMac/ReadStat) C library written by [Evan Miller](https://www.evanmiller.org/).

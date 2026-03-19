@@ -1,26 +1,27 @@
 ---
-
 slug: tune-1-2-0
 title: tune 1.2.0
-date: 2024-04-18
+date: '2024-04-18'
 people:
   - Simon Couch
-description: >
-    While we've written about survival analysis and machine learning fairness 
-    already, the newest tune release includes a number of other major changes.
-
+description: |
+  While we've written about survival analysis and machine learning fairness  already, the newest tune release includes a number of other major changes.
 photo:
   url: https://unsplash.com/photos/1Pzhr6XPl6k
   author: Derek Story
-
-categories: [package] 
-tags: [tidymodels, tune, parallelism]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - tune
+  - parallelism
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tune"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <div class="highlight">

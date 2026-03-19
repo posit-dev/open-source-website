@@ -4,17 +4,19 @@ people:
   - Kevin Ushey
 date: '2014-09-05'
 categories:
-- Packages
+  - Best Practices
 slug: packrat-on-cran
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["packrat"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

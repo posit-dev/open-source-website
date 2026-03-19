@@ -4,10 +4,10 @@ slug: callr-3.3.0
 people:
   - Gábor Csárdi
 date: '2019-07-08'
-description: >
+description: |
   callr 3.3.0 is now on CRAN
 categories:
-- package
+  - Best Practices
 photo:
   url: https://pixabay.com/photos/venus-flytrap-carnivorous-plant-1531345
   author: MonikaP
@@ -16,6 +16,8 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "callr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

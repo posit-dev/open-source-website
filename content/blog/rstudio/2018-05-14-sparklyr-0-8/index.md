@@ -5,16 +5,19 @@ people:
 date: '2018-05-14'
 slug: sparklyr-0-8
 categories:
-- Packages
+  - Data Wrangling
+  - MLOps and Admin
 tags:
-- sparklyr
-- Packages
+  - sparklyr
+  - Packages
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

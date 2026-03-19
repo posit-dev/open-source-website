@@ -1,27 +1,26 @@
 ---
-
 slug: marquee-0-1-0
 title: marquee 0.1.0
-date: 2024-05-29
+date: '2024-05-29'
 people:
   - Thomas Lin Pedersen
-description: >
-    The initial release brings markdown awareness to grid and ggplot2 to allow 
-    for rich text formatting in R graphics.
-
+description: |
+  The initial release brings markdown awareness to grid and ggplot2 to allow  for rich text formatting in R graphics.
 photo:
   url: https://unsplash.com/photos/a-close-up-of-a-metal-grate-on-a-table-9jfpVAhGC1g
   author: Etienne Girardet
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [marquee, ggplot2]
-
+categories:
+  - Visualization
+tags:
+  - marquee
+  - ggplot2
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "marquee", "ggplot2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

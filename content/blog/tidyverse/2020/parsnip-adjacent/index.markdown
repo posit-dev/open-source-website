@@ -1,15 +1,16 @@
 ---
 title: New parsnip-adjacent packages
 slug: parsnip-adjacent
-description: >
-    Three new tidymodels packages, baguette, poissonreg, and plsmod, were just released on CRAN.
-date: 2020-04-15
+description: |
+  Three new tidymodels packages, baguette, poissonreg, and plsmod, were just released on CRAN.
+date: '2020-04-15'
 people:
   - Max Kuhn
 photo:
   url: https://unsplash.com/photos/bph0kUmAoXc
   author: Mae Mu
-categories: [package]
+categories:
+  - Machine Learning
 tags:
   - tidymodels
   - baguette
@@ -21,6 +22,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

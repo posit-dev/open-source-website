@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-03-17'
 categories:
-  - teach
+  - Community
 tags:
   - online
   - teach
@@ -17,6 +17,8 @@ photo:
 image: teaching-online-on-short-notice-wd.jpg
 ported_from: education
 port_status: in-progress
+ported_categories:
+  - teach
 ---
 
 - [Recorded video][video]

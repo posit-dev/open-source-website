@@ -1,14 +1,13 @@
 ---
 title: Teach R with Interactive Courses
 author:
-  - "[Julia Silge](https://juliasilge.com/)"
+  - '[Julia Silge](https://juliasilge.com/)'
 people:
   - Julia Silge
 date: '2020-05-26'
 categories:
-  - learn
-  - teach
-tags: 
+  - Community
+tags:
   - online
 slug: teach-interactive-course
 description: |
@@ -21,6 +20,9 @@ ported_from: education
 port_status: in-progress
 software: ["learnr"]
 languages: ["R"]
+ported_categories:
+  - learn
+  - teach
 ---
 
 I [recently published](https://juliasilge.com/blog/tidymodels-ml-course/) yet another version of an [interactive supervised machine learning course](https://supervised-ml-course.netlify.app/) where learners can practice their modeling skills in the browser with four case studies. 

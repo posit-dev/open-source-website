@@ -1,27 +1,26 @@
 ---
-
 slug: recipes-update-05-20222
 title: Updates for recipes extension packages
-date: 2022-05-03
+date: '2022-05-03'
 people:
   - Emil Hvitfeldt
-description: >
-    The three extension packages for recipes were recently updated 
-    on CRAN adding new steps, features and bug fixes.
-
+description: |
+  The three extension packages for recipes were recently updated  on CRAN adding new steps, features and bug fixes.
 photo:
   url: https://unsplash.com/photos/nAMLTEerpWI
   author: Tim Hüfner
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [recipes, tidymodels]
-
+categories:
+  - Machine Learning
+tags:
+  - recipes
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "recipes", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

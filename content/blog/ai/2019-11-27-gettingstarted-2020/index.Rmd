@@ -1,8 +1,7 @@
 ---
-title: "Getting started with Keras from R - the 2020 edition"
-description: > 
- Looking for materials to get started with deep learning from R? This post presents useful tutorials, guides, and background documentation on the new TensorFlow for R website. 
- Advanced users will find pointers to applications of new release 2.0 (or upcoming 2.1!) features alluded to in the recent TensorFlow 2.0 post.
+title: Getting started with Keras from R - the 2020 edition
+description: |
+  Looking for materials to get started with deep learning from R? This post presents useful tutorials, guides, and background documentation on the new TensorFlow for R website.  Advanced users will find pointers to applications of new release 2.0 (or upcoming 2.1!) features alluded to in the recent TensorFlow 2.0 post.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -10,12 +9,14 @@ author:
 slug: keydana2019gettingstarted2020
 date: 11-27-2019
 categories:
-  - Packages/Releases
-  - TensorFlow/Keras
+  - Machine Learning
 preview: images/website.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - Packages/Releases
+  - TensorFlow/Keras
 ---
 
 

@@ -1,7 +1,6 @@
 ---
 title: shinyswatch 0.7.0
-description: >-
-  Customizable shinyswatch themes and an improved theme picker round out
+description: Customizable shinyswatch themes and an improved theme picker round out
   shinyswatch v0.7.0.
 people:
   - Garrick Aden-Buie
@@ -11,6 +10,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["py-shinyswatch"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

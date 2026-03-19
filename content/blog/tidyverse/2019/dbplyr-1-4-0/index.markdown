@@ -5,7 +5,7 @@ people:
 date: '2019-04-30'
 slug: dbplyr-1-4-0
 categories:
-  - package
+  - Data Wrangling
 tags:
   - dbplyr
   - dplyr
@@ -18,6 +18,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

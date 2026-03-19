@@ -3,13 +3,15 @@ title: Shiny for Python 0.4.0
 description: Better tables and sidebars!
 people:
   - Winston Chang
-date: "2023-06-28"
+date: '2023-06-28'
 image: shiny-040.png
-image-alt: "Shiny for Python 0.4.0"
+image-alt: Shiny for Python 0.4.0
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

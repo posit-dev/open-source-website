@@ -1,27 +1,26 @@
 ---
 output: hugodown::hugo_document
-
 slug: tidymodels-2023-q2
-title: "Q2 2023 tidymodels digest"
-date: 2023-07-19
+title: Q2 2023 tidymodels digest
+date: '2023-07-19'
 people:
   - Hannah Frick
-description: >
-    The tidymodels team has been busy working on all sorts of new features 
-    across the ecosystem.
-
+description: |
+  The tidymodels team has been busy working on all sorts of new features  across the ecosystem.
 photo:
   url: https://unsplash.com/photos/PuLsDCBbyBM
   author: United States Geological Survey
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
-tags: [tidymodels]
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 <!--

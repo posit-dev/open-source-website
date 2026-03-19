@@ -1,12 +1,11 @@
 ---
-title: "First mlverse survey results – software, applications, and beyond"
+title: First mlverse survey results – software, applications, and beyond
 description: |
   Last month, we conducted our first survey on mlverse software, covering topics ranging from area of application through software usage to user wishes and suggestions. In addition, the survey asked about thoughts on social impacts of AI/ML. This post presents the results, and tries to address some of the things that came up.
-date: 2021-02-17
+date: '2021-02-17'
 slug: keydanasurvey2021
 categories:
-  - Meta
-  - R
+  - Community
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -16,6 +15,9 @@ people:
 image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
+ported_categories:
+  - Meta
+  - R
 ---
 
 

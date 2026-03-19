@@ -1,29 +1,26 @@
 ---
-
 slug: httr2-1-0-0
 title: httr2 1.0.0
-date: 2023-11-14
+date: '2023-11-14'
 people:
   - Hadley Wickham
-description: >
-    httr2 is the successor to httr, providing a pipeable interface to
-    generate HTTP requests and handle the responses. It's focussed
-    on the needs of an R user wrapping a modern web API, but is flexible
-    enough to handle just about any HTTP related task.
-
+description: |
+  httr2 is the successor to httr, providing a pipeable interface to generate HTTP requests and handle the responses. It's focussed on the needs of an R user wrapping a modern web API, but is flexible enough to handle just about any HTTP related task.
 photo:
   url: https://unsplash.com/photos/xKShyIiTNJk
   author: Mike Bowman
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [httr2, httr]
-
+categories:
+  - Data Wrangling
+tags:
+  - httr2
+  - httr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "httr2", "httr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

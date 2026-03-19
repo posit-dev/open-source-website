@@ -1,8 +1,7 @@
 ---
 title: Creating Responsive Layouts in Shiny with `layout_columns()`
-description: >-
-  Learn how to use Shiny's `layout_columns()` to build adaptive web apps that
-  look great on any screen size.
+description: Learn how to use Shiny's `layout_columns()` to build adaptive web apps
+  that look great on any screen size.
 people:
   - Shiny Team
 date: '2025-02-08'
@@ -11,6 +10,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "bslib"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

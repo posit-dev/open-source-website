@@ -1,16 +1,20 @@
 ---
-title: "Coming soon: tibble 2.0.0"
-date: 2018-11-28
+title: 'Coming soon: tibble 2.0.0'
+date: '2018-11-28'
 slug: tibble-2.0.0-pre-announce
-author: Kirill Müller, Jenny Bryan
-categories: [package]
-description: >
-    The upcoming tibble 2.0.0 release has internal changes relevant to package developers who depend on tibble.
+author:
+  - Kirill Müller, Jenny Bryan
+categories:
+  - Data Wrangling
+description: |
+  The upcoming tibble 2.0.0 release has internal changes relevant to package developers who depend on tibble.
 photo:
   url: https://unsplash.com/photos/yYawh30qf28
   author: Gabriel Porras
 software: ["tidyverse", "tibble"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

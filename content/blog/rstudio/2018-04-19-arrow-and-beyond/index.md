@@ -6,16 +6,19 @@ people:
 date: '2018-04-19'
 slug: arrow-and-beyond
 categories:
-- News
+  - Data Wrangling
+  - Community
 tags:
-- News
-- Arrow
-- Ursa Labs
+  - News
+  - Arrow
+  - Ursa Labs
 blogcategories:
-- Company News and Events
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
+ported_categories:
+  - News
 ---
 
 

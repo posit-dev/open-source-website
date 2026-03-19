@@ -1,26 +1,26 @@
 ---
 output: hugodown::hugo_document
-
 slug: ggplot2-4-0-0
 title: ggplot2 4.0.0
-date: 2025-09-11
+date: '2025-09-11'
 people:
   - Teun van den Brand
-description: >
-    A new major version of ggplot2 has been released on CRAN. Find out what is new here.
-
+description: |
+  A new major version of ggplot2 has been released on CRAN. Find out what is new here.
 photo:
   url: https://unsplash.com/photos/selective-focus-photography-of-water-droplets-on-grasses--N_UwPdUs7E
   author: Jonas Weckschmied
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [ggplot2]
+categories:
+  - Visualization
+tags:
+  - ggplot2
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

@@ -5,17 +5,19 @@ people:
 date: '2019-02-06'
 slug: rstudio-conf-2019-workshops
 categories:
-- rstudio::conf
-- Training
+  - MLOps and Admin
 tags:
-- R Conference
-- rstudio::conf
+  - R Conference
+  - rstudio::conf
 blogcategories:
-- Training and Education
-- Company News and Events
+  - Training and Education
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - rstudio::conf
+  - Training
 ---
 
 

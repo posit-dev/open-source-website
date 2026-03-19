@@ -1,26 +1,29 @@
 ---
 output: hugodown::hugo_document
 slug: dplyr-1-1-0-pick-reframe-arrange
-title: "dplyr 1.1.0: `pick()`, `reframe()`, and `arrange()`"
-date: 2023-02-07
+title: 'dplyr 1.1.0: `pick()`, `reframe()`, and `arrange()`'
+date: '2023-02-07'
 people:
   - Davis Vaughan
-description: >
-    This final post contains a grab-bag of new features, including: `pick()` for column
-    selection inside of data-masking functions, `reframe()` as the new home for
-    `summarise()`'s multi-row behavior, and major performance improvements to `arrange()`.
+description: |
+  This final post contains a grab-bag of new features, including: `pick()` for column selection inside of data-masking functions, `reframe()` as the new home for `summarise()`'s multi-row behavior, and major performance improvements to `arrange()`.
 photo:
   url: https://unsplash.com/photos/XgoHMMkE02I
   author: Priscilla Du Preez
-categories: [package] 
-tags: [dplyr, dplyr-1-1-0]
-editor_options: 
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dplyr-1-1-0
+editor_options:
   chunk_output_type: console
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 In this final [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110) post, we'll take a look at two new verbs, `pick()` and `reframe()`, along with some changes to `arrange()` that improve both reproducibility and performance.

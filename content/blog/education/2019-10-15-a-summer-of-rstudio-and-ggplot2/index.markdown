@@ -1,7 +1,7 @@
 ---
 title: A Summer of RStudio and ggplot2
 author:
-  - "[Dewey Dunnington](https://fishandwhistle.net/)"
+  - '[Dewey Dunnington](https://fishandwhistle.net/)'
 people:
   - Dewey Dunnington
 date: '2019-10-15'
@@ -11,12 +11,16 @@ photo:
   author: kazuend
 description: |
   This past summer, I had the incredible opportunity to spend the summer as an RStudio intern working with Hadley Wickham on a few new features for the ggplot2 package.
-tags: [internship]
+tags:
+  - internship
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+categories:
+  - Community
+  - Visualization
 ---
 
 

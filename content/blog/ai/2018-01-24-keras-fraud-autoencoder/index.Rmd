@@ -1,5 +1,5 @@
 ---
-title: "Predicting Fraud with Autoencoders and Keras"
+title: Predicting Fraud with Autoencoders and Keras
 description: |
   In this post we will train an autoencoder to detect credit card fraud. We will also demonstrate how to train Keras models in the cloud using CloudML. The basis of our model will be the Kaggle Credit Card Fraud Detection dataset.
 author:
@@ -9,13 +9,15 @@ author:
     affiliation_url: http://curso-r.com/
 date: 01-25-2018
 categories:
-  - TensorFlow/Keras
-  - Unsupervised Learning
-  - Cloud
+  - Machine Learning
 preview: images/preview.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Unsupervised Learning
+  - Cloud
 ---
 
 ```{r setup, include=FALSE}

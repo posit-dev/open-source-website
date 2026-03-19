@@ -5,19 +5,21 @@ people:
 date: '2017-08-29'
 slug: shiny-dev-center-gets-a-shiny-new-update
 categories:
-- Shiny
-- News
+  - Interactive Apps
 tags:
-- shiny
-- Shiny
+  - shiny
+  - Shiny
 blogcategories:
-- Products and Technology
-- Company News and Events
-- Open Source
+  - Products and Technology
+  - Company News and Events
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
+  - News
 ---
 
 

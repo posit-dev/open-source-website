@@ -10,13 +10,14 @@ photo:
   url: https://unsplash.com/photos/xWiXi6wRLGo
 slug: ggplot2-3-3-0
 categories:
-- package
-
+  - Visualization
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

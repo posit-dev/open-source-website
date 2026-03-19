@@ -1,15 +1,16 @@
 ---
-title: "👩‍💻🚙👯: My googledrive internship"
+title: "\U0001F469‍\U0001F4BB\U0001F699\U0001F46F: My googledrive internship"
 slug: lucy-internship
-description: >
+description: |
   Over the past several months I have been working with Jenny Bryan on the googledrive package. I wanted to share a bit about the process and some things I learned along the way. While brainstorming this post, I went back through my GitHub commits to remind myself of the journey - it turns out they do a rather good job of showing the scope of this!
-date: 2017-09-08
+date: '2017-09-08'
 people:
   - Lucy DAgostino McGowan
 photo:
   url: https://twitter.com/_inundata
   author: Karthik Ram
-categories: [learn]
+categories:
+  - Community
 tags:
   - googledrive
 image: thumbnail-wd.jpg
@@ -17,6 +18,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googledrive"]
 languages: ["R"]
+ported_categories:
+  - learn
 ---
 
 

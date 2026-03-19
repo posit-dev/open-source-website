@@ -1,8 +1,7 @@
 ---
 title: Editable data tables in Shiny for Python 0.9.0
-description: >-
-  Editable data frames, empowered renderers, browser error console, and more in
-  Shiny for Python 0.9.0.
+description: Editable data frames, empowered renderers, browser error console, and
+  more in Shiny for Python 0.9.0.
 people:
   - Shiny Team
 date: '2024-05-09'
@@ -14,6 +13,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

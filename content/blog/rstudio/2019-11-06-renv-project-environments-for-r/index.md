@@ -5,17 +5,19 @@ people:
 date: '2019-11-06'
 slug: renv-project-environments-for-r
 categories:
-- Packages
+  - Best Practices
 tags:
-- Packages
-- Packages
+  - Packages
+  - Packages
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["renv"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

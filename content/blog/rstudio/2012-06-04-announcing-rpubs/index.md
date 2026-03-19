@@ -4,13 +4,15 @@ people:
   - RStudio Team
 date: '2012-06-04'
 categories:
-- News
+  - Publishing
 slug: announcing-rpubs
 blogcategories:
-- Company News and Events
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - News
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Predicting Sunspot Frequency with Keras"
+title: Predicting Sunspot Frequency with Keras
 description: |
   In this post we will examine making time series predictions using the sunspots dataset that ships with base R. Sunspots are dark spots on the sun, associated with lower temperature. Our post will focus on both how to apply deep learning to time series forecasting, and how to properly apply cross validation in this domain.
 author:
@@ -11,15 +11,17 @@ author:
     url: https://github.com/skeydan
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com
-date: 2018-06-25
-creative_commons: null
+date: '2018-06-25'
+creative_commons: ~
 preview: images/backtested_test.png
 categories:
-  - TensorFlow/Keras
-  - Time Series
+  - Machine Learning
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Time Series
 ---
 
 ```{r setup, include=FALSE}

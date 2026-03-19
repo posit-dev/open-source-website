@@ -5,17 +5,19 @@ people:
 date: '2019-08-05'
 slug: the-shiny-developer-series
 categories:
-- Shiny
+  - Interactive Apps
 tags:
-- shiny
-- community
-- Shiny
+  - shiny
+  - community
+  - Shiny
 blogcategories:
-- Products and Technology
+  - Products and Technology
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
 ---
 
 

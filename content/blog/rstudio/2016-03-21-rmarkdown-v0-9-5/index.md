@@ -4,21 +4,23 @@ people:
   - RStudio Team
 date: '2016-03-21'
 categories:
-- News
-- Packages
-- R Markdown
+  - Publishing
 slug: rmarkdown-v0-9-5
 blogcategories:
-- Products and Technology
-- Company News and Events
-- Open Source
+  - Products and Technology
+  - Company News and Events
+  - Open Source
 tags:
-- Packages
-- R Markdown
+  - Packages
+  - R Markdown
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+ported_categories:
+  - News
+  - Packages
+  - R Markdown
 ---
 
 

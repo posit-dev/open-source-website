@@ -1,11 +1,11 @@
 ---
-title: "R Interface to Google CloudML"
+title: R Interface to Google CloudML
 description: |
   We are excited to announce the availability of the cloudml package, which provides an R interface to Google Cloud Machine Learning Engine. CloudML provides a number of services including on-demand access to training on GPUs and hyperparameter tuning to optimize key attributes of model architectures.
-date: 2018-01-10
+date: '2018-01-10'
 categories:
-  - Cloud
-  - Packages/Releases
+  - Machine Learning
+  - MLOps and Admin
 author:
   - name: J.J. Allaire
     url: https://github.com/jjallaire
@@ -18,6 +18,9 @@ ported_from: ai
 port_status: in-progress
 software: ["cloudml", "keras3", "tfestimators", "tensorflow"]
 languages: ["R"]
+ported_categories:
+  - Cloud
+  - Packages/Releases
 ---
 
 

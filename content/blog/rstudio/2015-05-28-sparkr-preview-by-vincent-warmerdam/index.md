@@ -4,17 +4,19 @@ people:
   - Garrett Grolemund
 date: '2015-05-28'
 categories:
-- Training
+  - MLOps and Admin
 tags:
-- big data
-- Spark
-- SparkR
+  - big data
+  - Spark
+  - SparkR
 slug: sparkr-preview-by-vincent-warmerdam
 blogcategories:
-- Training and Education
+  - Training and Education
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Training
 ---
 
 

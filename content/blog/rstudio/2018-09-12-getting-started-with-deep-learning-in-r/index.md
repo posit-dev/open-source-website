@@ -5,16 +5,18 @@ people:
 date: '2018-09-12'
 slug: getting-started-with-deep-learning-in-r
 categories:
-- Packages
+  - Machine Learning
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["keras3", "tensorflow"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

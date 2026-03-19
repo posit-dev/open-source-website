@@ -4,19 +4,21 @@ people:
   - Garrett Grolemund
 date: '2014-06-19'
 categories:
-- Shiny
-- shinyapps.io
+  - Interactive Apps
 slug: interactive-documents-an-incredibly-easy-way-to-use-shiny
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Shiny
-- shinyapps.io
+  - Shiny
+  - shinyapps.io
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
+  - shinyapps.io
 ---
 
 

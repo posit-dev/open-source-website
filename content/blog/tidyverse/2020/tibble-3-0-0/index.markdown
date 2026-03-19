@@ -1,22 +1,24 @@
 ---
 title: tibble 3.0.0
 slug: tibble-3-0-0
-description: >
-    tibble 3.0.0 is on CRAN now! Tibbles are a modern reimagining of the data frame, keeping what time has shown to be effective, and throwing out what is not, with nicer default output too! This article describes the latest major release and provides an outlook on further developments
-date: 2020-04-09
+description: |
+  tibble 3.0.0 is on CRAN now! Tibbles are a modern reimagining of the data frame, keeping what time has shown to be effective, and throwing out what is not, with nicer default output too! This article describes the latest major release and provides an outlook on further developments
+date: '2020-04-09'
 people:
   - Kirill Müller
 photo:
   url: https://unsplash.com/photos/dbOV1qSiL-c
   author: Vinicius Amano
 categories:
-- package
-- programming
+  - Best Practices
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tibble"]
 languages: ["R"]
+ported_categories:
+  - package
+  - programming
 ---
 
 

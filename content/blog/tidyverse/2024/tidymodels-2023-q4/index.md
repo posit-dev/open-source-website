@@ -1,26 +1,26 @@
 ---
-
 slug: tidymodels-2023-q4
-title: "Q4 2023 tidymodels digest"
-date: 2024-01-09
+title: Q4 2023 tidymodels digest
+date: '2024-01-09'
 people:
   - Emil Hvitfeldt
-description: >
-    The tidymodels team has been busy working on all sorts of new features 
-    across the ecosystem.
+description: |
+  The tidymodels team has been busy working on all sorts of new features  across the ecosystem.
 photo:
   url: https://www.pexels.com/photo/landscape-photography-of-snow-pathway-between-trees-during-winter-688660/
   author: Simon Berger
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
-tags: [tidymodels, recipes]
-
+categories:
+  - Machine Learning
+tags:
+  - tidymodels
+  - recipes
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 <!--

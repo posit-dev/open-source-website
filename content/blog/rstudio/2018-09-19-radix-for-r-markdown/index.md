@@ -5,17 +5,19 @@ people:
 date: '2018-09-19'
 slug: radix-for-r-markdown
 categories:
-- R Markdown
+  - Publishing
 tags:
-- rmarkdown
-- R Markdown
+  - rmarkdown
+  - R Markdown
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+ported_categories:
+  - R Markdown
 ---
 
 

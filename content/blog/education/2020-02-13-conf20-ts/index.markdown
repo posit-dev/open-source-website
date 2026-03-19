@@ -1,13 +1,15 @@
 ---
 title: Tidy Time Series and Forecasting in R
 author:
-  - "[Rob J Hyndman](https://robjhyndman.com/)"
+  - '[Rob J Hyndman](https://robjhyndman.com/)'
 people:
   - Rob J Hyndman
 date: '2020-02-13'
 slug: conf20-ts
-categories: [learn, teach]
-tags: [conf2020]
+categories:
+  - Community
+tags:
+  - conf2020
 description: This is what we covered in the Tidy Time Series workshop at rstudio::conf2020.
 photo:
   url: https://unsplash.com/photos/1C8Zgr-vnfA
@@ -16,6 +18,9 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - learn
+  - teach
 ---
 
 

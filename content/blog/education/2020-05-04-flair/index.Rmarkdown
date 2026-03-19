@@ -1,12 +1,12 @@
 ---
 title: Decorate your R code with flair
 author:
-  - "[Kelly Bodwin](https://www.kelly-bodwin.com/)"
+  - '[Kelly Bodwin](https://www.kelly-bodwin.com/)'
 people:
   - Kelly Bodwin
 date: '2020-05-04'
 categories:
-  - teach
+  - Community
 tags:
   - rmarkdown
 description: |
@@ -20,6 +20,8 @@ ported_from: education
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+ported_categories:
+  - teach
 ---
 
 <!-- This post relies on the development version of flair!-->

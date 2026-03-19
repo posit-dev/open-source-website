@@ -6,11 +6,14 @@ people:
 date: '2021-02-12'
 slug: shiny-app-stories
 categories:
-  - Shiny
+  - Interactive Apps
 tags:
   - shiny
   - caching
-description: "App Stories are a bit different from the User Showcase: an App Story will center around a Shiny application, but the application will be designed specifically to show off specific features, and it will also include explanations of how to use those features."
+description: 'App Stories are a bit different from the User Showcase: an App Story
+  will center around a Shiny application, but the application will be designed specifically
+  to show off specific features, and it will also include explanations of how to use
+  those features.'
 blogcategories:
   - Products and Technology
   - Open Source
@@ -18,6 +21,8 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
 ---
 
 Today we're introducing [App Stories](https://shiny.rstudio.com/app-stories/) to the [Shiny website](https://shiny.rstudio.com/). If you've spent any time learning about Shiny, there's a good chance you've already seen our [Shiny User Showcase](https://shiny.rstudio.com/gallery/#user-showcase). These are applications that Shiny users around the world have allowed us to share, and it's an excellent place to get ideas about what you can do with Shiny.

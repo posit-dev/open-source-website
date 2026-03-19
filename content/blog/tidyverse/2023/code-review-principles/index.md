@@ -1,27 +1,22 @@
 ---
-
 slug: code-review-principles
 title: Tidyteam code review principles
-date: 2023-06-05
+date: '2023-06-05'
 people:
   - Davis Vaughan
-description: >
-    We've written a collection of tidyteam code review principles that
-    act as a resource for new contributors and as a source of truth when
-    there are questions about our code review process. We hope you find
-    them useful!
-
+description: |
+  We've written a collection of tidyteam code review principles that act as a resource for new contributors and as a source of truth when there are questions about our code review process. We hope you find them useful!
 photo:
   url: https://unsplash.com/photos/BvAoCypqRXU
   author: Lanju Fotografie
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: ["other"] 
+categories:
+  - Best Practices
 tags: []
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+ported_categories:
+  - other
 ---
 
 At Posit, we strive to write high quality code to ensure that you, our users, have the best experience possible. We feel that the code review process plays a critical role in delivering quality products, and in developing the skills of newer contributors, and we decided to make that process explicit through a [tidyteam code review principles](https://code-review.tidyverse.org/) guide.

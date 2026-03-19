@@ -4,18 +4,21 @@ people:
   - Yihui Xie
 date: '2015-06-24'
 categories:
-- Packages
+  - Visualization
+  - Interactive Apps
 tags:
-- htmlwidgets
-- spatial
-- Packages
+  - htmlwidgets
+  - spatial
+  - Packages
 slug: leaflet-interactive-web-maps-with-r
 blogcategories:
-- Products and Technology
+  - Products and Technology
 ported_from: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

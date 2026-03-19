@@ -4,15 +4,18 @@ people:
   - RStudio Team
 date: '2012-05-24'
 categories:
-- News
+  - Community
+  - Publishing
 slug: nyc-meetup-r-markdown
 blogcategories:
-- Company News and Events
+  - Company News and Events
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+ported_categories:
+  - News
 ---
 
 

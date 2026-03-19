@@ -1,11 +1,11 @@
 ---
-title: "Resources and tips for teaching (with) R remotely"
+title: Resources and tips for teaching (with) R remotely
 description: |
   Many of us are moving our teaching online on short notice, thankfully there are lots of openly available online resources out there.
 date: '2020-03-19'
 slug: resources-for-teaching-data-science-and-statistics-remotely
 categories:
-  - teach
+  - Community
 tags:
   - resources
   - rstudio-cloud
@@ -16,6 +16,8 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - teach
 ---
 
 Having to move your teaching from in person to online on short notice is a difficult task. Thankfully there are plenty of openly and freely available resources that might help ease this transition, and allow you to focus on the bits of your teaching that only you can do. Below is a list of resources as well as tips to help you shift your teaching of R online.

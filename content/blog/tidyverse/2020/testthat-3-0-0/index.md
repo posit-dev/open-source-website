@@ -1,28 +1,25 @@
 ---
-
 slug: testthat-3-0-0
 title: testthat 3.0.0
-date: 2020-10-31
+date: '2020-10-31'
 people:
   - Hadley Wickham
-description: >
-    testhat 3.0.0 brings a raft of major improvements including snapshot 
-    testing and parallel testing. It also includes a new "edition" that
-    allows you opt-in to a set of substantial improvements that are
-    not backward compatible.
-
+description: |
+  testhat 3.0.0 brings a raft of major improvements including snapshot  testing and parallel testing. It also includes a new "edition" that allows you opt-in to a set of substantial improvements that are not backward compatible.
 photo:
   url: https://unsplash.com/photos/209FvE_57H8
   author: NeONBRAND
-
-categories: [package] 
-tags: [testthat]
-
+categories:
+  - Best Practices
+tags:
+  - testthat
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're tickled pink to announce the release of [testthat](http://testthat.r-lib.org/) 3.0.0. testthat makes it easy to turn your existing informal tests into formal, automated tests that you can rerun quickly and easily. testthat is the most popular unit-testing package for R, and is used by over 5,000 CRAN and Bioconductor packages. You can learn more about unit testing at <https://r-pkgs.org/tests.html>.

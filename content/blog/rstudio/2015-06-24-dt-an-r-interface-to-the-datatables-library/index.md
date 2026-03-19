@@ -4,19 +4,22 @@ people:
   - Yihui Xie
 date: '2015-06-24'
 categories:
-- Packages
+  - Visualization
+  - Interactive Apps
 tags:
-- DataTables
-- htmlwidgets
-- Packages
+  - DataTables
+  - htmlwidgets
+  - Packages
 slug: dt-an-r-interface-to-the-datatables-library
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["dt"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

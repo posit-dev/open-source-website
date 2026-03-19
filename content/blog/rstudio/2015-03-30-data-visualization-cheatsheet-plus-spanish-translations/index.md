@@ -4,24 +4,26 @@ people:
   - Garrett Grolemund
 date: '2015-03-30'
 categories:
-- Packages
-- Training
+  - MLOps and Admin
 tags:
-- cheatsheet
-- data visualization
-- ggplot2
-- graphs
-- plots
-- Packages
+  - cheatsheet
+  - data visualization
+  - ggplot2
+  - graphs
+  - plots
+  - Packages
 slug: data-visualization-cheatsheet-plus-spanish-translations
 blogcategories:
-- Products and Technology
-- Training and Education
-- Open Source
+  - Products and Technology
+  - Training and Education
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - Training
 ---
 
 

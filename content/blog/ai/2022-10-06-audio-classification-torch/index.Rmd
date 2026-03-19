@@ -1,21 +1,25 @@
 ---
-title: "Audio classification with torch"
-description: >
-  Learn how to classify speech utterances with torch, making use of domain knowledge and deep learning. This post is a condensed version of the corresponding chapter in the forthcoming book, Deep Learning and Scientific Computing with R torch, to be published by CRC Press. 
+title: Audio classification with torch
+description: "Learn how to classify speech utterances with torch, making use of domain
+  knowledge and deep learning. This post is a condensed version of the corresponding
+  chapter in the forthcoming book, Deep Learning and Scientific Computing with R torch,
+  to be published by CRC Press. \n"
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchaudio
-date: 2022-10-06
+date: '2022-10-06'
 categories:
-  - Torch
-  - R
-  - Audio Processing
+  - Machine Learning
 bibliography: bibliography.bib
 preview: images/squirrel.jpg
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Audio Processing
 ---
 
 ```{r setup, include=FALSE}

@@ -2,23 +2,26 @@
 output: hugodown::hugo_document
 slug: furrr-0-2-0
 title: furrr 0.2.0
-date: 2020-10-19
+date: '2020-10-19'
 people:
   - Davis Vaughan
-description: >
-    furrr 0.2.0 is now on CRAN!
+description: |
+  furrr 0.2.0 is now on CRAN!
 photo:
   url: https://unsplash.com/photos/0pDUGYuDYWw
   author: Bhargava Srivari
-categories: [package] 
+categories:
+  - Data Wrangling
 tags: []
-editor_options: 
+editor_options:
   chunk_output_type: console
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["purrr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're stoked to announce the release of [furrr](https://davisvaughan.github.io/furrr/) 0.2.0. furrr is a bridge between [purrr](https://purrr.tidyverse.org/)'s family of mapping functions and [future](https://cran.r-project.org/web/packages/future/index.html)'s parallel processing capabilities. It attempts to make mapping in parallel as seamless as possible.

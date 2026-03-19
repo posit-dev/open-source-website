@@ -1,12 +1,12 @@
 ---
 title: forcats 0.5.0
-author: Mara Averick
+author:
+  - Mara Averick
 date: '2020-03-02'
 slug: forcats-0-5-0
-description: >
-    Announcing the release of forcats 0.5.0 on CRAN. 
+description: "Announcing the release of forcats 0.5.0 on CRAN. \n"
 categories:
-  - package
+  - Data Wrangling
 tags:
   - tidyverse
   - forcats
@@ -15,6 +15,8 @@ photo:
   author: Jari Hytönen
 software: ["tidyverse", "forcats"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

@@ -1,13 +1,11 @@
 ---
-title: "torch time series continued: A first go at multi-step prediction"
+title: 'torch time series continued: A first go at multi-step prediction'
 description: |
   We continue our exploration of time-series forecasting with torch, moving on to architectures designed for multi-step prediction. Here, we augment the "workhorse RNN" by a multi-layer perceptron (MLP) to extrapolate multiple timesteps into the future.
-date: 2021-03-11
+date: '2021-03-11'
 slug: keydanatorchts2
 categories:
-  - Torch
-  - R
-  - Time Series
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +16,10 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Time Series
 ---
 
 

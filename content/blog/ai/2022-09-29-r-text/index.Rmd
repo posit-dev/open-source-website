@@ -1,29 +1,31 @@
 ---
-title: "Introducing the text package"
+title: Introducing the text package
 description: |
   The text package attempts to provide user-friendly access and pipelines to HuggingFace's transformer language models in R.
 author:
-  - name: Oscar Kjell 
+  - name: Oscar Kjell
     url: https://oscarkjell.se/
     affiliation: Lund University
     affiliation_url: https://portal.research.lu.se/en/persons/oscar-kjell
-  - name: Salvatore Giorgi 
+  - name: Salvatore Giorgi
     url: http://www.salvatoregiorgi.com/
     affiliation: University of Pennsylvania
     affiliation_url: http://www.salvatoregiorgi.com/
-  - name: H Andrew Schwartz  
+  - name: H Andrew Schwartz
     url: https://www3.cs.stonybrook.edu/~has/
     affiliation: Stony Brook University
     affiliation_url: https://www3.cs.stonybrook.edu/~has/
 categories:
-  - Natural Language Processing
-  - R
+  - Machine Learning
 date: 10-04-2022
 creative_commons: CC BY
 repository_url: https://github.com/OscarKjell/ai-blog
 preview: img/ai_blog_word_plot.png
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - Natural Language Processing
+  - R
 ---
 
 ```{r setup, include=FALSE}

@@ -4,16 +4,15 @@ people:
   - Davis Vaughan
 date: '2019-12-16'
 slug: hardhat-0-1-0
-description: 
-  hardhat 0.1.0 is now available on CRAN. It provides tools for developing new
-  modeling packages, with a focus around preprocessing, predicting, and
-  validating input.
+description: hardhat 0.1.0 is now available on CRAN. It provides tools for developing
+  new modeling packages, with a focus around preprocessing, predicting, and validating
+  input.
 categories:
-  - package
+  - Machine Learning
 tags:
   - tidymodels
   - hardhat
-photo: 
+photo:
   url: https://unsplash.com/photos/YSxcf6C_SEg
   author: Silvia Brazzoduro
 image: thumbnail-wd.jpg
@@ -21,6 +20,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "hardhat"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

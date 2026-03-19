@@ -4,17 +4,19 @@ people:
   - Joe Cheng
 date: '2016-09-22'
 categories:
-- Shiny
+  - Interactive Apps
 tags:
-- Security
-- Shiny
+  - Security
+  - Shiny
 slug: shiny-server-1-4-6
 blogcategories:
-- Products and Technology
+  - Products and Technology
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Shiny
 ---
 
 

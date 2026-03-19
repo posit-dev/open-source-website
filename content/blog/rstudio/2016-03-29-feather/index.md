@@ -5,15 +5,17 @@ people:
   - Hadley Wickham
 date: '2016-03-29'
 categories:
-- Packages
+  - Data Wrangling
 slug: feather
 blogcategories:
-- Products and Technology
+  - Products and Technology
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
+ported_categories:
+  - Packages
 ---
 
 

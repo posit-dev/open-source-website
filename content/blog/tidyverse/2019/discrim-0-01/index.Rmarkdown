@@ -1,16 +1,19 @@
 ---
 title: discrim 0.0.1
-date: 2019-10-17
+date: '2019-10-17'
 slug: discrim-0-0-1
-author: Max Kuhn
-categories: [package]
-description: >
-    The first version of discrim (0.0.1) is on CRAN. 
+author:
+  - Max Kuhn
+categories:
+  - Machine Learning
+description: "The first version of discrim (0.0.1) is on CRAN. \n"
 photo:
   url: https://unsplash.com/photos/4op9_2Bt2Eg
   author: Teo Duldulao
 software: ["tidyverse", "discrim", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

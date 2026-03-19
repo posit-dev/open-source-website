@@ -4,10 +4,10 @@ people:
   - Thomas Lin Pedersen
 date: '2019-07-15'
 slug: ragg-0-1-0
-description: >
-    A set of new graphic devices just landed on CRAN. Read more about the ragg package here.
+description: |
+  A set of new graphic devices just landed on CRAN. Read more about the ragg package here.
 categories:
-  - package
+  - Visualization
 tags:
   - r-lib
   - ragg
@@ -19,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

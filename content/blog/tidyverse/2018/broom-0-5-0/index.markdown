@@ -2,12 +2,12 @@
 title: broom 0.5.0
 people:
   - Alex Hayes
-date: "2018-07-17"
+date: '2018-07-17'
 slug: broom-0-5-0
-description: > 
+description: |
   broom 0.5.0 is on CRAN.
 categories:
-  - package
+  - Data Wrangling
 tags:
   - broom
   - tidymodels
@@ -19,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "broom", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

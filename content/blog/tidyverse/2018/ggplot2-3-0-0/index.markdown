@@ -4,10 +4,10 @@ people:
   - Mara Averick
 date: '2018-07-05'
 slug: ggplot2-3-0-0
-description: > 
+description: |
   ggplot2 3.0.0 is on CRAN.
 categories:
-  - package
+  - Visualization
 tags:
   - ggplot2
   - tidyverse
@@ -19,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

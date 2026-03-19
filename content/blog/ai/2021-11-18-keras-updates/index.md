@@ -1,13 +1,11 @@
 ---
-title: "Revisiting Keras for R"
+title: Revisiting Keras for R
 description: |
   It's been a while since this blog featured content about Keras for R, so you might've thought that the project was dormant. It's not! In fact, Keras for R is better than ever, with two recent releases adding powerful capabilities that considerably lighten previously tedious tasks. This post provides a high-level overview. Future posts will go into more detail on some of the most helpful new features, as well as dive into the powerful low-level enhancements that make the former possible.
-date: 2021-11-18
+date: '2021-11-18'
 slug: keydanakalinowskikeras
 categories:
-  - Packages/Releases
-  - TensorFlow/Keras
-  - R
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -23,6 +21,10 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - Packages/Releases
+  - TensorFlow/Keras
+  - R
 ---
 
 

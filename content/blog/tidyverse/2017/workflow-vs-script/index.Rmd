@@ -4,10 +4,10 @@ people:
   - Jenny Bryan
 date: '2017-12-12'
 slug: workflow-vs-script
-description: >
+description: |
   Advice on workflows for developing R scripts. How to think about whether an action belongs in the script or elsewhere.
 categories:
-  - programming
+  - Best Practices
 photo:
   url: https://commons.wikimedia.org/wiki/File:Burned_laptop_secumem_11.jpg
   author: secumem
@@ -16,6 +16,8 @@ image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 languages: ["R"]
+ported_categories:
+  - programming
 ---
 
 I was honored to speak this week at the [IASC-ARS/NZSA Conference](http://www.nzsa2017.com), hosted by the Stats Department at The University of Auckland. One of the conference themes is to celebrate the accomplishments of Ross Ihaka, who got R started back in 1992, along with Robert Gentleman. My talk included advice on setting up your R life to maximize effectiveness and reduce frustration.

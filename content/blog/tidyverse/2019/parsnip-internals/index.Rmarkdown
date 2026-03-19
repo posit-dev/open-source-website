@@ -1,6 +1,7 @@
 ---
-title: "How parsnip works"
-author: Max Kuhn, Davis Vaughan, Alex Hayes
+title: How parsnip works
+author:
+  - Max Kuhn, Davis Vaughan, Alex Hayes
 date: '2019-04-30'
 output: pdf_document
 description: |
@@ -9,9 +10,12 @@ photo:
   author: Sharon McCutcheon
   url: https://unsplash.com/photos/wRoyrBjSBzM
 slug: parsnip-internals
-categories: [package]
+categories:
+  - Machine Learning
 software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

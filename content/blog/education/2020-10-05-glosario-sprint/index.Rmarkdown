@@ -4,8 +4,7 @@ people:
   - greg
 date: '2020-10-05'
 categories:
-  - learn
-  - package
+  - Community
 tags:
   - glosario
 description: |
@@ -17,6 +16,9 @@ photo:
 image: glosario-sprint-wd.jpg
 ported_from: education
 port_status: in-progress
+ported_categories:
+  - learn
+  - package
 ---
 
 In July we announced [Glosario][glosario],

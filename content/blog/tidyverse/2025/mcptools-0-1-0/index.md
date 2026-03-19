@@ -1,26 +1,26 @@
 ---
-
 slug: mcptools-0-1-0
 title: R and the Model Context Protocol
-date: 2025-07-21
+date: '2025-07-21'
 people:
   - Simon Couch
-description: >
-    The newly released mcptools package makes coding assistants better at
-    writing R code and applications built with ellmer more powerful.
-
+description: |
+  The newly released mcptools package makes coding assistants better at writing R code and applications built with ellmer more powerful.
 photo:
   url: https://unsplash.com/photos/PacWLzKKTso
   author: Chad Peltola
-
-categories: [package] 
-tags: [ellmer, ai]
-
+categories:
+  - Artificial Intelligence
+tags:
+  - ellmer
+  - ai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ellmer"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're hootin' to holler about the initial release of mcptools, a package implementing the Model Context Protocol (MCP) in R. MCP standardizes how applications provide context to LLMs. When used with R:

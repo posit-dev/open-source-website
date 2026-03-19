@@ -1,5 +1,5 @@
 ---
-title: 'Sharing Data With the pins Package'
+title: Sharing Data With the pins Package
 date: '2021-12-15'
 slug: sharing-data-with-the-pins-package
 tags:
@@ -11,13 +11,16 @@ people:
 blogcategories:
   - Products and Technology
   - Open Source
-description: The pins package publishes R objects, such as data sets and predictive models, on a virtual corkboard so that you can share and reuse them easily and safely.
+description: The pins package publishes R objects, such as data sets and predictive
+  models, on a virtual corkboard so that you can share and reuse them easily and safely.
 alttext: White pins spread around on a dark grey background
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 software: ["pins-r"]
 languages: ["R"]
+categories:
+  - MLOps and Admin
 ---
 
 <caption>

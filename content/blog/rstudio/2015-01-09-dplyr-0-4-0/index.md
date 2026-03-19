@@ -8,6 +8,8 @@ ported_from: rstudio
 port_status: in-progress
 software: ["dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
 ---
 
 

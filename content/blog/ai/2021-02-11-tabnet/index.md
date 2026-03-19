@@ -1,13 +1,11 @@
 ---
-title: "torch, tidymodels, and high-energy physics"
+title: torch, tidymodels, and high-energy physics
 description: |
   Today we introduce tabnet, a torch implementation of "TabNet: Attentive Interpretable Tabular Learning" that is fully integrated with the tidymodels framework. Per se, already, tabnet was designed to require very little data pre-processing; thanks to tidymodels, hyperparameter tuning (so often cumbersome in deep learning) becomes convenient and even, fun!
-date: 2021-02-11
+date: '2021-02-11'
 slug: keydanatabnet
 categories:
-  - Torch
-  - R
-  - Tabular Data
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -19,6 +17,10 @@ ported_from: ai
 port_status: in-progress
 software: ["tidymodels"]
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Tabular Data
 ---
 
 

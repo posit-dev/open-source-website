@@ -5,18 +5,20 @@ people:
 date: '2017-08-15'
 slug: shiny-1-0-4
 categories:
-- Packages
-- Shiny
+  - Interactive Apps
 tags:
-- Packages
-- Shiny
+  - Packages
+  - Shiny
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>

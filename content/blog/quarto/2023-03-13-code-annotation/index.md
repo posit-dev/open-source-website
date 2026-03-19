@@ -1,26 +1,26 @@
 ---
 title: Code Annotation
 subtitle: Add line based annotations to your code chunks
-description: >
-  In Quarto 1.3, you can add line based annotations to code chunks to highlight
-  or explain parts of your code.
+description: |
+  In Quarto 1.3, you can add line based annotations to code chunks to highlight or explain parts of your code.
 categories:
-  - Features
-  - Authoring
-  - Quarto 1.3
+  - Publishing
 people:
   - Charlotte Wickham
 date: '2023-03-13'
 image: annotation.png
-image-alt: >-
-  Screenshot a code chunk with annotations. Annotations appear in the code chunk
-  as numbers within circles, and repeat below the code chunk along with the text
-  content of the annotations.
+image-alt: Screenshot a code chunk with annotations. Annotations appear in the code
+  chunk as numbers within circles, and repeat below the code chunk along with the
+  text content of the annotations.
 code-annotations: below
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+ported_categories:
+  - Features
+  - Authoring
+  - Quarto 1.3
 ---
 
 

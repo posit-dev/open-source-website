@@ -5,20 +5,22 @@ people:
 date: '2020-04-08'
 slug: great-looking-tables-gt-0-2
 categories:
-- Packages
+  - Visualization
 tags:
-- news
-- packages
-- rmarkdown
-- Packages
+  - news
+  - packages
+  - rmarkdown
+  - Packages
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 We are extremely excited to have our first release of the **gt** package

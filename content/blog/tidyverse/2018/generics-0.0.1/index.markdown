@@ -1,16 +1,17 @@
 ---
 title: generics 0.0.1
-date: 2018-11-14
+date: '2018-11-14'
 slug: generics-0.0.1
 people:
   - Max Kuhn
   - Davis Vaughan
-categories: [package]
+categories:
+  - Best Practices
 tags:
   - generics
   - r-lib
-description: >
-    Reduce package dependencies by using common lightweight S3 generics.
+description: |
+  Reduce package dependencies by using common lightweight S3 generics.
 photo:
   url: https://unsplash.com/photos/9GMO0Sxyw_Y
   author: Jonathan Knepper
@@ -19,6 +20,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "generics"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

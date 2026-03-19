@@ -1,28 +1,26 @@
 ---
-
 slug: dbplyr-2-2-0
 title: dbplyr 2.2.0
-date: 2022-06-06
+date: '2022-06-06'
 people:
   - Hadley Wickham
-description: >
-    This release brings improvements to SQL translation, a new
-    way of getting local data into the database, and support for
-    dplyr's family of row modification functions.
-
+description: |
+  This release brings improvements to SQL translation, a new way of getting local data into the database, and support for dplyr's family of row modification functions.
 photo:
   url: https://unsplash.com/photos/lRoX0shwjUQ
   author: Jan Antonin Kolar
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [dplyr, dbplyr]
-
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dbplyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr", "dbplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

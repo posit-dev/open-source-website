@@ -1,13 +1,13 @@
 ---
-title: 'haven 2.0.0'
+title: haven 2.0.0
 people:
   - Mara Averick
 date: '2019-01-02'
 slug: haven-2-0-0
-description: > 
+description: |
   haven 2.0.0 is now on CRAN.
 categories:
-  - package
+  - Data Wrangling
 photo:
   url: https://unsplash.com/photos/D5OzyJ71mLI
   author: Robert Wiedemann
@@ -16,6 +16,8 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "haven"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

@@ -1,16 +1,16 @@
 ---
 title: rules 0.0.1
 slug: rules-0-0-1
-description: >
-    The rules package is on CRAN and enables rule-based models for tidymodels.
-date: 2020-05-21
+description: |
+  The rules package is on CRAN and enables rule-based models for tidymodels.
+date: '2020-05-21'
 people:
   - Max Kuhn
 photo:
   url: https://unsplash.com/photos/lu15z1m_KfM
   author: Lili Popper
 categories:
-  - package
+  - Machine Learning
 tags:
   - tidymodels
   - rules
@@ -19,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "rules"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

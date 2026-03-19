@@ -1,8 +1,7 @@
 ---
 title: Testing Shiny Apps in Python
-description: >-
-  The shiny add test command simplifies the process of creating test files for
-  Shiny apps, allowing developers to easily generate and run robust tests using
+description: The shiny add test command simplifies the process of creating test files
+  for Shiny apps, allowing developers to easily generate and run robust tests using
   built-in UI testing controllers for various components.
 people:
   - Shiny Team
@@ -12,6 +11,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

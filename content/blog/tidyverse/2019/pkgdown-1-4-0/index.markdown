@@ -8,7 +8,7 @@ photo:
   url: https://unsplash.com/photos/ytMmedc6y44
   author: noodle kimm
 categories:
-  - package
+  - Best Practices
 tags:
   - pkgdown
   - r-lib
@@ -17,6 +17,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're happy to announce that [pkgdown](https://pkgdown.r-lib.org/) 1.4.0 is now

@@ -1,28 +1,26 @@
 ---
-
 slug: survival-analysis-parsnip-adjacent
 title: Survival Analysis in tidymodels
-date: 2021-11-02
+date: '2021-11-02'
 people:
   - Hannah Frick
-description: >
-    We are working on extending support for survival analysis in tidymodels. We
-    are looking for early adopters to try out the new package called censored 
-    and give feedback.
-
+description: |
+  We are working on extending support for survival analysis in tidymodels. We are looking for early adopters to try out the new package called censored  and give feedback.
 photo:
   url: https://unsplash.com/photos/A-fubu9QJxE
   author: Luca Bravo
-
-# one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [deep-dive] 
-tags: [tidymodels, parsnip]
-
+categories:
+  - Best Practices
+tags:
+  - tidymodels
+  - parsnip
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip"]
 languages: ["R"]
+ported_categories:
+  - deep-dive
 ---
 
 Survival analysis is an important field in modeling and there are many R packages available which implement various models, from "classic" parametric models to boosted trees. While they cover a great variety of model types, they also come with considerable amounts of heterogeneity in syntax and levels of documentation. The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles. It provides a consistent interface to a variety of modelling functions along with tools for resampling, assessing performance, and hyperparameter tuning.

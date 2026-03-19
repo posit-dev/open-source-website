@@ -2,11 +2,13 @@
 title: 'Great Tables `v0.4.0`: Nanoplots and More'
 people:
   - Rich Iannone
-date: 2024-03-19T00:00:00.000Z
+date: '2024-03-19T00:00:00.000Z'
 ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
+categories:
+  - Visualization
 ---
 
 

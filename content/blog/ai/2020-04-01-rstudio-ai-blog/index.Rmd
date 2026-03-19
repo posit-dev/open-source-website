@@ -1,6 +1,6 @@
 ---
-title: "Introducing: The RStudio AI Blog"
-description: > 
+title: 'Introducing: The RStudio AI Blog'
+description: |
   This blog just got a new title: RStudio AI Blog. We explain why.
 author:
   - name: The Multiverse Team
@@ -9,9 +9,11 @@ author:
 slug: team2020rstudioaiblog
 date: 03-30-2020
 categories:
-  - Meta
+  - Community
 preview: images/thumb.jpg
 format: hugo-md
+ported_categories:
+  - Meta
 ---
 
 ```{r setup, include=FALSE}

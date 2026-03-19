@@ -1,29 +1,26 @@
 ---
 output: hugodown::hugo_document
-
 slug: s7-0-2-0
 title: S7 0.2.0
-date: 2024-11-07
+date: '2024-11-07'
 people:
   - Tomasz Kalinowski
   - Hadley Wickham
-description: >
-    S7 is a new package that simplifies object-oriented programming (OOP) in R.
-    It combines the simplicity of S3 with the structure of S4 to create a
-    clearer system that's accessible to everyone.
-
-# photo: from Tomasz's iPhone
+description: |
+  S7 is a new package that simplifies object-oriented programming (OOP) in R. It combines the simplicity of S3 with the structure of S4 to create a clearer system that's accessible to everyone.
 photo:
   author: Tomasz Kalinowski
   url: https://github.com/t-kalinowski
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package]
-tags: [s7]
+categories:
+  - Best Practices
+tags:
+  - s7
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

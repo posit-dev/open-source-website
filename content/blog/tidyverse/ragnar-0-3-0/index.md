@@ -1,22 +1,26 @@
 ---
 title: ragnar 0.3.0
 slug: ragnar-0-3-0
-date: 2026-01-27
+date: '2026-01-27'
 people:
   - Tomasz Kalinowski
-description: >
-  The new release of ragnar adds faster ingestion, new embedding providers, improved
-  retrieval, and new integrations for using ragnar stores from tools.
+description: |
+  The new release of ragnar adds faster ingestion, new embedding providers, improved retrieval, and new integrations for using ragnar stores from tools.
 image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/a-bunch-of-vegetables-being-washed-in-a-machine-72Xh7lH72k0
   author: wei
-categories: [package]
-tags: [ragnar, ai]
+categories:
+  - Artificial Intelligence
+tags:
+  - ragnar
+  - ai
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragnar"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 # ragnar 0.3.0

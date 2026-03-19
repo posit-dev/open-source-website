@@ -1,13 +1,12 @@
 ---
-title: "GPT-2 from scratch with torch"
+title: GPT-2 from scratch with torch
 description: |
   Implementing a language model from scratch is, arguably, the best way to develop an accurate idea of how its engine works. Here, we use torch to code GPT-2, the immediate successor to the original GPT. In the end, you'll dispose of an R-native model that can make direct use of Hugging Face's pre-trained GPT-2 model weights.
-date: 2023-06-20T00:00:00.000Z
+date: '2023-06-20T00:00:00.000Z'
 slug: keydanagpt2
 categories:
-  - Torch
-  - R
-  - Natural Language Processing
+  - Machine Learning
+  - Artificial Intelligence
 author:
   - name: Sigrid Keydana
     affiliation: Posit
@@ -18,6 +17,10 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - Torch
+  - R
+  - Natural Language Processing
 ---
 
 

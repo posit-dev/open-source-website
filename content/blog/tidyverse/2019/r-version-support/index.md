@@ -4,18 +4,19 @@ people:
   - Mara Averick
 date: '2019-04-01'
 slug: r-version-support
-description: >
-    Which versions of R do tidyverse packages support?
+description: |
+  Which versions of R do tidyverse packages support?
 categories:
-  - other
+  - Best Practices
 photo:
   url: https://unsplash.com/photos/GSCtoEEqntQ
   author: Ralph Howald
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - other
 ---
 
 Our general policy is to support the **current version**, the **devel version**, and **four previous versions** of R. This policy applies to all packages that we support, i.e. as well as all tidyverse packages, it also applies to the infrastructure packages that we maintain in [r-lib](https://github.com/r-lib).

@@ -1,22 +1,23 @@
 ---
 title: Quarto for Academics
 subtitle: A potpourri of Quarto features useful for academics
-description: >
-  A video highlighting some of Quarto's features that are especially useful for
-  academics, as educators and as researchers.
+description: |
+  A video highlighting some of Quarto's features that are especially useful for academics, as educators and as researchers.
 categories:
-  - Learn
+  - Publishing
+  - Community
 people:
   - Mine Çetinkaya-Rundel
 date: '2023-05-22'
 image: quarto-for-academics-video-cover.png
-image-alt: >-
-  Quarto logo on a blue background and the title of the video - Quarto for
+image-alt: Quarto logo on a blue background and the title of the video - Quarto for
   Academics
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+ported_categories:
+  - Learn
 ---
 
 

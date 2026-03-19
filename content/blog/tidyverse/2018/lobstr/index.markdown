@@ -1,13 +1,13 @@
 ---
-title: 'lobstr 1.0.0'
+title: lobstr 1.0.0
 people:
   - Mara Averick
 date: '2018-12-21'
 slug: lobstr
-description: > 
+description: |
   lobstr is now on CRAN. lobstr provides tools that allow you to dig into the detail of an object.
 categories:
-  - package
+  - Best Practices
 tags:
   - lobstr
   - r-lib
@@ -19,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "lobstr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

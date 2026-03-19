@@ -1,28 +1,30 @@
 ---
 output: hugodown::hugo_document
-
 slug: fonts-in-r
 title: Fonts in R
-date: 2025-05-12
+date: '2025-05-12'
 people:
   - Thomas Lin Pedersen
-description: >
-    Taking control of fonts and text rendering in R can be challenging. This
-    deep-dive teaches you everything (and then some) you need to know to keep
-    your sanity
-
+description: |
+  Taking control of fonts and text rendering in R can be challenging. This deep-dive teaches you everything (and then some) you need to know to keep your sanity
 photo:
   url: https://unsplash.com/photos/flat-lay-photography-of-stamp-lot-p8gzCnZf39k
   author: Kristian Strand
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [deep-dive]
-tags: [systemfonts, textshaping, ragg, svglite, graphics]
+categories:
+  - Best Practices
+tags:
+  - systemfonts
+  - textshaping
+  - ragg
+  - svglite
+  - graphics
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "systemfonts", "ragg", "svglite"]
 languages: ["R"]
+ported_categories:
+  - deep-dive
 ---
 
 ```{=html}

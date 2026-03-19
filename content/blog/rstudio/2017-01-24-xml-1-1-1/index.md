@@ -4,17 +4,19 @@ people:
   - Jim Hester
 date: '2017-01-24'
 categories:
-- Packages
+  - Data Wrangling
 slug: xml-1-1-1
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["xml2"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

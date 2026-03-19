@@ -5,11 +5,13 @@ people:
 date: '2017-09-14'
 slug: rstudio-community
 categories:
-- News
+  - Community
 blogcategories:
-- Company News and Events
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
+ported_categories:
+  - News
 ---
 
 

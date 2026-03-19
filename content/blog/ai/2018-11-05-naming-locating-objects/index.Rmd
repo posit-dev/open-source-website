@@ -1,7 +1,7 @@
 ---
-title: "Naming and locating objects in images"
-description: >
- Object detection (the act of classifying and localizing multiple objects in a scene) is one of the more difficult, but very relevant in practice deep learning tasks. We'll build up to it in several posts. Here we start with the simpler tasks of naming and locating a single object.
+title: Naming and locating objects in images
+description: |
+  Object detection (the act of classifying and localizing multiple objects in a scene) is one of the more difficult, but very relevant in practice deep learning tasks. We'll build up to it in several posts. Here we start with the simpler tasks of naming and locating a single object.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -9,12 +9,14 @@ author:
 slug: keydana2018naminglocatingobjects
 date: 11-05-2018
 categories:
-  - TensorFlow/Keras
-  - Image Recognition & Image Processing
+  - Machine Learning
 preview: images/preds_train.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Image Recognition & Image Processing
 ---
 
 ```{r setup, include=FALSE}

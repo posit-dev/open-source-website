@@ -1,12 +1,12 @@
 ---
-title: "On leapfrogs, crashing satellites, and going nuts: A very first conceptual introduction to Hamiltonian Monte Carlo"
+title: 'On leapfrogs, crashing satellites, and going nuts: A very first conceptual
+  introduction to Hamiltonian Monte Carlo'
 description: |
   TensorFlow Probability, and its R wrapper tfprobability, provide Markov Chain Monte Carlo (MCMC) methods that were used in a number of recent posts on this blog. These posts were directed to users already comfortable with the method, and terminology, per se, which readers mainly interested in deep learning won't necessarily be. Here we try to make up leeway, introducing Hamitonian Monte Carlo (HMC) as well as a few often-heard "buzzwords" accompanying it, always striving to keep in mind what it is all "for".
-date: 2019-10-03
+date: '2019-10-03'
 slug: keydana2019hmc
 categories:
-  - Bayesian Modeling
-  - Concepts
+  - Best Practices
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +18,9 @@ ported_from: ai
 port_status: in-progress
 software: ["tfprobability"]
 languages: ["R"]
+ported_categories:
+  - Bayesian Modeling
+  - Concepts
 ---
 
 

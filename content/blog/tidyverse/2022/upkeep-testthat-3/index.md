@@ -1,27 +1,27 @@
 ---
-
 slug: upkeep-testthat-3
 title: Upgrading to testthat edition 3
-date: 2022-02-22
+date: '2022-02-22'
 people:
   - Hannah Frick
-description: >
-    A workflow for upgrading to testthat edition 3: activation, deprecations, 
-    changes to warnings, messages, and comparisons.
-
+description: |
+  A workflow for upgrading to testthat edition 3: activation, deprecations,  changes to warnings, messages, and comparisons.
 photo:
   url: https://unsplash.com/photos/46juD4zY1XA
   author: David Pisnoy
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn] 
-tags: [usethis, devtools, testthat]
-
+categories:
+  - Community
+tags:
+  - usethis
+  - devtools
+  - testthat
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "usethis", "devtools", "testthat"]
 languages: ["R"]
+ported_categories:
+  - learn
 ---
 
 <!--

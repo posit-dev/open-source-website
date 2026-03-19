@@ -1,12 +1,12 @@
 ---
 title: Tools for Teaching YAML with ymlthis
 author:
-  - "[Malcolm Barrett](https://malco.io)"
+  - '[Malcolm Barrett](https://malco.io)'
 people:
   - Malcolm Barrett
 date: '2019-10-18'
 categories:
-  - teach
+  - Community
 slug: tools-for-teaching-yaml-with-ymlthis
 description: "I spent my summer internship at RStudio trying to reckon with the YAML
   problem: R Markdown is pretty easy to learn, but students often trip over YAML.
@@ -14,12 +14,15 @@ description: "I spent my summer internship at RStudio trying to reckon with the 
 photo:
   url: https://unsplash.com/photos/ZahNAl_Ic3o
   author: Austin Neill
-tags: [internship]
+tags:
+  - internship
 image: stones-wd.jpg
 ported_from: education
 port_status: in-progress
 software: ["ymlthis"]
 languages: ["R"]
+ported_categories:
+  - teach
 ---
 
 

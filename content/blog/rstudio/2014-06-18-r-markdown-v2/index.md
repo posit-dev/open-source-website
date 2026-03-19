@@ -4,25 +4,27 @@ people:
   - Yihui Xie
 date: '2014-06-18'
 categories:
-- News
-- Packages
+  - Publishing
 tags:
-- dynamic documents
-- interactive documents
-- knitr
-- Markdown
-- Pandoc
-- rmarkdown
-- Packages
+  - dynamic documents
+  - interactive documents
+  - knitr
+  - Markdown
+  - Pandoc
+  - rmarkdown
+  - Packages
 slug: r-markdown-v2
 blogcategories:
-- Products and Technology
-- Company News and Events
-- Open Source
+  - Products and Technology
+  - Company News and Events
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["markdown", "rmarkdown"]
 languages: ["R"]
+ported_categories:
+  - News
+  - Packages
 ---
  
 

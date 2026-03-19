@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2015-04-21'
 categories:
-- Packages
+  - Data Wrangling
 slug: xml2
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["xml2"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

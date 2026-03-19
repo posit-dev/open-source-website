@@ -1,30 +1,25 @@
 ---
-title: "Taking Control of Plot Scaling"
-date: 2020-08-21
-
-description: > 
-  Learn how to control scaling of the content in your plot when you render plots
-  to different sizes.
-
-# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
+title: Taking Control of Plot Scaling
+date: '2020-08-21'
+description: |
+  Learn how to control scaling of the content in your plot when you render plots to different sizes.
 people:
   - Thomas Lin Pedersen
-
-# Tags and categories
-# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags: ["graphics", "ragg"]
-categories: ["learn"]
-
-# For wide photo caption
+tags:
+  - graphics
+  - ragg
+categories:
+  - Community
 photo:
   url: https://unsplash.com/photos/6GjHwABuci4
   author: Mikael Kristenson
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg"]
 languages: ["R"]
+ported_categories:
+  - learn
 ---
 
 Some time ago, while working on the new edition of the ggplot2 book, I asked out to the R twitterverse what part of using ggplot2 was the most incomprehensible for seasoned users. By a very large margin the most "popular" response revolved around making sure that output had the correct scaling of text, lines, etc.

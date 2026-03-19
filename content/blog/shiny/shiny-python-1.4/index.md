@@ -1,8 +1,7 @@
 ---
 title: Shiny 1.4 brings bookmarking and Generative AI docs
-description: >-
-  Shiny v1.4 is now available on PyPI! This release includes bookmarking, new
-  Generative AI documentation, and more.
+description: Shiny v1.4 is now available on PyPI! This release includes bookmarking,
+  new Generative AI documentation, and more.
 people:
   - Shiny Team
 date: '2025-04-15'
@@ -14,6 +13,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

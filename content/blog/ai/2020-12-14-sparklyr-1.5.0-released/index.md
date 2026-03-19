@@ -1,13 +1,12 @@
 ---
-title: "sparklyr 1.5: better dplyr interface, more sdf_* functions, and RDS-based serialization routines"
+title: 'sparklyr 1.5: better dplyr interface, more sdf_* functions, and RDS-based
+  serialization routines'
 description: |
   Unlike all three previous sparklyr releases, the recent release of sparklyr 1.5 placed much more emphasis on enhancing existing sparklyr features rather than creating new ones. As a result, many valuable suggestions from sparklyr users were taken into account and were successfully addressed in a long list of bug fixes and improvements.
-date: 2020-12-14
+date: '2020-12-14'
 slug: sparklyr-1.5
 categories:
-  - R
-  - Packages/Releases
-  - Distributed Computing
+  - MLOps and Admin
 author:
   - name: Yitao Li
     url: https://github.com/yitao-li
@@ -16,10 +15,14 @@ author:
 people:
   - Yitao Li
 image: thumbnail.jpg
-image-alt: "A hollywood star with the text 'sparklyr 1.5'"
+image-alt: A hollywood star with the text 'sparklyr 1.5'
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - R
+  - Packages/Releases
+  - Distributed Computing
 ---
 
 

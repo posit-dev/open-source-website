@@ -4,19 +4,21 @@ people:
   - Bárbara Borges Ribeiro
 date: '2017-04-05'
 categories:
-- Packages
-- Shiny
+  - Interactive Apps
 slug: shiny-1-0-1
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
-- Shiny
+  - Packages
+  - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

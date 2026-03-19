@@ -1,13 +1,9 @@
 ---
 title: 'quarto R package v1.5.0: Streamlined Workflows for R Users'
-description: >
-  The quarto R package 1.5.0 brings powerful new features for passing R values
-  to Quarto metadata, inserting Markdown in HTML tables, working with R scripts,
-  building paths from Quarto projects, and automating Quarto CLI from R.
+description: |
+  The quarto R package 1.5.0 brings powerful new features for passing R values to Quarto metadata, inserting Markdown in HTML tables, working with R scripts, building paths from Quarto projects, and automating Quarto CLI from R.
 categories:
-  - R package
-  - knitr
-  - Releases
+  - Publishing
 people:
   - Christophe Dervieux
 date: '2025-07-28'
@@ -17,6 +13,10 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R"]
+ported_categories:
+  - R package
+  - knitr
+  - Releases
 ---
 
 

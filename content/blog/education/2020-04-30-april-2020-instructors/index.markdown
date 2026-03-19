@@ -4,7 +4,7 @@ people:
   - greg
 date: '2020-04-30'
 categories:
-  - certify
+  - Community
 tags:
   - certify
 description: |
@@ -17,6 +17,8 @@ image: april-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - certify
 ---
 
 We are very pleased to have welcomed thirteen new certified instructors in April 2020,

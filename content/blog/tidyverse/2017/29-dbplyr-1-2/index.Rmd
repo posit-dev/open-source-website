@@ -5,9 +5,13 @@ people:
 date: '2018-01-08'
 slug: dbplyr-1-2
 categories:
+  - Data Wrangling
+tags:
   - package
-tags: [package, tidyverse, databases]
-description: "New version now on CRAN. It features new database backends, an enhanced copy_to(), and initial stringr support"
+  - tidyverse
+  - databases
+description: New version now on CRAN. It features new database backends, an enhanced
+  copy_to(), and initial stringr support
 photo:
   url: https://unsplash.com/photos/y7rGTFyOzxc
   author: Giulia Bertelli
@@ -16,6 +20,8 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

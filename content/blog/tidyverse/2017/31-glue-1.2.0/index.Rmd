@@ -4,10 +4,10 @@ date: '2017-10-31'
 slug: glue-1.2.0
 people:
   - Jim Hester
-categories: [package]
-description: >
-  glue 1.2.0 is now available on CRAN. glue is designed to make it easy to
-  interpolate ("glue") your data into strings.
+categories:
+  - Best Practices
+description: |
+  glue 1.2.0 is now available on CRAN. glue is designed to make it easy to interpolate ("glue") your data into strings.
 photo:
   url: http://www.littlerock.af.mil/News/Photos/igphoto/2001697811/
   author: Airman 1st Class Grace Nichols
@@ -16,6 +16,8 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "glue"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

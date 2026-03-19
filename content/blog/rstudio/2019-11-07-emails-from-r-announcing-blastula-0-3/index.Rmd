@@ -1,26 +1,26 @@
 ---
 title: 'Emails from R: Blastula 0.3'
-authors:
-- Sean Lopp
-authormeta: 
-- sean-lopp
+authors: Sean Lopp
+authormeta: sean-lopp
 date: '2019-12-05'
 slug: emails-from-r-blastula-0-3
 categories:
-- Packages
-- RStudio Connect
+  - Publishing
 tags:
-- Connect
-- dynamic documents
-- news
-- packages
-- rmarkdown
-- Packages
-- RStudio Connect
+  - Connect
+  - dynamic documents
+  - news
+  - packages
+  - rmarkdown
+  - Packages
+  - RStudio Connect
 blogcategories:
-- Products and Technology
+  - Products and Technology
 software: ["rmarkdown"]
 languages: ["R"]
+ported_categories:
+  - Packages
+  - RStudio Connect
 ---
 
 

@@ -1,12 +1,11 @@
 ---
-title: "Dynamic linear models with tfprobability"
+title: Dynamic linear models with tfprobability
 description: |
   Previous posts featuring tfprobability - the R interface to TensorFlow Probability - have focused on enhancements to deep neural networks (e.g., introducing Bayesian uncertainty estimates) and fitting hierarchical models with Hamiltonian Monte Carlo. This time, we show how to fit time series using dynamic linear models (DLMs), yielding posterior predictive forecasts as well as the smoothed and filtered estimates from the Kálmán filter.
-date: 2019-06-24
+date: '2019-06-24'
 slug: keydana2019dlmtfp
 categories:
-  - Probabilistic ML/DL
-  - Time Series
+  - Machine Learning
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +17,9 @@ ported_from: ai
 port_status: in-progress
 software: ["tfprobability", "tensorflow"]
 languages: ["R"]
+ported_categories:
+  - Probabilistic ML/DL
+  - Time Series
 ---
 
 

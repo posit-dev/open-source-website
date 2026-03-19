@@ -3,11 +3,13 @@ title: Overhauling Pointblank's User Guide
 people:
   - Rich Iannone
   - Michael Chow
-date: 2025-05-20
+date: '2025-05-20'
 ported_from: pointblank
 port_status: in-progress
 software: ["pointblank"]
 languages: ["Python"]
+categories:
+  - Data Wrangling
 ---
 
 ```{python}

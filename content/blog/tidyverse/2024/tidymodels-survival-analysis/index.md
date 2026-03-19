@@ -1,28 +1,31 @@
 ---
-
 slug: tidymodels-survival-analysis
 title: Survival analysis for time-to-event data with tidymodels
-date: 2024-04-03
+date: '2024-04-03'
 people:
   - Hannah Frick
-description: >
-    Recent releases integrate survival analysis into tidymodels.
-    This now unlocks the framework for censored regression and provides modeling 
-    capabilities for time-to-event data.
-
+description: |
+  Recent releases integrate survival analysis into tidymodels. This now unlocks the framework for censored regression and provides modeling  capabilities for time-to-event data.
 photo:
   url: https://unsplash.com/photos/vintage-brown-and-white-watch-lot-yBzrPGLjMQw
   author: Heather Zabriskie
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn] 
-tags: [tidymodels, parsnip, censored, workflows, yardstick, tune, workflowsets]
-
+categories:
+  - Community
+tags:
+  - tidymodels
+  - parsnip
+  - censored
+  - workflows
+  - yardstick
+  - tune
+  - workflowsets
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "censored", "workflows", "yardstick", "tune", "workflowsets"]
 languages: ["R"]
+ported_categories:
+  - learn
 ---
 
 <!--

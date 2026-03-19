@@ -1,27 +1,25 @@
 ---
-
 slug: nanoparquet-0-3-0
 title: nanoparquet 0.3.0
-date: 2024-06-20
+date: '2024-06-20'
 people:
   - Gábor Csárdi
-description: >
-    Nanoparquet is a new R package that can read and write (flat) Parquet
-    files. This post covers its features and limitations.
-
+description: |
+  Nanoparquet is a new R package that can read and write (flat) Parquet files. This post covers its features and limitations.
 photo:
   url: https://www.pexels.com/photo/clock-between-columns-20134435/
   author: Marina Zvada
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package]
-tags: [parquet]
-
+categories:
+  - Data Wrangling
+tags:
+  - parquet
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["nanoparquet"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

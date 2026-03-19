@@ -4,13 +4,15 @@ people:
   - Hadley Wickham
 date: '2013-06-10'
 categories:
-- News
+  - Community
 slug: rstudio-cran-mirror
 blogcategories:
-- Company News and Events
+  - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+ported_categories:
+  - News
 ---
 
 

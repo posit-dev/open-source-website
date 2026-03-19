@@ -1,18 +1,19 @@
 ---
 title: 'Weather App Story Pt. 3: Styling'
-description: >-
-  The bslib package allows for extremely easy customization of your Shiny app's
-  style using the bootstrap css framework. It also allows you to update theming
+description: The bslib package allows for extremely easy customization of your Shiny
+  app's style using the bootstrap css framework. It also allows you to update theming
   in a running app to create dynamicly styled apps.
 people:
   - Nick Strayer
-date: 2021-04-27T00:00:00.000Z
+date: '2021-04-27T00:00:00.000Z'
 image: bslib.jpg
 image-alt: A screenshot of an app, showing it in light mode and dark mode
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-r", "bslib"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 
 

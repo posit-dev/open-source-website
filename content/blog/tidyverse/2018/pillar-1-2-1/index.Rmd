@@ -1,21 +1,23 @@
 ---
 title: pillar 1.2.1
 slug: pillar-1-2-1
-description: >
-    pillar 1.2.1 is on CRAN now, a minor update that tweaks the output of
-    tibbles again.
-date: 2018-03-02
+description: |
+  pillar 1.2.1 is on CRAN now, a minor update that tweaks the output of tibbles again.
+date: '2018-03-02'
 people:
   - Kirill Müller, Hadley Wickham
 photo:
   url: https://unsplash.com/photos/ZMRMFULofus
   author: Joel Filipe
-categories: [package]
+categories:
+  - Data Wrangling
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "pillar", "tibble"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

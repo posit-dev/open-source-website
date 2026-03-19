@@ -1,7 +1,7 @@
 ---
 title: This Is Not Like the Others
 author:
-  - "[Marly Gotti](https://www.marlycormar.com/)"
+  - '[Marly Gotti](https://www.marlycormar.com/)'
 people:
   - Marly Gotti
 date: '2019-12-02'
@@ -16,6 +16,8 @@ photo:
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
+categories:
+  - Community
 ---
 
 This summer I had the opportunity of working as an intern for RStudio.

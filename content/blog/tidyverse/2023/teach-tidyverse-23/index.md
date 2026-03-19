@@ -1,24 +1,26 @@
 ---
 slug: teach-tidyverse-23
 title: Teaching the tidyverse in 2023
-date: 2023-08-07
+date: '2023-08-07'
 people:
   - Mine Çetinkaya-Rundel
-description: >
-    Recommendations for teaching the tidyverse in 2023, summarizing 
-    package updates most relevant for teaching data science with the 
-    tidyverse, particularly to new learners.
+description: |
+  Recommendations for teaching the tidyverse in 2023, summarizing  package updates most relevant for teaching data science with the  tidyverse, particularly to new learners.
 photo:
   url: https://unsplash.com/photos/ScoYEG5LEgc
   author: Scott Evans
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn] 
-tags: [tidyverse, teaching]
+categories:
+  - Community
+tags:
+  - tidyverse
+  - teaching
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+ported_categories:
+  - learn
 ---
 
 <!--

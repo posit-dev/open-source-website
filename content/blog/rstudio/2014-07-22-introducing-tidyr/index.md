@@ -4,17 +4,19 @@ people:
   - Hadley Wickham
 date: '2014-07-22'
 categories:
-- Packages
+  - Data Wrangling
 slug: introducing-tidyr
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 tags:
-- Packages
+  - Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyr"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

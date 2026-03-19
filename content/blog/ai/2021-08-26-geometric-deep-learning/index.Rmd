@@ -1,7 +1,7 @@
 ---
-title: "Beyond alchemy: A first look at geometric deep learning"
-description: > 
- Geometric deep learning is a "program" that aspires to situate deep learning architectures and techniques in a framework of mathematical priors. The priors, such as various types of invariance, first arise in some physical domain. A neural network that well matches the domain will preserve as many invariances as possible. In this post, we present a very conceptual, high-level overview, and highlight a few applications.
+title: 'Beyond alchemy: A first look at geometric deep learning'
+description: |
+  Geometric deep learning is a "program" that aspires to situate deep learning architectures and techniques in a framework of mathematical priors. The priors, such as various types of invariance, first arise in some physical domain. A neural network that well matches the domain will preserve as many invariances as possible. In this post, we present a very conceptual, high-level overview, and highlight a few applications.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -10,12 +10,14 @@ slug: keydanageometricdl
 date: 08-26-2021
 bibliography: bibliography.bib
 categories:
-  - Concepts
-  - Meta
-  - R
+  - Best Practices
 preview: images/preview.jpg
 format: hugo-md
 languages: ["R"]
+ported_categories:
+  - Concepts
+  - Meta
+  - R
 ---
 
 ```{r setup, include=FALSE}

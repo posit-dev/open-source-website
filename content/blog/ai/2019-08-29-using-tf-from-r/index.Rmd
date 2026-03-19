@@ -1,8 +1,7 @@
 ---
-title: "So, how come we can use TensorFlow from R?"
-description: > 
-    Have you ever wondered why you can call TensorFlow - mostly known as a Python framework - from R? If not - that's how it should be, as the R packages keras and tensorflow aim to make this process as transparent as possible to the user. But for them to be those helpful genies, someone else first has to tame the Python.
- 
+title: So, how come we can use TensorFlow from R?
+description: |
+  Have you ever wondered why you can call TensorFlow - mostly known as a Python framework - from R? If not - that's how it should be, as the R packages keras and tensorflow aim to make this process as transparent as possible to the user. But for them to be those helpful genies, someone else first has to tame the Python.
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -10,13 +9,16 @@ author:
 slug: keydana2019tffromr
 date: 08-29-2019
 categories:
-  - TensorFlow/Keras
-  - Meta
-  - Concepts
+  - Machine Learning
+  - Best Practices
 preview: images/thumb.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - Meta
+  - Concepts
 ---
 
 ```{r setup, include=FALSE}

@@ -1,24 +1,27 @@
 ---
 slug: mirai-2-6-0
 title: mirai 2.6.0
-date: 2026-02-12
+date: '2026-02-12'
 people:
   - Charlie Gao
-description: >
-    mirai 2.6.0 brings an HTTP launcher for cloud and Posit Workbench,
-    a C-level dispatcher for near-zero overhead task dispatch, and new
-    tools for racing and debugging async tasks.
+description: |
+  mirai 2.6.0 brings an HTTP launcher for cloud and Posit Workbench, a C-level dispatcher for near-zero overhead task dispatch, and new tools for racing and debugging async tasks.
 photo:
   url: https://unsplash.com/photos/GywJOPMjBqY
   author: Alexandra Diaconu
-categories: [package]
-tags: [mirai, parallelism, r-lib]
-
+categories:
+  - Best Practices
+tags:
+  - mirai
+  - parallelism
+  - r-lib
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "mirai"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 [mirai](https://mirai.r-lib.org) 2.6.0 is now on CRAN. mirai is R's framework for parallel and asynchronous computing. If you're fitting models, running simulations, or building Shiny apps, mirai lets you spread that work across multiple processes -- locally or on remote infrastructure.

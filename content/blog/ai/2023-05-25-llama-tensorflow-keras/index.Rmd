@@ -1,24 +1,26 @@
 ---
-title: "LLaMA in R with Keras and TensorFlow"
-description: >
-  Implementation and walk-through of LLaMA, a Large Language Model,
-  in R, with TensorFlow and Keras.
+title: LLaMA in R with Keras and TensorFlow
+description: |
+  Implementation and walk-through of LLaMA, a Large Language Model, in R, with TensorFlow and Keras.
 author:
   - name: Tomasz Kalinowski
     affiliation: Posit
     affiliation_url: https://www.posit.co/
 slug: kalinowskillama
-date: 2023-05-25
+date: '2023-05-25'
 categories:
-  - TensorFlow/Keras
-  - R
-  - Generative Models
-  - Natural Language Processing
+  - Machine Learning
+  - Artificial Intelligence
 bibliography: references.bib
 preview: images/preview.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+ported_categories:
+  - TensorFlow/Keras
+  - R
+  - Generative Models
+  - Natural Language Processing
 ---
 
 OpenAI’s chatGPT has awakened a collective awareness of what Large

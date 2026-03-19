@@ -1,26 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: experiments-llm
 title: Three experiments in LLM code assist with RStudio and Positron
-date: 2025-01-29
+date: '2025-01-29'
 people:
   - Simon Couch
-description: >
-    We've been experimenting with LLM-powered tools to streamline R
-    data science and package development.
-    
+description: |
+  We've been experimenting with LLM-powered tools to streamline R data science and package development.
 photo:
   url: https://unsplash.com/photos/AgxNjvE8KTE
   author: Dibya Jyoti Ghosh
-
-categories: [roundup] 
-tags: [ellmer, ai]
+categories:
+  - Artificial Intelligence
+tags:
+  - ellmer
+  - ai
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ellmer"]
 languages: ["R"]
+ported_categories:
+  - roundup
 ---
 
 The last few months, I've been exploring how AI/LLMs might make my time developing R packages and doing data science more productive. This post will describe three experimental R packages---[pal](https://simonpcouch.github.io/pal/), [ensure](https://simonpcouch.github.io/ensure/), and [gander](https://simonpcouch.github.io/gander/)---that came out of that exploration, and the core tools underlying them. Taken together, I've found that these packages allow me to automate many of the less interesting parts of my work, turning all sorts of 45-second tasks into 5-second ones. Excitement from folks in the community has been very encouraging so far, and I'm looking forward to getting each of these packages buttoned up and sent off to CRAN in the coming weeks!

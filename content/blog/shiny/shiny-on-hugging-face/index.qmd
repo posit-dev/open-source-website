@@ -3,13 +3,15 @@ title: Shiny on Hugging Face
 description: Deploy Shiny on Hugging Face with the click of a button
 people:
   - Gordon Shotwell
-date: "2023-05-08"
+date: '2023-05-08'
 image: shiny-on-hf-thumb.jpg
-image-alt: "The Shiny hex next to the Hugging Face emoji logo"
+image-alt: The Shiny hex next to the Hugging Face emoji logo
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "shiny-r"]
 languages: ["R", "Python"]
+categories:
+  - Interactive Apps
 ---
 
 We're thrilled to announce that we've partnered with [Hugging Face](https://huggingface.co/) to provide templated Spaces for both the R and Python Shiny packages. 

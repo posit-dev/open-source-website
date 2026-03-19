@@ -4,21 +4,23 @@ people:
   - Yihui Xie
 date: '2018-07-25'
 categories:
-- News
-- R Markdown
+  - Publishing
 tags:
-- bookdown
-- website
-- R Markdown
+  - bookdown
+  - website
+  - R Markdown
 slug: revamped-bookdown-org
 blogcategories:
-- Products and Technology
-- Company News and Events
+  - Products and Technology
+  - Company News and Events
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 software: ["bookdown"]
 languages: ["R"]
+ported_categories:
+  - News
+  - R Markdown
 ---
 
 

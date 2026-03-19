@@ -1,20 +1,23 @@
 ---
 title: tidyverse 1.2.0
 slug: tidyverse_1.2.0
-description: >
+description: |
   A new version of the tidyverse package is now on CRAN.
 people:
   - Mara Averick
-date: 2017-11-15
+date: '2017-11-15'
 photo:
   url: https://pixabay.com/en/universe-sky-star-space-all-1566159/
   author: Gerd Altmann
-categories: [package]
+categories:
+  - Data Wrangling
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

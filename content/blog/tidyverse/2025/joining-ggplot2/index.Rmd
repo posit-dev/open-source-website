@@ -1,26 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: joining-ggplot2
 title: Joining the ggplot2 team
-date: 2025-01-09
+date: '2025-01-09'
 people:
   - Teun van den Brand
-description: >
-    I joined the ggplot2 team and would like to share the experience.
-
+description: |
+  I joined the ggplot2 team and would like to share the experience.
 photo:
   url: https://unsplash.com/photos/person-holding-green-plant-on-black-pot-CbZh3kaPxrE
   author: Jonathan Kemper
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [other] 
-tags: [internship, ggplot2]
+categories:
+  - Community
+tags:
+  - internship
+  - ggplot2
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+ported_categories:
+  - other
 ---
 
 <!--

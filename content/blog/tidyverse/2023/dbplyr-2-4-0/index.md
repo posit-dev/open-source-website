@@ -1,27 +1,26 @@
 ---
-
 slug: dbplyr-2-4-0
 title: dbplyr 2.4.0
-date: 2023-10-26
+date: '2023-10-26'
 people:
   - Hadley Wickham
-description: >
-    dbplyr 2.4.0 brings improvements to SQL generation, better control over the
-    generated SQL, some new translations, and a bunch of backend specific improvements.
-
+description: |
+  dbplyr 2.4.0 brings improvements to SQL generation, better control over the generated SQL, some new translations, and a bunch of backend specific improvements.
 photo:
   url: https://unsplash.com/photos/AJqaubLEaN4
   author: Parker Hilton
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [dplyr, dbplyr]
-
+categories:
+  - Data Wrangling
+tags:
+  - dplyr
+  - dbplyr
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr", "dbplyr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

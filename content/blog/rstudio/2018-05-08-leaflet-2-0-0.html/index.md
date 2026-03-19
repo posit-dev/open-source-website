@@ -5,24 +5,23 @@ people:
 date: '2018-05-10'
 slug: leaflet-2-0-0
 categories:
-  - Packages
-# output:
-#   blogdown::html_page:
-#     mathjax: null
-#     self_contained: true
+  - Visualization
+  - Interactive Apps
 tags:
   - leaflet
   - data visualization
   - Packages
-editor_options: 
+editor_options:
   chunk_output_type: console
 blogcategories:
-- Products and Technology
-- Open Source
+  - Products and Technology
+  - Open Source
 ported_from: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]
+ported_categories:
+  - Packages
 ---
 
 

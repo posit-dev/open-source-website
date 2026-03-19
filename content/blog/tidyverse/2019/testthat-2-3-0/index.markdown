@@ -5,7 +5,7 @@ people:
 date: '2019-11-06'
 slug: testthat-2-3-0
 categories:
-  - package
+  - Best Practices
 tags:
   - r-lib
   - devtools
@@ -13,12 +13,13 @@ tags:
 photo:
   url: https://unsplash.com/photos/n_vD-7RxA3Q
   author: Roman Kraft
-
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "testthat"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 

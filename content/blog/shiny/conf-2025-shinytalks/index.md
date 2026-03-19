@@ -1,17 +1,18 @@
 ---
 title: Shiny Talks from posit::conf(2025)
-description: >-
-  A curated playlist and overview of all Shiny-focused sessions from
-  posit::conf(2025), along with workshop materials and links.
-toc: false
+description: A curated playlist and overview of all Shiny-focused sessions from posit::conf(2025),
+  along with workshop materials and links.
+toc: no
 date: '2025-12-02'
-image-header-disable: true
+image-header-disable: yes
 image: conf-recordings-banner.png
 image-alt: Shiny talks and workshops at posit::conf(2025)
 ported_from: shiny
 port_status: in-progress
 software: ["shiny-r", "shiny-python"]
 languages: ["R", "Python"]
+categories:
+  - Interactive Apps
 ---
 
 

@@ -1,25 +1,26 @@
 ---
-
 slug: case-weights
 title: Using case weights with tidymodels
-date: 2022-05-05
+date: '2022-05-05'
 people:
   - Max Kuhn
-description: >
-    Support for case weights is now available across many tidymodels packages.
-
+description: |
+  Support for case weights is now available across many tidymodels packages.
 photo:
   url: https://unsplash.com/photos/iLKK0eFTywU
   author: Graphic Node
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [deep-dive] 
-tags: [tidymodels, parsnip]
+categories:
+  - Best Practices
+tags:
+  - tidymodels
+  - parsnip
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip"]
 languages: ["R"]
+ported_categories:
+  - deep-dive
 ---
 
 <!--

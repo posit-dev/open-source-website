@@ -1,28 +1,27 @@
 ---
 output: hugodown::hugo_document
-
 slug: parsnip-checking-1-0-2
 title: Improvements to model specification checking in tidymodels
-date: 2022-10-03
+date: '2022-10-03'
 people:
   - Simon Couch
-description: >
-    parsnip 1.0.2 includes a number of changes to how the package checks
-    model specifications, improving error messages and tightening integration
-    with its extension packages.
-
+description: |
+  parsnip 1.0.2 includes a number of changes to how the package checks model specifications, improving error messages and tightening integration with its extension packages.
 photo:
   url: https://unsplash.com/photos/ry2JvVpR8Ro
   author: Wayne Hollman
-
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
-tags: [parsnip, tidymodels]
+categories:
+  - Machine Learning
+tags:
+  - parsnip
+  - tidymodels
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 <!--

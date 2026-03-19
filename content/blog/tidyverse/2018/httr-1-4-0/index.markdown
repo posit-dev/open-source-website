@@ -1,7 +1,7 @@
 ---
-title: 'httr 1.4.0'
+title: httr 1.4.0
 slug: httr-1-4-0
-description: > 
+description: |
   httr 1.4.0 is now on CRAN!
 date: '2018-12-18'
 people:
@@ -10,7 +10,7 @@ photo:
   url: https://unsplash.com/photos/0JhaVZUowWU
   author: Chris Yang
 categories:
-  - package
+  - Data Wrangling
 tags:
   - httr
   - r-lib
@@ -19,6 +19,8 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "httr"]
 languages: ["R"]
+ported_categories:
+  - package
 ---
 
 We're well pleased to announce the release of [httr](https://httr.r-lib.org/) 1.4.0. The goal of httr is to provide a wrapper for the [curl](https://CRAN.R-project.org/package=curl) package, customised to the demands of modern web APIs.
