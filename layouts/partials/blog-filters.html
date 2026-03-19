@@ -1,0 +1,73 @@
+{{- /*
+  Blog filters partial
+  Context: pass "currentCategory" or "currentLanguage" to highlight active filter
+  Example: {{ partial "blog-filters.html" (dict "currentCategory" "Machine Learning") }}
+*/ -}}
+
+{{- $currentCategory := .currentCategory -}}
+{{- $currentLanguage := .currentLanguage -}}
+{{- $categories := site.Taxonomies.categories -}}
+{{- $displayCategories := slice "Machine Learning" "Artificial Intelligence" "Visualization" "Interactive Apps" "Publishing" "MLOps & Admin" "Data Wrangling" "Best Practices" "Community" -}}
+{{- $languages := site.Taxonomies.languages -}}
+{{- $displayLanguages := slice "Python" "R" -}}
+
+{{- /* Mobile/Tablet dropdowns container */ -}}
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 md:hidden">
+  <div>
+    <h2 class="text-sm font-semibold mb-3 text-gray-600 uppercase tracking-wider">Topics</h2>
+    <select
+      onchange="if(this.value) window.location.href=this.value"
+      class="w-full pl-4 pr-10 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
+      style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 20 20%22%3E%3Cpath stroke=%22%236b7280%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%221.5%22 d=%22M6 8l4 4 4-4%22/%3E%3C/svg%3E'); background-position: right 0.75rem center; background-repeat: no-repeat; background-size: 1.25em 1.25em;"
+    >
+      <option value="/blog/" {{ if not $currentCategory }}selected{{ end }}>All Posts</option>
+      {{- range $displayName := $displayCategories -}}
+        {{- $urlName := $displayName | urlize -}}
+      <option value="/categories/{{ $urlName }}/" {{ if eq $currentCategory $displayName }}selected{{ end }}>{{ $displayName }}</option>
+      {{- end -}}
+    </select>
+  </div>
+
+  <div>
+    <h2 class="text-sm font-semibold mb-3 text-gray-600 uppercase tracking-wider">Languages</h2>
+    <select
+      onchange="if(this.value) window.location.href=this.value"
+      class="w-full pl-4 pr-10 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
+      style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 20 20%22%3E%3Cpath stroke=%22%236b7280%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%221.5%22 d=%22M6 8l4 4 4-4%22/%3E%3C/svg%3E'); background-position: right 0.75rem center; background-repeat: no-repeat; background-size: 1.25em 1.25em;"
+    >
+      <option value="">Select a language...</option>
+      {{- range $displayName := $displayLanguages -}}
+        {{- $urlName := $displayName | urlize -}}
+      <option value="/languages/{{ $urlName }}/" {{ if eq $currentLanguage $displayName }}selected{{ end }}>{{ $displayName }}</option>
+      {{- end -}}
+    </select>
+  </div>
+</div>
+
+{{- /* Desktop pills */ -}}
+<section class="hidden md:block mb-8">
+  <h2 class="text-sm font-semibold mb-3 text-gray-600 uppercase tracking-wider">Topics</h2>
+  <div class="flex flex-wrap gap-2">
+    <a href="/blog/" class="px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors {{ if not $currentCategory }}bg-blue-500 border-blue-500 text-white{{ else }}bg-blue-100 border-blue-100 text-blue-600 hover:bg-blue-50 hover:border-blue-200{{ end }}">
+      All Posts
+    </a>
+    {{- range $displayName := $displayCategories -}}
+      {{- $urlName := $displayName | urlize -}}
+    <a href="/categories/{{ $urlName }}/" class="px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors {{ if eq $currentCategory $displayName }}bg-blue-500 border-blue-500 text-white{{ else }}bg-blue-100 border-blue-100 text-blue-600 hover:bg-blue-50 hover:border-blue-200{{ end }}">
+      {{ $displayName }}
+    </a>
+    {{- end -}}
+  </div>
+</section>
+
+<section class="hidden md:block mb-8">
+  <h2 class="text-sm font-semibold mb-3 text-gray-600 uppercase tracking-wider">Languages</h2>
+  <div class="flex flex-wrap gap-2">
+    {{- range $displayName := $displayLanguages -}}
+      {{- $urlName := $displayName | urlize -}}
+    <a href="/languages/{{ $urlName }}/" class="px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors {{ if eq $currentLanguage $displayName }}bg-blue-500 border-blue-500 text-white{{ else }}bg-blue-100 border-blue-100 text-blue-600 hover:bg-blue-50 hover:border-blue-200{{ end }}">
+      {{ $displayName }}
+    </a>
+    {{- end -}}
+  </div>
+</section>

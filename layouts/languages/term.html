@@ -1,5 +1,9 @@
+{{ define "head" }}
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+{{ end }}
+
 {{ define "main" }}
-<div class="flex flex-col w-full max-w-4xl lg:max-w-5xl">
+<div class="flex flex-col w-full max-w-7xl mx-auto">
   <div class="mt-6 mb-8">
     <h1 class="text-4xl font-medium text-gray-500">
       {{ .Title }}
@@ -22,6 +26,9 @@
   <!-- [language] Blog Posts -->
   {{ $blog := where .Pages "Section" "blog" }}
   {{ if gt (len $blog) 0 }}
+  {{- /* Blog filters */ -}}
+  {{ partial "blog-filters.html" (dict "currentLanguage" .Title) }}
+
   <div class="mt-8 mb-6">
     {{ partial "heading.html" (dict "level" 2 "text" (printf "%s Blog Posts" .Title) "class" "text-2xl font-medium text-gray-800 mb-4") }}
   </div>
