@@ -14,8 +14,8 @@ format:
     css: layout.css
     number-sections: true
 categories:
-  - Quarto 1.5
-  - Tables
+  - Publishing
+ported_categories: ["Quarto 1.5", "Tables"]
 ported_from: quarto
 port_status: raw
 software: ["quarto"]

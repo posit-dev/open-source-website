@@ -8,7 +8,8 @@ description: >
   smartphone with embedded inertial sensors.
 date: 2018-07-17
 categories:
-  - TensorFlow/Keras
+  - Machine Learning
+ported_categories: TensorFlow/Keras
 people:
   - Nick Strayer
 image: thumbnail.png

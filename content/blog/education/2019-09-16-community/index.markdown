@@ -5,9 +5,9 @@ draft: TRUE
 slug: community
 description: >
     The R community is open and supportive. We often get asked how beginners can join- here is our advice.
-categories: 
-  - teach
-  - learn
+categories:
+  - Community
+ported_categories: ["teach", "learn"]
 tags: []
 photo:
   url: https://unsplash.com/photos/9Q7PqDxCZeQ
