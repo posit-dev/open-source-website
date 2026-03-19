@@ -10,7 +10,7 @@ author:
 slug: sparklyr-sedona
 date: 07-07-2021
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 preview: images/nasa-Q1p7bh3SHj8-unsplash.jpg
 format: hugo-md
 languages: ["R"]

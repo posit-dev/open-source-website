@@ -21,7 +21,7 @@ software: ["plumbertableau"]
 languages: ["R", "Python"]
 categories:
   - Interactive Apps
-  - MLOps & Admin
+  - MLOps and Admin
 ---
 
 RStudio believes that you can attain greater business intelligence with interoperable tools that <a href="https://www.rstudio.com/solutions/interoperability/" target = "_blank">take the full advantage of open-source data science</a>. Your organization may rely on Tableau for reporting purposes, but how can you ensure that you're using the full power of your data science team's R and Python models in your dashboards?

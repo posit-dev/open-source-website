@@ -17,7 +17,7 @@ port_status: in-progress
 software: ["pins-r"]
 languages: ["R"]
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 ---
 
 

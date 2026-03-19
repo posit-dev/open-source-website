@@ -5,7 +5,7 @@ people:
 date: '2019-02-06'
 slug: rstudio-conf-2019-workshops
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - R Conference
   - rstudio::conf

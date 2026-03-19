@@ -3,7 +3,7 @@ title: Outgrowing your laptop with R and Positron
 description: |
   R-Ladies Abuja has posted a recording of a recent talk on Positron, and you can find it here!
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 people:
   - Julia Silge
 date: '2026-03-05'

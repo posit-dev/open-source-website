@@ -9,7 +9,7 @@ author:
 slug: sparklyr-updates-q1-2024
 date: '2024-04-22'
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
   - Data Wrangling
 preview: images/sparklyr.png
 format: hugo-md

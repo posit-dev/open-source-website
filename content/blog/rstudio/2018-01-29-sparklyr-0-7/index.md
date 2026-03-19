@@ -5,7 +5,7 @@ people:
 date: '2018-01-29'
 categories:
   - Machine Learning
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - data science
   - Distributed Computing

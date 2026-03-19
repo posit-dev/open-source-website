@@ -10,7 +10,7 @@ author:
 date: 01-10-2018
 categories:
   - Machine Learning
-  - MLOps & Admin
+  - MLOps and Admin
 preview: images/cloudml.png
 format: hugo-md
 software: ["cloudml", "keras3", "tfestimators", "tensorflow"]

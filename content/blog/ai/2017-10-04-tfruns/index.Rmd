@@ -9,7 +9,7 @@ author:
     affiliation_url: https://www.rstudio.com
 categories:
   - Machine Learning
-  - MLOps & Admin
+  - MLOps and Admin
 date: 10-04-2017
 preview: preview.png
 format: hugo-md

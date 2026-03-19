@@ -5,7 +5,7 @@ people:
 date: '2016-09-27'
 categories:
   - Data Wrangling
-  - MLOps & Admin
+  - MLOps and Admin
 slug: sparklyr-r-interface-for-apache-spark
 blogcategories:
   - Products and Technology

@@ -5,7 +5,7 @@ people:
 date: '2019-09-09'
 slug: pin-discover-and-share-resources
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - pins
   - reproducible

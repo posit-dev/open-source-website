@@ -5,7 +5,7 @@ people:
 date: '2017-01-24'
 categories:
   - Data Wrangling
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - Livy
   - Spark

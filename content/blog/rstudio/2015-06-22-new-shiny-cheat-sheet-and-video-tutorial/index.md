@@ -5,7 +5,7 @@ people:
 date: '2015-06-22'
 categories:
   - Interactive Apps
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - cheatsheet
   - Shiny

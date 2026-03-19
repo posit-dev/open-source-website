@@ -4,7 +4,7 @@ people:
   - Garrett Grolemund
 date: '2015-03-12'
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 slug: package-development-cheatsheet-plus-chinese-translations
 blogcategories:
   - Products and Technology

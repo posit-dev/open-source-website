@@ -5,7 +5,7 @@ description: |
 date: '2018-01-10'
 categories:
   - Machine Learning
-  - MLOps & Admin
+  - MLOps and Admin
 author:
   - name: J.J. Allaire
     url: https://github.com/jjallaire

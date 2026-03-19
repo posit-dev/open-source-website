@@ -4,7 +4,7 @@ people:
   - Garrett Grolemund
 date: '2014-11-06'
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 slug: introduction-to-data-science-with-r-video-workshop
 blogcategories:
   - Training and Education

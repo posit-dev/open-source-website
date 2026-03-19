@@ -17,7 +17,7 @@ resources:
 software: ["pins-r"]
 languages: ["R"]
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 ---
 
 ```r, include = FALSE

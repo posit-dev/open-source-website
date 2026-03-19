@@ -6,7 +6,7 @@ date: '2020-01-29'
 slug: sparklyr-1-1
 categories:
   - Data Wrangling
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - sparklyr
   - big data

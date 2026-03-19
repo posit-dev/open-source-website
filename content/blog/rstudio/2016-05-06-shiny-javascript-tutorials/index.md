@@ -5,7 +5,7 @@ people:
 date: '2016-05-06'
 categories:
   - Interactive Apps
-  - MLOps & Admin
+  - MLOps and Admin
 slug: shiny-javascript-tutorials
 blogcategories:
   - Products and Technology

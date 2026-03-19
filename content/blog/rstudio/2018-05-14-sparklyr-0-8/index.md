@@ -6,7 +6,7 @@ date: '2018-05-14'
 slug: sparklyr-0-8
 categories:
   - Data Wrangling
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - sparklyr
   - Packages

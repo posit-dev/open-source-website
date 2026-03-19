@@ -5,7 +5,7 @@ people:
 date: '2015-07-15'
 categories:
   - Interactive Apps
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - data
   - Shiny

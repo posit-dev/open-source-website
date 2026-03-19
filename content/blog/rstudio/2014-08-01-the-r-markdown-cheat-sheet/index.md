@@ -4,7 +4,7 @@ people:
   - Garrett Grolemund
 date: '2014-08-01'
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 slug: the-r-markdown-cheat-sheet
 blogcategories:
   - Products and Technology

@@ -10,7 +10,7 @@ bibliography: bibliography.bib
 date: 07-29-2020
 categories:
   - Best Practices
-  - MLOps & Admin
+  - MLOps and Admin
 preview: images/dice.jpg
 header-includes: \usepackage{algorithm2e}
 format: hugo-md

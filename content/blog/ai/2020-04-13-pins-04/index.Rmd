@@ -9,7 +9,7 @@ author:
 slug: pins-0.4
 date: 04-13-2020
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 preview: images/thumb.jpg
 format: hugo-md
 software: ["pins-r"]

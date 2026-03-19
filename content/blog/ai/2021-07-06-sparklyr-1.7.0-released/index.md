@@ -6,7 +6,7 @@ description: |
 date: '2021-07-06'
 slug: sparklyr-1.7
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 author:
   - name: Yitao Li
     url: https://github.com/yitao-li

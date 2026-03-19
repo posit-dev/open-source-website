@@ -5,7 +5,7 @@ description: |
 date: '2020-07-29'
 categories:
   - Best Practices
-  - MLOps & Admin
+  - MLOps and Admin
 author:
   - name: Yitao Li
     affiliation: RStudio

@@ -12,7 +12,7 @@ slug: sparklyr-1.6
 date: 03-25-2021
 bibliography: bibliography.bib
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 preview: images/sparklyr-1.6.jpg
 format: hugo-md
 languages: ["R"]

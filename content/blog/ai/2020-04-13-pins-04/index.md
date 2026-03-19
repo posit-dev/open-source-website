@@ -5,7 +5,7 @@ description: |
 date: '2020-04-13'
 slug: pins-0.4
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 author:
   - name: Javier Luraschi
     affiliation: RStudio

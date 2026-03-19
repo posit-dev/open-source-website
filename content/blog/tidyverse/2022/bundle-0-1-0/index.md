@@ -10,7 +10,7 @@ photo:
   url: https://unsplash.com/photos/B6yDtYs2IgY
   author: Joanna Kosinska
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - bundle
 image: thumbnail-wd.jpg

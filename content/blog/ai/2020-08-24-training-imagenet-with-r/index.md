@@ -5,7 +5,7 @@ description: |
 date: '2020-08-24'
 categories:
   - Machine Learning
-  - MLOps & Admin
+  - MLOps and Admin
 author:
   - name: Javier Luraschi
     affiliation: RStudio

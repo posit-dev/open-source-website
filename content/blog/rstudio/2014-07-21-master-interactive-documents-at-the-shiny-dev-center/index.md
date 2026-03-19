@@ -5,7 +5,7 @@ people:
 date: '2014-07-21'
 categories:
   - Interactive Apps
-  - MLOps & Admin
+  - MLOps and Admin
 slug: master-interactive-documents-at-the-shiny-dev-center
 blogcategories:
   - Products and Technology

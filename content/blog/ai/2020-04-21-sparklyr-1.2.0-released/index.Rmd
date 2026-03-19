@@ -10,7 +10,7 @@ author:
 slug: sparklyr-1.2
 date: 04-21-2020
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 preview: images/sparklyr.png
 format: hugo-md
 languages: ["R"]

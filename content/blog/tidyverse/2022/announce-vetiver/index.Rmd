@@ -11,7 +11,7 @@ photo:
   url: https://unsplash.com/photos/3C5ZfCLSGC4
   author: 21 swan
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - tidymodels
   - vetiver

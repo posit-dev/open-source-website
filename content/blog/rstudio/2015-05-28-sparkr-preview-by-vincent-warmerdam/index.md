@@ -4,7 +4,7 @@ people:
   - Garrett Grolemund
 date: '2015-05-28'
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - big data
   - Spark

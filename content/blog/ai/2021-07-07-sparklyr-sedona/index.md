@@ -5,7 +5,7 @@ description: |
 date: '2021-07-07'
 slug: sparklyr-sedona
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 author:
   - name: Yitao Li
     url: https://github.com/yitao-li

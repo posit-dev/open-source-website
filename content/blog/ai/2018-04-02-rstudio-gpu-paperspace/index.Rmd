@@ -11,7 +11,7 @@ date: 04-02-2018
 creative_commons: ~
 preview: images/paperspace-mnist-cnn.png
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 format: hugo-md
 software: ["tensorflow", "keras3", "tfestimators"]
 languages: ["R"]

@@ -5,7 +5,7 @@ description: |
 date: '2024-04-22T00:00:00.000Z'
 slug: sparklyr-updates-q1-2024
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
   - Data Wrangling
 author:
   - name: Edgar Ruiz

@@ -4,7 +4,7 @@ people:
   - Garrett Grolemund
 date: '2015-03-30'
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 tags:
   - cheatsheet
   - data visualization

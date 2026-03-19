@@ -11,7 +11,7 @@ author:
 slug: sparklyr-1.5
 date: 12-14-2020
 categories:
-  - MLOps & Admin
+  - MLOps and Admin
 preview: images/sparklyr-1.5.jpg
 format: hugo-md
 languages: ["R"]
