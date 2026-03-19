@@ -4,7 +4,6 @@ date: '2019-05-22'
 slug: resource-cleanup-in-c-and-the-r-api
 people:
   - Gábor Csárdi, Lionel Henry
-categories: [package, programming]
 description: >
     How to avoid resource leaks in C code in R packages?
     Introducing the cleancall package.
@@ -15,6 +14,11 @@ image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
+  - programming
 ---
 
 ```{r setup, include = FALSE}

@@ -12,14 +12,16 @@ author:
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com
 date: 2017-12-20
-categories:
-  - TensorFlow/Keras
-  - Time Series
 preview: images/jena_temp-r.png
 creative_commons: null
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Time Series
 ---
 
 ```{r setup, include=FALSE}

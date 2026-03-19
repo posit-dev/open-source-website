@@ -13,13 +13,16 @@ photo:
   author: Alex Munsell
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [tidymodels, brulee]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "brulee"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 We're thrilled to announce the release of [brulee](https://tidymodels.github.io/brulee/) 0.2.0. brulee contains several basic modeling functions that use the torch package infrastructure, such as: neural networks, linear regression, logistic regression, and multinomial regression. 

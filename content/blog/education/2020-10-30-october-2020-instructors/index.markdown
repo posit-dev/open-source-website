@@ -3,8 +3,6 @@ title: Newly certified instructors in October 2020
 people:
   - greg
 date: '2020-10-30'
-categories:
-  - certify
 tags:
   - certify
 description: |
@@ -17,6 +15,10 @@ image: october-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - certify
 ---
 
 We welcomed 17 new instructors to our ranks in October 2020:

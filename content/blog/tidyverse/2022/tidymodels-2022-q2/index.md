@@ -13,7 +13,6 @@ photo:
   author:  Samuel Girven
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
 tags: [tidymodels, parsnip, recipes]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "recipes"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - roundup
 ---
 
 <!--

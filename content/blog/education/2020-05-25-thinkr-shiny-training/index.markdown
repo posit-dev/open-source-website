@@ -3,8 +3,6 @@ title: 'ThinkR Shiny Training'
 people:
   - greg
 date: '2020-05-25'
-categories:
-  - teach
 tags:
   - Shiny
 description: |
@@ -18,6 +16,10 @@ ported_from: education
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - teach
 ---
 
 [ThinkR](https://thinkr.fr/) is running 10 half-days of remote training on "Shiny in Production" in July 2020.

@@ -4,9 +4,6 @@ description: |
   In this third installment of our mini-series introducing torch basics, we replace hand-coded matrix operations by modules, considerably simplifying our toy network's code.
 date: 2020-10-07
 slug: keydanatorchmodules
-categories:
-  - Torch
-  - R
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -17,6 +14,11 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
 ---
 
 

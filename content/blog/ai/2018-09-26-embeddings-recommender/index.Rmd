@@ -9,13 +9,15 @@ author:
 bibliography: bibliography.bib
 slug: keydana2018embeddings-recommender
 date: 09-26-2018
-categories:
-  - TensorFlow/Keras
-  - Tabular Data
 preview: images/m.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Tabular Data
 ---
 
 ```{r setup, include=FALSE}

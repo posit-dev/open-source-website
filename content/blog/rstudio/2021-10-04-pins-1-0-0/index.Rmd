@@ -18,6 +18,8 @@ resources:
     title: A world map with many pins stuck in it
 software: ["pins-r"]
 languages: ["R"]
+categories:
+  - MLOps & Admin
 ---
 
 ```r, include = FALSE

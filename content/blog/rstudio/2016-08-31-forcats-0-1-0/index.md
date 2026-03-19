@@ -3,20 +3,21 @@ title: 'forcats 0.1.0 '
 people:
   - Hadley Wickham
 date: '2016-08-31'
-categories:
-- Packages
-- tidyverse
 slug: forcats-0-1-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
+  - tidyverse
 ---
 
 

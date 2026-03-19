@@ -11,13 +11,15 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: kkkspreproclayers
 date: 12-09-2021
-categories:
-  - TensorFlow/Keras
-  - R
 preview: images/preview.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - R
 ---
 
 ```{r setup, include=FALSE}

@@ -9,12 +9,15 @@ date: 2017-09-04
 photo:
   url: https://unsplash.com/photos/0vY082Un2pk
   author: Edu Grande
-categories: [package]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

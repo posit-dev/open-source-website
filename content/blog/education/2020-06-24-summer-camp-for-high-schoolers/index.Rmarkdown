@@ -1,8 +1,6 @@
 ---
 title: Data science summer camp for high schoolers
 date: '2020-06-24'
-categories:
- - teach
 tags:
  - learnr
 description: |
@@ -16,6 +14,10 @@ ported_from: education
 port_status: in-progress
 software: ["learnr"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - teach
 ---
 
 Instructors and learners alike have had to quickly adapt to virtual education due to the ongoing pandemic. The [learnr](https://rstudio.github.io/learnr/) package has become a popular tool to ease that transition (see Allison Horst's great [post](/blog/education/learnr-for-remote/)).

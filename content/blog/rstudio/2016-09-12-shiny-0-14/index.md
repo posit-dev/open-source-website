@@ -3,9 +3,6 @@ title: Shiny 0.14
 people:
   - Winston Chang
 date: '2016-09-12'
-categories:
-- News
-- Shiny
 slug: shiny-0-14
 blogcategories:
 - Products and Technology
@@ -17,6 +14,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - News
+  - Shiny
 ---
 
 

@@ -5,13 +5,6 @@ title: "Quarto Wizard 1.0.0: Democratising Quarto Extension Management"
 description: |
   Introducing a game-changing extension for VS Code and Positron that transforms Quarto extensions management with an intuitive GUI for extensions and templates.
 date: "2025-10-20"
-categories:
-  - community
-  - quarto
-  - vscode
-  - positron
-  - extensions
-  - productivity
 image: featured.png
 image-alt: "Cartoon dog wizard wearing blue hat with red band holding magic wand creating HTML and CSS code scrolls in starry night scene."
 number-sections: false
@@ -62,6 +55,15 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto", "positron"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - community
+  - quarto
+  - vscode
+  - positron
+  - extensions
+  - productivity
 ---
 
 :::: {.callout-note title="Community Contribution"}

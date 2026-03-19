@@ -5,9 +5,6 @@ description: >
   Quarto Extensions are a powerful way to modify or extend the behavior of
   Quarto, and can be created and distributed by anyone. Extension types include
   filters, shortcodes, and custom formats.
-categories:
-  - Extensions
-  - Features
 people:
   - J.J. Allaire
 date: '2022-07-25'
@@ -19,6 +16,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Extensions
+  - Features
 ---
 
 

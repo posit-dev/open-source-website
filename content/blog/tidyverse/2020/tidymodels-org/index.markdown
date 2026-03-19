@@ -9,7 +9,6 @@ people:
 photo:
   url: https://unsplash.com/photos/Hli3R6LKibo
   author: Adi Goldstein
-categories: [learn]
 tags:
   - tidymodels
 image: thumbnail-wd.jpg
@@ -17,6 +16,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 

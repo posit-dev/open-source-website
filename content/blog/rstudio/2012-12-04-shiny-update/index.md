@@ -3,8 +3,6 @@ title: An update on Shiny
 people:
   - Joe Cheng
 date: '2012-12-04'
-categories:
-- Shiny
 slug: shiny-update
 blogcategories:
 - Products and Technology
@@ -15,6 +13,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Shiny
 ---
 
 

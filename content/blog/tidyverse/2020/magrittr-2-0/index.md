@@ -12,7 +12,6 @@ photo:
   url: https://unsplash.com/photos/X-NAMq6uP3Q
   author: Mike Benna
 
-categories: [package]
 tags: []
 
 image: thumbnail-wd.jpg
@@ -20,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["magrittr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <div class="highlight">

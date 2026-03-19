@@ -3,8 +3,6 @@ title: googlesheets4 0.2.0
 author: Jenny Bryan
 date: '2020-05-10'
 slug: googlesheets4-0-2-0
-categories:
-  - package
 tags:
   - googlesheets4
   - google
@@ -13,6 +11,10 @@ photo:
   url: https://unsplash.com/photos/ufxd6aU0w9U
 software: ["tidyverse", "googlesheets4"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

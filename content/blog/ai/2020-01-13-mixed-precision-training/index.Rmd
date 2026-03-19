@@ -8,12 +8,14 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2020mixedprec
 date: 01-13-2020
-categories:
-  - TensorFlow/Keras
 preview: images/tc.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
 ---
 
 

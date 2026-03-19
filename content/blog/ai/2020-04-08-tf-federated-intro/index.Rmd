@@ -8,14 +8,16 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatffederatedintro
 date: 04-08-2020
-categories:
-  - Privacy & Security
-  - TensorFlow/Keras
 bibliography: bibliography.bib
 preview: images/federated_learning.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Privacy & Security
+  - TensorFlow/Keras
 ---
 
 ```{r setup, include=FALSE}

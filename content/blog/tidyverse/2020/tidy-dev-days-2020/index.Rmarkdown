@@ -5,14 +5,16 @@ date: '2020-02-28'
 slug: tidy-dev-days-2020
 description: > 
   A roundup of our post-rstudio::conf tidy dev day, and announcement of a pre-useR! 2020 event. 
-categories:
-  - other
 tags:
   - tidyverse-dev-day
 photo:
   author: Max Kuhn
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - other
 ---
 
 ## Post-rstudio::conf(2020) dev day

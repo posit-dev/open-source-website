@@ -13,7 +13,6 @@ photo:
   author: Ranae Smith
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [tidymodels, parsnip, censored]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "censored"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 <!--

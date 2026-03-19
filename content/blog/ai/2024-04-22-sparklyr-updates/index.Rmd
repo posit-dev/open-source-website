@@ -8,13 +8,16 @@ author:
     affiliation_url: https://www.posit.co/
 slug: sparklyr-updates-q1-2024
 date: 2024-04-22
-categories:
-  - Packages/Releases  
-  - Spark
-  - R
 preview: images/sparklyr.png
 format: hugo-md
 languages: ["R"]
+categories:
+  - MLOps & Admin
+  - Data Wrangling
+ported_categories:
+  - Packages/Releases
+  - Spark
+  - R
 ---
 
 ```{r setup, include=FALSE}

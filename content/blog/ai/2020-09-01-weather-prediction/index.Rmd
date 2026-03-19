@@ -10,7 +10,11 @@ author:
 slug: keydanaweatherforecasting
 bibliography: bibliography.bib
 date: 09-01-2020
+preview: images/thumb.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - R
   - TensorFlow/Keras
   - Time Series

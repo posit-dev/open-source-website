@@ -13,7 +13,6 @@ photo:
   author: Anurag Jamwal
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
 tags: [tidymodels]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - roundup
 ---
 
 <!--

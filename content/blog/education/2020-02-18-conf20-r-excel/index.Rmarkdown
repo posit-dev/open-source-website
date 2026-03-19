@@ -8,7 +8,6 @@ people:
   - Julie Lowndes
 date: '2020-02-18'
 slug: conf20-r-excel
-categories: [learn, teach]
 tags: [conf2020]
 photo:
   url: https://unsplash.com/photos/rx7O2WsJ89w
@@ -19,6 +18,11 @@ image: r-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - teach
 ---
 
 > tl;dr: all workshop materials are available here: <br>

@@ -8,7 +8,10 @@ author:
 date: 03-09-2018
 preview: images/unnamed-chunk-8-1.png
 creative_commons: null
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Packages/Releases
   - TensorFlow/Keras
   - Explainability

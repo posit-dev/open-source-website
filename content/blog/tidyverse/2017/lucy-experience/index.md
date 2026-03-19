@@ -9,7 +9,6 @@ people:
 photo:
   url: https://twitter.com/_inundata
   author: Karthik Ram
-categories: [learn]
 tags:
   - googledrive
 image: thumbnail-wd.jpg
@@ -17,6 +16,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googledrive"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 

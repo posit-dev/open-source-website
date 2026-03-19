@@ -3,9 +3,6 @@ title: A Remote Learning Roundup
 people:
   - alison
 date: '2020-05-19'
-categories:
-  - learn
-  - teach
 tags:
   - online
 description: |
@@ -17,6 +14,11 @@ photo:
 image: remote-wd.jpg
 ported_from: education
 port_status: in-progress
+categories:
+  - Community
+ported_categories:
+  - learn
+  - teach
 ---
 
 > This post features original artwork submitted by various artists for [United Nations Global Call Out To Creatives](https://www.talenthouse.com/i/united-nations-global-call-out-to-creatives-help-stop-the-spread-of-covid-19) - help stop the spread of COVID-19.

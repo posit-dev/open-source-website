@@ -3,20 +3,21 @@ title: shinydashboard 0.6.0
 people:
   - Bárbara Borges Ribeiro
 date: '2017-05-18'
-categories:
-- Packages
-- Shiny
 slug: shinydashboard-0-6-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

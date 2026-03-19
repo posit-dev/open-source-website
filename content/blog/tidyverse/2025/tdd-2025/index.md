@@ -12,13 +12,16 @@ photo:
   author: George Stagg
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [other] 
 tags: [tidyverse-dev-day]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - other
 ---
 
 <!--

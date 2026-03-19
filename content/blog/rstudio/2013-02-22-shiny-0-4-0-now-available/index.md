@@ -3,8 +3,6 @@ title: Shiny 0.4.0 now available
 people:
   - Winston Chang
 date: '2013-02-22'
-categories:
-- Shiny
 slug: shiny-0-4-0-now-available
 blogcategories:
 - Products and Technology
@@ -15,6 +13,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Shiny
 ---
 
 

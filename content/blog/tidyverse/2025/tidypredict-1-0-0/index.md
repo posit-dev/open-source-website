@@ -13,7 +13,6 @@ photo:
   author: Monique Caraballo
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [tidymodels, tidypredict, orbital]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tidypredict", "orbital"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 <!--

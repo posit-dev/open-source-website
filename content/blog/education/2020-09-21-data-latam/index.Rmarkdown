@@ -5,8 +5,6 @@ author:
 people:
   - Frans van Dunné
 date: '2020-09-21'
-categories:
-  - community
 tags:
   - community
 description: |
@@ -19,6 +17,10 @@ image: data-latam-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - community
 ---
 
 When we started with the first [Data Latam Podcast](http://www.datalatam.com/) in May 2016

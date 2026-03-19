@@ -4,19 +4,20 @@ people:
   - Hadley Wickham
 date: '2017-07-13'
 slug: haven-1-1-0
-categories:
-- tidyverse
-- Packages
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - tidyverse
+  - Packages
 ---
 
 

@@ -1,7 +1,6 @@
 ---
 title: "Distill it down"
 date: '2021-02-08'
-categories: null
 description: |
   My experiences with building webpages and websites using some of the simpler R Studio tools.
 photo:
@@ -12,6 +11,8 @@ ported_from: education
 port_status: in-progress
 software: ["distill"]
 languages: ["R"]
+categories:
+  - Publishing
 ---
 
 ## Introduction

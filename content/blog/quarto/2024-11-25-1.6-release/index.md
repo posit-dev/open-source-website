@@ -4,9 +4,6 @@ description: >
   Quarto 1.6 supports unified branding across formats, updates to RevealJS, a
   new shortcode to reorder content, a landscape page block, and more. There are
   also a couple of breaking changes that will affect a small number of users.
-categories:
-  - Quarto 1.6
-  - Releases
 people:
   - Charlotte Wickham
 date: '2024-11-25'
@@ -16,6 +13,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Quarto 1.6
+  - Releases
 ---
 
 

@@ -4,7 +4,6 @@ date: 2018-10-29
 slug: rlang-0-3-0
 people:
   - Lionel Henry
-categories: [package]
 tags:
   - rlang
   - r-lib
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "rlang"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

@@ -3,8 +3,6 @@ title: Shiny Server now available
 people:
   - Joe Cheng
 date: '2013-01-22'
-categories:
-- Shiny
 slug: shiny-server-now-available
 blogcategories:
 - Products and Technology
@@ -15,6 +13,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Shiny
 ---
 
 

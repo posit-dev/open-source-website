@@ -14,13 +14,16 @@ photo:
   author: Jonathan Fox
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [learn] 
 tags: [tidymodels, workflowsets, workflows, parsnip]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "workflowsets", "workflows", "parsnip"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 

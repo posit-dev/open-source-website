@@ -6,8 +6,6 @@ date: '2019-11-22'
 slug: tidyverse-1-3-0
 description: > 
   tidyverse 1.3.0 is on CRAN, and has a paper in the Journal of Open Source Software! This should make it easier to cite tidyverse packages.
-categories:
-  - package
 tags:
   - tidyverse
 photo:
@@ -18,6 +16,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <html>

@@ -11,8 +11,6 @@ people:
 date: '2020-05-06'
 
 
-categories:
-- package
 tags:
 - dplyr
 - dplyr-1-0-0
@@ -26,6 +24,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 Today I wanted to talk about two cool new features that we've added since I started blogging about dplyr 1.0.0: `summarise()` now gives you greater control over how the results are grouped, and a new set of functions make it easier to modify rows.

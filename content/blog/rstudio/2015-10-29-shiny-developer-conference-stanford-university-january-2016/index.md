@@ -3,9 +3,6 @@ title: Shiny Developer Conference | Stanford University | January 2016
 people:
   - Joe Cheng
 date: '2015-10-29'
-categories:
-- News
-- Shiny
 slug: shiny-developer-conference-stanford-university-january-2016
 blogcategories:
 - Products and Technology
@@ -16,6 +13,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - News
+  - Shiny
 ---
 
 

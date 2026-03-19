@@ -8,14 +8,17 @@ author:
     affiliation_url: https://www.posit.co/
 slug: keydanagpt2
 date: 2023-06-20
-categories:
-  - Torch
-  - R
-  - Natural Language Processing
 bibliography: references.bib
 preview: images/preview.jpg
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+  - Artificial Intelligence
+ported_categories:
+  - Torch
+  - R
+  - Natural Language Processing
 ---
 
 ```{r setup, include=FALSE}

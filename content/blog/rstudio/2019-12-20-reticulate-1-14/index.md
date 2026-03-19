@@ -4,12 +4,9 @@ people:
   - Kevin Ushey
 date: '2019-12-20'
 slug: reticulate-1-14
-categories:
-- Packages
 tags:
 - reticulate
 - Python
-- Packages
 blogcategories:
 - Products and Technology
 - Open Source
@@ -17,6 +14,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["reticulate"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Packages
 ---
 
 

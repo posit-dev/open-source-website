@@ -5,7 +5,6 @@ slug: tibble-2.0.0-pre-announce
 people:
   - Kirill Müller
   - Jenny Bryan
-categories: [package]
 tags:
   - tibble
   - tidyverse
@@ -19,6 +18,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tibble"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 

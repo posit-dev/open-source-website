@@ -7,6 +7,8 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
+categories:
+  - Visualization
 ---
 
 In Great Tables `0.12.0` we focused on adding options for customizing the appearance of a table. In this post, we'll present two new features:

@@ -13,7 +13,6 @@ photo:
   author: Rose Galloway Green
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [plumber2, web]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "plumber2"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - package
 ---
 
 <!--

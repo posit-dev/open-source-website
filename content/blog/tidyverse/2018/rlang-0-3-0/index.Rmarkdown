@@ -3,7 +3,6 @@ title: rlang 0.3.0
 date: 2018-10-29
 slug: rlang-0-3-0
 author: Lionel Henry
-categories: [package]
 description: >
     API for working with tidy evaluation, base R types, and errors
 photo:
@@ -11,6 +10,10 @@ photo:
   author: Brandon Siu
 software: ["tidyverse", "rlang"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

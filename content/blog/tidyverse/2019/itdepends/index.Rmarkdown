@@ -11,6 +11,10 @@ photo:
 categories: [programming]
 software: ["tidyverse", "itdepends"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - programming
 ---
 
 ```{r setup, include = FALSE}

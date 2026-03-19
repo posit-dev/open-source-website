@@ -4,8 +4,6 @@ subtitle: A potpourri of Quarto features useful for academics
 description: >
   A video highlighting some of Quarto's features that are especially useful for
   academics, as educators and as researchers.
-categories:
-  - Learn
 people:
   - Mine Çetinkaya-Rundel
 date: '2023-05-22'
@@ -17,6 +15,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+  - Community
+ported_categories:
+  - Learn
 ---
 
 

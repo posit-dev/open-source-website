@@ -11,7 +11,12 @@ author:
     affiliation_url: https://www.posit.co/
 slug: edgarmall02
 date: 2025-08-19
+preview: images/article.png
+format: hugo-md
 categories:
+  - Artificial Intelligence
+  - Machine Learning
+ported_categories:
   - Python
   - R
   - LLM

@@ -3,8 +3,6 @@ title: More sample exams
 people:
   - greg
 date: '2020-08-18'
-categories:
-  - certify
 tags:
   - certify
 description: |
@@ -16,6 +14,10 @@ image: more-sample-exams-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - certify
 ---
 
 To help everyone who is preparing to certify as an RStudio instructor,

@@ -6,8 +6,6 @@ date: '2019-06-27'
 slug: rlang-0-4-0
 description: >
   rlang 0.4.0 is now on CRAN!
-categories:
-  - package
 tags:
   - rlang
   - r-lib
@@ -19,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "rlang"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

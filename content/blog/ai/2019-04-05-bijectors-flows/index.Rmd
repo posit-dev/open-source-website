@@ -8,16 +8,19 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2019flows
 date: 04-05-2019
-categories:
-  - Probabilistic ML/DL 
-  - TensorFlow/Keras
-  - Concepts
-  - Generative Models
 bibliography: bibliography.bib
 preview: images/flows.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+  - Best Practices
+ported_categories:
+  - Probabilistic ML/DL
+  - TensorFlow/Keras
+  - Concepts
+  - Generative Models
 ---
 
 

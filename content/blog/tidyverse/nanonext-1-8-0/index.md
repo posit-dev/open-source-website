@@ -11,7 +11,6 @@ description: >
 photo:
   url: https://unsplash.com/photos/yhJVLxcquEY
   author: Albert Stoynov
-categories: [package]
 tags: [nanonext, r-lib]
 
 image: thumbnail-wd.jpg
@@ -19,6 +18,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "nanonext"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 <!--

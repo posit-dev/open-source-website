@@ -11,13 +11,15 @@ author:
 bibliography: bibliography.bib
 slug: keydana2018conceptsobjectdetection
 date: 12-18-2018
-categories:
-  - TensorFlow/Keras
-  - Image Recognition & Image Processing
 preview: images/results.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Image Recognition & Image Processing
 ---
 
 ```{r setup, include=FALSE}

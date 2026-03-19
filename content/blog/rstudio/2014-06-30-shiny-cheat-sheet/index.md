@@ -3,8 +3,6 @@ title: Shiny cheat sheet
 people:
   - Garrett Grolemund
 date: '2014-06-30'
-categories:
-- Shiny
 slug: shiny-cheat-sheet
 blogcategories:
 - Products and Technology
@@ -15,6 +13,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Shiny
 ---
 
 

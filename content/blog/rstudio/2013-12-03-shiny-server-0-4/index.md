@@ -3,8 +3,6 @@ title: Shiny Server 0.4
 people:
   - RStudio Team
 date: '2013-12-03'
-categories:
-- Shiny
 slug: shiny-server-0-4
 blogcategories:
 - Products and Technology
@@ -15,6 +13,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Shiny
 ---
 
 

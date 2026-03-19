@@ -3,11 +3,6 @@ title: "Training ImageNet with R"
 description: |
   This post explores how to train large datasets with TensorFlow and R. Specifically, we present how to download and repartition ImageNet, followed by training ImageNet across multiple GPUs in distributed environments using TensorFlow and Apache Spark.
 date: 2020-08-24
-categories:
-  - R
-  - TensorFlow/Keras
-  - Distributed Computing
-  - Data Management
 author:
   - name: Javier Luraschi
     affiliation: RStudio
@@ -19,6 +14,14 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+  - MLOps & Admin
+ported_categories:
+  - R
+  - TensorFlow/Keras
+  - Distributed Computing
+  - Data Management
 ---
 
 

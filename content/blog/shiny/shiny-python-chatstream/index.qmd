@@ -10,6 +10,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "chatlas"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

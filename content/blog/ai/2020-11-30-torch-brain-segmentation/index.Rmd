@@ -9,14 +9,16 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchtabular
 date: 11-30-2020
-categories:
-  - Torch
-  - R
-  - Image Recognition & Image Processing
 bibliography: bibliography.bib
 preview: images/scans.png
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
+  - Image Recognition & Image Processing
 ---
 
 ```{r setup, include=FALSE}

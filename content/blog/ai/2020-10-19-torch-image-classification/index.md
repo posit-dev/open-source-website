@@ -4,10 +4,6 @@ description: |
   We learn about transfer learning, input pipelines, and learning rate schedulers, all while using torch to tell apart species of beautiful birds.
 date: 2020-10-19
 slug: keydanatorchimageclassification
-categories:
-  - Torch
-  - R
-  - Image Recognition & Image Processing
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +14,12 @@ image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
+  - Image Recognition & Image Processing
 ---
 
 

@@ -18,6 +18,8 @@ ported_from: rstudio
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
 ---
 <caption>
 Photo by <a href="https://unsplash.com/@sallybrad2016?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Preethi Viswanathan</a> on <a href="https://unsplash.com/s/photos/neural-network?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

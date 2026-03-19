@@ -15,13 +15,16 @@ photo:
   author: Tim Mossholder
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup]
 tags: [systemfonts, textshaping, marquee, graphics]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "systemfonts", "marquee"]
 languages: ["R"]
+categories:
+  - Visualization
+ported_categories:
+  - roundup
 ---
 
 <!--

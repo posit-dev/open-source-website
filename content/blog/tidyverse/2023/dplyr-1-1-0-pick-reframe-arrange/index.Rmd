@@ -12,7 +12,6 @@ description: >
 photo:
   url: https://unsplash.com/photos/XgoHMMkE02I
   author: Priscilla Du Preez
-categories: [package] 
 tags: [dplyr, dplyr-1-1-0]
 editor_options: 
   chunk_output_type: console
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 In this final [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110) post, we'll take a look at two new verbs, `pick()` and `reframe()`, along with some changes to `arrange()` that improve both reproducibility and performance.

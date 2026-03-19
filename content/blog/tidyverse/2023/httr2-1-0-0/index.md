@@ -16,7 +16,6 @@ photo:
   author: Mike Bowman
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [httr2, httr]
 
 image: thumbnail-wd.jpg
@@ -24,6 +23,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "httr2", "httr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <!--

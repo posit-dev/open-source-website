@@ -4,10 +4,6 @@ description: |
   torch v0.10.0 is now on CRAN. This version upgraded the underlying LibTorch to 1.13.1, and added support for Automatic Mixed Precision. As an experimental feature, we now also support pre-built binaries, so you can install torch without having to deal with the CUDA installation.
 date: 2023-04-14T00:00:00.000Z
 slug: torch-0-9-0
-categories:
-  - Torch
-  - Packages/Releases
-  - R
 author:
   - name: Daniel Falbel
     affiliation: Posit
@@ -18,6 +14,12 @@ image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - Packages/Releases
+  - R
 ---
 
 

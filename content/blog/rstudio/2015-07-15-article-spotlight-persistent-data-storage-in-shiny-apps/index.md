@@ -3,9 +3,6 @@ title: 'Article Spotlight: Persistent data storage in Shiny apps'
 people:
   - Garrett Grolemund
 date: '2015-07-15'
-categories:
-- Shiny
-- Training
 tags:
 - data
 - Shiny
@@ -17,6 +14,12 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+  - MLOps & Admin
+ported_categories:
+  - Shiny
+  - Training
 ---
 
 

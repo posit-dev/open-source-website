@@ -14,7 +14,6 @@ photo:
   author: Viktor Talashuk 
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [dplyr, dbplyr]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr", "dbplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <!--

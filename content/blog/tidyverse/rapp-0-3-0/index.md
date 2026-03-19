@@ -16,7 +16,6 @@ photo:
 
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package]
 tags: [r-lib, package, programming, yaml]
 
 image: thumbnail-wd.jpg
@@ -24,6 +23,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "yaml"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 We're excited to share our first tidyverse blog post for Rapp, alongside the `0.3.0` release. Rapp helps you turn R scripts into polished command-line tools, with argument parsing and help generation built in.

@@ -10,7 +10,11 @@ author:
 slug: sparklyr-1.7
 date: 07-06-2021
 bibliography: bibliography.bib
+preview: images/sparklyr-1.7.png
+format: hugo-md
 categories:
+  - MLOps & Admin
+ported_categories:
   - R
   - Packages/Releases
   - Distributed Computing

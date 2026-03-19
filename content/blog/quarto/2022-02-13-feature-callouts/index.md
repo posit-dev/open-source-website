@@ -7,9 +7,6 @@ description: >
   Callouts are an excellent way to draw extra attention to certain concepts, or
   to more clearly indicate that certain content is supplemental or applicable to
   only some scenarios.
-categories:
-  - Features
-  - Authoring
 people:
   - Charles Teague
 date: '2022-02-13'
@@ -23,6 +20,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Features
+  - Authoring
 ---
 
 

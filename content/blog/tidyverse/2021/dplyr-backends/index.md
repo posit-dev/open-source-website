@@ -17,7 +17,6 @@ photo:
   author: Charles Deluvio
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
 tags: [dplyr]
 
 image: thumbnail-wd.jpg
@@ -25,6 +24,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 One of my favourite things about dplyr is that it decouples describing the data manipulation you want from its actual computation. This makes it possible to take basically the same dplyr code and execute it in radically different ways by using different backends. This blog post covers a passel of updates to the dplyr backends that we maintain:

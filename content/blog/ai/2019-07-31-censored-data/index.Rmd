@@ -8,13 +8,15 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2019tfpcensored
 date: 07-31-2019
-categories:
-  - Bayesian Modeling
-  - TensorFlow/Keras
 preview: images/thumb_cropped.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Bayesian Modeling
+  - TensorFlow/Keras
 ---
 
 ```{r setup, include=FALSE}

@@ -11,6 +11,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "shiny-r", "chatlas", "ellmer"]
 languages: ["R", "Python"]
+categories:
+  - Interactive Apps
 ---
 
 Welcome back to ”The Shiny Side of LLMs”: a blog series for Python and R users who want to build real, useful LLM-powered apps without getting buried in jargon or deep learning theory.

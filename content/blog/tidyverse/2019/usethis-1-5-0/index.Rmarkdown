@@ -11,6 +11,10 @@ photo:
 categories: [package]
 software: ["tidyverse", "usethis"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

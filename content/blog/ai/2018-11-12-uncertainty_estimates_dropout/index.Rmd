@@ -9,7 +9,11 @@ author:
 bibliography: bibliography.bib
 slug: keydana2018dropoutuncertainty
 date: 11-12-2018
+preview: images/thumb.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Image Recognition & Image Processing
   - Probabilistic ML/DL
   - TensorFlow/Keras

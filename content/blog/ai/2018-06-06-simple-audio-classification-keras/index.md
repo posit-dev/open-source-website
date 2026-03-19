@@ -3,9 +3,6 @@ title: "Simple Audio Classification with Keras"
 description: |
   In this tutorial we will build a deep learning model to classify words. We will use the Speech Commands dataset which consists of 65,000 one-second audio files of people saying 30 different words.
 date: 2018-06-06
-categories:
-  - TensorFlow/Keras
-  - Audio Processing
 author:
   - name: Daniel Falbel
     url: https://github.com/dfalbel
@@ -18,6 +15,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Audio Processing
 ---
 
 

@@ -9,7 +9,6 @@ people:
 photo:
   url: https://unsplash.com/photos/24bzOuENxHc
   author: Ariana Prestes
-categories: [programming]
 tags:
   - itdepends
   - r-lib
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "itdepends"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - programming
 ---
 
 

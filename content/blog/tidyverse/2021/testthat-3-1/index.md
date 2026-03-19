@@ -14,7 +14,6 @@ photo:
   author: Ethan Hoover
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
 tags: [testthat]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 <!--

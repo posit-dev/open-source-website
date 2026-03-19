@@ -6,8 +6,6 @@ date: '2019-01-10'
 slug: rlang-0-3-1
 description: >
   rlang 0.3.1 is now on CRAN.
-categories:
-  - package
 photo:
   url: https://unsplash.com/photos/FhdN5QVrBfY
   author: Eberhard Grossgasteiger
@@ -16,6 +14,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "rlang"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

@@ -7,10 +7,6 @@ author:
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com/
 date: 2022-10-25
-categories:
-  - Torch
-  - Packages/Releases
-  - R
 editor_options: 
   markdown: 
     wrap: 72
@@ -18,6 +14,12 @@ preview: images/banner.jpeg
 slug: torch-0-9-0
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - Packages/Releases
+  - R
 ---
 
 ```{r setup, include=FALSE}

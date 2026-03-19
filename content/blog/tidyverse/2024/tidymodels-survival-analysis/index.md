@@ -15,7 +15,6 @@ photo:
   author: Heather Zabriskie
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn] 
 tags: [tidymodels, parsnip, censored, workflows, yardstick, tune, workflowsets]
 
 image: thumbnail-wd.jpg
@@ -23,6 +22,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "censored", "workflows", "yardstick", "tune", "workflowsets"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 <!--

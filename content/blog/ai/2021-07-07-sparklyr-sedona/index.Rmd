@@ -9,7 +9,12 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: sparklyr-sedona
 date: 07-07-2021
+preview: images/nasa-Q1p7bh3SHj8-unsplash.jpg
+
+format: hugo-md
 categories:
+  - MLOps & Admin
+ported_categories:
   - R
   - Packages/Releases
   - Distributed Computing

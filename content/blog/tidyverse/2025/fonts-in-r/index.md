@@ -15,7 +15,6 @@ photo:
   author: Kristian Strand
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [deep-dive]
 tags: [systemfonts, textshaping, ragg, svglite, graphics]
 
 image: thumbnail-wd.jpg
@@ -23,6 +22,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "systemfonts", "ragg", "svglite"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - deep-dive
 ---
 
 <style type='text/css'>

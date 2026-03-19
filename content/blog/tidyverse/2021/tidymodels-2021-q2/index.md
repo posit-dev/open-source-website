@@ -15,13 +15,16 @@ photo:
   author: SHOT
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [roundup] 
 tags: [tidymodels, parsnip, recipes, butcher, yardstick, probably]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "recipes", "butcher", "yardstick", "probably"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - roundup
 ---
 
 

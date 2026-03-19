@@ -10,13 +10,16 @@ description: >
 photo:
   url: https://unsplash.com/photos/person-holding-silver-and-black-scissors-rNsRAHLhrHc
   author: Tekton
-categories: [package]
 tags: [ragnar, ai]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragnar"]
 languages: ["R"]
+categories:
+  - Artificial Intelligence
+ported_categories:
+  - package
 ---
 
 # ragnar 0.2

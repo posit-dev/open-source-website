@@ -3,8 +3,6 @@ title: Instructor Certification Exams
 people:
   - greg
 date: '2020-02-05'
-categories:
-  - certify
 tags:
   - instructor training
 draft: false
@@ -18,6 +16,10 @@ image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - certify
 ---
 
 

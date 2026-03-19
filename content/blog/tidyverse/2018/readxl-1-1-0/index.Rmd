@@ -6,8 +6,6 @@ description: >
 people:
   - Jenny Bryan
 date: 2018-04-23
-categories:
-  - package
 photo:
   url: https://twitter.com/Thoughtfulnz/status/987900521309614080
   author: David Hood
@@ -19,6 +17,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "readxl"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

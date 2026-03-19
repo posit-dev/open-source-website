@@ -3,8 +3,6 @@ title: Get Started with Quarto
 subtitle: A video to jumpstart your Quarto journey
 description: |
   A new video for getting started with Quarto using R and RStudio.
-categories:
-  - Learn
 people:
   - Mine Çetinkaya-Rundel
 date: '2023-05-15'
@@ -16,6 +14,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+  - Community
+ported_categories:
+  - Learn
 ---
 
 

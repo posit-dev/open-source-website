@@ -12,7 +12,6 @@ photo:
   url: https://unsplash.com/photos/-OBffuUekfQ
   author: 五玄土
 
-categories: [package] 
 tags: [tidymodels, parsnip, bonsai]
 
 image: thumbnail-wd.jpg
@@ -20,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "bonsai"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 We're super stoked to announce the first release of the [bonsai](https://bonsai.tidymodels.org/) package on CRAN! bonsai is a [parsnip](https://parsnip.tidymodels.org/) extension package for tree-based models.

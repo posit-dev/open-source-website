@@ -17,13 +17,16 @@ photo:
   url: https://github.com/t-kalinowski
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package]
 tags: [s7]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 <!--

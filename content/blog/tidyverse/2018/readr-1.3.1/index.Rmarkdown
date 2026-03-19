@@ -9,6 +9,8 @@ photo:
   url: https://unsplash.com/photos/XOW1WqrWNKg
   author: Anastasia Zhenina
 categories:
+  - Data Wrangling
+ported_categories:
   - package
 software: ["tidyverse", "readr"]
 languages: ["R"]

@@ -9,13 +9,15 @@ author:
 slug: keydana2019dlmtfp
 bibliography: bibliography.bib
 date: 06-24-2019
-categories:
-  - Probabilistic ML/DL 
-  - Time Series
 preview: images/thumb.png
 format: hugo-md
 software: ["tfprobability", "tensorflow"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Probabilistic ML/DL
+  - Time Series
 ---
 
 

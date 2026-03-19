@@ -3,8 +3,6 @@ title: usethis 1.6.0
 author: Hadley Wickham
 date: '2020-04-11'
 slug: usethis-1-6-0
-categories:
-  - package
 tags:
   - devtools
   - usethis
@@ -13,6 +11,10 @@ photo:
   url: https://unsplash.com/photos/R4WCbazrD1g
 software: ["tidyverse", "devtools", "usethis"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r, include = FALSE}

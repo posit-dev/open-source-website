@@ -7,9 +7,6 @@ date: '2019-09-09'
 description: >
   We use `callr::r_session` to implement a worker pool and task queue in
   100 lines of R code.
-categories:
-- programming
-- deep-dive
 photo:
   url: https://unsplash.com/photos/cDwZ40Lj9eo
   author: Davide Ragusa
@@ -18,6 +15,11 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "callr"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - programming
+  - deep-dive
 ---
 
 ```{r setup, include = FALSE}

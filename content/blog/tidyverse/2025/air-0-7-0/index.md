@@ -13,7 +13,6 @@ photo:
   url: https://unsplash.com/photos/photo-of-island-and-thunder-E-Zuyev2XWo
   author: Johannes Plenio
 
-categories: [programming] 
 tags: []
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["air", "positron"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - programming
 ---
 
 We're very excited to announce [Air 0.7.0](https://posit-dev.github.io/air/), a new release of our extremely fast R formatter. This post will act as a roundup of releases 0.5.0 through 0.7.0, including: even better Positron support, a new feature called autobracing, and an official GitHub Action! If you haven't heard of Air, read our [announcement blog post](https://www.tidyverse.org/blog/2025/02/air/) first to get up to speed. To install Air, read our [editors guide](https://posit-dev.github.io/air/editors.html).

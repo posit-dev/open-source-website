@@ -5,13 +5,15 @@ date: '2019-01-09'
 slug: dbplyr-1-3-0
 description: > 
   dbplyr 1.3.0 is now on CRAN.
-categories:
-  - package
 photo:
   url: https://unsplash.com/photos/sk59I1qRfEM
   author: Scott Webb
 software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 We're stoked to announce that [dbplyr](https://dbplyr.tidyverse.org) 1.3.0 is now available on CRAN. dbplyr is the database backend for dplyr, translating dplyr syntax into SQL. This is a minor release primarily for compatibility with dplyr 0.8.0. However, there have been some changes to the API, and minor improvements (the full details of which can be found in the [changelog](https://dbplyr.tidyverse.org/news/index.html)). A more substantive update can be expected after rstudio::conf.

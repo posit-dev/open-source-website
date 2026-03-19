@@ -9,7 +9,11 @@ author:
     affiliation_url: https://www.rstudio.com
 slug: sparklyr.flint-0.2.0
 date: 10-12-2020
+preview: images/sparklyr-flint-0.2.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - R
   - Packages/Releases
   - Time Series

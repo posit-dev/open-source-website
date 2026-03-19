@@ -14,13 +14,16 @@ photo:
   author: Helena Jankovičová Kováčová
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: []
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["ggplot2"]
 languages: ["R"]
+categories:
+  - Visualization
+ported_categories:
+  - package
 ---
 
 <!--

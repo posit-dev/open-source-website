@@ -9,13 +9,15 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2019gettingstarted2020
 date: 11-27-2019
-categories:
-  - Packages/Releases
-  - TensorFlow/Keras
 preview: images/website.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Packages/Releases
+  - TensorFlow/Keras
 ---
 
 

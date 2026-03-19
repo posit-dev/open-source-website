@@ -6,7 +6,6 @@ date: '2018-06-05'
 slug: pkgdown-1-1-0
 description: >
     pkgdown 1.1.0 is now on CRAN.
-categories: [package]
 photo:
   url: https://www.pexels.com/photo/person-s-holds-brown-gift-box-842876/
   author: Kim Stiver
@@ -15,6 +14,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

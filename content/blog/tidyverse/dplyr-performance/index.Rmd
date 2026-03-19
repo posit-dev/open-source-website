@@ -13,7 +13,6 @@ photo:
   url: https://unsplash.com/photos/ZbFoi92fyzY
   author: Jahanzeb Ahsan
 
-categories: [package]
 tags: [dplyr]
 
 editor:
@@ -28,6 +27,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 In this technical post, we'll dive into some performance improvements we've made to dplyr 1.2.0 to make `if_else()` and `case_when()` up to 30x faster and use up to 10x less memory.

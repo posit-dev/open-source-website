@@ -2,8 +2,6 @@
 title: "Teaching the Tidyverse in 2020 - Part 1: Getting started"
 date: "2020-07-13"
 slug: teaching-the-tidyverse-in-2020-part-1-getting-started
-categories:
-  - teach
 tags:
   - tidyverse
 people:
@@ -15,6 +13,10 @@ ported_from: education
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - teach
 ---
 
 The "official" tidyverse has existed [since 2016](https://twitter.com/hadleywickham/status/959507805282582528?s=20) but most of its components have a much longer history, for example ggplot2 is the older package and has been around [for more than 13 years](https://qz.com/1007328/all-hail-ggplot2-the-code-powering-all-those-excellent-charts-is-10-years-old/)!

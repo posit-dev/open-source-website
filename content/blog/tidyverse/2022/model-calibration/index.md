@@ -13,7 +13,6 @@ photo:
   url: https://unsplash.com/photos/s3B_pjK7UIs
   author: Graphic Node
 
-categories: [package]
 tags: [model, plots]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["probably", "tidymodels"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 <!--

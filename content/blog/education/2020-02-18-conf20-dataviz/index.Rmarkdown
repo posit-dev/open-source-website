@@ -5,7 +5,6 @@ author:
 people:
   - Kieran Healy
 date: '2020-02-18'
-categories: [learn, teach]
 tags: [conf2020]
 slug: conf20-dataviz
 description: |
@@ -18,6 +17,11 @@ ported_from: education
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - teach
 ---
 
 > tl;dr: all workshop materials are available here: <br>

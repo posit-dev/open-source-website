@@ -9,9 +9,6 @@ people:
   - Allison Horst
   - Kristen Gorman
 date: '2020-07-27'
-categories:
-  - learn
-  - package
 description: |
   The palmerpenguins data package is now on CRAN! Here are some examples to highlight why it is a great replacement for the iris dataset.
 slug: palmerpenguins-cran
@@ -22,6 +19,11 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - package
 ---
 
 ```{r knitr-ops, include = FALSE}

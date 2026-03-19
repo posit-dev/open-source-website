@@ -3,18 +3,19 @@ title: testthat 1.0.0
 people:
   - Hadley Wickham
 date: '2016-04-29'
-categories:
-- Packages
 slug: testthat-1-0-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["testthat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Packages
 ---
 
 

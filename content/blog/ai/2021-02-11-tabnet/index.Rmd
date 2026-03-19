@@ -9,7 +9,11 @@ author:
 slug: keydanatabnet
 date: 02-11-2021
 bibliography: bibliography.bib
+preview: images/d.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Torch
   - R
   - Tabular Data

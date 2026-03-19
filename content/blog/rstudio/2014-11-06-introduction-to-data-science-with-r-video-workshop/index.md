@@ -3,9 +3,6 @@ title: Introduction to Data Science with R video workshop
 people:
   - Garrett Grolemund
 date: '2014-11-06'
-categories:
-- News
-- Training
 slug: introduction-to-data-science-with-r-video-workshop
 blogcategories:
 - Training and Education
@@ -13,6 +10,11 @@ blogcategories:
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+categories:
+  - MLOps & Admin
+ported_categories:
+  - News
+  - Training
 ---
 
 

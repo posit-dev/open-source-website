@@ -6,8 +6,6 @@ date: '2018-12-26'
 slug: textrecipes-0-0-1
 description: >
     textrecipes 0.0.1 is now on CRAN!
-categories:
-  - package
 tags:
   - textrecipes
   - tidymodels
@@ -19,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "textrecipes", "tidymodels"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

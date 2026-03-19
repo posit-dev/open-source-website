@@ -7,8 +7,6 @@ slug: r-version-support
 output: hugodown::hugo_document
 description: >
     Which versions of R do tidyverse packages support?
-categories:
-  - other
 photo:
   url: https://unsplash.com/photos/GSCtoEEqntQ
   author: Ralph Howald
@@ -16,6 +14,10 @@ image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - other
 ---
 
 ## Which versions of R do tidyverse packages support? 

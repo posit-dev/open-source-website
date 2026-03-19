@@ -11,13 +11,15 @@ bibliography: bibliography.bib
 date: 2019-04-16
 creative_commons: CC BY
 repository_url: https://github.com/jcrodriguez1989/tf_blog_autokeras
-categories:
-  - TensorFlow/Keras
-  - Packages/Releases
 preview: images/thumbnail.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Packages/Releases
 ---
 
 ```{r}

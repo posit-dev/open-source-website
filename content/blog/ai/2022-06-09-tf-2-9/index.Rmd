@@ -8,10 +8,6 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: kalinowskitf29
 date: 2022-06-09
-categories:
-  - TensorFlow/Keras
-  - Packages/Releases
-  - R
 editor_options:
   markdown:
     wrap: 72
@@ -19,6 +15,12 @@ preview: images/chameleon.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Packages/Releases
+  - R
 ---
 
 ```{r setup, include=FALSE}

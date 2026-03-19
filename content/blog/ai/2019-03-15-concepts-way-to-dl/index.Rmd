@@ -8,13 +8,15 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2019mathcodeconcepts
 date: 03-15-2019
-categories:
-  - Meta
-  - Concepts
 preview: images/prev.jpg
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Meta
+  - Concepts
 ---
 
 

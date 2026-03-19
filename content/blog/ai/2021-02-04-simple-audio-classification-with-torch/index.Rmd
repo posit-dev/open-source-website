@@ -8,15 +8,17 @@ author:
     affiliation_url: https://curso-r.com/
 slug: athossimpleaudioclassification
 date: 02-04-2021
-categories:
-  - Torch
-  - R
-  - Audio Processing
 preview: images/preview.jpg
 editor_options: 
   chunk_output_type: console
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
+  - Audio Processing
 ---
 
 

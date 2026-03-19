@@ -5,9 +5,6 @@ description: >
   Presentations, Dashboards, and PDFs with Quarto; and Extending Quarto. The
   materials from both workshops are freely available for anyone to learn from or
   use in their own teaching.
-categories:
-  - Learn
-  - Workshop
 people:
   - Charlotte Wickham
 date: '2025-10-27'
@@ -17,6 +14,12 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+  - Community
+ported_categories:
+  - Learn
+  - Workshop
 ---
 
 

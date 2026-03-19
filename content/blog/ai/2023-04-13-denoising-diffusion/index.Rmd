@@ -12,17 +12,19 @@ author:
 slug: falbelkeydiffusion
 date: 2023-04-13
 bibliography: references.bib
-categories:
-  - Torch
-  - R
-  - Image Recognition & Image Processing
-  - Generative Models
 preview: images/flowers.png
 editor_options: 
   markdown: 
     wrap: 72
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
+  - Image Recognition & Image Processing
+  - Generative Models
 ---
 
 ```{r setup, include=FALSE}

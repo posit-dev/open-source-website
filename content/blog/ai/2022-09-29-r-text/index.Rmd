@@ -15,15 +15,17 @@ author:
     url: https://www3.cs.stonybrook.edu/~has/
     affiliation: Stony Brook University
     affiliation_url: https://www3.cs.stonybrook.edu/~has/
-categories:
-  - Natural Language Processing
-  - R
 date: 10-04-2022
 creative_commons: CC BY
 repository_url: https://github.com/OscarKjell/ai-blog
 preview: img/ai_blog_word_plot.png
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Natural Language Processing
+  - R
 ---
 
 ```{r setup, include=FALSE}

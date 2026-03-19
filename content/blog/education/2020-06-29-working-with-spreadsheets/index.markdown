@@ -18,6 +18,9 @@ ported_from: education
 port_status: in-progress
 software: ["readxl"]
 languages: ["R"]
+categories:
+  - Community
+  - Data Wrangling
 ---
 
 Fancy algorithms, lots of code, and beautiful visualizations

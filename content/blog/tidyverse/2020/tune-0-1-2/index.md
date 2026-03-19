@@ -13,13 +13,16 @@ photo:
   author: Leo Wieling
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
 tags: [tidymodels,workflows,tune]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "workflows", "tune"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 <!--

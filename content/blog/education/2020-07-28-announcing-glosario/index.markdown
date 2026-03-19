@@ -11,9 +11,6 @@ people:
   - Zhian Kamvar
   - Greg Wilson
 date: '2020-07-28'
-categories:
-  - learn
-  - package
 tags:
   - glosario
 description: |
@@ -25,6 +22,11 @@ photo:
 image: announcing-glosario-wd.jpg
 ported_from: education
 port_status: in-progress
+categories:
+  - Community
+ported_categories:
+  - learn
+  - package
 ---
 
 [`glosario`](https://github.com/carpentries/glosario) is an open source glossary of terms used in data science

@@ -6,8 +6,6 @@ authormeta:
 - carl-howe
 date: '2021-01-06'
 slug: google-analytics-part2
-categories:
-  - Data Science Leadership
 tags:
   - data science
   - dashboards
@@ -21,6 +19,11 @@ blogcategories:
 - Data Science Leadership
 software: ["flexdashboard"]
 languages: ["R"]
+categories:
+  - Visualization
+  - Interactive Apps
+ported_categories:
+  - Data Science Leadership
 ---
 <sup>Photo by <a href="https://unsplash.com/@abiglow?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alan Biglow</a> on <a href="https://unsplash.com/s/photos/tesla-dashboard?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a> </sup>
 

@@ -13,7 +13,6 @@ photo:
   url: https://unsplash.com/photos/brown-and-black-brush-on-brown-wooden-table-V0cSTljC92k
   author: Neal E. Johnson
 
-categories: [package]
 tags: [r-lib, withr]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "withr"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 It's not without jubilant bearing that we announce the release of the 3.0.0 version of [withr](https://withr.r-lib.org/), the tidyverse solution for automatic cleanup of resources! In this release, the internals of withr were rewritten to improve the performance and increase the compatibility with base R's [`on.exit()`](https://rdrr.io/r/base/on.exit.html) mechanism.

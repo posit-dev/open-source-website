@@ -8,11 +8,13 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanasurvey2021
 date: 02-17-2021
-categories:
-  - Meta
-  - R
 preview: images/preview.jpg
 format: hugo-md
+categories:
+  - Community
+ported_categories:
+  - Meta
+  - R
 ---
 
 ```{r setup, include=FALSE}

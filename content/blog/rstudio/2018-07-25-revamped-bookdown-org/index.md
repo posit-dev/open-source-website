@@ -3,9 +3,6 @@ title: The Revamped bookdown.org Website
 people:
   - Yihui Xie
 date: '2018-07-25'
-categories:
-- News
-- R Markdown
 tags:
 - bookdown
 - website
@@ -19,6 +16,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["bookdown"]
 languages: ["R"]
+categories:
+  - Publishing
+ported_categories:
+  - News
+  - R Markdown
 ---
 
 

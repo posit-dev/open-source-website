@@ -14,7 +14,6 @@ photo:
   author: Sergey Shmidt
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
 tags: [tidymodels, censored, workflows, workflowsets]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "censored", "workflows", "workflowsets"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - roundup
 ---
 
 <!--

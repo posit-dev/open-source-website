@@ -8,13 +8,16 @@ author:
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com
 date: 01-10-2018
-categories:
-  - Cloud
-  - Packages/Releases
 preview: images/cloudml.png
 format: hugo-md
 software: ["cloudml", "keras3", "tfestimators", "tensorflow"]
 languages: ["R"]
+categories:
+  - Machine Learning
+  - MLOps & Admin
+ported_categories:
+  - Cloud
+  - Packages/Releases
 ---
 
 ```{r setup, include=FALSE}

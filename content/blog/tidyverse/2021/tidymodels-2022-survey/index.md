@@ -14,13 +14,16 @@ photo:
   author: Djim Loic
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [other] 
 tags: [survey,tidymodels]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - other
 ---
 
 In 2020, we created a survey to get community input on how we prioritize our projects. [The results](https://connect.rstudioservices.com/tidymodels-priorities-survey/README.html) gave us a good sense of which items people were most interested in. The top three requests were:

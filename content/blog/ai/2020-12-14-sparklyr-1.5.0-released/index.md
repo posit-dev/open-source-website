@@ -4,10 +4,6 @@ description: |
   Unlike all three previous sparklyr releases, the recent release of sparklyr 1.5 placed much more emphasis on enhancing existing sparklyr features rather than creating new ones. As a result, many valuable suggestions from sparklyr users were taken into account and were successfully addressed in a long list of bug fixes and improvements.
 date: 2020-12-14
 slug: sparklyr-1.5
-categories:
-  - R
-  - Packages/Releases
-  - Distributed Computing
 author:
   - name: Yitao Li
     url: https://github.com/yitao-li
@@ -20,6 +16,12 @@ image-alt: "A hollywood star with the text 'sparklyr 1.5'"
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - MLOps & Admin
+ported_categories:
+  - R
+  - Packages/Releases
+  - Distributed Computing
 ---
 
 

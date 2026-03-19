@@ -8,7 +8,13 @@ author:
     affiliation_url: https://www.posit.co/
 slug: keydanagcnn3
 date: 2023-05-09
+bibliography: references.bib
+preview: images/preview.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+  - Best Practices
+ported_categories:
   - Torch
   - R
   - Concepts

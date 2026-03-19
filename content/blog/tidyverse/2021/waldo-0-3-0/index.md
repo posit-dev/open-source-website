@@ -15,7 +15,6 @@ photo:
   author: NordWood Themes
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package, programming] 
 tags: [testthat, waldo]
 
 image: thumbnail-wd.jpg
@@ -23,6 +22,11 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat", "waldo"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
+  - programming
 ---
 
 <!--

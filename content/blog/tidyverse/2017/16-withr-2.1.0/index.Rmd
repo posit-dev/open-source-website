@@ -4,7 +4,6 @@ date: '2017-11-16'
 slug: withr-2.1.0
 people:
   - Jim Hester
-categories: [package]
 description: >
   withr 2.1.0 is now available on CRAN.
 photo:
@@ -15,6 +14,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "withr"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

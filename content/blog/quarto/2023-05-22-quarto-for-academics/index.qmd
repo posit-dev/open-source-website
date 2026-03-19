@@ -3,8 +3,6 @@ title: Quarto for Academics
 subtitle: A potpourri of Quarto features useful for academics
 description: |
   A video highlighting some of Quarto's features that are especially useful for academics, as educators and as researchers.
-categories:
-  - Learn
 people:
   - Mine Çetinkaya-Rundel
 date: "2023-05-22"
@@ -14,6 +12,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+  - Community
+ported_categories:
+  - Learn
 ---
 
 Quarto offers a myriad of features that are especially useful for academics, as educators and as researchers. These range from chunk options that enable automatic linking of code to documentation, to article templates for manuscript submission to multiple journals. The following video walks you through some of these features.

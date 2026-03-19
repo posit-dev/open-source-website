@@ -6,10 +6,6 @@ description: >
   In this post, I'll teach you the basics of GitHub Codespaces and how to use
   them to make it easier to teach using Quarto.
 date: '2025-05-19'
-categories:
-  - GitHub Codespaces
-  - Teaching
-  - Dev Container
 image: featured.png
 image-alt: |
   Quarto icon and text above GitHub Codespaces.
@@ -17,6 +13,12 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - GitHub Codespaces
+  - Teaching
+  - Dev Container
 ---
 
 

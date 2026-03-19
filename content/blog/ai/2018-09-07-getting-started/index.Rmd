@@ -8,12 +8,14 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2018gettingstarted
 date: 09-07-2018
-categories:
-  - TensorFlow/Keras
 preview: images/digits.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
 ---
 
 

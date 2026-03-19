@@ -14,7 +14,6 @@ photo:
   author: Thomas Lin Pedersen
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [programming] 
 tags: [ggplot2, off-label]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - programming
 ---
 
 <!--

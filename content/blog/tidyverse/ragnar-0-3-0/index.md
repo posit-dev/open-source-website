@@ -11,12 +11,15 @@ image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/a-bunch-of-vegetables-being-washed-in-a-machine-72Xh7lH72k0
   author: wei
-categories: [package]
 tags: [ragnar, ai]
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragnar"]
 languages: ["R"]
+categories:
+  - Artificial Intelligence
+ported_categories:
+  - package
 ---
 
 # ragnar 0.3.0

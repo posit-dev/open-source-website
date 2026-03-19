@@ -15,7 +15,6 @@ photo:
   author: Declan Sun
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
 tags: [webr, webassembly, wasm, shiny, shinylive]
 
 image: thumbnail-wd.jpg
@@ -23,6 +22,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "shiny-r", "shinylive"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - roundup
 ---
 
 <!--

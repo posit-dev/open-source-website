@@ -8,14 +8,17 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchwavelets
 date: 2022-10-27
-categories:
-  - Torch
-  - R
-  - Concepts
 bibliography: bibliography.bib
 preview: images/squirrel.jpg
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+  - Best Practices
+ported_categories:
+  - Torch
+  - R
+  - Concepts
 ---
 
 ```{r setup, include=FALSE}

@@ -10,6 +10,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["querychat", "shiny-python", "shiny-r", "chatlas", "ellmer"]
 languages: ["R", "Python"]
+categories:
+  - Interactive Apps
 ---
 
 

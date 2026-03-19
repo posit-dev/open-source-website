@@ -11,6 +11,10 @@ slug: styler-1-2-0
 categories: ["package"]
 software: ["tidyverse", "styler"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

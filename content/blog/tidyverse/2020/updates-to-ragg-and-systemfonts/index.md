@@ -6,8 +6,6 @@ people:
   - Thomas Lin Pedersen
 date: '2020-05-15'
 slug: updates-to-ragg-and-systemfonts
-categories:
-- package
 tags:
 - ragg
 - systemfonts
@@ -21,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg", "systemfonts"]
 languages: ["R"]
+categories:
+  - Visualization
+ported_categories:
+  - package
 ---
 
 

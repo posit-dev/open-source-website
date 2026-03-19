@@ -17,6 +17,9 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+  - Best Practices
 ---
 
 This is a story about one of my favorite topics: [Cloud-Based Data Science](https://www.clouddatascience.org/). We'll talk about what it is, its development history, and a _few_ associated pain points. Ultimately, I'm writing this so that I can propose a dream platform for online educational content that learns from our mistakes/ experience, in not-so-secret hopes that someone else builds it.

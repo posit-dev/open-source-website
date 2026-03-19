@@ -3,8 +3,6 @@ title: Welcome Hadley, Winston, and Garrett!
 people:
   - RStudio Team
 date: '2012-08-20'
-categories:
-- News
 slug: welcome-hadley-winston-and-garrett
 blogcategories:
 - Company News and Events
@@ -12,6 +10,10 @@ blogcategories:
 nohero: true
 ported_from: rstudio
 port_status: in-progress
+categories:
+  - Community
+ported_categories:
+  - News
 ---
 
 

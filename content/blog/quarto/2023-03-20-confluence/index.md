@@ -4,10 +4,6 @@ subtitle: Publish from Quarto to Confluence
 description: >
   Quarto 1.3 adds support for publishing individual documents, and projects
   containing many documents to Atlassian Confluence.
-categories:
-  - Features
-  - Authoring
-  - Quarto 1.3
 people:
   - Charlotte Wickham
 date: '2023-03-20'
@@ -17,6 +13,12 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Features
+  - Authoring
+  - Quarto 1.3
 ---
 
 

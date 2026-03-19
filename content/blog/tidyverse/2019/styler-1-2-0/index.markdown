@@ -9,7 +9,6 @@ photo:
   author: Heng Films
   url: https://unsplash.com/photos/mpdIPhYqZ4Y
 slug: styler-1-2-0
-categories: ["package"]
 tags:
   - styler
   - r-lib
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "styler"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

@@ -5,13 +5,15 @@ date: '2018-12-26'
 slug: textrecipes-0-0-1
 description: >
     textrecipes 0.0.1 is now on CRAN!
-categories:
-  - package
 photo:
   url: https://unsplash.com/photos/X1exjxxBho4
   author: Roman Kraft
 software: ["tidyverse", "textrecipes", "tidymodels"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

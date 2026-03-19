@@ -11,7 +11,10 @@ date: 01-24-2018
 creative_commons: null
 repository_url: https://github.com/rdrr1990/kms4tf/
 preview: images/densities-1.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - TensorFlow/Keras
   - Natural Language Processing
 format: hugo-md

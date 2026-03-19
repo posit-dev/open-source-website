@@ -3,8 +3,6 @@ title: New R Markdown articles section, plus .Rmd to .docx super powers!
 people:
   - Garrett Grolemund
 date: '2015-07-22'
-categories:
-- R Markdown
 tags:
 - Article
 - R Markdown
@@ -16,6 +14,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+categories:
+  - Publishing
+ported_categories:
+  - R Markdown
 ---
 
 

@@ -6,7 +6,6 @@ people:
 description: >
   gmailr v1.0.0 is on CRAN.
 date: '2019-08-26'
-categories: [package]
 tags:
   - gmailr
   - r-lib
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "gmailr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 

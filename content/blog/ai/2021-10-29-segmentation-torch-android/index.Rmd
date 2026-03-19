@@ -9,7 +9,11 @@ author:
 slug: keydanasegmentationtorchandroid
 date: 10-29-2021
 bibliography: bibliography.bib
+preview: images/segmentation_android.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Torch
   - Image Recognition & Image Processing
   - R

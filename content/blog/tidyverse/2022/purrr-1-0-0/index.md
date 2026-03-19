@@ -16,7 +16,6 @@ photo:
   author: Jari Hytönen
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [purrr]
 
 image: thumbnail-wd.jpg
@@ -24,6 +23,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "purrr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <!--

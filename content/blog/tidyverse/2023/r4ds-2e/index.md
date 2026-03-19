@@ -13,7 +13,6 @@ photo:
   author: Colin Rundel
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn] 
 tags: [book]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 <!--

@@ -9,13 +9,16 @@ author:
     affiliation_url: https://www.posit.co/
 slug: keydanallm
 date: 2023-06-20
-categories:
-  - Meta
-  - Concepts
-  - Natural Language Processing
 bibliography: references.bib
 preview: images/preview.jpg
 format: hugo-md
+categories:
+  - Best Practices
+  - Artificial Intelligence
+ported_categories:
+  - Meta
+  - Concepts
+  - Natural Language Processing
 ---
 
 ```{r setup, include=FALSE}

@@ -16,7 +16,6 @@ photo:
   author: Alexander Grey
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
 tags: [webr, quarto]
 
 image: thumbnail-wd.jpg
@@ -24,6 +23,11 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "quarto"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+  - Publishing
+ported_categories:
+  - roundup
 ---
 
 <!--

@@ -9,18 +9,19 @@ slug: great-looking-tables-gt-0-2
 output:
   md_document:
     preserve_yaml: yes
-categories:
-- Packages
 tags:
 - news
 - packages
 - rmarkdown
-- Packages
 blogcategories:
 - Products and Technology
 - Open Source
 software: ["rmarkdown"]
 languages: ["R"]
+ported_categories:
+  - Packages
+categories:
+  - Visualization
 ---
 
 

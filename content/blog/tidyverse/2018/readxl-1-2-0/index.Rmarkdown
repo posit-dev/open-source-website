@@ -9,6 +9,8 @@ photo:
   url: https://twitter.com/Thoughtfulnz/status/987900521309614080
   author: David Hood
 categories:
+  - Data Wrangling
+ported_categories:
   - package
 software: ["tidyverse", "readxl"]
 languages: ["R"]

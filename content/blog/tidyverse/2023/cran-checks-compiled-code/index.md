@@ -15,12 +15,17 @@ photo:
   author: Quino Al
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn, programming]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+  - Best Practices
+ported_categories:
+  - learn
+  - programming
 ---
 
 <!--

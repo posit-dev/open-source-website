@@ -3,21 +3,22 @@ title: Shiny 0.13.0
 people:
   - Winston Chang
 date: '2016-01-20'
-categories:
-- News
-- Packages
-- Shiny
 slug: shiny-0-13-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - News
+  - Packages
+  - Shiny
 ---
 
 

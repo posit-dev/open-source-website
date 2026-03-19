@@ -5,13 +5,15 @@ date: '2019-06-16'
 slug: ggplot2-3-2-0
 description: > 
   ggplot2 3.2.0 is now on CRAN!
-categories:
-  - package
 photo:
   url: https://unsplash.com/photos/eH_ftJYhaTY
   author: chuttersnap
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+categories:
+  - Visualization
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

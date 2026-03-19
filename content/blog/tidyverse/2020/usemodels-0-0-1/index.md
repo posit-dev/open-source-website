@@ -13,13 +13,16 @@ photo:
   url: https://unsplash.com/photos/0TH1H1rq_eY
   author: Neven Krcmarek
 
-categories: [package] 
 tags: [tidymodels,parsnip,recipes,tune]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "recipes", "tune"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

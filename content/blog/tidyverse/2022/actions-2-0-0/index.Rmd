@@ -15,7 +15,6 @@ photo:
   author: Ronaldo Galeano
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [programming] 
 tags: ["GitHub Actions"]
 editor_options:
   markdown:
@@ -25,6 +24,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["actions"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - programming
 ---
 
 ```{=html}

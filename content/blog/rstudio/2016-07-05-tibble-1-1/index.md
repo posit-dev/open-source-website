@@ -3,20 +3,21 @@ title: tibble 1.1
 people:
   - Hadley Wickham
 date: '2016-07-05'
-categories:
-- Packages
-- tidyverse
 slug: tibble-1-1
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
+  - tidyverse
 ---
 
 

@@ -5,13 +5,15 @@ date: '2019-06-27'
 slug: rlang-0-4-0
 description: >
   rlang 0.4.0 is now on CRAN!
-categories:
-  - package
 photo:
   url: https://unsplash.com/photos/ar7ZWQ-r87g
   author: Caitlin Wynne
 software: ["tidyverse", "rlang"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

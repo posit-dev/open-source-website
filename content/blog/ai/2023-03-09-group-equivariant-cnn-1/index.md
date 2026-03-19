@@ -4,11 +4,6 @@ description: |
   In this first in a series of posts on group-equivariant convolutional neural networks (GCNNs), meet the main actors — groups — and concepts (equivariance). With GCNNs, we finally revisit the topic of Geometric Deep Learning, a principled, math-driven approach to neural networks that has consistently been rising in scope and impact.
 date: 2023-03-09T00:00:00.000Z
 slug: keydanagcnn1
-categories:
-  - Torch
-  - R
-  - Spatial Data
-  - Concepts
 author:
   - name: Sigrid Keydana
     affiliation: Posit
@@ -20,6 +15,14 @@ image-alt: "Field of wheat"
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Machine Learning
+  - Best Practices
+ported_categories:
+  - Torch
+  - R
+  - Spatial Data
+  - Concepts
 ---
 
 

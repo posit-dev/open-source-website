@@ -3,14 +3,16 @@ title: Where in the world is R and RStudio
 people:
   - Hadley Wickham
 date: '2012-10-01'
-categories:
-- News
 slug: where-in-the-world
 blogcategories:
 - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - News
 ---
 
 

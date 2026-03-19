@@ -4,7 +4,6 @@ date: 2018-10-30
 slug: devtools-2-0-0
 people:
   - Jim Hester
-categories: [package]
 tags:
   - devtools
   - r-lib
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ## Introduction

@@ -3,7 +3,6 @@ title: Tidy evaluation in ggplot2
 date: '2018-07-24'
 slug: ggplot2-tidy-evaluation
 author: Mara Averick
-categories: [package]
 description: >
   Using tidy evaluation in ggplot2 3.0.0.
 photo:
@@ -11,6 +10,11 @@ photo:
   author: Christopher Burns
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+categories:
+  - Visualization
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

@@ -8,7 +8,11 @@ author:
     affiliation_url: https://www.posit.co/
 slug: keydanagcnn1
 date: 2023-03-27
+preview: images/preview.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Torch
   - R
   - Spatial Data

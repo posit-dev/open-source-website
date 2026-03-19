@@ -3,8 +3,6 @@ title: Supporting the Carpentries
 people:
   - greg
 date: '2020-12-07'
-categories:
-  - community
 tags:
   - community
 description: |
@@ -17,6 +15,10 @@ image: carpentries-support-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - community
 ---
 
 [The Carpentries](https://carpentries.org) is a volunteer organization

@@ -16,7 +16,6 @@ photo:
   author: Adi Goldstein
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [roxygen2]
 
 image: thumbnail-wd.jpg
@@ -24,6 +23,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "roxygen2"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 <!--

@@ -4,8 +4,6 @@ people:
   - Mara Averick
 date: '2018-08-09'
 slug: ggplot2-community-posts
-categories:
-  - other
 tags:
   - ggplot2
   - tidyverse
@@ -19,6 +17,11 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+categories:
+  - Visualization
+  - Community
+ported_categories:
+  - other
 ---
 
 ggplot2 3.0.0 has more changes and features than we could possibly cover in our [release announcement](https://www.tidyverse.org/articles/2018/07/ggplot2-3-0-0/#new-features). So, we asked you (the community) to share _your_ posts with us during the month following its release. 

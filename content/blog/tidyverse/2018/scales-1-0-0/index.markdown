@@ -6,8 +6,6 @@ date: '2018-08-09'
 slug: scales-1-0-0
 description: >
   scales 1.0.0 is now on CRAN.
-categories:
-  - package
 photo:
   url: https://unsplash.com/photos/3kzlCL3rj8A
   author: Ricardo Gomez Angel
@@ -20,6 +18,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "scales", "ggplot2"]
 languages: ["R"]
+categories:
+  - Visualization
+ported_categories:
+  - package
 ---
 
 

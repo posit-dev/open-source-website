@@ -11,6 +11,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["py-shinyswatch"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

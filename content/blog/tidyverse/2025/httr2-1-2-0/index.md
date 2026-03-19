@@ -15,7 +15,6 @@ photo:
   author: chatGPT
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [httr2]
 
 image: thumbnail-wd.jpg
@@ -23,6 +22,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "httr2"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <!--

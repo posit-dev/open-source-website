@@ -14,7 +14,6 @@ photo:
   author: Dihn Pham
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package]
 tags: [patchwork, gt, ggplot2]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "gt", "ggplot2"]
 languages: ["R"]
+categories:
+  - Visualization
+ported_categories:
+  - package
 ---
 
 <!--

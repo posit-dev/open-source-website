@@ -13,13 +13,16 @@ photo:
   author: DALL·E 2
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [deep-dive]
 tags: [webr, webassembly, wasm]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - deep-dive
 ---
 
 <!--

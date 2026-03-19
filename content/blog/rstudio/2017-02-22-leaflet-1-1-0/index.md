@@ -3,18 +3,20 @@ title: leaflet 1.1.0
 people:
   - Joe Cheng
 date: '2017-02-22'
-categories:
-- Packages
 slug: leaflet-1-1-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]
+categories:
+  - Visualization
+  - Interactive Apps
+ported_categories:
+  - Packages
 ---
 
 

@@ -13,13 +13,16 @@ photo:
   author: American Heritage Chocolate
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
 tags: [tidymodels, recipes]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 <!--

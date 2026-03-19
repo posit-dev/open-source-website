@@ -3,7 +3,6 @@ title: parsnip
 date: 2018-11-28
 slug: parsnip-0-0-1
 author: Max Kuhn
-categories: [package]
 description: >
     A tidy unified interface to models
 photo:
@@ -11,6 +10,10 @@ photo:
   author: rawpixel
 software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

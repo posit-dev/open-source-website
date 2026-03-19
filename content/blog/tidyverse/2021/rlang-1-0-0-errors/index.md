@@ -12,7 +12,6 @@ photo:
   url: https://unsplash.com/photos/-eDpBjt6UL0
   author: Bryan Goff
 
-categories: [package]
 tags: []
 
 image: thumbnail-wd.jpg
@@ -20,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["rlang", "cli"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 <!--

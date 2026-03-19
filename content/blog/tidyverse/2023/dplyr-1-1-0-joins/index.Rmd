@@ -12,7 +12,6 @@ description: >
 photo:
   url: https://unsplash.com/photos/Cecb0_8Hx-o
   author: Duy Pham
-categories: [package] 
 tags: [dplyr, dplyr-1-1-0]
 editor_options: 
   chunk_output_type: console
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110) is out now!

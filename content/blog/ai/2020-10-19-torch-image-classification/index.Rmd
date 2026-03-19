@@ -8,14 +8,16 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchimageclassification
 date: 10-19-2020
-categories:
-  - Torch
-  - R
-  - Image Recognition & Image Processing
 bibliography: bibliography.bib
 preview: images/image_classif_birds.png
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
+  - Image Recognition & Image Processing
 ---
 
 ```{r setup, include=FALSE}

@@ -3,18 +3,19 @@ title: devtools 1.4 now available
 people:
   - Hadley Wickham
 date: '2013-11-27'
-categories:
-- Packages
 slug: devtools-1-4
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["devtools"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Packages
 ---
 
 

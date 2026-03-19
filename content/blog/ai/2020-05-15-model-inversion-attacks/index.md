@@ -4,10 +4,6 @@ description: |
   Compared to other applications, deep learning models might not seem too likely as victims of privacy attacks. However, methods exist to determine whether an entity was used in the training set (an adversarial attack called member inference), and techniques subsumed under "model inversion" allow to reconstruct raw data input given just model output (and sometimes, context information). This post shows an end-to-end example of model inversion, and explores mitigation strategies using TensorFlow Privacy.
 date: 2020-05-15
 slug: keydanamodelinversion
-categories:
-  - R
-  - Privacy & Security
-  - TensorFlow/Keras
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -19,6 +15,12 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - R
+  - Privacy & Security
+  - TensorFlow/Keras
 ---
 
 

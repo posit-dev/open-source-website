@@ -5,10 +5,6 @@ description: >
   This post provides an overview of these capabilities in Quarto. For more
   detail about all the features Quarto for authoring tables, see
   [Tables](https://quarto.org/docs/authoring/tables.html).
-categories:
-  - Features
-  - Authoring
-  - Tables
 people:
   - JJ Allaire
 date: '2022-02-15'
@@ -20,6 +16,12 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Features
+  - Authoring
+  - Tables
 ---
 
 

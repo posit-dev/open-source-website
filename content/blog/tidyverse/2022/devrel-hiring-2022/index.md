@@ -13,12 +13,15 @@ photo:
   author: 2y.kang
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [other] 
 tags: [hiring]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+categories:
+  - Community
+ported_categories:
+  - other
 ---
 
 <!--

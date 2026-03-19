@@ -3,18 +3,19 @@ title: 'rvest: easy web scraping with R'
 people:
   - Hadley Wickham
 date: '2014-11-24'
-categories:
-- Packages
 slug: rvest-easy-web-scraping-with-r
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["rvest"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

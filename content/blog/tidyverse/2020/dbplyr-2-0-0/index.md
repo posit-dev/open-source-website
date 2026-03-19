@@ -15,7 +15,6 @@ photo:
   url: https://unsplash.com/photos/r2A6WYI8YIg
   author: Shawn Ang
 
-categories: [package] 
 tags: [dbplyr, dplyr]
 
 image: thumbnail-wd.jpg
@@ -23,6 +22,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 We're pleased to announce the release of [dbplyr](https://dbplyr.tidyverse.org/) 2.0.0. dbplyr is a database backend for [dplyr](https://dplyr.tidyverse.org/) that allows you to use a remote database as if it was a collection of local data frames: you write ordinary dplyr code and dbplyr translates it to SQL for you.

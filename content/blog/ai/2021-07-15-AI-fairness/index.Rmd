@@ -9,16 +9,18 @@ author:
 slug: keydanafairnessmetrics
 date: 07-15-2021
 bibliography: bibliography.bib
-categories:
-  - R
-  - Concepts
-  - Meta
-  - AI & Society
 preview: images/preview.jpg
 editor_options: 
   markdown: 
     wrap: 72
 format: hugo-md
+categories:
+  - Best Practices
+ported_categories:
+  - R
+  - Concepts
+  - Meta
+  - AI & Society
 ---
 
 ```{r setup, include=FALSE}

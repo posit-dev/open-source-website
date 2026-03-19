@@ -6,8 +6,6 @@ people:
   - Robby Shaver
   - Pete Knast
 date: '2020-07-14'
-categories:
-  - teach
 tags:
   - rstudio-cloud
 slug: cloud-plans
@@ -20,6 +18,10 @@ image: clouds-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - teach
 ---
 
 > RStudio Cloud spans across multiple teams at RStudio, so this is a joint post from the RStudio education, marketing, and Cloud teams.

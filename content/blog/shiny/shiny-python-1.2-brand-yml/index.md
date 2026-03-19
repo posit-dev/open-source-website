@@ -11,6 +11,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "brand-yml"]
 languages: ["Python"]
+categories:
+  - Interactive Apps
 ---
 
 

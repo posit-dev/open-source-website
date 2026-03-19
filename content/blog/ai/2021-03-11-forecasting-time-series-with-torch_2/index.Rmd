@@ -8,7 +8,11 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchts2
 date: 03-11-2021
+preview: images/preview.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Torch
   - R
   - Time Series

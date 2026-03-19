@@ -13,13 +13,16 @@ photo:
   author:  Simon Spieske
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
 tags: [tidymodels, agua, recipes, h2o]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - roundup
 ---
 
 

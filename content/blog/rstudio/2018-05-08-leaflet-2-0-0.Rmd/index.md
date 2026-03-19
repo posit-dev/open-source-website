@@ -4,13 +4,9 @@ people:
   - Barret Schloerke
 date: '2018-05-10'
 slug: leaflet-2-0-0
-categories:
-- Packages
 tags:
 - leaflet
 - data visualization
-- Packages
-- Packages
 editor_options:
   chunk_output_type: console
 blogcategories:
@@ -19,6 +15,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]
+categories:
+  - Visualization
+  - Interactive Apps
+ported_categories:
+  - Packages
 ---
 
 [leaflet](http://rstudio.github.io/leaflet/) 2.0.0 is now on CRAN!

@@ -9,14 +9,16 @@ description: |
 photo:
   url: https://unsplash.com/photos/mngnzwHi0yo
   author: Charles Etoroma
-categories: 
-  - teach
-  - certify
 tags: ["instructor training"]
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - teach
+  - certify
 ---
 
 I recently became a certified RStudio Instructor in both Shiny and the Tidyverse. I thought I would write a little about the experience. I haven't really had any formal pedagogical training, and having some of the state of the art and evidence-based practices were really helpful in extending my approaches to teaching.

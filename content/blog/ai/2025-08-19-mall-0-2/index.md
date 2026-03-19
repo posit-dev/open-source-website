@@ -4,13 +4,6 @@ description: |
   The mall 0.2.0 update for R and Python introduces support for external LLM providers like OpenAI and Gemini. This version also features parallel processing for R users, the ability to run NLP on string vectors in Python, and a brand new cheatsheet.
 date: 2025-08-19T00:00:00.000Z
 slug: edgarmall02
-categories:
-  - Python
-  - R
-  - LLM
-  - Polars
-  - Natural Language Processing
-  - Tabular Data
 author:
   - name: Edgar Ruiz
     affiliation: Posit
@@ -21,6 +14,16 @@ image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 languages: ["R", "Python"]
+categories:
+  - Artificial Intelligence
+  - Machine Learning
+ported_categories:
+  - Python
+  - R
+  - LLM
+  - Polars
+  - Natural Language Processing
+  - Tabular Data
 ---
 
 

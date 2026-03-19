@@ -3,8 +3,6 @@ title: 'New Shiny article: Style your apps with CSS'
 people:
   - Garrett Grolemund
 date: '2014-05-07'
-categories:
-- Shiny
 tags:
 - Article
 - CSS
@@ -18,6 +16,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Shiny
 ---
 
 

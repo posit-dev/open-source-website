@@ -12,13 +12,15 @@ author:
 slug: falbelkeydana2019featurecols
 date: 07-09-2019
 bibliography: bibliography.bib
-categories:
-  - TensorFlow/Keras
-  - Tabular Data
 preview: images/feature_cols_hier.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Tabular Data
 ---
 
 ```{r setup, include=FALSE}

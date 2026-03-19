@@ -3,18 +3,19 @@ title: dplyr 0.6.0 coming soon!
 people:
   - Hadley Wickham
 date: '2017-04-13'
-categories:
-- Packages
 slug: dplyr-0-6-0-coming-soon
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

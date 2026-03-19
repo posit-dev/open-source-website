@@ -3,18 +3,19 @@ title: Packrat on CRAN
 people:
   - Kevin Ushey
 date: '2014-09-05'
-categories:
-- Packages
 slug: packrat-on-cran
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["packrat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Packages
 ---
 
 

@@ -12,13 +12,16 @@ photo:
   url: https://unsplash.com/photos/black-and-red-pendant-lamp-9rrtd2z5jdg
   author: Jordane Mathieu
 
-categories: [other] 
 tags: [tidymodels, internship]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - other
 ---
 
 We are chuffed once again to offer a summer internship with the tidymodels team. 

@@ -3,18 +3,19 @@ title: Announcing Packrat
 people:
   - Jonathan McPherson
 date: '2013-11-14'
-categories:
-- Packages
 slug: announcing-packrat
 blogcategories:
 - Products and Technology
 tags:
-- Packages
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress
 software: ["packrat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Packages
 ---
 
 

@@ -9,13 +9,15 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: tfhub
 date: 12-18-2019
-categories:
-  - TensorFlow/Keras
-  - Packages/Releases
 preview: images/tfhub.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Packages/Releases
 ---
 
 

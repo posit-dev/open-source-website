@@ -14,7 +14,6 @@ photo:
   author: Marina Zvada
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package]
 tags: [parquet]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["nanoparquet"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <!--

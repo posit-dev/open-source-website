@@ -4,9 +4,6 @@ description: |
   Is society ready to deal with challenges brought about by artificially-generated information - fake images, fake videos, fake text? While this post won't answer that question, it should help form an opinion on the threat exerted by fake text as of this writing, autumn 2019. We introduce gpt2, an R package that wraps OpenAI's public implementation of GPT-2, the language model that early this year surprised the NLP community with the unprecedented quality of its creations.
 date: 2019-10-23
 slug: keydanaluraschi2019gpt2
-categories:
-  - Natural Language Processing
-  - Packages/Releases
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -22,6 +19,11 @@ ported_from: ai
 port_status: in-progress
 software: ["reticulate"]
 languages: ["R"]
+categories:
+  - Artificial Intelligence
+ported_categories:
+  - Natural Language Processing
+  - Packages/Releases
 ---
 
 

@@ -9,12 +9,14 @@ author:
     affiliation_url: https://www.posit.co/
 slug: safetensors
 date: 2023-06-15
-categories:
-  - Packages/Releases
-  - R
 preview: images/nick-fewings-4pZu15OeTXA-unsplash.jpg
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Packages/Releases
+  - R
 ---
 
 ```{r setup, include=FALSE}

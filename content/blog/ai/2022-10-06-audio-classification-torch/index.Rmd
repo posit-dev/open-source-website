@@ -8,14 +8,16 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchaudio
 date: 2022-10-06
-categories:
-  - Torch
-  - R
-  - Audio Processing
 bibliography: bibliography.bib
 preview: images/squirrel.jpg
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
+  - Audio Processing
 ---
 
 ```{r setup, include=FALSE}

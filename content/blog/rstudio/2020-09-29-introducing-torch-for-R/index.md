@@ -4,9 +4,6 @@ people:
   - RStudio Team
 date: '2020-09-29'
 slug: torch
-categories:
-  - Packages
-  - News
 tags:
   - data science
   - deep learning
@@ -24,6 +21,11 @@ blogcategories:
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Packages
+  - News
 ---
 
 

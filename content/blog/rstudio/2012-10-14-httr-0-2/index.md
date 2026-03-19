@@ -3,18 +3,19 @@ title: 'New version of httr: 0.2'
 people:
   - Hadley Wickham
 date: '2012-10-14'
-categories:
-- Packages
 slug: httr-0-2
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["httr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

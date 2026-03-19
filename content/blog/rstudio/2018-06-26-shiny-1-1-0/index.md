@@ -3,13 +3,9 @@ title: 'Shiny 1.1.0: Scaling Shiny with async'
 people:
   - Joe Cheng
 date: '2018-06-26'
-categories:
-- Packages
-- Shiny
 tags:
 - async
 - shiny
-- Packages
 - Shiny
 slug: shiny-1-1-0
 blogcategories:
@@ -19,6 +15,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

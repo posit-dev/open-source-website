@@ -4,11 +4,6 @@ description: |
   A few weeks ago, we showed how to forecast chaotic dynamical systems with deep learning, augmented by a custom constraint derived from domain-specific insight. Global weather is a chaotic system, but of much higher complexity than many tasks commonly addressed with machine and/or deep learning. In this post, we provide a practical introduction featuring a simple deep learning baseline for atmospheric forecasting. While far away from being competitive, it serves to illustrate how more sophisticated and compute-intensive models may approach that formidable task by means of methods situated on the "black-box end" of the continuum.
 date: 2020-09-01
 slug: keydanaweatherforecasting
-categories:
-  - R
-  - TensorFlow/Keras
-  - Time Series
-  - Spatial Data
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -20,6 +15,13 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - R
+  - TensorFlow/Keras
+  - Time Series
+  - Spatial Data
 ---
 
 

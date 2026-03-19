@@ -8,12 +8,14 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanajittracemodule
 date: 08-10-2021
-categories:
-  - Torch
-  - R
 preview: images/preview.jpg
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
 ---
 
 ```{r setup, include=FALSE}

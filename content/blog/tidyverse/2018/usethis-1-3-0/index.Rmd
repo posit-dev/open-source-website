@@ -6,8 +6,6 @@ description: >
 people:
   - Jenny Bryan
 date: 2018-02-25
-categories:
-  - package
 tags: []
 photo:
   url: https://pixabay.com/en/tools-vintage-woodworking-saw-1209764/
@@ -17,6 +15,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "usethis"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

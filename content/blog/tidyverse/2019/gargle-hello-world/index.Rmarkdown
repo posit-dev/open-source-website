@@ -5,7 +5,6 @@ author: Jenny Bryan
 description: >
   gargle is now on CRAN.
 date: '2019-08-20'
-categories: [package]
 tags:
   - gargle
 photo:
@@ -13,6 +12,10 @@ photo:
   author: North Carolina Christian advocate (1894)
 software: ["tidyverse", "gargle"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

@@ -4,9 +4,6 @@ description: |
   Embeddings are not just for use in natural language processing. Here we apply embeddings to a common task in collaborative filtering - predicting user ratings - and on our way, strive for a better understanding of what an embedding layer really does.
 date: 2018-09-26
 slug: keydana2018embeddings-recommender
-categories:
-  - TensorFlow/Keras
-  - Tabular Data
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +15,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Tabular Data
 ---
 
 

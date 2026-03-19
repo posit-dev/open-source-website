@@ -8,14 +8,16 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchts4
 date: 03-19-2021
-categories:
-  - Torch
-  - R
-  - Time Series
 bibliography: bibliography.bib
 preview: images/preview.jpg
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
+  - Time Series
 ---
 
 ```{r setup, include=FALSE}

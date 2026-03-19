@@ -3,8 +3,6 @@ title: Shiny Server (Pro) 1.4.6
 people:
   - Joe Cheng
 date: '2016-09-22'
-categories:
-- Shiny
 tags:
 - Security
 - Shiny
@@ -15,6 +13,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Shiny
 ---
 
 

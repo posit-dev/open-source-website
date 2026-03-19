@@ -5,7 +5,6 @@ slug: generics-0.0.1
 people:
   - Max Kuhn
   - Davis Vaughan
-categories: [package]
 tags:
   - generics
   - r-lib
@@ -19,6 +18,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "generics"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

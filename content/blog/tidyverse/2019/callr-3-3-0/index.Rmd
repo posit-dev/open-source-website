@@ -6,8 +6,6 @@ people:
 date: '2019-07-08'
 description: >
   callr 3.3.0 is now on CRAN
-categories:
-- package
 photo:
   url: https://pixabay.com/photos/venus-flytrap-carnivorous-plant-1531345
   author: MonikaP
@@ -16,6 +14,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "callr"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

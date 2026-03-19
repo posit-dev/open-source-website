@@ -9,14 +9,16 @@ people:
 photo:
   url: https://unsplash.com/photos/dbOV1qSiL-c
   author: Vinicius Amano
-categories:
-- package
-- programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tibble"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
+  - programming
 ---
 
 

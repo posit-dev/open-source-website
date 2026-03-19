@@ -14,7 +14,6 @@ photo:
   author: John Salzarulo
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [learn] 
 tags: [cpp11, internship]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "cpp11"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 <!--

@@ -6,7 +6,6 @@ people:
 description: >
   googledrive v1.0.0 is on CRAN.
 date: '2019-08-20'
-categories: [package]
 tags:
   - googledrive
   - tidyverse
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googledrive"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 

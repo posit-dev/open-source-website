@@ -12,6 +12,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-r", "bslib"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 
 

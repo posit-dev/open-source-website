@@ -9,7 +9,11 @@ author:
 slug: keydanaprivacysyftkeras
 bibliography: bibliography.bib
 date: 04-29-2020
+preview: images/thumb.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - R
   - Privacy & Security
   - TensorFlow/Keras

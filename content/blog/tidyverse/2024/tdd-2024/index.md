@@ -13,7 +13,6 @@ photo:
   url: https://cerebralmastication.com
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [tidyverse-dev-day]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - package
 ---
 
 <!--

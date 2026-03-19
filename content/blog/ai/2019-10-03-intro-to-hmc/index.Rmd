@@ -8,14 +8,16 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2019hmc
 date: 10-03-2019
-categories:
-  - Bayesian Modeling
-  - Concepts
 bibliography: bibliography.bib
 preview: images/mb.png
 format: hugo-md
 software: ["tfprobability"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Bayesian Modeling
+  - Concepts
 ---
 
 ```{r setup, include=FALSE}

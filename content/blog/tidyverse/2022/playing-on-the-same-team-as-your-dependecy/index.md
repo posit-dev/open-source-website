@@ -12,12 +12,15 @@ photo:
   url: https://unsplash.com/photos/G1hIBdjQoAA
   author: Florian Schmetz
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn] 
 tags: []
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 <!--

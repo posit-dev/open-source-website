@@ -15,7 +15,6 @@ photo:
   url: https://unsplash.com/photos/GsZLXA4JPcM
   author: Ricardo Gomez Angel
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [deep-dive] 
 tags: [ggplot2]
 editor_options: 
   markdown: 
@@ -25,6 +24,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - deep-dive
 ---
 
 ```{r setup, include = FALSE}

@@ -18,6 +18,9 @@ image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
+categories:
+  - Interactive Apps
+  - Visualization
 ---
 
 <div class="lt-gray-box">

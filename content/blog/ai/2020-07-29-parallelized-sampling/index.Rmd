@@ -8,14 +8,17 @@ author:
     affiliation_url: https://www.rstudio.com/
 bibliography: bibliography.bib
 date: 07-29-2020
-categories:
-  - Concepts
-  - Distributed Computing
 preview: images/dice.jpg
 header-includes:
    \usepackage{algorithm2e}
 format: hugo-md
 languages: ["R"]
+categories:
+  - Best Practices
+  - MLOps & Admin
+ported_categories:
+  - Concepts
+  - Distributed Computing
 ---
 
 ```{r setup, include=FALSE}

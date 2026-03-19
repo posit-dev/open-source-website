@@ -7,7 +7,13 @@ author:
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com/
 date: 08-24-2020
+bibliography: bibliography.bib
+preview: images/fishing-net.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+  - MLOps & Admin
+ported_categories:
   - R
   - TensorFlow/Keras
   - Distributed Computing

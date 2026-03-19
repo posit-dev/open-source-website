@@ -8,15 +8,17 @@ author:
     affiliation: AccessBank Azerbaijan
     affiliation_url: https://www.accessbank.az/en/
 date: 09-30-2019
-categories:
-  - Natural Language Processing
-  - TensorFlow/Keras
 creative_commons: CC BY
 repository_url: https://github.com/henry090/BERT-from-R
 preview: images/bert.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Natural Language Processing
+  - TensorFlow/Keras
 ---
 
 ```{r setup, include=FALSE}

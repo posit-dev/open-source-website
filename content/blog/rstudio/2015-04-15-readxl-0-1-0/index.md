@@ -3,18 +3,19 @@ title: Get data out of excel and into R with readxl
 people:
   - Hadley Wickham
 date: '2015-04-15'
-categories:
-- Packages
 slug: readxl-0-1-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["readxl"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

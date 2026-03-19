@@ -1,13 +1,15 @@
 ---
 title: ' 2024 Plotnine Contest - Last Call'
 date: '2024-07-22'
-categories:
-  - contest
 image: a-spiky-sunset-at-the-beach.png
 ported_from: plotnine
 port_status: in-progress
 software: ["plotnine"]
 languages: ["Python"]
+categories:
+  - Visualization
+ported_categories:
+  - contest
 ---
 
 

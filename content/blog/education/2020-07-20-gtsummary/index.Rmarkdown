@@ -9,9 +9,6 @@ people:
   - Margie Hannum
   - Karissa Whiting
 date: '2020-07-20'
-categories:
-  - learn
-  - package
 tags:
   - rmarkdown
 description: |
@@ -25,6 +22,11 @@ ported_from: education
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - package
 ---
 
 ```{r setup, include = FALSE}

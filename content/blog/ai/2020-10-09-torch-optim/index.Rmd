@@ -9,13 +9,15 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchoptim
 date: 10-09-2020
-categories:
-  - Torch
-  - R
 bibliography: bibliography.bib
 preview: images/preview.jpg
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
 ---
 
 ```{r setup, include=FALSE}

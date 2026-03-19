@@ -15,7 +15,6 @@ photo:
   author: Natalie Chaney
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [learn, package] 
 tags: [usethis, devtools]
 
 image: thumbnail-wd.jpg
@@ -23,6 +22,11 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "usethis", "devtools"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - package
 ---
 
 Technically, Git has no official concept of the default branch. But in practice, most Git repos have an *effective default branch*. If there's only one branch, this is it! It is the branch that most bug fixes and features get merged in to. It is the branch you see when you first visit a repo on a site such as GitHub. On a Git remote, it is the branch that `HEAD` points to. The default branch may not be precisely defined in Git itself, but most of us know it when we see it.

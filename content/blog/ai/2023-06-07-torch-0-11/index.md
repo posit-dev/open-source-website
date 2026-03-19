@@ -4,10 +4,6 @@ description: |
   torch v0.11.0 is now on CRAN. This release features much-enhanced support for executing JIT operations. We also amended loading of model parameters, and added a few quality-of-life improvements, like support for temporarily modifying the default torch device, support for specifying data types as strings, and many more.
 date: 2023-06-07T00:00:00.000Z
 slug: torch-0-11-0
-categories:
-  - Torch
-  - Packages/Releases
-  - R
 author:
   - name: Daniel Falbel
     affiliation: Posit
@@ -18,6 +14,12 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - Packages/Releases
+  - R
 ---
 
 

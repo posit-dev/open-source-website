@@ -8,14 +8,16 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchoptim
 date: 05-18-2022
-categories:
-  - Torch
-  - R
-  - Packages/Releases
 bibliography: bibliography.bib
 preview: images/petals.png
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
+  - Packages/Releases
 ---
 
 ```{r setup, include=FALSE}

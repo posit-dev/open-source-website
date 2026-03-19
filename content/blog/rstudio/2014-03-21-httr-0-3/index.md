@@ -3,18 +3,19 @@ title: httr 0.3
 people:
   - Hadley Wickham
 date: '2014-03-21'
-categories:
-- Packages
 slug: httr-0-3
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["httr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

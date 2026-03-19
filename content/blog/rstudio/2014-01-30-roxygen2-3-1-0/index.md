@@ -3,18 +3,19 @@ title: roxygen2 3.1.0
 people:
   - Hadley Wickham
 date: '2014-01-30'
-categories:
-- Packages
 slug: roxygen2-3-1-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["roxygen2"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Packages
 ---
 
 

@@ -4,8 +4,6 @@ description: |
   Many fields are benefiting from the use of deep learning, and with the R keras, tensorflow and related packages, you can now easily do state of the art deep learning in R. In this post, we want to give some orientation as to how to best get started.
 date: 2018-09-07
 slug: keydana2018gettingstarted
-categories:
-  - TensorFlow/Keras
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -17,6 +15,10 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
 ---
 
 

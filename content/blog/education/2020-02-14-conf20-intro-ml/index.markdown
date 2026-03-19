@@ -3,7 +3,6 @@ title: Introduction to Machine Learning with the Tidyverse
 people:
   - alison
 date: '2020-02-14'
-categories: [learn, teach]
 tags: [conf2020]
 slug: conf20-intro-ml
 photo:
@@ -16,6 +15,11 @@ ported_from: education
 port_status: in-progress
 software: ["tidymodels"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - teach
 ---
 
 

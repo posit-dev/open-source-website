@@ -11,12 +11,15 @@ description: >
 photo:
   url: https://unsplash.com/photos/NROHA1B-NYk
   author: Mitchell Luo
-categories: [package] 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["reprex"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 We're overjoyed to announce the release of [reprex](https://reprex.tidyverse.org) 2.0.0.

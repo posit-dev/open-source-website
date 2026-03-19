@@ -9,7 +9,11 @@ author:
 bibliography: bibliography.bib
 slug: keydana2018mmdvae
 date: 10-22-2018
+preview: images/thumb.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - TensorFlow/Keras
   - Unsupervised Learning
   - Image Recognition & Image Processing

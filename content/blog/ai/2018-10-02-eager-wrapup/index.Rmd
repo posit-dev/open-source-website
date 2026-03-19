@@ -8,12 +8,14 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2018eager-wrapup
 date: 10-02-2018
-categories:
-  - TensorFlow/Keras
 preview: images/m.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
 ---
 
 ```{r setup, include=FALSE}

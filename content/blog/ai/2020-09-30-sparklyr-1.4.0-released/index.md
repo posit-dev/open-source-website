@@ -4,10 +4,6 @@ description: |
   Sparklyr 1.4 is now available! This release comes with delightful new features such as weighted sampling and tidyr verbs support for Spark dataframes, robust scaler for standardizing data based on median and interquartile range, spark_connect interface for RAPIDS GPU acceleration plugin, as well as a number of dplyr-related improvements.
 date: 2020-09-30
 slug: sparklyr-1.4
-categories:
-  - R
-  - Packages/Releases
-  - Distributed Computing
 author:
   - name: Yitao Li
     url: https://github.com/yitao-li
@@ -19,6 +15,12 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - MLOps & Admin
+ported_categories:
+  - R
+  - Packages/Releases
+  - Distributed Computing
 ---
 
 

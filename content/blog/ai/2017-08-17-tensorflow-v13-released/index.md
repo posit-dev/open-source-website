@@ -3,8 +3,6 @@ title: "TensorFlow v1.3 Released"
 description: |
   The final release of TensorFlow v1.3 is now available. This release marks the initial availability of several canned estimators including DNNClassifier and DNNRegressor.
 date: 2017-08-17
-categories:
-  - Packages/Releases
 author:
   - name: J.J. Allaire
     url: https://github.com/jjallaire
@@ -17,6 +15,10 @@ ported_from: ai
 port_status: in-progress
 software: ["tensorflow", "tfestimators"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Packages/Releases
 ---
 
 

@@ -14,7 +14,6 @@ photo:
   author: Teddy Yang
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn] 
 tags: [clock, r-lib]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "clock"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 <!--

@@ -17,6 +17,8 @@ photo:
 image: a11y-midterm-wd.jpg
 ported_from: education
 port_status: in-progress
+categories:
+  - Community
 ---
 
 As I am now halfway through my internship, I would like to share my work and experience.

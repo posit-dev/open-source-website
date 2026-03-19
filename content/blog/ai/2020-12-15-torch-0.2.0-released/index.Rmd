@@ -12,7 +12,11 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: torchzero2
 date: 12-15-2020
+preview: images/torch.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Torch
   - R
   - Packages/Releases

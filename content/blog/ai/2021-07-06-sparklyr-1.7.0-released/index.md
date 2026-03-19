@@ -4,10 +4,6 @@ description: |
   Sparklyr 1.7 delivers much-anticipated improvements, including R interfaces for image and binary data sources, several new spark_apply() capabilities, and better integration with sparklyr extensions.
 date: 2021-07-06
 slug: sparklyr-1.7
-categories:
-  - R
-  - Packages/Releases
-  - Distributed Computing
 author:
   - name: Yitao Li
     url: https://github.com/yitao-li
@@ -19,6 +15,12 @@ image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - MLOps & Admin
+ported_categories:
+  - R
+  - Packages/Releases
+  - Distributed Computing
 ---
 
 

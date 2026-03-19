@@ -16,7 +16,6 @@ photo:
   author: Adam Valstar
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [stringr]
 
 image: thumbnail-wd.jpg
@@ -24,6 +23,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "stringr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <!--

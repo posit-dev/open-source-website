@@ -10,6 +10,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python", "shiny-r"]
 languages: ["R", "Python"]
+categories:
+  - Interactive Apps
 ---
 
 We're thrilled to announce that we've partnered with [Hugging Face](https://huggingface.co/) to provide templated Spaces for both the R and Python Shiny packages. 

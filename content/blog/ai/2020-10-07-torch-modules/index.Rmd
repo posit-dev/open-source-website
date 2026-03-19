@@ -8,15 +8,17 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchmodules
 date: 10-07-2020
-categories:
-  - Torch
-  - R
 preview: images/preview.jpg
 editor_options: 
   markdown: 
     wrap: 72
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
 ---
 
 ```{r setup, include=FALSE}

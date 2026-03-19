@@ -9,14 +9,16 @@ photo:
   author: Steve Harvey
   url: https://unsplash.com/photos/xWiXi6wRLGo
 slug: ggplot2-3-3-0
-categories:
-- package
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+categories:
+  - Visualization
+ported_categories:
+  - package
 ---
 
 

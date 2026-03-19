@@ -5,13 +5,15 @@ date: '2019-05-10'
 slug: forcats-0-4-0
 description: > 
   What's new in forcats 0.4.0?
-categories:
-  - package
 photo:
   url: https://www.pexels.com/photo/close-up-photo-of-a-hand-holding-three-white-kittens-1643456/
   author: Peng Louis
 software: ["tidyverse", "forcats"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 ```{r include = FALSE}

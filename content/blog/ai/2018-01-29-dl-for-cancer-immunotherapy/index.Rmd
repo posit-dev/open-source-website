@@ -6,14 +6,16 @@ author:
   - name: Leon Eyrich Jessen
     url: https://twitter.com/jessenleon
 date: 01-29-2018
-categories:
-  - TensorFlow/Keras
-  - Tabular Data
 preview: images/01_ffn_02_results_3_by_3_confusion_matrix.png
 creative_commons: null
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Tabular Data
 ---
 
 ```{r setup, include=FALSE}

@@ -3,9 +3,6 @@ title: "Auto-Keras: Tuning-free deep learning from R"
 description: |
   Sometimes in deep learning, architecture design and hyperparameter tuning pose substantial challenges. Using Auto-Keras, none of these is needed: We start a search procedure and extract the best-performing model. This post presents Auto-Keras in action on the well-known MNIST dataset.
 date: 2019-04-16T00:00:00.000Z
-categories:
-  - TensorFlow/Keras
-  - Packages/Releases
 author:
   - name: Juan Cruz Rodriguez
     url: https://jcrodriguez.rbind.io
@@ -18,6 +15,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Packages/Releases
 ---
 
 

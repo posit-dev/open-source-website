@@ -10,14 +10,16 @@ author:
     affiliation_url: https://www.posit.co/
 slug: llms-with-chattr
 date: 2024-04-04
-categories:
-  - Generenative Models
-  - Packages/Releases  
-  - R
 preview: images/chattr.png
 format: hugo-md
 software: ["rstudio"]
 languages: ["R"]
+categories:
+  - Artificial Intelligence
+ported_categories:
+  - Generenative Models
+  - Packages/Releases
+  - R
 ---
 
 ```{r setup, include=FALSE}

@@ -3,10 +3,6 @@ title: Upcoming Instructor Training Events
 people:
   - Greg
 date: '2019-09-25'
-categories:
-  - events
-  - teach
-  - certify
 tags:
   - instructor training
 slug: upcoming-instructor-training-events
@@ -19,6 +15,12 @@ image: train-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - events
+  - teach
+  - certify
 ---
 
 Over two dozen people are now certified instructors and listed in our [trainers' directory](https://rstd.io/trainers),

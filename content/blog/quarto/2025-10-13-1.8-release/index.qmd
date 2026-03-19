@@ -2,9 +2,6 @@
 title: Quarto 1.8 
 description: |
   Quarto 1.8 improves brand support, introduces brand extensions, adds HTML accessibility checks, and gives access to execution context.
-categories:
-  - Quarto 1.8
-  - Releases
 people:
   - Charlotte Wickham
 date: "2025-10-13"
@@ -16,6 +13,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Quarto 1.8
+  - Releases
 ---
 
 Quarto 1.8 is available! You can get the current release from the [download page](https://quarto.org/docs/download/index.html).

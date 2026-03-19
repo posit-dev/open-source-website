@@ -4,15 +4,10 @@ people:
   - JJ Allaire
 date: '2018-03-26'
 slug: reticulate-r-interface-to-python
-categories:
-- Packages
-- R Markdown
 tags:
-- Packages
 - R Markdown
 - Python
 - reticulate
-- Packages
 - R Markdown
 blogcategories:
 - Products and Technology
@@ -21,6 +16,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["reticulate"]
 languages: ["R"]
+categories:
+  - Publishing
+ported_categories:
+  - Packages
+  - R Markdown
 ---
 
 

@@ -7,8 +7,6 @@ slug: dtplyr-1-0-0
 description: |
   A total rewrite of dtplyr is now available on CRAN; it performs
   computation lazily (like dbplyr), making it much more performant.
-categories:
-  - package
 tags:
   - dtplyr
   - dplyr
@@ -21,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dtplyr", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 

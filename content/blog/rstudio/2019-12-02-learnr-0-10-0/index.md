@@ -4,18 +4,11 @@ people:
   - Barret Schloerke
 date: '2019-12-02'
 slug: learnr-0-10-0
-categories:
-- Education
-- Packages
-- R Markdown
-- Shiny
 tags:
 - learnr
 - sortable
 - shiny
 - rmarkdown
-- Packages
-- Packages
 - R Markdown
 - Shiny
 blogcategories:
@@ -26,6 +19,14 @@ ported_from: rstudio
 port_status: in-progress
 software: ["learnr", "sortable", "shiny-r", "rmarkdown"]
 languages: ["R"]
+categories:
+  - Publishing
+  - Interactive Apps
+ported_categories:
+  - Education
+  - Packages
+  - R Markdown
+  - Shiny
 ---
 
 

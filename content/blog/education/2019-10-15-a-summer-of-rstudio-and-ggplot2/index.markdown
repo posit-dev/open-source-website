@@ -17,6 +17,9 @@ ported_from: education
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+categories:
+  - Community
+  - Visualization
 ---
 
 

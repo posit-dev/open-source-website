@@ -16,6 +16,8 @@ image: colors-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
 ---
 
 

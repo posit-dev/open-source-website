@@ -6,8 +6,6 @@ date: '2018-12-21'
 slug: lobstr
 description: > 
   lobstr is now on CRAN. lobstr provides tools that allow you to dig into the detail of an object.
-categories:
-  - package
 tags:
   - lobstr
   - r-lib
@@ -19,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "lobstr"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

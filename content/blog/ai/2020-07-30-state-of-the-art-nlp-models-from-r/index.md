@@ -6,8 +6,6 @@ description: >
   fewer materials exist how to use these models from R. In this post, we will
   show how R users can access and benefit from these models as well.
 date: 2020-07-30
-categories:
-  - Natural Language Processing
 author:
   - name: Turgut Abdullayev
     url: https://github.com/henry090
@@ -20,6 +18,10 @@ ported_from: ai
 port_status: in-progress
 software: ["reticulate"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Natural Language Processing
 ---
 
 

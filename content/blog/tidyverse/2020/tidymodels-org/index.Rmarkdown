@@ -8,11 +8,14 @@ author: Max Kuhn
 photo:
   url: https://unsplash.com/photos/Hli3R6LKibo
   author: Adi Goldstein
-categories: [learn]
 tags:
   - tidymodels
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 ```{r setup, include = FALSE}

@@ -3,18 +3,20 @@ title: sparklyr — R interface for Apache Spark
 people:
   - RStudio Team
 date: '2016-09-27'
-categories:
-- News
-- Packages
 slug: sparklyr-r-interface-for-apache-spark
 blogcategories:
 - Products and Technology
 - Company News and Events
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Data Wrangling
+  - MLOps & Admin
+ported_categories:
+  - News
+  - Packages
 ---
 
 

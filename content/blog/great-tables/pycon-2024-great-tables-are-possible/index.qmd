@@ -7,6 +7,8 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
+categories:
+  - Visualization
 ---
 
 The Great Tables crew is excited to share that we'll be presenting on tables at PyCon 2024!

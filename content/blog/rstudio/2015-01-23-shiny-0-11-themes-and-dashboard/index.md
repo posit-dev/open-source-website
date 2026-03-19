@@ -3,22 +3,23 @@ title: Shiny 0.11, themes, and dashboard
 people:
   - Winston Chang
 date: '2015-01-23'
-categories:
-- News
-- Packages
-- Shiny
 slug: shiny-0-11-themes-and-dashboard
 blogcategories:
 - Products and Technology
 - Company News and Events
 - Open Source
 tags:
-- Packages
 - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - News
+  - Packages
+  - Shiny
 ---
 
 

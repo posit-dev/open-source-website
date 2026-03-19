@@ -4,8 +4,6 @@ people:
   - Gábor Csárdi
 date: '2020-03-11'
 slug: roxygen2-7-1-0
-categories:
-  - package
 description: >
   A minor roxygen2 release with some new features
 tags:
@@ -20,6 +18,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "roxygen2"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 We're chuffed to announce the release of [roxygen2 7.1.0](https://roxygen2.r-lib.org).

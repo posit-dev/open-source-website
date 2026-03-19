@@ -3,8 +3,6 @@ title: Newly certified instructors in March 2020
 people:
   - greg
 date: '2020-03-31'
-categories:
-  - certify
 tags:
   - certify
 description: |
@@ -17,6 +15,10 @@ image: march-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - certify
 ---
 
 We are very pleased to have welcomed nine new certified instructors in March 2020:

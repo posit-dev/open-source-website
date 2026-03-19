@@ -4,10 +4,6 @@ subtitle: Automatically link to other formats in HTML documents
 description: >
   In Quarto 1.3, additional formats listed in HTML documents will automatically
   be linked in an "Other Formats" section near the top of the page.
-categories:
-  - Features
-  - Authoring
-  - Quarto 1.3
 people:
   - Charlotte Wickham
 date: '2023-03-15'
@@ -22,6 +18,12 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Features
+  - Authoring
+  - Quarto 1.3
 ---
 
 

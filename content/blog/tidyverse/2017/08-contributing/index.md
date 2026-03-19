@@ -7,7 +7,6 @@ date: 2017-08-14
 photo:
   url: https://unsplash.com/photos/qFxS5FkUSAQ
   author: Yuriy Rzhemovskiy
-categories: [programming]
 description: >
   Contributing code to open source projects can be intimidating. These projects
   are often widely used and have well known maintainers. Contributing code and
@@ -19,6 +18,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - programming
 ---
 
 > This post originally appeared at <http://www.jimhester.com/2017/08/08/contributing/>

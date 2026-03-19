@@ -6,10 +6,6 @@ description: >
   workshops and talks on Quarto. Join us in Washington DC this July 25-28 to
   learn more about Quarto and hear from folks using Quarto to create, share, and
   collaborate.
-categories:
-  - Conf
-  - Workshop
-  - Talk
 people:
   - Mine Çetinkaya-Rundel
 date: '2022-06-21'
@@ -21,6 +17,12 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Conf
+  - Workshop
+  - Talk
 ---
 
 

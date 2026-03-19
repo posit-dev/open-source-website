@@ -3,9 +3,6 @@ title: "Predicting Sunspot Frequency with Keras"
 description: |
   In this post we will examine making time series predictions using the sunspots dataset that ships with base R. Sunspots are dark spots on the sun, associated with lower temperature. Our post will focus on both how to apply deep learning to time series forecasting, and how to properly apply cross validation in this domain.
 date: 2018-06-25T00:00:00.000Z
-categories:
-  - TensorFlow/Keras
-  - Time Series
 author:
   - name: Matt Dancho
     url: https://github.com/mdancho84
@@ -23,6 +20,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Time Series
 ---
 
 

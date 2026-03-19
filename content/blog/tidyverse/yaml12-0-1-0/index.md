@@ -15,7 +15,6 @@ photo:
   author: Devin H
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package]
 tags: [yaml, r, python, rust]
 
 image: thumbnail-wd.jpg
@@ -23,6 +22,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "yaml"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 <!--

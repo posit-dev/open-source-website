@@ -10,13 +10,16 @@ description: >
 photo:
   url: https://unsplash.com/photos/n6vS3xlnsCc
   author: Armand Khoury
-categories: [package] 
 tags: [dplyr, dplyr-1-1-0]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 Today's [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110) post is focused on various updates to vector functions, like [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) and [`between()`](https://dplyr.tidyverse.org/reference/between.html). If you missed our previous posts, you can also see the other [blog posts](https://www.tidyverse.org/tags/dplyr-1-1-0/) in this series. All of dplyr's vector functions are now backed by [vctrs](https://vctrs.r-lib.org/), which typically results in better error messages, better performance, and greater versatility.

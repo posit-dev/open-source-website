@@ -14,6 +14,8 @@ image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
 ---
 
 As [we announced last year][preview],

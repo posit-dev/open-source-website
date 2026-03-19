@@ -8,12 +8,14 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchoptimization
 date: 04-27-2021
-categories:
-  - Torch
-  - R
 preview: images/preview.jpg
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
 ---
 
 ```{r setup, include=FALSE}

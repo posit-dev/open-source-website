@@ -14,7 +14,6 @@ photo:
   author: Hiroshi Kimura
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [gmailr, gargle]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "gmailr", "gargle"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 We're chuffed to announce the release of [gmailr](https://gmailr.r-lib.org/) 2.0.0. gmailr exposes the [Gmail API](https://developers.google.com/gmail/api/guides) from R.

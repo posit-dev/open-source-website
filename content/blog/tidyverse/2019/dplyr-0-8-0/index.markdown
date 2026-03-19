@@ -6,8 +6,6 @@ date: '2019-02-15'
 slug: dplyr-0-8-0
 description: >
   dplyr 0.8.0 is now on CRAN.
-categories:
-  - package
 tags:
   - dplyr
   - tidyverse
@@ -19,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 

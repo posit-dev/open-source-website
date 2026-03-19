@@ -8,15 +8,17 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2019autoregressive
 date: 04-24-2019
-categories:
-  - Probabilistic ML/DL 
-  - Generative Models
-  - TensorFlow/Keras
 bibliography: bibliography.bib
 preview: images/made.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Probabilistic ML/DL
+  - Generative Models
+  - TensorFlow/Keras
 ---
 
 

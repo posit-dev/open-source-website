@@ -6,8 +6,6 @@ date: '2019-02-15'
 slug: bigrquery-1-1-0
 description: > 
   bigrquery 1.1.0 is now on CRAN.
-categories:
-  - package
 tags:
   - bigrquery
   - dplyr
@@ -21,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "bigrquery", "dplyr", "dbplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 

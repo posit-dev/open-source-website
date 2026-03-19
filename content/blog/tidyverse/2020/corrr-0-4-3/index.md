@@ -15,13 +15,16 @@ photo:
   author: Omar Flores
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
 tags: [corrr, tidymodels, correlation]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "corrr", "tidymodels"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <!--

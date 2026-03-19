@@ -3,18 +3,19 @@ title: Version 1.2 of devtools released
 people:
   - Hadley Wickham
 date: '2013-04-17'
-categories:
-- Packages
 slug: devtools-1-2
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["devtools"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Packages
 ---
 
 

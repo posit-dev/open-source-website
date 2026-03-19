@@ -14,7 +14,6 @@ photo:
   author: David Pisnoy
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn] 
 tags: [usethis, devtools, testthat]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "usethis", "devtools", "testthat"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 <!--

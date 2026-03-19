@@ -4,10 +4,6 @@ description: |
   Sometimes, deep learning is seen - and welcomed - as a way to avoid laborious preprocessing of data. However, there are cases where preprocessing of sorts does not only help improve prediction, but constitutes a fascinating topic in itself. One such case is audio classification. In this post, we build on a previous post on this blog, this time focusing on explaining some of the non-deep learning background. We then link the concepts explained to updated for near-future releases TensorFlow code.
 date: 2019-02-07
 slug: keydana2019audiobackground
-categories:
-  - TensorFlow/Keras
-  - Concepts
-  - Audio Processing
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -19,6 +15,13 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+  - Best Practices
+ported_categories:
+  - TensorFlow/Keras
+  - Concepts
+  - Audio Processing
 ---
 
 

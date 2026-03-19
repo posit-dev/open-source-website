@@ -3,7 +3,6 @@ title: processx 3.2.0
 date: 2018-09-06
 slug: processx-3.2.0
 author: Gábor Csárdi
-categories: [package]
 description: >
     Run external processes with processx
 photo:
@@ -11,6 +10,10 @@ photo:
   author: Adam Sherez
 software: ["tidyverse", "processx"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

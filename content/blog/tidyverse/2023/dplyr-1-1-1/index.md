@@ -9,13 +9,16 @@ description: >
 photo:
   url: https://unsplash.com/photos/jy8z4NBIYSQ
   author: Jon Tyson
-categories: [package] 
 tags: [dplyr, dplyr-1-1-0]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 We're stoked to announce the release of [dplyr 1.1.1](https://dplyr.tidyverse.org/). We don't typically blog about patch releases, because they generally only fix bugs without significantly changing behavior, but this one includes two important updates:

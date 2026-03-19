@@ -4,12 +4,14 @@ people:
   - Hadley Wickham
 date: '2017-09-14'
 slug: rstudio-community
-categories:
-- News
 blogcategories:
 - Company News and Events
 ported_from: rstudio
 port_status: in-progress
+categories:
+  - Community
+ported_categories:
+  - News
 ---
 
 

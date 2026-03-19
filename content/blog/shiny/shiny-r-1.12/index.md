@@ -17,6 +17,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 
 

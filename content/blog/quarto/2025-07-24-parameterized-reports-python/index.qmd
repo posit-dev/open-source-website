@@ -5,10 +5,6 @@ title: "From One Notebook to Many Reports: Parameterized reports with the `jupyt
 description: |
   Learn how to transform a single Jupyter notebook into a parameterized report generator that automatically creates customized outputs for different scenarios. 
 date: "2025-07-24"
-categories:
-  - Authoring
-  - Teaching
-  - Jupyter
 image: thumbnail.png
 image-alt: |
   A slide with a screenshot of a Jupyter notebook with a graph and text, then an arrow pointing to a stack of PDF files each with a graph and text.
@@ -17,6 +13,12 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["Python"]
+categories:
+  - Publishing
+ported_categories:
+  - Authoring
+  - Teaching
+  - Jupyter
 ---
 
 ::: callout-tip

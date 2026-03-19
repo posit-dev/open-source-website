@@ -9,7 +9,11 @@ author:
     affiliation_url: https://www.rstudio.com
 slug: sparklyr-1.2
 date: 04-21-2020
+preview: images/sparklyr.png
+format: hugo-md
 categories:
+  - MLOps & Admin
+ported_categories:
   - R
   - Packages/Releases
   - Distributed Computing

@@ -4,9 +4,6 @@ people:
   - Ryan Estrellado
   - Joshua Rosenberg
 date: '2020-10-05'
-categories:
-  - teach
-  - learn
 tags:
   - bookdown
 description: |
@@ -23,6 +20,11 @@ ported_from: education
 port_status: in-progress
 software: ["bookdown"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - teach
+  - learn
 ---
 
 ```{r install dataedu, include=FALSE}

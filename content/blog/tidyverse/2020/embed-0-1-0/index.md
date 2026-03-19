@@ -8,8 +8,6 @@ people:
 date: '2020-06-09'
 slug: embed-0-1-0
 
-categories:
-  - package
 tags:
   - tidymodels
   - embed
@@ -23,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "embed"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

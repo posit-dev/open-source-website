@@ -5,8 +5,6 @@ author:
 people:
   - Nic Thompson Gonzalez
 date: '2020-06-22'
-categories:
-  - teach
 slug: native-classroom
 description: |
   My personal experience teaching data science at an exclusively Native American community college in New Mexico.
@@ -18,6 +16,10 @@ ported_from: education
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - teach
 ---
 
 I'm here to share some insights from a work in progress. I began teaching an introduction to data science last year at the Southwestern Indian Polytechnic Institute [(SIPI)](https://www.sipi.edu/), a community college in Albuquerque, New Mexico with an exclusively Native American student-body. My professional background is in behavioral ecology, however, my passion for teaching lies in data analysis. Why? Because data literacy and analytical expertise are freely available tools to empower people and remedy many societal ills and injustices. My course datasets are therefore usually related to such ills.

@@ -5,8 +5,6 @@ author:
 people:
   - Kelly Bodwin
 date: '2020-05-04'
-categories:
-  - teach
 tags:
   - rmarkdown
 description: |
@@ -20,6 +18,10 @@ ported_from: education
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - teach
 ---
 
 <!-- This post relies on the development version of flair!-->

@@ -3,18 +3,19 @@ title: testthat 0.8 (and 0.8.1)
 people:
   - Hadley Wickham
 date: '2014-02-25'
-categories:
-- Packages
 slug: testthat-0-8
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["testthat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Packages
 ---
 
 

@@ -14,7 +14,6 @@ photo:
   url: https://unsplash.com/photos/b1FS5jQrsLo
   author: Bence Balla-Schottner
 
-categories: [package] 
 tags: [rvest]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "rvest"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 I'm tickled pink to announce the release of [rvest](https://rvest.tidyverse.org) 1.0.0. rvest is designed to make it easy to scrape (i.e. harvest) data from HTML web pages.

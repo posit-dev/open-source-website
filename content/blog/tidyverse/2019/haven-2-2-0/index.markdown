@@ -4,8 +4,6 @@ people:
   - Hadley Wickham
 date: '2019-11-08'
 slug: haven-2-2-0
-categories:
-  - package
 tags:
   - tidyverse
   - haven
@@ -19,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "haven"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 

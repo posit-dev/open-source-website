@@ -11,9 +11,6 @@ description: >
 people:
   - Charles Teague
 date: '2022-02-17'
-categories:
-  - Features
-  - Layout
 image: margin-content.png
 image-alt: >-
   Screenshot of two sections of post: Margin Figures, which has a plot in the
@@ -25,6 +22,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Features
+  - Layout
 ---
 
 

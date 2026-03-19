@@ -10,13 +10,16 @@ photo:
   
   url: https://unsplash.com/photos/FlHdnPO6dlw
   author: Jon Tyson
-categories: [package] 
 tags: ["r-lib"]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["clock"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <div class="highlight">

@@ -3,8 +3,6 @@ title: Concept Maps
 people:
   - greg
 date: '2020-09-11'
-categories:
-  - certify
 tags:
   - certify
 description: |
@@ -18,6 +16,10 @@ ported_from: education
 port_status: in-progress
 software: ["concept-maps"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - certify
 ---
 
 We introduce [concept maps](https://teachtogether.tech/en/index.html#s:memory-concept-maps)

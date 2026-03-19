@@ -3,18 +3,19 @@ title: ggplot 2.0.0
 people:
   - Hadley Wickham
 date: '2015-12-21'
-categories:
-- Packages
 slug: ggplot2-2-0-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+categories:
+  - Visualization
+ported_categories:
+  - Packages
 ---
 
 

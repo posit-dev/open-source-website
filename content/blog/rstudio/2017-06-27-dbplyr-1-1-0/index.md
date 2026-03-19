@@ -3,20 +3,21 @@ title: dbplyr 1.1.0
 people:
   - Hadley Wickham
 date: '2017-06-27'
-categories:
-- Packages
-- tidyverse
 slug: dbplyr-1-1-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
+  - tidyverse
 ---
 
 

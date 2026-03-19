@@ -10,7 +10,11 @@ author:
 slug: keydanaintroducingtorchforR
 bibliography: bibliography.bib
 date: 09-29-2020
+preview: images/pt.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Packages/Releases
   - Torch
   - R

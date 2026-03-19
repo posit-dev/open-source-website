@@ -1,12 +1,14 @@
 ---
 title: Version 0.14.0
 date: '2024-11-07'
-categories:
-  - releases
 ported_from: plotnine
 port_status: in-progress
 software: ["plotnine"]
 languages: ["Python"]
+categories:
+  - Visualization
+ported_categories:
+  - releases
 ---
 
 

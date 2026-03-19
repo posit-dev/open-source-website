@@ -14,7 +14,6 @@ photo:
   author: Hai Tran
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [lintr]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "lintr"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 We are very excited to announce the release of [lintr](https://lintr.r-lib.org) 3.0.0! lintr

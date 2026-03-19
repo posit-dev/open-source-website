@@ -4,7 +4,6 @@ date: 2018-11-28
 slug: parsnip-0-0-1
 people:
   - Max Kuhn
-categories: [package]
 tags:
   - parsnip
   - tidymodels
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

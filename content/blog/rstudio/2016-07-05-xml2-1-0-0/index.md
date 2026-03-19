@@ -3,20 +3,21 @@ title: xml2 1.0.0
 people:
   - Hadley Wickham
 date: '2016-07-05'
-categories:
-- Packages
-- tidyverse
 slug: xml2-1-0-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
+  - tidyverse
 ---
 
 

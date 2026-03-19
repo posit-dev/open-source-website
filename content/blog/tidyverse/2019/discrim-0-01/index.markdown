@@ -4,7 +4,6 @@ date: 2019-10-17
 slug: discrim-0-0-1
 people:
   - Max Kuhn
-categories: [package]
 tags:
   - discrim
   - tidymodels
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "discrim", "tidymodels"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

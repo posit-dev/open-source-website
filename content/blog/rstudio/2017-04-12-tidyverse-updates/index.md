@@ -3,18 +3,19 @@ title: tidyverse updates
 people:
   - Hadley Wickham
 date: '2017-04-12'
-categories:
-- Packages
 slug: tidyverse-updates
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

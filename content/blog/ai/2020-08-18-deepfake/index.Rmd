@@ -8,14 +8,16 @@ author:
     affiliation: QSS Analytics
     affiliation_url: http://www.qss.az/
 date: 08-18-2020
-categories:
-  - Image Recognition & Image Processing
 creative_commons: CC BY
 repository_url: https://github.com/henry090/Deepfake-from-R
 preview: files/frame_2.jpg
 format: hugo-md
 software: ["reticulate"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Image Recognition & Image Processing
 ---
 
 

@@ -13,7 +13,6 @@ photo:
   url: https://unsplash.com/photos/JBghIzjbuLs
   author: Patrick Fore
 
-categories: [learn] 
 tags: [tidymodels, yardstick, tune]
 bibliography: refs.bib
 
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "yardstick", "tune"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 We're very, very excited to announce the introduction of tools for assessing model fairness in tidymodels. This effort involved coordination from various groups at Posit over the course of over a year and resulted in a toolkit that we believe is both principled and impactful.

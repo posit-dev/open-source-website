@@ -12,7 +12,6 @@ photo:
   url: https://unsplash.com/photos/9Q8PqfeYkMk
   author: Matt Walsh
 
-categories: [programming] 
 tags: [package, vctrs]
 
 image: thumbnail-wd.jpg
@@ -20,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "vctrs"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - programming
 ---
 
 The tidyverse packages provide safe, powerful, and expressive interfaces to solve data science problems. Behind the scenes of the tidyverse is a set of lower-level tools that its developers use to build these interfaces. While these lower-level approaches are more performant than their tidy analogues, their interfaces are often less readable and safe. For most use cases in interactive data analysis, the advantages of tidyverse interfaces far outweigh the drawback in computational speed. When speed becomes an issue, though, transitioning tidy code to use these lower-level interfaces in their backend can offer substantial increases in computational performance.

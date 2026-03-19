@@ -12,12 +12,15 @@ image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/black-and-gray-metal-pipe-4CNNH2KEjhc
   author: Sigmund
-categories: [package]
 tags: [plumber2, web]
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "plumber2"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - package
 ---
 
 <!--

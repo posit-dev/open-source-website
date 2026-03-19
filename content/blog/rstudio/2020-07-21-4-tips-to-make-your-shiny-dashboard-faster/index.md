@@ -4,8 +4,6 @@ people:
   - Krystian Igras
 date: '2020-07-21'
 slug: 4-tips-to-make-your-shiny-dashboard-faster
-categories:
-- Shiny
 tags:
 - shiny
 - Shiny
@@ -27,6 +25,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Shiny
 ---
 
 

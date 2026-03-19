@@ -14,13 +14,16 @@ photo:
   url: https://unsplash.com/photos/vYcH7pI6v1Q
   author: Nagesh Badu
 
-categories: [programming] 
 tags: [tidymodels, package maintenance, tune, parsnip]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "tune", "parsnip"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - programming
 ---
 
 ```{r, include = FALSE} 

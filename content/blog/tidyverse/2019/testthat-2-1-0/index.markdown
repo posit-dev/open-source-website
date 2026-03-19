@@ -6,8 +6,6 @@ date: '2019-04-23'
 slug: testthat-2-1-0
 description: Highlights include that `context()` is now optional, and 
   new `expect_invisible()` and `expect_mapequal()` expectations.
-categories:
-  - package
 tags: [testthat, r-lib]
 photo:
   url: https://www.pexels.com/photo/38070/
@@ -17,6 +15,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

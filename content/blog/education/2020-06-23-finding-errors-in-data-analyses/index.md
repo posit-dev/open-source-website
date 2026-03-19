@@ -15,6 +15,9 @@ photo:
 image: finding-errors-in-data-analyses-wd.jpg
 ported_from: education
 port_status: in-progress
+categories:
+  - Community
+  - Best Practices
 ---
 
 While some people guide their teaching practices with anecdotal evidence,

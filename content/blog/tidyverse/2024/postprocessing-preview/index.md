@@ -16,7 +16,6 @@ photo:
   url: https://unsplash.com/photos/G6Y_YM3gO44
   author: Haley Owens
 
-categories: [roundup] 
 tags: [tidymodels, postprocessing, workflows]
 
 image: thumbnail-wd.jpg
@@ -24,6 +23,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "workflows"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - roundup
 ---
 
 We're bristling with elation to share about a set of upcoming features for postprocessing with tidymodels. Postprocessors refine predictions outputted from machine learning models to improve predictive performance or better satisfy distributional limitations. The developmental versions of many tidymodels core packages include changes to support postprocessors, and we're ready to share about our work and hear the community's thoughts on our progress so far.

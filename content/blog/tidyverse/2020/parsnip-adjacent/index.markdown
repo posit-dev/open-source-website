@@ -9,7 +9,6 @@ people:
 photo:
   url: https://unsplash.com/photos/bph0kUmAoXc
   author: Mae Mu
-categories: [package]
 tags:
   - tidymodels
   - baguette
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

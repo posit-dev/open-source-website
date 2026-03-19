@@ -3,16 +3,12 @@ title: Data Visualization cheatsheet, plus Spanish translations
 people:
   - Garrett Grolemund
 date: '2015-03-30'
-categories:
-- Packages
-- Training
 tags:
 - cheatsheet
 - data visualization
 - ggplot2
 - graphs
 - plots
-- Packages
 slug: data-visualization-cheatsheet-plus-spanish-translations
 blogcategories:
 - Products and Technology
@@ -22,6 +18,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+categories:
+  - MLOps & Admin
+ported_categories:
+  - Packages
+  - Training
 ---
 
 

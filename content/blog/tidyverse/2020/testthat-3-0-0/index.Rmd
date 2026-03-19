@@ -16,13 +16,16 @@ photo:
   url: https://unsplash.com/photos/209FvE_57H8
   author: NeONBRAND
 
-categories: [package] 
 tags: [testthat]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "testthat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 We're tickled pink to announce the release of [testthat](http://testthat.r-lib.org/) 3.0.0.

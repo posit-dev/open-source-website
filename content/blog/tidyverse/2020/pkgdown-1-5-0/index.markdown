@@ -7,8 +7,6 @@ slug: pkgdown-1-5-0
 photo:
   url: https://unsplash.com/photos/5R5Trsu1aIM
   author: Kelly Sikkema
-categories:
-- package
 tags:
   - pkgdown
   - web
@@ -17,6 +15,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 We're well chuffed to announce that [pkgdown](https://pkgdown.r-lib.org/) 1.5.0 is now available on CRAN. pkgdown is designed to make it quick and easy to build a website for your package. Install it with:

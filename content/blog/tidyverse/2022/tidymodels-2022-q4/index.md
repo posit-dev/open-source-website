@@ -12,7 +12,6 @@ photo:
   author:  Ilona Frey
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup] 
 tags: [tidymodels, recipes, parsnip, rsample]
 
 image: thumbnail-wd.jpg
@@ -20,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes", "parsnip", "rsample"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - roundup
 ---
 
 The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles.

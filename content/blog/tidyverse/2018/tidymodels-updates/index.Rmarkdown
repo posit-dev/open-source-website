@@ -3,7 +3,6 @@ title: tidymodels package updates
 date: 2018-11-29
 slug: tidymodels-update-nov-18
 author: Max Kuhn, Davis Vaughan, Alex Hayes
-categories: [package]
 description: >
     A variety of updates for tidymodels packages.
 photo:
@@ -11,6 +10,10 @@ photo:
   author: Jeremy Thomas
 software: ["tidyverse", "recipes", "yardstick", "embed", "tidyposterior", "tidymodels"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

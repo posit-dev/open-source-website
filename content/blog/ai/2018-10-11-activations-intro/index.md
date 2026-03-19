@@ -4,9 +4,6 @@ description: |
   Why do we use the activations we use, and how do they relate to the cost functions they tend to co-appear with? In this post we provide a conceptual introduction.
 date: 2018-10-11
 slug: keydana2018activationsintro
-categories:
-  - TensorFlow/Keras
-  - Concepts
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +15,12 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+  - Best Practices
+ported_categories:
+  - TensorFlow/Keras
+  - Concepts
 ---
 
 

@@ -16,7 +16,6 @@ photo:
   author: Kiril Gruev
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package]
 tags:
   - duckplyr
   - dplyr
@@ -27,6 +26,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "duckplyr", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 We're well chuffed to announce the release of [duckplyr](https://duckplyr.tidyverse.org) 1.1.0. This is a dplyr backend powered by [DuckDB](https://duckdb.org/), a fast in-memory analytical database system[^1]. duckplyr uses the power of DuckDB for impressive performance where it can, and seemlessly falls back to R where it can't. You can install it from CRAN with:

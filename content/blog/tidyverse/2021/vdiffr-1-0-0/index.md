@@ -12,7 +12,6 @@ photo:
   url: https://unsplash.com/photos/e8rfcKAx1Rk
   author: Jakob Owens
 
-categories: [package] 
 tags: [ggplot2, testthat]
 
 image: thumbnail-wd.jpg
@@ -20,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2", "testthat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 We're delighted to announce the release of [vdiffr](https://vdiffr.r-lib.org/) 1.0.0. vdiffr is a testthat extension that makes it easy to automatically check code that generates R graphics. In particular, vdiffr is used by the ggplot2 team to ensure that changes and contributions do not affect the expected output of plots.

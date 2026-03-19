@@ -14,13 +14,16 @@ photo:
   url: https://unsplash.com/photos/GsZLXA4JPcM
   author: Ricardo Gomez Angel
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [deep-dive] 
 tags: [ggplot2]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - deep-dive
 ---
 
 We are hard at work finishing the next release of ggplot2. While this release is mostly about internal changes, there are a few quite user visible changes as well. One of these upends the idea that the `size` aesthetic is responsible for *both* the sizing of point/text and the width of lines. With the next release we will have a `linewidth` aesthetic to take care of the latter, while `size` will continue handling the former.

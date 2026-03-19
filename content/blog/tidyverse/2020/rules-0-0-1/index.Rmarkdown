@@ -8,13 +8,15 @@ author: Max Kuhn
 photo:
   url: https://unsplash.com/photos/lu15z1m_KfM
   author: Lili Popper
-categories:
-  - package
 tags:
   - tidymodels
   - rules
 software: ["tidyverse", "tidymodels", "rules"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---  
 
 ```{r setup, include=FALSE}

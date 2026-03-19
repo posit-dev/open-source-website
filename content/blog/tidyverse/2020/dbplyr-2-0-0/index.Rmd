@@ -16,13 +16,16 @@ photo:
   url: https://unsplash.com/photos/r2A6WYI8YIg
   author: Shawn Ang
 
-categories: [package] 
 tags: [dbplyr, dplyr]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 ```{r, include = FALSE}

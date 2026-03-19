@@ -3,8 +3,6 @@ title: Sample Shiny exam
 people:
   - greg
 date: '2020-10-02'
-categories:
-  - certify
 tags:
   - certify
 description: |
@@ -17,6 +15,10 @@ ported_from: education
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - certify
 ---
 
 To help everyone who is preparing to certify as a Shiny instructor,

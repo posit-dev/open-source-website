@@ -4,9 +4,6 @@ description: |
   TensorFlow 2.0 was finally released last week. As R users we have two kinds of questions. First, will my keras code still run? And second, what is it that changes? In this post, we answer both and, then, give a tour of exciting new developments in the r-tensorflow ecosystem.
 date: 2019-10-08
 slug: keydana2019tf2
-categories:
-  - TensorFlow/Keras
-  - Packages/Releases
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +15,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Packages/Releases
 ---
 
 

@@ -13,6 +13,8 @@ image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
 ---
 
 We received almost two hundreds applications for

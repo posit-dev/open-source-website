@@ -3,18 +3,19 @@ title: lubridate 1.2.0 now on CRAN
 people:
   - Garrett Grolemund
 date: '2012-10-08'
-categories:
-- Packages
 slug: lubridate-1-2-0-now-on-cran
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["lubridate"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

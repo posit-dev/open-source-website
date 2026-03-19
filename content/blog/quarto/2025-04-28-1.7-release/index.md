@@ -3,9 +3,6 @@ title: Quarto 1.7
 description: >
   Quarto 1.7 brings big improvements to dark mode along with updates to Typst,
   Pandoc, a new `version` shortcode, and improvements to the `julia` engine.
-categories:
-  - Quarto 1.7
-  - Releases
 people:
   - Charlotte Wickham
 date: '2025-04-28'
@@ -18,6 +15,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Quarto 1.7
+  - Releases
 ---
 
 

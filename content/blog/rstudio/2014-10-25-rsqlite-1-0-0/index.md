@@ -3,18 +3,19 @@ title: RSQLite 1.0.0
 people:
   - Hadley Wickham
 date: '2014-10-25'
-categories:
-- Packages
 slug: rsqlite-1-0-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["rsqlite"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

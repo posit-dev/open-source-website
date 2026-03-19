@@ -13,13 +13,16 @@ photo:
   author: Graphic Node
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [deep-dive] 
 tags: [tidymodels, parsnip]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - deep-dive
 ---
 
 <!--

@@ -4,10 +4,6 @@ description: |
   We train a model for image segmentation in R, using torch together with luz, its high-level interface. We then JIT-trace the model on example input, so as to obtain an optimized representation that can run with no R installed. Finally, we show the model being run on Android.
 date: 2021-10-29
 slug: keydanasegmentationtorchandroid
-categories:
-  - Torch
-  - Image Recognition & Image Processing
-  - R
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +14,12 @@ image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - Image Recognition & Image Processing
+  - R
 ---
 
 

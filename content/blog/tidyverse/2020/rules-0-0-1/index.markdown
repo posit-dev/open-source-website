@@ -9,8 +9,6 @@ people:
 photo:
   url: https://unsplash.com/photos/lu15z1m_KfM
   author: Lili Popper
-categories:
-  - package
 tags:
   - tidymodels
   - rules
@@ -19,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "rules"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

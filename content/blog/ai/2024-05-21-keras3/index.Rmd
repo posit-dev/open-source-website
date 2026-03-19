@@ -11,13 +11,15 @@ author:
     affiliation_url: https://www.posit.co/
 slug: kalinowskikeras3
 date: 2024-05-21
-categories:
-  - TensorFlow/Keras
-  - R
 preview: images/preview.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - R
 ---
 
 We are thrilled to introduce `keras3`, the next version of the Keras R

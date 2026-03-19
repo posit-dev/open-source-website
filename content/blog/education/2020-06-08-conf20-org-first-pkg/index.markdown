@@ -7,7 +7,6 @@ people:
   - Malcolm Barrett
   - Richard Iannone
 date: '2020-06-08'
-categories: [learn, teach]
 tags: [conf2020]
 slug: conf20-org-first-pkg
 description: |
@@ -20,6 +19,11 @@ ported_from: education
 port_status: in-progress
 software: ["devtools", "usethis"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - teach
 ---
 
 > tl;dr: all workshop materials are available here: <br>

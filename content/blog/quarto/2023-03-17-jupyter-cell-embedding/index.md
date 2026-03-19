@@ -5,10 +5,6 @@ description: >
   Quarto 1.3 adds support for embedding cells from a Jupyter Notebook into a
   Quarto document via an `embed` shortcode. In HTML documents, links are
   automatically added that point to a rendered version of the external notebook.
-categories:
-  - Features
-  - Authoring
-  - Quarto 1.3
 people:
   - Charlotte Wickham
 date: '2023-03-17'
@@ -20,6 +16,12 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Features
+  - Authoring
+  - Quarto 1.3
 ---
 
 

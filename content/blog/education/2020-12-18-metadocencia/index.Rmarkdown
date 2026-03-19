@@ -5,9 +5,6 @@ people:
   - Paola Corrales
   - Patricia Loto
 date: '2020-12-18'
-categories:
-  - learn
-  - teach
 description: |
   The birth and growth of MetaDocencia in Latin America
   to nurture a community of Spanish-speaking educators in 2020 and beyond.
@@ -19,6 +16,11 @@ image: apple-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - teach
 ---
 
 ## What?

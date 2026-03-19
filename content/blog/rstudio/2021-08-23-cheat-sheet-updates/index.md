@@ -20,6 +20,9 @@ ported_from: rstudio
 port_status: in-progress
 software: ["cheatsheets"]
 languages: ["R"]
+categories:
+  - Publishing
+  - Community
 ---
 <sup>
 Photo by <a href="https://unsplash.com/@patrickperkins?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Patrick Perkins</a> on <a href="https://unsplash.com/s/photos/study-sheet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  

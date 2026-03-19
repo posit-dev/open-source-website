@@ -16,7 +16,6 @@ photo:
   author: Natalia Y
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [deep-dive] 
 tags: [graphic-device, ragg, systemfonts]
 
 image: thumbnail-wd.jpg
@@ -24,6 +23,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg", "systemfonts"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - deep-dive
 ---
 
 I'm extremely pleased to present the culmination of several years of work spanning the [systemfonts](https://github.com/r-lib/systemfonts), [textshaping](https://github.com/r-lib/textshaping), and [ragg](https://ragg.r-lib.org) packages. These releases complete our efforts to create a high-quality, performant raster graphics device that works the same way on every operating system.

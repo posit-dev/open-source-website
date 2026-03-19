@@ -10,6 +10,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["bslib", "shiny-r", "brand-yml"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 
 [brand.yml]: https://posit-dev.github.io/brand-yml

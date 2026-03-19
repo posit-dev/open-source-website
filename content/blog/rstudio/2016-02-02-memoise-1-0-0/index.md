@@ -3,18 +3,19 @@ title: memoise 1.0.0
 people:
   - Jim Hester
 date: '2016-02-02'
-categories:
-- Packages
 slug: memoise-1-0-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["memoise"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Packages
 ---
 
 

@@ -6,13 +6,10 @@ people:
   - Yitao Li
 slug: sparklyr-1-3
 date: '2020-07-16'
-categories:
-- Packages
 tags:
 - big data
 - sparklyr
 - Spark
-- Packages
 blogcategories:
 - Products and Technology
 - Open Source
@@ -23,6 +20,10 @@ resources:
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 <img src="sparklyr.png"/>

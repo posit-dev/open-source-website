@@ -3,9 +3,6 @@ title: posit::conf(2024) Quarto workshop materials
 description: >
   Back in August, we hosted three Quarto workshops at posit::conf(2024); the
   materials from those workshops are available to learn and teach from!
-categories:
-  - Learn
-  - Workshop
 people:
   - Mine Çetinkaya-Rundel and Charlotte Wickham
 date: '2024-10-15'
@@ -15,6 +12,12 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+  - Community
+ported_categories:
+  - Learn
+  - Workshop
 ---
 
 

@@ -12,15 +12,17 @@ author:
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com
 date: 12-07-2017
-categories:
-  - TensorFlow/Keras
-  - Natural Language Processing
 preview: images/training-history.png
 slug: chollet2017dlrtext
 creative_commons: null
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Natural Language Processing
 ---
 
 ```{r setup, include=FALSE}

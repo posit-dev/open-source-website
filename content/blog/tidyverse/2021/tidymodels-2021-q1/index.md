@@ -15,13 +15,16 @@ photo:
   author: Timo Wielink
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [roundup] 
 tags: [tidymodels, parsnip, rsample]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "rsample"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - roundup
 ---
 
 

@@ -8,13 +8,15 @@ author:
     affiliation_url: http://www.rstudio.com/
 bibliography: bibliography.bib
 date: 07-30-2018
-categories:
-  - Natural Language Processing
-  - TensorFlow/Keras
 preview: images/attention.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Natural Language Processing
+  - TensorFlow/Keras
 ---
 
 ```{r setup, include=FALSE}

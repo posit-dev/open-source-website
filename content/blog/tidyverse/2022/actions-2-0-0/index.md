@@ -14,13 +14,16 @@ photo:
   author: Ronaldo Galeano
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [programming] 
 tags: ["GitHub Actions"]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["actions"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - programming
 ---
 
 <!--

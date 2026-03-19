@@ -4,9 +4,6 @@ description: |
   The term "federated learning" was coined to describe a form of distributed model training where the data remains on client devices, i.e., is never shipped to the coordinating server. In this post, we introduce central concepts and run first experiments with TensorFlow Federated, using R.
 date: 2020-04-08
 slug: keydanatffederatedintro
-categories:
-  - Privacy & Security
-  - TensorFlow/Keras
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +15,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Privacy & Security
+  - TensorFlow/Keras
 ---
 
 

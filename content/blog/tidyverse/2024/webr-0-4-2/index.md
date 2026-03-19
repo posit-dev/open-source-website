@@ -17,13 +17,16 @@ photo:
   
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [roundup]
 tags: [webr, wasm]
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - roundup
 ---
 
 <!--

@@ -11,8 +11,6 @@ description: >
 
 output: hugodown::hugo_document
 
-categories:
-- package
 tags:
 - dplyr
 - dplyr-1-0-0
@@ -25,6 +23,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 ```{r, include = FALSE}

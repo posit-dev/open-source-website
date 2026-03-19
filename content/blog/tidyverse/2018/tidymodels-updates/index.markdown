@@ -6,7 +6,6 @@ people:
   - Max Kuhn
   - Davis Vaughan
   - Alex Hayes
-categories: [package]
 tags:
   - recipes
   - yardstick
@@ -23,6 +22,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "recipes", "yardstick", "embed", "tidyposterior", "tidymodels"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

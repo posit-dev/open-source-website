@@ -9,7 +9,11 @@ author:
 slug: keydanapixelcnn
 bibliography: bibliography.bib
 date: 05-29-2020
+preview: images/thumb.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - R
   - Image Recognition & Image Processing
   - TensorFlow/Keras

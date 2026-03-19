@@ -4,12 +4,9 @@ people:
   - RStudio Team
 date: '2019-09-09'
 slug: pin-discover-and-share-resources
-categories:
-- Packages
 tags:
 - pins
 - reproducible
-- Packages
 blogcategories:
 - Products and Technology
 - Open Source
@@ -18,6 +15,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["pins-r"]
 languages: ["R"]
+categories:
+  - MLOps & Admin
+ported_categories:
+  - Packages
 ---
 
 

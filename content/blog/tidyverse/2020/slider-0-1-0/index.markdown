@@ -7,8 +7,6 @@ slug: slider-0-1-0
 description: 
   slider 0.1.0 is now available on CRAN. It provides a family of general purpose
   sliding window functions.
-categories:
-  - package
 tags:
   - slider
 photo: 
@@ -19,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "slider"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 

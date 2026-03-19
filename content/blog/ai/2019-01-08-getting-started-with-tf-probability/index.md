@@ -4,10 +4,6 @@ description: |
   TensorFlow Probability offers a vast range of functionality ranging from distributions over probabilistic network layers to probabilistic inference. It works seamlessly with core TensorFlow and (TensorFlow) Keras. In this post, we provide a short introduction to the distributions layer and then, use it for sampling and calculating probabilities in a Variational Autoencoder.
 date: 2019-01-08
 slug: keydana2019tfprobability
-categories:
-  - TensorFlow/Keras
-  - Probabilistic ML/DL
-  - Generative Models
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -19,6 +15,12 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Probabilistic ML/DL
+  - Generative Models
 ---
 
 

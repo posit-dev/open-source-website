@@ -4,9 +4,6 @@ description: |
   Two-class classification, or binary classification, may be the most widely applied kind of machine-learning problem. In this excerpt from the book Deep Learning with R, you'll learn to classify movie reviews as positive or negative, based on the text content of the reviews.
 date: 2017-12-07
 slug: chollet2017dlrtext
-categories:
-  - TensorFlow/Keras
-  - Natural Language Processing
 author:
   - name: François Chollet
     url: https://github.com/fchollet
@@ -24,6 +21,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Natural Language Processing
 ---
 
 

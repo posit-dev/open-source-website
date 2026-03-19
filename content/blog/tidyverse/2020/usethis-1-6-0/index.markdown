@@ -4,8 +4,6 @@ people:
   - Hadley Wickham
 date: '2020-04-11'
 slug: usethis-1-6-0
-categories:
-  - package
 tags:
   - devtools
   - usethis
@@ -17,6 +15,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "usethis"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

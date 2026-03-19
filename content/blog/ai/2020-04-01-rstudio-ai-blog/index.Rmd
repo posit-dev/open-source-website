@@ -8,10 +8,12 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: team2020rstudioaiblog
 date: 03-30-2020
-categories:
-  - Meta
 preview: images/thumb.jpg
 format: hugo-md
+categories:
+  - Community
+ported_categories:
+  - Meta
 ---
 
 ```{r setup, include=FALSE}

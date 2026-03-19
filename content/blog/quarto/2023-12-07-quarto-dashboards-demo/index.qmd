@@ -1,9 +1,6 @@
 ---
 title: Quarto Dashboards Demonstration
 subtitle: A brief tour of how to build a dashboard in Quarto v1.4.
-categories:
-  - Demo
-  - Quarto 1.4
 people:
   - Andrew Holz
 date: "2023-12-07"
@@ -13,6 +10,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - Demo
+  - Quarto 1.4
 ---
 
 Quarto has a host of exciting new features in release v1.4 with one of the most anticipated being Quarto Dashboards. In a recent internal presentation, Charles Teague demonstrated the new capabilities and we wanted to share it with community.

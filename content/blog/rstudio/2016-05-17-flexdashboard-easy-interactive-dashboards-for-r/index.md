@@ -3,22 +3,24 @@ title: 'flexdashboard: Easy interactive dashboards for R'
 people:
   - RStudio Team
 date: '2016-05-17'
-categories:
-- Packages
-- R Markdown
-- Shiny
 slug: flexdashboard-easy-interactive-dashboards-for-r
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - R Markdown
 - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Publishing
+  - Interactive Apps
+ported_categories:
+  - Packages
+  - R Markdown
+  - Shiny
 ---
 
 

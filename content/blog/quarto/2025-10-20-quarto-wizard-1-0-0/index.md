@@ -7,13 +7,6 @@ description: >
   Quarto extensions management with an intuitive GUI for extensions and
   templates.
 date: '2025-10-20'
-categories:
-  - community
-  - quarto
-  - vscode
-  - positron
-  - extensions
-  - productivity
 image: featured.png
 image-alt: >-
   Cartoon dog wizard wearing blue hat with red band holding magic wand creating
@@ -76,6 +69,15 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto", "positron"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+ported_categories:
+  - community
+  - quarto
+  - vscode
+  - positron
+  - extensions
+  - productivity
 ---
 
 

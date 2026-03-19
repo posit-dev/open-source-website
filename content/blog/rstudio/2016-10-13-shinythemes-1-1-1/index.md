@@ -3,20 +3,21 @@ title: shinythemes 1.1.1
 people:
   - Winston Chang
 date: '2016-10-13'
-categories:
-- Packages
-- Shiny
 slug: shinythemes-1-1-1
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

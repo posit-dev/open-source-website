@@ -8,10 +8,6 @@ author:
     affiliation_url: https://www.rstudio.com/
 date: 2022-08-24
 bibliography: bibliography.bib
-categories:
-  - Torch
-  - Packages/Releases
-  - R
 editor_options: 
   markdown: 
     wrap: 72
@@ -19,6 +15,12 @@ preview: images/bulbs.jpeg
 slug: luz-0-3-0
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - Packages/Releases
+  - R
 ---
 
 ```{r setup, include=FALSE}

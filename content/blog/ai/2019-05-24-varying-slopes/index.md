@@ -4,9 +4,6 @@ description: |
   This post builds on our recent introduction to multi-level modeling with tfprobability, the R wrapper to TensorFlow Probability. We show how to pool not just mean values ("intercepts"), but also relationships ("slopes"), thus enabling models to learn from data in an even broader way. Again, we use an example from Richard McElreath's "Statistical Rethinking"; the terminology as well as the way we present this topic are largely owed to this book.
 date: 2019-05-24
 slug: keydana2019cafes
-categories:
-  - Bayesian Modeling
-  - TensorFlow/Keras
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +15,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Bayesian Modeling
+  - TensorFlow/Keras
 ---
 
 

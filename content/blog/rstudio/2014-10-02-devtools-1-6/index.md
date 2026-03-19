@@ -3,18 +3,19 @@ title: devtools 1.6
 people:
   - Hadley Wickham
 date: '2014-10-02'
-categories:
-- Packages
 slug: devtools-1-6
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["devtools"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Packages
 ---
 
 

@@ -15,13 +15,16 @@ photo:
   url: https://unsplash.com/photos/VMKBFR6r_jg
   author: Suzanne D. Williams
 
-categories: [package] 
 tags: [tidyverse]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["lifecycle"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 We're exceedingly happy to announce the release of [lifecycle](http://lifecycle.r-lib.org/) 1.0.0.

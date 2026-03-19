@@ -12,13 +12,16 @@ photo:
   url: https://unsplash.com/photos/nQYqEwimp5o
   author: Rob Wingate
 
-categories: [package] 
 tags: [tidymodels,finetune,tune]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "finetune", "tune"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 <!--

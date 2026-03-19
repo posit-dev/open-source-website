@@ -8,15 +8,18 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2019audiobackground
 date: 02-07-2019
-categories:
-  - TensorFlow/Keras
-  - Concepts
-  - Audio Processing
 bibliography: bibliography.bib
 preview: images/seven2.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+  - Best Practices
+ported_categories:
+  - TensorFlow/Keras
+  - Concepts
+  - Audio Processing
 ---
 
 ```{r setup, include=FALSE}

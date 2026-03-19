@@ -4,11 +4,6 @@ description: |
   We code up a simple group-equivariant convolutional neural network (GCNN) that is equivariant to rotation. The world may be upside down, but the network will know.
 date: 2023-03-27T00:00:00.000Z
 slug: keydanagcnn1
-categories:
-  - Torch
-  - R
-  - Spatial Data
-  - Image Recognition & Image Processing
 author:
   - name: Sigrid Keydana
     affiliation: Posit
@@ -19,6 +14,13 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - R
+  - Spatial Data
+  - Image Recognition & Image Processing
 ---
 
 

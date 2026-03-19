@@ -13,7 +13,6 @@ photo:
   url: https://unsplash.com/photos/1Pzhr6XPl6k
   author: Derek Story
 
-categories: [package] 
 tags: [tidymodels, tune, parallelism]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tune"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 <div class="highlight">

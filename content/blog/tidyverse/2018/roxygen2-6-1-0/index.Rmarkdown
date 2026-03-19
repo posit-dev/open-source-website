@@ -3,7 +3,6 @@ title: roxygen2 6.1.0
 date: 2018-08-07
 slug: roxygen2-6-1-0
 author: Mara Averick
-categories: [package]
 description: >
     roxygen2 6.1.0 is now on CRAN!
 photo:
@@ -11,6 +10,10 @@ photo:
   author: Graeme Nicholl
 software: ["tidyverse", "roxygen2"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

@@ -13,7 +13,6 @@ photo:
   author: Oliver Olah
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [tidymodels, recipes, parsnip, workflows]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes", "parsnip", "workflows"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 Photo by <a href="https://unsplash.com/@oxygenvisuals?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Oliver Olah</a> on <a href="https://unsplash.com/photos/green-tree-in-the-middle-of-grass-field-KD8nzFznQQ0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>

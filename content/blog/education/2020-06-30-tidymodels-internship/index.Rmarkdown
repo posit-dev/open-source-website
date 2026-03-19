@@ -18,6 +18,9 @@ ported_from: education
 port_status: in-progress
 software: ["tidymodels"]
 languages: ["R"]
+categories:
+  - Community
+  - Machine Learning
 ---
 
 ```{r, include = FALSE}

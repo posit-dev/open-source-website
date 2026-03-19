@@ -3,14 +3,16 @@ title: MathJax Syntax Change
 people:
   - RStudio Team
 date: '2012-05-25'
-categories:
-- News
 slug: mathjax-syntax-change
 blogcategories:
 - Company News and Events
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Publishing
+ported_categories:
+  - News
 ---
 
 

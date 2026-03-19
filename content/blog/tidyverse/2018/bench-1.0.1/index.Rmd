@@ -4,7 +4,6 @@ date: '2018-06-28'
 slug: bench-1.0.1
 people:
   - Jim Hester
-categories: [package]
 description: >
   bench 1.0.1 is now available on CRAN. bench allows you to benchmark
   code, by tracking execution time, memory allocations and garbage
@@ -17,6 +16,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "bench"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

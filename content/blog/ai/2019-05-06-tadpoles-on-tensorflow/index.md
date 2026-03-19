@@ -4,9 +4,6 @@ description: |
   This post is a first introduction to MCMC modeling with tfprobability, the R interface to TensorFlow Probability (TFP). Our example is a multi-level model describing tadpole mortality, which may be known to the reader from Richard McElreath's wonderful "Statistical Rethinking".
 date: 2019-05-06
 slug: keydana2019tadpoles
-categories:
-  - Bayesian Modeling
-  - TensorFlow/Keras
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +15,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Bayesian Modeling
+  - TensorFlow/Keras
 ---
 
 

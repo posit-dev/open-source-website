@@ -10,12 +10,15 @@ image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/eksqjXTLpak
   author: Nathan Dumlao
-categories: [package]
 tags: [dplyr]
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 [dplyr 1.2.0](https://dplyr.tidyverse.org) is out now! This large release of dplyr comes with two sets of exciting features:

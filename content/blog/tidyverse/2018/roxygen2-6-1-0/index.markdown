@@ -4,7 +4,6 @@ date: 2018-08-07
 slug: roxygen2-6-1-0
 people:
   - Mara Averick
-categories: [package]
 tags:
   - roxygen2
   - r-lib
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "roxygen2"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

@@ -13,13 +13,16 @@ photo:
   author: Danil Shostak
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [roundup] 
 tags: [parsnip, tune, workflows, hardhat, discrim, finetune, workflowsets]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "parsnip", "tune", "workflows", "hardhat", "discrim", "finetune", "workflowsets"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - roundup
 ---
 
 <!--

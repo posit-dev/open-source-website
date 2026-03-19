@@ -3,8 +3,6 @@ title: Announcing the R Markdown Book
 people:
   - Yihui Xie
 date: '2018-07-13'
-categories:
-- R Markdown
 tags:
 - book
 - rmarkdown
@@ -17,6 +15,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+categories:
+  - Publishing
+ported_categories:
+  - R Markdown
 ---
 
 

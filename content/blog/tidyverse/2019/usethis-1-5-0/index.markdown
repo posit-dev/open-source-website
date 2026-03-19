@@ -9,7 +9,6 @@ people:
 photo:
   url: https://unsplash.com/photos/MPu7kSboG8E
   author: Philip Veater
-categories: [package]
 tags:
   - usethis
   - r-lib
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "usethis"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

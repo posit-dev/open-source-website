@@ -14,7 +14,10 @@ author:
 date: 2018-06-25
 creative_commons: null
 preview: images/backtested_test.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - TensorFlow/Keras
   - Time Series
 format: hugo-md

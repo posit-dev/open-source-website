@@ -10,7 +10,11 @@ author:
 slug: keydana2019diffpriv
 bibliography: bibliography.bib
 date: 12-20-2019
+preview: images/cat.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Privacy & Security
   - TensorFlow/Keras
   - Time Series

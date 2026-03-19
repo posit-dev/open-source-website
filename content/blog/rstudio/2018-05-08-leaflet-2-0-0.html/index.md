@@ -4,8 +4,6 @@ people:
   - Barret Schloerke
 date: '2018-05-10'
 slug: leaflet-2-0-0
-categories:
-  - Packages
 # output:
 #   blogdown::html_page:
 #     mathjax: null
@@ -23,6 +21,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]
+categories:
+  - Visualization
+  - Interactive Apps
+ported_categories:
+  - Packages
 ---
 
 

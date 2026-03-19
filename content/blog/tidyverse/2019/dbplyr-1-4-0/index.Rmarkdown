@@ -3,8 +3,6 @@ title: dbplyr 1.4.0
 author: Hadley Wickham
 date: '2019-04-30'
 slug: dbplyr-1-4-0
-categories:
-  - package
 tags:
   - databases
 photo:
@@ -12,6 +10,10 @@ photo:
   author: Samuel Zeller
 software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 ```{r, include = FALSE}

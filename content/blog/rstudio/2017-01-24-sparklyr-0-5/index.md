@@ -3,13 +3,10 @@ title: 'sparklyr 0.5: Livy and dplyr improvements'
 people:
   - Javier Luraschi
 date: '2017-01-24'
-categories:
-- Packages
 tags:
 - Livy
 - Spark
 - sparklyr
-- Packages
 slug: sparklyr-0-5
 blogcategories:
 - Products and Technology
@@ -17,6 +14,11 @@ blogcategories:
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Data Wrangling
+  - MLOps & Admin
+ported_categories:
+  - Packages
 ---
 
 

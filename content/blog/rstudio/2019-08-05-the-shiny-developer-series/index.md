@@ -4,8 +4,6 @@ people:
   - Curtis Kephart
 date: '2019-08-05'
 slug: the-shiny-developer-series
-categories:
-- Shiny
 tags:
 - shiny
 - community
@@ -16,6 +14,10 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Shiny
 ---
 
 

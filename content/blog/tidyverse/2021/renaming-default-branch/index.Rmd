@@ -16,13 +16,17 @@ photo:
   author: Natalie Chaney
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [learn, package] 
 tags: [usethis, devtools]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "usethis", "devtools"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - package
 ---
 
 Technically, Git has no official concept of the default branch.

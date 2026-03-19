@@ -7,8 +7,6 @@ slug: scales-1-1-0
 description: 
   scales 1.1.0 now available on CRAN. It includes a new naming scheme 
   (with `breaks_` and `labels_` prefixes) and greatly improved documentation.
-categories:
-  - package
 tags:
   - ggplot2
   - scales
@@ -21,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2", "scales"]
 languages: ["R"]
+categories:
+  - Visualization
+ported_categories:
+  - package
 ---
 
 

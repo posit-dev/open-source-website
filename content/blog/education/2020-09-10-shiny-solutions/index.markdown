@@ -7,9 +7,6 @@ people:
   - Maya Gans
   - Marly Gotti
 date: '2020-09-10'
-categories:
-  - learn
-  - teach
 tags:
   - Shiny
 description: |
@@ -23,6 +20,11 @@ ported_from: education
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - teach
 ---
 
 We are collaborating on creating a solutions manual to accompany Hadley Wickham's new book *[Mastering Shiny](https://mastering-shiny.org/)*.

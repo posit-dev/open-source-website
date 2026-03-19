@@ -3,8 +3,6 @@ title: SparkR preview by Vincent Warmerdam
 people:
   - Garrett Grolemund
 date: '2015-05-28'
-categories:
-- Training
 tags:
 - big data
 - Spark
@@ -15,6 +13,10 @@ blogcategories:
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+categories:
+  - MLOps & Admin
+ported_categories:
+  - Training
 ---
 
 

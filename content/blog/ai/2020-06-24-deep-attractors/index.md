@@ -4,11 +4,6 @@ description: |
   In nonlinear dynamics, when the state space is thought to be multidimensional but all we have for data is just a univariate time series, one may attempt to reconstruct the true space via delay coordinate embeddings. However, it is not clear a priori how to choose dimensionality and time lag of the reconstruction space. In this post, we show how to use an autoencoder architecture to circumvent the problem: Given just a scalar series of observations, the autoencoder directly learns to represent attractors of chaotic systems in adequate dimensionality.
 date: 2020-06-24
 slug: keydanadeepattractors
-categories:
-  - R
-  - TensorFlow/Keras
-  - Time Series
-  - Generative Models
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -20,6 +15,13 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - R
+  - TensorFlow/Keras
+  - Time Series
+  - Generative Models
 ---
 
 

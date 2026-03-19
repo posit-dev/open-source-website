@@ -10,13 +10,16 @@ image: images/conf-workshops-thumbnail.png
 image-alt: >-
   posit::conf(2024) iconography including Seattle skyline on the left and the
   words 'Quarto workshops' on the right.
-categories:
-  - Learn
-  - Workshop
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+  - Community
+ported_categories:
+  - Learn
+  - Workshop
 ---
 
 

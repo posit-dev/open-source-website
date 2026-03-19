@@ -9,7 +9,11 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchtabular
 date: 11-03-2020
+preview: images/preview.jpeg
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Torch
   - R
   - Tabular Data

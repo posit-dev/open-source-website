@@ -3,18 +3,20 @@ title: ggplot2 0.9.3 and plyr 1.8 have been released!
 people:
   - Winston Chang
 date: '2012-12-06'
-categories:
-- Packages
 slug: ggplot2-plyr-release
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+categories:
+  - Visualization
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

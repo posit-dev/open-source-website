@@ -12,7 +12,11 @@ author:
 slug: keydana2019variationalconv
 bibliography: bibliography.bib
 date: 11-13-2019
+preview: images/bbb.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Probabilistic ML/DL
   - Time Series
   - TensorFlow/Keras

@@ -3,18 +3,19 @@ title: magrittr 1.5
 people:
   - Hadley Wickham
 date: '2014-12-01'
-categories:
-- Packages
 slug: magrittr-1-5
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["magrittr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

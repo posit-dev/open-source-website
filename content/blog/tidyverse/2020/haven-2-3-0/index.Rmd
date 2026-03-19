@@ -14,13 +14,16 @@ photo:
   url: https://unsplash.com/photos/45GmTCcW8Hk
   author: Sergey Nikolaev
 
-categories: [package] 
 tags: [tidyverse, haven]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "haven"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 ```{r, include = FALSE}

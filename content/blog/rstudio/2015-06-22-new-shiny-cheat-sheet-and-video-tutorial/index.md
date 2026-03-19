@@ -3,9 +3,6 @@ title: New Shiny cheat sheet and video tutorial
 people:
   - Garrett Grolemund
 date: '2015-06-22'
-categories:
-- Shiny
-- Training
 tags:
 - cheatsheet
 - Shiny
@@ -18,6 +15,12 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+  - MLOps & Admin
+ported_categories:
+  - Shiny
+  - Training
 ---
 
 

@@ -8,8 +8,6 @@ description:
   hardhat 0.1.0 is now available on CRAN. It provides tools for developing new
   modeling packages, with a focus around preprocessing, predicting, and
   validating input.
-categories:
-  - package
 tags:
   - tidymodels
   - hardhat
@@ -21,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "hardhat"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

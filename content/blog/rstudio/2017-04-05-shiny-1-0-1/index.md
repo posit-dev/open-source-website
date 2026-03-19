@@ -3,20 +3,21 @@ title: Shiny 1.0.1
 people:
   - Bárbara Borges Ribeiro
 date: '2017-04-05'
-categories:
-- Packages
-- Shiny
 slug: shiny-1-0-1
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - Shiny
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

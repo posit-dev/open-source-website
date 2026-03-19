@@ -12,13 +12,16 @@ description: >
 photo:
   url: https://unsplash.com/photos/GywJOPMjBqY
   author: Alexandra Diaconu
-categories: [package]
 tags: [mirai, parallelism, r-lib]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "mirai"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r}

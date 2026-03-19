@@ -11,7 +11,11 @@ author:
     affiliation_url: https://www.posit.co/
 slug: torch-0-9-0
 date: 2023-04-14
+preview: images/torch.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Torch
   - Packages/Releases
   - R

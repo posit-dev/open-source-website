@@ -12,14 +12,16 @@ author:
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com
 date: 12-14-2017
-categories:
-  - TensorFlow/Keras
-  - Image Recognition & Image Processing
 preview: images/swapping_fc_classifier.png
 creative_commons: null
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Image Recognition & Image Processing
 ---
 
 ```{r setup, include=FALSE}

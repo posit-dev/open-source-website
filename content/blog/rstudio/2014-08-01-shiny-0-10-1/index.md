@@ -3,14 +3,10 @@ title: Shiny 0.10.1
 people:
   - Yihui Xie
 date: '2014-08-01'
-categories:
-- Packages
-- Shiny
 tags:
 - shiny
 - Unicode
 - UTF-8
-- Packages
 - Shiny
 slug: shiny-0-10-1
 blogcategories:
@@ -20,6 +16,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

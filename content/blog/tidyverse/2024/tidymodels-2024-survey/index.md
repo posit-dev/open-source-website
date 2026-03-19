@@ -14,7 +14,6 @@ photo:
   author: Aamyr
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [other] 
 tags: [survey,tidymodels]
 
 image: thumbnail-wd.jpg
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - other
 ---
 
 <!--

@@ -8,7 +8,12 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchlinalg
 date: 2022-10-13
+preview: images/squirrel.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+  - Best Practices
+ported_categories:
   - Torch
   - R
   - Concepts

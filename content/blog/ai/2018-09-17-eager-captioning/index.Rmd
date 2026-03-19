@@ -8,7 +8,11 @@ author:
     affiliation_url: http://www.rstudio.com/
 bibliography: bibliography.bib
 date: 09-17-2018
+preview: images/showattendandtell.png
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Natural Language Processing
   - TensorFlow/Keras
   - Image Recognition & Image Processing

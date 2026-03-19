@@ -8,13 +8,15 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: kalinowskiDLwR2e
 date: 2022-05-31
-categories:
-  - TensorFlow/Keras
-  - R
 preview: images/cover.png
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - R
 ---
 
 Today we're pleased to announce the launch of [*Deep Learning with R,

@@ -15,6 +15,8 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
 ---
 
 I spent the summer creating a series of lessons to teach statistics and data science to software engineers

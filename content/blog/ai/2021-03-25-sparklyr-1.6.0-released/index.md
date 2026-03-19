@@ -4,10 +4,6 @@ description: |
   The sparklyr 1.6 release introduces weighted quantile summaries, an R interface to power iteration clustering, spark_write_rds(), as well as a number of dplyr-related improvements.
 date: 2021-03-25
 slug: sparklyr-1.6
-categories:
-  - R
-  - Packages/Releases
-  - Distributed Computing
 author:
   - name: Yitao Li
     url: https://github.com/yitao-li
@@ -20,6 +16,12 @@ image-alt: "A lightbulb emitting many sparks"
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - MLOps & Admin
+ported_categories:
+  - R
+  - Packages/Releases
+  - Distributed Computing
 ---
 
 

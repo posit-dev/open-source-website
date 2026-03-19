@@ -6,7 +6,6 @@ people:
   - Rob J Hyndman
 date: '2020-02-13'
 slug: conf20-ts
-categories: [learn, teach]
 tags: [conf2020]
 description: This is what we covered in the Tidy Time Series workshop at rstudio::conf2020.
 photo:
@@ -16,6 +15,11 @@ image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - teach
 ---
 
 

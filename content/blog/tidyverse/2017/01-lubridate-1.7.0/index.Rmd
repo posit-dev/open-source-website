@@ -9,12 +9,15 @@ date: 2017-11-01
 photo:
   url: https://unsplash.com/photos/yBzrPGLjMQw
   author: Heather Zabriskie
-categories: [package]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "lubridate"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

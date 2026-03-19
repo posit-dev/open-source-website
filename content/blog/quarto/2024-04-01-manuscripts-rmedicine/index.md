@@ -9,12 +9,15 @@ image: images/manuscripts-thumbnail.png
 image-alt: >-
   From multiple Quarto documents and scripts in R and python to PDF or Word
   output.
-categories:
-  - Learn
 ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+categories:
+  - Publishing
+  - Community
+ported_categories:
+  - Learn
 ---
 
 

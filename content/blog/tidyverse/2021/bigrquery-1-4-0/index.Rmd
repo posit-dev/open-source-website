@@ -13,13 +13,16 @@ photo:
   url: https://unsplash.com/photos/uzw4MvfG5ps
   author: Henry & Co.
 
-categories: [package] 
 tags: [bigrquery, gargle, dbplyr, databases]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "bigrquery", "gargle", "dbplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 We're gratified to announce the release of [bigrquery](https://bigrquery.r-dbi.org) 1.4.0.

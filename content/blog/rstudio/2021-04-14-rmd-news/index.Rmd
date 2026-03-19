@@ -9,8 +9,6 @@ authormeta:
 - christophe-dervieux
 - yihui-xie
 date: '2021-04-15'
-categories:
-  - R Markdown
 tags:
   - rmarkdown
   - pagedown
@@ -23,6 +21,10 @@ description: "Happy spring! In this post, we'll share the latest news from the R
 alttext: a hedgehog
 software: ["rmarkdown", "pagedown", "blogdown", "rticles", "distill"]
 languages: ["R"]
+categories:
+  - Publishing
+ported_categories:
+  - R Markdown
 ---
 
 ```r setup, include=FALSE

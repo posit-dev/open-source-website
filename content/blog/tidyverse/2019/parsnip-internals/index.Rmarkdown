@@ -12,6 +12,10 @@ slug: parsnip-internals
 categories: [package]
 software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

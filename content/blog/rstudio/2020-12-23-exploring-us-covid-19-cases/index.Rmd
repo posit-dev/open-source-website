@@ -6,8 +6,6 @@ authormeta:
 - art-steinmetz
 date: '2020-12-23'
 slug: exploring-us-covid-19-cases
-categories:
-  - Data Science Leadership
 tags:
   - ggplot2
   - dplyr
@@ -17,6 +15,12 @@ blogcategories:
 - Data Science Leadership
 software: ["ggplot2", "dplyr"]
 languages: ["R"]
+categories:
+  - Visualization
+  - Data Wrangling
+ported_categories:
+  - Data Science Leadership
+  - Data visualization
 ---
 
 <style type="text/css"> 

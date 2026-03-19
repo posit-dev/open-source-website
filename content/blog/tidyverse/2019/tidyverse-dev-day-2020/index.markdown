@@ -6,8 +6,6 @@ date: '2019-11-05'
 slug: tidyverse-dev-day-2020
 description: > 
   Join us for tidyverse developer day in San Francisco on January 31, 2020!
-categories:
-  - other
 tags:
   - tidyverse-dev-day
 photo:
@@ -18,6 +16,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - other
 ---
 
 We're thrilled to announce that we'll be holding our next [**tidyverse developer day**](https://tdd-2019-jan.eventbrite.com/) on the Friday following [rstudio::conf](https://www.rstudio.com/conference/) in San Francisco. The event will take place from 9:00 AM – 5:00 PM at [Microsoft Reactor](https://goo.gl/maps/WkTivUvisfvVPRxt8), which is about a mile away from the conference venue (though you're welcome to attend even if you're not coming to the conferece).

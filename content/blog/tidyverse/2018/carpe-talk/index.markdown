@@ -7,14 +7,16 @@ date: '2018-07-08'
 slug: carpe-talk
 description: >
   Seize the day and show off your work!
-categories:
-  - other
 photo:
   url: https://unsplash.com/photos/iIWCjgK3704
   author: Karine Germain
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+categories:
+  - Community
+ported_categories:
+  - other
 ---
 
 Summer conference season is in full swing, with [useR! 2018 Brisbane](https://user2018.r-project.org) nearly upon us!

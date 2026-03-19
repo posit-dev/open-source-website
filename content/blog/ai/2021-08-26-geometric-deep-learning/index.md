@@ -4,10 +4,6 @@ description: |
   Geometric deep learning is a "program" that aspires to situate deep learning architectures and techniques in a framework of mathematical priors. The priors, such as various types of invariance, first arise in some physical domain. A neural network that well matches the domain will preserve as many invariances as possible. In this post, we present a very conceptual, high-level overview, and highlight a few applications.
 date: 2021-08-26
 slug: keydanageometricdl
-categories:
-  - Concepts
-  - Meta
-  - R
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -18,6 +14,12 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - Concepts
+  - Meta
+  - R
 ---
 
 

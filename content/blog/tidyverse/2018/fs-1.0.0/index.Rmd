@@ -4,7 +4,6 @@ date: '2018-01-22'
 slug: fs-1.0.0
 people:
   - Jim Hester
-categories: [package]
 description: >
   fs 1.0.0 is now available on CRAN. fs provides a cross-platform, uniform
   interface to file system operations.
@@ -16,6 +15,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "fs"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

@@ -3,9 +3,6 @@ title: R Markdown v2
 people:
   - Yihui Xie
 date: '2014-06-18'
-categories:
-- News
-- Packages
 tags:
 - dynamic documents
 - interactive documents
@@ -13,7 +10,6 @@ tags:
 - Markdown
 - Pandoc
 - rmarkdown
-- Packages
 slug: r-markdown-v2
 blogcategories:
 - Products and Technology
@@ -23,6 +19,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["markdown", "rmarkdown"]
 languages: ["R"]
+categories:
+  - Publishing
+ported_categories:
+  - News
+  - Packages
 ---
  
 

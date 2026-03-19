@@ -6,8 +6,6 @@ date: '2018-12-17'
 slug: tidyverse-and-r-lib-year-in-review
 description: > 
   A look back on 2018 in the tidyverse and beyond.
-categories:
-  - other
 tags:
   - r-lib
   - tidyverse
@@ -19,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - other
 ---
 
 It's been a banner year for the tidyverse and r-lib teams, and, as we close out 2018, we wanted to take a look back at some of our achievements.

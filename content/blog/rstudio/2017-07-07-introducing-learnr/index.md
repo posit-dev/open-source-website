@@ -3,13 +3,9 @@ title: Introducing learnr
 people:
   - Garrett Grolemund
 date: '2017-07-11'
-categories:
-- Packages
-- R Markdown
 tags:
 - shiny
 - tutorial
-- Packages
 - R Markdown
 slug: introducing-learnr
 blogcategories:
@@ -19,6 +15,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Publishing
+ported_categories:
+  - Packages
+  - R Markdown
 ---
 
 

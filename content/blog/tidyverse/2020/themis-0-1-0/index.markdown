@@ -7,8 +7,6 @@ slug: themis-0-1-0
 description: 
   themis 0.1.0 is now available on CRAN. Provides additional steps for recipes
   to deal with unbalanced data.
-categories:
-  - package
 tags: [tidymodels, themis]
 photo: 
   url: https://unsplash.com/photos/RtDwtRDvYQg
@@ -18,6 +16,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "themis"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - package
 ---
 
 

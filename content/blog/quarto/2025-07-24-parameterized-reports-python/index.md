@@ -9,10 +9,6 @@ description: >
   generator that automatically creates customized outputs for different
   scenarios. 
 date: '2025-07-24'
-categories:
-  - Authoring
-  - Teaching
-  - Jupyter
 image: thumbnail.png
 image-alt: >
   A slide with a screenshot of a Jupyter notebook with a graph and text, then an
@@ -22,6 +18,12 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["Python"]
+categories:
+  - Publishing
+ported_categories:
+  - Authoring
+  - Teaching
+  - Jupyter
 ---
 
 

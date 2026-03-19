@@ -9,7 +9,6 @@ people:
 photo:
   url: https://unsplash.com/photos/KA89yJKYtjE
   author: Marcello Gennari
-categories: [package]
 tags:
   - tibble
   - tidyverse
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tibble"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 

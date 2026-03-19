@@ -3,12 +3,8 @@ title: 'Shiny 0.12: Interactive Plots with ggplot2'
 people:
   - Joe Cheng
 date: '2015-06-16'
-categories:
-- Packages
-- Shiny
 tags:
 - ggplot2
-- Packages
 - Shiny
 slug: shiny-0-12-interactive-plots-with-ggplot2
 blogcategories:
@@ -18,6 +14,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["ggplot2", "shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - Packages
+  - Shiny
 ---
 
 

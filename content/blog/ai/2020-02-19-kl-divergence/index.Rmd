@@ -9,13 +9,16 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydana2020kldiv
 date: 02-19-2020
-categories:
-  - Probabilistic ML/DL
-  - Concepts
 bibliography: bibliography.bib
 preview: images/ultimatemachine.jpg
 format: hugo-md
 languages: ["R"]
+categories:
+  - Machine Learning
+  - Best Practices
+ported_categories:
+  - Probabilistic ML/DL
+  - Concepts
 ---
 
 

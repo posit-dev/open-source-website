@@ -4,16 +4,17 @@ title: 'Feather: A Fast On-Disk Format for Data Frames for R and Python, powered
 people:
   - Hadley Wickham
 date: '2016-03-29'
-categories:
-- Packages
 slug: feather
 blogcategories:
 - Products and Technology
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

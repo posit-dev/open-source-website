@@ -7,6 +7,8 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
+categories:
+  - Visualization
 ---
 
 Roughly a year ago, the DataFrame library Polars made its v1.0.0 release.

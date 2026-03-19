@@ -13,13 +13,16 @@ photo:
   author: Randy Fath
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [other] 
 tags: []
 
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - other
 ---
 
 <!--

@@ -13,7 +13,6 @@ photo:
   url: https://unsplash.com/photos/Uf-c4u1usFQ
   author: Tim Evans
 
-categories: [package]
 tags: [googledrive]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googledrive"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 We're jazzed to announce the release of googledrive 2.0.0 (<https://googledrive.tidyverse.org>).

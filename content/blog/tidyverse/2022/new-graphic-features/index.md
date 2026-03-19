@@ -15,7 +15,6 @@ photo:
   author: Thomas Lin Pedersen
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [deep-dive] 
 tags: [ragg, svglite, ggplot2, graphics]
 
 image: thumbnail-wd.jpg
@@ -23,6 +22,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg", "svglite", "ggplot2"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - deep-dive
 ---
 
 <!--

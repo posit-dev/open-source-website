@@ -14,13 +14,15 @@ author:
 slug: keydanaluraschi2019gpt2
 bibliography: bibliography.bib
 date: 10-23-2019
-categories:
-  - Natural Language Processing
-  - Packages/Releases
 preview: images/thumb.jpg
 format: hugo-md
 software: ["reticulate"]
 languages: ["R"]
+categories:
+  - Artificial Intelligence
+ported_categories:
+  - Natural Language Processing
+  - Packages/Releases
 ---
 
 

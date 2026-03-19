@@ -13,7 +13,6 @@ photo:
   url: https://unsplash.com/photos/Wrx0iVcYKmM
   author: Mario La Pergola
 
-categories: [roundup] 
 tags: [tidymodels, tune, workflowsets]
 
 image: thumbnail-wd.jpg
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tune", "workflowsets"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - roundup
 ---
 
 The tidymodels team recently released new versions of the tune, finetune, and workflowsets packages, and we're super stoked about it! Each of these three packages facilitates tuning hyperparameters in tidymodels, and their new releases work to make the experience of hyperparameter tuning more joyful.

@@ -17,7 +17,6 @@ photo:
   author: Nam Anh
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [ellmer, ai]
 
 image: thumbnail-wd.jpg
@@ -25,6 +24,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ellmer"]
 languages: ["R"]
+categories:
+  - Artificial Intelligence
+ported_categories:
+  - package
 ---
 
 <!--

@@ -4,8 +4,6 @@ people:
   - Hadley Wickham
 date: '2019-11-06'
 slug: testthat-2-3-0
-categories:
-  - package
 tags:
   - r-lib
   - devtools
@@ -19,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "testthat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

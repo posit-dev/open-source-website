@@ -3,8 +3,6 @@ title: 'NYC Meetup: What''s Next for R Markdown'
 people:
   - RStudio Team
 date: '2012-05-24'
-categories:
-- News
 slug: nyc-meetup-r-markdown
 blogcategories:
 - Company News and Events
@@ -13,6 +11,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]
+categories:
+  - Community
+  - Publishing
+ported_categories:
+  - News
 ---
 
 

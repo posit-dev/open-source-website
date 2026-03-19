@@ -4,10 +4,6 @@ description: |
   Conditional GANs (cGANs) may be used to generate one type of object based on another - e.g., a map based on a photo, or a color video based on black-and-white. Here, we show how to implement the pix2pix approach with Keras and eager execution.
 date: 2018-09-20
 slug: keydana2018eagerpix2pix
-categories:
-  - TensorFlow/Keras
-  - Image Recognition & Image Processing
-  - Generative Models
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -19,6 +15,12 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Image Recognition & Image Processing
+  - Generative Models
 ---
 
 

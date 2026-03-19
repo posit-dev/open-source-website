@@ -4,7 +4,6 @@ date: 2018-09-06
 slug: processx-3.2.0
 people:
   - Gábor Csárdi
-categories: [package]
 tags:
   - processx
   - r-lib
@@ -18,6 +17,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "processx"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 

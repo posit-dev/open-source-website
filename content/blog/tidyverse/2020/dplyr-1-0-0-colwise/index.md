@@ -10,8 +10,6 @@ description: >
   function variants.
 
 
-categories:
-- package
 tags:
 - dplyr
 - dplyr-1-0-0
@@ -25,6 +23,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 Today, I wanted to talk a little bit about the new `across()` function that makes it easy to perform the same operation on multiple columns.

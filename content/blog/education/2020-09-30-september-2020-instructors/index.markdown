@@ -3,8 +3,6 @@ title: Newly certified instructors in September 2020
 people:
   - greg
 date: '2020-09-30'
-categories:
-  - certify
 tags:
   - certify
 description: |
@@ -17,6 +15,10 @@ image: september-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - certify
 ---
 
 We welcomed 12 new instructors to our ranks in September 2020:

@@ -4,10 +4,6 @@ description: |
   luz version 0.3.0 is now on CRAN. luz is a high-level interface for torch.
 date: 2022-08-24T00:00:00.000Z
 slug: luz-0-3-0
-categories:
-  - Torch
-  - Packages/Releases
-  - R
 author:
   - name: Daniel Falbel
     affiliation: RStudio
@@ -18,6 +14,12 @@ image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Torch
+  - Packages/Releases
+  - R
 ---
 
 

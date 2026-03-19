@@ -3,8 +3,6 @@ title: 'Learning R Coding by Building Something Cool'
 people:
   - Aaron Durham
 date: '2021-01-28'
-categories:
-  - mentorship
 description: |
   Learning how to build a shiny dashboard,
   and through that gaining a deeper understanding of R coding.
@@ -16,6 +14,11 @@ image: aaron-durham-mentorship-wrapup-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+  - Interactive Apps
+ported_categories:
+  - mentorship
 ---
 
 In the fall semester of 2020, RStudio piloted a program to provide mentorship to Black, Latinx, and Indigenous students in data science.

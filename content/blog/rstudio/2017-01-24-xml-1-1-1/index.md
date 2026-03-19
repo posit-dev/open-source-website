@@ -3,18 +3,19 @@ title: xml2 1.1.1
 people:
   - Jim Hester
 date: '2017-01-24'
-categories:
-- Packages
 slug: xml-1-1-1
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 ported_from: rstudio
 port_status: in-progress
 software: ["xml2"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
 ---
 
 

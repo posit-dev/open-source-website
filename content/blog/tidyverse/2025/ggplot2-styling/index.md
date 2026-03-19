@@ -13,7 +13,6 @@ photo:
   author: Helena Jankovičová Kováčová
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: []
 html_dependencies:
 - <link href="htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
@@ -31,6 +30,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
+categories:
+  - Visualization
+ported_categories:
+  - package
 ---
 
 <!--

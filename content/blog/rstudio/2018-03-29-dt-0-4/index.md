@@ -3,13 +3,10 @@ title: 'DT 0.4: Editing Tables, Smart Filtering, and More'
 people:
   - Yihui Xie
 date: '2018-03-29'
-categories:
-- Packages
 tags:
 - DT
 - DataTables
 - shiny
-- Packages
 slug: dt-0-4
 blogcategories:
 - Products and Technology
@@ -18,6 +15,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["dt", "shiny-r"]
 languages: ["R"]
+categories:
+  - Visualization
+  - Interactive Apps
+ported_categories:
+  - Packages
 ---
 
 

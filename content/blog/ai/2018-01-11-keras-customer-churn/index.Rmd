@@ -8,15 +8,17 @@ author:
     affiliation: Business Science
     affiliation_url: https://www.business-science.io/
 date: 01-11-2018
-categories:
-  - TensorFlow/Keras
-  - Tabular Data
-  - Explainability
 preview: images/customer_churn_analysis_corrr.png
 creative_commons: null
 format: hugo-md
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - TensorFlow/Keras
+  - Tabular Data
+  - Explainability
 ---
 
 ```{r setup, include=FALSE}

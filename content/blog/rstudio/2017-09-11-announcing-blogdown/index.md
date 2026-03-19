@@ -4,9 +4,6 @@ people:
   - Yihui Xie
 date: '2017-09-11'
 slug: announcing-blogdown
-categories:
-- Packages
-- R Markdown
 tags:
 - Markdown
 - R Markdown
@@ -15,7 +12,6 @@ tags:
 - Jekyll
 - Hexo
 - WordPress
-- Packages
 - R Markdown
 blogcategories:
 - Products and Technology
@@ -24,6 +20,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["blogdown"]
 languages: ["R"]
+categories:
+  - Publishing
+ported_categories:
+  - Packages
+  - R Markdown
 ---
 
 

@@ -4,9 +4,6 @@ people:
   - Mine Çetinkaya-Rundel
 date: '2021-05-20'
 slug: asa-datafest-2021
-categories:
-  - Education
-  - Events
 tags:
   - contest
   - data science
@@ -18,6 +15,11 @@ image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - Education
+  - Events
 ---
 
 

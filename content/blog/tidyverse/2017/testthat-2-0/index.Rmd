@@ -4,8 +4,6 @@ people:
   - Hadley Wickham
 date: '2017-12-19'
 slug: testthat-2-0-0
-categories:
-  - package
 tags: [package, r-lib]
 photo:
   url: https://unsplash.com/photos/Lu2pfy_8VKg
@@ -15,6 +13,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "testthat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 ```{r setup, include = FALSE}

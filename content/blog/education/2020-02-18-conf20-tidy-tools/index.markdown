@@ -5,7 +5,6 @@ author:
 people:
   - Charlotte Wickham
 date: '2020-02-18'
-categories: [learn, teach]
 tags: [conf2020]
 slug: conf20-tidy-tools
 description: |
@@ -17,6 +16,11 @@ image: building-tidy-tools-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - teach
 ---
 
 

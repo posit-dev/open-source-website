@@ -5,7 +5,6 @@ author:
 people:
   - Julia Silge
 date: '2020-02-13'
-categories: [learn, teach]
 tags: [conf2020]
 slug: conf20-tidytext
 description: |
@@ -17,6 +16,11 @@ image: books-wd.jpg
 ported_from: education
 port_status: in-progress
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
+  - teach
 ---
 
 > tl;dr: all workshop materials are available here: <br>

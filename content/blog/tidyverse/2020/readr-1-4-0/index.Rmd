@@ -12,7 +12,6 @@ description: >
 photo:
   url: https://unsplash.com/photos/XOW1WqrWNKg
   author: Anastasia Zhenina
-categories: [package]
 tags:
   - readr
   - tidyverse
@@ -21,6 +20,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "readr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 [readr](http://readr.tidyverse.org) 1.4.0 is now available on CRAN! Learn more

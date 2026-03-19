@@ -9,6 +9,8 @@ photo:
   url: https://unsplash.com/photos/0JhaVZUowWU
   author: Chris Yang
 categories:
+  - Data Wrangling
+ported_categories:
   - package
 software: ["tidyverse", "httr"]
 languages: ["R"]

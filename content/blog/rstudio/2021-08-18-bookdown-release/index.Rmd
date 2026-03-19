@@ -15,6 +15,10 @@ description: |
   The latest version of the **bookdown** package is now on CRAN. A highlight of the version 0.23 release is a new HTML book output format based on Bootstrap 4 called `bs4_book()`. This release also includes improved search, customizable 404 pages, and new project templates.
 software: ["bookdown"]
 languages: ["R"]
+categories:
+  - Publishing
+ported_categories:
+  - R Markdown
 ---
 
 <!--https://unsplash.com/photos/7Bgm-_Sn09c-->

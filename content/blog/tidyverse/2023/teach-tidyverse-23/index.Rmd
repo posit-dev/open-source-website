@@ -13,7 +13,6 @@ photo:
   url: https://unsplash.com/photos/ScoYEG5LEgc
   author: Scott Evans
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [learn] 
 tags: [tidyverse, teaching]
 editor_options: 
   chunk_output_type: console
@@ -22,6 +21,10 @@ ported_from: tidyverse
 port_status: raw
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Community
+ported_categories:
+  - learn
 ---
 
 ```{=html}

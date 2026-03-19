@@ -3,9 +3,6 @@ title: Shiny 0.8.0 released; Yihui Xie joins RStudio
 people:
   - Joe Cheng
 date: '2013-11-15'
-categories:
-- News
-- Shiny
 slug: shiny-0-8-0-released
 blogcategories:
 - Products and Technology
@@ -17,6 +14,11 @@ ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
+categories:
+  - Interactive Apps
+ported_categories:
+  - News
+  - Shiny
 ---
 
 

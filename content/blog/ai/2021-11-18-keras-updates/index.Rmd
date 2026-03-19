@@ -13,7 +13,11 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanakalinowskikeras
 date: 11-18-2021
+preview: images/preview.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Packages/Releases
   - TensorFlow/Keras
   - R

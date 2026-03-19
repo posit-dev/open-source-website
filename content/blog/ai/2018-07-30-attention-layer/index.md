@@ -3,9 +3,6 @@ title: "Attention-based Neural Machine Translation with Keras"
 description: |
   As sequence to sequence prediction tasks get more involved, attention mechanisms have proven helpful. A prominent example is neural machine translation. Following a recent Google Colaboratory notebook, we show how to implement attention in R.
 date: 2018-07-30
-categories:
-  - Natural Language Processing
-  - TensorFlow/Keras
 author:
   - name: Sigrid Keydana
     affiliation: RStudio
@@ -17,6 +14,11 @@ ported_from: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
+categories:
+  - Machine Learning
+ported_categories:
+  - Natural Language Processing
+  - TensorFlow/Keras
 ---
 
 

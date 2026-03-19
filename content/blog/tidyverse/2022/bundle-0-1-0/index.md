@@ -16,13 +16,16 @@ photo:
   author: Joanna Kosinska
 
 # one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package] 
 tags: [bundle]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "bundle"]
 languages: ["R"]
+categories:
+  - MLOps & Admin
+ported_categories:
+  - package
 ---
 
 We're thrilled to announce the first release of [bundle](https://rstudio.github.io/bundle/). The bundle package provides a consistent interface to capture all information needed to serialize a model, situate that information within a portable object, and restore it for use in new settings.

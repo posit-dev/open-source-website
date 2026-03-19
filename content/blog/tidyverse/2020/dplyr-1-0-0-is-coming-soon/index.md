@@ -10,8 +10,6 @@ description: >
   is the idea of a "superseded" function. A superseded function is not going
   away, but we no longer recommend using it in new code.
 
-categories:
-- package
 tags:
 - dplyr
 - dplyr-1-0-0
@@ -25,6 +23,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 We're very excited to announce the impending arrival of dplyr 1.0.0. We haven't started the official release process yet (where we officially inform maintainers), but that is likely to start in the next week or two, and then dplyr 1.0.0 is likely to be submitted to CRAN 4-6 weeks after that.

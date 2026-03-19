@@ -12,6 +12,8 @@ ported_from: shiny
 port_status: in-progress
 software: ["chromote"]
 languages: ["R"]
+categories:
+  - Interactive Apps
 ---
 
 [chromote]: https://rstudio.github.io/chromote

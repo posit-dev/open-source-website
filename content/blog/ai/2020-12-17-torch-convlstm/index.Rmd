@@ -9,7 +9,11 @@ author:
     affiliation_url: https://www.rstudio.com/
 slug: keydanatorchconvlstm
 date: 12-17-2020
+preview: images/preview.jpeg
+format: hugo-md
 categories:
+  - Machine Learning
+ported_categories:
   - Torch
   - R
   - Image Recognition & Image Processing

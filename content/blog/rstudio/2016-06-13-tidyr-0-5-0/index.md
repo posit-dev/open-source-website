@@ -3,20 +3,21 @@ title: tidyr 0.5.0
 people:
   - Hadley Wickham
 date: '2016-06-13'
-categories:
-- Packages
-- tidyverse
 slug: tidyr-0-5-0
 blogcategories:
 - Products and Technology
 - Open Source
 tags:
-- Packages
 - tidyverse
 ported_from: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - Packages
+  - tidyverse
 ---
 
 

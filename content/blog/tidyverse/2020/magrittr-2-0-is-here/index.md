@@ -12,7 +12,6 @@ photo:
   url: https://unsplash.com/photos/E4W60q8rkZs
   author: Florian Wächter
 
-categories: [package]
 tags: []
 
 image: thumbnail-wd.jpg
@@ -20,6 +19,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["magrittr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 <div class="highlight">

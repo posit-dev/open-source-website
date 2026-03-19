@@ -9,7 +9,13 @@ author:
     affiliation_url: https://www.posit.co/
 slug: kalinowskillama
 date: 2023-05-25
+bibliography: references.bib
+preview: images/preview.jpg
+format: hugo-md
 categories:
+  - Machine Learning
+  - Artificial Intelligence
+ported_categories:
   - TensorFlow/Keras
   - R
   - Generative Models

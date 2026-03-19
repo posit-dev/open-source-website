@@ -14,7 +14,6 @@ photo:
   url: https://unsplash.com/photos/3gS-lDkOuJ4
   author: Timothy Dykes
 
-categories: [package] 
 tags:
   - tidymodels
 
@@ -23,6 +22,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 We're excited to announce the release of broom 0.7.0 on CRAN!

@@ -15,7 +15,6 @@ photo:
   url: https://unsplash.com/photos/209FvE_57H8
   author: NeONBRAND
 
-categories: [package] 
 tags: [testthat]
 
 image: thumbnail-wd.jpg
@@ -23,6 +22,10 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat"]
 languages: ["R"]
+categories:
+  - Best Practices
+ported_categories:
+  - package
 ---
 
 We're tickled pink to announce the release of [testthat](http://testthat.r-lib.org/) 3.0.0. testthat makes it easy to turn your existing informal tests into formal, automated tests that you can rerun quickly and easily. testthat is the most popular unit-testing package for R, and is used by over 5,000 CRAN and Bioconductor packages. You can learn more about unit testing at <https://r-pkgs.org/tests.html>.

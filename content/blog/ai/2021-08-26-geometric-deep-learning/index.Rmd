@@ -9,7 +9,11 @@ author:
 slug: keydanageometricdl
 date: 08-26-2021
 bibliography: bibliography.bib
+preview: images/preview.jpg
+format: hugo-md
 categories:
+  - Best Practices
+ported_categories:
   - Concepts
   - Meta
   - R

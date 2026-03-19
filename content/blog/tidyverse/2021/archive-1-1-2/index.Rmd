@@ -15,13 +15,16 @@ photo:
   
 
 # one of: "deep-dive", "learn", "package", "programming", or "other"
-categories: [package] 
 tags: [r-lib]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["archive"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 [archive](https://archive.r-lib.org/) 1.1.2 is now on CRAN. archive lets you work with file archives, such as [ZIP](https://en.wikipedia.org/wiki/ZIP_(file_format)), [tar](https://en.wikipedia.org/wiki/Tar_(computing)), [7-Zip](https://en.wikipedia.org/wiki/7-Zip) and [RAR](https://en.wikipedia.org/wiki/RAR_(file_format)) and compression formats like [gzip](https://en.wikipedia.org/wiki/Gzip), [bzip2](https://en.wikipedia.org/wiki/Bzip2), [XZ](https://en.wikipedia.org/wiki/XZ_Utils) and [Zstandard](https://en.wikipedia.org/wiki/Zstandard).

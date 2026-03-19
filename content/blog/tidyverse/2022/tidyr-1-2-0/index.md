@@ -9,13 +9,16 @@ description: >
 photo:
   url: https://unsplash.com/photos/Qv0d5LJCxgo
   author: Brina Blum
-categories: [package] 
 tags: [tidyr]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
+categories:
+  - Data Wrangling
+ported_categories:
+  - package
 ---
 
 We're chuffed to announce the release of [tidyr](https://tidyr.tidyverse.org) 1.2.0. tidyr provides a set of tools for transforming data frames to and from tidy data, where each variable is a column and each observation is a row. Tidy data is a convention for matching the semantics and structure of your data that makes using the rest of the tidyverse (and many other R packages) much easier.
