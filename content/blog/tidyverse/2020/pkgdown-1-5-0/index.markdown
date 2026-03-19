@@ -15,8 +15,6 @@ tags:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "pkgdown"]
-languages: ["R"]
 ---
 
 We're well chuffed to announce that [pkgdown](https://pkgdown.r-lib.org/) 1.5.0 is now available on CRAN. pkgdown is designed to make it quick and easy to build a website for your package. Install it with:

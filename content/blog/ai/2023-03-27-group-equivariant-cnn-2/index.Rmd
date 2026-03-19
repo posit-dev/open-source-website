@@ -15,7 +15,6 @@ categories:
   - Image Recognition & Image Processing
 preview: images/preview.jpg
 format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

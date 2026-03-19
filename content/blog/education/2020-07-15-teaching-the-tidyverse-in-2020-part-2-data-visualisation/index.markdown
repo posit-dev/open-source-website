@@ -16,8 +16,6 @@ editor_options:
     canonical: true
 ported_from: education
 port_status: in-progress
-software: ["tidyverse"]
-languages: ["R"]
 ---
 
 

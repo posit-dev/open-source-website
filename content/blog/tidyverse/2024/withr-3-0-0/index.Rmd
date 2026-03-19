@@ -19,8 +19,6 @@ tags: [r-lib, withr]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "withr"]
-languages: ["R"]
 ---
 
 It's not without jubilant bearing that we announce the release of the 3.0.0 version of [withr](https://withr.r-lib.org/), the tidyverse solution for automatic cleanup of resources! In this release, the internals of withr were rewritten to improve the performance and increase the compatibility with base R's `on.exit()` mechanism.

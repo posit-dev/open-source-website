@@ -15,7 +15,6 @@ photo:
 image: r4se-wd.jpg
 ported_from: education
 port_status: in-progress
-languages: ["R"]
 ---
 
 A couple of weeks ago, one of the Software Engineers at RStudio asked what I'd recommend for learning R, and the education team thought it might be useful to share more widely on this blog. This is my advice for quickly picking up R if you're already familiar with another programming language.

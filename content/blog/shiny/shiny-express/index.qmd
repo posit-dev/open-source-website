@@ -8,8 +8,6 @@ image: shiny-express-v2.jpg
 image-alt: "Shiny Express logo"
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
 ---
 
 ```{=html}

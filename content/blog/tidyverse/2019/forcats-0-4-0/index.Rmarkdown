@@ -10,8 +10,6 @@ categories:
 photo:
   url: https://www.pexels.com/photo/close-up-photo-of-a-hand-holding-three-white-kittens-1643456/
   author: Peng Louis
-software: ["tidyverse", "forcats"]
-languages: ["R"]
 ---
 
 ```{r include = FALSE}

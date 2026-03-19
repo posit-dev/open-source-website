@@ -13,8 +13,6 @@ categories:
 tags:
   - tidymodels
   - rules
-software: ["tidyverse", "tidymodels", "rules"]
-languages: ["R"]
 ---  
 
 ```{r setup, include=FALSE}

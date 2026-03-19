@@ -15,8 +15,6 @@ tags:
 description: Arthur Steinmetz, former Chairman, CEO, and President of OppenheimerFunds, uses R and the tidymodels package to explore the relationship between COVID-19 cases and mortality in the US.
 blogcategories:
 - Data Science Leadership
-software: ["ggplot2", "dplyr"]
-languages: ["R"]
 ---
 
 <style type="text/css"> 

@@ -18,7 +18,6 @@ categories:
   - Packages/Releases
 preview: images/torch.jpg
 format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

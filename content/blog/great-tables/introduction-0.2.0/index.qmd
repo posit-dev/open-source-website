@@ -5,8 +5,6 @@ people:
 date: 2024-01-24
 ported_from: great_tables
 port_status: in-progress
-software: ["great-tables"]
-languages: ["Python"]
 ---
 
 We enjoy working on **Great Tables** because we want everybody to easily make beautiful tables. Tables don't have to be boring, they really could be captivating and insightful. With every release we get closer and closer to realizing our mission and, as such, we're happy to announce the `v0.2.0` release that's now on PyPI.

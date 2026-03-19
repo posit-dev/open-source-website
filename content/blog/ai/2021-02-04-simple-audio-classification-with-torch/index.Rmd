@@ -16,7 +16,6 @@ preview: images/preview.jpg
 editor_options: 
   chunk_output_type: console
 format: hugo-md
-languages: ["R"]
 ---
 
 

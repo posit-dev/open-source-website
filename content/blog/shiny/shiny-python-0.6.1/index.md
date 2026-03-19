@@ -8,8 +8,6 @@ image: shiny-061.png
 image-alt: Shiny for Python 0.6.1
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
 ---
 
 

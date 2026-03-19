@@ -13,8 +13,6 @@ image: https://img.youtube.com/vi/d8Mr4m0Ybys/hqdefault.jpg
 image-alt: Talk Recording from R-Ladies Abuja
 ported_from: positron
 port_status: in-progress
-software: ["positron"]
-languages: ["R", "Python"]
 ---
 
 

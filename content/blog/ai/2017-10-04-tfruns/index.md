@@ -15,8 +15,6 @@ people:
 image: thumbnail.png
 ported_from: ai
 port_status: in-progress
-software: ["tfruns", "keras3", "tfestimators"]
-languages: ["R"]
 ---
 
 

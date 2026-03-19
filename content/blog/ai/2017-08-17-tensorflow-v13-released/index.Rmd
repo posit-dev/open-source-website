@@ -12,8 +12,6 @@ author:
 date: 08-17-2017
 preview: tensorflow-logo.png
 format: hugo-md
-software: ["tensorflow", "tfestimators"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

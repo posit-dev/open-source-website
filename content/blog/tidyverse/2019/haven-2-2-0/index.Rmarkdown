@@ -13,8 +13,6 @@ description:
 photo:
   url: https://unsplash.com/photos/R2bvzUYIdgY
   author: Tina Rolf
-software: ["tidyverse", "haven"]
-languages: ["R"]
 ---
 
 ```{r, include = FALSE}

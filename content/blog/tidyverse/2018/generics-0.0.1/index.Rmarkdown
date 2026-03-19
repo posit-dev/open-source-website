@@ -9,8 +9,6 @@ description: >
 photo:
   url: https://unsplash.com/photos/9GMO0Sxyw_Y
   author: Jonathan Knepper
-software: ["tidyverse", "generics"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

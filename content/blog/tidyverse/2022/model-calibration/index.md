@@ -19,8 +19,6 @@ tags: [model, plots]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["probably", "tidymodels"]
-languages: ["R"]
 ---
 
 <!--

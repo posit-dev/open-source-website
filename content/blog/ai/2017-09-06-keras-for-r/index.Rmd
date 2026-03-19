@@ -13,8 +13,6 @@ author:
 date: 09-05-2017
 preview: preview.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

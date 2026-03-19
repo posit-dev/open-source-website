@@ -17,7 +17,6 @@ photo:
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
-languages: ["R"]
 ---
 
 Thanks to everyone who participated in last week's webinar on Teaching online with RStudio Cloud. We weren't able to answer all of the questions that were asked during the webinar while we were online, so here are answers to all of them. If you have any other questions, please don't hesitate to post on [RStudio Community](http://community.rstudio.com/).

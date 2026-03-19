@@ -16,8 +16,6 @@ categories:
   - Packages/Releases
 preview: images/thumbnail.jpg
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 ```{r}

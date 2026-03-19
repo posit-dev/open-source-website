@@ -21,8 +21,6 @@ editor:
     canonical: true
 editor_options:
   chunk_output_type: console
-software: ["tidyverse", "dplyr"]
-languages: ["R"]
 ---
 
 [dplyr 1.2.0](https://dplyr.tidyverse.org) is out now!

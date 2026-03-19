@@ -10,8 +10,6 @@ image: history-of-shiny.jpg
 image-alt: Joe Cheng speaking at RStudio's conference in 2022
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python", "shiny-r"]
-languages: ["R", "Python"]
 ---
 
 

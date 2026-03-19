@@ -16,7 +16,6 @@ blogcategories:
 - Open Source
 ported_from: rstudio
 port_status: in-progress
-languages: ["R"]
 ---
 
 

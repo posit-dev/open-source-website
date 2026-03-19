@@ -23,8 +23,6 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "dplyr"]
-languages: ["R"]
 ---
 
 As we've mentioned, [dplyr 1.0.0 is coming soon](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-is-coming-soon/). Today, we've started the official release process by notifying maintainers of packages that have problems with dplyr 1.0.0, and we're planning for a CRAN release six weeks later, on May 1. This post is the first in a series that will introduce you to new features in dplyr 1.0.0. Today, I'll start with some big changes to `summarise()` that make it significantly more powerful.

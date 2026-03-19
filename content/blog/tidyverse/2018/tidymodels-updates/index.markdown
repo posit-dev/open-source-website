@@ -21,8 +21,6 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "recipes", "yardstick", "embed", "tidyposterior", "tidymodels"]
-languages: ["R"]
 ---
 
 

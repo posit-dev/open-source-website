@@ -15,7 +15,6 @@ categories:
   - Packages/Releases
 preview: images/preview.jpg
 format: hugo-md
-languages: ["R"]
 ---
 
 

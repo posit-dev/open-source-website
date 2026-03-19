@@ -17,7 +17,6 @@ categories:
   - R
 preview: images/torch.png
 format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

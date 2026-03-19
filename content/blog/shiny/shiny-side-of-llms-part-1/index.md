@@ -16,8 +16,6 @@ image: shiny-side-of-llms-header.png
 image-alt: The Shiny Side of LLMs part 1
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python", "shiny-r", "chatlas", "ellmer"]
-languages: ["R", "Python"]
 ---
 
 

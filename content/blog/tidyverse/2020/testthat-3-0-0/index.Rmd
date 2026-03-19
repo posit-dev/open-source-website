@@ -21,8 +21,6 @@ tags: [testthat]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "testthat"]
-languages: ["R"]
 ---
 
 We're tickled pink to announce the release of [testthat](http://testthat.r-lib.org/) 3.0.0.

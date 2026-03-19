@@ -10,8 +10,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/0yL6nXhn0pI
   author: Victor Garcia
-software: ["tidyverse", "tidyr"]
-languages: ["R"]
 ---
 
 ```{r, include = FALSE}

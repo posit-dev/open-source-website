@@ -16,8 +16,6 @@ photo:
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
-software: ["shiny-r"]
-languages: ["R"]
 ---
 
 [ThinkR](https://thinkr.fr/) is running 10 half-days of remote training on "Shiny in Production" in July 2020.

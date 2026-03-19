@@ -9,8 +9,6 @@ ported_from: plotnine
 port_status: in-progress
 categories:
   - plotnine
-software: ["plotnine"]
-languages: ["Python"]
 ---
 
 

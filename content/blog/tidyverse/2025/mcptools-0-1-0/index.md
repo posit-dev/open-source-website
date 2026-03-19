@@ -19,8 +19,6 @@ tags: [ellmer, ai]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "ellmer"]
-languages: ["R"]
 ---
 
 We're hootin' to holler about the initial release of mcptools, a package implementing the Model Context Protocol (MCP) in R. MCP standardizes how applications provide context to LLMs. When used with R:

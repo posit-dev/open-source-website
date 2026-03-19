@@ -21,8 +21,6 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "ragg", "systemfonts"]
-languages: ["R"]
 ---
 
 We're thrilled to announce the new releases of ragg and systemfonts. ragg is a package that provides a modern set of raster devices as alternatives to the ones you know from the grDevices package (e.g. `png()`). systemfonts is a low level package that provides font-related utilities to graphic devices, most importantly detecting and matching fonts to the correct font files across systems.

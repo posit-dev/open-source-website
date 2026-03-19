@@ -11,8 +11,6 @@ date: '2024-03-27'
 image: feature.png
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-r", "bslib"]
-languages: ["R"]
 ---
 
 

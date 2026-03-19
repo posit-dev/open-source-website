@@ -23,8 +23,6 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "dplyr"]
-languages: ["R"]
 ---
 
 Today, I wanted to talk a little bit about the renewed `rowwise()` function that makes it easy to perform operations "row-by-row". I'll show how you can use `rowwise()` to compute summaries "by row", talk about how `rowwise()` is a natural pairing with list-columns, and show a couple of use cases that I think are particularly elegant. You can learn more about all of these topics in [`vignette("rowwise")`](https://dplyr.tidyverse.org/dev/articles/rowwise.html).

@@ -19,8 +19,6 @@ tags: [googlesheets4, gargle]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "googlesheets4", "gargle"]
-languages: ["R"]
 ---
 
 We're over the moon to announce the release of googlesheets4, version 1.0.0 (<https://googlesheets4.tidyverse.org>).

@@ -14,13 +14,12 @@ tags:
 - Packages
 ported_from: rstudio
 port_status: in-progress
-languages: ["R"]
 ---
 
 
 We're excited today to announce [sparklyr](http://spark.rstudio.com), a new package that provides an interface between R and [Apache Spark](http://spark.apache.org/).
 
-![](/blog-images/2016-09-27-sparklyr-illustration.png)
+![](2016-09-27-sparklyr-illustration.png)
 
 Over the past couple of years we've heard time and time again that people want a native [dplyr](https://github.com/hadley/dplyr) interface to Spark, so we built one! sparklyr also provides interfaces to Spark's distributed machine learning algorithms and much more. Highlights include:
 
@@ -204,15 +203,15 @@ The latest RStudio [Preview Release](https://www.rstudio.com/products/rstudio/do
 
 Once you've installed the sparklyr package, you should find a new **Spark** pane within the IDE. This pane includes a **New Connection** dialog which can be used to make connections to local or remote Spark instances:
 
-![](/blog-images/2016-09-27-spark-connect.png)
+![](2016-09-27-spark-connect.png)
 
 Once you've connected to Spark you'll be able to browse the tables contained within the Spark cluster:
 
-![](/blog-images/2016-09-27-spark-tab.png)
+![](2016-09-27-spark-tab.png)
 
 The Spark DataFrame preview uses the standard RStudio data viewer:
 
-![](/blog-images/2016-09-27-spark-dataview.png)
+![](2016-09-27-spark-dataview.png)
 
 The RStudio IDE features for sparklyr are available now as part of the [RStudio Preview Release](https://www.rstudio.com/products/rstudio/download/preview/). The final version of RStudio IDE that includes integrated support for sparklyr will ship within the next few weeks.
 

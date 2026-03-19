@@ -14,8 +14,6 @@ categories:
   - Cloud
 preview: images/preview.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

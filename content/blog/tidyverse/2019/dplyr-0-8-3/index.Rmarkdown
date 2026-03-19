@@ -11,8 +11,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/OxK32aLJXWU
   author: Krzysztof Niewolny
-software: ["tidyverse", "dplyr"]
-languages: ["R"]
 ---
 
 

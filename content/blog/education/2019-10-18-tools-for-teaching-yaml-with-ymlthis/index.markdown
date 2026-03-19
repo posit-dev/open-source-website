@@ -18,8 +18,6 @@ tags: [internship]
 image: stones-wd.jpg
 ported_from: education
 port_status: in-progress
-software: ["ymlthis"]
-languages: ["R"]
 ---
 
 

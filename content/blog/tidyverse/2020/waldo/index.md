@@ -19,8 +19,6 @@ tags: [testthat, waldo]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "testthat", "waldo"]
-languages: ["R"]
 ---
 
 We're stoked to announce the [waldo](http://waldo.r-lib.org/) package. waldo is designed to find and concisely describe the difference between a pair of R objects. It was designed primarily to improve failure messages for [`testthat::expect_equal()`](https://testthat.r-lib.org/reference/equality-expectations.html), but it turns out to be useful in a number of other situations.

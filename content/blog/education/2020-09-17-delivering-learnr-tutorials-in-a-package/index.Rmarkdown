@@ -17,8 +17,6 @@ photo:
 image: dog-in-box-wd.jpg
 ported_from: education
 port_status: in-progress
-software: ["rmarkdown", "learnr"]
-languages: ["R"]
 ---
 
 

@@ -17,8 +17,6 @@ format:
   docx: default
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
 ---
 
 {{< include ../_quarto-1.3-feature.qmd >}}

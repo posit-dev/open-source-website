@@ -11,8 +11,6 @@ tags:
 photo:
   author: Rock'n Roll Monkey
   url: https://unsplash.com/photos/R4WCbazrD1g
-software: ["tidyverse", "devtools", "usethis"]
-languages: ["R"]
 ---
 
 ```{r, include = FALSE}

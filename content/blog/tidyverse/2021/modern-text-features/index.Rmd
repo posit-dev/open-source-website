@@ -22,8 +22,6 @@ tags: [graphic-device, ragg, systemfonts]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "ragg", "systemfonts"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

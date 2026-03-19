@@ -9,8 +9,6 @@ description: >
 photo:
   url: https://unsplash.com/photos/ahB6ZhxHRtk
   author: rawpixel
-software: ["tidyverse", "parsnip", "tidymodels"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

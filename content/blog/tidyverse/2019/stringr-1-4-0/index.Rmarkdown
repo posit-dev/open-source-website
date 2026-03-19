@@ -10,8 +10,6 @@ categories:
 photo:
   url: https://unsplash.com/photos/o-d37kiKqqc
   author: Maranda Vandergriff
-software: ["tidyverse", "stringr"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

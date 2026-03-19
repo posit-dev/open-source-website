@@ -19,8 +19,6 @@ tags: [roxygen2, devtools]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "roxygen2", "devtools"]
-languages: ["R"]
 ---
 
 <!--

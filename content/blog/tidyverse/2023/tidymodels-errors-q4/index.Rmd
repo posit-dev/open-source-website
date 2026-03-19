@@ -19,8 +19,6 @@ tags: [tidymodels, package maintenance, tune, parsnip]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "tidymodels", "tune", "parsnip"]
-languages: ["R"]
 ---
 
 ```{r, include = FALSE} 

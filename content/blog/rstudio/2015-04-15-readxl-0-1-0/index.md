@@ -13,8 +13,6 @@ tags:
 - Packages
 ported_from: rstudio
 port_status: in-progress
-software: ["readxl"]
-languages: ["R"]
 ---
 
 

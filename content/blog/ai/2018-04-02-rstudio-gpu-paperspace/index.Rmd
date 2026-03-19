@@ -13,8 +13,6 @@ preview: images/paperspace-mnist-cnn.png
 categories:
   - Cloud
 format: hugo-md
-software: ["tensorflow", "keras3", "tfestimators"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

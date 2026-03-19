@@ -14,8 +14,6 @@ creative_commons: CC BY
 repository_url: https://github.com/henry090/Deepfake-from-R
 preview: files/frame_2.jpg
 format: hugo-md
-software: ["reticulate"]
-languages: ["R"]
 ---
 
 

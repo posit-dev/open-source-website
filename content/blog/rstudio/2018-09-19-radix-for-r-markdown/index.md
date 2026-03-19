@@ -14,8 +14,6 @@ blogcategories:
 - Open Source
 ported_from: rstudio
 port_status: in-progress
-software: ["rmarkdown"]
-languages: ["R"]
 ---
 
 
@@ -44,19 +42,19 @@ Below we'll demonstrate some of the key features of Radix. To learn more about i
 Radix provides many flexible options for laying out figures. While the main text column in Radix articles is relatively narrow (optimized for comfortable reading), figures can occupy a larger region. For example:
 
 <figure>
-<img src="/blog-images/2018-09-17-radix-wider-layouts.png" class="screenshot"/>
+<img src="2018-09-17-radix-wider-layouts.png" class="screenshot"/>
 </figure>
 
 For figures you want to emphasize or that require lots of visual space, you can also create layouts that occupy the entire width of the screen:
 
 <figure>
-<img src="/blog-images/2018-09-17-radix-fullscreen-layout.png" class="screenshot"/>
+<img src="2018-09-17-radix-fullscreen-layout.png" class="screenshot"/>
 </figure>
 
 Of course, some figures and notes are only ancillary and are therefore better placed in the margin:
 
 <figure>
-<img src="/blog-images/2018-09-17-radix-footnotes-and-asides.png" class="screenshot"/>
+<img src="2018-09-17-radix-footnotes-and-asides.png" class="screenshot"/>
 </figure>
 
 
@@ -73,7 +71,7 @@ In addition, when you provide a `citation_url` metadata field for your article, 
 Radix also automatically includes standard [Open Graph](http://ogp.me/) and [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards) metadata. This makes links to your article display rich metadata when shared in various places:
 
 <figure>
-<img src="/blog-images/2018-09-17-radix-metadata.png" class="screenshot"/>
+<img src="2018-09-17-radix-metadata.png" class="screenshot"/>
 </figure>
 
 ## Creating a blog
@@ -81,7 +79,7 @@ Radix also automatically includes standard [Open Graph](http://ogp.me/) and [Twi
 You can publish a series of Radix articles as either a website or a blog. For example, the [TensorFlow for R](https://blogs.rstudio.com/tensorflow/) blog is implemented using Radix:
 
 <figure>
-<img src="/blog-images/2018-09-17-radix-blog.png" class="screenshot"/>
+<img src="2018-09-17-radix-blog.png" class="screenshot"/>
 </figure>
 
 To learn more, see the article on [creating a blog with Radix](https://rstudio.github.io/radix/blog.html).

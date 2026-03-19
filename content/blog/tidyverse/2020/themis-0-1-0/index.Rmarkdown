@@ -12,8 +12,6 @@ tags: [tidymodels, themis]
 photo: 
   url: https://unsplash.com/photos/RtDwtRDvYQg
   author: Roman Kraft
-software: ["tidyverse", "tidymodels", "themis"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

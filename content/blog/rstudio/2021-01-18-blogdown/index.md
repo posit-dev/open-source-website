@@ -20,8 +20,6 @@ blogcategories:
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress
-software: ["blogdown"]
-languages: ["R"]
 ---
 
 The R Markdown team is happy to share that **blogdown** version 1.0 is now available on CRAN. **blogdown** was [originally released](/2017/09/11/announcing-blogdown/) in the fall of 2017. The latest version of the package includes some significant improvements to the user experience, and some under-the-hood improvements that you'll benefit from without even knowing!

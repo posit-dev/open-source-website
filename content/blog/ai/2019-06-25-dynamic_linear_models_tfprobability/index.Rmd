@@ -14,8 +14,6 @@ categories:
   - Time Series
 preview: images/thumb.png
 format: hugo-md
-software: ["tfprobability", "tensorflow"]
-languages: ["R"]
 ---
 
 

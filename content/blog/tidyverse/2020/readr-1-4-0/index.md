@@ -19,8 +19,6 @@ tags:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "readr"]
-languages: ["R"]
 ---
 
 [readr](http://readr.tidyverse.org) 1.4.0 is now available on CRAN! Learn more about readr at <a href="https://readr.tidyverse.org" class="uri">https://readr.tidyverse.org</a>. Detailed notes are always in the [change log](https://readr.tidyverse.org/news/index.html#readr-1-4-0).

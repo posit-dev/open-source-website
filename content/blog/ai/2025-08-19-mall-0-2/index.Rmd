@@ -20,7 +20,6 @@ categories:
   - Tabular Data
 preview: images/article.png
 format: hugo-md
-languages: ["R", "Python"]
 ---
 
 [mall](https://mlverse.github.io/mall/) uses Large Language Models (LLM) to run 

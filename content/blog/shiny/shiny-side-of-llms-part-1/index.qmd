@@ -19,8 +19,6 @@ resources:
     - shiny-side-of-llms-image-gen.png
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python", "shiny-r", "chatlas", "ellmer"]
-languages: ["R", "Python"]
 ---
 
 # Welcome to the Shiny Side of LLMs!

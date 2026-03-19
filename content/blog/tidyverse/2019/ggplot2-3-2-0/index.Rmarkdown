@@ -10,8 +10,6 @@ categories:
 photo:
   url: https://unsplash.com/photos/eH_ftJYhaTY
   author: chuttersnap
-software: ["tidyverse", "ggplot2"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

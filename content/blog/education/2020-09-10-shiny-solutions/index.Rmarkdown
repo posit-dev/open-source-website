@@ -21,8 +21,6 @@ photo:
 image: shiny-solutions-wd.jpg
 ported_from: education
 port_status: in-progress
-software: ["shiny-r"]
-languages: ["R"]
 ---
 
 We are collaborating on creating a solutions manual to accompany Hadley Wickham's new book *[Mastering Shiny](https://mastering-shiny.org/)*.

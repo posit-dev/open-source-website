@@ -14,8 +14,6 @@ categories:
   - Packages/Releases
 preview: images/tfhub.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 

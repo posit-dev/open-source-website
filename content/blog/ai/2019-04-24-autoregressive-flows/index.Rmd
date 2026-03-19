@@ -15,8 +15,6 @@ categories:
 bibliography: bibliography.bib
 preview: images/made.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 

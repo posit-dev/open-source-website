@@ -20,8 +20,6 @@ tags: [rvest]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "rvest"]
-languages: ["R"]
 ---
 
 I'm tickled pink to announce the release of [rvest](https://rvest.tidyverse.org) 1.0.0.

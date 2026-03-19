@@ -8,8 +8,6 @@ image: shiny-for-python.jpg
 image-alt: "The Shiny hex sticker next to the Python language logo, saying Shiny for Python"
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
 ---
 
 We are thrilled to announce that [Shiny for Python](https://shiny.posit.co/py/) has moved from the alpha stage to general availability. With Shiny for Python, data scientists can build interactive web applications with the expressiveness and power of reactive programming, and combine that with the extensive array of data analysis tools and visualization libraries in Python.

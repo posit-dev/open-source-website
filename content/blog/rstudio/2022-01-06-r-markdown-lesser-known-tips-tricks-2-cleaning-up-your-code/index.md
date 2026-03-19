@@ -17,8 +17,6 @@ description: In this series, we show you lesser-known tips and tricks to help yo
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress
-software: ["rmarkdown"]
-languages: ["R"]
 ---
 
 The R Markdown file format combines R programming and the markdown language to create dynamic, reproducible documents. Authors use R Markdown for reports, slide shows, blogs, books --- even <a href="https://bookdown.org/yihui/rmarkdown/shiny-start.html" target = "_blank">Shiny apps</a>! But, how can users ensure that their R Markdown documents are easy to write, read, and maintain?

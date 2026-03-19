@@ -16,7 +16,6 @@ categories:
 bibliography: references.bib
 preview: images/preview.jpg
 format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

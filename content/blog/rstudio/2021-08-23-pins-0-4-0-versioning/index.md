@@ -14,8 +14,6 @@ tags:
 alttext: an old frazzled man holds a huge remote next to a frightened boy
 ported_from: rstudio
 port_status: in-progress
-software: ["pins-r"]
-languages: ["R"]
 ---
 
 

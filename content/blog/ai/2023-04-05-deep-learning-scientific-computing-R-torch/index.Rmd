@@ -16,7 +16,6 @@ categories:
   - Packages/Releases
 preview: images/book.jpg
 format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

@@ -16,18 +16,16 @@ blogcategories:
 - Open Source
 ported_from: rstudio
 port_status: in-progress
-software: ["shiny-r"]
-languages: ["R"]
 ---
 
 
 I am excited to announce the redesign and reorganization of [shiny.rstudio.com](https://shiny.rstudio.com/), also known as the Shiny Dev Center. The Shiny Dev Center is the place to go to [learn](https://shiny.rstudio.com/tutorial/) about [all things Shiny](https://shiny.rstudio.com/articles/) and to [keep up to date](http://shiny.rstudio-staging.com/reference/shiny/) with it as it evolves.
 
-![Shiny Dev Center](/blog-images/2017-08-29-shiny-dev-center-home.png)
+![Shiny Dev Center](2017-08-29-shiny-dev-center-home.png)
 
 The goal of this refresh is to provide a clear learning path for those who are just starting off with developing Shiny apps as well as to make advanced Shiny topics easily accessible to those building large and complex apps. The [articles overview](https://shiny.rstudio.com/articles/) that we designed to help navigate the wealth of information on the Shiny Dev Center aims to achieve this goal.
 
-![Articles overview](/blog-images/2017-08-29-shiny-articles-overview.png)
+![Articles overview](2017-08-29-shiny-articles-overview.png)
 
 Other highlights of the refresh include:
 

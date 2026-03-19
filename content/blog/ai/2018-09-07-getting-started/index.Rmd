@@ -12,8 +12,6 @@ categories:
   - TensorFlow/Keras
 preview: images/digits.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 

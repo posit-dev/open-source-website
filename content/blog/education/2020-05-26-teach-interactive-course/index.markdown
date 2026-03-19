@@ -19,8 +19,6 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: education
 port_status: in-progress
-software: ["learnr"]
-languages: ["R"]
 ---
 
 I [recently published](https://juliasilge.com/blog/tidymodels-ml-course/) yet another version of an [interactive supervised machine learning course](https://supervised-ml-course.netlify.app/) where learners can practice their modeling skills in the browser with four case studies. 

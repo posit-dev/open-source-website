@@ -12,8 +12,6 @@ image: layouts-thumb.jpg
 image-alt: An illustration of Shiny layouts and components
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
 ---
 
 

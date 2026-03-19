@@ -18,8 +18,6 @@ photo:
 image: pkg-wd.jpg
 ported_from: education
 port_status: in-progress
-software: ["devtools", "usethis"]
-languages: ["R"]
 ---
 
 > tl;dr: all workshop materials are available here: <br>

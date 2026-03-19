@@ -5,8 +5,6 @@ people:
 date: 2025-02-11
 ported_from: great_tables
 port_status: in-progress
-software: ["great-tables"]
-languages: ["Python"]
 ---
 
 The Great Tables package allows you to make tables, and they're really great when part of a report, a book, or a web page. The API is meant to be easy to work with so DataFrames could be made into publication-quality tables without a lot of hassle. And having nice-looking tables in the mix elevates the quality of the medium you're working in.

@@ -5,8 +5,6 @@ people:
 date: 2024-03-19
 ported_from: great_tables
 port_status: in-progress
-software: ["great-tables"]
-languages: ["Python"]
 ---
 
 The recent `v0.4.0` release of **Great Tables** contains nanoplots as a major new feature. So, in this post I'll concentrate on showing you all the things you can do with nanoplots. What are nanoplots? Well, with nanoplots you can do this:

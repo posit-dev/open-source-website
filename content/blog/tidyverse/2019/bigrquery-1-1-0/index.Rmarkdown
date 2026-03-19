@@ -10,8 +10,6 @@ categories:
 photo:
   url: https://www.pexels.com/photo/green-and-red-abstract-painting-1070534/
   author: Steve Johnson
-software: ["tidyverse", "bigrquery", "dplyr", "dbplyr"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

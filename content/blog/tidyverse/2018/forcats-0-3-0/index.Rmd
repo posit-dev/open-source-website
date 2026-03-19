@@ -13,8 +13,6 @@ categories: [package]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "forcats"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

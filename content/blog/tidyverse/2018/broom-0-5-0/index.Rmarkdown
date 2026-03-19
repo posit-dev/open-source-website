@@ -10,8 +10,6 @@ categories:
 photo:
   url: https://unsplash.com/photos/vYcH7pI6v1Q
   author: Nagesh Badu
-software: ["tidyverse", "broom", "tidymodels"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

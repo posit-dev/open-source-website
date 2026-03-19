@@ -10,8 +10,6 @@ date: '2023-11-30'
 image: feature.jpg
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-r", "shinylive", "bslib"]
-languages: ["R"]
 ---
 
 

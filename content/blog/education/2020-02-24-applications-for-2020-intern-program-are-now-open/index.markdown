@@ -13,7 +13,6 @@ description: |
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
-languages: ["R"]
 ---
 
 As [we announced last year][preview],

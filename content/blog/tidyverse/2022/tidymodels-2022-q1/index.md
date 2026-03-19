@@ -19,8 +19,6 @@ tags: [tidymodels, textrecipes, workflowsets, dials]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "tidymodels", "textrecipes", "workflowsets", "dials"]
-languages: ["R"]
 ---
 
 <!--

@@ -14,8 +14,6 @@ image: thumbnail.png
 image-alt: Talk Recordings at posit::conf(2025)
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
 ---
 
 

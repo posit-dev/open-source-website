@@ -11,8 +11,6 @@ tags:
   - tidyverse-dev-day
 photo:
   author: Max Kuhn
-software: ["tidyverse"]
-languages: ["R"]
 ---
 
 ## Post-rstudio::conf(2020) dev day

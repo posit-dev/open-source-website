@@ -10,8 +10,6 @@ categories:
 photo:
   url: https://unsplash.com/photos/X1exjxxBho4
   author: Roman Kraft
-software: ["tidyverse", "textrecipes", "tidymodels"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

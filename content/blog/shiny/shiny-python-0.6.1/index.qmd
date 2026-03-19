@@ -10,8 +10,6 @@ resources:
     - shiny-061.png
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
 ---
 
 Shiny for Python 0.6.1 is out! You can read the full [changelog](https://github.com/posit-dev/py-shiny/blob/main/CHANGELOG.md) for a complete list of new features.

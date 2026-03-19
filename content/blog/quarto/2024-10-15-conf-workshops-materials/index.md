@@ -13,8 +13,6 @@ image: images/thumbnail.png
 image-alt: 'posit::conf(2024) logo '
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
 ---
 
 

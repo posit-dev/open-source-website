@@ -11,8 +11,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/xFTNsGW1isI
   author: Joanna Kosinska
-software: ["tidyverse", "dplyr"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

@@ -15,8 +15,6 @@ tags:
   - poissonreg
   - plsmod
   - parsnip
-software: ["tidyverse", "tidymodels", "parsnip"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

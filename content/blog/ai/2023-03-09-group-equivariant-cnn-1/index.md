@@ -19,7 +19,6 @@ image: thumbnail.jpg
 image-alt: "Field of wheat"
 ported_from: ai
 port_status: in-progress
-languages: ["R"]
 ---
 
 

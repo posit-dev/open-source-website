@@ -21,8 +21,6 @@ blogcategories:
 - Open Source
 ported_from: rstudio
 port_status: in-progress
-software: ["markdown", "rmarkdown"]
-languages: ["R"]
 ---
  
 

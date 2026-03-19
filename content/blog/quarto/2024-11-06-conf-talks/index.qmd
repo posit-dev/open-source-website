@@ -12,8 +12,6 @@ image: "images/thumbnail.jpg"
 image-alt: "Collage of speakers with Quarto talks at posit::conf(2024)"
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
 ---
 
 Videos of posit::conf(2024) talks are now posted [on YouTube](https://www.youtube.com/watch?v=s_Vh9HIeLVg&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn). We have also made playlist of talks that are about using, building with, and building on Quarto.

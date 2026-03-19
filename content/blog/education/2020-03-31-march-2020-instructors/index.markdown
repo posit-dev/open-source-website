@@ -16,7 +16,6 @@ photo:
 image: march-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
-languages: ["R"]
 ---
 
 We are very pleased to have welcomed nine new certified instructors in March 2020:

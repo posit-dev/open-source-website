@@ -19,8 +19,6 @@ blogcategories:
 - Open Source
 ported_from: rstudio
 port_status: in-progress
-software: ["progress", "shiny-r"]
-languages: ["R"]
 ---
 
 

@@ -14,8 +14,6 @@ categories:
   - TensorFlow/Keras
 preview: images/website.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 

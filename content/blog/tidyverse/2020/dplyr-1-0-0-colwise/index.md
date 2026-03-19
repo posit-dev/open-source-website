@@ -23,8 +23,6 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "dplyr"]
-languages: ["R"]
 ---
 
 Today, I wanted to talk a little bit about the new `across()` function that makes it easy to perform the same operation on multiple columns.

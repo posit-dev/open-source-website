@@ -18,8 +18,6 @@ categories:
   - Tables
 ported_from: quarto
 port_status: raw
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
 ---
 
 

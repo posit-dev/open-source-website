@@ -15,8 +15,6 @@ categories: [package]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["reprex"]
-languages: ["R"]
 ---
 
 We're overjoyed to announce the release of [reprex](https://reprex.tidyverse.org) 2.0.0.

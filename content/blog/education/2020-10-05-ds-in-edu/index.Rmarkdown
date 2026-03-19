@@ -21,8 +21,6 @@ editor_options:
 image: banner-wd.jpg
 ported_from: education
 port_status: in-progress
-software: ["bookdown"]
-languages: ["R"]
 ---
 
 ```{r install dataedu, include=FALSE}

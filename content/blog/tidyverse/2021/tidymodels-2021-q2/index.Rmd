@@ -21,8 +21,6 @@ tags: [tidymodels, parsnip, recipes, butcher, yardstick, probably]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "tidymodels", "parsnip", "recipes", "butcher", "yardstick", "probably"]
-languages: ["R"]
 ---
 
 ```{r include=FALSE}

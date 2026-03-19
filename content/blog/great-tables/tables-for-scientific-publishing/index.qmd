@@ -9,8 +9,6 @@ format:
     code-summary: "Show the Code"
 ported_from: great_tables
 port_status: in-progress
-software: ["great-tables"]
-languages: ["Python"]
 ---
 
 **Great Tables** version `0.10.0` has be released today and it contains a host of new features to support tables meant for scientific publishing.

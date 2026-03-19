@@ -5,8 +5,6 @@ people:
 date: 2024-01-08T00:00:00.000Z
 ported_from: great_tables
 port_status: in-progress
-software: ["great-tables"]
-languages: ["Python"]
 ---
 
 

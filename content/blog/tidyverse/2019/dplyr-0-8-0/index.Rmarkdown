@@ -14,8 +14,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/-WAiyQLGEEc
   author: Element5 Digital
-software: ["tidyverse", "dplyr"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

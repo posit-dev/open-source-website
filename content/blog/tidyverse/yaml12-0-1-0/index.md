@@ -21,8 +21,6 @@ tags: [yaml, r, python, rust]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "yaml"]
-languages: ["R"]
 ---
 
 <!--

@@ -13,8 +13,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/kU-WKSyTcp4
   author: Pau Casals
-software: ["tidyverse", "dplyr"]
-languages: ["R"]
 ---
 
 <style>

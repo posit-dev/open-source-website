@@ -10,8 +10,6 @@ resources:
  - previous_city_button.mp4
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-r"]
-languages: ["R"]
 ---
 
 :::{.bg-gray .p-3 .px-md-5 .pt-md-5 .pb-md-4 .mb-5 .p-85} 

@@ -15,7 +15,6 @@ photo:
 image: data-wd.jpg
 ported_from: education
 port_status: in-progress
-languages: ["R"]
 ---
 
 

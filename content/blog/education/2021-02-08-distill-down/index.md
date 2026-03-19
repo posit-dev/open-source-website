@@ -10,8 +10,6 @@ photo:
 image: strawberry-wd.png
 ported_from: education
 port_status: in-progress
-software: ["distill"]
-languages: ["R"]
 ---
 
 ## Introduction

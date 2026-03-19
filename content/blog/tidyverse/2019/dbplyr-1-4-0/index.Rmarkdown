@@ -10,8 +10,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/JuFcQxgCXwA
   author: Samuel Zeller
-software: ["tidyverse", "dbplyr", "dplyr"]
-languages: ["R"]
 ---
 
 ```{r, include = FALSE}

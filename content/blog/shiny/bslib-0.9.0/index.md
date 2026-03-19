@@ -8,8 +8,8 @@ image: feature.jpg
 image-alt: bslib + brand.yml
 ported_from: shiny
 port_status: in-progress
-software: ["bslib", "shiny-r", "brand-yml"]
-languages: ["R"]
+languages:
+- R
 ---
 
 

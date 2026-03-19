@@ -9,8 +9,6 @@ description: >
 photo:
   url: https://unsplash.com/photos/3KEJMfoHoMY
   author: Graeme Nicholl
-software: ["tidyverse", "roxygen2"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

@@ -15,7 +15,6 @@ categories:
   - Distributed Computing
 preview: images/sparklyr-1.5.jpg
 format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

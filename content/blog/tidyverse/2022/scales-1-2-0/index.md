@@ -20,8 +20,6 @@ tags: [ggplot2, scales]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "ggplot2", "scales"]
-languages: ["R"]
 ---
 
 <!--

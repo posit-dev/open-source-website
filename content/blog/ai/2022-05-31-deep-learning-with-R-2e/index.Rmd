@@ -13,8 +13,6 @@ categories:
   - R
 preview: images/cover.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 Today we're pleased to announce the launch of [*Deep Learning with R,

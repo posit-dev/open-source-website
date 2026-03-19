@@ -6,8 +6,6 @@ date: '2015-01-09'
 slug: dplyr-0-4-0
 ported_from: rstudio
 port_status: in-progress
-software: ["dplyr"]
-languages: ["R"]
 ---
 
 

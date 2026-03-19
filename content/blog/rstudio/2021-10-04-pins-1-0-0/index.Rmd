@@ -16,8 +16,6 @@ resources:
   - name: hero
     src: hero.jpg
     title: A world map with many pins stuck in it
-software: ["pins-r"]
-languages: ["R"]
 ---
 
 ```r, include = FALSE

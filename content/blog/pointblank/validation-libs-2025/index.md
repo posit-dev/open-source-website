@@ -5,8 +5,6 @@ people:
 date: 2025-06-04T00:00:00.000Z
 ported_from: pointblank
 port_status: in-progress
-software: ["pointblank"]
-languages: ["Python"]
 ---
 
 

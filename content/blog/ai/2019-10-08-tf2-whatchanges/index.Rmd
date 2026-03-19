@@ -13,8 +13,6 @@ categories:
   - Packages/Releases
 preview: images/thumb.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

@@ -12,7 +12,6 @@ photo:
 image: hello-wd.jpg
 ported_from: education
 port_status: in-progress
-languages: ["R"]
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(fig.align='center')

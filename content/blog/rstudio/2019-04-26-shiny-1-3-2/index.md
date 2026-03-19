@@ -17,8 +17,6 @@ blogcategories:
 - Open Source
 ported_from: rstudio
 port_status: in-progress
-software: ["shiny-r", "reactlog"]
-languages: ["R"]
 ---
 
 
@@ -38,7 +36,7 @@ This will instruct Shiny to keep a record of all the interactions between reacti
 
 Then, use your app, reproducing the problematic symptoms. Once you have done that, press `Ctrl+F3` (Mac users: `Cmd+F3`) from within your browser, and you'll see something like this:
 
-<img src="/blog-images/2019-04-26-shiny-1-3-2-pythagoras.gif" width="100%" alt="reactlog of a pythagoras theorem shiny application" style='border: 1px solid #ddd; box-shadow:5px 5px 5px #eee;'/>
+<img src="2019-04-26-shiny-1-3-2-pythagoras.gif" width="100%" alt="reactlog of a pythagoras theorem shiny application" style='border: 1px solid #ddd; box-shadow:5px 5px 5px #eee;'/>
 
 This screen lets you interactively explore the reactive history of your Shiny session. You can step forwards and backwards through time, watching as reactive objects execute, create and sever relationships, invalidate, etc.
 
@@ -48,11 +46,11 @@ For medium and large Shiny apps, the reactive graph may be pretty crowded when v
 
 * First, you can use the search field in the upper-right corner to filter by name (such as input or output ID, or the variable name of a reactive expression).
 
-<img src="/blog-images/2019-04-26-shiny-1-3-2-search-by-name.gif" width="100%" alt="An example of filtering a reactlog graph by searching for labels" style='border: 1px solid #ddd; box-shadow:5px 5px 5px #eee;'/>
+<img src="2019-04-26-shiny-1-3-2-search-by-name.gif" width="100%" alt="An example of filtering a reactlog graph by searching for labels" style='border: 1px solid #ddd; box-shadow:5px 5px 5px #eee;'/>
 
 * Second, you can double-click a node or edge in the graph to focus in on it, which will remove all unrelated reactive elements. Double-click on the background to restore the original view.
 
-<img src="/blog-images/2019-04-26-shiny-1-3-2-filter-click.gif" width="100%" alt="An example of filtering a reactlog graph by double-clicking the graph" style='border: 1px solid #ddd; box-shadow:5px 5px 5px #eee;'/>
+<img src="2019-04-26-shiny-1-3-2-filter-click.gif" width="100%" alt="An example of filtering a reactlog graph by double-clicking the graph" style='border: 1px solid #ddd; box-shadow:5px 5px 5px #eee;'/>
 
 Together, these features make it easy to find and focus on the relevant objects in your app.
 

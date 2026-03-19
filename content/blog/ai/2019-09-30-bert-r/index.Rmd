@@ -15,8 +15,6 @@ creative_commons: CC BY
 repository_url: https://github.com/henry090/BERT-from-R
 preview: images/bert.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

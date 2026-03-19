@@ -16,8 +16,6 @@ categories: [package]
 tags: [plumber2, web]
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "plumber2"]
-languages: ["R"]
 ---
 
 <!--

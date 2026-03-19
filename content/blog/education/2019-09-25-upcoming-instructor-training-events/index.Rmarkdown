@@ -18,7 +18,6 @@ photo:
 image: train-wd.jpg
 ported_from: education
 port_status: in-progress
-languages: ["R"]
 ---
 
 Over two dozen people are now certified instructors and listed in our [trainers' directory](https://rstd.io/trainers),

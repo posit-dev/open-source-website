@@ -14,8 +14,6 @@ categories:
   - Explainability
   - Image Recognition & Image Processing
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

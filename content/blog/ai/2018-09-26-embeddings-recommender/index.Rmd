@@ -14,8 +14,6 @@ categories:
   - Tabular Data
 preview: images/m.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

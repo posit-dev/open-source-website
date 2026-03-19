@@ -15,8 +15,6 @@ tags:
 photo: 
   url: https://unsplash.com/photos/YSxcf6C_SEg
   author: Silvia Brazzoduro
-software: ["tidyverse", "tidymodels", "hardhat"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

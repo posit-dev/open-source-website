@@ -19,8 +19,6 @@ photo:
 image: conf20-dl-wd.jpg
 ported_from: education
 port_status: in-progress
-software: ["keras3", "tensorflow"]
-languages: ["R"]
 ---
 
 > tl;dr: all workshop materials are available here: <br> <i class="fab fa-github"></i> <https://rstd.io/conf20-dl> <br> <i class="fab fa-creative-commons fa-fw"></i> [License: CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)

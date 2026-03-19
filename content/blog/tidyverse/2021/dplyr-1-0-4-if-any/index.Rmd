@@ -19,8 +19,6 @@ tags: [dplyr]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "dplyr"]
-languages: ["R"]
 ---
 
 We're happy to announce the release of [dplyr](https://dplyr.tidyverse.org) 1.0.4, featuring: 

@@ -17,7 +17,6 @@ categories:
   - Spatial Data
 preview: images/preview.jpeg
 format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

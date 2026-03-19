@@ -12,8 +12,6 @@ image: feature.png
 engine: markdown
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-vscode", "shiny-python", "shiny-r"]
-languages: ["R", "Python"]
 ---
 
 

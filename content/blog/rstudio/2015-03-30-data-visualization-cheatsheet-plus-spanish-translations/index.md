@@ -20,8 +20,6 @@ blogcategories:
 - Open Source
 ported_from: rstudio
 port_status: in-progress
-software: ["ggplot2"]
-languages: ["R"]
 ---
 
 

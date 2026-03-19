@@ -10,8 +10,6 @@ categories:
 photo:
   url: https://github.com/tidymodels
   author: tidymodels
-software: ["tidyverse", "tidymodels"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

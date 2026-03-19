@@ -10,8 +10,6 @@ photo:
   author: David Hood
 categories:
   - package
-software: ["tidyverse", "readxl"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

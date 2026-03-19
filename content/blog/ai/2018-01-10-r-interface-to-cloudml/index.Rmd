@@ -13,8 +13,6 @@ categories:
   - Packages/Releases
 preview: images/cloudml.png
 format: hugo-md
-software: ["cloudml", "keras3", "tfestimators", "tensorflow"]
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

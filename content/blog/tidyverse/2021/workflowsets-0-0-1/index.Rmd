@@ -20,8 +20,6 @@ tags: [tidymodels, workflowsets, tidyposterior, workflows, Bayesian analysis]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "tidymodels", "workflowsets", "tidyposterior", "workflows"]
-languages: ["R"]
 ---
 
 

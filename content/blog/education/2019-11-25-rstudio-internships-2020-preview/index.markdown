@@ -15,7 +15,6 @@ photo:
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
-languages: ["R"]
 ---
 
 We are pleased to announce that RStudio's summer intern program will run for a third time in 2020. 10 people who are full-time students at accredited institutions of higher education will have the chance to work with an RStudio mentor full-time for 12 weeks starting in May 2020.

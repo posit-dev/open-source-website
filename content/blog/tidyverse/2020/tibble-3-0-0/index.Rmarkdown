@@ -11,8 +11,6 @@ photo:
 categories:
 - package
 - programming
-software: ["tibble"]
-languages: ["R"]
 ---
 
 

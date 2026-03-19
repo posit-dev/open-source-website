@@ -19,7 +19,6 @@ photo:
 image: clouds-wd.jpg
 ported_from: education
 port_status: in-progress
-languages: ["R"]
 ---
 
 > RStudio Cloud spans across multiple teams at RStudio, so this is a joint post from the RStudio education, marketing, and Cloud teams.

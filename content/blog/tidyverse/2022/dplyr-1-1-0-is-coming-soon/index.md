@@ -16,8 +16,6 @@ tags: [dplyr, dplyr-1-1-0]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "dplyr"]
-languages: ["R"]
 ---
 
 [dplyr](https://dplyr.tidyverse.org/dev/) 1.1.0 is coming soon! We haven't started the official release process yet (where we inform maintainers), but that will start in the next few weeks, and then dplyr 1.1.0 is likely to be submitted to CRAN in late January 2023.

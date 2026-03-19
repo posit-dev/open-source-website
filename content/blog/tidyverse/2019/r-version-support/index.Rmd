@@ -15,7 +15,6 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-languages: ["R"]
 ---
 
 ## Which versions of R do tidyverse packages support? 

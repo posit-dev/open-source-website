@@ -10,8 +10,6 @@ categories:
 tags: [tidyverse-dev-day]
 photo:
   author: Romain François
-software: ["tidyverse"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

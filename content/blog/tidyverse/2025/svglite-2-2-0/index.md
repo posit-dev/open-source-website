@@ -20,8 +20,6 @@ tags: [svglite, graphic-device, graphics]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "svglite"]
-languages: ["R"]
 ---
 
 <style type='text/css'>

@@ -14,8 +14,6 @@ categories:
   - Concepts
 preview: images/thumb.jpg
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 

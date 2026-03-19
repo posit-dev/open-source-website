@@ -17,8 +17,6 @@ blogcategories:
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
-software: ["rmarkdown"]
-languages: ["R"]
 ---
 
 We are extremely excited to have our first release of the **gt** package

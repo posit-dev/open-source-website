@@ -16,8 +16,6 @@ photo:
 image: tidymodels-internship-wd.jpg
 ported_from: education
 port_status: in-progress
-software: ["tidymodels"]
-languages: ["R"]
 ---
 
 

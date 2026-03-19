@@ -15,8 +15,6 @@ image-alt: Quarto 1.8 with a lightbulb emoji
 css: /docs/output-formats/autodark.css
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
 ---
 
 

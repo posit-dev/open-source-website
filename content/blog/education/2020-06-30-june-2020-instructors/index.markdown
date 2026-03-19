@@ -16,7 +16,6 @@ photo:
 image: june-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
-languages: ["R"]
 ---
 
 We are very pleased to welcome 17 new instructors in June 2020:

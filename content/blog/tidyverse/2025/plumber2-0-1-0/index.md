@@ -19,8 +19,6 @@ tags: [plumber2, web]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "plumber2"]
-languages: ["R"]
 ---
 
 <!--

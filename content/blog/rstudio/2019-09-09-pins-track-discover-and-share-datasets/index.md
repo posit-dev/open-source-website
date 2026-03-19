@@ -16,8 +16,6 @@ blogcategories:
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
-software: ["pins-r"]
-languages: ["R"]
 ---
 
 

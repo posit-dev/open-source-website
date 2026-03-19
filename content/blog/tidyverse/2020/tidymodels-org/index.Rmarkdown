@@ -11,8 +11,6 @@ photo:
 categories: [learn]
 tags:
   - tidymodels
-software: ["tidyverse", "tidymodels"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

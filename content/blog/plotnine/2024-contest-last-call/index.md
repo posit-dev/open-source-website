@@ -6,8 +6,6 @@ categories:
 image: a-spiky-sunset-at-the-beach.png
 ported_from: plotnine
 port_status: in-progress
-software: ["plotnine"]
-languages: ["Python"]
 ---
 
 

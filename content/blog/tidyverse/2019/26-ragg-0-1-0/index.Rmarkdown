@@ -12,8 +12,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/sBkK2VWV8Kw
   author: Gordon Williams
-software: ["tidyverse", "ragg"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

@@ -16,7 +16,6 @@ categories:
   - R
 preview: images/pt.png
 format: hugo-md
-languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

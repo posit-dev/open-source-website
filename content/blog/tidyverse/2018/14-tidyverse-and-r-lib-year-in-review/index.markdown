@@ -17,8 +17,6 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse"]
-languages: ["R"]
 ---
 
 It's been a banner year for the tidyverse and r-lib teams, and, as we close out 2018, we wanted to take a look back at some of our achievements.

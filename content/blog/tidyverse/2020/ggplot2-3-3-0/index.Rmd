@@ -15,8 +15,6 @@ categories: ["package"]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["ggplot2"]
-languages: ["R"]
 ---
 
 We're so happy to announce the release of ggplot2 3.3.0 on CRAN. [ggplot2](https://ggplot2.tidyverse.org/) is a system for declaratively creating graphics, based on *The Grammar of Graphics*. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details. The new version can be installed from CRAN using `install.packages("ggplot2")`

@@ -11,8 +11,6 @@ tags:
 photo:
   url: https://flic.kr/p/oe2LJ1
   author: North Carolina Christian advocate (1894)
-software: ["tidyverse", "gargle"]
-languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

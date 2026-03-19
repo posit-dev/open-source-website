@@ -15,8 +15,6 @@ tags: [internship]
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
-software: ["ggplot2"]
-languages: ["R"]
 ---
 
 

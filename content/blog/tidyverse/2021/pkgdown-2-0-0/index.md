@@ -21,8 +21,6 @@ tags: [pkgdown, devtools]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "pkgdown", "devtools"]
-languages: ["R"]
 ---
 
 <!--

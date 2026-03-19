@@ -20,8 +20,6 @@ tags: [corrr, tidymodels, correlation]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "corrr", "tidymodels"]
-languages: ["R"]
 ---
 
 <!--

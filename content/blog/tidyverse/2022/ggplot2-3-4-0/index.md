@@ -20,8 +20,6 @@ tags: [ggplot2, graphics]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
-software: ["tidyverse", "ggplot2"]
-languages: ["R"]
 ---
 
 <!--

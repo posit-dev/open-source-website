@@ -12,8 +12,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/TIrXot28Znc
   author: Juskteez Vu
-software: ["tidyverse"]
-languages: ["R"]
 ---
 
 <html>

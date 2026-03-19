@@ -13,8 +13,6 @@ categories:
   - Concepts
 preview: images/prev.jpg
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 

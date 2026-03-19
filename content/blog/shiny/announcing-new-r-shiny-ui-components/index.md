@@ -11,8 +11,6 @@ image: bslib.jpg
 image-alt: A picture of Bob Ross
 ported_from: shiny
 port_status: in-progress
-software: ["bslib", "shiny-r"]
-languages: ["R"]
 ---
 
 

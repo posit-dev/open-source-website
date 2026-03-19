@@ -16,8 +16,6 @@ categories:
   - Time Series
 preview: images/cat.png
 format: hugo-md
-software: ["keras3"]
-languages: ["R"]
 ---
 
 

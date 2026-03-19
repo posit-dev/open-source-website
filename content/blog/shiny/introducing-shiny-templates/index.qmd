@@ -8,8 +8,6 @@ image: templates2.jpg
 image-alt: "An illustration of a Shiny Template"
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python", "py-shiny-templates"]
-languages: ["Python"]
 ---
 Last month we introduced the Shiny for Python [Components](https://shiny.posit.co/py/components/) and [Layouts](https://shiny.posit.co/py/layouts/) galleries, which are a simple, visual overview of what Shiny can do mixed with cheatsheet-like information. They are for new and seasoned users alike. 
 

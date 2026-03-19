@@ -19,8 +19,6 @@ tags: [tidyverse, haven]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "haven"]
-languages: ["R"]
 ---
 
 ```{r, include = FALSE}
