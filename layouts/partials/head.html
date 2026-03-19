@@ -13,28 +13,20 @@
 
 {{- /* Custom Open Graph and Twitter images for blog posts */ -}}
 {{- if eq .Section "blog" -}}
-  {{- $blogImg := partial "blog/thumbnail.html" . -}}
+  {{- $img_result := partial "get-image.html" . -}}
   {{- $imgURL := "" -}}
-  {{- $imgType := printf "%T" $blogImg -}}
-  {{- if or (eq $imgType "*resources.resourceAdapter") (hasPrefix $imgType "*") -}}
-    {{- /* It's a resource - get absolute URL */ -}}
-    {{- $imgURL = $blogImg.Permalink -}}
+  {{- $imgAlt := .Title -}}
+  {{- if $img_result.image -}}
+    {{- $imgURL = $img_result.image.Permalink -}}
+    {{- $imgAlt = $img_result.alt -}}
   {{- else -}}
-    {{- /* It's a URL string - make it absolute if relative */ -}}
-    {{- if hasPrefix $blogImg "http" -}}
-      {{- $imgURL = $blogImg -}}
-    {{- else -}}
-      {{- $imgURL = absURL $blogImg -}}
-    {{- end -}}
+    {{- $imgURL = "/images/blog-placeholder.svg" | absURL -}}
+    {{- $imgAlt = "Posit Open Source Blog" -}}
   {{- end -}}
-  {{- with $imgURL -}}
-    <meta property="og:image" content="{{ . }}" />
-    <meta name="twitter:image" content="{{ . }}" />
-    {{- with $.Params.alttext -}}
-      <meta property="og:image:alt" content="{{ . }}" />
-      <meta name="twitter:image:alt" content="{{ . }}" />
-    {{- end -}}
-  {{- end -}}
+  <meta property="og:image" content="{{ $imgURL }}" />
+  <meta name="twitter:image" content="{{ $imgURL }}" />
+  <meta property="og:image:alt" content="{{ $imgAlt }}" />
+  <meta name="twitter:image:alt" content="{{ $imgAlt }}" />
 {{- end -}}
 
 {{ template "_internal/opengraph.html" . }}
