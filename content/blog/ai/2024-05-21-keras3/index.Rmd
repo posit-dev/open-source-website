@@ -16,6 +16,8 @@ categories:
   - R
 preview: images/preview.png
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 We are thrilled to introduce `keras3`, the next version of the Keras R

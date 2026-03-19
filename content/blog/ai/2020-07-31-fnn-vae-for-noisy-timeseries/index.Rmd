@@ -17,6 +17,8 @@ categories:
   - Generative Models
 preview: images/kb.jpg
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

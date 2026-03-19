@@ -24,6 +24,8 @@ blogcategories:
 - Open Source
 ported_from: rstudio
 port_status: in-progress
+software: ["learnr", "sortable", "shiny-r", "rmarkdown"]
+languages: ["R"]
 ---
 
 

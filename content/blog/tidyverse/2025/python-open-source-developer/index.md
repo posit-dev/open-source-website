@@ -17,6 +17,7 @@ tags: [python, modeling]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+languages: ["Python"]
 ---
 
 We are hiring a Python open-source developer with a specialization in data analysis and modeling tools. Since deep learning models already have extensive support in Python, our focus is on the analysis and modeling of _tabular data_. Our primary goal is to develop packages that enhance the existing capabilities of frameworks such as scikit-learn. Note that the current position doesn't involve building or publishing models created here; _this is a pure package developer role_. 

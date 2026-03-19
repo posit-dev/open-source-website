@@ -20,6 +20,8 @@ tags: [lifecycle, tidyselect]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "lifecycle", "tidyselect"]
+languages: ["R"]
 ---
 
 <!--

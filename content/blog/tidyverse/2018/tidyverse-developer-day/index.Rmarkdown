@@ -11,6 +11,8 @@ tags: [tidyverse-dev-day]
 photo:
   url: https://unsplash.com/photos/ZMMXSRMSoI8
   author: rawpixel
+software: ["tidyverse"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

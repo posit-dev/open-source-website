@@ -9,6 +9,8 @@ image-video: shiny-assistant.mp4
 image: shiny-assistant.gif
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-assistant", "shiny-python", "shiny-r"]
+languages: ["R", "Python"]
 ---
 
 

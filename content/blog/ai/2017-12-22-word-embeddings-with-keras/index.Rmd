@@ -13,6 +13,8 @@ categories:
   - Natural Language Processing 
 preview: word-embeddings-with-keras.png
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

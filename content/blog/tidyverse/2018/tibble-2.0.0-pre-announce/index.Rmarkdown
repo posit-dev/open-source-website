@@ -9,6 +9,8 @@ description: >
 photo:
   url: https://unsplash.com/photos/yYawh30qf28
   author: Gabriel Porras
+software: ["tidyverse", "tibble"]
+languages: ["R"]
 ---
 
 

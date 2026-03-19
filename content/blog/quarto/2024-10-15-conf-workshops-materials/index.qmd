@@ -12,6 +12,8 @@ image: "images/thumbnail.png"
 image-alt: "posit::conf(2024) logo "
 ported_from: quarto
 port_status: in-progress
+software: ["quarto"]
+languages: ["R", "Python", "Julia"]
 ---
 
 This year at posit::conf(2024) we had three day-long Quarto workshops. The materials from those workshops are available for all to learn from. Additionally, you're welcomed to use them in full or part when talking or teaching about Quarto; they are all released with a [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.

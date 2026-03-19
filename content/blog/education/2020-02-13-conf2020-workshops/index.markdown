@@ -13,6 +13,7 @@ photo:
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
+languages: ["R"]
 ---
 
 In January, we wrapped up [rstudio::conf(2020)](https://rstudio.com/conference/)&mdash;our fourth conference about all things R, RStudio, and data science. This year, the conference was held in San Francisco, California. Before the conference, we offered 19 (mostly) two-day workshops taught by RStudio staff as well as experts throughout the R community. Topics ranged from R for Excel Users, Javascript for Shiny Users, to Deep Learning with Keras and Tensorflow. With a teaching staff of 102 and 1307 workshop attendees, our instructors worked overtime to craft learning experiences that both challenged and empowered learners.

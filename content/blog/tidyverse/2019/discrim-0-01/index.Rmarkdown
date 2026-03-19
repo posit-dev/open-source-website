@@ -9,6 +9,8 @@ description: >
 photo:
   url: https://unsplash.com/photos/4op9_2Bt2Eg
   author: Teo Duldulao
+software: ["tidyverse", "discrim", "tidymodels"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

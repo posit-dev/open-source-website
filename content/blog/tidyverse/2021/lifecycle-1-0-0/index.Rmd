@@ -20,6 +20,8 @@ tags: [tidyverse]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["lifecycle"]
+languages: ["R"]
 ---
 
 We're exceedingly happy to announce the release of [lifecycle](http://lifecycle.r-lib.org/) 1.0.0.

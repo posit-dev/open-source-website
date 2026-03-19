@@ -17,6 +17,8 @@ blogcategories:
 alttext: a wedding invitation
 ported_from: rstudio
 port_status: in-progress
+software: ["shiny-r", "reactlog"]
+languages: ["R"]
 ---
 
 

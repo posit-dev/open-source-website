@@ -15,6 +15,8 @@ tags: [ragnar, ai]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "ragnar"]
+languages: ["R"]
 ---
 
 # ragnar 0.2

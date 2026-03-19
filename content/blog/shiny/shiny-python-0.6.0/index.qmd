@@ -8,6 +8,8 @@ image: shiny-060.png
 image-alt: "Shiny for Python 0.6.0"
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-python"]
+languages: ["Python"]
 ---
 
 We recently released Shiny for Python 0.6.0, this is a big release so it's a good idea to check out the [changelog](https://github.com/posit-dev/py-shiny/blob/main/CHANGELOG.md) for a full set of new features. This post is going to focus on the four most important changes in 0.6.0.

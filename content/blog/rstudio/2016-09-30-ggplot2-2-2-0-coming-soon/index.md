@@ -13,6 +13,8 @@ tags:
 - tidyverse
 ported_from: rstudio
 port_status: in-progress
+software: ["tidyverse"]
+languages: ["R"]
 ---
 
 

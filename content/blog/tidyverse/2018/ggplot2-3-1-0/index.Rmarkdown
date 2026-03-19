@@ -10,6 +10,8 @@ categories:
 photo:
   url: https://unsplash.com/photos/Ibq4B5iE_-4
   author: Stephan Henning
+software: ["tidyverse", "ggplot2"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

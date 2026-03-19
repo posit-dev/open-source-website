@@ -14,6 +14,8 @@ tags:
 - Packages
 ported_from: rstudio
 port_status: in-progress
+software: ["rmarkdown", "cheatsheets"]
+languages: ["R"]
 ---
 
 

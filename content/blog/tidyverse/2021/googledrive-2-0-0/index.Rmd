@@ -19,6 +19,8 @@ tags: [googledrive]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "googledrive"]
+languages: ["R"]
 ---
 
 We're jazzed to announce the release of googledrive 2.0.0 (<https://googledrive.tidyverse.org>).

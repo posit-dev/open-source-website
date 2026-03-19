@@ -14,6 +14,8 @@ description: Here is your roadmap to our two-day rstudio::conf(2020) introductor
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
+software: ["tidymodels"]
+languages: ["R"]
 ---
 
 

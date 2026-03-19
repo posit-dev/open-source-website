@@ -14,6 +14,8 @@ creative_commons: CC BY
 repository_url: https://github.com/henry090/transformers
 preview: files/dino.jpg
 format: hugo-md
+software: ["reticulate"]
+languages: ["R"]
 ---
 
 

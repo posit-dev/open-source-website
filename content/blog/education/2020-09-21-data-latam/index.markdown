@@ -18,6 +18,7 @@ photo:
 image: data-latam-wd.jpg
 ported_from: education
 port_status: in-progress
+languages: ["R"]
 ---
 
 When we started with the first [Data Latam Podcast](http://www.datalatam.com/) in May 2016

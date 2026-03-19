@@ -21,6 +21,8 @@ tags: [systemfonts, textshaping, ragg, svglite, graphics]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "systemfonts", "ragg", "svglite"]
+languages: ["R"]
 ---
 
 <style type='text/css'>

@@ -15,6 +15,7 @@ categories:
 bibliography: bibliography.bib
 preview: images/petals.png
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

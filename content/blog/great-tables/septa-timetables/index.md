@@ -7,6 +7,8 @@ date: 2026-03-12T00:00:00.000Z
 format: html
 ported_from: great_tables
 port_status: in-progress
+software: ["great-tables"]
+languages: ["Python"]
 ---
 
 

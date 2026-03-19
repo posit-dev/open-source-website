@@ -17,6 +17,8 @@ photo:
 image: learning-learnr-wd.jpg
 ported_from: education
 port_status: in-progress
+software: ["learnr"]
+languages: ["R"]
 ---
 
 > "Let us change our traditional attitude to the construction of

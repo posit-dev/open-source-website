@@ -16,6 +16,8 @@ people:
 image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
+software: ["keras3"]
+languages: ["R"]
 ---
 
 

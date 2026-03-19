@@ -18,6 +18,8 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "devtools", "roxygen2"]
+languages: ["R"]
 ---
 
 We're chuffed to announce the release of [roxygen2 7.1.0](https://roxygen2.r-lib.org).

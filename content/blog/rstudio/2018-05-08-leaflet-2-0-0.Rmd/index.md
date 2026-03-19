@@ -17,6 +17,8 @@ blogcategories:
 - Products and Technology
 ported_from: rstudio
 port_status: in-progress
+software: ["leaflet"]
+languages: ["R"]
 ---
 
 [leaflet](http://rstudio.github.io/leaflet/) 2.0.0 is now on CRAN!

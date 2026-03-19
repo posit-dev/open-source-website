@@ -21,6 +21,8 @@ tags:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "tidymodels", "stacks"]
+languages: ["R"]
 ---
 
 A few months ago, the tidymodels team coordinated a [community survey](https://connect.rstudioservices.com/tidymodels-priorities-survey/README.html) to get a sense for what users most wanted to see next in the [tidymodels](https://www.tidymodels.org/) package ecosystem. One resounding theme from responses was that tidymodels users wanted a framework for tidymodels-aligned model stacking.

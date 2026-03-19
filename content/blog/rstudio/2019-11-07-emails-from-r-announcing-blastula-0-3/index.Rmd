@@ -19,6 +19,8 @@ tags:
 - RStudio Connect
 blogcategories:
 - Products and Technology
+software: ["rmarkdown"]
+languages: ["R"]
 ---
 
 

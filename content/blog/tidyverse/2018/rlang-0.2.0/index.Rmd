@@ -15,6 +15,8 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "rlang"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

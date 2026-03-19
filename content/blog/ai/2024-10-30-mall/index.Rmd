@@ -21,6 +21,7 @@ categories:
   - Tabular Data
 preview: images/article.png
 format: hugo-md
+languages: ["R", "Python"]
 ---
 
 ## The beginning

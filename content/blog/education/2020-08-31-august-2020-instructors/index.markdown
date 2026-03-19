@@ -16,6 +16,7 @@ photo:
 image: august-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
+languages: ["R"]
 ---
 
 We welcomed ten new instructors to our ranks in August 2020,

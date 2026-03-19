@@ -13,6 +13,8 @@ tags: []
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "conflicted"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

@@ -17,6 +17,7 @@ editor_options:
 preview: images/banner.jpeg
 slug: torch-0-9-0
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

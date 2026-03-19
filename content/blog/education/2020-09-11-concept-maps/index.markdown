@@ -16,6 +16,8 @@ photo:
 image: concept-maps-wd.jpg
 ported_from: education
 port_status: in-progress
+software: ["concept-maps"]
+languages: ["R"]
 ---
 
 We introduce [concept maps](https://teachtogether.tech/en/index.html#s:memory-concept-maps)

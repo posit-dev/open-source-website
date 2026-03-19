@@ -18,6 +18,8 @@ editor_options:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "dplyr"]
+languages: ["R"]
 ---
 
 Today's [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110) post is focused on various updates to vector functions, like `case_when()` and `between()`.

@@ -13,6 +13,8 @@ tags:
 photo: 
   url: https://unsplash.com/photos/6RLa-tC7y0I
   author: Arie Wubben
+software: ["tidyverse", "slider"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

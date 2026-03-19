@@ -14,6 +14,8 @@ tags:
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
+software: ["keras3"]
+languages: ["R"]
 ---
 
 

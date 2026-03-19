@@ -16,6 +16,8 @@ photo:
 image: art-wd.jpg
 ported_from: education
 port_status: in-progress
+software: ["ggplot2"]
+languages: ["R"]
 ---
 
 > tl;dr: all workshop materials are available here: <br>

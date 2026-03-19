@@ -18,6 +18,7 @@ people:
 image: thumbnail.png
 ported_from: ai
 port_status: in-progress
+languages: ["R"]
 ---
 
 

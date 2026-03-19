@@ -11,6 +11,8 @@ tags: [package, r-lib]
 photo:
   url: https://www.pexels.com/photo/38070/
   author: Skitterphoto
+software: ["tidyverse", "testthat"]
+languages: ["R"]
 ---
 
 ```{r include = FALSE}

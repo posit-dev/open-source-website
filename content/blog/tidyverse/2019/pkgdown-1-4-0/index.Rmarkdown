@@ -10,6 +10,8 @@ categories:
   - package
 tags:
   - pkgdown
+software: ["tidyverse", "pkgdown"]
+languages: ["R"]
 ---
 
 We're happy to announce that [pkgdown](https://pkgdown.r-lib.org/) 1.4.0 is now

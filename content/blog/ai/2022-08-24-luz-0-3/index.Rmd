@@ -18,6 +18,7 @@ editor_options:
 preview: images/bulbs.jpeg
 slug: luz-0-3-0
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}
