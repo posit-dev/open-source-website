@@ -7,6 +7,10 @@
 
 {{ define "main" }}
 {{ $softwareSection := site.GetPage "/software" }}
+{{ $starredPages := slice }}
+{{ range $softwareSection.Pages }}
+  {{ if .Params.external.stars }}{{ $starredPages = $starredPages | append . }}{{ end }}
+{{ end }}
 <div class="flex flex-col w-full" x-data="softwareFilter()" x-init="init()">
   <div class="mb-8">
     <div class="flex items-end justify-between">
@@ -15,7 +19,7 @@
           Open source software
         </h1>
         <p class="text-gray-600 mt-2">
-          Explore <span x-text="totalCount">{{ len $softwareSection.Pages }}</span> open-source projects from the Posit ecosystem
+          Explore <span x-text="totalCount">{{ len $starredPages }}</span> open-source projects from the Posit ecosystem
         </p>
       </div>
       <button
@@ -145,7 +149,7 @@
         <div class="pt-4 border-t border-gray-200">
           <div class="flex items-center justify-between mb-2">
             <span class="text-sm text-gray-600">
-              Showing <span x-text="visibleCount" class="font-semibold text-gray-900">{{ len $softwareSection.Pages }}</span> of <span x-text="totalCount">{{ len $softwareSection.Pages }}</span>
+              Showing <span x-text="visibleCount" class="font-semibold text-gray-900">{{ len $starredPages }}</span> of <span x-text="totalCount">{{ len $starredPages }}</span>
             </span>
           </div>
           <button
@@ -163,7 +167,9 @@
       <div id="software-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {{ $softwareSection := site.GetPage "/software" }}
         {{ range sort $softwareSection.Pages "Title" }}
+          {{ if .Params.external.stars }}
           {{ partial "item.html" (dict "page" . "hide-badge" true) }}
+          {{ end }}
         {{ end }}
       </div>
 
@@ -189,15 +195,21 @@
 window.softwareData = [
   {{ $softwareSection := site.GetPage "/software" }}
   {{ $sortedPages := sort $softwareSection.Pages "Title" }}
-  {{ range $index, $page := $sortedPages }}
+  {{ $filtered := slice }}
+  {{ range $sortedPages }}
+    {{ if .Params.external.stars }}
+      {{ $filtered = $filtered | append . }}
+    {{ end }}
+  {{ end }}
+  {{ range $index, $page := $filtered }}
     {
       id: "{{ partial "item-id.html" . }}",
       title: "{{ .Title }}",
-      stars: {{ with .Params.external }}{{ .stars | default 0 }}{{ else }}0{{ end }},
+      stars: {{ .Params.external.stars }},
       languages: [{{ range $i, $lang := .Params.languages }}{{ if $i }},"{{ $lang }}"{{ else }}"{{ $lang }}"{{ end }}{{ end }}],
-      firstCommit: {{ with .Params.external }}"{{ .first_commit | default "" }}"{{ else }}""{{ end }},
+      firstCommit: "{{ with .Params.external }}{{ .first_commit | default "" }}{{ end }}",
       latestRelease: "{{ .Params.latest_release | default "" }}"
-    }{{ if ne (add $index 1) (len $sortedPages) }},{{ end }}
+    }{{ if ne (add $index 1) (len $filtered) }},{{ end }}
   {{ end }}
 ];
 
