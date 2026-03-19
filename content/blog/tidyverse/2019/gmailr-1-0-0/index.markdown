@@ -9,8 +9,9 @@ date: '2019-08-26'
 categories:
   - Data Wrangling
 tags:
-  - gmailr
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/fb7yNPbT0l8
   author: Mathyas Kurmann

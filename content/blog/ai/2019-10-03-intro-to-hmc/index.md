@@ -21,6 +21,10 @@ languages: ["R"]
 ported_categories:
   - Bayesian Modeling
   - Concepts
+tags:
+  - AI
+  - Bayesian modeling
+  - Concepts
 ---
 
 

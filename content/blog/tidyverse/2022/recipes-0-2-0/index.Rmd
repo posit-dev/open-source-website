@@ -13,8 +13,8 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - recipes
-  - tidymodels
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw

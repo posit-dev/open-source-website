@@ -11,6 +11,7 @@ tags:
   - BI tools
   - Data visualization
   - Shiny
+  - RStudio
 description: This post introduces and walks through shinytableau, a package that allows
   you to create dashboard extensions that embed Shiny apps in Tableau. Users can take
   advantage of R's powerful visualization and reporting capabilities when working

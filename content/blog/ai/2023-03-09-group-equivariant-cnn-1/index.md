@@ -24,6 +24,11 @@ ported_categories:
   - R
   - Spatial Data
   - Concepts
+tags:
+  - AI
+  - Torch
+  - Spatial data
+  - Concepts
 ---
 
 

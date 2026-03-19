@@ -19,6 +19,10 @@ languages: ["R"]
 ported_categories:
   - Packages/Releases
   - R
+tags:
+  - AI
+  - Packages
+  - Releases
 ---
 
 

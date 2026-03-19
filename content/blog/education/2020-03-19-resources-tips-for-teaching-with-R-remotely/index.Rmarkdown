@@ -7,8 +7,10 @@ slug: resources-for-teaching-data-science-and-statistics-remotely
 categories:
   - Community
 tags:
-  - resources
-  - rstudio-cloud
+  - Resources
+  - RStudio Cloud
+  - Education
+  - Teaching
 photo:
   url: https://unsplash.com/photos/yW-Qgw_IJXg
   author: Maya Maceka

@@ -12,9 +12,9 @@ photo:
   url: https://unsplash.com/photos/3kzlCL3rj8A
   author: Ricardo Gomez Angel
 tags:
-  - scales
-  - ggplot2
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

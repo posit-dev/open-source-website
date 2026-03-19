@@ -5,9 +5,9 @@ slug: delivering-learnr-tutorials-in-a-package
 categories:
   - Community
 tags:
-  - rmarkdown
-  - teach
-  - learnr
+  - Teaching
+  - Education
+  - Packages
 description: |
   A step by step guide to create a package for a learnr tutorial.
 photo:

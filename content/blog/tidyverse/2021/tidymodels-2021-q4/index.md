@@ -12,10 +12,9 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - rsample
-  - shinymodels
-  - survey
+  - Survey
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

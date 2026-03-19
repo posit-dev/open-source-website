@@ -18,6 +18,9 @@ software: ["readr"]
 languages: ["R"]
 ported_categories:
   - package
+tags:
+  - tidyverse
+  - Packages
 ---
 
 We're thrilled to announce the release of [readr](https://readr.tidyverse.org/) 2.0.0!

@@ -18,6 +18,9 @@ software: ["tidyverse", "tibble"]
 languages: ["R"]
 ported_categories:
   - package
+tags:
+  - tidyverse
+  - Packages
 ---
 
 

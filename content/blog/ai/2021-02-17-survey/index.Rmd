@@ -15,6 +15,9 @@ format: hugo-md
 ported_categories:
   - Meta
   - R
+tags:
+  - AI
+  - Meta
 ---
 
 ```{r setup, include=FALSE}

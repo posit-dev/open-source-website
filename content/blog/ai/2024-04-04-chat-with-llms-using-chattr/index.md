@@ -21,6 +21,11 @@ ported_categories:
   - Generenative Models
   - Packages/Releases
   - R
+tags:
+  - AI
+  - Generative models
+  - Packages
+  - Releases
 ---
 
 

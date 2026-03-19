@@ -10,6 +10,8 @@ software: ["httr"]
 languages: ["R"]
 categories:
   - Data Wrangling
+tags:
+  - RStudio
 ---
 
 

@@ -6,8 +6,9 @@ people:
   - JooYoung Seo
 date: '2020-07-02'
 tags:
-  - internship
-  - accessibility
+  - Internship
+  - Accessibility
+  - Education
 description: |
   A mid-term report on work to make the RStudio IDE more accessible.
 slug: a11y-midterm

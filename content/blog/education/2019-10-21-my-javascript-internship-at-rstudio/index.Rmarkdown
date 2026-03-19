@@ -12,7 +12,8 @@ photo:
   url: https://unsplash.com/photos/TYIzeCiZ_60
   author: Karl Fredrickson
 tags:
-  - internship
+  - Internship
+  - Education
 image: java-wd.jpg
 ported_from: education
 port_status: in-progress

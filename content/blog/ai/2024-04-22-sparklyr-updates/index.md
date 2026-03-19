@@ -21,6 +21,11 @@ ported_categories:
   - Packages/Releases
   - Spark
   - R
+tags:
+  - AI
+  - Packages
+  - Releases
+  - Spark
 ---
 
 

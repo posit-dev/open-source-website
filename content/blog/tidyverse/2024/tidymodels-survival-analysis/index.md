@@ -12,13 +12,8 @@ photo:
 categories:
   - Community
 tags:
-  - tidymodels
-  - parsnip
-  - censored
-  - workflows
-  - yardstick
-  - tune
-  - workflowsets
+  - tidyverse
+  - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

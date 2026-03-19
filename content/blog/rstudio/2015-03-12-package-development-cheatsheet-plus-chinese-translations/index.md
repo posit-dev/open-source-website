@@ -12,6 +12,8 @@ blogcategories:
   - Open Source
 tags:
   - Packages
+  - RStudio
+  - Training
 ported_from: rstudio
 port_status: in-progress
 software: ["cheatsheets"]

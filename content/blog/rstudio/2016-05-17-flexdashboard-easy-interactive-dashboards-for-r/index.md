@@ -14,6 +14,7 @@ tags:
   - Packages
   - R Markdown
   - Shiny
+  - RStudio
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]

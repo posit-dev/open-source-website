@@ -13,7 +13,8 @@ photo:
 categories:
   - Best Practices
 tags:
-  - ggplot2
+  - tidyverse
+  - Deep-dive
 editor_options:
   markdown:
     wrap: 72

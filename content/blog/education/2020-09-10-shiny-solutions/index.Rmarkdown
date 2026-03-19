@@ -11,6 +11,9 @@ categories:
   - Community
 tags:
   - Shiny
+  - Education
+  - Learn
+  - Teaching
 description: |
   Solutions to the exercises in *Mastering Shiny* are being assembled online.
 slug: shiny-solutions

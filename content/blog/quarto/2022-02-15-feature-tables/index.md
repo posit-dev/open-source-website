@@ -19,6 +19,11 @@ ported_categories:
   - Features
   - Authoring
   - Tables
+tags:
+  - Quarto
+  - Features
+  - Authoring
+  - Tables
 ---
 
 

@@ -17,6 +17,10 @@ languages: ["R", "Python", "Julia"]
 ported_categories:
   - Learn
   - Conference
+tags:
+  - Quarto
+  - Learn
+  - Conference
 ---
 
 

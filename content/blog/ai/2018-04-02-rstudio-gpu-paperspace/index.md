@@ -19,6 +19,9 @@ software: ["tensorflow", "keras3", "tfestimators"]
 languages: ["R"]
 ported_categories:
   - Cloud
+tags:
+  - AI
+  - Cloud
 ---
 
 

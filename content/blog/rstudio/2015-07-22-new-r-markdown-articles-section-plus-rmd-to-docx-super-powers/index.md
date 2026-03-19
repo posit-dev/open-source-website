@@ -8,6 +8,7 @@ categories:
 tags:
   - Article
   - R Markdown
+  - RStudio
 slug: new-r-markdown-articles-section-plus-rmd-to-docx-super-powers
 blogcategories:
   - Products and Technology

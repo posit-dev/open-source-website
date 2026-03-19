@@ -5,8 +5,8 @@ people:
 date: '2020-08-13'
 slug: how-to-deliver-maximum-value-using-r-python
 tags:
-  - Python
-  - interoperability
+  - Interoperability
+  - RStudio
 description: For data science teams to be successful, they need to embrace both R
   and Python. The ease of interoperability gives the user the flexibility to fill
   in any tool gaps for their own needs.

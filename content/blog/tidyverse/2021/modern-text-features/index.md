@@ -12,9 +12,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - graphic-device
-  - ragg
-  - systemfonts
+  - Graphic-device
+  - tidyverse
+  - Deep-dive
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

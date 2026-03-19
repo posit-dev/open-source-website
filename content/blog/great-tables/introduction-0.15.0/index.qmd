@@ -9,6 +9,8 @@ software: ["great-tables"]
 languages: ["Python"]
 categories:
   - Visualization
+tags:
+  - Great Tables
 ---
 
 The development of Great Tables is really moving along these days. We just released version `0.15.0` and it adds quite a few nice things to the package. The features we'll highlight in this post are:

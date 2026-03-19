@@ -25,6 +25,12 @@ ported_categories:
   - R
   - Image Recognition & Image Processing
   - Generative Models
+tags:
+  - AI
+  - Torch
+  - Image recognition
+  - Image processing
+  - Generative models
 ---
 
 ```{r setup, include=FALSE}

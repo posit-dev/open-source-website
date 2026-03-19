@@ -10,6 +10,8 @@ languages: ["R"]
 categories:
   - Visualization
   - Interactive Apps
+tags:
+  - RStudio
 ---
 
 

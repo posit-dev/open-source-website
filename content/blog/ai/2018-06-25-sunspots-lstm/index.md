@@ -25,6 +25,11 @@ languages: ["R"]
 ported_categories:
   - TensorFlow/Keras
   - Time Series
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Time series
 ---
 
 

@@ -9,7 +9,7 @@ description: |
 categories:
   - Community
 tags:
-  - r-lib
+  - rlib
   - tidyverse
 photo:
   url: https://unsplash.com/photos/SshYpuf607g

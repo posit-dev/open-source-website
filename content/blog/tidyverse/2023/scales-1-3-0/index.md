@@ -12,7 +12,8 @@ photo:
 categories:
   - Visualization
 tags:
-  - scales
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

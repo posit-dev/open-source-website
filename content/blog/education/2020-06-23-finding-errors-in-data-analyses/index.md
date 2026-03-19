@@ -6,7 +6,8 @@ people:
   - Ian Flores
 date: '2020-06-23'
 tags:
-  - internship
+  - Internship
+  - Education
 slug: finding-errors-in-data-analyses
 description: |
   A preview of a research project studying how and how well data scientists find errors.

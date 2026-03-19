@@ -18,6 +18,9 @@ software: ["tidyverse", "dplyr"]
 languages: ["R"]
 ported_categories:
   - package
+tags:
+  - tidyverse
+  - Packages
 ---
 
 

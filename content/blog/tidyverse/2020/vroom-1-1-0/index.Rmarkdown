@@ -8,9 +8,9 @@ description: vroom 1.1.0 is now on CRAN!
 categories:
   - Data Wrangling
 tags:
-  - package
-  - r-lib
-  - vroom
+  - Packages
+  - rlib
+  - tidyverse
 photo:
   url: https://www.pexels.com/photo/12801/
   author: Chris Peeters

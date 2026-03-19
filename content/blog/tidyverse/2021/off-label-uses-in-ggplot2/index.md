@@ -12,8 +12,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - ggplot2
-  - off-label
+  - Off-label
+  - tidyverse
+  - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

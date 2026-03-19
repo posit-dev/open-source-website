@@ -9,10 +9,11 @@ date: '2020-07-16'
 categories:
   - Data Wrangling
 tags:
-  - big data
-  - sparklyr
+  - Big data
+  - Sparklyr
   - Spark
   - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

@@ -9,9 +9,9 @@ categories:
 description: |
   A minor roxygen2 release with some new features
 tags:
-  - r-lib
-  - devtools
-  - roxygen2
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://pixabay.com/photos/fabric-wool-textile-texture-1031932/
   author: John Perrett

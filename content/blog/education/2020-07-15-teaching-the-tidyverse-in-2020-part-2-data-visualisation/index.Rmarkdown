@@ -5,7 +5,8 @@ slug: teaching-the-tidyverse-in-2020-part-2-data-visualisation
 categories:
   - Community
 tags:
-  - tidyverse
+  - Education
+  - Teaching
 people:
   - mine
 photo:

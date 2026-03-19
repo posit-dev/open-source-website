@@ -9,6 +9,8 @@ software: ["pointblank"]
 languages: ["Python"]
 categories:
   - Data Wrangling
+tags:
+  - Pointblank
 ---
 
 If you have tabular data (and who doesn't?) this is the package for you! I've long been interested

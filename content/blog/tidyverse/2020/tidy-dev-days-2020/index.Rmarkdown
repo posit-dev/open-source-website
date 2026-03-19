@@ -9,7 +9,8 @@ description: "A roundup of our post-rstudio::conf tidy dev day, and announcement
 categories:
   - Community
 tags:
-  - tidyverse-dev-day
+  - Tidyverse-dev-day
+  - tidyverse
 photo:
   author: Max Kuhn
 software: ["tidyverse"]

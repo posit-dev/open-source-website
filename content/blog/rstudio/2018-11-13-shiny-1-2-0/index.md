@@ -6,9 +6,9 @@ date: '2018-11-13'
 categories:
   - Interactive Apps
 tags:
-  - shiny
-  - Packages
   - Shiny
+  - Packages
+  - RStudio
 slug: shiny-1-2-0
 blogcategories:
   - Products and Technology

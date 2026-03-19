@@ -9,8 +9,9 @@ description: |
 categories:
   - Visualization
 tags:
-  - r-lib
-  - ragg
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/sBkK2VWV8Kw
   author: Gordon Williams

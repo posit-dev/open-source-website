@@ -11,6 +11,8 @@ software: ["shiny-python"]
 languages: ["Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 

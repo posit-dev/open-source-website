@@ -9,6 +9,8 @@ software: ["pointblank"]
 languages: ["Python"]
 categories:
   - Data Wrangling
+tags:
+  - Pointblank
 ---
 
 Data validation is a very important part of any data pipeline. And with Polars gaining popularity as

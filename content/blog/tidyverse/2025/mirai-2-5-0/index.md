@@ -12,8 +12,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - mirai
-  - parallelism
+  - Parallelism
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

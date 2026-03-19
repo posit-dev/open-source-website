@@ -9,8 +9,8 @@ description: |
 categories:
   - Data Wrangling
 tags:
-  - dplyr
   - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/kU-WKSyTcp4
   author: Pau Casals

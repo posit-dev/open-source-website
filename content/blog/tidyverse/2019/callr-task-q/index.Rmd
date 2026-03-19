@@ -19,6 +19,11 @@ languages: ["R"]
 ported_categories:
   - programming
   - deep-dive
+tags:
+  - rlib
+  - tidyverse
+  - Programming
+  - Deep-dive
 ---
 
 ```{r setup, include = FALSE}

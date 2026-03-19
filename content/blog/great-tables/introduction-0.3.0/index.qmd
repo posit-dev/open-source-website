@@ -9,6 +9,8 @@ software: ["great-tables"]
 languages: ["Python"]
 categories:
   - Visualization
+tags:
+  - Great Tables
 ---
 
 As our work on **Great Tables** continues, we want you to be able to produce increasingly sophisticated tables. The look of an HTML table really matters and we believe aesthetics can elevate the presentation of tabular data. In the `v0.3.0` release, we've implemented features that are concerned with modifying the visual aspects of a table. Let's get down to what's new in this version.

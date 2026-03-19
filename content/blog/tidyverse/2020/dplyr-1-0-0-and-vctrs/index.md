@@ -9,8 +9,9 @@ description: |
 categories:
   - Data Wrangling
 tags:
-  - dplyr
-  - dplyr-1-0-0
+  - Dplyr-1-0-0
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/IstXvxHGoA4
   author: 35mm

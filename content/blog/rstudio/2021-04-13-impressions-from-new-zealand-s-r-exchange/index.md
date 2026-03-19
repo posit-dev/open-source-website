@@ -16,6 +16,9 @@ port_status: in-progress
 languages: ["R"]
 ported_categories:
   - Events
+tags:
+  - RStudio
+  - Events
 ---
 
 <i>This is a guest post from Uli Muellner, Director of IT & Learning, at <a href="https://www.epi-interactive.com/" target="_blank" rel="noopener noreferrer">Epi-Interactive</a>, a Full Service RStudio Partner.</i>

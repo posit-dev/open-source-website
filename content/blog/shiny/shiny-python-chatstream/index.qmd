@@ -12,6 +12,8 @@ software: ["shiny-python", "chatlas"]
 languages: ["Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 

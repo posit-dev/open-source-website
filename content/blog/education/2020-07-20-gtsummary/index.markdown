@@ -12,7 +12,9 @@ date: '2020-07-20'
 categories:
   - Community
 tags:
-  - rmarkdown
+  - Education
+  - Learn
+  - Packages
 description: "The gtsummary package is for making beautiful summary tables with R,
   in R Markdown documents. \n"
 slug: gtsummary

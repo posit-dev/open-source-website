@@ -6,7 +6,8 @@ date: '2020-12-07'
 categories:
   - Community
 tags:
-  - community
+  - Community
+  - Education
 description: |
   We are proud to support the Carpentries' efforts to teach basic research computing skills.
 slug: carpentries-support

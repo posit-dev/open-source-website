@@ -18,6 +18,11 @@ ported_categories:
   - GitHub Codespaces
   - Teaching
   - Dev Container
+tags:
+  - Quarto
+  - Github codespaces
+  - Teaching
+  - Dev container
 ---
 
 

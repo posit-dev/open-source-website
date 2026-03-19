@@ -21,6 +21,10 @@ ported_categories:
   - Torch
   - R
   - Concepts
+tags:
+  - AI
+  - Torch
+  - Concepts
 ---
 
 

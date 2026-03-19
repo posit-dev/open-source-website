@@ -6,7 +6,10 @@ date: '2020-10-05'
 categories:
   - Community
 tags:
-  - glosario
+  - Glosario
+  - Education
+  - Learn
+  - Packages
 description: |
   This October, help us expand an open source, multilingual glossary of data science terms.
 slug: glosario-sprint

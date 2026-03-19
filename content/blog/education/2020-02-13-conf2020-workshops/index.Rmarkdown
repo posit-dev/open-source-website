@@ -6,7 +6,10 @@ slug: conf2020-workshops
 categories:
   - Community
 tags:
-  - conf2020
+  - Conf2020
+  - Education
+  - Learn
+  - Teaching
 people:
   - alison
 photo:

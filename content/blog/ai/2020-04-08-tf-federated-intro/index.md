@@ -20,6 +20,12 @@ languages: ["R"]
 ported_categories:
   - Privacy & Security
   - TensorFlow/Keras
+tags:
+  - AI
+  - Privacy
+  - Security
+  - TensorFlow
+  - Keras
 ---
 
 

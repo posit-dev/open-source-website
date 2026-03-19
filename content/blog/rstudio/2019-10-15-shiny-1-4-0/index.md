@@ -7,9 +7,9 @@ slug: shiny-1-4-0
 categories:
   - Interactive Apps
 tags:
-  - shiny
-  - Packages
   - Shiny
+  - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

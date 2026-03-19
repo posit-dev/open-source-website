@@ -10,6 +10,9 @@ software: ["plotnine"]
 languages: ["Python"]
 ported_categories:
   - contest
+tags:
+  - Plotnine
+  - Contest
 ---
 
 

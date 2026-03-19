@@ -18,6 +18,8 @@ port_status: raw
 languages: ["R"]
 ported_categories:
   - other
+tags:
+  - tidyverse
 ---
 
 ## Which versions of R do tidyverse packages support? 

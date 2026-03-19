@@ -19,6 +19,10 @@ languages: ["R"]
 ported_categories:
   - learn
   - programming
+tags:
+  - tidyverse
+  - Learn
+  - Programming
 ---
 
 <!--

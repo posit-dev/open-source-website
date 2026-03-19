@@ -17,6 +17,8 @@ ported_from: tidyverse
 port_status: in-progress
 ported_categories:
   - other
+tags:
+  - tidyverse
 ---
 
 Summer conference season is in full swing, with [useR! 2018 Brisbane](https://user2018.r-project.org) nearly upon us!

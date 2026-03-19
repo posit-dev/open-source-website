@@ -6,8 +6,9 @@ date: '2018-02-06'
 categories:
   - Machine Learning
 tags:
-  - data science
+  - Data science
   - Packages
+  - RStudio
 slug: tensorflow-for-r
 blogcategories:
   - Products and Technology

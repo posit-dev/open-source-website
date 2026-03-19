@@ -13,7 +13,8 @@ photo:
 categories:
   - Data Wrangling
 tags:
-  - dplyr
+  - tidyverse
+  - Packages
 editor:
   markdown:
     wrap: sentence

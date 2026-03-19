@@ -19,6 +19,9 @@ port_status: in-progress
 languages: ["R"]
 ported_categories:
   - mentorship
+tags:
+  - Education
+  - Mentorship
 ---
 
 In the fall semester of 2020, RStudio piloted a program to provide mentorship to Black, Latinx, and Indigenous students in data science.

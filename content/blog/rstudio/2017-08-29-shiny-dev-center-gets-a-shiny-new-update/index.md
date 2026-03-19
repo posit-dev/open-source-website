@@ -7,8 +7,9 @@ slug: shiny-dev-center-gets-a-shiny-new-update
 categories:
   - Interactive Apps
 tags:
-  - shiny
   - Shiny
+  - RStudio
+  - News
 blogcategories:
   - Products and Technology
   - Company News and Events

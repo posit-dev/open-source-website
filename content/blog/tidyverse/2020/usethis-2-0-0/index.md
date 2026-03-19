@@ -12,9 +12,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - devtools
-  - r-lib
-  - usethis
+  - rlib
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

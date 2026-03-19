@@ -9,10 +9,11 @@ categories:
   - MLOps and Admin
 tags:
   - Spark
-  - sparklyr
-  - streaming
-  - big data
+  - Sparklyr
+  - Streaming
+  - Big data
   - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

@@ -9,12 +9,12 @@ slug: shiny-1-6-0
 categories:
   - Interactive Apps
 tags:
-  - shiny
-  - caching
-  - theming
-  - accessibility
-  - bslib
-  - thematic
+  - Shiny
+  - Caching
+  - Theming
+  - Accessibility
+  - RStudio
+  - Packages
 description: Shiny 1.6 is now on CRAN! This release includes significant improvements
   to theming, caching, accessibility, and more.
 blogcategories:

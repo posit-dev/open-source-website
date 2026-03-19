@@ -1,13 +1,17 @@
 ---
 title: Learner Personas
-draft: true
+draft: yes
 date: '2019-08-26'
 slug: learner-personas
-description: >
-    How can instructors tell if they're teaching what their audience actually needs to know? Learner personas can help.
+description: |
+  How can instructors tell if they're teaching what their audience actually needs to know? Learner personas can help.
 categories:
+  - Community
+ported_categories:
   - teach
-tags: []
+tags:
+  - Education
+  - Teaching
 photo:
   url: https://unsplash.com/photos/hXXjwXVyUVo
   author: Siora Photography

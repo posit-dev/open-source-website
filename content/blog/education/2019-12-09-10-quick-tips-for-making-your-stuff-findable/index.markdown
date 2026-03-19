@@ -14,6 +14,8 @@ ported_from: education
 port_status: in-progress
 categories:
   - Best Practices
+tags:
+  - Education
 ---
 
 As RStudio’s resident Information Architect & Digital Librarian, I get asked a lot how to organize stuff with the goal of making content more findable.  Here are 10 suggestions to make your own work product (whatever it is) findable by yourself & others!

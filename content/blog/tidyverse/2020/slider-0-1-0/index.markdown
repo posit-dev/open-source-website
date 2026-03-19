@@ -9,7 +9,8 @@ description: slider 0.1.0 is now available on CRAN. It provides a family of gene
 categories:
   - Data Wrangling
 tags:
-  - slider
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/6RLa-tC7y0I
   author: Arie Wubben

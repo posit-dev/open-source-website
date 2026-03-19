@@ -13,6 +13,8 @@ ported_from: education
 port_status: in-progress
 software: ["distill"]
 languages: ["R"]
+tags:
+  - Education
 ---
 
 ## Introduction

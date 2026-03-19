@@ -8,6 +8,7 @@ categories:
 tags:
   - Article
   - Shiny
+  - RStudio
 slug: design-patterns-for-action-buttons
 blogcategories:
   - Products and Technology

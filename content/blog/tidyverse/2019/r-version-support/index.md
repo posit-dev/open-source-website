@@ -17,6 +17,8 @@ port_status: in-progress
 languages: ["R"]
 ported_categories:
   - other
+tags:
+  - tidyverse
 ---
 
 Our general policy is to support the **current version**, the **devel version**, and **four previous versions** of R. This policy applies to all packages that we support, i.e. as well as all tidyverse packages, it also applies to the infrastructure packages that we maintain in [r-lib](https://github.com/r-lib).

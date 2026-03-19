@@ -11,7 +11,10 @@ slug: conf20-r-excel
 categories:
   - Community
 tags:
-  - conf2020
+  - Conf2020
+  - Education
+  - Learn
+  - Teaching
 photo:
   url: https://unsplash.com/photos/rx7O2WsJ89w
   author: Johnson Wang

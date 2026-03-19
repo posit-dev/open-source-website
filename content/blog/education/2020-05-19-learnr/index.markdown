@@ -8,8 +8,8 @@ date: '2020-05-19'
 categories:
   - Community
 tags:
-  - learnr
-  - rmarkdown
+  - Education
+  - Teaching
 description: |
   Why and how I created a learnr tutorial on *Exploring missing data in naniar*
 slug: learnr-for-remote

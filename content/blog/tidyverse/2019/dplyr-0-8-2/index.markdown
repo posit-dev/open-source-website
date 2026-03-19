@@ -9,8 +9,8 @@ date: '2019-06-29'
 categories:
   - Data Wrangling
 tags:
-  - dplyr
   - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/xFTNsGW1isI
   author: Joanna Kosinska

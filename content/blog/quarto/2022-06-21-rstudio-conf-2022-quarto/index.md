@@ -19,6 +19,11 @@ ported_categories:
   - Conf
   - Workshop
   - Talk
+tags:
+  - Quarto
+  - Conf
+  - Workshop
+  - Talks
 ---
 
 

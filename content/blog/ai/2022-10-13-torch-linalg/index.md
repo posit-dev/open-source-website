@@ -22,6 +22,11 @@ ported_categories:
   - R
   - Concepts
   - Tabular Data
+tags:
+  - AI
+  - Torch
+  - Concepts
+  - Tabular data
 ---
 
 

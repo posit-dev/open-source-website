@@ -13,8 +13,8 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - parsnip
-  - multilevelmod
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

@@ -22,6 +22,12 @@ ported_categories:
   - TensorFlow/Keras
   - Concepts
   - Audio Processing
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Concepts
+  - Audio processing
 ---
 
 

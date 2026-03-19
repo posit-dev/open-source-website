@@ -10,9 +10,7 @@ tags:
   - Packages
   - R Markdown
   - Python
-  - reticulate
-  - Packages
-  - R Markdown
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

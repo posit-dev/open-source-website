@@ -4,21 +4,27 @@ description: |
   You can use HTML Tables with CSS styling in Typst via Quarto.
 people:
   - Gordon Woodhull
-date: "2024-07-02"
+date: '2024-07-02'
 image: beautiful-tables-typst.png
-image-alt: "typst snapshot tk"
+image-alt: typst snapshot tk
 bibliography: []
 format:
   html:
     css: layout.css
-    number-sections: true
+    number-sections: yes
 categories:
+  - Publishing
+ported_categories:
   - Quarto 1.5
   - Tables
 ported_from: quarto
 port_status: raw
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
+tags:
+  - Quarto
+  - Quarto 1.5
+  - Tables
 ---
 
 Quarto now allows HTML Tables with CSS styling to be output in Typst.

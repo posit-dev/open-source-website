@@ -11,7 +11,8 @@ categories:
 tags:
   - News
   - Arrow
-  - Ursa Labs
+  - Ursa labs
+  - RStudio
 blogcategories:
   - Company News and Events
 ported_from: rstudio

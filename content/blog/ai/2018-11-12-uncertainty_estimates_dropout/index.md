@@ -22,6 +22,14 @@ ported_categories:
   - Image Recognition & Image Processing
   - Probabilistic ML/DL
   - TensorFlow/Keras
+tags:
+  - AI
+  - Image recognition
+  - Image processing
+  - Probabilistic machine learning
+  - Probabilistic deep learning
+  - TensorFlow
+  - Keras
 ---
 
 

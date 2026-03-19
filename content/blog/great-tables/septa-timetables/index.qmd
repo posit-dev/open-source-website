@@ -11,6 +11,8 @@ software: ["great-tables"]
 languages: ["Python"]
 categories:
   - Visualization
+tags:
+  - Great Tables
 ---
 
 Recently, Rich and I were poking around transit data, and we were struck by the amount of structuring that goes into transit timetables.

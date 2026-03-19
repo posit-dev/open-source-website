@@ -7,9 +7,9 @@ slug: the-shiny-developer-series
 categories:
   - Interactive Apps
 tags:
-  - shiny
-  - community
   - Shiny
+  - Community
+  - RStudio
 blogcategories:
   - Products and Technology
 ported_from: rstudio

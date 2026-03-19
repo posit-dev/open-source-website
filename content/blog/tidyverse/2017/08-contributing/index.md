@@ -18,6 +18,9 @@ software: ["tidyverse"]
 languages: ["R"]
 ported_categories:
   - programming
+tags:
+  - tidyverse
+  - Programming
 ---
 
 > This post originally appeared at <http://www.jimhester.com/2017/08/08/contributing/>

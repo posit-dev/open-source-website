@@ -7,9 +7,9 @@ slug: dbplyr-1-4-0
 categories:
   - Data Wrangling
 tags:
-  - dbplyr
-  - dplyr
-  - databases
+  - Databases
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/JuFcQxgCXwA
   author: Samuel Zeller

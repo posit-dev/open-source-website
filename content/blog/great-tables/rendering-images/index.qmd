@@ -12,6 +12,8 @@ software: ["great-tables"]
 languages: ["Python"]
 categories:
   - Visualization
+tags:
+  - Great Tables
 ---
 
 Rendering images in Great Tables is straightforward with `GT.fmt_image()` and `vals.fmt_image()`.

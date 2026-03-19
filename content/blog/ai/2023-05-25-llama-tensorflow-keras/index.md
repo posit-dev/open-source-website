@@ -23,6 +23,12 @@ ported_categories:
   - R
   - Generative Models
   - Natural Language Processing
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Generative models
+  - Natural language processing
 ---
 
 

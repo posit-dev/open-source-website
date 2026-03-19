@@ -20,6 +20,11 @@ languages: ["R"]
 ported_categories:
   - TensorFlow/Keras
   - Tabular Data
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Tabular data
 ---
 
 

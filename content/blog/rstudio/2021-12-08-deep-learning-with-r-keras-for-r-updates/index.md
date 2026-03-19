@@ -4,9 +4,10 @@ date: '2021-12-08'
 slug: deep-learning-with-r-keras-for-r-updates
 tags:
   - AI
-  - Artificial Intelligence
-  - Deep Learning
+  - Artificial intelligence
+  - Deep learning
   - Packages
+  - RStudio
 people:
   - Isabella Velásquez
 blogcategories:

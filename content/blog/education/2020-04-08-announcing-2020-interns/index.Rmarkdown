@@ -7,7 +7,8 @@ photo:
 publishDate: '2020-04-08'
 slug: announcing-2020-interns
 tags:
-  - internship
+  - Internship
+  - Education
 description: |
   Meet this year's interns.
 image: feature-wd.jpg

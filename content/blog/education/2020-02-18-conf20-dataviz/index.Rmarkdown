@@ -8,7 +8,10 @@ date: '2020-02-18'
 categories:
   - Community
 tags:
-  - conf2020
+  - Conf2020
+  - Education
+  - Learn
+  - Teaching
 slug: conf20-dataviz
 description: |
   What we covered in our rstudio::conf(2020) workshop on data visualization.

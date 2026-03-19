@@ -15,6 +15,10 @@ software: ["tidyverse", "itdepends"]
 languages: ["R"]
 ported_categories:
   - programming
+tags:
+  - rlib
+  - tidyverse
+  - Programming
 ---
 
 ```{r setup, include = FALSE}

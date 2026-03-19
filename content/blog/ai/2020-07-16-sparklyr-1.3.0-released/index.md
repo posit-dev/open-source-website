@@ -20,6 +20,11 @@ languages: ["R"]
 ported_categories:
   - Packages/Releases
   - Distributed Computing
+tags:
+  - AI
+  - Packages
+  - Releases
+  - Distributed computing
 ---
 
 

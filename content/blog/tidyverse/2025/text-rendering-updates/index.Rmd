@@ -13,10 +13,10 @@ photo:
 categories:
   - Visualization
 tags:
-  - systemfonts
-  - textshaping
-  - marquee
-  - graphics
+  - Textshaping
+  - Graphics
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw

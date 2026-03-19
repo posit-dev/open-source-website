@@ -7,9 +7,10 @@ slug: pin-discover-and-share-resources
 categories:
   - MLOps and Admin
 tags:
-  - pins
-  - reproducible
+  - Pins
+  - Reproducible
   - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

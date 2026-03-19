@@ -21,6 +21,14 @@ ported_categories:
   - Probabilistic ML/DL
   - Packages/Releases
   - TensorFlow/Keras
+tags:
+  - AI
+  - Probabilistic machine learning
+  - Probabilistic deep learning
+  - Packages
+  - Releases
+  - TensorFlow
+  - Keras
 ---
 
 

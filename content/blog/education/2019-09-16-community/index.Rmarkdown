@@ -1,14 +1,17 @@
 ---
 title: Joining the R Community
 date: '2019-09-16'
-draft: TRUE
+draft: yes
 slug: community
-description: >
-    The R community is open and supportive. We often get asked how beginners can join- here is our advice.
-categories: 
+description: |
+  The R community is open and supportive. We often get asked how beginners can join- here is our advice.
+categories:
   - teach
   - learn
-tags: []
+tags:
+  - Education
+  - Teaching
+  - Learn
 photo:
   url: https://unsplash.com/photos/9Q7PqDxCZeQ
   author: Shwetha Shankar

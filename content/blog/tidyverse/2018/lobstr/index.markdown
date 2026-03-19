@@ -9,8 +9,9 @@ description: |
 categories:
   - Best Practices
 tags:
-  - lobstr
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/BmjuEqM4YOY
   author: Toa Heftiba

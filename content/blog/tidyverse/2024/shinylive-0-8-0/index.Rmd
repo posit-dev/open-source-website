@@ -13,8 +13,12 @@ photo:
 categories:
   - Interactive Apps
 tags:
-  - webr
-  - shiny
+  - Webr
+  - Webassembly
+  - Wasm
+  - Shiny
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw

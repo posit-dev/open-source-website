@@ -6,7 +6,8 @@ date: '2020-04-06'
 categories:
   - Community
 tags:
-  - certify
+  - Certify
+  - Education
 description: |
   Here's what we've learned from the first year of RStudio's instructor training and certification program.
 slug: first-year-of-instructor-training

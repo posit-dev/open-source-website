@@ -6,10 +6,9 @@ date: '2019-04-26'
 categories:
   - Interactive Apps
 tags:
-  - shiny
-  - reactlog
-  - Packages
   - Shiny
+  - Packages
+  - RStudio
 slug: shiny-1-3-2
 blogcategories:
   - Products and Technology

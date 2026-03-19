@@ -16,6 +16,9 @@ software: ["rmarkdown"]
 languages: ["R"]
 ported_categories:
   - News
+tags:
+  - RStudio
+  - News
 ---
 
 

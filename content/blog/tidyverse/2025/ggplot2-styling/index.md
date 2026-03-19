@@ -11,7 +11,9 @@ photo:
   author: Helena Jankovičová Kováčová
 categories:
   - Visualization
-tags: []
+tags:
+  - tidyverse
+  - Packages
 html_dependencies:
   - <link href="htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
   - <script src="htmlwidgets-1.6.4/htmlwidgets.js"></script>

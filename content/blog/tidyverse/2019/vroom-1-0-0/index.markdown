@@ -8,8 +8,9 @@ description: Introducing the vroom package, extremely fast data import in R.
 categories:
   - Data Wrangling
 tags:
-  - vroom
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://www.pexels.com/photo/12801/
   author: Chris Peeters

@@ -6,7 +6,9 @@ date: '2017-09-14'
 slug: rstudio-community
 categories:
   - Community
-tags: []
+tags:
+  - tidyverse
+  - Learn
 photo:
   url: https://unsplash.com/photos/9FDKj-FrfA4
   author: Rebekah Howell

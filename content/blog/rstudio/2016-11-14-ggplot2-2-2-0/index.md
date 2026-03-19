@@ -10,6 +10,8 @@ software: ["ggplot2"]
 languages: ["R"]
 categories:
   - Visualization
+tags:
+  - RStudio
 ---
 
 

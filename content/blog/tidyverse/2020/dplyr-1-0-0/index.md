@@ -12,8 +12,9 @@ photo:
 categories:
   - Data Wrangling
 tags:
-  - dplyr
-  - dplyr-1-0-0
+  - Dplyr-1-0-0
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

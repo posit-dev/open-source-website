@@ -11,7 +11,8 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

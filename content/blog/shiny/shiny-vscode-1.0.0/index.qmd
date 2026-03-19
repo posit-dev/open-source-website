@@ -14,6 +14,8 @@ software: ["shiny-vscode", "shiny-python", "shiny-r"]
 languages: ["R", "Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 ```{=html}

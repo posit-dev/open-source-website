@@ -9,8 +9,9 @@ description: Highlights include that `context()` is now optional, and new `expec
 categories:
   - Best Practices
 tags:
-  - package
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://www.pexels.com/photo/38070/
   author: Skitterphoto

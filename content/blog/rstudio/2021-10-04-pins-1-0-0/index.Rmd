@@ -7,7 +7,8 @@ slug: pins-1-0-0
 blogcategories:
   - Open Source
 tags:
-  - pins
+  - Pins
+  - RStudio
 description: |
   pins 1.0.0 is now available on CRAN! The pins package publishes data,  models, and other R objects, making it easy to share them across projects  and with your colleagues. Pins can be versioned, making it straightforward  to track changes, re-run analyses on historical data, and undo mistakes.
 image: thumbnail.jpg

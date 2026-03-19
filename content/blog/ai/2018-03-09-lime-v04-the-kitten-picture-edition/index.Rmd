@@ -18,6 +18,15 @@ ported_categories:
   - TensorFlow/Keras
   - Explainability
   - Image Recognition & Image Processing
+tags:
+  - AI
+  - Packages
+  - Releases
+  - TensorFlow
+  - Keras
+  - Explainability
+  - Image recognition
+  - Image processing
 ---
 
 ```{r setup, include=FALSE}

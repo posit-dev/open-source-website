@@ -17,6 +17,10 @@ languages: ["R"]
 ported_categories:
   - TensorFlow/Keras
   - R
+tags:
+  - AI
+  - TensorFlow
+  - Keras
 ---
 
 We are thrilled to introduce `keras3`, the next version of the Keras R

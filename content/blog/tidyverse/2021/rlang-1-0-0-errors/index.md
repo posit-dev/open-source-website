@@ -11,7 +11,9 @@ photo:
   author: Bryan Goff
 categories:
   - Best Practices
-tags: []
+tags:
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

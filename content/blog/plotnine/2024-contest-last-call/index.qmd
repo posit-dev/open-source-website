@@ -10,6 +10,9 @@ software: ["plotnine"]
 languages: ["Python"]
 ported_categories:
   - contest
+tags:
+  - Plotnine
+  - Contest
 ---
 
 The 2024 Plotnine Contest will close in 5 days on 26th July 2024, this is after a two week extension.

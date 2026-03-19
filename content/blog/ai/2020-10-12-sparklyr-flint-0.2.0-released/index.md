@@ -21,6 +21,11 @@ ported_categories:
   - R
   - Packages/Releases
   - Time Series
+tags:
+  - AI
+  - Packages
+  - Releases
+  - Time series
 ---
 
 

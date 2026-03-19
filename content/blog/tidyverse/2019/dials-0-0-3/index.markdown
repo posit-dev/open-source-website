@@ -7,8 +7,8 @@ people:
 categories:
   - Machine Learning
 tags:
-  - dials
-  - tidymodels
+  - tidyverse
+  - Packages
 description: "A major update to the tuning parameter package. \n"
 photo:
   url: https://unsplash.com/photos/QfN0l0MZCyc

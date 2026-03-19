@@ -12,8 +12,9 @@ photo:
 categories:
   - Artificial Intelligence
 tags:
-  - ellmer
-  - ai
+  - AI
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

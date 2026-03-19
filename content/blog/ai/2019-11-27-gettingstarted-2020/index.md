@@ -20,6 +20,12 @@ languages: ["R"]
 ported_categories:
   - Packages/Releases
   - TensorFlow/Keras
+tags:
+  - AI
+  - Packages
+  - Releases
+  - TensorFlow
+  - Keras
 ---
 
 

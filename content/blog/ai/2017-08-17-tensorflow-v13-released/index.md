@@ -19,6 +19,10 @@ software: ["tensorflow", "tfestimators"]
 languages: ["R"]
 ported_categories:
   - Packages/Releases
+tags:
+  - AI
+  - Packages
+  - Releases
 ---
 
 

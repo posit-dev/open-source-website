@@ -6,12 +6,13 @@ date: '2015-03-30'
 categories:
   - MLOps and Admin
 tags:
-  - cheatsheet
-  - data visualization
-  - ggplot2
-  - graphs
-  - plots
+  - Cheatsheet
+  - Data visualization
+  - Graphs
+  - Plots
   - Packages
+  - RStudio
+  - Training
 slug: data-visualization-cheatsheet-plus-spanish-translations
 blogcategories:
   - Products and Technology

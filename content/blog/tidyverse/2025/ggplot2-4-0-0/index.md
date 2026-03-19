@@ -12,7 +12,8 @@ photo:
 categories:
   - Visualization
 tags:
-  - ggplot2
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

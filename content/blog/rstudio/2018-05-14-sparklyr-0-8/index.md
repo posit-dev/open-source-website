@@ -8,8 +8,9 @@ categories:
   - Data Wrangling
   - MLOps and Admin
 tags:
-  - sparklyr
+  - Sparklyr
   - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

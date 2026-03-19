@@ -9,6 +9,8 @@ software: ["great-tables"]
 languages: ["Python"]
 categories:
   - Visualization
+tags:
+  - Great Tables
 ---
 
 In Great Tables `0.12.0` we focused on adding options for customizing the appearance of a table. In this post, we'll present two new features:

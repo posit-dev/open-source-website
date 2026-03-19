@@ -10,12 +10,12 @@ tags:
   - Markdown
   - R Markdown
   - Hugo
-  - website
+  - Website
   - Jekyll
   - Hexo
-  - WordPress
+  - Wordpress
   - Packages
-  - R Markdown
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

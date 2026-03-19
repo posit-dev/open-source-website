@@ -8,7 +8,10 @@ date: '2020-02-18'
 categories:
   - Community
 tags:
-  - conf2020
+  - Conf2020
+  - Education
+  - Learn
+  - Teaching
 slug: conf20-tidy-tools
 description: |
   A guide to the content and guiding principles of the Building Tidy Tools Workshop.

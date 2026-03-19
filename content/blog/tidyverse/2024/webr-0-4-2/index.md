@@ -12,8 +12,10 @@ photo:
 categories:
   - Interactive Apps
 tags:
-  - webr
-  - wasm
+  - Webr
+  - Wasm
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

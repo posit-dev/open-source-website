@@ -12,6 +12,7 @@ blogcategories:
 tags:
   - Packages
   - R Markdown
+  - RStudio
 ported_from: rstudio
 port_status: in-progress
 software: ["bookdown"]

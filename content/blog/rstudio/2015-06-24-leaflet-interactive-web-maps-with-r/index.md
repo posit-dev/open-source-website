@@ -7,9 +7,10 @@ categories:
   - Visualization
   - Interactive Apps
 tags:
-  - htmlwidgets
-  - spatial
+  - Htmlwidgets
+  - Spatial
   - Packages
+  - RStudio
 slug: leaflet-interactive-web-maps-with-r
 blogcategories:
   - Products and Technology

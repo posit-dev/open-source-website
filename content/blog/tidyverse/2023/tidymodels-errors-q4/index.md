@@ -12,10 +12,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - tidymodels
-  - package maintenance
-  - tune
-  - parsnip
+  - Package maintenance
+  - tidyverse
+  - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

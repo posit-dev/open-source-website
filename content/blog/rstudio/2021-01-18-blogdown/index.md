@@ -4,7 +4,9 @@ date: '2021-01-18'
 categories:
   - Publishing
 tags:
-  - blogdown
+  - RStudio
+  - R Markdown
+  - Packages
 people:
   - Alison Hill
   - Christophe Dervieux

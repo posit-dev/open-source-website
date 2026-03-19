@@ -18,6 +18,9 @@ software: ["tidyverse", "forcats"]
 languages: ["R"]
 ported_categories:
   - package
+tags:
+  - tidyverse
+  - Packages
 ---
 
 ```{r setup, include = FALSE}

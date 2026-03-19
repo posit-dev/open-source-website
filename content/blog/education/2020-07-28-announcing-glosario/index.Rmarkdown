@@ -14,7 +14,10 @@ date: '2020-07-28'
 categories:
   - Community
 tags:
-  - glosario
+  - Glosario
+  - Education
+  - Learn
+  - Packages
 description: |
   An open source multilingual glossary of data science terms
 slug: announcing-glosario

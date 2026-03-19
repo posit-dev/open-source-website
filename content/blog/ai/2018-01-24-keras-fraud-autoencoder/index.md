@@ -21,6 +21,12 @@ ported_categories:
   - TensorFlow/Keras
   - Unsupervised Learning
   - Cloud
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Unsupervised learning
+  - Cloud
 ---
 
 

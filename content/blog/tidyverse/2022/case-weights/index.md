@@ -12,8 +12,8 @@ photo:
 categories:
   - Best Practices
 tags:
-  - tidymodels
-  - parsnip
+  - tidyverse
+  - Deep-dive
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

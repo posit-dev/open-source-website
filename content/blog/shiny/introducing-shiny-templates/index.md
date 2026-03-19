@@ -12,6 +12,8 @@ software: ["shiny-python", "py-shiny-templates"]
 languages: ["Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 

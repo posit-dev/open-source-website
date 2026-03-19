@@ -8,7 +8,10 @@ date: '2020-05-26'
 categories:
   - Community
 tags:
-  - online
+  - Online
+  - Education
+  - Learn
+  - Teaching
 slug: teach-interactive-course
 description: |
   How and why we built free online interactive courses for learning R.

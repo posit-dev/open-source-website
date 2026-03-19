@@ -13,6 +13,8 @@ blogcategories:
 tags:
   - Packages
   - Shiny
+  - RStudio
+  - News
 ported_from: rstudio
 port_status: in-progress
 software: ["shiny-r"]

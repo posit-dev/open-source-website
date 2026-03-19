@@ -15,7 +15,9 @@ photo:
   url: https://unsplash.com/photos/ZahNAl_Ic3o
   author: Austin Neill
 tags:
-  - internship
+  - Internship
+  - Education
+  - Teaching
 image: stones-wd.jpg
 ported_from: education
 port_status: in-progress

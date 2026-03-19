@@ -7,8 +7,9 @@ slug: googlesheets4-0-2-0
 categories:
   - Data Wrangling
 tags:
-  - googlesheets4
-  - google
+  - Google
+  - tidyverse
+  - Packages
 photo:
   author: Stephane YAICH
   url: https://unsplash.com/photos/ufxd6aU0w9U

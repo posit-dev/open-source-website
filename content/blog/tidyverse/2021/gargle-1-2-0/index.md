@@ -13,10 +13,8 @@ photo:
 categories:
   - Data Wrangling
 tags:
-  - gargle
-  - bigrquery
-  - googledrive
-  - googlesheets4
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

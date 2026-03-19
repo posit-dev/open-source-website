@@ -8,8 +8,8 @@ people:
 categories:
   - Data Wrangling
 tags:
-  - tibble
   - tidyverse
+  - Packages
 description: |
   The upcoming tibble 2.0.0 release has internal changes relevant to package developers who depend on tibble.
 photo:

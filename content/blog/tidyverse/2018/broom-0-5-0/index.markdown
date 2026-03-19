@@ -9,8 +9,8 @@ description: |
 categories:
   - Data Wrangling
 tags:
-  - broom
-  - tidymodels
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/vYcH7pI6v1Q
   author: Nagesh Badu

@@ -12,8 +12,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - spring cleaning
-  - package maintenance
+  - Spring cleaning
+  - Package maintenance
+  - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

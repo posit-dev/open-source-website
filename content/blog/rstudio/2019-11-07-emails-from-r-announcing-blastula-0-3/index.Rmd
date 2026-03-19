@@ -8,12 +8,11 @@ categories:
   - Publishing
 tags:
   - Connect
-  - dynamic documents
-  - news
-  - packages
-  - rmarkdown
+  - Dynamic documents
+  - News
   - Packages
   - RStudio Connect
+  - RStudio
 blogcategories:
   - Products and Technology
 software: ["rmarkdown"]

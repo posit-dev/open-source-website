@@ -13,6 +13,8 @@ software: ["shiny-python", "shiny-r"]
 languages: ["R", "Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 

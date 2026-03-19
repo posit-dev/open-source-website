@@ -21,6 +21,13 @@ ported_categories:
   - Privacy & Security
   - TensorFlow/Keras
   - Time Series
+tags:
+  - AI
+  - Privacy
+  - Security
+  - TensorFlow
+  - Keras
+  - Time series
 ---
 
 

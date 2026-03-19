@@ -22,6 +22,11 @@ ported_categories:
   - R
   - Packages/Releases
   - Distributed Computing
+tags:
+  - AI
+  - Packages
+  - Releases
+  - Distributed computing
 ---
 
 

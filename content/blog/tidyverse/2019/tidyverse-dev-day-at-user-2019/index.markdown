@@ -9,7 +9,8 @@ description: |
 categories:
   - Community
 tags:
-  - tidyverse-dev-day
+  - Tidyverse-dev-day
+  - tidyverse
 photo:
   url: https://photos.app.goo.gl/g5Fj6GmHVXZhTsPj8
   author: JD Long

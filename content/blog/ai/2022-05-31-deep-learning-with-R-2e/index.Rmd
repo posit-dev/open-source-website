@@ -17,6 +17,10 @@ languages: ["R"]
 ported_categories:
   - TensorFlow/Keras
   - R
+tags:
+  - AI
+  - TensorFlow
+  - Keras
 ---
 
 Today we're pleased to announce the launch of [*Deep Learning with R,

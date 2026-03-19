@@ -7,9 +7,9 @@ categories:
   - Interactive Apps
 tags:
   - Article
-  - CSS
-  - shiny
+  - Css
   - Shiny
+  - RStudio
 slug: new-shiny-article-style-your-apps-with-css
 blogcategories:
   - Products and Technology

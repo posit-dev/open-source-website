@@ -9,8 +9,8 @@ description: |
 categories:
   - Data Wrangling
 tags:
-  - stringr
   - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/o-d37kiKqqc
   author: Maranda Vandergriff

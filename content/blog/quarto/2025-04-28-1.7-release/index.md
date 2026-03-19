@@ -18,6 +18,10 @@ languages: ["R", "Python", "Julia"]
 ported_categories:
   - Quarto 1.7
   - Releases
+tags:
+  - Quarto
+  - Quarto 1.7
+  - Releases
 ---
 
 

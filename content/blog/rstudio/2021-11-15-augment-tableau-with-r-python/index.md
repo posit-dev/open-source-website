@@ -6,6 +6,7 @@ date: '2021-11-15'
 slug: augment-tableau-with-r-python
 tags:
   - BI tools
+  - RStudio
 people:
   - Filip Wästberg
   - Jesper Ludvigsen

@@ -8,7 +8,8 @@ date: '2020-05-04'
 categories:
   - Community
 tags:
-  - rmarkdown
+  - Education
+  - Teaching
 description: |
   The goal of the flair package is to provide tools for formatting R code in knitted R Markdown files.
 slug: flair

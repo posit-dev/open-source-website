@@ -7,9 +7,9 @@ slug: reticulate-1-14
 categories:
   - Best Practices
 tags:
-  - reticulate
   - Python
   - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

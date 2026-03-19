@@ -9,9 +9,9 @@ categories:
 description: |
   A massive update to roxygen2 now on CRAN.
 tags:
-  - r-lib
-  - devtools
-  - roxygen2
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/8XddFc6NkBY
   author: Art Lasovsky

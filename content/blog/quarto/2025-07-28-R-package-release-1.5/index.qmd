@@ -17,6 +17,11 @@ ported_categories:
   - R package
   - knitr
   - Releases
+tags:
+  - Quarto
+  - Packages
+  - Knitr
+  - Releases
 ---
 
 The quarto R package version 1.5.0 is here! This release focuses on making Quarto more flexible and powerful for R users with significant workflow improvements.

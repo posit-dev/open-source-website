@@ -7,7 +7,9 @@ date: '2020-10-05'
 categories:
   - Community
 tags:
-  - bookdown
+  - Education
+  - Teaching
+  - Learn
 description: |
   We're Learning Too
 slug: ds-in-edu

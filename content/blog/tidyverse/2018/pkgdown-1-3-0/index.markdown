@@ -9,8 +9,9 @@ description: |
 categories:
   - Best Practices
 tags:
-  - pkgdown
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://pixabay.com/en/decoration-packages-gifts-ribbons-3229259/
   author: jackmac34

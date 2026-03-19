@@ -12,7 +12,8 @@ photo:
 categories:
   - Community
 tags:
-  - tidymodels
+  - tidyverse
+  - Learn
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
 ported_categories:

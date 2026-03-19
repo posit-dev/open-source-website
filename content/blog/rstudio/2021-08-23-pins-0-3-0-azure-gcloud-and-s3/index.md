@@ -10,11 +10,12 @@ blogcategories:
 description: New CRAN release for pins adds support for cloud boards (Azure, Google
   Cloud and S3), new functions, use cases and many other improvements.
 tags:
-  - pins
+  - Pins
   - Connect
-  - Microsoft Azure
-  - Google Cloud Platform
-  - packages
+  - Microsoft azure
+  - Google cloud platform
+  - Packages
+  - RStudio
 alttext: pins logo
 ported_from: rstudio
 port_status: in-progress

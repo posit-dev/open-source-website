@@ -13,7 +13,8 @@ photo:
 categories:
   - Data Wrangling
 tags:
-  - dplyr
+  - tidyverse
+  - Packages
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]

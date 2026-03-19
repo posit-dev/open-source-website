@@ -7,8 +7,9 @@ people:
 categories:
   - Best Practices
 tags:
-  - processx
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 description: |
   Run external processes with processx
 photo:

@@ -7,9 +7,10 @@ categories:
   - Visualization
   - Interactive Apps
 tags:
-  - DataTables
-  - htmlwidgets
+  - Datatables
+  - Htmlwidgets
   - Packages
+  - RStudio
 slug: dt-an-r-interface-to-the-datatables-library
 blogcategories:
   - Products and Technology

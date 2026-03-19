@@ -8,9 +8,9 @@ categories:
   - Visualization
   - Interactive Apps
 tags:
-  - leaflet
-  - data visualization
+  - Data visualization
   - Packages
+  - RStudio
 editor_options:
   chunk_output_type: console
 blogcategories:

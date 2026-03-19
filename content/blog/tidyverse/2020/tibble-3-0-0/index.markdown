@@ -19,6 +19,10 @@ languages: ["R"]
 ported_categories:
   - package
   - programming
+tags:
+  - tidyverse
+  - Packages
+  - Programming
 ---
 
 

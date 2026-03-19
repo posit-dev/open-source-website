@@ -7,7 +7,10 @@ categories:
   - Community
 slug: conf-workshops
 tags:
-  - conf2020
+  - Conf2020
+  - Education
+  - Learn
+  - Events
 description: |
   A closer look at rstudio::conf(2020) workshops
 photo:

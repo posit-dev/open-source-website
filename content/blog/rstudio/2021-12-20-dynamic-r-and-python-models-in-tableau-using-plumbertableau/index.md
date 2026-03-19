@@ -3,8 +3,9 @@ title: Integrating Dynamic R and Python Models in Tableau Using plumbertableau
 date: '2021-12-20'
 slug: dynamic-r-and-python-models-in-tableau-using-plumbertableau
 tags:
-  - BI Tools
-  - Product How-to
+  - BI tools
+  - Product how-to
+  - RStudio
 people:
   - Isabella Velásquez
 alttext: Tableau dashboard showcasing a model's predicted values at a particular location,

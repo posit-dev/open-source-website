@@ -9,6 +9,8 @@ software: ["great-tables"]
 languages: ["Python"]
 categories:
   - Visualization
+tags:
+  - Great Tables
 ---
 
 The Great Tables crew is excited to share that we'll be presenting on tables at PyCon 2024!

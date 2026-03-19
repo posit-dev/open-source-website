@@ -12,10 +12,10 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - agua
-  - recipes
-  - h2o
+  - Agua
+  - H2o
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

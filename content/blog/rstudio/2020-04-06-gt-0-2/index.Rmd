@@ -10,10 +10,9 @@ output:
 categories:
   - Visualization
 tags:
-  - news
-  - packages
-  - rmarkdown
+  - News
   - Packages
+  - RStudio
 blogcategories:
   - Products and Technology
   - Open Source

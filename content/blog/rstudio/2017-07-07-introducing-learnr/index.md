@@ -6,10 +6,11 @@ date: '2017-07-11'
 categories:
   - Publishing
 tags:
-  - shiny
-  - tutorial
+  - Shiny
+  - Tutorial
   - Packages
   - R Markdown
+  - RStudio
 slug: introducing-learnr
 blogcategories:
   - Products and Technology

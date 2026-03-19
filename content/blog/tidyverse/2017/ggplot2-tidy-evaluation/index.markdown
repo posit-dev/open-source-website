@@ -8,8 +8,8 @@ categories:
   - Visualization
   - Best Practices
 tags:
-  - ggplot2
   - tidyverse
+  - Packages
 description: |
   Using tidy evaluation in ggplot2 3.0.0.
 photo:

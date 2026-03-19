@@ -23,6 +23,10 @@ ported_categories:
   - Torch
   - R
   - Concepts
+tags:
+  - AI
+  - Torch
+  - Concepts
 ---
 
 ```{r setup, include=FALSE}

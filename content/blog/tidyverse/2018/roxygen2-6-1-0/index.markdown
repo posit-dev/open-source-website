@@ -7,8 +7,9 @@ people:
 categories:
   - Best Practices
 tags:
-  - roxygen2
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 description: |
   roxygen2 6.1.0 is now on CRAN!
 photo:

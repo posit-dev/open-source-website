@@ -14,6 +14,9 @@ ported_from: rstudio
 port_status: in-progress
 ported_categories:
   - News
+tags:
+  - RStudio
+  - News
 ---
 
 

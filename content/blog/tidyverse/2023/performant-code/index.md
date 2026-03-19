@@ -12,8 +12,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - package
-  - vctrs
+  - Packages
+  - tidyverse
+  - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

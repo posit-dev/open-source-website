@@ -12,8 +12,8 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - rules
+  - tidyverse
+  - Packages
 software: ["tidyverse", "tidymodels", "rules"]
 languages: ["R"]
 ported_categories:

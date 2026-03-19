@@ -10,8 +10,8 @@ description: hardhat 0.1.0 is now available on CRAN. It provides tools for devel
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - hardhat
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/YSxcf6C_SEg
   author: Silvia Brazzoduro

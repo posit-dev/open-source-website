@@ -19,6 +19,8 @@ ported_from: tidyverse
 port_status: raw
 ported_categories:
   - other
+tags:
+  - tidyverse
 ---
 
 ```{r setup, include = FALSE}

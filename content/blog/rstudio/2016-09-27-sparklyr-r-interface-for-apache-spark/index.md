@@ -12,6 +12,8 @@ blogcategories:
   - Company News and Events
 tags:
   - Packages
+  - RStudio
+  - News
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]

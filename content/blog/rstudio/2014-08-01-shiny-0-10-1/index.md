@@ -6,11 +6,11 @@ date: '2014-08-01'
 categories:
   - Interactive Apps
 tags:
-  - shiny
-  - Unicode
-  - UTF-8
-  - Packages
   - Shiny
+  - Unicode
+  - Utf-8
+  - Packages
+  - RStudio
 slug: shiny-0-10-1
 blogcategories:
   - Products and Technology

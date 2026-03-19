@@ -6,8 +6,9 @@ date: '2020-03-23'
 categories:
   - Community
 tags:
-  - online
-  - teach
+  - Online
+  - Teaching
+  - Education
 description: |
   Questions and answers about teaching online on short notice.
 slug: online-teaching-qa

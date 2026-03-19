@@ -9,8 +9,9 @@ description: |
 categories:
   - Best Practices
 tags:
-  - rlang
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/ar7ZWQ-r87g
   author: Caitlin Wynne

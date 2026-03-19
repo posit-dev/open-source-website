@@ -9,8 +9,8 @@ description: |
 categories:
   - Data Wrangling
 tags:
-  - dplyr
   - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/-WAiyQLGEEc
   author: Element5 Digital

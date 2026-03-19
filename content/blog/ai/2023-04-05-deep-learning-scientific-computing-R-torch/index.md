@@ -23,6 +23,13 @@ ported_categories:
   - Meta
   - Concepts
   - Packages/Releases
+tags:
+  - AI
+  - Torch
+  - Meta
+  - Concepts
+  - Packages
+  - Releases
 ---
 
 

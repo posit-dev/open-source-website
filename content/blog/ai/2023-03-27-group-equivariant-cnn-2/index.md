@@ -21,6 +21,12 @@ ported_categories:
   - R
   - Spatial Data
   - Image Recognition & Image Processing
+tags:
+  - AI
+  - Torch
+  - Spatial data
+  - Image recognition
+  - Image processing
 ---
 
 

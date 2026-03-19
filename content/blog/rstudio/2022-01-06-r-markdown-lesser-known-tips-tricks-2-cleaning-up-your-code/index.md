@@ -3,8 +3,9 @@ title: 'R Markdown Lesser-Known Tips & Tricks #2: Cleaning Up Your Code'
 date: '2022-01-06'
 slug: r-markdown-tips-tricks-2-cleaning-up-your-code
 tags:
-  - Product How-to
+  - Product how-to
   - R Markdown
+  - RStudio
 people:
   - Brendan Cullen
   - Alison Hill

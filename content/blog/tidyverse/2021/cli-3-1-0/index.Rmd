@@ -12,7 +12,9 @@ photo:
   author: Yumi
 categories:
   - Best Practices
-tags: []
+tags:
+  - tidyverse
+  - Packages
 editor_options:
   markdown:
     wrap: sentence

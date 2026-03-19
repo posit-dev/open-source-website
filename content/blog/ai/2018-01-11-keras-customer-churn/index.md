@@ -21,6 +21,12 @@ ported_categories:
   - TensorFlow/Keras
   - Tabular Data
   - Explainability
+tags:
+  - AI
+  - TensorFlow
+  - Keras
+  - Tabular data
+  - Explainability
 ---
 
 

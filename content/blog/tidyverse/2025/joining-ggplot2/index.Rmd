@@ -13,8 +13,8 @@ photo:
 categories:
   - Community
 tags:
-  - internship
-  - ggplot2
+  - Internship
+  - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw

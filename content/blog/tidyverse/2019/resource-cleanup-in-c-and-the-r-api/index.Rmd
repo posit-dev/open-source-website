@@ -18,6 +18,12 @@ languages: ["R"]
 ported_categories:
   - package
   - programming
+tags:
+  - Cleancall
+  - rlib
+  - tidyverse
+  - Packages
+  - Programming
 ---
 
 ```{r setup, include = FALSE}

@@ -13,8 +13,9 @@ photo:
 categories:
   - Artificial Intelligence
 tags:
-  - ragnar
-  - ai
+  - AI
+  - tidyverse
+  - Packages
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragnar"]

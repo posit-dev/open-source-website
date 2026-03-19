@@ -6,7 +6,10 @@ date: '2018-04-24'
 slug: bigrquery-1-0-0
 categories:
   - Data Wrangling
-tags: []
+tags:
+  - Databases
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/kmAAlcld6wA
   author: Andrew Ruiz

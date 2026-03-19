@@ -12,7 +12,9 @@ photo:
   author: Johannes Plenio
 categories:
   - Best Practices
-tags: []
+tags:
+  - tidyverse
+  - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

@@ -6,7 +6,10 @@ date: '2020-05-19'
 categories:
   - Community
 tags:
-  - online
+  - Online
+  - Education
+  - Learn
+  - Teaching
 description: |
   A collection of new + free + online learning resources for R and Python users.
 slug: remote-roundup

@@ -9,9 +9,9 @@ description: scales 1.1.0 now available on CRAN. It includes a new naming scheme
 categories:
   - Visualization
 tags:
-  - ggplot2
-  - scales
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/d0CasEMHDQs
   author: David Clode

@@ -21,6 +21,12 @@ ported_categories:
   - R
   - Packages/Releases
   - Time Series
+tags:
+  - AI
+  - Torch
+  - Packages
+  - Releases
+  - Time series
 ---
 
 

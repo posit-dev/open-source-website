@@ -21,6 +21,10 @@ ported_categories:
   - Torch
   - R
   - Tabular Data
+tags:
+  - AI
+  - Torch
+  - Tabular data
 ---
 
 

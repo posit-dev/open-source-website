@@ -18,6 +18,10 @@ ported_categories:
   - Concepts
   - Meta
   - R
+tags:
+  - AI
+  - Concepts
+  - Meta
 ---
 
 ```{r setup, include=FALSE}

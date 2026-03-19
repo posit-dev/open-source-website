@@ -17,6 +17,10 @@ languages: ["R"]
 ported_categories:
   - learn
   - teach
+tags:
+  - Education
+  - Learn
+  - Teaching
 ---
 
 Shortly after Winston Chang and I were hired by RStudio, I was surprised to spot his name at the bottom of a [LaTeX cheatsheet](https://wch.github.io/latexsheet/latexsheet.pdf) that I had used all through grad school. His idea was too good to waste; and soon after, the [first RStudio Cheatsheet](https://github.com/rstudio/cheatsheets/blob/master/old/pdfs/shiny-cheatsheet-old.pdf) was born! 

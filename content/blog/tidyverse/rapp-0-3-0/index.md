@@ -12,10 +12,10 @@ photo:
 categories:
   - Best Practices
 tags:
-  - r-lib
-  - package
-  - programming
-  - yaml
+  - rlib
+  - Packages
+  - Programming
+  - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

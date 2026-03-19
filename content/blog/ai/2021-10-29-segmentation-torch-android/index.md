@@ -20,6 +20,11 @@ ported_categories:
   - Torch
   - Image Recognition & Image Processing
   - R
+tags:
+  - AI
+  - Torch
+  - Image recognition
+  - Image processing
 ---
 
 

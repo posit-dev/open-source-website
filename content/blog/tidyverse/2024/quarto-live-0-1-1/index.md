@@ -13,8 +13,9 @@ categories:
   - Interactive Apps
   - Publishing
 tags:
-  - webr
-  - quarto
+  - Webr
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

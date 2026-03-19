@@ -12,10 +12,9 @@ photo:
 categories:
   - Data Wrangling
 tags:
-  - bigrquery
-  - gargle
-  - dbplyr
-  - databases
+  - Databases
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

@@ -12,10 +12,8 @@ photo:
 categories:
   - Machine Learning
 tags:
-  - tidymodels
-  - textrecipes
-  - workflowsets
-  - dials
+  - tidyverse
+  - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress

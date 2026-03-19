@@ -10,7 +10,9 @@ photo:
 categories:
   - Best Practices
 tags:
-  - pkgdown
+  - rlib
+  - tidyverse
+  - Packages
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
 ported_categories:

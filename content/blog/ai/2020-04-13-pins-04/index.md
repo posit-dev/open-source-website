@@ -21,6 +21,11 @@ ported_categories:
   - R
   - Packages/Releases
   - Data Management
+tags:
+  - AI
+  - Packages
+  - Releases
+  - Data management
 ---
 
 

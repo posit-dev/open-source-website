@@ -20,6 +20,11 @@ languages: ["R"]
 ported_categories:
   - Natural Language Processing
   - TensorFlow/Keras
+tags:
+  - AI
+  - Natural language processing
+  - TensorFlow
+  - Keras
 ---
 
 

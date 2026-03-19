@@ -6,7 +6,9 @@ description: |
   These nine fictional characters capture key features of the audiences for data science training.
 categories:
   - Community
-tags: []
+tags:
+  - Education
+  - Teaching
 photo:
   url: https://unsplash.com/photos/hXXjwXVyUVo
   author: Siora Photography

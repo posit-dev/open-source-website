@@ -9,7 +9,8 @@ description: |
 categories:
   - Community
 tags:
-  - tidyverse-dev-day
+  - Tidyverse-dev-day
+  - tidyverse
 photo:
   url: https://unsplash.com/photos/ZMMXSRMSoI8
   author: rawpixel

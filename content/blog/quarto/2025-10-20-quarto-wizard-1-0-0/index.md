@@ -66,6 +66,11 @@ ported_categories:
   - positron
   - extensions
   - productivity
+tags:
+  - Quarto
+  - Vscode
+  - Extensions
+  - Productivity
 ---
 
 

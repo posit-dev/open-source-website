@@ -7,8 +7,9 @@ people:
 categories:
   - Best Practices
 tags:
-  - rlang
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 description: |
   API for working with tidy evaluation, base R types, and errors
 photo:

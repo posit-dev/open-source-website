@@ -6,7 +6,8 @@ people:
   - Devin Johnson
 date: '2020-06-29'
 tags:
-  - internship
+  - Internship
+  - Education
 slug: working-with-spreadsheets
 description: |
   A midterm report on a project to help people work with spreadsheets.

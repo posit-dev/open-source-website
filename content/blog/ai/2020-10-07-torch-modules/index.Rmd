@@ -20,6 +20,9 @@ languages: ["R"]
 ported_categories:
   - Torch
   - R
+tags:
+  - AI
+  - Torch
 ---
 
 ```{r setup, include=FALSE}

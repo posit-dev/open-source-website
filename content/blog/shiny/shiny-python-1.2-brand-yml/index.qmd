@@ -13,6 +13,8 @@ software: ["shiny-python", "brand-yml"]
 languages: ["Python"]
 categories:
   - Interactive Apps
+tags:
+  - Shiny
 ---
 
 [brand.yml]: https://posit-dev.github.io/brand-yml

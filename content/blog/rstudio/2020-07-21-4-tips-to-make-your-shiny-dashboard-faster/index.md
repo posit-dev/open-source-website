@@ -7,8 +7,8 @@ slug: 4-tips-to-make-your-shiny-dashboard-faster
 categories:
   - Interactive Apps
 tags:
-  - shiny
   - Shiny
+  - RStudio
 description: Yes, Shiny apps can be fast and scalable. But only if you build them
   in the right way and use the proper tools.
 resources:

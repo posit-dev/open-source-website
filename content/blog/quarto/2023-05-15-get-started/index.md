@@ -18,6 +18,9 @@ software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:
   - Learn
+tags:
+  - Quarto
+  - Learn
 ---
 
 

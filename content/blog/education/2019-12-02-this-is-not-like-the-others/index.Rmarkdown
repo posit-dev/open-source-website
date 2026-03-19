@@ -6,7 +6,8 @@ people:
   - Marly Gotti
 date: '2019-12-02'
 tags:
-  - internship
+  - Internship
+  - Education
 slug: this-is-not-like-the-others
 description: |
   I spent my summer building a new modeling package for R. Here's what I did and what I learned.

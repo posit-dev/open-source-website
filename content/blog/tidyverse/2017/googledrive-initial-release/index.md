@@ -9,8 +9,8 @@ description: |
 categories:
   - Data Wrangling
 tags:
-  - googledrive
   - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/wgLPy2YBXuc
   author: Paul Csogi

@@ -13,8 +13,8 @@ photo:
 categories:
   - Visualization
 tags:
-  - ggplot2
-  - scales
+  - tidyverse
+  - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw

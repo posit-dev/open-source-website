@@ -12,7 +12,8 @@ photo:
   url: https://unsplash.com/photos/z-lh7Mz7wFQ
   author: Cris DiNoto
 tags:
-  - internship
+  - Internship
+  - Education
 image: colors-wd.jpg
 ported_from: education
 port_status: in-progress

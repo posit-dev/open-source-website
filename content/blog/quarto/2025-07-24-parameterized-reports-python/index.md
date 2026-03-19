@@ -21,6 +21,11 @@ ported_categories:
   - Authoring
   - Teaching
   - Jupyter
+tags:
+  - Quarto
+  - Authoring
+  - Teaching
+  - Jupyter
 ---
 
 

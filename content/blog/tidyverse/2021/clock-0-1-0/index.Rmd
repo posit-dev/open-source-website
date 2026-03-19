@@ -13,7 +13,9 @@ photo:
 categories:
   - Data Wrangling
 tags:
-  - r-lib
+  - rlib
+  - tidyverse
+  - Packages
 editor_options:
   chunk_output_type: console
 image: thumbnail-wd.jpg

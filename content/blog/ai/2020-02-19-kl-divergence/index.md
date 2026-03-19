@@ -20,6 +20,11 @@ languages: ["R"]
 ported_categories:
   - Probabilistic ML/DL
   - Concepts
+tags:
+  - AI
+  - Probabilistic machine learning
+  - Probabilistic deep learning
+  - Concepts
 ---
 
 

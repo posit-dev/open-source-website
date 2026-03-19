@@ -20,6 +20,11 @@ ported_categories:
   - Meta
   - Concepts
   - Natural Language Processing
+tags:
+  - AI
+  - Meta
+  - Concepts
+  - Natural language processing
 ---
 
 

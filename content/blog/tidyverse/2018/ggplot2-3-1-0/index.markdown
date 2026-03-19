@@ -10,8 +10,8 @@ description: |
 categories:
   - Visualization
 tags:
-  - ggplot2
   - tidyverse
+  - Packages
 photo:
   url: https://unsplash.com/photos/Ibq4B5iE_-4
   author: Stephan Henning
