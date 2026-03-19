@@ -8,6 +8,8 @@ image: gt_marimo.gif
 image-alt: "Screencast showing interactive Great Tables with marimo widgets"
 ported_from: great_tables
 port_status: in-progress
+software: ["great-tables"]
+languages: ["Python"]
 ---
 
 Jerry Wu's [recent post](https://tech.ycwu.space/posts/gt-marimo-in-quarto/20250612.html) demonstrates how Great Tables can be made reactive in a marimo notebook. The post showcases a really nice integration where marimo's reactive widgets can be embedded directly into Great Tables using the [`html()`](https://posit-dev.github.io/great-tables/reference/html.html) helper function. This effectively creates an interactive table that updates in real-time whenever users interact with the controls.

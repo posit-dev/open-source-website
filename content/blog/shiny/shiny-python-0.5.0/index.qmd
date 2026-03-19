@@ -8,6 +8,8 @@ image: shiny-050.png
 image-alt: "Shiny for Python 0.5.0"
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-python"]
+languages: ["Python"]
 ---
 
 Another Shiny for Python release has arrived! In fact, we released 0.5.0 and then quickly followed it with 0.5.1, which fixes [a sidebar bug](https://github.com/posit-dev/py-shiny/issues/666) we introduced in 0.5.0. Sorry about that!

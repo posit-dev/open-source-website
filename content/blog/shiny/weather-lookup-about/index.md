@@ -10,6 +10,8 @@ image-alt: >-
   themperature over time of a specific location
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-r"]
+languages: ["R"]
 ---
 
 

@@ -22,6 +22,7 @@ resources:
   title: SparklyR
 ported_from: rstudio
 port_status: in-progress
+languages: ["R"]
 ---
 
 <img src="sparklyr.png"/>

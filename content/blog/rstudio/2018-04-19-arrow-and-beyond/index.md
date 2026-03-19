@@ -15,6 +15,7 @@ blogcategories:
 - Company News and Events
 ported_from: rstudio
 port_status: in-progress
+languages: ["R", "Python"]
 ---
 
 

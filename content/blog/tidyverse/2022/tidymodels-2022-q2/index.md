@@ -19,6 +19,8 @@ tags: [tidymodels, parsnip, recipes]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "tidymodels", "parsnip", "recipes"]
+languages: ["R"]
 ---
 
 <!--

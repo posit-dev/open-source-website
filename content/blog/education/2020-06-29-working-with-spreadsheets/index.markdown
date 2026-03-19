@@ -16,6 +16,8 @@ photo:
 image: working-with-spreadsheets-wd.jpg
 ported_from: education
 port_status: in-progress
+software: ["readxl"]
+languages: ["R"]
 ---
 
 Fancy algorithms, lots of code, and beautiful visualizations

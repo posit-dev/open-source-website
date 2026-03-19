@@ -17,6 +17,8 @@ editor_options:
     wrap: 72
 preview: images/chameleon.jpg
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

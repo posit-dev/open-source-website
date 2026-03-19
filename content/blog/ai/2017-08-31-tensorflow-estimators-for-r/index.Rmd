@@ -12,6 +12,8 @@ author:
 date: 08-31-2017
 preview: tensorflow-architecture.png
 format: hugo-md
+software: ["tfestimators", "tensorflow"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

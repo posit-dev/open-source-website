@@ -20,6 +20,8 @@ tags: [parquet]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["nanoparquet"]
+languages: ["R"]
 ---
 
 <!--

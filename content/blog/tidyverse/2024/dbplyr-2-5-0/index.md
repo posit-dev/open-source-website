@@ -20,6 +20,8 @@ tags: [dbplyr]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "dbplyr"]
+languages: ["R"]
 ---
 
 <!--

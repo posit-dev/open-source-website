@@ -21,6 +21,8 @@ tags: [webr, shiny]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "shiny-r", "shinylive"]
+languages: ["R"]
 ---
 
 ```{=html}

@@ -16,6 +16,8 @@ categories:
 bibliography: bibliography.bib
 preview: images/thumb1.png
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

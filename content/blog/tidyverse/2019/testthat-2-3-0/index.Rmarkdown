@@ -13,6 +13,8 @@ photo:
   url: https://unsplash.com/photos/n_vD-7RxA3Q
   author: Roman Kraft
 
+software: ["tidyverse", "devtools", "testthat"]
+languages: ["R"]
 ---
 
 ```{r include = FALSE}

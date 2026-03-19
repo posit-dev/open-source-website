@@ -17,6 +17,7 @@ editor_options:
   markdown: 
     wrap: 72
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

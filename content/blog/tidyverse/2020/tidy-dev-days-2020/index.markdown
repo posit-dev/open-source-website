@@ -15,6 +15,8 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse"]
+languages: ["R"]
 ---
 
 ## Post-rstudio::conf(2020) dev day

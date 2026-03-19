@@ -19,6 +19,8 @@ categories:
   - Packages/Releases
 preview: images/thumb.jpg
 format: hugo-md
+software: ["reticulate"]
+languages: ["R"]
 ---
 
 

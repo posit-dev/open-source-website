@@ -9,6 +9,8 @@ description: >
 photo:
   url: https://unsplash.com/photos/O6N9RV2rzX8
   author: Jeremy Thomas
+software: ["tidyverse", "recipes", "yardstick", "embed", "tidyposterior", "tidymodels"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

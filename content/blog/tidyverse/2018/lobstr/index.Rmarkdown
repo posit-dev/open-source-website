@@ -10,6 +10,8 @@ categories:
 photo:
   url: https://unsplash.com/photos/BmjuEqM4YOY
   author: Toa Heftiba
+software: ["tidyverse", "lobstr"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

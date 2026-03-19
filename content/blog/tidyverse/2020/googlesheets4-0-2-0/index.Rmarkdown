@@ -11,6 +11,8 @@ tags:
 photo:
   author: Stephane YAICH
   url: https://unsplash.com/photos/ufxd6aU0w9U
+software: ["tidyverse", "googlesheets4"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

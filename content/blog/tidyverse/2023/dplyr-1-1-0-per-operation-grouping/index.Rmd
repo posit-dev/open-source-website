@@ -19,6 +19,8 @@ editor_options:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "dplyr"]
+languages: ["R"]
 ---
 
 Today we are going to look at one of the major new features in [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110), per-operation grouping with [`.by`/`by`](https://dplyr.tidyverse.org/reference/dplyr_by.html).

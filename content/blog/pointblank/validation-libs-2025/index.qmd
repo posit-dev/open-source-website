@@ -5,6 +5,8 @@ people:
 date: 2025-06-04
 ported_from: pointblank
 port_status: in-progress
+software: ["pointblank"]
+languages: ["Python"]
 ---
 
 Data validation is a very important part of any data pipeline. And with Polars gaining popularity as

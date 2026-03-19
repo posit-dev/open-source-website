@@ -18,6 +18,8 @@ tags: [tidymodels,workflows,tune]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "tidymodels", "workflows", "tune"]
+languages: ["R"]
 ---
 
 <!--

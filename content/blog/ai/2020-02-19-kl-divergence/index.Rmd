@@ -15,6 +15,7 @@ categories:
 bibliography: bibliography.bib
 preview: images/ultimatemachine.jpg
 format: hugo-md
+languages: ["R"]
 ---
 
 

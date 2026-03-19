@@ -23,6 +23,8 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "dplyr"]
+languages: ["R"]
 ---
 
 Today, I wanted to talk a little bit how dplyr 1.0.0 uses the [vctrs](http://vctrs.r-lib.org/) package. This post explains why vctrs is so important, why we can't just copy what base R does, how to interpret some of new error messages that you'll see, and some of the major changes since the last version.

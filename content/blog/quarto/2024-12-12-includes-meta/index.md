@@ -14,6 +14,8 @@ image: thumbnail.jpg
 image-alt: Quarto logo with single source publishing icon.
 ported_from: quarto
 port_status: in-progress
+software: ["quarto"]
+languages: ["R", "Python", "Julia"]
 ---
 
 

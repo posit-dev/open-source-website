@@ -9,6 +9,8 @@ photo:
   url: https://unsplash.com/photos/MPu7kSboG8E
   author: Philip Veater
 categories: [package]
+software: ["tidyverse", "usethis"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

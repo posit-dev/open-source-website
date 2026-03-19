@@ -18,6 +18,8 @@ tags: [tidymodels, agua, recipes, h2o]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "tidymodels", "recipes"]
+languages: ["R"]
 ---
 
 

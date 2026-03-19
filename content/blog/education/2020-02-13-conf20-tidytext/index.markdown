@@ -16,6 +16,7 @@ photo:
 image: books-wd.jpg
 ported_from: education
 port_status: in-progress
+languages: ["R"]
 ---
 
 > tl;dr: all workshop materials are available here: <br>

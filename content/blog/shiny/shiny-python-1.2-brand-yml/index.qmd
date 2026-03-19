@@ -9,6 +9,8 @@ image-alt: "brand.yml logo"
 image-header-disable: true
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-python", "brand-yml"]
+languages: ["Python"]
 ---
 
 [brand.yml]: https://posit-dev.github.io/brand-yml

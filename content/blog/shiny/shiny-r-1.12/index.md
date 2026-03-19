@@ -15,6 +15,8 @@ editor:
 code-annotations: hover
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-r"]
+languages: ["R"]
 ---
 
 

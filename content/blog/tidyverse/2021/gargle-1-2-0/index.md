@@ -20,6 +20,8 @@ tags: [gargle, bigrquery, googledrive, googlesheets4]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "gargle", "bigrquery", "googledrive", "googlesheets4"]
+languages: ["R"]
 ---
 
 We're psyched to announce the release of [gargle](https://gargle.r-lib.org) 1.2.0. gargle is meant to take some of the pain out of working with Google APIs and is mostly aimed at the *maintainers* of R packages that call Google APIs.

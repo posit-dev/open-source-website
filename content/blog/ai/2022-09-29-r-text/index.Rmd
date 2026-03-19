@@ -23,6 +23,7 @@ creative_commons: CC BY
 repository_url: https://github.com/OscarKjell/ai-blog
 preview: img/ai_blog_word_plot.png
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

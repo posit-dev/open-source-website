@@ -17,6 +17,7 @@ categories:
 preview: images/nasa-Q1p7bh3SHj8-unsplash.jpg
 
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

@@ -14,6 +14,8 @@ categories:
   - Data Management
 preview: images/thumb.jpg
 format: hugo-md
+software: ["pins-r"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

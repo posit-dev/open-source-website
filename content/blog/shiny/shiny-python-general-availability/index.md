@@ -10,6 +10,8 @@ image-alt: >-
   Python
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-python"]
+languages: ["Python"]
 ---
 
 

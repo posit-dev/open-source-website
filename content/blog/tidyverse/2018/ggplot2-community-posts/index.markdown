@@ -17,6 +17,8 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "ggplot2"]
+languages: ["R"]
 ---
 
 ggplot2 3.0.0 has more changes and features than we could possibly cover in our [release announcement](https://www.tidyverse.org/articles/2018/07/ggplot2-3-0-0/#new-features). So, we asked you (the community) to share _your_ posts with us during the month following its release. 

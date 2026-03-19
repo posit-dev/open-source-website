@@ -8,6 +8,8 @@ image: shinyconflogo.jpg
 image-alt: "The Shiny Conf Logo on a dark blue background"
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-r", "bslib"]
+languages: ["R"]
 ---
 
 Appsilon's Shiny Conf 2023 was a big success, with many incredible speakers (including 3 members of our team!) and many viewers tuning in from afar. 

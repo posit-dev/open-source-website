@@ -15,6 +15,8 @@ tags:
 photo:
   url: https://unsplash.com/photos/h13Y8vyIXNU
   author: Jay Ruzesky
+software: ["tidyverse", "dtplyr", "dplyr"]
+languages: ["R"]
 ---
 
 ```{r, include = FALSE}

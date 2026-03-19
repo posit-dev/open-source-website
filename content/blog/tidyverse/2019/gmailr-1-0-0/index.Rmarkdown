@@ -11,6 +11,8 @@ tags:
 photo:
   url: https://unsplash.com/photos/fb7yNPbT0l8
   author: Mathyas Kurmann
+software: ["tidyverse", "gmailr"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

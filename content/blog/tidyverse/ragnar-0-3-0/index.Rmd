@@ -20,6 +20,8 @@ editor:
   markdown:
     canonical: true
     wrap: 72
+software: ["tidyverse", "ragnar"]
+languages: ["R"]
 ---
 
 ```{r}

@@ -17,10 +17,11 @@ blogcategories:
 - Open Source
 ported_from: rstudio
 port_status: in-progress
+languages: ["R"]
 ---
 
 
-<img src="2019-03-15-sparklyr-1-0-sparklyr-arrow-spark-small.png" style="display: none;" alt="sparklyr spark_apply() performance with arrow"/>
+<img src="/blog-images/2019-03-15-sparklyr-1-0-sparklyr-arrow-spark-small.png" style="display: none;" alt="sparklyr spark_apply() performance with arrow"/>
 
 With much excitement built over the past three years, we are thrilled to share that [sparklyr](https://github.com/rstudio/sparklyr) `1.0` is now available on [CRAN](https://CRAN.R-project.org/package=sparklyr)!
 
@@ -41,7 +42,7 @@ install.packages("sparklyr")
 
 [Apache Arrow](https://arrow.apache.org/) is a cross-language development platform for in-memory data, you can read more about this in the [Arrow and beyond](https://blog.rstudio.com/2018/04/19/arrow-and-beyond/) blog post. In `sparklyr 1.0`,  we are embracing Arrow as an efficient bridge between R and Spark, conceptually:
 
-<img src="2019-03-15-sparklyr-1-0-sparklyr-arrow-spark.png" width="70%"" alt="sparklyr using Apache Arrow diagram"/>
+<img src="/blog-images/2019-03-15-sparklyr-1-0-sparklyr-arrow-spark.png" width="70%"" alt="sparklyr using Apache Arrow diagram"/>
 
 In practice, this means faster data transfers and support for larger datasets; specifically, this improves `collect()`, `copy_to()` and `spark_apply()`. The following benchmarks make use of the [bench](http://bench.r-lib.org/) package to measure performance with and without `arrow`.
 
@@ -64,7 +65,7 @@ bench::press(rows = c(10^6, 10^7), {
 })
 ```
 
-![](2019-03-15-sparklyr-1-0-copy-to.png)
+![](/blog-images/2019-03-15-sparklyr-1-0-copy-to.png)
 
 Next, we will benchmark `collect()` over 10M and 50M records; collecting 50M+ records is only possible with `arrow`.
 
@@ -82,7 +83,7 @@ bench::press(rows = c(10^7, 5 * 10^7), {
 })
 ```
 
-![](2019-03-15-sparklyr-1-0-collect.png)
+![](/blog-images/2019-03-15-sparklyr-1-0-collect.png)
 
 Last but not least, `spark_apply()` over 100K and 1M rows shows the most significant improvements. A **40x speedup** when running R on Spark, additional details are available in the Arrow project [post](https://arrow.apache.org/blog/2019/01/25/r-spark-improvements/).
 
@@ -100,7 +101,7 @@ bench::press(rows = c(10^5, 10^6), {
 })
 ```
 
-![](2019-03-15-sparklyr-1-0-spark-apply.png)
+![](/blog-images/2019-03-15-sparklyr-1-0-spark-apply.png)
 
 To use `arrow`, you will first have to install the Apache Arrow runtime followed by installing the R `arrow` package, additional instructions are available under [spark.rstudio.com/guides/arrow](https://spark.rstudio.com/guides/arrow).
 
@@ -201,7 +202,7 @@ You can then use TensorFlow and Keras from R to load this recordset and train de
 
 When connecting to Spark running in YARN, RStudio's connection pane can now launch YARN's web application.
 
-<img src="2019-03-15-sparklyr-1-0-rstudio-yarn.png" width=70% style="margin-left: 15px;" alt="RStudio Connections Pane YARN action"/>
+<img src="/blog-images/2019-03-15-sparklyr-1-0-rstudio-yarn.png" width=70% style="margin-left: 15px;" alt="RStudio Connections Pane YARN action"/>
 
 We also made it possible to copy and collect larger datasets by using callbacks. For instance, you can collect data incrementally in batches of 100K rows; this is configurable through the `sparklyr.collect.batch` setting. The following example collects 300K rows using batches and prints the total records collected; in practice, you save and load from disk.
 

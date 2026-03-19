@@ -11,6 +11,8 @@ resources:
   - speed_comparison.mp4
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-r"]
+languages: ["R"]
 ---
 
 Here we demonstrate the use of the new [`bindCache()`](https://shiny.posit.co/r/reference/shiny/latest/bindCache.html) function in Shiny to greatly speed up a Shiny app that parses NOAA weather station data for 12,636 locations around the United States. We will demonstrate the addition of `bindCache()` to existing reactive expressions, explaining where and why it should be used along with some potential gotchas of doing so.

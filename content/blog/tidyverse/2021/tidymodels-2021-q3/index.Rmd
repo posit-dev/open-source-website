@@ -19,6 +19,8 @@ tags: [tidymodels, dials, modeldata, recipes]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "tidymodels", "dials", "recipes"]
+languages: ["R"]
 ---
 
 ```{r include=FALSE}

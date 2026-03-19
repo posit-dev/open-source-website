@@ -23,6 +23,8 @@ tags: [tidymodels,postprocessing,parallel processing]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "tidymodels"]
+languages: ["R"]
 ---
 
 ```{r}

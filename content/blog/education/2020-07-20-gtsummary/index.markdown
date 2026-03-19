@@ -23,6 +23,8 @@ photo:
 image: featured-wd.jpg
 ported_from: education
 port_status: in-progress
+software: ["rmarkdown"]
+languages: ["R"]
 ---
 
 

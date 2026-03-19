@@ -17,6 +17,8 @@ blogcategories:
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress
+software: ["rmarkdown"]
+languages: ["R"]
 ---
 
 Seasons greetings from the R Markdown family! We know many folks are headed into holiday breaks, and we hope you all take time away from work to enjoy...the rest of 2020. If you are like most people, you may be having a hard time keeping up with the latest news and current events in the world. We cannot help much with that (we're in the same boat), but we are here to make your working lives easier! We wanted to take a moment to round up all the latest news from the R Markdown family of packages so that when you re-surface in 2021, you know all you need to know to take advantage of the newest features that will improve your knitting experience. Without further ado, let's get started!

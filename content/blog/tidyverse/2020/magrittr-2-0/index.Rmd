@@ -18,6 +18,8 @@ tags: []
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["magrittr"]
+languages: ["R"]
 ---
 
 ```{r, echo = FALSE, message = FALSE}

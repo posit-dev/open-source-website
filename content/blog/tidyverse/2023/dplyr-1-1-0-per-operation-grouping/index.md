@@ -16,6 +16,8 @@ tags: [dplyr, dplyr-1-1-0]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "dplyr"]
+languages: ["R"]
 ---
 
 Today we are going to look at one of the major new features in [dplyr 1.1.0](https://dplyr.tidyverse.org/news/index.html#dplyr-110), per-operation grouping with [`.by`/`by`](https://dplyr.tidyverse.org/reference/dplyr_by.html). Per-operation grouping is an experimental alternative to [`group_by()`](https://dplyr.tidyverse.org/reference/group_by.html) which is only active within a single dplyr verb. This is another of the new dplyr features that was inspired by [data.table](https://cran.r-project.org/web/packages/data.table/index.html), this time by their own grouping syntax with `by`.

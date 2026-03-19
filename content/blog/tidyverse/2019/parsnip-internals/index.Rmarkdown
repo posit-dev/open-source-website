@@ -10,6 +10,8 @@ photo:
   url: https://unsplash.com/photos/wRoyrBjSBzM
 slug: parsnip-internals
 categories: [package]
+software: ["tidyverse", "parsnip", "tidymodels"]
+languages: ["R"]
 ---
 
 

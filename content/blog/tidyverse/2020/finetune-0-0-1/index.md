@@ -17,6 +17,8 @@ tags: [tidymodels,finetune,tune]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "tidymodels", "finetune", "tune"]
+languages: ["R"]
 ---
 
 <!--

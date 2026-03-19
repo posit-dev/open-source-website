@@ -15,6 +15,8 @@ photo:
 image: spreadsheet-wd.jpg
 ported_from: education
 port_status: in-progress
+software: ["tidyverse"]
+languages: ["R"]
 ---
 
 There's so much to discover and learn when working with spreadsheets. 

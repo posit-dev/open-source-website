@@ -13,6 +13,8 @@ resources:
   - add-plot-to-card.webm
 ported_from: shiny
 port_status: in-progress
+software: ["shinyuieditor", "bslib", "shiny-r"]
+languages: ["R"]
 ---
 <style>
 .demo-video {

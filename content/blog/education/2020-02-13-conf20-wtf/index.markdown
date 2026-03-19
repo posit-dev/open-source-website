@@ -15,6 +15,7 @@ description: 'Highlights from the What They Forgot to Teach You About R workshop
 image: feature-wd.jpg
 ported_from: education
 port_status: in-progress
+languages: ["R"]
 ---
 
 > tl;dr: all workshop materials are available here: <br>

@@ -20,6 +20,8 @@ tags: [gargle, bigrquery, googledrive, googlesheets4]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "gargle", "bigrquery", "googledrive", "googlesheets4"]
+languages: ["R"]
 ---
 
 We're psyched to announce the release of [gargle](https://gargle.r-lib.org) 1.2.0.

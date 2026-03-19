@@ -13,6 +13,7 @@ categories:
   - R
 preview: images/preview.jpg
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

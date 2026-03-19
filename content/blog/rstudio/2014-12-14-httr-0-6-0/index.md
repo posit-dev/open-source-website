@@ -6,6 +6,8 @@ date: '2014-12-14'
 slug: httr-0-6-0
 ported_from: rstudio
 port_status: in-progress
+software: ["httr"]
+languages: ["R"]
 ---
 
 

@@ -23,6 +23,8 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "tidymodels", "recipes", "embed", "rsample", "parsnip", "corrr", "tidypredict", "yardstick"]
+languages: ["R"]
 ---
 
 We've sent a few packages to CRAN recently. Here's a recap of the changes (and some notes at the bottom): 

@@ -20,6 +20,8 @@ tags: [readxl]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "readxl"]
+languages: ["R"]
 ---
 
 We're pleased to announce the release of [readxl](https://readxl.tidyverse.org) 1.4.0. The readxl package makes it easy to get tabular data out of Excel files and into R with code, not mouse clicks. It supports both the legacy `.xls` format and the modern XML-based `.xlsx` format. readxl is designed to be easy to install (so: no external dependencies) and to cope with many of the less savory features of Excel files created by humans and 3rd party applications.

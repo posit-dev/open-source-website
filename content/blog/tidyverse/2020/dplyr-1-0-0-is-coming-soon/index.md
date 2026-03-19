@@ -23,6 +23,8 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "dplyr"]
+languages: ["R"]
 ---
 
 We're very excited to announce the impending arrival of dplyr 1.0.0. We haven't started the official release process yet (where we officially inform maintainers), but that is likely to start in the next week or two, and then dplyr 1.0.0 is likely to be submitted to CRAN 4-6 weeks after that.

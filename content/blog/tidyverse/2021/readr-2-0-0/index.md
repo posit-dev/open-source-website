@@ -17,6 +17,8 @@ categories:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["readr"]
+languages: ["R"]
 ---
 
 We're thrilled to announce the release of [readr](https://readr.tidyverse.org/) 2.0.0!

@@ -10,6 +10,8 @@ photo:
   author: Anastasia Zhenina
 categories:
   - package
+software: ["tidyverse", "readr"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

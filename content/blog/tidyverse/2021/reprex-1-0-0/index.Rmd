@@ -20,6 +20,8 @@ tags: [reprex,tidyverse]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "reprex"]
+languages: ["R"]
 ---
 
 We're exhilarated to announce the release of reprex 1.0.0 ([reprex.tidyverse.org](https://reprex.tidyverse.org)).

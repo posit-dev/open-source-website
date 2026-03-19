@@ -19,6 +19,8 @@ resources:
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
+software: ["shiny-r"]
+languages: ["R"]
 ---
 <sup>
 Screenshot of a Tableau dashboard with a shinytableau extension

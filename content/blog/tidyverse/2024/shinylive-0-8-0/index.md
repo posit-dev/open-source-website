@@ -21,6 +21,8 @@ tags: [webr, webassembly, wasm, shiny, shinylive]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "shiny-r", "shinylive"]
+languages: ["R"]
 ---
 
 <!--

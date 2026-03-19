@@ -12,6 +12,8 @@ categories:
 preview: images/01_ffn_02_results_3_by_3_confusion_matrix.png
 creative_commons: null
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

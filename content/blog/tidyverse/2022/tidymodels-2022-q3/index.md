@@ -18,6 +18,8 @@ tags: [tidymodels, agua, recipes, h2o]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "tidymodels", "recipes"]
+languages: ["R"]
 ---
 
 The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles.

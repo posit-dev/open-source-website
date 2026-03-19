@@ -16,6 +16,7 @@ photo:
 image: december-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
+languages: ["R"]
 ---
 
 We welcomed 10 new instructors to our community in December 2020:

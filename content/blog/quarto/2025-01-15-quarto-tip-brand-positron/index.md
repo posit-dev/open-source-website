@@ -13,6 +13,8 @@ date: '2025-01-15'
 image: brand.png
 ported_from: quarto
 port_status: in-progress
+software: ["quarto", "positron", "brand-yml"]
+languages: ["R", "Python", "Julia"]
 ---
 
 
