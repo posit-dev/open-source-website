@@ -16,6 +16,7 @@ photo:
 image: july-2020-instructors-wd.jpg
 ported_from: education
 port_status: in-progress
+languages: ["R"]
 ---
 
 July was a slow month for instructor certification thanks to some much-needed holiday time,

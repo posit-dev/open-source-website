@@ -11,6 +11,8 @@ tags:
 photo:
   url: https://unsplash.com/photos/BiZ-_6kNjbI
   author: Sophie Elvis
+software: ["tidyverse", "dplyr"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

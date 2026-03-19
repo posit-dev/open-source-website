@@ -16,6 +16,8 @@ categories:
   - R
 preview: images/chattr.png
 format: hugo-md
+software: ["rstudio"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

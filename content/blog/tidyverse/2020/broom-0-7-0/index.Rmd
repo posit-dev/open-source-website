@@ -21,6 +21,8 @@ tags:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "tidymodels"]
+languages: ["R"]
 ---
 
 We're excited to announce the release of broom 0.7.0 on CRAN!

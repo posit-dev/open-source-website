@@ -10,6 +10,8 @@ image: shiny-050.png
 image-alt: Shiny for Python 0.5.0
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-python"]
+languages: ["Python"]
 ---
 
 

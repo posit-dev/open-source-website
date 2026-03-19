@@ -15,6 +15,8 @@ tags:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "pkgdown"]
+languages: ["R"]
 ---
 
 We're happy to announce that [pkgdown](https://pkgdown.r-lib.org/) 1.4.0 is now

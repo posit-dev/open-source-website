@@ -74,6 +74,8 @@ editor:
   render-on-save: true
 ported_from: quarto
 port_status: in-progress
+software: ["quarto", "positron"]
+languages: ["R", "Python", "Julia"]
 ---
 
 

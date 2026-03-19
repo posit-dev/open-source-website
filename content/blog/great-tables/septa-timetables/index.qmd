@@ -7,6 +7,8 @@ date: 2026-03-12
 format: html
 ported_from: great_tables
 port_status: in-progress
+software: ["great-tables"]
+languages: ["Python"]
 ---
 
 Recently, Rich and I were poking around transit data, and we were struck by the amount of structuring that goes into transit timetables.

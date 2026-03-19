@@ -9,6 +9,8 @@ photo:
   url: https://unsplash.com/photos/yaiy4mCbzw0
   author: Ganapathy Kumar
 categories: [package]
+software: ["tidyverse", "tibble"]
+languages: ["R"]
 ---
 
 

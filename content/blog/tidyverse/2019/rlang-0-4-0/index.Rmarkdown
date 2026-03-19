@@ -10,6 +10,8 @@ categories:
 photo:
   url: https://unsplash.com/photos/ar7ZWQ-r87g
   author: Caitlin Wynne
+software: ["tidyverse", "rlang"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

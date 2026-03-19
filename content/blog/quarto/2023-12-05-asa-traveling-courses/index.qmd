@@ -12,6 +12,8 @@ image: "asa-traveling-courses.png"
 image-alt: "Screenshots of homepages of six courses titled From R Markdown to Quarto"
 ported_from: quarto
 port_status: in-progress
+software: ["quarto"]
+languages: ["R", "Python", "Julia"]
 ---
 
 In 2023, [Dr. Andrew Bray](https://andrewpbray.github.io/) and I gave a series of six workshops on Quarto as part of the [Traveling Courses](https://community.amstat.org/coc/chapterresources/travelingcourse) program sponsored by the [American Statistical Association](https://www.amstat.org/).

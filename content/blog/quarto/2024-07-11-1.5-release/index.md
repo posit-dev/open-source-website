@@ -14,6 +14,8 @@ image: images/thumbnail.png
 image-alt: Quarto 1.5 with a balloon
 ported_from: quarto
 port_status: in-progress
+software: ["quarto"]
+languages: ["R", "Python", "Julia"]
 ---
 
 

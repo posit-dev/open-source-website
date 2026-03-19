@@ -17,6 +17,7 @@ categories:
   - R
 preview: images/lora.png
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

@@ -15,6 +15,7 @@ categories:
   - R
 preview: images/segmentation_android.png
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

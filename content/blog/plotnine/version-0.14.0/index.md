@@ -5,6 +5,8 @@ categories:
   - releases
 ported_from: plotnine
 port_status: in-progress
+software: ["plotnine"]
+languages: ["Python"]
 ---
 
 

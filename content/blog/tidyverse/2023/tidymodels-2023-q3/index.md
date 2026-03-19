@@ -19,6 +19,8 @@ tags: [tidymodels, rsample, tidyclust]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "tidymodels", "rsample", "tidyclust"]
+languages: ["R"]
 ---
 
 <!--

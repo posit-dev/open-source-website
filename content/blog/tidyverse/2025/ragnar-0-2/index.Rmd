@@ -20,6 +20,8 @@ editor:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "ragnar"]
+languages: ["R"]
 ---
 
 ```{r, include = FALSE}

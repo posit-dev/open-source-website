@@ -9,6 +9,8 @@ date: '2024-07-19'
 image: feature.jpg
 ported_from: shiny
 port_status: in-progress
+software: ["py-shinyswatch"]
+languages: ["Python"]
 ---
 
 

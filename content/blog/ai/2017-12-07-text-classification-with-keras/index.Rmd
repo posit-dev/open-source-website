@@ -19,6 +19,8 @@ preview: images/training-history.png
 slug: chollet2017dlrtext
 creative_commons: null
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

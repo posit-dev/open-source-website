@@ -17,6 +17,7 @@ alttext: Using R & Python webinar announcement with speakers and a blue backgrou
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
+languages: ["R", "Python"]
 ---
 
 <div class="lt-gray-box">

@@ -20,6 +20,8 @@ image-alt: >
 lightbox: true
 ported_from: quarto
 port_status: in-progress
+software: ["quarto"]
+languages: ["Python"]
 ---
 
 

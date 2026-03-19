@@ -19,6 +19,8 @@ tags:
 blogcategories:
 - Products and Technology
 - Open Source
+software: ["rmarkdown"]
+languages: ["R"]
 ---
 
 

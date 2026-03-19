@@ -13,6 +13,8 @@ tags:
 photo:
   url: https://unsplash.com/photos/YCPkW_r_6uA
   author: Jari Hytönen
+software: ["tidyverse", "forcats"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

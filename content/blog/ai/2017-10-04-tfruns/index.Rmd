@@ -12,6 +12,8 @@ categories:
 date: 10-04-2017
 preview: preview.png
 format: hugo-md
+software: ["tfruns", "keras3", "tfestimators"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

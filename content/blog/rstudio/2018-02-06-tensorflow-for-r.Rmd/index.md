@@ -13,6 +13,8 @@ blogcategories:
 - Products and Technology
 ported_from: rstudio
 port_status: in-progress
+software: ["tensorflow"]
+languages: ["R"]
 ---
 
 
@@ -39,11 +41,11 @@ The R interface to TensorFlow consists of a suite of R packages that provide a v
 
 Besides the various R interfaces to TensorFlow, there are tools to help with training workflow, including real time feedback on training metrics within the RStudio IDE:
 
-![](2018-02-06-keras-training-metrics.gif)
+![](/blog-images/2018-02-06-keras-training-metrics.gif)
 
 The [tfruns package](https://tensorflow.rstudio.com/tools/tfruns/) provides tools to track, and manage TensorFlow training runs and experiments:
 
-![](2018-02-06-tfruns.png){style="border: solid 1px #cccccc;"}
+![](/blog-images/2018-02-06-tfruns.png){style="border: solid 1px #cccccc;"}
 
 ## Access to GPUs
 

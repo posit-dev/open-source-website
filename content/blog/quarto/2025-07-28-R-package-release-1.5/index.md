@@ -15,6 +15,8 @@ image: thumbnail.png
 image-alt: quarto R logo with 1.5.0 release text
 ported_from: quarto
 port_status: in-progress
+software: ["quarto"]
+languages: ["R"]
 ---
 
 

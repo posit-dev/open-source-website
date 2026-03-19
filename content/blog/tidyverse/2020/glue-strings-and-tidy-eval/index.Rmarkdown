@@ -9,6 +9,8 @@ tags: [package, r-lib, tidyverse]
 photo:
   url: https://unsplash.com/photos/pcoKkN3NsX0
   author: Modestas Urbonas
+software: ["rlang", "glue"]
+languages: ["R"]
 ---
 
 

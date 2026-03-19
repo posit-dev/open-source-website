@@ -9,6 +9,8 @@ description: >
 photo:
   url: https://unsplash.com/photos/nI7knd5sQfo
   author: Brandon Siu
+software: ["tidyverse", "rlang"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

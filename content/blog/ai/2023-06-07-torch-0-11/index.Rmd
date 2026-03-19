@@ -17,6 +17,7 @@ categories:
   - R
 preview: images/ian-schneider-PAykYb-8Er8-unsplash.jpg
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

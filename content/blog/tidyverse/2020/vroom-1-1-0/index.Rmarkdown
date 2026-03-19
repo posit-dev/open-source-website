@@ -10,6 +10,8 @@ tags: [package, r-lib, vroom]
 photo:
   url: https://www.pexels.com/photo/12801/
   author: Chris Peeters
+software: ["tidyverse", "vroom"]
+languages: ["R"]
 ---
 
 ```{r include = FALSE}

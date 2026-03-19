@@ -25,6 +25,8 @@ tags:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "duckplyr", "dplyr"]
+languages: ["R"]
 ---
 
 ```{r include = FALSE}

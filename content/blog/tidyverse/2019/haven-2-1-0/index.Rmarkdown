@@ -10,6 +10,8 @@ categories:
 photo:
   url: https://www.pexels.com/photo/beach-lighthouse-3491/
   author: Skitterphoto
+software: ["tidyverse", "haven"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

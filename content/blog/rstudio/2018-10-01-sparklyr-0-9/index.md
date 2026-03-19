@@ -17,6 +17,7 @@ blogcategories:
 - Open Source
 ported_from: rstudio
 port_status: in-progress
+languages: ["R"]
 ---
 
 
@@ -69,7 +70,7 @@ Now that the `urls_stream` is running, we can view data being processed through:
 stream_view(urls_stream)
 ```
 
-<img src="2018-10-01-sparklyr-stream-view.png" alt="RStudio monitoring sparklyr job" style="width: 100%"/>
+<img src="/blog-images/2018-10-01-sparklyr-stream-view.png" alt="RStudio monitoring sparklyr job" style="width: 100%"/>
 
 You can also easily display streaming data using [Shiny](https://shiny.rstudio.com/). Use the `sparklyr::reactiveSpark()` function to create a Shiny reactive from streaming data that can then be used to interact with other Shiny components and visualizations.
 
@@ -110,7 +111,7 @@ shinyApp(ui = ui, server = server)
 
 We can then write Jane Austen's books to this folder starting with `writeLines(janeaustenr::emma, "source/emma.txt")` and similar code for the remaining ones, each time a book is saved, the Shiny app updates accordingly:
 
-<img src="2018-10-01-sparklyr-shiny-app-books.gif" alt="Shiny app using Spark stream to count words in Emma" style="border: solid 1px #DDD"/>
+<img src="/blog-images/2018-10-01-sparklyr-shiny-app-books.gif" alt="Shiny app using Spark stream to count words in Emma" style="border: solid 1px #DDD"/>
 
 You can learn more about `sparklyr` streaming at <https://spark.rstudio.com/guides/streaming/>.
 
@@ -128,7 +129,7 @@ sdf_len(sc, 10)
 
 While running `sparklyr 0.9` under [RStudio Preview 1.2](https://www.rstudio.com/products/rstudio/download/preview/), long running jobs will be displayed in the console tab and under the Jobs panel:
 
-<img src="2018-10-01-sparklyr-monitored-connections.png" alt="RStudio monitoring sparklyr job" style="width: 80%"/>
+<img src="/blog-images/2018-10-01-sparklyr-monitored-connections.png" alt="RStudio monitoring sparklyr job" style="width: 80%"/>
 
 ## Kubernetes
 

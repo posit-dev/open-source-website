@@ -20,6 +20,8 @@ tags: [tidymodels, censored, workflows, workflowsets]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "tidymodels", "censored", "workflows", "workflowsets"]
+languages: ["R"]
 ---
 
 <!--

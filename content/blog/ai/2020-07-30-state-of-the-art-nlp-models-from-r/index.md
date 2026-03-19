@@ -18,6 +18,8 @@ people:
 image: thumbnail.jpg
 ported_from: ai
 port_status: in-progress
+software: ["reticulate"]
+languages: ["R"]
 ---
 
 

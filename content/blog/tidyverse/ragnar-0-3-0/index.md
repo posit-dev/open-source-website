@@ -15,6 +15,8 @@ categories: [package]
 tags: [ragnar, ai]
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "ragnar"]
+languages: ["R"]
 ---
 
 # ragnar 0.3.0

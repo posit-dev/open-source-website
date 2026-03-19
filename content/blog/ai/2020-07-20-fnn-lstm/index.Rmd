@@ -16,6 +16,8 @@ categories:
   - Generative Models
 preview: images/old_faithful.jpg
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

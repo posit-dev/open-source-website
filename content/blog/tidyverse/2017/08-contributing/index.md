@@ -17,6 +17,8 @@ description: >
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse"]
+languages: ["R"]
 ---
 
 > This post originally appeared at <http://www.jimhester.com/2017/08/08/contributing/>

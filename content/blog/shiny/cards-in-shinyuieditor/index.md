@@ -12,6 +12,8 @@ image: cards-thumbnail.png
 image-alt: bslib cards shown inside shinyuieditor
 ported_from: shiny
 port_status: in-progress
+software: ["shinyuieditor", "bslib", "shiny-r"]
+languages: ["R"]
 ---
 
 

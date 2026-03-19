@@ -11,6 +11,8 @@ tags: [tidyverse-dev-day]
 photo:
   url: https://unsplash.com/photos/yB5cYEq7y2U
   author: fancycrave
+software: ["tidyverse"]
+languages: ["R"]
 ---
 
 

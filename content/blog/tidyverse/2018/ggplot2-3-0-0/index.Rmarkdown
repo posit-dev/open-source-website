@@ -10,6 +10,8 @@ categories:
 photo:
   url: https://unsplash.com/photos/wEL2zPX3jDg
   author: Fabio Ballasina
+software: ["tidyverse", "ggplot2"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

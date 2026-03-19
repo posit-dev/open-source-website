@@ -17,6 +17,8 @@ editor_options:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "dplyr"]
+languages: ["R"]
 ---
 
 We're stoked to announce the release of [dplyr 1.1.1](https://dplyr.tidyverse.org/).

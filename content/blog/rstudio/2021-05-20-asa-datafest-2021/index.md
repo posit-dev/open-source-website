@@ -17,6 +17,7 @@ alttext: American Statistical Association DataFest logo
 image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
+languages: ["R"]
 ---
 
 

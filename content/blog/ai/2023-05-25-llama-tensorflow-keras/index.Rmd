@@ -17,6 +17,8 @@ categories:
 bibliography: references.bib
 preview: images/preview.jpg
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 OpenAI’s chatGPT has awakened a collective awareness of what Large

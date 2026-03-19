@@ -18,6 +18,8 @@ tags: [bigrquery, gargle, dbplyr, databases]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "bigrquery", "gargle", "dbplyr"]
+languages: ["R"]
 ---
 
 We're gratified to announce the release of [bigrquery](https://bigrquery.r-dbi.org) 1.4.0. bigrquery makes it easy to work with data stored in [Google BigQuery](https://developers.google.com/bigquery/), a hosted database for big data.

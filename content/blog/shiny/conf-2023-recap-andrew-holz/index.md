@@ -10,6 +10,8 @@ image: shinyconflogo.jpg
 image-alt: The Shiny Conf Logo on a dark blue background
 ported_from: shiny
 port_status: in-progress
+software: ["shiny-r", "bslib"]
+languages: ["R"]
 ---
 
 

@@ -13,6 +13,8 @@ image: asa-traveling-courses.png
 image-alt: Screenshots of homepages of six courses titled From R Markdown to Quarto
 ported_from: quarto
 port_status: in-progress
+software: ["quarto"]
+languages: ["R", "Python", "Julia"]
 ---
 
 

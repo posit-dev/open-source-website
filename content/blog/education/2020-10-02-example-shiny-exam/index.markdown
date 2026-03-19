@@ -15,6 +15,8 @@ photo:
 image: example-shiny-exam-wd.jpg
 ported_from: education
 port_status: in-progress
+software: ["shiny-r"]
+languages: ["R"]
 ---
 
 To help everyone who is preparing to certify as a Shiny instructor,

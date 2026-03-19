@@ -15,6 +15,8 @@ image: confluence-logo-gradient-blue-attribution_rgb@2x.png
 image-alt: Atlassian Confluence Logo
 ported_from: quarto
 port_status: in-progress
+software: ["quarto"]
+languages: ["R", "Python", "Julia"]
 ---
 
 

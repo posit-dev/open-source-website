@@ -11,6 +11,8 @@ tags:
 photo:
   url: https://unsplash.com/photos/8EzNkvLQosk
   author: Maarten van den Heuvel
+software: ["tidyverse", "googledrive"]
+languages: ["R"]
 ---
 
 ```{r setup, include = FALSE}

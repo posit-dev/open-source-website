@@ -19,6 +19,8 @@ resources:
   title: "Automobile Dashboard"
 blogcategories:
 - Data Science Leadership
+software: ["flexdashboard"]
+languages: ["R"]
 ---
 <sup>Photo by <a href="https://unsplash.com/@abiglow?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alan Biglow</a> on <a href="https://unsplash.com/s/photos/tesla-dashboard?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a> </sup>
 

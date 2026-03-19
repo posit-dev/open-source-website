@@ -9,6 +9,8 @@ categories: [package]
 photo:
   url: https://unsplash.com/photos/OhQhkkVJYhI
   author: chuttersnap
+software: ["tidyverse", "ggplot2"]
+languages: ["R"]
 ---
 ```{r setup, include = FALSE}
 library(ggplot2)

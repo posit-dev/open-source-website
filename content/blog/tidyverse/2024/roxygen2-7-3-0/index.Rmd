@@ -22,6 +22,8 @@ tags: [roxygen2]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["tidyverse", "roxygen2"]
+languages: ["R"]
 ---
 
 ```{=html}

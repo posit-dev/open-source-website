@@ -24,6 +24,8 @@ editor:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["air", "positron"]
+languages: ["R"]
 ---
 
 We're very excited to announce [Air 0.7.0](https://posit-dev.github.io/air/), a new release of our extremely fast R formatter.

@@ -15,6 +15,7 @@ photo:
 image: more-sample-exams-wd.jpg
 ported_from: education
 port_status: in-progress
+languages: ["R"]
 ---
 
 To help everyone who is preparing to certify as an RStudio instructor,

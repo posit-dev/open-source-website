@@ -20,6 +20,8 @@ tags: [lintr]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "lintr"]
+languages: ["R"]
 ---
 
 We are very excited to announce the release of [lintr](https://lintr.r-lib.org) 3.0.0! lintr

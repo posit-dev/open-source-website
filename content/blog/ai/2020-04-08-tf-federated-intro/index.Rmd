@@ -14,6 +14,8 @@ categories:
 bibliography: bibliography.bib
 preview: images/federated_learning.png
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

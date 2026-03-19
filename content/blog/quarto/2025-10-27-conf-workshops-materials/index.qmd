@@ -12,6 +12,8 @@ image: "thumbnail.png"
 image-alt: "Quarto workshop materials @ posit::conf(2025)"
 ported_from: quarto
 port_status: in-progress
+software: ["quarto"]
+languages: ["R", "Python", "Julia"]
 ---
 
 At posit::conf(2025), we were thrilled to offer two comprehensive Quarto workshops designed to help users at different stages of their journey with Quarto. Whether you were looking to create beautifully branded outputs or extend Quarto's functionality with custom solutions, these workshops provided hands-on learning experiences with expert instructors.

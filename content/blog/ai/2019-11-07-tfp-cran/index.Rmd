@@ -14,6 +14,8 @@ categories:
   - TensorFlow/Keras
 preview: images/tfprobability.png
 format: hugo-md
+software: ["keras3"]
+languages: ["R"]
 ---
 
 

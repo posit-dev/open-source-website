@@ -25,6 +25,8 @@ alttext: Shiny logo
 image: thumbnail.jpg
 ported_from: rstudio
 port_status: in-progress
+software: ["shiny-r", "bslib", "thematic"]
+languages: ["R"]
 ---
 
 We are thrilled to announce that Shiny 1.6.0 is now on CRAN! Install it now with:

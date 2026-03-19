@@ -21,6 +21,8 @@ tags: [stringr, tidyverse]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "stringr"]
+languages: ["R"]
 ---
 
 <!--

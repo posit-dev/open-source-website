@@ -17,6 +17,8 @@ photo:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "googledrive"]
+languages: ["R"]
 ---
 
 We are tickled pink to announce the initial CRAN release of the [googledrive package](http://googledrive.tidyverse.org). This is a collaboration between Jenny Bryan and tidyverse intern, [Lucy D'Agostino McGowan](http://lucymcgowan.com/) (blog post on that coming soon!).

@@ -18,6 +18,8 @@ editor_options:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
+software: ["clock"]
+languages: ["R"]
 ---
 
 ```{r, echo=FALSE, message=FALSE}

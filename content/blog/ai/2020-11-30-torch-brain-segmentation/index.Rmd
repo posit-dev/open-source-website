@@ -16,6 +16,7 @@ categories:
 bibliography: bibliography.bib
 preview: images/scans.png
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

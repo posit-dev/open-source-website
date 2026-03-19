@@ -16,6 +16,8 @@ tags: [tidymodels,tune,parsnip,hardhat]
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
+software: ["tidyverse", "tidymodels", "tune", "parsnip", "hardhat"]
+languages: ["R"]
 ---
 
 

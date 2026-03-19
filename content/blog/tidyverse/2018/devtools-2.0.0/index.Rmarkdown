@@ -9,6 +9,8 @@ description: >
 photo:
   url: https://unsplash.com/photos/wEJK4q_YlNQ
   author: Hunter Haley
+software: ["tidyverse", "devtools"]
+languages: ["R"]
 ---
 
 ## Introduction

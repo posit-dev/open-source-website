@@ -11,6 +11,8 @@ resources:
   - synced-ids-small.mp4
 ported_from: shiny
 port_status: in-progress
+software: ["shinyuieditor", "shiny-r"]
+languages: ["R"]
 ---
 <style>
 

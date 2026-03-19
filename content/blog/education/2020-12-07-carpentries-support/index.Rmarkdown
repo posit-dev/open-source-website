@@ -16,6 +16,7 @@ photo:
 image: carpentries-support-wd.jpg
 ported_from: education
 port_status: in-progress
+languages: ["R"]
 ---
 
 [The Carpentries](https://carpentries.org) is a volunteer organization

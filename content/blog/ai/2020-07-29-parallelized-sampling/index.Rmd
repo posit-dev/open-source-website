@@ -15,6 +15,7 @@ preview: images/dice.jpg
 header-includes:
    \usepackage{algorithm2e}
 format: hugo-md
+languages: ["R"]
 ---
 
 ```{r setup, include=FALSE}

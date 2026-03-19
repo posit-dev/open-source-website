@@ -16,6 +16,7 @@ resources:
   title: Lego characters coming together
 ported_from: rstudio
 port_status: in-progress
+languages: ["R", "Python"]
 ---
 
 <sup>
