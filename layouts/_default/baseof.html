@@ -20,7 +20,7 @@
   {{ partial "head.html" . }}
   {{ block "head" . }}{{ end }}
 </head>
-<body class="flex flex-col min-h-screen w-full bg-white">
+<body class="flex flex-col min-h-screen w-full bg-white overflow-x-clip">
   {{- if hugo.IsDevelopment }}
     {{ partial "tailwind-size-indicator.html" }}
   {{ end -}}
