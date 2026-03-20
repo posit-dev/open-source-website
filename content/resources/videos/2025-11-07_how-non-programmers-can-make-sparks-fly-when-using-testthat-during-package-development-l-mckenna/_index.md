@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Enemies to lovers: How non-programmers can make sparks fly when using testthat during package development
 
 
@@ -23,6 +23,9 @@ tags:
 - data science
 - data
 title: How non-programmers can make sparks fly when using testthat during package development (L. McKenna)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Quarto for Business Collaboration and Technical Documentation in Word docx format
 
 
@@ -27,6 +27,9 @@ tags:
 - data science
 - ai
 title: Quarto for Business Collaboration & Technical Documentation in Word docx format (Bill Pikounis, J&J)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

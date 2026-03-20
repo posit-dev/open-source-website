@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Polyglot Data Science: Why and How to Combine R and Python
 
 
@@ -27,6 +27,9 @@ tags:
 - data
 - ai
 title: 'Polyglot Data Science: Why and How to Combine R and Python (Jeroen Janssens) | posit::conf(2025)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

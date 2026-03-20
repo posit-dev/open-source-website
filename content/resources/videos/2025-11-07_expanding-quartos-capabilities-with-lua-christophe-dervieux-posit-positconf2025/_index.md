@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Beyond the Basics: Expanding Quarto''s Capabilities with Lua
 
 
@@ -34,6 +34,9 @@ tags:
 - data
 - ai
 title: Expanding Quarto's Capabilities with Lua (Christophe Dervieux, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

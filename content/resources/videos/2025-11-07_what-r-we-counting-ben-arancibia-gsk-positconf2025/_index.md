@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'What R We Counting?
 
 
@@ -24,6 +24,9 @@ tags:
 - data
 - ai
 title: What R We Counting? (Ben Arancibia, GSK) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

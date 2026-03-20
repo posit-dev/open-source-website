@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Keeping Data Alive: Persistent Storage Options for Dynamic Cloud Applications
 
 
@@ -27,6 +27,9 @@ tags:
 - data
 - ai
 title: 'Keeping Data Alive: Persistent Storage Options for Dynamic Cloud Applications (Alex Chisholm, Posit)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

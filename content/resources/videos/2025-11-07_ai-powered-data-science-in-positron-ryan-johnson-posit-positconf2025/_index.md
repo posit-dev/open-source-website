@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Ryan Johnson introduces Positron, an AI-ready multilingual IDE designed specifically for data science.
 
 
@@ -18,6 +18,9 @@ tags:
 - data science
 - ai
 title: AI-Powered Data Science in Positron (Ryan Johnson, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

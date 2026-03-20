@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'shinystate: Launching collaboration and session management to new heights in Shiny applications
 
 
@@ -27,6 +27,9 @@ tags:
 - data science
 - ai
 title: Shinystate (Eric Nantz, Eli Lilly) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

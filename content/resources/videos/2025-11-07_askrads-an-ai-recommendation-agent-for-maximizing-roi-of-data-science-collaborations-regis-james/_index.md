@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'AskRADS: An AI Recommendation Agent for Maximizing the ROI of Data Science Collaborations
 
 
@@ -25,6 +25,9 @@ tags:
 - data
 - ai
 title: 'AskRADS: An AI Recommendation Agent for Maximizing ROI of Data Science Collaborations (Regis James)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

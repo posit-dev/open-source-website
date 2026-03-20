@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Trust, but Verify: Lessons from Deploying LLMs in a Large Health System
 
 
@@ -27,6 +27,9 @@ tags:
 - data science
 - data
 title: 'Trust, but Verify: Lessons from Deploying LLMs in a Large Health System (Timothy Keyes)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

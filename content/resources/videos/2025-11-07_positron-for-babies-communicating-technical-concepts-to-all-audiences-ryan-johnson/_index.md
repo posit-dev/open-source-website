@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Positron for Babies: Communicating Technical Concepts to all Audiences
 
 
@@ -24,6 +24,9 @@ tags:
 - data
 - ai
 title: 'Positron for Babies: Communicating Technical Concepts to all Audiences (Ryan Johnson)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

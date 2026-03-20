@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Data Science in Production Has Never Been So Easy | Feat: Posit Connect
 
 
@@ -22,6 +22,9 @@ tags:
 - data
 - ai
 title: 'Data Science in Production Has Never Been So Easy | Feat: Posit Connect (Adam Wang)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

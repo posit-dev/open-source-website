@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'From SDKs to Agents: Building with R and Python on Databricks
 
 
@@ -27,6 +27,9 @@ tags:
 - data
 - ai
 title: 'From SDKs to Agents: Building with R and Python on Databricks (Rafi Kurlansik & Zac Davies)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

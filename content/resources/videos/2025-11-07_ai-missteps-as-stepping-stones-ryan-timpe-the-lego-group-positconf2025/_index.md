@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'AI missteps as stepping stones: Opportunities gained when your LLM coding assistant gets it wrong
 
 
@@ -26,6 +26,9 @@ tags:
 - data science
 - ai
 title: AI missteps as stepping stones (Ryan Timpe, The LEGO Group) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

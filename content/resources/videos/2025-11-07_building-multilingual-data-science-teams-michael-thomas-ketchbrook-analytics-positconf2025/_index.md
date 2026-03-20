@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Building Multilingual Data Science Teams
 
 
@@ -28,6 +28,9 @@ tags:
 - data science
 - ai
 title: Building Multilingual Data Science Teams (Michael Thomas, Ketchbrook Analytics) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

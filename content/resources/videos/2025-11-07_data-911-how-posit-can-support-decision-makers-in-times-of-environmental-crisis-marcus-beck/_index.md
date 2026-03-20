@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Data 911: how Posit can support decision-makers in times of environmental crisis
 
 
@@ -24,6 +24,9 @@ tags:
 - data science
 - ai
 title: 'Data 911: how Posit can support decision-makers in times of environmental crisis (Marcus Beck)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

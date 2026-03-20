@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: "In this video, Greg Headley and Shun Mao introduce developers to AWS tools designed\nto support the creation of agentic AI applications. \n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
 image: thumbnail.jpg
 people: []
@@ -15,6 +15,9 @@ tags:
 - data
 - ai
 title: Building Agentic AI applications with Positron and AWS Strands Agents (Greg Headley & Shun Mao, AWS)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

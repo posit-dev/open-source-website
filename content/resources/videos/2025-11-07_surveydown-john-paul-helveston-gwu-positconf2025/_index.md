@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'surveydown: A Markdown-Based Platform for Interactive and Reproducible Surveys Using Quarto and Shiny
 
 
@@ -30,6 +30,9 @@ tags:
 - data science
 - ai
 title: surveydown (John Paul Helveston, GWU) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

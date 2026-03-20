@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Use Your Data Skills for Good: Ideas for Community Service
 
   💬 Speaker(s): Sharon Machlis
@@ -33,6 +33,9 @@ tags:
 - data science
 - ai
 title: Use Your Data Skills for Good (Sharon Machlis) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

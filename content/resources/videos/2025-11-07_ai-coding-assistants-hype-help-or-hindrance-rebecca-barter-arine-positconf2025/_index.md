@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'AI Coding Assistants: Hype, Help, or Hindrance?
 
 
@@ -30,6 +30,9 @@ tags:
 - data science
 - data
 title: 'AI Coding Assistants: Hype, Help, or Hindrance? (Rebecca Barter, Arine) | posit::conf(2025)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

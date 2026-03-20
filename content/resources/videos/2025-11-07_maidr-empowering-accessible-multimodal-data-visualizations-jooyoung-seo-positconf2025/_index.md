@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'maidr: Empowering Accessible, Multimodal Data Visualizations
 
 
@@ -28,6 +28,9 @@ tags:
 - data science
 - ai
 title: 'maidr: Empowering Accessible, Multimodal Data Visualizations (JooYoung Seo) | posit::conf(2025)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

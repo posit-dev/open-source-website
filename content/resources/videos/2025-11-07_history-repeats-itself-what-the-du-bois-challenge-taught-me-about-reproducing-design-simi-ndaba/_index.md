@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'History repeats itself: What the Du Bois Challenge taught me about reproducing visualisations
 
 
@@ -23,6 +23,9 @@ tags:
 - data science
 - ai
 title: 'History repeats itself: What the Du Bois Challenge taught me about reproducing design (Simi Ndaba)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

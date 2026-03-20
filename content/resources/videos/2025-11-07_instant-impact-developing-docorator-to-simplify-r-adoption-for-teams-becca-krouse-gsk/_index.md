@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Instant Impact: Developing {docorator} to Simplify R Adoption for Teams
 
 
@@ -25,6 +25,9 @@ tags:
 - data
 - ai
 title: 'Instant Impact: Developing {docorator} to Simplify R Adoption for Teams (Becca Krouse, GSK)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

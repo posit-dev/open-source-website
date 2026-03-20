@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: "James Blair, a senior product manager at Posit, discusses the integration of Posit tools with partners like Snowflake and Databricks, emphasizing the role of AI in enhancing data scientists' efficiency. \n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
 image: thumbnail.jpg
 people: []
@@ -14,6 +14,9 @@ tags:
 - data
 - ai
 title: 'Posit and the modern data stack: Using Posit, Snowflake, and Databricks (James Blair)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

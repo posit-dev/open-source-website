@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Protecting our Healthcare Heroes: Using Natural Language Processing to Prevent Billing Mistakes in Healthcare
 
 
@@ -24,6 +24,9 @@ tags:
 - data science
 - data
 title: 'From Data to Dollars: Improving Medical Billing Accuracy Using NLP (Julianne Gent, Emory Healthcare)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

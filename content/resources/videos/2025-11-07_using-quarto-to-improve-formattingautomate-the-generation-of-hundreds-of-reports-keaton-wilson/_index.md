@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Using Quarto to Improve Formatting and Automate the Generation of Hundreds of Reports
 
 
@@ -27,6 +27,9 @@ tags:
 - data science
 - data
 title: Using Quarto to Improve Formatting/Automate the Generation of Hundreds of Reports (Keaton Wilson)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

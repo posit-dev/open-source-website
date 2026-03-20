@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Get your ducks in a row... faster Shiny apps with DuckDB
 
 
@@ -24,6 +24,9 @@ tags:
 - data science
 - ai
 title: Get Your Ducks in a Row with Databases (Melissa Albino Hegeman, NYS OGS) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

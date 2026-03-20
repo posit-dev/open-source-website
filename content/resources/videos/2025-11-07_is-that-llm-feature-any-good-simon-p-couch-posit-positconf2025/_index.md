@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Is that LLM feature any good?
 
 
@@ -27,6 +27,9 @@ tags:
 - data science
 - ai
 title: Is that LLM feature any good? (Simon P. Couch, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

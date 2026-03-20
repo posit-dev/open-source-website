@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Theming Made Easy: Introducing brand.yml
 
 
@@ -37,6 +37,9 @@ tags:
 - data science
 - data
 title: 'Theming Made Easy: Introducing brand.yml (Garrick Aden-Buie, Posit) | posit::conf(2025)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

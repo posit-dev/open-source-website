@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Oops! I accidentally made a production dashboard
 
 
@@ -23,6 +23,9 @@ tags:
 - data
 - ai
 title: Oops! I accidentally made a production dashboard (Jonathan Keane, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

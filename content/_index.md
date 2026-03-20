@@ -55,8 +55,8 @@ Explore some of our newest and most innovative packages. These tools represent o
 
 {{< insert-items hide-badge=true >}}
 - software/mirai
+- software/positron
 - software/duckplyr
-- software/orbital
 {{< /insert-items>}}
 
 {{< button url="/software/" text="Browse all software" icon="boxicons--hexagon-filled" >}}

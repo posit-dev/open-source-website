@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Data-as-a-product: A framework for collaborative data wrangling
 
 
@@ -25,6 +25,9 @@ tags:
 - data science
 - data
 title: 'Data-as-a-product: A framework for collaborative data wrangling (Clara Amorosi, BMS) | posit::conf'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

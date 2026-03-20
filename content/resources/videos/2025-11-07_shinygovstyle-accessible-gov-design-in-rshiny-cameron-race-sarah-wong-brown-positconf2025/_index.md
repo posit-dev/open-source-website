@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'shinyGovStyle - accessible government design in RShiny
 
 
@@ -22,6 +22,9 @@ tags:
 - data science
 - data
 title: shinyGovStyle- accessible gov design in RShiny (Cameron Race & Sarah Wong-Brown) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

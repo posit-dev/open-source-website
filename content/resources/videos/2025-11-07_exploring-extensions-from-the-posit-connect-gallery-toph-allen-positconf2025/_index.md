@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Toph Allen, a software engineer at Posit, introduces the Posit Connect gallery, a platform for deploying applications, dashboards, and APIs.
 
 
@@ -17,6 +17,9 @@ tags:
 - data science
 - ai
 title: Exploring Extensions from the Posit Connect Gallery (Toph Allen) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

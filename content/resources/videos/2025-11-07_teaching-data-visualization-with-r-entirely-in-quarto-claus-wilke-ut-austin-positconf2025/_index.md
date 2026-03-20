@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Teaching data visualization with R entirely in Quarto
 
 
@@ -27,6 +27,9 @@ tags:
 - data science
 - ai
 title: Teaching data visualization with R entirely in Quarto (Claus Wilke, UT Austin) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'How I got unstuck with Python
 
 
@@ -28,6 +28,9 @@ tags:
 - data science
 - ai
 title: How I got unstuck with Python (Julia Silge, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

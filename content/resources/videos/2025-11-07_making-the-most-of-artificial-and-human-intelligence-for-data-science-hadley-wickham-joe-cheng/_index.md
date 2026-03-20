@@ -27,6 +27,9 @@ tags:
 - ai
 title: Making the most of artificial and human intelligence for data science (Hadley Wickham, Joe Cheng)
 
+override:
+  date: '2025-09-18'
+
 external:  # updated automatically, do not edit
   channel: Posit PBC
   comment_count: 10

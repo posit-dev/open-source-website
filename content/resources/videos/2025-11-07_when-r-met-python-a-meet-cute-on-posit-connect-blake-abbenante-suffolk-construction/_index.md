@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'When R Met Python: A Meet Cute on Posit Connect
 
 
@@ -24,6 +24,9 @@ tags:
 - data science
 - ai
 title: 'When R Met Python: A Meet Cute on Posit Connect (Blake Abbenante, Suffolk Construction)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

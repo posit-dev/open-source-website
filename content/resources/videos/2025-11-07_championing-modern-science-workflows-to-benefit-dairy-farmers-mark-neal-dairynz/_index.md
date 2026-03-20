@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Championing modern science workflows to benefit dairy farmers
 
 
@@ -23,6 +23,9 @@ tags:
 - data science
 - ai
 title: Championing modern science workflows to benefit dairy farmers (Mark Neal, DairyNZ)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

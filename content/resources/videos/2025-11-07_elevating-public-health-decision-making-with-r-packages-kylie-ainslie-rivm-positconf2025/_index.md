@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Elevating Public Health Decision-Making with R Packages
 
 
@@ -22,6 +22,9 @@ tags:
 - data science
 - data
 title: Elevating Public Health Decision-Making with R Packages (Kylie Ainslie, RIVM) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

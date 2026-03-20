@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: "It's all fun and games til your analysis code is finished: the player package in R\n\U0001F4AC Speaker(s): Alex Rossell Hayes\n\nAbstract: \nThe player package is a set of games built entirely in R that you can play in the R console. This lighthearted, humor-filled talk will introduce the package and demo some of its games, including opportunities for audience participation. If selected for a full talk, this will also include a demonstration of how the package code comes together, including approachable introductions to concepts like object-oriented programming with R6 and message handling with cli. The talk will show how playing around with R can be one of the best ways to learn new techniques (some of which can even be carried over into more serious programming).\n\n\U0001F4C1 player repo: https://github.com/rossellhayes/player \nposit::conf(2025) \nSubscribe to posit::conf updates: https://posit.co/about/subscription-management/"
 image: thumbnail.jpg
 people: []
@@ -16,6 +16,9 @@ tags:
 - data science
 - ai
 title: It's all fun and games til your analysis code is finished (Alex Rossell Hayes) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

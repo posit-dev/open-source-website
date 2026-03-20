@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Extending the horizons of R with Rust
 
 
@@ -23,6 +23,9 @@ tags:
 - data
 - ai
 title: Extending the horizons of R with Rust (Andrés Quintero, ixpantia) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Uncharted Nuuk: Data Exploration in Search of the Unexpected
 
 
@@ -23,6 +23,9 @@ tags:
 - data science
 - ai
 title: 'Uncharted Nuuk: Data Exploration in Search of the Unexpected (Emil Malta, Statistics Greenland)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

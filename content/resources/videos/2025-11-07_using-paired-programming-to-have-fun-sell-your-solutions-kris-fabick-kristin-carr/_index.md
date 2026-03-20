@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Self-sufficient deployment: using pair programming to have fun and sell your solutions
 
 
@@ -25,6 +25,9 @@ tags:
 - data science
 - data
 title: Using paired programming to have fun & sell your solutions (Kris Fabick & Kristin Carr)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'See if talking to the doctor is right for you.
 
 
@@ -23,6 +23,9 @@ tags:
 - data science
 - ai
 title: See if talking to the doctor is right for you (Max Hockstein, Georgetown) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

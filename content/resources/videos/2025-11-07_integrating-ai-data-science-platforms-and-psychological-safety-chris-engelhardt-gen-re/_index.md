@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'From Framework to Function: Integrating AI, Data Science Platforms, and Psychological Safety
 
 
@@ -23,6 +23,9 @@ tags:
 - data
 - ai
 title: Integrating AI, Data Science Platforms, and Psychological Safety (Chris Engelhardt, Gen Re)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

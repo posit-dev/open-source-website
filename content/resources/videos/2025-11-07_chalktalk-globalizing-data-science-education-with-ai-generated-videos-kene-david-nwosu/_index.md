@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'ChalkTalk: Globalizing Data Science Education with AI-generated Videos
 
 
@@ -29,6 +29,9 @@ tags:
 - data
 - ai
 title: 'ChalkTalk: Globalizing Data Science Education with AI-generated Videos (Kene David Nwosu)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

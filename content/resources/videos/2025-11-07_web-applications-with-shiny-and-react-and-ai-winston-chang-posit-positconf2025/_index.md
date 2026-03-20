@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Web applications with Shiny and React (and AI)
 
 
@@ -32,6 +32,9 @@ tags:
 - data science
 - data
 title: Web applications with Shiny and React and AI (Winston Chang, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

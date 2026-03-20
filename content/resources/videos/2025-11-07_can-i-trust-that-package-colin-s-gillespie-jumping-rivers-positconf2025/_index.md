@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Can I trust that package?
 
 
@@ -26,6 +26,9 @@ tags:
 - data
 - ai
 title: Can I trust that package? (Colin S Gillespie, Jumping Rivers) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

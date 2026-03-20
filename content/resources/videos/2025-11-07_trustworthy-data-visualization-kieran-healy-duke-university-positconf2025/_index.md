@@ -27,6 +27,9 @@ tags:
 - ai
 title: Trustworthy Data Visualization (Kieran Healy, Duke University) | posit::conf(2025)
 
+override:
+  date: '2025-09-18'
+
 external:  # updated automatically, do not edit
   channel: Posit PBC
   comment_count: 7

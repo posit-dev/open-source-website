@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Birthing the pregnancy package
 
 
@@ -28,6 +28,9 @@ tags:
 - data science
 - ai
 title: Birthing the pregnancy package (Ella Kaye, University of Warwick) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

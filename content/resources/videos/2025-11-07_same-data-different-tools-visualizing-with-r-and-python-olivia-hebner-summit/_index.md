@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Same Data, Different Tools: Visualizing with R and Python
 
 
@@ -27,6 +27,9 @@ tags:
 - data
 - ai
 title: 'Same Data, Different Tools: Visualizing with R and Python (Olivia Hebner, Summit)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

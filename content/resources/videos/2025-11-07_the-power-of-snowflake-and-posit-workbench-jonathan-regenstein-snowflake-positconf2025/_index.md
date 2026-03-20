@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'The Power of Snowflake and Posit Workbench: Macroeconomic Data Exploration in the Cloud
 
 
@@ -28,6 +28,9 @@ tags:
 - data science
 - ai
 title: The Power of Snowflake and Posit Workbench (Jonathan Regenstein, Snowflake) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: "Modular, layout-as-code approach for customizable Shiny dashboards\n\n\U0001F4AC Speaker(s): Kim Schouten\n\n\U0001F4DD Abstract:\n\nTo improve government supervision in the healthcare space, we have designed a Shiny dashboard that enables us to adhere to GDPR and other regulations and share different bits of information with different types of stakeholders. For that, we have implemented a ‘layout-as-code’ system where each user can have its own layout of pages and modules, stored as json in the database. Users have the option to drag and drop modules to different locations or change the layout altogether, adding and removing modules as needed! \nFor developers, this system of loosely coupled modules helps to quickly contribute to the project as a new module needs only a couple of lines of code to integrate it within the framework.\n\n\U0001F4C1 Materials - https://github.com/KSchouten/elemental posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
 image: thumbnail.jpg
 people: []
@@ -14,6 +14,9 @@ tags:
 - data science
 - data
 title: Modular, layout-as-code approach for customizable Shiny dashboards (Kim Schouten, De NZa)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

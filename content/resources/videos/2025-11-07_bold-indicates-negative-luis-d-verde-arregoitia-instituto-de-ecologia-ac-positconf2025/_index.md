@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Bold indicates negative?
 
 
@@ -26,6 +26,9 @@ tags:
 - data science
 - data
 title: Bold indicates negative? (Luis D. Verde Arregoitia, Instituto De Ecología, A.c.) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

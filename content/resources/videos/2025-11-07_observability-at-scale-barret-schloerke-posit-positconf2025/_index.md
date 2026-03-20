@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Observability at scale: Monitoring Shiny Applications with OpenTelemetry
 
 
@@ -34,6 +34,9 @@ tags:
 - data science
 - ai
 title: Observability at scale (Barret Schloerke, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

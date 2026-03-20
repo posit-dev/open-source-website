@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Translating R for Data Science into Portuguese: A Community-Led Initiative
 
 
@@ -29,6 +29,9 @@ tags:
 - data
 - ai
 title: 'Translating R for Data Science into Portuguese: A Community-Led Initiative (Beatriz Milz, UFABC)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

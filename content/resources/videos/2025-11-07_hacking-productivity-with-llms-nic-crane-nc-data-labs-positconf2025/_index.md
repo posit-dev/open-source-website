@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Hacking Productivity with LLMs: What Works (and What Doesn’t)
 
 
@@ -26,6 +26,9 @@ tags:
 - data science
 - ai
 title: Hacking Productivity with LLMs (Nic Crane, NC Data Labs) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

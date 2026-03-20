@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Building a Real-Time COVID-19 Surveillance System with R: Lessons from the COVID Symptom Study Sweden
 
 
@@ -24,6 +24,9 @@ tags:
 - data
 - ai
 title: Building a Real-Time COVID-19 Surveillance System with R (Hugo Fitipaldi, Lund University)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

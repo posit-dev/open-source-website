@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Death by Dropdown? Engineer Insightful Shiny Apps with Behavioral Science
 
 
@@ -28,6 +28,9 @@ tags:
 - data science
 - data
 title: Engineer Insightful Shiny Apps with Behavioral Science (Jeremy Winget, CrossStack) | posit::conf
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

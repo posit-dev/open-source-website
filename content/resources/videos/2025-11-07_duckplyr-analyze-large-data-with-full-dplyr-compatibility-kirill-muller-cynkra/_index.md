@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'duckplyr: Analyze large data with full dplyr compatibility
 
 
@@ -28,6 +28,9 @@ tags:
 - data science
 - ai
 title: 'duckplyr: Analyze large data with full dplyr compatibility (Kirill Müller, cynkra)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

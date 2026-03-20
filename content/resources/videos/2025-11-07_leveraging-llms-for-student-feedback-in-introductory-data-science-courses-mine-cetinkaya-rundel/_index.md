@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Leveraging LLMs for student feedback in introductory data science courses
 
 
@@ -26,6 +26,9 @@ tags:
 - data science
 - data
 title: Leveraging LLMs for student feedback in introductory data science courses (Mine Çetinkaya-Rundel)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

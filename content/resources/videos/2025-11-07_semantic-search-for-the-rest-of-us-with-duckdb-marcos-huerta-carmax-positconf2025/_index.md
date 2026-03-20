@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Semantic Search for the Rest of Us with DuckDB
 
 
@@ -31,6 +31,9 @@ tags:
 - data
 - ai
 title: Semantic Search for the Rest of Us with DuckDB (Marcos Huerta, Carmax) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

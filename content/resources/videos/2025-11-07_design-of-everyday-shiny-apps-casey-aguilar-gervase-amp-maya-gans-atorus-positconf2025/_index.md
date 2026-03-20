@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Design of Everyday Shiny Apps
 
 
@@ -26,6 +26,9 @@ tags:
 - data science
 - data
 title: Design of Everyday Shiny Apps (Casey Aguilar-Gervase &amp; Maya Gans, Atorus) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'IDE-ntity Crisis: Choosing the Right Tool for Me
 
 
@@ -28,6 +28,9 @@ tags:
 - data
 - ai
 title: 'IDE-ntity Crisis: Choosing the Right Tool for Me (Isabel Zimmerman, Posit) | posit::conf(2025)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

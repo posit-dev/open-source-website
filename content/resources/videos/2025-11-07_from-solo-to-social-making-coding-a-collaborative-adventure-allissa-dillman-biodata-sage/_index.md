@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'From Solo to Social: Making Coding a Collaborative Adventure
 
 
@@ -26,6 +26,9 @@ tags:
 - data
 - ai
 title: 'From Solo to Social: Making Coding a Collaborative Adventure (Allissa Dillman, BioData Sage)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

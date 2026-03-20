@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Exploring Datasets in Positron
 
 
@@ -24,6 +24,9 @@ tags:
 - data
 - ai
 title: Exploring Datasets in Positron (Wes McKinney, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

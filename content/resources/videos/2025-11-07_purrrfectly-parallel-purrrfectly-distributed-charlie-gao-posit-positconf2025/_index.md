@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Purrrfectly parallel, purrrfectly distributed
 
 
@@ -35,6 +35,9 @@ tags:
 - data science
 - data
 title: Purrrfectly parallel, purrrfectly distributed (Charlie Gao, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

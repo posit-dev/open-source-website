@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Zero Tolerance for Dirty Data: A Pointblank Prescription for Data Hygiene
 
 
@@ -24,6 +24,9 @@ tags:
 - data
 - ai
 title: 'Zero Tolerance for Dirty Data: A Pointblank Prescription for Data Hygiene (Arnav Patel, Synovus)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

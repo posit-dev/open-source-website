@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Making Things Nice in Python
 
 
@@ -29,6 +29,9 @@ tags:
 - data science
 - ai
 title: Making Things Nice in Python (Rich Iannone, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'On teaching adults to code
 
 
@@ -26,6 +26,9 @@ tags:
 - data science
 - ai
 title: On Teaching Adults to Code (Kristin Bott, Posit) | posit::conf(2025)
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'R-multiverse: a new way to publish R packages
 
 
@@ -39,6 +39,9 @@ tags:
 - data science
 - data
 title: 'R-multiverse: a new way to publish R packages (Will Landau, Eli Lilly) | posit::conf(2025)'
+
+override:
+  date: '2025-09-18'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

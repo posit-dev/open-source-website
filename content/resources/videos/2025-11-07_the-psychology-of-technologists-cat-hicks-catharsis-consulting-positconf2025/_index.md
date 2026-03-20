@@ -36,6 +36,9 @@ tags:
 - ai
 title: The Psychology of Technologists  (Cat Hicks, Catharsis Consulting) | posit::conf(2025)
 
+override:
+  date: '2025-09-18'
+
 external:  # updated automatically, do not edit
   channel: Posit PBC
   comment_count: 2

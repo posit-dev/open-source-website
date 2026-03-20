@@ -30,6 +30,9 @@ tags:
 - ai
 title: 10 Years of Data Science Tools...and What Happens Next (Jonathan McPherson) | posit::conf(2025)
 
+override:
+  date: '2025-09-17'
+
 external:  # updated automatically, do not edit
   channel: Posit PBC
   comment_count: 2

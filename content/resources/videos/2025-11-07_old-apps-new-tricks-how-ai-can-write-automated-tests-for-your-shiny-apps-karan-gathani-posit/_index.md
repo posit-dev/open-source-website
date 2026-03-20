@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-17'
 description: 'Old Apps, New Tricks: How AI can write Automated Tests for your Shiny Apps
 
 
@@ -27,6 +27,9 @@ tags:
 - data science
 - data
 title: 'Old Apps, New Tricks: How AI can write Automated Tests for your Shiny Apps (Karan Gathani, Posit)'
+
+override:
+  date: '2025-09-17'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
