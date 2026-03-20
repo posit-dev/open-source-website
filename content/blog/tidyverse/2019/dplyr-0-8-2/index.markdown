@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/xFTNsGW1isI
   author: Joanna Kosinska
-image: thumbnail-wd.jpg
+image: dplyr-0-8-2-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]

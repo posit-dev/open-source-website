@@ -11,7 +11,7 @@ categories:
 photo:
   url: https://unsplash.com/photos/NodtnCsLdTE
   author: Mikhail Vasilyev
-image: thumbnail-wd.jpg
+image: purrr-0-3-0-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "purrr"]

@@ -11,7 +11,7 @@ photo:
 slug: ggplot2-3-3-0
 categories:
   - Visualization
-image: thumbnail-wd.jpg
+image: ggplot2-3-3-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["ggplot2"]

@@ -11,7 +11,7 @@ photo:
   author: Patrick Schneider
 categories:
   - Data Wrangling
-image: thumbnail-wd.jpg
+image: tibble-1-4-1-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tibble"]

@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://photos.app.goo.gl/g5Fj6GmHVXZhTsPj8
   author: JD Long
-image: thumbnail-wd.jpg
+image: tidyverse-dev-day-at-user-2019-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]

@@ -16,7 +16,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/9GMO0Sxyw_Y
   author: Jonathan Knepper
-image: thumbnail-wd.jpg
+image: generics-0.0.1-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "generics"]

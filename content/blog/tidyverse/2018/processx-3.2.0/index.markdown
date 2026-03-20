@@ -15,7 +15,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/PtgLGdMzi-Y
   author: Adam Sherez
-image: thumbnail-wd.jpg
+image: processx-3.2.0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "processx"]

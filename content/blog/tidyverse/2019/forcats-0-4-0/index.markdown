@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://www.pexels.com/photo/close-up-photo-of-a-hand-holding-three-white-kittens-1643456/
   author: Peng Louis
-image: thumbnail-wd.jpg
+image: forcats-0-4-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "forcats"]

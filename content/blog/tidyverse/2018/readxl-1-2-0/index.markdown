@@ -14,7 +14,7 @@ categories:
 tags:
   - tidyverse
   - Packages
-image: thumbnail-wd.jpg
+image: readxl-1-2-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "readxl"]

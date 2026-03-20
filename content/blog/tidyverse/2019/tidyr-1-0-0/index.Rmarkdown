@@ -16,6 +16,7 @@ software: ["tidyverse", "tidyr"]
 languages: ["R"]
 ported_categories:
   - package
+image: tidyr-1-0-0-wd.jpg
 ---
 
 ```{r, include = FALSE}

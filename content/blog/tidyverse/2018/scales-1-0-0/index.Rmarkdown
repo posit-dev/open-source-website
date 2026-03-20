@@ -19,6 +19,7 @@ software: ["tidyverse", "scales", "ggplot2"]
 languages: ["R"]
 ported_categories:
   - package
+image: scales-1-0-0-wd.jpg
 ---
 
 ```{r setup, include=FALSE}

@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/RtDwtRDvYQg
   author: Roman Kraft
-image: thumbnail-wd.jpg
+image: thumb-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "themis"]

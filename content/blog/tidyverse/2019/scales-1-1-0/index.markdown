@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/d0CasEMHDQs
   author: David Clode
-image: thumbnail-wd.jpg
+image: thumb-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2", "scales"]

@@ -13,7 +13,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/n_vD-7RxA3Q
   author: Roman Kraft
-image: thumbnail-wd.jpg
+image: thumb-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "testthat"]

@@ -14,7 +14,7 @@ categories:
 tags:
   - tidyverse
   - Learn
-image: thumbnail-wd.jpg
+image: lucy-internship-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googledrive"]

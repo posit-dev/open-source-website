@@ -15,7 +15,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/nI7knd5sQfo
   author: Brandon Siu
-image: thumbnail-wd.jpg
+image: rlang-0-3-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "rlang"]

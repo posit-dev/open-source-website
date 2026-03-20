@@ -13,7 +13,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/Lu2pfy_8VKg
   author: Cameron Kirby
-image: thumbnail-wd.jpg
+image: testthat-2-0-0-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "testthat"]

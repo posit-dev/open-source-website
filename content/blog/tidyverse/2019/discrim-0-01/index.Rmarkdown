@@ -17,6 +17,7 @@ ported_categories:
 tags:
   - tidyverse
   - Packages
+image: discrim-0-0-1-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

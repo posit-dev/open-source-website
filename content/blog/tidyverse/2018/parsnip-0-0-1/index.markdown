@@ -14,7 +14,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ahB6ZhxHRtk
   author: rawpixel
-image: thumbnail-wd.jpg
+image: parsnip-0-0-1-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "parsnip", "tidymodels"]

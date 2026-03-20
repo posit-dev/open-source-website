@@ -18,6 +18,7 @@ software: ["tidyverse"]
 languages: ["R"]
 ported_categories:
   - other
+image: thumb-wd.jpg
 ---
 
 We're thrilled to announce that we'll be holding our next [**tidyverse developer day**](https://tdd-2019-jan.eventbrite.com/) on the Friday following [rstudio::conf](https://www.rstudio.com/conference/) in San Francisco. The event will take place from 9:00 AM – 5:00 PM at [Microsoft Reactor](https://goo.gl/maps/WkTivUvisfvVPRxt8), which is about a mile away from the conference venue (though you're welcome to attend even if you're not coming to the conferece).

@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/sk59I1qRfEM
   author: Scott Webb
-image: thumbnail-wd.jpg
+image: dbplyr-1-3-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dbplyr", "dplyr"]

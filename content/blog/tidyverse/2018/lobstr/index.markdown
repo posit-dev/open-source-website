@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/BmjuEqM4YOY
   author: Toa Heftiba
-image: thumbnail-wd.jpg
+image: lobstr-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "lobstr"]

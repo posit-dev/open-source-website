@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/Ibq4B5iE_-4
   author: Stephan Henning
-image: thumbnail-wd.jpg
+image: ggplot2-3-1-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]

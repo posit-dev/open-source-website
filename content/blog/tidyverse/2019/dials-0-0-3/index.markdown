@@ -13,7 +13,7 @@ description: "A major update to the tuning parameter package. \n"
 photo:
   url: https://unsplash.com/photos/QfN0l0MZCyc
   author: Adi Goldstein
-image: thumbnail-wd.jpg
+image: dials-0-0-3-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dials", "tidymodels"]

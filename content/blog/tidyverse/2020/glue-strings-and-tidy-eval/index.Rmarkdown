@@ -17,6 +17,7 @@ software: ["rlang", "glue"]
 languages: ["R"]
 ported_categories:
   - package
+image: glue-strings-and-tidy-eval-wd.jpg
 ---
 
 

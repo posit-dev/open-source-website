@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/8EzNkvLQosk
   author: Maarten van den Heuvel
-image: thumbnail-wd.jpg
+image: googledrive-1-0-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googledrive"]

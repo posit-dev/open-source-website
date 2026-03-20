@@ -14,7 +14,7 @@ tags:
   - tidyverse
 photo:
   author: Romain François
-image: thumbnail-wd.jpg
+image: tidy-dev-day-toulouse-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]

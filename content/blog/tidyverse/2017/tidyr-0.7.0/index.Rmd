@@ -11,7 +11,7 @@ photo:
   author: Radek Grzybowski
 categories:
   - Data Wrangling
-image: thumbnail-wd.jpg
+image: tidyr-0.7.0-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidyr"]

@@ -15,7 +15,7 @@ tags:
   - rlib
   - tidyverse
   - Packages
-image: thumbnail-wd.jpg
+image: scales-1-0-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "scales", "ggplot2"]

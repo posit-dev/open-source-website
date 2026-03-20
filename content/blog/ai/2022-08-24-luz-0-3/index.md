@@ -12,7 +12,7 @@ author:
     affiliation_url: https://www.rstudio.com/
 people:
   - Daniel Falbel
-image: thumbnail.jpg
+image: thumbnail.jpeg
 ported_from: ai
 port_status: in-progress
 languages: ["R"]

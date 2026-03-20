@@ -13,7 +13,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/JuFcQxgCXwA
   author: Samuel Zeller
-image: thumbnail-wd.jpg
+image: dbplyr-1-4-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dbplyr", "dplyr"]

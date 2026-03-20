@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/SshYpuf607g
   author: Aperture Vintage
-image: thumbnail-wd.jpg
+image: tidyverse-and-r-lib-year-in-review-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]

@@ -14,7 +14,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/TZCppMjaOHU
   author: William White
-image: thumbnail-wd.jpg
+image: ggplot2-community-posts-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]

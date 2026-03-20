@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/h13Y8vyIXNU
   author: Jay Ruzesky
-image: thumbnail-wd.jpg
+image: thumb-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dtplyr", "dplyr"]

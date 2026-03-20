@@ -19,6 +19,7 @@ software: ["tidyverse", "dtplyr", "dplyr"]
 languages: ["R"]
 ported_categories:
   - package
+image: thumb-wd.jpg
 ---
 
 ```{r, include = FALSE}

@@ -15,7 +15,7 @@ authors: Thomas Lin Pedersen
 photo:
   url: https://unsplash.com/photos/BVyNlchWqzs
   author: Amador Loureiro
-image: thumbnail-wd.jpg
+image: updates-to-ragg-and-systemfonts-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg", "systemfonts"]

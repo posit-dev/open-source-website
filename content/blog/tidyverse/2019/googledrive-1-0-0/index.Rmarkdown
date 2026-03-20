@@ -18,6 +18,7 @@ software: ["tidyverse", "googledrive"]
 languages: ["R"]
 ported_categories:
   - package
+image: googledrive-1-0-0-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

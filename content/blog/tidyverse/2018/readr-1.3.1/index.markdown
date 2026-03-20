@@ -14,7 +14,7 @@ categories:
 tags:
   - tidyverse
   - Packages
-image: thumbnail-wd.jpg
+image: readr-1-3-1-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "readr"]

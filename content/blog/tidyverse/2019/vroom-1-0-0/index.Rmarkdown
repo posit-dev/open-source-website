@@ -18,6 +18,7 @@ software: ["tidyverse", "vroom"]
 languages: ["R"]
 ported_categories:
   - package
+image: vroom-1-0-0-wd.jpg
 ---
 
 ```{r include = FALSE}

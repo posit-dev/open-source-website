@@ -16,7 +16,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/rNhL85ocOGg
   author: Clark Van Der Beken
-image: thumbnail-wd.jpg
+image: embed-0-1-0-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "tidymodels", "embed"]

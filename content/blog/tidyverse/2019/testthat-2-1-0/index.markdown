@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://www.pexels.com/photo/38070/
   author: Skitterphoto
-image: thumbnail-wd.jpg
+image: testthat-2-1-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat"]

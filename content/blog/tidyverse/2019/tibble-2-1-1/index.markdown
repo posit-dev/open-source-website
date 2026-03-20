@@ -15,7 +15,7 @@ categories:
 tags:
   - tidyverse
   - Packages
-image: thumbnail-wd.jpg
+image: tibble-2.1.1-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tibble"]

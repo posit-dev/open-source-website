@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://pixabay.com/en/decoration-packages-gifts-ribbons-3229259/
   author: jackmac34
-image: thumbnail-wd.jpg
+image: pkgdown-1-3-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "pkgdown"]

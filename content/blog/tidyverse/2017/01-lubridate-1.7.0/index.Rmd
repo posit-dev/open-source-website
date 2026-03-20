@@ -11,7 +11,7 @@ photo:
   author: Heather Zabriskie
 categories:
   - Data Wrangling
-image: thumbnail-wd.jpg
+image: lubridate-1.7.0-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "lubridate"]

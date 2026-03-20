@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/OhQhkkVJYhI
   author: chuttersnap
-image: thumbnail-wd.jpg
+image: ggplot2-2-3-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]

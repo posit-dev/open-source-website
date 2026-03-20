@@ -11,7 +11,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/nIkuMWT4Imc
   author: Rula Sibai
-image: thumbnail-wd.jpg
+image: bench-1.0.1-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "bench"]

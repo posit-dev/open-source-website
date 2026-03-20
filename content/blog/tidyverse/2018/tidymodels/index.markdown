@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://github.com/tidymodels
   author: tidymodels
-image: thumbnail-wd.jpg
+image: tidymodels-wd.png
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]

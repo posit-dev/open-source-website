@@ -17,6 +17,7 @@ software: ["tidyverse", "devtools", "testthat"]
 languages: ["R"]
 ported_categories:
   - package
+image: thumb-wd.jpg
 ---
 
 ```{r include = FALSE}

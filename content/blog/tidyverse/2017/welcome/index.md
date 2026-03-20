@@ -11,7 +11,7 @@ photo:
   author: Kelley Bozarth
 categories:
   - Community
-image: thumbnail-wd.jpg
+image: welcome-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]

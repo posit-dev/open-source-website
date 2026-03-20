@@ -19,6 +19,7 @@ tags:
   - rlib
   - tidyverse
   - Packages
+image: rlang-0-3-0-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

@@ -16,7 +16,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/O6N9RV2rzX8
   author: Jeremy Thomas
-image: thumbnail-wd.jpg
+image: tidymodels-update-nov-18-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "recipes", "yardstick", "embed", "tidyposterior", "tidymodels"]

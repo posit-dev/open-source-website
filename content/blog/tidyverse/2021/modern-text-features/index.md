@@ -15,7 +15,7 @@ tags:
   - Graphic-device
   - tidyverse
   - Deep-dive
-image: thumbnail-wd.jpg
+image: modern-text-features-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg", "systemfonts"]

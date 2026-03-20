@@ -11,7 +11,7 @@ description: |
 photo:
   url: http://www.littlerock.af.mil/News/Photos/igphoto/2001697811/
   author: Airman 1st Class Grace Nichols
-image: thumbnail-wd.jpg
+image: glue-1.2.0-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "glue"]

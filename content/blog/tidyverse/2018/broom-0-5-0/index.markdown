@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/vYcH7pI6v1Q
   author: Nagesh Badu
-image: thumbnail-wd.jpg
+image: broom-0-5-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "broom", "tidymodels"]

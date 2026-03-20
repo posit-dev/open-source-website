@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/yB5cYEq7y2U
   author: fancycrave
-image: thumbnail-wd.jpg
+image: tidyverse-developer-day-2019-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]

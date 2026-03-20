@@ -19,6 +19,7 @@ software: ["tidyverse", "testthat"]
 languages: ["R"]
 ported_categories:
   - package
+image: testthat-2-1-0-wd.jpg
 ---
 
 ```{r include = FALSE}

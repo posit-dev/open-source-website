@@ -19,6 +19,7 @@ tags:
   - rlib
   - tidyverse
   - Packages
+image: generics-0.0.1-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

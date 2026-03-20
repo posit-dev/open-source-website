@@ -15,7 +15,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/yYawh30qf28
   author: Gabriel Porras
-image: thumbnail-wd.jpg
+image: tibble-2.0.0-pre-announce-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tibble"]

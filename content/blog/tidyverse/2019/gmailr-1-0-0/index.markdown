@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/fb7yNPbT0l8
   author: Mathyas Kurmann
-image: thumbnail-wd.jpg
+image: gmailr-1-0-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "gmailr"]

@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/8XddFc6NkBY
   author: Art Lasovsky
-image: thumbnail-wd.jpg
+image: thumb-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "roxygen2"]
