@@ -1,4 +1,10 @@
 ---
+draft: true
+build:
+  render: never
+  list: never
+  publishResources: false
+
 title: Outgrowing your laptop with R and Positron
 description: |
   R-Ladies Abuja has posted a recording of a recent talk on Positron, and you can find it here!
