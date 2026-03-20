@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="flex flex-col w-full max-w-4xl lg:max-w-5xl">
+<div class="flex flex-col w-full max-w-6xl mx-auto">
   <!-- Hidden Pagefind Image -->
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
@@ -160,12 +160,6 @@
   {{ $body := .Content }}
   {{ if not $body }}{{ $body = .Params.description | replaceRE "\n" "<br>" | safeHTML }}{{ end }}
   {{ with $body }}
-  <div class="mt-8 mx-2 md:mx-0">
-    <div id="video-description" data-pagefind-body
-      class="prose max-w-none [&_li]:marker:text-gray-600">
-      {{ . }}
-    </div>
-  </div>
   <script>
     (function () {
       function toSeconds(ts) {
@@ -296,32 +290,36 @@
     "level" 2) }}{{ end }}
     {{ if $events }}{{ $tocItems = $tocItems | append (dict "id" "related-events" "text" "Related events" "level" 2)
     }}{{ end }}
-    <div class="flex flex-col lg:flex-row gap-8 mt-8 mx-2 md:mx-0">
-      <div class="flex-1 min-w-0">
-        <div class="w-full prose">
-          {{ partial "heading.html" (dict "level" 2 "text" "Transcript") }}
-          <p class="mb-6 italic">This transcript was generated automatically and may contain errors.</p>
-          <div data-pagefind-body id="video-transcript"
-            class="[&_a[data-t]]:hover:bg-gray-100 [&_a[data-t]]:hover:no-underline! [&_a[data-t]]:rounded [&_a[data-t]]:text-inherit! [&_a[data-t]]:transition-colors [&_a[data-t]]:duration-200">
-            {{ $content | safeHTML }}
+    <div class="max-w-6xl mx-auto w-full">
+      <div class="flex flex-col lg:flex-row gap-24 mt-8">
+        <div class="flex-1 min-w-0">
+          <div class="w-full prose max-w-none text-[1.075rem] prose-quoteless post-content">
+            {{ partial "heading.html" (dict "level" 2 "text" "Transcript") }}
+            <p class="mb-6 italic">This transcript was generated automatically and may contain errors.</p>
+            <div data-pagefind-body id="video-transcript"
+              class="[&_a[data-t]]:hover:bg-gray-100 [&_a[data-t]]:hover:no-underline! [&_a[data-t]]:rounded [&_a[data-t]]:text-inherit! [&_a[data-t]]:transition-colors [&_a[data-t]]:duration-200">
+              {{ $content | safeHTML }}
+            </div>
           </div>
         </div>
+        {{ if $tocItems }}
+        <aside class="hidden lg:block w-96 shrink-0">
+          <div class="sticky top-8">
+            <nav class="blog-toc">
+              <h2 class="blog-toc-heading">{{ T "table_of_contents" }}</h2>
+              <div class="blog-toc-content">
+                <ul>
+                  {{ range $tocItems }}
+                  <li{{ if eq .level 3 }} class="ml-3"{{ end }}><a href="#{{ .id }}">{{ .text }}</a>
+                  </li>
+                  {{ end }}
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </aside>
+        {{ end }}
       </div>
-      {{ if $tocItems }}
-      <aside class="hidden lg:block w-64 shrink-0">
-        <div class="sticky top-8">
-          <nav class="prose prose-sm">
-            <h2 class="text-lg font-semibold mb-4 text-gray-600">On this page</h2>
-            <ul
-              class="text-sm [&_a]:no-underline [&_a]:text-gray-600 [&_a]:hover:underline [&_ul]:my-0 [&_li]:marker:text-gray-600">
-              {{ range $tocItems }}
-              <li{{ if eq .level 3 }} class="ml-3" {{ end }}><a href="#{{ .id }}">{{ .text }}</a></li>
-                {{ end }}
-            </ul>
-          </nav>
-        </div>
-      </aside>
-      {{ end }}
     </div>
     <style>
       #video-transcript a[data-t] {
@@ -337,26 +335,28 @@
     </style>
     {{ end }}
     {{ else if .Content }}
-    <div class="flex flex-col lg:flex-row gap-8 mt-8">
-      <div class="flex-1 max-w-4xl mx-2 md:mx-0">
-        <div class="">
-          <div class="prose max-w-none [&_li]:marker:text-gray-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="flex flex-col lg:flex-row gap-16 lg:pl-24 mt-8">
+        <div class="flex-1">
+          <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content [&_li]:marker:text-gray-600">
             {{ .Content }}
           </div>
         </div>
-      </div>
 
-      <aside class="hidden lg:block w-64 shrink-0">
-        <div class="sticky top-8">
-          <nav class="prose prose-sm">
-            <h2 class="text-lg font-semibold mb-4 text-gray-600">On this page</h2>
-            <div
-              class="text-sm [&_a]:no-underline [&_a]:text-gray-600 [&_a]:hover:underline [&_ul]:my-0 [&_li]:marker:text-gray-600">
-              {{ .TableOfContents }}
-            </div>
-          </nav>
-        </div>
-      </aside>
+        {{- $tocContent := .TableOfContents | plainify | strings.TrimSpace -}}
+        {{- if gt (len $tocContent) 0 -}}
+        <aside class="hidden lg:block w-64 shrink-0">
+          <div class="sticky top-8">
+            <nav class="blog-toc">
+              <h2 class="blog-toc-heading">{{ T "table_of_contents" }}</h2>
+              <div class="blog-toc-content">
+                {{ .TableOfContents }}
+              </div>
+            </nav>
+          </div>
+        </aside>
+        {{- end -}}
+      </div>
     </div>
     {{ end }}
 
@@ -511,12 +511,15 @@
 
   var isFloating = false;
   var isDismissed = false;
+  var isFading = false;
   var lastPos = null;
+  var FADE_MS = 300;
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function getDefaultWidth() {
     var vw = window.innerWidth;
     if (vw < 640) return 0;
-    return vw * 0.30;
+    return vw * 0.35;
   }
 
   function clampPos(left, top, w, h) {
@@ -526,7 +529,7 @@
   }
 
   function floatVideo() {
-    if (isFloating) return;
+    if (isFloating || isFading) return;
     var rect = container.getBoundingClientRect();
     placeholder.style.height = rect.height + 'px';
     placeholder.classList.remove('hidden');
@@ -542,8 +545,8 @@
       w = getDefaultWidth();
       if (w === 0) return;
       totalH = BAR_HEIGHT + w / (16 / 9);
-      left = window.innerWidth - w - 20;
-      top = window.innerHeight - totalH - 20;
+      left = window.innerWidth - w - 45;
+      top = window.innerHeight - totalH - 30;
     }
 
     container.classList.add('video-floating');
@@ -551,6 +554,16 @@
     container.style.height = totalH + 'px';
     container.style.left = left + 'px';
     container.style.top = top + 'px';
+    if (reducedMotion) {
+      container.style.opacity = '1';
+    } else {
+      container.style.opacity = '0';
+      container.style.transition = 'none';
+      setTimeout(function() {
+        container.style.transition = 'opacity ' + FADE_MS + 'ms ease';
+        container.style.opacity = '1';
+      }, 50);
+    }
     isFloating = true;
   }
 
@@ -567,17 +580,37 @@
   function unfloatVideo() {
     if (!isFloating) return;
     savePos();
-    container.classList.remove('video-floating');
-    container.style.cssText = '';
-    placeholder.classList.add('hidden');
-    placeholder.style.height = '';
-    isFloating = false;
-    isDismissed = false;
+    function cleanup() {
+      container.classList.remove('video-floating');
+      container.style.cssText = '';
+      placeholder.classList.add('hidden');
+      placeholder.style.height = '';
+      isFloating = false;
+      isFading = false;
+      isDismissed = false;
+    }
+    if (reducedMotion) {
+      cleanup();
+    } else {
+      isFading = true;
+      container.style.transition = 'opacity ' + FADE_MS + 'ms ease';
+      container.style.opacity = '0';
+      setTimeout(cleanup, FADE_MS);
+    }
   }
 
   // Sentinel marks the original video position
   var sentinel = document.createElement('div');
   sentinel.style.height = '1px';
+  container.parentNode.insertBefore(sentinel, container);
+
+  // Sentinel placed before the container, sized to match the video.
+  // With threshold: 0, isIntersecting becomes false only when the sentinel
+  // is completely out of the viewport — i.e. the video has fully scrolled away.
+  var sentinel = document.createElement('div');
+  sentinel.style.height = container.offsetHeight + 'px';
+  sentinel.style.pointerEvents = 'none';
+  sentinel.style.marginBottom = '-' + container.offsetHeight + 'px'; // overlap, no layout shift
   container.parentNode.insertBefore(sentinel, container);
 
   var observer = new IntersectionObserver(function(entries) {
@@ -598,12 +631,43 @@
     unfloatVideo();
   });
 
+  // Escape key to dismiss floating window
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && isFloating) {
+      isDismissed = true;
+      unfloatVideo();
+    }
+  });
+
+  // Keep floating window in viewport on browser resize
+  window.addEventListener('resize', function() {
+    if (!isFloating) return;
+    var w = container.offsetWidth;
+    var h = container.offsetHeight;
+    var curLeft = parseFloat(container.style.left);
+    var curTop = parseFloat(container.style.top);
+    var clamped = clampPos(curLeft, curTop, w, h);
+    container.style.left = clamped.left + 'px';
+    container.style.top = clamped.top + 'px';
+  });
+
+  // ---- Drag/resize helpers ----
+  function disableSelection() {
+    document.body.style.userSelect = 'none';
+    document.body.style.webkitUserSelect = 'none';
+  }
+  function enableSelection() {
+    document.body.style.userSelect = '';
+    document.body.style.webkitUserSelect = '';
+  }
+
   // ---- Dragging ----
   var dragState = null;
 
   function onDragStart(e) {
     if (!isFloating || e.target === closeBtn) return;
     e.preventDefault();
+    disableSelection();
     shield.style.display = 'block';
     var rect = container.getBoundingClientRect();
     dragState = { startX: e.clientX, startY: e.clientY, origLeft: rect.left, origTop: rect.top };
@@ -625,6 +689,7 @@
   function onDragEnd() {
     dragState = null;
     shield.style.display = 'none';
+    enableSelection();
     document.removeEventListener('pointermove', onDragMove);
     document.removeEventListener('pointerup', onDragEnd);
   }
@@ -638,6 +703,7 @@
     if (!isFloating) return;
     e.preventDefault();
     e.stopPropagation();
+    disableSelection();
     shield.style.display = 'block';
     var rect = container.getBoundingClientRect();
     resizeState = {
@@ -700,6 +766,7 @@
   function onResizeEnd() {
     resizeState = null;
     shield.style.display = 'none';
+    enableSelection();
     document.removeEventListener('pointermove', onResizeMove);
     document.removeEventListener('pointerup', onResizeEnd);
   }

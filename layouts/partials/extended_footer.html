@@ -45,20 +45,26 @@
 {{ end -}}
 <script src="{{ $jsSearch.RelPermalink }}" type="module" defer></script>
 
-{{- /* Load TOC scroll tracking script for blog posts */ -}}
+{{- /* Load TOC scroll tracking script for blog posts and resource pages */ -}}
+{{- $hasBlogToc := false -}}
 {{- if eq .Section "blog" -}}
-{{- if or .Params.Toc $.Site.Params.Toc -}}
-{{- if ne .Params.Toc false -}}
-{{- $tocContent := .TableOfContents | plainify | strings.TrimSpace -}}
-{{- if gt (len $tocContent) 0 -}}
+  {{- if or .Params.Toc $.Site.Params.Toc -}}
+  {{- if ne .Params.Toc false -}}
+    {{- $tocContent := .TableOfContents | plainify | strings.TrimSpace -}}
+    {{- if gt (len $tocContent) 0 -}}
+      {{- $hasBlogToc = true -}}
+    {{- end -}}
+  {{- end -}}
+  {{- end -}}
+{{- else if eq .Section "resources" -}}
+  {{- $hasBlogToc = true -}}
+{{- end -}}
+{{- if $hasBlogToc -}}
 {{- $jsToc := resources.Get "js/toc-scroll.js" | js.Build "toc-scroll.js" -}}
 {{- if not hugo.IsDevelopment }}
   {{- $jsToc = $jsToc | minify | fingerprint -}}
 {{ end -}}
 <script src="{{ $jsToc.RelPermalink }}" defer></script>
-{{- end -}}
-{{- end -}}
-{{- end -}}
 {{- end -}}
 
 {{- partial "custom_footer.html" . -}}
