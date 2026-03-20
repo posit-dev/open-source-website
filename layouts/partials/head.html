@@ -44,18 +44,10 @@
 
 {{ if .Params.katex}}{{ partial "katex.html" . }}{{ end }}
 
-<!-- https://gohugo.io/templates/internal/#use-the-google-analytics-template -->
-{{- template "_internal/google_analytics.html" . -}}
-
-
-{{- if (findRE `<n8n-demo` .Content 1) }}
-<!-- n8n web component -->
-<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.0.0/webcomponents-loader.js"></script>
-<script src="https://www.unpkg.com/lit@2.0.0-rc.2/polyfill-support.js"></script>
-<script
-  type="module"
-  src="https://cdn.jsdelivr.net/npm/@n8n_io/n8n-demo-component/n8n-demo.bundled.js"
-></script>
-{{ end -}}
+<script async src="https://plausible.io/js/pa-ihqNTHznxB62qQp1hgnrh.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 
 {{- partial "custom_head.html" . -}}
