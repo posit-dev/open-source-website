@@ -1,5 +1,7 @@
 ---
 title: Parse and process XML (and HTML) with xml2
+description: "xml2 wraps libxml2 for easy XML/HTML parsing in R: navigate trees, extract nodes with XPath, and handle namespaces."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-04-21'

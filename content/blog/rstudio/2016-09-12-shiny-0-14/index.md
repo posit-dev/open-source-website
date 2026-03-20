@@ -1,5 +1,7 @@
 ---
 title: Shiny 0.14
+description: "Shiny 0.14 adds bookmarkable state, notifications, modal dialogs, insertUI/removeUI, and database connection docs."
+auto-description: true
 people:
   - Winston Chang
 date: '2016-09-12'

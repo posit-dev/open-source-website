@@ -1,5 +1,7 @@
 ---
 title: Introducing ggvis
+description: "Introducing ggvis: grammar of graphics meets interactivity. Create reactive, browser-rendered plots with Shiny integration."
+auto-description: true
 people:
   - Winston Chang
 date: '2014-06-23'

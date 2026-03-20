@@ -1,5 +1,7 @@
 ---
 title: dbplyr 1.4.0
+description: "dbplyr 1.4.0: simpler SQL generation, better translations, and improved window functions."
+auto-description: true
 author:
   - Hadley Wickham
 date: '2019-04-30'

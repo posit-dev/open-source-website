@@ -1,5 +1,7 @@
 ---
 title: Data Validation Libraries for Polars (2025 Edition)
+description: "Choosing a data validation library for Polars? We compare Pandera, Patito, Pointblank, Validoopsie, and Dataframely."
+auto-description: true
 people:
   - Rich Iannone
 date: '2025-06-04T00:00:00.000Z'

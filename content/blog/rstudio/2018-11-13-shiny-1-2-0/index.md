@@ -1,5 +1,7 @@
 ---
 title: 'Shiny 1.2.0: Plot caching'
+description: "Shiny 1.2.0: plot caching with renderCachedPlot for dramatically improved performance under load."
+auto-description: true
 people:
   - Joe Cheng
 date: '2018-11-13'

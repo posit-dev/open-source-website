@@ -1,5 +1,7 @@
 ---
 title: haven 1.1.0
+description: "haven 1.1.0: SAS transport files, cols_only for selective reading, and bug fixes."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2017-07-13'

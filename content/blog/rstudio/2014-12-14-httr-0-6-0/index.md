@@ -1,5 +1,7 @@
 ---
 title: httr 0.6.0
+description: "httr 0.6.0 adds handle_reset(), streaming with write_stream(), custom HTTP verbs, and Google OAuth2 service accounts."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-12-14'

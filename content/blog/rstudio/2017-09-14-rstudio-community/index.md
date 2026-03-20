@@ -1,5 +1,7 @@
 ---
 title: community.rstudio.com
+description: "Announcing community.rstudio.com: a friendly forum for RStudio, tidyverse, and Shiny discussions."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2017-09-14'

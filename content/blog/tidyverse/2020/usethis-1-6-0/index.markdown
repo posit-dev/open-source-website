@@ -1,5 +1,7 @@
 ---
 title: usethis 1.6.0
+description: "usethis 1.6.0: GitHub Actions for CI, smoother package creation, and improved PR workflows."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2020-04-11'

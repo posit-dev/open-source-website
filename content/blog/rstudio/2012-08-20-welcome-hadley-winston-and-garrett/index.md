@@ -1,5 +1,7 @@
 ---
 title: Welcome Hadley, Winston, and Garrett!
+description: "Hadley Wickham, Winston Chang, and Garrett Grolemund join RStudio to expand tools and education."
+auto-description: true
 people:
   - RStudio Team
 date: '2012-08-20'

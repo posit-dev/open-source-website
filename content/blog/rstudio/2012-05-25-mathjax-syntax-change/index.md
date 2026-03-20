@@ -1,5 +1,7 @@
 ---
 title: MathJax Syntax Change
+description: "R Markdown MathJax syntax changes: equations now use $latex ...$ to avoid parsing ambiguities."
+auto-description: true
 people:
   - RStudio Team
 date: '2012-05-25'

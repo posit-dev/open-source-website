@@ -1,5 +1,7 @@
 ---
 title: dplyr 0.4.0
+description: "dplyr 0.4.0 adds full SQL-style joins, bind_rows/bind_cols, data_frame(), list-columns, and improved printing."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-01-09'

@@ -1,6 +1,8 @@
 ---
 title: 'Arrow and beyond: Collaborating on next generation tools for open source data
   science'
+description: "RStudio partners with Ursa Labs to build a cross-language data science runtime powered by Apache Arrow."
+auto-description: true
 people:
   - JJ Allaire
 date: '2018-04-19'

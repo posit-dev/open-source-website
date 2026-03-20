@@ -1,5 +1,7 @@
 ---
 title: tidyr 0.5.0
+description: "tidyr 0.5.0 adds separate_rows() for delimiter-separated values, plus sep arguments for spread() and unnest()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-06-13'

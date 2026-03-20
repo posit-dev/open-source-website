@@ -1,5 +1,7 @@
 ---
 title: Using Polars to Win at Super Bowl Squares
+description: "Use Polars and Great Tables to analyze which Super Bowl Squares give you the best odds."
+auto-description: true
 people:
   - Michael Chow
 date: '2024-02-08'

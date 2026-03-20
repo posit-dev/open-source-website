@@ -1,5 +1,7 @@
 ---
 title: learnr 0.10.0
+description: "learnr 0.10.0: new quiz question types including text boxes and drag-and-drop ranking."
+auto-description: true
 people:
   - Barret Schloerke
 date: '2019-12-02'

@@ -1,5 +1,7 @@
 ---
 title: 'Teaching the Tidyverse in 2020 - Part 4: When to purrr?'
+description: "When to use purrr? Modern tidyverse alternatives for reading multiple files and fitting models."
+auto-description: true
 date: '2020-07-19'
 slug: teaching-the-tidyverse-in-2020-part-4-when-to-purrr
 categories:

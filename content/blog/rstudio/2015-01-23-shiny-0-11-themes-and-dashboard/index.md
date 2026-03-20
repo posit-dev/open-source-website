@@ -1,5 +1,7 @@
 ---
 title: Shiny 0.11, themes, and dashboard
+description: "Shiny 0.11 migrates to Bootstrap 3, adds improved sliders, passwordInput(), observeEvent(), plus new shinythemes and shinydashboard packages."
+auto-description: true
 people:
   - Winston Chang
 date: '2015-01-23'
