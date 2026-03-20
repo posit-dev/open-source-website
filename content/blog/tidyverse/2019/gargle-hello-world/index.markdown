@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://flic.kr/p/oe2LJ1
   author: North Carolina Christian advocate (1894)
-image: thumbnail-wd.jpg
+image: gargle-hello-world-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "gargle"]

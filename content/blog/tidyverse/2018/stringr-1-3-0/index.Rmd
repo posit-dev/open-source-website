@@ -11,7 +11,7 @@ photo:
   author: Igor Ovsyannykov
 categories:
   - Data Wrangling
-image: thumbnail-wd.jpg
+image: stringr-1-3-0-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "stringr"]

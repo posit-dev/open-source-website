@@ -11,7 +11,7 @@ photo:
   author: Joe Shillington
 categories:
   - Community
-image: thumbnail-wd.jpg
+image: ggplot2-internship-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "ggplot2"]

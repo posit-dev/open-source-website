@@ -18,6 +18,7 @@ software: ["tidyverse"]
 languages: ["R"]
 ported_categories:
   - other
+image: tidyverse-and-r-lib-year-in-review-wd.jpg
 ---
 
 It's been a banner year for the tidyverse and r-lib teams, and, as we close out 2018, we wanted to take a look back at some of our achievements.

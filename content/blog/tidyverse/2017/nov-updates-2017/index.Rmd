@@ -9,7 +9,7 @@ categories:
 photo:
   url: https://unsplash.com/photos/lPQIndZz8Mo
   author: Pablo Garcia Saldaña
-image: thumbnail-wd.jpg
+image: nov-updates-2017-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse"]

@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/BiZ-_6kNjbI
   author: Sophie Elvis
-image: thumbnail-wd.jpg
+image: dplyr-0-8-1-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]

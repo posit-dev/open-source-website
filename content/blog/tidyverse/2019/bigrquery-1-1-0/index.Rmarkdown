@@ -19,6 +19,7 @@ tags:
   - Databases
   - tidyverse
   - Packages
+image: bigrquery-1-1-0-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

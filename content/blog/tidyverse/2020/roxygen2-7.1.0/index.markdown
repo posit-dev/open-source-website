@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://pixabay.com/photos/fabric-wool-textile-texture-1031932/
   author: John Perrett
-image: thumbnail-wd.jpg
+image: thumb-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "roxygen2"]

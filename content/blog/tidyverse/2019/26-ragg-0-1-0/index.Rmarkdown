@@ -19,6 +19,7 @@ software: ["tidyverse", "ragg"]
 languages: ["R"]
 ported_categories:
   - package
+image: ragg-0-1-0-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

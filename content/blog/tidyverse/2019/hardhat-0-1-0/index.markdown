@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/YSxcf6C_SEg
   author: Silvia Brazzoduro
-image: thumbnail-wd.jpg
+image: thumb-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "hardhat"]

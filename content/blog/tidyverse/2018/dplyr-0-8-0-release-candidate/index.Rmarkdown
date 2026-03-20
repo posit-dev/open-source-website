@@ -18,6 +18,7 @@ software: ["tidyverse", "dplyr"]
 languages: ["R"]
 ported_categories:
   - package
+image: dplyr-0-8-0-release-candidate-wd.jpg
 ---
 
 <style>

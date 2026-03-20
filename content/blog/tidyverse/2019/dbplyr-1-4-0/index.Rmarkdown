@@ -17,6 +17,7 @@ software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]
 ported_categories:
   - package
+image: dbplyr-1-4-0-wd.jpg
 ---
 
 ```{r, include = FALSE}

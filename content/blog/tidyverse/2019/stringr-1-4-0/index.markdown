@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/o-d37kiKqqc
   author: Maranda Vandergriff
-image: thumbnail-wd.jpg
+image: stringr-1-4-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "stringr"]

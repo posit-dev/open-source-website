@@ -15,7 +15,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/8KfCR12oeUM
   author: Christopher Burns
-image: thumbnail-wd.jpg
+image: ggplot2-tidy-evaluation-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]

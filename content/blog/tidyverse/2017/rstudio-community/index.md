@@ -12,7 +12,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/9FDKj-FrfA4
   author: Rebekah Howell
-image: thumbnail-wd.jpg
+image: rstudio-community-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]

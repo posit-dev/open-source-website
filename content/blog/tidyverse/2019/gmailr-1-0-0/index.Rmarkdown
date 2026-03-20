@@ -19,6 +19,7 @@ software: ["tidyverse", "gmailr"]
 languages: ["R"]
 ported_categories:
   - package
+image: gmailr-1-0-0-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

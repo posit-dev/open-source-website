@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/rqIfy1UyIzE
   author: Branden Harvey
-image: thumbnail-wd.jpg
+image: tidymodels-2019-09-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes", "embed", "rsample", "parsnip", "corrr", "tidypredict", "yardstick"]

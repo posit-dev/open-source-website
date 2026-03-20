@@ -15,7 +15,7 @@ tags:
   - rlib
   - tidyverse
   - Packages
-image: thumbnail-wd.jpg
+image: httr-1-4-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "httr"]

@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/OxK32aLJXWU
   author: Krzysztof Niewolny
-image: thumbnail-wd.jpg
+image: dplyr-0-8-3-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]

@@ -18,6 +18,7 @@ software: ["tidyverse"]
 languages: ["R"]
 ported_categories:
   - other
+image: tidyverse-developer-day-2019-wd.jpg
 ---
 
 

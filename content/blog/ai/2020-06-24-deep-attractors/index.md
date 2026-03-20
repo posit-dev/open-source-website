@@ -12,7 +12,7 @@ author:
     affiliation_url: https://www.rstudio.com/
 people:
   - Sigrid Keydana
-image: thumbnail.png
+image: thumbnail.gif
 ported_from: ai
 port_status: in-progress
 software: ["keras3"]

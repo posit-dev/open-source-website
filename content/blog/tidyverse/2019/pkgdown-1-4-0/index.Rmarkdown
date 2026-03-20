@@ -17,6 +17,7 @@ software: ["tidyverse", "pkgdown"]
 languages: ["R"]
 ported_categories:
   - package
+image: pkgdown-1-4-0-wd.jpg
 ---
 
 We're happy to announce that [pkgdown](https://pkgdown.r-lib.org/) 1.4.0 is now

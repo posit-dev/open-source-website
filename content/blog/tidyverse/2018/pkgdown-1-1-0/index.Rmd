@@ -11,7 +11,7 @@ categories:
 photo:
   url: https://www.pexels.com/photo/person-s-holds-brown-gift-box-842876/
   author: Kim Stiver
-image: thumbnail-wd.jpg
+image: pkgdown-1-1-0-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "pkgdown"]

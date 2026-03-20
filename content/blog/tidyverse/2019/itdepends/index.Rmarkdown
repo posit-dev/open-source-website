@@ -19,6 +19,7 @@ tags:
   - rlib
   - tidyverse
   - Programming
+image: itdepends-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

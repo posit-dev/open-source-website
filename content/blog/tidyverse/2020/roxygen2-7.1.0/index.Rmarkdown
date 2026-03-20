@@ -19,6 +19,7 @@ software: ["tidyverse", "devtools", "roxygen2"]
 languages: ["R"]
 ported_categories:
   - package
+image: thumb-wd.jpg
 ---
 
 We're chuffed to announce the release of [roxygen2 7.1.0](https://roxygen2.r-lib.org).

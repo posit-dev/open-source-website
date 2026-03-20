@@ -11,11 +11,8 @@ description: Dr. A. Nayena Blankson, Professor of Psychology at Spelman College,
   the INSPIRE U2 Program and describes the 2021 partnership with RStudio. The INSPIRE
   U2 Program provides a learning pathway for underrepresented female students to enter
   advanced degrees and careers in statistical fields.
-resources:
-  - name: featured
-    src: image.png
-    title: NSF, Spelman College, and RStudio logos on a grey grid background
 image: thumbnail.png
+image-alt: NSF, Spelman College, and RStudio logos on a grey grid background
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]

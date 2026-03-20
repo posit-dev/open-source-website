@@ -15,7 +15,7 @@ description: New version now on CRAN. It features new database backends, an enha
 photo:
   url: https://unsplash.com/photos/y7rGTFyOzxc
   author: Giulia Bertelli
-image: thumbnail-wd.jpg
+image: dbplyr-1-2-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "dbplyr", "dplyr"]

@@ -11,16 +11,8 @@ tags:
   - RStudio
 description: Yes, Shiny apps can be fast and scalable. But only if you build them
   in the right way and use the proper tools.
-resources:
-  - name: shiny-comparisons
-    src: shiny-comparisons.gif
-    title: Slow versus Fast Shiny
-  - name: profvis
-    src: profvis.jpg
-    title: Profvis screenshot
-  - name: logo
-    src: appsilon-logo.png
-    title: Appsilon Logo
+image: shiny-thumbnail.jpg
+image-alt: Slow versus Fast Shiny
 blogcategories:
   - Products and Technology
 ported_from: rstudio

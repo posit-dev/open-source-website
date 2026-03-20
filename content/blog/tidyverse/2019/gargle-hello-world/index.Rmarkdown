@@ -19,6 +19,7 @@ software: ["tidyverse", "gargle"]
 languages: ["R"]
 ported_categories:
   - package
+image: gargle-hello-world-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

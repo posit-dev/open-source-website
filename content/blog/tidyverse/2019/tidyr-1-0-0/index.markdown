@@ -12,7 +12,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/0yL6nXhn0pI
   author: Victor Garcia
-image: thumbnail-wd.jpg
+image: tidyr-1-0-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidyr"]

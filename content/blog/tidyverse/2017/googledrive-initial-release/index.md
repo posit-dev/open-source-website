@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/wgLPy2YBXuc
   author: Paul Csogi
-image: thumbnail-wd.jpg
+image: googledrive-initial-release-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "googledrive"]

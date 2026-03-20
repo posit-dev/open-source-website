@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/40XgDxBfYXM
   author: Photo by Jordan Harrison
-image: thumbnail-wd.jpg
+image: thumb-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "odbc"]

@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://pixabay.com/en/tools-vintage-woodworking-saw-1209764/
   author: unknown
-image: thumbnail-wd.jpg
+image: usethis-1-3-0-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "usethis"]

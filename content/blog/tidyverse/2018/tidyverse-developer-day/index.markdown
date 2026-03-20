@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/ZMMXSRMSoI8
   author: rawpixel
-image: thumbnail-wd.jpg
+image: tidyverse-developer-day-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]

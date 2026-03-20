@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/ar7ZWQ-r87g
   author: Caitlin Wynne
-image: thumbnail-wd.jpg
+image: rlang-0-4-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "rlang"]

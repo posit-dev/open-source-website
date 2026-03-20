@@ -14,10 +14,11 @@ blogcategories:
   - Products and Technology
   - Open Source
 image: thumbnail.png
-ported_from: rstudio
-port_status: in-progress
+image-alt: GT hex.
 software: ["rmarkdown"]
 languages: ["R"]
+ported_from: rstudio
+port_status: in-progress
 ported_categories:
   - Packages
 ---

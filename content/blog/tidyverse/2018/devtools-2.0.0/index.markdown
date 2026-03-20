@@ -15,7 +15,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/wEJK4q_YlNQ
   author: Hunter Haley
-image: thumbnail-wd.jpg
+image: devtools-2-0-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools"]

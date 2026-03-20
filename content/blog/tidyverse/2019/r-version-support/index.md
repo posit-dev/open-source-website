@@ -11,7 +11,7 @@ categories:
 photo:
   url: https://unsplash.com/photos/GSCtoEEqntQ
   author: Ralph Howald
-image: thumbnail-wd.jpg
+image: r-version-support-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["R"]

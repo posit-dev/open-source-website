@@ -11,7 +11,7 @@ photo:
   author: Erika Lanpher
 categories:
   - Data Wrangling
-image: thumbnail-wd.jpg
+image: purrr-0.2.3-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "purrr"]

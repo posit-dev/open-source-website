@@ -11,9 +11,8 @@ tags:
   - Async
   - Packages
   - RStudio
-resources:
-  - name: hex sticker
-    src: a-plumber-hex.png
+image: a-plumber-hex.png
+image-alt: plumber hex sticker
 description: '{plumber} v1.1.0 is now on CRAN! In this post, we''ll highlight some
   of the most exciting new features in both the v1.1.0 and v1.0.0 releases, including:
   parallel endpoint execution, a tidy interface, and request body parsing'

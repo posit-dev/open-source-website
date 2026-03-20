@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/kU-WKSyTcp4
   author: Pau Casals
-image: thumbnail-wd.jpg
+image: dplyr-0-8-0-release-candidate-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]

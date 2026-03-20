@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/wEL2zPX3jDg
   author: Fabio Ballasina
-image: thumbnail-wd.jpg
+image: ggplot2-3-0-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]

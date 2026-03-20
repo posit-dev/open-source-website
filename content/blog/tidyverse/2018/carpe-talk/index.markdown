@@ -12,7 +12,7 @@ categories:
 photo:
   url: https://unsplash.com/photos/iIWCjgK3704
   author: Karine Germain
-image: thumbnail-wd.jpg
+image: carpe-talk-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 ported_categories:

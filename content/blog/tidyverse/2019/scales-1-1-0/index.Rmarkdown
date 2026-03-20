@@ -19,6 +19,7 @@ software: ["tidyverse", "ggplot2", "scales"]
 languages: ["R"]
 ported_categories:
   - package
+image: thumb-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

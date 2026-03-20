@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/-WAiyQLGEEc
   author: Element5 Digital
-image: thumbnail-wd.jpg
+image: dplyr-0-8-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]

@@ -18,6 +18,7 @@ ported_categories:
 tags:
   - tidyverse
   - Packages
+image: tidymodels-wd.png
 ---
 
 ```{r setup, include = FALSE}

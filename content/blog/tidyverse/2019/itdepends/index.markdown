@@ -15,7 +15,7 @@ tags:
   - rlib
   - tidyverse
   - Programming
-image: thumbnail-wd.jpg
+image: itdepends-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "itdepends"]

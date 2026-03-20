@@ -19,6 +19,7 @@ tags:
   - rlib
   - tidyverse
   - Packages
+image: processx-3.2.0-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

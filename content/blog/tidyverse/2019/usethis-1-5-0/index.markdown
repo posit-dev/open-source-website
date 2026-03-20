@@ -15,7 +15,7 @@ tags:
   - rlib
   - tidyverse
   - Packages
-image: thumbnail-wd.jpg
+image: usethis-1.5.0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "usethis"]

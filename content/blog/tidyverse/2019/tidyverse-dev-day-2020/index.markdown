@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/3YfSwCfJ6Do
   author: Garth Pratt
-image: thumbnail-wd.jpg
+image: thumb-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse"]

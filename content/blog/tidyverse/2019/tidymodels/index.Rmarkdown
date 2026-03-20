@@ -17,6 +17,7 @@ software: ["tidyverse", "tidymodels", "recipes", "embed", "rsample", "parsnip", 
 languages: ["R"]
 ported_categories:
   - package
+image: tidymodels-2019-09-wd.jpg
 ---
 
 We've sent a few packages to CRAN recently. Here's a recap of the changes (and some notes at the bottom): 

@@ -13,7 +13,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/pcoKkN3NsX0
   author: Modestas Urbonas
-image: thumbnail-wd.jpg
+image: glue-strings-and-tidy-eval-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["rlang", "glue"]

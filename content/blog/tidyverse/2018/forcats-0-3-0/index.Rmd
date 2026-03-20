@@ -11,7 +11,7 @@ photo:
   author: Nicole Law
 categories:
   - Data Wrangling
-image: thumbnail-wd.jpg
+image: forcats-0-3-0-wd.jpg
 ported_from: tidyverse
 port_status: raw
 software: ["tidyverse", "forcats"]

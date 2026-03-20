@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://www.pexels.com/photo/green-and-red-abstract-painting-1070534/
   author: Steve Johnson
-image: thumbnail-wd.jpg
+image: bigrquery-1-1-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "bigrquery", "dplyr", "dbplyr"]

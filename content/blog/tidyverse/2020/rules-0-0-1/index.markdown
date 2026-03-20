@@ -14,7 +14,7 @@ categories:
 tags:
   - tidyverse
   - Packages
-image: thumbnail-wd.jpg
+image: rules-0-0-1-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "rules"]

@@ -19,6 +19,7 @@ ported_categories:
 tags:
   - tidyverse
   - Packages
+image: ggplot2-tidy-evaluation-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

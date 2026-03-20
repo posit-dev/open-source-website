@@ -15,7 +15,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/3KEJMfoHoMY
   author: Graeme Nicholl
-image: thumbnail-wd.jpg
+image: roxygen2-6-1-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "roxygen2"]

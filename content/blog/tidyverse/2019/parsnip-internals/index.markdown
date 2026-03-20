@@ -17,7 +17,7 @@ categories:
 tags:
   - tidyverse
   - Packages
-image: thumbnail-wd.jpg
+image: parsnip-internals-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "parsnip", "tidymodels"]

@@ -21,6 +21,7 @@ tags:
   - AI
   - Torch
   - Tabular data
+image: thumbnail.jpeg
 ---
 
 ```{r setup, include=FALSE}

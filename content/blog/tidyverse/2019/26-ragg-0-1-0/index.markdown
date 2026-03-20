@@ -15,7 +15,7 @@ tags:
 photo:
   url: https://unsplash.com/photos/sBkK2VWV8Kw
   author: Gordon Williams
-image: thumbnail-wd.jpg
+image: ragg-0-1-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg"]

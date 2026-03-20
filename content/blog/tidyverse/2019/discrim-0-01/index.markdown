@@ -13,7 +13,7 @@ description: "The first version of discrim (0.0.1) is on CRAN. \n"
 photo:
   url: https://unsplash.com/photos/4op9_2Bt2Eg
   author: Teo Duldulao
-image: thumbnail-wd.jpg
+image: discrim-0-0-1-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "discrim", "tidymodels"]

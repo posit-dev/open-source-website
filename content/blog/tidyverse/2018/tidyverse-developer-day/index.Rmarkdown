@@ -18,6 +18,7 @@ software: ["tidyverse"]
 languages: ["R"]
 ported_categories:
   - other
+image: tidyverse-developer-day-wd.jpg
 ---
 
 ```{r setup, include = FALSE}

@@ -17,6 +17,7 @@ software: ["tidyverse", "haven"]
 languages: ["R"]
 ported_categories:
   - package
+image: thumb-wd.jpg
 ---
 
 ```{r, include = FALSE}

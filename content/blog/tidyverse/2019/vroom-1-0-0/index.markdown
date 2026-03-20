@@ -14,7 +14,7 @@ tags:
 photo:
   url: https://www.pexels.com/photo/12801/
   author: Chris Peeters
-image: thumbnail-wd.jpg
+image: vroom-1-0-0-wd.jpg
 ported_from: tidyverse
 port_status: in-progress
 software: ["tidyverse", "vroom"]
