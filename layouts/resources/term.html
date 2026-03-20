@@ -109,7 +109,7 @@
   {{ if eq .Params.resource_type "video" }}
   {{ $videoUrl := or .Params.video_url .Params.url .Params.external.url }}
   {{ with $videoUrl }}
-  <div class="mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white">
+  <div id="video-container" class="relative mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white">
     <div class="aspect-video w-full">
       {{ if or (in . "youtube.com") (in . "youtu.be") }}
       <!-- YouTube embed -->
@@ -147,6 +147,7 @@
       {{ end }}
     </div>
   </div>
+  <div id="video-placeholder" class="hidden mt-6 mx-2 md:mx-0"></div>
   {{ end }}
   {{ end }}
 
@@ -397,5 +398,317 @@
       {{ end }}
     </div>
     {{ end }}
+
+{{ if eq .Params.resource_type "video" }}
+<style>
+  /* Floating window: bar + video are both inside the container */
+  #video-container.video-floating {
+    position: fixed;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #333;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3), 0 4px 10px -6px rgba(0,0,0,0.2);
+    margin: 0;
+  }
+  /* Drag bar: hidden normally, in-flow first child when floating */
+  .video-drag-bar {
+    display: none;
+    height: 24px;
+    flex-shrink: 0;
+    background: #333;
+    cursor: grab;
+    position: relative;
+  }
+  #video-container.video-floating .video-drag-bar {
+    display: flex;
+    align-items: center;
+  }
+  .video-drag-bar:active { cursor: grabbing; }
+  .video-pip-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .video-pip-close:hover { color: #ccc; }
+  /* Video area fills remaining space below bar */
+  #video-container.video-floating .aspect-video {
+    flex: 1;
+    width: 100%;
+    aspect-ratio: auto;
+  }
+  #video-container.video-floating iframe,
+  #video-container.video-floating video {
+    width: 100%;
+    height: 100%;
+  }
+  /* Resize handles on the container corners (bar + video combined) */
+  .video-resize-handle {
+    display: none;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    z-index: 11;
+  }
+  #video-container.video-floating .video-resize-handle { display: block; }
+  .video-resize-handle.top-left     { top: -4px; left: -4px; cursor: nwse-resize; }
+  .video-resize-handle.top-right    { top: -4px; right: -4px; cursor: nesw-resize; }
+  .video-resize-handle.bottom-left  { bottom: -4px; left: -4px; cursor: nesw-resize; }
+  .video-resize-handle.bottom-right { bottom: -4px; right: -4px; cursor: nwse-resize; }
+  .video-iframe-shield {
+    display: none;
+    position: absolute;
+    inset: 0;
+    z-index: 9;
+  }
+</style>
+
+<script>
+(function() {
+  var container = document.getElementById('video-container');
+  var placeholder = document.getElementById('video-placeholder');
+  var videoArea = container.querySelector('.aspect-video');
+  if (!container || !placeholder || !videoArea) return;
+
+  var BAR_HEIGHT = 24;
+  var MIN_WIDTH = 240;
+
+  // Insert drag bar as first child (before the video area)
+  var dragBar = document.createElement('div');
+  dragBar.className = 'video-drag-bar';
+  var closeBtn = document.createElement('button');
+  closeBtn.className = 'video-pip-close';
+  closeBtn.setAttribute('aria-label', 'Close floating video');
+  closeBtn.innerHTML = '&times;';
+  dragBar.appendChild(closeBtn);
+  container.insertBefore(dragBar, videoArea);
+
+  // Resize handles on the container edges
+  ['top-left','top-right','bottom-left','bottom-right'].forEach(function(pos) {
+    var handle = document.createElement('div');
+    handle.className = 'video-resize-handle ' + pos;
+    handle.dataset.handle = pos;
+    container.appendChild(handle);
+  });
+
+  // Iframe shield to block pointer events during drag/resize
+  var shield = document.createElement('div');
+  shield.className = 'video-iframe-shield';
+  container.appendChild(shield);
+
+  var isFloating = false;
+  var isDismissed = false;
+  var lastPos = null;
+
+  function getDefaultWidth() {
+    var vw = window.innerWidth;
+    if (vw < 640) return 0;
+    return vw * 0.30;
+  }
+
+  function clampPos(left, top, w, h) {
+    left = Math.max(0, Math.min(left, window.innerWidth - w));
+    top = Math.max(0, Math.min(top, window.innerHeight - h));
+    return { left: left, top: top };
+  }
+
+  function floatVideo() {
+    if (isFloating) return;
+    var rect = container.getBoundingClientRect();
+    placeholder.style.height = rect.height + 'px';
+    placeholder.classList.remove('hidden');
+
+    var w, totalH, top, left;
+    if (lastPos) {
+      w = lastPos.width;
+      totalH = lastPos.height;
+      var clamped = clampPos(lastPos.left, lastPos.top, w, totalH);
+      left = clamped.left;
+      top = clamped.top;
+    } else {
+      w = getDefaultWidth();
+      if (w === 0) return;
+      totalH = BAR_HEIGHT + w / (16 / 9);
+      left = window.innerWidth - w - 20;
+      top = window.innerHeight - totalH - 20;
+    }
+
+    container.classList.add('video-floating');
+    container.style.width = w + 'px';
+    container.style.height = totalH + 'px';
+    container.style.left = left + 'px';
+    container.style.top = top + 'px';
+    isFloating = true;
+  }
+
+  function savePos() {
+    if (!isFloating) return;
+    lastPos = {
+      top: parseFloat(container.style.top),
+      left: parseFloat(container.style.left),
+      width: container.offsetWidth,
+      height: container.offsetHeight
+    };
+  }
+
+  function unfloatVideo() {
+    if (!isFloating) return;
+    savePos();
+    container.classList.remove('video-floating');
+    container.style.cssText = '';
+    placeholder.classList.add('hidden');
+    placeholder.style.height = '';
+    isFloating = false;
+    isDismissed = false;
+  }
+
+  // Sentinel marks the original video position
+  var sentinel = document.createElement('div');
+  sentinel.style.height = '1px';
+  container.parentNode.insertBefore(sentinel, container);
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting && !isDismissed) {
+        floatVideo();
+      } else if (entry.isIntersecting) {
+        unfloatVideo();
+      }
+    });
+  }, { threshold: 0 });
+  observer.observe(sentinel);
+
+  // Close button
+  closeBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    isDismissed = true;
+    unfloatVideo();
+  });
+
+  // ---- Dragging ----
+  var dragState = null;
+
+  function onDragStart(e) {
+    if (!isFloating || e.target === closeBtn) return;
+    e.preventDefault();
+    shield.style.display = 'block';
+    var rect = container.getBoundingClientRect();
+    dragState = { startX: e.clientX, startY: e.clientY, origLeft: rect.left, origTop: rect.top };
+    document.addEventListener('pointermove', onDragMove);
+    document.addEventListener('pointerup', onDragEnd);
+  }
+
+  function onDragMove(e) {
+    if (!dragState) return;
+    var dx = e.clientX - dragState.startX;
+    var dy = e.clientY - dragState.startY;
+    var w = container.offsetWidth;
+    var h = container.offsetHeight;
+    var clamped = clampPos(dragState.origLeft + dx, dragState.origTop + dy, w, h);
+    container.style.left = clamped.left + 'px';
+    container.style.top = clamped.top + 'px';
+  }
+
+  function onDragEnd() {
+    dragState = null;
+    shield.style.display = 'none';
+    document.removeEventListener('pointermove', onDragMove);
+    document.removeEventListener('pointerup', onDragEnd);
+  }
+
+  dragBar.addEventListener('pointerdown', onDragStart);
+
+  // ---- Resizing ----
+  var resizeState = null;
+
+  function onResizeStart(e) {
+    if (!isFloating) return;
+    e.preventDefault();
+    e.stopPropagation();
+    shield.style.display = 'block';
+    var rect = container.getBoundingClientRect();
+    resizeState = {
+      handle: e.target.dataset.handle,
+      startX: e.clientX,
+      startY: e.clientY,
+      origWidth: rect.width,
+      origHeight: rect.height,
+      origLeft: rect.left,
+      origTop: rect.top
+    };
+    document.addEventListener('pointermove', onResizeMove);
+    document.addEventListener('pointerup', onResizeEnd);
+  }
+
+  function onResizeMove(e) {
+    if (!resizeState) return;
+    var s = resizeState;
+    var dx = e.clientX - s.startX;
+    var dy = e.clientY - s.startY;
+    var newWidth, newLeft, newTop;
+
+    if (s.handle === 'bottom-right') {
+      newWidth = s.origWidth + dx;
+      newLeft = s.origLeft;
+      newTop = s.origTop;
+    } else if (s.handle === 'bottom-left') {
+      newWidth = s.origWidth - dx;
+      newLeft = s.origLeft + dx;
+      newTop = s.origTop;
+    } else if (s.handle === 'top-right') {
+      newWidth = s.origWidth + dx;
+      newLeft = s.origLeft;
+      newTop = s.origTop + dy;
+    } else {
+      newWidth = s.origWidth - dx;
+      newLeft = s.origLeft + dx;
+      newTop = s.origTop + dy;
+    }
+
+    var maxWidth = window.innerWidth * 0.8;
+    newWidth = Math.max(MIN_WIDTH, Math.min(newWidth, maxWidth));
+    var newHeight = BAR_HEIGHT + newWidth / (16 / 9);
+
+    // Recalculate position for anchored corners after width clamping
+    if (s.handle === 'bottom-left' || s.handle === 'top-left') {
+      newLeft = s.origLeft + s.origWidth - newWidth;
+    }
+    if (s.handle === 'top-left' || s.handle === 'top-right') {
+      newTop = s.origTop + s.origHeight - newHeight;
+    }
+
+    var clamped = clampPos(newLeft, newTop, newWidth, newHeight);
+    container.style.width = newWidth + 'px';
+    container.style.height = newHeight + 'px';
+    container.style.left = clamped.left + 'px';
+    container.style.top = clamped.top + 'px';
+  }
+
+  function onResizeEnd() {
+    resizeState = null;
+    shield.style.display = 'none';
+    document.removeEventListener('pointermove', onResizeMove);
+    document.removeEventListener('pointerup', onResizeEnd);
+  }
+
+  container.querySelectorAll('.video-resize-handle').forEach(function(handle) {
+    handle.addEventListener('pointerdown', onResizeStart);
+  });
+})();
+</script>
+{{ end }}
 </div>
 {{ end }}
