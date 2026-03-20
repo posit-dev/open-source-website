@@ -12,7 +12,6 @@ author:
     affiliation_url: http://curso-r.com/
 people:
   - Daniel Falbel
-image: thumbnail.png
 ported_from: ai
 port_status: in-progress
 software: ["keras3"]

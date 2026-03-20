@@ -17,10 +17,8 @@ tags:
 blogcategories:
   - Products and Technology
   - Open Source
-resources:
-  - name: sparklyr
-    src: sparklyr.png
-    title: SparklyR
+image: sparklyr.png
+image-alt: SparklyR
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]

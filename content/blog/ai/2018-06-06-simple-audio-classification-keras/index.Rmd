@@ -8,7 +8,6 @@ author:
     affiliation: Curso-R
     affiliation_url: http://curso-r.com/
 date: 06-06-2018
-preview: https://upload.wikimedia.org/wikipedia/commons/6/61/FFT-Time-Frequency-View.png
 categories:
   - Machine Learning
 format: hugo-md
