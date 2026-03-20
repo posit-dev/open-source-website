@@ -16,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 176
   languages:
   - HTML
-  last_updated: '2026-03-05T16:10:43.676636+00:00'
+  last_updated: '2026-03-20T10:27:32.970796+00:00'
   people:
   - JJ Allaire
   repo: rstudio/rmarkdown-website-examples

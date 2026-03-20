@@ -21,10 +21,10 @@ website: https://pkgs.rstudio.com/flexdashboard/
 external:  # updated automatically, do not edit
   description: Easy interactive dashboards for R
   first_commit: '2016-02-03T18:41:52+00:00'
-  forks: 302
+  forks: 303
   languages:
   - JavaScript
-  last_updated: '2026-03-05T16:10:30.721604+00:00'
+  last_updated: '2026-03-20T10:27:32.818779+00:00'
   latest_release: '2026-01-28T20:55:02+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Rich Iannone
   readme_image: man/figures/logo.png
   repo: rstudio/flexdashboard
-  stars: 847
+  stars: 848
   title: flexdashboard
   website: https://pkgs.rstudio.com/flexdashboard/
 ---

@@ -14,7 +14,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - C
-  last_updated: '2026-03-05T16:08:43.457276+00:00'
+  last_updated: '2026-03-20T10:27:30.740918+00:00'
   license: BSD-2-Clause
   repo: rstudio/rscrypt
   stars: 33

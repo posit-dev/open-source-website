@@ -18,10 +18,10 @@ website: https://pkgs.rstudio.com/rticles/
 external:  # updated automatically, do not edit
   description: LaTeX Journal Article Templates for R Markdown
   first_commit: '2014-03-14T18:52:20+00:00'
-  forks: 522
+  forks: 521
   languages:
   - TeX
-  last_updated: '2026-03-05T16:08:55.969165+00:00'
+  last_updated: '2026-03-20T10:27:30.823746+00:00'
   latest_release: '2024-04-07T12:17:21+00:00'
   people:
   - Christophe Dervieux
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   readme_image: man/figures/logo.png
   repo: rstudio/rticles
-  stars: 1535
+  stars: 1538
   title: rticles
   website: https://pkgs.rstudio.com/rticles/
 ---

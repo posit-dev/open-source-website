@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 31
   languages:
   - Rust
-  last_updated: '2026-03-05T16:30:01.839115+00:00'
+  last_updated: '2026-03-20T10:27:56.853867+00:00'
   latest_release: '2025-10-22T17:35:17+00:00'
   license: MIT
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   readme_image: tools/rig-app.png
   repo: r-lib/rig
-  stars: 895
+  stars: 903
   title: rig
   website: ''
 ---

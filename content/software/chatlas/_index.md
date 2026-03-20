@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   forks: 21
   languages:
   - Python
-  last_updated: '2026-03-05T16:04:55.664983+00:00'
+  last_updated: '2026-03-20T10:27:14.897596+00:00'
   latest_release: '2026-02-27T15:13:17+00:00'
   license: MIT
   people:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Neal Richardson
   readme_image: https://posit-dev.github.io/chatlas/logos/hex/logo.png
   repo: posit-dev/chatlas
-  stars: 150
+  stars: 151
   title: chatlas
   website: https://posit-dev.github.io/chatlas/
 ---

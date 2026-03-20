@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 31
   languages:
   - R
-  last_updated: '2026-03-05T16:17:13.747011+00:00'
+  last_updated: '2026-03-20T10:27:36.906649+00:00'
   latest_release: '2025-12-13T20:36:56+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: rstudio/vetiver-r
-  stars: 197
+  stars: 198
   title: vetiver-r
   website: https://rstudio.github.io/vetiver-r/
 ---

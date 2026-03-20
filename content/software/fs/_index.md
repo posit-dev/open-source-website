@@ -4,7 +4,7 @@ description: Provide cross platform file operations based on libuv.
 github: r-lib/fs
 image: logo.png
 languages:
-- C
+- R
 latest_release: '2025-04-12T09:38:14+00:00'
 people:
 - Gábor Csárdi
@@ -23,8 +23,8 @@ external:  # updated automatically, do not edit
   first_commit: '2017-12-13T21:01:16+00:00'
   forks: 82
   languages:
-  - C
-  last_updated: '2026-03-05T16:27:47.213202+00:00'
+  - R
+  last_updated: '2026-03-20T10:27:54.174790+00:00'
   latest_release: '2025-04-12T09:38:14+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/fs
-  stars: 380
+  stars: 382
   title: fs
   website: https://fs.r-lib.org/
 ---

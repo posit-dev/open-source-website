@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - R
-  last_updated: '2026-03-05T16:30:07.141403+00:00'
+  last_updated: '2026-03-20T10:27:56.924853+00:00'
   latest_release: '2026-03-02T23:38:02+00:00'
   license: NOASSERTION
   people:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/mirai
-  stars: 302
+  stars: 307
   title: mirai
   website: https://mirai.r-lib.org/
 ---

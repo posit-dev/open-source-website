@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 79
   languages:
   - R
-  last_updated: '2026-03-05T16:31:26.904378+00:00'
+  last_updated: '2026-03-20T10:27:58.941427+00:00'
   latest_release: '2026-02-24T17:22:15+00:00'
   license: LGPL-2.1
   people:
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   - Jeroen Janssens
   repo: r-dbi/DBI
-  stars: 314
+  stars: 316
   title: DBI
   website: https://dbi.r-dbi.org
 ---

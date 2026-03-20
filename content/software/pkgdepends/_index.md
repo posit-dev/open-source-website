@@ -19,10 +19,10 @@ website: https://r-lib.github.io/pkgdepends/
 external:  # updated automatically, do not edit
   description: R Package Dependency Resolution
   first_commit: '2017-09-09T09:17:38+00:00'
-  forks: 39
+  forks: 40
   languages:
   - C
-  last_updated: '2026-03-05T16:27:34.053367+00:00'
+  last_updated: '2026-03-20T10:27:53.963647+00:00'
   latest_release: '2025-05-27T06:57:46+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   readme_image: /Users/gaborcsardi/works/pkgdepends/man/figures/README/deps.svg
   repo: r-lib/pkgdepends
-  stars: 129
+  stars: 130
   title: pkgdepends
   website: https://r-lib.github.io/pkgdepends/
 ---

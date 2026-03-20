@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   forks: 3
   languages:
   - R
-  last_updated: '2026-03-05T16:28:12.820784+00:00'
+  last_updated: '2026-03-20T10:27:54.701930+00:00'
   latest_release: '2025-09-11T09:52:03+00:00'
   license: NOASSERTION
   people:
   - Lionel Henry
   - Charlie Gao
   repo: r-lib/carrier
-  stars: 67
+  stars: 69
   title: carrier
   website: ''
 ---

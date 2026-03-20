@@ -16,10 +16,10 @@ website: http://cran.r-project.org/package=RMySQL
 external:  # updated automatically, do not edit
   description: Legacy DBI interface for MySQL
   first_commit: '2012-01-12T17:27:03+00:00'
-  forks: 108
+  forks: 107
   languages:
   - C
-  last_updated: '2026-03-05T16:31:18.514301+00:00'
+  last_updated: '2026-03-20T10:27:58.798258+00:00'
   latest_release: '2022-12-05T23:01:14+00:00'
   people:
   - Jeroen Ooms

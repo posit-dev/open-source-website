@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 54
   languages:
   - C++
-  last_updated: '2026-03-05T16:29:26.495396+00:00'
+  last_updated: '2026-03-20T10:27:56.173998+00:00'
   latest_release: '2026-01-20T19:57:34+00:00'
   license: NOASSERTION
   people:
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Thomas Lin Pedersen
   - Neal Richardson
   repo: r-lib/cpp11
-  stars: 222
+  stars: 224
   title: cpp11
   website: https://cpp11.r-lib.org/
 ---

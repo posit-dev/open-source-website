@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-03-05T16:28:57.882469+00:00'
+  last_updated: '2026-03-20T10:27:55.515527+00:00'
   latest_release: '2025-11-14T20:31:30+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - Jeroen Janssens
   repo: r-lib/slider
-  stars: 310
+  stars: 312
   title: slider
   website: https://slider.r-lib.org
 ---

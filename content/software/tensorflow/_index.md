@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 318
   languages:
   - R
-  last_updated: '2026-03-05T16:11:06.512953+00:00'
+  last_updated: '2026-03-20T10:27:33.234799+00:00'
   latest_release: '2025-08-18T20:19:49+00:00'
   license: Apache-2.0
   people:
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   - Daniel Falbel
   repo: rstudio/tensorflow
-  stars: 1342
+  stars: 1340
   title: tensorflow
   website: https://tensorflow.rstudio.com
 ---

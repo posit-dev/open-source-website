@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 72
   languages:
   - C
-  last_updated: '2026-03-05T16:26:28.047982+00:00'
+  last_updated: '2026-03-20T10:27:52.883559+00:00'
   latest_release: '2026-01-27T14:09:03+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/vctrs
-  stars: 301
+  stars: 302
   title: vctrs
   website: https://vctrs.r-lib.org
 ---

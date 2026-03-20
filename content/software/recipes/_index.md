@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   forks: 123
   languages:
   - R
-  last_updated: '2026-03-05T16:22:08.720415+00:00'
+  last_updated: '2026-03-20T10:27:44.447109+00:00'
   latest_release: '2025-05-21T17:05:49+00:00'
   license: NOASSERTION
   people:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/recipes
-  stars: 613
+  stars: 612
   title: recipes
   website: https://recipes.tidymodels.org
 ---

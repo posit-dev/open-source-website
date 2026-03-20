@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 39
   languages:
   - R
-  last_updated: '2026-03-05T16:13:26.239172+00:00'
+  last_updated: '2026-03-20T10:27:34.565297+00:00'
   latest_release: '2024-11-16T17:56:25+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   readme_image: man/figures/logo.svg
   repo: rstudio/fontawesome
-  stars: 299
+  stars: 298
   title: fontawesome
   website: https://rstudio.github.io/fontawesome/
 ---

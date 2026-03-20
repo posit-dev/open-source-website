@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 49
   languages:
   - R
-  last_updated: '2026-03-05T16:21:20.748700+00:00'
+  last_updated: '2026-03-20T10:27:41.052805+00:00'
   latest_release: '2025-09-10T06:09:30+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: tidyverse/googledrive
-  stars: 339
+  stars: 340
   title: googledrive
   website: https://googledrive.tidyverse.org/
 ---

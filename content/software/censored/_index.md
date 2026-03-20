@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 15
   languages:
   - R
-  last_updated: '2026-03-05T16:23:32.897681+00:00'
+  last_updated: '2026-03-20T10:27:45.213859+00:00'
   latest_release: '2025-02-14T20:49:56+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Julia Silge
   readme_image: man/figures/logo.png
   repo: tidymodels/censored
-  stars: 122
+  stars: 123
   title: censored
   website: https://censored.tidymodels.org/
 ---

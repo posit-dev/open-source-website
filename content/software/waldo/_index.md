@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 21
   languages:
   - R
-  last_updated: '2026-03-05T16:29:10.638360+00:00'
+  last_updated: '2026-03-20T10:27:55.747379+00:00'
   latest_release: '2025-07-11T13:26:57+00:00'
   license: NOASSERTION
   people:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   readme_image: man/figures/README/unnamed-chunk-2.svg
   repo: r-lib/waldo
-  stars: 300
+  stars: 301
   title: waldo
   website: http://waldo.r-lib.org/
 ---

@@ -17,10 +17,10 @@ website: https://tidyclust.tidymodels.org/
 external:  # updated automatically, do not edit
   description: A tidy unified interface to clustering models
   first_commit: '2021-11-19T19:52:49+00:00'
-  forks: 21
+  forks: 20
   languages:
   - R
-  last_updated: '2026-03-05T16:23:49.720821+00:00'
+  last_updated: '2026-03-20T10:27:45.382868+00:00'
   latest_release: '2025-01-27T23:10:34+00:00'
   license: NOASSERTION
   people:

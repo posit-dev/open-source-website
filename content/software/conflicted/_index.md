@@ -20,14 +20,14 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-03-05T16:28:01.929940+00:00'
+  last_updated: '2026-03-20T10:27:54.482961+00:00'
   latest_release: '2023-01-31T19:50:16+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Lionel Henry
   repo: r-lib/conflicted
-  stars: 254
+  stars: 253
   title: conflicted
   website: https://conflicted.r-lib.org/
 ---

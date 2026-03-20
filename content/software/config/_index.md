@@ -15,7 +15,7 @@ external:  # updated automatically, do not edit
   forks: 31
   languages:
   - R
-  last_updated: '2026-03-05T16:10:52.727378+00:00'
+  last_updated: '2026-03-20T10:27:33.086412+00:00'
   people:
   - JJ Allaire
   readme_image: man/figures/logo.svg

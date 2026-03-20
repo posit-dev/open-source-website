@@ -34,10 +34,10 @@ override:
 external:  # updated automatically, do not edit
   description: Positron, a next-generation data science IDE
   first_commit: '2022-05-24T20:22:25+00:00'
-  forks: 141
+  forks: 142
   languages:
   - TypeScript
-  last_updated: '2026-03-05T16:03:04.986230+00:00'
+  last_updated: '2026-03-20T10:27:13.894652+00:00'
   latest_release: '2026-02-26T00:19:35+00:00'
   license: NOASSERTION
   people:
@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   readme_image: positron-product-icons/positron.png
   repo: posit-dev/positron
-  stars: 3992
+  stars: 4012
   title: positron
   website: https://positron.posit.co
 ---

@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 18
   languages:
   - C++
-  last_updated: '2026-03-05T16:28:55.490559+00:00'
+  last_updated: '2026-03-20T10:27:55.467040+00:00'
   latest_release: '2025-10-01T11:54:44+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: r-lib/systemfonts
-  stars: 96
+  stars: 97
   title: systemfonts
   website: https://systemfonts.r-lib.org
 ---

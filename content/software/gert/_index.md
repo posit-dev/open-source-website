@@ -4,7 +4,7 @@ description: Simple git client for R
 github: r-lib/gert
 image: logo.png
 languages:
-- C
+- R
 latest_release: '2024-07-18T11:32:08+00:00'
 people:
 - Jeroen Ooms
@@ -17,10 +17,10 @@ website: https://docs.ropensci.org/gert/
 external:  # updated automatically, do not edit
   description: Simple git client for R
   first_commit: '2018-10-19T09:11:55+00:00'
-  forks: 36
+  forks: 38
   languages:
-  - C
-  last_updated: '2026-03-05T16:28:23.657716+00:00'
+  - R
+  last_updated: '2026-03-20T10:27:54.832102+00:00'
   latest_release: '2024-07-18T11:32:08+00:00'
   license: NOASSERTION
   people:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   readme_image: man/figures/logo.png
   repo: r-lib/gert
-  stars: 156
+  stars: 157
   title: gert
   website: https://docs.ropensci.org/gert/
 ---

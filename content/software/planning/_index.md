@@ -16,7 +16,7 @@ external:  # updated automatically, do not edit
   description: Documents to plan and discuss future development
   first_commit: '2020-04-24T19:51:08+00:00'
   forks: 4
-  last_updated: '2026-03-05T16:23:19.020772+00:00'
+  last_updated: '2026-03-20T10:27:45.065342+00:00'
   license: MIT
   people:
   - Max Kuhn

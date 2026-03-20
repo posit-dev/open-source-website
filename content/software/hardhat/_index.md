@@ -21,10 +21,10 @@ website: https://hardhat.tidymodels.org
 external:  # updated automatically, do not edit
   description: Construct Modeling Packages
   first_commit: '2019-02-11T16:31:00+00:00'
-  forks: 21
+  forks: 20
   languages:
   - R
-  last_updated: '2026-03-05T16:22:44.898031+00:00'
+  last_updated: '2026-03-20T10:27:44.753348+00:00'
   latest_release: '2025-08-20T08:57:28+00:00'
   license: NOASSERTION
   people:

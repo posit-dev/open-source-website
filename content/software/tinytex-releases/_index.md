@@ -17,14 +17,14 @@ external:  # updated automatically, do not edit
   forks: 34
   languages:
   - PowerShell
-  last_updated: '2026-03-05T16:16:31.857375+00:00'
+  last_updated: '2026-03-20T10:27:36.487088+00:00'
   latest_release: '2026-03-02T11:24:43+00:00'
   license: GPL-2.0
   people:
   - Christophe Dervieux
   readme_image: https://yihui.org/images/logo-tinytex.png
   repo: rstudio/tinytex-releases
-  stars: 356
+  stars: 360
   title: tinytex-releases
   website: https://yihui.org/tinytex/
 ---

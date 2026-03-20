@@ -20,10 +20,10 @@ website: https://pak.r-lib.org
 external:  # updated automatically, do not edit
   description: A fresh approach to package installation
   first_commit: '2017-11-02T19:33:56+00:00'
-  forks: 78
+  forks: 77
   languages:
   - C
-  last_updated: '2026-03-05T16:27:38.946207+00:00'
+  last_updated: '2026-03-20T10:27:54.021434+00:00'
   latest_release: '2025-12-21T19:30:49+00:00'
   people:
   - Gábor Csárdi
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   readme_image: man/figures/cran.svg
   repo: r-lib/pak
-  stars: 787
+  stars: 792
   title: pak
   website: https://pak.r-lib.org
 ---

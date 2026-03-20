@@ -15,11 +15,11 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - Python
-  last_updated: '2026-03-05T16:05:17.929191+00:00'
+  last_updated: '2026-03-20T10:27:15.100722+00:00'
   latest_release: '2026-03-02T18:19:46+00:00'
   license: MIT
   repo: posit-dev/orbital
-  stars: 111
+  stars: 113
   title: orbital
   website: https://posit-dev.github.io/orbital/
 ---

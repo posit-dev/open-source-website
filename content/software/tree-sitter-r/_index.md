@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 38
   languages:
   - R
-  last_updated: '2026-03-05T16:29:46.708103+00:00'
+  last_updated: '2026-03-20T10:27:56.545432+00:00'
   latest_release: '2025-06-05T19:17:25+00:00'
   license: MIT
   people:
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Jenny Bryan
   repo: r-lib/tree-sitter-r
-  stars: 127
+  stars: 129
   title: tree-sitter-r
   website: https://r-lib.github.io/tree-sitter-r/
 ---

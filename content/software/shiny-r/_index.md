@@ -31,10 +31,10 @@ override:
 external:  # updated automatically, do not edit
   description: Easy interactive web applications with R
   first_commit: '2012-06-20T18:45:11+00:00'
-  forks: 1885
+  forks: 1884
   languages:
   - R
-  last_updated: '2026-03-05T16:08:07.425318+00:00'
+  last_updated: '2026-03-20T10:27:30.126551+00:00'
   latest_release: '2026-02-24T20:58:46+00:00'
   license: NOASSERTION
   people:
@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   readme_image: man/figures/logo.png
   repo: rstudio/shiny
-  stars: 5619
+  stars: 5634
   title: shiny
   website: https://shiny.posit.co/
 ---

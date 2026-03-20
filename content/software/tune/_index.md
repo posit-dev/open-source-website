@@ -23,10 +23,10 @@ website: https://tune.tidymodels.org
 external:  # updated automatically, do not edit
   description: Tools for tidy parameter tuning
   first_commit: '2019-08-09T20:49:40+00:00'
-  forks: 47
+  forks: 48
   languages:
   - R
-  last_updated: '2026-03-05T16:22:56.631875+00:00'
+  last_updated: '2026-03-20T10:27:44.854843+00:00'
   latest_release: '2025-10-17T15:54:07+00:00'
   license: NOASSERTION
   people:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/tune
-  stars: 324
+  stars: 326
   title: tune
   website: https://tune.tidymodels.org
 ---

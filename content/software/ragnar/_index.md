@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 22
   languages:
   - R
-  last_updated: '2026-03-05T16:21:51.365574+00:00'
+  last_updated: '2026-03-20T10:27:41.366473+00:00'
   latest_release: '2026-01-23T17:26:32+00:00'
   license: NOASSERTION
   people:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidyverse/ragnar
-  stars: 167
+  stars: 169
   title: ragnar
   website: http://ragnar.tidyverse.org
 ---

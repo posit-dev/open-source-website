@@ -23,10 +23,10 @@ website: https://pins.rstudio.com
 external:  # updated automatically, do not edit
   description: Pin, discover, and share resources
   first_commit: '2019-03-22T16:06:23+00:00'
-  forks: 67
+  forks: 66
   languages:
   - R
-  last_updated: '2026-03-05T16:14:45.038961+00:00'
+  last_updated: '2026-03-20T10:27:35.369082+00:00'
   latest_release: '2025-04-30T12:56:12+00:00'
   license: NOASSERTION
   people:

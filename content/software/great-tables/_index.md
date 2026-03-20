@@ -21,10 +21,10 @@ override:
 external:  # updated automatically, do not edit
   description: Make awesome display tables using Python
   first_commit: '2022-05-06T20:11:05+00:00'
-  forks: 119
+  forks: 121
   languages:
   - Python
-  last_updated: '2026-03-05T16:03:01.562432+00:00'
+  last_updated: '2026-03-20T10:27:13.874745+00:00'
   latest_release: '2026-03-02T20:52:39+00:00'
   license: MIT
   people:
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Carlos Scheidegger
   readme_image: https://posit-dev.github.io/great-tables/assets/GT_logo.svg
   repo: posit-dev/great-tables
-  stars: 2614
+  stars: 2623
   title: great-tables
   website: https://posit-dev.github.io/great-tables/
 ---

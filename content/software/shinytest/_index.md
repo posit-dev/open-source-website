@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 51
   languages:
   - JavaScript
-  last_updated: '2026-03-05T16:11:08.942253+00:00'
+  last_updated: '2026-03-20T10:27:33.254676+00:00'
   latest_release: '2024-03-02T17:37:21+00:00'
   license: NOASSERTION
   people:
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   - Joe Cheng
   repo: rstudio/shinytest
-  stars: 226
+  stars: 225
   title: shinytest
   website: https://rstudio.github.io/shinytest/
 ---

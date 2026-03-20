@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-03-05T16:05:25.058636+00:00'
+  last_updated: '2026-03-20T10:27:15.162070+00:00'
   latest_release: '2025-10-29T20:23:51+00:00'
   license: NOASSERTION
   people:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: posit-dev/mcptools
-  stars: 158
+  stars: 161
   title: mcptools
   website: https://posit-dev.github.io/mcptools/
 ---

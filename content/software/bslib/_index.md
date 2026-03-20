@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 67
   languages:
   - SCSS
-  last_updated: '2026-03-05T16:15:29.225165+00:00'
+  last_updated: '2026-03-20T10:27:35.809513+00:00'
   latest_release: '2026-01-26T16:25:01+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Carlos Scheidegger
   readme_image: man/figures/logo.png
   repo: rstudio/bslib
-  stars: 551
+  stars: 552
   title: bslib
   website: https://rstudio.github.io/bslib/
 ---

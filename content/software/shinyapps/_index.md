@@ -14,7 +14,7 @@ external:  # updated automatically, do not edit
   description: Deploy Shiny applications to ShinyApps
   first_commit: '2013-09-27T16:16:55+00:00'
   forks: 109
-  last_updated: '2026-03-05T16:08:32.756886+00:00'
+  last_updated: '2026-03-20T10:27:30.628647+00:00'
   people:
   - JJ Allaire
   - Joe Cheng

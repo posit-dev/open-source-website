@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 1346
   languages:
   - CSS
-  last_updated: '2026-03-05T16:10:14.120866+00:00'
+  last_updated: '2026-03-20T10:27:32.455783+00:00'
   license: CC0-1.0
   people:
   - JJ Allaire

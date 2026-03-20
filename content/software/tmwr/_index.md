@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 314
   languages:
   - RMarkdown
-  last_updated: '2026-03-05T16:23:10.635370+00:00'
+  last_updated: '2026-03-20T10:27:44.983750+00:00'
   latest_release: '2022-07-22T15:57:37+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   - Mine Çetinkaya-Rundel
   repo: tidymodels/TMwR
-  stars: 623
+  stars: 622
   title: TMwR
   website: https://tmwr.org
 ---

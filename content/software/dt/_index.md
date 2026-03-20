@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 179
   languages:
   - JavaScript
-  last_updated: '2026-03-05T16:09:36.322164+00:00'
+  last_updated: '2026-03-20T10:27:31.427946+00:00'
   latest_release: '2025-09-03T13:49:20+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Garrick Aden-Buie
   - Winston Chang
   repo: rstudio/DT
-  stars: 617
+  stars: 618
   title: DT
   website: https://rstudio.github.io/DT/
 ---

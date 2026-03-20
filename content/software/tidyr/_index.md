@@ -25,10 +25,10 @@ website: https://tidyr.tidyverse.org/
 external:  # updated automatically, do not edit
   description: Tidy Messy Data
   first_commit: '2014-06-10T14:24:33+00:00'
-  forks: 421
+  forks: 419
   languages:
   - R
-  last_updated: '2026-03-05T16:20:28.491385+00:00'
+  last_updated: '2026-03-20T10:27:40.659873+00:00'
   latest_release: '2026-01-09T14:13:04+00:00'
   license: NOASSERTION
   people:

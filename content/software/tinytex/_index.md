@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 124
   languages:
   - R
-  last_updated: '2026-03-05T16:12:44.076624+00:00'
+  last_updated: '2026-03-20T10:27:34.158577+00:00'
   latest_release: '2025-11-19T14:28:59+00:00'
   license: NOASSERTION
   people:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: https://yihui.org/images/logo-tinytex.png
   repo: rstudio/tinytex
-  stars: 1092
+  stars: 1102
   title: tinytex
   website: https://yihui.org/tinytex/
 ---

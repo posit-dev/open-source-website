@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - TypeScript
-  last_updated: '2026-03-05T16:03:07.578855+00:00'
+  last_updated: '2026-03-20T10:27:13.914698+00:00'
   latest_release: '2025-06-12T21:06:04+00:00'
   license: MIT
   people:

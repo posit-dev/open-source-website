@@ -22,10 +22,10 @@ website: ''
 external:  # updated automatically, do not edit
   description: ''
   first_commit: '2013-10-20T17:05:23+00:00'
-  forks: 3722
+  forks: 3718
   languages:
   - JavaScript
-  last_updated: '2026-03-05T16:08:38.187601+00:00'
+  last_updated: '2026-03-20T10:27:30.676924+00:00'
   latest_release: '2014-07-23T18:26:26+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - JJ Allaire
   repo: rstudio/shiny-examples
-  stars: 2025
+  stars: 2026
   title: shiny-examples
   website: ''
 ---

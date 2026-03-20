@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 55
   languages:
   - R
-  last_updated: '2026-03-05T16:25:11.642524+00:00'
+  last_updated: '2026-03-20T10:27:51.665148+00:00'
   latest_release: '2026-01-29T22:39:25+00:00'
   license: NOASSERTION
   people:
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Joe Cheng
   repo: r-lib/gmailr
-  stars: 236
+  stars: 237
   title: gmailr
   website: https://gmailr.r-lib.org
 ---

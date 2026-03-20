@@ -20,10 +20,10 @@ website: http://rstudio.github.io/leaflet/
 external:  # updated automatically, do not edit
   description: R Interface to Leaflet Maps
   first_commit: '2014-11-11T21:25:54+00:00'
-  forks: 506
+  forks: 505
   languages:
   - JavaScript
-  last_updated: '2026-03-05T16:09:33.261895+00:00'
+  last_updated: '2026-03-20T10:27:31.392529+00:00'
   latest_release: '2025-09-04T11:43:34+00:00'
   license: NOASSERTION
   people:
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Carson Sievert
   - Christophe Dervieux
   repo: rstudio/leaflet
-  stars: 838
+  stars: 837
   title: leaflet
   website: http://rstudio.github.io/leaflet/
 ---

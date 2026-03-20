@@ -22,10 +22,10 @@ external:  # updated automatically, do not edit
   description: Schedule an R function or formula to run after a specified period of
     time
   first_commit: '2017-03-17T21:11:40+00:00'
-  forks: 31
+  forks: 30
   languages:
   - C++
-  last_updated: '2026-03-05T16:27:06.581632+00:00'
+  last_updated: '2026-03-20T10:27:53.480164+00:00'
   latest_release: '2026-03-05T12:53:35+00:00'
   license: NOASSERTION
   people:

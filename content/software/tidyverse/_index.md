@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 292
   languages:
   - R
-  last_updated: '2026-03-05T16:21:04.174736+00:00'
+  last_updated: '2026-03-20T10:27:40.929587+00:00'
   latest_release: '2023-02-21T13:20:32+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidyverse/tidyverse
-  stars: 1779
+  stars: 1780
   title: tidyverse
   website: https://tidyverse.tidyverse.org
 ---

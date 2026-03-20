@@ -26,10 +26,10 @@ website: https://dbplyr.tidyverse.org
 external:  # updated automatically, do not edit
   description: Database (DBI) backend for dplyr
   first_commit: '2017-03-28T20:29:16+00:00'
-  forks: 185
+  forks: 186
   languages:
   - R
-  last_updated: '2026-03-05T16:21:18.227479+00:00'
+  last_updated: '2026-03-20T10:27:41.031619+00:00'
   latest_release: '2025-09-09T16:38:02+00:00'
   license: NOASSERTION
   people:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   - Garrick Aden-Buie
   readme_image: man/figures/logo.png
   repo: tidyverse/dbplyr
-  stars: 505
+  stars: 506
   title: dbplyr
   website: https://dbplyr.tidyverse.org
 ---

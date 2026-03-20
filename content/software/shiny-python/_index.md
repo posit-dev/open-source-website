@@ -28,10 +28,10 @@ override:
 external:  # updated automatically, do not edit
   description: Shiny for Python
   first_commit: '2021-07-27T20:19:49+00:00'
-  forks: 121
+  forks: 122
   languages:
   - Python
-  last_updated: '2026-03-05T16:02:44.556251+00:00'
+  last_updated: '2026-03-20T10:27:13.734116+00:00'
   latest_release: '2025-12-08T17:48:13+00:00'
   license: MIT
   people:
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   - Michael Chow
   - Hassan Kibirige
   repo: posit-dev/py-shiny
-  stars: 1687
+  stars: 1697
   title: py-shiny
   website: https://shiny.posit.co/py/
 ---

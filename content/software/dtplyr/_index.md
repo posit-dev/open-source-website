@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 60
   languages:
   - R
-  last_updated: '2026-03-05T16:20:53.992292+00:00'
+  last_updated: '2026-03-20T10:27:40.847707+00:00'
   latest_release: '2026-02-10T17:24:35+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/dtplyr
-  stars: 673
+  stars: 674
   title: dtplyr
   website: https://dtplyr.tidyverse.org
 ---

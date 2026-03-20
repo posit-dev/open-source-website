@@ -1,9 +1,9 @@
 ---
-color: '#EE6331'
-description: A experimental SQL extension for declarative data visualisation based
-  on the Grammar of Graphics.
+color: '#0a9396'
+description: A SQL extension for declarative data visualisation based on the Grammar
+  of Graphics.
 github: posit-dev/ggsql
-image: logo.svg
+image: hex.png
 languages:
 - SQL
 people:
@@ -19,13 +19,13 @@ override:
   - SQL
 
 external:  # updated automatically, do not edit
-  description: A experimental SQL extension for declarative data visualisation based
-    on the Grammar of Graphics.
+  description: A SQL extension for declarative data visualisation based on the Grammar
+    of Graphics.
   first_commit: '2025-12-04T13:26:11+00:00'
   forks: 4
   languages:
   - Rust
-  last_updated: '2026-03-05T16:06:48.129668+00:00'
+  last_updated: '2026-03-20T10:27:16.082081+00:00'
   license: MIT
   people:
   - George Stagg
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Teun Van den Brand
   - Carson Sievert
   repo: posit-dev/ggsql
-  stars: 36
+  stars: 49
   title: ggsql
   website: http://ggsql.org/
 ---

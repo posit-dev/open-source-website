@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 3
   languages:
   - Shell
-  last_updated: '2026-03-05T16:28:15.174786+00:00'
+  last_updated: '2026-03-20T10:27:54.723903+00:00'
   latest_release: '2024-04-25T08:48:47+00:00'
   license: NOASSERTION
   people:

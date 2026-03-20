@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 23
   languages:
   - Python
-  last_updated: '2026-03-05T16:04:43.342945+00:00'
+  last_updated: '2026-03-20T10:27:14.792789+00:00'
   latest_release: '2026-02-09T15:54:52+00:00'
   license: MIT
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Simon Couch
   readme_image: pkg-r/man/figures/logo.svg
   repo: posit-dev/shinychat
-  stars: 124
+  stars: 127
   title: shinychat
   website: https://posit-dev.github.io/shinychat/
 ---

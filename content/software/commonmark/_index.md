@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - C
-  last_updated: '2026-03-05T16:25:47.101179+00:00'
+  last_updated: '2026-03-20T10:27:51.991987+00:00'
   latest_release: '2025-07-07T12:31:35+00:00'
   license: NOASSERTION
   people:
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   - Jenny Bryan
   repo: r-lib/commonmark
-  stars: 99
+  stars: 100
   title: commonmark
   website: https://docs.ropensci.org/commonmark/
 ---

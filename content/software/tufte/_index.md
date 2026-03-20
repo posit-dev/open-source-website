@@ -17,13 +17,13 @@ external:  # updated automatically, do not edit
   forks: 112
   languages:
   - R
-  last_updated: '2026-03-05T16:10:23.245789+00:00'
+  last_updated: '2026-03-20T10:27:32.718979+00:00'
   latest_release: '2025-07-29T20:01:50+00:00'
   people:
   - Christophe Dervieux
   readme_image: https://bookdown.org/yihui/rmarkdown/images/cover.png
   repo: rstudio/tufte
-  stars: 426
+  stars: 427
   title: tufte
   website: https://rstudio.github.io/tufte/
 ---

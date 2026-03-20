@@ -14,17 +14,17 @@ website: ''
 external:  # updated automatically, do not edit
   description: Build CLI applications in R
   first_commit: '2022-10-12T15:49:38+00:00'
-  forks: 1
+  forks: 2
   languages:
   - R
-  last_updated: '2026-03-05T16:30:11.268779+00:00'
+  last_updated: '2026-03-20T10:27:57.025990+00:00'
   latest_release: '2025-12-14T18:49:06+00:00'
   license: NOASSERTION
   people:
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: r-lib/Rapp
-  stars: 83
+  stars: 106
   title: Rapp
   website: ''
 ---

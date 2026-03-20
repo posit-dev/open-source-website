@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 260
   languages:
   - R
-  last_updated: '2026-03-05T16:09:53.345328+00:00'
+  last_updated: '2026-03-20T10:27:31.667943+00:00'
   latest_release: '2026-02-09T15:06:24+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Carson Sievert
   readme_image: man/figures/logo.svg
   repo: rstudio/plumber
-  stars: 1434
+  stars: 1435
   title: plumber
   website: https://www.rplumber.io
 ---

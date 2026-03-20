@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 27
   languages:
   - R
-  last_updated: '2026-03-05T16:21:44.895824+00:00'
+  last_updated: '2026-03-20T10:27:41.306448+00:00'
   latest_release: '2026-02-24T22:07:23+00:00'
   license: NOASSERTION
   people:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/duckplyr
-  stars: 376
+  stars: 379
   title: duckplyr
   website: https://duckplyr.tidyverse.org/
 ---

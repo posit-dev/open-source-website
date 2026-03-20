@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 65
   languages:
   - C++
-  last_updated: '2026-03-05T16:21:38.089681+00:00'
+  last_updated: '2026-03-20T10:27:41.245265+00:00'
   latest_release: '2026-01-25T17:49:54+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/vroom
-  stars: 643
+  stars: 644
   title: vroom
   website: https://vroom.tidyverse.org
 ---

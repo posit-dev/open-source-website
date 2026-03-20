@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - R
-  last_updated: '2026-03-05T16:05:13.393214+00:00'
+  last_updated: '2026-03-20T10:27:15.060442+00:00'
   latest_release: '2025-12-23T13:00:45+00:00'
   license: NOASSERTION
   people:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   readme_image: man/figures/logo.png
   repo: posit-dev/btw
-  stars: 113
+  stars: 114
   title: btw
   website: https://posit-dev.github.io/btw/
 ---

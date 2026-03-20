@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 242
   languages:
   - R
-  last_updated: '2026-03-05T16:11:13.730923+00:00'
+  last_updated: '2026-03-20T10:27:33.298717+00:00'
   latest_release: '2025-11-13T15:23:19+00:00'
   license: Apache-2.0
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   readme_image: man/figures/logo.png
   repo: rstudio/learnr
-  stars: 728
+  stars: 731
   title: learnr
   website: https://pkgs.rstudio.com/learnr
 ---

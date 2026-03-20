@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-03-05T16:26:53.154271+00:00'
+  last_updated: '2026-03-20T10:27:53.286194+00:00'
   latest_release: '2025-06-03T01:23:45+00:00'
   license: NOASSERTION
   repo: r-lib/zeallot

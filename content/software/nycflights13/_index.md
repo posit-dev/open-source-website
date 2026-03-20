@@ -19,12 +19,12 @@ external:  # updated automatically, do not edit
   forks: 233
   languages:
   - R
-  last_updated: '2026-03-05T16:20:30.642285+00:00'
+  last_updated: '2026-03-20T10:27:40.679776+00:00'
   latest_release: '2021-04-12T12:50:46+00:00'
   people:
   - Hadley Wickham
   repo: tidyverse/nycflights13
-  stars: 131
+  stars: 132
   title: nycflights13
   website: https://nycflights13.tidyverse.org
 ---

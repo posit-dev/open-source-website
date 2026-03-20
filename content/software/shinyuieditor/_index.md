@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 32
   languages:
   - JavaScript
-  last_updated: '2026-03-05T16:17:25.874290+00:00'
+  last_updated: '2026-03-20T10:27:37.009788+00:00'
   latest_release: '2024-06-27T16:34:57+00:00'
   license: MIT
   people:

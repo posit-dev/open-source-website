@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 116
   languages:
   - C++
-  last_updated: '2026-03-05T16:31:37.488227+00:00'
+  last_updated: '2026-03-20T10:27:59.133933+00:00'
   latest_release: '2025-12-08T14:40:41+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-dbi/odbc
-  stars: 408
+  stars: 412
   title: odbc
   website: https://odbc.r-dbi.org/
 ---

@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 84
   languages:
   - R
-  last_updated: '2026-03-05T16:28:35.844155+00:00'
+  last_updated: '2026-03-20T10:27:55.132871+00:00'
   latest_release: '2025-12-05T17:45:53+00:00'
   license: NOASSERTION
   people:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/httr2
-  stars: 260
+  stars: 261
   title: httr2
   website: https://httr2.r-lib.org
 ---

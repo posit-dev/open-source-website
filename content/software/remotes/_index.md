@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 156
   languages:
   - R
-  last_updated: '2026-03-05T16:26:04.132629+00:00'
+  last_updated: '2026-03-20T10:27:52.365833+00:00'
   latest_release: '2024-03-17T12:41:28+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Jeroen Ooms
   repo: r-lib/remotes
-  stars: 355
+  stars: 356
   title: remotes
   website: https://remotes.r-lib.org/
 ---

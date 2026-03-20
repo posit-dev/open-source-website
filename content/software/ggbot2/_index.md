@@ -17,13 +17,13 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - R
-  last_updated: '2026-03-05T16:21:55.289196+00:00'
+  last_updated: '2026-03-20T10:27:41.406729+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng
   - Davis Vaughan
   repo: tidyverse/ggbot2
-  stars: 37
+  stars: 36
   title: ggbot2
   website: ''
 ---

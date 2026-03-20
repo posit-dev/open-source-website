@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   forks: 117
   languages:
   - HTML
-  last_updated: '2026-03-05T16:21:25.943325+00:00'
+  last_updated: '2026-03-20T10:27:41.094754+00:00'
   license: CC-BY-SA-4.0
   people:
   - Hadley Wickham
@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   - Edgar Ruiz
   - Garrick Aden-Buie
   repo: tidyverse/tidyverse.org
-  stars: 210
+  stars: 211
   title: tidyverse.org
   website: https://tidyverse.org
 ---

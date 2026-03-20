@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 116
   languages:
   - C
-  last_updated: '2026-03-05T16:20:40.076783+00:00'
+  last_updated: '2026-03-20T10:27:40.739583+00:00'
   latest_release: '2025-05-30T13:08:26+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: tidyverse/haven
-  stars: 447
+  stars: 448
   title: haven
   website: https://haven.tidyverse.org
 ---

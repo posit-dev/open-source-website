@@ -10,7 +10,6 @@ people:
 - Hassan Kibirige
 - Michael Chow
 - Jeroen Janssens
-- Gina Reynolds
 - Hadley Wickham
 - Isabel Zimmerman
 title: plotnine
@@ -29,7 +28,6 @@ external:  # updated automatically, do not edit
   - Hassan Kibirige
   - Michael Chow
   - Jeroen Janssens
-  - Gina Reynolds
   - Hadley Wickham
   - Isabel Zimmerman
   readme_image: https://github.com/has2k1/plotnine/blob/logos/doc/images/logo-512.png?raw=true

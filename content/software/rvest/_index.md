@@ -19,10 +19,10 @@ website: https://rvest.tidyverse.org
 external:  # updated automatically, do not edit
   description: Simple web scraping for R
   first_commit: '2014-07-23T21:22:27+00:00'
-  forks: 353
+  forks: 352
   languages:
   - R
-  last_updated: '2026-03-05T16:20:33.251578+00:00'
+  last_updated: '2026-03-20T10:27:40.699699+00:00'
   latest_release: '2025-08-29T12:57:27+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Charlotte Wickham
   readme_image: man/figures/logo.png
   repo: tidyverse/rvest
-  stars: 1515
+  stars: 1513
   title: rvest
   website: https://rvest.tidyverse.org
 ---

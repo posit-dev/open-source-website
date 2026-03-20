@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 57
   languages:
   - HTML
-  last_updated: '2026-03-05T16:13:15.405791+00:00'
+  last_updated: '2026-03-20T10:27:34.458489+00:00'
   latest_release: '2023-10-06T11:15:35+00:00'
   license: Apache-2.0
   people:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   - Rich Iannone
   readme_image: man/figures/logo.png
   repo: rstudio/distill
-  stars: 424
+  stars: 425
   title: distill
   website: https://rstudio.github.io/distill/
 ---

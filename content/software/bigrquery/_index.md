@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 191
   languages:
   - R
-  last_updated: '2026-03-05T16:31:21.523329+00:00'
+  last_updated: '2026-03-20T10:27:58.885882+00:00'
   latest_release: '2025-09-10T12:43:44+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Edgar Ruiz
   - Davis Vaughan
   repo: r-dbi/bigrquery
-  stars: 525
+  stars: 527
   title: bigrquery
   website: https://bigrquery.r-dbi.org
 ---

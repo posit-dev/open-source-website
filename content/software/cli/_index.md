@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 83
   languages:
   - R
-  last_updated: '2026-03-05T16:27:17.753225+00:00'
+  last_updated: '2026-03-20T10:27:53.743012+00:00'
   latest_release: '2025-04-22T11:59:57+00:00'
   license: NOASSERTION
   people:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - George Stagg
   readme_image: man/figures/README/alert-success.svg
   repo: r-lib/cli
-  stars: 695
+  stars: 697
   title: cli
   website: https://cli.r-lib.org/
 ---

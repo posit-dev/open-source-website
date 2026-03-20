@@ -20,7 +20,6 @@ people:
 - Charlotte Wickham
 - Christophe Dervieux
 - Davis Vaughan
-- Gina Reynolds
 - Gábor Csárdi
 - Jeroen Janssens
 - Jeroen Ooms
@@ -33,10 +32,10 @@ website: https://ggplot2.tidyverse.org
 external:  # updated automatically, do not edit
   description: An implementation of the Grammar of Graphics in R
   first_commit: '2008-05-25T01:21:32+00:00'
-  forks: 2133
+  forks: 2132
   languages:
   - R
-  last_updated: '2026-03-05T16:19:59.506438+00:00'
+  last_updated: '2026-03-20T10:27:40.527817+00:00'
   latest_release: '2026-02-02T09:41:41+00:00'
   license: NOASSERTION
   people:
@@ -53,13 +52,12 @@ external:  # updated automatically, do not edit
   - Charlotte Wickham
   - Christophe Dervieux
   - Davis Vaughan
-  - Gina Reynolds
   - Gábor Csárdi
   - Jeroen Janssens
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/ggplot2
-  stars: 6882
+  stars: 6891
   title: ggplot2
   website: https://ggplot2.tidyverse.org
 ---

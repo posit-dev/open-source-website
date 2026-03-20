@@ -21,10 +21,10 @@ website: https://gt.rstudio.com
 external:  # updated automatically, do not edit
   description: Easily generate information-rich, publication-quality tables from R
   first_commit: '2018-03-20T15:18:51+00:00'
-  forks: 217
+  forks: 218
   languages:
   - R
-  last_updated: '2026-03-05T16:13:01.948711+00:00'
+  last_updated: '2026-03-20T10:27:34.334416+00:00'
   latest_release: '2026-01-22T14:22:09+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.svg
   repo: rstudio/gt
-  stars: 2141
+  stars: 2143
   title: gt
   website: https://gt.rstudio.com
 ---

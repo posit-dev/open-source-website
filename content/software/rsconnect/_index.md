@@ -25,10 +25,10 @@ external:  # updated automatically, do not edit
   description: Publish Shiny Applications, RMarkdown Documents, Jupyter Notebooks,
     Plumber APIs, and more
   first_commit: '2014-07-21T19:54:19+00:00'
-  forks: 85
+  forks: 86
   languages:
   - R
-  last_updated: '2026-03-05T16:09:05.258675+00:00'
+  last_updated: '2026-03-20T10:27:30.912080+00:00'
   latest_release: '2025-12-05T13:40:14+00:00'
   people:
   - JJ Allaire

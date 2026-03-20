@@ -24,10 +24,10 @@ website: ''
 external:  # updated automatically, do not edit
   description: GitHub Actions for the R community
   first_commit: '2019-10-10T15:13:37+00:00'
-  forks: 229
+  forks: 230
   languages:
   - TypeScript
-  last_updated: '2026-03-05T16:29:04.488424+00:00'
+  last_updated: '2026-03-20T10:27:55.588581+00:00'
   latest_release: '2025-10-08T15:48:57+00:00'
   license: CC0-1.0
   people:

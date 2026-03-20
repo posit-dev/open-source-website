@@ -16,12 +16,12 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - R
-  last_updated: '2026-03-05T16:17:35.349016+00:00'
+  last_updated: '2026-03-20T10:27:37.112421+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux
   repo: rstudio/r-manuals
-  stars: 97
+  stars: 98
   title: r-manuals
   website: https://rstudio.github.io/r-manuals
 ---

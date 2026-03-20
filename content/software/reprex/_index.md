@@ -23,10 +23,10 @@ website: https://reprex.tidyverse.org
 external:  # updated automatically, do not edit
   description: Render bits of R code for sharing, e.g., on GitHub or StackOverflow.
   first_commit: '2015-08-25T17:06:45+00:00'
-  forks: 84
+  forks: 85
   languages:
   - R
-  last_updated: '2026-03-05T16:20:44.879373+00:00'
+  last_updated: '2026-03-20T10:27:40.780072+00:00'
   latest_release: '2024-07-06T00:20:34+00:00'
   license: NOASSERTION
   people:

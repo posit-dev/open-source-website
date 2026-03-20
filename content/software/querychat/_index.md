@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 28
   languages:
   - Python
-  last_updated: '2026-03-05T16:05:22.680311+00:00'
+  last_updated: '2026-03-20T10:27:15.141858+00:00'
   latest_release: '2026-01-23T23:04:44+00:00'
   license: MIT
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   readme_image: pkg-r/man/figures/logo.png
   repo: posit-dev/querychat
-  stars: 178
+  stars: 183
   title: querychat
   website: https://posit-dev.github.io/querychat/
 ---
