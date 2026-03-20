@@ -13,7 +13,7 @@ categories:
 tags:
   - Modeling
   - tidyverse
-image: thumbnail-wd.jpg
+image: thumbnail-sq.jpg
 ported_from: tidyverse
 port_status: in-progress
 languages: ["Python"]
