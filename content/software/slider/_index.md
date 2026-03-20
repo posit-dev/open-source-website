@@ -9,9 +9,12 @@ latest_release: '2025-11-14T20:31:30+00:00'
 people:
 - Davis Vaughan
 - Gábor Csárdi
-- Jeroen Janssens
 title: slider
 website: https://slider.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Sliding Window Functions

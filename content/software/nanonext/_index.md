@@ -9,9 +9,12 @@ latest_release: '2026-02-09T19:24:09+00:00'
 people:
 - Charlie Gao
 - Joe Cheng
-- Jeroen Janssens
 title: nanonext
 website: https://nanonext.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: R binding for NNG (Nanomsg Next Gen)

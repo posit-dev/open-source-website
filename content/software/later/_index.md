@@ -13,10 +13,13 @@ people:
 - Charlie Gao
 - Barret Schloerke
 - Carson Sievert
-- Jeroen Janssens
 - Jeroen Ooms
 title: later
 website: https://later.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Schedule an R function or formula to run after a specified period of

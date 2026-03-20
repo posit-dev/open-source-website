@@ -12,13 +12,16 @@ people:
 - Christophe Dervieux
 - Gábor Csárdi
 - Charlotte Wickham
-- Jeroen Janssens
 - Julia Silge
 - Lionel Henry
 tags:
 - tidyverse
 title: reprex
 website: https://reprex.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Render bits of R code for sharing, e.g., on GitHub or StackOverflow.

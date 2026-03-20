@@ -13,13 +13,16 @@ people:
 - Barret Schloerke
 - Liz Nelson
 - Carlos Scheidegger
-- Jeroen Janssens
 - Joe Cheng
 - Neal Richardson
 tags:
 - AI
 title: chatlas
 website: https://posit-dev.github.io/chatlas/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Your friendly guide to building LLM chat apps in Python with less effort

@@ -10,11 +10,14 @@ people:
 - Gábor Csárdi
 - Hadley Wickham
 - Lionel Henry
-- Jeroen Janssens
 - Jenny Bryan
 - Christophe Dervieux
 title: pkgdepends
 website: https://r-lib.github.io/pkgdepends/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: R Package Dependency Resolution

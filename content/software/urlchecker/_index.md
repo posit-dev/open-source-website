@@ -9,9 +9,12 @@ latest_release: '2021-11-30T00:26:11+00:00'
 people:
 - Gábor Csárdi
 - Hadley Wickham
-- Jeroen Janssens
 title: urlchecker
 website: https://urlchecker.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Run CRAN URL checks from older versions of R

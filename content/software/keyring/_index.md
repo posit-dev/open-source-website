@@ -9,10 +9,13 @@ latest_release: '2025-06-15T20:21:06+00:00'
 people:
 - Gábor Csárdi
 - Hadley Wickham
-- Jeroen Janssens
 - Jeroen Ooms
 title: keyring
 website: https://keyring.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: ':closed_lock_with_key: Access the system credential store from R'

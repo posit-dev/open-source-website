@@ -10,11 +10,14 @@ people:
 - Gábor Csárdi
 - Jenny Bryan
 - Garrick Aden-Buie
-- Jeroen Janssens
 - Max Kuhn
 - Hadley Wickham
 title: sessioninfo
 website: https://sessioninfo.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Print Session Information

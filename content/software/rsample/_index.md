@@ -13,10 +13,13 @@ people:
 - Davis Vaughan
 - Emil Hvitfeldt
 - Simon Couch
-- Jeroen Janssens
 - Gábor Csárdi
 title: rsample
 website: https://rsample.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Classes and functions to create and summarize resampling objects

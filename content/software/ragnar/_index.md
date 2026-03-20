@@ -11,12 +11,15 @@ people:
 - Daniel Falbel
 - Charlie Gao
 - Garrick Aden-Buie
-- Jeroen Janssens
 - Max Kuhn
 tags:
 - AI
 title: ragnar
 website: http://ragnar.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: RAG in R

@@ -8,9 +8,12 @@ languages:
 latest_release: '2024-12-12T09:17:13+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 title: pingr
 website: http://r-lib.github.io/pingr/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: ICMP and TCP ping and related tools

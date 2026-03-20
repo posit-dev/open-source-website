@@ -8,10 +8,13 @@ languages:
 latest_release: '2025-05-13T13:31:24+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 - Jeroen Ooms
 title: zip
 website: https://r-lib.github.io/zip/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Platform independent zip compression via miniz

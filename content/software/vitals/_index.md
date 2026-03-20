@@ -9,13 +9,16 @@ latest_release: '2025-12-01T15:34:29+00:00'
 people:
 - Simon Couch
 - Hadley Wickham
-- Jeroen Janssens
 - Mine Çetinkaya-Rundel
 - Tomasz Kalinowski
 tags:
 - AI
 title: vitals
 website: https://vitals.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Large language model evaluation for R

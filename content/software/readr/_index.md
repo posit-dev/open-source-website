@@ -14,12 +14,15 @@ people:
 - Jeroen Ooms
 - Mine Çetinkaya-Rundel
 - Davis Vaughan
-- Jeroen Janssens
 - Emil Hvitfeldt
 tags:
 - tidyverse
 title: readr
 website: https://readr.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Read flat files (csv, tsv, fwf) into R

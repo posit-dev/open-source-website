@@ -12,9 +12,12 @@ people:
 - Hadley Wickham
 - Jenny Bryan
 - George Stagg
-- Jeroen Janssens
 title: vctrs
 website: https://vctrs.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Generic programming with typed R vectors

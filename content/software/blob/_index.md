@@ -9,9 +9,12 @@ latest_release: '2026-01-13T06:57:50+00:00'
 people:
 - Hadley Wickham
 - Davis Vaughan
-- Jeroen Janssens
 title: blob
 website: https://blob.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A simple S3 class for representing BLOBs

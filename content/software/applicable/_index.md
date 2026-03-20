@@ -11,9 +11,12 @@ people:
 - Emil Hvitfeldt
 - Julia Silge
 - Hannah Frick
-- Jeroen Janssens
 title: applicable
 website: https://applicable.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Quantify extrapolation of new samples given a training set

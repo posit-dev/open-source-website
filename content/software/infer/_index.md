@@ -14,9 +14,12 @@ people:
 - Max Kuhn
 - Teun Van den Brand
 - Julia Silge
-- Jeroen Janssens
 title: infer
 website: https://infer.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: An R package for tidyverse-friendly statistical inference

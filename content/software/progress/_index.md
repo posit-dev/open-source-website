@@ -7,9 +7,12 @@ languages:
 latest_release: '2023-12-05T09:32:50+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 title: progress
 website: http://r-lib.github.io/progress/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Progress bar in your R terminal

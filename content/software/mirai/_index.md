@@ -9,9 +9,12 @@ latest_release: '2026-03-02T23:38:02+00:00'
 people:
 - Charlie Gao
 - Joe Cheng
-- Jeroen Janssens
 title: mirai
 website: https://mirai.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Minimalist Async Evaluation Framework for R

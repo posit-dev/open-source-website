@@ -17,12 +17,15 @@ people:
 - Barret Schloerke
 - Liz Nelson
 - Hannah Frick
-- Jeroen Janssens
 - Tomasz Kalinowski
 tags:
 - AI
 title: ellmer
 website: https://ellmer.tidyverse.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Call LLM APIs from R

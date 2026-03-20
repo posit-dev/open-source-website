@@ -18,7 +18,6 @@ people:
 - Rich Iannone
 - Mine Çetinkaya-Rundel
 - Lionel Henry
-- Jeroen Janssens
 - Hannah Frick
 - Edgar Ruiz
 - Emil Hvitfeldt
@@ -27,6 +26,10 @@ people:
 - Charlie Gao
 title: pkgdown
 website: https://pkgdown.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Generate static html documentation for an R package

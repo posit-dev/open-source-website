@@ -13,12 +13,15 @@ people:
 - Tomasz Kalinowski
 - Christophe Dervieux
 - Garrick Aden-Buie
-- Jeroen Janssens
 - Joe Cheng
 tags:
 - tidyverse
 title: stringr
 website: https://stringr.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A fresh approach to string manipulation in R

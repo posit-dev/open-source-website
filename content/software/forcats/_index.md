@@ -11,11 +11,14 @@ people:
 - Jenny Bryan
 - Lionel Henry
 - Mine Çetinkaya-Rundel
-- Jeroen Janssens
 tags:
 - tidyverse
 title: forcats
 website: https://forcats.tidyverse.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: '🐈🐈🐈🐈: tools for working with categorical variables (factors)'

@@ -15,11 +15,14 @@ people:
 - Davis Vaughan
 - Hannah Frick
 - Jenny Bryan
-- Jeroen Janssens
 tags:
 - tidyverse
 title: broom
 website: https://broom.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Convert statistical analysis objects from R into tidy format

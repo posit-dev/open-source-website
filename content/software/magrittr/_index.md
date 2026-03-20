@@ -9,13 +9,16 @@ latest_release: '2025-09-11T16:42:35+00:00'
 people:
 - Lionel Henry
 - Hadley Wickham
-- Jeroen Janssens
 - Gábor Csárdi
 - Davis Vaughan
 tags:
 - tidyverse
 title: magrittr
 website: https://magrittr.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Improve the readability of R code with the pipe

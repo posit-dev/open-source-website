@@ -8,9 +8,12 @@ languages:
 latest_release: '2024-04-25T08:48:47+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 title: xopen
 website: https://r-lib.github.io/xopen/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Open System Files, URLs, Anything

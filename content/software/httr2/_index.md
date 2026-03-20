@@ -15,9 +15,12 @@ people:
 - Joe Cheng
 - Gábor Csárdi
 - Neal Richardson
-- Jeroen Janssens
 title: httr2
 website: https://httr2.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Make HTTP requests and process their responses. A modern reimagining

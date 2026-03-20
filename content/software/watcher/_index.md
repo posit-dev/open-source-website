@@ -8,9 +8,12 @@ languages:
 latest_release: '2025-12-02T00:01:06+00:00'
 people:
 - Charlie Gao
-- Jeroen Janssens
 title: watcher
 website: https://watcher.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Watch the File System for Changes

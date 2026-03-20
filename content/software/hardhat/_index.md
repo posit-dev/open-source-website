@@ -14,9 +14,12 @@ people:
 - Julia Silge
 - Simon Couch
 - Gábor Csárdi
-- Jeroen Janssens
 title: hardhat
 website: https://hardhat.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Construct Modeling Packages

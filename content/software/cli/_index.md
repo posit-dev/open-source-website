@@ -14,12 +14,15 @@ people:
 - Davis Vaughan
 - Simon Couch
 - Jeroen Ooms
-- Jeroen Janssens
 - George Stagg
 tags:
 - tidyverse
 title: cli
 website: https://cli.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Tools for making beautiful & useful command line interfaces

@@ -14,9 +14,12 @@ people:
 - Julia Silge
 - Simon Couch
 - Gábor Csárdi
-- Jeroen Janssens
 title: dials
 website: https://dials.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Tools for creating tuning parameter values

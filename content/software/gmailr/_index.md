@@ -8,10 +8,13 @@ languages:
 latest_release: '2026-01-29T22:39:25+00:00'
 people:
 - Jenny Bryan
-- Jeroen Janssens
 - Joe Cheng
 title: gmailr
 website: https://gmailr.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Access the Gmail RESTful API from R.

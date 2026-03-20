@@ -15,10 +15,13 @@ people:
 - Emil Hvitfeldt
 - Edgar Ruiz
 - Lionel Henry
-- Jeroen Janssens
 - Gábor Csárdi
 title: tune
 website: https://tune.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Tools for tidy parameter tuning

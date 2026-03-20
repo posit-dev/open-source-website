@@ -11,11 +11,14 @@ people:
 - Jeroen Ooms
 - Gábor Csárdi
 - Jenny Bryan
-- Jeroen Janssens
 tags:
 - tidyverse
 title: xml2
 website: https://xml2.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Bindings to libxml2

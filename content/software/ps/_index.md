@@ -10,9 +10,12 @@ people:
 - Gábor Csárdi
 - Lionel Henry
 - George Stagg
-- Jeroen Janssens
 title: ps
 website: https://ps.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: R package to query, list, manipulate system processes

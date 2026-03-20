@@ -12,9 +12,12 @@ people:
 - Julia Silge
 - Hannah Frick
 - Gábor Csárdi
-- Jeroen Janssens
 title: usemodels
 website: https://usemodels.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Boilerplate Code for tidymodels

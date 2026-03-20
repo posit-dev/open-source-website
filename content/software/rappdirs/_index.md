@@ -10,9 +10,12 @@ latest_release: '2026-01-16T22:03:17+00:00'
 people:
 - Hadley Wickham
 - Gábor Csárdi
-- Jeroen Janssens
 title: rappdirs
 website: https://rappdirs.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Find OS-specific directories to store data, caches, and logs. A port

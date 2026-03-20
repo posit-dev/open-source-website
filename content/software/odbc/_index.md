@@ -12,9 +12,12 @@ people:
 - Edgar Ruiz
 - Jeroen Ooms
 - Gábor Csárdi
-- Jeroen Janssens
 title: odbc
 website: https://odbc.r-dbi.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Connect to ODBC databases (using the DBI interface)

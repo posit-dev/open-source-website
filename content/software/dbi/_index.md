@@ -10,9 +10,12 @@ latest_release: '2026-02-24T17:22:15+00:00'
 people:
 - Hadley Wickham
 - Charlie Gao
-- Jeroen Janssens
 title: DBI
 website: https://dbi.r-dbi.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A database interface (DBI) definition for communication between R and

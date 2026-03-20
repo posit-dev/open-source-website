@@ -17,9 +17,12 @@ people:
 - Tomasz Kalinowski
 - Edgar Ruiz
 - Gábor Csárdi
-- Jeroen Janssens
 title: parsnip
 website: https://parsnip.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A tidy unified interface to models

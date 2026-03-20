@@ -10,9 +10,12 @@ people:
 - Lionel Henry
 - Hadley Wickham
 - Davis Vaughan
-- Jeroen Janssens
 title: tidyselect
 website: https://tidyselect.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A backend for functions taking tidyverse selections

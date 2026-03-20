@@ -10,11 +10,14 @@ people:
 - Hadley Wickham
 - Jenny Bryan
 - Joe Cheng
-- Jeroen Janssens
 - Edgar Ruiz
 - Davis Vaughan
 title: bigrquery
 website: https://bigrquery.r-dbi.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: An interface to Google's BigQuery from R.

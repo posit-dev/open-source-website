@@ -13,10 +13,13 @@ people:
 - Julia Silge
 - Hannah Frick
 - Gábor Csárdi
-- Jeroen Janssens
 - Simon Couch
 title: discrim
 website: https://discrim.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Wrappers for discriminant analysis and naive Bayes models for use with

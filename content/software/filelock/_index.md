@@ -8,9 +8,12 @@ languages:
 latest_release: '2023-12-11T01:11:32+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 title: filelock
 website: https://r-lib.github.io/filelock/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Cross platform file locking in R

@@ -9,9 +9,12 @@ latest_release: '2024-04-24T18:51:12+00:00'
 people:
 - Gábor Csárdi
 - George Stagg
-- Jeroen Janssens
 title: brio
 website: https://brio.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Basic R Input Output

@@ -14,10 +14,13 @@ people:
 - Hannah Frick
 - Lionel Henry
 - Hadley Wickham
-- Jeroen Janssens
 - Jeroen Ooms
 title: remotes
 website: https://remotes.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Install R packages from GitHub, GitLab, Bitbucket, git, svn repositories,

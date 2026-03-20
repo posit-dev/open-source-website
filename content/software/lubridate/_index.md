@@ -14,12 +14,15 @@ people:
 - Garrick Aden-Buie
 - Gábor Csárdi
 - JJ Allaire
-- Jeroen Janssens
 - Jeroen Ooms
 tags:
 - tidyverse
 title: lubridate
 website: https://lubridate.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Make working with dates in R just that little bit easier

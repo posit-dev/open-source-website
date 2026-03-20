@@ -7,10 +7,13 @@ languages:
 - R
 latest_release: '2025-01-17T04:42:06+00:00'
 people:
-- Jeroen Janssens
 - Jeroen Ooms
 title: bit64
 website: https://bit64.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: An R package with an S3 Class for Vectors of 64bit Integers

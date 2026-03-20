@@ -14,9 +14,12 @@ people:
 - Julia Silge
 - Hannah Frick
 - Davis Vaughan
-- Jeroen Janssens
 title: tidypredict
 website: https://tidypredict.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Run predictions inside the database

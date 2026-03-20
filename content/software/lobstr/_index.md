@@ -10,9 +10,12 @@ people:
 - Hadley Wickham
 - Lionel Henry
 - Nick Strayer
-- Jeroen Janssens
 title: lobstr
 website: https://lobstr.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Understanding complex R objects with tools similar to str()

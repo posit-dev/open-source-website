@@ -16,11 +16,14 @@ people:
 - Gábor Csárdi
 - Thomas Lin Pedersen
 - Christophe Dervieux
-- Jeroen Janssens
 tags:
 - tidyverse
 title: tidyr
 website: https://tidyr.tidyverse.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Tidy Messy Data

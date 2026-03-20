@@ -14,9 +14,12 @@ people:
 - Hadley Wickham
 - Winston Chang
 - Jeroen Ooms
-- Jeroen Janssens
 title: callr
 website: https://callr.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Call R from R

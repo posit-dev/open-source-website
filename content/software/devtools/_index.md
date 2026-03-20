@@ -17,9 +17,12 @@ people:
 - JJ Allaire
 - Joe Cheng
 - Julia Silge
-- Jeroen Janssens
 title: devtools
 website: https://devtools.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Tools to make an R developer's life easier

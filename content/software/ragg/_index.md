@@ -10,11 +10,14 @@ people:
 - Thomas Lin Pedersen
 - Jeroen Ooms
 - Hadley Wickham
-- Jeroen Janssens
 tags:
 - tidyverse
 title: ragg
 website: https://ragg.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Graphic Devices Based on AGG

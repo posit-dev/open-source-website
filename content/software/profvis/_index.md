@@ -14,9 +14,12 @@ people:
 - Barret Schloerke
 - JJ Allaire
 - Jenny Bryan
-- Jeroen Janssens
 title: profvis
 website: https://profvis.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Visualize R profiling data

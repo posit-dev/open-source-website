@@ -15,9 +15,12 @@ people:
 - Hannah Frick
 - Simon Couch
 - Gábor Csárdi
-- Jeroen Janssens
 title: probably
 website: https://probably.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Tools for post-processing class probability estimates

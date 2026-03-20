@@ -13,9 +13,12 @@ people:
 - Max Kuhn
 - Hannah Frick
 - Emil Hvitfeldt
-- Jeroen Janssens
 title: butcher
 website: https://butcher.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Reduce the size of model objects saved to disk

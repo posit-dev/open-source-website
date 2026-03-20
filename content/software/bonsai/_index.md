@@ -11,9 +11,12 @@ people:
 - Emil Hvitfeldt
 - Max Kuhn
 - Hannah Frick
-- Jeroen Janssens
 title: bonsai
 website: https://bonsai.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: parsnip wrappers for tree-based models

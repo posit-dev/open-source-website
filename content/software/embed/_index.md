@@ -15,9 +15,12 @@ people:
 - Simon Couch
 - Davis Vaughan
 - Gábor Csárdi
-- Jeroen Janssens
 title: embed
 website: https://embed.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Extra recipes for predictor embeddings

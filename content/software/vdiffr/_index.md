@@ -12,9 +12,12 @@ people:
 - Carson Sievert
 - Jeroen Ooms
 - Christophe Dervieux
-- Jeroen Janssens
 title: vdiffr
 website: https://vdiffr.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Visual regression testing and graphical diffing with testthat

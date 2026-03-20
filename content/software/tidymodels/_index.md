@@ -13,10 +13,13 @@ people:
 - Hannah Frick
 - Jeroen Ooms
 - Gábor Csárdi
-- Jeroen Janssens
 - Simon Couch
 title: tidymodels
 website: https://tidymodels.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Easily install and load the tidymodels packages

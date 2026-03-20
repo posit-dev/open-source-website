@@ -13,9 +13,12 @@ people:
 - Julia Silge
 - Hannah Frick
 - Gábor Csárdi
-- Jeroen Janssens
 title: rules
 website: https://rules.tidymodels.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: parsnip extension for rule-based models

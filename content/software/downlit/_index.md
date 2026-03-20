@@ -11,9 +11,12 @@ people:
 - Davis Vaughan
 - Christophe Dervieux
 - Garrick Aden-Buie
-- Jeroen Janssens
 title: downlit
 website: https://downlit.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Syntax Highlighting and Automatic Linking

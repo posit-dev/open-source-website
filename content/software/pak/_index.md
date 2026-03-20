@@ -9,13 +9,16 @@ latest_release: '2025-12-21T19:30:49+00:00'
 people:
 - Gábor Csárdi
 - Hadley Wickham
-- Jeroen Janssens
 - Mine Çetinkaya-Rundel
 - Neal Richardson
 - Jenny Bryan
 - Christophe Dervieux
 title: pak
 website: https://pak.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A fresh approach to package installation

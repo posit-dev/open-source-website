@@ -8,9 +8,12 @@ languages:
 latest_release: '2019-12-16T13:00:40+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 title: prettycode
 website: https://r-lib.github.io/prettycode/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Syntax highlight R code in the terminal

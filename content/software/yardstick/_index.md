@@ -13,9 +13,12 @@ people:
 - Simon Couch
 - Hannah Frick
 - Julia Silge
-- Jeroen Janssens
 title: yardstick
 website: https://yardstick.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Tidy methods for measuring model performance

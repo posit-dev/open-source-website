@@ -8,9 +8,12 @@ languages:
 latest_release: '2025-06-24T17:53:05+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 title: webfakes
 website: https://webfakes.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Fake web apps for HTTP testing R packages

@@ -8,9 +8,12 @@ languages:
 latest_release: '2022-07-10T18:39:42+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 title: available
 website: https://r-lib.github.io/available/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Check if a package name is available to use

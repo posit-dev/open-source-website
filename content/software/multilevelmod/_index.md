@@ -11,9 +11,12 @@ people:
 - Max Kuhn
 - Emil Hvitfeldt
 - Julia Silge
-- Jeroen Janssens
 title: multilevelmod
 website: https://multilevelmod.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Parsnip wrappers for mixed-level and hierarchical models

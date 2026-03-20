@@ -8,9 +8,12 @@ languages:
 latest_release: '2023-09-24T10:52:33+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 title: prettyunits
 website: http://r-lib.github.io/prettyunits/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Pretty, human readable formatting of quantities

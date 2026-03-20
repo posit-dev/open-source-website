@@ -12,9 +12,12 @@ people:
 - Davis Vaughan
 - Hannah Frick
 - Jenny Bryan
-- Jeroen Janssens
 title: lifecycle
 website: https://lifecycle.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Manage the life cycle of your exported functions and arguments

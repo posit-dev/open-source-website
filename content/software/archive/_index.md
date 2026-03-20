@@ -9,9 +9,12 @@ latest_release: '2025-03-24T12:32:21+00:00'
 people:
 - Gábor Csárdi
 - Jeroen Ooms
-- Jeroen Janssens
 title: archive
 website: https://archive.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: R bindings to libarchive, supporting a large variety of archive formats

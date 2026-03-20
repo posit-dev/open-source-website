@@ -12,9 +12,12 @@ people:
 - Lionel Henry
 - Hadley Wickham
 - Jeroen Ooms
-- Jeroen Janssens
 title: processx
 website: https://processx.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Execute and Control Subprocesses from R

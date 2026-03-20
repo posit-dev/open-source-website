@@ -14,9 +14,12 @@ people:
 - Max Kuhn
 - Julia Silge
 - Gábor Csárdi
-- Jeroen Janssens
 title: workflows
 website: https://workflows.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Modeling Workflows

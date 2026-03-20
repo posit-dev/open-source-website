@@ -11,10 +11,13 @@ people:
 - Hadley Wickham
 - Jenny Bryan
 - Gábor Csárdi
-- Jeroen Janssens
 - Davis Vaughan
 title: withr
 website: http://withr.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Methods For Temporarily Modifying Global State

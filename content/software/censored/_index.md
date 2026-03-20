@@ -13,10 +13,13 @@ people:
 - Davis Vaughan
 - Simon Couch
 - Gábor Csárdi
-- Jeroen Janssens
 - Julia Silge
 title: censored
 website: https://censored.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Parsnip wrappers for survival models

@@ -12,9 +12,12 @@ people:
 - Lionel Henry
 - Hadley Wickham
 - Jeroen Ooms
-- Jeroen Janssens
 title: vroom
 website: https://vroom.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Fast reading of delimited files

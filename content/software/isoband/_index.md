@@ -9,9 +9,12 @@ latest_release: '2025-12-05T12:51:46+00:00'
 people:
 - Thomas Lin Pedersen
 - Hadley Wickham
-- Jeroen Janssens
 title: isoband
 website: http://isoband.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: 'isoband: An R package to generate contour lines and polygons.'

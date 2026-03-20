@@ -11,9 +11,12 @@ people:
 - Hadley Wickham
 - Gábor Csárdi
 - Barret Schloerke
-- Jeroen Janssens
 title: R6
 website: https://R6.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Encapsulated object-oriented programming for R

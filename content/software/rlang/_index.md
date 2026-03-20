@@ -20,11 +20,14 @@ people:
 - Max Kuhn
 - Winston Chang
 - George Stagg
-- Jeroen Janssens
 tags:
 - tidyverse
 title: rlang
 website: https://rlang.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Low-level API for programming with R

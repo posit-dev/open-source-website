@@ -10,12 +10,15 @@ people:
 - Hadley Wickham
 - Lionel Henry
 - Jeroen Ooms
-- Jeroen Janssens
 - JJ Allaire
 tags:
 - tidyverse
 title: haven
 website: https://haven.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Read SPSS, Stata and SAS files from R

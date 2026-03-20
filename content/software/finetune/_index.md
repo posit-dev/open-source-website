@@ -13,9 +13,12 @@ people:
 - Emil Hvitfeldt
 - Julia Silge
 - Gábor Csárdi
-- Jeroen Janssens
 title: finetune
 website: https://finetune.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Additional functions for model tuning

@@ -9,10 +9,13 @@ latest_release: '2026-01-13T16:12:36+00:00'
 people:
 - Davis Vaughan
 - Jenny Bryan
-- Jeroen Janssens
 - Lionel Henry
 title: clock
 website: https://clock.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A Date-Time Library for R

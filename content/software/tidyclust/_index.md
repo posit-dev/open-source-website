@@ -10,9 +10,12 @@ people:
 - Emil Hvitfeldt
 - Hannah Frick
 - Max Kuhn
-- Jeroen Janssens
 title: tidyclust
 website: https://tidyclust.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A tidy unified interface to clustering models

@@ -10,10 +10,13 @@ people:
 - Jenny Bryan
 - Joe Cheng
 - Hadley Wickham
-- Jeroen Janssens
 - Gábor Csárdi
 title: gargle
 website: https://gargle.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Infrastructure for calling Google APIs from R, including auth

@@ -8,9 +8,12 @@ languages:
 latest_release: '2025-12-16T21:21:31+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 title: nanoparquet
 website: https://nanoparquet.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: R package to read and write Parquet files

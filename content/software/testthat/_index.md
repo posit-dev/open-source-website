@@ -20,9 +20,12 @@ people:
 - Charlie Gao
 - Joe Cheng
 - Jeroen Ooms
-- Jeroen Janssens
 title: testthat
 website: https://testthat.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: An R 📦 to make testing 😀

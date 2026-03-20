@@ -13,9 +13,12 @@ people:
 - Emil Hvitfeldt
 - Gábor Csárdi
 - Julia Silge
-- Jeroen Janssens
 title: brulee
 website: https://brulee.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: High-Level Modeling Functions with 'torch'

@@ -10,10 +10,13 @@ people:
 - Jeroen Ooms
 - George Stagg
 - Hadley Wickham
-- Jeroen Janssens
 - Mine Çetinkaya-Rundel
 title: systemfonts
 website: https://systemfonts.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: System Native Font Handling in R

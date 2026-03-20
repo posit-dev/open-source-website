@@ -12,11 +12,14 @@ people:
 - Hadley Wickham
 - Garrick Aden-Buie
 - Christophe Dervieux
-- Jeroen Janssens
 - Jeroen Ooms
 - Lionel Henry
 title: gh
 website: https://gh.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Minimalistic GitHub API client in R

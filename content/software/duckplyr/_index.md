@@ -9,10 +9,13 @@ latest_release: '2026-02-24T22:07:23+00:00'
 people:
 - Davis Vaughan
 - Hadley Wickham
-- Jeroen Janssens
 - Mine Çetinkaya-Rundel
 title: duckplyr
 website: https://duckplyr.tidyverse.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A drop-in replacement for dplyr, powered by DuckDB for speed.

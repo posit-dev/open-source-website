@@ -17,11 +17,14 @@ people:
 - Tomasz Kalinowski
 - Neal Richardson
 - Mine Çetinkaya-Rundel
-- Jeroen Janssens
 tags:
 - tidyverse
 title: purrr
 website: https://purrr.tidyverse.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A functional programming toolkit for R

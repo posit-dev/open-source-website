@@ -9,9 +9,12 @@ latest_release: '2024-05-15T15:53:45+00:00'
 people:
 - Winston Chang
 - Barret Schloerke
-- Jeroen Janssens
 title: cachem
 website: https://cachem.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Key-value caches for R

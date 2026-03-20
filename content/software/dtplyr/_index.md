@@ -10,11 +10,14 @@ people:
 - Hadley Wickham
 - Lionel Henry
 - Davis Vaughan
-- Jeroen Janssens
 tags:
 - tidyverse
 title: dtplyr
 website: https://dtplyr.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Data table backend for dplyr

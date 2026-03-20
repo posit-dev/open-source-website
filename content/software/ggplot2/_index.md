@@ -21,13 +21,16 @@ people:
 - Christophe Dervieux
 - Davis Vaughan
 - Gábor Csárdi
-- Jeroen Janssens
 - Jeroen Ooms
 tags:
 - tidyverse
 - data visualization
 title: ggplot2
 website: https://ggplot2.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: An implementation of the Grammar of Graphics in R

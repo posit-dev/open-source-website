@@ -14,9 +14,12 @@ people:
 - Lionel Henry
 - Davis Vaughan
 - Mine Çetinkaya-Rundel
-- Jeroen Janssens
 title: glue
 website: https://glue.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Glue strings to data in R. Small, fast, dependency free interpreted

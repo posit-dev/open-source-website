@@ -13,12 +13,15 @@ people:
 - Davis Vaughan
 - Tomasz Kalinowski
 - Max Kuhn
-- Jeroen Janssens
 - Christophe Dervieux
 tags:
 - tidyverse
 title: tibble
 website: https://tibble.tidyverse.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: A modern re-imagining of the data frame

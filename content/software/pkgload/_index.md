@@ -16,9 +16,12 @@ people:
 - Daniel Falbel
 - Tomasz Kalinowski
 - Charlie Gao
-- Jeroen Janssens
 title: pkgload
 website: http://pkgload.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Simulate installing and loading a package

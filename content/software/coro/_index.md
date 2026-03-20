@@ -11,10 +11,13 @@ people:
 - Hadley Wickham
 - Daniel Falbel
 - Charlie Gao
-- Jeroen Janssens
 - Tomasz Kalinowski
 title: coro
 website: https://coro.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Coroutines for R

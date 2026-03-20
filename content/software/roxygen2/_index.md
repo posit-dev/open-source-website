@@ -17,9 +17,12 @@ people:
 - Christophe Dervieux
 - Jeroen Ooms
 - Simon Couch
-- Jeroen Janssens
 title: roxygen2
 website: https://roxygen2.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Generate R package documentation from inline R comments

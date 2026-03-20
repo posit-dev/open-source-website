@@ -24,11 +24,14 @@ people:
 - Charlotte Wickham
 - Carson Sievert
 - Barret Schloerke
-- Jeroen Janssens
 - JJ Allaire
 - Edgar Ruiz
 title: usethis
 website: https://usethis.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Set up commonly used 📦 components

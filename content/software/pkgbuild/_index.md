@@ -11,10 +11,13 @@ people:
 - Hadley Wickham
 - Jeroen Ooms
 - Lionel Henry
-- Jeroen Janssens
 - Christophe Dervieux
 title: pkgbuild
 website: https://pkgbuild.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Find tools needed to build R packages

@@ -8,10 +8,13 @@ languages:
 latest_release: '2024-06-20T11:48:46+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 - Davis Vaughan
 title: crayon
 website: http://r-lib.github.io/crayon/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: 🖍️ R package for colored terminal output — now superseded by cli

@@ -9,9 +9,12 @@ latest_release: '2024-01-18T06:18:02+00:00'
 people:
 - Gábor Csárdi
 - Jenny Bryan
-- Jeroen Janssens
 title: asciicast
 website: https://asciicast.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Turn R scripts into terminal screencasts

@@ -14,9 +14,12 @@ people:
 - Winston Chang
 - Christophe Dervieux
 - Garrick Aden-Buie
-- Jeroen Janssens
 title: fs
 website: https://fs.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Provide cross platform file operations based on libuv.

@@ -16,12 +16,15 @@ people:
 - Mine Çetinkaya-Rundel
 - Carson Sievert
 - Joe Cheng
-- Jeroen Janssens
 - Garrick Aden-Buie
 tags:
 - tidyverse
 title: dbplyr
 website: https://dbplyr.tidyverse.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Database (DBI) backend for dplyr

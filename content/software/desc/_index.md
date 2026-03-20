@@ -10,10 +10,13 @@ people:
 - Gábor Csárdi
 - Jenny Bryan
 - Hadley Wickham
-- Jeroen Janssens
 - Jeroen Ooms
 title: desc
 website: https://desc.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Manipulate DESCRIPTION files

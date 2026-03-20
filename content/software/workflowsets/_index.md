@@ -14,9 +14,12 @@ people:
 - Julia Silge
 - Emil Hvitfeldt
 - Gábor Csárdi
-- Jeroen Janssens
 title: workflowsets
 website: https://workflowsets.tidymodels.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Create a collection of modeling workflows

@@ -8,9 +8,12 @@ languages:
 latest_release: '2024-04-25T07:24:47+00:00'
 people:
 - Gábor Csárdi
-- Jeroen Janssens
 title: debugme
 website: https://r-lib.github.io/debugme/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Easy and efficient debugging for R packages

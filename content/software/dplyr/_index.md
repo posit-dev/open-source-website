@@ -20,12 +20,15 @@ people:
 - Charlotte Wickham
 - Carson Sievert
 - Barret Schloerke
-- Jeroen Janssens
 - Joe Cheng
 tags:
 - tidyverse
 title: dplyr
 website: https://dplyr.tidyverse.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: 'dplyr: A grammar of data manipulation'

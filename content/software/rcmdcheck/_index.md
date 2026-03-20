@@ -10,10 +10,13 @@ people:
 - Gábor Csárdi
 - Hadley Wickham
 - Jenny Bryan
-- Jeroen Janssens
 - Lionel Henry
 title: rcmdcheck
 website: https://rcmdcheck.r-lib.org
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: Run R CMD check from R and collect the results

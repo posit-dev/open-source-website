@@ -9,9 +9,12 @@ latest_release: '2025-01-16T22:42:26+00:00'
 people:
 - Davis Vaughan
 - Lionel Henry
-- Jeroen Janssens
 title: bench
 website: http://bench.r-lib.org/
+
+exclude:
+  people:
+  - Jeroen Janssens
 
 external:  # updated automatically, do not edit
   description: High Precision Timing of R Expressions
