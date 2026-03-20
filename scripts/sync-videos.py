@@ -360,8 +360,11 @@ def process_video(
 
         top_level = compute_top_level_keys(external, include, exclude, override)
 
-        date_val = video["date"]
-        date_str = str(date_val)[:10]
+        if "date" in override:
+            date_str = str(override["date"])[:10]
+        else:
+            date_val = video["date"]
+            date_str = str(date_val)[:10]
 
         frontmatter["title"] = top_level.get("title", video["title"])
         frontmatter["resource_type"] = "video"
@@ -370,6 +373,7 @@ def process_video(
         frontmatter["people"] = top_level.get("people", [])
         frontmatter["software"] = top_level.get("software", [])
         frontmatter["tags"] = top_level.get("tags", [])
+        frontmatter["image"] = "thumbnail.jpg"
         if "resources" not in frontmatter:
             frontmatter["resources"] = []
 
