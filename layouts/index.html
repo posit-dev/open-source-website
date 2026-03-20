@@ -20,10 +20,7 @@
           <p class="text-lg text-gray-700 mb-6">
             Our tools are designed to help you do better work, whether you’re analyzing data, building models, creating visualizations, or sharing insights.
           </p>
-          <a href="/about/posit/" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-            Learn more about us
-            <img src="/images/caret-down.svg" alt="" class="size-5 -rotate-90 brightness-0 invert">
-          </a>
+          {{ partial "button.html" (dict "url" "/about/posit/" "text" "Learn more about us" "icon-right" "boxicons--chevron-right" "size" "large" "class" "mb-0") }}
         </div>
       </div>
     </div>

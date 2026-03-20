@@ -1,6 +1,6 @@
 {{/* button: Render a styled link as a button.
      Required: url
-     Optional: text, target, icon (alias for icon-left), icon-left, icon-right, alt (aria-label), class
+     Optional: text, target, icon (alias for icon-left), icon-left, icon-right, alt (aria-label), class, size ("small", "medium", "large")
      External URLs (http/https) automatically get target="_blank" and a tabler--external-link icon on the right.
      Set icon-right="false" to suppress the automatic external icon.
 */}}
@@ -11,6 +11,7 @@
 {{ $iconRight := index . "icon-right" | default "" }}
 {{ $alt := .alt | default "" }}
 {{ $class := .class | default "" }}
+{{ $size := .size | default "medium" }}
 
 {{ $isExternal := or (hasPrefix $url "http://") (hasPrefix $url "https://") }}
 
@@ -27,7 +28,20 @@
   {{ $iconRight = "" }}
 {{ end }}
 
-{{ $baseClass := "btn-shortcode inline-flex mb-5 mr-5 items-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white font-semibold text-sm leading-5 align-middle hover:bg-blue-600 transition no-underline" }}
+{{ $sizeClass := "px-4 py-2 text-sm leading-5 gap-2" }}
+{{ $iconSizeLeft := "w-5 h-5" }}
+{{ $iconSizeRight := "w-4 h-4" }}
+{{ if eq $size "small" }}
+  {{ $sizeClass = "px-3 py-1.5 text-xs leading-4 gap-1.5" }}
+  {{ $iconSizeLeft = "w-4 h-4" }}
+  {{ $iconSizeRight = "w-3 h-3" }}
+{{ else if eq $size "large" }}
+  {{ $sizeClass = "px-6 py-3 text-base leading-6 gap-2" }}
+  {{ $iconSizeLeft = "w-5 h-5" }}
+  {{ $iconSizeRight = "w-5 h-5" }}
+{{ end }}
+
+{{ $baseClass := printf "btn-shortcode inline-flex mb-5 mr-5 items-center %s rounded-lg bg-blue-500 text-white font-semibold align-middle hover:bg-blue-600 transition no-underline" $sizeClass }}
 {{ $finalClass := trim (printf "%s %s" $baseClass $class) " " }}
 
 <a href="{{ $url }}"
@@ -35,7 +49,7 @@
   {{- if eq $target "_blank" }} rel="noopener noreferrer"{{ end -}}
   {{- if $alt }} aria-label="{{ $alt }}"{{ end }}
   class="{{ $finalClass }}">
-  {{- with $iconLeft }}<span class="icon-[{{ . }}] w-5 h-5 flex-none"></span>{{ end -}}
+  {{- with $iconLeft }}<span class="icon-[{{ . }}] {{ $iconSizeLeft }} flex-none"></span>{{ end -}}
   {{- with $text }}{{ . }}{{ end -}}
-  {{- with $iconRight }}<span class="icon-[{{ . }}] w-4 h-4 flex-none"></span>{{ end -}}
+  {{- with $iconRight }}<span class="icon-[{{ . }}] {{ $iconSizeRight }} flex-none"></span>{{ end -}}
 </a>
