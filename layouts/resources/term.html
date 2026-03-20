@@ -407,18 +407,19 @@
     z-index: 40;
     display: flex;
     flex-direction: column;
-    border: 2px solid #333;
+    border: 2px solid #404041;
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3), 0 4px 10px -6px rgba(0,0,0,0.2);
     margin: 0;
+    background: #404041;
   }
   /* Drag bar: hidden normally, in-flow first child when floating */
   .video-drag-bar {
     display: none;
     height: 24px;
     flex-shrink: 0;
-    background: #333;
+    background: #404041;
     cursor: grab;
     position: relative;
   }
@@ -454,6 +455,7 @@
   #video-container.video-floating video {
     width: 100%;
     height: 100%;
+    border-radius: 0 0 calc(0.5rem - 2px) calc(0.5rem - 2px);
   }
   /* Resize handles on the container corners (bar + video combined) */
   .video-resize-handle {
