@@ -2,12 +2,15 @@
   const navbarMenuToggle = document.getElementById('navbar-menu-toggle');
   const navbarMenu = document.getElementById('navbar-menu');
   const navbarMenuContent = document.getElementById('navbar-menu-content');
+  const navbarMenuBg = document.getElementById('navbar-menu-bg');
+  const siteHeader = document.getElementById('site-header');
   const menuIconHamburger = document.getElementById('menu-icon-hamburger');
   const menuIconClose = document.getElementById('menu-icon-close');
   const navbarLangToggle =
     document.getElementById("navbar-lang-toggle") ||
     document.createElement("div"); // fix #56
   const navbarLang = document.getElementById('navbar-lang');
+  const isHomePage = navbarMenu && navbarMenu.dataset.isHome === 'true';
 
   function isMobile() {
     return window.innerWidth < 768; // 768px is Tailwind's md breakpoint
@@ -21,12 +24,32 @@
       if (menuIconClose) menuIconClose.classList.add('hidden');
       // Re-enable body scroll
       document.body.style.overflow = '';
+      // Reset background to yellow-50 on homepage
+      if (isHomePage) {
+        if (navbarMenuBg) {
+          navbarMenuBg.classList.remove('bg-white');
+          navbarMenuBg.classList.add('bg-yellow-50');
+        }
+        if (siteHeader) {
+          siteHeader.classList.remove('bg-white');
+        }
+      }
     }
   }
 
   function openMenu() {
     if (navbarMenu && isMobile()) {
       navbarMenu.style.height = 'calc(100vh - 5rem)';
+      // Change background to white on homepage when menu opens
+      if (isHomePage) {
+        if (navbarMenuBg) {
+          navbarMenuBg.classList.remove('bg-yellow-50');
+          navbarMenuBg.classList.add('bg-white');
+        }
+        if (siteHeader) {
+          siteHeader.classList.add('bg-white');
+        }
+      }
       // Delay content fade-in slightly so background animates first
       setTimeout(() => {
         if (navbarMenuContent) navbarMenuContent.style.opacity = '1';
@@ -53,6 +76,16 @@
       navbarMenu.style.height = '';
       if (navbarMenuContent) navbarMenuContent.style.opacity = '';
       document.body.style.overflow = '';
+      // Reset background to yellow-50 on homepage
+      if (isHomePage) {
+        if (navbarMenuBg) {
+          navbarMenuBg.classList.remove('bg-white');
+          navbarMenuBg.classList.add('bg-yellow-50');
+        }
+        if (siteHeader) {
+          siteHeader.classList.remove('bg-white');
+        }
+      }
     }
   });
 

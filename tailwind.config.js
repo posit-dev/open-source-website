@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        '3xl': '1920px',
+      },
       // These are for @container queries specifically
       containers: {
         'nip': '10rem',

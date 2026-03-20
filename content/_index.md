@@ -1,19 +1,53 @@
 ---
 title: "Welcome to Posit Open Source"
+description: "We build open source software for data science, scientific research, and technical communication. Our tools are designed to help you do better work, whether you're analyzing data, building models, creating visualizations, or sharing insights."
 ---
 
-We build open source software for data science, scientific research, and technical communication. Our tools are designed to help you do better work, whether you're analyzing data, building models, creating visualizations, or sharing insights.
+<h2 class="text-3xl">Core projects</h2>   
 
-{{< button url="about/posit/" text="Learn more about us" icon="boxicons--globe" >}}
-
-## Core projects
+<div class="text-xl">
 
 We believe powerful data science tools should be open, accessible, and community-driven. That's why our core tools are free and open source, from RStudio IDE and the Tidyverse to Quarto and Positron. We're committed to supporting multiple languages and workflows, because your choice of tools should fit your work, not the other way around.
 
-| Open-source software for R From the tidyverse to tidymodels, we maintain a robust, human-readable ecosystem of R packages and tools. [Learn about our R tools →](about/r) | Open-source software for Python We build native Python libraries that solve challenges in data presentation, interactivity, and more. [Learn about our Python tools →](about/python) |
-| :---- | :---- |
-| **Technical, scientific publishing** Quarto allows you to create reproducible documents, presentations, and websites with R, Python, Julia, and Observable. [Learn more about Quarto →](software/quarto) | **Web applications for data science** Shiny enables you to build and deploy performant, reactive web applications using R or Python, without requiring web development skills. [Learn more about Shiny for R →](software/shiny-r)  [Learn more about Shiny for Python →](software/shiny-python) |
-| **IDEs for data science** RStudio and Positron provide purpose-built environments for code-first data science, analysis, and exploration. [Learn more about RStudio →](software/rstudio/)  [Learn more about Positron →](software/positron) | **AI tools for data science** Leverage AI tools in your data workflow while keeping your results accurate, transparent, and reproducible. [Learn about our AI tools →](about/ai) |
+</div> 
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 my-10">
+  <div class="border-t border-gray-500 text-lg mt-12">
+    <p class="font-mono uppercase font-medium">Open-source software for R:</p>
+    <p>From the tidyverse to tidymodels, we maintain a robust, human-readable ecosystem of R packages and tools.</p>
+    <p><a href="about/r" class="inline-flex items-center gap-1">Learn about our R tools <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a></p>
+  </div>
+  <div class="border-t border-gray-500 text-lg mt-12">
+    <p class="font-mono uppercase font-medium">Open-source software for Python:</p>
+    <p>We build native Python libraries that solve challenges in data presentation, interactivity, and more.</p>
+    <p><a href="about/python" class="inline-flex items-center gap-1">Learn about our Python tools <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a></p>
+  </div>
+</div>
+
+<div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-4 sm:px-6 lg:px-8 my-16">
+  <div class="xl:max-w-[1540px] mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10">
+    <div class="border-2 border-gray-500 rounded-xl px-8 pt-4 pb-8">
+      <p class="text-md text-gray-700 font-semibold">Technical, scientific publishing</p>
+      <p>Quarto allows you to create reproducible documents, presentations, and websites with R, Python, Julia, and Observable. </p>
+      <p><a href="software/quarto" class="inline-flex items-center gap-1">Quarto <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a></p>
+    </div>
+    <div class="border-2 border-gray-500 rounded-xl px-8 pt-4 pb-8">
+      <p class="text-md text-gray-700 font-semibold">Web applications for data science</p>
+      <p>Shiny enables you to build and deploy performant, reactive web applications using R or Python, without requiring web development skills.</p>
+      <a href="software/shiny-r" class="inline-flex items-center gap-1 mr-4">Shiny for R <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a> <a href="software/shiny-python" class="inline-flex items-center gap-1">Shiny for Python <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a>
+    </div>
+    <div class="border-2 border-gray-500 rounded-xl px-8 pt-4 pb-8">
+      <p class="text-md text-gray-700 font-semibold">IDEs for data science</p>
+      <p>RStudio and Positron provide purpose-built environments for code-first data science, analysis, and exploration.</p>
+      <p><a href="software/rstudio/" class="inline-flex items-center gap-1 mr-4">RStudio <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a> <a href="software/positron" class="inline-flex items-center gap-1">Positron <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a></p>
+    </div>
+    <div class="border-2 border-gray-500 rounded-xl px-8 pt-4 pb-8">
+      <p class="text-md text-gray-700 font-semibold">AI tools for data science</p>
+      <p>Leverage AI tools in your data workflow while keeping your results accurate, transparent, and reproducible.</p>
+      <p><a href="about/ai" class="inline-flex items-center gap-1">Our AI tools <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a></p>
+    </div>
+  </div>
+</div>
 
 ## Featured software
 

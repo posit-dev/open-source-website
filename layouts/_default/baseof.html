@@ -24,10 +24,10 @@
   {{- if hugo.IsDevelopment }}
     {{ partial "tailwind-size-indicator.html" }}
   {{ end -}}
-  <header class="flex flex-none justify-center z-10 {{- if $.Site.Params.header.sticky }} bg-white sticky top-0{{ end -}}">
+  <header id="site-header" class="flex flex-none justify-center {{- if $.Site.Params.header.sticky }} sticky top-0{{ end -}} {{ if not .IsHome }}bg-white z-10{{ else }}transition-colors duration-300 z-50{{ end }}" data-is-home="{{ if .IsHome }}true{{ else }}false{{ end }}">
     {{ partial "header.html" . }}
   </header>
-  <main class="flex flex-auto justify-center pt-10">
+  <main class="flex flex-auto justify-center {{ if not .IsHome }}pt-10{{ end }}">
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {{ if eq .Section "software" }}
         <span class="sr-only" data-pagefind-filter="type">Software</span>

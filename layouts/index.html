@@ -3,23 +3,35 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="flex flex-col mt-6">
-    <div>
-      {{ partial "block/image.html" . }}
-    </div>
-    <div class="flex flex-col gap-y-3">
-      <h1 class="text-4xl font-medium text-gray-500">
-        {{ .Title | .RenderString }}
-      </h1>
+<div class="flex flex-col -mx-4 sm:-mx-6 lg:-mx-8">
+    {{- /* Hero area */ -}}
+    <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-yellow-50 bg-cover lg:bg-contain 2xl:bg-[length:100%_auto] bg-bottom bg-no-repeat min-h-[700px] md:min-h-[750px] xl:min-h-[800px] 3xl:min-h-[950px] flex items-center pt-32 md:pt-36 2xl:pt-44 3xl:py-40 pb-20 md:pb-24 2xl:pb-36 3xl:pb-32 px-4 sm:px-6 lg:px-8 mb-12 -mt-[88px]" style="background-image: url('/images/stars.svg');">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-12 lg:gap-24 items-center">
+        {{- /* Left column - Image */ -}}
+        <div class="flex justify-center md:justify-end">
+          <img src="/images/opensource.svg" alt="Posit Open Source" class="w-auto max-w-[6rem] md:max-w-xs max-h-[6rem] md:max-h-[16rem]">
+        </div>
 
-      {{ with .Description }}
-      <h2 class="my-4 text-large text-gray-600">
-        {{ . | $.Page.RenderString }}
-      </h2>
-      {{ end }}
+        {{- /* Right column - Text */ -}}
+        <div class="text-center md:text-left">
+          <h1 class="text-3xl font-bold text-gray-700 mb-4">
+            Software for data science, scientific research, and technical communication.
+          </h1>
+          <p class="text-lg text-gray-700 mb-6">
+            Our tools are designed to help you do better work, whether you’re analyzing data, building models, creating visualizations, or sharing insights.
+          </p>
+          <a href="/about/posit/" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+            Learn more about us
+            <img src="/images/caret-down.svg" alt="" class="size-5 -rotate-90 brightness-0 invert">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-y-3 px-4 sm:px-6 lg:px-8">
       {{ partial "block/taxonomies.html" .}}
 
-      <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-quoteless post-content">
+      <article class="mt-6 w-full max-w-4xl lg:max-w-5xl mx-auto prose prose-quoteless post-content">
         {{ .Content | safeHTML }}
       </article>
 

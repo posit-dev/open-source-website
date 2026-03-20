@@ -1,4 +1,5 @@
 {{ $page := . }}
+{{ $isHome := .IsHome }}
 {{ $isntDefault := not (or (eq (trim $.Site.Params.contentTypeName " ") "posts") (eq (trim $.Site.Params.contentTypeName
 " ") "")) }}
 {{ $contentTypeName := cond $isntDefault (string $.Site.Params.contentTypeName) "posts" }}
@@ -15,8 +16,8 @@
       {{ partial "icon.html" "x" }}
     </i>
   </button>
-  <div class="fixed md:static top-20 md:top-auto left-0 right-0 bottom-0 md:bottom-auto z-40 w-full h-0 md:h-auto md:w-auto md:opacity-100 md:visible transition-all duration-300 ease-in-out overflow-hidden md:overflow-visible" id="navbar-menu" style="transition-property: height, opacity;">
-    <div class="absolute inset-0 bg-white md:bg-transparent"></div>
+  <div class="fixed md:static top-20 md:top-auto left-0 right-0 bottom-0 md:bottom-auto z-40 w-full h-0 md:h-auto md:w-auto md:opacity-100 md:visible transition-all duration-300 ease-in-out overflow-hidden md:overflow-visible" id="navbar-menu" style="transition-property: height, opacity;" data-is-home="{{ if $isHome }}true{{ else }}false{{ end }}">
+    <div class="absolute inset-0 {{ if $isHome }}bg-yellow-50{{ else }}bg-white{{ end }} md:bg-transparent transition-colors duration-300" id="navbar-menu-bg"></div>
     <ul
       class="absolute top-4/9 -translate-y-1/2 left-0 right-0 flex flex-col mx-2 md:static md:top-auto md:translate-y-0 md:mx-0 md:flex-row md:items-center md:gap-x-0 md:border-0 text-base font-regular opacity-0 md:opacity-100 transition-opacity duration-300 md:bg-transparent md:shadow-none md:rounded-none md:border-0" id="navbar-menu-content">
       {{ range . }}
