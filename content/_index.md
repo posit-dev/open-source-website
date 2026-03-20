@@ -53,7 +53,7 @@ We believe powerful data science tools should be open, accessible, and community
 
 Explore some of our newest and most innovative packages. These tools represent our most significant open-source investments at the moment, and we encourage the community to explore them and help shape their direction!
 
-{{< insert-items >}}
+{{< insert-items hide-badge=true >}}
 - software/mirai
 - software/duckplyr
 - software/orbital
@@ -65,7 +65,7 @@ Explore some of our newest and most innovative packages. These tools represent o
 
 Recent releases, project deep dives, and updates from across our open-source ecosystem.
 
-{{< query-items path="/blog/.*" sort-by="date" limit="3" cols="3" format="card" >}}
+{{< query-items path="/blog/.*" sort-by="date" limit="3" cols="3" format="card" hide-badge=true >}}
 
 {{< button url="blog" text="Read all blog posts" icon="boxicons--message-filled" >}}
 
