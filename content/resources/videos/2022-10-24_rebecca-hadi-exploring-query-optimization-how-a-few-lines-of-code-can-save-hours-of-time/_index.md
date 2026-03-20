@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   duration: 934
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529242+00:00'
+  last_updated: '2026-03-20T11:32:52.707831+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xdQ63mWrhT4/maxresdefault.jpg
   title: 'Rebecca Hadi | Exploring Query Optimization: How a few lines of code can save hours of time'
   url: https://www.youtube.com/watch?v=xdQ63mWrhT4
-  view_count: 444
+  view_count: 446
 ---
 image: thumbnail.jpg
 

@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   duration: 5872
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.323574+00:00'
+  last_updated: '2026-03-20T11:32:57.020658+00:00'
   like_count: 6
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1efPTy4TQ4Q/maxresdefault.jpg
   title: Getting Started with LLM APIs in R
   url: https://www.youtube.com/watch?v=1efPTy4TQ4Q
-  view_count: 199
+  view_count: 233
 ---
 image: thumbnail.jpg
 

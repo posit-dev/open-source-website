@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 68
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.946162+00:00'
+  last_updated: '2026-03-20T11:32:54.796421+00:00'
   like_count: 3
   people:
   - RStudio Team
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hJ9qGMY7UD4/maxresdefault.jpg
   title: RStudio Cloud | Tuning Resources | Instructor View
   url: https://www.youtube.com/watch?v=hJ9qGMY7UD4
-  view_count: 381
+  view_count: 382
 ---
 image: thumbnail.jpg
 

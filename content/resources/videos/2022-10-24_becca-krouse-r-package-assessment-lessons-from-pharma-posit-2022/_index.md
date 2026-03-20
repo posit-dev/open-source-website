@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 1082
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529124+00:00'
+  last_updated: '2026-03-20T11:32:52.707739+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/uP09-9KbAfo/maxresdefault.jpg
   title: 'Becca Krouse | R Package Assessment: Lessons from Pharma | Posit (2022)'
   url: https://www.youtube.com/watch?v=uP09-9KbAfo
-  view_count: 323
+  view_count: 325
 ---
 image: thumbnail.jpg
 

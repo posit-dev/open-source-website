@@ -11,7 +11,8 @@ description: 'Slides: https://ivelasq-branded-quarto.share.connect.posit.cloud/
 
   Join us to discover how brand.yml can elevate your Quarto documents to a new level of professionalism to ensure that your work is more impactful and on-brand.'
 image: thumbnail.jpg
-people: []
+people:
+- Isabella Velásquez
 resource_type: video
 resources: []
 software:
@@ -37,8 +38,10 @@ external:  # updated automatically, do not edit
   duration: 3389
   has_captions: false
   language: en-US
-  last_updated: '2026-03-04T14:51:30.708589+00:00'
+  last_updated: '2026-03-20T11:32:57.423728+00:00'
   like_count: 34
+  people:
+  - Isabella Velásquez
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Quarto
@@ -46,7 +49,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mTuhQ64P3qc/maxresdefault.jpg
   title: Quarto with brand.yml with Isabella Velásquez
   url: https://www.youtube.com/watch?v=mTuhQ64P3qc
-  view_count: 1100
+  view_count: 1124
 ---
 image: thumbnail.jpg
 

@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   duration: 1080
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:28.937882+00:00'
+  last_updated: '2026-03-20T11:32:55.538296+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -130,7 +130,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gdzONbwfWk0/maxresdefault.jpg
   title: 'Irene Steves | The dynamic duo: SQL & R | RStudio'
   url: https://www.youtube.com/watch?v=gdzONbwfWk0
-  view_count: 6038
+  view_count: 6044
 ---
 image: thumbnail.jpg
 

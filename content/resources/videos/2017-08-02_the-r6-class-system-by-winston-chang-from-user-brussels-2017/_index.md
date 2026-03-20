@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 1134
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.323288+00:00'
+  last_updated: '2026-03-20T11:32:57.020553+00:00'
   like_count: 0
   people:
   - Winston Chang
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3GEFd8rZQgY/maxresdefault.jpg
   title: The R6 Class System by Winston Chang from useR! Brussels 2017
   url: https://www.youtube.com/watch?v=3GEFd8rZQgY
-  view_count: 4763
+  view_count: 4776
 ---
 image: thumbnail.jpg
 

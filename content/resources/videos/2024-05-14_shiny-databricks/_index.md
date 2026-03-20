@@ -1,6 +1,6 @@
 ---
 date: '2024-05-14'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -59,11 +59,11 @@ external:  # updated automatically, do not edit
   comment_count: 0
   date: '2024-05-14T21:04:08Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 28
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695607+00:00'
+  last_updated: '2026-03-20T11:32:49.221475+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zy6Fkc8lIak/maxresdefault.jpg
   title: Shiny + Databricks 🫶
   url: https://www.youtube.com/watch?v=zy6Fkc8lIak
-  view_count: 493
+  view_count: 495
 ---
 image: thumbnail.jpg
 

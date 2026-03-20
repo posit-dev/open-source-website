@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1109
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.840866+00:00'
+  last_updated: '2026-03-20T11:32:48.367589+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/II8qzoFrkLg/maxresdefault.jpg
   title: Kshitij Aranke - Demystifying Data Modeling
   url: https://www.youtube.com/watch?v=II8qzoFrkLg
-  view_count: 371
+  view_count: 375
 ---
 image: thumbnail.jpg
 

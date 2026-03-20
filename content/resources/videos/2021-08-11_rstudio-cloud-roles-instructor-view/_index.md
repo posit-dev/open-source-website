@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 98
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.946325+00:00'
+  last_updated: '2026-03-20T11:32:54.796438+00:00'
   like_count: 2
   people:
   - RStudio Team
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dmuy7CuMevA/maxresdefault.jpg
   title: RStudio Cloud | Roles | Instructor View
   url: https://www.youtube.com/watch?v=dmuy7CuMevA
-  view_count: 250
+  view_count: 251
 ---
 image: thumbnail.jpg
 

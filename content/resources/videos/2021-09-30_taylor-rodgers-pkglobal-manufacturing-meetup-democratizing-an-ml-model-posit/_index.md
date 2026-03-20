@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3607
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:27.945850+00:00'
+  last_updated: '2026-03-20T11:32:54.271409+00:00'
   like_count: 63
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Ctxf0LjlB08/maxresdefault.jpg
   title: Taylor Rodgers - PKGlobal || Manufacturing Meetup (Democratizing an ML model ) || Posit
   url: https://www.youtube.com/watch?v=Ctxf0LjlB08
-  view_count: 1696
+  view_count: 1698
 ---
 image: thumbnail.jpg
 

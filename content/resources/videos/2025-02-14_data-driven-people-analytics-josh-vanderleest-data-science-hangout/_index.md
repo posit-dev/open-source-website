@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3442
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.505175+00:00'
+  last_updated: '2026-03-20T11:32:47.650162+00:00'
   like_count: 17
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/8T8vCNsbx1k/maxresdefault.jpg
   title: Data-driven people analytics | Josh VanderLeest | Data Science Hangout
   url: https://www.youtube.com/watch?v=8T8vCNsbx1k
-  view_count: 513
+  view_count: 515
 ---
 image: thumbnail.jpg
 

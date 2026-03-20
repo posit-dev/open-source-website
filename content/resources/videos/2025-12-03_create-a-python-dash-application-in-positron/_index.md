@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags: []
 title: Create a Python Dash Application in Positron
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 1067
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.268693+00:00'
+  last_updated: '2026-03-20T11:32:46.406285+00:00'
   like_count: 19
   playlist: ''
   software:
-  - positron
+  - Positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/KlHKKnPC9PM/maxresdefault.jpg
   title: Create a Python Dash Application in Positron
   url: https://www.youtube.com/watch?v=KlHKKnPC9PM
-  view_count: 695
+  view_count: 756
 ---
 image: thumbnail.jpg
 

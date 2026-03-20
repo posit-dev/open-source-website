@@ -208,7 +208,7 @@ external:  # updated automatically, do not edit
   duration: 3585
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:27.219482+00:00'
+  last_updated: '2026-03-20T11:32:53.454237+00:00'
   like_count: 17
   playlist: ''
   software:
@@ -218,7 +218,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mr3TmyXOG_g/maxresdefault.jpg
   title: Data Science Hangout | David Meza, NASA | People analytics for getting to the moon
   url: https://www.youtube.com/watch?v=mr3TmyXOG_g
-  view_count: 895
+  view_count: 902
 ---
 image: thumbnail.jpg
 

@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 243
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.505129+00:00'
-  like_count: 25
+  last_updated: '2026-03-20T11:32:47.650148+00:00'
+  like_count: 26
   playlist: ''
   software:
   - py-shiny-templates
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WD693FBfVUk/maxresdefault.jpg
   title: Deploy your work to Posit Connect Cloud
   url: https://www.youtube.com/watch?v=WD693FBfVUk
-  view_count: 2563
+  view_count: 2656
 ---
 image: thumbnail.jpg
 

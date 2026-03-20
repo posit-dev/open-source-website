@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 2961
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.560879+00:00'
+  last_updated: '2026-03-20T11:32:53.797623+00:00'
   like_count: 0
   people:
   - Rich Iannone
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/aPRVzk9pvno/maxresdefault.jpg
   title: Rich Iannone || {gt} Intendo Game Data Project Walkthrough || RStudio
   url: https://www.youtube.com/watch?v=aPRVzk9pvno
-  view_count: 6401
+  view_count: 6404
 ---
 image: thumbnail.jpg
 

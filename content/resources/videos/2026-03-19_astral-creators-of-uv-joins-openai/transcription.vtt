@@ -1,0 +1,68 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.560
+we certainly as a team want to figure out like how can we make python a great choice for agents and
+
+00:00:04.560 --> 00:00:10.240
+so like how should the language and the tooling evolve right and like we've thought you know for
+
+00:00:10.240 --> 00:00:14.800
+example we've thought a lot about building our own like test infrastructure or um or even like
+
+00:00:14.800 --> 00:00:19.520
+should we do our own runtime like something that makes very different trade-offs um uh those are
+
+00:00:19.520 --> 00:00:24.879
+obviously all very hard problems but the question is like what if we wanted python to be a great
+
+00:00:24.879 --> 00:00:29.760
+choice or remain a great choice for agents like i think we kind of have a responsibility to try
+
+00:00:29.760 --> 00:00:34.400
+to solve some of those problems and like make it a better choice like i'd love to do um you know
+
+00:00:34.400 --> 00:00:38.400
+standalone binaries like just for example like we should we should absolutely like kind of like what
+
+00:00:38.400 --> 00:00:42.560
+you can do with like bun and java yeah we should absolutely just like make that like possible um
+
+00:00:42.560 --> 00:00:45.680
+and there's no reason we can't it's just a question of like prioritization and i'm sure
+
+00:00:45.680 --> 00:00:49.200
+there will be trade-offs and whatever else but you know i think i think what i would i would say
+
+00:00:49.200 --> 00:00:54.560
+is like we're trying to learn about how to build software with agents and like what's required i
+
+00:00:54.560 --> 00:00:59.360
+think it'll probably impact our roadmap a lot in terms of the problems we choose to take on
+
+00:00:59.919 --> 00:01:03.840
+i think it will also be the case that like the way people make decisions about what programming
+
+00:01:03.840 --> 00:01:08.000
+language to use will be like super different it might not be the case that most people are writing
+
+00:01:08.000 --> 00:01:12.800
+most of their code with agents this year i'm not sure if the distribution will happen that fast
+
+00:01:12.800 --> 00:01:17.599
+but like i think it's important to be when you think about building tools it's like that's like
+
+00:01:17.599 --> 00:01:23.279
+what software is gonna software is gonna be like really different and um and so i want to fold that
+
+00:01:23.279 --> 00:01:26.559
+into our roadmap i want to fold that into how we think about what we're building like even if we
+
+00:01:26.559 --> 00:01:29.680
+choose say like actually like we're going to build this other tool that has nothing to do with
+
+00:01:29.680 --> 00:01:33.519
+python like i'm even open-minded to that because it's like what's just what's the thing that's
+
+00:01:33.519 --> 00:01:34.639
+going to make people like more productive
+

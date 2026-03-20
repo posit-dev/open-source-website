@@ -27,7 +27,7 @@ resource_type: video
 resources: []
 software:
 - chatlas
-- positron
+- Positron
 - ragnar
 tags:
 - posit::conf(2025)
@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 2697
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.268985+00:00'
+  last_updated: '2026-03-20T11:32:46.406313+00:00'
   like_count: 31
   people:
   - Carson Sievert
@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - chatlas
-  - positron
+  - Positron
   - ragnar
   tags:
   - posit::conf(2025)
@@ -88,7 +88,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9ZW2tx5fHjk/maxresdefault.jpg
   title: Positron AI Session (George Stagg, Winston Chang, Tomasz Kalinowski , Carson Sievert) | posit::conf
   url: https://www.youtube.com/watch?v=9ZW2tx5fHjk
-  view_count: 1517
+  view_count: 1566
 ---
 image: thumbnail.jpg
 

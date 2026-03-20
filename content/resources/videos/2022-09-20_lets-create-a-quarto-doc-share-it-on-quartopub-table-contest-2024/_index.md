@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 143
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.836233+00:00'
+  last_updated: '2026-03-20T11:32:53.123314+00:00'
   like_count: 58
   people:
   - Rich Iannone
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/l-AQ4yAQXy0/maxresdefault.jpg
   title: Let's Create a Quarto Doc & Share it on Quarto.Pub | Table Contest 2024
   url: https://www.youtube.com/watch?v=l-AQ4yAQXy0
-  view_count: 4004
+  view_count: 4014
 ---
 image: thumbnail.jpg
 

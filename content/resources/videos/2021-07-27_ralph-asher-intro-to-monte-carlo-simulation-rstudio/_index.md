@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   duration: 1941
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:28.310856+00:00'
+  last_updated: '2026-03-20T11:32:54.796514+00:00'
   like_count: 57
   playlist: ''
   software:
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VMGQ3mVbYXI/hqdefault.jpg
   title: Ralph Asher | Intro to Monte Carlo Simulation | RStudio
   url: https://www.youtube.com/watch?v=VMGQ3mVbYXI
-  view_count: 2256
+  view_count: 2257
 ---
 image: thumbnail.jpg
 

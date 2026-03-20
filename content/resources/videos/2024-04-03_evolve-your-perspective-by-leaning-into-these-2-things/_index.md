@@ -3,7 +3,7 @@ date: '2024-04-03'
 description: 'Data Science Hangout with Brad Zielke, Sr. Director Data Sciences at Target on leaning into empathy and humility to surround yourself with diverse perspectives and evolve your perspective as a leader.
 
 
-  🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh'
+  🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -64,11 +64,11 @@ external:  # updated automatically, do not edit
   description: 'Data Science Hangout with Brad Zielke, Sr. Director Data Sciences at Target on leaning into empathy and humility to surround yourself with diverse perspectives and evolve your perspective as a leader.
 
 
-    🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh'
+    🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh #positshorts'
   duration: 35
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:24.145443+00:00'
+  last_updated: '2026-03-20T11:32:49.724972+00:00'
   like_count: 17
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vGUUSAZhaB8/maxresdefault.jpg
   title: Evolve your perspective by leaning into these 2 things
   url: https://www.youtube.com/watch?v=vGUUSAZhaB8
-  view_count: 762
+  view_count: 763
 ---
 image: thumbnail.jpg
 

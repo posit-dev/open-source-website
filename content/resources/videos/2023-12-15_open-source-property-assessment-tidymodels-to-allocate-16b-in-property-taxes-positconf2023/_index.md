@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   duration: 1159
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:25.238732+00:00'
+  last_updated: '2026-03-20T11:32:51.123051+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1_GivgmZYgM/maxresdefault.jpg
   title: 'Open Source Property Assessment: Tidymodels to Allocate $16B in Property Taxes - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=1_GivgmZYgM
-  view_count: 990
+  view_count: 994
 ---
 image: thumbnail.jpg
 

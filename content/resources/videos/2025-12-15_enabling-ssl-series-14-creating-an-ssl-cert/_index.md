@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 175
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:20.891494+00:00'
+  last_updated: '2026-03-20T11:32:46.095399+00:00'
   like_count: 1
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/QVG_7WlNMas/maxresdefault.jpg
   title: 'Enabling SSL SERIES 1/4: Creating an SSL Cert'
   url: https://www.youtube.com/watch?v=QVG_7WlNMas
-  view_count: 104
+  view_count: 112
 ---
 image: thumbnail.jpg
 

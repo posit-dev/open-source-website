@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1107
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.820263+00:00'
+  last_updated: '2026-03-20T11:32:46.972267+00:00'
   like_count: 5
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/C9tTH1iTxvY/maxresdefault.jpg
   title: Demystifying MLOps with Vetiver (Myles Mitchell, Jumping Rivers) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=C9tTH1iTxvY
-  view_count: 156
+  view_count: 158
 ---
 image: thumbnail.jpg
 

@@ -1,6 +1,6 @@
 ---
 date: '2024-03-29'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -14,18 +14,18 @@ external:  # updated automatically, do not edit
   comment_count: 1
   date: '2024-03-29T05:34:05Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 6
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:24.145744+00:00'
+  last_updated: '2026-03-20T11:32:49.725045+00:00'
   like_count: 54
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/FGz3AwQceJM/maxresdefault.jpg
   title: If you’re a Python data scientist you should really start using this🤯
   url: https://www.youtube.com/watch?v=FGz3AwQceJM
-  view_count: 3676
+  view_count: 3680
 ---
 image: thumbnail.jpg
 

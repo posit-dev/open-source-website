@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   duration: 4883
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.130925+00:00'
+  last_updated: '2026-03-20T11:32:47.293399+00:00'
   like_count: 161
   people:
   - Jeroen Janssens
@@ -85,7 +85,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dbPj3GOFa-g/maxresdefault.jpg
   title: How marimo adds reactivity to your Quarto documents
   url: https://www.youtube.com/watch?v=dbPj3GOFa-g
-  view_count: 5659
+  view_count: 5728
 ---
 image: thumbnail.jpg
 

@@ -1,12 +1,12 @@
 ---
 date: '2025-08-18'
-description: 'Personally, I think the Plots pane is 🔥 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter'
+description: 'Personally, I think the Plots pane is 🔥 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - rstudio
 tags:
 - rstudio
@@ -60,15 +60,15 @@ external:  # updated automatically, do not edit
   comment_count: 10
   date: '2025-08-18T16:35:54Z'
   definition: hd
-  description: 'Personally, I think the Plots pane is 🔥 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter'
+  description: 'Personally, I think the Plots pane is 🔥 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #positshorts'
   duration: 56
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:21.820606+00:00'
-  like_count: 118
+  last_updated: '2026-03-20T11:32:47.293322+00:00'
+  like_count: 123
   playlist: ''
   software:
-  - positron
+  - Positron
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PxMGHBJU1X4/maxresdefault.jpg
   title: 'Positron 101: Make your DS life easier'
   url: https://www.youtube.com/watch?v=PxMGHBJU1X4
-  view_count: 5089
+  view_count: 5252
 ---
 image: thumbnail.jpg
 

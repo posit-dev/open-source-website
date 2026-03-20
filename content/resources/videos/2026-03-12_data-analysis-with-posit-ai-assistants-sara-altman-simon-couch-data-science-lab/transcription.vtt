@@ -1,0 +1,2110 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:15.000
+Welcome to the Data Science Lab, everybody. I'm Libby. I run community here at Posit and I'm joined by Isabella Velazquez. Isabella, would you like to say hello?
+
+00:00:15.000 --> 00:00:18.000
+Hi, everyone. Thank you for joining us.
+
+00:00:18.000 --> 00:00:33.000
+So what I will do now is introduce our featured lab manager for today, Sara Altman. Sara, would you like to introduce yourself and talk a little bit about what you will be talking about today?
+
+00:00:33.000 --> 00:00:47.000
+Yeah, sounds good. Yeah. Hi, everyone. I'm Sara. So I'm a senior developer advocate on the AI team here at Posit. Thanks, Libby and Isabella for hosting this.
+
+00:00:47.000 --> 00:01:05.000
+So today we're going to walk through data analysis with AI assistants. So if you've seen the AI stuff that Posit makes before, you might know we have packages that let you build stuff that uses LLMs.
+
+00:01:05.000 --> 00:01:23.000
+And then we have tools that are built with LLMs that help you do data analysis, data science tasks. So I'm going to focus on the second. So it's less like the packages like Ellmer or Chatlas or whatever you might have used and more on tools where there is an LLM embedded in the tool.
+
+00:01:23.000 --> 00:01:41.000
+And then we're using that to do data analysis. So I'm going to show you a couple tools or like three to four. We'll see how much we get through. But I also would like to talk about like why you might want to use AI for data analysis or data science, but also why you might not want to.
+
+00:01:42.000 --> 00:02:02.000
+What kind of tasks it might be useful to use it for and what kind of tasks it's more risky or you might not want to use AI for. So please ask questions. It'd be great to talk about that. And I'll explicitly talk about a couple pitfalls and how you might avoid them. But yeah.
+
+00:02:02.000 --> 00:02:29.000
+Perfect. Yes, definitely. Definitely the place to be a an observer, an observer, like a informed skeptic. Right. And like, ask all the good questions because Sarah and Simon are asking them and they're like actively writing blog posts, putting them in the AI newsletter. And that is a fantastic resource for anybody who is curious about use cases of AI and pitfalls and dos and don'ts.
+
+00:02:29.000 --> 00:02:40.000
+I'd also love to just let Simon introduce himself really quickly because he is here. I wasn't sure if he was going to be here. Simon's also on the AI team with Sarah. He's our little special guest today.
+
+00:02:41.000 --> 00:03:04.000
+Yeah. Yeah. Happy to be here. I work on the AI team with Sarah. Sarah and I work together quite a bit, especially on the AI newsletter, which we send out every two weeks, as well as various deep dives into problems that we see while we work on data science agents that we are building on the AI team.
+
+00:03:04.000 --> 00:03:17.000
+Wonderful. Glad you're here, Simon. All right, Sarah, I will let you take it away and share your screen and maybe get us started with a little bit of an intro on the first tool we're going to talk about today or the first method.
+
+00:03:18.000 --> 00:03:34.000
+Okay. Can you all see that? This is just the Positron website, because we're going to start by talking about how to install these things.
+
+00:03:34.000 --> 00:03:54.000
+The first couple tools I'm going to talk about are the two AI assistants that are within Positron. If you haven't used Positron, it's Posit's next generation data science ID. You can do both R and Python in it. These are both assistants that are available in Positron.
+
+00:03:54.000 --> 00:04:14.000
+I'll also show you a tool that you can use in RStudio and then a more general thing at the end. But we're going to start with Positron. Before we talk about how to get started, I just want to say a couple central ideas they want to get across.
+
+00:04:14.000 --> 00:04:34.000
+The first is if you haven't used these tools and don't know how to get started, I'm hopeful that this can help you just get started playing around with them. And the second is that I want to emphasize that AI usage for data analysis or data science really isn't an all or nothing thing.
+
+00:04:34.000 --> 00:04:57.000
+You don't have to suddenly convert to doing absolutely everything with AI assistant and never looking at your code again and never knowing what's going on with the data again. You could do that. You probably don't want to. But there's a wide variety of things that you can do. And you can pick and choose what kind of tasks you want to use, but also pick and choose what kind of tools are most useful for you.
+
+00:04:58.000 --> 00:05:16.000
+And so if you are approaching this skeptically because you don't want to lose control over your work or you're really wary of the risks, I just want to emphasize that you can do a little bit of AI assistance or use it for only some tasks, something like that. It's really not an all or nothing thing.
+
+00:05:17.000 --> 00:05:40.000
+OK, so the two tools that are in Positron are Positron Assistant, so this one, and then DataBot. And so both of them you have to enable. So I'm just going to go over the instructions here and then I'll show you in Positron really quickly. But the first thing is that you have to enable.
+
+00:05:40.000 --> 00:05:51.000
+OK, so let me back up. You want to set up Positron Assistant first and then DataBot. So to enable Positron Assistant, there's a setting that you enable.
+
+00:05:53.000 --> 00:06:06.000
+And then you will add a language model provider. I know people often have questions about which models you can use. So I can go over this or feel free to ask specific questions in a second.
+
+00:06:07.000 --> 00:06:22.000
+And then you're basically ready to go. So let me see. Let me talk about DataBot again first before we go over to Positron so I don't have to keep switching the windows.
+
+00:06:23.000 --> 00:06:38.000
+The same kind of thing for DataBot. It is a thing that you need to enable. You also do need to install the DataBot extension and hopefully we can provide this link somewhere so you can follow along. But I just wanted to show you where this documentation is.
+
+00:06:39.000 --> 00:06:45.000
+So for DataBot, you need to install the extension and then the same thing like with Positron Assistant. There's a setting that you need to enable.
+
+00:06:47.000 --> 00:07:00.000
+And then you're basically ready to go. So importantly, you do need some kind of access to some LLM. And if you're going to use DataBot, you specifically need access to a cloud model.
+
+00:07:01.000 --> 00:07:21.000
+And this could either be through an API key that you have or your organization has provided you with or because you have like some kind of enterprise or you have AWS Bedrock access, which is how Posit does it. And so that's what you're going to see on my screen. But you can also use a key if you have a key available.
+
+00:07:22.000 --> 00:07:30.000
+Sarah, would you mind real quick just briefly explaining the differences between Positron Assistant and DataBot?
+
+00:07:31.000 --> 00:07:46.000
+Yeah, yeah. So Positron Assistant is a general coding agent. And I'm going to show you both these tools and we can talk a lot more about this. But at a high level, Positron Assistant is like a general purpose coding assistant.
+
+00:07:47.000 --> 00:07:51.000
+You might use it for debugging, you might use it to write a bit of code for you.
+
+00:07:53.000 --> 00:08:02.000
+Like you would use it in the sort of a general way that if you want help with code. DataBot is much more specific. It's specifically for exploratory data analysis.
+
+00:08:03.000 --> 00:08:13.000
+So you'll see this in a bit, but like that is the main thing that DataBot in Positron does. It is geared almost entirely towards exploratory data analysis.
+
+00:08:14.000 --> 00:08:15.000
+Thank you.
+
+00:08:16.000 --> 00:08:29.000
+I wanted to also hop in and say, whenever you see Sarah hovering over the links that have a little gear icon next to them, for example, in the step one enable Positron Assistant, that's actually a link directly to the settings in Positron.
+
+00:08:30.000 --> 00:08:40.000
+So when you click that, your browser is going to say, do you want to open Positron? And you're going to say yes. And then it's going to take you directly to the correct setting that you need to enable inside of Positron.
+
+00:08:40.000 --> 00:08:52.000
+So having Positron open first is a good idea and using those links is going to be really, really helpful, especially if you've never say modified settings.json in Positron before.
+
+00:08:53.000 --> 00:09:06.000
+Yeah, that's a good point. Yeah, I was just about to click on that. So I did click on it and you didn't see Positron open just because I don't have it in the share window, but it now opens this settings file.
+
+00:09:07.000 --> 00:09:21.000
+And then I already have it enabled, but you would then check this enable option to enable Positron Assistant. Okay. And then we said that the next step is to set up your model provider.
+
+00:09:21.000 --> 00:09:40.000
+So this is how you get access to the LLM in Positron. Everything that you can pretty much do like with for like settings for the IDE or like things that you're setting up, you can access from the command palette. So that's command shift. Yes, I think that was me.
+
+00:09:41.000 --> 00:09:42.000
+Okay, we fixed it.
+
+00:09:43.000 --> 00:09:45.000
+Maybe command shift P stops the recording.
+
+00:09:46.000 --> 00:09:47.000
+It might be.
+
+00:09:47.000 --> 00:10:01.000
+Okay. Sorry about that. It also opens the command palette in Positron. So, and then we're going to, you can, I have this open because I did this recently, but if you
+
+00:10:03.000 --> 00:10:08.000
+search for Positron Assistant or configure language model providers, this will come up.
+
+00:10:09.000 --> 00:10:12.000
+And then you're going to choose your option, which
+
+00:10:13.000 --> 00:10:14.000
+is another option, but
+
+00:10:16.000 --> 00:10:24.000
+for right now, like it's giving me the option to either add an Anthropic API key or sign in with Amazon Bedrock. So this is Posit
+
+00:10:25.000 --> 00:10:31.000
+hosts all its models through Bedrock, which is why I've signed in here, but you can also provide it with a key.
+
+00:10:34.000 --> 00:10:36.000
+Simon, shouldn't also the
+
+00:10:36.000 --> 00:10:43.000
+OpenAI compatible endpoint icon be over here? It was over here like yesterday when I did this.
+
+00:10:44.000 --> 00:10:50.000
+I wonder if it depends on some sort of experimental setting. I can poke around and send a note.
+
+00:10:51.000 --> 00:11:05.000
+I know that I had to change my Positron Assistant enabled providers setting to OpenAI-API. And if it was anything else that didn't work, I had to change it.
+
+00:11:06.000 --> 00:11:07.000
+It didn't pop up.
+
+00:11:08.000 --> 00:11:13.000
+And I can put that in the chat, too. Like this is what my setting looks like.
+
+00:11:14.000 --> 00:11:19.000
+It was there yesterday when I looked at this. I am on a daily build of Positron, I think, so it may be something updated
+
+00:11:20.000 --> 00:11:26.000
+between today, but we're going to use Anthropic models anyway, so it doesn't, but if you
+
+00:11:27.000 --> 00:11:33.000
+have access to another model that you could provide a key in that way, you can use Positron Assistant.
+
+00:11:34.000 --> 00:11:38.000
+Databot right now, we're saying only use Cloud models.
+
+00:11:40.000 --> 00:11:47.000
+Okay, so we enabled this, showed you how to configure the language provider.
+
+00:11:48.000 --> 00:11:51.000
+And now we're basically ready to use these tools.
+
+00:11:51.000 --> 00:11:58.000
+I don't want to spend too much time in the setup just because there's a lot to cover, but please ask questions if this seems confusing.
+
+00:11:59.000 --> 00:12:05.000
+Yeah, and you can come back to the Data Science Lab channel and ask that question as well, and we will help you or the Positron channel.
+
+00:12:06.000 --> 00:12:10.000
+But also don't forget that you do need to install an extension.
+
+00:12:11.000 --> 00:12:12.000
+Yes, for Databot.
+
+00:12:13.000 --> 00:12:25.000
+So, yeah, and if you have never installed extensions in Positron, there's this little extensions tab over here, and then you can search for extensions and install.
+
+00:12:27.000 --> 00:12:28.000
+Okay.
+
+00:12:29.000 --> 00:12:33.000
+So now I'm going to show you how to actually use these tools.
+
+00:12:35.000 --> 00:12:38.000
+And for this part,
+
+00:12:39.000 --> 00:12:46.000
+we're going to use this data set, which in here is called charlatan hallucination cases.csv.
+
+00:12:47.000 --> 00:12:59.000
+So I guess this is somewhat like meta, I guess we're going to look at hallucination data, like LLM hallucination data in legal cases.
+
+00:13:00.000 --> 00:13:05.000
+So this is the, I think it's called the AI hallucination.
+
+00:13:05.000 --> 00:13:06.000
+What is this called?
+
+00:13:07.000 --> 00:13:10.000
+I don't remember what it's called exactly, but I can give you the link in a second.
+
+00:13:11.000 --> 00:13:20.000
+But it's a database of legal decisions in cases where there was a AI produced hallucination.
+
+00:13:21.000 --> 00:13:23.000
+So it's not like decisions on hallucination.
+
+00:13:24.000 --> 00:13:34.000
+It's like there was some kind of, you know, lawsuit, and a lawyer produced some document that had a hallucination in it, like a wrong citation, like a made up legal case.
+
+00:13:35.000 --> 00:13:41.000
+And then something happened in the case, like the lawyer was fined or given a warning.
+
+00:13:42.000 --> 00:13:43.000
+So there's actually a lot of these.
+
+00:13:44.000 --> 00:13:47.000
+And we're going to use data bot to take a look at this.
+
+00:13:48.000 --> 00:13:51.000
+So again, you can access most things from the command palette.
+
+00:13:52.000 --> 00:13:59.000
+If you're not clicked into zoom with command shift P, and then search for data bot, and it will open.
+
+00:14:00.000 --> 00:14:04.000
+I already had something that was going on here earlier.
+
+00:14:05.000 --> 00:14:09.000
+You can always start a new conversation with this plus button.
+
+00:14:10.000 --> 00:14:12.000
+Okay, so this is data bot.
+
+00:14:13.000 --> 00:14:18.000
+And again, this is specifically really for exploratory data analysis.
+
+00:14:19.000 --> 00:14:25.000
+So there's a lot of decisions that we made in building this that make it geared towards exploratory data analysis.
+
+00:14:26.000 --> 00:14:29.000
+And one is these like underlined blue suggestions.
+
+00:14:30.000 --> 00:14:33.000
+And these give you like ways to explore your data.
+
+00:14:33.000 --> 00:14:41.000
+And you'll see that after each turn, when data bot gives me some answers, it's going to typically provide more suggestions afterwards.
+
+00:14:42.000 --> 00:14:43.000
+And this can help you explore the data.
+
+00:14:44.000 --> 00:14:48.000
+Okay, a couple other things I just want to point out here.
+
+00:14:49.000 --> 00:14:50.000
+And can you, is this big enough?
+
+00:14:51.000 --> 00:14:52.000
+Like, is the text big enough?
+
+00:14:53.000 --> 00:14:54.000
+Can you all see this well?
+
+00:14:55.000 --> 00:14:58.000
+I think so, but everybody can chime in in the chat and discord.
+
+00:14:59.000 --> 00:15:09.000
+And we also had a question, which was, is there any way to configure reasoning efforts when signing in with GitHub Copilot?
+
+00:15:10.000 --> 00:15:12.000
+I'm not 100% sure what that means.
+
+00:15:13.000 --> 00:15:15.000
+Erin says she can see it, the size is okay.
+
+00:15:16.000 --> 00:15:17.000
+Okay, cool.
+
+00:15:18.000 --> 00:15:24.000
+So GitHub Copilot is just for the like code completions in Positron.
+
+00:15:25.000 --> 00:15:30.000
+And we're not going to use it for data bot or Positron assistant.
+
+00:15:31.000 --> 00:15:33.000
+I don't think there's, I don't know.
+
+00:15:34.000 --> 00:15:37.000
+Do you know, Simon, if there's any reasoning configuration?
+
+00:15:38.000 --> 00:15:39.000
+I'm not aware, no.
+
+00:15:41.000 --> 00:15:42.000
+I am not aware either.
+
+00:15:43.000 --> 00:15:46.000
+If anybody in the chat is, please go and answer that question or add some context.
+
+00:15:47.000 --> 00:15:52.000
+And then David Diaz said, does data bot already support other providers beyond cloud?
+
+00:15:53.000 --> 00:15:55.000
+Yes, I think so.
+
+00:15:57.000 --> 00:15:58.000
+Data bot does not, Positron assistant does.
+
+00:15:59.000 --> 00:16:00.000
+Yes, Positron assistant does.
+
+00:16:01.000 --> 00:16:03.000
+It's a little confusing.
+
+00:16:04.000 --> 00:16:12.000
+One reason for this is that like all the models are different and we want people to have a good experience when they're using these kind of tools.
+
+00:16:13.000 --> 00:16:23.000
+And so if we like make something like data bot and have tested it a lot with certain models or like gear the prompts to work with certain models,
+
+00:16:24.000 --> 00:16:29.000
+we can't just like slot in some, a new model without testing and iterating.
+
+00:16:30.000 --> 00:16:34.000
+And so like, we're only really confident that data bot is going to do a good job with the cloud model.
+
+00:16:35.000 --> 00:16:37.000
+So I did want to point out that you can, at this time.
+
+00:16:38.000 --> 00:16:41.000
+So I did want to point out that if you click on the model name, you can select a model.
+
+00:16:42.000 --> 00:16:53.000
+So if you want to change to Haiku, which is a cheaper model, or go up to Opus, which is a more expensive, more powerful, generally model, you can do that there.
+
+00:16:56.000 --> 00:17:02.000
+Great. Okay, so let's now explore the data.
+
+00:17:03.000 --> 00:17:07.000
+So I said, we're going to look at the hallucination cases data.
+
+00:17:08.000 --> 00:17:11.000
+So there are a variety of ways we might open this conversation.
+
+00:17:12.000 --> 00:17:17.000
+I could just ask it to like, sorry, it keeps thinking I'm clicked into the Zoom.
+
+00:17:18.000 --> 00:17:24.000
+Take a look at the hallucination data, and it'll look through the files and probably find it.
+
+00:17:25.000 --> 00:17:28.000
+But I did want to point out that you can also do this.
+
+00:17:29.000 --> 00:17:31.000
+You can just ask it to load the.
+
+00:17:32.000 --> 00:17:37.000
+And then if you do at, you get a file picker, and then I can select the exact file.
+
+00:17:38.000 --> 00:17:39.000
+Okay.
+
+00:17:40.000 --> 00:17:45.000
+And then hit enter, and it's going to do some things.
+
+00:17:47.000 --> 00:17:56.000
+So now we're getting this little pop up that is showing us what code it wants to run and asking us if we can allow it.
+
+00:17:57.000 --> 00:18:01.000
+I'm going to say allow for session so that I don't have to keep clicking this.
+
+00:18:02.000 --> 00:18:03.000
+Okay.
+
+00:18:04.000 --> 00:18:06.000
+And so this is like the core of what DataBot does.
+
+00:18:07.000 --> 00:18:10.000
+You ask it a question, and it runs some code.
+
+00:18:13.000 --> 00:18:16.000
+And then it gives you a little summary, and then it gives you some suggestions.
+
+00:18:17.000 --> 00:18:21.000
+So it didn't do much this time because all I asked it to do was load the data.
+
+00:18:22.000 --> 00:18:24.000
+But now it has some suggestions of things we might want to look at.
+
+00:18:25.000 --> 00:18:27.000
+So let's just get a summary of the data set.
+
+00:18:28.000 --> 00:18:32.000
+You can ask questions that are not in the suggestions, but you can also click on them.
+
+00:18:38.000 --> 00:18:44.000
+Kieran mentioned how interesting it is that it defaulted to read.csv and not tidy versus read underscore csv.
+
+00:18:45.000 --> 00:18:46.000
+Same. Interesting.
+
+00:18:48.000 --> 00:18:52.000
+If I was doing a code review, I would have been like, maybe, maybe use read underscore csv.
+
+00:18:53.000 --> 00:18:54.000
+Yeah.
+
+00:18:55.000 --> 00:18:58.000
+Okay. So it has run some code to explore the data.
+
+00:19:03.000 --> 00:19:04.000
+We're getting some output.
+
+00:19:05.000 --> 00:19:08.000
+It's giving us a summary of the data that now we can take a look at.
+
+00:19:09.000 --> 00:19:11.000
+And then it's giving us some suggestions at the end.
+
+00:19:12.000 --> 00:19:17.000
+So a couple things I just want to point out is that by default, you can see all of this code.
+
+00:19:17.000 --> 00:19:22.000
+There is a way to hide the code, but we generally want you to be able to easily see this.
+
+00:19:23.000 --> 00:19:25.000
+So it is possible to review it if you want to.
+
+00:19:26.000 --> 00:19:31.000
+And then the other thing is that we want DataBot to not give you too much output at any one time.
+
+00:19:32.000 --> 00:19:39.000
+As soon as it starts doing just like tons and tons of code, it becomes very hard for you as the human to keep track of what's going on.
+
+00:19:40.000 --> 00:19:46.000
+And for this kind of tool, we want the person to keep pace with DataBot, essentially.
+
+00:19:47.000 --> 00:19:49.000
+So you can keep track of what's happening in your data.
+
+00:19:50.000 --> 00:19:56.000
+And one primary reason for this is that if you're doing exploratory data analysis,
+
+00:19:57.000 --> 00:20:00.000
+the point is for you as the person to have an understanding of the data.
+
+00:20:01.000 --> 00:20:06.000
+If the LLM just has the understanding of the data, that doesn't really help you that much.
+
+00:20:06.000 --> 00:20:09.000
+If you're doing EDA, you want to know what is going on in it.
+
+00:20:10.000 --> 00:20:15.000
+And so if it's just doing a bunch of code and then giving you tons and tons of output that you're not going to sift through,
+
+00:20:16.000 --> 00:20:23.000
+you're not going to actually do the sense-making process of looking through and understanding, you know,
+
+00:20:24.000 --> 00:20:27.000
+what the patterns are in the data, if there's any problems, all of that.
+
+00:20:28.000 --> 00:20:33.000
+Sweet. Okay. I'm going to take a quick pause and let Isabella ask some questions from the Discord.
+
+00:20:33.000 --> 00:20:41.000
+Yeah, thanks. Hey, Sarah. Just wondering, what is the cases of monetary penalty in the console output? Do you know?
+
+00:20:42.000 --> 00:20:48.000
+Oh, this is the, so this is the code that it ran.
+
+00:20:49.000 --> 00:20:58.000
+It used cat to like write out a bunch of text, which is one thing that it can do, I guess.
+
+00:20:58.000 --> 00:21:02.000
+So this is just like text that was the output technically of code that it ran.
+
+00:21:03.000 --> 00:21:10.000
+So all the code, if you scroll up, we see more like, eventually we'll see more like code looking stuff and not just the output of cat.
+
+00:21:11.000 --> 00:21:13.000
+All this code is being run here.
+
+00:21:14.000 --> 00:21:22.000
+And so one other thing to point out is that DataBot and Positron Assistant have access to your variables.
+
+00:21:22.000 --> 00:21:25.000
+I didn't really have anything loaded when I started up DataBot.
+
+00:21:26.000 --> 00:21:31.000
+But if I did, I could just ask it to, you know, like if I started a new session, I could say, look at hallucination cases.
+
+00:21:32.000 --> 00:21:34.000
+It won't need to do anything. It already has access to this data.
+
+00:21:35.000 --> 00:21:39.000
+But this also means that when it runs code, I now have access to this.
+
+00:21:40.000 --> 00:21:46.000
+So if I wanted to shift out of DataBot and just look at hallucination cases, hallucination data,
+
+00:21:47.000 --> 00:21:50.000
+I guess I don't have, did it not load tidyverse?
+
+00:21:51.000 --> 00:21:54.000
+Oh, because it ran it with read.csv.
+
+00:21:55.000 --> 00:21:57.000
+So that's one disadvantage of that.
+
+00:21:58.000 --> 00:22:01.000
+We can use the data and I could do things with it myself.
+
+00:22:02.000 --> 00:22:03.000
+Yeah.
+
+00:22:04.000 --> 00:22:05.000
+I think we had one more.
+
+00:22:06.000 --> 00:22:07.000
+Yeah.
+
+00:22:07.000 --> 00:22:08.000
+I think it kind of related.
+
+00:22:09.000 --> 00:22:11.000
+It seems like it's a little bit different.
+
+00:22:11.000 --> 00:22:12.000
+I think we had one more.
+
+00:22:13.000 --> 00:22:14.000
+Yeah.
+
+00:22:14.000 --> 00:22:15.000
+I think it kind of related.
+
+00:22:15.000 --> 00:22:19.000
+It seems like it produces an output that it thinks like would work best for you.
+
+00:22:20.000 --> 00:22:26.000
+Do you happen to know, like if the column names of the data set are very, very messy, does it kind of suggest that?
+
+00:22:27.000 --> 00:22:30.000
+Or do you kind of have to prompt it if you want those kind of edits?
+
+00:22:31.000 --> 00:22:32.000
+Yeah.
+
+00:22:32.000 --> 00:22:34.000
+Like would it suggest janitor if they were messy or?
+
+00:22:35.000 --> 00:22:36.000
+Yeah.
+
+00:22:37.000 --> 00:22:42.000
+It might unprompted, but it definitely would if you asked it to clean it up.
+
+00:22:43.000 --> 00:22:47.000
+So I think some of these, we can look at it in the data explorer.
+
+00:22:48.000 --> 00:22:49.000
+These column names aren't great.
+
+00:22:49.000 --> 00:22:50.000
+So it didn't say anything about them.
+
+00:22:50.000 --> 00:22:52.000
+But if I ask it, we can do that.
+
+00:22:54.000 --> 00:23:00.000
+If I move the zoom window, we could ask it that.
+
+00:23:01.000 --> 00:23:04.000
+Column names aren't very good.
+
+00:23:05.000 --> 00:23:06.000
+Can you clean them up?
+
+00:23:07.000 --> 00:23:08.000
+Let's see what it does.
+
+00:23:12.000 --> 00:23:19.000
+And then while it is working, Isabella asked in the chat, like, can you add skills to Datapod?
+
+00:23:20.000 --> 00:23:21.000
+Like cloud skills?
+
+00:23:21.000 --> 00:23:22.000
+Yes.
+
+00:23:22.000 --> 00:23:25.000
+And hopefully we will get there.
+
+00:23:26.000 --> 00:23:27.000
+We could do this now, I guess.
+
+00:23:28.000 --> 00:23:29.000
+But I had a planned skill.
+
+00:23:30.000 --> 00:23:31.000
+Great.
+
+00:23:31.000 --> 00:23:32.000
+We'll get there.
+
+00:23:33.000 --> 00:23:34.000
+Yeah.
+
+00:23:34.000 --> 00:23:36.000
+And if skills are new to folks, please correct me if I'm wrong.
+
+00:23:36.000 --> 00:23:40.000
+But my understanding, it's like a markdown file with kind of instructions of how you like things.
+
+00:23:41.000 --> 00:23:45.000
+So Kieran mentioned that it used the base read CSV.
+
+00:23:46.000 --> 00:23:47.000
+Yeah.
+
+00:23:47.000 --> 00:23:55.000
+But say like you wanted to use read underscore CSV from read R, you could like put in the skill use tidyverse functions and it would do that instead.
+
+00:23:56.000 --> 00:23:57.000
+Yeah.
+
+00:23:57.000 --> 00:24:00.000
+So that would be a good thing for, we can just talk about this now.
+
+00:24:01.000 --> 00:24:05.000
+That would be a good thing for the databot.md file.
+
+00:24:06.000 --> 00:24:16.000
+So one way to like create this file is by clicking the little elephant where it says memory.
+
+00:24:17.000 --> 00:24:19.000
+And so I don't think I have one already.
+
+00:24:19.000 --> 00:24:33.000
+There's nothing really in here that I want to save to the memory, but we could say like, yeah, always use read R, read R, read CSV to read in CSVs.
+
+00:24:34.000 --> 00:24:35.000
+That's so cool.
+
+00:24:36.000 --> 00:24:39.000
+And this is going to create a databot.md file.
+
+00:24:39.000 --> 00:24:46.000
+And this is kind of like a set of instructions for data bot within this particular directory.
+
+00:24:47.000 --> 00:24:58.000
+This is sort of a specific instantiation of an agents.md file, which you might have seen or used for other agents.
+
+00:24:59.000 --> 00:25:08.000
+You could put things like, please always use read underscore CSV, always use the native pipe, but also specifics about your data.
+
+00:25:09.000 --> 00:25:21.000
+So if there were things specific to this hallucination cases data that every time I looked at it, I definitely wanted data bot to know about, I could put that in the databot.md file.
+
+00:25:21.000 --> 00:25:34.000
+Like the example I was going to go into later with this data set is that like there's a couple issues in the data that it is impossible to know unless you tell the model that there are those problems in the data.
+
+00:25:35.000 --> 00:25:42.000
+And this is something that if you are analyzing the data with any kind of agent, you want it to always know.
+
+00:25:42.000 --> 00:25:46.000
+And so you can put it in the databot.md file or the agents.md file.
+
+00:25:46.000 --> 00:25:49.000
+And it'll load that at the start of every conversation.
+
+00:25:49.000 --> 00:25:58.000
+So here, like, I don't know if there was some issue in the data we could put or we might even just put general documentation for this data set.
+
+00:25:58.000 --> 00:26:03.000
+This one is relatively straightforward in like my playing around with data bot with this.
+
+00:26:03.000 --> 00:26:06.000
+It does a pretty good job of understanding what's going on.
+
+00:26:06.000 --> 00:26:23.000
+But if it were more complicated or like these column names were inscrutable or something like that, you could put, you know, data dictionary, more information on what's going on or like your goals for your analysis, other things like that in the file.
+
+00:26:23.000 --> 00:26:24.000
+Oh, data dictionary is a great idea.
+
+00:26:24.000 --> 00:26:28.000
+And there's also a question for Marlene, which is a fantastic question.
+
+00:26:28.000 --> 00:26:34.000
+I'm surprised that we haven't hit it by this like halfway mark already, which is like this code isn't being saved anywhere.
+
+00:26:34.000 --> 00:26:35.000
+So like, where does it go?
+
+00:26:35.000 --> 00:26:37.000
+What are you going to do with it?
+
+00:26:37.000 --> 00:26:39.000
+I know that you can and you're going to get there.
+
+00:26:39.000 --> 00:26:42.000
+But it's a fantastic question.
+
+00:26:42.000 --> 00:26:47.000
+So the first thing is that.
+
+00:26:47.000 --> 00:26:51.000
+Oh, that's not what I wanted to do.
+
+00:26:52.000 --> 00:26:56.000
+You can look back at previous conversations.
+
+00:26:56.000 --> 00:27:00.000
+So if you make a new conversation, I have a bunch open here.
+
+00:27:00.000 --> 00:27:05.000
+But you can go back and look at previous conversations that way.
+
+00:27:05.000 --> 00:27:12.000
+But you can also write the code to a report.
+
+00:27:12.000 --> 00:27:16.000
+We didn't do that much in this conversation, but it'll still put something in there.
+
+00:27:16.000 --> 00:27:19.000
+And I'll show you what happens when I run this.
+
+00:27:19.000 --> 00:27:22.000
+Just like, let's just say summarize findings.
+
+00:27:22.000 --> 00:27:25.000
+You can also just run this command by itself.
+
+00:27:25.000 --> 00:27:27.000
+And this is a slash command.
+
+00:27:27.000 --> 00:27:31.000
+So you slash report, summarize findings.
+
+00:27:31.000 --> 00:27:34.000
+Is there a way to know what all the slash commands are?
+
+00:27:34.000 --> 00:27:36.000
+Yes.
+
+00:27:36.000 --> 00:27:39.000
+If you type slash, they will come up.
+
+00:27:40.000 --> 00:27:43.000
+Instead of clicking the elephant, we could have also done save memory.
+
+00:27:43.000 --> 00:27:46.000
+And then compact will impact the conversation.
+
+00:27:46.000 --> 00:27:48.000
+Okay.
+
+00:27:48.000 --> 00:27:53.000
+So it made a Cordo report with our findings.
+
+00:27:53.000 --> 00:27:55.000
+So this is one way to save the code.
+
+00:27:55.000 --> 00:27:57.000
+It probably put like more information than we wanted.
+
+00:27:57.000 --> 00:28:00.000
+But it's still going to put it into a Jupyter Notebook.
+
+00:28:00.000 --> 00:28:03.000
+So it's still going to put it into a Jupyter Notebook.
+
+00:28:03.000 --> 00:28:06.000
+So it's still going to put it into a Jupyter Notebook.
+
+00:28:06.000 --> 00:28:08.000
+So this is one way to save the code.
+
+00:28:08.000 --> 00:28:10.000
+It probably put like more information than we wanted in here.
+
+00:28:10.000 --> 00:28:12.000
+It also wrote a bunch of pros.
+
+00:28:12.000 --> 00:28:15.000
+But it did include at least some of the code that we wrote.
+
+00:28:15.000 --> 00:28:20.000
+If we had done more manipulations or exploration, we could have said like
+
+00:28:20.000 --> 00:28:24.000
+specifically, you know, I want to include these pieces of the analysis.
+
+00:28:24.000 --> 00:28:27.000
+Please put them in the QMD file.
+
+00:28:27.000 --> 00:28:30.000
+It did remember that because I asked it to fix the name.
+
+00:28:30.000 --> 00:28:33.000
+So it did remember what it did there.
+
+00:28:33.000 --> 00:28:39.000
+And it put that in the setup chunk, which is nice.
+
+00:28:39.000 --> 00:28:41.000
+Yeah.
+
+00:28:41.000 --> 00:28:42.000
+Cool.
+
+00:28:42.000 --> 00:28:47.000
+And now we could edit this how we wanted to.
+
+00:28:47.000 --> 00:28:49.000
+Any questions about that?
+
+00:28:49.000 --> 00:28:52.000
+I think that the only other question was from Anna that said,
+
+00:28:52.000 --> 00:28:56.000
+I would love for Databot to use the namespace operator, the double colon,
+
+00:28:56.000 --> 00:29:01.000
+to specify which packages or methods or functions things are coming from.
+
+00:29:01.000 --> 00:29:03.000
+And in the chat, we said,
+
+00:29:03.000 --> 00:29:06.000
+that's something we would probably put in the databot.md file.
+
+00:29:06.000 --> 00:29:07.000
+Does that sound right?
+
+00:29:07.000 --> 00:29:09.000
+Yeah, that would be a good thing to put in there.
+
+00:29:09.000 --> 00:29:12.000
+Yeah, I forgot to, we didn't open it after we created this.
+
+00:29:12.000 --> 00:29:14.000
+So this is what it looks like.
+
+00:29:14.000 --> 00:29:18.000
+It actually put more in here than I thought it was going to.
+
+00:29:18.000 --> 00:29:23.000
+Let's see if it put, okay, it did put up at the top,
+
+00:29:23.000 --> 00:29:25.000
+always use read underscore CSV.
+
+00:29:25.000 --> 00:29:29.000
+So you could put, yeah, please namespace functions in there.
+
+00:29:29.000 --> 00:29:32.000
+And this might be something that like you generally have,
+
+00:29:32.000 --> 00:29:34.000
+like it might not be specific to your data.
+
+00:29:34.000 --> 00:29:36.000
+You might always have, you know,
+
+00:29:36.000 --> 00:29:40.000
+a little bit of instructions that you always put into these kinds of agent
+
+00:29:40.000 --> 00:29:43.000
+instruction files, like always use these kinds of functions,
+
+00:29:43.000 --> 00:29:44.000
+always namespace,
+
+00:29:44.000 --> 00:29:48.000
+always use some internal package that it wouldn't necessarily know to use
+
+00:29:48.000 --> 00:29:49.000
+that kind of thing.
+
+00:29:49.000 --> 00:29:50.000
+Yeah.
+
+00:29:50.000 --> 00:29:51.000
+Okay.
+
+00:29:51.000 --> 00:29:55.000
+It would be always use Skimmer because that's what I do every single time.
+
+00:29:55.000 --> 00:29:56.000
+Cool.
+
+00:29:56.000 --> 00:29:57.000
+Yeah.
+
+00:29:57.000 --> 00:29:58.000
+Yeah.
+
+00:29:58.000 --> 00:29:59.000
+Okay.
+
+00:29:59.000 --> 00:30:03.000
+And yeah, I feel like I'm rushing a little bit.
+
+00:30:03.000 --> 00:30:06.000
+Sorry, but there's other things that I want to show you.
+
+00:30:06.000 --> 00:30:14.000
+So we can talk more about data bot in a bit,
+
+00:30:14.000 --> 00:30:17.000
+but I do want to just show you positron assistant really quickly.
+
+00:30:17.000 --> 00:30:20.000
+So to open positron assistant,
+
+00:30:20.000 --> 00:30:25.000
+it's this little robot icon in the task bar over here.
+
+00:30:26.000 --> 00:30:29.000
+And let's make this bigger.
+
+00:30:33.000 --> 00:30:35.000
+Again, we have a model selection.
+
+00:30:35.000 --> 00:30:39.000
+It shows us that what kind of session we have.
+
+00:30:39.000 --> 00:30:42.000
+And it's the same kind of thing, right?
+
+00:30:42.000 --> 00:30:44.000
+It's a chat inside of positron.
+
+00:30:44.000 --> 00:30:49.000
+One thing that positron assistant is really useful for is debugging.
+
+00:30:49.000 --> 00:30:52.000
+So say like,
+
+00:30:53.000 --> 00:31:01.000
+let's say there was an error here.
+
+00:31:01.000 --> 00:31:04.000
+We just named this.
+
+00:31:04.000 --> 00:31:08.000
+Mistyped the CSV name or something.
+
+00:31:08.000 --> 00:31:10.000
+Yeah.
+
+00:31:10.000 --> 00:31:15.000
+So this should fail.
+
+00:31:15.000 --> 00:31:17.000
+Yeah.
+
+00:31:17.000 --> 00:31:19.000
+So it fails and we could say like,
+
+00:31:20.000 --> 00:31:25.000
+QMD didn't render.
+
+00:31:25.000 --> 00:31:28.000
+Or something.
+
+00:31:28.000 --> 00:31:31.000
+I like the brevity.
+
+00:31:31.000 --> 00:31:32.000
+Please fix.
+
+00:31:32.000 --> 00:31:38.000
+And oh, it thinks.
+
+00:31:38.000 --> 00:31:41.000
+Okay.
+
+00:31:41.000 --> 00:31:43.000
+So it correctly identified the issue.
+
+00:31:43.000 --> 00:31:44.000
+So like data bot,
+
+00:31:44.000 --> 00:31:47.000
+it has access to kind of like all of the pieces of information that it's
+
+00:31:47.000 --> 00:31:50.000
+going to need to be helpful.
+
+00:31:50.000 --> 00:31:51.000
+It can see your variables.
+
+00:31:51.000 --> 00:31:53.000
+It can see the console.
+
+00:31:53.000 --> 00:31:56.000
+It can see your files.
+
+00:31:56.000 --> 00:31:59.000
+And yeah, I have so many things open right here.
+
+00:31:59.000 --> 00:32:00.000
+It's hard to see.
+
+00:32:00.000 --> 00:32:03.000
+Let's close some of these.
+
+00:32:03.000 --> 00:32:06.000
+And it fixed the problem.
+
+00:32:06.000 --> 00:32:08.000
+And for positron assistant,
+
+00:32:08.000 --> 00:32:11.000
+it has this sort of interface where it shows you the suggested change and
+
+00:32:11.000 --> 00:32:13.000
+you can keep or undo it.
+
+00:32:13.000 --> 00:32:15.000
+So I'm going to keep this.
+
+00:32:15.000 --> 00:32:18.000
+And then.
+
+00:32:18.000 --> 00:32:22.000
+I guess it found some other things it wanted to fix.
+
+00:32:22.000 --> 00:32:26.000
+And so we can say that we want to keep those.
+
+00:32:26.000 --> 00:32:27.000
+Okay.
+
+00:32:27.000 --> 00:32:35.000
+And so then invites us to try rendering again.
+
+00:32:35.000 --> 00:32:38.000
+It's still failed.
+
+00:32:38.000 --> 00:32:41.000
+Okay.
+
+00:32:41.000 --> 00:32:44.000
+So there's some general issues in the code that we can continue to ask it
+
+00:32:44.000 --> 00:32:47.000
+to fix if we wanted to.
+
+00:32:47.000 --> 00:32:51.000
+Usually data bot does a better job of like just making a QD file with
+
+00:32:51.000 --> 00:32:55.000
+code that works, but we didn't chat with it for very long.
+
+00:32:55.000 --> 00:32:57.000
+So it might not have known like what to put in here,
+
+00:32:57.000 --> 00:33:03.000
+but another thing that you can do with positron assistant,
+
+00:33:03.000 --> 00:33:08.000
+which one was the issue case name doesn't exist.
+
+00:33:08.000 --> 00:33:10.000
+So you can do command.
+
+00:33:10.000 --> 00:33:14.000
+Did command I, and it'll open this little inline assistant thing.
+
+00:33:14.000 --> 00:33:18.000
+And let's see, actually, if we.
+
+00:33:18.000 --> 00:33:22.000
+Like.
+
+00:33:22.000 --> 00:33:24.000
+Did something like this.
+
+00:33:24.000 --> 00:33:26.000
+Command I.
+
+00:33:26.000 --> 00:33:28.000
+Can you.
+
+00:33:28.000 --> 00:33:31.000
+Fix the problem.
+
+00:33:31.000 --> 00:33:35.000
+And it might have some suggestions for you.
+
+00:33:35.000 --> 00:33:39.000
+Yeah, it needs an equal sign.
+
+00:33:39.000 --> 00:33:42.000
+So this is another way that you could use positron assistant inside of
+
+00:33:42.000 --> 00:33:44.000
+positron.
+
+00:33:44.000 --> 00:33:45.000
+And that was command.
+
+00:33:45.000 --> 00:33:46.000
+I command.
+
+00:33:46.000 --> 00:33:48.000
+I yeah.
+
+00:33:48.000 --> 00:33:49.000
+Okay.
+
+00:33:49.000 --> 00:33:52.000
+In file editor.
+
+00:33:52.000 --> 00:33:53.000
+Okay.
+
+00:33:53.000 --> 00:33:56.000
+Just want to make sure I didn't.
+
+00:33:56.000 --> 00:33:59.000
+The only other thing that would be great to stick in here is Luisa's
+
+00:33:59.000 --> 00:34:07.000
+question, which was, is there a way to search within that data bot pain?
+
+00:34:08.000 --> 00:34:09.000
+So just search.
+
+00:34:09.000 --> 00:34:10.000
+Don't think so.
+
+00:34:10.362 --> 00:34:12.302
+It's like a control F or a train.
+
+00:34:13.462 --> 00:34:14.502
+How does it do that?
+
+00:34:16.582 --> 00:34:19.062
+Yeah, control F. Oh, I guess it's just control F.
+
+00:34:19.062 --> 00:34:20.062
+OK, that works.
+
+00:34:20.422 --> 00:34:21.142
+Good to know.
+
+00:34:21.342 --> 00:34:22.662
+Thank you for asking, Luis.
+
+00:34:24.622 --> 00:34:25.182
+OK.
+
+00:34:27.661 --> 00:34:28.302
+Let's see.
+
+00:34:29.502 --> 00:34:29.981
+OK.
+
+00:34:31.462 --> 00:34:35.661
+Yeah, again, one thing I want to point out is that, like,
+
+00:34:36.262 --> 00:34:42.142
+DataBot specifically is geared towards you still having quite a bit of control.
+
+00:34:42.462 --> 00:34:47.662
+So it could have just, like, done a bunch of analysis behind the scenes
+
+00:34:47.982 --> 00:34:50.422
+and then plopped it all in that Cordo report.
+
+00:34:50.662 --> 00:34:54.061
+But instead, how DataBot works is you sort of build up an understanding
+
+00:34:54.061 --> 00:34:56.782
+of the of the data alongside of it.
+
+00:34:57.422 --> 00:34:59.142
+You're keeping track of what's happening.
+
+00:34:59.142 --> 00:35:00.262
+You're seeing the code.
+
+00:35:00.262 --> 00:35:02.982
+You're, like, looking at these little summaries it gives you
+
+00:35:03.422 --> 00:35:05.182
+and you're exploring the data together.
+
+00:35:05.182 --> 00:35:08.302
+And then you might put the results in a QMD file.
+
+00:35:08.622 --> 00:35:10.381
+So this was a conscious choice.
+
+00:35:10.381 --> 00:35:14.021
+Like, we want the human to be keeping up with DataBot
+
+00:35:14.182 --> 00:35:16.542
+and for you to be, like, iterating together.
+
+00:35:18.621 --> 00:35:25.542
+And part of the reason is just so that, like, you can, you know, assess
+
+00:35:25.542 --> 00:35:27.102
+whether or not the analysis is correct.
+
+00:35:27.341 --> 00:35:32.661
+But it's also because part of, like, again, like I said, if you do EDA
+
+00:35:32.661 --> 00:35:36.502
+and at the end of it, you as the person have no idea what's going on in the data.
+
+00:35:36.502 --> 00:35:39.822
+Like, you didn't really do EDA and that probably wasn't that helpful for you.
+
+00:35:40.061 --> 00:35:43.621
+There are uses where you just need, you know, report output.
+
+00:35:43.941 --> 00:35:48.262
+But if your goal is to understand the data, you need a tool that is going to,
+
+00:35:48.502 --> 00:35:51.142
+like, you know, allow you to do that.
+
+00:35:52.621 --> 00:35:56.021
+And part of the way that DataBot does this is by showing you,
+
+00:35:56.822 --> 00:36:01.301
+you know, less output at each turn and then involving you with these suggestions
+
+00:36:01.542 --> 00:36:02.782
+and showing you the code.
+
+00:36:04.182 --> 00:36:05.182
+OK.
+
+00:36:06.422 --> 00:36:07.422
+Cool.
+
+00:36:09.422 --> 00:36:10.422
+Let's see.
+
+00:36:16.782 --> 00:36:20.542
+We, I just want to try to keep track of the time.
+
+00:36:22.062 --> 00:36:27.542
+OK, let's quickly go to Posit Assistant, which is in RStudio.
+
+00:36:28.262 --> 00:36:30.581
+So I'm going to share that.
+
+00:36:30.581 --> 00:36:32.021
+And this is, like, brand new.
+
+00:36:32.021 --> 00:36:33.301
+I've never seen this before.
+
+00:36:35.021 --> 00:36:36.221
+Where is the share?
+
+00:36:38.941 --> 00:36:39.941
+One second.
+
+00:36:40.342 --> 00:36:42.342
+Oh, it's OK. Zoom does strange things.
+
+00:36:42.342 --> 00:36:43.342
+I found it.
+
+00:36:47.182 --> 00:36:48.182
+OK.
+
+00:36:48.262 --> 00:36:54.581
+Also, I think it was Nick had asked in the chat, like, how to turn off the inline
+
+00:36:54.581 --> 00:36:55.581
+commands.
+
+00:36:56.182 --> 00:37:01.861
+And I shared editor dot inline suggest dot enabled equals false as a setting for
+
+00:37:01.861 --> 00:37:03.381
+settings dot JSON.
+
+00:37:03.781 --> 00:37:06.021
+That will turn off your inline suggestions.
+
+00:37:06.062 --> 00:37:11.622
+I learned this from Jenny Bryan because I, like, really get disoriented by any inline
+
+00:37:11.622 --> 00:37:12.861
+suggestions at all.
+
+00:37:13.941 --> 00:37:17.182
+And then Isabelle also shared a gist.
+
+00:37:18.422 --> 00:37:19.581
+Hopefully those help everybody.
+
+00:37:19.861 --> 00:37:22.661
+And I will put them, if you're watching this later, I'll put them in the
+
+00:37:22.661 --> 00:37:23.661
+description.
+
+00:37:25.941 --> 00:37:26.941
+OK.
+
+00:37:30.622 --> 00:37:36.982
+I don't know where our QMD file went, but I just want to really quickly show this.
+
+00:37:36.982 --> 00:37:40.422
+So this is Posit Assistant and this is in RStudio.
+
+00:37:41.422 --> 00:37:47.741
+And you currently it's under like it's in a private beta, so you can sign up for
+
+00:37:47.741 --> 00:37:52.381
+this. But if you just download RStudio without access, you won't have access to
+
+00:37:52.381 --> 00:37:53.822
+this. So this is a bit of a preview.
+
+00:37:54.822 --> 00:37:55.982
+But I just want to show this.
+
+00:37:55.982 --> 00:38:00.982
+This is essentially like Positron Assistant and Data Bot in one tool.
+
+00:38:01.221 --> 00:38:04.861
+So instead of having to switch back and forth, depending on the kind of task that
+
+00:38:04.861 --> 00:38:08.741
+you're doing, it's all in this in this chat here.
+
+00:38:08.902 --> 00:38:13.822
+So you can do both exploratory analysis and more like coding focused tasks, all in
+
+00:38:13.822 --> 00:38:21.902
+the same thing. So just want to quickly show this so we can do the same thing where
+
+00:38:22.062 --> 00:38:26.422
+we say like load the hallucination data.
+
+00:38:30.702 --> 00:38:39.142
+And it is using it, Posit Assistant will also obey the DataBot.md file, but you can
+
+00:38:39.142 --> 00:38:41.022
+also just call this agents.md.
+
+00:38:41.862 --> 00:38:48.221
+So notice that it used read underscore CSV like we asked, and this looks very similar
+
+00:38:48.221 --> 00:38:52.982
+to DataBot where we can use these suggestions to explore the data.
+
+00:38:53.262 --> 00:38:57.941
+But you can also do more like software engineering type tasks within Posit
+
+00:38:57.941 --> 00:39:02.262
+Assistant. So we might ask it, we haven't really done much with the data, so this
+
+00:39:02.262 --> 00:39:06.941
+might not work that well, but we could ask it to make a shiny app.
+
+00:39:08.461 --> 00:39:15.422
+That displays the data and instead of giving us this output that looks like it's
+
+00:39:15.422 --> 00:39:19.542
+looking at the data, giving us the output, giving us suggestions, it's going to do
+
+00:39:19.542 --> 00:39:23.542
+something much more or at least it should do something much more autonomous where it
+
+00:39:23.542 --> 00:39:28.582
+is writing the code and just sort of going until it completes the task, which is what
+
+00:39:28.582 --> 00:39:29.422
+it's supposed to do.
+
+00:39:31.501 --> 00:39:37.702
+Have you noticed any like time differences with how things how quickly things run in
+
+00:39:37.702 --> 00:39:39.302
+RStudio versus in Positron?
+
+00:39:39.461 --> 00:39:40.461
+I think it's about the same.
+
+00:39:40.901 --> 00:39:46.381
+It should be about the same because the models are the same.
+
+00:39:46.381 --> 00:39:47.941
+Now I'm using Sonnet 4.5.
+
+00:39:47.941 --> 00:39:52.542
+When I was in Positron, I was using Opus, but it wrote us an app.
+
+00:39:57.341 --> 00:39:58.262
+I don't know where it is.
+
+00:39:58.262 --> 00:39:59.022
+It's the app.
+
+00:39:59.142 --> 00:40:04.142
+I think I might be on like a weird branch or something.
+
+00:40:04.142 --> 00:40:07.142
+We could ask it, can you just run the app?
+
+00:40:09.941 --> 00:40:12.221
+I don't think this is a Positive Assistant thing, I think.
+
+00:40:13.781 --> 00:40:17.982
+I like that you typoed, can you just the app, but it was smart enough to be like, I'm going
+
+00:40:17.982 --> 00:40:19.061
+to run that app for you.
+
+00:40:19.501 --> 00:40:23.501
+I need this in my life because I frequently am going to type in the code and then I'm
+
+00:40:23.501 --> 00:40:24.341
+going to run the app.
+
+00:40:24.661 --> 00:40:29.862
+Sarah, what happens if you open that URL that it mentions at the bottom in your browser?
+
+00:40:32.661 --> 00:40:34.022
+OK, here, I'll share this.
+
+00:40:39.702 --> 00:40:44.262
+And Anna, you had asked, making sure you understand Positive Assistant and Positive
+
+00:40:44.262 --> 00:40:48.102
+Assistant, you have to be able to type in the code and then you have to be able to run
+
+00:40:48.102 --> 00:40:48.582
+the app.
+
+00:40:49.142 --> 00:40:54.661
+And Anna, you had asked, making sure you understand Positive Assistant and Positron
+
+00:40:54.661 --> 00:40:56.022
+Assistant are different.
+
+00:40:56.901 --> 00:41:01.542
+Yes, I know those names being similar are confusing.
+
+00:41:01.542 --> 00:41:05.781
+The former is a combination of Positron Assistant and DataBot, DataBot, yes.
+
+00:41:05.781 --> 00:41:12.022
+So Positive Assistant is a combination of Positron Assistant and DataBot in RStudio.
+
+00:41:12.022 --> 00:41:13.542
+Yes, yeah, yeah.
+
+00:41:13.542 --> 00:41:19.302
+And it is, you have to sign up for the private beta at this point to get access to it, which
+
+00:41:19.302 --> 00:41:21.781
+is, I think Libby, you shared the link at the start.
+
+00:41:21.781 --> 00:41:22.822
+Isabella did, yeah.
+
+00:41:22.822 --> 00:41:23.862
+For Isabella, yeah.
+
+00:41:24.742 --> 00:41:28.982
+OK, so it did, it did make, I'm not like going to claim this is, you know, the best app of
+
+00:41:28.982 --> 00:41:29.381
+all time.
+
+00:41:29.381 --> 00:41:33.142
+And if I'd given it more instructions, it probably would have done a better job.
+
+00:41:33.142 --> 00:41:39.142
+But it did just go off and successfully make a shiny app that we can now continue to iterate
+
+00:41:39.142 --> 00:41:40.982
+on, which is pretty cool.
+
+00:41:41.702 --> 00:41:44.501
+Yeah, just display the data.
+
+00:41:44.501 --> 00:41:45.621
+Yep, yeah.
+
+00:41:45.621 --> 00:41:55.461
+And I think like doing this kind of task is a good example of like a task that you generally
+
+00:41:55.461 --> 00:42:04.422
+are OK with an AI assistant doing more autonomously versus something like exploratory data analysis
+
+00:42:04.422 --> 00:42:09.381
+where you need to sort of be involved frequently so that you can understand your data.
+
+00:42:09.381 --> 00:42:13.542
+I'm OK with like if I know what I want to go into the shiny app, I'm generally OK with
+
+00:42:13.542 --> 00:42:18.262
+Posit Assistant or something similar to just go and take what I know about the data and
+
+00:42:18.262 --> 00:42:21.221
+put it into a shiny app relatively autonomously.
+
+00:42:22.661 --> 00:42:29.061
+One reason is that like it is easy to verify for both computers and humans if the shiny
+
+00:42:29.061 --> 00:42:29.781
+app is working.
+
+00:42:31.061 --> 00:42:36.422
+So I can just look at this and see immediately if this is what I want and then go back to
+
+00:42:36.422 --> 00:42:39.142
+the assistant if I want adjustments.
+
+00:42:39.142 --> 00:42:46.502
+And the LLM or like the assistant itself can also tell if the code is broken and then fix
+
+00:42:46.502 --> 00:42:52.581
+it like while it's running the app for the first time or like if it produces an error
+
+00:42:52.581 --> 00:42:54.422
+and then I ask it to fix something.
+
+00:42:54.422 --> 00:42:58.102
+So it's easy to generally easy to verify if it's working.
+
+00:42:58.102 --> 00:43:05.701
+Whereas something like a data analysis where it's often harder to tell for the LLM or for
+
+00:43:05.701 --> 00:43:08.661
+you as the person quickly if it is done correctly.
+
+00:43:08.661 --> 00:43:10.901
+So you often need more human involvement.
+
+00:43:11.701 --> 00:43:13.062
+OK, there is.
+
+00:43:15.622 --> 00:43:17.302
+Maybe we can show it in data bot.
+
+00:43:17.302 --> 00:43:20.581
+There is a question about like what is the typical token burn rate?
+
+00:43:21.461 --> 00:43:26.182
+Is there a way to check how much how many tokens you've used in this particular session?
+
+00:43:28.661 --> 00:43:34.182
+And Renato had shared in the chat as well that a quick test yesterday with just basic
+
+00:43:34.182 --> 00:43:40.021
+output was, you know, a certain number of tokens and it was about six cents, which I
+
+00:43:40.021 --> 00:43:42.502
+think is a good little interesting data point.
+
+00:43:42.502 --> 00:43:43.781
+Thank you for sharing, Renato.
+
+00:43:44.742 --> 00:43:51.701
+Yeah, I know there's how do you do you remember how to see the token usage in data bot?
+
+00:43:52.422 --> 00:43:54.821
+I know how to do it in Posit Assistant, Simon.
+
+00:43:56.901 --> 00:44:01.622
+Yeah, I'm wondering if it's like only shown inside of Posit Assistant or something.
+
+00:44:01.622 --> 00:44:02.742
+I'm surprised not to see.
+
+00:44:02.742 --> 00:44:05.942
+Yeah, I think there's a way, but I have.
+
+00:44:05.942 --> 00:44:07.781
+I remember it being in like the bottom right.
+
+00:44:08.341 --> 00:44:08.581
+God.
+
+00:44:11.141 --> 00:44:12.502
+Not a slash command.
+
+00:44:14.102 --> 00:44:15.542
+No, I.
+
+00:44:17.461 --> 00:44:22.182
+You can in Posit Assistant, I don't want to like reshare because it takes a couple of
+
+00:44:22.182 --> 00:44:26.821
+minutes, but there's a little bar, there's a little like token counter bar in the bottom
+
+00:44:26.821 --> 00:44:30.661
+right hand corner of Posit Assistant that shows you how many tokens you've used and
+
+00:44:30.661 --> 00:44:32.661
+then you can click on it for more information.
+
+00:44:33.461 --> 00:44:37.302
+I'm pretty sure there's a what is it or was a way to see it in data bot, but I'm.
+
+00:44:38.261 --> 00:44:40.261
+I will, I will, I can get back to you all.
+
+00:44:42.021 --> 00:44:44.982
+Okay, let me see.
+
+00:44:44.982 --> 00:44:46.581
+I know we're kind of short on time.
+
+00:44:47.302 --> 00:44:48.661
+We have 10 more minutes.
+
+00:44:48.661 --> 00:44:51.141
+Yes, let me let me try to.
+
+00:44:51.862 --> 00:44:52.901
+And don't worry about time.
+
+00:44:52.901 --> 00:44:56.821
+We we're all about asking questions and figuring stuff out.
+
+00:44:56.821 --> 00:44:58.821
+So it's wonderful that we've been able to do that.
+
+00:44:59.542 --> 00:45:05.141
+OK, well, the three things that I wanted to cover is first, I just want to talk a little
+
+00:45:05.141 --> 00:45:07.062
+bit more about like what kinds of.
+
+00:45:08.102 --> 00:45:13.542
+Tasks that you might want to do with AI and what kind of things you might not want to.
+
+00:45:13.542 --> 00:45:16.742
+And then someone had asked about a skill so we can show that.
+
+00:45:16.742 --> 00:45:22.422
+And then Simon or or I will show the reviewer tool.
+
+00:45:23.141 --> 00:45:24.901
+So I think we can probably do that in 10 minutes.
+
+00:45:25.542 --> 00:45:27.062
+Let's do so.
+
+00:45:27.701 --> 00:45:28.422
+OK, let's.
+
+00:45:30.021 --> 00:45:37.221
+It's just quickly, I just want to say, like, we talked a little bit about verification
+
+00:45:37.781 --> 00:45:43.062
+of of like task completion or task correctness.
+
+00:45:43.062 --> 00:45:48.901
+So I'd say, like, generally, if you are working on some kind of analysis, one thing that you
+
+00:45:48.901 --> 00:45:53.141
+might want to ask yourself is, like, can you verify it or like, how will you know if it
+
+00:45:53.141 --> 00:45:53.862
+is correct?
+
+00:45:53.862 --> 00:45:59.461
+If you're doing something with AI and you have no clear answer for how you would tell
+
+00:45:59.461 --> 00:46:02.982
+if it's correct or not, you might want to be wary of using it.
+
+00:46:02.982 --> 00:46:04.021
+So an example is like.
+
+00:46:06.581 --> 00:46:07.081
+Like.
+
+00:46:08.821 --> 00:46:14.581
+Analysis where you don't understand if the code or if the data is correct or not.
+
+00:46:16.261 --> 00:46:20.102
+And you're asking the LM to tell you if the data is correct.
+
+00:46:20.102 --> 00:46:24.581
+It's not going to know that because unless it has access to tons and tons of context.
+
+00:46:26.581 --> 00:46:30.661
+And so you might want to be wary or just like use something with more human involvement.
+
+00:46:33.221 --> 00:46:37.542
+And then the other thing, a couple other things you might want to ask yourself is also like,
+
+00:46:37.542 --> 00:46:38.821
+how much does this thing matter?
+
+00:46:38.821 --> 00:46:41.622
+It is very important and hard to verify.
+
+00:46:41.622 --> 00:46:48.982
+You might not want to use AI or be wary or cautious or go over the results carefully.
+
+00:46:50.341 --> 00:46:54.581
+And then the other final thing is like, are current LLMs good at this type of task?
+
+00:46:54.581 --> 00:47:00.742
+Generally, they are very good at, you know, pure coding tasks for most purposes.
+
+00:47:02.102 --> 00:47:03.862
+But they are worse at something.
+
+00:47:03.862 --> 00:47:08.742
+So like if you are doing some kind of task, you should have a general sense of if LLMs
+
+00:47:08.742 --> 00:47:09.862
+are good at that or not.
+
+00:47:09.862 --> 00:47:12.341
+And they are really good at some things and less good at others.
+
+00:47:13.221 --> 00:47:16.742
+And so it's not sort of a blanket like they are bad at all of data science or they are
+
+00:47:16.742 --> 00:47:17.862
+good at all of data science.
+
+00:47:17.862 --> 00:47:23.221
+They are good at, you know, sort of different types of tasks or different areas.
+
+00:47:24.341 --> 00:47:24.581
+Okay.
+
+00:47:28.021 --> 00:47:28.661
+Cool.
+
+00:47:28.661 --> 00:47:35.461
+And so because of that, one thing that is important are either providing guardrails
+
+00:47:35.461 --> 00:47:42.422
+for the assistant or for adding additional information through a customization.
+
+00:47:42.422 --> 00:47:49.062
+So we already saw one way that you can do that by creating this MD file for the agent
+
+00:47:49.062 --> 00:47:50.021
+with more information.
+
+00:47:50.021 --> 00:47:56.102
+So you can use this to give the data bot, give Posit Assistant way more information
+
+00:47:56.102 --> 00:48:01.701
+about your data than it would otherwise have, which can help prevent it from, like, you
+
+00:48:01.701 --> 00:48:09.542
+know, hallucinating column names that don't exist or using a column that you don't want
+
+00:48:09.542 --> 00:48:10.102
+it to use.
+
+00:48:10.341 --> 00:48:13.701
+You might have data where there's two columns that kind of do the same thing.
+
+00:48:13.701 --> 00:48:15.221
+You only want it to use one.
+
+00:48:15.221 --> 00:48:21.942
+This kind of information could go in the data bot.md file and could save you from creating
+
+00:48:21.942 --> 00:48:23.622
+an analysis that is incorrect.
+
+00:48:24.261 --> 00:48:31.942
+The other thing is that if it's possible to add, like, determinism in this sort of largely
+
+00:48:31.942 --> 00:48:34.261
+non-deterministic process, that can be really helpful.
+
+00:48:34.261 --> 00:48:36.422
+And one way to do that is through a skill.
+
+00:48:36.422 --> 00:48:43.622
+So we only have five minutes, but you can add skills for data bot and for Posit Assistant.
+
+00:48:44.742 --> 00:48:49.622
+And hopefully there is a skill creator skill.
+
+00:48:50.261 --> 00:48:53.141
+So this is a skill that helps you create other skills.
+
+00:48:53.141 --> 00:49:01.622
+So the example I was going to use the other data for, but let's see if it'll work here.
+
+00:49:01.622 --> 00:49:11.382
+So let's see, like, use the and you just need to kind of mention the skill name or,
+
+00:49:11.382 --> 00:49:14.661
+like, allude to it for it to know that it should do that.
+
+00:49:17.062 --> 00:49:23.141
+Create a skill that creates a specific type of table.
+
+00:49:24.261 --> 00:49:30.502
+So we were going to make a table and then, like, create a skill for that, but this should
+
+00:49:30.502 --> 00:49:31.221
+work.
+
+00:49:31.302 --> 00:49:35.701
+So notice that it has this little output thing that says skill, create skill.
+
+00:49:35.701 --> 00:49:38.821
+So this is using the create skill skill to make a skill.
+
+00:49:40.901 --> 00:49:42.901
+And it has some questions for me.
+
+00:49:49.382 --> 00:49:50.422
+We'll see if it does.
+
+00:49:50.422 --> 00:49:50.742
+Okay.
+
+00:49:50.742 --> 00:49:51.862
+No, it needs more information.
+
+00:49:51.862 --> 00:49:52.901
+I just wanted to make it.
+
+00:49:56.021 --> 00:49:57.461
+We didn't give it enough information.
+
+00:49:58.182 --> 00:49:58.742
+Okay.
+
+00:49:58.742 --> 00:50:01.141
+So now it is it thinks it has enough information.
+
+00:50:01.141 --> 00:50:04.982
+If you were really doing this, you would probably want to be much clearer with it about what
+
+00:50:04.982 --> 00:50:06.261
+you wanted it to do.
+
+00:50:06.261 --> 00:50:09.781
+But I just wanted it to start the process so I can show you where they go.
+
+00:50:09.781 --> 00:50:12.821
+It's going to put this in dot Posit AI slash skills.
+
+00:50:13.942 --> 00:50:17.302
+And after it works for a little bit, it's going to come up with a markdown file that
+
+00:50:17.302 --> 00:50:18.901
+specifies the skill.
+
+00:50:18.901 --> 00:50:22.661
+It's going to be, like, a bit of code and some information about it.
+
+00:50:22.661 --> 00:50:27.382
+And then in the future, when I want to create this type of skill, I'm going to be able to
+
+00:50:28.341 --> 00:50:33.302
+I just reference it by name, and it will always use that information to make the table.
+
+00:50:33.302 --> 00:50:37.302
+So this is really helpful if you want, like, if you always make a certain type of formatted
+
+00:50:37.302 --> 00:50:41.942
+table or you have to, for some reason, put that in a skill so you don't have to provide
+
+00:50:41.942 --> 00:50:45.302
+it with that context every time that you talk to it.
+
+00:50:46.661 --> 00:50:47.461
+Did that make sense?
+
+00:50:47.461 --> 00:50:49.701
+I know that was very brief.
+
+00:50:49.701 --> 00:50:53.302
+The important thing to remember is that there's a skill creator skill that can help you.
+
+00:50:55.302 --> 00:50:56.261
+I love it.
+
+00:50:56.261 --> 00:50:56.901
+Very meta.
+
+00:50:57.781 --> 00:50:58.281
+Okay.
+
+00:50:59.701 --> 00:51:05.221
+So now, did you want to share your screen for a reviewer?
+
+00:51:05.221 --> 00:51:10.021
+Do you want me to just keep going since I'm here, Simon?
+
+00:51:10.982 --> 00:51:12.021
+Yeah, I'd say keep at it.
+
+00:51:12.661 --> 00:51:13.161
+Okay.
+
+00:51:14.821 --> 00:51:19.382
+So this last example that I want to show you, this is a package.
+
+00:51:20.102 --> 00:51:20.982
+Let's close this.
+
+00:51:20.982 --> 00:51:23.382
+This is a package called reviewer.
+
+00:51:23.382 --> 00:51:30.821
+And what this does is help you review code from, like, a tidy perspective or, like, a
+
+00:51:30.821 --> 00:51:32.662
+good R code perspective.
+
+00:51:33.622 --> 00:51:35.701
+And so Simon made this package.
+
+00:51:36.821 --> 00:51:40.902
+One reason I wanted to show it is that it's cool and useful, but also it's a good example
+
+00:51:40.902 --> 00:51:48.181
+of something where the you as the human have more control over how you are using the LLM
+
+00:51:48.181 --> 00:51:53.461
+suggestions than if you were using an agent that just goes and works very autonomously.
+
+00:51:53.461 --> 00:51:54.902
+So let's see how this works.
+
+00:51:54.902 --> 00:51:58.022
+This is a sample script that has some issues in it.
+
+00:51:59.221 --> 00:52:13.221
+And if we do reviewer, review, and then we pass it the file path to the script, it should
+
+00:52:13.221 --> 00:52:15.142
+open, but you can't see it.
+
+00:52:18.821 --> 00:52:21.622
+One second.
+
+00:52:24.341 --> 00:52:24.902
+It's okay.
+
+00:52:24.902 --> 00:52:25.402
+Switch.
+
+00:52:26.262 --> 00:52:26.982
+Elevator music.
+
+00:52:27.541 --> 00:52:28.041
+Yeah.
+
+00:52:28.821 --> 00:52:29.301
+Here we go.
+
+00:52:29.301 --> 00:52:30.821
+It gave it some time to think anyway.
+
+00:52:31.782 --> 00:52:40.262
+And it gives you suggestions in the side for things that would be, like, bad for reproducibility,
+
+00:52:40.262 --> 00:52:44.902
+just bad code style, you know, sort of tidy conventions.
+
+00:52:45.461 --> 00:52:47.541
+And then you can either accept or reject them.
+
+00:52:48.982 --> 00:52:52.341
+So, like, this script had to use setwd.
+
+00:52:52.341 --> 00:52:53.221
+It didn't like that.
+
+00:52:53.862 --> 00:52:56.181
+It mixed different types of pipes.
+
+00:52:56.181 --> 00:53:02.022
+And then it's only going to look at sort of chunks of the script at a time, and then it
+
+00:53:02.022 --> 00:53:04.821
+will give you more suggestions that you can accept or reject.
+
+00:53:06.181 --> 00:53:14.022
+So this is nice, like, if you want to sort of learn various conventions, you might use
+
+00:53:14.022 --> 00:53:14.522
+this.
+
+00:53:14.902 --> 00:53:19.221
+Because you kind of have to read the suggestion before accepting it versus, like, the LLM
+
+00:53:19.221 --> 00:53:23.941
+just going off and making a bunch of edits for you, and that, like, you never saw the
+
+00:53:23.941 --> 00:53:24.441
+process.
+
+00:53:25.701 --> 00:53:26.421
+This is very cool.
+
+00:53:26.421 --> 00:53:28.102
+So reviewer, the reviewer package.
+
+00:53:28.102 --> 00:53:32.982
+Is this on CRAN and working in both Positron and RStudio?
+
+00:53:35.221 --> 00:53:36.581
+So do you want to talk about it?
+
+00:53:37.461 --> 00:53:38.262
+One minute left.
+
+00:53:38.262 --> 00:53:39.061
+Yeah, yeah.
+
+00:53:39.061 --> 00:53:44.421
+So the current status on this project, I just put, like, a few hours into it and ended up
+
+00:53:44.421 --> 00:53:48.982
+feeling pretty unsure about how useful this idea was.
+
+00:53:49.622 --> 00:53:53.941
+And so since then, I haven't put much more time into the idea.
+
+00:53:53.941 --> 00:53:59.061
+But if people feel like this is an interface that they would find useful, I would definitely
+
+00:54:00.341 --> 00:54:07.221
+be into the idea of trying to fix a bunch of bugs and push this further and send it
+
+00:54:07.221 --> 00:54:08.022
+CRAN as well.
+
+00:54:08.022 --> 00:54:12.181
+So do let me know if you think this is an idea that you're interested in.
+
+00:54:13.461 --> 00:54:14.262
+Fantastic.
+
+00:54:14.262 --> 00:54:15.782
+I think that this is really interesting.
+
+00:54:15.782 --> 00:54:20.902
+If you want to go look at reviewer and test it, I think this would be a really interesting
+
+00:54:20.902 --> 00:54:25.461
+thing if teachers could put their preferences inside of it to, like, replicate so students
+
+00:54:25.461 --> 00:54:27.862
+could get, like, a pseudo review from their professor.
+
+00:54:28.662 --> 00:54:30.181
+I think that'd be super cool.
+
+00:54:30.181 --> 00:54:30.421
+All right.
+
+00:54:30.421 --> 00:54:32.502
+Well, we have reached the top of the hour.
+
+00:54:32.502 --> 00:54:34.982
+We have lots of interest about reviewer in the chat, though.
+
+00:54:34.982 --> 00:54:38.982
+Thank you so much, Sarah and Simon, for coming and hanging out with us.
+
+00:54:40.102 --> 00:54:41.221
+All right, everybody.
+
+00:54:41.221 --> 00:54:42.262
+Goodbye.
+
+00:54:42.262 --> 00:54:43.862
+We'll see you next week.
+
+00:54:43.862 --> 00:54:44.982
+Thanks.

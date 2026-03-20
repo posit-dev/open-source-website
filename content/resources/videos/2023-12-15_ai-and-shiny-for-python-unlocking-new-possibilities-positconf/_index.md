@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1083
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.480934+00:00'
+  last_updated: '2026-03-20T11:32:50.371618+00:00'
   like_count: 17
   people:
   - Winston Chang
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lXOMJvuPN_Y/maxresdefault.jpg
   title: 'AI and Shiny for Python: Unlocking New Possibilities - posit::conf'
   url: https://www.youtube.com/watch?v=lXOMJvuPN_Y
-  view_count: 742
+  view_count: 743
 ---
 image: thumbnail.jpg
 

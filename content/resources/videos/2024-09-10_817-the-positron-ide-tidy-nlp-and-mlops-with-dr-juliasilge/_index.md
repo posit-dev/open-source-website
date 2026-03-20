@@ -1,6 +1,6 @@
 ---
 date: '2024-09-10'
-description: 'PositronIDE #Tidyverse #MLOps
+description: '#PositronIDE #Tidyverse #MLOps
 
 
   Dr. Julia Silge, Engineering Manager at Posit, joins @JonKrohnLearns to introduce the brand-new Positron IDE, perfect for exploratory data analysis and visualization. She also lays out her top picks for LLMs that boost coding efficiency and discusses when traditional NLP methods might be the smarter choice over LLMs. Plus, Julia highlights some must-know open-source libraries that make managing MLOps easier than ever. Tune in for insights that every data scientist, ML engineer, and developer will find useful.
@@ -33,7 +33,7 @@ people:
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - tidyverse
 tags:
 - The Positron IDE Tidy NLP and MLOps
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   comment_count: 2
   date: '2024-09-10T11:00:46Z'
   definition: hd
-  description: 'PositronIDE #Tidyverse #MLOps
+  description: '#PositronIDE #Tidyverse #MLOps
 
 
     Dr. Julia Silge, Engineering Manager at Posit, joins @JonKrohnLearns to introduce the brand-new Positron IDE, perfect for exploratory data analysis and visualization. She also lays out her top picks for LLMs that boost coding efficiency and discusses when traditional NLP methods might be the smarter choice over LLMs. Plus, Julia highlights some must-know open-source libraries that make managing MLOps easier than ever. Tune in for insights that every data scientist, ML engineer, and developer will find useful.
@@ -93,13 +93,13 @@ external:  # updated automatically, do not edit
   duration: 5654
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:31.073462+00:00'
+  last_updated: '2026-03-20T11:32:57.734729+00:00'
   like_count: 92
   people:
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - positron
+  - Positron
   - tidyverse
   tags:
   - The Positron IDE Tidy NLP and MLOps
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jjpP35VL3-E/maxresdefault.jpg
   title: '817: The Positron IDE, Tidy NLP and MLOps — with Dr. @JuliaSilge'
   url: https://www.youtube.com/watch?v=jjpP35VL3-E
-  view_count: 3065
+  view_count: 3075
 ---
 image: thumbnail.jpg
 

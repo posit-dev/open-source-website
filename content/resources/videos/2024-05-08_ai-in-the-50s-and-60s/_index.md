@@ -1,6 +1,6 @@
 ---
 date: '2024-05-08'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -58,11 +58,11 @@ external:  # updated automatically, do not edit
   comment_count: 0
   date: '2024-05-08T19:31:09Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 30
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:23.695630+00:00'
+  last_updated: '2026-03-20T11:32:49.221490+00:00'
   like_count: 40
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4kppeN5WJuE/maxresdefault.jpg
   title: AI in the 50s and 60s 👀
   url: https://www.youtube.com/watch?v=4kppeN5WJuE
-  view_count: 2021
+  view_count: 2028
 ---
 image: thumbnail.jpg
 

@@ -85,7 +85,7 @@ external:  # updated automatically, do not edit
   duration: 1094
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:28.938039+00:00'
+  last_updated: '2026-03-20T11:32:55.538512+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -138,7 +138,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vC9-QJ2mUWw/maxresdefault.jpg
   title: 'Aaron Jacobs | Introducing xrprof: A New Way to Profile R | RStudio (2021)'
   url: https://www.youtube.com/watch?v=vC9-QJ2mUWw
-  view_count: 862
+  view_count: 863
 ---
 image: thumbnail.jpg
 

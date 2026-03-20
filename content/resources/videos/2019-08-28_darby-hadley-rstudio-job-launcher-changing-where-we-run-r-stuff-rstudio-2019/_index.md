@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 1096
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.958884+00:00'
+  last_updated: '2026-03-20T11:32:56.700248+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -114,7 +114,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tQ40oIiN-EQ/maxresdefault.jpg
   title: Darby Hadley | RStudio Job Launcher Changing where we run R stuff | RStudio (2019)
   url: https://www.youtube.com/watch?v=tQ40oIiN-EQ
-  view_count: 1499
+  view_count: 1500
 ---
 image: thumbnail.jpg
 

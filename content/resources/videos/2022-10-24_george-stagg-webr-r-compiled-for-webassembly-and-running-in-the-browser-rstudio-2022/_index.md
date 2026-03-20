@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 302
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529018+00:00'
+  last_updated: '2026-03-20T11:32:52.707660+00:00'
   like_count: 30
   people:
   - George Stagg
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_PyrtxTW8yM/maxresdefault.jpg
   title: 'George Stagg | WebR: R compiled for WebAssembly and running in the browser | RStudio (2022)'
   url: https://www.youtube.com/watch?v=_PyrtxTW8yM
-  view_count: 1276
+  view_count: 1278
 ---
 image: thumbnail.jpg
 

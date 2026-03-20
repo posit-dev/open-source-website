@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 1148
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.307824+00:00'
+  last_updated: '2026-03-20T11:32:56.053362+00:00'
   like_count: 71
   people:
   - Daniel Falbel
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Oi8k8_Dyc3k/hqdefault.jpg
   title: Daniel Falbel | What's new in TensorFlow for R | RStudio (2020)
   url: https://www.youtube.com/watch?v=Oi8k8_Dyc3k
-  view_count: 1519
+  view_count: 1524
 ---
 image: thumbnail.jpg
 

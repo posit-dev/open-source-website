@@ -101,7 +101,7 @@ external:  # updated automatically, do not edit
   duration: 3573
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.836372+00:00'
+  last_updated: '2026-03-20T11:32:53.454112+00:00'
   like_count: 19
   playlist: ''
   software:
@@ -110,7 +110,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Hh12BUAPnEM/maxresdefault.jpg
   title: Data Science Hangout | Adam Bly, System | Decentralizing decision making
   url: https://www.youtube.com/watch?v=Hh12BUAPnEM
-  view_count: 872
+  view_count: 875
 ---
 image: thumbnail.jpg
 

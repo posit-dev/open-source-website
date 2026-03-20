@@ -1,0 +1,1750 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Heron, and this is a recording
+
+00:00:16.680 --> 00:00:22.040
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.040 --> 00:00:27.280
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.280 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:35.720
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.720 --> 00:00:41.279
+Can't wait to see you there. I will say we are done with our housekeeping and we can
+
+00:00:41.279 --> 00:00:48.200
+go ahead and introduce our featured leader today, Samia Baig, Senior Data Scientist slash
+
+00:00:48.200 --> 00:00:54.080
+Data Engineer at Johnson & Johnson Innovative Medicine. Samia, would you like to introduce
+
+00:00:54.080 --> 00:01:00.160
+yourself? Tell us a little bit about what you do at J&J Innovative Medicine and also
+
+00:01:00.160 --> 00:01:01.759
+something you like to do for fun.
+
+00:01:01.759 --> 00:01:08.879
+Alright, hi everyone. Thanks for joining. This is actually my first hangout and also
+
+00:01:08.879 --> 00:01:13.919
+my first time speaking. So looking forward, I've been a part of the R community now for
+
+00:01:13.919 --> 00:01:20.559
+eight years, so I know that this is a fun community and I'm happy to be here. As Libby
+
+00:01:20.639 --> 00:01:26.080
+said, I work as a Senior Data Scientist at J&J. I've been here for two years, but I have
+
+00:01:27.120 --> 00:01:34.080
+overall eight years of experience in different areas of healthcare and public health. But
+
+00:01:34.080 --> 00:01:38.239
+what I've done, I would say, like throughout my career has been, you know, even though
+
+00:01:38.239 --> 00:01:44.080
+technically I am a data scientist by title, I kind of am more a little bit, I would say,
+
+00:01:44.080 --> 00:01:49.599
+a product or analytics engineer. So I sit in between, you know, like pure engineering
+
+00:01:49.680 --> 00:01:54.559
+team and then the business. And really like what my work has been throughout the last
+
+00:01:54.559 --> 00:01:59.199
+eight years, it kind of didn't start that way. I was, you know, started more in the
+
+00:01:59.199 --> 00:02:07.919
+clinical research space, but basically I, you know, heavily focused on making, you know,
+
+00:02:07.919 --> 00:02:13.039
+raw data ready for analysis. And then earlier in my career, I also was just working from
+
+00:02:13.039 --> 00:02:18.080
+like the whole like end-to-end, you know, preparing the data and, you know, developing
+
+00:02:18.080 --> 00:02:24.240
+like the end output needed for, you know, whoever needed the end product. But right
+
+00:02:24.240 --> 00:02:28.479
+now, currently in my role, I focus almost entirely on just like the data, like, you
+
+00:02:28.479 --> 00:02:35.039
+know, making the data, you know, like ready for either a dashboard or a similar interactive
+
+00:02:35.039 --> 00:02:40.880
+product. I will be actually kind of shifting gears now to prepare data more for like ML
+
+00:02:40.880 --> 00:02:47.440
+AI use cases. But yeah, I think the principles have been overall the same. It's just like,
+
+00:02:47.440 --> 00:02:53.039
+you know, really just understanding the business context of the data and then also applying
+
+00:02:53.039 --> 00:02:57.759
+the technical skills and the right ones for the, you know, right use or, you know, the
+
+00:02:57.759 --> 00:03:05.039
+right audience to just, you know, like streamline the process and, you know, automate when needed.
+
+00:03:05.039 --> 00:03:11.600
+And then, yeah, just, I guess, coming up with creative solutions to make data easily digestible
+
+00:03:11.600 --> 00:03:13.039
+for a wide audience.
+
+00:03:14.160 --> 00:03:19.199
+Amazing. And I saw Rob say in the chat, he said, I feel like analytics engineer is a
+
+00:03:19.199 --> 00:03:24.639
+better descriptor for other titles, surprisingly often. Do you feel like that's a good descriptor
+
+00:03:24.639 --> 00:03:30.399
+for what you do, like analytics engineering, that underside stuff? I always need more
+
+00:03:30.399 --> 00:03:33.839
+context in engineering. I feel like it's a big blind spot for me. I am always so much
+
+00:03:33.839 --> 00:03:37.360
+on the modeling or the end user side of it.
+
+00:03:38.320 --> 00:03:42.080
+Yeah, analytics engineering, I think is an appropriate way to describe it. I know that
+
+00:03:42.080 --> 00:03:48.320
+like, you know, within data engineering, like there's a lot of like, you know, discussion
+
+00:03:48.320 --> 00:03:53.119
+on how to actually name the titles or like, you know, if you fall under data engineer,
+
+00:03:53.119 --> 00:03:57.679
+but I think within it, you know, there's different stratifications and roles. So yeah,
+
+00:03:57.679 --> 00:04:02.240
+I would definitely say that mine aligns more with analytics engineer. But again, like
+
+00:04:02.320 --> 00:04:08.960
+more so recently has been like, where I've had that specific title, because before I
+
+00:04:08.960 --> 00:04:15.759
+was, you know, working more in biostatistics or, and like data science in public health.
+
+00:04:15.759 --> 00:04:20.399
+So in that I was just kind of like, you know, either one person or one of the few people
+
+00:04:20.399 --> 00:04:26.799
+on a team kind of, we were doing a little bit of everything. So yeah, so I think it's
+
+00:04:26.799 --> 00:04:31.600
+just been like, you know, different, different kinds of roles throughout, but I would say
+
+00:04:31.600 --> 00:04:35.760
+overall, like, you know, yeah, analytics engineer describes pretty well, like what
+
+00:04:35.760 --> 00:04:39.200
+I'm doing now, and what I focused on a lot throughout my career.
+
+00:04:40.480 --> 00:04:46.720
+I wanted to ask you a little bit about your background, your education, and kind of how
+
+00:04:46.720 --> 00:04:54.239
+you got to where you are, were you much more focused on the subject matter, and sort of
+
+00:04:54.239 --> 00:04:59.760
+found yourself in the data space doing data type things over time? Or was data something
+
+00:04:59.760 --> 00:05:05.119
+that you were focusing on, even when you were in school on a really, you know, regular
+
+00:05:05.119 --> 00:05:05.600
+basis?
+
+00:05:06.959 --> 00:05:11.679
+Yeah, that's a great question. So actually, I'm a pharmacist by training, I do get a lot
+
+00:05:11.679 --> 00:05:16.799
+of questions about that. I went to a six year pharmacy program. So that was like, pretty
+
+00:05:16.799 --> 00:05:21.040
+much right after high school. And so I think it was a pretty big, like, it felt like I
+
+00:05:21.040 --> 00:05:26.079
+knew I wanted to work in healthcare. And I knew that whatever I wanted to focus on was,
+
+00:05:26.079 --> 00:05:30.320
+you know, related to like clinical sciences, what exactly I wanted to do, that's a hard
+
+00:05:30.320 --> 00:05:34.799
+decision to make when you're a high school student. But I got into the program. And,
+
+00:05:36.000 --> 00:05:41.119
+you know, I knew that I really enjoyed like the, you know, the clinical knowledge and
+
+00:05:41.119 --> 00:05:46.880
+aspects of what I learned there. But I wanted to learn more skills. Because I knew that
+
+00:05:46.880 --> 00:05:50.239
+healthcare, there's just so many things. But like, you know, I think sometimes when
+
+00:05:50.239 --> 00:05:54.079
+you're going through like a, like accelerated program like that, like, you don't have, you
+
+00:05:54.079 --> 00:05:58.640
+know, too much time to explore a little bit like the different career paths. So what I did was
+
+00:05:58.640 --> 00:06:04.720
+that after I graduated, I went to did my master's of public health, specifically focusing on
+
+00:06:04.720 --> 00:06:10.320
+epidemiology and biostatistics. So in public health, that is more of like the quantitative
+
+00:06:10.320 --> 00:06:15.600
+analytical skill sets, I kind of knew that I would go into the data direction. And I was
+
+00:06:15.600 --> 00:06:19.920
+just trying to learn more skills, because I wanted to see like, you know, I just kind of
+
+00:06:19.920 --> 00:06:24.640
+wanted to diversify, like, you know, all all what I could learn to see, like, how that can
+
+00:06:24.640 --> 00:06:30.959
+synthesize together, and you know, like how I can apply that in healthcare. So before I went into
+
+00:06:30.959 --> 00:06:39.200
+my public health program, you know, I was trying to learn how to code. But I think, you know,
+
+00:06:39.200 --> 00:06:43.839
+something I realized later that when I first just was trying to learn to code, I was learning to
+
+00:06:43.839 --> 00:06:48.720
+code before I was learning to think programmatically, which I do think there's a distinction
+
+00:06:48.720 --> 00:06:54.320
+between that. Because I think initially, like, I didn't understand, when I was first starting out,
+
+00:06:54.320 --> 00:06:59.040
+like, you know, like, why am I like, you know, telling, you know, the command line to make a
+
+00:06:59.040 --> 00:07:03.760
+directory, but I can just do that with the user interface. Like, I never really understood why I
+
+00:07:03.760 --> 00:07:10.720
+was doing things writing code, you know, until later, much later in my career. So like, in public
+
+00:07:10.720 --> 00:07:15.839
+health school, I was much more focused on statistics. And I thought I would become, you know,
+
+00:07:15.839 --> 00:07:22.959
+a clinical scientist or, you know, someone who was doing more research. And then when I started
+
+00:07:22.959 --> 00:07:29.839
+my career, and I think this is something I do hear a lot in, like, any kind of, like, academic or, you
+
+00:07:29.839 --> 00:07:36.559
+know, research background is that when you go into the real world, the data is not nothing like it
+
+00:07:36.559 --> 00:07:42.320
+was in the classroom, because it's, like, very chaotic in a way that you could never anticipate.
+
+00:07:42.320 --> 00:07:45.600
+I mean, there's just, there's just so many different things I've seen with, like, different
+
+00:07:45.600 --> 00:07:52.079
+data sources. And a lot of my time, you know, really went into preparing and making it ready
+
+00:07:53.279 --> 00:07:56.320
+for analysis. And then there were so many skills that I didn't realize
+
+00:07:57.119 --> 00:08:02.480
+after in my career that were not as much emphasized, I think, in school, because school
+
+00:08:02.480 --> 00:08:08.480
+focused more on, like, you know, the, the more methodology and the statistical analysis, which
+
+00:08:08.480 --> 00:08:12.640
+definitely has its place. But I think, I think the real world, you know, you definitely see,
+
+00:08:12.640 --> 00:08:19.040
+like, more important aspects of, like, you know, version control, you know, documentation,
+
+00:08:20.079 --> 00:08:26.239
+you know, making your processes, like, reproducible, and scalable. And that's really
+
+00:08:26.239 --> 00:08:31.519
+where, when I had mentioned that before I, when I had first started to learn to code, I was just
+
+00:08:31.519 --> 00:08:36.320
+learning to code, learning to type syntax, but not realizing what it meant to be programmatic.
+
+00:08:36.320 --> 00:08:40.080
+And I think that's kind of something I think about, especially in, like, this, you know, like,
+
+00:08:40.080 --> 00:08:43.840
+new AI age, where we're, like, thinking about, like, oh, like, you know, is coding going to be
+
+00:08:45.520 --> 00:08:50.640
+as useful or not by hand. But I think really, like, the main thing that stays is that
+
+00:08:50.640 --> 00:08:56.479
+really thinking of, like, okay, like, how do I design my pipeline so that I'm not, like, doing
+
+00:08:56.479 --> 00:09:02.080
+the same thing again and again? You know, how, you know, do I, like, make sure that, like, when I'm,
+
+00:09:02.080 --> 00:09:07.679
+you know, starting out a project that I'm, like, you know, initializing with the Git repository,
+
+00:09:07.679 --> 00:09:12.479
+or, like, you know, why is that even important? And I think really, like, my eight years of
+
+00:09:12.479 --> 00:09:17.520
+experience has been just learning that, and also learning that in different settings. So,
+
+00:09:17.520 --> 00:09:23.359
+even though I was within, like, you know, the healthcare, you know, overall healthcare domain
+
+00:09:23.359 --> 00:09:31.039
+area, I've worked in academia, a hospital pharmacy, public health department, and now
+
+00:09:31.039 --> 00:09:36.640
+currently in pharma. And there was this tweet, I think I read once, that said that, like, you know,
+
+00:09:36.640 --> 00:09:41.039
+sometimes when you start a new job, it's almost, like, starting, like, a new season. Like, if your
+
+00:09:41.039 --> 00:09:45.760
+life was, like, a TV show, it's, like, starting, like, a new season. And even though I work within
+
+00:09:45.760 --> 00:09:50.799
+the healthcare realm, I definitely felt that, because, like, all the problems, all the data,
+
+00:09:52.239 --> 00:09:57.679
+they're all just, you know, different from each other, and that by itself is, like, a learning
+
+00:09:57.679 --> 00:10:03.919
+process. So, really, yeah, I mean, I think that's really how I got, I would say that I kind of
+
+00:10:03.919 --> 00:10:08.080
+started with data in mind, but I didn't really think that this would be the direction my career
+
+00:10:08.080 --> 00:10:13.200
+was going in until I started, you know, working. And I think even, yeah, even with the years of
+
+00:10:13.200 --> 00:10:18.159
+experience I have now, I mean, there's always, like, you know, trying to figure out, like,
+
+00:10:19.039 --> 00:10:23.280
+is this where I want to be? Or, like, you know, like, what are other aspects of data that I can
+
+00:10:23.280 --> 00:10:28.960
+learn? Because there's a lot of, like, you know, niche areas within data as a broad field. So,
+
+00:10:28.960 --> 00:10:34.799
+I think there's always a lot to learn. There is. It's so validating hearing you say
+
+00:10:36.000 --> 00:10:42.080
+that first principles were really important, because as a person who teaches other people to
+
+00:10:42.080 --> 00:10:48.400
+code, it's so, so difficult to say, like, oh, well, you know, just keep doing it and keep being messy
+
+00:10:48.400 --> 00:10:52.159
+and keep making mistakes, because over the course of the next three years, you know, you're really
+
+00:10:52.159 --> 00:10:57.599
+going to understand why this or that is valuable. I really think that that time is needed to
+
+00:10:57.599 --> 00:11:03.440
+understand why those things are important. You can't skip through and just understand intuitively
+
+00:11:04.080 --> 00:11:08.799
+why it's important to use version control until you've maybe messed up several times
+
+00:11:08.799 --> 00:11:15.440
+and not used version control. And that giving yourself the space to spend that time is really,
+
+00:11:15.440 --> 00:11:20.320
+really important. So, it's wonderful hearing you say that. And I see some things in the chat, too,
+
+00:11:20.320 --> 00:11:25.520
+that are very complimentary. Grace says, love your thoughts on this. Started teaching reproducible
+
+00:11:25.520 --> 00:11:32.000
+workflows and version control in first year at UBC, but personally didn't learn that until my PhD.
+
+00:11:32.000 --> 00:11:40.880
+That is very, very valid and common, I think. And as an aside, I know that you said you had
+
+00:11:40.880 --> 00:11:44.239
+worked in Department of Health. That was New York City, right? You worked in the New York City
+
+00:11:44.239 --> 00:11:52.640
+Department of Health. And I think we had a question. Let me see here. We did. We had a
+
+00:11:52.640 --> 00:11:58.000
+question that was an anonymous one that said, what was it like in that move that you made from public
+
+00:11:58.000 --> 00:12:05.599
+health to pharma? And maybe that could also include what did that job process, job search
+
+00:12:05.599 --> 00:12:11.599
+process look like? And did all of your experience transfer really, really well? But you were already
+
+00:12:12.320 --> 00:12:20.400
+a certified pharmacist by that point. Yeah. So, I think the thing is when I was... So, I did feel
+
+00:12:20.400 --> 00:12:26.159
+that when I was going into public health, especially working in the Department of Health, that
+
+00:12:26.159 --> 00:12:31.599
+besides my pharmacy background, having the public health skillset was important. Because
+
+00:12:32.640 --> 00:12:37.280
+in pharmacy, we learn at a very high level the clinical research skills. But it was in
+
+00:12:38.239 --> 00:12:44.400
+my public health program that I learned much more the nuance epidemiology and biostatistics
+
+00:12:44.400 --> 00:12:50.799
+courses. And I felt that a lot of in the public health job descriptions, that was highly emphasized
+
+00:12:50.799 --> 00:12:57.200
+to have a very specific public health background. But there's a lot of jobs within the health
+
+00:12:57.200 --> 00:13:05.119
+department. And I mean, I think even as new administrations come, there are new priorities.
+
+00:13:05.119 --> 00:13:10.559
+So, that always, I think, also influences the type of jobs that are available at any given time.
+
+00:13:11.359 --> 00:13:17.440
+And also, I think the Department of Health has evolved too. After I left, they also have started,
+
+00:13:17.440 --> 00:13:26.000
+I think, more of a data science group within or a data science team. And I worked specifically more
+
+00:13:26.719 --> 00:13:33.760
+under a healthcare policy team. So, it wasn't specific to data science, but we had a team of
+
+00:13:33.760 --> 00:13:41.359
+people who were data scientists, as well as PhD scientists. And we were all working on the research
+
+00:13:41.359 --> 00:13:50.880
+and evaluation aspect. So, I think just preparing for, and I would say that the transition from
+
+00:13:50.880 --> 00:13:56.000
+public health to pharma, there were similarities and differences. I mean, I think the similarities
+
+00:13:56.000 --> 00:14:06.559
+were really just being able to work with different data sources within the healthcare domain,
+
+00:14:06.559 --> 00:14:13.440
+and understanding the stakeholder who needs that data, and then understanding just the process,
+
+00:14:13.440 --> 00:14:19.760
+and making a data set that's like, some of the data is like survey data, some of it was
+
+00:14:19.760 --> 00:14:25.200
+our own internal data, and really just trying to understand the ins and outs of what's needed to
+
+00:14:26.640 --> 00:14:33.119
+get the data readily available for the person who needs it. I think that's a skill that transferred
+
+00:14:33.119 --> 00:14:40.239
+in between all of my jobs. But I think it was the overall domain knowledge of just healthcare and
+
+00:14:40.239 --> 00:14:48.400
+public health helped me get my job in the Department of Health, and then pharma as well.
+
+00:14:48.400 --> 00:14:54.880
+But pharma definitely is very different. And I think it's also, when I say pharma,
+
+00:14:54.880 --> 00:15:01.599
+I'm not speaking for every single team, obviously in my organization or other pharma companies,
+
+00:15:01.599 --> 00:15:09.200
+because I think it's just a very huge workplace. And I think there's definitely different teams
+
+00:15:10.239 --> 00:15:14.080
+who may be doing different things that I don't have full visibility about.
+
+00:15:14.080 --> 00:15:21.359
+But I think I specifically work more on a data science team, which is a large team,
+
+00:15:21.359 --> 00:15:27.599
+and all of us are data scientists, but I think a lot of people come from different
+
+00:15:27.599 --> 00:15:33.679
+and diverse backgrounds. So similarly, I came from a pharmacy background with a public health degree,
+
+00:15:33.679 --> 00:15:40.239
+but then you do see some people who have a technical background, came from data science,
+
+00:15:40.239 --> 00:15:45.599
+or people who had more of the scientific background. So I think it's just that the
+
+00:15:45.599 --> 00:15:50.400
+type of data I use is really different. The type of questions I'm answering is very different.
+
+00:15:51.359 --> 00:15:56.960
+More so related to specific treatment or therapeutic areas, whereas in public health,
+
+00:15:56.960 --> 00:16:03.280
+it was more broadly looking at programs and initiatives within the city, still within the
+
+00:16:03.280 --> 00:16:09.679
+healthcare domain, but we were just answering a different question or doing something differently,
+
+00:16:09.679 --> 00:16:16.960
+because it was more like, I guess, public programming. But yeah, I would say that
+
+00:16:17.760 --> 00:16:23.200
+there's both an overlap, but then I think maybe the differences just come in the type of work.
+
+00:16:24.080 --> 00:16:29.200
+Perfect. I mean, that goes for all kinds of differences between industries and jobs too.
+
+00:16:29.200 --> 00:16:32.159
+Well, thank you, Anonymous Asker, for asking that question, and we have
+
+00:16:32.719 --> 00:16:35.679
+a whole bunch of questions in Slido now, so let's go get to them.
+
+00:16:36.719 --> 00:16:42.320
+Noor, I saw you had asked a question. Would you be willing to unmute and ask that one live?
+
+00:16:42.320 --> 00:16:44.080
+Hello. Can people hear me?
+
+00:16:44.080 --> 00:16:44.799
+Yep.
+
+00:16:44.799 --> 00:16:51.039
+Awesome. Okay. Hi, my name's Noor. It's for Samia, and forgive me if I'm messing up your
+
+00:16:51.039 --> 00:16:52.159
+name. Is Samia correct?
+
+00:16:52.159 --> 00:16:53.200
+Yeah, that's correct.
+
+00:16:53.200 --> 00:16:58.239
+Okay. As someone who works in both the data science and data engineering spaces,
+
+00:16:58.239 --> 00:17:02.640
+what do you say are distinguishing factors in the responsibilities of said roles?
+
+00:17:02.640 --> 00:17:07.839
+Because I know that often sometimes there's like some opaqueness between them, as well as
+
+00:17:07.839 --> 00:17:13.599
+what would you say is unique to, I guess, J&J as a data scientist or data engineer?
+
+00:17:15.439 --> 00:17:23.119
+Sure. So I think that even though my title is data scientist, and then in the past I was
+
+00:17:24.479 --> 00:17:28.880
+working as a data scientist, and then sometimes it'll be more like my title was data analyst
+
+00:17:28.880 --> 00:17:36.000
+when I started my career, I definitely feel like in healthcare, especially when I started my career,
+
+00:17:36.000 --> 00:17:42.000
+because I think in the beginning there weren't as many distinctions between like data scientist
+
+00:17:42.000 --> 00:17:47.119
+and data engineer. I feel like more so recently within the last maybe like five years, I'm seeing
+
+00:17:47.119 --> 00:17:51.839
+much more of that difference, I think just because data scientists were doing kind of all of
+
+00:17:51.839 --> 00:17:58.479
+that work. But I think the thing is that technically speaking, I think data scientists
+
+00:17:59.119 --> 00:18:05.439
+are considered, you know, the professionals who work specifically more on the modeling
+
+00:18:05.439 --> 00:18:10.479
+after the data engineering work has been completed. So data engineering, analytics engineering,
+
+00:18:11.359 --> 00:18:17.520
+technically speaking, is like an upstream responsibility. But I think like, and I
+
+00:18:17.520 --> 00:18:24.239
+am more so like, you know, in my workplace, like an analytics engineer. But then again, like I said,
+
+00:18:24.239 --> 00:18:28.000
+I can't really speak like, you know, for my entire organization, because I don't know, like, you know,
+
+00:18:28.000 --> 00:18:34.000
+in different teams, like, if there's that distinction or not. But I think the thing is that
+
+00:18:34.239 --> 00:18:40.319
+in my past experiences, there weren't really like a distinction. And I think it also
+
+00:18:40.319 --> 00:18:45.760
+just depends on the company and like the setting of your role. Because like I mentioned
+
+00:18:45.760 --> 00:18:50.719
+earlier in my career, I was working more like, you know, kind of like a solo data person.
+
+00:18:51.439 --> 00:18:57.520
+And in like, you know, in the pharmacy setting, or in like Department of Health, I worked on a team.
+
+00:18:57.520 --> 00:19:02.400
+But then again, in academia, when I first started my career, I was working as kind of like a solo
+
+00:19:02.400 --> 00:19:09.199
+data person. So I think in that I wore many more hats. And I think it's just like the way,
+
+00:19:09.760 --> 00:19:14.479
+the way any company's like kind of team is organized, or like, you know, what specific
+
+00:19:14.479 --> 00:19:18.719
+project, like, you know, data project they're working on, like how that team is organized,
+
+00:19:18.719 --> 00:19:24.959
+I think maybe just really probably is probably how those roles are assigned. So like, I mean,
+
+00:19:24.959 --> 00:19:29.359
+I think in a smaller organization, maybe like more of like a startup type. Also, like, you know,
+
+00:19:29.359 --> 00:19:34.479
+probably like, there's kind of one or two or few people who are wearing many hats, whereas like,
+
+00:19:34.479 --> 00:19:41.280
+in a more larger and like robust organization on a bigger team. I think like, you know, these role
+
+00:19:41.280 --> 00:19:45.839
+differentiating roles, like data scientists, analytics engineer, product engineer, like,
+
+00:19:45.839 --> 00:19:50.880
+they're a little bit more stratified. And yeah, I would say like, you know, they're,
+
+00:19:51.439 --> 00:19:56.239
+they work on different processes of like, or different like time points of like, you know,
+
+00:19:56.239 --> 00:20:02.800
+that whole end to end data process. Thank you, Samia. That was a fantastic question. And I would
+
+00:20:02.800 --> 00:20:07.760
+love to follow it up with an anonymous question in Slido. That's perfect for our about halfway
+
+00:20:07.760 --> 00:20:13.040
+point where we are here, because usually by this point, someone has asked this, and here it is. So
+
+00:20:13.040 --> 00:20:20.560
+it is what are the most popular tools that you and your team use in your job at J&J? So languages,
+
+00:20:20.560 --> 00:20:26.880
+like, are you an R person, Python person? Do you all use SQL? Do you use transformation tools,
+
+00:20:26.880 --> 00:20:32.079
+data warehouses, cloud services, stuff like that? All that would be fantastic context.
+
+00:20:33.280 --> 00:20:38.479
+Sure. So currently I use, so I would say like, the two years I've been here, I was using a lot
+
+00:20:38.479 --> 00:20:43.040
+more SQL than I ever did in my career, which is really good. I mean, I think that, you know,
+
+00:20:44.000 --> 00:20:50.640
+throughout like, you know, my time in data, I've heard a lot, you know, the emphasis about SQL
+
+00:20:50.640 --> 00:20:55.439
+being, you know, continuing to be for in the long term, like a very, you know, one of the most
+
+00:20:55.439 --> 00:21:01.520
+important, you know, technically is not programming language, but I mean, it's like, you know, a
+
+00:21:01.520 --> 00:21:09.280
+language that I think really, you know, is the mainstay for any kind of data work. Initially,
+
+00:21:09.280 --> 00:21:14.959
+it was a hard transition because I started my career almost exclusively working in R and Python.
+
+00:21:14.959 --> 00:21:20.560
+So it's a very different type of mindset. You know, I kind of think of SQL being like, you know,
+
+00:21:20.560 --> 00:21:24.400
+like those dolls, which they kind of go into each other, like, you know, like a little.
+
+00:21:24.400 --> 00:21:25.520
+A nesting doll.
+
+00:21:25.520 --> 00:21:28.079
+Yeah. So it's kind of like, that's how I think of like,
+
+00:21:29.599 --> 00:21:35.359
+like using SQL, but I've been using, that's been kind of my work because I work a lot more on,
+
+00:21:36.160 --> 00:21:40.239
+as I mentioned, the analytics engineering side, and, you know, we use a data warehouse, and then
+
+00:21:40.239 --> 00:21:45.199
+I use SQL to, you know, combine data from different sources and make it
+
+00:21:46.079 --> 00:21:54.000
+ready for like a dashboard or similar tool. But I have used R and I do use Python time to time.
+
+00:21:54.000 --> 00:22:00.160
+And I think in my current job, I use, I would say I use Python a little bit more than R because I
+
+00:22:00.160 --> 00:22:06.400
+was developing more scripts or, you know, programs to do like more data checks or, you know,
+
+00:22:06.959 --> 00:22:13.280
+just like trying to automate like something, you know, like that I needed to like get the data,
+
+00:22:14.000 --> 00:22:24.479
+you know, ready or things like that. I, we use AWS currently at my job, but in the past,
+
+00:22:24.719 --> 00:22:33.359
+um, yeah, in the past I had used, when I had used a lot more R, I was using a lot of different data
+
+00:22:33.359 --> 00:22:41.760
+sources, you know, like survey data, electronic health record data, and, you know, like medical
+
+00:22:41.760 --> 00:22:47.599
+claims data, things like that. So that was like, and we also didn't really have like a, you know,
+
+00:22:47.599 --> 00:22:54.959
+at that time didn't use AWS. It was a little bit more, um, I would say just kind of an arbitrary
+
+00:22:54.959 --> 00:23:00.319
+process, uh, to like, you know, get the data, um, you know, kind of ready, you know, developing
+
+00:23:00.319 --> 00:23:05.439
+these like R and I think that's really where R and Python, especially I use R a lot more became
+
+00:23:05.439 --> 00:23:11.359
+important because it was really like, you know, we were trying to pull data from like, um, like,
+
+00:23:11.359 --> 00:23:15.520
+like, you know, if it's like survey data or electronic health record data, um, you know,
+
+00:23:15.520 --> 00:23:21.359
+different sources. And it was just, I think a little bit more of like a, uh, programmatic way
+
+00:23:21.359 --> 00:23:25.439
+in which like, you know, I, I get the data and then I'm like, you know, trying to like,
+
+00:23:25.439 --> 00:23:30.959
+you know, create like a Excel workbook out of that or create like a R markdown out of that.
+
+00:23:30.959 --> 00:23:37.439
+So at my job currently, I don't create the end product. So that's really where I think the SQL
+
+00:23:37.439 --> 00:23:43.119
+use, um, becomes more important. Um, but yeah, I mean, I think those are the, the,
+
+00:23:44.000 --> 00:23:49.119
+I would say like SQL AWS are like the main tools I currently use. And then Python for,
+
+00:23:49.119 --> 00:23:54.560
+um, you know, just some like, um, ancillary processes to, you know, like do QA's and things
+
+00:23:54.560 --> 00:24:00.400
+like that. Perfect. Well, there was a, a question that is a nice little quick follow-up with this
+
+00:24:00.400 --> 00:24:04.959
+one, which was, what do you use SQL in? And I'm guessing that is like, what type of environment
+
+00:24:04.959 --> 00:24:11.359
+do you write SQL in? Um, this question says I've done some intro stuff, but I never run into much
+
+00:24:11.359 --> 00:24:15.760
+opportunity to use it in my day-to-day and I want to get better so I can apply to more jobs
+
+00:24:15.760 --> 00:24:24.400
+requiring SQL. Yeah. So I currently use AWS Redshift and, um, I think the free tool that
+
+00:24:24.400 --> 00:24:31.359
+you can use, um, I mean, I, I know that some people are using, um, other tools, like more
+
+00:24:31.359 --> 00:24:37.199
+like open source tools. Um, but, uh, I can't really speak to that as much. The thing with
+
+00:24:37.199 --> 00:24:43.040
+SQL was that I, um, understand that, you know, kind of conundrum of trying to get, you know,
+
+00:24:43.040 --> 00:24:48.160
+like, cause I, I think like I was just R and Python has a much more friendly open source,
+
+00:24:48.160 --> 00:24:54.319
+uh, environment. And like, I think just being an RStudio user, um, and eventually having it
+
+00:24:54.319 --> 00:25:00.640
+evolve into, you know, Posit, um, I felt like there was more like, you know, this one-stop shop. So I
+
+00:25:00.640 --> 00:25:07.280
+wasn't really using SQL as much, um, to prepare like, you know, for, for like other roles in which
+
+00:25:07.280 --> 00:25:12.479
+SQL might be required. And so really I learned SQL. I would say that, you know, if, if someone
+
+00:25:12.479 --> 00:25:17.359
+does have like a R or Python background and then you're going into SQL, I mean, it is a different
+
+00:25:17.359 --> 00:25:23.119
+language, but I think that's enough to prepare you, you know, to eventually use like SQL at the
+
+00:25:23.119 --> 00:25:28.000
+workplace. Cause that's really where I, I would say like, just, just, you know, doing SQL at my job
+
+00:25:28.000 --> 00:25:33.920
+was where I, um, became really good at it because like, you know, I would see exact, exactly the
+
+00:25:33.920 --> 00:25:38.719
+complexities, the problems and things where then, you know, I could think through it. Cause sometimes
+
+00:25:38.719 --> 00:25:42.000
+I think when trying, that's also another thing, like, you know, when trying to learn something
+
+00:25:42.000 --> 00:25:48.000
+in your own time, um, you know, you're given these like practice problems and they're fine for like,
+
+00:25:48.000 --> 00:25:52.800
+you know, the introduction, but they don't necessarily, I think they're, they're not
+
+00:25:52.800 --> 00:25:56.640
+going to be as complex as you see in the real world and there, you know, you definitely
+
+00:25:57.520 --> 00:26:01.839
+will. I mean, like it's, I think that, that kind of concern that like, I'm not going to know enough.
+
+00:26:01.839 --> 00:26:07.280
+Um, I think if you already know the language, like that gap is usually filled and it's just
+
+00:26:07.280 --> 00:26:12.400
+kind of a matter of like a different syntax. And then also maybe just like learning, like
+
+00:26:12.400 --> 00:26:18.719
+one thing with SQL is also just learning like that, um, like CTEs or the sub query nesting,
+
+00:26:18.719 --> 00:26:25.520
+because that's what makes it, you know, different from like the Python and R mindset. Um, but I think
+
+00:26:25.520 --> 00:26:32.079
+like as long as you still have that same principle of, you know, analyzing data, um, I think that,
+
+00:26:32.079 --> 00:26:38.560
+um, that learning curve shouldn't be as big. Perfect. Yeah. And also there are lots of people
+
+00:26:38.560 --> 00:26:43.520
+in the chat chatting about where they use SQL and how they use it. Um, thank you everybody for
+
+00:26:43.520 --> 00:26:49.119
+sharing your resources. I learned SQL in SQL lite three. Uh, I learned almost everything in a really
+
+00:26:49.119 --> 00:26:54.959
+like console heavy way, not a lot of UIs. And then when I got into my first data job and needed to
+
+00:26:54.959 --> 00:27:02.000
+use a UI, I was like, Oh no, what's going on. I just want to go console. Um, so I think it's good to
+
+00:27:02.000 --> 00:27:09.760
+get, get exposure to many different ways of using SQL, many different sort of like applications.
+
+00:27:09.760 --> 00:27:14.319
+There are lots of people saying duck DB is good. And then I know that there are also extensions
+
+00:27:14.319 --> 00:27:22.959
+in VS code and positron. Um, so go check some stuff out and let's hop over to Slido once again,
+
+00:27:22.959 --> 00:27:27.199
+where we had a great question. It was anonymous. I will put it in the chat here.
+
+00:27:28.239 --> 00:27:33.839
+Um, and it says one of the issues I'm having is convincing my team to make the data pipeline
+
+00:27:33.839 --> 00:27:39.680
+more robust. They are more content to leave it and then work through the panic when it fails.
+
+00:27:40.400 --> 00:27:44.959
+How would you go about convincing them of the need for a more robust pipeline?
+
+00:27:45.199 --> 00:27:50.239
+Sure. Um, so I completely understand, like, I, I think what happens is, um,
+
+00:27:51.439 --> 00:27:57.680
+my understanding is the reason this happens is that I think, um, you know, sometimes like you'll
+
+00:27:57.680 --> 00:28:01.280
+get projects and then you want to get them out really quickly. And then, you know, you, you want
+
+00:28:01.280 --> 00:28:07.040
+to make sure you have something to show. And then like, you know, um, with whatever, however, the
+
+00:28:07.040 --> 00:28:13.040
+pipeline is, because I think the thing is sometimes making a pipeline more robust is, um, requires
+
+00:28:13.119 --> 00:28:19.280
+some upfront time. And I think it's really just trying to make people understand, like, that, um,
+
+00:28:19.280 --> 00:28:23.439
+I would say, like, maybe like that balance between how much time should that take? And then, like,
+
+00:28:23.439 --> 00:28:28.800
+you know, what's kind of, how would that kind of improve, um, the end result? Because I think
+
+00:28:28.800 --> 00:28:32.560
+sometimes what happens is like in the moment, you know, trying to get things out quickly,
+
+00:28:33.119 --> 00:28:38.880
+just using whatever we have, trying not to fix the upstream processes, um, is something that
+
+00:28:39.359 --> 00:28:43.680
+is very, I would say like typical in like, you know, a lot of data science environments,
+
+00:28:43.680 --> 00:28:48.959
+at least like what I've seen. So I think the thing is like, I don't have like a very, I would say,
+
+00:28:48.959 --> 00:28:55.839
+concrete answer to this. Um, but I think really it's just, um, kind of starting kind of, I think,
+
+00:28:55.839 --> 00:29:01.760
+like, you know, being a, like, if you've already identified that is like identifying, um, kind of
+
+00:29:01.760 --> 00:29:06.880
+small but powerful places where you can fix things, um, you know, something that's like maybe
+
+00:29:07.040 --> 00:29:12.640
+not as time intensive, but then that can like really have an impact on making things, you know,
+
+00:29:12.640 --> 00:29:17.599
+better for the long run. Um, I think some things are, for example, like if there's not enough
+
+00:29:17.599 --> 00:29:22.079
+documentation or like, you know, you see like a documentation gap to like really try to like,
+
+00:29:22.079 --> 00:29:28.160
+you know, fill that. Um, I personally feel like also in SQL, um, you know, because I use that
+
+00:29:28.160 --> 00:29:34.319
+primarily at my workplace, is to really, especially if you have like much more complex processes,
+
+00:29:34.319 --> 00:29:40.400
+is to really find a way to make, um, the SQL easier to navigate. So like I'm a very huge
+
+00:29:40.400 --> 00:29:46.959
+advocate for just using CTEs and not multiple nested subqueries. And I mean, in the, in the
+
+00:29:46.959 --> 00:29:51.359
+whole grand scheme of like, you know, making a more robust pipeline, that probably sounds like
+
+00:29:51.359 --> 00:29:56.239
+a small minor thing, but it actually makes a huge difference because down the line, if someone needs
+
+00:29:56.239 --> 00:30:01.199
+to like, you know, someone else needs to own the code, uh, someone needs to read it or make like
+
+00:30:01.439 --> 00:30:06.959
+a fix to it. Um, it's very, very difficult to debug, like, you know, so I think like, um,
+
+00:30:06.959 --> 00:30:12.400
+those are just examples that, you know, like I have seen that I can speak to. Um, I don't know
+
+00:30:12.400 --> 00:30:18.239
+if that answers maybe like a specific aspect of like, you know, um, like in terms of like pipelines,
+
+00:30:18.239 --> 00:30:22.560
+because I think also like different companies have different processes of like, you know,
+
+00:30:22.560 --> 00:30:27.599
+how they develop the pipeline in the first place. So I think like it, it would be hard to completely
+
+00:30:27.599 --> 00:30:31.839
+like, um, and especially if you have, if you work in a bigger company to like totally do the
+
+00:30:31.839 --> 00:30:36.079
+redesign, cause there's so many people involved in it. But I think just thinking of what you can
+
+00:30:36.079 --> 00:30:42.959
+do in your role is really trying to find ways to, um, really like, um, you know, reduce, reduce
+
+00:30:42.959 --> 00:30:50.160
+anything you can in which would make, add more maybe technical debt in the long run or make,
+
+00:30:50.160 --> 00:30:55.839
+you know, the process harder, um, for like, you know, like the pipeline to be able to, you know,
+
+00:30:55.920 --> 00:30:59.760
+for like, you know, like, like if you need to transition it, or if you need to have other
+
+00:30:59.760 --> 00:31:05.040
+people work on it, um, I think just kind of identifying like small areas and, um, being
+
+00:31:05.040 --> 00:31:11.119
+able to tackle those. Awesome. Thank you. And I saw somebody had commented on there. Can you define
+
+00:31:11.119 --> 00:31:16.640
+robust? Um, and maybe you can speak to this a little bit, but I think that I, I define robust
+
+00:31:16.640 --> 00:31:23.280
+in a data pipeline as hard to break. And if it does break easy to figure out what broke so you
+
+00:31:23.280 --> 00:31:31.359
+can fix it. So having logging, um, having logs and then also just making sure that some, at least
+
+00:31:31.359 --> 00:31:35.119
+some things are automated so that there's not this process where like, it's waiting for a person
+
+00:31:35.119 --> 00:31:40.079
+to go in and do something all the time. What do you think Samia? Yeah, I definitely agree. I mean,
+
+00:31:40.079 --> 00:31:44.880
+I think that's like, you know, I think like just being, making it so that it's like a difficult,
+
+00:31:44.880 --> 00:31:49.520
+like, you know, I think like I gave in the SQL example, like, you know, the more you write a
+
+00:31:49.520 --> 00:31:54.719
+very complex query that only you can understand the more difficult it is for, you know, like
+
+00:31:54.719 --> 00:32:00.479
+debugging down the line. And I think like that's, um, at a very high level, like I, I do feel like
+
+00:32:00.479 --> 00:32:06.479
+that's how I got into like R and Python, um, to begin with, because, you know, a lot of processes
+
+00:32:06.479 --> 00:32:10.959
+when I started were like in SAS or were very fragmented. Like they were like, um, between
+
+00:32:10.959 --> 00:32:16.400
+SAS and then copying and pasting SQL and things like that. And so I think like another thing is
+
+00:32:16.400 --> 00:32:21.839
+that, um, like what you said Libby, like, um, you know, just trying to identify ways in which
+
+00:32:21.839 --> 00:32:26.319
+you have to minimize, like someone going in the code and changing lines or
+
+00:32:26.319 --> 00:32:30.319
+someone having to do something. And I think like really like, um,
+
+00:32:31.299 --> 00:32:36.259
+in programming, like, you know, using like a language like R and Python, like, I think you can,
+
+00:32:36.259 --> 00:32:42.019
+you know, use more, there's more an opportunity to use placeholders or like, you know, variables
+
+00:32:42.019 --> 00:32:47.378
+that can, you know, replace like the dates, or like replace like the names of like, you know,
+
+00:32:47.378 --> 00:32:51.378
+because like, you'll be basically able to reuse that. So I think just like having that principle
+
+00:32:51.378 --> 00:32:57.539
+of like, reusability and scalability in mind. Just like data science, where you're like,
+
+00:32:57.539 --> 00:33:01.298
+I'm gonna write a function for this instead of going in and changing my hard coded values 50
+
+00:33:01.298 --> 00:33:06.339
+times. Right? Yeah, we're gonna make this parameterized, right? Yeah. Okay, perfect.
+
+00:33:06.979 --> 00:33:11.699
+I want to hop over to Amelia's question. She has an asterisk next to her name. So I'm gonna ask
+
+00:33:11.699 --> 00:33:17.298
+the question for Amelia. It says, I think the distinction you make between thinking programmatically
+
+00:33:17.298 --> 00:33:24.579
+versus coding is so important. Getting past that I could just make a folder with the GUI with the
+
+00:33:24.579 --> 00:33:30.579
+GUI. Why would I use code mindset is a challenge when teaching? Do you happen to have any specific
+
+00:33:30.579 --> 00:33:36.179
+resources or strategies or examples that might help students or others with that mindset?
+
+00:33:37.778 --> 00:33:45.619
+That's a great question. And it's interesting to think about. Yeah, I think. So I think maybe
+
+00:33:47.778 --> 00:33:51.378
+I'm trying to think a little bit. Some of the best examples are just like,
+
+00:33:52.259 --> 00:33:57.778
+yeah, here's what I used to do. And here's the years of experience that taught me
+
+00:33:58.338 --> 00:34:04.179
+why that was so important. Right? I think the thing is, like, maybe an example you could do
+
+00:34:04.179 --> 00:34:09.778
+is like write a script, which like has to be developed every month or something like like,
+
+00:34:09.778 --> 00:34:14.179
+and with some kind of cadence, right? So like, it's like developed, like, every like, like,
+
+00:34:14.179 --> 00:34:18.259
+maybe like, especially if you're teaching a class, like, maybe have a week where they have to like,
+
+00:34:18.259 --> 00:34:23.138
+write a script that like runs every day. Because I think the thing is, then like, you know, and then
+
+00:34:23.138 --> 00:34:27.619
+like, that script should be saved in a specific folder with a name that distinguishes the date,
+
+00:34:28.259 --> 00:34:31.939
+something like that. Because I think like, when I was initially learning, particularly in my
+
+00:34:31.939 --> 00:34:37.058
+statistics, you know, classes, the idea was that we're just writing these scripts to like, you know,
+
+00:34:38.259 --> 00:34:42.659
+run like, you know, for specific analyses. Once you know, we get the analysis done,
+
+00:34:42.659 --> 00:34:47.459
+the paper we publish and everything's great. But reality is that, you know, like that same
+
+00:34:47.459 --> 00:34:52.258
+analyses will be run multiple times. And also, I mean, that depends on like, you know, if you're
+
+00:34:52.258 --> 00:34:56.258
+working in academia, versus like more of a practice setting, like public health, but like,
+
+00:34:56.258 --> 00:35:00.418
+you know, a lot of times, like, you know, a lot of scripts need to be run, like, maybe like
+
+00:35:00.418 --> 00:35:06.019
+periodically, or maybe like, you know, I need to, even if it's not like, you know, on a cadence,
+
+00:35:06.019 --> 00:35:10.099
+like, you know, I need to run this, like, in a couple of months, when I'm asked, I just should
+
+00:35:10.099 --> 00:35:16.019
+be able to, you know, press that, or just like, you know, basically be able to, yeah, like, open
+
+00:35:16.099 --> 00:35:20.739
+our run that script, and then get the output. And that's kind of it. So I think maybe like,
+
+00:35:20.739 --> 00:35:26.019
+in terms of teaching is like kind of developing, like, an automated pipeline, you know, like,
+
+00:35:26.739 --> 00:35:30.418
+creating a report, like, I would say, like the first start with the basics, like creating the
+
+00:35:30.418 --> 00:35:35.778
+report, have making sure the report or whatever analysis does what you wanted to. And then the
+
+00:35:35.778 --> 00:35:42.418
+last part is really like, you know, trying to, like, maybe use like task scheduler or cron are
+
+00:35:42.418 --> 00:35:47.538
+to like, run that report every day and have it sent to your email or have it saved to like a
+
+00:35:47.538 --> 00:35:55.459
+folder. And then I think that will really enforce like, why, you know, those, those skills are
+
+00:35:55.459 --> 00:36:02.338
+really important in a lot of places, because I think a lot of people don't really see that aspect
+
+00:36:02.338 --> 00:36:07.859
+of like, you know, these analyses usually are not one and done, but they're usually happening again
+
+00:36:07.859 --> 00:36:12.499
+and again. And, you know, rather than me having to do the same thing again and again, where can I
+
+00:36:12.499 --> 00:36:18.418
+minimize that gap and just like, you know, do it, like do it so that it kind of runs more or less
+
+00:36:18.418 --> 00:36:24.019
+on its own. That's the dream, right? That's the dream. I mean, I can think of four things that
+
+00:36:24.019 --> 00:36:28.978
+I've done in the past six months that I have thought, oh, I'm gonna have to do this again,
+
+00:36:28.978 --> 00:36:34.099
+but I don't have time to do it the right way this time. And I need to just do it. It's tough. Like,
+
+00:36:34.099 --> 00:36:37.859
+if anybody is out there going, oh, I would love to do that, but I don't have time to like,
+
+00:36:37.859 --> 00:36:43.939
+make sure that I don't have technical debt later. I see you, it's hard. Thank you, Amelia, for that
+
+00:36:43.939 --> 00:36:51.139
+great question. The next question I wanted to direct to you was from Russ. Russ Conti, if you
+
+00:36:51.139 --> 00:36:56.659
+are available to ask that live, that would be great. And I will put your question in the chat as well.
+
+00:36:56.659 --> 00:37:02.819
+Okay. Can you hear me? Yeah. Okay. Hey, great, great time. This is really, really good. Are
+
+00:37:02.819 --> 00:37:08.738
+there any non-data science skills that are very helpful in your either current or former job?
+
+00:37:10.338 --> 00:37:17.219
+Yeah, non-data science skills are, I would say, I mean, I think maybe data science skills
+
+00:37:17.219 --> 00:37:21.298
+technically should include some non-data science skills because it's not just all technical.
+
+00:37:22.178 --> 00:37:27.778
+You know, I think like one, like, and those, and sometimes I think it's hard to define those skills
+
+00:37:27.778 --> 00:37:32.819
+because like, it's easy to say, hey, learn R, Python, or like, you know, maybe like use Denny.
+
+00:37:32.819 --> 00:37:36.338
+I don't know. Like, you know, I think it's much more easier to kind of point to a tool,
+
+00:37:36.338 --> 00:37:43.458
+whereas like the, the soft skills are a little bit more abstract. Definitely, you know, communication,
+
+00:37:43.458 --> 00:37:47.939
+but communication also is, I mean, a lot of people say communication, right? Like just
+
+00:37:47.939 --> 00:37:51.379
+communication, but that, that looks differently, you know, but you have to kind of, I think,
+
+00:37:51.379 --> 00:37:56.178
+really understand your team, understand your stakeholders, and really kind of like put
+
+00:37:56.178 --> 00:38:01.939
+yourself in their shoes and think like, okay, what, like, you know, how are they thinking about
+
+00:38:01.939 --> 00:38:06.338
+this versus how am I thinking about this? And then really, I think with that understanding,
+
+00:38:06.338 --> 00:38:11.618
+it also forms like, you know, good relationships, you know, also just, you know, maintaining a good
+
+00:38:11.618 --> 00:38:16.419
+communication channel to make sure that like, you know, people are in the loop with whatever's going
+
+00:38:16.419 --> 00:38:21.458
+on. And also, I guess maybe not making assumptions like, you know, like this person's a non-technical
+
+00:38:21.458 --> 00:38:25.139
+person, they won't know. Like, I think really just like, like I said, like, like just totally
+
+00:38:25.139 --> 00:38:30.578
+understanding, you know, what that person's understanding is and going off of that.
+
+00:38:30.578 --> 00:38:36.578
+And one, like, concrete example I'll just give, like, in terms of, like, a non-tech, technically
+
+00:38:36.578 --> 00:38:42.018
+non, you know, data science skill is that, like, you know, a lot of people love dashboards. Like,
+
+00:38:42.018 --> 00:38:46.419
+and I think maybe, like, people assume that everyone, you know, whatever I will produce
+
+00:38:46.419 --> 00:38:51.379
+should be a dashboard. But not everyone is used to that. Like, I mean, there's a lot of people who
+
+00:38:52.178 --> 00:38:57.858
+just like a color-coded Excel sheet, a very, like, you know, maybe like a Word document or
+
+00:38:57.858 --> 00:39:02.578
+just something, you know, that's just sent, like, in a small, like, you know, HTML table. And I
+
+00:39:02.578 --> 00:39:07.458
+think it's really trying to understand what their needs are and what works for them by just putting
+
+00:39:07.458 --> 00:39:12.659
+yourself in their shoes or seeing, like, you know, what processes they're used to or how they have
+
+00:39:12.659 --> 00:39:19.379
+throughout time really, like, been in taking data insights and then being able to develop solutions
+
+00:39:19.379 --> 00:39:25.539
+based on that, I think is probably, I would say, one of the most important skills I've learned,
+
+00:39:25.539 --> 00:39:32.738
+you know, throughout. Wonderful. I just saw Nutabeko said technical empathy. What a great
+
+00:39:32.738 --> 00:39:40.178
+phrase. I love it. Okay. Let's head on to the next question. Russ, thank you so much for asking that
+
+00:39:40.178 --> 00:39:46.659
+one. The next one is from Kevin, Kevin Snyder. If you are available to ask your question live,
+
+00:39:46.659 --> 00:39:51.699
+that would be great. And there's a follow-up to Kevin's, which is in a similar vein to what we
+
+00:39:51.699 --> 00:39:58.578
+were just talking about, about the ratio of pharma to data science knowledge that's expected of data
+
+00:39:58.578 --> 00:40:08.018
+scientists. All right. Yeah. All right. My video is not working, but I can ask. Yeah. So my question
+
+00:40:08.018 --> 00:40:14.499
+is, and I guess it's not, I'll start with, you know, trying to understand exactly what subject
+
+00:40:14.499 --> 00:40:19.618
+matter you reside in. Is it pharmacovigilance with epidemiology or kind of where you sit in
+
+00:40:19.618 --> 00:40:25.139
+the organization? But then beyond that, my question is really, do you, is there any kind
+
+00:40:25.139 --> 00:40:30.898
+of community among data scientists across the whole company, right? Spanning potentially like
+
+00:40:30.898 --> 00:40:38.819
+discovery, CMC, non-clinical, clinical development, pharmacovigilance, you know, just to what extent
+
+00:40:38.819 --> 00:40:44.819
+are you connected with other data scientists across the organization? And to what extent do
+
+00:40:44.819 --> 00:40:51.539
+you kind of have visibility into who's doing what? So, you know, because ideally I think a lot of
+
+00:40:51.539 --> 00:40:56.099
+data science, you know, in different contexts, there's, you can learn from each other, even if
+
+00:40:56.099 --> 00:41:00.898
+you're working on different subject matter expertise. Yeah. Yeah, I definitely agree with
+
+00:41:00.898 --> 00:41:06.098
+that. So I work in the data science and digital health team and we work in research and development.
+
+00:41:06.098 --> 00:41:12.499
+So I work more on solutions for, you know, different clinical trial stakeholders. But then
+
+00:41:12.499 --> 00:41:17.858
+like, you know, I also, you know, will be down the line involved in projects, which will kind
+
+00:41:17.858 --> 00:41:22.819
+of in the same lane, but just like different aspects of, you know, that work. So I'm still
+
+00:41:23.379 --> 00:41:31.058
+learning and, you know, maybe like my answer to that question is also that, I mean, you know,
+
+00:41:31.298 --> 00:41:37.538
+I just don't know, like completely all of like, you know, the different aspects of what's there,
+
+00:41:37.538 --> 00:41:42.418
+because I will also be getting involved in those different aspects. But I think one thing I have
+
+00:41:42.418 --> 00:41:47.779
+learned in, you know, working in pharma, it's been two years now since I've been at my current role,
+
+00:41:47.779 --> 00:41:55.218
+is that particularly J&J is a very big organization. There's a lot of data analytics in
+
+00:41:55.779 --> 00:41:59.939
+many different aspects that I can't really speak to and don't have full visibility, but I'm trying
+
+00:41:59.939 --> 00:42:04.899
+to learn because I mean, sometimes I'll just see someone's like title or something pop up and I'll
+
+00:42:04.899 --> 00:42:08.899
+be like, hey, can we schedule a one on one, I'd love to learn more about what you're doing. And
+
+00:42:08.899 --> 00:42:13.858
+I think for me, that's really helpful to, you know, just have more visibility, particularly
+
+00:42:13.858 --> 00:42:20.178
+as someone who started here, like, you know, just a few years ago. But yeah, but I mean, even when I
+
+00:42:20.178 --> 00:42:24.019
+worked in the Department of Health, like even though New York City Department of Health, it's
+
+00:42:24.019 --> 00:42:29.298
+just one city's department, there's like 6000 plus employees. And then, you know, we're just one
+
+00:42:29.298 --> 00:42:37.379
+agency, in like a broader scheme of other agencies. And the things I worked on were like, I was I was
+
+00:42:37.379 --> 00:42:41.058
+a little siloed, you know, from like other teams, and then it was sometimes just other teams who
+
+00:42:41.058 --> 00:42:47.218
+are just in a neighboring bureau or team who are doing very similar things. And I didn't always
+
+00:42:47.218 --> 00:42:54.418
+have full visibility on that. But I think the thing is that like, and hopefully I'm answering
+
+00:42:54.418 --> 00:43:03.298
+this question correctly. But like, yeah, I mean, I think I do agree with, like, because sometimes I
+
+00:43:03.298 --> 00:43:07.618
+believe that it's very collaborative, like sometimes what happens in silos is that like,
+
+00:43:07.618 --> 00:43:11.618
+there are people doing some similar things, and then some different things, it's always really
+
+00:43:11.618 --> 00:43:17.459
+good to know, like, you know, all the different aspects of data that, you know, even I don't
+
+00:43:17.459 --> 00:43:21.379
+like fully know, just because I've never been exposed to someone, you know, working on a specific
+
+00:43:21.379 --> 00:43:26.899
+aspect. In the Department of Health, how I actually got really involved in knowing what other people
+
+00:43:26.899 --> 00:43:32.738
+are doing was, I worked during the COVID-19 pandemic. And so in that situation, emergency
+
+00:43:32.738 --> 00:43:39.298
+situations, we got kind of regrouped into other data, other data teams, or other like, you know,
+
+00:43:39.298 --> 00:43:44.339
+groups, and focusing more on responding to the pandemic, rather than doing kind of our daily
+
+00:43:44.339 --> 00:43:51.218
+activities. So things like that, I think, helped a lot. And, you know, like, how I'm like, bringing
+
+00:43:51.218 --> 00:43:56.819
+that back in my current role is just really like, you know, you know, every time we have these like
+
+00:43:56.819 --> 00:44:01.459
+periodic meetings, or even if we don't just like kind of seeing, if I just kind of see someone
+
+00:44:01.459 --> 00:44:07.538
+like, you know, you know, like working on a specific area, like commercial or things like
+
+00:44:07.538 --> 00:44:11.779
+that, like, I'll just reach out to them. But it's a little bit more up to me now to like, you know,
+
+00:44:11.779 --> 00:44:18.019
+make that awareness. And I think maybe like, from an organizational perspective, it's, I mean, I
+
+00:44:18.019 --> 00:44:23.218
+think I think sometimes like it, there are initiatives like, you know, to kind of do that.
+
+00:44:23.218 --> 00:44:28.418
+But I think so in large organizations, I noticed that it's easier to get a little bit siloed,
+
+00:44:28.418 --> 00:44:31.379
+I think, just because of the volume of people working on different things.
+
+00:44:32.178 --> 00:44:37.379
+Absolutely. Even I mean, I work at Posit, which is a much, much smaller company,
+
+00:44:37.379 --> 00:44:44.738
+much, much smaller company than Johnson & Johnson. And it's really up to me to build my community as
+
+00:44:44.738 --> 00:44:50.499
+well. Just because we're all we're all doing such disparate things. Gonzalo had said in the chat,
+
+00:44:50.499 --> 00:44:56.259
+like making a community is not a spectator sport, you've got to take action. And I agree. I think
+
+00:44:56.259 --> 00:45:04.738
+it's really rare for for companies to actually prioritize and have someone organize an internal
+
+00:45:04.738 --> 00:45:09.139
+community of practice. But nothing is stopping you from reaching out to a bunch of different
+
+00:45:09.139 --> 00:45:14.658
+people, including end users of your data products, and just getting to know them and shadowing them
+
+00:45:14.658 --> 00:45:18.738
+finding out how they use what they use, what their pain points are, stuff like that. It's just a lot
+
+00:45:18.738 --> 00:45:24.819
+of time and effort. Thank you so much for asking that question. And I wanted to hop over in our
+
+00:45:24.819 --> 00:45:31.459
+last nine minutes that we have left here, and ask Hubert to ask his question live. And then I will
+
+00:45:31.459 --> 00:45:36.899
+ask you a little bit of a career advice question, Samia. Hubert, are you available to ask live?
+
+00:45:37.779 --> 00:45:42.019
+I am. I have to remember what I wrote. Oh, well, I'm going to put it in the chat as well.
+
+00:45:42.579 --> 00:45:49.058
+I did highlight it at the top of Slido. So what what are your biggest data challenges that you
+
+00:45:49.058 --> 00:45:55.939
+have? I mean, you work in all these areas, you're in J&J, a very big organization. You know, you've
+
+00:45:55.939 --> 00:46:02.579
+got data that you work with all the time, and then data sort of several steps removed from, you know,
+
+00:46:02.579 --> 00:46:07.939
+the things you deal with. So if you could speak to a little bit, what are the biggest data challenges
+
+00:46:07.939 --> 00:46:13.618
+you have? Is it internal versus external type data? And if you had a magic wand, what problem
+
+00:46:13.618 --> 00:46:18.899
+would you solve in that area? That's my favorite part of that question. If you had a magic wand,
+
+00:46:20.178 --> 00:46:25.058
+what would you do? That's a great question. Yeah, I think maybe I might have alluded to like,
+
+00:46:25.858 --> 00:46:31.858
+or maybe someone else might have asked a little bit in terms of like, you know, the pipeline
+
+00:46:31.858 --> 00:46:38.579
+robustness question. I think the thing is that sometimes like the issues with, and not just
+
+00:46:38.579 --> 00:46:43.779
+specific to any company, but just overall is that, you know, an idea comes, we want to do it quickly.
+
+00:46:44.819 --> 00:46:48.819
+Let's just do what we can. Like, it's almost like, you know, I think we're just kind of like, we're
+
+00:46:48.819 --> 00:46:55.618
+not, you know, focusing on the more upstream processes, but then just trying to leverage what
+
+00:46:55.618 --> 00:47:00.819
+we can downstream to get something out. And I think that it's kind of like sometimes what happens
+
+00:47:00.819 --> 00:47:04.178
+in data, I think that these can be a little bit like band-aid solutions, like we're just trying
+
+00:47:04.178 --> 00:47:09.298
+to get things out, but then we're not like, you know, seeing like, you know, if we fix that
+
+00:47:09.298 --> 00:47:15.379
+upstream problem that needs to be fixed, then this can, you know, significantly reduce the time I
+
+00:47:15.379 --> 00:47:20.499
+spend on three different projects to, you know, make that change within three different projects.
+
+00:47:20.499 --> 00:47:26.819
+Or like, you know, if I just kind of like, you know, think more, and it kind of just, I would
+
+00:47:26.819 --> 00:47:34.819
+say, goes back to like that mindset of, you know, developing or really developing our pipelines in
+
+00:47:34.819 --> 00:47:42.819
+a way which we can really just minimize all of the fixes happening way downstream. Because then,
+
+00:47:42.819 --> 00:47:49.379
+like, you will just keep on making these individualized solutions downstream when some
+
+00:47:49.379 --> 00:47:55.538
+of those solutions could definitely be, like, you know, fixed upstream, and then it could scale to
+
+00:47:56.098 --> 00:48:00.339
+multiple projects, and we wouldn't, in the long run, be spending so much time doing that.
+
+00:48:01.699 --> 00:48:07.379
+And I would say maybe, like, that's a kind of thing, like, you know, that's something I would
+
+00:48:07.379 --> 00:48:13.058
+love to maybe fix. I would say if I had a magic wand, if a magic wand can write documentation
+
+00:48:13.058 --> 00:48:17.379
+for me, that'd be amazing, because documentation takes a lot of time. Like, it's like one of those
+
+00:48:17.379 --> 00:48:23.298
+things which are kind of dry, but you know that, like, it's very important. And sometimes I enjoy
+
+00:48:23.298 --> 00:48:27.058
+documenting because it's almost like a teach-back to me, like, oh, this is all I've done, and this
+
+00:48:27.058 --> 00:48:33.298
+is what it is. But it can be a very time-consuming. So, I think that if I had a magic wand to just
+
+00:48:33.298 --> 00:48:39.618
+document all the thoughts that in my head the exact way I wanted it to, you know, just write
+
+00:48:39.618 --> 00:48:45.139
+that documentation, I would say I wish there was an easy way to do that. I know some people are
+
+00:48:45.139 --> 00:48:50.098
+using AI for that, but sometimes still you need to contextualize, like, exactly, like, the thing.
+
+00:48:50.098 --> 00:48:56.098
+So, I think with AI, like, maybe, you know, it would still be like a hybrid process and trying to,
+
+00:48:56.098 --> 00:49:03.139
+you know, create documentation. I agree. I love Santiago in the chat said magic wand equals voice
+
+00:49:03.139 --> 00:49:08.178
+transcription. And actually, that's a great point. If you are curious about people using voice
+
+00:49:08.178 --> 00:49:15.618
+transcription, I highly recommend joining the data science lab that's on, like, March 17th with Joey
+
+00:49:15.618 --> 00:49:21.538
+Marshall because he uses voice transcription, and he's going to be using it the whole way through
+
+00:49:21.538 --> 00:49:27.858
+our process. So, if you're curious about someone using it, definitely head to that. All right.
+
+00:49:27.858 --> 00:49:33.538
+With our last five minutes, I would like to ask you a career advice question. We are missing
+
+00:49:33.538 --> 00:49:37.539
+Rachel today, guys. If you have not noticed, Rachel's not here. I think she's in the air
+
+00:49:37.539 --> 00:49:42.738
+somewhere. So, send your love to Rachel in the chat. Maybe we can show her the chat file after
+
+00:49:42.738 --> 00:49:50.098
+this. But Rachel, always make sure that we get a career advice question. So, Samia, what is a
+
+00:49:50.098 --> 00:49:56.179
+piece of career advice that maybe you wish you could go back in time and give yourself, like,
+
+00:49:56.179 --> 00:50:02.259
+a younger version of you when you were just getting started in data or maybe leaving school or
+
+00:50:02.259 --> 00:50:10.659
+something that you like to give to others? Sure. In terms of career advice, so, I think for me,
+
+00:50:11.539 --> 00:50:16.499
+the biggest thing was just, like, joining a community. I mean, I'm not, like, saying this
+
+00:50:16.499 --> 00:50:22.259
+just because I'm in, like, you know, a data science hangout. Join this one. Being for real, though,
+
+00:50:22.259 --> 00:50:27.379
+because, like, I joined, like, I would say, like, a lot of my learning happened probably even outside
+
+00:50:27.379 --> 00:50:34.259
+of my work and, you know, in the community. Like, I joined Tidy Tuesday. That advice was
+
+00:50:34.259 --> 00:50:39.858
+actually given to me by someone when I worked in my first job because we did have a small but
+
+00:50:39.858 --> 00:50:45.618
+mighty R user group at my workplace, and I think just joining more groups, like, there's a really
+
+00:50:45.618 --> 00:50:49.379
+great, and I mean, I think everyone's already kind of there, but just, like, even, like, in person,
+
+00:50:49.379 --> 00:50:54.899
+if your city has one, those were really amazing. I met Rachel at the R user group when I was in
+
+00:50:54.899 --> 00:51:00.259
+Boston many years ago. So, it's, like, I just really, like, you know, learned people, learned
+
+00:51:00.259 --> 00:51:04.019
+different things. I was a little, you know, intimidated, and sometimes, you know, I mean,
+
+00:51:04.019 --> 00:51:08.978
+I still am even all these years just, like, going to groups and being, like, oh, these people know
+
+00:51:08.978 --> 00:51:14.098
+so much and, like, you know, what do I, like, ask or what do I do, but I think the community, like,
+
+00:51:14.098 --> 00:51:18.899
+you know, I do notice that a lot of people very much are on the same page, no matter what industries
+
+00:51:18.899 --> 00:51:24.578
+we work in or, you know, whether we're starting out or years into this, like, more or less everyone's
+
+00:51:24.578 --> 00:51:30.259
+on the same page, but I do feel, like, you know, like, joining these communities and particularly
+
+00:51:30.259 --> 00:51:34.419
+not just joining, like, you know, something more that's, like, a talk session, but, like, I think
+
+00:51:34.419 --> 00:51:40.259
+Tidy Tuesday, when I was doing that every Tuesday and then eventually I did, like, the 30-day map
+
+00:51:40.259 --> 00:51:47.618
+challenge, it was a very excellent way, like, really to just learn from other people. Like, I started
+
+00:51:47.618 --> 00:51:53.698
+feeling, like, I'm okay at ggplot and now feeling, like, really, really, like, excited and good, you
+
+00:51:53.698 --> 00:52:00.098
+know, about, like, the work I've done just because, like, you know, I, you know, just, like, other
+
+00:52:00.098 --> 00:52:04.338
+people shared their ideas and then, like, you know, I also started to, like, it kind of, you know,
+
+00:52:04.338 --> 00:52:08.659
+helped me think about, like, you know, my own unique perspectives and then really, like, you know,
+
+00:52:08.659 --> 00:52:13.938
+think creatively through R code and things like that, and I think, you know, even though that
+
+00:52:13.938 --> 00:52:20.098
+was more specific to dataviz, but, like, it also just kind of helped, you know, me get better at
+
+00:52:20.098 --> 00:52:25.698
+writing better code, writing some R packages in my own time and really, like, you know, also just,
+
+00:52:25.698 --> 00:52:31.539
+like, re-emphasizing the importance of version control. So, I do highly recommend for anyone who
+
+00:52:31.539 --> 00:52:37.218
+is, like, you know, interested in, you know, open source languages to really try to join some of
+
+00:52:37.218 --> 00:52:42.738
+these, like, more practical, you know, like, projects or, like, social community-based
+
+00:52:42.738 --> 00:52:49.218
+projects because I, it really helped me get from a point where I was, like, okay, I feel somewhat
+
+00:52:49.218 --> 00:52:54.659
+okay, but, you know, I could do more to, like, more confident, and I think that definitely helps,
+
+00:52:54.659 --> 00:52:58.338
+like, you know, bridge some of that, bridge those skills. So, yeah.
+
+00:52:58.338 --> 00:53:04.419
+That's fantastic, and you know, I 100% agree with that and want everybody to get involved
+
+00:53:04.419 --> 00:53:09.618
+in the community and share your work out loud. Thank you so much, Samia, and this is where I
+
+00:53:09.618 --> 00:53:15.698
+will plug, again, the Data Science Lab because we have so many things that have to do with what
+
+00:53:15.698 --> 00:53:22.578
+Samia just said coming up. March 10th, we're going to have John Harmon, who is the maintainer of the
+
+00:53:22.578 --> 00:53:28.419
+TidyTuesday GitHub repo. He's going to show us how to submit a TidyTuesday dataset, how to curate
+
+00:53:28.419 --> 00:53:32.578
+a TidyTuesday dataset, what happens behind the scenes of how, you know, when they get submitted
+
+00:53:32.578 --> 00:53:37.458
+and curated and how they end up on the TidyTuesday repo, and then the next week, we're going to have
+
+00:53:37.458 --> 00:53:42.659
+Joey Marshall, who's going to be live coding analysis of a TidyTuesday dataset, I think,
+
+00:53:42.659 --> 00:53:46.578
+using Cloud Code, and this is the one where you'll see him use voice transcription. So,
+
+00:53:46.578 --> 00:53:50.179
+if you're just curious about how other people work, you want to see some live coding,
+
+00:53:50.179 --> 00:53:53.779
+come join us at the Data Science Lab. It's where we share screens. There are no presentations,
+
+00:53:53.779 --> 00:53:58.978
+just like the Data Science Hangout, and it is always a good time, and we do all chat in Discord,
+
+00:53:58.978 --> 00:54:04.419
+so hop on the Discord server before you leave today. We are so glad that you hung out with us
+
+00:54:04.419 --> 00:54:09.539
+today, Samia. This was amazing. Thank you for coming. I hope you had a good time.
+
+00:54:09.539 --> 00:54:12.179
+I had a really good time. Thank you, everyone, for the questions.
+
+00:54:12.818 --> 00:54:18.019
+Amazing, and Samia, that means that we hope to see you back as an attendee. Everybody,
+
+00:54:18.659 --> 00:54:23.938
+say thank you to Samia in the chat. Say hello to Rachel, and we miss you in the chat,
+
+00:54:23.938 --> 00:54:30.259
+and we will see you next week on Thursday, where we will be joined by Jim Weiss, Chief Risk Officer,
+
+00:54:30.259 --> 00:54:38.978
+Commercial and Executive at Chrome Enforcer, and also next week on Tuesday at the Lab,
+
+00:54:38.978 --> 00:54:42.978
+where we will be joined by John Harmon. Thank you so much, everybody. If you want to save the chat,
+
+00:54:42.978 --> 00:54:47.779
+you can click the three dots in the top right of your chat and click Save Chat,
+
+00:54:47.779 --> 00:54:51.539
+and it will be yours to keep. See you soon. Bye, everybody.

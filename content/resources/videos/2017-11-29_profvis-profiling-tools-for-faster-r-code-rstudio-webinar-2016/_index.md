@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 2608
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.959438+00:00'
+  last_updated: '2026-03-20T11:32:57.020454+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LR8S2lrH_XM/hqdefault.jpg
   title: Profvis - Profiling tools for Faster R code | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=LR8S2lrH_XM
-  view_count: 1783
+  view_count: 1786
 ---
 image: thumbnail.jpg
 

@@ -30,7 +30,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - rstudio
 tags:
 - rstudio
@@ -112,11 +112,11 @@ external:  # updated automatically, do not edit
   duration: 1372
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:21.268742+00:00'
-  like_count: 28
+  last_updated: '2026-03-20T11:32:46.406290+00:00'
+  like_count: 29
   playlist: ''
   software:
-  - positron
+  - Positron
   - rstudio
   tags:
   - rstudio
@@ -166,7 +166,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/R1hpMzmBdSw/maxresdefault.jpg
   title: Take Positron to Work with Positron Pro
   url: https://www.youtube.com/watch?v=R1hpMzmBdSw
-  view_count: 1596
+  view_count: 1615
 ---
 image: thumbnail.jpg
 

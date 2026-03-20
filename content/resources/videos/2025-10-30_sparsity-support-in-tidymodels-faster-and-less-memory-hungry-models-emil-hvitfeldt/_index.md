@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   duration: 1065
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.707550+00:00'
+  last_updated: '2026-03-20T11:32:57.423147+00:00'
   like_count: 3
   people:
   - Emil Hvitfeldt
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UFfTwTuNR2c/maxresdefault.jpg
   title: Sparsity support in tidymodels, faster and less memory hungry models - Emil Hvitfeldt
   url: https://www.youtube.com/watch?v=UFfTwTuNR2c
-  view_count: 42
+  view_count: 45
 ---
 image: thumbnail.jpg
 

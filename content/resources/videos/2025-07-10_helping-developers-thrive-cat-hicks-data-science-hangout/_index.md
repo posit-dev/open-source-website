@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3471
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.130902+00:00'
+  last_updated: '2026-03-20T11:32:47.293390+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/osHlcc3SqQU/maxresdefault.jpg
   title: Helping developers thrive | Cat Hicks | Data Science Hangout
   url: https://www.youtube.com/watch?v=osHlcc3SqQU
-  view_count: 893
+  view_count: 894
 ---
 image: thumbnail.jpg
 

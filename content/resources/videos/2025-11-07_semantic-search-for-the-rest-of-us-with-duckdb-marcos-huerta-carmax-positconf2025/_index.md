@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   duration: 1115
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.563209+00:00'
+  last_updated: '2026-03-20T11:32:46.972022+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/casO6fLXxLw/maxresdefault.jpg
   title: Semantic Search for the Rest of Us with DuckDB (Marcos Huerta, Carmax) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=casO6fLXxLw
-  view_count: 202
+  view_count: 213
 ---
 image: thumbnail.jpg
 

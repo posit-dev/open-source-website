@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1382
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:28.938219+00:00'
+  last_updated: '2026-03-20T11:32:55.538707+00:00'
   like_count: 89
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PiOuWggdD34/hqdefault.jpg
   title: Eduardo Ariño de la Rubia | Value in Data Science Beyond Models in Production | RStudio (2020)
   url: https://www.youtube.com/watch?v=PiOuWggdD34
-  view_count: 1762
+  view_count: 1765
 ---
 image: thumbnail.jpg
 

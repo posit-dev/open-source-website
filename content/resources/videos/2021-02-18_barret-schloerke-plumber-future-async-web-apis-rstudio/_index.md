@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   duration: 499
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:28.937976+00:00'
+  last_updated: '2026-03-20T11:32:55.538332+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -135,7 +135,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UDGeLpiMSj4/maxresdefault.jpg
   title: 'Barret Schloerke | plumber + future: Async Web APIs | RStudio'
   url: https://www.youtube.com/watch?v=UDGeLpiMSj4
-  view_count: 1173
+  view_count: 1174
 ---
 image: thumbnail.jpg
 

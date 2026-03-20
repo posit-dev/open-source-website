@@ -100,7 +100,7 @@ external:  # updated automatically, do not edit
   duration: 1089
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.219295+00:00'
+  last_updated: '2026-03-20T11:32:53.454185+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -161,7 +161,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CRqsynADlbE/maxresdefault.jpg
   title: Shinywidgets - An Overview || Carson Sievert || RStudio
   url: https://www.youtube.com/watch?v=CRqsynADlbE
-  view_count: 3248
+  view_count: 3253
 ---
 image: thumbnail.jpg
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 3030
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:24.938606+00:00'
+  last_updated: '2026-03-20T11:32:50.743609+00:00'
   like_count: 30
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HTMvZWUTBug/maxresdefault.jpg
   title: From Data Confusion to Data Intelligence - posit::conf(2023)
   url: https://www.youtube.com/watch?v=HTMvZWUTBug
-  view_count: 1846
+  view_count: 1850
 ---
 image: thumbnail.jpg
 

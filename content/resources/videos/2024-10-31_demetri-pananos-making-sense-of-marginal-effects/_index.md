@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 994
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126233+00:00'
-  like_count: 77
+  last_updated: '2026-03-20T11:32:48.367713+00:00'
+  like_count: 78
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/sjYNUIkOlC0/maxresdefault.jpg
   title: Demetri Pananos - Making sense of marginal effects
   url: https://www.youtube.com/watch?v=sjYNUIkOlC0
-  view_count: 2027
+  view_count: 2069
 ---
 image: thumbnail.jpg
 

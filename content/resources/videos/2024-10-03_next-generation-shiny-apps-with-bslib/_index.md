@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 11328
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:31.073608+00:00'
+  last_updated: '2026-03-20T11:32:57.734891+00:00'
   like_count: 93
   people:
   - Garrick Aden-Buie
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vzXTFbnKAqc/maxresdefault.jpg
   title: Next Generation Shiny Apps with {bslib}
   url: https://www.youtube.com/watch?v=vzXTFbnKAqc
-  view_count: 3418
+  view_count: 3471
 ---
 image: thumbnail.jpg
 

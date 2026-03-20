@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   duration: 1174
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126183+00:00'
+  last_updated: '2026-03-20T11:32:48.367681+00:00'
   like_count: 10
   playlist: ''
   software:
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/oPb9Fedf3WY/maxresdefault.jpg
   title: 'Aleksander Dietrichson - AI for Gaming: How I Built a Bot to Play a Video-Game with R and Python'
   url: https://www.youtube.com/watch?v=oPb9Fedf3WY
-  view_count: 1558
+  view_count: 1579
 ---
 image: thumbnail.jpg
 

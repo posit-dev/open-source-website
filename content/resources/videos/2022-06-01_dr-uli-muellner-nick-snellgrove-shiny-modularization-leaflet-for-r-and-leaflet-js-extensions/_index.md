@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 3470
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:27.219746+00:00'
+  last_updated: '2026-03-20T11:32:53.454304+00:00'
   like_count: 33
   playlist: ''
   software:
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/eKWXvXf0kwo/maxresdefault.jpg
   title: Dr. Uli Muellner & Nick Snellgrove | Shiny modularization, Leaflet for R and Leaflet JS extensions
   url: https://www.youtube.com/watch?v=eKWXvXf0kwo
-  view_count: 1304
+  view_count: 1305
 ---
 image: thumbnail.jpg
 

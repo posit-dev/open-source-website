@@ -1,6 +1,6 @@
 ---
 date: '2025-07-10'
-description: 'ShinyConf #ShinyConf2025
+description: '#ShinyConf #ShinyConf2025
 
 
   This is a talk from ShinyConf 2025: https://www.shinyconf.com
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   comment_count: 2
   date: '2025-07-10T07:46:05Z'
   definition: hd
-  description: 'ShinyConf #ShinyConf2025
+  description: '#ShinyConf #ShinyConf2025
 
 
     This is a talk from ShinyConf 2025: https://www.shinyconf.com
@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   duration: 3560
   has_captions: false
   language: en-US
-  last_updated: '2026-03-04T14:51:30.708274+00:00'
+  last_updated: '2026-03-20T11:32:57.423611+00:00'
   like_count: 19
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ioLuM0J3mQw/hqdefault.jpg
   title: AI and Shiny | Keynote ShinyConf 2025
   url: https://www.youtube.com/watch?v=ioLuM0J3mQw
-  view_count: 615
+  view_count: 627
 ---
 image: thumbnail.jpg
 

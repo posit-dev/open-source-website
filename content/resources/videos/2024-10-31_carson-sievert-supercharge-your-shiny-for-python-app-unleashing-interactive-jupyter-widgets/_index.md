@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   duration: 1206
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126193+00:00'
+  last_updated: '2026-03-20T11:32:48.367687+00:00'
   like_count: 9
   people:
   - Carson Sievert
@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pL44iKfcECU/maxresdefault.jpg
   title: 'Carson Sievert - Supercharge Your Shiny (for Python) App: Unleashing Interactive Jupyter Widgets'
   url: https://www.youtube.com/watch?v=pL44iKfcECU
-  view_count: 439
+  view_count: 440
 ---
 image: thumbnail.jpg
 

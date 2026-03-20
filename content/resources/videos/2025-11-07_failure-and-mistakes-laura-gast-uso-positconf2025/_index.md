@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1250
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.562734+00:00'
+  last_updated: '2026-03-20T11:32:46.669866+00:00'
   like_count: 2
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/aQw38-ZxkXQ/maxresdefault.jpg
   title: Failure (and Mistakes) (Laura Gast, USO) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=aQw38-ZxkXQ
-  view_count: 60
+  view_count: 62
 ---
 image: thumbnail.jpg
 

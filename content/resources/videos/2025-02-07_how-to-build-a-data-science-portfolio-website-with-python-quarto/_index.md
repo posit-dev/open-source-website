@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   duration: 3128
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.505190+00:00'
+  last_updated: '2026-03-20T11:32:47.650167+00:00'
   like_count: 89
   playlist: ''
   software:
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TbegWSPETs0/maxresdefault.jpg
   title: How to Build a Data Science Portfolio Website with Python & Quarto!
   url: https://www.youtube.com/watch?v=TbegWSPETs0
-  view_count: 3063
+  view_count: 3119
 ---
 image: thumbnail.jpg
 

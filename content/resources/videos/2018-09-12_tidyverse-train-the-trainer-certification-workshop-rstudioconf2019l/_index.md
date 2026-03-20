@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 187
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.959216+00:00'
+  last_updated: '2026-03-20T11:32:56.700411+00:00'
   like_count: 0
   people:
   - Mine Çetinkaya-Rundel
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/x5jnTIjZ2Kc/maxresdefault.jpg
   title: Tidyverse Train-the-Trainer Certification Workshop - rstudio::conf(2019L)
   url: https://www.youtube.com/watch?v=x5jnTIjZ2Kc
-  view_count: 1028
+  view_count: 1030
 ---
 image: thumbnail.jpg
 

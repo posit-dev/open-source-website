@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1347
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.660793+00:00'
+  last_updated: '2026-03-20T11:32:56.381432+00:00'
   like_count: 55
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/B6YO5nW46SU/hqdefault.jpg
   title: Emily Riederer | RMarkdown Driven Development | RStudio (2020)
   url: https://www.youtube.com/watch?v=B6YO5nW46SU
-  view_count: 1922
+  view_count: 1923
 ---
 image: thumbnail.jpg
 

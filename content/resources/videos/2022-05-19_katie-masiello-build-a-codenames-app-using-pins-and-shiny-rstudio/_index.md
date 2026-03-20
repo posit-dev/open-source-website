@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   duration: 1135
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.219859+00:00'
+  last_updated: '2026-03-20T11:32:53.454336+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -186,7 +186,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MQ5L3TSQVys/maxresdefault.jpg
   title: Katie Masiello || Build a Codenames app using {pins} and Shiny! || RStudio
   url: https://www.youtube.com/watch?v=MQ5L3TSQVys
-  view_count: 1756
+  view_count: 1757
 ---
 image: thumbnail.jpg
 

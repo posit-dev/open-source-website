@@ -3,7 +3,7 @@ date: '2024-04-02'
 description: 'Data Science Hangout with Jamie Warner, Managing Director at Plymouth Rock Assurance.
 
 
-  🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh'
+  🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -64,11 +64,11 @@ external:  # updated automatically, do not edit
   description: 'Data Science Hangout with Jamie Warner, Managing Director at Plymouth Rock Assurance.
 
 
-    🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh'
+    🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh #positshorts'
   duration: 35
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:24.145470+00:00'
+  last_updated: '2026-03-20T11:32:49.724977+00:00'
   like_count: 29
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AoHUm3_CMMM/maxresdefault.jpg
   title: This ONE THING is what hiring managers are looking for🤯
   url: https://www.youtube.com/watch?v=AoHUm3_CMMM
-  view_count: 1392
+  view_count: 1393
 ---
 image: thumbnail.jpg
 

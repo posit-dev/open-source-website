@@ -46,8 +46,8 @@ external:  # updated automatically, do not edit
   duration: 1131
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.820282+00:00'
-  like_count: 9
+  last_updated: '2026-03-20T11:32:46.972281+00:00'
+  like_count: 11
   playlist: ''
   software:
   - pointblank
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OEcpFF0VQ4A/maxresdefault.jpg
   title: 'Zero Tolerance for Dirty Data: A Pointblank Prescription for Data Hygiene (Arnav Patel, Synovus)'
   url: https://www.youtube.com/watch?v=OEcpFF0VQ4A
-  view_count: 213
+  view_count: 228
 ---
 image: thumbnail.jpg
 

@@ -1,12 +1,12 @@
 ---
 date: '2025-08-25'
-description: 'Don''t skimp 😡 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook'
+description: 'Don''t skimp 😡 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - rstudio
 tags:
 - rstudio
@@ -60,15 +60,15 @@ external:  # updated automatically, do not edit
   comment_count: 4
   date: '2025-08-25T17:00:20Z'
   definition: hd
-  description: 'Don''t skimp 😡 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook'
+  description: 'Don''t skimp 😡 #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook #positshorts'
   duration: 56
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:21.820592+00:00'
+  last_updated: '2026-03-20T11:32:47.293310+00:00'
   like_count: 48
   playlist: ''
   software:
-  - positron
+  - Positron
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EA1Q_VufmiQ/maxresdefault.jpg
   title: Data Exploration 101
   url: https://www.youtube.com/watch?v=EA1Q_VufmiQ
-  view_count: 2473
+  view_count: 2492
 ---
 image: thumbnail.jpg
 

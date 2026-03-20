@@ -72,8 +72,8 @@ external:  # updated automatically, do not edit
   duration: 3350
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.707120+00:00'
-  like_count: 11
+  last_updated: '2026-03-20T11:32:57.423045+00:00'
+  like_count: 12
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - air
@@ -84,7 +84,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/s9hALMg3k2o/hqdefault.jpg
   title: How to use pointblank to understand, validate, and document your data
   url: https://www.youtube.com/watch?v=s9hALMg3k2o
-  view_count: 329
+  view_count: 348
 ---
 image: thumbnail.jpg
 

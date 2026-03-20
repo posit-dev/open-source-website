@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 1864
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:23.442797+00:00'
-  like_count: 65
+  last_updated: '2026-03-20T11:32:49.221304+00:00'
+  like_count: 66
   playlist: ''
   software:
   - Shiny for Python
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xDgO5hB4-VU/maxresdefault.jpg
   title: How to combine Matplotlib, Plotly, Seaborn, & more in a single Python Dashboard! (Shiny for Python)
   url: https://www.youtube.com/watch?v=xDgO5hB4-VU
-  view_count: 2786
+  view_count: 2800
 ---
 image: thumbnail.jpg
 

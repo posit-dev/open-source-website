@@ -153,7 +153,7 @@ external:  # updated automatically, do not edit
   duration: 491
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.561127+00:00'
+  last_updated: '2026-03-20T11:32:53.798561+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -215,7 +215,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VNbab8bro2c/maxresdefault.jpg
   title: Carson Sievert || Customizing Navigation Items in Shiny using {bslib} || RStudio
   url: https://www.youtube.com/watch?v=VNbab8bro2c
-  view_count: 3198
+  view_count: 3203
 ---
 image: thumbnail.jpg
 

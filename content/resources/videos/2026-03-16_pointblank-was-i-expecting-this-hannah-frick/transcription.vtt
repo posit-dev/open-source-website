@@ -1,0 +1,128 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.360
+Hi, I'm Hannah, and I'm here to talk to you about expectations on your data. Because as
+
+00:00:06.360 --> 00:00:12.480
+data scientists, we are often not the ones collecting it, we're just given access to
+
+00:00:12.480 --> 00:00:18.120
+it, and then we build something with it. Maybe a dashboard, maybe a prediction model. And
+
+00:00:18.120 --> 00:00:26.000
+sometimes, sometimes things change. And if a column gets renamed, things wreck. And if
+
+00:00:26.000 --> 00:00:32.840
+a variable gets recorded in a different unit, things might now be silently garbage. Wouldn't
+
+00:00:32.840 --> 00:00:39.200
+it be nicer to just get a heads up, an email that says these things are changing, rather
+
+00:00:39.200 --> 00:00:47.520
+than the dashboard is broken. You may want to get that email from a colleague, but if
+
+00:00:47.520 --> 00:00:52.400
+that's not possible, you can also run regular validation checks and have a system email
+
+00:00:52.400 --> 00:00:59.080
+you. And that's what pointblank is for. It's feature rich, it's got loads of documentation,
+
+00:00:59.080 --> 00:01:04.599
+and my goal here is just to give you a sense of what's possible and how to get started.
+
+00:01:04.599 --> 00:01:10.160
+The main thing you get from pointblank is a beautiful HTML table like this. You can
+
+00:01:10.160 --> 00:01:16.199
+stick it in a report, or you can have it emailed to you. And roughly one row is one validation
+
+00:01:16.199 --> 00:01:22.199
+role. The specifications are to the left, and the results are to the right. So, if you're
+
+00:01:22.199 --> 00:01:27.839
+validating the contents of a particular column, that's the rows, those are the units. It will
+
+00:01:27.839 --> 00:01:33.959
+tell you how many and how many passed and how many failed. And life is messy, and your
+
+00:01:33.959 --> 00:01:41.360
+data might be too. But in both cases, you can typically tolerate some amount of that.
+
+00:01:41.360 --> 00:01:50.919
+So pointblank lets you specify thresholds for when you want to warn, stop, or be notified.
+
+00:01:50.919 --> 00:01:56.199
+And if you specify that, at minimum, it drives the colors to the left of that table. But
+
+00:01:56.199 --> 00:02:00.239
+really, it can do a lot more, because it can trigger any action that you can express in
+
+00:02:00.239 --> 00:02:07.239
+R code. And lastly, that column to the right is for when things go wrong. You can get access
+
+00:02:07.239 --> 00:02:13.960
+to a CSV with the units or rows that failed that condition. And the core code pattern
+
+00:02:13.960 --> 00:02:19.880
+of the package is something you might have seen elsewhere, for example, in header recipes.
+
+00:02:19.880 --> 00:02:26.979
+It is simply create the core object, add specifications to it, and then apply those specifications
+
+00:02:26.979 --> 00:02:36.520
+to the data. That data can be local in your session, or remote in a database. And there's
+
+00:02:36.520 --> 00:02:42.080
+a lot of pre-made validation functions for you. So you can stick together your validation
+
+00:02:42.080 --> 00:02:49.399
+plan as it is necessary for your data set. But I promised you some action based on these
+
+00:02:49.399 --> 00:02:55.320
+thresholds. So how to specify them? Well, there's an action argument. It takes the result
+
+00:02:55.320 --> 00:03:02.919
+of an action levels function, which lets you specify these three thresholds. It can be
+
+00:03:02.919 --> 00:03:08.339
+an absolute threshold, a relative threshold, and the set of functions you want executed
+
+00:03:08.339 --> 00:03:15.479
+at a particular threshold. So here, we just warn when we hit the warning threshold. Not
+
+00:03:15.479 --> 00:03:23.039
+particularly exciting, but you get the idea. You can specify that in sort of the overall
+
+00:03:23.039 --> 00:03:29.880
+object and then it applies to all of the validation rules you might add. Or if you want to fine
+
+00:03:29.880 --> 00:03:35.479
+tune out and have a different threshold for a particularly important validation rule,
+
+00:03:35.479 --> 00:03:45.320
+you can specify there, too. It takes the same actions argument. And you can have an action
+
+00:03:45.320 --> 00:03:52.399
+or just sort of arbitrary R code carried out at the end of the validation in the ends functions
+
+00:03:52.399 --> 00:04:02.080
+argument. You could, for example, add your email notification there. And because if it
+
+00:04:02.080 --> 00:04:05.759
+emails you every single time a validation runs and everything's okay, that might be
+
+00:04:05.759 --> 00:04:14.580
+a little spammy. The default is to only send that email when you hit the notify threshold.
+
+00:04:14.580 --> 00:04:22.119
+But that's just a feature of that email function, not that that applies to all of the code you
+
+00:04:22.119 --> 00:04:29.119
+would execute in this little block. So sometimes the table is beautiful, but not enough, and you
+
+00:04:29.119 --> 00:04:34.480
+want to be able to program against it. So HonkBlack lets you do that, too, with a set of functions
+
+00:04:34.480 --> 00:04:41.559
+that let you access the results of the validation. And the place to find more info is this. Thank you.
+

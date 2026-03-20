@@ -74,7 +74,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - Quarto
 - rstudio
 tags:
@@ -126,7 +126,7 @@ title: AI-Powered Data Science in Positron
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 22
+  comment_count: 23
   date: '2025-10-29T16:01:51Z'
   definition: hd
   description: 'We''re so excited to introduce Positron, a free, next-generation data science IDE that makes it easy to work in both R and Python. Positron builds on our years of experience developing RStudio and is a fork of VS Code, designed specifically for data work. This means you get a modern coding interface with features tailored for data science, like a built-in data explorer, AI assistance, interpreter management, and more.
@@ -201,11 +201,11 @@ external:  # updated automatically, do not edit
   duration: 2800
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:21.820453+00:00'
-  like_count: 194
+  last_updated: '2026-03-20T11:32:46.972403+00:00'
+  like_count: 206
   playlist: ''
   software:
-  - positron
+  - Positron
   - Quarto
   - rstudio
   tags:
@@ -256,7 +256,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TrN-FMcOsOA/maxresdefault.jpg
   title: AI-Powered Data Science in Positron
   url: https://www.youtube.com/watch?v=TrN-FMcOsOA
-  view_count: 8392
+  view_count: 9237
 ---
 image: thumbnail.jpg
 

@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - Python
 - Tutorial
@@ -34,13 +34,13 @@ external:  # updated automatically, do not edit
   duration: 1265
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.708828+00:00'
+  last_updated: '2026-03-20T11:32:57.734641+00:00'
   like_count: 24
   people:
   - Isabel Zimmerman
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - positron
+  - Positron
   tags:
   - Python
   - Tutorial
@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/p3_ywAsIJCw/maxresdefault.jpg
   title: Isabel Zimmerman - End-to-end data science with the Positron IDE | PyData NYC 2024
   url: https://www.youtube.com/watch?v=p3_ywAsIJCw
-  view_count: 896
+  view_count: 899
 ---
 image: thumbnail.jpg
 

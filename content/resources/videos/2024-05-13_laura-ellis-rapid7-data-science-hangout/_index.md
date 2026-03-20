@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3530
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695623+00:00'
+  last_updated: '2026-03-20T11:32:49.221484+00:00'
   like_count: 6
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/hy6wN8V3qa4/maxresdefault.jpg
   title: Laura Ellis @ Rapid7 | Data Science Hangout
   url: https://www.youtube.com/watch?v=hy6wN8V3qa4
-  view_count: 540
+  view_count: 544
 ---
 image: thumbnail.jpg
 

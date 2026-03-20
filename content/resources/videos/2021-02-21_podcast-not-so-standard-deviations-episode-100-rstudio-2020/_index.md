@@ -91,7 +91,7 @@ external:  # updated automatically, do not edit
   duration: 3551
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:28.609105+00:00'
+  last_updated: '2026-03-20T11:32:55.147652+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -146,7 +146,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1KT3eLcOIL4/maxresdefault.jpg
   title: Podcast | Not So Standard Deviations Episode 100 | RStudio (2020)
   url: https://www.youtube.com/watch?v=1KT3eLcOIL4
-  view_count: 1368
+  view_count: 1379
 ---
 image: thumbnail.jpg
 

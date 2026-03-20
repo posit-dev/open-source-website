@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   duration: 328
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.269750+00:00'
+  last_updated: '2026-03-20T11:32:46.406406+00:00'
   like_count: 20
   people:
   - Carlos Scheidegger
@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OBHppBRztO4/maxresdefault.jpg
   title: What we're doing to make Quarto fast(er) (Carlos Scheidegger, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=OBHppBRztO4
-  view_count: 617
+  view_count: 641
 ---
 image: thumbnail.jpg
 

@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1106
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.563068+00:00'
+  last_updated: '2026-03-20T11:32:46.670051+00:00'
   like_count: 1
   playlist: ''
   software:
@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GEP61GjwTjE/maxresdefault.jpg
   title: How non-programmers can make sparks fly when using testthat during package development (L. McKenna)
   url: https://www.youtube.com/watch?v=GEP61GjwTjE
-  view_count: 88
+  view_count: 95
 ---
 image: thumbnail.jpg
 

@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 1016
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.840271+00:00'
+  last_updated: '2026-03-20T11:32:48.001180+00:00'
   like_count: 102
   people:
   - Mine Çetinkaya-Rundel
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NigWSB-jG4Y/maxresdefault.jpg
   title: 'Quarto Dashboards 3: Theming and Styling | Mine Çetinkaya-Rundel | Posit'
   url: https://www.youtube.com/watch?v=NigWSB-jG4Y
-  view_count: 4148
+  view_count: 4225
 ---
 image: thumbnail.jpg
 

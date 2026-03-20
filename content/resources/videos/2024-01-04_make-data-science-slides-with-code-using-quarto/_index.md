@@ -1,6 +1,6 @@
 ---
 date: '2024-01-04'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -59,12 +59,12 @@ external:  # updated automatically, do not edit
   comment_count: 3
   date: '2024-01-04T22:23:28Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 55
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:24.146233+00:00'
-  like_count: 201
+  last_updated: '2026-03-20T11:32:50.371251+00:00'
+  like_count: 203
   playlist: ''
   software:
   - Quarto
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2FieaERARDI/maxresdefault.jpg
   title: Make data science slides with code using Quarto
   url: https://www.youtube.com/watch?v=2FieaERARDI
-  view_count: 4506
+  view_count: 4580
 ---
 image: thumbnail.jpg
 

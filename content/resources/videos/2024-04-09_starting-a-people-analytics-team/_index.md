@@ -3,7 +3,7 @@ date: '2024-04-09'
 description: 'Data Science Hangout with Elizabeth Esarove, Lead Advanced Analytics, People Analytics at AT&T to chat about using data science to provide supporting evidence for decisions regarding employee outcomes and business objectives.
 
 
-  🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh'
+  🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -64,11 +64,11 @@ external:  # updated automatically, do not edit
   description: 'Data Science Hangout with Elizabeth Esarove, Lead Advanced Analytics, People Analytics at AT&T to chat about using data science to provide supporting evidence for decisions regarding employee outcomes and business objectives.
 
 
-    🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh'
+    🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh #positshorts'
   duration: 52
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695761+00:00'
+  last_updated: '2026-03-20T11:32:49.724945+00:00'
   like_count: 17
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/eNmZPrzLnj4/maxresdefault.jpg
   title: Starting a People Analytics team
   url: https://www.youtube.com/watch?v=eNmZPrzLnj4
-  view_count: 999
+  view_count: 1012
 ---
 image: thumbnail.jpg
 

@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3563
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.442624+00:00'
+  last_updated: '2026-03-20T11:32:48.811509+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QnLSrV5cgqU/maxresdefault.jpg
   title: Empowering individuals through AI tools, technologies, and custom apps | Chris Engelhardt @ Gen Re
   url: https://www.youtube.com/watch?v=QnLSrV5cgqU
-  view_count: 339
+  view_count: 340
 ---
 image: thumbnail.jpg
 

@@ -1,12 +1,12 @@
 ---
 date: '2025-09-22'
-description: 'deploy all the things! #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook'
+description: 'deploy all the things! #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - rstudio
 tags:
 - rstudio
@@ -60,15 +60,15 @@ external:  # updated automatically, do not edit
   comment_count: 0
   date: '2025-09-22T17:05:23Z'
   definition: hd
-  description: 'deploy all the things! #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook'
+  description: 'deploy all the things! #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook #positshorts'
   duration: 43
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:21.820546+00:00'
-  like_count: 90
+  last_updated: '2026-03-20T11:32:46.972485+00:00'
+  like_count: 100
   playlist: ''
   software:
-  - positron
+  - Positron
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HHTzTlB7QHU/maxresdefault.jpg
   title: Deploy a Streamlit web app with me
   url: https://www.youtube.com/watch?v=HHTzTlB7QHU
-  view_count: 4707
+  view_count: 5246
 ---
 image: thumbnail.jpg
 

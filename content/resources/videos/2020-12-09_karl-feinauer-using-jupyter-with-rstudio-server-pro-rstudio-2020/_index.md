@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 710
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.307524+00:00'
+  last_updated: '2026-03-20T11:32:56.052658+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/30oPT43Y4-I/hqdefault.jpg
   title: Karl Feinauer | Using Jupyter with RStudio Server Pro | RStudio (2020)
   url: https://www.youtube.com/watch?v=30oPT43Y4-I
-  view_count: 1815
+  view_count: 1816
 ---
 image: thumbnail.jpg
 

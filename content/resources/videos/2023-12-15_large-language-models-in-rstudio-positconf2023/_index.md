@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1126
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.938367+00:00'
+  last_updated: '2026-03-20T11:32:50.743520+00:00'
   like_count: 38
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZCEadMMY6mE/maxresdefault.jpg
   title: Large Language Models in RStudio - posit::conf(2023)
   url: https://www.youtube.com/watch?v=ZCEadMMY6mE
-  view_count: 1633
+  view_count: 1638
 ---
 image: thumbnail.jpg
 

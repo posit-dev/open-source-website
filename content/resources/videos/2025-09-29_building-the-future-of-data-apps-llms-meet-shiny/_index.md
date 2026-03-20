@@ -47,8 +47,8 @@ external:  # updated automatically, do not edit
   duration: 2892
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.707664+00:00'
-  like_count: 25
+  last_updated: '2026-03-20T11:32:57.423222+00:00'
+  like_count: 26
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - mcptools
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/w4tTF6QB4ZU/maxresdefault.jpg
   title: 'Building the Future of Data Apps: LLMs Meet Shiny'
   url: https://www.youtube.com/watch?v=w4tTF6QB4ZU
-  view_count: 837
+  view_count: 888
 ---
 image: thumbnail.jpg
 

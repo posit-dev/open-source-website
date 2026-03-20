@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3533
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.442745+00:00'
+  last_updated: '2026-03-20T11:32:49.221229+00:00'
   like_count: 20
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/cFLV25fbh4E/maxresdefault.jpg
   title: Data driven decision making in pharma | Ning Leng @ Roche-Genentech & Jing Huang @ Veracyte
   url: https://www.youtube.com/watch?v=cFLV25fbh4E
-  view_count: 750
+  view_count: 751
 ---
 image: thumbnail.jpg
 

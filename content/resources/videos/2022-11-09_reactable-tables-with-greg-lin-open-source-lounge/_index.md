@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   duration: 3882
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.282684+00:00'
+  last_updated: '2026-03-20T11:32:52.392372+00:00'
   like_count: 65
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Qn6ojMkQFNw/maxresdefault.jpg
   title: '{reactable} tables with Greg Lin - Open Source Lounge'
   url: https://www.youtube.com/watch?v=Qn6ojMkQFNw
-  view_count: 4034
+  view_count: 4038
 ---
 image: thumbnail.jpg
 

@@ -62,14 +62,14 @@ external:  # updated automatically, do not edit
   duration: 3569
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:25.239199+00:00'
+  last_updated: '2026-03-20T11:32:51.523814+00:00'
   like_count: 8
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/5V3gDb30cT8/maxresdefault.jpg
   title: Gabriela de Queiroz @ Microsoft | Data Science Hangout
   url: https://www.youtube.com/watch?v=5V3gDb30cT8
-  view_count: 408
+  view_count: 409
 ---
 image: thumbnail.jpg
 

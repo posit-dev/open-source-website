@@ -1,0 +1,1456 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.400
+Welcome to The Test Set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:06.400 --> 00:00:11.440
+in statistical analysis, scientific computing, and machine learning. Digging into what makes
+
+00:00:11.440 --> 00:00:17.160
+them tick, plus the insights, experiments, and OMG moments that shape the field. On this
+
+00:00:17.160 --> 00:00:22.400
+episode we'll talk with Phillip Cloud about some of the nuances of adopting AI for software
+
+00:00:22.400 --> 00:00:26.959
+development. And if you've heard the podcast up to this point, you probably know that we've
+
+00:00:26.959 --> 00:00:32.240
+wholly surrendered ourselves to AI to code for us. So I find Phillip's perspective
+
+00:00:32.240 --> 00:00:36.560
+really refreshing. And he's got the bona fides to match. He's a principal engineer
+
+00:00:36.560 --> 00:00:43.240
+at NVIDIA, he leads the IVAS project in Python, and he's one of the earliest Pandas contributors.
+
+00:00:43.240 --> 00:00:47.240
+He's tried Cloud Code, he's tried Cursor Agent, and he's walked away still searching
+
+00:00:47.240 --> 00:00:53.759
+for the right AI tool and use cases. Phillip's the type of developer who doesn't use a
+
+00:00:53.759 --> 00:00:58.959
+mouse and wants to only use his keyboard in the terminal. And I find that's the hallmark
+
+00:00:58.959 --> 00:01:04.279
+of a really great developer. So in this episode, we'll talk about sort of how Phillip approaches
+
+00:01:04.279 --> 00:01:10.360
+software development, and what AI tools get right, and what they get wrong, and what 15
+
+00:01:10.360 --> 00:01:15.959
+years of open source experience has taught him about hype cycles and tool adoption.
+
+00:01:15.959 --> 00:01:21.919
+Hey, welcome to The Test Set. I'm joined here with Phillip Cloud, who's a principal software
+
+00:01:21.919 --> 00:01:29.279
+engineer at NVIDIA, and lead on the IBIS project, which is a neat Python project that
+
+00:01:29.279 --> 00:01:35.879
+can run SQL on a lot of different databases, and an OG contributor to Pandas. So it's really
+
+00:01:35.879 --> 00:01:41.680
+come up through a lot of interesting Python open source projects, and so excited to talk
+
+00:01:41.680 --> 00:01:48.680
+to you. And I'm joined by my co-hosts, Wes McKinney, who's a principal architect at Posit,
+
+00:01:48.680 --> 00:01:53.440
+and Hadley Wickham, who's chief scientist at Posit. Phillip, so glad to have you on.
+
+00:01:53.440 --> 00:01:57.800
+Yeah, great. Great to be here. Great to kind of sync up with everyone.
+
+00:01:57.800 --> 00:02:03.839
+Yeah, I will say we had a little prep for this in that when I talked to Wes in an early
+
+00:02:03.839 --> 00:02:11.039
+interview, he warned me that you're a wizard at puns. And I did notice that came up a little
+
+00:02:11.039 --> 00:02:16.399
+bit in some of your responses prepping for this, that I think you said, you want to be
+
+00:02:16.399 --> 00:02:24.600
+known as a decent human with lots of open source contributions, liked puns, and be loved.
+
+00:02:24.600 --> 00:02:28.639
+So I'm excited to see, I mean, I think all those things are great, but I'm excited to
+
+00:02:28.639 --> 00:02:35.000
+see what happens on the pun axis, particularly.
+
+00:02:35.000 --> 00:02:40.860
+What I've always said is that Phillip has a pun oriented, you know, kind of pun oriented
+
+00:02:40.860 --> 00:02:44.520
+way of working. So like, you know, you can, he's the person that you can always count
+
+00:02:44.520 --> 00:02:52.919
+on to never miss a pun opportunity, you know, often in the least expected ways. And I feel
+
+00:02:52.919 --> 00:03:01.440
+like I'm on the lookout for puns, but his eye is next level. So it's brought a lot of
+
+00:03:01.440 --> 00:03:07.399
+humor and amusement to like our years of working together. I mean, I've worked with Phillip
+
+00:03:07.399 --> 00:03:13.000
+in some capacity for, I think this year we'll make, you know, I don't know, I'm not sure
+
+00:03:13.000 --> 00:03:17.360
+if it's exactly 2011 or 2012, but we're like closing in on 15 years. So it's been a really,
+
+00:03:17.360 --> 00:03:23.559
+been a really long time and across spanning many projects. Pandas like Phillip was, Phillip
+
+00:03:23.559 --> 00:03:29.399
+and Jeff Reback were two of the first Pandas core team members to join the project formally
+
+00:03:29.399 --> 00:03:32.759
+and to have write access to the repository. So we go way back.
+
+00:03:32.759 --> 00:03:37.080
+I just wanted to put in a plug for R because I think if you like puns, that's a much better
+
+00:03:37.080 --> 00:03:40.360
+community than the Python community. Shots fired.
+
+00:03:40.520 --> 00:03:45.720
+Yeah, maybe, well, I don't know, maybe I need to go over there and kind of, I don't know,
+
+00:03:45.720 --> 00:03:50.039
+steal some game. So I know Phillip, you have like a lot of really interesting opinions
+
+00:03:50.039 --> 00:03:57.639
+on like tools and AI. I'd be super curious to talk about a little bit like how you got
+
+00:03:57.639 --> 00:04:05.720
+into open source and projects like Ibis and a little bit more than into some of the tools
+
+00:04:05.720 --> 00:04:11.160
+and, and your thoughts around some of that, but maybe you could like catch, catch me up
+
+00:04:11.160 --> 00:04:16.679
+on kind of your path into working on open source tools and tools like Ibis.
+
+00:04:18.279 --> 00:04:27.480
+Yeah. So I was working, I guess I won't go through the whole backstory, but I will, I
+
+00:04:27.480 --> 00:04:33.799
+started at like just the end of undergrad, I was working at an eye movement lab and like
+
+00:04:33.799 --> 00:04:40.920
+people who work in eye movement lab, eye movement labs are essentially physicists doing
+
+00:04:42.040 --> 00:04:47.399
+some kind of, it's sort of biology. It was in officially in the biology department, but
+
+00:04:48.119 --> 00:04:53.079
+most of the people working in the lab were physicists. And some of it was like also
+
+00:04:53.079 --> 00:04:58.920
+involved with the psychology department. So it was this very sort of kind of mixed discipline
+
+00:04:58.920 --> 00:05:07.160
+research, but we, we did everything, we did everything in MATLAB and this other system
+
+00:05:07.160 --> 00:05:13.160
+called LabView, which is this crazy national instruments, like thing that you program
+
+00:05:13.799 --> 00:05:19.320
+using circuit diagrams. It's actually pretty cool because it kind of gives you like automatic data
+
+00:05:19.320 --> 00:05:23.720
+flow programming without having to think about how to paralyze anything, which is kind of nice.
+
+00:05:24.200 --> 00:05:31.079
+And so they, they sort of, the people in the lab were, were definitely responsible for me getting
+
+00:05:31.079 --> 00:05:38.279
+interested in programming via MATLAB. And then I sort of just poked around with that and kind of
+
+00:05:38.279 --> 00:05:46.200
+looked around, you know, back in the pre-AI days, you just had to Google for stuff and you know,
+
+00:05:46.200 --> 00:05:51.399
+kind of Googled around and found some other things similar to MATLAB. I don't even know if
+
+00:05:51.799 --> 00:05:58.440
+it's kind of, kind of a deep cut, but NumPy used to be split into two packages, NumArray and Numeric,
+
+00:05:58.440 --> 00:06:03.720
+I think is what they were called. And this, I was sort of getting into programming right around the
+
+00:06:03.720 --> 00:06:10.359
+time when Travis Oliphant came onto the scene and was like kind of unifying that into NumPy.
+
+00:06:13.320 --> 00:06:19.959
+And so I kind of got into Python through that. I built a few things that we had built in the lab
+
+00:06:20.119 --> 00:06:26.119
+in Python, some like analysis applications, kind of mostly around plotting the various things we
+
+00:06:26.119 --> 00:06:32.920
+were looking at. And then kind of fast forward, I was in grad school studying computational
+
+00:06:32.920 --> 00:06:39.640
+neuroscience and a lot of the, the specific kind of data analysis I was doing was very,
+
+00:06:39.880 --> 00:06:51.559
+Pandas was a very useful tool for what we were doing, mostly because of a feature that I think
+
+00:06:51.559 --> 00:06:59.480
+is not particularly well liked by the Pandas developers, which is column multi-indexes.
+
+00:07:01.480 --> 00:07:06.359
+It's like, it's kind of gross in the implementation, but it was super useful
+
+00:07:07.320 --> 00:07:11.959
+and it's a bit niche. It was because of the, the thing we were studying was,
+
+00:07:13.399 --> 00:07:21.079
+we were looking at like sleep behavior in like anesthetized rats and the way the sort of
+
+00:07:21.799 --> 00:07:26.440
+electrodes were situated in the brain was organized. They were kind of organized onto
+
+00:07:26.440 --> 00:07:32.119
+these like four shanks. And so I wanted to do like analyses that were like between the shanks and
+
+00:07:32.200 --> 00:07:38.760
+across them and organizing each, each, each electrode on the shank was a time series,
+
+00:07:39.320 --> 00:07:44.679
+like 22 kilohertz or something like that, recording voltage. And so it was a pretty
+
+00:07:44.679 --> 00:07:48.359
+natural fit to be like, okay, I'm just going to like do all, I'm going to like dig into,
+
+00:07:48.359 --> 00:07:52.359
+you know, the first shank or I'm going to dig into like the first four electrodes
+
+00:07:52.359 --> 00:07:57.399
+on all shanks or whatever, that sort of thing. So column multi-indexes were a pretty natural fit
+
+00:07:57.399 --> 00:08:00.679
+and no other package at the time had anything like that.
+
+00:08:02.920 --> 00:08:07.559
+And so that's how I came into pandas. So that's how I got involved in open source.
+
+00:08:10.040 --> 00:08:14.920
+Yeah. And then I just sort of started, started contributing to, to pandas.
+
+00:08:16.839 --> 00:08:23.160
+It was a very kind of welcoming community. I think the first thing I did in pandas was to,
+
+00:08:23.160 --> 00:08:34.599
+was read HTML, that, that abomination. I don't remember if I personally needed that or if I was
+
+00:08:34.599 --> 00:08:42.039
+just kind of combing the issue backlog and saw, you know, this, I don't, I don't know anything
+
+00:08:42.039 --> 00:08:47.880
+about software. Let me, let me, let me do this. I mean, it turns out that these like basic things
+
+00:08:47.960 --> 00:08:53.159
+like reading CSV files, reading HTML files is tremendously useful. And so, you know, it's kind
+
+00:08:53.159 --> 00:08:57.960
+of funny that like, you know, most of the people on this call have spent like a not insignificant
+
+00:08:57.960 --> 00:09:02.599
+amount of their, their development time, you know, building these kinds of things. I think
+
+00:09:02.599 --> 00:09:06.679
+many people regard them as so elementary and yet like, you know, you can't do anything else if you
+
+00:09:06.679 --> 00:09:13.880
+don't have them. Okay. So one, one thing I'm curious about is like, I, one thing we talked
+
+00:09:13.880 --> 00:09:19.880
+about beforehand was asking about the most exciting development now. And I sort of jokingly
+
+00:09:19.880 --> 00:09:27.640
+said, and is it AI? But I thought, I thought your response was really poignant that you said like,
+
+00:09:27.640 --> 00:09:33.559
+you're not sure it's AI, but AI is interesting. And then you talked a little bit about like
+
+00:09:33.559 --> 00:09:40.840
+developer productivity and how like the focus on that over the years. I'd be curious to hear
+
+00:09:40.840 --> 00:09:45.719
+if you could say a little bit about that, like what's in terms of the most exciting development
+
+00:09:45.719 --> 00:09:53.400
+now, your thoughts on sort of measuring and tracking developer productivity over the last
+
+00:09:53.400 --> 00:10:00.359
+five years. Yeah. I mean, I don't know if I have anything like concrete other than just, you know,
+
+00:10:00.520 --> 00:10:10.039
+kind of anecdotes and observations of what I've seen it. But I think over, over the years,
+
+00:10:11.960 --> 00:10:20.359
+it's because, because many more people are writing software, it's become profitable in some way for
+
+00:10:20.359 --> 00:10:25.559
+companies to make developers more productive, whatever that means. Like before you used to
+
+00:10:26.520 --> 00:10:34.599
+have to be like a wizard to, you know, write any, like to use like, I don't know, Visual C++ or
+
+00:10:34.599 --> 00:10:41.799
+whatever, or Visual Studio, it came with, you know, 30,000 knobs. And like, there was just a
+
+00:10:41.799 --> 00:10:46.840
+lot of stuff to do. And then, and then, I don't know, I think there was kind of a little bit of
+
+00:10:46.840 --> 00:10:54.119
+a sea change when, when VS Code came out. And VS Code, of course, is based on like Electron and,
+
+00:10:54.119 --> 00:11:00.280
+and like Atom was somewhere in there as well. Like, it really is like the sort of the,
+
+00:11:01.320 --> 00:11:07.159
+the webkit or the browser based application that kind of like gave rise, I think, to a lot of this.
+
+00:11:10.280 --> 00:11:15.719
+And then people started, you know, writing all these plugins. And I think some of that,
+
+00:11:15.719 --> 00:11:23.640
+that ethos kind of filtered down into like, I guess what I would call more primitive tools,
+
+00:11:23.719 --> 00:11:28.919
+like tools that didn't have like a super nice, like UI on them, right? Like command line tools,
+
+00:11:28.919 --> 00:11:35.400
+and then now command line tools, all like, your command line tool better have like a sweet,
+
+00:11:35.400 --> 00:11:41.880
+like TUI, or else no one's going to use it, right? And it better be like, pretty and be able to deal
+
+00:11:41.880 --> 00:11:51.159
+with like, color, like, you know, antsy colors and things like that. And so, yeah, I think it's,
+
+00:11:51.159 --> 00:11:57.080
+I think it's, it's interesting that like, that the developer product, like people have been
+
+00:11:57.080 --> 00:12:03.320
+spending a ton of time making software development just better and easier to do.
+
+00:12:04.039 --> 00:12:10.200
+Yeah, yeah, that's fair. And I guess, TUI, if we had to explain what a terminal user interface is
+
+00:12:10.200 --> 00:12:17.640
+to like an alien, what, like, how would you explain what a terminal user interface is?
+
+00:12:18.440 --> 00:12:22.919
+I'd say it's like, thrown out like the last 30 years of what we've learned about like,
+
+00:12:22.919 --> 00:12:28.520
+designing user interface and like, let's go back to this nostalgic age of like the 1980s.
+
+00:12:29.799 --> 00:12:31.000
+Yeah, yeah.
+
+00:12:31.000 --> 00:12:36.440
+I don't know, like, my, my theory is that like, we're there, we have this like nostalgia
+
+00:12:37.000 --> 00:12:41.640
+for these interfaces, because like, as software, and like, I think part of it's like,
+
+00:12:41.640 --> 00:12:45.320
+that's sort of our ages, like, that's a, you know, nostalgias of like,
+
+00:12:45.320 --> 00:12:48.359
+whatever age you were when you're a kid. And then there's also like,
+
+00:12:49.479 --> 00:12:53.559
+everyone's a little nervous and uncertain about AI. And that like, forces us,
+
+00:12:53.559 --> 00:12:57.479
+like to want to go back to this, like, comfortable place.
+
+00:12:58.200 --> 00:13:04.119
+I mean, I feel like there's almost like a, it, I don't know, I, I really enjoy TUIs personally,
+
+00:13:04.119 --> 00:13:08.119
+like I, when they, they, they went out of fashion, I was a little bit, a little bit sad,
+
+00:13:08.119 --> 00:13:13.479
+because I, when I was in, when I was in college, I actually, I did all my, I did all my email in,
+
+00:13:14.440 --> 00:13:21.719
+you know, a TUI, like I would SSH into, you know, the server and, and do my, do my email there.
+
+00:13:21.719 --> 00:13:26.440
+And eventually, in 2006, I switched over to Gmail and never, never looked back, I guess, like,
+
+00:13:27.080 --> 00:13:31.400
+right now, I'm in the process of actually building like a, like an email offline sync
+
+00:13:31.400 --> 00:13:38.039
+and archival tool with the TUI. So I can like, re rebuild those glory days of doing email stuff in
+
+00:13:38.039 --> 00:13:41.799
+the, in the terminal, I hope to turn that into an open source project in the future.
+
+00:13:42.760 --> 00:13:48.919
+But, you know, I worked in finance. And so like, I had up close and personal experience of the
+
+00:13:48.919 --> 00:13:53.719
+glory of the Bloomberg terminal. And that's probably like, the most commercially successful
+
+00:13:53.719 --> 00:14:00.679
+and ubiquitous software that is like, remained a TUI since inception. And like, it's, you know,
+
+00:14:00.679 --> 00:14:05.559
+users who pay, I don't know, what Bloomberg terminal costs, but it costs a lot of money
+
+00:14:05.559 --> 00:14:10.359
+each year, like 10s of 1000s of dollars. It's just like, it's just like financial operating
+
+00:14:10.359 --> 00:14:15.719
+system that that financial professionals use. And it's like, you know, to UI. And so I feel like
+
+00:14:15.719 --> 00:14:20.840
+the AI sphere is kind of like, almost like turning the rest of the world into like,
+
+00:14:20.840 --> 00:14:22.919
+one big Bloomberg terminal, which is interesting.
+
+00:14:24.359 --> 00:14:31.960
+For a while, the creator of this tool called visa data worked at worked at Voltron data where I was
+
+00:14:31.960 --> 00:14:45.239
+at before NVIDIA. And that thing, that thing is friggin awesome. That's I like, the the attention
+
+00:14:45.239 --> 00:14:52.119
+to detail in the interface is not like anything I've ever seen in a command line tool. And it's
+
+00:14:52.119 --> 00:15:00.760
+all I think it's all built with curses. Which if you most most most people interact with curses
+
+00:15:00.760 --> 00:15:06.039
+interact with it, basically in like, some kind of installer tool, right? I mean, there's a bunch
+
+00:15:06.039 --> 00:15:10.039
+of stuff that's written in curses, because for a long time, that was like the only game in town
+
+00:15:10.039 --> 00:15:16.520
+when it came to creating a terminal user interface. But it does lead to sort of like, you know,
+
+00:15:16.520 --> 00:15:24.919
+everything being a block, because that's kind of how it works. But visa data is, yeah, it's,
+
+00:15:24.919 --> 00:15:31.159
+it's amazing. I would definitely recommend people check that out. I had totally forgotten about it.
+
+00:15:31.159 --> 00:15:36.599
+But it it's, it's great. It's like a quick like data analysis.
+
+00:15:39.000 --> 00:15:45.400
+Terminal interface, the thing that's cool about it, or like, one of the things that I think was
+
+00:15:45.400 --> 00:15:49.719
+was really awesome about it is that it's kind of got two modes.
+
+00:15:50.280 --> 00:15:57.080
+Saul Ponson, the creator of it, you know, like, he, he's definitely the kind of person that's like, I want to be
+
+00:15:57.080 --> 00:16:03.320
+able to do all the most powerful things in like one keystroke, right. But he also realizes that
+
+00:16:03.320 --> 00:16:11.320
+not everybody's like that. And so he has built a system that visited actually allows you to sort of
+
+00:16:11.320 --> 00:16:17.719
+point and click stuff as well from the terminal, like it has clickable menus and, and sort of
+
+00:16:17.799 --> 00:16:22.679
+and sort of kind of cascading menus that you know, you can open other things, those things open
+
+00:16:22.679 --> 00:16:29.479
+sub menus, and so forth. So regular search, like stuff, something you might see in a windowing system
+
+00:16:30.520 --> 00:16:40.359
+UI. But once you get into the single stroke, like world, it's really hard to go back.
+
+00:16:41.239 --> 00:16:50.919
+And you can similar to kind of certain editors, you can chain together, like it has this really
+
+00:16:50.919 --> 00:16:57.960
+nice composability aspect to it, that you can't really get from the menus. You can kind of learn
+
+00:16:57.960 --> 00:17:04.359
+them by using the menus because next to the menu item that usually has like the keystroke that
+
+00:17:04.920 --> 00:17:11.800
+will do that thing. But you can also like, similar to like in Vim, you can give input to parts of
+
+00:17:11.800 --> 00:17:18.199
+those commands as you're chaining them. So it's, it's, it's really nice. And I think if I, if I
+
+00:17:18.199 --> 00:17:25.079
+recall, like on the topic of kind of like IDs and developer productivity, and TUIs, I think I saw
+
+00:17:25.640 --> 00:17:32.359
+you're a NeoVim user, is that right? That's correct. That's your daily driver.
+
+00:17:33.000 --> 00:17:39.880
+Yep. Yep. It was Vim for a while, then I switched to NeoVim. I don't remember if there was like a
+
+00:17:41.079 --> 00:17:45.400
+specifically very rational reason. I think someone was like, hey, you should try this.
+
+00:17:45.400 --> 00:17:49.800
+And like, I don't know, it started up a little bit faster. So I was like, cool, let's, let's do it.
+
+00:17:50.599 --> 00:17:56.439
+Yeah. Yeah. Yeah. But that means you're like all hands on keyboard, never on mouse. Is that?
+
+00:17:57.319 --> 00:18:05.719
+I hate the mouse. I freaking hate the mouse. Yeah. I mean, like I, most of my time is spent
+
+00:18:05.719 --> 00:18:12.920
+in like, I have, I usually, the way I'd set up is I have a, I have like a 49 inch monitor and
+
+00:18:12.920 --> 00:18:20.359
+it's split into three. One window is browser. One third is a browser. And then two thirds is
+
+00:18:20.359 --> 00:18:28.199
+devoted to a terminal, which is running TMUX. And that's split again, down the middle. And then I
+
+00:18:28.199 --> 00:18:34.040
+use a lot of like temporary splits, but I almost always have one single vertical split.
+
+00:18:35.079 --> 00:18:39.400
+Yeah. Nice. I know it's like tedious, but there's something so magical about
+
+00:18:39.959 --> 00:18:47.160
+developers, very particular setups, like how people like, where they lay things out and how
+
+00:18:47.160 --> 00:18:54.920
+they like set it up. I feel like it's interesting to hear the split and the, the like NeoVim workflow.
+
+00:18:55.880 --> 00:19:01.319
+There's a couple of other things I've tried that combine some of like NeoVim as a terminal mode,
+
+00:19:01.319 --> 00:19:07.640
+which has some neat features, like the main neat features that I can use all the same Vim
+
+00:19:07.640 --> 00:19:13.800
+keystrokes inside of a terminal and scrolling is not this like weird thing that I have to like
+
+00:19:13.800 --> 00:19:25.319
+set a buffer for and all this stuff. But I don't know, like TMUX it's, it's like one extra key
+
+00:19:26.199 --> 00:19:32.359
+set of commands to do a split in Vim. Yeah. Yeah. And I guess for context,
+
+00:19:33.160 --> 00:19:40.359
+TMUX is like the ultimate pane splitting session running. So there's a lot of like
+
+00:19:40.359 --> 00:19:45.000
+in these applications, like opening panes and opening windows, like inside of things.
+
+00:19:45.640 --> 00:19:52.920
+So it's very like things inside of things. I mean, TMUX is also really, TMUX is also really
+
+00:19:52.920 --> 00:19:57.959
+useful in terms of like, if you're, if you're have a remote connection to a machine and like,
+
+00:19:57.959 --> 00:20:02.680
+let's say you're like, you know, traveling or something, you need to close your laptop.
+
+00:20:02.680 --> 00:20:07.000
+Like you, it won't, you know, and you connect to a remote machine and you're running a TMUX
+
+00:20:07.000 --> 00:20:11.800
+session there. Like it will, it will keep going. And like, whenever you reopen your laptop and
+
+00:20:11.800 --> 00:20:15.800
+reconnect to the internet, you can just reattach to that, to that session. And like, none of your
+
+00:20:15.800 --> 00:20:21.800
+work is lost. And like all of the state in the, in the terminals is, is preserved. There's another
+
+00:20:21.800 --> 00:20:27.319
+like Unix tool called screen, which is like kind of like, like lower tech version of, of TMUX.
+
+00:20:27.319 --> 00:20:33.319
+And so I think some, you know, some users, like some people like to use screen even still. But
+
+00:20:33.319 --> 00:20:38.599
+you know, TMUX is like a lot more, a lot more full feature. I've been weirdly resistant to like
+
+00:20:38.599 --> 00:20:45.400
+using some of these things. And I'm still like, you know, just using kind of derpy terminal
+
+00:20:45.400 --> 00:20:50.199
+emulators and like splitting them. And a lot of the time I'm just like, I should be using TMUX.
+
+00:20:50.199 --> 00:20:55.560
+Like I say that to myself probably like once a month and still I'm, you know, I'm like, yeah,
+
+00:20:55.560 --> 00:20:59.319
+I just, just haven't been able to go down quite down that particular rabbit hole.
+
+00:20:59.880 --> 00:21:02.599
+I, on the other hand, I've never split terminal, so.
+
+00:21:03.479 --> 00:21:03.880
+Oh man.
+
+00:21:03.880 --> 00:21:06.199
+You're a straight, feel free to judge me for that.
+
+00:21:06.199 --> 00:21:08.359
+We have the full, we have the full spectrum here.
+
+00:21:09.560 --> 00:21:15.239
+It's true. I, I used to use TMUX a lot as a grad student when I had to like go into a computing
+
+00:21:15.239 --> 00:21:22.280
+cluster. But now actually surprisingly, I picked up TMUX again, like a few weeks ago, because I
+
+00:21:22.280 --> 00:21:29.000
+feel like using cloud code kind of like brought TMUX back where I was like, I want to be able to
+
+00:21:29.000 --> 00:21:36.119
+like reattach and to like run bash, like on the side and stuff. So I was, I was surprised that
+
+00:21:36.119 --> 00:21:42.599
+it's kind of like renaissance with like the cloud code terminal.
+
+00:21:42.599 --> 00:21:46.599
+For me, like the coding agents, like the big, the big thing for me, like the big unlock with
+
+00:21:46.599 --> 00:21:51.959
+the coding agents has been that they, they solve like the configuration problem. Like I,
+
+00:21:51.959 --> 00:21:57.560
+like I have any kind of configuration or like fiddling, like yak shaving, like some, some
+
+00:21:57.560 --> 00:22:02.520
+developers really actually enjoy that, like discovering all the, the knobs and bells and
+
+00:22:02.520 --> 00:22:07.719
+whistles and like configuring things to, to perfection. And I've, like Philip is somebody
+
+00:22:07.719 --> 00:22:11.719
+I know who's really good at that. Like, you know, he was there, he was always the person who was
+
+00:22:11.800 --> 00:22:19.000
+like Arch Linux, like, you know, super knowledge of like all these, all these details that were
+
+00:22:19.000 --> 00:22:24.280
+like, I see the way that he works. I'm just like, I'm like, I could never do that. But the, I think
+
+00:22:24.280 --> 00:22:30.280
+maybe you use NixOS now, I would guess. But, you know, all the cool kids are using NixOS, I think.
+
+00:22:31.000 --> 00:22:32.439
+I also got too mainstream.
+
+00:22:32.439 --> 00:22:37.319
+Yeah, it was too easy. But I actually fiddle less nowadays.
+
+00:22:37.400 --> 00:22:41.880
+But basically, you know, for me, like, what's amazing about the coding agents is like, they,
+
+00:22:41.880 --> 00:22:47.079
+I can delegate all that to them. I'll be like, my terminal is misbehaving. Like, look at the
+
+00:22:47.079 --> 00:22:51.959
+comp file for my terminal and please fix it. Like, I don't, I don't want to mess with this. And it
+
+00:22:51.959 --> 00:22:56.599
+figures it out on my behalf, which is for somebody like me, who's just like resistant to this type
+
+00:22:56.599 --> 00:23:01.079
+of configuration. It's like been, it's been a great, like, anxiety reducer.
+
+00:23:02.119 --> 00:23:06.920
+What I really like is you can also describe the problem in like really dumb words. Like,
+
+00:23:07.160 --> 00:23:10.599
+I'm sure there's like a specific technical word for what is going wrong,
+
+00:23:11.239 --> 00:23:15.319
+but I don't know what it is. And so I'm just like, oh, it's like really scrolly. Like,
+
+00:23:15.319 --> 00:23:20.760
+please fix it. And, and I had to feel dumb about using the wrong word that I was a human being.
+
+00:23:20.760 --> 00:23:25.959
+I do feel like when it, like a baby says the word to you that you just described in very like
+
+00:23:28.040 --> 00:23:33.640
+rambly terms, it's like, oh, are you talking about this? And you're like, that's exactly right.
+
+00:23:34.199 --> 00:23:38.920
+Yeah. I think when I started doing some of the coding agent stuff, I probably was a bit,
+
+00:23:38.920 --> 00:23:46.359
+I gave it too much. Like I got frustrated because it utterly failed at whatever it was. I was like,
+
+00:23:46.359 --> 00:23:52.760
+oh, like help me debug this race condition. And it was like, here's like a hundred random
+
+00:23:52.760 --> 00:23:57.800
+things to try. All of which are related to the ways in which race conditions can show up.
+
+00:23:58.760 --> 00:24:06.199
+And I've, I've done that a few times now and it's gotten better. It's gotten better at like,
+
+00:24:07.239 --> 00:24:15.239
+like kind of making suggestions that are closer to the ballpark, but even with sort of like a
+
+00:24:15.239 --> 00:24:26.359
+complete, like GDB backtrace, it, it confidently asserts the problem and isn't, and all the times
+
+00:24:26.920 --> 00:24:33.160
+all the times that that's happened, it hasn't actually been the, the, the, the, the, the
+
+00:24:33.160 --> 00:24:38.439
+problem. I guess one, one of the things I was really interested in, in talking with you about
+
+00:24:38.439 --> 00:24:44.520
+on this on this podcast is, you know, your general feeling about as somebody who's worked for a long
+
+00:24:44.520 --> 00:24:49.160
+period of time, like over a decade on building open source libraries and tools for data analysis.
+
+00:24:49.160 --> 00:24:54.760
+One thing that's, that's weighed on me greatly in the last year, really maybe a little bit more
+
+00:24:54.760 --> 00:25:01.800
+than that is like the, essentially the ways in which like AI and coding agents are going to
+
+00:25:01.800 --> 00:25:08.280
+change the way that we produce and build open source libraries and tools for, for people.
+
+00:25:08.280 --> 00:25:12.760
+Like you think about the old way of like building pandas or building IBIS or building Numba or
+
+00:25:12.760 --> 00:25:17.319
+building NumPy. Like, I feel like the whole interaction model between open source developers
+
+00:25:17.319 --> 00:25:21.640
+and their users is going to change in a way that's permanent and like never going to go,
+
+00:25:22.439 --> 00:25:26.760
+to go back. And so part of me is like, whenever I'm working on something is like,
+
+00:25:26.760 --> 00:25:32.439
+am I building software for a human? Or am I building software for the agents that they're
+
+00:25:32.439 --> 00:25:36.839
+using? And like, how should that change the way that I'm building the software? Like,
+
+00:25:36.839 --> 00:25:43.079
+how should that change the way that I'm building the documentation? And I don't think we have a
+
+00:25:43.079 --> 00:25:47.560
+clear picture of what that's going to look like, but as somebody who's been very much in the weeds
+
+00:25:47.560 --> 00:25:54.359
+on that, and I'm curious, like, you know, where your thoughts are on that, like how you're
+
+00:25:54.359 --> 00:25:59.000
+employing, you know, coding agents in your work and how it's changed your work in the last, you
+
+00:25:59.000 --> 00:26:03.000
+know, year, year and a half and where you, you know, where you see things going.
+
+00:26:03.560 --> 00:26:08.280
+So one of the things I think that's like, that's fundamentally different is that the,
+
+00:26:09.959 --> 00:26:16.599
+oftentimes we're writing code in open source and in, and inside of companies as well,
+
+00:26:16.599 --> 00:26:23.719
+for other humans to read, right? Most code is read a lot more often than it's written.
+
+00:26:24.359 --> 00:26:29.319
+And so the things that the human values when reading code, like,
+
+00:26:31.160 --> 00:26:39.319
+like not repeating the same thing a million times has virtually, I don't think like an agent
+
+00:26:39.319 --> 00:26:45.400
+cares a hoot about repetition, right? It, it can digest repetitive information,
+
+00:26:46.040 --> 00:26:53.000
+essentially without any kind of response to it whatsoever, like emotional, cognitive, whatever.
+
+00:26:53.000 --> 00:26:59.719
+It's not thinking about, it's not like, oh man, this, this isn't duplicated in 10 places. Like,
+
+00:27:00.439 --> 00:27:04.119
+what if I have to update everything? You know, what if I have to update,
+
+00:27:04.119 --> 00:27:07.959
+I duplicated this error message in 10 places. What if I have to update a parameter that goes
+
+00:27:07.959 --> 00:27:12.040
+into it or something like a default value. Now I have to duplicate that in 10 places. Like
+
+00:27:12.040 --> 00:27:19.959
+the agent just goes, yeah. All right. Change it in 10 places. Done. So I don't, I don't,
+
+00:27:20.599 --> 00:27:30.199
+one possibility is that code gets messier because people aren't writing code for agent.
+
+00:27:30.199 --> 00:27:35.560
+They're not writing code for people to read anymore. They're writing code for agent to consume
+
+00:27:36.520 --> 00:27:42.119
+and agents will fix the things that are caused by that particular problem.
+
+00:27:43.000 --> 00:27:48.680
+So I don't know, total, totally speculative. It's just a thing that, I forget who I was talking
+
+00:27:48.680 --> 00:27:53.560
+with about this, but this kind of came up where it was like the things that we value as humans, like
+
+00:27:54.760 --> 00:28:00.920
+many of those things, the agents like aren't affected by, which has double-edged sword
+
+00:28:01.479 --> 00:28:07.000
+in a lot of cases. I think there's another thing that you mentioned at the end of that.
+
+00:28:08.199 --> 00:28:11.959
+Yeah. I was just curious, like how, like how your work has changed? Like how has, like,
+
+00:28:11.959 --> 00:28:15.880
+how has the way that you're, you know, your, your work's changed? Cause I feel like I was a
+
+00:28:15.880 --> 00:28:20.680
+late adopter of these things and you're really up until, you know, adopting like the first generation
+
+00:28:20.680 --> 00:28:26.280
+of coding agents, you know, cloud code and, and, and friends. Like I was honestly like very AI
+
+00:28:26.280 --> 00:28:34.599
+skeptical. Like I, I didn't even, I still have never used cursor, true story. Like I, I'd used
+
+00:28:34.599 --> 00:28:38.920
+chat TPT and cloud a little bit to generate like little scripts and do little things.
+
+00:28:38.920 --> 00:28:43.560
+And I saw some value in that, but, but like, I wasn't, I was far from being, you know, AI
+
+00:28:43.560 --> 00:28:48.599
+pilled, so to speak. It wasn't really until like the terminal coding agents and having access to
+
+00:28:48.599 --> 00:28:55.400
+CLI and being able to like do all this stuff, you know, without feeling like I'm in an IDE and, and,
+
+00:28:55.479 --> 00:29:02.439
+and, and whatnot that, that it really, it really clicked for me. And I think now it's like figuring
+
+00:29:02.439 --> 00:29:07.400
+out like what, like what's an appropriate use of like, when is, when is human reasoning and human,
+
+00:29:07.400 --> 00:29:13.560
+like manual code editing and writing needed? And like, where's the line between like delegation
+
+00:29:13.560 --> 00:29:18.439
+and like, you know, like where, where should you be spending your time versus like supervising,
+
+00:29:18.439 --> 00:29:22.520
+supervising agents or like, is the time that we're spending watching the agents work useful,
+
+00:29:22.520 --> 00:29:26.439
+or should we be building orchestrators like to spend less time watching, you know,
+
+00:29:26.439 --> 00:29:32.199
+watching the lines of code fly by. But I know you also work on, you know, systems code and
+
+00:29:32.199 --> 00:29:37.959
+data processing code, which, you know, the agents like will make lots of errors and we'll just like.
+
+00:29:38.728 --> 00:29:44.168
+we'll make lots of errors and we'll just like count things wrong or compute things wrong and so
+
+00:29:44.968 --> 00:29:47.928
+and that all can often only be caught through
+
+00:29:44.047 --> 00:29:50.247
+things wrong. And that can often only be caught through either really aggressive unit testing
+
+00:29:50.247 --> 00:29:55.927
+and actual test-driven development, like write the unit tests first before you write the
+
+00:29:55.927 --> 00:30:01.387
+code. And I found that's one way of creating the right guardrails for the agent. Just treat
+
+00:30:01.387 --> 00:30:10.766
+the agent like an inexperienced developer who misses every edge case and makes lots
+
+00:30:10.766 --> 00:30:18.767
+of mistakes. I'm just curious what you've learned and how your approach has evolved
+
+00:30:18.767 --> 00:30:24.966
+and what does your stack and your workflow look like day-to-day now?
+
+00:30:24.966 --> 00:30:36.767
+I might be more of an AI skeptic than you. That's fine.
+
+00:30:36.767 --> 00:30:43.767
+I tried Cursor, the UI, and now there's Cursor Agent. I'll get to that in a second.
+
+00:30:43.767 --> 00:30:50.767
+But the Cursor UI was like, okay, it's another UI. I'm kind of like you in that I want to be able to do everything
+
+00:30:50.767 --> 00:30:57.767
+from the terminal and I don't want to spin up a whole thing. Because now I have to adjust every single thing
+
+00:30:57.767 --> 00:31:03.767
+that I've spent the last five to ten years molding my brain to, which is just the various setup.
+
+00:31:03.767 --> 00:31:13.767
+Everyone has this. So I didn't really like that. So I stopped using Cursor. I think another friend of mine
+
+00:31:13.767 --> 00:31:18.767
+was like, you should try Cloud Code. He said something similar, like treat it like a super junior developer.
+
+00:31:18.767 --> 00:31:26.767
+And of course, I immediately ignored that and gave it a really challenging problem, which it did not do well on.
+
+00:31:27.767 --> 00:31:42.767
+And so I was like, okay, not for me. Later, I tried Cursor Agent, which is the CLI version of Cursor.
+
+00:31:42.767 --> 00:31:52.767
+Somewhat new, I think maybe six months or a year old. I can't remember. And Cursor Agent is like,
+
+00:31:53.767 --> 00:32:01.767
+I tried Cloud Code a bit and Cloud Code does the like LLM thing where it's like kind of like, I don't know.
+
+00:32:01.767 --> 00:32:09.767
+It's got an attitude that I don't really want when I'm telling a robot to do something. It's like, great job.
+
+00:32:09.767 --> 00:32:17.767
+Or like, all right, great. Let's go surfing on the lake or whatever it is. And I'm like, okay, can we just,
+
+00:32:17.767 --> 00:32:23.767
+can we like dispense with that? And you can tell it like, hey, stop doing that, whatever that is.
+
+00:32:23.767 --> 00:32:31.767
+But Cursor Agent's default mode is to just kind of be like sociopathically focused on the task that you give it
+
+00:32:31.767 --> 00:32:38.767
+with like no bells and whistles. And I was like, great. Sometimes, and you can't even tell it to like,
+
+00:32:38.767 --> 00:32:46.767
+hey, like make the pros a bit more flowery. It won't. And so I was like, okay, I'm trying to get some work done.
+
+00:32:46.767 --> 00:32:54.767
+I like, I'm going to use Cursor Agent. Of course, it still had the same kind of problems and that it would
+
+00:32:54.767 --> 00:33:01.767
+confidently assert that it had solved the problem. It had not really solved it.
+
+00:33:01.767 --> 00:33:12.767
+It's hyper-focused on work and has no niceties, which it's funny because you think about when you're
+
+00:33:12.767 --> 00:33:21.767
+talking to another person, you just automatically engage those things, right? Like you don't demand that they do
+
+00:33:21.767 --> 00:33:27.767
+something and then get frustrated when they come back and talk to you like a human about whatever problem they had
+
+00:33:27.767 --> 00:33:36.767
+or like, but for whatever reason, when I'm like working with the agent, I want to treat it kind of like a computer
+
+00:33:36.767 --> 00:33:45.767
+where it does a thing. It does exactly what I tell it to. And then, you know, I get back a thing and I get back a response
+
+00:33:45.767 --> 00:33:56.767
+or whatever. And I go from there. But I guess, I guess what I've found is that I'm maybe, maybe because I'm,
+
+00:33:56.767 --> 00:34:09.767
+I've what, you know, maybe in my own way, I guess I've like poorly used them to start, but I've, I've started only using
+
+00:34:09.767 --> 00:34:16.767
+them for like lower stakes things, like a, like nothing that's actually going to generate some code that somebody else
+
+00:34:16.767 --> 00:34:25.767
+is going to run. That's not everyone, you know, like I know some of my coworkers use it for that, use it to like produce
+
+00:34:25.767 --> 00:34:31.767
+actual code and things like that. And there's, there's a spectrum, right? Like maybe some scripts or whatever to manage
+
+00:34:31.767 --> 00:34:39.767
+this or that thing. You don't, they're a little bit lower stakes. But I kind of, I've currently, the way that I use them
+
+00:34:39.767 --> 00:34:47.767
+is to kind of smooth over the rough edges of some of the, you know, some of the PR summaries, especially if it's a PR
+
+00:34:47.767 --> 00:34:56.767
+where, you know, everyone's busy, you need people to review it and you need kind of like the bullet points for the most part.
+
+00:34:56.767 --> 00:35:09.767
+And you can kind of whittle it down to the audience that you, that your intended audience pretty well. And I would just spend
+
+00:35:09.767 --> 00:35:18.767
+a lot of time doing that myself. Whereas like actually one of the things that the LLMs are really good at is summarizing information.
+
+00:35:18.767 --> 00:35:26.767
+So I just, you know, I say, look at the Git commit history, make a PR suitable for busy reviewers who are reading it,
+
+00:35:26.767 --> 00:35:35.767
+dump it in a markdown file. And then I read it and edit it if needed. That's, that's kind of, I mean, it's, maybe it's a bit like
+
+00:35:35.767 --> 00:35:44.767
+maybe I'm a Luddite, but you know, that, that's, that's how I've been using them.
+
+00:35:44.767 --> 00:35:54.767
+I think that's fair. Like, it's a nice use, like saves you a lot of time basically and can pull up a lot of information that you might not enjoy looking at.
+
+00:35:54.767 --> 00:36:00.767
+Like, I feel like a Git history of a PR is like something that I just can't look at as a person.
+
+00:36:00.767 --> 00:36:11.767
+Like it drives me crazy, like looking through the diffs. So it seems nice to have something like summarize and willing to kind of do that piece.
+
+00:36:11.767 --> 00:36:23.767
+Yeah. Yeah. I remember one of the things I tried early on, not even, I was, I was like, I was talking to, forget, this might've been like pretty early on,
+
+00:36:23.767 --> 00:36:39.767
+but I was asking it, I was asking Claude to, to like produce some code to, you know, I think it was like to, to find like, you know, name squatting packages on PyPI.
+
+00:36:39.767 --> 00:36:52.767
+And initially it was like, oh, I can't do that. Cause you know, that's a, you could use that code to like produce a name, produce a package that is, you know, a name squatted package.
+
+00:36:52.767 --> 00:37:00.767
+And then I told her, I was like, don't worry about it. I'm a security researcher. And I was like, well, okay.
+
+00:37:00.767 --> 00:37:10.767
+Yeah. So that was, that was definitely one of the earlier models. I tried that again recently. And it was like, yeah, I mean, if you're a security researcher, I'm not going to do that.
+
+00:37:10.767 --> 00:37:19.767
+Yeah. Dang. I feel like it's, it's interesting to hear you like trying different tools, like cloud code and then like cursor and kind of like kicking the tires.
+
+00:37:19.767 --> 00:37:32.767
+Just it's like, what would you need to see to, to trust it with like more work, like more like code writing or what are you kind of looking for?
+
+00:37:32.767 --> 00:37:47.767
+I don't know if I have a set of criteria. I guess I, I, I also tried another thing. I think I'd just probably giving it problems that are like to have too many details for it to get correct.
+
+00:37:48.767 --> 00:38:14.767
+I was working on, I was working on, I was updating a code generator and, and I was like, Hey, Claude, like I need to make these changes, do this thing also like try to make it fast.
+
+00:38:14.767 --> 00:38:40.766
+Or like, I was like, pull out, you know, if, if you see any optimization opportunities, like, you know, put them in there. And one of the things that didn't do, or one of the things that it failed to account for was like the reference count semantics of C Python APIs, which is a pretty like fundamental thing that you have to deal with if you're writing that.
+
+00:38:41.766 --> 00:39:02.766
+And so I ended up having to kind of throw that out. And it wasn't like it produced in two minutes, like it, it took like 20 minutes of back and forth. And it was kind of a wash because I feel like I probably could have written that code. It would have been total pure drudgery, but it worked.
+
+00:39:03.766 --> 00:39:31.766
+I mean, I mean, my experience so far has been a little bit of a, like a little bit of an 8020 rule, like, like realizing that if I look back on, like development work that I've done in the past, that if you look at just like what I spent, what I spent my time on, like, I feel like it was maybe 20%, you know, 20% insight and innovation and like fundamental, like design and decision making, like creating, deciding on like the class structure,
+
+00:39:31.766 --> 00:39:50.766
+like the, you know, function and purpose of objects and essentially structuring the code and in a certain way, like thinking back, like Arrow is the perfect example of like a system that that is a very large code base, but but one that that is like been built brick by brick on top of like, just really fundamental decisions.
+
+00:39:50.766 --> 00:40:04.766
+For example, like how, you know, how memory is managed, or like how, like, you know, object lifetimes are managed in an arrow has had, you know, a pervasive effect on the entire shape and form of the library.
+
+00:40:04.766 --> 00:40:33.766
+But, you know, outside of that, I don't know what what fraction of the time it is, but it's a little bit of an 8020 rule that there's a lot of drudgery that that takes place, like the maintenance of like the developer tools, the CMake files, the systems and scripts that support, you know, testing and automation and CI CD and releasing and, and I think about all the human labor that's put into some of that a lot of that drudgery, like, you know, maintaining Linux packaging scripts by hand,
+
+00:40:34.766 --> 00:40:51.766
+and all these things. And so that's the stuff that I'm really interested in, like, you know, delegating that work, because that that kind of stuff like the drudgery work of like, you know, coming up with more test cases to accessor exercise edge cases and in like something new that you built.
+
+00:40:51.766 --> 00:41:07.766
+And so you could spend the goal for me is to spend like the 20% of time that I'm writing lines of code by hand, or, you know, looking line by line function by function really zoomed in, like looking at the nitty gritty details of how something works and getting it right.
+
+00:41:08.766 --> 00:41:30.766
+But then all the other stuff that I used to spend time on, you know, it's not perfect yet. But But it's certainly like, you know, I feel like I'll never have to write like package release scripts ever again. And that that for me, because that that type of work is I'm not very good at like, I always found it like tedious and fiddly and stuff. And so I never enjoyed it.
+
+00:41:30.766 --> 00:41:59.766
+But I, you know, for now, like building little, you know, Python packages and open source tools, and to never have to, like, you know, never, never have to write a release script. And remember, you know, like the right argument order of Linux of Unix commands, or like how like different get get things work, to be able to like have a one liner, you know, release this package and push it to PyPI and do the tagging and create the GitHub release and all that.
+
+00:42:00.766 --> 00:42:10.766
+And, you know, that for me has been a great relief to know that, like, you know, I, yeah, I just don't have to do that, you know, kind of work ever again.
+
+00:42:10.766 --> 00:42:28.766
+Yeah, you're making me think about this thing that I have wanted to do. So NumbaKuda's test suite is all originally based on Numba's test suite, which was written against the unit test framework, which was kind of gold standard before PyTest. Well, there was Nose. It was like unit test, then Nose, then PyTest.
+
+00:42:28.766 --> 00:42:30.766
+That's a name that I have not heard in a long time.
+
+00:42:30.766 --> 00:42:31.766
+It's been a while.
+
+00:42:31.766 --> 00:42:32.766
+Yeah.
+
+00:42:32.766 --> 00:42:34.766
+It's like pre PyTest. Yeah.
+
+00:42:34.766 --> 00:43:03.766
+Yeah, yeah. And, and, and there's a bunch of like, that's, that's definitely a thing that I'm just like, yeah, I could do this. And like, it would be very satisfying at the end to have completed it to port the unit test test suite to PyTest because there's a bunch of stuff that, for example, if you're, if you subclass unit test test case, your methods can't be, can't use PyTest parameterize.
+
+00:43:04.766 --> 00:43:07.766
+For example, that's annoying, right?
+
+00:43:07.766 --> 00:43:12.766
+Cause you, what you want to do is like leave the classes in place so you don't have to change everything.
+
+00:43:13.766 --> 00:43:18.766
+But then the bait, like the base class, that's where all the sort of like self data assert is fall.
+
+00:43:18.766 --> 00:43:31.766
+Like all the sort of pre PyTest parsing magic stuff that, that all the, all the, the way that used to make assertions readable rather than just like assert false.
+
+00:43:31.766 --> 00:43:40.766
+And then an error message was to have all these methods that make specific assertions, like assert equal, and it'll print like A is not equal to B.
+
+00:43:40.766 --> 00:43:42.766
+Here are the values or whatever.
+
+00:43:43.766 --> 00:43:50.766
+PyTest does this whole thing where it parses your tests code and knows what it's doing, knows what your code is doing.
+
+00:43:51.766 --> 00:43:54.766
+So to get that, you have to subclass unit test testing.
+
+00:43:54.766 --> 00:44:00.766
+Anyway, so I, that's definitely a thing where I, I would love to, for that would impress me.
+
+00:44:00.766 --> 00:44:15.766
+If, if, if clog code or cursor, one of these agents could like port the Novakuta test suite from your, from its current state to pot to like purely PyTest base and get all the like sub fixtures, correct.
+
+00:44:15.766 --> 00:44:17.766
+And perhaps even improve it.
+
+00:44:18.766 --> 00:44:20.766
+That would, I would be super impressed by that.
+
+00:44:21.766 --> 00:44:29.766
+Cause that's the thing I don't want to do, but it, but it would make developing a Makuta easier in a bunch of different ways.
+
+00:44:31.766 --> 00:44:45.766
+I think what I would recommend for that is like, is try, try using Steve Yegi's beads library, which is basically like a, like an embedded lightweight, like task and memory system for, for agents.
+
+00:44:46.766 --> 00:45:02.766
+I think like for that, that type of like large scale porting, porting exercise from what I've seen through, you know, heavy agent use is that you, you have to be really careful about any type of like porting or, or file copying or, or things like that.
+
+00:45:02.766 --> 00:45:17.766
+Because essentially like, you know, essentially like while it's in the process of like ingesting code, that's to be ported, like stuff can get like memory hold, like in the process of being like, of like going through passing through the LLM.
+
+00:45:18.766 --> 00:45:45.766
+And so basically what I think you would have to do is to kind of break down the test suite into like bite-sized pieces and then set up and then set up a validation loop where at each step, like you do not allow the agent to move forward unless it has essentially verified that every test name before and after is like the, you know, that if there's like a map that maybe the name has changed in a deterministic way.
+
+00:45:45.766 --> 00:45:47.766
+Or at least like the test counts have changed.
+
+00:45:47.766 --> 00:46:04.766
+And so essentially like you never allow the LLM to like, you know, modify the test count, or maybe if it's like introducing PyTest parameterized, like obviously the test count changes because now like there's many test cases that are being like, you know, generated by the matrix of parameterized.
+
+00:46:04.766 --> 00:46:22.766
+But I think if you created the right guardrails, and then you use something like beads to like do the task organization so that you aren't just like saying like, hey, Claude, like port this, you know, 30,000 port port this 40,000 line test suite like that is that is that is destined to fail.
+
+00:46:22.766 --> 00:46:42.766
+But that's like a good example of like where you have to you have to set up the right like structure to enable the LLM to work and like bite-sized pieces, but with guardrails such that you're like, you know, kind of think of it as like the horse blinders, right for the for the LLM is like, you know, you have one job and it is to do this one thing.
+
+00:46:42.766 --> 00:46:48.766
+And you are not allowed to move forward until until you prove to me that that you have not destroyed anything.
+
+00:46:49.766 --> 00:47:12.766
+I think Steve Yagi actually like he's one of the people the reasons I learned I got interested in coding agents in the first place because he was talking about like the the problem of like large scale porting exercises and like how to like how to how to organize like language porting like if you're porting a large code base from one language to another, let's say you were going from like Ruby to go for example.
+
+00:47:12.766 --> 00:47:33.766
+That's like a you know, turns out L like agents are really good at writing go code. And so if you're like if you have an old code base, you know, that's written in Python or Python or Ruby or something like that and you want to port it to a systems language that is more maintainable and faster and things like that then you know go is a pretty good pretty good choice.
+
+00:47:33.766 --> 00:47:37.766
+And so I'm seeing a lot of people choosing to do that type of a porting exercise.
+
+00:47:38.766 --> 00:47:40.766
+It's an interesting scenario.
+
+00:47:40.766 --> 00:47:48.766
+I mean, I think my one tiny blurb is that sometimes I come at it from the exact opposite, which is like asking cloud code to show me.
+
+00:47:48.766 --> 00:48:17.766
+There's like a way to incrementally port like just like prototype or demonstrate there's like some kind of like shim or like dual setup cloud code can create where there's a sense of like we could like incrementally kind of roll stuff over to this, which is really surprised me at times when it's like, oh, yeah, there actually is this approach that I didn't really realize like from it being really good at like reading the docs on the two different systems.
+
+00:48:18.766 --> 00:48:20.766
+But yeah, I agree.
+
+00:48:20.766 --> 00:48:34.766
+Otherwise, the big ports really can spin out where kind of like things get lost or like omitted halfway through but it seems like an exciting one like a very niche painful port.
+
+00:48:34.766 --> 00:48:40.766
+So yeah, fingers fingers crossed you like churn out something nice.
+
+00:48:41.766 --> 00:48:55.766
+Another thing that this is not necessarily related to programming, but I've also I've tried to use it for like a few woodworking things and it's just really bad at things that requires physical intuition.
+
+00:48:56.766 --> 00:49:05.766
+Like it like even just get it even just sort of telling you like the right trigonometry for a particular cut.
+
+00:49:06.766 --> 00:49:34.766
+If you unless you describe unless you give it like a picture and you know it it it really has been like you tell it you have to be very specific about things like orientation and kind of what's around whatever you're doing or else it it'll give you a couple of times it's given me like impossible math responses or I'm just like, no, actually, you know 245 degrees.
+
+00:49:35.766 --> 00:49:40.766
+Angles like, you know, there's got to be a 90 in there somewhere and it was like telling me.
+
+00:49:40.766 --> 00:49:45.766
+Oh, no, like it's a 65 degree angle that like what what?
+
+00:49:46.766 --> 00:50:02.766
+Yeah, counting stuff tough one, but I think your point about woodworking is a good segue to into some of the things you mentioned like you can't live without your you gave a controversial opinion, which I have to admit.
+
+00:50:03.766 --> 00:50:12.766
+I don't know a lot about which is FHS is that that's file system hierarchies is that you want to tear down the hierarchy is that.
+
+00:50:13.766 --> 00:50:40.766
+I think it's been responsible for just innumerable like hair hairs being pulled out or fallen out due to whatever like it all falls under environment management stuff because that is the thing that it creates like global state in an operating system or that is the thing that has led to lots of global state in the operating system.
+
+00:50:40.766 --> 00:50:56.766
+Because many, many, many tools and applications assume that slash users slash live or slash user slash bin is like a thing they could just dump stuff in and that other stuff that they want to that those programs want to use live there.
+
+00:50:57.766 --> 00:51:05.766
+Yeah, the person with opinions on the file hierarchy specification is exactly the person I trust wholeheartedly with all my software.
+
+00:51:05.766 --> 00:51:08.766
+So I my life's in your hands.
+
+00:51:08.766 --> 00:51:09.766
+I don't know about that.
+
+00:51:09.766 --> 00:51:19.766
+I don't know if you if you should because as far as I as far as I know, there's only there's only one operating system that's managed to like actually exist without it.
+
+00:51:20.766 --> 00:51:27.766
+And I didn't really I didn't like go come to Nick's OS because I was like, let's tear down the files to my RB standard.
+
+00:51:28.766 --> 00:51:38.766
+I later realized like the unifying principle of Nick's OS is that everything is a unique path.
+
+00:51:39.766 --> 00:51:42.766
+Based on the hash of the packages, inputs and so forth.
+
+00:51:42.766 --> 00:51:50.766
+I mean, there's a bunch of interesting details there, but none of its stuff lives in FHS, including the program loader.
+
+00:51:51.766 --> 00:51:58.766
+From what I can remember, and so which is like that's the thing that underlies that, you know, runs everything, right?
+
+00:51:58.766 --> 00:51:59.766
+Yeah.
+
+00:51:59.766 --> 00:52:00.766
+Yeah, geez.
+
+00:52:01.766 --> 00:52:04.766
+I'm going to turn through some of these hot takes just so we can jam these.
+
+00:52:04.766 --> 00:52:07.766
+I feel like there are some quality takes in here.
+
+00:52:08.766 --> 00:52:10.766
+You said you're one of your favorite ways to unwind.
+
+00:52:10.766 --> 00:52:11.766
+You brought up woodworking.
+
+00:52:12.766 --> 00:52:13.766
+You also said yard work.
+
+00:52:13.766 --> 00:52:20.766
+Do you feel like is there a best kind of yard work to unwind to like if you had to recommend one?
+
+00:52:20.766 --> 00:52:21.766
+I don't know.
+
+00:52:21.766 --> 00:52:25.766
+I've I've I've been I've been cutting down small trees in my backyard.
+
+00:52:26.766 --> 00:52:27.766
+Incredible.
+
+00:52:27.766 --> 00:52:29.766
+And that's like incredibly satisfying.
+
+00:52:30.766 --> 00:52:31.766
+With a chainsaw?
+
+00:52:31.766 --> 00:52:32.766
+What's the?
+
+00:52:32.766 --> 00:52:36.766
+No, with a with a reciprocating saw, which is just like a.
+
+00:52:37.766 --> 00:52:39.766
+It's like a one handed thing.
+
+00:52:39.766 --> 00:52:45.766
+They make two handed ones, but the one I have is one handed and it's just got a blade that kind of goes like this back and forth.
+
+00:52:45.766 --> 00:52:48.766
+And it's it's it's like purely for demolition.
+
+00:52:48.766 --> 00:52:52.766
+You would never use it for anything that you care about the cut.
+
+00:52:53.766 --> 00:52:54.766
+Yeah, nice.
+
+00:52:54.766 --> 00:52:58.766
+And are you do you have an infinite number of trees that you have to work through?
+
+00:52:58.766 --> 00:53:01.766
+Or is there like a set number that you're?
+
+00:53:01.766 --> 00:53:02.766
+It's finite.
+
+00:53:02.766 --> 00:53:03.766
+It's yeah, OK.
+
+00:53:03.766 --> 00:53:08.766
+I'm only cutting down the ones that are sort of that I'm considering to be a nuisance, which is OK.
+
+00:53:09.766 --> 00:53:13.766
+Not any of the like major hardwoods that are that are back there.
+
+00:53:13.766 --> 00:53:15.766
+It's like holly trees.
+
+00:53:16.766 --> 00:53:17.766
+Yeah, I love that.
+
+00:53:18.766 --> 00:53:23.766
+And then maybe the last thing to ask is you said to the question of pineapple on pizza.
+
+00:53:23.766 --> 00:53:24.766
+Of course not.
+
+00:53:24.766 --> 00:53:28.766
+Can you can you clarify that take?
+
+00:53:31.766 --> 00:53:33.766
+You're a strong no pineappler.
+
+00:53:34.766 --> 00:53:45.766
+Yeah, I I think I'm not a native New Yorker, but I lived there for 20 years, and so there's just you become infused with opinions about pizza.
+
+00:53:46.766 --> 00:53:57.766
+By by living there after some period of time, and I don't know, man, I just I get the Sweden and salty or sweet and savory thing, but.
+
+00:53:58.766 --> 00:54:04.766
+I don't know, pineapples, it's too strong, it masks the pizza flavor.
+
+00:54:05.766 --> 00:54:06.766
+Yeah, no, that's legit.
+
+00:54:06.766 --> 00:54:07.766
+I could see.
+
+00:54:08.766 --> 00:54:12.766
+If you're in New York, you have to, you know, toe the line or.
+
+00:54:14.766 --> 00:54:17.766
+Maybe there's a certain level of pizza purism.
+
+00:54:18.766 --> 00:54:22.766
+See anything else you want to share with the world or.
+
+00:54:23.766 --> 00:54:24.766
+Get out there.
+
+00:54:24.766 --> 00:54:26.766
+Yeah, it's been great talking to you guys.
+
+00:54:27.766 --> 00:54:28.766
+Yeah, it's been great talk to you.
+
+00:54:28.766 --> 00:54:31.766
+I feel like I love hearing about you.
+
+00:54:31.766 --> 00:54:40.766
+Just your process of experimenting with that because it's so candid, you know, just like how it was in the the things you tried.
+
+00:54:40.766 --> 00:54:43.766
+I feel like it's really useful to hear.
+
+00:54:45.766 --> 00:54:48.766
+I was skeptical, like I had a bad time with these things.
+
+00:54:48.766 --> 00:54:53.766
+I had a good time at these things and we're still figuring it out.
+
+00:54:53.766 --> 00:54:59.766
+So, yeah, I do feel like it's been a pretty, pretty mixed bag, like some good, some bad.
+
+00:55:01.766 --> 00:55:13.766
+It's not it's not like a panacea or it's also not like, you know, ruining everything, but it's definitely been sort of ups and downs.
+
+00:55:14.766 --> 00:55:33.766
+But I have to try the beads thing because it sounds like having a kind of workflow organizer or like a thing that you can say, like, here's a bunch of criteria that you need to satisfy before you can move on to the next kind of phase of development, whatever that means in that context would be pretty useful.
+
+00:55:34.766 --> 00:55:48.766
+Because right now it's just it's just like I'm going to internally generate something that I think should be a criteria, which is going to probably be something that's like the minimum criteria to reach the goal or whatever.
+
+00:55:48.766 --> 00:56:13.766
+Yeah, I mean, I think like I think basically what I'm finding is that the if you if you drive if you drive like the work that you're doing entirely from within like within a single coding agent session, basically you run up against like the agent's willingness to follow your instructions, which it will like it will willfully ignore, especially when the context like gets pretty full.
+
+00:56:13.766 --> 00:56:36.766
+And so basically, I think that the way that I expect that we're trending and the way that I'm trending with my own development is to create, like, basically lightweight, lightweight agent orchestrators, where you can essentially have like, call it an agentic loop where you supply the agent with a unit of work to do.
+
+00:56:37.766 --> 00:56:50.766
+And then when the agent returns and says, I completed the work, then you run the validation step so that you can control the they'll have the ultimate say as part of the loop where you validate the agent's work.
+
+00:56:50.766 --> 00:57:15.766
+And if you so you run the test suite, or like you check the, you know, test counts or whatever is like the the pass pass fail metric. And then if that step fails, then you you re invoke. So like the agent will commit, you validate and then if if the if the if the commit fails validation, or fails code review, then you go back to the agent, you're like, Nope, you failed, like, try again.
+
+00:57:15.766 --> 00:57:38.766
+And then you keep doing that until it fixes. And as soon as it's fixed, and you're satisfied, you're kind of loop orchestrate your agentic loop orchestrator validates the work, then you say, Okay, tasks done, move on. And so if you can, you know, essentially have an encode as much of that in code as possible. So it isn't like one long cloud code session or one long codec session.
+
+00:57:39.766 --> 00:58:02.766
+But actually, like you're but you're defining the the rules and the business logic about like, like, what constitutes a task? What does it mean to complete the task and to validate it and to give the agent permission to move on to the next task? And actually, like it's, you know, you can, you can invoke the agents as like, you know, give them a one shot prompt and an instruction to like, solve this task.
+
+00:58:02.766 --> 00:58:14.766
+You know, you can run that inside a sandbox, if you're uncomfortable with, like, bypassing permissions and cloud code, or like, you know, disabling sandbox and codecs, or whatever the equivalent is, and the other, the other agents.
+
+00:58:14.766 --> 00:58:38.766
+But I think we're really just at the at the very beginning of like, having a better understanding of like, what's the best way to orchestrate and use these agents like in a, in a safe manner, because while I've been enjoying, like building personal projects, and doing like a limited amount of work on positron with cloud code, like, I feel like I've also stressed the system and have come up against like a lot of its its limitations.
+
+00:58:38.766 --> 00:58:59.766
+And especially like the, you know, false confidence, the gaslighting, the, you know, asserting the asserting that it is completed work when it hasn't. But it's what I'm enjoying is like the experimentation and just like the joy of like, you know, learning and figuring this out. And I think we're all collectively trying to figure it out right now.
+
+00:59:00.766 --> 00:59:14.766
+Yeah, no, it's, it's definitely interesting to see what happens. I think I haven't found my my AI niche yet. But I'll keep I'll keep poking at it.
+
+00:59:14.766 --> 00:59:28.766
+I feel like the lesson here is just call up Wes and jam out on it. Because I feel like the two of you together are more are more than capable of converting that unit test suite. But yo, Philip, always always a joy.
+
+00:59:28.766 --> 00:59:30.766
+Yeah, thanks. Thanks. Thanks for coming on with us.
+
+00:59:30.766 --> 00:59:32.766
+Yeah, and excited to see your
+
+00:59:29.602 --> 00:59:48.602
+The
+
+00:59:48.602 --> 00:59:53.122
+test set is a production of PositPBC, an open source and enterprise tooling data science
+
+00:59:53.122 --> 00:59:54.802
+software company.
+
+00:59:54.802 --> 00:59:59.042
+This episode was produced in collaboration with Creative Studio Adji.
+
+00:59:59.042 --> 01:00:05.762
+For more episodes, visit thetestset.co or find us on your favorite podcast platform.

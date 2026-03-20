@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 1056
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.959262+00:00'
+  last_updated: '2026-03-20T11:32:56.700435+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1ELALQlO-yM/maxresdefault.jpg
   title: Tidy Data and tidyr -- Pt 2 Intro to Data Wrangling with R and the Tidyverse
   url: https://www.youtube.com/watch?v=1ELALQlO-yM
-  view_count: 67733
+  view_count: 67772
 ---
 image: thumbnail.jpg
 

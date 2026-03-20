@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   duration: 3472
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:22.505592+00:00'
+  last_updated: '2026-03-20T11:32:47.650293+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -132,7 +132,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9_dmsendWeU/maxresdefault.jpg
   title: From paramedic to leading analytics in pharma | Dan Haight | Data Science Hangout
   url: https://www.youtube.com/watch?v=9_dmsendWeU
-  view_count: 316
+  view_count: 318
 ---
 image: thumbnail.jpg
 

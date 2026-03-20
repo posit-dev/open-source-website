@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3893
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.836359+00:00'
+  last_updated: '2026-03-20T11:32:53.454105+00:00'
   like_count: 23
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LEZ1XVr-qd4/maxresdefault.jpg
   title: Data Science Hangout | Ivonne Carrillo Domínguez, Bixal | Transitioning to data engineering
   url: https://www.youtube.com/watch?v=LEZ1XVr-qd4
-  view_count: 817
+  view_count: 820
 ---
 image: thumbnail.jpg
 

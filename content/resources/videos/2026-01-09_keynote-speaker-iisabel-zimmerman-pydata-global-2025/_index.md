@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 2591
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.323675+00:00'
+  last_updated: '2026-03-20T11:32:57.422899+00:00'
   like_count: 4
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags:
@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LvNKWYKbKHc/maxresdefault.jpg
   title: Keynote Speaker-IIsabel Zimmerman-PyData Global 2025
   url: https://www.youtube.com/watch?v=LvNKWYKbKHc
-  view_count: 119
+  view_count: 124
 ---
 image: thumbnail.jpg
 

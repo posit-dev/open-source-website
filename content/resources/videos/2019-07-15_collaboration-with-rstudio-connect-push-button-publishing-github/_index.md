@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 149
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.959133+00:00'
+  last_updated: '2026-03-20T11:32:56.700363+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/z_Iu5-ZQMuk/maxresdefault.jpg
   title: Collaboration with RStudio Connect - Push Button Publishing + Github.
   url: https://www.youtube.com/watch?v=z_Iu5-ZQMuk
-  view_count: 3753
+  view_count: 3763
 ---
 image: thumbnail.jpg
 

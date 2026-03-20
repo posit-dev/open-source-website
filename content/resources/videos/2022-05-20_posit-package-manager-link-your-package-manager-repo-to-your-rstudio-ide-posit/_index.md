@@ -81,7 +81,7 @@ external:  # updated automatically, do not edit
   duration: 86
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:27.219838+00:00'
+  last_updated: '2026-03-20T11:32:53.454331+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/RcAjfaGxIWk/maxresdefault.jpg
   title: Posit Package Manager || Link Your Package Manager Repo to Your RStudio IDE || Posit
   url: https://www.youtube.com/watch?v=RcAjfaGxIWk
-  view_count: 1954
+  view_count: 1959
 ---
 image: thumbnail.jpg
 

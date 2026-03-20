@@ -1,6 +1,6 @@
 ---
 date: '2024-05-15'
-description: 'For more on How Pharma is Pioneering WebAssembly with webR & Shiny for FDA Clinical Trial Submissions: https://posit.co/blog/webr-fda-pilot/'
+description: 'For more on How Pharma is Pioneering WebAssembly with webR & Shiny for FDA Clinical Trial Submissions: https://posit.co/blog/webr-fda-pilot/ #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -59,11 +59,11 @@ external:  # updated automatically, do not edit
   comment_count: 0
   date: '2024-05-15T12:00:05Z'
   definition: hd
-  description: 'For more on How Pharma is Pioneering WebAssembly with webR & Shiny for FDA Clinical Trial Submissions: https://posit.co/blog/webr-fda-pilot/'
+  description: 'For more on How Pharma is Pioneering WebAssembly with webR & Shiny for FDA Clinical Trial Submissions: https://posit.co/blog/webr-fda-pilot/ #positshorts'
   duration: 24
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695583+00:00'
+  last_updated: '2026-03-20T11:32:49.221461+00:00'
   like_count: 30
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2rMlOXXsd9s/maxresdefault.jpg
   title: Future of Shiny to the FDA with WebR ✨
   url: https://www.youtube.com/watch?v=2rMlOXXsd9s
-  view_count: 1223
+  view_count: 1224
 ---
 image: thumbnail.jpg
 

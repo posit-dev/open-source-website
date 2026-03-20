@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 894
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529108+00:00'
+  last_updated: '2026-03-20T11:32:52.707727+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/rpYqqUlbpIw/maxresdefault.jpg
   title: Ellis Hughes | Packages and Process | Posit (2022)
   url: https://www.youtube.com/watch?v=rpYqqUlbpIw
-  view_count: 222
+  view_count: 223
 ---
 image: thumbnail.jpg
 

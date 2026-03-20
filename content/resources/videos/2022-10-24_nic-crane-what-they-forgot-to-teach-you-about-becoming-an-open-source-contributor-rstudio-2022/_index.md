@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 963
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529307+00:00'
+  last_updated: '2026-03-20T11:32:53.122315+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CiETLJvJ5BQ/maxresdefault.jpg
   title: Nic Crane | What they forgot to teach you about becoming an open source contributor | RStudio (2022)
   url: https://www.youtube.com/watch?v=CiETLJvJ5BQ
-  view_count: 362
+  view_count: 364
 ---
 image: thumbnail.jpg
 

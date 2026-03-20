@@ -1,0 +1,1288 @@
+WEBVTT
+
+00:00:00.240 --> 00:00:07.200
+Hadley, over to you. Thanks Ella. Let's go.
+
+00:00:09.920 --> 00:00:15.920
+Okay, you can hopefully see my screen and you can still see my screen.
+
+00:00:18.799 --> 00:00:25.200
+Yes, awesome. Okay, so thanks for having me and today I want to talk about using
+
+00:00:25.200 --> 00:00:32.080
+Claude Code for R. And I'm mostly going to be focusing on programming, not data analysis.
+
+00:00:33.680 --> 00:00:37.840
+Maybe you can ask me a bit about Claude Code for data analysis at the end if you want,
+
+00:00:37.840 --> 00:00:42.639
+but I want to focus on using it for software engineering because that's what I've been doing
+
+00:00:42.639 --> 00:00:50.639
+a bunch of lately. So to give you a little bit of a sense of what I've been using Claude Code for,
+
+00:00:50.639 --> 00:00:56.560
+I have been doing like a little bit of vibe coding. So I made my first Swift app so I could
+
+00:00:56.560 --> 00:01:04.000
+do a talk timer on my iPhone, which I guess I should be using today, but I've got. I also made
+
+00:01:04.000 --> 00:01:10.720
+a live polling app in Go and I also tried making an R package for generating slide images, which
+
+00:01:10.720 --> 00:01:18.000
+you'll see those images a little bit later. But I don't really want to talk about vibe coding today
+
+00:01:18.000 --> 00:01:24.800
+because I think you hear a ton about that already. What I want to talk about is
+
+00:01:26.800 --> 00:01:34.400
+just using it for coding because Claude Code has very quickly become an essential part of my
+
+00:01:34.400 --> 00:01:40.400
+software engineering toolkit. So most recently I've been using a dbplyr and test that and both
+
+00:01:40.400 --> 00:01:47.839
+of these are like big important packages where they have to be right. So dbplyr translates
+
+00:01:48.400 --> 00:01:55.360
+to SQL. It's eight years old. It's heavily used in enterprise workflows. Test that,
+
+00:01:55.360 --> 00:02:02.320
+use for unit testing and R. It's 16 years old and it's used by I think now over 10,000 R packages.
+
+00:02:02.320 --> 00:02:09.199
+So these are places like these are longstanding established R packages used by tons of people
+
+00:02:09.199 --> 00:02:17.679
+where it's important to get it right. And so Claude Code has now become like I think an
+
+00:02:17.679 --> 00:02:22.720
+indispensable part of my software engineering toolkit. So I'm going to start with a little
+
+00:02:22.720 --> 00:02:30.160
+bit of sort of provocation and then I'm going to perhaps ill-advisedly have a go at
+
+00:02:30.720 --> 00:02:39.360
+doing some live Claude Code demos for you. And so somewhat provocatively I'm going to start with a
+
+00:02:39.360 --> 00:02:47.440
+quote, a quote from me. And that is it's really starting to feel to me like Claude Code is just
+
+00:02:47.440 --> 00:02:54.559
+as important as Git for high quality software engineering. And I think this is a pretty
+
+00:02:55.440 --> 00:03:04.639
+provocative and maybe provoking statement, but I have been really impressed with the last round
+
+00:03:05.440 --> 00:03:13.039
+of models, particularly Opus 4.5 and 4.6 and their ability to write R code.
+
+00:03:15.759 --> 00:03:20.000
+Kind of in the small, not necessarily, they're not great at assembling like large
+
+00:03:20.000 --> 00:03:26.479
+chunks of code. They're not great at organizing, you know, thinking really big and figuring out
+
+00:03:26.479 --> 00:03:32.000
+what problems you want to solve. But they're certainly like often better than me at writing
+
+00:03:32.000 --> 00:03:36.960
+like functions that are correct. And I should also say like I'm going to be talking about
+
+00:03:36.960 --> 00:03:46.559
+Claude Code today. That's what I use. I think the other tools like Cursor and Cursor and Codex
+
+00:03:46.559 --> 00:03:54.000
+and Gemini, they're all kind of much of a muchness. But my sense is certainly for R code,
+
+00:03:54.000 --> 00:04:01.279
+Claude has the lead right now. And if this statement is a little scary
+
+00:04:02.240 --> 00:04:07.039
+to you, you know, I think that's totally reasonable. But to me, it feels like
+
+00:04:08.000 --> 00:04:15.360
+software engineering has like changed irrevocably. The G is out of the bottle and there's no way
+
+00:04:15.360 --> 00:04:23.839
+for us to stuff this back in. I certainly have like deeply ambivalent feelings about many of
+
+00:04:23.839 --> 00:04:31.440
+the consequences of generative AI and LLMs, but there's no going back. We have to
+
+00:04:32.079 --> 00:04:38.160
+like embrace this. We have to try and grapple with what this means. But I think the good news is like
+
+00:04:39.040 --> 00:04:45.839
+this has not taken any of the joy of programming away from me. Like I'm still,
+
+00:04:45.839 --> 00:04:54.559
+I still love my job. I still love engaging code. It's just the way that I engage with code has
+
+00:04:54.559 --> 00:05:01.200
+changed a little bit. Like no longer is it me like directly typing the code into the computer.
+
+00:05:01.200 --> 00:05:08.079
+It's me kind of like mediating my thoughts via Claude, who's then going to write a lot of the
+
+00:05:08.079 --> 00:05:17.600
+code. And to me, this is still like very much like a one-on-one model. Like certainly people
+
+00:05:17.600 --> 00:05:24.399
+are kind of spawning factories of robots who are doing their bidding, or you might have heard of
+
+00:05:24.399 --> 00:05:31.760
+Gastown, which is even more disturbing and independent and swarms of agents starting
+
+00:05:31.760 --> 00:05:38.559
+other agents and telling agents what to do. But I think this is definitely kind of like a fork in
+
+00:05:38.559 --> 00:05:46.239
+the path because while you certainly can use Claude code to really increase the quantity
+
+00:05:46.959 --> 00:05:53.920
+of code you're using, you could also use it to increase the quality of code that you're producing.
+
+00:05:54.880 --> 00:06:00.480
+And I think one of the things that's really interesting to me is that a lot of the best
+
+00:06:00.480 --> 00:06:07.760
+practices for humans actually turn out to be best practices for agents as well. And
+
+00:06:09.440 --> 00:06:15.760
+kind of weirdly and unfortunately, it feels like we're willing to do these things for
+
+00:06:16.320 --> 00:06:21.040
+agents that we've never been willing to do or have been less willing to do for our colleagues
+
+00:06:21.040 --> 00:06:26.720
+in the past. But this is just things like having meaningful file names is just as important
+
+00:06:26.720 --> 00:06:30.799
+today. We'll hopefully see a little bit later. Like Claude, when it's looking for files,
+
+00:06:30.799 --> 00:06:36.320
+it's going to take a stab at what you might name the file and glob through a bunch of directories.
+
+00:06:36.320 --> 00:06:42.399
+So just as useful for your AI assistant as for your human colleagues. Similarly,
+
+00:06:42.399 --> 00:06:48.239
+using consistent prefixes and suffixes for function names, file names, in the same way
+
+00:06:48.320 --> 00:06:55.920
+that these help situate humans, they also help situate agents. Similarly, using comments to
+
+00:06:55.920 --> 00:07:03.519
+capture the why are really important. LLMs, I think by default, still tend to write a lot of
+
+00:07:03.519 --> 00:07:07.920
+unnecessary comments. Comments that just kind of explain what they're doing, which are not so
+
+00:07:07.920 --> 00:07:13.760
+useful. But you can certainly prompt them to do better and you yourself can continue to write
+
+00:07:13.760 --> 00:07:20.160
+comments. And I think one of the things that I find a little interesting and surprising is like,
+
+00:07:20.160 --> 00:07:24.959
+I don't know, it feels like agents are better at reading the comments than I am. They will
+
+00:07:24.959 --> 00:07:30.880
+actually read stuff that previous me has written and take that into account, where it's very easy
+
+00:07:30.880 --> 00:07:37.839
+for me when I'm working on something to skip over. Another thing that turns out to be even more
+
+00:07:37.839 --> 00:07:44.640
+important for agents than for humans is like having high test coverage. Write unit tests
+
+00:07:44.640 --> 00:07:48.239
+and run them. And we'll talk more about this a little bit later, but I think one of the things
+
+00:07:48.239 --> 00:07:55.760
+that makes Cloud Code profoundly different to just using a chat on the web is this feedback loop,
+
+00:07:55.760 --> 00:08:00.959
+that it can write code and it can write tests and it can run the test and see if they're
+
+00:08:00.959 --> 00:08:06.320
+returning the right thing. And while there's certainly lots of potential failure modes there,
+
+00:08:06.320 --> 00:08:12.559
+that kind of idea of having the implementation of a code and expectations of the code written
+
+00:08:12.559 --> 00:08:17.920
+semi-independently, that really helps improve the quality of the code and makes it less likely that
+
+00:08:17.920 --> 00:08:23.600
+the agent is going to make a dumb mistake. Another thing that I've found really useful
+
+00:08:23.600 --> 00:08:31.200
+is aggressively refactoring code bases, refactorings that probably never would have
+
+00:08:31.200 --> 00:08:37.440
+reached the threshold of being worthwhile to do previously, because the cost of writing code
+
+00:08:37.440 --> 00:08:43.599
+has dropped so dramatically with Cloud Code that tackling these things is now much, much,
+
+00:08:43.599 --> 00:08:50.080
+much more worthwhile than it was before. And that helps you, obviously, not just humans,
+
+00:08:50.080 --> 00:08:55.039
+but also helps the agents that are going to be looking at the code. And similarly,
+
+00:08:55.440 --> 00:09:02.479
+enforcing style guides, telling the agent what to do, telling your human colleagues what to do,
+
+00:09:02.479 --> 00:09:10.080
+super, super useful. Because at the end of the day, I think it's still your code,
+
+00:09:10.080 --> 00:09:19.359
+regardless of whether you have produced it by hand typing it or you've used your robotic
+
+00:09:19.359 --> 00:09:25.840
+amanuensis to take your thoughts and turn them into code, you are still responsible for it.
+
+00:09:25.840 --> 00:09:32.159
+You have to own your work. Because if it goes wrong, you can't blame Cloud. It's your
+
+00:09:32.159 --> 00:09:38.719
+responsibility at the end of the day. And I think it's just as important as it ever was to continue
+
+00:09:38.719 --> 00:09:45.840
+to sweat the details. It's always been possible to half-ass writing code. It's easier than ever
+
+00:09:45.840 --> 00:09:53.520
+now. You can half-ass writing Cloud Code. But you can also put the time in and the effort in
+
+00:09:53.520 --> 00:10:01.679
+and really sweat the details and get something fantastic out of it. Because at the end of the day,
+
+00:10:02.400 --> 00:10:08.559
+I think a coding agent can take you where you want to go. And it can often do it more quickly
+
+00:10:08.559 --> 00:10:15.039
+than you might have been able to do so yourself. But it can't pick the destination. You are still
+
+00:10:16.799 --> 00:10:21.919
+in the driver's seat, although not in this image. You are still directing the process. It's your
+
+00:10:21.919 --> 00:10:28.000
+responsibility to figure out what is actually important. What are you trying to do?
+
+00:10:30.239 --> 00:10:35.039
+So that's kind of the provocation. I think Cloud Code is really important.
+
+00:10:36.640 --> 00:10:41.119
+Maybe a little provocatively, but I think it's probably as important to get to me today.
+
+00:10:41.840 --> 00:10:49.520
+And we all have to grapple. There are a lot of big feelings around this. We have to be grappling
+
+00:10:49.520 --> 00:10:56.320
+with this because it can make you so much more productive. And not just producing more code,
+
+00:10:56.320 --> 00:11:02.159
+but producing better code. So now I want to show you a little bit about what that looks like.
+
+00:11:02.719 --> 00:11:11.520
+So I think there are really four ways to interact with LLMs right now. The first is,
+
+00:11:11.520 --> 00:11:17.119
+and the place that I think pretty much everyone starts, is using a chatbot on the web. I think
+
+00:11:17.119 --> 00:11:21.520
+everyone's pretty familiar with this. They can be great for writing R functions. They can be great
+
+00:11:21.520 --> 00:11:28.479
+for all sorts of questions, I'm sure. Many of you understand. Many people are using these every day
+
+00:11:28.479 --> 00:11:34.080
+for all sorts of things, not just R code. And from there, you can kind of go in two directions.
+
+00:11:34.080 --> 00:11:38.960
+The one direction, which I'm not going to spend any time on today, is you can start writing code
+
+00:11:38.960 --> 00:11:44.559
+to use the chatbot. So you could use a package like Elmer, for example, if you're an R user.
+
+00:11:44.559 --> 00:11:49.840
+And you can use that for all sorts of data science tasks. And in particular, I think one of the data
+
+00:11:49.840 --> 00:11:56.400
+science superpowers you get with Elmer is, and LLMs, is the ability to turn unstructured data,
+
+00:11:56.400 --> 00:12:01.760
+whether that's text, or images, or audio, or video, kind of all of these types of data that
+
+00:12:01.760 --> 00:12:07.440
+as data scientists were pretty hard to wrestle with previously, you can use an LLM. You can
+
+00:12:07.440 --> 00:12:13.440
+use structured data tools to turn these into nice, tidy, rectangular data sets.
+
+00:12:13.440 --> 00:12:16.159
+And then you've got all of your existing tools to use with it.
+
+00:12:18.159 --> 00:12:23.119
+The other direction I think you can go to is, well, if you start doing a bunch of copying and
+
+00:12:23.119 --> 00:12:31.119
+pasting, well, if you're writing a bunch of code in Claude or chatGBT, you're going to start to
+
+00:12:31.119 --> 00:12:37.039
+do a bunch of copy and pasting. And to me, that's kind of feels like the bad old days,
+
+00:12:37.039 --> 00:12:42.159
+like before Suite, before R Markdown, before Cordo, where you'd be doing something in R,
+
+00:12:42.159 --> 00:12:46.640
+like you produce a nice plot, and you copy and paste it, and stick it into your Word document.
+
+00:12:46.640 --> 00:12:51.760
+And that's fine as far as it goes. But of course, your data changes. You made a mistake in the code.
+
+00:12:51.760 --> 00:12:56.640
+Now you've got to re-copy and paste. And that turns out that repeated copying and pasting from
+
+00:12:56.640 --> 00:13:03.520
+one program to another is just a bad workflow. It's frustrating. It's prone. It's full of inaccuracies.
+
+00:13:03.520 --> 00:13:09.599
+So the next place you might go is instead of using an external chatbot, you might embed
+
+00:13:10.239 --> 00:13:16.320
+the chatbot inside of wherever you're writing code. And so you might have heard we've been
+
+00:13:16.320 --> 00:13:23.039
+recently working on this tool called Posit Assistant for RStudio. And we have Positron,
+
+00:13:23.039 --> 00:13:27.919
+Assistant for Positron, soon to be unified. So we'll have Posit Assistant everywhere.
+
+00:13:27.919 --> 00:13:33.520
+But two big advantages here. First of all, you're no longer copying and pasting. The agents can now
+
+00:13:33.520 --> 00:13:39.679
+edit your scripts directly. And the other big advantage is they have so much more context
+
+00:13:39.679 --> 00:13:45.200
+about what you can do. They know what packages you have loaded. They know what variables are
+
+00:13:45.200 --> 00:13:51.039
+going on in your R session. Because they have all of that additional context, they can do
+
+00:13:51.039 --> 00:13:59.520
+a much, much better job. And then a step further away from that, the next step is moving towards
+
+00:13:59.520 --> 00:14:07.119
+these coding agents, where now you mostly just interact with this text box in a terminal,
+
+00:14:08.159 --> 00:14:13.200
+by and large. And it's going to go away into a bunch of autonomous stuff.
+
+00:14:14.159 --> 00:14:18.799
+It's a little bit hard to explain this. I'm going to take my best stab. But we're going to switch
+
+00:14:18.799 --> 00:14:25.200
+to a demo shortly. So if this doesn't make sense, don't worry too much. Hopefully, you'll see more
+
+00:14:25.200 --> 00:14:32.799
+about how this feels in practice. Because it doesn't feel like this is so different in terms
+
+00:14:32.799 --> 00:14:40.479
+of the components. But just the feel of using it is quite, quite different. So what makes a coding
+
+00:14:40.719 --> 00:14:45.679
+agent? Well, first of all, the least important difference is you're typically in a terminal
+
+00:14:45.679 --> 00:14:52.080
+user interface rather than a GUI. I think this is mostly a cosmetic difference. I think we're
+
+00:14:52.080 --> 00:14:58.960
+seeing these kind of terminal user interfaces, I don't know, basically. Because I think every
+
+00:14:58.960 --> 00:15:05.520
+software engineer feels a little bit threatened by LLMs. And so we're kind of going back a little
+
+00:15:05.520 --> 00:15:12.479
+bit in this kind of nostalgic era of the 80s and 90s and interacting with the computer via terminal.
+
+00:15:13.679 --> 00:15:19.440
+It's also just a big old custom system prompt with some advice about writing code. Again,
+
+00:15:19.440 --> 00:15:24.000
+not that useful and not that interesting. A bigger difference is it comes with a bunch of
+
+00:15:24.000 --> 00:15:29.359
+built-in tools. Tools for doing things like searching for files in the current directory
+
+00:15:29.359 --> 00:15:36.559
+or reading parts of a file or entire file. And then also tools for changing those
+
+00:15:37.679 --> 00:15:43.039
+files, like creating new files or editing existing files. And then the kind of a piece
+
+00:15:43.039 --> 00:15:49.840
+that brings us all together is that it can also run tools on the command line. It can basically
+
+00:15:49.840 --> 00:15:55.840
+run any tool on your computer. And that means it can run R code. And that gives
+
+00:15:56.719 --> 00:16:01.760
+Cloud Code this feedback loop. It's no longer just blindly creating something, giving it to you,
+
+00:16:01.760 --> 00:16:07.599
+the human, to run and give it feedback. It's going to autonomously run code, look at the results,
+
+00:16:07.599 --> 00:16:12.719
+and then make decisions based on that. And I kind of pulled this slide from a very old
+
+00:16:14.719 --> 00:16:20.239
+workshop I gave about writing, developing code, developing packages in R using div tools.
+
+00:16:20.239 --> 00:16:23.840
+But this is what you're trying to do as a human, right? You want to build up a good
+
+00:16:24.640 --> 00:16:31.200
+feedback loop that no one reliably writes code correctly first time. I mean, maybe some people
+
+00:16:31.200 --> 00:16:37.119
+do. I certainly don't. But so you need some feedback loop. You need to be able to write code
+
+00:16:37.119 --> 00:16:44.559
+and then test it to make sure it's correct. And this role of unit testing is still incredibly,
+
+00:16:44.559 --> 00:16:48.640
+incredibly important, more important today than it's ever been, because it gives you this kind
+
+00:16:48.640 --> 00:16:54.320
+of double entry bookkeeping system where you've kind of declared what you want in two different
+
+00:16:56.400 --> 00:17:02.799
+places in two slightly different ways. And if those two agree, then the chances are that the
+
+00:17:02.799 --> 00:17:07.680
+code is correct. Of course, it's still possible to make the same mistake in multiple places,
+
+00:17:07.680 --> 00:17:13.439
+but much, much, much less likely to make the same mistake in two places in exactly the same.
+
+00:17:14.400 --> 00:17:21.439
+And so this is what code gives you, particularly when you couple it with some information about
+
+00:17:21.439 --> 00:17:28.319
+how to run R code. So when you're using code code, you're going to have a core MD. That is what we
+
+00:17:28.319 --> 00:17:33.920
+give instructions that needs to know to use your tool, understand your tool. And our kind of
+
+00:17:33.920 --> 00:17:39.280
+standard code code set up has all of this information about, well, how do you run R code?
+
+00:17:39.599 --> 00:17:44.000
+Well, you use the R script command line, you call DevTools and you run that code,
+
+00:17:44.000 --> 00:17:48.400
+you run the tests, you do this. If you want to document the baggage, you do that. If you want to
+
+00:17:49.599 --> 00:17:56.319
+check the package, you do this. And so this gives for the ability to not just do stuff,
+
+00:17:56.319 --> 00:18:04.640
+but to kind of tell if it's done the right thing. So let's dive in. Oops, and I canceled my
+
+00:18:05.439 --> 00:18:18.000
+screen share. Let's dive in with an example. I'm going to try and hide my Zoom time.
+
+00:18:18.000 --> 00:18:35.839
+Okay. So I'm here in the Roxygen package and I have found three issues that we're going to have
+
+00:18:35.839 --> 00:18:41.920
+a go at for code solving. So we're going to kind of tear up in terms of difficulty,
+
+00:18:42.560 --> 00:18:49.839
+but this first one, let's take a look at the issue. Pausing Nimble code gives a
+
+00:18:51.359 --> 00:18:59.680
+unclosed curly bracket. And I looked at this issue earlier and I immediately
+
+00:19:01.040 --> 00:19:08.160
+popped into my head, I better know what's going on. And that is when you document something that's
+
+00:19:08.160 --> 00:19:14.880
+not a function with Roxygen2, it automatically calls class on it. So it can generate something.
+
+00:19:14.880 --> 00:19:19.439
+Let's see if I can give an example of what's happening.
+
+00:19:27.199 --> 00:19:33.439
+So this is an example of documenting a dataset. And whenever you document something that's not
+
+00:19:33.439 --> 00:19:39.040
+a function, it ends up in this kind of dataset path somewhat weirdly. And so if you document
+
+00:19:39.040 --> 00:19:44.160
+this specific type of object produced by the Nimble package, you're going to get an error.
+
+00:19:44.160 --> 00:19:50.239
+And I'm pretty sure it's because it's an object class. And this reminds me of this very weird
+
+00:19:50.239 --> 00:20:00.959
+thing that if you quote a single back tick, let me quote this, let me quote that, it has this very
+
+00:20:00.959 --> 00:20:05.920
+weird class. So I kind of knew that from my background knowledge. I put that kind of hint
+
+00:20:05.920 --> 00:20:13.040
+in here. I bet we can simplify it. Now I see that's not actually correct. It should be like this.
+
+00:20:17.199 --> 00:20:22.079
+Now that I've actually tested that interactively. So I'm recording this knowledge in the issue.
+
+00:20:22.079 --> 00:20:25.839
+I think that's good practice. Whenever I'm working on a more complicated issue,
+
+00:20:25.839 --> 00:20:29.680
+I try to record that knowledge in the issue. That's good for me coming back.
+
+00:20:30.239 --> 00:20:37.119
+And hopefully the quad code will pick up on this. So I'm going to open up a terminal.
+
+00:20:39.280 --> 00:20:42.319
+And I've got to clear this earlier. Oh, let me see.
+
+00:20:43.680 --> 00:20:46.719
+Seeing everything I was doing before. So I'm in a terminal.
+
+00:20:49.839 --> 00:20:54.880
+And I'm going to launch quad code. So I'm just running this inside a terminal inside Positron,
+
+00:20:54.959 --> 00:21:02.319
+which is kind of crazy. And then I'm going to tell it what to do. And one super kind
+
+00:21:02.319 --> 00:21:05.359
+of interesting technique is I can say, okay, just fix this issue.
+
+00:21:08.079 --> 00:21:14.560
+And it's going to think a little bit. And so one of the things that says in our quad code is how
+
+00:21:14.560 --> 00:21:19.599
+to find out more information about the issue. So it's going to use the GH tool. It's going to
+
+00:21:19.599 --> 00:21:23.520
+download that issue and it's going to read all the comments. So it's doing much like you would
+
+00:21:23.520 --> 00:21:27.760
+do as a human, right? If I told you to fix this issue, well, the first thing you're going to do
+
+00:21:27.760 --> 00:21:34.239
+is go and read it. And it's going to search. Okay. So it's gone off.
+
+00:21:34.239 --> 00:21:54.479
+Okay. So it did that. It failed. Maybe it listened to me. It's finally figured out,
+
+00:21:54.479 --> 00:21:59.839
+okay, I'm going to do this. So one of the things that quad code does, it's not particularly
+
+00:22:00.640 --> 00:22:08.880
+brilliant. What it is, is it's like dogged. It is just going to grind away again and again and
+
+00:22:08.880 --> 00:22:13.920
+again. And it's going to make a ton of done mistakes. Often it's sometimes it corrects
+
+00:22:13.920 --> 00:22:20.000
+itself. Sometimes it doesn't, but this thing has grit. It's just going to grind away until it
+
+00:22:20.000 --> 00:22:24.400
+solves this problem. So it's doing a few little experiments, like, okay, I'm going to see what
+
+00:22:24.400 --> 00:22:34.640
+this is. Just doing some investigation. Okay. It's doing a little experiment where it's going
+
+00:22:34.640 --> 00:22:42.239
+to try and document it. And this is specifically, okay, it's not doing a very good job.
+
+00:22:43.199 --> 00:22:48.640
+So this is the type of thing where like, if I wasn't in a talk, you could just let it like
+
+00:22:48.640 --> 00:22:57.680
+grind away for, oh my gosh, what is it doing now? Okay. So it's going to make a whole entire
+
+00:22:57.680 --> 00:23:03.119
+package somewhere. And it's just checking with me that it's okay to run it. It's going to document
+
+00:23:03.119 --> 00:23:09.199
+it. It's fine. Sure. It's going to read this file.
+
+00:23:14.800 --> 00:23:23.199
+I'm going to steer it. Try documenting.
+
+00:23:34.079 --> 00:23:38.479
+Okay. It's just going to hear off. I'm just going to like let it do a bunch of stuff and
+
+00:23:40.160 --> 00:23:46.880
+let's see how, okay. Okay. Yes. Awesome. So it's finally, it's created like a reproducible
+
+00:23:46.880 --> 00:23:51.760
+example, right? Again, it's working much like you might tackle this as a human. Like the first thing
+
+00:23:51.760 --> 00:23:57.199
+it does is create a reproducible example. And the kind of thing that's like cool about the
+
+00:23:57.199 --> 00:24:03.680
+reproducible example is it actually went away and created an entire like tiny little package,
+
+00:24:04.239 --> 00:24:07.599
+which is something like, you know, maybe I would eventually do,
+
+00:24:07.599 --> 00:24:12.400
+but it's kind of annoying. It would take a little while. And so it's finally,
+
+00:24:14.719 --> 00:24:17.760
+oh, this is interesting. Okay. So it's decided to fix it.
+
+00:24:18.560 --> 00:24:23.119
+Figured out what the problem is. It decided to call it the escape ID braces function.
+
+00:24:23.680 --> 00:24:28.880
+And then it's like, oh, actually, well, I need to create that function too. So it goes away and does
+
+00:24:28.880 --> 00:24:44.160
+that. So now it's going to check it. And then we'll see if it's successful. Okay. So produces it. And
+
+00:24:44.160 --> 00:24:49.760
+so now it's going to add a test. So that's good. And it's going to figure it out. Actually, it
+
+00:24:50.560 --> 00:24:56.880
+doesn't have to recreate the entire thing. The entire document is now this calls the format
+
+00:24:56.880 --> 00:25:12.560
+helper that it can actually use. And then it's added a new bullet point and it's going to go
+
+00:25:12.560 --> 00:25:18.640
+away and change it. And at this point, I'm just going to open my Git pane and just see what it's
+
+00:25:18.640 --> 00:25:29.680
+actually done. That news bullet. If you look at my core.md, like there's a, so then this is all
+
+00:25:29.680 --> 00:25:35.520
+from, we have a helper in the development version of use this called use code code that will create
+
+00:25:35.520 --> 00:25:41.520
+this, but this just kind of, this just accumulates all of the little things it's done wrong when it
+
+00:25:41.520 --> 00:25:48.079
+adds news bullets in the past. So I've explicitly told it like, okay, put the function name first
+
+00:25:48.079 --> 00:25:56.319
+and reference the issue number. And what's this changed here? Okay. It's added a test.
+
+00:25:59.359 --> 00:26:05.520
+And that looks correct. So the one thing I might do here is,
+
+00:26:06.319 --> 00:26:27.760
+and I'm going to try and be realistic with the way I actually type. The other thing that's great
+
+00:26:27.760 --> 00:26:32.959
+about when you're working with LLMs is I just like slam my fingers on the keys.
+
+00:26:33.839 --> 00:26:40.000
+And, you know, if various things I'm missing or out of order, then I'm just like, okay,
+
+00:26:41.040 --> 00:26:46.880
+go, go for it. And it will normally figure it out. So if I was doing this for human,
+
+00:26:46.880 --> 00:27:03.520
+oh, gosh, no. Okay. So it's like, okay. Actually, wait, don't do that. It isn't.
+
+00:27:05.359 --> 00:27:11.680
+Okay. Okay. Okay. I'll take, I'll just keep going for, okay.
+
+00:27:16.880 --> 00:27:28.719
+Okay. So now I've done the specs. And so I don't yet trust code to do any of the get stuff for me.
+
+00:27:28.719 --> 00:27:44.560
+So now I'm just going to make this, I'll call it escape braces.
+
+00:27:44.560 --> 00:28:02.400
+And now humans are going to read this. So I have to type carefully.
+
+00:28:02.400 --> 00:28:20.239
+And now I've already forgotten what issue that was. Fixes 1744. I'll commit that and push that.
+
+00:28:20.239 --> 00:28:33.280
+So what I'll typically do with a pull request like this, or in fact, any pull request I do
+
+00:28:33.280 --> 00:28:37.599
+that isn't going to be reviewed by another separate human, is I'll just like let this sit,
+
+00:28:37.599 --> 00:28:41.839
+like ideally for at least 24 hours. So I've kind of like forgotten what I did,
+
+00:28:42.800 --> 00:28:47.119
+because that's about as long as my memory lasts. And then I'll come back and kind of look at it
+
+00:28:47.119 --> 00:28:53.119
+with fresh eyes. And then I can be like, okay, well, you know, this looks good or this doesn't.
+
+00:28:56.160 --> 00:29:02.640
+A problem solved. So let's now tackle a slightly, how are we going for time?
+
+00:29:05.920 --> 00:29:12.640
+Got about 15 minutes. Okay. Okay. I think we'll go. So let's, I'm going to skip this.
+
+00:29:13.280 --> 00:29:16.239
+Let's skip this one. It's a little bit more complicated and jump to
+
+00:29:16.800 --> 00:29:26.800
+this bigger issue, which is to move to a 4.0 dependency. So let's switch back to Positron.
+
+00:29:26.800 --> 00:29:36.000
+I'm going to close this PR. I'm going to switch back to Quads. And one thing I'm going to do here
+
+00:29:36.000 --> 00:29:40.959
+is I'm going to clear it. And this is basically just, you don't have to do this, but I'm basically
+
+00:29:40.959 --> 00:29:45.839
+saying like, I'm tackling a new problem now. So just ignore everything we've talked about.
+
+00:29:45.839 --> 00:29:51.199
+We're going to tackle something new. And what I want to tackle in this one is currently
+
+00:29:51.199 --> 00:30:04.000
+Roxygen 2 depends on R3.6. But according to the tidyverse backward compatibility rules,
+
+00:30:04.000 --> 00:30:12.160
+we can now move to R4.0. And so this is kind of a bigger job. So I'm going to say, come up with
+
+00:30:12.160 --> 00:30:30.239
+a plan for upgrading Roxygen 2 to, from R3.6 to 4.0. Think about pipes, inline lenders,
+
+00:30:32.479 --> 00:30:38.160
+and raw drinks. And this is what Michael suggested.
+
+00:30:42.160 --> 00:31:02.800
+So rather than, so the big thing, the big difference here is I'm asking you to come
+
+00:31:02.800 --> 00:31:06.959
+up with a plan. So I'm not going to say, if it's a simple thing, I'll just say, go and do it.
+
+00:31:07.520 --> 00:31:11.359
+But for bigger tasks, I'll say, hey, can you come up with a plan first?
+
+00:31:12.719 --> 00:31:18.319
+And so let's see what it's going to do. Okay. Well, first it's going to
+
+00:31:21.359 --> 00:31:29.920
+research. Okay. It's going to actually do some Googling to figure out what are new features in
+
+00:31:29.920 --> 00:31:35.599
+R4.0. Okay. That's kind of cool. So you can see it's doing a couple of things at the same time.
+
+00:31:36.479 --> 00:31:44.319
+It's exploring the code, and it's exploring what are R4.0 features, and it's looking for that
+
+00:31:44.319 --> 00:31:52.239
+issue I pointed to. So, oh gosh, now it's reading the news. Good luck with that.
+
+00:31:54.719 --> 00:32:02.400
+Well, we'll see how it goes. So again, Cloud Code, not always, like obviously does,
+
+00:32:02.400 --> 00:32:08.400
+is not as intimately familiar with what we might do as maybe I am on a good day,
+
+00:32:08.400 --> 00:32:13.520
+but it's going to go off and do a bunch of research. It's just going to churn away,
+
+00:32:14.560 --> 00:32:21.599
+like reading a lot of webpages, which also reminds me, like, this is one of the things
+
+00:32:21.599 --> 00:32:26.479
+that I keep meaning to do, which would be useful for humans too. Like, because in the tidyverse,
+
+00:32:27.119 --> 00:32:35.119
+we are like five years behind the latest in R. I keep meaning to make us write a blog post. Like,
+
+00:32:36.239 --> 00:32:39.839
+we should write a blog post. Like, hey, we can finally use R4.0. Like,
+
+00:32:39.839 --> 00:32:45.599
+what are all the cool new features in R4.0? Okay. So what's it doing?
+
+00:32:49.359 --> 00:32:51.920
+Okay. So it's come up with a plan. So let's read the plan.
+
+00:32:52.560 --> 00:33:00.719
+It's going to bump the R version. Okay. That's a good start. Okay. Forgotten about
+
+00:33:01.920 --> 00:33:06.880
+and strings as factors went away in R4.0. So it can get rid of all of these.
+
+00:33:09.439 --> 00:33:14.800
+It can also convert single line anonymous functions to use this new syntax.
+
+00:33:17.359 --> 00:33:19.280
+And it can use raw strings.
+
+00:33:19.662 --> 00:33:24.542
+You convert, so you convert single line anonymous functions to use this new syntax
+
+00:33:26.702 --> 00:33:31.402
+And it can use RAW Strings instead of these, like, really complicated, uh
+
+00:33:31.742 --> 00:33:37.942
+Let's see if we can find an example
+
+00:33:43.502 --> 00:33:45.502
+I bet there's more in the tests
+
+00:33:45.502 --> 00:33:47.502
+Uh
+
+00:33:49.422 --> 00:33:56.942
+Let me say, uh, look in the tests for all places
+
+00:34:02.142 --> 00:34:06.462
+So this this is like really good because I can inspect its plan and I can be like, oh, okay
+
+00:34:06.622 --> 00:34:08.622
+Oh, you forgot about this
+
+00:34:09.181 --> 00:34:11.582
+Um, okay, so that refined me
+
+00:34:12.861 --> 00:34:14.861
+Yeah
+
+00:34:15.181 --> 00:34:19.181
+Uh, and I just have to think I don't think it uses
+
+00:34:23.502 --> 00:34:25.822
+The other thing we might want to check is does it use
+
+00:34:28.061 --> 00:34:30.462
+Does use per so maybe it uses
+
+00:34:32.142 --> 00:34:34.142
+Oh, yeah, so I should can also say
+
+00:34:38.621 --> 00:34:41.742
+Oh, yeah, so I don't know if you I kind of skipped back there pretty quickly
+
+00:34:41.742 --> 00:34:45.341
+But it created a regular expression to search for yeah, look at this
+
+00:34:45.822 --> 00:34:49.441
+It's like looking for all the places where there might be tons and tons of backslashes
+
+00:34:50.462 --> 00:34:53.182
+Uh, one of the things I think I might have gotten better now
+
+00:34:53.182 --> 00:34:57.742
+But one of the things that I thought was really funny is that at least when I tried this out a while ago
+
+00:34:57.822 --> 00:35:00.941
+It reliably create incorrect regular expression
+
+00:35:01.021 --> 00:35:08.142
+So like creating the right regular expression to find like three backslashes in the row is just as hard as for quadcode
+
+00:35:09.021 --> 00:35:11.021
+for humans
+
+00:35:11.902 --> 00:35:15.502
+So it's going to turn away and I'll also say don't forget
+
+00:35:16.621 --> 00:35:18.621
+to look for
+
+00:35:19.261 --> 00:35:21.261
+That indicate anonymous
+
+00:35:22.862 --> 00:35:24.862
+Old style
+
+00:35:30.862 --> 00:35:35.502
+And so i'm kind of like it's doing stuff i'm giving it feedback, uh, it kind of will hopefully
+
+00:35:36.461 --> 00:35:38.302
+um
+
+00:35:38.302 --> 00:35:44.382
+Integrate that nicely but the big idea here is like the complicated stuff really really worthwhile to do a plan
+
+00:35:44.782 --> 00:35:49.742
+Because then you can inspect it look for any big problems and then you can say go
+
+00:35:49.821 --> 00:35:54.302
+okay, go go off and do that, which uh, we won't have time for today, but
+
+00:35:58.782 --> 00:36:02.082
+Let's see how much longer it takes
+
+00:36:02.722 --> 00:36:07.841
+So, hopefully a little bit it'll come up with an updated plan
+
+00:36:09.681 --> 00:36:11.681
+It's searching
+
+00:36:12.782 --> 00:36:14.782
+Thinking
+
+00:36:17.841 --> 00:36:19.841
+Well, I was doing that maybe
+
+00:36:20.162 --> 00:36:25.442
+A couple of more minutes on your on your talk for time for q a.m. Wrap up, please. Yep. Okay
+
+00:36:25.681 --> 00:36:28.162
+So we'll leave it there. It's come up with a
+
+00:36:28.162 --> 00:36:33.522
+Good plan and i'm gonna quickly so that's to conclude it
+
+00:36:35.922 --> 00:36:37.922
+So what I wanted to um
+
+00:36:38.561 --> 00:36:43.601
+You know really emphasize is that I think what you see so much of ford code like in the
+
+00:36:44.642 --> 00:36:51.841
+The media with all of the sort of vibe coding and you know, like driving through the desert as fast as you possibly can
+
+00:36:52.082 --> 00:36:55.761
+You know like driving through the desert as fast as you possibly can
+
+00:36:56.481 --> 00:36:59.121
+Uh running over anything that might be in your way
+
+00:37:00.382 --> 00:37:05.601
+Absolutely, you can do that with cord code, but there is I think an alternative pathway
+
+00:37:05.601 --> 00:37:08.502
+You can take which is really thinking about quality
+
+00:37:09.041 --> 00:37:13.761
+And I would you know strongly encourage you to adopt that mindset when you look at cord code
+
+00:37:15.522 --> 00:37:17.522
+And so just to kind of like
+
+00:37:18.002 --> 00:37:20.802
+Thumb up and I forgot to update these images, I guess
+
+00:37:21.442 --> 00:37:27.782
+So, you know the the genie is out of the bottle I think software engineering has changed irrevocably
+
+00:37:29.261 --> 00:37:33.841
+Regardless of how you feel about that. You've kind of got to figure out ways to cope with it
+
+00:37:34.162 --> 00:37:40.802
+And but at least in my experience you can still have a huge amount of fun programming and writing our code
+
+00:37:42.481 --> 00:37:48.082
+And you just have to change your mindset that you're maybe no longer directly typing our code you're talking with
+
+00:37:48.642 --> 00:37:50.881
+You're talking with claude it is still
+
+00:37:51.601 --> 00:37:53.601
+It is producing the code for you
+
+00:37:53.922 --> 00:38:01.601
+And you but you still absolutely get out what you put in like you can create sloppy vibe coded garbage
+
+00:38:02.721 --> 00:38:07.281
+Sure, go ahead and do that if you want, but you can also use these tools to produce
+
+00:38:08.082 --> 00:38:10.082
+You know really high quality
+
+00:38:10.962 --> 00:38:15.701
+Pieces of art it's not going to like save you that much time compared to what you would have done previously
+
+00:38:16.422 --> 00:38:20.522
+But I think you can go further you can tackle problems in new domains
+
+00:38:21.302 --> 00:38:26.582
+And you can still continue to produce really high code high quality code
+
+00:38:27.862 --> 00:38:29.862
+Thank you
+
+00:38:30.742 --> 00:38:32.981
+Oh, thank you so much hudley that was
+
+00:38:33.781 --> 00:38:35.781
+so fascinating to
+
+00:38:35.941 --> 00:38:40.422
+To to hear your thoughts on that but also to see in practice how it all
+
+00:38:41.062 --> 00:38:44.101
+How it all works and how you use it. Uh, we've got about
+
+00:38:44.582 --> 00:38:48.902
+Five to seven minutes for for a q a we've had 10 in the chat
+
+00:38:49.062 --> 00:38:53.381
+And we've been asking people to upvote them because I don't think we've got time to go through all of them
+
+00:38:53.941 --> 00:38:57.462
+um, but the the top question that you're getting is
+
+00:38:58.022 --> 00:39:02.022
+If ai generates code replaces our need to type code
+
+00:39:02.501 --> 00:39:06.022
+What would you say are the key skills for a data scientist now?
+
+00:39:06.182 --> 00:39:10.101
+And i'm going to extend that slightly to data scientists and software engineer
+
+00:39:10.821 --> 00:39:12.821
+Yeah, uh, yeah
+
+00:39:12.981 --> 00:39:15.941
+I mean the the one thing that's obvious to me is like
+
+00:39:16.582 --> 00:39:18.582
+like maybe like I think you have the
+
+00:39:19.381 --> 00:39:21.381
+the relative value of
+
+00:39:21.622 --> 00:39:23.622
+Writing code has decreased
+
+00:39:24.261 --> 00:39:30.981
+but the relative value of reading code has increased because you still need to like if you don't know what
+
+00:39:31.622 --> 00:39:35.062
+That code is doing you're in a very very dangerous place
+
+00:39:35.622 --> 00:39:41.221
+So you still like all of those skills around reading and understanding and critiquing and thinking about code
+
+00:39:41.541 --> 00:39:46.582
+Are super super critical. I think that's one place where it's clear like you still want to have a human loop
+
+00:39:46.981 --> 00:39:49.862
+You still want to be you know, checking what's going on
+
+00:39:50.501 --> 00:39:56.022
+the other thing which is kind of harder to illustrate in a little snippet like this is they just don't have a good sense of
+
+00:39:56.022 --> 00:39:56.742
+like
+
+00:39:56.742 --> 00:39:57.862
+the big
+
+00:39:57.862 --> 00:40:04.101
+Picture stuff like obviously they don't know what you should be doing. They don't know like for data analysis. They're also like not good
+
+00:40:04.661 --> 00:40:10.422
+But I should say the other big difference with data analysis between data analysis and software engineering is software engineering
+
+00:40:10.422 --> 00:40:12.182
+You have unit tests
+
+00:40:12.182 --> 00:40:16.101
+Like, you know what the correct answer is and you can enforce that
+
+00:40:16.661 --> 00:40:21.381
+When you're doing data analysis when you're doing data science, you do not know what the correct answer is
+
+00:40:22.182 --> 00:40:27.381
+And it's bringing this like combination of like skepticism and curiosity to it as a human
+
+00:40:27.941 --> 00:40:35.142
+But that feedback loop is missing and I think it makes it much much harder for it's going to take longer for ai to really
+
+00:40:35.682 --> 00:40:38.022
+transform data science in the same way it has
+
+00:40:38.661 --> 00:40:39.941
+um
+
+00:40:39.941 --> 00:40:41.142
+software engineering
+
+00:40:41.142 --> 00:40:46.981
+But certainly like the cost of making like a simple shiny app to interactively explore some part of your data
+
+00:40:47.221 --> 00:40:53.462
+That has dropped from you know, being a multi-hour investment to be maybe, you know, two minutes of work
+
+00:40:53.862 --> 00:40:56.742
+And so it's really changed. I think it's really changing
+
+00:40:57.462 --> 00:40:59.221
+uh the trade-offs
+
+00:40:59.221 --> 00:41:04.742
+So I I don't know how that's going to play off but play out in the long run like like no one knows that
+
+00:41:05.142 --> 00:41:08.501
+But I think you know pushing for higher quality by
+
+00:41:08.981 --> 00:41:14.661
+Like doing more by instead of having to struggle to write that shiny app whip up a quick prototype
+
+00:41:14.881 --> 00:41:18.981
+100% fine to vibe code that you're the only person that's going to be using it
+
+00:41:19.062 --> 00:41:21.302
+You're going to use it for 15 minutes and throw it away
+
+00:41:21.941 --> 00:41:24.122
+Like as the cost of code decreases
+
+00:41:24.902 --> 00:41:27.802
+the value of these like throwaway apps increases
+
+00:41:28.422 --> 00:41:33.781
+And it gives you that ability to kind of like really narrow in like an interesting bit of data and explore that
+
+00:41:35.541 --> 00:41:37.541
+Thank you
+
+00:41:37.541 --> 00:41:38.821
+Yeah, it's yeah
+
+00:41:38.821 --> 00:41:44.821
+It's so interesting what you say about like the reading and the writing and how those how those how that balance shifts
+
+00:41:45.781 --> 00:41:50.022
+I guess kind of a follow-up question to that is our is our next most upvoted question
+
+00:41:50.182 --> 00:41:58.182
+Which is that there was a randomized trial by actually by a pro llm organization that found that llm assisted bug fixes
+
+00:41:58.341 --> 00:42:05.221
+Actually end up taking approximately 20% more developer time while the developer thought they were saving time
+
+00:42:05.622 --> 00:42:08.101
+And whilst as if says he's not an active lm
+
+00:42:08.422 --> 00:42:14.182
+M user your example kind of resonates for me and this question popped up on the on the curly brace example
+
+00:42:14.581 --> 00:42:19.562
+Would you have fisked this example braces bug faster on your own? Like what's been your experience?
+
+00:42:20.182 --> 00:42:20.822
+That's yeah
+
+00:42:20.822 --> 00:42:26.422
+that's an interesting one because I think that's a class of problems of like we knew like I know like I'm
+
+00:42:26.661 --> 00:42:32.262
+Like I know there's like one line of code that I need to change to fix that which is basically what the l did
+
+00:42:32.901 --> 00:42:36.262
+But for me to like remember where that line of code is
+
+00:42:37.302 --> 00:42:41.541
+I mean, maybe I would have been able to track it down, but I don't think it would have been
+
+00:42:42.502 --> 00:42:48.822
+That much faster and the kind of advantage of like, you know, I would have if I was doing this in real life
+
+00:42:48.901 --> 00:42:50.901
+I would have like just let it rip
+
+00:42:50.901 --> 00:42:53.141
+While I was like triaging other bugs
+
+00:42:53.141 --> 00:42:57.541
+So I would be able to do something at the same time that I was tracking down that problem
+
+00:42:57.942 --> 00:43:05.781
+So I I 100% agree that it is very easy to pull yourself that to make yourself feel like you're moving faster
+
+00:43:06.182 --> 00:43:10.581
+With an lm where you're not actually moving any faster than you were before it just like feels
+
+00:43:10.901 --> 00:43:14.822
+Faster or more fun or different in some ways and you have to be alert for that
+
+00:43:15.382 --> 00:43:17.382
+but I
+
+00:43:18.021 --> 00:43:20.901
+I think a lot. Yeah, so you have to balance that but certainly for me
+
+00:43:21.461 --> 00:43:24.901
+On the whole like it's a big I think it's a big performance boost for me
+
+00:43:24.901 --> 00:43:27.541
+That either does make me a lot faster
+
+00:43:27.541 --> 00:43:34.822
+Maybe like twice as fast when i'm tackling certain a certain class of problems and that is like a pretty amazing
+
+00:43:35.442 --> 00:43:37.442
+performance improvement for me
+
+00:43:38.101 --> 00:43:43.622
+Well when we think about how much you got done without relying on cloud code, um
+
+00:43:44.262 --> 00:43:46.422
+Your extraordinarily prolific output
+
+00:43:46.422 --> 00:43:52.182
+This is an exciting time for for our users and developers if you're if you're going to be doubling your output
+
+00:43:52.742 --> 00:43:54.581
+um
+
+00:43:54.581 --> 00:43:58.262
+So so that's actually counteracted by the fact that I have more meetings
+
+00:43:58.742 --> 00:44:06.182
+Now so I kind of feel like me plus quad code is productive me plus quad code plus meetings is equivalent to me
+
+00:44:06.661 --> 00:44:10.822
+Without or quad code without meetings. So that's I I do enjoy that
+
+00:44:11.862 --> 00:44:13.862
+Okay, fair enough. Fair enough
+
+00:44:14.341 --> 00:44:16.262
+well hadley
+
+00:44:16.262 --> 00:44:19.221
+there are lots of other questions and
+
+00:44:20.242 --> 00:44:24.581
+unfortunately, we're not going to have time to to go through them all but if you are
+
+00:44:25.221 --> 00:44:28.182
+I'm, not sure if you if you join the discord server, but if you're happy to
+
+00:44:28.742 --> 00:44:32.742
+do that and and chat a little bit more if your people would appreciate that but um,
+
+00:44:33.302 --> 00:44:36.661
+Otherwise, thank you so much for um
+
+00:44:37.382 --> 00:44:41.461
+For for coming along to be our keynote today and your support of the conference in general
+
+00:44:41.702 --> 00:44:45.862
+We really really appreciate you and all the work that you do for the our community
+
+00:44:47.221 --> 00:44:48.822
+I am gonna
+
+00:44:48.822 --> 00:44:51.382
+Switch over now to a brief
+
+00:44:51.862 --> 00:44:56.661
+Uh closing for the conference. I I I know it's late at least it is but at our time

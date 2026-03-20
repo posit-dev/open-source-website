@@ -27,8 +27,8 @@ external:  # updated automatically, do not edit
   duration: 282
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.269440+00:00'
-  like_count: 26
+  last_updated: '2026-03-20T11:32:46.406370+00:00'
+  like_count: 27
   playlist: ''
   tags:
   - posit::conf(2025)
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EHygzKGK854/maxresdefault.jpg
   title: Make Big Geospatial Data Accessible with Arrow (Cari Gostic, Sonoma Technology) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=EHygzKGK854
-  view_count: 640
+  view_count: 655
 ---
 image: thumbnail.jpg
 

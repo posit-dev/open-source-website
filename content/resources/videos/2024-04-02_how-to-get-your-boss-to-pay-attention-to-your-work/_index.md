@@ -1,6 +1,6 @@
 ---
 date: '2024-04-02'
-description: "How do you capture your boss' imagination and show the value of your data science project? \n\nData Science Hangout with Michael Derstine, Vice President at Wells Fargo & Company. \n\n\U0001F64B‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh"
+description: "How do you capture your boss' imagination and show the value of your data science project? \n\nData Science Hangout with Michael Derstine, Vice President at Wells Fargo & Company. \n\n\U0001F64B‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh #positshorts"
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -58,11 +58,11 @@ external:  # updated automatically, do not edit
   comment_count: 3
   date: '2024-04-02T00:25:38Z'
   definition: hd
-  description: "How do you capture your boss' imagination and show the value of your data science project? \n\nData Science Hangout with Michael Derstine, Vice President at Wells Fargo & Company. \n\n\U0001F64B‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh"
+  description: "How do you capture your boss' imagination and show the value of your data science project? \n\nData Science Hangout with Michael Derstine, Vice President at Wells Fargo & Company. \n\n\U0001F64B‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh #positshorts"
   duration: 55
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:24.145508+00:00'
+  last_updated: '2026-03-20T11:32:49.724988+00:00'
   like_count: 25
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ra9SbjDYL9o/maxresdefault.jpg
   title: How to get your boss to pay attention to your work 👀
   url: https://www.youtube.com/watch?v=ra9SbjDYL9o
-  view_count: 1337
+  view_count: 1338
 ---
 image: thumbnail.jpg
 

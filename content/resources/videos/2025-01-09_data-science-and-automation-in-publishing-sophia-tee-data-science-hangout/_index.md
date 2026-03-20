@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3663
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.505448+00:00'
+  last_updated: '2026-03-20T11:32:47.650254+00:00'
   like_count: 10
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Rfi5sDVyngo/maxresdefault.jpg
   title: Data science and automation in publishing | Sophia Tee | Data Science Hangout
   url: https://www.youtube.com/watch?v=Rfi5sDVyngo
-  view_count: 465
+  view_count: 466
 ---
 image: thumbnail.jpg
 

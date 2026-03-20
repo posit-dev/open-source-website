@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3673
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:20.891027+00:00'
-  like_count: 36
+  last_updated: '2026-03-20T11:32:46.095281+00:00'
+  like_count: 37
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Yjmu18r_j64/maxresdefault.jpg
   title: 'Emily Riederer: Column selectors, data quality, and learning in public'
   url: https://www.youtube.com/watch?v=Yjmu18r_j64
-  view_count: 886
+  view_count: 925
 ---
 image: thumbnail.jpg
 

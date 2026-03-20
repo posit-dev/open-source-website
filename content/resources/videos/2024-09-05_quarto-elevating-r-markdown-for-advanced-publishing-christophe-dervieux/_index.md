@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - Quarto
 - revealjs
 - rstudio
@@ -67,13 +67,13 @@ external:  # updated automatically, do not edit
   duration: 1508
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.442701+00:00'
+  last_updated: '2026-03-20T11:32:48.811582+00:00'
   like_count: 123
   people:
   - Christophe Dervieux
   playlist: ''
   software:
-  - positron
+  - Positron
   - Quarto
   - revealjs
   - rstudio
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8qR0wtJEDX4/maxresdefault.jpg
   title: 'Quarto: Elevating R Markdown for Advanced Publishing | Christophe Dervieux'
   url: https://www.youtube.com/watch?v=8qR0wtJEDX4
-  view_count: 5912
+  view_count: 5980
 ---
 image: thumbnail.jpg
 

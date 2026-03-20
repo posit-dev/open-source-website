@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3554
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.836112+00:00'
+  last_updated: '2026-03-20T11:32:53.123250+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LoVaLRLblmE/maxresdefault.jpg
   title: Data Science Hangout | Matthew Montero, Gen Re | Bringing a Vision to Life
   url: https://www.youtube.com/watch?v=LoVaLRLblmE
-  view_count: 588
+  view_count: 590
 ---
 image: thumbnail.jpg
 

@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 1204
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126416+00:00'
+  last_updated: '2026-03-20T11:32:48.367819+00:00'
   like_count: 11
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_AFa4DIGDJk/maxresdefault.jpg
   title: Mark Wang - Using GitHub Copilot in R Shiny Development
   url: https://www.youtube.com/watch?v=_AFa4DIGDJk
-  view_count: 554
+  view_count: 565
 ---
 image: thumbnail.jpg
 

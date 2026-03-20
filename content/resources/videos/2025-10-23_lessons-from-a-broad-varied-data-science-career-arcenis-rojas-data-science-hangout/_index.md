@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - plotnine
-- positron
+- Positron
 - Quarto
 - rstudio
 - Shiny
@@ -23,12 +23,12 @@ external:  # updated automatically, do not edit
   duration: 3304
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.820477+00:00'
+  last_updated: '2026-03-20T11:32:46.972426+00:00'
   like_count: 4
   playlist: ''
   software:
   - plotnine
-  - positron
+  - Positron
   - Quarto
   - rstudio
   - Shiny

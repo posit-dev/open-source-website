@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   duration: 3387
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:28.608960+00:00'
+  last_updated: '2026-03-20T11:32:55.147582+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -148,7 +148,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QcE4RBH2auQ/maxresdefault.jpg
   title: Alison Hill & Desirée De Leon | How to Get Your Materials Online With R Markdown | RStudio (2020)
   url: https://www.youtube.com/watch?v=QcE4RBH2auQ
-  view_count: 4693
+  view_count: 4694
 ---
 image: thumbnail.jpg
 

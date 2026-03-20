@@ -19,7 +19,7 @@ people:
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -53,13 +53,13 @@ external:  # updated automatically, do not edit
   duration: 1203
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.270010+00:00'
-  like_count: 156
+  last_updated: '2026-03-20T11:32:46.406456+00:00'
+  like_count: 159
   people:
   - Julia Silge
   playlist: ''
   software:
-  - positron
+  - Positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pMVYl9fx1EE/maxresdefault.jpg
   title: How I got unstuck with Python (Julia Silge, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=pMVYl9fx1EE
-  view_count: 6494
+  view_count: 6632
 ---
 image: thumbnail.jpg
 

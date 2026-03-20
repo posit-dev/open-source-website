@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 1300
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.323719+00:00'
+  last_updated: '2026-03-20T11:32:57.422947+00:00'
   like_count: 2
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ESUvuemGmPQ/maxresdefault.jpg
   title: 'Daniel Chen - LLMs, Chatbots, and Dashboards: Visualize Your Data with Natural Language'
   url: https://www.youtube.com/watch?v=ESUvuemGmPQ
-  view_count: 129
+  view_count: 138
 ---
 image: thumbnail.jpg
 

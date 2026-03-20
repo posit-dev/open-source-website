@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1131
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.840905+00:00'
+  last_updated: '2026-03-20T11:32:48.367604+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/PNee28jFRfY/maxresdefault.jpg
   title: 'Lee Durbin - Coding in a Cyclone: open-source and the public sector in the birthplace of R'
   url: https://www.youtube.com/watch?v=PNee28jFRfY
-  view_count: 140
+  view_count: 141
 ---
 image: thumbnail.jpg
 

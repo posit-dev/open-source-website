@@ -21,7 +21,8 @@ description: 'Learn how to create Quarto dashboards with Python! Senior Product 
 
   #pythoncontent'
 image: thumbnail.jpg
-people: []
+people:
+- Isabella Velásquez
 resource_type: video
 resources: []
 software:
@@ -103,8 +104,10 @@ external:  # updated automatically, do not edit
   duration: 575
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.505143+00:00'
-  like_count: 60
+  last_updated: '2026-03-20T11:32:47.650152+00:00'
+  like_count: 61
+  people:
+  - Isabella Velásquez
   playlist: ''
   software:
   - python-tidytuesday
@@ -158,7 +161,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uLGe9zuuNl0/maxresdefault.jpg
   title: Create Quarto dashboards with Python
   url: https://www.youtube.com/watch?v=uLGe9zuuNl0
-  view_count: 2037
+  view_count: 2067
 ---
 image: thumbnail.jpg
 

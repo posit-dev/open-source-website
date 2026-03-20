@@ -4,13 +4,13 @@ description: 'Unearned confidence
 
 
 
-  #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf'
+  #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - rstudio
 tags:
 - rstudio
@@ -68,15 +68,15 @@ external:  # updated automatically, do not edit
 
 
 
-    #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf'
+    #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf #positshorts'
   duration: 59
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:20.890681+00:00'
-  like_count: 21
+  last_updated: '2026-03-20T11:32:46.095088+00:00'
+  like_count: 23
   playlist: ''
   software:
-  - positron
+  - Positron
   - rstudio
   tags:
   - rstudio
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dKjjRGMKkBM/maxresdefault.jpg
   title: Seriously, have you tried this AI stuff? I've never written code like this in my life.
   url: https://www.youtube.com/watch?v=dKjjRGMKkBM
-  view_count: 1734
+  view_count: 1831
 ---
 image: thumbnail.jpg
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1018
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126327+00:00'
-  like_count: 6
+  last_updated: '2026-03-20T11:32:48.367768+00:00'
+  like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/krZnsY3Rf_U/maxresdefault.jpg
   title: 'Laura Gast - Uniquely Human: Data Storytelling in the Age of AI'
   url: https://www.youtube.com/watch?v=krZnsY3Rf_U
-  view_count: 371
+  view_count: 383
 ---
 image: thumbnail.jpg
 

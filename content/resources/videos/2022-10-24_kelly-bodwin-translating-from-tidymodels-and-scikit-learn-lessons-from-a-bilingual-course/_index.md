@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   duration: 1189
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529133+00:00'
+  last_updated: '2026-03-20T11:32:52.707745+00:00'
   like_count: 43
   playlist: ''
   software:
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uy2xKAuiYNE/maxresdefault.jpg
   title: 'Kelly Bodwin | Translating from {tidymodels} and scikit-learn: Lessons from a ''bilingual'' course'
   url: https://www.youtube.com/watch?v=uy2xKAuiYNE
-  view_count: 1130
+  view_count: 1133
 ---
 image: thumbnail.jpg
 

@@ -162,7 +162,7 @@ external:  # updated automatically, do not edit
   duration: 1329
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.561183+00:00'
+  last_updated: '2026-03-20T11:32:53.798628+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -221,7 +221,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3gtk8uRrrL4/maxresdefault.jpg
   title: Barret Schloerke || Maximize computing resources using future_promise() || RStudio
   url: https://www.youtube.com/watch?v=3gtk8uRrrL4
-  view_count: 2323
+  view_count: 2327
 ---
 image: thumbnail.jpg
 

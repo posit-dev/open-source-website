@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1167
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126263+00:00'
+  last_updated: '2026-03-20T11:32:48.367730+00:00'
   like_count: 18
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/y2qdvYKKVdc/maxresdefault.jpg
   title: '"Please Let Me Merge Before I Start Crying": And Other Things I''ve Said at The Git Terminal'
   url: https://www.youtube.com/watch?v=y2qdvYKKVdc
-  view_count: 487
+  view_count: 491
 ---
 image: thumbnail.jpg
 

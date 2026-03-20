@@ -66,14 +66,14 @@ external:  # updated automatically, do not edit
   duration: 1403
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:20.892606+00:00'
+  last_updated: '2026-03-20T11:32:46.406273+00:00'
   like_count: 16
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/858zyLzpsnE/maxresdefault.jpg
   title: 'Wes Mckinney: Part 1 — Building Pandas, Arrow and a speedrunning legacy'
   url: https://www.youtube.com/watch?v=858zyLzpsnE
-  view_count: 598
+  view_count: 639
 ---
 image: thumbnail.jpg
 

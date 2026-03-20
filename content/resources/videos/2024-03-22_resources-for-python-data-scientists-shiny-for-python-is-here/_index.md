@@ -1,6 +1,6 @@
 ---
 date: '2024-03-22'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -16,11 +16,11 @@ external:  # updated automatically, do not edit
   comment_count: 2
   date: '2024-03-22T19:21:09Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 33
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:24.145827+00:00'
+  last_updated: '2026-03-20T11:32:49.725070+00:00'
   like_count: 42
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/86dSiHkFX_g/maxresdefault.jpg
   title: Resources for Python Data Scientists | Shiny for Python is here✨
   url: https://www.youtube.com/watch?v=86dSiHkFX_g
-  view_count: 1280
+  view_count: 1287
 ---
 image: thumbnail.jpg
 

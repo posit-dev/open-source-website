@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 123
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:25.988123+00:00'
+  last_updated: '2026-03-20T11:32:51.918836+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_PK5JoA_-Rk/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Steal like an Rtist: Creative Coding in R'
   url: https://www.youtube.com/watch?v=_PK5JoA_-Rk
-  view_count: 299
+  view_count: 300
 ---
 image: thumbnail.jpg
 

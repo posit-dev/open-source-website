@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - Python
 - PyLadies
@@ -22,20 +22,20 @@ external:  # updated automatically, do not edit
   duration: 929
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:30.323792+00:00'
+  last_updated: '2026-03-20T11:32:57.423027+00:00'
   like_count: 5
   people:
   - Isabel Zimmerman
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - positron
+  - Positron
   tags:
   - Python
   - PyLadies
   thumbnail: https://i.ytimg.com/vi/i9duGIEA_so/maxresdefault.jpg
   title: Isabel Zimmerman - Making GUI Data Exploration Reproducible with Python
   url: https://www.youtube.com/watch?v=i9duGIEA_so
-  view_count: 94
+  view_count: 96
 ---
 image: thumbnail.jpg
 

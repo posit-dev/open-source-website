@@ -26,8 +26,8 @@ external:  # updated automatically, do not edit
   duration: 1014
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.835874+00:00'
-  like_count: 36
+  last_updated: '2026-03-20T11:32:53.122757+00:00'
+  like_count: 37
   playlist: ''
   software:
   - ggplot2
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hRKx-obmFx8/maxresdefault.jpg
   title: 'Tyler Morgan-Wall | Building a ggplot2 rollercoaster: Creating amazing 3D data visualizations in R'
   url: https://www.youtube.com/watch?v=hRKx-obmFx8
-  view_count: 883
+  view_count: 888
 ---
 image: thumbnail.jpg
 

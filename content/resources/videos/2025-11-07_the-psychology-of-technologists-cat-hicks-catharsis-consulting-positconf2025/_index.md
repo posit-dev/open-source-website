@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'The Psychology of Technologists
 
 
@@ -69,8 +69,8 @@ external:  # updated automatically, do not edit
   duration: 3763
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.269021+00:00'
-  like_count: 29
+  last_updated: '2026-03-20T11:32:46.406320+00:00'
+  like_count: 30
   playlist: ''
   tags:
   - posit::conf(2025)
@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/B-bMX_l3nkk/maxresdefault.jpg
   title: The Psychology of Technologists  (Cat Hicks, Catharsis Consulting) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=B-bMX_l3nkk
-  view_count: 1616
+  view_count: 1666
 ---
 image: thumbnail.jpg
 

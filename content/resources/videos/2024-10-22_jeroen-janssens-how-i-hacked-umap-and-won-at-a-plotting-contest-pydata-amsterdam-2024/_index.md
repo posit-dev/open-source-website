@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   duration: 1649
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.708296+00:00'
+  last_updated: '2026-03-20T11:32:57.423621+00:00'
   like_count: 42
   people:
   - Jeroen Janssens
@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xdD8r84sqYY/maxresdefault.jpg
   title: Jeroen Janssens - How I hacked UMAP and won at a plotting contest | PyData Amsterdam 2024
   url: https://www.youtube.com/watch?v=xdD8r84sqYY
-  view_count: 1603
+  view_count: 1609
 ---
 image: thumbnail.jpg
 

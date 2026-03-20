@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1143
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.661228+00:00'
+  last_updated: '2026-03-20T11:32:56.381631+00:00'
   like_count: 269
   people:
   - Thomas Lin Pedersen
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3UY7Or0v_dI/maxresdefault.jpg
   title: Thomas Lin Pedersen | gganimate live cookbook | RStudio (2019)
   url: https://www.youtube.com/watch?v=3UY7Or0v_dI
-  view_count: 8361
+  view_count: 8366
 ---
 image: thumbnail.jpg
 

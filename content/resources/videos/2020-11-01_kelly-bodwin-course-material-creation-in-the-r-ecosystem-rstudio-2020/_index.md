@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 341
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.308028+00:00'
+  last_updated: '2026-03-20T11:32:56.381309+00:00'
   like_count: 20
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2lGednFDq6c/hqdefault.jpg
   title: Kelly Bodwin | Course Material Creation in the R Ecosystem | RStudio (2020)
   url: https://www.youtube.com/watch?v=2lGednFDq6c
-  view_count: 458
+  view_count: 459
 ---
 image: thumbnail.jpg
 

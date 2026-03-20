@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 1190
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:24.146167+00:00'
+  last_updated: '2026-03-20T11:32:50.371116+00:00'
   like_count: 20
   people:
   - Jenny Bryan
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OVM5Ok7W1NQ/maxresdefault.jpg
   title: 'Documenting Things: Openly for Future Us - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=OVM5Ok7W1NQ
-  view_count: 858
+  view_count: 859
 ---
 image: thumbnail.jpg
 

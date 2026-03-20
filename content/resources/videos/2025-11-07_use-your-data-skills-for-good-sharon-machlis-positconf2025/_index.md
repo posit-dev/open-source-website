@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 338
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.269992+00:00'
+  last_updated: '2026-03-20T11:32:46.406451+00:00'
   like_count: 9
   playlist: ''
   tags:
@@ -78,7 +78,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fSAoCcZD--Y/maxresdefault.jpg
   title: Use Your Data Skills for Good (Sharon Machlis) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=fSAoCcZD--Y
-  view_count: 185
+  view_count: 188
 ---
 image: thumbnail.jpg
 

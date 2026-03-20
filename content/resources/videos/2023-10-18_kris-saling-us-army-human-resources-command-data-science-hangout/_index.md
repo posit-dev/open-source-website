@@ -66,14 +66,14 @@ external:  # updated automatically, do not edit
   duration: 3450
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:25.239189+00:00'
+  last_updated: '2026-03-20T11:32:51.523801+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/A2kV9DANmvg/maxresdefault.jpg
   title: Kris Saling @ US Army Human Resources Command | Data Science Hangout
   url: https://www.youtube.com/watch?v=A2kV9DANmvg
-  view_count: 366
+  view_count: 372
 ---
 image: thumbnail.jpg
 

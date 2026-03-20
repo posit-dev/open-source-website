@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 971
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.959098+00:00'
+  last_updated: '2026-03-20T11:32:56.700346+00:00'
   like_count: 88
   people:
   - Lionel Henry
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2-gknoyjL3A/maxresdefault.jpg
   title: Lionel Henry | Working with names and expressions in your tidy eval code | RStudio (2019)
   url: https://www.youtube.com/watch?v=2-gknoyjL3A
-  view_count: 3281
+  view_count: 3282
 ---
 image: thumbnail.jpg
 

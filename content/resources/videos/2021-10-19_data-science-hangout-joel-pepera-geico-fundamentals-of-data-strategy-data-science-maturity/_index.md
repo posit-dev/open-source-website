@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3791
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:27.945679+00:00'
+  last_updated: '2026-03-20T11:32:54.271357+00:00'
   like_count: 12
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QVD7JXwtjmg/maxresdefault.jpg
   title: Data Science Hangout | Joel Pepera, GEICO | Fundamentals of Data Strategy & Data Science Maturity
   url: https://www.youtube.com/watch?v=QVD7JXwtjmg
-  view_count: 475
+  view_count: 476
 ---
 image: thumbnail.jpg
 

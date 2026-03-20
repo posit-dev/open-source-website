@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   duration: 23
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:24.145639+00:00'
+  last_updated: '2026-03-20T11:32:49.725016+00:00'
   like_count: 1
   playlist: ''
   software:
@@ -146,7 +146,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/IUO-FT_Lz3o/maxresdefault.jpg
   title: Databricks Pro Driver in Posit Workbench
   url: https://www.youtube.com/watch?v=IUO-FT_Lz3o
-  view_count: 471
+  view_count: 472
 ---
 image: thumbnail.jpg
 

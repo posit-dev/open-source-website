@@ -1,0 +1,1678 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.660
+Hey there, welcome to the Posit Data Science Hangout. I'm Libby Heron, and this is a recording
+
+00:00:16.660 --> 00:00:22.020
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.020 --> 00:00:27.260
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.260 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:36.340
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.340 --> 00:00:42.020
+Can't wait to see you there. I would love to introduce our featured leader today, Brijesh
+
+00:00:42.020 --> 00:00:46.939
+Chejerla at Florida Blue. Brijesh, could you introduce yourself? Tell us a little bit about
+
+00:00:46.939 --> 00:00:49.180
+you and something you like to do for fun.
+
+00:00:50.180 --> 00:00:55.740
+Hey, everyone. I'm Brijesh Chejerla. I am a data scientist at Blue Cross Blue Shield
+
+00:00:55.740 --> 00:01:08.860
+of Florida. I have a PhD in computer science. And by way of introduction, I'm an enthusiast
+
+00:01:08.860 --> 00:01:20.500
+in many things. Data science happens to be one of the conduits to help prosper my enthusiasm
+
+00:01:20.500 --> 00:01:30.040
+in those many things. Machine learning is at my heart, it's at my core. And I chose
+
+00:01:30.040 --> 00:01:37.739
+to be a data scientist way back in 2016, because after I graduated from my university with
+
+00:01:37.739 --> 00:01:43.139
+a PhD, I was like, what do I do with this? And I was thinking about where do I go next?
+
+00:01:43.139 --> 00:01:48.500
+Because I was pretty particular about what I would do and which field I would be in.
+
+00:01:48.500 --> 00:01:51.980
+And then I realized being a data scientist, you are a plug and play model. You can be
+
+00:01:51.980 --> 00:01:58.220
+in different fields. You could be in sports, you can be in medicine, you could be in healthcare,
+
+00:01:58.220 --> 00:02:04.300
+you could be in construction, you could be whatever. And then they all kind of fit together.
+
+00:02:04.300 --> 00:02:09.619
+You do very similar stuff. But at the core of that, it's still the machine learning.
+
+00:02:09.619 --> 00:02:15.500
+So that's kind of the reason why I chose to be a data scientist. And yeah, I'm here. I
+
+00:02:15.500 --> 00:02:20.020
+graduated from being a data scientist to a machine learning engineer, I would say. But
+
+00:02:20.020 --> 00:02:27.460
+yeah, that's on the professional side of things. As for fun, I love to watch football, soccer
+
+00:02:27.460 --> 00:02:37.300
+for American audience. And I spend a lot of time, I would say, going through the analysis
+
+00:02:37.300 --> 00:02:41.059
+and all of those things, you know. So that's that's kind of my fun activity for the most
+
+00:02:41.059 --> 00:02:48.899
+part. Generally, I love to listen to podcasts. Most of these podcasts these days are football
+
+00:02:48.899 --> 00:02:53.899
+related for me, because I'm in that space right now. But then otherwise, so to speak,
+
+00:02:53.899 --> 00:02:56.940
+I just love to converse with people. You know, that's a fun activity for me.
+
+00:02:56.940 --> 00:03:02.699
+Well, you are doing that today. And Rory in the chat, I can already see is wondering what team
+
+00:03:02.699 --> 00:03:05.979
+you support, Prajesh. Manchester United.
+
+00:03:05.979 --> 00:03:14.580
+Manchester United. Any other ManU fans here? Man City fans unite. We have some other fans. Oh,
+
+00:03:14.580 --> 00:03:21.820
+no, we have some booing. Rory's a good choice. Rory's a good choice. James says cries in Tottenham.
+
+00:03:22.460 --> 00:03:25.580
+Please mute everybody who is not a ManU fan.
+
+00:03:27.179 --> 00:03:32.940
+Amazing. Well, Prajesh, I would love to start with something. I'm going to hop in before the
+
+00:03:32.940 --> 00:03:40.380
+Slido questions as a breach of protocol and say, I have to ask you about your stint in motorsports,
+
+00:03:40.380 --> 00:03:48.619
+because I know that your sort of like transition into industry from academia had a pit stop. Oh,
+
+00:03:49.419 --> 00:03:54.539
+that was an unintended pun. Had a pit stop in motorsports. Could you just give us a little
+
+00:03:54.539 --> 00:04:02.139
+bit of info on that? I truly didn't mean to do the pit stop pun. Well, that's pretty nice. So
+
+00:04:03.820 --> 00:04:08.220
+after I graduated, I was searching for jobs, obviously, you know, and then I just didn't want
+
+00:04:08.220 --> 00:04:16.299
+to work for the sake of working. I was pretty, I wanted to take, spending five, six years in
+
+00:04:16.299 --> 00:04:23.019
+academia, I really wanted to take a break. So I took my own time to find myself a job. And then
+
+00:04:23.019 --> 00:04:28.700
+this motorsports job came along as a shot in the arm on a scape. And I had no intention to even
+
+00:04:28.700 --> 00:04:34.459
+look at motorsports for that matter. I was a, I am still a Formula One fan. I still watch Formula
+
+00:04:34.459 --> 00:04:43.820
+One. But NASCAR was something that was way out of my radar. So I got this job through a connection,
+
+00:04:43.820 --> 00:04:51.820
+as in one of my friends recommended me to this job. And then he connected me with the people who
+
+00:04:51.820 --> 00:04:57.980
+were looking for a data scientist to be hired. And that's how I started working at Hendrick
+
+00:04:57.980 --> 00:05:03.260
+Motorsports. So that was my first foray into motorsports, first foray into NASCAR, everything
+
+00:05:03.260 --> 00:05:10.140
+was very new. I was looking at jobs in the Bay Area. And then I had to move over to Charlotte,
+
+00:05:10.140 --> 00:05:14.700
+North Carolina. And that's how things worked out, you know.
+
+00:05:16.779 --> 00:05:22.540
+All right. We have some more sports questions. There's an anonymous one already that says,
+
+00:05:22.540 --> 00:05:27.500
+favorite example of a data science, of data science applied in football or sports in general.
+
+00:05:29.179 --> 00:05:35.579
+So one thing that most people don't know is that the amount of data that you see on screen,
+
+00:05:36.540 --> 00:05:42.859
+on TV, is not the same kind of data that people get to work with behind the scenes. Because
+
+00:05:42.859 --> 00:05:47.420
+NASCAR is basically stock car racing, right? So not all of the teams have the same amount of
+
+00:05:47.420 --> 00:05:54.700
+funding. So NASCAR as an organization does not allow you to, or it does not give you the data,
+
+00:05:54.700 --> 00:05:59.100
+because they know that people who have, or teams who have more funding will have,
+
+00:06:01.179 --> 00:06:04.299
+they'll have some benefit over teams who do not have that kind of funding to kind of, you know,
+
+00:06:04.299 --> 00:06:10.140
+look at the data and do whatnot with that. So you're restricted with the data that you collect.
+
+00:06:10.140 --> 00:06:18.299
+So you will have to be, you'll have to get very creative with what you have and solution for it,
+
+00:06:18.299 --> 00:06:23.820
+because the models that we built when I was working at Hendrick Motorsports were,
+
+00:06:23.820 --> 00:06:30.700
+it was basically, you know, to be able to predict when the driver should pit, you know, when should
+
+00:06:30.700 --> 00:06:35.820
+they go into the pit stop. And that is dependent on the fuel consumption, and it's dependent on the
+
+00:06:35.820 --> 00:06:41.420
+tire degradation. So we had to build models based on that. And then we had to try and see if that
+
+00:06:41.420 --> 00:06:44.859
+made sense from a machine learning standpoint, because if you're a data scientist, most of
+
+00:06:44.859 --> 00:06:51.100
+what you do is, let's say, regression. There are many engineers who work at, you know, the company,
+
+00:06:51.100 --> 00:06:55.739
+who are, who also have used regression and who also know about all of those things. So
+
+00:06:55.739 --> 00:07:01.820
+your question would then be, do I just use a hacksaw, I mean, a saw to kind of, you know,
+
+00:07:01.820 --> 00:07:07.019
+break a twig, or do I actually do the bare minimum? So you'll have to be very creative about how you
+
+00:07:07.019 --> 00:07:11.899
+go about it. So again, for sports, you know, I know for a fact that, you know, football uses a lot of
+
+00:07:11.899 --> 00:07:17.420
+data science these days. There are people and there are teams that actually try and predict
+
+00:07:18.220 --> 00:07:23.420
+what the scores could be based on who's playing and the positions that they're playing and, you know,
+
+00:07:23.420 --> 00:07:28.700
+the recent trends and the form and so on and so forth. You know, how many yards they're able to
+
+00:07:28.700 --> 00:07:32.859
+cover, after how many minutes does their performance go down and so on and so forth.
+
+00:07:32.859 --> 00:07:39.339
+And it so happened that for a Manchester United versus Manchester City derby game,
+
+00:07:39.339 --> 00:07:44.059
+there was an algorithm that predicted that City will win 2-1. And that's exactly what happened
+
+00:07:44.059 --> 00:07:49.660
+because of the goals ratio and all that. So it was very interesting. And I thought, you know,
+
+00:07:49.660 --> 00:07:54.059
+that would be something cool. So if you're into that kind of a thing, or if you're looking to get
+
+00:07:54.059 --> 00:07:57.420
+into that kind of a thing, you should know that, you know, the amount of data that you'd have would
+
+00:07:57.420 --> 00:08:04.779
+be very limited. And probably, even if you would say, well, let's build up this pipeline in order
+
+00:08:04.779 --> 00:08:08.619
+to get fetch all of this data, you still won't have that simply because, you know, it just doesn't
+
+00:08:08.619 --> 00:08:13.820
+either exist, or it's too difficult for you to go through all of the hoops in order to get that kind
+
+00:08:13.820 --> 00:08:18.779
+of data that you need as a data scientist. And as data scientists, the one thing that we all keep
+
+00:08:18.779 --> 00:08:24.059
+saying is, oh, we need more data to be able to generalize a model to be able to make better
+
+00:08:24.059 --> 00:08:35.739
+predictions. And for motorsports, you have to be extremely accurate to the milliseconds level,
+
+00:08:35.739 --> 00:08:42.539
+right? And at that point of time, you have to think, am I overfitting this model
+
+00:08:42.539 --> 00:08:46.859
+because it's pretty accurate, or is it generalized enough? Because if it's generalized enough, then
+
+00:08:46.859 --> 00:08:52.940
+you may not be giving the race engineer or the race crew chief what he wants. But at the same
+
+00:08:52.940 --> 00:08:57.260
+time, from the data science level, you know, if you don't generalize, you're basically overfitting,
+
+00:08:57.260 --> 00:09:01.820
+which is not a good model. So you'll have to be very creative and you have to be very specific
+
+00:09:01.820 --> 00:09:06.059
+about how you want to go about those things. That sounds like a tough problem, but like
+
+00:09:06.059 --> 00:09:11.900
+relatable across all industries in data science. Am I specific enough? Am I generalizable enough?
+
+00:09:12.859 --> 00:09:17.659
+Well, we have lots of conversation going on in the chat about different people supporting
+
+00:09:17.659 --> 00:09:21.900
+different teams. Somebody wanted to call out that Man City is different than Man United. You're a
+
+00:09:21.900 --> 00:09:31.500
+Man United fan, right? We have some Man City fans. Everybody is very interested in the sports stuff.
+
+00:09:31.500 --> 00:09:35.340
+So I wonder if we could do one more sports question and then shift gears because I have
+
+00:09:35.340 --> 00:09:41.020
+another question for you. So the other question that was in there was also anonymous and it was,
+
+00:09:41.419 --> 00:09:45.979
+would you be able to provide some resources for people who are interested in machine learning
+
+00:09:45.979 --> 00:09:56.299
+and football? If you have any tips. It's okay if you don't. Yeah, I don't think, to my knowledge,
+
+00:09:56.299 --> 00:10:03.099
+I don't think there's anything that is resourceful enough for machine learning and football together.
+
+00:10:03.099 --> 00:10:10.059
+Because at the end of the day, you're applying a solution, a mathematical solution to an existing
+
+00:10:10.059 --> 00:10:17.260
+problem or to a real world use case, which has some data. So it's that connection, which is why
+
+00:10:17.260 --> 00:10:22.140
+I said during my introduction that I wanted to see if being a data scientist, I can plug and play.
+
+00:10:22.140 --> 00:10:27.260
+Can I go into finance? Can I go into more sports? Can I go into healthcare? Can I go into whatever?
+
+00:10:27.260 --> 00:10:31.900
+And will I be doing very similar stuff? Because then I would make myself the most useful. Because
+
+00:10:31.900 --> 00:10:35.500
+let's say if I get bored doing the same thing for three years, I'd probably jump and do the
+
+00:10:35.500 --> 00:10:43.340
+same thing. So I wouldn't say look at it as a connected set of things. Just there are a,
+
+00:10:43.340 --> 00:10:47.900
+there is a ton of resource. There are a ton of, tons of resources out there for machine learning.
+
+00:10:49.020 --> 00:10:53.179
+I actually shared a book if anybody wants to go look at it for sports analytics.
+
+00:10:53.820 --> 00:10:59.659
+Yeah. I always say that, you know, keep to the basics of machine learning, keep to the basics
+
+00:10:59.659 --> 00:11:05.580
+of statistics that will serve you no matter what you do, no matter where you go. And then.
+
+00:11:07.340 --> 00:11:07.900
+Go right ahead.
+
+00:11:08.780 --> 00:11:12.380
+And then, you know, you can apply that to anything. You know, you could, you could look at
+
+00:11:13.419 --> 00:11:17.979
+different types of regression. You'll see, depending on the data that you get, no matter how
+
+00:11:19.260 --> 00:11:23.739
+the data that what kind of data you have, if you're building models, it's one thing. Data
+
+00:11:23.739 --> 00:11:28.940
+scientists also do analysis analysis. You have to have very strong statistical background,
+
+00:11:28.940 --> 00:11:32.460
+right? So you have to develop that. You have to understand how to look at this. You have to look at,
+
+00:11:32.460 --> 00:11:36.460
+you have to look at design of experiments. You have to understand that you have to, you know,
+
+00:11:36.460 --> 00:11:41.419
+create hypothesis. You have to, you have to look at when it comes to the world of data,
+
+00:11:41.419 --> 00:11:46.619
+it's an elephant and everybody is looking at the trunk of an elephant or the leg of an elephant,
+
+00:11:46.619 --> 00:11:50.460
+kind of know that it's supposed to be an elephant. And when you draw it, it generalizes to an
+
+00:11:50.460 --> 00:11:54.140
+elephant, but it's not exactly the same elephant that everybody looks at. That's what data is.
+
+00:11:54.780 --> 00:11:58.460
+So I would just say approach the bottom up.
+
+00:12:02.299 --> 00:12:05.739
+Approach the, your approach should be bottom up. Whereas, you know, your,
+
+00:12:05.739 --> 00:12:08.780
+your foundational machine learning, your foundational mathematics,
+
+00:12:08.780 --> 00:12:13.099
+your foundational statistics are very strong so that it can be applicable to any data that's given
+
+00:12:13.099 --> 00:12:20.299
+to you. I was going to say, you know, that is a fantastic lead in to our next question,
+
+00:12:21.260 --> 00:12:26.140
+oh, which is gone. Hold on a second. It disappeared from Slido. I think Rachel and
+
+00:12:26.140 --> 00:12:32.700
+I probably clicked something in the exact same moment. I think someone maybe with their question.
+
+00:12:32.700 --> 00:12:39.340
+Okay. So Rob Creel had asked a question. Rob, if you are available to ask it live,
+
+00:12:39.340 --> 00:12:41.340
+that would be amazing. I'm going to highlight it in Slido.
+
+00:12:42.219 --> 00:12:52.059
+Yeah, thank you. So I share your perspective on the general applicability of data science and that
+
+00:12:52.059 --> 00:12:58.299
+being appealing, but like my background is in mathematics itself, just a master's in pure math.
+
+00:12:59.979 --> 00:13:04.700
+And like I, something I've struggled with has been like, how do you pick an industry?
+
+00:13:05.820 --> 00:13:10.219
+Like in my job applications, I've worried that I've been casting too wide an eye on
+
+00:13:11.099 --> 00:13:14.619
+the net. And I almost wish I had like one specific industry that was just my favorite
+
+00:13:14.619 --> 00:13:20.940
+and I can target. So I just love to hear about your experience. Did you sort of just
+
+00:13:20.940 --> 00:13:25.500
+somewhat accidentally land where you are or was it targeted and how did you choose your targeting?
+
+00:13:27.179 --> 00:13:32.940
+No, great question, actually. So I don't think I did a good enough job trying to explain how I
+
+00:13:32.940 --> 00:13:38.859
+got to where I got to as part of my introduction. So I'll use that for now. So the way I started
+
+00:13:38.859 --> 00:13:43.500
+looking at it was two things. One is how much money am I getting? And two, how much of my
+
+00:13:43.500 --> 00:13:48.380
+personal ethics and morals do I have to forego for that kind of money, right? Those were my two
+
+00:13:48.380 --> 00:13:53.820
+parameters. So like any company that you go and work for, any industry that you go and work for,
+
+00:13:53.820 --> 00:13:58.380
+you will have to compromise on certain things because that's the, you know, that's how the
+
+00:13:58.380 --> 00:14:05.099
+world works. So I say, just pick on those two things and think, you know, what your financial
+
+00:14:05.179 --> 00:14:10.380
+status is and, you know, how strongly do you feel about certain things? The reason I picked
+
+00:14:10.380 --> 00:14:16.780
+motorsports was because there were no ethical or moral dilemmas for that for me. And two,
+
+00:14:16.780 --> 00:14:21.260
+it was something that excited me, right? So that's kind of how I picked that off all of the other
+
+00:14:21.979 --> 00:14:26.460
+options that I had, because in Bay Area, you can actually go and work for different companies,
+
+00:14:26.460 --> 00:14:30.299
+you know, and some of the big companies and all that. And I just wasn't really sure if I wanted
+
+00:14:30.299 --> 00:14:37.900
+to get into that. Coming off a PhD, the first, I was extremely idealistic. So I would say, do not
+
+00:14:37.900 --> 00:14:45.340
+be idealistic. You know, if anything, don't be that. Be more pragmatic about where, you know,
+
+00:14:45.340 --> 00:14:50.940
+and where to work and what to do and stuff like that. So that's one thing that I would say,
+
+00:14:50.940 --> 00:14:56.380
+because the first three to six months, I struggled, because I thought, you're supposed to do it this
+
+00:14:56.380 --> 00:15:01.659
+way. And the business doesn't really care how you do it, as long as you get it done in a certain
+
+00:15:01.659 --> 00:15:07.659
+time frame, and you give them similar outputs that you're expecting, you know. So that's another
+
+00:15:07.659 --> 00:15:13.020
+perspective that I would say, you know, you would have to develop or think about if, you know, you
+
+00:15:13.020 --> 00:15:18.059
+want to even develop for that matter. And then pick and choose a couple, like, for instance,
+
+00:15:18.619 --> 00:15:25.020
+healthcare. Healthcare is going to be a field where data science, machine learning, artificial
+
+00:15:25.020 --> 00:15:29.739
+intelligence, whatever, whatnot, you know, let's say, if you're even a programmer, for that matter,
+
+00:15:30.460 --> 00:15:36.780
+you're going to be in that space and find yourself good enough jobs for the most part,
+
+00:15:36.780 --> 00:15:43.500
+you know. And unless you're working for some seriously shady companies, I don't want to name
+
+00:15:43.500 --> 00:15:48.700
+them. Unless you're working for some seriously shady companies, for the most part, you know,
+
+00:15:49.020 --> 00:15:55.020
+you'll actually do a pretty good job, because most of what you do in IT or data science is
+
+00:15:55.020 --> 00:16:01.179
+technically be helping the member or, you know, the patient or whoever as well, you know.
+
+00:16:02.059 --> 00:16:09.260
+I don't think it will be in your capacity to choose how the member is actually affected,
+
+00:16:09.260 --> 00:16:14.380
+because that's, you know, beyond you, because it's then to the outreach managers and how they
+
+00:16:14.380 --> 00:16:18.299
+use the models that you build and stuff like that. That's one thing that I'd say, you know, so
+
+00:16:18.940 --> 00:16:23.659
+be sure that no matter how hard you try, unless you are at a very high level,
+
+00:16:24.219 --> 00:16:30.380
+you can only influence it so much. So, you know, even the analysis that you do, you can do a fair
+
+00:16:30.380 --> 00:16:35.659
+and thorough analysis and stuff like that, but that will be the end of what you can actually influence.
+
+00:16:37.580 --> 00:16:41.979
+Because I'm in healthcare, and I can give you that example right now. If you want to work for,
+
+00:16:41.979 --> 00:16:46.940
+let's say, a company like Spotify, you know, who does these recommendation based stuff,
+
+00:16:46.940 --> 00:16:52.859
+there's nothing wrong with that, you know, there are no moral or ethical obligations for you to
+
+00:16:52.859 --> 00:16:59.580
+think about very seriously, unless you seriously have some concentrations against it. So think
+
+00:16:59.580 --> 00:17:05.099
+about it from that perspective, and choose whoever gives you money, make sure that you get more money,
+
+00:17:05.099 --> 00:17:11.420
+I would say, no doubt about that. But at the same time, unless you get into it, and you start working
+
+00:17:12.619 --> 00:17:17.739
+you won't really be able to crystallize all of what you actually want to do, you know, but so
+
+00:17:17.739 --> 00:17:24.300
+get yourself into it. I got myself into it as a data scientist. I want, I grew into being an
+
+00:17:24.300 --> 00:17:28.859
+architect, then I was an admin, you know, I was a positive admin for some time, for about six years.
+
+00:17:29.900 --> 00:17:35.339
+I wanted to think if I were my own leader, if I were, there's a book called Think Like a CEO,
+
+00:17:35.339 --> 00:17:43.500
+right? So if you were on your own leader, and you as a developer, would you look up to your
+
+00:17:43.500 --> 00:17:47.979
+leader who has knowledge about most of these things, but then also has a vision, because as
+
+00:17:47.979 --> 00:17:53.579
+leaders, you expect to have a vision, or would you want to just look at yourself as just an
+
+00:17:53.579 --> 00:17:58.060
+independent contributor, where you're very happy doing just model building, and then, you know,
+
+00:17:59.099 --> 00:18:03.339
+take your paycheck home, and then you're happy with it. So think of those things, and then go
+
+00:18:03.339 --> 00:18:11.099
+both deep and across, you know, both vertical and across. Develop new perspectives, because once
+
+00:18:11.099 --> 00:18:15.020
+you become an architect, or once you not become, once you think like an architect, once you do
+
+00:18:15.020 --> 00:18:20.699
+system design, once you get into data engineering, your perspective about data science will change.
+
+00:18:20.699 --> 00:18:25.660
+I have done that. I have consciously trained myself to think like that. So I would encourage
+
+00:18:25.660 --> 00:18:30.699
+you to, you know, look into that perspective, but no matter what, pick a, you know, look at
+
+00:18:30.699 --> 00:18:35.020
+those two things, pick a job, get into it, and then explore your options, is what I'd say.
+
+00:18:36.300 --> 00:18:43.660
+Fantastic. Okay, well, we have a question that is from Mark, and I'm going to put it in the chat
+
+00:18:43.660 --> 00:18:49.579
+here. Mark, if you are available to ask that live, that would be great. Let's see if we can find Mark.
+
+00:18:49.579 --> 00:18:57.660
+Can you hear me? Hey, yep. Yeah. Hi, Brijesh. My question is, like, in your role right now, like,
+
+00:18:57.660 --> 00:19:04.140
+what is the most commonly used ML technique that, you know, that answers a problem almost, like,
+
+00:19:04.140 --> 00:19:09.500
+you know, more often than it, than you expect? And my follow-up question to that is, like,
+
+00:19:09.500 --> 00:19:14.699
+where does deep learning and, you know, AI, LLMs come into play in your day-to-day?
+
+00:19:17.180 --> 00:19:21.979
+Mark, you're, you're the same map of what's at Florida, right?
+
+00:19:22.939 --> 00:19:29.339
+Are you not? Yes, yes, I am. Yeah, like, yeah, yeah, we work together.
+
+00:19:30.619 --> 00:19:38.780
+Mark, my colleague, my friends. So, so, yeah, I think if you ask me this question in 2017,
+
+00:19:38.780 --> 00:19:43.420
+the default answer that everybody knows is XGBoost. Throw anything at XGBoost, it'll do well,
+
+00:19:44.380 --> 00:19:48.939
+or well enough. But I would say start looking at, don't, don't look at
+
+00:19:51.579 --> 00:19:56.459
+using an algorithm as it is, you know. You have to look at your data, you have to understand your
+
+00:19:56.459 --> 00:20:01.819
+data, and then think of which algorithm use, you know, works best. So, you'll have to build
+
+00:20:01.819 --> 00:20:09.579
+your data in order to use your algorithm, right? So, there, the most commonly used one, again,
+
+00:20:09.579 --> 00:20:14.140
+is XGBoost because it works extremely well because of how robustly built it is, or what kind
+
+00:20:14.140 --> 00:20:19.579
+of, how, how much of a robust algorithm it is. But then if you think about it, right, it only goes
+
+00:20:19.579 --> 00:20:24.939
+to solve for so many things, and it's extremely rectangular in its format, there are limitations
+
+00:20:24.939 --> 00:20:31.660
+to that. And if you want to know the causality of why something is happening at a role level,
+
+00:20:31.660 --> 00:20:36.300
+and you want to say, okay, this particular person in these, you know, the top decile,
+
+00:20:36.300 --> 00:20:40.540
+or the top 1% of the people give me the reasons why, and I want to reach out to them x, y, and z.
+
+00:20:41.819 --> 00:20:49.180
+If they happen to be more nuanced, then that's when you go into deep learning. Because then
+
+00:20:49.180 --> 00:20:54.780
+the way you structure your inputs to the model will change. So, you'll, you'll then start using
+
+00:20:54.780 --> 00:20:59.420
+transformer-based, or attention-based models, or you could probably develop something from
+
+00:21:00.300 --> 00:21:04.780
+LSTM-based solutions, or you could think of, you know, states-based solutions, and stuff like that.
+
+00:21:04.780 --> 00:21:12.300
+So, you'll have to start thinking of the problems, and see how you can structure the data in order to
+
+00:21:12.300 --> 00:21:17.020
+get the output that your business partner is looking for. So, if the business partner says,
+
+00:21:17.020 --> 00:21:24.380
+yeah, all of these members are fine, but then what about these reasons? If you tell, can you tell me
+
+00:21:24.380 --> 00:21:31.579
+why does this happen? If data points are correlated, or if data points are, okay, when I say data
+
+00:21:31.579 --> 00:21:40.619
+points, if certain events are related to certain other events, which are not to be looked at in
+
+00:21:40.619 --> 00:21:47.180
+isolation, you will then have to construct your data so that those two events are together, and
+
+00:21:47.180 --> 00:21:52.380
+the model understands that in context, and gives the output, at which point of time you would have
+
+00:21:52.380 --> 00:21:59.099
+to use deep learning. So, it's, it's about how the, when you talk to the business, and the business
+
+00:21:59.099 --> 00:22:05.099
+tells you these are my parameters that I want to look for, there is an ideal state where the business
+
+00:22:05.099 --> 00:22:09.579
+says, I want all of these things, but then there is a more practical state where you can get to
+
+00:22:10.540 --> 00:22:14.699
+an approximation of that ideal state. So, you'll have to pick and choose your algorithm based on
+
+00:22:14.699 --> 00:22:20.619
+that, is what I'd say. I hope that answers your question. I'm sure it does, and Mark, thank you so
+
+00:22:20.619 --> 00:22:26.140
+much for asking that fantastic question. Well, we had lots and lots of chatter going on in the chat
+
+00:22:26.140 --> 00:22:32.140
+about systems design, about architecture, adminning, and you mentioned that you were a
+
+00:22:32.140 --> 00:22:36.780
+Posit admin for many, many years, but you were also a practicing data scientist. I think that
+
+00:22:36.780 --> 00:22:42.380
+there are probably many people who have that same experience. So, I would love to ask you at our
+
+00:22:42.380 --> 00:22:49.420
+kind of halfway mark here, a tool-based question. So, what tools do your teams use? Are you in R?
+
+00:22:49.420 --> 00:22:55.579
+Are you in Python? Are you working? Are you deploying things in Connect? What is your
+
+00:22:55.579 --> 00:23:04.300
+experience as that sort of half-and-half admin and practitioner? So, our tech stack for data science
+
+00:23:04.939 --> 00:23:14.060
+machine learning at Florida Blue is Posit Workbench, Posit Connect. So, we develop in
+
+00:23:14.060 --> 00:23:21.020
+Posit Workbench, we deploy in Posit Connect. I was a reluctant admin to begin with because I
+
+00:23:21.020 --> 00:23:27.579
+didn't know anything about it, honestly speaking, but then I'm glad I got into it because being an
+
+00:23:27.579 --> 00:23:34.699
+admin changes the way you look at how you want to deploy stuff, how you want to make your
+
+00:23:36.699 --> 00:23:42.780
+models available. So, that helps you architect your solutions better. That helps you become a
+
+00:23:42.780 --> 00:23:50.060
+better solutions architect for that matter. So, it's a connected set of events, you know,
+
+00:23:51.180 --> 00:23:58.939
+depending on what you want to do. Now, I think we had around 150 developers and about
+
+00:23:59.739 --> 00:24:05.979
+800 to 1,000 consumers of the content. Whoa, whoa. Say that one more time. You had how many?
+
+00:24:07.099 --> 00:24:12.219
+800 to 1,000 consumers of the content. That's the license that we have for it.
+
+00:24:12.219 --> 00:24:18.459
+And about 150 active developers and increasing. The last I checked was 150. I don't know if that's
+
+00:24:18.459 --> 00:24:25.900
+gone more. That's a record. I think that's the highest I've heard. So, what I did was,
+
+00:24:26.859 --> 00:24:30.939
+and then, you know, we kind of used to work in silos and then people, we would get emails back
+
+00:24:30.939 --> 00:24:34.459
+and forth saying, okay, this is not working, that is not working, this is the thing, that is the
+
+00:24:34.459 --> 00:24:38.939
+thing, blah, blah, blah, blah. So, what we did was we just created a Teams channel and said,
+
+00:24:38.939 --> 00:24:43.260
+if you have any questions, post it here. And if somebody else also knows the answer to that,
+
+00:24:43.260 --> 00:24:48.939
+go ahead. So, what we did was we then have a set of packages that are internally developed
+
+00:24:48.939 --> 00:24:54.939
+to our own needs that we use. And those are specifically used on the Posit platform,
+
+00:24:54.939 --> 00:24:59.660
+you know, like, you know, to connect to databases, to deploy, and to do all of these things.
+
+00:24:59.660 --> 00:25:04.939
+So, that's kind of how it started. And then it's at full maturity right now. We are looking to move
+
+00:25:04.939 --> 00:25:09.819
+from on-prem, our solutions are basically on, sorry, our applications are basically on-prem.
+
+00:25:09.819 --> 00:25:15.579
+And we are now looking to move into cloud. So, the cloud that we're looking to move to,
+
+00:25:15.579 --> 00:25:19.660
+we'll now have to start thinking about how to set these things up, how will a session spawn
+
+00:25:19.660 --> 00:25:26.540
+for a person. So, it's not, because it's a server, right? Like Workbench and Connect are on the
+
+00:25:26.540 --> 00:25:30.540
+servers and multiple users use it. So, you'll have dependencies and all of those things. So,
+
+00:25:30.540 --> 00:25:34.939
+all of those things need to be figured out. You will then understand and appreciate how
+
+00:25:34.939 --> 00:25:40.699
+difficult it is and how important it is for you to look at authentication or user authentication
+
+00:25:40.699 --> 00:25:45.099
+and how that affects the way you work and stuff like that. I keep saying this all the time.
+
+00:25:46.699 --> 00:25:51.339
+If I had a DevOps team, I as a developer would just want to wake up in the morning,
+
+00:25:51.339 --> 00:25:56.060
+make my coffee, sit, just turn on my computer and log in and then just get away, you know?
+
+00:25:56.060 --> 00:26:01.660
+So, when I was the admin, that's kind of what I wanted to provide to our users
+
+00:26:03.099 --> 00:26:08.300
+so that they have least amount of friction to do the stuff that they wanted to do. But at the same
+
+00:26:08.300 --> 00:26:15.260
+time, that was a lot of work for me outside of my data science day-to-day work. So, it's an
+
+00:26:15.260 --> 00:26:19.900
+interesting thing. So, if you ever want to get into admin, you have to learn Linux. You have to
+
+00:26:19.900 --> 00:26:25.180
+learn how that works. You have to understand how to solution some things from a security perspective,
+
+00:26:25.180 --> 00:26:33.099
+which is, again, a different difficult thing depending on the figure that you're in. So,
+
+00:26:33.099 --> 00:26:37.900
+in healthcare, security is paramount, right? So, you have to be extremely specific. Users don't,
+
+00:26:37.900 --> 00:26:41.979
+especially data scientists and analysts, they aren't necessarily software developers. So,
+
+00:26:41.979 --> 00:26:46.219
+you don't go through the STLC process all the time. So, you'll have to guide them through
+
+00:26:46.219 --> 00:26:52.540
+those things. So, that got me into the security. That got me into being a cyber secure software
+
+00:26:52.540 --> 00:26:57.739
+developer hack. And so, that's kind of how my journey grew. So, if you're interested in that,
+
+00:26:57.739 --> 00:27:02.699
+I would very strongly encourage that you get into that. It helps. It helps you become an
+
+00:27:02.699 --> 00:27:06.780
+all-around person for that matter. **Sameera Kapila):
+
+00:27:06.780 --> 00:27:10.540
+Fantastic. Okay. Well, we will move on from admin questions in just one second,
+
+00:27:10.540 --> 00:27:12.780
+but I know that Rachel has one because she mentioned it earlier.
+
+00:27:12.780 --> 00:27:17.660
+**Rachel Hansen** Yeah, it seems like people want to write a book called The Reluctant Admin
+
+00:27:18.300 --> 00:27:26.619
+as well. But I was wondering, how did you so successfully transfer that IT admin ownership
+
+00:27:26.619 --> 00:27:32.939
+over, especially with so many people being reliant on the tools? Like, what was that
+
+00:27:32.939 --> 00:27:34.780
+transition like? **Sameera Kapila**
+
+00:27:34.780 --> 00:27:41.020
+So, the transition period was not easy, honestly, if I'm being very honest. It's not easy, you know?
+
+00:27:41.739 --> 00:27:51.579
+So, POSIT admin is a very niche-specific admin role. It's not your general systems admin. It's
+
+00:27:51.579 --> 00:27:56.699
+not your general Hadoop admin. It's not your general Linux admin. You need to have the
+
+00:27:56.699 --> 00:28:02.380
+knowledge of all three of them, and you need to know how POSIT workbench works. You need to know
+
+00:28:03.260 --> 00:28:08.060
+how the config files are set up. You need to know how POSIT is set up or is expected to be set up.
+
+00:28:08.060 --> 00:28:11.260
+You need to know all of those things, and then you need to know the connect side of things as
+
+00:28:11.260 --> 00:28:17.660
+well. And being a POSIT admin also comes with, hey, I have these R-related questions. Can you
+
+00:28:17.660 --> 00:28:23.420
+help me? I have these Python-related questions. Can you help me? So, I'm not a R person. I've
+
+00:28:23.420 --> 00:28:31.020
+never tried to be an R person. I would just say I'm literate at R. So, any of my R questions,
+
+00:28:31.020 --> 00:28:36.060
+I kind of diverted to my teammates who are experts in R. Any of the Python-related questions, I
+
+00:28:36.060 --> 00:28:42.300
+handle. So, it's a very niche kind of role where you have to be extremely good at many things at
+
+00:28:42.300 --> 00:28:48.380
+the same time. So, the new admins who have come in, they came from not this kind of background.
+
+00:28:48.380 --> 00:28:53.099
+They weren't R developers. They weren't Python developers. So, it took us a while. So, we kind
+
+00:28:53.099 --> 00:29:00.780
+of developed an internal mechanism where it made it easier for them to kind of know what sort of
+
+00:29:00.780 --> 00:29:07.020
+issues that come up. So, what we did was we have a Git issues and we created a dashboard of,
+
+00:29:07.579 --> 00:29:15.339
+you know, a Git board. And then, basically, if you're a new admin, you can search for an issue
+
+00:29:15.339 --> 00:29:20.300
+and that issue will have been resolved somewhere. And then, you know, if, let's say, I didn't exist
+
+00:29:20.300 --> 00:29:25.020
+in this company tomorrow, you can actually look at how that issue was resolved and then go about
+
+00:29:25.020 --> 00:29:29.260
+resolving that issue. That's kind of how we designed it and set it up. That's helped our
+
+00:29:29.260 --> 00:29:33.979
+new admins. We still continue to help new admins if, you know, there are Kerberos issues or
+
+00:29:33.979 --> 00:29:38.699
+something of that sort, right? And if they have any questions or whatever. And we still sometimes
+
+00:29:38.699 --> 00:29:43.900
+do get on the calls for, hey, we're going to set these things up in cloud. You know, what do we
+
+00:29:43.900 --> 00:29:48.060
+need to look at? Or, you know, do you have a few use cases that we need to look into and stuff like
+
+00:29:48.060 --> 00:29:54.300
+that? So, that's kind of how we evolved. It's taken about six months, I would say. It's not
+
+00:29:54.300 --> 00:29:58.219
+super easy. So, it's going to take time. Yeah. Thank you. It sounds like there's a
+
+00:29:58.219 --> 00:30:01.900
+great relationship, though, between data science and IT at the company.
+
+00:30:02.540 --> 00:30:09.819
+So, at our company, we are in the IT wing. There are other data scientists across as well. So,
+
+00:30:09.819 --> 00:30:16.060
+there is a data science for different business areas. We were, I think, 10 years ago or whenever
+
+00:30:16.060 --> 00:30:20.219
+the enterprise data science team. So, we stuck in IT. That's where we've been.
+
+00:30:20.300 --> 00:30:28.380
+Wow. Okay. We have so many questions in Slido. Let's see if we can spend the next 10 minutes
+
+00:30:28.380 --> 00:30:34.540
+getting through as many as we can. Makarand had asked a question in the Slido. And let's
+
+00:30:34.540 --> 00:30:41.020
+see if we can find Makarand to unmute. Yeah, I'm unmuted. Hi. I'm there.
+
+00:30:41.020 --> 00:30:44.060
+There. Hey. Would you like to ask your question live?
+
+00:30:44.140 --> 00:30:47.260
+Sure. Hi. This is Makarand here. I am in California Bay Area.
+
+00:30:48.859 --> 00:30:56.140
+You know, with AI, this question is pertinent to a lot of us. How do you think AI is going to
+
+00:30:56.140 --> 00:31:03.180
+impact data science roles? I personally see a huge impact already and can speak more to it.
+
+00:31:03.739 --> 00:31:09.420
+And then, you know, do you use AI as a productivity tool in your day-to-day? And if so, how?
+
+00:31:10.060 --> 00:31:17.500
+Yeah. Very pertinent question. So, yes, AI is going to impact not just data science. AI is
+
+00:31:17.500 --> 00:31:22.699
+going to impact even software development for that matter. AI is going to impact to a reasonable
+
+00:31:22.699 --> 00:31:26.699
+degree now architecture in the future. Probably, you know, that's where we're going to go.
+
+00:31:26.699 --> 00:31:35.180
+I think the only safe stream right now is data engineering. So, if you are a good data engineer
+
+00:31:36.140 --> 00:31:40.380
+and, you know, you're worth your salt, then you're safe for now is what I would say.
+
+00:31:41.020 --> 00:31:47.180
+But as for data science, right, yeah, it's definitely going to affect because I have seen…
+
+00:31:51.260 --> 00:31:58.140
+I'm pretty sure most of us have seen that, you know, you throw a CSV, let's say, at the model
+
+00:31:58.140 --> 00:32:02.619
+and you ask it questions, it's going to generate X, Y, and Z. If you are a Pandas user, you know
+
+00:32:02.619 --> 00:32:07.099
+that Pandas AI is a package that you can actually load to just ask it questions, you know. So,
+
+00:32:07.099 --> 00:32:13.739
+it just depends on how it's being used. I don't… California is a different bubble in itself
+
+00:32:13.739 --> 00:32:17.739
+altogether. So, outside of California, all of the other companies are still trying to get up to
+
+00:32:17.739 --> 00:32:23.900
+speed with this. In many companies like ours, there are a lot of, you know, compliance and
+
+00:32:23.900 --> 00:32:28.219
+regulatory issues that we have to overcome before we start doing all of these things
+
+00:32:28.219 --> 00:32:31.420
+because of where the data sits and where it goes and what you can ask and
+
+00:32:31.420 --> 00:32:37.099
+what is quote-unquote touched by AI. CMS defines… CMS doesn't define it adequately,
+
+00:32:37.099 --> 00:32:44.939
+but it says touched by AI or use AI. So, now AI could be NLP, could be, you know, your language
+
+00:32:44.939 --> 00:32:49.260
+models, could be anything. So, if it's generated by AI, it's actually generated by the language
+
+00:32:49.260 --> 00:32:56.780
+model or is it just an extraction? It's not very adequately defined. So, for now, it's okay,
+
+00:32:56.780 --> 00:33:02.380
+but then very soon, there's going to come a place where many of the jobs are going to be redundant
+
+00:33:02.380 --> 00:33:08.859
+because you can then do more with less. Now, but that also means that you're not necessarily going
+
+00:33:08.859 --> 00:33:14.060
+to get more productive. It means that you're going to have to work on a lot of things because
+
+00:33:14.060 --> 00:33:17.900
+the assumption is that, hey, you don't now have to write the code that you otherwise previously
+
+00:33:17.900 --> 00:33:23.180
+would have to. So, those assumptions are changing. I am seeing that in multiple organizations,
+
+00:33:24.140 --> 00:33:29.819
+you know, the whole idea of trying… For instance, we have a AI coding agent,
+
+00:33:29.819 --> 00:33:33.420
+like we have Windsurf, you know, this thing, you know, as part of the organization. So,
+
+00:33:33.420 --> 00:33:39.900
+many people use that. I use it to… So, I set up a few things so that I use it for
+
+00:33:39.900 --> 00:33:44.619
+code review, you know. It helps me review the code much faster because with all of the other
+
+00:33:44.619 --> 00:33:48.540
+things that I do, I won't have enough time to actually do enough, like, detailed code review.
+
+00:33:48.619 --> 00:33:54.780
+So, I ask it to do X, Y, and Z, and it comes back with whatever. But then I still rely on my own
+
+00:33:54.780 --> 00:34:00.699
+know-how to actually go and look at the logic that's actually written for the business. It's
+
+00:34:00.699 --> 00:34:04.939
+not just about the correctness. It's also about, is the business logic correct? Are you reading
+
+00:34:04.939 --> 00:34:07.819
+the right kind of columns? Are you reading the right kind of… This thing, are you doing the
+
+00:34:07.819 --> 00:34:14.459
+right kind of transmissions? Does it make… What… The transmission that you do, is it
+
+00:34:14.459 --> 00:34:18.860
+clinically relevant? All of those things, I don't think AI can do yet, you know. So,
+
+00:34:19.659 --> 00:34:23.419
+but for most of the things, you can check for code correctness, you can check for,
+
+00:34:24.780 --> 00:34:31.020
+you know, you can write quickly tests and stuff like that. So, that's where I see it useful.
+
+00:34:31.020 --> 00:34:36.300
+But in terms of impact, in what we do from a exploratory data analysis,
+
+00:34:36.587 --> 00:34:41.307
+Exploratory Data Analysis. The good part is we can do that EDA, initial EDA much faster,
+
+00:34:41.307 --> 00:34:44.347
+but at the same time, there will come a point of time where all of this will become
+
+00:34:44.347 --> 00:34:46.747
+agentic and then it'll just run a model and do X, Y, and Z.
+
+00:35:16.424 --> 00:35:21.543
+You have to think of a solution, put in your inputs in a certain way, and think of your
+
+00:35:21.543 --> 00:35:26.183
+outputs in a certain way, and then you can write code and stuff like that. But if you're expecting
+
+00:35:26.183 --> 00:35:32.104
+it to do the auto ML part, it's not there yet. Maybe it will be, maybe somebody will, you know,
+
+00:35:32.104 --> 00:35:37.383
+decide to build an agent solution out there, which does that, and that will change the game.
+
+00:35:37.383 --> 00:35:43.624
+I don't know. But yeah, it's definitely going to affect. But in order for you to hedge yourself
+
+00:35:43.624 --> 00:35:48.984
+against that risk, I would still say, be fundamentally thorough in your machine learning,
+
+00:35:48.984 --> 00:35:56.104
+deep learning, statistics, mathematics, whatever you have it, you know, and then coding is kind of
+
+00:35:56.104 --> 00:36:00.904
+out of our hands. You know, you tell people I'm a better coder than a coding agent right now.
+
+00:36:00.904 --> 00:36:05.383
+It's a hard thing to prove these days. But you can always still say that I'm a much better data
+
+00:36:05.383 --> 00:36:09.144
+scientist, or I'm a much better machine learning engineer than a coding agent or, you know,
+
+00:36:09.224 --> 00:36:13.784
+the AI can do right now. And you would still get away with that, and people will trust you.
+
+00:36:14.983 --> 00:36:19.144
+Awesome. Thanks, Rajesh. Thank you, Makarand, for that question. And I wanted to call out that
+
+00:36:19.144 --> 00:36:26.744
+there's a huge conversation happening in the chat, including Makarand talking about systems design
+
+00:36:26.744 --> 00:36:31.303
+versus ad hoc work, which is really, really interesting. Makarand, I'm going to have to
+
+00:36:31.303 --> 00:36:34.504
+like reach out so that we can talk more about this. Maybe you can come on the Hangout with us
+
+00:36:34.504 --> 00:36:38.824
+and talk about it as well, because it's a fantastic topic, like this balance between
+
+00:36:38.824 --> 00:36:43.864
+rigor and speed that we see in business, especially as academic thinkers, where the
+
+00:36:43.864 --> 00:36:47.544
+business is always going to need these like quick turnarounds. Anyway, everybody go look at that
+
+00:36:47.544 --> 00:36:52.904
+conversation and chime in, and we will head over to another question in Slido. Oh, go ahead,
+
+00:36:52.904 --> 00:36:57.224
+Rajesh. Before that, if I may, about the system design. So the way we look at it here is, you know,
+
+00:36:58.744 --> 00:37:03.463
+it's not just about data science models that you build. So we also build up the applications in
+
+00:37:03.463 --> 00:37:08.823
+our team, right? So that brings in itself its own level of system design that you'll have to think
+
+00:37:08.823 --> 00:37:13.063
+about. You'll have to understand what works, what doesn't work. That's another part where
+
+00:37:13.063 --> 00:37:17.703
+AI kind of falls short, because you are the one who has to think about you. There's practically
+
+00:37:17.703 --> 00:37:24.664
+no way for the AI to be cognizant of all of the existing stuff that's going on in your organization
+
+00:37:24.664 --> 00:37:28.903
+and how things are set up and all of those things. So your system design is basically your architecture
+
+00:37:28.983 --> 00:37:34.343
+at the end of the day. Any architect's fundamental thing is system design. So for you to be able to
+
+00:37:34.343 --> 00:37:37.784
+know that, you have to be very cognizant of that. So when you build your systems out,
+
+00:37:39.224 --> 00:37:42.823
+that's what I mean to say, you know, when you architect your solution, it's not just about
+
+00:37:42.823 --> 00:37:47.784
+which algorithm I use or how I input the data. It's about how many users are going to use it. How
+
+00:37:47.784 --> 00:37:52.183
+am I going to connect it to different things? How am I going to fetch from this database at
+
+00:37:52.183 --> 00:37:57.063
+whatever pace? Is it going to be given to me in a stream? Is it going to be given to me in a batch?
+
+00:37:57.063 --> 00:38:01.224
+Is it going to be given to me in a JSON format? Is it just going to be a row by row fetch?
+
+00:38:01.224 --> 00:38:04.903
+All of those things you'll have to think about when you build your model, because your model
+
+00:38:04.903 --> 00:38:09.623
+outputs are going to then be dependent on the speed at which your system integrates.
+
+00:38:10.504 --> 00:38:14.823
+So system design is definitely something that's a must for most machine learning engineers.
+
+00:38:14.823 --> 00:38:22.983
+So yeah, be relevant. Fantastic. We definitely had some other systems design questions in there.
+
+00:38:22.983 --> 00:38:27.703
+The Slido is just so full of questions. We will never be able to get to all of them because we
+
+00:38:27.703 --> 00:38:32.903
+have 15 minutes left. But I would love to bring in Logan to ask his question live, because it
+
+00:38:32.903 --> 00:38:38.504
+definitely fits into the sort of vibe of today, generalizing our work experience to other things
+
+00:38:38.504 --> 00:38:44.103
+and being a plug and play mindset with your data science. So Logan, if you are available to ask
+
+00:38:44.103 --> 00:38:52.263
+yours live. Yeah. That would be. Hey, Logan. How's it going? It's all right. I wanted to ask,
+
+00:38:52.263 --> 00:38:55.944
+I'm a little young in my career as a data scientist. So I wanted to ask, it seems like
+
+00:38:55.944 --> 00:39:01.623
+you've switched a lot of careers where data is vastly different. The systems that you're using
+
+00:39:01.623 --> 00:39:09.223
+are vastly different. And as data scientists, we're expected to know, be the experts on our
+
+00:39:09.223 --> 00:39:15.624
+systems and data. How do you quickly become an expert on the, when you walk into a new job,
+
+00:39:15.624 --> 00:39:24.103
+how do you quickly become the data expert? I don't think there's any such thing as quickly
+
+00:39:24.103 --> 00:39:34.904
+becoming a data expert. So the way I grew into my role is I, so if this is a funnel, I'd say here,
+
+00:39:34.904 --> 00:39:39.943
+if this is a funnel here is where data scientists usually operate. And I'd say, stop just being
+
+00:39:39.943 --> 00:39:45.464
+here. This is a local minima for you. Just don't be here. Which is why I say, if you think like
+
+00:39:45.464 --> 00:39:52.184
+a architect system design comes into the picture, you have to know where your data exists, what's
+
+00:39:52.184 --> 00:39:56.424
+your data pipeline. So depending on whichever company that you work for, try and get to know
+
+00:39:56.424 --> 00:40:01.144
+the data pipeline. If you don't have restrictions to know that data pipeline or to access that
+
+00:40:01.144 --> 00:40:07.624
+thing, that's a different issue. And it makes it much easier, but get to know that, where all of
+
+00:40:07.624 --> 00:40:13.383
+the data is flowing into, what kind of data does my company get in? If you want to call it a data
+
+00:40:13.383 --> 00:40:19.383
+lake, what flows into the data lake and outside of the data lake, what kind of pipelines are built
+
+00:40:19.383 --> 00:40:26.263
+to go into relational databases or NoSQL kind of setting, or am I just feeding into flat files or
+
+00:40:26.263 --> 00:40:30.744
+am I, if you work in industries where there are images or audio files and stuff like that.
+
+00:40:31.703 --> 00:40:37.943
+And then you'll have to start thinking about, if I have to collect more features for whatever
+
+00:40:37.943 --> 00:40:44.024
+data science work that I'm doing, can I extract features only from this relational database or
+
+00:40:44.024 --> 00:40:48.983
+from NoSQL, or can I also go above and beyond and say, you know what, from this particular
+
+00:40:48.983 --> 00:40:55.624
+WAV file, I can actually transcribe this document, this audio file, and then do some NLP on top of
+
+00:40:55.624 --> 00:41:01.064
+that, or basically if you're using a language model to be able to summarize or to extract,
+
+00:41:01.064 --> 00:41:05.943
+can I get more data points out of that? Is this information available? That is kind of how you
+
+00:41:05.943 --> 00:41:11.703
+have to think, because you should never stop yourself in this here. You also have to
+
+00:41:11.703 --> 00:41:15.783
+think about a data engineer. You have to think about, okay, but if I have to connect these two
+
+00:41:15.783 --> 00:41:20.744
+different databases, how do I go about connecting them? Am I writing the most optimal SQL?
+
+00:41:20.744 --> 00:41:24.424
+And then once you connect different databases, you'll try and say, oh, these have these many other
+
+00:41:24.424 --> 00:41:28.904
+fields that I didn't know. You'll have to spend time visually looking at all of the different
+
+00:41:28.904 --> 00:41:33.304
+fields and see if it's useful to you or not. You'll have to be very curious and asking
+
+00:41:33.624 --> 00:41:38.983
+same question as to what does this mean? What does that mean? And then most importantly,
+
+00:41:38.983 --> 00:41:46.024
+I would say you'll have to think like the business or like your end user. If you were
+
+00:41:46.024 --> 00:41:51.783
+a recipient of the analysis that you were given, what would you want or what else do you want?
+
+00:41:52.503 --> 00:41:58.823
+How deep would you want to go? And so that's kind of how you have to switch your thinking.
+
+00:41:58.823 --> 00:42:04.503
+So your data science, with all of the machine learning and the statistics background that you
+
+00:42:04.503 --> 00:42:10.503
+must have learned in your school, or even when you're in your job that you're learning, that
+
+00:42:10.503 --> 00:42:22.024
+you're being an architect or a system designer, and then being a vertical data engineer is
+
+00:42:22.024 --> 00:42:27.864
+fundamental to being a good machine learning stack. Then if you want to add yourself another
+
+00:42:27.864 --> 00:42:32.103
+vertical, which is DevOps, that's great. It's not necessarily going to build you with anything,
+
+00:42:32.103 --> 00:42:36.263
+but let's say if you want to become the CTO of a company, you will have that thought process
+
+00:42:36.263 --> 00:42:40.344
+where you say, I want you to do X, Y, and Z and think about this. I want to solution this and so
+
+00:42:40.344 --> 00:42:44.823
+on and so forth. So that's kind of how I would say grow into your career in that perspective and not
+
+00:42:44.823 --> 00:42:49.543
+just limit yourself to just being, I was given this data. I'm only going to look at these features
+
+00:42:49.543 --> 00:42:57.624
+and based on these features, here's the output. So like I said, go and look for data that you
+
+00:42:57.624 --> 00:43:02.263
+probably don't even think you need for right now. Just look at the data, like see what's
+
+00:43:02.263 --> 00:43:07.943
+available. And then you'll know that, okay, when the time comes, oh, I have this data over here,
+
+00:43:07.943 --> 00:43:13.783
+would that be useful? Or there is data over here, which is somewhat translatable to the
+
+00:43:13.783 --> 00:43:18.824
+feature that I'm looking for. Let me see and add that. That's kind of how I would go about it.
+
+00:43:20.424 --> 00:43:26.103
+We have lots of voting for yes, think like the business. And also I wanted to
+
+00:43:26.103 --> 00:43:30.744
+point out Hubert's comment in the chat, which was that understanding of the domain knowledge is
+
+00:43:30.744 --> 00:43:35.783
+super important. And people tend to just kind of skip that because of the deadline pressure
+
+00:43:35.783 --> 00:43:40.903
+that they get, but understanding the data and the domain is absolutely invaluable.
+
+00:43:40.903 --> 00:43:46.343
+Okay. Let's head over to Slido one more time and we only have 10 minutes left, but hopefully we
+
+00:43:46.343 --> 00:43:53.624
+can get another question and then talk a little bit about career advice. So one that might be
+
+00:43:53.624 --> 00:43:57.704
+quick to answer, we had an anonymous question that said, I've been told that I need to have
+
+00:43:57.704 --> 00:44:03.223
+a portfolio and I need to have done a bunch of projects on GitHub to be a stronger job-seeking
+
+00:44:03.223 --> 00:44:14.744
+candidate. How true is that? It is true to a certain extent, especially if you're in a tie
+
+00:44:14.744 --> 00:44:22.424
+break situation. So I've interviewed for people to be part of my team or to be part of other
+
+00:44:22.824 --> 00:44:29.143
+teams as well. That's my first thing that I look for is, do they have a GitHub profile?
+
+00:44:29.143 --> 00:44:34.903
+And what kind of work they've done? I'd like to see what kind of changes they've made over
+
+00:44:34.903 --> 00:44:41.064
+time, the comments that they do and stuff like that. But at the same time, it's more relevant
+
+00:44:41.704 --> 00:44:51.064
+if you are very early in your career. And let's say you're looking for a job and for whatever
+
+00:44:51.064 --> 00:44:56.023
+reason, you haven't been able to seek a job for six months. When you start on Jan 1st, let's say,
+
+00:44:56.023 --> 00:44:59.783
+nobody thinks that they'll have to wait until June or July to find a job. They would hope that
+
+00:44:59.783 --> 00:45:05.384
+they'd get a job sooner than later. But I just say, start on the side, building out projects
+
+00:45:05.384 --> 00:45:12.103
+that you think you're interested, not to show somebody else that you can do X, Y, and Z.
+
+00:45:12.103 --> 00:45:17.463
+But if it's a project that you think that you're genuinely interested, automatically you will go
+
+00:45:17.463 --> 00:45:25.223
+very deep into that. And when you talk about that in your job interview, you will then tell
+
+00:45:25.223 --> 00:45:28.983
+them how you thought through the problem, how you thought through the solutions, how you thought
+
+00:45:28.983 --> 00:45:32.343
+through the system design, if there is a system designed to that, how you thought through the
+
+00:45:32.343 --> 00:45:39.944
+scale of problem, how you thought through the lack of data, if it's data that's
+
+00:45:40.663 --> 00:45:46.264
+publicly available, and how did you get that data? How did you transform that data?
+
+00:45:46.264 --> 00:45:51.944
+All of those things will automatically happen. So even if it's just one project, the depth of
+
+00:45:51.944 --> 00:45:57.304
+the project is sufficient. And then you'll anyways have, depending on the team that you're
+
+00:45:57.304 --> 00:46:05.304
+interviewing with, the code that you work with, they'll ask you to write your code. So it's not
+
+00:46:05.304 --> 00:46:11.064
+a given that if you have a GitHub profile, they'll wave off the code interview part or something of
+
+00:46:11.064 --> 00:46:16.663
+that sort. You'll have a few more downy points here and there. But the way I look at interviewees
+
+00:46:16.663 --> 00:46:21.624
+is how they are able to think, especially in this day and age when you have coding agents
+
+00:46:22.424 --> 00:46:28.023
+and the need to be an exceptionally good coder is kind of reduced. It's all about the way you
+
+00:46:28.023 --> 00:46:32.103
+think about a solution and the way you come up with the solutions. Have you been able to put
+
+00:46:32.103 --> 00:46:37.223
+out a dashboard of sorts? And all of those things do matter. So think about it that way and build
+
+00:46:37.223 --> 00:46:42.903
+up a site as well. Fantastic. Okay. Well, seven minutes left. So maybe we can get in
+
+00:46:44.343 --> 00:46:49.783
+our last question that we like to ask, which is career advice. There's been a ton of career
+
+00:46:49.783 --> 00:46:53.543
+advice already in our call, but Prajesh, are there some things that you would share with people
+
+00:46:54.184 --> 00:46:59.143
+who are sort of like lower down the ladder than you or your peers? Like
+
+00:46:59.143 --> 00:47:02.264
+what helped you in your career? What would you share with others?
+
+00:47:03.143 --> 00:47:12.184
+Like I said, when Logan was asking, don't put yourself in a local minimum. If that's what you
+
+00:47:12.184 --> 00:47:15.864
+want to do and you're happy in that space, that's fine. There's nothing wrong with that. There is no
+
+00:47:15.864 --> 00:47:22.504
+right or wrong things here. But if you are a curious person, if you want to grow up the ladder,
+
+00:47:22.504 --> 00:47:27.944
+even don't just put yourself in a local minimum. I have a bunch that I've kind of wanted to get
+
+00:47:28.903 --> 00:47:34.504
+into, but none of them are related to go to this particular website, this particular YouTube
+
+00:47:34.504 --> 00:47:42.264
+channel, or listen to this podcast and whatever. I think the first thing that you need to develop
+
+00:47:42.264 --> 00:47:48.903
+is perspective as a data scientist or a machine learning engineer or whatever. It's about
+
+00:47:48.903 --> 00:47:56.583
+developing new perspectives. You will have to spend your time and actively curate what perspectives
+
+00:47:56.663 --> 00:48:08.663
+that you develop and how that translates to what you do in your job. I very consciously built
+
+00:48:08.663 --> 00:48:13.463
+myself into thinking like a data scientist. I was a researcher, so I used to think like a
+
+00:48:13.463 --> 00:48:17.704
+researcher. And then I quickly realized that just thinking like that wouldn't help because there are
+
+00:48:17.704 --> 00:48:21.783
+deadlines to reach. There are so many other things, not every job, not every problem is a research
+
+00:48:21.783 --> 00:48:27.944
+problem. So you'll start having to think about what is the simplest way I can get to the solution.
+
+00:48:27.944 --> 00:48:32.744
+If there is a simple way, do I even need to go and think about a more complex machine learning
+
+00:48:32.744 --> 00:48:36.744
+solution? Take it to the business. If the business is happy with that, okay, so be it.
+
+00:48:36.744 --> 00:48:43.624
+But then you kind of get a buy-in because I think a lot of people's issues are we are not really
+
+00:48:43.624 --> 00:48:49.064
+given enough time to implement X, Y, and Z. Initially, you will never be given enough time,
+
+00:48:49.064 --> 00:48:53.624
+but then you get a buy-in after producing some results and then tell them, hey, usually this is
+
+00:48:53.624 --> 00:48:57.944
+not a good thing for X, Y, and Z reasons. You have to do all of these things, which usually takes
+
+00:48:58.663 --> 00:49:03.064
+three months instead of the two or one month that you asked for. And so you're kind of
+
+00:49:04.424 --> 00:49:09.543
+buying more territory based on how you go about it. And for that, you need to know
+
+00:49:10.103 --> 00:49:13.543
+the different verticals and the different horizontals and how they work. If somebody
+
+00:49:13.543 --> 00:49:20.264
+says scale up, I want you to be able to do this for a million documents. You have to make them
+
+00:49:20.264 --> 00:49:24.343
+understand that from a DevOps perspective, it's not just random scale up. It comes with certain
+
+00:49:24.343 --> 00:49:31.624
+costs. You won't be expected to see the same amount of time and accuracy because of certain
+
+00:49:31.624 --> 00:49:36.583
+things that you would probably see something in a thousand documents versus a million documents.
+
+00:49:36.583 --> 00:49:43.384
+And it changes the way systems are interconnected. It could potentially induce more failures. It
+
+00:49:43.384 --> 00:49:49.864
+would potentially induce more missed documents or whatever. So you'll have to talk to them about it.
+
+00:49:49.864 --> 00:49:54.903
+Usually many people in the business are willing to listen to your things, but at the same time,
+
+00:49:54.903 --> 00:50:03.384
+keep it somewhat technical. So you have to learn to speak like the business and explain in English
+
+00:50:03.384 --> 00:50:08.343
+rather than going too technical about X, Y, and Z, which they may or may not necessarily fully
+
+00:50:08.343 --> 00:50:15.223
+understand. So go vertical and go horizontal at the same time if you want to really be
+
+00:50:15.223 --> 00:50:20.983
+exceptionally good at your job. That's my long and short of career advice. But outside of that,
+
+00:50:20.983 --> 00:50:26.903
+I have a few that I'd like to go through. First and foremost, be kind. That's the first thing
+
+00:50:26.903 --> 00:50:32.264
+that you should do. Be kind to people. And as a data scientist or a machine learning engineer,
+
+00:50:32.264 --> 00:50:37.064
+you have to train yourself to be unbiased. What that means to say is you have to
+
+00:50:37.864 --> 00:50:44.023
+stop thinking of this works. I know I have so much experience, blah, blah, blah. Put all of
+
+00:50:44.023 --> 00:50:49.384
+that aside when you get into a meeting with someone. Hear them out. Don't talk over them
+
+00:50:49.384 --> 00:50:56.983
+and hear them out and understand what they're trying to say. Many times when we go and sit
+
+00:50:57.864 --> 00:51:03.944
+with the business is we try and get the requirements. The getting the requirements
+
+00:51:03.944 --> 00:51:09.143
+part is more like the business says these nine things are my requirements. Am I delivering on
+
+00:51:09.143 --> 00:51:13.624
+that? No. There's a lot of in between the lines. So try and understand what the business really
+
+00:51:13.624 --> 00:51:18.583
+wants. Sometimes the business doesn't really know what they want. So try and talk to them about it.
+
+00:51:18.583 --> 00:51:22.903
+Try and work through that thing. And then you can then get a better business requirements.
+
+00:51:23.543 --> 00:51:27.463
+And then when you work with your business analyst or whoever is writing the business requirements,
+
+00:51:27.463 --> 00:51:32.103
+you can say, Hey, this is probably not going to be done in this phase because of these reasons,
+
+00:51:32.103 --> 00:51:37.064
+but we can do an approximation of this. So on and so forth. So it just depends on how you
+
+00:51:38.103 --> 00:51:44.983
+genuinely listen to people. If you're interested, be a mentor, becoming a mentor or becoming a
+
+00:51:44.983 --> 00:51:50.184
+teacher changes the perspective altogether in the way you actually go about your own job.
+
+00:51:50.663 --> 00:51:54.503
+Because then there's a difference between you understanding something and there's a difference
+
+00:51:54.503 --> 00:51:59.224
+between you explaining something. And then like Feynman or Einstein, either of them said,
+
+00:51:59.224 --> 00:52:03.783
+if you're not able to explain something adequately, you haven't understood it well enough.
+
+00:52:03.783 --> 00:52:13.143
+So being a mentor to somebody who's a junior or not as much experience as you are always helps.
+
+00:52:13.143 --> 00:52:16.344
+And they bring in new perspectives that you probably never would have thought of.
+
+00:52:16.344 --> 00:52:20.743
+So that's something that you would have to definitely look into. And I think this is
+
+00:52:20.743 --> 00:52:25.704
+extremely important for data scientists, develop rapport with people and get them to invite you
+
+00:52:25.704 --> 00:52:31.143
+into meetings that you have no business being in. Just sit there and listen to what they are
+
+00:52:31.143 --> 00:52:36.104
+discussing, especially if it is business related, because you will then understand why business is
+
+00:52:36.104 --> 00:52:40.663
+asking for something rather than what they're specifically asking for. So just go there.
+
+00:52:40.663 --> 00:52:44.584
+I used to do this. I used to just say, Hey, can I just join here? And then I just, I used to sit
+
+00:52:44.584 --> 00:52:48.184
+there. I used to say, I used to say, can I be a fly in the wall? And they'd be like, okay,
+
+00:52:48.184 --> 00:52:53.383
+CC Brijesh. And I just go and listen. And I developed so many perspectives. That's kind
+
+00:52:53.383 --> 00:52:59.304
+of how I developed my know-how of some of the domain knowledge. Otherwise you won't get that
+
+00:52:59.304 --> 00:53:04.023
+domain knowledge. You will then hear more problems in the business than you think, Oh, you know what?
+
+00:53:04.023 --> 00:53:08.903
+I can actually solve for this. That gives you some more acceptance and buy-in as well in the
+
+00:53:08.903 --> 00:53:14.023
+company that you are working for. Fantastic. Well, we have hit the top of the hour.
+
+00:53:14.023 --> 00:53:18.023
+So I have to jump in and stop you Brijesh, but please follow Brijesh on LinkedIn,
+
+00:53:18.023 --> 00:53:23.623
+where I think he might share more of this wisdom. We thank you for hanging out with us. I cannot
+
+00:53:23.623 --> 00:53:29.383
+wait to see you on Tuesday at the Data Science Lab where Hadley Wickham is going to be live coding
+
+00:53:29.383 --> 00:53:33.783
+the week's TidyTuesday dataset. And by the way, the TidyTuesday dataset for next week has not
+
+00:53:33.783 --> 00:53:39.944
+been set yet. So if you would like to submit an unhinged dataset for TidyTuesday for Hadley to
+
+00:53:39.944 --> 00:53:45.623
+live code, you can do that today. I think that the deadline is today. John Harmon,
+
+00:53:45.623 --> 00:53:51.783
+who does TidyTuesday, is going to choose the dataset tonight. So hop on that. Go check out
+
+00:53:51.783 --> 00:53:56.824
+the Call for Talks for PositConf 2026. And thank you so much for hanging out with us,
+
+00:53:56.824 --> 00:54:00.663
+Brijesh. This was wonderful. I had such a good time. Thank you, everybody.

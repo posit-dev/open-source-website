@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 1249
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.442510+00:00'
+  last_updated: '2026-03-20T11:32:48.811397+00:00'
   like_count: 6
   people:
   - Andrew Holz
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0P8Y4pVUNSQ/maxresdefault.jpg
   title: Andrew Holz - Oops I'm A Manager - Finding your Minimal Viable Process
   url: https://www.youtube.com/watch?v=0P8Y4pVUNSQ
-  view_count: 457
+  view_count: 458
 ---
 image: thumbnail.jpg
 

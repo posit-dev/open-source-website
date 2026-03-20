@@ -1,0 +1,1891 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:11.440
+So welcome to the Data Science Lab, everybody. My name is Libby. I'm a data community manager
+
+00:00:11.440 --> 00:00:17.360
+here at Posit, and I am joined by my co-host, Isabella Velazquez. Isabella, please say hello.
+
+00:00:17.360 --> 00:00:19.040
+Hi, everyone. Thanks for joining us.
+
+00:00:20.240 --> 00:00:27.200
+We are so excited to be joined today by Edgar Ruiz. Edgar, he is a maintainer of the mall
+
+00:00:27.280 --> 00:00:30.959
+package, which we will be talking about today. Edgar, would you like to say hello?
+
+00:00:31.760 --> 00:00:37.680
+Hi, everyone. Thank you for joining. Also, thank you for being here in such cold weather,
+
+00:00:38.639 --> 00:00:43.279
+and hopefully we can show some cool stuff that y'all can use.
+
+00:00:44.799 --> 00:00:49.599
+If you have not used the mall package, and we are hopefully sticking links to everything in
+
+00:00:49.599 --> 00:00:55.360
+the Discord chat. We will in just a second. We are talking about a package that allows you to use
+
+00:00:55.360 --> 00:01:06.879
+Ellmer to connect to a variety of LLMs and then apply LLMs to your data in a programmatic way,
+
+00:01:07.440 --> 00:01:13.360
+which means like, hey, I have this column of text maybe, and I want to transform it somehow
+
+00:01:13.360 --> 00:01:20.720
+or classify it, translate it, whatever that is with an LLM, and then have a column that represents
+
+00:01:20.720 --> 00:01:26.080
+the output from the LLM. This is amazing for me, because when I first started using LLMs,
+
+00:01:26.080 --> 00:01:31.760
+I was like, okay, but how do I use this, right? To me, it was just like this is a chat thing.
+
+00:01:31.760 --> 00:01:35.839
+How do I use this programmatically if I want to apply it to my data, and the mall package
+
+00:01:35.839 --> 00:01:40.400
+abstracted away all the difficulty for me, and I think that that's great. So, I'm going to go ahead
+
+00:01:40.400 --> 00:01:50.959
+and share my screen and just walk through a Quarto doc. I have dark mode or semi-dark mode
+
+00:01:51.680 --> 00:01:58.160
+on my Positron right now. If this is hard for anybody to see, can you please let me know,
+
+00:01:58.160 --> 00:02:03.040
+or if it's too small for you to see, please, please, please let me know. I'm going to take
+
+00:02:03.040 --> 00:02:11.759
+a look at the chat here to see. Okay, let me know. Edgar, I would love it if you could give
+
+00:02:11.759 --> 00:02:19.440
+us an intro, your own maintainer intro, on what the mall package is and why it's helpful before
+
+00:02:19.440 --> 00:02:27.119
+I dive into live coding. Yeah, so this is an introduction of an idea that occurred to me when
+
+00:02:27.119 --> 00:02:38.479
+I was looking at some output from LLMs some time back, and I saw that being able to ask it,
+
+00:02:38.479 --> 00:02:46.479
+is this text positive or not, was actually pretty straightforward. Even a locally installed
+
+00:02:47.119 --> 00:02:52.240
+LLM would actually do a pretty decent job at it, and that's kind of what got it started because
+
+00:02:52.320 --> 00:02:59.279
+at the time that I started writing mall, because of how fast everything has evolved,
+
+00:03:01.360 --> 00:03:08.399
+year and a half, year ago, companies were reticent about sending data into the cloud,
+
+00:03:08.399 --> 00:03:14.240
+if it was a cloud provider for the LLM. Now, that's not as bad. More companies are doing that.
+
+00:03:14.960 --> 00:03:20.080
+So at the time, most companies wanted to keep it local, and it looked like something such as a
+
+00:03:20.080 --> 00:03:25.360
+LLM model was actually going to work well that could be installed locally. So I figured I'd start
+
+00:03:26.320 --> 00:03:33.919
+doing that. So one thing that I can ask folks here today is if you start seeing things that we could
+
+00:03:33.919 --> 00:03:39.600
+actually do better or add, I kind of talked through several different things like the sentiment,
+
+00:03:40.479 --> 00:03:46.639
+classify, extract. Also, you can do your own custom one, and Libby will explain more about
+
+00:03:46.639 --> 00:03:53.759
+what that does. If you see other ones that we could possibly add, that'd be great. Also, the
+
+00:03:53.759 --> 00:04:01.759
+code is open, and it really boils down to a simple prompt that I'm using to run recursively
+
+00:04:01.759 --> 00:04:07.679
+over your dataset. So improvements and prompts and things like that are always welcome.
+
+00:04:08.399 --> 00:04:17.760
+The GitHub, the link to the GitHub repo is in the website, so please feel free to reach out.
+
+00:04:18.640 --> 00:04:24.480
+All right, perfect. So what Edgar was mentioning, sentiment analysis, text summarizing,
+
+00:04:24.480 --> 00:04:31.200
+classification of text, extraction of text, translation, and binary verification, true,
+
+00:04:31.200 --> 00:04:36.799
+false. These are all built into MOL, and then there's also a custom. So what I'm going to do
+
+00:04:36.799 --> 00:04:42.640
+is run through some code where I show you what it looks like to get this connected to Elmer,
+
+00:04:42.640 --> 00:04:50.160
+to an actual LLM, and then what it looks like to use some of these on your data. If you click each
+
+00:04:50.160 --> 00:04:55.359
+of these, it will take you down to examples of them, right? So we have sentiment analysis,
+
+00:04:56.000 --> 00:05:02.480
+which happens with a function called LLM sentiment. For each of these, there is... I'm
+
+00:05:02.480 --> 00:05:06.399
+sorry that I keep having this pop up here. I'm going to keep closing it, but ignore it unless
+
+00:05:06.399 --> 00:05:08.399
+you can't see it, unless only I can see it. We can't see it.
+
+00:05:08.399 --> 00:05:12.640
+You can't see it, that's good. I have a pop up. If you see me stop and my brain is spinning like
+
+00:05:12.640 --> 00:05:16.799
+a wheel on the Mac screen, that's because I'm closing something that Zoom's popping up every
+
+00:05:16.799 --> 00:05:23.200
+time someone enters this room. Okay, so for each of these functions, there is a vectorized version
+
+00:05:23.200 --> 00:05:31.359
+as well. These functions are going to be applied to a column in a data frame, but if you wanted
+
+00:05:31.359 --> 00:05:36.239
+to apply them to just a vector, like, hey, I have a vector named this, and it contains a vector of
+
+00:05:36.239 --> 00:05:41.760
+text, then you can use the vectorized version. So for each of these, there's also, you'll notice,
+
+00:05:41.760 --> 00:05:48.640
+a Python tab up here. That's because we can work on the data frame level. This would be a data
+
+00:05:48.640 --> 00:05:56.880
+frame called reviews, and then we can use the LLM.sentiment function on our column called
+
+00:05:56.880 --> 00:06:01.519
+review. So if you are wondering how things work in Python as you're watching this, please don't
+
+00:06:01.519 --> 00:06:06.320
+fret. Edgar's going to share the Python code after I share the R code, okay? Okay, I'm going to head
+
+00:06:06.320 --> 00:06:11.040
+back over to Discord, make sure I'm not missing anything. Nora says she needs to learn NLP. Yeah,
+
+00:06:11.040 --> 00:06:17.119
+learn NLP. I love NLP. NLP, by the way, that was my soapbox, still has a place. Big time.
+
+00:06:17.119 --> 00:06:20.880
+Oh. I love it. Edgar, what?
+
+00:06:20.880 --> 00:06:24.559
+Can I say something real quick about the NLP thing? That's the other thing that
+
+00:06:25.440 --> 00:06:33.279
+I noticed that the local LLM was actually doing real well, even though it may take a bit longer
+
+00:06:33.279 --> 00:06:39.839
+to recursively go through a dataset. It's kind of like you're paying for the time that it will
+
+00:06:39.839 --> 00:06:46.640
+take you to develop your own NLP. Yeah, it's a tax, right? It takes longer, yes, to run,
+
+00:06:46.640 --> 00:06:53.200
+but you didn't have to spend the time doing the NLP yourself and tokenizing your words,
+
+00:06:53.200 --> 00:06:57.359
+and then doing all this other analysis you have to do. So, that's the other reason why
+
+00:06:58.320 --> 00:07:02.079
+this exists. So, as you see the performance, of course, it's going to be slower, but
+
+00:07:03.040 --> 00:07:08.239
+let me see, it's a tax, right? Yeah. It's also not, I think, as verifiable.
+
+00:07:08.959 --> 00:07:13.600
+NLP, I feel like, is much more predictable. In the chat, someone asked, what's the difference
+
+00:07:13.600 --> 00:07:18.480
+between using mall for these NLP tasks versus traditional or classical NLP? The difference is
+
+00:07:18.480 --> 00:07:25.600
+really just that you are using an LLM versus using traditional NLP methods, which might be
+
+00:07:25.600 --> 00:07:32.000
+like named entity recognition or sentiment analysis using a lexicon, a defined lexicon,
+
+00:07:32.880 --> 00:07:38.640
+or let's say you might be doing something that I love to do in NLP, which is sort of like a
+
+00:07:39.440 --> 00:07:44.880
+power analysis. That means that you are creating this lexicon or this database of
+
+00:07:45.760 --> 00:07:50.720
+maybe words or phrases that indicate certain things, and then you are basically using code
+
+00:07:50.720 --> 00:07:58.559
+and math to compare the text that you are working on to what you have in your database of what is a
+
+00:07:58.559 --> 00:08:05.119
+positive word or a negative word or a neutral word or a powerful word or, you know, NLP has its own
+
+00:08:05.119 --> 00:08:08.880
+topic, but we'll head into our live coding now because we're 14 minutes in and we better do that
+
+00:08:08.880 --> 00:08:13.760
+or we're going to get roasted. Please light a candle in the chat for me because I am about to
+
+00:08:13.760 --> 00:08:18.239
+live code with LLMs on the internet and we know that something could go wrong. If it does go wrong,
+
+00:08:18.239 --> 00:08:23.519
+please give me some grace and have patience. So what I will say at the top of the script is if
+
+00:08:23.519 --> 00:08:28.239
+you have not already installed mall and Elmer, those are the two that you are going to really,
+
+00:08:28.239 --> 00:08:36.559
+really need. I have a little install.packages for you if you would like, and I also have this repo
+
+00:08:36.559 --> 00:08:44.799
+for you and I don't know if anybody has shared this repo in the chat, so let me. Oh, I can go
+
+00:08:44.799 --> 00:08:49.840
+ahead. Can you do that? Okay. Yeah, of course. That's great. It's like the one repo that I didn't
+
+00:08:49.840 --> 00:08:54.559
+get a link to is the one that I'm using so that you can see it. So I'm going to go ahead and run
+
+00:08:54.559 --> 00:09:00.479
+this chunk, which is just going to load Elmer and mall and tidyverse, and then if you have access to
+
+00:09:00.479 --> 00:09:07.520
+a commercial LLM, you need to make sure that your API key is in your .environ file or your .env file
+
+00:09:08.559 --> 00:09:14.479
+so that Elmer can recognize it and use it. I am going to be using Anthropic Model today,
+
+00:09:14.479 --> 00:09:18.960
+but it's not through an API key in the same way that you would use it. I'm using it through AWS
+
+00:09:18.960 --> 00:09:24.080
+Bedrock. So what I'm going to also show you is Olama, which is so much more accessible. It's a
+
+00:09:24.080 --> 00:09:32.799
+local LLM that you install on your machine. You can go to olama.com slash download and I will
+
+00:09:32.799 --> 00:09:38.880
+stick that in the chat. And Corey had just said, can mall be used with a local LLM? Yep, absolutely.
+
+00:09:38.880 --> 00:09:44.479
+So you can use it with Olama and what I'm going to do is just show you that I already have Olama
+
+00:09:45.200 --> 00:09:49.119
+installed and it's running. I don't know if you can see the very top of my screen up here,
+
+00:09:49.119 --> 00:09:53.280
+but on my Mac menu bar, there is a little symbol that looks like Jar Jar Binks to me,
+
+00:09:53.280 --> 00:09:59.200
+but it's definitely, definitely Olama. And here it is. And I just asked it a question. I said,
+
+00:09:59.200 --> 00:10:03.200
+tell me a joke. And it said, here's one. What do you call a fake noodle and impasta?
+
+00:10:04.320 --> 00:10:09.599
+So Olama is up and running on my system. And down here, you can see there's this little model
+
+00:10:10.559 --> 00:10:18.159
+selection for Olama. I have 3.2 installed. I will show you in a minute how I got that installed and
+
+00:10:18.159 --> 00:10:22.479
+pulled down and like have my system recognize it. But just know that you can
+
+00:10:22.479 --> 00:10:28.640
+choose from a bunch of other models. I'm going to let Edgar hop in here and just mention
+
+00:10:30.400 --> 00:10:34.559
+the size caveat on some of these, because with local LLMs, you're pulling them down onto your
+
+00:10:34.559 --> 00:10:40.960
+machine to run them. And some of these might be quite large. Yes, exactly. That's exactly the
+
+00:10:41.039 --> 00:10:48.559
+point. The issue is that these have to run in memory. So you may have a hard drive that's big
+
+00:10:48.559 --> 00:10:55.599
+enough, but you still need enough RAM to run these things. LLAMA 3.2 is wonderful because it's very
+
+00:10:55.599 --> 00:11:03.200
+generalized. Going back to the NLP thing, you're kind of limited on the amount of training data
+
+00:11:03.200 --> 00:11:09.599
+you'll have to do your own NLP. But with LLAMA, you have so many more billions of tokens you'll
+
+00:11:09.599 --> 00:11:20.239
+have on text. But the trade-off is that it takes a lot of space. So with LLAMA 3.2, the latest is
+
+00:11:20.239 --> 00:11:28.559
+two gigabytes. The latest LLAMA, which is four, is actually 67 gigabytes on the smaller side. So
+
+00:11:29.440 --> 00:11:36.640
+that's the thing. Unless you have a very nice machine, it's probably going to be one of those
+
+00:11:36.640 --> 00:11:43.679
+smaller ones that you'll need. Yeah, 3.2 is what I recommend. Also, as time goes by, more folks
+
+00:11:44.479 --> 00:11:49.039
+publish models that are more specialized. You may want to use this in a very specific field.
+
+00:11:49.599 --> 00:11:55.359
+There may be some that are like that. So definitely follow the LLAMA.com website and
+
+00:11:55.359 --> 00:12:01.599
+you can search for your own type of model that you may want to use. But at this point, LLAMA,
+
+00:12:01.599 --> 00:12:07.359
+to me, is the better one. If you all have used another one, then I would like to recommend. Also,
+
+00:12:07.359 --> 00:12:13.200
+please do. Yeah, let us know. So I'm going to close this and talk about the OLLAMA-R package
+
+00:12:13.200 --> 00:12:21.200
+really quickly. So the OLLAMA-R package allows you to pull down OLLAMA models and have them
+
+00:12:21.200 --> 00:12:27.760
+recognized on your machine very quickly. For example, I was able to run OLLAMA-R pull and just
+
+00:12:27.760 --> 00:12:32.880
+give it LLAMA 3.2 as my model. And then once that's done, and I'm not going to run it because
+
+00:12:32.880 --> 00:12:38.960
+it already is, I can run this line of code right here that's asking to test the connection to
+
+00:12:38.960 --> 00:12:48.000
+OLLAMA. And I've got my status 200, which means all good. And it's also telling me that the body
+
+00:12:48.000 --> 00:12:54.400
+is that it's in memory and it's 17 bytes. Okay, so let's head over to do something very important
+
+00:12:54.400 --> 00:13:00.159
+here, which is something I actually forgot to do the first time I did this. But it is now in the
+
+00:13:00.159 --> 00:13:08.080
+repo for you to set a seed so that these random samples are reproducible. What I'm doing here is
+
+00:13:09.039 --> 00:13:19.039
+collecting a few data sets that are full of tweets. This is from one of the Kaggle data
+
+00:13:19.039 --> 00:13:24.799
+sets that's tweets. It's linked in the readme of the repo. So if you would like to go download that,
+
+00:13:24.799 --> 00:13:31.840
+download that tweets.csv. It is also in the repo as data right here. But if you want to play with
+
+00:13:31.840 --> 00:13:36.400
+it on your own, that's how you can do it. And what I've done is I'm taking a sample. So I have a
+
+00:13:36.400 --> 00:13:43.760
+tweet sample that's just 25 random samples of English language tweets. Then I have a random
+
+00:13:43.760 --> 00:13:50.479
+sampling of Jimmy Fallon tweets. I like Jimmy Fallon tweets because they're sort of a mix up of
+
+00:13:50.479 --> 00:13:56.400
+really neutral like announcement tweets that are like announcing a guest on a show or
+
+00:13:56.400 --> 00:14:03.039
+something. And then also personal tweets from him. And then I have a random sampling of Katy Perry
+
+00:14:03.039 --> 00:14:08.640
+tweets because I'm going to talk about safety and curse words. And Katy Perry sure does like to curse
+
+00:14:08.719 --> 00:14:16.159
+on Twitter. Or at least when this data set was taken. What I'm going to do next is I'm going to
+
+00:14:16.799 --> 00:14:25.200
+set up Elmer. This is not Maul yet. This is still Elmer. It's very important to realize that Elmer
+
+00:14:25.200 --> 00:14:33.039
+and Maul go together. You don't use Maul without Elmer's support. And it's going to give you the
+
+00:14:33.039 --> 00:14:38.479
+ability to access those models that you are then going to use programmatically. I'm going to do
+
+00:14:38.479 --> 00:14:44.320
+something that Elmer wasn't really built to do. Sorry, Edgar. I'm like slightly breaking it.
+
+00:14:44.880 --> 00:14:53.039
+I'm going to create two different chat objects. I'm going to use Elmer chat AWS bedrock to set up
+
+00:14:53.039 --> 00:14:59.599
+a chat with Anthropic so I can run this. And you can see over here it created a value, right? This
+
+00:14:59.599 --> 00:15:06.960
+value is just a chat object. And then I'm going to create chat Olama. And I'm going to tell it the
+
+00:15:06.960 --> 00:15:13.840
+model is 3.2. So when I run both of those, I now have a chat object. And then I can use a Maul
+
+00:15:13.840 --> 00:15:22.400
+function to switch between those different Elmer chats. So Elmer was really meant to, I think,
+
+00:15:22.400 --> 00:15:28.880
+use one chat per session. And so you'll see later on when I call it, I do something special to try
+
+00:15:28.880 --> 00:15:40.080
+to avoid like a caching issue. But this right here is Elmer's providers. These are all of the
+
+00:15:40.080 --> 00:15:46.960
+different providers that you can use with Elmer to power your Maul work. It's a pretty big list.
+
+00:15:48.159 --> 00:15:53.760
+You can go straight to chat Anthropic without going through AWS bedrock, obviously, because
+
+00:15:53.760 --> 00:15:59.039
+if you have an API key, that'll get you there. A lot of people have been asking about Azure,
+
+00:15:59.039 --> 00:16:04.799
+opening through Azure. It's there. Support is there. Cloudflare, DeepSeek, all the things.
+
+00:16:04.799 --> 00:16:09.359
+Here's our chat Olama that we used. If you would like to figure out how to set these up,
+
+00:16:09.359 --> 00:16:14.239
+you could go click it. And then it's going to walk you through this. And actually, this is
+
+00:16:14.880 --> 00:16:19.520
+really, really easy. I think the first time I ran through these instructions, it took me about
+
+00:16:19.520 --> 00:16:26.880
+four minutes to set up Olama and have it running. So highly recommend starting with Olama. I think,
+
+00:16:26.880 --> 00:16:31.440
+Edgar, you said Gemini is also an option for something that is a more like commercial style
+
+00:16:31.440 --> 00:16:36.479
+model, but that's also a free option. Yeah, that's right. As long as you have
+
+00:16:36.479 --> 00:16:41.440
+API access and a lot of companies are going Gemini right now. So that may be one to try.
+
+00:16:42.159 --> 00:16:47.919
+I was going to say something real quick, if I can. I just want to like right now,
+
+00:16:47.919 --> 00:16:55.119
+we're talking a lot about Elmer and not mall. Elmer, I went ahead and created the backend for
+
+00:16:55.119 --> 00:17:01.359
+Elmer inside mall because initially it didn't have it. It was only Olama. So that is easier for you
+
+00:17:01.359 --> 00:17:07.520
+to be able to connect to different kinds of providers, right? That way mall didn't have to
+
+00:17:08.160 --> 00:17:13.920
+itself have a code to be able to connect to the different ones. Elmer is my gateway,
+
+00:17:13.920 --> 00:17:18.800
+right? So I can just focus on the main stuff that mall does. So that's what we're talking about,
+
+00:17:18.800 --> 00:17:24.079
+two packages. And Elmer does a great job at this kind of integration as Libby's going to show.
+
+00:17:24.079 --> 00:17:28.800
+So I just want to mention that. No, yeah. And I want to hop in and answer David
+
+00:17:28.800 --> 00:17:33.599
+Onder's question here, which was what kind of specs should I realistically have to make good
+
+00:17:33.599 --> 00:17:41.439
+use of these models? And he said he had 64 gigs of RAM, more than enough. 64 gigs of RAM is more
+
+00:17:41.439 --> 00:17:46.239
+than enough. You would be fine with 16 gigs of RAM, I think for 3.2. It's not as big as you think.
+
+00:17:46.239 --> 00:17:51.920
+But also when you go to the Olama download and you look at the different models, each of the models
+
+00:17:51.920 --> 00:17:58.880
+actually has like two or three different size versions of that model to install. So go
+
+00:17:58.880 --> 00:18:05.839
+take a look at them and see what you would need for each of those. All right. So I have created
+
+00:18:05.839 --> 00:18:13.280
+my chat objects for both Anthropic and Olama. Yours might look something more like this, like
+
+00:18:13.280 --> 00:18:21.839
+chat, chat open AI, and then model equals. Don't worry if you do not have something that looks
+
+00:18:21.839 --> 00:18:28.160
+like this. This is very specific to my setup on my machine for work. Okay. So I need to tell mall
+
+00:18:28.160 --> 00:18:35.119
+I have this Elmer chat object. I want to use it. I want to use Olama. So I'm going to run
+
+00:18:36.400 --> 00:18:40.560
+use Olama. Actually, I feel like I should throw a .cache in there. So I'm going to do that.
+
+00:18:40.560 --> 00:18:46.560
+This is me trying to stop a cache problem from building up because I'm trying to break
+
+00:18:47.280 --> 00:18:55.439
+the Elmer package here. So I will do this and tell mall I want to use Elmer on the back end. Yes.
+
+00:18:55.439 --> 00:19:00.400
+And then my LLM session, my model is using Llama 3.2. We're all good to go. Now what I'm going to
+
+00:19:00.400 --> 00:19:08.160
+do is I'm going to apply the LLM sentiment function to my content variable. So let's go
+
+00:19:08.160 --> 00:19:14.160
+look at my tweets sample. This is the data set that I'm going to use right here. If we take a
+
+00:19:14.160 --> 00:19:23.439
+look at it here in the console, I only have two columns, author and content. Author is a Twitter
+
+00:19:23.439 --> 00:19:29.199
+screen name and Twitter handle and content is just the contents of the tweet as a string.
+
+00:19:30.400 --> 00:19:39.119
+So I'm passing the content variable right here to the LLM sentiment and then I'm giving it some
+
+00:19:39.680 --> 00:19:46.719
+extra optional things. So let's go over to mall really quickly and we'll go to the sentiment
+
+00:19:46.719 --> 00:19:53.040
+function here. The R version because that's what I'm using. And we're going to go to its
+
+00:19:53.040 --> 00:20:00.719
+R reference page so we can see what we have as options here. We've already given it the
+
+00:20:00.719 --> 00:20:06.079
+dot data because I'm piping it in. Remember when you were piping something in, that pipe,
+
+00:20:06.079 --> 00:20:10.079
+it takes everything on the left hand side of the pipe and feeds it to the next function as the very
+
+00:20:10.079 --> 00:20:14.479
+first argument. That means that this is satisfied. Then I'm giving it my column. That's that content
+
+00:20:14.479 --> 00:20:20.640
+column. And then you can give it options. This is like, hey, these are the options that I want to
+
+00:20:20.640 --> 00:20:28.079
+accept as output from the LLM. Mall is very smart and if it gets output that doesn't fit that,
+
+00:20:28.079 --> 00:20:34.400
+it will coerce it to NA for you. So take a look at that. And then pred name, most important one
+
+00:20:34.400 --> 00:20:40.160
+to me. I don't really love the dot sentiment dot pred dot whatever. I like naming it something
+
+00:20:40.160 --> 00:20:44.400
+specific, especially because I like to compare different models. So I'm going to change this.
+
+00:20:45.119 --> 00:20:48.400
+And then you also have the option of an additional prompt. I wanted to ask you,
+
+00:20:48.400 --> 00:20:52.959
+Edgar, is this like a system prompt or is this an additional individual prompt?
+
+00:20:54.160 --> 00:20:59.680
+This gets attached to the main prompt that's being sent. So if you, for example, something
+
+00:20:59.680 --> 00:21:04.959
+like this, you can say if the person says these specific words, then consider it neutral or
+
+00:21:04.959 --> 00:21:11.040
+whatever. So you can add some extra feedback to make it more fine-tuned and better.
+
+00:21:11.680 --> 00:21:16.160
+But I am not going to use that. What I am going to do is just say, hey, here are your options,
+
+00:21:16.160 --> 00:21:23.760
+positive, negative, and neutral. And name my output column sentiment llama. So I can run this.
+
+00:21:23.760 --> 00:21:29.520
+And if everyone has lit their candles correctly, my code will run. A little progress bar at the
+
+00:21:29.520 --> 00:21:36.079
+bottom here. Love that. Aha, there we go. It was created. So I can go look at my
+
+00:21:37.199 --> 00:21:42.160
+tweet sample sentiments, which is right here. Click this button to get a data view.
+
+00:21:44.160 --> 00:21:52.880
+And here we are. I now have an extra column over here of sentiment. This is only 25 rows, y'all.
+
+00:21:52.880 --> 00:21:58.079
+If you have a enormous data set, please be prepared to wait. And please be prepared for
+
+00:21:58.079 --> 00:22:06.959
+your laptop to go for like 10 minutes while it figures out what it's doing. Because it really
+
+00:22:06.959 --> 00:22:14.079
+is your machine just like cooking, okay? So I had a question in Discord. Are you limited to those
+
+00:22:14.079 --> 00:22:19.040
+three options, positive, negative, neutral? I could give it whatever I wanted. So you could do
+
+00:22:19.040 --> 00:22:24.640
+something, yes, like very positive, positive, neutral, negative. I would suggest giving it
+
+00:22:24.640 --> 00:22:32.079
+instructions about what each of those things means, right? Yeah, that would be important.
+
+00:22:32.079 --> 00:22:37.520
+Like if you're deviating from that kind of basic three structure or even two structure,
+
+00:22:38.479 --> 00:22:42.959
+I would let it know what you mean by very positive. We will see in just a minute. I'm
+
+00:22:42.959 --> 00:22:48.880
+going to compare the outputs of olama and anthropic. And you can be the judge on how
+
+00:22:48.880 --> 00:22:52.640
+well each of them did and whether or not they would have been coded the way you would as a human.
+
+00:22:53.359 --> 00:22:59.680
+Libby. Yeah. I think Javier is also asking if it can return the prediction probabilities,
+
+00:23:00.479 --> 00:23:06.400
+which doesn't because it's not part of the prompt. And Elmer, like if you go into the
+
+00:23:07.280 --> 00:23:10.959
+articles themselves, there's a way that you can actually build a prompt like that where you say,
+
+00:23:11.599 --> 00:23:15.199
+you know, give me a percentage you think that you can kind of make it do that. But it's not,
+
+00:23:16.079 --> 00:23:20.319
+I don't think you'll be able to get probabilities properly as if it was like an actual LLP model.
+
+00:23:20.880 --> 00:23:24.400
+Also, while I have the floor, I just want to mention real quickly,
+
+00:23:25.439 --> 00:23:29.760
+because of the time, how long it takes and know that that's what we have the cache option.
+
+00:23:29.760 --> 00:23:39.599
+So like if you're running the same, you know, QMD or same script, and you just refine in it,
+
+00:23:39.599 --> 00:23:44.959
+and you're going to get the exact same result. If you were to run this, let's say LLM sentiment,
+
+00:23:44.959 --> 00:23:49.439
+then it works much faster the second time because it's automatically caching results.
+
+00:23:50.719 --> 00:23:58.000
+Into a temporary folder that was faster for you, you don't have to rerun everything. So that's why
+
+00:23:58.000 --> 00:24:04.079
+that cache exists. Just want to mention that. Yeah, that's if you want to save some time.
+
+00:24:04.079 --> 00:24:09.040
+That's why I'm giving it the cache null. I really don't want it to build up in there.
+
+00:24:09.760 --> 00:24:13.760
+We had some questions in the chat, not all of them I can answer. So Abdullah had asked a rule
+
+00:24:13.760 --> 00:24:19.199
+of thumb set of specs for a machine. So local LLMs are practically feasible. And I mentioned that if
+
+00:24:19.199 --> 00:24:23.760
+you have at least 16 gigs of RAM, I think that you are you will do okay with something like 3.2
+
+00:24:23.760 --> 00:24:32.640
+from Olama. I am not a technical spec expert. Don't listen to me. I would have some people add
+
+00:24:32.640 --> 00:24:37.760
+in the chat what their specs are on their machine and how their machine does when they run things.
+
+00:24:37.760 --> 00:24:44.479
+I have found that my machine does okay. But your mileage may vary based on all kinds of factors.
+
+00:24:45.439 --> 00:24:50.319
+Brent Pfeiffer had asked, would that be in the additional prompt area where you're defining
+
+00:24:50.319 --> 00:24:55.680
+things? Yes. Where you're giving it information on like what extra negative is or extra positive is
+
+00:24:55.680 --> 00:25:05.199
+or in between is. And then Simon had asked, let's see. Ah, Simone, you had asked, you could use the
+
+00:25:05.199 --> 00:25:10.800
+vitals package to compare models, right? The vitals package is awesome. That's Simon Couch's
+
+00:25:10.959 --> 00:25:22.800
+package, right, Isabella? I have never used vitals, but you could. And then can we use LLM
+
+00:25:22.800 --> 00:25:29.520
+Studio instead of Olama? David, I do not know. I'd have never used LLM Studio. If anybody has used a
+
+00:25:30.160 --> 00:25:36.719
+third party LLM management system, let us know in the chat. That's not something that I have played
+
+00:25:36.719 --> 00:25:43.920
+with yet. All right. So let's go ahead and switch our models over to Anthropic. That means I'm using
+
+00:25:43.920 --> 00:25:50.800
+the mall LLM underscore use to switch from that chat Olama to chat Anthropic. And again, using
+
+00:25:50.800 --> 00:25:56.079
+the cache option there to say, hey, don't fill up my cache. And then what we'll do is we'll run
+
+00:25:56.079 --> 00:26:00.479
+that exact same code with LLM sentiment, same code. The only thing that's different is I'm
+
+00:26:00.479 --> 00:26:05.680
+changing the column name that I'm adding to sentiment Anthropic. So I'm adding it back to
+
+00:26:05.680 --> 00:26:13.839
+that same new data frame that I had created up here. So I can run this. Let's see how quickly
+
+00:26:13.839 --> 00:26:20.079
+this runs with Anthropic. In all of my testing, it's taken the same amount of time, almost exactly,
+
+00:26:20.079 --> 00:26:28.400
+for Anthropic to run versus Olama, by the way. So now I can, it's good to read all of these many
+
+00:26:28.400 --> 00:26:35.439
+things I have open. We will go open tweets sample sentiment one more time. And this will allow us to
+
+00:26:35.439 --> 00:26:42.160
+look at a comparison here between these two. The one on the left is Olama. The one on the right is
+
+00:26:42.160 --> 00:26:50.400
+Anthropic. And we can see that they don't agree for all of these, right? So this is Olama. And
+
+00:26:50.400 --> 00:26:56.800
+Olama is coding, for example, this is negative when all it says is Mondays and fur babies.
+
+00:26:56.800 --> 00:27:01.839
+Mondays could be negative for sure. Like Olama, you might be right. But Anthropic coded that as
+
+00:27:01.839 --> 00:27:06.479
+positive. We have another disagreement on the second one that just says tomorrow Toronto
+
+00:27:07.760 --> 00:27:15.439
+and a URL. And that's it. I've noticed that Olama frequently codes something that has a URL
+
+00:27:15.439 --> 00:27:21.359
+in it as negative. And I don't know why. But that seems to happen a lot. Whereas I think that
+
+00:27:21.359 --> 00:27:27.359
+Anthropic is more correct here that this is a neutral tweet. None of us know the context of
+
+00:27:27.359 --> 00:27:31.599
+this. We can't see what that URL goes to. And if there was a photo, we can't see it.
+
+00:27:32.880 --> 00:27:40.880
+So let's head back over to our code. And let's look at our agreement here.
+
+00:27:41.439 --> 00:27:48.239
+What I'm doing is I am looking at this sample of sentiments, which I just showed you here.
+
+00:27:48.959 --> 00:27:52.959
+This is so that I can render the document. And you can look at it as a PDF if you want to.
+
+00:27:53.520 --> 00:28:01.280
+And then I calculate the agreement. So 0.68, 68% of the time, they agreed.
+
+00:28:01.920 --> 00:28:07.839
+Otherwise, they did not match. This is something where I really recommend you go through and
+
+00:28:08.880 --> 00:28:15.520
+review. We all know that LLMs aren't perfect. Neither is NLP, by the way. If you code something
+
+00:28:15.520 --> 00:28:20.560
+through NLP, you might look through it and disagree as well, even though you wrote the
+
+00:28:20.560 --> 00:28:26.319
+underlying structures of your NLP model. Let's head over to summarization because we
+
+00:28:26.319 --> 00:28:30.640
+are about halfway through. I want to make sure that we don't have any major questions. Let's see.
+
+00:28:33.119 --> 00:28:39.520
+I see a question from Abdullah. How do you iterate and validate the model? Let's say you
+
+00:28:39.520 --> 00:28:44.079
+don't agree with how the model classified things. How do you measure accuracy? Do you take a random
+
+00:28:44.079 --> 00:28:50.880
+sample of results and let a human evaluate it? This is a process question that will depend on
+
+00:28:51.520 --> 00:28:57.520
+how much you want to verify. I am playing with tweets. I'm just going to visually verify,
+
+00:28:57.520 --> 00:29:03.680
+cherry pick, and go based off of vibes, right? But if I was working in a research setting where
+
+00:29:03.680 --> 00:29:09.199
+I really needed things to be right, I think that I would probably run things through an LLM. And
+
+00:29:09.199 --> 00:29:17.040
+then I would set up a verification system to have several different human beings run through
+
+00:29:17.040 --> 00:29:22.880
+and validate whether or not this was correct. So they will not have to read a tweet and decide
+
+00:29:22.880 --> 00:29:27.520
+whether or not it is positive, negative, or neutral. They will just have to agree or disagree
+
+00:29:27.520 --> 00:29:32.880
+with the model, what the model had coded it. And if it was wrong, they might recode it. And then
+
+00:29:32.880 --> 00:29:36.640
+I would have human beings reviewing those results. So depending on the way that you
+
+00:29:37.599 --> 00:29:41.839
+do things and how big of a project this is and what the stakes are for the project,
+
+00:29:43.599 --> 00:29:46.239
+that'll be a choice that's up to you. Maybe some people can share in the chat
+
+00:29:46.880 --> 00:29:52.880
+how they have validated things. Simon Couch's blog is a great place to go for all things LLM
+
+00:29:52.880 --> 00:29:57.439
+verification, by the way. I would go read through that. He's going to be much better at that than I
+
+00:29:57.439 --> 00:30:05.040
+am. OK, Isabella, can you stop me if there are any other really big questions? But if they're not,
+
+00:30:05.599 --> 00:30:09.359
+OK, I'm going to show you some summarizing really quickly. We're going to go through this one a
+
+00:30:09.359 --> 00:30:17.040
+little bit faster. I'm switching over to LLAMA 3.2 again. And I'm going to use Jimmy Fallon
+
+00:30:17.040 --> 00:30:25.280
+tweets this time. And what I'm going to do is create an extra column in this new tweets
+
+00:30:25.280 --> 00:30:33.199
+underscore Jimmy Fallon underscore summary data set called Summary LLAMA. And the extra thing I've
+
+00:30:33.199 --> 00:30:42.160
+given it this time is a max words 10. Now, LLM's never listened to us. It's frequently not going
+
+00:30:42.160 --> 00:30:48.160
+to stop at 10 or give me less than 10. But a lot of times this can help stop it be too wordy.
+
+00:30:48.880 --> 00:30:56.000
+So let's head over and just redo this with Anthropic so that we can compare these.
+
+00:30:56.959 --> 00:31:01.920
+All right, here we go. Anthropic is running again pretty quickly for a summarization task.
+
+00:31:02.640 --> 00:31:10.160
+But also, this is only 25 rows. Let's go look at it. Go over to my data here. Check out my
+
+00:31:10.160 --> 00:31:18.719
+tweets Jimmy Fallon underscore summary and open it up here. All right, here's my here's my content.
+
+00:31:20.000 --> 00:31:24.560
+My friend slept in our walk-in pantry. When he laid down, his feet would stick out the door.
+
+00:31:26.959 --> 00:31:31.439
+Hashtag my first apartment. Okay, LLAMA's on the left.
+
+00:31:32.800 --> 00:31:39.920
+Crazy and quite concerning living situation for a first apartment. Not wrong, technically. Let's
+
+00:31:39.920 --> 00:31:45.920
+see what the Anthropic summary is. Friend slept in tiny pantry, feet stuck outdoor.
+
+00:31:45.920 --> 00:31:49.839
+That is much more accurate to me, that Anthropic summary, right?
+
+00:31:50.043 --> 00:31:51.643
+Let's look at one more.
+
+00:31:53.308 --> 00:31:57.308
+Let's look at one more.
+
+00:31:57.308 --> 00:32:04.308
+Always great to see Mets Bucket Hat Guy, a.k.a. Mike DiCenzo.
+
+00:32:04.308 --> 00:32:06.308
+DiCenzo.
+
+00:32:06.308 --> 00:32:12.308
+The Llama Summary, Mike DiCenzo is a New York Mets fan Twitter personality.
+
+00:32:12.308 --> 00:32:13.308
+Not wrong!
+
+00:32:11.215 --> 00:32:15.375
+Met's bucket hat guy spotted at event probably more correct
+
+00:32:15.375 --> 00:32:23.535
+So again, we have this like Olama is not technically wrong, but is maybe not super helpful and then anthropic is slightly more helpful
+
+00:32:24.735 --> 00:32:27.975
+You're gonna have to go through and review whether or not
+
+00:32:28.575 --> 00:32:32.555
+This is good enough for you, right if you're doing a summary task with Olama locally
+
+00:32:32.555 --> 00:32:38.655
+Is this good enough? If not, you might want to attempt to lean on a more commercial LLM like anthropics models
+
+00:32:39.174 --> 00:32:44.535
+By the way, I'm using SONNET 4.5 just because I think I forgot to say that even though it was on screen
+
+00:32:45.854 --> 00:32:52.915
+I'm pausing for the chat. Okay. I don't see any major golf flags, which denote our questions
+
+00:32:53.215 --> 00:32:55.215
+so I'm gonna head back over and
+
+00:32:56.014 --> 00:32:58.615
+We just did this. We just took a look at what they were
+
+00:32:59.174 --> 00:33:03.255
+Now I'm going to go through really quickly because we have 20 minutes left and I want to stop talking
+
+00:33:03.735 --> 00:33:05.875
+And hand this over to show Python code
+
+00:33:06.395 --> 00:33:09.555
+What if you don't like those standard functions, what if you want to do your own thing?
+
+00:33:09.595 --> 00:33:14.674
+Let me show you how to make a multi-stepped prompt using the anthropic model specifically
+
+00:33:15.435 --> 00:33:19.295
+What I'm gonna do is look at Katy Perry's tweets and have it
+
+00:33:20.035 --> 00:33:26.035
+Classified for me whether or not they are safe or dangerous and I am going to define safe or dangerous
+
+00:33:26.395 --> 00:33:31.875
+Really simply here and I'm also going to tell it to ignore URLs because I've noticed that LLMs
+
+00:33:31.875 --> 00:33:38.115
+Just get like confused by out by URLs sometimes. So I'm going to say ignore URLs and usernames
+
+00:33:39.674 --> 00:33:44.715
+I'm also going to tell it safe text contains no slurs or curse words and
+
+00:33:45.554 --> 00:33:52.715
+I'm going to tell it assess whether the text is safe or dangerous and then return one word either safe or dangerous
+
+00:33:52.835 --> 00:33:56.035
+I am saving this in a prompt object
+
+00:33:56.515 --> 00:34:02.914
+It's just a string it's not going anywhere yet. It's just a string object saved as prompt
+
+00:34:03.674 --> 00:34:05.674
+I'm going to switch back over to
+
+00:34:06.274 --> 00:34:12.354
+Anthropic, which I think I did before. I think anthropic is the last model I used. Yeah. Okay, so I'm gonna leave that
+
+00:34:13.314 --> 00:34:14.515
+and
+
+00:34:14.515 --> 00:34:15.914
+then
+
+00:34:15.914 --> 00:34:19.474
+I'm gonna go through my sampling of Katy Perry tweets
+
+00:34:19.875 --> 00:34:24.795
+For my prompt option in the LLM underscore custom mall function
+
+00:34:24.994 --> 00:34:26.994
+I'm gonna give it my prompt and
+
+00:34:27.354 --> 00:34:31.754
+Then I'm also going to give it what my valid responses are only safe and dangerous
+
+00:34:31.754 --> 00:34:36.994
+I want it to course and everything else to na and then I'm going to name my new column that it's creating safety
+
+00:34:37.354 --> 00:34:42.315
+Underscore anthropic. So let's create this see how long it takes to run through with that custom prompt
+
+00:34:43.354 --> 00:34:49.194
+About the same time as it's taken everything else at a larger scale. The differences in time are going to be much more apparent
+
+00:34:50.035 --> 00:34:54.834
+And let's go over to tweet safety look at it with our data viewer and positron
+
+00:34:55.955 --> 00:35:01.035
+And oh, wow, we do not have the correct author here. Did I use the right?
+
+00:35:01.955 --> 00:35:05.715
+Data set. Oh, wait, I need the new one that I created. I
+
+00:35:06.754 --> 00:35:09.274
+Need tweets safety. Did I do that one? Oh
+
+00:35:09.994 --> 00:35:11.994
+What have I done here? Y'all help me
+
+00:35:12.474 --> 00:35:14.474
+tweet sample oh
+
+00:35:14.834 --> 00:35:20.354
+We're you we're looking at safety of just like regular tweets first, I forgot I did this they're all safe
+
+00:35:20.914 --> 00:35:26.515
+The random sampling that we took which is like all kinds of people Rihanna Kim Kardashian Katy Perry
+
+00:35:27.235 --> 00:35:30.955
+Ariana Grande, they're all pretty safe if we're looking through these
+
+00:35:30.955 --> 00:35:35.955
+I don't see anything that leaps out to me as something that I would have wanted it to flag as dangerous
+
+00:35:37.715 --> 00:35:42.875
+Does anybody else see anything I do not see anything no slurs no curse words
+
+00:35:45.474 --> 00:35:47.554
+Okay, was I smart
+
+00:35:48.354 --> 00:35:49.875
+did I
+
+00:35:49.875 --> 00:35:51.875
+Do Katy Perry's tweets? Yes
+
+00:35:52.515 --> 00:35:55.474
+Totally random assortment not random. I went and found bad ones
+
+00:35:56.075 --> 00:35:58.075
+Here's what we're gonna do
+
+00:35:59.035 --> 00:36:04.634
+We are going to apply that same exact prompt to Katy Perry tweets
+
+00:36:06.315 --> 00:36:10.235
+We're gonna create a data frame called tweets Katy Perry safety
+
+00:36:10.515 --> 00:36:15.595
+It's working a little bit harder on Katy Perry here, we're at 89%
+
+00:36:18.875 --> 00:36:20.875
+Did everybody light their candle
+
+00:36:22.394 --> 00:36:24.394
+Should I should
+
+00:36:27.915 --> 00:36:30.554
+Okay, let me check the chat for questions y'all
+
+00:36:30.635 --> 00:36:34.715
+There is one question about why use paste if it is all text
+
+00:36:36.234 --> 00:36:38.234
+Remember what line that was on?
+
+00:36:39.195 --> 00:36:42.794
+Ah, that was me creating my prompt up here. I
+
+00:36:43.915 --> 00:36:45.915
+used paste
+
+00:36:45.915 --> 00:36:47.915
+because this is
+
+00:36:48.435 --> 00:36:54.715
+exactly taken from the docs for mall and this is just what what was in the docs in mall and that's all I knew
+
+00:36:54.715 --> 00:36:56.715
+So I'm just going to copy and paste
+
+00:36:56.715 --> 00:37:00.715
+For mall and this is just what what was in the docs in mall and that's all I did
+
+00:37:02.234 --> 00:37:05.674
+Oh, that's what the question I couldn't figure out where the question was from yeah
+
+00:37:06.475 --> 00:37:08.954
+You can just put this all together
+
+00:37:09.435 --> 00:37:13.674
+What paste is going to do is put this together with a space between each one you can do paste
+
+00:37:14.155 --> 00:37:16.394
+Zero and have no spaces like you're in control
+
+00:37:16.635 --> 00:37:20.954
+But having it like this is nice because it allows you to look at it line by line
+
+00:37:21.114 --> 00:37:26.475
+And understand what exactly you are telling your llm to do. I do like the visual separation of it
+
+00:37:27.674 --> 00:37:33.435
+Um, yes, dan had asked are these recent x no, they're tweets. They're literal tweets. This is from
+
+00:37:34.074 --> 00:37:35.674
+the before times y'all
+
+00:37:35.674 --> 00:37:40.315
+Um, the data set is on kaggle. It's the tweets data set and isabella had shared a link
+
+00:37:43.915 --> 00:37:45.915
+Okay
+
+00:37:45.915 --> 00:37:47.755
+No more questions
+
+00:37:47.755 --> 00:37:54.155
+Isabella lit a candle for us and it finished coincidence you decide. Okay, let's go look at
+
+00:37:55.114 --> 00:37:57.114
+Our
+
+00:37:57.195 --> 00:38:02.155
+Katie perry safety. Do we dare look at this live on the internet? We're gonna do it
+
+00:38:04.074 --> 00:38:11.674
+Okay, katie perry's tweets they have been classified as safe or dangerous this first one is safe
+
+00:38:14.074 --> 00:38:18.954
+A visual explanation to what people in florida are in surrounding areas experiencing send them prayers looks pretty safe
+
+00:38:20.155 --> 00:38:21.355
+uh
+
+00:38:21.355 --> 00:38:23.035
+row three here
+
+00:38:23.435 --> 00:38:26.635
+Has it has decided this is unsafe and it does have a curse word in it
+
+00:38:27.514 --> 00:38:30.794
+I think that that is great. Good job anthropic. You did a good job
+
+00:38:31.195 --> 00:38:35.514
+Okay, so before I move on I want to say that prompt
+
+00:38:36.074 --> 00:38:41.274
+Took iteration. It did not work the first like eight times. I did it. It didn't do what I wanted it to do
+
+00:38:41.355 --> 00:38:45.274
+I had to iterate and iterate and iterate until my prompt
+
+00:38:46.234 --> 00:38:49.135
+Was going to do what I wanted it to do reliably
+
+00:38:49.834 --> 00:38:50.794
+also
+
+00:38:50.794 --> 00:38:52.815
+Um llms are not deterministic
+
+00:38:54.074 --> 00:38:56.074
+I could run it
+
+00:38:56.155 --> 00:38:59.994
+One time and run it again, and it could you know, give me a different answer. So
+
+00:39:00.875 --> 00:39:04.315
+Use llms for things like this for anything at your own risk here
+
+00:39:06.234 --> 00:39:08.315
+Um, all right, we ran that
+
+00:39:09.514 --> 00:39:12.954
+I also just for funsies because everybody likes numbers
+
+00:39:13.514 --> 00:39:19.114
+Looked at my random sampling of 18 katie perry tweets to see what proportions were safe and unsafe
+
+00:39:19.674 --> 00:39:22.475
+You know about 83 percent safe not bad
+
+00:39:23.355 --> 00:39:29.435
+I wanted to also before I hand this over for the last 15 minutes to edgar here talk about an elmer
+
+00:39:29.994 --> 00:39:34.954
+Not mall an elmer function, which is pretty nice. It's the token usage function
+
+00:39:35.035 --> 00:39:39.595
+I think this is pretty new right edgar. It tells you how many tokens you've used
+
+00:39:39.595 --> 00:39:45.915
+So hey, here are the the models that you've used here are the number of input and output tokens
+
+00:39:46.394 --> 00:39:47.435
+um
+
+00:39:47.435 --> 00:39:53.595
+Notice that I don't have anything that's cached because I told it not to cash anything. I think that's
+
+00:39:54.315 --> 00:39:58.315
+That's how that works. And then the price is in a I have seen people
+
+00:39:59.195 --> 00:40:03.195
+Where it has access to a price for an actual commercial model. This is me using it through bedrock
+
+00:40:03.195 --> 00:40:04.475
+So it's not the same
+
+00:40:04.475 --> 00:40:08.715
+But I have seen people use this when it's hooked up to a commercial model where the price actually does show
+
+00:40:09.435 --> 00:40:12.635
+Edgar, do you have anything to add about that function?
+
+00:40:12.875 --> 00:40:16.074
+No, not really. I just noticed I haven't really used it that often
+
+00:40:17.435 --> 00:40:21.514
+So, um, cory had asked playlist for the data science labs
+
+00:40:23.035 --> 00:40:26.794
+Um, isabella linked it but cory and anybody else listening if you go to pos.it
+
+00:40:27.355 --> 00:40:30.554
+Slash ds lab. You will also see the playlist linked there
+
+00:40:30.554 --> 00:40:34.715
+It's like the registration page for our our event, but it also has a bunch of other info
+
+00:40:37.114 --> 00:40:38.635
+All right
+
+00:40:39.435 --> 00:40:41.114
+All right
+
+00:40:41.114 --> 00:40:43.754
+Yes. Yes. Yes. Did I miss any questions? I don't think I did
+
+00:40:44.715 --> 00:40:47.355
+I'm gonna hand it over. Let's stop sharing here
+
+00:40:48.074 --> 00:40:50.394
+To edgar and edgar is going to show you
+
+00:40:51.115 --> 00:40:54.314
+Um what the python version of this might look like?
+
+00:40:57.514 --> 00:41:03.274
+And hopefully if we've all written we've all lit our candles correctly, um
+
+00:41:04.074 --> 00:41:10.394
+All right, yeah, you're his code. Yeah, there we go. There you go. All right, so
+
+00:41:12.235 --> 00:41:14.475
+Is this uh, how long do I have? All right
+
+00:41:15.274 --> 00:41:17.274
+um
+
+00:41:17.274 --> 00:41:21.995
+I uh, i'm assuming that most of us here are our users
+
+00:41:22.555 --> 00:41:29.434
+Um, so i'm going to do some explanations here like additional explanation of how it actually translates into into python
+
+00:41:29.834 --> 00:41:31.834
+Uh, actually how mall
+
+00:41:31.834 --> 00:41:34.555
+workflow translates into python, uh, so that's
+
+00:41:35.434 --> 00:41:36.634
+hopefully
+
+00:41:36.634 --> 00:41:41.115
+Can well you can also see as an r user how how it differs in this?
+
+00:41:42.074 --> 00:41:44.074
+thing with uh python
+
+00:41:44.155 --> 00:41:45.595
+so
+
+00:41:45.595 --> 00:41:46.715
+mall
+
+00:41:46.715 --> 00:41:49.374
+Unlike r where you can have like a standalone
+
+00:41:50.074 --> 00:41:52.555
+uh package or something that um
+
+00:41:53.115 --> 00:41:58.715
+Can modify data frames, uh in python, but specifically for the pi data community
+
+00:41:59.194 --> 00:42:03.355
+Uh, we have something such as pandas and that has some pandas data frame for example
+
+00:42:03.995 --> 00:42:08.954
+um, but uh, there's a new one called polars and let me see
+
+00:42:09.595 --> 00:42:11.595
+What's it doing this? There you go
+
+00:42:11.595 --> 00:42:13.035
+polars
+
+00:42:13.035 --> 00:42:14.874
+You know
+
+00:42:14.874 --> 00:42:17.754
+Yeah, just switch here. Uh polars is um
+
+00:42:18.555 --> 00:42:22.394
+It's great. It's it's very fast. It's been it was written in rust
+
+00:42:22.954 --> 00:42:28.495
+And this was uh, a lot of uh folks are starting to use now, in fact, it's like the recommended
+
+00:42:29.035 --> 00:42:33.194
+Uh way of using data frames going forward. Uh, so that's um
+
+00:42:33.915 --> 00:42:37.115
+What mall does on the python side?
+
+00:42:37.675 --> 00:42:39.915
+Uh, i'm gonna stop sharing here
+
+00:42:41.434 --> 00:42:44.874
+Um, let's see, sorry, uh
+
+00:42:47.035 --> 00:42:50.475
+Okay, so um you can see yourselves, okay
+
+00:42:51.434 --> 00:42:53.434
+Uh, we see okay, there we go
+
+00:42:55.035 --> 00:42:59.355
+Okay, were you able to see yourselves or it just goes black goes black
+
+00:43:00.475 --> 00:43:01.675
+Okay, good
+
+00:43:01.675 --> 00:43:03.675
+All right. So i'll just keep it like that for now
+
+00:43:04.394 --> 00:43:07.995
+So what it what mall is is it's an extension?
+
+00:43:08.715 --> 00:43:10.715
+of polars and
+
+00:43:11.254 --> 00:43:14.954
+Clarify here what extension what I mean by extension here in a second
+
+00:43:15.915 --> 00:43:17.434
+um
+
+00:43:17.434 --> 00:43:19.434
+All right, we started with the errors here
+
+00:43:21.274 --> 00:43:23.035
+There you go
+
+00:43:23.035 --> 00:43:23.915
+now
+
+00:43:23.915 --> 00:43:26.314
+Uh, I have this uh critics
+
+00:43:26.954 --> 00:43:33.035
+Data frame loaded is uh, these are criticisms, I guess uh or reviews about
+
+00:43:33.675 --> 00:43:34.394
+the
+
+00:43:34.394 --> 00:43:36.735
+Nintendo game animal crossing new horizons
+
+00:43:37.274 --> 00:43:38.074
+so
+
+00:43:38.074 --> 00:43:40.074
+Can be pretty favorable
+
+00:43:40.235 --> 00:43:41.355
+um
+
+00:43:41.355 --> 00:43:43.355
+using the
+
+00:43:43.754 --> 00:43:45.754
+Tidy tuesday
+
+00:43:46.314 --> 00:43:48.314
+Uh data sets
+
+00:43:48.954 --> 00:43:55.115
+We'll have a link here so you can see essentially, uh the name and also the actual
+
+00:43:55.834 --> 00:43:57.915
+uh text of the review
+
+00:43:59.115 --> 00:44:06.394
+Uh, the next thing i'm going to do i'm going to import mobile field that actually notice that but go to critics and type dot
+
+00:44:07.434 --> 00:44:12.795
+Which is kind of like dollar sign in our if I start typing llm you see that's not available
+
+00:44:13.355 --> 00:44:18.555
+And leave me short earlier where you can tap you can see where llm dot sentiment that that's not available
+
+00:44:18.954 --> 00:44:22.874
+Becomes available whenever you actually load the mall package
+
+00:44:23.434 --> 00:44:25.434
+Now you should be able to see it
+
+00:44:27.035 --> 00:44:30.235
+Which was something really interesting to me because i'm kind of new to python
+
+00:44:30.555 --> 00:44:37.035
+So that's basically what extension means is basically that it becomes part of that
+
+00:44:37.595 --> 00:44:39.595
+Um object that you have
+
+00:44:40.155 --> 00:44:44.074
+Which is your data frame is an object that now is extended to be able to use
+
+00:44:44.874 --> 00:44:47.194
+uh the functionality so now that it
+
+00:44:47.915 --> 00:44:49.194
+It's there
+
+00:44:49.194 --> 00:44:49.995
+uh
+
+00:44:49.995 --> 00:44:51.995
+We have to assign it per data frame
+
+00:44:52.235 --> 00:44:53.675
+uh, which
+
+00:44:53.675 --> 00:44:57.595
+Back in that we're going to use as a provider and i'm going to use olama here
+
+00:44:59.194 --> 00:45:01.434
+Um in this case i'm using the
+
+00:45:02.314 --> 00:45:10.235
+Uh out of the box integration that I can use with olama which is the its own olama, uh library from pipi
+
+00:45:11.194 --> 00:45:13.834
+So once you start mall, it's actually going to install this package too
+
+00:45:14.555 --> 00:45:16.555
+And then I can just use it
+
+00:45:16.874 --> 00:45:23.194
+And very similar to how it works where instead of piping into it just basically call the extension and run it
+
+00:45:23.995 --> 00:45:25.995
+Now it's gonna it's gonna run
+
+00:45:26.795 --> 00:45:33.995
+Yeah, so his little call there on line 34 is the data frame name dot llm dot sentiment so we're
+
+00:45:34.795 --> 00:45:36.795
+Working on that data frame class
+
+00:45:37.595 --> 00:45:41.035
+And then we're passing the text which is a variable name as a string
+
+00:45:42.074 --> 00:45:44.074
+correct
+
+00:45:45.274 --> 00:45:47.274
+For anybody who's not used to looking at python
+
+00:45:50.634 --> 00:45:51.995
+That's something that kind of
+
+00:45:51.995 --> 00:45:58.634
+Took me a while to get used to where I have to always quote the names of the of the actual columns i'm using
+
+00:45:59.115 --> 00:46:00.634
+So it's going to be quoted
+
+00:46:00.634 --> 00:46:02.634
+Uh, so it's running right now
+
+00:46:02.874 --> 00:46:04.874
+Hopefully it won't take that much longer
+
+00:46:07.675 --> 00:46:10.874
+In the meantime, we have a question from dan asking
+
+00:46:11.834 --> 00:46:16.155
+In the documentation says in python mall is the library extension to polars
+
+00:46:16.954 --> 00:46:19.274
+Does that mean that it does not work with pandas?
+
+00:46:19.675 --> 00:46:23.434
+Correct you won't be able if it's a if it's an actual pandas data frame
+
+00:46:23.834 --> 00:46:28.555
+And you don't have polars loaded. It won't recognize it. You won't be able to use it. You have to convert it
+
+00:46:29.834 --> 00:46:31.834
+Yeah, it's taking a while
+
+00:46:32.874 --> 00:46:34.874
+And I don't have the time
+
+00:46:35.434 --> 00:46:37.834
+Yeah, please eight minutes left
+
+00:46:38.634 --> 00:46:39.834
+Okay
+
+00:46:39.834 --> 00:46:42.155
+Wait candles. Oh my gosh candles. Yeah, we need them
+
+00:46:43.115 --> 00:46:45.115
+One more it worked last time
+
+00:46:45.834 --> 00:46:47.355
+It worked last time
+
+00:46:47.355 --> 00:46:52.634
+This is all i'm saying. I know it's running because if not, it would uh air out and I can see
+
+00:46:53.194 --> 00:46:57.434
+The red square. Yeah, so everything is it's working
+
+00:46:58.155 --> 00:47:02.874
+Uh, but i'm sure it's having all these screens open and zoom and all this stuff
+
+00:47:03.754 --> 00:47:05.754
+Just uh making it
+
+00:47:05.834 --> 00:47:07.915
+Chug along. Come on, you can do this
+
+00:47:08.715 --> 00:47:14.874
+Megan gave us a very nice little explainer in there about python objects and extensions and methods and stuff
+
+00:47:15.514 --> 00:47:16.715
+Yeah
+
+00:47:16.715 --> 00:47:17.595
+so
+
+00:47:17.595 --> 00:47:19.595
+Well, this is doing this i'm gonna
+
+00:47:20.475 --> 00:47:24.394
+Hubert see you later. Some folks are having to drop for other meetings. That's okay
+
+00:47:27.995 --> 00:47:31.754
+I want to show here. Um as laby mentioned there's um
+
+00:47:32.795 --> 00:47:38.715
+Also, you can select arm pipe or python here and it can walk you through how you you can set that up in your
+
+00:47:39.035 --> 00:47:40.795
+uh in your machine
+
+00:47:40.795 --> 00:47:42.795
+Uh, all the same examples
+
+00:47:43.035 --> 00:47:44.795
+are available
+
+00:47:44.795 --> 00:47:46.795
+as well as the reference
+
+00:47:46.874 --> 00:47:52.795
+Once you select python and any of the pages in the site, it'll switch everything to python. So the
+
+00:47:54.934 --> 00:47:57.595
+Documentation will also be available for for it
+
+00:47:58.314 --> 00:47:59.595
+um
+
+00:47:59.595 --> 00:48:04.475
+The package itself on both sides on our and python side come with a small
+
+00:48:05.115 --> 00:48:08.634
+data set that has three reviews and uh
+
+00:48:09.434 --> 00:48:12.074
+You can use it as you know to test it for the first time
+
+00:48:13.115 --> 00:48:14.475
+and uh
+
+00:48:14.475 --> 00:48:16.475
+It's all available here, too
+
+00:48:17.115 --> 00:48:19.115
+perfect, so
+
+00:48:20.074 --> 00:48:22.074
+Let me know do you finally
+
+00:48:22.555 --> 00:48:24.555
+That our python has run in our last
+
+00:48:25.675 --> 00:48:30.795
+Yeah, I got I got the I put it on my other screen while running. Yeah, so you can see
+
+00:48:31.754 --> 00:48:34.155
+It ran and if I were to run this again
+
+00:48:35.675 --> 00:48:38.715
+You notice that it ran almost immediately because of the of the cache
+
+00:48:39.115 --> 00:48:45.675
+So you can see the big advantage of having the cache is especially if you're trying to re-render things and rerun them
+
+00:48:46.475 --> 00:48:48.555
+It's it's not going to take as long the second time
+
+00:48:49.194 --> 00:48:52.715
+So i'm just going to reassign this variable here. So now we'll have
+
+00:48:53.355 --> 00:48:54.795
+the new column
+
+00:48:54.795 --> 00:48:56.795
+Which is the sentiment column?
+
+00:48:56.954 --> 00:48:58.235
+We'll have it
+
+00:48:58.235 --> 00:49:00.235
+available
+
+00:49:00.235 --> 00:49:02.634
+And then i'm going to run
+
+00:49:03.915 --> 00:49:07.115
+Uh to see if there's anything that is not possible because everybody liked it
+
+00:49:07.194 --> 00:49:09.194
+This is the only one that kind of
+
+00:49:09.434 --> 00:49:10.874
+Didn't like it
+
+00:49:10.874 --> 00:49:13.434
+uh, so we can see there's some variance there as far as
+
+00:49:14.155 --> 00:49:16.654
+Uh, not everything was classified as positive
+
+00:49:17.755 --> 00:49:20.475
+um for this one i'm going to use the
+
+00:49:21.355 --> 00:49:25.595
+The first one were critic reviews. This is the user reviews. I'm going to read this in
+
+00:49:28.235 --> 00:49:31.515
+And instead of 100 i'm just going to do the top 10 for right now
+
+00:49:32.395 --> 00:49:37.834
+And what i'm going to do here is i'm going to extract the language that the review was written in
+
+00:49:39.674 --> 00:49:41.914
+And that should take shorter hopefully
+
+00:49:42.794 --> 00:49:49.275
+Hopefully with only 10. So we're using llm dot extract or llm underscore extract from r
+
+00:49:49.755 --> 00:49:56.235
+We are passing it the text variable and then the prompt that we're giving it basically is I want you to extract the language
+
+00:49:56.635 --> 00:50:03.194
+Be it english spanish, etc. So that little part at the end that second argument is what the llm is getting as its prompt
+
+00:50:06.954 --> 00:50:10.794
+And hopefully it does okay because we do have some reviews in all different languages
+
+00:50:11.595 --> 00:50:14.554
+Yeah, good question. Edgar. Where is this data from?
+
+00:50:16.074 --> 00:50:21.115
+This is uh from uh, teddy tuesday. It's 2020. Uh, may 5th
+
+00:50:21.674 --> 00:50:22.554
+awesome
+
+00:50:22.554 --> 00:50:24.074
+Thank you
+
+00:50:24.074 --> 00:50:27.834
+Um, I don't think we're going to have enough time to go through all this because it's taking a while
+
+00:50:28.395 --> 00:50:31.034
+um, one thing I wanted to show is uh
+
+00:50:31.914 --> 00:50:33.914
+the dust translations
+
+00:50:34.074 --> 00:50:38.554
+There's a few here that are not uh in english that could kind of showcase
+
+00:50:38.954 --> 00:50:44.154
+Uh, the translate actually does refer to human language so you can translate from one language to the other
+
+00:50:44.554 --> 00:50:50.954
+um, one thing that I found with llms that is so cool is that you don't need need to specify the
+
+00:50:51.674 --> 00:50:58.475
+Uh origin language just the target language so it'll adapt to whatever language you say that you have
+
+00:50:59.115 --> 00:51:00.534
+uh, you know
+
+00:51:00.534 --> 00:51:05.834
+Italian spanish russian all in the original text that you want them all translated to english
+
+00:51:06.074 --> 00:51:12.235
+You don't need to specify each one as a you know, the origin just to say I want english which is very different from other
+
+00:51:12.875 --> 00:51:14.294
+um
+
+00:51:14.294 --> 00:51:15.674
+translations
+
+00:51:15.674 --> 00:51:17.275
+uh, you know
+
+00:51:17.275 --> 00:51:22.095
+Programs or algorithms that are out there. Uh, the elements just pick it up and it does it automatically
+
+00:51:22.395 --> 00:51:25.434
+And this is true both sides on the art and python side
+
+00:51:26.635 --> 00:51:28.635
+Uh before we go. I just want to show you
+
+00:51:29.034 --> 00:51:31.034
+uh how
+
+00:51:31.755 --> 00:51:33.995
+Uh mall works with
+
+00:51:35.115 --> 00:51:36.554
+an external
+
+00:51:36.554 --> 00:51:38.954
+uh llm or external provider
+
+00:51:39.355 --> 00:51:46.314
+Uh, so instead of uh elmer we're using chatless, which is the essentially the same package but for python
+
+00:51:46.954 --> 00:51:54.154
+Um, these are this is not my package, uh or elmer for that matter elmer's is uh, at least package
+
+00:51:55.115 --> 00:51:57.115
+uh, so
+
+00:51:57.115 --> 00:51:59.674
+I'm basically doing the same thing. Uh
+
+00:52:00.954 --> 00:52:01.914
+as
+
+00:52:01.914 --> 00:52:05.755
+Let me do it on the other side. We're uh setting up a chat object
+
+00:52:06.554 --> 00:52:10.475
+And what i'm doing here is under user reviews. I'm going to use that chat object
+
+00:52:12.074 --> 00:52:13.995
+So now it's set up
+
+00:52:13.995 --> 00:52:18.314
+For me to use and I can use it directly here
+
+00:52:19.595 --> 00:52:21.595
+Now it is calling
+
+00:52:21.595 --> 00:52:23.355
+um
+
+00:52:23.355 --> 00:52:24.694
+uh
+
+00:52:24.694 --> 00:52:30.954
+aws is going to uh anthropic and running it just like it ran with uh,
+
+00:52:31.755 --> 00:52:32.794
+uh
+
+00:52:32.794 --> 00:52:34.074
+in our
+
+00:52:34.074 --> 00:52:36.154
+The only thing that we don't have is the nice progress bar
+
+00:52:36.794 --> 00:52:40.715
+But uh, it is working. So oh wow on this one said it's all negatives
+
+00:52:41.674 --> 00:52:48.235
+This is from user reviews, yeah, but it worked it looks like but it works. Yeah, some of them are right
+
+00:52:49.034 --> 00:52:50.475
+All right, everybody
+
+00:52:50.475 --> 00:52:52.475
+We have a minute left
+
+00:52:52.875 --> 00:52:54.875
+um, I wanted to
+
+00:52:54.934 --> 00:52:56.934
+re-put the
+
+00:52:57.515 --> 00:53:05.034
+Repo in the chat that um, we use that contains both of these files. This is just my personal repo if it's a mess
+
+00:53:05.834 --> 00:53:07.834
+Don't judge me. This was really really fun
+
+00:53:07.914 --> 00:53:10.395
+I'm, so glad that you hung out with us at the data science lab
+
+00:53:10.954 --> 00:53:13.995
+I wanted to let you know that we have sarah altman joining us next week
+
+00:53:14.475 --> 00:53:18.095
+And we just happen to have another llm one. The lab is not always about llms
+
+00:53:18.954 --> 00:53:21.694
+I promise but we are going to be doing data analysis
+
+00:53:22.154 --> 00:53:27.515
+With the assistance of ai which might mean data bot might mean clod code. Like what does that look like in?
+
+00:53:28.054 --> 00:53:34.395
+February of 2026 for sarah. I hope that you'll come and join us and on thursday at the data science lab
+
+00:53:34.395 --> 00:53:38.814
+We have alexander shock from sitel, but he's also the effective statistician
+
+00:53:39.414 --> 00:53:40.875
+podcaster
+
+00:53:40.875 --> 00:53:46.554
+Come with your data science career questions, especially if you are a stats flavored data science
+
+00:53:47.034 --> 00:53:49.515
+Person, it's going to be transformative and wonderful
+
+00:53:50.074 --> 00:53:52.475
+I hope that you have a fantastic rest of your week
+
+00:53:52.554 --> 00:53:57.034
+Please hang out on the discord server with us if you have more questions. We are going to try to answer them
+
+00:53:57.355 --> 00:54:00.495
+We love you, and we'll see you next time. Bye everybody

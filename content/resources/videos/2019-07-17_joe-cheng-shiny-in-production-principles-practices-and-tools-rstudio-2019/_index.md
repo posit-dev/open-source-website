@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 3027
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.959110+00:00'
-  like_count: 491
+  last_updated: '2026-03-20T11:32:56.700352+00:00'
+  like_count: 493
   people:
   - Joe Cheng
   playlist: ''
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Wy3TY0gOmJw/maxresdefault.jpg
   title: 'Joe Cheng | Shiny in production: Principles, practices, and tools | RStudio (2019)'
   url: https://www.youtube.com/watch?v=Wy3TY0gOmJw
-  view_count: 28224
+  view_count: 28242
 ---
 image: thumbnail.jpg
 

@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 1225
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.708642+00:00'
-  like_count: 10
+  last_updated: '2026-03-20T11:32:57.734471+00:00'
+  like_count: 11
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Great Tables
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uvH-Z39ZUj0/maxresdefault.jpg
   title: Richard Iannone - Great Tables for Everyone | SciPy 2024
   url: https://www.youtube.com/watch?v=uvH-Z39ZUj0
-  view_count: 278
+  view_count: 280
 ---
 image: thumbnail.jpg
 

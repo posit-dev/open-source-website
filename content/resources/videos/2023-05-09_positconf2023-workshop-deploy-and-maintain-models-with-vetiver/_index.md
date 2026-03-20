@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 183
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:25.546397+00:00'
+  last_updated: '2026-03-20T11:32:51.918631+00:00'
   like_count: 22
   people:
   - Julia Silge
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jwbmxVuo63M/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Deploy and Maintain Models with vetiver'
   url: https://www.youtube.com/watch?v=jwbmxVuo63M
-  view_count: 973
+  view_count: 980
 ---
 image: thumbnail.jpg
 

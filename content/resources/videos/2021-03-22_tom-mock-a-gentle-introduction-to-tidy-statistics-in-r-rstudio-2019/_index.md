@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 3290
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:28.311040+00:00'
+  last_updated: '2026-03-20T11:32:54.796672+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wfMAaXWHGog/maxresdefault.jpg
   title: Tom Mock | A Gentle Introduction to Tidy Statistics in R | RStudio (2019)
   url: https://www.youtube.com/watch?v=wfMAaXWHGog
-  view_count: 23511
+  view_count: 23555
 ---
 image: thumbnail.jpg
 

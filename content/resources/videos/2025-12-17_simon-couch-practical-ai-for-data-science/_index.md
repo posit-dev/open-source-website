@@ -36,7 +36,7 @@ software:
 - btw
 - ellmer
 - mcptools
-- positron
+- Positron
 - tidymodels
 - tidyverse
 - tidyverse.org
@@ -79,7 +79,7 @@ external:  # updated automatically, do not edit
   duration: 2428
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.323754+00:00'
+  last_updated: '2026-03-20T11:32:57.422986+00:00'
   like_count: 8
   people:
   - Simon Couch
@@ -88,7 +88,7 @@ external:  # updated automatically, do not edit
   - btw
   - ellmer
   - mcptools
-  - positron
+  - Positron
   - tidymodels
   - tidyverse
   - tidyverse.org
@@ -97,7 +97,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/isLtPxWNNIA/maxresdefault.jpg
   title: Simon Couch - Practical AI for data science
   url: https://www.youtube.com/watch?v=isLtPxWNNIA
-  view_count: 133
+  view_count: 139
 ---
 image: thumbnail.jpg
 

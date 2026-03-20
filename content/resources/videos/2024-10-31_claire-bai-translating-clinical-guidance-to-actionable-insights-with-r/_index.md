@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   duration: 298
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.840621+00:00'
+  last_updated: '2026-03-20T11:32:48.001314+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rQ8drf18MzA/maxresdefault.jpg
   title: Claire Bai - Translating clinical guidance to actionable insights with R
   url: https://www.youtube.com/watch?v=rQ8drf18MzA
-  view_count: 242
+  view_count: 243
 ---
 image: thumbnail.jpg
 

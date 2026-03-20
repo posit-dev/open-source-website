@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   duration: 15126
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.707775+00:00'
+  last_updated: '2026-03-20T11:32:57.423430+00:00'
   like_count: 9
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/H4bbMfRlw88/maxresdefault.jpg
   title: 'Daniel Chen - Shiny for Python: Building Production-Ready Dashboards in Python | SciPy 2025'
   url: https://www.youtube.com/watch?v=H4bbMfRlw88
-  view_count: 353
+  view_count: 357
 ---
 image: thumbnail.jpg
 

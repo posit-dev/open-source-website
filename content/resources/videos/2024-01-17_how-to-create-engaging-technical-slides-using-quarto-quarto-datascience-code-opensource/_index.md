@@ -1,6 +1,6 @@
 ---
 date: '2024-01-17'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -15,12 +15,12 @@ external:  # updated automatically, do not edit
   comment_count: 1
   date: '2024-01-17T17:48:31Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 59
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:24.146186+00:00'
-  like_count: 88
+  last_updated: '2026-03-20T11:32:50.371131+00:00'
+  like_count: 89
   playlist: ''
   software:
   - Quarto
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uE925F-yOa4/maxresdefault.jpg
   title: 'How to create engaging technical slides using Quarto! #quarto #datascience #code #opensource'
   url: https://www.youtube.com/watch?v=uE925F-yOa4
-  view_count: 3134
+  view_count: 3216
 ---
 image: thumbnail.jpg
 

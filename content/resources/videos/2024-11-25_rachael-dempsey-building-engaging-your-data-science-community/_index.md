@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 518
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:31.073494+00:00'
+  last_updated: '2026-03-20T11:32:57.734758+00:00'
   like_count: 0
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/Q-JJaHa-yzU/maxresdefault.jpg
   title: Rachael Dempsey - Building & Engaging your Data Science Community
   url: https://www.youtube.com/watch?v=Q-JJaHa-yzU
-  view_count: 135
+  view_count: 139
 ---
 image: thumbnail.jpg
 

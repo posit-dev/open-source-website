@@ -1,6 +1,6 @@
 ---
 date: '2024-05-17'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -58,11 +58,11 @@ external:  # updated automatically, do not edit
   comment_count: 0
   date: '2024-05-17T19:15:44Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 31
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695566+00:00'
+  last_updated: '2026-03-20T11:32:49.221451+00:00'
   like_count: 10
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PTU5cOp4lzQ/maxresdefault.jpg
   title: Lessons in career growth from gardening 🌱
   url: https://www.youtube.com/watch?v=PTU5cOp4lzQ
-  view_count: 475
+  view_count: 477
 ---
 image: thumbnail.jpg
 

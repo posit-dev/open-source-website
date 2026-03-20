@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1183
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.481340+00:00'
+  last_updated: '2026-03-20T11:32:50.372008+00:00'
   like_count: 12
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HhsL8rl9jQ4/maxresdefault.jpg
   title: How to Win Friends and Influence People (With Data) - posit::conf(2023)
   url: https://www.youtube.com/watch?v=HhsL8rl9jQ4
-  view_count: 551
+  view_count: 552
 ---
 image: thumbnail.jpg
 

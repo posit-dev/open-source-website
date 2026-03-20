@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4476
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.282618+00:00'
+  last_updated: '2026-03-20T11:32:52.392279+00:00'
   like_count: 78
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YfTIwi-KOts/maxresdefault.jpg
   title: 'R at AstraZeneca: ​​upskilling our workforce through education, experience, and exposure'
   url: https://www.youtube.com/watch?v=YfTIwi-KOts
-  view_count: 3598
+  view_count: 3602
 ---
 image: thumbnail.jpg
 

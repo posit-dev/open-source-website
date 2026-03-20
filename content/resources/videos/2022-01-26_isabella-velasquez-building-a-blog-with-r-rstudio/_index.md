@@ -56,7 +56,8 @@ description: 'Building a Blog With R
 
   Isabella Velásquez: Isabella is a content strategist, author, and active member of the R community. Currently, she works at RStudio as a Sr. Product Marketing Manager with the goal of driving engagement around all the awesome things happening at RStudio. In her previous role, she conducted data analysis and research, developed infrastructure to support use of data, and created resources to engage technical and non-technical audiences. She channels these experiences to illuminate what is possible with great products.'
 image: thumbnail.jpg
-people: []
+people:
+- Isabella Velásquez
 resource_type: video
 resources: []
 software:
@@ -128,8 +129,10 @@ external:  # updated automatically, do not edit
   duration: 3810
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.561377+00:00'
+  last_updated: '2026-03-20T11:32:53.799661+00:00'
   like_count: 176
+  people:
+  - Isabella Velásquez
   playlist: ''
   software:
   - blogdown
@@ -138,7 +141,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MrW5XFf7aps/maxresdefault.jpg
   title: Isabella Velásquez | Building a Blog with R | RStudio
   url: https://www.youtube.com/watch?v=MrW5XFf7aps
-  view_count: 5570
+  view_count: 5574
 ---
 image: thumbnail.jpg
 

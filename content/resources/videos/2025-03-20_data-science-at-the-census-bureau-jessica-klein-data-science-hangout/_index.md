@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3477
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.131447+00:00'
+  last_updated: '2026-03-20T11:32:47.650078+00:00'
   like_count: 19
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/7aFx83AiBzc/maxresdefault.jpg
   title: Data Science at the Census Bureau | Jessica Klein | Data Science Hangout
   url: https://www.youtube.com/watch?v=7aFx83AiBzc
-  view_count: 576
+  view_count: 580
 ---
 image: thumbnail.jpg
 

@@ -20,18 +20,18 @@ external:  # updated automatically, do not edit
   duration: 1285
   has_captions: true
   language: en-GB
-  last_updated: '2026-03-04T14:51:31.372474+00:00'
-  like_count: 2
+  last_updated: '2026-03-20T11:32:57.020648+00:00'
+  like_count: 8
   people:
   - Charlie Gao
-  playlist: ''
+  playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/vxai8TKd3Fk/maxresdefault.jpg
   title: 'Charlie Gao: Advances in the Shiny Ecosystem'
   url: https://www.youtube.com/watch?v=vxai8TKd3Fk
-  view_count: 24
+  view_count: 154
 ---
 image: thumbnail.jpg
 

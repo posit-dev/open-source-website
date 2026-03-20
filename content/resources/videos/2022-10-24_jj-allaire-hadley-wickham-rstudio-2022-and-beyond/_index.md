@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 1449
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529233+00:00'
+  last_updated: '2026-03-20T11:32:52.707817+00:00'
   like_count: 103
   people:
   - Hadley Wickham
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/u1Gzxg8Pd08/maxresdefault.jpg
   title: 'JJ Allaire & Hadley Wickham | RStudio: 2022 and Beyond'
   url: https://www.youtube.com/watch?v=u1Gzxg8Pd08
-  view_count: 7781
+  view_count: 7795
 ---
 image: thumbnail.jpg
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 2043
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:31.073699+00:00'
+  last_updated: '2026-03-20T11:32:57.734949+00:00'
   like_count: 3
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/mtfu_D3pAlo/hqdefault.jpg
   title: Lightning Talks (PyCascades 2024)
   url: https://www.youtube.com/watch?v=mtfu_D3pAlo
-  view_count: 157
+  view_count: 158
 ---
 image: thumbnail.jpg
 

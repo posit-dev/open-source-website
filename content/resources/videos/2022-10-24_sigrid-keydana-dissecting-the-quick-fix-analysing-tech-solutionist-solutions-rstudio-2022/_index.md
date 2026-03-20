@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 966
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529094+00:00'
+  last_updated: '2026-03-20T11:32:52.707717+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/oavEc_xArE8/maxresdefault.jpg
   title: 'Sigrid Keydana | Dissecting the quick fix: Analysing tech-solutionist solutions | RStudio (2022)'
   url: https://www.youtube.com/watch?v=oavEc_xArE8
-  view_count: 276
+  view_count: 279
 ---
 image: thumbnail.jpg
 

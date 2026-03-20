@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   duration: 6826
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.323632+00:00'
+  last_updated: '2026-03-20T11:32:57.422695+00:00'
   like_count: 4
   people:
   - Rich Iannone
@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/abvgK9VU7z0/maxresdefault.jpg
   title: How to use {pointblank} to understand, validate, and document your data
   url: https://www.youtube.com/watch?v=abvgK9VU7z0
-  view_count: 111
+  view_count: 129
 ---
 image: thumbnail.jpg
 

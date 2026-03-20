@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   duration: 354
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.219197+00:00'
+  last_updated: '2026-03-20T11:32:53.454156+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -131,7 +131,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xDxa_mDwN04/maxresdefault.jpg
   title: Getting Started with {shinytest2} Part 3 || Using shiny.testmode in {shinytest2} || RStudio
   url: https://www.youtube.com/watch?v=xDxa_mDwN04
-  view_count: 865
+  view_count: 869
 ---
 image: thumbnail.jpg
 

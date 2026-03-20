@@ -27,7 +27,7 @@ resource_type: video
 resources: []
 software:
 - plotnine
-- positron
+- Positron
 tags: []
 title: 'Visualizing Gas Prices | PydyTuesday Uncut #2'
 
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   duration: 3803
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.130914+00:00'
+  last_updated: '2026-03-20T11:32:47.293394+00:00'
   like_count: 87
   people:
   - Jeroen Janssens
@@ -66,12 +66,12 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - plotnine
-  - positron
+  - Positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/kyVSc6lRBXg/maxresdefault.jpg
   title: 'Visualizing Gas Prices | PydyTuesday Uncut #2'
   url: https://www.youtube.com/watch?v=kyVSc6lRBXg
-  view_count: 2303
+  view_count: 2311
 ---
 image: thumbnail.jpg
 

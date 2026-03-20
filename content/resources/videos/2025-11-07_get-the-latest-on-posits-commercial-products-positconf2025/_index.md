@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - rstudio
 tags:
 - posit::conf(2025)
@@ -29,11 +29,11 @@ external:  # updated automatically, do not edit
   duration: 4080
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.269842+00:00'
+  last_updated: '2026-03-20T11:32:46.406434+00:00'
   like_count: 2
   playlist: ''
   software:
-  - positron
+  - Positron
   - rstudio
   tags:
   - posit::conf(2025)
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/N5h2JlTOsUo/maxresdefault.jpg
   title: Get the Latest on Posit's Commercial Products | posit::conf(2025)
   url: https://www.youtube.com/watch?v=N5h2JlTOsUo
-  view_count: 146
+  view_count: 147
 ---
 image: thumbnail.jpg
 

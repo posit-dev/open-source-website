@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   duration: 1134
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:25.546149+00:00'
+  last_updated: '2026-03-20T11:32:51.524140+00:00'
   like_count: 40
   playlist: ''
   tags:
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CPJn3Y-vI1A/maxresdefault.jpg
   title: Open Source in Drug Development | Thomas Nietmann and Posit
   url: https://www.youtube.com/watch?v=CPJn3Y-vI1A
-  view_count: 2259
+  view_count: 2263
 ---
 image: thumbnail.jpg
 

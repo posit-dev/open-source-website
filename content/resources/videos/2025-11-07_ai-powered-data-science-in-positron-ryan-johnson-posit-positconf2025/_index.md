@@ -9,7 +9,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -34,11 +34,11 @@ external:  # updated automatically, do not edit
   duration: 2717
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.269710+00:00'
-  like_count: 14
+  last_updated: '2026-03-20T11:32:46.406394+00:00'
+  like_count: 15
   playlist: ''
   software:
-  - positron
+  - Positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Ve7cNChzq5Q/maxresdefault.jpg
   title: AI-Powered Data Science in Positron (Ryan Johnson, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=Ve7cNChzq5Q
-  view_count: 974
+  view_count: 1053
 ---
 image: thumbnail.jpg
 

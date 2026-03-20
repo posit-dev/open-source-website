@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 1226
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.660962+00:00'
+  last_updated: '2026-03-20T11:32:56.381514+00:00'
   like_count: 53
   playlist: ''
   software:
@@ -114,7 +114,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UGAuXyxdrvA/maxresdefault.jpg
   title: 'Kara Woo | Boxplots: a case study in debugging and perseverance | RStudio (2019)'
   url: https://www.youtube.com/watch?v=UGAuXyxdrvA
-  view_count: 3667
+  view_count: 3669
 ---
 image: thumbnail.jpg
 

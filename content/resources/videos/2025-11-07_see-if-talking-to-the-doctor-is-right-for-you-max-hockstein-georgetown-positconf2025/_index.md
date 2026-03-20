@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 960
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.270047+00:00'
+  last_updated: '2026-03-20T11:32:46.406467+00:00'
   like_count: 7
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/x0AijVNlhg8/maxresdefault.jpg
   title: See if talking to the doctor is right for you (Max Hockstein, Georgetown) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=x0AijVNlhg8
-  view_count: 113
+  view_count: 115
 ---
 image: thumbnail.jpg
 

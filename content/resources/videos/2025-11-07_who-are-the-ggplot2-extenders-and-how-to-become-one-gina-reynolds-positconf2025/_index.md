@@ -18,8 +18,7 @@ description: 'Who are ''the ggplot2 extenders'' and how to become one
 
   📁 Website - https://ggplot2-extenders.github.io/ggplot-extension-club/ posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
 image: thumbnail.jpg
-people:
-- Gina Reynolds
+people: []
 resource_type: video
 resources: []
 software:
@@ -58,10 +57,8 @@ external:  # updated automatically, do not edit
   duration: 949
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.270355+00:00'
+  last_updated: '2026-03-20T11:32:46.669792+00:00'
   like_count: 5
-  people:
-  - Gina Reynolds
   playlist: ''
   software:
   - ggplot2
@@ -75,7 +72,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/V6Cgsecotg8/maxresdefault.jpg
   title: Who are 'the ggplot2 extenders' and how to become one (Gina Reynolds) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=V6Cgsecotg8
-  view_count: 127
+  view_count: 131
 ---
 image: thumbnail.jpg
 

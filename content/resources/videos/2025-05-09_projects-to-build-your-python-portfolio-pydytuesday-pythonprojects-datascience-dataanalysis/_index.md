@@ -1,6 +1,6 @@
 ---
 date: '2025-05-09'
-description: 'Github repo: https://github.com/posit-dev/python-tidytuesday'
+description: 'Github repo: https://github.com/posit-dev/python-tidytuesday #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -15,11 +15,11 @@ external:  # updated automatically, do not edit
   comment_count: 1
   date: '2025-05-09T00:32:27Z'
   definition: hd
-  description: 'Github repo: https://github.com/posit-dev/python-tidytuesday'
+  description: 'Github repo: https://github.com/posit-dev/python-tidytuesday #positshorts'
   duration: 58
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.131189+00:00'
+  last_updated: '2026-03-20T11:32:47.293502+00:00'
   like_count: 145
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uEmNiklPYcc/maxresdefault.jpg
   title: 'Projects to build your Python portfolio #pydytuesday #pythonprojects #datascience #dataanalysis'
   url: https://www.youtube.com/watch?v=uEmNiklPYcc
-  view_count: 3411
+  view_count: 3424
 ---
 image: thumbnail.jpg
 

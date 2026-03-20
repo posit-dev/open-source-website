@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 1142
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.481501+00:00'
-  like_count: 262
+  last_updated: '2026-03-20T11:32:50.743407+00:00'
+  like_count: 264
   playlist: ''
   tags:
   - rstudio
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9OFzOvV-to4/maxresdefault.jpg
   title: In-Process Analytical Data Management with DuckDB - posit::conf(2023)
   url: https://www.youtube.com/watch?v=9OFzOvV-to4
-  view_count: 10363
+  view_count: 10382
 ---
 image: thumbnail.jpg
 

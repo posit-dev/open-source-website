@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 1224
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126434+00:00'
+  last_updated: '2026-03-20T11:32:48.367829+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ceW3nQssV88/maxresdefault.jpg
   title: Brennan Antone - Democratizing Organizational Surveys with Quarto and Shiny
   url: https://www.youtube.com/watch?v=ceW3nQssV88
-  view_count: 363
+  view_count: 364
 ---
 image: thumbnail.jpg
 

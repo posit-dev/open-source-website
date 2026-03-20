@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -46,11 +46,11 @@ external:  # updated automatically, do not edit
   duration: 1154
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.563185+00:00'
-  like_count: 38
+  last_updated: '2026-03-20T11:32:46.971990+00:00'
+  like_count: 39
   playlist: ''
   software:
-  - positron
+  - Positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/R71WCIO6RyY/maxresdefault.jpg
   title: Exploring Datasets in Positron (Wes McKinney, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=R71WCIO6RyY
-  view_count: 1066
+  view_count: 1150
 ---
 image: thumbnail.jpg
 

@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   duration: 1122
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:28.938301+00:00'
+  last_updated: '2026-03-20T11:32:55.538743+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -130,7 +130,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Ns63PFJ6ZPc/hqdefault.jpg
   title: Ellis Hughes | Approaches to Assay Processing Package Validation | RStudio (2020)
   url: https://www.youtube.com/watch?v=Ns63PFJ6ZPc
-  view_count: 335
+  view_count: 337
 ---
 image: thumbnail.jpg
 

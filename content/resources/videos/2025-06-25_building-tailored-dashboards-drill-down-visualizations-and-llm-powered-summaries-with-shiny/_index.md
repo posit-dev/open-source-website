@@ -33,7 +33,8 @@ description: 'Led by Isabella Velásquez, Sr Product Marketing Manager at Posit 
 
   If you have specific follow-up questions about using Posit in your organization, we''d love to chat with you: https://posit.co/schedule-a-call/'
 image: thumbnail.jpg
-people: []
+people:
+- Isabella Velásquez
 resource_type: video
 resources: []
 software:
@@ -83,8 +84,10 @@ external:  # updated automatically, do not edit
   duration: 2453
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.130957+00:00'
+  last_updated: '2026-03-20T11:32:47.293412+00:00'
   like_count: 63
+  people:
+  - Isabella Velásquez
   playlist: ''
   software:
   - pointblank
@@ -94,7 +97,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TL0OCJVDqtI/maxresdefault.jpg
   title: 'Building Tailored Dashboards: Drill Down Visualizations and LLM-Powered Summaries with Shiny'
   url: https://www.youtube.com/watch?v=TL0OCJVDqtI
-  view_count: 2787
+  view_count: 2792
 ---
 image: thumbnail.jpg
 

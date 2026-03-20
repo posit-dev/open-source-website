@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1251
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.307048+00:00'
+  last_updated: '2026-03-20T11:32:56.052612+00:00'
   like_count: 17
   people:
   - Mine Çetinkaya-Rundel
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Tx90IBAmd-s/hqdefault.jpg
   title: Mine Çetinkaya-Rundel | Making the Shiny Contest | RStudio (2020)
   url: https://www.youtube.com/watch?v=Tx90IBAmd-s
-  view_count: 806
+  view_count: 807
 ---
 image: thumbnail.jpg
 

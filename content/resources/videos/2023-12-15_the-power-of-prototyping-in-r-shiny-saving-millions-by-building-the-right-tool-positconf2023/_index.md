@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1139
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.480720+00:00'
+  last_updated: '2026-03-20T11:32:50.371424+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vt52O519Btc/maxresdefault.jpg
   title: 'The Power of Prototyping in R Shiny: Saving Millions by Building the Right Tool - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=vt52O519Btc
-  view_count: 1142
+  view_count: 1143
 ---
 image: thumbnail.jpg
 

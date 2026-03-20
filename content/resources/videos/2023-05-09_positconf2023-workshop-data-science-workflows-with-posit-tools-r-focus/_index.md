@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 157
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:25.546449+00:00'
+  last_updated: '2026-03-20T11:32:51.918664+00:00'
   like_count: 1
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hiZQmnx8RXo/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Data Science Workflows with Posit Tools — R Focus'
   url: https://www.youtube.com/watch?v=hiZQmnx8RXo
-  view_count: 717
+  view_count: 718
 ---
 image: thumbnail.jpg
 

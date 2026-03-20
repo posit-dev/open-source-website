@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1020
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.820403+00:00'
+  last_updated: '2026-03-20T11:32:46.972367+00:00'
   like_count: 3
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jJ3IkgrVhWI/maxresdefault.jpg
   title: Integrating AI, Data Science Platforms, and Psychological Safety (Chris Engelhardt, Gen Re)
   url: https://www.youtube.com/watch?v=jJ3IkgrVhWI
-  view_count: 79
+  view_count: 80
 ---
 image: thumbnail.jpg
 

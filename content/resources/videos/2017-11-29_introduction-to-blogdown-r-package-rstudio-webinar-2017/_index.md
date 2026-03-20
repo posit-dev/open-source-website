@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 3764
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.323142+00:00'
+  last_updated: '2026-03-20T11:32:57.020496+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CjTLN-FXiFA/maxresdefault.jpg
   title: Introduction to Blogdown (R Package) | RStudio Webinar - 2017
   url: https://www.youtube.com/watch?v=CjTLN-FXiFA
-  view_count: 9028
+  view_count: 9030
 ---
 image: thumbnail.jpg
 

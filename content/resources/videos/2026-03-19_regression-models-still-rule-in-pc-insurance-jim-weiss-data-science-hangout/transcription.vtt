@@ -1,0 +1,1762 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.660
+Hey there, welcome to the Pozit Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.660 --> 00:00:22.020
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.020 --> 00:00:27.260
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.260 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:36.340
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.340 --> 00:00:41.619
+Can't wait to see you there. I would love to introduce our featured leader this week,
+
+00:00:41.619 --> 00:00:47.939
+Jim Weiss, Chief Risk Officer, Commercial and Executive at Crum & Forster. Jim, I am
+
+00:00:47.939 --> 00:00:51.380
+so glad to have you here today. Could you introduce yourself? Tell us a little bit about
+
+00:00:51.380 --> 00:00:54.500
+what you do, and something you like to do for fun.
+
+00:00:54.500 --> 00:01:00.500
+Yeah, hey everybody. Thanks for having me on. Good to be in the hot seat.
+
+00:01:00.500 --> 00:01:02.500
+It's not too hot.
+
+00:01:02.500 --> 00:01:11.779
+It's getting a little warm. Yeah, Jim, I'm a 44-year-old data science person in the U.S.
+
+00:01:11.779 --> 00:01:18.099
+property casualty insurance industry. I lead a small group of data scientists focused on
+
+00:01:18.339 --> 00:01:25.379
+ML and ML ops. They're all way better at data science than me, and also have responsibilities
+
+00:01:25.379 --> 00:01:33.779
+for monitoring emerging risk longer time frame issues. So that's kind of cool and fun. What I
+
+00:01:33.779 --> 00:01:40.660
+do for fun when I'm not doing all that stuff is like watching professional wrestling, love WWE,
+
+00:01:41.459 --> 00:01:46.180
+wearing an AEW hoodie right now. So if any professional wrestling fans in the house, holla.
+
+00:01:46.739 --> 00:01:51.220
+All right, you're gonna have to let us know in the chat here if you are a professional wrestling
+
+00:01:51.220 --> 00:01:57.059
+fan, and if you know of any professional wrestling data sets, because that's always like the most
+
+00:01:57.059 --> 00:02:01.459
+fun thing we talk about in the chat, like data sets that have to do with our fun things that we
+
+00:02:01.459 --> 00:02:08.580
+do. Okay, Jim, I would love some background for all of us so that we can ask good questions
+
+00:02:09.460 --> 00:02:14.979
+about Crum & Forster specifically, and maybe a little bit of background on insurance.
+
+00:02:15.380 --> 00:02:21.699
+So who is Crum & Forster? What do you do? What types of problems, does your team help them solve?
+
+00:02:23.220 --> 00:02:28.259
+Sure, Crum & Forster, a couple of good books. I mean, anyone's actually gonna go read the books
+
+00:02:28.259 --> 00:02:32.740
+after this, but if you really want to, a couple of good books you might check out are the Once
+
+00:02:32.740 --> 00:02:38.179
+in Future CNF by our CEO, which is the least self-referential corporate biography you're
+
+00:02:38.179 --> 00:02:42.979
+ever gonna read. And also the Fairfax Way, which is Crum & Forster's parent company,
+
+00:02:43.699 --> 00:02:48.580
+which is a little bit more self-referential. But essentially, we're a specialty property
+
+00:02:48.580 --> 00:02:54.580
+casualty insurer, and we mostly serve commercial businesses. So if you buy insurance on like your
+
+00:02:54.580 --> 00:03:00.339
+home or your car, it's like that, but it's like for businesses. So if I have like a pizza shop,
+
+00:03:00.339 --> 00:03:04.740
+I need like workers not for my employees, and I need auto insurance for my vehicles and the
+
+00:03:04.740 --> 00:03:09.460
+people who are driving them, and I need to buy property insurance on the pizzeria, stuff like
+
+00:03:09.460 --> 00:03:17.139
+that. And where data science factors in a lot of ways, but one example where my team often factors
+
+00:03:17.139 --> 00:03:24.020
+in is just trying to find a good, fair, equitable price point for each policyholder who applies for
+
+00:03:24.020 --> 00:03:30.660
+insurance with us. So for that pizzeria example, I want a price that basically aligns with their
+
+00:03:30.660 --> 00:03:34.419
+risk. So I might be looking at stuff like how much pizza do they make? How many customers do
+
+00:03:34.419 --> 00:03:38.979
+they have? Where are they located? How much foot traffic is around the pizzeria? Stuff like that.
+
+00:03:38.979 --> 00:03:42.899
+And we're typically using a regression model. So I told Libby before this,
+
+00:03:42.899 --> 00:03:46.500
+like love regression models. So feel free to challenge me on that.
+
+00:03:49.539 --> 00:03:55.139
+Do we have any regression stands in the chat who want to talk about regression? We always do
+
+00:03:55.139 --> 00:04:00.500
+usually have some modeling questions, but that is a great context building question as well,
+
+00:04:00.500 --> 00:04:06.339
+is like what data types do you see? We all come from many, many different industries.
+
+00:04:06.339 --> 00:04:12.100
+I actually do have a background in PNC insurance, but I think most of us are from
+
+00:04:12.100 --> 00:04:19.059
+wildly different backgrounds. So what kind of data types would you see in your day-to-day or
+
+00:04:19.059 --> 00:04:24.899
+your team would see in your day-to-day? And what is an example of a problem that you feel like
+
+00:04:24.899 --> 00:04:28.260
+you've solved lately or that you've been working on lately? You can stay high level.
+
+00:04:29.700 --> 00:04:34.100
+Sure. Like no problems ever truly solved permanently, right?
+
+00:04:34.100 --> 00:04:35.619
+Oh no, of course.
+
+00:04:35.619 --> 00:04:41.459
+I guess to kind of take it back up a level to the data question, insurance is a super
+
+00:04:41.459 --> 00:04:46.100
+data rich industry. Historically, a lot of the data has been dark. So I guess kind of
+
+00:04:46.980 --> 00:04:52.019
+taking it to the world where I work and operate the US property casualty commercial insurance
+
+00:04:52.019 --> 00:04:57.059
+industry, a lot of our data we're getting starts in like just unstructured documents.
+
+00:04:57.059 --> 00:05:01.540
+So we're like getting PDFs, we're getting like spreadsheets, words with just information about
+
+00:05:01.700 --> 00:05:06.100
+what kind of insurance the person wants or the business wants, the attributes of the business,
+
+00:05:06.100 --> 00:05:13.220
+et cetera, pretty non-standardized. In the previous several century history of the industry,
+
+00:05:13.220 --> 00:05:19.940
+a lot of times that's just been keyed in by people. As Gen AI in particular has become more
+
+00:05:19.940 --> 00:05:24.579
+proliferated throughout the industry, Gen AI is doing more of that work, but ultimately coalesces
+
+00:05:24.579 --> 00:05:29.380
+more towards structured data sets, which have what policyholders paid for their insurance,
+
+00:05:29.380 --> 00:05:32.420
+some of their risk attributes, like the stuff I rattled off there.
+
+00:05:32.420 --> 00:05:36.260
+And then most critically in a lot of cases, and for a lot of my team's projects,
+
+00:05:37.619 --> 00:05:43.380
+whether or not they had a claim and how much that claim cost. So types of projects I'll typically
+
+00:05:43.380 --> 00:05:48.500
+plug in type of problem I'm trying to solve is might be looking at a portfolio of insurance that
+
+00:05:48.500 --> 00:05:53.940
+hasn't been profitable for us for some reason or other, try to figure out why using data science
+
+00:05:53.940 --> 00:05:58.820
+techniques such as regression. And then if we can isolate factors that are contributing to
+
+00:05:58.820 --> 00:06:03.940
+unprofitable pockets of our portfolio of policyholders, then we can either make pricing
+
+00:06:03.940 --> 00:06:09.140
+adjustments, potentially decide to exit that market, or most ideally for everybody, identify
+
+00:06:09.140 --> 00:06:13.700
+things about their risk profile that they can adapt and evolve. And maybe to give a specific
+
+00:06:14.260 --> 00:06:19.459
+example from one of the many, many types of insurance Carmen Forster sells, I would point
+
+00:06:19.459 --> 00:06:26.019
+to cyber insurance, because there might be unfavorable risk attributes in a policyholder
+
+00:06:26.019 --> 00:06:30.100
+applicant. They might have poor website security, but we can look at all the attributes of the
+
+00:06:30.100 --> 00:06:36.500
+website, build a model that figures out why a particular type of website or website hosting
+
+00:06:36.500 --> 00:06:43.459
+structure is propense to losses, and then either introduce some sort of discount or surcharge based
+
+00:06:43.459 --> 00:06:47.940
+on your hosting footprint, or alternatively recommend ways you could change your hosting
+
+00:06:47.940 --> 00:06:51.220
+footprint in order to make your website safer and reduce what we're going to have to pay out
+
+00:06:51.220 --> 00:06:56.579
+in insurance claims. That's wild. I had not thought about in this day and age, that being
+
+00:06:56.579 --> 00:07:02.179
+part of PNC property and casualty insurance, because digital stuff is kind of nebulous and
+
+00:07:02.179 --> 00:07:09.940
+non tangible, right? That's a whole special niche that I really hadn't thought existed.
+
+00:07:09.940 --> 00:07:15.540
+So that's really interesting to hear about. I put a poll in the Slido, by the way, to ask everybody
+
+00:07:15.540 --> 00:07:21.619
+if they use regression modeling in their job. And at first, the votes were very no heavy.
+
+00:07:21.619 --> 00:07:28.100
+We are now tipped over into 75%. Yes, but we're still getting votes. So y'all go vote. Tell me
+
+00:07:28.100 --> 00:07:34.500
+if you use regression modeling in your job. I will tell you that I don't think I've ever used
+
+00:07:34.500 --> 00:07:39.459
+regression in a data job. I think I'm a no. I don't think I can vote because I'm the moderator
+
+00:07:39.459 --> 00:07:46.579
+of the Slido. But consider one more vote in there. Lots of other things. Tons and tons of
+
+00:07:47.459 --> 00:07:51.779
+descriptives. I've done lots of surveys. Libby, could we do another poll, whether
+
+00:07:51.779 --> 00:07:55.380
+or not people think I'm a dork because regression is my favorite thing ever?
+
+00:07:56.019 --> 00:07:59.700
+Yes, no, maybe. Is Jim a dork because regression is his favorite thing?
+
+00:07:59.700 --> 00:08:06.100
+We can weigh in in the chat, though. Do you identify as a dork? If you like it, that's
+
+00:08:06.100 --> 00:08:11.220
+what I was going to say. Gregory says, we're all dorks here. I think you're in good company.
+
+00:08:11.220 --> 00:08:17.459
+Okay, so we have 39 votes in now, 40 votes in now, and we are still at 78%. Yes,
+
+00:08:17.459 --> 00:08:23.059
+using regression modeling in a job. And I just realized I did have a shiny dashboard
+
+00:08:23.059 --> 00:08:27.619
+that did use regression modeling. Okay. It's okay to use regression.
+
+00:08:28.579 --> 00:08:33.460
+Yes. Yes. Brent says, we all like a good regression model.
+
+00:08:34.979 --> 00:08:38.580
+Okay. I think we're on the yes train for the most part for the Hangout crew.
+
+00:08:40.020 --> 00:08:44.419
+All right. I better hop back over to the question side. If there's any other polls
+
+00:08:44.419 --> 00:08:49.460
+that we want to give, let me know because we can pop another one in there and we can answer it.
+
+00:08:49.460 --> 00:08:52.340
+Was there a legit question, Libby, whether I identify as a dork?
+
+00:08:53.219 --> 00:08:58.900
+No, that was just me. I'm asking the chat. Do we identify as dorks? I think that we all do.
+
+00:08:58.900 --> 00:09:01.859
+I'm sure you do. It would depend on the dictionary
+
+00:09:01.859 --> 00:09:05.460
+definition. I think there's three or four definitions. I'm not looking at the dictionary
+
+00:09:05.460 --> 00:09:11.619
+right now, but I think there's three or four definitions of dork. And there's one that's a
+
+00:09:11.619 --> 00:09:18.820
+playful expert in a topic. I would definitely say yes, but then an unlikable person who's
+
+00:09:18.979 --> 00:09:21.619
+epically focused on a topic, I would not identify with that one.
+
+00:09:22.179 --> 00:09:30.979
+Okay. Not narrow-minded. Amelia says, I had no idea there were people out there not using
+
+00:09:30.979 --> 00:09:35.700
+regression. Well, data science is not one thing. And that's the best thing about it, in my eyes,
+
+00:09:35.700 --> 00:09:44.099
+is it's so broad and so interesting. And there are so many people that also really work on
+
+00:09:44.340 --> 00:09:51.700
+a lot of descriptive, like, here's just what's happening, right? And don't have a lot of need
+
+00:09:51.700 --> 00:09:58.580
+for correlating things or figuring out what might be happening in the future. We better hop over
+
+00:09:58.580 --> 00:10:04.900
+into Slido because Russ has a question for you that is very much on the topic of regression.
+
+00:10:04.900 --> 00:10:08.580
+Russ Conti, would you like to unmute and ask your question live?
+
+00:10:10.739 --> 00:10:11.780
+So hard-hitting, Russ.
+
+00:10:14.500 --> 00:10:17.539
+What types of regression do you use? I've been working with, like,
+
+00:10:17.539 --> 00:10:22.179
+logistic regression the last couple of weeks. But what kinds of regression do you use?
+
+00:10:23.780 --> 00:10:28.900
+Love the question. Thank you, Russ. And by the way, happy to talk 45 minutes about, like,
+
+00:10:28.900 --> 00:10:31.619
+why I love regression. I guess the specific type.
+
+00:10:31.619 --> 00:10:33.940
+Maybe not. Maybe not.
+
+00:10:33.940 --> 00:10:42.900
+Use a little bit of logistic. I think the most popular loss distribution in the history of
+
+00:10:42.900 --> 00:10:47.140
+insurance would be called the Tweedy. Has anyone heard of the Tweedy distribution,
+
+00:10:47.140 --> 00:10:52.340
+named after Tweedy Bird, the Looney Tunes character? Yes, Donald. I guess, can Donald
+
+00:10:52.340 --> 00:10:55.460
+unmute and give us, like, a primer on the Tweedy, or shall I?
+
+00:10:55.460 --> 00:10:59.619
+I was just going to say, Donald would absolutely love to, I bet. Donald, do you have your
+
+00:11:00.659 --> 00:11:07.380
+mic working today? Donald is, like, the king of very niche statistical things.
+
+00:11:08.179 --> 00:11:10.419
+Donald. We're going to get Donald to unmute.
+
+00:11:11.140 --> 00:11:12.500
+I'll give it a stab, but if Donald comes off mute.
+
+00:11:12.500 --> 00:11:18.739
+No, no, sorry, he can't. Okay, that's good. We can't all unmute. But Russ did add a Wikipedia
+
+00:11:18.739 --> 00:11:21.859
+link to the Tweedy distribution in the chat for us, so we can all look at it.
+
+00:11:22.900 --> 00:11:28.260
+It's really good for insurance problems, because when you're looking at insurance profitability,
+
+00:11:28.260 --> 00:11:32.820
+there's at least two dimensions driving them. One is whether or not you're going to have an
+
+00:11:32.820 --> 00:11:35.859
+insurance claim, whether or not your policyholder is going to have an insurance claim, and the other
+
+00:11:35.859 --> 00:11:39.219
+is whether or not your policyholder is going to have an insurance claim, which logistic regression
+
+00:11:39.219 --> 00:11:43.219
+might drive at. Or you could look at, like, a Poisson, which gets into, like,
+
+00:11:43.219 --> 00:11:47.460
+how many claims your policyholder is expected to have. But then oftentimes of, like, greater
+
+00:11:47.460 --> 00:11:53.380
+significance in our world is how much the claim is going to cost. So what makes Tweedy a beautiful
+
+00:11:53.380 --> 00:11:59.140
+thing is it kind of combines those into a single distribution with a parameter that decides how
+
+00:11:59.140 --> 00:12:03.219
+much weight each of those two things get. And you can either, like, grid search that or just
+
+00:12:03.539 --> 00:12:09.940
+judgmentally apply a selection. The most popular selection in the history of insurance is 1.7.
+
+00:12:10.500 --> 00:12:15.940
+But at the end of that, you get kind of a scorecard of the different risk factors in your
+
+00:12:15.940 --> 00:12:21.460
+model and what they're influencing. The one downside, I would say, is the model coefficients
+
+00:12:21.460 --> 00:12:25.780
+don't really provide attribution into whether it's, like, the claim propensity or the claim
+
+00:12:25.780 --> 00:12:31.859
+costs that's driving your outcomes. OK, fantastic. Russ, thank you for asking that question.
+
+00:12:33.219 --> 00:12:38.820
+And I'm going to put another, I guess you could call it a poll up, but it's going to be open text.
+
+00:12:41.619 --> 00:12:46.020
+And it's going to be what types of models do you use at work?
+
+00:12:48.739 --> 00:12:55.299
+And I hope that when these answers come out, you will be able to see them. Like, everybody else
+
+00:12:55.299 --> 00:12:59.299
+should be able to see them. And if not, don't worry, I will share them with you.
+
+00:12:59.299 --> 00:13:02.580
+Who asked what kind of models question?
+
+00:13:02.580 --> 00:13:07.299
+Let me know if you can see it. It's just what types of models do you use at work?
+
+00:13:07.299 --> 00:13:08.659
+And who did the question come from, Libby?
+
+00:13:09.299 --> 00:13:18.739
+From me. I'm just asking the chat. I'm asking the chat and everybody can answer the survey in Slido.
+
+00:13:19.460 --> 00:13:23.059
+I hope that it's working, y'all. Y'all need to, like, test this out and tell me,
+
+00:13:23.059 --> 00:13:27.700
+because this one, for some reason, it looks like it's not working. But we will hop back over to
+
+00:13:27.700 --> 00:13:35.380
+our questions and ask another one from our list here, which is an anonymous question that says,
+
+00:13:35.380 --> 00:13:40.500
+in your insurance modeling career, what is the most unusual or unexpected variable
+
+00:13:40.500 --> 00:13:45.780
+that has contributed to one of your models? I like that because it could be all kinds of things.
+
+00:13:45.780 --> 00:13:47.859
+We'll put you on the spot here.
+
+00:13:47.859 --> 00:13:51.780
+Yeah, absolutely. And by the way, massive FOMO that I'm not in the Slido.
+
+00:13:51.780 --> 00:13:55.859
+Like, it's just, like, killing me that I can't answer these questions, Libby. I'm, like,
+
+00:13:55.859 --> 00:13:57.619
+foaming at the mouth to answer what types of models.
+
+00:13:57.619 --> 00:14:00.099
+I'm going to give them to you. I'm going to ask them to you. Don't worry.
+
+00:14:01.299 --> 00:14:06.580
+But I guess question, like, weirdest, definitely one came to mind, but I forget the exact
+
+00:14:07.219 --> 00:14:08.820
+verbiage of your question, Libby.
+
+00:14:08.820 --> 00:14:13.380
+The most unusual or unexpected variable that has contributed to one of your models.
+
+00:14:13.940 --> 00:14:19.380
+Cool. Definitely have a memorable example. I forget whether I planted this question or
+
+00:14:19.380 --> 00:14:21.380
+you're ambushing me, Libby, but either way, it's cool.
+
+00:14:21.380 --> 00:14:24.659
+This is an anonymous question from Slido, so somebody else asked this.
+
+00:14:24.659 --> 00:14:26.820
+Cool. I don't think I planted this question.
+
+00:14:27.859 --> 00:14:30.900
+There are no plant questions. I promise you.
+
+00:14:31.460 --> 00:14:40.099
+Cool. So essentially, in insurance models, especially ones that are used to determine
+
+00:14:40.099 --> 00:14:44.580
+rate, oftentimes they have to be vetted by regulators. And that's why the ability to,
+
+00:14:44.580 --> 00:14:47.940
+like, explain or at least speculate cause and effect is very useful. And of course,
+
+00:14:47.940 --> 00:14:52.820
+regression is a very helpful tool in helping you articulate potential cause and effect
+
+00:14:52.820 --> 00:14:54.580
+underlying your model predictions.
+
+00:14:54.580 --> 00:15:00.500
+So I remember one model I had filed with a regulator with my prior employer.
+
+00:15:01.780 --> 00:15:04.979
+Wasn't like a Jim Weiss production. There were a number of people involved in it.
+
+00:15:05.539 --> 00:15:12.340
+And used a ton of variables, like weather, geodemography, vehicle information from the
+
+00:15:12.340 --> 00:15:16.900
+area. Pretty much every external data asset under the sun was factoring into this model.
+
+00:15:16.900 --> 00:15:22.659
+And one in particular, the exact variable that landed in the regression model
+
+00:15:22.659 --> 00:15:30.099
+was called kurtosis of average daily humidity. And this was predictive of how likely a car was
+
+00:15:30.099 --> 00:15:34.659
+to crash. And we had a little bit of internal debate, like, should we file this one? What
+
+00:15:34.659 --> 00:15:40.020
+does this even really mean? So we eventually filed it in all 50 states. And I think we got
+
+00:15:40.020 --> 00:15:44.659
+approval in all 50 states or close to it, because there was strong statistical evidence surrounding
+
+00:15:44.659 --> 00:15:49.940
+this. But I just so happened to be at a conference. It was not PositConf, unfortunately.
+
+00:15:49.940 --> 00:15:54.020
+You should all go to PositConf. But it was not the conference. It was actually an actuarial
+
+00:15:54.020 --> 00:15:58.979
+conference. And one of the regulators who had actually reviewed this filing was at the conference.
+
+00:15:58.979 --> 00:16:05.219
+And they were mocking this variable as the dumbest variable they had ever seen in any of the hundreds
+
+00:16:05.219 --> 00:16:12.580
+of insurance filings they had seen over the years. So I thought, A, it better be known for something.
+
+00:16:12.580 --> 00:16:18.739
+So that was cool. But also, what is the chances that I would be at that conference when they were
+
+00:16:18.739 --> 00:16:23.219
+mocking my variable? I have to think that's pretty statistically improbable.
+
+00:16:24.419 --> 00:16:29.299
+Well, what's funny is, as you were saying that, I was thinking, oh, man,
+
+00:16:29.299 --> 00:16:35.460
+what are the measures of kurtosis? And what granularity do they have? Because I remember
+
+00:16:35.460 --> 00:16:42.179
+kurtosis being something that I would think of as negative 2, not something that's 1.953
+
+00:16:42.179 --> 00:16:48.900
+that would be really specific. If anybody doesn't know what kurtosis means, it is like
+
+00:16:48.900 --> 00:16:54.739
+when you're looking at a distribution, there is a shape where it's either super sharp and tall,
+
+00:16:54.739 --> 00:16:59.859
+right? Or maybe it's got these really flat tails, and it's like a lower hump in the middle,
+
+00:16:59.859 --> 00:17:04.579
+and then a longer tail out here. That shape is the kurtosis of a distribution.
+
+00:17:04.979 --> 00:17:12.180
+And there is a measure of it. But to me, that seems so, so vague and interesting. Okay.
+
+00:17:12.180 --> 00:17:16.660
+Fantastic question that ended up having a fantastic answer. So thank you, whoever asked
+
+00:17:16.660 --> 00:17:22.099
+that question. It was anonymous. I think it was fantastic. I wanted to see if anybody can see
+
+00:17:22.739 --> 00:17:28.020
+the answers to the free text stuff. Because Abigail says, I don't see any answers,
+
+00:17:28.739 --> 00:17:32.660
+but she can edit her response. So I will go through and read some of these.
+
+00:17:33.540 --> 00:17:40.579
+I asked everybody, what types of models do you use at work? And some said linear and logistic,
+
+00:17:40.579 --> 00:17:46.260
+so still regression. We've got some chi-square, basic descriptive statistics.
+
+00:17:47.540 --> 00:17:53.699
+Let's see, state-space models, boosted regression trees, GLM, GAM. We've got some
+
+00:17:54.260 --> 00:18:01.380
+multilinear regression, some XGBoost, and some K-means. We've got negative binomial, which is
+
+00:18:01.380 --> 00:18:07.859
+what I have never used that before. So new to me, multinomial, logistic, and linear regression.
+
+00:18:09.699 --> 00:18:16.420
+Some mixed linear regression is pretty popular in here. Yeah, more mixed models,
+
+00:18:17.780 --> 00:18:24.500
+four-parameter logistic, hierarchical regression, more regression, time series forecasting.
+
+00:18:25.459 --> 00:18:32.260
+Oh, time series forecasting for intermittent demand called the Croston method. It's really
+
+00:18:32.260 --> 00:18:37.219
+niche. Oh, I don't know who you are, person who uses the Croston method, but tell us about it in
+
+00:18:37.219 --> 00:18:42.739
+the chat so we can learn. OK, I hope that was illuminating. Let's head back over to some
+
+00:18:42.739 --> 00:18:49.939
+questions here. There is an anonymous question that says, how do you handle it when you see
+
+00:18:50.260 --> 00:18:56.260
+that the results are significantly different across models? You might have mentioned something
+
+00:18:56.260 --> 00:19:00.260
+like this before. I'm not sure. This is an anonymous question, so I don't have any more
+
+00:19:00.260 --> 00:19:07.300
+details for you. Yeah, great question. Results significantly different across models. By the way,
+
+00:19:07.300 --> 00:19:11.219
+I see a comment on the Weibull in the chat, and I have strong thoughts on the Weibull.
+
+00:19:11.219 --> 00:19:16.979
+But I guess for the anonymous question, I think you can look at the question in two ways. One
+
+00:19:16.979 --> 00:19:22.979
+is differences between your models over time, or the other would be differences between candidate
+
+00:19:22.979 --> 00:19:29.619
+models, both of which solve the problem equally well. Maybe the one I encounter more typically
+
+00:19:29.619 --> 00:19:35.699
+in practice is changes in our model over time. So I feel like I work for a big org, a couple
+
+00:19:35.699 --> 00:19:41.780
+thousand employees, but it's only 1%, something like that, of the US property casualty insurance
+
+00:19:41.780 --> 00:19:46.260
+industry revenue. So we're not huge, right? So the data sets I'm dealing with tend to be
+
+00:19:46.260 --> 00:19:53.699
+on the more thin side. And that's not a friend of model stability. So when we go from model
+
+00:19:53.699 --> 00:19:59.060
+version to model version, oftentimes we'll see, oh gosh, the dynamics in the model massively changed.
+
+00:19:59.060 --> 00:20:03.140
+And we have to figure out, hey, did we screw it up, or did the world change, or was it a
+
+00:20:03.140 --> 00:20:06.900
+spurious correlation? I saw someone mention spurious correlation in the chat. And it's
+
+00:20:06.900 --> 00:20:12.180
+usually a combination of those things. But I guess from my perspective, the way we typically
+
+00:20:12.180 --> 00:20:16.020
+articulate it is our stakeholders. And the stakeholders hate it, right? They hate when
+
+00:20:16.020 --> 00:20:19.699
+they make a decision on a policyholder's price point, and then the model changes like two years
+
+00:20:19.699 --> 00:20:25.219
+later. And they're absolutely justified in hating it. So I think the best answer is, if we have a
+
+00:20:25.219 --> 00:20:30.500
+reasonable hypothesis for which of those three possibilities it is, world change, we screwed up,
+
+00:20:30.500 --> 00:20:34.739
+we overly anchored to a spurious correlation, just say that, right? Even if it means we screwed up
+
+00:20:34.739 --> 00:20:40.180
+and leaned too far into a finding. And if we don't know, we just say we don't know. But most of the
+
+00:20:40.180 --> 00:20:46.099
+model change considerations from my perspective that I deal with relate to stakeholder management.
+
+00:20:46.660 --> 00:20:50.500
+I guess maybe to hit the other angle of the question in a nutshell and how we typically
+
+00:20:50.500 --> 00:20:54.500
+deal with it, if we have multiple candidate models that are giving us different views of
+
+00:20:54.500 --> 00:21:01.219
+the same problem, probably the most statistically valid approach to that would just be to ensemble
+
+00:21:01.219 --> 00:21:06.660
+them and come up with some combination that maximizes their respective contributions
+
+00:21:06.900 --> 00:21:12.660
+in an optimized way, bringing them all into the equation. We don't typically do that because it
+
+00:21:12.660 --> 00:21:19.459
+comes at the cost of complexity that would make it more inoperable for our stakeholders and increase
+
+00:21:19.459 --> 00:21:25.619
+the maintenance burden on me and my team. All right, great. Thank you so much for that
+
+00:21:25.619 --> 00:21:29.619
+question, question asker. You were anonymous, so I don't know who you were, but thank you.
+
+00:21:30.579 --> 00:21:37.540
+We have a very hot topic question from Gregory. Gregory, are you available to ask your question
+
+00:21:37.540 --> 00:21:44.900
+live? Gregory Power for Isabella, who's helping me unmute. Yeah, sure. The heated question would
+
+00:21:44.900 --> 00:21:49.380
+be, are you team Bayesian or team Frequentist when it comes to your statistics? I may have
+
+00:21:49.380 --> 00:21:56.819
+interesting opinions on it. My eyesight is terrible. Okay, it's Bayesian. It's a statistical
+
+00:21:56.979 --> 00:22:01.780
+rethinking of Bayesian statistical textbook that I got recommended from the data science
+
+00:22:01.780 --> 00:22:09.380
+hangout group. It's a good one. I'm just curious about your opinion because I think both are valid
+
+00:22:09.380 --> 00:22:15.780
+in different contexts. I come from a Frequentist background, then I realized that there's something
+
+00:22:15.780 --> 00:22:22.579
+that I can do to help combat stuff in different fields. I'm just curious about what your thoughts
+
+00:22:22.579 --> 00:22:28.420
+are on Frequentist versus or a mix of the two or maybe some secret third thing that insurance does
+
+00:22:28.420 --> 00:22:36.020
+because insurance is wild. Awesome question, Greg. Thank you. Totally feeling the heat.
+
+00:22:36.020 --> 00:22:43.859
+Can hardly take the heat. Maybe I'll start with secret third thing and then get back to the first
+
+00:22:43.859 --> 00:22:49.060
+two options presented. I think the secret third thing in insurance is making stuff up.
+
+00:22:50.020 --> 00:22:56.819
+And I don't say that in a bad way. Sometimes in insurance, you got to make stuff up.
+
+00:22:58.500 --> 00:23:03.219
+I'll give an example, AI risk. A lot of orgs, a lot of our policyholders are using AI,
+
+00:23:03.219 --> 00:23:08.500
+but we didn't really have gen AI in the world in a scalable way until two years ago. So,
+
+00:23:08.500 --> 00:23:12.420
+there's no data to analyze. You have to find similar data sets. You have to make a lot of
+
+00:23:12.420 --> 00:23:16.339
+assumptions. Sometimes you just have to make stuff up that's based on solid reason.
+
+00:23:17.300 --> 00:23:22.739
+If we're kind of isolating on... Actually, let me correct the transcript. Jim Weiss does not
+
+00:23:22.739 --> 00:23:29.140
+make stuff up. Make stuff up is a colloquialism for making expert judgments based on past
+
+00:23:29.140 --> 00:23:33.060
+historical experience and analysis in a way that best addresses stakeholder needs.
+
+00:23:33.699 --> 00:23:36.500
+There we go. I was hoping you would do that just because I was like,
+
+00:23:36.500 --> 00:23:41.219
+Jim, this is on YouTube. You're going to be on YouTube saying you make stuff up.
+
+00:23:41.219 --> 00:23:47.939
+And if anybody snips the transcript to only show the portion where I say I make stuff up,
+
+00:23:47.939 --> 00:23:55.060
+I will be pursuing legal action against you. And meanwhile, of the other two options,
+
+00:23:55.060 --> 00:24:00.900
+I would say I'm more spiritually Bayesian. In practice, I'm more of a frequentist.
+
+00:24:02.260 --> 00:24:07.699
+I forget if I mentioned I'm an actuary by background. And basically, the entire academic
+
+00:24:07.699 --> 00:24:12.660
+history of PNC actuarial science is kind of Bayesian in nature because it's anchored towards
+
+00:24:12.660 --> 00:24:17.300
+what's the present state of the world reflected in the way you've deployed your business and then
+
+00:24:17.300 --> 00:24:22.900
+developing incremental changes on top of that, which you have a prior. The prior is the current
+
+00:24:22.900 --> 00:24:28.099
+state of the world. With respect to actually, hey, all the answers to Libby's question about
+
+00:24:28.099 --> 00:24:35.300
+which models you use, am I doing an MCMC to get my answer to my underwriting profitability problem
+
+00:24:35.300 --> 00:24:40.819
+I'd be working on today? Absolutely not. A, because I don't have time to set that thing up,
+
+00:24:40.819 --> 00:24:48.099
+even as much as Posit Tools have democratized that. But B, because from my perspective,
+
+00:24:48.099 --> 00:24:54.099
+and prove me wrong here, argue it. Just say I'm a dork, bad definition because I don't do business
+
+00:24:54.099 --> 00:25:04.579
+this way. But setting up the prior in a way that's effective in the MCMC requires so much judgment
+
+00:25:04.579 --> 00:25:09.619
+and touch, from my perspective, that it essentially takes you back into that making
+
+00:25:09.619 --> 00:25:14.819
+stuff up category. And if I'm just essentially making stuff up, so to speak, then I'd rather
+
+00:25:14.819 --> 00:25:20.260
+do that in kind of a way that's conversational than trying to force that into a prior innovation
+
+00:25:20.260 --> 00:25:24.900
+approach. I guess, Greg, how did I do? Am I off the hot seat on your question? Okay.
+
+00:25:25.219 --> 00:25:33.540
+I think that Greg is satisfied. I appreciate you. All right. I wanted to make sure everybody knows
+
+00:25:33.540 --> 00:25:38.339
+what MCMC means. It's Markov Chain Monte Carlo. So that's something that you could Google,
+
+00:25:38.339 --> 00:25:43.300
+if you would like to pop that in the chat. And then also wanted to make sure that you saw
+
+00:25:43.300 --> 00:25:50.099
+the link to Statistical Rethinking. That's the book that Greg mentioned. It is by Richard
+
+00:25:50.420 --> 00:25:57.219
+McElrath. I always say his last name, McElrath, but I think it's McElrath. He has all of his
+
+00:25:57.219 --> 00:26:02.420
+lectures on YouTube. There's a full series from 2023. He rerecorded them this year. I don't know
+
+00:26:02.420 --> 00:26:06.500
+if he's finished rerecording them, but there's a 2026 playlist that I linked in the chat.
+
+00:26:07.219 --> 00:26:12.260
+They're fantastic. Definitely go take a look at that because the book, if you're just reading it
+
+00:26:12.260 --> 00:26:16.660
+alone, can be a little bit dense to get through, although all of the language is super approachable.
+
+00:26:17.219 --> 00:26:21.939
+He has one more lecture to go on that 2026 playlist, it looks like Dylan's saying.
+
+00:26:22.739 --> 00:26:28.339
+The 2023 one is great. It's complete. He also has, if you happen to be a professor,
+
+00:26:28.339 --> 00:26:32.739
+he has a couple of other playlists of the 2026 ones that'll be like a beginner A and a beginner
+
+00:26:32.739 --> 00:26:39.219
+B, I think, where he's talking about how to do the math, how to do the math, how to do the math,
+
+00:26:39.219 --> 00:26:44.020
+how to do the math, how to do the math, how to do the math, how to do the math, how to do the math,
+
+00:26:44.979 --> 00:26:50.579
+I think, where on his website, you can see he has like, okay, if you just want to add in
+
+00:26:50.579 --> 00:26:56.579
+parts of this textbook into your section of teaching, he helps you do that. So go check
+
+00:26:56.579 --> 00:27:03.219
+him out as a resource. Enough of that, enough of teach your brain. Let's hop back over to Slido.
+
+00:27:03.219 --> 00:27:08.900
+And I see a question here that has a couple of answers from Gregory on it too. So Gregory,
+
+00:27:08.900 --> 00:27:12.660
+thanks for the replies on those. It's an anonymous question that says,
+
+00:27:13.300 --> 00:27:20.180
+healthcare organization is interested in identifying fraudulent claims. Currently,
+
+00:27:20.180 --> 00:27:25.459
+they're looking at Excel spreadsheets, same time, different person. Do you have any advice on a
+
+00:27:25.459 --> 00:27:30.660
+better way to guide them to automation? This one is a very niche question. So I'm glad that Gregory
+
+00:27:31.219 --> 00:27:35.699
+answered here. Gregory said, first idea would be to use any kind of database so that you could
+
+00:27:35.699 --> 00:27:42.339
+have more safeguards around your data. Good idea. And then libraries like Pointblank are super
+
+00:27:42.339 --> 00:27:47.939
+helpful for validating data. Pointblank is in both R and Python and is a fantastic package
+
+00:27:48.979 --> 00:27:57.380
+by Rich Iannone. Do you have any thoughts on this specifically, Jim, about better ways to
+
+00:27:57.380 --> 00:28:07.939
+guide people to automation? Maybe, and I can kind of tell her a little bit to the fraud aspect
+
+00:28:07.939 --> 00:28:14.660
+as well, perhaps. So raise your hand if you like fraud. I didn't mean to raise my hand. To be clear,
+
+00:28:14.660 --> 00:28:18.660
+I was raising my hand to illustrate you should raise your hand if you like fraud. I do not
+
+00:28:18.660 --> 00:28:24.099
+personally like fraud. No. Okay. And the reason, like, nobody raised their hand, right?
+
+00:28:24.819 --> 00:28:30.420
+Okay. Nobody likes fraud, right? Because fraud drives up the costs of insurance and any service,
+
+00:28:30.420 --> 00:28:35.939
+really, for everybody. There might be like a very, very small pocket of society that says,
+
+00:28:35.939 --> 00:28:40.420
+hey, insurance fraud is good because insurers are these big evil corporations, which we're not.
+
+00:28:40.420 --> 00:28:45.060
+We're making the world a better place every day by providing valuable protections in people's
+
+00:28:45.060 --> 00:28:50.180
+greatest time of need, right? But there's a small pocket of society that thinks fraud might be
+
+00:28:50.260 --> 00:28:56.900
+justifiable against corporations. But that's not true because ultimately what the fraudsters are
+
+00:28:56.900 --> 00:29:00.979
+doing is they're taking money, putting it in their pocket, and then charging that money to
+
+00:29:00.979 --> 00:29:05.939
+everybody else because that cost ultimately gets borne back on all the other consumers of that
+
+00:29:05.939 --> 00:29:13.219
+service, whether that service is insurance or anything else. Now, to solve problems like fraud,
+
+00:29:13.219 --> 00:29:18.099
+you need a lot of data. As data scientists, like, a lot of us think we can solve any problem.
+
+00:29:19.060 --> 00:29:24.819
+That's not true, right? Often, if given all the tools needed to solve a problem, we probably
+
+00:29:24.819 --> 00:29:28.579
+could. Oftentimes, we don't have all the tools. And for something like fraud, and getting back
+
+00:29:28.579 --> 00:29:36.020
+to the automation problem, like, yeah, Gen AI makes it light years easier to take a variety
+
+00:29:36.020 --> 00:29:41.060
+of disparate spreadsheet formats or PDF formats and reshape those into a single uniform format
+
+00:29:41.060 --> 00:29:44.979
+that then makes it a lot easier for you to latch on to and use as a jumping off point for your
+
+00:29:45.060 --> 00:29:50.660
+fraud model. But your fraud model is going to be based probably on like a half a percent or
+
+00:29:50.660 --> 00:29:57.459
+1% sliver of the universe, whereas the fraudsters are exploiting the fact that nobody sees the whole
+
+00:29:57.459 --> 00:30:03.300
+universe. So the way the insurance industry has addressed this, and have only worked in one
+
+00:30:03.300 --> 00:30:07.380
+industry, but my guess would be other industries go about it in a similar way, is coopetition,
+
+00:30:07.939 --> 00:30:12.500
+which is it essentially makes sense to partner with your competitors to solve a societal problem.
+
+00:30:13.219 --> 00:30:18.260
+So in our industry, there's an organization called Ferris Coop, it's also my prior employer,
+
+00:30:18.819 --> 00:30:25.300
+who maintains a massive data set with nearly 100% industry participation, where their data scientists
+
+00:30:25.300 --> 00:30:30.819
+do pattern recognition across like an entire industry data set. So sometimes the best way
+
+00:30:30.819 --> 00:30:33.619
+to solve the problem is to realize you're not the person to solve the problem.
+
+00:30:36.020 --> 00:30:39.619
+That's a very clear headed answer. All right. Thank you, anonymous asker,
+
+00:30:39.619 --> 00:30:46.420
+for that fantastic question. And then we're going to head over to Natasha, who has an asterisk,
+
+00:30:46.420 --> 00:30:50.660
+which means let me ask that for me. And I will. Natasha, you always ask great questions. Thank
+
+00:30:50.660 --> 00:30:57.219
+you. It is, what software do you use? Gregory says, I'm going to bet money it's SaaS. Gregory,
+
+00:30:57.219 --> 00:31:03.540
+it's not a bad guess, because I come from BNC insurance. And let me tell you, it is the land
+
+00:31:03.540 --> 00:31:10.660
+of SaaS, banking and insurance. All right, Gregory's shrugging like this. Jim, can you clue
+
+00:31:10.660 --> 00:31:17.699
+us into the tools that your team uses, be that language of choice, IDE of choice, data store of
+
+00:31:17.699 --> 00:31:28.420
+choice, overarching toolset of choice? I get so much shade for my toolset. I'm not going to get
+
+00:31:28.420 --> 00:31:33.540
+shade from this group, I'm guessing, but I get a lot of shade. I don't think so. We're all friends
+
+00:31:33.540 --> 00:31:42.420
+here. LoveRStudio, greatest IDE in the history of human creation prior to Positron, which is now
+
+00:31:42.420 --> 00:31:43.699
+the greatest IDE.
+
+00:31:44.112 --> 00:31:50.752
+prior to Positron, which is now the greatest IDE in the history of human creation once we
+
+00:31:50.752 --> 00:31:55.232
+work out some of the bugs with Bailey and the team in our company deployment of Positron.
+
+00:31:51.768 --> 00:32:01.208
+of Positron. But I'd say, despite my love of R, and I think the reason I love R is A, the IDE,
+
+00:32:01.208 --> 00:32:08.327
+but B, the lack of finickiness in the syntax. I just want to jump off a ledge when I'm coding
+
+00:32:08.327 --> 00:32:13.368
+in Python because it's so temperamental. Vibe coding, of course, has self-temperamentalness
+
+00:32:13.368 --> 00:32:18.247
+for all languages to a very large extent, so this commentary is born largely two years ago.
+
+00:32:18.888 --> 00:32:24.568
+But the non-temperamental nature of R and the statistical focus, I think,
+
+00:32:24.568 --> 00:32:30.807
+have made it very good for my job. The reason I get a lot of shade is because
+
+00:32:32.807 --> 00:32:39.768
+my team and I often use R, maybe not for what its core capability and strength is, but also for
+
+00:32:39.768 --> 00:32:44.888
+a lot of our ML ops, deploying our pipelines, deploying our applications, deploying our APIs,
+
+00:32:44.888 --> 00:32:48.487
+having a lot of agents running in the background all the time to do our work.
+
+00:32:48.487 --> 00:32:56.008
+And while I'd say it can do those jobs, but it can't necessarily do them in a way that complies
+
+00:32:56.008 --> 00:33:01.047
+with business partners' SLAs and achieves, like if you're doing a plumber API, for instance,
+
+00:33:01.848 --> 00:33:06.807
+that's not necessarily going to get the same response time as if you did the exact same thing
+
+00:33:06.807 --> 00:33:12.008
+in Flask, for example. So love R, get a lot of shade from my coworkers, some of it earned,
+
+00:33:12.008 --> 00:33:13.127
+some of it because they're haters.
+
+00:33:14.328 --> 00:33:24.008
+Oh, we love everybody here. We have R users, Python users, SQL buffs, we have Excel people,
+
+00:33:24.008 --> 00:33:30.487
+I am, you know, I use spreadsheets every single day still. And we have some conversations
+
+00:33:30.487 --> 00:33:37.928
+happening in the chat that are all about RStudio and Positron. And someone says,
+
+00:33:38.167 --> 00:33:45.047
+oh my gosh, the chat is like jumping around like crazy. Someone says moving to Power BI,
+
+00:33:45.047 --> 00:33:51.447
+and that is like a big shift that I'm seeing from a lot of people is moving to Power BI from
+
+00:33:51.447 --> 00:33:56.248
+something else, from Tableau, from Looker, all kinds of things.
+
+00:33:57.047 --> 00:33:58.487
+Any of Julia users?
+
+00:33:58.487 --> 00:34:00.408
+Or Power BI, I haven't seen any Julia yet.
+
+00:34:00.807 --> 00:34:01.307
+Okay.
+
+00:34:01.528 --> 00:34:07.608
+But I've seen a few, several Power BIs. So that is a trend we are seeing.
+
+00:34:09.287 --> 00:34:16.248
+And then Annalise said, anyone still use SPSS? I shamelessly loved SPSS. I had to use it in
+
+00:34:16.248 --> 00:34:22.248
+all through undergrad. And like, I still kind of miss SPSS output. I'm looking at a regression
+
+00:34:22.248 --> 00:34:27.528
+output between like SPSS and R. I like SPSS better. Like, I think it's a better output.
+
+00:34:27.608 --> 00:34:32.087
+Don't hate me, y'all. Tom says, yeah, but trying to switch to R.
+
+00:34:33.848 --> 00:34:38.807
+David Under says, mostly in university research. Yeah, a lot of people use it in school.
+
+00:34:39.688 --> 00:34:44.087
+Okay. Okay. We will move on. Thank you so much for that fantastic question, Natasha,
+
+00:34:44.087 --> 00:34:48.727
+so we could talk about it. And thanks for all the love about RStudio and Positron.
+
+00:34:48.727 --> 00:34:50.248
+We obviously love them too.
+
+00:34:51.207 --> 00:34:58.727
+And Lolu, you asked a question and I would love you to ask it live if you're available. Can we
+
+00:34:58.727 --> 00:35:11.528
+find Lolu? I don't see. Not find Lolu. Maybe Lolu had to go. Although maybe Lolu has his name
+
+00:35:12.408 --> 00:35:20.087
+Oh, wait. Lolu, I see you. I see you. Jabril. I know that your name is not your nickname is
+
+00:35:20.087 --> 00:35:23.848
+Lolu, right? So I know that there's like two names. I just didn't know who it was.
+
+00:35:23.848 --> 00:35:29.128
+Let's get you to unmute. And I'll put your question in the chat too. Okay.
+
+00:35:30.007 --> 00:35:34.888
+Thank you. Sorry about that. It was just switches sometimes between Lolu and
+
+00:35:34.968 --> 00:35:41.768
+Jupyter. They're both my names, but either or. I was just actually curious on your workflow.
+
+00:35:42.888 --> 00:35:49.688
+Do you ever form your hypothesis using directed acyclic graphs tags? And do you ever use
+
+00:35:49.688 --> 00:35:54.727
+instrumental variables in your models? And which one have you found is the most common
+
+00:35:54.727 --> 00:36:01.447
+instrumental variable used in the industry? I'd be lying if I said I was conversant in
+
+00:36:01.447 --> 00:36:06.007
+all the syntax. I'd probably have to go back to some of my college tech books to remind myself
+
+00:36:06.007 --> 00:36:11.607
+what an instrumental variable is. I guess, could you either explain instrumental variable to me?
+
+00:36:13.128 --> 00:36:22.807
+Things like distance to a certain place. This kind of things. What else? I know there's some
+
+00:36:22.807 --> 00:36:29.767
+common ones that people use. Let me see. What's the next one? Distance earning power.
+
+00:36:31.927 --> 00:36:40.087
+Time. Drive time. Something that's correlated with one of your main variables.
+
+00:36:40.087 --> 00:36:46.487
+But not directly correlated. It's just there in the ether, but the hypothesis is just there.
+
+00:36:49.207 --> 00:36:52.408
+Thank you for the education on instrumental variables. I'm definitely going to drop it
+
+00:36:52.408 --> 00:36:56.327
+into conversation now. I sound smart. We're all going to go Google it right now.
+
+00:36:56.408 --> 00:37:01.927
+And I guess, yeah, from my perspective, in general, highly regulated industry,
+
+00:37:02.647 --> 00:37:06.408
+getting buy-in from stakeholders who are ultimately the gatekeepers of whether or
+
+00:37:06.408 --> 00:37:12.168
+not your model insights make an impact on your bottom line. Explainability is a big plus.
+
+00:37:13.767 --> 00:37:19.128
+Plausible correlations to real world outcomes is a plus. So things like distance to fire station
+
+00:37:19.128 --> 00:37:23.528
+for property insurance absolutely rises to the top of the list for types of things we're looking at.
+
+00:37:24.487 --> 00:37:28.887
+Auto insurance. We've spent a lot of time, my team and myself and our business partners,
+
+00:37:28.887 --> 00:37:34.807
+working on the commercial auto line of insurance. So you might buy personal auto insurance from
+
+00:37:34.807 --> 00:37:40.807
+State Farm or Progressive or Allstate or Lemonade, new entry to the marketplace.
+
+00:37:41.528 --> 00:37:47.607
+But businesses also need auto insurance. And on kind of an operating basis, not counting
+
+00:37:47.607 --> 00:37:52.728
+like ancillary sources of income, like their investment portfolios, that line of insurance
+
+00:37:52.728 --> 00:37:59.607
+in the US has been losing like $0.10 to $0.15 on the dollar every year on an industry level for
+
+00:37:59.607 --> 00:38:05.607
+like the past 10 or 15 years, which is insane. Nobody can have a product that loses $0.10 to
+
+00:38:05.607 --> 00:38:11.047
+$0.15 on the dollar on a year-over-year-over-year basis unless you're a Gen AI company, in which
+
+00:38:11.047 --> 00:38:18.568
+case it's perfectly cool. So for commercial auto, we build a lot of models to try to predict and
+
+00:38:18.568 --> 00:38:22.728
+understand where our more and less profitable segments are and the type of variables we're
+
+00:38:22.728 --> 00:38:28.168
+looking at for stuff like that. By the way, no trade secret information being disclosed on this
+
+00:38:28.168 --> 00:38:32.968
+call. Just to be clear, this is common industry patterns for commercial auto line of insurance.
+
+00:38:34.168 --> 00:38:39.607
+Weight of the vehicle, where the vehicle's operated in a general geographic sense,
+
+00:38:39.607 --> 00:38:44.487
+like the traffic density of the area, like how far outside its typical operating area it goes,
+
+00:38:45.288 --> 00:38:50.728
+the driver's records and ages, how much insurance you're purchasing, the limit of insurance for
+
+00:38:50.728 --> 00:38:56.008
+physical damage coverage, how much is the vehicle worth. I think all of these things lend to real
+
+00:38:56.008 --> 00:39:02.248
+world explanations for why you would be less profitable for vehicles you're insuring that
+
+00:39:02.248 --> 00:39:07.927
+have these types. When you get back to something like I mentioned earlier, the kurtosis of average
+
+00:39:07.927 --> 00:39:13.688
+daily humidity, a little bit tougher sell, right? And you can have really strong statistical
+
+00:39:13.688 --> 00:39:19.607
+evidence, which we did at my prior company when we developed that model and sought regulatory
+
+00:39:19.607 --> 00:39:23.367
+approval on that. But it makes the stakeholder buy-in a lot tougher because the real world
+
+00:39:23.367 --> 00:39:29.288
+causation isn't at the fingertips as much. Perfect. Jim, that was a fantastic answer.
+
+00:39:30.087 --> 00:39:33.767
+Lulu, that was a fantastic question. You took us in a great direction. Thank you so much.
+
+00:39:34.647 --> 00:39:40.408
+Yes. I just wanted to get some clarity on the DAGs, if they ever use DAGs in hypothesis
+
+00:39:40.887 --> 00:39:46.487
+itself. I am also out of date on the syntax there. Could you elaborate a little bit more on DAGs?
+
+00:39:47.448 --> 00:39:53.207
+Directed acyclic graphs like drawing, confounders, direct impact, direct effect,
+
+00:39:54.807 --> 00:40:02.168
+co-confounders, things like that, before actually building the model. So you have the theory like,
+
+00:40:02.168 --> 00:40:06.887
+okay, this is how it should behave. But then eventually, if it doesn't behave that way,
+
+00:40:06.887 --> 00:40:12.008
+then you actually have to go back and retweak that, okay, it doesn't meet the theoretical
+
+00:40:12.008 --> 00:40:18.327
+hypothesis. Yeah. I was just wondering whether it's like industry standard or something that's
+
+00:40:18.327 --> 00:40:27.127
+just in academia. Probably somewhere in between, I guess, from a deployment perspective.
+
+00:40:28.007 --> 00:40:34.327
+So I actually wrote shameless plug. I think it's probably clear I'm a very shameless person,
+
+00:40:34.808 --> 00:40:39.368
+it's become clear. So I'll give a shameless plug consistent with my character. I wrote a paper
+
+00:40:40.327 --> 00:40:47.447
+on bias management in property casualty insurance. Either just Google Jim Weiss bias or go to my
+
+00:40:47.447 --> 00:40:56.007
+LinkedIn, click a link. And it looks at confounding effects between protected classes in society
+
+00:40:56.007 --> 00:41:03.368
+and insurance outcomes. There's an evolving body of legislation and regulation in the US
+
+00:41:03.928 --> 00:41:10.408
+that essentially challenges insurers, especially personalized insurers, private insurers,
+
+00:41:10.408 --> 00:41:14.327
+insurers who are selling to individuals. Less so commercial insurers like mine now,
+
+00:41:14.327 --> 00:41:16.968
+but I expect it to kind of work its way down the value chain eventually.
+
+00:41:17.608 --> 00:41:22.168
+This evolving regulation and legislation challenges insurance companies to identify
+
+00:41:22.168 --> 00:41:27.127
+these potential correlations with protected classes and root them out of their models and
+
+00:41:27.127 --> 00:41:32.647
+business practices. So from that perspective, identifying potential confounding effects,
+
+00:41:32.647 --> 00:41:36.647
+and specifically ones that are deemed by regulation and legislation and just general
+
+00:41:36.647 --> 00:41:43.368
+morality to be problematic, is becoming critical for insurance data scientists' work.
+
+00:41:44.168 --> 00:41:48.168
+That's kind of an outlier example, though, where we actually need to give specific,
+
+00:41:48.168 --> 00:41:53.608
+dedicated, attributed thought to things like confounding variables. In a more general sense,
+
+00:41:53.608 --> 00:41:59.447
+for regression models, how we're typically dealing, confounding effects is either... I
+
+00:41:59.528 --> 00:42:03.687
+would just rattle off typical approaches we take. We might put a control variable,
+
+00:42:03.687 --> 00:42:08.087
+dummy variable, in the model to siphon off some of that signal. We might just... General
+
+00:42:08.087 --> 00:42:11.848
+confounders we do want in the model, we'll look to not have multi-colonial variables,
+
+00:42:11.848 --> 00:42:16.168
+whether that's through selection or some sort of dimension reduction like PCA.
+
+00:42:17.207 --> 00:42:24.168
+And probably most common in our world, because we're stretched, right? So we're not going to do
+
+00:42:24.168 --> 00:42:28.408
+a PCA. We can't explain a PCA to our stakeholders. We'll probably just do a penalized regression,
+
+00:42:28.408 --> 00:42:34.168
+and that in and of itself will weed out some of the multi-coloniality for us.
+
+00:42:34.168 --> 00:42:38.488
+Now, with respect to an ongoing basis and, hey, did we pick the right stuff? And do we have to
+
+00:42:38.488 --> 00:42:45.207
+take a remediation? From there, I think it just gets back into classic model life cycle management
+
+00:42:45.207 --> 00:42:49.608
+and just looking at your drift, looking if it's still maintaining its predictive power over time.
+
+00:42:49.608 --> 00:42:53.207
+And as soon as we see red flags in our leading indicators, getting back into that model and
+
+00:42:53.207 --> 00:42:59.368
+taking remediative action as soon as possible. Perfect. Thank you, Jim. Thank you, Lolu,
+
+00:42:59.368 --> 00:43:05.048
+for the questions. I will hop back over into Slido. And I also wanted to call out in the chat,
+
+00:43:05.048 --> 00:43:12.087
+there's some good conversations happening. Isabella, Bailey, and I all put your paper in there.
+
+00:43:12.808 --> 00:43:17.608
+Oh, cool. Awesome. Shameless plug worked. And I apologize that I'm like 10 or 15 years
+
+00:43:17.608 --> 00:43:21.288
+out of date on my jargon. So thank you to the group for bearing with me.
+
+00:43:22.007 --> 00:43:27.528
+I do not think that you're out of sync with the jargon. I think it's okay. So if you are
+
+00:43:27.528 --> 00:43:33.528
+looking for his paper, we've triple linked it there. There was also a little conversation about
+
+00:43:34.247 --> 00:43:39.687
+how Lemonade had stopped supporting Illinois a few years back. And I thought it was worth saying
+
+00:43:39.687 --> 00:43:44.887
+that state regulations for insurance actually have an impact on whether or not an insurance
+
+00:43:44.887 --> 00:43:49.928
+company is going to cover a state. And there are some states with some that are very interesting.
+
+00:43:49.928 --> 00:43:53.447
+Massachusetts has some has some heavier regulations around insurance that makes
+
+00:43:53.447 --> 00:43:59.368
+companies pull out of them. Florida, North Carolina, New York, these are all states
+
+00:43:59.368 --> 00:44:04.087
+where like what I was an insurance agent who was licensed in almost all 50 states,
+
+00:44:04.087 --> 00:44:07.848
+but I was not licensed in Florida. I was not licensed in North Carolina. Those are like
+
+00:44:07.848 --> 00:44:13.608
+special places. So if you live in one of those places or a state where your insurance has to
+
+00:44:13.608 --> 00:44:17.368
+be different, or you don't have all the carriers, it's probably part of it. Jim, do you have any
+
+00:44:17.368 --> 00:44:32.007
+insight on that? General nature of regulation and how carriers operate in markets. I don't
+
+00:44:32.007 --> 00:44:37.848
+think I have as targeted examples as you do because I'm very back office. Also, I've come
+
+00:44:37.848 --> 00:44:44.168
+from like auto insurance, where a lot of those are more noticeable to individual consumers,
+
+00:44:44.168 --> 00:44:47.928
+because we're not all getting business insurance in these places, but we are all probably getting
+
+00:44:47.928 --> 00:44:53.368
+auto insurance. I can give kind of a few examples in general practices from my experience. So they
+
+00:44:53.368 --> 00:44:57.447
+are kind of generally responsive to your question and different approaches we might take. I would
+
+00:44:57.447 --> 00:45:04.087
+say one, insurance is highly regulated. So every action, every underwriting decision needs to be
+
+00:45:04.087 --> 00:45:09.368
+approved by a regulator before you go live, usually. Some of the exceptions in commercial
+
+00:45:09.368 --> 00:45:17.767
+insurance, there has to be some recognition that regulation can't stand in the way of a
+
+00:45:17.767 --> 00:45:24.007
+well-functioning market. So one way the regulation allows for a well-functioning market while still
+
+00:45:24.007 --> 00:45:32.007
+keeping control is by allowing a buffer around what you'd said you'd do. So you can file a price
+
+00:45:32.007 --> 00:45:36.567
+point with regulators and they say, yeah, that's cool. And you can operate within plus or minus 25%
+
+00:45:36.567 --> 00:45:41.687
+of that. That gives you some buffer to operate if market conditions are shifting, as long as you do
+
+00:45:41.687 --> 00:45:49.447
+the corresponding documentation that the regulation also requires. If the regulation is absolutely
+
+00:45:49.447 --> 00:45:54.567
+prohibitive of what you're trying to do in the marketplace, there's a few examples of what you
+
+00:45:54.567 --> 00:46:01.928
+can do. One would be after many of you may recall the wildfires and tragic wildfires in California
+
+00:46:01.928 --> 00:46:08.327
+in early 2025. And there was a lot of news coverage at the time about insurance companies
+
+00:46:08.327 --> 00:46:12.647
+just exiting the market. And what they were basically saying there is we can't operate
+
+00:46:12.647 --> 00:46:18.408
+under those conditions. And that actually resulted in some movement in the public policy conversation
+
+00:46:18.408 --> 00:46:25.207
+around how that market was managed. The other option to essentially improvise outside your
+
+00:46:25.207 --> 00:46:31.767
+boundaries as established by the regulation and legislation would be to operate in what's called
+
+00:46:31.767 --> 00:46:38.408
+a non-standard or ENS market. So essentially, if the regulated marketplace is not effectively
+
+00:46:38.408 --> 00:46:44.327
+servicing the customer's need, then the customers have the option to go outside the regulated
+
+00:46:44.327 --> 00:46:48.168
+marketplace, as long as they can prove that the marketplace isn't serving their needs,
+
+00:46:48.168 --> 00:46:54.327
+and interact with the insurers serving that marketplace in a way that's not regulated.
+
+00:46:54.327 --> 00:47:00.808
+So that's another way you can operate in difficult markets. But either of those options I mentioned,
+
+00:47:01.447 --> 00:47:06.968
+buffering, moving the regulatory conversation, operating outside the regulated domain,
+
+00:47:06.968 --> 00:47:15.048
+all of those have obstacles and operational burdens associated with them that frequently
+
+00:47:15.048 --> 00:47:17.608
+just make it more preferred to operate within the regulated marketplace.
+
+00:47:19.928 --> 00:47:26.408
+All right, fantastic. Sorry, I took us a little off track with the regulatory question.
+
+00:47:26.408 --> 00:47:32.408
+So sorry. We have so many questions left in Slido. We will not get to all of them because
+
+00:47:32.408 --> 00:47:36.647
+we have seven minutes left. So I want to see if we can get at least two more in,
+
+00:47:36.647 --> 00:47:40.808
+and one that I would love to do for Rachel, because Rachel's not here, everybody. Say we
+
+00:47:40.808 --> 00:47:43.687
+miss you, Rachel. Do we have any Rachel's on the call?
+
+00:47:45.127 --> 00:47:49.848
+Well, not our Rachel. I actually haven't seen any Rachel's on the call. The question is,
+
+00:47:50.567 --> 00:47:55.687
+do you have any career advice for us? Is there something you wish that you had known when you
+
+00:47:55.687 --> 00:48:03.447
+were first entering the industry? Yes. This might be self-evident, but it wasn't
+
+00:48:03.447 --> 00:48:11.767
+self-evident to me until I was in my mid-30s, having my midlife crisis where I was under a
+
+00:48:11.767 --> 00:48:18.247
+mountain backlog at my prior company, and all my stakeholders were mad at me. And I was pulling
+
+00:48:18.247 --> 00:48:24.087
+all-nighters to keep up with my backlog. And I guess what I found when I was going through it
+
+00:48:24.087 --> 00:48:29.447
+was I really found out who my friends were, and it surprised me a little bit because it wasn't
+
+00:48:29.447 --> 00:48:35.368
+necessarily who I thought it would be. It wasn't even necessarily STEM people. I remember one of
+
+00:48:35.368 --> 00:48:40.728
+my coworkers at my prior company who really helped me through it was a lawyer named Bob Becker,
+
+00:48:41.928 --> 00:48:47.288
+who is not on this call, I'm pretty sure. And he basically gave me a lot of advice for how to
+
+00:48:47.288 --> 00:48:52.007
+manage a backlog. And it turns out there's a lot of knowledge and practice and discipline in the
+
+00:48:52.007 --> 00:48:57.767
+legal profession that can actually be applied back to managing a STEM backlog. So I guess where
+
+00:48:58.727 --> 00:49:03.288
+which I'd known that like 20 years ago, but I think the advice I would kind of cultivate that
+
+00:49:03.288 --> 00:49:10.088
+into is if you see somebody struggling, help them. And that doesn't need to be STEM help.
+
+00:49:10.088 --> 00:49:15.448
+Like that can also just be like emotional help, right? And that pays back in a lot of different
+
+00:49:15.448 --> 00:49:19.767
+ways because A, they're going to have your back when you're going through that midlife crisis.
+
+00:49:19.767 --> 00:49:23.607
+Maybe I helped Bob Becker. Maybe he was just a great guy, or maybe I made a good impression on
+
+00:49:23.607 --> 00:49:28.887
+him at some point that he wanted to help me. But B, you establish this more diverse network
+
+00:49:28.887 --> 00:49:34.328
+that brings a broader set of perspectives into your context. So if you provide a lawyer,
+
+00:49:34.328 --> 00:49:37.928
+emotional help, then you don't have a lawyer in your network who broadens your context and
+
+00:49:37.928 --> 00:49:42.247
+gives you more tools in your arsenal to solve problems. So that would be my advice.
+
+00:49:43.208 --> 00:49:48.568
+I think that's fantastic advice. Be a good person. Be nice to people.
+
+00:49:50.247 --> 00:49:55.688
+I love it. It kind of reminds me of Elliot Murphy's advice when he was here with us. He's
+
+00:49:55.688 --> 00:50:02.568
+one of the VPs of engineering at Posit. And his take was like, personal relationships are going
+
+00:50:02.568 --> 00:50:08.328
+to outlive any company, any relationship with any company, like the people really, really matter.
+
+00:50:09.048 --> 00:50:14.647
+And as you were talking about this, I was thinking about things that Isabella and I have
+
+00:50:14.647 --> 00:50:21.288
+hopped on together last minute to get done together, coordinating quickly over Slack or
+
+00:50:22.007 --> 00:50:28.808
+Zoom or something. Yeah, help people out. Okay, we have time for, I think, one more question.
+
+00:50:28.808 --> 00:50:38.247
+I'm going to head over to the Slido. And I wanted to get in this question that has risen to the top
+
+00:50:38.247 --> 00:50:43.847
+here. It has the most votes. And it's, how much do you and your team use AI to help you along?
+
+00:50:43.847 --> 00:50:51.288
+It's an anonymous question. A lot. I mean, we're vibe coding everything now.
+
+00:50:51.288 --> 00:50:59.127
+Everybody is, I think. I would say, I don't know how weird we are. My sense from the public
+
+00:50:59.127 --> 00:51:03.767
+reporting is we're not super weird. But at least in my work and with my team, we're still looking
+
+00:51:03.767 --> 00:51:09.208
+for ways to go from kind of POC to production and develop those really high-value use cases at an
+
+00:51:09.208 --> 00:51:15.288
+enterprise level. It is one of those things that I think everybody can pop in the chat
+
+00:51:15.288 --> 00:51:24.168
+and add their perspective on. How are you using AI? I will share that I am using it for non-data
+
+00:51:24.168 --> 00:51:30.007
+science things that are still development that are helping me do my job better. So like last week,
+
+00:51:30.007 --> 00:51:36.088
+I developed a Chrome extension that's helping me do things easier every single day. It kind of
+
+00:51:36.088 --> 00:51:41.767
+feels like I'm cheating now. But I don't know how to develop a Chrome extension, but Cloud Code
+
+00:51:41.767 --> 00:51:47.607
+sure does, right? And so I was able to iterate, package it up, give it to my coworkers as well.
+
+00:51:47.607 --> 00:51:52.647
+Like, hey, do you want to use this extension yourself to help you? That's amazing. It doesn't
+
+00:51:52.647 --> 00:51:59.127
+have anything to do with data science or analysis, but the possibilities are kind of endless.
+
+00:51:59.208 --> 00:52:03.528
+Libby, I'll give a kind of a quick weird case I have that might be helpful to people.
+
+00:52:03.528 --> 00:52:09.448
+So we have Copilot and all the foundational LLMs in our org. I like to use the LLMs to
+
+00:52:09.448 --> 00:52:13.928
+psychoanalyze myself. So I think it's very important to me as I interact with my stakeholders
+
+00:52:13.928 --> 00:52:18.408
+that I have a consistent philosophical core that I'm articulating and presenting to them.
+
+00:52:18.408 --> 00:52:23.448
+So what I like to do is to expose all my transcripts and communications to Copilot
+
+00:52:23.448 --> 00:52:28.007
+and then evaluate kind of the ethos behind how I'm interacting with them and use it to understand
+
+00:52:28.088 --> 00:52:33.688
+kind of my own philosophical core and evolve that. So I think it's a good introspection tool
+
+00:52:33.688 --> 00:52:40.168
+and thought partner in a way that folks might overlook if they're purely focused on transactional
+
+00:52:40.168 --> 00:52:46.487
+use cases that deploy to kind of their customers' use cases. You can be a customer as well,
+
+00:52:46.487 --> 00:52:53.288
+and it can help you on a personal growth level. Absolutely. All right. Well, I will end us,
+
+00:52:53.288 --> 00:52:57.528
+if you can, lightning round this one last one. It's an anonymous one that says,
+
+00:52:57.528 --> 00:53:01.127
+how does your team span expertise in such varied fields? For example,
+
+00:53:01.127 --> 00:53:04.647
+you talked about cybersecurity versus climate change and all kinds of things.
+
+00:53:06.247 --> 00:53:12.247
+I think working in a diversified org helps a lot. My team is all actuaries who are basically
+
+00:53:12.247 --> 00:53:16.727
+insurance statisticians. So we're not diverse at all, right? If you're in a smaller company,
+
+00:53:16.727 --> 00:53:21.127
+I've never worked at a small company, so I don't have a lot of advice, but I guess my advice is
+
+00:53:21.127 --> 00:53:24.887
+work for a big company where there's a lot of subject matter experts and utilize them.
+
+00:53:25.847 --> 00:53:31.127
+Fantastic. Yeah. And meet people, make friends, right? And talk to a lot of different people
+
+00:53:31.127 --> 00:53:36.247
+about a lot of different things. I'm very lucky that I get to do that. Well, this was so much fun,
+
+00:53:36.247 --> 00:53:43.767
+Jim. I think that you being so wacky and fun and like loosey goosey made this just the most fun
+
+00:53:43.767 --> 00:53:49.208
+ever. Everybody asked fantastic questions. Thank you for indulging me in my very specific
+
+00:53:49.208 --> 00:53:54.247
+property and casualty regulatory question that nobody else cared about. Thank you to everybody
+
+00:53:54.247 --> 00:53:58.727
+who asked a question today, who answered our polls. I put the results of the polls in the chat.
+
+00:53:58.727 --> 00:54:03.127
+I hope that you saw them. If you'd like to save the chat, three dots at the top right corner of
+
+00:54:03.127 --> 00:54:09.767
+your chat box will let you save the chat. I am so excited to say that we have a fantastic
+
+00:54:11.048 --> 00:54:16.007
+guest next week as well. If you would like to join us, it's Nikolai Breikov. He is the manager
+
+00:54:16.007 --> 00:54:20.647
+of advanced analytics and outcomes at the Children's Healthcare of Atlanta. I'm very
+
+00:54:20.647 --> 00:54:26.568
+excited for you all to meet him. So come join us next week. And then next week at the Data Science
+
+00:54:26.568 --> 00:54:31.928
+Lab, which is on Tuesday, we have Joey Marshall, who is our own Data Science Hangout crew member.
+
+00:54:31.928 --> 00:54:38.088
+He is often walking on his treadmill with us alongside Nellie. And he is going to be using
+
+00:54:38.088 --> 00:54:44.647
+Cloud Code Live to work through a Tidy Tuesday data set. And the way that Joey works is fascinating
+
+00:54:44.647 --> 00:54:50.487
+to me. He doesn't type anything. He uses dictation. It is like next wave, so fun. And
+
+00:54:50.487 --> 00:54:55.847
+Joey is also just a ton of fun and entertaining. And he's got a great like podcast voice. So come
+
+00:54:55.847 --> 00:55:02.328
+join us on Tuesdays at the Data Science Lab, pos.it slash dslab. Take care, everybody. I cannot wait
+
+00:55:02.328 --> 00:55:07.528
+to see you at Conf, whether you are in person or virtual. Don't forget that registration is open.
+
+00:55:07.528 --> 00:55:11.367
+And I will see you on Tuesday or next Thursday. Bye.
+
+00:55:14.647 --> 00:55:15.367
+Bye.

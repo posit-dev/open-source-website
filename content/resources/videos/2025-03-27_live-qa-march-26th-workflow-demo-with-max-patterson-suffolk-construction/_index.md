@@ -30,14 +30,14 @@ external:  # updated automatically, do not edit
   duration: 1772
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.131386+00:00'
+  last_updated: '2026-03-20T11:32:47.650047+00:00'
   like_count: 5
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/zU-bBUJMyQ4/maxresdefault.jpg
   title: 'Live Q&A: March 26th Workflow Demo with Max Patterson @ Suffolk Construction'
   url: https://www.youtube.com/watch?v=zU-bBUJMyQ4
-  view_count: 334
+  view_count: 335
 ---
 image: thumbnail.jpg
 

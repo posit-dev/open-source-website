@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   duration: 1153
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.562770+00:00'
+  last_updated: '2026-03-20T11:32:46.669886+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/smnrmTtoiOM/maxresdefault.jpg
   title: Disposable Shiny Apps (James Wade, Dow) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=smnrmTtoiOM
-  view_count: 153
+  view_count: 157
 ---
 image: thumbnail.jpg
 

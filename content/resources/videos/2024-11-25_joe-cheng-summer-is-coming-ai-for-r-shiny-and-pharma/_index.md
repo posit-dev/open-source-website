@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 2890
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:31.073524+00:00'
+  last_updated: '2026-03-20T11:32:57.734786+00:00'
   like_count: 36
   people:
   - Joe Cheng
@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AfMa1CVUdXU/maxresdefault.jpg
   title: 'Joe Cheng - Summer is Coming: AI for R, Shiny, and Pharma'
   url: https://www.youtube.com/watch?v=AfMa1CVUdXU
-  view_count: 1118
+  view_count: 1128
 ---
 image: thumbnail.jpg
 

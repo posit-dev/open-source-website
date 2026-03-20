@@ -2,11 +2,12 @@
 date: '2025-09-18'
 description: "Isabella Velásquez from the developer relations team at Posit introduces Positron, a comprehensive tool that integrates coding, documentation, and command line functionalities. \n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
 image: thumbnail.jpg
-people: []
+people:
+- Isabella Velásquez
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -28,11 +29,13 @@ external:  # updated automatically, do not edit
   duration: 1933
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.269292+00:00'
+  last_updated: '2026-03-20T11:32:46.406327+00:00'
   like_count: 41
+  people:
+  - Isabella Velásquez
   playlist: ''
   software:
-  - positron
+  - Positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -43,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MOpJYbhLgyc/hqdefault.jpg
   title: 'Positron: The First Five Minutes (Isabella Velásquez, Posit) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=MOpJYbhLgyc
-  view_count: 1305
+  view_count: 1333
 ---
 image: thumbnail.jpg
 

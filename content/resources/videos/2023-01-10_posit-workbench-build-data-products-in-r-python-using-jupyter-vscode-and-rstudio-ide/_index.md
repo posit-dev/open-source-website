@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 97
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.282488+00:00'
+  last_updated: '2026-03-20T11:32:52.392064+00:00'
   like_count: 48
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yxiCdzjIXYc/maxresdefault.jpg
   title: Posit Workbench | Build Data Products in R & Python Using Jupyter, VSCode, and RStudio IDE
   url: https://www.youtube.com/watch?v=yxiCdzjIXYc
-  view_count: 6525
+  view_count: 6547
 ---
 image: thumbnail.jpg
 

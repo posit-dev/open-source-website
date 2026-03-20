@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   duration: 1533
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.562904+00:00'
+  last_updated: '2026-03-20T11:32:46.669961+00:00'
   like_count: 1
   playlist: ''
   tags:
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-atDblWsOBU/maxresdefault.jpg
   title: 'rOpenSci Champions: Building Communities of Open-Source Leaders (Noam Ross, rOpenSci)'
   url: https://www.youtube.com/watch?v=-atDblWsOBU
-  view_count: 46
+  view_count: 48
 ---
 image: thumbnail.jpg
 

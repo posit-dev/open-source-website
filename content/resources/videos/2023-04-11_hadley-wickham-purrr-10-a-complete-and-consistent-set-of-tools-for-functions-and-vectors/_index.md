@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 1708
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:25.988453+00:00'
-  like_count: 828
+  last_updated: '2026-03-20T11:32:51.918961+00:00'
+  like_count: 831
   people:
   - Hadley Wickham
   playlist: ''
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EGAs7zuRutY/maxresdefault.jpg
   title: 'Hadley Wickham | {purrr} 1.0: A complete and consistent set of tools for functions and vectors'
   url: https://www.youtube.com/watch?v=EGAs7zuRutY
-  view_count: 26199
+  view_count: 26285
 ---
 image: thumbnail.jpg
 

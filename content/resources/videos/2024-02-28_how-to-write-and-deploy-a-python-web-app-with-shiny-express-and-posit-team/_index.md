@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 1496
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:24.145947+00:00'
+  last_updated: '2026-03-20T11:32:49.725114+00:00'
   like_count: 70
   people:
   - Winston Chang
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pBPF00M_bfU/maxresdefault.jpg
   title: How to write and deploy a Python web app with Shiny Express and Posit Team
   url: https://www.youtube.com/watch?v=pBPF00M_bfU
-  view_count: 4212
+  view_count: 4223
 ---
 image: thumbnail.jpg
 

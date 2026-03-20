@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1083
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.270237+00:00'
+  last_updated: '2026-03-20T11:32:46.669736+00:00'
   like_count: 4
   people:
   - Barret Schloerke
@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zwxhFKRlQLs/maxresdefault.jpg
   title: Observability at scale (Barret Schloerke, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=zwxhFKRlQLs
-  view_count: 111
+  view_count: 113
 ---
 image: thumbnail.jpg
 

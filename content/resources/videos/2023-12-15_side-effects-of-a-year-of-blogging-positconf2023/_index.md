@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1010
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.938480+00:00'
+  last_updated: '2026-03-20T11:32:50.743561+00:00'
   like_count: 17
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PQvnizEJ2eQ/maxresdefault.jpg
   title: Side Effects of a Year of Blogging - posit::conf(2023)
   url: https://www.youtube.com/watch?v=PQvnizEJ2eQ
-  view_count: 446
+  view_count: 447
 ---
 image: thumbnail.jpg
 

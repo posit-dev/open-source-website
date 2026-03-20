@@ -15,7 +15,7 @@ description: 'View the full video here:
   https://shiny.posit.co
 
 
-  #pythoncontent'
+  #pythoncontent #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -90,11 +90,11 @@ external:  # updated automatically, do not edit
     https://shiny.posit.co
 
 
-    #pythoncontent'
+    #pythoncontent #positshorts'
   duration: 60
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.442592+00:00'
+  last_updated: '2026-03-20T11:32:48.811479+00:00'
   like_count: 141
   playlist: ''
   software:
@@ -148,7 +148,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4nvoca0js8E/maxresdefault.jpg
   title: Build Shiny apps with AI ✨
   url: https://www.youtube.com/watch?v=4nvoca0js8E
-  view_count: 2853
+  view_count: 2881
 ---
 image: thumbnail.jpg
 

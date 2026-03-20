@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   duration: 913
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:28.937825+00:00'
+  last_updated: '2026-03-20T11:32:55.538274+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -132,7 +132,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Mb7wZZ6nPLA/maxresdefault.jpg
   title: 'Malcolm Barrett | You''re Already Ready: Zen and the Art of R Package Development | RStudio'
   url: https://www.youtube.com/watch?v=Mb7wZZ6nPLA
-  view_count: 447
+  view_count: 448
 ---
 image: thumbnail.jpg
 

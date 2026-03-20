@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 1003
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:23.442642+00:00'
+  last_updated: '2026-03-20T11:32:48.811527+00:00'
   like_count: 25
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ivEoeyWJzVY/maxresdefault.jpg
   title: Data-level permissions using Posit Connect (with Databricks, Snowflake, OAuth)
   url: https://www.youtube.com/watch?v=ivEoeyWJzVY
-  view_count: 1905
+  view_count: 1910
 ---
 image: thumbnail.jpg
 

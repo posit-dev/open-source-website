@@ -15,7 +15,7 @@ description: 'Key takeaways from our conversation on the path to effective data 
   4. Community engagement is incredibly powerful and hearing different perspectives is how we grow. We all face similar problems regardless of our role or industry. An internal community for cross-organizational collaboration is vital for knowing what other people are working on and collaborating. This not only helps you with your data, but also with your career.
 
 
-  5. Implementing effective data stewardship is a journey with companies at all different stages. Those further along the journey may have teams and infrastructure dedicated to this, along with executive buy-in. Others are working to make it happen at the individual level – where it often starts with writing down the definitions of your data (who created it, when it was sourced, intended use, etc.) and recognizing that someone else will use your data output, potentially not in the way you initially intended.'
+  5. Implementing effective data stewardship is a journey with companies at all different stages. Those further along the journey may have teams and infrastructure dedicated to this, along with executive buy-in. Others are working to make it happen at the individual level – where it often starts with writing down the definitions of your data (who created it, when it was sourced, intended use, etc.) and recognizing that someone else will use your data output, potentially not in the way you initially intended. #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -88,11 +88,11 @@ external:  # updated automatically, do not edit
     4. Community engagement is incredibly powerful and hearing different perspectives is how we grow. We all face similar problems regardless of our role or industry. An internal community for cross-organizational collaboration is vital for knowing what other people are working on and collaborating. This not only helps you with your data, but also with your career.
 
 
-    5. Implementing effective data stewardship is a journey with companies at all different stages. Those further along the journey may have teams and infrastructure dedicated to this, along with executive buy-in. Others are working to make it happen at the individual level – where it often starts with writing down the definitions of your data (who created it, when it was sourced, intended use, etc.) and recognizing that someone else will use your data output, potentially not in the way you initially intended.'
+    5. Implementing effective data stewardship is a journey with companies at all different stages. Those further along the journey may have teams and infrastructure dedicated to this, along with executive buy-in. Others are working to make it happen at the individual level – where it often starts with writing down the definitions of your data (who created it, when it was sourced, intended use, etc.) and recognizing that someone else will use your data output, potentially not in the way you initially intended. #positshorts'
   duration: 39
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695474+00:00'
+  last_updated: '2026-03-20T11:32:49.221396+00:00'
   like_count: 16
   playlist: ''
   tags:
@@ -143,7 +143,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/t7U_sUNv1I0/maxresdefault.jpg
   title: How to inspire people to make a change ✨
   url: https://www.youtube.com/watch?v=t7U_sUNv1I0
-  view_count: 757
+  view_count: 758
 ---
 image: thumbnail.jpg
 

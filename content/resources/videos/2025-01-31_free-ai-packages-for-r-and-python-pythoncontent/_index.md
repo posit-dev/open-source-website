@@ -5,7 +5,7 @@ description: 'Some free R and Python packages that can help when working with LL
 
 
 
-  #datascience #artificialintelligence #machinelearning #openai #pythonprogramming #pythonprojects #dataanalysis #dataanalytics'
+  #datascience #artificialintelligence #machinelearning #openai #pythonprogramming #pythonprojects #dataanalysis #dataanalytics #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -67,12 +67,12 @@ external:  # updated automatically, do not edit
 
 
 
-    #datascience #artificialintelligence #machinelearning #openai #pythonprogramming #pythonprojects #dataanalysis #dataanalytics'
+    #datascience #artificialintelligence #machinelearning #openai #pythonprogramming #pythonprojects #dataanalysis #dataanalytics #positshorts'
   duration: 15
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.505237+00:00'
-  like_count: 40
+  last_updated: '2026-03-20T11:32:47.650183+00:00'
+  like_count: 41
   playlist: ''
   tags:
   - rstudio
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2Rv9RMLFpg8/maxresdefault.jpg
   title: 'Free AI packages for R and Python #pythoncontent'
   url: https://www.youtube.com/watch?v=2Rv9RMLFpg8
-  view_count: 1206
+  view_count: 1211
 ---
 image: thumbnail.jpg
 

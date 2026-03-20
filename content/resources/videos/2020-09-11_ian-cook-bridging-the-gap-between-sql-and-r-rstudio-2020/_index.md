@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1226
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.660902+00:00'
+  last_updated: '2026-03-20T11:32:56.381486+00:00'
   like_count: 259
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JwP5KdWSgqE/hqdefault.jpg
   title: Ian Cook | Bridging the Gap between SQL and R | RStudio (2020)
   url: https://www.youtube.com/watch?v=JwP5KdWSgqE
-  view_count: 7803
+  view_count: 7809
 ---
 image: thumbnail.jpg
 

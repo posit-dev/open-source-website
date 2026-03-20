@@ -74,14 +74,14 @@ external:  # updated automatically, do not edit
   duration: 3538
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:25.238877+00:00'
+  last_updated: '2026-03-20T11:32:51.123122+00:00'
   like_count: 9
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/ydNohRebMcs/maxresdefault.jpg
   title: Joseph Powers @ Intuit & Jen Wang | Data Science Hangout
   url: https://www.youtube.com/watch?v=ydNohRebMcs
-  view_count: 346
+  view_count: 348
 ---
 image: thumbnail.jpg
 

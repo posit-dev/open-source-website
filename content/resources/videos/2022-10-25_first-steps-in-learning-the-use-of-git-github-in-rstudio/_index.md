@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 4064
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.282759+00:00'
-  like_count: 181
+  last_updated: '2026-03-20T11:32:52.392416+00:00'
+  like_count: 183
   playlist: ''
   software:
   - rstudio
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jN6tvgt3GK8/maxresdefault.jpg
   title: First Steps in Learning the Use of Git & GitHub in RStudio
   url: https://www.youtube.com/watch?v=jN6tvgt3GK8
-  view_count: 7928
+  view_count: 7958
 ---
 image: thumbnail.jpg
 

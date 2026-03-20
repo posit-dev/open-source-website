@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 3468
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126224+00:00'
+  last_updated: '2026-03-20T11:32:48.367708+00:00'
   like_count: 81
   people:
   - Charlotte Wickham
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/s_Vh9HIeLVg/maxresdefault.jpg
   title: Updates from Posit, with Hadley Wickham, Charlotte Wickham, George Stagg, and James Blair
   url: https://www.youtube.com/watch?v=s_Vh9HIeLVg
-  view_count: 5149
+  view_count: 5179
 ---
 image: thumbnail.jpg
 

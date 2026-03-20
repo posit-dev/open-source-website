@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 2830
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:23.442779+00:00'
+  last_updated: '2026-03-20T11:32:49.221285+00:00'
   like_count: 71
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uYZUS-eFbqw/maxresdefault.jpg
   title: How to Perfect Your Python Dashboard with Advanced Styling! (HTML/CSS - Shiny for Python)
   url: https://www.youtube.com/watch?v=uYZUS-eFbqw
-  view_count: 3134
+  view_count: 3170
 ---
 image: thumbnail.jpg
 

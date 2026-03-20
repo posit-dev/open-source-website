@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1142
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:28.938171+00:00'
+  last_updated: '2026-03-20T11:32:55.538575+00:00'
   like_count: 96
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wM0B3CB18oQ/hqdefault.jpg
   title: Jake Thompson | Branding and Packaging Reports with R Markdown | RStudio (2020)
   url: https://www.youtube.com/watch?v=wM0B3CB18oQ
-  view_count: 2862
+  view_count: 2866
 ---
 image: thumbnail.jpg
 

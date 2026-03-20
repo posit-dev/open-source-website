@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1266
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.661438+00:00'
+  last_updated: '2026-03-20T11:32:56.700237+00:00'
   like_count: 34
   people:
   - Barret Schloerke
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9ObBOZ-EVqE/maxresdefault.jpg
   title: Barret Schloerke | Reactlog 2.0 Debugging the state of Shiny | RStudio (2019)
   url: https://www.youtube.com/watch?v=9ObBOZ-EVqE
-  view_count: 1270
+  view_count: 1271
 ---
 image: thumbnail.jpg
 

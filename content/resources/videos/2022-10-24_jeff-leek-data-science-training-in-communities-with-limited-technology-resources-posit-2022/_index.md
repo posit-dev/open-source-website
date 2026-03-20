@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   duration: 2759
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.282850+00:00'
+  last_updated: '2026-03-20T11:32:52.392493+00:00'
   like_count: 31
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Vf301YCxP1Q/maxresdefault.jpg
   title: Jeff Leek | Data Science Training in Communities with Limited Technology Resources | Posit (2022)
   url: https://www.youtube.com/watch?v=Vf301YCxP1Q
-  view_count: 1468
+  view_count: 1471
 ---
 image: thumbnail.jpg
 

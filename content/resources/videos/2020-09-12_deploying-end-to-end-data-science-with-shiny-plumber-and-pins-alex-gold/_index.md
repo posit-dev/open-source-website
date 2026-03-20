@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 1269
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.660888+00:00'
+  last_updated: '2026-03-20T11:32:56.381478+00:00'
   like_count: 124
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SwjlcYC_Iqw/hqdefault.jpg
   title: Deploying End-To-End Data Science with Shiny, Plumber, and Pins - Alex Gold
   url: https://www.youtube.com/watch?v=SwjlcYC_Iqw
-  view_count: 4838
+  view_count: 4839
 ---
 image: thumbnail.jpg
 

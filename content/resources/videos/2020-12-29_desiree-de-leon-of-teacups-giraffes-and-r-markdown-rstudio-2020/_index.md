@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1115
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:28.938261+00:00'
+  last_updated: '2026-03-20T11:32:55.538725+00:00'
   like_count: 87
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/69IyhzQ_gys/hqdefault.jpg
   title: Desiree De Leon | Of Teacups, Giraffes, and R Markdown | RStudio (2020)
   url: https://www.youtube.com/watch?v=69IyhzQ_gys
-  view_count: 1263
+  view_count: 1264
 ---
 image: thumbnail.jpg
 

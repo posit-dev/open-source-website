@@ -95,7 +95,7 @@ external:  # updated automatically, do not edit
   duration: 1537
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.219276+00:00'
+  last_updated: '2026-03-20T11:32:53.454180+00:00'
   like_count: 0
   people:
   - Michael Chow
@@ -157,7 +157,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BIxLcbGMFJo/maxresdefault.jpg
   title: Wrangling data for a Shiny app in Python || Michael Chow || Posit
   url: https://www.youtube.com/watch?v=BIxLcbGMFJo
-  view_count: 5217
+  view_count: 5227
 ---
 image: thumbnail.jpg
 

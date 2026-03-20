@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   duration: 1095
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:31.073539+00:00'
+  last_updated: '2026-03-20T11:32:57.734799+00:00'
   like_count: 12
   people:
   - Simon Couch
@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pTMiDHFIiPQ/maxresdefault.jpg
   title: 'Simon Couch - From hours to minutes: Accelerating your tidymodels code'
   url: https://www.youtube.com/watch?v=pTMiDHFIiPQ
-  view_count: 270
+  view_count: 272
 ---
 image: thumbnail.jpg
 

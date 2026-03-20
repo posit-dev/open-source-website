@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1263
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.938385+00:00'
+  last_updated: '2026-03-20T11:32:50.743526+00:00'
   like_count: 30
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iQY24bWRDww/maxresdefault.jpg
   title: Shiny for Python Machine Learning Apps with pandas, scikit-learn and TensorFlow - posit::conf(2023)
   url: https://www.youtube.com/watch?v=iQY24bWRDww
-  view_count: 1175
+  view_count: 1176
 ---
 image: thumbnail.jpg
 

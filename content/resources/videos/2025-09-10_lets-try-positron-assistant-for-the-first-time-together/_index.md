@@ -1,12 +1,12 @@
 ---
 date: '2025-09-10'
-description: 'lil ai buddy #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter'
+description: 'lil ai buddy #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - rstudio
 tags:
 - rstudio
@@ -60,15 +60,15 @@ external:  # updated automatically, do not edit
   comment_count: 5
   date: '2025-09-10T14:01:00Z'
   definition: hd
-  description: 'lil ai buddy #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter'
+  description: 'lil ai buddy #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #positshorts'
   duration: 59
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:21.820559+00:00'
+  last_updated: '2026-03-20T11:32:46.972494+00:00'
   like_count: 51
   playlist: ''
   software:
-  - positron
+  - Positron
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sdyxrCU77MY/maxresdefault.jpg
   title: Let's try Positron Assistant for the first time together
   url: https://www.youtube.com/watch?v=sdyxrCU77MY
-  view_count: 2548
+  view_count: 2582
 ---
 image: thumbnail.jpg
 

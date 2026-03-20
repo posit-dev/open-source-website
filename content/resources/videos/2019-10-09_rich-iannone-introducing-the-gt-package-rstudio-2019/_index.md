@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 1299
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.661263+00:00'
+  last_updated: '2026-03-20T11:32:56.381648+00:00'
   like_count: 310
   people:
   - Rich Iannone
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/h1KAjSfSbmk/maxresdefault.jpg
   title: Rich Iannone | Introducing the gt package | RStudio (2019)
   url: https://www.youtube.com/watch?v=h1KAjSfSbmk
-  view_count: 9981
+  view_count: 9982
 ---
 image: thumbnail.jpg
 

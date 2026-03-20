@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3592
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:25.546087+00:00'
+  last_updated: '2026-03-20T11:32:51.524092+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/2qwTrTimHKE/maxresdefault.jpg
   title: Katherine Gerton @ Centene | Making sure you know other teams exist! | Data Science Hangout
   url: https://www.youtube.com/watch?v=2qwTrTimHKE
-  view_count: 318
+  view_count: 319
 ---
 image: thumbnail.jpg
 

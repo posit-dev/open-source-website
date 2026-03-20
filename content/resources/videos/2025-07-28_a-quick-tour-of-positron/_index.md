@@ -24,7 +24,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags: []
 title: A quick tour of Positron
 
@@ -55,16 +55,16 @@ external:  # updated automatically, do not edit
   duration: 381
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.130861+00:00'
-  like_count: 305
+  last_updated: '2026-03-20T11:32:47.293374+00:00'
+  like_count: 309
   playlist: ''
   software:
-  - positron
+  - Positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/4Ir_HX4riHw/maxresdefault.jpg
   title: A quick tour of Positron
   url: https://www.youtube.com/watch?v=4Ir_HX4riHw
-  view_count: 14724
+  view_count: 15461
 ---
 image: thumbnail.jpg
 

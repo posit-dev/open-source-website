@@ -100,7 +100,7 @@ external:  # updated automatically, do not edit
   duration: 672
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.219387+00:00'
+  last_updated: '2026-03-20T11:32:53.454209+00:00'
   like_count: 0
   people:
   - Nick Strayer
@@ -161,7 +161,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gYPnLiudtGU/maxresdefault.jpg
   title: Shiny UI Editor Project Walkthrough || Nick Strayer || RStudio
   url: https://www.youtube.com/watch?v=gYPnLiudtGU
-  view_count: 11033
+  view_count: 11059
 ---
 image: thumbnail.jpg
 

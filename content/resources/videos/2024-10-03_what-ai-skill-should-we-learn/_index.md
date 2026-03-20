@@ -1,6 +1,6 @@
 ---
 date: '2024-10-03'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -58,11 +58,11 @@ external:  # updated automatically, do not edit
   comment_count: 0
   date: '2024-10-03T15:44:30Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 58
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.442617+00:00'
+  last_updated: '2026-03-20T11:32:48.811503+00:00'
   like_count: 20
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SgL-KQ4p7IY/maxresdefault.jpg
   title: What AI skill should we learn? 🌱
   url: https://www.youtube.com/watch?v=SgL-KQ4p7IY
-  view_count: 850
+  view_count: 852
 ---
 image: thumbnail.jpg
 

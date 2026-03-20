@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1005
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529150+00:00'
+  last_updated: '2026-03-20T11:32:52.707758+00:00'
   like_count: 19
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/wzcz4xNGeTI/maxresdefault.jpg
   title: 'Tan Ho | Project Immortality: Using GitHub To Make Your Work Live Forever | Posit (2022)'
   url: https://www.youtube.com/watch?v=wzcz4xNGeTI
-  view_count: 647
+  view_count: 654
 ---
 image: thumbnail.jpg
 

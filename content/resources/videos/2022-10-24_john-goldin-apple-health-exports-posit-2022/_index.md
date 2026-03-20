@@ -30,14 +30,14 @@ external:  # updated automatically, do not edit
   duration: 784
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529249+00:00'
-  like_count: 5
+  last_updated: '2026-03-20T11:32:52.707837+00:00'
+  like_count: 6
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/3U4jj0fW6L4/maxresdefault.jpg
   title: John Goldin | Apple Health Exports | Posit (2022)
   url: https://www.youtube.com/watch?v=3U4jj0fW6L4
-  view_count: 212
+  view_count: 214
 ---
 image: thumbnail.jpg
 

@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 1044
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.835859+00:00'
+  last_updated: '2026-03-20T11:32:53.122736+00:00'
   like_count: 15
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/eGI-SJMiWgM/maxresdefault.jpg
   title: 'Kirill Müller | dm: Analyze, build and deploy relational data models | RStudio (2022)'
   url: https://www.youtube.com/watch?v=eGI-SJMiWgM
-  view_count: 584
+  view_count: 585
 ---
 image: thumbnail.jpg
 

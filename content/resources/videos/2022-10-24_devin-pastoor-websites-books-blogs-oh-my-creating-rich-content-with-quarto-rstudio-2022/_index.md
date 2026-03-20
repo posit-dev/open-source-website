@@ -30,8 +30,8 @@ external:  # updated automatically, do not edit
   duration: 1253
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529290+00:00'
-  like_count: 95
+  last_updated: '2026-03-20T11:32:53.122281+00:00'
+  like_count: 96
   people:
   - RStudio Team
   playlist: ''
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/A9QRN4cpsDY/maxresdefault.jpg
   title: Devin Pastoor | Websites & Books & Blogs, oh my! Creating Rich Content with Quarto | RStudio (2022)
   url: https://www.youtube.com/watch?v=A9QRN4cpsDY
-  view_count: 3840
+  view_count: 3847
 ---
 image: thumbnail.jpg
 

@@ -13,7 +13,7 @@ people:
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags: []
 title: Outgrowing your laptop with Positron - Julia Silge
 
@@ -32,18 +32,18 @@ external:  # updated automatically, do not edit
   duration: 1174
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.707500+00:00'
+  last_updated: '2026-03-20T11:32:57.423133+00:00'
   like_count: 6
   people:
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - positron
+  - Positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/f2fn0bH-RYg/maxresdefault.jpg
   title: Outgrowing your laptop with Positron - Julia Silge
   url: https://www.youtube.com/watch?v=f2fn0bH-RYg
-  view_count: 147
+  view_count: 159
 ---
 image: thumbnail.jpg
 

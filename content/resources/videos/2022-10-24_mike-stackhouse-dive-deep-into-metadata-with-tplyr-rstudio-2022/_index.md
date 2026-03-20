@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 899
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.282921+00:00'
+  last_updated: '2026-03-20T11:32:52.707332+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-8Qp9rcslfw/maxresdefault.jpg
   title: Mike Stackhouse | Dive Deep into Metadata with Tplyr  | RStudio (2022)
   url: https://www.youtube.com/watch?v=-8Qp9rcslfw
-  view_count: 528
+  view_count: 531
 ---
 image: thumbnail.jpg
 

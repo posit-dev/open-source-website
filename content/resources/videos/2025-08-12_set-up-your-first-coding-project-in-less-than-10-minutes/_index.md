@@ -1,12 +1,12 @@
 ---
 date: '2025-08-12'
-description: 'What are you waiting for #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter'
+description: 'What are you waiting for #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - rstudio
 tags:
 - rstudio
@@ -60,15 +60,15 @@ external:  # updated automatically, do not edit
   comment_count: 5
   date: '2025-08-12T12:49:55Z'
   definition: hd
-  description: 'What are you waiting for #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter'
+  description: 'What are you waiting for #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #positshorts'
   duration: 64
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:21.820614+00:00'
+  last_updated: '2026-03-20T11:32:47.293328+00:00'
   like_count: 43
   playlist: ''
   software:
-  - positron
+  - Positron
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kVpBJ_MQM1M/maxresdefault.jpg
   title: Set up your first coding project in less than 10 minutes
   url: https://www.youtube.com/watch?v=kVpBJ_MQM1M
-  view_count: 2090
+  view_count: 2100
 ---
 image: thumbnail.jpg
 

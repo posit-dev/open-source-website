@@ -207,7 +207,7 @@ external:  # updated automatically, do not edit
   duration: 4601
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.219783+00:00'
+  last_updated: '2026-03-20T11:32:53.454314+00:00'
   like_count: 78
   playlist: ''
   software:
@@ -222,7 +222,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mgCQZmJdQaI/maxresdefault.jpg
   title: Veerle van Leemput | Analytic Health | Optimizing Shiny for enterprise-grade apps
   url: https://www.youtube.com/watch?v=mgCQZmJdQaI
-  view_count: 2091
+  view_count: 2092
 ---
 image: thumbnail.jpg
 

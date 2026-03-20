@@ -150,14 +150,14 @@ external:  # updated automatically, do not edit
   duration: 3602
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:25.546327+00:00'
+  last_updated: '2026-03-20T11:32:51.524229+00:00'
   like_count: 24
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/ql4uO9bw-TE/maxresdefault.jpg
   title: Josh King @ The Knot Worldwide | Creating your data and analytics roadmap | Data Science Hangout
   url: https://www.youtube.com/watch?v=ql4uO9bw-TE
-  view_count: 1174
+  view_count: 1176
 ---
 image: thumbnail.jpg
 

@@ -1,6 +1,6 @@
 ---
 date: '2024-03-30'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -14,18 +14,18 @@ external:  # updated automatically, do not edit
   comment_count: 2
   date: '2024-03-30T18:46:01Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 11
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:24.145689+00:00'
-  like_count: 53
+  last_updated: '2026-03-20T11:32:49.725030+00:00'
+  like_count: 52
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/jnnjCtpiIhU/maxresdefault.jpg
   title: 'If it works, who cares right🥰 #pythonprogramming'
   url: https://www.youtube.com/watch?v=jnnjCtpiIhU
-  view_count: 2114
+  view_count: 2116
 ---
 image: thumbnail.jpg
 

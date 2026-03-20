@@ -1,0 +1,2200 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:12.560
+Welcome back to the Data Science Lab. I'm Libby. I run community here at Posit. I am
+
+00:00:12.560 --> 00:00:15.600
+joined by Isabella Velásquez. Isabella, would you like to say hello?
+
+00:00:15.600 --> 00:00:18.120
+Yeah. Hi, everyone. Good to see you.
+
+00:00:18.120 --> 00:00:22.639
+I am also. Yeah, we're also joined by Isabelle today, special guest. Isabelle, you want to
+
+00:00:22.639 --> 00:00:23.639
+say hey?
+
+00:00:23.639 --> 00:00:28.200
+Hello. And I also have, if you let me, Toast is also joining.
+
+00:00:28.200 --> 00:00:29.200
+Toast!
+
+00:00:29.200 --> 00:00:33.240
+For all of, not a candle, but this is your GitHub good luck charm.
+
+00:00:33.240 --> 00:00:40.599
+Yes. I'm such a Toast fan. You guys have no idea. So today, Isabella and I are going to
+
+00:00:40.599 --> 00:00:48.560
+be your leaders here, and we are going to be talking about collaborating in GitHub using
+
+00:00:48.560 --> 00:00:55.000
+Positron, and our framing for this will be we'll be working together on a Quarto book.
+
+00:00:55.000 --> 00:01:00.639
+So Isabella is going to get us started. She is going to share her screen, and we are going
+
+00:01:00.639 --> 00:01:08.480
+to be really going from nothing here. Like we're going to start a brand new project,
+
+00:01:08.480 --> 00:01:15.360
+brand new repo, and the point of today will not to be a step-by-step tutorial on how to
+
+00:01:15.360 --> 00:01:20.480
+collaborate in GitHub. The point of today is to show you what's possible in Positron
+
+00:01:20.480 --> 00:01:27.440
+in this VS Code ecosystem. If you are used to being in RStudio, and maybe if you're like
+
+00:01:27.440 --> 00:01:32.080
+me and maybe a little bit like Isabella, you might be like, you know what? I'm used to
+
+00:01:32.080 --> 00:01:38.839
+get in RStudio. It's fine. I don't need to learn the new things in Positron. I used to
+
+00:01:38.839 --> 00:01:42.839
+feel that way, and I don't anymore, and I just really want to share what you can do.
+
+00:01:42.839 --> 00:01:46.839
+If you are a VS Code professional who is like, I collaborate in GitHub all the time
+
+00:01:46.839 --> 00:01:51.279
+with VS Code, and there's more that we're missing, just give that context in the chat
+
+00:01:51.279 --> 00:01:57.919
+and help people learn. We can't cover everything today, and that's on purpose. All right, everybody.
+
+00:01:57.919 --> 00:02:03.199
+Isabella, take us away, and I, on my side, will open a fresh instance of Positron and
+
+00:02:03.199 --> 00:02:04.199
+be ready.
+
+00:02:05.199 --> 00:02:06.199
+All right, everybody.
+
+00:02:06.199 --> 00:02:09.199
+I'm going to log into GitHub, too.
+
+00:02:09.199 --> 00:02:11.199
+Yes, very important.
+
+00:02:11.199 --> 00:02:15.199
+Just in case it makes me pop into GitHub.
+
+00:02:15.199 --> 00:02:23.199
+Here I am. This is what my Positron looks like when I first open it. As Libby mentioned,
+
+00:02:23.199 --> 00:02:27.199
+really for pretty much everything that we're doing today, there are multiple ways that
+
+00:02:27.199 --> 00:02:32.199
+we could do it. We're just going to be showing one particular way, and then, of course, you
+
+00:02:32.199 --> 00:02:38.199
+can always adapt your workflow to whatever you need. Since we are working on a Quarto
+
+00:02:38.199 --> 00:02:45.199
+book, so a Quarto book is a special kind of project from Quarto that links together chapters
+
+00:02:45.199 --> 00:02:51.199
+and documents and things like that, and you can add references, things like that. Again,
+
+00:02:51.199 --> 00:02:56.199
+multiple ways of doing it, but how we're going to start is I'm going to open up the command
+
+00:02:56.199 --> 00:03:03.199
+palette, which in Positron is Command-Shift-P, and then you'll see I have various options.
+
+00:03:03.199 --> 00:03:08.199
+Because I've done it recently, the Quarto create project is at the very top. I'm going
+
+00:03:08.199 --> 00:03:17.199
+to click that and then open up a book project. That's going to pop open my directory, so
+
+00:03:17.199 --> 00:03:27.199
+I usually put my R-based projects in this RRR folder. This is the folder in which the
+
+00:03:27.199 --> 00:03:32.199
+Quarto book folder will be created. I'm going to choose this as my project directory, and
+
+00:03:32.199 --> 00:03:39.199
+then I'm going to call it a name. This will be the name of my Quarto book project. I'm
+
+00:03:39.199 --> 00:03:48.199
+going to call it Diaz Lab Quarto Book. You can see here it's saved within RRR on my computer.
+
+00:03:48.199 --> 00:03:57.199
+Press Enter, and here we go. Now I'm inside my Quarto book folder, and you can see that
+
+00:03:57.199 --> 00:04:05.199
+here on the left-hand side, I have all the files populated to create a Quarto book. A
+
+00:04:06.199 --> 00:04:13.199
+very basic book would have several documents like this index.qmd and intro, references,
+
+00:04:13.199 --> 00:04:19.200
+and then also this underscore Quarto.yaml file, which basically lets us know this is
+
+00:04:19.200 --> 00:04:24.200
+in fact a book, as you can see here in line two, type book, and then you can add metadata
+
+00:04:24.200 --> 00:04:34.200
+for your book, continue adding pages and whatnot, and from there build out your book.
+
+00:04:35.200 --> 00:04:42.200
+We have the files, which is great, and we can see this is a preface with this is a Quarto
+
+00:04:42.200 --> 00:04:48.200
+book and things like that. If we want to actually take a look at what the book would look like,
+
+00:04:48.200 --> 00:04:58.200
+we can hit this Preview button up top, and this will preview our book. Here in the terminal,
+
+00:04:58.200 --> 00:05:04.200
+we can see that it rendered everything, and then if I open up this viewer, here indeed
+
+00:05:04.200 --> 00:05:12.200
+is the book. Here again is the preface, the introduction. I can pop it out here into a
+
+00:05:12.200 --> 00:05:19.200
+new browser as well if I want to. But since we're talking about Git today, one thing in
+
+00:05:19.200 --> 00:05:28.200
+particular that I want to mention is that there is this underscore book file. Oh, I think I
+
+00:05:28.200 --> 00:05:34.200
+jumped ahead. Let's go back to Git. You may notice if you have used Git before, there's
+
+00:05:34.200 --> 00:05:41.200
+nothing here that lets Positron know I'm working with Git at all. Here in what's called
+
+00:05:41.200 --> 00:05:49.200
+the primary sidebar, there's this GitHub item, and if I click that, oh, I'm sorry, not there
+
+00:05:49.200 --> 00:05:55.200
+yet, the source control item, there's going to be two options. I can initialize repository
+
+00:05:55.200 --> 00:06:01.200
+or publish to GitHub. If I click Initialize Repository, it does exactly that. It'll let it
+
+00:06:01.200 --> 00:06:07.200
+know that indeed I want to use Git within this folder. And in here, this is going to
+
+00:06:07.200 --> 00:06:13.200
+showcase all the things that have changed. Because the folder was empty before, and now it
+
+00:06:13.200 --> 00:06:21.200
+has all of these files, which lets me know there are 30 of them. Those are the things, the
+
+00:06:21.200 --> 00:06:29.200
+documents that have changed that I can push up to GitHub. And so if I go back here,
+
+00:06:29.200 --> 00:06:36.200
+it should be. I'm not sure why. There is no Gitignore file.
+
+00:06:36.200 --> 00:06:42.200
+I think it's because instead of doing Initialize Repository, you wanted to press the bottom
+
+00:06:42.200 --> 00:06:47.200
+one, which was like the one that sent to GitHub. And then I think it would have given you a
+
+00:06:47.200 --> 00:06:49.200
+.gitignore, but you can create one.
+
+00:06:49.200 --> 00:06:55.200
+Yeah. So I'm going to create a .gitignore file. And so what this does is it creates a
+
+00:06:55.200 --> 00:07:01.200
+file that basically tells Git what to ignore. So if there's anything that I don't want to
+
+00:07:01.200 --> 00:07:07.200
+push up to GitHub, because it's a giant file or because it has some secret or something
+
+00:07:07.200 --> 00:07:15.200
+like that, I can put it in here. And so I will let it know I don't want, for example, my
+
+00:07:15.200 --> 00:07:21.200
+Cordo folder, which is here, to get pushed up to Git. And then I'm also going to say I
+
+00:07:21.200 --> 00:07:27.200
+don't want the book folder, which is here, to get pushed up to Git. And the reason for that is
+
+00:07:27.200 --> 00:07:31.200
+I think it depends how you want to work together, but all of these are generated every time
+
+00:07:31.200 --> 00:07:37.200
+somebody renders something. And the more files and things like that, the more likely you
+
+00:07:37.200 --> 00:07:43.200
+might run into conflicts and things like that. So if I save this, you'll notice that the
+
+00:07:43.200 --> 00:07:49.200
+30 files that were here in the source control are now eight. So basically because
+
+00:07:49.200 --> 00:07:57.200
+everything that is within these two folders is now being ignored by Git.
+
+00:07:57.200 --> 00:08:03.200
+Isabella, there's a question in the chat from Mike. Do you have to create a GitHub account before
+
+00:08:03.200 --> 00:08:13.200
+starting this kind of project? Yes, you do. And so down here, this lets you know I am
+
+00:08:13.200 --> 00:08:21.200
+already logged in to GitHub. And so if you haven't created a GitHub account, the first
+
+00:08:21.200 --> 00:08:25.200
+thing is to go to GitHub.com, create an account. And then when you come here, there's actually
+
+00:08:25.200 --> 00:08:33.200
+going to be an option for you to sign in from here. And then Positron will allow you to
+
+00:08:33.200 --> 00:08:39.200
+authenticate from here. Basically, it'll open up the GitHub in a browser, you put in this
+
+00:08:39.200 --> 00:08:45.200
+code, and when you come back to Positron, you'll be logged in. And Libby, we actually have a
+
+00:08:45.200 --> 00:08:57.200
+short video on that, right? We do. If I can get it to play. Let me see if I can. Can I?
+
+00:08:57.200 --> 00:09:09.200
+Let's find out. Oh, no. Maybe we can share on this one? I think that I can. Okay. I'm
+
+00:09:09.200 --> 00:09:17.200
+going to share my screen really quickly. Yeah. And this is literally just to show you what
+
+00:09:17.760 --> 00:09:26.239
+the process of getting in is. So if everybody can see my screen. Yes. I'm going to go over
+
+00:09:26.239 --> 00:09:30.559
+there. I'm not logged into anything. This is on a computer that has been completely wiped. It's
+
+00:09:30.559 --> 00:09:35.520
+like, hey, you have an extension installed that you can't use. It knows that I have a GitHub
+
+00:09:35.520 --> 00:09:42.000
+pull request and issues extension. So that's why it's saying that. But obviously, I have never
+
+00:09:42.640 --> 00:09:47.840
+connected anything to Git. And I'm going to go ahead and just create a new R project here.
+
+00:09:48.239 --> 00:09:52.960
+I'm not going to initialize with the Git repository. So I'm doing exactly what Isabella
+
+00:09:52.960 --> 00:09:59.039
+did. Just instead of an automated, like, create Quarto project, I'm just clicking through everything.
+
+00:09:59.919 --> 00:10:05.840
+All right. I'm heading over to that source control pane. Publish to GitHub is there for me.
+
+00:10:06.719 --> 00:10:11.840
+And Positron just knows that if you try to interact with GitHub and you're not logged in,
+
+00:10:11.840 --> 00:10:16.799
+that you need to authenticate. So I'm going to go ahead and do that. And I'm going to
+
+00:10:17.119 --> 00:10:20.960
+authenticate. So it gave me a little button to say, like, go ahead and copy this code.
+
+00:10:20.960 --> 00:10:25.039
+And when I go to authenticate, because it's opened my browser for me, it's just ready to paste in.
+
+00:10:25.840 --> 00:10:32.559
+So I paste that in. I say, yep, I want this to authorize. Those are the associations that I
+
+00:10:32.559 --> 00:10:38.559
+have on GitHub. And I'm going to say, yep, authorize. And we're done. If you are used
+
+00:10:38.559 --> 00:10:45.039
+to setting things up in RStudio, you know that it's way harder than that. So this is pretty nice.
+
+00:10:45.840 --> 00:10:51.599
+There we go. I'm going to go down and grant access through my GitHub account to the extension,
+
+00:10:51.599 --> 00:10:56.320
+the GitHub extension for pull requests and stuff. That's what you saw me do down there
+
+00:10:56.320 --> 00:11:02.719
+in that little accounts tab. So now you can see me creating a file here.
+
+00:11:06.000 --> 00:11:11.280
+And saving it. My source control tab can now, when I press this button,
+
+00:11:11.840 --> 00:11:17.760
+it knows that it's connected to me. And I can go ahead and publish an entire repository. And
+
+00:11:17.760 --> 00:11:23.359
+it's just going to open it up. I can click open in GitHub, and it's going to work. So that is the
+
+00:11:23.359 --> 00:11:27.280
+end of that. And we're going to actually go through that live, that part with Isabella now.
+
+00:11:28.719 --> 00:11:36.479
+Yeah. Thank you. Great question. All right. So going back here, we're going to go back to this
+
+00:11:37.440 --> 00:11:43.280
+source control item, where again, here are the files that we have changed, excluding the ones
+
+00:11:43.280 --> 00:11:51.679
+that I put in the Git ignore. And then if Git is new to you, generally the workflow is first you
+
+00:11:51.679 --> 00:11:57.840
+stage your changes, which lets Git know these have been changed. And they're the things that
+
+00:11:57.840 --> 00:12:04.559
+we're going to want to push up to our source of truth repository. And there's this plus sign where
+
+00:12:04.640 --> 00:12:11.440
+if I click that, it says stage all changes. You could do it individually as well. But since it's
+
+00:12:11.440 --> 00:12:15.679
+our first thing, I'm just going to say stage all changes. And you can see it's moved from
+
+00:12:15.679 --> 00:12:22.880
+changes to stage changes. So I know we're all set. I'm going to add a message. All right. Initial
+
+00:12:22.880 --> 00:12:31.520
+commit. Commit. And now, as Libby just shared, there's this publish branch option. And branch
+
+00:12:31.520 --> 00:12:38.239
+are like the different offshoots of the things that you are working on. And down here in Positron,
+
+00:12:38.239 --> 00:12:43.679
+you can see which branch we're on, which is the main branch, which is like the real main branch.
+
+00:12:44.880 --> 00:12:51.119
+And Libby also has shared this cool snippet that you can put in your user settings so that the
+
+00:12:51.119 --> 00:12:57.280
+name of the branch also shows up at the top of your Positron window as well. So I have that
+
+00:12:57.280 --> 00:13:02.880
+because I do also find it very handy. I'm going to hit publish branch. It's going to let me have
+
+00:13:02.880 --> 00:13:10.000
+a couple of options to private or public repositories. Hitting public. Down here,
+
+00:13:10.000 --> 00:13:16.880
+it says successfully published the Cordo book to repository to GitHub. I'm going to open on GitHub.
+
+00:13:16.880 --> 00:13:27.440
+And here we go. So we are in our repository. Here are all the files that we staged and committed
+
+00:13:27.440 --> 00:13:34.000
+and pushed up, which is great. And so since Libby and I are collaborating on this,
+
+00:13:34.000 --> 00:13:40.719
+I'm going to head over to settings and add Libby as a collaborator. So there is this collaborators
+
+00:13:40.719 --> 00:13:46.320
+option. And then clicking add people. I will find you, Libby.
+
+00:13:48.000 --> 00:13:51.200
+I'm easy to find. Too many E's. Just the name.
+
+00:13:53.359 --> 00:13:59.440
+Okay. So it lets me know that we're awaiting Libby's response. But in the meantime, the next
+
+00:13:59.440 --> 00:14:07.039
+thing that I want to do is, so the main branch is, you know, it's the source of truth. It's the
+
+00:14:07.280 --> 00:14:12.239
+thing that's, you know, if it's a book, the thing that's being published and being shown. And so
+
+00:14:12.239 --> 00:14:18.080
+we generally want to protect it so that there is some sort of review process or at least some
+
+00:14:18.880 --> 00:14:24.559
+guardrails around what actually gets put on the main branch as people are working.
+
+00:14:25.200 --> 00:14:32.159
+And so one way to protect the main branch is by clicking on branches here. Sorry, on settings.
+
+00:14:32.799 --> 00:14:40.239
+I'm going to click add classic branch protection rule. I'm going to write main to say I want to
+
+00:14:40.239 --> 00:14:45.599
+protect the main branch. And then here, I'm going to require a pull request before merging.
+
+00:14:45.599 --> 00:14:50.479
+So that means before I allow any changes to actually be made on the main branch,
+
+00:14:51.359 --> 00:14:57.119
+I'm going to require a pull request where I can review or, you know, my collaborators can review
+
+00:14:57.119 --> 00:15:03.359
+and somebody can, we can also check off this require approvals. So here, what I'm saying is
+
+00:15:04.320 --> 00:15:11.840
+at least one person needs to approve before the pull request can be merged and the main branch
+
+00:15:11.840 --> 00:15:19.919
+changed. So I'm going to create that. And Libby, would you mind showing us from your side what it
+
+00:15:19.919 --> 00:15:25.440
+looks like to be added as a collaborator? Yes, I would love to. Also, Becca had asked,
+
+00:15:25.440 --> 00:15:32.159
+was that push to GitHub the initialization of the GitHub repo? Yes. If it was the creation,
+
+00:15:32.159 --> 00:15:36.559
+Becca says, what if you already had a GitHub repo with that same name, would you get a warning
+
+00:15:36.559 --> 00:15:43.039
+in Positron? I am not 100% sure what you would get as a warning in Positron. I think that there
+
+00:15:43.039 --> 00:15:48.000
+are so many different ways to do this. We are only showing one where like we don't have a remote
+
+00:15:48.000 --> 00:15:53.760
+repo set up with the GitHub website yet, right? If you did and it was already set up and it had
+
+00:15:53.760 --> 00:15:58.000
+stuff in it, the process would be you would clone it into Positron and you would just open it in
+
+00:15:58.000 --> 00:16:03.919
+Positron. So totally different workflow, but you'd get the same result of like a repo that was local
+
+00:16:03.919 --> 00:16:09.359
+now that was on your machine and it was hooked up to your remote repo in GitHub and Positron,
+
+00:16:09.359 --> 00:16:14.159
+the workflow in Positron would be the same from there on out. To do clone in GitHub in Positron,
+
+00:16:14.159 --> 00:16:18.400
+it's very easy. Control shift P to get to the command palette and then just type the word clone
+
+00:16:18.400 --> 00:16:23.039
+and that's the first option you're going to see, get clone. And then it'll just ask you to type in
+
+00:16:23.039 --> 00:16:29.359
+or paste in the HTTPS if that's the way that you're going. I have that set up as my cloning
+
+00:16:29.359 --> 00:16:34.080
+option in the Positron settings. You can change it in the Positron settings to whatever you need.
+
+00:16:35.039 --> 00:16:40.000
+Okay, thank you for that fantastic question. I'm going to go ahead and share my screen and show
+
+00:16:40.000 --> 00:16:46.239
+what it looks like. I'll show you my very messy GitHub repo. So I have something waiting for me,
+
+00:16:46.239 --> 00:16:50.640
+or at least I should, in my notifications. You'll also get an email if somebody adds you as a
+
+00:16:50.640 --> 00:16:55.039
+collaborator. So I'm going to click this little thing right here. Oh, it says I'm all caught up.
+
+00:16:55.679 --> 00:17:02.719
+It says I do not have anything from Isabella. Oh, maybe I didn't click add. Let me check.
+
+00:17:04.319 --> 00:17:11.439
+Let's, oh, please. There it is. Oh, yay. Invitation to join DS Lab Corto book.
+
+00:17:12.239 --> 00:17:17.119
+So if you click this, it's going to go away. Don't click that. It's going to say, ah, you're
+
+00:17:17.119 --> 00:17:21.439
+done with this message. You have to actually click the message and then accept the invitation,
+
+00:17:21.439 --> 00:17:26.400
+and that's going to make me a collaborator on this repo. That means that I can push to it.
+
+00:17:26.400 --> 00:17:32.079
+I cannot push to main, however, because, again, we protected the main branch of this repo, and we
+
+00:17:32.079 --> 00:17:38.319
+watched Isabella do that. And Jordan mentioned, careful with branch rules and users who are
+
+00:17:38.319 --> 00:17:43.040
+admins. Some settings allow admins to bypass rules. There's a few extra clicks to make sure
+
+00:17:43.040 --> 00:17:48.000
+admins aren't excluded from the rules but can force push when needed. We'll actually show this
+
+00:17:48.000 --> 00:17:53.520
+a little bit later if we have time. I think with the rule that we set up, Isabella as an admin is
+
+00:17:53.520 --> 00:18:02.079
+actually not excluded. It's still going to make her get approval for a PR. She can click a button,
+
+00:18:02.079 --> 00:18:08.239
+an extra button on the UI in GitHub to push past that. So she can say, I am going to elect to push
+
+00:18:08.239 --> 00:18:15.760
+past this if she wants to. So good point, Jordan. Okay. So what do we need to do here? We need to
+
+00:18:15.760 --> 00:18:20.560
+switch back to Isabella, I think, so that Isabella can make me an issue, because that's what we would
+
+00:18:20.560 --> 00:18:26.000
+love to show is a little bit of, like, real collaboration as if we were working on a project
+
+00:18:26.000 --> 00:18:31.920
+together. Yeah, that's right. So this is called the source control. If you hover over it, you can kind
+
+00:18:31.920 --> 00:18:38.160
+of see. And this is where we stage our changes and see what's going on. So GitHub is the platform
+
+00:18:38.160 --> 00:18:48.319
+that we're using to use Git. And its icon is this, like, a little cat with a tentacle. And so if I
+
+00:18:48.319 --> 00:18:55.119
+click here, within Positron, there's these really cool, like, options to work with pull requests and
+
+00:18:55.119 --> 00:19:01.520
+issues directly within Positron, which blew my mind. I did not know this existed. I never clicked
+
+00:19:01.520 --> 00:19:08.719
+it before. So hopefully it blows your mind as well. Here in this window with issues, I'm going
+
+00:19:08.719 --> 00:19:17.280
+to create an issue by clicking this plus. And then I'm going to say, call it chapter one. And I'm going
+
+00:19:17.280 --> 00:19:23.199
+to, if you notice here, the first line will be the issue title. So the title of the issue will be
+
+00:19:23.199 --> 00:19:32.400
+chapter one. I'm going to tag Libby. And I'm going to write, you know, hey, Libby, some kind of
+
+00:19:32.400 --> 00:19:40.959
+description of the issue that I want. Could you please get started on chapter one? So once that's
+
+00:19:40.959 --> 00:19:49.680
+good, I save. And I hit this check. And it lets me know the issue has been created. If I open the
+
+00:19:49.680 --> 00:19:56.800
+issue, again, I can view this all within Positron. I can see that Libby has been assigned. And then
+
+00:19:56.800 --> 00:20:06.239
+here's my comment for Libby as well. And yeah, so now I pass it over to you to get started on chapter
+
+00:20:06.239 --> 00:20:17.359
+one. Yeah. Okay. And pertinent to the question that we had before of like, how do I get it down
+
+00:20:17.359 --> 00:20:23.040
+if it's already existing? I'm in that situation now. It exists as this remote repo in GitHub in
+
+00:20:23.040 --> 00:20:31.119
+the UI right here for me. But I don't have it here. So I'm going to go grab the URL because
+
+00:20:31.119 --> 00:20:37.439
+the clone type I'm going to be using is HTTPS. And then over here, I can do command shift P,
+
+00:20:38.400 --> 00:20:43.280
+type in clone. It's going to ask me to provide the repository URL. There it is.
+
+00:20:44.160 --> 00:20:48.479
+Hit enter. And I'm going to say, sure, let's put it there.
+
+00:20:50.239 --> 00:20:56.400
+And I'll open it in the same window. Do I trust the authors of this folder? Isabella,
+
+00:20:56.400 --> 00:21:00.479
+I don't know if I trust you. I'm going to say yes. Understandable.
+
+00:21:02.239 --> 00:21:07.920
+Okay. And just like that, we're done. I have it open. My screen's going to look a little bit
+
+00:21:07.920 --> 00:21:13.599
+different from Isabella's because my activity bar is at the top here. I like this. It's so
+
+00:21:13.599 --> 00:21:18.719
+clean and nice, but I have all the same stuff, right? So here it's just smaller. Here's my
+
+00:21:18.719 --> 00:21:23.439
+little source control. And if I go over there, I can see that if I was going to make changes,
+
+00:21:23.439 --> 00:21:31.199
+they would end up there. All right. I also have the GitHub Octocat over here.
+
+00:21:32.160 --> 00:21:38.000
+And this is where I can see that I have some issues open. My issue right here,
+
+00:21:38.000 --> 00:21:43.520
+I can go check it out. I can see that Isabella's asking me to get started on chapter one.
+
+00:21:45.359 --> 00:21:51.760
+All right. So now what I should not do right now is go try to push to main. So let's do that.
+
+00:21:52.640 --> 00:21:58.000
+Because in real life, that's what I would forget and do. I would say, all right, she wanted me to
+
+00:21:58.000 --> 00:22:04.719
+get started on chapter one. So I need to create a new file. There's many ways to create a new file.
+
+00:22:04.719 --> 00:22:13.040
+I'm just going to do it like this and say chapter one.qmd. Great. This is chapter one.
+
+00:22:15.839 --> 00:22:19.439
+In true Libby fashion, let's leave a typo in there, and I will save it.
+
+00:22:20.319 --> 00:22:25.439
+And the moment I save something, the source control says, you have something that we don't
+
+00:22:25.439 --> 00:22:31.040
+recognize. And there's a U here. You can see that it's an untracked file, right? If you hover over
+
+00:22:31.040 --> 00:22:37.280
+it, it'll say untracked. Let's head over to the source control tab. And it says, hey, you made a
+
+00:22:37.280 --> 00:22:44.000
+change. I can click this change. I can look at it. I can open the file here if I don't happen to have
+
+00:22:44.000 --> 00:22:50.000
+it open already. Like if I closed this and I click this, this would open it. I can revert my changes
+
+00:22:50.000 --> 00:22:54.640
+or I can stage it. If I have a bunch of changes, I can click this right here. It only shows up if
+
+00:22:54.640 --> 00:23:02.000
+you hover and it will just stage everything. So let's say stage. Great. And I'll say that I'm
+
+00:23:02.000 --> 00:23:07.920
+going to init chapter one and commit it and say, yeah, let's go ahead and push to main. And it tells
+
+00:23:07.920 --> 00:23:13.839
+me, hey, you're going to push and pull from main. Is that okay? And I say, yes. And then it says,
+
+00:23:13.839 --> 00:23:19.839
+wait, something is wrong. I'm going to hit that second one that said show command output.
+
+00:23:20.640 --> 00:23:25.760
+And it's going to tell me there's a protected branch. You cannot do that. You need to make
+
+00:23:25.760 --> 00:23:30.079
+changes through a pull request. And I'm like, oh, no, that's right. I should have made a branch.
+
+00:23:31.040 --> 00:23:38.079
+I'm unable to push to main. Okay. Cool. So what do I do if this is not three lines of code? What
+
+00:23:38.079 --> 00:23:44.560
+if this was a whole chapter that I had just done? In a past life, I would have literally copied and
+
+00:23:44.560 --> 00:23:50.079
+pasted this into a text file that I would have saved elsewhere and I would have absolutely
+
+00:23:50.079 --> 00:23:56.560
+panicked, right? Because I am never able to stash changes via the terminal correctly.
+
+00:23:58.079 --> 00:24:04.400
+So let me just show you what I would do in this instance using the UI. First of all,
+
+00:24:04.400 --> 00:24:09.599
+I've already committed, right? All is not lost. Just like with the terminal, we can
+
+00:24:10.560 --> 00:24:16.160
+undo our last commit. So I'm going to go over here to this main branch here, and I'm going
+
+00:24:16.160 --> 00:24:24.400
+to go down to the commit, and I'm going to undo last commit. So again, three dots. There are three
+
+00:24:24.400 --> 00:24:28.959
+dots all over the place. You'll get to the right thing kind of no matter what here. Three dots,
+
+00:24:28.959 --> 00:24:35.920
+commit, undo last commit. And then I can breathe a sigh of relief because there it is. It's staged
+
+00:24:35.920 --> 00:24:41.119
+still, but it's not committed. Now what I'm going to do is go back to these and go down to stash
+
+00:24:41.119 --> 00:24:46.560
+and just say like, hey, can you just stash like the stage changes that I made? Just hold on to
+
+00:24:46.560 --> 00:24:53.280
+them. And it's going to ask me to, oops, sorry. It's not going to let me do anything because
+
+00:24:53.280 --> 00:25:00.560
+Zoom is overriding my controls. Chapter one init changes. I'm going to hit enter. And now
+
+00:25:01.280 --> 00:25:08.719
+in the background, those are stashed away. It's kept my commit message, but they're gone.
+
+00:25:09.359 --> 00:25:14.560
+Now I can just say, okay, I'm definitely on the main branch. I can see that up here. Here it is.
+
+00:25:14.560 --> 00:25:21.199
+What I need to do is create a new branch. Normally in the terminal, I would get checkout
+
+00:25:21.760 --> 00:25:27.520
+or some other version of that. Again, you can just go down here to branch and create branch.
+
+00:25:28.079 --> 00:25:36.560
+Type in your branch name, chapter one branch. Great. Now I have those changes stashed somewhere.
+
+00:25:36.560 --> 00:25:42.160
+This is swiped through, right? The reason this is swiped through is because if I go back over here,
+
+00:25:42.160 --> 00:25:47.119
+it doesn't exist. I stashed it. The changes that I made don't exist anywhere. They're like
+
+00:25:48.000 --> 00:25:54.800
+held off on the side for me. I want to now apply those changes to this, put that chapter one
+
+00:25:54.800 --> 00:26:01.119
+file back in there. We'll go back to our source control and I can go back to this little stash
+
+00:26:01.119 --> 00:26:06.400
+thing and I can say, pop stash. It's going to say, hey, which stash do you want to pop? I'm
+
+00:26:06.400 --> 00:26:16.640
+going to say this one. Cool. Now if I go back, it exists. There it is. It's been added. It's
+
+00:26:16.640 --> 00:26:22.640
+already staged for me. I can go back to my process, commit it. Now it's saying instead of sync,
+
+00:26:22.640 --> 00:26:27.599
+it's saying publish branch because this branch only exists for me locally. It doesn't exist
+
+00:26:27.599 --> 00:26:34.000
+remotely on Isabella's repo on the internet yet. I'll go ahead and publish my branch. It says,
+
+00:26:34.000 --> 00:26:39.119
+hey, do you want to go ahead and create a pull request for this branch? I could, but I'm going
+
+00:26:39.119 --> 00:26:47.199
+to go back to the UI and just show you what it looks like when I refresh this. I refresh it and
+
+00:26:47.199 --> 00:26:54.160
+it says, hey, we now have two branches. It's ready to compare and do a pull request. You can
+
+00:26:54.160 --> 00:27:00.079
+do all of this from Positron though. You don't have to go back to the UI at all. What I'm going
+
+00:27:00.079 --> 00:27:07.119
+to do is I'm going to go ahead and create my pull request in Positron and I'm going to let Isabella
+
+00:27:07.119 --> 00:27:13.439
+know that I have created chapter one and I'm going to link it to that issue. We'll go back over here.
+
+00:27:14.239 --> 00:27:20.160
+I could create a pull request right here, or I could just click this and create a pull request.
+
+00:27:20.160 --> 00:27:24.880
+I could also right in here, create a pull request. There's so many ways to do this,
+
+00:27:25.680 --> 00:27:31.839
+but we'll go back over here. We'll say the title of mine is init chapter one. In my description,
+
+00:27:31.839 --> 00:27:39.680
+I'm going to say this closes one because that's the issue that I know existed.
+
+00:27:40.640 --> 00:27:46.239
+Then it'll tell me my files changed. It shows me very clearly what I'm doing. I'm merging
+
+00:27:46.239 --> 00:27:54.640
+chapter one into main. Then I can also, if I hover over these, I can assign things and add reviewers.
+
+00:27:54.640 --> 00:28:00.560
+I want to add a reviewer. It knows who Isabella is. I'm going to click that little mark here
+
+00:28:00.560 --> 00:28:08.560
+and click okay. There she is as a reviewer. If I scroll down, which it was hard to see in the
+
+00:28:09.520 --> 00:28:16.719
+way my theme is, but here we go. You can create right here. It's creating my pull request for me.
+
+00:28:16.719 --> 00:28:23.199
+I did not need to go to the UI. It's all just in Positron. Here's my pull request. We can switch
+
+00:28:23.199 --> 00:28:30.800
+back to Isabella so she can see what it looks like to check the update. I will hop over to
+
+00:28:30.800 --> 00:28:35.520
+Discord really quickly to make sure that there's not anything I missed. Is everybody okay?
+
+00:28:36.239 --> 00:28:41.119
+Everyone's okay, but there was, Danielle had a question about how to put your activity bar
+
+00:28:41.119 --> 00:28:46.400
+to the top. Maybe to show for the class because it's highly requested.
+
+00:28:48.880 --> 00:28:54.719
+Here's activity bar. It's that blue bar. If I right click and hit activity bar or hover over
+
+00:28:54.719 --> 00:29:00.800
+activity bar position, there will be several options. You could put it at the top like Libby
+
+00:29:00.800 --> 00:29:05.760
+has it. Libby, there's something about your settings end up up here.
+
+00:29:05.760 --> 00:29:11.199
+Yeah, they end up over here. When it's on the left, your account and your settings are in the
+
+00:29:11.199 --> 00:29:17.359
+bottom left. They silently retreat to the top right of your screen without telling you. If you've
+
+00:29:17.359 --> 00:29:20.239
+lost them because you've just done that, they're in the very top right.
+
+00:29:22.079 --> 00:29:30.079
+I like the default just because they're nice and big, but they're bottom and hidden as well
+
+00:29:30.560 --> 00:29:40.479
+are other options. Cool. Libby has gone ahead and created a pull request. If I click this
+
+00:29:40.479 --> 00:29:47.040
+refresh pull request, now I can see all open pull requests and here is chapter one,
+
+00:29:47.680 --> 00:29:53.199
+which is great. I'm like, awesome. You'll notice that the branch protection policy must be
+
+00:29:53.199 --> 00:30:01.119
+fulfilled before merging, but I want to check out what was done first. I could do that by
+
+00:30:01.680 --> 00:30:09.760
+literally checking out. This checks out the branch, which up here used to be main and down
+
+00:30:09.760 --> 00:30:16.160
+here as well. It lets us know that right now I'm in the chapter dash one branch instead.
+
+00:30:16.880 --> 00:30:23.839
+Lets me know, pulls up this file that is changes in the pull request. Green means that something
+
+00:30:23.839 --> 00:30:31.119
+has been added. Instead, let's say I just closed that, but I saw that there was indeed a typo.
+
+00:30:31.119 --> 00:30:39.359
+If I open up the files in my Explorer, open up chapter one, I'm like, oh no, I will fix this.
+
+00:30:40.239 --> 00:30:47.520
+I can go ahead and fix that typo. If you follow me on blue sky, this is normal.
+
+00:30:49.040 --> 00:30:56.560
+There are so many little things that Apostron does to let you know. For example, now the color
+
+00:30:56.560 --> 00:31:02.880
+has changed and you'll see that now there's this M. This lets us know that this file has been
+
+00:31:02.880 --> 00:31:09.599
+modified. We can see here too, a nice little view of what exactly has been modified as well.
+
+00:31:11.280 --> 00:31:22.079
+I want to make sure I haven't missed anything. If I go back to source control,
+
+00:31:23.839 --> 00:31:31.040
+now I can see my chapter one has changed. Doing the same process as before,
+
+00:31:31.040 --> 00:31:38.400
+I can stage this change. When we move up to stage changes, I'll say fix typo, commit,
+
+00:31:39.280 --> 00:31:44.400
+and sync the changes. Let me know that it's pushing to chapter one, which is the right branch,
+
+00:31:45.280 --> 00:31:53.280
+and hit okay. Heading back to my pull request, I can open up this pull request again.
+
+00:31:54.000 --> 00:32:01.839
+I can see Libby's commit, my commit. I think we're all good now. I can say, thanks Libby.
+
+00:32:04.079 --> 00:32:11.199
+From here, I can comment. You'll notice here, there's actually also an option for requesting
+
+00:32:11.199 --> 00:32:16.239
+changes if you don't want to approve, but because everything looks good now, I'm going to hit approve.
+
+00:32:16.560 --> 00:32:22.479
+Now, this is saying there's no conflicts with the base branch, which is main. I've approved the PR,
+
+00:32:22.479 --> 00:32:29.599
+but to actually bring the changes in, I have to merge the pull request. I'm going to do that.
+
+00:32:33.680 --> 00:32:38.160
+If I scroll up here, it'll let me know that the pull request indeed has been merged.
+
+00:32:38.959 --> 00:32:42.400
+Then you'll notice that I have this option for deleting branch.
+
+00:32:42.560 --> 00:32:47.520
+This is another thing that you could set up one of those branch rules for to always delete
+
+00:32:47.520 --> 00:32:52.959
+your remote branches after a pull request, but because we don't have that rule set up right now,
+
+00:32:52.959 --> 00:32:57.920
+we can do it within Positron itself. If I hit delete branch, it'll give me the option to delete
+
+00:32:57.920 --> 00:33:03.680
+the remote branch. That's like the branch that's out in the internet, and then local branch,
+
+00:33:03.680 --> 00:33:09.599
+which is the copy that is on my personal laptop. If I hit delete branch, it'll give me the option
+
+00:33:10.000 --> 00:33:17.199
+that is on my personal laptop. Because we've merged this branch in, I don't need either of
+
+00:33:17.199 --> 00:33:22.959
+those anymore. I'm going to hit okay, and that's going to delete those branches. This is also
+
+00:33:22.959 --> 00:33:28.479
+really nice to keep your things tidy and remember what has been changed and merged and not.
+
+00:33:30.112 --> 00:33:35.132
+Note, really quickly, because I'm watching this on my screen, I watched in real time,
+
+00:33:35.132 --> 00:33:41.772
+my Positron just alerted me that Isabella deleted that branch and closed that PR, which
+
+00:33:41.772 --> 00:33:44.492
+is very cool.
+
+00:33:44.492 --> 00:33:49.571
+And the last thing to mention is up here instead of Chapter 1, or down here as well, I'm back
+
+00:33:49.571 --> 00:33:50.571
+on main.
+
+00:33:50.571 --> 00:33:57.171
+And so, we have completed Chapter 1, and so if we go back to the Issues 2, you'll notice
+
+00:33:57.171 --> 00:33:58.331
+it's empty.
+
+00:33:58.331 --> 00:34:08.211
+And so, because Libby had written this closes number 1, it should delete that number 1 issue
+
+00:34:08.211 --> 00:34:11.452
+now because we've merged in the pull request.
+
+00:34:11.452 --> 00:34:14.092
+Yes, hopefully I did that right.
+
+00:34:14.092 --> 00:34:20.251
+There are words that GitHub recognizes, closes is one of them, there's a whole list that
+
+00:34:20.251 --> 00:34:24.812
+you can go Google to do things inside of your issues, which is very cool.
+
+00:34:24.891 --> 00:34:29.891
+Okay, so I told you that I watched that happen in real time.
+
+00:34:29.891 --> 00:34:36.732
+On my screen, what happened was all of these popped up, like, boop, boop, boop, boop, boop,
+
+00:34:36.732 --> 00:34:41.372
+and then I had this little toast message down here that said, like, hey, Isabella did some
+
+00:34:41.372 --> 00:34:42.851
+stuff.
+
+00:34:42.851 --> 00:34:51.251
+Now, she deleted her remote branch, the branch that lives in the cloud on the GitHub website.
+
+00:34:51.251 --> 00:34:55.692
+She also deleted her local branch, but that didn't delete it for me.
+
+00:34:55.692 --> 00:34:59.851
+I still have Chapter 1 branch, and I'm still on it, so I can still see Chapter 1 up here,
+
+00:34:59.851 --> 00:35:02.412
+and I can see Chapter 1 down here.
+
+00:35:02.412 --> 00:35:06.811
+So I can go up here and just very quickly be like, sweet, it's done, I'm going to delete
+
+00:35:06.811 --> 00:35:09.052
+my local branch, I'm done.
+
+00:35:09.052 --> 00:35:12.412
+That puts me back on main, and everything is cleaned up.
+
+00:35:12.412 --> 00:35:17.251
+In a previous life, I would have been looking over here at my wall where I have a whole
+
+00:35:17.251 --> 00:35:20.772
+literal handwritten list of terminal commands for git.
+
+00:35:20.772 --> 00:35:21.772
+Don't judge me.
+
+00:35:21.772 --> 00:35:22.772
+I don't remember them.
+
+00:35:22.772 --> 00:35:23.932
+They fall out of my brain.
+
+00:35:23.932 --> 00:35:28.932
+But I would have gone over here and been like, cool, I probably need to prune deleted branches
+
+00:35:28.932 --> 00:35:29.932
+for my remote repo.
+
+00:35:29.932 --> 00:35:35.372
+I'm going to get fetch-p, and that's going to fetch for my main, it's going to prune
+
+00:35:35.372 --> 00:35:38.451
+any branches that I need to delete.
+
+00:35:38.451 --> 00:35:40.612
+But I don't have to do any of that.
+
+00:35:40.612 --> 00:35:42.692
+I'm so happy about that.
+
+00:35:42.692 --> 00:35:49.212
+What I'm going to do is I'm going to create a Chapter 2 branch, and I'm going to ask Isabella
+
+00:35:49.212 --> 00:35:52.531
+to collaborate on it with me.
+
+00:35:52.531 --> 00:35:58.171
+Because I would love to show you what happens with merge commits, again, if GitHub has ever
+
+00:35:58.171 --> 00:35:59.891
+made you cry.
+
+00:35:59.891 --> 00:36:00.891
+It's probably a merge commit.
+
+00:36:00.891 --> 00:36:04.531
+Do we have any questions in Discord, though, that we need to hop on?
+
+00:36:04.531 --> 00:36:08.291
+I have one question from the Zoom Q&A.
+
+00:36:08.291 --> 00:36:11.291
+This is from Derek, that it's great that you can do all of these Git activities within
+
+00:36:11.291 --> 00:36:14.492
+Positron rather than out on the GitHub UI.
+
+00:36:14.492 --> 00:36:21.932
+Are there benefits to doing them within Positron or the GitHub UI?
+
+00:36:21.932 --> 00:36:30.291
+I think that not leaving the UI or not leaving the IDE, to me, is pretty great.
+
+00:36:30.291 --> 00:36:37.371
+I will say that there are certain things that you still have to go to the GitHub UI to do.
+
+00:36:37.371 --> 00:36:42.972
+For example, if Isabella did want to bypass that, sort of like, hey, I'm the admin, so
+
+00:36:42.972 --> 00:36:49.531
+let me just bypass this authorization for this pull request without getting an approval,
+
+00:36:49.531 --> 00:36:50.531
+you would have to go to the UI.
+
+00:36:50.531 --> 00:36:54.011
+There are very few things that you can't do from the IDE.
+
+00:36:54.011 --> 00:36:57.171
+I would say just having it all in one place is really helpful, because when you're in
+
+00:36:57.171 --> 00:37:01.412
+the IDE and you're literally getting alerts that things are happening, it means you can't
+
+00:37:01.412 --> 00:37:05.572
+miss them and mess stuff up, and that's really, really important.
+
+00:37:05.572 --> 00:37:10.932
+Because if you've ever done something in GitHub or just a GitTrack project and you've
+
+00:37:10.932 --> 00:37:15.291
+messed it up, it's probably because you just didn't think to do the stuff like, oh, I need
+
+00:37:15.291 --> 00:37:20.612
+to pull before I make any changes, I need to see if anyone has done anything.
+
+00:37:20.612 --> 00:37:24.291
+So if you're collaborating in real time, having that real-time input, to me, is just invaluable.
+
+00:37:24.291 --> 00:37:25.891
+But yeah, it's up to you.
+
+00:37:25.891 --> 00:37:28.251
+If you really, really like the GitHub UI, stick with it.
+
+00:37:28.251 --> 00:37:32.091
+We're just trying to show you what's possible in case you've never seen it before.
+
+00:37:32.091 --> 00:37:33.091
+Cool.
+
+00:37:33.091 --> 00:37:34.091
+Okay.
+
+00:37:34.091 --> 00:37:35.091
+Here's what we'll do.
+
+00:37:35.612 --> 00:37:40.132
+I'm going to go through the process of just creating a branch again.
+
+00:37:40.132 --> 00:37:41.811
+There are so many ways to do this.
+
+00:37:41.811 --> 00:37:48.131
+Again, I could go to Command-Shift-P and do stuff.
+
+00:37:48.131 --> 00:37:50.891
+I could say Git Branch, and it's going to be like, cool, what do you want to do?
+
+00:37:50.891 --> 00:37:55.851
+I'm going to say, oh, I want to create a branch, and I want to name it Chapter 2.
+
+00:37:55.851 --> 00:37:56.851
+And there we go.
+
+00:37:56.851 --> 00:38:02.171
+I don't even have to click anything, so that's just another way to do it.
+
+00:38:02.252 --> 00:38:08.131
+I'm going to go create a Chapter 2, and instead of doing New File, again, I could go over
+
+00:38:08.131 --> 00:38:12.411
+here and say New File, right?
+
+00:38:12.411 --> 00:38:14.652
+It knows I want to create a Quarto document.
+
+00:38:14.652 --> 00:38:26.612
+I could say, let's save it and call it Chapter 2.qmd, and let's just say Chapter 2.
+
+00:38:33.131 --> 00:38:34.131
+All right.
+
+00:38:34.131 --> 00:38:40.011
+If you know how Quarto books work at all, you'll know that we're not actually adding
+
+00:38:40.011 --> 00:38:47.612
+it to the metadata, to the .yaml here, therefore it's not going to show up if we render it.
+
+00:38:47.612 --> 00:38:48.772
+This is just for illustration purposes.
+
+00:38:48.772 --> 00:38:52.532
+We're just going to create some files and collaborate on them in Git.
+
+00:38:52.532 --> 00:38:56.411
+So now it says, I know that this exists.
+
+00:38:56.411 --> 00:38:59.092
+I know that we're on the Chapter 2 branch.
+
+00:38:59.092 --> 00:39:00.092
+All is good.
+
+00:39:00.092 --> 00:39:07.372
+I'm going to go ahead and initialize Chapter 2, and I'm going to go ahead and commit it.
+
+00:39:07.372 --> 00:39:09.971
+It says, oh, I've got a stage.
+
+00:39:09.971 --> 00:39:15.212
+Do you know how to delete a branch if it's an older rogue branch?
+
+00:39:15.212 --> 00:39:16.212
+This is from Amiko.
+
+00:39:16.212 --> 00:39:21.332
+If you have an older branch, how can you get the UI to delete it?
+
+00:39:21.332 --> 00:39:22.571
+Yeah.
+
+00:39:22.571 --> 00:39:25.971
+If you have an older rogue branch, you mean like in here?
+
+00:39:25.971 --> 00:39:26.971
+Locally.
+
+00:39:26.971 --> 00:39:27.971
+Locally.
+
+00:39:28.731 --> 00:39:31.731
+I think it should still show up.
+
+00:39:31.731 --> 00:39:32.971
+Would you go to delete branch?
+
+00:39:32.971 --> 00:39:33.971
+So if you go here?
+
+00:39:33.971 --> 00:39:34.971
+Yeah.
+
+00:39:34.971 --> 00:39:39.332
+I think the three dots give you the delete branch option if you scroll down.
+
+00:39:39.332 --> 00:39:44.731
+So you can either do it here where you type in branch, and it's going to be smart enough
+
+00:39:44.731 --> 00:39:48.891
+to give you all the options of what you can do.
+
+00:39:48.891 --> 00:39:54.092
+If you want to delete a branch, it's going to find every Git tracked branch for your
+
+00:39:54.092 --> 00:39:58.731
+project and give you the option, and it'll give you a little checkboxes next to them.
+
+00:39:58.731 --> 00:40:03.451
+So if I said delete branch, it's going to give me right now options that I don't want.
+
+00:40:03.451 --> 00:40:07.652
+But if you had any tucked away in that project, they would be there.
+
+00:40:07.652 --> 00:40:10.171
+Hopefully that makes sense.
+
+00:40:10.171 --> 00:40:12.571
+OK.
+
+00:40:12.571 --> 00:40:14.092
+So I forgot to stage these.
+
+00:40:14.092 --> 00:40:15.092
+There we go.
+
+00:40:15.092 --> 00:40:16.812
+We're staged.
+
+00:40:16.812 --> 00:40:18.372
+Can we init Chapter 2?
+
+00:40:18.372 --> 00:40:19.372
+Yes.
+
+00:40:19.372 --> 00:40:20.372
+Can we publish our branch?
+
+00:40:20.372 --> 00:40:21.372
+Yes.
+
+00:40:22.372 --> 00:40:25.332
+I don't want to create a pull request, but I do want to create an issue.
+
+00:40:25.332 --> 00:40:31.092
+So I'm going to go over here and go to issues, and there's a little plus button.
+
+00:40:31.092 --> 00:40:32.571
+So I could do that.
+
+00:40:32.571 --> 00:40:38.571
+That opens up a markdown file for me to create an issue, or I could also go over to my actual
+
+00:40:38.571 --> 00:40:50.212
+files, and I could do something like to do initialize Chapter 2.
+
+00:40:50.212 --> 00:40:54.372
+And you'll notice that Positron is smart enough to recognize this word.
+
+00:40:54.372 --> 00:41:00.131
+And in the Positron settings, there is a whole list of words like issue, like to do, that
+
+00:41:00.131 --> 00:41:03.691
+it will recognize, and it'll give you this little light bulb.
+
+00:41:03.691 --> 00:41:06.131
+And it'll say, oh, it looks like you want to create a GitHub issue.
+
+00:41:06.131 --> 00:41:07.532
+And I'll be like, yes, I do.
+
+00:41:07.532 --> 00:41:09.612
+I want to call it initialize Chapter 2.
+
+00:41:09.612 --> 00:41:12.372
+And I press enter, and I'm done.
+
+00:41:12.372 --> 00:41:14.112
+Issue created.
+
+00:41:14.112 --> 00:41:20.631
+Now if I head over to my pane over here, I should have an issue waiting for me.
+
+00:41:20.631 --> 00:41:23.231
+I have to refresh.
+
+00:41:23.231 --> 00:41:24.712
+We'll see.
+
+00:41:24.712 --> 00:41:28.152
+Make a liar out of me, Positron.
+
+00:41:28.152 --> 00:41:29.671
+Maybe recent issues?
+
+00:41:29.671 --> 00:41:33.631
+There we go.
+
+00:41:33.631 --> 00:41:35.432
+We did it.
+
+00:41:35.432 --> 00:41:36.712
+You would think it would be under my issues.
+
+00:41:36.712 --> 00:41:37.712
+It's not assigned to anybody.
+
+00:41:37.712 --> 00:41:40.112
+So it's just one of these.
+
+00:41:40.112 --> 00:41:44.312
+If I go over and open it, I can modify it.
+
+00:41:44.312 --> 00:41:47.312
+I can do stuff to it.
+
+00:41:47.312 --> 00:41:52.471
+And what I wanted to do was I wanted to assign it to somebody.
+
+00:41:52.471 --> 00:41:57.992
+And I don't know if I have the same functionality here that I do when I'm creating my Markdown
+
+00:41:57.992 --> 00:41:58.992
+file.
+
+00:41:58.992 --> 00:42:01.191
+So I want to show you what that looks like as well.
+
+00:42:01.191 --> 00:42:06.031
+So if I go to issues, and I go to plus, and I say, I'm going to use this to create my
+
+00:42:07.031 --> 00:42:14.112
+Let's collab on chapter two.
+
+00:42:14.112 --> 00:42:16.031
+These are comments.
+
+00:42:16.031 --> 00:42:17.031
+They're not going to show up.
+
+00:42:17.031 --> 00:42:18.992
+It's just giving you instructions.
+
+00:42:18.992 --> 00:42:30.031
+If I want to assign it to somebody, how do you spell your, oh, it's I-V-E-L-A-S-Q.
+
+00:42:30.031 --> 00:42:31.031
+Okay.
+
+00:42:31.031 --> 00:42:33.072
+Oh, wait.
+
+00:42:33.112 --> 00:42:35.151
+I think it pops up if I actually use my at.
+
+00:42:35.151 --> 00:42:36.151
+There we go.
+
+00:42:36.151 --> 00:42:37.151
+I'm so smart.
+
+00:42:37.151 --> 00:42:38.151
+Use your at symbol, y'all.
+
+00:42:38.151 --> 00:42:39.151
+There we go.
+
+00:42:39.151 --> 00:42:45.151
+And then I'm not going to label it, give it to a milestone or a project.
+
+00:42:45.151 --> 00:42:48.151
+I'm just going to add things here.
+
+00:42:48.151 --> 00:42:49.151
+Great.
+
+00:42:49.151 --> 00:42:59.151
+I'm going to click this little check button up here.
+
+00:42:59.231 --> 00:43:03.231
+All I'm doing is creating a markdown file.
+
+00:43:03.231 --> 00:43:04.231
+There we go.
+
+00:43:04.231 --> 00:43:06.231
+Now the issue has been created.
+
+00:43:06.231 --> 00:43:09.231
+Again, it's always going to give you the option to look at it.
+
+00:43:09.231 --> 00:43:11.231
+Here's the assignee.
+
+00:43:11.231 --> 00:43:12.231
+Okay.
+
+00:43:12.231 --> 00:43:15.231
+So let's hop over to Isabella, I believe.
+
+00:43:15.231 --> 00:43:16.231
+Yes.
+
+00:43:16.231 --> 00:43:17.231
+That's right.
+
+00:43:17.231 --> 00:43:21.231
+While we're swapping, we've got two questions in the Discord.
+
+00:43:21.231 --> 00:43:22.231
+One is from Jeff.
+
+00:43:22.231 --> 00:43:28.231
+Is the functionality similar if you're working with an internal organization like Azure DevOps
+
+00:43:28.312 --> 00:43:30.312
+or a version of Git?
+
+00:43:30.312 --> 00:43:33.312
+I have never used these Azure DevOps.
+
+00:43:33.312 --> 00:43:37.312
+I assume it's the same, but I don't know if either of y'all have experience with this.
+
+00:43:37.312 --> 00:43:38.312
+I don't.
+
+00:43:38.312 --> 00:43:44.312
+I have only ever used straight up GitHub, and I've also never used GitLab or SVN.
+
+00:43:44.312 --> 00:43:49.312
+So this is where I would hope that there are some people in the chat who have worked with
+
+00:43:49.312 --> 00:43:50.312
+Azure DevOps.
+
+00:43:50.312 --> 00:43:56.312
+If you have, please let us know how it goes and come back to the chat and help answer
+
+00:43:56.312 --> 00:43:57.312
+that question.
+
+00:43:57.392 --> 00:43:58.392
+I'm sorry.
+
+00:43:58.392 --> 00:43:59.392
+I don't have an answer for you.
+
+00:43:59.392 --> 00:44:04.392
+I think that a lot of this is probably going to be similar.
+
+00:44:04.392 --> 00:44:07.392
+And kind of along the same line.
+
+00:44:07.392 --> 00:44:08.392
+Yep.
+
+00:44:08.392 --> 00:44:09.392
+That's from Jeff.
+
+00:44:09.392 --> 00:44:14.392
+When people are interested, Mike raised the question, what is the best way to get orientation
+
+00:44:14.392 --> 00:44:16.392
+into the world of Git and GitHub?
+
+00:44:16.392 --> 00:44:19.392
+We've got happy Git with R.
+
+00:44:19.392 --> 00:44:22.392
+We have a few software carpentries ideas.
+
+00:44:22.392 --> 00:44:26.392
+But do you have any other suggestions about how to learn about Git?
+
+00:44:26.471 --> 00:44:29.471
+My biggest suggestion is to use it.
+
+00:44:29.471 --> 00:44:35.471
+And so what I would do is get with a person who is in the community, who's at work with
+
+00:44:35.471 --> 00:44:42.471
+you, who can start a Git project with you, and then do something completely low stakes.
+
+00:44:42.471 --> 00:44:46.471
+You could literally just open text files and text back and forth to each other.
+
+00:44:46.471 --> 00:44:48.471
+This is what I do with students to teach them Git.
+
+00:44:48.471 --> 00:44:54.471
+So instead of opening code files, maybe they're .R files, but just open a .txt file, add a
+
+00:44:54.552 --> 00:44:58.552
+line that's a message to somebody like, hey, what's going on?
+
+00:44:58.552 --> 00:45:00.552
+Commit that.
+
+00:45:00.552 --> 00:45:01.552
+They can get it.
+
+00:45:01.552 --> 00:45:02.552
+They can modify it.
+
+00:45:02.552 --> 00:45:05.552
+They can add another line to add another little text.
+
+00:45:05.552 --> 00:45:07.552
+And they're like, it's going great.
+
+00:45:07.552 --> 00:45:08.552
+How about you?
+
+00:45:08.552 --> 00:45:09.552
+Right?
+
+00:45:09.552 --> 00:45:10.552
+And send that back.
+
+00:45:10.552 --> 00:45:15.552
+Something low stakes like that that's not going to make you cry is a great idea to get
+
+00:45:15.552 --> 00:45:16.552
+used to Git.
+
+00:45:16.552 --> 00:45:18.552
+And then working with somebody who's used to it.
+
+00:45:18.552 --> 00:45:22.552
+Honestly, I think that using a UI like this where you can point and click stuff and you
+
+00:45:22.632 --> 00:45:29.632
+are 100% relying on the terminal to do stuff that is more complex is really, really helpful.
+
+00:45:29.632 --> 00:45:33.632
+And then I would also, if you happen to be somebody who's at an organization where you're
+
+00:45:33.632 --> 00:45:38.632
+working with mono repos that contain multiple projects inside of a repo, I would Google
+
+00:45:38.632 --> 00:45:44.632
+GitHub, well, WorkTrees inside of VS Code or inside of Positron.
+
+00:45:44.632 --> 00:45:46.632
+WorkTrees, I think, is all one word.
+
+00:45:46.632 --> 00:45:47.632
+We're not going to show that today.
+
+00:45:47.632 --> 00:45:48.632
+We have 10 minutes left.
+
+00:45:48.632 --> 00:45:50.632
+I don't know if we're going to get done.
+
+00:45:50.711 --> 00:45:52.711
+But let's go ahead and hop over to Isabella.
+
+00:45:52.711 --> 00:46:00.711
+And what Isabella is going to do is pull my changes and respond to my issue.
+
+00:46:00.711 --> 00:46:02.711
+I can see, indeed, there are two issues.
+
+00:46:02.711 --> 00:46:04.711
+And just on that note, I totally agree.
+
+00:46:04.711 --> 00:46:10.711
+I learned how to use Git and GitHub by collaborating on projects that didn't need Git and GitHub
+
+00:46:10.711 --> 00:46:12.711
+just to build that muscle.
+
+00:46:12.711 --> 00:46:17.711
+And when I finally got a job that did need it, you know, it was old hat.
+
+00:46:17.791 --> 00:46:18.791
+Yeah.
+
+00:46:18.791 --> 00:46:25.791
+So I go back to the GitHub icon and I can see, indeed, I have two issues.
+
+00:46:25.791 --> 00:46:29.791
+Going back to my files, you'll notice that I am on the main branch.
+
+00:46:29.791 --> 00:46:31.791
+But right now, I don't see chapter one.
+
+00:46:31.791 --> 00:46:37.791
+And the reason is my local version of the repository and the one that's remote, you
+
+00:46:37.791 --> 00:46:41.791
+know, in GitHub, are not synchronized.
+
+00:46:41.791 --> 00:46:45.791
+And so I want to make sure that my main branch is always synchronized.
+
+00:46:45.872 --> 00:46:48.872
+So to do that, I can go to source control.
+
+00:46:48.872 --> 00:46:54.872
+And if you click these three, sorry, I had it open.
+
+00:46:54.872 --> 00:46:59.872
+This should be what it looks like by default, your source control window.
+
+00:46:59.872 --> 00:47:04.872
+Clicking these three buttons by source control lets you open up repositories.
+
+00:47:04.872 --> 00:47:08.872
+And then I can see this is my DSLabCordoBook repository.
+
+00:47:08.872 --> 00:47:14.872
+And then you'll notice like the circle arrow icon lets me know that there are three
+
+00:47:14.952 --> 00:47:21.952
+commits that from the origin main, the GitHub version of this project, that I can pull down.
+
+00:47:21.952 --> 00:47:23.952
+It's down at the bottom left, too.
+
+00:47:23.952 --> 00:47:25.952
+So it's trying to remind you at the bottom as well.
+
+00:47:25.952 --> 00:47:29.952
+It's like main little recycled symbol and three.
+
+00:47:29.952 --> 00:47:30.952
+Yeah.
+
+00:47:30.952 --> 00:47:31.952
+It's like, there are changes.
+
+00:47:31.952 --> 00:47:32.952
+Please do something.
+
+00:47:32.952 --> 00:47:35.952
+And so clicking that, it'll let me know.
+
+00:47:35.952 --> 00:47:37.952
+It'll pull from origin main.
+
+00:47:37.952 --> 00:47:39.952
+Clicking OK.
+
+00:47:39.952 --> 00:47:41.952
+Going back to my files.
+
+00:47:42.031 --> 00:47:47.031
+Now I can see, indeed, I have chapter one where I didn't before.
+
+00:47:47.031 --> 00:47:51.031
+Going back to source control, I can click here.
+
+00:47:51.031 --> 00:47:56.031
+And this is another option for branches, which allows me to see all the branches.
+
+00:47:56.031 --> 00:47:57.031
+Oh, did I?
+
+00:47:57.031 --> 00:48:01.031
+Oh, I think I need to synchronize first, right, Libby?
+
+00:48:01.031 --> 00:48:02.031
+I think so.
+
+00:48:02.031 --> 00:48:03.031
+You'll have to pull down.
+
+00:48:03.031 --> 00:48:09.031
+So this like pulls down not just the changes from main, but everything else that's going on,
+
+00:48:09.031 --> 00:48:11.031
+you know, in the internet.
+
+00:48:11.112 --> 00:48:17.112
+So hopefully now if I click this button, I can see that there is this chapter
+
+00:48:17.112 --> 00:48:21.112
+two branch that I can check out and work from.
+
+00:48:21.112 --> 00:48:26.112
+Clicking this, now I am in the chapter two branch, indeed.
+
+00:48:26.112 --> 00:48:29.112
+And opening it up, now there's this chapter two.
+
+00:48:29.112 --> 00:48:31.112
+And let's say we're collaborating.
+
+00:48:31.112 --> 00:48:34.112
+I want to continue adding to this book.
+
+00:48:34.112 --> 00:48:37.112
+I'm going to say it's going to be great.
+
+00:48:37.112 --> 00:48:39.112
+I'm going to save.
+
+00:48:39.192 --> 00:48:42.192
+I'm going to stage.
+
+00:48:42.192 --> 00:48:45.192
+I'm going to write a message.
+
+00:48:45.192 --> 00:48:47.192
+Commit.
+
+00:48:47.192 --> 00:48:48.192
+And changes.
+
+00:48:48.192 --> 00:48:53.192
+And so now this is pushing those changes to the chapter two branch.
+
+00:48:53.192 --> 00:48:54.192
+All right.
+
+00:48:54.192 --> 00:49:00.192
+So we mentioned synchronizing, not just on main, across all your branches.
+
+00:49:00.192 --> 00:49:02.192
+What happens if you don't do it?
+
+00:49:02.192 --> 00:49:04.192
+Back to Libby.
+
+00:49:04.271 --> 00:49:09.271
+In the six minutes we have left, I would really love to just simulate the most
+
+00:49:09.271 --> 00:49:13.271
+true version of my experience of Git, which is me messing stuff up.
+
+00:49:13.271 --> 00:49:18.271
+And how you fix it in the Positron ecosystem here.
+
+00:49:18.271 --> 00:49:19.271
+Okay.
+
+00:49:19.271 --> 00:49:21.271
+So I created chapter two.
+
+00:49:21.271 --> 00:49:22.271
+I pushed that.
+
+00:49:22.271 --> 00:49:24.271
+Isabella did the right thing.
+
+00:49:24.271 --> 00:49:25.271
+And she pulled it down.
+
+00:49:25.271 --> 00:49:26.271
+And she made some changes.
+
+00:49:26.271 --> 00:49:30.271
+And she pushed those changes back to the chapter two branch.
+
+00:49:30.271 --> 00:49:33.271
+What if I don't do that?
+
+00:49:33.351 --> 00:49:36.351
+What if I don't pull my changes down?
+
+00:49:36.351 --> 00:49:37.351
+Right?
+
+00:49:37.351 --> 00:49:40.351
+What if I don't pull, which is right here?
+
+00:49:40.351 --> 00:49:44.351
+And I don't fetch anything from my remotes?
+
+00:49:44.351 --> 00:49:46.351
+Let's just go change this.
+
+00:49:46.351 --> 00:49:48.351
+Let's just be reckless.
+
+00:49:48.351 --> 00:49:52.351
+I'm going to go over here and be like, ah-ha-ha.
+
+00:49:52.351 --> 00:49:54.351
+I am so silly.
+
+00:49:54.351 --> 00:49:58.351
+Not going to pull or anything.
+
+00:49:58.351 --> 00:50:02.351
+And now I'm going to save this.
+
+00:50:02.432 --> 00:50:04.432
+Cool.
+
+00:50:04.432 --> 00:50:06.432
+I'll stage it.
+
+00:50:06.432 --> 00:50:11.432
+And I'll say also continuing chapter two.
+
+00:50:11.432 --> 00:50:13.432
+But the wrong way.
+
+00:50:13.432 --> 00:50:15.432
+Bam.
+
+00:50:15.432 --> 00:50:17.432
+I committed it.
+
+00:50:17.432 --> 00:50:18.432
+I'm on chapter two.
+
+00:50:18.432 --> 00:50:20.432
+I'm like double checking everything.
+
+00:50:20.432 --> 00:50:22.432
+I'm like, yes, I'm doing everything I should.
+
+00:50:22.432 --> 00:50:24.432
+And it's like, hey, do you want to push and pull to chapter two?
+
+00:50:24.432 --> 00:50:26.432
+Yeah, sure, let's do that.
+
+00:50:26.432 --> 00:50:30.432
+And it says, um, I don't know if you want to do that.
+
+00:50:30.512 --> 00:50:32.512
+Show command output.
+
+00:50:32.512 --> 00:50:34.512
+Oh, no.
+
+00:50:34.512 --> 00:50:36.512
+Oh, no.
+
+00:50:36.512 --> 00:50:38.512
+This is where I start crying.
+
+00:50:38.512 --> 00:50:40.512
+I'm like, hello, fatal.
+
+00:50:40.512 --> 00:50:42.512
+The word fatal?
+
+00:50:42.512 --> 00:50:44.512
+Are you kidding me?
+
+00:50:44.512 --> 00:50:46.512
+It's terrifying.
+
+00:50:46.512 --> 00:50:48.512
+Okay.
+
+00:50:48.512 --> 00:50:50.512
+Clearly I have made some mistakes here.
+
+00:50:50.512 --> 00:50:52.512
+So what can we do?
+
+00:50:52.512 --> 00:50:54.512
+First of all, we can undo our last commit.
+
+00:50:54.512 --> 00:50:56.512
+So let's do that.
+
+00:50:56.512 --> 00:50:58.512
+It's always an option.
+
+00:50:58.591 --> 00:51:00.591
+Okay.
+
+00:51:00.591 --> 00:51:02.591
+Cool.
+
+00:51:02.591 --> 00:51:04.591
+We have made at least some recompense here.
+
+00:51:04.591 --> 00:51:06.591
+Now we need to go do what we should have done in the first place.
+
+00:51:06.591 --> 00:51:08.591
+Which is pull.
+
+00:51:08.591 --> 00:51:10.591
+Because it's telling me, hey, you have one thing to pull down here.
+
+00:51:10.591 --> 00:51:12.591
+And I didn't do it.
+
+00:51:12.591 --> 00:51:14.591
+This little button is like, hey, do you want to push and pull?
+
+00:51:14.591 --> 00:51:16.591
+Oh, no.
+
+00:51:16.591 --> 00:51:18.591
+You can't do that.
+
+00:51:18.591 --> 00:51:20.591
+You need to stash your changes before you do anything.
+
+00:51:20.591 --> 00:51:22.591
+Because you have this thing sitting here.
+
+00:51:22.591 --> 00:51:24.591
+And it's staged.
+
+00:51:24.591 --> 00:51:26.591
+Okay.
+
+00:51:26.672 --> 00:51:28.672
+Cool.
+
+00:51:28.672 --> 00:51:30.672
+Got it.
+
+00:51:30.672 --> 00:51:32.672
+We'll do that.
+
+00:51:32.672 --> 00:51:34.672
+I'm going to go stash my stage changes.
+
+00:51:34.672 --> 00:51:36.672
+This is chapter 2 changes.
+
+00:51:36.672 --> 00:51:38.672
+We'll name that stash.
+
+00:51:38.672 --> 00:51:40.672
+Okay.
+
+00:51:40.672 --> 00:51:42.672
+Great, great, great.
+
+00:51:42.672 --> 00:51:44.672
+Now, if I was smart, I could look at this graph down here.
+
+00:51:44.672 --> 00:51:46.672
+And I could see that Isabella had made changes already.
+
+00:51:46.672 --> 00:51:48.672
+Now that I have stashed the changes,
+
+00:51:48.672 --> 00:51:50.672
+what I can do is now I can go pull.
+
+00:51:50.672 --> 00:51:52.672
+And I can sync.
+
+00:51:52.672 --> 00:51:54.672
+So I synced together.
+
+00:51:54.752 --> 00:51:56.752
+So I synced to get my branches in order.
+
+00:51:56.752 --> 00:51:58.752
+I'm going to double check here.
+
+00:51:58.752 --> 00:52:00.752
+And pull down in my graph.
+
+00:52:00.752 --> 00:52:02.752
+So I'm pulling these changes into my graph.
+
+00:52:02.752 --> 00:52:04.752
+Here's my init chapter 2 here.
+
+00:52:04.752 --> 00:52:06.752
+So if I go over to chapter 2,
+
+00:52:06.752 --> 00:52:08.752
+now I see the actual version that Isabella pushed up.
+
+00:52:08.752 --> 00:52:10.752
+This is great.
+
+00:52:10.752 --> 00:52:12.752
+Okay.
+
+00:52:12.752 --> 00:52:14.752
+I need to go pop my stash changes.
+
+00:52:14.752 --> 00:52:16.752
+Right?
+
+00:52:16.752 --> 00:52:18.752
+And apply them.
+
+00:52:18.752 --> 00:52:20.752
+Pop stash.
+
+00:52:20.752 --> 00:52:22.752
+This is the one I want to pop.
+
+00:52:22.831 --> 00:52:24.831
+And now it tells me,
+
+00:52:24.831 --> 00:52:26.831
+wait, there are merge conflicts.
+
+00:52:26.831 --> 00:52:28.831
+I'm going to go ahead and just click
+
+00:52:28.831 --> 00:52:30.831
+show changes here.
+
+00:52:30.831 --> 00:52:32.831
+And it's going to say,
+
+00:52:32.831 --> 00:52:34.831
+yeah, there are some add-ins
+
+00:52:34.831 --> 00:52:36.831
+and some additions and there are some stash changes
+
+00:52:36.831 --> 00:52:38.831
+incoming.
+
+00:52:38.831 --> 00:52:40.831
+I want to resolve this in the merge editor.
+
+00:52:40.831 --> 00:52:42.831
+And this is where this is so much better than RStudio.
+
+00:52:42.831 --> 00:52:44.831
+Okay.
+
+00:52:44.831 --> 00:52:46.831
+I have my stash changes.
+
+00:52:46.831 --> 00:52:48.831
+I have the way that it looks in the repo.
+
+00:52:48.831 --> 00:52:50.831
+And I have the result.
+
+00:52:50.912 --> 00:52:52.912
+These are buttons that you can use to
+
+00:52:52.912 --> 00:52:54.912
+accept or decline a change.
+
+00:52:54.912 --> 00:52:56.912
+I want to keep them both.
+
+00:52:56.912 --> 00:52:58.912
+Yep, all that looks good.
+
+00:52:58.912 --> 00:53:00.912
+I'm going to complete my merge.
+
+00:53:00.912 --> 00:53:02.912
+I could just tell it to do other stuff,
+
+00:53:02.912 --> 00:53:04.912
+but I'm going to complete it.
+
+00:53:04.912 --> 00:53:06.912
+Then it's going to say, great, I have resolved this.
+
+00:53:06.912 --> 00:53:08.912
+Both of those changes are accounted for.
+
+00:53:08.912 --> 00:53:10.912
+I can save this.
+
+00:53:10.912 --> 00:53:12.912
+And now I can go back over here
+
+00:53:12.912 --> 00:53:14.912
+and I can say, also continuing chapter 2,
+
+00:53:14.912 --> 00:53:16.912
+get rid of the wrong way.
+
+00:53:16.912 --> 00:53:18.912
+It's staged.
+
+00:53:18.992 --> 00:53:20.992
+And it doesn't yell at me.
+
+00:53:20.992 --> 00:53:22.992
+And in my graph,
+
+00:53:22.992 --> 00:53:24.992
+I can see Isabella continued chapter 2.
+
+00:53:24.992 --> 00:53:26.992
+I also continued chapter 2.
+
+00:53:26.992 --> 00:53:28.992
+And we have fixed everything.
+
+00:53:28.992 --> 00:53:30.992
+I can go back to my issue.
+
+00:53:30.992 --> 00:53:32.992
+I can comment on it.
+
+00:53:32.992 --> 00:53:34.992
+I can say, hey, I fixed this.
+
+00:53:34.992 --> 00:53:36.992
+We're good.
+
+00:53:40.992 --> 00:53:42.992
+All right.
+
+00:53:42.992 --> 00:53:44.992
+I think that this is probably
+
+00:53:44.992 --> 00:53:46.992
+the most exciting thing for me.
+
+00:53:47.071 --> 00:53:49.071
+I think this was really wonderful.
+
+00:53:49.071 --> 00:53:51.071
+We have run out of time
+
+00:53:51.071 --> 00:53:53.071
+to show you anything more,
+
+00:53:53.071 --> 00:53:55.071
+but I think that that
+
+00:53:55.071 --> 00:53:57.071
+gives you a really good idea
+
+00:53:57.071 --> 00:53:59.071
+of what we were trying to show,
+
+00:53:59.071 --> 00:54:01.071
+which is there is so much
+
+00:54:01.071 --> 00:54:03.071
+to do inside of the IDE
+
+00:54:03.071 --> 00:54:05.071
+without having to leave.
+
+00:54:05.071 --> 00:54:07.071
+There are so many options.
+
+00:54:07.071 --> 00:54:09.071
+If you haven't explored the GitHub integration
+
+00:54:09.071 --> 00:54:11.071
+into the BS code slash positron ecosystem,
+
+00:54:11.071 --> 00:54:13.071
+I highly recommend you go check it out.
+
+00:54:13.071 --> 00:54:15.071
+Did everybody have a good time?
+
+00:54:15.152 --> 00:54:17.152
+Oh my gosh, Ryan just shared
+
+00:54:17.152 --> 00:54:19.152
+the most wacky
+
+00:54:19.152 --> 00:54:21.152
+GitHub graph
+
+00:54:21.152 --> 00:54:23.152
+that is scaring me.
+
+00:54:23.152 --> 00:54:25.152
+Yep, yep. Wonderful.
+
+00:54:25.152 --> 00:54:27.152
+I'm so glad everybody had fun.

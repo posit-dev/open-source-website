@@ -84,8 +84,8 @@ external:  # updated automatically, do not edit
   duration: 2479
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:31.073808+00:00'
-  like_count: 108
+  last_updated: '2026-03-20T11:32:57.734995+00:00'
+  like_count: 110
   people:
   - Hadley Wickham
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -101,7 +101,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BQk2-3inViM/maxresdefault.jpg
   title: Hadley Wickham - R in Production
   url: https://www.youtube.com/watch?v=BQk2-3inViM
-  view_count: 4194
+  view_count: 4218
 ---
 image: thumbnail.jpg
 

@@ -58,7 +58,7 @@ resources: []
 software:
 - Great Tables
 - plotnine
-- positron
+- Positron
 tags: []
 title: 'Exploring Web APIs | PydyTuesday Uncut #1'
 
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   duration: 6079
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.130982+00:00'
+  last_updated: '2026-03-20T11:32:47.293422+00:00'
   like_count: 42
   people:
   - Jeroen Janssens
@@ -128,12 +128,12 @@ external:  # updated automatically, do not edit
   software:
   - Great Tables
   - plotnine
-  - positron
+  - Positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/u9DvqN47l40/maxresdefault.jpg
   title: 'Exploring Web APIs | PydyTuesday Uncut #1'
   url: https://www.youtube.com/watch?v=u9DvqN47l40
-  view_count: 1680
+  view_count: 1683
 ---
 image: thumbnail.jpg
 

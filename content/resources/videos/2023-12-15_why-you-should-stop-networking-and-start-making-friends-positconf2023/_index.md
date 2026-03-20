@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 308
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.481262+00:00'
+  last_updated: '2026-03-20T11:32:50.371930+00:00'
   like_count: 11
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/V3XdLVAwmX0/maxresdefault.jpg
   title: Why You Should Stop Networking and Start Making Friends - posit::conf(2023)
   url: https://www.youtube.com/watch?v=V3XdLVAwmX0
-  view_count: 657
+  view_count: 659
 ---
 image: thumbnail.jpg
 

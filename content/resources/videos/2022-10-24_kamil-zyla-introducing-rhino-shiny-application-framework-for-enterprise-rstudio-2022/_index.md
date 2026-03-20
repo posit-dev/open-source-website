@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 797
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.835753+00:00'
+  last_updated: '2026-03-20T11:32:53.122518+00:00'
   like_count: 21
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/S1lwLI6BoW8/maxresdefault.jpg
   title: 'Kamil Zyla | Introducing Rhino: Shiny application framework for enterprise | RStudio (2022)'
   url: https://www.youtube.com/watch?v=S1lwLI6BoW8
-  view_count: 1091
+  view_count: 1094
 ---
 image: thumbnail.jpg
 

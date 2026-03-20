@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   duration: 4045
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:20.891732+00:00'
+  last_updated: '2026-03-20T11:32:46.406119+00:00'
   like_count: 10
   people:
   - Michael Chow
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Ss-xCQlp2jM/maxresdefault.jpg
   title: 'Michael Chow: From psychology and Python to constrained creativity'
   url: https://www.youtube.com/watch?v=Ss-xCQlp2jM
-  view_count: 233
+  view_count: 243
 ---
 image: thumbnail.jpg
 

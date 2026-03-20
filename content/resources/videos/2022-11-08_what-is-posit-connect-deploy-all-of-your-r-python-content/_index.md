@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 72
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.282693+00:00'
+  last_updated: '2026-03-20T11:32:52.392378+00:00'
   like_count: 45
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YdRa0ef9TGQ/maxresdefault.jpg
   title: What is Posit Connect | Deploy All of Your R & Python Content
   url: https://www.youtube.com/watch?v=YdRa0ef9TGQ
-  view_count: 5582
+  view_count: 5596
 ---
 image: thumbnail.jpg
 

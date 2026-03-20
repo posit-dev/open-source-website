@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1258
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:28.937793+00:00'
+  last_updated: '2026-03-20T11:32:55.538262+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yBDH2Xpycx4/maxresdefault.jpg
   title: Marcus Adams | Putting a GMP Shiny App into Production | RStudio
   url: https://www.youtube.com/watch?v=yBDH2Xpycx4
-  view_count: 292
+  view_count: 294
 ---
 image: thumbnail.jpg
 

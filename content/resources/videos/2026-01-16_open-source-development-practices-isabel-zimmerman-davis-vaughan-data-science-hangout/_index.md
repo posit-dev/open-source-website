@@ -9,7 +9,7 @@ resource_type: video
 resources: []
 software:
 - air
-- positron
+- Positron
 - Quarto
 - tidyverse
 - vroom
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 3268
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:20.891231+00:00'
+  last_updated: '2026-03-20T11:32:46.095320+00:00'
   like_count: 9
   people:
   - Davis Vaughan
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - air
-  - positron
+  - Positron
   - Quarto
   - tidyverse
   - vroom
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WgIxs9flpck/maxresdefault.jpg
   title: Open source development practices | Isabel Zimmerman & Davis Vaughan | Data Science Hangout
   url: https://www.youtube.com/watch?v=WgIxs9flpck
-  view_count: 454
+  view_count: 459
 ---
 image: thumbnail.jpg
 

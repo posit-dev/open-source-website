@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   duration: 1203
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.563079+00:00'
+  last_updated: '2026-03-20T11:32:46.670057+00:00'
   like_count: 3
   playlist: ''
   tags:
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/I6OtAXDcoMo/maxresdefault.jpg
   title: Automating for Consistency (Kristin Mussar, Pfizer) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=I6OtAXDcoMo
-  view_count: 95
+  view_count: 98
 ---
 image: thumbnail.jpg
 

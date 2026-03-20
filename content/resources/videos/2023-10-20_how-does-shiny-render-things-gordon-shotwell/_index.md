@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1356
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:25.239179+00:00'
+  last_updated: '2026-03-20T11:32:51.523745+00:00'
   like_count: 41
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jvV4y2xogf8/maxresdefault.jpg
   title: How does Shiny render things?  | Gordon Shotwell
   url: https://www.youtube.com/watch?v=jvV4y2xogf8
-  view_count: 1894
+  view_count: 1896
 ---
 image: thumbnail.jpg
 

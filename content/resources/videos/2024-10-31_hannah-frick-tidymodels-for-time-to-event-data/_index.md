@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   duration: 1160
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126502+00:00'
+  last_updated: '2026-03-20T11:32:48.810954+00:00'
   like_count: 28
   people:
   - Hannah Frick
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NhUGixMJk7U/maxresdefault.jpg
   title: Hannah Frick - tidymodels for time-to-event data
   url: https://www.youtube.com/watch?v=NhUGixMJk7U
-  view_count: 1092
+  view_count: 1100
 ---
 image: thumbnail.jpg
 

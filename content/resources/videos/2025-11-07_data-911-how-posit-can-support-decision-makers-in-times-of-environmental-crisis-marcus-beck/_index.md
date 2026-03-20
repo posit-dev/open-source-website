@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   duration: 1219
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.270098+00:00'
+  last_updated: '2026-03-20T11:32:46.406485+00:00'
   like_count: 1
   playlist: ''
   software:
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Cnk3770AzuA/maxresdefault.jpg
   title: 'Data 911: how Posit can support decision-makers in times of environmental crisis (Marcus Beck)'
   url: https://www.youtube.com/watch?v=Cnk3770AzuA
-  view_count: 64
+  view_count: 67
 ---
 image: thumbnail.jpg
 

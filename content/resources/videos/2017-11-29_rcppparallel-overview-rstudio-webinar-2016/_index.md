@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 2921
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.959428+00:00'
+  last_updated: '2026-03-20T11:32:57.020448+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/C4nUnublO-U/hqdefault.jpg
   title: RcppParallel Overview | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=C4nUnublO-U
-  view_count: 607
+  view_count: 608
 ---
 image: thumbnail.jpg
 

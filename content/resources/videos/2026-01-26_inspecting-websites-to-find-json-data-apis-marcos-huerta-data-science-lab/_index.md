@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 3286
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:20.891142+00:00'
+  last_updated: '2026-03-20T11:32:46.095295+00:00'
   like_count: 41
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LDHGENv1NP4/maxresdefault.jpg
   title: Inspecting websites to find JSON data APIs | Marcos Huerta | Data Science Lab
   url: https://www.youtube.com/watch?v=LDHGENv1NP4
-  view_count: 889
+  view_count: 927
 ---
 image: thumbnail.jpg
 

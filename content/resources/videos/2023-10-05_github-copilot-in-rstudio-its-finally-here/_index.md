@@ -21,8 +21,8 @@ external:  # updated automatically, do not edit
   duration: 3251
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:31.372176+00:00'
-  like_count: 287
+  last_updated: '2026-03-20T11:32:58.134651+00:00'
+  like_count: 288
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - rstudio
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yVq-b5xHmac/maxresdefault.jpg
   title: GitHub Copilot in Rstudio, it's finally here!
   url: https://www.youtube.com/watch?v=yVq-b5xHmac
-  view_count: 16156
+  view_count: 16221
 ---
 image: thumbnail.jpg
 

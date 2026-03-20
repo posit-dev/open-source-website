@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - rstudio
 - data science
@@ -60,11 +60,11 @@ external:  # updated automatically, do not edit
   duration: 159
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.131062+00:00'
+  last_updated: '2026-03-20T11:32:47.293452+00:00'
   like_count: 34
   playlist: ''
   software:
-  - positron
+  - Positron
   tags:
   - rstudio
   - data science
@@ -110,7 +110,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QkUC-Ok3sMA/maxresdefault.jpg
   title: Let's Import Free, High-Quality Datasets into your Python IDE (using Positron and PydyTuesday)
   url: https://www.youtube.com/watch?v=QkUC-Ok3sMA
-  view_count: 1299
+  view_count: 1310
 ---
 image: thumbnail.jpg
 

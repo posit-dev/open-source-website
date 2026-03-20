@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 1279
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:25.546045+00:00'
+  last_updated: '2026-03-20T11:32:51.523962+00:00'
   like_count: 31
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1uxAHbLh_rM/maxresdefault.jpg
   title: How to standardize access & ensure consistent data in data products with FastAPI & Posit Team
   url: https://www.youtube.com/watch?v=1uxAHbLh_rM
-  view_count: 1574
+  view_count: 1582
 ---
 image: thumbnail.jpg
 

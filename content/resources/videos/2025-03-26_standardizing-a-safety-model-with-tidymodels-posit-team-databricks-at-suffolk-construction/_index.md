@@ -95,7 +95,7 @@ external:  # updated automatically, do not edit
   duration: 1764
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.131399+00:00'
+  last_updated: '2026-03-20T11:32:47.650055+00:00'
   like_count: 29
   playlist: ''
   software:
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yavHEWpgrCQ/maxresdefault.jpg
   title: Standardizing a safety model with tidymodels, Posit Team & Databricks at Suffolk Construction
   url: https://www.youtube.com/watch?v=yavHEWpgrCQ
-  view_count: 1193
+  view_count: 1195
 ---
 image: thumbnail.jpg
 

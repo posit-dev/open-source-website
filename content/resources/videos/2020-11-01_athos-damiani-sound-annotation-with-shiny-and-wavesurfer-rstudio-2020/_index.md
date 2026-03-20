@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 301
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.308126+00:00'
+  last_updated: '2026-03-20T11:32:56.381392+00:00'
   like_count: 22
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fhf9NdacAo4/hqdefault.jpg
   title: Athos Damiani | Sound annotation with Shiny and wavesurfer | RStudio (2020)
   url: https://www.youtube.com/watch?v=fhf9NdacAo4
-  view_count: 739
+  view_count: 741
 ---
 image: thumbnail.jpg
 

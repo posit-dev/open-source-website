@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1207
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.307590+00:00'
+  last_updated: '2026-03-20T11:32:56.052683+00:00'
   like_count: 111
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/oOG-aXP_ICI/hqdefault.jpg
   title: Ryan Timpe | Learning R with humorous side projects | RStudio (2020)
   url: https://www.youtube.com/watch?v=oOG-aXP_ICI
-  view_count: 2381
+  view_count: 2384
 ---
 image: thumbnail.jpg
 

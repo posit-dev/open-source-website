@@ -44,14 +44,14 @@ external:  # updated automatically, do not edit
   duration: 1986
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:23.695670+00:00'
+  last_updated: '2026-03-20T11:32:49.221515+00:00'
   like_count: 20
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/-6lqzW1iV7E/maxresdefault.jpg
   title: Workflow Demo Live Q&A - April 24th
   url: https://www.youtube.com/watch?v=-6lqzW1iV7E
-  view_count: 596
+  view_count: 598
 ---
 image: thumbnail.jpg
 

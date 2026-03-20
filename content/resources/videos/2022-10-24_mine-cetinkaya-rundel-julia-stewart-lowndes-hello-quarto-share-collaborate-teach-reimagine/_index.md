@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   duration: 3941
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.835953+00:00'
+  last_updated: '2026-03-20T11:32:53.122843+00:00'
   like_count: 111
   people:
   - Mine Çetinkaya-Rundel
@@ -133,7 +133,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/p7Hxu4coDl8/maxresdefault.jpg
   title: 'Mine Çetinkaya-Rundel & Julia Stewart Lowndes | Hello Quarto: Share, Collaborate, Teach, Reimagine'
   url: https://www.youtube.com/watch?v=p7Hxu4coDl8
-  view_count: 4976
+  view_count: 4980
 ---
 image: thumbnail.jpg
 

@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 1095
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.562807+00:00'
+  last_updated: '2026-03-20T11:32:46.669906+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HJs2HVltpcs/maxresdefault.jpg
   title: Modular, layout-as-code approach for customizable Shiny dashboards (Kim Schouten, De NZa)
   url: https://www.youtube.com/watch?v=HJs2HVltpcs
-  view_count: 111
+  view_count: 132
 ---
 image: thumbnail.jpg
 

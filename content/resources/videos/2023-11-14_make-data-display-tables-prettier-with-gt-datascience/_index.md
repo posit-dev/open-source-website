@@ -1,6 +1,6 @@
 ---
 date: '2023-11-14'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -15,11 +15,11 @@ external:  # updated automatically, do not edit
   comment_count: 0
   date: '2023-11-14T14:33:44Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 61
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:25.239041+00:00'
+  last_updated: '2026-03-20T11:32:51.123212+00:00'
   like_count: 50
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LcEZUyyJtoI/maxresdefault.jpg
   title: 'Make data display tables prettier with {gt} #datascience'
   url: https://www.youtube.com/watch?v=LcEZUyyJtoI
-  view_count: 909
+  view_count: 911
 ---
 image: thumbnail.jpg
 

@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -28,11 +28,11 @@ external:  # updated automatically, do not edit
   duration: 293
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.270029+00:00'
+  last_updated: '2026-03-20T11:32:46.406461+00:00'
   like_count: 2
   playlist: ''
   software:
-  - positron
+  - Positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sItCFWvLDJQ/maxresdefault.jpg
   title: Multiple Console Sessions in Positron (Dhruvi Sompura, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=sItCFWvLDJQ
-  view_count: 143
+  view_count: 156
 ---
 image: thumbnail.jpg
 

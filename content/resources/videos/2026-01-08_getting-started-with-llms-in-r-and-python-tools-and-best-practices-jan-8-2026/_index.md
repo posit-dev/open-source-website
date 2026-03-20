@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 3345
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.323691+00:00'
+  last_updated: '2026-03-20T11:32:57.422916+00:00'
   like_count: 3
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/NiBoy76UjUA/hqdefault.jpg
   title: 'Getting Started with LLMs in R and Python: Tools and Best Practices - Jan. 8, 2026'
   url: https://www.youtube.com/watch?v=NiBoy76UjUA
-  view_count: 131
+  view_count: 135
 ---
 image: thumbnail.jpg
 

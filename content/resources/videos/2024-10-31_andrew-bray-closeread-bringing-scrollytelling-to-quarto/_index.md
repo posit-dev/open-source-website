@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 1264
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126494+00:00'
-  like_count: 180
+  last_updated: '2026-03-20T11:32:48.810632+00:00'
+  like_count: 181
   playlist: ''
   software:
   - Quarto
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KqLxy66B3lQ/maxresdefault.jpg
   title: 'Andrew Bray - Closeread: bringing Scrollytelling to Quarto'
   url: https://www.youtube.com/watch?v=KqLxy66B3lQ
-  view_count: 4585
+  view_count: 4637
 ---
 image: thumbnail.jpg
 

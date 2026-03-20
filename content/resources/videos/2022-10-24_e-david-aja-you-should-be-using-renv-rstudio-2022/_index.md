@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 655
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.835644+00:00'
+  last_updated: '2026-03-20T11:32:53.122390+00:00'
   like_count: 105
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GwVx_pf2uz4/maxresdefault.jpg
   title: E. David Aja | You should be using renv | RStudio (2022)
   url: https://www.youtube.com/watch?v=GwVx_pf2uz4
-  view_count: 4458
+  view_count: 4470
 ---
 image: thumbnail.jpg
 

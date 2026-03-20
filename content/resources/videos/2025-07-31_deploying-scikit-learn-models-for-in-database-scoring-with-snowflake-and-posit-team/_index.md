@@ -142,7 +142,7 @@ external:  # updated automatically, do not edit
   duration: 1351
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.130834+00:00'
+  last_updated: '2026-03-20T11:32:47.293363+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -196,7 +196,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GApXqIkp6ck/maxresdefault.jpg
   title: Deploying Scikit-learn models for in-database scoring with Snowflake and Posit Team
   url: https://www.youtube.com/watch?v=GApXqIkp6ck
-  view_count: 1018
+  view_count: 1030
 ---
 image: thumbnail.jpg
 

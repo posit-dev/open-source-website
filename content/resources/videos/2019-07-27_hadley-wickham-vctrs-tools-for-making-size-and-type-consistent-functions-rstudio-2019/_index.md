@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1337
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.959063+00:00'
+  last_updated: '2026-03-20T11:32:56.700328+00:00'
   like_count: 72
   people:
   - Hadley Wickham
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8_QoT3ygdI4/maxresdefault.jpg
   title: Hadley Wickham | vctrs Tools for making size and type consistent functions | RStudio (2019)
   url: https://www.youtube.com/watch?v=8_QoT3ygdI4
-  view_count: 3575
+  view_count: 3579
 ---
 image: thumbnail.jpg
 

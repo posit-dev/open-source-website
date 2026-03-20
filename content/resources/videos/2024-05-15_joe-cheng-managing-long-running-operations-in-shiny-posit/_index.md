@@ -154,7 +154,7 @@ external:  # updated automatically, do not edit
   duration: 1977
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695575+00:00'
+  last_updated: '2026-03-20T11:32:49.221456+00:00'
   like_count: 141
   people:
   - Joe Cheng
@@ -209,7 +209,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GhX0PcEm3CY/maxresdefault.jpg
   title: Joe Cheng | Managing long-running operations in Shiny | Posit
   url: https://www.youtube.com/watch?v=GhX0PcEm3CY
-  view_count: 4650
+  view_count: 4657
 ---
 image: thumbnail.jpg
 

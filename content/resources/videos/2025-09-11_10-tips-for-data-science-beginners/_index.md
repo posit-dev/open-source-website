@@ -1,12 +1,12 @@
 ---
 date: '2025-09-11'
-description: 'Do you have any to add? #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook'
+description: 'Do you have any to add? #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - rstudio
 tags:
 - rstudio
@@ -60,15 +60,15 @@ external:  # updated automatically, do not edit
   comment_count: 3
   date: '2025-09-11T16:58:51Z'
   definition: hd
-  description: 'Do you have any to add? #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook'
+  description: 'Do you have any to add? #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyternotebook #positshorts'
   duration: 78
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:21.820552+00:00'
-  like_count: 82
+  last_updated: '2026-03-20T11:32:46.972489+00:00'
+  like_count: 83
   playlist: ''
   software:
-  - positron
+  - Positron
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LA2JPaDMHNQ/maxresdefault.jpg
   title: 10 tips for data science beginners
   url: https://www.youtube.com/watch?v=LA2JPaDMHNQ
-  view_count: 2695
+  view_count: 2709
 ---
 image: thumbnail.jpg
 

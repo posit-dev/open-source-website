@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 1403
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:28.938396+00:00'
+  last_updated: '2026-03-20T11:32:56.052581+00:00'
   like_count: 257
   people:
   - Hadley Wickham
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OwwYfxB8CA0/hqdefault.jpg
   title: Hadley Wickham | State of the Tidyverse 2020 | RStudio (2020)
   url: https://www.youtube.com/watch?v=OwwYfxB8CA0
-  view_count: 11692
+  view_count: 11701
 ---
 image: thumbnail.jpg
 

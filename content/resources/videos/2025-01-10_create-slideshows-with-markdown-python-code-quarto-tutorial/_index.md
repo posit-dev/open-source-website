@@ -125,8 +125,8 @@ external:  # updated automatically, do not edit
   duration: 2410
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.505411+00:00'
-  like_count: 201
+  last_updated: '2026-03-20T11:32:47.650243+00:00'
+  like_count: 207
   playlist: ''
   software:
   - brand-yml
@@ -160,7 +160,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kWnMc0GwX-U/maxresdefault.jpg
   title: Create slideshows with Markdown & Python Code! (Quarto Tutorial)
   url: https://www.youtube.com/watch?v=kWnMc0GwX-U
-  view_count: 8097
+  view_count: 8470
 ---
 image: thumbnail.jpg
 

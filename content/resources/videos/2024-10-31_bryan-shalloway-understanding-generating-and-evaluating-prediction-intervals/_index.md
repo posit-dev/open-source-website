@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 1112
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126382+00:00'
+  last_updated: '2026-03-20T11:32:48.367799+00:00'
   like_count: 24
   people:
   - Max Kuhn
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QT3SsD1kTj8/maxresdefault.jpg
   title: Bryan Shalloway - Understanding, Generating, and Evaluating Prediction Intervals
   url: https://www.youtube.com/watch?v=QT3SsD1kTj8
-  view_count: 564
+  view_count: 576
 ---
 image: thumbnail.jpg
 

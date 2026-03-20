@@ -19,7 +19,7 @@ people:
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -53,13 +53,13 @@ external:  # updated automatically, do not edit
   duration: 1121
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.563163+00:00'
+  last_updated: '2026-03-20T11:32:46.971958+00:00'
   like_count: 11
   people:
   - Isabel Zimmerman
   playlist: ''
   software:
-  - positron
+  - Positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GrSWg8o_SFQ/maxresdefault.jpg
   title: 'IDE-ntity Crisis: Choosing the Right Tool for Me (Isabel Zimmerman, Posit) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=GrSWg8o_SFQ
-  view_count: 228
+  view_count: 232
 ---
 image: thumbnail.jpg
 

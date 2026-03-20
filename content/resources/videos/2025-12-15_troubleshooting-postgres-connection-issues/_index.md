@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 133
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:20.891528+00:00'
+  last_updated: '2026-03-20T11:32:46.095408+00:00'
   like_count: 1
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/9y_lgMba7CU/maxresdefault.jpg
   title: Troubleshooting Postgres Connection Issues
   url: https://www.youtube.com/watch?v=9y_lgMba7CU
-  view_count: 84
+  view_count: 98
 ---
 image: thumbnail.jpg
 

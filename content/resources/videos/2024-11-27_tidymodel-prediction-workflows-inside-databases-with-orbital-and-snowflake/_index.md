@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   duration: 1309
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.505654+00:00'
+  last_updated: '2026-03-20T11:32:48.000981+00:00'
   like_count: 48
   playlist: ''
   software:
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pnEjYNgOG9c/maxresdefault.jpg
   title: Tidymodel prediction workflows inside databases with orbital and Snowflake
   url: https://www.youtube.com/watch?v=pnEjYNgOG9c
-  view_count: 2006
+  view_count: 2016
 ---
 image: thumbnail.jpg
 

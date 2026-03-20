@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1019
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126301+00:00'
+  last_updated: '2026-03-20T11:32:48.367753+00:00'
   like_count: 1
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/gegeaoMSgzc/maxresdefault.jpg
   title: Heather Turner - Contributing to the R Project
   url: https://www.youtube.com/watch?v=gegeaoMSgzc
-  view_count: 203
+  view_count: 207
 ---
 image: thumbnail.jpg
 

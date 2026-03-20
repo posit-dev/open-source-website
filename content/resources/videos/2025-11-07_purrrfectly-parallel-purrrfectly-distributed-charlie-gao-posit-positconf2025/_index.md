@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1139
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.562881+00:00'
+  last_updated: '2026-03-20T11:32:46.669948+00:00'
   like_count: 14
   people:
   - Charlie Gao
@@ -84,7 +84,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/j1yHjMvbnQM/maxresdefault.jpg
   title: Purrrfectly parallel, purrrfectly distributed (Charlie Gao, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=j1yHjMvbnQM
-  view_count: 317
+  view_count: 323
 ---
 image: thumbnail.jpg
 

@@ -14,7 +14,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - Shiny for Python
 - Shiny
 tags: []
@@ -37,18 +37,18 @@ external:  # updated automatically, do not edit
   duration: 1011
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:20.891576+00:00'
+  last_updated: '2026-03-20T11:32:46.095480+00:00'
   like_count: 7
   playlist: ''
   software:
-  - positron
+  - Positron
   - Shiny for Python
   - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/l-0Y7FYIOAE/maxresdefault.jpg
   title: End-to-End Data Science Workflow with the Posit Team Snowflake Native App
   url: https://www.youtube.com/watch?v=l-0Y7FYIOAE
-  view_count: 389
+  view_count: 409
 ---
 image: thumbnail.jpg
 

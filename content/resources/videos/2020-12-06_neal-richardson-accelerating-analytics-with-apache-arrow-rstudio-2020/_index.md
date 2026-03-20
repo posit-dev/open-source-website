@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1300
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.307557+00:00'
+  last_updated: '2026-03-20T11:32:56.052670+00:00'
   like_count: 40
   people:
   - Neal Richardson
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4szD5aZw6BU/hqdefault.jpg
   title: Neal Richardson | Accelerating Analytics with Apache Arrow | RStudio (2020)
   url: https://www.youtube.com/watch?v=4szD5aZw6BU
-  view_count: 1275
+  view_count: 1276
 ---
 image: thumbnail.jpg
 

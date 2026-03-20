@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 933
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.282872+00:00'
+  last_updated: '2026-03-20T11:32:52.392607+00:00'
   like_count: 17
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/F4osY469UoY/maxresdefault.jpg
   title: 'Mark Rieke | Intro to Workboots: Make Prediction Intervals from Tidymodel Workflows | Posit (2022)'
   url: https://www.youtube.com/watch?v=F4osY469UoY
-  view_count: 523
+  view_count: 524
 ---
 image: thumbnail.jpg
 

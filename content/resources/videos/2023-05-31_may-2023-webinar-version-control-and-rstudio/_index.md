@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 3428
   has_captions: false
   language: en-GB
-  last_updated: '2026-03-04T14:51:31.372187+00:00'
+  last_updated: '2026-03-20T11:32:58.134662+00:00'
   like_count: 16
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qNMOPWT8jSo/maxresdefault.jpg
   title: 'May 2023 Webinar: Version Control and RStudio'
   url: https://www.youtube.com/watch?v=qNMOPWT8jSo
-  view_count: 745
+  view_count: 746
 ---
 image: thumbnail.jpg
 

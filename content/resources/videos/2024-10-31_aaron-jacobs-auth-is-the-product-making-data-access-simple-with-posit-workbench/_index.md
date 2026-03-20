@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1293
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.442548+00:00'
+  last_updated: '2026-03-20T11:32:48.811434+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/A1Mg4culzZs/maxresdefault.jpg
   title: Aaron Jacobs - Auth is the product, making data access simple with Posit Workbench
   url: https://www.youtube.com/watch?v=A1Mg4culzZs
-  view_count: 322
+  view_count: 324
 ---
 image: thumbnail.jpg
 

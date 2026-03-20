@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 2457
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:23.442756+00:00'
+  last_updated: '2026-03-20T11:32:49.221257+00:00'
   like_count: 39
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HWCPLURWYgY/maxresdefault.jpg
   title: Share your data apps and docs easily with Connect Cloud
   url: https://www.youtube.com/watch?v=HWCPLURWYgY
-  view_count: 643
+  view_count: 651
 ---
 image: thumbnail.jpg
 

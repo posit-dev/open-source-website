@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 271
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.528992+00:00'
+  last_updated: '2026-03-20T11:32:52.707642+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YBppl9UUZpg/maxresdefault.jpg
   title: Nicola Rennie | Say Hello! to Multilingual Shiny Apps | Posit (2022)
   url: https://www.youtube.com/watch?v=YBppl9UUZpg
-  view_count: 288
+  view_count: 289
 ---
 image: thumbnail.jpg
 

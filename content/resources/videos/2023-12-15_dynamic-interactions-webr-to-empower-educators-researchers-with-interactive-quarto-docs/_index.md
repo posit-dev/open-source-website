@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1236
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.481424+00:00'
+  last_updated: '2026-03-20T11:32:50.743367+00:00'
   like_count: 45
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/60i9f861HLg/maxresdefault.jpg
   title: 'Dynamic Interactions: webR to Empower Educators & Researchers with Interactive Quarto Docs'
   url: https://www.youtube.com/watch?v=60i9f861HLg
-  view_count: 1362
+  view_count: 1367
 ---
 image: thumbnail.jpg
 

@@ -43,8 +43,8 @@ external:  # updated automatically, do not edit
   duration: 1334
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.323743+00:00'
-  like_count: 9
+  last_updated: '2026-03-20T11:32:57.422974+00:00'
+  like_count: 11
   people:
   - Max Kuhn
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vJVB5N8-21c/maxresdefault.jpg
   title: 'Max Kuhn - TabPFN: A Deep-Learning Solution for Tabular Data'
   url: https://www.youtube.com/watch?v=vJVB5N8-21c
-  view_count: 309
+  view_count: 375
 ---
 image: thumbnail.jpg
 

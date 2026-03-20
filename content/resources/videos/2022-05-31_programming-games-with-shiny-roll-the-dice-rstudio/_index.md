@@ -129,7 +129,7 @@ external:  # updated automatically, do not edit
   duration: 2237
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.219765+00:00'
+  last_updated: '2026-03-20T11:32:53.454309+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -189,7 +189,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GNZY7gHSgzM/maxresdefault.jpg
   title: Programming Games with Shiny || Roll the Dice || RStudio
   url: https://www.youtube.com/watch?v=GNZY7gHSgzM
-  view_count: 2160
+  view_count: 2161
 ---
 image: thumbnail.jpg
 

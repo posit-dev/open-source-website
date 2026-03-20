@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - Databricks
 title: 'Next-Gen Data Science: How Posit and Databricks Are Transforming Analytics at Scale'
@@ -20,17 +20,17 @@ external:  # updated automatically, do not edit
   duration: 1167
   has_captions: false
   language: en-US
-  last_updated: '2026-03-04T14:51:30.708481+00:00'
+  last_updated: '2026-03-20T11:32:57.423689+00:00'
   like_count: 7
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - positron
+  - Positron
   tags:
   - Databricks
   thumbnail: https://i.ytimg.com/vi/Z6ETyHRo8kM/hqdefault.jpg
   title: 'Next-Gen Data Science: How Posit and Databricks Are Transforming Analytics at Scale'
   url: https://www.youtube.com/watch?v=Z6ETyHRo8kM
-  view_count: 301
+  view_count: 307
 ---
 image: thumbnail.jpg
 

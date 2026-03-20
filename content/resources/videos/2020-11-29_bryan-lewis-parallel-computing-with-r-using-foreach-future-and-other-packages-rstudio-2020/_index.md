@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1172
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.307647+00:00'
+  last_updated: '2026-03-20T11:32:56.052705+00:00'
   like_count: 189
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GC5VXjc52t0/hqdefault.jpg
   title: Bryan Lewis | Parallel computing with R using foreach, future, and other packages | RStudio (2020)
   url: https://www.youtube.com/watch?v=GC5VXjc52t0
-  view_count: 6086
+  view_count: 6088
 ---
 image: thumbnail.jpg
 

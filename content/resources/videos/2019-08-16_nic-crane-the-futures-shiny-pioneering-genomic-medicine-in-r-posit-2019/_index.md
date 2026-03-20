@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1147
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.958968+00:00'
+  last_updated: '2026-03-20T11:32:56.700277+00:00'
   like_count: 19
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dCLgpnF1DD8/maxresdefault.jpg
   title: 'Nic Crane | The future''s Shiny: Pioneering genomic medicine in R | Posit (2019)'
   url: https://www.youtube.com/watch?v=dCLgpnF1DD8
-  view_count: 945
+  view_count: 946
 ---
 image: thumbnail.jpg
 

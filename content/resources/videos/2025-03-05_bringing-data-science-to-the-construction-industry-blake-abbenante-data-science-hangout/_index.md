@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 3402
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.131475+00:00'
+  last_updated: '2026-03-20T11:32:47.650090+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/G9yWBSw8hOw/maxresdefault.jpg
   title: Bringing data science to the construction industry | Blake Abbenante | Data Science Hangout
   url: https://www.youtube.com/watch?v=G9yWBSw8hOw
-  view_count: 413
+  view_count: 418
 ---
 image: thumbnail.jpg
 

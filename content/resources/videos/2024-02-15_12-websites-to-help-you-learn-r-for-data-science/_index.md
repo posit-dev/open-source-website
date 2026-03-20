@@ -1,6 +1,6 @@
 ---
 date: '2024-02-15'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -14,18 +14,18 @@ external:  # updated automatically, do not edit
   comment_count: 1
   date: '2024-02-15T17:05:50Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 30
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:24.146010+00:00'
+  last_updated: '2026-03-20T11:32:49.725138+00:00'
   like_count: 128
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/nWgEBAQicPc/maxresdefault.jpg
   title: 12 websites to help you learn R for Data Science🙌
   url: https://www.youtube.com/watch?v=nWgEBAQicPc
-  view_count: 1678
+  view_count: 1680
 ---
 image: thumbnail.jpg
 

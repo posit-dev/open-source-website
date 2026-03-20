@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 985
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529054+00:00'
+  last_updated: '2026-03-20T11:32:52.707688+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/i9XFAaR80xA/maxresdefault.jpg
   title: 'Hezi Buba | Do It For Yourself: Creating a data input platform using R | RStudio (2022)'
   url: https://www.youtube.com/watch?v=i9XFAaR80xA
-  view_count: 295
+  view_count: 296
 ---
 image: thumbnail.jpg
 

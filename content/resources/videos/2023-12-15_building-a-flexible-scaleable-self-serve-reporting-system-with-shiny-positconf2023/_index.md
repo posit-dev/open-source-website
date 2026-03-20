@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1179
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.938023+00:00'
+  last_updated: '2026-03-20T11:32:50.743413+00:00'
   like_count: 14
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CoAsWA9_X2Y/maxresdefault.jpg
   title: Building a Flexible, Scaleable Self-Serve Reporting System with Shiny - posit::conf(2023)
   url: https://www.youtube.com/watch?v=CoAsWA9_X2Y
-  view_count: 649
+  view_count: 654
 ---
 image: thumbnail.jpg
 

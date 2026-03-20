@@ -38,7 +38,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- positron
+- Positron
 - Quarto
 tags: []
 title: Create a Quarto Document in Positron (Python Example)
@@ -82,20 +82,20 @@ external:  # updated automatically, do not edit
   duration: 756
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:21.820532+00:00'
-  like_count: 98
+  last_updated: '2026-03-20T11:32:46.972471+00:00'
+  like_count: 101
   people:
   - Charlotte Wickham
   playlist: ''
   software:
   - cli
-  - positron
+  - Positron
   - Quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/QU0N--y-skA/maxresdefault.jpg
   title: Create a Quarto Document in Positron (Python Example)
   url: https://www.youtube.com/watch?v=QU0N--y-skA
-  view_count: 4076
+  view_count: 4270
 ---
 image: thumbnail.jpg
 

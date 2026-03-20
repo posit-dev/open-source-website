@@ -81,7 +81,7 @@ external:  # updated automatically, do not edit
   duration: 1133
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:28.311005+00:00'
+  last_updated: '2026-03-20T11:32:54.796641+00:00'
   like_count: 110
   playlist: ''
   software:
@@ -136,7 +136,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wQi1A2eJ3i8/maxresdefault.jpg
   title: Damian Rodziewicz | Scaling Shiny to Thousands of Users | RStudio
   url: https://www.youtube.com/watch?v=wQi1A2eJ3i8
-  view_count: 4302
+  view_count: 4312
 ---
 image: thumbnail.jpg
 

@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3229
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.820486+00:00'
+  last_updated: '2026-03-20T11:32:46.972433+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/i1BMv0WEyh0/maxresdefault.jpg
   title: Pair Programming for Sustainable Deployment | Kris Fabick | Data Science Hangout
   url: https://www.youtube.com/watch?v=i1BMv0WEyh0
-  view_count: 386
+  view_count: 387
 ---
 image: thumbnail.jpg
 

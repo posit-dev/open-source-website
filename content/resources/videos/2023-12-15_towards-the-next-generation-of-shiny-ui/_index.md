@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   duration: 1199
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:25.238784+00:00'
+  last_updated: '2026-03-20T11:32:51.123076+00:00'
   like_count: 118
   people:
   - Carson Sievert
@@ -131,7 +131,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/je4fd_uYx18/maxresdefault.jpg
   title: Towards the Next Generation of Shiny UI
   url: https://www.youtube.com/watch?v=je4fd_uYx18
-  view_count: 4104
+  view_count: 4115
 ---
 image: thumbnail.jpg
 

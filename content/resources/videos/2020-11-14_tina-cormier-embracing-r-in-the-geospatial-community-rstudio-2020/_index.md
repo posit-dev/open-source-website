@@ -21,8 +21,8 @@ external:  # updated automatically, do not edit
   duration: 1187
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.307838+00:00'
-  like_count: 61
+  last_updated: '2026-03-20T11:32:56.053369+00:00'
+  like_count: 60
   playlist: ''
   software:
   - rstudio
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v9JdAJXqvAg/hqdefault.jpg
   title: Tina Cormier | Embracing R in the Geospatial Community | RStudio (2020)
   url: https://www.youtube.com/watch?v=v9JdAJXqvAg
-  view_count: 1634
+  view_count: 1635
 ---
 image: thumbnail.jpg
 

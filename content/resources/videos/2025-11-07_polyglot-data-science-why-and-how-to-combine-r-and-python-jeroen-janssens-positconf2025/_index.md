@@ -16,7 +16,7 @@ people:
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - Quarto
 - reticulate
 tags:
@@ -49,13 +49,13 @@ external:  # updated automatically, do not edit
   duration: 1013
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.820254+00:00'
+  last_updated: '2026-03-20T11:32:46.972260+00:00'
   like_count: 11
   people:
   - Jeroen Janssens
   playlist: ''
   software:
-  - positron
+  - Positron
   - Quarto
   - reticulate
   tags:
@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4Lg6g1WA7Fw/maxresdefault.jpg
   title: 'Polyglot Data Science: Why and How to Combine R and Python (Jeroen Janssens) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=4Lg6g1WA7Fw
-  view_count: 261
+  view_count: 266
 ---
 image: thumbnail.jpg
 

@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -46,11 +46,11 @@ external:  # updated automatically, do not edit
   duration: 1141
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.563174+00:00'
+  last_updated: '2026-03-20T11:32:46.971974+00:00'
   like_count: 7
   playlist: ''
   software:
-  - positron
+  - Positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NVOmCKPzokY/maxresdefault.jpg
   title: 'Positron for Babies: Communicating Technical Concepts to all Audiences (Ryan Johnson)'
   url: https://www.youtube.com/watch?v=NVOmCKPzokY
-  view_count: 151
+  view_count: 158
 ---
 image: thumbnail.jpg
 

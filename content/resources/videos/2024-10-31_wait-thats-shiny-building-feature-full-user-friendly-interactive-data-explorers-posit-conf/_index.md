@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 1079
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.840699+00:00'
+  last_updated: '2026-03-20T11:32:48.001343+00:00'
   like_count: 33
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SAbV6d7Pn0U/maxresdefault.jpg
   title: Wait, that’s Shiny? Building feature-full, user-friendly interactive data explorers - Posit Conf
   url: https://www.youtube.com/watch?v=SAbV6d7Pn0U
-  view_count: 1288
+  view_count: 1303
 ---
 image: thumbnail.jpg
 

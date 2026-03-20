@@ -1,6 +1,6 @@
 ---
 date: '2024-06-12'
-description: 'Tom recommended the book So Good They Can''t Ignore You in a recent Data Science Hangout. Libby also keeps this awesome list of Hangout book recommendations: https://datahumans.notion.site/2f4552fd18be4d439b6b6977077e6ca5?v=738d0654fd81490890b8f741a2ef0a3c'
+description: 'Tom recommended the book So Good They Can''t Ignore You in a recent Data Science Hangout. Libby also keeps this awesome list of Hangout book recommendations: https://datahumans.notion.site/2f4552fd18be4d439b6b6977077e6ca5?v=738d0654fd81490890b8f741a2ef0a3c #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -58,11 +58,11 @@ external:  # updated automatically, do not edit
   comment_count: 3
   date: '2024-06-12T18:53:04Z'
   definition: hd
-  description: 'Tom recommended the book So Good They Can''t Ignore You in a recent Data Science Hangout. Libby also keeps this awesome list of Hangout book recommendations: https://datahumans.notion.site/2f4552fd18be4d439b6b6977077e6ca5?v=738d0654fd81490890b8f741a2ef0a3c'
+  description: 'Tom recommended the book So Good They Can''t Ignore You in a recent Data Science Hangout. Libby also keeps this awesome list of Hangout book recommendations: https://datahumans.notion.site/2f4552fd18be4d439b6b6977077e6ca5?v=738d0654fd81490890b8f741a2ef0a3c #positshorts'
   duration: 30
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695434+00:00'
+  last_updated: '2026-03-20T11:32:49.221374+00:00'
   like_count: 31
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/djoAVyrRBdw/maxresdefault.jpg
   title: Being SO good they can't ignore you
   url: https://www.youtube.com/watch?v=djoAVyrRBdw
-  view_count: 1416
+  view_count: 1422
 ---
 image: thumbnail.jpg
 

@@ -32,14 +32,14 @@ external:  # updated automatically, do not edit
   duration: 3509
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.840840+00:00'
-  like_count: 499
+  last_updated: '2026-03-20T11:32:48.367577+00:00'
+  like_count: 501
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/GELhdezYmP0/maxresdefault.jpg
   title: Hannes Mühleisen - Data Wrangling [for Python or R] Like a Boss With DuckDB
   url: https://www.youtube.com/watch?v=GELhdezYmP0
-  view_count: 17950
+  view_count: 18104
 ---
 image: thumbnail.jpg
 

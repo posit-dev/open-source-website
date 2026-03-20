@@ -45,7 +45,8 @@ description: 'Stop guessing which channels drive growth.
 
   Reading MMM Outputs: Dashboards and Decisions for Small Teams, SmartSMSSolutions (https://smartsmssolutions.com/resources/blog/business/reading-mmm-dashboards-article)'
 image: thumbnail.jpg
-people: []
+people:
+- Isabella Velásquez
 resource_type: video
 resources: []
 software:
@@ -107,8 +108,10 @@ external:  # updated automatically, do not edit
   duration: 1261
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:20.890537+00:00'
-  like_count: 8
+  last_updated: '2026-03-20T11:32:46.094856+00:00'
+  like_count: 12
+  people:
+  - Isabella Velásquez
   playlist: ''
   software:
   - Quarto
@@ -118,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7yMwT4likZU/maxresdefault.jpg
   title: Strategic Budget Optimization through Marketing Mix Modeling (MMM)
   url: https://www.youtube.com/watch?v=7yMwT4likZU
-  view_count: 245
+  view_count: 318
 ---
 image: thumbnail.jpg
 

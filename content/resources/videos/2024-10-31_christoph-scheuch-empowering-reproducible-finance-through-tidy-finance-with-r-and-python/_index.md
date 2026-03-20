@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1262
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.840402+00:00'
+  last_updated: '2026-03-20T11:32:48.001231+00:00'
   like_count: 30
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/vV7JECvFXNE/maxresdefault.jpg
   title: Christoph Scheuch - Empowering Reproducible Finance through Tidy Finance with R and Python
   url: https://www.youtube.com/watch?v=vV7JECvFXNE
-  view_count: 819
+  view_count: 824
 ---
 image: thumbnail.jpg
 

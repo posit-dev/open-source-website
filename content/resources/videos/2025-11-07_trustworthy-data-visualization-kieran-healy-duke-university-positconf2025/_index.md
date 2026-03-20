@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Trustworthy Data Visualization
 
 
@@ -51,8 +51,8 @@ external:  # updated automatically, do not edit
   duration: 3477
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.269323+00:00'
-  like_count: 120
+  last_updated: '2026-03-20T11:32:46.406332+00:00'
+  like_count: 122
   playlist: ''
   tags:
   - posit::conf(2025)
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZamPCbvBAgE/maxresdefault.jpg
   title: Trustworthy Data Visualization (Kieran Healy, Duke University) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=ZamPCbvBAgE
-  view_count: 5056
+  view_count: 5132
 ---
 image: thumbnail.jpg
 

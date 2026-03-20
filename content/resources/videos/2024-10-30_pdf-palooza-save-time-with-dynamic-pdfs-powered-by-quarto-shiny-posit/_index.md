@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 1904
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:23.442580+00:00'
+  last_updated: '2026-03-20T11:32:48.811468+00:00'
   like_count: 75
   playlist: ''
   software:
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dCoHNIPQzJE/maxresdefault.jpg
   title: PDF Palooza 🎉 Save time with dynamic PDFs powered by Quarto, Shiny & Posit
   url: https://www.youtube.com/watch?v=dCoHNIPQzJE
-  view_count: 2894
+  view_count: 2915
 ---
 image: thumbnail.jpg
 

@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 275
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529116+00:00'
+  last_updated: '2026-03-20T11:32:52.707733+00:00'
   like_count: 17
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sSeUsieIemM/maxresdefault.jpg
   title: Beatriz Milz | Making Awesome Automations with GitHub Actions | Posit (2022)
   url: https://www.youtube.com/watch?v=sSeUsieIemM
-  view_count: 460
+  view_count: 462
 ---
 image: thumbnail.jpg
 

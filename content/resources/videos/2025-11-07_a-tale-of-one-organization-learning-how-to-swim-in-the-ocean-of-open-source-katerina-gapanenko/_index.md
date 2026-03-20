@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1065
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.270271+00:00'
+  last_updated: '2026-03-20T11:32:46.669756+00:00'
   like_count: 2
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5Qli8vgVaDI/maxresdefault.jpg
   title: 'A tale of one organization: learning how to swim in the ocean of open source (Katerina Gapanenko)'
   url: https://www.youtube.com/watch?v=5Qli8vgVaDI
-  view_count: 62
+  view_count: 63
 ---
 image: thumbnail.jpg
 

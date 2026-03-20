@@ -1,5 +1,5 @@
 ---
-date: '2025-11-07'
+date: '2025-09-18'
 description: 'Making the most of artificial and human intelligence for data science
 
 
@@ -17,7 +17,7 @@ people:
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -48,14 +48,14 @@ external:  # updated automatically, do not edit
   duration: 3519
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.269382+00:00'
-  like_count: 120
+  last_updated: '2026-03-20T11:32:46.406351+00:00'
+  like_count: 121
   people:
   - Hadley Wickham
   - Joe Cheng
   playlist: ''
   software:
-  - positron
+  - Positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tSFHQWGyRzo/maxresdefault.jpg
   title: Making the most of artificial and human intelligence for data science (Hadley Wickham, Joe Cheng)
   url: https://www.youtube.com/watch?v=tSFHQWGyRzo
-  view_count: 4780
+  view_count: 4984
 ---
 image: thumbnail.jpg
 

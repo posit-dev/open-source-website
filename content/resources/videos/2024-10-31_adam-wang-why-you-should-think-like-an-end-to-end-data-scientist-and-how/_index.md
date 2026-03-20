@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1174
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.840683+00:00'
+  last_updated: '2026-03-20T11:32:48.001337+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Rxq4O3AhXjM/maxresdefault.jpg
   title: Adam Wang - Why You Should Think Like an End-to-end Data Scientist, and How
   url: https://www.youtube.com/watch?v=Rxq4O3AhXjM
-  view_count: 328
+  view_count: 330
 ---
 image: thumbnail.jpg
 

@@ -194,7 +194,7 @@ external:  # updated automatically, do not edit
   duration: 2430
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:25.238910+00:00'
+  last_updated: '2026-03-20T11:32:51.123140+00:00'
   like_count: 35
   playlist: ''
   software:
@@ -206,7 +206,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZkrR9i11mvk/maxresdefault.jpg
   title: How to build a model annotation tool with FastAPI, Quarto & Shiny for Python
   url: https://www.youtube.com/watch?v=ZkrR9i11mvk
-  view_count: 1892
+  view_count: 1894
 ---
 image: thumbnail.jpg
 

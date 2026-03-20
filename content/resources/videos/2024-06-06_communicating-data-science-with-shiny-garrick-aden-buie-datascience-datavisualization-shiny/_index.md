@@ -21,7 +21,7 @@ description: 'Ever seen this diagram? 📊 It''s from R for Data Science, outlin
   From small, quick-use apps to robust final products, Shiny evolves with your project needs. Discover why Shiny is essential for every data scientist! 🔍
 
 
-  Get Started: https://shiny.posit.co'
+  Get Started: https://shiny.posit.co #positshorts'
 image: thumbnail.jpg
 people:
 - Garrick Aden-Buie
@@ -102,11 +102,11 @@ external:  # updated automatically, do not edit
     From small, quick-use apps to robust final products, Shiny evolves with your project needs. Discover why Shiny is essential for every data scientist! 🔍
 
 
-    Get Started: https://shiny.posit.co'
+    Get Started: https://shiny.posit.co #positshorts'
   duration: 60
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695455+00:00'
+  last_updated: '2026-03-20T11:32:49.221386+00:00'
   like_count: 223
   people:
   - Garrick Aden-Buie
@@ -161,7 +161,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XishM8kaUj8/maxresdefault.jpg
   title: 'Communicating Data Science with Shiny! 🚀 Garrick Aden-Buie #datascience  #datavisualization  #shiny'
   url: https://www.youtube.com/watch?v=XishM8kaUj8
-  view_count: 4397
+  view_count: 4405
 ---
 image: thumbnail.jpg
 

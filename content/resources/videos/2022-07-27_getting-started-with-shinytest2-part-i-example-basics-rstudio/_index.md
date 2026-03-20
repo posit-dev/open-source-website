@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   duration: 678
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.219176+00:00'
+  last_updated: '2026-03-20T11:32:53.454150+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -131,7 +131,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Gucwz865aqQ/maxresdefault.jpg
   title: Getting Started with {shinytest2} Part I || Example + basics || RStudio
   url: https://www.youtube.com/watch?v=Gucwz865aqQ
-  view_count: 2520
+  view_count: 2530
 ---
 image: thumbnail.jpg
 

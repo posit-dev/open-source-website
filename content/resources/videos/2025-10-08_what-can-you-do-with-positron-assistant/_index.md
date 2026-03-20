@@ -24,7 +24,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags:
 - rstudio
 - data science
@@ -99,11 +99,11 @@ external:  # updated automatically, do not edit
   duration: 79
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:21.820516+00:00'
+  last_updated: '2026-03-20T11:32:46.972460+00:00'
   like_count: 31
   playlist: ''
   software:
-  - positron
+  - Positron
   tags:
   - rstudio
   - data science
@@ -152,7 +152,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/X_eqwFFH4jI/hqdefault.jpg
   title: What can you do with Positron Assistant?
   url: https://www.youtube.com/watch?v=X_eqwFFH4jI
-  view_count: 1856
+  view_count: 1950
 ---
 image: thumbnail.jpg
 

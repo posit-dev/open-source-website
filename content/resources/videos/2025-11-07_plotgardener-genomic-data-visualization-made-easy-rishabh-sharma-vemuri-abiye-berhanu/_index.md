@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 325
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.269670+00:00'
+  last_updated: '2026-03-20T11:32:46.406382+00:00'
   like_count: 5
   playlist: ''
   tags:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PW_liIFne2g/hqdefault.jpg
   title: Plotgardener Genomic Data Visualization Made Easy (Rishabh Sharma Vemuri & Abiye Berhanu)
   url: https://www.youtube.com/watch?v=PW_liIFne2g
-  view_count: 268
+  view_count: 273
 ---
 image: thumbnail.jpg
 

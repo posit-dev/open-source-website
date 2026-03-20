@@ -1,6 +1,6 @@
 ---
 date: '2024-06-03'
-description: ''
+description: '#positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -14,18 +14,18 @@ external:  # updated automatically, do not edit
   comment_count: 0
   date: '2024-06-03T18:06:44Z'
   definition: hd
-  description: ''
+  description: '#positshorts'
   duration: 51
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:23.695522+00:00'
+  last_updated: '2026-03-20T11:32:49.221425+00:00'
   like_count: 22
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/TzyqI9YGZHs/maxresdefault.jpg
   title: 'What to optimize for when looking for a new job 📝 #datascience #careeradvice'
   url: https://www.youtube.com/watch?v=TzyqI9YGZHs
-  view_count: 539
+  view_count: 541
 ---
 image: thumbnail.jpg
 

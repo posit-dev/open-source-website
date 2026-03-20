@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 78
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.282711+00:00'
+  last_updated: '2026-03-20T11:32:52.392388+00:00'
   like_count: 338
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0_UNtwEh7kY/maxresdefault.jpg
   title: RStudio is now Posit!
   url: https://www.youtube.com/watch?v=0_UNtwEh7kY
-  view_count: 13359
+  view_count: 13365
 ---
 image: thumbnail.jpg
 

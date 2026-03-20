@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 700
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:28.310920+00:00'
+  last_updated: '2026-03-20T11:32:54.796567+00:00'
   like_count: 22
   playlist: ''
   software:
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yf_bu56DGYE/hqdefault.jpg
   title: Art Steinmetz | Open Source Data Science in the Enterprise | RStudio
   url: https://www.youtube.com/watch?v=yf_bu56DGYE
-  view_count: 647
+  view_count: 646
 ---
 image: thumbnail.jpg
 

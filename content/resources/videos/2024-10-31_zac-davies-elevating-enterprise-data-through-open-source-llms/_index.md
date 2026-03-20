@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1082
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126214+00:00'
+  last_updated: '2026-03-20T11:32:48.367703+00:00'
   like_count: 3
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/rv0lbUNnvEM/maxresdefault.jpg
   title: Zac Davies - Elevating enterprise data through open source LLMs
   url: https://www.youtube.com/watch?v=rv0lbUNnvEM
-  view_count: 291
+  view_count: 292
 ---
 image: thumbnail.jpg
 

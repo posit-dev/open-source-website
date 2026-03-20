@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   duration: 932
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.708254+00:00'
+  last_updated: '2026-03-20T11:32:57.423595+00:00'
   like_count: 24
   people:
   - Charlie Gao
@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sGLD8oVquho/maxresdefault.jpg
   title: The Future of Asynchronous Programming in R - Charlie Gao
   url: https://www.youtube.com/watch?v=sGLD8oVquho
-  view_count: 483
+  view_count: 486
 ---
 image: thumbnail.jpg
 

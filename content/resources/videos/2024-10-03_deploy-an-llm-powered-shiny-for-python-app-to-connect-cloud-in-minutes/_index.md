@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   duration: 360
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:23.442611+00:00'
+  last_updated: '2026-03-20T11:32:48.811498+00:00'
   like_count: 35
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YB_VyRV5wwQ/hqdefault.jpg
   title: Deploy an LLM-powered Shiny for Python app to Connect Cloud in minutes!
   url: https://www.youtube.com/watch?v=YB_VyRV5wwQ
-  view_count: 1100
+  view_count: 1101
 ---
 image: thumbnail.jpg
 

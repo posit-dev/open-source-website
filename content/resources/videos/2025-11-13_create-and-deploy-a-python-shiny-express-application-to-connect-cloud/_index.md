@@ -19,7 +19,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 - Shiny
 tags: []
 title: Create and Deploy a Python Shiny Express Application to Connect Cloud
@@ -46,17 +46,17 @@ external:  # updated automatically, do not edit
   duration: 1144
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.268804+00:00'
-  like_count: 24
+  last_updated: '2026-03-20T11:32:46.406307+00:00'
+  like_count: 25
   playlist: ''
   software:
-  - positron
+  - Positron
   - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/pNJrAIoxLiE/maxresdefault.jpg
   title: Create and Deploy a Python Shiny Express Application to Connect Cloud
   url: https://www.youtube.com/watch?v=pNJrAIoxLiE
-  view_count: 1056
+  view_count: 1103
 ---
 image: thumbnail.jpg
 

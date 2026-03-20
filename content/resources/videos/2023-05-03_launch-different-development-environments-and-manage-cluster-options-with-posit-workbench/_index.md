@@ -81,7 +81,7 @@ external:  # updated automatically, do not edit
   duration: 125
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:25.988226+00:00'
+  last_updated: '2026-03-20T11:32:51.918871+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0FK1sGg7WC0/maxresdefault.jpg
   title: Launch different development environments and manage cluster options with Posit Workbench
   url: https://www.youtube.com/watch?v=0FK1sGg7WC0
-  view_count: 1095
+  view_count: 1102
 ---
 image: thumbnail.jpg
 

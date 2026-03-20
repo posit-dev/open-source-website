@@ -102,14 +102,14 @@ external:  # updated automatically, do not edit
   duration: 3145
   has_captions: false
   language: en-US
-  last_updated: '2026-03-04T14:51:31.073886+00:00'
+  last_updated: '2026-03-20T11:32:58.134293+00:00'
   like_count: 63
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/6XahIfllSTw/maxresdefault.jpg
   title: Why he created pandas, the future of data systems - Wes McKinney - The Data Scientist Show #086
   url: https://www.youtube.com/watch?v=6XahIfllSTw
-  view_count: 1857
+  view_count: 1865
 ---
 image: thumbnail.jpg
 

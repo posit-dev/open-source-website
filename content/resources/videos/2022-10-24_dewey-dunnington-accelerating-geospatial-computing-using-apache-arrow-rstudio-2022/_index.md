@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 226
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529070+00:00'
+  last_updated: '2026-03-20T11:32:52.707699+00:00'
   like_count: 15
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kTtRr4kUJro/maxresdefault.jpg
   title: Dewey Dunnington | Accelerating geospatial computing using Apache Arrow | RStudio (2022)
   url: https://www.youtube.com/watch?v=kTtRr4kUJro
-  view_count: 691
+  view_count: 693
 ---
 image: thumbnail.jpg
 

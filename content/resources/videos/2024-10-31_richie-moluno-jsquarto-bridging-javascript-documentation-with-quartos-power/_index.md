@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 329
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.126151+00:00'
+  last_updated: '2026-03-20T11:32:48.367662+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CySpBKJD5vY/maxresdefault.jpg
   title: 'Richie Moluno - JSquarto: Bridging JavaScript Documentation with Quarto''s Power'
   url: https://www.youtube.com/watch?v=CySpBKJD5vY
-  view_count: 252
+  view_count: 253
 ---
 image: thumbnail.jpg
 

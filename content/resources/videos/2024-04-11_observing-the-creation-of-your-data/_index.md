@@ -3,7 +3,7 @@ date: '2024-04-11'
 description: 'Data Science Hangout with Zack Fragoso, Head of MLOps at Domino''s Pizza.
 
 
-  🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh'
+  🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh #positshorts'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -65,11 +65,11 @@ external:  # updated automatically, do not edit
   description: 'Data Science Hangout with Zack Fragoso, Head of MLOps at Domino''s Pizza.
 
 
-    🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh'
+    🙋‍♀️ Join us live at the Data Science Hangouts on Thursday from 12-1 ET: pos.it/dsh #positshorts'
   duration: 47
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695735+00:00'
+  last_updated: '2026-03-20T11:32:49.724928+00:00'
   like_count: 20
   playlist: ''
   tags:
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v7IbJ30UaiM/maxresdefault.jpg
   title: Observing the creation of your data 🍕
   url: https://www.youtube.com/watch?v=v7IbJ30UaiM
-  view_count: 1210
+  view_count: 1211
 ---
 image: thumbnail.jpg
 

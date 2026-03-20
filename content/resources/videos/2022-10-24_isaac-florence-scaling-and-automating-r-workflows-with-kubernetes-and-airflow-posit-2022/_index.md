@@ -30,14 +30,14 @@ external:  # updated automatically, do not edit
   duration: 1278
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.529001+00:00'
+  last_updated: '2026-03-20T11:32:52.707649+00:00'
   like_count: 11
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/YtCVyEk5I1Q/maxresdefault.jpg
   title: Isaac Florence | Scaling and automating R workflows with Kubernetes and Airflow | Posit (2022)
   url: https://www.youtube.com/watch?v=YtCVyEk5I1Q
-  view_count: 509
+  view_count: 512
 ---
 image: thumbnail.jpg
 

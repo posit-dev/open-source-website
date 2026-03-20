@@ -56,14 +56,14 @@ external:  # updated automatically, do not edit
   duration: 1225
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.282861+00:00'
+  last_updated: '2026-03-20T11:32:52.392595+00:00'
   like_count: 107
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/9w4WFe48rEg/maxresdefault.jpg
   title: 'Meghan Harris | Making Data Pipelines in R: A Story From A “Self-Taught” Perspective | Posit (2022)'
   url: https://www.youtube.com/watch?v=9w4WFe48rEg
-  view_count: 2928
+  view_count: 2935
 ---
 image: thumbnail.jpg
 

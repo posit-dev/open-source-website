@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   duration: 1080
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.562929+00:00'
+  last_updated: '2026-03-20T11:32:46.669975+00:00'
   like_count: 6
   people:
   - Mine Çetinkaya-Rundel
@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5gS7AUGwZPs/maxresdefault.jpg
   title: Leveraging LLMs for student feedback in introductory data science courses (Mine Çetinkaya-Rundel)
   url: https://www.youtube.com/watch?v=5gS7AUGwZPs
-  view_count: 131
+  view_count: 137
 ---
 image: thumbnail.jpg
 

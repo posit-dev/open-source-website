@@ -112,14 +112,14 @@ external:  # updated automatically, do not edit
   duration: 3698
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695746+00:00'
+  last_updated: '2026-03-20T11:32:49.724935+00:00'
   like_count: 13
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/imscOVXrdSc/maxresdefault.jpg
   title: MLOps for a billion pizzas a year | Zack Fragoso @ Domino's Pizza | Data Science Hangout
   url: https://www.youtube.com/watch?v=imscOVXrdSc
-  view_count: 586
+  view_count: 587
 ---
 image: thumbnail.jpg
 

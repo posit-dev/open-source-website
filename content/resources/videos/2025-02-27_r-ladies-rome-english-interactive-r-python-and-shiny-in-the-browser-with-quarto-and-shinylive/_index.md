@@ -32,7 +32,8 @@ description: 'In this session, Isabella Velásquez walks us through Quarto Live 
 
   Please visit: https://rladiesrome.org'
 image: thumbnail.jpg
-people: []
+people:
+- Isabella Velásquez
 resource_type: video
 resources: []
 software:
@@ -96,8 +97,10 @@ external:  # updated automatically, do not edit
   duration: 4142
   has_captions: false
   language: en-US
-  last_updated: '2026-03-04T14:51:30.708568+00:00'
+  last_updated: '2026-03-20T11:32:57.423721+00:00'
   like_count: 27
+  people:
+  - Isabella Velásquez
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Quarto
@@ -122,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/59DSo_jjTpI/maxresdefault.jpg
   title: R-Ladies Rome (English) - Interactive R, Python, and Shiny in the Browser with Quarto and Shinylive
   url: https://www.youtube.com/watch?v=59DSo_jjTpI
-  view_count: 989
+  view_count: 998
 ---
 image: thumbnail.jpg
 

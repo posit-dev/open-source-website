@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 3584
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:29.959283+00:00'
+  last_updated: '2026-03-20T11:32:56.700446+00:00'
   like_count: 0
   people:
   - JJ Allaire
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/atiYXm7JZv0/maxresdefault.jpg
   title: Machine Learning with R and TensorFlow
   url: https://www.youtube.com/watch?v=atiYXm7JZv0
-  view_count: 99515
+  view_count: 99531
 ---
 image: thumbnail.jpg
 

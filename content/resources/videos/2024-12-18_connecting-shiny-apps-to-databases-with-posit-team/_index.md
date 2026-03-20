@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 1477
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.505573+00:00'
+  last_updated: '2026-03-20T11:32:47.650288+00:00'
   like_count: 48
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6AGroJb4zPM/maxresdefault.jpg
   title: Connecting Shiny Apps to Databases with Posit Team
   url: https://www.youtube.com/watch?v=6AGroJb4zPM
-  view_count: 2476
+  view_count: 2499
 ---
 image: thumbnail.jpg
 

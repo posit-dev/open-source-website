@@ -112,14 +112,14 @@ external:  # updated automatically, do not edit
   duration: 3925
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:24.145526+00:00'
+  last_updated: '2026-03-20T11:32:49.724994+00:00'
   like_count: 9
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/POqaMW-uiNU/maxresdefault.jpg
   title: Michael Derstine @ Wells Fargo | Data Science Hangout
   url: https://www.youtube.com/watch?v=POqaMW-uiNU
-  view_count: 443
+  view_count: 444
 ---
 image: thumbnail.jpg
 

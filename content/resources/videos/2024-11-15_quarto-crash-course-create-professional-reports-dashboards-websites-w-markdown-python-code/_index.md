@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 5785
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.505782+00:00'
-  like_count: 557
+  last_updated: '2026-03-20T11:32:48.001138+00:00'
+  like_count: 561
   playlist: ''
   software:
   - cli
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_VKxTPWDhA4/maxresdefault.jpg
   title: Quarto Crash Course | Create Professional Reports, Dashboards & Websites w/ Markdown & Python Code!
   url: https://www.youtube.com/watch?v=_VKxTPWDhA4
-  view_count: 21980
+  view_count: 22554
 ---
 image: thumbnail.jpg
 

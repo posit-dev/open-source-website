@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   duration: 1021
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:28.609430+00:00'
+  last_updated: '2026-03-20T11:32:55.538209+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WlSRI22kpdg/maxresdefault.jpg
   title: Riva Quiroga | Learning to program in R with a "communicative approach" | RStudio
   url: https://www.youtube.com/watch?v=WlSRI22kpdg
-  view_count: 501
+  view_count: 502
 ---
 image: thumbnail.jpg
 

@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1168
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:28.938356+00:00'
+  last_updated: '2026-03-20T11:32:56.052561+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PCwmLLdjkD8/hqdefault.jpg
   title: Colin Gillespie | How to win an AI Hackathon, without using AI | RStudio (2020)
   url: https://www.youtube.com/watch?v=PCwmLLdjkD8
-  view_count: 747
+  view_count: 750
 ---
 image: thumbnail.jpg
 

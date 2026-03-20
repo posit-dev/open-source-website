@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 967
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:25.546337+00:00'
+  last_updated: '2026-03-20T11:32:51.524234+00:00'
   like_count: 153
   people:
   - Shiny Team
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LDd2ao5KjKM/maxresdefault.jpg
   title: Why Shiny for Python? - Posit PBC
   url: https://www.youtube.com/watch?v=LDd2ao5KjKM
-  view_count: 6997
+  view_count: 7014
 ---
 image: thumbnail.jpg
 

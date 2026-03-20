@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 4997
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:26.836207+00:00'
+  last_updated: '2026-03-20T11:32:53.123302+00:00'
   like_count: 236
   people:
   - Isabel Zimmerman
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/oFQANK13-k4/maxresdefault.jpg
   title: MLOps with vetiver in Python and R | Led by Julia Silge & Isabel Zimmerman
   url: https://www.youtube.com/watch?v=oFQANK13-k4
-  view_count: 6643
+  view_count: 6647
 ---
 image: thumbnail.jpg
 

@@ -128,14 +128,14 @@ external:  # updated automatically, do not edit
   duration: 3586
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:25.988301+00:00'
+  last_updated: '2026-03-20T11:32:51.918895+00:00'
   like_count: 10
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/VUgoaNhE4u0/maxresdefault.jpg
   title: Emily Riederer @ Capital One | Explicit design at the start of a project | Data Science Hangout
   url: https://www.youtube.com/watch?v=VUgoaNhE4u0
-  view_count: 843
+  view_count: 846
 ---
 image: thumbnail.jpg
 

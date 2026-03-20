@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 3267
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:20.891271+00:00'
+  last_updated: '2026-03-20T11:32:46.095331+00:00'
   like_count: 14
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/oxiLzbBud2k/maxresdefault.jpg
   title: Integrating Shiny with Epic EHR | Matt Maloney | Data Science Hangout
   url: https://www.youtube.com/watch?v=oxiLzbBud2k
-  view_count: 477
+  view_count: 490
 ---
 image: thumbnail.jpg
 

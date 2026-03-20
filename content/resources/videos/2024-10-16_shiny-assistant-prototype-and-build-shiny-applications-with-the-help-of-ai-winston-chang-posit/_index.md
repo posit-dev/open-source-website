@@ -91,7 +91,7 @@ external:  # updated automatically, do not edit
   duration: 251
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.442599+00:00'
+  last_updated: '2026-03-20T11:32:48.811486+00:00'
   like_count: 126
   people:
   - Winston Chang
@@ -147,7 +147,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fJNKdwdVQ8Q/maxresdefault.jpg
   title: 'Shiny Assistant: Prototype and build Shiny applications with the help of AI | Winston Chang | Posit'
   url: https://www.youtube.com/watch?v=fJNKdwdVQ8Q
-  view_count: 2726
+  view_count: 2739
 ---
 image: thumbnail.jpg
 

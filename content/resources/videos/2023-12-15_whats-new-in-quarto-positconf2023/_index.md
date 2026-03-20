@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1222
   has_captions: true
   language: en-US
-  last_updated: '2026-03-04T14:51:24.938318+00:00'
+  last_updated: '2026-03-20T11:32:50.743503+00:00'
   like_count: 72
   people:
   - Charlotte Wickham
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WR08GESib9Y/maxresdefault.jpg
   title: What's New in Quarto?* - posit::conf(2023)
   url: https://www.youtube.com/watch?v=WR08GESib9Y
-  view_count: 2386
+  view_count: 2389
 ---
 image: thumbnail.jpg
 

@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 436
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695663+00:00'
+  last_updated: '2026-03-20T11:32:49.221510+00:00'
   like_count: 79
   people:
   - Carson Sievert
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ou-09NHcH5w/maxresdefault.jpg
   title: Using your dataset in Shiny Templates | Carson Sievert | Posit
   url: https://www.youtube.com/watch?v=ou-09NHcH5w
-  view_count: 6869
+  view_count: 6890
 ---
 image: thumbnail.jpg
 

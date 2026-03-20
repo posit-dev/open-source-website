@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   duration: 2724
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:21.820373+00:00'
+  last_updated: '2026-03-20T11:32:46.972348+00:00'
   like_count: 4
   people:
   - Rich Iannone
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LLJ0iSWHX9o/maxresdefault.jpg
   title: Virtual Day AMA with Rich Iannone | posit::conf(2025)
   url: https://www.youtube.com/watch?v=LLJ0iSWHX9o
-  view_count: 78
+  view_count: 79
 ---
 image: thumbnail.jpg
 

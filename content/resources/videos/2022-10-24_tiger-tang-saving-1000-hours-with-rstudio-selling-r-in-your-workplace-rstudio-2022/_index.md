@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   duration: 1035
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.282993+00:00'
+  last_updated: '2026-03-20T11:32:52.707380+00:00'
   like_count: 21
   playlist: ''
   software:
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/B1PdbAnv--0/maxresdefault.jpg
   title: 'Tiger Tang | Saving 1,000 hours with RStudio: selling R in your workplace | RStudio (2022)'
   url: https://www.youtube.com/watch?v=B1PdbAnv--0
-  view_count: 709
+  view_count: 710
 ---
 image: thumbnail.jpg
 

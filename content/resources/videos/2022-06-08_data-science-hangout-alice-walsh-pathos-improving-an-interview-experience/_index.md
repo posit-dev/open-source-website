@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 4026
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:27.219668+00:00'
+  last_updated: '2026-03-20T11:32:53.454283+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hwFeleEGcXY/maxresdefault.jpg
   title: Data Science Hangout | Alice Walsh, Pathos | Improving an Interview Experience
   url: https://www.youtube.com/watch?v=hwFeleEGcXY
-  view_count: 630
+  view_count: 631
 ---
 image: thumbnail.jpg
 

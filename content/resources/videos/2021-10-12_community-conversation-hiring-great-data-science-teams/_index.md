@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   duration: 3579
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:27.945795+00:00'
+  last_updated: '2026-03-20T11:32:54.271392+00:00'
   like_count: 57
   playlist: ''
   software:
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/F-JbkFc1uZ0/maxresdefault.jpg
   title: 'Community Conversation: Hiring Great Data Science Teams'
   url: https://www.youtube.com/watch?v=F-JbkFc1uZ0
-  view_count: 1563
+  view_count: 1564
 ---
 image: thumbnail.jpg
 

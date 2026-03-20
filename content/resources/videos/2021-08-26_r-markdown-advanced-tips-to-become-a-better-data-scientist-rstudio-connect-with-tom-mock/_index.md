@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   duration: 4396
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:27.945943+00:00'
+  last_updated: '2026-03-20T11:32:54.271430+00:00'
   like_count: 1150
   playlist: ''
   software:
@@ -130,7 +130,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WkF7nqEYF1E/maxresdefault.jpg
   title: R Markdown Advanced Tips to Become a Better Data Scientist & RStudio Connect | With Tom Mock
   url: https://www.youtube.com/watch?v=WkF7nqEYF1E
-  view_count: 37618
+  view_count: 37630
 ---
 image: thumbnail.jpg
 

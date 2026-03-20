@@ -28,7 +28,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- positron
+- Positron
 tags: []
 title: 'Wes McKinney: Part 2 — The open source hustle and an insider view of Positron'
 
@@ -63,16 +63,16 @@ external:  # updated automatically, do not edit
   duration: 1594
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:20.892584+00:00'
+  last_updated: '2026-03-20T11:32:46.406267+00:00'
   like_count: 7
   playlist: ''
   software:
-  - positron
+  - Positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/jhCDGc5YlOw/maxresdefault.jpg
   title: 'Wes McKinney: Part 2 — The open source hustle and an insider view of Positron'
   url: https://www.youtube.com/watch?v=jhCDGc5YlOw
-  view_count: 176
+  view_count: 184
 ---
 image: thumbnail.jpg
 

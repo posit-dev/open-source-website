@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 61
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:22.131019+00:00'
+  last_updated: '2026-03-20T11:32:47.293436+00:00'
   like_count: 52
   people:
   - Hadley Wickham
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4v0rnLN0V3k/maxresdefault.jpg
   title: 'The Test Set: A Posit Podcast Trailer'
   url: https://www.youtube.com/watch?v=4v0rnLN0V3k
-  view_count: 869
+  view_count: 871
 ---
 image: thumbnail.jpg
 

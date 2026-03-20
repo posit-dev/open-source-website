@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 1749
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:28.310825+00:00'
+  last_updated: '2026-03-20T11:32:54.796490+00:00'
   like_count: 53
   people:
   - RStudio Team
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/l9lrRhFZs8Y/maxresdefault.jpg
   title: Oliver Bridges - Smart DCC | Energy Meetup | RStudio
   url: https://www.youtube.com/watch?v=l9lrRhFZs8Y
-  view_count: 1501
+  view_count: 1502
 ---
 image: thumbnail.jpg
 

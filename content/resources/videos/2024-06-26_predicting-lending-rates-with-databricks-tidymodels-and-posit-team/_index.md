@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 2045
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:23.695398+00:00'
+  last_updated: '2026-03-20T11:32:49.221352+00:00'
   like_count: 80
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qIzKJKcmh-s/maxresdefault.jpg
   title: Predicting Lending Rates with Databricks, tidymodels, and Posit Team
   url: https://www.youtube.com/watch?v=qIzKJKcmh-s
-  view_count: 3455
+  view_count: 3462
 ---
 image: thumbnail.jpg
 

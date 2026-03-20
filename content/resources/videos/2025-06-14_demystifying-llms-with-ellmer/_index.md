@@ -101,8 +101,8 @@ external:  # updated automatically, do not edit
   duration: 10534
   has_captions: false
   language: en
-  last_updated: '2026-03-04T14:51:30.708424+00:00'
-  like_count: 69
+  last_updated: '2026-03-20T11:32:57.423676+00:00'
+  like_count: 71
   people:
   - Joe Cheng
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -115,7 +115,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/skLmOuNjqEU/maxresdefault.jpg
   title: Demystifying LLMs with Ellmer
   url: https://www.youtube.com/watch?v=skLmOuNjqEU
-  view_count: 3006
+  view_count: 3092
 ---
 image: thumbnail.jpg
 

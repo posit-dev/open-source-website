@@ -89,7 +89,7 @@ external:  # updated automatically, do not edit
   duration: 485
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:26.836138+00:00'
+  last_updated: '2026-03-20T11:32:53.123268+00:00'
   like_count: 59
   people:
   - Winston Chang
@@ -147,7 +147,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pE7109d4Sgs/maxresdefault.jpg
   title: Plot Outputs in Shiny for Python || Winston Chang || RStudio
   url: https://www.youtube.com/watch?v=pE7109d4Sgs
-  view_count: 5618
+  view_count: 5640
 ---
 image: thumbnail.jpg
 

@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1224
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.840433+00:00'
+  last_updated: '2026-03-20T11:32:48.001243+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wF3Oxm2Flkc/maxresdefault.jpg
   title: Brendan Graham - A Machine Learning Approach to Protect Patients from Blood Tube Mix-Ups
   url: https://www.youtube.com/watch?v=wF3Oxm2Flkc
-  view_count: 232
+  view_count: 233
 ---
 image: thumbnail.jpg
 

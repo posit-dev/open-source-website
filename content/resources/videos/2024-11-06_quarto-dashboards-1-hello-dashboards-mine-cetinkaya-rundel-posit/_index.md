@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 1578
   has_captions: true
   language: en
-  last_updated: '2026-03-04T14:51:22.840288+00:00'
-  like_count: 445
+  last_updated: '2026-03-20T11:32:48.001187+00:00'
+  like_count: 449
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HW7QbqI4fH0/maxresdefault.jpg
   title: 'Quarto Dashboards 1: Hello, Dashboards! | Mine Çetinkaya-Rundel | Posit'
   url: https://www.youtube.com/watch?v=HW7QbqI4fH0
-  view_count: 17506
+  view_count: 17723
 ---
 image: thumbnail.jpg
 
