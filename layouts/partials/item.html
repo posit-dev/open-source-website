@@ -515,8 +515,8 @@
       {{ if $image }}
         {{ partial "responsive_image_fixed.html" (dict
           "image" $image
-          "baseWidth" 192
-          "baseHeight" 192
+          "baseWidth" 342
+          "baseHeight" 342
           "alt" $image_alt
           "class" (printf "mx-auto h-full %s" $card_settings.image_class)
           "method" "fit"
