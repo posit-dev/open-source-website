@@ -1,6 +1,6 @@
 # Open Source Website - Comprehensive Research Report
 
-**Date:** February 24, 2026
+**Date:** March 20, 2026 (updated)
 **Repository:** posit-dev/open-source-website
 **Live Site:** https://posit-open-source.netlify.app
 
@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-This is a data-driven static website serving as a comprehensive knowledge hub and catalog for the Posit open-source ecosystem. The site showcases **356+ open-source software projects** with integrated cross-references to 45 team member profiles, blog posts, events, and learning resources. The architecture emphasizes automation, using GitHub API integration to maintain current metadata while providing flexible manual overrides.
+This is a data-driven static website serving as a comprehensive knowledge hub and catalog for the Posit open-source ecosystem. The site showcases **358+ open-source software projects** with integrated cross-references to 48 team member profiles, 590+ blog posts, 18+ events, and learning resources. The architecture emphasizes automation, using GitHub API integration to maintain current metadata while providing flexible manual overrides.
 
 **Key Characteristics:**
 - Static site generator (Hugo + Quarto)
@@ -25,32 +25,34 @@ This is a data-driven static website serving as a comprehensive knowledge hub an
 ### 1.1 Technology Stack
 
 **Core Technologies:**
-- **Hugo v0.153.2** - Primary static site generator (Go-based)
+- **Hugo v0.158.0** - Primary static site generator (Go-based, extended version)
 - **Quarto** - Scientific document renderer (.qmd and .ipynb files)
-- **Tailwind CSS v4.0.17** - Utility-first CSS framework with custom theming
+- **Tailwind CSS v4.0.17** - Utility-first CSS framework with custom theming (v4 syntax)
 - **Pagefind v1.4.0** - Static site search indexing (client-side, no backend)
-- **Node.js v20** - Build tooling and package management
+- **Node.js v22** - Build tooling and package management
 - **Python 3.8+** - Automation scripts (managed by uv package manager)
 - **Netlify** - Hosting platform with edge functions and preview deployments
+- **Iconify** - Icon framework (`@iconify/tailwind4`, `@iconify-json/material-symbols-light`)
 
 **Build & Development Tools:**
 - npm/npx - JavaScript package management
 - just - Command runner (Rust-based make alternative)
 - npm-run-all - Parallel command execution
-- Prettier - Code formatting
+- Prettier - Code formatting (with prettier-plugin-tailwindcss)
 - PyGithub - GitHub API v3 client library
 - uv - Fast Python package manager
+- @tailwindcss/cli - Tailwind CSS CLI tool
 
 ### 1.2 Repository Structure
 
 ```
 open-source-website/
-├── content/              # All site content (354 software, 45 people, 5 blog posts)
+├── content/              # All site content (358 software, 48 people, 590+ blog posts, 18 events)
 ├── layouts/              # All Hugo templates (theme merged into root)
 ├── assets/               # CSS source files
 ├── static/               # Static assets (images, logos)
 ├── data/                 # Data files (github-repos.toml, github-orgs.toml)
-├── scripts/              # Python automation (6 scripts)
+├── scripts/              # Python automation (17 scripts)
 ├── .github/workflows/    # CI/CD (deploy.yml, netlify-cleanup.yml)
 ├── public/               # Generated output (gitignored)
 ├── node_modules/         # NPM dependencies (gitignored)
@@ -67,7 +69,7 @@ open-source-website/
 
 The site manages five primary content types with distinct structures:
 
-#### A. Software Projects (354 directories)
+#### A. Software Projects (358 directories)
 
 **Location:** `/content/software/[project-name]/_index.md`
 
@@ -111,9 +113,11 @@ external:
 - **override** - Completely replace field values
 - **external** - Auto-updated by scripts, never edit manually
 
-#### B. Blog Posts (5 collections)
+#### B. Blog Posts (590+ posts across 11 categories)
 
-**Location:** `/content/blog/[post-name]/index.md`
+**Location:** `/content/blog/[category]/[post-name]/index.md`
+
+**Categories:** ai, anscombes-quartet, education, great-tables, plotnine, pointblank, positron, quarto, rstudio, shiny, tidyverse
 
 **Supported Formats:**
 - Markdown (.md) - Standard Hugo content
@@ -135,7 +139,7 @@ tags:
   - tag2
 ```
 
-#### C. People Profiles (45 members)
+#### C. People Profiles (48 members)
 
 **Location:** `/content/people/[name]/_index.md`
 
@@ -155,7 +159,7 @@ social:
 
 **Cross-Referencing:** GitHub usernames automatically link people to software projects they contribute to.
 
-#### D. Events (1+ directories)
+#### D. Events (18+ directories)
 
 **Location:** `/content/events/[event-name]/_index.md`
 
@@ -205,8 +209,8 @@ The site's defining feature is its automated GitHub metadata synchronization sys
 
 #### Data Source Files
 
-**data/github-repos.toml** (496KB, ~24,700 lines)
-- Contains metadata for 356+ repositories
+**data/github-repos.toml** (500KB, ~25,200 lines)
+- Contains metadata for 760 repositories
 - Fields: stars, forks, license, contributors, latest_release, first_commit, languages, image
 - Auto-updated via `update-github-repos.py` script
 - Uses smart caching (12-hour staleness check)
@@ -223,7 +227,7 @@ The site's defining feature is its automated GitHub metadata synchronization sys
 
 ### 3.2 Python Automation Scripts
 
-All scripts use **uv** package manager for fast, modern Python dependency management.
+All scripts use **uv** package manager for fast, modern Python dependency management. There are **17 scripts** total in `/scripts/`.
 
 #### Script 1: update-github-repos.py (655 lines)
 
@@ -259,7 +263,7 @@ pyyaml
 GH_TOKEN="ghp_..."  # GitHub personal access token
 ```
 
-#### Script 2: update-software-frontmatter.py (527 lines)
+#### Script 2: update-software-frontmatter.py (566 lines)
 
 **Purpose:** Process all software _index.md files and inject GitHub metadata
 
@@ -313,6 +317,19 @@ rich
 
 **Use Case:** Create concise descriptions for software projects without manual writing
 
+#### Additional Scripts (7-17)
+
+- **create-cheatsheet-thumbnails.py** - Generate thumbnail images for cheatsheets
+- **create-hex-logo.py / create-hex-logos.py** - Generate hex-shaped logos for projects
+- **extract-software-colors.py** - Extract brand colors from software project logos
+- **format-transcriptions.py** - Format video transcription text
+- **import-cheatsheets.py** - Import cheatsheet content
+- **lychee-errors.py** - Process link-checking error reports
+- **resize-images.py** - Batch resize images for web
+- **sync-videos.py** - Synchronize video content
+- **transcribe.py** - Transcribe video/audio content
+- **update-youtube-videos.py** - Update YouTube video metadata
+
 ### 3.3 Data Flow Diagram
 
 ```
@@ -358,16 +375,18 @@ just hugo-serve                 # Hugo server without Tailwind
 
 ### 4.2 Production Build Process
 
-**Build Command (netlify.toml):**
+**Build Command (via GitHub Actions deploy.yml):**
 ```bash
-npm ci && npm run build-tailwind && hugo --minify && npm run build-search
+npm ci && npm run build-tailwind && hugo --templateMetrics --templateMetricsHints && npm run build-search
 ```
 
 **Step-by-Step:**
 1. **npm ci** - Clean install of exact dependency versions
-2. **npm run build-tailwind** - Generate minified Tailwind CSS
-3. **hugo --minify** - Build static site with HTML/CSS/JS minification
+2. **npm run build-tailwind** - Generate minified Tailwind CSS via `@tailwindcss/cli`
+3. **hugo --templateMetrics --templateMetricsHints** - Build static site with template performance metrics
 4. **npm run build-search** - Generate Pagefind search index
+
+**Note:** The build is driven entirely by GitHub Actions (not Netlify build commands). Netlify's `netlify.toml` uses `ignore = "exit 0"` to skip its own build.
 
 **Output:** `/public/` directory (served by Netlify)
 
@@ -382,11 +401,11 @@ npm ci && npm run build-tailwind && hugo --minify && npm run build-search
 
 **Steps:**
 1. Checkout repository
-2. Setup Hugo 0.153.2 (extended version)
-3. Setup Node.js v20 with npm cache
+2. Setup Hugo 0.158.0 (extended version)
+3. Setup Node.js v22 with npm cache
 4. npm ci (install dependencies)
 5. Build Tailwind CSS
-6. Build Hugo site (minified)
+6. Build Hugo site (with template metrics)
 7. Build Pagefind search index
 8. Deploy to Netlify
    - Main branch → Production site
@@ -405,15 +424,15 @@ npm ci && npm run build-tailwind && hugo --minify && npm run build-search
 ### 4.4 Netlify Configuration
 
 **netlify.toml Features:**
-- Base directory: `.`
 - Publish directory: `public/`
-- Hugo version pinned: 0.153.2
-- Node version: 20
+- Build ignored (`ignore = "exit 0"`) — builds are handled by GitHub Actions
+- Hugo and Node versions are set in `deploy.yml`, not in `netlify.toml`
 
 **Security Headers:**
 ```toml
-X-Frame-Options: SAMEORIGIN
+X-Frame-Options: DENY
 X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
 Referrer-Policy: strict-origin-when-cross-origin
 ```
 
@@ -430,29 +449,40 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 ### 5.1 Tailwind CSS Configuration
 
-**Version:** 4.0.17 (latest major release)
+**Version:** 4.0.17
 
-**Configuration File:** `tailwind.config.js`
+**Configuration Files:**
+- `tailwind.config.js` — Legacy config (content paths, font families, typography plugin, container queries)
+- `assets/css/main.css` — Primary styling with Tailwind v4 `@theme` syntax for color definitions
 
-**Content Scanning Paths:**
+**Content Scanning Paths (tailwind.config.js):**
 ```javascript
 content: [
   './layouts/**/*.html',
-  './content/**/*.{md,html}',
+  './content/**/*.md',
   './safelist.txt'
 ]
 ```
 
-**Dark Mode:** Class-based (`dark:` prefix)
+**Tailwind v4 Features Used:**
+- `@import 'tailwindcss'` — v4 import syntax (replaces `@tailwind` directives)
+- `@config` — References tailwind.config.js
+- `@plugin "@iconify/tailwind4"` — Iconify icon integration
+- `@theme` — CSS-native theme definitions (colors defined here, not in JS config)
 
 **Plugins:**
 - @tailwindcss/typography (prose classes for content)
+- @iconify/tailwind4 (icon framework integration)
+
+**Custom Container Queries:**
+- Named containers: nip (10rem), short (15rem), tall (20rem), grande (30rem), venti (40rem), trenta (50rem)
+- Custom screen: 3xl (1920px)
 
 ### 5.2 Posit Brand Color Palette
 
 **Source:** `assets/css/main.css`
 
-All Tailwind default colors are disabled. Custom Posit palette:
+Colors are defined in `assets/css/main.css` using Tailwind v4 `@theme` syntax (CSS custom properties). Custom Posit palette:
 
 #### Primary Colors (8 families)
 
@@ -490,15 +520,15 @@ All Tailwind default colors are disabled. Custom Posit palette:
    - Accent color
    - Shades: 50-950
 
-Each color family has 11 shades (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950).
+Each color family has 12 shades (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000 for some).
 
 ### 5.3 Typography
 
 **Font Families:**
-- **Body/Headings:** Open Sans (Google Fonts)
-  - Weights: 400, 500, 600, 700, 800
-- **Code:** Source Code Pro (Google Fonts)
-  - Weights: 400, 500, 600, 700, 900
+- **Body/Headings:** Open Sans (self-hosted woff2, variable weight 300-800)
+- **Code:** Source Code Pro (self-hosted woff2, variable weight 300-900)
+
+**Font Loading:** Self-hosted from `/fonts/` directory with `font-display: swap` for performance (no external Google Fonts dependency).
 
 **Default Styles:**
 ```css
@@ -695,17 +725,28 @@ format:
 
 **Location:** `layouts/shortcodes/`
 
-**Available Shortcodes:**
+**Available Shortcodes (16 total):**
 - **gist** - Embed GitHub gists
 - **asciinema** - Embed terminal recordings
 - **asciinema_local** - Local asciinema files
 - **bilibili** - Embed Bilibili videos
 - **n8n** - Embed n8n workflows
+- **button** - Styled button links
+- **columns** - Multi-column layouts
+- **conf-form** - Conference registration forms
+- **insert-item / insert-items** - Insert content items
+- **query-items** - Query and display content items
+- **video** - Embed video content
+- **webr-editor / webr-init** - WebR interactive R editor
+- **prerelease-docs-url** - Pre-release documentation links
+- **test-drive-cloud** - Cloud test drive links
 
 **Usage in Content:**
 ```markdown
 {{< gist username gist-id >}}
 {{< asciinema recording-id >}}
+{{< video src="video.mp4" >}}
+{{< button href="/path" text="Click me" >}}
 ```
 
 ---
@@ -714,10 +755,10 @@ format:
 
 ### Current Content Inventory
 
-- **Software Projects:** 354 directories
-- **Blog Posts:** 5 collections
-- **People Profiles:** 45 team members
-- **Events:** 1+ event pages
+- **Software Projects:** 358 directories
+- **Blog Posts:** 590+ posts across 11 categories (ai, anscombes-quartet, education, great-tables, plotnine, pointblank, positron, quarto, rstudio, shiny, tidyverse)
+- **People Profiles:** 48 team members
+- **Events:** 18+ event pages
 - **GitHub Organizations Tracked:** 6
   - posit-dev
   - rstudio
@@ -725,27 +766,28 @@ format:
   - tidymodels
   - r-lib
   - r-dbi
-- **GitHub Repos Tracked:** 356+
-- **Data File Size:** 496KB (github-repos.toml)
-- **Data File Lines:** ~24,700 lines
+- **GitHub Repos Tracked:** 760
+- **Data File Size:** 500KB (github-repos.toml)
+- **Data File Lines:** ~25,200 lines
 
-### Recent Activity (Last 10 Commits)
+### Recent Activity (Last 10 Commits, as of March 20, 2026)
 
-1. **8a68162** - Align filter toggle button to bottom of header
-2. **a79210f** - Enhance JJ Allaire profile
-3. **4446662** - Add LinkedIn profile for Jeroen Janssens
-4. **6d846e2** - Update profile images with personalized filenames
-5. **0fe8d3b** - Fix Quarto title capitalization
-6. **2ff7a4e** - Improve software filtering UI
-7. **7520410** - Fix font loading to prevent FOUC
-8. **179b6cb** - Update CSS with new Tailwind utility classes
-9. **570945c** - Implement filtering system for software catalog
+1. **7c98166** - lil spacing nudges (homepage)
+2. **87ab5a8** - trying out some homepage ideas
+3. **353d8f1** - Add posit::conf(2025)
+4. **dc9ced2** - Clean up blog tags across 1625 posts
+5. **fb917c6** - Fix some categories
+6. **847f3fec** - Fix pins-1-0-0 hero image metadata
+7. **820a9a8** - Rename 'MLOps & Admin' to 'MLOps and Admin'
+8. **3df4c53** - Add fixed taxonomy categories to 923 blog posts
+9. **8ad05b5** - Add fixed taxonomy categories to 923 blog posts
+10. **a303b08** - Fix Hugo WEBP memory panic on software term pages
 
 **Recent Focus Areas:**
-- UI/UX improvements (filtering, layout)
-- People profile enhancements
-- Accessibility fixes
-- Performance optimizations (font loading)
+- Homepage redesign exploration
+- Blog taxonomy/category cleanup at scale
+- Event pages (posit::conf 2025)
+- Bug fixes (WEBP memory, categories)
 
 ---
 
@@ -884,21 +926,23 @@ events = "events"
 resources = "resources"
 
 [[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
 name = "Software"
 url = "/software/"
 weight = 2
 
-# ... more menu items
+[[menu.main]]
+name = "People"
+url = "/people/"
+weight = 3
+
+# ... plus Events (4), Resources (5), Blog (6), About (7)
 
 [ignoreFiles]
-# Ignore Quarto files (handled separately)
+# Ignores Quarto files, Rmd, CLAUDE.md, renv, .venv, quarto extensions, and more
 '\.qmd$'
 '\.ipynb$'
+'\.Rmd$'
+# ... plus many additional patterns
 ```
 
 **Taxonomies Explained:**
@@ -927,27 +971,31 @@ format:
 ### 9.3 tailwind.config.js
 
 ```javascript
-export default {
-  darkMode: 'class',
+module.exports = {
   content: [
     './layouts/**/*.html',
-    './content/**/*.{md,html}',
+    './content/**/*.md',
     './safelist.txt'
   ],
   theme: {
     extend: {
-      colors: {
-        'posit-blue': { /* 50-950 shades */ },
-        'posit-gray': { /* 50-950 shades */ },
-        // ... 6 more color families
-      }
+      screens: { '3xl': '1920px' },
+      containers: {
+        'nip': '10rem', 'short': '15rem', 'tall': '20rem',
+        'grande': '30rem', 'venti': '40rem', 'trenta': '50rem',
+      },
+      fontFamily: {
+        sans: ['"Open Sans"', 'sans-serif'],
+        mono: ['"Source Code Pro"', 'monospace'],
+      },
+      typography: { /* custom prose styles */ },
     }
   },
-  plugins: [
-    require('@tailwindcss/typography')
-  ]
+  plugins: [ require('@tailwindcss/typography') ]
 }
 ```
+
+**Note:** Colors are no longer in `tailwind.config.js`. They are defined in `assets/css/main.css` using Tailwind v4's `@theme` block with CSS custom properties (e.g., `--color-blue: #447099`).
 
 **safelist.txt:** Contains class names to always include (dynamic classes).
 
@@ -957,22 +1005,28 @@ export default {
 ```json
 {
   "scripts": {
-    "dev-hugo": "hugo server -D",
-    "dev-tailwind": "tailwindcss -i ./assets/css/main.css -o ./assets/css/index.css --watch",
-    "dev": "run-p dev-*",
-    "build-tailwind": "tailwindcss -i ./assets/css/main.css -o ./assets/css/index.css --minify",
-    "build-search": "pagefind --site public"
-  },
-  "dependencies": {
-    "@tailwindcss/typography": "^0.5.17",
-    "tailwindcss": "^4.0.17"
+    "dev-hugo": "hugo server -D --disableFastRender",
+    "dev-tailwind": "npx @tailwindcss/cli -i assets/css/main.css -o assets/css/index.css --watch",
+    "build-tailwind": "npx @tailwindcss/cli -i assets/css/main.css -o assets/css/index.css --minify",
+    "build-search": "npx pagefind --site public",
+    "dev": "npm-run-all --parallel dev-hugo dev-tailwind"
   },
   "devDependencies": {
+    "@iconify-json/material-symbols-light": "^1.2.61",
+    "@iconify/json": "^2.2.448",
+    "@iconify/tailwind4": "^1.2.3",
+    "@tailwindcss/cli": "^4.0.17",
+    "@tailwindcss/typography": "^0.5.13",
     "npm-run-all": "^4.1.5",
     "pagefind": "^1.4.0",
-    "prettier": "^3.5.3"
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.17"
   }
 }
+```
+
+**Note:** All packages are in `devDependencies` (no runtime `dependencies`). Tailwind CSS uses `@tailwindcss/cli` for building (not the `tailwindcss` CLI directly).
 ```
 
 ### 9.5 Environment Variables
@@ -994,7 +1048,7 @@ PLAUSIBLE_KEY="..."             # Analytics API key (optional)
 ### 10.1 Why Hugo + Quarto?
 
 **Hugo Benefits:**
-- Extremely fast build times (< 1 second for 354 pages)
+- Extremely fast build times (< 1 second for 358+ software pages)
 - No JavaScript runtime required
 - Single binary, easy to install
 - Mature ecosystem
@@ -1084,7 +1138,7 @@ PLAUSIBLE_KEY="..."             # Analytics API key (optional)
 **Production Build:**
 - npm ci: ~10-20 seconds (with cache)
 - Tailwind CSS (minified): ~2-3 seconds
-- Hugo build (minified): ~1-2 seconds (for 354+ pages)
+- Hugo build: ~1-2 seconds (for 358+ software pages + 590+ blog posts)
 - Pagefind indexing: ~2-4 seconds
 - **Total:** ~15-30 seconds
 
@@ -1226,7 +1280,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 ### 14.2 Scalability
 
 **Current Limits:**
-- 356+ projects (could scale to 1000+)
+- 760 tracked repos, 358+ projects (could scale to 1000+)
 - Hugo build time grows linearly
 - GitHub API rate limiting (5000/hour)
 
@@ -1243,7 +1297,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 ### 15.1 Architectural Strengths
 
 1. **Data-Driven Design**
-   - Single source of truth (github-repos.toml)
+   - Single source of truth (github-repos.toml, 760 repos)
    - Automated synchronization reduces manual work
    - Smart caching prevents rate limiting
 
@@ -1311,7 +1365,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 ## 16. Conclusion
 
-The Posit Open Source Website is a well-architected, data-driven static site that successfully automates the management of 356+ software projects while maintaining flexibility for manual overrides. The combination of Hugo (speed), Quarto (scientific computing), and Tailwind CSS (modern styling) creates a powerful platform for showcasing open-source software.
+The Posit Open Source Website is a well-architected, data-driven static site that successfully automates the management of 358+ software projects (tracking 760 repos) while maintaining flexibility for manual overrides. The combination of Hugo (speed), Quarto (scientific computing), and Tailwind CSS (modern styling) creates a powerful platform for showcasing open-source software.
 
 **Key Success Factors:**
 - Automated GitHub integration reduces maintenance burden
@@ -1329,6 +1383,7 @@ The Posit Open Source Website is a well-architected, data-driven static site tha
 ---
 
 **Report Compiled:** February 24, 2026
+**Last Updated:** March 20, 2026
 **Total Research Time:** ~2 hours
 **Files Examined:** 55+
 **Lines of Code Analyzed:** ~50,000+
