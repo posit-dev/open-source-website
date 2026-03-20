@@ -469,7 +469,7 @@
     {{ with $description }}
       <div class="text-sm @grande:text-base @venti:text-lg text-gray-600">
         <p class="line-clamp-3 whitespace-pre-line [&_a]:underline"{{ if $is_resource }} id="video-description"{{ end }} data-hero-desc>{{ . | safeHTML }}</p>
-        <button class="text-blue-600 hover:underline text-sm mt-1 hidden" data-hero-toggle>Read more...</button>
+        <button class="text-blue-600 hover:underline mt-1 hidden" data-hero-toggle>Read more...</button>
       </div>
     {{ end }}
 
