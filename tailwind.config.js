@@ -23,10 +23,18 @@ module.exports = {
         sans: ['"Open Sans"', 'sans-serif'],
         mono: ['"Source Code Pro"', 'monospace'],
       },
+      boxShadow: {
+        DEFAULT: '0px 0px 2px rgba(21, 21, 21, 0.14), 0px 2px 4px rgba(21, 21, 21, 0.16)',
+        md: '0px 1px 2px rgba(21, 21, 21, 0.1), 0px 3px 7px rgba(21, 21, 21, 0.1), 0px 12px 30px rgba(21, 21, 21, 0.08)',
+        lg: '0px 4px 10px rgba(21, 21, 21, 0.1), 0px 12px 30px rgba(21, 21, 21, 0.17)',
+      },
       typography: {
         DEFAULT: {
             css: {
               fontWeight: '400',
+              'h2': {
+                fontWeight: '600',
+              },
               'a': {
                 fontWeight: '400',
               },
