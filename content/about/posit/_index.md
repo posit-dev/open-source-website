@@ -7,29 +7,33 @@ RStudio (now Posit) was founded in 2009 with the vision of creating high quality
 
 {{< button url="http://posit.co" text="Visit posit.co" >}}
 
-## **Our mission**
+<div class="mission-section my-12 lg:-mx-20">
+<div class="terminal-frame px-10 py-12 lg:p-20 w-full">
 
-Posit’s mission is to create open-source software for data science, scientific research, and technical communication. We build tools that prioritize correctness, transparency, and reproducibility in their output.
+<h2 class="mt-4 text-1xl lg:text-3xl font-medium">Our mission</h2>
 
-Our open-source and professional software exist in a virtuous cycle. Wide adoption of our open-source tools in the community creates the foundation for our [professional products](https://posit.co/products/enterprise/team/) . In turn, the revenue from our enterprise customers allows us to reinvest our engineering efforts back into the open-source ecosystem. This model ensures that our core projects remain free, stable, and active for the long term.
+<p class="lg:text-xl">Posit’s mission is to create open-source software for data science, scientific research, and technical communication. We build tools that prioritize correctness, transparency, and reproducibility in their output.</p>
 
-### **Public Benefit Corporation status**
+<p class="lg:text-xl">Our open-source and professional software exist in a virtuous cycle. Wide adoption of our open-source tools in the community creates the foundation for our <a class="text-gray-500" href="https://posit.co/products/enterprise/team/">professional products</a>. In turn, the revenue from our enterprise customers allows us to reinvest our engineering efforts back into the open-source ecosystem. This model ensures that our core projects remain free, stable, and active for the long term.</p>
 
-Posit is a [Public Benefit Corporation](https://en.wikipedia.org/wiki/Benefit_corporation) (PBC). Our charter requires us to consider the impact of our decisions on the open-source community and the long-term health of the ecosystem we serve.
-
-{{< button url="https://posit.co/blog/rstudio-pbc/" text="Learn about our PBC status" >}}
-{{< button url="https://posit.co/about/pbc-report/" text="Read our 2025 PBC report" >}}
-
-### **Open Source Pledge**
-
-For over a decade, we have dedicated a majority of our engineering resources to open-source software. In 2024, we formally joined the [Open Source Pledge](https://opensourcepledge.com/) as a commitment to continue funding the developers behind the core tools that the data science community relies on.
-
-{{< button url="https://posit.co/blog/posit-pledge-to-support-open-source/" text="Learn more about the Open Source Pledge" >}}
-{{< button url="https://opensourcepledge.com/members/posit/" text="Read our 2025 report card" >}}
-
-### **Ecosystem support**
-
-We provide financial support and engineering contributions to the foundational organizations and projects that make modern data science possible:
-
-<!-- Note for Jeroen: could you please help me add the logos? Should be NumFocus, R Consortium, Typst, and DuckDB.-->
-\[logos\]
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 my-10 max-w-4xl lg:max-w-5xl mx-auto">
+  <div class="border-t border-gray-500 mt-12">
+    <p class="font-mono uppercase font-semibold mb-4">Public Benefit Corporation status</p>
+    <p class="mt-4">Posit is a <a href="https://en.wikipedia.org/wiki/Benefit_corporation">Public Benefit Corporation</a> (PBC). Our charter requires us to consider the impact of our decisions on the open-source community and the long-term health of the ecosystem we serve.
+  </p>
+    <p><a href="https://posit.co/blog/rstudio-pbc/" class="inline-flex items-center gap-1">Learn about our PBC status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a><a href="https://posit.co/about/pbc-report/" class="inline-flex items-center gap-1">Read our 2025 PBC report <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a></p>
+  </div>
+  <div class="border-t border-gray-500 mt-12">
+    <p class="font-mono uppercase font-semibold mb-4">Open Source Pledge</p>
+    <p class="mt-4">For over a decade, we have dedicated a majority of our engineering resources to open-source software. In 2024, we formally joined the <a href="https://opensourcepledge.com/">Open Source Pledge</a> as a commitment to continue funding the developers behind the core tools that the data science community relies on.
+    <p><a href="https://posit.co/blog/posit-pledge-to-support-open-source/" class="inline-flex items-center gap-1">Learn about the Open Source Pledge <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a><a href="https://opensourcepledge.com/members/posit/" class="inline-flex items-center gap-1">Read our 2025 report card <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 -rotate-90"><path d="M8,8.8l3.4-3.5.9.9-4.3,4.5L3.6,6.4l.9-.9,3.5,3.4Z"/></svg></a></p>
+  </p>
+  </div>
+  <div class="border-t border-gray-500 mt-12">
+    <p class="font-mono uppercase font-semibold mb-4">Ecosystem support</p>
+    <p class="mt-4">We provide financial support and engineering contributions to the foundational organizations and projects that make modern data science possible:
+  <!-- NumFocus, R Consortium, Typst, and DuckDB logos here .--></p>
+  </div>
+</div>

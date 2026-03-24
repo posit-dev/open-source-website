@@ -684,3 +684,55 @@ mark[data-pagefind-highlight],
   color: var(--color-blue-600);
   border-bottom-color: var(--color-blue-600);
 }
+
+/* Terminal Frame */
+.terminal-frame {
+  background-color: transparent;
+  color: var(--color-gray-500);
+  border: 5px solid var(--color-gray-500);
+  border-radius: 0.75rem;
+  position: relative;
+}
+
+/* Top-left caret */
+.terminal-frame::before {
+  content: '';
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('/images/caret-top-left.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* Bottom-right caret */
+.terminal-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('/images/caret-bottom-right.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.terminal-frame h2,
+.terminal-frame p {
+  position: relative;
+  z-index: 1;
+  color: var(--color-gray-500);
+}
+
+.terminal-frame a {
+  color: var(--color-gray-500);
+}
+
+.terminal-frame a:hover {
+  color: var(--color-gray-800);
+}
