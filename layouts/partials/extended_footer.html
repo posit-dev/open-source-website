@@ -4,6 +4,12 @@
 {{ end -}}
 <script src="{{ $built.RelPermalink }}" defer></script>
 
+{{- $externalLinks := resources.Get "js/external-links.js" -}}
+{{- if not hugo.IsDevelopment }}
+  {{- $externalLinks = $externalLinks | minify | fingerprint -}}
+{{ end -}}
+<script src="{{ $externalLinks.RelPermalink }}" defer></script>
+
 {{- $easeScroll := resources.Get "js/ease-scroll.js" -}}
 {{- if not hugo.IsDevelopment }}
   {{- $easeScroll = $easeScroll | minify | fingerprint -}}
