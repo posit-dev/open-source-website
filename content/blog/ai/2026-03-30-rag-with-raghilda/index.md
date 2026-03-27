@@ -231,7 +231,12 @@ chat.register_tool(search_ragnhild)
 _ = chat.chat("Which year did she move to Brazil?", echo="text")
 ```
 
-Princess Ragnhild moved to Brazil in the same year she got married, 1953. Her marriage and the move to Brazil were connected, as her husband was an industrialist and owner of business holdings in Brazil. They settled in Rio de Janeiro and lived there until her death in 2012.
+```
+Princess Ragnhild moved to Brazil in the same year she got married,
+1953. Her marriage and the move to Brazil were connected, as her
+husband was an industrialist and owner of business holdings in Brazil.
+They settled in Rio de Janeiro and lived there until her death in 2012.
+```
 
 Compare this with the same question without the search tool:
 
@@ -246,7 +251,9 @@ _ = chat_no_rag.chat(
 )
 ```
 
+```
 Princess Ragnhild moved to Brazil in 1960.
+```
 
 With the search tool, the LLM retrieves the relevant chunks
 and grounds its answer in the actual document. Without it,
