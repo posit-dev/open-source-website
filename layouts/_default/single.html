@@ -17,12 +17,12 @@
   {{ end }}
   {{ end }}
 
-  <div>
+  <div class="w-full max-w-4xl lg:max-w-5xl mx-auto">
     <a href="{{ .RelPermalink }}">
       {{ partial "block/image.html" . }}
     </a>
   </div>
-  <div class="flex flex-col gap-y-3">
+  <div class="flex flex-col gap-y-3 w-full max-w-4xl lg:max-w-5xl mx-auto">
     <h1 class="text-4xl font-medium text-gray-500">
       <a href="{{ .RelPermalink }}">{{ .Title | .RenderString }}</a>
     </h1>
@@ -39,7 +39,7 @@
 
     {{ if or .Params.Toc $.Site.Params.Toc }}
     {{ if ne .Params.Toc false }}
-    <section class="prose prose w-full max-w-4xl lg:max-w-5xl mt-6">
+    <section class="prose prose w-full max-w-4xl lg:max-w-5xl mx-auto mt-6">
       <h2>{{ T "table_of_contents" }}</h2>
       <aside>{{ .TableOfContents }}</aside>
     </section>
@@ -47,7 +47,7 @@
     {{ end }}
 
     <article data-pagefind-body
-      class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose prose-quoteless post-content">
+      class="mt-6 w-full max-w-4xl lg:max-w-5xl mx-auto prose prose prose-quoteless post-content">
       {{ .Content | safeHTML }}
     </article>
 
