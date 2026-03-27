@@ -9,7 +9,7 @@ people:
 image: thumbnail-wd.jpg
 image-alt: "RAG with raghilda"
 categories:
-  - AI
+  - Artificial Intelligence
 tags:
   - Python
   - Packages
