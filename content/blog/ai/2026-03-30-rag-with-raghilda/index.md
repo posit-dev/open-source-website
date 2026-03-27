@@ -1,6 +1,6 @@
 ---
 title: "RAG with raghilda"
-date: '2026-03-30'
+date: '2026-03-27'
 description: |
   An introduction to building retrieval-augmented generation systems with raghilda.
 people:
@@ -21,26 +21,7 @@ We're happy to introduce Raghilda, a new Python package for building RAG (Retrie
 
 RAG is a simple concept that comes up anytime you want to _retrieve_ content for an LLM to improve or _augment_ the _generated_ output.
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f5f5f5", "primaryBorderColor": "#ccc", "primaryTextColor": "#333", "lineColor": "#999", "secondaryColor": "#fafafa", "tertiaryColor": "#fff"}}}%%
-flowchart TB
-  subgraph s1 [Without RAG]
-    direction LR
-    Q1[/User Query/] --> LLM1[LLM] --> R1[/Response/]
-  end
-
-  subgraph s2 [With RAG]
-    direction LR
-    Q2[/User Query/] --> LLM2[LLM] --> R2[/Response/]
-    Q2 --> D[Retrieve Relevant Documents]
-    D --> LLM2
-  end
-
-  s1 ~~~ s2
-
-  style s1 fill:transparent,stroke:none
-  style s2 fill:transparent,stroke:none
-```
+![Without RAG, the LLM generates a response using only the user query. With RAG, relevant documents are retrieved and provided to the LLM before it generates a response.](rag-diagram.svg)
 
 LLMs are great at reasoning and generating text, but their knowledge is frozen at training time.
 They can't access private documents, recent information, or anything that wasn't in the training
@@ -100,26 +81,7 @@ finding the right chunks given a query. raghilda exposes both
 phases clearly, with each step exposed as an
 individual call you can customize or replace.
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f5f5f5", "primaryBorderColor": "#ccc", "primaryTextColor": "#333", "lineColor": "#999", "secondaryColor": "#fafafa", "tertiaryColor": "#fff"}}}%%
-flowchart TD
-  subgraph s1 [Ingestion]
-    direction LR
-    A[URLs / Files] --> B[Read as Markdown] --> C[Chunk] --> D[Embed] --> E[Store]
-  end
-
-  subgraph s2 [Retrieval]
-    direction LR
-    F[Query] --> G[Semantic Search] --> I[Relevant Chunks]
-    F --> H[BM25 Search] --> I
-    F --> J[Attribute Filters] --> I
-  end
-
-  s1 ~~~ s2
-
-  style s1 fill:transparent,stroke:none
-  style s2 fill:transparent,stroke:none
-```
+![raghilda's two phases: ingestion prepares your documents for search, retrieval finds the relevant chunks at query time.](pipeline-diagram.svg)
 
 Let's walk through a minimal example using a Wikipedia article about Princess Ragnhild
 of Norway.
