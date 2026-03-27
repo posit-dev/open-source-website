@@ -7,9 +7,9 @@ people:
   - Daniel Falbel
   - Tomasz Kalinowski
 image: thumbnail-wd.jpg
-image-alt: "Diagram showing how raghilda handles document ingestion and retrieval for RAG systems."
+image-alt: "RAG with raghilda"
 categories:
-  - Machine Learning
+  - AI
 tags:
   - Python
   - Packages
