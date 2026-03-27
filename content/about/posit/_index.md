@@ -11,12 +11,12 @@ RStudio (now Posit) was founded in 2009 with the vision of creating high quality
 <div class="mission-section max-w-4xl lg:max-w-5xl mx-auto">
 <div class="terminal-frame px-10 py-10 lg:p-20 w-full">
 
-<div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+<div class="flex flex-col lg:flex-row gap-4 lg:gap-12">
   <div class="lg:w-1/4 flex-shrink-0">
-    <h2 class="mt-6 text-1xl lg:text-3xl font-medium font-mono uppercase">Our mission at posit</h2>
+    <h2 class="mt-6 mb-0 text-1xl lg:text-3xl font-medium font-mono uppercase">Our mission at posit</h2>
   </div>
   <div class="lg:flex-1">
-    <p class="lg:text-xl">Posit’s mission is to create open-source software for data science, scientific research, and technical communication. We build tools that prioritize correctness, transparency, and reproducibility in their output.</p>
+    <p class="lg:text-xl mt-0 lg:mt-6">Posit’s mission is to create open-source software for data science, scientific research, and technical communication. We build tools that prioritize correctness, transparency, and reproducibility in their output.</p>
     <p class="lg:text-xl">Our open-source and professional software exist in a virtuous cycle. Wide adoption of our open-source tools in the community creates the foundation for our <a class="text-gray-500" href="https://posit.co/products/enterprise/team/">professional products</a>. In turn, the revenue from our enterprise customers allows us to reinvest our engineering efforts back into the open-source ecosystem. This model ensures that our core projects remain free, stable, and active for the long term.</p>
   </div>
 </div>
