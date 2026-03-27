@@ -160,7 +160,7 @@ they
 > **Tip:** In practice, you'll usually work with many documents at
 > once — just loop over your URLs or file paths and call
 > `upsert()` for each one.
-> See the [Getting Started](https://posit-dev.github.io/raghilda/user_guide/00-getting-started.html) guide for
+> See the [Getting Started](https://posit-dev.github.io/raghilda/user-guide/getting-started.html) guide for
 > a full walkthrough.
 
 ## Using with an LLM
@@ -224,7 +224,7 @@ hallucinate or give a vague response.
 
 ## Learn more
 
-- [Getting Started](https://posit-dev.github.io/raghilda/user_guide/00-getting-started.html) — full
+- [Getting Started](https://posit-dev.github.io/raghilda/user-guide/getting-started.html) — full
   walkthrough building a store from a documentation site
 - [Examples](https://github.com/posit-dev/raghilda/tree/main/examples)
   — complete scripts showing RAG workflows with chatlas,
