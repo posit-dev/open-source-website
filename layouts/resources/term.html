@@ -17,6 +17,52 @@
   {{ end }}
   {{ end }}
 
+  <!-- Video Section (if resource_type is video) -->
+  {{ if eq .Params.resource_type "video" }}
+  {{ $videoUrl := or .Params.video_url .Params.url .Params.external.url }}
+  {{ with $videoUrl }}
+  <div id="video-container" class="relative mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white">
+    <div class="aspect-video w-full">
+      {{ if or (in . "youtube.com") (in . "youtu.be") }}
+      <!-- YouTube embed -->
+      {{ $videoId := "" }}
+      {{ if in . "youtu.be" }}
+      {{ $videoId = index (split . "youtu.be/") 1 }}
+      {{ $videoId = index (split $videoId "?") 0 }}
+      {{ else if in . "youtube.com" }}
+      {{ $videoId = index (split . "v=") 1 }}
+      {{ $videoId = index (split $videoId "&") 0 }}
+      {{ end }}
+      {{ if $videoId }}
+      <iframe id="youtube-player" class="w-full h-full" src="https://www.youtube.com/embed/{{ $videoId }}?enablejsapi=1"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      {{ else }}
+      <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
+      {{ end }}
+      {{ else if in . "vimeo.com" }}
+      <!-- Vimeo embed -->
+      {{ $videoId := index (split . "vimeo.com/") 1 }}
+      {{ $videoId = index (split $videoId "?") 0 }}
+      <iframe class="w-full h-full" src="https://player.vimeo.com/video/{{ $videoId }}" frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      {{ else if or (strings.HasSuffix . ".mp4") (strings.HasSuffix . ".webm") (strings.HasSuffix . ".ogg") }}
+      <!-- Direct video file -->
+      <video class="w-full h-full" controls>
+        <source src="{{ . }}" type="video/{{ if strings.HasSuffix . " .mp4" }}mp4{{ else if strings.HasSuffix . ".webm"
+          }}webm{{ else }}ogg{{ end }}">
+        Your browser does not support the video tag.
+      </video>
+      {{ else }}
+      <!-- Generic iframe embed -->
+      <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
+      {{ end }}
+    </div>
+  </div>
+  <div id="video-placeholder" class="hidden mt-6 mx-2 md:mx-0"></div>
+  {{ end }}
+  {{ end }}
+
   <div class="mt-6 mx-2 md:mx-0">
     {{ partial "item.html" (dict "page" . "format" "hero") }}
   </div>
@@ -105,51 +151,6 @@
     {{ end }}
   </div>
 
-  <!-- Video Section (if resource_type is video) -->
-  {{ if eq .Params.resource_type "video" }}
-  {{ $videoUrl := or .Params.video_url .Params.url .Params.external.url }}
-  {{ with $videoUrl }}
-  <div id="video-container" class="relative mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white">
-    <div class="aspect-video w-full">
-      {{ if or (in . "youtube.com") (in . "youtu.be") }}
-      <!-- YouTube embed -->
-      {{ $videoId := "" }}
-      {{ if in . "youtu.be" }}
-      {{ $videoId = index (split . "youtu.be/") 1 }}
-      {{ $videoId = index (split $videoId "?") 0 }}
-      {{ else if in . "youtube.com" }}
-      {{ $videoId = index (split . "v=") 1 }}
-      {{ $videoId = index (split $videoId "&") 0 }}
-      {{ end }}
-      {{ if $videoId }}
-      <iframe id="youtube-player" class="w-full h-full" src="https://www.youtube.com/embed/{{ $videoId }}?enablejsapi=1"
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-      {{ else }}
-      <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
-      {{ end }}
-      {{ else if in . "vimeo.com" }}
-      <!-- Vimeo embed -->
-      {{ $videoId := index (split . "vimeo.com/") 1 }}
-      {{ $videoId = index (split $videoId "?") 0 }}
-      <iframe class="w-full h-full" src="https://player.vimeo.com/video/{{ $videoId }}" frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-      {{ else if or (strings.HasSuffix . ".mp4") (strings.HasSuffix . ".webm") (strings.HasSuffix . ".ogg") }}
-      <!-- Direct video file -->
-      <video class="w-full h-full" controls>
-        <source src="{{ . }}" type="video/{{ if strings.HasSuffix . " .mp4" }}mp4{{ else if strings.HasSuffix . ".webm"
-          }}webm{{ else }}ogg{{ end }}">
-        Your browser does not support the video tag.
-      </video>
-      {{ else }}
-      <!-- Generic iframe embed -->
-      <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
-      {{ end }}
-    </div>
-  </div>
-  <div id="video-placeholder" class="hidden mt-6 mx-2 md:mx-0"></div>
-  {{ end }}
-  {{ end }}
 
   {{ $software := .GetTerms "software" }}
   {{ $resources := .GetTerms "resources" }}

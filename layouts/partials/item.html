@@ -442,7 +442,7 @@
 {{ $hero_layout := $card_settings.hero_layout | default "banner" }}
 {{ $hero_image_show := $card_settings.hero_image_show | default true }}
 
-<div id="{{ $item_id }}" class="@container flex flex-col relative rounded-xl overflow-hidden {{ $card_settings.card_class }} {{ $card_settings.hero_class }}">
+<div id="{{ $item_id }}" class="@container flex flex-col relative rounded-xl overflow-hidden {{ $card_settings.hero_class }}">
 
       {{ partial "dev-size-label.html" (dict "class" "top-2 left-2") }}
 
@@ -474,7 +474,7 @@
     {{ end }}
 
     {{/* Unified metadata list */}}
-    <div class="flex flex-col gap-y-3 text-xs @grande:text-sm @venti:text-base">
+    <div class="flex flex-row gap-3 text-xs @grande:text-sm @venti:text-base">
       {{ with $people }}
       <div class="flex items-center">{{ . }}</div>
       {{ end }}
