@@ -14,7 +14,7 @@ Every post must have:
 | `date` | Publication date (`YYYY-MM-DD`) |
 | `people` | Author full names (list) |
 | `description` | 1-2 sentences; shown in card listings, under the post hero, and in social previews |
-| `image` | Thumbnail/hero image filename |
+| `image` | Thumbnail/hero image filename; 1920×1080 PNG or JPG recommended (16:9); GIF is supported and animation will play |
 | `image-alt` | Alt text for the image — describe what it shows, not just "screenshot" |
 | `categories` | Fixed set — see below |
 | `software` | Projects the post is about; use folder names from `content/software/` |
