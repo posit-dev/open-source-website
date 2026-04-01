@@ -97,15 +97,7 @@ Rscript -e "renv::install('reticulate')"
 
 ## Step 7: Open the file
 
-Description: "Checking which IDE is running to open the post in the right editor"
-
-```sh
-echo "${POSITRON:-} ${TERM_PROGRAM:-}"
-```
-
-- If `$POSITRON` is set → open with `positron content/blog/<path>/index.<ext>`, description: "Opening the new post in Positron"
-- If `$TERM_PROGRAM` is `vscode` → open with `code content/blog/<path>/index.<ext>`, description: "Opening the new post in VS Code"
-- Otherwise → report the full path to the created file so the user can open it themselves
+Report the full path to the created file so the user can open it themselves.
 
 ## Step 8: Provide a checklist
 

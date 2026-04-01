@@ -32,4 +32,11 @@ hidesubscription: false
 #   author: Photographer Name
 ---
 
+<!--
+TODO:
+- [ ] Add image (1920×1080 PNG or JPG) and image-alt
+- [ ] Trim categories, software, and languages to only what applies
+- [ ] Open a PR against main for a Netlify preview
+-->
+
 Post content goes here.

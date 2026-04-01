@@ -2,6 +2,8 @@
 
 For full authoring guidance — post placement, format choice, environments, previewing — see `_authoring-guide.md` in this directory.
 
+To create a new post, use the `/new-post` skill — it handles branch creation, scaffolding, frontmatter inference, and environment setup interactively. Only scaffold manually if the skill is unavailable.
+
 For porting guidance, see `_porting-notes.md` (how to port) and `_editing-ported-posts.md` (working with ported posts).
 
 ## Required Metadata
