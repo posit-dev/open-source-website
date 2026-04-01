@@ -1,6 +1,6 @@
 # Blog Authoring Guide
 
-Guidelines for creating new blog posts.
+All blog posts should be submitted as a pull request against `main` — don't push directly to the branch. This ensures every post gets a Netlify preview before it goes live.
 
 ## Images
 
@@ -258,6 +258,48 @@ Optional parameters: `icon`, `icon-left`, `icon-right`, `size` (`small`, `medium
 
 ## Previewing your post
 
-**Locally:** run `hugo server` from the project root and open `http://localhost:1313`.
+### Option 1: PR preview (simplest)
 
-**In a PR:** GitHub Actions builds the site on every PR and posts a Netlify preview URL as a comment. All posts should go through a PR — don't push directly to `main`.
+Open a pull request against `main`. GitHub Actions will build the site and post a Netlify preview URL as a comment on the PR — no local setup required.
+
+The preview URL looks like `https://<hash>--posit-open-source.netlify.app`. Your post's path within it follows the folder structure:
+
+| Post location | Preview path |
+|---|---|
+| `content/blog/my-post/` | `/blog/my-post/` |
+| `content/blog/tidyverse/my-post/` | `/blog/tidyverse/my-post/` |
+| `content/blog/tidyverse/my-post/` with `slug: original-post` | `/blog/tidyverse/original-post/` |
+
+### Option 2: Build locally
+
+For faster iteration, you can preview locally. You'll need:
+
+- [just](https://github.com/casey/just)
+- Node.js v20+
+- Hugo Extended v0.158.0+
+- Quarto (if rendering `.qmd` or `.ipynb` files)
+
+First-time setup:
+
+```sh
+just install   # Install Node.js dependencies
+```
+
+Then start the dev server:
+
+```sh
+just dev
+```
+
+This runs Hugo and the Tailwind CSS watcher in parallel. The site will be available at `http://localhost:1313` with live reload.
+
+**For `.qmd` posts:** Hugo serves the rendered `index.md`, not the source `.qmd`, so you need to run Quarto separately. Two options:
+
+- Re-render on demand (from the post directory):
+  ```sh
+  quarto render index.qmd
+  ```
+- Watch for changes in a second terminal — Quarto will re-render to `index.md` on each save, which Hugo will then pick up automatically:
+  ```sh
+  quarto preview index.qmd
+  ```
