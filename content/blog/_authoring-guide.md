@@ -4,58 +4,6 @@ All blog posts should be submitted as a pull request against `main` — don't pu
 
 If you're using Claude Code, the `/new-post` skill will handle scaffolding, frontmatter, branch creation, and environment setup interactively.
 
-## Images
-
-### Post images
-
-Every post should have an `image` and `image-alt` in the frontmatter:
-
-```yaml
----
-title: My Post Title
-image: featured.png
-image-alt: A descriptive alt text for the image
----
-```
-
-The image is used in:
-- **Hero banner** on the post page
-- **Cards** in blog listings
-- **Social previews** (OG/Twitter images)
-
-If no `image` is set:
-- Hero: no image shown
-- Listings: falls back to parent section's image (if set), otherwise empty
-- Social: falls back to generic blog placeholder
-
-### Subsection default images
-
-Blog subsections (e.g., `content/blog/great-tables/`) can set a default image for posts that don't have their own. Add to the subsection's `_index.md`:
-
-```yaml
----
-title: Great Tables
-image: default-image.png
-image-alt: Great Tables logo
----
-```
-
-Posts in that folder without an `image` will use this in listings. The `image-alt` is also inherited.
-
-### Image recommendations
-
-- **Format**: PNG or JPG; GIF is also supported and animation will play in the hero and card listings — useful for demo-heavy posts
-- **Aspect ratio**: 16:9 (e.g. 1920×1080)
-- **Size**: 1920×1080 recommended — this is the standard used across the blog
-- **File location**: Place in the post's folder (same directory as `index.md`)
-
-### Alt text
-
-Always provide meaningful `image-alt` text:
-- Describe what the image shows, not just "screenshot" or "logo"
-- Keep it concise but informative
-- If the image is decorative, you can use the post title as alt text (this is the fallback)
-
 ## Where to place your post
 
 Posts live under `content/blog/`. Posts about a specific project should go in that project's subfolder:
@@ -86,18 +34,6 @@ hugo new blog/tidyverse/my-post-slug/index.md
 
 For a Quarto post, create as `index.md` then rename to `index.qmd` — Hugo doesn't recognise `.qmd` as a content format, so `hugo new` won't work directly with that extension.
 
-## Authors
-
-The `people` field lists post authors. Use each person's full name, one per line:
-
-```yaml
-people:
-  - Jane Smith
-  - Alex Johnson
-```
-
-Don't use team names like "Shiny Team" — list individuals.
-
 ## Choosing a format
 
 - **`index.md`** — prose only; no code execution needed
@@ -105,6 +41,14 @@ Don't use team names like "Shiny Team" — list individuals.
 - **`index.ipynb`** — if you're primarily working in Jupyter
 
 When in doubt, use `.md`.
+
+## Frontmatter
+
+See `CLAUDE.md` in this directory for the full metadata schema. A few things worth noting:
+
+- **Authors** — list individuals by full name in the `people` field; don't use team names like "Shiny Team"
+- **Image** — 1920×1080 PNG or JPG recommended (16:9); GIF is supported and animation will play in the hero and listings
+- **Alt text** — describe what the image shows; "screenshot" or "logo" alone isn't enough
 
 ## Setting up an environment
 
@@ -157,107 +101,6 @@ Always commit:
 
 Reviewers and CI can build the site without re-executing your code.
 
-## Quarto features (`.qmd` posts)
-
-### Callouts
-
-```markdown
-::: callout-note
-Note text here.
-:::
-
-::: {.callout-tip title="Custom title" collapse="true"}
-Collapsible tip.
-:::
-```
-
-Types: `callout-note`, `callout-tip`, `callout-warning`, `callout-important`, `callout-caution`
-
-### Tabsets
-
-```markdown
-::: {.panel-tabset}
-## R
-
-R code here.
-
-## Python
-
-Python code here.
-:::
-```
-
-Add a `group="my-group"` attribute to sync multiple tabsets on the page.
-
-### Code folding
-
-Set in frontmatter to fold all code blocks by default:
-
-```yaml
-format:
-  hugo-md:
-    code-fold: true
-    code-summary: "Show the code"
-```
-
-Or per-chunk with `#| code-fold: true`.
-
-### Videos
-
-```markdown
-{{< video https://www.youtube.com/watch?v=VIDEO_ID >}}
-{{< video my-video.mp4 title="Description for accessibility" >}}
-```
-
-Supported sources: YouTube, Vimeo, local files (`.mp4`, `.webm`, `.ogg`). A Lua filter converts the Quarto `{{< video >}}` shortcode to Hugo's format automatically.
-
-Optional parameters: `title`, `width`, `height`, `start` (YouTube only), `aspect-ratio` (`16x9`, `4x3`, `1x1`, `21x9`).
-
-## Hugo shortcodes (`.md` posts)
-
-### Videos
-
-Same syntax as Quarto:
-
-```markdown
-{{< video src="https://www.youtube.com/watch?v=VIDEO_ID" >}}
-{{< video src="my-video.mp4" title="Description" >}}
-```
-
-### Columns
-
-Split content into responsive columns (stacks on mobile):
-
-```markdown
-{{< columns >}}
-Left column content.
-
----
-
-Right column content.
-{{< /columns >}}
-```
-
-Control column widths with `split` (comma-separated `fr` values):
-
-```markdown
-{{< columns split="2,1" >}}
-Wider left column.
-
----
-
-Narrower right column.
-{{< /columns >}}
-```
-
-### Button
-
-```markdown
-{{< button url="https://example.com" text="Click here" >}}
-```
-
-Optional parameters: `icon`, `icon-left`, `icon-right`, `size` (`small`, `medium`, `large`).
-
 ## Previewing your post
 
 ### Option 1: PR preview (simplest)
@@ -305,3 +148,94 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
   ```sh
   quarto preview index.qmd
   ```
+
+## Quarto features (`.qmd` posts)
+
+### Tabsets
+
+```markdown
+::: {.panel-tabset}
+## R
+
+R code here.
+
+## Python
+
+Python code here.
+:::
+```
+
+Add a `group="my-group"` attribute to sync multiple tabsets on the page.
+
+### Code folding
+
+Set in frontmatter to fold all code blocks by default:
+
+```yaml
+format:
+  hugo-md:
+    code-fold: true
+    code-summary: "Show the code"
+```
+
+Or per-chunk with `#| code-fold: true`.
+
+### Videos
+
+```markdown
+{{< video https://www.youtube.com/watch?v=VIDEO_ID >}}
+{{< video my-video.mp4 title="Description for accessibility" >}}
+```
+
+Supported sources: YouTube, Vimeo, local files (`.mp4`, `.webm`, `.ogg`). A Lua filter converts the Quarto `{{< video >}}` shortcode to Hugo's format automatically.
+
+Optional parameters: `title`, `width`, `height`, `start` (YouTube only), `aspect-ratio` (`16x9`, `4x3`, `1x1`, `21x9`).
+
+### Other Hugo shortcodes
+
+Hugo shortcodes pass through Quarto's rendering unchanged, so the `{{< columns >}}` and `{{< button >}}` shortcodes documented below also work in `.qmd` posts.
+
+## Hugo shortcodes (`.md` posts)
+
+### Videos
+
+Same syntax as Quarto:
+
+```markdown
+{{< video src="https://www.youtube.com/watch?v=VIDEO_ID" >}}
+{{< video src="my-video.mp4" title="Description" >}}
+```
+
+### Columns
+
+Split content into responsive columns (stacks on mobile):
+
+```markdown
+{{< columns >}}
+Left column content.
+
+---
+
+Right column content.
+{{< /columns >}}
+```
+
+Control column widths with `split` (comma-separated `fr` values):
+
+```markdown
+{{< columns split="2,1" >}}
+Wider left column.
+
+---
+
+Narrower right column.
+{{< /columns >}}
+```
+
+### Button
+
+```markdown
+{{< button url="https://example.com" text="Click here" >}}
+```
+
+Optional parameters: `icon`, `icon-left`, `icon-right`, `size` (`small`, `medium`, `large`).
