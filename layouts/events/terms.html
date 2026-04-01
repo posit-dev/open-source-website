@@ -43,43 +43,49 @@
     {{ end }}
   {{ end }}
 
-  <!-- Current Events Section -->
-  {{ if gt (len $currentEvents) 0 }}
-    <div class="flex flex-col gap-y-4">
-      {{ partial "heading.html" (dict "level" 2 "text" "Current Events" "class" "text-2xl font-medium text-gray-800") }}
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {{ range $currentEvents }}
-          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-        {{ end }}
-      </div>
-    </div>
-  {{ end }}
+  {{ $totalEvents := add (len $currentEvents) (add (len $upcomingEvents) (len $pastEvents)) }}
 
-  <!-- Upcoming Events Section -->
-  {{ if gt (len $upcomingEvents) 0 }}
-    <div class="flex flex-col gap-y-4">
-      {{ partial "heading.html" (dict "level" 2 "text" "Upcoming Events" "class" "text-2xl font-medium text-gray-800") }}
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {{ range $upcomingEvents.ByParam "start_date" }}
-          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-        {{ end }}
-      </div>
-    </div>
-  {{ end }}
+  {{ if gt $totalEvents 0 }}
 
-  <!-- Past Events Section -->
-  {{ if gt (len $pastEvents) 0 }}
-    <div class="flex flex-col gap-y-4">
-      {{ partial "heading.html" (dict "level" 2 "text" "Past Events" "class" "text-2xl font-medium text-gray-800") }}
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {{ range ($pastEvents.ByParam "start_date").Reverse }}
-          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-        {{ end }}
-      </div>
-    </div>
-  {{ end }}
+  {{ partial "filter-controls.html" (dict
+    "sort" (slice
+      (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true)
+      (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc")
+      (dict "key" "location" "label" "Location" "type" "string" "direction" "asc")
+    )
+    "filters" (slice)
+  ) }}
 
-  {{ if eq (add (len $currentEvents) (len $upcomingEvents) (len $pastEvents)) 0 }}
+  <div data-card-container data-filter-config='{{ dict "sort" (slice (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true) (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc") (dict "key" "location" "label" "Location" "type" "string" "direction" "asc")) "filters" (slice) "defaultSort" "date" | jsonify }}'
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+    {{/* Current Events */}}
+    {{ if gt (len $currentEvents) 0 }}
+    <h2 data-section-heading="current" class="col-span-full text-2xl font-medium text-gray-800">Current Events</h2>
+    {{ range $currentEvents }}
+      {{ partial "item.html" (dict "page" . "hide-badge" true "section" "current") }}
+    {{ end }}
+    {{ end }}
+
+    {{/* Upcoming Events */}}
+    {{ if gt (len $upcomingEvents) 0 }}
+    <h2 data-section-heading="upcoming" class="col-span-full text-2xl font-medium text-gray-800">Upcoming Events</h2>
+    {{ range $upcomingEvents }}
+      {{ partial "item.html" (dict "page" . "hide-badge" true "section" "upcoming") }}
+    {{ end }}
+    {{ end }}
+
+    {{/* Past Events */}}
+    {{ if gt (len $pastEvents) 0 }}
+    <h2 data-section-heading="past" class="col-span-full text-2xl font-medium text-gray-800">Past Events</h2>
+    {{ range ($pastEvents.ByParam "start_date").Reverse }}
+      {{ partial "item.html" (dict "page" . "hide-badge" true "section" "past") }}
+    {{ end }}
+    {{ end }}
+
+  </div>
+
+  {{ else }}
     <p class="text-gray-600">No events found.</p>
   {{ end }}
 </div>

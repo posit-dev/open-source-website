@@ -278,6 +278,63 @@
 {{ end }}
 
 {{/* ============================================================
+     DATA ATTRIBUTES (for client-side filter/sort hydration)
+     Only added to card/tile/row formats, NOT hero.
+     ============================================================ */}}
+{{ $dataAttrs := "" }}
+{{ if ne $format "hero" }}
+  {{/* Collect category terms as comma-separated string */}}
+  {{ $cat_names := slice }}
+  {{ range $page.GetTerms "categories" }}
+    {{ $cat_names = $cat_names | append .LinkTitle }}
+  {{ end }}
+  {{/* Collect author/people names */}}
+  {{ $author_names := slice }}
+  {{ range $page.GetTerms "people" }}
+    {{ $author_names = $author_names | append .LinkTitle }}
+  {{ end }}
+  {{/* Build common attributes */}}
+  {{ $searchDesc := truncate 200 "" $description }}
+  {{ $dataAttrs = printf `data-card data-title=%q data-description=%q data-tags=%q data-categories=%q data-languages=%q data-authors=%q` $title $searchDesc (delimit $tags ",") (delimit $cat_names ",") (delimit ($page.Params.languages | default slice) ",") (delimit $author_names ",") }}
+  {{/* Date — blog, events, videos */}}
+  {{ if $is_event }}
+    {{ with $page.Params.start_date }}
+      {{ $dataAttrs = printf `%s data-date=%q` $dataAttrs (time.Format "2006-01-02" .) }}
+    {{ end }}
+  {{ else if or $is_blog $is_resource }}
+    {{ with $page.Params.date }}
+      {{ $dataAttrs = printf `%s data-date=%q` $dataAttrs (time.Format "2006-01-02" .) }}
+    {{ end }}
+  {{ end }}
+  {{/* Software-specific */}}
+  {{ if $is_software }}
+    {{ $dataAttrs = printf `%s data-stars="%d"` $dataAttrs (default 0 $page.Params.external.stars) }}
+    {{ with $page.Params.external.first_commit }}
+      {{ $dataAttrs = printf `%s data-first-commit=%q` $dataAttrs (time.Format "2006-01-02" .) }}
+    {{ end }}
+  {{ end }}
+  {{/* Videos-specific */}}
+  {{ if eq $card_type "videos" }}
+    {{ with $page.Params.external.view_count }}
+      {{ $dataAttrs = printf `%s data-views="%d"` $dataAttrs (int .) }}
+    {{ end }}
+    {{ with $page.Params.external.duration }}
+      {{ $dataAttrs = printf `%s data-duration="%d"` $dataAttrs (int .) }}
+    {{ end }}
+  {{ end }}
+  {{/* Events-specific */}}
+  {{ if $is_event }}
+    {{ with $page.Params.location }}
+      {{ $dataAttrs = printf `%s data-location=%q` $dataAttrs . }}
+    {{ end }}
+  {{ end }}
+  {{/* Optional section attribute (e.g., current/upcoming/past for events) */}}
+  {{ with index . "section" }}
+    {{ $dataAttrs = printf `%s data-section=%q` $dataAttrs . }}
+  {{ end }}
+{{ end }}
+
+{{/* ============================================================
      MARKUP
      ============================================================ */}}
 {{ $tile_height := $height | default "h-16" }}
@@ -286,7 +343,7 @@
 {{/* ============================================================
      TILE FORMAT — compact horizontal strip
      ============================================================ */}}
-<div id="{{ $item_id }}" class="@container {{ $tile_height }}">
+<div id="{{ $item_id }}" {{ $dataAttrs | safeHTMLAttr }} class="@container {{ $tile_height }}">
   <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
      class="no-underline relative flex flex-row items-center rounded-lg hover:brightness-110 brightness-100 transition duration-200 overflow-hidden h-full {{ $card_settings.tile_class }}">
 
@@ -371,7 +428,7 @@
 {{/* ============================================================
      ROW FORMAT — clickable row with grid columns for alignment
      ============================================================ */}}
-<a id="{{ $item_id }}" href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
+<a id="{{ $item_id }}" {{ $dataAttrs | safeHTMLAttr }} href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
    class="no-underline col-span-full grid grid-cols-subgrid items-center {{ $row_height }} rounded-lg hover:brightness-110 brightness-100 transition duration-200 overflow-hidden text-gray-700 relative {{ $card_settings.row_class }}">
 
       {{ partial "dev-size-label.html" (dict "class" "top-2 right-2" "sizes" "compact") }}
@@ -689,7 +746,7 @@
 {{/* ============================================================
      CARD FORMAT (default) — existing markup
      ============================================================ */}}
-<div id="{{ $item_id }}" class="@container h-full">
+<div id="{{ $item_id }}" {{ $dataAttrs | safeHTMLAttr }} class="@container h-full">
   <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
      class="no-underline relative flex flex-col @venti:flex-row rounded-xl hover:brightness-110 brightness-100 transition duration-200 {{ $card_settings.card_class }} overflow-hidden h-full @venti:h-96">
 

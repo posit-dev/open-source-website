@@ -1,38 +1,35 @@
-{{ define "head" }}
-  <style>
-    [x-cloak] { display: none !important; }
-  </style>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-{{ end }}
-
 {{ define "main" }}
 {{ $softwareSection := site.GetPage "/software" }}
 {{ $starredPages := slice }}
 {{ range $softwareSection.Pages }}
   {{ if .Params.external.stars }}{{ $starredPages = $starredPages | append . }}{{ end }}
 {{ end }}
-<div class="flex flex-col w-full" x-data="softwareFilter()" x-init="init()">
+
+{{/* Collect distinct languages for filter pills */}}
+{{ $langSet := slice }}
+{{ range $starredPages }}
+  {{ range .Params.languages }}
+    {{ if not (in $langSet .) }}
+      {{ $langSet = $langSet | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $displayLanguages := slice "R" "Python" "Rust" "JavaScript" "TypeScript" "C" "C++" }}
+{{ $langValues := slice }}
+{{ range $displayLanguages }}
+  {{ if in $langSet . }}
+    {{ $langValues = $langValues | append . }}
+  {{ end }}
+{{ end }}
+
+<div class="flex flex-col w-full">
   <div class="mb-8">
-    <div class="flex items-end justify-between">
-      <div>
-        <h1 class="text-4xl font-medium text-gray-500">
-          Open source software
-        </h1>
-        <p class="text-gray-600 mt-2">
-          Explore <span x-text="totalCount">{{ len $starredPages }}</span> open-source projects from the Posit ecosystem
-        </p>
-      </div>
-      <button
-        x-cloak
-        @click="toggleSidebar()"
-        class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
-      >
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-        </svg>
-        <span x-text="sidebarVisible ? 'Hide filters' : 'Show filters'"></span>
-      </button>
-    </div>
+    <h1 class="text-4xl font-medium text-gray-500">
+      Open source software
+    </h1>
+    <p class="text-gray-600 mt-2">
+      Explore {{ len $starredPages }} open-source projects from the Posit ecosystem
+    </p>
   </div>
 
   {{ with (site.GetPage "/featured/software").Content }}
@@ -41,398 +38,34 @@
   </div>
   {{ end }}
 
-  <div class="flex flex-col lg:flex-row-reverse gap-6 mb-8">
-    <div class="lg:w-60 flex-shrink-0" x-show="sidebarVisible" x-cloak>
-      <div class="sticky top-24 space-y-6">
+  {{ partial "filter-controls.html" (dict
+    "sort" (slice
+      (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc" "default" true)
+      (dict "key" "stars" "label" "Most Stars" "type" "number" "direction" "desc")
+      (dict "key" "first-commit" "label" "Newest (First Commit)" "type" "date" "direction" "desc")
+    )
+    "filters" (slice
+      (dict "key" "languages" "label" "Languages" "logic" "or" "values" $langValues)
+    )
+  ) }}
 
-        <div>
-          <label for="search" class="block text-sm font-medium text-gray-700 mb-2">
-            Search
-          </label>
-          <input
-            type="text"
-            id="search"
-            x-model.debounce.150ms="searchQuery"
-            placeholder="Search by title..."
-            class="w-full px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-        </div>
+  <div data-card-container data-filter-config='{{ dict "sort" (slice (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc" "default" true) (dict "key" "stars" "label" "Most Stars" "type" "number" "direction" "desc") (dict "key" "first-commit" "label" "Newest (First Commit)" "type" "date" "direction" "desc")) "filters" (slice (dict "key" "languages" "label" "Languages" "logic" "or")) "defaultSort" "title" | jsonify }}'
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    {{ range sort $softwareSection.Pages "Title" }}
+      {{ if .Params.external.stars }}
+        {{ partial "item.html" (dict "page" . "hide-badge" true) }}
+      {{ end }}
+    {{ end }}
+  </div>
 
-        <div>
-          <label for="sort" class="block text-sm font-medium text-gray-700 mb-2">
-            Sort by
-          </label>
-          <select
-            id="sort"
-            x-model="sortBy"
-            @change="applyFilters()"
-            class="w-full pl-4 pr-10 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
-            style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 20 20%22%3E%3Cpath stroke=%22%236b7280%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%221.5%22 d=%22M6 8l4 4 4-4%22/%3E%3C/svg%3E'); background-position: right 0.75rem center; background-repeat: no-repeat; background-size: 1.25em 1.25em;"
-          >
-            <option value="title">Title (A-Z)</option>
-            <option value="stars">Most Stars</option>
-            <option value="first_commit">Newest (First Commit)</option>
-            <option value="latest_release">Recently Updated</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="minStars" class="block text-sm font-medium text-gray-700 mb-2">
-            Minimum Stars: <span x-text="minStars" class="font-normal"></span>
-          </label>
-          <input
-            type="range"
-            id="minStars"
-            x-model.number="minStars"
-            @input="applyFilters()"
-            min="0"
-            max="3000"
-            step="10"
-            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
-          />
-          <div class="flex justify-between text-xs text-gray-500 mt-1">
-            <span>0</span>
-            <span>3000+</span>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">
-            Languages
-          </label>
-          <div class="flex flex-wrap gap-2">
-            <button
-              @click="toggleLanguageGroup('R')"
-              :class="{ 'bg-blue-600 text-white border-blue-600': languageGroups.R, 'bg-white text-gray-700 border-gray-300 !languageGroups.R }"
-              class="px-3 py-1 text-sm font-medium rounded-full border transition-colors hover:border-blue-500 cursor-pointer"
-            >
-              R
-            </button>
-            <button
-              @click="toggleLanguageGroup('Python')"
-              :class="{ 'bg-blue-600 text-white border-blue-600': languageGroups.Python, 'bg-white text-gray-700 border-gray-300 !languageGroups.Python }"
-              class="px-3 py-1 text-sm font-medium rounded-full border transition-colors hover:border-blue-500 cursor-pointer"
-            >
-              Python
-            </button>
-            <button
-              @click="toggleLanguageGroup('Rust')"
-              :class="{ 'bg-blue-600 text-white border-blue-600': languageGroups.Rust, 'bg-white text-gray-700 border-gray-300 !languageGroups.Rust }"
-              class="px-3 py-1 text-sm font-medium rounded-full border transition-colors hover:border-blue-500 cursor-pointer"
-            >
-              Rust
-            </button>
-            <button
-              @click="toggleLanguageGroup('JavaScript')"
-              :class="{ 'bg-blue-600 text-white border-blue-600': languageGroups.JavaScript, 'bg-white text-gray-700 border-gray-300 !languageGroups.JavaScript }"
-              class="px-3 py-1 text-sm font-medium rounded-full border transition-colors hover:border-blue-500 cursor-pointer"
-            >
-              JavaScript
-            </button>
-            <button
-              @click="toggleLanguageGroup('C')"
-              :class="{ 'bg-blue-600 text-white border-blue-600': languageGroups.C, 'bg-white text-gray-700 border-gray-300 !languageGroups.C }"
-              class="px-3 py-1 text-sm font-medium rounded-full border transition-colors hover:border-blue-500 cursor-pointer"
-            >
-              C/C++
-            </button>
-            <button
-              @click="toggleLanguageGroup('Others')"
-              :class="{ 'bg-blue-600 text-white border-blue-600': languageGroups.Others, 'bg-white text-gray-700 border-gray-300 !languageGroups.Others }"
-              class="px-3 py-1 text-sm font-medium rounded-full border transition-colors hover:border-blue-500 cursor-pointer"
-            >
-              Others
-            </button>
-          </div>
-        </div>
-
-        <div class="pt-4 border-t border-gray-200">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-sm text-gray-600">
-              Showing <span x-text="visibleCount" class="font-semibold text-gray-900">{{ len $starredPages }}</span> of <span x-text="totalCount">{{ len $starredPages }}</span>
-            </span>
-          </div>
-          <button
-            @click="resetFilters()"
-            class="w-full px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
-          >
-            Reset all filters
-          </button>
-        </div>
-
-      </div>
+  <div data-filter-empty class="hidden text-center py-12">
+    <div class="text-gray-400 mb-4">
+      <svg class="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
     </div>
-
-    <div class="flex-1 min-w-0">
-      <div id="software-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {{ $softwareSection := site.GetPage "/software" }}
-        {{ range sort $softwareSection.Pages "Title" }}
-          {{ if .Params.external.stars }}
-          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-          {{ end }}
-        {{ end }}
-      </div>
-
-      <div
-        x-show="visibleCount === 0"
-        x-cloak
-        class="text-center py-12"
-      >
-        <div class="text-gray-400 mb-4">
-          <svg class="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">No software found</h3>
-        <p class="text-gray-600">Try adjusting your filters or search query.</p>
-      </div>
-    </div>
-
+    <h3 class="text-lg font-medium text-gray-900 mb-2">No software found</h3>
+    <p class="text-gray-600">Try adjusting your filters or search query.</p>
   </div>
 </div>
-
-<script>
-window.softwareData = [
-  {{ $softwareSection := site.GetPage "/software" }}
-  {{ $sortedPages := sort $softwareSection.Pages "Title" }}
-  {{ $filtered := slice }}
-  {{ range $sortedPages }}
-    {{ if .Params.external.stars }}
-      {{ $filtered = $filtered | append . }}
-    {{ end }}
-  {{ end }}
-  {{ range $index, $page := $filtered }}
-    {
-      id: "{{ partial "item-id.html" . }}",
-      title: "{{ .Title }}",
-      stars: {{ .Params.external.stars }},
-      languages: [{{ range $i, $lang := .Params.languages }}{{ if $i }},"{{ $lang }}"{{ else }}"{{ $lang }}"{{ end }}{{ end }}],
-      firstCommit: "{{ with .Params.external }}{{ .first_commit | default "" }}{{ end }}",
-      latestRelease: "{{ .Params.latest_release | default "" }}"
-    }{{ if ne (add $index 1) (len $filtered) }},{{ end }}
-  {{ end }}
-];
-
-console.log('Data loaded:', window.softwareData.length);
-</script>
-
-<script>
-function softwareFilter() {
-  return {
-    searchQuery: '',
-    sortBy: 'title',
-    minStars: 0,
-    languageGroups: {
-      R: false,
-      Python: false,
-      Rust: false,
-      JavaScript: false,
-      C: false,
-      Others: false
-    },
-    totalCount: 0,
-    visibleCount: 0,
-    sidebarVisible: false,
-
-    init() {
-      this.totalCount = window.softwareData.length;
-      this.visibleCount = this.totalCount;
-      this.$watch('searchQuery', () => this.applyFilters());
-      this.parseURLParams();
-      this.applyFilters();
-    },
-
-    parseURLParams() {
-      const params = new URLSearchParams(window.location.search);
-
-      if (params.has('sort')) {
-        const sort = params.get('sort');
-        if (['title', 'stars', 'first_commit', 'latest_release'].includes(sort)) {
-          this.sortBy = sort;
-        }
-      }
-
-      if (params.has('lang')) {
-        const langs = params.get('lang').split(',').filter(Boolean);
-        Object.keys(this.languageGroups).forEach(key => {
-          this.languageGroups[key] = false;
-        });
-        langs.forEach(lang => {
-          if (lang in this.languageGroups) {
-            this.languageGroups[lang] = true;
-          }
-        });
-      }
-
-      if (params.has('min_stars')) {
-        const stars = parseInt(params.get('min_stars'), 10);
-        if (!isNaN(stars) && stars >= 0) {
-          this.minStars = stars;
-        }
-      }
-
-      if (params.has('q')) {
-        this.searchQuery = params.get('q');
-      }
-
-      if (params.has('filters')) {
-        this.sidebarVisible = params.get('filters') === 'show';
-      }
-    },
-
-    updateURL() {
-      const params = new URLSearchParams();
-
-      if (this.sortBy !== 'title') {
-        params.set('sort', this.sortBy);
-      }
-
-      const selectedLangs = Object.keys(this.languageGroups).filter(k => this.languageGroups[k]);
-      if (selectedLangs.length > 0 && selectedLangs.length < 5) {
-        params.set('lang', selectedLangs.join(','));
-      }
-
-      if (this.minStars > 0) {
-        params.set('min_stars', this.minStars.toString());
-      }
-
-      if (this.searchQuery.trim()) {
-        params.set('q', this.searchQuery.trim());
-      }
-
-      if (this.sidebarVisible) {
-        params.set('filters', 'show');
-      }
-
-      const queryString = params.toString();
-      const newURL = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
-      window.history.replaceState({}, '', newURL);
-    },
-
-    toggleSidebar() {
-      this.sidebarVisible = !this.sidebarVisible;
-      this.updateURL();
-    },
-
-    toggleLanguageGroup(group) {
-      this.languageGroups[group] = !this.languageGroups[group];
-      this.applyFilters();
-    },
-
-    resetFilters() {
-      this.searchQuery = '';
-      this.sortBy = 'title';
-      this.minStars = 0;
-      this.languageGroups = {
-        R: false,
-        Python: false,
-        Rust: false,
-        JavaScript: false,
-        C: false,
-        Others: false
-      };
-      this.applyFilters();
-    },
-
-    matchesLanguageFilter(languages) {
-      const selectedGroups = Object.keys(this.languageGroups).filter(k => this.languageGroups[k]);
-
-      // If nothing selected, show all
-      if (selectedGroups.length === 0) return true;
-
-      const mainLanguages = ['r', 'python', 'rust', 'javascript', 'typescript', 'c', 'c++'];
-      const itemLanguagesLower = languages.map(l => l.toLowerCase());
-
-      // Check if ALL selected groups are satisfied (AND logic)
-      for (const group of selectedGroups) {
-        let groupMatched = false;
-
-        if (group === 'R') {
-          groupMatched = itemLanguagesLower.includes('r');
-        } else if (group === 'Python') {
-          groupMatched = itemLanguagesLower.includes('python');
-        } else if (group === 'Rust') {
-          groupMatched = itemLanguagesLower.includes('rust');
-        } else if (group === 'JavaScript') {
-          groupMatched = itemLanguagesLower.includes('javascript') || itemLanguagesLower.includes('typescript');
-        } else if (group === 'C') {
-          groupMatched = itemLanguagesLower.includes('c') || itemLanguagesLower.includes('c++');
-        } else if (group === 'Others') {
-          // Check if item has any language not in main languages
-          groupMatched = itemLanguagesLower.some(lang => !mainLanguages.includes(lang));
-        }
-
-        // If this group is not matched, item doesn't satisfy ALL requirements
-        if (!groupMatched) {
-          return false;
-        }
-      }
-
-      // All selected groups are satisfied
-      return true;
-    },
-
-    applyFilters() {
-      const container = document.getElementById('software-grid');
-      const searchLower = this.searchQuery.toLowerCase().trim();
-      const visibleItems = [];
-
-      window.softwareData.forEach(item => {
-        const element = document.getElementById(item.id);
-        if (!element) return;
-
-        let isVisible = true;
-
-        if (searchLower && !item.title.toLowerCase().includes(searchLower)) {
-          isVisible = false;
-        }
-
-        if (item.stars < this.minStars) {
-          isVisible = false;
-        }
-
-        if (!this.matchesLanguageFilter(item.languages)) {
-          isVisible = false;
-        }
-
-        if (isVisible) {
-          element.style.display = '';
-          visibleItems.push({ element, data: item });
-        } else {
-          element.style.display = 'none';
-        }
-      });
-
-      visibleItems.sort((a, b) => {
-        switch (this.sortBy) {
-          case 'stars':
-            return b.data.stars - a.data.stars;
-
-          case 'first_commit': {
-            const dateA = a.data.firstCommit ? new Date(a.data.firstCommit) : new Date(0);
-            const dateB = b.data.firstCommit ? new Date(b.data.firstCommit) : new Date(0);
-            return dateB - dateA;
-          }
-
-          case 'latest_release': {
-            const dateA = a.data.latestRelease ? new Date(a.data.latestRelease) : new Date(0);
-            const dateB = b.data.latestRelease ? new Date(b.data.latestRelease) : new Date(0);
-            return dateB - dateA;
-          }
-
-          case 'title':
-          default:
-            return a.data.title.localeCompare(b.data.title);
-        }
-      });
-
-      visibleItems.forEach(({ element }) => container.appendChild(element));
-
-      this.visibleCount = visibleItems.length;
-      this.updateURL();
-    }
-  };
-}
-</script>
-
 {{ end }}

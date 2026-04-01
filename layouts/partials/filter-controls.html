@@ -1,0 +1,104 @@
+{{/*
+  filter-controls.html — Renders search, sort, and filter UI for card grids.
+
+  Input context (dict):
+    "sort"          — slice of dicts: key, label, type, direction, default
+    "filters"       — slice of dicts: key, label, logic, values (slice of strings)
+    "defaultSort"   — (optional) sort key that triggers grouped/sectioned rendering
+*/}}
+
+{{ $sort := .sort | default slice }}
+{{ $filters := .filters | default slice }}
+{{ $defaultSort := .defaultSort | default "" }}
+
+
+<div data-filter-controls class="sticky top-0 z-30 bg-white pt-4 pb-4 mb-4 space-y-4">
+
+  {{/* ---- Row 1: Search + Sort + Mobile filter toggle ---- */}}
+  <div class="flex flex-wrap items-center gap-3">
+
+    {{/* Search input */}}
+    <div class="relative flex-1 min-w-[200px]">
+      <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <svg class="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </span>
+      <input
+        type="text"
+        data-filter-search
+        placeholder="Search..."
+        class="w-full pl-9 pr-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      />
+    </div>
+
+    {{/* Sort dropdown */}}
+    {{ if $sort }}
+    <div class="flex items-center gap-2">
+      <label for="filter-sort" class="text-sm font-medium text-gray-700 whitespace-nowrap">Sort by</label>
+      <div class="relative">
+        <select
+          id="filter-sort"
+          data-filter-sort
+          class="pl-3 pr-8 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
+        >
+          {{ range $sort }}
+          <option value="{{ .key }}"{{ if .default }} selected{{ end }}>{{ .label }}</option>
+          {{ end }}
+        </select>
+        <span class="icon-[boxicons--chevron-down] w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></span>
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* Mobile filter toggle — only if filters exist */}}
+    {{ if $filters }}
+    <button
+      data-filter-toggle
+      aria-expanded="false"
+      class="flex md:hidden items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
+    >
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+      </svg>
+      Filters
+    </button>
+    {{ end }}
+  </div>
+
+  {{/* ---- Row 2+: Filter groups (collapsible on mobile) ---- */}}
+  {{ if $filters }}
+  <div data-filter-body class="hidden md:block space-y-3">
+    {{ range $filter := $filters }}
+    <div>
+      <h2 class="text-xs font-semibold mb-2 text-gray-600 uppercase tracking-wider">{{ $filter.label }}</h2>
+      <div class="flex flex-wrap gap-2">
+        {{ range $filter.values }}
+        <button
+          data-filter-group="{{ $filter.key }}"
+          data-filter-value="{{ . }}"
+          class="px-3 py-1 text-sm font-medium rounded-full border transition-colors hover:border-blue-500 cursor-pointer bg-white text-gray-700 border-gray-300"
+        >
+          {{ . }}
+        </button>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* ---- Row 3: Result count + Reset ---- */}}
+  <div class="flex items-center justify-between text-sm text-gray-600">
+    <span>
+      Showing <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
+    </span>
+    <button
+      data-filter-reset
+      class="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
+    >
+      <span class="icon-[boxicons--refresh-cw] w-4 h-4 flex-none"></span>
+      Reset filters
+    </button>
+  </div>
+</div>
