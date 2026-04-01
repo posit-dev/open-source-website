@@ -361,20 +361,9 @@ external:
 
 ### Writing Blog Posts
 
-Blog posts can be written in three formats:
+See [`content/blog/_authoring-guide.md`](content/blog/_authoring-guide.md) for full guidance on post placement, format choice, setting up environments for executable posts, and how to preview your work.
 
-```bash
-# Markdown
-content/blog/my-post/index.md
-
-# Quarto document (with executable code)
-content/blog/my-post/index.qmd
-
-# Jupyter notebook
-content/blog/my-post/index.ipynb
-```
-
-Use the blog archetype to create new posts:
+Quick start:
 ```bash
 hugo new blog/my-post/index.md
 ```

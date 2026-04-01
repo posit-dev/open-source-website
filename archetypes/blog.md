@@ -1,18 +1,35 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+date: {{ now.Format "2006-01-02" }}
 people:
-  -
+  - Your full name
 description: >
-  Brief description of the post for list pages and social media
-image: ""
+  1-2 sentences shown in card listings and under the post hero. Also used for social previews.
+image: "featured.png"
 image-alt: ""
-categories:
+categories: # Delete what you don't need
+  - Machine Learning
+  - Artificial Intelligence
+  - Visualization
+  - Interactive Apps
+  - Publishing
+  - MLOps and Admin
+  - Data Wrangling
+  - Best Practices
+  - Community
+software: # Folder name from content/software/, e.g. ggplot2, quarto, great-tables
   -
-tags:
+languages: # Delete what you don't need
+  - R
+  - Python
+tags: # Freeform; avoid duplicating software or categories values
   -
 nohero: false
 hidesubscription: false
+# Uncomment to credit a stock photo:
+# photo:
+#   url: https://unsplash.com/photos/...
+#   author: Photographer Name
 ---
 
-Post content goes here...
+Post content goes here.

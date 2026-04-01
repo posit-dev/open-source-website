@@ -40,5 +40,10 @@ content/resources/videos/**/audio.*
 # Python environments (uv)
 **/.venv/
 
+# R environments (renv)
+**/renv/library/
+**/renv/python/
+**/renv/sandbox/
+
 # Link checking output
 content/blog/_lychee/

@@ -1,5 +1,7 @@
 # Blog Post Instructions
 
+For full authoring guidance — post placement, format choice, environments, previewing — see `_authoring-guide.md` in this directory.
+
 ## Creating Blog Posts
 
 Each blog post lives in its own folder under `content/blog/`:
@@ -28,7 +30,7 @@ people:
 ### Content fields
 | Field | Purpose |
 |-------|---------|
-| `description` | Summary for list pages and SEO (keep under 160 chars) |
+| `description` | 1-2 sentences shown in card listings and under the post hero; also used for social previews |
 | `image` | Thumbnail/hero image filename |
 | `image-alt` | Alt text for image (Quarto standard) |
 
@@ -74,7 +76,7 @@ tags:
 **Guidelines:**
 - `software` — Which projects the post is about (not categories!)
 - `languages` — Programming languages (R, Python, etc.)
-- `categories` — Topical only: news, education, releases, programming
+- `categories` — Use the fixed set: Machine Learning, Artificial Intelligence, Visualization, Interactive Apps, Publishing, MLOps and Admin, Data Wrangling, Best Practices, Community
 - `events` — Related conferences/events
 - `resources` — Related resource types (tutorials, videos, cheatsheets, webinars)
 - `people` — Post authors
