@@ -2,84 +2,73 @@
 
 For full authoring guidance — post placement, format choice, environments, previewing — see `_authoring-guide.md` in this directory.
 
-## Creating Blog Posts
-
-Each blog post lives in its own folder under `content/blog/`:
-```
-content/blog/my-post-slug/
-├── index.md          # Post content (or .qmd, .ipynb)
-├── thumbnail.jpg     # Hero/thumbnail image
-└── other-assets/     # Additional images, videos, etc.
-```
-
-Create new posts with: `hugo new blog/my-post-slug/index.md`
+For porting guidance, see `_porting-notes.md` (how to port) and `_editing-ported-posts.md` (working with ported posts).
 
 ## Required Metadata
 
-```yaml
----
-title: "Post title"
-date: '2025-01-15'
-people:
-  - Author Name
----
-```
+Every post must have:
+
+| Field | Purpose |
+|-------|---------|
+| `title` | Post title |
+| `date` | Publication date (`YYYY-MM-DD`) |
+| `people` | Author full names (list) |
+| `description` | 1-2 sentences; shown in card listings, under the post hero, and in social previews |
+| `image` | Thumbnail/hero image filename |
+| `image-alt` | Alt text for the image — describe what it shows, not just "screenshot" |
+| `categories` | Fixed set — see below |
+| `software` | Projects the post is about; use folder names from `content/software/` |
+| `languages` | Programming languages (R, Python, etc.) |
+
+**On `image` and `image-alt`:** The site can auto-discover images but falls back to the post title for alt text, which is poor for accessibility. Always set both explicitly.
+
+## Taxonomies
+
+### `categories` (required)
+
+Use the fixed set — these power the blog filter UI:
+
+Machine Learning, Artificial Intelligence, Visualization, Interactive Apps, Publishing, MLOps and Admin, Data Wrangling, Best Practices, Community
+
+### `software` (required)
+
+Which projects the post is about (not a category substitute). Use the folder name from `content/software/`, e.g. `ggplot2`, `quarto`, `great-tables`. Links to `/software/<name>/`.
+
+### `languages` (required)
+
+R, Python, etc. Links to `/languages/<name>/`.
+
+### `events` (optional)
+
+Related conferences/events, e.g. `posit-conf-2025`. Links to `/events/<name>/`.
+
+### `resources` (optional)
+
+Related resource types: tutorials, videos, cheatsheets, webinars. Links to `/resources/<name>/`.
+
+### `tags` (optional)
+
+Freeform. Avoid duplicating `software` or `categories` values.
 
 ## Optional Metadata
 
-### Content fields
 | Field | Purpose |
 |-------|---------|
-| `description` | 1-2 sentences shown in card listings and under the post hero; also used for social previews |
-| `image` | Thumbnail/hero image filename |
-| `image-alt` | Alt text for image (Quarto standard) |
+| `slug` | Override URL — use to preserve URLs when reorganizing folders |
+| `nohero` | Boolean, hides the hero image |
+| `hidesubscription` | Boolean, hides the subscription CTA |
+| `photo.url` / `photo.author` | Stock photo attribution |
 
-**Always set `image` and `image-alt` explicitly.** The site can auto-discover images (files with "thumbnail" in the name, or the first image alphabetically), but auto-discovered images fall back to the post title for alt text, which is poor for accessibility.
-| `hero_video` | Video file for hero section |
-| `photo.author` / `photo.url` | Stock photo attribution |
-| `slug` | Override URL (use to preserve URLs when reorganizing folders) |
-| `nohero` | Boolean, hides hero image |
-| `hidesubscription` | Boolean, hides subscription CTA |
+## Porting Metadata
 
-### Porting metadata
+Used to identify and track posts ported from legacy blogs. Do not add to new posts.
 
 | Field | Purpose |
 |-------|---------|
-| `ported_from` | Source blog |
-| `port_status` | Porting progress: `raw`, `in-progress`, `review`, `complete` |
+| `ported_from` | Source blog: positron, tidyverse, ai, shiny, great_tables, plotnine, pointblank, quarto, education, rstudio |
+| `port_status` | Progress: `raw`, `in-progress`, `review`, `complete` |
 
-**Valid `ported_from` values:** positron, tidyverse, ai, shiny, great_tables, plotnine, pointblank, quarto, education, rstudio
-
-**Tracking page:** Use `/blog/all/` to monitor porting progress and metadata completeness.
-
-### Taxonomies (for cross-linking)
-
-Use these to connect posts to other site content:
-
-```yaml
-software:
-  - plotnine         # Links to /software/plotnine/
-  - shiny
-languages:
-  - python           # Links to /languages/python/
-  - r
-categories:
-  - releases         # Topical groupings only
-events:
-  - posit-conf-2025  # Links to /events/posit-conf-2025/
-resources:
-  - tutorials        # Links to /resources/tutorials/
-tags:
-  - additional-tags
-```
-
-**Guidelines:**
-- `software` — Which projects the post is about (not categories!)
-- `languages` — Programming languages (R, Python, etc.)
-- `categories` — Use the fixed set: Machine Learning, Artificial Intelligence, Visualization, Interactive Apps, Publishing, MLOps and Admin, Data Wrangling, Best Practices, Community
-- `events` — Related conferences/events
-- `resources` — Related resource types (tutorials, videos, cheatsheets, webinars)
-- `people` — Post authors
+**Tracking page:** `/blog/all/` shows porting progress and metadata completeness.
 
 ## URL Structure
 
@@ -90,28 +79,42 @@ To override (e.g., when organizing into subfolders without changing URLs):
 slug: original-post-slug
 ```
 
-## Supported Formats
+## Exploring Post Metadata
 
-- `index.md` — Standard Markdown
-- `index.qmd` — Quarto (with executable code)
-- `index.ipynb` — Jupyter notebook (frontmatter goes in first raw cell as YAML)
+`scripts/extract-blog-metadata.R` extracts frontmatter from all blog posts to JSON, which is useful for bulk queries across the post corpus.
 
-**Notes:**
-- For `.ipynb` files, include frontmatter (including `image-alt`) in the first cell as a raw cell with YAML between `---` delimiters.
-- When a post has both `.qmd` and `.md` files, edit both to keep them in sync (avoids needing to re-render).
-
-## Embedding Videos
-
-Use Quarto's video shortcode in `.qmd` files:
-
-```
-{{< video my-video.mp4 >}}
-{{< video https://www.youtube.com/watch?v=VIDEO_ID >}}
-{{< video my-video.mp4 title="Description for accessibility" >}}
+```sh
+Rscript scripts/extract-blog-metadata.R > posts.json
 ```
 
-**Supported sources:** YouTube, Vimeo, local files (.mp4, .webm, .ogg)
+**Don't leave `posts.json` inside `content/` — Hugo will try to process it and fail.** Write it outside the content tree, or delete it when done.
 
-**Optional parameters:** `title`, `width`, `height`, `start` (YouTube only), `aspect-ratio` (1x1, 4x3, 16x9, 21x9)
+Each entry in the JSON array has:
 
-A Lua filter automatically converts these to Hugo's `video` shortcode when rendering to `hugo-md`. No `resources:` frontmatter needed for local video files.
+```json
+{
+  "md_path": "content/blog/tidyverse/my-post/index.md",
+  "source_path": "content/blog/tidyverse/my-post/index.qmd",  // null if no source file
+  "frontmatter": {
+    "title": "My Post",
+    "date": "2025-01-15",
+    "people": ["Jane Smith"],
+    "categories": ["Visualization"],
+    "software": ["ggplot2"],
+    ...
+  }
+}
+```
+
+`source_path` is populated if a `.qmd`, `.Rmd`, `.Rmarkdown`, or `.ipynb` file exists alongside the rendered `.md`. It is `null` for posts with no source file.
+
+Pipe through Python for quick queries, e.g. to find posts missing a description:
+
+```sh
+Rscript scripts/extract-blog-metadata.R | python3 -c "
+import json, sys
+for p in json.load(sys.stdin):
+    if not p['frontmatter'].get('description'):
+        print(p['md_path'])
+"
+```

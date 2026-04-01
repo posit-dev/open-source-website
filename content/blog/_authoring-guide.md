@@ -42,7 +42,7 @@ Posts in that folder without an `image` will use this in listings. The `image-al
 
 ### Image recommendations
 
-- **Format**: PNG, JPG, or WebP (Hugo will generate responsive sizes)
+- **Format**: PNG, JPG, or WebP (Hugo will generate responsive sizes); GIF is also supported and animation will play in the hero and card listings — useful for demo-heavy posts
 - **Aspect ratio**: 16:9 works well for hero banners
 - **Minimum width**: 1200px recommended for sharp display on large screens
 - **File location**: Place in the post's folder (same directory as `index.md`)
