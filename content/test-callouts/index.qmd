@@ -1,0 +1,40 @@
+---
+title: Test Callouts
+layout: single
+---
+
+## Note without title
+
+::: {.callout-note}
+This is a note without a title.
+:::
+
+## Tip with title
+
+::: {.callout-tip}
+## Tip With Title
+
+This is a tip with a title.
+:::
+
+## Collapsed warning
+
+::: {.callout-warning collapse="true"}
+## Collapsed Warning
+
+This is collapsed.
+:::
+
+## Caution
+
+::: {.callout-caution}
+Caution content.
+:::
+
+## Important with title
+
+::: {.callout-important}
+## Important!
+
+Important content here.
+:::
