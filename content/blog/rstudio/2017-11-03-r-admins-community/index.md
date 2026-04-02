@@ -1,5 +1,7 @@
 ---
 title: R-Admins Community
+description: "Announcing the R-Admins community forum for R administrators working in production environments."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2017-11-03'

@@ -1,5 +1,7 @@
 ---
 title: Radix for R Markdown
+description: "Introducing Radix: an R Markdown format optimized for scientific communication with flexible layouts."
+auto-description: true
 people:
   - JJ Allaire
 date: '2018-09-19'

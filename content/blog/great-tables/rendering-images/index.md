@@ -1,5 +1,7 @@
 ---
 title: Rendering images anywhere in Great Tables
+description: "Add images anywhere in your Great Tables with fmt_image() and vals.fmt_image()."
+auto-description: true
 people:
   - Jerry Wu
 date: '2024-12-13T00:00:00.000Z'

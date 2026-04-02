@@ -1,5 +1,7 @@
 ---
 title: ggplot2 2.1.0
+description: "ggplot2 2.1.0 fixes bugs from 2.0.0 with better histogram binning, consistent argument ordering, and alpha behavior."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-03-03'

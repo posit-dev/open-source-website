@@ -1,5 +1,7 @@
 ---
 title: Announcing Packrat v0.4
+description: "Packrat 0.4 adds automatic snapshots, bundle/unbundle for sharing, on/off mode, and RStudio IDE integration."
+auto-description: true
 people:
   - Kevin Ushey
 date: '2014-07-22'

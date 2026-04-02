@@ -1,5 +1,7 @@
 ---
 title: 'Shiny 1.1.0: Scaling Shiny with async'
+description: "Shiny 1.1.0: async programming support via future and promises for better scalability under load."
+auto-description: true
 people:
   - Joe Cheng
 date: '2018-06-26'

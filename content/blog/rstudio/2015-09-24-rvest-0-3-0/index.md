@@ -1,5 +1,7 @@
 ---
 title: rvest 0.3.0
+description: "rvest 0.3.0 switches to xml2 for better performance and no memory leaks. html() becomes read_html(), html_tag() becomes html_name()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-09-24'

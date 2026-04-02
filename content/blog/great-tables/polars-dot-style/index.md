@@ -1,5 +1,7 @@
 ---
 title: 'Great Tables: Becoming the Polars `.style` Property'
+description: "How Great Tables became Polars' DataFrame.style—a look at open source collaboration."
+auto-description: true
 people:
   - Michael Chow
 date: '2025-04-16T00:00:00.000Z'

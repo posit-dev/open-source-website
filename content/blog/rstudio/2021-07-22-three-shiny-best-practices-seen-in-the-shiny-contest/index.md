@@ -1,5 +1,7 @@
 ---
 title: Top 3 Coding Best Practices from the Shiny Contest
+description: "Three coding best practices from Shiny Contest winners: modules, custom CSS, and reactive organization."
+auto-description: true
 people:
   - Nick Strayer
 date: '2021-07-22'

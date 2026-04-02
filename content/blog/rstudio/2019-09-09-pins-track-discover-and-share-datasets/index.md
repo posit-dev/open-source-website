@@ -1,5 +1,7 @@
 ---
 title: 'pins: Pin, Discover and Share Resources'
+description: "Introducing pins: cache remote resources locally, discover datasets, and share across teams."
+auto-description: true
 people:
   - RStudio Team
 date: '2019-09-09'

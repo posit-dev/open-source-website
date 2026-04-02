@@ -1,5 +1,7 @@
 ---
 title: devtools 1.5
+description: "devtools 1.5 adds add_test_infrastructure(), add_travis(), add_rstudio_project() and safer install_github()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-04-08'

@@ -1,5 +1,7 @@
 ---
 title: roxygen2 4.0.1
+description: "roxygen2 4.0.1 adds strict parsing with line numbers in errors, new vignettes, and safe file management."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-05-19'

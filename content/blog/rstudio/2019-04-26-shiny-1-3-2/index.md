@@ -1,5 +1,7 @@
 ---
 title: Shiny v1.3.2
+description: "Shiny 1.3.2: reactlog for visually debugging reactivity and faster static file serving."
+auto-description: true
 people:
   - Joe Cheng
 date: '2019-04-26'

@@ -1,5 +1,7 @@
 ---
 title: The Shiny Developer Series
+description: "The Shiny Developer Series: video interviews with package authors and advanced Shiny techniques."
+auto-description: true
 people:
   - Curtis Kephart
 date: '2019-08-05'

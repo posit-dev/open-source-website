@@ -1,5 +1,7 @@
 ---
 title: 'forcats 0.1.0 '
+description: "Introducing forcats: tools for working with factors including fct_recode(), fct_lump(), and fct_reorder()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-08-31'

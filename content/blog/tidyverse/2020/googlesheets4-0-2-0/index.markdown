@@ -1,5 +1,7 @@
 ---
 title: googlesheets4 0.2.0
+description: "googlesheets4 0.2.0: create and edit Google Sheets from R, now a full replacement for the googlesheets package."
+auto-description: true
 people:
   - Jenny Bryan
 date: '2020-05-10'

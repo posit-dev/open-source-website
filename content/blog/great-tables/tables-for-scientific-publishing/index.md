@@ -1,5 +1,7 @@
 ---
 title: Great Tables for Scientific Publishing
+description: "Format scientific tables in Great Tables: unit notation, chemical formulas, and scientific notation."
+auto-description: true
 people:
   - Rich Iannone
 date: '2024-07-08T00:00:00.000Z'

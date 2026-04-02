@@ -1,5 +1,7 @@
 ---
 title: Shiny 1.0.4
+description: "Shiny 1.0.4: drag-and-drop file inputs, dynamic tab management, and onStop callbacks."
+auto-description: true
 people:
   - Winston Chang
 date: '2017-08-15'

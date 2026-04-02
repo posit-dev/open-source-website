@@ -1,5 +1,7 @@
 ---
 title: 'Introducing Shiny: Easy web applications in R'
+description: "Introducing Shiny: a new R package that makes it simple to build interactive web applications."
+auto-description: true
 people:
   - Joe Cheng
 date: '2012-11-08'

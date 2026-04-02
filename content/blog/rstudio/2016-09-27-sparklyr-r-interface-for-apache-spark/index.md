@@ -1,5 +1,7 @@
 ---
 title: sparklyr — R interface for Apache Spark
+description: "Introducing sparklyr: use dplyr syntax to manipulate Spark data and run distributed machine learning from R."
+auto-description: true
 people:
   - RStudio Team
 date: '2016-09-27'

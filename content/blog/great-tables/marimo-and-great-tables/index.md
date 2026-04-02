@@ -1,5 +1,7 @@
 ---
 title: Great Tables + marimo = Interactive Tables
+description: "Make your Great Tables interactive with marimo's reactive widgets."
+auto-description: true
 date: '2025-06-24T00:00:00.000Z'
 people:
   - Rich Iannone

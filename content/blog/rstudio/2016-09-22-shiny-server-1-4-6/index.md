@@ -1,5 +1,7 @@
 ---
 title: Shiny Server (Pro) 1.4.6
+description: "Shiny Server 1.4.6 includes bug fixes and security mitigations; Pro users on SSL/TLS should upgrade for OpenSSL patches."
+auto-description: true
 people:
   - Joe Cheng
 date: '2016-09-22'

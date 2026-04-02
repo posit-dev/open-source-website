@@ -1,5 +1,7 @@
 ---
 title: haven 1.0.0
+description: "haven 1.0.0 reads and writes SAS, SPSS, and Stata files with improved missing value and date/time support."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-10-04'

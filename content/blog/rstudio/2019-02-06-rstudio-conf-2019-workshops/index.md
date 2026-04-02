@@ -1,5 +1,7 @@
 ---
 title: rstudio::conf 2019 Workshop materials now available
+description: "All 15 workshop materials from rstudio::conf 2019, covering tidyverse, Shiny, R Markdown, and machine learning."
+auto-description: true
 people:
   - Mine Çetinkaya-Rundel
 date: '2019-02-06'

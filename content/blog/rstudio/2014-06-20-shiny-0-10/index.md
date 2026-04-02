@@ -1,5 +1,7 @@
 ---
 title: Shiny 0.10
+description: "Shiny 0.10 adds interactive document support, flowLayout/splitLayout, validate/need for errors, and server-side selectize."
+auto-description: true
 people:
   - Joe Cheng
 date: '2014-06-20'

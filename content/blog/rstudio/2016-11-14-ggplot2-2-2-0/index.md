@@ -1,5 +1,7 @@
 ---
 title: ggplot2 2.2.0
+description: "ggplot2 2.2.0 adds subtitles and captions, rewrites the facet system, improves theming, and fixes stacking order."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-11-14'

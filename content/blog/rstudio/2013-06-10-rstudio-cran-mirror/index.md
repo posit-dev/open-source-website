@@ -1,5 +1,7 @@
 ---
 title: The RStudio CRAN mirror
+description: "The RStudio CRAN mirror uses CloudFront for fast global downloads, plus anonymized log data is now public."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2013-06-10'

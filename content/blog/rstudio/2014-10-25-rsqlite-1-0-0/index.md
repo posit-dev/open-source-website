@@ -1,5 +1,7 @@
 ---
 title: RSQLite 1.0.0
+description: "RSQLite 1.0.0 cleans up the API, adds initExtension() for useful functions, and improves transaction handling."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-10-25'

@@ -1,5 +1,7 @@
 ---
 title: RStudio community
+description: "RStudio Community forum: a new place to ask questions about tidyverse, Shiny, and more."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2017-09-14'

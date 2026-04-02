@@ -1,5 +1,7 @@
 ---
 title: Tidy eval now supports glue strings
+description: "Use {{ and { with glue strings in tidy eval to create dynamic column names in tidyverse verbs."
+auto-description: true
 people:
   - Lionel Henry
 date: '2020-02-11'

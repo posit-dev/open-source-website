@@ -1,5 +1,7 @@
 ---
 title: 'Article Spotlight: Persistent data storage in Shiny apps'
+description: "Article spotlight: Dean Attali explains how to save Shiny app data to local files, databases, and cloud storage for persistence."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-07-15'

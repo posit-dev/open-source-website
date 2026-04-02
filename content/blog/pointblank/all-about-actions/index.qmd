@@ -1,5 +1,7 @@
 ---
 title: Level Up Your Data Validation with `Actions` and `FinalActions`
+description: "Automate responses to bad data with Pointblank's Actions and FinalActions."
+auto-description: true
 people:
   - Rich Iannone
 date: '2025-05-02'
