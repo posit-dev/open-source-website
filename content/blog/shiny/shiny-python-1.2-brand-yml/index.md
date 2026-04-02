@@ -85,7 +85,7 @@ To encourage this, we've published the [brand-yml Python package](https://posit-
 
 <div class="callout callout-tip" role="note" aria-label="Tip">
 <div class="callout-header">
-<span class="callout-title">Tip</span>
+<span class="callout-title">Writing brand.yml with the help of an LLM</span>
 </div>
 <div class="callout-body">
 

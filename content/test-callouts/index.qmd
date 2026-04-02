@@ -38,3 +38,9 @@ Caution content.
 
 Important content here.
 :::
+
+## Note with title= attribute
+
+::: {.callout-note title="Custom Title via Attribute"}
+This callout uses the `title=` attribute syntax.
+:::

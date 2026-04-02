@@ -68,3 +68,16 @@ Important content here.
 
 </div>
 </div>
+
+## Note with title= attribute
+
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Custom Title via Attribute</span>
+</div>
+<div class="callout-body">
+
+This callout uses the `title=` attribute syntax.
+
+</div>
+</div>

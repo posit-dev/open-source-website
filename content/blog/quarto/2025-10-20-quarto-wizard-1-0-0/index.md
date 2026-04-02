@@ -114,7 +114,7 @@ tags:
 
 <div class="callout callout-note" role="note" aria-label="Note">
 <div class="callout-header">
-<span class="callout-title">Note</span>
+<span class="callout-title">Community Contribution</span>
 </div>
 <div class="callout-body">
 
@@ -170,7 +170,7 @@ results with install button.
 <span class="callout-title">Tip</span>
 </div>
 <div class="callout-body">
-<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)) if you haven’t done so already.</p>
+<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux), <code>Cmd-Shift-P</code> (mac)) if you haven’t done so already.</p>
 </div>
 </div>
 </div>
@@ -184,7 +184,7 @@ results with install button.
 <span class="callout-title">Tip</span>
 </div>
 <div class="callout-body">
-<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)) if you haven’t done so already.</p>
+<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux), <code>Cmd-Shift-P</code> (mac)) if you haven’t done so already.</p>
 </div>
 </div>
 </div>
@@ -222,7 +222,7 @@ The solution is **multi-modal installation**: you can now install extensions thr
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)).</li>
+<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux), <code>Cmd-Shift-P</code> (mac)).</li>
 <li>Type <code>Quarto Wizard: Install Extensions</code> and select it.</li>
 <li>Browse the list of available Quarto extensions.</li>
 <li>Select the Quarto extension(s) you want to install.</li>
@@ -268,7 +268,7 @@ The file is not created until you confirm, allowing you to adjust the filename a
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)).</li>
+<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux), <code>Cmd-Shift-P</code> (mac)).</li>
 <li>Type <code>Quarto Wizard: Use Template</code> and select it.</li>
 <li>Browse the list of available Quarto templates.</li>
 <li>Select the Quarto template(s) you want to use.</li>

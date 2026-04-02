@@ -56,11 +56,14 @@ function Div(div)
   end
 
   local collapse = div.attributes["collapse"]
+  local attr_title = div.attributes["title"]
   local title_inlines, body_content = extract_title(div)
 
-  -- Use default label if no title header was provided
+  -- Title priority: title= attribute > ## Header > default label
   local title_html
-  if title_inlines ~= nil then
+  if attr_title ~= nil then
+    title_html = attr_title
+  elseif title_inlines ~= nil then
     title_html = inlines_to_html(title_inlines)
   else
     title_html = info.label
