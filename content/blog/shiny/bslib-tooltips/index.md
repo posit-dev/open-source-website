@@ -152,9 +152,8 @@ bslib::input_switch("switch", "Turn Up Awesomeness", FALSE)
 </label>
 </div>
 </div>
-<div class="callout callout-note" role="note">
+<div class="callout callout-note" role="note" aria-label="Note">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Note</span>
 </div>
 <div class="callout-body">
@@ -182,9 +181,8 @@ Here are a few things currently towards the top of our roadmap:
 - More incorporation of `bslib` as part of the [Getting Started experience](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html) on [shiny.posit.co](https://shiny.posit.co/).
 - More `bslib`-focused example galleries, starter templates, and articles.
 
-<div class="callout callout-note" role="note">
+<div class="callout callout-note" role="note" aria-label="Note">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Join us at posit::conf(2023)!</span>
 </div>
 <div class="callout-body">

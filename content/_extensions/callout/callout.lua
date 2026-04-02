@@ -3,21 +3,14 @@
 -- converts them to plain blockquotes in hugo-md output.
 -- Body content is kept as Pandoc AST so it renders as markdown, not HTML.
 
+-- Icons are handled purely in CSS via ::before pseudo-elements on .callout-header,
+-- using mask-image to reference SVGs from /icons/. No icon markup in the HTML.
 local callout_types = {
-  ["callout-note"]      = { label = "Note",      icon = "info-circle" },
-  ["callout-tip"]       = { label = "Tip",        icon = "lightbulb" },
-  ["callout-warning"]   = { label = "Warning",    icon = "alert-triangle" },
-  ["callout-caution"]   = { label = "Caution",    icon = "alert-octagon" },
-  ["callout-important"] = { label = "Important",  icon = "alert-circle" },
-}
-
--- SVG icons (tabler-icons style, decorative)
-local icons = {
-  ["info-circle"] = '<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
-  ["lightbulb"] = '<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>',
-  ["alert-triangle"] = '<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z"/><path d="M12 16h.01"/></svg>',
-  ["alert-octagon"] = '<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M7.86 2h8.28l5.86 5.86v8.28l-5.86 5.86h-8.28l-5.86 -5.86v-8.28z"/><path d="M12 16h.01"/></svg>',
-  ["alert-circle"] = '<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+  ["callout-note"]      = { label = "Note" },
+  ["callout-tip"]       = { label = "Tip" },
+  ["callout-warning"]   = { label = "Warning" },
+  ["callout-caution"]   = { label = "Caution" },
+  ["callout-important"] = { label = "Important" },
 }
 
 -- Detect which callout type a div is, if any
@@ -73,15 +66,17 @@ function Div(div)
     title_html = info.label
   end
 
-  local icon_html = icons[info.icon] or ""
   local blocks = pandoc.List()
+
+  -- aria-label preserves the callout type for screen readers even when
+  -- the visible title is custom (e.g. "Watch out!" instead of "Warning")
+  local aria = ' aria-label="' .. info.label .. '"'
 
   if collapse == "true" then
     -- Collapsible callout: opening <details>/<summary>
     blocks:insert(pandoc.RawBlock("html",
-      '<details class="callout ' .. cls .. '" role="note">\n' ..
+      '<details class="callout ' .. cls .. '" role="note"' .. aria .. '>\n' ..
       '<summary class="callout-header">\n' ..
-      icon_html .. '\n' ..
       '<span class="callout-title">' .. title_html .. '</span>\n' ..
       '</summary>\n' ..
       '<div class="callout-body">'
@@ -93,9 +88,8 @@ function Div(div)
   else
     -- Standard callout: opening wrapper + header
     blocks:insert(pandoc.RawBlock("html",
-      '<div class="callout ' .. cls .. '" role="note">\n' ..
+      '<div class="callout ' .. cls .. '" role="note"' .. aria .. '>\n' ..
       '<div class="callout-header">\n' ..
-      icon_html .. '\n' ..
       '<span class="callout-title">' .. title_html .. '</span>\n' ..
       '</div>\n' ..
       '<div class="callout-body">'

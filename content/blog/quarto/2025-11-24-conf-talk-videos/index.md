@@ -72,9 +72,8 @@ Talks included in the playlist, broken up into a few categories for easier brows
 | **Bill Pikounis** | Quarto for Business Collaboration and Technical Documentation in Word docx format | [![thumb](https://img.youtube.com/vi/4-dQ2Q985A0/hqdefault.jpg)](https://youtu.be/4-dQ2Q985A0) |
 | **Timothy Keyes** | Trust, but Verify: Lessons from Deploying LLMs | [![thumb](https://img.youtube.com/vi/HYQaZTLb2Co/hqdefault.jpg)](https://youtu.be/HYQaZTLb2Co) |
 
-<div class="callout callout-tip" role="note">
+<div class="callout callout-tip" role="note" aria-label="Tip">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
 <span class="callout-title">Tip</span>
 </div>
 <div class="callout-body">

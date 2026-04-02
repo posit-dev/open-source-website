@@ -108,9 +108,8 @@ After you build an application, you can share it with others in a number of ways
 
 Shiny Assistant build applications using the Shinylive web interface. Running applications with Shinylive has some important differences from a "normal" Shiny deployment, but one important upshot is that a Shinylive application can be easily shared with others.
 
-<div class="callout callout-note" role="note">
+<div class="callout callout-note" role="note" aria-label="Note">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">What is the difference between Shiny and Shinylive?</span>
 </div>
 <div class="callout-body">

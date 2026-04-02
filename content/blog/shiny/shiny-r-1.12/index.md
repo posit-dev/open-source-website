@@ -32,9 +32,8 @@ img { border-radius: 8px; }
 
 We're thrilled to announce the release of Shiny v1.12! This release brings a powerful new feature that we've been working on for months: **built-in OpenTelemetry support**. Whether you're building small apps or deploying production applications at scale, this release will help you lift the veil on understanding your app's execution in production.
 
-<details class="callout callout-note" role="note">
+<details class="callout callout-note" role="note" aria-label="Note">
 <summary class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">What is Shiny?</span>
 </summary>
 <div class="callout-body">
@@ -45,9 +44,8 @@ Since its launch in 2012, Shiny has become the go-to framework for creating data
 
 </div>
 </details>
-<details class="callout callout-note" role="note">
+<details class="callout callout-note" role="note" aria-label="Note">
 <summary class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">What about Shiny for Python?</span>
 </summary>
 <div class="callout-body">
@@ -128,9 +126,8 @@ OTEL_EXPORTER_OTLP_ENDPOINT="https://logfire-us.pydantic.dev"
 OTEL_EXPORTER_OTLP_HEADERS="Authorization=<your-write-token>"
 ```
 
-<div class="callout callout-tip" role="note">
+<div class="callout callout-tip" role="note" aria-label="Tip">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
 <span class="callout-title">Editing <code>.Renviron</code></span>
 </div>
 <div class="callout-body">
@@ -139,9 +136,8 @@ You can edit your app-specific environment variables by calling `usethis::edit_r
 
 </div>
 </div>
-<div class="callout callout-tip" role="note">
+<div class="callout callout-tip" role="note" aria-label="Tip">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
 <span class="callout-title">Verifying OTel setup</span>
 </div>
 <div class="callout-body">
@@ -155,9 +151,8 @@ You'll know your setup is enabled if [`otel::is_tracing_enabled()`](https://otel
 
 Below is an example `{shinychat}` app with an `{ellmer}` tool to fetch realtime weather forecasts (via `{weathR}`, which uses `{httr2}`) for a given latitude and longitude. This simple (yet non-trivial) app helps us showcase what sort of information `{shiny}`, `{ellmer}`, and `{httr2}` can surface via OTel.
 
-<div class="callout callout-note" role="note">
+<div class="callout callout-note" role="note" aria-label="Note">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">OTel + GenAI</span>
 </div>
 <div class="callout-body">
@@ -232,9 +227,8 @@ The gap between this span's length and its parent's length is how long the resul
 
 Notice how the spans are nested, showing the relationship between user actions, required reactive calculations, and external API calls. This level of detail helps you understand exactly how your app is performing in production and where any bottlenecks or issues may arise.
 
-<div class="callout callout-note" role="note">
+<div class="callout callout-note" role="note" aria-label="Note">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Packages used in demo</span>
 </div>
 <div class="callout-body">

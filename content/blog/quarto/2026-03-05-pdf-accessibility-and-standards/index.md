@@ -23,9 +23,8 @@ tags:
 ---
 
 
-<div class="callout callout-note" role="note">
+<div class="callout callout-note" role="note" aria-label="Note">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Pre-release Feature</span>
 </div>
 <div class="callout-body">
@@ -81,9 +80,8 @@ In Quarto 1.9, specify a PDF standard for your document or project with `pdf-sta
 
 If you specify a PDF standard, Quarto first instructs LaTeX or Typst to use the standard when producing the PDF, and then validates the output PDF against the standard using veraPDF, an open-source PDF validation tool. If veraPDF is not installed, you'll get a warning but still receive a PDF -- it just won't be validated.
 
-<div class="callout callout-note" role="note">
+<div class="callout callout-note" role="note" aria-label="Note">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Installing veraPDF</span>
 </div>
 <div class="callout-body">

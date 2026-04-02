@@ -112,9 +112,8 @@ ui.layout_column_wrap(
 
 There are too many new components in [this release](https://github.com/posit-dev/py-shiny/blob/v0.6.0/CHANGELOG.md#060---2023-08-08) to blog about, so please check out [the documentation](https://shiny.posit.co/py/api/) to see how they work together.
 
-<div class="callout callout-tip" role="note">
+<div class="callout callout-tip" role="note" aria-label="Tip">
 <div class="callout-header">
-<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
 <span class="callout-title">… psst!</span>
 </div>
 <div class="callout-body">
