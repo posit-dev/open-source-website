@@ -1,5 +1,7 @@
 ---
 title: Design patterns for action buttons
+description: "New Shiny article: five design patterns for action buttons using observeEvent() and eventReactive()."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-04-07'

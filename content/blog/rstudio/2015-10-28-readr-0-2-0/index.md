@@ -1,5 +1,7 @@
 ---
 title: readr 0.2.0
+description: "readr 0.2.0 adds locales for international data (encodings, date formats, decimal marks), comment support, and CSV/TSV writers."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-10-28'

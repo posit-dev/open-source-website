@@ -1,5 +1,7 @@
 ---
 title: Style Table Body with `mask=` in `loc.body()`
+description: "Style table cells conditionally using Polars expressions with loc.body(mask=)."
+auto-description: true
 people:
   - Jerry Wu
 date: '2025-01-24'

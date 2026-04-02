@@ -1,5 +1,7 @@
 ---
 title: 'RcppParallel: Getting R and C++ to work (some more) in parallel'
+description: "RcppParallel provides portable parallel C++ algorithms using Intel TBB or TinyThread, achieving 200-300x speedups."
+auto-description: true
 people:
   - RStudio Team
 date: '2016-01-15'

@@ -1,5 +1,7 @@
 ---
 title: 'sparklyr 0.7: Spark Pipelines and Machine Learning'
+description: "sparklyr 0.7: ML Pipelines API for building, tuning, and deploying machine learning workflows at scale."
+auto-description: true
 people:
   - Kevin Kuo
 date: '2018-01-29'

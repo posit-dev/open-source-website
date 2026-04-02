@@ -1,5 +1,7 @@
 ---
 title: 'New Shiny article: Style your apps with CSS'
+description: "New article: customize your Shiny app's appearance using CSS files and inline styles."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-05-07'

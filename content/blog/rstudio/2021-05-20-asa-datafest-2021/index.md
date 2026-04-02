@@ -1,5 +1,7 @@
 ---
 title: ASA DataFest 2021
+description: "Recap of the 2021 ASA DataFest: 2,500+ students analyzing drug misuse survey data."
+auto-description: true
 people:
   - Mine Çetinkaya-Rundel
 date: '2021-05-20'

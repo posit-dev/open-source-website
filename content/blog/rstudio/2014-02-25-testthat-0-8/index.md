@@ -1,5 +1,7 @@
 ---
 title: testthat 0.8 (and 0.8.1)
+description: "testthat 0.8 moves tests to tests/testthat/, adds line numbers in errors, and four new expectations."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-02-25'

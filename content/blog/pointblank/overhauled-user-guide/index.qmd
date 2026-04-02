@@ -1,5 +1,7 @@
 ---
 title: Overhauling Pointblank's User Guide
+description: "Pointblank's revamped user guide: spiral learning, clearer examples, and full API coverage."
+auto-description: true
 people:
   - Rich Iannone
   - Michael Chow

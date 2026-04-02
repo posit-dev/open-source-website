@@ -1,5 +1,7 @@
 ---
 title: Spreadsheet workflows in R
+description: "Translate common spreadsheet workflows—IF statements, VLOOKUP, pivot tables—into tidyverse code."
+auto-description: true
 date: '2020-08-17'
 slug: spreadsheets-using-r
 categories:

@@ -1,5 +1,7 @@
 ---
 title: xml2 1.0.0
+description: "xml2 1.0.0 adds XML creation and modification, xml_find_first() for ragged data, and easier namespace handling."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-07-05'

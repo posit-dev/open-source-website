@@ -1,5 +1,7 @@
 ---
 title: Introducing torch for R
+description: "Announcing torch for R: use PyTorch natively in R for deep learning."
+auto-description: true
 people:
   - RStudio Team
 date: '2020-09-29'

@@ -1,5 +1,7 @@
 ---
 title: ' 2024 Plotnine Contest - Last Call'
+description: "Final call for the 2024 Plotnine Contest—submit your best visualizations by July 26."
+auto-description: true
 date: '2024-07-22'
 categories:
   - Visualization

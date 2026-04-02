@@ -1,5 +1,7 @@
 ---
 title: tidyr 0.4.0
+description: "tidyr 0.4.0 introduces nested data frames with nest()/unnest() and complete() for making implicit missing values explicit."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-02-02'

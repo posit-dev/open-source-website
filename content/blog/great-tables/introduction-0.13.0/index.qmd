@@ -1,5 +1,7 @@
 ---
 title: 'Great Tables `v0.13.0`: Applying styles to all table locations'
+description: "Great Tables v0.13.0 brings styling to all table locations via expanded loc.*() methods."
+auto-description: true
 people:
   - Rich Iannone
   - Michael Chow

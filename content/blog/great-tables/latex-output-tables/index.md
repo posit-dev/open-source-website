@@ -1,5 +1,7 @@
 ---
 title: 'Great Tables: Generating LaTeX Output for PDF'
+description: "Create publication-ready PDF tables by exporting Great Tables to LaTeX."
+auto-description: true
 people:
   - Rich Iannone
 date: '2024-11-13T00:00:00.000Z'

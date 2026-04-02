@@ -1,5 +1,7 @@
 ---
 title: Getting started with deep learning in R
+description: "Resources for getting started with deep learning in R using Keras and TensorFlow."
+auto-description: true
 people:
   - Sigrid Keydana
 date: '2018-09-12'

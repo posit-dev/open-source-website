@@ -1,5 +1,7 @@
 ---
 title: dplyr 0.5.0
+description: "dplyr 0.5.0 adds coalesce(), if_else(), case_when(), recode(), and the summarise_all/at/if family of functions."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-06-27'

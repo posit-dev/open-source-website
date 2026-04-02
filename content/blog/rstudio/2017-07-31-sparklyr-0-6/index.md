@@ -1,5 +1,7 @@
 ---
 title: 'sparklyr 0.6: Distributed R and external sources'
+description: "sparklyr 0.6: distributed R with spark_apply() and external data source connections."
+auto-description: true
 people:
   - Javier Luraschi
 date: '2017-07-31'

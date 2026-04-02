@@ -1,5 +1,7 @@
 ---
 title: testthat 0.11.0
+description: "testthat 0.11.0 adds expect_silent() for checking no output/warnings, skip_on_os() and skip_on_appveyor(), plus random encouragement."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-10-15'

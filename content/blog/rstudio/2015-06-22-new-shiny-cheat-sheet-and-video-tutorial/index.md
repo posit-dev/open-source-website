@@ -1,5 +1,7 @@
 ---
 title: New Shiny cheat sheet and video tutorial
+description: "New free Shiny video tutorial (2.5 hours) and updated cheat sheet covering app architecture, reactivity, inputs, layouts, and CSS."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-06-22'

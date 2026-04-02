@@ -1,5 +1,7 @@
 ---
 title: 'sparklyr 0.8: Production pipelines and graphs'
+description: "sparklyr 0.8: production ML pipelines with mleap export and graph analysis with graphframes."
+auto-description: true
 people:
   - Kevin Kuo
 date: '2018-05-14'

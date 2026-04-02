@@ -1,5 +1,7 @@
 ---
 title: roxygen2 5.0.0
+description: "roxygen2 5.0.0 adds RoxygenNote for version tracking, easier package documentation, and support for documenting re-exported functions."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-10-29'

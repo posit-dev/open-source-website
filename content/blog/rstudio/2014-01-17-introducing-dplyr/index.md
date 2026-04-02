@@ -1,5 +1,7 @@
 ---
 title: Introducing dplyr
+description: "dplyr: a new package for fast data manipulation with a consistent API that works on local data frames and remote databases."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-01-17'

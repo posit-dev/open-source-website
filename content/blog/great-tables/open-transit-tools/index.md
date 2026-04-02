@@ -1,6 +1,8 @@
 ---
 title: Contributing to Public Transit Data Analysis and Tooling
 date: '2024-12-19'
+description: "Working on transit data? Let's collaborate on open source tools and standards."
+auto-description: true
 people:
   - Michael Chow
 ported_from: great_tables

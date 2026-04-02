@@ -1,5 +1,7 @@
 ---
 title: dplyr 0.2
+description: "dplyr 0.2 imports %>% from magrittr, overhauls do() for list-columns, and adds sample_n(), summarise_each(), glimpse()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-05-21'

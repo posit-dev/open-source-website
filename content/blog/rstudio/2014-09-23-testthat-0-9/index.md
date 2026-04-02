@@ -1,5 +1,7 @@
 ---
 title: testthat 0.9
+description: "testthat 0.9 adds skip() and skip_on_cran(), describe() for BDD-style tests, with_mock() for mocking, and reference comparisons."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-09-23'

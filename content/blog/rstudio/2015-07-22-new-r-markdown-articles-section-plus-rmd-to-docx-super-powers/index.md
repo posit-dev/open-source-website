@@ -1,5 +1,7 @@
 ---
 title: New R Markdown articles section, plus .Rmd to .docx super powers!
+description: "New R Markdown articles section launched with tips for Word output: styles, margins, tables, and bibliographies."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-07-22'

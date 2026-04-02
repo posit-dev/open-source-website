@@ -1,5 +1,7 @@
 ---
 title: reshape2 1.4; Kevin Ushey joins Rstudio
+description: "reshape2 1.4 gets a C++ melt() for 10x speedup. Also: Kevin Ushey joins RStudio."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-05-09'

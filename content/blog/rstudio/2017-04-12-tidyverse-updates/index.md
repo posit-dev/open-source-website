@@ -1,5 +1,7 @@
 ---
 title: tidyverse updates
+description: "Tidyverse package updates: forcats 0.2.0, readr 1.1.0, stringr 1.2.0, and tibble 1.3.0."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2017-04-12'
