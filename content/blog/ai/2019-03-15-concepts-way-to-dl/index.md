@@ -24,6 +24,7 @@ tags:
   - AI
   - Meta
   - Concepts
+math: true
 ---
 
 

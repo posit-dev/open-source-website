@@ -219,6 +219,28 @@ Optional parameters: `title`, `width`, `height`, `start` (YouTube only), `aspect
 
 Hugo shortcodes pass through Quarto's rendering unchanged, so the `{{< columns >}}` and `{{< button >}}` shortcodes documented below also work in `.qmd` posts.
 
+## Math
+
+To use LaTeX math in a post, add `math: true` to the frontmatter:
+
+```yaml
+math: true
+```
+
+Then use `$...$` for inline math and `$$...$$` for display math:
+
+```markdown
+The loss is $L = -\sum y_i \log \hat{y}_i$.
+
+$$
+\nabla_\theta J(\theta) = \mathbb{E}[\nabla_\theta \log \pi_\theta(a|s) \cdot R]
+$$
+```
+
+Math rendering uses MathJax 3 and is only loaded on posts that set `math: true`, so there's no performance cost for other pages.
+
+**Important:** If your post uses a literal `$` sign (e.g. currency) outside of backticks or code blocks, escape it as `\$` to prevent it from being interpreted as a math delimiter. This applies to all posts, not just those with `math: true`.
+
 ## Hugo shortcodes (`.md` posts)
 
 ### Videos

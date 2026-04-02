@@ -26,6 +26,7 @@ tags:
   - Probabilistic deep learning
   - TensorFlow
   - Keras
+math: true
 ---
 
 

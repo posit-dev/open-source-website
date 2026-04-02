@@ -17,6 +17,7 @@ ported_categories:
   - plotnine
 tags:
   - Plotnine
+math: true
 ---
 
 

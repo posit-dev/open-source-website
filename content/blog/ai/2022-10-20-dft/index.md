@@ -25,6 +25,7 @@ tags:
   - AI
   - Torch
   - Concepts
+math: true
 ---
 
 
@@ -202,102 +203,100 @@ $$\begin{aligned}
 
 Here $N$, as before, is the number of samples (64, in our case); thus, there are $N$ basis vectors. With $k$ running through the basis vectors, they can be written:
 
-<span id="eq-dft-1">
-$$\mathbf{w}^{kn}_N = e^{i\frac{2 \pi}{N}k n}
- \qquad(1)$$</span>
+$$
+\mathbf{w}^{kn}_N = e^{i\frac{2 \pi}{N}k n}
+\qquad(1)
+$$
 
 Like $k$, $n$ runs from $0$ to $N-1$. To understand what these basis vectors are doing, it is helpful to temporarily switch to a shorter sampling period, $N = 4$, say. If we do so, we have four basis vectors: $\mathbf{w}^{0n}_N$, $\mathbf{w}^{1n}_N$, $\mathbf{w}^{2n}_N$, and $\mathbf{w}^{3n}_N$. The first one looks like this:
 
-$$\mathbf{w}^{0n}_N
-=
+$$
+\mathbf{w}^{0n}_N =
 \begin{bmatrix}
    e^{i\frac{2 \pi}{4}* 0 * 0}\\
    e^{i\frac{2 \pi}{4}* 0 * 1}\\
    e^{i\frac{2 \pi}{4}* 0 * 2}\\
    e^{i\frac{2 \pi}{4}* 0 * 3}
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
    1\\
    1\\
    1\\
    1\\
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 The second, like so:
 
-$$\mathbf{w}^{1n}_N
-=
+$$
+\mathbf{w}^{1n}_N =
 \begin{bmatrix}
    e^{i\frac{2 \pi}{4}* 1 * 0}\\
    e^{i\frac{2 \pi}{4}* 1 * 1}\\
    e^{i\frac{2 \pi}{4}* 1 * 2}\\
    e^{i\frac{2 \pi}{4}* 1 * 3}
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
    1\\
    e^{i\frac{\pi}{2}}\\
    e^{i \pi}\\
    e^{i\frac{3 \pi}{4}}
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
    1\\
    i\\
    -1\\
    -i\\
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 This is the third:
 
-$$\mathbf{w}^{2n}_N
-=
+$$
+\mathbf{w}^{2n}_N =
 \begin{bmatrix}
    e^{i\frac{2 \pi}{4}* 2 * 0}\\
    e^{i\frac{2 \pi}{4}* 2 * 1}\\
    e^{i\frac{2 \pi}{4}* 2 * 2}\\
    e^{i\frac{2 \pi}{4}* 2 * 3}
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
    1\\
    e^{i\pi}\\
    e^{i 2 \pi}\\
    e^{i\frac{3 \pi}{2}}
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
    1\\
    -1\\
    1\\
    -1\\
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 And finally, the fourth:
 
-$$\mathbf{w}^{3n}_N
-=
+$$
+\mathbf{w}^{3n}_N =
 \begin{bmatrix}
    e^{i\frac{2 \pi}{4}* 3 * 0}\\
    e^{i\frac{2 \pi}{4}* 3 * 1}\\
    e^{i\frac{2 \pi}{4}* 3 * 2}\\
    e^{i\frac{2 \pi}{4}* 3 * 3}
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
    1\\
    e^{i\frac{3 \pi}{2}}\\
    e^{i 3 \pi}\\
    e^{i\frac{9 \pi}{2}}
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
    1\\
    -i\\
    -1\\
    i\\
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 We can characterize these four basis vectors in terms of their "speed": how fast they move around the unit circle. To do this, we simply look at the rightmost column vectors, where the final calculation results appear. The values in that column correspond to positions pointed to by the revolving basis vector at different points in time. This means that looking at a single "update of position", we can see how fast the vector is moving in a single time step.
 
@@ -305,13 +304,15 @@ Looking first at $\mathbf{w}^{0n}_N$, we see that it does not move at all. $\mat
 
 The thing that makes these basis vectors so useful is that they are mutually orthogonal. That is, their dot product is zero:
 
-<span id="eq-dft-2">
-$$\langle \mathbf{w}^{kn}_N, \mathbf{w}^{ln}_N \rangle \ = \ \sum_{n=0}^{N-1} ({e^{i\frac{2 \pi}{N}k n}})^* e^{i\frac{2 \pi}{N}l n} = \ \sum_{n=0}^{N-1} ({e^{-i\frac{2 \pi}{N}k n}})e^{i\frac{2 \pi}{N}l n} = 0
- \qquad(2)$$</span>
+$$
+\langle \mathbf{w}^{kn}_N, \mathbf{w}^{ln}_N \rangle \ = \ \sum_{n=0}^{N-1} ({e^{i\frac{2 \pi}{N}k n}})^* e^{i\frac{2 \pi}{N}l n} = \ \sum_{n=0}^{N-1} ({e^{-i\frac{2 \pi}{N}k n}})e^{i\frac{2 \pi}{N}l n} = 0
+\qquad(2)
+$$
 
 Let's take, for example, $\mathbf{w}^{2n}_N$ and $\mathbf{w}^{3n}_N$. Indeed, their dot product evaluates to zero.
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
    1 & -1 & 1 & -1\\
 \end{bmatrix}
 \begin{bmatrix}
@@ -319,9 +320,9 @@ $$\begin{bmatrix}
    -i\\
    -1\\
    i\\
-\end{bmatrix}
-=
-1 + i + (-1) + (-i)  = 0$$
+\end{bmatrix} =
+1 + i + (-1) + (-i)  = 0
+$$
 
 Now, we're about to see how the orthogonality of the Fourier basis substantially simplifies the calculation of the DFT. Did you notice the similarity between these basis vectors and the way we wrote the example signal? Here it is again:
 
@@ -602,27 +603,28 @@ Reassuringly -- if you look back -- the results are the same.
 
 Above, did I say "little code"? In fact, a loop is not even needed. Instead of working with the basis vectors one-by-one, we can stack them in a matrix. Then each row will hold the conjugate of a basis vector, and there will be $N$ of them. The columns correspond to positions $0$ to $N-1$; there will be $N$ of them as well. For example, this is how the matrix would look for $N=4$:
 
-<span id="eq-dft-3">
-$$\mathbf{W}_4
-=
+$$
+\mathbf{W}_4 =
 \begin{bmatrix}
    e^{-i\frac{2 \pi}{4}* 0 * 0} &   e^{-i\frac{2 \pi}{4}* 0 * 1}  & e^{-i\frac{2 \pi}{4}* 0 * 2} &  e^{-i\frac{2 \pi}{4}* 0 * 3}\\
 e^{-i\frac{2 \pi}{4}* 1 * 0} &   e^{-i\frac{2 \pi}{4}* 1 * 1}  & e^{-i\frac{2 \pi}{4}* 1 * 2} &  e^{-i\frac{2 \pi}{4}* 1 * 3}\\
 e^{-i\frac{2 \pi}{4}* 2 * 0} &   e^{-i\frac{2 \pi}{4}* 2 * 1}  & e^{-i\frac{2 \pi}{4}* 2 * 2} &  e^{-i\frac{2 \pi}{4}* 2 * 3}\\
 e^{-i\frac{2 \pi}{4}* 3 * 0} &   e^{-i\frac{2 \pi}{4}* 3 * 1}  & e^{-i\frac{2 \pi}{4}* 3 * 2} &  e^{-i\frac{2 \pi}{4}* 3 * 3}\\
 \end{bmatrix}
- \qquad(3)$$</span>
+\qquad(3)
+$$
 
 Or, evaluating the expressions:
 
-$$\mathbf{W}_4
-=
+$$
+\mathbf{W}_4 =
 \begin{bmatrix}
    1 &   1  & 1 &  1\\
 1 &   -i  & -1 &  i\\
 1 &   -1  & 1 &  -1\\
 1 &   i  & -1 &  -i\\
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 With that modification, the code looks a lot more elegant:
 

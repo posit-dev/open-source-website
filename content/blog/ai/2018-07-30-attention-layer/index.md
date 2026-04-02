@@ -24,6 +24,7 @@ tags:
   - Natural language processing
   - TensorFlow
   - Keras
+math: true
 ---
 
 

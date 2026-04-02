@@ -21,6 +21,7 @@ software: ["tidyverse", "tidymodels", "parsnip"]
 languages: ["R"]
 ported_categories:
   - deep-dive
+math: true
 ---
 
 Survival analysis is an important field in modeling and there are many R packages available which implement various models, from "classic" parametric models to boosted trees. While they cover a great variety of model types, they also come with considerable amounts of heterogeneity in syntax and levels of documentation. The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles. It provides a consistent interface to a variety of modelling functions along with tools for resampling, assessing performance, and hyperparameter tuning.

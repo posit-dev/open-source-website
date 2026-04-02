@@ -23,6 +23,7 @@ tags:
   - AI
   - Concepts
   - Distributed computing
+math: true
 ---
 
 
