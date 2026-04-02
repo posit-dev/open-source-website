@@ -2,17 +2,20 @@
 people:
   - Mickaël CANOUIL, _Ph.D._
 title: 'Quarto Wizard 1.0.0: Democratising Quarto Extension Management'
-description: |
-  Introducing a game-changing extension for VS Code and Positron that transforms Quarto extensions management with an intuitive GUI for extensions and templates.
+description: >
+  Introducing a game-changing extension for VS Code and Positron that transforms
+  Quarto extensions management with an intuitive GUI for extensions and
+  templates.
 date: '2025-10-20'
 categories:
   - Publishing
 image: featured.png
-image-alt: Cartoon dog wizard wearing blue hat with red band holding magic wand creating
+image-alt: >-
+  Cartoon dog wizard wearing blue hat with red band holding magic wand creating
   HTML and CSS code scrolls in starry night scene.
-number-sections: no
-link-external-newwindow: yes
-lightbox: yes
+number-sections: false
+link-external-newwindow: true
+lightbox: true
 include-in-header:
   - text: |
       <style>
@@ -34,31 +37,45 @@ include-in-header:
          margin-bottom: 2rem;
        }
        </style>
-quarto-wizard: '[]{.quarto-wizard title="Quarto Wizard Logo" aria-label="Quarto Wizard
-  Logo"}'
+quarto-wizard: '[]{.quarto-wizard title="Quarto Wizard Logo" aria-label="Quarto Wizard Logo"}'
 alt-text:
-  extensions-marketplace: |
-    Visual Studio Code Extensions Marketplace showing Quarto Wizard search results with install button.
-  quarto-extensions-home: |
-    Quarto Extensions website displaying grid of extension cards including webr, Reveal.js Clean theme, and Hikmah Academic templates.
-  quarto-extensions-modal: |
-    Quarto Extensions website with Install Options popup showing manual terminal command and Quarto Wizard installation options for Visual Studio Code, Positron, and VSCodium.
-  quarto-extensions-template: |
-    Quarto Extensions website in list view showing Template extensions with install and use buttons.
-  vscode-activity-bar: |
-    Quarto Wizard Extensions Installed panel in Visual Studio Code showing no extensions installed message with green Install Extensions button.
-  vscode-install: |
-    Quarto Wizard extension selection dialog showing list of available extensions with checkboxes including LIVE, HIGHLIGHT TEXT, GITHUB, and other Quarto extensions.
-  vscode-update: |
-    Quarto Wizard Extensions Installed panel showing expanded iconify extension details with update button and version information.
-  vscode-template: |
-    Visual Studio Code showing Quarto Wizard with installed extensions list and document editor displaying invoice template with YAML frontmatter.
+  extensions-marketplace: >
+    Visual Studio Code Extensions Marketplace showing Quarto Wizard search
+    results with install button.
+  quarto-extensions-home: >
+    Quarto Extensions website displaying grid of extension cards including webr,
+    Reveal.js Clean theme, and Hikmah Academic templates.
+  quarto-extensions-modal: >
+    Quarto Extensions website with Install Options popup showing manual terminal
+    command and Quarto Wizard installation options for Visual Studio Code,
+    Positron, and VSCodium.
+  quarto-extensions-template: >
+    Quarto Extensions website in list view showing Template extensions with
+    install and use buttons.
+  vscode-activity-bar: >
+    Quarto Wizard Extensions Installed panel in Visual Studio Code showing no
+    extensions installed message with green Install Extensions button.
+  vscode-install: >
+    Quarto Wizard extension selection dialog showing list of available
+    extensions with checkboxes including LIVE, HIGHLIGHT TEXT, GITHUB, and other
+    Quarto extensions.
+  vscode-update: >
+    Quarto Wizard Extensions Installed panel showing expanded iconify extension
+    details with update button and version information.
+  vscode-template: >
+    Visual Studio Code showing Quarto Wizard with installed extensions list and
+    document editor displaying invoice template with YAML frontmatter.
 editor:
-  render-on-save: yes
+  render-on-save: true
 ported_from: quarto
 port_status: in-progress
-software: ["quarto", "positron"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+  - positron
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - community
   - quarto
@@ -95,11 +112,29 @@ tags:
  </style>
 
 
-> **Community Contribution**
->
-> The <span class="quarto-wizard" title="Quarto Wizard Logo" aria-label="Quarto Wizard Logo"></span> Quarto Wizard extension and listing directory website are built and maintained by [**?meta:author.1**](?meta:authors.1.url).
->
-> In this post, he explains what it is and how it can help you manage Quarto extensions directly from Positron or Visual Studio Code.
+<div class="callout callout-note">
+<div class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
+<p>The <span class="quarto-shortcode__" data-is-shortcode="1"
+data-raw="{{&lt; meta quarto-wizard &gt;}}"><span
+class="quarto-shortcode__-param" data-is-shortcode="1" data-value="meta"
+data-raw="meta"></span> <span class="quarto-shortcode__-param"
+data-is-shortcode="1" data-value="quarto-wizard"
+data-raw="quarto-wizard"></span></span> Quarto Wizard extension and
+listing directory website are built and maintained by <a
+href="{{&lt; meta authors.1.url &gt;}}"><span class="quarto-shortcode__"
+data-is-shortcode="1" data-raw="{{&lt; meta author.1 &gt;}}"><span
+class="quarto-shortcode__-param" data-is-shortcode="1" data-value="meta"
+data-raw="meta"></span> <span class="quarto-shortcode__-param"
+data-is-shortcode="1" data-value="author.1"
+data-raw="author.1"></span></span></a>.</p>
+<p>In this post, he explains what it is and how it can help you manage
+Quarto extensions directly from Positron or Visual Studio Code.</p>
+</div>
+</div>
 
 <img src="featured.png" class="hero-banner" data-fig-align="center" data-fig-alt="Cartoon dog wizard wearing blue hat with red band holding magic wand creating HTML and CSS code scrolls in starry night scene." width="600" />
 
@@ -141,11 +176,26 @@ results with install button.
 <strong>Terminal</strong>
 <div class="sourceCode" id="cb1" data-filename="Terminal"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--install-extension</span> mcanouil.quarto-wizard</span></code></pre></div>
 </div>
-<div>
-<blockquote>
-<p><strong>Tip</strong></p>
-<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)) if you haven’t done so already.</p>
-</blockquote>
+<div class="callout callout-tip">
+<div class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
+<p>Be sure to execute the command <em>Shell Command: Install ‘code’
+command in PATH</em> from Visual Studio Code’s Command Palette (<span
+class="quarto-shortcode__" data-is-shortcode="1"
+data-raw="{{&lt; kbd win=Ctrl-Shift-P mac=Cmd-Shift-P linux=Ctrl-Shift-P &gt;}}"><span
+class="quarto-shortcode__-param" data-is-shortcode="1" data-value="kbd"
+data-raw="kbd"></span> <span class="quarto-shortcode__-param"
+data-is-shortcode="1" data-raw="win=Ctrl-Shift-P" data-key="win"
+data-value="Ctrl-Shift-P"></span> <span class="quarto-shortcode__-param"
+data-is-shortcode="1" data-raw="mac=Cmd-Shift-P" data-key="mac"
+data-value="Cmd-Shift-P"></span> <span class="quarto-shortcode__-param"
+data-is-shortcode="1" data-raw="linux=Ctrl-Shift-P" data-key="linux"
+data-value="Ctrl-Shift-P"></span></span>) if you haven’t done so
+already.</p>
+</div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -153,11 +203,26 @@ results with install button.
 <strong>Terminal</strong>
 <div class="sourceCode" id="cb2" data-filename="Terminal"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">positron</span> <span class="at">--install-extension</span> mcanouil.quarto-wizard</span></code></pre></div>
 </div>
-<div>
-<blockquote>
-<p><strong>Tip</strong></p>
-<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)) if you haven’t done so already.</p>
-</blockquote>
+<div class="callout callout-tip">
+<div class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
+<p>Be sure to execute the command <em>Shell Command: Install ‘positron’
+command in PATH</em> from Positron’s Command Palette (<span
+class="quarto-shortcode__" data-is-shortcode="1"
+data-raw="{{&lt; kbd win=Ctrl-Shift-P mac=Cmd-Shift-P linux=Ctrl-Shift-P &gt;}}"><span
+class="quarto-shortcode__-param" data-is-shortcode="1" data-value="kbd"
+data-raw="kbd"></span> <span class="quarto-shortcode__-param"
+data-is-shortcode="1" data-raw="win=Ctrl-Shift-P" data-key="win"
+data-value="Ctrl-Shift-P"></span> <span class="quarto-shortcode__-param"
+data-is-shortcode="1" data-raw="mac=Cmd-Shift-P" data-key="mac"
+data-value="Cmd-Shift-P"></span> <span class="quarto-shortcode__-param"
+data-is-shortcode="1" data-raw="linux=Ctrl-Shift-P" data-key="linux"
+data-value="Ctrl-Shift-P"></span></span>) if you haven’t done so
+already.</p>
+</div>
 </div>
 </div>
 </div></li>
@@ -194,7 +259,7 @@ The solution is **multi-modal installation**: you can now install extensions thr
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)).</li>
+<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)).</li>
 <li>Type <code>Quarto Wizard: Install Extensions</code> and select it.</li>
 <li>Browse the list of available Quarto extensions.</li>
 <li>Select the Quarto extension(s) you want to install.</li>
@@ -240,7 +305,7 @@ The file is not created until you confirm, allowing you to adjust the filename a
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows)).</li>
+<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)).</li>
 <li>Type <code>Quarto Wizard: Use Template</code> and select it.</li>
 <li>Browse the list of available Quarto templates.</li>
 <li>Select the Quarto template(s) you want to use.</li>

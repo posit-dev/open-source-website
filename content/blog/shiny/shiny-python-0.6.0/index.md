@@ -8,8 +8,10 @@ image: shiny-060.png
 image-alt: Shiny for Python 0.6.0
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
+software:
+  - shiny-python
+languages:
+  - Python
 categories:
   - Interactive Apps
 tags:
@@ -110,9 +112,18 @@ ui.layout_column_wrap(
 
 There are too many new components in [this release](https://github.com/posit-dev/py-shiny/blob/v0.6.0/CHANGELOG.md#060---2023-08-08) to blog about, so please check out [the documentation](https://shiny.posit.co/py/api/) to see how they work together.
 
-> **... psst!**
->
-> If you're using `shiny.experiemental.ui`, you can now use `shiny.ui` instead. We've moved virtually all of the experimental components into the main `shiny.ui` namespace. 🎉
+<div class="callout callout-tip">
+<div class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
+<span class="callout-title">… psst!</span>
+</div>
+<div class="callout-body">
+<p>If you’re using <code>shiny.experiemental.ui</code>, you can now use
+<code>shiny.ui</code> instead. We’ve moved virtually all of the
+experimental components into the main <code>shiny.ui</code> namespace.
+🎉</p>
+</div>
+</div>
 
 ------------------------------------------------------------------------
 

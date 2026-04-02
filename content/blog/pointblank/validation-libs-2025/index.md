@@ -2,11 +2,13 @@
 title: Data Validation Libraries for Polars (2025 Edition)
 people:
   - Rich Iannone
-date: '2025-06-04T00:00:00.000Z'
+date: '2025-06-04'
 ported_from: pointblank
 port_status: in-progress
-software: ["pointblank"]
-languages: ["Python"]
+software:
+  - pointblank
+languages:
+  - Python
 categories:
   - Data Wrangling
 tags:
@@ -28,67 +30,75 @@ you later.
 In this survey (conducted halfway through 2025) we'll explore five Python validation libraries that
 support Polars DataFrames, each bringing distinct strengths to different validation challenges.
 
-> **Note**
->
-> Great Expectations, while being one of the most established data validation frameworks in the Python
-> ecosystem, is not included in this survey as it doesn't yet offer native Polars support. See [this
-> issue](https://github.com/great-expectations/great_expectations/issues/10702) and
-> [this discussion](https://github.com/great-expectations/great_expectations/discussions/10144) for
-> the inside baseball.
+<div class="callout callout-note">
+<div class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
+<p>Great Expectations, while being one of the most established data
+validation frameworks in the Python ecosystem, is not included in this
+survey as it doesn’t yet offer native Polars support. See <a
+href="https://github.com/great-expectations/great_expectations/issues/10702">this
+issue</a> and <a
+href="https://github.com/great-expectations/great_expectations/discussions/10144">this
+discussion</a> for the inside baseball.</p>
+</div>
+</div>
 
 ## Recommendations
 
 Here are the unique strengths for each library:
 
-<div id="vacnurfmpq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="haskteurfe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#vacnurfmpq table {
+#haskteurfe table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#vacnurfmpq thead, tbody, tfoot, tr, td, th { border-style: none; }
+#haskteurfe thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#vacnurfmpq p { margin: 0; padding: 0; }
- #vacnurfmpq .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #vacnurfmpq .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #vacnurfmpq .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #vacnurfmpq .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; border-top-color: #FFFFFF; border-top-width: 0; }
- #vacnurfmpq .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #vacnurfmpq .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vacnurfmpq .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #vacnurfmpq .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; overflow-x: hidden; }
- #vacnurfmpq .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #vacnurfmpq .gt_column_spanner_outer:first-child { padding-left: 0; }
- #vacnurfmpq .gt_column_spanner_outer:last-child { padding-right: 0; }
- #vacnurfmpq .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #vacnurfmpq .gt_spanner_row { border-bottom-style: hidden; }
- #vacnurfmpq .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #vacnurfmpq .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #vacnurfmpq .gt_from_md> :first-child { margin-top: 0; }
- #vacnurfmpq .gt_from_md> :last-child { margin-bottom: 0; }
- #vacnurfmpq .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #vacnurfmpq .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; }
- #vacnurfmpq .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; vertical-align: top; }
- #vacnurfmpq .gt_row_group_first td { border-top-width: 2px; }
- #vacnurfmpq .gt_row_group_first th { border-top-width: 2px; }
- #vacnurfmpq .gt_striped { color: #333333; background-color: #F4F4F4; }
- #vacnurfmpq .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vacnurfmpq .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #vacnurfmpq .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #vacnurfmpq .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #vacnurfmpq .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vacnurfmpq .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; text-align: left; }
- #vacnurfmpq .gt_left { text-align: left; }
- #vacnurfmpq .gt_center { text-align: center; }
- #vacnurfmpq .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #vacnurfmpq .gt_font_normal { font-weight: normal; }
- #vacnurfmpq .gt_font_bold { font-weight: bold; }
- #vacnurfmpq .gt_font_italic { font-style: italic; }
- #vacnurfmpq .gt_super { font-size: 65%; }
- #vacnurfmpq .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #vacnurfmpq .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#haskteurfe p { margin: 0; padding: 0; }
+ #haskteurfe .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #haskteurfe .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #haskteurfe .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #haskteurfe .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #haskteurfe .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #haskteurfe .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #haskteurfe .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #haskteurfe .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; overflow-x: hidden; }
+ #haskteurfe .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #haskteurfe .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #haskteurfe .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #haskteurfe .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #haskteurfe .gt_spanner_row { border-bottom-style: hidden; }
+ #haskteurfe .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #haskteurfe .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #haskteurfe .gt_from_md> :first-child { margin-top: 0; }
+ #haskteurfe .gt_from_md> :last-child { margin-bottom: 0; }
+ #haskteurfe .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #haskteurfe .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; }
+ #haskteurfe .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; vertical-align: top; }
+ #haskteurfe .gt_row_group_first td { border-top-width: 2px; }
+ #haskteurfe .gt_row_group_first th { border-top-width: 2px; }
+ #haskteurfe .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #haskteurfe .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #haskteurfe .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #haskteurfe .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #haskteurfe .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #haskteurfe .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #haskteurfe .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; text-align: left; }
+ #haskteurfe .gt_left { text-align: left; }
+ #haskteurfe .gt_center { text-align: center; }
+ #haskteurfe .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #haskteurfe .gt_font_normal { font-weight: normal; }
+ #haskteurfe .gt_font_bold { font-weight: bold; }
+ #haskteurfe .gt_font_italic { font-style: italic; }
+ #haskteurfe .gt_super { font-size: 65%; }
+ #haskteurfe .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #haskteurfe .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -104,55 +114,55 @@ Here are the unique strengths for each library:
 
 Based on these strengths, here are my recommendations for which libraries to use according to use case:
 
-<div id="nncbugwwxh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="tumtojterb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#nncbugwwxh table {
+#tumtojterb table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#nncbugwwxh thead, tbody, tfoot, tr, td, th { border-style: none; }
+#tumtojterb thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#nncbugwwxh p { margin: 0; padding: 0; }
- #nncbugwwxh .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #nncbugwwxh .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #nncbugwwxh .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #nncbugwwxh .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; border-top-color: #FFFFFF; border-top-width: 0; }
- #nncbugwwxh .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #nncbugwwxh .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #nncbugwwxh .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #nncbugwwxh .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; overflow-x: hidden; }
- #nncbugwwxh .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #nncbugwwxh .gt_column_spanner_outer:first-child { padding-left: 0; }
- #nncbugwwxh .gt_column_spanner_outer:last-child { padding-right: 0; }
- #nncbugwwxh .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #nncbugwwxh .gt_spanner_row { border-bottom-style: hidden; }
- #nncbugwwxh .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #nncbugwwxh .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #nncbugwwxh .gt_from_md> :first-child { margin-top: 0; }
- #nncbugwwxh .gt_from_md> :last-child { margin-bottom: 0; }
- #nncbugwwxh .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #nncbugwwxh .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; }
- #nncbugwwxh .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; vertical-align: top; }
- #nncbugwwxh .gt_row_group_first td { border-top-width: 2px; }
- #nncbugwwxh .gt_row_group_first th { border-top-width: 2px; }
- #nncbugwwxh .gt_striped { color: #333333; background-color: #F4F4F4; }
- #nncbugwwxh .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #nncbugwwxh .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #nncbugwwxh .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #nncbugwwxh .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #nncbugwwxh .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #nncbugwwxh .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; text-align: left; }
- #nncbugwwxh .gt_left { text-align: left; }
- #nncbugwwxh .gt_center { text-align: center; }
- #nncbugwwxh .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #nncbugwwxh .gt_font_normal { font-weight: normal; }
- #nncbugwwxh .gt_font_bold { font-weight: bold; }
- #nncbugwwxh .gt_font_italic { font-style: italic; }
- #nncbugwwxh .gt_super { font-size: 65%; }
- #nncbugwwxh .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #nncbugwwxh .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#tumtojterb p { margin: 0; padding: 0; }
+ #tumtojterb .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #tumtojterb .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #tumtojterb .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #tumtojterb .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #tumtojterb .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #tumtojterb .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #tumtojterb .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #tumtojterb .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; overflow-x: hidden; }
+ #tumtojterb .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #tumtojterb .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #tumtojterb .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #tumtojterb .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #tumtojterb .gt_spanner_row { border-bottom-style: hidden; }
+ #tumtojterb .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #tumtojterb .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #tumtojterb .gt_from_md> :first-child { margin-top: 0; }
+ #tumtojterb .gt_from_md> :last-child { margin-bottom: 0; }
+ #tumtojterb .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #tumtojterb .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; }
+ #tumtojterb .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; vertical-align: top; }
+ #tumtojterb .gt_row_group_first td { border-top-width: 2px; }
+ #tumtojterb .gt_row_group_first th { border-top-width: 2px; }
+ #tumtojterb .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #tumtojterb .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #tumtojterb .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #tumtojterb .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #tumtojterb .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #tumtojterb .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #tumtojterb .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; text-align: left; }
+ #tumtojterb .gt_left { text-align: left; }
+ #tumtojterb .gt_center { text-align: center; }
+ #tumtojterb .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #tumtojterb .gt_font_normal { font-weight: normal; }
+ #tumtojterb .gt_font_bold { font-weight: bold; }
+ #tumtojterb .gt_font_italic { font-style: italic; }
+ #tumtojterb .gt_super { font-size: 65%; }
+ #tumtojterb .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #tumtojterb .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -714,7 +724,7 @@ validation
   <tfoot class="gt_sourcenotes">
   
   <tr>
-    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-03-13 19:11:23 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-03-13 19:11:23 UTC</span></div></td>
+    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-04-02 18:06:05 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-04-02 18:06:05 UTC</span></div></td>
   </tr>
 
 
@@ -972,18 +982,18 @@ validation.validate()
 print("Validation results:", validation.results)
 ```
 
-<pre><span class="ansi-green-fg">2026-03-13 12:11:23.468</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'high', 'timestamp': '2026-03-13T12:11:23.435459-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
+<pre><span class="ansi-green-fg">2026-04-02 11:06:05.645</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'high', 'timestamp': '2026-04-02T11:06:05.584060-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
 
-<span class="ansi-green-fg">2026-03-13 12:11:23.469</span> | <span class="ansi-red-fg ansi-bold">ERROR   </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">406</span> - <span class="ansi-red-fg ansi-bold">Failed validation: ColumnValuesToBeBetween_age - The column 'age' has values that are not between 18 and 80.</span>
+<span class="ansi-green-fg">2026-04-02 11:06:05.645</span> | <span class="ansi-red-fg ansi-bold">ERROR   </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">406</span> - <span class="ansi-red-fg ansi-bold">Failed validation: ColumnValuesToBeBetween_age - The column 'age' has values that are not between 18 and 80.</span>
 
-<span class="ansi-green-fg">2026-03-13 12:11:23.469</span> | <span class="ansi-yellow-fg ansi-bold">WARNING </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">408</span> - <span class="ansi-yellow-fg ansi-bold">Failed validation: PatternMatch_email - The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\.[^@]+$'.</span>
+<span class="ansi-green-fg">2026-04-02 11:06:05.645</span> | <span class="ansi-yellow-fg ansi-bold">WARNING </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">408</span> - <span class="ansi-yellow-fg ansi-bold">Failed validation: PatternMatch_email - The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\.[^@]+$'.</span>
 
-<span class="ansi-green-fg">2026-03-13 12:11:23.469</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-03-13T12:11:23.438392-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
+<span class="ansi-green-fg">2026-04-02 11:06:05.646</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-04-02T11:06:05.592013-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
 
-<span class="ansi-green-fg">2026-03-13 12:11:23.469</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'TypeCheck', 'impact': 'high', 'timestamp': '2026-03-13T12:11:23.438814-07:00', 'column': 'DataTypeColumnValidation', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 4, 'threshold': 0.0}}</span>
+<span class="ansi-green-fg">2026-04-02 11:06:05.646</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'TypeCheck', 'impact': 'high', 'timestamp': '2026-04-02T11:06:05.592547-07:00', 'column': 'DataTypeColumnValidation', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 4, 'threshold': 0.0}}</span>
 </pre>
 
-    Validation results: {'Summary': {'passed': False, 'validations': ['ColumnValuesToBeBetween_user_id', 'ColumnValuesToBeBetween_age', 'PatternMatch_email', 'ColumnValuesToBeBetween_score', 'TypeCheck_DataTypeColumnValidation'], 'failed_validation': ['ColumnValuesToBeBetween_age', 'PatternMatch_email']}, 'ColumnValuesToBeBetween_user_id': {'validation': 'ColumnValuesToBeBetween', 'impact': 'high', 'timestamp': '2026-03-13T12:11:23.435459-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}, 'ColumnValuesToBeBetween_age': {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-03-13T12:11:23.437027-07:00', 'column': 'age', 'result': {'status': 'Fail', 'threshold_pass': False, 'message': "The column 'age' has values that are not between 18 and 80.", 'failing_items': [95], 'failed_number': 1, 'frame_row_number': 5, 'threshold': 0.1, 'failed_percentage': 0.2}}, 'PatternMatch_email': {'validation': 'PatternMatch', 'impact': 'low', 'timestamp': '2026-03-13T12:11:23.437565-07:00', 'column': 'email', 'result': {'status': 'Fail', 'threshold_pass': False, 'message': "The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\\.[^@]+$'.", 'failing_items': ['invalid-email'], 'failed_number': 1, 'frame_row_number': 5, 'threshold': 0.05, 'failed_percentage': 0.2}}, 'ColumnValuesToBeBetween_score': {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-03-13T12:11:23.438392-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}, 'TypeCheck_DataTypeColumnValidation': {'validation': 'TypeCheck', 'impact': 'high', 'timestamp': '2026-03-13T12:11:23.438814-07:00', 'column': 'DataTypeColumnValidation', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 4, 'threshold': 0.0}}}
+    Validation results: {'Summary': {'passed': False, 'validations': ['ColumnValuesToBeBetween_user_id', 'ColumnValuesToBeBetween_age', 'PatternMatch_email', 'ColumnValuesToBeBetween_score', 'TypeCheck_DataTypeColumnValidation'], 'failed_validation': ['ColumnValuesToBeBetween_age', 'PatternMatch_email']}, 'ColumnValuesToBeBetween_user_id': {'validation': 'ColumnValuesToBeBetween', 'impact': 'high', 'timestamp': '2026-04-02T11:06:05.584060-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}, 'ColumnValuesToBeBetween_age': {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-04-02T11:06:05.590731-07:00', 'column': 'age', 'result': {'status': 'Fail', 'threshold_pass': False, 'message': "The column 'age' has values that are not between 18 and 80.", 'failing_items': [95], 'failed_number': 1, 'frame_row_number': 5, 'threshold': 0.1, 'failed_percentage': 0.2}}, 'PatternMatch_email': {'validation': 'PatternMatch', 'impact': 'low', 'timestamp': '2026-04-02T11:06:05.591287-07:00', 'column': 'email', 'result': {'status': 'Fail', 'threshold_pass': False, 'message': "The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\\.[^@]+$'.", 'failing_items': ['invalid-email'], 'failed_number': 1, 'frame_row_number': 5, 'threshold': 0.05, 'failed_percentage': 0.2}}, 'ColumnValuesToBeBetween_score': {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-04-02T11:06:05.592013-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}, 'TypeCheck_DataTypeColumnValidation': {'validation': 'TypeCheck', 'impact': 'high', 'timestamp': '2026-04-02T11:06:05.592547-07:00', 'column': 'DataTypeColumnValidation', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 4, 'threshold': 0.0}}}
 
 This example showcases Validoopsie's key differentiators: modular validation categories
 (`ValuesValidation`, `StringValidation`, `TypeValidation`) combined with *impact levels* that
@@ -1024,11 +1034,11 @@ validation = (
 validation.validate()
 ```
 
-<pre><span class="ansi-green-fg">2026-03-13 12:11:23.476</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnNotBeNull', 'impact': 'high', 'timestamp': '2026-03-13T12:11:23.474893-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
+<pre><span class="ansi-green-fg">2026-04-02 11:06:05.653</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnNotBeNull', 'impact': 'high', 'timestamp': '2026-04-02T11:06:05.651345-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
 
-<span class="ansi-green-fg">2026-03-13 12:11:23.477</span> | <span class="ansi-red-fg ansi-bold">ERROR   </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">406</span> - <span class="ansi-red-fg ansi-bold">Failed validation: PatternMatch_email - The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\.[^@]+$'.</span>
+<span class="ansi-green-fg">2026-04-02 11:06:05.653</span> | <span class="ansi-red-fg ansi-bold">ERROR   </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">406</span> - <span class="ansi-red-fg ansi-bold">Failed validation: PatternMatch_email - The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\.[^@]+$'.</span>
 
-<span class="ansi-green-fg">2026-03-13 12:11:23.477</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'low', 'timestamp': '2026-03-13T12:11:23.476300-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': "The column 'score' has values that are not between 90 and 100.", 'failing_items': [78.3, 85.5, 88.7], 'failed_number': 3, 'frame_row_number': 5, 'threshold': 0.8, 'failed_percentage': 0.6}}</span>
+<span class="ansi-green-fg">2026-04-02 11:06:05.653</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'low', 'timestamp': '2026-04-02T11:06:05.652532-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': "The column 'score' has values that are not between 90 and 100.", 'failing_items': [78.3, 85.5, 88.7], 'failed_number': 3, 'frame_row_number': 5, 'threshold': 0.8, 'failed_percentage': 0.6}}</span>
 </pre>
 
 Validoopsie strikes a unique balance between operational flexibility and production reliability,

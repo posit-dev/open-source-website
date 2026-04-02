@@ -6,11 +6,14 @@ people:
 date: '2024-11-25'
 image: brand-yml-feature.svg
 image-alt: brand.yml logo
-image-header-disable: yes
+image-header-disable: 'yes'
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python", "brand-yml"]
-languages: ["Python"]
+software:
+  - shiny-python
+  - brand-yml
+languages:
+  - Python
 categories:
   - Interactive Apps
 tags:
@@ -80,12 +83,22 @@ This same file can be used for your Shiny apps as well as your Quarto projects.
 We're starting with Posit-sponsored projects like [Shiny](https://shiny.posit.co), [Quarto](https://quarto.org), and [R Markdown](https://rmarkdown.rstudio.com), but we're hoping to see brand.yml adopted more widely in the open-source community.
 To encourage this, we've published the [brand-yml Python package](https://posit-dev.github.io/brand-yml/pkg/py), which you can use to integrate brand.yml into your project or other packages.
 
-> **Writing brand.yml with the help of an LLM**
->
-> We know that writing YAML isn't everyone's cup of tea!
-> If you want to enlist the help of a friendly large language model (LLM), we've written up [a guide to using LLMs to write brand.yml](https://posit-dev.github.io/brand-yml/articles/llm-brand-yml-prompt/).
->
-> The article includes a prompt you can copy and use to teach an LLM about the brand.yml syntax, as well as a few tips and follow-up prompts you can use to get the best results.
+<div class="callout callout-tip">
+<div class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
+<p>We know that writing YAML isn’t everyone’s cup of tea! If you want to
+enlist the help of a friendly large language model (LLM), we’ve written
+up <a
+href="https://posit-dev.github.io/brand-yml/articles/llm-brand-yml-prompt/">a
+guide to using LLMs to write brand.yml</a>.</p>
+<p>The article includes a prompt you can copy and use to teach an LLM
+about the brand.yml syntax, as well as a few tips and follow-up prompts
+you can use to get the best results.</p>
+</div>
+</div>
 
 ## Getting Started
 

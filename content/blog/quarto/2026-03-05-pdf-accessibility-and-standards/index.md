@@ -1,7 +1,8 @@
 ---
 title: PDF Accessibility and Standards
-description: |
-  Quarto 1.9 brings PDF accessibility and standards support, building on new tagging features in LaTeX and Typst.
+description: >
+  Quarto 1.9 brings PDF accessibility and standards support, building on new
+  tagging features in LaTeX and Typst.
 people:
   - Gordon Woodhull
 date: '2026-03-05'
@@ -9,8 +10,12 @@ image: thumbnail.png
 image-alt: Quarto icon, PDF file icon, accessibility icon, and validation shield
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 categories:
   - Publishing
 tags:
@@ -18,9 +23,18 @@ tags:
 ---
 
 
-> **Pre-release Feature**
->
-> This feature is new in the upcoming Quarto 1.9 release. To use the feature now, you'll need to [download and install](https://quarto.org/docs/download/prerelease.html) the Quarto pre-release.
+<div class="callout callout-note">
+<div class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<span class="callout-title">Pre-release Feature</span>
+</div>
+<div class="callout-body">
+<p>This feature is new in the upcoming Quarto 1.9 release. To use the
+feature now, you’ll need to <a
+href="https://quarto.org/docs/download/prerelease.html">download and
+install</a> the Quarto pre-release.</p>
+</div>
+</div>
 
 2025 was a big year for PDF accessibility. LaTeX and Typst both released support for PDF tagging and accessibility standards, just in time for new regulations in the [EU](https://en.wikipedia.org/wiki/European_Accessibility_Act) (June 2025) and [US](https://accessible.org/ada-title-ii-web-accessibility/) (April 2026).
 
@@ -68,15 +82,17 @@ In Quarto 1.9, specify a PDF standard for your document or project with `pdf-sta
 
 If you specify a PDF standard, Quarto first instructs LaTeX or Typst to use the standard when producing the PDF, and then validates the output PDF against the standard using veraPDF, an open-source PDF validation tool. If veraPDF is not installed, you'll get a warning but still receive a PDF -- it just won't be validated.
 
-> **Installing veraPDF**
->
-> To install veraPDF, you'll first need Java, then run:
->
-> **Terminal**
->
-> ``` bash
-> quarto install verapdf
-> ```
+<div class="callout callout-note">
+<div class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<span class="callout-title">Installing veraPDF</span>
+</div>
+<div class="callout-body">
+<p>To install veraPDF, you’ll first need Java, then run:</p>
+<div class="sourceCode" id="cb1" data-filename="Terminal"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install verapdf</span></code></pre></div>
+</div>
+</div>
 
 When a document passes validation, you'll see output like:
 

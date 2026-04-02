@@ -1,7 +1,8 @@
 ---
 title: posit::conf(2025) Quarto talks
-description: |
-  Videos of talks from posit::conf(2025) are posted, and you can find them all here!
+description: >
+  Videos of talks from posit::conf(2025) are posted, and you can find them all
+  here!
 categories:
   - Publishing
   - Community
@@ -12,8 +13,12 @@ image: thumbnail.png
 image-alt: Talk Recordings at posit::conf(2025)
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - Learn
   - Conference
@@ -67,10 +72,21 @@ Talks included in the playlist, broken up into a few categories for easier brows
 | **Bill Pikounis** | Quarto for Business Collaboration and Technical Documentation in Word docx format | [![thumb](https://img.youtube.com/vi/4-dQ2Q985A0/hqdefault.jpg)](https://youtu.be/4-dQ2Q985A0) |
 | **Timothy Keyes** | Trust, but Verify: Lessons from Deploying LLMs | [![thumb](https://img.youtube.com/vi/HYQaZTLb2Co/hqdefault.jpg)](https://youtu.be/HYQaZTLb2Co) |
 
-> **Tip**
->
-> **Workshop materials now available:**  
-> The Quarto team has published full materials from the two workshops at posit::conf 2025: "Branded Websites, Presentations, Dashboards, and PDFs with Quarto" and "Extending Quarto".  
-> You can access the workshop websites, exercise source code, and full slide decks under a CC BY-SA 4.0 license from the [Quarto blog](https://quarto.org/docs/blog/posts/2025-10-27-conf-workshops-materials/).
+<div class="callout callout-tip">
+<div class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
+<p><strong>Workshop materials now available:</strong><br/>
+The Quarto team has published full materials from the two workshops at
+posit::conf 2025: “Branded Websites, Presentations, Dashboards, and PDFs
+with Quarto” and “Extending Quarto”.<br/>
+You can access the workshop websites, exercise source code, and full
+slide decks under a CC BY-SA 4.0 license from the <a
+href="https://quarto.org/docs/blog/posts/2025-10-27-conf-workshops-materials/">Quarto
+blog</a>.</p>
+</div>
+</div>
 
 We hope you enjoyed this look back at the Quarto sessions from posit::conf(2025). Every year the community brings new ideas, new tools, and new ways of working --- and we'd love to see **your** voice added to the mix. We hope to see you next year, and maybe even see *you* up on stage sharing your own work at posit::conf!

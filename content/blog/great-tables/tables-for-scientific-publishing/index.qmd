@@ -4,8 +4,9 @@ people:
   - Rich Iannone
 date: '2024-07-08'
 format:
+  hugo-md: default
   html:
-    code-fold: yes
+    code-fold: true
     code-summary: Show the Code
 ported_from: great_tables
 port_status: in-progress

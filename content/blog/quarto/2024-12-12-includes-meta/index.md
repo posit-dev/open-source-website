@@ -1,7 +1,9 @@
 ---
 title: Use `meta` + `include` to customize reusable content
-description: |
-  The "Includes" feature in Quarto lets you efficiently reuse content across multiple files. Combined with the "meta" shortcode, it enables you to set precise, file-specific values.
+description: >
+  The "Includes" feature in Quarto lets you efficiently reuse content across
+  multiple files. Combined with the "meta" shortcode, it enables you to set
+  precise, file-specific values.
 categories:
   - Publishing
   - Community
@@ -12,8 +14,12 @@ image: thumbnail.jpg
 image-alt: Quarto logo with single source publishing icon.
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - Learn
   - Authoring
@@ -24,11 +30,21 @@ tags:
 ---
 
 
-> **Re-posted from posit.co**
->
-> This post was originally published on the [Posit Blog](https://posit.co/blog/quarto-meta-shortcode-variables/).
->
-> The worked example below is also available at: [Source](https://github.com/quarto-dev/quarto-examples/tree/main/websites/quarto-meta-includes) \| [Live Website](https://examples.quarto.pub/quarto-meta-includes/)
+<div class="callout callout-tip">
+<div class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
+<span class="callout-title">Re-posted from posit.co</span>
+</div>
+<div class="callout-body">
+<p>This post was originally published on the <a
+href="https://posit.co/blog/quarto-meta-shortcode-variables/">Posit
+Blog</a>.</p>
+<p>The worked example below is also available at: <a
+href="https://github.com/quarto-dev/quarto-examples/tree/main/websites/quarto-meta-includes">Source</a>
+| <a href="https://examples.quarto.pub/quarto-meta-includes/">Live
+Website</a></p>
+</div>
+</div>
 
 There may be times when you would like to single-source content across multiple pages/files to reduce the risk of errors, produce consistent content that is easy to maintain, and ultimately save valuable time. [Quarto](https://quarto.org/) (an open-source technical publishing system), provides an [Includes](https://quarto.org/docs/authoring/includes.html) feature (the equivalent of an R Markdown "child" document) that allows you to reuse content across multiple documents/files/pages.
 

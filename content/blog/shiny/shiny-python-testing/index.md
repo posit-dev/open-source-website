@@ -1,7 +1,8 @@
 ---
 title: Testing Shiny Apps in Python
-description: The shiny add test command simplifies the process of creating test files
-  for Shiny apps, allowing developers to easily generate and run robust tests using
+description: >-
+  The shiny add test command simplifies the process of creating test files for
+  Shiny apps, allowing developers to easily generate and run robust tests using
   built-in UI testing controllers for various components.
 people:
   - Shiny Team
@@ -9,8 +10,10 @@ date: '2024-10-29'
 image: testing-og.jpg
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
+software:
+  - shiny-python
+languages:
+  - Python
 categories:
   - Interactive Apps
 tags:
@@ -22,13 +25,17 @@ Shiny for Python is a framework that helps you create interactive web applicatio
 
 Writing [end-to-end tests for your Shiny apps](https://shiny.posit.co/py/docs/end-to-end-testing.html) is essential to ensure the application works as intended from the user's perspective. These tests identify issues in the user interface and interactions, ensuring a seamless experience.
 
-> **Install Shiny for Python**
->
-> To install the Shiny for Python package, users can use the following command in their terminal or command prompt:
->
-> ``` sh
-> pip install "shiny>=1.0"
-> ```
+<details class="callout callout-note">
+<summary class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<span class="callout-title">Note</span>
+</summary>
+<div class="callout-body">
+<p>To install the Shiny for Python package, users can use the following
+command in their terminal or command prompt:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">&quot;shiny&gt;=1.0&quot;</span></span></code></pre></div>
+</div>
+</details>
 
 ### Automatically create tests for Shiny apps using `shiny add test` command
 

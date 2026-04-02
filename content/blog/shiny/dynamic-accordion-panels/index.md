@@ -7,8 +7,10 @@ date: '2025-02-05'
 image: forms.jpg
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
+software:
+  - shiny-python
+languages:
+  - Python
 categories:
   - Interactive Apps
 tags:
@@ -18,13 +20,17 @@ tags:
 
 Shiny for Python makes building web apps easy. This framework simplifies creating interactive applications with Python---no need for JavaScript or HTML. Its secret lies in reactive programming, which keeps your UI dynamic with minimal effort. Just focus on your Python code, and let Shiny take care of the rest!
 
-> **Install Shiny for Python**
->
-> To install the Shiny for Python package, users can use the following command in their terminal or command prompt:
->
-> ``` sh
-> pip install "shiny>=1.0"
-> ```
+<details class="callout callout-note">
+<summary class="callout-header">
+<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<span class="callout-title">Note</span>
+</summary>
+<div class="callout-body">
+<p>To install the Shiny for Python package, users can use the following
+command in their terminal or command prompt:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">&quot;shiny&gt;=1.0&quot;</span></span></code></pre></div>
+</div>
+</details>
 
 Basic Shiny forms can feel... well, basic. But what if you've got a form with a lot of info? Accordion panels to the rescue! They organize things nicely, but we can make them even cooler with dynamic updates.
 
