@@ -1,6 +1,10 @@
 ---
 people:
   - Mickaël CANOUIL, _Ph.D._
+author:
+  - name: Mickaël CANOUIL, _Ph.D._
+    orcid: 0000-0002-3396-4549
+    url: https://mickael.canouil.fr
 title: 'Quarto Wizard 1.0.0: Democratising Quarto Extension Management'
 description: >
   Introducing a game-changing extension for VS Code and Positron that transforms
@@ -118,7 +122,7 @@ tags:
 </div>
 <div class="callout-body">
 
-The <span class="quarto-wizard" title="Quarto Wizard Logo" aria-label="Quarto Wizard Logo"></span> Quarto Wizard extension and listing directory website are built and maintained by [**?meta:author.1**](?meta:authors.1.url).
+The <span class="quarto-wizard" title="Quarto Wizard Logo" aria-label="Quarto Wizard Logo"></span> Quarto Wizard extension and listing directory website are built and maintained by [Mickaël CANOUIL, *Ph.D.*](https://mickael.canouil.fr).
 
 In this post, he explains what it is and how it can help you manage Quarto extensions directly from Positron or Visual Studio Code.
 
@@ -170,7 +174,7 @@ results with install button.
 <span class="callout-title">Tip</span>
 </div>
 <div class="callout-body">
-<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux), <code>Cmd-Shift-P</code> (mac)) if you haven’t done so already.</p>
+<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux)) if you haven’t done so already.</p>
 </div>
 </div>
 </div>
@@ -184,7 +188,7 @@ results with install button.
 <span class="callout-title">Tip</span>
 </div>
 <div class="callout-body">
-<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux), <code>Cmd-Shift-P</code> (mac)) if you haven’t done so already.</p>
+<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux)) if you haven’t done so already.</p>
 </div>
 </div>
 </div>
@@ -222,7 +226,7 @@ The solution is **multi-modal installation**: you can now install extensions thr
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux), <code>Cmd-Shift-P</code> (mac)).</li>
+<li>Open the Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux)).</li>
 <li>Type <code>Quarto Wizard: Install Extensions</code> and select it.</li>
 <li>Browse the list of available Quarto extensions.</li>
 <li>Select the Quarto extension(s) you want to install.</li>
@@ -268,7 +272,7 @@ The file is not created until you confirm, allowing you to adjust the filename a
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux), <code>Cmd-Shift-P</code> (mac)).</li>
+<li>Open the Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux)).</li>
 <li>Type <code>Quarto Wizard: Use Template</code> and select it.</li>
 <li>Browse the list of available Quarto templates.</li>
 <li>Select the Quarto template(s) you want to use.</li>
