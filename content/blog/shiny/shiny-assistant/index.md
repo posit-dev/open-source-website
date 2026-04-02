@@ -108,25 +108,19 @@ After you build an application, you can share it with others in a number of ways
 
 Shiny Assistant build applications using the Shinylive web interface. Running applications with Shinylive has some important differences from a "normal" Shiny deployment, but one important upshot is that a Shinylive application can be easily shared with others.
 
-<div class="callout callout-note">
+<div class="callout callout-note" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">What is the difference between Shiny and Shinylive?</span>
 </div>
 <div class="callout-body">
-<p><strong>Shiny</strong> is a web application framework for R and
-Python. <strong>Shinylive</strong> is a special build of Shiny which
-runs R or Python (compiled to WebAssembly) in the web browser, which
-means that you don’t need a server running R/Python; you just need a web
-server that can serve up static files.</p>
-<p>Because R/Python run in the browser for Shinylive, you only need a
-“dumb” web server that can serve static files. And it is trivial for the
-application to scale to a large number of users.</p>
-<p>On the other hand, there are some restrictions on what you can do,
-because of browser security sandboxing, and not all add-on packages can
-run in the browser. And with Shinylive applications, the code and the
-data is sent to the user’s web browser, so you can’t keep the code or
-data secret from the user.</p>
+
+**Shiny** is a web application framework for R and Python. **Shinylive** is a special build of Shiny which runs R or Python (compiled to WebAssembly) in the web browser, which means that you don't need a server running R/Python; you just need a web server that can serve up static files.
+
+Because R/Python run in the browser for Shinylive, you only need a "dumb" web server that can serve static files. And it is trivial for the application to scale to a large number of users.
+
+On the other hand, there are some restrictions on what you can do, because of browser security sandboxing, and not all add-on packages can run in the browser. And with Shinylive applications, the code and the data is sent to the user's web browser, so you can't keep the code or data secret from the user.
+
 </div>
 </div>
 

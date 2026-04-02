@@ -20,18 +20,17 @@ tags:
 ---
 
 
-<div class="callout callout-note">
+<div class="callout callout-note" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Note</span>
 </div>
 <div class="callout-body">
-<p><strong>Update:</strong> As of version 1.0, Shiny now has a built-in
-LLM chat component, which supersedes the chatstream package described in
-this blog post.</p>
-<p>See the <a
-href="/blog/shiny/shiny-python-1.0/#new-chat-component">Shiny 1.0 blog
-post</a> for more information.</p>
+
+**Update:** As of version 1.0, Shiny now has a built-in LLM chat component, which supersedes the chatstream package described in this blog post.
+
+See the [Shiny 1.0 blog post](../../../blog/shiny/shiny-python-1.0/#new-chat-component) for more information.
+
 </div>
 </div>
 

@@ -112,27 +112,17 @@ tags:
  </style>
 
 
-<div class="callout callout-note">
+<div class="callout callout-note" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Note</span>
 </div>
 <div class="callout-body">
-<p>The <span class="quarto-shortcode__" data-is-shortcode="1"
-data-raw="{{&lt; meta quarto-wizard &gt;}}"><span
-class="quarto-shortcode__-param" data-is-shortcode="1" data-value="meta"
-data-raw="meta"></span> <span class="quarto-shortcode__-param"
-data-is-shortcode="1" data-value="quarto-wizard"
-data-raw="quarto-wizard"></span></span> Quarto Wizard extension and
-listing directory website are built and maintained by <a
-href="{{&lt; meta authors.1.url &gt;}}"><span class="quarto-shortcode__"
-data-is-shortcode="1" data-raw="{{&lt; meta author.1 &gt;}}"><span
-class="quarto-shortcode__-param" data-is-shortcode="1" data-value="meta"
-data-raw="meta"></span> <span class="quarto-shortcode__-param"
-data-is-shortcode="1" data-value="author.1"
-data-raw="author.1"></span></span></a>.</p>
-<p>In this post, he explains what it is and how it can help you manage
-Quarto extensions directly from Positron or Visual Studio Code.</p>
+
+The <span class="quarto-wizard" title="Quarto Wizard Logo" aria-label="Quarto Wizard Logo"></span> Quarto Wizard extension and listing directory website are built and maintained by [**?meta:author.1**](?meta:authors.1.url).
+
+In this post, he explains what it is and how it can help you manage Quarto extensions directly from Positron or Visual Studio Code.
+
 </div>
 </div>
 
@@ -176,25 +166,13 @@ results with install button.
 <strong>Terminal</strong>
 <div class="sourceCode" id="cb1" data-filename="Terminal"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--install-extension</span> mcanouil.quarto-wizard</span></code></pre></div>
 </div>
-<div class="callout callout-tip">
+<div class="callout callout-tip" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
 <span class="callout-title">Tip</span>
 </div>
 <div class="callout-body">
-<p>Be sure to execute the command <em>Shell Command: Install ‘code’
-command in PATH</em> from Visual Studio Code’s Command Palette (<span
-class="quarto-shortcode__" data-is-shortcode="1"
-data-raw="{{&lt; kbd win=Ctrl-Shift-P mac=Cmd-Shift-P linux=Ctrl-Shift-P &gt;}}"><span
-class="quarto-shortcode__-param" data-is-shortcode="1" data-value="kbd"
-data-raw="kbd"></span> <span class="quarto-shortcode__-param"
-data-is-shortcode="1" data-raw="win=Ctrl-Shift-P" data-key="win"
-data-value="Ctrl-Shift-P"></span> <span class="quarto-shortcode__-param"
-data-is-shortcode="1" data-raw="mac=Cmd-Shift-P" data-key="mac"
-data-value="Cmd-Shift-P"></span> <span class="quarto-shortcode__-param"
-data-is-shortcode="1" data-raw="linux=Ctrl-Shift-P" data-key="linux"
-data-value="Ctrl-Shift-P"></span></span>) if you haven’t done so
-already.</p>
+<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux)) if you haven’t done so already.</p>
 </div>
 </div>
 </div>
@@ -203,25 +181,13 @@ already.</p>
 <strong>Terminal</strong>
 <div class="sourceCode" id="cb2" data-filename="Terminal"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">positron</span> <span class="at">--install-extension</span> mcanouil.quarto-wizard</span></code></pre></div>
 </div>
-<div class="callout callout-tip">
+<div class="callout callout-tip" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
 <span class="callout-title">Tip</span>
 </div>
 <div class="callout-body">
-<p>Be sure to execute the command <em>Shell Command: Install ‘positron’
-command in PATH</em> from Positron’s Command Palette (<span
-class="quarto-shortcode__" data-is-shortcode="1"
-data-raw="{{&lt; kbd win=Ctrl-Shift-P mac=Cmd-Shift-P linux=Ctrl-Shift-P &gt;}}"><span
-class="quarto-shortcode__-param" data-is-shortcode="1" data-value="kbd"
-data-raw="kbd"></span> <span class="quarto-shortcode__-param"
-data-is-shortcode="1" data-raw="win=Ctrl-Shift-P" data-key="win"
-data-value="Ctrl-Shift-P"></span> <span class="quarto-shortcode__-param"
-data-is-shortcode="1" data-raw="mac=Cmd-Shift-P" data-key="mac"
-data-value="Cmd-Shift-P"></span> <span class="quarto-shortcode__-param"
-data-is-shortcode="1" data-raw="linux=Ctrl-Shift-P" data-key="linux"
-data-value="Ctrl-Shift-P"></span></span>) if you haven’t done so
-already.</p>
+<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux)) if you haven’t done so already.</p>
 </div>
 </div>
 </div>
@@ -259,7 +225,7 @@ The solution is **multi-modal installation**: you can now install extensions thr
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)).</li>
+<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux)).</li>
 <li>Type <code>Quarto Wizard: Install Extensions</code> and select it.</li>
 <li>Browse the list of available Quarto extensions.</li>
 <li>Select the Quarto extension(s) you want to install.</li>
@@ -305,7 +271,7 @@ The file is not created until you confirm, allowing you to adjust the filename a
 <tr>
 <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
 <ol type="1">
-<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (linux), <code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac)).</li>
+<li>Open the Command Palette (<code>Ctrl-Shift-P</code> (windows), <code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (linux)).</li>
 <li>Type <code>Quarto Wizard: Use Template</code> and select it.</li>
 <li>Browse the list of available Quarto templates.</li>
 <li>Select the Quarto template(s) you want to use.</li>

@@ -22,10 +22,10 @@ tags:
 ---
 
 
-<script src="index_files/libs/bslib-component-js-0.7.0/components.min.js"></script>
-<script src="index_files/libs/bslib-component-js-0.7.0/web-components.min.js" type="module"></script>
-<link href="index_files/libs/bslib-component-css-0.7.0/components.css" rel="stylesheet" />
-<script src="index_files/libs/bslib-tag-require-0.7.0/tag-require.js"></script>
+<script src="index_files/libs/bslib-component-js-0.10.0/components.min.js"></script>
+<script src="index_files/libs/bslib-component-js-0.10.0/web-components.min.js" type="module"></script>
+<link href="index_files/libs/bslib-component-css-0.10.0/components.css" rel="stylesheet" />
+<script src="index_files/libs/bslib-tag-require-0.10.0/tag-require.js"></script>
 
 
 <style>
@@ -142,6 +142,8 @@ Here's a quick live preview of how it looks and feels:
 bslib::input_switch("switch", "Turn Up Awesomeness", FALSE)
 ```
 
+    OpenTelemetry error: there is no package called 'otelsdk'
+
 <div class="form-group shiny-input-container" data-require-bs-version="5" data-require-bs-caller="input_switch()">
 <div class="bslib-input-switch form-switch form-check">
 <input id="switch" class="form-check-input" type="checkbox" role="switch"/>
@@ -150,14 +152,15 @@ bslib::input_switch("switch", "Turn Up Awesomeness", FALSE)
 </label>
 </div>
 </div>
-<div class="callout callout-note">
+<div class="callout callout-note" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Note</span>
 </div>
 <div class="callout-body">
-<p>The new <code>bslib</code> is <span id="extra"
-><strong>extra, extra</strong></span> awesome!</p>
+
+The new `bslib` is <span id="extra">**extra, extra**</span> awesome!
+
 </div>
 </div>
 <script>
@@ -179,21 +182,15 @@ Here are a few things currently towards the top of our roadmap:
 - More incorporation of `bslib` as part of the [Getting Started experience](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html) on [shiny.posit.co](https://shiny.posit.co/).
 - More `bslib`-focused example galleries, starter templates, and articles.
 
-<div class="callout callout-note">
+<div class="callout callout-note" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Join us at posit::conf(2023)!</span>
 </div>
 <div class="callout-body">
-<p>We’re also excited to see you at <a
-href="https://posit.co/conference/">posit::conf(2023)</a> this
-September! Currently, there are <a
-href="https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&amp;search=shiny">35
-sessions</a> on the schedule that mention Shiny, including a handful of
-UI-focused <a
-href="https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&amp;search=shiny&amp;search.sessiontype=1675316728702001wr6r">workshops</a>
-and <a
-href="https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&amp;search=bslib&amp;search.sessiontype=1684338401751002OADN&amp;search.sessiontopics=1684779688709001hs5K">talks</a>.</p>
+
+We're also excited to see you at [posit::conf(2023)](https://posit.co/conference/) this September! Currently, there are [35 sessions](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=shiny) on the schedule that mention Shiny, including a handful of UI-focused [workshops](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=shiny&search.sessiontype=1675316728702001wr6r) and [talks](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=bslib&search.sessiontype=1684338401751002OADN&search.sessiontopics=1684779688709001hs5K).
+
 </div>
 </div>
 

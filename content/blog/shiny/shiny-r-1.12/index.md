@@ -32,42 +32,30 @@ img { border-radius: 8px; }
 
 We're thrilled to announce the release of Shiny v1.12! This release brings a powerful new feature that we've been working on for months: **built-in OpenTelemetry support**. Whether you're building small apps or deploying production applications at scale, this release will help you lift the veil on understanding your app's execution in production.
 
-<details class="callout callout-note">
+<details class="callout callout-note" role="note">
 <summary class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">What is Shiny?</span>
 </summary>
 <div class="callout-body">
-<p>If you’re new to Shiny, welcome! <a
-href="https://shiny.posit.co/r/">Shiny</a> is an R package that makes it
-easy to build interactive web applications directly from R. You don’t
-need to be a web developer—if you can write R code, you can create
-beautiful, interactive dashboards, data explorers, and analytical tools.
-Shiny handles all the web programming complexity behind the scenes,
-letting you focus on what you do best: working with data and building
-analyses.</p>
-<p>Since its launch in 2012, Shiny has become the go-to framework for
-creating data-driven web applications in R, powering everything from
-internal company dashboards to public-facing data visualization tools.
-With this latest release, we’re making it easier than ever to understand
-what’s happening inside your Shiny apps, especially when they’re
-deployed in production environments.</p>
+
+If you're new to Shiny, welcome! [Shiny](https://shiny.posit.co/r/) is an R package that makes it easy to build interactive web applications directly from R. You don't need to be a web developer---if you can write R code, you can create beautiful, interactive dashboards, data explorers, and analytical tools. Shiny handles all the web programming complexity behind the scenes, letting you focus on what you do best: working with data and building analyses.
+
+Since its launch in 2012, Shiny has become the go-to framework for creating data-driven web applications in R, powering everything from internal company dashboards to public-facing data visualization tools. With this latest release, we're making it easier than ever to understand what's happening inside your Shiny apps, especially when they're deployed in production environments.
+
 </div>
 </details>
-<details class="callout callout-note">
+<details class="callout callout-note" role="note">
 <summary class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">What about Shiny for Python?</span>
 </summary>
 <div class="callout-body">
-<p>OpenTelemetry support is coming to Shiny for Python! The Shiny team
-is actively working on bringing the same automatic instrumentation
-capabilities to Python. This will enable Python developers to gain the
-same level of observability into their Shiny applications.</p>
-<p>Stay tuned for future announcements about OpenTelemetry integration
-in Shiny for Python. In the meantime, you can follow the development on
-the <a href="https://github.com/posit-dev/py-shiny">Shiny for Python
-GitHub repository</a>.</p>
+
+OpenTelemetry support is coming to Shiny for Python! The Shiny team is actively working on bringing the same automatic instrumentation capabilities to Python. This will enable Python developers to gain the same level of observability into their Shiny applications.
+
+Stay tuned for future announcements about OpenTelemetry integration in Shiny for Python. In the meantime, you can follow the development on the [Shiny for Python GitHub repository](https://github.com/posit-dev/py-shiny).
+
 </div>
 </details>
 
@@ -140,26 +128,26 @@ OTEL_EXPORTER_OTLP_ENDPOINT="https://logfire-us.pydantic.dev"
 OTEL_EXPORTER_OTLP_HEADERS="Authorization=<your-write-token>"
 ```
 
-<div class="callout callout-tip">
+<div class="callout callout-tip" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
 <span class="callout-title">Editing <code>.Renviron</code></span>
 </div>
 <div class="callout-body">
-<p>You can edit your app-specific environment variables by calling
-<code>usethis::edit_r_environ(scope="project")</code> from within your
-Shiny app project directory.</p>
+
+You can edit your app-specific environment variables by calling `usethis::edit_r_environ(scope="project")` from within your Shiny app project directory.
+
 </div>
 </div>
-<div class="callout callout-tip">
+<div class="callout callout-tip" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0 -4 12.9l0 .1v1h8v-1l0 -.1a7 7 0 0 0 -4 -12.9"/></svg>
 <span class="callout-title">Verifying OTel setup</span>
 </div>
 <div class="callout-body">
-<p>You’ll know your setup is enabled if <a
-href="https://otel.r-lib.org/reference/is_tracing_enabled.html"><code>otel::is_tracing_enabled()</code></a>
-returns <code>TRUE</code>.</p>
+
+You'll know your setup is enabled if [`otel::is_tracing_enabled()`](https://otel.r-lib.org/reference/is_tracing_enabled.html) returns `TRUE`.
+
 </div>
 </div>
 
@@ -167,19 +155,15 @@ returns <code>TRUE</code>.</p>
 
 Below is an example `{shinychat}` app with an `{ellmer}` tool to fetch realtime weather forecasts (via `{weathR}`, which uses `{httr2}`) for a given latitude and longitude. This simple (yet non-trivial) app helps us showcase what sort of information `{shiny}`, `{ellmer}`, and `{httr2}` can surface via OTel.
 
-<div class="callout callout-note">
+<div class="callout callout-note" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">OTel + GenAI</span>
 </div>
 <div class="callout-body">
-<p>Gaining timing insights into applications that leverage <a
-href="https://aws.amazon.com/what-is/generative-ai/">Generative AI</a>
-(GenAI) is critical to improving user experience. Without OpenTelemetry,
-if a user stated an app was slow, we would not be able to accurately
-determine if the slowness was due to the AI model request time, AI model
-streaming time, tool execution time, or even followup reactive
-calculations in Shiny.</p>
+
+Gaining timing insights into applications that leverage [Generative AI](https://aws.amazon.com/what-is/generative-ai/) (GenAI) is critical to improving user experience. Without OpenTelemetry, if a user stated an app was slow, we would not be able to accurately determine if the slowness was due to the AI model request time, AI model streaming time, tool execution time, or even followup reactive calculations in Shiny.
+
 </div>
 </div>
 
@@ -248,16 +232,15 @@ The gap between this span's length and its parent's length is how long the resul
 
 Notice how the spans are nested, showing the relationship between user actions, required reactive calculations, and external API calls. This level of detail helps you understand exactly how your app is performing in production and where any bottlenecks or issues may arise.
 
-<div class="callout callout-note">
+<div class="callout callout-note" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Packages used in demo</span>
 </div>
 <div class="callout-body">
-<p>The Shiny app above currently requires the development version of
-<code>{ellmer}</code> to record OpenTelemetry traces. More R packages
-(mentioned later in this post) will contain native OpenTelemetry support
-in their upcoming releases.</p>
+
+The Shiny app above currently requires the development version of `{ellmer}` to record OpenTelemetry traces. More R packages (mentioned later in this post) will contain native OpenTelemetry support in their upcoming releases.
+
 </div>
 </div>
 

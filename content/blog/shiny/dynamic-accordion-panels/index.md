@@ -20,15 +20,19 @@ tags:
 
 Shiny for Python makes building web apps easy. This framework simplifies creating interactive applications with Python---no need for JavaScript or HTML. Its secret lies in reactive programming, which keeps your UI dynamic with minimal effort. Just focus on your Python code, and let Shiny take care of the rest!
 
-<details class="callout callout-note">
+<details class="callout callout-note" role="note">
 <summary class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Note</span>
 </summary>
 <div class="callout-body">
-<p>To install the Shiny for Python package, users can use the following
-command in their terminal or command prompt:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">&quot;shiny&gt;=1.0&quot;</span></span></code></pre></div>
+
+To install the Shiny for Python package, users can use the following command in their terminal or command prompt:
+
+``` sh
+pip install "shiny>=1.0"
+```
+
 </div>
 </details>
 

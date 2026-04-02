@@ -143,19 +143,18 @@ The rest of this section will explore a few highlights of the new default look, 
 - Improved [`value_box()` styling](#value-box-styling)
 - [Refreshed Shiny UI](#refreshed-shiny-ui) (inputs, modals, notifications, and more)
 
-<div class="callout callout-note">
+<div class="callout callout-note" role="note">
 <div class="callout-header">
-<svg class="callout-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+<svg class="callout-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 <span class="callout-title">Quarto and PyShiny dashboards</span>
 </div>
 <div class="callout-body">
-<p>Dashboards are coming to Quarto!</p>
-<p>The new <a href="https://quarto.org/docs/dashboards/">Quarto
-dashboard</a> format, as well as newer <a
-href="https://shiny.posit.co/py/">PyShiny</a> components, are built on
-the same foundation as <code>bslib</code>. Thus, the concepts you’ll
-learn while building dashboards with <code>bslib</code> should also
-largely apply there as well.</p>
+
+Dashboards are coming to Quarto!
+
+The new [Quarto dashboard](https://quarto.org/docs/dashboards/) format, as well as newer [PyShiny](https://shiny.posit.co/py/) components, are built on the same foundation as `bslib`.
+Thus, the concepts you'll learn while building dashboards with `bslib` should also largely apply there as well.
+
 </div>
 </div>
 
