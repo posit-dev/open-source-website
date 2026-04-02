@@ -4,19 +4,21 @@ description: |
   Shiny has added OpenTelemetry support! Now you can pear into your Shiny app's
   reactive graph and performance characteristics at scale.
 people:
-  - ~
+  - null
   - Barret Schloerke
 date: '2025-12-10'
 image: feature.png
 image-header: feature-header.png
 image-alt: OpenTelemetry + Shiny for R v1.12
 editor:
-  render-on-save: yes
+  render-on-save: true
 code-annotations: hover
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-r"]
-languages: ["R"]
+software:
+  - shiny-r
+languages:
+  - R
 categories:
   - Interactive Apps
 tags:
@@ -30,17 +32,30 @@ img { border-radius: 8px; }
 
 We're thrilled to announce the release of Shiny v1.12! This release brings a powerful new feature that we've been working on for months: **built-in OpenTelemetry support**. Whether you're building small apps or deploying production applications at scale, this release will help you lift the veil on understanding your app's execution in production.
 
-> **What is Shiny?**
->
-> If you're new to Shiny, welcome! [Shiny](https://shiny.posit.co/r/) is an R package that makes it easy to build interactive web applications directly from R. You don't need to be a web developer---if you can write R code, you can create beautiful, interactive dashboards, data explorers, and analytical tools. Shiny handles all the web programming complexity behind the scenes, letting you focus on what you do best: working with data and building analyses.
->
-> Since its launch in 2012, Shiny has become the go-to framework for creating data-driven web applications in R, powering everything from internal company dashboards to public-facing data visualization tools. With this latest release, we're making it easier than ever to understand what's happening inside your Shiny apps, especially when they're deployed in production environments.
+<details class="callout callout-note" role="note" aria-label="Note">
+<summary class="callout-header">
+<span class="callout-title">What is Shiny?</span>
+</summary>
+<div class="callout-body">
 
-> **What about Shiny for Python?**
->
-> OpenTelemetry support is coming to Shiny for Python! The Shiny team is actively working on bringing the same automatic instrumentation capabilities to Python. This will enable Python developers to gain the same level of observability into their Shiny applications.
->
-> Stay tuned for future announcements about OpenTelemetry integration in Shiny for Python. In the meantime, you can follow the development on the [Shiny for Python GitHub repository](https://github.com/posit-dev/py-shiny).
+If you're new to Shiny, welcome! [Shiny](https://shiny.posit.co/r/) is an R package that makes it easy to build interactive web applications directly from R. You don't need to be a web developer---if you can write R code, you can create beautiful, interactive dashboards, data explorers, and analytical tools. Shiny handles all the web programming complexity behind the scenes, letting you focus on what you do best: working with data and building analyses.
+
+Since its launch in 2012, Shiny has become the go-to framework for creating data-driven web applications in R, powering everything from internal company dashboards to public-facing data visualization tools. With this latest release, we're making it easier than ever to understand what's happening inside your Shiny apps, especially when they're deployed in production environments.
+
+</div>
+</details>
+<details class="callout callout-note" role="note" aria-label="Note">
+<summary class="callout-header">
+<span class="callout-title">What about Shiny for Python?</span>
+</summary>
+<div class="callout-body">
+
+OpenTelemetry support is coming to Shiny for Python! The Shiny team is actively working on bringing the same automatic instrumentation capabilities to Python. This will enable Python developers to gain the same level of observability into their Shiny applications.
+
+Stay tuned for future announcements about OpenTelemetry integration in Shiny for Python. In the meantime, you can follow the development on the [Shiny for Python GitHub repository](https://github.com/posit-dev/py-shiny).
+
+</div>
+</details>
 
 ## Understanding OpenTelemetry
 
@@ -111,21 +126,41 @@ OTEL_EXPORTER_OTLP_ENDPOINT="https://logfire-us.pydantic.dev"
 OTEL_EXPORTER_OTLP_HEADERS="Authorization=<your-write-token>"
 ```
 
-> **Editing `.Renviron`**
->
-> You can edit your app-specific environment variables by calling `usethis::edit_r_environ(scope="project")` from within your Shiny app project directory.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Editing <code>.Renviron</code></span>
+</div>
+<div class="callout-body">
 
-> **Verifying OTel setup**
->
-> You'll know your setup is enabled if [`otel::is_tracing_enabled()`](https://otel.r-lib.org/reference/is_tracing_enabled.html) returns `TRUE`.
+You can edit your app-specific environment variables by calling `usethis::edit_r_environ(scope="project")` from within your Shiny app project directory.
+
+</div>
+</div>
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Verifying OTel setup</span>
+</div>
+<div class="callout-body">
+
+You'll know your setup is enabled if [`otel::is_tracing_enabled()`](https://otel.r-lib.org/reference/is_tracing_enabled.html) returns `TRUE`.
+
+</div>
+</div>
 
 ### OpenTelemetry in action
 
 Below is an example `{shinychat}` app with an `{ellmer}` tool to fetch realtime weather forecasts (via `{weathR}`, which uses `{httr2}`) for a given latitude and longitude. This simple (yet non-trivial) app helps us showcase what sort of information `{shiny}`, `{ellmer}`, and `{httr2}` can surface via OTel.
 
-> **OTel + GenAI**
->
-> Gaining timing insights into applications that leverage [Generative AI](https://aws.amazon.com/what-is/generative-ai/) (GenAI) is critical to improving user experience. Without OpenTelemetry, if a user stated an app was slow, we would not be able to accurately determine if the slowness was due to the AI model request time, AI model streaming time, tool execution time, or even followup reactive calculations in Shiny.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">OTel + GenAI</span>
+</div>
+<div class="callout-body">
+
+Gaining timing insights into applications that leverage [Generative AI](https://aws.amazon.com/what-is/generative-ai/) (GenAI) is critical to improving user experience. Without OpenTelemetry, if a user stated an app was slow, we would not be able to accurately determine if the slowness was due to the AI model request time, AI model streaming time, tool execution time, or even followup reactive calculations in Shiny.
+
+</div>
+</div>
 
 **app.R**
 
@@ -192,9 +227,16 @@ The gap between this span's length and its parent's length is how long the resul
 
 Notice how the spans are nested, showing the relationship between user actions, required reactive calculations, and external API calls. This level of detail helps you understand exactly how your app is performing in production and where any bottlenecks or issues may arise.
 
-> **Packages used in demo**
->
-> The Shiny app above currently requires the development version of `{ellmer}` to record OpenTelemetry traces. More R packages (mentioned later in this post) will contain native OpenTelemetry support in their upcoming releases.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Packages used in demo</span>
+</div>
+<div class="callout-body">
+
+The Shiny app above currently requires the development version of `{ellmer}` to record OpenTelemetry traces. More R packages (mentioned later in this post) will contain native OpenTelemetry support in their upcoming releases.
+
+</div>
+</div>
 
 ### What can Shiny record?
 

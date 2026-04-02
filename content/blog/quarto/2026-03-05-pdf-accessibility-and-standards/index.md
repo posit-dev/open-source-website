@@ -1,7 +1,8 @@
 ---
 title: PDF Accessibility and Standards
-description: |
-  Quarto 1.9 brings PDF accessibility and standards support, building on new tagging features in LaTeX and Typst.
+description: >
+  Quarto 1.9 brings PDF accessibility and standards support, building on new
+  tagging features in LaTeX and Typst.
 people:
   - Gordon Woodhull
 date: '2026-03-05'
@@ -9,8 +10,12 @@ image: thumbnail.png
 image-alt: Quarto icon, PDF file icon, accessibility icon, and validation shield
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 categories:
   - Publishing
 tags:
@@ -18,9 +23,16 @@ tags:
 ---
 
 
-> **Pre-release Feature**
->
-> This feature is new in the upcoming Quarto 1.9 release. To use the feature now, you'll need to [download and install](https://quarto.org/docs/download/prerelease.html) the Quarto pre-release.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Pre-release Feature</span>
+</div>
+<div class="callout-body">
+
+This feature is new in the upcoming Quarto 1.9 release. To use the feature now, you'll need to [download and install](https://quarto.org/docs/download/prerelease.html) the Quarto pre-release.
+
+</div>
+</div>
 
 2025 was a big year for PDF accessibility. LaTeX and Typst both released support for PDF tagging and accessibility standards, just in time for new regulations in the [EU](https://en.wikipedia.org/wiki/European_Accessibility_Act) (June 2025) and [US](https://accessible.org/ada-title-ii-web-accessibility/) (April 2026).
 
@@ -68,15 +80,22 @@ In Quarto 1.9, specify a PDF standard for your document or project with `pdf-sta
 
 If you specify a PDF standard, Quarto first instructs LaTeX or Typst to use the standard when producing the PDF, and then validates the output PDF against the standard using veraPDF, an open-source PDF validation tool. If veraPDF is not installed, you'll get a warning but still receive a PDF -- it just won't be validated.
 
-> **Installing veraPDF**
->
-> To install veraPDF, you'll first need Java, then run:
->
-> **Terminal**
->
-> ``` bash
-> quarto install verapdf
-> ```
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Installing veraPDF</span>
+</div>
+<div class="callout-body">
+
+To install veraPDF, you'll first need Java, then run:
+
+**Terminal**
+
+``` bash
+quarto install verapdf
+```
+
+</div>
+</div>
 
 When a document passes validation, you'll see output like:
 

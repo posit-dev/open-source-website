@@ -8,8 +8,11 @@ image: shiny-ai-chatbot.jpg
 image-alt: an image with lines representing ai computing lie behind a chatbox icon
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python", "chatlas"]
-languages: ["Python"]
+software:
+  - shiny-python
+  - chatlas
+languages:
+  - Python
 categories:
   - Interactive Apps
 tags:
@@ -17,11 +20,18 @@ tags:
 ---
 
 
-> **None**
->
-> **Update:** As of version 1.0, Shiny now has a built-in LLM chat component, which supersedes the chatstream package described in this blog post.
->
-> See the [Shiny 1.0 blog post](../../../blog/shiny/shiny-python-1.0/#new-chat-component) for more information.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
+
+**Update:** As of version 1.0, Shiny now has a built-in LLM chat component, which supersedes the chatstream package described in this blog post.
+
+See the [Shiny 1.0 blog post](../../../blog/shiny/shiny-python-1.0/#new-chat-component) for more information.
+
+</div>
+</div>
 
 In the short time since they've become publicly available, chat interfaces for Large Language Models (LLMs) have become incredibly popular. With Shiny for Python, you can easily create your own chat application with just a few lines of code. If you've wanted to make a web application for interacting with AI, you can do it with Shiny for Python.
 

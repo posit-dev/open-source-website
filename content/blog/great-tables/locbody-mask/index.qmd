@@ -6,7 +6,7 @@ people:
   - Jerry Wu
 date: '2025-01-24'
 format:
-  html:
+  hugo-md:
     code-summary: Show the Code
 ported_from: great_tables
 port_status: in-progress

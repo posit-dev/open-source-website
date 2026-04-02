@@ -1,7 +1,8 @@
 ---
 title: Testing Shiny Apps in Python
-description: The shiny add test command simplifies the process of creating test files
-  for Shiny apps, allowing developers to easily generate and run robust tests using
+description: >-
+  The shiny add test command simplifies the process of creating test files for
+  Shiny apps, allowing developers to easily generate and run robust tests using
   built-in UI testing controllers for various components.
 people:
   - Shiny Team
@@ -9,8 +10,10 @@ date: '2024-10-29'
 image: testing-og.jpg
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
+software:
+  - shiny-python
+languages:
+  - Python
 categories:
   - Interactive Apps
 tags:
@@ -22,13 +25,20 @@ Shiny for Python is a framework that helps you create interactive web applicatio
 
 Writing [end-to-end tests for your Shiny apps](https://shiny.posit.co/py/docs/end-to-end-testing.html) is essential to ensure the application works as intended from the user's perspective. These tests identify issues in the user interface and interactions, ensuring a seamless experience.
 
-> **Install Shiny for Python**
->
-> To install the Shiny for Python package, users can use the following command in their terminal or command prompt:
->
-> ``` sh
-> pip install "shiny>=1.0"
-> ```
+<details class="callout callout-note" role="note" aria-label="Note">
+<summary class="callout-header">
+<span class="callout-title">Note</span>
+</summary>
+<div class="callout-body">
+
+To install the Shiny for Python package, users can use the following command in their terminal or command prompt:
+
+``` sh
+pip install "shiny>=1.0"
+```
+
+</div>
+</details>
 
 ### Automatically create tests for Shiny apps using `shiny add test` command
 

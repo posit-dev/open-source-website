@@ -6,5 +6,6 @@ project:
 format: hugo-md
 
 filters:
+  - callout
   - video-embed
   - tabset

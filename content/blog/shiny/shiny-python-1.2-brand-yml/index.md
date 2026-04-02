@@ -6,11 +6,14 @@ people:
 date: '2024-11-25'
 image: brand-yml-feature.svg
 image-alt: brand.yml logo
-image-header-disable: yes
+image-header-disable: 'yes'
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python", "brand-yml"]
-languages: ["Python"]
+software:
+  - shiny-python
+  - brand-yml
+languages:
+  - Python
 categories:
   - Interactive Apps
 tags:
@@ -80,12 +83,19 @@ This same file can be used for your Shiny apps as well as your Quarto projects.
 We're starting with Posit-sponsored projects like [Shiny](https://shiny.posit.co), [Quarto](https://quarto.org), and [R Markdown](https://rmarkdown.rstudio.com), but we're hoping to see brand.yml adopted more widely in the open-source community.
 To encourage this, we've published the [brand-yml Python package](https://posit-dev.github.io/brand-yml/pkg/py), which you can use to integrate brand.yml into your project or other packages.
 
-> **Writing brand.yml with the help of an LLM**
->
-> We know that writing YAML isn't everyone's cup of tea!
-> If you want to enlist the help of a friendly large language model (LLM), we've written up [a guide to using LLMs to write brand.yml](https://posit-dev.github.io/brand-yml/articles/llm-brand-yml-prompt/).
->
-> The article includes a prompt you can copy and use to teach an LLM about the brand.yml syntax, as well as a few tips and follow-up prompts you can use to get the best results.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Writing brand.yml with the help of an LLM</span>
+</div>
+<div class="callout-body">
+
+We know that writing YAML isn't everyone's cup of tea!
+If you want to enlist the help of a friendly large language model (LLM), we've written up [a guide to using LLMs to write brand.yml](https://posit-dev.github.io/brand-yml/articles/llm-brand-yml-prompt/).
+
+The article includes a prompt you can copy and use to teach an LLM about the brand.yml syntax, as well as a few tips and follow-up prompts you can use to get the best results.
+
+</div>
+</div>
 
 ## Getting Started
 
