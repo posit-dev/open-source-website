@@ -167,6 +167,30 @@ Python code here.
 
 Add a `group="my-group"` attribute to sync multiple tabsets on the page.
 
+### Callouts
+
+```markdown
+::: {.callout-note}
+This is a note without a custom title.
+:::
+
+::: {.callout-tip}
+## Custom Title
+
+This tip has a custom title.
+:::
+
+::: {.callout-warning collapse="true"}
+## Expandable Warning
+
+This callout starts collapsed — the reader clicks to expand it.
+:::
+```
+
+Five types are available: `note`, `tip`, `warning`, `caution`, `important`. Each has a distinct color and icon. If you omit the heading inside the callout, the type name is used as the title.
+
+Add `collapse="true"` to make the callout collapsible (requires a title).
+
 ### Code folding
 
 Set in frontmatter to fold all code blocks by default:
