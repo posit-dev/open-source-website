@@ -25,6 +25,7 @@ tags:
   - AI
   - Bayesian modeling
   - Concepts
+math: true
 ---
 
 

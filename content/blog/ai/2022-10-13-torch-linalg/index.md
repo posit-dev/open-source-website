@@ -27,6 +27,7 @@ tags:
   - Torch
   - Concepts
   - Tabular data
+math: true
 ---
 
 

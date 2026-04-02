@@ -21,6 +21,7 @@ software: ["tidyverse", "tidymodels"]
 languages: ["R"]
 ported_categories:
   - package
+math: true
 ---
 
 <!--

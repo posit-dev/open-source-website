@@ -31,6 +31,7 @@ tags:
   - Keras
   - Concepts
   - Generative models
+math: true
 ---
 
 

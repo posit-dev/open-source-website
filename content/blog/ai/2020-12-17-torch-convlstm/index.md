@@ -29,6 +29,7 @@ tags:
   - Image processing
   - Time series
   - Spatial data
+math: true
 ---
 
 

@@ -25,6 +25,7 @@ tags:
   - TensorFlow
   - Keras
   - Tabular data
+math: true
 ---
 
 
