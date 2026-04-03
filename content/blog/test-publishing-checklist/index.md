@@ -12,7 +12,6 @@ software:
   - quarto
 languages:
   - R
-draft: true
 ---
 
 This is a temporary test post. It will be removed before merging.
