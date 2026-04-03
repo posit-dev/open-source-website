@@ -79,7 +79,11 @@ jobs:
           REPO: ${{ github.repository }}
           DEPLOY_URL: ${{ steps.netlify.outputs.deploy-url }}
         run: |
+          set -x
           MARKER="<!-- blog-preview-links -->"
+
+          echo "Testing gh auth..."
+          gh api "repos/$REPO" --jq '.full_name' || echo "FAILED: basic repo query"
 
           # Find blog post directories changed in this PR
           CHANGED_POSTS=$(git diff --name-only origin/main...HEAD -- 'content/blog/' \
