@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      issues: write
       pull-requests: write
     env:
       HUGO_VERSION: 0.158.0
@@ -71,16 +70,12 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 15
 
-      - name: Post blog preview links
+      - name: Find changed blog posts
         if: github.event_name == 'pull_request'
+        id: blog-posts
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          REPO: ${{ github.repository }}
           DEPLOY_URL: ${{ steps.netlify.outputs.deploy-url }}
         run: |
-          MARKER="<!-- blog-preview-links -->"
-
           # Find blog post directories changed in this PR
           CHANGED_POSTS=$(git diff --name-only origin/main...HEAD -- 'content/blog/' \
             | { grep -E '^content/blog/.+/index\.(md|qmd|ipynb|Rmd)$' || true; } \
@@ -88,21 +83,21 @@ jobs:
             | sort -u)
 
           if [ -z "$CHANGED_POSTS" ]; then
-            echo "No blog posts changed, skipping preview links."
+            echo "found=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          # Build a list of preview links by finding each post's URL in the built output
+          echo "found=true" >> "$GITHUB_OUTPUT"
+
+          # Build preview links by finding each post's URL in the built output
           LINKS=""
           for POST_DIR in $CHANGED_POSTS; do
-            # Get slug from frontmatter if set, otherwise use directory name
             SLUG=""
             if [ -f "$POST_DIR/index.md" ]; then
               SLUG=$(sed -n '/^---$/,/^---$/{ /^slug:/{ s/^slug: *//; s/["'"'"']//g; p; q; } }' "$POST_DIR/index.md")
             fi
             POST_NAME="${SLUG:-$(basename "$POST_DIR")}"
 
-            # Find the actual URL in the built output
             MATCH=$(find public/blog -type f -name "index.html" -path "*/${POST_NAME}/*" 2>/dev/null | head -1)
             if [ -n "$MATCH" ]; then
               URL_PATH="${MATCH#public}"
@@ -113,21 +108,18 @@ jobs:
             fi
           done
 
-          BODY="$MARKER
+          # Write message to file (avoids shell quoting issues)
+          cat > /tmp/preview-comment.md <<EOF
           ## Preview links
 
           **Posts in this PR:**
           $LINKS
-          **Blog listing:** [$DEPLOY_URL/blog/]($DEPLOY_URL/blog/)"
+          **Blog listing:** [$DEPLOY_URL/blog/]($DEPLOY_URL/blog/)
+          EOF
 
-          # Find existing comment and delete it (gh pr comment can't edit)
-          EXISTING=$(gh api "repos/$REPO/issues/$PR_NUMBER/comments" \
-            --jq ".[] | select(.body | contains(\"$MARKER\")) | .id" \
-            | head -1)
-
-          if [ -n "$EXISTING" ]; then
-            gh api "repos/$REPO/issues/$PR_NUMBER/comments/$EXISTING" -X DELETE || true
-          fi
-
-          # Post the comment
-          gh pr comment "$PR_NUMBER" --repo "$REPO" --body "$BODY"
+      - name: Post blog preview links
+        if: github.event_name == 'pull_request' && steps.blog-posts.outputs.found == 'true'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: blog-preview-links
+          path: /tmp/preview-comment.md
