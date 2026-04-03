@@ -1,14 +1,6 @@
 ---
 title: Test Filename on Code Blocks
-date: '2026-04-03'
-people:
-  - Charlotte Wickham
-description: Testing the filename attribute on code blocks.
-image: /images/posit-logo.png
-categories:
-  - Best Practices
-software: ["quarto"]
-languages: ["Python"]
+layout: single
 ---
 
 ## Code block with filename
