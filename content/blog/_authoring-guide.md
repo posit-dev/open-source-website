@@ -149,6 +149,31 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
   quarto preview index.qmd
   ```
 
+## Getting published
+
+Once your post is written, follow these steps to get it live.
+
+### Open a pull request
+
+Push your branch and open a PR against `main`. A bot will post a publishing checklist on your PR to help you track the remaining steps.
+
+### Get a review
+
+Request at least one reviewer — they can check content, frontmatter, and the rendered preview.
+
+### Check the preview
+
+After the deploy workflow finishes, a bot comment will appear with direct links to your post's preview and the blog listing. Use these to:
+
+1. **Read through your post** — check formatting, images, links, and code blocks
+2. **Check the blog listing** — confirm your post appears at `/blog/` with the right title, thumbnail, and description
+
+These links update automatically when you push new commits.
+
+### Merge
+
+Once you have an approving review and the preview looks good, merge the PR to `main`. The site deploys automatically — your post will be live within a few minutes.
+
 ## Quarto features (`.qmd` posts)
 
 ### Tabsets

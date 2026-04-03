@@ -50,6 +50,7 @@ jobs:
         run: npm run build-search
 
       - name: Deploy to Netlify
+        id: netlify
         uses: nwtgck/actions-netlify@v3
         with:
           publish-dir: './public'
@@ -63,3 +64,66 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 15
+
+      - name: Post blog preview links
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+          DEPLOY_URL: ${{ steps.netlify.outputs.deploy-url }}
+        run: |
+          MARKER="<!-- blog-preview-links -->"
+
+          # Find blog post directories changed in this PR (via GitHub API to avoid shallow clone issues)
+          CHANGED_POSTS=$(gh api "repos/$REPO/pulls/$PR_NUMBER/files" --paginate --jq '.[].filename' \
+            | { grep -E '^content/blog/.+/index\.(md|qmd|ipynb|Rmd)$' || true; } \
+            | xargs -I{} dirname {} \
+            | sort -u)
+
+          if [ -z "$CHANGED_POSTS" ]; then
+            echo "No blog posts changed, skipping preview links."
+            exit 0
+          fi
+
+          # Build a list of preview links by finding each post's URL in the built output
+          LINKS=""
+          for POST_DIR in $CHANGED_POSTS; do
+            # Get slug from frontmatter if set, otherwise use directory name
+            SLUG=""
+            if [ -f "$POST_DIR/index.md" ]; then
+              SLUG=$(sed -n '/^---$/,/^---$/{ /^slug:/{ s/^slug: *//; s/["'"'"']//g; p; q; } }' "$POST_DIR/index.md")
+            fi
+            POST_NAME="${SLUG:-$(basename "$POST_DIR")}"
+
+            # Find the actual URL in the built output
+            MATCH=$(find public/blog -type f -name "index.html" -path "*/${POST_NAME}/*" 2>/dev/null | head -1)
+            if [ -n "$MATCH" ]; then
+              URL_PATH="/${MATCH%/index.html}/"
+              LINKS="$LINKS- [$URL_PATH]($DEPLOY_URL$URL_PATH)"$'\n'
+            else
+              LINKS="$LINKS- \`$POST_DIR\` (could not resolve preview URL)"$'\n'
+            fi
+          done
+
+          BODY="$MARKER
+          ## Preview links
+
+          **Posts in this PR:**
+          $LINKS
+          **Blog listing:** [$DEPLOY_URL/blog/]($DEPLOY_URL/blog/)"
+
+          # Find existing comment to update, or create new one
+          EXISTING=$(gh api "repos/$REPO/issues/$PR_NUMBER/comments" \
+            --jq ".[] | select(.body | contains(\"$MARKER\")) | .id" \
+            | head -1)
+
+          if [ -n "$EXISTING" ]; then
+            gh api "repos/$REPO/issues/$PR_NUMBER/comments/$EXISTING" \
+              -X PATCH -f body="$BODY"
+            echo "Updated preview links comment (id: $EXISTING)."
+          else
+            gh api "repos/$REPO/issues/$PR_NUMBER/comments" \
+              -f body="$BODY"
+            echo "Posted preview links comment."
+          fi
