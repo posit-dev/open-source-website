@@ -1,0 +1,7 @@
+title: Code Filename
+author: Posit
+version: 1.0.0
+contributes:
+  filters:
+    - path: code-filename.lua
+      at: pre-ast
