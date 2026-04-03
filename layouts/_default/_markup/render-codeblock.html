@@ -1,0 +1,8 @@
+{{- $filename := .Attributes.filename -}}
+{{- $id := printf "code-filename-%d" .Ordinal -}}
+<div class="code-block{{ if $filename }} code-with-filename{{ end }}"{{ if $filename }} role="group" aria-labelledby="{{ $id }}"{{ end }}>
+{{- if $filename }}
+  <div class="code-with-filename-label" id="{{ $id }}"><span class="font-mono text-sm">{{ $filename }}</span></div>
+{{- end }}
+  {{- highlight .Inner .Type .Options -}}
+</div>

@@ -191,6 +191,28 @@ Five types are available: `note`, `tip`, `warning`, `caution`, `important`. Each
 
 Add `collapse="true"` to make the callout collapsible (requires a title).
 
+### Code block filenames
+
+Label a code block with a filename to show the reader which file the code belongs to:
+
+````markdown
+```{.python filename="app.py"}
+from shiny.express import input, ui
+```
+````
+
+This renders a styled filename header attached to the top of the code block. Works for any language (`.python`, `.yaml`, `.bash`, etc.) and for non-language labels like `filename="Terminal"`.
+
+This also works in `.md` posts — use Goldmark attribute syntax:
+
+````markdown
+``` python { filename="app.py" }
+from shiny.express import input, ui
+```
+````
+
+**Note:** Filenames on executable code cells (`` ```{python} `` without the dot) are not yet supported.
+
 ### Code folding
 
 Set in frontmatter to fold all code blocks by default:
