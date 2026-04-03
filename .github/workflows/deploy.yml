@@ -10,6 +10,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     env:
       HUGO_VERSION: 0.158.0
     steps:
@@ -50,6 +53,7 @@ jobs:
         run: npm run build-search
 
       - name: Deploy to Netlify
+        id: netlify
         uses: nwtgck/actions-netlify@v3
         with:
           publish-dir: './public'
@@ -63,3 +67,61 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 15
+
+      - name: Fetch main branch for comparison
+        if: github.event_name == 'pull_request'
+        run: git fetch origin main --depth=1
+
+      - name: Find changed blog posts
+        if: github.event_name == 'pull_request'
+        id: blog-posts
+        env:
+          DEPLOY_URL: ${{ steps.netlify.outputs.deploy-url }}
+        run: |
+          # Find blog post directories changed in this PR
+          CHANGED_POSTS=$(git diff --name-only origin/main -- 'content/blog/' \
+            | { grep -E '^content/blog/.+/index\.(md|qmd|ipynb|Rmd)$' || true; } \
+            | xargs -I{} dirname {} \
+            | sort -u)
+
+          if [ -z "$CHANGED_POSTS" ]; then
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "found=true" >> "$GITHUB_OUTPUT"
+
+          # Build preview links by finding each post's URL in the built output
+          LINKS=""
+          for POST_DIR in $CHANGED_POSTS; do
+            SLUG=""
+            if [ -f "$POST_DIR/index.md" ]; then
+              SLUG=$(sed -n '/^---$/,/^---$/{ /^slug:/{ s/^slug: *//; s/["'"'"']//g; p; q; } }' "$POST_DIR/index.md")
+            fi
+            POST_NAME="${SLUG:-$(basename "$POST_DIR")}"
+
+            MATCH=$(find public/blog -type f -name "index.html" -path "*/${POST_NAME}/*" 2>/dev/null | head -1)
+            if [ -n "$MATCH" ]; then
+              URL_PATH="${MATCH#public}"
+              URL_PATH="${URL_PATH%/index.html}/"
+              LINKS="$LINKS- [$URL_PATH]($DEPLOY_URL$URL_PATH)"$'\n'
+            else
+              LINKS="$LINKS- \`$POST_DIR\` (could not resolve preview URL)"$'\n'
+            fi
+          done
+
+          # Write message to file (avoids shell quoting issues)
+          cat > /tmp/preview-comment.md <<EOF
+          ## Preview links
+
+          **Posts in this PR:**
+          $LINKS
+          **Blog listing:** [$DEPLOY_URL/blog/]($DEPLOY_URL/blog/)
+          EOF
+
+      - name: Post blog preview links
+        if: github.event_name == 'pull_request' && steps.blog-posts.outputs.found == 'true'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: blog-preview-links
+          path: /tmp/preview-comment.md
