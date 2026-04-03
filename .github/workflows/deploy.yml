@@ -11,8 +11,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: write
       contents: read
+      issues: write
+      pull-requests: write
     env:
       HUGO_VERSION: 0.158.0
     steps:
