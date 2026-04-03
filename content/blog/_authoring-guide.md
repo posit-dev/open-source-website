@@ -211,7 +211,7 @@ from shiny.express import input, ui
 ```
 ````
 
-**Note:** Filenames on executable code cells (`` ```{python} `` without the dot) are not yet supported.
+**Note:** This works on non-executable code blocks only (`` ```{.python} `` with the dot). Executable code cells (`` ```{python} ``) do not support `filename` — Quarto's execution engines don't preserve the attribute through rendering.
 
 ### Code folding
 
