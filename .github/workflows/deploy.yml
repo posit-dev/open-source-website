@@ -10,6 +10,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
     env:
       HUGO_VERSION: 0.158.0
     steps:
