@@ -14,4 +14,4 @@ languages:
   - R
 ---
 
-This is a temporary test post. It will be removed before merging.
+This is a temporary test post. It will be removed before merging. (Trigger redeploy.)
