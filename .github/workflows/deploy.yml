@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Setup Hugo
         run: |
@@ -78,8 +80,8 @@ jobs:
         run: |
           MARKER="<!-- blog-preview-links -->"
 
-          # Find blog post directories changed in this PR (via GitHub API to avoid shallow clone issues)
-          CHANGED_POSTS=$(gh api "repos/$REPO/pulls/$PR_NUMBER/files" --paginate --jq '.[].filename' \
+          # Find blog post directories changed in this PR
+          CHANGED_POSTS=$(git diff --name-only origin/main...HEAD -- 'content/blog/' \
             | { grep -E '^content/blog/.+/index\.(md|qmd|ipynb|Rmd)$' || true; } \
             | xargs -I{} dirname {} \
             | sort -u)
