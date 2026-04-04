@@ -19,20 +19,31 @@
       this.controlsEl = containerEl.previousElementSibling;
       if (!this.controlsEl || !this.controlsEl.hasAttribute('data-filter-controls')) {
         this.controlsEl = null;
-      } else {
-        this.controlsEl.classList.remove('hidden');
-        this._observeSticky();
+      }
+      this.showBtn = this.controlsEl
+        ? this.controlsEl.previousElementSibling
+        : null;
+      if (this.showBtn && !this.showBtn.hasAttribute('data-filter-show')) {
+        this.showBtn = null;
+      }
+      this._stickyObserved = false;
+      if (this.showBtn) {
+        this.showBtn.classList.remove('invisible');
+        this.showBtn.addEventListener('click', () => {
+          if (this.controlsEl.classList.contains('hidden')) {
+            this.state.showFilters = true;
+            this._showControls();
+          } else {
+            this.state.showFilters = false;
+            this.controlsEl.classList.add('hidden');
+          }
+          this._updateURL();
+        });
       }
 
-      const defaultSortCfg = this.config.sort
-        ? this.config.sort.find(s => s.default) || this.config.sort[0]
-        : null;
       this.state = {
         search: '',
-        sort: {
-          key: defaultSortCfg ? defaultSortCfg.key : '',
-          direction: defaultSortCfg ? (defaultSortCfg.direction || 'asc') : 'asc',
-        },
+        sort: { key: '', direction: 'asc' },
         filters: {},
       };
 
@@ -43,8 +54,8 @@
       }
 
       this._lastSortKey = '';
-      this._lastSortDir = '';
-      this._needsReorder = true;
+      this._lastSortDir = 'asc';
+      this._needsReorder = false;
       this._interactive = false;
 
       this._init();
@@ -53,9 +64,32 @@
     async _init() {
       await this._hydrate();
       this._readURL();
+      if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
       this._bindControls();
       this._applyFilters();
       this._interactive = true;
+    }
+
+    _hasActiveFilters() {
+      if (this.state.search) return true;
+      for (const set of Object.values(this.state.filters)) {
+        if (set.size > 0) return true;
+      }
+      const defaultSortCfg = this.config.sort
+        ? this.config.sort.find(s => s.default) || this.config.sort[0]
+        : null;
+      if (this.state.sort.key && defaultSortCfg && this.state.sort.key !== defaultSortCfg.key) return true;
+      return false;
+    }
+
+    _showControls() {
+      if (this.controlsEl) {
+        this.controlsEl.classList.remove('hidden');
+        if (!this._stickyObserved) {
+          this._observeSticky();
+          this._stickyObserved = true;
+        }
+      }
     }
 
     _observeSticky() {
@@ -98,10 +132,11 @@
           duration: entry.duration ? Number(entry.duration) : 0,
           authors: entry.authors || '',
           location: entry.location || '',
+          type: entry.type || '',
           section: entry.section || '',
           _dateTs: entry.date ? new Date(entry.date).getTime() : 0,
-          _sortTitle: (entry.title || '').toLowerCase().replace(/[^a-z0-9 ]/g, '').trim(),
-          _search: [entry.title, entry.description, entry.tags, entry.authors, entry.location].join(' ').toLowerCase(),
+          _sortTitle: (entry.title || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, '').trim(),
+          _search: [entry.title, entry.description, entry.tags, entry.authors, entry.location].join(' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(),
         });
       }
 
@@ -128,7 +163,10 @@
 
       const sortSelect = this.controlsEl.querySelector('[data-filter-sort]');
       if (sortSelect) {
-        sortSelect.value = this.state.sort.key;
+        const defaultSortCfg = this.config.sort
+          ? this.config.sort.find(s => s.default) || this.config.sort[0]
+          : null;
+        sortSelect.value = this.state.sort.key || (defaultSortCfg ? defaultSortCfg.key : '');
         sortSelect.addEventListener('change', () => {
           const key = sortSelect.value;
           const cfg = this.config.sort.find(s => s.key === key);
@@ -362,6 +400,8 @@
         }
       }
 
+      params.set('showFilters', this.state.showFilters ? 'true' : 'false');
+
       const qs = params.toString();
       const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
       window.history.replaceState({}, '', url);
@@ -384,6 +424,8 @@
       if (params.has('q')) {
         this.state.search = params.get('q');
       }
+
+      this.state.showFilters = params.get('showFilters') === 'true';
 
       if (this.config.filters) {
         this.config.filters.forEach(f => {
