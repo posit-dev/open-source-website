@@ -66,6 +66,7 @@
   "description" $description
   "tags" (delimit $tags ",")
   "categories" (delimit $cat_names ",")
+  "software" (delimit ($page.Params.software | default slice) ",")
   "languages" (delimit ($page.Params.languages | default slice) ",")
   "authors" (delimit $author_names ",")
   "type" $typeLabel
