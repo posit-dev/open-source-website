@@ -81,8 +81,8 @@
       // Match JSON entries to DOM elements by id
       this.cards = [];
       for (const entry of index) {
-        const el = document.getElementById(entry.id);
-        if (!el || !this.container.contains(el)) continue;
+        const el = this.container.querySelector('#' + CSS.escape(entry.id));
+        if (!el) continue;
         this.cards.push({
           el,
           title: entry.title || '',

@@ -623,7 +623,7 @@ mark[data-pagefind-highlight],
 
   /* Card/tile/row shared link wrapper */
   .card-link {
-    @apply no-underline relative brightness-100 hover:brightness-110 transition duration-200 overflow-hidden;
+    @apply no-underline! relative brightness-100 hover:brightness-110 transition duration-200 overflow-hidden;
   }
 
   /* Badge (section indicator on cards) */
