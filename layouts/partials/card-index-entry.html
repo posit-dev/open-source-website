@@ -45,6 +45,20 @@
 {{ end }}
 {{ $id := printf "item-%s" ($fileID | default $page.RelPermalink | md5) }}
 
+{{/* Type — resolve from section or resource sub-type */}}
+{{ $type := $page.Section }}
+{{ $slug := $page.RelPermalink }}
+{{ if not (index site.Data.items $type) }}
+  {{ $parts := split (strings.Trim $slug "/") "/" }}
+  {{ if ge (len $parts) 2 }}
+    {{ $type = index $parts (sub (len $parts) 2) }}
+  {{ end }}
+{{ end }}
+{{ $typeLabel := "" }}
+{{ with index site.Data.items $type }}
+  {{ $typeLabel = .badge_text }}
+{{ end }}
+
 {{/* Build the entry */}}
 {{ $entry := dict
   "id" $id
@@ -54,6 +68,7 @@
   "categories" (delimit $cat_names ",")
   "languages" (delimit ($page.Params.languages | default slice) ",")
   "authors" (delimit $author_names ",")
+  "type" $typeLabel
 }}
 
 {{/* Date */}}

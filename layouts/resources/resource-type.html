@@ -39,20 +39,37 @@
     }}
   {{ end }}
 
+  {{/* Language filter — for cheatsheets */}}
+  {{ $isCheatsheet := eq $resourceType "cheatsheet" }}
+  {{ $languageAliases := dict }}
+  {{ $languageOther := slice "Python" "R" }}
+
   {{/* Build filter groups */}}
   {{ $filterGroups := slice }}
   {{ if gt (len $catSet) 0 }}
     {{ $filterGroups = $filterGroups | append (dict "key" "categories" "label" "Topics" "logic" "or" "values" $catSet) }}
   {{ end }}
+  {{ if $isCheatsheet }}
+    {{ $filterGroups = $filterGroups | append (dict "key" "languages" "label" "Languages" "logic" "or" "values" (slice "Python" "R" "Other") "aliases" $languageAliases "other" $languageOther) }}
+  {{ end }}
 
   {{ if $resources }}
+
+  {{/* Build filter config for JS (without pill values, which are UI-only) */}}
+  {{ $filterConfig := slice }}
+  {{ if gt (len $catSet) 0 }}
+    {{ $filterConfig = $filterConfig | append (dict "key" "categories" "label" "Topics" "logic" "or") }}
+  {{ end }}
+  {{ if $isCheatsheet }}
+    {{ $filterConfig = $filterConfig | append (dict "key" "languages" "label" "Languages" "logic" "or" "aliases" $languageAliases "other" $languageOther) }}
+  {{ end }}
 
   {{ partial "filter-controls.html" (dict
     "sort" $sortOptions
     "filters" $filterGroups
   ) }}
 
-  <div data-card-container data-filter-config='{{ dict "sort" $sortOptions "filters" (slice (dict "key" "categories" "label" "Topics" "logic" "or")) "defaultSort" "date" | jsonify }}'
+  <div data-card-container data-filter-config='{{ dict "sort" $sortOptions "filters" $filterConfig "defaultSort" "date" | jsonify }}'
        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
     {{ range $resources.ByDate.Reverse }}
       {{ partial "item.html" (dict "page" .) }}
