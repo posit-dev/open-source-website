@@ -19,6 +19,9 @@
       this.controlsEl = containerEl.previousElementSibling;
       if (!this.controlsEl || !this.controlsEl.hasAttribute('data-filter-controls')) {
         this.controlsEl = null;
+      } else {
+        this.controlsEl.classList.remove('hidden');
+        this._observeSticky();
       }
 
       // Determine default sort from config
@@ -51,6 +54,15 @@
       this._bindControls();
       this._applyFilters();
       this._interactive = true;
+    }
+
+    _observeSticky() {
+      const sentinel = document.createElement('div');
+      this.controlsEl.parentNode.insertBefore(sentinel, this.controlsEl);
+      new IntersectionObserver(([entry]) => {
+        this.controlsEl.classList.toggle('border-b', !entry.isIntersecting);
+        this.controlsEl.classList.toggle('border-gray-200', !entry.isIntersecting);
+      }).observe(sentinel);
     }
 
     _hydrate() {
@@ -189,9 +201,9 @@
       });
     }
 
-    _reorder(visibleCards) {
+    _reorder() {
+      const allSorted = this._sortCards(this.cards);
       const frag = document.createDocumentFragment();
-      const visibleSet = new Set(visibleCards.map(c => c.el));
 
       if (this.sectionHeadings.length > 0) {
         const isDefaultSort =
@@ -204,23 +216,14 @@
               h => h.dataset.sectionHeading === section
             );
             frag.appendChild(heading);
-            visibleCards.filter(c => c.section === section).forEach(c => frag.appendChild(c.el));
-          });
-          this.cards.forEach(c => {
-            if (!visibleSet.has(c.el)) frag.appendChild(c.el);
+            allSorted.filter(c => c.section === section).forEach(c => frag.appendChild(c.el));
           });
         } else {
           this.sectionHeadings.forEach(h => frag.appendChild(h));
-          visibleCards.forEach(c => frag.appendChild(c.el));
-          this.cards.forEach(c => {
-            if (!visibleSet.has(c.el)) frag.appendChild(c.el);
-          });
+          allSorted.forEach(c => frag.appendChild(c.el));
         }
       } else {
-        visibleCards.forEach(c => frag.appendChild(c.el));
-        this.cards.forEach(c => {
-          if (!visibleSet.has(c.el)) frag.appendChild(c.el);
-        });
+        allSorted.forEach(c => frag.appendChild(c.el));
       }
 
       this.container.appendChild(frag);
@@ -251,7 +254,7 @@
 
       // Only touch DOM order when sort has changed
       if (this._needsReorder) {
-        this._reorder(visibleCards);
+        this._reorder();
         this._needsReorder = false;
       }
     }
