@@ -29,7 +29,7 @@ showReadingTime = false
   home = ['html']
   section = ['html', 'CardIndex']
   taxonomy = ['html', 'CardIndex']
-  term = ['html']
+  term = ['html', 'CardIndex']
   page = ['html']
 
 [services]
