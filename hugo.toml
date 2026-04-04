@@ -19,11 +19,18 @@ showReadingTime = false
   event = 'events'
   resource = 'resources'
 
+[outputFormats.CardIndex]
+  mediaType = "application/json"
+  baseName = "card-index"
+  isPlainText = true
+  notAlternative = true
+
 [outputs]
   home = ['html']
-  section = ['html']
-  taxonomy = ['html']
+  section = ['html', 'CardIndex']
+  taxonomy = ['html', 'CardIndex']
   term = ['html']
+  page = ['html']
 
 [services]
   [services.rss]

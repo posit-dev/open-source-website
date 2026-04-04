@@ -24,7 +24,6 @@
         this._observeSticky();
       }
 
-      // Determine default sort from config
       const defaultSortCfg = this.config.sort
         ? this.config.sort.find(s => s.default) || this.config.sort[0]
         : null;
@@ -37,7 +36,6 @@
         filters: {},
       };
 
-      // Init filter state sets
       if (this.config.filters) {
         this.config.filters.forEach(f => {
           this.state.filters[f.key] = new Set();
@@ -49,7 +47,11 @@
       this._needsReorder = true;
       this._interactive = false;
 
-      this._hydrate();
+      this._init();
+    }
+
+    async _init() {
+      await this._hydrate();
       this._readURL();
       this._bindControls();
       this._applyFilters();
@@ -65,30 +67,43 @@
       }).observe(sentinel);
     }
 
-    _hydrate() {
-      const elements = this.container.querySelectorAll('[data-card]');
-      this.cards = Array.from(elements).map(el => {
-        const d = el.dataset;
-        return {
+    async _hydrate() {
+      // Fetch card index JSON
+      const indexUrl = window.location.pathname.replace(/\/$/, '') + '/card-index.json';
+      let index = [];
+      try {
+        const res = await fetch(indexUrl);
+        if (res.ok) index = await res.json();
+      } catch (e) {
+        // Fall back to empty index — cards will still render but won't be searchable
+      }
+
+      // Match JSON entries to DOM elements by id
+      this.cards = [];
+      for (const entry of index) {
+        const el = document.getElementById(entry.id);
+        if (!el || !this.container.contains(el)) continue;
+        this.cards.push({
           el,
-          title: d.title || '',
-          description: d.description || '',
-          tags: d.tags || '',
-          date: d.date || '',
-          categories: d.categories || '',
-          languages: d.languages || '',
-          stars: d.stars ? Number(d.stars) : 0,
-          firstCommit: d.firstCommit || '',
-          _firstCommitTs: d.firstCommit ? new Date(d.firstCommit).getTime() : 0,
-          views: d.views ? Number(d.views) : 0,
-          duration: d.duration ? Number(d.duration) : 0,
-          authors: d.authors || '',
-          location: d.location || '',
-          section: d.section || '',
-          _dateTs: d.date ? new Date(d.date).getTime() : 0,
-          _search: [d.title, d.description, d.tags, d.authors, d.location].join(' ').toLowerCase(),
-        };
-      });
+          title: entry.title || '',
+          description: entry.description || '',
+          tags: entry.tags || '',
+          date: entry.date || '',
+          categories: entry.categories || '',
+          languages: entry.languages || '',
+          stars: entry.stars ? Number(entry.stars) : 0,
+          firstCommit: entry.firstCommit || '',
+          _firstCommitTs: entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0,
+          views: entry.views ? Number(entry.views) : 0,
+          duration: entry.duration ? Number(entry.duration) : 0,
+          authors: entry.authors || '',
+          location: entry.location || '',
+          section: entry.section || '',
+          _dateTs: entry.date ? new Date(entry.date).getTime() : 0,
+          _search: [entry.title, entry.description, entry.tags, entry.authors, entry.location].join(' ').toLowerCase(),
+        });
+      }
+
       this.totalCount = this.cards.length;
       this.sectionHeadings = Array.from(
         this.container.querySelectorAll('[data-section-heading]')
@@ -126,7 +141,6 @@
       filterBtns.forEach(btn => {
         const group = btn.dataset.filterGroup;
         const value = btn.dataset.filterValue;
-        // Restore active state from URL
         if (this.state.filters[group] && this.state.filters[group].has(value)) {
           btn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
           btn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
@@ -152,7 +166,6 @@
         resetBtn.addEventListener('click', () => this.reset());
       }
 
-      // Mobile filter toggle
       const toggleBtn = this.controlsEl.querySelector('[data-filter-toggle]');
       const filterBody = this.controlsEl.querySelector('[data-filter-body]');
       if (toggleBtn && filterBody) {
@@ -232,12 +245,10 @@
     _render(visibleCards) {
       const visibleSet = new Set(visibleCards.map(c => c.el));
 
-      // Toggle visibility classes
       this.cards.forEach(c => {
         c.el.classList.toggle('hidden', !visibleSet.has(c.el));
       });
 
-      // Section heading visibility
       if (this.sectionHeadings.length > 0) {
         const isDefaultSort =
           this.config.defaultSort && this.state.sort.key === this.config.defaultSort;
@@ -252,7 +263,6 @@
         });
       }
 
-      // Only touch DOM order when sort has changed
       if (this._needsReorder) {
         this._reorder();
         this._needsReorder = false;
@@ -269,7 +279,6 @@
         if (t) tokens.push(t);
       }
 
-      // Track whether sort changed — if so, DOM reorder is needed
       const sortKey = this.state.sort.key;
       const sortDir = this.state.sort.direction;
       if (sortKey !== this._lastSortKey || sortDir !== this._lastSortDir) {
@@ -287,7 +296,6 @@
       this._updateCount(visible.length);
       this._updateURL();
 
-      // Scroll so first card is visible below sticky controls
       if (this._interactive && this.controlsEl) {
         const controlsHeight = this.controlsEl.offsetHeight;
         const containerTop = this.container.getBoundingClientRect().top;
@@ -377,7 +385,6 @@
         this.state.filters[key] = new Set();
       }
 
-      // Reset UI controls
       if (this.controlsEl) {
         const searchInput = this.controlsEl.querySelector('[data-filter-search]');
         if (searchInput) searchInput.value = '';

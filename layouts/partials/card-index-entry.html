@@ -1,0 +1,105 @@
+{{/*
+  card-index-entry.html — Build a card metadata dict for a page.
+
+  Input context (dict):
+    "page"    — the Page object
+    "section" — (optional) section label, e.g. "current", "upcoming", "past"
+
+  Returns: a dict with all card metadata fields.
+*/}}
+{{ $page := .page }}
+{{ $section := index . "section" | default "" }}
+
+{{ $title := $page.Title }}
+{{ $description := $page.Params.description | default "" | strings.TrimSpace | strings.TrimSuffix "." | replaceRE `[\x{1F600}-\x{1F64F}\x{1F300}-\x{1F5FF}\x{1F680}-\x{1F6FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}]` "" }}
+{{ $description = truncate 200 "" $description }}
+
+{{/* Tags */}}
+{{ $tags := slice }}
+{{ range $page.GetTerms "software" }}
+  {{ $tags = $tags | append .LinkTitle }}
+{{ end }}
+{{ range $page.GetTerms "categories" }}
+  {{ $tags = $tags | append .LinkTitle }}
+{{ end }}
+{{ range $page.GetTerms "tags" }}
+  {{ $tags = $tags | append .LinkTitle }}
+{{ end }}
+
+{{/* Categories */}}
+{{ $cat_names := slice }}
+{{ range $page.GetTerms "categories" }}
+  {{ $cat_names = $cat_names | append .LinkTitle }}
+{{ end }}
+
+{{/* Authors */}}
+{{ $author_names := slice }}
+{{ range $page.GetTerms "people" }}
+  {{ $author_names = $author_names | append .LinkTitle }}
+{{ end }}
+
+{{/* ID — must match item-id.html */}}
+{{ $fileID := "" }}
+{{ with $page.File }}
+  {{ $fileID = .UniqueID }}
+{{ end }}
+{{ $id := printf "item-%s" ($fileID | default $page.RelPermalink | md5) }}
+
+{{/* Build the entry */}}
+{{ $entry := dict
+  "id" $id
+  "title" $title
+  "description" $description
+  "tags" (delimit $tags ",")
+  "categories" (delimit $cat_names ",")
+  "languages" (delimit ($page.Params.languages | default slice) ",")
+  "authors" (delimit $author_names ",")
+}}
+
+{{/* Date */}}
+{{ $is_event := eq $page.Section "events" }}
+{{ $is_blog := eq $page.Section "blog" }}
+{{ $is_resource := eq $page.Section "resources" }}
+{{ $is_software := eq $page.Section "software" }}
+
+{{ if $is_event }}
+  {{ with $page.Params.start_date }}
+    {{ $entry = merge $entry (dict "date" (time.Format "2006-01-02" .)) }}
+  {{ end }}
+{{ else if or $is_blog $is_resource }}
+  {{ with $page.Params.date }}
+    {{ $entry = merge $entry (dict "date" (time.Format "2006-01-02" .)) }}
+  {{ end }}
+{{ end }}
+
+{{/* Software-specific */}}
+{{ if $is_software }}
+  {{ $entry = merge $entry (dict "stars" (default 0 $page.Params.external.stars)) }}
+  {{ with $page.Params.external.first_commit }}
+    {{ $entry = merge $entry (dict "firstCommit" (time.Format "2006-01-02" .)) }}
+  {{ end }}
+{{ end }}
+
+{{/* Video-specific */}}
+{{ if eq ($page.Params.resource_type | default "") "video" }}
+  {{ with $page.Params.external.view_count }}
+    {{ $entry = merge $entry (dict "views" (int .)) }}
+  {{ end }}
+  {{ with $page.Params.external.duration }}
+    {{ $entry = merge $entry (dict "duration" (int .)) }}
+  {{ end }}
+{{ end }}
+
+{{/* Events-specific */}}
+{{ if $is_event }}
+  {{ with $page.Params.location }}
+    {{ $entry = merge $entry (dict "location" .) }}
+  {{ end }}
+{{ end }}
+
+{{/* Section */}}
+{{ with $section }}
+  {{ $entry = merge $entry (dict "section" .) }}
+{{ end }}
+
+{{ return $entry }}
