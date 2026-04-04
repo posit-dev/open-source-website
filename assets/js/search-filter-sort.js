@@ -100,6 +100,7 @@
           location: entry.location || '',
           section: entry.section || '',
           _dateTs: entry.date ? new Date(entry.date).getTime() : 0,
+          _sortTitle: (entry.title || '').toLowerCase().replace(/[^a-z0-9 ]/g, '').trim(),
           _search: [entry.title, entry.description, entry.tags, entry.authors, entry.location].join(' ').toLowerCase(),
         });
       }
@@ -232,7 +233,10 @@
           const tsKey = `_${prop}Ts`;
           return ((a[tsKey] || a._dateTs) - (b[tsKey] || b._dateTs)) * dir;
         }
-        return String(av).localeCompare(String(bv), undefined, { sensitivity: 'base', ignorePunctuation: true }) * dir;
+        const sortKey = `_sort${prop.charAt(0).toUpperCase()}${prop.slice(1)}`;
+        const sa = a[sortKey] !== undefined ? a[sortKey] : String(av).toLowerCase();
+        const sb = b[sortKey] !== undefined ? b[sortKey] : String(bv).toLowerCase();
+        return sa.localeCompare(sb) * dir;
       });
     }
 
