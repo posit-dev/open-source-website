@@ -294,7 +294,7 @@
      ============================================================ */}}
 <div id="{{ $item_id }}" class="@container {{ $tile_height }}">
   <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
-     class="no-underline relative flex flex-row items-center rounded-lg hover:brightness-110 brightness-100 transition duration-200 overflow-hidden h-full {{ $card_settings.tile_class }}">
+     class="card-link flex flex-row items-center rounded-lg h-full {{ $card_settings.tile_class }}">
 
       {{ partial "dev-size-label.html" (dict "class" "top-2 left-2") }}
 
@@ -324,7 +324,7 @@
         <div class="hidden @short:flex items-center justify-end justify-items-end pl-3">
         {{ if not $hide_badge }}
           {{ if or $card_settings.badge_icon $card_settings.badge_text }}
-            <span class="items-center flex-shrink-0 text-xs gap-x-1 px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">
+            <span class="card-badge flex-shrink-0">
               <span class="-mb-[1px] icon-[{{ $card_settings.badge_icon }}]"></span>
               <span class="hidden @grande:inline font-semibold uppercase tracking-wide">{{ $card_settings.badge_text }}</span>
             </span>
@@ -337,21 +337,21 @@
       <div class="hidden @tall:flex flex-1 w-full gap-x-3">
 
         {{/* -- Metadata row — visible from grande+ -- */}}
-        <div class="flex flex-grow items-center gap-x-3 text-xs font-semibold text-gray-500 flex-wrap">
+        <div class="tile-meta">
           {{ with $date }}
-            <span class="flex items-center gap-1 whitespace-nowrap"><span class="flex-none icon-[boxicons--calendar-filled]"></span>{{ . }}</span>
+            <span class="meta-item"><span class="flex-none icon-[boxicons--calendar-filled]"></span>{{ . }}</span>
           {{ end }}
           {{ with $location }}
-            <span class="hidden @grande:flex flex-1 items-center gap-1 whitespace-nowrap truncate"><span class="flex-none icon-[boxicons--map-filled]"></span><span class="truncate">{{ . }}</span></span>
+            <span class="meta-item hidden @grande:flex flex-1 truncate"><span class="flex-none icon-[boxicons--map-filled]"></span><span class="truncate">{{ . }}</span></span>
           {{ end }}
           {{ with $duration }}
-            <span class="flex items-center gap-1 whitespace-nowrap"><span class="flex-none icon-[boxicons--clock-4-filled]"></span>{{ . }}</span>
+            <span class="meta-item"><span class="flex-none icon-[boxicons--clock-4-filled]"></span>{{ . }}</span>
           {{ end }}
           {{ with $views }}
-            <span class="flex items-center gap-1 whitespace-nowrap"><span class="flex-none icon-[boxicons--eye-filled]"></span>{{ . }}</span>
+            <span class="meta-item"><span class="flex-none icon-[boxicons--eye-filled]"></span>{{ . }}</span>
           {{ end }}
           {{ with $stars }}
-            <span class="flex items-center gap-1 whitespace-nowrap"><span class="flex-none icon-[boxicons--star-filled]"></span>{{ . }}</span>
+            <span class="meta-item"><span class="flex-none icon-[boxicons--star-filled]"></span>{{ . }}</span>
           {{ end }}
         </div>
 
@@ -360,7 +360,7 @@
           <div class="flex flex-auto items-center overflow-hidden justify-end justify-items-end">
             <div class="flex gap-x-1 gap-y-10 items-center -justify-items-end justify-end flex-wrap content-between overflow-hidden h-6 pt-0.5">
               {{ range . }}
-                <span class="text-xs font-semibold uppercase tracking-wide whitespace-nowrap rounded-full px-2 py-0.5 bg-blue-100 text-blue-700">{{ . }}</span>
+                <span class="pill">{{ . }}</span>
               {{ end }}
             </div>
           </div>
@@ -378,7 +378,7 @@
      ROW FORMAT — clickable row with grid columns for alignment
      ============================================================ */}}
 <a id="{{ $item_id }}" href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
-   class="no-underline col-span-full grid grid-cols-subgrid items-center {{ $row_height }} rounded-lg hover:brightness-110 brightness-100 transition duration-200 overflow-hidden text-gray-700 relative {{ $card_settings.row_class }}">
+   class="card-link col-span-full grid grid-cols-subgrid items-center {{ $row_height }} rounded-lg text-gray-700 {{ $card_settings.row_class }}">
 
       {{ partial "dev-size-label.html" (dict "class" "top-2 right-2" "sizes" "compact") }}
 
@@ -401,7 +401,7 @@
     <span class="text-sm font-semibold truncate">{{ $title }}</span>
     {{ if not $hide_badge }}
       {{ if or $card_settings.badge_icon $card_settings.badge_text }}
-        <span class="flex items-center flex-shrink-0 text-xs gap-x-1 px-1.5 py-0.5 rounded-full bg-blue-100 text-blue-700">
+        <span class="card-badge flex-shrink-0 px-1.5">
           <span class="icon-[{{ $card_settings.badge_icon }}]"></span>
           <span class="font-semibold uppercase tracking-wide hidden @venti:inline">{{ $card_settings.badge_text }}</span>
         </span>
@@ -415,19 +415,19 @@
   {{/* Metadata — hidden below grande */}}
   <span class="hidden @grande:flex px-2 text-xs text-gray-500 whitespace-nowrap gap-x-2">
     {{ with $location }}
-      <span class="inline-flex items-center gap-1"><span class="icon-[boxicons--map-filled]"></span>{{ . }}</span>
+      <span class="meta-item"><span class="icon-[boxicons--map-filled]"></span>{{ . }}</span>
     {{ end }}
     {{ with $date }}
-      <span class="inline-flex items-center gap-1"><span class="icon-[boxicons--calendar-filled]"></span>{{ . }}</span>
+      <span class="meta-item"><span class="icon-[boxicons--calendar-filled]"></span>{{ . }}</span>
     {{ end }}
     {{ with $duration }}
-      <span class="inline-flex items-center gap-1"><span class="icon-[boxicons--clock-4-filled]"></span>{{ . }}</span>
+      <span class="meta-item"><span class="icon-[boxicons--clock-4-filled]"></span>{{ . }}</span>
     {{ end }}
     {{ with $views }}
-      <span class="inline-flex items-center gap-1"><span class="icon-[boxicons--eye-filled]"></span>{{ . }}</span>
+      <span class="meta-item"><span class="icon-[boxicons--eye-filled]"></span>{{ . }}</span>
     {{ end }}
     {{ with $stars }}
-      <span class="inline-flex items-center gap-1"><span class="icon-[boxicons--star-filled]"></span>{{ . }}</span>
+      <span class="meta-item"><span class="icon-[boxicons--star-filled]"></span>{{ . }}</span>
     {{ end }}
   </span>
 
@@ -435,7 +435,7 @@
   <span class="hidden @venti:flex flex-shrink-0 gap-1 px-2">
     {{ with $tags }}
       {{ range . }}
-        <span class="text-xs font-semibold uppercase tracking-wide whitespace-nowrap rounded-full px-2 py-0.5 bg-blue-100 text-blue-700">{{ . }}</span>
+        <span class="pill">{{ . }}</span>
       {{ end }}
     {{ end }}
   </span>
@@ -485,68 +485,68 @@
       <div class="flex items-center">{{ . }}</div>
       {{ end }}
       {{ with $date }}
-      <div class="flex items-center gap-2 text-gray-600">
-        <span class="icon-[boxicons--calendar] w-5 h-5 flex-none text-gray-400"></span>
+      <div class="hero-meta">
+        <span class="icon-[boxicons--calendar] hero-icon"></span>
         <span>{{ . }}</span>
       </div>
       {{ end }}
       {{ with $location }}
-      <div class="flex items-center gap-2 text-gray-600">
-        <span class="icon-[boxicons--map] w-5 h-5 flex-none text-gray-400"></span>
+      <div class="hero-meta">
+        <span class="icon-[boxicons--map] hero-icon"></span>
         <span>{{ . }}</span>
       </div>
       {{ end }}
       {{ with $duration }}
-      <div class="flex items-center gap-2 text-gray-600">
-        <span class="icon-[boxicons--clock-filled] w-5 h-5 flex-none text-gray-400"></span>
+      <div class="hero-meta">
+        <span class="icon-[boxicons--clock-filled] hero-icon"></span>
         <span>{{ . }}</span>
       </div>
       {{ end }}
       {{ with $views }}
-      <div class="flex items-center gap-2 text-gray-600">
-        <span class="icon-[boxicons--eye-filled] w-5 h-5 flex-none text-gray-400"></span>
+      <div class="hero-meta">
+        <span class="icon-[boxicons--eye-filled] hero-icon"></span>
         <span>{{ . }}</span>
       </div>
       {{ end }}
       {{ range $links }}
-      <div class="flex items-center gap-2">
-        <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+      <div class="hero-meta">
+        <span class="icon-[{{ .icon }}] hero-icon"></span>
         <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
            class="text-gray-600 hover:underline">{{ .text }}</a>
       </div>
       {{ end }}
       {{ range $stats }}
-      <div class="flex items-center gap-2 text-gray-600">
-        <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+      <div class="hero-meta">
+        <span class="icon-[{{ .icon }}] hero-icon"></span>
         <span>{{ .value }}</span>
       </div>
       {{ end }}
       {{ with $hero_languages }}
-      <div class="flex items-center gap-2">
-        <span class="icon-[boxicons--code-alt] w-5 h-5 flex-none text-gray-400"></span>
+      <div class="hero-meta">
+        <span class="icon-[boxicons--code-alt] hero-icon"></span>
         <div class="flex flex-wrap gap-1">
           {{ range . }}
-          <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          <a href="{{ .url }}" class="pill-link">{{ .text }}</a>
           {{ end }}
         </div>
       </div>
       {{ end }}
       {{ with $hero_categories }}
-      <div class="flex items-center gap-2">
-        <span class="icon-[boxicons--categories] w-5 h-5 flex-none text-gray-400"></span>
+      <div class="hero-meta">
+        <span class="icon-[boxicons--categories] hero-icon"></span>
         <div class="flex flex-wrap gap-1">
           {{ range . }}
-          <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          <a href="{{ .url }}" class="pill-link">{{ .text }}</a>
           {{ end }}
         </div>
       </div>
       {{ end }}
       {{ with $hero_tags }}
-      <div class="flex items-center gap-2">
-        <span class="icon-[boxicons--tag] w-5 h-5 flex-none text-gray-400"></span>
+      <div class="hero-meta">
+        <span class="icon-[boxicons--tag] hero-icon"></span>
         <div class="flex flex-wrap gap-1">
           {{ range . }}
-          <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          <a href="{{ .url }}" class="pill-link">{{ .text }}</a>
           {{ end }}
         </div>
       </div>
@@ -617,68 +617,68 @@
         <div class="flex items-center text-base">{{ . }}</div>
         {{ end }}
         {{ with $date }}
-        <div class="flex items-center gap-2 text-base text-gray-600">
-          <span class="icon-[boxicons--calendar] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="hero-meta-lg">
+          <span class="icon-[boxicons--calendar] hero-icon"></span>
           <span>{{ . }}</span>
         </div>
         {{ end }}
         {{ with $location }}
-        <div class="flex items-center gap-2 text-base text-gray-600">
-          <span class="icon-[boxicons--map] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="hero-meta-lg">
+          <span class="icon-[boxicons--map] hero-icon"></span>
           <span>{{ . }}</span>
         </div>
         {{ end }}
         {{ with $duration }}
-        <div class="flex items-center gap-2 text-base text-gray-600">
-          <span class="icon-[boxicons--clock-filled] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="hero-meta-lg">
+          <span class="icon-[boxicons--clock-filled] hero-icon"></span>
           <span>{{ . }}</span>
         </div>
         {{ end }}
         {{ with $views }}
-        <div class="flex items-center gap-2 text-base text-gray-600">
-          <span class="icon-[boxicons--eye-filled] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="hero-meta-lg">
+          <span class="icon-[boxicons--eye-filled] hero-icon"></span>
           <span>{{ . }}</span>
         </div>
         {{ end }}
         {{ range $links }}
-        <div class="flex items-center gap-2 text-base">
-          <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="hero-meta-lg">
+          <span class="icon-[{{ .icon }}] hero-icon"></span>
           <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
              class="text-gray-600 hover:underline">{{ .text }}</a>
         </div>
         {{ end }}
         {{ range $stats }}
-        <div class="flex items-center gap-2 text-base text-gray-600">
-          <span class="icon-[{{ .icon }}] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="hero-meta-lg">
+          <span class="icon-[{{ .icon }}] hero-icon"></span>
           <span>{{ .value }}</span>
         </div>
         {{ end }}
         {{ with $hero_languages }}
-        <div class="flex items-center gap-2 text-base">
-          <span class="icon-[boxicons--code-alt] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="hero-meta-lg">
+          <span class="icon-[boxicons--code-alt] hero-icon"></span>
           <div class="flex flex-wrap gap-1">
             {{ range . }}
-            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            <a href="{{ .url }}" class="pill-link text-sm">{{ .text }}</a>
             {{ end }}
           </div>
         </div>
         {{ end }}
         {{ with $hero_categories }}
-        <div class="flex items-center gap-2 text-base">
-          <span class="icon-[boxicons--categories] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="hero-meta-lg">
+          <span class="icon-[boxicons--categories] hero-icon"></span>
           <div class="flex flex-wrap gap-1">
             {{ range . }}
-            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            <a href="{{ .url }}" class="pill-link text-sm">{{ .text }}</a>
             {{ end }}
           </div>
         </div>
         {{ end }}
         {{ with $hero_tags }}
-        <div class="flex items-center gap-2 text-base">
-          <span class="icon-[boxicons--tag] w-5 h-5 flex-none text-gray-400"></span>
+        <div class="hero-meta-lg">
+          <span class="icon-[boxicons--tag] hero-icon"></span>
           <div class="flex flex-wrap gap-1">
             {{ range . }}
-            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            <a href="{{ .url }}" class="pill-link text-sm">{{ .text }}</a>
             {{ end }}
           </div>
         </div>
@@ -697,14 +697,14 @@
      ============================================================ */}}
 <div id="{{ $item_id }}" class="@container h-full">
   <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
-     class="no-underline relative flex flex-col @venti:flex-row rounded-xl hover:brightness-110 brightness-100 transition duration-200 {{ $card_settings.card_class }} overflow-hidden h-full @venti:h-96">
+     class="card-link flex flex-col @venti:flex-row rounded-xl {{ $card_settings.card_class }} h-full @venti:h-96">
 
       {{ partial "dev-size-label.html" (dict "class" "top-2 @max-venti:left-2 @venti:right-2") }}
 
       {{/* -- Badge (absolute, top-right) --------------------------- */}}
       {{ if not $hide_badge }}
         {{ if or $card_settings.badge_icon $card_settings.badge_text }}
-        <span class="flex items-center absolute top-2 @max-venti:right-2 @venti:left-2 z-10 text-xs gap-x-1 px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">
+        <span class="card-badge absolute top-2 @max-venti:right-2 @venti:left-2 z-10">
 
           <span class="icon-[{{ $card_settings.badge_icon }}]"></span>
           <span class="font-semibold uppercase tracking-wide hidden @xs:inline">{{ $card_settings.badge_text }}</span>
@@ -785,7 +785,7 @@
       {{ with $tags }}
         <div class="hidden @grande:flex flex-wrap gap-x-1 gap-y-4 py-2 overflow-hidden h-10 items-end">
           {{ range . }}
-            <span class="text-xs font-semibold uppercase tracking-wide whitespace-nowrap px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">
+            <span class="pill">
               {{ . }}
             </span>
           {{ end }}
