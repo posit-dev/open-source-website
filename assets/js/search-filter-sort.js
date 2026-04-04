@@ -16,16 +16,9 @@
       this.cards = [];
       this.totalCount = 0;
       this.sectionHeadings = [];
-      this.controlsEl = containerEl.previousElementSibling;
-      if (!this.controlsEl || !this.controlsEl.hasAttribute('data-filter-controls')) {
-        this.controlsEl = null;
-      }
-      this.showBtn = this.controlsEl
-        ? this.controlsEl.previousElementSibling
-        : null;
-      if (this.showBtn && !this.showBtn.hasAttribute('data-filter-show')) {
-        this.showBtn = null;
-      }
+      const parent = containerEl.parentNode;
+      this.controlsEl = parent.querySelector('[data-filter-controls]');
+      this.showBtn = parent.querySelector('[data-filter-show]');
       this._stickyObserved = false;
       if (this.showBtn) {
         this.showBtn.classList.remove('invisible');
@@ -136,7 +129,7 @@
           section: entry.section || '',
           _dateTs: entry.date ? new Date(entry.date).getTime() : 0,
           _sortTitle: (entry.title || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, '').trim(),
-          _search: [entry.title, entry.description, entry.tags, entry.authors, entry.location].join(' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(),
+          _search: [entry.title, entry.description, entry.tags, entry.software, entry.authors, entry.location].join(' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(),
         });
       }
 
@@ -400,7 +393,9 @@
         }
       }
 
-      params.set('showFilters', this.state.showFilters ? 'true' : 'false');
+      if (this.state.showFilters) {
+        params.set('showFilters', 'true');
+      }
 
       const qs = params.toString();
       const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;

@@ -111,3 +111,15 @@
     </button>
   </div>
 </div>
+<script>
+(function() {
+  var s = document.currentScript;
+  var ctrl = s.previousElementSibling;
+  var btn = ctrl.previousElementSibling;
+  var p = new URLSearchParams(window.location.search);
+  btn.classList.remove('invisible');
+  if (p.get('showFilters') === 'true' || p.has('q') || p.has('sort')) {
+    ctrl.classList.remove('hidden');
+  }
+})();
+</script>
