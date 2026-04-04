@@ -185,11 +185,33 @@
     _matchesFilters(card) {
       for (const [key, activeSet] of Object.entries(this.state.filters)) {
         if (activeSet.size === 0) continue;
+        const cfg = this.config.filters
+          ? this.config.filters.find(f => f.key === key)
+          : null;
+        const aliases = cfg && cfg.aliases ? cfg.aliases : {};
+        const otherExcludes = cfg && cfg.other ? new Set(cfg.other) : null;
         const values = card[key]
           .split(',')
           .map(v => v.trim())
           .filter(Boolean);
-        if (!values.some(v => activeSet.has(v))) return false;
+        let matched = false;
+        for (const active of activeSet) {
+          if (active === 'Other' && otherExcludes) {
+            if (values.length === 0 || values.some(v => !otherExcludes.has(v))) {
+              matched = true;
+              break;
+            }
+          } else if (aliases[active]) {
+            if (values.some(v => aliases[active].includes(v))) {
+              matched = true;
+              break;
+            }
+          } else if (values.includes(active)) {
+            matched = true;
+            break;
+          }
+        }
+        if (!matched) return false;
       }
       return true;
     }
@@ -210,7 +232,7 @@
           const tsKey = `_${prop}Ts`;
           return ((a[tsKey] || a._dateTs) - (b[tsKey] || b._dateTs)) * dir;
         }
-        return String(av).localeCompare(String(bv)) * dir;
+        return String(av).localeCompare(String(bv), undefined, { sensitivity: 'base', ignorePunctuation: true }) * dir;
       });
     }
 
