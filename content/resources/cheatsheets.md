@@ -6,5 +6,5 @@ description: "Quick reference guides for our tools and packages"
 date: 2025-01-30
 outputs:
   - html
-  - CardIndex
+  - ItemIndex
 ---

@@ -2,6 +2,6 @@
 {{- $resources := where (site.GetPage "/resources").Pages "Params.resource_type" $resourceType -}}
 {{- $entries := slice -}}
 {{- range $resources -}}
-  {{- $entries = $entries | append (partial "card-index-entry.html" (dict "page" .)) -}}
+  {{- $entries = $entries | append (partial "item-index-entry.html" (dict "page" .)) -}}
 {{- end -}}
 {{- $entries | jsonify -}}

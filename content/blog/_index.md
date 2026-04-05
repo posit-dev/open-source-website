@@ -3,7 +3,7 @@ title: "Blog"
 outputs:
   - html
   - rss
-  - CardIndex
+  - ItemIndex
 cascade:
   - Toc: true
 ---

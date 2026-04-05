@@ -2,7 +2,7 @@
 {{- $entries := slice -}}
 {{- range $softwareSection.Pages -}}
   {{- if .Params.external.stars -}}
-    {{- $entries = $entries | append (partial "card-index-entry.html" (dict "page" .)) -}}
+    {{- $entries = $entries | append (partial "item-index-entry.html" (dict "page" .)) -}}
   {{- end -}}
 {{- end -}}
 {{- $entries | jsonify -}}

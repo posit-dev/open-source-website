@@ -19,6 +19,6 @@
       {{- $section = "upcoming" -}}
     {{- end -}}
   {{- end -}}
-  {{- $entries = $entries | append (partial "card-index-entry.html" (dict "page" . "section" $section)) -}}
+  {{- $entries = $entries | append (partial "item-index-entry.html" (dict "page" . "section" $section)) -}}
 {{- end -}}
 {{- $entries | jsonify -}}

@@ -9,11 +9,11 @@
     };
   }
 
-  class CardManager {
+  class ItemManager {
     constructor(containerEl) {
       this.container = containerEl;
       this.config = JSON.parse(containerEl.dataset.filterConfig || '{}');
-      this.cards = [];
+      this.items = [];
       this.totalCount = 0;
       this.sectionHeadings = [];
       const parent = containerEl.parentNode;
@@ -113,22 +113,22 @@
     }
 
     async _hydrate() {
-      // Fetch card index JSON
-      const indexUrl = window.location.pathname.replace(/\/$/, '') + '/card-index.json';
+      // Fetch item index JSON
+      const indexUrl = window.location.pathname.replace(/\/$/, '') + '/item-index.json';
       let index = [];
       try {
         const res = await fetch(indexUrl);
         if (res.ok) index = await res.json();
       } catch (e) {
-        // Fall back to empty index — cards will still render but won't be searchable
+        // Fall back to empty index — items will still render but won't be searchable
       }
 
       // Match JSON entries to DOM elements by id
-      this.cards = [];
+      this.items = [];
       for (const entry of index) {
         const el = this.container.querySelector('#' + CSS.escape(entry.id));
         if (!el) continue;
-        this.cards.push({
+        this.items.push({
           el,
           title: entry.title || '',
           description: entry.description || '',
@@ -151,7 +151,7 @@
         });
       }
 
-      this.totalCount = this.cards.length;
+      this.totalCount = this.items.length;
       this.sectionHeadings = Array.from(
         this.container.querySelectorAll('[data-section-heading]')
       );
@@ -242,18 +242,18 @@
       }
     }
 
-    _matchesSearch(card, tokens) {
+    _matchesSearch(item, tokens) {
       if (!tokens.length) return true;
-      return tokens.every(t => card._search.includes(t));
+      return tokens.every(t => item._search.includes(t));
     }
 
-    _matchesFilters(card) {
+    _matchesFilters(item) {
       for (const [key, activeSet] of Object.entries(this.state.filters)) {
         if (activeSet.size === 0) continue;
         const cfg = this._filterCfgMap[key] || {};
         const aliases = cfg.aliases || {};
         const otherExcludes = cfg.otherExcludes || null;
-        const values = card[key]
+        const values = item[key]
           .split(',')
           .map(v => v.trim())
           .filter(Boolean);
@@ -279,15 +279,15 @@
       return true;
     }
 
-    _sortCards(cards) {
+    _sortItems(items) {
       const { key, direction } = this.state.sort;
-      if (!key) return cards;
+      if (!key) return items;
       const cfg = this.config.sort ? this.config.sort.find(s => s.key === key) : null;
-      if (!cfg) return cards;
+      if (!cfg) return items;
       const dir = direction === 'desc' ? -1 : 1;
       const prop = key.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
 
-      return cards.slice().sort((a, b) => {
+      return items.slice().sort((a, b) => {
         const av = a[prop];
         const bv = b[prop];
         if (cfg.type === 'number') return (av - bv) * dir;
@@ -303,7 +303,7 @@
     }
 
     _reorder() {
-      const allSorted = this._sortCards(this.cards);
+      const allSorted = this._sortItems(this.items);
       const frag = document.createDocumentFragment();
 
       if (this.sectionHeadings.length > 0) {
@@ -327,10 +327,10 @@
       this.container.appendChild(frag);
     }
 
-    _render(visibleCards) {
-      const visibleSet = new Set(visibleCards.map(c => c.el));
+    _render(visibleItems) {
+      const visibleSet = new Set(visibleItems.map(c => c.el));
 
-      this.cards.forEach(c => {
+      this.items.forEach(c => {
         c.el.classList.toggle('hidden', !visibleSet.has(c.el));
       });
 
@@ -341,7 +341,7 @@
             h.classList.add('hidden');
           } else {
             const section = h.dataset.sectionHeading;
-            const hasVisible = visibleCards.some(c => c.section === section);
+            const hasVisible = visibleItems.some(c => c.section === section);
             h.classList.toggle('hidden', !hasVisible);
           }
         });
@@ -371,11 +371,11 @@
         this._lastSortDir = sortDir;
       }
 
-      let visible = this.cards.filter(
+      let visible = this.items.filter(
         c => this._matchesSearch(c, tokens) && this._matchesFilters(c)
       );
 
-      visible = this._sortCards(visible);
+      visible = this._sortItems(visible);
       this._render(visible);
       this._updateCount(visible.length);
       this._updateResetBtn();
@@ -518,9 +518,9 @@
   }
 
   function init() {
-    const containers = document.querySelectorAll('[data-card-container]');
+    const containers = document.querySelectorAll('[data-item-container]');
     if (!containers.length) return;
-    containers.forEach(el => new CardManager(el));
+    containers.forEach(el => new ItemManager(el));
   }
 
   if (document.readyState === 'loading') {

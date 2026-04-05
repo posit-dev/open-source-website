@@ -19,7 +19,7 @@
   {{ end }}
   {{ $page = site.GetPage $slug }}
   {{ if not $page }}
-    {{ errorf "card partial: page not found for slug '%s' (resolved to '%s')" .item $slug }}
+    {{ errorf "item partial: page not found for slug '%s' (resolved to '%s')" .item $slug }}
   {{ end }}
 {{ end }}
 
@@ -280,7 +280,7 @@
 {{/* ============================================================
      DATA ATTRIBUTE (for client-side filter/sort hydration)
      Only added to card/tile/row formats, NOT hero.
-     Card metadata is loaded from a separate JSON file.
+     Item metadata is loaded from a separate JSON file.
      ============================================================ */}}
 
 {{/* ============================================================

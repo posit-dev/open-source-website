@@ -1,11 +1,11 @@
 {{/*
-  card-index-entry.html — Build a card metadata dict for a page.
+  item-index-entry.html — Build an item metadata dict for a page.
 
   Input context (dict):
     "page"    — the Page object
     "section" — (optional) section label, e.g. "current", "upcoming", "past"
 
-  Returns: a dict with all card metadata fields.
+  Returns: a dict with all item metadata fields.
 */}}
 {{ $page := .page }}
 {{ $section := index . "section" | default "" }}

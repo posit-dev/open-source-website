@@ -1,5 +1,0 @@
-{{- $entries := slice -}}
-{{- range .Pages -}}
-  {{- $entries = $entries | append (partial "card-index-entry.html" (dict "page" .)) -}}
-{{- end -}}
-{{- $entries | jsonify -}}

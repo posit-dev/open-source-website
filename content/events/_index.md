@@ -3,7 +3,7 @@ title: "Events"
 outputs:
   - html
   - rss
-  - CardIndex
+  - ItemIndex
 cascade:
   outputs:
     - html

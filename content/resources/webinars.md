@@ -6,5 +6,5 @@ description: "Live and recorded webinar sessions"
 date: 2025-01-30
 outputs:
   - html
-  - CardIndex
+  - ItemIndex
 ---
