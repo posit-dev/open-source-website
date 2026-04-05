@@ -1,0 +1,228 @@
+blog:
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: categories
+      label: Topics
+      logic: or
+      values:
+        - Machine Learning
+        - Artificial Intelligence
+        - Visualization
+        - Interactive Apps
+        - Publishing
+        - MLOps and Admin
+        - Data Wrangling
+        - Best Practices
+        - Community
+    - key: languages
+      label: Languages
+      logic: or
+      values:
+        - Python
+        - R
+        - SQL
+        - Rust
+        - JavaScript
+        - Other
+      aliases:
+        JavaScript:
+          - JavaScript
+          - TypeScript
+      other:
+        - Python
+        - R
+        - SQL
+        - Rust
+        - JavaScript
+        - TypeScript
+
+categories:
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: type
+      label: Type
+      logic: or
+      values:
+        - blog post
+        - software
+        - event
+        - video
+        - cheatsheet
+
+cheatsheet:
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: categories
+      label: Topics
+      logic: or
+    - key: languages
+      label: Languages
+      logic: or
+      values:
+        - Python
+        - R
+        - Other
+      other:
+        - Python
+        - R
+
+events:
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+    - key: location
+      label: Location
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: languages
+      label: Languages
+      logic: or
+      values:
+        - Python
+        - R
+        - Other
+      other:
+        - Python
+        - R
+
+software:
+  sort:
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+      default: true
+    - key: stars
+      label: Most Stars
+      type: number
+      direction: desc
+    - key: first-commit
+      label: Newest (First Commit)
+      type: date
+      direction: desc
+  defaultSort: title
+  filters:
+    - key: languages
+      label: Languages
+      logic: or
+
+tags:
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: type
+      label: Type
+      logic: or
+      values:
+        - blog post
+        - software
+        - event
+        - video
+        - cheatsheet
+
+tutorial:
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: categories
+      label: Topics
+      logic: or
+
+video:
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+    - key: views
+      label: Most Viewed
+      type: number
+      direction: desc
+    - key: duration
+      label: Duration
+      type: number
+      direction: desc
+  defaultSort: date
+  filters:
+    - key: categories
+      label: Topics
+      logic: or
+
+webinar:
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: categories
+      label: Topics
+      logic: or
