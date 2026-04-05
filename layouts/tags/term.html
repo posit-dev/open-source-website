@@ -10,15 +10,15 @@
 
   {{ partial "filter-controls.html" (dict
     "sort" (slice
-      (dict "key" "date" "label" "Newest First" "type" "date" "direction" "desc" "default" true)
-      (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc")
+      (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true)
+      (dict "key" "title" "label" "Title" "type" "string" "direction" "asc")
     )
     "filters" (slice
       (dict "key" "type" "label" "Type" "logic" "or" "values" $displayTypes)
     )
   ) }}
 
-  <div data-card-container data-filter-config='{{ dict "sort" (slice (dict "key" "date" "label" "Newest First" "type" "date" "direction" "desc" "default" true) (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc")) "filters" (slice (dict "key" "type" "label" "Type" "logic" "or")) "defaultSort" "date" | jsonify }}'
+  <div data-card-container data-filter-config='{{ dict "sort" (slice (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true) (dict "key" "title" "label" "Title" "type" "string" "direction" "asc")) "filters" (slice (dict "key" "type" "label" "Type" "logic" "or")) "defaultSort" "date" | jsonify }}'
        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {{- range .Pages.ByDate.Reverse -}}
       {{ partial "item.html" (dict "page" .) }}

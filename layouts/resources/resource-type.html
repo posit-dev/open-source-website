@@ -29,8 +29,8 @@
 
   {{/* Build sort options — add views/duration only for videos */}}
   {{ $sortOptions := slice
-    (dict "key" "date" "label" "Newest First" "type" "date" "direction" "desc" "default" true)
-    (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc")
+    (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true)
+    (dict "key" "title" "label" "Title" "type" "string" "direction" "asc")
   }}
   {{ if $isVideo }}
     {{ $sortOptions = $sortOptions | append

@@ -54,7 +54,7 @@
   {{ partial "filter-controls.html" (dict
     "sort" (slice
       (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true)
-      (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc")
+      (dict "key" "title" "label" "Title" "type" "string" "direction" "asc")
       (dict "key" "location" "label" "Location" "type" "string" "direction" "asc")
     )
     "filters" (slice
@@ -62,7 +62,7 @@
     )
   ) }}
 
-  <div data-card-container data-filter-config='{{ dict "sort" (slice (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true) (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc") (dict "key" "location" "label" "Location" "type" "string" "direction" "asc")) "filters" (slice (dict "key" "languages" "label" "Languages" "logic" "or" "aliases" $languageAliases "other" $languageOther)) "defaultSort" "date" | jsonify }}'
+  <div data-card-container data-filter-config='{{ dict "sort" (slice (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true) (dict "key" "title" "label" "Title" "type" "string" "direction" "asc") (dict "key" "location" "label" "Location" "type" "string" "direction" "asc")) "filters" (slice (dict "key" "languages" "label" "Languages" "logic" "or" "aliases" $languageAliases "other" $languageOther)) "defaultSort" "date" | jsonify }}'
        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
     {{/* Current Events */}}

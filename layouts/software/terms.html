@@ -40,7 +40,7 @@
 
   {{ partial "filter-controls.html" (dict
     "sort" (slice
-      (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc" "default" true)
+      (dict "key" "title" "label" "Title" "type" "string" "direction" "asc" "default" true)
       (dict "key" "stars" "label" "Most Stars" "type" "number" "direction" "desc")
       (dict "key" "first-commit" "label" "Newest (First Commit)" "type" "date" "direction" "desc")
     )
@@ -49,7 +49,7 @@
     )
   ) }}
 
-  <div data-card-container data-filter-config='{{ dict "sort" (slice (dict "key" "title" "label" "Title (A-Z)" "type" "string" "direction" "asc" "default" true) (dict "key" "stars" "label" "Most Stars" "type" "number" "direction" "desc") (dict "key" "first-commit" "label" "Newest (First Commit)" "type" "date" "direction" "desc")) "filters" (slice (dict "key" "languages" "label" "Languages" "logic" "or")) "defaultSort" "title" | jsonify }}'
+  <div data-card-container data-filter-config='{{ dict "sort" (slice (dict "key" "title" "label" "Title" "type" "string" "direction" "asc" "default" true) (dict "key" "stars" "label" "Most Stars" "type" "number" "direction" "desc") (dict "key" "first-commit" "label" "Newest (First Commit)" "type" "date" "direction" "desc")) "filters" (slice (dict "key" "languages" "label" "Languages" "logic" "or")) "defaultSort" "title" | jsonify }}'
        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
     {{ range sort $softwareSection.Pages "Title" }}
       {{ if .Params.external.stars }}

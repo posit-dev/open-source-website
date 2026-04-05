@@ -14,14 +14,14 @@
 {{/* ---- Always-visible bar: Count + Filters toggle + Reset ---- */}}
 <div data-filter-bar class="invisible flex items-center justify-end gap-3 mb-4 text-sm text-gray-600">
   <span>
-    Showing <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
+    <span class="hidden sm:inline">Showing</span> <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
   </span>
   <div class="flex items-center gap-2">
     <button
       data-filter-show
       class="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
     >
-      <svg class="w-4 h-4 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg class="w-4 h-4 flex-none hidden sm:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
       </svg>
       <span data-filter-show-label>Show Filters</span>
@@ -30,7 +30,7 @@
       data-filter-reset
       class="hidden items-center gap-1 px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
     >
-      <span class="icon-[boxicons--refresh-cw] w-4 h-4 flex-none"></span>
+      <span class="icon-[boxicons--refresh-cw] w-4 h-4 flex-none hidden sm:block"></span>
       Reset Filters
     </button>
   </div>
@@ -41,7 +41,7 @@
   <div class="flex flex-wrap items-center gap-3">
 
     {{/* Search input */}}
-    <div class="relative flex-1 min-w-[200px]">
+    <div class="relative w-full sm:w-auto sm:flex-1 sm:min-w-[200px]">
       <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
         <svg class="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
