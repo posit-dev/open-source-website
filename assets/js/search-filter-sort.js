@@ -277,7 +277,7 @@
 
       if (this.sectionHeadings.length > 0) {
         const isDefaultSort =
-          this.config.defaultSort && this.state.sort.key === this.config.defaultSort;
+          this.config.defaultSort && (!this.state.sort.key || this.state.sort.key === this.config.defaultSort);
 
         if (isDefaultSort) {
           const sectionOrder = this.sectionHeadings.map(h => h.dataset.sectionHeading);
@@ -308,7 +308,7 @@
 
       if (this.sectionHeadings.length > 0) {
         const isDefaultSort =
-          this.config.defaultSort && this.state.sort.key === this.config.defaultSort;
+          this.config.defaultSort && (!this.state.sort.key || this.state.sort.key === this.config.defaultSort);
         this.sectionHeadings.forEach(h => {
           if (!isDefaultSort) {
             h.classList.add('hidden');
