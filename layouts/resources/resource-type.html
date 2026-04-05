@@ -16,12 +16,41 @@
   {{ $resourceType := .Params.resource_type_filter }}
   {{ $resources := where (site.GetPage "/resources").Pages "Params.resource_type" $resourceType }}
 
+  {{/* Collect categories dynamically */}}
+  {{ $catSet := slice }}
+  {{ range $resources }}
+    {{ range .GetTerms "categories" }}
+      {{ if not (in $catSet .LinkTitle) }}
+        {{ $catSet = $catSet | append .LinkTitle }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Load config from YAML and inject dynamic category values */}}
+  {{ $baseCfg := index site.Data.filters $resourceType }}
+  {{ $filters := slice }}
+  {{ range $baseCfg.filters }}
+    {{ if eq .key "categories" }}
+      {{ if gt (len $catSet) 0 }}
+        {{ $filters = $filters | append (merge . (dict "values" $catSet)) }}
+      {{ end }}
+    {{ else }}
+      {{ $filters = $filters | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $cfg := merge $baseCfg (dict "filters" $filters) }}
+
   {{ if $resources }}
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+  {{ partial "filter-controls.html" $cfg }}
+
+  <div data-item-container data-filter-config='{{ $cfg | jsonify }}'
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
     {{ range $resources.ByDate.Reverse }}
       {{ partial "item.html" (dict "page" .) }}
     {{ end }}
   </div>
+
   {{ else }}
   <div class="text-center py-12 mx-2 md:mx-0">
     <p class="text-xl text-gray-600">No {{ lower .Title }} found yet. Check back soon!</p>

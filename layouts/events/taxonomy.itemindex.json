@@ -1,0 +1,24 @@
+{{- $eventsSection := site.GetPage "/events" -}}
+{{- $now := now -}}
+{{- $entries := slice -}}
+{{- range $eventsSection.Pages -}}
+  {{- $startDate := .Params.start_date -}}
+  {{- $endDate := .Params.end_date -}}
+  {{- $section := "past" -}}
+  {{- if and $startDate $endDate -}}
+    {{- $start := time $startDate -}}
+    {{- $end := time $endDate -}}
+    {{- if and (le $start $now) (ge $end $now) -}}
+      {{- $section = "current" -}}
+    {{- else if gt $start $now -}}
+      {{- $section = "upcoming" -}}
+    {{- end -}}
+  {{- else if $startDate -}}
+    {{- $start := time $startDate -}}
+    {{- if gt $start $now -}}
+      {{- $section = "upcoming" -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $entries = $entries | append (partial "item-index-entry.html" (dict "page" . "section" $section)) -}}
+{{- end -}}
+{{- $entries | jsonify -}}

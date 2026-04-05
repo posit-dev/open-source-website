@@ -609,6 +609,54 @@ mark[data-pagefind-highlight],
 
 }
 
+/* Card component classes — reduce repeated markup in item.html */
+@layer components {
+  /* Tag/category pill */
+  .pill {
+    @apply text-xs font-semibold uppercase tracking-wide whitespace-nowrap rounded-full px-2 py-0.5 bg-blue-100 text-blue-700;
+  }
+
+  /* Linked pill (hero pages) */
+  .pill-link {
+    @apply text-xs font-semibold uppercase tracking-wide rounded-full px-2 py-0.5 bg-blue-100 text-blue-700 hover:bg-blue-200;
+  }
+
+  /* Card/tile/row shared link wrapper */
+  .card-link {
+    @apply no-underline! relative brightness-100 hover:brightness-110 transition duration-200 overflow-hidden;
+  }
+
+  /* Badge (section indicator on cards) */
+  .card-badge {
+    @apply flex items-center text-xs gap-x-1 px-2 py-0.5 rounded-full bg-blue-100 text-blue-700;
+  }
+
+  /* Hero metadata icon */
+  .hero-icon {
+    @apply w-5 h-5 flex-none text-gray-400;
+  }
+
+  /* Hero metadata row */
+  .hero-meta {
+    @apply flex items-center gap-2 text-gray-600;
+  }
+
+  /* Hero metadata row (profile variant) */
+  .hero-meta-lg {
+    @apply flex items-center gap-2 text-base text-gray-600;
+  }
+
+  /* Inline metadata item (tile/row) with icon */
+  .meta-item {
+    @apply flex items-center gap-1 whitespace-nowrap;
+  }
+
+  /* Metadata row in tile format */
+  .tile-meta {
+    @apply flex flex-grow items-center gap-x-3 text-xs font-semibold text-gray-500 flex-wrap;
+  }
+}
+
 /* Blog-specific styles */
 @layer components {
   /* Blog card hover effect */

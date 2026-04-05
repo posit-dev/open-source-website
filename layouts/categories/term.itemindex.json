@@ -1,0 +1,5 @@
+{{- $entries := slice -}}
+{{- range .Pages -}}
+  {{- $entries = $entries | append (partial "item-index-entry.html" (dict "page" .)) -}}
+{{- end -}}
+{{- $entries | jsonify -}}

@@ -19,11 +19,18 @@ showReadingTime = false
   event = 'events'
   resource = 'resources'
 
+[outputFormats.ItemIndex]
+  mediaType = "application/json"
+  baseName = "item-index"
+  isPlainText = true
+  notAlternative = true
+
 [outputs]
   home = ['html']
-  section = ['html']
-  taxonomy = ['html']
-  term = ['html']
+  section = ['html', 'ItemIndex']
+  taxonomy = ['html', 'ItemIndex']
+  term = ['html', 'ItemIndex']
+  page = ['html']
 
 [services]
   [services.rss]

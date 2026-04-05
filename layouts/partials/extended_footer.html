@@ -79,4 +79,10 @@
 <script src="{{ $jsToc.RelPermalink }}" defer></script>
 {{- end -}}
 
+{{- $filterSort := resources.Get "js/search-filter-sort.js" | js.Build "search-filter-sort.js" -}}
+{{- if not hugo.IsDevelopment }}
+  {{- $filterSort = $filterSort | minify | fingerprint -}}
+{{ end -}}
+<script src="{{ $filterSort.RelPermalink }}" defer></script>
+
 {{- partial "custom_footer.html" . -}}

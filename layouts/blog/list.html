@@ -1,42 +1,23 @@
-{{ define "head" }}
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-{{ end }}
-
 {{ define "main" }}
 <div class="flex flex-col w-full relative mt-6 max-w-7xl mx-auto" data-pagefind-ignore>
 
-  {{- /* Blog filters */ -}}
-  {{ partial "blog-filters.html" (dict) }}
+  {{- $allPosts := .RegularPages -}}
 
-  {{- $paginator := .Paginate .RegularPages 20 -}}
-  {{- $posts := $paginator.Pages -}}
+  {{ with (site.GetPage "/featured/blog").Content }}
+  <div class="prose max-w-none mb-8">
+    {{ . }}
+  </div>
+  {{ end }}
 
-  {{- /* Featured section - only on page 1 */ -}}
-  {{- if eq $paginator.PageNumber 1 -}}
-    {{ with (site.GetPage "/featured/blog").Content }}
-    <div class="prose max-w-none mb-8">
-      {{ . }}
-    </div>
-    {{ end }}
-  {{- end -}}
+  {{ $cfg := site.Data.filters.blog }}
 
-  {{- /* "Latest" section header */ -}}
-  <section>
-    <h2 class="text-sm font-semibold mb-6 text-gray-600 uppercase tracking-wider">
-      {{- if eq $paginator.PageNumber 1 -}}Latest{{- else -}}All Posts{{- end -}}
-    </h2>
+  {{ partial "filter-controls.html" $cfg }}
 
-    {{- /* 3-column grid */ -}}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {{- range $post := $posts -}}
-        {{- if not $post.Params.featured -}}
-          {{ partial "item.html" (dict "page" $post "hide-badge" true) }}
-        {{- end -}}
-      {{- end -}}
-    </div>
-  </section>
-
-  {{- /* Pagination */ -}}
-  {{ partial "pagination.html" . }}
+  <div data-item-container data-filter-config='{{ $cfg | jsonify }}'
+       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {{- range $allPosts.ByDate.Reverse -}}
+      {{ partial "item.html" (dict "page" . "hide-badge" true) }}
+    {{- end -}}
+  </div>
 </div>
 {{ end }}
