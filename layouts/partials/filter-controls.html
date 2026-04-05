@@ -11,19 +11,33 @@
 {{ $filters := .filters | default slice }}
 {{ $defaultSort := .defaultSort | default "" }}
 
+{{/* ---- Always-visible bar: Count + Filters toggle + Reset ---- */}}
+<div data-filter-bar class="invisible flex items-center justify-end gap-3 mb-4 text-sm text-gray-600">
+  <span>
+    Showing <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
+  </span>
+  <div class="flex items-center gap-2">
+    <button
+      data-filter-show
+      class="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
+    >
+      <svg class="w-4 h-4 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+      </svg>
+      <span data-filter-show-label>Show Filters</span>
+    </button>
+    <button
+      data-filter-reset
+      class="hidden items-center gap-1 px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
+    >
+      <span class="icon-[boxicons--refresh-cw] w-4 h-4 flex-none"></span>
+      Reset Filters
+    </button>
+  </div>
+</div>
 
-<button
-  data-filter-show
-  class="invisible inline-flex self-end items-center gap-1 mb-4 px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
->
-  <svg class="w-4 h-4 flex-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-  </svg>
-  Filters
-</button>
-<div data-filter-controls class="hidden sticky top-0 z-30 bg-white pt-4 pb-4 mb-4 space-y-4">
-
-  {{/* ---- Row 1: Search + Sort + Mobile filter toggle ---- */}}
+{{/* ---- Collapsible controls: Search + Filters + Sort ---- */}}
+<div data-filter-controls class="hidden sticky top-0 z-30 bg-white pt-4 pb-4 mb-4">
   <div class="flex flex-wrap items-center gap-3">
 
     {{/* Search input */}}
@@ -41,83 +55,65 @@
       />
     </div>
 
+    {{/* Filter dropdowns */}}
+    {{ range $filter := $filters }}
+    <div class="relative" data-filter-dropdown="{{ $filter.key }}">
+      <button
+        type="button"
+        data-filter-trigger="{{ $filter.key }}"
+        class="inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer whitespace-nowrap relative"
+      >
+        {{ $filter.label }}
+        <span data-filter-badge="{{ $filter.key }}" class="hidden px-1.5 text-xs font-semibold text-white bg-blue-600 rounded-full leading-5">0</span>
+        <span class="icon-[boxicons--chevron-down] w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></span>
+      </button>
+      <div data-filter-panel="{{ $filter.key }}" class="hidden absolute left-0 top-full mt-1 min-w-[12rem] bg-white border border-gray-200 rounded-lg shadow-lg z-50 py-1 max-h-64 overflow-y-auto">
+        {{ range $filter.values }}
+        <button
+          type="button"
+          data-filter-group="{{ $filter.key }}"
+          data-filter-value="{{ . }}"
+          class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors whitespace-nowrap"
+        >
+          <svg data-filter-check class="w-4 h-4 flex-none text-blue-600 opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span>{{ . }}</span>
+        </button>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
     {{/* Sort dropdown */}}
     {{ if $sort }}
-    <div class="flex items-center gap-2">
-      <label for="filter-sort" class="text-sm font-medium text-gray-700 whitespace-nowrap">Sort by</label>
-      <div class="relative">
+    <div class="relative">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-2.5 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+          </svg>
+        </span>
         <select
           id="filter-sort"
           data-filter-sort
-          class="pl-3 pr-8 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
+          class="pl-8 pr-8 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
         >
           {{ range $sort }}
           <option value="{{ .key }}"{{ if .default }} selected{{ end }}>{{ .label }}</option>
           {{ end }}
         </select>
         <span class="icon-[boxicons--chevron-down] w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></span>
-      </div>
     </div>
     {{ end }}
-
-    {{/* Mobile filter toggle — only if filters exist */}}
-    {{ if $filters }}
-    <button
-      data-filter-toggle
-      aria-expanded="false"
-      class="flex md:hidden items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
-    >
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-      </svg>
-      Filters
-    </button>
-    {{ end }}
-  </div>
-
-  {{/* ---- Row 2+: Filter groups (collapsible on mobile) ---- */}}
-  {{ if $filters }}
-  <div data-filter-body class="hidden md:block space-y-3">
-    {{ range $filter := $filters }}
-    <div>
-      <h2 class="text-xs font-semibold mb-2 text-gray-600 uppercase tracking-wider">{{ $filter.label }}</h2>
-      <div class="flex flex-wrap gap-2">
-        {{ range $filter.values }}
-        <button
-          data-filter-group="{{ $filter.key }}"
-          data-filter-value="{{ . }}"
-          class="px-3 py-1 text-sm font-medium rounded-full border transition-colors hover:border-blue-500 cursor-pointer bg-white text-gray-700 border-gray-300"
-        >
-          {{ . }}
-        </button>
-        {{ end }}
-      </div>
-    </div>
-    {{ end }}
-  </div>
-  {{ end }}
-
-  {{/* ---- Row 3: Result count + Reset ---- */}}
-  <div class="flex items-center justify-between text-sm text-gray-600">
-    <span>
-      Showing <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
-    </span>
-    <button
-      data-filter-reset
-      class="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
-    >
-      <span class="icon-[boxicons--refresh-cw] w-4 h-4 flex-none"></span>
-      Reset filters
-    </button>
   </div>
 </div>
 <script>
 (function() {
   var s = document.currentScript;
   var ctrl = s.previousElementSibling;
-  var btn = ctrl.previousElementSibling;
+  var bar = ctrl.previousElementSibling;
   var p = new URLSearchParams(window.location.search);
-  btn.classList.remove('invisible');
+  bar.classList.remove('invisible');
   if (p.get('showFilters') === 'true' || p.has('q') || p.has('sort')) {
     ctrl.classList.remove('hidden');
   }

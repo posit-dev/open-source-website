@@ -18,10 +18,13 @@
       this.sectionHeadings = [];
       const parent = containerEl.parentNode;
       this.controlsEl = parent.querySelector('[data-filter-controls]');
+      this.barEl = parent.querySelector('[data-filter-bar]');
       this.showBtn = parent.querySelector('[data-filter-show]');
       this._stickyObserved = false;
+      if (this.barEl) {
+        this.barEl.classList.remove('invisible');
+      }
       if (this.showBtn) {
-        this.showBtn.classList.remove('invisible');
         this.showBtn.addEventListener('click', () => {
           if (this.controlsEl.classList.contains('hidden')) {
             this.state.showFilters = true;
@@ -30,6 +33,7 @@
             this.state.showFilters = false;
             this.controlsEl.classList.add('hidden');
           }
+          this._updateShowBtnLabel();
           this._updateURL();
         });
       }
@@ -58,6 +62,7 @@
       await this._hydrate();
       this._readURL();
       if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
+      this._updateShowBtnLabel();
       this._bindControls();
       this._applyFilters();
       this._interactive = true;
@@ -169,43 +174,61 @@
         });
       }
 
+      // Filter dropdowns
+      this.controlsEl.querySelectorAll('[data-filter-trigger]').forEach(trigger => {
+        const key = trigger.dataset.filterTrigger;
+        const panel = this.controlsEl.querySelector(`[data-filter-panel="${key}"]`);
+        if (!panel) return;
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => {
+            if (p !== panel) p.classList.add('hidden');
+          });
+          panel.classList.toggle('hidden');
+        });
+        panel.addEventListener('click', (e) => e.stopPropagation());
+      });
+
+      document.addEventListener('click', () => {
+        if (!this.controlsEl) return;
+        this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => {
+          p.classList.add('hidden');
+        });
+      });
+
       const filterBtns = this.controlsEl.querySelectorAll('[data-filter-group]');
       filterBtns.forEach(btn => {
         const group = btn.dataset.filterGroup;
         const value = btn.dataset.filterValue;
+        const check = btn.querySelector('[data-filter-check]');
         if (this.state.filters[group] && this.state.filters[group].has(value)) {
-          btn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
-          btn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
+          if (check) check.classList.remove('opacity-0');
         }
         btn.addEventListener('click', () => {
           const set = this.state.filters[group];
           if (!set) return;
           if (set.has(value)) {
             set.delete(value);
-            btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
-            btn.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
+            if (check) check.classList.add('opacity-0');
           } else {
             set.add(value);
-            btn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
-            btn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
+            if (check) check.classList.remove('opacity-0');
           }
+          this._updateBadge(group);
           this._applyFilters();
         });
       });
 
-      const resetBtn = this.controlsEl.querySelector('[data-filter-reset]');
-      if (resetBtn) {
-        resetBtn.addEventListener('click', () => this.reset());
+      // Set initial badge counts
+      for (const key of Object.keys(this.state.filters)) {
+        this._updateBadge(key);
       }
 
-      const toggleBtn = this.controlsEl.querySelector('[data-filter-toggle]');
-      const filterBody = this.controlsEl.querySelector('[data-filter-body]');
-      if (toggleBtn && filterBody) {
-        toggleBtn.addEventListener('click', () => {
-          const isHidden = filterBody.classList.contains('hidden');
-          filterBody.classList.toggle('hidden', !isHidden);
-          toggleBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
-        });
+      if (this.barEl) {
+        const resetBtn = this.barEl.querySelector('[data-filter-reset]');
+        if (resetBtn) {
+          resetBtn.addEventListener('click', () => this.reset());
+        }
       }
     }
 
@@ -351,6 +374,7 @@
       visible = this._sortCards(visible);
       this._render(visible);
       this._updateCount(visible.length);
+      this._updateResetBtn();
       this._updateURL();
 
       if (this._interactive && this.controlsEl) {
@@ -363,10 +387,38 @@
       }
     }
 
-    _updateCount(count) {
+    _updateShowBtnLabel() {
+      if (!this.showBtn) return;
+      const label = this.showBtn.querySelector('[data-filter-show-label]');
+      if (label) {
+        const isHidden = this.controlsEl.classList.contains('hidden');
+        label.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
+      }
+    }
+
+    _updateResetBtn() {
+      if (!this.barEl) return;
+      const resetBtn = this.barEl.querySelector('[data-filter-reset]');
+      if (resetBtn) {
+        const active = this._hasActiveFilters();
+        resetBtn.classList.toggle('hidden', !active);
+        resetBtn.classList.toggle('inline-flex', active);
+      }
+    }
+
+    _updateBadge(group) {
       if (!this.controlsEl) return;
-      const countEl = this.controlsEl.querySelector('[data-filter-count]');
-      const totalEl = this.controlsEl.querySelector('[data-filter-total]');
+      const badge = this.controlsEl.querySelector(`[data-filter-badge="${group}"]`);
+      if (!badge) return;
+      const count = this.state.filters[group] ? this.state.filters[group].size : 0;
+      badge.textContent = count;
+      badge.classList.toggle('hidden', count === 0);
+    }
+
+    _updateCount(count) {
+      if (!this.barEl) return;
+      const countEl = this.barEl.querySelector('[data-filter-count]');
+      const totalEl = this.barEl.querySelector('[data-filter-total]');
       if (countEl) countEl.textContent = count;
       if (totalEl) totalEl.textContent = this.totalCount;
     }
@@ -455,9 +507,11 @@
         const sortSelect = this.controlsEl.querySelector('[data-filter-sort]');
         if (sortSelect && defaultSortCfg) sortSelect.value = defaultSortCfg.key;
 
-        this.controlsEl.querySelectorAll('[data-filter-group]').forEach(btn => {
-          btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
-          btn.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
+        this.controlsEl.querySelectorAll('[data-filter-check]').forEach(check => {
+          check.classList.add('opacity-0');
+        });
+        this.controlsEl.querySelectorAll('[data-filter-badge]').forEach(badge => {
+          badge.classList.add('hidden');
         });
       }
 
