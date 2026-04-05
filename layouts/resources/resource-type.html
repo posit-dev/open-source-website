@@ -15,9 +15,8 @@
   <!-- Filtered Resources -->
   {{ $resourceType := .Params.resource_type_filter }}
   {{ $resources := where (site.GetPage "/resources").Pages "Params.resource_type" $resourceType }}
-  {{ $isVideo := eq $resourceType "video" }}
 
-  {{/* Collect categories for filter pills */}}
+  {{/* Collect categories dynamically */}}
   {{ $catSet := slice }}
   {{ range $resources }}
     {{ range .GetTerms "categories" }}
@@ -27,49 +26,25 @@
     {{ end }}
   {{ end }}
 
-  {{/* Build sort options — add views/duration only for videos */}}
-  {{ $sortOptions := slice
-    (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true)
-    (dict "key" "title" "label" "Title" "type" "string" "direction" "asc")
-  }}
-  {{ if $isVideo }}
-    {{ $sortOptions = $sortOptions | append
-      (dict "key" "views" "label" "Most Viewed" "type" "number" "direction" "desc")
-      (dict "key" "duration" "label" "Duration" "type" "number" "direction" "desc")
-    }}
+  {{/* Load config from YAML and inject dynamic category values */}}
+  {{ $baseCfg := index site.Data.filters $resourceType }}
+  {{ $filters := slice }}
+  {{ range $baseCfg.filters }}
+    {{ if eq .key "categories" }}
+      {{ if gt (len $catSet) 0 }}
+        {{ $filters = $filters | append (merge . (dict "values" $catSet)) }}
+      {{ end }}
+    {{ else }}
+      {{ $filters = $filters | append . }}
+    {{ end }}
   {{ end }}
-
-  {{/* Language filter — for cheatsheets */}}
-  {{ $isCheatsheet := eq $resourceType "cheatsheet" }}
-  {{ $languageAliases := dict }}
-  {{ $languageOther := slice "Python" "R" }}
-
-  {{/* Build filter groups */}}
-  {{ $filterGroups := slice }}
-  {{ if gt (len $catSet) 0 }}
-    {{ $filterGroups = $filterGroups | append (dict "key" "categories" "label" "Topics" "logic" "or" "values" $catSet) }}
-  {{ end }}
-  {{ if $isCheatsheet }}
-    {{ $filterGroups = $filterGroups | append (dict "key" "languages" "label" "Languages" "logic" "or" "values" (slice "Python" "R" "Other") "aliases" $languageAliases "other" $languageOther) }}
-  {{ end }}
+  {{ $cfg := merge $baseCfg (dict "filters" $filters) }}
 
   {{ if $resources }}
 
-  {{/* Build filter config for JS (without pill values, which are UI-only) */}}
-  {{ $filterConfig := slice }}
-  {{ if gt (len $catSet) 0 }}
-    {{ $filterConfig = $filterConfig | append (dict "key" "categories" "label" "Topics" "logic" "or") }}
-  {{ end }}
-  {{ if $isCheatsheet }}
-    {{ $filterConfig = $filterConfig | append (dict "key" "languages" "label" "Languages" "logic" "or" "aliases" $languageAliases "other" $languageOther) }}
-  {{ end }}
+  {{ partial "filter-controls.html" $cfg }}
 
-  {{ partial "filter-controls.html" (dict
-    "sort" $sortOptions
-    "filters" $filterGroups
-  ) }}
-
-  <div data-card-container data-filter-config='{{ dict "sort" $sortOptions "filters" $filterConfig "defaultSort" "date" | jsonify }}'
+  <div data-card-container data-filter-config='{{ $cfg | jsonify }}'
        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
     {{ range $resources.ByDate.Reverse }}
       {{ partial "item.html" (dict "page" .) }}

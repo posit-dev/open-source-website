@@ -1,0 +1,23 @@
+sort:
+  - key: date
+    label: Date
+    type: date
+    direction: desc
+    default: true
+  - key: title
+    label: Title
+    type: string
+    direction: asc
+  - key: views
+    label: Most Viewed
+    type: number
+    direction: desc
+  - key: duration
+    label: Duration
+    type: number
+    direction: desc
+defaultSort: date
+filters:
+  - key: categories
+    label: Topics
+    logic: or

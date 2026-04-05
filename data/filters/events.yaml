@@ -1,0 +1,26 @@
+sort:
+  - key: date
+    label: Date
+    type: date
+    direction: desc
+    default: true
+  - key: title
+    label: Title
+    type: string
+    direction: asc
+  - key: location
+    label: Location
+    type: string
+    direction: asc
+defaultSort: date
+filters:
+  - key: languages
+    label: Languages
+    logic: or
+    values:
+      - Python
+      - R
+      - Other
+    other:
+      - Python
+      - R

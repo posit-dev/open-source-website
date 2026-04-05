@@ -50,6 +50,18 @@
         });
       }
 
+      this._defaultSortCfg = this.config.sort
+        ? this.config.sort.find(s => s.default) || this.config.sort[0]
+        : null;
+      this._filterCfgMap = {};
+      if (this.config.filters) {
+        this.config.filters.forEach(f => {
+          this._filterCfgMap[f.key] = {
+            aliases: f.aliases || {},
+            otherExcludes: f.other ? new Set(f.other) : null,
+          };
+        });
+      }
       this._lastSortKey = '';
       this._lastSortDir = 'asc';
       this._needsReorder = false;
@@ -73,11 +85,12 @@
       for (const set of Object.values(this.state.filters)) {
         if (set.size > 0) return true;
       }
-      const defaultSortCfg = this.config.sort
-        ? this.config.sort.find(s => s.default) || this.config.sort[0]
-        : null;
-      if (this.state.sort.key && defaultSortCfg && this.state.sort.key !== defaultSortCfg.key) return true;
+      if (this.state.sort.key && this._defaultSortCfg && this.state.sort.key !== this._defaultSortCfg.key) return true;
       return false;
+    }
+
+    _isDefaultSort() {
+      return this.config.defaultSort && (!this.state.sort.key || this.state.sort.key === this.config.defaultSort);
     }
 
     _showControls() {
@@ -161,10 +174,7 @@
 
       const sortSelect = this.controlsEl.querySelector('[data-filter-sort]');
       if (sortSelect) {
-        const defaultSortCfg = this.config.sort
-          ? this.config.sort.find(s => s.default) || this.config.sort[0]
-          : null;
-        sortSelect.value = this.state.sort.key || (defaultSortCfg ? defaultSortCfg.key : '');
+        sortSelect.value = this.state.sort.key || (this._defaultSortCfg ? this._defaultSortCfg.key : '');
         sortSelect.addEventListener('change', () => {
           const key = sortSelect.value;
           const cfg = this.config.sort.find(s => s.key === key);
@@ -240,11 +250,9 @@
     _matchesFilters(card) {
       for (const [key, activeSet] of Object.entries(this.state.filters)) {
         if (activeSet.size === 0) continue;
-        const cfg = this.config.filters
-          ? this.config.filters.find(f => f.key === key)
-          : null;
-        const aliases = cfg && cfg.aliases ? cfg.aliases : {};
-        const otherExcludes = cfg && cfg.other ? new Set(cfg.other) : null;
+        const cfg = this._filterCfgMap[key] || {};
+        const aliases = cfg.aliases || {};
+        const otherExcludes = cfg.otherExcludes || null;
         const values = card[key]
           .split(',')
           .map(v => v.trim())
@@ -299,10 +307,7 @@
       const frag = document.createDocumentFragment();
 
       if (this.sectionHeadings.length > 0) {
-        const isDefaultSort =
-          this.config.defaultSort && (!this.state.sort.key || this.state.sort.key === this.config.defaultSort);
-
-        if (isDefaultSort) {
+        if (this._isDefaultSort()) {
           const sectionOrder = this.sectionHeadings.map(h => h.dataset.sectionHeading);
           sectionOrder.forEach(section => {
             const heading = this.sectionHeadings.find(
@@ -330,10 +335,9 @@
       });
 
       if (this.sectionHeadings.length > 0) {
-        const isDefaultSort =
-          this.config.defaultSort && (!this.state.sort.key || this.state.sort.key === this.config.defaultSort);
+        const defaultSort = this._isDefaultSort();
         this.sectionHeadings.forEach(h => {
-          if (!isDefaultSort) {
+          if (!defaultSort) {
             h.classList.add('hidden');
           } else {
             const section = h.dataset.sectionHeading;
@@ -351,7 +355,7 @@
 
     _applyFilters() {
       const tokens = [];
-      const raw = this.state.search.toLowerCase();
+      const raw = this.state.search.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
       const re = /"([^"]*)"|\S+/g;
       let m;
       while ((m = re.exec(raw)) !== null) {
@@ -426,10 +430,7 @@
     _updateURL() {
       const params = new URLSearchParams();
 
-      const defaultSortCfg = this.config.sort
-        ? this.config.sort.find(s => s.default) || this.config.sort[0]
-        : null;
-      const defaultSortKey = defaultSortCfg ? defaultSortCfg.key : '';
+      const defaultSortKey = this._defaultSortCfg ? this._defaultSortCfg.key : '';
 
       if (this.state.sort.key && this.state.sort.key !== defaultSortKey) {
         params.set('sort', this.state.sort.key);
@@ -489,12 +490,9 @@
 
     reset() {
       this.state.search = '';
-      const defaultSortCfg = this.config.sort
-        ? this.config.sort.find(s => s.default) || this.config.sort[0]
-        : null;
-      if (defaultSortCfg) {
-        this.state.sort.key = defaultSortCfg.key;
-        this.state.sort.direction = defaultSortCfg.direction || 'asc';
+      if (this._defaultSortCfg) {
+        this.state.sort.key = this._defaultSortCfg.key;
+        this.state.sort.direction = this._defaultSortCfg.direction || 'asc';
       }
       for (const key of Object.keys(this.state.filters)) {
         this.state.filters[key] = new Set();
@@ -505,7 +503,7 @@
         if (searchInput) searchInput.value = '';
 
         const sortSelect = this.controlsEl.querySelector('[data-filter-sort]');
-        if (sortSelect && defaultSortCfg) sortSelect.value = defaultSortCfg.key;
+        if (sortSelect && this._defaultSortCfg) sortSelect.value = this._defaultSortCfg.key;
 
         this.controlsEl.querySelectorAll('[data-filter-check]').forEach(check => {
           check.classList.add('opacity-0');

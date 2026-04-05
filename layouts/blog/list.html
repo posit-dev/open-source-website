@@ -9,24 +9,11 @@
   </div>
   {{ end }}
 
-  {{/* Curated category list for filter pills */}}
-  {{ $displayCategories := slice "Machine Learning" "Artificial Intelligence" "Visualization" "Interactive Apps" "Publishing" "MLOps and Admin" "Data Wrangling" "Best Practices" "Community" }}
-  {{ $displayLanguages := slice "Python" "R" "SQL" "Rust" "JavaScript" "Other" }}
-  {{ $languageAliases := dict "JavaScript" (slice "JavaScript" "TypeScript") }}
-  {{ $languageOther := slice "Python" "R" "SQL" "Rust" "JavaScript" "TypeScript" }}
+  {{ $cfg := site.Data.filters.blog }}
 
-  {{ partial "filter-controls.html" (dict
-    "sort" (slice
-      (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true)
-      (dict "key" "title" "label" "Title" "type" "string" "direction" "asc")
-    )
-    "filters" (slice
-      (dict "key" "categories" "label" "Topics" "logic" "or" "values" $displayCategories)
-      (dict "key" "languages" "label" "Languages" "logic" "or" "values" $displayLanguages "aliases" $languageAliases "other" $languageOther)
-    )
-  ) }}
+  {{ partial "filter-controls.html" $cfg }}
 
-  <div data-card-container data-filter-config='{{ dict "sort" (slice (dict "key" "date" "label" "Date" "type" "date" "direction" "desc" "default" true) (dict "key" "title" "label" "Title" "type" "string" "direction" "asc")) "filters" (slice (dict "key" "categories" "label" "Topics" "logic" "or") (dict "key" "languages" "label" "Languages" "logic" "or" "aliases" $languageAliases "other" $languageOther)) "defaultSort" "date" | jsonify }}'
+  <div data-card-container data-filter-config='{{ $cfg | jsonify }}'
        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {{- range $allPosts.ByDate.Reverse -}}
       {{ partial "item.html" (dict "page" . "hide-badge" true) }}
