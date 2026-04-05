@@ -68,7 +68,7 @@
     {{/* Current Events */}}
     {{ if gt (len $currentEvents) 0 }}
     <h2 data-section-heading="current" class="col-span-full text-2xl font-medium text-gray-800">Current Events</h2>
-    {{ range $currentEvents }}
+    {{ range sort $currentEvents ".Params.start_date" "desc" }}
       {{ partial "item.html" (dict "page" . "hide-badge" true "section" "current") }}
     {{ end }}
     {{ end }}
@@ -76,7 +76,7 @@
     {{/* Upcoming Events */}}
     {{ if gt (len $upcomingEvents) 0 }}
     <h2 data-section-heading="upcoming" class="col-span-full text-2xl font-medium text-gray-800">Upcoming Events</h2>
-    {{ range $upcomingEvents }}
+    {{ range sort $upcomingEvents ".Params.start_date" "desc" }}
       {{ partial "item.html" (dict "page" . "hide-badge" true "section" "upcoming") }}
     {{ end }}
     {{ end }}
@@ -84,7 +84,7 @@
     {{/* Past Events */}}
     {{ if gt (len $pastEvents) 0 }}
     <h2 data-section-heading="past" class="col-span-full text-2xl font-medium text-gray-800">Past Events</h2>
-    {{ range ($pastEvents.ByParam "start_date").Reverse }}
+    {{ range sort $pastEvents ".Params.start_date" "desc" }}
       {{ partial "item.html" (dict "page" . "hide-badge" true "section" "past") }}
     {{ end }}
     {{ end }}
