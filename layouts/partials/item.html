@@ -58,6 +58,11 @@
      TITLE
      ============================================================ */}}
 {{ $title := $page.RenderString (dict "display" "inline") $page.Title }}
+{{ if ne $format "hero" }}
+  {{/* plainify strips HTML so <a> tags don't nest inside card <a> wrappers;
+       clean up spaces before punctuation that plainify adds at tag boundaries. */}}
+  {{ $title = $title | plainify | replaceRE ` ([,\.;:!?])` "$1" }}
+{{ end }}
 
 {{/* ============================================================
      DATE (formatted using block/date_range.html for events)
@@ -78,6 +83,12 @@
 {{ $description_field := $card_settings.description_field | default "description" }}
 {{ $description := index $page.Params $description_field | strings.TrimSpace | strings.TrimSuffix "." | replaceRE `[\x{1F600}-\x{1F64F}\x{1F300}-\x{1F5FF}\x{1F680}-\x{1F6FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}]` "" }}
 {{ $description = $page.RenderString (dict "display" "inline") $description }}
+{{ $description = $description | replaceRE `</p>` "<br><br>" | replaceRE `<p>` "" | strings.TrimSpace }}
+{{ if ne $format "hero" }}
+  {{/* plainify strips HTML tags but adds a space at closing inline tags (e.g. </a>, </code>)
+       to prevent words merging. That space can land before punctuation — clean it up. */}}
+  {{ $description = $description | plainify | replaceRE ` ([,\.;:!?])` "$1" }}
+{{ end }}
 
 {{/* ============================================================
      AUTHOR (linked in hero, plain text in card/tile/row since
@@ -469,7 +480,7 @@
 
     {{ with $description }}
       <div class="text-sm @grande:text-base @venti:text-lg text-gray-600">
-        <p class="line-clamp-3 whitespace-pre-line [&_a]:underline"{{ if $is_resource }} id="video-description"{{ end }} data-hero-desc>{{ . | safeHTML }}</p>
+        <p class="line-clamp-3 [&_a]:underline"{{ if $is_resource }} id="video-description"{{ end }} data-hero-desc>{{ . | safeHTML }}</p>
         <button class="text-blue-600 hover:underline mt-1 hidden" data-hero-toggle>Read more...</button>
       </div>
     {{ end }}
