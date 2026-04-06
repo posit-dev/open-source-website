@@ -32,7 +32,10 @@ function CodeBlock(el)
     text = text .. "\n"
   end
 
-  local raw = "```" .. lang .. " { filename=\"" .. filename .. "\" }\n"
+  -- Leading newline ensures a blank line before the fence, which Goldmark
+  -- requires when the preceding block is raw HTML (e.g. a callout closing tag).
+  -- Extra blank lines are harmless in Markdown.
+  local raw = "\n```" .. lang .. " { filename=\"" .. filename .. "\" }\n"
     .. text
     .. "```\n"
 

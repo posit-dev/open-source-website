@@ -88,9 +88,8 @@ If you specify a PDF standard, Quarto first instructs LaTeX or Typst to use the 
 
 To install veraPDF, you'll first need Java, then run:
 
-**Terminal**
 
-``` bash
+``` bash { filename="Terminal" }
 quarto install verapdf
 ```
 

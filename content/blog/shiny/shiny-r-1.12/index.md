@@ -113,9 +113,8 @@ pak::pak(c("shiny", "otel", "otelsdk"))
 
 To enable OpenTelemetry tracing, you need set a few [specific system environment variables](https://otelsdk.r-lib.org/reference/collecting.html) to describe where your recordings are being sent. In the example below, we set them in an `.Renviron` file to point to Logfire.
 
-**.Renviron**
 
-``` bash
+``` bash { filename=".Renviron" }
 # Enable OpenTelemetry by setting Collector environment variables
 OTEL_TRACES_EXPORTER=http
 OTEL_LOGS_EXPORTER=http
@@ -162,9 +161,7 @@ Gaining timing insights into applications that leverage [Generative AI](https://
 </div>
 </div>
 
-**app.R**
-
-``` r
+``` r { filename="app.R" }
 library(shiny)
 
 # Create tool that grabs the weather forecast (free) for a given lat/lon

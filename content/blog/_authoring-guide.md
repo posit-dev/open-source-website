@@ -211,7 +211,10 @@ from shiny.express import input, ui
 ```
 ````
 
-**Note:** This works on non-executable code blocks only (`` ```{.python} `` with the dot). Executable code cells (`` ```{python} ``) do not support `filename` — Quarto's execution engines don't preserve the attribute through rendering.
+**Limitations:**
+
+- This works on non-executable code blocks only (`` ```{.python} `` with the dot). Executable code cells (`` ```{python} ``) do not support `filename` — Quarto's execution engines don't preserve the attribute through rendering.
+- Code blocks with `filename` inside Quarto layout divs (e.g., `::: {layout-ncol=2}`) fall back to Quarto's default rendering (bold text above the block) rather than the styled filename label. This is because Quarto converts layouts to HTML tables, where Goldmark can't parse the markdown code fences.
 
 ### Code folding
 

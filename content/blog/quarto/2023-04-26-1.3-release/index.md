@@ -12,8 +12,12 @@ image: arthur-chauvineau-Dn7P1U26ZkE-unsplash.jpeg
 image-alt: Fireworks with a silhouette of an audience
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - Quarto 1.3
   - Releases
@@ -28,9 +32,8 @@ We are happy to announce that Quarto 1.3 has been released. You can grab the cur
 
 If you are ever wondering which version of Quarto you are using, a quick way to check on the command line is:
 
-**Terminal**
 
-``` bash
+``` bash { filename="Terminal" }
 quarto --version
 ```
 

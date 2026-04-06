@@ -1,8 +1,10 @@
 ---
 title: Quarto 1.4
 subtitle: Quarto 1.4 is released
-description: |
-  Quarto 1.4 brings new formats for dashboards and Typst, a new manuscript project type, a cross-reference overhaul, Shiny for Python support, and a ton of other updates.
+description: >
+  Quarto 1.4 brings new formats for dashboards and Typst, a new manuscript
+  project type, a cross-reference overhaul, Shiny for Python support, and a ton
+  of other updates.
 categories:
   - Publishing
 people:
@@ -12,8 +14,12 @@ image: images/thumbnail.png
 image-alt: Quarto 1.4 with a party popper
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - Quarto 1.4
   - Releases
@@ -61,9 +67,8 @@ For the source code of these dashboards and additional examples see the [example
 
 Quarto 1.4 includes the Typst CLI, so all you need to get started creating PDFs via Typst is to use `format: typst`:
 
-**hello-typst.qmd**
 
-``` markdown
+``` markdown { filename="hello-typst.qmd" }
 ---
 title: "Hello Typst!"
 format: typst
