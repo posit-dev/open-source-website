@@ -137,7 +137,7 @@ jobs:
           echo "found=true" >> "$GITHUB_OUTPUT"
 
           BLOG_LINE=""
-          if echo "$CHANGED_CONTENT" | grep -q '^content/blog/'; then
+          if printf '%s\n' "$CHANGED_CONTENT" | grep -q 'content/blog/'; then
             BLOG_LINE="**Blog listing:** [$DEPLOY_URL/blog/]($DEPLOY_URL/blog/)"$'\n'
           fi
 
