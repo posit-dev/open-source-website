@@ -2,7 +2,7 @@
 title: Typst Books, Article Layout, and `typst-gather`
 people:
   - Gordon Woodhull
-date: 2026-03-31T00:00:00.000Z
+date: '2026-03-31'
 description: >
   Quarto 1.9 adds Typst book projects, article margin layout via Marginalia, and
   offline package bundling with `typst-gather`.
