@@ -57,7 +57,12 @@
 {{/* ============================================================
      TITLE
      ============================================================ */}}
-{{ $title := $page.Title }}
+{{ $title := $page.RenderString (dict "display" "inline") $page.Title }}
+{{ if ne $format "hero" }}
+  {{/* plainify strips HTML so <a> tags don't nest inside card <a> wrappers;
+       clean up spaces before punctuation that plainify adds at tag boundaries. */}}
+  {{ $title = $title | plainify | replaceRE ` ([,\.;:!?])` "$1" }}
+{{ end }}
 
 {{/* ============================================================
      DATE (formatted using block/date_range.html for events)
