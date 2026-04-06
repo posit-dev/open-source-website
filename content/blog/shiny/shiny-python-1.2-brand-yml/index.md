@@ -34,9 +34,8 @@ For the tools you use: it's simple, structured data to coordinate theming of any
 
 Here's an example `_brand.yml` file that includes metadata about the company, its logos, color palette, theme, and the fonts and typographic settings used by the brand.
 
-**\_brand.yml**
 
-``` yaml
+``` yaml { filename="_brand.yml" }
 meta:
   name: brand.yml
   link: https://posit-dev.github.io/brand-yml
@@ -66,9 +65,8 @@ With brand.yml you won't need to write multiple CSS files to maintain a consiste
 And because all fields are optional, brand.yml also serves as a simple interface to theming across many outputs.
 For example, you could use brand.yml to set the base font to [Roboto](https://fonts.google.com/specimen/Roboto) and use <span style="padding-inline:0.25em; background-color: #f96302; color: white;">orange</span> as the primary accent color.
 
-**A minimal \_brand.yml**
 
-``` yaml
+``` yaml { filename="A minimal _brand.yml" }
 color:
   primary: "#F96302"
 
@@ -116,9 +114,7 @@ Finally, use the [new `ui.Theme.from_brand()` function](https://shiny.posit.co/p
 </ul>
 <div id="tabset-1-1">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny.express import input, render, ui
 
 ui.page_opts(theme=ui.Theme.from_brand(__file__))
@@ -127,9 +123,7 @@ ui.page_opts(theme=ui.Theme.from_brand(__file__))
 </div>
 <div id="tabset-1-2">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny import ui
 
 app_ui = ui.page_fluid(

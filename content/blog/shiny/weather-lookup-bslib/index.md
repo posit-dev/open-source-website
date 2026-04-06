@@ -1,17 +1,21 @@
 ---
 title: 'Weather App Story Pt. 3: Styling'
-description: The bslib package allows for extremely easy customization of your Shiny
-  app's style using the bootstrap css framework. It also allows you to update theming
+description: >-
+  The bslib package allows for extremely easy customization of your Shiny app's
+  style using the bootstrap css framework. It also allows you to update theming
   in a running app to create dynamicly styled apps.
 people:
   - Nick Strayer
-date: '2021-04-27T00:00:00.000Z'
+date: '2021-04-27'
 image: bslib.jpg
 image-alt: A screenshot of an app, showing it in light mode and dark mode
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-r", "bslib"]
-languages: ["R"]
+software:
+  - shiny-r
+  - bslib
+languages:
+  - R
 categories:
   - Interactive Apps
 tags:
@@ -21,7 +25,7 @@ tags:
 
 ## Weather App
 
-The code and results in this post come from the [weather lookup app.](https://connect.posit.it/explore_your_weather/) Here we will just briefly cover the relevant parts of the app, for a more complete intro check out the [accompanying post](/blog/shiny/weather-lookup-about/) introducing it.
+The code and results in this post come from the [weather lookup app.](https://connect.posit.it/explore_your_weather/) Here we will just briefly cover the relevant parts of the app, for a more complete intro check out the [accompanying post](../../../blog/shiny/weather-lookup-about/) introducing it.
 
 ![](full_app.png)
 
@@ -43,9 +47,8 @@ Unfortunately, while modern CSS and HTML allow you to create beautiful designs, 
 
 All we need to do to transform our app, as seen above, is create a theme object with `bs_theme()` and pass that to the `theme` argument in our UI function. While we're at it, we can also use a custom font from [Google Fonts.](https://fonts.google.com/specimen/Alegreya) I'm partial to "Righteous."
 
-**app.R**
 
-``` r
+``` r { filename="app.R" }
 library(bslib)
 library(showtext) # Needed for custom font support
 # Setup the bslib theme object
@@ -70,9 +73,8 @@ This is where `bslib`'s sister package, `thematic`, comes to the rescue. The pur
 
 All that's needed to enable this themeing is adding `thematic_shiny()` to our app... *Note that we're using the theme "darkly" here so difference is more obvious.*
 
-**app.R**
 
-``` r
+``` r { filename="app.R" }
 library(bslib)
 library(showtext)
 library(thematic)
@@ -109,9 +111,8 @@ Another powerful side-effect of `bslib`'s use of `sass` variables is you can use
 
 To do this, we write Sass rules for the station bubbles that reference relevant Bootstrap Sass [theming variables](https://rstudio.github.io/bslib/articles/bs4-variables.html).
 
-**styles.scss**
 
-``` scss
+``` scss { filename="styles.scss" }
 ...
 /* Make station bubble cards respect the colors of the theme */
 .station_bubble {
@@ -129,9 +130,8 @@ The `@extend .bg-secondary` line tells Sass to essentially copy and paste the st
 
 This styles file can then be appended to our `bslib` theme object we built before using the `bs_add_rules()` function.
 
-**app.R**
 
-``` r
+``` r { filename="app.R" }
 ...
 # Setup the bslib theme object with extra custom styles
 my_theme <- bs_theme(bootswatch = "darkly",
@@ -158,9 +158,8 @@ Our app's custom styles already make it look bespoke and interesting. However, w
 
 All we have to do is create a theme toggle with the `radioButtons` input and pass the current choice to `session$setCurrentTheme()` within an observer...
 
-**app.R**
 
-``` r
+``` r { filename="app.R" }
 
 ui <- fluidPage(
   theme = my_theme,
@@ -194,9 +193,8 @@ While this is a simple example, there are many potential paths one could take wi
 
 If you read the companion article to this on using caching in our app, you know the main plot is cached. We need to add the current theme to the cache key; otherwise, a plot for a city originally rendered in light mode may be given even though the current viewer is in dark mode. To do this, we can add info on the plot's style, provided by `getCurrentOutputInfo()$fg()` to the cache key.
 
-**app.R**
 
-``` r
+``` r { filename="app.R" }
 ... %>% 
   bindCache(input$city, getCurrentOutputInfo()$fg(), ...)
 ```

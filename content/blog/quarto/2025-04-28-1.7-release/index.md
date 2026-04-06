@@ -1,20 +1,26 @@
 ---
 title: Quarto 1.7
-description: |
-  Quarto 1.7 brings big improvements to dark mode along with updates to Typst, Pandoc, a new `version` shortcode, and improvements to the `julia` engine.
+description: >
+  Quarto 1.7 brings big improvements to dark mode along with updates to Typst,
+  Pandoc, a new `version` shortcode, and improvements to the `julia` engine.
 categories:
   - Publishing
 people:
   - Charlotte Wickham
 date: '2025-04-28'
-draft: no
+draft: 'no'
 image: thumbnail-1.7.jpeg
-image-alt: 'Quarto 1.7: half the Quarto logo is light on dark, the other half dark
-  on light'
+image-alt: >-
+  Quarto 1.7: half the Quarto logo is light on dark, the other half dark on
+  light
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - Quarto 1.7
   - Releases
@@ -28,7 +34,7 @@ tags:
 Quarto 1.7 is out! You can get the current release from the [download page](https://quarto.org/docs/download/index.html).
 
 We are especially enthusiastic about the improvements 1.7 brings to dark mode: you can now specify light and dark themes via brand, map computational outputs to themes, and have your website theme follow your viewer's preference.
-To celebrate these changes, this site, [quarto.org](..), now has a light and dark mode.
+To celebrate these changes, this site, [quarto.org](../../..), now has a light and dark mode.
 Toggle the switch in the navigation bar (<i></i>) to see the difference.
 
 You can read about these improvements and some other highlights below. You can find all the changes in this version in the [Release Notes](https://quarto.org/docs/download/changelog/1.7/).
@@ -40,9 +46,8 @@ You can read about these improvements and some other highlights below. You can f
 You can now specify a light and dark brand.
 For example, at a project-level you can provide two brand files:
 
-**\_quarto.yml**
 
-``` yaml
+``` yaml { filename="_quarto.yml" }
 brand:
   light: light-brand.yml
   dark: dark-brand.yml
@@ -75,9 +80,8 @@ Standalone HTML pages, websites, and dashboards will gain a light switch toggle 
 
 By default Typst documents will use the light brand, but you can set the `brand-mode` option to use the dark brand instead:
 
-**document.qmd**
 
-``` yaml
+``` yaml { filename="document.qmd" }
 ---
 format:
   typst:
@@ -116,9 +120,8 @@ Toggle the switch in the navigation bar to see the image change to reflect the t
 
 Set the new `html` format option `respect-user-color-scheme` to `true` if you would like your site to honor the viewer's operating system or browser preference for light or dark mode:
 
-**\_quarto.yml**
 
-``` yaml
+``` yaml { filename="_quarto.yml" }
 format:
   html:
     respect-user-color-scheme: true
@@ -143,7 +146,7 @@ format:
   <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Rendered with Quarto {{&lt;/* version */&gt;}}</span></code></pre></div>
   </div></td>
   <td style="text-align: left;"><div class="border" width="50.0%" data-layout-align="left">
-  <p>Rendered with Quarto 1.9.30</p>
+  <p>Rendered with Quarto 1.9.36</p>
   </div></td>
   </tr>
   </tbody>

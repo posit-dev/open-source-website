@@ -6,6 +6,7 @@ project:
 format: hugo-md
 
 filters:
+  - code-filename
   - callout
   - video-embed
   - tabset
