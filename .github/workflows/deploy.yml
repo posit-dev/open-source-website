@@ -122,7 +122,15 @@ jobs:
           LINKS=""
           while IFS= read -r SRC; do
             [ -z "$SRC" ] && continue
-            PERMALINK=$(grep "^$SRC," /tmp/hugo-pages.csv | cut -d',' -f8)
+            PERMALINK=$(python3 -c "
+import csv, sys
+src = sys.argv[1]
+with open('/tmp/hugo-pages.csv') as f:
+    for row in csv.DictReader(f):
+        if row['path'] == src:
+            print(row['permalink'])
+            sys.exit(0)
+" "$SRC")
             if [ -n "$PERMALINK" ]; then
               URL_PATH="${PERMALINK#$BASE_URL}"
               LINKS="$LINKS- [$URL_PATH]($DEPLOY_URL$URL_PATH)"$'\n'
