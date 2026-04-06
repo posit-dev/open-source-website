@@ -16,5 +16,5 @@ languages:
 - Python
 resources:
   - videos/2025-08-04_daniel-chen-shiny-for-python-building-production-ready-dashboards-in-python-scipy-2025
-  - videos/2025-09-24_daniel-chen-llms-chatbots-and-dashboards-visualize-your-data-with-natural-language
+  - videos/2025-08-08_michael-chow-user-guides-engaging-new-users-delighting-old-ones-scipy-2025
 ---
