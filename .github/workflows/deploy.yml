@@ -136,13 +136,16 @@ jobs:
 
           echo "found=true" >> "$GITHUB_OUTPUT"
 
+          BLOG_LINE=""
+          if echo "$CHANGED_CONTENT" | grep -q '^content/blog/'; then
+            BLOG_LINE="**Blog listing:** [$DEPLOY_URL/blog/]($DEPLOY_URL/blog/)"$'\n'
+          fi
+
           cat > /tmp/preview-comment.md <<EOF
           ## Preview links
 
           $LINKS
-          **Blog listing:** [$DEPLOY_URL/blog/]($DEPLOY_URL/blog/)
-
-          **Full site:** [$DEPLOY_URL]($DEPLOY_URL)
+          ${BLOG_LINE}**Full site:** [$DEPLOY_URL]($DEPLOY_URL)
           EOF
 
       - name: Post preview comment
