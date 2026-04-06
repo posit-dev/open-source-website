@@ -149,6 +149,31 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
   quarto preview index.qmd
   ```
 
+## Getting published
+
+Once your post is written, follow these steps to get it live.
+
+### Open a pull request
+
+Push your branch and open a PR against `main`. A bot will post a publishing checklist on your PR to help you track the remaining steps.
+
+### Get a review
+
+Request at least one reviewer — they can check content, frontmatter, and the rendered preview.
+
+### Check the preview
+
+After the deploy workflow finishes, a bot comment will appear with direct links to your post's preview and the blog listing. Use these to:
+
+1. **Read through your post** — check formatting, images, links, and code blocks
+2. **Check the blog listing** — confirm your post appears at `/blog/` with the right title, thumbnail, and description
+
+These links update automatically when you push new commits.
+
+### Merge
+
+Once you have an approving review and the preview looks good, merge the PR to `main`. The site deploys automatically — your post will be live within a few minutes.
+
 ## Quarto features (`.qmd` posts)
 
 ### Tabsets
@@ -166,55 +191,6 @@ Python code here.
 ```
 
 Add a `group="my-group"` attribute to sync multiple tabsets on the page.
-
-### Callouts
-
-```markdown
-::: {.callout-note}
-This is a note without a custom title.
-:::
-
-::: {.callout-tip}
-## Custom Title
-
-This tip has a custom title.
-:::
-
-::: {.callout-warning collapse="true"}
-## Expandable Warning
-
-This callout starts collapsed — the reader clicks to expand it.
-:::
-```
-
-Five types are available: `note`, `tip`, `warning`, `caution`, `important`. Each has a distinct color and icon. If you omit the heading inside the callout, the type name is used as the title.
-
-Add `collapse="true"` to make the callout collapsible (requires a title).
-
-### Code block filenames
-
-Label a code block with a filename to show the reader which file the code belongs to:
-
-````markdown
-```{.python filename="app.py"}
-from shiny.express import input, ui
-```
-````
-
-This renders a styled filename header attached to the top of the code block. Works for any language (`.python`, `.yaml`, `.bash`, etc.) and for non-language labels like `filename="Terminal"`.
-
-This also works in `.md` posts — use Goldmark attribute syntax:
-
-````markdown
-``` python { filename="app.py" }
-from shiny.express import input, ui
-```
-````
-
-**Limitations:**
-
-- This works on non-executable code blocks only (`` ```{.python} `` with the dot). Executable code cells (`` ```{python} ``) do not support `filename` — Quarto's execution engines don't preserve the attribute through rendering.
-- Code blocks with `filename` inside Quarto layout divs (e.g., `::: {layout-ncol=2}`) fall back to Quarto's default rendering (bold text above the block) rather than the styled filename label. This is because Quarto converts layouts to HTML tables, where Goldmark can't parse the markdown code fences.
 
 ### Code folding
 
@@ -243,28 +219,6 @@ Optional parameters: `title`, `width`, `height`, `start` (YouTube only), `aspect
 ### Other Hugo shortcodes
 
 Hugo shortcodes pass through Quarto's rendering unchanged, so the `{{< columns >}}` and `{{< button >}}` shortcodes documented below also work in `.qmd` posts.
-
-## Math
-
-To use LaTeX math in a post, add `math: true` to the frontmatter:
-
-```yaml
-math: true
-```
-
-Then use `$...$` for inline math and `$$...$$` for display math:
-
-```markdown
-The loss is $L = -\sum y_i \log \hat{y}_i$.
-
-$$
-\nabla_\theta J(\theta) = \mathbb{E}[\nabla_\theta \log \pi_\theta(a|s) \cdot R]
-$$
-```
-
-Math rendering uses MathJax 3 and is only loaded on posts that set `math: true`, so there's no performance cost for other pages.
-
-**Important:** If your post uses a literal `$` sign (e.g. currency) outside of backticks or code blocks, escape it as `\$` to prevent it from being interpreted as a math delimiter. This applies to all posts, not just those with `math: true`.
 
 ## Hugo shortcodes (`.md` posts)
 
