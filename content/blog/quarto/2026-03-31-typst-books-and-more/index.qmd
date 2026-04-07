@@ -19,6 +19,7 @@ categories:
   - Publishing
 tags:
   - Quarto
+slug: typst-books-and-more
 ---
 
 Typst is a lightning-fast typesetting system that provides a modern alternative to LaTeX.

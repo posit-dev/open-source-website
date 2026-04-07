@@ -25,6 +25,7 @@ tags:
   - TensorFlow
   - Keras
 math: true
+slug: attention-layer
 ---
 
 

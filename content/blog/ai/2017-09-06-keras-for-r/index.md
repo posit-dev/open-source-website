@@ -27,6 +27,7 @@ tags:
   - Keras
   - Packages
   - Releases
+slug: keras-for-r
 ---
 
 

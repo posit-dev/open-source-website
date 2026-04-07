@@ -92,6 +92,7 @@ tags:
   - Vscode
   - Extensions
   - Productivity
+slug: quarto-wizard-1-0-0
 ---
 
 

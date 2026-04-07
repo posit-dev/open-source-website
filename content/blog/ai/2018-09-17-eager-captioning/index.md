@@ -27,6 +27,7 @@ tags:
   - Keras
   - Image recognition
   - Image processing
+slug: eager-captioning
 ---
 
 

@@ -22,6 +22,7 @@ ported_categories:
 tags:
   - AI
   - Cloud
+slug: rstudio-gpu-paperspace
 ---
 
 

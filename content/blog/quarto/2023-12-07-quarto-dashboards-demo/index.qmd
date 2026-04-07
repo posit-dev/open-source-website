@@ -22,6 +22,7 @@ tags:
   - Quarto
   - Demo
   - Quarto 1.4
+slug: quarto-dashboards-demo
 ---
 
 Quarto has a host of exciting new features in release v1.4 with one of the most anticipated being Quarto Dashboards. In a recent internal presentation, Charles Teague demonstrated the new capabilities and we wanted to share it with community.

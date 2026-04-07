@@ -31,6 +31,7 @@ tags:
   - Keras
   - Image recognition
   - Image processing
+slug: image-classification-on-small-datasets
 ---
 
 

@@ -21,6 +21,7 @@ tags:
   - AI
   - Packages
   - Releases
+slug: tfruns
 ---
 
 ```{r setup, include=FALSE}

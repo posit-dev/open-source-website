@@ -27,6 +27,7 @@ tags:
   - Quarto
   - Learn
   - Authoring
+slug: includes-meta
 ---
 
 

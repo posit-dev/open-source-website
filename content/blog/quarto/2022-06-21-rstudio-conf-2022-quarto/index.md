@@ -24,6 +24,7 @@ tags:
   - Conf
   - Workshop
   - Talks
+slug: rstudio-conf-2022-quarto
 ---
 
 

@@ -26,6 +26,7 @@ tags:
   - Quarto
   - Features
   - Layout
+slug: advanced-layout
 ---
 
 Quarto supports a variety of page layout options that enable you to author content that

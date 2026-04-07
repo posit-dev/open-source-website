@@ -23,6 +23,7 @@ tags:
   - AI
   - Packages
   - Releases
+slug: tensorflow-v13-released
 ---
 
 

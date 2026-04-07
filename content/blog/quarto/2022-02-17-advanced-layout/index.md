@@ -27,6 +27,7 @@ tags:
   - Features
   - Layout
 math: true
+slug: advanced-layout
 ---
 
 
