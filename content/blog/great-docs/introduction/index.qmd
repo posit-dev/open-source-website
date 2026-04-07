@@ -236,7 +236,7 @@ The `great-docs.yml` file and your `user_guide/` directory are the only things y
 
 ## What's Next
 
-Great Docs is under active development and has shipped six releases (v0.1 through v0.6) since its initial launch. The [roadmap](https://posit-dev.github.io/great-docs/roadmap.html) is quite ambitious. Near-term priorities include author attribution with GitHub-style avatars, reading time estimates, breadcrumb navigation, and an enhanced CLI reference supporting Typer, argparse, and Fire alongside Click.
+Great Docs is under active development and has shipped six releases (`v0.1` through `v0.6`) since its initial launch. The [roadmap](https://posit-dev.github.io/great-docs/roadmap.html) is quite ambitious. Near-term priorities include author attribution with GitHub-style avatars, reading time estimates, breadcrumb navigation, and an enhanced CLI reference supporting Typer, argparse, and Fire alongside Click.
 
 ## Get Started
 
