@@ -1,0 +1,150 @@
+{{/*
+  item-templates.html — Template elements for client-side item rendering.
+
+  Includes <template> elements for card, tile, and row formats, plus
+  item settings from data/items.yaml as inline JSON. JS clones these
+  templates and fills data-slot elements from the item-index JSON.
+*/}}
+
+{{/* Item settings for JS */}}
+<script id="item-settings" type="application/json">
+  {{ site.Data.items | jsonify }}
+</script>
+
+{{/* ============================================================
+     CARD TEMPLATE
+     ============================================================ */}}
+<template id="item-tpl-card">
+  <div data-slot="root" class="@container h-full">
+    <a data-slot="link" class="card-link flex flex-col @venti:flex-row rounded-xl h-full @venti:h-96">
+
+      {{/* Badge — hidden by default, JS shows if applicable */}}
+      <span data-slot="badge" class="card-badge absolute top-2 @max-venti:right-2 @venti:left-2 z-10 hidden">
+        <span data-slot="badge-icon"></span>
+        <span data-slot="badge-text" class="font-semibold uppercase tracking-wide hidden @xs:inline"></span>
+      </span>
+
+      {{/* Image */}}
+      <div data-slot="image-wrap" class="w-full @venti:w-1/2 aspect-[16/9] flex items-center justify-center overflow-hidden">
+        <img data-slot="image" class="mx-auto h-full" loading="lazy" decoding="async" />
+      </div>
+
+      {{/* Content */}}
+      <div class="hidden gap-y-2 @nip:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700">
+        <h3 data-slot="title" class="m-0! font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2"></h3>
+        <p data-slot="description" class="m-0! text-xs @short:text-sm @grande:text-md @venti:text-lg line-clamp-2 short@line-clamp-3"></p>
+
+        {{/* People */}}
+        <div data-slot="people" class="text-sm @grande:text-md hidden"></div>
+
+        {{/* Conditional metadata fields — all hidden by default */}}
+        <div data-slot="location" class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center" style="display:none">
+          <span class="icon-[boxicons--map-filled]"></span>
+          <div data-slot="location-text"></div>
+        </div>
+        <div data-slot="date" class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center" style="display:none">
+          <span class="icon-[boxicons--calendar-filled]"></span>
+          <div data-slot="date-text"></div>
+        </div>
+        <div data-slot="duration" class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center" style="display:none">
+          <span class="icon-[boxicons--clock-4-filled]"></span>
+          <div data-slot="duration-text"></div>
+        </div>
+        <div data-slot="views" class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center" style="display:none">
+          <span class="icon-[boxicons--eye-filled]"></span>
+          <div data-slot="views-text"></div>
+        </div>
+        <div data-slot="stars" class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center" style="display:none">
+          <span class="icon-[boxicons--star-filled]"></span>
+          <div data-slot="stars-text"></div>
+        </div>
+
+        <div class="grow"></div>
+        <div data-slot="tags" class="hidden @grande:flex flex-wrap gap-x-1 gap-y-4 py-2 overflow-hidden h-10 items-end"></div>
+      </div>
+    </a>
+  </div>
+</template>
+
+{{/* ============================================================
+     TILE TEMPLATE
+     ============================================================ */}}
+<template id="item-tpl-tile">
+  <div data-slot="root" class="@container h-16">
+    <a data-slot="link" class="card-link flex flex-row items-center rounded-lg h-full">
+
+      {{/* Image */}}
+      <div data-slot="image-wrap" class="h-full @max-nip:w-full @nip:aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden">
+        <img data-slot="image" class="mx-auto h-full" loading="lazy" decoding="async" />
+      </div>
+
+      {{/* Content */}}
+      <div class="hidden @nip:flex flex-col w-full px-2 overflow-hidden h-16">
+
+        {{/* Top Row */}}
+        <div class="flex flex-1 items-center gap-x-3">
+          <h3 data-slot="title" class="m-0! block flex-grow text-sm font-bold line-clamp-2! @tall:line-clamp-1!"></h3>
+          <div class="hidden @short:flex items-center justify-end justify-items-end pl-3">
+            <span data-slot="badge" class="card-badge flex-shrink-0 hidden">
+              <span data-slot="badge-icon" class="-mb-[1px]"></span>
+              <span data-slot="badge-text" class="hidden @grande:inline font-semibold uppercase tracking-wide"></span>
+            </span>
+          </div>
+        </div>
+
+        {{/* Bottom Row */}}
+        <div class="hidden @tall:flex flex-1 w-full gap-x-3">
+          <div class="tile-meta">
+            <span data-slot="date" class="meta-item" style="display:none"><span class="flex-none icon-[boxicons--calendar-filled]"></span><span data-slot="date-text"></span></span>
+            <span data-slot="location" class="meta-item hidden @grande:flex flex-1 truncate" style="display:none"><span class="flex-none icon-[boxicons--map-filled]"></span><span data-slot="location-text" class="truncate"></span></span>
+            <span data-slot="duration" class="meta-item" style="display:none"><span class="flex-none icon-[boxicons--clock-4-filled]"></span><span data-slot="duration-text"></span></span>
+            <span data-slot="views" class="meta-item" style="display:none"><span class="flex-none icon-[boxicons--eye-filled]"></span><span data-slot="views-text"></span></span>
+            <span data-slot="stars" class="meta-item" style="display:none"><span class="flex-none icon-[boxicons--star-filled]"></span><span data-slot="stars-text"></span></span>
+          </div>
+
+          <div data-slot="tags" class="flex flex-auto items-center overflow-hidden justify-end justify-items-end hidden">
+            <div class="flex gap-x-1 gap-y-10 items-center justify-end flex-wrap content-between overflow-hidden h-6 pt-0.5"></div>
+          </div>
+        </div>
+
+      </div>
+    </a>
+  </div>
+</template>
+
+{{/* ============================================================
+     ROW TEMPLATE
+     ============================================================ */}}
+<template id="item-tpl-row">
+  <a data-slot="root" class="card-link col-span-full grid grid-cols-subgrid items-center h-12 rounded-lg text-gray-700">
+
+    {{/* Image */}}
+    <div data-slot="image-wrap" class="h-full w-full flex items-center justify-center overflow-hidden">
+      <img data-slot="image" class="mx-auto h-full" loading="lazy" decoding="async" />
+    </div>
+
+    {{/* Title + Badge */}}
+    <span class="hidden @tall:flex items-center gap-x-2 px-2 min-w-0">
+      <span data-slot="title" class="text-sm font-semibold truncate"></span>
+      <span data-slot="badge" class="card-badge flex-shrink-0 px-1.5 hidden">
+        <span data-slot="badge-icon"></span>
+        <span data-slot="badge-text" class="font-semibold uppercase tracking-wide hidden @venti:inline"></span>
+      </span>
+    </span>
+
+    {{/* Description */}}
+    <span data-slot="description" class="hidden @tall:block px-2 text-xs text-gray-500 truncate min-w-0"></span>
+
+    {{/* Metadata */}}
+    <span class="hidden @grande:flex px-2 text-xs text-gray-500 whitespace-nowrap gap-x-2">
+      <span data-slot="location" class="meta-item" style="display:none"><span class="icon-[boxicons--map-filled]"></span><span data-slot="location-text"></span></span>
+      <span data-slot="date" class="meta-item" style="display:none"><span class="icon-[boxicons--calendar-filled]"></span><span data-slot="date-text"></span></span>
+      <span data-slot="duration" class="meta-item" style="display:none"><span class="icon-[boxicons--clock-4-filled]"></span><span data-slot="duration-text"></span></span>
+      <span data-slot="views" class="meta-item" style="display:none"><span class="icon-[boxicons--eye-filled]"></span><span data-slot="views-text"></span></span>
+      <span data-slot="stars" class="meta-item" style="display:none"><span class="icon-[boxicons--star-filled]"></span><span data-slot="stars-text"></span></span>
+    </span>
+
+    {{/* Tags */}}
+    <span data-slot="tags" class="hidden @venti:flex flex-shrink-0 gap-1 px-2"></span>
+  </a>
+</template>
