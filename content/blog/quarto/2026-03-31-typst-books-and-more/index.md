@@ -22,6 +22,7 @@ categories:
   - Publishing
 tags:
   - Quarto
+slug: typst-books-and-more
 ---
 
 

@@ -32,6 +32,7 @@ ported_categories:
 tags:
   - AI
   - Natural language processing
+slug: r-text
 ---
 
 

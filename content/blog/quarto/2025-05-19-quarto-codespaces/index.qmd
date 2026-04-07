@@ -24,6 +24,7 @@ tags:
   - Github codespaces
   - Teaching
   - Dev container
+slug: quarto-codespaces
 ---
 
 ## What Is GitHub Codespaces?

@@ -28,6 +28,7 @@ tags:
   - Keras
   - Distributed computing
   - Data management
+slug: training-imagenet-with-r
 ---
 
 

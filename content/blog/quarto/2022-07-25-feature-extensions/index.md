@@ -22,6 +22,7 @@ tags:
   - Quarto
   - Extensions
   - Features
+slug: feature-extensions
 ---
 
 

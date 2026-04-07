@@ -20,6 +20,7 @@ categories:
   - Publishing
 tags:
   - Quarto
+slug: 1.9-release
 ---
 
 

@@ -22,6 +22,7 @@ tags:
   - AI
   - Concepts
   - Distributed computing
+slug: parallelized-sampling
 ---
 
 ```{r setup, include=FALSE}

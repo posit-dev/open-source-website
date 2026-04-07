@@ -26,6 +26,7 @@ tags:
   - Keras
   - Packages
   - Releases
+slug: autokeras
 ---
 
 

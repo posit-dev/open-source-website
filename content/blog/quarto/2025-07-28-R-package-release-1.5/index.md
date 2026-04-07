@@ -22,6 +22,7 @@ tags:
   - Packages
   - Knitr
   - Releases
+slug: R-package-release-1.5
 ---
 
 

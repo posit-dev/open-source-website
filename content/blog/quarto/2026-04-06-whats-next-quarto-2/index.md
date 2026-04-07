@@ -19,6 +19,7 @@ categories:
   - Publishing
 tags:
   - Quarto
+slug: whats-next-quarto-2
 ---
 
 

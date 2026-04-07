@@ -24,6 +24,7 @@ tags:
   - Natural language processing
   - TensorFlow
   - Keras
+slug: bert-r
 ---
 
 ```{r setup, include=FALSE}
