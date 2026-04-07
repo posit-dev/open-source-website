@@ -70,7 +70,7 @@ email <- render_email('email.Rmd')
 
 The resulting email object can be previewed in RStudio.
 
-<img src="/blog/images/blastula_rmd.png" caption="Email from R Markdown" alt= "Email from R Markdown">
+<img src="blastula_rmd.png" caption="Email from R Markdown" alt= "Email from R Markdown">
 
 Alternatively, it is possible to create an email without R Markdown, by using
 the `compose_email` function to combine text, images, and even plots:
@@ -90,7 +90,7 @@ email <- compose_email(
 )
 ```
 
-<img src="/blog/images/blastula_preview.png" caption="Preview blastula emails in RStudio" alt= "Preview blastula emails in RStudio">
+<img src="blastula_preview.png" caption="Preview blastula emails in RStudio" alt= "Preview blastula emails in RStudio">
 
 Visit the [documentation](https://rich-iannone.github.io/blastula/) to learn how to embed
 images, set email headers and footers, and even add call-to-action buttons.
@@ -138,7 +138,7 @@ Publish the resulting R Markdown document to RStudio Connect, where it can be
 execution](https://docs.rstudio.com/connect/1.7.8/user/r-markdown-schedule.html)
 and distributed to stakeholders.
 
-<img src="/blog/images/blastula_rsc.png" caption="Schedule and Email in RStudio Connect" alt= "Schedule and Email in RStudio Connect">
+<img src="blastula_rsc.png" caption="Schedule and Email in RStudio Connect" alt= "Schedule and Email in RStudio Connect">
 
 Blastula offers three additional functions to make it easier to create emails
 for RStudio Connect.

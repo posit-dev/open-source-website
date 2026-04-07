@@ -199,7 +199,7 @@ ggplot(predictions, aes(
   geom_point()
 ```
 
-![](/post/2018-01-29-sparklyr-0-7_files/figure-html/unnamed-chunk-7-1.png)
+![](2018-01-29-sparklyr-0-7_files/figure-html/unnamed-chunk-7-1.png)
 
 ### Frequent pattern mining
 
