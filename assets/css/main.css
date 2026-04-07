@@ -657,6 +657,21 @@ mark[data-pagefind-highlight],
   }
 }
 
+/* Pagination */
+@layer components {
+  .pagination-btn {
+    @apply flex items-center justify-center w-9 h-9 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors;
+  }
+
+  .pagination-btn-disabled {
+    @apply flex items-center justify-center w-9 h-9 rounded-lg text-gray-300;
+  }
+
+  .pagination-current {
+    @apply flex items-center justify-center w-9 h-9 rounded-lg bg-gray-800 text-white font-medium;
+  }
+}
+
 /* Blog-specific styles */
 @layer components {
   /* Blog card hover effect */
