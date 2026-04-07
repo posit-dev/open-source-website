@@ -13,14 +13,27 @@
     constructor(containerEl) {
       this.container = containerEl;
       this.config = JSON.parse(containerEl.dataset.filterConfig || '{}');
+
+      // All item data (from JSON index)
       this.items = [];
+      // Filtered + sorted subset
+      this.filteredItems = [];
+      // Map of id → DOM element (reuses Hugo-rendered elements)
+      this.renderedMap = new Map();
       this.totalCount = 0;
+      this.displayedCount = 0;
+      this.pageSize = 60;
+
       this.sectionHeadings = [];
+      this.itemSettings = {};
+      this.format = 'card';
+
       const parent = containerEl.parentNode;
       this.controlsEl = parent.querySelector('[data-filter-controls]');
       this.barEl = parent.querySelector('[data-filter-bar]');
       this.showBtn = parent.querySelector('[data-filter-show]');
       this._stickyObserved = false;
+
       if (this.barEl) {
         this.barEl.classList.remove('invisible');
       }
@@ -62,22 +75,41 @@
           };
         });
       }
-      this._lastSortKey = '';
-      this._lastSortDir = 'asc';
-      this._needsReorder = false;
+
       this._interactive = false;
+      this.sentinel = null;
+      this.observer = null;
 
       this._init();
     }
 
     async _init() {
+      this._loadItemSettings();
       await this._hydrate();
+      this._hidePagination();
       this._readURL();
       if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
       this._updateShowBtnLabel();
       this._bindControls();
       this._applyFilters();
+      this._setupInfiniteScroll();
       this._interactive = true;
+    }
+
+    _loadItemSettings() {
+      const el = document.getElementById('item-settings');
+      if (el) {
+        try {
+          this.itemSettings = JSON.parse(el.textContent);
+        } catch (e) {
+          // ignore
+        }
+      }
+    }
+
+    _hidePagination() {
+      const nav = this.container.parentNode.querySelector('[data-pagination]');
+      if (nav) nav.style.display = 'none';
     }
 
     _hasActiveFilters() {
@@ -120,41 +152,261 @@
         const res = await fetch(indexUrl);
         if (res.ok) index = await res.json();
       } catch (e) {
-        // Fall back to empty index — items will still render but won't be searchable
+        // Fall back to empty index
       }
 
-      // Match JSON entries to DOM elements by id
-      this.items = [];
-      for (const entry of index) {
-        const el = this.container.querySelector('#' + CSS.escape(entry.id));
-        if (!el) continue;
-        this.items.push({
-          el,
-          title: entry.title || '',
-          description: entry.description || '',
-          tags: entry.tags || '',
-          date: entry.date || '',
-          categories: entry.categories || '',
-          languages: entry.languages || '',
-          stars: entry.stars ? Number(entry.stars) : 0,
-          firstCommit: entry.firstCommit || '',
-          _firstCommitTs: entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0,
-          views: entry.views ? Number(entry.views) : 0,
-          duration: entry.duration ? Number(entry.duration) : 0,
-          authors: entry.authors || '',
-          location: entry.location || '',
-          type: entry.type || '',
-          section: entry.section || '',
-          _dateTs: entry.date ? new Date(entry.date).getTime() : 0,
-          _sortTitle: (entry.title || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, '').trim(),
-          _search: [entry.title, entry.description, entry.tags, entry.software, entry.authors, entry.location].join(' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(),
-        });
-      }
+      // Build items array from JSON
+      this.items = index.map(entry => {
+        // Pre-compute search index and sort keys
+        const searchIndex = (entry.searchIndex || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        const sortTitle = (entry.title || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
+        const dateTs = entry.date ? new Date(entry.date).getTime() : 0;
+        const firstCommitTs = entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0;
 
-      this.totalCount = this.items.length;
+        return {
+          ...entry,
+          // Arrays for filter matching (join for backwards-compat with comma-split logic)
+          _categoriesStr: (entry.categories || []).join(','),
+          _languagesStr: (entry.languages || []).join(','),
+          _tagsStr: (entry.tags || []).join(','),
+          _softwareStr: (entry.software || []).join(','),
+          _typeStr: entry.type || '',
+          // Search and sort
+          _search: searchIndex,
+          _sortTitle: sortTitle,
+          _dateTs: dateTs,
+          _firstCommitTs: firstCommitTs,
+        };
+      });
+
+      // Match existing Hugo-rendered DOM elements to items
+      this.items.forEach(item => {
+        const el = this.container.querySelector('#' + CSS.escape(item.id));
+        if (el) this.renderedMap.set(item.id, el);
+      });
+
       this.sectionHeadings = Array.from(
         this.container.querySelectorAll('[data-section-heading]')
       );
+      this.totalCount = this.items.length;
+    }
+
+    _renderFromTemplate(entry, format) {
+      format = format || this.format;
+      const tpl = document.getElementById('item-tpl-' + format);
+      if (!tpl) return null;
+
+      const clone = tpl.content.cloneNode(true);
+      const root = clone.firstElementChild;
+      if (!root) return null;
+
+      root.id = entry.id;
+
+      const slot = (name) => root.querySelector('[data-slot="' + name + '"]');
+      const settings = this.itemSettings[entry.itemType] || {};
+
+      // Link
+      const linkEl = slot('link') || root;
+      if (linkEl.tagName === 'A' || linkEl.hasAttribute('data-slot')) {
+        linkEl.href = entry.permalink;
+        linkEl.title = entry.title;
+      }
+      // For row format, root is the <a>
+      if (root.tagName === 'A') {
+        root.href = entry.permalink;
+        root.title = entry.title;
+      }
+
+      // Card class
+      if (settings.card_class && format === 'card') {
+        const linkTarget = slot('link') || root;
+        settings.card_class.split(' ').filter(Boolean).forEach(c => linkTarget.classList.add(c));
+      }
+      if (settings.tile_class && format === 'tile') {
+        const linkTarget = slot('link') || root;
+        settings.tile_class.split(' ').filter(Boolean).forEach(c => linkTarget.classList.add(c));
+      }
+      if (settings.row_class && format === 'row') {
+        root.classList.add(...settings.row_class.split(' ').filter(Boolean));
+      }
+
+      // Badge
+      const badgeEl = slot('badge');
+      if (badgeEl && settings.badge_icon) {
+        badgeEl.classList.remove('hidden');
+        const badgeIcon = slot('badge-icon');
+        if (badgeIcon) badgeIcon.className = 'icon-[' + settings.badge_icon + ']';
+        const badgeText = slot('badge-text');
+        if (badgeText) badgeText.textContent = settings.badge_text || '';
+      }
+
+      // Image
+      if (entry.image && entry.image.src) {
+        const imageWrap = slot('image-wrap');
+        if (imageWrap && entry.color) {
+          imageWrap.style.backgroundColor = 'color-mix(in srgb, ' + entry.color + ' 25%, white 75%)';
+        }
+        const img = slot('image');
+        if (img) {
+          img.src = entry.image.src;
+          img.alt = entry.image.alt || '';
+          if (entry.image.width) img.width = entry.image.width;
+          if (entry.image.height) img.height = entry.image.height;
+          // Image class from settings
+          const imgClass = settings.image_class || '';
+          if (imgClass) imgClass.split(' ').filter(Boolean).forEach(c => img.classList.add(c));
+        }
+      }
+
+      // Title
+      const titleEl = slot('title');
+      if (titleEl) {
+        titleEl.textContent = entry.title;
+        const titleClass = settings.title_class || '';
+        if (titleClass) titleClass.split(' ').filter(Boolean).forEach(c => titleEl.classList.add(c));
+      }
+
+      // Description
+      const descEl = slot('description');
+      if (descEl) {
+        descEl.textContent = entry.description || '';
+        const descClass = settings.description_class || '';
+        if (descClass) descClass.split(' ').filter(Boolean).forEach(c => descEl.classList.add(c));
+      }
+
+      // People (authors with headshots)
+      if (entry.authors && entry.authors.length && settings.people_show) {
+        const peopleEl = slot('people');
+        if (peopleEl) {
+          peopleEl.classList.remove('hidden');
+          const frag = document.createDocumentFragment();
+          const wrapper = document.createElement('div');
+          wrapper.className = 'flex flex-row gap-x-5 items-center';
+
+          // Headshot images
+          const hasImages = entry.authors.some(a => a.image);
+          if (hasImages) {
+            const imgWrap = document.createElement('div');
+            imgWrap.className = 'flex flex-row';
+            entry.authors.forEach((a, i) => {
+              if (a.image) {
+                const img = document.createElement('img');
+                img.src = a.image;
+                img.alt = a.name;
+                img.className = 'my-0 w-6 h-6 rounded-full object-cover ring-2 ring-white' + (i > 0 ? ' -ml-2' : '');
+                img.style.zIndex = 10 - i;
+                img.loading = 'lazy';
+                imgWrap.appendChild(img);
+              }
+            });
+            wrapper.appendChild(imgWrap);
+          }
+
+          // Names
+          const namesDiv = document.createElement('div');
+          namesDiv.className = 'truncate text-slate-900';
+          namesDiv.textContent = entry.authors.map(a => a.name).join(', ');
+          wrapper.appendChild(namesDiv);
+          frag.appendChild(wrapper);
+          peopleEl.appendChild(frag);
+        }
+      }
+
+      // Conditional metadata
+      const conditionals = [
+        ['location', entry.location],
+        ['date', entry.dateFormatted],
+        ['duration', entry.durationFormatted],
+        ['views', entry.viewsFormatted],
+        ['stars', entry.starsFormatted],
+      ];
+      for (const [name, value] of conditionals) {
+        if (value) {
+          const el = slot(name);
+          if (el) {
+            el.style.display = '';
+            const textEl = slot(name + '-text');
+            if (textEl) textEl.textContent = value;
+          }
+        }
+      }
+
+      // Tags (combination of software + categories + tags)
+      const allTags = [
+        ...(entry.software || []),
+        ...(entry.categories || []),
+        ...(entry.tags || []),
+      ];
+      if (allTags.length) {
+        const tagsEl = slot('tags');
+        if (tagsEl) {
+          // For tile format, tags container has a nested div
+          const target = tagsEl.querySelector('div') || tagsEl;
+          allTags.forEach(tag => {
+            const span = document.createElement('span');
+            span.className = 'pill';
+            span.textContent = tag;
+            target.appendChild(span);
+          });
+          // Show the tags container
+          if (format === 'tile') {
+            tagsEl.classList.remove('hidden');
+          }
+        }
+      }
+
+      return root;
+    }
+
+    _getOrRenderElement(item) {
+      if (this.renderedMap.has(item.id)) {
+        return this.renderedMap.get(item.id);
+      }
+      const el = this._renderFromTemplate(item);
+      if (el) {
+        this.renderedMap.set(item.id, el);
+      }
+      return el;
+    }
+
+    _renderBatch() {
+      const start = this.displayedCount;
+      const end = Math.min(start + this.pageSize, this.filteredItems.length);
+      if (start >= end) return;
+
+      const frag = document.createDocumentFragment();
+      for (let i = start; i < end; i++) {
+        const item = this.filteredItems[i];
+        const el = this._getOrRenderElement(item);
+        if (el) frag.appendChild(el);
+      }
+      this.container.appendChild(frag);
+      this.displayedCount = end;
+
+      // Update sentinel visibility
+      if (this.sentinel) {
+        if (this.displayedCount >= this.filteredItems.length) {
+          this.sentinel.style.display = 'none';
+        } else {
+          this.sentinel.style.display = '';
+        }
+      }
+    }
+
+    _setupInfiniteScroll() {
+      this.sentinel = document.createElement('div');
+      this.sentinel.className = 'h-1';
+      this.container.parentNode.insertBefore(this.sentinel, this.container.nextSibling);
+
+      this.observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && this.displayedCount < this.filteredItems.length) {
+            this._renderBatch();
+          }
+        },
+        { rootMargin: '200px' }
+      );
+      this.observer.observe(this.sentinel);
     }
 
     _bindControls() {
@@ -187,7 +439,7 @@
       // Filter dropdowns
       this.controlsEl.querySelectorAll('[data-filter-trigger]').forEach(trigger => {
         const key = trigger.dataset.filterTrigger;
-        const panel = this.controlsEl.querySelector(`[data-filter-panel="${key}"]`);
+        const panel = this.controlsEl.querySelector('[data-filter-panel="' + key + '"]');
         if (!panel) return;
         trigger.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -253,10 +505,14 @@
         const cfg = this._filterCfgMap[key] || {};
         const aliases = cfg.aliases || {};
         const otherExcludes = cfg.otherExcludes || null;
-        const values = item[key]
-          .split(',')
-          .map(v => v.trim())
-          .filter(Boolean);
+
+        // Get values from the appropriate string field
+        const strKey = '_' + key + 'Str';
+        const rawStr = item[strKey] !== undefined ? item[strKey] : (item[key] || '');
+        const values = typeof rawStr === 'string'
+          ? rawStr.split(',').map(v => v.trim()).filter(Boolean)
+          : (Array.isArray(rawStr) ? rawStr : []);
+
         let matched = false;
         for (const active of activeSet) {
           if (active === 'Other' && otherExcludes) {
@@ -288,69 +544,18 @@
       const prop = key.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
 
       return items.slice().sort((a, b) => {
-        const av = a[prop];
-        const bv = b[prop];
-        if (cfg.type === 'number') return (av - bv) * dir;
+        if (cfg.type === 'number') {
+          return ((a[prop] || 0) - (b[prop] || 0)) * dir;
+        }
         if (cfg.type === 'date') {
-          const tsKey = `_${prop}Ts`;
+          const tsKey = '_' + prop + 'Ts';
           return ((a[tsKey] || a._dateTs) - (b[tsKey] || b._dateTs)) * dir;
         }
-        const sortKey = `_sort${prop.charAt(0).toUpperCase()}${prop.slice(1)}`;
-        const sa = a[sortKey] !== undefined ? a[sortKey] : String(av).toLowerCase();
-        const sb = b[sortKey] !== undefined ? b[sortKey] : String(bv).toLowerCase();
+        const sortKey = '_sort' + prop.charAt(0).toUpperCase() + prop.slice(1);
+        const sa = a[sortKey] !== undefined ? a[sortKey] : String(a[prop] || '').toLowerCase();
+        const sb = b[sortKey] !== undefined ? b[sortKey] : String(b[prop] || '').toLowerCase();
         return sa.localeCompare(sb) * dir;
       });
-    }
-
-    _reorder() {
-      const allSorted = this._sortItems(this.items);
-      const frag = document.createDocumentFragment();
-
-      if (this.sectionHeadings.length > 0) {
-        if (this._isDefaultSort()) {
-          const sectionOrder = this.sectionHeadings.map(h => h.dataset.sectionHeading);
-          sectionOrder.forEach(section => {
-            const heading = this.sectionHeadings.find(
-              h => h.dataset.sectionHeading === section
-            );
-            frag.appendChild(heading);
-            allSorted.filter(c => c.section === section).forEach(c => frag.appendChild(c.el));
-          });
-        } else {
-          this.sectionHeadings.forEach(h => frag.appendChild(h));
-          allSorted.forEach(c => frag.appendChild(c.el));
-        }
-      } else {
-        allSorted.forEach(c => frag.appendChild(c.el));
-      }
-
-      this.container.appendChild(frag);
-    }
-
-    _render(visibleItems) {
-      const visibleSet = new Set(visibleItems.map(c => c.el));
-
-      this.items.forEach(c => {
-        c.el.classList.toggle('hidden', !visibleSet.has(c.el));
-      });
-
-      if (this.sectionHeadings.length > 0) {
-        const defaultSort = this._isDefaultSort();
-        this.sectionHeadings.forEach(h => {
-          if (!defaultSort) {
-            h.classList.add('hidden');
-          } else {
-            const section = h.dataset.sectionHeading;
-            const hasVisible = visibleItems.some(c => c.section === section);
-            h.classList.toggle('hidden', !hasVisible);
-          }
-        });
-      }
-
-      if (this._needsReorder) {
-        this._reorder();
-        this._needsReorder = false;
-      }
     }
 
     _applyFilters() {
@@ -363,21 +568,36 @@
         if (t) tokens.push(t);
       }
 
-      const sortKey = this.state.sort.key;
-      const sortDir = this.state.sort.direction;
-      if (sortKey !== this._lastSortKey || sortDir !== this._lastSortDir) {
-        this._needsReorder = true;
-        this._lastSortKey = sortKey;
-        this._lastSortDir = sortDir;
-      }
-
-      let visible = this.items.filter(
-        c => this._matchesSearch(c, tokens) && this._matchesFilters(c)
+      // Filter all items at data level
+      let filtered = this.items.filter(
+        item => this._matchesSearch(item, tokens) && this._matchesFilters(item)
       );
 
-      visible = this._sortItems(visible);
-      this._render(visible);
-      this._updateCount(visible.length);
+      // Sort
+      filtered = this._sortItems(filtered);
+
+      // Handle section headings for events-style pages
+      if (this.sectionHeadings.length > 0 && this._isDefaultSort()) {
+        // Group by section, preserving heading order
+        const sectionOrder = this.sectionHeadings.map(h => h.dataset.sectionHeading);
+        const grouped = [];
+        sectionOrder.forEach(section => {
+          const sectionItems = filtered.filter(item => item.section === section);
+          if (sectionItems.length > 0) {
+            grouped.push({ heading: section, items: sectionItems });
+          }
+        });
+        this._renderSectioned(grouped);
+      } else {
+        // Hide section headings when not in default sort
+        this.sectionHeadings.forEach(h => h.classList.add('hidden'));
+        this.filteredItems = filtered;
+        this._clearContainer();
+        this.displayedCount = 0;
+        this._renderBatch();
+      }
+
+      this._updateCount(filtered.length);
       this._updateResetBtn();
       this._updateURL();
 
@@ -388,6 +608,48 @@
           const target = window.scrollY + containerTop - controlsHeight;
           window.scrollTo({ top: target, behavior: 'smooth' });
         }
+      }
+    }
+
+    _renderSectioned(groups) {
+      this._clearContainer();
+      const frag = document.createDocumentFragment();
+      const allFiltered = [];
+
+      groups.forEach(group => {
+        const heading = this.sectionHeadings.find(
+          h => h.dataset.sectionHeading === group.heading
+        );
+        if (heading) {
+          heading.classList.remove('hidden');
+          frag.appendChild(heading);
+        }
+        group.items.forEach(item => {
+          const el = this._getOrRenderElement(item);
+          if (el) {
+            el.classList.remove('hidden');
+            frag.appendChild(el);
+          }
+          allFiltered.push(item);
+        });
+      });
+
+      // Hide headings with no visible items
+      this.sectionHeadings.forEach(h => {
+        if (!groups.some(g => g.heading === h.dataset.sectionHeading)) {
+          h.classList.add('hidden');
+        }
+      });
+
+      this.container.appendChild(frag);
+      this.filteredItems = allFiltered;
+      this.displayedCount = allFiltered.length;
+    }
+
+    _clearContainer() {
+      // Remove all children but keep them in renderedMap for reuse
+      while (this.container.firstChild) {
+        this.container.removeChild(this.container.firstChild);
       }
     }
 
@@ -412,7 +674,7 @@
 
     _updateBadge(group) {
       if (!this.controlsEl) return;
-      const badge = this.controlsEl.querySelector(`[data-filter-badge="${group}"]`);
+      const badge = this.controlsEl.querySelector('[data-filter-badge="' + group + '"]');
       if (!badge) return;
       const count = this.state.filters[group] ? this.state.filters[group].size : 0;
       badge.textContent = count;
@@ -429,7 +691,6 @@
 
     _updateURL() {
       const params = new URLSearchParams();
-
       const defaultSortKey = this._defaultSortCfg ? this._defaultSortCfg.key : '';
 
       if (this.state.sort.key && this.state.sort.key !== defaultSortKey) {
@@ -451,7 +712,7 @@
       }
 
       const qs = params.toString();
-      const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+      const url = qs ? window.location.pathname + '?' + qs : window.location.pathname;
       window.history.replaceState({}, '', url);
     }
 
