@@ -172,25 +172,12 @@
   {{ end }}
 {{ end }}
 
-{{/* Search index — pre-built, accent-normalized */}}
-{{ $searchParts := slice $title $description (delimit $softwareTerms " ") (delimit $catTerms " ") (delimit $tagTerms " ") }}
-{{ range $authors }}
-  {{ $searchParts = $searchParts | append .name }}
-{{ end }}
-{{ if $is_event }}
-  {{ with $page.Params.location }}
-    {{ $searchParts = $searchParts | append . }}
-  {{ end }}
-{{ end }}
-{{ $searchIndex := delimit $searchParts " " }}
-
 {{/* Build the entry — only include keys with non-empty values */}}
 {{ $entry := dict
   "id" $id
   "permalink" $page.RelPermalink
   "title" $title
   "itemType" $itemType
-  "searchIndex" $searchIndex
 }}
 
 {{ with $description }}

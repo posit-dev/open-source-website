@@ -164,7 +164,16 @@
       // Build items array from JSON
       this.items = index.map(entry => {
         // Pre-compute search index and sort keys
-        const searchIndex = (entry.searchIndex || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        const searchParts = [
+          entry.title || '',
+          entry.description || '',
+          (entry.software || []).join(' '),
+          (entry.categories || []).join(' '),
+          (entry.tags || []).join(' '),
+          (entry.authors || []).map(a => a.name).join(' '),
+          entry.location || '',
+        ];
+        const searchIndex = searchParts.join(' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
         const sortTitle = (entry.title || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
         const dateTs = entry.date ? new Date(entry.date).getTime() : 0;
         const firstCommitTs = entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0;
