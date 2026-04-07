@@ -1,0 +1,237 @@
+{{ define "main" }}
+<div class="flex flex-col w-full max-w-7xl mx-auto" data-pagefind-ignore>
+  <h1 class="text-4xl font-medium text-gray-500 mb-4">{{ .Title }}</h1>
+  <p class="text-gray-600 mb-8">
+    Compare Hugo-rendered items (left) with JS-rendered items (right).
+    If they look the same, template parity is achieved.
+  </p>
+
+  {{/* Sample items from different content types */}}
+  {{ $samples := slice
+    (site.GetPage "/blog/quarto/2022-02-13-feature-callouts")
+    (site.GetPage "/software/shiny")
+    (site.GetPage "/events/posit-conf-2024")
+  }}
+
+  {{/* Also try to get a video */}}
+  {{ with site.GetPage "/resources/videos/2026-03-18_how-to-use-positrons-github-integration-isabella-velasquez-libby-heeren-data-science-lab" }}
+    {{ $samples = $samples | append . }}
+  {{ end }}
+
+  {{ $formats := slice "card" "tile" "row" }}
+
+  {{ range $format := $formats }}
+  <h2 class="text-2xl font-medium text-gray-700 mt-8 mb-4">Format: {{ $format }}</h2>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+    {{/* Hugo-rendered column */}}
+    <div>
+      <h3 class="text-lg font-semibold text-green-700 mb-3">Hugo-rendered (server)</h3>
+      <div class="{{ if eq $format "row" }}grid grid-cols-[80px_1fr_1fr_auto_auto] @container{{ else }}grid grid-cols-1 sm:grid-cols-2 gap-4{{ end }}">
+        {{ range $samples }}
+          {{ if . }}
+            {{ partial "item.html" (dict "page" . "format" $format) }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+
+    {{/* JS-rendered column — populated by script below */}}
+    <div>
+      <h3 class="text-lg font-semibold text-blue-700 mb-3">JS-rendered (client)</h3>
+      <div id="js-rendered-{{ $format }}" class="{{ if eq $format "row" }}grid grid-cols-[80px_1fr_1fr_auto_auto] @container{{ else }}grid grid-cols-1 sm:grid-cols-2 gap-4{{ end }}">
+        <p class="text-gray-400 text-sm col-span-full">Loading...</p>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
+  {{ partial "item-templates.html" }}
+
+  {{/* Build JSON data for the sample items, to be used by the test script */}}
+  {{ $sampleData := slice }}
+  {{ range $samples }}
+    {{ if . }}
+      {{ $entry := partial "item-index-entry.html" (dict "page" .) }}
+      {{ $sampleData = $sampleData | append $entry }}
+    {{ end }}
+  {{ end }}
+  <script id="test-sample-data" type="application/json">{{ $sampleData | jsonify }}</script>
+
+  <script>
+  (function() {
+    var settings = {};
+    var settingsEl = document.getElementById('item-settings');
+    if (settingsEl) {
+      try { settings = JSON.parse(settingsEl.textContent); } catch(e) {}
+    }
+
+    var sampleData = [];
+    var dataEl = document.getElementById('test-sample-data');
+    if (dataEl) {
+      try { sampleData = JSON.parse(dataEl.textContent); } catch(e) {}
+    }
+
+    var formats = ['card', 'tile', 'row'];
+
+    formats.forEach(function(format) {
+      var container = document.getElementById('js-rendered-' + format);
+      if (!container) return;
+      container.innerHTML = '';
+
+      sampleData.forEach(function(entry) {
+        var tpl = document.getElementById('item-tpl-' + format);
+        if (!tpl) return;
+
+        var clone = tpl.content.cloneNode(true);
+        var root = clone.firstElementChild;
+        if (!root) return;
+
+        root.id = entry.id + '-js-' + format;
+
+        function slot(name) {
+          return root.querySelector('[data-slot="' + name + '"]');
+        }
+
+        var itemSettings = settings[entry.itemType] || {};
+
+        // Link
+        var linkEl = slot('link') || root;
+        if (linkEl.tagName === 'A' || linkEl.hasAttribute('data-slot')) {
+          linkEl.href = entry.permalink;
+          linkEl.title = entry.title;
+        }
+        if (root.tagName === 'A') {
+          root.href = entry.permalink;
+          root.title = entry.title;
+        }
+
+        // Card/tile/row class
+        if (itemSettings.card_class && format === 'card') {
+          (slot('link') || root).classList.add(...itemSettings.card_class.split(' ').filter(Boolean));
+        }
+        if (itemSettings.tile_class && format === 'tile') {
+          (slot('link') || root).classList.add(...itemSettings.tile_class.split(' ').filter(Boolean));
+        }
+        if (itemSettings.row_class && format === 'row') {
+          root.classList.add(...itemSettings.row_class.split(' ').filter(Boolean));
+        }
+
+        // Badge
+        var badgeEl = slot('badge');
+        if (badgeEl && itemSettings.badge_icon) {
+          badgeEl.classList.remove('hidden');
+          var badgeIcon = slot('badge-icon');
+          if (badgeIcon) badgeIcon.className = 'icon-[' + itemSettings.badge_icon + ']';
+          var badgeText = slot('badge-text');
+          if (badgeText) badgeText.textContent = itemSettings.badge_text || '';
+        }
+
+        // Image
+        if (entry.image && entry.image.src) {
+          var imageWrap = slot('image-wrap');
+          if (imageWrap && entry.color) {
+            imageWrap.style.backgroundColor = 'color-mix(in srgb, ' + entry.color + ' 25%, white 75%)';
+          }
+          var img = slot('image');
+          if (img) {
+            img.src = entry.image.src;
+            img.alt = entry.image.alt || '';
+            if (entry.image.width) img.width = entry.image.width;
+            if (entry.image.height) img.height = entry.image.height;
+            var imgClass = itemSettings.image_class || '';
+            if (imgClass) imgClass.split(' ').filter(Boolean).forEach(function(c) { img.classList.add(c); });
+          }
+        }
+
+        // Title
+        var titleEl = slot('title');
+        if (titleEl) {
+          titleEl.textContent = entry.title;
+          var titleClass = itemSettings.title_class || '';
+          if (titleClass) titleClass.split(' ').filter(Boolean).forEach(function(c) { titleEl.classList.add(c); });
+        }
+
+        // Description
+        var descEl = slot('description');
+        if (descEl) {
+          descEl.textContent = entry.description || '';
+          var descClass = itemSettings.description_class || '';
+          if (descClass) descClass.split(' ').filter(Boolean).forEach(function(c) { descEl.classList.add(c); });
+        }
+
+        // People
+        if (entry.authors && entry.authors.length && itemSettings.people_show) {
+          var peopleEl = slot('people');
+          if (peopleEl) {
+            peopleEl.classList.remove('hidden');
+            var wrapper = document.createElement('div');
+            wrapper.className = 'flex flex-row gap-x-5 items-center';
+            var hasImages = entry.authors.some(function(a) { return a.image; });
+            if (hasImages) {
+              var imgWrap = document.createElement('div');
+              imgWrap.className = 'flex flex-row';
+              entry.authors.forEach(function(a, i) {
+                if (a.image) {
+                  var authorImg = document.createElement('img');
+                  authorImg.src = a.image;
+                  authorImg.alt = a.name;
+                  authorImg.className = 'my-0 w-6 h-6 rounded-full object-cover ring-2 ring-white' + (i > 0 ? ' -ml-2' : '');
+                  authorImg.style.zIndex = 10 - i;
+                  authorImg.loading = 'lazy';
+                  imgWrap.appendChild(authorImg);
+                }
+              });
+              wrapper.appendChild(imgWrap);
+            }
+            var namesDiv = document.createElement('div');
+            namesDiv.className = 'truncate text-slate-900';
+            namesDiv.textContent = entry.authors.map(function(a) { return a.name; }).join(', ');
+            wrapper.appendChild(namesDiv);
+            peopleEl.appendChild(wrapper);
+          }
+        }
+
+        // Conditional metadata
+        var conditionals = [
+          ['location', entry.location],
+          ['date', entry.dateFormatted],
+          ['duration', entry.durationFormatted],
+          ['views', entry.viewsFormatted],
+          ['stars', entry.starsFormatted]
+        ];
+        conditionals.forEach(function(pair) {
+          var name = pair[0], value = pair[1];
+          if (value) {
+            var el = slot(name);
+            if (el) {
+              el.style.display = '';
+              var textEl = slot(name + '-text');
+              if (textEl) textEl.textContent = value;
+            }
+          }
+        });
+
+        // Tags
+        var allTags = [].concat(entry.software || [], entry.categories || [], entry.tags || []);
+        if (allTags.length) {
+          var tagsEl = slot('tags');
+          if (tagsEl) {
+            var target = tagsEl.querySelector('div') || tagsEl;
+            allTags.forEach(function(tag) {
+              var span = document.createElement('span');
+              span.className = 'pill';
+              span.textContent = tag;
+              target.appendChild(span);
+            });
+            if (format === 'tile') tagsEl.classList.remove('hidden');
+          }
+        }
+
+        container.appendChild(root);
+      });
+    });
+  })();
+  </script>
+</div>
+{{ end }}
