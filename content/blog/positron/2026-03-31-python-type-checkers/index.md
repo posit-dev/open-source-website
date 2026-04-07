@@ -252,7 +252,7 @@ We started bundling **Pyrefly** in November and have been quite pleased with the
 
 Both **ty** and **Pyrefly** have been receptive to PRs that improve the experience for Positron users, which suggests they care about working well across editors, not just VS Code. For example, both contribute hover, completions, and semantic highlighting in the Positron Console.
 
-We'll keep evaluating as these tools mature! Want to try Positron? [Download it here](../../../download.qmd).
+We'll keep evaluating as these tools mature! Want to try Positron? [Download it here](https://positron.posit.co/download.html).
 
 [^1]: Another LSP extension is Pylance, which may be familiar to VS Code users, but due to licensing restrictions, Code-OSS forks like Positron cannot use it.
 
