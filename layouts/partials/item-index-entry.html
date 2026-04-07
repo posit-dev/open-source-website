@@ -184,32 +184,59 @@
 {{ end }}
 {{ $searchIndex := delimit $searchParts " " }}
 
-{{/* Build the entry */}}
+{{/* Build the entry — only include keys with non-empty values */}}
 {{ $entry := dict
   "id" $id
   "permalink" $page.RelPermalink
   "title" $title
-  "description" $description
   "itemType" $itemType
-  "type" $typeLabel
-  "date" $date
-  "dateFormatted" $dateFormatted
-  "categories" $catTerms
-  "languages" ($page.Params.languages | default slice)
-  "tags" $tagTerms
-  "software" $softwareTerms
-  "authors" $authors
-  "color" $color
-  "image" $imageData
   "searchIndex" $searchIndex
 }}
 
+{{ with $description }}
+  {{ $entry = merge $entry (dict "description" .) }}
+{{ end }}
+{{ with $typeLabel }}
+  {{ $entry = merge $entry (dict "type" .) }}
+{{ end }}
+{{ with $date }}
+  {{ $entry = merge $entry (dict "date" .) }}
+{{ end }}
+{{ with $dateFormatted }}
+  {{ $entry = merge $entry (dict "dateFormatted" .) }}
+{{ end }}
+{{ with $catTerms }}
+  {{ $entry = merge $entry (dict "categories" .) }}
+{{ end }}
+{{ with $page.Params.languages }}
+  {{ $entry = merge $entry (dict "languages" .) }}
+{{ end }}
+{{ with $tagTerms }}
+  {{ $entry = merge $entry (dict "tags" .) }}
+{{ end }}
+{{ with $softwareTerms }}
+  {{ $entry = merge $entry (dict "software" .) }}
+{{ end }}
+{{ with $authors }}
+  {{ $entry = merge $entry (dict "authors" .) }}
+{{ end }}
+{{ with $color }}
+  {{ $entry = merge $entry (dict "color" .) }}
+{{ end }}
+{{ if $imageData }}
+  {{ with $imageData.src }}
+    {{ $entry = merge $entry (dict "image" $imageData) }}
+  {{ end }}
+{{ end }}
+
 {{/* Software-specific */}}
 {{ if $is_software }}
-  {{ $entry = merge $entry (dict
-    "stars" (default 0 $page.Params.external.stars)
-    "starsFormatted" $starsFormatted
-  ) }}
+  {{ with $page.Params.external.stars }}
+    {{ $entry = merge $entry (dict "stars" .) }}
+  {{ end }}
+  {{ with $starsFormatted }}
+    {{ $entry = merge $entry (dict "starsFormatted" .) }}
+  {{ end }}
   {{ with $page.Params.external.first_commit }}
     {{ $entry = merge $entry (dict "firstCommit" (time.Format "2006-01-02" .)) }}
   {{ end }}
@@ -217,12 +244,18 @@
 
 {{/* Video-specific */}}
 {{ if eq ($page.Params.resource_type | default "") "video" }}
-  {{ $entry = merge $entry (dict
-    "views" (default 0 $page.Params.external.view_count | int)
-    "viewsFormatted" $viewsFormatted
-    "duration" (default 0 $page.Params.external.duration | int)
-    "durationFormatted" $durationFormatted
-  ) }}
+  {{ with $page.Params.external.view_count }}
+    {{ $entry = merge $entry (dict "views" (int .)) }}
+  {{ end }}
+  {{ with $viewsFormatted }}
+    {{ $entry = merge $entry (dict "viewsFormatted" .) }}
+  {{ end }}
+  {{ with $page.Params.external.duration }}
+    {{ $entry = merge $entry (dict "duration" (int .)) }}
+  {{ end }}
+  {{ with $durationFormatted }}
+    {{ $entry = merge $entry (dict "durationFormatted" .) }}
+  {{ end }}
 {{ end }}
 
 {{/* Events-specific */}}
