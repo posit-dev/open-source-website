@@ -22,6 +22,7 @@ tags:
   - Quarto
   - Demo
   - Quarto 1.4
+slug: quarto-dashboards-demo
 ---
 
 

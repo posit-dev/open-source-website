@@ -20,10 +20,7 @@ Ask the user for anything not already provided via arguments: `$ARGUMENTS`
 
 From the title and topic, reason about:
 
-- **slug** — lowercase, hyphenated, derived from the title
-- **subfolder** — which project subfolder the post belongs in, if any:
-  - Use `positron/`, `tidyverse/`, `shiny/`, `quarto/`, `great-tables/`, `plotnine/`, or `pointblank/` if the post is primarily about that project
-  - Use the top level for general news, AI posts, or anything cross-cutting
+- **slug** — only needed if it should differ from the folder name; otherwise the folder name is used automatically
 - **software** — folder names from `content/software/` that the post is about (e.g. `ggplot2`, `quarto`, `great-tables`)
 - **languages** — programming languages featured (R, Python, etc.)
 - **categories** — one or more from the fixed set: Machine Learning, Artificial Intelligence, Visualization, Interactive Apps, Publishing, MLOps and Admin, Data Wrangling, Best Practices, Community
@@ -46,7 +43,7 @@ git checkout -b blog/<slug>
 Description: "Scaffolding the post folder and frontmatter from the blog archetype"
 
 ```sh
-hugo new blog/<subfolder-if-any><slug>/index.md
+hugo new blog/<slug>/index.md
 ```
 
 If the format is `.qmd`, rename the file:
@@ -106,4 +103,5 @@ Finish by giving the author this checklist:
 - [ ] Review the inferred frontmatter — correct `categories`, `software`, `languages` if needed
 - [ ] Add `image` (1920×1080 PNG or JPG recommended) and `image-alt`
 - [ ] *(`.qmd` with R)* Install packages then run `renv::snapshot()` to lock the environment
+- [ ] Your post will be live at `/blog/<date>-<folder-name>/` — e.g. `/blog/2026-04-07-my-post/` (date from frontmatter, folder name as slug)
 - [ ] Preview: open a PR against `main` for a Netlify preview, or run `just dev` locally (see `content/blog/_authoring-guide.md` for setup)

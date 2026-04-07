@@ -26,6 +26,7 @@ tags:
   - Quarto
   - Quarto 1.6
   - Releases
+slug: 1.6-release
 ---
 
 

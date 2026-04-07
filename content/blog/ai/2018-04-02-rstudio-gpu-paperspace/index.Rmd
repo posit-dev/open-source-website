@@ -20,6 +20,7 @@ ported_categories:
 tags:
   - AI
   - Cloud
+slug: rstudio-gpu-paperspace
 ---
 
 ```{r setup, include=FALSE}

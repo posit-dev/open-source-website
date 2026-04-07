@@ -27,6 +27,7 @@ tags:
   - Features
   - Authoring
   - Quarto 1.3
+slug: multi-format
 ---
 
 {{< include ../_quarto-1.3-feature.qmd >}}

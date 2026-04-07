@@ -18,6 +18,7 @@ tags:
   - Python
 ported_categories:
   - Python
+slug: python-type-checkers
 ---
 
 ![](images/social.png)

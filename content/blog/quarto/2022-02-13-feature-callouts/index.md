@@ -33,6 +33,7 @@ tags:
   - Quarto
   - Features
   - Authoring
+slug: feature-callouts
 ---
 
 

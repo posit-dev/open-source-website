@@ -21,6 +21,7 @@ categories:
   - MLOps and Admin
 tags:
   - Positron
+slug: positron-server-jupyterhub
 ---
 
 

@@ -21,6 +21,7 @@ ported_categories:
 tags:
   - Quarto
   - Learn
+slug: get-started
 ---
 
 

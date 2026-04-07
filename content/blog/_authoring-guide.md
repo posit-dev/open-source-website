@@ -6,30 +6,14 @@ If you're using Claude Code, the `/new-post` skill will handle scaffolding, fron
 
 ## Where to place your post
 
-Posts live under `content/blog/`. Posts about a specific project should go in that project's subfolder:
+New posts go at the top level: `content/blog/my-post-slug/`.
 
-| Subfolder | Use for |
-|-----------|---------|
-| `positron/` | Positron IDE |
-| `tidyverse/` | tidyverse packages |
-| `shiny/` | Shiny (R and Python) |
-| `quarto/` | Quarto |
-| `great-tables/` | Great Tables |
-| `plotnine/` | plotnine |
-| `pointblank/` | pointblank |
-
-Everything else — general news, cross-cutting topics, AI posts, posts about projects without a dedicated subfolder — goes at the top level `content/blog/my-post/`.
-
-The `ai/`, `rstudio/`, and `education/` subfolders contain ported legacy content; don't use them for new posts.
+The subfolders (`quarto/`, `tidyverse/`, `shiny/`, `ai/`, etc.) contain ported legacy content — don't use them for new posts.
 
 Create a new post with:
 
 ```sh
-# Top level
 hugo new blog/my-post-slug/index.md
-
-# In a project subfolder
-hugo new blog/tidyverse/my-post-slug/index.md
 ```
 
 For a Quarto post, create as `index.md` then rename to `index.qmd` — Hugo doesn't recognise `.qmd` as a content format, so `hugo new` won't work directly with that extension.
@@ -107,13 +91,14 @@ Reviewers and CI can build the site without re-executing your code.
 
 Open a pull request against `main`. GitHub Actions will build the site and post a Netlify preview URL as a comment on the PR — no local setup required.
 
-The preview URL looks like `https://<hash>--posit-open-source.netlify.app`. Your post's path within it follows the folder structure:
+The preview URL looks like `https://<hash>--posit-open-source.netlify.app`. All posts use the format `/blog/YYYY-MM-DD-slug/`, where date and slug come from frontmatter:
 
-| Post location | Preview path |
+| Frontmatter | Preview path |
 |---|---|
-| `content/blog/my-post/` | `/blog/my-post/` |
-| `content/blog/tidyverse/my-post/` | `/blog/tidyverse/my-post/` |
-| `content/blog/tidyverse/my-post/` with `slug: original-post` | `/blog/tidyverse/original-post/` |
+| `date: 2026-04-07`, folder `my-post` (no slug set) | `/blog/2026-04-07-my-post/` |
+| `date: 2026-04-07`, `slug: custom-slug` | `/blog/2026-04-07-custom-slug/` |
+
+The URL slug defaults to the folder name, so you only need to set `slug` in frontmatter if you want something different.
 
 ### Option 2: Build locally
 

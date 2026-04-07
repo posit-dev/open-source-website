@@ -19,6 +19,7 @@ tags:
 ported_categories:
   - Jupyter
   - Notebooks
+slug: notebooks-march-announcement
 ---
 
 Positron now ships with a native [Jupyter Notebook Editor](https://positron.posit.co/positron-notebook-editor.html), a new unified experience we built from the ground up for working with Jupyter notebooks within Positron.

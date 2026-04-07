@@ -27,6 +27,7 @@ tags:
   - Keras
   - Unsupervised learning
   - Cloud
+slug: keras-fraud-autoencoder
 ---
 
 

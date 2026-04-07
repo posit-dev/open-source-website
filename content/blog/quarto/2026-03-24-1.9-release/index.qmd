@@ -18,6 +18,7 @@ categories:
   - Publishing
 tags:
   - Quarto
+slug: 1.9-release
 ---
 
 Quarto 1.9 is out! You can get the current release from the [download page](https://quarto.org/docs/download/index.html).

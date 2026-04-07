@@ -22,6 +22,7 @@ tags:
   - Python
 ported_categories:
   - Python
+slug: python-type-checkers
 ---
 
 

@@ -20,6 +20,7 @@ categories:
   - Publishing
 tags:
   - Quarto
+slug: pdf-accessibility-and-standards
 ---
 
 

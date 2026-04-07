@@ -23,6 +23,7 @@ tags:
   - Github codespaces
   - Teaching
   - Dev container
+slug: quarto-codespaces
 ---
 
 

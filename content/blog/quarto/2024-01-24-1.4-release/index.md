@@ -27,6 +27,7 @@ tags:
   - Quarto
   - Quarto 1.4
   - Releases
+slug: 1.4-release
 ---
 
 

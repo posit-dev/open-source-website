@@ -24,6 +24,7 @@ tags:
 ported_categories:
   - Jupyter
   - Notebooks
+slug: notebooks-march-announcement
 ---
 
 

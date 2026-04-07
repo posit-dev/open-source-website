@@ -15,6 +15,7 @@ categories:
   - MLOps and Admin
 tags:
   - Positron
+slug: positron-server-jupyterhub
 ---
 
 Academic institutions can now offer Positron directly within their existing JupyterHub environments, giving students a robust data science IDE without needing a local install or new infrastructure.

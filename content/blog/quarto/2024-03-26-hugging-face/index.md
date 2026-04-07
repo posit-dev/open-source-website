@@ -15,6 +15,7 @@ categories:
   - Publishing
 tags:
   - Quarto
+slug: hugging-face
 ---
 
 

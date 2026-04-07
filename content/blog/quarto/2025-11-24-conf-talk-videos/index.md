@@ -28,6 +28,7 @@ tags:
   - Learn
   - Conference
   - Videos
+slug: conf-talk-videos
 ---
 
 

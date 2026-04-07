@@ -23,6 +23,7 @@ tags:
   - TensorFlow
   - Keras
   - Tabular data
+slug: dl-for-cancer-immunotherapy
 ---
 
 

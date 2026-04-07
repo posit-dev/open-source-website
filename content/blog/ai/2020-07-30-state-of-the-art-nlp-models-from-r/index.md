@@ -22,6 +22,7 @@ ported_categories:
 tags:
   - AI
   - Natural language processing
+slug: state-of-the-art-nlp-models-from-r
 ---
 
 

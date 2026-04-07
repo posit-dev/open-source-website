@@ -21,6 +21,7 @@ tags:
   - Quarto
   - Quarto 1.5
   - Releases
+slug: 1.5-release
 ---
 
 
