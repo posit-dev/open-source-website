@@ -51,6 +51,8 @@
     {{ end }}
   </div>
 
+  {{ partial "item-templates.html" }}
+
   {{ else }}
   <div class="text-center py-12 mx-2 md:mx-0">
     <p class="text-xl text-gray-600">No {{ lower .Title }} found yet. Check back soon!</p>

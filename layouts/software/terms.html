@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $softwareSection := site.GetPage "/software" }}
 {{ $starredPages := slice }}
-{{ range $softwareSection.Pages }}
+{{ range sort $softwareSection.Pages "Title" }}
   {{ if .Params.external.stars }}{{ $starredPages = $starredPages | append . }}{{ end }}
 {{ end }}
 
@@ -21,6 +21,9 @@
     {{ $langValues = $langValues | append . }}
   {{ end }}
 {{ end }}
+
+{{ $itemsPerPage := site.Params.itemsPerPage | default 60 }}
+{{ $paginator := .Paginate $starredPages $itemsPerPage }}
 
 <div class="flex flex-col w-full">
   <div class="mb-8">
@@ -49,12 +52,13 @@
 
   <div data-item-container data-filter-config='{{ $cfg | jsonify }}'
        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-    {{ range sort $softwareSection.Pages "Title" }}
-      {{ if .Params.external.stars }}
-        {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-      {{ end }}
+    {{ range $paginator.Pages }}
+      {{ partial "item.html" (dict "page" . "hide-badge" true) }}
     {{ end }}
   </div>
+
+  {{ partial "pagination.html" $paginator }}
+  {{ partial "item-templates.html" }}
 
   <div data-filter-empty class="hidden text-center py-12">
     <div class="text-gray-400 mb-4">
