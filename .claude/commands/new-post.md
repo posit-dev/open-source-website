@@ -103,5 +103,5 @@ Finish by giving the author this checklist:
 - [ ] Review the inferred frontmatter — correct `categories`, `software`, `languages` if needed
 - [ ] Add `image` (1920×1080 PNG or JPG recommended) and `image-alt`
 - [ ] *(`.qmd` with R)* Install packages then run `renv::snapshot()` to lock the environment
-- [ ] Your post will be live at `/blog/<date>-<folder-name>/` — e.g. `/blog/2026-04-07-my-post/` (date from frontmatter, folder name as slug)
+- [ ] Your post will be live at `/blog/<date>_<folder-name>/` — e.g. `/blog/2026-04-07_my-post/` (date from frontmatter, folder name as slug)
 - [ ] Preview: open a PR against `main` for a Netlify preview, or run `just dev` locally (see `content/blog/_authoring-guide.md` for setup)

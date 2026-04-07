@@ -91,11 +91,11 @@ Reviewers and CI can build the site without re-executing your code.
 
 Open a pull request against `main`. GitHub Actions will build the site and post a Netlify preview URL as a comment on the PR — no local setup required.
 
-The preview URL looks like `https://<hash>--posit-open-source.netlify.app`. All posts use the format `/blog/YYYY-MM-DD-slug/`, where date and slug come from frontmatter:
+The preview URL looks like `https://<hash>--posit-open-source.netlify.app`. All posts use the format `/blog/YYYY-MM-DD_slug/`, where date and slug come from frontmatter:
 
 | Frontmatter | Preview path |
 |---|---|
-| `date: 2026-04-07`, folder `my-post` (no slug set) | `/blog/2026-04-07-my-post/` |
+| `date: 2026-04-07`, folder `my-post` (no slug set) | `/blog/2026-04-07_my-post/` |
 | `date: 2026-04-07`, `slug: custom-slug` | `/blog/2026-04-07-custom-slug/` |
 
 The URL slug defaults to the folder name, so you only need to set `slug` in frontmatter if you want something different.
