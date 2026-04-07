@@ -110,6 +110,11 @@
     _hidePagination() {
       const nav = this.container.parentNode.querySelector('[data-pagination]');
       if (nav) nav.style.display = 'none';
+      // If on a /page/N/ URL, redirect to base path so infinite scroll starts from page 1
+      if (/\/page\/\d+\/?$/.test(window.location.pathname)) {
+        const base = window.location.pathname.replace(/\/page\/\d+\/?$/, '/');
+        window.history.replaceState({}, '', base + window.location.search);
+      }
     }
 
     _hasActiveFilters() {
@@ -145,8 +150,9 @@
     }
 
     async _hydrate() {
-      // Fetch item index JSON
-      const indexUrl = window.location.pathname.replace(/\/$/, '') + '/item-index.json';
+      // Fetch item index JSON — strip /page/N/ suffix for paginated pages
+      const basePath = window.location.pathname.replace(/\/page\/\d+\/?$/, '/').replace(/\/$/, '');
+      const indexUrl = basePath + '/item-index.json';
       let index = [];
       try {
         const res = await fetch(indexUrl);
