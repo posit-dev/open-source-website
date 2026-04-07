@@ -9,6 +9,7 @@ pagerSize = 50
 [params]
 subtitle = ""
 showReadingTime = false
+itemsPerPage = 60
 
 [taxonomies]
   tag = 'tags'
