@@ -16,7 +16,8 @@
   <div class="flex flex-col w-full relative mt-6">
     <div class="flex flex-row">
       <section class="flex flex-col w-full md:w-2/3">
-        {{ range (.Paginate $pages 20).Pages }}
+        {{ $paginator := .Paginate $pages 20 }}
+        {{ range $paginator.Pages }}
           <article class="flex flex-col mt-6">
             <div>
               <a href="{{ .RelPermalink }}">
@@ -42,6 +43,6 @@
       </aside>
     </div>
 
-    {{ partial "pagination.html" . }}
+    {{ partial "pagination.html" $paginator }}
   </div>
 {{ end }}

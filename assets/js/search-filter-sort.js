@@ -598,6 +598,7 @@
       }
 
       this._updateCount(filtered.length);
+      this._updateEmpty(filtered.length === 0);
       this._updateResetBtn();
       this._updateURL();
 
@@ -687,6 +688,11 @@
       const totalEl = this.barEl.querySelector('[data-filter-total]');
       if (countEl) countEl.textContent = count;
       if (totalEl) totalEl.textContent = this.totalCount;
+    }
+
+    _updateEmpty(isEmpty) {
+      const emptyEl = this.container.parentNode.querySelector('[data-filter-empty]');
+      if (emptyEl) emptyEl.classList.toggle('hidden', !isEmpty);
     }
 
     _updateURL() {
