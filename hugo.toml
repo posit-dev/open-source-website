@@ -10,6 +10,7 @@ pagerSize = 50
 subtitle = ""
 showReadingTime = false
 itemsPerPage = 60
+blogQueries = ["tidyverse", "shiny", "education", "rstudio", "ai", "pointblank", "quarto", "plotnine", "great-tables", "positron"]
 
 [taxonomies]
   tag = 'tags'
