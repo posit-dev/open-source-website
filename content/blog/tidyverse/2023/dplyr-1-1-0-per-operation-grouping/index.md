@@ -274,7 +274,7 @@ We expect that most code won't depend on the ordering of these group keys, but i
 
 </div>
 
-The idea behind `.by` turns out to be useful in contexts outside of dplyr. In [tidyr 1.3.0](https://www.tidyverse.org/blog/2023/01/tidyr-1-3-0/#nestby), [`nest()`](https://tidyr.tidyverse.org/reference/nest.html) gained a `.by` argument, allowing you to specify the columns you want to nest *by* rather than the columns that appear in the nested results, which often makes for more natural calls to [`nest()`](https://tidyr.tidyverse.org/reference/nest.html).
+The idea behind `.by` turns out to be useful in contexts outside of dplyr. In [tidyr 1.3.0](/blog/2023-01-24_tidyr-1-3-0/#nestby), [`nest()`](https://tidyr.tidyverse.org/reference/nest.html) gained a `.by` argument, allowing you to specify the columns you want to nest *by* rather than the columns that appear in the nested results, which often makes for more natural calls to [`nest()`](https://tidyr.tidyverse.org/reference/nest.html).
 
 <div class="highlight">
 

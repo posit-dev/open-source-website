@@ -108,7 +108,7 @@ table design and tooling. For example, Rich's version of Great Tables in R, call
 
 My favorite aspect of `gt` is that the community ran **table contests** every year. The contests don't even require the use of `gt` or Great Tables, just a zest for the art of table styling. The [2024 Table Contest](https://posit.co/blog/2024-table-contest-winners/) had around **60 submissions**, and is something we often draw on for inspiration.
 
-For more on the long history of table design, see [The Design Philosophy of Great Tables](https://posit-dev.github.io/great-tables/blog/design-philosophy/), or this [Fred Hutch better tables workshop](https://hutchdatascience.org/better_tables/).
+For more on the long history of table design, see [The Design Philosophy of Great Tables](/blog/2024-04-04_design-philosophy/), or this [Fred Hutch better tables workshop](https://hutchdatascience.org/better_tables/).
 
 
 ### Working with Polars selectors

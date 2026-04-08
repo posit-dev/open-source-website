@@ -27,7 +27,7 @@ ported_categories:
 
 
 
-This is the second blog post in the "Teaching the Tidyverse in 2020" series. The first post was on [getting started](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-1-getting-started/), and today our focus is data visualisation. In this post, I'll highlight some new(ish) features of [ggplot2](https://ggplot2.tidyverse.org/) as well as not-so-new features that I see rarely in introductory teaching materials that I think belong there.
+This is the second blog post in the "Teaching the Tidyverse in 2020" series. The first post was on [getting started](/blog/2020-07-13_teaching-the-tidyverse-in-2020-part-1-getting-started/), and today our focus is data visualisation. In this post, I'll highlight some new(ish) features of [ggplot2](https://ggplot2.tidyverse.org/) as well as not-so-new features that I see rarely in introductory teaching materials that I think belong there.
 
 Let's start by loading the tidyverse and [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) packages.
 
@@ -103,7 +103,7 @@ ggplot(penguins, aes(y = species)) +
 
 {{<figure src="penguins-species-bar-1.png" alt="Barplot of species of penguins, without using coord_flip in the code. Same figure as the previous one, despite simpler code.">}}
 
-You can read more about what this change enables in other geoms [here](https://www.tidyverse.org/blog/2020/03/ggplot2-3-3-0/#bi-directional-geoms-and-stats).
+You can read more about what this change enables in other geoms [here](/blog/2020-03-05_ggplot2-3-3-0/#bi-directional-geoms-and-stats).
 
 ## Leverage scales and forcats
 

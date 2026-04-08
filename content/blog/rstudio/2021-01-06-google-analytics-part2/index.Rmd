@@ -32,13 +32,13 @@ ported_categories:
 img.screenshot { border: 0.5px solid #888; padding: 5px; background-color: #eee;}
 </style>
 ```
-Back in November, I took readers step by step through the somewhat long process of <a href="https://blog.rstudio.com/2020/11/27/google-analytics-part1/" target="_blank" rel="noopener noreferrer">authenticating and downloading Google Analytics web site data into R</a>. This post will be much simpler; I'm going to walk you through creating a dashboard showing blog post popularity using the `flexdashboard` package.
+Back in November, I took readers step by step through the somewhat long process of <a href="/blog/2020-11-27_google-analytics-part1/" target="_blank" rel="noopener noreferrer">authenticating and downloading Google Analytics web site data into R</a>. This post will be much simpler; I'm going to walk you through creating a dashboard showing blog post popularity using the `flexdashboard` package.
 
 Before we go there, however, I want to re-emphasize a correction that we made to the original credentials post. Mark Edmonston, the author of the terrific `googleAnalyticsR` package, has created a new version of his package that eliminates the need for OAUTH credentials when running on a server. Once that update is available on CRAN, I'll update this post to document the simpler process of only submitting service account credentials. In the meantime, though, we'll continue using both OAUTH and service account credentials.
 
 ## Where to Find The Code and Data
 
-All the code and data presented in this post is in a GitHub repository at <a href="https://github.com/rstudio/a-flexdashboard-for-google-analytics/" target="_blank" rel="noopener noreferrer">https://github.com/rstudio/a-flexdashboard-for-google-analytics</a> in the *Part2* folder. The code from Part 1 of this blog series is also available in the *Part1* folder; however, users should be aware that they'll need to provide their own authentication secrets for that code to work. My previous article, <a href="https://blog.rstudio.com/2020/11/27/google-analytics-part1/" target="_blank" rel="noopener noreferrer">Custom Google Analytics Dashboards with R: Downloading Data</a>, provides detailed instructions for how to obtain those credentials.
+All the code and data presented in this post is in a GitHub repository at <a href="https://github.com/rstudio/a-flexdashboard-for-google-analytics/" target="_blank" rel="noopener noreferrer">https://github.com/rstudio/a-flexdashboard-for-google-analytics</a> in the *Part2* folder. The code from Part 1 of this blog series is also available in the *Part1* folder; however, users should be aware that they'll need to provide their own authentication secrets for that code to work. My previous article, <a href="/blog/2020-11-27_google-analytics-part1/" target="_blank" rel="noopener noreferrer">Custom Google Analytics Dashboards with R: Downloading Data</a>, provides detailed instructions for how to obtain those credentials.
 
 To make it easy for readers to reproduce this dashboard, I've constructed a synthetic set of Google Analytics data named *clickbait\_GA\_data.csv* for a hypothetical blog at the address *clickbait.com*. At the time of this writing, that domain was currently for sale and therefore shouldn't be confused with any real blog. While the synthetic traffic comes from the Google Analytics log from an actual blog, the titles and URLs of all the articles are made up (although I wish I could find out the *3 Ways That Birds Are Confused About Bacon*). The dataset contains more than 32,000 visits and 105,000 page views conducted over one month.
 
@@ -73,7 +73,7 @@ So let's build this dashboard.
 
 ## Reading in the Data
 
-We begin our dashboard by reading in the data from Google Analytics. <a href="https://blog.rstudio.com/2020/11/27/google-analytics-part1/" target="_blank" rel="noopener noreferrer">In our last post</a>, we built code to authenticate and read in the GA data using the Google Analytics API. In a production dashboard, we would put that code in the setup section here. 
+We begin our dashboard by reading in the data from Google Analytics. <a href="/blog/2020-11-27_google-analytics-part1/" target="_blank" rel="noopener noreferrer">In our last post</a>, we built code to authenticate and read in the GA data using the Google Analytics API. In a production dashboard, we would put that code in the setup section here. 
 
 However, because we have our synthetic data in a .csv file, reading in the data will be a much simpler process. We will simply load the libraries we intend to use, apply the *read\_csv* function from the `readr` package to our dataset, and put all of this in the *setup* chunk of our R Markdown file as shown below. I've shown the first few lines of the output to provide a sense of what that content looks like.
 

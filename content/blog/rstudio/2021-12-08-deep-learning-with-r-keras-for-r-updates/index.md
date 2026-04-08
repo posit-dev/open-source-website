@@ -28,7 +28,7 @@ categories:
 Photo by <a href="https://unsplash.com/@sallybrad2016?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Preethi Viswanathan</a> on <a href="https://unsplash.com/s/photos/neural-network?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 </caption>
 
-We are excited to announce new developments in <a href="https://blogs.rstudio.com/ai/posts/2021-11-18-keras-updates/" target = "_blank">Keras for R</a>. Together with our current integration with <a href="https://torch.mlverse.org/" target = "_blank">torch</a>, data scientists can use the most popular and powerful deep learning frameworks all within R.
+We are excited to announce new developments in <a href="/blog/2021-11-18_keydanakalinowskikeras/" target = "_blank">Keras for R</a>. Together with our current integration with <a href="https://torch.mlverse.org/" target = "_blank">torch</a>, data scientists can use the most popular and powerful deep learning frameworks all within R.
 
 ## Expand data science capabilities with deep learning
 
@@ -70,5 +70,5 @@ We will continue developing Keras for R to help R users develop sophisticated de
 * More expansion of Keras for R’s extensive low-level refactoring and enhancements; and
 * More detailed introductions to the powerful new features.
 
-Check out the “<a href="https://blogs.rstudio.com/ai/posts/2021-11-18-keras-updates/" target = "_blank">Keras for R is Back!</a>” post to learn about the state of the ecosystem and the package's new functionalities. Subscribe to the <a href="https://blogs.rstudio.com/ai/" target = "_blank">RStudio AI Blog</a> for the latest news, insights, and examples of using AI-related technologies with R.
+Check out the “<a href="/blog/2021-11-18_keydanakalinowskikeras/" target = "_blank">Keras for R is Back!</a>” post to learn about the state of the ecosystem and the package's new functionalities. Subscribe to the <a href="https://blogs.rstudio.com/ai/" target = "_blank">RStudio AI Blog</a> for the latest news, insights, and examples of using AI-related technologies with R.
 

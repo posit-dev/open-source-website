@@ -172,7 +172,7 @@ We truly believe that the features laid out above will be a boon for augmenting 
 
 ### Future
 
-The support on the patchwork end is likely done at this point, but the conversion to grobs that has been added to gt is still somewhat young and will improve over time. It is likely that markdown formatting (through marquee) and other niceties will get added, leading to even more power in composing tables with plots using patchwork as the glue between them. As with the [support for gt in typst](https://quarto.org/docs/blog/posts/2024-07-02-beautiful-tables-in-typst/) the support for gt in patchwork is part of our larger effort to bring the power of gt to more environments and create a single unified solution to table styling.
+The support on the patchwork end is likely done at this point, but the conversion to grobs that has been added to gt is still somewhat young and will improve over time. It is likely that markdown formatting (through marquee) and other niceties will get added, leading to even more power in composing tables with plots using patchwork as the glue between them. As with the [support for gt in typst](/blog/2024-07-02_beautiful-tables-in-typst/) the support for gt in patchwork is part of our larger effort to bring the power of gt to more environments and create a single unified solution to table styling.
 
 ## With freedom comes great responsibility
 

@@ -247,7 +247,7 @@ df %>%
 #> 3     3     2   100  1000 <dbl [2]>
 ```
 
-Or take advantage of [`summarise()`'s new capabilities](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-summarise/) and return one element per row:
+Or take advantage of [`summarise()`'s new capabilities](/blog/2020-03-20_dplyr-1-0-0-summarise/) and return one element per row:
 
 ``` r
 df %>%

@@ -64,7 +64,7 @@ There are a lot of improvements in this version of parsnip. The main changes are
 
 ### More documentation improvements
 
-A [previous version of parsnip](https://www.tidyverse.org/blog/2021/07/tidymodels-july-2021/#better-model-documentation) added a nice feature where the help package for each model showed the engines that are available. One confusing aspect of this was that the list depended on what packages that were loaded. It also didn't tell users what engines are _possible_.
+A [previous version of parsnip](/blog/2021-07-27_tidymodels-july-2021/#better-model-documentation) added a nice feature where the help package for each model showed the engines that are available. One confusing aspect of this was that the list depended on what packages that were loaded. It also didn't tell users what engines are _possible_.
 
 Now, parsnip shows all of the known engines and labels which require extension packages. Here's a screenshot of what you get with `?linear_reg`: 
 

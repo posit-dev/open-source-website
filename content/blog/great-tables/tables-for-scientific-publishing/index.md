@@ -279,7 +279,7 @@ The combination of units notation (and chemistry notation, which is a part of th
 
 ## Nanoplots
 
-We added the nanoplots feature to **Great Tables** in v0.4.0 (check out the [intro blog post](https://posit-dev.github.io/great-tables/blog/introduction-0.4.0/) for a quick explainer) so that tables can contain small, info-packed plots that fit reasonably well into a table context. They are interactive in that hovering over the data points provides additional plot information. This approach brings together the advantages of plots (elucidation of trends in data) and tables (access to numerical values representing the data points) in a single summary visualization.
+We added the nanoplots feature to **Great Tables** in v0.4.0 (check out the [intro blog post](/blog/2024-03-19_introduction-0.4.0/) for a quick explainer) so that tables can contain small, info-packed plots that fit reasonably well into a table context. They are interactive in that hovering over the data points provides additional plot information. This approach brings together the advantages of plots (elucidation of trends in data) and tables (access to numerical values representing the data points) in a single summary visualization.
 
 Version `0.10.0` of **Great Tables** adds the `gibraltar` dataset, which provides meteorological data (temeperature, humidity, wind speed, etc.) for the entire month of May 2024 at Gibraltar Airport Station.
 

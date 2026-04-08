@@ -125,7 +125,7 @@ show_query(copy_inline(simulate_postgres(), df))
 
 ## Row modification
 
-dplyr 1.0.0 added a family of [row modification](https://www.tidyverse.org/blog/2020/05/dplyr-1-0-0-last-minute-additions/#row-mutation) functions: `rows_insert()`, `rows_append()`, `rows_update()`, `rows_patch()`, `rows_upsert()`, and `rows_delete()`.
+dplyr 1.0.0 added a family of [row modification](/blog/2020-05-06_dplyr-1-0-0-last-minute-additions/#row-mutation) functions: `rows_insert()`, `rows_append()`, `rows_update()`, `rows_patch()`, `rows_upsert()`, and `rows_delete()`.
 These functions were inspired by SQL and are now supported by dbplyr.
 
 The primary purpose of these functions is to modify the underlying tables.

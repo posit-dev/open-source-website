@@ -113,7 +113,7 @@ Or, install the development version from its [GitHub repo](https://github.com/r-
 
 ## Learn more
 
-You can learn more about clock by reading Davis' blog post announcing its first release, [Comprehensive date-time handling for R](https://www.tidyverse.org/blog/2021/03/clock-0-1-0/). Also be sure to check out its vignettes:
+You can learn more about clock by reading Davis' blog post announcing its first release, [Comprehensive date-time handling for R](/blog/2021-03-31_clock-0-1-0/). Also be sure to check out its vignettes:
 
 -   [Getting started](https://clock.r-lib.org/articles/clock.html)
 

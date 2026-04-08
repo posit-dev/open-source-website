@@ -32,7 +32,7 @@ You can install install tidyr with:
 install.packages("tidyr")
 ```
 
-This release doesn't include any major new excitement but it includes a whole passel of minor improvements building on the major changes in [tidyr 1.0.0](https://www.tidyverse.org/blog/2019/09/tidyr-1-0-0/), and generally making everything easier to use and a bit more flexible. In this blog post, I'll give a quick run down on new pivoting features; see the [full release announcement](https://github.com/tidyverse/tidyr/releases/tag/v1.1.0) for the details of other changes.
+This release doesn't include any major new excitement but it includes a whole passel of minor improvements building on the major changes in [tidyr 1.0.0](/blog/2019-09-13_tidyr-1-0-0/), and generally making everything easier to use and a bit more flexible. In this blog post, I'll give a quick run down on new pivoting features; see the [full release announcement](https://github.com/tidyverse/tidyr/releases/tag/v1.1.0) for the details of other changes.
 
 
 ```r

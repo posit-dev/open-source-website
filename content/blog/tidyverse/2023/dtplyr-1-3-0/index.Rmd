@@ -63,7 +63,7 @@ To avoid this problem, we have removed those S3 methods so you must now explicit
 
 ## dplyr 1.1.0
 
-This release brings support for dplyr 1.1.0's [per-operation grouping](https://www.tidyverse.org/blog/2023/02/dplyr-1-1-0-per-operation-grouping/) and `pick()`:
+This release brings support for dplyr 1.1.0's [per-operation grouping](/blog/2023-02-01_dplyr-1-1-0-per-operation-grouping/) and `pick()`:
 
 ```{r}
 dt <- lazy_dt(data.frame(x = 1:10, id = 1:2))
@@ -78,7 +78,7 @@ dt |>
 ```
 
 Per-operation grouping was one of the dplyr 1.1.0 features inspired by data.table, so it's neat to see it come full circle in this dtplyr release.
-Future releases will add support for other dplyr 1.1.0 features like the new [`join_by()`](https://www.tidyverse.org/blog/2023/01/dplyr-1-1-0-joins/#join_by) syntax and [`reframe()`](https://www.tidyverse.org/blog/2023/02/dplyr-1-1-0-pick-reframe-arrange/#reframe).
+Future releases will add support for other dplyr 1.1.0 features like the new [`join_by()`](/blog/2023-01-31_dplyr-1-1-0-joins/#join_by) syntax and [`reframe()`](/blog/2023-02-07_dplyr-1-1-0-pick-reframe-arrange/#reframe).
 
 ## Improved translations
 

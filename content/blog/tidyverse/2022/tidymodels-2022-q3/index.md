@@ -29,13 +29,13 @@ The [tidymodels](https://www.tidymodels.org/) framework is a collection of R pac
 
 Since the beginning of 2021, we have been publishing [quarterly updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing what's new in the tidymodels ecosystem. The purpose of these regular posts is to share useful new features and any updates you may have missed. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including our roundup posts as well as those that are more focused, like these from the past month or so:
 
--   [Improvements to model specification checking in tidymodels](https://www.tidyverse.org/blog/2022/10/parsnip-checking-1-0-2/)
--   [brulee 0.2.0](https://www.tidyverse.org/blog/2022/09/brulee-0-2-0/)
--   [Announcing bundle](https://www.tidyverse.org/blog/2022/09/bundle-0-1-0/)
--   [censored 0.1.0](https://www.tidyverse.org/blog/2022/08/censored-0-1-0/)
--   [rsample 1.1.0](https://www.tidyverse.org/blog/2022/08/rsample-1-1-0/)
+-   [Improvements to model specification checking in tidymodels](/blog/2022-10-03_parsnip-checking-1-0-2/)
+-   [brulee 0.2.0](/blog/2022-09-26_brulee-0-2-0/)
+-   [Announcing bundle](/blog/2022-09-16_bundle-0-1-0/)
+-   [censored 0.1.0](/blog/2022-08-10_censored-0-1-0/)
+-   [rsample 1.1.0](/blog/2022-08-08_rsample-1-1-0/)
 
-Since [our last roundup post](https://www.tidyverse.org/blog/2022/07/tidymodels-2022-q2/), there have been CRAN releases of 22 tidymodels packages. Here are links to their NEWS files:
+Since [our last roundup post](/blog/2022-07-19_tidymodels-2022-q2/), there have been CRAN releases of 22 tidymodels packages. Here are links to their NEWS files:
 
 <div class="highlight">
 

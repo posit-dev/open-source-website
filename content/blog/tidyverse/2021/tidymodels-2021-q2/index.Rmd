@@ -30,7 +30,7 @@ theme_set(theme_minimal())
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
-The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles. Earlier this year, we [started regular updates](https://www.tidyverse.org/blog/2021/03/tidymodels-2021-q1/) here on the tidyverse blog summarizing recent developments in the tidymodels ecosystem. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including those that focus on a single package or more major releases. The purpose of these roundup posts is to keep you informed about any releases you may have missed and useful new functionality as we maintain these packages.
+The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles. Earlier this year, we [started regular updates](/blog/2021-03-10_tidymodels-2021-q1/) here on the tidyverse blog summarizing recent developments in the tidymodels ecosystem. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including those that focus on a single package or more major releases. The purpose of these roundup posts is to keep you informed about any releases you may have missed and useful new functionality as we maintain these packages.
 
 Since our last roundup post, there have been 19 CRAN releases of 15 different packages. That might sound like a lot of change to absorb as a tidymodels user! However, we purposefully write code in small, modular packages that we can release frequently to make models easier to deploy and our software easier to maintain. You can install these updates from CRAN with:
 
@@ -158,7 +158,7 @@ liblinear_wf <-
 fit_resamples(liblinear_wf, resamples = churn_folds)
 ```
 
-The `"LiblineaR"` engine for regularized logistic regression [can be very fast compared to the `"glmnet"` engine](https://twitter.com/juliasilge/status/1374029310764359681), even when we use a [sparse representation](https://www.tidyverse.org/blog/2020/11/tidymodels-sparse-support/). Check out [benchmarking code here](https://gist.github.com/juliasilge/26a43e5e68cf12842354e6652dfed688).
+The `"LiblineaR"` engine for regularized logistic regression [can be very fast compared to the `"glmnet"` engine](https://twitter.com/juliasilge/status/1374029310764359681), even when we use a [sparse representation](/blog/2020-11-25_tidymodels-sparse-support/). Check out [benchmarking code here](https://gist.github.com/juliasilge/26a43e5e68cf12842354e6652dfed688).
 
 ## Post-processing your model predictions with probably and yardstick
 

@@ -90,7 +90,7 @@ We're going to add more material about online teaching starting in July based on
 
 There was even more spread here---only five things were mentioned more than once:
 
--   More guidance about exam content (now addressed by providing [sample exams](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/))
+-   More guidance about exam content (now addressed by providing [sample exams](/blog/2020-02-05_instructor-certification-exams/))
 -   More tidyverse-specific content
 -   Refresher seminars and other follow-up
 -   More about online teaching (see the comment in the previous section)

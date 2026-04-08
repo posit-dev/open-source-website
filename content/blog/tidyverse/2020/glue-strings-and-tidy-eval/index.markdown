@@ -27,7 +27,7 @@ ported_categories:
 
 
 
-[rlang 0.4.0](https://www.tidyverse.org/blog/2019/06/rlang-0-4-0/) introduced the curly-curly `{{` operator to simplify writing functions around tidyverse pipelines. The minor update 0.4.3 of rlang makes it possible to use `{` and `{{` to create result names in tidyverse verbs taking pairs of names and expressions.
+[rlang 0.4.0](/blog/2019-06-27_rlang-0-4-0/) introduced the curly-curly `{{` operator to simplify writing functions around tidyverse pipelines. The minor update 0.4.3 of rlang makes it possible to use `{` and `{{` to create result names in tidyverse verbs taking pairs of names and expressions.
 
 Install the latest version of rlang to make the new feature globally available throughout the tidyverse:
 

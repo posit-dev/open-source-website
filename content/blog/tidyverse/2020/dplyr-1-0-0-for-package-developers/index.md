@@ -24,7 +24,7 @@ ported_categories:
   - package
 ---
 
-As you're hopefully aware, [dplyr 1.0.0 is coming soon](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-is-coming-soon/), and we've been writing a [series of blog posts](https://www.tidyverse.org/tags/dplyr/) about the user-facing changes that you, as a data scientist have to look forward to. Today, I wanted to change tack a little and talk about the changes from the perspective of the package developer.
+As you're hopefully aware, [dplyr 1.0.0 is coming soon](/blog/2020-03-09_dplyr-1-0-0-is-coming-soon/), and we've been writing a [series of blog posts](https://www.tidyverse.org/tags/dplyr/) about the user-facing changes that you, as a data scientist have to look forward to. Today, I wanted to change tack a little and talk about the changes from the perspective of the package developer.
 
 ------------------------------------------------------------------------
 
@@ -125,7 +125,7 @@ Fixing these failures will typically involve updating the expected value.
 Increased strictness from vctrs
 -------------------------------
 
-As we [discussed recently](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-and-vctrs/), dplyr now uses the [vctrs package](https://vctrs.r-lib.org) under the hood. This increased strictness affects a few edge cases. For example, in dplyr 0.8.5, the following code returned `tibble(x = character())` (what we'd now consider to be a bug):
+As we [discussed recently](/blog/2020-04-27_dplyr-1-0-0-and-vctrs/), dplyr now uses the [vctrs package](https://vctrs.r-lib.org) under the hood. This increased strictness affects a few edge cases. For example, in dplyr 0.8.5, the following code returned `tibble(x = character())` (what we'd now consider to be a bug):
 
 ``` r
 df1 <- tibble(x = integer())

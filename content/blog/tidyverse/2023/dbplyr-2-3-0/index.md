@@ -157,7 +157,7 @@ We've also generally reviewed the error messages to ensure they show more clearl
 
 </div>
 
-dbplyr 2.3.0 is also supports features coming in [dplyr 1.1.0](https://www.tidyverse.org/blog/2022/11/dplyr-1-1-0-is-coming-soon/):
+dbplyr 2.3.0 is also supports features coming in [dplyr 1.1.0](/blog/2022-11-28_dplyr-1-1-0-is-coming-soon/):
 
 -   The `.by` argument is supported as alternative to [`group_by()`](https://dplyr.tidyverse.org/reference/group_by.html).
 -   Passing `...` to [`across()`](https://dplyr.tidyverse.org/reference/across.html) is deprecated because the evaluation timing of `...` is ambiguous.

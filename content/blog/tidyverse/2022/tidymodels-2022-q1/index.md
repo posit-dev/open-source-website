@@ -62,11 +62,11 @@ library(tidymodels)
 
 Since the beginning of last year, we have been publishing [quarterly updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing what's new in the tidymodels ecosystem. The purpose of these regular posts is to share useful new features and any updates you may have missed. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including our roundup posts as well as those that are more focused, like these from the past month or so: 
 
-- [recipes](https://www.tidyverse.org/blog/2022/02/recipes-0-2-0/)
-- [usemodels](https://www.tidyverse.org/blog/2022/03/usemodels-0-2-0/)
-- [parsnip and its extension packages](https://www.tidyverse.org/blog/2022/03/parsnip-roundup-2022/)
+- [recipes](/blog/2022-02-22_recipes-0-2-0/)
+- [usemodels](/blog/2022-03-23_usemodels-0-2-0/)
+- [parsnip and its extension packages](/blog/2022-03-24_parsnip-roundup-2022/)
 
-Since [our last roundup post](https://www.tidyverse.org/blog/2021/12/tidymodels-2021-q4/), there have been 21 CRAN releases of tidymodels packages. You can install these updates from CRAN with:
+Since [our last roundup post](/blog/2021-12-16_tidymodels-2021-q4/), there have been 21 CRAN releases of tidymodels packages. You can install these updates from CRAN with:
 
 
 ```r
@@ -178,7 +178,7 @@ For more on feature hashing including its benefits (fast and low memory!) and do
 
 ## More customization for workflow sets
 
-Last year about this time, we introduced [workflowsets](https://www.tidyverse.org/blog/2021/03/workflowsets-0-0-1/), a new package for creating, handling, and tuning multiple workflows at once. See [Section 7.5](https://www.tmwr.org/workflows.html#workflow-sets-intro) and especially [Chapter 15](https://www.tmwr.org/workflow-sets.html) of _Tidy Modeling with R_ for more on workflow sets. In the latest release of [workflowsets](https://workflowsets.tidymodels.org/), we provide finer control of customization for the workflows you create with workflowsets. First you can create a standard workflow set by crossing a set of models with a set of preprocessors (let's just use the feature hashing recipe we already created):
+Last year about this time, we introduced [workflowsets](/blog/2021-03-30_workflowsets-0-0-1/), a new package for creating, handling, and tuning multiple workflows at once. See [Section 7.5](https://www.tmwr.org/workflows.html#workflow-sets-intro) and especially [Chapter 15](https://www.tmwr.org/workflow-sets.html) of _Tidy Modeling with R_ for more on workflow sets. In the latest release of [workflowsets](https://workflowsets.tidymodels.org/), we provide finer control of customization for the workflows you create with workflowsets. First you can create a standard workflow set by crossing a set of models with a set of preprocessors (let's just use the feature hashing recipe we already created):
 
 
 ```r
@@ -205,7 +205,7 @@ old_set
 #> 2 hash_glmnet <tibble [1 × 4]> <opts[0]> <list [0]>
 ```
 
-The `option` column is a placeholder for any arguments to use when we _evaluate_ the workflow; the possibilities here are any argument to functions like [`tune_grid()`](https://tune.tidymodels.org/reference/tune_grid.html) or [`fit_resamples()`](https://tune.tidymodels.org/reference/fit_resamples.html). But what about arguments that belong not to the workflow as a whole, but to a recipe or a parsnip model? In the new release, we added support for customizing those kinds of arguments via `update_workflow_model()` and `update_workflow_recipe()`. This lets you, for example, say that you want to use a [sparse blueprint](https://www.tidyverse.org/blog/2020/11/tidymodels-sparse-support/) for fitting:
+The `option` column is a placeholder for any arguments to use when we _evaluate_ the workflow; the possibilities here are any argument to functions like [`tune_grid()`](https://tune.tidymodels.org/reference/tune_grid.html) or [`fit_resamples()`](https://tune.tidymodels.org/reference/fit_resamples.html). But what about arguments that belong not to the workflow as a whole, but to a recipe or a parsnip model? In the new release, we added support for customizing those kinds of arguments via `update_workflow_model()` and `update_workflow_recipe()`. This lets you, for example, say that you want to use a [sparse blueprint](/blog/2020-11-25_tidymodels-sparse-support/) for fitting:
 
 
 ```r
