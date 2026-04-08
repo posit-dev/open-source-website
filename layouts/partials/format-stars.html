@@ -1,0 +1,17 @@
+{{/*
+  format-stars.html — Format a star count for display.
+  Input: integer (raw star count)
+  Returns: string like "42", "1.5k", "12k"
+*/}}
+{{- $stars := . -}}
+{{- if lt $stars 1000 -}}
+  {{- printf "%d" $stars -}}
+{{- else -}}
+  {{- $thousands := math.Round (div (float $stars) 100) -}}
+  {{- $thousands = div $thousands 10.0 -}}
+  {{- if eq $thousands (math.Floor $thousands) -}}
+    {{- printf "%dk" (int $thousands) -}}
+  {{- else -}}
+    {{- printf "%.1fk" $thousands -}}
+  {{- end -}}
+{{- end -}}

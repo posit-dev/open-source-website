@@ -7,4 +7,5 @@ cascade:
   outputs:
     - html
     - rss
+    - ItemIndex
 ---

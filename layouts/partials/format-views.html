@@ -1,0 +1,25 @@
+{{/*
+  format-views.html — Format a view count for display.
+  Input: integer (raw view count)
+  Returns: string like "42 views", "1.5k views", "2M views"
+*/}}
+{{- $count := int . -}}
+{{- if ge $count 1000000 -}}
+  {{- $millions := math.Round (div (float $count) 100000) -}}
+  {{- $millions = div $millions 10.0 -}}
+  {{- if eq $millions (math.Floor $millions) -}}
+    {{- printf "%dM views" (int $millions) -}}
+  {{- else -}}
+    {{- printf "%.1fM views" $millions -}}
+  {{- end -}}
+{{- else if ge $count 1000 -}}
+  {{- $thousands := math.Round (div (float $count) 100) -}}
+  {{- $thousands = div $thousands 10.0 -}}
+  {{- if eq $thousands (math.Floor $thousands) -}}
+    {{- printf "%dk views" (int $thousands) -}}
+  {{- else -}}
+    {{- printf "%.1fk views" $thousands -}}
+  {{- end -}}
+{{- else -}}
+  {{- printf "%d views" $count -}}
+{{- end -}}

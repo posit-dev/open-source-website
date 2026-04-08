@@ -1,4 +1,4 @@
-{{/* insert-item: Insert a single item card by slug. */}}
+{{/* insert-item: Insert a single item by slug. */}}
 {{ $item := .Get "item" }}
 {{ if not $item }}
   {{ errorf "insert-item shortcode requires an 'item' argument" }}

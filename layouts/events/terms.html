@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="flex flex-col w-full gap-y-8" data-pagefind-ignore>
+<div class="flex flex-col w-full" data-pagefind-ignore>
   <h1 class="text-4xl font-medium text-gray-500">
     Events
   </h1>
@@ -11,75 +11,71 @@
   {{ end }}
 
   {{ $eventsSection := site.GetPage "/events" }}
-  {{ $now := now }}
   {{ $currentEvents := slice }}
   {{ $upcomingEvents := slice }}
   {{ $pastEvents := slice }}
 
   {{ range $eventsSection.Pages }}
-    {{ $startDate := .Params.start_date }}
-    {{ $endDate := .Params.end_date }}
-
-    {{ if and $startDate $endDate }}
-      {{ $start := time $startDate }}
-      {{ $end := time $endDate }}
-
-      {{ if and (le $start $now) (ge $end $now) }}
-        {{ $currentEvents = $currentEvents | append . }}
-      {{ else if gt $start $now }}
-        {{ $upcomingEvents = $upcomingEvents | append . }}
-      {{ else }}
-        {{ $pastEvents = $pastEvents | append . }}
-      {{ end }}
-    {{ else if $startDate }}
-      {{ $start := time $startDate }}
-      {{ if gt $start $now }}
-        {{ $upcomingEvents = $upcomingEvents | append . }}
-      {{ else }}
-        {{ $pastEvents = $pastEvents | append . }}
-      {{ end }}
+    {{ $section := partial "event-section.html" . }}
+    {{ if eq $section "current" }}
+      {{ $currentEvents = $currentEvents | append . }}
+    {{ else if eq $section "upcoming" }}
+      {{ $upcomingEvents = $upcomingEvents | append . }}
     {{ else }}
       {{ $pastEvents = $pastEvents | append . }}
     {{ end }}
   {{ end }}
 
-  <!-- Current Events Section -->
-  {{ if gt (len $currentEvents) 0 }}
-    <div class="flex flex-col gap-y-4">
-      {{ partial "heading.html" (dict "level" 2 "text" "Current Events" "class" "text-2xl font-medium text-gray-800") }}
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {{ range $currentEvents }}
-          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-        {{ end }}
-      </div>
-    </div>
-  {{ end }}
+  {{ $totalEvents := add (len $currentEvents) (add (len $upcomingEvents) (len $pastEvents)) }}
 
-  <!-- Upcoming Events Section -->
-  {{ if gt (len $upcomingEvents) 0 }}
-    <div class="flex flex-col gap-y-4">
-      {{ partial "heading.html" (dict "level" 2 "text" "Upcoming Events" "class" "text-2xl font-medium text-gray-800") }}
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {{ range $upcomingEvents.ByParam "start_date" }}
-          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-        {{ end }}
-      </div>
-    </div>
-  {{ end }}
+  {{ if gt $totalEvents 0 }}
 
-  <!-- Past Events Section -->
-  {{ if gt (len $pastEvents) 0 }}
-    <div class="flex flex-col gap-y-4">
-      {{ partial "heading.html" (dict "level" 2 "text" "Past Events" "class" "text-2xl font-medium text-gray-800") }}
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {{ range ($pastEvents.ByParam "start_date").Reverse }}
-          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-        {{ end }}
-      </div>
-    </div>
-  {{ end }}
+  {{ $cfg := site.Data.filters.events }}
 
-  {{ if eq (add (len $currentEvents) (len $upcomingEvents) (len $pastEvents)) 0 }}
+  {{ partial "filter-controls.html" $cfg }}
+
+  <div data-item-container data-filter-config='{{ $cfg | jsonify }}'
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+    {{/* Current Events */}}
+    {{ if gt (len $currentEvents) 0 }}
+    <h2 data-section-heading="current" class="col-span-full text-2xl font-medium text-gray-800">Current Events</h2>
+    {{ range sort $currentEvents ".Params.start_date" "desc" }}
+      {{ partial "item.html" (dict "page" . "hide-badge" true "section" "current") }}
+    {{ end }}
+    {{ end }}
+
+    {{/* Upcoming Events */}}
+    {{ if gt (len $upcomingEvents) 0 }}
+    <h2 data-section-heading="upcoming" class="col-span-full text-2xl font-medium text-gray-800">Upcoming Events</h2>
+    {{ range sort $upcomingEvents ".Params.start_date" "desc" }}
+      {{ partial "item.html" (dict "page" . "hide-badge" true "section" "upcoming") }}
+    {{ end }}
+    {{ end }}
+
+    {{/* Past Events */}}
+    {{ if gt (len $pastEvents) 0 }}
+    <h2 data-section-heading="past" class="col-span-full text-2xl font-medium text-gray-800">Past Events</h2>
+    {{ range sort $pastEvents ".Params.start_date" "desc" }}
+      {{ partial "item.html" (dict "page" . "hide-badge" true "section" "past") }}
+    {{ end }}
+    {{ end }}
+
+  </div>
+
+  {{ partial "item-templates.html" }}
+
+  <div data-filter-empty class="hidden text-center py-12">
+    <div class="text-gray-400 mb-4">
+      <svg class="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <h3 class="text-lg font-medium text-gray-900 mb-2">No events found</h3>
+    <p class="text-gray-600">Try adjusting your filters or search query.</p>
+  </div>
+
+  {{ else }}
     <p class="text-gray-600">No events found.</p>
   {{ end }}
 </div>
