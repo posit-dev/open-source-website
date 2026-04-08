@@ -37,5 +37,10 @@
 
   {{ partial "pagination.html" $paginator }}
   {{ partial "item-templates.html" }}
+
+  <div data-filter-empty class="hidden text-center py-12">
+    <h3 class="text-lg font-medium text-gray-900 mb-2">No items found</h3>
+    <p class="text-gray-600">Try adjusting your filters or search query.</p>
+  </div>
 </div>
 {{ end }}

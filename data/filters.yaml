@@ -13,7 +13,6 @@ blog:
   filters:
     - key: categories
       label: Topics
-      logic: or
       values:
         - Machine Learning
         - Artificial Intelligence
@@ -26,7 +25,6 @@ blog:
         - Community
     - key: languages
       label: Languages
-      logic: or
       values:
         - Python
         - R
@@ -61,7 +59,6 @@ categories:
   filters:
     - key: type
       label: Type
-      logic: or
       values:
         - blog post
         - software
@@ -84,10 +81,8 @@ cheatsheet:
   filters:
     - key: categories
       label: Topics
-      logic: or
     - key: languages
       label: Languages
-      logic: or
       values:
         - Python
         - R
@@ -115,7 +110,6 @@ events:
   filters:
     - key: languages
       label: Languages
-      logic: or
       values:
         - Python
         - R
@@ -143,7 +137,6 @@ software:
   filters:
     - key: languages
       label: Languages
-      logic: or
 
 tags:
   sort:
@@ -160,7 +153,6 @@ tags:
   filters:
     - key: type
       label: Type
-      logic: or
       values:
         - blog post
         - software
@@ -183,7 +175,6 @@ tutorial:
   filters:
     - key: categories
       label: Topics
-      logic: or
 
 video:
   sort:
@@ -208,7 +199,6 @@ video:
   filters:
     - key: categories
       label: Topics
-      logic: or
 
 webinar:
   sort:
@@ -225,4 +215,3 @@ webinar:
   filters:
     - key: categories
       label: Topics
-      logic: or

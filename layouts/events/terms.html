@@ -11,33 +11,16 @@
   {{ end }}
 
   {{ $eventsSection := site.GetPage "/events" }}
-  {{ $now := now }}
   {{ $currentEvents := slice }}
   {{ $upcomingEvents := slice }}
   {{ $pastEvents := slice }}
 
   {{ range $eventsSection.Pages }}
-    {{ $startDate := .Params.start_date }}
-    {{ $endDate := .Params.end_date }}
-
-    {{ if and $startDate $endDate }}
-      {{ $start := time $startDate }}
-      {{ $end := time $endDate }}
-
-      {{ if and (le $start $now) (ge $end $now) }}
-        {{ $currentEvents = $currentEvents | append . }}
-      {{ else if gt $start $now }}
-        {{ $upcomingEvents = $upcomingEvents | append . }}
-      {{ else }}
-        {{ $pastEvents = $pastEvents | append . }}
-      {{ end }}
-    {{ else if $startDate }}
-      {{ $start := time $startDate }}
-      {{ if gt $start $now }}
-        {{ $upcomingEvents = $upcomingEvents | append . }}
-      {{ else }}
-        {{ $pastEvents = $pastEvents | append . }}
-      {{ end }}
+    {{ $section := partial "event-section.html" . }}
+    {{ if eq $section "current" }}
+      {{ $currentEvents = $currentEvents | append . }}
+    {{ else if eq $section "upcoming" }}
+      {{ $upcomingEvents = $upcomingEvents | append . }}
     {{ else }}
       {{ $pastEvents = $pastEvents | append . }}
     {{ end }}
@@ -81,6 +64,16 @@
   </div>
 
   {{ partial "item-templates.html" }}
+
+  <div data-filter-empty class="hidden text-center py-12">
+    <div class="text-gray-400 mb-4">
+      <svg class="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <h3 class="text-lg font-medium text-gray-900 mb-2">No events found</h3>
+    <p class="text-gray-600">Try adjusting your filters or search query.</p>
+  </div>
 
   {{ else }}
     <p class="text-gray-600">No events found.</p>

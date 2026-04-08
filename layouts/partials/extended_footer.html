@@ -83,6 +83,6 @@
 {{- if not hugo.IsDevelopment }}
   {{- $filterSort = $filterSort | minify | fingerprint -}}
 {{ end -}}
-<script src="{{ $filterSort.RelPermalink }}" defer></script>
+<script>if(document.querySelector('[data-item-container]')){var s=document.createElement('script');s.src='{{ $filterSort.RelPermalink }}';s.defer=true;document.body.appendChild(s);}</script>
 
 {{- partial "custom_footer.html" . -}}

@@ -13,16 +13,16 @@
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   }
 
-  // Field qualifier → item accessor (returns normalized string)
+  // Field qualifier → pre-computed key on each item (set during _hydrate)
   const TEXT_FIELDS = {
-    title:       item => normalize(item.title || ''),
-    author:      item => normalize((item.authors || []).map(a => a.name).join(' ')),
-    description: item => normalize(item.description || ''),
-    topic:       item => normalize((item.categories || []).join(' ')),
-    tag:         item => normalize((item.tags || []).join(' ')),
-    software:    item => normalize((item.software || []).join(' ')),
-    language:    item => normalize((item.languages || []).join(' ')),
-    location:    item => normalize(item.location || ''),
+    title:       '_qTitle',
+    author:      '_qAuthor',
+    description: '_qDescription',
+    topic:       '_qTopic',
+    tag:         '_qTag',
+    software:    '_qSoftware',
+    language:    '_qLanguage',
+    location:    '_qLocation',
   };
 
   const NUMERIC_FIELDS = {
@@ -164,11 +164,6 @@
     function peek() { return pos < tokens.length ? tokens[pos] : null; }
     function advance() { return tokens[pos++]; }
 
-    // expr → orExpr
-    function expr() {
-      return orExpr();
-    }
-
     // orExpr → andExpr ( OR andExpr )*
     function orExpr() {
       let left = andExpr();
@@ -211,26 +206,26 @@
       return primary();
     }
 
-    // primary → LPAREN expr RPAREN | FIELD | TERM
+    // primary → LPAREN orExpr RPAREN | FIELD | TERM
     function primary() {
-      const t = peek();
-      if (!t) return null;
-      if (t.type === 'lparen') {
-        advance();
-        const node = expr();
-        // Consume matching rparen (tolerate missing)
-        if (peek() && peek().type === 'rparen') advance();
-        return node;
+      // Skip unexpected tokens (stray AND/OR) without recursion
+      while (peek()) {
+        const t = peek();
+        if (t.type === 'lparen') {
+          advance();
+          const node = orExpr();
+          if (peek() && peek().type === 'rparen') advance();
+          return node;
+        }
+        if (t.type === 'term' || t.type === 'field') {
+          return advance();
+        }
+        advance(); // skip unexpected token
       }
-      if (t.type === 'term' || t.type === 'field') {
-        return advance();
-      }
-      // Unexpected token — skip and try next
-      advance();
-      return primary();
+      return null;
     }
 
-    const ast = expr();
+    const ast = orExpr();
     return ast;
   }
 
@@ -256,6 +251,8 @@
     return false;
   }
 
+  // Recursively evaluate an AST node against an item.
+  // null AST (empty query) matches all items.
   function evaluate(node, item) {
     if (!node) return true;
     if (node.type === 'and') return evaluate(node.left, item) && evaluate(node.right, item);
@@ -264,8 +261,8 @@
     if (node.type === 'term') return item._search.includes(node.value);
     if (node.type === 'field') {
       if (node.kind === 'text') {
-        const accessor = TEXT_FIELDS[node.field];
-        return accessor ? accessor(item).includes(node.value) : false;
+        const key = TEXT_FIELDS[node.field];
+        return key ? item[key].includes(node.value) : false;
       }
       if (node.kind === 'numeric') return matchNumeric(node, item);
       if (node.kind === 'date') return matchDate(node, item);
@@ -343,6 +340,11 @@
             otherExcludes: f.other ? new Set(f.other) : null,
           };
         });
+      }
+
+      this._sortCfgMap = {};
+      if (this.config.sort) {
+        this.config.sort.forEach(s => { this._sortCfgMap[s.key] = s; });
       }
 
       this._interactive = false;
@@ -425,42 +427,48 @@
       const indexUrl = basePath + '/item-index.json';
       let index = [];
       try {
-        const res = await fetch(indexUrl);
+        const res = await fetch(indexUrl, { signal: AbortSignal.timeout(10000) });
         if (res.ok) index = await res.json();
       } catch (e) {
-        // Fall back to empty index
+        // Fall back to empty index (timeout, network error, or bad JSON)
       }
 
-      // Build items array from JSON
+      // Build items array from JSON with pre-computed search/sort/filter keys
       this.items = index.map(entry => {
-        // Pre-compute search index and sort keys
+        const authors = entry.authors || [];
+        const categories = entry.categories || [];
+        const tags = entry.tags || [];
+        const software = entry.software || [];
+        const languages = entry.languages || [];
+        const authorNames = authors.map(a => a.name).join(' ');
+
         const searchParts = [
           entry.title || '',
           entry.description || '',
-          (entry.software || []).join(' '),
-          (entry.categories || []).join(' '),
-          (entry.tags || []).join(' '),
-          (entry.authors || []).map(a => a.name).join(' '),
+          software.join(' '),
+          categories.join(' '),
+          tags.join(' '),
+          authorNames,
           entry.location || '',
         ];
-        const searchIndex = searchParts.join(' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-        const sortTitle = (entry.title || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[-_]/g, ' ').replace(/[^a-z0-9 ]/g, '').trim();
-        const dateTs = entry.date ? new Date(entry.date).getTime() : 0;
-        const firstCommitTs = entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0;
 
         return {
           ...entry,
-          // Pre-joined strings for dropdown filter matching
-          _categoriesStr: (entry.categories || []).join(','),
-          _languagesStr: (entry.languages || []).join(','),
-          _tagsStr: (entry.tags || []).join(','),
-          _softwareStr: (entry.software || []).join(','),
-          _typeStr: entry.type || '',
-          // Search and sort
-          _search: searchIndex,
-          _sortTitle: sortTitle,
-          _dateTs: dateTs,
-          _firstCommitTs: firstCommitTs,
+          // Pre-normalized text fields for search qualifiers
+          _qTitle:       normalize(entry.title || ''),
+          _qAuthor:      normalize(authorNames),
+          _qDescription: normalize(entry.description || ''),
+          _qTopic:       normalize(categories.join(' ')),
+          _qTag:         normalize(tags.join(' ')),
+          _qSoftware:    normalize(software.join(' ')),
+          _qLanguage:    normalize(languages.join(' ')),
+          _qLocation:    normalize(entry.location || ''),
+          // Full-text search index
+          _search: normalize(searchParts.join(' ')),
+          // Sort keys
+          _sortTitle: normalize(entry.title || '').replace(/[-_]/g, ' ').replace(/[^a-z0-9 ]/g, '').trim(),
+          _dateTs: entry.date ? new Date(entry.date).getTime() : 0,
+          _firstCommitTs: entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0,
         };
       });
 
@@ -791,10 +799,6 @@
       }
     }
 
-    _matchesQuery(item, ast) {
-      return evaluate(ast, item);
-    }
-
     _matchesFilters(item) {
       for (const [key, activeSet] of Object.entries(this.state.filters)) {
         if (activeSet.size === 0) continue;
@@ -802,12 +806,9 @@
         const aliases = cfg.aliases || {};
         const otherExcludes = cfg.otherExcludes || null;
 
-        // Get values from the appropriate string field
-        const strKey = '_' + key + 'Str';
-        const rawStr = item[strKey] !== undefined ? item[strKey] : (item[key] || '');
-        const values = typeof rawStr === 'string'
-          ? rawStr.split(',').map(v => v.trim()).filter(Boolean)
-          : (Array.isArray(rawStr) ? rawStr : []);
+        // Use original arrays from JSON; fall back to item[key] for 'type' etc.
+        const raw = item[key];
+        const values = Array.isArray(raw) ? raw : (raw ? [raw] : []);
 
         let matched = false;
         for (const active of activeSet) {
@@ -834,7 +835,7 @@
     _sortItems(items) {
       const { key, direction } = this.state.sort;
       if (!key) return items;
-      const cfg = this.config.sort ? this.config.sort.find(s => s.key === key) : null;
+      const cfg = this._sortCfgMap[key];
       if (!cfg) return items;
       const dir = direction === 'desc' ? -1 : 1;
       const prop = key.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
@@ -859,7 +860,7 @@
 
       // Filter all items at data level
       let filtered = this.items.filter(
-        item => this._matchesQuery(item, ast) && this._matchesFilters(item)
+        item => evaluate(ast, item) && this._matchesFilters(item)
       );
 
       // Sort
@@ -937,10 +938,7 @@
     }
 
     _clearContainer() {
-      // Remove all children but keep them in renderedMap for reuse
-      while (this.container.firstChild) {
-        this.container.removeChild(this.container.firstChild);
-      }
+      this.container.replaceChildren();
     }
 
     _updateShowBtnLabel() {

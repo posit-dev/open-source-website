@@ -117,17 +117,7 @@
 {{ $starsFormatted := "" }}
 {{ if $is_software }}
   {{ with $page.Params.external.stars }}
-    {{ if lt . 1000 }}
-      {{ $starsFormatted = printf "%d" . }}
-    {{ else }}
-      {{ $thousands := math.Round (div (float .) 100) }}
-      {{ $thousands = div $thousands 10.0 }}
-      {{ if eq $thousands (math.Floor $thousands) }}
-        {{ $starsFormatted = printf "%dk" (int $thousands) }}
-      {{ else }}
-        {{ $starsFormatted = printf "%.1fk" $thousands }}
-      {{ end }}
-    {{ end }}
+    {{ $starsFormatted = partial "format-stars.html" . }}
   {{ end }}
 {{ end }}
 
@@ -135,26 +125,7 @@
 {{ $viewsFormatted := "" }}
 {{ if eq ($page.Params.resource_type | default "") "video" }}
   {{ with $page.Params.external.view_count }}
-    {{ $count := int . }}
-    {{ if ge $count 1000000 }}
-      {{ $millions := math.Round (div (float $count) 100000) }}
-      {{ $millions = div $millions 10.0 }}
-      {{ if eq $millions (math.Floor $millions) }}
-        {{ $viewsFormatted = printf "%dM views" (int $millions) }}
-      {{ else }}
-        {{ $viewsFormatted = printf "%.1fM views" $millions }}
-      {{ end }}
-    {{ else if ge $count 1000 }}
-      {{ $thousands := math.Round (div (float $count) 100) }}
-      {{ $thousands = div $thousands 10.0 }}
-      {{ if eq $thousands (math.Floor $thousands) }}
-        {{ $viewsFormatted = printf "%dk views" (int $thousands) }}
-      {{ else }}
-        {{ $viewsFormatted = printf "%.1fk views" $thousands }}
-      {{ end }}
-    {{ else }}
-      {{ $viewsFormatted = printf "%d views" $count }}
-    {{ end }}
+    {{ $viewsFormatted = partial "format-views.html" . }}
   {{ end }}
 {{ end }}
 
@@ -162,13 +133,7 @@
 {{ $durationFormatted := "" }}
 {{ if eq ($page.Params.resource_type | default "") "video" }}
   {{ with $page.Params.external.duration }}
-    {{ $hours := div (int .) 3600 }}
-    {{ $minutes := div (mod (int .) 3600) 60 }}
-    {{ if gt $hours 0 }}
-      {{ $durationFormatted = printf "%dh %dmin" $hours $minutes }}
-    {{ else }}
-      {{ $durationFormatted = printf "%d min" $minutes }}
-    {{ end }}
+    {{ $durationFormatted = partial "format-duration.html" . }}
   {{ end }}
 {{ end }}
 

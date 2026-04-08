@@ -53,6 +53,11 @@
 
   {{ partial "item-templates.html" }}
 
+  <div data-filter-empty class="hidden text-center py-12">
+    <h3 class="text-lg font-medium text-gray-900 mb-2">No {{ lower .Title }} found</h3>
+    <p class="text-gray-600">Try adjusting your filters or search query.</p>
+  </div>
+
   {{ else }}
   <div class="text-center py-12 mx-2 md:mx-0">
     <p class="text-xl text-gray-600">No {{ lower .Title }} found yet. Check back soon!</p>

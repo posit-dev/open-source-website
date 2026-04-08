@@ -123,17 +123,7 @@
 {{ $stars := "" }}
 {{ if $is_software }}
   {{ with $page.Params.external.stars }}
-    {{ if lt . 1000 }}
-      {{ $stars = printf "%d" . }}
-    {{ else }}
-      {{ $thousands := math.Round (div (float .) 100) }}
-      {{ $thousands = div $thousands 10.0 }}
-      {{ if eq $thousands (math.Floor $thousands) }}
-        {{ $stars = printf "%dk" (int $thousands) }}
-      {{ else }}
-        {{ $stars = printf "%.1fk" $thousands }}
-      {{ end }}
-    {{ end }}
+    {{ $stars = partial "format-stars.html" . }}
   {{ end }}
 {{ end }}
 
@@ -143,13 +133,7 @@
 {{ $duration := "" }}
 {{ if eq $card_type "videos" }}
   {{ with $page.Params.external.duration }}
-    {{ $hours := div (int .) 3600 }}
-    {{ $minutes := div (mod (int .) 3600) 60 }}
-    {{ if gt $hours 0 }}
-      {{ $duration = printf "%dh %dmin" $hours $minutes }}
-    {{ else }}
-      {{ $duration = printf "%d min" $minutes }}
-    {{ end }}
+    {{ $duration = partial "format-duration.html" . }}
   {{ end }}
 {{ end }}
 
@@ -159,26 +143,7 @@
 {{ $views := "" }}
 {{ if eq $card_type "videos" }}
   {{ with $page.Params.external.view_count }}
-    {{ $count := int . }}
-    {{ if ge $count 1000000 }}
-      {{ $millions := math.Round (div (float $count) 100000) }}
-      {{ $millions = div $millions 10.0 }}
-      {{ if eq $millions (math.Floor $millions) }}
-        {{ $views = printf "%dM views" (int $millions) }}
-      {{ else }}
-        {{ $views = printf "%.1fM views" $millions }}
-      {{ end }}
-    {{ else if ge $count 1000 }}
-      {{ $thousands := math.Round (div (float $count) 100) }}
-      {{ $thousands = div $thousands 10.0 }}
-      {{ if eq $thousands (math.Floor $thousands) }}
-        {{ $views = printf "%dk views" (int $thousands) }}
-      {{ else }}
-        {{ $views = printf "%.1fk views" $thousands }}
-      {{ end }}
-    {{ else }}
-      {{ $views = printf "%d views" $count }}
-    {{ end }}
+    {{ $views = partial "format-views.html" . }}
   {{ end }}
 {{ end }}
 
