@@ -1,5 +1,7 @@
 ---
 title: pkgdown 1.5.0
+description: "pkgdown 1.5.0: article descriptions, better navbar control, and richer Open Graph metadata."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2020-03-25'

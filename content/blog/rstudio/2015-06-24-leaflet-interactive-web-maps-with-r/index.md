@@ -1,5 +1,7 @@
 ---
 title: 'Leaflet: Interactive web maps with R'
+description: "Create interactive web maps in R with leaflet: markers, polygons, popups, GeoJSON support, and seamless Shiny integration."
+auto-description: true
 people:
   - Yihui Xie
 date: '2015-06-24'

@@ -28,6 +28,7 @@ tags:
   - Generative models
   - TensorFlow
   - Keras
+math: true
 ---
 
 

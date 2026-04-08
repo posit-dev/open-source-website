@@ -26,6 +26,8 @@ tags:
   - Quarto
   - Features
   - Layout
+math: true
+slug: advanced-layout
 ---
 
 

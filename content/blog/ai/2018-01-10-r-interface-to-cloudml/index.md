@@ -26,6 +26,7 @@ tags:
   - Cloud
   - Packages
   - Releases
+slug: r-interface-to-cloudml
 ---
 
 

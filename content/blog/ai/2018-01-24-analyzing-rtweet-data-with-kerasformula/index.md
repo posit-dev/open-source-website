@@ -25,6 +25,7 @@ tags:
   - TensorFlow
   - Keras
   - Natural language processing
+slug: analyzing-rtweet-data-with-kerasformula
 ---
 
 

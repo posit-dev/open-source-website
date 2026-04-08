@@ -1,11 +1,13 @@
 ---
 title: Great Tables for Scientific Publishing
+description: "Format scientific tables in Great Tables: unit notation, chemical formulas, and scientific notation."
+auto-description: true
 people:
   - Rich Iannone
 date: '2024-07-08'
 format:
-  html:
-    code-fold: yes
+  hugo-md: 
+    code-fold: true
     code-summary: Show the Code
 ported_from: great_tables
 port_status: in-progress

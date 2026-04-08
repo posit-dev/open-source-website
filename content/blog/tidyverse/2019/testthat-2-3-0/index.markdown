@@ -1,5 +1,7 @@
 ---
 title: testthat 2.3.0
+description: "testthat 2.3.0: verify_output() for testing printed output and improved parallel testing."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2019-11-06'

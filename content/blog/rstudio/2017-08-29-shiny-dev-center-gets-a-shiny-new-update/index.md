@@ -1,5 +1,7 @@
 ---
 title: Shiny Dev Center gets a shiny new update
+description: "Shiny Dev Center redesigned: clearer learning paths and updated articles for Shiny developers."
+auto-description: true
 people:
   - Mine Çetinkaya-Rundel
 date: '2017-08-29'

@@ -1,5 +1,7 @@
 ---
 title: memoise 1.0.0
+description: "memoise 1.0.0 caches function results with better printing, argument forwarding, and time-based invalidation."
+auto-description: true
 people:
   - Jim Hester
 date: '2016-02-02'

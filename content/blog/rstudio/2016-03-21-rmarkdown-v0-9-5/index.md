@@ -1,5 +1,7 @@
 ---
 title: R Markdown v0.9.5
+description: "R Markdown 0.9.5 adds floating table of contents, code folding, tabbed sections, and five new HTML themes."
+auto-description: true
 people:
   - RStudio Team
 date: '2016-03-21'

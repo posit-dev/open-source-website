@@ -1,5 +1,7 @@
 ---
 title: leaflet 1.1.0
+description: "leaflet 1.1.0 adds text labels, shape highlighting, awesome-markers, sf support, custom projections, and viridis palettes."
+auto-description: true
 people:
   - Joe Cheng
 date: '2017-02-22'

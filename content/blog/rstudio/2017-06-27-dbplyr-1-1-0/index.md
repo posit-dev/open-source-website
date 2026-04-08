@@ -1,5 +1,7 @@
 ---
 title: dbplyr 1.1.0
+description: "dbplyr 1.1.0: database backends now work directly with DBI connections and feature improved SQL translation."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2017-06-27'

@@ -1,5 +1,7 @@
 ---
 title: New data packages
+description: "Four new data packages: babynames, fueleconomy, nasaweather, and nycflights13—large datasets for learning data analysis."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-07-23'

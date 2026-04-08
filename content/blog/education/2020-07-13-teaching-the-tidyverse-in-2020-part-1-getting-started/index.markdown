@@ -1,5 +1,7 @@
 ---
 title: 'Teaching the Tidyverse in 2020 - Part 1: Getting started'
+description: "Getting started teaching the tidyverse in 2020: loading packages, managing environments, and using palmerpenguins."
+auto-description: true
 date: '2020-07-13'
 slug: teaching-the-tidyverse-in-2020-part-1-getting-started
 categories:

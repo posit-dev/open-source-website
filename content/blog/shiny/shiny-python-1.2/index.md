@@ -1,6 +1,7 @@
 ---
 title: Shiny for Python 1.2.0
-description: Shiny's `@render.data_frame` has a new integration with `narwhals`, gaining
+description: >-
+  Shiny's `@render.data_frame` has a new integration with `narwhals`, gaining
   support for multiple data frame types!
 people:
   - Shiny Team
@@ -9,8 +10,10 @@ image: shinyforpython-120.jpg
 image-alt: Shiny for Python 1.2.0
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
+software:
+  - shiny-python
+languages:
+  - Python
 categories:
   - Interactive Apps
 tags:
@@ -24,9 +27,16 @@ In a follow up post, we'll also highlight another new exciting feature: integrat
 
 For a full list of all the changes in this release, check out the [CHANGELOG](https://github.com/posit-dev/py-shiny/blob/main/CHANGELOG.md#120---2024-10-29).
 
-> **What is Shiny for Python?**
->
-> Shiny for Python is a framework that makes it easy to build interactive web applications using Python ([Quick Start](https://shiny.posit.co/py/docs/)). You can create web applications directly from your Python code without needing to know any Javascript. Shiny is built on a [reactive programming model](https://shiny.posit.co/py/docs/reactive-foundations.html), meaning that Shiny automatically figures out the relationships between different components in your application. When a user interacts with your application, Shiny will only update the necessary parts. This ensures that your applications stay fast and responsive even as they grow in size and complexity.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">What is Shiny for Python?</span>
+</div>
+<div class="callout-body">
+
+Shiny for Python is a framework that makes it easy to build interactive web applications using Python ([Quick Start](https://shiny.posit.co/py/docs/)). You can create web applications directly from your Python code without needing to know any Javascript. Shiny is built on a [reactive programming model](https://shiny.posit.co/py/docs/reactive-foundations.html), meaning that Shiny automatically figures out the relationships between different components in your application. When a user interacts with your application, Shiny will only update the necessary parts. This ensures that your applications stay fast and responsive even as they grow in size and complexity.
+
+</div>
+</div>
 
 ------------------------------------------------------------------------
 
@@ -40,17 +50,23 @@ In Shiny `v1.2.0`, `@render.data_frame` integrated with [narwhals](https://narwh
 
 `narwhals` describes itself as an *"Extremely lightweight and extensible compatibility layer between dataframe libraries!"* that can *"Seamlessly support all, without depending on any!"*. `narwhals` (as of this blog post) has full API support for eager data frames such as [cuDF](https://docs.rapids.ai/api/cudf/stable/), [Modin](https://modin.readthedocs.io/en/stable/), [pandas](https://pandas.pydata.org/), [Polars](https://docs.pola.rs/), and [PyArrow](https://arrow.apache.org/docs/python/). This means that you can immediately use any of these data frame libraries (even `narwhals` itself) within Shiny's `@render.data_frame` without any updates to Shiny or forcing you to export your data to pandas or Polars. Additionally, as `narwhals` (who is rapidly improving by the day) adds support for new data frame libraries, Shiny will automatically support them as well! As `narwhals` improves, so does Shiny! 🚀
 
-> **Additional Narwhals data frame types**
->
-> Narwhals also supports other styles of data frames such as [Dask](https://docs.dask.org/en/stable/) (Lazy-only) and [Ibis](https://docs.ibis-project.org/) and [Vaex](https://vaex.io/docs/index.html) through the DataFrame Interchange Protocol. However, these data frame types are not directly supported within Shiny as they are not *eager* data frames.
->
-> Please convert your lazy or interchange data to an eager data frame before returning it within `@render.data_frame`.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Additional Narwhals data frame types</span>
+</div>
+<div class="callout-body">
+
+Narwhals also supports other styles of data frames such as [Dask](https://docs.dask.org/en/stable/) (Lazy-only) and [Ibis](https://docs.ibis-project.org/) and [Vaex](https://vaex.io/docs/index.html) through the DataFrame Interchange Protocol. However, these data frame types are not directly supported within Shiny as they are not *eager* data frames.
+
+Please convert your lazy or interchange data to an eager data frame before returning it within `@render.data_frame`.
+
+</div>
+</div>
 
 Let's look at an example that uses a PyArrow Table (which has never been directly implemented by Shiny) displaying `great_tables`'s S&P 500 data:
 
-**app.py**
 
-``` python
+``` python { filename="app.py" }
 import great_tables as gt
 import pyarrow as pa
 from shiny.express import render, ui

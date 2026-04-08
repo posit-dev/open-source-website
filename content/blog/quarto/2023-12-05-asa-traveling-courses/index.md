@@ -20,6 +20,7 @@ ported_categories:
 tags:
   - Quarto
   - Learn
+slug: asa-traveling-courses
 ---
 
 

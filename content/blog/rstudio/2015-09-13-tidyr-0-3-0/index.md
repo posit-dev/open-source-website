@@ -1,5 +1,7 @@
 ---
 title: tidyr 0.3.0
+description: "tidyr 0.3.0 adds fill() for carrying forward values, replace_na(), complete() for missing combinations, and unnest() for list columns."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-09-13'

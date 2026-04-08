@@ -21,6 +21,7 @@ tags:
   - Quarto
   - Learn
   - Conference
+slug: conf-talks
 ---
 
 Videos of posit::conf(2024) talks are now posted [on YouTube](https://www.youtube.com/watch?v=s_Vh9HIeLVg&list=PL9HYL-VRX0oSFkdF4fJeY63eGDvgofcbn). We have also made playlist of talks that are about using, building with, and building on Quarto.

@@ -29,6 +29,7 @@ tags:
   - Torch
   - Spatial data
   - Concepts
+math: true
 ---
 
 

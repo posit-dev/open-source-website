@@ -1,5 +1,7 @@
 ---
 title: Shiny at posit::conf(2025)
+description: "Find Shiny talks and workshops at posit::conf(2025) in Atlanta."
+auto-description: true
 subtitle: Atlanta, GA (September 2025)
 people:
   - Shiny Team

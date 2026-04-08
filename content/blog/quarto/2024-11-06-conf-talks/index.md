@@ -21,6 +21,7 @@ tags:
   - Quarto
   - Learn
   - Conference
+slug: conf-talks
 ---
 
 

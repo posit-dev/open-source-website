@@ -22,6 +22,7 @@ tags:
   - Quarto
   - Learn
   - Workshop
+slug: websites-workshop
 ---
 
 

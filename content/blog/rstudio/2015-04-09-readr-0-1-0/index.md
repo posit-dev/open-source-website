@@ -1,5 +1,7 @@
 ---
 title: readr 0.1.0
+description: "Introducing readr: read CSV, TSV, and fixed-width files 10x faster than base R, with automatic type detection and no stringsAsFactors."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-04-09'

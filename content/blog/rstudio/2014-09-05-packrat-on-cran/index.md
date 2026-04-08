@@ -1,5 +1,7 @@
 ---
 title: Packrat on CRAN
+description: "Packrat 0.4.1 hits CRAN with local repository support, experimental package caching, and Windows improvements."
+auto-description: true
 people:
   - Kevin Ushey
 date: '2014-09-05'

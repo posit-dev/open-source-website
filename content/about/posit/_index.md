@@ -1,6 +1,8 @@
 ---
 title: "About Posit"
 layout: single
+aliases:
+  - /about/
 ---
 
 RStudio (now Posit) was founded in 2009 with the vision of creating high quality open-source software for data scientists. While our scope has expanded far beyond those early days, our core mission has never wavered. We invest heavily in open-source development, education, and the community with the goal of serving knowledge creators 100 years from now.

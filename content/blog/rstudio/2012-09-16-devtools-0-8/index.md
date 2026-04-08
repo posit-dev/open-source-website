@@ -1,5 +1,7 @@
 ---
 title: 'New version of devtools: 0.8'
+description: "devtools 0.8 rewrites load_all() for better namespace simulation and adds support for C/C++ code and GitHub PRs."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2012-09-16'

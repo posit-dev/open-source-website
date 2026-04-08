@@ -1,5 +1,7 @@
 ---
 title: The Revamped bookdown.org Website
+description: "The revamped bookdown.org website: browse, search, and contribute books written with bookdown."
+auto-description: true
 people:
   - Yihui Xie
 date: '2018-07-25'

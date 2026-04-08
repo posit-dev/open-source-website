@@ -1,5 +1,7 @@
 ---
 title: R Markdown v2
+description: "R Markdown v2: Pandoc-powered output to PDF, Word, HTML, and slides. Citations, tables, footnotes, and custom templates."
+auto-description: true
 people:
   - Yihui Xie
 date: '2014-06-18'

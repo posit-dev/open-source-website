@@ -15,6 +15,7 @@ software: ["distill"]
 languages: ["R"]
 tags:
   - Education
+slug: distill-down
 ---
 
 ## Introduction

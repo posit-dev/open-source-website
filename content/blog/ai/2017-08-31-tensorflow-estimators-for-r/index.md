@@ -23,6 +23,7 @@ tags:
   - AI
   - Packages
   - Releases
+slug: tensorflow-estimators-for-r
 ---
 
 

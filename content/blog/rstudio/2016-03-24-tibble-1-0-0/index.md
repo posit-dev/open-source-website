@@ -1,5 +1,7 @@
 ---
 title: tibble 1.0.0
+description: "Introducing the tibble package: modern data frames with better printing, stricter subsetting, and no string-to-factor conversion."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-03-24'

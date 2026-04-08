@@ -26,6 +26,7 @@ tags:
   - Features
   - Authoring
   - Quarto 1.3
+slug: code-annotation
 ---
 
 

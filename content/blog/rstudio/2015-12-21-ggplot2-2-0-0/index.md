@@ -1,5 +1,7 @@
 ---
 title: ggplot 2.0.0
+description: "ggplot2 2.0.0: official extension mechanism, new geoms (geom_count, geom_curve, geom_label), appearance tweaks, and facet labels."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-12-21'

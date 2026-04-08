@@ -1,5 +1,7 @@
 ---
 title: 'Teaching the Tidyverse in 2020 - Part 3: Data wrangling and tidying'
+description: "Teaching data wrangling in 2020: pivot_longer/wider, across(), and rowwise() in dplyr and tidyr."
+auto-description: true
 date: '2020-07-17'
 slug: teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying
 categories:

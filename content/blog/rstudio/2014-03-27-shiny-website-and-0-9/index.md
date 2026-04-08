@@ -1,5 +1,7 @@
 ---
 title: New Shiny website launched; Shiny 0.9 released
+description: "Shiny Dev Center launches at shiny.rstudio.com. Shiny 0.9 adds grid layouts, navbar pages, selectize inputs, and showcase mode."
+auto-description: true
 people:
   - Joe Cheng
 date: '2014-03-27'

@@ -1,5 +1,7 @@
 ---
 title: 'sparklyr 0.9: Streams and Kubernetes'
+description: "sparklyr 0.9: Spark structured streams for real-time data processing and Kubernetes cluster support."
+auto-description: true
 people:
   - Javier Luraschi
 date: '2018-10-01'

@@ -30,6 +30,7 @@ tags:
   - TensorFlow
   - Keras
   - Time series
+slug: sunspots-lstm
 ---
 
 

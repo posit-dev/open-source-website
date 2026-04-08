@@ -25,6 +25,7 @@ tags:
   - Probabilistic machine learning
   - Probabilistic deep learning
   - Concepts
+math: true
 ---
 
 

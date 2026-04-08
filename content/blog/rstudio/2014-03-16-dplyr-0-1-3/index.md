@@ -1,5 +1,7 @@
 ---
 title: dplyr 0.1.3
+description: "dplyr 0.1.3 fixes Rcpp compatibility and several bugs that caused R crashes."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-03-16'

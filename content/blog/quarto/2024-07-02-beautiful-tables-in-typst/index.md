@@ -26,6 +26,7 @@ tags:
   - Quarto
   - Quarto 1.5
   - Tables
+slug: beautiful-tables-in-typst
 ---
 
 

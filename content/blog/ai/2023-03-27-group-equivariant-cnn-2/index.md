@@ -27,6 +27,7 @@ tags:
   - Spatial data
   - Image recognition
   - Image processing
+math: true
 ---
 
 

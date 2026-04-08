@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-octagon" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 9v4"/>
+  <path d="M7.86 2h8.28l5.86 5.86v8.28l-5.86 5.86h-8.28l-5.86 -5.86v-8.28z"/>
+  <path d="M12 16h.01"/>
+</svg>

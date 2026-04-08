@@ -1,5 +1,7 @@
 ---
 title: 'renv: Project Environments for R'
+description: "Introducing renv: isolated, portable, reproducible R project environments to replace Packrat."
+auto-description: true
 people:
   - Kevin Ushey
 date: '2019-11-06'

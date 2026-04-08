@@ -25,6 +25,7 @@ tags:
   - AI
   - Torch
   - Concepts
+math: true
 ---
 
 

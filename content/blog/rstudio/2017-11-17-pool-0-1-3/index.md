@@ -1,5 +1,7 @@
 ---
 title: pool package on CRAN
+description: "pool package: connection pooling for databases in Shiny apps with automatic connection management."
+auto-description: true
 people:
   - Bárbara Borges Ribeiro
 date: '2017-11-17'

@@ -1,5 +1,7 @@
 ---
 title: Introducing Pointblank
+description: "Get started with Pointblank for data validation using Polars, Pandas, or DuckDB."
+auto-description: true
 people:
   - Rich Iannone
 date: '2025-04-04'

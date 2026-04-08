@@ -29,6 +29,7 @@ tags:
   - Explainability
   - Image recognition
   - Image processing
+slug: lime-v04-the-kitten-picture-edition
 ---
 
 

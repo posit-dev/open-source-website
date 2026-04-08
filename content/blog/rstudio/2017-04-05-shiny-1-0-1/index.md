@@ -1,5 +1,7 @@
 ---
 title: Shiny 1.0.1
+description: "Shiny 1.0.1 adds reactiveVal() for single reactive values and HTML content in radio buttons and checkboxes."
+auto-description: true
 people:
   - Bárbara Borges Ribeiro
 date: '2017-04-05'

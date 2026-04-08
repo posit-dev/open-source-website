@@ -3,6 +3,9 @@ languageCode = 'en-us'
 title = 'Posit Open Source'
 ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_authoring-guide\.md$', '_external-sources', 'blog/.*/renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/', '\.original$']
 
+[permalinks.page]
+  blog = "/blog/:year-:month-:day{}_:slugorcontentbasename/"
+
 [pagination]
 pagerSize = 50
 
@@ -40,8 +43,18 @@ showReadingTime = false
   lineNos = true
   noClasses = false
 
+[markup.goldmark.parser.attribute]
+block = true
+
 [markup.goldmark.renderer]
 unsafe = true
+
+[markup.goldmark.extensions.passthrough]
+enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['$$', '$$']]
+inline = [['$', '$']]
 
 [menu]
   [[menu.main]]

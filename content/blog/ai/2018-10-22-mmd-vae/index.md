@@ -28,6 +28,7 @@ tags:
   - Unsupervised learning
   - Image recognition
   - Image processing
+math: true
 ---
 
 

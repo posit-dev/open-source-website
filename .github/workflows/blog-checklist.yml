@@ -1,0 +1,45 @@
+name: Blog Publishing Checklist
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    paths:
+      - 'content/blog/**'
+
+jobs:
+  checklist:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Post checklist if not already present
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          MARKER="<!-- blog-checklist -->"
+
+          # Check if we already posted a checklist
+          EXISTING=$(gh api "repos/$REPO/issues/$PR_NUMBER/comments" \
+            --jq ".[] | select(.body | contains(\"$MARKER\")) | .id" \
+            | head -1)
+
+          if [ -n "$EXISTING" ]; then
+            echo "Checklist comment already exists (id: $EXISTING), skipping."
+            exit 0
+          fi
+
+          # Post the checklist
+          BODY=$(cat <<'EOF'
+          <!-- blog-checklist -->
+          ## Publishing checklist
+
+          - [ ] **Get a review** — request at least one reviewer on this PR
+          - [ ] **Check your post** — once the deploy preview is ready, a comment will appear with direct links to your post
+          - [ ] **Check the blog listing** — confirm your post appears with the correct title, image, and description
+          - [ ] **Merge** — once everything looks good and you have an approving review, merge to `main`
+          EOF
+          )
+
+          gh api "repos/$REPO/issues/$PR_NUMBER/comments" -f body="$BODY"

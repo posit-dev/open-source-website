@@ -1,5 +1,7 @@
 ---
 title: Shiny Server now available
+description: "Shiny Server public beta: host multiple Shiny apps on Linux and share them over the web."
+auto-description: true
 people:
   - Joe Cheng
 date: '2013-01-22'

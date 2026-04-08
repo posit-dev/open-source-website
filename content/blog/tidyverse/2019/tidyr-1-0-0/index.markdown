@@ -1,5 +1,7 @@
 ---
 title: tidyr 1.0.0
+description: "tidyr 1.0.0: pivot_longer() and pivot_wider() replace spread() and gather()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2019-09-13'

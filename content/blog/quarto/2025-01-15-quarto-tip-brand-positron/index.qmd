@@ -23,6 +23,7 @@ tags:
   - Learn
   - Tip
   - Brand
+slug: quarto-tip-brand-positron
 ---
 
 In today's Quarto Tip, we show you how [Positron](https://positron.posit.co)

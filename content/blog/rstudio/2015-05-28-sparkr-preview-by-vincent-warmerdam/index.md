@@ -1,5 +1,7 @@
 ---
 title: SparkR preview by Vincent Warmerdam
+description: "Guest tutorial: Get started with SparkR for distributed computing—install locally, run map/reduce operations, and deploy on AWS."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-05-28'

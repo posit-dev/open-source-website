@@ -24,6 +24,7 @@ tags:
   - AI
   - Torch
   - Time series
+math: true
 ---
 
 

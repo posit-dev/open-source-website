@@ -1,5 +1,7 @@
 ---
 title: httr 1.2.0
+description: "httr 1.2.0 adds RETRY() for unreliable APIs with exponential backoff, and fixes POST redirect issues."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-07-05'

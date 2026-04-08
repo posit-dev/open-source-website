@@ -1,5 +1,7 @@
 ---
 title: 'NYC Meetup: What''s Next for R Markdown'
+description: "Join us June 5th in NYC for a meetup on R Markdown with Yihui Xie and Jeff Horner."
+auto-description: true
 people:
   - RStudio Team
 date: '2012-05-24'

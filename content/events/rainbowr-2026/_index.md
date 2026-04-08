@@ -16,6 +16,9 @@ software:
   - pointblank
 languages:
 - R
+resources:
+  - videos/2026-03-16_pointblank-was-i-expecting-this-hannah-frick
+  - videos/2026-03-16_claude-code-for-r-hadley-wickham
 ---
 
-The inaugural rainbowR virtual conference will bring together LGBTQIA+ users of R, and their allies, to promote their work and foster connections amongst the community. rainbowR is a community whose mission is to connect, support and promote LGBTQ+ R users, and to spread awareness of LGBTQ+ issues through data-driven activism.Find out more at [rainbowr.org](https://rainbowr.org/).
+The inaugural rainbowR virtual conference brought together LGBTQIA+ users of R, and their allies, to promote their work and foster connections amongst the community. rainbowR is a community whose mission is to connect, support and promote LGBTQ+ R users, and to spread awareness of LGBTQ+ issues through data-driven activism. Find out more at [rainbowr.org](https://rainbowr.org/).

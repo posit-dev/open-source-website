@@ -23,6 +23,7 @@ tags:
   - AI
   - Image recognition
   - Image processing
+slug: deepfake
 ---
 
 

@@ -1,5 +1,7 @@
 ---
 title: Comment sections and help instructions at the Shiny Dev Center
+description: "Shiny Dev Center adds Disqus comments on all articles and a new guide on getting help with Shiny."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-05-28'
