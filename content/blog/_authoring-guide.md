@@ -134,6 +134,18 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
   quarto preview index.qmd
   ```
 
+## Linking to other blog posts
+
+When linking to another post on this blog, use the **permalink URL** — the `/blog/YYYY-MM-DD_slug/` path you see in the browser:
+
+```markdown
+Check out the [dplyr 1.0.0 post](/blog/2020-06-01_dplyr-1-0-0/).
+```
+
+Don't use content directory paths like `/blog/tidyverse/2020/dplyr-1-0-0/`. Those depend on how we've organized files on disk and would break if we ever reorganize.
+
+To find a post's permalink, check its `date` and `slug` (or folder name) in frontmatter. The pattern is `/blog/{date}_{slug}/`, e.g. `date: 2020-06-01` + `slug: dplyr-1-0-0` → `/blog/2020-06-01_dplyr-1-0-0/`. Or just find the post on the site and copy the URL.
+
 ## Getting published
 
 Once your post is written, follow these steps to get it live.

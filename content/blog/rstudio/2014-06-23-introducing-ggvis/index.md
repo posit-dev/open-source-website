@@ -33,7 +33,7 @@ Our first public release of [ggvis](http://ggvis.rstudio.com/), version 0.3, is 
 
 ggvis integrates with Shiny, so you can use dynamic, interactive ggvis graphics in Shiny applications. We hope that the combination of ggvis and Shiny will make it easy for you to create applications for interactive data exploration and presentation. ggvis plots are inherently reactive and they render in the browser, so they can take advantage of the capabilities provided by modern web browsers. You can use Shiny's interactive components for interactivity as well as more direct forms of interaction with the plot, such as hovering, clicking, and brushing.
 
-ggvis works seamlessly with [R Markdown v2](/2014/06/18/r-markdown-v2/) and [interactive documents](/2014/06/19/interactive-documents-an-incredibly-easy-way-to-use-shiny/), so you can easily add interactive graphics to your R Markdown documents:
+ggvis works seamlessly with [R Markdown v2](/blog/rstudio/2014-06-18-r-markdown-v2/) and [interactive documents](/blog/rstudio/2014-06-19-interactive-documents-an-incredibly-easy-way-to-use-shiny/), so you can easily add interactive graphics to your R Markdown documents:
 
 ![shiny-doc-ggvis](https://rstudioblog.files.wordpress.com/2014/06/shiny-doc-ggvis1.png)  ![ggvis_density](https://rstudioblog.files.wordpress.com/2014/06/ggvis_density.gif)
 

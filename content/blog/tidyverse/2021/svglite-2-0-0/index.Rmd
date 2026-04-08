@@ -49,7 +49,7 @@ install.packages("svglite")
 ```
 
 Much time has passed since svglite had a major release and this blog post will go into detail with all the major changes.
-You can see a full list of changes in the [release notes](%7B%20github_release%20%7D).
+You can see a full list of changes in the [release notes](https://github.com/r-lib/svglite/releases/tag/v2.0.0).
 
 ## Motivation for svglite
 

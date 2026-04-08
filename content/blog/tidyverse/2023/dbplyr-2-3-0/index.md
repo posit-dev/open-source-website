@@ -46,7 +46,7 @@ You can install it from CRAN with:
 
 </div>
 
-This post will highlight some of the most important new features in 2.3.0: eliminating subqueries for many verb combinations, better errors, and a handful of new translations. As usual, this release comes with a large number of improvements to translations for individual backends and you can see the full list in the [release notes](%7B%20github_release%20%7D)
+This post will highlight some of the most important new features in 2.3.0: eliminating subqueries for many verb combinations, better errors, and a handful of new translations. As usual, this release comes with a large number of improvements to translations for individual backends and you can see the full list in the [release notes](https://github.com/tidyverse/dbplyr/releases/tag/v2.3.0)
 
 <div class="highlight">
 

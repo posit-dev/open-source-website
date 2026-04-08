@@ -37,9 +37,9 @@ TODO:
 * [ ] [`usethis::use_tidy_thanks()`](https://usethis.r-lib.org/reference/use_tidy_thanks.html)
 -->
 
-We are pleased to release [ggplot2](https://ggplot2.tidyverse.org) 3.5.0. This release is a large one, so we have split the updates into multiple posts. This posts outlines changes to axes; see the [main release post](/blog/2024/02/ggplot2-3-5-0/) to learn about other changes.
+We are pleased to release [ggplot2](https://ggplot2.tidyverse.org) 3.5.0. This release is a large one, so we have split the updates into multiple posts. This posts outlines changes to axes; see the [main release post](/blog/tidyverse/2024/ggplot2-3-5-0/) to learn about other changes.
 
-Axes, alongside [legends](/blog/2024/02/ggplot2-3-5-0-legends/), are visual representations of scales and allow observers to read values off of a plot. The innards of axes, like other guides, underwent a major overhaul with the guide system rewrite. Axes specifically are guides for positions and classically display labelled tick marks. In Cartesian coordinates, these are the x- and y-positions, but in non-Cartesian systems may reflect a theta, radius, longitude or latitude. In ggplot2, an axis is usually represented by the [`guide_axis()`](https://ggplot2.tidyverse.org/reference/guide_axis.html) function. We outline the following changes to axes:
+Axes, alongside [legends](/blog/tidyverse/2024/ggplot2-3-5-0-legends/), are visual representations of scales and allow observers to read values off of a plot. The innards of axes, like other guides, underwent a major overhaul with the guide system rewrite. Axes specifically are guides for positions and classically display labelled tick marks. In Cartesian coordinates, these are the x- and y-positions, but in non-Cartesian systems may reflect a theta, radius, longitude or latitude. In ggplot2, an axis is usually represented by the [`guide_axis()`](https://ggplot2.tidyverse.org/reference/guide_axis.html) function. We outline the following changes to axes:
 
 -   [Minor ticks](#minor-ticks)
 -   [Capping the axis line](#capping)
@@ -175,5 +175,5 @@ In addition, you can choose to selectively suppress labels and only show ticks m
 
 </div>
 
-That wraps up the visible changes to axes for this post. To read about general changes, see the [main post](/blog/2024/02/ggplot2-3-5-0/). The changes to legends are covered in a [separate post](/blog/2024/02/ggplot2-3-5-0-legends/) and for the new polar coordinate system (and their axes) will be in a future post.
+That wraps up the visible changes to axes for this post. To read about general changes, see the [main post](/blog/tidyverse/2024/ggplot2-3-5-0/). The changes to legends are covered in a [separate post](/blog/tidyverse/2024/ggplot2-3-5-0-legends/) and for the new polar coordinate system (and their axes) will be in a future post.
 

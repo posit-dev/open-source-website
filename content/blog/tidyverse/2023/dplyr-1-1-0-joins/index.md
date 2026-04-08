@@ -129,7 +129,7 @@ This small quality of life improvement is just one of the many new features that
 
 ------------------------------------------------------------------------
 
-**Update**: As of March 22, dplyr 1.1.1 is available on CRAN, which alters the behavior of multiple match detection so that you see warnings much less often. Read [all about it](/blog/2023/03/dplyr-1-1-1/) or install it now with `install.packages("dplyr")`.
+**Update**: As of March 22, dplyr 1.1.1 is available on CRAN, which alters the behavior of multiple match detection so that you see warnings much less often. Read [all about it](/blog/tidyverse/2023/dplyr-1-1-1/) or install it now with `install.packages("dplyr")`.
 
 ------------------------------------------------------------------------
 
