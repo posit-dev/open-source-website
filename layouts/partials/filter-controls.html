@@ -43,16 +43,36 @@
     {{/* Search input */}}
     <div class="relative w-full sm:w-auto sm:flex-1 sm:min-w-[200px]">
       <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <svg class="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
+        <span class="icon-[boxicons--search] w-4 h-4 text-gray-400"></span>
       </span>
       <input
         type="text"
         data-filter-search
         placeholder="Search..."
-        class="w-full pl-9 pr-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        class="w-full pl-9 pr-8 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
       />
+      <button type="button" data-search-help-toggle class="absolute inset-y-0 right-0 flex items-center pr-2.5 text-gray-400 hover:text-gray-600 cursor-pointer" title="Search syntax help">
+        <span class="icon-[boxicons--help-circle] w-4 h-4"></span>
+      </button>
+      <div data-search-help class="hidden absolute left-0 sm:right-0 sm:left-auto top-full mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50 p-4 text-xs text-gray-600">
+        <div class="font-semibold text-gray-900 text-sm mb-2">Search syntax</div>
+        <table class="w-full">
+          <tbody>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">shiny</td><td>Search all fields</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">title:shiny</td><td>Title only</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">author:"jane doe"</td><td>Author name</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">topic:visualization</td><td>Topic / category</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">tag:ggplot2</td><td>Tag</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">language:python,r</td><td>Multiple values (OR)</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">software:quarto</td><td>Software</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">stars:>100</td><td>At least 100 stars</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">duration:30..60</td><td>Duration in minutes</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">date:>2025-01-01</td><td>After a date</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">-language:r</td><td>Exclude matches</td></tr>
+          </tbody>
+        </table>
+        <div class="mt-2 text-gray-400">Combine freely. Qualifiers on the same field use OR; different fields use AND.</div>
+      </div>
     </div>
 
     {{/* Filter dropdowns */}}
@@ -89,9 +109,7 @@
     {{ if $sort }}
     <div class="relative">
         <span class="absolute inset-y-0 left-0 flex items-center pl-2.5 pointer-events-none">
-          <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
-          </svg>
+          <span class="icon-[boxicons--arrow-up-down] w-3.5 h-3.5 text-gray-500"></span>
         </span>
         <select
           id="filter-sort"

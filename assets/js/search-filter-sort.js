@@ -9,6 +9,173 @@
     };
   }
 
+  function normalize(str) {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+
+  // Field qualifier → item accessor (returns normalized string)
+  const TEXT_FIELDS = {
+    title:       item => normalize(item.title || ''),
+    author:      item => normalize((item.authors || []).map(a => a.name).join(' ')),
+    description: item => normalize(item.description || ''),
+    topic:       item => normalize((item.categories || []).join(' ')),
+    tag:         item => normalize((item.tags || []).join(' ')),
+    software:    item => normalize((item.software || []).join(' ')),
+    language:    item => normalize((item.languages || []).join(' ')),
+    location:    item => normalize(item.location || ''),
+  };
+
+  const NUMERIC_FIELDS = {
+    stars:    item => item.stars || 0,
+    views:    item => item.views || 0,
+    duration: item => (item.duration || 0) / 60,
+  };
+
+  const DATE_FIELDS = {
+    date: item => item._dateTs,
+  };
+
+  // Parse search string into structured query object
+  function parseQuery(raw) {
+    const query = {
+      terms: [],
+      negTerms: [],
+      fields: {},
+      negFields: {},
+      numeric: [],
+      negNumeric: [],
+      dates: [],
+      negDates: [],
+    };
+
+    // Tokenize: field:value, field:"value", field:OP, "phrase", bare word
+    // Groups: 1=neg, 2=field, 3=op, 4=quoted, 5=dateRange1, 6=dateRange2,
+    //         7=date, 8=numRange1, 9=numRange2, 10=number, 11=bareword,
+    //         12=phrase, 13=word
+    const re = /(-?)(\w+):(>=?|<=?)?(?:"([^"]*)"|(\d{4}-\d{2}-\d{2})\.\.(\d{4}-\d{2}-\d{2})|(\d{4}-\d{2}-\d{2})|(\d+(?:\.\d+)?)\.\.(\d+(?:\.\d+)?)|(\d+(?:\.\d+)?)|(\S+))|"([^"]*)"|(\S+)/g;
+    let m;
+    while ((m = re.exec(raw)) !== null) {
+      if (m[2]) {
+        // Qualified: field:value
+        const neg = m[1] === '-';
+        const field = m[2].toLowerCase();
+        const op = m[3] || '';
+
+        // field:"quoted value"
+        if (m[4] !== undefined) {
+          const val = normalize(m[4]);
+          if (val && TEXT_FIELDS[field]) {
+            const target = neg ? query.negFields : query.fields;
+            (target[field] = target[field] || []).push(val);
+          }
+          continue;
+        }
+
+        // field:date..date (date range)
+        if (m[5] && m[6]) {
+          if (DATE_FIELDS[field]) {
+            const entry = { field, op: '..', low: new Date(m[5]).getTime(), high: new Date(m[6]).getTime() + 86400000 - 1 };
+            (neg ? query.negDates : query.dates).push(entry);
+          }
+          continue;
+        }
+
+        // field:date (single date, with optional operator)
+        if (m[7]) {
+          if (DATE_FIELDS[field]) {
+            const ts = new Date(m[7]).getTime();
+            const effectiveOp = op || '>=';
+            const value = effectiveOp === '<=' ? ts + 86400000 - 1 : ts;
+            (neg ? query.negDates : query.dates).push({ field, op: effectiveOp, value });
+          }
+          continue;
+        }
+
+        // field:num..num (numeric range)
+        if (m[8] !== undefined && m[9] !== undefined) {
+          if (NUMERIC_FIELDS[field]) {
+            const entry = { field, op: '..', low: parseFloat(m[8]), high: parseFloat(m[9]) };
+            (neg ? query.negNumeric : query.numeric).push(entry);
+          }
+          continue;
+        }
+
+        // field:number (with optional operator)
+        if (m[10] !== undefined) {
+          if (NUMERIC_FIELDS[field]) {
+            const effectiveOp = op || '==';
+            const entry = { field, op: effectiveOp, value: parseFloat(m[10]) };
+            (neg ? query.negNumeric : query.numeric).push(entry);
+          } else if (TEXT_FIELDS[field]) {
+            // Numeric value on a text field — treat as text search
+            const target = neg ? query.negFields : query.fields;
+            (target[field] = target[field] || []).push(normalize(m[10]));
+          }
+          continue;
+        }
+
+        // field:bareword (text search — supports comma-separated values)
+        if (m[11]) {
+          if (TEXT_FIELDS[field]) {
+            const target = neg ? query.negFields : query.fields;
+            for (const part of m[11].split(',')) {
+              const val = normalize(part);
+              if (val) (target[field] = target[field] || []).push(val);
+            }
+          } else {
+            // Unknown field — treat whole thing as bare text
+            const val = normalize(field + ':' + m[11]);
+            if (val) (neg ? query.negTerms : query.terms).push(val);
+          }
+        }
+      } else if (m[12] !== undefined) {
+        // Quoted phrase: "..."
+        const val = normalize(m[12]);
+        if (val) query.terms.push(val);
+      } else if (m[13]) {
+        // Bare word (may start with -)
+        if (m[13].startsWith('-') && m[13].length > 1) {
+          const val = normalize(m[13].slice(1));
+          if (val) query.negTerms.push(val);
+        } else {
+          const val = normalize(m[13]);
+          if (val) query.terms.push(val);
+        }
+      }
+    }
+
+    return query;
+  }
+
+  function groupByField(entries) {
+    const groups = {};
+    for (const e of entries) {
+      (groups[e.field] = groups[e.field] || []).push(e);
+    }
+    return groups;
+  }
+
+  function matchNumeric(entry, item) {
+    const val = NUMERIC_FIELDS[entry.field](item);
+    if (entry.op === '..') return val >= entry.low && val <= entry.high;
+    if (entry.op === '==') return val === entry.value;
+    if (entry.op === '>') return val > entry.value;
+    if (entry.op === '>=') return val >= entry.value;
+    if (entry.op === '<') return val < entry.value;
+    if (entry.op === '<=') return val <= entry.value;
+    return false;
+  }
+
+  function matchDate(entry, item) {
+    const val = DATE_FIELDS[entry.field](item);
+    if (entry.op === '..') return val >= entry.low && val <= entry.high;
+    if (entry.op === '>') return val > entry.value;
+    if (entry.op === '>=') return val >= entry.value;
+    if (entry.op === '<') return val < entry.value;
+    if (entry.op === '<=') return val <= entry.value;
+    return false;
+  }
+
   class ItemManager {
     constructor(containerEl) {
       this.container = containerEl;
@@ -445,6 +612,18 @@
         );
       }
 
+      // Search help toggle
+      const helpToggle = this.controlsEl.querySelector('[data-search-help-toggle]');
+      const helpPanel = this.controlsEl.querySelector('[data-search-help]');
+      if (helpToggle && helpPanel) {
+        helpToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          helpPanel.classList.toggle('hidden');
+        });
+        helpPanel.addEventListener('click', (e) => e.stopPropagation());
+        document.addEventListener('click', () => helpPanel.classList.add('hidden'));
+      }
+
       const sortSelect = this.controlsEl.querySelector('[data-filter-sort]');
       if (sortSelect) {
         sortSelect.value = this.state.sort.key || (this._defaultSortCfg ? this._defaultSortCfg.key : '');
@@ -515,9 +694,44 @@
       }
     }
 
-    _matchesSearch(item, tokens) {
-      if (!tokens.length) return true;
-      return tokens.every(t => item._search.includes(t));
+    _matchesQuery(item, query) {
+      // Bare terms — all must match (AND) across all fields
+      for (const t of query.terms) {
+        if (!item._search.includes(t)) return false;
+      }
+      // Negated bare terms
+      for (const t of query.negTerms) {
+        if (item._search.includes(t)) return false;
+      }
+      // Field qualifiers — multiple values on same field use OR, different fields use AND
+      for (const [field, values] of Object.entries(query.fields)) {
+        const accessor = TEXT_FIELDS[field];
+        if (!accessor) continue;
+        const text = accessor(item);
+        if (!values.some(v => text.includes(v))) return false;
+      }
+      // Negated field qualifiers
+      for (const [field, values] of Object.entries(query.negFields)) {
+        const accessor = TEXT_FIELDS[field];
+        if (!accessor) continue;
+        const text = accessor(item);
+        if (values.some(v => text.includes(v))) return false;
+      }
+      // Numeric comparisons — same field uses OR, different fields use AND
+      for (const [field, entries] of Object.entries(groupByField(query.numeric))) {
+        if (!entries.some(e => matchNumeric(e, item))) return false;
+      }
+      for (const [field, entries] of Object.entries(groupByField(query.negNumeric))) {
+        if (entries.some(e => matchNumeric(e, item))) return false;
+      }
+      // Date comparisons — same field uses OR, different fields use AND
+      for (const [field, entries] of Object.entries(groupByField(query.dates))) {
+        if (!entries.some(e => matchDate(e, item))) return false;
+      }
+      for (const [field, entries] of Object.entries(groupByField(query.negDates))) {
+        if (matchDate(entry, item)) return false;
+      }
+      return true;
     }
 
     _matchesFilters(item) {
@@ -580,18 +794,11 @@
     }
 
     _applyFilters() {
-      const tokens = [];
-      const raw = this.state.search.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-      const re = /"([^"]*)"|\S+/g;
-      let m;
-      while ((m = re.exec(raw)) !== null) {
-        const t = m[1] !== undefined ? m[1] : m[0];
-        if (t) tokens.push(t);
-      }
+      const query = parseQuery(this.state.search);
 
       // Filter all items at data level
       let filtered = this.items.filter(
-        item => this._matchesSearch(item, tokens) && this._matchesFilters(item)
+        item => this._matchesQuery(item, query) && this._matchesFilters(item)
       );
 
       // Sort
