@@ -22,4 +22,4 @@ ported_categories:
   - learn
 ---
 
-We're very excited to announce the new [community.rstudio.com](http://community.rstudio.com) --- this is a great place to ask any questions you might have about the tidyverse.  Read more on the [RStudio blog](https://blog.rstudio.com/2017/09/14/rstudio-community/).
+We're very excited to announce the new [community.rstudio.com](http://community.rstudio.com) --- this is a great place to ask any questions you might have about the tidyverse.  Read more on the [RStudio blog](/blog/2017-09-14_rstudio-community/).

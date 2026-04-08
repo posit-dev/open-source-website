@@ -136,7 +136,7 @@ Now that we've got the breaking changes out of the way we can focus on the new s
 
 We've also spent a bunch of time reviewing the documentation, particularly the topic titles and descriptions. They're now more informative and less duplicative, hopefully make it easier to find the function that you're looking for. See the complete list of functions in the [reference index](https://stringr.tidyverse.org/reference/index.html).
 
-Finally, stringr is now officially [re-licensed as MIT](https://www.tidyverse.org/blog/2021/12/relicensing-packages/).
+Finally, stringr is now officially [re-licensed as MIT](/blog/2021-12-07_relicensing-packages/).
 
 ## New features
 

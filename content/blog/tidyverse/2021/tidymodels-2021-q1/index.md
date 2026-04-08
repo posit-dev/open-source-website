@@ -26,7 +26,7 @@ ported_categories:
 
 
 
-The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles. There have been quite a number of updates and new developments in the tidymodels ecosystem since our [last blog post in December](https://www.tidyverse.org/blog/2020/12/finetune-0-0-1/)! Since that post, tidymodels maintainers have published eight CRAN releases of existing packages. You can install these updates from CRAN with:
+The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles. There have been quite a number of updates and new developments in the tidymodels ecosystem since our [last blog post in December](/blog/2020-12-02_finetune-0-0-1/)! Since that post, tidymodels maintainers have published eight CRAN releases of existing packages. You can install these updates from CRAN with:
 
 
 ```r

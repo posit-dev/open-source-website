@@ -42,10 +42,10 @@ We are once again chuffed to offer summer internships.
 Our internship program has been a great success over the years. If you want to know what it is like, many of our alumni have written about it: 
 
  - 2016: [Thomas Lin Pederson](https://www.data-imaginist.com/posts/2016-10-31-becoming-the-intern/)
- - 2017: [Lucy D'Agostino McGowan](https://tidyverse.org/blog/2017/09/lucy-internship/) and [Kara Woo](https://tidyverse.org/blog/2017/09/ggplot2-internship/)
+ - 2017: [Lucy D'Agostino McGowan](/blog/2017-09-08_lucy-internship/) and [Kara Woo](/blog/2017-09-08_ggplot2-internship/)
  - 2018: [Alex Hayes](https://www.alexpghayes.com/post/2018-08-10_a-summer-with-rstudio/), [Fanny Chow](https://fbchow.rbind.io/2018/07/27/rstudio-summer-internship/), [Irene Steves](https://irene.rbind.io/post/summer-rstudio/), and [Dana Paige Seidel](https://www.danaseidel.com/2018-09-01-ATidySummer/)
- - 2019: [Marly Gotti](https://education.rstudio.com/blog/2019/12/this-is-not-like-the-others/) and [Dewey Dunnington](https://dewey.dunnington.ca/post/2019/a-summer-of-rstudio-and-ggplot2/)
- - 2020: [Simon Couch](https://education.rstudio.com/blog/2020/06/tidymodels-internship/)
+ - 2019: [Marly Gotti](/blog/2019-12-02_this-is-not-like-the-others/) and [Dewey Dunnington](https://dewey.dunnington.ca/post/2019/a-summer-of-rstudio-and-ggplot2/)
+ - 2020: [Simon Couch](/blog/2020-06-30_tidymodels-internship/)
  - 2022: [Mike Mahoney](https://www.mm218.dev/posts/2022-08-15-last-summer/)
  - 2025: [Frances Lin](https://franceslinyc.github.io/posts/2025-08-20-posit-internship/).
 

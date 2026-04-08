@@ -109,7 +109,7 @@ recipe(mpg ~ ., mtcars) |>
   bake(new_data = NULL)
 ```
 
-For selecting variables there are two cases. The first is as a tool to select which variables to use in our model. We recommend that you use `select()` to do that before passing the data into the `recipe()`. This is especially helpful since [recipes are tighter with respect to their input types](https://www.tidyverse.org/blog/2024/07/recipes-1-1-0/#column-type-checking), so only passing the data you need to use is helpful.
+For selecting variables there are two cases. The first is as a tool to select which variables to use in our model. We recommend that you use `select()` to do that before passing the data into the `recipe()`. This is especially helpful since [recipes are tighter with respect to their input types](/blog/2024-07-08_recipes-1-1-0/#column-type-checking), so only passing the data you need to use is helpful.
 
 If you need to do the selection after another step takes effect you should still be able to do so, by using `step_rm()` in the following manner.
 

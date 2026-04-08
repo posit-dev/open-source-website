@@ -24,7 +24,7 @@ ported_categories:
   - package
 ---
 
-As we've mentioned, [dplyr 1.0.0 is coming soon](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-is-coming-soon/). Today, we've started the official release process by notifying maintainers of packages that have problems with dplyr 1.0.0, and we're planning for a CRAN release six weeks later, on May 1. This post is the first in a series that will introduce you to new features in dplyr 1.0.0. Today, I'll start with some big changes to `summarise()` that make it significantly more powerful.
+As we've mentioned, [dplyr 1.0.0 is coming soon](/blog/2020-03-09_dplyr-1-0-0-is-coming-soon/). Today, we've started the official release process by notifying maintainers of packages that have problems with dplyr 1.0.0, and we're planning for a CRAN release six weeks later, on May 1. This post is the first in a series that will introduce you to new features in dplyr 1.0.0. Today, I'll start with some big changes to `summarise()` that make it significantly more powerful.
 
 ------------------------------------------------------------------------
 
@@ -145,7 +145,7 @@ df %>%
 #> 6     2 -0.366    0.75
 ```
 
-In the past, one of the challenges of writing this sort of function was naming the columns. For example, when you call `quibble(y)` it'd be nice if you could get columns `y` and `y_q`, rather than `x` and `x_q`. Now, thanks to the recent combination of [glue and tidy evaluation](https://www.tidyverse.org/blog/2020/02/glue-strings-and-tidy-eval/), that's easy to implement:
+In the past, one of the challenges of writing this sort of function was naming the columns. For example, when you call `quibble(y)` it'd be nice if you could get columns `y` and `y_q`, rather than `x` and `x_q`. Now, thanks to the recent combination of [glue and tidy evaluation](/blog/2020-02-11_glue-strings-and-tidy-eval/), that's easy to implement:
 
 ``` r
 quibble2 <- function(x, q = c(0.25, 0.5, 0.75)) {

@@ -97,7 +97,7 @@ spark_install("3.0.0-preview")
 sc <- spark_connect(master = "local", version = "3.0.0-preview")
 ```
 
-You can then preview upcoming features, like the ability to read binary files. To demonstrate this, we can use [pins](https://blog.rstudio.com/2019/09/09/pin-discover-and-share-resources/) to download a 237MB subset of [ImageNet](http://www.image-net.org/), and then load them into Spark:
+You can then preview upcoming features, like the ability to read binary files. To demonstrate this, we can use [pins](/blog/2019-09-09_pin-discover-and-share-resources/) to download a 237MB subset of [ImageNet](http://www.image-net.org/), and then load them into Spark:
 
 ```r
 tiny_imagenet <- pins::pin("http://cs231n.stanford.edu/tiny-imagenet-200.zip")
@@ -233,7 +233,7 @@ This makes it a great time for you to join the sparklyr community, contribute, a
 
 This book was published by [O'Reilly](http://shop.oreilly.com/product/0636920223764.do), is available on [Amazon](https://www.amazon.com/gp/product/149204637X), and is also free-to-use [online](https://therinspark.com/). We hope you find this book useful and easy to read.
 
-To catch up on previous releases, take a look at the [sparklyr 1.0](https://blog.rstudio.com/2019/03/15/sparklyr-1-0/) post or watch various video tutorials in the [mlverse](https://www.youtube.com/channel/UCAwJMtPx4HgmMXEDTvZBJ4A/playlists) channel.
+To catch up on previous releases, take a look at the [sparklyr 1.0](/blog/2019-03-15_sparklyr-1-0/) post or watch various video tutorials in the [mlverse](https://www.youtube.com/channel/UCAwJMtPx4HgmMXEDTvZBJ4A/playlists) channel.
 
 Thank you for reading along!
 

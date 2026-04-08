@@ -36,7 +36,7 @@ reprex is one of the packages installed by `install.packages("tidyverse")`, howe
 install.packages("reprex")
 ```
 
-reprex recently had a major release ([version 1.0.0](https://www.tidyverse.org/blog/2021/02/reprex-1-0-0/)), but we've added some big features since then.
+reprex recently had a major release ([version 1.0.0](/blog/2021-02-01_reprex-1-0-0/)), but we've added some big features since then.
 Specifically, reprex has gotten much, much easier to use on [RStudio Server](https://www.rstudio.com/products/rstudio/download-server/) and [RStudio Cloud](https://rstudio.cloud).
 It's also easier to specify the working directory, if you must, and reprex plays more nicely with the [renv package](https://rstudio.github.io/renv/).
 

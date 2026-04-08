@@ -45,7 +45,7 @@ Then attach it for use via:
 
 The release of version 1.0.0 means googlesheets4 has graduated from being experimental to being stable, in terms of the [tidyverse lifecycle stages](https://lifecycle.r-lib.org/articles/stages.html). [^1]
 
-Since we [last blogged about it](https://www.tidyverse.org/blog/2020/05/googlesheets4-0-2-0/), googlesheets4 has seen some "quality of life" improvements, but no earthshaking changes. The overall interface is more polished, we automatically retry requests that yield the dreaded `429 RESOURCE_EXHAUSTED`, and there's better handling of some empty cell edge cases. We're also bumping the required version of the gargle package (<https://gargle.r-lib.org>), which handles everything around auth.
+Since we [last blogged about it](/blog/2020-05-10_googlesheets4-0-2-0/), googlesheets4 has seen some "quality of life" improvements, but no earthshaking changes. The overall interface is more polished, we automatically retry requests that yield the dreaded `429 RESOURCE_EXHAUSTED`, and there's better handling of some empty cell edge cases. We're also bumping the required version of the gargle package (<https://gargle.r-lib.org>), which handles everything around auth.
 
 You can see a full list of changes in the [release notes](https://googlesheets4.tidyverse.org/news/index.html).
 
@@ -53,7 +53,7 @@ You can see a full list of changes in the [release notes](https://googlesheets4.
 
 If you are generally fairly passive about googlesheets4 auth, then you should just sit back and let things happen organically during usage. If you've used googlesheets4 before, you can expect to see some messages about cleaning and relocating the token cache when you first use v1.0.0. You can also expect to re-authenticate yourself with Google and re-authorize the "Tidyverse API Packages" to work with your files. This is all due to changes in gargle.
 
-If your usage requires you to be more proactive about auth, read the [blog post for gargle's recent v1.2.0 release](https://www.tidyverse.org/blog/2021/07/gargle-1-2-0/). A key point is that we have rolled the built-in OAuth client, which is why those relying on it will need to re-auth.
+If your usage requires you to be more proactive about auth, read the [blog post for gargle's recent v1.2.0 release](/blog/2021-07-04_gargle-1-2-0/). A key point is that we have rolled the built-in OAuth client, which is why those relying on it will need to re-auth.
 
 **If the rolling of the tidyverse OAuth client is highly disruptive to your workflow, consider this a wake-up call** that you should be using your own OAuth client or, quite possibly, an entirely different method of auth. Our credential rolling will have no impact on users who use their own OAuth client or service account tokens.
 

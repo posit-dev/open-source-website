@@ -166,7 +166,7 @@ There are also a whole host of minor translation improvements which you can read
 
 ## Row modification
 
-dplyr 1.0.0 added a family of [row modification](https://www.tidyverse.org/blog/2020/05/dplyr-1-0-0-last-minute-additions/#row-mutation) functions: [`rows_insert()`](https://dplyr.tidyverse.org/reference/rows.html), [`rows_append()`](https://dplyr.tidyverse.org/reference/rows.html), [`rows_update()`](https://dplyr.tidyverse.org/reference/rows.html), [`rows_patch()`](https://dplyr.tidyverse.org/reference/rows.html), [`rows_upsert()`](https://dplyr.tidyverse.org/reference/rows.html), and [`rows_delete()`](https://dplyr.tidyverse.org/reference/rows.html). These functions were inspired by SQL and are now supported by dbplyr.
+dplyr 1.0.0 added a family of [row modification](/blog/2020-05-06_dplyr-1-0-0-last-minute-additions/#row-mutation) functions: [`rows_insert()`](https://dplyr.tidyverse.org/reference/rows.html), [`rows_append()`](https://dplyr.tidyverse.org/reference/rows.html), [`rows_update()`](https://dplyr.tidyverse.org/reference/rows.html), [`rows_patch()`](https://dplyr.tidyverse.org/reference/rows.html), [`rows_upsert()`](https://dplyr.tidyverse.org/reference/rows.html), and [`rows_delete()`](https://dplyr.tidyverse.org/reference/rows.html). These functions were inspired by SQL and are now supported by dbplyr.
 
 The primary purpose of these functions is to modify the underlying tables. Because that purpose is dangerous, you'll need to deliberate opt-in to modification by setting `in_place = TRUE`. Use the default behaviour, `in_place = FALSE`, to simulate what the result will be.
 

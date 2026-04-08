@@ -92,7 +92,7 @@ The `select()` helper functions `starts_with()`, `ends_with()`, etc are now real
 
 ## Tibble and dtplyr packages
 
-Functions related to the creation and coercion of `tbl_df`s ("tibble"s for short), now live in their own package: [tibble](https://blog.rstudio.com/2016/03/24/tibble-1-0-0/). See `vignette("tibble")` for more details.
+Functions related to the creation and coercion of `tbl_df`s ("tibble"s for short), now live in their own package: [tibble](/blog/2016-03-24_tibble-1-0-0/). See `vignette("tibble")` for more details.
 
 Similarly, all code related to the data table dplyr backend code has been separated out in to a new [dtplyr](https://github.com/hadley/dtplyr) package. This decouples the development of the data.table interface from the development of the dplyr package, and I hope will spur improvements to the backend. If both data.table and dplyr are loaded, you'll get a message reminding you to load dtplyr.
 

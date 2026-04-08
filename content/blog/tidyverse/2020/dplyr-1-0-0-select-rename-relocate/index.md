@@ -24,7 +24,7 @@ ported_categories:
   - package
 ---
 
-[dplyr 1.0.0 is coming soon](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-is-coming-soon/), and last week we showed how [`summarise()` is growing](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-summarise/). Today, I wanted to talk a little bit about functions for selecting, renaming, and relocating columns.
+[dplyr 1.0.0 is coming soon](/blog/2020-03-09_dplyr-1-0-0-is-coming-soon/), and last week we showed how [`summarise()` is growing](/blog/2020-03-20_dplyr-1-0-0-summarise/). Today, I wanted to talk a little bit about functions for selecting, renaming, and relocating columns.
 
 ------------------------------------------------------------------------
 

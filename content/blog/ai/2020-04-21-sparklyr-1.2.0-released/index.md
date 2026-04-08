@@ -191,6 +191,6 @@ Last but not least, we heard about a number of pain points `sparklyr` users have
 Finally, in chronological order, we wish to thank the following individuals for contributing to `sparklyr` 1.2: [zero323](https://github.com/zero323), [Andy Zhang](https://github.com/Loquats), [Yitao Li](https://github.com/yl790),
 [Javier Luraschi](https://github.com/javierluraschi), [Hossein Falaki](https://github.com/falaki), [Lu Wang](https://github.com/lu-wang-dl), [Samuel Macedo](https://github.com/samuelmacedo83) and [Jozef Hajnala](https://github.com/jozefhajnala). Great job everyone!
 
-If you need to catch up on `sparklyr`, please visit [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), or some of the previous release posts: [sparklyr 1.1](https://blog.rstudio.com/2020/01/29/sparklyr-1-1/) and [sparklyr 1.0](https://blog.rstudio.com/2019/03/15/sparklyr-1-0/).
+If you need to catch up on `sparklyr`, please visit [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), or some of the previous release posts: [sparklyr 1.1](/blog/2020-01-29_sparklyr-1-1/) and [sparklyr 1.0](/blog/2019-03-15_sparklyr-1-0/).
 
 Thank you for reading this post.

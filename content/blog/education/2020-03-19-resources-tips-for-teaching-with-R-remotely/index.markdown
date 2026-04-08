@@ -46,7 +46,7 @@ One option for content delivery is synchronous virtual sessions and we've given 
 Interactive exercises are great not only for self-paced learning, but also for the preparation phase in a flipped class, for formative assessment, or for self-contained demos during synchronous teaching (since they make it easy for students to jump in mid-analysis and code along with you). Interactive tutorials can also be a great replacement for pre-recorded videos that walk students through an analysis step-by-step, and while not trivial to create, they are likely less time consuming than creating a well edited video. The following resources feature many interactive tutorials for R that you can use / assign to your students.
 
 - The [learnr](https://rstudio.github.io/learnr/) package makes it easy to turn any R Markdown document into an interactive tutorial. [RStudio Primers](https://rstudio.cloud/learn/primers) cover topics like R basics, visualising, wrangling, and tidying data and iteration and functions.
-- [R Bootcamp](https://r-bootcamp.netlify.com/) is a "gentle and gradual introduction to manipulating and visualizing data in R using the tidyverse suite of packages". Read more about it [here](https://education.rstudio.com/blog/2020/03/r-bootcamp/).
+- [R Bootcamp](https://r-bootcamp.netlify.com/) is a "gentle and gradual introduction to manipulating and visualizing data in R using the tidyverse suite of packages". Read more about it [here](/blog/2020-03-06_r-bootcamp/).
 
 ## Plan for the "turn it in" phase
 

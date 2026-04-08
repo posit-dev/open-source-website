@@ -36,7 +36,7 @@ TODO:
 * [ ] Add intro sentence
 * [ ] `use_tidy_thanks()`
 -->
-This is the third post related to version 0.1.2 of the tune package. The [first post](https://www.tidyverse.org/blog/2020/11/tune-0-1-2/) discussed various new features while the [second post](https://www.tidyverse.org/blog/2020/11/tidymodels-sparse-support/) describes sparse matrix support. This post is an excerpt from an upcoming chapter in [_Tidy Modeling with R_](https://www.tmwr.org/) and is focused on parallel processing. 
+This is the third post related to version 0.1.2 of the tune package. The [first post](/blog/2020-11-23_tune-0-1-2/) discussed various new features while the [second post](/blog/2020-11-25_tidymodels-sparse-support/) describes sparse matrix support. This post is an excerpt from an upcoming chapter in [_Tidy Modeling with R_](https://www.tmwr.org/) and is focused on parallel processing. 
 
 Previously, the tune package allowed for parallel processing of calculations in a few different places: 
 

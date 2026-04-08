@@ -43,7 +43,7 @@ df %>%
   summarise(a = mean(a), b = mean(b), c = mean(c), d = mean(c))
 ```
 
-You can now rewrite such code using `across()`, which lets you apply a transformation to multiple variables selected with the same syntax as [`select()` and `rename()`](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-select-rename-relocate/#select-and-renaming):
+You can now rewrite such code using `across()`, which lets you apply a transformation to multiple variables selected with the same syntax as [`select()` and `rename()`](/blog/2020-03-27_dplyr-1-0-0-select-rename-relocate/#select-and-renaming):
 
 ``` r
 df %>% 

@@ -269,7 +269,7 @@ Nested data frames are a powerful tool that allow you to turn groups into rows a
 (One place to learn more about them is my 2016 talk "[Managing many models with R](https://www.youtube.com/watch?v=rz3_FDVt9eg)".)
 
 Over the years we've made a number of attempts at getting the correct interface for nesting, including `tidyr::nest()`, `dplyr::nest_by()`, and `dplyr::group_nest()`.
-In this version of tidyr we've taken one more stab at it by adding a new argument to `nest()`: `.by`, inspired by the upcoming [dplyr 1.1.0](https://www.tidyverse.org/blog/2022/11/dplyr-1-1-0-is-coming-soon/) release.
+In this version of tidyr we've taken one more stab at it by adding a new argument to `nest()`: `.by`, inspired by the upcoming [dplyr 1.1.0](/blog/2022-11-28_dplyr-1-1-0-is-coming-soon/) release.
 This means that `nest()` now allows you to specify the variables you want to nest by as an alternative to specifying the variables that appear in the nested data.
 
 ```{r}

@@ -127,7 +127,7 @@ exp(1)
 
 `on.exit()` is a very useful function and provides enough inspiration for an entire package: withr ([withr.r-lib.org](http://withr.r-lib.org)), which is a Swiss army knife for managing state in very flexible ways. It's what I usually use, in functions and tests, for situations like that above.
 
-*For more background, the section about [Exit handlers](https://adv-r.hadley.nz/functions.html#on-exit) in Advanced R is a good reference. The [cleancall package](https://github.com/r-lib/cleancall#readme) addresses a similar problem, but in the C code of an R package. cleancall is introduced in the blog post [Resource Cleanup in C and the R API](https://www.tidyverse.org/blog/2019/05/resource-cleanup-in-c-and-the-r-api/).*
+*For more background, the section about [Exit handlers](https://adv-r.hadley.nz/functions.html#on-exit) in Advanced R is a good reference. The [cleancall package](https://github.com/r-lib/cleancall#readme) addresses a similar problem, but in the C code of an R package. cleancall is introduced in the blog post [Resource Cleanup in C and the R API](/blog/2019-05-22_resource-cleanup-in-c-and-the-r-api/).*
 
 ## `withr::defer()`
 

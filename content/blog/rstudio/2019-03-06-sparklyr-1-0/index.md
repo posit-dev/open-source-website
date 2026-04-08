@@ -46,7 +46,7 @@ install.packages("sparklyr")
 
 ## Arrow
 
-[Apache Arrow](https://arrow.apache.org/) is a cross-language development platform for in-memory data, you can read more about this in the [Arrow and beyond](https://blog.rstudio.com/2018/04/19/arrow-and-beyond/) blog post. In `sparklyr 1.0`,  we are embracing Arrow as an efficient bridge between R and Spark, conceptually:
+[Apache Arrow](https://arrow.apache.org/) is a cross-language development platform for in-memory data, you can read more about this in the [Arrow and beyond](/blog/2018-04-19_arrow-and-beyond/) blog post. In `sparklyr 1.0`,  we are embracing Arrow as an efficient bridge between R and Spark, conceptually:
 
 <img src="/blog-images/2019-03-15-sparklyr-1-0-sparklyr-arrow-spark.png" width="70%"" alt="sparklyr using Apache Arrow diagram"/>
 
@@ -254,12 +254,12 @@ Edges:
 
 The [sparklyr NEWS](https://github.com/rstudio/sparklyr/blob/master/NEWS.md) contains a complete list of changes and features for this release. To catch up on previously released features, you can read the blog posts that got us here:
 
-- [sparklyr 0.9](https://blog.rstudio.com/2018/10/01/sparklyr-0-9/): Streams and Kubernetes.
-- [sparklyr 0.8](https://blog.rstudio.com/2018/05/14/sparklyr-0-8/): Production pipelines and graphs.
-- [sparklyr 0.7](https://blog.rstudio.com/2018/01/29/sparklyr-0-7/): Spark Pipelines and Machine Learning.
-- [sparklyr 0.6](https://blog.rstudio.com/2017/07/31/sparklyr-0-6/): Distributed R and external sources.
-- [sparklyr 0.5](https://blog.rstudio.com/2017/01/24/sparklyr-0-5/): Livy and dplyr improvements.
-- [sparklyr 0.4](https://blog.rstudio.com/2016/09/27/sparklyr-r-interface-for-apache-spark/): R interface for Apache Spark.
+- [sparklyr 0.9](/blog/2018-10-01_sparklyr-0-9/): Streams and Kubernetes.
+- [sparklyr 0.8](/blog/2018-05-14_sparklyr-0-8/): Production pipelines and graphs.
+- [sparklyr 0.7](/blog/2018-01-29_sparklyr-0-7/): Spark Pipelines and Machine Learning.
+- [sparklyr 0.6](/blog/2017-07-31_sparklyr-0-6/): Distributed R and external sources.
+- [sparklyr 0.5](/blog/2017-01-24_sparklyr-0-5/): Livy and dplyr improvements.
+- [sparklyr 0.4](/blog/2016-09-27_sparklyr-r-interface-for-apache-spark/): R interface for Apache Spark.
 
 We hope you enjoy this exciting release!
 

@@ -60,7 +60,7 @@ Combining vectors comes up in many places in the tidyverse, e.g.:
   frames.
 * `tidyr::pivot_longer()` has to combine multiple columns into one.
 
-Our goal is to unify the code that underlies all these various functions so that there's one consistent, principled approach. We've already made the change in [tidyr](https://www.tidyverse.org/blog/2019/09/tidyr-1-0-0/), and now it's dplyr's turn. 
+Our goal is to unify the code that underlies all these various functions so that there's one consistent, principled approach. We've already made the change in [tidyr](/blog/2019-09-13_tidyr-1-0-0/), and now it's dplyr's turn. 
 
 ## Base R behaviour
 

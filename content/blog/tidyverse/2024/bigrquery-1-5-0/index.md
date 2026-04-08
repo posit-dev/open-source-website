@@ -56,7 +56,7 @@ This has been the first major update to bigrquery for a while, and is mostly abo
 
 Here's a summary of the biggest changes:
 
--   bigrquery is now [MIT licensed](https://www.tidyverse.org/blog/2021/12/relicensing-packages/).
+-   bigrquery is now [MIT licensed](/blog/2021-12-07_relicensing-packages/).
 
 -   Deprecated functions (i.e. those not starting with `bq_`) have been removed. These have been superseded for a long time and were formally deprecated in bigrquery 1.3.0 (2020).
 

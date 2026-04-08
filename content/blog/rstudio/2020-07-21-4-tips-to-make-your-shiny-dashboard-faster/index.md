@@ -136,7 +136,7 @@ In general, the best practice is:
 
 ### 4. Use Caching Operations
 
-If you've used all of the previous tips and your application still runs slowly, it's worth considering implementing caching operations. In 2018, RStudio introduced the ability to <a href="https://blog.rstudio.com/2018/11/13/shiny-1-2-0/" target="_blank" rel="noopener noreferrer">cache charts</a> in the Shiny package. However, if you want to speed up repeated  operations other than generating graphs, it is worth using a custom caching solution.
+If you've used all of the previous tips and your application still runs slowly, it's worth considering implementing caching operations. In 2018, RStudio introduced the ability to <a href="/blog/2018-11-13_shiny-1-2-0/" target="_blank" rel="noopener noreferrer">cache charts</a> in the Shiny package. However, if you want to speed up repeated  operations other than generating graphs, it is worth using a custom caching solution.
 
 One of my favorite packages that I use for this case is <a href="https://cran.r-project.org/web/packages/memoise/" target="_blank" rel="noopener noreferrer">memoise</a>. Memoise saves the results of new invocations of functions while reusing the answers from previous invocations of those functions.
 
