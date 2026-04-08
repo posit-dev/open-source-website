@@ -278,7 +278,7 @@ car_tune_res %>%
   theme(legend.position = "top")
 ```
 
-<img src="/blog/2020-05-rules-0-0-1/index_files/figure-html/cb-tune-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="cb-tune-1.png" width="700px" style="display: block; margin: auto;" />
 
 ```r
 
@@ -328,6 +328,6 @@ ggplot(test_pred, aes(x = .pred, y = Price)) +
   coord_fixed(ratio = 1)
 ```
 
-<img src="/blog/2020-05-rules-0-0-1/index_files/figure-html/cb-test-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="cb-test-1.png" width="700px" style="display: block; margin: auto;" />
 
 I'd like to thank [Karl Holub](https://github.com/holub008) for making the [xrf package](https://github.com/holub008/xrf) and accepting my PRs and changes.

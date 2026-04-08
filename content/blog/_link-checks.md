@@ -1,10 +1,25 @@
 # Link Checking
 
-How to check links in ported blog posts.
+## Internal links and images
 
-## Running lychee
+Use the custom scripts in `scripts/` to check internal references against the Hugo build output. These are more reliable than lychee for internal checks because they resolve paths the same way Hugo does — lychee misresolves relative links and doesn't understand Hugo's permalink structure.
 
-Use [lychee](https://github.com/lycheeverse/lychee) to check links in ported posts.
+```bash
+# Always clean-build first
+rm -rf public && hugo
+
+# Broken internal page links
+python3 scripts/check-blog-links.py public
+
+# Broken image references (<img src>, <source srcset>)
+python3 scripts/check-blog-images.py public
+```
+
+Both scripts exit non-zero when broken references are found.
+
+## External links (lychee)
+
+Use [lychee](https://github.com/lycheeverse/lychee) to check external links. It's not useful for internal links (see above), but good for finding dead URLs.
 
 ### Basic usage
 
@@ -30,30 +45,22 @@ scripts/lychee-errors.py content/blog/_lychee/<blog>.json -o content/blog/_lyche
 
 The script prints a summary and generates a markdown table with columns: Domain, Status, URL, Posts, Count.
 
-**Step 2: Fix `localhost` errors first**
+**Step 2: Fix errors**
 
-Localhost errors are usually fixable issues in the content. Filter the error table for `localhost:1313` rows:
-
-Common localhost issues:
+Common issues:
 - Missing protocol: `[link](example.com)` → `[link](https://example.com)`
 - R code as URL: `[Issue 13](options(...))` → `[Issue 13](https://github.com/.../issues/13)`
-- Relative paths that don't exist (vs valid ones like `images/foo.png`)
 
-## Interpreting results
+### Interpreting lychee results
 
-### False positives to ignore
+**False positives to ignore:**
+- **429 Too Many Requests** — GitHub rate limiting. Not broken, just throttled.
+- **403 Forbidden** — Some sites block automated requests (NOAA, academic journals).
+- **Conference registration links** — `reg.conf.posit.co` often blocks bots.
 
-- **Relative file paths** (e.g., `[500] http://localhost:1313/image.png` or `http://localhost:1313/data.csv`) - lychee misresolves relative paths like `![](image.png)` or `[data](./data.csv)` to site root instead of post folder. These work correctly in Hugo. Includes images, data files (`.csv`, `.txt`), and uppercase extensions (`.PNG`).
-- **429 Too Many Requests** - GitHub rate limiting. Not broken, just throttled.
-- **403 Forbidden** - Some sites block automated requests (NOAA, academic journals).
-- **Conference registration links** - `reg.conf.posit.co` often blocks bots.
-
-### Actual issues to fix
-
-- **404 Not Found** - Dead external links
-- **Relative paths to other site sections** - e.g., `../r/getstarted/` should be `https://shiny.posit.co/r/getstarted/`
-- **Root-relative blog links** - e.g., `../blog/posts/foo/` should be `/blog/shiny/foo/`
-- **Malformed URLs** - e.g., `../../https://` from sed replacement gone wrong
+**Actual issues to fix:**
+- **404 Not Found** — Dead external links
+- **Malformed URLs** — e.g., `../../https://` from sed replacement gone wrong
 
 ## Writing links in source files
 

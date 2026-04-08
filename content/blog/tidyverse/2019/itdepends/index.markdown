@@ -264,7 +264,7 @@ There are two functions available to plot the relative weights of dependencies.
 itdepends::dep_plot_time("dplyr")
 ```
 
-<img src="/articles/2019-05-itdepends_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
 
 From the above plot we see that the installation time of dplyr for users is
 mostly due to compiling dplyr itself. However, for development dependencies, the
@@ -279,7 +279,7 @@ useful measure, as most users install pre-compiled binaries.
 itdepends::dep_plot_size("dplyr")
 ```
 
-<img src="/articles/2019-05-itdepends_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
 
 From this we see the largest user dependencies are BH and Rcpp, and the largest
 development dependencies are stringi, and two data packages, Lahman and
@@ -309,7 +309,7 @@ can then be clicked individually to do the replacement.
 itdepends::dep_locate("purrr", path = "~/p/tidyversedashboard")
 ```
 
-<img src="/images/itdepends/dep_locate.png" width="100%" style="display: block; margin: auto;" />
+<img src="dep_locate.png" width="100%" style="display: block; margin: auto;" />
 
 ## Be balanced and use data
 

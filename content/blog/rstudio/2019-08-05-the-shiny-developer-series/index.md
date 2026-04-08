@@ -23,7 +23,7 @@ ported_categories:
 ---
 
 
-[![The Shiny Developer Series](/assets/img/Shiny-developer-series-flat.png)](https://pages.rstudio.net/shiny_dev_series.html)
+[![The Shiny Developer Series](Shiny-developer-series-flat.png)](https://pages.rstudio.net/shiny_dev_series.html)
 
 
 
