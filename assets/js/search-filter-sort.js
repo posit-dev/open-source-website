@@ -431,7 +431,7 @@
       }
 
       // Build items array from JSON with pre-computed search/sort/filter keys
-      this.items = index.map(entry => {
+      this.items = index.map((entry, idx) => {
         // Decode HTML entities from Hugo partial escaping
         if (entry.description) entry.description = decodeHTML(entry.description);
 
@@ -467,6 +467,7 @@
           _search: normalize(searchParts.join(' ')),
           // Sort keys
           _sortTitle: normalize(entry.title || '').replace(/[-_]/g, ' ').replace(/[^a-z0-9 ]/g, '').trim(),
+          _idx: idx,
           _dateTs: entry.date ? new Date(entry.date).getTime() : 0,
           _firstCommitTs: entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0,
         };
@@ -841,17 +842,20 @@
       const prop = key.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
 
       return items.slice().sort((a, b) => {
+        let cmp;
         if (cfg.type === 'number') {
-          return ((a[prop] || 0) - (b[prop] || 0)) * dir;
-        }
-        if (cfg.type === 'date') {
+          cmp = ((a[prop] || 0) - (b[prop] || 0)) * dir;
+        } else if (cfg.type === 'date') {
           const tsKey = '_' + prop + 'Ts';
-          return ((a[tsKey] || a._dateTs) - (b[tsKey] || b._dateTs)) * dir;
+          cmp = ((a[tsKey] || a._dateTs) - (b[tsKey] || b._dateTs)) * dir;
+        } else {
+          const sortKey = '_sort' + prop.charAt(0).toUpperCase() + prop.slice(1);
+          const sa = a[sortKey] !== undefined ? a[sortKey] : String(a[prop] || '').toLowerCase();
+          const sb = b[sortKey] !== undefined ? b[sortKey] : String(b[prop] || '').toLowerCase();
+          cmp = sa.localeCompare(sb) * dir;
         }
-        const sortKey = '_sort' + prop.charAt(0).toUpperCase() + prop.slice(1);
-        const sa = a[sortKey] !== undefined ? a[sortKey] : String(a[prop] || '').toLowerCase();
-        const sb = b[sortKey] !== undefined ? b[sortKey] : String(b[prop] || '').toLowerCase();
-        return sa.localeCompare(sb) * dir;
+        // Stable tie-break: preserve original JSON index order
+        return cmp || (a._idx - b._idx);
       });
     }
 
