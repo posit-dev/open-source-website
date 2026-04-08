@@ -1,5 +1,7 @@
 ---
 title: Quarto Dashboards Demonstration
+description: "Video demo of Quarto v1.4's new dashboard feature with Charles Teague."
+auto-description: true
 subtitle: A brief tour of how to build a dashboard in Quarto v1.4.
 categories:
   - Publishing
@@ -20,6 +22,7 @@ tags:
   - Quarto
   - Demo
   - Quarto 1.4
+slug: quarto-dashboards-demo
 ---
 
 Quarto has a host of exciting new features in release v1.4 with one of the most anticipated being Quarto Dashboards. In a recent internal presentation, Charles Teague demonstrated the new capabilities and we wanted to share it with community.

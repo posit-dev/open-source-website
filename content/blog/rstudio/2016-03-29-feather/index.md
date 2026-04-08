@@ -1,6 +1,8 @@
 ---
 title: 'Feather: A Fast On-Disk Format for Data Frames for R and Python, powered by
   Apache Arrow'
+description: "Introducing Feather: a fast binary file format for data frames that works in both R and Python, built on Apache Arrow."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-03-29'

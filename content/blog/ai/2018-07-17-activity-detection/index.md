@@ -19,6 +19,7 @@ tags:
   - AI
   - TensorFlow
   - Keras
+slug: activity-detection
 ---
 
 ## Introduction

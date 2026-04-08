@@ -1,5 +1,7 @@
 ---
 title: ggplot2 0.9.3 and plyr 1.8 have been released!
+description: "ggplot2 0.9.3 fixes bugs and adds stat warnings; plyr 1.8 brings sequential summarise() and .paropts."
+auto-description: true
 people:
   - Winston Chang
 date: '2012-12-06'

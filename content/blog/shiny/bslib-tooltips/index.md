@@ -1,7 +1,8 @@
 ---
 title: 'Shiny for R updates: tooltips, popovers, a new theme, and more'
-description: |
-  An overview of recent Shiny for R updates, including tooltips, popovers, a new theme, and more.
+description: >
+  An overview of recent Shiny for R updates, including tooltips, popovers, a new
+  theme, and more.
 people:
   - Carson Sievert
   - Garrick Aden-Buie
@@ -9,8 +10,11 @@ date: '2023-08-16'
 image: feature.png
 ported_from: shiny
 port_status: in-progress
-software: ["bslib", "shiny-r"]
-languages: ["R"]
+software:
+  - bslib
+  - shiny-r
+languages:
+  - R
 categories:
   - Interactive Apps
 tags:
@@ -138,6 +142,8 @@ Here's a quick live preview of how it looks and feels:
 bslib::input_switch("switch", "Turn Up Awesomeness", FALSE)
 ```
 
+    OpenTelemetry error: there is no package called 'otelsdk'
+
 <div class="form-group shiny-input-container" data-require-bs-version="5" data-require-bs-caller="input_switch()">
 <div class="bslib-input-switch form-switch form-check">
 <input id="switch" class="form-check-input" type="checkbox" role="switch"/>
@@ -146,11 +152,16 @@ bslib::input_switch("switch", "Turn Up Awesomeness", FALSE)
 </label>
 </div>
 </div>
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
 
-> **None**
->
-> The new `bslib` is <span id="extra">**extra, extra**</span> awesome!
+The new `bslib` is <span id="extra">**extra, extra**</span> awesome!
 
+</div>
+</div>
 <script>
 document.getElementById("switch").addEventListener("click", (ev) => {
   const extra = document.getElementById("extra");
@@ -170,9 +181,16 @@ Here are a few things currently towards the top of our roadmap:
 - More incorporation of `bslib` as part of the [Getting Started experience](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html) on [shiny.posit.co](https://shiny.posit.co/).
 - More `bslib`-focused example galleries, starter templates, and articles.
 
-> **Join us at posit::conf(2023)!**
->
-> We're also excited to see you at [posit::conf(2023)](https://posit.co/conference/) this September! Currently, there are [35 sessions](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=shiny) on the schedule that mention Shiny, including a handful of UI-focused [workshops](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=shiny&search.sessiontype=1675316728702001wr6r) and [talks](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=bslib&search.sessiontype=1684338401751002OADN&search.sessiontopics=1684779688709001hs5K).
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Join us at posit::conf(2023)!</span>
+</div>
+<div class="callout-body">
+
+We're also excited to see you at [posit::conf(2023)](https://posit.co/conference/) this September! Currently, there are [35 sessions](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=shiny) on the schedule that mention Shiny, including a handful of UI-focused [workshops](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=shiny&search.sessiontype=1675316728702001wr6r) and [talks](https://reg.conf.posit.co/flow/posit/positconf23/attendee-portal/page/sessioncatalog?mkt_tok=NzA5LU5YTi03MDYAAAGMOwicGCTQ0Fdw5xeRt2ICgRdWcmS5wjLMqYn9lIzlZxV_RurIIbKDnx8O9POcnDuz7Fu5IGLG_FegVO8iDE08HrjnqmwQs5JKRs9qk2sS7Ac&search=bslib&search.sessiontype=1684338401751002OADN&search.sessiontopics=1684779688709001hs5K).
+
+</div>
+</div>
 
 ## Release notes
 

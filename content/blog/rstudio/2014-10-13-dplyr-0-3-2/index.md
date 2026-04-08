@@ -1,5 +1,7 @@
 ---
 title: dplyr 0.3
+description: "dplyr 0.3 adds distinct(), slice(), rename(), transmute(), count(), data_frame(), flexible joins, and set operations."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-10-13'

@@ -1,5 +1,7 @@
 ---
 title: 'sparklyr 1.2: Foreach, Spark 3.0 and Databricks Connect'
+description: "sparklyr 1.2: foreach parallel backend, Databricks Connect support, and Spark 3.0 compatibility."
+auto-description: true
 people:
   - Yitao Li
 date: '2020-05-06'

@@ -1,5 +1,7 @@
 ---
 title: roxygen2 3.0.0
+description: "roxygen2 3.0.0 adds seamless S4 and RC class documentation, smarter S3 handling, and safer roxygenise()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2013-12-09'

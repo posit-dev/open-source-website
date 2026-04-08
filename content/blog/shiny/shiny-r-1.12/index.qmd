@@ -11,7 +11,7 @@ image: feature.png
 image-header: feature-header.png
 image-alt: OpenTelemetry + Shiny for R v1.12
 editor:
-  render-on-save: yes
+  render-on-save: true
 code-annotations: hover
 ported_from: shiny
 port_status: in-progress

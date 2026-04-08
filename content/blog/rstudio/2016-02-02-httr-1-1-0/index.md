@@ -1,5 +1,7 @@
 ---
 title: httr 1.1.0 (and 1.0.0)
+description: "httr 1.0.0 switches from RCurl to curl for reliability; 1.1.0 improves error messages and OAuth support."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-02-02'

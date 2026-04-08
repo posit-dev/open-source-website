@@ -26,6 +26,7 @@ tags:
   - TensorFlow
   - Keras
   - Audio processing
+slug: simple-audio-classification-keras
 ---
 
 

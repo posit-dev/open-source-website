@@ -1,5 +1,7 @@
 ---
 title: roxygen2 3.1.0
+description: "roxygen2 3.1.0 automatically documents reference class methods from docstrings."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-01-30'

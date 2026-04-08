@@ -21,6 +21,7 @@ tags:
   - Quarto
   - Extensions
   - Features
+slug: shinylive-extension
 ---
 
 

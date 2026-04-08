@@ -1,5 +1,7 @@
 ---
 title: Data Visualization cheatsheet, plus Spanish translations
+description: "New ggplot2 cheatsheet covering geoms, stats, scales, facets, and themes—plus Spanish translations of other cheatsheets."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-03-30'

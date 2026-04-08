@@ -15,6 +15,7 @@ categories:
   - Publishing
 tags:
   - Quarto
+slug: pdf-accessibility-and-standards
 ---
 
 {{< include ../_quarto-1.9-feature.qmd >}}

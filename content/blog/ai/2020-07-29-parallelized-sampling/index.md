@@ -23,6 +23,8 @@ tags:
   - AI
   - Concepts
   - Distributed computing
+math: true
+slug: parallelized-sampling
 ---
 
 

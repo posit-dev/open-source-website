@@ -28,6 +28,7 @@ tags:
   - Keras
   - Time series
   - Generative models
+math: true
 ---
 
 

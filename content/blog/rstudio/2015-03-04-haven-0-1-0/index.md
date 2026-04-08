@@ -1,5 +1,7 @@
 ---
 title: haven 0.1.0
+description: "haven reads SAS, SPSS, and Stata files into R, including SAS7BDAT and Stata 13 formats, with labelled variable support."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-03-04'

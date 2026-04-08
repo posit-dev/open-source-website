@@ -1,7 +1,8 @@
 ---
 title: 'Shiny for R updates: new default look, dark mode, shinylive updates, and more'
-description: |
-  An overview of recent Shiny for R updates, a new default look, dark mode, shinylive updates, and more.
+description: >
+  An overview of recent Shiny for R updates, a new default look, dark mode,
+  shinylive updates, and more.
 people:
   - Carson Sievert
   - Garrick Aden-Buie
@@ -9,8 +10,12 @@ date: '2023-11-30'
 image: feature.jpg
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-r", "shinylive", "bslib"]
-languages: ["R"]
+software:
+  - shiny-r
+  - shinylive
+  - bslib
+languages:
+  - R
 categories:
   - Interactive Apps
 tags:
@@ -138,12 +143,19 @@ The rest of this section will explore a few highlights of the new default look, 
 - Improved [`value_box()` styling](#value-box-styling)
 - [Refreshed Shiny UI](#refreshed-shiny-ui) (inputs, modals, notifications, and more)
 
-> **Quarto and PyShiny dashboards**
->
-> Dashboards are coming to Quarto!
->
-> The new [Quarto dashboard](https://quarto.org/docs/dashboards/) format, as well as newer [PyShiny](https://shiny.posit.co/py/) components, are built on the same foundation as `bslib`.
-> Thus, the concepts you'll learn while building dashboards with `bslib` should also largely apply there as well.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Quarto and PyShiny dashboards</span>
+</div>
+<div class="callout-body">
+
+Dashboards are coming to Quarto!
+
+The new [Quarto dashboard](https://quarto.org/docs/dashboards/) format, as well as newer [PyShiny](https://shiny.posit.co/py/) components, are built on the same foundation as `bslib`.
+Thus, the concepts you'll learn while building dashboards with `bslib` should also largely apply there as well.
+
+</div>
+</div>
 
 ### Page-level styling
 

@@ -1,5 +1,7 @@
 ---
 title: 'sparklyr 1.0: Apache Arrow, XGBoost, Broom and TFRecords'
+description: "sparklyr 1.0: Apache Arrow for faster data transfers, XGBoost models, broom integration, and TFRecords."
+auto-description: true
 people:
   - Javier Luraschi
 date: '2019-03-15'

@@ -25,6 +25,7 @@ tags:
   - TensorFlow
   - Keras
   - Natural language processing
+slug: word-embeddings-with-keras
 ---
 
 

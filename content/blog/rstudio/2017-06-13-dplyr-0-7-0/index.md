@@ -1,5 +1,7 @@
 ---
 title: dplyr 0.7.0
+description: "dplyr 0.7.0: tidy evaluation for programming with dplyr, new datasets, and improved encoding support."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2017-06-13'

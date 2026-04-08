@@ -1,5 +1,7 @@
 ---
 title: httr 0.4
+description: "httr 0.4 adds quick start and API package vignettes, headers()/cookies() extractors, encode argument, and progress bars."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-07-31'

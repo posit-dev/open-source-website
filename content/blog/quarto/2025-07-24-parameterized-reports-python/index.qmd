@@ -26,6 +26,7 @@ tags:
   - Authoring
   - Teaching
   - Jupyter
+slug: parameterized-reports-python
 ---
 
 ::: callout-tip

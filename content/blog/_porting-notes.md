@@ -30,6 +30,21 @@ Shallow clones of all legacy blog repos are in `/_external-sources/` (ignored by
 | Education blog | [Blog](https://education.rstudio.com/blog/) | blogdown | [GitHub](https://github.com/rstudio/education.rstudio.com) |
 | RStudio blog | Some on <https://posit.co/blog/> | hugo | [GitHub](https://github.com/gregswinehart/rstudio.com) |
 
+## Porting Quarto posts
+
+For posts with a `.qmd` source (Quarto, Shiny, Great Tables, etc.):
+
+1. Copy the `.qmd` and any assets (images, data files) from `_external-sources/` into the new post folder under `content/blog/`.
+2. **Commit the copied files before editing.** This makes it easy to audit changes and see exactly what was modified from the original source.
+3. Edit the frontmatter **in the `.qmd`**: replace `author` with `people`, and add `ported_from`, `port_status`, `software`, `languages`, `categories`.
+4. Fix links in the `.qmd`:
+   - Internal blog cross-links: `/docs/blog/posts/<slug>/` → `/blog/quarto/<slug>/`
+   - Quarto docs links: `/docs/...something.qmd` → `https://quarto.org/docs/...something.html` (note: `.qmd` → `.html`, not just prefixing the domain — fragment URLs like `.qmd#anchor` need manual attention as regex replacements can miss them)
+5. Run `quarto render index.qmd` from the post folder to generate `index.md`.
+6. Commit both `index.qmd` and `index.md`.
+
+Don't write the `.md` by hand — always render from the `.qmd` so the two stay in sync.
+
 ## Folder structure
 
 Posts are organized by source blog:

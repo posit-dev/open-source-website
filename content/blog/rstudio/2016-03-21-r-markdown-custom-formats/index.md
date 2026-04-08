@@ -1,5 +1,7 @@
 ---
 title: R Markdown Custom Formats
+description: "Overview of custom R Markdown formats (tufte, rticles, rmdformats) and how to create your own output formats."
+auto-description: true
 people:
   - RStudio Team
 date: '2016-03-21'

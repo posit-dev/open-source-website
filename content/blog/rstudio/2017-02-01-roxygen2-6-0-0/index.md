@@ -1,5 +1,7 @@
 ---
 title: roxygen2 6.0.0
+description: "roxygen2 6.0.0 introduces markdown syntax for documentation and improved inheritance with @inherit tags."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2017-02-01'

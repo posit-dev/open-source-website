@@ -25,6 +25,7 @@ tags:
   - Concepts
   - Meta
   - Society
+math: true
 ---
 
 

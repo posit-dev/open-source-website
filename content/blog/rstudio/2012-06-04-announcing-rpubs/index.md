@@ -1,5 +1,7 @@
 ---
 title: 'Announcing RPubs: A New Web Publishing Service for R'
+description: "Announcing RPubs: a free service to publish R Markdown documents to the web directly from RStudio."
+auto-description: true
 people:
   - RStudio Team
 date: '2012-06-04'

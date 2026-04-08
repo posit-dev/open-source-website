@@ -1,5 +1,7 @@
 ---
 title: Shiny 0.10.2
+description: "Shiny 0.10.2 adds single-file apps (app.R), progress bars, IE 8/9 file uploads, and upgrades DataTables to 1.10."
+auto-description: true
 people:
   - Yihui Xie
 date: '2014-10-02'

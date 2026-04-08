@@ -1,5 +1,7 @@
 ---
 title: 'Teaching the Tidyverse in 2020 - Part 2: Data visualisation'
+description: "Teaching data visualization in 2020: new ggplot2 features for introductory curricula."
+auto-description: true
 date: '2020-07-15'
 slug: teaching-the-tidyverse-in-2020-part-2-data-visualisation
 categories:

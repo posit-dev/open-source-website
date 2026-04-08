@@ -26,6 +26,7 @@ tags:
   - Keras
   - Image recognition
   - Image processing
+math: true
 ---
 
 

@@ -1,5 +1,7 @@
 ---
 title: 'Great Tables `v0.4.0`: Nanoplots and More'
+description: "New in Great Tables v0.4.0: nanoplots for tiny, interactive visualizations inside table cells."
+auto-description: true
 people:
   - Rich Iannone
 date: '2024-03-19'

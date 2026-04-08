@@ -1,5 +1,7 @@
 ---
 title: Get data out of excel and into R with readxl
+description: "readxl reads both .xls and .xlsx files with no external dependencies. Fast, handles dates, and auto-drops blank columns."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-04-15'

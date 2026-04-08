@@ -1,20 +1,25 @@
 ---
 title: Quarto 1.8
-description: |
-  Quarto 1.8 improves brand support, introduces brand extensions, adds HTML accessibility checks, and gives access to execution context.
+description: >
+  Quarto 1.8 improves brand support, introduces brand extensions, adds HTML
+  accessibility checks, and gives access to execution context.
 categories:
   - Publishing
 people:
   - Charlotte Wickham
 date: '2025-10-13'
-draft: no
+draft: 'no'
 image: thumbnail.png
 image-alt: Quarto 1.8 with a lightbulb emoji
 css: /docs/output-formats/autodark.css
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - Quarto 1.8
   - Releases
@@ -22,6 +27,7 @@ tags:
   - Quarto
   - Quarto 1.8
   - Releases
+slug: 1.8-release
 ---
 
 
@@ -34,9 +40,8 @@ You can read about these improvements and some other highlights below. You can f
 
 You can now specify `light` and `dark` versions of any colors or logo in a brand specification:
 
-**\_brand.yml**
 
-``` yaml
+``` yaml { filename="_brand.yml" }
 color:
   foreground:
     light: "#333333"
@@ -65,9 +70,8 @@ Share brand definitions and assets across Quarto projects with a brand extension
 
 Get started with:
 
-**Terminal**
 
-``` default
+``` default { filename="Terminal" }
 quarto create extension brand
 ```
 

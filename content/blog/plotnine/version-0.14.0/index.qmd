@@ -1,5 +1,7 @@
 ---
 title: Version 0.14.0
+description: "Plotnine v0.14.0: requires Python 3.10+, removes print() for rendering, and improves IDE support for scales."
+auto-description: true
 date: '2024-11-07'
 categories:
   - Visualization

@@ -1,5 +1,7 @@
 ---
 title: Keras for R
+description: "Introducing Keras for R: a high-level neural networks API for fast deep learning experimentation."
+auto-description: true
 people:
   - JJ Allaire
 date: '2017-09-05'

@@ -1,5 +1,7 @@
 ---
 title: 'sparklyr 1.1: Foundations, Books, Lakes and Barriers'
+description: "sparklyr 1.1: Delta Lake support, Spark 3.0 preview, and barrier execution for deep learning."
+auto-description: true
 people:
   - Javier Luraschi
 date: '2020-01-29'

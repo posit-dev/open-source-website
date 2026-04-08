@@ -1,5 +1,7 @@
 ---
 title: An update on Shiny
+description: "Shiny 0.2.3 adds file downloads; plus a preview of the upcoming free, open-source Shiny Server."
+auto-description: true
 people:
   - Joe Cheng
 date: '2012-12-04'

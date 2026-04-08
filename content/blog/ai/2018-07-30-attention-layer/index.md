@@ -24,6 +24,8 @@ tags:
   - Natural language processing
   - TensorFlow
   - Keras
+math: true
+slug: attention-layer
 ---
 
 

@@ -1,5 +1,7 @@
 ---
 title: 'Great Tables `v0.15.0`: Flags, Icons, and Other Formatting Goodies'
+description: "New in Great Tables v0.15.0: country flag icons with fmt_flag(), Font Awesome icons, and accounting notation."
+auto-description: true
 people:
   - Rich Iannone
 date: '2024-12-19T00:00:00.000Z'

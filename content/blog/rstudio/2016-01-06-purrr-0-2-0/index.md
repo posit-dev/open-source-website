@@ -1,5 +1,7 @@
 ---
 title: purrr 0.2.0
+description: "purrr 0.2.0 adds type-stable map functions (map_lgl/int/dbl/chr), flatten variants, and safely() for error handling."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-01-06'

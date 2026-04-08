@@ -1,5 +1,7 @@
 ---
 title: testthat 1.0.0
+description: "testthat 1.0.0 adds pipe support, new expectations, consistent side-effect testing, and C++ unit testing with Catch."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-04-29'

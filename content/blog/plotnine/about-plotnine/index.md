@@ -1,5 +1,7 @@
 ---
 title: About Plotnine
+description: "plotnine: a grammar of graphics implementation for Python built on matplotlib and pandas."
+auto-description: true
 date: '2017-04-22'
 ported_from: plotnine
 port_status: in-progress

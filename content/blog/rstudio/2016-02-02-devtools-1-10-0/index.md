@@ -1,5 +1,7 @@
 ---
 title: Devtools 1.10.0
+description: "devtools 1.10.0 improves Windows RTools detection, adds use_news_md() and use_mit_license(), with lazy GitHub installs."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-02-02'

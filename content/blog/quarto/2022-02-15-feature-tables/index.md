@@ -24,6 +24,7 @@ tags:
   - Features
   - Authoring
   - Tables
+slug: feature-tables
 ---
 
 

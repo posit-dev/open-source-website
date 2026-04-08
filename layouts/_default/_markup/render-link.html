@@ -1,1 +1,14 @@
-<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+{{ $dest := .Destination }}
+{{ if strings.HasPrefix $dest "/blog/" }}
+  {{ $fragment := "" }}
+  {{ if strings.Contains $dest "#" }}
+    {{ $parts := split $dest "#" }}
+    {{ $dest = index $parts 0 }}
+    {{ $fragment = printf "#%s" (index $parts 1) }}
+  {{ end }}
+  {{ $path := $dest | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+  {{ with $.Page.Site.GetPage $path }}
+    {{ $dest = printf "%s%s" .RelPermalink $fragment }}
+  {{ end }}
+{{ end }}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>

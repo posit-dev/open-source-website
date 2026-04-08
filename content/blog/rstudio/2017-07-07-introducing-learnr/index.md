@@ -1,5 +1,7 @@
 ---
 title: Introducing learnr
+description: "Introducing learnr: create interactive R tutorials with exercises, quizzes, and videos."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2017-07-11'

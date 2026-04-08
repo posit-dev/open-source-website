@@ -1,5 +1,7 @@
 ---
 title: Shiny 0.8.0 released; Yihui Xie joins RStudio
+description: "Shiny 0.8.0 adds DataTables support and visual debugging tools. Also: Yihui Xie joins RStudio!"
+auto-description: true
 people:
   - Joe Cheng
 date: '2013-11-15'

@@ -1,5 +1,7 @@
 ---
 title: 'DT 0.4: Editing Tables, Smart Filtering, and More'
+description: "DT 0.4: editable tables, smart filtering, and shift-click row selection for Shiny apps."
+auto-description: true
 people:
   - Yihui Xie
 date: '2018-03-29'

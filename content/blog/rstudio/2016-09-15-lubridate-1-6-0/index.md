@@ -1,5 +1,7 @@
 ---
 title: lubridate 1.6.0
+description: "lubridate 1.6.0 adds flexible period/duration parsing from strings and date rounding with unit multipliers."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-09-15'

@@ -26,6 +26,7 @@ tags:
   - TensorFlow
   - Keras
   - Concepts
+math: true
 ---
 
 

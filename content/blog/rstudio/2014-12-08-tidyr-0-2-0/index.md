@@ -1,5 +1,7 @@
 ---
 title: tidyr 0.2.0 (and reshape2 1.4.1)
+description: "tidyr 0.2.0 adds expand() for filling missing combinations, unnest() for list-columns, and better separate() control."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-12-08'

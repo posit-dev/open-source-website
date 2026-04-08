@@ -28,6 +28,7 @@ tags:
   - Concepts
   - Image recognition
   - Image processing
+math: true
 ---
 
 

@@ -1,5 +1,7 @@
 ---
 title: Where in the world is R and RStudio
+description: "Maps visualizing where RStudio is downloaded around the world and across the US, based on web logs."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2012-10-01'

@@ -1,5 +1,7 @@
 ---
 title: 'Interactive documents: An incredibly easy way to use Shiny'
+description: "Interactive documents: embed Shiny widgets in R Markdown for live, interactive reports—no separate server.R/ui.R needed."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-06-19'

@@ -361,20 +361,15 @@ external:
 
 ### Writing Blog Posts
 
-Blog posts can be written in three formats:
+See [`content/blog/_authoring-guide.md`](content/blog/_authoring-guide.md) for full guidance on post placement, format choice, setting up environments for executable posts, and how to preview your work.
 
-```bash
-# Markdown
-content/blog/my-post/index.md
+**Quick start with Claude Code:**
 
-# Quarto document (with executable code)
-content/blog/my-post/index.qmd
+1. Clone this repository
+2. Open Claude Code in the project root
+3. Run `/new-post` — it will guide you through scaffolding, frontmatter, branch creation, and environment setup interactively
 
-# Jupyter notebook
-content/blog/my-post/index.ipynb
-```
-
-Use the blog archetype to create new posts:
+**Quick start without Claude Code:**
 ```bash
 hugo new blog/my-post/index.md
 ```

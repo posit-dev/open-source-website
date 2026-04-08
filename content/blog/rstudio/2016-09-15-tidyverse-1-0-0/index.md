@@ -1,5 +1,7 @@
 ---
 title: tidyverse 1.0.0
+description: "The tidyverse package installs and loads core tidyverse packages (ggplot2, dplyr, tidyr, readr, purrr, tibble) in one command."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-09-15'

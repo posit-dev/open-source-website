@@ -1,5 +1,7 @@
 ---
 title: 'Announcing bookdown: Authoring Books and Technical Documents with R Markdown'
+description: "bookdown extends R Markdown for writing books with cross-references, citations, and multiple output formats."
+auto-description: true
 people:
   - Yihui Xie
 date: '2016-12-02'

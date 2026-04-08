@@ -32,6 +32,7 @@ tags:
   - Probabilistic machine learning
   - Probabilistic deep learning
   - Generative models
+math: true
 ---
 
 

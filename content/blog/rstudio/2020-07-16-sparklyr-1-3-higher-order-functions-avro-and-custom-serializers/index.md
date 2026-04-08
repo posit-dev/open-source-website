@@ -76,7 +76,7 @@ result_tbl %>% dplyr::pull(total_values)
 [1]  4000 15000 20000 25000
 ```
 
-With the result `4000 15000 20000 25000` telling us there are in total $40 dollars worth of pennies, $150 dollars worth of nickels, $200 dollars worth of dimes, and $250 dollars worth of quarters, as expected.
+With the result `4000 15000 20000 25000` telling us there are in total \$40 dollars worth of pennies, \$150 dollars worth of nickels, \$200 dollars worth of dimes, and \$250 dollars worth of quarters, as expected.
 
 Using another sparklyr function named `hof_aggregate()`, which performs an [AGGREGATE](https://spark.apache.org/docs/latest/api/sql/index.html#aggregate) operation in Spark, we can then compute the net worth of Scrooge McDuck based on `result_tbl`, storing the result in a new column named `total`. Notice for this aggregate operation to work, we need to ensure the starting value of aggregation has data type (namely, `BIGINT`) that is consistent with the data type of `total_values` (which is `ARRAY<BIGINT>`), as shown below:
 
@@ -93,7 +93,7 @@ result_tbl %>%
 [1] 64000
 ```
 
-So Scrooge McDuck's net worth is $640 dollars.
+So Scrooge McDuck's net worth is \$640 dollars.
 
 Other higher-order functions supported by Spark SQL so far include `transform`, `filter`, and `exists`, as documented in [here](https://spark.apache.org/docs/latest/api/sql/index.html), and similar to the example above, their counterparts (namely, `hof_transform()`, `hof_filter()`, and `hof_exists()`) all exist in sparklyr 1.3, so that they can be integrated with other `dplyr` verbs in an idiomatic manner in R.
 
