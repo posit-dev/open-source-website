@@ -45,15 +45,23 @@
           } else {
             this.state.showFilters = false;
             this.controlsEl.classList.add('hidden');
+            if (this.barEl) this.barEl.classList.add('mb-4');
           }
           this._updateShowBtnLabel();
           this._updateURL();
         });
       }
 
+      this._defaultSortCfg = this.config.sort
+        ? this.config.sort.find(s => s.default) || this.config.sort[0]
+        : null;
+
       this.state = {
         search: '',
-        sort: { key: '', direction: 'asc' },
+        sort: {
+          key: this._defaultSortCfg ? this._defaultSortCfg.key : '',
+          direction: this._defaultSortCfg ? (this._defaultSortCfg.direction || 'asc') : 'asc',
+        },
         filters: {},
       };
 
@@ -63,9 +71,6 @@
         });
       }
 
-      this._defaultSortCfg = this.config.sort
-        ? this.config.sort.find(s => s.default) || this.config.sort[0]
-        : null;
       this._filterCfgMap = {};
       if (this.config.filters) {
         this.config.filters.forEach(f => {
@@ -133,6 +138,7 @@
     _showControls() {
       if (this.controlsEl) {
         this.controlsEl.classList.remove('hidden');
+        if (this.barEl) this.barEl.classList.remove('mb-4');
         if (!this._stickyObserved) {
           this._observeSticky();
           this._stickyObserved = true;
@@ -174,7 +180,7 @@
           entry.location || '',
         ];
         const searchIndex = searchParts.join(' ').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-        const sortTitle = (entry.title || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
+        const sortTitle = (entry.title || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[-_]/g, ' ').replace(/[^a-z0-9 ]/g, '').trim();
         const dateTs = entry.date ? new Date(entry.date).getTime() : 0;
         const firstCommitTs = entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0;
 

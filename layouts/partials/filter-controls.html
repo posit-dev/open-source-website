@@ -12,7 +12,7 @@
 {{ $defaultSort := .defaultSort | default "" }}
 
 {{/* ---- Always-visible bar: Count + Filters toggle + Reset ---- */}}
-<div data-filter-bar class="invisible flex items-center justify-end gap-3 mb-4 text-sm text-gray-600">
+<div data-filter-bar class="invisible flex items-center justify-end gap-3 text-sm text-gray-600 mb-4">
   <span>
     <span class="hidden sm:inline">Showing</span> <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
   </span>
@@ -37,7 +37,7 @@
 </div>
 
 {{/* ---- Collapsible controls: Search + Filters + Sort ---- */}}
-<div data-filter-controls class="hidden sticky top-0 z-30 bg-white pt-4 pb-4 mb-4">
+<div data-filter-controls class="hidden sticky top-0 z-30 bg-white pt-4 pb-4">
   <div class="flex flex-wrap items-center gap-3">
 
     {{/* Search input */}}
@@ -116,6 +116,7 @@
   bar.classList.remove('invisible');
   if (p.get('showFilters') === 'true' || p.has('q') || p.has('sort')) {
     ctrl.classList.remove('hidden');
+    bar.classList.remove('mb-4');
   }
 })();
 </script>
