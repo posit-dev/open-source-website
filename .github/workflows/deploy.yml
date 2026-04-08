@@ -78,7 +78,7 @@ jobs:
         run: |
           git fetch origin main --depth=1
           CHANGED=$(git diff --name-only origin/main -- 'content/' \
-            | { grep -E '/_?index\.(md|qmd|ipynb|Rmd)$' || true; })
+            | { grep -E '/_?index\.(md|qmd|ipynb|Rmd|Rmarkdown|markdown|html)$' || true; })
 
           if [ -z "$CHANGED" ]; then
             echo "has-changes=false" >> "$GITHUB_OUTPUT"
