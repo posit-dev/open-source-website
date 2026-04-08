@@ -77,7 +77,7 @@ ggplot(parabolic, aes(x = X1, y = X2)) +
   theme(legend.position = "top")
 ```
 
-<img src="/articles/2019-10-discrim-0-01_files/figure-html/startup-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="startup-1.png" width="700px" style="display: block; margin: auto;" />
 
 How would a flexible discriminant model do here? We'll split the data then fit the model:
 
@@ -157,7 +157,7 @@ p +
   geom_contour(data = pred_grid, aes(z = fda_pred), breaks = .5, col = "black")
 ```
 
-<img src="/articles/2019-10-discrim-0-01_files/figure-html/grid-1-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="grid-1-1.png" width="700px" style="display: block; margin: auto;" />
 
 This boundary seems pretty reasonable. 
 
@@ -252,7 +252,7 @@ ggplot(auc_values, aes(x = frac_common_cov, y = frac_identity, size = mean)) +
   coord_equal()
 ```
 
-<img src="/articles/2019-10-discrim-0-01_files/figure-html/grid-res-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="grid-res-1.png" width="700px" style="display: block; margin: auto;" />
 
 There is a wide range of parameter combinations associated with good performance here. The poor results occur mostly when the model tries to enforce a mostly LDA covariance matrix (`frac_common_cov` > 0.9) along with `frac_identity` <= 0.6. The latter parameter tries to shrink the covariance matrix towards one where the parameters are considered to be nearly independent. 
 
@@ -303,7 +303,7 @@ p +
   geom_contour(data = pred_grid, aes(z = rda_pred), breaks = .5, col = "black")
 ```
 
-<img src="/articles/2019-10-discrim-0-01_files/figure-html/rda-boundary-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="rda-boundary-1.png" width="700px" style="display: block; margin: auto;" />
 
 This is pretty close to the true simulated boundary, which is parabolic in nature. 
 

@@ -139,7 +139,7 @@ hpc_grouped %>%
   ggtitle("One-VS-All ROC Curve", subtitle = "Computed for each resample")
 ```
 
-<img src="/articles/2018-11-tidymodels-updates_files/figure-html/unnamed-chunk-4-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-4-1.png" width="700px" style="display: block; margin: auto;" />
 
 ### New metrics and vignettes
 

@@ -61,7 +61,7 @@ ggplot(mtcars, aes(!!x_var, !!y_var)) +
   facet_wrap(vars(!!group_var))
 ```
 
-<img src="/articles/2018-07-ggplot2-3-0-0_files/figure-html/label-both-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="label-both-1.png" width="700px" style="display: block; margin: auto;" />
 
 ## New features
 
@@ -89,7 +89,7 @@ ggplot(nc) +
   annotate("point", x = -80, y = 35, colour = "red", size = 4)
 ```
 
-<img src="/articles/2018-07-ggplot2-3-0-0_files/figure-html/sf-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="sf-1.png" width="700px" style="display: block; margin: auto;" />
 
 ### Calculated aesthetics
 
@@ -113,7 +113,7 @@ ggplot(mtcars) +
   labs(tag = 'A', title = 'Title of this plot')
 ```
 
-<img src="/articles/2018-07-ggplot2-3-0-0_files/figure-html/tag-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="tag-1.png" width="700px" style="display: block; margin: auto;" />
 
 ### Layers: geoms, stats, and position adjustments
 
@@ -128,7 +128,7 @@ ggplot(mtcars, aes(factor(cyl), fill = factor(vs))) +
   geom_bar(position = position_dodge2(preserve = "total"))
 ```
 
-<img src="/articles/2018-07-ggplot2-3-0-0_files/figure-html/dodge-st-1.png" width="50%" /><img src="/articles/2018-07-ggplot2-3-0-0_files/figure-html/dodge-st-2.png" width="50%" />
+<img src="dodge-st-1.png" width="50%" /><img src="dodge-st-2.png" width="50%" />
 
 ### Scales and guides
 
@@ -146,7 +146,7 @@ d <- ggplot(dsamp, aes(carat, price)) +
 d + scale_colour_viridis_d()
 ```
 
-<img src="/articles/2018-07-ggplot2-3-0-0_files/figure-html/viridis-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="viridis-1.png" width="700px" style="display: block; margin: auto;" />
 
 `scale_colour_continuous()` and `scale_colour_gradient()` are now controlled  by global options `ggplot2.continuous.colour` and `ggplot2.continuous.fill`. You can set them to `"viridis"` to use the viridis colour scale by default:
 
@@ -165,7 +165,7 @@ v <- ggplot(faithfuld) +
 v + scale_fill_continuous()
 ```
 
-<img src="/articles/2018-07-ggplot2-3-0-0_files/figure-html/viridis-c-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="viridis-c-1.png" width="700px" style="display: block; margin: auto;" />
 
 `guide_colorbar()` is more configurable: tick marks and color bar frame can now by styled with arguments `ticks.colour`, `ticks.linewidth`, `frame.colour`, `frame.linewidth`, and `frame.linetype`.
 
@@ -183,7 +183,7 @@ p + geom_point(aes(colour = cyl)) +
   )
 ```
 
-<img src="/articles/2018-07-ggplot2-3-0-0_files/figure-html/guide-colorbar-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="guide-colorbar-1.png" width="700px" style="display: block; margin: auto;" />
 
 ### Nonstandard aesthetics
 
@@ -198,7 +198,7 @@ ggplot(iris, aes(x = Sepal.Length, fill = Species)) +
   scale_colour_brewer(type = "qual", aesthetics = "fill")
 ```
 
-<img src="/articles/2018-07-ggplot2-3-0-0_files/figure-html/nsa-independent-scale-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="nsa-independent-scale-1.png" width="700px" style="display: block; margin: auto;" />
 
 ## Acknowledgements
 

@@ -62,7 +62,7 @@ penguins_madeup_wide
 
 Now suppose we want to create the following visualisation.
 
-{{<figure src="/blog/2020-07-17-teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/index_files/figure-html/unnamed-chunk-4-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line.">}}
+{{<figure src="unnamed-chunk-4-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line.">}}
 
 To make this visualisation we need to get our data frame to look like the output shown below, where each point plotted corresponds to one row of the data frame and body mass measurements appear in a single column with a new columns (`measurement`) identifying which of the three measurements the record comes from.
 
@@ -173,7 +173,7 @@ penguins_madeup_long %>%
   geom_line()
 ```
 
-{{<figure src="/blog/2020-07-17-teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/index_files/figure-html/unnamed-chunk-9-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line.">}}
+{{<figure src="unnamed-chunk-9-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line.">}}
 
 Looking good, though not ideal... Remember [the tip](https://gist.github.com/jennybc/847c6b43c4e35cec2e5bb30a3f38af73) from the previous post in the series about reordering your legend in the same order as the data appears on your plot using `fct_reorder2()`? It would be a useful addition here.
 
@@ -187,7 +187,7 @@ penguins_madeup_long %>%
   geom_line()
 ```
 
-{{<figure src="/blog/2020-07-17-teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/index_files/figure-html/unnamed-chunk-10-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line, and the legend is ordered according to the heights of lines in the plot.">}}
+{{<figure src="unnamed-chunk-10-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line, and the legend is ordered according to the heights of lines in the plot.">}}
 
 If you wanted to get really fancy, you can do directly label the lines with the the `geom_label_repel()` function from the [ggrepel](https://ggrepel.slowkow.com/) package. Since we only want the third measurement to be labeled, we can filter the data for that measurement and label the points with the `name`s of penguins. While we're at it, let's fix up all the other labels in the plot as well.
 
@@ -212,7 +212,7 @@ ggplot(penguins_madeup_long,
   )
 ```
 
-{{<figure src="/blog/2020-07-17-teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/index_files/figure-html/unnamed-chunk-11-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line, and each penguin's name is directly labelled on the plot.">}}
+{{<figure src="unnamed-chunk-11-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line, and each penguin's name is directly labelled on the plot.">}}
 
 This has quickly turned into a lesson on data visualisation, and that is a good lesson in and of itself -- if you start teaching R and data science with data visualisation, which is the starting point I strongly recommend, you shouldn't feel like you need to cover all of data visualisation before you can move on to the next topic. Often times getting your data visualisation to look a certain way is a great motivator for data wrangling and reshaping, which means that after an initial introduction to plotting basics, your data visualisation and wrangling lessons can be intertwined for a more problem-based approach to teaching.
 

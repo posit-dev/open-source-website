@@ -25,7 +25,7 @@ ported_categories:
 ---
 
 
-<img src="/blog-images/2020-01-29-sparklyr-1-1-linux-foundation-roadmap.png" style="display: none;" alt="Linux Foundation roadmap projects and sparklyr"/>
+<img src="2020-01-29-sparklyr-1-1-linux-foundation-roadmap.png" style="display: none;" alt="Linux Foundation roadmap projects and sparklyr"/>
 
 Today we are excited to share that [sparklyr](https://github.com/sparklyr/sparklyr) `1.1` is now available on [CRAN](https://CRAN.R-project.org/package=sparklyr)!
 
@@ -213,7 +213,7 @@ sparklyr.nested::sdf_select(hail_df, dp = info.DP) %>%
   dbplot::dbplot_histogram(dp)
 ```
 
-<img src="/blog-images/2020-01-29-sparklyr-1-1-hail-histogram-pd.png" alt="Apache Spark, Hail, R, and sparklyr histogram"/>
+<img src="2020-01-29-sparklyr-1-1-hail-histogram-pd.png" alt="Apache Spark, Hail, R, and sparklyr histogram"/>
 
 This code was adapted from Hail's [Genome Wide Association-Study](https://hail.is/docs/0.2/tutorials/01-genome-wide-association-study.html). You can learn more about this Hail community extensions from [r-spark/sparkhail](https://github.com/r-spark/sparkhail).
 
@@ -229,7 +229,7 @@ This makes it a great time for you to join the sparklyr community, contribute, a
 
 [Mastering Spark with R](https://therinspark.com) is a new book to help you learn and master Apache Spark with R from start to finish. It introduces data analysis with well-known tools like [dplyr](https://dplyr.tidyverse.org/), and covers everything else related to processing large-scale datasets, modeling, productionizing pipelines, using extensions, distributing R code, and processing real-time data -- if you are not yet familiar with Spark, this is a great resource to get started!
 
-<a href="https://therinspark.com"><img src="/blog-images/2020-01-29-sparklyr-1-1-book-cover.jpg" width="200px"" alt="Mastering Spark with R book cover"/></a>
+<a href="https://therinspark.com"><img src="2020-01-29-sparklyr-1-1-book-cover.jpg" width="200px"" alt="Mastering Spark with R book cover"/></a>
 
 This book was published by [O'Reilly](http://shop.oreilly.com/product/0636920223764.do), is available on [Amazon](https://www.amazon.com/gp/product/149204637X), and is also free-to-use [online](https://therinspark.com/). We hope you find this book useful and easy to read.
 

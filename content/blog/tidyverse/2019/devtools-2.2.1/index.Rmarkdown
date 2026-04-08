@@ -58,7 +58,7 @@ provides a series of checks that you have the latest versions of R, RStudio,
 RTools and package dependencies, along with instructions on how to update them
 if needed.
 
-![dev_sitrep() output](/images/devtools-2.2.1/sitrep.png)
+![dev_sitrep() output](sitrep.png)
 
 
 ### ellipsis

@@ -162,7 +162,7 @@ classwork_df %>%
     )
 ```
 
-<img src="/blog/2020-10-05-ds-in-edu/index_files/figure-html/plot-1.png" width="672" style="display: block; margin: auto;" />
+<img src="plot-1.png" width="672" style="display: block; margin: auto;" />
 
 By making the code for this plot
 [available](https://github.com/data-edu/rstudio_edu_post), we invited

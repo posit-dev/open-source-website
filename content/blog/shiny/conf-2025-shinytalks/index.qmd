@@ -90,7 +90,7 @@ Full workshop materials are now available, including slides, exercises, and code
 <h3 class="d-inline me-2">LLMs + Shiny Workshop</h3> / <p class="d-inline ms-2">Joe Cheng & Garrick Aden-Buie</p>
 
 ::: {.mt-3 .mb-5}
-<a href="https://posit-conf-2025.github.io/llm/" class="btn btn-outline-dark btn-sm my-3 d-inline me-3">LLM Course Materials</a><a href="https://github.com/posit-conf-2025/llm"><img src="/images/github.svg" style="width:16px;height:auto;display:inline;"></a>
+<a href="https://posit-conf-2025.github.io/llm/" class="btn btn-outline-dark btn-sm my-3 d-inline me-3">LLM Course Materials</a><a href="https://github.com/posit-conf-2025/llm"><img src="github.svg" style="width:16px;height:auto;display:inline;"></a>
 :::
 
 
@@ -98,7 +98,7 @@ Full workshop materials are now available, including slides, exercises, and code
 
 
 ::: {.mt-3 .mb-5}
-<a href="https://posit-conf-2025.github.io/shiny-py/" class="btn btn-outline-dark btn-sm my-3 d-inline me-3">Shiny for R Materials</a><a href="https://github.com/posit-conf-2025/shiny-py"><img src="/images/github.svg" style="width:16px;height:auto;display:inline;"></a>
+<a href="https://posit-conf-2025.github.io/shiny-py/" class="btn btn-outline-dark btn-sm my-3 d-inline me-3">Shiny for R Materials</a><a href="https://github.com/posit-conf-2025/shiny-py"><img src="github.svg" style="width:16px;height:auto;display:inline;"></a>
 :::
 
 
@@ -107,7 +107,7 @@ Full workshop materials are now available, including slides, exercises, and code
 
 
 ::: {.mt-3 .mb-5}
-<a href="https://posit-conf-2025.github.io/shiny-r/" class="btn btn-outline-dark btn-sm my-3 d-inline me-3">Shiny for Python Materials</a><a href="https://github.com/posit-conf-2025/shiny-r/"><img src="/images/github.svg" style="width:16px;height:auto;display:inline;"></a>
+<a href="https://posit-conf-2025.github.io/shiny-r/" class="btn btn-outline-dark btn-sm my-3 d-inline me-3">Shiny for Python Materials</a><a href="https://github.com/posit-conf-2025/shiny-r/"><img src="github.svg" style="width:16px;height:auto;display:inline;"></a>
 :::
 
 

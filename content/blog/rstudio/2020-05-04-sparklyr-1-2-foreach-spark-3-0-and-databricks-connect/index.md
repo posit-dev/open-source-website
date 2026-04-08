@@ -96,7 +96,7 @@ svm_rbf(cost = tune(), rbf_sigma = tune()) %>%
 
 The Spark connection was already registered, so the code ran in Spark without any additional changes. We can verify that this was the case by navigating to the Spark web interface:
 
-<img src="/blog/images/2020-05-06-sparklyr-1-2-spark-backend-foreach-package.png" alt="Spark running foreach package using sparklyr"/>
+<img src="2020-05-06-sparklyr-1-2-spark-backend-foreach-package.png" alt="Spark running foreach package using sparklyr"/>
 
 ## Databricks Connect
 
@@ -110,7 +110,7 @@ sc <- spark_connect(
   spark_home = system2("databricks-connect", "get-spark-home", stdout = TRUE))
 ```
 
-<img src="/blog/images/2020-05-06-sparklyr-1-2-spark-databricks-connect-rstudio.png" alt="Databricks Connect with RStudio Desktop"/>
+<img src="2020-05-06-sparklyr-1-2-spark-databricks-connect-rstudio.png" alt="Databricks Connect with RStudio Desktop"/>
 
 That's about it, you are now remotely connected to a Databricks cluster from your local R session.
 

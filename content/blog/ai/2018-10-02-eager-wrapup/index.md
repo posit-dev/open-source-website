@@ -96,13 +96,13 @@ It is this question that attention is meant to address.
 Now consider implementing this in code. Each time it is called to produce a new token, the decoder needs to get current input from the attention mechanism. This means we can't just squeeze an attention layer between the encoder and the decoder LSTM. Before the advent of eager execution, a solution would have been to implement this in low-level TensorFlow code. With eager execution and custom models, we can just [use Keras](/blog/ai/2018-07-30-attention-layer/).
 
 <aside>
-[<img src="/blog/ai/2018-07-30-attention-layer/images/attention.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-07-30-attention-layer/)
+[<img src="attention.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-07-30-attention-layer/)
 </aside>
 
 Attention is not just relevant to sequence-to-sequence problems, though. In [image captioning](/blog/ai/2018-09-17-eager-captioning/), the output is a sequence, while the input is a complete image. When generating a caption, attention is used to focus on parts of the image relevant to different time steps in the text-generating process.
 
 <aside>
-[<img src="/blog/ai/2018-09-17-eager-captioning/images/showattendandtell.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-09-17-eager-captioning/)
+[<img src="showattendandtell.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-09-17-eager-captioning/)
 </aside>
 
 ## Easy inspection
@@ -111,7 +111,7 @@ In terms of debuggability, just using custom models (without eager execution) al
 If we have a custom model like `simple_dot` from the recent [embeddings post](/blog/ai/2018-09-26-embeddings-recommender) and are unsure if we've got the shapes correct, we can simply add logging statements, like so:
 
 <aside>
-[<img src="/blog/ai/2018-09-26-embeddings-recommender/images/m.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-09-26-embeddings-recommender)
+[<img src="m.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-09-26-embeddings-recommender)
 </aside>
 
 ``` r
@@ -149,7 +149,7 @@ If you've read [Deep Learning with R](https://www.amazon.com/Deep-Learning-R-Fra
 Now compare the example from the [generating digits with GANs](/blog/ai/2018-08-26-eager-dcgan) post. Generator and discriminator each get set up as actors in a drama:
 
 <aside>
-[<img src="/blog/ai/2018-08-26-eager-dcgan/images/thumb.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-08-26-eager-dcgan)
+[<img src="thumb.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-08-26-eager-dcgan)
 </aside>
 
 ``` r
@@ -204,10 +204,10 @@ discriminator_optimizer$apply_gradients(# ...
 
 The code ends up so close to how we mentally picture the situation that hardly any memorization is needed to keep in mind the overall design.
 
-Relatedly, this way of programming lends itself to extensive modularization. This is illustrated by the [second post on GANs](/blog/ai/2018-09-20-eager-pix2pix/images/pix2pixlosses.png) that includes U-Net like downsampling and upsampling steps.
+Relatedly, this way of programming lends itself to extensive modularization. This is illustrated by the [second post on GANs](pix2pixlosses.png) that includes U-Net like downsampling and upsampling steps.
 
 <aside>
-[<img src="/blog/ai/2018-09-20-eager-pix2pix/images/pix2pixlosses.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-09-20-eager-pix2pix)
+[<img src="pix2pixlosses.png" style="border: 1px solid rgba(0, 0, 0, 0.2);" width="150" />](/blog/ai/2018-09-20-eager-pix2pix)
 </aside>
 
 Here, the downsampling and upsampling layers are each factored out into their own models

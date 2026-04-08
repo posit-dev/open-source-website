@@ -109,7 +109,7 @@ When used non-interactively the install functions work like the previous default
 always upgrading outdated packages.
 
 <p align="center">
-<img src="/images/devtools-2.0.0/upgrade-menu.png" alt="upgrade menu">
+<img src="upgrade-menu.png" alt="upgrade menu">
 </p>
 
 The menu respects the `menu.graphics` option, so set `options(menu.graphics =
