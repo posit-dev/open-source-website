@@ -1,17 +1,22 @@
+{{ define "title" }}
+  <title>Blog posts about {{ .Title }} :: {{ .Site.Title }}</title>
+{{ end }}
+
 {{ define "main" }}
+{{ $query := .File.ContentBaseName }}
+{{ $queryLower := $query | lower }}
 {{/* JS users get redirected to the blog page with query param */}}
-<script>window.location.replace('/blog/?q={{ .Params.query }}');</script>
+<script>window.location.replace('/blog/?q={{ $query }}');</script>
 
 <div class="flex flex-col w-full relative mt-6 max-w-7xl mx-auto" data-pagefind-ignore>
 
-  <h1 class="text-4xl font-medium text-gray-500 mb-2">{{ .Title }}</h1>
+  <h1 class="text-4xl font-medium text-gray-500 mb-2">Blog posts about {{ .Title }}</h1>
 
   <div class="prose mb-6">
     {{ partial "button.html" (dict "url" "/blog/" "text" "Back to all blog posts" "icon-left" "boxicons--arrow-left") }}
   </div>
 
   {{/* Filter all blog posts matching the query */}}
-  {{ $query := .Params.query | lower }}
   {{ $allBlogPages := where site.RegularPages "Section" "blog" }}
   {{ $matched := slice }}
   {{ range $allBlogPages.ByDate.Reverse }}
@@ -35,14 +40,13 @@
 
     {{ $slug := .RelPermalink | lower }}
     {{ $haystack := printf "%s %s %s %s %s %s" $title $desc $slug (delimit $tagList " ") (delimit $catList " ") (delimit $swList " ") }}
-    {{ if in $haystack $query }}
+    {{ if in $haystack $queryLower }}
       {{ $matched = $matched | append . }}
     {{ end }}
   {{ end }}
 
   {{ if $matched }}
-    {{ $itemsPerPage := site.Params.itemsPerPage | default 60 }}
-    {{ $paginator := .Paginate $matched $itemsPerPage }}
+    {{ $paginator := .Paginate $matched }}
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {{ range $paginator.Pages }}
@@ -53,7 +57,7 @@
     {{ partial "pagination.html" $paginator }}
   {{ else }}
     <div class="text-center py-12">
-      <p class="text-xl text-gray-600">No blog posts found matching "{{ .Params.query }}".</p>
+      <p class="text-xl text-gray-600">No blog posts found matching "{{ .Title }}".</p>
     </div>
   {{ end }}
 

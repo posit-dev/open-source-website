@@ -8,7 +8,7 @@
 
   <div class="flex flex-wrap gap-2">
     {{ range .Sections }}
-      <a href="{{ .RelPermalink }}" class="pill-link text-base">{{ .Params.query }}</a>
+      <a href="{{ .RelPermalink }}" class="pill-link text-base">{{ .Title }}</a>
     {{ end }}
   </div>
 

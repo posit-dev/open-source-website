@@ -22,8 +22,7 @@
   {{ end }}
 {{ end }}
 
-{{ $itemsPerPage := site.Params.itemsPerPage | default 60 }}
-{{ $paginator := .Paginate $starredPages $itemsPerPage }}
+{{ $paginator := .Paginate $starredPages }}
 
 <div class="flex flex-col w-full">
   <div class="mb-8">
@@ -50,7 +49,7 @@
 
   {{ partial "filter-controls.html" $cfg }}
 
-  <div data-item-container data-filter-config='{{ $cfg | jsonify }}'
+  <div data-item-container data-page-size="{{ $paginator.PagerSize }}" data-filter-config='{{ $cfg | jsonify }}'
        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
     {{ range $paginator.Pages }}
       {{ partial "item.html" (dict "page" . "hide-badge" true) }}

@@ -22,7 +22,7 @@
       this.renderedMap = new Map();
       this.totalCount = 0;
       this.displayedCount = 0;
-      this.pageSize = 60;
+      this.pageSize = parseInt(containerEl.dataset.pageSize, 10) || 60;
 
       this.sectionHeadings = [];
       this.itemSettings = {};

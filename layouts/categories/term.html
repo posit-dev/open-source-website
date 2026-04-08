@@ -24,12 +24,11 @@
   </div>
 
   {{ $cfg := site.Data.filters.categories }}
-  {{ $itemsPerPage := site.Params.itemsPerPage | default 60 }}
-  {{ $paginator := .Paginate .Pages.ByDate.Reverse $itemsPerPage }}
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse }}
 
   {{ partial "filter-controls.html" $cfg }}
 
-  <div data-item-container data-filter-config='{{ $cfg | jsonify }}'
+  <div data-item-container data-page-size="{{ $paginator.PagerSize }}" data-filter-config='{{ $cfg | jsonify }}'
        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {{- range $paginator.Pages -}}
       {{ partial "item.html" (dict "page" .) }}
