@@ -1,4 +1,5 @@
 blog:
+  search_help: [author, topic, tag, software, language, date]
   sort:
     - key: date
       label: Date
@@ -45,6 +46,7 @@ blog:
         - TypeScript
 
 categories:
+  search_help: [date]
   sort:
     - key: date
       label: Date
@@ -67,6 +69,7 @@ categories:
         - cheatsheet
 
 cheatsheet:
+  search_help: [author, topic, language, date]
   sort:
     - key: date
       label: Date
@@ -92,6 +95,7 @@ cheatsheet:
         - R
 
 events:
+  search_help: [language, location, date]
   sort:
     - key: date
       label: Date
@@ -119,6 +123,7 @@ events:
         - R
 
 software:
+  search_help: [language, stars]
   sort:
     - key: title
       label: Title
@@ -139,6 +144,7 @@ software:
       label: Languages
 
 tags:
+  search_help: [date]
   sort:
     - key: date
       label: Date
@@ -161,6 +167,7 @@ tags:
         - cheatsheet
 
 tutorial:
+  search_help: [topic, date]
   sort:
     - key: date
       label: Date
@@ -177,6 +184,7 @@ tutorial:
       label: Topics
 
 video:
+  search_help: [author, topic, duration, date]
   sort:
     - key: date
       label: Date
@@ -201,6 +209,7 @@ video:
       label: Topics
 
 webinar:
+  search_help: [topic, date]
   sort:
     - key: date
       label: Date
