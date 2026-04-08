@@ -38,7 +38,29 @@
   // ---- Tokenizer ----
   // Converts raw search string into flat token array.
   // Token types: 'term', 'field', 'and', 'or', 'not', 'lparen', 'rparen'
+
+  // Separate ( and ) from adjacent text, respecting quoted strings.
+  // Turns "(author:"jane doe")" into "( author:"jane doe" )"
+  // so the main regex always sees parens as standalone tokens.
+  function separateParens(raw) {
+    let out = '';
+    let inQuote = false;
+    for (let i = 0; i < raw.length; i++) {
+      const ch = raw[i];
+      if (ch === '"') {
+        inQuote = !inQuote;
+        out += ch;
+      } else if (!inQuote && (ch === '(' || ch === ')')) {
+        out += ' ' + ch + ' ';
+      } else {
+        out += ch;
+      }
+    }
+    return out;
+  }
+
   function tokenize(raw) {
+    raw = separateParens(raw);
     const tokens = [];
     // Groups: 1=neg, 2=field, 3=op, 4=quoted, 5=dateRange1, 6=dateRange2,
     //         7=date, 8=numRange1, 9=numRange2, 10=number, 11=bareword,
@@ -84,21 +106,12 @@
             tokens.push({ type: 'field', kind: 'text', field, value: normalize(m[10]) });
           }
         } else if (m[11]) {
-          // field:bareword — strip trailing parens
-          let bareword = m[11];
-          let trailingParens = 0;
-          while (bareword.endsWith(')')) {
-            bareword = bareword.slice(0, -1);
-            trailingParens++;
+          // field:bareword
+          if (TEXT_FIELDS[field]) {
+            tokens.push({ type: 'field', kind: 'text', field, value: normalize(m[11]) });
+          } else {
+            tokens.push({ type: 'term', value: normalize(field + ':' + m[11]) });
           }
-          if (bareword) {
-            if (TEXT_FIELDS[field]) {
-              tokens.push({ type: 'field', kind: 'text', field, value: normalize(bareword) });
-            } else {
-              tokens.push({ type: 'term', value: normalize(field + ':' + bareword) });
-            }
-          }
-          for (let j = 0; j < trailingParens; j++) tokens.push({ type: 'rparen' });
         }
       } else if (m[12] !== undefined) {
         // "quoted phrase"
@@ -110,39 +123,15 @@
           tokens.push({ type: 'and' });
         } else if (word === 'OR') {
           tokens.push({ type: 'or' });
-        } else if (word === 'NOT') {
+        } else if (word === 'NOT' || word === '-') {
           tokens.push({ type: 'not' });
         } else if (word === '(') {
           tokens.push({ type: 'lparen' });
         } else if (word === ')') {
           tokens.push({ type: 'rparen' });
-        } else if (word.startsWith('(')) {
-          // "(foo" → lparen + remaining
-          tokens.push({ type: 'lparen' });
-          // Re-parse the rest after the opening paren
-          const rest = word.slice(1);
-          if (rest) {
-            const sub = tokenize(rest);
-            tokens.push(...sub);
-          }
-        } else if (word.endsWith(')')) {
-          // "foo)" → term + rparen(s)
-          let i = word.length - 1;
-          while (i >= 0 && word[i] === ')') i--;
-          const base = word.slice(0, i + 1);
-          const parens = word.length - 1 - i;
-          if (base.startsWith('-') && base.length > 1) {
-            tokens.push({ type: 'not' });
-            tokens.push({ type: 'term', value: normalize(base.slice(1)) });
-          } else if (base) {
-            // Re-parse in case it's a qualifier like "tag:foo)"
-            const sub = tokenize(base);
-            tokens.push(...sub);
-          }
-          for (let j = 0; j < parens; j++) tokens.push({ type: 'rparen' });
         } else if (word.startsWith('-') && word.length > 1) {
+          // -term or -field:value — emit NOT then re-tokenize the rest
           tokens.push({ type: 'not' });
-          // Re-parse in case it's "-field:value"
           const sub = tokenize(word.slice(1));
           tokens.push(...sub);
         } else {
