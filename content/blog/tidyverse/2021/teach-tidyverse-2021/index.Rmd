@@ -307,7 +307,7 @@ If you're new to the tidymodels ecosystem, I recommend the following resources f
 
 -   Blog posts:
 
-    -   [Choose your own tidymodels adventure](Choose%20your%20own%20tidymodels%20adventure)
+    -   [Choose your own tidymodels adventure](/blog/tidyverse/2021/choose-tidymodels-adventure/)
     -   [infer 1.0.0](https://www.tidyverse.org/blog/2021/08/infer-1-0-0/)
 
 If you're new to teaching tidymodels, the following resources can be helpful:

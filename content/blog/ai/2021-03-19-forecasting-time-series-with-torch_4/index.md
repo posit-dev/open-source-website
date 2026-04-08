@@ -558,7 +558,7 @@ We can't directly compare performance here to that of previous models in our ser
 
 Thanks for reading!
 
-Photo by [David Clode](https://unsplash.com/@davidclode?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](./?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Photo by [David Clode](https://unsplash.com/@davidclode?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. 2014. "Neural Machine Translation by Jointly Learning to Align and Translate." *CoRR* abs/1409.0473. <http://arxiv.org/abs/1409.0473>.
 
