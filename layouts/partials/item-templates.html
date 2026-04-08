@@ -8,7 +8,7 @@
 
 {{/* Item settings for JS */}}
 <script id="item-settings" type="application/json">
-  {{ site.Data.items | jsonify }}
+  {{ site.Data.items | jsonify | safeJS }}
 </script>
 
 {{/* ============================================================

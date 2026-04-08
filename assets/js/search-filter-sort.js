@@ -13,6 +13,14 @@
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   }
 
+  // Decode HTML entities produced by Hugo's html/template escaping in partials
+  const _decodeEl = document.createElement('textarea');
+  function decodeHTML(str) {
+    if (!str || !str.includes('&')) return str;
+    _decodeEl.innerHTML = str;
+    return _decodeEl.value;
+  }
+
   // Field qualifier → pre-computed key on each item (set during _hydrate)
   const TEXT_FIELDS = {
     title:       '_qTitle',
@@ -424,6 +432,9 @@
 
       // Build items array from JSON with pre-computed search/sort/filter keys
       this.items = index.map(entry => {
+        // Decode HTML entities from Hugo partial escaping
+        if (entry.description) entry.description = decodeHTML(entry.description);
+
         const authors = entry.authors || [];
         const categories = entry.categories || [];
         const tags = entry.tags || [];
