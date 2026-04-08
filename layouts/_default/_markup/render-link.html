@@ -7,7 +7,9 @@
 {{ end }}
 {{/* Resolve relative paths against the page's content directory
      (Quarto rewrites /blog/... to ../../../blog/... in rendered .md) */}}
-{{ if or (strings.HasPrefix $dest "../") (strings.HasPrefix $dest "./") }}
+{{/* Only rewrite ../ paths (Quarto cross-page links); leave ./ paths for Hugo's
+     default page-relative resolution so same-directory assets resolve correctly */}}
+{{ if strings.HasPrefix $dest "../" }}
   {{ $dest = printf "/%s" (path.Join $.Page.File.Dir $dest) }}
 {{ end }}
 {{ if strings.HasPrefix $dest "/blog/" }}

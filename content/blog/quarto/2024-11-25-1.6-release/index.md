@@ -339,4 +339,4 @@ We want to say a huge thank you to everyone who contributed to this release by o
 [yurivict](https://github.com/yurivict),
 [yves-amevoin](https://github.com/yves-amevoin).
 
-The palette emoji in the [listing and social card image](images/thumbnail.png) for this post comes from <a href="https://openmoji.org/" class="external">OpenMoji</a>-- the open-source emoji and icon project. License: <a href="https://creativecommons.org/licenses/by-sa/4.0/#" class="external">CC BY-SA 4.0</a>
+The palette emoji in the [listing and social card image](thumbnail.png) for this post comes from <a href="https://openmoji.org/" class="external">OpenMoji</a>-- the open-source emoji and icon project. License: <a href="https://creativecommons.org/licenses/by-sa/4.0/#" class="external">CC BY-SA 4.0</a>
