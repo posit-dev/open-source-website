@@ -100,7 +100,7 @@ tokenizer$decode(ids)
 
 ## Spaces
 
-[Remember that you can already host](https://shiny.posit.co/blog/posts/shiny-on-hugging-face/)
+[Remember that you can already host](/blog/2023-05-08_shiny-on-hugging-face/)
 Shiny (for R and Python) on Hugging Face Spaces. As an example, we have built a Shiny
 app that uses:
 

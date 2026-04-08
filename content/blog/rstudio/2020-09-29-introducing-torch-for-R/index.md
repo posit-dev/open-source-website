@@ -54,7 +54,7 @@ This post addresses three questions:
 
 If you are already familiar with deep learning -- or all you can think
 right now is "show me some code" -- you might want to head directly over
-to the [more technical introduction on the AI blog](https://blogs.rstudio.com/ai/posts/2020-09-29-introducing-torch-for-r/). Otherwise, you
+to the [more technical introduction on the AI blog](/blog/2020-09-29_keydanaintroducingtorchforR/). Otherwise, you
 may find it more useful to hear about the context first, and then play
 with the step-by-step example in that complementary post.
 

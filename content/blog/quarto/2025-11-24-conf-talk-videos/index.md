@@ -81,7 +81,7 @@ Talks included in the playlist, broken up into a few categories for easier brows
 
 **Workshop materials now available:**  
 The Quarto team has published full materials from the two workshops at posit::conf 2025: "Branded Websites, Presentations, Dashboards, and PDFs with Quarto" and "Extending Quarto".  
-You can access the workshop websites, exercise source code, and full slide decks under a CC BY-SA 4.0 license from the [Quarto blog](https://quarto.org/docs/blog/posts/2025-10-27-conf-workshops-materials/).
+You can access the workshop websites, exercise source code, and full slide decks under a CC BY-SA 4.0 license from the [Quarto blog](/blog/2025-10-27_conf-workshops-materials/).
 
 </div>
 </div>
