@@ -35,20 +35,11 @@
     date: item => item._dateTs,
   };
 
-  // Parse search string into structured query object
-  function parseQuery(raw) {
-    const query = {
-      terms: [],
-      negTerms: [],
-      fields: {},
-      negFields: {},
-      numeric: [],
-      negNumeric: [],
-      dates: [],
-      negDates: [],
-    };
-
-    // Tokenize: field:value, field:"value", field:OP, "phrase", bare word
+  // ---- Tokenizer ----
+  // Converts raw search string into flat token array.
+  // Token types: 'term', 'field', 'and', 'or', 'not', 'lparen', 'rparen'
+  function tokenize(raw) {
+    const tokens = [];
     // Groups: 1=neg, 2=field, 3=op, 4=quoted, 5=dateRange1, 6=dateRange2,
     //         7=date, 8=numRange1, 9=numRange2, 10=number, 11=bareword,
     //         12=phrase, 13=word
@@ -56,124 +47,230 @@
     let m;
     while ((m = re.exec(raw)) !== null) {
       if (m[2]) {
-        // Qualified: field:value
         const neg = m[1] === '-';
         const field = m[2].toLowerCase();
         const op = m[3] || '';
 
-        // field:"quoted value"
+        if (neg) tokens.push({ type: 'not' });
+
         if (m[4] !== undefined) {
-          const val = normalize(m[4]);
-          if (val && TEXT_FIELDS[field]) {
-            const target = neg ? query.negFields : query.fields;
-            (target[field] = target[field] || []).push(val);
+          // field:"quoted value"
+          if (TEXT_FIELDS[field]) {
+            tokens.push({ type: 'field', kind: 'text', field, value: normalize(m[4]) });
           }
-          continue;
-        }
-
-        // field:date..date (date range)
-        if (m[5] && m[6]) {
+        } else if (m[5] && m[6]) {
+          // field:date..date
           if (DATE_FIELDS[field]) {
-            const entry = { field, op: '..', low: new Date(m[5]).getTime(), high: new Date(m[6]).getTime() + 86400000 - 1 };
-            (neg ? query.negDates : query.dates).push(entry);
+            tokens.push({ type: 'field', kind: 'date', field, op: '..', low: new Date(m[5]).getTime(), high: new Date(m[6]).getTime() + 86400000 - 1 });
           }
-          continue;
-        }
-
-        // field:date (single date, with optional operator)
-        if (m[7]) {
+        } else if (m[7]) {
+          // field:date
           if (DATE_FIELDS[field]) {
             const ts = new Date(m[7]).getTime();
             const effectiveOp = op || '>=';
             const value = effectiveOp === '<=' ? ts + 86400000 - 1 : ts;
-            (neg ? query.negDates : query.dates).push({ field, op: effectiveOp, value });
+            tokens.push({ type: 'field', kind: 'date', field, op: effectiveOp, value });
           }
-          continue;
-        }
-
-        // field:num..num (numeric range)
-        if (m[8] !== undefined && m[9] !== undefined) {
+        } else if (m[8] !== undefined && m[9] !== undefined) {
+          // field:num..num
           if (NUMERIC_FIELDS[field]) {
-            const entry = { field, op: '..', low: parseFloat(m[8]), high: parseFloat(m[9]) };
-            (neg ? query.negNumeric : query.numeric).push(entry);
+            tokens.push({ type: 'field', kind: 'numeric', field, op: '..', low: parseFloat(m[8]), high: parseFloat(m[9]) });
           }
-          continue;
-        }
-
-        // field:number (with optional operator)
-        if (m[10] !== undefined) {
+        } else if (m[10] !== undefined) {
+          // field:number
           if (NUMERIC_FIELDS[field]) {
-            const effectiveOp = op || '==';
-            const entry = { field, op: effectiveOp, value: parseFloat(m[10]) };
-            (neg ? query.negNumeric : query.numeric).push(entry);
+            tokens.push({ type: 'field', kind: 'numeric', field, op: op || '==', value: parseFloat(m[10]) });
           } else if (TEXT_FIELDS[field]) {
-            // Numeric value on a text field — treat as text search
-            const target = neg ? query.negFields : query.fields;
-            (target[field] = target[field] || []).push(normalize(m[10]));
+            tokens.push({ type: 'field', kind: 'text', field, value: normalize(m[10]) });
           }
-          continue;
-        }
-
-        // field:bareword (text search — supports comma-separated values)
-        if (m[11]) {
-          if (TEXT_FIELDS[field]) {
-            const target = neg ? query.negFields : query.fields;
-            for (const part of m[11].split(',')) {
-              const val = normalize(part);
-              if (val) (target[field] = target[field] || []).push(val);
+        } else if (m[11]) {
+          // field:bareword — strip trailing parens
+          let bareword = m[11];
+          let trailingParens = 0;
+          while (bareword.endsWith(')')) {
+            bareword = bareword.slice(0, -1);
+            trailingParens++;
+          }
+          if (bareword) {
+            if (TEXT_FIELDS[field]) {
+              tokens.push({ type: 'field', kind: 'text', field, value: normalize(bareword) });
+            } else {
+              tokens.push({ type: 'term', value: normalize(field + ':' + bareword) });
             }
-          } else {
-            // Unknown field — treat whole thing as bare text
-            const val = normalize(field + ':' + m[11]);
-            if (val) (neg ? query.negTerms : query.terms).push(val);
           }
+          for (let j = 0; j < trailingParens; j++) tokens.push({ type: 'rparen' });
         }
       } else if (m[12] !== undefined) {
-        // Quoted phrase: "..."
+        // "quoted phrase"
         const val = normalize(m[12]);
-        if (val) query.terms.push(val);
+        if (val) tokens.push({ type: 'term', value: val });
       } else if (m[13]) {
-        // Bare word (may start with -)
-        if (m[13].startsWith('-') && m[13].length > 1) {
-          const val = normalize(m[13].slice(1));
-          if (val) query.negTerms.push(val);
+        const word = m[13];
+        if (word === 'AND') {
+          tokens.push({ type: 'and' });
+        } else if (word === 'OR') {
+          tokens.push({ type: 'or' });
+        } else if (word === 'NOT') {
+          tokens.push({ type: 'not' });
+        } else if (word === '(') {
+          tokens.push({ type: 'lparen' });
+        } else if (word === ')') {
+          tokens.push({ type: 'rparen' });
+        } else if (word.startsWith('(')) {
+          // "(foo" → lparen + remaining
+          tokens.push({ type: 'lparen' });
+          // Re-parse the rest after the opening paren
+          const rest = word.slice(1);
+          if (rest) {
+            const sub = tokenize(rest);
+            tokens.push(...sub);
+          }
+        } else if (word.endsWith(')')) {
+          // "foo)" → term + rparen(s)
+          let i = word.length - 1;
+          while (i >= 0 && word[i] === ')') i--;
+          const base = word.slice(0, i + 1);
+          const parens = word.length - 1 - i;
+          if (base.startsWith('-') && base.length > 1) {
+            tokens.push({ type: 'not' });
+            tokens.push({ type: 'term', value: normalize(base.slice(1)) });
+          } else if (base) {
+            // Re-parse in case it's a qualifier like "tag:foo)"
+            const sub = tokenize(base);
+            tokens.push(...sub);
+          }
+          for (let j = 0; j < parens; j++) tokens.push({ type: 'rparen' });
+        } else if (word.startsWith('-') && word.length > 1) {
+          tokens.push({ type: 'not' });
+          // Re-parse in case it's "-field:value"
+          const sub = tokenize(word.slice(1));
+          tokens.push(...sub);
         } else {
-          const val = normalize(m[13]);
-          if (val) query.terms.push(val);
+          const val = normalize(word);
+          if (val) tokens.push({ type: 'term', value: val });
         }
       }
     }
-
-    return query;
+    return tokens;
   }
 
-  function groupByField(entries) {
-    const groups = {};
-    for (const e of entries) {
-      (groups[e.field] = groups[e.field] || []).push(e);
+  // ---- Parser (recursive descent) ----
+  // Precedence: OR (lowest) → AND (implicit or explicit) → NOT → primary
+  // Returns an AST node.
+  function parseQuery(raw) {
+    const tokens = tokenize(raw);
+    let pos = 0;
+
+    function peek() { return pos < tokens.length ? tokens[pos] : null; }
+    function advance() { return tokens[pos++]; }
+
+    // expr → orExpr
+    function expr() {
+      return orExpr();
     }
-    return groups;
+
+    // orExpr → andExpr ( OR andExpr )*
+    function orExpr() {
+      let left = andExpr();
+      if (!left) return null;
+      while (peek() && peek().type === 'or') {
+        advance(); // consume OR
+        const right = andExpr();
+        if (!right) break;
+        left = { type: 'or', left, right };
+      }
+      return left;
+    }
+
+    // andExpr → notExpr ( AND? notExpr )*
+    // Implicit AND: two adjacent primaries without an operator
+    function andExpr() {
+      let left = notExpr();
+      if (!left) return null;
+      while (peek()) {
+        const t = peek();
+        // Stop at OR or rparen — those belong to outer rules
+        if (t.type === 'or' || t.type === 'rparen') break;
+        // Consume explicit AND if present
+        if (t.type === 'and') advance();
+        const right = notExpr();
+        if (!right) break;
+        left = { type: 'and', left, right };
+      }
+      return left;
+    }
+
+    // notExpr → NOT* primary
+    function notExpr() {
+      if (peek() && peek().type === 'not') {
+        advance();
+        const operand = notExpr(); // allow NOT NOT x
+        if (!operand) return null;
+        return { type: 'not', operand };
+      }
+      return primary();
+    }
+
+    // primary → LPAREN expr RPAREN | FIELD | TERM
+    function primary() {
+      const t = peek();
+      if (!t) return null;
+      if (t.type === 'lparen') {
+        advance();
+        const node = expr();
+        // Consume matching rparen (tolerate missing)
+        if (peek() && peek().type === 'rparen') advance();
+        return node;
+      }
+      if (t.type === 'term' || t.type === 'field') {
+        return advance();
+      }
+      // Unexpected token — skip and try next
+      advance();
+      return primary();
+    }
+
+    const ast = expr();
+    return ast;
   }
 
-  function matchNumeric(entry, item) {
-    const val = NUMERIC_FIELDS[entry.field](item);
-    if (entry.op === '..') return val >= entry.low && val <= entry.high;
-    if (entry.op === '==') return val === entry.value;
-    if (entry.op === '>') return val > entry.value;
-    if (entry.op === '>=') return val >= entry.value;
-    if (entry.op === '<') return val < entry.value;
-    if (entry.op === '<=') return val <= entry.value;
+  // ---- Evaluator ----
+  function matchNumeric(node, item) {
+    const val = NUMERIC_FIELDS[node.field](item);
+    if (node.op === '..') return val >= node.low && val <= node.high;
+    if (node.op === '==') return val === node.value;
+    if (node.op === '>') return val > node.value;
+    if (node.op === '>=') return val >= node.value;
+    if (node.op === '<') return val < node.value;
+    if (node.op === '<=') return val <= node.value;
     return false;
   }
 
-  function matchDate(entry, item) {
-    const val = DATE_FIELDS[entry.field](item);
-    if (entry.op === '..') return val >= entry.low && val <= entry.high;
-    if (entry.op === '>') return val > entry.value;
-    if (entry.op === '>=') return val >= entry.value;
-    if (entry.op === '<') return val < entry.value;
-    if (entry.op === '<=') return val <= entry.value;
+  function matchDate(node, item) {
+    const val = DATE_FIELDS[node.field](item);
+    if (node.op === '..') return val >= node.low && val <= node.high;
+    if (node.op === '>') return val > node.value;
+    if (node.op === '>=') return val >= node.value;
+    if (node.op === '<') return val < node.value;
+    if (node.op === '<=') return val <= node.value;
     return false;
+  }
+
+  function evaluate(node, item) {
+    if (!node) return true;
+    if (node.type === 'and') return evaluate(node.left, item) && evaluate(node.right, item);
+    if (node.type === 'or') return evaluate(node.left, item) || evaluate(node.right, item);
+    if (node.type === 'not') return !evaluate(node.operand, item);
+    if (node.type === 'term') return item._search.includes(node.value);
+    if (node.type === 'field') {
+      if (node.kind === 'text') {
+        const accessor = TEXT_FIELDS[node.field];
+        return accessor ? accessor(item).includes(node.value) : false;
+      }
+      if (node.kind === 'numeric') return matchNumeric(node, item);
+      if (node.kind === 'date') return matchDate(node, item);
+    }
+    return true;
   }
 
   class ItemManager {
@@ -353,7 +450,7 @@
 
         return {
           ...entry,
-          // Arrays for filter matching (join for backwards-compat with comma-split logic)
+          // Pre-joined strings for dropdown filter matching
           _categoriesStr: (entry.categories || []).join(','),
           _languagesStr: (entry.languages || []).join(','),
           _tagsStr: (entry.tags || []).join(','),
@@ -694,44 +791,8 @@
       }
     }
 
-    _matchesQuery(item, query) {
-      // Bare terms — all must match (AND) across all fields
-      for (const t of query.terms) {
-        if (!item._search.includes(t)) return false;
-      }
-      // Negated bare terms
-      for (const t of query.negTerms) {
-        if (item._search.includes(t)) return false;
-      }
-      // Field qualifiers — multiple values on same field use OR, different fields use AND
-      for (const [field, values] of Object.entries(query.fields)) {
-        const accessor = TEXT_FIELDS[field];
-        if (!accessor) continue;
-        const text = accessor(item);
-        if (!values.some(v => text.includes(v))) return false;
-      }
-      // Negated field qualifiers
-      for (const [field, values] of Object.entries(query.negFields)) {
-        const accessor = TEXT_FIELDS[field];
-        if (!accessor) continue;
-        const text = accessor(item);
-        if (values.some(v => text.includes(v))) return false;
-      }
-      // Numeric comparisons — same field uses OR, different fields use AND
-      for (const [field, entries] of Object.entries(groupByField(query.numeric))) {
-        if (!entries.some(e => matchNumeric(e, item))) return false;
-      }
-      for (const [field, entries] of Object.entries(groupByField(query.negNumeric))) {
-        if (entries.some(e => matchNumeric(e, item))) return false;
-      }
-      // Date comparisons — same field uses OR, different fields use AND
-      for (const [field, entries] of Object.entries(groupByField(query.dates))) {
-        if (!entries.some(e => matchDate(e, item))) return false;
-      }
-      for (const [field, entries] of Object.entries(groupByField(query.negDates))) {
-        if (matchDate(entry, item)) return false;
-      }
-      return true;
+    _matchesQuery(item, ast) {
+      return evaluate(ast, item);
     }
 
     _matchesFilters(item) {
@@ -794,11 +855,11 @@
     }
 
     _applyFilters() {
-      const query = parseQuery(this.state.search);
+      const ast = parseQuery(this.state.search);
 
       // Filter all items at data level
       let filtered = this.items.filter(
-        item => this._matchesQuery(item, query) && this._matchesFilters(item)
+        item => this._matchesQuery(item, ast) && this._matchesFilters(item)
       );
 
       // Sort

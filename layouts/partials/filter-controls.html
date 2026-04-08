@@ -63,15 +63,17 @@
             <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">author:"jane doe"</td><td>Author name</td></tr>
             <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">topic:visualization</td><td>Topic / category</td></tr>
             <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">tag:ggplot2</td><td>Tag</td></tr>
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">language:python,r</td><td>Multiple values (OR)</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">lang:python OR lang:r</td><td>Either language</td></tr>
             <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">software:quarto</td><td>Software</td></tr>
             <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">stars:>100</td><td>At least 100 stars</td></tr>
             <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">duration:30..60</td><td>Duration in minutes</td></tr>
             <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">date:>2025-01-01</td><td>After a date</td></tr>
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">-language:r</td><td>Exclude matches</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">lang:python AND lang:r</td><td>Both languages</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">NOT language:r</td><td>Exclude matches</td></tr>
+            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">(a OR b) AND c</td><td>Group with parens</td></tr>
           </tbody>
         </table>
-        <div class="mt-2 text-gray-400">Combine freely. Qualifiers on the same field use OR; different fields use AND.</div>
+        <div class="mt-2 text-gray-400">Combine freely with AND (default), OR, NOT, and parentheses.</div>
       </div>
     </div>
 
