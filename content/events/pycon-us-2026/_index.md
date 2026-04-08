@@ -16,4 +16,11 @@ languages:
 
 PyCon US is the largest and longest-running Python gathering globally.
 
-Join us at the booth!
+Come say hi! We’re bringing a fresh haul of swag, stickers, and a team that’s genuinely excited to hear about your projects and share what we’ve been building.
+
+Keep an eye on our socials or check the venue map, we’ll update our booth location as soon as it’s live!
+
+- [LinkedIn](https://linkedin.com/company/posit-pbc)
+- [Bluesky](https://bsky.app/profile/posit.bsky.social)
+- [Mastodon](https://fosstodon.org/@posit)
+- [Sign up for email updates](https://posit.co/subscription-management)
