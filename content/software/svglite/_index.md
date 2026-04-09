@@ -1,4 +1,7 @@
 ---
+topics:
+- Interactive Apps
+- Visualization
 color: '#F8B13B'
 description: A lightweight svg graphics device for R
 github: r-lib/svglite

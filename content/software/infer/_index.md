@@ -1,4 +1,9 @@
 ---
+topics:
+- Community
+- Data Wrangling
+- Machine Learning
+- Visualization
 color: '#2E5F13'
 description: An R package for tidyverse-friendly statistical inference
 github: tidymodels/infer

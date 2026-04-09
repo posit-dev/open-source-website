@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Publishing
 color: '#DA2229'
 description: Test coverage reports for R
 github: r-lib/covr

@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
+- Publishing
 description: A pkgdown template for core tidyverse packages
 github: tidyverse/tidytemplate
 image: logo.png

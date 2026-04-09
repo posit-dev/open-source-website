@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#3C74B3'
 description: Positron, a next-generation data science IDE
 github: posit-dev/positron

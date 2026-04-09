@@ -1,4 +1,8 @@
 ---
+topics:
+- Community
+- Interactive Apps
+- Publishing
 color: '#E0B987'
 description: Interactive Tutorials with R Markdown
 github: rstudio/learnr

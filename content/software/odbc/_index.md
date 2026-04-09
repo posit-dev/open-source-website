@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- MLOps and Admin
 color: '#8BABDB'
 description: Connect to ODBC databases (using the DBI interface)
 github: r-dbi/odbc

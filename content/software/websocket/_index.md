@@ -1,4 +1,6 @@
 ---
+topics:
+- Interactive Apps
 color: '#CC6699'
 description: WebSocket client for R
 github: rstudio/websocket

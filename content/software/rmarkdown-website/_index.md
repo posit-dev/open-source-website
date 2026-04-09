@@ -1,4 +1,6 @@
 ---
+topics:
+- Publishing
 color: '#447099'
 description: ''
 github: rstudio/rmarkdown-website

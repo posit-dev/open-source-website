@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#72994E'
 description: An R interface to MariaDB
 github: r-dbi/RMariaDB

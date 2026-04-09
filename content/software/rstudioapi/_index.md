@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#0F3DA1'
 description: Safely access RStudio's API (when available)
 github: rstudio/rstudioapi

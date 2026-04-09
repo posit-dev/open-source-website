@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- Machine Learning
+- Visualization
 color: '#72994E'
 description: ''
 github: tidymodels/shinymodels

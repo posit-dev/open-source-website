@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- MLOps and Admin
+- Visualization
 color: '#000000'
 description: Easy interactive web applications with Python
 github: posit-dev/py-shiny

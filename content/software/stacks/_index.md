@@ -1,4 +1,6 @@
 ---
+topics:
+- Machine Learning
 color: '#783F23'
 description: An R package for tidy stacked ensemble modeling
 github: tidymodels/stacks

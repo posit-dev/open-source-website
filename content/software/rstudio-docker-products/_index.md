@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- MLOps and Admin
 color: '#EE6331'
 description: Docker images for RStudio Professional Products
 github: rstudio/rstudio-docker-products

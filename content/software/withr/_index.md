@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Visualization
 color: '#3AAC60'
 description: Methods For Temporarily Modifying Global State
 github: r-lib/withr

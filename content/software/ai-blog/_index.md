@@ -1,4 +1,10 @@
 ---
+topics:
+- Artificial Intelligence
+- Best Practices
+- Community
+- Machine Learning
+- Publishing
 color: '#D44000'
 description: 'Repository for the RStudio AI Blog (formerly: TensorFlow for R Blog)'
 github: rstudio/ai-blog

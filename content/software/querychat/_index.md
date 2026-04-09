@@ -1,4 +1,7 @@
 ---
+topics:
+- Artificial Intelligence
+- Data Wrangling
 color: '#D9B072'
 description: Chat with your data in R and Python
 github: posit-dev/querychat

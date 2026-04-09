@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#447099'
 description: Install R packages from GitHub, GitLab, Bitbucket, git, svn repositories,
   URLs

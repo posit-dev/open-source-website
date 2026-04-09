@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#14497F'
 description: Read SPSS, Stata and SAS files from R
 github: tidyverse/haven

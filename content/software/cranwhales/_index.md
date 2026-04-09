@@ -1,4 +1,7 @@
 ---
+topics:
+- Interactive Apps
+- Visualization
 color: '#D44000'
 description: ''
 github: rstudio/cranwhales

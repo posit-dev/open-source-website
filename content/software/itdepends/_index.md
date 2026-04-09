@@ -1,4 +1,6 @@
 ---
+topics:
+- Visualization
 color: '#404041'
 description: ''
 github: r-lib/itdepends

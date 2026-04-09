@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- Publishing
+- Visualization
 color: '#FBB483'
 description: Sassy 'UML' Diagrams for R
 github: rstudio/nomnoml

@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 color: '#E7B10A'
 description: Run Shiny on Python and R (compiled to wasm) in the browser
 github: posit-dev/shinylive

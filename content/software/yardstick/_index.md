@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
+- Visualization
 color: '#DB1E25'
 description: Tidy methods for measuring model performance
 github: tidymodels/yardstick

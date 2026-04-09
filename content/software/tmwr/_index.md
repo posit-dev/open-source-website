@@ -1,4 +1,9 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
+- MLOps and Admin
+- Machine Learning
 color: '#404041'
 description: Code and content for "Tidy Modeling with R"
 github: tidymodels/TMwR

@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- Machine Learning
+- Visualization
 color: '#94CC28'
 description: Local Interpretable Model-Agnostic Explanations (R port of original Python
   package)

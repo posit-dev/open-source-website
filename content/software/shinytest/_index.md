@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Machine Learning
 color: '#419599'
 description: Automated testing for shiny apps
 github: rstudio/shinytest

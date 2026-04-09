@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#419599'
 description: Find tools needed to build R packages
 github: r-lib/pkgbuild

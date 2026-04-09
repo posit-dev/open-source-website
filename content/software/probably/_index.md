@@ -1,4 +1,6 @@
 ---
+topics:
+- Machine Learning
 color: '#FBEE7E'
 description: Tools for post-processing class probability estimates
 github: tidymodels/probably

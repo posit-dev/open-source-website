@@ -1,4 +1,9 @@
 ---
+topics:
+- Community
+- Data Wrangling
+- Machine Learning
+- Visualization
 color: '#EE6331'
 description: Course contents for Master the Tidyverse
 github: rstudio/master-the-tidyverse

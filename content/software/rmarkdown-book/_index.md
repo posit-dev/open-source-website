@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Publishing
 color: '#72994E'
 description: 'R Markdown: The Definitive Guide (published by Chapman & Hall/CRC in
   July 2018)'

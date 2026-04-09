@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#213245'
 description: https://rstudio.github.io/connections/
 github: rstudio/connections

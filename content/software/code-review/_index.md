@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
+- Machine Learning
 color: '#419599'
 description: ''
 github: tidyverse/code-review

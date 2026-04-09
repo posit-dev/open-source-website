@@ -1,4 +1,7 @@
 ---
+topics:
+- Artificial Intelligence
+- Machine Learning
 color: '#D44000'
 description: R interface to TensorFlow Probability
 github: rstudio/tfprobability

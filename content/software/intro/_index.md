@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Community
 color: '#9A4665'
 description: Course materials for "Introduction to Data Science with R", a video course
   by RStudio and O'Reilly Media

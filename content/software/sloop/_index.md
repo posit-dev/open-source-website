@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#F69029'
 description: S language OOP ⛵️
 github: r-lib/sloop

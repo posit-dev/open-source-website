@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#447099'
 description: ICMP and TCP ping and related tools
 github: r-lib/pingr

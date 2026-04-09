@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
 color: '#14693A'
 description: Classes and functions to create and summarize resampling objects
 github: tidymodels/rsample

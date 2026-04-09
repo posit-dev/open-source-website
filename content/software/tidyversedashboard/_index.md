@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Interactive Apps
 color: '#404041'
 description: Tidyverse activity dashboard
 github: tidyverse/tidyversedashboard

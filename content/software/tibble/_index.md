@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#21202F'
 description: A modern re-imagining of the data frame
 github: tidyverse/tibble

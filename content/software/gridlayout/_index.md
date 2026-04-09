@@ -1,4 +1,7 @@
 ---
+topics:
+- Interactive Apps
+- Publishing
 color: '#26405F'
 description: Package for setting up CSS grid layouts in Shiny apps or RMarkdown documents
 github: rstudio/gridlayout

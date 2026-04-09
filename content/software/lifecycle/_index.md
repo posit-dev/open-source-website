@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#419599'
 description: Manage the life cycle of your exported functions and arguments
 github: r-lib/lifecycle

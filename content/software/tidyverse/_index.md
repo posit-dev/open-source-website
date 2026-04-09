@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Visualization
 color: '#1D1D2B'
 description: Easily install and load packages from the tidyverse
 github: tidyverse/tidyverse

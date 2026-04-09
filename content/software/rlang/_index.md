@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
+- Visualization
 color: '#D8B243'
 description: Low-level API for programming with R
 github: r-lib/rlang

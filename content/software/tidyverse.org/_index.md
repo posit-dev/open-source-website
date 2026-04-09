@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Publishing
 color: '#EE6331'
 description: Source of tidyverse.org
 github: tidyverse/tidyverse.org

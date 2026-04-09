@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Publishing
+- Visualization
 color: '#FA00C3'
 description: Make awesome display tables using Python
 github: posit-dev/great-tables

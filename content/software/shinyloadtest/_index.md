@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 color: '#6897CE'
 description: Tools for load testing Shiny applications
 github: rstudio/shinyloadtest

@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
 color: '#419599'
 description: R interface for XGBoost on Spark
 github: rstudio/sparkxgb

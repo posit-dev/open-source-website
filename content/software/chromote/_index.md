@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#0C3C84'
 description: Chrome Remote Interface for R
 github: rstudio/chromote

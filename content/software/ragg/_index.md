@@ -1,4 +1,7 @@
 ---
+topics:
+- Publishing
+- Visualization
 color: '#DFB97E'
 description: Graphic Devices Based on AGG
 github: r-lib/ragg

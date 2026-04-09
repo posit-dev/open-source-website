@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- MLOps and Admin
+- Publishing
 color: '#75AADB'
 description: An R package for interacting with the Posit Connect server API
 github: posit-dev/connectapi

@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#252B4D'
 description: Generic programming with typed R vectors
 github: r-lib/vctrs

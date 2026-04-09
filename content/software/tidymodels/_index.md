@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
 color: '#1C1C29'
 description: Easily install and load the tidymodels packages
 github: tidymodels/tidymodels

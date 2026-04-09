@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 color: '#B54A4E'
 description: Unified branding with a single YAML file
 github: posit-dev/brand-yml

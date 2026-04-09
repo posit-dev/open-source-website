@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#056793'
 description: Tools to make an R developer's life easier
 github: r-lib/devtools

@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#E7B10A'
 description: Create standalone functions for remote execution
 github: r-lib/carrier

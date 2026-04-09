@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
+- Publishing
 color: '#E20000'
 description: Data validation toolkit for assessing and monitoring data quality.
 github: posit-dev/pointblank

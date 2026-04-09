@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#0699CE'
 description: Static Code Analysis for R
 github: r-lib/lintr

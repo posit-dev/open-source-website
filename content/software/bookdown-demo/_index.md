@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Publishing
 color: '#D44000'
 description: A minimal book example using bookdown
 github: rstudio/bookdown-demo

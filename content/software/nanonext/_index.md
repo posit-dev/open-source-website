@@ -1,4 +1,6 @@
 ---
+topics:
+- Interactive Apps
 color: '#4AA1BF'
 description: R binding for NNG (Nanomsg Next Gen)
 github: r-lib/nanonext

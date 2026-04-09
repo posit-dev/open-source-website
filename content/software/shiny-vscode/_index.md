@@ -1,4 +1,7 @@
 ---
+topics:
+- Interactive Apps
+- MLOps and Admin
 color: '#E7B10A'
 description: Shiny VS Code Extension
 github: posit-dev/shiny-vscode

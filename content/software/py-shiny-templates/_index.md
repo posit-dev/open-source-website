@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 color: '#EE6331'
 description: Templates for Shiny for Python
 github: posit-dev/py-shiny-templates

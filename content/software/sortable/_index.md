@@ -1,4 +1,9 @@
 ---
+topics:
+- Community
+- Interactive Apps
+- Machine Learning
+- Publishing
 color: '#5E95D1'
 description: R htmlwidget for Sortable.js
 github: rstudio/sortable

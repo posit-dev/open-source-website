@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#72994E'
 description: scrypt cryptographic functions for R
 github: rstudio/rscrypt

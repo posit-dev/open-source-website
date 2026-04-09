@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Publishing
 color: '#849C6C'
 description: Tufte Styles for R Markdown Documents
 github: rstudio/tufte

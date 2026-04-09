@@ -1,4 +1,6 @@
 ---
+topics:
+- Publishing
 color: '#447099'
 description: Examples of R Markdown Websites
 github: rstudio/rmarkdown-website-examples

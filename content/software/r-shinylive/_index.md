@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 color: '#72994E'
 description: ''
 github: posit-dev/r-shinylive

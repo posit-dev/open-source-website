@@ -1,4 +1,8 @@
 ---
+topics:
+- Artificial Intelligence
+- Best Practices
+- Interactive Apps
 color: '#0088DA'
 description: Chat UI component for Shiny
 github: posit-dev/shinychat

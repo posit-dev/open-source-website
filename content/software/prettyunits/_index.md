@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#419599'
 description: Pretty, human readable formatting of quantities
 github: r-lib/prettyunits

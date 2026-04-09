@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#404041'
 description: Infrastructure for calling Google APIs from R, including auth
 github: r-lib/gargle

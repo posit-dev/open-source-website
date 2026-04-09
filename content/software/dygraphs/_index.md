@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 color: '#419599'
 description: R interface to dygraphs
 github: rstudio/dygraphs

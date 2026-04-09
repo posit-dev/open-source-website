@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
 color: '#A545B6'
 description: Tools for tidy parameter tuning
 github: tidymodels/tune

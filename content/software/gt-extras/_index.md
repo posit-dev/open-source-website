@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Visualization
 color: '#14177E'
 description: A Collection of Helper Functions for the great-tables Package.
 github: posit-dev/gt-extras

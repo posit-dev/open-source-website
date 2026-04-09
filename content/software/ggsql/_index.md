@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
+- Visualization
 color: '#0a9396'
 description: A SQL extension for declarative data visualisation based on the Grammar
   of Graphics.

@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#9A4665'
 description: Friendly regular expressions for R.
 github: r-lib/rex

@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#4F8DDC'
 description: Simple git client for R
 github: r-lib/gert

@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Publishing
 color: '#5CE8D3'
 description: Dynamic Documents for R
 github: rstudio/rmarkdown

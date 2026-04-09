@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#447099'
 description: Rich Command Line Applications
 github: r-lib/cliapp

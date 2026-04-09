@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#EE6331'
 description: A simpler way to find your files
 github: r-lib/here

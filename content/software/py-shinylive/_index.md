@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 color: '#D44000'
 description: Python package for deploying Shinylive applications
 github: posit-dev/py-shinylive

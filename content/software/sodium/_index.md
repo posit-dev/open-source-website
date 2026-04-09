@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#E7B10A'
 description: R bindings to libsodium
 github: r-lib/sodium

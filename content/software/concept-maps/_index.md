@@ -1,4 +1,8 @@
 ---
+topics:
+- Community
+- Data Wrangling
+- Publishing
 color: '#000080'
 description: Concept maps for all things data science
 github: rstudio/concept-maps

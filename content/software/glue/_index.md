@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#EB4C0B'
 description: Glue strings to data in R. Small, fast, dependency free interpreted string
   literals.

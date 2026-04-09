@@ -1,4 +1,7 @@
 ---
+topics:
+- Community
+- Data Wrangling
 color: '#D44000'
 description: An R data package containing all out-bound flights from NYC in 2013 +
   useful metdata

@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#F6C777'
 description: R formatter and language server
 github: posit-dev/air

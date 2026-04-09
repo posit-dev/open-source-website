@@ -1,4 +1,7 @@
 ---
+topics:
+- Interactive Apps
+- MLOps and Admin
 color: '#D44000'
 description: Collection of bash scripts that install R package system dependencies
 github: rstudio/shinyapps-package-dependencies

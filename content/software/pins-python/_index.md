@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- MLOps and Admin
+- Publishing
 color: '#F1C8A2'
 description: ''
 github: rstudio/pins-python

@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#E7B10A'
 description: Bindings to libxml2
 github: r-lib/xml2

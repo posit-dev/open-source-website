@@ -1,4 +1,6 @@
 ---
+topics:
+- Publishing
 color: '#657B83'
 description: Turn R scripts into terminal screencasts
 github: r-lib/asciicast

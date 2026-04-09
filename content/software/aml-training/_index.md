@@ -1,4 +1,7 @@
 ---
+topics:
+- Community
+- Machine Learning
 color: '#447099'
 description: The most recent version of the Applied Machine Learning notes
 github: tidymodels/aml-training

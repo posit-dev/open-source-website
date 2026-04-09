@@ -1,4 +1,6 @@
 ---
+topics:
+- Publishing
 color: '#9A4665'
 description: Documents to plan and discuss future development
 github: tidymodels/planning

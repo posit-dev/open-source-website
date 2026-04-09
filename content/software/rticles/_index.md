@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Community
+- Publishing
 color: '#8DBAB9'
 description: LaTeX Journal Article Templates for R Markdown
 github: rstudio/rticles

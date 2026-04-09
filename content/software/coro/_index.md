@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#EE6331'
 description: Coroutines for R
 github: r-lib/coro

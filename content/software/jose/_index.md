@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#E7B10A'
 description: ' Javascript Object Signing and Encryption for R'
 github: r-lib/jose

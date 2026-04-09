@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#AADFF8'
 description: Google Spreadsheets R API (reboot of the googlesheets package)
 github: tidyverse/googlesheets4

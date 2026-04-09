@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#27341B'
 description: A functional programming toolkit for R
 github: tidyverse/purrr

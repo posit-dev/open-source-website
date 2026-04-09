@@ -1,4 +1,7 @@
 ---
+topics:
+- MLOps and Admin
+- Visualization
 color: '#F35C5D'
 description: High Precision Timing of R Expressions
 github: r-lib/bench

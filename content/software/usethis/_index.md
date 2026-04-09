@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#6A2D25'
 description: Set up commonly used 📦 components
 github: r-lib/usethis

@@ -1,4 +1,6 @@
 ---
+topics:
+- Machine Learning
 color: '#62BC3D'
 description: Quantify extrapolation of new samples given a training set
 github: tidymodels/applicable

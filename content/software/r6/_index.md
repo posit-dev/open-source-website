@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#E7DAB3'
 description: Encapsulated object-oriented programming for R
 github: r-lib/R6

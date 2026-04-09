@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Interactive Apps
 color: '#9A4665'
 description: Object Pooling in R
 github: rstudio/pool

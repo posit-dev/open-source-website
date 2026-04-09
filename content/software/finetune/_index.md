@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Machine Learning
 color: '#361535'
 description: Additional functions for model tuning
 github: tidymodels/finetune

@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#419599'
 description: R interface for SQLite
 github: r-dbi/RSQLite

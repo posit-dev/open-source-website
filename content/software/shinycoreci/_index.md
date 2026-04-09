@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 color: '#419599'
 description: Application-level automated tests for Shiny
 github: rstudio/shinycoreci

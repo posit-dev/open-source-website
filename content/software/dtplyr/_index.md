@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#04FAA3'
 description: Data table backend for dplyr
 github: tidyverse/dtplyr
