@@ -730,15 +730,40 @@
         document.addEventListener('click', () => helpPanel.classList.add('hidden'));
       }
 
-      const sortSelect = this.controlsEl.querySelector('[data-filter-sort]');
-      if (sortSelect) {
-        sortSelect.value = this.state.sort.key || (this._defaultSortCfg ? this._defaultSortCfg.key : '');
-        sortSelect.addEventListener('change', () => {
-          const key = sortSelect.value;
-          const cfg = this.config.sort.find(s => s.key === key);
-          this.state.sort.key = key;
-          this.state.sort.direction = cfg ? (cfg.direction || 'asc') : 'asc';
-          this._applyFilters();
+      const sortTrigger = this.controlsEl.querySelector('[data-sort-trigger]');
+      const sortPanel = this.controlsEl.querySelector('[data-sort-panel]');
+      if (sortTrigger && sortPanel) {
+        // Sync initial state (e.g. from URL params)
+        const activeKey = this.state.sort.key || (this._defaultSortCfg ? this._defaultSortCfg.key : '');
+        if (activeKey) {
+          sortPanel.querySelectorAll('[data-sort-check]').forEach(c => c.classList.add('opacity-0'));
+          const activeBtn = sortPanel.querySelector('[data-sort-key="' + activeKey + '"]');
+          if (activeBtn) {
+            activeBtn.querySelector('[data-sort-check]').classList.remove('opacity-0');
+            const cfg = this.config.sort.find(s => s.key === activeKey);
+            const label = sortTrigger.querySelector('[data-sort-label]');
+            if (label && cfg) label.textContent = cfg.label || activeKey;
+          }
+        }
+        sortTrigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => p.classList.add('hidden'));
+          sortPanel.classList.toggle('hidden');
+        });
+        sortPanel.addEventListener('click', (e) => e.stopPropagation());
+        sortPanel.querySelectorAll('[data-sort-option]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const key = btn.dataset.sortKey;
+            const cfg = this.config.sort.find(s => s.key === key);
+            this.state.sort.key = key;
+            this.state.sort.direction = cfg ? (cfg.direction || 'asc') : 'asc';
+            sortPanel.querySelectorAll('[data-sort-check]').forEach(c => c.classList.add('opacity-0'));
+            btn.querySelector('[data-sort-check]').classList.remove('opacity-0');
+            const label = sortTrigger.querySelector('[data-sort-label]');
+            if (label) label.textContent = btn.querySelector('span:last-child').textContent;
+            sortPanel.classList.add('hidden');
+            this._applyFilters();
+          });
         });
       }
 
@@ -752,6 +777,8 @@
           this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => {
             if (p !== panel) p.classList.add('hidden');
           });
+          const sp = this.controlsEl.querySelector('[data-sort-panel]');
+          if (sp) sp.classList.add('hidden');
           panel.classList.toggle('hidden');
         });
         panel.addEventListener('click', (e) => e.stopPropagation());
@@ -762,6 +789,8 @@
         this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => {
           p.classList.add('hidden');
         });
+        const sp = this.controlsEl.querySelector('[data-sort-panel]');
+        if (sp) sp.classList.add('hidden');
       });
 
       const filterBtns = this.controlsEl.querySelectorAll('[data-filter-group]');
@@ -1060,8 +1089,16 @@
         const searchInput = this.controlsEl.querySelector('[data-filter-search]');
         if (searchInput) searchInput.value = '';
 
-        const sortSelect = this.controlsEl.querySelector('[data-filter-sort]');
-        if (sortSelect && this._defaultSortCfg) sortSelect.value = this._defaultSortCfg.key;
+        if (this._defaultSortCfg) {
+          const sortPanel = this.controlsEl.querySelector('[data-sort-panel]');
+          if (sortPanel) {
+            sortPanel.querySelectorAll('[data-sort-check]').forEach(c => c.classList.add('opacity-0'));
+            const defaultBtn = sortPanel.querySelector('[data-sort-key="' + this._defaultSortCfg.key + '"]');
+            if (defaultBtn) defaultBtn.querySelector('[data-sort-check]').classList.remove('opacity-0');
+          }
+          const sortLabel = this.controlsEl.querySelector('[data-sort-label]');
+          if (sortLabel) sortLabel.textContent = this._defaultSortCfg.label || this._defaultSortCfg.key;
+        }
 
         this.controlsEl.querySelectorAll('[data-filter-check]').forEach(check => {
           check.classList.add('opacity-0');

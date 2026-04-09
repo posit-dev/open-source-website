@@ -113,7 +113,7 @@ events:
         - R
 
 software:
-  search_help: [author, language, stars]
+  search_help: [author, topic, language, stars]
   sort:
     - key: title
       label: Title
@@ -130,6 +130,8 @@ software:
       direction: desc
   defaultSort: title
   filters:
+    - key: topics
+      label: Topics
     - key: languages
       label: Languages
 

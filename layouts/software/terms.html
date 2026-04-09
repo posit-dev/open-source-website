@@ -39,7 +39,13 @@
   {{ $baseCfg := site.Data.filters.software }}
   {{ $filters := slice }}
   {{ range $baseCfg.filters }}
-    {{ $filters = $filters | append (merge . (dict "values" $langValues)) }}
+    {{ if eq .key "topics" }}
+      {{ $filters = $filters | append (merge . (dict "values" site.Data.topics)) }}
+    {{ else if eq .key "languages" }}
+      {{ $filters = $filters | append (merge . (dict "values" $langValues)) }}
+    {{ else }}
+      {{ $filters = $filters | append . }}
+    {{ end }}
   {{ end }}
   {{ $cfg := merge $baseCfg (dict "filters" $filters) }}
 
