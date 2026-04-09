@@ -136,6 +136,7 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
   quarto preview index.qmd
   ```
 
+<<<<<<< HEAD
 ## Linking to other blog posts
 
 When linking to another post on this blog, use the **permalink URL** — the `/blog/YYYY-MM-DD_slug/` path you see in the browser:
@@ -173,9 +174,11 @@ These links update automatically when you push new commits.
 
 Once you have an approving review and the preview looks good, merge the PR to `main`. The site deploys automatically — your post will be live within a few minutes.
 
-## Quarto features (`.qmd` posts)
+## Content reference
 
-### Tabsets
+### `.qmd` posts
+
+#### Tabsets
 
 ```markdown
 ::: {.panel-tabset}
@@ -191,7 +194,7 @@ Python code here.
 
 Add a `group="my-group"` attribute to sync multiple tabsets on the page.
 
-### Code folding
+#### Code folding
 
 Set in frontmatter to fold all code blocks by default:
 
@@ -204,7 +207,7 @@ format:
 
 Or per-chunk with `#| code-fold: true`.
 
-### Videos
+#### Videos
 
 ```markdown
 {{< video https://www.youtube.com/watch?v=VIDEO_ID >}}
@@ -215,22 +218,56 @@ Supported sources: YouTube, Vimeo, local files (`.mp4`, `.webm`, `.ogg`). A Lua 
 
 Optional parameters: `title`, `width`, `height`, `start` (YouTube only), `aspect-ratio` (`16x9`, `4x3`, `1x1`, `21x9`).
 
-### Other Hugo shortcodes
+#### Columns
 
-Hugo shortcodes pass through Quarto's rendering unchanged, so the `{{< columns >}}` and `{{< button >}}` shortcodes documented below also work in `.qmd` posts.
+Hugo's `{{< columns >}}` shortcode passes through Quarto's rendering unchanged. Split content into responsive columns (stacks on mobile):
 
-## Hugo shortcodes (`.md` posts)
+```markdown
+{{< columns >}}
+Left column content.
 
-### Videos
+---
 
-Same syntax as Quarto:
+Right column content.
+{{< /columns >}}
+```
+
+Control column widths with `split` (comma-separated `fr` values):
+
+```markdown
+{{< columns split="2,1" >}}
+Wider left column.
+
+---
+
+Narrower right column.
+{{< /columns >}}
+```
+
+#### Button
+
+Hugo's `{{< button >}}` shortcode also passes through unchanged:
+
+```markdown
+{{< button url="https://example.com" text="Click here" >}}
+```
+
+Optional parameters: `icon`, `icon-left`, `icon-right`, `size` (`small`, `medium`, `large`).
+
+### `.md` posts
+
+#### Videos
 
 ```markdown
 {{< video src="https://www.youtube.com/watch?v=VIDEO_ID" >}}
 {{< video src="my-video.mp4" title="Description" >}}
 ```
 
-### Columns
+Supported sources: YouTube, Vimeo, local files (`.mp4`, `.webm`, `.ogg`).
+
+Optional parameters: `title`, `width`, `height`, `start` (YouTube only), `aspect-ratio` (`16x9`, `4x3`, `1x1`, `21x9`).
+
+#### Columns
 
 Split content into responsive columns (stacks on mobile):
 
@@ -256,7 +293,7 @@ Narrower right column.
 {{< /columns >}}
 ```
 
-### Button
+#### Button
 
 ```markdown
 {{< button url="https://example.com" text="Click here" >}}
