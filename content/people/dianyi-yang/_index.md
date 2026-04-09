@@ -13,4 +13,3 @@ social:
 ---
 
 DPhil candidate in [Politics](https://www.politics.ox.ac.uk/course/dphil-politics) at the University of Oxford (DPIR). Research examines fiscal–monetary interactions, public opinion, and political economy.
-EOF 2>&1

@@ -1,25 +1,31 @@
 ---
 title: "Structuring Reproducible Research Projects in R: A Workflow with renv, Quarto, and GitHub"
-author:
-- name: "Dianyi Yang" 
-  affiliation: "University of Oxford" 
-  email: "dianyi.yang@politics.ox.ac.uk"
-  orcid: "0009-0004-4652-3429"
-execute:
-  echo: false
-  warning: false
-  error: false
-  message: false
-format:
-    html:
-        self-contained: true
+description: >
+  A practical guide to structuring reproducible academic research projects using
+  Git, renv, Quarto, and GitHub — from data cleaning to manuscript preparation.
+date: '2026-04-03'
+people:
+  - Dianyi Yang
+topics:
+  - Publishing
+  - Best Practices
+software:
+  - quarto
+languages:
+  - R
+tags:
+  - renv
+  - GitHub
+  - Reproducibility
+image: "thumbnail.png"
+image-alt: "Diagram of a structured reproducible research project layout with folders for data, code, and manuscript"
 ---
 
 Increasingly, academic disciplines, including the social sciences, are adopting data-science tools and calling for greater transparency and reproducibility in research. Many leading journals now require authors to share the data and code necessary to replicate published findings as a condition of publication.
 
 Yet preparing replication materials can be daunting, especially for researchers new to data science. It is not uncommon for scholars to struggle to reproduce even their own results, due to issues such as disorganized code and data, software version mismatches, missing random seeds, or differences in operating systems and platforms. While some of these challenges are complex, many reproducibility problems stem from preventable organizational issues. Structuring code and data in a clear, consistent, and tool-friendly manner can significantly reduce these difficulties — and brings additional benefits at virtually no cost, including smoother collaboration and easier integration with AI tools.
 
-![Meme from r/ProgrammerHumor](img/1.png){width="60%"}
+![Meme from r/ProgrammerHumor](img/1.png){fig-alt="Comic: on Friday evening a programmer says 'I'll finish this on Monday'; on Monday morning they stare at their code asking 'What does this mean?!'"}
 
 In this post, I’ll walk through the project structure I use in my own research. It has evolved over time and reflects what I currently consider best practice for reproducible academic work. Adopting a clear structure from the outset makes it significantly easier to reproduce results, onboard collaborators, and maintain projects over the long term.
 
@@ -27,11 +33,11 @@ The structure covers the full research lifecycle: from data cleaning and analysi
 
 The project structure looks like this:
 
-![Project structure](img/2.png)
+![Project structure](img/2.png){fig-alt="File explorer showing the project directory tree: folders for _extensions, .quarto, code, data_processed, data_raw, extras, manuscript, outputs, renv, and slides, plus config files like _quarto.yml, .gitattributes, .gitignore, .Rprofile, README.md, and renv.lock"}
 
 I’ll now break down each component in turn, explaining the purpose of the key folders and files, and the reasoning behind the design.
 
-# Git and GitHub
+## Git and GitHub
 
 One major threat to reproducibility is a file named `latest_final_v3_definitive.R`. While this naming convention feels natural during exploratory analysis—especially under deadline pressure—it quickly becomes impossible to reconstruct what actually changed, when, and why. Future-you (and your collaborators) will not be grateful.
 
@@ -55,7 +61,7 @@ The `.gitignore` file specifies which files and folders should be tracked or ign
 
 The `.gitattributes` file defines additional rules for how Git should handle specific file types. Compared with `.gitignore`, it appears less often in many repositories, but it is especially useful when you need file-type-specific behavior. In particular, large raw data files (e.g., large .csv files) and binary formats (such as .rds, .RData, or images) can significantly increase repository size if tracked directly. In these cases, Git Large File Storage (Git LFS) can be used to store the actual files separately, while keeping lightweight pointer files in the main repository history.
 
-# Data directories
+## Data directories
 
 I use two separate folders to store raw (`data_raw/`) and cleaned data (`data_processed/`). Keeping these distinct makes the workflow more transparent: the original data remains untouched, while processed data can be saved in a format that is fast to load during analysis.
 
@@ -84,7 +90,7 @@ Importantly, simply deleting confidential files before making a repository publi
 
 This approach also makes it easier to curate a clean, well-documented version of the project specifically designed for replication and reuse.
 
-# Code organization and outputs
+## Code organization and outputs
 
 ```         
 code/
@@ -141,9 +147,9 @@ write_rds(reg_table, here("outputs/regression_table.rds"))
 
 Two additional tips are worth noting. First, the `# SECTION ----` syntax creates collapsible sections and structured outlines in RStudio and the Positron IDE. This makes longer scripts significantly easier to navigate and encourages more intentional organization of code.
 
-![Collapsible sections in Positron](img/3-pos.png)
+![Collapsible sections in Positron](img/3-pos.png){fig-alt="Positron IDE showing collapsible code sections created with the '# Section ----' syntax"}
 
-![Collapsible sections in RStudio](img/3-rstudio.png)
+![Collapsible sections in RStudio](img/3-rstudio.png){fig-alt="RStudio IDE showing collapsible code sections created with the '# Section ----' syntax"}
 
 Second, managing working directories is a seemingly basic task that is frequently mishandled—especially in collaborative projects. In RStudio, the recommended approach is to work within an `.Rproj` file, which defines a project root and ensures that relative paths behave consistently across machines. However, in many academic settings (including political science), this practice is not systematically taught. As a result, it is still common to see replication files from top journals that begin with something like `setwd("~/Path/To/Project")`, often commented out with the expectation that collaborators will manually adjust it.
 
@@ -155,7 +161,7 @@ The `here` package provides a robust solution that avoids reliance on the workin
 
 The `outputs/` folder complements this approach by providing a dedicated location for all results generated by the code. This includes intermediate objects (e.g., fitted models) and final products (e.g., tables and figures). If intermediate artifacts become numerous, they can be stored in a separate `objects/` folder. The accompanying `.gitignore` file ensures that these generated files are not versioned, reinforcing the principle that results should be regenerated from code rather than preserved as static artifacts.
 
-# Virtual environments and dependencies (`renv`)
+## Virtual environments and dependencies (`renv`)
 
 Many R users do not update their R or package versions regularly. In practice, the version in use is often determined by when the researcher first learned R—or when the machine was purchased, whichever is later. Deprecation warnings are politely ignored as long as the code continues to run.
 
@@ -179,13 +185,13 @@ The `.Rprofile` file includes a line that automatically activates the `renv` env
 
 Automatic activation, however, only works when the project is **opened as a whole**—for example, by opening the `.Rproj` file or the project folder in Positron. If individual scripts are opened in isolation, the working directory will not be set to the project root at startup, and the project-level `.Rprofile` will not be executed. This is yet another reason to adopt a project-level workflow rather than treating scripts as standalone files.
 
-# Quarto: manuscripts and presentations
+## Quarto: manuscripts and presentations
 
 The most visible stage of the research lifecycle is the dissemination of results—through manuscripts, presentations, and other public outputs. For quantitatively oriented researchers (which, if you have read this far, likely includes you), producing well-formatted documents that do justice to your carefully constructed tables and figures is essential.
 
 Quarto is an open-source scientific and technical publishing system built on Pandoc. I use it for all of my manuscript writing and presentation slides, and I recommend it for researchers working in R, Python, or Julia. The template presented here is deliberately centered around Quarto, and in what follows I will briefly explain the reasoning behind that choice.
 
-## Why Quarto?
+### Why Quarto?
 
 What makes Quarto stand out is its ability to run R, Python, or Julia code directly within a document, seamlessly integrating analysis and writing. Tables, figures, and results can therefore be generated and updated automatically as the underlying code changes, ensuring that the manuscript always reflects the current state of the analysis.
 
@@ -237,7 +243,7 @@ While these capabilities may sound familiar to experienced R Markdown users, I w
 
 [^2]: For example, see [R Markdown official documentation](https://rmarkdown.rstudio.com/) for the core features, and [Yihui's personal site](https://yihui.org/rmarkdown/) for more advanced features.
 
-## Quarto project structure
+### Quarto project structure
 
 The remaining components of the template are primarily related to Quarto. Below, I break down the key elements and explain the reasoning behind their organization.
 
@@ -254,7 +260,7 @@ slides/
 _quarto.yml
 ```
 
-## Configuration file
+### Configuration file
 
 The `_quarto.yml` file serves two main purposes.
 
@@ -278,7 +284,7 @@ csl: extras/apa.csl
 
 Because these settings are defined at the project level, they apply automatically to both the manuscript and presentation slides.
 
-## Extras: bibliography and citation styles
+### Extras: bibliography and citation styles
 
 As mentioned above, the `extras/` folder contains the bibliography file (`references.bib`) and citation style file (`apa.csl`). These are referenced in the `_quarto.yml` configuration file, which means they are automatically available to all `.qmd` files in the project without needing to specify them individually.
 
@@ -290,13 +296,13 @@ extras/
 
 Ideally, if you have other supplementary materials that are not part of the core code or data but are still relevant to the project (e.g., codebooks), they could also be stored in this folder. However, I have kept it focused on bibliography-related files for simplicity.
 
-### Bibliography file
+#### Bibliography file
 
 The `references.bib` file is a standard BibTeX/BibLaTeX bibliography file familiar to LaTeX users. It contains structured reference entries, including fields such as author, title, journal, year, and other publication metadata.
 
 Entries can be exported from reference managers such as Zotero or Mendeley, or generated directly within Quarto using the Visual Editor. Crucially, the bibliography file is kept separate from both the manuscript and the citation style. This separation allows the same reference database to be shared across manuscripts and slides, while making it easy to change formatting styles without modifying the source content.
 
-### Citation style file
+#### Citation style file
 
 The `apa.csl` file is a Citation Style Language (CSL) file that defines how citations and bibliography entries are formatted. It acts as a translation layer between the structured data in references.bib and the rendered output format.
 
@@ -305,7 +311,7 @@ In this template, the CSL file specifies APA style, which is common in the socia
 To find a CSL file for a specific discipline or journal, you can browse the [CSL Style Repository](https://github.com/citation-style-language/styles)
 , which contains thousands of maintained styles.
 
-## Manuscript
+### Manuscript
 
 Dissemination of research findings is the ultimate goal of the research process, and the manuscript remains its primary vehicle.
 
@@ -324,7 +330,7 @@ The example `manuscript.qmd` provides a minimal template illustrating a typical 
 
 While Quarto’s built-in PDF format supports core elements such as title, authors, date, and abstract, more specialized academic requirements—such as detailed affiliation formatting, ORCID display, keywords, custom headers, or journal-style front matter—often require additional customization.
 
-![Default Quarto PDF template](img/4.png)
+![Default Quarto PDF template](img/4.png){fig-alt="PDF output from the default Quarto template showing title, author, and abstract"}
 
 To address this, I created a [custom extension](https://github.com/kv9898/orcid) that builds on the default PDF format and adds features commonly required in academic manuscripts. The extension is included in the template under `_extensions/kv9898/orcid/`.
 
@@ -337,9 +343,9 @@ format:
 
 The resulting PDF output more closely resembles a conventional academic paper, with structured author information, affiliations, ORCID identifiers, and keywords clearly presented. Because the template is implemented as a Quarto extension, it remains portable and reusable across projects, and can be further modified, particularly by those comfortable with LaTeX, to accommodate journal-specific formatting requirements.
 
-![Custom Quarto PDF template](img/5.png)
+![Custom Quarto PDF template](img/5.png){fig-alt="PDF output from the custom orcid extension template with structured affiliations, ORCID identifiers, and keywords"}
 
-## Slides
+### Slides
 
 Researchers often need to present their findings at conferences, seminars, or in teaching settings. Quarto supports multiple presentation formats, including Reveal.js, Beamer, and PowerPoint. In this template, I use *Beamer* to produce PDF slides, which are widely accepted in academic contexts and easy to share or print.
 
@@ -353,13 +359,13 @@ The `slides/` folder contains the Quarto source file (`slides.qmd`) and the comp
 
 The resulting slides are indistinguishable from those produced using a traditional LaTeX Beamer workflow. The key difference is that all content—including code, tables, and figures—can be generated directly from the same analytical pipeline.
 
-![Quarto Beamer template](img/6.png)
+![Quarto Beamer template](img/6.png){fig-alt="Beamer presentation slides generated from Quarto showing a title slide and a content slide with a table"}
 
 In this example, I deliberately reuse the same output objects (e.g., tables and figures) in both the manuscript and the slides. This guarantees consistency across formats and eliminates the risk of discrepancies between what appears in the paper and what is presented publicly.
 
 The example slides also demonstrate practical considerations such as resizing tables and figures to fit slide layouts. They reference the same shared bibliography file used in the manuscript, ensuring consistent citation formatting across outputs. Although only a single reference is included in the example, the template is configured to allow references to span multiple frames, accommodating a realistic bibliography.
 
-# README file
+## README file
 
 ```
 README.md
@@ -377,7 +383,7 @@ Additional placeholders are included for information such as the machine model a
 
 Notably, the template does *not* include a **LICENSE** file by default. This is intentional. The appropriate license for academic code and data depends on disciplinary norms, institutional policies, journal requirements, and the researcher’s intended level of openness. Common choices include MIT or GPL licenses for code, and Creative Commons licenses for data. In some cases, more restrictive or custom licenses may be appropriate. Researchers should select a license deliberately, ensuring it aligns with their sharing goals and complies with relevant policies.
 
-# GitHub as infrastructure — not just hosting
+## GitHub as infrastructure — not just hosting
 
 Once a project is structured clearly and pushed to GitHub, it becomes more than a collection of files. It becomes *infrastructure*.
 
@@ -393,7 +399,7 @@ Perhaps most importantly, a well-structured project reduces the *asymmetry of kn
 
 Reproducibility, then, is not merely about satisfying journal requirements. It is about building research projects that are resilient, collaborative, and adaptable — projects that scale not only across machines, but across people.
 
-# Conclusion
+## Conclusion
 
 At its core, none of the tools discussed here—Git, renv, Quarto, or GitHub—are revolutionary on their own. What matters is how they are combined into a coherent project structure. Once that structure becomes habitual, reproducibility stops being an afterthought and becomes the default.
 
