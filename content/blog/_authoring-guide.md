@@ -23,7 +23,7 @@ For a Quarto post, create as `index.md` then rename to `index.qmd` — Hugo does
 ## Choosing a format
 
 - **`index.md`** — prose only; no code execution needed
-- **`index.qmd`** — executable R or Python code, or Quarto features like callouts, tabsets, cross-references, and video shortcodes
+- **`index.qmd`** — executable R or Python code, or Quarto features like callouts, tabsets, and cross-references.
 - **`index.ipynb`** — if you're primarily working in Jupyter
 
 When in doubt, use `.md`.
@@ -136,7 +136,6 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
   quarto preview index.qmd
   ```
 
-<<<<<<< HEAD
 ## Linking to other blog posts
 
 When linking to another post on this blog, use the **permalink URL** — the `/blog/YYYY-MM-DD_slug/` path you see in the browser:
@@ -218,35 +217,9 @@ Supported sources: YouTube, Vimeo, local files (`.mp4`, `.webm`, `.ogg`). A Lua 
 
 Optional parameters: `title`, `width`, `height`, `start` (YouTube only), `aspect-ratio` (`16x9`, `4x3`, `1x1`, `21x9`).
 
-#### Columns
-
-Hugo's `{{< columns >}}` shortcode passes through Quarto's rendering unchanged. Split content into responsive columns (stacks on mobile):
-
-```markdown
-{{< columns >}}
-Left column content.
-
----
-
-Right column content.
-{{< /columns >}}
-```
-
-Control column widths with `split` (comma-separated `fr` values):
-
-```markdown
-{{< columns split="2,1" >}}
-Wider left column.
-
----
-
-Narrower right column.
-{{< /columns >}}
-```
-
 #### Button
 
-Hugo's `{{< button >}}` shortcode also passes through unchanged:
+Hugo's `{{< button >}}` shortcode passes through Quarto's rendering unchanged:
 
 ```markdown
 {{< button url="https://example.com" text="Click here" >}}
