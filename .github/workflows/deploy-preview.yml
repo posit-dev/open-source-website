@@ -64,8 +64,8 @@ jobs:
           DEPLOY_URL: ${{ needs.build-and-deploy.outputs.deploy-url }}
           CHANGED_CONTENT: ${{ needs.detect-content.outputs.changed }}
         run: |
-          # Get source path → permalink mapping from Hugo (include future posts)
-          hugo list all --buildFuture > /tmp/hugo-pages.csv
+          # hugo list all includes draft, future, and expired content by default
+          hugo list all > /tmp/hugo-pages.csv
           BASE_URL=$(grep '^baseURL' hugo.toml | sed "s/.*= *['\"]//;s/['\"]//")
 
           LINKS=""
