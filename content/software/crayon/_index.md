@@ -1,4 +1,6 @@
 ---
+topics:
+- Visualization
 color: '#FC04FC'
 description: 🖍️ R package for colored terminal output — now superseded by cli
 github: r-lib/crayon

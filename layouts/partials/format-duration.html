@@ -1,0 +1,13 @@
+{{/*
+  format-duration.html — Format a duration in seconds for display.
+  Input: integer (seconds)
+  Returns: string like "45 min", "1h 30min"
+*/}}
+{{- $seconds := int . -}}
+{{- $hours := div $seconds 3600 -}}
+{{- $minutes := div (mod $seconds 3600) 60 -}}
+{{- if gt $hours 0 -}}
+  {{- printf "%dh %dmin" $hours $minutes -}}
+{{- else -}}
+  {{- printf "%d min" $minutes -}}
+{{- end -}}

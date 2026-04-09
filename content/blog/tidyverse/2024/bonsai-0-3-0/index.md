@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/QD-mtViB5Ks
   author: Scott Webb
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
@@ -203,7 +203,7 @@ This is a tricky one.
 
 ## Introducing accelerated oblique random forests
 
-The 0.3.0 release of bonsai introduces support for accelerated oblique random forests via the `"aorsf"` engine for classification and regression in tidymodels. (Tidy survival modelers might note that [we already support `"aorsf"` for censored regression](https://www.tidyverse.org/blog/2023/04/censored-0-2-0/) via the [censored](https://censored.tidymodels.org) parsnip extension package!)
+The 0.3.0 release of bonsai introduces support for accelerated oblique random forests via the `"aorsf"` engine for classification and regression in tidymodels. (Tidy survival modelers might note that [we already support `"aorsf"` for censored regression](/blog/2023-04-19_censored-0-2-0/) via the [censored](https://censored.tidymodels.org) parsnip extension package!)
 
 Unlike trees in conventional random forests, which create splits using thresholds based on individual predictors (e.g. `x_001 > 3`), oblique random forests use linear combinations of predictors to create splits (e.g. `x_001 * x_002 > 7.5`) and have been shown to improve predictive performance related to conventional random forests for a variety of applications (Menze et al. 2011). "Oblique" references the appearance of decision boundaries when a set of splits is plotted; I've grabbed a visual from the [aorsf README](https://github.com/ropensci/aorsf?tab=readme-ov-file#what-does-oblique-mean) that demonstrates:
 

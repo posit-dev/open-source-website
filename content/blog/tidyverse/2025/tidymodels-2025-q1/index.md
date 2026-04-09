@@ -8,7 +8,7 @@ description: |
   A summary of the goings on for the tidymodels group in later 2024 and early 2025.
 photo:
   author: George Stagg and Max Kuhn
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
@@ -60,7 +60,7 @@ Let's look at a few specific updates.
 
 ## Improvements in errors and warnings
 
-A group effort was made to improve our error and warning messages across many packages. This started with an internal "upkeep week" (which ended up being 3-4 weeks) and concluded at the [Tidy Dev Day in Seattle](https://www.tidyverse.org/blog/2024/04/tdd-2024/) after posit::conf(2024).  
+A group effort was made to improve our error and warning messages across many packages. This started with an internal "upkeep week" (which ended up being 3-4 weeks) and concluded at the [Tidy Dev Day in Seattle](/blog/2024-04-09_tdd-2024/) after posit::conf(2024).  
 
 The goal was to use new tools in the cli and rlang packages to make messages more informative than they used to be. For example, using:
 
@@ -278,7 +278,7 @@ Finally, we’ve created a set of [checklists](https://parsnip.tidymodels.org/ar
 
 This was a small maintenance release mostly related to parallel processing. Up to now, tune facilitated parallelism using the [foreach](https://cran.r-project.org/package=foreach) package. That package is mature but not actively developed, so we have been slowly moving toward using the [future](https://www.futureverse.org/packages-overview.html) package(s). 
 
-The [first step in this journey](https://www.tidyverse.org/blog/2024/04/tune-1-2-0/#modernized-support-for-parallel-processing) was to keep using foreach internally (but lean toward future) but to encourage users to move from directly invoking the foreach package and, instead, load and use the future package. 
+The [first step in this journey](/blog/2024-04-18_tune-1-2-0/#modernized-support-for-parallel-processing) was to keep using foreach internally (but lean toward future) but to encourage users to move from directly invoking the foreach package and, instead, load and use the future package. 
 
 We’re now moving folks into the second stage. tune will now raise a warning when:
 
@@ -295,9 +295,9 @@ We are working hard on a few major initiatives that we plan on showing off at [p
 
 First is integrated support for sparse **data**. The emphasis is on "data" because users can use a data frame of sparse vectors _or_ the usual sparse matrix format. This is a big deal because it does not force you to convert non-numeric data into a numeric matrix format. Again, we’ll discuss this more in the future, but you should be able to use sparse data frames in parsnip, recipes, tune, etc. 
 
-The second initiative is the longstanding goal of adding **postprocessing** to tidymodels. Just as you can add a preprocessor to a model workflow, you will be able to add a set of postprocessing adjustments to the predictions your model generates. See our [previous post](https://www.tidyverse.org/blog/2024/10/postprocessing-preview/) for a sneak peek. 
+The second initiative is the longstanding goal of adding **postprocessing** to tidymodels. Just as you can add a preprocessor to a model workflow, you will be able to add a set of postprocessing adjustments to the predictions your model generates. See our [previous post](/blog/2024-10-08_postprocessing-preview/) for a sneak peek. 
 
-Finally, this year's [summer internship](https://www.tidyverse.org/blog/2025/01/tidymodels-2025-internship/) focuses on supervised feature selection methods. We’ll also have releases (and probably another package) for these tools. 
+Finally, this year's [summer internship](/blog/2025-01-08_tidymodels-2025-internship/) focuses on supervised feature selection methods. We’ll also have releases (and probably another package) for these tools. 
 
 These should come to fruition (and CRAN) before or around August 2025. 
 

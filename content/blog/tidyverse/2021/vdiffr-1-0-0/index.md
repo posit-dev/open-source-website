@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/e8rfcKAx1Rk
   author: Jakob Owens
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

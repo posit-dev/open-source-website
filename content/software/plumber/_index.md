@@ -1,4 +1,9 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
+- Visualization
 color: '#008272'
 description: Turn your R code into a web API.
 github: rstudio/plumber

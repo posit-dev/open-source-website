@@ -1,9 +1,11 @@
 ---
 title: purrr 0.1.0
+description: "Introducing purrr: functional programming tools for R with map functions, formula shortcuts for anonymous functions, and list manipulation."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-09-29'
-categories:
+topics:
   - Data Wrangling
 slug: purrr-0-1-0
 blogcategories:

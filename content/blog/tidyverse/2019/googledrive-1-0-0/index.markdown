@@ -69,7 +69,7 @@ For more advanced users who call `drive_auth()` directly or who configure auth s
 
 Google Drive doesn't impose a 1-to-1 relationship between files and filepaths, the way your local file system does. Therefore, when working via the Drive API (instead of in the browser), it's fairly easy to create multiple Drive files with the same name or filepath, without actually meaning to. This is perfectly valid on Drive, which identifies file by ID, but can be confusing and undesirable for humans. Very few people actually want this:
 
-<img src="/images/googledrive/je-suis-unique.png" width="60%" />
+<img src="je-suis-unique.png" width="60%" />
 
 googledrive v1.0.0 offers some new ways to prevent writing more than one file to the same filepath.
 

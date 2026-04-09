@@ -43,8 +43,8 @@ get_frontmatter_lines <- function(file_path) {
 }
 
 # Fields that should always be arrays (never collapsed to scalars)
-array_fields <- c("people", "categories", "tags", "software", "languages",
-                  "ported_categories", "blogcategories", "author", "events", "resources")
+array_fields <- c("people", "topics", "tags", "software", "languages",
+                  "ported_topics", "blogtopics", "author", "events", "resources")
 
 # Ensure specified fields remain as lists for yaml output
 ensure_arrays <- function(fm) {

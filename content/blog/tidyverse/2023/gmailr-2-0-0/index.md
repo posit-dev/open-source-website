@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/VybzKEUMhbw
   author: Hiroshi Kimura
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
@@ -164,7 +164,7 @@ gmailr is designed to be very pipe friendly and it leads to very natural code th
 
 gmailr predates the introduction of the native pipe, in R 4.1, and therefore, historically, it has re-exported `%>%`, the magrittr pipe, for user convenience. The magrittr pipe also featured heavily in gmailr's documentation.
 
-In the v2.0.0 release, I've removed the magrittr dependency and now use the native pipe operator `|>` in all documentation (gmailr never used the pipe internally). The purrr package pioneered this maneuver, within the tidyverse, and gmailr uses the same techniques to resolve the tension between the new usage of the base pipe and the tidyverse policy of supporting older R versions. You can learn more about the pipe transition in the blog post [Differences between the base R and magrittr pipes](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/).
+In the v2.0.0 release, I've removed the magrittr dependency and now use the native pipe operator `|>` in all documentation (gmailr never used the pipe internally). The purrr package pioneered this maneuver, within the tidyverse, and gmailr uses the same techniques to resolve the tension between the new usage of the base pipe and the tidyverse policy of supporting older R versions. You can learn more about the pipe transition in the blog post [Differences between the base R and magrittr pipes](/blog/2023-04-21_base-vs-magrittr-pipe/).
 
 ## Acknowledgements
 

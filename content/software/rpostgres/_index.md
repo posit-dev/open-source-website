@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#9A4665'
 description: A DBI-compliant interface to PostgreSQL
 github: r-dbi/RPostgres

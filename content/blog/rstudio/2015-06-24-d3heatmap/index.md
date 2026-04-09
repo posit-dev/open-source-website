@@ -1,9 +1,11 @@
 ---
 title: 'd3heatmap: Interactive heat maps'
+description: "d3heatmap creates interactive heat maps with D3.js: zoom by dragging, highlight rows/columns on click, hover to see values."
+auto-description: true
 people:
   - Joe Cheng
 date: '2015-06-24'
-categories:
+topics:
   - Visualization
   - Interactive Apps
 tags:

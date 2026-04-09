@@ -1,10 +1,12 @@
 ---
 title: Top 3 Coding Best Practices from the Shiny Contest
+description: "Three coding best practices from Shiny Contest winners: modules, custom CSS, and reactive organization."
+auto-description: true
 people:
   - Nick Strayer
 date: '2021-07-22'
 slug: three-shiny-best-practices-seen-in-the-shiny-contest
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny
@@ -24,7 +26,7 @@ ported_categories:
 ---
 
 
-Recently we [wrapped up another round of the Shiny Contest](/2021/06/24/winners-of-the-3rd-annual-shiny-contest/), and, as always, the entries were terrific. A previous post announced and discussed the winners, but we wanted to take a moment to highlight some of the examples of fantastic code we saw in the entries. In this post, we have selected three apps that demonstrate Shiny best practices. The apps are [RestoR](https://community.rstudio.com/t/restor-shiny-contest-submission/104903) by Luka Negoita and Anna Calle, the [Commute Explorer](https://community.rstudio.com/t/commute-explorer-shiny-contest-submission/104651) by Stefan Schliebs, and [{wedding}: a Shiny app to help future grooms](https://community.rstudio.com/t/wedding-a-shiny-app-to-help-future-grooms-shiny-contest-submission/104657) by Margot Brard.
+Recently we [wrapped up another round of the Shiny Contest](https://posit.co/blog/winners-of-the-3rd-annual-shiny-contest/), and, as always, the entries were terrific. A previous post announced and discussed the winners, but we wanted to take a moment to highlight some of the examples of fantastic code we saw in the entries. In this post, we have selected three apps that demonstrate Shiny best practices. The apps are [RestoR](https://community.rstudio.com/t/restor-shiny-contest-submission/104903) by Luka Negoita and Anna Calle, the [Commute Explorer](https://community.rstudio.com/t/commute-explorer-shiny-contest-submission/104651) by Stefan Schliebs, and [{wedding}: a Shiny app to help future grooms](https://community.rstudio.com/t/wedding-a-shiny-app-to-help-future-grooms-shiny-contest-submission/104657) by Margot Brard.
 
 While many of the apps submitted implement every one of the best practices we touch on (along with many other best practices), the three we're highlighting illustrate their respective best practices excellently.
 
@@ -167,4 +169,4 @@ The compact and simple reactives result in a clean and easy-to-understand reacti
 
 ## Learning more
 
-The Shiny contest, both this year and in the past, was an awe-inspiring demonstration of Shiny excellence from all participants with something to learn from every app submitted. If you're eager to learn more about writing great Shiny apps by looking at outstanding examples, check out the winners from the [announcement post](/2021/06/24/winners-of-the-3rd-annual-shiny-contest/). Another resource for learning more is the [Shiny website](https://shiny.rstudio.com/), where you can look at [articles](https://shiny.rstudio.com/articles/) covering topics from [beginner](https://shiny.rstudio.com/articles/basics.html) to [advanced](https://shiny.rstudio.com/articles/building-inputs.html), an [app gallery](https://shiny.rstudio.com/gallery/) for more inspiration, and ["app stories"](https://shiny.rstudio.com/app-stories/) that look at the decision processes behind building apps.
+The Shiny contest, both this year and in the past, was an awe-inspiring demonstration of Shiny excellence from all participants with something to learn from every app submitted. If you're eager to learn more about writing great Shiny apps by looking at outstanding examples, check out the winners from the [announcement post](https://posit.co/blog/winners-of-the-3rd-annual-shiny-contest/). Another resource for learning more is the [Shiny website](https://shiny.rstudio.com/), where you can look at [articles](https://shiny.rstudio.com/articles/) covering topics from [beginner](https://shiny.rstudio.com/articles/basics.html) to [advanced](https://shiny.rstudio.com/articles/building-inputs.html), an [app gallery](https://shiny.rstudio.com/gallery/) for more inspiration, and ["app stories"](https://shiny.rstudio.com/app-stories/) that look at the decision processes behind building apps.

@@ -5,7 +5,7 @@ description: |
   Sparklyr 1.7 delivers much-anticipated improvements, including R interfaces for image and binary data sources, several new spark_apply() capabilities, and better integration with sparklyr extensions.
 date: '2021-07-06'
 slug: sparklyr-1.7
-categories:
+topics:
   - MLOps and Admin
 author:
   - name: Yitao Li
@@ -209,7 +209,7 @@ predictions %>%
 
 Many `sparklyr` users who have tried to run
 [`spark_apply()`](https://spark.rstudio.com/reference/spark_apply.html) or
-[`doSpark`](https://blog.rstudio.com/2020/05/06/sparklyr-1-2/#foreach) to
+[`doSpark`](/blog/2020-05-06_sparklyr-1-2/#foreach) to
 parallelize R computations among Spark workers have probably encountered some
 challenges arising from the serialization of R closures.
 In some scenarios, the

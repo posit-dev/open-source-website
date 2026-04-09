@@ -5,7 +5,7 @@ description: |
   The sparklyr 1.6 release introduces weighted quantile summaries, an R interface to power iteration clustering, spark_write_rds(), as well as a number of dplyr-related improvements.
 date: '2021-03-25'
 slug: sparklyr-1.6
-categories:
+topics:
   - MLOps and Admin
 author:
   - name: Yitao Li
@@ -28,6 +28,7 @@ tags:
   - Packages
   - Releases
   - Distributed computing
+math: true
 ---
 
 
@@ -372,7 +373,7 @@ iris %>% summarize(across(where(is.numeric), mean))
 ### `if_all()` and `if_any()`
 
 `if_all()` and `if_any()` are two convenience functions from `dplyr` 1.0.4 (see
-[here](https://www.tidyverse.org/blog/2021/02/dplyr-1-0-4-if-any) for more details)
+[here](/blog/2021-02-02_dplyr-1-0-4-if-any/) for more details)
 that effectively [^1]
 combine the results of applying a boolean predicate to a tidy selection of columns
 using the logical `and`/`or` operators.

@@ -1,9 +1,11 @@
 ---
 title: bigrquery 0.4.0
+description: "bigrquery 0.4.0: query Google BigQuery with DBI and dplyr backends, now with full datetime support."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2017-06-26'
-categories:
+topics:
   - Data Wrangling
 slug: bigrquery-0-4-0
 blogcategories:

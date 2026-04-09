@@ -1,9 +1,11 @@
 ---
 title: 'sparklyr 0.5: Livy and dplyr improvements'
+description: "sparklyr 0.5 extends dplyr with do() and n_distinct(), adds experimental Livy support for remote Spark connections."
+auto-description: true
 people:
   - Javier Luraschi
 date: '2017-01-24'
-categories:
+topics:
   - Data Wrangling
   - MLOps and Admin
 tags:

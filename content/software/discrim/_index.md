@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
 color: '#3F3E8D'
 description: Wrappers for discriminant analysis and naive Bayes models for use with
   the parsnip package

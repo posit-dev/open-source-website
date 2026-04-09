@@ -1,4 +1,6 @@
 ---
+topics:
+- Publishing
 color: '#BF2A13'
 description: A lightweight, cross-platform, portable, and easy-to-maintain LaTeX distribution
   based on TeX Live

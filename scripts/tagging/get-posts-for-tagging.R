@@ -121,7 +121,7 @@ output <- lapply(selected, function(post) {
     source_path = post$source_path,
     title = post$frontmatter$title,
     ported_from = post$frontmatter$ported_from,
-    categories = post$frontmatter$categories,
+    topics = post$frontmatter$topics,
     tags = post$frontmatter$tags,
     software = post$frontmatter$software,
     languages = post$frontmatter$languages

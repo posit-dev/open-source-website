@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#72994E'
 description: Format columns with colour
 github: r-lib/pillar

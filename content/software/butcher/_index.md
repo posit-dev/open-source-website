@@ -1,4 +1,7 @@
 ---
+topics:
+- MLOps and Admin
+- Machine Learning
 color: '#5CF8F2'
 description: Reduce the size of model objects saved to disk
 github: tidymodels/butcher

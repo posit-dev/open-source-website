@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/GsZLXA4JPcM
   author: Ricardo Gomez Angel
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

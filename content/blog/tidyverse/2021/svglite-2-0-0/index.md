@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/pVoEPpLw818
   author: Rodion Kutsaev
-categories:
+topics:
   - Visualization
 tags:
   - Graphic-device
@@ -45,7 +45,7 @@ You can install the latest release of svglite from CRAN with:
 
 </div>
 
-Much time has passed since svglite had a major release and this blog post will go into detail with all the major changes. You can see a full list of changes in the [release notes](%7B%20github_release%20%7D).
+Much time has passed since svglite had a major release and this blog post will go into detail with all the major changes. You can see a full list of changes in the [release notes](https://github.com/r-lib/svglite/releases/tag/v2.0.0).
 
 Motivation for svglite
 ----------------------
@@ -155,7 +155,7 @@ svglite has always produced smaller files than the [`svg()`](https://rdrr.io/r/g
 
 ### Font support
 
-You may remember a few days ago when we [announced some major improvements to ragg and its rendering of text](https://www.tidyverse.org/blog/2021/02/modern-text-features/). What about svglite? For the most part svglite has delegated its rendering of text to the svg renderer so by and large it has always supported advanced text features such as right-to-left text, font fallback, and color fonts. Some changes have spilled over though, as svglite is now also based on systemfonts and uses that for doing font lookup and text width calculations. This change means that svglite now have direct access to all your installed fonts along with whatever you have registered with [`register_font()`](https://rdrr.io/pkg/systemfonts/man/register_font.html) and [`register_variant()`](https://rdrr.io/pkg/systemfonts/man/register_variant.html). If you have registered any OpenType features or alternative weights with a font you use, these will now be encoded into the CSS of the text block:
+You may remember a few days ago when we [announced some major improvements to ragg and its rendering of text](/blog/2021-02-06_modern-text-features/). What about svglite? For the most part svglite has delegated its rendering of text to the svg renderer so by and large it has always supported advanced text features such as right-to-left text, font fallback, and color fonts. Some changes have spilled over though, as svglite is now also based on systemfonts and uses that for doing font lookup and text width calculations. This change means that svglite now have direct access to all your installed fonts along with whatever you have registered with [`register_font()`](https://rdrr.io/pkg/systemfonts/man/register_font.html) and [`register_variant()`](https://rdrr.io/pkg/systemfonts/man/register_variant.html). If you have registered any OpenType features or alternative weights with a font you use, these will now be encoded into the CSS of the text block:
 
 <div class="highlight">
 

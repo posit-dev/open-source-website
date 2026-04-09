@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/FlHdnPO6dlw
   author: Jon Tyson
-categories:
+topics:
   - Data Wrangling
 tags:
   - rlib

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/r2A6WYI8YIg
   author: Shawn Ang
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

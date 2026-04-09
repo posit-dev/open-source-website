@@ -1,9 +1,11 @@
 ---
 title: devtools 1.6
+description: "devtools 1.6 improves install_github(), adds session_info(), and introduces use_data(), use_testthat(), use_travis() helpers."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-10-02'
-categories:
+topics:
   - Best Practices
 slug: devtools-1-6
 blogcategories:

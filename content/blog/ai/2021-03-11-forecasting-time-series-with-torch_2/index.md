@@ -4,7 +4,7 @@ description: |
   We continue our exploration of time-series forecasting with torch, moving on to architectures designed for multi-step prediction. Here, we augment the "workhorse RNN" by a multi-layer perceptron (MLP) to extrapolate multiple timesteps into the future.
 date: '2021-03-11'
 slug: keydanatorchts2
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -24,6 +24,7 @@ tags:
   - AI
   - Torch
   - Time series
+math: true
 ---
 
 
@@ -495,4 +496,4 @@ elec_dataset <- dataset(
 ### rest identical to single-predictor code above
 ```
 
-Photo by [Monica Bourgeau](https://unsplash.com/@monicabourgeau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](./?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Photo by [Monica Bourgeau](https://unsplash.com/@monicabourgeau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

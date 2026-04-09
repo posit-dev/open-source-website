@@ -1,9 +1,11 @@
 ---
 title: shinythemes 1.1.1
+description: "shinythemes 1.1.1 adds new Bootstrap themes from bootswatch.com and a live theme selector for Shiny apps."
+auto-description: true
 people:
   - Winston Chang
 date: '2016-10-13'
-categories:
+topics:
   - Interactive Apps
 slug: shinythemes-1-1-1
 blogcategories:

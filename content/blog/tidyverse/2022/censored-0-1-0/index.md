@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/UDlXygG0pgA
   author: Ranae Smith
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
@@ -46,7 +46,7 @@ You can install it from CRAN with:
 
 </div>
 
-This blog post will introduce a new model type, a new mode, and new prediction types for survival analysis in the tidymodels framework. We have [previously](https://www.tidyverse.org/blog/2021/11/survival-analysis-parsnip-adjacent/) blogged about these changes while they were in development, now they have been released!
+This blog post will introduce a new model type, a new mode, and new prediction types for survival analysis in the tidymodels framework. We have [previously](/blog/2021-11-02_survival-analysis-parsnip-adjacent/) blogged about these changes while they were in development, now they have been released!
 
 <div class="highlight">
 

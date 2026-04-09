@@ -1,5 +1,7 @@
 ---
 title: 'Seeing Beyond Statistics: Anscombe''s Quartet and the Power of Graphs'
+description: "Why visualizing data matters: recreating Anscombe's Quartet with Plotnine and Polars."
+auto-description: true
 people:
   - Jeroen Janssens
 date: '2024-07-02'
@@ -7,7 +9,7 @@ image: ruthson-zimmerman-FVwG5OzPuzo-unsplash.jpg
 image-alt: Hands typing on a laptop showing a data dashboard on the screen
 ported_from: plotnine
 port_status: in-progress
-categories:
+topics:
   - Visualization
 software: ["plotnine"]
 languages: ["Python"]
@@ -15,6 +17,7 @@ ported_categories:
   - plotnine
 tags:
   - Plotnine
+math: true
 ---
 
 

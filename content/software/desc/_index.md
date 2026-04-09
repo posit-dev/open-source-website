@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#D44000'
 description: Manipulate DESCRIPTION files
 github: r-lib/desc

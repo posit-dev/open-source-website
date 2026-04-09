@@ -1,4 +1,7 @@
 ---
+topics:
+- Artificial Intelligence
+- Interactive Apps
 color: '#AE9750'
 description: A complete toolkit for connecting R and LLMs
 github: posit-dev/btw

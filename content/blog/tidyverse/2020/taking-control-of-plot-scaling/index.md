@@ -9,7 +9,7 @@ tags:
   - Graphics
   - tidyverse
   - Learn
-categories:
+topics:
   - Community
 photo:
   url: https://unsplash.com/photos/6GjHwABuci4

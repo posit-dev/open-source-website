@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#404041'
 description: Tree-sitter grammar for R
 github: r-lib/tree-sitter-r

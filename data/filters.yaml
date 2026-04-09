@@ -1,0 +1,218 @@
+blog:
+  search_help: [author, topic, tag, software, language, date]
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: topics
+      label: Topics
+    - key: languages
+      label: Languages
+      values:
+        - Python
+        - R
+        - SQL
+        - Rust
+        - JavaScript
+        - Other
+      aliases:
+        JavaScript:
+          - JavaScript
+          - TypeScript
+      other:
+        - Python
+        - R
+        - SQL
+        - Rust
+        - JavaScript
+        - TypeScript
+
+topics:
+  search_help: [date]
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: type
+      label: Type
+      values:
+        - blog post
+        - software
+        - event
+        - video
+        - cheatsheet
+
+cheatsheet:
+  search_help: [author, topic, language, date]
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: topics
+      label: Topics
+    - key: languages
+      label: Languages
+      values:
+        - Python
+        - R
+        - Other
+      other:
+        - Python
+        - R
+
+events:
+  search_help: [language, location, date]
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+    - key: location
+      label: Location
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: languages
+      label: Languages
+      values:
+        - Python
+        - R
+        - Other
+      other:
+        - Python
+        - R
+
+software:
+  search_help: [author, topic, language, stars]
+  sort:
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+      default: true
+    - key: stars
+      label: Most Stars
+      type: number
+      direction: desc
+    - key: first-commit
+      label: Newest (First Commit)
+      type: date
+      direction: desc
+  defaultSort: title
+  filters:
+    - key: topics
+      label: Topics
+    - key: languages
+      label: Languages
+
+tags:
+  search_help: [date]
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: type
+      label: Type
+      values:
+        - blog post
+        - software
+        - event
+        - video
+        - cheatsheet
+
+tutorial:
+  search_help: [topic, date]
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: topics
+      label: Topics
+
+video:
+  search_help: [author, topic, duration, date]
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+    - key: views
+      label: Most Viewed
+      type: number
+      direction: desc
+    - key: duration
+      label: Duration
+      type: number
+      direction: desc
+  defaultSort: date
+  filters:
+    - key: topics
+      label: Topics
+
+webinar:
+  search_help: [topic, date]
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: topics
+      label: Topics

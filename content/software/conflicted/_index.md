@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#72994E'
 description: An alternative conflict resolution strategy for R
 github: r-lib/conflicted

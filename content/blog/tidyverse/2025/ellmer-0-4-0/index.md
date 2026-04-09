@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-herd-of-elephants-standing-next-to-each-other-CzIwSXedUGM
   author: Evan Jones
-categories:
+topics:
   - Artificial Intelligence
 tags:
   - tidyverse

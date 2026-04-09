@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/JVD3XPqjLaQ
   author: Jason Dent
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

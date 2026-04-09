@@ -6,7 +6,7 @@ people:
   - Barret Schloerke
 date: '2021-02-01'
 slug: shiny-1-6-0
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

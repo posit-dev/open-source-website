@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- MLOps and Admin
+- Machine Learning
 color: '#FF00D2'
 description: Run predictions inside the database
 github: tidymodels/tidypredict

@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Publishing
 color: '#74ACDC'
 description: Open-source scientific and technical publishing system built on Pandoc.
 github: quarto-dev/quarto-cli

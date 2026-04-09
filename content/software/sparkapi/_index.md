@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#9A4665'
 description: Sparklyr Extensions API
 github: rstudio/sparkapi

@@ -1,6 +1,7 @@
 ---
 title: shinyswatch 0.7.0
-description: Customizable shinyswatch themes and an improved theme picker round out
+description: >-
+  Customizable shinyswatch themes and an improved theme picker round out
   shinyswatch v0.7.0.
 people:
   - Garrick Aden-Buie
@@ -8,9 +9,11 @@ date: '2024-07-19'
 image: feature.jpg
 ported_from: shiny
 port_status: in-progress
-software: ["py-shinyswatch"]
-languages: ["Python"]
-categories:
+software:
+  - py-shinyswatch
+languages:
+  - Python
+topics:
   - Interactive Apps
 tags:
   - Shiny
@@ -59,9 +62,7 @@ Prior to v0.7.0, to set the theme of a Shiny app, you could add the shinyswatch 
 </ul>
 <div id="tabset-1-1">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny.express import input, ui
 
 import shinyswatch
@@ -78,9 +79,7 @@ ui.output_text_verbatim("slider_val")
 </div>
 <div id="tabset-1-2">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny import App, Inputs, Outputs, Session, render, ui
 
 import shinyswatch
@@ -106,9 +105,7 @@ app_ui = ui.page_fluid(
 </ul>
 <div id="tabset-2-1">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny.express import input, ui
 
 import shinyswatch
@@ -125,9 +122,7 @@ ui.output_text_verbatim("slider_val")
 </div>
 <div id="tabset-2-2">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny import App, Inputs, Outputs, Session, render, ui
 
 import shinyswatch
@@ -166,9 +161,7 @@ This short-lived argument is now deprecated.
 </ul>
 <div id="tabset-3-1">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny.express import input, ui
 
 import shinyswatch
@@ -184,9 +177,7 @@ ui.output_text_verbatim("slider_val")
 </div>
 <div id="tabset-3-2">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny.express import input, ui
 
 import shinyswatch
@@ -211,9 +202,7 @@ ui.output_text_verbatim("slider_val")
 </ul>
 <div id="tabset-4-1">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny import App, Inputs, Outputs, Session, render, ui
 
 import shinyswatch
@@ -230,9 +219,7 @@ app_ui = ui.page_fluid(
 </div>
 <div id="tabset-4-2">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny import App, Inputs, Outputs, Session, render, ui
 
 import shinyswatch

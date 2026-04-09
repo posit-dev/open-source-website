@@ -1,4 +1,9 @@
 ---
+topics:
+- Artificial Intelligence
+- Community
+- Data Wrangling
+- Interactive Apps
 color: '#BA9A62'
 description: RStudio hex stickers
 github: rstudio/hex-stickers

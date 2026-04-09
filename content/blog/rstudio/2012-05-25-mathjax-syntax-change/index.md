@@ -1,9 +1,11 @@
 ---
 title: MathJax Syntax Change
+description: "R Markdown MathJax syntax changes: equations now use $latex ...$ to avoid parsing ambiguities."
+auto-description: true
 people:
   - RStudio Team
 date: '2012-05-25'
-categories:
+topics:
   - Publishing
 slug: mathjax-syntax-change
 blogcategories:
@@ -16,6 +18,7 @@ ported_categories:
 tags:
   - RStudio
   - News
+math: true
 ---
 
 

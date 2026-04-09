@@ -1,9 +1,11 @@
 ---
 title: Introducing tidyr
+description: "Introducing tidyr: reshape messy data with gather() (wide to long), separate() (split columns), and spread() (long to wide)."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-07-22'
-categories:
+topics:
   - Data Wrangling
 slug: introducing-tidyr
 blogcategories:

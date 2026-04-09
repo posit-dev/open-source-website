@@ -4,7 +4,7 @@ description: |
   New TensorFlow and Keras releases bring improvements big and small.
 date: '2022-06-09T00:00:00.000Z'
 slug: kalinowskitf29
-categories:
+topics:
   - Machine Learning
 author:
   - name: Tomasz Kalinowski

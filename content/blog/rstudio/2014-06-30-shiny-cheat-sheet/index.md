@@ -1,9 +1,11 @@
 ---
 title: Shiny cheat sheet
+description: "New Shiny cheat sheet: quick reference for app structure, reactive foundations, layouts, and deployment."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-06-30'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-cheat-sheet
 blogcategories:

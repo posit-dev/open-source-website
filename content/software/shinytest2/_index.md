@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Machine Learning
 color: '#438BCA'
 description: ''
 github: rstudio/shinytest2

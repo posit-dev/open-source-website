@@ -1,5 +1,7 @@
 ---
 title: tidyr 1.0.0
+description: "tidyr 1.0.0: pivot_longer() and pivot_wider() replace spread() and gather()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2019-09-13'
@@ -385,7 +387,7 @@ Behind the scenes, I discovered that nesting (and unnesting) can be decomposed i
 * `chop()` and `unchop()` chop up rows into and out of list-columns. It's 
   a bit like an explicit form of `dplyr::group_by()`.
 
-<p><img src="/images/tidyr-1-0-0/nest-pack-chop.png" width="480" height="352" /></p>
+<p><img src="nest-pack-chop.png" width="480" height="352" /></p>
 
 This is primarily of internal interest, but it considerably simplifies the implementation of `nest()`, and you may occasionally find the underlying functions useful when working with exotic data structures.
 

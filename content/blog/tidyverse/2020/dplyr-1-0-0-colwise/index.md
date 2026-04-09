@@ -6,7 +6,7 @@ people:
 date: '2020-04-03'
 description: |
   A new `across()` function makes it much easier to apply the same operation to multiple columns. It supersedes the `_if()`, `_at()`, and `_all()` function variants.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0
@@ -28,7 +28,7 @@ Today, I wanted to talk a little bit about the new `across()` function that make
 
 ------------------------------------------------------------------------
 
-**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about it](/blog/2020/06/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
+**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about it](/blog/tidyverse/2020/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
 
 ------------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ df %>%
   summarise(a = mean(a), b = mean(b), c = mean(c), d = mean(c))
 ```
 
-You can now rewrite such code using `across()`, which lets you apply a transformation to multiple variables selected with the same syntax as [`select()` and `rename()`](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-select-rename-relocate/#select-and-renaming):
+You can now rewrite such code using `across()`, which lets you apply a transformation to multiple variables selected with the same syntax as [`select()` and `rename()`](/blog/2020-03-27_dplyr-1-0-0-select-rename-relocate/#select-and-renaming):
 
 ``` r
 df %>% 

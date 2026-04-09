@@ -4,7 +4,7 @@ description: |
   How not to die from poisonous mushrooms. Also: How to use torch for deep learning on tabular data, including a mix of categorical and numerical features.
 date: '2020-11-03'
 slug: keydanatorchtabular
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

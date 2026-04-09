@@ -13,7 +13,7 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

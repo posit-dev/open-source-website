@@ -72,7 +72,7 @@ invisible(dev.off())
 knitr::include_graphics(file)
 ```
 
-<img src="/articles/2019-06-26-ragg-0-1-0_files/figure-html/unnamed-chunk-1-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-1-1.png" width="700px" style="display: block; margin: auto;" />
 
 ragg can also be used with `ggsave()` by passing the device in as an argument:
 
@@ -88,7 +88,7 @@ ggsave(file, p, device = agg_png, res = 300)
 knitr::include_graphics(file)
 ```
 
-<img src="/articles/2019-06-26-ragg-0-1-0_files/figure-html/unnamed-chunk-2-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-2-1.png" width="700px" style="display: block; margin: auto;" />
 
 ## Life cycle
 ragg is currently to be considered [experimental](https://www.tidyverse.org/lifecycle/#experimental). That is not to indicate that any API changes are to be expected, or that using it is not a safe long-term strategy. But we are continuing to invest and improve upon the graphic stack in R, and we cannot say whether ragg will be part of our final solution, or if it is just an interesting experiment. The experience gained in the graphic stack from building ragg will definitely be put to good use though, and you can expect more improvements in the future.

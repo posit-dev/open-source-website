@@ -1,10 +1,12 @@
 ---
 title: 'sparklyr 0.8: Production pipelines and graphs'
+description: "sparklyr 0.8: production ML pipelines with mleap export and graph analysis with graphframes."
+auto-description: true
 people:
   - Kevin Kuo
 date: '2018-05-14'
 slug: sparklyr-0-8
-categories:
+topics:
   - Data Wrangling
   - MLOps and Admin
 tags:
@@ -71,7 +73,7 @@ spark_disconnect(sc)
 
 ## Pipelines in Production
 
-Earlier this year, we [announced support for ML Pipelines in sparklyr](https://blog.rstudio.com/2018/01/29/sparklyr-0-7/), and discussed how one can persist models onto disk. While that workflow is appropriate for batch scoring of large datasets, we also wanted to enable real-time, low-latency scoring using pipelines developed with sparklyr. To enable this, we've developed the [mleap](https://CRAN.R-project.org/package=mleap) package, available on CRAN, which provides an interface to the [MLeap](https://github.com/combust/mleap) open source project. 
+Earlier this year, we [announced support for ML Pipelines in sparklyr](/blog/2018-01-29_sparklyr-0-7/), and discussed how one can persist models onto disk. While that workflow is appropriate for batch scoring of large datasets, we also wanted to enable real-time, low-latency scoring using pipelines developed with sparklyr. To enable this, we've developed the [mleap](https://CRAN.R-project.org/package=mleap) package, available on CRAN, which provides an interface to the [MLeap](https://github.com/combust/mleap) open source project. 
 
 MLeap allows you to use your Spark pipelines in any Java-enabled device or service. This works by serializing Spark pipelines which can later be loaded into the Java Virtual Machine (JVM) for scoring without requiring a Spark cluster. This means that software engineers can take Spark pipelines exported with sparklyr and easily embed them in web, desktop or mobile applications.
 

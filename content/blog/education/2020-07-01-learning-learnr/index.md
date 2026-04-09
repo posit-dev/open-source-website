@@ -19,7 +19,7 @@ ported_from: education
 port_status: in-progress
 software: ["learnr"]
 languages: ["R"]
-categories:
+topics:
   - Community
   - Publishing
 ---
@@ -56,7 +56,7 @@ to my diagrams, I had new knowledge to incorporate, which again opened
 up new gaps I needed to fill. In this post, I'd like to show
 you what I've learned so far and how I formed a working knowledge of this 
 intricate package; if you'd like to know more about its specific features, please see
-[this post](https://education.rstudio.com/blog/2020/06/summer-camp-hs/) from my fellow intern Ezgi.
+[this post](/blog/2020-06-24_summer-camp-hs/) from my fellow intern Ezgi.
 In the end, I hope to convey the big picture of learnr and the
 technologies it combines for interactive lessons.
 
@@ -227,7 +227,7 @@ from clicking the "Submit Answer" button.
 
 ## Reflections
 
-Daniel Chen had mentioned in his [reflection](https://education.rstudio.com/blog/2020/02/gestalt-internship/)
+Daniel Chen had mentioned in his [reflection](/blog/2020-02-04_gestalt-internship/)
 last summer that he
 turned from a "a user of the R language" to a "developer". I would say I feel the same
 way so far. Although I knew how to use R packages, it wasn't until I

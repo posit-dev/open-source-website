@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Visualization
 color: '#523C2E'
 description: '🐈🐈🐈🐈: tools for working with categorical variables (factors)'
 github: tidyverse/forcats

@@ -1,9 +1,11 @@
 ---
 title: 'Accelerating R: RStudio and the new R Consortium'
+description: "RStudio joins the new R Consortium alongside Microsoft, Google, and Oracle to fund and inspire R's future development."
+auto-description: true
 people:
   - RStudio Team
 date: '2015-06-30'
-categories:
+topics:
   - Community
 slug: accelerating-r-rstudio-and-the-new-r-consortium
 blogcategories:

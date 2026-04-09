@@ -1,9 +1,11 @@
 ---
 title: stringr 1.1.0
+description: "stringr 1.1.0 adds practice datasets (fruit, words, sentences), boundary() in more functions, and str_view() for regex."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-08-24'
-categories:
+topics:
   - Data Wrangling
 slug: stringr-1-1-0
 blogcategories:

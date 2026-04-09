@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/lj5ALRcon4g
   author: Jackie Hope
-categories:
+topics:
   - Community
 tags:
   - tidyverse
@@ -37,7 +37,7 @@ TODO:
 * [ ] [`usethis::use_tidy_thanks()`](https://usethis.r-lib.org/reference/use_tidy_thanks.html) -- not applicable
 -->
 
-Last summer I wrote a series of blog posts titled [teaching the tidyverse in 2020](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-4-when-to-purrr/). As we quickly approach the end of the summer (in the northern hemisphere) and the start of a new academic year, it seems like a good time to provide a new update for teaching the tidyverse, in 2021. The main audience for this post is educators who teach the tidyverse and who might want to bring their teaching materials up to date with updates to the tidyverse that happened over the past year. Much of what is discussed here has already been covered in package update posts on this blog, but my goal is to summarize the highlights that are most relevant to teaching data science with the tidyverse, particularly to new learners.
+Last summer I wrote a series of blog posts titled [teaching the tidyverse in 2020](/blog/2020-07-19_teaching-the-tidyverse-in-2020-part-4-when-to-purrr/). As we quickly approach the end of the summer (in the northern hemisphere) and the start of a new academic year, it seems like a good time to provide a new update for teaching the tidyverse, in 2021. The main audience for this post is educators who teach the tidyverse and who might want to bring their teaching materials up to date with updates to the tidyverse that happened over the past year. Much of what is discussed here has already been covered in package update posts on this blog, but my goal is to summarize the highlights that are most relevant to teaching data science with the tidyverse, particularly to new learners.
 
 Specifically, I'll discuss
 
@@ -69,7 +69,7 @@ Let's get started!
 
 Before we dive into specific package functionality updates, I'd like to highlight two new teaching and learning resources:
 
--   **Cheatsheets:** Some of the most popular learning resources for the tidyverse are the cheatsheets, many of which have recently been updated. Huge thanks to our intern [Averi Perny](https://twitter.com/avperny) on the fantastic work on this project! You can read more about the updates [here](https://blog.rstudio.com/2021/08/23/cheat-sheet-updates/) and find the new cheatsheets [here](https://www.rstudio.com/resources/cheatsheets/).
+-   **Cheatsheets:** Some of the most popular learning resources for the tidyverse are the cheatsheets, many of which have recently been updated. Huge thanks to our intern [Averi Perny](https://twitter.com/avperny) on the fantastic work on this project! You can read more about the updates [here](/blog/2021-08-23_cheat-sheet-updates/) and find the new cheatsheets [here](https://www.rstudio.com/resources/cheatsheets/).
 -   **ggplot2 FAQ:** A new resource that might be useful for learners is the FAQ we've recently developed for ggplot2, which you can access [here](https://ggplot2.tidyverse.org/articles/). These were compiled based on popular questions on StackOverflow and RStudio Community. Each question is accompanied with a short answer as well as an expanded example.
 
 ## Lifecycle stages
@@ -88,11 +88,11 @@ Let's discuss each of these stages in detail, along with recommendations on how 
 
 -   <img src="lifecycle-superseded.svg" alt="Superseded" style="vertical-align:middle"/> Superseded indicates that there is a known better alternative for the function, but it's not going away. Some examples include the following:
 
-    -   [`tidyr::pivot_longer()`](https://tidyr.tidyverse.org/reference/pivot_longer.html) / [`tidyr::pivot_wider()`](https://tidyr.tidyverse.org/reference/pivot_wider.html) for reshaping data supersede [`tidyr::spread()`](https://tidyr.tidyverse.org/reference/spread.html) / [`tidyr::gather()`](https://tidyr.tidyverse.org/reference/gather.html) (More on these [here](https://www.tidyverse.org/blog/2019/09/tidyr-1-0-0/) and [here](https://tidyr.tidyverse.org/articles/pivot.html))
+    -   [`tidyr::pivot_longer()`](https://tidyr.tidyverse.org/reference/pivot_longer.html) / [`tidyr::pivot_wider()`](https://tidyr.tidyverse.org/reference/pivot_wider.html) for reshaping data supersede [`tidyr::spread()`](https://tidyr.tidyverse.org/reference/spread.html) / [`tidyr::gather()`](https://tidyr.tidyverse.org/reference/gather.html) (More on these [here](/blog/2019-09-13_tidyr-1-0-0/) and [here](https://tidyr.tidyverse.org/articles/pivot.html))
 
-    -   [`dplyr::across()`](https://dplyr.tidyverse.org/reference/across.html) for working across columns supersedes scoped verbs such as [`dplyr::mutate_if()`](https://dplyr.tidyverse.org/reference/mutate_all.html), [`dplyr::select_at()`](https://dplyr.tidyverse.org/reference/select_all.html), [`dplyr::rename_all()`](https://dplyr.tidyverse.org/reference/select_all.html), etc. (More on this [here](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-colwise/) and [here](https://dplyr.tidyverse.org/articles/colwise.html))
+    -   [`dplyr::across()`](https://dplyr.tidyverse.org/reference/across.html) for working across columns supersedes scoped verbs such as [`dplyr::mutate_if()`](https://dplyr.tidyverse.org/reference/mutate_all.html), [`dplyr::select_at()`](https://dplyr.tidyverse.org/reference/select_all.html), [`dplyr::rename_all()`](https://dplyr.tidyverse.org/reference/select_all.html), etc. (More on this [here](/blog/2020-04-03_dplyr-1-0-0-colwise/) and [here](https://dplyr.tidyverse.org/articles/colwise.html))
 
-    -   [`dplyr::slice_sample()`](https://dplyr.tidyverse.org/reference/slice.html) with `n` and `prop` arguments supersedes [`dplyr::sample_n()`](https://dplyr.tidyverse.org/reference/sample_n.html) / [`dplyr::sample_frac()`](https://dplyr.tidyverse.org/reference/sample_n.html) (More on this [here](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-is-coming-soon/#superseded-functions))
+    -   [`dplyr::slice_sample()`](https://dplyr.tidyverse.org/reference/slice.html) with `n` and `prop` arguments supersedes [`dplyr::sample_n()`](https://dplyr.tidyverse.org/reference/sample_n.html) / [`dplyr::sample_frac()`](https://dplyr.tidyverse.org/reference/sample_n.html) (More on this [here](/blog/2020-03-09_dplyr-1-0-0-is-coming-soon/#superseded-functions))
 
     I don't recommend teaching superseded functions to new learners, and for learners who might be aware of them already, I would recommend discouraging their use (though not correcting, i.e., no point deductions on a formative assessment), and suggesting an alternative.
 
@@ -106,7 +106,7 @@ Let's discuss each of these stages in detail, along with recommendations on how 
 
 If you'd like to learn more about the tidyverse lifecycle, I recommend the following resources:
 
--   Blog post: [lifecycle 1.0.0](https://www.tidyverse.org/blog/2021/02/lifecycle-1-0-0/)
+-   Blog post: [lifecycle 1.0.0](/blog/2021-02-15_lifecycle-1-0-0/)
 -   Talk: [Maintaining the house the tidyverse built](https://www.rstudio.com/resources/rstudioglobal-2021/maintaining-the-house-the-tidyverse-built/) by Hadley Wickham at rstudio::global(2021)[^1]
 
 ## Making reproducible examples with reprex
@@ -123,7 +123,7 @@ The new `wd` argument can help students create reprexes when they are working on
 
 Being able to create a reprex in the current working directory means you can also benefit from a project-level `.Rprofile` if you happen to have one in your project. This is likely not going to have implications for new learners, for whom this would be an advanced concept, but it can be helpful for instructors who teach with a different suite of packages than what they locally have installed (e.g., CRAN versions for teaching vs. development versions for personal use). If this describes you, I recommend using [**renv**](https://rstudio.github.io/renv/index.html) in projects where you keep teaching materials, which uses `.Rprofile` to implement a project-specific package library. Then, `reprex(wd = ".")` will create a reprex using the packages in that library.
 
-For more on updates in reprex, read the blog posts for the [1.0.0](https://www.tidyverse.org/blog/2021/02/reprex-1-0-0/) and [2.0.0](https://www.tidyverse.org/blog/2021/04/reprex-2-0-0/) releases. And if you're new to reprex, start [here](https://reprex.tidyverse.org/articles/articles/learn-reprex.html).
+For more on updates in reprex, read the blog posts for the [1.0.0](/blog/2021-02-01_reprex-1-0-0/) and [2.0.0](/blog/2021-04-05_reprex-2-0-0/) releases. And if you're new to reprex, start [here](https://reprex.tidyverse.org/articles/articles/learn-reprex.html).
 
 ## Building on tidyverse for modeling with tidymodels
 
@@ -341,8 +341,8 @@ If you're new to the tidymodels ecosystem, I recommend the following resources f
 
 -   Blog posts:
 
-    -   [Choose your own tidymodels adventure](Choose%20your%20own%20tidymodels%20adventure)
-    -   [infer 1.0.0](https://www.tidyverse.org/blog/2021/08/infer-1-0-0/)
+    -   [Choose your own tidymodels adventure](/blog/tidyverse/2021/choose-tidymodels-adventure/)
+    -   [infer 1.0.0](/blog/2021-08-17_infer-1-0-0/)
 
 If you're new to teaching tidymodels, the following resources can be helpful:
 
@@ -351,7 +351,7 @@ If you're new to teaching tidymodels, the following resources can be helpful:
 
 ## Reading data with readr
 
-A new version of [**readr**](https://www.tidyverse.org/blog/2021/07/readr-2-0-0/#reading-multiple-files-at-once) was recently released, with lots of updates outlined in [this blog post](https://www.tidyverse.org/blog/2021/07/readr-2-0-0/). The update most relevant to teaching is the new functionality for reading in multiple files at once, or more specifically, reading sets of files with the same columns into one output table in a single command.
+A new version of [**readr**](/blog/2021-07-20_readr-2-0-0/#reading-multiple-files-at-once) was recently released, with lots of updates outlined in [this blog post](/blog/2021-07-20_readr-2-0-0/). The update most relevant to teaching is the new functionality for reading in multiple files at once, or more specifically, reading sets of files with the same columns into one output table in a single command.
 
 Suppose in your `data/` folder you have two files, one for sales in August and the other for sales in September. Each of the files contain two variables: `brand` for brand ID, and `n` for number of items sold with that brand ID.
 
@@ -441,7 +441,7 @@ Another important update is that [`html_node()`](https://rvest.tidyverse.org/ref
 
 Finally, if [`html_table()`](https://rvest.tidyverse.org/reference/html_table.html) didn't work for you in the past, it's worth trying again since it's been rewritten from scratch to more closely match how browsers display tables with merged cells.
 
-For more on updates in rvest, read the [rvest 1.0.0. blog post](https://www.tidyverse.org/blog/2021/03/rvest-1-0-0/) and review the updated [rvest vignette](https://rvest.tidyverse.org/articles/rvest.html).
+For more on updates in rvest, read the [rvest 1.0.0. blog post](/blog/2021-03-10_rvest-1-0-0/) and review the updated [rvest vignette](https://rvest.tidyverse.org/articles/rvest.html).
 
 ## SQL and data.table translations with dbplyr and dtplyr
 
@@ -567,7 +567,7 @@ Similarly, dbplyr translates dplyr pipelines into equivalent SQL code. The only 
 
 I recommend the following resources to get started with these packages:
 
--   [Blog post on dplyr backends](https://www.tidyverse.org/blog/2021/02/dplyr-backends/)
+-   [Blog post on dplyr backends](/blog/2021-02-25_dplyr-backends/)
 -   [dtplyr translation vignette](https://dtplyr.tidyverse.org/articles/translation.html)
 -   [Introduction to dbplyr vignette](https://dbplyr.tidyverse.org/articles/dbplyr.html)
 

@@ -1,5 +1,7 @@
 ---
 title: 'Great Tables `v0.2.0`: Easy Data Coloring'
+description: "New in Great Tables v0.2.0: data_color() for automatic cell coloring based on values."
+auto-description: true
 people:
   - Rich Iannone
 date: '2024-01-24T00:00:00.000Z'
@@ -7,7 +9,7 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#D44000'
 description: R package reverse dependency checking
 github: r-lib/revdepcheck

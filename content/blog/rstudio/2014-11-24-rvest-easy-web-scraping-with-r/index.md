@@ -1,9 +1,11 @@
 ---
 title: 'rvest: easy web scraping with R'
+description: "Introducing rvest: scrape web data with CSS selectors or XPath, extract text/tables, and navigate sites with sessions."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-11-24'
-categories:
+topics:
   - Data Wrangling
 slug: rvest-easy-web-scraping-with-r
 blogcategories:

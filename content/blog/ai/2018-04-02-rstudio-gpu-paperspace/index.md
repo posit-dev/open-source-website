@@ -3,7 +3,7 @@ title: GPU Workstations in the Cloud with Paperspace
 description: |
   If you don't have local access to a modern NVIDIA GPU, your best bet is typically to run GPU intensive training jobs in the cloud. Paperspace is a cloud service that provides access to a fully preconfigured Ubuntu 16.04 desktop environment equipped with a GPU.
 date: '2018-04-02'
-categories:
+topics:
   - MLOps and Admin
 author:
   - name: J.J. Allaire
@@ -22,6 +22,7 @@ ported_categories:
 tags:
   - AI
   - Cloud
+slug: rstudio-gpu-paperspace
 ---
 
 

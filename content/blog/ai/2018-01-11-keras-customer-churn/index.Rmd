@@ -28,6 +28,7 @@ tags:
   - Keras
   - Tabular data
   - Explainability
+slug: keras-customer-churn
 ---
 
 ```{r setup, include=FALSE}

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/background-pattern-3b7sos3CD2c
   author: James Trenda
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
@@ -194,7 +194,7 @@ These use cases can seamlessly be converted to use [`step_rm()`](https://recipes
 
 </div>
 
-For selecting variables there are two cases. The first is as a tool to select which variables to use in our model. We recommend that you use [`select()`](https://dplyr.tidyverse.org/reference/select.html) to do that before passing the data into the [`recipe()`](https://recipes.tidymodels.org/reference/recipe.html). This is especially helpful since [recipes are tighter with respect to their input types](https://www.tidyverse.org/blog/2024/07/recipes-1-1-0/#column-type-checking), so only passing the data you need to use is helpful.
+For selecting variables there are two cases. The first is as a tool to select which variables to use in our model. We recommend that you use [`select()`](https://dplyr.tidyverse.org/reference/select.html) to do that before passing the data into the [`recipe()`](https://recipes.tidymodels.org/reference/recipe.html). This is especially helpful since [recipes are tighter with respect to their input types](/blog/2024-07-08_recipes-1-1-0/#column-type-checking), so only passing the data you need to use is helpful.
 
 If you need to do the selection after another step takes effect you should still be able to do so, by using [`step_rm()`](https://recipes.tidymodels.org/reference/step_rm.html) in the following manner.
 

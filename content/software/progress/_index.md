@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 description: Progress bar in your R terminal
 github: r-lib/progress
 image: logo.png

@@ -1,5 +1,7 @@
 ---
 title: 'Teaching the Tidyverse in 2020 - Part 3: Data wrangling and tidying'
+description: "Teaching data wrangling in 2020: pivot_longer/wider, across(), and rowwise() in dplyr and tidyr."
+auto-description: true
 date: '2020-07-17'
 slug: teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying
 categories:
@@ -22,7 +24,7 @@ ported_categories:
 
 
 
-This is the third blog post in the "Teaching the Tidyverse in 2020" series. The first post was on [getting started](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-1-getting-started/), the second on [data visualisation](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-2-data-visualisation/), and today our focus is data wrangling and tidying. In this post, I'll highlight of the some new(ish) features of [dplyr](https://dplyr.tidyverse.org/) and [tidyr](https://tidyr.tidyverse.org/). Over the past year there has been a lot of exciting updates to both of these packages and these updates are well documented in the [tidyverse blog](https://www.tidyverse.org/blog/). My goal here is to highlight updates that apply to introductory data science or statistics curricula.
+This is the third blog post in the "Teaching the Tidyverse in 2020" series. The first post was on [getting started](/blog/2020-07-13_teaching-the-tidyverse-in-2020-part-1-getting-started/), the second on [data visualisation](/blog/2020-07-15_teaching-the-tidyverse-in-2020-part-2-data-visualisation/), and today our focus is data wrangling and tidying. In this post, I'll highlight of the some new(ish) features of [dplyr](https://dplyr.tidyverse.org/) and [tidyr](https://tidyr.tidyverse.org/). Over the past year there has been a lot of exciting updates to both of these packages and these updates are well documented in the [tidyverse blog](https://www.tidyverse.org/blog/). My goal here is to highlight updates that apply to introductory data science or statistics curricula.
 
 Throughout this post we'll be using the tidyverse package, so let's go ahead and load it.
 
@@ -60,7 +62,7 @@ penguins_madeup_wide
 
 Now suppose we want to create the following visualisation.
 
-{{<figure src="/blog/2020-07-17-teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/index_files/figure-html/unnamed-chunk-4-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line.">}}
+{{<figure src="unnamed-chunk-4-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line.">}}
 
 To make this visualisation we need to get our data frame to look like the output shown below, where each point plotted corresponds to one row of the data frame and body mass measurements appear in a single column with a new columns (`measurement`) identifying which of the three measurements the record comes from.
 
@@ -171,7 +173,7 @@ penguins_madeup_long %>%
   geom_line()
 ```
 
-{{<figure src="/blog/2020-07-17-teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/index_files/figure-html/unnamed-chunk-9-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line.">}}
+{{<figure src="unnamed-chunk-9-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line.">}}
 
 Looking good, though not ideal... Remember [the tip](https://gist.github.com/jennybc/847c6b43c4e35cec2e5bb30a3f38af73) from the previous post in the series about reordering your legend in the same order as the data appears on your plot using `fct_reorder2()`? It would be a useful addition here.
 
@@ -185,7 +187,7 @@ penguins_madeup_long %>%
   geom_line()
 ```
 
-{{<figure src="/blog/2020-07-17-teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/index_files/figure-html/unnamed-chunk-10-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line, and the legend is ordered according to the heights of lines in the plot.">}}
+{{<figure src="unnamed-chunk-10-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line, and the legend is ordered according to the heights of lines in the plot.">}}
 
 If you wanted to get really fancy, you can do directly label the lines with the the `geom_label_repel()` function from the [ggrepel](https://ggrepel.slowkow.com/) package. Since we only want the third measurement to be labeled, we can filter the data for that measurement and label the points with the `name`s of penguins. While we're at it, let's fix up all the other labels in the plot as well.
 
@@ -210,7 +212,7 @@ ggplot(penguins_madeup_long,
   )
 ```
 
-{{<figure src="/blog/2020-07-17-teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/index_files/figure-html/unnamed-chunk-11-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line, and each penguin's name is directly labelled on the plot.">}}
+{{<figure src="unnamed-chunk-11-1.png" alt="Line plot of body mass measurements, where each measurement is represented by a point, and measurements from each penguin are connected with a line, and each penguin's name is directly labelled on the plot.">}}
 
 This has quickly turned into a lesson on data visualisation, and that is a good lesson in and of itself -- if you start teaching R and data science with data visualisation, which is the starting point I strongly recommend, you shouldn't feel like you need to cover all of data visualisation before you can move on to the next topic. Often times getting your data visualisation to look a certain way is a great motivator for data wrangling and reshaping, which means that after an initial introduction to plotting basics, your data visualisation and wrangling lessons can be intertwined for a more problem-based approach to teaching.
 
@@ -447,6 +449,6 @@ penguins_madeup_wide %>%
 ## 3 male   TRUE       5414.
 ```
 
-To learn more about this behaviour and the reasoning behind the changes, see [here](https://www.tidyverse.org/blog/2020/05/dplyr-1-0-0-last-minute-additions/). If you are teaching new R users, I don't think there is a good reason to go into the history of the message, and hopefully this message will steer new learners to be deliberate about how they use groups, as opposed to stumble into results without intentional grouping.
+To learn more about this behaviour and the reasoning behind the changes, see [here](/blog/2020-05-06_dplyr-1-0-0-last-minute-additions/). If you are teaching new R users, I don't think there is a good reason to go into the history of the message, and hopefully this message will steer new learners to be deliberate about how they use groups, as opposed to stumble into results without intentional grouping.
 
 That's all I have on teaching data wrangling and tidying in 2020. We have one post left in the series: "When to purr?" 🐈.

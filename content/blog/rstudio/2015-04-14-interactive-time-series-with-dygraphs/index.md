@@ -1,9 +1,11 @@
 ---
 title: Interactive time series with dygraphs
+description: "dygraphs brings interactive time series charts to R: pan, zoom, highlight, annotate, and embed in R Markdown or Shiny."
+auto-description: true
 people:
   - RStudio Team
 date: '2015-04-14'
-categories:
+topics:
   - Interactive Apps
 slug: interactive-time-series-with-dygraphs
 blogcategories:

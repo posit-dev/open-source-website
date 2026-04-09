@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/b1FS5jQrsLo
   author: Bence Balla-Schottner
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

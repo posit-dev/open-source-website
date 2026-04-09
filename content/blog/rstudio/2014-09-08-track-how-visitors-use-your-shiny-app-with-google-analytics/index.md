@@ -1,9 +1,11 @@
 ---
 title: Track how visitors use your Shiny app with Google Analytics
+description: "New article: track visitors and usage patterns in your Shiny apps using Google Analytics and jQuery."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-09-08'
-categories:
+topics:
   - Interactive Apps
 slug: track-how-visitors-use-your-shiny-app-with-google-analytics
 blogcategories:

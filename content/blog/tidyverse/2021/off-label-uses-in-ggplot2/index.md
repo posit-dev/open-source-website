@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://data-imaginist.com
   author: Thomas Lin Pedersen
-categories:
+topics:
   - Best Practices
 tags:
   - Off-label

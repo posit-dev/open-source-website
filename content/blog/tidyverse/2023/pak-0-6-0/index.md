@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/blue-white-orange-and-brown-container-van-163726/
   author: Pixabay
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

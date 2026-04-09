@@ -1,9 +1,11 @@
 ---
 title: Shiny 0.10
+description: "Shiny 0.10 adds interactive document support, flowLayout/splitLayout, validate/need for errors, and server-side selectize."
+auto-description: true
 people:
   - Joe Cheng
 date: '2014-06-20'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-0-10
 blogcategories:
@@ -27,7 +29,7 @@ Shiny 0.10 is now available on CRAN.
 
 ## Interactive documents
 
-In this release, the biggest changes were under the hood to support the creation of [interactive documents](https://rmarkdown.rstudio.com/authoring_shiny.html). If you haven't had a chance to check out interactive documents, we really encourage you to do so---it may be the [easiest way to learn Shiny](https://blog.rstudio.com/2014/06/19/interactive-documents-an-incredibly-easy-way-to-use-shiny/).
+In this release, the biggest changes were under the hood to support the creation of [interactive documents](https://rmarkdown.rstudio.com/authoring_shiny.html). If you haven't had a chance to check out interactive documents, we really encourage you to do so---it may be the [easiest way to learn Shiny](/blog/2014-06-19_interactive-documents-an-incredibly-easy-way-to-use-shiny/).
 
 ## New layout functions
 

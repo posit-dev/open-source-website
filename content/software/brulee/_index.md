@@ -1,4 +1,8 @@
 ---
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Machine Learning
 color: '#F7AD63'
 description: High-Level Modeling Functions with 'torch'
 github: tidymodels/brulee

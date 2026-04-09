@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
 color: '#2C0A33'
 description: Tools for theming Shiny and R Markdown via Bootstrap 3, 4, or 5.
 github: rstudio/bslib

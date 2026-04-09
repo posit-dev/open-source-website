@@ -10,7 +10,7 @@ description: "A new version of corrr features noteworthy improvements. \n"
 photo:
   url: https://unsplash.com/photos/MOO6k3RaiwE
   author: Omar Flores
-categories:
+topics:
   - Data Wrangling
 tags:
   - Correlation

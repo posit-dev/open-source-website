@@ -10,7 +10,7 @@ image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/eksqjXTLpak
   author: Nathan Dumlao
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

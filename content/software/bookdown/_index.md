@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- Interactive Apps
+- Publishing
 color: '#F9EAC5'
 description: Authoring Books and Technical Documents with R Markdown
 github: rstudio/bookdown

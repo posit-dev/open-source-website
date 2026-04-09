@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/Uf-c4u1usFQ
   author: Tim Evans
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
@@ -43,7 +43,7 @@ You can see a full list of changes in the [release notes](https://googledrive.ti
 
 If you are generally fairly passive about googledrive auth, then you should just sit back and let things happen organically during usage. If you've used googledrive before, you can expect to see some messages about cleaning and relocating the token cache when you first use v2.0.0. You can also expect to re-authenticate yourself with Google and re-authorize the "Tidyverse API Packages" to work with your files. This is all due to changes in gargle.
 
-If your usage requires you to be more proactive about auth, read the [blog post for gargle's recent v1.2.0 release](https://www.tidyverse.org/blog/2021/07/gargle-1-2-0/). A key point is that we have rolled the built-in OAuth client, which is why those relying on it will need to re-auth.
+If your usage requires you to be more proactive about auth, read the [blog post for gargle's recent v1.2.0 release](/blog/2021-07-04_gargle-1-2-0/). A key point is that we have rolled the built-in OAuth client, which is why those relying on it will need to re-auth.
 
 **If the rolling of the tidyverse OAuth client is highly disruptive to your workflow, consider this a wake-up call** that you should be using your own OAuth client or, quite possibly, an entirely different method of auth. Our credential rolling will have no impact on users who use their own OAuth client or service account tokens.
 

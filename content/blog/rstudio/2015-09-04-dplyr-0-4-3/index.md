@@ -1,9 +1,11 @@
 ---
 title: dplyr 0.4.3
+description: "dplyr 0.4.3 fixes mutate() crashes, improves non-ASCII column support, shows column types when printing, and adds bind_rows(.id)."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-09-04'
-categories:
+topics:
   - Data Wrangling
 slug: dplyr-0-4-3
 blogcategories:

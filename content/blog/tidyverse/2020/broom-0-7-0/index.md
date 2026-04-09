@@ -10,7 +10,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/3gS-lDkOuJ4
   author: Timothy Dykes
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

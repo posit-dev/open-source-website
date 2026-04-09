@@ -1,5 +1,7 @@
 ---
 title: testthat 0.10.0
+description: "testthat 0.10.0 improves R CMD check output, adds skip_if_not_installed(), and soft-deprecates expect_that() style."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-05-29'
@@ -8,7 +10,7 @@ ported_from: rstudio
 port_status: in-progress
 software: ["testthat"]
 languages: ["R"]
-categories:
+topics:
   - Best Practices
 tags:
   - RStudio

@@ -1,9 +1,11 @@
 ---
 title: readxl 1.0.0
+description: "readxl 1.0.0: target specific cells for reading Excel files plus new logical and list column types."
+auto-description: true
 people:
   - Jenny Bryan
 date: '2017-04-19'
-categories:
+topics:
   - Data Wrangling
 slug: readxl-1-0-0
 blogcategories:

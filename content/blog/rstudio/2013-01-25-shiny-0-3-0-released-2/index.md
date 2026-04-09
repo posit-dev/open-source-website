@@ -1,9 +1,11 @@
 ---
 title: Shiny 0.3.0 released
+description: "Shiny 0.3.0 improves reactive scheduling efficiency and adds runGitHub() for running apps from GitHub."
+auto-description: true
 people:
   - Winston Chang
 date: '2013-01-25'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-0-3-0-released-2
 blogcategories:

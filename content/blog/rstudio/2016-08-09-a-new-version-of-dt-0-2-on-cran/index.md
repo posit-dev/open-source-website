@@ -1,9 +1,11 @@
 ---
 title: A New Version of DT (0.2) on CRAN
+description: "DT 0.2 adds the Buttons extension, row/column/cell selection, and functions to modify tables without rebuilding."
+auto-description: true
 people:
   - Yihui Xie
 date: '2016-08-09'
-categories:
+topics:
   - Visualization
   - Interactive Apps
 slug: a-new-version-of-dt-0-2-on-cran

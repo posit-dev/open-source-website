@@ -1,9 +1,11 @@
 ---
 title: ggplot2 updates
+description: "ggplot2 hits 1.0.0—a mature, stable release. Second edition of the ggplot2 book is in progress."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-01-09'
-categories:
+topics:
   - Visualization
 slug: ggplot2-updates
 blogcategories:

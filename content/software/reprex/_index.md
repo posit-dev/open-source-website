@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Publishing
+- Visualization
 color: '#176D3C'
 description: Render bits of R code for sharing, e.g., on GitHub or StackOverflow.
 github: tidyverse/reprex

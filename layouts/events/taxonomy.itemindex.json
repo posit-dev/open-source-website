@@ -1,0 +1,7 @@
+{{- $eventsSection := site.GetPage "/events" -}}
+{{- $entries := slice -}}
+{{- range $eventsSection.Pages -}}
+  {{- $section := partial "event-section.html" . -}}
+  {{- $entries = $entries | append (partial "item-index-entry.html" (dict "page" . "section" $section)) -}}
+{{- end -}}
+{{- $entries | jsonify -}}

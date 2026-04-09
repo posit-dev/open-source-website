@@ -1,18 +1,58 @@
-{{ if (or .Paginator.HasPrev .Paginator.HasNext) }}
-<div class="flex flex-row justify-center mt-6 gap-2">
-  {{ if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}"
-      class="flex flex-row text-base font-semibold rounded-md text-gray-700 bg-gray-200 p-2 pr-3">
-      <i class="h-6 w-6 flex-none mr-1">{{ partial "icon.html" "caret-left" }}</i>
-      <span>{{ T "paginator.newer_posts" }}</span>
+{{/*
+  pagination.html — Renders pagination controls for paginated lists.
+
+  Input context: a Hugo Pager object (from .Paginate).
+  Hidden by JS when infinite scroll is active.
+*/}}
+{{ $pager := . }}
+{{ if gt $pager.TotalPages 1 }}
+<nav data-pagination class="flex justify-center items-center gap-1 my-8 text-sm">
+
+  {{/* First + Previous */}}
+  {{ if $pager.HasPrev }}
+    <a href="{{ $pager.First.URL }}" class="pagination-btn" title="First page">
+      <span class="icon-[boxicons--chevrons-left] w-5 h-5"></span>
     </a>
-  {{ end }}
-  {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}"
-      class="flex flex-row text-base font-semibold rounded-md text-gray-700 bg-gray-200 p-2 pl-3">
-      <span>{{ T "paginator.older_posts" }}</span>
-      <i class="h-6 w-6 flex-none ml-1">{{ partial "icon.html" "caret-right" }}</i>
+    <a href="{{ $pager.Prev.URL }}" class="pagination-btn" title="Previous page">
+      <span class="icon-[boxicons--chevron-left] w-5 h-5"></span>
     </a>
+  {{ else }}
+    <span class="pagination-btn-disabled">
+      <span class="icon-[boxicons--chevrons-left] w-5 h-5"></span>
+    </span>
+    <span class="pagination-btn-disabled">
+      <span class="icon-[boxicons--chevron-left] w-5 h-5"></span>
+    </span>
   {{ end }}
-</div>
+
+  {{/* Page numbers: previous 3, current, next 3 */}}
+  {{ range $pager.Pagers }}
+    {{ $distance := sub .PageNumber $pager.PageNumber }}
+    {{ if and (ge $distance -3) (le $distance 3) }}
+      {{ if eq .PageNumber $pager.PageNumber }}
+        <span class="pagination-current">{{ .PageNumber }}</span>
+      {{ else }}
+        <a href="{{ .URL }}" class="pagination-btn">{{ .PageNumber }}</a>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Next + Last */}}
+  {{ if $pager.HasNext }}
+    <a href="{{ $pager.Next.URL }}" class="pagination-btn" title="Next page">
+      <span class="icon-[boxicons--chevron-right] w-5 h-5"></span>
+    </a>
+    <a href="{{ $pager.Last.URL }}" class="pagination-btn" title="Last page">
+      <span class="icon-[boxicons--chevrons-right] w-5 h-5"></span>
+    </a>
+  {{ else }}
+    <span class="pagination-btn-disabled">
+      <span class="icon-[boxicons--chevron-right] w-5 h-5"></span>
+    </span>
+    <span class="pagination-btn-disabled">
+      <span class="icon-[boxicons--chevrons-right] w-5 h-5"></span>
+    </span>
+  {{ end }}
+
+</nav>
 {{ end }}

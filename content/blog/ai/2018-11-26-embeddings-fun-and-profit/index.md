@@ -4,7 +4,7 @@ description: |
   Embedding layers are not just useful when working with language data. As "entity embeddings", they've recently become famous for applications on tabular, small-scale data. In this post, we exemplify two possible use cases, also drawing attention to what not to expect.
 date: '2018-11-26'
 slug: keydana2018dembeddingsfunandprofit
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

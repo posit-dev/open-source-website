@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#72994E'
 description: Tidyverse design principles
 github: tidyverse/design

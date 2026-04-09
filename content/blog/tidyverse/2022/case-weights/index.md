@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/iLKK0eFTywU
   author: Graphic Node
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/1Pzhr6XPl6k
   author: Derek Story
-categories:
+topics:
   - Machine Learning
 tags:
   - Parallelism
@@ -40,8 +40,8 @@ You can install it from CRAN, along with the rest of the core packages in tidymo
 
 The 1.2.0 release of tune has introduced support for two major features that we've written about on the tidyverse blog already:
 
--   [Survival analysis for time-to-event data with tidymodels](https://www.tidyverse.org/blog/2024/04/tidymodels-survival-analysis/)
--   [Fair machine learning with tidymodels](https://www.tidyverse.org/blog/2024/03/tidymodels-fairness/)
+-   [Survival analysis for time-to-event data with tidymodels](/blog/2024-04-03_tidymodels-survival-analysis/)
+-   [Fair machine learning with tidymodels](/blog/2024-03-21_tidymodels-fairness/)
 
 While those features got their own blog posts, there are several more features in this release that we thought were worth calling out. This post will highlight improvements to our support for parallel processing, the introduction of support for percentile confidence intervals for performance metrics, and a few other bits and bobs. You can see a full list of changes in the [release notes](https://github.com/tidymodels/tune/releases/tag/v1.2.0).
 
@@ -131,7 +131,7 @@ The code to do so with future is similarly simple. Users first load the [future]
 For users, the transition to parallelism with future has several benefits:
 
 -   The futureverse presently supports a greater number of parallelism technologies and has been more likely to receive implementations for new ones.
--   Once foreach is fully deprecated, users will be able to use the [interactive logger](https://www.tidyverse.org/blog/2023/04/tuning-delights/#interactive-issue-logging) when tuning in parallel.
+-   Once foreach is fully deprecated, users will be able to use the [interactive logger](/blog/2023-04-20_tuning-delights/#interactive-issue-logging) when tuning in parallel.
 
 From our perspective, transitioning our parallelism support to future makes our packages much more maintainable, reducing complexity in random number generation, error handling, and progress reporting.
 

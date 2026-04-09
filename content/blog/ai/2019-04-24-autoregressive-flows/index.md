@@ -4,7 +4,7 @@ description: |
   Continuing from the recent introduction to bijectors in TensorFlow Probability (TFP), this post brings autoregressivity to the table. Using TFP through the new R package tfprobability, we look at the implementation of masked autoregressive flows (MAF) and put them to use on two different datasets.
 date: '2019-04-24'
 slug: keydana2019autoregressive
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -28,6 +28,7 @@ tags:
   - Generative models
   - TensorFlow
   - Keras
+math: true
 ---
 
 

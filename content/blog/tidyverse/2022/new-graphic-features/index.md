@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://versum.xyz/token/versum/15341
   author: Thomas Lin Pedersen
-categories:
+topics:
   - Best Practices
 tags:
   - Graphics

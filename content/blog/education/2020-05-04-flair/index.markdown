@@ -112,13 +112,13 @@ decorate("geoms") %>%
 <pre><code class='language-r'><code>baby_names %>%<br>&nbsp;&nbsp;ggplot(aes(x = Year, y = Count, <span style='background-color:#ffff7f'>fill = </span>Gender)) +<br>&nbsp;&nbsp;geom<span style='background-color:#ffff7f'>_col</span>()</code></code></pre>
 
 
-<img src="/blog/2020-05-04-flair/index_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<img src="unnamed-chunk-8-1.png" width="672" />
 
 
 <pre><code class='language-r'><code>baby_names %>%<br>&nbsp;&nbsp;ggplot(aes(x = Year, y = Count, <span style='background-color:#ffff7f'>color = </span>Gender)) +<br>&nbsp;&nbsp;geom<span style='background-color:#ffff7f'>_line</span>()</code></code></pre>
 
 
-<img src="/blog/2020-05-04-flair/index_files/figure-html/unnamed-chunk-8-2.png" width="672" />
+<img src="unnamed-chunk-8-2.png" width="672" />
 
 *Note:* If you have many pieces of code to flair, and you don't want to manually specify everything, the `flair_rx()` function lets you input regular expressions instead of fixed strings.
 
@@ -213,7 +213,7 @@ the plot output.
 <pre><code class='language-r'><code>library(<span style='background-color:pink'>ggplot2</span>)<br><br>baby_names %>%<br>&nbsp;&nbsp;<span style='background-color:pink'>ggplot</span>(aes(y = <span style='background-color:#ffff7f'> &nbsp;&nbsp;&nbsp;&nbsp;</span>, x = <span style='background-color:#ffff7f'> &nbsp;&nbsp;&nbsp;</span>, color = <span style='background-color:#ffff7f'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>)) +<br>&nbsp;&nbsp;geom_<span style='background-color:#ffff7f'> &nbsp;&nbsp;&nbsp;&nbsp;</span>() +<br>&nbsp;&nbsp;geom_<span style='background-color:#ffff7f'> &nbsp;&nbsp;&nbsp;</span>() +<br>&nbsp;&nbsp;theme_<span style='background-color:#ffff7f'> &nbsp;&nbsp;&nbsp;&nbsp;</span>()</code></code></pre>
 
 
-<img src="/blog/2020-05-04-flair/index_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<img src="unnamed-chunk-10-1.png" width="672" />
 
 Here I have hidden the flair chunk, so that you can see the exercise as the students do.
 This is what it looked like:

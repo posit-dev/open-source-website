@@ -1,9 +1,11 @@
 ---
 title: Introduction to Data Science with R video workshop
+description: "New 8-hour video course from RStudio and O'Reilly covering R programming, data manipulation, visualization, and modeling."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-11-06'
-categories:
+topics:
   - MLOps and Admin
 slug: introduction-to-data-science-with-r-video-workshop
 blogcategories:

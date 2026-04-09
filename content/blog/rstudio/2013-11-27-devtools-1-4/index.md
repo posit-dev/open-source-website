@@ -1,9 +1,11 @@
 ---
 title: devtools 1.4 now available
+description: "devtools 1.4 adds automated vignette building and a simpler install_github() syntax."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2013-11-27'
-categories:
+topics:
   - Best Practices
 slug: devtools-1-4
 blogcategories:

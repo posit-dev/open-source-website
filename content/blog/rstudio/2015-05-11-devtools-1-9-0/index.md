@@ -1,9 +1,11 @@
 ---
 title: devtools 1.8.0
+description: "devtools 1.8 adds use_git(), use_test(), dr_devtools(), and better dependency management with package_deps()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-05-11'
-categories:
+topics:
   - Best Practices
 slug: devtools-1-9-0
 blogcategories:

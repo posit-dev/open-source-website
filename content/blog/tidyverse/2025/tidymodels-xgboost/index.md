@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/person-in-green-jacket-and-black-pants-riding-black-snowboard-on-snow-covered-mountain-during-daytime-l6ZJR-7ZpQY
   author: Markos Mant
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

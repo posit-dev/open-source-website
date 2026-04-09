@@ -1,4 +1,8 @@
 ---
+topics:
+- Artificial Intelligence
+- Interactive Apps
+- Machine Learning
 color: '#326CBA'
 description: Customer Churn Shiny Application
 github: rstudio/keras-customer-churn

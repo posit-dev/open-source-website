@@ -1,10 +1,12 @@
 ---
 title: 'Announcing blogdown: Create Websites with R Markdown'
+description: "Announcing blogdown: create static websites with R Markdown and Hugo."
+auto-description: true
 people:
   - Yihui Xie
 date: '2017-09-11'
 slug: announcing-blogdown
-categories:
+topics:
   - Publishing
 tags:
   - Markdown

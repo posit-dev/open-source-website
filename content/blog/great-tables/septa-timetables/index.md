@@ -1,5 +1,7 @@
 ---
 title: Recreating Septa Transit Timetables in Python
+description: "Learn to build complex table layouts in Great Tables: vertical text, column spanners, and zebra striping."
+auto-description: true
 people:
   - Michael Chow
   - Rich Iannone
@@ -9,7 +11,7 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

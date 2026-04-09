@@ -1,9 +1,11 @@
 ---
 title: ggplot2 2.1.0
+description: "ggplot2 2.1.0 fixes bugs from 2.0.0 with better histogram binning, consistent argument ordering, and alpha behavior."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-03-03'
-categories:
+topics:
   - Data Wrangling
 slug: ggplot2-2-1-0
 blogcategories:
@@ -22,7 +24,7 @@ ported_categories:
 ---
 
 
-I'm very pleased to announce the release of ggplot2 2.1.0, scales 0.4.0, and gtable 0.2.0. These are set of relatively minor updates that fix a whole bunch of little problems that crept in during the [last big update](https://blog.rstudio.com/2015/12/21/ggplot2-2-0-0/). The most important changes are described below.
+I'm very pleased to announce the release of ggplot2 2.1.0, scales 0.4.0, and gtable 0.2.0. These are set of relatively minor updates that fix a whole bunch of little problems that crept in during the [last big update](/blog/2015-12-21_ggplot2-2-0-0/). The most important changes are described below.
 
   1. When mapping an aesthetic to a constant the default guide title is the name of the aesthetic (i.e. "colour"), not the value (i.e. "loess"). This is a really handy technique for labelling individual layers:
 

@@ -1,5 +1,7 @@
 ---
 title: usethis 1.6.0
+description: "usethis 1.6.0: GitHub Actions for CI, smoother package creation, and improved PR workflows."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2020-04-11'
@@ -139,7 +141,7 @@ We made a couple of small changes to ease other minor frustrations:
 
 ## Contributing to packages via GitHub pull requests
 
-Based on our experiences at [tidyverse developer day](https://www.tidyverse.org/blog/2019/11/tidyverse-dev-day-2020/), we've tweaked the behaviour of usethis to ensure that new files have the same line ending as the rest of the project. We've also continued to polish our family of pull request helpers to work in more real-world situations. And, thanks to [Mine Cetinkaya-Rundel](http://www2.stat.duke.edu/~mc301/), we now have an article that [explains the overall workflow](https://usethis.r-lib.org/articles/articles/pr-functions.html).
+Based on our experiences at [tidyverse developer day](/blog/2019-11-05_tidyverse-dev-day-2020/), we've tweaked the behaviour of usethis to ensure that new files have the same line ending as the rest of the project. We've also continued to polish our family of pull request helpers to work in more real-world situations. And, thanks to [Mine Cetinkaya-Rundel](http://www2.stat.duke.edu/~mc301/), we now have an article that [explains the overall workflow](https://usethis.r-lib.org/articles/articles/pr-functions.html).
 
 ## Thank you!
 

@@ -1,9 +1,11 @@
 ---
 title: magrittr 1.5
+description: "magrittr 1.5 adds functional sequences (define functions with pipes), lambda syntax with braces, and %T>%, %$%, %<>% operators."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-12-01'
-categories:
+topics:
   - Data Wrangling
 slug: magrittr-1-5
 blogcategories:

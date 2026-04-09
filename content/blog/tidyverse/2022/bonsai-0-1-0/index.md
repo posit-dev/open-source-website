@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/-OBffuUekfQ
   author: 五玄土
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

@@ -11,6 +11,11 @@ social:
   orcid: ""
   website: "https://jeroenjanssens.com"
   youtube: ""
+software:
+- open-source-website
+- supported-by-posit
+- plotnine
+- concept-maps
 ---
 
 Jeroen Janssens, PhD, is Head of Developer Relations at Posit, PBC.

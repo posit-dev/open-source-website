@@ -4,6 +4,12 @@
 {{ end -}}
 <script src="{{ $built.RelPermalink }}" defer></script>
 
+{{- $externalLinks := resources.Get "js/external-links.js" -}}
+{{- if not hugo.IsDevelopment }}
+  {{- $externalLinks = $externalLinks | minify | fingerprint -}}
+{{ end -}}
+<script src="{{ $externalLinks.RelPermalink }}" defer></script>
+
 {{- $easeScroll := resources.Get "js/ease-scroll.js" -}}
 {{- if not hugo.IsDevelopment }}
   {{- $easeScroll = $easeScroll | minify | fingerprint -}}
@@ -72,5 +78,11 @@
 {{ end -}}
 <script src="{{ $jsToc.RelPermalink }}" defer></script>
 {{- end -}}
+
+{{- $filterSort := resources.Get "js/search-filter-sort.js" | js.Build "search-filter-sort.js" -}}
+{{- if not hugo.IsDevelopment }}
+  {{- $filterSort = $filterSort | minify | fingerprint -}}
+{{ end -}}
+<script>if(document.querySelector('[data-item-container]')){var s=document.createElement('script');s.src='{{ $filterSort.RelPermalink }}';s.defer=true;document.body.appendChild(s);}</script>
 
 {{- partial "custom_footer.html" . -}}

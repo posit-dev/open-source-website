@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#096EF9'
 description: Fast reading of delimited files
 github: tidyverse/vroom

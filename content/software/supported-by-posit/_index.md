@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Publishing
 color: '#EC7A53'
 description: Add a "Supported by Posit" badge to a package website
 github: posit-dev/supported-by-posit

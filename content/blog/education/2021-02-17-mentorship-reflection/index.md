@@ -5,7 +5,7 @@ author:
 people:
   - Christian Okoth
 date: '2021-02-17'
-categories:
+topics:
   - Community
 description: |
   A mentorship experience during undergrad opens up opportunities for learning

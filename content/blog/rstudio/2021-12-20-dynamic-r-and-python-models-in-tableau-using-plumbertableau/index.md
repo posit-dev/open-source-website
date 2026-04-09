@@ -20,7 +20,7 @@ ported_from: rstudio
 port_status: in-progress
 software: ["plumbertableau"]
 languages: ["R", "Python"]
-categories:
+topics:
   - Interactive Apps
   - MLOps and Admin
 ---

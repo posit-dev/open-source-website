@@ -1,9 +1,11 @@
 ---
 title: 'sparklyr 0.7: Spark Pipelines and Machine Learning'
+description: "sparklyr 0.7: ML Pipelines API for building, tuning, and deploying machine learning workflows at scale."
+auto-description: true
 people:
   - Kevin Kuo
 date: '2018-01-29'
-categories:
+topics:
   - Machine Learning
   - MLOps and Admin
 tags:
@@ -197,7 +199,7 @@ ggplot(predictions, aes(
   geom_point()
 ```
 
-![](/post/2018-01-29-sparklyr-0-7_files/figure-html/unnamed-chunk-7-1.png)
+![](unnamed-chunk-7-1.png)
 
 ### Frequent pattern mining
 

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/uzw4MvfG5ps
   author: Henry & Co.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Databases
@@ -90,13 +90,13 @@ Here's a look at the new and improved [`bq_table_download()`](https://bigrquery.
 
 If you are generally fairly passive about bigrquery auth, then you should just sit back and let things happen organically during usage. If you've used bigrquery before, you can expect to see some messages about cleaning and relocating the token cache when you first use v1.4.0. You can also expect to re-authenticate yourself with Google and re-authorize the "Tidyverse API Packages" to work with your files. This is all due to changes in gargle.
 
-If your usage requires you to be more proactive about auth, read the [blog post for gargle's recent v1.2.0 release](https://www.tidyverse.org/blog/2021/07/gargle-1-2-0/). A key point is that we have rolled the built-in OAuth client, which is why those relying on it will need to re-auth.
+If your usage requires you to be more proactive about auth, read the [blog post for gargle's recent v1.2.0 release](/blog/2021-07-04_gargle-1-2-0/). A key point is that we have rolled the built-in OAuth client, which is why those relying on it will need to re-auth.
 
 **If the rolling of the tidyverse OAuth client is highly disruptive to your workflow, consider this a wake-up call** that you should be using your own OAuth client or, quite possibly, an entirely different method of auth. Our credential rolling will have no impact on users who use their own OAuth client or service account tokens.
 
 gargle v1.2.0 offers support for a new method of auth that is especially relevant to bigrquery users: *workload identity federation*. This is a new (as of April 2021) keyless authentication mechanism offered by Google. Identity federation allows applications running on a non-Google Cloud platform, such as AWS, to access Google Cloud resources without using a conventional service account token, eliminating the security problem posed by long-lived, powerful service account credential files. Basically, instead of storing sensitive information in a file that must be managed with great care, the necessary secrets are obtained on-the-fly and exchanged for short-lived tokens, with very granular control over what actions are allowed. There is a cost, of course, which is that this auth method requires substantial configuration on both the GCP and AWS sides.
 
-See the [gargle v1.2.0 blog post](https://www.tidyverse.org/blog/2021/07/gargle-1-2-0/) and the docs for [`gargle::credentials_external_account()`](https://gargle.r-lib.org/reference/credentials_external_account.html) to learn more.
+See the [gargle v1.2.0 blog post](/blog/2021-07-04_gargle-1-2-0/) and the docs for [`gargle::credentials_external_account()`](https://gargle.r-lib.org/reference/credentials_external_account.html) to learn more.
 
 ## Acknowledgements
 

@@ -1,9 +1,11 @@
 ---
 title: readr 1.0.0
+description: "readr 1.0.0 improves column guessing with printed specs, adds better date/time parsers and low-level file readers."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-08-05'
-categories:
+topics:
   - Data Wrangling
 slug: readr-1-0-0
 blogcategories:

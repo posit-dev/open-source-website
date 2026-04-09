@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
 color: '#311307'
 description: Pipeable steps for feature engineering and data preprocessing to prepare
   for modeling

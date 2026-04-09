@@ -33,4 +33,4 @@ in the end we were only able to select five:
 They will all start in May,
 and will blog here regularly about their progress—we are looking forward to working with them.
 
-[announcement]: https://education.rstudio.com/blog/2020/02/applications-for-2020-intern-program-are-now-open/
+[announcement]: /blog/2020-02-20_applications-for-2020-intern-program-are-now-open/

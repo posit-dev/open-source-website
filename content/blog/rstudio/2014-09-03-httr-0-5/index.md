@@ -1,9 +1,11 @@
 ---
 title: httr 0.5
+description: "httr 0.5 adds write_disk() to save response bodies directly to disk, plus preliminary HTTP caching support."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-09-03'
-categories:
+topics:
   - Data Wrangling
 slug: httr-0-5
 blogcategories:

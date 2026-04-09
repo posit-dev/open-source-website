@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 color: '#2E6B5B'
 description: Easy interactive dashboards for R
 github: rstudio/flexdashboard

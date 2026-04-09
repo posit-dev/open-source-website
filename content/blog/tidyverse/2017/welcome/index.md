@@ -9,7 +9,7 @@ people:
 photo:
   url: https://unsplash.com/photos/n6vS3xlnsCc
   author: Kelley Bozarth
-categories:
+topics:
   - Community
 image: welcome-wd.jpg
 ported_from: tidyverse
@@ -26,13 +26,13 @@ Welcome to the new and improved tidyverse website. We are working hard to make t
 
 As well as radically improved graphic design, the site includes four new components:
 
-* [Packages](/packages): a listing of all packages in the tidyverse, 
+* [Packages](https://www.tidyverse.org/packages/): a listing of all packages in the tidyverse, 
   broken down by domain.
   
-* [Learn](/learn): our advice on learning the tidyverse.
+* [Learn](https://www.tidyverse.org/learn/): our advice on learning the tidyverse.
 
-* [Help](/help): are you stuck on something involving the tidyverse?
-  Learn how to write [a reprex](/help#reprex) then learn where to ask for 
+* [Help](https://www.tidyverse.org/help/): are you stuck on something involving the tidyverse?
+  Learn how to write [a reprex](https://www.tidyverse.org/help/#reprex) then learn where to ask for 
   help.
 
 * This blog! Expect to see regular updates on what's happening in the 

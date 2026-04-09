@@ -25,6 +25,7 @@ tags:
   - Quarto
   - Quarto 1.5
   - Tables
+slug: beautiful-tables-in-typst
 ---
 
 Quarto now allows HTML Tables with CSS styling to be output in Typst.

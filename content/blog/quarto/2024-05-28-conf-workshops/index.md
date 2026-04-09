@@ -8,7 +8,7 @@ date: '2024-05-28'
 image: images/conf-workshops-thumbnail.png
 image-alt: posit::conf(2024) iconography including Seattle skyline on the left and
   the words 'Quarto workshops' on the right.
-categories:
+topics:
   - Publishing
   - Community
 ported_from: quarto
@@ -22,6 +22,7 @@ tags:
   - Quarto
   - Learn
   - Workshop
+slug: conf-workshops
 ---
 
 

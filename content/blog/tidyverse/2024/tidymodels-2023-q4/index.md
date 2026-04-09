@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/landscape-photography-of-snow-pathway-between-trees-during-winter-688660/
   author: Simon Berger
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
@@ -40,9 +40,9 @@ The [tidymodels](https://www.tidymodels.org/) framework is a collection of R pac
 
 Since the beginning of 2021, we have been publishing [quarterly updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing what's new in the tidymodels ecosystem. The purpose of these regular posts is to share useful new features and any updates you may have missed. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including our roundup posts as well as those that are more focused, like this post from the past couple of months:
 
--   [Three ways errors are about to get better in tidymodels](https://www.tidyverse.org/blog/2023/11/tidymodels-errors-q4/)
+-   [Three ways errors are about to get better in tidymodels](/blog/2023-11-10_tidymodels-errors-q4/)
 
-Since [our last roundup post](https://www.tidyverse.org/blog/2022/12/tidymodels-2022-q4/), there have been CRAN releases of 7 tidymodels packages. Here are links to their NEWS files:
+Since [our last roundup post](/blog/2022-12-29_tidymodels-2022-q4/), there have been CRAN releases of 7 tidymodels packages. Here are links to their NEWS files:
 
 <div class="highlight">
 

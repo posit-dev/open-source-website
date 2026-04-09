@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Publishing
 color: '#447099'
 description: ''
 github: rstudio/sparkDemos

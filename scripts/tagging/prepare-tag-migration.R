@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 # Prepare tag migration:
 # 1. Add ported_from to tags if not already there
-# 2. Add non-redundant ported_categories as tags (normalized)
+# 2. Add non-redundant ported_topics as tags (normalized)
 # 3. Remove tags that duplicate software/languages (except if they match ported_from)
 # 4. Apply sentence case to all tags
 
@@ -14,7 +14,7 @@ sentence_case <- function(x) {
   paste0(toupper(substr(x, 1, 1)), tolower(substr(x, 2, nchar(x))))
 }
 
-# Normalization mapping for ported_categories (before split/sentence case)
+# Normalization mapping for ported_topics (before split/sentence case)
 # Note: tags with "/" will be split later, so don't consolidate those here
 normalize_ported_cat <- function(pc) {
   mapping <- list(
@@ -134,12 +134,12 @@ normalize_final_tag <- function(tag) {
 # Get reference lists for redundancy checks
 all_software <- unique(tolower(unlist(lapply(posts, function(p) p$frontmatter$software))))
 all_languages <- unique(tolower(unlist(lapply(posts, function(p) p$frontmatter$languages))))
-all_categories <- unique(tolower(unlist(lapply(posts, function(p) p$frontmatter$categories))))
+all_topics <- unique(tolower(unlist(lapply(posts, function(p) p$frontmatter$topics))))
 
-# ported_categories that are redundant with categories/software/languages
+# ported_topics that are redundant with topics/software/languages
 is_redundant_ported_cat <- function(pc) {
   pc_lower <- tolower(pc)
-  pc_lower %in% all_software || pc_lower %in% all_languages || pc_lower %in% all_categories
+  pc_lower %in% all_software || pc_lower %in% all_languages || pc_lower %in% all_topics
 }
 
 # Process each post
@@ -165,8 +165,8 @@ for (i in seq_along(posts)) {
     }
   }
 
-  # 2. Add non-redundant ported_categories (normalized)
-  ported_cats <- p$frontmatter$ported_categories
+  # 2. Add non-redundant ported_topics (normalized)
+  ported_cats <- p$frontmatter$ported_topics
   if (!is.null(ported_cats)) {
     for (pc in ported_cats) {
       normalized <- normalize_ported_cat(pc)

@@ -1,9 +1,11 @@
 ---
 title: 'flexdashboard: Easy interactive dashboards for R'
+description: "Introducing flexdashboard: create interactive dashboards with R Markdown, htmlwidgets, and optional Shiny components."
+auto-description: true
 people:
   - RStudio Team
 date: '2016-05-17'
-categories:
+topics:
   - Publishing
   - Interactive Apps
 slug: flexdashboard-easy-interactive-dashboards-for-r

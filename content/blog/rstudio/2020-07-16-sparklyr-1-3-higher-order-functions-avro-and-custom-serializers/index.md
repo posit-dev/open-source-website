@@ -6,7 +6,7 @@ people:
   - Yitao Li
 slug: sparklyr-1-3
 date: '2020-07-16'
-categories:
+topics:
   - Data Wrangling
 tags:
   - Big data
@@ -76,7 +76,7 @@ result_tbl %>% dplyr::pull(total_values)
 [1]  4000 15000 20000 25000
 ```
 
-With the result `4000 15000 20000 25000` telling us there are in total $40 dollars worth of pennies, $150 dollars worth of nickels, $200 dollars worth of dimes, and $250 dollars worth of quarters, as expected.
+With the result `4000 15000 20000 25000` telling us there are in total \$40 dollars worth of pennies, \$150 dollars worth of nickels, \$200 dollars worth of dimes, and \$250 dollars worth of quarters, as expected.
 
 Using another sparklyr function named `hof_aggregate()`, which performs an [AGGREGATE](https://spark.apache.org/docs/latest/api/sql/index.html#aggregate) operation in Spark, we can then compute the net worth of Scrooge McDuck based on `result_tbl`, storing the result in a new column named `total`. Notice for this aggregate operation to work, we need to ensure the starting value of aggregation has data type (namely, `BIGINT`) that is consistent with the data type of `total_values` (which is `ARRAY<BIGINT>`), as shown below:
 
@@ -93,7 +93,7 @@ result_tbl %>%
 [1] 64000
 ```
 
-So Scrooge McDuck's net worth is $640 dollars.
+So Scrooge McDuck's net worth is \$640 dollars.
 
 Other higher-order functions supported by Spark SQL so far include `transform`, `filter`, and `exists`, as documented in [here](https://spark.apache.org/docs/latest/api/sql/index.html), and similar to the example above, their counterparts (namely, `hof_transform()`, `hof_filter()`, and `hof_exists()`) all exist in sparklyr 1.3, so that they can be integrated with other `dplyr` verbs in an idiomatic manner in R.
 
@@ -210,7 +210,7 @@ We are also grateful for valuable input on the sparklyr 1.3 roadmap, [#2434](htt
 
 Please note if you believe you are missing from the acknowledgement above, it may be because your contribution has been considered part of the next sparklyr release rather than part of the current release. We do make every effort to ensure all contributors are mentioned in this section. In case you believe there is a mistake, please feel free to contact the author of this blog post via e-mail (yitao at rstudio dot com) and request a correction.
 
-If you wish to learn more about `sparklyr`, we recommend visiting [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and some of the previous release posts such as [sparklyr 1.2](https://blogs.rstudio.com/ai/posts/2020-04-21-sparklyr-1.2.0-released/) and [sparklyr 1.1](https://blog.rstudio.com/2020/01/29/sparklyr-1-1/).
+If you wish to learn more about `sparklyr`, we recommend visiting [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and some of the previous release posts such as [sparklyr 1.2](/blog/2020-04-21_sparklyr-1.2/) and [sparklyr 1.1](/blog/2020-01-29_sparklyr-1-1/).
 
 Thanks for reading!
 

@@ -1,9 +1,11 @@
 ---
 title: R on Travis-CI
+description: "Improved R support on Travis-CI with container-based infrastructure, package caching, and multiple R versions."
+auto-description: true
 people:
   - Jim Hester
 date: '2016-03-09'
-categories:
+topics:
   - Best Practices
 slug: r-on-travis-ci
 blogcategories:

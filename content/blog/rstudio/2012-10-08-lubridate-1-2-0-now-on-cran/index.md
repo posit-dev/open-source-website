@@ -1,9 +1,11 @@
 ---
 title: lubridate 1.2.0 now on CRAN
+description: "lubridate 1.2.0 is 50x faster at parsing dates, adds stamp() for custom formatting, and %m+% for safe month math."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2012-10-08'
-categories:
+topics:
   - Data Wrangling
 slug: lubridate-1-2-0-now-on-cran
 blogcategories:

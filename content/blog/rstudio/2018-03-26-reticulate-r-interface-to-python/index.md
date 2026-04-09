@@ -1,10 +1,12 @@
 ---
 title: 'reticulate: R interface to Python'
+description: "Introducing reticulate: seamless interoperability between R and Python with automatic type conversion."
+auto-description: true
 people:
   - JJ Allaire
 date: '2018-03-26'
 slug: reticulate-r-interface-to-python
-categories:
+topics:
   - Publishing
 tags:
   - Packages

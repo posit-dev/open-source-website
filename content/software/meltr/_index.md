@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#E7B10A'
 description: Read Non-Rectangular Text Data
 github: r-lib/meltr

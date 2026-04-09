@@ -12,7 +12,7 @@ description: "A new version of tune brings significant updates for model tuning 
 photo:
   url: https://unsplash.com/photos/black-car-stereo-turned-on-at-7-qHbg3DKB1Y0
   author: Stephen Andrews
-categories:
+topics:
   - Machine Learning
 tags:
   - Postprocessing
@@ -45,7 +45,7 @@ Those two big improvements to the package: new parallel processing features and 
 
 ## Using future or mirai for parallel processing
 
-[Historically](https://www.tidyverse.org/blog/2024/04/tune-1-2-0/#modernized-support-for-parallel-processing), we've used the foreach package to run calculations in parallel. Sadly, that package is no longer under active development. We've been [progressively moving away](https://tidyverse.org/blog/2024/04/tune-1-2-0/#modernized-support-for-parallel-processing) from it, and as of this version, it is deprecated. In its place, we've added functionality for the [future](https://future.futureverse.org/) and [mirai](https://mirai.r-lib.org/) packages. 
+[Historically](/blog/2024-04-18_tune-1-2-0/#modernized-support-for-parallel-processing), we've used the foreach package to run calculations in parallel. Sadly, that package is no longer under active development. We've been [progressively moving away](/blog/2024-04-18_tune-1-2-0/#modernized-support-for-parallel-processing) from it, and as of this version, it is deprecated. In its place, we've added functionality for the [future](https://future.futureverse.org/) and [mirai](https://mirai.r-lib.org/) packages. 
 
 Previously, you would load a foreach parallel backend package, such as doParallel, doMC, or doFuture, and then register it. For  example:
 
@@ -77,7 +77,7 @@ Each of these is configurable to run in various ways, such as on remote servers.
 
 A postprocessor is an operation that modifies model predictions.  For example, if your classifier can separate classes but its probability estimates are not accurate enough, you can add a _calibrator_ operation that can attempt to adjust those probability estimates. Another good example is for binary classifiers, where the default threshold for classifying a prediction as an event can be adjusted based on its corresponding probability estimate. 
 
-Currently, we've enabled postprocessing using the [tailor package](https://www.tidyverse.org/blog/2024/10/postprocessing-preview/). The operations that are currently available: 
+Currently, we've enabled postprocessing using the [tailor package](/blog/2024-10-08_postprocessing-preview/). The operations that are currently available: 
 
  - `adjust_numeric_calibration()`: Estimate and apply a calibration model for regression problems. 
  - `adjust_numeric_range()`: Truncate the range of predictions.

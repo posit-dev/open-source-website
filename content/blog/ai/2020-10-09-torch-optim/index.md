@@ -4,7 +4,7 @@ description: |
   Today, we wrap up our mini-series on torch basics, adding to our toolset two abstractions: loss functions and optimizers.
 date: '2020-10-09'
 slug: keydanatorchoptim
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

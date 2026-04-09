@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#447099'
 description: WebDriver client in R
 github: rstudio/webdriver

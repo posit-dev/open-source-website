@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#59F330'
 description: Build CLI applications in R
 github: r-lib/Rapp

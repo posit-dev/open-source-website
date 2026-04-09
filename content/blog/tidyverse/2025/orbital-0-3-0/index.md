@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/aerial-view-earth-exploration-flying-60132/
   author: SpaceX
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

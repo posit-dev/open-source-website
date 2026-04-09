@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/two-yellow-red-blue-papers-Ay7Nkvc49ag
   author: Carolina Garcia Tavizon
-categories:
+topics:
   - Best Practices
 tags:
   - rlib

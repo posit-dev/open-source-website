@@ -6,7 +6,7 @@ people:
 date: '2020-03-09'
 description: |
   This post focusses on the idea of the "function lifecycle" which helps  you understand where functions in dplyr are going. Particularly important is the idea of a "superseded" function. A superseded function is not going away, but we no longer recommend using it in new code.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0
@@ -28,7 +28,7 @@ We're very excited to announce the impending arrival of dplyr 1.0.0. We haven't 
 
 ------------------------------------------------------------------------
 
-**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about it](/blog/2020/06/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
+**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about it](/blog/tidyverse/2020/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
 
 ------------------------------------------------------------------------
 
@@ -64,9 +64,9 @@ Using vctrs in dplyr has a number advantages:
 
 -   It allows much more of dplyr to be implemented in R, which enables faster prototyping, which is why this version comes with the first new major verbs since dplyr 0.3.0!
 
--   It makes dplyr more consistent with the rest of the tidyverse, particularly [tidyr 1.0.0](https://www.tidyverse.org/blog/2019/09/tidyr-1-0-0/), which is also implemented on top of vctrs.
+-   It makes dplyr more consistent with the rest of the tidyverse, particularly [tidyr 1.0.0](/blog/2019-09-13_tidyr-1-0-0/), which is also implemented on top of vctrs.
 
--   We benefit from a standardised approach to handling custom (S3) vector types. This mostly a long-term benefit, but it makes dplyr substantially easier to extend from the outside, and I expect it will facilitate a much richer ecosystem of packages surrounding dplyr, in the same way that [ggplot2 2.0.0](https://blog.rstudio.com/2015/12/21/ggplot2-2-0-0/) enabled ggplot2 extension packages to flourish.
+-   We benefit from a standardised approach to handling custom (S3) vector types. This mostly a long-term benefit, but it makes dplyr substantially easier to extend from the outside, and I expect it will facilitate a much richer ecosystem of packages surrounding dplyr, in the same way that [ggplot2 2.0.0](/blog/2015-12-21_ggplot2-2-0-0/) enabled ggplot2 extension packages to flourish.
 
 -   It allows us to drop the expensive BH and Rcpp dependencies, and to generally reduce the amount of C++ needed. This makes compilation much faster and makes it easier to build dplyr in low memory environments.
 

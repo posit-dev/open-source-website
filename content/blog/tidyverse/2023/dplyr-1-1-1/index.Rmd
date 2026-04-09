@@ -48,7 +48,7 @@ library(dplyr)
 
 ## Performance regressions
 
-In the [1.1.0 post on vctrs](/blog/2023/02/dplyr-1-1-0-vctrs), we discussed that we've rewritten all of dplyr's vector functions on top of [vctrs](https://vctrs.r-lib.org/) for improved versatility.
+In the [1.1.0 post on vctrs](/blog/tidyverse/2023/dplyr-1-1-0-vctrs/), we discussed that we've rewritten all of dplyr's vector functions on top of [vctrs](https://vctrs.r-lib.org/) for improved versatility.
 Unfortunately, we accidentally made two sets of functions much slower, especially when used on a data frame with many groups:
 
 -   `case_when()` and `if_else()`
@@ -60,7 +60,7 @@ These performance issues have been addressed, and should be back to 1.0.10 level
 
 ## Revisiting multiple matches
 
-In the [1.1.0 post on joins](/blog/2023/01/dplyr-1-1-0-joins), we discussed the new `multiple` argument that was added to `left_join()` and friends, which had a built in safety check that warned when you performed a join where a row from `x` matched more than one row from `y`.
+In the [1.1.0 post on joins](/blog/tidyverse/2023/dplyr-1-1-0-joins/), we discussed the new `multiple` argument that was added to `left_join()` and friends, which had a built in safety check that warned when you performed a join where a row from `x` matched more than one row from `y`.
 The TLDR of the discussion below is that we've realized that this warning was being thrown in too many cases, so we've adjusted it in such a way that it now only catches the most dangerous type of join (a many-to-many join), meaning that you should see the warning *much* less often.
 
 As a reminder, `multiple` determines what happens when a row from `x` matches more than one row from `y`.

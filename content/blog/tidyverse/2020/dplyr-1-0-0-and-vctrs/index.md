@@ -6,7 +6,7 @@ people:
 date: '2020-04-27'
 description: |
   dplyr now makes heavy use of [vctrs](http://vctrs.r-lib.org/) behind the scenes. This brings with it greater consistency and (hopefully!) more useful error messages.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0
@@ -28,7 +28,7 @@ Today, I wanted to talk a little bit how dplyr 1.0.0 uses the [vctrs](http://vct
 
 ------------------------------------------------------------------------
 
-**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about it](/blog/2020/06/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
+**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about it](/blog/tidyverse/2020/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
 
 ------------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ Combining vectors comes up in many places in the tidyverse, e.g.:
 -   `dplyr::full_join()` has to combine the keys from the `x` and `y` data frames.
 -   `tidyr::pivot_longer()` has to combine multiple columns into one.
 
-Our goal is to unify the code that underlies all these various functions so that there's one consistent, principled approach. We've already made the change in [tidyr](https://www.tidyverse.org/blog/2019/09/tidyr-1-0-0/), and now it's dplyr's turn.
+Our goal is to unify the code that underlies all these various functions so that there's one consistent, principled approach. We've already made the change in [tidyr](/blog/2019-09-13_tidyr-1-0-0/), and now it's dplyr's turn.
 
 Base R behaviour
 ----------------

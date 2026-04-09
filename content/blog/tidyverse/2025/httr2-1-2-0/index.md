@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://chatgpt.com/share/6870349d-20cc-8009-84b0-dd026c75cbb2
   author: chatGPT
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

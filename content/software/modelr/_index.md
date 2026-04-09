@@ -1,4 +1,8 @@
 ---
+topics:
+- Community
+- Data Wrangling
+- Machine Learning
 color: '#1D1D2A'
 description: Helper functions for modelling
 github: tidyverse/modelr

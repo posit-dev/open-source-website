@@ -10,7 +10,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/a-mallard-duck-on-water-6918877/
   author: Kiril Gruev
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

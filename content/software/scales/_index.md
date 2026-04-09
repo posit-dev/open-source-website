@@ -1,4 +1,6 @@
 ---
+topics:
+- Visualization
 color: '#374251'
 description: Tools for ggplot2 scales
 github: r-lib/scales

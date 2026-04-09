@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/XOW1WqrWNKg
   author: Anastasia Zhenina
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

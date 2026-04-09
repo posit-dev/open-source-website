@@ -7,7 +7,7 @@ description: |
 people:
   - Charles Teague
 date: '2022-02-17'
-categories:
+topics:
   - Publishing
 image: margin-content.png
 image-alt: 'Screenshot of two sections of post: Margin Figures, which has a plot in
@@ -26,6 +26,8 @@ tags:
   - Quarto
   - Features
   - Layout
+math: true
+slug: advanced-layout
 ---
 
 

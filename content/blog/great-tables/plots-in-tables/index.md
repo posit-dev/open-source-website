@@ -1,5 +1,7 @@
 ---
 title: Adding Plots to Great Tables
+description: "Add sparklines and small charts to your Great Tables using svg.py, HTML, or plotnine."
+auto-description: true
 people:
   - Jules Walzer-Goldfeld
   - Michael Chow
@@ -8,7 +10,7 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

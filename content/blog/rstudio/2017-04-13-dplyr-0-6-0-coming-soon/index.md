@@ -1,9 +1,11 @@
 ---
 title: dplyr 0.6.0 coming soon!
+description: "dplyr 0.6.0 preview: database changes with dbplyr, CJK encoding support, and tidy evaluation."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2017-04-13'
-categories:
+topics:
   - Data Wrangling
 slug: dplyr-0-6-0-coming-soon
 blogcategories:

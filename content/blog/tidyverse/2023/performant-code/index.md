@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/9Q8PqfeYkMk
   author: Matt Walsh
-categories:
+topics:
   - Best Practices
 tags:
   - Packages

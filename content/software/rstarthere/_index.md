@@ -1,4 +1,10 @@
 ---
+topics:
+- Best Practices
+- Community
+- Data Wrangling
+- Machine Learning
+- Visualization
 color: '#D44000'
 description: A guide to some of the most useful R Packages that we know about
 github: rstudio/RStartHere

@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Interactive Apps
 color: '#EE6331'
 description: DBI revisited
 github: r-dbi/dbi3

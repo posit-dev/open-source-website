@@ -3,7 +3,7 @@ title: Confluence Publishing
 subtitle: Publish from Quarto to Confluence
 description: |
   Quarto 1.3 adds support for publishing individual documents, and projects containing many documents to Atlassian Confluence.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham
@@ -23,6 +23,7 @@ tags:
   - Features
   - Authoring
   - Quarto 1.3
+slug: confluence
 ---
 
 

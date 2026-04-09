@@ -1,9 +1,11 @@
 ---
 title: Package Development cheatsheet, plus Chinese translations
+description: "New devtools cheatsheet for building R packages: structure, DESCRIPTION, roxygen docs, tests, and vignettes—plus Chinese translations."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-03-12'
-categories:
+topics:
   - MLOps and Admin
 slug: package-development-cheatsheet-plus-chinese-translations
 blogcategories:

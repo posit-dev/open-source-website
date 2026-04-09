@@ -1,5 +1,7 @@
 ---
 title: Posit at SciPy 2025
+description: "Catch up on the Shiny team's talks and tutorials from SciPy 2025."
+auto-description: true
 subtitle: Tacoma, WA (July 2025)
 people:
   - Shiny Team
@@ -15,7 +17,7 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

@@ -1,9 +1,11 @@
 ---
 title: devtools 1.9.1
+description: "devtools 1.9.1 adds remote dependencies via DESCRIPTION's Remotes field, improved GitHub integration, and better revdep_check()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-09-13'
-categories:
+topics:
   - Best Practices
 slug: devtools-1-9-1
 blogcategories:

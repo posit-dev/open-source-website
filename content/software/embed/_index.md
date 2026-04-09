@@ -1,4 +1,8 @@
 ---
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Machine Learning
 color: '#D23D45'
 description: Extra recipes for predictor embeddings
 github: tidymodels/embed

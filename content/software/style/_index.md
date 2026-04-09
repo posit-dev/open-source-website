@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
+- Publishing
 color: '#D44000'
 description: The tidyverse style guide for R code
 github: tidyverse/style

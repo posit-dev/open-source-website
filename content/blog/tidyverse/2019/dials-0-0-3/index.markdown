@@ -149,7 +149,7 @@ bind_rows(me_grid, ls_grid, rn_grid) %>%
   coord_fixed(ratio = 1/4)
 ```
 
-<img src="/articles/2019-10-dials-0-0-3_files/figure-html/svm-design-1.png" width="672" />
+<img src="svm-design-1.png" width="672" />
 
 `dials` will be central to the upcoming framework for optimizing tuning parameters so there is much more to come regarding this package. 
 

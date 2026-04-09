@@ -1,7 +1,7 @@
 ---
 title: Latest News from the R Markdown Family
 date: '2020-12-21'
-categories:
+topics:
   - Publishing
 people:
   - Alison Hill
@@ -25,6 +25,7 @@ tags:
   - RStudio
   - R Markdown
   - Packages
+math: true
 ---
 
 Seasons greetings from the R Markdown family! We know many folks are headed into holiday breaks, and we hope you all take time away from work to enjoy...the rest of 2020. If you are like most people, you may be having a hard time keeping up with the latest news and current events in the world. We cannot help much with that (we're in the same boat), but we are here to make your working lives easier! We wanted to take a moment to round up all the latest news from the R Markdown family of packages so that when you re-surface in 2021, you know all you need to know to take advantage of the newest features that will improve your knitting experience. Without further ado, let's get started!
@@ -230,7 +231,7 @@ Finally, we are proud to announce that version 1.0 of the [**distill** package](
 install.packages("distill")
 ```
 
-In a post earlier this month, we shared some highlights from the [latest version of the **distill** package](/2020/12/07/distill/), which now includes site-wide search, a built-in themer, a syntax highlighter optimized for accessibility, and **downlit** integration, to name a few features we are excited about.
+In a post earlier this month, we shared some highlights from the [latest version of the **distill** package](/blog/rstudio/2020-12-04-distill/), which now includes site-wide search, a built-in themer, a syntax highlighter optimized for accessibility, and **downlit** integration, to name a few features we are excited about.
 
 <p style="text-align: right;">• See the <a href="https://pkgs.rstudio.com/distill/news/index.html#distill-v10-cran">release note</a> for full list of changes.</p>
 

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ZbFoi92fyzY
   author: Jahanzeb Ahsan
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
@@ -25,7 +25,7 @@ ported_categories:
 
 In this technical post, we'll dive into some performance improvements we've made to dplyr 1.2.0 to make [`if_else()`](https://dplyr.tidyverse.org/reference/if_else.html) and [`case_when()`](https://dplyr.tidyverse.org/reference/case-and-replace-when.html) up to 30x faster and use up to 10x less memory.
 
-If you haven't seen our [previous post](https://tidyverse.org/blog/2026/02/dplyr-1-2-0/) about the exciting new features in dplyr 1.2.0, you'll want to go check that out first!
+If you haven't seen our [previous post](/blog/2026-02-04_dplyr-1-2-0/) about the exciting new features in dplyr 1.2.0, you'll want to go check that out first!
 
 Here's a before-and-after benchmark with [`if_else()`](https://dplyr.tidyverse.org/reference/if_else.html):
 

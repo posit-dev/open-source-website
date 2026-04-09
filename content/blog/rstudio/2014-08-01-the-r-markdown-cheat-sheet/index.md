@@ -1,9 +1,11 @@
 ---
 title: The R Markdown Cheat Sheet
+description: "New R Markdown cheat sheet: render reports to PDF, HTML, or Word, embed R code, and create interactive documents."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-08-01'
-categories:
+topics:
   - MLOps and Admin
 slug: the-r-markdown-cheat-sheet
 blogcategories:

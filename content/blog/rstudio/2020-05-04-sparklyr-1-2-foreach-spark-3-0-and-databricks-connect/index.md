@@ -1,10 +1,12 @@
 ---
 title: 'sparklyr 1.2: Foreach, Spark 3.0 and Databricks Connect'
+description: "sparklyr 1.2: foreach parallel backend, Databricks Connect support, and Spark 3.0 compatibility."
+auto-description: true
 people:
   - Yitao Li
 date: '2020-05-06'
 slug: sparklyr-1-2
-categories:
+topics:
   - Data Wrangling
   - MLOps and Admin
 tags:
@@ -94,7 +96,7 @@ svm_rbf(cost = tune(), rbf_sigma = tune()) %>%
 
 The Spark connection was already registered, so the code ran in Spark without any additional changes. We can verify that this was the case by navigating to the Spark web interface:
 
-<img src="/blog/images/2020-05-06-sparklyr-1-2-spark-backend-foreach-package.png" alt="Spark running foreach package using sparklyr"/>
+<img src="2020-05-06-sparklyr-1-2-spark-backend-foreach-package.png" alt="Spark running foreach package using sparklyr"/>
 
 ## Databricks Connect
 
@@ -108,7 +110,7 @@ sc <- spark_connect(
   spark_home = system2("databricks-connect", "get-spark-home", stdout = TRUE))
 ```
 
-<img src="/blog/images/2020-05-06-sparklyr-1-2-spark-databricks-connect-rstudio.png" alt="Databricks Connect with RStudio Desktop"/>
+<img src="2020-05-06-sparklyr-1-2-spark-databricks-connect-rstudio.png" alt="Databricks Connect with RStudio Desktop"/>
 
 That's about it, you are now remotely connected to a Databricks cluster from your local R session.
 
@@ -185,7 +187,7 @@ Last but not least, we heard about a number of pain points `sparklyr` users have
 Finally, in chronological order, we wish to thank the following individuals for contributing to `sparklyr` 1.2: [zero323](https://github.com/zero323), [Andy Zhang](https://github.com/Loquats), [Yitao Li](https://github.com/yl790),
 [Javier Luraschi](https://github.com/javierluraschi), [Hossein Falaki](https://github.com/falaki), [Lu Wang](https://github.com/lu-wang-dl), [Samuel Macedo](https://github.com/samuelmacedo83) and [Jozef Hajnala](https://github.com/jozefhajnala). Great job everyone!
 
-If you need to catch up on `sparklyr`, please visit [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), or some of the previous release posts: [sparklyr 1.1](https://blog.rstudio.com/2020/01/29/sparklyr-1-1/) and [sparklyr 1.0](https://blog.rstudio.com/2019/03/15/sparklyr-1-0/).
+If you need to catch up on `sparklyr`, please visit [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), or some of the previous release posts: [sparklyr 1.1](/blog/2020-01-29_sparklyr-1-1/) and [sparklyr 1.0](/blog/2019-03-15_sparklyr-1-0/).
 
 Thank you for reading this post.
 

@@ -1,5 +1,7 @@
 ---
 title: Level Up Your Data Validation with `Actions` and `FinalActions`
+description: "Automate responses to bad data with Pointblank's Actions and FinalActions."
+auto-description: true
 people:
   - Rich Iannone
 date: '2025-05-02T00:00:00.000Z'
@@ -7,7 +9,7 @@ ported_from: pointblank
 port_status: in-progress
 software: ["pointblank"]
 languages: ["Python"]
-categories:
+topics:
   - Data Wrangling
 tags:
   - Pointblank

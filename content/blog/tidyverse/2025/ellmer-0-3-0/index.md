@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://chatgpt.com/share/68824585-91dc-8009-a84b-82451f71ef65
   author: ChatGPT
-categories:
+topics:
   - Artificial Intelligence
 tags:
   - AI

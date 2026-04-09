@@ -1,0 +1,225 @@
+{{/*
+  item-index-entry.html — Build an item metadata dict for a page.
+
+  Input context (dict):
+    "page"    — the Page object
+    "section" — (optional) section label, e.g. "current", "upcoming", "past"
+
+  Returns: a dict with all fields needed for search/filter/sort AND
+  client-side template rendering.
+*/}}
+{{ $page := .page }}
+{{ $section := index . "section" | default "" }}
+
+{{ $title := $page.Title }}
+{{ $description := $page.Params.description | default "" | strings.TrimSpace | strings.TrimSuffix "." }}
+{{ $description = truncate 200 "" $description }}
+
+{{/* ID — must match item-id.html */}}
+{{ $fileID := "" }}
+{{ with $page.File }}
+  {{ $fileID = .UniqueID }}
+{{ end }}
+{{ $id := printf "item-%s" ($fileID | default $page.RelPermalink | md5) }}
+
+{{/* Item type — resolve from section or resource sub-type */}}
+{{ $itemType := $page.Section }}
+{{ $slug := $page.RelPermalink }}
+{{ if not (index site.Data.items $itemType) }}
+  {{ $parts := split (strings.Trim $slug "/") "/" }}
+  {{ if ge (len $parts) 2 }}
+    {{ $itemType = index $parts (sub (len $parts) 2) }}
+  {{ end }}
+{{ end }}
+{{ $typeLabel := "" }}
+{{ with index site.Data.items $itemType }}
+  {{ $typeLabel = .badge_text }}
+{{ end }}
+
+{{/* Section flags */}}
+{{ $is_event := eq $page.Section "events" }}
+{{ $is_blog := eq $page.Section "blog" }}
+{{ $is_resource := eq $page.Section "resources" }}
+{{ $is_software := eq $page.Section "software" }}
+
+{{/* Tags — combination of software, categories, tags taxonomies (as arrays) */}}
+{{ $softwareTerms := slice }}
+{{ range $page.GetTerms "software" }}
+  {{ $softwareTerms = $softwareTerms | append .LinkTitle }}
+{{ end }}
+
+{{ $catTerms := slice }}
+{{ range $page.GetTerms "topics" }}
+  {{ $catTerms = $catTerms | append .LinkTitle }}
+{{ end }}
+
+{{ $tagTerms := slice }}
+{{ range $page.GetTerms "tags" }}
+  {{ $tagTerms = $tagTerms | append .LinkTitle }}
+{{ end }}
+
+{{/* Authors — array of {name, image} objects with headshot URLs */}}
+{{ $authors := slice }}
+{{ range $page.GetTerms "people" }}
+  {{ $authorImage := "" }}
+  {{ $person := . }}
+  {{ with $person.Params.image }}
+    {{ $imgRes := $person.Resources.Get . }}
+    {{ if $imgRes }}
+      {{ if eq $imgRes.MediaType.SubType "svg" }}
+        {{ $authorImage = $imgRes.RelPermalink }}
+      {{ else }}
+        {{ $processed := $imgRes.Process "48x48 fit webp" }}
+        {{ $authorImage = $processed.RelPermalink }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $authors = $authors | append (dict "name" $person.LinkTitle "image" $authorImage) }}
+{{ end }}
+
+{{/* Date — raw ISO for sort, formatted for display */}}
+{{ $date := "" }}
+{{ $dateFormatted := "" }}
+{{ if $is_event }}
+  {{ with $page.Params.start_date }}
+    {{ $date = time.Format "2006-01-02" . }}
+  {{ end }}
+  {{ $dateFormatted = trim (partial "block/date_range.html" $page) " \t\r\n" }}
+{{ else if or $is_blog $is_resource }}
+  {{ with $page.Params.date }}
+    {{ $date = time.Format "2006-01-02" . }}
+    {{ $dateFormatted = time.Format "Jan 2, 2006" . }}
+  {{ end }}
+{{ end }}
+
+{{/* Image — process at 640px wide for JS rendering */}}
+{{ $imageData := dict }}
+{{ $img_result := partial "get-image.html" (dict "page" $page "fallback" true) }}
+{{ $image := $img_result.image }}
+{{ $imageAlt := $img_result.alt }}
+{{ if $image }}
+  {{ if or (eq $image.MediaType.SubType "svg") (eq $image.MediaType.SubType "gif") }}
+    {{ $imageData = dict "src" $image.RelPermalink "alt" $imageAlt "width" 0 "height" 0 }}
+  {{ else }}
+    {{ $w := 640 }}
+    {{ if gt $w $image.Width }}
+      {{ $w = $image.Width }}
+    {{ end }}
+    {{ $processed := $image.Resize (printf "%dx webp" $w) }}
+    {{ $imageData = dict "src" $processed.RelPermalink "alt" $imageAlt "width" $processed.Width "height" $processed.Height }}
+  {{ end }}
+{{ end }}
+
+{{/* Color */}}
+{{ $color := $page.Params.color | default "" }}
+
+{{/* Stars formatted */}}
+{{ $starsFormatted := "" }}
+{{ if $is_software }}
+  {{ with $page.Params.external.stars }}
+    {{ $starsFormatted = partial "format-stars.html" . }}
+  {{ end }}
+{{ end }}
+
+{{/* Views formatted */}}
+{{ $viewsFormatted := "" }}
+{{ if eq ($page.Params.resource_type | default "") "video" }}
+  {{ with $page.Params.external.view_count }}
+    {{ $viewsFormatted = partial "format-views.html" . }}
+  {{ end }}
+{{ end }}
+
+{{/* Duration formatted */}}
+{{ $durationFormatted := "" }}
+{{ if eq ($page.Params.resource_type | default "") "video" }}
+  {{ with $page.Params.external.duration }}
+    {{ $durationFormatted = partial "format-duration.html" . }}
+  {{ end }}
+{{ end }}
+
+{{/* Build the entry — only include keys with non-empty values */}}
+{{ $entry := dict
+  "id" $id
+  "permalink" $page.RelPermalink
+  "title" $title
+  "itemType" $itemType
+}}
+
+{{ with $description }}
+  {{ $entry = merge $entry (dict "description" .) }}
+{{ end }}
+{{ with $typeLabel }}
+  {{ $entry = merge $entry (dict "type" .) }}
+{{ end }}
+{{ with $date }}
+  {{ $entry = merge $entry (dict "date" .) }}
+{{ end }}
+{{ with $dateFormatted }}
+  {{ $entry = merge $entry (dict "dateFormatted" .) }}
+{{ end }}
+{{ with $catTerms }}
+  {{ $entry = merge $entry (dict "topics" .) }}
+{{ end }}
+{{ with $page.Params.languages }}
+  {{ $entry = merge $entry (dict "languages" .) }}
+{{ end }}
+{{ with $tagTerms }}
+  {{ $entry = merge $entry (dict "tags" .) }}
+{{ end }}
+{{ with $softwareTerms }}
+  {{ $entry = merge $entry (dict "software" .) }}
+{{ end }}
+{{ with $authors }}
+  {{ $entry = merge $entry (dict "authors" .) }}
+{{ end }}
+{{ with $color }}
+  {{ $entry = merge $entry (dict "color" .) }}
+{{ end }}
+{{ if $imageData }}
+  {{ with $imageData.src }}
+    {{ $entry = merge $entry (dict "image" $imageData) }}
+  {{ end }}
+{{ end }}
+
+{{/* Software-specific */}}
+{{ if $is_software }}
+  {{ with $page.Params.external.stars }}
+    {{ $entry = merge $entry (dict "stars" .) }}
+  {{ end }}
+  {{ with $starsFormatted }}
+    {{ $entry = merge $entry (dict "starsFormatted" .) }}
+  {{ end }}
+  {{ with $page.Params.external.first_commit }}
+    {{ $entry = merge $entry (dict "firstCommit" (time.Format "2006-01-02" .)) }}
+  {{ end }}
+{{ end }}
+
+{{/* Video-specific */}}
+{{ if eq ($page.Params.resource_type | default "") "video" }}
+  {{ with $page.Params.external.view_count }}
+    {{ $entry = merge $entry (dict "views" (int .)) }}
+  {{ end }}
+  {{ with $viewsFormatted }}
+    {{ $entry = merge $entry (dict "viewsFormatted" .) }}
+  {{ end }}
+  {{ with $page.Params.external.duration }}
+    {{ $entry = merge $entry (dict "duration" (int .)) }}
+  {{ end }}
+  {{ with $durationFormatted }}
+    {{ $entry = merge $entry (dict "durationFormatted" .) }}
+  {{ end }}
+{{ end }}
+
+{{/* Events-specific */}}
+{{ if $is_event }}
+  {{ with $page.Params.location }}
+    {{ $entry = merge $entry (dict "location" .) }}
+  {{ end }}
+{{ end }}
+
+{{/* Section */}}
+{{ with $section }}
+  {{ $entry = merge $entry (dict "section" .) }}
+{{ end }}
+
+{{ return $entry }}

@@ -1,10 +1,12 @@
 ---
 title: reticulate 1.14
+description: "reticulate 1.14: automatic Python environment configuration for R packages that use Python."
+auto-description: true
 people:
   - Kevin Ushey
 date: '2019-12-20'
 slug: reticulate-1-14
-categories:
+topics:
   - Best Practices
 tags:
   - Python

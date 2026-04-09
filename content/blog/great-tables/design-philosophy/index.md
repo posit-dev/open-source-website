@@ -1,5 +1,7 @@
 ---
 title: The Design Philosophy of Great Tables
+description: "Why tables matter: 5,000 years of table design and how Great Tables solves the modern dilemma."
+auto-description: true
 people:
   - Rich Iannone
   - Michael Chow
@@ -8,7 +10,7 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

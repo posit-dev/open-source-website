@@ -1,4 +1,7 @@
 ---
+topics:
+- Interactive Apps
+- Visualization
 color: '#E7B10A'
 description: Inter-htmlwidget communication for R (with and without Shiny)
 github: rstudio/crosstalk

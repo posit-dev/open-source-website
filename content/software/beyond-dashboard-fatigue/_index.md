@@ -1,4 +1,9 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
+- Visualization
 color: '#404041'
 description: Materials for the RStudio webinar 'Beyond Dashboard Fatigue'
 github: rstudio/beyond-dashboard-fatigue

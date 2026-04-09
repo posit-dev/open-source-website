@@ -1,4 +1,6 @@
 ---
+topics:
+- Machine Learning
 color: '#141227'
 description: A tidy unified interface to clustering models
 github: tidymodels/tidyclust

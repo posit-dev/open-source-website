@@ -731,7 +731,7 @@ function that has the same body as `base::mean()`. We also compare this to
 the expression `sum(x) / n()` because it woudld have been handled by 
 partial hybrid evaluation in previous versions. 
 
-![](/articles/2018-12-dplyr-0-8-0_files/timings_summarise_mean.jpeg)
+![](timings_summarise_mean.jpeg)
 
 This is not a comprehensive benchmark analysis, but on this small example we can read: 
 

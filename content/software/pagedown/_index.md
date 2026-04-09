@@ -1,4 +1,6 @@
 ---
+topics:
+- Publishing
 color: '#A51E26'
 description: Paginate the HTML Output of R Markdown with CSS for Print
 github: rstudio/pagedown

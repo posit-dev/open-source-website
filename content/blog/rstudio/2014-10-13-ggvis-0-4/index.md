@@ -1,5 +1,7 @@
 ---
 title: ggvis 0.4
+description: "ggvis 0.4 adds layer_boxplots(), better error handling, and more reliable interactive graphics with dynamic data."
+auto-description: true
 people:
   - Winston Chang
 date: '2014-10-13'
@@ -7,7 +9,7 @@ slug: ggvis-0-4
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
-categories:
+topics:
   - Visualization
   - Interactive Apps
 tags:

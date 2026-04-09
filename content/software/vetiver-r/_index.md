@@ -1,4 +1,9 @@
 ---
+topics:
+- Artificial Intelligence
+- Interactive Apps
+- MLOps and Admin
+- Machine Learning
 color: '#F2CCAD'
 description: Version, share, deploy, and monitor models
 github: rstudio/vetiver-r

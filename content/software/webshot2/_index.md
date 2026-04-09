@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#324461'
 description: Take screenshots of web pages from R
 github: rstudio/webshot2

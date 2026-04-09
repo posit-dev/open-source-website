@@ -1,9 +1,11 @@
 ---
 title: Epoch.com sponsors RMySQL development
+description: "Epoch.com sponsors RMySQL development, enabling improved build systems and CRAN binaries for all platforms."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-02-11'
-categories:
+topics:
   - Community
   - Data Wrangling
 slug: epoch-rmysql

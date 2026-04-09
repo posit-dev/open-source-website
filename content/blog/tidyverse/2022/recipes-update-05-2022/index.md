@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/nAMLTEerpWI
   author: Tim Hüfner
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

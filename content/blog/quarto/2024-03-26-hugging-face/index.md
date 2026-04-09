@@ -11,10 +11,11 @@ ported_from: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
+topics:
   - Publishing
 tags:
   - Quarto
+slug: hugging-face
 ---
 
 

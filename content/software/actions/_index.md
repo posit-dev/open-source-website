@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Community
+- Publishing
 color: '#419599'
 description: GitHub Actions for the R community
 github: r-lib/actions

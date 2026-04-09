@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/PtabTe6iJ_8
   author: Mika Baumeister
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

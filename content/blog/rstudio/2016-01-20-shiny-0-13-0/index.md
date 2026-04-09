@@ -1,9 +1,11 @@
 ---
 title: Shiny 0.13.0
+description: "Shiny 0.13.0 introduces Gadgets for interactive tools, HTML templates, modules for managing complexity, and stack traces."
+auto-description: true
 people:
   - Winston Chang
 date: '2016-01-20'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-0-13-0
 blogcategories:

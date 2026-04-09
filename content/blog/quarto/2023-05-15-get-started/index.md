@@ -3,7 +3,7 @@ title: Get Started with Quarto
 subtitle: A video to jumpstart your Quarto journey
 description: |
   A new video for getting started with Quarto using R and RStudio.
-categories:
+topics:
   - Publishing
   - Community
 people:
@@ -21,6 +21,7 @@ ported_categories:
 tags:
   - Quarto
   - Learn
+slug: get-started
 ---
 
 

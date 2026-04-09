@@ -1,4 +1,6 @@
 ---
+topics:
+- Machine Learning
 color: '#FBB373'
 description: Parsnip wrappers for mixed-level and hierarchical models
 github: tidymodels/multilevelmod

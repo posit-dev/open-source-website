@@ -1,9 +1,11 @@
 ---
 title: tibble 1.1
+description: "tibble 1.1 introduces tibble(), as_tibble(), and is_tibble() naming, plus safer column extraction with warnings."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-07-05'
-categories:
+topics:
   - Data Wrangling
 slug: tibble-1-1
 blogcategories:

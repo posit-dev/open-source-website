@@ -8,7 +8,7 @@ author: Max Kuhn
 photo:
   url: https://unsplash.com/photos/bph0kUmAoXc
   author: Mae Mu
-categories: [package]
+topics: [package]
 tags:
   - tidymodels
   - baguette

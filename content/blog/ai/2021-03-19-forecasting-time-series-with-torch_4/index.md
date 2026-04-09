@@ -4,7 +4,7 @@ description: |
   We conclude our mini-series on time-series forecasting with torch by augmenting last time's sequence-to-sequence architecture with a technique both immensely popular in natural language processing and inspired by human (and animal) cognition: attention.
 date: '2021-03-19'
 slug: keydanatorchts4
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -558,7 +558,7 @@ We can't directly compare performance here to that of previous models in our ser
 
 Thanks for reading!
 
-Photo by [David Clode](https://unsplash.com/@davidclode?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](./?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Photo by [David Clode](https://unsplash.com/@davidclode?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. 2014. "Neural Machine Translation by Jointly Learning to Align and Translate." *CoRR* abs/1409.0473. <http://arxiv.org/abs/1409.0473>.
 

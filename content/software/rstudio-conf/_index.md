@@ -1,4 +1,11 @@
 ---
+topics:
+- Best Practices
+- Community
+- Data Wrangling
+- Interactive Apps
+- Machine Learning
+- Visualization
 color: '#EE6331'
 description: Materials for rstudio::conf
 github: rstudio/rstudio-conf

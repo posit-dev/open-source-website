@@ -1,9 +1,11 @@
 ---
 title: httr 0.3
+description: "httr 0.3 overhauls OAuth with caching and improved authentication. Query web APIs easily from R."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-03-21'
-categories:
+topics:
   - Data Wrangling
 slug: httr-0-3
 blogcategories:

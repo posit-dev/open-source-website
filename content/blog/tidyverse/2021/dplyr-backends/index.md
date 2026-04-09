@@ -12,7 +12,7 @@ description: "We've recently released a bunch of improvements to dplyr backends.
 photo:
   url: https://unsplash.com/photos/jVYnBn3M9R0
   author: Charles Deluvio
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
@@ -170,7 +170,7 @@ You can see the translation with [`show_query()`](https://dplyr.tidyverse.org/re
 
 </div>
 
-The big news in this release is dtplyr can now translate all features that arrived in [dplyr 1.0.0](https://www.tidyverse.org/blog/2020/06/dplyr-1-0-0/). This includes:
+The big news in this release is dtplyr can now translate all features that arrived in [dplyr 1.0.0](/blog/2020-06-01_dplyr-1-0-0/). This includes:
 
 -   [`across()`](https://dplyr.tidyverse.org/reference/across.html), [`if_any()`](https://dplyr.tidyverse.org/reference/across.html), and [`if_all()`](https://dplyr.tidyverse.org/reference/across.html). Unfortunately `where()` is not currently supported because I don't know how to figure out the column types without executing the pipeline (which might take a long time).
 

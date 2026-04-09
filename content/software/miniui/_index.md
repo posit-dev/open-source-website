@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#D44000'
 description: ''
 github: rstudio/miniUI

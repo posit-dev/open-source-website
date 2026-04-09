@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#D84B3A'
 description: 'dplyr: A grammar of data manipulation'
 github: tidyverse/dplyr

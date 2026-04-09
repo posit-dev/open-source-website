@@ -1,10 +1,12 @@
 ---
 title: Introducing torch for R
+description: "Announcing torch for R: use PyTorch natively in R for deep learning."
+auto-description: true
 people:
   - RStudio Team
 date: '2020-09-29'
 slug: torch
-categories:
+topics:
   - Machine Learning
 tags:
   - Data science
@@ -52,7 +54,7 @@ This post addresses three questions:
 
 If you are already familiar with deep learning -- or all you can think
 right now is "show me some code" -- you might want to head directly over
-to the [more technical introduction on the AI blog](https://blogs.rstudio.com/ai/posts/2020-09-29-introducing-torch-for-r/). Otherwise, you
+to the [more technical introduction on the AI blog](/blog/2020-09-29_keydanaintroducingtorchforR/). Otherwise, you
 may find it more useful to hear about the context first, and then play
 with the step-by-step example in that complementary post.
 
@@ -162,8 +164,8 @@ Geometric](https://github.com/rusty1s/pytorch_geometric) for deep
 learning on manifolds, and [Pyro](http://pyro.ai/) for probabilistic
 programming, to name just a few.
 
-Whether small PRs for [torch](https::/github.com/mlverse/torch) or
-[torchvision](https::/github.com/mlverse/torchvision), or model
+Whether small PRs for [torch](https://github.com/mlverse/torch) or
+[torchvision](https://github.com/mlverse/torchvision), or model
 implementations, or help with porting some of the PyTorch ecosystem --
 we welcome any participation and support from the R community!
 

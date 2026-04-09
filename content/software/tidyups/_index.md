@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- MLOps and Admin
 color: '#9A4665'
 description: ''
 github: tidyverse/tidyups

@@ -1,9 +1,11 @@
 ---
 title: ShinyDevCon videos now available
+description: "Videos from the 2016 Shiny Developer Conference covering reactive programming, modules, gadgets, and debugging."
+auto-description: true
 people:
   - Joe Cheng
 date: '2016-05-05'
-categories:
+topics:
   - Interactive Apps
 slug: shinydevcon-videos-now-available
 blogcategories:

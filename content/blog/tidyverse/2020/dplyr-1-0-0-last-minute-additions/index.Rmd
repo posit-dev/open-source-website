@@ -34,7 +34,7 @@ Today I wanted to talk about two cool new features that we've added since I star
 
 ---
 
-**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about  it](/blog/2020/06/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
+**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about  it](/blog/tidyverse/2020/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
 
 ---
 
@@ -56,7 +56,7 @@ You might be surprised to learn that it's grouped by `homeworld`:
 head(homeworld_species, 3)
 ```
 
-That's because `summarise()` always peels off the last group, based on the logic that this group now occupies a single row so there's no point grouping by it. This behaviour made perfect sense to me at the time I implemented it, but it's been a long standing source of confusion among dplyr users (and it doesn't make sense if your summary [returns multiple rows](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-summarise/)).
+That's because `summarise()` always peels off the last group, based on the logic that this group now occupies a single row so there's no point grouping by it. This behaviour made perfect sense to me at the time I implemented it, but it's been a long standing source of confusion among dplyr users (and it doesn't make sense if your summary [returns multiple rows](/blog/2020-03-20_dplyr-1-0-0-summarise/)).
 
 Unfortunately, it would be very difficult to change this default now because a lot of code probably relies on it. Instead, we're doing the next best thing: exposing the default behaviour more explicitly and making it easier to change. In dplyr 1.0.0, the code above will display a message telling you how the result has been grouped:
 
@@ -71,7 +71,7 @@ The text hints at how to take control of grouping and eliminate the message: a n
 -   `.groups = "drop_last"` drops the last grouping level (i.e. the default behaviour sans message).
 -   `.groups = "drop"` drops all grouping levels and returns a tibble.
 -   `.groups = "keep"` preserves the grouping of the input.
--   `.groups = "rowwise"` turns each row into [its own group](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-rowwise/).
+-   `.groups = "rowwise"` turns each row into [its own group](/blog/2020-04-10_dplyr-1-0-0-rowwise/).
 
 If you find the default message annoying, you can suppress by setting a global option:
 

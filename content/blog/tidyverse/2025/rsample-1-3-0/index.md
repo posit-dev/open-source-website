@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-row-of-shelves-filled-with-lots-of-shoes-yZxBkDr73AM
   author: Erik Mclean
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

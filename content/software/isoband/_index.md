@@ -1,4 +1,6 @@
 ---
+topics:
+- Visualization
 color: '#BB3654'
 description: 'isoband: An R package to generate contour lines and polygons.'
 github: r-lib/isoband

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/SHA85I0G8K4
   author: Evgeni Tcherkasski
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

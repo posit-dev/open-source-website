@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
 color: '#447099'
 description: Sliding Window Functions
 github: r-lib/slider

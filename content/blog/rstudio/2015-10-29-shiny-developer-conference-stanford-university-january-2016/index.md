@@ -1,9 +1,11 @@
 ---
 title: Shiny Developer Conference | Stanford University | January 2016
+description: "Announcing the first Shiny Developer Conference at Stanford, January 2016, for developers ready to build performant, robust Shiny apps."
+auto-description: true
 people:
   - Joe Cheng
 date: '2015-10-29'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-developer-conference-stanford-university-january-2016
 blogcategories:

@@ -6,12 +6,15 @@ people:
 date: '2024-11-25'
 image: brand-yml-feature.svg
 image-alt: brand.yml logo
-image-header-disable: yes
+image-header-disable: 'yes'
 ported_from: shiny
 port_status: in-progress
-software: ["shiny-python", "brand-yml"]
-languages: ["Python"]
-categories:
+software:
+  - shiny-python
+  - brand-yml
+languages:
+  - Python
+topics:
   - Interactive Apps
 tags:
   - Shiny
@@ -31,9 +34,8 @@ For the tools you use: it's simple, structured data to coordinate theming of any
 
 Here's an example `_brand.yml` file that includes metadata about the company, its logos, color palette, theme, and the fonts and typographic settings used by the brand.
 
-**\_brand.yml**
 
-``` yaml
+``` yaml { filename="_brand.yml" }
 meta:
   name: brand.yml
   link: https://posit-dev.github.io/brand-yml
@@ -63,9 +65,8 @@ With brand.yml you won't need to write multiple CSS files to maintain a consiste
 And because all fields are optional, brand.yml also serves as a simple interface to theming across many outputs.
 For example, you could use brand.yml to set the base font to [Roboto](https://fonts.google.com/specimen/Roboto) and use <span style="padding-inline:0.25em; background-color: #f96302; color: white;">orange</span> as the primary accent color.
 
-**A minimal \_brand.yml**
 
-``` yaml
+``` yaml { filename="A minimal _brand.yml" }
 color:
   primary: "#F96302"
 
@@ -80,12 +81,19 @@ This same file can be used for your Shiny apps as well as your Quarto projects.
 We're starting with Posit-sponsored projects like [Shiny](https://shiny.posit.co), [Quarto](https://quarto.org), and [R Markdown](https://rmarkdown.rstudio.com), but we're hoping to see brand.yml adopted more widely in the open-source community.
 To encourage this, we've published the [brand-yml Python package](https://posit-dev.github.io/brand-yml/pkg/py), which you can use to integrate brand.yml into your project or other packages.
 
-> **Writing brand.yml with the help of an LLM**
->
-> We know that writing YAML isn't everyone's cup of tea!
-> If you want to enlist the help of a friendly large language model (LLM), we've written up [a guide to using LLMs to write brand.yml](https://posit-dev.github.io/brand-yml/articles/llm-brand-yml-prompt/).
->
-> The article includes a prompt you can copy and use to teach an LLM about the brand.yml syntax, as well as a few tips and follow-up prompts you can use to get the best results.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Writing brand.yml with the help of an LLM</span>
+</div>
+<div class="callout-body">
+
+We know that writing YAML isn't everyone's cup of tea!
+If you want to enlist the help of a friendly large language model (LLM), we've written up [a guide to using LLMs to write brand.yml](https://posit-dev.github.io/brand-yml/articles/llm-brand-yml-prompt/).
+
+The article includes a prompt you can copy and use to teach an LLM about the brand.yml syntax, as well as a few tips and follow-up prompts you can use to get the best results.
+
+</div>
+</div>
 
 ## Getting Started
 
@@ -106,9 +114,7 @@ Finally, use the [new `ui.Theme.from_brand()` function](https://shiny.posit.co/p
 </ul>
 <div id="tabset-1-1">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny.express import input, render, ui
 
 ui.page_opts(theme=ui.Theme.from_brand(__file__))
@@ -117,9 +123,7 @@ ui.page_opts(theme=ui.Theme.from_brand(__file__))
 </div>
 <div id="tabset-1-2">
 
-**app.py**
-
-``` python
+``` python { filename="app.py" }
 from shiny import ui
 
 app_ui = ui.page_fluid(

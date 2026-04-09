@@ -13,7 +13,7 @@ format:
   html:
     css: layout.css
     number-sections: yes
-categories:
+topics:
   - Publishing
 ported_categories:
   - Quarto 1.5
@@ -26,6 +26,7 @@ tags:
   - Quarto
   - Quarto 1.5
   - Tables
+slug: beautiful-tables-in-typst
 ---
 
 

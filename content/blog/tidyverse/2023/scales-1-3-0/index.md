@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/gold-and-silver-round-frame-magnifying-glass-j06gLuKK0GM
   author: Elena Mozhvilo
-categories:
+topics:
   - Visualization
 tags:
   - tidyverse

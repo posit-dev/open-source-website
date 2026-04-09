@@ -1,9 +1,11 @@
 ---
 title: 'New version of httr: 0.2'
+description: "httr 0.2: an easier way to work with web APIs, with HTTP verbs, OAuth 1.0/2.0, and automatic cookie handling."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2012-10-14'
-categories:
+topics:
   - Data Wrangling
 slug: httr-0-2
 blogcategories:

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/YCPkW_r_6uA
   author: Jari Hytönen
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
@@ -287,7 +287,7 @@ We also recommend using an anonymous function instead of passing additional argu
 
 </div>
 
-Due to the [tidyverse R dependency policy](https://www.tidyverse.org/blog/2019/04/r-version-support/), purrr works in R 3.5, 3.6, 4.0, 4.1, and 4.2, but the base pipe and anonymous function syntax are only available in R 4.0 and later. So the examples are automatically disabled on R 3.5 and 3.6 to allow purrr to continue to pass `R CMD check`.
+Due to the [tidyverse R dependency policy](/blog/2019-04-01_r-version-support/), purrr works in R 3.5, 3.6, 4.0, 4.1, and 4.2, but the base pipe and anonymous function syntax are only available in R 4.0 and later. So the examples are automatically disabled on R 3.5 and 3.6 to allow purrr to continue to pass `R CMD check`.
 
 ## Mapping
 

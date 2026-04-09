@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ymf4_9Y9S_A
   author: Randy Fath
-categories:
+topics:
   - Community
 tags:
   - tidyverse

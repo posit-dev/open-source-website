@@ -1,9 +1,11 @@
 ---
 title: Master interactive documents at the Shiny Dev Center
+description: "New Shiny Dev Center articles: create interactive documents and slideshows by embedding Shiny in R Markdown."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-07-21'
-categories:
+topics:
   - Interactive Apps
   - MLOps and Admin
 slug: master-interactive-documents-at-the-shiny-dev-center

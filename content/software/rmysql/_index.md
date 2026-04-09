@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#E7B10A'
 description: Legacy DBI interface for MySQL
 github: r-dbi/RMySQL

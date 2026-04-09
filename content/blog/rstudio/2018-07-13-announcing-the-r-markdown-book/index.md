@@ -1,9 +1,11 @@
 ---
 title: Announcing the R Markdown Book
+description: "Announcing R Markdown: The Definitive Guide, a comprehensive book on R Markdown and its extensions."
+auto-description: true
 people:
   - Yihui Xie
 date: '2018-07-13'
-categories:
+topics:
   - Publishing
 tags:
   - Book

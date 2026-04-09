@@ -1,4 +1,6 @@
 ---
+topics:
+- Machine Learning
 color: '#A98B80'
 description: Prepare objects for serialization with a consistent interface
 github: rstudio/bundle

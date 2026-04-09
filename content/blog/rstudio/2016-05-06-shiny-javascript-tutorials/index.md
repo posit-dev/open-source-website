@@ -1,9 +1,11 @@
 ---
 title: Shiny JavaScript Tutorials
+description: "New tutorial series on creating custom JavaScript widgets for Shiny using libraries like c3.js, d3.js, and intro.js."
+auto-description: true
 people:
   - Garrett Grolemund
 date: '2016-05-06'
-categories:
+topics:
   - Interactive Apps
   - MLOps and Admin
 slug: shiny-javascript-tutorials

@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
 color: '#e44d25'
 description: Tools for HTML generation and output
 github: rstudio/htmltools

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/BvAoCypqRXU
   author: Lanju Fotografie
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

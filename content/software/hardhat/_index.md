@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Machine Learning
 color: '#1B5283'
 description: Construct Modeling Packages
 github: tidymodels/hardhat

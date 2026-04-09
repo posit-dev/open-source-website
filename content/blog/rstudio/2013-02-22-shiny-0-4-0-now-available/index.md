@@ -1,9 +1,11 @@
 ---
 title: Shiny 0.4.0 now available
+description: "Shiny 0.4.0 simplifies the reactive API and suspends invisible outputs to reduce server load."
+auto-description: true
 people:
   - Winston Chang
 date: '2013-02-22'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-0-4-0-now-available
 blogcategories:

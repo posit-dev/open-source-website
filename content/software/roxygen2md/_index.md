@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Publishing
 color: '#447099'
 description: Convert elements of roxygen documentation to markdown
 github: r-lib/roxygen2md

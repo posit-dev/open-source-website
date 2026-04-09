@@ -1,9 +1,11 @@
 ---
 title: svglite 1.2.0
+description: "svglite 1.2.0 improves font handling with system_fonts and user_fonts arguments, plus text scaling fixes."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-11-14'
-categories:
+topics:
   - Visualization
 slug: svglite-1-2-0
 blogcategories:

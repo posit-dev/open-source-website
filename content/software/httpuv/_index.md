@@ -1,4 +1,6 @@
 ---
+topics:
+- Interactive Apps
 color: '#D44000'
 description: HTTP and WebSocket server package for R
 github: rstudio/httpuv

@@ -1,4 +1,9 @@
 ---
+topics:
+- Artificial Intelligence
+- Best Practices
+- Interactive Apps
+- Publishing
 color: '#E7B10A'
 description: A collection of Claude Skills from Posit
 github: posit-dev/skills

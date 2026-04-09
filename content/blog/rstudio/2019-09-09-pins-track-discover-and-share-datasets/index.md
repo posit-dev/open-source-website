@@ -1,10 +1,12 @@
 ---
 title: 'pins: Pin, Discover and Share Resources'
+description: "Introducing pins: cache remote resources locally, discover datasets, and share across teams."
+auto-description: true
 people:
   - RStudio Team
 date: '2019-09-09'
 slug: pin-discover-and-share-resources
-categories:
+topics:
   - MLOps and Admin
 tags:
   - Pins
@@ -134,15 +136,15 @@ You can use [RStudio](https://www.rstudio.com/products/rstudio/) and [RStudio Co
 
 To enable new boards, like Kaggle and RStudio Connect, you can use [RStudio's Data Connections](https://blog.rstudio.com/2017/08/16/rstudio-preview-connections/) to create a new 'pins' connection, which provides you access to many boards:
 
-<img src="/blog/images/2019-09-09-rstudio-connect-board.png" height="200px"/>
+<img src="2019-09-09-rstudio-connect-board.png" height="200px"/>
 
 Once connected, you can use the connections pane to track the pins you own and preview them with ease. Notice that one connection is created for each board.
 
-<img src="/blog/images/2019-09-09-rstudio-explore-pins.png" height="170px" style="box-shadow: 2px 10px 10px #EAEAEA;"/>
+<img src="2019-09-09-rstudio-explore-pins.png" height="170px" style="box-shadow: 2px 10px 10px #EAEAEA;"/>
 
 To **discover** remote resources, simply expand the "Addins" menu and select "Find Pin" from the dropdown. This addin allows you to search for pins across all boards, or scope your search to particular ones as well:
 
-<img src="/blog/images/2019-09-09-rstudio-discover-pins.png" height="280px"/>
+<img src="2019-09-09-rstudio-discover-pins.png" height="280px"/>
 
 You can then **share** local resources using the RStudio Connect board. Lets use `dplyr` and the `hpiR_seattle_sales` pin to analyze this further and then pin our results in RStudio Connect.
 
@@ -157,7 +159,7 @@ pin_get("hpiR/seattle_sales") %>%
 
 After a pin is published, you can then browse to the pin's content from the RStudio Connect web interface.
 
-<img src="/blog/images/2019-09-09-rstudio-share-resources.png" height="300px" style="box-shadow: 2px 10px 10px #EAEAEA;"/>
+<img src="2019-09-09-rstudio-share-resources.png" height="300px" style="box-shadow: 2px 10px 10px #EAEAEA;"/>
 
 You can now set the appropriate permissions in RStudio Connect, and voila! From now on, those with access can make use of this remote pin locally!
 
@@ -171,7 +173,7 @@ pin_get("sales-by-baths") %>%
   ggplot(aes(x = baths, y = sale)) +
     geom_point() + geom_smooth(method = 'lm', formula = y ~ exp(x))
 ```
-<img src="/blog/images/2019-09-09-rstudio-reuse-pin-ggplot2.png" height="280px" style="box-shadow: 2px 10px 10px #EAEAEA;"/>
+<img src="2019-09-09-rstudio-reuse-pin-ggplot2.png" height="280px" style="box-shadow: 2px 10px 10px #EAEAEA;"/>
 
 Pins can also be automated using scheduled R Markdown. This makes it much easier to create Shiny applications that rely on scheduled data updates or to share prepared resources across multiple pieces of content. You no longer have to fuss with file paths on RStudio Connect, mysterious resource URLs, or redeploying application code just to update a dataset!
 

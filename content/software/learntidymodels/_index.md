@@ -1,4 +1,8 @@
 ---
+topics:
+- Community
+- Interactive Apps
+- Machine Learning
 color: '#D44000'
 description: Learn tidymodels with interactive learnr primers
 github: tidymodels/learntidymodels

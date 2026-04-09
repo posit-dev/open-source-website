@@ -1,9 +1,11 @@
 ---
 title: readr 0.1.0
+description: "Introducing readr: read CSV, TSV, and fixed-width files 10x faster than base R, with automatic type detection and no stringsAsFactors."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-04-09'
-categories:
+topics:
   - Data Wrangling
 slug: readr-0-1-0
 blogcategories:
@@ -74,7 +76,7 @@ The output has been designed to make your life easier:
 
   * Column names are left as is, not munged into valid R identifiers (i.e. there is no `check.names = TRUE`). Use backticks to refer to variables with unusual names, e.g. ``df$`Income ($000)```.
 
-  * The output has class `c("tbl_df", "tbl", "data.frame")` so if you also use [dplyr](https://blog.rstudio.com/2015/01/09/dplyr-0-4-0/) you'll get an enhanced print method (i.e. you'll see just the first ten rows, not the first 10,000!).
+  * The output has class `c("tbl_df", "tbl", "data.frame")` so if you also use [dplyr](/blog/2015-01-09_dplyr-0-4-0/) you'll get an enhanced print method (i.e. you'll see just the first ten rows, not the first 10,000!).
 
   * Row names are never set.
 

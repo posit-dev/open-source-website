@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/uwI8R_FyLrI
   author: Neil Cooper
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
@@ -61,7 +61,7 @@ In previous versions, dtplyr registered translations that kicked in whenever you
 
 ## dplyr 1.1.0
 
-This release brings support for dplyr 1.1.0's [per-operation grouping](https://www.tidyverse.org/blog/2023/02/dplyr-1-1-0-per-operation-grouping/) and [`pick()`](https://dplyr.tidyverse.org/reference/pick.html):
+This release brings support for dplyr 1.1.0's [per-operation grouping](/blog/2023-02-01_dplyr-1-1-0-per-operation-grouping/) and [`pick()`](https://dplyr.tidyverse.org/reference/pick.html):
 
 <div class="highlight">
 
@@ -80,7 +80,7 @@ This release brings support for dplyr 1.1.0's [per-operation grouping](https://w
 
 </div>
 
-Per-operation grouping was one of the dplyr 1.1.0 features inspired by data.table, so it's neat to see it come full circle in this dtplyr release. Future releases will add support for other dplyr 1.1.0 features like the new [`join_by()`](https://www.tidyverse.org/blog/2023/01/dplyr-1-1-0-joins/#join_by) syntax and [`reframe()`](https://www.tidyverse.org/blog/2023/02/dplyr-1-1-0-pick-reframe-arrange/#reframe).
+Per-operation grouping was one of the dplyr 1.1.0 features inspired by data.table, so it's neat to see it come full circle in this dtplyr release. Future releases will add support for other dplyr 1.1.0 features like the new [`join_by()`](/blog/2023-01-31_dplyr-1-1-0-joins/#join_by) syntax and [`reframe()`](/blog/2023-02-07_dplyr-1-1-0-pick-reframe-arrange/#reframe).
 
 ## Improved translations
 

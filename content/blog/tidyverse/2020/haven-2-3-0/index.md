@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/45GmTCcW8Hk
   author: Sergey Nikolaev
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
@@ -31,7 +31,7 @@ You can install haven from CRAN with:
 install.packages("haven")
 ```
 
-This release is mainly in preparation for dplyr 1.0.0. It includes improved [vctrs support](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-and-vctrs/) for the `labelled()` class that haven uses to represent labelled vectors that come from SAS, Stata, and SPSS. This is not terribly exciting, but it means that the labelled class is now preserved by every dplyr operation where it makes sense:
+This release is mainly in preparation for dplyr 1.0.0. It includes improved [vctrs support](/blog/2020-04-27_dplyr-1-0-0-and-vctrs/) for the `labelled()` class that haven uses to represent labelled vectors that come from SAS, Stata, and SPSS. This is not terribly exciting, but it means that the labelled class is now preserved by every dplyr operation where it makes sense:
 
 ``` r
 library(haven)

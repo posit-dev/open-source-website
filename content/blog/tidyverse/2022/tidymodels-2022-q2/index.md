@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/BBR_zigEmyQ
   author: Samuel Girven
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
@@ -61,11 +61,11 @@ The [tidymodels](https://www.tidymodels.org/) framework is a collection of R pac
 
 Since the beginning of last year, we have been publishing [quarterly updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing what's new in the tidymodels ecosystem. The purpose of these regular posts is to share useful new features and any updates you may have missed. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including our roundup posts as well as those that are more focused, like these from the past month or so:
 
--   [spatialsample](https://www.tidyverse.org/blog/2022/06/spatialsample-0-2-0/)
--   [recipes and its extension packages](https://www.tidyverse.org/blog/2022/05/recipes-update-05-20222/)
--   [bonsai](https://www.tidyverse.org/blog/2022/06/bonsai-0-1-0/)
+-   [spatialsample](/blog/2022-06-21_spatialsample-0-2-0/)
+-   [recipes and its extension packages](/blog/2022-05-03_recipes-update-05-20222/)
+-   [bonsai](/blog/2022-06-30_bonsai-0-1-0/)
 
-Since [our last roundup post](https://www.tidyverse.org/blog/2022/04/tidymodels-2022-q1/), there have been CRAN releases of 25 tidymodels packages. You can install these updates from CRAN with:
+Since [our last roundup post](/blog/2022-04-01_tidymodels-2022-q1/), there have been CRAN releases of 25 tidymodels packages. You can install these updates from CRAN with:
 
 <div class="highlight">
 
@@ -111,7 +111,7 @@ We are confident that we have created a good foundation with our implementation 
 
 ## Case weights
 
-Much of the work we have been doing so far this year has been related to case weights. For a more detailed account of the deliberations see this earlier post about the [use of case weights with tidymodels](https://www.tidyverse.org/blog/2022/05/case-weights/).
+Much of the work we have been doing so far this year has been related to case weights. For a more detailed account of the deliberations see this earlier post about the [use of case weights with tidymodels](/blog/2022-05-05_case-weights/).
 
 A full worked example can be found in the [previous blog post](tidyverse.org/blog/2022/05/case-weights/#tidymodels-syntax) and on [the tidymodels site](https://www.tidymodels.org/learn/work/case-weights/).
 

@@ -1,4 +1,7 @@
 ---
+topics:
+- MLOps and Admin
+- Publishing
 color: '#AC3914'
 description: Make websites with hugo and RMarkdown
 github: r-lib/hugodown

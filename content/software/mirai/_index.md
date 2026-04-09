@@ -1,4 +1,9 @@
 ---
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Interactive Apps
+- Machine Learning
 color: '#E66947'
 description: Minimalist Async Evaluation Framework for R
 github: r-lib/mirai

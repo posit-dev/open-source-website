@@ -1,10 +1,12 @@
 ---
 title: Shiny 1.4.0
+description: "Shiny 1.4.0: trailing commas now work in UI functions like div() and span()."
+auto-description: true
 people:
   - Winston Chang
 date: '2019-10-15'
 slug: shiny-1-4-0
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

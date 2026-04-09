@@ -4,7 +4,7 @@ description: |
   Have you ever wondered why you can call TensorFlow - mostly known as a Python framework - from R? If not - that's how it should be, as the R packages keras and tensorflow aim to make this process as transparent as possible to the user. But for them to be those helpful genies, someone else first has to tame the Python.
 date: '2019-08-29'
 slug: keydana2019tffromr
-categories:
+topics:
   - Machine Learning
   - Best Practices
 author:

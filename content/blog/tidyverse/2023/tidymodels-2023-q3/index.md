@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/PGRwUQQhzMQ
   author: Tai's Captures
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
@@ -40,9 +40,9 @@ The [tidymodels](https://www.tidymodels.org/) framework is a collection of R pac
 
 Since the beginning of 2021, we have been publishing [quarterly updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing what's new in the tidymodels ecosystem. The purpose of these regular posts is to share useful new features and any updates you may have missed. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including our roundup posts as well as those that are more focused, like this post from the past couple of months:
 
--   [New interface to validation splits](https://www.tidyverse.org/blog/2023/08/validation-split-as-3-way-split/)
+-   [New interface to validation splits](/blog/2023-08-25_validation-split-as-3-way-split/)
 
-Since [our last roundup post](https://www.tidyverse.org/blog/2022/12/tidymodels-2022-q4/), there have been CRAN releases of 11 tidymodels packages. Here are links to their NEWS files:
+Since [our last roundup post](/blog/2022-12-29_tidymodels-2022-q4/), there have been CRAN releases of 11 tidymodels packages. Here are links to their NEWS files:
 
 <div class="highlight">
 

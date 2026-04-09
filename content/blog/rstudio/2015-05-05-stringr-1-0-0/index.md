@@ -1,9 +1,11 @@
 ---
 title: stringr 1.0.0
+description: "stringr 1.0.0 is now powered by stringi for faster performance and better unicode. Adds str_subset(), boundary(), and locale-aware sorting."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-05-05'
-categories:
+topics:
   - Data Wrangling
 slug: stringr-1-0-0
 blogcategories:

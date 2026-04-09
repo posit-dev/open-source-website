@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- MLOps and Admin
+- Machine Learning
 color: '#72994E'
 description: Turn SciKitLearn pipelines into SQL
 github: posit-dev/orbital

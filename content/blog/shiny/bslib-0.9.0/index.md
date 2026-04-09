@@ -8,9 +8,13 @@ image: feature.jpg
 image-alt: bslib + brand.yml
 ported_from: shiny
 port_status: in-progress
-software: ["bslib", "shiny-r", "brand-yml"]
-languages: ["R"]
-categories:
+software:
+  - bslib
+  - shiny-r
+  - brand-yml
+languages:
+  - R
+topics:
   - Interactive Apps
 tags:
   - Shiny
@@ -22,13 +26,12 @@ We are excited to share that with [bslib](https://rstudio.github.io/bslib) v0.9.
 ## What is brand.yml?
 
 [brand.yml](https://posit-dev.github.io/brand-yml) simplifies brand management by consolidating your visual identity---colors, typography, and styling---into a single, easy-to-maintain YAML file.
-Last year, we launched brand.yml with initial support in [Quarto](https://quarto.org/docs/authoring/brand.html) and [Shiny for Python](/blog/shiny/shiny-python-1.2-brand-yml/), and we're happy to be bringing brand.yml to R as well.
+Last year, we launched brand.yml with initial support in [Quarto](https://quarto.org/docs/authoring/brand.html) and [Shiny for Python](../../../blog/shiny/shiny-python-1.2-brand-yml/), and we're happy to be bringing brand.yml to R as well.
 
 If you haven't seen [brand.yml](https://posit-dev.github.io/brand-yml) in action yet, here's an example `_brand.yml` file that includes metadata about the company, its logos, color palette, theme, and the fonts and typographic settings used by the brand.
 
-**\_brand.yml**
 
-``` yaml
+``` yaml { filename="_brand.yml" }
 meta:
   name: brand.yml
   link: https://posit-dev.github.io/brand-yml
@@ -110,9 +113,8 @@ Note that brand.yml works best with Bootstrap version 5.
 
 For R Markdown, use `brand` under `output.html_document.theme`:
 
-**report.Rmd**
 
-``` yaml
+``` yaml { filename="report.Rmd" }
 output:
   html_document:
     theme:
@@ -122,9 +124,8 @@ output:
 
 Similarly, in pkgdown, you can use `brand` under `template.bslib`:
 
-**\_pkgdown.yml**
 
-``` yaml
+``` yaml { filename="_pkgdown.yml" }
 template:
   bslib:
     version: 5

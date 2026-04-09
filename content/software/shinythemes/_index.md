@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#EE6331'
 description: Themes for Shiny
 github: rstudio/shinythemes

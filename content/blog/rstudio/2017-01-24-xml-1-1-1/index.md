@@ -1,9 +1,11 @@
 ---
 title: xml2 1.1.1
+description: "xml2 1.1.1 adds tools for creating and modifying XML, improved list conversion, and XML validation support."
+auto-description: true
 people:
   - Jim Hester
 date: '2017-01-24'
-categories:
+topics:
   - Data Wrangling
 slug: xml-1-1-1
 blogcategories:

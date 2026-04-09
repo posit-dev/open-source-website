@@ -1,9 +1,11 @@
 ---
 title: Version 1.0 of devtools released!
+description: "devtools 1.0 adds S4 and Rcpp support plus much better Rtools detection on Windows."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2013-01-23'
-categories:
+topics:
   - Best Practices
 slug: devtools-1-0
 blogcategories:

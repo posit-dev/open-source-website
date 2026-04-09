@@ -2,7 +2,7 @@
 title: Quarto dashboards video series
 description: |
   Learn how to build a Quarto dashboard with a three-part video series.
-categories:
+topics:
   - Publishing
   - Community
 people:
@@ -22,6 +22,7 @@ tags:
   - Quarto
   - Learn
   - Workshop
+slug: dashboards-workshop
 ---
 
 

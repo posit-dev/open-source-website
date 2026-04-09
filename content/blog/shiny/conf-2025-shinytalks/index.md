@@ -11,7 +11,7 @@ ported_from: shiny
 port_status: in-progress
 software: ["shiny-r", "shiny-python"]
 languages: ["R", "Python"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny
@@ -78,7 +78,7 @@ LLMs + Shiny Workshop
 Joe Cheng & Garrick Aden-Buie
 </p>
 
-<a href="https://posit-conf-2025.github.io/llm/" class="me-3">LLM Course Materials</a><a href="https://github.com/posit-conf-2025/llm"><img src="/images/github.svg" style="width:16px;height:auto;display:inline;"></a>
+<a href="https://posit-conf-2025.github.io/llm/" class="me-3">LLM Course Materials</a><a href="https://github.com/posit-conf-2025/llm"><img src="github.svg" style="width:16px;height:auto;display:inline;"></a>
 
 <h3 class="me-2">
 Shiny for Python Workshop
@@ -88,7 +88,7 @@ Shiny for Python Workshop
 Daniel Chen
 </p>
 
-<a href="https://posit-conf-2025.github.io/shiny-py/" class="me-3">Shiny for R Materials</a><a href="https://github.com/posit-conf-2025/shiny-py"><img src="/images/github.svg" style="width:16px;height:auto;display:inline;"></a>
+<a href="https://posit-conf-2025.github.io/shiny-py/" class="me-3">Shiny for R Materials</a><a href="https://github.com/posit-conf-2025/shiny-py"><img src="github.svg" style="width:16px;height:auto;display:inline;"></a>
 
 <h3 class="me-2">
 Shiny for R Workshop
@@ -98,7 +98,7 @@ Shiny for R Workshop
 Colin Rundel
 </p>
 
-<a href="https://posit-conf-2025.github.io/shiny-r/" class="me-3">Shiny for Python Materials</a><a href="https://github.com/posit-conf-2025/shiny-r/"><img src="/images/github.svg" style="width:16px;height:auto;display:inline;"></a>
+<a href="https://posit-conf-2025.github.io/shiny-r/" class="me-3">Shiny for Python Materials</a><a href="https://github.com/posit-conf-2025/shiny-r/"><img src="github.svg" style="width:16px;height:auto;display:inline;"></a>
 
 ## Closing
 

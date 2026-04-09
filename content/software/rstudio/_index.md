@@ -1,4 +1,7 @@
 ---
+topics:
+- MLOps and Admin
+- Visualization
 color: '#E7B10A'
 description: RStudio is an integrated development environment (IDE) for R
 github: rstudio/rstudio

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/autumn-trees-with-colorful-leaves-in-a-park-Qx6Ojv9WPo8
   author: Anurag Jamwal
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
@@ -42,10 +42,10 @@ Since the beginning of 2021, we have been publishing quarterly updates here on t
 
 Since our last update we have had some larger releases that you can read about in these posts.
 
--   [tune 2.0.0](https://tidyverse.org/blog/2025/11/tune-2/)
--   [recipes 1.3.0](https://tidyverse.org/blog/2025/04/recipes-1-3-0/)
--   [rsample 1.3.0](https://tidyverse.org/blog/2025/04/rsample-1-3-0/)
--   [improved sparsity support in tidymodels](https://tidyverse.org/blog/2025/03/tidymodels-sparsity/)
+-   [tune 2.0.0](/blog/2025-11-05_tune-2/)
+-   [recipes 1.3.0](/blog/2025-04-28_recipes-1-3-0/)
+-   [rsample 1.3.0](/blog/2025-04-03_rsample-1-3-0/)
+-   [improved sparsity support in tidymodels](/blog/2025-03-19_tidymodels-sparsity/)
 
 The post will update, you on which packages have changed and the improvements you should know about that haven't been covered in the above posts.
 

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/Hli3R6LKibo
   author: Adi Goldstein
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

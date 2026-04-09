@@ -7,7 +7,7 @@ description: "Learn how to transform a single Jupyter notebook into a parameteri
   report generator that automatically creates customized outputs for different scenarios.
   \n"
 date: '2025-07-24'
-categories:
+topics:
   - Publishing
 image: thumbnail.png
 image-alt: |
@@ -26,6 +26,7 @@ tags:
   - Authoring
   - Teaching
   - Jupyter
+slug: parameterized-reports-python
 ---
 
 

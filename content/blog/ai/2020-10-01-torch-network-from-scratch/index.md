@@ -4,7 +4,7 @@ description: |
   In this first installment of a four-part miniseries, we present the main things you will want to know about torch tensors. As an illustrative example, we'll code a simple neural network from scratch.
 date: '2020-10-01'
 slug: keydanatorchnetworkfromscratch
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

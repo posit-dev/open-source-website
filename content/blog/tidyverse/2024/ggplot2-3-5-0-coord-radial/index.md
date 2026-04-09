@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ferris-wheel-beside-body-of-water-under-blue-sky-during-daytime-IWOo59NUXBk
   author: Ismail Merad
-categories:
+topics:
   - Visualization
 tags:
   - Ggplot2-3-5-0
@@ -37,9 +37,9 @@ TODO:
 * [ ] [`usethis::use_tidy_thanks()`](https://usethis.r-lib.org/reference/use_tidy_thanks.html)
 -->
 
-We are happy to announce the release of [ggplot2](https://ggplot2.tidyverse.org) 3.5.0. This is one blogpost among several outlining a new polar coordinate system. Please find the [main release post](/blog/2024/02/ggplot2-3-5-0/) to read about other exciting changes.
+We are happy to announce the release of [ggplot2](https://ggplot2.tidyverse.org) 3.5.0. This is one blogpost among several outlining a new polar coordinate system. Please find the [main release post](/blog/tidyverse/2024/ggplot2-3-5-0/) to read about other exciting changes.
 
-Polar coordinates are a good reminder of the flexibility of the Grammar of Graphics: pie charts are just bar charts with polar coordinates. While the tried and tested [`coord_polar()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) has served well in the past to fulfill your pie chart needs, we felt it was due some modernisation. We realised we could not adapt [`coord_polar()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) to fit with the [new guide system](/blog/2024/02/ggplot2-3-5-0/#guide-rewrite) without severely breaking existing plots, so [`coord_radial()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) was born to give a facelift to the polar coordinate system in ggplot2.
+Polar coordinates are a good reminder of the flexibility of the Grammar of Graphics: pie charts are just bar charts with polar coordinates. While the tried and tested [`coord_polar()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) has served well in the past to fulfill your pie chart needs, we felt it was due some modernisation. We realised we could not adapt [`coord_polar()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) to fit with the [new guide system](/blog/tidyverse/2024/ggplot2-3-5-0/#guide-rewrite) without severely breaking existing plots, so [`coord_radial()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) was born to give a facelift to the polar coordinate system in ggplot2.
 
 Relative to [`coord_polar()`](https://ggplot2.tidyverse.org/reference/coord_polar.html), [`coord_radial()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) can:
 
@@ -125,7 +125,7 @@ A common grievance with about polar coordinates is that it was cumbersome to rot
 
 ## Axes
 
-Because the logic of drawing axes for polar coordinates is not the same as when axes are perfectly vertical or horizontal, we used the new guide system to build an axis specific to [`coord_radial()`](https://ggplot2.tidyverse.org/reference/coord_polar.html): the [`guide_axis_theta()`](https://ggplot2.tidyverse.org/reference/guide_axis_theta.html) axis. Guides for [`coord_radial()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) can be set using `theta` and `r` name in the [`guides()`](https://ggplot2.tidyverse.org/reference/guides.html) function. While the `r` axis can be the regular [`guide_axis()`](https://ggplot2.tidyverse.org/reference/guide_axis.html), the `theta` axis uses the highly specialised [`guide_axis_theta()`](https://ggplot2.tidyverse.org/reference/guide_axis_theta.html). The theta axis shares many features with typical axes, like setting the text angle or the new `minor.ticks` and `cap` settings. More on these settings in the [axis blog](/blog/2024/02/ggplot2-3-5-0-axes/). As seen in previous plots, the default is to place text horizontally. One neat trick we've put into [`coord_radial()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) is that we can set a *relative* text angle in the guides, such as in the plot below.
+Because the logic of drawing axes for polar coordinates is not the same as when axes are perfectly vertical or horizontal, we used the new guide system to build an axis specific to [`coord_radial()`](https://ggplot2.tidyverse.org/reference/coord_polar.html): the [`guide_axis_theta()`](https://ggplot2.tidyverse.org/reference/guide_axis_theta.html) axis. Guides for [`coord_radial()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) can be set using `theta` and `r` name in the [`guides()`](https://ggplot2.tidyverse.org/reference/guides.html) function. While the `r` axis can be the regular [`guide_axis()`](https://ggplot2.tidyverse.org/reference/guide_axis.html), the `theta` axis uses the highly specialised [`guide_axis_theta()`](https://ggplot2.tidyverse.org/reference/guide_axis_theta.html). The theta axis shares many features with typical axes, like setting the text angle or the new `minor.ticks` and `cap` settings. More on these settings in the [axis blog](/blog/tidyverse/2024/ggplot2-3-5-0-axes/). As seen in previous plots, the default is to place text horizontally. One neat trick we've put into [`coord_radial()`](https://ggplot2.tidyverse.org/reference/coord_polar.html) is that we can set a *relative* text angle in the guides, such as in the plot below.
 
 <div class="highlight">
 

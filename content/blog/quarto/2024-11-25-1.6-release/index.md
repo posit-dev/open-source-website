@@ -1,8 +1,10 @@
 ---
 title: Quarto 1.6
-description: |
-  Quarto 1.6 supports unified branding across formats, updates to RevealJS, a new shortcode to reorder content, a landscape page block, and more. There are also a couple of breaking changes that will affect a small number of users.
-categories:
+description: >
+  Quarto 1.6 supports unified branding across formats, updates to RevealJS, a
+  new shortcode to reorder content, a landscape page block, and more. There are
+  also a couple of breaking changes that will affect a small number of users.
+topics:
   - Publishing
 people:
   - Charlotte Wickham
@@ -11,8 +13,12 @@ image: thumbnail.png
 image-alt: Quarto 1.6 with a palette.
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - Quarto 1.6
   - Releases
@@ -20,6 +26,7 @@ tags:
   - Quarto
   - Quarto 1.6
   - Releases
+slug: 1.6-release
 ---
 
 
@@ -45,9 +52,8 @@ You can read about these new features and a couple of breaking changes in the se
 
 As an example, consider the following `_brand.yml` file:
 
-**\_brand.yml**
 
-``` yaml
+``` yaml { filename="_brand.yml" }
 color:
   palette:
     dark-grey: "#222222"
@@ -333,4 +339,4 @@ We want to say a huge thank you to everyone who contributed to this release by o
 [yurivict](https://github.com/yurivict),
 [yves-amevoin](https://github.com/yves-amevoin).
 
-The palette emoji in the [listing and social card image](images/thumbnail.png) for this post comes from <a href="https://openmoji.org/" class="external">OpenMoji</a>-- the open-source emoji and icon project. License: <a href="https://creativecommons.org/licenses/by-sa/4.0/#" class="external">CC BY-SA 4.0</a>
+The palette emoji in the [listing and social card image](thumbnail.png) for this post comes from <a href="https://openmoji.org/" class="external">OpenMoji</a>-- the open-source emoji and icon project. License: <a href="https://creativecommons.org/licenses/by-sa/4.0/#" class="external">CC BY-SA 4.0</a>

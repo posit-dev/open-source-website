@@ -1,4 +1,9 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 color: '#87C9D8'
 description: R package for creating Plumber APIs that function as Tableau Analytics
   Extensions

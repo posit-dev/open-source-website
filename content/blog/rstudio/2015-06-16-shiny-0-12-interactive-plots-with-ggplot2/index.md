@@ -1,9 +1,11 @@
 ---
 title: 'Shiny 0.12: Interactive Plots with ggplot2'
+description: "Shiny 0.12 adds interactive plots for base graphics and ggplot2: capture mouse clicks, hovers, and brushes to select points."
+auto-description: true
 people:
   - Joe Cheng
 date: '2015-06-16'
-categories:
+topics:
   - Interactive Apps
 tags:
   - Packages

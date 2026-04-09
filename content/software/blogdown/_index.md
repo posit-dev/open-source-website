@@ -1,4 +1,8 @@
 ---
+topics:
+- Community
+- Publishing
+- Visualization
 color: '#FBA304'
 description: Create Blogs and Websites with R Markdown
 github: rstudio/blogdown

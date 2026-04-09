@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Visualization
 color: '#859900'
 description: A fresh approach to package installation
 github: r-lib/pak

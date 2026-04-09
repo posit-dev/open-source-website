@@ -1,4 +1,10 @@
 ---
+topics:
+- Community
+- Data Wrangling
+- Interactive Apps
+- Machine Learning
+- Publishing
 color: '#EE6331'
 description: rstudio::conf(2022, "program")
 github: rstudio/rstudio-conf-2022-program

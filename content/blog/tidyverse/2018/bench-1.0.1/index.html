@@ -106,7 +106,7 @@ results
 <h3>Plotting</h3>
 <p><code>ggplot2::autoplot()</code> can be used to generate an informative default plot. This plot is colored by GC level (0, 1, or 2) and faceted by parameters (if any). By default it generates a <a href="https://github.com/eclarke/ggbeeswarm#geom_quasirandom">beeswarm</a> plot, however you can also specify other plot types (<code>jitter</code>, <code>ridge</code>, <code>boxplot</code>, <code>violin</code>). See <code>?autoplot.bench_mark</code> for full details. This gives you a nice overview of the runs and allows you to gauge the effects of garbage collection on the results.</p>
 <pre class="r"><code>ggplot2::autoplot(results)</code></pre>
-<p><img src="/articles/2018-06-bench-1.0.1_files/figure-html/autoplot-1.png" width="100%" /></p>
+<p><img src="autoplot-1.png" width="100%" /></p>
 <p>You can also produce fully custom plots by un-nesting the results and working with the data directly. In this case we are exploring how the amount of memory allocated by each expression interacts with the time taken to run.</p>
 <pre class="r"><code>library(tidyverse)
 results %&gt;%
@@ -116,7 +116,7 @@ results %&gt;%
     geom_point() +
     scale_color_brewer(type = &quot;qual&quot;, palette = 3) +
     geom_smooth(method = &quot;lm&quot;, se = F, colour = &quot;grey50&quot;)</code></pre>
-<p><img src="/articles/2018-06-bench-1.0.1_files/figure-html/custom-plot-1.png" width="100%" /></p>
+<p><img src="custom-plot-1.png" width="100%" /></p>
 </div>
 <div id="compared-to-existing-methods" class="section level3">
 <h3>Compared to existing methods</h3>

@@ -1,9 +1,11 @@
 ---
 title: Shiny Server 0.4
+description: "Shiny Server 0.4 brings pre-built installers for Ubuntu and RedHat, plus a beta of Shiny Server Pro."
+auto-description: true
 people:
   - RStudio Team
 date: '2013-12-03'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-server-0-4
 blogcategories:

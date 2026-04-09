@@ -1,9 +1,11 @@
 ---
 title: Version 1.2 of devtools released
+description: "devtools 1.2 speeds up installation, supports R 3.0 vignettes, and adds sha verification for source_url()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2013-04-17'
-categories:
+topics:
   - Best Practices
 slug: devtools-1-2
 blogcategories:

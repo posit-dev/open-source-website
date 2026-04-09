@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#375852'
 description: Swagger is a collection of HTML, Javascript, and CSS assets that dynamically
   generate beautiful documentation from a Swagger-compliant API.

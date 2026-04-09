@@ -4,7 +4,7 @@ description: |
   Today, we are excited to introduce torch, an R package that allows you to use PyTorch-like functionality natively from R. No Python installation is required: torch is built directly on top of libtorch, a C++ library that provides the tensor-computation and automatic-differentiation capabilities essential to building neural networks.
 date: '2020-09-29'
 slug: keydanaintroducingtorchforR
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

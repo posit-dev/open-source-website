@@ -3,7 +3,7 @@ title: Multi-format Publishing
 subtitle: Automatically link to other formats in HTML documents
 description: |
   In Quarto 1.3, additional formats listed in HTML documents will automatically be linked in an "Other Formats" section near the top of the page.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham
@@ -27,6 +27,7 @@ tags:
   - Features
   - Authoring
   - Quarto 1.3
+slug: multi-format
 ---
 
 

@@ -1,9 +1,11 @@
 ---
 title: 'htmlwidgets: JavaScript data visualization for R'
+description: "Introducing htmlwidgets: bring JavaScript visualization libraries to R. Works in console, R Markdown, and Shiny."
+auto-description: true
 people:
   - RStudio Team
 date: '2014-12-18'
-categories:
+topics:
   - Interactive Apps
 slug: htmlwidgets-javascript-data-visualization-for-r
 blogcategories:

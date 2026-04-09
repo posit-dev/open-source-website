@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#657B83'
 description: Call R from R
 github: r-lib/callr

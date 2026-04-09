@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 description: config package for R
 github: rstudio/config
 image: logo.svg

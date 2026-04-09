@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/PacWLzKKTso
   author: Chad Peltola
-categories:
+topics:
   - Artificial Intelligence
 tags:
   - AI

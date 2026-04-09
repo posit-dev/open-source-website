@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/aId-xYRTlEc
   author: Markus Winkler
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-1-0

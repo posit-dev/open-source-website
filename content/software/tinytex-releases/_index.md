@@ -1,4 +1,7 @@
 ---
+topics:
+- Machine Learning
+- Publishing
 color: '#BF2A13'
 description: Windows/macOS/Linux binaries and installation methods of TinyTeX
 github: rstudio/tinytex-releases

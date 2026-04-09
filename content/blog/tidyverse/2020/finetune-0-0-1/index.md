@@ -9,7 +9,7 @@ description: "finetune is a new package that adds a few more model tuning method
 photo:
   url: https://unsplash.com/photos/nQYqEwimp5o
   author: Rob Wingate
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

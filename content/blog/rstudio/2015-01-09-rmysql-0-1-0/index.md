@@ -1,9 +1,11 @@
 ---
 title: RMySQL 0.10.0
+description: "RMySQL 0.10.0 adds CRAN binaries for Windows/Mac, transaction support, and DBI 0.3 compatibility."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-01-09'
-categories:
+topics:
   - Data Wrangling
 slug: rmysql-0-1-0
 blogcategories:

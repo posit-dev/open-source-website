@@ -1,9 +1,11 @@
 ---
 title: 'DT: An R interface to the DataTables library'
+description: "DT brings DataTables to R: sortable, filterable, paginated HTML tables with column formatting and Shiny integration."
+auto-description: true
 people:
   - Yihui Xie
 date: '2015-06-24'
-categories:
+topics:
   - Visualization
   - Interactive Apps
 tags:

@@ -4,7 +4,7 @@ description: |
   Get to know torch's linalg module, all while learning about different ways to do least-squares regression from scratch. This post is a condensed version of the corresponding chapter in the forthcoming book, Deep Learning and Scientific Computing with R torch, to be published by CRC Press.
 date: '2022-10-13T00:00:00.000Z'
 slug: keydanatorchlinalg
-categories:
+topics:
   - Machine Learning
   - Best Practices
 author:
@@ -27,6 +27,7 @@ tags:
   - Torch
   - Concepts
   - Tabular data
+math: true
 ---
 
 
@@ -328,7 +329,8 @@ Now that we have $\mathbf{L}\mathbf{L}^T$ instead of $\mathbf{A}^T\mathbf{A}$, h
 
 With $\mathbf{L}\mathbf{L}^T$, the point is that $\mathbf{L}$ is triangular, and when that's the case the linear system can be solved by simple substitution. That is best visible with a tiny example:
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
   1 & 0 & 0\\
   2 & 3 & 0\\
   3 & 4 & 1
@@ -337,13 +339,13 @@ $$\begin{bmatrix}
   x1\\
   x2\\
   x3
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
   1\\
   11\\
   15
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 Starting in the top row, we immediately see that $x1$ equals $1$; and once we know *that* it is straightforward to calculate, from row two, that $x2$ must be $3$. The last row then tells us that $x3$ must be $0$.
 

@@ -1,4 +1,6 @@
 ---
+topics:
+- Machine Learning
 color: '#412817'
 description: Tools for creating tuning parameter values
 github: tidymodels/dials

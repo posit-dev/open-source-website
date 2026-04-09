@@ -2,7 +2,7 @@
 title: Quarto website video series
 description: |
   Build a personal website with Quarto by following this four-part video series on YouTube.
-categories:
+topics:
   - Publishing
   - Community
 people:
@@ -22,6 +22,7 @@ tags:
   - Quarto
   - Learn
   - Workshop
+slug: websites-workshop
 ---
 
 

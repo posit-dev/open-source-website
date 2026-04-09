@@ -1,5 +1,7 @@
 ---
 title: How We Used Great Tables to Supercharge Reporting in Pointblank
+description: "See how Great Tables powers Pointblank's beautiful, shareable validation reports."
+auto-description: true
 people:
   - Rich Iannone
 date: '2025-02-11T00:00:00.000Z'
@@ -7,7 +9,7 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

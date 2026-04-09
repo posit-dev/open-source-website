@@ -375,6 +375,6 @@ We also appreciate bug reports, feature requests, and valuable other feedback ab
 
 Last but not least, the author of this blog post is extremely grateful for fantastic editorial suggestions from [\@javierluraschi](https://github.com/javierluraschi), [\@batpigandme](https://github.com/batpigandme), and [\@skeydan](https://github.com/skeydan).
 
-If you wish to learn more about `sparklyr`, we recommend checking out [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and also some of the previous release posts such as [sparklyr 1.3](https://blog.rstudio.com/2020/07/16/sparklyr-1-3/) and [sparklyr 1.2](/blog/ai/2020-04-21-sparklyr-1.2.0-released/).
+If you wish to learn more about `sparklyr`, we recommend checking out [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and also some of the previous release posts such as [sparklyr 1.3](/blog/2020-07-16_sparklyr-1-3/) and [sparklyr 1.2](/blog/ai/2020-04-21-sparklyr-1.2.0-released/).
 
 Thanks for reading!

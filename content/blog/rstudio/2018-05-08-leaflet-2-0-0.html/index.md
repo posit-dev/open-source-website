@@ -4,7 +4,7 @@ people:
   - Barret Schloerke
 date: '2018-05-10'
 slug: leaflet-2-0-0
-categories:
+topics:
   - Visualization
   - Interactive Apps
 tags:

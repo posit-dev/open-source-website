@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.flickr.com/photos/iamagenious/6251271390/sizes/o/
   author: Eric Molina
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

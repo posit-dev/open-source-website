@@ -1,4 +1,8 @@
 ---
+topics:
+- Artificial Intelligence
+- MLOps and Admin
+- Machine Learning
 color: '#F3CBAC'
 description: Version, share, deploy, and monitor models.
 github: rstudio/vetiver-python

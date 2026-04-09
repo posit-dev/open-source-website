@@ -3,7 +3,7 @@ title: Customizing Table Output
 subtitle: Author and customize markdown tables using Quarto
 description: |
   This post provides an overview of these capabilities in Quarto. For more detail about all the features Quarto for authoring tables, see [Tables](https://quarto.org/docs/authoring/tables.html).
-categories:
+topics:
   - Publishing
 people:
   - JJ Allaire
@@ -24,6 +24,7 @@ tags:
   - Features
   - Authoring
   - Tables
+slug: feature-tables
 ---
 
 

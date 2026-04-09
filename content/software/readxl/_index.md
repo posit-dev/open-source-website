@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#04518A'
 description: Read excel files (.xls and .xlsx) into R 🖇
 github: tidyverse/readxl

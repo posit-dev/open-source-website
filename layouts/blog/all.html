@@ -103,9 +103,9 @@
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
-            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="categories">
+            <th class="px-3 py-2 text-left cursor-pointer hover:bg-gray-200 select-none" data-sort="topics">
               <div class="flex items-center gap-1">
-                Categories
+                Topics
                 <span class="sort-icon text-gray-400">↕</span>
               </div>
             </th>
@@ -225,9 +225,9 @@
               {{ end }}
             </td>
 
-            <!-- Categories -->
-            <td class="px-3 py-2" data-value="{{ if .Params.categories }}{{ delimit .Params.categories ", " }}{{ end }}">
-              {{ with .Params.categories }}
+            <!-- Topics -->
+            <td class="px-3 py-2" data-value="{{ if .Params.topics }}{{ delimit .Params.topics ", " }}{{ end }}">
+              {{ with .Params.topics }}
                 <div class="flex flex-wrap gap-1">
                   {{ range . }}
                     <span class="text-xs px-1.5 py-0.5 rounded bg-purple-100 text-gray-700">

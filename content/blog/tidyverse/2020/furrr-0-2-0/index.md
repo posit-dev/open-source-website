@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/0pDUGYuDYWw
   author: Bhargava Srivari
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

@@ -1,4 +1,6 @@
 ---
+topics:
+- Machine Learning
 color: '#BFA367'
 description: Parsnip wrappers for survival models
 github: tidymodels/censored

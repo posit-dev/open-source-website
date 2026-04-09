@@ -10,7 +10,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/KDJ1TbLDoOo
   author: Mishaal Zahed
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
@@ -36,7 +36,7 @@ You can install gargle from CRAN with:
 
 </div>
 
-I last blogged about gargle in [August 2019, around the release of v0.3.1](https://www.tidyverse.org/blog/2019/08/gargle-hello-world/). There have been several releases since then and this post highlights important changes across all of them.
+I last blogged about gargle in [August 2019, around the release of v0.3.1](/blog/2019-08-20_gargle-hello-world/). There have been several releases since then and this post highlights important changes across all of them.
 
 You can see a full list of changes in the [release notes](https://gargle.r-lib.org/news/index.html).
 

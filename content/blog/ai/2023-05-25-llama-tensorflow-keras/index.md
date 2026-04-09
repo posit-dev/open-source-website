@@ -4,7 +4,7 @@ description: |
   Implementation and walk-through of LLaMA, a Large Language Model, in R, with TensorFlow and Keras.
 date: '2023-05-25T00:00:00.000Z'
 slug: kalinowskillama
-categories:
+topics:
   - Machine Learning
   - Artificial Intelligence
 author:

@@ -53,7 +53,7 @@ ggplot() +
   )
 ```
 
-<img src="/articles/2018-10-ggplot2-3-1-0_files/figure-html/coord-sf-1.png" width="672" />
+<img src="coord-sf-1.png" width="672" />
 
 Two new geoms, `geom_sf_label()` and `geom_sf_text()`, can draw labels and text
 on sf objects.
@@ -65,7 +65,7 @@ ggplot(nc[1:3, ]) +
   geom_sf_label(aes(label = NAME))
 ```
 
-<img src="/articles/2018-10-ggplot2-3-1-0_files/figure-html/geom-sf-text-1.png" width="672" />
+<img src="geom-sf-text-1.png" width="672" />
 
 Under the hood, a new `stat_sf_coordinates()` calculates the
 x and y coordinates from the coordinates of the sf geometries. You can customize
@@ -80,7 +80,7 @@ ggplot(nc) +
   stat_sf_coordinates(geom = "point", color = "red")
 ```
 
-<img src="/articles/2018-10-ggplot2-3-1-0_files/figure-html/stat_sf_coordinates-1.png" width="672" />
+<img src="stat_sf_coordinates-1.png" width="672" />
 
 ```r
 
@@ -93,7 +93,7 @@ ggplot(nc) +
   )
 ```
 
-<img src="/articles/2018-10-ggplot2-3-1-0_files/figure-html/stat_sf_coordinates-2.png" width="672" />
+<img src="stat_sf_coordinates-2.png" width="672" />
 
 
 ## Minor fixes and improvements
@@ -133,7 +133,7 @@ p4 <- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Sepal.Length,
 cowplot::plot_grid(p1, p2, p3, p4)
 ```
 
-<img src="/articles/2018-10-ggplot2-3-1-0_files/figure-html/color-vs-colour-1.png" width="672" />
+<img src="color-vs-colour-1.png" width="672" />
 
 Normalized statistics are now provided with `stat_bin2d()`, `stat_binhex()`, `stat_density_2d()`, and `stat_contour()` to plot 2d distributions normalized to a common height. This feature can be useful for faceted 2d plots, where the maximum density/count can vary greatly between panels. For example, when using  `stat_density_2d()` with `contour = TRUE`, we can now use the calculated statistic `nlevel` to color by where each contour polygon lies relative to the highest one in that facet.
 
@@ -151,7 +151,7 @@ ggplot(diamonds, aes(x, depth)) +
   scale_fill_viridis_c(option = "A")
 ```
 
-<img src="/articles/2018-10-ggplot2-3-1-0_files/figure-html/stat-density-2d-1.png" width="672" />
+<img src="stat-density-2d-1.png" width="672" />
 
 
 ## Acknowledgements

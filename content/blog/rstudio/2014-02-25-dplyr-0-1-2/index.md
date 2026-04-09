@@ -1,9 +1,11 @@
 ---
 title: dplyr 0.1.2
+description: "dplyr 0.1.2 improves select() with starts_with(), ends_with(), contains(), and named arguments for renaming."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-02-25'
-categories:
+topics:
   - Data Wrangling
 slug: dplyr-0-1-2
 blogcategories:

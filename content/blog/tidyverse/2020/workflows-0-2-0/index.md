@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/nN5L5GXKFz8
   author: Mark Fletcher-Brown
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

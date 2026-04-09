@@ -3,7 +3,7 @@ title: Quarto 1.5
 description: "Quarto 1.5 improves Typst support, has some website enhancements like
   draft handling and announcement bars, adds a native Julia engine, and adds a couple
   of shortcodes for generating placeholder content. \n"
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham
@@ -21,6 +21,7 @@ tags:
   - Quarto
   - Quarto 1.5
   - Releases
+slug: 1.5-release
 ---
 
 
@@ -30,7 +31,7 @@ Below, we'll highlight the improved Typst support, website enhancements like dra
 
 ## Typst CSS
 
-We've already blogged about one feature that is now available in 1.5: [Beautiful Tables in Typst](https://quarto.org/docs/blog/posts/2024-07-02-beautiful-tables-in-typst/). The CSS properties from HTML tables produced in your code are translated to Typst properties, so the tables you lovingly craft for HTML should look just as good in PDFs produced using `format: typst`.
+We've already blogged about one feature that is now available in 1.5: [Beautiful Tables in Typst](/blog/2024-07-02_beautiful-tables-in-typst/). The CSS properties from HTML tables produced in your code are translated to Typst properties, so the tables you lovingly craft for HTML should look just as good in PDFs produced using `format: typst`.
 
 Beyond tables, CSS properties on divs and spans are also translated to Typst properties. So, for example, you could get text with a green background like this:
 

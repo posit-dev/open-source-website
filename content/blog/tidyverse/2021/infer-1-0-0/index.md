@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://simonpcouch.com
   author: Simon Couch
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
@@ -21,6 +21,7 @@ software: ["tidyverse", "tidymodels"]
 languages: ["R"]
 ported_categories:
   - package
+math: true
 ---
 
 <!--

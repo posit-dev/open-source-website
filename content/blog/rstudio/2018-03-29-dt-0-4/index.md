@@ -1,9 +1,11 @@
 ---
 title: 'DT 0.4: Editing Tables, Smart Filtering, and More'
+description: "DT 0.4: editable tables, smart filtering, and shift-click row selection for Shiny apps."
+auto-description: true
 people:
   - Yihui Xie
 date: '2018-03-29'
-categories:
+topics:
   - Visualization
   - Interactive Apps
 tags:
@@ -24,7 +26,7 @@ ported_categories:
 ---
 
 
-It has been [more than two years](/2015/06/24/dt-an-r-interface-to-the-datatables-library/) since we announced the initial version of the **DT** package. Today we want to highlight a few significant changes and new features in the recent releases v0.3 and v0.4. The full changes can be found in the [release notes](https://github.com/rstudio/DT/releases).
+It has been [more than two years](/blog/rstudio/2015-06-24-dt-an-r-interface-to-the-datatables-library/) since we announced the initial version of the **DT** package. Today we want to highlight a few significant changes and new features in the recent releases v0.3 and v0.4. The full changes can be found in the [release notes](https://github.com/rstudio/DT/releases).
 
 ## Editable tables
 

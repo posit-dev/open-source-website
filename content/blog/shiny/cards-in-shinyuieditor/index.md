@@ -12,7 +12,7 @@ ported_from: shiny
 port_status: in-progress
 software: ["shinyuieditor", "bslib", "shiny-r"]
 languages: ["R"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

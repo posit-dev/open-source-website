@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/close-up-photo-of-black-camera-lens-hqCEQTc5gZA
   author: Markus Spiske
-categories:
+topics:
   - Visualization
 tags:
   - Ggplot2-3-5-0
@@ -37,7 +37,7 @@ TODO:
 * [ ] [`usethis::use_tidy_thanks()`](https://usethis.r-lib.org/reference/use_tidy_thanks.html)
 -->
 
-We are pleased to release [ggplot2](https://ggplot2.tidyverse.org) 3.5.0. This is one blogpost among several outlining changes to legend guides. Please find the [main release post](/blog/2024/02/ggplot2-3-5-0/) to read about other changes.
+We are pleased to release [ggplot2](https://ggplot2.tidyverse.org) 3.5.0. This is one blogpost among several outlining changes to legend guides. Please find the [main release post](/blog/tidyverse/2024/ggplot2-3-5-0/) to read about other changes.
 
 Legends, alongside axes, are visual representations of scales and allow observes to translate graphical properties of a plot into information. To no surprise, legends in ggplot2 comprise the guides called [`guide_legend()`](https://ggplot2.tidyverse.org/reference/guide_legend.html), but also [`guide_colourbar()`](https://ggplot2.tidyverse.org/reference/guide_colourbar.html), [`guide_coloursteps()`](https://ggplot2.tidyverse.org/reference/guide_coloursteps.html) and [`guide_bins()`](https://ggplot2.tidyverse.org/reference/guide_bins.html).
 

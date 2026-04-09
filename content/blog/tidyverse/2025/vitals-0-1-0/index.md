@@ -8,7 +8,7 @@ description: |
   The first release of vitals, a package for large language model evaluation in R, just made it to CRAN.
 photo:
   author: Google Imagen 4
-categories:
+topics:
   - Artificial Intelligence
 tags:
   - AI
@@ -36,7 +36,7 @@ TODO:
 * [x] [`usethis::use_tidy_thanks()`](https://usethis.r-lib.org/reference/use_tidy_thanks.html)
 -->
 
-We're bear-y excited to announce the release of [vitals](https::vitals.tidyverse.org) on CRAN. vitals is a framework for large language model evaluation in R. It's specifically aimed at ellmer users who want to measure the effectiveness of their LLM products like [custom chat apps](https://posit.co/blog/custom-chat-app/) and [querychat](https://github.com/posit-dev/querychat) apps.
+We're bear-y excited to announce the release of [vitals](https://vitals.tidyverse.org) on CRAN. vitals is a framework for large language model evaluation in R. It's specifically aimed at ellmer users who want to measure the effectiveness of their LLM products like [custom chat apps](https://posit.co/blog/custom-chat-app/) and [querychat](https://github.com/posit-dev/querychat) apps.
 
 You can install it from CRAN with:
 

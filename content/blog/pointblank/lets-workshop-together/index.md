@@ -1,5 +1,7 @@
 ---
 title: 'C''mon C''mon: Let''s Do a Pointblank Workshop!'
+description: "Want a free Pointblank workshop for your data team? Here's how to set one up."
+auto-description: true
 people:
   - Rich Iannone
 date: '2025-06-03T00:00:00.000Z'
@@ -8,7 +10,7 @@ ported_from: pointblank
 port_status: in-progress
 software: ["pointblank"]
 languages: ["Python"]
-categories:
+topics:
   - Data Wrangling
 tags:
   - Pointblank

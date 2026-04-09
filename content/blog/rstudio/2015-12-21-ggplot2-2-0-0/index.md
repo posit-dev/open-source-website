@@ -1,9 +1,11 @@
 ---
 title: ggplot 2.0.0
+description: "ggplot2 2.0.0: official extension mechanism, new geoms (geom_count, geom_curve, geom_label), appearance tweaks, and facet labels."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2015-12-21'
-categories:
+topics:
   - Visualization
 slug: ggplot2-2-0-0
 blogcategories:
@@ -21,7 +23,7 @@ ported_categories:
 ---
 
 
-I'm very pleased to announce the release of ggplot2 2.0.0. I know I promised [that there wouldn't be any more updates](https://blog.rstudio.com/2015/01/09/ggplot2-updates/), but while working on the 2nd edition of the ggplot2 book, I just couldn't stop myself from fixing some long standing problems.
+I'm very pleased to announce the release of ggplot2 2.0.0. I know I promised [that there wouldn't be any more updates](/blog/2015-01-09_ggplot2-updates/), but while working on the 2nd edition of the ggplot2 book, I just couldn't stop myself from fixing some long standing problems.
 
 On the scale of ggplot2 releases, this one is huge with over one hundred fixes and improvements. This might break some of your existing code (although I've tried to minimise breakage as much as possible), but I hope the new features make up for any short term hassle. This blog post documents the most important changes:
 

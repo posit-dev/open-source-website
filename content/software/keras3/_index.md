@@ -1,4 +1,7 @@
 ---
+topics:
+- Artificial Intelligence
+- Machine Learning
 color: '#D44000'
 description: R Interface to Keras
 github: rstudio/keras3

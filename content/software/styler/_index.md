@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#B3CAE2'
 description: Non-invasive pretty printing of R code
 github: r-lib/styler

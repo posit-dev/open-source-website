@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 color: '#BF640E'
 description: R Interface to D3 Visualizations
 github: rstudio/r2d3

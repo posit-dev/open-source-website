@@ -150,15 +150,15 @@ We've also exported the `ui_*()` functions that implement usethis's messaging, c
 
 There are inline styles (`ui_field()`, `ui_value()`, `ui_path()`, `ui_code()`), which can be used within the block styles (`ui_line()`, `ui_done()`, `ui_todo()`, `ui_oops()`, `ui_info()`). Some example usage (flanking newlines added for readability):
 
-<p><img src="/images/usethis-1.5.0/ui-done-todo-oops-info.png"/></p>
+<p><img src="ui-done-todo-oops-info.png"/></p>
 
 `ui_stop()` and `ui_warn()` raise the associated condition, but with the same features for the message:
 
-<p><img src="/images/usethis-1.5.0/ui-stop-warn.png"/></p>
+<p><img src="ui-stop-warn.png"/></p>
 
 Finally, `ui_yeah()` and `ui_nope()` facilitate control flow based on user input:
 
-<p><img src="/images/usethis-1.5.0/ui-nope-yeah.png"/></p>
+<p><img src="ui-nope-yeah.png"/></p>
 
 These functions may ultimately move to a more appropriate home, so we can use them to create a more consistent UI across a broad set of tidyverse, r-lib, and tidymodels packages.
 

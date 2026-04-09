@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 color: '#CC509D'
 description: Easy and Powerful Webservers in R
 github: posit-dev/plumber2

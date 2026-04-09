@@ -1,9 +1,11 @@
 ---
 title: tibble 1.2.0
+description: "tibble 1.2.0 adds add_column(), improves add_row() with position control, and renames frame_data() to tribble()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2016-08-29'
-categories:
+topics:
   - Data Wrangling
 slug: tibble-1-2-0
 blogcategories:

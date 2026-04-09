@@ -1,5 +1,7 @@
 ---
 title: 'Great Tables `v0.12.0`: Google Fonts and zebra stripes'
+description: "New in Great Tables v0.12.0: Google Fonts via google_font() and zebra striping with opt_row_striping()."
+auto-description: true
 people:
   - Rich Iannone
 date: '2024-09-30T00:00:00.000Z'
@@ -7,7 +9,7 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

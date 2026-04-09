@@ -3,7 +3,7 @@ title: Code Annotation
 subtitle: Add line based annotations to your code chunks
 description: |
   In Quarto 1.3, you can add line based annotations to code chunks to highlight or explain parts of your code.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham
@@ -26,6 +26,7 @@ tags:
   - Features
   - Authoring
   - Quarto 1.3
+slug: code-annotation
 ---
 
 

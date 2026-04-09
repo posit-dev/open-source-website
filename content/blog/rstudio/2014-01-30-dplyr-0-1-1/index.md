@@ -1,9 +1,11 @@
 ---
 title: dplyr 0.1.1
+description: "dplyr 0.1.1 fixes crash bugs, adds sort argument to tally(), and renames explain_tbl() to explain()."
+auto-description: true
 people:
   - Hadley Wickham
 date: '2014-01-30'
-categories:
+topics:
   - Data Wrangling
 slug: dplyr-0-1-1
 blogcategories:

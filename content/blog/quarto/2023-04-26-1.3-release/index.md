@@ -3,7 +3,7 @@ title: Quarto 1.3
 subtitle: Quarto 1.3 is officially released
 description: |
   Quarto 1.3 brings new features, improvements, and fixes.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham
@@ -12,8 +12,12 @@ image: arthur-chauvineau-Dn7P1U26ZkE-unsplash.jpeg
 image-alt: Fireworks with a silhouette of an audience
 ported_from: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - Quarto 1.3
   - Releases
@@ -21,6 +25,7 @@ tags:
   - Quarto
   - Quarto 1.3
   - Releases
+slug: 1.3-release
 ---
 
 
@@ -28,9 +33,8 @@ We are happy to announce that Quarto 1.3 has been released. You can grab the cur
 
 If you are ever wondering which version of Quarto you are using, a quick way to check on the command line is:
 
-**Terminal**
 
-``` bash
+``` bash { filename="Terminal" }
 quarto --version
 ```
 
@@ -41,7 +45,7 @@ We've previously blogged about some of the features of this release that we were
 You can now add line-based annotations to your code blocks using special code comments along with an ordered list. Code annotations work across many formats, and are interactive in HTML-based formats.
 
 <figure>
-<img src="../2023-03-13-code-annotation/annotation.png" data-fig-alt="Screenshot a code chunk with annotations. Annotations appear in the code chunk as numbers within circles, and repeat below the code chunk along with the text content of the annotations." alt="Code Annotation in an HTML document" />
+<img src="../2023-03-13_code-annotation/annotation.png" data-fig-alt="Screenshot a code chunk with annotations. Annotations appear in the code chunk as numbers within circles, and repeat below the code chunk along with the text content of the annotations." alt="Code Annotation in an HTML document" />
 <figcaption aria-hidden="true">Code Annotation in an HTML document</figcaption>
 </figure>
 
@@ -75,7 +79,7 @@ Find out more in the documentation on [Including Other Formats](https://quarto.o
 Easily include the output of an external Jupyter notebook in a Quarto document with the `embed` shortcode. Provide the path to a Jupyter Notebook and a cell identifier and the output will be included in your document along with a link back to the source Notebook.
 
 <figure>
-<img src="../2023-03-17-jupyter-cell-embedding/embed.png" data-fig-alt="A screenshot of a Quarto page that includes a plot, below the plot is the phrase Source: penguins.ipynb." alt="A plot embedded in a document from a Jupyter Notebook" />
+<img src="../2023-03-17_jupyter-cell-embedding/embed.png" data-fig-alt="A screenshot of a Quarto page that includes a plot, below the plot is the phrase Source: penguins.ipynb." alt="A plot embedded in a document from a Jupyter Notebook" />
 <figcaption aria-hidden="true">A plot embedded in a document from a Jupyter Notebook</figcaption>
 </figure>
 

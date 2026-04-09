@@ -1,5 +1,7 @@
 ---
 title: Great Tables is now BYODF (Bring Your Own DataFrame)
+description: "Great Tables v0.5.0 makes Pandas optional—use Polars without pulling in extra dependencies."
+auto-description: true
 people:
   - Michael Chow
 date: '2024-04-24T00:00:00.000Z'
@@ -7,7 +9,7 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

@@ -1,5 +1,7 @@
 ---
 title: 'Great Tables `v0.15.0`: Flags, Icons, and Other Formatting Goodies'
+description: "New in Great Tables v0.15.0: country flag icons with fmt_flag(), Font Awesome icons, and accounting notation."
+auto-description: true
 people:
   - Rich Iannone
 date: '2024-12-19T00:00:00.000Z'
@@ -7,7 +9,7 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables
@@ -849,7 +851,7 @@ For the formatting in the final four columns, we use `accounting=True` to get th
 
 We are *very* grateful for the work that [Jerry Wu](https://github.com/jrycw) has done during this release, some of which includes:
 
-- enhancing the `fmt_image()` to support `http`/`https` schema in the `columns=` parameter, and writing an [incredible blog post](https://posit-dev.github.io/great-tables/blog/rendering-images/) about incorporating images in your tables
+- enhancing the `fmt_image()` to support `http`/`https` schema in the `columns=` parameter, and writing an [incredible blog post](/blog/2024-12-13_rendering-images/) about incorporating images in your tables
 - improving the `save()` method, giving it the ability to perform intermediate saves (since the method returns itself)
 - adding the `pipe()` method, which operates similarly to that of the Pandas and Polars APIs
 - all sorts of little QoL fixes

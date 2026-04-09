@@ -1,4 +1,6 @@
 ---
+topics:
+- Interactive Apps
 color: '#E6B7A5'
 description: Ark, an R kernel
 github: posit-dev/ark

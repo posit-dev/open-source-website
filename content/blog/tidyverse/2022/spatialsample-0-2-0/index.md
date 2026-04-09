@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/1-29wyvvLJA
   author: Andrew Neel
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

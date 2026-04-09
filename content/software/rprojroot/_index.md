@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#EE6331'
 description: Finding files in project subdirectories
 github: r-lib/rprojroot

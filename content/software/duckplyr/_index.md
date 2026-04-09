@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#FBEB1E'
 description: A drop-in replacement for dplyr, powered by DuckDB for speed.
 github: tidyverse/duckplyr

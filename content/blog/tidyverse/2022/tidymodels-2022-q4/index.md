@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/WKWENifHmJw
   author: Ilona Frey
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
@@ -27,11 +27,11 @@ The [tidymodels](https://www.tidymodels.org/) framework is a collection of R pac
 
 Since the beginning of 2021, we have been publishing [quarterly updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing what's new in the tidymodels ecosystem. The purpose of these regular posts is to share useful new features and any updates you may have missed. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including our roundup posts as well as those that are more focused, like these posts from the past couple months:
 
--   [tidyclust is on CRAN](https://www.tidyverse.org/blog/2022/12/tidyclust-0-1-0/)
--   [Model calibration](https://www.tidyverse.org/blog/2022/11/model-calibration/)
--   [Improvements to model specification checking in tidymodels](https://www.tidyverse.org/blog/2022/10/parsnip-checking-1-0-2/)
+-   [tidyclust is on CRAN](/blog/2022-12-06_tidyclust-0-1-0/)
+-   [Model calibration](/blog/2022-11-29_model-calibration/)
+-   [Improvements to model specification checking in tidymodels](/blog/2022-10-03_parsnip-checking-1-0-2/)
 
-Since [our last roundup post](https://www.tidyverse.org/blog/2022/10/tidymodels-2022-q3/), there have been CRAN releases of 9 tidymodels packages. Here are links to their NEWS files:
+Since [our last roundup post](/blog/2022-10-19_tidymodels-2022-q3/), there have been CRAN releases of 9 tidymodels packages. Here are links to their NEWS files:
 
 <div class="highlight">
 

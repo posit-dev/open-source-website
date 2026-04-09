@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
+- Visualization
 color: '#286380'
 description: Create and summarize spatial resampling objects 🗺
 github: tidymodels/spatialsample

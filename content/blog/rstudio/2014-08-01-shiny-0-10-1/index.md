@@ -1,9 +1,11 @@
 ---
 title: Shiny 0.10.1
+description: "Shiny 0.10.1 adds full Unicode support on Windows, 'user/repo' syntax for runGitHub(), and inline output options."
+auto-description: true
 people:
   - Yihui Xie
 date: '2014-08-01'
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

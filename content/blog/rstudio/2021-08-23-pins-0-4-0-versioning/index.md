@@ -17,7 +17,7 @@ ported_from: rstudio
 port_status: in-progress
 software: ["pins-r"]
 languages: ["R"]
-categories:
+topics:
   - MLOps and Admin
 ---
 
@@ -167,8 +167,8 @@ Notice that enabling versions in cloud services requires additional storage spac
 
 To learn more visit the [Versioning](http://pins.rstudio.com/articles/advanced-versions.html) and [DigitalOcean](http://pins.rstudio.com/articles/boards-dospace.html) articles. To catch up with previous releases:
 
-- [pins 0.3](https://blog.rstudio.com/2019/11/28/pins-0-3-0-azure-gcloud-and-s3/): Azure, GCloud and S3
-- [pins 0.2](https://blog.rstudio.com/2019/09/09/pin-discover-and-share-resources/): Pin, Discover and Share Resources
+- [pins 0.3](/blog/2019-11-28_pins-0-3-0-azure-gcloud-and-s3/): Azure, GCloud and S3
+- [pins 0.2](/blog/2019-09-09_pin-discover-and-share-resources/): Pin, Discover and Share Resources
 
 Thanks for reading along!
 

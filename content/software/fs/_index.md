@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#53366B'
 description: Provide cross platform file operations based on libuv.
 github: r-lib/fs

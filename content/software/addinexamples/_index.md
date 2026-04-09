@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#447099'
 description: An R package showcasing how RStudio addins can be registered and used.
 github: rstudio/addinexamples

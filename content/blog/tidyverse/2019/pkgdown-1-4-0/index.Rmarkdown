@@ -1,5 +1,7 @@
 ---
 title: pkgdown 1.4.0
+description: "pkgdown 1.4.0: deployment vs development modes for building package websites."
+auto-description: true
 author:
   - Hadley Wickham
 date: '2019-09-05'

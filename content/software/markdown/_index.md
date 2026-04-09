@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Publishing
 color: '#447099'
 description: The first generation of Markdown rendering for R (born in 2012), based
   on commonmark. Note that this package is markdown, not *rmarkdown*.

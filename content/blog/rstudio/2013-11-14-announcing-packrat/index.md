@@ -1,9 +1,11 @@
 ---
 title: Announcing Packrat
+description: "Packrat: a new tool for reproducible package management that keeps dependencies private to each project."
+auto-description: true
 people:
   - Jonathan McPherson
 date: '2013-11-14'
-categories:
+topics:
   - Best Practices
 slug: announcing-packrat
 blogcategories:

@@ -4,7 +4,7 @@ description: |
   Hugging Face rapidly became a very popular platform to build, share and collaborate on deep learning applications. We have worked on integrating the torch for R ecosystem with Hugging Face tools, allowing users to load and execute language models from their platform.
 date: '2023-07-12T00:00:00.000Z'
 slug: hugging-face-integrations
-categories:
+topics:
   - Machine Learning
 author:
   - name: Daniel Falbel
@@ -100,7 +100,7 @@ tokenizer$decode(ids)
 
 ## Spaces
 
-[Remember that you can already host](https://shiny.posit.co/blog/posts/shiny-on-hugging-face/)
+[Remember that you can already host](/blog/2023-05-08_shiny-on-hugging-face/)
 Shiny (for R and Python) on Hugging Face Spaces. As an example, we have built a Shiny
 app that uses:
 

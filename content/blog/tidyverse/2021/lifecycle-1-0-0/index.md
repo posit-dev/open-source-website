@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/VMKBFR6r_jg
   author: Suzanne D. Williams
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

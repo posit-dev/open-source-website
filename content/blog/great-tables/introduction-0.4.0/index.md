@@ -1,5 +1,7 @@
 ---
 title: 'Great Tables `v0.4.0`: Nanoplots and More'
+description: "New in Great Tables v0.4.0: nanoplots for tiny, interactive visualizations inside table cells."
+auto-description: true
 people:
   - Rich Iannone
 date: '2024-03-19T00:00:00.000Z'
@@ -7,7 +9,7 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

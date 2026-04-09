@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/vasU4-TlC5I
   author: Ethan Hoover
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

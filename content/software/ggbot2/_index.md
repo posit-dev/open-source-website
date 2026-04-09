@@ -1,4 +1,7 @@
 ---
+topics:
+- Artificial Intelligence
+- Visualization
 color: '#9A4665'
 description: ''
 github: tidyverse/ggbot2

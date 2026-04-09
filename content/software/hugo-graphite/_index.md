@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#D44000'
 description: A Hugo theme for teams
 github: rstudio/hugo-graphite

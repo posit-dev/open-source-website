@@ -123,7 +123,7 @@ ggplot(mtcars, aes(!!x_var, !!y_var)) +
   facet_wrap(vars(!!group_var))
 ```
 
-<img src="/articles/2018-05-ggplot2-2-3-0_files/figure-html/label-both-1.png" width="2100" />
+<img src="label-both-1.png" width="2100" />
 
 ### sf
 
@@ -147,7 +147,7 @@ ggplot(nc) +
   annotate("point", x = -80, y = 35, colour = "red", size = 4)
 ```
 
-<img src="/articles/2018-05-ggplot2-2-3-0_files/figure-html/sf-1.png" width="2100" />
+<img src="sf-1.png" width="2100" />
 
 ### Calculated aesthetics
 
