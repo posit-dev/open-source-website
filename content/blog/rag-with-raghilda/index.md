@@ -20,7 +20,7 @@ We're happy to introduce Raghilda, a new Python package for building RAG (Retrie
 
 RAG is a simple concept that comes up anytime you want to _retrieve_ content for an LLM to improve or _augment_ the _generated_ output.
 
-![Without RAG, the LLM generates a response using only the user query. With RAG, relevant documents are retrieved and provided to the LLM before it generates a response.](rag-diagram.svg)
+![Flowchart comparing two pipelines: Without RAG shows User Query flowing directly to LLM to Response. With RAG shows User Query flowing through a Retrieve Relevant Documents step before reaching the LLM.](rag-diagram.svg "Without RAG, the LLM generates a response using only the user query. With RAG, relevant documents are retrieved and provided to the LLM before it generates a response.")
 
 LLMs are great at reasoning and generating text, but their knowledge is frozen at training time.
 They can't access private documents, recent information, or anything that wasn't in the training
@@ -80,7 +80,7 @@ finding the right chunks given a query. raghilda exposes both
 phases clearly, with each step exposed as an
 individual call you can customize or replace.
 
-![raghilda's two phases: ingestion prepares your documents for search, retrieval finds the relevant chunks at query time.](pipeline-diagram.svg)
+![Flowchart showing two phases: Ingestion flows from URLs/Files through Read as Markdown, Chunk, Embed, to Store. Retrieval fans a Query out to Semantic Search, BM25 Search, and Attribute Filters, which merge into Relevant Chunks.](pipeline-diagram.svg "raghilda's two phases: ingestion prepares your documents for search, retrieval finds the relevant chunks at query time.")
 
 Let's walk through a minimal example using a Wikipedia article about Princess Ragnhild
 of Norway.
