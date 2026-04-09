@@ -21,11 +21,11 @@ hidesubscription: false
 
 We’ve been having a blast at the Data Science Lab. It’s a new, experimental, and super informal weekly community call (which you can register for here: [pos.it/dslab](https://pos.it/dslab)\!). In the spirit of being bold and trying things out, Isabel Zimmerman and Davis Vaughan from the Positron dev team joined us for the very first Lab “pilot” back in November, sharing some of their favorite Positron settings and extensions.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QIYyeuZ_ISY?si=p-KbUlWFoKNovMHT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< video src="https://www.youtube.com/watch?v=QIYyeuZ_ISY" >}}
 
 The Lab with Isabel and Davis was so much fun that we officially started the series in December, and then, in January, we jumped at the chance to have [Andrew Heiss](https://bsky.app/profile/andrew.heiss.phd) from Georgia State University join us to share his favorite tips and tricks for his Positron data science workflow (and beyond). He even wrote a [helpful roundup on his blog\!](https://www.andrewheiss.com/blog/2026/01/13/dsl-positron-workflow/) Andrew’s workflow might give you data superpowers.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kqYbJoebrwE?si=SdCeOOeL31pU8RId" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< video src="https://www.youtube.com/watch?v=kqYbJoebrwE" >}}
 
 Following Andrew’s Data Science Lab, Emil Hvitfeldt felt inspired to write up his [list of extensions and settings on his blog](https://emilhvitfeldt.com/post/positron-settings-extensions/)\! We love community-event-driven development 😉
 
