@@ -20,6 +20,9 @@ on:
       deploy-url:
         description: "Netlify deploy URL"
         value: ${{ jobs.build-and-deploy.outputs.deploy-url }}
+      hugo-version:
+        description: "Hugo version used for the build"
+        value: ${{ jobs.build-and-deploy.outputs.hugo-version }}
 
 jobs:
   build-and-deploy:
@@ -29,9 +32,14 @@ jobs:
       pull-requests: write
     outputs:
       deploy-url: ${{ steps.netlify.outputs.deploy-url }}
+      hugo-version: ${{ steps.hugo-version.outputs.version }}
     env:
       HUGO_VERSION: 0.158.0
     steps:
+      - name: Expose Hugo version
+        id: hugo-version
+        run: echo "version=${HUGO_VERSION}" >> "$GITHUB_OUTPUT"
+
       - name: Checkout
         uses: actions/checkout@v5
 

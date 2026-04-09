@@ -48,7 +48,7 @@ jobs:
       contents: read
       pull-requests: write
     env:
-      HUGO_VERSION: 0.158.0
+      HUGO_VERSION: ${{ needs.build-and-deploy.outputs.hugo-version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
