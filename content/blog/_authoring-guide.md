@@ -161,6 +161,14 @@ These links update automatically when you push new commits.
 
 Once you have an approving review and the preview looks good, merge the PR to `main`. The site deploys automatically — your post will be live within a few minutes.
 
+### Scheduling a post for the future
+
+To publish a post on a specific future date, set `date` in frontmatter to that date and merge the PR whenever it's ready. Hugo won't include future-dated posts in production builds, so the post stays hidden until its date arrives.
+
+A scheduled build runs daily at 8 AM UTC (3 AM EST / 4 AM EDT), so your post will go live automatically on the morning of its publish date. No manual action needed.
+
+PR previews always use `--buildFuture`, so reviewers can see and check future-dated posts before they go live.
+
 ## Content reference
 
 ### `.qmd` posts
