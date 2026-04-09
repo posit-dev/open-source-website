@@ -2,6 +2,8 @@
 
 All blog posts should be submitted as a pull request against `main` — don't push directly to the branch. This ensures every post gets a Netlify preview before it goes live.
 
+**Posit org members:** Clone the repo directly — don't fork it. You have Write access to `posit-dev/open-source-website`, so you can push branches straight to the main repo and open a PR from there.
+
 If you're using Claude Code, the `/new-post` skill will handle scaffolding, frontmatter, branch creation, and environment setup interactively.
 
 ## Where to place your post
@@ -21,7 +23,7 @@ For a Quarto post, create as `index.md` then rename to `index.qmd` — Hugo does
 ## Choosing a format
 
 - **`index.md`** — prose only; no code execution needed
-- **`index.qmd`** — executable R or Python code, or Quarto features like callouts, tabsets, cross-references, and video shortcodes
+- **`index.qmd`** — executable R or Python code, or Quarto features like callouts, tabsets, and cross-references.
 - **`index.ipynb`** — if you're primarily working in Jupyter
 
 When in doubt, use `.md`.
@@ -134,18 +136,6 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
   quarto preview index.qmd
   ```
 
-## Linking to other blog posts
-
-When linking to another post on this blog, use the **permalink URL** — the `/blog/YYYY-MM-DD_slug/` path you see in the browser:
-
-```markdown
-Check out the [dplyr 1.0.0 post](/blog/2020-06-01_dplyr-1-0-0/).
-```
-
-Don't use content directory paths like `/blog/tidyverse/2020/dplyr-1-0-0/`. Those depend on how we've organized files on disk and would break if we ever reorganize.
-
-To find a post's permalink, check its `date` and `slug` (or folder name) in frontmatter. The pattern is `/blog/{date}_{slug}/`, e.g. `date: 2020-06-01` + `slug: dplyr-1-0-0` → `/blog/2020-06-01_dplyr-1-0-0/`. Or just find the post on the site and copy the URL.
-
 ## Getting published
 
 Once your post is written, follow these steps to get it live.
@@ -171,9 +161,11 @@ These links update automatically when you push new commits.
 
 Once you have an approving review and the preview looks good, merge the PR to `main`. The site deploys automatically — your post will be live within a few minutes.
 
-## Quarto features (`.qmd` posts)
+## Content reference
 
-### Tabsets
+### `.qmd` posts
+
+#### Tabsets
 
 ```markdown
 ::: {.panel-tabset}
@@ -189,7 +181,7 @@ Python code here.
 
 Add a `group="my-group"` attribute to sync multiple tabsets on the page.
 
-### Code folding
+#### Code folding
 
 Set in frontmatter to fold all code blocks by default:
 
@@ -202,7 +194,7 @@ format:
 
 Or per-chunk with `#| code-fold: true`.
 
-### Videos
+#### Videos
 
 ```markdown
 {{< video https://www.youtube.com/watch?v=VIDEO_ID >}}
@@ -213,22 +205,42 @@ Supported sources: YouTube, Vimeo, local files (`.mp4`, `.webm`, `.ogg`). A Lua 
 
 Optional parameters: `title`, `width`, `height`, `start` (YouTube only), `aspect-ratio` (`16x9`, `4x3`, `1x1`, `21x9`).
 
-### Other Hugo shortcodes
+#### Button
 
-Hugo shortcodes pass through Quarto's rendering unchanged, so the `{{< columns >}}` and `{{< button >}}` shortcodes documented below also work in `.qmd` posts.
+Hugo's `{{< button >}}` shortcode passes through Quarto's rendering unchanged:
 
-## Hugo shortcodes (`.md` posts)
+```markdown
+{{< button url="https://example.com" text="Click here" >}}
+```
 
-### Videos
+Optional parameters: `icon`, `icon-left`, `icon-right`, `size` (`small`, `medium`, `large`).
 
-Same syntax as Quarto:
+#### Linking to other blog posts
+
+Use the **permalink URL** — the `/blog/YYYY-MM-DD_slug/` path you see in the browser:
+
+```markdown
+Check out the [dplyr 1.0.0 post](/blog/2020-06-01_dplyr-1-0-0/).
+```
+
+Don't use content directory paths like `/blog/tidyverse/2020/dplyr-1-0-0/`. Those depend on how files are organized on disk and would break if we ever reorganize.
+
+To find a post's permalink, check its `date` and `slug` (or folder name) in frontmatter. The pattern is `/blog/{date}_{slug}/`, e.g. `date: 2020-06-01` + `slug: dplyr-1-0-0` → `/blog/2020-06-01_dplyr-1-0-0/`. Or just find the post on the site and copy the URL.
+
+### `.md` posts
+
+#### Videos
 
 ```markdown
 {{< video src="https://www.youtube.com/watch?v=VIDEO_ID" >}}
 {{< video src="my-video.mp4" title="Description" >}}
 ```
 
-### Columns
+Supported sources: YouTube, Vimeo, local files (`.mp4`, `.webm`, `.ogg`).
+
+Optional parameters: `title`, `width`, `height`, `start` (YouTube only), `aspect-ratio` (`16x9`, `4x3`, `1x1`, `21x9`).
+
+#### Columns
 
 Split content into responsive columns (stacks on mobile):
 
@@ -254,10 +266,22 @@ Narrower right column.
 {{< /columns >}}
 ```
 
-### Button
+#### Button
 
 ```markdown
 {{< button url="https://example.com" text="Click here" >}}
 ```
 
 Optional parameters: `icon`, `icon-left`, `icon-right`, `size` (`small`, `medium`, `large`).
+
+#### Linking to other blog posts
+
+Use the **permalink URL** — the `/blog/YYYY-MM-DD_slug/` path you see in the browser:
+
+```markdown
+Check out the [dplyr 1.0.0 post](/blog/2020-06-01_dplyr-1-0-0/).
+```
+
+Don't use content directory paths like `/blog/tidyverse/2020/dplyr-1-0-0/`. Those depend on how files are organized on disk and would break if we ever reorganize.
+
+To find a post's permalink, check its `date` and `slug` (or folder name) in frontmatter. The pattern is `/blog/{date}_{slug}/`, e.g. `date: 2020-06-01` + `slug: dplyr-1-0-0` → `/blog/2020-06-01_dplyr-1-0-0/`. Or just find the post on the site and copy the URL.
