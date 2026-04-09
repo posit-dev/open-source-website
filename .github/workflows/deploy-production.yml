@@ -1,0 +1,19 @@
+name: Deploy Production
+
+on:
+  push:
+    branches: ["main"]
+  schedule:
+    - cron: "0 8 * * *" # 8 AM UTC = 3 AM EST / 4 AM EDT
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    uses: ./.github/workflows/build-deploy.yml
+    with:
+      deploy-context: "production"
+    secrets: inherit

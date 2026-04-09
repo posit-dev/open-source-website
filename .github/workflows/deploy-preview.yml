@@ -1,79 +1,29 @@
-name: Build and Deploy to Netlify
+name: Deploy Preview
 
 on:
-  push:
-    branches: ["main"]
   pull_request:
     branches: ["main"]
-  workflow_dispatch:
 
 jobs:
   build-and-deploy:
+    uses: ./.github/workflows/build-deploy.yml
+    with:
+      hugo-flags: "--buildFuture"
+      deploy-context: "preview"
+    secrets: inherit
+
+  detect-content:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: write
     outputs:
-      deploy-url: ${{ steps.netlify.outputs.deploy-url }}
-      has-content-changes: ${{ steps.detect-content.outputs.has-changes }}
-      changed-content: ${{ steps.detect-content.outputs.changed }}
-    env:
-      HUGO_VERSION: 0.158.0
+      has-changes: ${{ steps.detect-content.outputs.has-changes }}
+      changed: ${{ steps.detect-content.outputs.changed }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Setup Hugo
-        run: |
-          wget -q "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb" -O hugo.deb
-          sudo dpkg -i hugo.deb
-          rm hugo.deb
-
-      - name: Setup Node
-        uses: actions/setup-node@v5
-        with:
-          node-version: '22'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Tailwind CSS
-        run: npm run build-tailwind
-
-      - name: Cache Hugo resources
-        uses: actions/cache@v5
-        with:
-          path: resources
-          key: hugo-resources-${{ github.run_id }}
-          restore-keys: |
-            hugo-resources-
-
-      - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-        run: hugo --templateMetrics --templateMetricsHints
-      - name: Build search index
-        run: npm run build-search
-
-      - name: Deploy to Netlify
-        id: netlify
-        uses: nwtgck/actions-netlify@v3
-        with:
-          publish-dir: './public'
-          production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: false
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 15
-
       - name: Detect content changes
-        if: github.event_name == 'pull_request'
         id: detect-content
         run: |
           git fetch origin main --depth=1
@@ -91,8 +41,8 @@ jobs:
           fi
 
   preview-links:
-    needs: build-and-deploy
-    if: needs.build-and-deploy.outputs.has-content-changes == 'true'
+    needs: [build-and-deploy, detect-content]
+    if: needs.detect-content.outputs.has-changes == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -113,10 +63,10 @@ jobs:
         id: links
         env:
           DEPLOY_URL: ${{ needs.build-and-deploy.outputs.deploy-url }}
-          CHANGED_CONTENT: ${{ needs.build-and-deploy.outputs.changed-content }}
+          CHANGED_CONTENT: ${{ needs.detect-content.outputs.changed }}
         run: |
-          # Get source path → permalink mapping from Hugo
-          hugo list all > /tmp/hugo-pages.csv
+          # Get source path → permalink mapping from Hugo (include future posts)
+          hugo list all --buildFuture > /tmp/hugo-pages.csv
           BASE_URL=$(grep '^baseURL' hugo.toml | sed "s/.*= *['\"]//;s/['\"]//")
 
           LINKS=""
