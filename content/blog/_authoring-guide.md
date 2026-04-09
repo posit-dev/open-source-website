@@ -284,10 +284,11 @@ Optional parameters: `icon`, `icon-left`, `icon-right`, `size` (`small`, `medium
 
 #### Images
 
-Always include alt text — it's required for accessibility. Set it inside `[]`:
+Always include alt text — it's required for accessibility. Set it inside `[]`. To add a visible caption, use a title string in quotes after the URL:
 
 ```markdown
 ![Alt text describing the image](my-image.png)
+![Alt text describing the image](my-image.png "Caption shown below the image")
 ```
 
 #### Linking to other blog posts
