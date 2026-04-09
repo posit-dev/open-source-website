@@ -32,7 +32,7 @@ When in doubt, use `.md`.
 
 See `CLAUDE.md` in this directory for the full metadata schema. A few things worth noting:
 
-- **Authors** — list individuals by full name in the `people` field; don't use team names like "Shiny Team"
+- **Authors** — use `people`, not `author`. List individuals by full name; don't use team names like "Shiny Team"
 - **Image** — 1920×1080 PNG or JPG recommended (16:9); GIF is supported and animation will play in the hero and listings
 - **Alt text** — describe what the image shows; "screenshot" or "logo" alone isn't enough
 
@@ -215,6 +215,14 @@ Hugo's `{{< button >}}` shortcode passes through Quarto's rendering unchanged:
 
 Optional parameters: `icon`, `icon-left`, `icon-right`, `size` (`small`, `medium`, `large`).
 
+#### Images
+
+Always include alt text — it's required for accessibility. Use the `fig-alt` attribute:
+
+```markdown
+![Optional caption](my-image.png){fig-alt="Alt text describing the image"}
+```
+
 #### Linking to other blog posts
 
 Use the **permalink URL** — the `/blog/YYYY-MM-DD_slug/` path you see in the browser:
@@ -273,6 +281,14 @@ Narrower right column.
 ```
 
 Optional parameters: `icon`, `icon-left`, `icon-right`, `size` (`small`, `medium`, `large`).
+
+#### Images
+
+Always include alt text — it's required for accessibility. Set it inside `[]`:
+
+```markdown
+![Alt text describing the image](my-image.png)
+```
 
 #### Linking to other blog posts
 
