@@ -6,6 +6,7 @@
      ============================================================ */}}
 {{ $page := .page }}
 {{ $hide_badge := index . "hide-badge" | default false }}
+{{ $hide_views := index . "hide-views" | default false }}
 {{ $item_id := "" }}
 {{ $slug := "" }}
 
@@ -70,7 +71,7 @@
 {{ $date := "" }}
 {{ if eq $card_type "events" }}
   {{ $date = partial "block/date_range.html" $page }}
-{{ else if and (ne $card_type "software") (ne $card_type "people") }}
+{{ else if and (ne $card_type "software") (ne $card_type "people") (ne $card_type "cheatsheets") }}
   {{ if $page.Params.date }}
     {{ $date = time.Format "Jan 2, 2006" $page.Params.date }}
   {{ end }}
@@ -153,7 +154,7 @@
      VIEWS (videos only)
      ============================================================ */}}
 {{ $views := "" }}
-{{ if eq $card_type "videos" }}
+{{ if and (eq $card_type "videos") (not $hide_views) }}
   {{ with $page.Params.external.view_count }}
     {{ $views = partial "format-views.html" . }}
   {{ end }}
