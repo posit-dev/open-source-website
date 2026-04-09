@@ -7,11 +7,10 @@ people:
   - Daniel Falbel
   - Tomasz Kalinowski
 image: thumbnail-wd.jpg
-image-alt: "RAG with raghilda"
-categories:
+image-alt: "raghilda hex sticker featuring a cartoon Viking girl with a braided red hair and horned helmet, holding an axe, surrounded by scattered documents"
+topics:
   - Artificial Intelligence
 tags:
-  - Python
   - Packages
 software: ["raghilda"]
 languages: ["Python"]
