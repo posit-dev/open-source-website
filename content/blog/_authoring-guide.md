@@ -2,6 +2,8 @@
 
 All blog posts should be submitted as a pull request against `main` — don't push directly to the branch. This ensures every post gets a Netlify preview before it goes live.
 
+**Posit org members:** Clone the repo directly — don't fork it. You have Write access to `posit-dev/open-source-website`, so you can push branches straight to the main repo and open a PR from there.
+
 If you're using Claude Code, the `/new-post` skill will handle scaffolding, frontmatter, branch creation, and environment setup interactively.
 
 ## Where to place your post

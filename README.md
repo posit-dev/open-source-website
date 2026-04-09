@@ -365,7 +365,7 @@ See [`content/blog/_authoring-guide.md`](content/blog/_authoring-guide.md) for f
 
 **Quick start with Claude Code:**
 
-1. Clone this repository
+1. Clone this repository directly (don't fork — org members have Write access)
 2. Open Claude Code in the project root
 3. Run `/new-post` — it will guide you through scaffolding, frontmatter, branch creation, and environment setup interactively
 

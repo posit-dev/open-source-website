@@ -5,6 +5,20 @@ description: Scaffold a new blog post with inferred frontmatter, branch, and opt
 
 Help the user create a new blog post for the Posit open-source website. Work through these steps in order.
 
+## Step 0: Preflight check
+
+Description: "Checking that you're working from a direct clone of the repo, not a fork"
+
+```sh
+git remote get-url origin
+```
+
+If the remote URL does not contain `posit-dev/open-source-website`, warn the user:
+
+> It looks like you're working from a fork rather than a direct clone. Members of the `posit-dev` org have Write access and should clone `posit-dev/open-source-website` directly — this ensures the deploy preview action works when you open a PR.
+
+Then ask whether they'd like to continue anyway or stop to re-clone.
+
 ## Step 1: Gather information
 
 Ask the user for anything not already provided via arguments: `$ARGUMENTS`
