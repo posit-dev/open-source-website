@@ -11,6 +11,9 @@ concurrency:
   group: production-deploy
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   build-and-deploy:
     uses: ./.github/workflows/build-deploy.yml

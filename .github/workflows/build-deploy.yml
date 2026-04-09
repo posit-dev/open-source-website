@@ -27,9 +27,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
     outputs:
       deploy-url: ${{ steps.netlify.outputs.deploy-url }}
       hugo-version: ${{ steps.hugo-version.outputs.version }}
