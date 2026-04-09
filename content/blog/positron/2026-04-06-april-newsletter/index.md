@@ -1,30 +1,46 @@
 ---
-title: "April Release Highlights"
-description: |
-  Welcome to the first Positron newsletter! This month: AI-powered notebook suggestions, Agent Skills, Azure Foundry support, R debugging upgrades, and more.
+title: April Release Highlights
+description: >
+  Welcome to the first Positron newsletter! This month: AI-powered notebook
+  suggestions, Agent Skills, Azure Foundry support, R debugging upgrades, and
+  more.
 people:
   - Cindy Tong
-date: "2026-04-07"
+date: '2026-04-07'
 image: images/addins-support.png
-image-alt: "Positron April Release Highlights"
+image-alt: Positron April Release Highlights
 slug: april-newsletter
 ported_from: positron
 port_status: in-progress
-software: ["positron"]
-languages: ["R", "Python"]
+software:
+  - positron
+languages:
+  - R
+  - Python
 topics:
   - Best Practices
 ---
-::: {.callout-tip}
+
+
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
+
 [Subscribe](https://posit.co/positron-updates-signup/) to get this newsletter directly in your email inbox.
-:::
+
+</div>
+</div>
 
 Welcome to the first edition of our Positron newsletter! Here, we will share highlights from our latest release, tips on how to be more productive with Positron, and useful resources.
 
 We just returned from an in-person onsite in beautiful Monterey, California. During the trip, we got a chance to meet (some of us for the first time), touch grass and sand, and brainstorm ways we can improve to build better products for you.
 
-
-![A view from Point Lobos State Natural Reserve](images/monterey.png)
+<figure>
+<img src="images/monterey.png" alt="A view from Point Lobos State Natural Reserve" />
+<figcaption aria-hidden="true">A view from Point Lobos State Natural Reserve</figcaption>
+</figure>
 
 Let's get into the updates.
 
@@ -42,19 +58,17 @@ The April 2026 release of Positron brings significant improvements across:
 
 Here's a look at the key features that shipped with the April 2026 release.
 
-
 ### Positron Server for Academic Use via JupyterHub
 
-**What we built:** Academic institutions can now offer Positron Server to their students at no cost through JupyterHub ([blog post](/blog/2026-04-06_positron-server-jupyterhub/)). If your institution already runs JupyterHub, you can add Positron as a launcher option alongside JupyterLab, with no additional infrastructure required. Students simply log in and select Positron from the launcher, getting the full Positron experience including rich Python and R support, the extension marketplace, and (optionally) Positron Assistant.
+**What we built:** Academic institutions can now offer Positron Server to their students at no cost through JupyterHub ([blog post](../../../blog/2026-04-06_positron-server-jupyterhub/)). If your institution already runs JupyterHub, you can add Positron as a launcher option alongside JupyterLab, with no additional infrastructure required. Students simply log in and select Positron from the launcher, getting the full Positron experience including rich Python and R support, the extension marketplace, and (optionally) Positron Assistant.
 
-**Why this matters:** This removes the barrier for students and educators who want to use Positron in a classroom setting. No local installs, no configuration headaches — just a familiar JupyterHub login with Positron ready to go.
+**Why this matters:** This removes the barrier for students and educators who want to use Positron in a classroom setting. No local installs, no configuration headaches --- just a familiar JupyterHub login with Positron ready to go.
 
-**Get started:** [Review the eligibility criteria](https://github.com/posit-dev/positron/blob/main/LICENSE.txt) and send an email to [academic-licenses@posit.co](mailto:academic-licenses@posit.co) to request a free teaching license.
-
+**Get started:** [Review the eligibility criteria](https://github.com/posit-dev/positron/blob/main/LICENSE.txt) and send an email to <academic-licenses@posit.co> to request a free teaching license.
 
 ### AI Next Steps in the Native Jupyter Notebook Editor
 
-{{< video images/notebook-next-step-suggestions.mov aria-label="Collaborate with Assistant on Suggested Next Steps in Notebooks" >}}
+{{< video src="images/notebook-next-step-suggestions.mov" >}}
 
 **What we built:** AI Next Steps uses the Positron Assistant to analyze your current cell output and suggest a logical next step in a "ghost cell" at the bottom of your notebook. If you just loaded a CSV, it might suggest data cleaning steps or a visualization, without you needing to open a chat pane or write a prompt. Suggestions stay aligned with the notebook's live kernel state, updating as your code and outputs change.
 
@@ -62,15 +76,13 @@ Here's a look at the key features that shipped with the April 2026 release.
 
 **Get started:** Enable the feature by setting [`positron.assistant.notebook.ghostCellSuggestions.enabled`](positron://settings/positron.assistant.notebook.ghostCellSuggestions.enabled) to `true` in your settings. When you run a cell, look for the ghost cell suggestion at the bottom of the notebook, accept, reject, or hide it.
 
-
 ### Agent Skills in Positron Assistant
 
-**What we built:** Agent skills — reusable, structured capabilities that extend what agents can do in agent.md files — are now integrated into Positron ([#11753](https://github.com/posit-dev/positron/issues/11753)). Skills let agents execute multi-step workflows like "profile this dataset and suggest cleaning steps" or "run this test suite and summarize failures," so you define a task once and reuse it across sessions and projects.
+**What we built:** Agent skills --- reusable, structured capabilities that extend what agents can do in agent.md files --- are now integrated into Positron ([#11753](https://github.com/posit-dev/positron/issues/11753)). Skills let agents execute multi-step workflows like "profile this dataset and suggest cleaning steps" or "run this test suite and summarize failures," so you define a task once and reuse it across sessions and projects.
 
 **Why this matters:** Skills make agents composable building blocks rather than one-off chat interactions. Instead of re-explaining a complex workflow every time, you codify it as a skill that any team member can use.
 
-**Get started:** Open the chat gear icon and select **Skills**, or run _Chat: Configure Skills_ from the Command Palette.
-
+**Get started:** Open the chat gear icon and select **Skills**, or run *Chat: Configure Skills* from the Command Palette.
 
 ### Positron Assistant Now Supports Microsoft Foundry as a Provider
 
@@ -80,7 +92,7 @@ Here's a look at the key features that shipped with the April 2026 release.
 
 **Get Started:** In Positron Assistant's provider settings, set [`positron.assistant.provider.msFoundry.enable`](positron://settings/positron.assistant.provider.msFoundry.enable) to `true` to select Microsoft Foundry as a provider. You can authenticate with an API key and your Foundry endpoint URL.
 
-![](images/microsoft-foundry.png){fig-alt="Configuring Microsoft Foundry in Positron Assistant"}
+<img src="images/microsoft-foundry.png" data-fig-alt="Configuring Microsoft Foundry in Positron Assistant" />
 
 ### Telemetry Update: Anonymous Session Identifiers
 
@@ -88,7 +100,7 @@ Here's a look at the key features that shipped with the April 2026 release.
 
 **Why we're doing this:** As a free, source available project, we don't have traditional product analytics. Understanding whether people come back, how often they use Positron, and whether releases improve or regress the experience helps us prioritize the right work to build a better experience for you.
 
-You can opt out by updating your settings outlined [here](https://positron.posit.co/privacy.html), or you can reset the anonymous identifier with the command _Preferences: Reset Anonymous Telemetry ID_. If you've opted out of product updates, no session identifier is generated or sent.
+You can opt out by updating your settings outlined [here](https://positron.posit.co/privacy.html), or you can reset the anonymous identifier with the command *Preferences: Reset Anonymous Telemetry ID*. If you've opted out of product updates, no session identifier is generated or sent.
 
 ### RStudio Addins Support
 
@@ -96,9 +108,9 @@ You can opt out by updating your settings outlined [here](https://positron.posit
 
 **Why this matters:** This was one of our most upvoted issues this release (25 👍). Many R users rely on addins as part of their daily workflow for code formatting, generating reproducible examples, or launching Shiny tools.
 
-**Get started:** Open the Command Palette ({{< kbd mac=Command-Shift-P win=Ctrl-Shift-P linux=Ctrl-Shift-P >}}) and search for _Run RStudio Addin_. You'll see a quick pick with all available addins from your installed packages.
+**Get started:** Open the Command Palette (`Ctrl-Shift-P` (windows), `Ctrl-Shift-P` (linux), `Command-Shift-P` (mac)) and search for *Run RStudio Addin*. You'll see a quick pick with all available addins from your installed packages.
 
-![](images/addins-support.png){fig-alt="RStudio Addins running in Positron"}
+<img src="images/addins-support.png" data-fig-alt="RStudio Addins running in Positron" />
 
 ### R Debugger & Workflow Improvements
 
@@ -112,9 +124,9 @@ You can opt out by updating your settings outlined [here](https://positron.posit
 - **Watch Pane** lets you track expressions across debug steps. Prefix an expression with `/print` to see R's printed output (hover to get full output) instead of a structured variable.
 - **Synchronization with the call stack.** Click any frame in the **Call Stack** view and the Console, completions, and Variables pane all switch to that frame's environment. The Console synchronization is like `recover()`, but built into the IDE.
 
-**Get started:** Set a breakpoint in any R file, then right-click it and choose **Edit Breakpoint**. Select "Expression" to add a condition (e.g., `i > 100`), "Hit Count" to break after N hits, or "Log Message" to print a message without pausing. For error and warning breakpoints, open the **Breakpoints** pane and enable them there. To pause R while code is running, use the command _Debug: Pause_ or check the **Interrupt** breakpoint option in the **Breakpoints** pane. While debugging, add expressions in the **Watch** section of the debug sidebar and click on frames in the **Call Stack** to navigate environments.
+**Get started:** Set a breakpoint in any R file, then right-click it and choose **Edit Breakpoint**. Select "Expression" to add a condition (e.g., `i > 100`), "Hit Count" to break after N hits, or "Log Message" to print a message without pausing. For error and warning breakpoints, open the **Breakpoints** pane and enable them there. To pause R while code is running, use the command *Debug: Pause* or check the **Interrupt** breakpoint option in the **Breakpoints** pane. While debugging, add expressions in the **Watch** section of the debug sidebar and click on frames in the **Call Stack** to navigate environments.
 
-{{< video images/conditional-breakpoints.mov aria-label="Set condition breakpoints while debugging with R" >}}
+{{< video src="images/conditional-breakpoints.mov" aria-label="Set condition breakpoints while debugging with R" >}}
 
 ### Data Explorer: Faster with Multiple DataFrames
 
@@ -142,7 +154,7 @@ We are currently building the following features and we'd love your feedback. Pl
 
 This was the second most upvoted issue we have ever, ever had! We just completed an initial run to allow displaying inline outputs within Quarto and R Markdown files ([#5640](https://github.com/posit-dev/positron/issues/5640)), and it is available for early testing. Note that this experimental version, while it does get the basics into Positron, does not have support for many popular RStudio features. You can opt in to the experimental feature using the [`positron.quarto.inlineOutput.enabled`](positron://settings/positron.quarto.inlineOutput.enabled) setting.
 
-![](images/inline-output.png){fig-alt="Inline outputs rendered in a Quarto file"}
+<img src="images/inline-output.png" data-fig-alt="Inline outputs rendered in a Quarto file" />
 
 ### Packages Pane for Managing Environments
 
@@ -156,11 +168,11 @@ We hosted a walkthrough of exploring GitHub data in a Jupyter Notebook and conve
 
 ### Registration for posit::conf(2026) Is Now Open!
 
-Registration is officially open for posit::conf(2026)! Join the global data community in Houston or tune in online from September 14–16. [Register today!](https://posit.co/conference/)
+Registration is officially open for posit::conf(2026)! Join the global data community in Houston or tune in online from September 14--16. [Register today!](https://posit.co/conference/)
 
 ### How We Chose a Python Type Checker
 
-Ever wondered about the decision making process behind how we chose which Python type checker to bundle in Positron? Check out Austin Dickey's [blog post](/blog/2026-03-31_python-type-checkers/) walking through his research and decision making process.
+Ever wondered about the decision making process behind how we chose which Python type checker to bundle in Positron? Check out Austin Dickey's [blog post](../../../blog/2026-03-31_python-type-checkers/) walking through his research and decision making process.
 
 ## Community Affirmations
 
