@@ -10,7 +10,7 @@
   }
 
   function normalize(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[-_]/g, ' ').toLowerCase();
   }
 
   // Decode HTML entities produced by Hugo's html/template escaping in partials
@@ -466,7 +466,7 @@
           // Full-text search index
           _search: normalize(searchParts.join(' ')),
           // Sort keys
-          _sortTitle: normalize(entry.title || '').replace(/[-_]/g, ' ').replace(/[^a-z0-9 ]/g, '').trim(),
+          _sortTitle: normalize(entry.title || '').replace(/[^a-z0-9 ]/g, '').trim(),
           _idx: idx,
           _dateTs: entry.date ? new Date(entry.date).getTime() : 0,
           _firstCommitTs: entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0,

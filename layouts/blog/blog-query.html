@@ -3,8 +3,8 @@
 {{ end }}
 
 {{ define "main" }}
-{{ $query := .File.ContentBaseName }}
-{{ $queryLower := $query | lower }}
+{{ $query := .Params.query | default .File.ContentBaseName }}
+{{ $queryLower := $query | replaceRE "[-_]" " " | lower }}
 {{/* JS users get redirected to the blog page with query param */}}
 <script>window.location.replace('/blog/?q={{ $query }}');</script>
 
@@ -39,7 +39,7 @@
     {{ end }}
 
     {{ $slug := .RelPermalink | lower }}
-    {{ $haystack := printf "%s %s %s %s %s %s" $title $desc $slug (delimit $tagList " ") (delimit $catList " ") (delimit $swList " ") }}
+    {{ $haystack := printf "%s %s %s %s %s %s" $title $desc $slug (delimit $tagList " ") (delimit $catList " ") (delimit $swList " ") | replaceRE "[-_]" " " }}
     {{ if in $haystack $queryLower }}
       {{ $matched = $matched | append . }}
     {{ end }}
