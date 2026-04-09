@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Winston Chang
 date: '2014-06-23'
-categories:
+topics:
   - Interactive Apps
 slug: introducing-ggvis
 blogcategories:

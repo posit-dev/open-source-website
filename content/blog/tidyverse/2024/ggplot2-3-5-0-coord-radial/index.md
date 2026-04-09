@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ferris-wheel-beside-body-of-water-under-blue-sky-during-daytime-IWOo59NUXBk
   author: Ismail Merad
-categories:
+topics:
   - Visualization
 tags:
   - Ggplot2-3-5-0

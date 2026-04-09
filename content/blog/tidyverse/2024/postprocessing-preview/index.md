@@ -11,7 +11,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/G6Y_YM3gO44
   author: Haley Owens
-categories:
+topics:
   - Machine Learning
 tags:
   - Postprocessing

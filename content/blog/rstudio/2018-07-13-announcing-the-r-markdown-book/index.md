@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2018-07-13'
-categories:
+topics:
   - Publishing
 tags:
   - Book

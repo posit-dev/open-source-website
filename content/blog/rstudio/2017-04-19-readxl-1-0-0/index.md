@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Jenny Bryan
 date: '2017-04-19'
-categories:
+topics:
   - Data Wrangling
 slug: readxl-1-0-0
 blogcategories:

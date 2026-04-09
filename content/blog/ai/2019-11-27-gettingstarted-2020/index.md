@@ -4,7 +4,7 @@ description: |
   Looking for materials to get started with deep learning from R? This post presents useful tutorials, guides, and background documentation on the new TensorFlow for R website. Advanced users will find pointers to applications of new release 2.0 (or upcoming 2.1!) features alluded to in the recent TensorFlow 2.0 post.
 date: '2019-11-27'
 slug: keydana2019gettingstarted2020
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

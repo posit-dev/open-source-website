@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2015-06-24'
-categories:
+topics:
   - Visualization
   - Interactive Apps
 tags:

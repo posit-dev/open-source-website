@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/photo-of-tower-during-daytime-i4ZF_4FTLL4
   author: Chuttersnap
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

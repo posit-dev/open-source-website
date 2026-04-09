@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2015-06-30'
-categories:
+topics:
   - Community
 slug: accelerating-r-rstudio-and-the-new-r-consortium
 blogcategories:

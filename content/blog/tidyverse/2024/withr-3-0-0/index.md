@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/brown-and-black-brush-on-brown-wooden-table-V0cSTljC92k
   author: Neal E. Johnson
-categories:
+topics:
   - Best Practices
 tags:
   - rlib

@@ -9,7 +9,7 @@ photo:
   author: Steve Harvey
   url: https://unsplash.com/photos/xWiXi6wRLGo
 slug: ggplot2-3-3-0
-categories:
+topics:
   - Visualization
 image: ggplot2-3-3-0-wd.jpg
 ported_from: tidyverse

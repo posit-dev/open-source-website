@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ry2JvVpR8Ro
   author: Wayne Hollman
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

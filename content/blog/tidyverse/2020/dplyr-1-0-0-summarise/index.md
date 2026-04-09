@@ -6,7 +6,7 @@ people:
 date: '2020-03-20'
 description: |
   In `summarise()`, a single summary expression can now create both multiple rows and multiple columns. This significantly increases its power and flexibility.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0

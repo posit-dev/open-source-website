@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-bunch-of-different-colored-sashes-hanging-on-a-wall-OEiN_lSyQqE
   author: Matt Benson
-categories:
+topics:
   - Best Practices
 tags:
   - Parallelism

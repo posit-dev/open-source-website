@@ -11,7 +11,16 @@
   {{ end }}
   {{ end }}
 
-  {{ $cfg := site.Data.filters.blog }}
+  {{ $baseCfg := site.Data.filters.blog }}
+  {{ $filters := slice }}
+  {{ range $baseCfg.filters }}
+    {{ if eq .key "topics" }}
+      {{ $filters = $filters | append (merge . (dict "values" site.Data.topics)) }}
+    {{ else }}
+      {{ $filters = $filters | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $cfg := merge $baseCfg (dict "filters" $filters) }}
 
   {{ partial "filter-controls.html" $cfg }}
 

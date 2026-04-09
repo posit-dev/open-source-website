@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/nSTFkVywiCU
   author: Aiden Frazier
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

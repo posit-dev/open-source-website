@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/green-plant-on-brown-clay-pot-PAEwrnasOvY
   author: Devin H
-categories:
+topics:
   - Best Practices
 tags:
   - Python

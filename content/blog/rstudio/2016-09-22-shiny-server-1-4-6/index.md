@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Joe Cheng
 date: '2016-09-22'
-categories:
+topics:
   - Interactive Apps
 tags:
   - Security

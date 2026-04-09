@@ -6,7 +6,7 @@ people:
   - Javier Luraschi
 date: '2019-03-15'
 slug: sparklyr-1-0
-categories:
+topics:
   - Machine Learning
   - Data Wrangling
 tags:

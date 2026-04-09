@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2014-10-02'
-categories:
+topics:
   - Interactive Apps
 tags:
   - Datatables

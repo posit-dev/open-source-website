@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2014-08-01'
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

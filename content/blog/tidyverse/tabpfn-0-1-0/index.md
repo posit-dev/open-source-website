@@ -14,7 +14,7 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["tidymodels"]
 languages: ["R"]
-categories:
+topics:
   - Machine Learning
 tags:
   - modeling

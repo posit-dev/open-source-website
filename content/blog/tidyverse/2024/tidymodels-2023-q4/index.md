@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/landscape-photography-of-snow-pathway-between-trees-during-winter-688660/
   author: Simon Berger
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

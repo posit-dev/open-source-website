@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/VqYzKAviJ10
   author: Hendri Sabri
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

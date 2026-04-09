@@ -6,7 +6,7 @@ people:
   - Nick Strayer
 date: '2021-07-22'
 slug: three-shiny-best-practices-seen-in-the-shiny-contest
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

@@ -29,7 +29,7 @@
     {{ end }}
 
     {{ $catList := slice }}
-    {{ range .GetTerms "categories" }}
+    {{ range .GetTerms "topics" }}
       {{ $catList = $catList | append (lower .LinkTitle) }}
     {{ end }}
 

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/4Zk45jNyQS4
   author: Timo Wielink
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

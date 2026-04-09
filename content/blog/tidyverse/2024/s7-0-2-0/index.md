@@ -10,7 +10,7 @@ description: |
 photo:
   author: Tomasz Kalinowski
   url: https://github.com/t-kalinowski
-categories:
+topics:
   - Best Practices
 tags:
   - S7

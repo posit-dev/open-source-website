@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2016-05-06'
-categories:
+topics:
   - Interactive Apps
   - MLOps and Admin
 slug: shiny-javascript-tutorials

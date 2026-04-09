@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/JBghIzjbuLs
   author: Patrick Fore
-categories:
+topics:
   - Community
 tags:
   - tidyverse

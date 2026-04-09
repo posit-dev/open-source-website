@@ -6,7 +6,7 @@ people:
 date: '2020-03-27'
 description: |
   `select()` and `rename()` can now select by position, name, function of name, type, and any combination thereof. A new `relocate()` function  makes it easy to change the position of columns.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0

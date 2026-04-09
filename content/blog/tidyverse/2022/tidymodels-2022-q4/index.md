@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/WKWENifHmJw
   author: Ilona Frey
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/assorted-color-and-pattern-blanket-lot-dl-Lb5TMxF0
   author: Megan Bucknall
-categories:
+topics:
   - Visualization
 tags:
   - Ggplot2-3-5-0

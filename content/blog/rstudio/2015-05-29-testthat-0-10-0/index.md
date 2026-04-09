@@ -10,7 +10,7 @@ ported_from: rstudio
 port_status: in-progress
 software: ["testthat"]
 languages: ["R"]
-categories:
+topics:
   - Best Practices
 tags:
   - RStudio

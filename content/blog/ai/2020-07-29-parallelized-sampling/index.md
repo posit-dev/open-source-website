@@ -3,7 +3,7 @@ title: Parallelized sampling using exponential variates
 description: |
   How can the seemingly iterative process of weighted sampling without replacement be transformed into something highly parallelizable? Turns out a well-known technique based on exponential variates accomplishes exactly that.
 date: '2020-07-29'
-categories:
+topics:
   - Best Practices
   - MLOps and Admin
 author:

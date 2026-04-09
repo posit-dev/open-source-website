@@ -15,7 +15,7 @@ software:
   - positron
 languages:
   - Python
-categories:
+topics:
   - Best Practices
 tags:
   - Positron

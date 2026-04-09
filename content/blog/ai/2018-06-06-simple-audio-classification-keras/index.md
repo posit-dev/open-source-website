@@ -3,7 +3,7 @@ title: Simple Audio Classification with Keras
 description: |
   In this tutorial we will build a deep learning model to classify words. We will use the Speech Commands dataset which consists of 65,000 one-second audio files of people saying 30 different words.
 date: '2018-06-06'
-categories:
+topics:
   - Machine Learning
 author:
   - name: Daniel Falbel

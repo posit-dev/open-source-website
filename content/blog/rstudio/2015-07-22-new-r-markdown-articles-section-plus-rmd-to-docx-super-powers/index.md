@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-07-22'
-categories:
+topics:
   - Publishing
 tags:
   - Article

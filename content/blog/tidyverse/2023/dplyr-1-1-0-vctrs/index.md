@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/n6vS3xlnsCc
   author: Armand Khoury
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-1-0

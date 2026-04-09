@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2015-04-14'
-categories:
+topics:
   - Interactive Apps
 slug: interactive-time-series-with-dygraphs
 blogcategories:

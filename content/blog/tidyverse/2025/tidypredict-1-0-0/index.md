@@ -10,7 +10,7 @@ description: "tidypredict 1.0.0 brings faster computations for tree-based models
 photo:
   url: https://unsplash.com/photos/brown-leaves-covered-in-snow-on-a-branch-9XKkkeUwBhY
   author: Monique Caraballo
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

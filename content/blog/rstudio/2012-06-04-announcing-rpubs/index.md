@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2012-06-04'
-categories:
+topics:
   - Publishing
 slug: announcing-rpubs
 blogcategories:

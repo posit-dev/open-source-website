@@ -8,7 +8,7 @@ description: "Version 0.2.0 of brulee introduces learning rate schedulers. \n"
 photo:
   url: https://unsplash.com/photos/wiTWDYLURr8
   author: Alex Munsell
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

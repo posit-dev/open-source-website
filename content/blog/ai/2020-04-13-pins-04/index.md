@@ -4,7 +4,7 @@ description: |
   A new release of pins is available on CRAN today. This release adds support to time travel across dataset versions, which improves collaboration and protects your code from breaking when remote resources change unexpectedly.
 date: '2020-04-13'
 slug: pins-0.4
-categories:
+topics:
   - MLOps and Admin
 author:
   - name: Javier Luraschi

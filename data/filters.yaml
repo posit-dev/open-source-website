@@ -12,18 +12,8 @@ blog:
       direction: asc
   defaultSort: date
   filters:
-    - key: categories
+    - key: topics
       label: Topics
-      values:
-        - Machine Learning
-        - Artificial Intelligence
-        - Visualization
-        - Interactive Apps
-        - Publishing
-        - MLOps and Admin
-        - Data Wrangling
-        - Best Practices
-        - Community
     - key: languages
       label: Languages
       values:
@@ -45,7 +35,7 @@ blog:
         - JavaScript
         - TypeScript
 
-categories:
+topics:
   search_help: [date]
   sort:
     - key: date
@@ -82,7 +72,7 @@ cheatsheet:
       direction: asc
   defaultSort: date
   filters:
-    - key: categories
+    - key: topics
       label: Topics
     - key: languages
       label: Languages
@@ -180,7 +170,7 @@ tutorial:
       direction: asc
   defaultSort: date
   filters:
-    - key: categories
+    - key: topics
       label: Topics
 
 video:
@@ -205,7 +195,7 @@ video:
       direction: desc
   defaultSort: date
   filters:
-    - key: categories
+    - key: topics
       label: Topics
 
 webinar:
@@ -222,5 +212,5 @@ webinar:
       direction: asc
   defaultSort: date
   filters:
-    - key: categories
+    - key: topics
       label: Topics

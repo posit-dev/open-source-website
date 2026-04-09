@@ -23,7 +23,7 @@ image: thumbnail.png
 ported_from: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
-categories:
+topics:
   - Interactive Apps
   - Visualization
 ---

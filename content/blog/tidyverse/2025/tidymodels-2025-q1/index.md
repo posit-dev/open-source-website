@@ -8,7 +8,7 @@ description: |
   A summary of the goings on for the tidymodels group in later 2024 and early 2025.
 photo:
   author: George Stagg and Max Kuhn
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

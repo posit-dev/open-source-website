@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/PuLsDCBbyBM
   author: United States Geological Survey
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

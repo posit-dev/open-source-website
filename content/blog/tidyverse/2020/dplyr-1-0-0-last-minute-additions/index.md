@@ -7,7 +7,7 @@ people:
   - Hadley Wickham
   - Kirill Müller
 date: '2020-05-06'
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0

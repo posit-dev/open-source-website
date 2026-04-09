@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2015-12-10'
-categories:
+topics:
   - Visualization
 slug: svglite-1-0-0
 blogcategories:

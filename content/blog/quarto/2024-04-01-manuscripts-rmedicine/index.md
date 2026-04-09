@@ -8,7 +8,7 @@ date: '2024-04-01'
 image: images/manuscripts-thumbnail.png
 image-alt: From multiple Quarto documents and scripts in R and python to PDF or Word
   output.
-categories:
+topics:
   - Publishing
   - Community
 ported_from: quarto

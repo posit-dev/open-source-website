@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2016-09-15'
-categories:
+topics:
   - Data Wrangling
 slug: lubridate-1-6-0
 blogcategories:

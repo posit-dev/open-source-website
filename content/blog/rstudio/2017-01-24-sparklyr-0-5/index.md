@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Javier Luraschi
 date: '2017-01-24'
-categories:
+topics:
   - Data Wrangling
   - MLOps and Admin
 tags:

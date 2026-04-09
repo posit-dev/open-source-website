@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-03-12'
-categories:
+topics:
   - MLOps and Admin
 slug: package-development-cheatsheet-plus-chinese-translations
 blogcategories:

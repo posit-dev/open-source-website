@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/YCPkW_r_6uA
   author: Jari Hytönen
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

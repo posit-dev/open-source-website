@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/G1hIBdjQoAA
   author: Florian Schmetz
-categories:
+topics:
   - Community
 tags:
   - tidyverse

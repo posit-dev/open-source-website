@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/UsZNiW6LyQ0
   author: SHOT
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

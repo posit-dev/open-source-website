@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://simonpcouch.com
   author: Simon Couch
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

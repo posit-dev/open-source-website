@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2014-12-18'
-categories:
+topics:
   - Interactive Apps
 slug: htmlwidgets-javascript-data-visualization-for-r
 blogcategories:

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-05-28'
-categories:
+topics:
   - MLOps and Admin
 tags:
   - Big data

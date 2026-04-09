@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/close-up-photo-of-baked-cookies-OfdDiqx8Cz8
   author: Food Photographer | Jennifer Pallian
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

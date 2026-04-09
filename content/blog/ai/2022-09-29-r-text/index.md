@@ -3,7 +3,7 @@ title: Introducing the text package
 description: |
   The text package attempts to provide user-friendly access and pipelines to HuggingFace's transformer language models in R.
 date: '2022-10-04'
-categories:
+topics:
   - Machine Learning
 author:
   - name: Oscar Kjell

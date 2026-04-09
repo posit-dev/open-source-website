@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Joe Cheng
 date: '2015-10-29'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-developer-conference-stanford-university-january-2016
 blogcategories:

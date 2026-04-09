@@ -10,7 +10,7 @@ ported_from: rstudio
 port_status: in-progress
 software: ["dplyr"]
 languages: ["R"]
-categories:
+topics:
   - Data Wrangling
 tags:
   - RStudio

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/98MbUldcDJY
   author: Piret Ilver
-categories:
+topics:
   - Visualization
 tags:
   - tidyverse

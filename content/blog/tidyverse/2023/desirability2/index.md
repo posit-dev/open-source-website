@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/8cvksz5mmnE
   author: Joel Naren
-categories:
+topics:
   - Machine Learning
 tags:
   - Desirability

@@ -13,7 +13,7 @@ software:
   - py-shinyswatch
 languages:
   - Python
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

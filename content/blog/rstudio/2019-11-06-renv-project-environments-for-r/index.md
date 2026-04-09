@@ -6,7 +6,7 @@ people:
   - Kevin Ushey
 date: '2019-11-06'
 slug: renv-project-environments-for-r
-categories:
+topics:
   - Best Practices
 tags:
   - Packages

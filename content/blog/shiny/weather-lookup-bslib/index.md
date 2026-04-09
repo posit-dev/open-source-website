@@ -16,7 +16,7 @@ software:
   - bslib
 languages:
   - R
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

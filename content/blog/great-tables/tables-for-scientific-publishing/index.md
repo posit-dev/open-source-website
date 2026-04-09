@@ -15,7 +15,7 @@ software:
   - great-tables
 languages:
   - Python
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

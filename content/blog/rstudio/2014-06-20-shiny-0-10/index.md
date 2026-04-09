@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Joe Cheng
 date: '2014-06-20'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-0-10
 blogcategories:

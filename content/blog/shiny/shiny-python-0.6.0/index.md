@@ -12,7 +12,7 @@ software:
   - shiny-python
 languages:
   - Python
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

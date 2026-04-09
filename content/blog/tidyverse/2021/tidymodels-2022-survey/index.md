@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ChUHmPPTnLQ
   author: Djim Loic
-categories:
+topics:
   - Community
 tags:
   - Survey

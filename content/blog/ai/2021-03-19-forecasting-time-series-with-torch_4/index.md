@@ -4,7 +4,7 @@ description: |
   We conclude our mini-series on time-series forecasting with torch by augmenting last time's sequence-to-sequence architecture with a technique both immensely popular in natural language processing and inspired by human (and animal) cognition: attention.
 date: '2021-03-19'
 slug: keydanatorchts4
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Winston Chang
 date: '2016-01-20'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-0-13-0
 blogcategories:

@@ -23,7 +23,7 @@
     {{- end -}}
   </div>
 
-  {{ $cfg := site.Data.filters.categories }}
+  {{ $cfg := site.Data.filters.topics }}
   {{ $paginator := .Paginate .Pages.ByDate.Reverse }}
 
   {{ partial "filter-controls.html" $cfg }}

@@ -3,7 +3,7 @@ title: ASA Traveling Courses on Quarto
 subtitle: From R Markdown to Quarto
 description: |
   Series of workshops for learning Quarto with R and RStudio, aimed primarily at R Markdown users.
-categories:
+topics:
   - Publishing
   - Community
 people:

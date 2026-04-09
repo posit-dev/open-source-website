@@ -9,7 +9,7 @@ slug: dplyr-1-0-0
 photo:
   url: https://unsplash.com/photos/W8BNwvOvW4M
   author: Helinton Fantin
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0

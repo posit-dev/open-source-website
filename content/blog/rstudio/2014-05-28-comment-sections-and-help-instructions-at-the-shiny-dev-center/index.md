@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-05-28'
-categories:
+topics:
   - Interactive Apps
 slug: comment-sections-and-help-instructions-at-the-shiny-dev-center
 blogcategories:

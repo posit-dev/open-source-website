@@ -436,7 +436,7 @@
         if (entry.description) entry.description = decodeHTML(entry.description);
 
         const authors = entry.authors || [];
-        const categories = entry.categories || [];
+        const topics = entry.topics || [];
         const tags = entry.tags || [];
         const software = entry.software || [];
         const languages = entry.languages || [];
@@ -446,7 +446,7 @@
           entry.title || '',
           entry.description || '',
           software.join(' '),
-          categories.join(' '),
+          topics.join(' '),
           tags.join(' '),
           authorNames,
           entry.location || '',
@@ -458,7 +458,7 @@
           _qTitle:       normalize(entry.title || ''),
           _qAuthor:      normalize(authorNames),
           _qDescription: normalize(entry.description || ''),
-          _qTopic:       normalize(categories.join(' ')),
+          _qTopic:       normalize(topics.join(' ')),
           _qTag:         normalize(tags.join(' ')),
           _qSoftware:    normalize(software.join(' ')),
           _qLanguage:    normalize(languages.join(' ')),
@@ -625,10 +625,10 @@
         }
       }
 
-      // Tags (combination of software + categories + tags)
+      // Tags (combination of software + topics + tags)
       const allTags = [
         ...(entry.software || []),
-        ...(entry.categories || []),
+        ...(entry.topics || []),
         ...(entry.tags || []),
       ];
       if (allTags.length) {

@@ -6,7 +6,7 @@ people:
   - Thomas Lin Pedersen
 date: '2020-05-15'
 slug: updates-to-ragg-and-systemfonts
-categories:
+topics:
   - Visualization
 tags:
   - tidyverse

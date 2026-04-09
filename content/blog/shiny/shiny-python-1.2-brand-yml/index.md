@@ -14,7 +14,7 @@ software:
   - brand-yml
 languages:
   - Python
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

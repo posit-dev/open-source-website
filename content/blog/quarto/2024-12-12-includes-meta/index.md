@@ -4,7 +4,7 @@ description: >
   The "Includes" feature in Quarto lets you efficiently reuse content across
   multiple files. Combined with the "meta" shortcode, it enables you to set
   precise, file-specific values.
-categories:
+topics:
   - Publishing
   - Community
 people:

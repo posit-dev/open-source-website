@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Jonathan McPherson
 date: '2013-11-14'
-categories:
+topics:
   - Best Practices
 slug: announcing-packrat
 blogcategories:

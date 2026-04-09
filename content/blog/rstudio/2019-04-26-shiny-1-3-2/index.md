@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Joe Cheng
 date: '2019-04-26'
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

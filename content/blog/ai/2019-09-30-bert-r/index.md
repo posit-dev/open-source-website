@@ -3,7 +3,7 @@ title: BERT from R
 description: |
   A deep learning model - BERT from Google AI Research - has yielded state-of-the-art results in a wide variety of Natural Language Processing (NLP) tasks. In this tutorial, we will show how to load and train the BERT model from R, using Keras.
 date: '2019-09-30'
-categories:
+topics:
   - Machine Learning
 author:
   - name: Turgut Abdullayev

@@ -19,7 +19,7 @@ ported_from: education
 port_status: in-progress
 software: ["learnr"]
 languages: ["R"]
-categories:
+topics:
   - Community
   - Publishing
 ---

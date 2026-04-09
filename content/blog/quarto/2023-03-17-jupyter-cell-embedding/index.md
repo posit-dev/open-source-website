@@ -3,7 +3,7 @@ title: Jupyter Notebook Cell Embedding
 subtitle: Embed output from an external Jupyter Notebook in a Quarto document
 description: |
   Quarto 1.3 adds support for embedding cells from a Jupyter Notebook into a Quarto document via an `embed` shortcode. In HTML documents, links are automatically added that point to a rendered version of the external notebook.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham

@@ -4,7 +4,7 @@ description: |
   El Niño-Southern Oscillation (ENSO) is an atmospheric phenomenon, located in the tropical Pacific, that greatly affects ecosystems as well as human well-being on a large portion of the globe. We use the convLSTM introduced in a prior post to predict the Niño 3.4 Index from spatially-ordered sequences of sea surface temperatures.
 date: '2021-02-02'
 slug: keydanaenso
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

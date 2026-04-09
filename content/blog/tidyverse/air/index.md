@@ -12,7 +12,7 @@ photo:
   url: https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI
 ported_from: tidyverse
 port_status: in-progress
-categories:
+topics:
   - Data Wrangling
 software: ["air"]
 languages: ["R"]

@@ -11,7 +11,7 @@ description: >
   Quarto extensions management with an intuitive GUI for extensions and
   templates.
 date: '2025-10-20'
-categories:
+topics:
   - Publishing
 image: featured.png
 image-alt: >-

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/Uf-c4u1usFQ
   author: Tim Evans
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

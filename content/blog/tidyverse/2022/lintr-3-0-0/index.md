@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/tt_HFMMae1w
   author: Hai Tran
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

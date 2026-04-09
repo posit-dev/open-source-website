@@ -9,7 +9,7 @@ description: |
 photo:
   url: http://www2.stat.duke.edu/~cr173/
   author: Colin Rundel
-categories:
+topics:
   - Community
 tags:
   - Book

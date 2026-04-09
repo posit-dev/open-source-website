@@ -5,7 +5,7 @@ description: >
   Quarto 1.4 brings new formats for dashboards and Typst, a new manuscript
   project type, a cross-reference overhaul, Shiny for Python support, and a ton
   of other updates.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham

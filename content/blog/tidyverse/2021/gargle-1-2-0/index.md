@@ -10,7 +10,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/KDJ1TbLDoOo
   author: Mishaal Zahed
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

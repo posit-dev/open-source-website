@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/X3kzGOdSwo4
   author: Daria Gordova
-categories:
+topics:
   - Machine Learning
 tags:
   - Survey

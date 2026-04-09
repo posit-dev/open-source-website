@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/people-dressed-in-elaborate-costumes-for-venetian-masqueade-5932619
   author: Helena Jankovičová Kováčová
-categories:
+topics:
   - Visualization
 tags:
   - tidyverse

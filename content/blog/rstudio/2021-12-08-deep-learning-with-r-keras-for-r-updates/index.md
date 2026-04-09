@@ -21,7 +21,7 @@ ported_from: rstudio
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]
-categories:
+topics:
   - Machine Learning
 ---
 <caption>

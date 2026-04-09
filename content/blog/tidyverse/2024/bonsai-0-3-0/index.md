@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/QD-mtViB5Ks
   author: Scott Webb
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

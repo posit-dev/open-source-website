@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ilRuQcu9czw
   author: June
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

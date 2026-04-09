@@ -6,7 +6,7 @@ people:
   - JJ Allaire
 date: '2018-09-19'
 slug: radix-for-r-markdown
-categories:
+topics:
   - Publishing
 tags:
   - R Markdown

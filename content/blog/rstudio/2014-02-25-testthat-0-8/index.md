@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2014-02-25'
-categories:
+topics:
   - Best Practices
 slug: testthat-0-8
 blogcategories:

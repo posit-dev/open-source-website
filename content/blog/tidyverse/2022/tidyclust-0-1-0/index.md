@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/4Xy08NbMBLM
   author: Ankush Minda
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

@@ -3,7 +3,7 @@ title: R Interface to Google CloudML
 description: |
   We are excited to announce the availability of the cloudml package, which provides an R interface to Google Cloud Machine Learning Engine. CloudML provides a number of services including on-demand access to training on GPUs and hyperparameter tuning to optimize key attributes of model architectures.
 date: '2018-01-10'
-categories:
+topics:
   - Machine Learning
   - MLOps and Admin
 author:

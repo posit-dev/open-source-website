@@ -9,7 +9,7 @@ description: "Two new tidymodels packages focus on supervised feature selection.
 photo:
   url: https://unsplash.com/photos/three-french-macaroons-on-plate-71jYZb6Ag7M
   author: Keila Hötzel
-categories:
+topics:
   - Machine Learning
 tags:
   - Feature-selection

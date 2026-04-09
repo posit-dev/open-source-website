@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/45GmTCcW8Hk
   author: Sergey Nikolaev
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

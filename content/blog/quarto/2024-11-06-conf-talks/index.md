@@ -2,7 +2,7 @@
 title: posit::conf(2024) Quarto talks
 description: |
   Videos of talks from posit::conf(2024) are posted, we've compiled a playlist of Quarto talks for you!
-categories:
+topics:
   - Publishing
   - Community
 people:

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2016-03-21'
-categories:
+topics:
   - Publishing
 slug: rmarkdown-v0-9-5
 blogcategories:

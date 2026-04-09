@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Jim Hester
 date: '2016-03-09'
-categories:
+topics:
   - Best Practices
 slug: r-on-travis-ci
 blogcategories:

@@ -16,7 +16,7 @@ languages:
   - R
   - Python
   - Julia
-categories:
+topics:
   - Publishing
 tags:
   - Quarto

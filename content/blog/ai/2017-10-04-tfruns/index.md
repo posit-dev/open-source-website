@@ -3,7 +3,7 @@ title: 'tfruns: Tools for TensorFlow Training Runs'
 description: |
   The tfruns package provides a suite of tools for tracking, visualizing, and managing TensorFlow training runs and experiments from R.
 date: '2017-10-04'
-categories:
+topics:
   - Machine Learning
   - MLOps and Admin
 author:

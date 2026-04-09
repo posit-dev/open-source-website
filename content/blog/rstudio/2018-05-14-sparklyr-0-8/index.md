@@ -6,7 +6,7 @@ people:
   - Kevin Kuo
 date: '2018-05-14'
 slug: sparklyr-0-8
-categories:
+topics:
   - Data Wrangling
   - MLOps and Admin
 tags:

@@ -6,7 +6,7 @@ people:
   - Yitao Li
 date: '2020-05-06'
 slug: sparklyr-1-2
-categories:
+topics:
   - Data Wrangling
   - MLOps and Admin
 tags:

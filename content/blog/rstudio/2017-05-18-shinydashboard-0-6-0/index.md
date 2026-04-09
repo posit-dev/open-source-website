@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Bárbara Borges Ribeiro
 date: '2017-05-18'
-categories:
+topics:
   - Interactive Apps
 slug: shinydashboard-0-6-0
 blogcategories:

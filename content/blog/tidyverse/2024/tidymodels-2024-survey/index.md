@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/white-flowers-under-blue-sky-during-daytime-peN6l68AWaw
   author: Aamyr
-categories:
+topics:
   - Community
 tags:
   - Survey

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/Wrx0iVcYKmM
   author: Mario La Pergola
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

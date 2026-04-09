@@ -12,7 +12,7 @@ description: "A new version of tune brings significant updates for model tuning 
 photo:
   url: https://unsplash.com/photos/black-car-stereo-turned-on-at-7-qHbg3DKB1Y0
   author: Stephen Andrews
-categories:
+topics:
   - Machine Learning
 tags:
   - Postprocessing

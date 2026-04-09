@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/background-pattern-3b7sos3CD2c
   author: James Trenda
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

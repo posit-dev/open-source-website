@@ -1,7 +1,7 @@
 ---
 title: Announcing blogdown v1.0
 date: '2021-01-18'
-categories:
+topics:
   - Publishing
 tags:
   - RStudio

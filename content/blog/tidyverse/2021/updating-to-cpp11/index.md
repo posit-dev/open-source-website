@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/9MMd2uRpfvc
   author: John Salzarulo
-categories:
+topics:
   - Community
 tags:
   - Internship

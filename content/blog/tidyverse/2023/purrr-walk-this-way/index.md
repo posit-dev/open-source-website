@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/TRJjPc0wss0
   author: Ryoji Iwata
-categories:
+topics:
   - Community
 tags:
   - tidyverse

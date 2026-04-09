@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/dFohf_GUZJ0
   author: 2y.kang
-categories:
+topics:
   - Community
 tags:
   - Hiring

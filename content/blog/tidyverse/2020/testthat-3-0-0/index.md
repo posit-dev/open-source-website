@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/209FvE_57H8
   author: NeONBRAND
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

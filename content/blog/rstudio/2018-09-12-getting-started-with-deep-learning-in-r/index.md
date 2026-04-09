@@ -6,7 +6,7 @@ people:
   - Sigrid Keydana
 date: '2018-09-12'
 slug: getting-started-with-deep-learning-in-r
-categories:
+topics:
   - Machine Learning
 blogcategories:
   - Products and Technology

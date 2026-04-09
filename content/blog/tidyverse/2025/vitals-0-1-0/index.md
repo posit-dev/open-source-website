@@ -8,7 +8,7 @@ description: |
   The first release of vitals, a package for large language model evaluation in R, just made it to CRAN.
 photo:
   author: Google Imagen 4
-categories:
+topics:
   - Artificial Intelligence
 tags:
   - AI

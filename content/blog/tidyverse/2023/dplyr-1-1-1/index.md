@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/jy8z4NBIYSQ
   author: Jon Tyson
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-1-0

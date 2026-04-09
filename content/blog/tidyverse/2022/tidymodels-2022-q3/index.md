@@ -9,7 +9,7 @@ description: "Our post-RStudio conference productivity has been high! This post 
 photo:
   url: https://unsplash.com/photos/PyDaL4PcLoQ
   author: Simon Spieske
-categories:
+topics:
   - Machine Learning
 tags:
   - Agua

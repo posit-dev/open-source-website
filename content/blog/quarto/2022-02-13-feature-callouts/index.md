@@ -7,7 +7,7 @@ description: >
   Callouts are an excellent way to draw extra attention to certain concepts, or
   to more clearly indicate that certain content is supplemental or applicable to
   only some scenarios.
-categories:
+topics:
   - Publishing
 people:
   - Charles Teague

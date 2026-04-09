@@ -13,7 +13,7 @@ software:
   - chatlas
 languages:
   - Python
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

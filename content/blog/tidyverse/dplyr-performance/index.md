@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ZbFoi92fyzY
   author: Jahanzeb Ahsan
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

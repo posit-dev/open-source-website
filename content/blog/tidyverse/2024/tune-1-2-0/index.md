@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/1Pzhr6XPl6k
   author: Derek Story
-categories:
+topics:
   - Machine Learning
 tags:
   - Parallelism

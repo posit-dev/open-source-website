@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/close-up-photo-of-black-camera-lens-hqCEQTc5gZA
   author: Markus Spiske
-categories:
+topics:
   - Visualization
 tags:
   - Ggplot2-3-5-0

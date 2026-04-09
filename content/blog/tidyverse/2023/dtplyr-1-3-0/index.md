@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/uwI8R_FyLrI
   author: Neil Cooper
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

@@ -6,7 +6,7 @@ people:
   - Barret Schloerke
 date: '2019-12-02'
 slug: learnr-0-10-0
-categories:
+topics:
   - Publishing
   - Interactive Apps
 tags:

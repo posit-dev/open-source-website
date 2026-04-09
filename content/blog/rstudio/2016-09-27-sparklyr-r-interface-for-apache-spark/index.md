@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2016-09-27'
-categories:
+topics:
   - Data Wrangling
   - MLOps and Admin
 slug: sparklyr-r-interface-for-apache-spark

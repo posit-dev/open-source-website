@@ -14,7 +14,7 @@ ported_from: tidyverse
 port_status: in-progress
 software: ["orbital", "tidymodels"]
 languages: ["R"]
-categories:
+topics:
   - MLOps and Admin
 tags:
   - tidymodels

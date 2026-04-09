@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Kevin Ushey
 date: '2014-09-05'
-categories:
+topics:
   - Best Practices
 slug: packrat-on-cran
 blogcategories:

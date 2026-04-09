@@ -6,7 +6,7 @@ people:
   - Richard Iannone
 date: '2020-04-08'
 slug: great-looking-tables-gt-0-2
-categories:
+topics:
   - Visualization
 tags:
   - News

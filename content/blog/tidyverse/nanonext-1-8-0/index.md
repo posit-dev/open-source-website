@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/yhJVLxcquEY
   author: Albert Stoynov
-categories:
+topics:
   - Best Practices
 tags:
   - rlib

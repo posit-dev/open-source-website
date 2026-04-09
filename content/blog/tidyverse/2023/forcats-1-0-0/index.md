@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/NWwv0ETyzxc
   author: Diego Morales
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

@@ -11,7 +11,7 @@ software:
   - pointblank
 languages:
   - Python
-categories:
+topics:
   - Data Wrangling
 tags:
   - Pointblank

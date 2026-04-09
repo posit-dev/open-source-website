@@ -6,7 +6,7 @@ people:
   - JJ Allaire
 date: '2018-03-26'
 slug: reticulate-r-interface-to-python
-categories:
+topics:
   - Publishing
 tags:
   - Packages

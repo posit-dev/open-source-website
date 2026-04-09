@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2014-05-19'
-categories:
+topics:
   - Best Practices
 slug: roxygen2-4-0-1
 blogcategories:

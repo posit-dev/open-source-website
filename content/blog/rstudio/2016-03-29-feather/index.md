@@ -6,7 +6,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2016-03-29'
-categories:
+topics:
   - Data Wrangling
 slug: feather
 blogcategories:

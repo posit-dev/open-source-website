@@ -3,7 +3,7 @@ title: Quarto 1.5
 description: "Quarto 1.5 improves Typst support, has some website enhancements like
   draft handling and announcement bars, adds a native Julia engine, and adds a couple
   of shortcodes for generating placeholder content. \n"
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham

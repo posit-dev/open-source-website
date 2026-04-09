@@ -10,7 +10,7 @@ description: "The parsnip package and six of its extension packages were recentl
 photo:
   url: https://unsplash.com/photos/vrbZVyX2k4I
   author: Markus Spiske
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

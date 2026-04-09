@@ -6,7 +6,7 @@ people:
   - Yihui Xie
 date: '2017-09-11'
 slug: announcing-blogdown
-categories:
+topics:
   - Publishing
 tags:
   - Markdown

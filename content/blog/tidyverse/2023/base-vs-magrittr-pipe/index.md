@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/4CNNH2KEjhc
   author: Sigmund
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

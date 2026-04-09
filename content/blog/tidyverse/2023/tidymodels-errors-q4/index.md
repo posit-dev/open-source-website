@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/vYcH7pI6v1Q
   author: Nagesh Badu
-categories:
+topics:
   - Best Practices
 tags:
   - Package maintenance

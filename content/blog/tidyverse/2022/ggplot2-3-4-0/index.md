@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://data-imaginist.com/art
   author: Thomas Lin Pedersen
-categories:
+topics:
   - Visualization
 tags:
   - Graphics

@@ -6,7 +6,7 @@ people:
   - Javier Luraschi
 date: '2020-01-29'
 slug: sparklyr-1-1
-categories:
+topics:
   - Data Wrangling
   - MLOps and Admin
 tags:

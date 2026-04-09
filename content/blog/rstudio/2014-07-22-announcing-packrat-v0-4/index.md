@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Kevin Ushey
 date: '2014-07-22'
-categories:
+topics:
   - Best Practices
 slug: announcing-packrat-v0-4
 blogcategories:

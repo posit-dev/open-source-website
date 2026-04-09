@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/TuAZPj1uaZs
   author: Sam Poullain
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

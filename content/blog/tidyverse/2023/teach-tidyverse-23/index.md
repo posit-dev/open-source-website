@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ScoYEG5LEgc
   author: Scott Evans
-categories:
+topics:
   - Community
 tags:
   - tidyverse

@@ -9,7 +9,7 @@ description: "This major release of readr includes a new multi-threaded parsing 
 photo:
   url: https://unsplash.com/photos/XOW1WqrWNKg
   author: Anastasia Zhenina
-categories:
+topics:
   - Data Wrangling
 image: thumbnail-wd.jpg
 ported_from: tidyverse

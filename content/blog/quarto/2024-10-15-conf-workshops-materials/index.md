@@ -2,7 +2,7 @@
 title: posit::conf(2024) Quarto workshop materials
 description: |
   Back in August, we hosted three Quarto workshops at posit::conf(2024); the materials from those workshops are available to learn and teach from!
-categories:
+topics:
   - Publishing
   - Community
 people:

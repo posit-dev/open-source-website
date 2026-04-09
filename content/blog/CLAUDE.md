@@ -18,7 +18,7 @@ Every post must have:
 | `description` | 1-2 sentences; shown in card listings, under the post hero, and in social previews |
 | `image` | Thumbnail/hero image filename; 1920×1080 PNG or JPG recommended (16:9); GIF is supported and animation will play |
 | `image-alt` | Alt text for the image — describe what it shows, not just "screenshot" |
-| `categories` | Fixed set — see below |
+| `topics` | Fixed set — see below |
 | `software` | Projects the post is about; use folder names from `content/software/` |
 | `languages` | Programming languages (R, Python, etc.) |
 
@@ -26,11 +26,9 @@ Every post must have:
 
 ## Taxonomies
 
-### `categories` (required)
+### `topics` (required)
 
-Use the fixed set — these power the blog filter UI:
-
-Machine Learning, Artificial Intelligence, Visualization, Interactive Apps, Publishing, MLOps and Admin, Data Wrangling, Best Practices, Community
+Use the fixed set defined in `data/topics.yaml` — these power the blog filter UI.
 
 ### `software` (required)
 
@@ -50,7 +48,7 @@ Related resource types: tutorials, videos, cheatsheets, webinars. Links to `/res
 
 ### `tags` (optional)
 
-Freeform. Avoid duplicating `software` or `categories` values.
+Freeform. Avoid duplicating `software` or `topics` values.
 
 ## Optional Metadata
 
@@ -101,7 +99,7 @@ Each entry in the JSON array has:
     "title": "My Post",
     "date": "2025-01-15",
     "people": ["Jane Smith"],
-    "categories": ["Visualization"],
+    "topics": ["Visualization"],
     "software": ["ggplot2"],
     ...
   }

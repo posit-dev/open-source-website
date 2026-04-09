@@ -10,7 +10,7 @@ ported_from: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

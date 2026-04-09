@@ -17,7 +17,7 @@ software:
 languages:
   - R
   - Python
-categories:
+topics:
   - MLOps and Admin
 tags:
   - Positron

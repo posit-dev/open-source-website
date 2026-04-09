@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/IEiAmhXehwE
   author: Nana Smirnova
-categories:
+topics:
   - Data Wrangling
 tags:
   - rlib

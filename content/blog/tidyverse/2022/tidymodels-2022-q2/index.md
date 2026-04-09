@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/BBR_zigEmyQ
   author: Samuel Girven
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

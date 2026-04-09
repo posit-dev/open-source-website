@@ -16,7 +16,7 @@ image-alt: NSF, Spelman College, and RStudio logos on a grey grid background
 ported_from: rstudio
 port_status: in-progress
 languages: ["R"]
-categories:
+topics:
   - Community
 tags:
   - RStudio

@@ -6,7 +6,7 @@ people:
   - Winston Chang
 date: '2019-10-15'
 slug: shiny-1-4-0
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

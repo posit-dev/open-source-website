@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/GOQ32dlahDk
   author: Vitor Santos
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

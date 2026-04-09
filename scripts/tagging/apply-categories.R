@@ -2,19 +2,19 @@
 # Apply category assignments to posts.json
 #
 # Usage:
-#   Rscript apply-categories.R assignments.json
-#   cat assignments.json | Rscript apply-categories.R -
+#   Rscript apply-topics.R assignments.json
+#   cat assignments.json | Rscript apply-topics.R -
 #
 # Input format (JSON array):
 #   [
 #     {
 #       "title": "Post Title",
-#       "categories": ["Data Wrangling", "Visualization"]
+#       "topics": ["Data Wrangling", "Visualization"]
 #     },
 #     ...
 #   ]
 #
-# Valid categories:
+# Valid topics:
 #   Machine Learning, Artificial Intelligence, Visualization,
 #   Interactive Apps, Publishing, MLOps & Admin, Data Wrangling,
 #   Best Practices, Community
@@ -24,11 +24,11 @@ library(jsonlite)
 args <- commandArgs(trailingOnly = TRUE)
 
 if (length(args) != 1) {
-  stop("Usage: Rscript apply-categories.R <assignments.json | ->")
+  stop("Usage: Rscript apply-topics.R <assignments.json | ->")
 }
 
-# Valid categories
-valid_categories <- c(
+# Valid topics
+valid_topics <- c(
   "Machine Learning",
   "Artificial Intelligence",
   "Visualization",
@@ -83,23 +83,23 @@ for (a in assignments) {
     next
   }
 
-  # Validate categories
-  cats <- if (is.list(a$categories)) unlist(a$categories) else a$categories
+  # Validate topics
+  cats <- if (is.list(a$topics)) unlist(a$topics) else a$topics
   if (length(cats) == 0) {
-    errors <- c(errors, list(paste("No categories for:", title)))
+    errors <- c(errors, list(paste("No topics for:", title)))
     next
   }
 
-  invalid <- setdiff(cats, valid_categories)
+  invalid <- setdiff(cats, valid_topics)
   if (length(invalid) > 0) {
     errors <- c(errors, list(paste(
-      "Invalid categories for", title, ":",
+      "Invalid topics for", title, ":",
       paste(invalid, collapse = ", ")
     )))
     next
   }
 
-  posts[[idx]]$frontmatter$categories <- as.list(cats)
+  posts[[idx]]$frontmatter$topics <- as.list(cats)
   updated <- updated + 1
 }
 
@@ -108,7 +108,7 @@ json_output <- toJSON(posts, auto_unbox = TRUE, pretty = TRUE, null = "null")
 writeLines(json_output, posts_json)
 
 # Report to stderr
-message(sprintf("Applied categories to %d posts in %s", updated, posts_json))
+message(sprintf("Applied topics to %d posts in %s", updated, posts_json))
 
 if (length(errors) > 0) {
   message(sprintf("\n%d errors:", length(errors)))

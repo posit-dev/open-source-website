@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-06-22'
-categories:
+topics:
   - Interactive Apps
   - MLOps and Admin
 tags:

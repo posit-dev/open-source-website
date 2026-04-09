@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/gray-metal-drawers-h6xNSDlgciU
   author: jesse orrico
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

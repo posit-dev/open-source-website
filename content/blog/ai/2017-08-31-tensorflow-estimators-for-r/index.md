@@ -3,7 +3,7 @@ title: TensorFlow Estimators
 description: |
   The tfestimators package is an R interface to TensorFlow Estimators, a high-level API that provides implementations of many different model types including linear models and deep neural networks.
 date: '2017-08-31'
-categories:
+topics:
   - Machine Learning
 author:
   - name: Yuan Tang

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/GywJOPMjBqY
   author: Alexandra Diaconu
-categories:
+topics:
   - Best Practices
 tags:
   - Parallelism

@@ -3,7 +3,7 @@ title: posit::conf(2025) Quarto talks
 description: >
   Videos of talks from posit::conf(2025) are posted, and you can find them all
   here!
-categories:
+topics:
   - Publishing
   - Community
 people:

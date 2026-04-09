@@ -9,7 +9,7 @@ people:
 photo:
   url: https://unsplash.com/photos/n6vS3xlnsCc
   author: Kelley Bozarth
-categories:
+topics:
   - Community
 image: welcome-wd.jpg
 ported_from: tidyverse

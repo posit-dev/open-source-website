@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/pVoEPpLw818
   author: Rodion Kutsaev
-categories:
+topics:
   - Visualization
 tags:
   - Graphic-device

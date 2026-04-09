@@ -3,7 +3,7 @@ title: Tip - use Positron to choose colors for your project brand
 description: |
   Use Positron's integrated color picker for an easy way to choose colors for
   your next project's `_brand.yml`.
-categories:
+topics:
   - Publishing
   - Community
 people:

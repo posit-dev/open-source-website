@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/green-tree-in-the-middle-of-grass-field-KD8nzFznQQ0
   author: Oliver Olah
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

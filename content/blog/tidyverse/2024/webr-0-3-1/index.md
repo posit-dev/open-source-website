@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/purple-and-black-pyramid-wallpaper-k1bO_VTiZSs
   author: Sandro Katalina
-categories:
+topics:
   - Interactive Apps
 tags:
   - Webr

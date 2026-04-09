@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/vintage-brown-and-white-watch-lot-yBzrPGLjMQw
   author: Heather Zabriskie
-categories:
+topics:
   - Community
 tags:
   - tidyverse

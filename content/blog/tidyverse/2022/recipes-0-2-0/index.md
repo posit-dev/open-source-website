@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/xZa4JUE7EdM
   author: Jonny Clow
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

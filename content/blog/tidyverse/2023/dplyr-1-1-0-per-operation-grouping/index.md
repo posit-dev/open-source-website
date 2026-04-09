@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/fruit-stand-375897/
   author: Clem Onojeghuo
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-1-0

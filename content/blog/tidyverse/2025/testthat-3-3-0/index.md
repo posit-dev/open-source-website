@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-rack-filled-with-lots-of-yellow-hard-hats-wp81DxKUd1Ez
   author: Pop & Zebra
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

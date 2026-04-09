@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2013-06-10'
-categories:
+topics:
   - Community
 slug: rstudio-cran-mirror
 blogcategories:

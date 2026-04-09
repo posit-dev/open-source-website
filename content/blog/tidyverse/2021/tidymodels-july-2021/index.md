@@ -9,7 +9,7 @@ description: "We highlight a series of new tidymodels package versions and their
 photo:
   url: https://unsplash.com/photos/AChwtt3tBPU
   author: Danil Shostak
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

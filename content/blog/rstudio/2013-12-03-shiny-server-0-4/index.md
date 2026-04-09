@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2013-12-03'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-server-0-4
 blogcategories:

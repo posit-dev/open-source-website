@@ -4,7 +4,7 @@ description: |
   In this third installment of our mini-series introducing torch basics, we replace hand-coded matrix operations by modules, considerably simplifying our toy network's code.
 date: '2020-10-07'
 slug: keydanatorchmodules
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

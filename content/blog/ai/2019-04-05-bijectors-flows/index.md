@@ -4,7 +4,7 @@ description: |
   Normalizing flows are one of the lesser known, yet fascinating and successful architectures in unsupervised deep learning. In this post we provide a basic introduction to flows using tfprobability, an R wrapper to TensorFlow Probability. Upcoming posts will build on this, using more complex flows on more complex data.
 date: '2019-04-05'
 slug: keydana2019flows
-categories:
+topics:
   - Machine Learning
   - Best Practices
 author:

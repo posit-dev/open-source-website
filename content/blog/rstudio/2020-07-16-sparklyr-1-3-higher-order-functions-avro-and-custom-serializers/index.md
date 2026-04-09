@@ -6,7 +6,7 @@ people:
   - Yitao Li
 slug: sparklyr-1-3
 date: '2020-07-16'
-categories:
+topics:
   - Data Wrangling
 tags:
   - Big data

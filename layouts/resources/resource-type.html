@@ -19,7 +19,7 @@
   {{/* Collect categories dynamically */}}
   {{ $catSet := slice }}
   {{ range $resources }}
-    {{ range .GetTerms "categories" }}
+    {{ range .GetTerms "topics" }}
       {{ if not (in $catSet .LinkTitle) }}
         {{ $catSet = $catSet | append .LinkTitle }}
       {{ end }}
@@ -30,7 +30,7 @@
   {{ $baseCfg := index site.Data.filters $resourceType }}
   {{ $filters := slice }}
   {{ range $baseCfg.filters }}
-    {{ if eq .key "categories" }}
+    {{ if eq .key "topics" }}
       {{ if gt (len $catSet) 0 }}
         {{ $filters = $filters | append (merge . (dict "values" $catSet)) }}
       {{ end }}

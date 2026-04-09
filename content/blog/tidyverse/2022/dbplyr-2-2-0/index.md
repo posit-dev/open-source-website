@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/lRoX0shwjUQ
   author: Jan Antonin Kolar
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

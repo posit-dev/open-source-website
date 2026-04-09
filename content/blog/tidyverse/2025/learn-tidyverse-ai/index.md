@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://chatgpt.com/g/g-c8rPAhJRP-image-creator
   author: ChatGPT
-categories:
+topics:
   - Community
 tags:
   - AI

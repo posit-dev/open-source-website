@@ -49,7 +49,7 @@
 {{ end }}
 
 {{ $catTerms := slice }}
-{{ range $page.GetTerms "categories" }}
+{{ range $page.GetTerms "topics" }}
   {{ $catTerms = $catTerms | append .LinkTitle }}
 {{ end }}
 
@@ -158,7 +158,7 @@
   {{ $entry = merge $entry (dict "dateFormatted" .) }}
 {{ end }}
 {{ with $catTerms }}
-  {{ $entry = merge $entry (dict "categories" .) }}
+  {{ $entry = merge $entry (dict "topics" .) }}
 {{ end }}
 {{ with $page.Params.languages }}
   {{ $entry = merge $entry (dict "languages" .) }}

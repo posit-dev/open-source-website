@@ -10,7 +10,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/photo-of-island-and-thunder-E-Zuyev2XWo
   author: Johannes Plenio
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/NROHA1B-NYk
   author: Mitchell Luo
-categories:
+topics:
   - Best Practices
 image: thumbnail-wd.jpg
 ported_from: tidyverse

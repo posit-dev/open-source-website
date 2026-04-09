@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/white-yarn-on-white-surface-iYMSv8sf1uA
   author: Adam Valstar
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

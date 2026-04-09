@@ -6,7 +6,7 @@ people:
   - Mine Çetinkaya-Rundel
 date: '2017-08-29'
 slug: shiny-dev-center-gets-a-shiny-new-update
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

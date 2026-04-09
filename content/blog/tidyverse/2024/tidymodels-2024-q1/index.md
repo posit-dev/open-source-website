@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/orange-petaled-flowers-koy6FlCCy5s
   author: Sergey Shmidt
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

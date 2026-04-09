@@ -3,7 +3,7 @@ title: Quarto 1.8
 description: >
   Quarto 1.8 improves brand support, introduces brand extensions, adds HTML
   accessibility checks, and gives access to execution context.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham

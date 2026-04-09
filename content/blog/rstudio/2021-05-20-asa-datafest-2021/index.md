@@ -6,7 +6,7 @@ people:
   - Mine Çetinkaya-Rundel
 date: '2021-05-20'
 slug: asa-datafest-2021
-categories:
+topics:
   - Community
 tags:
   - Contest

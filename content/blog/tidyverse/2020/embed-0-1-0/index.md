@@ -6,7 +6,7 @@ people:
   - Max Kuhn
 date: '2020-06-09'
 slug: embed-0-1-0
-categories:
+topics:
   - Machine Learning
 tags:
   - Embed-0-1-0

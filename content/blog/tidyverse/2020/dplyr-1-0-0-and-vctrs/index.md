@@ -6,7 +6,7 @@ people:
 date: '2020-04-27'
 description: |
   dplyr now makes heavy use of [vctrs](http://vctrs.r-lib.org/) behind the scenes. This brings with it greater consistency and (hopefully!) more useful error messages.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0

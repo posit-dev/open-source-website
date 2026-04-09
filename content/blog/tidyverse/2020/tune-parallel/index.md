@@ -9,7 +9,7 @@ description: "With version 0.1.2 of tune, there are more options for parallel pr
 photo:
   url: https://unsplash.com/photos/mJ35U595uhA
   author: Joss Woodhead
-categories:
+topics:
   - Machine Learning
 tags:
   - Parallelism

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-06-19'
-categories:
+topics:
   - Interactive Apps
 slug: interactive-documents-an-incredibly-easy-way-to-use-shiny
 blogcategories:

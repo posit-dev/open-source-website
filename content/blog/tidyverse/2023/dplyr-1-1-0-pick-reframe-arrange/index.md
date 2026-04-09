@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/XgoHMMkE02I
   author: Priscilla Du Preez
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-1-0

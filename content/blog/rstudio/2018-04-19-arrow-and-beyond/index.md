@@ -7,7 +7,7 @@ people:
   - JJ Allaire
 date: '2018-04-19'
 slug: arrow-and-beyond
-categories:
+topics:
   - Data Wrangling
   - Community
 tags:

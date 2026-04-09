@@ -6,7 +6,7 @@ description: |
 people:
   - Hadley Wickham
 date: '2020-04-29'
-categories:
+topics:
   - Best Practices
 tags:
   - Dplyr-1-0-0

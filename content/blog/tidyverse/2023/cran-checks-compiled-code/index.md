@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/dhGFLj3rI0Q
   author: Quino Al
-categories:
+topics:
   - Community
   - Best Practices
 image: thumbnail-wd.jpg

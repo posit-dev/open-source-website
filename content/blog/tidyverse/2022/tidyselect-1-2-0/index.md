@@ -10,7 +10,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/xZxZxiceD8s
   author: Laura Gilchrist
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

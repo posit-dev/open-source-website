@@ -10,7 +10,7 @@ image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/black-and-gray-metal-pipe-4CNNH2KEjhc
   author: Sigmund
-categories:
+topics:
   - Interactive Apps
 tags:
   - Web

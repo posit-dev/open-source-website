@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2015-09-04'
-categories:
+topics:
   - Data Wrangling
 slug: dplyr-0-4-3
 blogcategories:

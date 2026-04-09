@@ -1,7 +1,7 @@
 ---
 title: Latest News from the R Markdown Family
 date: '2020-12-21'
-categories:
+topics:
   - Publishing
 people:
   - Alison Hill

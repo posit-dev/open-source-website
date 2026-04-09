@@ -5,7 +5,7 @@ title: How to use GitHub Codespaces to simplify your Quarto workshops
 description: |
   In this post, I'll teach you the basics of GitHub Codespaces and how to use them to make it easier to teach using Quarto.
 date: '2025-05-19'
-categories:
+topics:
   - Publishing
 image: featured.png
 image-alt: |

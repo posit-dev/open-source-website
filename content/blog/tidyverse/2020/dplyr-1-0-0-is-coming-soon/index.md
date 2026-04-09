@@ -6,7 +6,7 @@ people:
 date: '2020-03-09'
 description: |
   This post focusses on the idea of the "function lifecycle" which helps  you understand where functions in dplyr are going. Particularly important is the idea of a "superseded" function. A superseded function is not going away, but we no longer recommend using it in new code.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0

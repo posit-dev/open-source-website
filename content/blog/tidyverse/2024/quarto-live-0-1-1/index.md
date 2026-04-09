@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/@sharonmccutcheon
   author: Alexander Grey
-categories:
+topics:
   - Interactive Apps
   - Publishing
 tags:

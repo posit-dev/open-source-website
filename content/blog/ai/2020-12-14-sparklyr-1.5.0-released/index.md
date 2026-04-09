@@ -5,7 +5,7 @@ description: |
   Unlike all three previous sparklyr releases, the recent release of sparklyr 1.5 placed much more emphasis on enhancing existing sparklyr features rather than creating new ones. As a result, many valuable suggestions from sparklyr users were taken into account and were successfully addressed in a long list of bug fixes and improvements.
 date: '2020-12-14'
 slug: sparklyr-1.5
-categories:
+topics:
   - MLOps and Admin
 author:
   - name: Yitao Li

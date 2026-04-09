@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/knzXwBCtEeM
   author: Kiana Bosman
-categories:
+topics:
   - Best Practices
 tags:
   - rlib

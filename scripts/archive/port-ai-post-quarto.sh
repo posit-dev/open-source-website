@@ -97,8 +97,8 @@ if echo "$AUTHOR_BLOCK" | grep -q '^ *url:\|^ *affiliation:'; then
     HAS_AUTHOR_METADATA=true
 fi
 
-# Extract categories
-CATEGORIES=$(echo "$FRONTMATTER" | sed -n '/^categories:/,/^[a-z_]*:/p' | grep '^ *- ' | sed 's/^ *- /  - /')
+# Extract topics
+CATEGORIES=$(echo "$FRONTMATTER" | sed -n '/^topics:/,/^[a-z_]*:/p' | grep '^ *- ' | sed 's/^ *- /  - /')
 
 # Extract description (may be multiline with >)
 DESCRIPTION=$(echo "$FRONTMATTER" | sed -n '/^description:/,/^[a-z_]*:/p' | sed '1d;$d' | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
@@ -116,7 +116,7 @@ PREVIEW_PATH=$(get_field "preview")
     fi
     echo "date: $DATE"
     if [ -n "$CATEGORIES" ]; then
-        echo "categories:"
+        echo "topics:"
         echo "$CATEGORIES"
     fi
     if [ "$HAS_AUTHOR_METADATA" = true ]; then

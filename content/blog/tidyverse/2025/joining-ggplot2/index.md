@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/person-holding-green-plant-on-black-pot-CbZh3kaPxrE
   author: Jonathan Kemper
-categories:
+topics:
   - Community
 tags:
   - Internship

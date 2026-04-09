@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/@gatisv
   author: Gatis Vilaks
-categories:
+topics:
   - Interactive Apps
 tags:
   - Webr

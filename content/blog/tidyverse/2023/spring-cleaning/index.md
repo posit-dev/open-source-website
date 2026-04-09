@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/urUdKCxsTUI
   author: Anthony Delanoix
-categories:
+topics:
   - Best Practices
 tags:
   - Spring cleaning

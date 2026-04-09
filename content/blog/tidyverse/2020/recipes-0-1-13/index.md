@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/pGM4sjt_BdQ
   author: Brooke Lark
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

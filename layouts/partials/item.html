@@ -108,7 +108,7 @@
 {{ range $page.GetTerms "software" }}
   {{ $tags = $tags | append .LinkTitle }}
 {{ end }}
-{{ range $page.GetTerms "categories" }}
+{{ range $page.GetTerms "topics" }}
   {{ $tags = $tags | append .LinkTitle }}
 {{ end }}
 {{ range $page.GetTerms "tags" }}
@@ -174,7 +174,7 @@
 {{ $links := slice }}
 {{ $stats := slice }}
 {{ $hero_languages := slice }}
-{{ $hero_categories := slice }}
+{{ $hero_topics := slice }}
 {{ $hero_tags := slice }}
 {{ $teams := slice }}
 {{ if eq $format "hero" }}
@@ -246,8 +246,8 @@
   {{ range $page.GetTerms "languages" }}
     {{ $hero_languages = $hero_languages | append (dict "text" .LinkTitle "url" .RelPermalink) }}
   {{ end }}
-  {{ range $page.GetTerms "categories" }}
-    {{ $hero_categories = $hero_categories | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+  {{ range $page.GetTerms "topics" }}
+    {{ $hero_topics = $hero_topics | append (dict "text" .LinkTitle "url" .RelPermalink) }}
   {{ end }}
   {{ range $page.GetTerms "tags" }}
     {{ $hero_tags = $hero_tags | append (dict "text" .LinkTitle "url" .RelPermalink) }}
@@ -509,7 +509,7 @@
         </div>
       </div>
       {{ end }}
-      {{ with $hero_categories }}
+      {{ with $hero_topics }}
       <div class="hero-meta">
         <span class="icon-[boxicons--categories] hero-icon"></span>
         <div class="flex flex-wrap gap-1">
@@ -641,7 +641,7 @@
           </div>
         </div>
         {{ end }}
-        {{ with $hero_categories }}
+        {{ with $hero_topics }}
         <div class="hero-meta-lg">
           <span class="icon-[boxicons--categories] hero-icon"></span>
           <div class="flex flex-wrap gap-1">

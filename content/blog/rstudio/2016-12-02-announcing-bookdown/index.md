@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2016-12-02'
-categories:
+topics:
   - Publishing
 slug: announcing-bookdown
 blogcategories:

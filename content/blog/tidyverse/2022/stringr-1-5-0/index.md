@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/XGqS569rdgk
   author: Amie Bell
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

@@ -12,7 +12,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/BnwRf_m3EIg
   author: Tim Foster
-categories:
+topics:
   - Community
 tags:
   - Book

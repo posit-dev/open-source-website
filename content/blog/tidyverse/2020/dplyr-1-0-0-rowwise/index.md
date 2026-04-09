@@ -6,7 +6,7 @@ people:
 date: '2020-04-10'
 description: |
   `rowwise()` has been renewed and revamped to make it easier to perform operations row-by-row. This makes it much easier to solve problems that previously required `lapply()`, `map()`, or friends.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0

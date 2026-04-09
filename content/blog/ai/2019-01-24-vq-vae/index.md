@@ -4,7 +4,7 @@ description: |
   Mostly when thinking of Variational Autoencoders (VAEs), we picture the prior as an isotropic Gaussian. But this is by no means a necessity. The Vector Quantised Variational Autoencoder (VQ-VAE) described in van den Oord et al's "Neural Discrete Representation Learning" features a discrete latent space that allows to learn impressively concise latent representations. In this post, we combine elements of Keras, TensorFlow, and TensorFlow Probability to see if we can generate convincing letters resembling those in Kuzushiji-MNIST.
 date: '2019-01-24'
 slug: keydana2019vqvae
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

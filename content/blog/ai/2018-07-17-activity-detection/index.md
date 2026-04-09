@@ -4,7 +4,7 @@ title: Classifying physical activity from smartphone data
 description: |
   Using Keras to train a convolutional neural network to classify physical activity. The dataset was built from the recordings of 30 subjects performing basic activities and postural transitions while carrying a waist-mounted smartphone with embedded inertial sensors.
 date: '2018-07-17'
-categories:
+topics:
   - Machine Learning
 ported_categories:
   - TensorFlow/Keras

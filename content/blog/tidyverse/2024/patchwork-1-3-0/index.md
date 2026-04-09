@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/sewing-silk-and-scissors-dG35-kUxv34
   author: Dihn Pham
-categories:
+topics:
   - Visualization
 tags:
   - Patchwork

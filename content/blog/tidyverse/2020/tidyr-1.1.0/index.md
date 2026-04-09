@@ -8,7 +8,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/__ZMnefoI3k
   author: Jan Vasek
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

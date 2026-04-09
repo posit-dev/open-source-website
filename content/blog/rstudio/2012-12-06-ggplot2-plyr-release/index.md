@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Winston Chang
 date: '2012-12-06'
-categories:
+topics:
   - Visualization
   - Data Wrangling
 slug: ggplot2-plyr-release

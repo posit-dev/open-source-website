@@ -15,7 +15,7 @@ software:
   - shiny-r
 languages:
   - R
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

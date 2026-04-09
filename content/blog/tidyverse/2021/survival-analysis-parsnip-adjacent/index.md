@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/A-fubu9QJxE
   author: Luca Bravo
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

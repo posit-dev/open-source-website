@@ -5,7 +5,7 @@ auto-description: true
 people:
   - JJ Allaire
 date: '2017-09-05'
-categories:
+topics:
   - Machine Learning
 slug: keras-for-r
 blogcategories:

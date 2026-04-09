@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/QA2clzv9E8c
   author: CHUTTERSNAP
-categories:
+topics:
   - Machine Learning
 tags:
   - Modeldata

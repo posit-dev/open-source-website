@@ -6,7 +6,7 @@ people:
 date: '2020-04-03'
 description: |
   A new `across()` function makes it much easier to apply the same operation to multiple columns. It supersedes the `_if()`, `_at()`, and `_all()` function variants.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0

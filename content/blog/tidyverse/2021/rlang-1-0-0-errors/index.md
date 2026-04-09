@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/-eDpBjt6UL0
   author: Bryan Goff
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

@@ -12,7 +12,7 @@ description: "We've recently released a bunch of improvements to dplyr backends.
 photo:
   url: https://unsplash.com/photos/jVYnBn3M9R0
   author: Charles Deluvio
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

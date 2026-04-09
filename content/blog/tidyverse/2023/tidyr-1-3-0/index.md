@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/TEDo1eO8te4
   author: Jan Kopřiva
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

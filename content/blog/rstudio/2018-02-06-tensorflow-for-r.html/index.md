@@ -3,7 +3,7 @@ title: TensorFlow for R
 people:
   - Tareef Kawaf
 date: '2018-02-06'
-categories:
+topics:
   - Machine Learning
 tags:
   - Data science

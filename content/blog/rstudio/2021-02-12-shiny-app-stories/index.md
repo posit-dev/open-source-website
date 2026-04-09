@@ -5,7 +5,7 @@ people:
   - Nick Strayer
 date: '2021-02-12'
 slug: shiny-app-stories
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

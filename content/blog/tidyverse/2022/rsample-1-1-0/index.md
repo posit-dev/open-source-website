@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/bukjsECgmeU
   author: Paul Teysen
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

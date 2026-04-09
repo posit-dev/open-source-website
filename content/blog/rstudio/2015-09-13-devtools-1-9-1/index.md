@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2015-09-13'
-categories:
+topics:
   - Best Practices
 slug: devtools-1-9-1
 blogcategories:

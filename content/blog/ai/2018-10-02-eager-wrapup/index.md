@@ -4,7 +4,7 @@ description: |
   Advanced applications like generative adversarial networks, neural style transfer, and the attention mechanism ubiquitous in natural language processing used to be not-so-simple to implement with the Keras declarative coding paradigm. Now, with the advent of TensorFlow eager execution, things have changed. This post explores using eager execution with R.
 date: '2018-10-02'
 slug: keydana2018eager-wrapup
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana

@@ -9,7 +9,7 @@ description: |
 photo:
   author: JD Long
   url: https://cerebralmastication.com
-categories:
+topics:
   - Community
 tags:
   - Tidyverse-dev-day

@@ -16,7 +16,7 @@ photo:
 image: finding-errors-in-data-analyses-wd.jpg
 ported_from: education
 port_status: in-progress
-categories:
+topics:
   - Community
   - Best Practices
 ---

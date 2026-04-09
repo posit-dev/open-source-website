@@ -4,7 +4,7 @@ people:
   - Krystian Igras
 date: '2020-07-21'
 slug: 4-tips-to-make-your-shiny-dashboard-faster
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

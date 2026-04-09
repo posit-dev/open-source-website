@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/05HLFQu8bFw
   author: Viktor Talashuk
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

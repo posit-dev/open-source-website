@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2012-08-20'
-categories:
+topics:
   - Community
 slug: welcome-hadley-winston-and-garrett
 blogcategories:

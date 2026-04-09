@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-06-30'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-cheat-sheet
 blogcategories:

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/0LXFLzDOfuA
   author: Jonathan Fox
-categories:
+topics:
   - Community
 tags:
   - tidyverse

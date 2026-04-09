@@ -6,7 +6,7 @@ date: '2017-08-29'
 slug: googledrive-initial-release
 description: |
   The first release of googledrive is now on CRAN. Operate on Google Drive files from R.
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

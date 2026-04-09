@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2012-05-24'
-categories:
+topics:
   - Community
   - Publishing
 slug: nyc-meetup-r-markdown

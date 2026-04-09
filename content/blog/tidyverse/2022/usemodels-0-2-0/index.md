@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/r1sTNKz0omE
   author: Eugenia Kozyr
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

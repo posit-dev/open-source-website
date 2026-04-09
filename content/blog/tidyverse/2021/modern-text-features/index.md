@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/bMybTSV7RFY
   author: Natalia Y
-categories:
+topics:
   - Best Practices
 tags:
   - Graphic-device

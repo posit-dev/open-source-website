@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/orange-tabby-kitten-in-grasses-RCfi7vgJjUY
   author: Andriyko Podilnyk
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

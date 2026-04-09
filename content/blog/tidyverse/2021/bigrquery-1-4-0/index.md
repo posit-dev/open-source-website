@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/uzw4MvfG5ps
   author: Henry & Co.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Databases

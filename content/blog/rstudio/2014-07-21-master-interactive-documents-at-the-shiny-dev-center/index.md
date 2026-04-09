@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-07-21'
-categories:
+topics:
   - Interactive Apps
   - MLOps and Admin
 slug: master-interactive-documents-at-the-shiny-dev-center

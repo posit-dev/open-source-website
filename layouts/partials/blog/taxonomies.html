@@ -1,7 +1,7 @@
-{{ if (or .Params.categories .Params.tags) }}
+{{ if (or .Params.topics .Params.tags) }}
   <ul class="flex flex-row flex-wrap justify-end text-gray-500">
-    {{ if .Params.categories }}
-      {{ range (.GetTerms "categories") }}
+    {{ if .Params.topics }}
+      {{ range (.GetTerms "topics") }}
       <li>
         <a href="{{ .RelPermalink }}"
           class="text-xs mr-2 px-2 py-1 rounded-md font-medium font-mono uppercase bg-blue-100 text-blue-600">

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Joe Cheng
 date: '2015-06-24'
-categories:
+topics:
   - Visualization
   - Interactive Apps
 tags:

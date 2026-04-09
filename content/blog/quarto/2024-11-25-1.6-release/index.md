@@ -4,7 +4,7 @@ description: >
   Quarto 1.6 supports unified branding across formats, updates to RevealJS, a
   new shortcode to reorder content, a landscape page block, and more. There are
   also a couple of breaking changes that will affect a small number of users.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham

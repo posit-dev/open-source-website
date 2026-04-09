@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/Cecb0_8Hx-o
   author: Duy Pham
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-1-0

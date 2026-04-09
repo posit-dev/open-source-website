@@ -4,7 +4,7 @@ description: |
   Sparklyr 1.3 is now available, featuring exciting new functionalities such as integration of Spark higher-order functions and data import/export in Avro and in user-defined serialization formats.
 date: '2020-07-16'
 slug: sparklyr-1.3
-categories:
+topics:
   - MLOps and Admin
 author:
   - name: Yitao Li

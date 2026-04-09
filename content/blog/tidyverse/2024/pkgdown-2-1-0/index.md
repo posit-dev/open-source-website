@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://chatgpt.com/
   author: ChatGPT 4o
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

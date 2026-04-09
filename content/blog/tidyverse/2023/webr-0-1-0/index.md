@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://openai.com/dall-e-2/
   author: DALL·E 2
-categories:
+topics:
   - Best Practices
 tags:
   - Webr

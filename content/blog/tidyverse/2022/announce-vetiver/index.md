@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/3C5ZfCLSGC4
   author: 21 swan
-categories:
+topics:
   - MLOps and Admin
 tags:
   - Vetiver

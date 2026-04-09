@@ -3,7 +3,7 @@ title: Quarto 1.7
 description: >
   Quarto 1.7 brings big improvements to dark mode along with updates to Typst,
   Pandoc, a new `version` shortcode, and improvements to the `julia` engine.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham

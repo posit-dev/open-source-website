@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/autumn-trees-with-colorful-leaves-in-a-park-Qx6Ojv9WPo8
   author: Anurag Jamwal
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

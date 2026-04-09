@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/PGRwUQQhzMQ
   author: Tai's Captures
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

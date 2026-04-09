@@ -9,7 +9,7 @@ ported_from: pointblank
 port_status: in-progress
 software: ["pointblank"]
 languages: ["Python"]
-categories:
+topics:
   - Data Wrangling
 tags:
   - Pointblank

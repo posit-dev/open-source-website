@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/person-running-in-the-hallway-796545/
   author: Michael Foster
-categories:
+topics:
   - Data Wrangling
 tags:
   - Parquet

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/black-and-red-pendant-lamp-9rrtd2z5jdg
   author: Jordane Mathieu
-categories:
+topics:
   - Community
 tags:
   - Internship

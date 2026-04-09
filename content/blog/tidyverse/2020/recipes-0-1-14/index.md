@@ -9,7 +9,7 @@ description: "A new version of the recipes package contains a signficant API upd
 photo:
   url: https://unsplash.com/photos/ToswmEekSFI
   author: Holly Stratton
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

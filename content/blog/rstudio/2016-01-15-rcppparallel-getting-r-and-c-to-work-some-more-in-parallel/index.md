@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2016-01-15'
-categories:
+topics:
   - Best Practices
 slug: rcppparallel-getting-r-and-c-to-work-some-more-in-parallel
 blogcategories:

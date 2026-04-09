@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/lj5ALRcon4g
   author: Jackie Hope
-categories:
+topics:
   - Community
 tags:
   - tidyverse

@@ -15,7 +15,7 @@ showReadingTime = false
 
 [taxonomies]
   tag = 'tags'
-  category = 'categories'
+  topic = 'topics'
   person = 'people'
   software = 'software'
   languages = 'languages'

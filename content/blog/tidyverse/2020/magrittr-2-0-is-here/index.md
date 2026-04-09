@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/E4W60q8rkZs
   author: Florian Wächter
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

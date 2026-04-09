@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/white-and-black-measuring-tape-9rSP3SRUYh4
   author: CHUTTERSNAP
-categories:
+topics:
   - Visualization
 tags:
   - Ggplot2-3-5-0

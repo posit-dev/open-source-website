@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2012-10-01'
-categories:
+topics:
   - Community
 slug: where-in-the-world
 blogcategories:

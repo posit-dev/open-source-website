@@ -6,7 +6,7 @@ people:
   - RStudio Team
 date: '2020-09-29'
 slug: torch
-categories:
+topics:
   - Machine Learning
 tags:
   - Data science

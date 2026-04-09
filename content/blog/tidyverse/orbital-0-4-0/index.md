@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-wispy-nebula-glows-with-purple-and-orange-hues-KLFP4HwaXyk
   author: Scott Lord
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

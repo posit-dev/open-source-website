@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/B6yDtYs2IgY
   author: Joanna Kosinska
-categories:
+topics:
   - MLOps and Admin
 tags:
   - tidyverse

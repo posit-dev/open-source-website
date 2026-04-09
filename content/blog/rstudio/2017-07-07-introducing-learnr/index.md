@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2017-07-11'
-categories:
+topics:
   - Publishing
 tags:
   - Shiny

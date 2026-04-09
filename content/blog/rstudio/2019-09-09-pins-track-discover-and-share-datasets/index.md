@@ -6,7 +6,7 @@ people:
   - RStudio Team
 date: '2019-09-09'
 slug: pin-discover-and-share-resources
-categories:
+topics:
   - MLOps and Admin
 tags:
   - Pins

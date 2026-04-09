@@ -16,7 +16,7 @@ software:
 languages:
   - R
   - Python
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

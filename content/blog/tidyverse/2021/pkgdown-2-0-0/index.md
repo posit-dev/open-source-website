@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/1HIKnKtXEU0
   author: Edgar Soto
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse

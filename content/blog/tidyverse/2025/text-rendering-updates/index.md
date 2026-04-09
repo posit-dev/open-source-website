@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-sign-on-the-side-of-a-building-in-a-foreign-language-O5TLxKaOZUs
   author: Tim Mossholder
-categories:
+topics:
   - Visualization
 tags:
   - Textshaping

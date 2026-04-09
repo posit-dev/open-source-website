@@ -10,7 +10,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/3Xd5j9-drDA
   author: Derek Oyen
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

@@ -3,7 +3,7 @@ title: Quarto 1.3
 subtitle: Quarto 1.3 is officially released
 description: |
   Quarto 1.3 brings new features, improvements, and fixes.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham

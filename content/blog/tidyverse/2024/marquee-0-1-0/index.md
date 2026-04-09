@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-close-up-of-a-metal-grate-on-a-table-9jfpVAhGC1g
   author: Etienne Girardet
-categories:
+topics:
   - Visualization
 tags:
   - tidyverse

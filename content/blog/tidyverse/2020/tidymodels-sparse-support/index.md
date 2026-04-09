@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/7JX0-bfiuxQ
   author: JJ Ying
-categories:
+topics:
   - Community
 tags:
   - tidyverse

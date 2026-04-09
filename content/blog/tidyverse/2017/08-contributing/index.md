@@ -7,7 +7,7 @@ date: '2017-08-14'
 photo:
   url: https://unsplash.com/photos/qFxS5FkUSAQ
   author: Yuriy Rzhemovskiy
-categories:
+topics:
   - Best Practices
 description: |
   Contributing code to open source projects can be intimidating. These projects are often widely used and have well known maintainers. Contributing code and having it accepted seems an almost insurmountable task. However if you follow a few simple strategies you can have your code accepted into even the most popular projects in the tidyverse.

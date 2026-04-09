@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/elephant-walking-during-daytime-QJbyG6O0ick
   author: Nam Anh
-categories:
+topics:
   - Artificial Intelligence
 tags:
   - AI

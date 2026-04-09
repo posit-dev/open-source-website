@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/VybzKEUMhbw
   author: Hiroshi Kimura
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/UDlXygG0pgA
   author: Ranae Smith
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

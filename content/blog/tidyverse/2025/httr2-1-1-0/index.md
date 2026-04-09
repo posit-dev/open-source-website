@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/person-holding-two-baseballs-3k_FcShH0jY
   author: Jose Morales
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse

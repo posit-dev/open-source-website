@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/l-rtCtc_4c0
   author: Chi Liu
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse

@@ -3,7 +3,7 @@ title: Quarto Extensions
 subtitle: Extend Quarto with new capabilities
 description: |
   Quarto Extensions are a powerful way to modify or extend the behavior of Quarto, and can be created and distributed by anyone. Extension types include filters, shortcodes, and custom formats.
-categories:
+topics:
   - Publishing
 people:
   - J.J. Allaire

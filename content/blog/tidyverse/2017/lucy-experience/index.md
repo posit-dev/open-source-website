@@ -9,7 +9,7 @@ people:
 photo:
   url: https://twitter.com/_inundata
   author: Karthik Ram
-categories:
+topics:
   - Community
 tags:
   - tidyverse
