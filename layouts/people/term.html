@@ -83,7 +83,7 @@
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $software }}
-      {{ partial "item.html" (dict "page" . "hide-badge" true) }}
+      {{ partial "item.html" (dict "page" . "hide-badge" true "hide-views" true) }}
     {{ end }}
   </div>
   {{ end }}
@@ -105,7 +105,7 @@
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $events }}
-      {{ partial "item.html" (dict "page" .) }}
+      {{ partial "item.html" (dict "page" . "hide-views" true) }}
     {{ end }}
   </div>
   {{ end }}
@@ -130,7 +130,7 @@
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $combined.ByDate.Reverse }}
-      {{ partial "item.html" (dict "page" .) }}
+      {{ partial "item.html" (dict "page" . "hide-views" true) }}
     {{ end }}
   </div>
   {{ end }}
