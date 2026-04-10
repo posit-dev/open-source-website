@@ -5,7 +5,7 @@ title: >-
 description: >
   A practical guide to structuring reproducible academic research projects using
   Git, renv, Quarto, and GitHub — from data cleaning to manuscript preparation.
-date: '2026-04-11'
+date: '2026-04-13'
 people:
   - Dianyi Yang
 topics:
