@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.3">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pandas - Acting on Data – Quarto</title>
+<title>Pandas - Acting on Data</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -61,209 +61,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../../../site_libs/quarto-search/quarto-search.js"></script>
-<script src="../../../../../site_libs/quarto-search/autocomplete-preset-algolia.umd.js"></script>
-<meta name="quarto:offset" content="../../../../../">
-<link href="../../../../../favicon.png" rel="icon" type="image/png">
-<script src="../../../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-0fbfbd837c1e65b8c8b4c21908843519.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../site_libs/bootstrap/bootstrap-e4b33563d3ba66cf2a2e1e567dd996b5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "algolia": {
-    "application-id": "ZPJB5I1QN7",
-    "search-only-api-key": "49ee55c4d51cbb25a06182d9eef55814",
-    "index-name": "prod_QUARTO",
-    "analytics-events": true,
-    "show-logo": true,
-    "libDir": "site_libs",
-    "cookie-consent-enabled": false
-  },
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": true,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
-<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
-
-
-<script type="text/javascript">
-var ALGOLIA_INSIGHTS_SRC = "https://cdn.jsdelivr.net/npm/search-insights/dist/search-insights.iife.min.js";
-!function(e,a,t,n,s,i,c){e.AlgoliaAnalyticsObject=s,e[s]=e[s]||function(){
-(e[s].queue=e[s].queue||[]).push(arguments)},i=a.createElement(t),c=a.getElementsByTagName(t)[0],
-i.async=1,i.src=n,c.parentNode.insertBefore(i,c)
-}(window,document,"script",ALGOLIA_INSIGHTS_SRC,"aa");
-</script>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-plugin-algolia-insights">
-
-</script>
-<!-- Privacy-friendly analytics by Plausible -->
-<script async="" src="https://plausible.io/js/pa-WsQrku1HW6QA9X0TMT1XI.js"></script>
-<script>
-  window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
-  plausible.init()
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="pandas-acting-on-data_files/libs/clipboard/clipboard.min.js"></script>
+<script src="pandas-acting-on-data_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="pandas-acting-on-data_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="pandas-acting-on-data_files/libs/quarto-html/popper.min.js"></script>
+<script src="pandas-acting-on-data_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="pandas-acting-on-data_files/libs/quarto-html/anchor.min.js"></script>
+<link href="pandas-acting-on-data_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="pandas-acting-on-data_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="pandas-acting-on-data_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="pandas-acting-on-data_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="pandas-acting-on-data_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script src="https://cdn.jsdelivr.net/gh/posit-dev/supported-by-posit/js/badge.min.js" data-light-bg="#E8EDF2" data-light-text="#404041" data-light-lt="#ee6331" data-light-gt="#447099" data-dark-bg="#333333" data-dark-lt="#ffffff" data-dark-gt="#ffffff"></script>
 
 
-<link rel="stylesheet" href="../../../../../styles.css">
-<meta property="og:title" content="Pandas - Acting on Data – Quarto">
-<meta property="og:image" content="https://quarto.org/docs/blog/posts/2024-07-02-beautiful-tables-in-typst/examples/quarto-dark-bg.jpeg">
-<meta property="og:site_name" content="Quarto">
-<meta name="twitter:title" content="Pandas - Acting on Data – Quarto">
-<meta name="twitter:image" content="https://quarto.org/docs/blog/posts/2024-07-02-beautiful-tables-in-typst/examples/quarto-dark-bg.jpeg">
-<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="floating nav-fixed quarto-light">
+<body class="fullcontent quarto-light">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a href="../../../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../../../quarto.png" alt="Quarto logo." class="navbar-logo light-content">
-    <img src="../../../../../quarto.png" alt="Quarto logo." class="navbar-logo dark-content">
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../../../../index.html"> 
-<span class="menu-text">Overview</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../../../docs/get-started/index.html"> 
-<span class="menu-text">Get Started</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../../../docs/guide/index.html"> 
-<span class="menu-text">Guide</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../../../docs/extensions/index.html"> 
-<span class="menu-text">Extensions</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../../../docs/reference/index.html"> 
-<span class="menu-text">Reference</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../../../docs/gallery/index.html"> 
-<span class="menu-text">Gallery</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../../../docs/blog/index.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Help</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
-        <li>
-    <a class="dropdown-item" href="https://github.com/quarto-dev/quarto-cli/issues"><i class="bi bi-bug" role="img">
-</i> 
- <span class="dropdown-text">Report a Bug</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://github.com/quarto-dev/quarto-cli/discussions"><i class="bi bi-chat-right-text" role="img">
-</i> 
- <span class="dropdown-text">Ask a Question</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../../../../docs/faq/index.html"><i class="bi bi-question-circle" role="img">
-</i> 
- <span class="dropdown-text">FAQ</span></a>
-  </li>  
-    </ul>
-  </li>
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools tools-wide">
-    <a href="https://bsky.app/profile/quarto.org" title="" class="quarto-navigation-tool px-1" aria-label="Quarto Bluesky"><i class="bi bi-bluesky"></i></a>
-    <a href="https://github.com/quarto-dev/quarto-cli" title="Quarto GitHub" class="quarto-navigation-tool px-1" aria-label="Quarto GitHub"><i class="bi bi-github"></i></a>
-    <a href="https://quarto.org/docs/blog/index.xml" title="Quarto Blog RSS" class="quarto-navigation-tool px-1" aria-label="Quarto Blog RSS"><i class="bi bi-rss"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Pandas - Acting on Data</h1>
 </div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Pandas - Acting on Data</h1>
-                      </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-    
   
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
-<!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
+</header>
 
 
-
-<div id="e0ca7130" class="cell plain" data-execution_count="1">
+<div id="c42707a8" class="cell plain" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -282,33 +123,33 @@ i.async=1,i.src=n,c.parentNode.insertBefore(i,c)
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>s2.<span class="bu">apply</span>(highlight_max, props<span class="op">=</span><span class="st">'color:white;background-color:#00008b'</span>, axis<span class="op">=</span><span class="dv">0</span>)<span class="op">\</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>.<span class="bu">apply</span>(highlight_max, props<span class="op">=</span><span class="st">'color:white;background-color: #ffc0cb;'</span>, axis<span class="op">=</span><span class="dv">1</span>)<span class="op">\</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>.<span class="bu">apply</span>(highlight_max, props<span class="op">=</span><span class="st">'color:white;background-color:purple'</span>, axis<span class="op">=</span><span class="va">None</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <style type="text/css">
-#T_7f353_row0_col2, #T_7f353_row7_col1 {
+#T_e717c_row0_col2, #T_e717c_row7_col1 {
   color: white;
   background-color: #00008b;
 }
-#T_7f353_row0_col3 {
+#T_e717c_row0_col3 {
   color: white;
   background-color: #00008b;
   color: white;
   background-color: #ffc0cb;
 }
-#T_7f353_row1_col0, #T_7f353_row2_col3, #T_7f353_row3_col0, #T_7f353_row4_col0, #T_7f353_row5_col2, #T_7f353_row7_col0, #T_7f353_row9_col0 {
+#T_e717c_row1_col0, #T_e717c_row2_col3, #T_e717c_row3_col0, #T_e717c_row4_col0, #T_e717c_row5_col2, #T_e717c_row7_col0, #T_e717c_row9_col0 {
   color: white;
   background-color: #ffc0cb;
 }
-#T_7f353_row1_col1, #T_7f353_row4_col3, #T_7f353_row5_col0, #T_7f353_row5_col3, #T_7f353_row6_col1, #T_7f353_row8_col0, #T_7f353_row8_col1, #T_7f353_row8_col2, #T_7f353_row9_col2, #T_7f353_row9_col3 {
+#T_e717c_row1_col1, #T_e717c_row4_col3, #T_e717c_row5_col0, #T_e717c_row5_col3, #T_e717c_row6_col1, #T_e717c_row8_col0, #T_e717c_row8_col1, #T_e717c_row8_col2, #T_e717c_row9_col2, #T_e717c_row9_col3 {
   color: red;
 }
-#T_7f353_row1_col3, #T_7f353_row2_col0, #T_7f353_row4_col1, #T_7f353_row6_col3 {
+#T_e717c_row1_col3, #T_e717c_row2_col0, #T_e717c_row4_col1, #T_e717c_row6_col3 {
   color: red;
   opacity: 20%;
 }
-#T_7f353_row2_col2, #T_7f353_row3_col1, #T_7f353_row6_col2, #T_7f353_row7_col2 {
+#T_e717c_row2_col2, #T_e717c_row3_col1, #T_e717c_row6_col2, #T_e717c_row7_col2 {
   opacity: 20%;
 }
-#T_7f353_row6_col0 {
+#T_e717c_row6_col0 {
   color: white;
   background-color: #00008b;
   color: white;
@@ -316,149 +157,101 @@ i.async=1,i.src=n,c.parentNode.insertBefore(i,c)
   color: white;
   background-color: purple;
 }
-#T_7f353_row8_col3 {
+#T_e717c_row8_col3 {
   opacity: 20%;
   color: white;
   background-color: #ffc0cb;
 }
 </style>
 
-<table id="T_7f353" class="caption-top table">
+<table id="T_e717c" class="caption-top table">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_7f353_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">A</th>
-<th id="T_7f353_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">B</th>
-<th id="T_7f353_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">C</th>
-<th id="T_7f353_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">D</th>
+<th id="T_e717c_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">A</th>
+<th id="T_e717c_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">B</th>
+<th id="T_e717c_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">C</th>
+<th id="T_e717c_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">D</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th id="T_7f353_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
-<td id="T_7f353_row0_col0" class="data row0 col0">1.764052</td>
-<td id="T_7f353_row0_col1" class="data row0 col1">0.400157</td>
-<td id="T_7f353_row0_col2" class="data row0 col2">0.978738</td>
-<td id="T_7f353_row0_col3" class="data row0 col3">2.240893</td>
+<th id="T_e717c_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
+<td id="T_e717c_row0_col0" class="data row0 col0">1.764052</td>
+<td id="T_e717c_row0_col1" class="data row0 col1">0.400157</td>
+<td id="T_e717c_row0_col2" class="data row0 col2">0.978738</td>
+<td id="T_e717c_row0_col3" class="data row0 col3">2.240893</td>
 </tr>
 <tr class="even">
-<th id="T_7f353_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
-<td id="T_7f353_row1_col0" class="data row1 col0">1.867558</td>
-<td id="T_7f353_row1_col1" class="data row1 col1">-0.977278</td>
-<td id="T_7f353_row1_col2" class="data row1 col2">0.950088</td>
-<td id="T_7f353_row1_col3" class="data row1 col3">-0.151357</td>
+<th id="T_e717c_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
+<td id="T_e717c_row1_col0" class="data row1 col0">1.867558</td>
+<td id="T_e717c_row1_col1" class="data row1 col1">-0.977278</td>
+<td id="T_e717c_row1_col2" class="data row1 col2">0.950088</td>
+<td id="T_e717c_row1_col3" class="data row1 col3">-0.151357</td>
 </tr>
 <tr class="odd">
-<th id="T_7f353_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
-<td id="T_7f353_row2_col0" class="data row2 col0">-0.103219</td>
-<td id="T_7f353_row2_col1" class="data row2 col1">0.410599</td>
-<td id="T_7f353_row2_col2" class="data row2 col2">0.144044</td>
-<td id="T_7f353_row2_col3" class="data row2 col3">1.454274</td>
+<th id="T_e717c_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
+<td id="T_e717c_row2_col0" class="data row2 col0">-0.103219</td>
+<td id="T_e717c_row2_col1" class="data row2 col1">0.410599</td>
+<td id="T_e717c_row2_col2" class="data row2 col2">0.144044</td>
+<td id="T_e717c_row2_col3" class="data row2 col3">1.454274</td>
 </tr>
 <tr class="even">
-<th id="T_7f353_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
-<td id="T_7f353_row3_col0" class="data row3 col0">0.761038</td>
-<td id="T_7f353_row3_col1" class="data row3 col1">0.121675</td>
-<td id="T_7f353_row3_col2" class="data row3 col2">0.443863</td>
-<td id="T_7f353_row3_col3" class="data row3 col3">0.333674</td>
+<th id="T_e717c_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
+<td id="T_e717c_row3_col0" class="data row3 col0">0.761038</td>
+<td id="T_e717c_row3_col1" class="data row3 col1">0.121675</td>
+<td id="T_e717c_row3_col2" class="data row3 col2">0.443863</td>
+<td id="T_e717c_row3_col3" class="data row3 col3">0.333674</td>
 </tr>
 <tr class="odd">
-<th id="T_7f353_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
-<td id="T_7f353_row4_col0" class="data row4 col0">1.494079</td>
-<td id="T_7f353_row4_col1" class="data row4 col1">-0.205158</td>
-<td id="T_7f353_row4_col2" class="data row4 col2">0.313068</td>
-<td id="T_7f353_row4_col3" class="data row4 col3">-0.854096</td>
+<th id="T_e717c_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
+<td id="T_e717c_row4_col0" class="data row4 col0">1.494079</td>
+<td id="T_e717c_row4_col1" class="data row4 col1">-0.205158</td>
+<td id="T_e717c_row4_col2" class="data row4 col2">0.313068</td>
+<td id="T_e717c_row4_col3" class="data row4 col3">-0.854096</td>
 </tr>
 <tr class="even">
-<th id="T_7f353_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
-<td id="T_7f353_row5_col0" class="data row5 col0">-2.552990</td>
-<td id="T_7f353_row5_col1" class="data row5 col1">0.653619</td>
-<td id="T_7f353_row5_col2" class="data row5 col2">0.864436</td>
-<td id="T_7f353_row5_col3" class="data row5 col3">-0.742165</td>
+<th id="T_e717c_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
+<td id="T_e717c_row5_col0" class="data row5 col0">-2.552990</td>
+<td id="T_e717c_row5_col1" class="data row5 col1">0.653619</td>
+<td id="T_e717c_row5_col2" class="data row5 col2">0.864436</td>
+<td id="T_e717c_row5_col3" class="data row5 col3">-0.742165</td>
 </tr>
 <tr class="odd">
-<th id="T_7f353_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
-<td id="T_7f353_row6_col0" class="data row6 col0">2.269755</td>
-<td id="T_7f353_row6_col1" class="data row6 col1">-1.454366</td>
-<td id="T_7f353_row6_col2" class="data row6 col2">0.045759</td>
-<td id="T_7f353_row6_col3" class="data row6 col3">-0.187184</td>
+<th id="T_e717c_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
+<td id="T_e717c_row6_col0" class="data row6 col0">2.269755</td>
+<td id="T_e717c_row6_col1" class="data row6 col1">-1.454366</td>
+<td id="T_e717c_row6_col2" class="data row6 col2">0.045759</td>
+<td id="T_e717c_row6_col3" class="data row6 col3">-0.187184</td>
 </tr>
 <tr class="even">
-<th id="T_7f353_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
-<td id="T_7f353_row7_col0" class="data row7 col0">1.532779</td>
-<td id="T_7f353_row7_col1" class="data row7 col1">1.469359</td>
-<td id="T_7f353_row7_col2" class="data row7 col2">0.154947</td>
-<td id="T_7f353_row7_col3" class="data row7 col3">0.378163</td>
+<th id="T_e717c_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
+<td id="T_e717c_row7_col0" class="data row7 col0">1.532779</td>
+<td id="T_e717c_row7_col1" class="data row7 col1">1.469359</td>
+<td id="T_e717c_row7_col2" class="data row7 col2">0.154947</td>
+<td id="T_e717c_row7_col3" class="data row7 col3">0.378163</td>
 </tr>
 <tr class="odd">
-<th id="T_7f353_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
-<td id="T_7f353_row8_col0" class="data row8 col0">-0.887786</td>
-<td id="T_7f353_row8_col1" class="data row8 col1">-1.980796</td>
-<td id="T_7f353_row8_col2" class="data row8 col2">-0.347912</td>
-<td id="T_7f353_row8_col3" class="data row8 col3">0.156349</td>
+<th id="T_e717c_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
+<td id="T_e717c_row8_col0" class="data row8 col0">-0.887786</td>
+<td id="T_e717c_row8_col1" class="data row8 col1">-1.980796</td>
+<td id="T_e717c_row8_col2" class="data row8 col2">-0.347912</td>
+<td id="T_e717c_row8_col3" class="data row8 col3">0.156349</td>
 </tr>
 <tr class="even">
-<th id="T_7f353_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
-<td id="T_7f353_row9_col0" class="data row9 col0">1.230291</td>
-<td id="T_7f353_row9_col1" class="data row9 col1">1.202380</td>
-<td id="T_7f353_row9_col2" class="data row9 col2">-0.387327</td>
-<td id="T_7f353_row9_col3" class="data row9 col3">-0.302303</td>
+<th id="T_e717c_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
+<td id="T_e717c_row9_col0" class="data row9 col0">1.230291</td>
+<td id="T_e717c_row9_col1" class="data row9 col1">1.202380</td>
+<td id="T_e717c_row9_col2" class="data row9 col2">-0.387327</td>
+<td id="T_e717c_row9_col3" class="data row9 col3">-0.302303</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-
-
-</main> <!-- /main -->
-<script type="text/javascript">
-
-// replace cmd keyboard shortcut w/ control on non-Mac platforms
-const kPlatformMac = typeof navigator !== 'undefined' ? /Mac/.test(navigator.platform) : false;
-if (!kPlatformMac) {
-   var kbds = document.querySelectorAll("kbd")
-   kbds.forEach(function(kbd) {
-      kbd.innerHTML = kbd.innerHTML.replace(/⌘/g, '⌃');
-   });
-}
-
-// tweak headings in pymd
-document.querySelectorAll(".pymd span.co").forEach(el => {
-   if (!el.innerText.startsWith("#|")) {
-      el.style.fontWeight = 1000;
-   }
-});
-
-</script>
-<!-- Begin Mailchimp Signup Form -->
-<div id="mc_embed_signup" style="padding-bottom: 1em; max-width: 400px;" class="ms-auto me-auto">
-  <p style="font-weight: 600; margin-bottom: 0;">Subscribe</p>
-  <span style="font-size: 0.9em;">Enjoy this blog? Get notified of new posts by email:</span>
-<form action="https://quarto.us14.list-manage.com/subscribe/post?u=c79fb56a311ae347fbe916740&amp;id=ec05dfca03" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-    <div id="mc_embed_signup_scroll">
-	
-        <div class="input-group mt-1 mb-2">
-        <input type="email" class="form-control" placeholder="Email Address" aria-label="Email Address" name="EMAIL" style="font-size: 0.8em; padding: .2em;">
-        </div>              
-
-	<div id="mce-responses" class="clear foot">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c79fb56a311ae347fbe916740_ec05dfca03" tabindex="-1" value=""></div>
-        <div class="optionalParent">
-            <div class="clear foot" style="display: flex; align-items: center; justify-content: center;">
-              
-              
-                <input type="submit" value="Subscribe" name="subscribe" style="min-width: 150px; font-size: 0.8em;" id="mc-embedded-subscribe" class="button btn btn-light btn-sm ms-auto me-auto">
-            </div>
-        </div>
-    </div>
-</form>
-</div>
-
-<!--End mc_embed_signup-->
+</main>
+<!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -532,7 +325,7 @@ document.querySelectorAll(".pymd span.co").forEach(el => {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/quarto\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -604,7 +397,7 @@ document.querySelectorAll(".pymd span.co").forEach(el => {
       if (id === null || id.startsWith('sec-')) {
         // Special case sections, only their first couple elements
         const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
+        if (note.children && note.children.length> 2) {
           container.appendChild(note.children[0].cloneNode(true));
           for (let i = 1; i < note.children.length; i++) {
             const child = note.children[i];
@@ -693,7 +486,7 @@ document.querySelectorAll(".pymd span.co").forEach(el => {
               // This should only happen for chapter cross references
               // (since there is no id in the URL)
               // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              if (note.children.length> 0 && note.children[0].tagName === "HEADER") {
                 note.children[0].remove();
               }
               const html = processXRef(null, note);
@@ -726,13 +519,13 @@ document.querySelectorAll(".pymd span.co").forEach(el => {
           let top = null;
           let height = null;
           let parent = null;
-          if (lineIds.length > 0) {
+          if (lineIds.length> 0) {
               //compute the position of the single el (top and bottom and make a div)
               const el = window.document.getElementById(lineIds[0]);
               top = el.offsetTop;
               height = el.offsetHeight;
               parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
+            if (lineIds.length> 1) {
               const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
               const bottom = lastEl.offsetTop + lastEl.offsetHeight;
               height = bottom - top;
@@ -859,89 +652,7 @@ document.querySelectorAll(".pymd span.co").forEach(el => {
     }
   });
   </script>
-<input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
-<script>
-  function loadGiscus() {
-    // Function to get the theme based on body class
-    const getTheme = () => {
-      let baseTheme = document.getElementById('giscus-base-theme').value;
-      let altTheme = document.getElementById('giscus-alt-theme').value;
-      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
-    };
-    const script = document.createElement("script");
-    script.src = "https://giscus.app/client.js";
-    script.async = true;
-    script.dataset.repo = "quarto-dev/quarto-cli";
-    script.dataset.repoId = "MDEwOlJlcG9zaXRvcnkyOTg1Nzk5MzQ=";
-    script.dataset.category = "Blog";
-    script.dataset.categoryId = "DIC_kwDOEcv33s4CkPUq";
-    script.dataset.mapping = "title";
-    script.dataset.reactionsEnabled = "1";
-    script.dataset.emitMetadata = "0";
-    script.dataset.inputPosition = "top";
-    script.dataset.theme = getTheme();
-    script.dataset.lang = "en";
-    script.crossOrigin = "anonymous";
-    // Append the script to the desired div instead of at the end of the body
-    document.getElementById("quarto-content").appendChild(script);
-  }
-  loadGiscus();
-</script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Proudly supported by <a href="https://posit.co"><img src="../../../../../images/Posit-Logos-2024_horiz-full-color.svg" class="light-content img-fluid" alt="Posit" width="65"></a> <a href="https://posit.co"><img src="../../../../../images/Posit-Logos-2024_horiz-full-color-white-text.svg" class="dark-content img-fluid" alt="Posit" width="65"></a></p>
-</div>   
-    <div class="nav-footer-center">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../../about.html">
-<p>About</p>
-</a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../../docs/faq/index.html">
-<p>FAQ</p>
-</a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../../license.html">
-<p>License</p>
-</a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../../../../trademark.html">
-<p>Trademark</p>
-</a>
-  </li>  
-</ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/quarto-dev/quarto-web/edit/main/docs/blog/posts/2024-07-02-beautiful-tables-in-typst/examples/pandas-acting-on-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/quarto-dev/quarto-cli/issues/new/choose" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
-    <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://bsky.app/profile/quarto.org">
-      <i class="bi bi-bluesky" role="img" aria-label="Quarto Bluesky">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/quarto-dev/quarto-cli">
-      <i class="bi bi-github" role="img" aria-label="Quarto GitHub">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://quarto.org/docs/blog/index.xml">
-      <i class="bi bi-rss" role="img" aria-label="Quarto Blog RSS">
-</i> 
-    </a>
-  </li>  
-</ul>
-    </div>
-  </div>
-</footer>
 
 
 
