@@ -14,6 +14,7 @@ editor:
   render-on-save: true
 code-annotations: hover
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - shiny-r

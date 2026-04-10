@@ -11,6 +11,7 @@ date: '2024-07-11'
 image: images/thumbnail.png
 image-alt: Quarto 1.5 with a balloon
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

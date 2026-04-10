@@ -17,6 +17,7 @@ people:
 image: thumbnail.jpg
 image-alt: Field of wheat
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

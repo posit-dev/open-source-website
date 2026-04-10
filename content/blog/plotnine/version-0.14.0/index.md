@@ -6,6 +6,7 @@ date: '2024-11-07'
 topics:
   - Visualization
 ported_from: plotnine
+source: plotnine
 port_status: in-progress
 software: ["plotnine"]
 languages: ["Python"]

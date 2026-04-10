@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.gif
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

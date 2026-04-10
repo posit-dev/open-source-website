@@ -12,6 +12,7 @@ topics:
   - Publishing
   - Community
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

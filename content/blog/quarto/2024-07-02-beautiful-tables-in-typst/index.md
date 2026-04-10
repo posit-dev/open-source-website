@@ -19,6 +19,7 @@ ported_categories:
   - Quarto 1.5
   - Tables
 ported_from: quarto
+source: quarto
 port_status: raw
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

@@ -9,6 +9,7 @@ date: '2026-03-05'
 image: thumbnail.png
 image-alt: Quarto icon, PDF file icon, accessibility icon, and validation shield
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

@@ -15,6 +15,7 @@ photo:
   author: Ian Flores
 image: finding-errors-in-data-analyses-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 topics:
   - Community

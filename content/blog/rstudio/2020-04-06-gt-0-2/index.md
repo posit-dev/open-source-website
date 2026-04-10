@@ -20,6 +20,7 @@ image-alt: GT hex.
 software: ["rmarkdown"]
 languages: ["R"]
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 ported_categories:
   - Packages

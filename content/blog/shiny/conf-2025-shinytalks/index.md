@@ -8,6 +8,7 @@ image-header-disable: yes
 image: conf-recordings-banner.png
 image-alt: Shiny talks and workshops at posit::conf(2025)
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-r", "shiny-python"]
 languages: ["R", "Python"]

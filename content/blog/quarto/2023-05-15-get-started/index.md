@@ -13,6 +13,7 @@ image: get-started-video-cover.png
 image-alt: Quarto logo on a blue background and the title of the video - Get started
   with Quarto
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

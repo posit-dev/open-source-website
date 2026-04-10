@@ -17,6 +17,7 @@ slug: leaflet-interactive-web-maps-with-r
 blogcategories:
   - Products and Technology
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]

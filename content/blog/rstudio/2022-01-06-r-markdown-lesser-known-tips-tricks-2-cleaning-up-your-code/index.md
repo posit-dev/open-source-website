@@ -19,6 +19,7 @@ description: In this series, we show you lesser-known tips and tricks to help yo
   cleaning up your R Markdown code.
 image: thumbnail.jpg
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]

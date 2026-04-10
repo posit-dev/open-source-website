@@ -18,6 +18,7 @@ people:
   - Javier Luraschi
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["reticulate"]
 languages: ["R"]

@@ -11,6 +11,7 @@ slug: accelerating-r-rstudio-and-the-new-r-consortium
 blogcategories:
   - Company News and Events
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:

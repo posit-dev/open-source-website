@@ -16,6 +16,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["dt"]
 languages: ["R"]

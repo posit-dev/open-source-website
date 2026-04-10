@@ -6,6 +6,7 @@ people:
   - Rich Iannone
 date: '2025-02-11T00:00:00.000Z'
 ported_from: great_tables
+source: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]

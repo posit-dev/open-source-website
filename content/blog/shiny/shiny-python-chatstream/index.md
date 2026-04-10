@@ -7,6 +7,7 @@ date: '2023-05-12'
 image: shiny-ai-chatbot.jpg
 image-alt: an image with lines representing ai computing lie behind a chatbox icon
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - shiny-python

@@ -13,6 +13,7 @@ description: For data science teams to be successful, they need to embrace both 
 image: thumbnail.jpeg
 image-alt: Lego characters coming together
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
 topics:

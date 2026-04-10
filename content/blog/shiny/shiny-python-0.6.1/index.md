@@ -7,6 +7,7 @@ date: '2023-12-22'
 image: shiny-061.png
 image-alt: Shiny for Python 0.6.1
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]

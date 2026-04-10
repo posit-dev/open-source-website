@@ -18,6 +18,7 @@ description: We are excited to announce new developments in Keras for R. Data sc
 alttext: Leafless tree branches with red buds against a snowy background
 image: thumbnail.jpg
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

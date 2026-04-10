@@ -18,6 +18,7 @@ blogcategories:
   - Training and Education
 alttext: a wedding invitation
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r", "reactlog"]
 languages: ["R"]

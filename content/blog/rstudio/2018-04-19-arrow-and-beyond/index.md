@@ -18,6 +18,7 @@ tags:
 blogcategories:
   - Company News and Events
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
 ported_categories:

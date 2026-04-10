@@ -10,6 +10,7 @@ date: '2026-03-24'
 image: thumbnail.png
 image-alt: Quarto 1.9
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

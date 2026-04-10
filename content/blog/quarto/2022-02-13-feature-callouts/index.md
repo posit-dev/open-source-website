@@ -19,6 +19,7 @@ image-alt: >-
   and an important (has a red banner with info exclamation-point icon preceding
   the header).
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

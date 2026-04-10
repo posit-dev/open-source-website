@@ -12,6 +12,7 @@ date: '2023-12-05'
 image: asa-traveling-courses.png
 image-alt: Screenshots of homepages of six courses titled From R Markdown to Quarto
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

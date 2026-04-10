@@ -13,6 +13,7 @@ date: '2024-01-24'
 image: images/thumbnail.png
 image-alt: Quarto 1.4 with a party popper
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

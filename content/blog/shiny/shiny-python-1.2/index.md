@@ -9,6 +9,7 @@ date: '2024-10-31'
 image: shinyforpython-120.jpg
 image-alt: Shiny for Python 1.2.0
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - shiny-python

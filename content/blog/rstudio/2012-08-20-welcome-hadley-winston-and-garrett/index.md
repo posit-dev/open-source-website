@@ -13,6 +13,7 @@ blogcategories:
   - Open Source
 nohero: yes
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 ported_categories:
   - News

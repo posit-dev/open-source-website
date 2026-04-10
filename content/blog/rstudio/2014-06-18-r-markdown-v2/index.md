@@ -21,6 +21,7 @@ blogcategories:
   - Company News and Events
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["markdown", "rmarkdown"]
 languages: ["R"]

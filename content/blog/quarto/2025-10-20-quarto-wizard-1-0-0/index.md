@@ -72,6 +72,7 @@ alt-text:
 editor:
   render-on-save: true
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

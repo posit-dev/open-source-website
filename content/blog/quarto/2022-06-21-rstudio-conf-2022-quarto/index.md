@@ -12,6 +12,7 @@ image: conf2022.png
 image-alt: 'rstudio:conf(2022) logo: orange background with the outline of the Washington
   DC skyline.'
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

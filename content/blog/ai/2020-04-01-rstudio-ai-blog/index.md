@@ -14,6 +14,7 @@ people:
   - The Multiverse Team
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 ported_categories:
   - Meta
