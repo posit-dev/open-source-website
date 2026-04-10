@@ -76,7 +76,7 @@ We highly recommend watching the Lab videos if you love hearing IDE thoughts and
 <td>Change the color of the indents in front of your text</td>
 </tr>
 <tr>
-<td><a href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">Rainbow CSV extension</a><br><img src="images/image4.png" alt="Rainbow CSV extension logo with colorful CSV letters" width="128"></td>
+<td><a href="https://open-vsx.org/extension/mechatroner/rainbow-csv">Rainbow CSV extension</a><br><img src="images/image4.png" alt="Rainbow CSV extension logo with colorful CSV letters" width="128"></td>
 <td>Highlight columns in distinct colors</td>
 </tr>
 <tr>
@@ -104,7 +104,7 @@ We highly recommend watching the Lab videos if you love hearing IDE thoughts and
 <td>Switch between projects</td>
 </tr>
 <tr>
-<td>Spell Right<br><img src="images/image11.png" alt="Spell Right extension icon showing abc with checkmark" width="128"></td>
+<td><a href="https://open-vsx.org/extension/ban/spellright">Spell Right</a><br><img src="images/image11.png" alt="Spell Right extension icon showing abc with checkmark" width="128"></td>
 <td>Spell check your documents</td>
 </tr>
 </tbody>
