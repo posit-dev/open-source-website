@@ -31,6 +31,7 @@
     software:    '_qSoftware',
     language:    '_qLanguage',
     location:    '_qLocation',
+    source:      '_qSource',
   };
 
   const NUMERIC_FIELDS = {
@@ -450,6 +451,7 @@
           tags.join(' '),
           authorNames,
           entry.location || '',
+          entry.source || '',
         ];
 
         return {
@@ -463,6 +465,7 @@
           _qSoftware:    normalize(software.join(' ')),
           _qLanguage:    normalize(languages.join(' ')),
           _qLocation:    normalize(entry.location || ''),
+          _qSource:      normalize(entry.source || ''),
           // Full-text search index
           _search: normalize(searchParts.join(' ')),
           // Sort keys

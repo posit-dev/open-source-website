@@ -6,7 +6,7 @@
 {{ $query := .Params.query | default .File.ContentBaseName }}
 {{ $queryLower := $query | replaceRE "[-_]" " " | lower }}
 {{/* JS users get redirected to the blog page with query param */}}
-<script>window.location.replace('/blog/?q={{ $query }}');</script>
+<script>window.location.replace('/blog/?q=source:{{ $query }}');</script>
 
 <div class="flex flex-col w-full relative mt-6 max-w-7xl mx-auto" data-pagefind-ignore>
 
@@ -16,31 +16,12 @@
     {{ partial "button.html" (dict "url" "/blog/" "text" "Back to all blog posts" "icon-left" "boxicons--arrow-left") }}
   </div>
 
-  {{/* Filter all blog posts matching the query */}}
+  {{/* Filter all blog posts matching the query (source field only) */}}
   {{ $allBlogPages := where site.RegularPages "Section" "blog" }}
   {{ $matched := slice }}
   {{ range $allBlogPages.ByDate.Reverse }}
-    {{ $title := .Title | lower }}
-    {{ $desc := .Params.description | default "" | lower }}
-
-    {{ $tagList := slice }}
-    {{ range .GetTerms "tags" }}
-      {{ $tagList = $tagList | append (lower .LinkTitle) }}
-    {{ end }}
-
-    {{ $catList := slice }}
-    {{ range .GetTerms "topics" }}
-      {{ $catList = $catList | append (lower .LinkTitle) }}
-    {{ end }}
-
-    {{ $swList := slice }}
-    {{ range .GetTerms "software" }}
-      {{ $swList = $swList | append (lower .LinkTitle) }}
-    {{ end }}
-
-    {{ $slug := .RelPermalink | lower }}
-    {{ $haystack := printf "%s %s %s %s %s %s" $title $desc $slug (delimit $tagList " ") (delimit $catList " ") (delimit $swList " ") | replaceRE "[-_]" " " }}
-    {{ if in $haystack $queryLower }}
+    {{ $source := .Params.source | default "" | replaceRE "[-_]" " " | lower }}
+    {{ if and $source (in $source $queryLower) }}
       {{ $matched = $matched | append . }}
     {{ end }}
   {{ end }}

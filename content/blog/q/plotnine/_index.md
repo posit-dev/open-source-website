@@ -1,3 +1,3 @@
 ---
-title: plotnine
+title: Plotnine
 ---
