@@ -357,6 +357,10 @@
       await this._hydrate();
       this._hidePagination();
       this._readURL();
+      if (this._hasActiveFilters()) {
+        const featured = this.container.parentElement?.querySelector('[data-featured]');
+        if (featured) featured.classList.add('hidden');
+      }
       if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
       this._updateShowBtnLabel();
       this._bindControls();

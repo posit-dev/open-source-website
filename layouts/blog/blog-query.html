@@ -10,10 +10,10 @@
 
 <div class="flex flex-col w-full relative mt-6 max-w-7xl mx-auto" data-pagefind-ignore>
 
-  <h1 class="text-4xl font-medium text-gray-500 mb-2">Blog posts about {{ .Title }}</h1>
+  <h1 class="text-4xl font-medium text-gray-500 mb-2">{{ .Title }} blog posts</h1>
 
-  <div class="prose mb-6">
-    {{ partial "button.html" (dict "url" "/blog/" "text" "Back to all blog posts" "icon-left" "boxicons--arrow-left") }}
+  <div class="prose my-4">
+    {{ partial "button.html" (dict "url" "/blog/" "text" "All blog posts" "icon-left" "boxicons--chevron-left" "size" "small") }}
   </div>
 
   {{/* Filter all blog posts matching the query (source field only) */}}
