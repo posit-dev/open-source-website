@@ -10,7 +10,7 @@ tags:
   - Education
   - Teaching
 people:
-  - mine
+  - Mine Çetinkaya-Rundel
 photo:
   url: https://unsplash.com/photos/wEL2zPX3jDg
   author: Fabio Ballasina

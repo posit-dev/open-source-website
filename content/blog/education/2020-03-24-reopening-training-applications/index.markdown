@@ -1,7 +1,7 @@
 ---
 title: Reopening applications for instructor training
 people:
-  - greg
+  - Greg Wilson
 date: '2020-03-24'
 categories:
   - Community

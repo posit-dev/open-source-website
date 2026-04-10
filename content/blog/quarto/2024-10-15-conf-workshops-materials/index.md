@@ -6,7 +6,8 @@ topics:
   - Publishing
   - Community
 people:
-  - Mine Çetinkaya-Rundel and Charlotte Wickham
+  - Mine Çetinkaya-Rundel
+  - Charlotte Wickham
 date: '2024-10-15'
 image: images/thumbnail.png
 image-alt: 'posit::conf(2024) logo '

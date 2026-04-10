@@ -1,7 +1,7 @@
 ---
 title: Upcoming Instructor Training Events
 people:
-  - Greg
+  - Greg Wilson
 date: '2019-09-25'
 categories:
   - Community

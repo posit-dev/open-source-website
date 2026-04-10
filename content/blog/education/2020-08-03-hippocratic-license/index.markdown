@@ -1,7 +1,7 @@
 ---
 title: The Hippocratic License
 people:
-  - greg
+  - Greg Wilson
 date: '2020-08-03'
 categories:
   - Community

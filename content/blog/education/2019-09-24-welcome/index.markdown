@@ -2,7 +2,7 @@
 draft: yes
 title: Welcome!
 people:
-  - Alison
+  - Alison Hill
 date: '2019-09-24'
 slug: welcome
 description: |

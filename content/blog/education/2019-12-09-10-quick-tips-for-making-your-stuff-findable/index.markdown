@@ -1,7 +1,7 @@
 ---
 title: Ten Quick Tips for Making Your Stuff Findable
 people:
-  - sarah
+  - Sarah Lin
 date: '2019-12-09'
 slug: making-your-stuff-findable
 description: |

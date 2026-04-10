@@ -1,7 +1,7 @@
 ---
 title: 'How to Deliver Maximum Value Using R & Python '
 people:
-  - Dan Chen
+  - Daniel Chen
 date: '2020-08-13'
 slug: how-to-deliver-maximum-value-using-r-python
 tags:

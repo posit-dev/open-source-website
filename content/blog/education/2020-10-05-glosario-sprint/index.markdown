@@ -1,7 +1,7 @@
 ---
 title: Glosario Sprint
 people:
-  - greg
+  - Greg Wilson
 date: '2020-10-05'
 categories:
   - Community

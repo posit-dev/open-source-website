@@ -5,7 +5,7 @@ author:
   - '[Richard Iannone](https://randr.rocks/)'
 people:
   - Malcolm Barrett
-  - Richard Iannone
+  - Rich Iannone
 date: '2020-06-08'
 categories:
   - Community

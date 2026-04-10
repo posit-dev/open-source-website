@@ -1,7 +1,7 @@
 ---
 title: Instructor Certification Findings
 people:
-  - greg
+  - Greg Wilson
 date: '2020-07-06'
 categories:
   - Community

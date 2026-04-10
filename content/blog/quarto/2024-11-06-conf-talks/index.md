@@ -6,7 +6,8 @@ topics:
   - Publishing
   - Community
 people:
-  - Mine Çetinkaya-Rundel and Charlotte Wickham
+  - Mine Çetinkaya-Rundel
+  - Charlotte Wickham
 date: '2024-11-06'
 image: images/thumbnail.jpg
 image-alt: Collage of speakers with Quarto talks at posit::conf(2024)

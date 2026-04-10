@@ -1,7 +1,7 @@
 ---
 title: Concept Maps
 people:
-  - greg
+  - Greg Wilson
 date: '2020-09-11'
 categories:
   - Community

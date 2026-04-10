@@ -1,8 +1,8 @@
 ---
 title: '#BlackInDataWeek 2020'
 people:
-  - alison
-  - greg
+  - Alison Hill
+  - Greg Wilson
 date: '2020-11-16'
 categories:
   - Community

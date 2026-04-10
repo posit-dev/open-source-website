@@ -1,7 +1,7 @@
 ---
 title: Teaching online on short notice
 people:
-  - greg
+  - Greg Wilson
 date: '2020-03-17'
 categories:
   - Community
