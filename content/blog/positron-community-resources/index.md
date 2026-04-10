@@ -8,7 +8,7 @@ description: >
   We've loved coming together to learn how community members are making Positron their own.
 image: thumbnail.png
 image-alt: "Screenshot of Positron IDE with custom extensions and themes"
-categories:
+topics:
   - Best Practices
   - Community
 software:
