@@ -12,6 +12,7 @@ date: '2024-11-25'
 image: thumbnail.png
 image-alt: Quarto 1.6 with a palette.
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

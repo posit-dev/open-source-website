@@ -172,6 +172,9 @@
 {{ with $authors }}
   {{ $entry = merge $entry (dict "authors" .) }}
 {{ end }}
+{{ with $page.Params.source }}
+  {{ $entry = merge $entry (dict "source" .) }}
+{{ end }}
 {{ with $color }}
   {{ $entry = merge $entry (dict "color" .) }}
 {{ end }}

@@ -13,6 +13,7 @@ description: |
   Contributing code to open source projects can be intimidating. These projects are often widely used and have well known maintainers. Contributing code and having it accepted seems an almost insurmountable task. However if you follow a few simple strategies you can have your code accepted into even the most popular projects in the tidyverse.
 image: contributing-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]

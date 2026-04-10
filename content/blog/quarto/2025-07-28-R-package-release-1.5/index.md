@@ -10,6 +10,7 @@ date: '2025-07-28'
 image: thumbnail.png
 image-alt: quarto R logo with 1.5.0 release text
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R"]

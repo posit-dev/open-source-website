@@ -5,7 +5,7 @@
 
   {{ if eq $paginator.PageNumber 1 }}
   {{ with (site.GetPage "/featured/blog").Content }}
-  <div class="prose max-w-none mb-8">
+  <div data-featured class="prose max-w-none mb-8">
     {{ . }}
   </div>
   {{ end }}

@@ -12,6 +12,7 @@ image-alt: >-
   Marginalia package
 lightbox: true
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

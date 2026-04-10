@@ -12,6 +12,7 @@ image: quarto-dashboards-video-cover.png
 image-alt: Quarto logo on a blue background with the title Quarto Dashboards, Charles
   Teague and an abstract dashboard sketch
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

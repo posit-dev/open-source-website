@@ -8,6 +8,7 @@ image: brand-yml-feature.svg
 image-alt: brand.yml logo
 image-header-disable: 'yes'
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - shiny-python

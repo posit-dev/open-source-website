@@ -10,6 +10,7 @@ photo:
   url: https://www.rawpixel.com/image/2476061/free-illustration-image-pattern-william-morris-bird
 image: strawberry-wd.png
 ported_from: education
+source: education
 port_status: in-progress
 software: ["distill"]
 languages: ["R"]

@@ -15,6 +15,7 @@ slug: shiny-server-1-4-6
 blogcategories:
   - Products and Technology
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

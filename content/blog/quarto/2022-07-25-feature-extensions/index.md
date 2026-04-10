@@ -12,6 +12,7 @@ image: extensions.png
 image-alt: The main page for the quarto-ext GitHub organization which lists extensions
   published by the Quarto core team.
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

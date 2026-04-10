@@ -12,6 +12,7 @@ date: '2025-11-24'
 image: thumbnail.png
 image-alt: Talk Recordings at posit::conf(2025)
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

@@ -15,6 +15,7 @@ tags:
   - RStudio
 image: thumbnail.jpg
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["packrat"]
 languages: ["R"]

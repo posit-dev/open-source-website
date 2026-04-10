@@ -26,6 +26,7 @@ html_dependencies:
   - <script src="girafe-binding-0.9.1/girafe.js"></script>
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]

@@ -14,6 +14,7 @@ image-alt: |
   A slide with a screenshot of a Jupyter notebook with a graph and text, then an arrow pointing to a stack of PDF files each with a graph and text.
 lightbox: yes
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["Python"]

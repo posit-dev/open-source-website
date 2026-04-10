@@ -12,6 +12,7 @@ people:
   - Thomas Lin Pedersen
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

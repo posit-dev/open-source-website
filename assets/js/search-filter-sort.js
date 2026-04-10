@@ -10,7 +10,7 @@
   }
 
   function normalize(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[-_]/g, ' ').toLowerCase();
   }
 
   // Decode HTML entities produced by Hugo's html/template escaping in partials
@@ -31,6 +31,7 @@
     software:    '_qSoftware',
     language:    '_qLanguage',
     location:    '_qLocation',
+    source:      '_qSource',
   };
 
   const NUMERIC_FIELDS = {
@@ -356,6 +357,10 @@
       await this._hydrate();
       this._hidePagination();
       this._readURL();
+      if (this._hasActiveFilters()) {
+        const featured = this.container.parentElement?.querySelector('[data-featured]');
+        if (featured) featured.classList.add('hidden');
+      }
       if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
       this._updateShowBtnLabel();
       this._bindControls();
@@ -450,6 +455,7 @@
           tags.join(' '),
           authorNames,
           entry.location || '',
+          entry.source || '',
         ];
 
         return {
@@ -463,10 +469,11 @@
           _qSoftware:    normalize(software.join(' ')),
           _qLanguage:    normalize(languages.join(' ')),
           _qLocation:    normalize(entry.location || ''),
+          _qSource:      normalize(entry.source || ''),
           // Full-text search index
           _search: normalize(searchParts.join(' ')),
           // Sort keys
-          _sortTitle: normalize(entry.title || '').replace(/[-_]/g, ' ').replace(/[^a-z0-9 ]/g, '').trim(),
+          _sortTitle: normalize(entry.title || '').replace(/[^a-z0-9 ]/g, '').trim(),
           _idx: idx,
           _dateTs: entry.date ? new Date(entry.date).getTime() : 0,
           _firstCommitTs: entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0,

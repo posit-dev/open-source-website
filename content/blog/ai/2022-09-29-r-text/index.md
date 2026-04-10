@@ -24,6 +24,7 @@ people:
   - H Andrew Schwartz
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

@@ -15,6 +15,7 @@ blogcategories:
   - Open Source
 image: thumbnail.jpg
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]

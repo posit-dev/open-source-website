@@ -15,6 +15,7 @@ people:
 image: Spectrogram-19thC.png
 image-alt: "Digitally produced spectrogram of a male voice saying `nineteenth century`"
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

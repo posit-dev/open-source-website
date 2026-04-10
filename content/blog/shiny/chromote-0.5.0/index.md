@@ -9,6 +9,7 @@ date: '2025-03-21'
 image: feature.png
 image-alt: chromote v0.5.0
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["chromote"]
 languages: ["R"]

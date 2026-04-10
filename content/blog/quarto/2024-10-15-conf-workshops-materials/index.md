@@ -11,6 +11,7 @@ date: '2024-10-15'
 image: images/thumbnail.png
 image-alt: 'posit::conf(2024) logo '
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

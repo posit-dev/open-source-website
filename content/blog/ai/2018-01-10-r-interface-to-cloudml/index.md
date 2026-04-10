@@ -15,6 +15,7 @@ people:
   - J.J. Allaire
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["cloudml", "keras3", "tfestimators", "tensorflow"]
 languages: ["R"]

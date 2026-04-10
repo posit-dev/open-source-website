@@ -8,6 +8,7 @@ image: shiny-for-python.jpg
 image-alt: The Shiny hex sticker next to the Python language logo, saying Shiny for
   Python
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
