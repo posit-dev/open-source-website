@@ -9,6 +9,10 @@
     };
   }
 
+  function toRegex(pattern) {
+    try { return new RegExp(pattern); } catch (_) { return null; }
+  }
+
   function normalize(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[-_]/g, ' ').toLowerCase();
   }
@@ -85,9 +89,10 @@
         if (neg) tokens.push({ type: 'not' });
 
         if (m[4] !== undefined) {
-          // field:"quoted value"
+          // field:"quoted value" — supports regex syntax
           if (TEXT_FIELDS[field]) {
-            tokens.push({ type: 'field', kind: 'text', field, value: normalize(m[4]) });
+            const val = normalize(m[4]);
+            tokens.push({ type: 'field', kind: 'text', field, value: val, regex: toRegex(val) });
           }
         } else if (m[5] && m[6]) {
           // field:date..date
@@ -123,9 +128,9 @@
           }
         }
       } else if (m[12] !== undefined) {
-        // "quoted phrase"
+        // "quoted phrase" — supports regex syntax
         const val = normalize(m[12]);
-        if (val) tokens.push({ type: 'term', value: val });
+        if (val) tokens.push({ type: 'term', value: val, regex: toRegex(val) });
       } else if (m[13]) {
         const word = m[13];
         if (word === 'AND') {
@@ -256,11 +261,12 @@
     if (node.type === 'and') return evaluate(node.left, item) && evaluate(node.right, item);
     if (node.type === 'or') return evaluate(node.left, item) || evaluate(node.right, item);
     if (node.type === 'not') return !evaluate(node.operand, item);
-    if (node.type === 'term') return item._search.includes(node.value);
+    if (node.type === 'term') return node.regex ? node.regex.test(item._search) : item._search.includes(node.value);
     if (node.type === 'field') {
       if (node.kind === 'text') {
         const key = TEXT_FIELDS[node.field];
-        return key ? item[key].includes(node.value) : false;
+        if (!key) return false;
+        return node.regex ? node.regex.test(item[key]) : item[key].includes(node.value);
       }
       if (node.kind === 'numeric') return matchNumeric(node, item);
       if (node.kind === 'date') return matchDate(node, item);
