@@ -1,7 +1,7 @@
 ---
 title: Upcoming changes to RStudio Cloud pricing
 people:
-  - alison
+  - Alison Hill
   - Lou Bajuk
   - Robby Shaver
   - Pete Knast

@@ -3,7 +3,7 @@ title: Finding Errors in Data Analyses
 author:
   - '[Ian Flores](https://education.rstudio.com/trainers/people/flores_siaca+ian/)'
 people:
-  - Ian Flores
+  - Ian Flores Siaca
 date: '2020-06-23'
 tags:
   - Internship

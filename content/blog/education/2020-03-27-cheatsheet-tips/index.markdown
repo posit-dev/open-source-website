@@ -1,7 +1,7 @@
 ---
 title: Tips for Making a New Cheatsheet
 people:
-  - garrett
+  - Garrett Grolemund
 date: '2020-03-27'
 categories:
   - Community

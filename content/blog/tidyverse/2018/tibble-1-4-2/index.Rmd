@@ -5,7 +5,8 @@ description: |
   tibble 1.4.2 is on CRAN now, a minor update adding options and improving performance.
 date: '2018-01-24'
 people:
-  - Kirill Müller, Hadley Wickham
+  - Kirill Müller
+  - Hadley Wickham
 photo:
   url: https://unsplash.com/photos/6GjHwABuci4
   author: Mikael Kristenson

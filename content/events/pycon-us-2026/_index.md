@@ -11,7 +11,7 @@ people:
   - Michael Chow
   - Emil Hvitfeldt
   - Jeroen Janssens
-  - Isabella Velasquez
+  - Isabella Velásquez
 languages:
 - Python
 ---

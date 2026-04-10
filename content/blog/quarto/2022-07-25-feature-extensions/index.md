@@ -6,7 +6,7 @@ description: |
 topics:
   - Publishing
 people:
-  - J.J. Allaire
+  - JJ Allaire
 date: '2022-07-25'
 image: extensions.png
 image-alt: The main page for the quarto-ext GitHub organization which lists extensions

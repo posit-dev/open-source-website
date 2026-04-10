@@ -1,7 +1,7 @@
 ---
 title: First year of instructor training
 people:
-  - greg
+  - Greg Wilson
 date: '2020-04-06'
 categories:
   - Community

@@ -1,7 +1,7 @@
 ---
 title: Online teaching Q&A
 people:
-  - greg
+  - Greg Wilson
 date: '2020-03-23'
 categories:
   - Community

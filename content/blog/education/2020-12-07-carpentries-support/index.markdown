@@ -1,7 +1,7 @@
 ---
 title: Supporting the Carpentries
 people:
-  - greg
+  - Greg Wilson
 date: '2020-12-07'
 categories:
   - Community

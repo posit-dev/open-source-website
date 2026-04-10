@@ -5,7 +5,9 @@ description: |
   dplyr 0.7.5 has reached CRAN. This is mostly a bugfix release with two important new changes.
 date: '2018-06-06'
 people:
-  - Kirill Müller, Romain François, Hadley Wickham
+  - Kirill Müller
+  - Romain François
+  - Hadley Wickham
 photo:
   url: https://unsplash.com/photos/aqrIcYonB-o
   author: Phúc Long

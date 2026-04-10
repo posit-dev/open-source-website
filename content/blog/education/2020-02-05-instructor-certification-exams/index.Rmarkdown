@@ -1,7 +1,7 @@
 ---
 title: Instructor Certification Exams
 people:
-  - greg
+  - Greg Wilson
 date: '2020-02-05'
 categories:
   - Community

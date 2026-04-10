@@ -11,7 +11,7 @@ tags:
   - Teaching
   - Education
 people:
-  - mine
+  - Mine Çetinkaya-Rundel
 photo:
   url: https://unsplash.com/photos/80sv993lUKI
   author: Alex Machado

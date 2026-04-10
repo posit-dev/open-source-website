@@ -4,7 +4,7 @@ slug: dplyr-1-0-4-if-any
 title: 'dplyr 1.0.4: if_any() and if_all()'
 date: '2021-02-02'
 people:
-  - Romain Francois
+  - Romain François
 description: |
   Minor release with major performance improvements for `across()` and  two new functions `if_any()` and `if_all()`.
 photo:
