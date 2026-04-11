@@ -574,8 +574,8 @@
           "baseWidth" 342
           "baseHeight" 342
           "alt" $image_alt
-          "class" (printf "mx-auto h-full %s" $card_settings.image_class)
-          "method" "fit"
+          "class" (printf "mx-auto h-full %s" (cond $is_person "object-cover rounded-xl" $card_settings.image_class))
+          "method" (cond $is_person "fill" "fit")
         ) }}
       {{ else if $is_person }}
         {{ $placeholder := resources.Get "images/person-placeholder.svg" }}
