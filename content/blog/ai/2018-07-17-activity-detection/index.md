@@ -1,5 +1,4 @@
 ---
-draft: yes
 title: Classifying physical activity from smartphone data
 description: |
   Using Keras to train a convolutional neural network to classify physical activity. The dataset was built from the recordings of 30 subjects performing basic activities and postural transitions while carrying a waist-mounted smartphone with embedded inertial sensors.
@@ -39,7 +38,7 @@ library(ggridges)  # Visualization
 
 ## Activities dataset
 
-The data used in this post come from the [@dataSource] distributed by the University of California, Irvine.
+The data used in this post come from the [Reyes-Ortiz et al. (2016)](#references) distributed by the University of California, Irvine.
 
 Throughout this post, `data/` is the directory created by downloading and unzipping this dataset.
 
@@ -225,8 +224,7 @@ allObservations %>%
   geom_density_ridges(alpha = 0.8)
 ```
 
-![](index_files/figure-html5/unnamed-chunk-8-1.png){width="576"}
-
+![](index_files/figure-html5/unnamed-chunk-8-1.png)
 The fact there is such a difference in length of recording between the different activity types requires us to be a bit careful with how we proceed. If we train the model on every class at once we are going to have to pad all the observations to the length of the longest, which would leave a large majority of the observations with a huge proportion of their data being just padding-zeros. Because of this, we will fit our model to just the largest 'group' of observations length activities, these include `STAND_TO_SIT`, `STAND_TO_LIE`, `SIT_TO_STAND`, `SIT_TO_LIE`, `LIE_TO_STAND`, and `LIE_TO_SIT`.
 
 It is notable that the activities that we have selected here are all 'transitions.' So in a way we are creating a change-point detection algorithm.
@@ -312,8 +310,7 @@ unpackedObs %>%
   theme( axis.text.x = element_blank() )
 ```
 
-![](index_files/figure-html5/unnamed-chunk-12-1.png){width="1152"}
-
+![](index_files/figure-html5/unnamed-chunk-12-1.png)
 So at least in the accelerometer data patterns definitely emerge. One would imagine that the model may have trouble with the differences between `LIE_TO_SIT` and `LIE_TO_STAND` as they have a similar profile on average. The same goes for `SIT_TO_STAND` and `STAND_TO_SIT`.
 
 ## Preprocessing
@@ -380,9 +377,9 @@ testY <- testData$activity %>% oneHotClasses()
 
 Since we have temporally dense time-series data we will make use of 1D convolutional layers. With temporally-dense data, an RNN has to learn very long dependencies in order to pick up on patterns, CNNs can simply stack a few convolutional layers to build pattern representations of substantial length. Since we are also simply looking for a single classification of activity for each observation, we can just use pooling to 'summarize' the CNNs view of the data into a dense layer.
 
-For more information on the differences between the two architectures for sequence data see [@deeplearnBook].
+For more information on the differences between the two architectures for sequence data see [Graves (2012)](#references) and [LeCun, Bengio, and Hinton (2015)](#references).
 
-In addition to stacking two [@spatialConvolutions] on the convolutional layers and [standard](https://keras.rstudio.com/reference/layer_dropout.html) on the dense) to regularize the network.
+In addition to stacking two [`layer_conv_1d()`](https://keras.rstudio.com/reference/layer_conv_1d.html) layers, we will use batch norm and dropout ([the spatial variant](https://keras.rstudio.com/reference/layer_spatial_dropout_1d.html) [(Tompson et al. 2014)](#references) on the convolutional layers and [standard](https://keras.rstudio.com/reference/layer_dropout.html) on the dense) to regularize the network.
 
 ```r
 
@@ -486,8 +483,7 @@ trainHistory <- model %>%
   )
 ```
 
-![](index_files/figure-html5/unnamed-chunk-20-1.png){width="672"}
-
+![](index_files/figure-html5/unnamed-chunk-20-1.png)
 The model is learning something! We get a respectable 94.4% accuracy on the validation data, not bad with six possible classes to choose from. Let's look into the validation performance a little deeper to see where the model is messing up.
 
 ### Evaluation
@@ -540,11 +536,10 @@ predictionPerformance %>%
   ggtitle("Probabilities associated with prediction by correctness")
 ```
 
-![](index_files/figure-html5/unnamed-chunk-22-1.png){width="576"}
-
+![](index_files/figure-html5/unnamed-chunk-22-1.png)
 Reassuringly it seems the model was, on average, less confident about its classifications for the incorrect results than the correct ones. (Although, the sample size is too small to say anything definitively.)
 
-If you desire a model that can truly tell you how 'confident' it is in a prediction (rather than just a probability), look into bayesian neural networks[@dropoutAsBayes].
+If you desire a model that can truly tell you how 'confident' it is in a prediction (rather than just a probability), look into bayesian neural networks [(Kononenko 1989)](#references) and the more recent use of dropout-as-bayes [(Gal and Ghahramani 2016)](#references).
 
 Let's see what activities the model had the hardest time with using a confusion matrix.
 
@@ -563,13 +558,14 @@ predictionPerformance %>%
   theme_minimal()
 ```
 
-![](index_files/figure-html5/unnamed-chunk-23-1.png){width="768"}
-
+![](index_files/figure-html5/unnamed-chunk-23-1.png)
 We see that, as the preliminary visualization suggested, the model had a bit of trouble with distinguishing between `LIE_TO_SIT` and `LIE_TO_STAND` classes, along with the `SIT_TO_LIE` and `STAND_TO_LIE`, which also have similar visual profiles.
 
 ## Future directions
 
 The most obvious future direction to take this analysis would be to attempt to make the model more general by working with more of the supplied activity types. Another interesting direction would be to not separate the recordings into distinct 'observations' but instead keep them as one streaming set of data, much like a real world deployment of a model would work, and see how well a model could classify streaming data and detect changes in activity.
+
+## References
 
 Gal, Yarin, and Zoubin Ghahramani. 2016. "Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning." In *International Conference on Machine Learning*, 1050--9.
 
@@ -590,4 +586,4 @@ If you see mistakes or want to suggest changes, please [create an issue](https:/
 
 ### Reuse
 
-Text and figures are licensed under Creative Commons Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/){rel="license"}. Source code is available at <https://github.com/nstrayer/activity_detection_post>, unless otherwise noted. The figures that have been reused from other sources don\'t fall under this license and can be recognized by a note in their caption: \"Figure from \...\".
+Text and figures are licensed under Creative Commons Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Source code is available at <https://github.com/nstrayer/activity_detection_post>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".

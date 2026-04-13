@@ -1,5 +1,5 @@
 ---
-draft: yes
+draft: true
 title: Welcome!
 people:
   - Alison Hill
