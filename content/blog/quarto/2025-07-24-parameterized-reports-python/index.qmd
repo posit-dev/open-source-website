@@ -7,13 +7,14 @@ description: "Learn how to transform a single Jupyter notebook into a parameteri
   report generator that automatically creates customized outputs for different scenarios.
   \n"
 date: '2025-07-24'
-categories:
+topics:
   - Publishing
 image: thumbnail.png
 image-alt: |
   A slide with a screenshot of a Jupyter notebook with a graph and text, then an arrow pointing to a stack of PDF files each with a graph and text.
-lightbox: yes
+lightbox: true
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["Python"]

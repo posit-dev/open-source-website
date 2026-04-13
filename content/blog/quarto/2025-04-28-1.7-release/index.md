@@ -57,28 +57,24 @@ brand:
 
 Standalone HTML pages, websites, and dashboards will gain a light switch toggle allowing viewers to switch between the light and dark themes.
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
 <figure>
 <img src="light.png" data-fig-alt="Screenshot of a webpage with a light blue body and charcoal text. A switch toggle in the navbar is &#39;off&#39;." alt="light brand" />
 <figcaption aria-hidden="true"><code>light</code> brand</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="dark.png" data-fig-alt="Screenshot of a webpage with a dark charcoal body and light blue text. A switch toggle in the navbar is &#39;on&#39;." alt="dark brand" />
 <figcaption aria-hidden="true"><code>dark</code> brand</figcaption>
 </figure>
-</div></td>
-</tr>
-</tbody>
-</table>
+
+</div>
+</div>
 
 By default Typst documents will use the light brand, but you can set the `brand-mode` option to use the dark brand instead:
 
@@ -137,22 +133,13 @@ format:
 
 - New [`version` shortcode](https://quarto.org/docs/authoring/version.html) to insert the version of Quarto used to build your document:
 
-  <table>
-  <colgroup>
-  <col style="width: 50%" />
-  <col style="width: 50%" />
-  </colgroup>
-  <tbody>
-  <tr>
-  <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-  <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Rendered with Quarto {{&lt;/* version */&gt;}}</span></code></pre></div>
-  </div></td>
-  <td style="text-align: left;"><div class="border" width="50.0%" data-layout-align="left">
-  <p>Rendered with Quarto 1.9.36</p>
-  </div></td>
-  </tr>
-  </tbody>
-  </table>
+  <div class="grid gap-12 items-center md:grid-cols-2">
+  <div class="prose max-w-none">
+
+  Rendered with Quarto 1.9.36
+
+  </div>
+  </div>
 
 - Updated LaTeX and Beamer template partials:
 

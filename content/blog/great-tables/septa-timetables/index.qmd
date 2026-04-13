@@ -8,10 +8,11 @@ people:
 date: '2026-03-12'
 format: html
 ported_from: great_tables
+source: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

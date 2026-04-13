@@ -11,10 +11,11 @@ resources:
   - render-function-cleanup-small.mp4
   - synced-ids-small.mp4
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shinyuieditor", "shiny-r"]
 languages: ["R"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

@@ -1,23 +1,28 @@
 ---
 people:
   - Charlotte Wickham
-title: 'From One Notebook to Many Reports: Parameterized reports with the `jupyter`
-  engine'
-description: "Learn how to transform a single Jupyter notebook into a parameterized
-  report generator that automatically creates customized outputs for different scenarios.
-  \n"
+title: >-
+  From One Notebook to Many Reports: Parameterized reports with the `jupyter`
+  engine
+description: >
+  Learn how to transform a single Jupyter notebook into a parameterized report
+  generator that automatically creates customized outputs for different
+  scenarios. 
 date: '2025-07-24'
 topics:
   - Publishing
 image: thumbnail.png
-image-alt: |
-  A slide with a screenshot of a Jupyter notebook with a graph and text, then an arrow pointing to a stack of PDF files each with a graph and text.
-lightbox: yes
+image-alt: >
+  A slide with a screenshot of a Jupyter notebook with a graph and text, then an
+  arrow pointing to a stack of PDF files each with a graph and text.
+lightbox: true
 ported_from: quarto
 source: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["Python"]
+software:
+  - quarto
+languages:
+  - Python
 ported_categories:
   - Authoring
   - Teaching
@@ -31,10 +36,17 @@ slug: parameterized-reports-python
 ---
 
 
-> **Based on a talk at SciPy 2025**
->
-> This post is based on the talk "From One Notebook to Many Reports: Automating with Quarto" delivered at [SciPy 2025](https://www.scipy2025.scipy.org) by Charlotte Wickham.
-> You can find the slides at [cwickham.github.io/one-notebook-many-reports](https://cwickham.github.io/one-notebook-many-reports/) and example code at [github.com/cwickham/one-notebook-many-reports](https://github.com/cwickham/one-notebook-many-reports).
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Based on a talk at SciPy 2025</span>
+</div>
+<div class="callout-body">
+
+This post is based on the talk "From One Notebook to Many Reports: Automating with Quarto" delivered at [SciPy 2025](https://www.scipy2025.scipy.org) by Charlotte Wickham.
+You can find the slides at [cwickham.github.io/one-notebook-many-reports](https://cwickham.github.io/one-notebook-many-reports/) and example code at [github.com/cwickham/one-notebook-many-reports](https://github.com/cwickham/one-notebook-many-reports).
+
+</div>
+</div>
 
 ## The Problem: Repetitive Reporting
 
@@ -65,9 +77,8 @@ You can see the full notebook, [`corvallis.ipynb`, on GitHub](https://github.com
 
 This single notebook can be rendered with Quarto:
 
-**Terminal**
 
-``` bash
+``` bash { filename="Terminal" }
 quarto render corvallis.ipynb 
 ```
 
@@ -92,9 +103,8 @@ We want a report for each city.
 We'll start by creating a variable, `city`, which we'll designate a parameter in our next step.
 In a new code cell at the top of our notebook, we define the variable:
 
-**code**
 
-``` python
+``` python { filename="code" }
 city = "Corvallis"
 ```
 
@@ -103,56 +113,51 @@ Then anywhere we previously hardcoded `"Corvallis"` in the notebook, we replace 
 The first occurrence is in the title of the document.
 Originally, we had a markdown cell defining a level 1 heading:
 
-**markdown**
 
-``` markdown
+``` markdown { filename="markdown" }
 # Corvallis
 ```
 
 We replace it with a code cell that uses an f-string to produce markdown for a level 1 heading based on the `city` variable:
 
-**code**
 
-``` markdown
+``` markdown { filename="code" }
 Markdown(f"# {city}")
 ```
 
 In the filtering step the replacement is straightforward, we just change the string to the variable:
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<p>Before:</p>
-<div class="code-with-filename">
-<strong>code</strong>
-<div class="sourceCode" id="cb1" data-filename="code"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tmean <span class="op">=</span> tmean_oregon.<span class="bu">filter</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">&quot;city&quot;</span>) <span class="op">==</span> <span class="st">&quot;Corvallis&quot;</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
+Before:
+
+
+``` python { filename="code" }
+tmean = tmean_oregon.filter(
+    pl.col("city") == "Corvallis",
+)
+```
+
 </div>
-</div></td>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<p>After:</p>
-<div class="code-with-filename">
-<strong>code</strong>
-<div class="sourceCode" id="cb2" data-filename="code"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tmean <span class="op">=</span> tmean_oregon.<span class="bu">filter</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">&quot;city&quot;</span>) <span class="op">==</span> city,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="prose max-w-none">
+
+After:
+
+
+``` python { filename="code" }
+tmean = tmean_oregon.filter(
+    pl.col("city") == city,
+)
+```
+
 </div>
-</div></td>
-</tr>
-</tbody>
-</table>
+</div>
 
 Finally, the plot code (using [plotnine](https://plotnine.org)), sets the title of the plot to include the city name:
 
-**code**
 
-``` python
+``` python { filename="code" }
 ...
 + labs(title = "Corvallis, OR", ...)
 ...
@@ -160,9 +165,8 @@ Finally, the plot code (using [plotnine](https://plotnine.org)), sets the title 
 
 We can also use an f-string here to include the `city` variable:
 
-**code**
 
-``` python
+``` python { filename="code" }
 ...
 + labs(title = f"{city}, OR", ...)
 ...
@@ -186,17 +190,15 @@ You can see the updated notebook, now a parameterized notebook, on GitHub: [`cli
 
 If we render `climate.ipynb`, it will still produce the same report for Corvallis, because we haven't changed the parameter value:
 
-**Terminal**
 
-``` bash
+``` bash { filename="Terminal" }
 quarto render climate.ipynb
 ```
 
 But we can now pass parameter values to Quarto with the `-P` flag:
 
-**Terminal**
 
-``` bash
+``` bash { filename="Terminal" }
 # Generate report for Portland
 quarto render climate.ipynb -P city:Portland --output-file portland.pdf
 
@@ -212,9 +214,8 @@ To generate all 50 reports, we need to run `quarto render` 50 times, each time w
 You could automate this in many ways, but let's use a Python script.
 For example, you might have a dataset of cities and their corresponding output filenames:
 
-**gen-reports.py**
 
-``` python
+``` python { filename="gen-reports.py" }
 cities = pl.DataFrame({
     "city": ["Portland", "Cottage Grove", "St. Helens", "Eugene"],
     "output_file": ["portland.pdf", "cottage_grove.pdf", "st_helens.pdf", "eugene.pdf"]
@@ -224,9 +225,8 @@ cities = pl.DataFrame({
 I've generated a small example above, but in reality you would likely read `cities` in from a file.
 Then you could iterate over the rows of this dataset, rendering the notebook for each city:
 
-**gen-reports.py**
 
-``` python
+``` python { filename="gen-reports.py" }
 from quarto import render
 for row in cities.iter_rows(named=True):
     render(
@@ -249,9 +249,8 @@ However, if you are targeting `typst` you can take advantage of additional featu
 
 Quarto supports [brand.yml](https://posit-dev.github.io/brand-yml/) a way to specify colors, fonts, and logos:
 
-**\_brand.yml**
 
-``` yaml
+``` yaml { filename="_brand.yml" }
 color:
   palette:
     forest-green: "#2d5a3d"     

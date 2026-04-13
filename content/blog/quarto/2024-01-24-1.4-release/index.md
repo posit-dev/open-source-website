@@ -40,26 +40,23 @@ This release has tons of new features. Some of the big ones we want to spotlight
 
 Quarto Dashboards streamline the creation of interactive dashboards, giving you an effortless way to lay out interactive components, visualizations, tabular data, and annotations. Here are some examples (click on the image to visit the live version):
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: center;"><div width="33.3%" data-layout-align="center">
-<p><a href="https://jjallaire.github.io/stock-explorer-dashboard/"><img src="https://quarto.org/docs/dashboards/examples/thumbnails/stock-explorer-dashboard.png" class="border" data-fig-alt="Screenshot of a Stock Trader dashboard: a row of three values boxes, then a row with a stock ticker graph and a table of closing values. Navy blue and green theme." /></a></p>
-</div></td>
-<td style="text-align: center;"><div width="33.3%" data-layout-align="center">
-<p><a href="https://jjallaire.github.io/customer-churn-dashboard/"><img src="https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png" class="border" data-fig-alt="Screenshot of a Customer Churn dashboard: a row of three values boxes, then a row with two plots, then a row with a table. Light blue and yellow theme." /></a></p>
-</div></td>
-<td style="text-align: center;"><div width="33.3%" data-layout-align="center">
-<p><a href="https://jjallaire.shinyapps.io/penguins-dashboard/"><img src="https://quarto.org/docs/dashboards/examples/thumbnails/penguins-dashboard.png" class="border" data-fig-alt="Screenshot of a Palmer Penguins dashboard: a sidebar with checkboxes and a dropdown, and two plots in main panel. Blue theme." /></a></p>
-</div></td>
-</tr>
-</tbody>
-</table>
+<div class="grid gap-12 items-start md:grid-cols-3">
+<div class="prose max-w-none">
+
+[<img src="https://quarto.org/docs/dashboards/examples/thumbnails/stock-explorer-dashboard.png" class="border" data-fig-alt="Screenshot of a Stock Trader dashboard: a row of three values boxes, then a row with a stock ticker graph and a table of closing values. Navy blue and green theme." />](https://jjallaire.github.io/stock-explorer-dashboard/)
+
+</div>
+<div class="prose max-w-none">
+
+[<img src="https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png" class="border" data-fig-alt="Screenshot of a Customer Churn dashboard: a row of three values boxes, then a row with two plots, then a row with a table. Light blue and yellow theme." />](https://jjallaire.github.io/customer-churn-dashboard/)
+
+</div>
+<div class="prose max-w-none">
+
+[<img src="https://quarto.org/docs/dashboards/examples/thumbnails/penguins-dashboard.png" class="border" data-fig-alt="Screenshot of a Palmer Penguins dashboard: a sidebar with checkboxes and a dropdown, and two plots in main panel. Blue theme." />](https://jjallaire.shinyapps.io/penguins-dashboard/)
+
+</div>
+</div>
 
 For the source code of these dashboards and additional examples see the [examples gallery](https://quarto.org/docs/gallery/index.html#dashboards). When you are ready to build your own Quarto dashboard head to our guide on [Dashboards](https://quarto.org/docs/dashboards/index.html).
 
@@ -81,42 +78,40 @@ My first Typst document
 
 We are particularly excited about how easy it is to make templates for journal articles, conference posters, newsletters and more with Typst. Here are some examples you can use in Quarto as [custom formats](https://quarto.org/docs/output-formats/typst-custom.html):
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+<div class="grid gap-12 items-start md:grid-cols-4">
+<div class="prose max-w-none">
+
 <figure>
 <img src="images/typst-format-ieee.png" data-group="custom-formats" data-fig-alt="Screenshot of a page showing a article styled according IEEE standards. The title is centered with authors below in two columns." alt="IEEE" />
 <figcaption aria-hidden="true">IEEE</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="images/typst-format-poster.png" data-group="custom-formats" data-fig-alt="Screenshot of a poster in landscape orientiation. The poster includes a logo in the top right, a title in the top left, and content arranged in three columns." alt="Poster" />
 <figcaption aria-hidden="true">Poster</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="images/typst-format-letter.png" data-group="custom-formats" data-fig-alt="Screenshot of a page showing a letter. A sender address is across the top of the page, followed by a recipient address left justified. The body of the letter includes a subject line in bold." alt="Letter" />
 <figcaption aria-hidden="true">Letter</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="images/typst-format-dept-news.png" data-group="custom-formats" data-fig-alt="Screenshot of a page showing a department newsletter. The page is split vertically with a white column on the left and a red one on the right. An image spans across the column with the text &quot;Award Winning Science&quot; oriented to run vertically down its right side." alt="Dept News" />
 <figcaption aria-hidden="true">Dept News</figcaption>
 </figure>
-</div></td>
-</tr>
-</tbody>
-</table>
+
+</div>
+</div>
 
 Start your Typst journey with Quarto in our guide on [Typst Basics](https://quarto.org/docs/output-formats/typst.html).
 
@@ -124,42 +119,49 @@ Start your Typst journey with Quarto in our guide on [Typst Basics](https://quar
 
 Quarto 1.4 introduces a unified syntax for including computed values inline. The syntax for inline code is similar to code blocks, except you use a single tick (`` ` ``) rather than triple ticks (```` ``` ````), and you can use it in the middle of markdown:
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
-<h3 id="jupyter">Jupyter</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>radius <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>The radius of the circle is <span class="in">`{python} radius`</span></span></code></pre></div>
-<p>This syntax works for any Jupyter kernel—so for Julia you would write an inline expression as <code>`{julia} radius`</code>).</p>
-</div></td>
-<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
-<h3 id="knitr">Knitr</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>radius <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>The radius of the circle is <span class="in">`{r} radius`</span></span></code></pre></div>
-</div></td>
-<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
-<h3 id="ojs">OJS</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>radius <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>The radius of the circle is <span class="in">`{ojs} radius`</span></span></code></pre></div>
-</div></td>
-</tr>
-</tbody>
-</table>
+<div class="grid gap-12 items-start md:grid-cols-3">
+<div class="prose max-w-none">
+
+### Jupyter
+
+```` markdown
+```{python}
+radius = 5
+```
+
+The radius of the circle is `{python} radius`
+````
+
+This syntax works for any Jupyter kernel---so for Julia you would write an inline expression as `` `{julia} radius` ``).
+
+</div>
+<div class="prose max-w-none">
+
+### Knitr
+
+```` markdown
+```{r}
+radius <- 5
+```
+
+The radius of the circle is `{r} radius`
+````
+
+</div>
+<div class="prose max-w-none">
+
+### OJS
+
+```` markdown
+```{ojs}
+radius = 5
+```
+
+The radius of the circle is `{ojs} radius`
+````
+
+</div>
+</div>
 
 And don't worry if you are used to using `` `r ` `` that syntax remains fully supported. Read more at [Inline Code](https://quarto.org/docs/computations/inline-code.html).
 
@@ -167,33 +169,19 @@ And don't worry if you are used to using `` `r ` `` that syntax remains fully su
 
 Cross-references have been overhauled in Quarto 1.4, enabling you to do things like:
 
-- Flexibly define the content of float cross-references (e.g. figures, tables and code listings) with the new [Cross-Reference Div Syntax](https://quarto.org/docs/authoring/cross-references-divs.html). For example, <a href="#tbl-table" class="quarto-xref">Table 1</a> is an image treated like a table:
+- Flexibly define the content of float cross-references (e.g. figures, tables and code listings) with the new [Cross-Reference Div Syntax](https://quarto.org/docs/authoring/cross-references-divs.html). For example, **?@tbl-table** is an image treated like a table:
 
-  <table>
-  <colgroup>
-  <col style="width: 50%" />
-  <col style="width: 50%" />
-  </colgroup>
-  <tbody>
-  <tr>
-  <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-  <div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: {#tbl-table}</span>
-  <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-  <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="al">![](table.png)</span></span>
-  <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-  <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>An image treated like a table</span>
-  <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-  <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-  </div></td>
-  <td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-  <img src="images/crossref-div-table.png" id="tbl-table"
-  alt="Table 1: An image treated like a table" />
-  &#10;</div></td>
-  </tr>
-  </tbody>
-  </table>
+  <div class="grid gap-12 items-start md:grid-cols-2">
+  <div class="prose max-w-none">
 
-  And notice if you hover over the reference as it appears in the text, e.g. hover over this link to <a href="#tbl-table" class="quarto-xref">Table 1</a>, you'll get a floating preview of the content---that's new too.
+  ![](images/crossref-div-table.png)
+
+  An image treated like a table
+
+  </div>
+  </div>
+
+  And notice if you hover over the reference as it appears in the text, e.g. hover over this link to **?@tbl-table**, you'll get a floating preview of the content---that's new too.
 
 - Define [custom types of float cross-reference](https://quarto.org/docs/authoring/cross-references-custom.html), which you could use to create cross-references to Videos, Diagrams or [Supplemental Figures](https://quarto.org/docs/authoring/cross-references-custom.html#example-supplemental-figures).
 
@@ -205,28 +193,24 @@ Quarto manuscript projects provide a framework for writing and publishing schola
 
 The output of a manuscript project is a website containing the article in multiple formats (e.g. LaTeX, MS Word) along with rendered versions of the notebooks in the project:
 
-<table>
-<colgroup>
-<col style="width: 75%" />
-<col style="width: 25%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="75.0%" data-layout-align="left">
+<div class="grid gap-12 items-start md:grid-cols-[3fr_1fr]">
+<div class="prose max-w-none">
+
 <figure>
 <img src="images/article-content.png" class="border" data-fig-alt="A screenshot of the content area on the manuscript webpage. Content shows a title block including the article title, authors, and abstract, body text, and an image with a caption." alt="Article Content" />
 <figcaption aria-hidden="true">Article Content</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="images/webpage-menu.png" class="border" data-fig-alt="A screenshot of the menu on the right hand side of the manuscript webpage. The menu has headings: Table of contents, Other Formats, Notebooks and Other Links." alt="Navigation" />
 <figcaption aria-hidden="true">Navigation</figcaption>
 </figure>
-</div></td>
-</tr>
-</tbody>
-</table>
+
+</div>
+</div>
 
 Read more about manuscripts and how to get started in our guide to [Manuscripts](https://quarto.org/docs/manuscripts/index.html).
 

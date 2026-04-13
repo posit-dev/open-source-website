@@ -231,6 +231,26 @@ Always include alt text — it's required for accessibility. Use the `fig-alt` a
 ![Optional caption](my-image.png){fig-alt="Alt text describing the image"}
 ```
 
+#### Multi-column layouts
+
+Place content side-by-side with `layout-ncol`. Each child `:::` div becomes one column:
+
+```markdown
+::: {layout-ncol=2}
+
+::: {}
+Left column content — markdown, code blocks, images all work here.
+:::
+
+::: {}
+Right column content.
+:::
+
+:::
+```
+
+A Lua filter converts these to CSS grid at render time, so code blocks (including those with `filename=` attributes) render correctly.
+
 #### Linking to other blog posts
 
 Use the **permalink URL** — the `/blog/YYYY-MM-DD_slug/` path you see in the browser:

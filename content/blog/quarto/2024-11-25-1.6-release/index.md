@@ -76,42 +76,40 @@ typography:
 
 When this `_brand.yml` is placed in a project, webpages, presentations, PDF reports, and dashboards will share a common appearance:
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+<div class="grid gap-12 items-start md:grid-cols-4">
+<div class="prose max-w-none">
+
 <figure>
 <img src="https://quarto.org/docs/authoring/images/brand-html.png" data-group="brand-formats" data-fig-alt="Screenshot of a webpage. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar." alt="Webpage: html" />
 <figcaption aria-hidden="true">Webpage: <code>html</code></figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="https://quarto.org/docs/authoring/images/brand-dashboard.png" data-group="brand-formats" data-fig-alt="Screenshot of a dashboard. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in the navbar." alt="Dashboard dashboard" />
 <figcaption aria-hidden="true">Dashboard <code>dashboard</code></figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="https://quarto.org/docs/authoring/images/brand-revealjs.png" data-group="brand-formats" data-fig-alt="Screenshot of a presentation. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in bottom left of the slide." alt="Presentation: revealjs" />
 <figcaption aria-hidden="true">Presentation: <code>revealjs</code></figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="https://quarto.org/docs/authoring/images/brand-typst.png" data-group="brand-formats" data-fig-alt="Screenshot of a PDF document. The text is dark grey on a light blue background, using a rounded sans-serif typeface, a logo appears in top right of the page." alt="PDF: typst" />
 <figcaption aria-hidden="true">PDF: <code>typst</code></figcaption>
 </figure>
-</div></td>
-</tr>
-</tbody>
-</table>
+
+</div>
+</div>
 
 View the example: [Source](https://github.com/quarto-dev/quarto-examples/tree/main/brand/brand-simple#brand-simple) \| [Live website](https://examples.quarto.pub/brand-simple)
 
