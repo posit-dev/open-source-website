@@ -48,6 +48,9 @@ The updated layout sidebar (`ui.layout_sidebar()`) no longer needs to include a 
 
 ### Sidebars
 
+<div class="grid gap-12 items-start md:grid-cols-[45fr_10fr_45fr] column-page-inset">
+<div class="prose max-w-none">
+
 #### Old API
 
 ``` python
@@ -63,6 +66,11 @@ ui.page_fluid(
 )
 ```
 
+</div>
+<div class="prose max-w-none">
+</div>
+<div class="prose max-w-none">
+
 #### New API
 
 ``` python
@@ -75,6 +83,9 @@ ui.page_sidebar(
     ),
 )
 ```
+
+</div>
+</div>
 
 In addition to `sidebar`, we have added `ui.page_fillable()` to help users create applications that fill the available space in the window. This is great for applications where the plot should fill the entire contents fo the window. `ui.page_sidebar()` is a wrapper around `ui.page_fillable()`. In addition to the filling layout method, many UI output methods have added `fill=` or `fillable=` parameters to allow for the component to fill the available area (`fill=True`) or to allow for contained components to fill the available content area (`fillable=`). The handshake of `fill=True` and `fillable=True` must occur to achieve a filling layout. Let's take a look at the new layout in action:
 

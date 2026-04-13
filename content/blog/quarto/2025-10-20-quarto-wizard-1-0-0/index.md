@@ -172,7 +172,7 @@ Install it today from the [VS Code marketplace](https://marketplace.visualstudio
   </div>
   <div class="callout-body">
 
-  Be sure to execute the command *Shell Command: Install 'code' command in PATH* from Visual Studio Code's Command Palette (`Cmd-Shift-P` (mac), `Ctrl-Shift-P` (windows), `Ctrl-Shift-P` (linux)) if you haven't done so already.
+  Be sure to execute the command *Shell Command: Install 'code' command in PATH* from Visual Studio Code's Command Palette (`Cmd-Shift-P` (mac), `Ctrl-Shift-P` (linux), `Ctrl-Shift-P` (windows)) if you haven't done so already.
 
   </div>
   </div>
@@ -189,7 +189,7 @@ Install it today from the [VS Code marketplace](https://marketplace.visualstudio
   </div>
   <div class="callout-body">
 
-  Be sure to execute the command *Shell Command: Install 'positron' command in PATH* from Positron's Command Palette (`Cmd-Shift-P` (mac), `Ctrl-Shift-P` (windows), `Ctrl-Shift-P` (linux)) if you haven't done so already.
+  Be sure to execute the command *Shell Command: Install 'positron' command in PATH* from Positron's Command Palette (`Cmd-Shift-P` (mac), `Ctrl-Shift-P` (linux), `Ctrl-Shift-P` (windows)) if you haven't done so already.
 
   </div>
   </div>

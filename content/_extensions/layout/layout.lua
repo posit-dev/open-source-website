@@ -1,5 +1,7 @@
 -- layout filter for Hugo
--- Transforms layout-ncol / layout / layout-nrow divs into CSS grid HTML.
+-- Transforms multi-column divs into CSS grid HTML:
+--   1. layout-ncol / layout attributes (Quarto layout system)
+--   2. .columns / .column width="..." divs (Pandoc native columns)
 -- Uses the HTML+AST sandwich pattern so cell content (code blocks, images,
 -- markdown) is kept as Pandoc AST and rendered correctly by Goldmark.
 -- Mirrors the Tailwind classes used by layouts/shortcodes/columns.html.
@@ -85,6 +87,45 @@ local function weights_to_grid_class(weights)
   return "md:grid-cols-[" .. table.concat(parts, "_") .. "]"
 end
 
+-- Check whether a div is a .columns container (or has .column children).
+-- Returns (cells, weights) or nil if not a columns div.
+local function parse_columns_div(div)
+  -- Direct .columns class on the div
+  local is_columns = div.classes:includes("columns")
+
+  -- Or: a container whose children are .column divs
+  if not is_columns then
+    local has_column_child = false
+    for _, el in ipairs(div.content) do
+      if el.t == "Div" and el.classes:includes("column") then
+        has_column_child = true
+        break
+      end
+    end
+    if not has_column_child then return nil end
+  end
+
+  local cells = pandoc.List()
+  local weights = pandoc.List()
+
+  for _, el in ipairs(div.content) do
+    if el.t == "Div" and el.classes:includes("column") then
+      cells:insert(el.content)
+      -- Extract width="N%" → N as weight
+      local w = el.attributes["width"]
+      if w then
+        local num = w:match("^(%d+)%%?$")
+        weights:insert(num or "1")
+      else
+        weights:insert("1")
+      end
+    end
+  end
+
+  if #cells == 0 then return nil end
+  return cells, weights
+end
+
 -- Emit one grid row as a list of Pandoc blocks (HTML+AST sandwich).
 local function render_row(cells, grid_class, align_class, extra_classes)
   local blocks = pandoc.List()
@@ -110,72 +151,70 @@ function Div(div)
   local ncol   = div.attributes["layout-ncol"]
   local layout = div.attributes["layout"]
 
-  -- Only act on divs that carry a layout attribute
-  if not ncol and not layout then
-    return div
-  end
+  -- Branch 1: layout-ncol / layout attributes
+  if ncol or layout then
+    local valign = div.attributes["layout-valign"]
+    local align_class = (valign == "center") and "items-center" or "items-start"
 
-  local valign = div.attributes["layout-valign"]
-  local align_class = (valign == "center") and "items-center" or "items-start"
-
-  -- Pass through any non-layout classes on the outer div
-  -- (e.g. column-body-outset-right), but strip Quarto's own layout classes.
-  local layout_class_prefixes = {
-    "column%-", "layout%-"
-  }
-  local extra_parts = pandoc.List()
-  for _, cls in ipairs(div.classes) do
-    local skip = false
-    for _, prefix in ipairs(layout_class_prefixes) do
-      if cls:match("^" .. prefix) then skip = true; break end
+    -- Pass through any non-layout classes on the outer div
+    -- (e.g. column-body-outset-right), but strip Quarto's own layout classes.
+    local extra_parts = pandoc.List()
+    for _, cls in ipairs(div.classes) do
+      if not cls:match("^column%-") and not cls:match("^layout%-") then
+        extra_parts:insert(cls)
+      end
     end
-    if not skip then
-      extra_parts:insert(cls)
-    end
-  end
-  local extra_classes = table.concat(extra_parts, " ")
+    local extra_classes = table.concat(extra_parts, " ")
 
-  local blocks = pandoc.List()
+    local blocks = pandoc.List()
 
-  if layout then
-    -- layout="[W1,W2]" or layout="[[R1C1,R1C2],[R2C1]]"
-    local rows, is_multi = parse_layout_string(layout)
-
-    if is_multi then
-      -- Multiple rows: each row gets its own grid div.
-      -- We need to split cells across rows according to the row widths.
-      local all_cells = collect_cells(div)
-      local cell_idx = 1
-      for _, weights in ipairs(rows) do
-        local ncols_in_row = #weights
-        local row_cells = pandoc.List()
-        for _ = 1, ncols_in_row do
-          if all_cells[cell_idx] then
-            row_cells:insert(all_cells[cell_idx])
-            cell_idx = cell_idx + 1
+    if layout then
+      local rows, is_multi = parse_layout_string(layout)
+      if is_multi then
+        local all_cells = collect_cells(div)
+        local cell_idx = 1
+        for _, weights in ipairs(rows) do
+          local ncols_in_row = #weights
+          local row_cells = pandoc.List()
+          for _ = 1, ncols_in_row do
+            if all_cells[cell_idx] then
+              row_cells:insert(all_cells[cell_idx])
+              cell_idx = cell_idx + 1
+            end
           end
+          local gcls = weights_to_grid_class(weights)
+          blocks:extend(render_row(row_cells, gcls, align_class, extra_classes))
+          extra_classes = ""
         end
+      else
+        local weights = rows[1]
         local gcls = weights_to_grid_class(weights)
-        blocks:extend(render_row(row_cells, gcls, align_class, extra_classes))
-        -- Only apply extra_classes (like column-body-outset-right) to the first row
-        extra_classes = ""
+        local cells = collect_cells(div)
+        blocks:extend(render_row(cells, gcls, align_class, extra_classes))
       end
     else
-      local weights = rows[1]
-      local gcls = weights_to_grid_class(weights)
+      local n = tonumber(ncol) or 2
+      local gcls = "md:grid-cols-" .. n
       local cells = collect_cells(div)
       blocks:extend(render_row(cells, gcls, align_class, extra_classes))
     end
 
-  else
-    -- layout-ncol=N: equal-width columns
-    local weights = pandoc.List()
-    local n = tonumber(ncol) or 2
-    for _ = 1, n do weights:insert("1") end
-    local gcls = "md:grid-cols-" .. n
-    local cells = collect_cells(div)
-    blocks:extend(render_row(cells, gcls, align_class, extra_classes))
+    return blocks
   end
 
-  return blocks
+  -- Branch 2: .columns class or container with .column children
+  local col_cells, col_weights = parse_columns_div(div)
+  if col_cells then
+    -- Pass through non-column classes (e.g. column-page-inset, room)
+    local extra_parts = pandoc.List()
+    for _, cls in ipairs(div.classes) do
+      if cls ~= "columns" and not cls:match("^column$") then
+        extra_parts:insert(cls)
+      end
+    end
+    local extra_classes = table.concat(extra_parts, " ")
+
+    local gcls = weights_to_grid_class(col_weights)
+    return render_row(col_cells, gcls, "items-start", extra_classes)
+  end
 end

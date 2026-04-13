@@ -8,10 +8,6 @@ date: '2024-07-02'
 image: beautiful-tables-typst.png
 image-alt: typst snapshot tk
 bibliography: []
-format:
-  html:
-    css: layout.css
-    number-sections: yes
 topics:
   - Publishing
 ported_categories:
@@ -20,8 +16,12 @@ ported_categories:
 ported_from: quarto
 source: quarto
 port_status: raw
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 tags:
   - Quarto
   - Quarto 1.5
@@ -42,70 +42,118 @@ You can click on the links below the examples to see the full documents, with so
 
 This example uses a dashed border to draw attention to two cells.
 
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
 <img src="images/pandas-confusion-matrix.png" width="700" /> <a href="examples/pandas-confusion-matrix.pdf" target="_blank">Typst</a>
 
+</div>
+<div class="prose max-w-none">
 <iframe class="html-demo" src="demo/pandas-confusion-matrix.html" width=700 height=250 scrolling="no"></iframe>
 
-<a href="examples/pandas-confusion-matrix.html" target="_blank">HTML</a>
+<a href="examples/pandas-confusion-matrix.HTML" target="_blank">HTML</a>
+
+</div>
+</div>
 
 ## Cars heatmap (gt / R)
 
 This example uses cell background colors to encode ranges of values.
 
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
 <img src="images/gt-cars.png" width="430" />
 
 <a href="examples/gt-cars.pdf" target="_blank">Typst</a>
 
+</div>
+<div class="prose max-w-none">
 <iframe class="html-demo" src="demo/gt-cars.html" width=430 height=375 scrolling="no"></iframe>
 
-<a href="examples/gt-cars.html" target="_blank">HTML</a>
+<a href="examples/gt-cars.HTML" target="_blank">HTML</a>
+
+</div>
+</div>
 
 ## Oceania (Great Tables / Python)
 
 Borders can show the structure of grouped rows.
 
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
 <img src="images/great-tables-oceania.png" width="600" />
 
 <a href="examples/great-tables-oceania.pdf" target="_blank">Typst</a>
 
+</div>
+<div class="prose max-w-none">
 <iframe class="html-demo" src="demo/great-tables-oceania.html" width=600 height=907 scrolling="no"></iframe>
 
-<a href="examples/great-tables-oceania.html" target="_blank">HTML</a>
+<a href="examples/great-tables-oceania.HTML" target="_blank">HTML</a>
+
+</div>
+</div>
 
 ## Islands (gt / R)
 
 Font sizes and minimal borders make this table stand out.
 
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
 <img src="images/gt-islands.png" width="500" />
 
 <a href="examples/gt-islands.pdf" target="_blank">Typst</a>
 
+</div>
+<div class="prose max-w-none">
 <iframe class="html-demo" src="demo/gt-islands.html" width=400 height=580 scrolling="no"></iframe>
 
-<a href="examples/gt-islands.html" target="_blank">HTML</a>
+<a href="examples/gt-islands.HTML" target="_blank">HTML</a>
+
+</div>
+</div>
 
 ## Solar Zenith (Great Tables / Python)
 
 Another cool heatmap.
 
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
 <img src="images/great-tables-solar-zenith.png" width="750" />
 
 <a href="examples/great-tables-solar-zenith.pdf" target="_blank">Typst</a>
 
+</div>
+<div class="prose max-w-none">
 <iframe class="html-demo" src="demo/great-tables-solar-zenith.html" width=850 height=565 scrolling="no"></iframe>
 
-<a href="examples/great-tables-solar-zenith.html" target="_blank">HTML</a>
+<a href="examples/great-tables-solar-zenith.HTML" target="_blank">HTML</a>
+
+</div>
+</div>
 
 ## Acting on Data (Pandas / Python)
 
 Applying colors and transparency based on data.
 
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
 <img src="images/pandas-acting-on-data.png" width="540" />
 
 <a href="examples/pandas-acting-on-data.pdf" target="_blank">Typst</a>
 
+</div>
+<div class="prose max-w-none">
 <iframe class="html-demo" src="demo/pandas-acting-on-data.html" width=600 height=505 scrolling="no"></iframe>
 
-<a href="examples/pandas-acting-on-data.html" target="_blank">HTML</a>
+<a href="examples/pandas-acting-on-data.HTML" target="_blank">HTML</a>
+
+</div>
+</div>
 
 We can't wait to see what you do with this new feature!
