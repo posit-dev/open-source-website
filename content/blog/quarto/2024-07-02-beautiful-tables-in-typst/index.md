@@ -1,5 +1,4 @@
 ---
-draft: yes
 title: Beautiful Tables in Typst
 description: |
   You can use HTML Tables with CSS styling in Typst via Quarto.
@@ -47,7 +46,7 @@ This example uses a dashed border to draw attention to two cells.
 
 <iframe class="html-demo" src="demo/pandas-confusion-matrix.html" width=700 height=250 scrolling="no"></iframe>
 
-<a href="examples/pandas-confusion-matrix.HTML" target="_blank">HTML</a>
+<a href="examples/pandas-confusion-matrix.html" target="_blank">HTML</a>
 
 ## Cars heatmap (gt / R)
 
@@ -59,7 +58,7 @@ This example uses cell background colors to encode ranges of values.
 
 <iframe class="html-demo" src="demo/gt-cars.html" width=430 height=375 scrolling="no"></iframe>
 
-<a href="examples/gt-cars.HTML" target="_blank">HTML</a>
+<a href="examples/gt-cars.html" target="_blank">HTML</a>
 
 ## Oceania (Great Tables / Python)
 
@@ -71,7 +70,7 @@ Borders can show the structure of grouped rows.
 
 <iframe class="html-demo" src="demo/great-tables-oceania.html" width=600 height=907 scrolling="no"></iframe>
 
-<a href="examples/great-tables-oceania.HTML" target="_blank">HTML</a>
+<a href="examples/great-tables-oceania.html" target="_blank">HTML</a>
 
 ## Islands (gt / R)
 
@@ -83,7 +82,7 @@ Font sizes and minimal borders make this table stand out.
 
 <iframe class="html-demo" src="demo/gt-islands.html" width=400 height=580 scrolling="no"></iframe>
 
-<a href="examples/gt-islands.HTML" target="_blank">HTML</a>
+<a href="examples/gt-islands.html" target="_blank">HTML</a>
 
 ## Solar Zenith (Great Tables / Python)
 
@@ -95,7 +94,7 @@ Another cool heatmap.
 
 <iframe class="html-demo" src="demo/great-tables-solar-zenith.html" width=850 height=565 scrolling="no"></iframe>
 
-<a href="examples/great-tables-solar-zenith.HTML" target="_blank">HTML</a>
+<a href="examples/great-tables-solar-zenith.html" target="_blank">HTML</a>
 
 ## Acting on Data (Pandas / Python)
 
@@ -107,6 +106,6 @@ Applying colors and transparency based on data.
 
 <iframe class="html-demo" src="demo/pandas-acting-on-data.html" width=600 height=505 scrolling="no"></iframe>
 
-<a href="examples/pandas-acting-on-data.HTML" target="_blank">HTML</a>
+<a href="examples/pandas-acting-on-data.html" target="_blank">HTML</a>
 
 We can't wait to see what you do with this new feature!
