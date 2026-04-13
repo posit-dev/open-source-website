@@ -2,7 +2,7 @@
 title: posit::conf(2024) Quarto workshop materials
 description: |
   Back in August, we hosted three Quarto workshops at posit::conf(2024); the materials from those workshops are available to learn and teach from!
-categories:
+topics:
   - Publishing
   - Community
 people:
@@ -12,6 +12,7 @@ date: '2024-10-15'
 image: images/thumbnail.png
 image-alt: 'posit::conf(2024) logo '
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

@@ -4,10 +4,11 @@ description: "plotnine: a grammar of graphics implementation for Python built on
 auto-description: true
 date: '2017-04-22'
 ported_from: plotnine
+source: plotnine
 port_status: in-progress
 software: ["plotnine"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Plotnine
