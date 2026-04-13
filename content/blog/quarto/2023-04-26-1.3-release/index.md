@@ -90,28 +90,24 @@ Learn more about the embed shortcode in [Embedding Jupyter Notebook Cells](https
 
 [Atlassian Confluence](https://www.atlassian.com/software/confluence) is a publishing platform for supporting team collaboration. Quarto now provides support for publishing individual documents, as well as projects composed of multiple documents, into [Confluence Spaces](https://support.atlassian.com/confluence-cloud/docs/use-spaces-to-organize-your-work/).
 
-<table>
-<colgroup>
-<col style="width: 45%" />
-<col style="width: 54%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="45.2%" data-layout-align="left">
+<div class="grid gap-12 items-start md:grid-cols-[800fr_969fr]">
+<div class="prose max-w-none">
+
 <figure>
 <img src="https://quarto.org/docs/publishing/images/confluence-project.png" data-fig-alt="A screenshot of a Quarto project in VS Code. On the left in the Explorer, the project folder is called &#39;Guide-site&#39;, and contains folders &#39;authoring&#39;, and &#39;computation&#39;, along with some other files. A document from the folder &#39;python&#39; inside the folder &#39;computations&#39; with the title &#39;Using Python - site&#39; is open in the Source Pane. " alt="A Quarto Project" />
 <figcaption aria-hidden="true">A Quarto Project</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="54.8%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="https://quarto.org/docs/publishing/images/confluence-site.png" data-fig-alt="A screenshot of Space in Confluence. On the left in the Sdiebar under Pages is a page called &#39;Guide-site&#39;. Nested under this page are pages called &#39;authoring&#39;, and &#39;computation&#39;, along with some other pages. The &#39;computation&#39; page item is expanded and shows a page called &#39;Using Python - site&#39;, nested under a page called &#39;python&#39;. A page is displayed on the right with the title &#39;Using Python - site&#39;" alt="Published to Confluence" />
 <figcaption aria-hidden="true">Published to Confluence</figcaption>
 </figure>
-</div></td>
-</tr>
-</tbody>
-</table>
+
+</div>
+</div>
 
 To learn more, head to the documentation on [Confluence Publishing](https://quarto.org/docs/publishing/confluence.html).
 

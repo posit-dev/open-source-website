@@ -2,19 +2,25 @@
 people:
   - Mickaël CANOUIL, _Ph.D._
 title: How to use GitHub Codespaces to simplify your Quarto workshops
-description: |
-  In this post, I'll teach you the basics of GitHub Codespaces and how to use them to make it easier to teach using Quarto.
+description: >
+  In this post, I'll teach you the basics of GitHub Codespaces and how to use
+  them to make it easier to teach using Quarto.
 date: '2025-05-19'
 topics:
   - Publishing
 image: featured.png
 image-alt: |
   Quarto icon and text above GitHub Codespaces.
+lang: en-GB
 ported_from: quarto
 source: quarto
 port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - GitHub Codespaces
   - Teaching
@@ -69,22 +75,18 @@ The following link will create a new Codespace using the `.devcontainer/universa
 The link can include a specific branch, a particular file, or even a specific line in a file, allowing you to guide participants directly to the relevant content and setup.
 By doing nothing more than clicking that one link, participants create or resume an existing execution environment.
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: center;"><div width="50.0%" data-layout-align="center">
-<p><img src="quarto-codespaces-new-001-light.png" data-group="codespaces-light" data-fig-alt="GitHub Codespaces interface showing the &#39;Create codespace&#39; page. The page includes a section with the repository &#39;mcanouil/quarto-codespaces&#39; and a message stating &#39;No codespace to resume&#39;. There are two buttons: &#39;Change options&#39; and &#39;Create new codespace&#39;." /></p>
-</div></td>
-<td style="text-align: center;"><div width="50.0%" data-layout-align="center">
-<p><img src="quarto-codespaces-new-002-light.png" data-group="codespaces-light" data-fig-alt="image_url" alt="Screenshot of Visual Studio Code interface showing a GitHub Codespace for a project named &#39;quarto-codespaces&#39;. The left sidebar contains a file explorer with folders and files such as .devcontainer, .github, init-env.sh, LICENSE, and README.md. The terminal at the bottom displays logs related to configuring the codespace, including commands and their outcomes. The right sidebar has a section titled &#39;Edit with Copilot&#39; explaining how to use Copilot in agent mode." /></p>
-</div></td>
-</tr>
-</tbody>
-</table>
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
+<img src="quarto-codespaces-new-001-light.png" data-group="codespaces-light" data-fig-alt="GitHub Codespaces interface showing the &#39;Create codespace&#39; page. The page includes a section with the repository &#39;mcanouil/quarto-codespaces&#39; and a message stating &#39;No codespace to resume&#39;. There are two buttons: &#39;Change options&#39; and &#39;Create new codespace&#39;." />
+
+</div>
+<div class="prose max-w-none">
+
+<img src="quarto-codespaces-new-002-light.png" data-group="codespaces-light" data-fig-alt="image_url" alt="Screenshot of Visual Studio Code interface showing a GitHub Codespace for a project named &#39;quarto-codespaces&#39;. The left sidebar contains a file explorer with folders and files such as .devcontainer, .github, init-env.sh, LICENSE, and README.md. The terminal at the bottom displays logs related to configuring the codespace, including commands and their outcomes. The right sidebar has a section titled &#39;Edit with Copilot&#39; explaining how to use Copilot in agent mode." />
+
+</div>
+</div>
 
 ## Setting Up Your Own Quarto-Codespaces Environment
 
