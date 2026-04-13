@@ -2,7 +2,7 @@
 title: "Customize Positron with these community-curated resources"
 date: 2026-04-06
 people:
-  - Isabella Velasquez
+  - Isabella Velásquez
   - Libby Heeren
 description: >
   We've loved coming together to learn how community members are making Positron their own.
