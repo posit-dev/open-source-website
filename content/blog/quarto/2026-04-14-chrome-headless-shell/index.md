@@ -1,14 +1,16 @@
 ---
-title: "Chrome Headless Shell in Quarto"
+title: Chrome Headless Shell in Quarto
 description: |
   Quarto 1.9 replaces Puppeteer Chromium with Chrome Headless Shell —
   smaller, arm64-ready, and Docker-friendly.
 people:
   - Christophe Dervieux
-date: "2026-04-14"
+date: '2026-04-14'
 slug: chrome-headless-shell
 image: thumbnail.png
-image-alt: "Chromium icon with arrow pointing to a terminal window and Quarto logo, representing the switch from Puppeteer Chromium to Chrome Headless Shell."
+image-alt: >-
+  Chromium icon with arrow pointing to a terminal window and Quarto logo,
+  representing the switch from Puppeteer Chromium to Chrome Headless Shell.
 topics:
   - Publishing
 software:
@@ -18,7 +20,8 @@ ported_from: quarto
 port_status: raw
 ---
 
-Quarto uses a headless browser behind the scenes to render [Mermaid and Graphviz diagrams](https://quarto.org/docs/authoring/diagrams.html) to PNG for print formats like PDF and DOCX. Until now, this meant installing Puppeteer-bundled Chromium via `quarto install chromium` — a setup that worked, but came with some rough edges.
+
+Quarto uses a headless browser behind the scenes to render [Mermaid and Graphviz diagrams](https://quarto.org/docs/authoring/diagrams.html) to PNG for print formats like PDF and DOCX. Until now, this meant installing Puppeteer-bundled Chromium via `quarto install chromium` --- a setup that worked, but came with some rough edges.
 
 Starting with Quarto 1.9, `quarto install chromium` is deprecated. The recommended replacement is [Chrome Headless Shell](https://developer.chrome.com/blog/chrome-headless-shell), a lightweight, headless-only browser from Google's [Chrome for Testing](https://developer.chrome.com/blog/chrome-for-testing) infrastructure.
 
@@ -36,17 +39,19 @@ Chrome Headless Shell solves all three. It's purpose-built for headless automati
 
 If you don't already have Chrome or Edge installed on your system, install Chrome Headless Shell:
 
-```{.bash filename="Terminal"}
+
+``` bash { filename="Terminal" }
 quarto install chrome-headless-shell
 ```
 
-Quarto will automatically detect and use any existing Chrome or Edge browser on your system. Chrome Headless Shell is the recommended fallback for environments where a full browser isn't available — CI servers, Docker containers, and headless VMs.
+Quarto will automatically detect and use any existing Chrome or Edge browser on your system. Chrome Headless Shell is the recommended fallback for environments where a full browser isn't available --- CI servers, Docker containers, and headless VMs.
 
 ## Migrating from Chromium
 
 If you previously installed Chromium via `quarto install chromium`, the migration is straightforward:
 
-```{.bash filename="Terminal"}
+
+``` bash { filename="Terminal" }
 quarto uninstall chromium
 quarto install chrome-headless-shell
 ```
@@ -55,7 +60,7 @@ Running `quarto check install` will warn you if a legacy Chromium installation i
 
 ### CI and automation
 
-If your CI pipeline uses `quarto install chromium --no-prompt`, it will continue to work — the command still installs a working headless browser, but now shows a deprecation warning. Updating your scripts to `quarto install chrome-headless-shell --no-prompt` avoids the warning and uses the new tool directly. In Quarto 1.10, `quarto install chromium` will transparently redirect to Chrome Headless Shell, so either command will produce the same result.
+If your CI pipeline uses `quarto install chromium --no-prompt`, it will continue to work --- the command still installs a working headless browser, but now shows a deprecation warning. Updating your scripts to `quarto install chrome-headless-shell --no-prompt` avoids the warning and uses the new tool directly. In Quarto 1.10, `quarto install chromium` will transparently redirect to Chrome Headless Shell, so either command will produce the same result.
 
 ## What's next
 
@@ -65,4 +70,4 @@ If you're still using the old Chromium install, now is a good time to switch.
 
 Learn more on the [Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install) documentation page.
 
-The Chromium icon in the [listing and social card image](thumbnail.png) for this post is by [Jeremiah](https://icon-icons.com/authors/602-jeremiah){.external} via [icon-icons.com](https://icon-icons.com/icon/chromium/104592){.external}. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/){.external}
+The Chromium icon in the [listing and social card image](thumbnail.png) for this post is by <a href="https://icon-icons.com/authors/602-jeremiah" class="external">Jeremiah</a> via <a href="https://icon-icons.com/icon/chromium/104592" class="external">icon-icons.com</a>. License: <a href="https://creativecommons.org/licenses/by/4.0/" class="external">CC BY 4.0</a>
