@@ -5,7 +5,7 @@ description: >
   auto-discovers your API, builds a modern site with Quarto, and ships with
   LLM-friendly features and one-command deployment.
 people:
-  - Richard Iannone
+  - Rich Iannone
 date: '2026-04-14'
 image: assets/great-docs-logo.png
 image-alt: The Great Docs logo (GD)
