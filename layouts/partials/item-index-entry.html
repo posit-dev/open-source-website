@@ -68,9 +68,11 @@
     {{ if $imgRes }}
       {{ if eq $imgRes.MediaType.SubType "svg" }}
         {{ $authorImage = $imgRes.RelPermalink }}
-      {{ else }}
+      {{ else if eq (getenv "HUGO_PROCESS_IMAGES") "true" }}
         {{ $processed := $imgRes.Process "48x48 fit webp" }}
         {{ $authorImage = $processed.RelPermalink }}
+      {{ else }}
+        {{ $authorImage = $imgRes.RelPermalink }}
       {{ end }}
     {{ end }}
   {{ end }}
@@ -100,13 +102,15 @@
 {{ if $image }}
   {{ if or (eq $image.MediaType.SubType "svg") (eq $image.MediaType.SubType "gif") }}
     {{ $imageData = dict "src" $image.RelPermalink "alt" $imageAlt "width" 0 "height" 0 }}
-  {{ else }}
+  {{ else if eq (getenv "HUGO_PROCESS_IMAGES") "true" }}
     {{ $w := 640 }}
     {{ if gt $w $image.Width }}
       {{ $w = $image.Width }}
     {{ end }}
     {{ $processed := $image.Resize (printf "%dx webp" $w) }}
     {{ $imageData = dict "src" $processed.RelPermalink "alt" $imageAlt "width" $processed.Width "height" $processed.Height }}
+  {{ else }}
+    {{ $imageData = dict "src" $image.RelPermalink "alt" $imageAlt "width" $image.Width "height" $image.Height }}
   {{ end }}
 {{ end }}
 

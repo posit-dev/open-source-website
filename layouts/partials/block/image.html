@@ -32,6 +32,7 @@
   </figure>
   {{- else -}}
   {{- $src := . -}}
+  {{- if eq (getenv "HUGO_PROCESS_IMAGES") "true" -}}
   {{- $dataSzes := "(min-width: 1024px) 100vw, 50vw" -}}
   {{- $actualImg := $src.Resize (print "640x jpg " $filter) -}}
   <figure>
@@ -54,6 +55,10 @@
       {{- end -}}" sizes="{{ $dataSzes }}" />
       <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ $actualImg.RelPermalink }}" width="{{ $src.Width }}" height="{{ $src.Height }}" alt="{{ $alt }}" title="{{ $alt }}" loading="lazy" />
     </picture>
+  {{- else -}}
+  <figure>
+    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="{{ $src.RelPermalink }}" alt="{{ $alt }}" title="{{ $alt }}" loading="lazy" />
+  {{- end -}}
     {{- if $.Params.photo -}}
     <figcaption class="text-xs text-gray-500 mt-2 px-6">
       Photo by
