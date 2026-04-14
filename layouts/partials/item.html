@@ -296,6 +296,11 @@
           "tall"   160
           "grande" 160
         ) }}
+      {{ else if $is_person }}
+        {{ $placeholder := resources.Get "images/person-placeholder.svg" }}
+        {{ with $placeholder }}
+          <img src="{{ .RelPermalink }}" alt="Avatar placeholder" class="mx-auto h-full object-contain rounded-xl" />
+        {{ end }}
       {{ end }}
     </div>
 
@@ -723,6 +728,11 @@
           "tall"   320
           "grande" 640
         ) }}
+      {{ else if $is_person }}
+        {{ $placeholder := resources.Get "images/person-placeholder.svg" }}
+        {{ with $placeholder }}
+          <img src="{{ .RelPermalink }}" alt="Avatar placeholder" class="mx-auto h-full object-contain rounded-xl" />
+        {{ end }}
       {{ end }}
     </div>
 

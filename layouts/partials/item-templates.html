@@ -6,9 +6,15 @@
   templates and fills data-slot elements from the item-index JSON.
 */}}
 
-{{/* Item settings for JS */}}
+{{/* Item settings for JS — inject resolved asset URLs where needed */}}
+{{ $settings := site.Data.items }}
+{{ $placeholder := resources.Get "images/person-placeholder.svg" }}
+{{ with $placeholder }}
+  {{ $people := merge (index $settings "people") (dict "placeholder_image" .RelPermalink) }}
+  {{ $settings = merge $settings (dict "people" $people) }}
+{{ end }}
 <script id="item-settings" type="application/json">
-  {{ site.Data.items | jsonify | safeJS }}
+  {{ $settings | jsonify | safeJS }}
 </script>
 
 {{/* ============================================================

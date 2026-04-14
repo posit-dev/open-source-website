@@ -566,6 +566,13 @@
           const imgClass = settings.image_class || '';
           if (imgClass) imgClass.split(' ').filter(Boolean).forEach(c => img.classList.add(c));
         }
+      } else if (settings.placeholder_image) {
+        const img = slot('image');
+        if (img) {
+          img.src = settings.placeholder_image;
+          img.alt = 'Avatar placeholder';
+          img.classList.add('object-contain', 'rounded-xl');
+        }
       }
 
       // Title
