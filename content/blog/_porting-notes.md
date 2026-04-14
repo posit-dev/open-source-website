@@ -36,7 +36,7 @@ For posts with a `.qmd` source (Quarto, Shiny, Great Tables, etc.):
 
 1. Copy the `.qmd` and any assets (images, data files) from `_external-sources/` into the new post folder under `content/blog/`.
 2. **Commit the copied files before editing.** This makes it easy to audit changes and see exactly what was modified from the original source.
-3. Edit the frontmatter **in the `.qmd`**: replace `author` with `people`, and add `ported_from`, `port_status`, `software`, `languages`, `topics`. If the folder name contains a date prefix (e.g. `2026-04-06-april-newsletter`), add a `slug` without the date (e.g. `slug: april-newsletter`) to avoid the date appearing twice in the permalink.
+3. Edit the frontmatter **in the `.qmd`**: replace `author` with `people`, and add `source`, `ported_from`, `port_status`, `software`, `languages`, `topics`. `source` should always match `ported_from` — it powers the `blog/q/` collection pages for each legacy blog. Move any original `categories` values into `tags` (then remove `categories`). If the folder name contains a date prefix (e.g. `2026-04-06-april-newsletter`), add a `slug` without the date (e.g. `slug: april-newsletter`) to avoid the date appearing twice in the permalink.
 4. Fix links in the `.qmd`:
    - Internal blog cross-links: `/docs/blog/posts/<slug>/` → `/blog/quarto/<slug>/`
    - Quarto docs links: `/docs/...something.qmd` → `https://quarto.org/docs/...something.html` (note: `.qmd` → `.html`, not just prefixing the domain — fragment URLs like `.qmd#anchor` need manual attention as regex replacements can miss them)
