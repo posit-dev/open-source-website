@@ -55,6 +55,15 @@
   {{ errorf "item partial: no card_settings in data/items.yaml for card_type '%s' (slug: '%s')" $card_type $slug }}
 {{ end }}
 
+{{/* Auto-hide badge when item type matches the current page's section */}}
+{{ if not $hide_badge }}
+  {{ with $card_settings.badge_hide_path }}
+    {{ if hasPrefix (page).RelPermalink . }}
+      {{ $hide_badge = true }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 {{/* ============================================================
      TITLE
      ============================================================ */}}
