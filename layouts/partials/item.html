@@ -559,7 +559,7 @@
   <div class="flex flex-col md:flex-row">
 
     {{ if and $is_person (ne ($page.Params.affiliation | default "") "Posit, PBC") }}
-      <span class="card-badge absolute top-2 left-2 z-10">
+      <span class="card-badge absolute top-2 left-2 z-10 {{ if not $image }}bg-blue-700 text-white{{ end }}">
         <span class="icon-[{{ $card_settings.badge_icon }}]"></span>
         <span class="font-semibold uppercase tracking-wide">External Contributor</span>
       </span>
