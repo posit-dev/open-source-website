@@ -14,19 +14,20 @@ people:
   - Isabella Velásquez
 languages:
 - Python
+resources:
+- cheatsheets/great-tables
+- cheatsheets/plotnine
+- cheatsheets/positron
 ---
 
 PyCon US is the largest and longest-running Python gathering globally.
 
-Come say hi! We’re bringing a fresh haul of swag, stickers, and a team that’s genuinely excited to hear about your projects and share what we’ve been building.
+Find us at Booth #738! We’re bringing a fresh haul of swag, stickers, and a team that’s genuinely excited to hear about your projects and share what we’ve been building.
 
-Find us at Booth #738!
+We're particuarly excited to chat about:
 
-Keep an eye on our socials for updates:
-
-- [LinkedIn](https://linkedin.com/company/posit-pbc)
-- [Bluesky](https://bsky.app/profile/posit.bsky.social)
-- [Mastodon](https://fosstodon.org/@posit)
-- [Sign up for email updates](https://posit.co/subscription-management)
-
-{{< button url="[about/posit/](https://us.pycon.org/2026/)" text="Register for PyCon 2026" icon="boxicons--globe" >}}
+{{< insert-items format="card" hide-badge=true >}}
+- software/quarto
+- software/positron
+- software/great-tables
+{{< /insert-items>}}
