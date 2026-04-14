@@ -198,7 +198,7 @@ The [ggsql package](https://pypi.org/project/ggsql/), available on PyPI, provide
 The ggsql package, soon to be available on CRAN, is an R sibling to the python package, providing the same level of direct bindings as the Python package does. In addition it provides a knitr engine that RMarkdown and Quarto can use which provides bidirectional data access between R, Python, and ggsql code blocks.
 
 #### WASM binary
-ggsql compiles to WASM meaning that it can run in the browser. You can see this in effect at the [ggsql website](https://ggsql.org) where all code blocks are editable with instant updates of the visualization below
+ggsql compiles to WASM meaning that it can run in the browser. You can see this in effect at the [ggsql website](https://ggsql.org) where all code blocks are editable with instant updates of the visualization below. The wasm binary will be available on NPM in the near future.
 
 ## The future
 We are nearing the end of a rather long announcement — thanks for sticking with us. In the very first line we called this an alpha-release which implies that we are not done yet. To get you as excited about the future as you hopefully are about the present state of ggsql, here is a non-exhaustive list of things we want to add.
