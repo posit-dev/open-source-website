@@ -1,6 +1,6 @@
 ---
 title: "RAG with raghilda"
-date: '2026-03-30'
+date: '2026-04-14'
 description: |
   An introduction to building retrieval-augmented generation systems with raghilda.
 people:
