@@ -24,9 +24,11 @@ ported_categories:
   - Python Packages
 ---
 
-When someone discovers your Python package, the first thing they see is the documentation site. That site should look good, feel cohesive, and reflect the identity of your project. But most Python documentation generators leave you with a generic-looking site and little control over its personality without significant effort. Tweaking themes, adjusting layouts, and making the result feel like *your* project rather than a template usually means hours of configuration and CSS overrides.
+When someone discovers your Python package, the first thing they see is the documentation site. That site should look good, feel cohesive, and reflect the identity of your project.
 
-With projects like [Great Tables](https://posit-dev.github.io/great-tables/) and [Pointblank](https://posit-dev.github.io/pointblank/), I wanted documentation sites that looked distinctive and match the character of each project. I was able to get pretty far with tools like quartodoc, but ultimately I had to do a lot of customization to get the styles I was looking for. That led me to build [Great Docs](https://posit-dev.github.io/great-docs/), a documentation generator that produces attractive sites out of the box (but with simple options to customize the look and make it yours). Great Docs is now part of the [Posit](https://posit.co/) open-source ecosystem, [available on PyPI](https://pypi.org/project/great-docs/), and at `v0.7` with seven releases since its initial soft launch.
+While building documentation sites for projects like [Great Tables](https://posit-dev.github.io/great-tables/) and [Pointblank](https://posit-dev.github.io/pointblank/), we learned just how much effort goes into making a site that looks distinctive and matches the character of each project: custom themes, tailored layouts, interactive features, and countless small design decisions. That experience taught me what a great documentation site needs, and I wanted to distill all of those learnings into a tool that gives every Python package a polished site from the start. That led me to build [Great Docs](https://posit-dev.github.io/great-docs/), a documentation generator that produces beautiful sites out of the box (but with simple options to customize the look and make it yours).
+
+Great Docs is now part of the [Posit](https://posit.co/) open-source ecosystem, [available on PyPI](https://pypi.org/project/great-docs/), and at `v0.7` with seven releases since its initial soft launch.
 
 ![The Great Docs homepage with annotations highlighting the major site features: metadata sidebar, logo, navbar with gradient, light/dark mode toggle, keyboard shortcut reference, GitHub widget, and search.](assets/gd-homepage.png)
 
