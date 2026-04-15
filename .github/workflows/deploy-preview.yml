@@ -13,17 +13,6 @@ permissions:
   pull-requests: write
 
 jobs:
-  debug:
-    if: github.event_name == 'pull_request_target'
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "event_name: ${{ github.event_name }}"
-          echo "fork: ${{ github.event.pull_request.head.repo.fork }}"
-          echo "author_association: ${{ github.event.pull_request.author_association }}"
-          echo "head_repo: ${{ github.event.pull_request.head.repo.full_name }}"
-          echo "base_repo: ${{ github.event.pull_request.base.repo.full_name }}"
-
   notify-fork-pr:
     # Post a sticky comment on fork PRs from non-members explaining /deploy-preview.
     if: >

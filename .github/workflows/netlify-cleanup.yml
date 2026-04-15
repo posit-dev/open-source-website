@@ -4,14 +4,14 @@ on:
   # Trigger when a branch is deleted
   delete:
   # Trigger when a PR is closed (merged or dismissed)
-  pull_request:
+  pull_request_target:
     types: [closed]
 
 jobs:
   delete-netlify-deploys:
     # Run only if it's a PR close event OR a Branch delete event (ignore tag deletions)
     if: >
-      github.event_name == 'pull_request' || 
+      github.event_name == 'pull_request_target' ||
       (github.event_name == 'delete' && github.event.ref_type == 'branch')
     runs-on: ubuntu-latest
     
@@ -37,7 +37,15 @@ jobs:
           RESPONSE=$(curl -s -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
             "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys?branch=$TARGET_BRANCH&per_page=100")
 
-          # 3. Parse IDs
+          # 3. Validate response is a JSON array
+          if ! echo "$RESPONSE" | jq -e 'type == "array"' > /dev/null 2>&1; then
+            echo "Unexpected API response (not a JSON array):"
+            echo "$RESPONSE" | head -5
+            echo "No deploys deleted for branch: $TARGET_BRANCH"
+            exit 0
+          fi
+
+          # 4. Parse IDs
           DEPLOY_IDS=$(echo "$RESPONSE" | jq -r '.[].id')
 
           if [ -z "$DEPLOY_IDS" ] || [ "$DEPLOY_IDS" == "null" ]; then
@@ -45,7 +53,7 @@ jobs:
             exit 0
           fi
 
-          # 4. Delete them
+          # 5. Delete them
           for ID in $DEPLOY_IDS; do
             echo "Deleting deploy ID: $ID"
             curl -s -X DELETE -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
