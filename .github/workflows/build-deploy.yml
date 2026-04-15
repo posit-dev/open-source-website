@@ -69,6 +69,7 @@ jobs:
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
+          HUGO_PROCESS_IMAGES: "true"
         run: hugo --templateMetrics --templateMetricsHints ${{ inputs.hugo-flags }}
 
       - name: Build search index

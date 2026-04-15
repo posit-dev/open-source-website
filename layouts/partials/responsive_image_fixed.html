@@ -24,7 +24,7 @@
 {{ if $image }}
   {{ if eq $image.MediaType.SubType "svg" }}
     <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
-  {{ else }}
+  {{ else if eq (getenv "HUGO_PROCESS_IMAGES") "true" }}
     {{ $size1x := $baseHeight }}
     {{ $size2x := mul $baseHeight 2 }}
     {{ $size3x := mul $baseHeight 3 }}
@@ -67,5 +67,7 @@
         class="{{ $class }}"
         loading="lazy" />
     </picture>
+  {{ else }}
+    <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
   {{ end }}
 {{ end }}

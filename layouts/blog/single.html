@@ -8,8 +8,12 @@
   {{- $img_result := partial "get-image.html" . -}}
   {{- with $img_result.image -}}
     {{- if ne .MediaType.SubType "svg" -}}
-      {{- $pagefindImg := .Fit "128x128" -}}
-      <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ $img_result.alt }}" class="hidden" data-pagefind-meta="image[src]">
+      {{- if eq (getenv "HUGO_PROCESS_IMAGES") "true" -}}
+        {{- $pagefindImg := .Fit "128x128" -}}
+        <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ $img_result.alt }}" class="hidden" data-pagefind-meta="image[src]">
+      {{- else -}}
+        <img src="{{ .RelPermalink }}" alt="{{ $img_result.alt }}" class="hidden" data-pagefind-meta="image[src]">
+      {{- end -}}
     {{- else -}}
       <img src="{{ .RelPermalink }}" alt="{{ $img_result.alt }}" class="hidden" data-pagefind-meta="image[src]">
     {{- end -}}
