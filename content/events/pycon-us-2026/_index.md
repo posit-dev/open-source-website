@@ -22,7 +22,7 @@ resources:
 
 PyCon US is the largest and longest-running Python gathering globally.
 
-Find us at Booth #738! We’re bringing a fresh haul of swag, stickers, and a team that’s genuinely excited to hear about your projects and share what we’ve been building.
+Find us at Booth #717! We’re bringing a fresh haul of swag, stickers, and a team that’s genuinely excited to hear about your projects and share what we’ve been building.
 
 We're particuarly excited to chat about:
 
