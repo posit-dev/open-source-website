@@ -55,6 +55,15 @@
   {{ errorf "item partial: no card_settings in data/items.yaml for card_type '%s' (slug: '%s')" $card_type $slug }}
 {{ end }}
 
+{{/* Auto-hide badge when item type matches the current page's section */}}
+{{ if not $hide_badge }}
+  {{ with $card_settings.badge_hide_path }}
+    {{ if hasPrefix (page).RelPermalink . }}
+      {{ $hide_badge = true }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 {{/* ============================================================
      TITLE
      ============================================================ */}}
@@ -287,6 +296,11 @@
           "tall"   160
           "grande" 160
         ) }}
+      {{ else if $is_person }}
+        {{ $placeholder := resources.Get "images/person-placeholder.svg" }}
+        {{ with $placeholder }}
+          <img src="{{ .RelPermalink }}" alt="Avatar placeholder" class="mx-auto h-full object-contain rounded-xl" />
+        {{ end }}
       {{ end }}
     </div>
 
@@ -697,7 +711,7 @@
         <span class="card-badge absolute top-2 @max-venti:right-2 @venti:left-2 z-10">
 
           <span class="icon-[{{ $card_settings.badge_icon }}]"></span>
-          <span class="font-semibold uppercase tracking-wide hidden @xs:inline">{{ $card_settings.badge_text }}</span>
+          <span class="font-semibold uppercase tracking-wide hidden @short:inline">{{ $card_settings.badge_text }}</span>
 
         </span>
       {{ end }}
@@ -714,6 +728,11 @@
           "tall"   320
           "grande" 640
         ) }}
+      {{ else if $is_person }}
+        {{ $placeholder := resources.Get "images/person-placeholder.svg" }}
+        {{ with $placeholder }}
+          <img src="{{ .RelPermalink }}" alt="Avatar placeholder" class="mx-auto h-full object-contain rounded-xl" />
+        {{ end }}
       {{ end }}
     </div>
 

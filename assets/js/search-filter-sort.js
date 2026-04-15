@@ -537,14 +537,17 @@
         root.classList.add(...settings.row_class.split(' ').filter(Boolean));
       }
 
-      // Badge
+      // Badge — hide when the current page matches the item type's badge_hide_path
       const badgeEl = slot('badge');
       if (badgeEl && settings.badge_icon) {
-        badgeEl.classList.remove('hidden');
-        const badgeIcon = slot('badge-icon');
-        if (badgeIcon) badgeIcon.className = 'icon-[' + settings.badge_icon + ']';
-        const badgeText = slot('badge-text');
-        if (badgeText) badgeText.textContent = settings.badge_text || '';
+        const hidePath = settings.badge_hide_path || '';
+        if (!hidePath || !window.location.pathname.startsWith(hidePath)) {
+          badgeEl.classList.remove('hidden');
+          const badgeIcon = slot('badge-icon');
+          if (badgeIcon) badgeIcon.className = 'icon-[' + settings.badge_icon + ']';
+          const badgeText = slot('badge-text');
+          if (badgeText) badgeText.textContent = settings.badge_text || '';
+        }
       }
 
       // Image
@@ -562,6 +565,13 @@
           // Image class from settings
           const imgClass = settings.image_class || '';
           if (imgClass) imgClass.split(' ').filter(Boolean).forEach(c => img.classList.add(c));
+        }
+      } else if (settings.placeholder_image) {
+        const img = slot('image');
+        if (img) {
+          img.src = settings.placeholder_image;
+          img.alt = 'Avatar placeholder';
+          img.classList.add('object-contain', 'rounded-xl');
         }
       }
 
