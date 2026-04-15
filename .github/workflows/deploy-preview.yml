@@ -3,20 +3,99 @@ name: Deploy Preview
 on:
   pull_request:
     branches: ["main"]
+  pull_request_target:
+    branches: ["main"]
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: deploy-preview-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
   pull-requests: write
 
 jobs:
+  notify-fork-pr:
+    # Post a sticky comment on fork PRs from non-members explaining /deploy-preview.
+    if: >
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.head.repo.fork == true &&
+      github.event.pull_request.author_association != 'MEMBER' &&
+      github.event.pull_request.author_association != 'OWNER' &&
+      github.event.pull_request.author_association != 'COLLABORATOR'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post fork preview notice
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: fork-deploy-notice
+          message: |
+            ## Preview not available
+
+            This PR is from a fork and cannot deploy a preview automatically.
+            A maintainer can comment `/deploy-preview` to trigger one.
+
   build-and-deploy:
+    # Three paths to a preview deploy:
+    # 1. pull_request from a branch in this repo (non-fork)
+    # 2. pull_request_target from a fork, if the author is an org member
+    # 3. /deploy-preview comment from a maintainer (for external fork PRs)
+    if: >
+      (
+        github.event_name == 'pull_request' &&
+        github.event.pull_request.head.repo.fork != true
+      ) ||
+      (
+        github.event_name == 'pull_request_target' &&
+        github.event.pull_request.head.repo.fork == true &&
+        (
+          github.event.pull_request.author_association == 'MEMBER' ||
+          github.event.pull_request.author_association == 'OWNER' ||
+          github.event.pull_request.author_association == 'COLLABORATOR'
+        )
+      ) ||
+      (
+        github.event.issue.pull_request &&
+        (
+          github.event.comment.author_association == 'MEMBER' ||
+          github.event.comment.author_association == 'OWNER' ||
+          github.event.comment.author_association == 'COLLABORATOR'
+        ) &&
+        startsWith(github.event.comment.body, '/deploy-preview')
+      )
     uses: ./.github/workflows/build-deploy.yml
     with:
+      ref: ${{ format('refs/pull/{0}/merge', github.event.pull_request.number || github.event.issue.number) }}
       hugo-flags: "--buildFuture"
       deploy-context: "preview"
     secrets: inherit
 
   detect-content:
+    if: >
+      (
+        github.event_name == 'pull_request' &&
+        github.event.pull_request.head.repo.fork != true
+      ) ||
+      (
+        github.event_name == 'pull_request_target' &&
+        github.event.pull_request.head.repo.fork == true &&
+        (
+          github.event.pull_request.author_association == 'MEMBER' ||
+          github.event.pull_request.author_association == 'OWNER' ||
+          github.event.pull_request.author_association == 'COLLABORATOR'
+        )
+      ) ||
+      (
+        github.event.issue.pull_request &&
+        (
+          github.event.comment.author_association == 'MEMBER' ||
+          github.event.comment.author_association == 'OWNER' ||
+          github.event.comment.author_association == 'COLLABORATOR'
+        ) &&
+        startsWith(github.event.comment.body, '/deploy-preview')
+      )
     runs-on: ubuntu-latest
     outputs:
       has-changes: ${{ steps.detect-content.outputs.has-changes }}
@@ -24,6 +103,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          ref: ${{ format('refs/pull/{0}/merge', github.event.pull_request.number || github.event.issue.number) }}
 
       - name: Detect content changes
         id: detect-content
@@ -51,6 +132,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          ref: ${{ format('refs/pull/{0}/merge', github.event.pull_request.number || github.event.issue.number) }}
 
       - name: Setup Hugo
         run: |
@@ -102,4 +185,5 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: content-preview-links
+          number: ${{ github.event.pull_request.number || github.event.issue.number }}
           path: /tmp/preview-comment.md
