@@ -6,7 +6,7 @@ description: >
   LLM-friendly features and one-command deployment.
 people:
   - Rich Iannone
-date: '2026-04-14'
+date: '2026-04-15'
 image: assets/great-docs-logo.png
 image-alt: The Great Docs logo (GD)
 software:
