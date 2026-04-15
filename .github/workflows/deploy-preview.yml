@@ -8,15 +8,22 @@ on:
   issue_comment:
     types: [created]
 
-concurrency:
-  group: deploy-preview-${{ github.event.pull_request.number || github.event.issue.number }}
-  cancel-in-progress: true
-
 permissions:
   contents: read
   pull-requests: write
 
 jobs:
+  debug:
+    if: github.event_name == 'pull_request_target'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "event_name: ${{ github.event_name }}"
+          echo "fork: ${{ github.event.pull_request.head.repo.fork }}"
+          echo "author_association: ${{ github.event.pull_request.author_association }}"
+          echo "head_repo: ${{ github.event.pull_request.head.repo.full_name }}"
+          echo "base_repo: ${{ github.event.pull_request.base.repo.full_name }}"
+
   notify-fork-pr:
     # Post a sticky comment on fork PRs from non-members explaining /deploy-preview.
     if: >
@@ -39,9 +46,12 @@ jobs:
 
   build-and-deploy:
     # Three paths to a preview deploy:
-    # 1. pull_request from a branch in this repo (non-fork)
-    # 2. pull_request_target from a fork, if the author is an org member
+    # 1. pull_request for non-fork PRs (workflow changes in PR are testable)
+    # 2. pull_request_target for fork PRs from org members (has secrets)
     # 3. /deploy-preview comment from a maintainer (for external fork PRs)
+    concurrency:
+      group: deploy-preview-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number }}
+      cancel-in-progress: true
     if: >
       (
         github.event_name == 'pull_request' &&
@@ -73,6 +83,9 @@ jobs:
     secrets: inherit
 
   detect-content:
+    concurrency:
+      group: deploy-preview-content-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number }}
+      cancel-in-progress: true
     if: >
       (
         github.event_name == 'pull_request' &&
