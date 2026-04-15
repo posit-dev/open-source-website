@@ -59,6 +59,12 @@ Freeform. Avoid duplicating `software` or `topics` values.
 | `hidesubscription` | Boolean, hides the subscription CTA |
 | `photo.url` / `photo.author` | Stock photo attribution |
 
+## Legacy Blog Listing
+
+| Field | Purpose |
+|-------|---------|
+| `source` | Legacy blog this post should appear on: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`, `education`, `rstudio`. Drives inclusion on legacy blog landing pages (e.g. `/blog/tidyverse/`). Required for all ported posts (must match `ported_from`). Optional for new posts — only add if the post should appear on a legacy blog's listing page. |
+
 ## Porting Metadata
 
 Used to identify and track posts ported from legacy blogs. Do not add to new posts.

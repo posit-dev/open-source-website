@@ -398,6 +398,53 @@ class TestCheckLanguages:
         assert issues[0].level == "warning"
 
 
+# --- check_source ---
+
+
+class TestCheckSource:
+    def test_new_post_no_source(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        assert v.check_source(p, {}, ctx) == []
+
+    def test_new_post_with_valid_source(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        fm = {"source": "tidyverse"}
+        assert v.check_source(p, fm, ctx) == []
+
+    def test_new_post_with_invalid_source(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        fm = {"source": "nonexistent"}
+        issues = v.check_source(p, fm, ctx)
+        assert len(issues) == 1
+        assert issues[0].level == "error"
+
+    def test_ported_with_matching_source(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "old", "post")
+        fm = {"ported_from": "tidyverse", "source": "tidyverse"}
+        assert v.check_source(p, fm, ctx) == []
+
+    def test_ported_missing_source(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "old", "post")
+        fm = {"ported_from": "tidyverse"}
+        issues = v.check_source(p, fm, ctx)
+        assert len(issues) == 1
+        assert "ported_from" in issues[0].message
+
+    def test_ported_mismatched_source(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "old", "post")
+        fm = {"ported_from": "tidyverse", "source": "shiny"}
+        issues = v.check_source(p, fm, ctx)
+        assert len(issues) == 1
+        assert issues[0].level == "error"
+        assert "tidyverse" in issues[0].message
+
+
 # --- check_image_exists ---
 
 

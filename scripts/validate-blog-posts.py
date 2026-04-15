@@ -42,6 +42,19 @@ REQUIRED_FIELDS = [
 
 COMMON_LANGUAGES = ["R", "Python", "Julia"]
 
+VALID_SOURCES = [
+    "ai",
+    "education",
+    "great_tables",
+    "plotnine",
+    "pointblank",
+    "positron",
+    "quarto",
+    "rstudio",
+    "shiny",
+    "tidyverse",
+]
+
 FORBIDDEN_FIELDS = {
     "categories": "`topics`",
 }
@@ -367,6 +380,45 @@ def check_languages(
     return []
 
 
+def check_source(
+    post_path: Path, fm: dict, ctx: ValidationContext
+) -> list[Issue]:
+    source = fm.get("source")
+    ported_from = fm.get("ported_from")
+
+    # Ported posts must have source matching ported_from
+    if ported_from and not source:
+        return [
+            Issue(
+                post_path,
+                f"`source` is required for ported posts. Must match `ported_from` (`{ported_from}`).",
+                severity(fm),
+            )
+        ]
+
+    if ported_from and source and source != ported_from:
+        return [
+            Issue(
+                post_path,
+                f"`source` must match `ported_from`. Found `{source}`, expected `{ported_from}`.",
+                "error",
+            )
+        ]
+
+    # Validate source value if present
+    if source and source not in VALID_SOURCES:
+        valid_str = ", ".join(VALID_SOURCES)
+        return [
+            Issue(
+                post_path,
+                f"`{source}` is not a valid `source`. Must be one of: {valid_str}.",
+                "error",
+            )
+        ]
+
+    return []
+
+
 ALL_CHECKS = [
     check_placement,
     check_required_fields,
@@ -376,6 +428,7 @@ ALL_CHECKS = [
     check_software,
     check_people,
     check_languages,
+    check_source,
     check_image_exists,
 ]
 
