@@ -36,6 +36,9 @@ You may wonder why we have decided to spend time building a tool for SQL rather 
 Let's discuss each in turn.
 
 ### Hello, SQL user!
+
+![](greet.png)
+
 While first R and then Python captured all the attention of the data science revolution, SQL chucked along as the reliant and powerful workhorse beneath it all. We recognize that there are large portions of the people that work with data that does so only or predominantly in SQL. The choice they have for visualizing their data are often suboptimal in our view:
 
 * Export the data and use R or Python which may not be within their comfort zone
@@ -51,9 +54,14 @@ Why does it matter that [ggplot2](https://ggplot2.tidyverse.org/) and [plotnine]
 
 There is another side to it as well. ggsql code cannot be malicious, in the way Python or R code (or code in any other programming language) can. There is no read-and-upload-all-environment-variables clause, nor an import-dubious-package query in ggsql — it can visualize and that's it. This makes the tool perfect for workflows where you are not the creator of the visualization code (👋 hello, AI agent).
 
+![](malicious.png)
+
 You may think we have had to swallow some painful bullets by moving away from an interpreted language, but it has also given us a lot. Most importantly, the rigid structure means that we can execute the whole data pipeline as a single SQL query per layer on the backend. This means that if you want to create a bar plot of 10 billion transactions you only ever fetch the count values for each bar from your data warehouse, not the 10 billion rows of data. The same is true for more complicated layer types such as boxplots and density plots.
 
 ### We are now wise beyond our years
+
+![](age.gif)
+
 18 years of ggplot2 development and maintenance also means 18 years of thinking about data visualization syntax, use, and design. I am not a boastful person but I do believe that gives us some expert knowledge on the subject matter. However, not all of this knowledge can be poured back into ggplot2. There are decisions and expectations established many years ago that we have to honor, or at least only challenge very gradually (which we do on occasions).
 
 ggsql is a blank slate. Not only in the sense that we are building it from the ground up, but also in that it is build for an environment with no established expectations for a visualization tool. I cannot stress how liberating and invigorating this has felt, and I am positive that this shines through in how ggsql feels to the user.
@@ -62,6 +70,8 @@ ggsql is a blank slate. Not only in the sense that we are building it from the g
 If you are reading this with no prior knowledge of SQL, here's a very brief recap: SQL is a domain specific language for manipulating relational data stored in one or more tables. The syntax is based on the concept of relational algebra which is a structured way to think about data manipulation operations. The semantics defines a set of modular operations that are declarative rather than functional, allowing the user to declare very powerful and custom manipulations using a well-defined set of operations.
 
 If you are reading this with no prior knowledge of the grammar of graphics, here's a very brief recap: The grammar of graphics is a theoretical deconstruction of the concepts of data visualization into its modular parts. While purely theoretical, tools such as ggplot2 have implemented the idea in practice. The semantics defines a set of modular operations that are declarative rather than functional, allowing the user to declare very powerful and custom visualizations using a well-defined set of operations.
+
+![](epic_handshake.png)
 
 From the above, slightly hyperbolic, overview it is clear that both SQL and the grammar of graphics share a lot of commonality in their approach to their respective domains. Together they can offer a very powerful and natural solution to the full pipeline from raw data to final visualization.
 
