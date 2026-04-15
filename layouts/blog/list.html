@@ -9,6 +9,15 @@
     {{ . }}
   </div>
   {{ end }}
+
+  {{ range (site.GetPage "/blog/q").Sections }}
+    {{ $source := .Params.query | default .File.ContentBaseName }}
+    {{ with .Content }}
+    <div data-source-announcement="{{ $source }}" class="hidden prose max-w-none mb-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+      {{ . }}
+    </div>
+    {{ end }}
+  {{ end }}
   {{ end }}
 
   {{ $baseCfg := site.Data.filters.blog }}

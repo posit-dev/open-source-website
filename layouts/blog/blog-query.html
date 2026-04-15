@@ -12,6 +12,12 @@
 
   <h1 class="text-4xl font-medium text-gray-500 mb-2">{{ .Title }} blog posts</h1>
 
+  {{ with .Content }}
+  <div class="prose max-w-none my-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+    {{ . }}
+  </div>
+  {{ end }}
+
   <div class="prose my-4">
     {{ partial "button.html" (dict "url" "/blog/" "text" "All blog posts" "icon-left" "boxicons--chevron-left" "size" "small") }}
   </div>
