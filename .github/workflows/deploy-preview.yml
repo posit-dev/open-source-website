@@ -111,8 +111,10 @@ jobs:
       - name: Detect content changes
         id: detect-content
         run: |
-          git fetch origin main --depth=1
-          CHANGED=$(git diff --name-only origin/main -- 'content/' \
+          # HEAD is refs/pull/N/merge — a merge commit whose first parent is
+          # the base branch.  Diffing against HEAD~1 gives exactly the PR's
+          # changes, even when main has moved ahead of the merge ref.
+          CHANGED=$(git diff --name-only HEAD~1 -- 'content/' \
             | { grep -E '/_?index\.(md|qmd|ipynb|Rmd|Rmarkdown|markdown|html)$' || true; })
 
           if [ -z "$CHANGED" ]; then
