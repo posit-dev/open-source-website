@@ -11,7 +11,7 @@ description: >
   visualizations directly inside SQL queries.
 image: "ggsql.png"
 image-alt: "ggsql logo. A pencil with the body consisting of the standard database silo icon."
-categories:
+topics:
   - Visualization
 software:
   - ggsql
