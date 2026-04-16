@@ -235,9 +235,8 @@ class TestCheckDateFormat:
         ctx = make_ctx(tmp_path)
         p = post_path(tmp_path, "my-post")
         fm = {"date": datetime.datetime(2026, 4, 15, tzinfo=datetime.timezone.utc)}
-        issues = v.check_date_format(p, fm, ctx)
-        assert len(issues) == 1
-        assert "timestamp" in issues[0].message
+        # Quarto rendering produces timestamps; Hugo handles them fine
+        assert v.check_date_format(p, fm, ctx) == []
 
     def test_bad_string(self, tmp_path):
         ctx = make_ctx(tmp_path)
@@ -251,15 +250,14 @@ class TestCheckDateFormat:
         p = post_path(tmp_path, "my-post")
         assert v.check_date_format(p, {}, ctx) == []
 
-    def test_timestamp_ported_is_warning(self, tmp_path):
+    def test_timestamp_ported_is_accepted(self, tmp_path):
         ctx = make_ctx(tmp_path)
         p = post_path(tmp_path, "old", "post")
         fm = {
             "date": datetime.datetime(2023, 1, 1, tzinfo=datetime.timezone.utc),
             "ported_from": "quarto",
         }
-        issues = v.check_date_format(p, fm, ctx)
-        assert issues[0].level == "warning"
+        assert v.check_date_format(p, fm, ctx) == []
 
 
 # --- check_date_past ---
