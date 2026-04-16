@@ -12,9 +12,10 @@ Checks that posts have required metadata, use valid taxonomy values,
 and are correctly placed in the content directory.
 
 Usage:
-  scripts/validate-blog-posts.py                     # check all posts
+  scripts/validate-blog-posts.py                          # check all posts (no date warning)
   scripts/validate-blog-posts.py content/blog/x/index.md  # check specific posts
-  scripts/validate-blog-posts.py --strict             # treat warnings as errors
+  scripts/validate-blog-posts.py --strict                  # treat warnings as errors
+  scripts/validate-blog-posts.py --no-date-check           # skip past-date warning
 """
 
 import argparse
@@ -244,6 +245,39 @@ def check_date_format(
             sev,
         )
     ]
+
+
+def check_date_past(
+    post_path: Path, fm: dict, ctx: ValidationContext
+) -> list[Issue]:
+    """Warn if a new post's date is in the past."""
+    if is_ported(fm):
+        return []
+
+    date_val = fm.get("date")
+    if date_val is None:
+        return []
+
+    # Normalize to a date object
+    if isinstance(date_val, datetime.datetime):
+        date_val = date_val.date()
+    elif isinstance(date_val, str):
+        try:
+            date_val = datetime.date.fromisoformat(date_val)
+        except ValueError:
+            return []  # handled by check_date_format
+    elif not isinstance(date_val, datetime.date):
+        return []
+
+    if date_val < datetime.date.today():
+        return [
+            Issue(
+                post_path,
+                f"`date` is in the past (`{date_val}`). Post will publish immediately on merge.",
+                "warning",
+            )
+        ]
+    return []
 
 
 def check_topics(
@@ -550,6 +584,11 @@ def main() -> int:
         default="rich",
         help="Output format (default: rich)",
     )
+    parser.add_argument(
+        "--no-date-check",
+        action="store_true",
+        help="Skip the past-date warning (useful when checking all existing posts)",
+    )
     args = parser.parse_args()
 
     project_root = Path(__file__).resolve().parent.parent
@@ -559,6 +598,10 @@ def main() -> int:
     if not posts:
         console.print("[yellow]No blog posts found to validate.[/]")
         return 0
+
+    checks = list(ALL_CHECKS)
+    if not args.no_date_check:
+        checks.append(check_date_past)
 
     all_issues: list[Issue] = []
 
@@ -571,7 +614,7 @@ def main() -> int:
             )
             continue
 
-        for check in ALL_CHECKS:
+        for check in checks:
             all_issues.extend(check(post_path, fm, ctx))
 
     total = len(posts)

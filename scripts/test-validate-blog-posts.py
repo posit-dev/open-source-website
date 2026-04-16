@@ -262,6 +262,54 @@ class TestCheckDateFormat:
         assert issues[0].level == "warning"
 
 
+# --- check_date_past ---
+
+
+class TestCheckDatePast:
+    def test_future_date(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        future = datetime.date.today() + datetime.timedelta(days=7)
+        fm = {"date": future}
+        assert v.check_date_past(p, fm, ctx) == []
+
+    def test_today(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        fm = {"date": datetime.date.today()}
+        assert v.check_date_past(p, fm, ctx) == []
+
+    def test_past_date(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        past = datetime.date.today() - datetime.timedelta(days=1)
+        fm = {"date": past}
+        issues = v.check_date_past(p, fm, ctx)
+        assert len(issues) == 1
+        assert issues[0].level == "warning"
+        assert "in the past" in issues[0].message
+
+    def test_past_string_date(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        fm = {"date": "2020-01-01"}
+        issues = v.check_date_past(p, fm, ctx)
+        assert len(issues) == 1
+        assert "publish immediately" in issues[0].message
+
+    def test_ported_skipped(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "old", "post")
+        fm = {"date": datetime.date(2020, 1, 1), "ported_from": "tidyverse"}
+        assert v.check_date_past(p, fm, ctx) == []
+
+    def test_bad_format_skipped(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        fm = {"date": "not-a-date"}
+        assert v.check_date_past(p, fm, ctx) == []
+
+
 # --- check_topics ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: Test Post That Should Fail Validation
-date: 2026-04-16
+date: 2026-04-15
 people:
   - Charlotte Wickham
 description: A test post that previously failed validation but has been fixed.
