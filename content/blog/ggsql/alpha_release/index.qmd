@@ -19,6 +19,7 @@ languages:
   - SQL
 nohero: false
 hidesubscription: false
+code-annotations: hover
 ---
 
 Today, we are super excited to formally announce the alpha-release of [ggsql](https://ggsql.org). As the name suggests, ggsql is an implementation of the grammar of graphics based on the SQL syntax, bringing rich, structured visualization support to SQL for the first time.
@@ -83,49 +84,46 @@ That was a lot of words about the why. Hopefully you come away from it all with 
 Let's start with some code even though we haven't introduced the syntax yet. I promise we will go through it below. The example is an adaptation of a visualization created by [Jack Davison](https://jack-davison.github.io) for TidyTuesday.
 
 ```{ggsql}
-WITH astronauts AS (
-  SELECT * FROM (
-    SELECT *, ROW_NUMBER() OVER (PARTITION BY name ORDER BY mission_number DESC)   AS rn
-    FROM 'astronauts.parquet'
-  ) t
-  WHERE rn = 1
-)
-SELECT 
-  *, 
-  year_of_selection - year_of_birth AS age,
-  'Age at selection' AS category
-FROM astronauts
-UNION ALL
-SELECT 
-  *, 
-  year_of_mission - year_of_birth AS age,
-  'Age at mission' AS category
-FROM astronauts
+WITH astronauts AS (                            -- <1>
+  SELECT * FROM 'astronauts.parquet'            -- <1>
+  QUALIFY ROW_NUMBER() OVER (                   -- <1>
+    PARTITION BY name                           -- <1>
+    ORDER BY mission_number DESC                -- <1>
+  ) = 1                                         -- <1>
+)                                               -- <1>
 
-VISUALIZE age AS x, category AS fill
-DRAW histogram
-  SETTING binwidth => 1, position => 'identity'
-PLACE rule 
-  SETTING x => [34, 44], linetype => 'dotted'
-PLACE text
-  SETTING 
-    x => [34, 44, 60], 
-    y => [66, 49, 20],
-    label => [
-      'Mean age at selection = 34',
-      'Mean age at mission = 44',
-      'John Glenn was 77\non his last mission -\nthe oldest person to\ntravel in space!'
-    ],
-    hjust => 'left',
-    vjust => 'top',
-    offset => [10, 0]
-SCALE fill TO accent
-LABEL
-  title => 'How old are astronauts on their most recent mission?',
-  subtitle => 'Age of astronauts when they were selected and when they were sent on their mission',
-  x => 'Age of astronaut (years)',
-  fill => null
+VISUALIZE age AS x, category AS fill            -- <2>
+DRAW histogram                                  -- <3>
+  SETTING binwidth => 1, position => 'identity' -- <3>
+PLACE rule                                      -- <4>
+  SETTING x => [34, 44], linetype => 'dotted'   -- <4>
+PLACE text                                      -- <5>
+  SETTING                                       -- <5>
+    x => [34, 44, 60],                          -- <5>
+    y => [66, 49, 20],                          -- <5>
+    label => [                                  -- <5>
+      'Mean age at selection = 34',             -- <5>
+      'Mean age at mission = 44',               -- <5>
+      'John Glenn was 77\non his last mission -\nthe oldest person to\ntravel in space!' -- <5>
+    ],                                          -- <5>
+    hjust => 'left',                            -- <5>
+    vjust => 'top',                             -- <5>
+    offset => [10, 0]                           -- <5>
+SCALE fill TO accent                            -- <6>
+LABEL                                           -- <7>
+  title => 'How old are astronauts on their most recent mission?', -- <7>
+  subtitle => 'Age of astronauts when they were selected and when they were sent on their mission', -- <7>
+  x => 'Age of astronaut (years)',              -- <7>
+  fill => null                                  -- <7>
 ```
+
+1. A plain SQL query, the result of which will automatically be used in the visualization
+2. The start of the visual query. It includes global mappings that will be used by all layers ([Learn more](https://ggsql.org/syntax/clause/visualise.html))
+3. A histogram layer using the data from the SQL query ([Learn more](https://ggsql.org/syntax/clause/draw.html))
+4. A rule annotation layer using hard-coded data ([Learn more](https://ggsql.org/syntax/clause/place.html))
+5. A text annotation layer using hard-coded data ([Learn more](https://ggsql.org/syntax/clause/place.html))
+6. A scale clause modifying the default fill scale to use a different color palette A rule annotation layer using hard-coded data ([Learn more](https://ggsql.org/syntax/clause/scale.html))
+7. A label clause adding titles to the plot and modifying the default axes and legend titles A rule annotation layer using hard-coded data ([Learn more](https://ggsql.org/syntax/clause/label.html))
 
 That was a lot of code, but on the flip-side it allows us to cover a lot of the most important aspects of the syntax with one example.
 
@@ -139,9 +137,9 @@ Since the point of this post is not to teach you SQL we won't spend much more ti
 
 Now, let's look at the new part — everything from `VISUALIZE` and onwards. `VISUALIZE` marks the end of the SQL query and the beginning of the visualization query (or `VISUALISE` for those who prefer UK spelling). It can stand on its own or, as we do here, have one or more mappings which will become defaults for every subsequent layer. Mappings are purely for relating data to abstract visual properties. A mapping is like a `SELECT` where you alias columns to a visual properties (called *aesthetics* in the grammar of graphics). In the visualization above we say that the age column holds the values used for `x` (position along the x axis) and the category column holds the values used for `fill` (the fill color of the entity). We do not say anything about how to draw it yet. 
 
-Following the `VISUALIZE` query we have a `DRAW` query. `DRAW` is how we add layers to our visualization. There is a large selection of different layer types in ggsql. Some are straightforward: e.g. `point` for drawing a scatterplot. Some are more involved: `histogram` (which we use here) requires calculation of derived statistics like binned count. A visualization can have any number of layers and layers will be rendered in the sequence they are defined. `DRAW` has a sibling clause called `PLACE`. It is used for annotation and works like `DRAW` except it doesn't get data from a table but rather as provided literal values. It follows that our visualization above contains three layers: A histogram layer showing data from our table, a rule annotation layer showing precomputed mean values for each category, and a text annotation layer adding context to the visualization. 
+Following the `VISUALIZE` query we have a `DRAW` clause. `DRAW` is how we add layers to our visualization. There is a large selection of different layer types in ggsql. Some are straightforward: e.g. `point` for drawing a scatterplot. Some are more involved: `histogram` (which we use here) requires calculation of derived statistics like binned count. A visualization can have any number of layers and layers will be rendered in the sequence they are defined. `DRAW` has a sibling clause called `PLACE`. It is used for annotation and works like `DRAW` except it doesn't get data from a table but rather as provided literal values. It follows that our visualization above contains three layers: A histogram layer showing data from our table, a rule annotation layer showing precomputed mean values for each category, and a text annotation layer adding context to the visualization. It is worth mentioning that a layer does not correspond to a single graphical entity. Like with the text layer above, every layer can render multiple separate entities of its type so there is no need have e.g. 3 line layers to render line plots for 3 different categories.
 
-After the `DRAW` and `PLACE` clauses we have a `SCALE` clause. This clause controls how data values are translated into values that are meaningful for the aesthetic. In our case, the `category` column holds the strings "Age at mission" and "Age at selection" which doesn't in itself translate to a color value. The query `SCALE fill TO accent` tells ggsql to use the "accent" color palette when converting the values mapped to fill to actual colors. Scales can be used for much more, like applying transformations to continuous data, defining break points, and setting specific scale types (like ordinal or binned).
+After the `DRAW` and `PLACE` clauses we have a `SCALE` clause. This clause controls how data values are translated into values that are meaningful for the aesthetic. In our case, the `category` column holds the strings "Age at mission" and "Age at selection" which doesn't in itself translate to a color value. The clause `SCALE fill TO accent` tells ggsql to use the "accent" color palette when converting the values mapped to fill to actual colors. Scales can be used for much more, like applying transformations to continuous data, defining break points, and setting specific scale types (like ordinal or binned).
 
 The last clause in our visual query is `LABEL` which allows us to add or modify various text labels like title, subtitle, and axis and legend titles. 
 
@@ -182,7 +180,7 @@ As you can see the syntax and composable nature makes visualization iteration ve
 With a passing understanding of how to use ggsql, let's discuss what goes on behind the scenes. At its core ggsql is a modular rust library that is split into a Reader module, a Plot module, and a Writer module. Both the Reader and Writer can be swapped out, leaving the Plot module as the only constant.
 
 #### The Reader
-This module is responsible for communicating with your data backend, i.e. your SQL database. While this makes it sound like you need to have a complicated database setup in order to use ggsql, this is not the case. While ggsql ships with an [ODBC](https://wikipedia.org/wiki/Open_Database_Connectivity) and [Snowflake](https://www.snowflake.com/) reader, the default reader is [DuckDB](https://duckdb.org). DuckDB allows you to ingest e.g. parquet and csv files directly (no installation necessary) as we have done above, as well as talk to any DuckDB database you may have set up.
+This module is responsible for communicating with your data backend, i.e. your SQL database. While this makes it sound like you need to have a complicated database setup in order to use ggsql, this is not the case. While ggsql ships with an [ODBC](https://wikipedia.org/wiki/Open_Database_Connectivity) and [Snowflake](https://www.snowflake.com/) reader, the default reader is [DuckDB](https://duckdb.org). DuckDB allows you to ingest e.g. parquet and csv files directly (no installation necessary) as we have done above, as well as talk to remote SQL databases through its rich extension ecosystem.
 
 #### The Plot
 The Reader module communicates with the Plot module in two ways. It tells the Plot module about it's particular flavor of SQL and allows it to execute queries on it, returning the resulting data. On the other hand, the Plot module is responsible for reading the visualize query and parse it into a plot representation that can be handed off to the Writer. Part of this is to construct a single query for each layer in the visualization (each `DRAW` query) that returns the data needed for that layer. All computations necessary for the layer is part of this query and are thus handled by the backend. For instance, the query for the boxplot layer includes logic for calculating quantiles etc, all happening in the database without the need for materializing the raw data.
@@ -200,7 +198,9 @@ As part of the standard installation we provide a ggsql [Jupyter](https://jupyte
 The second part of the standard installation is a command line tool for executing queries from the command line, either by providing the query in a file or directly in the call. It also provides parsing and validation tools.
 
 #### VS Code + Positron extension
-The [ggsql VS Code extension](https://open-vsx.org/extension/ggsql/ggsql) provides a tailored ggsql experience for [Visual Studio Code](https://code.visualstudio.com) and in particular for [Positron](https://positron.posit.co). In Positron you will get a ggsql console where you can write and execute queries, with the result appearing in the plot pane along with your R and Python plots. You also get support for sending commands from a ggsql script to the console for execution, like you may know from R and Python. Lastly, in Positron we interface with the Connection pane allowing you to hook up ggsql to any database you have there and immediately begin visualizing the data in your data warehouse. 
+The [ggsql VS Code extension](https://open-vsx.org/extension/ggsql/ggsql) provides a tailored ggsql experience for [Visual Studio Code](https://code.visualstudio.com) and in particular for [Positron](https://positron.posit.co) (see screenshot below). In Positron you will get a ggsql console where you can write and execute queries, with the result appearing in the plot pane along with your R and Python plots. You also get support for sending commands from a ggsql script to the console for execution, like you may know from R and Python. Lastly, in Positron we interface with the Connection pane allowing you to hook up ggsql to any database you have there and immediately begin visualizing the data in your data warehouse. 
+
+![](positron.png)
 
 #### Python package
 The [ggsql package](https://pypi.org/project/ggsql/), available on PyPI, provides direct bindings to the rust library, allowing you to register data, send queries, and visualize the result.
