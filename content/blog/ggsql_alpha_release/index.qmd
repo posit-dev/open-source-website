@@ -205,7 +205,7 @@ The [ggsql VS Code extension](https://open-vsx.org/extension/ggsql/ggsql) provid
 <img src="positron.png" alt="A screenshot showing Positron running with the ggsql extension. In positron we have a ggsql file open with the code of the file also appearing in the ggsql console, along with the resulting plot shown in the plot pane. Also open is a qmd file containing ggsql blocks along with the rendered report shown next to it" />
 
 #### Python package
-The [ggsql package](https://pypi.org/project/ggsql/), available on PyPI, provides direct bindings to the rust library, allowing you to register data, send queries, and visualize the result.
+The [ggsql package](https://pypi.org/project/ggsql/), available on PyPI, provides direct bindings to the Rust library, allowing you to register data, send queries, and visualize the result.
 
 #### R package
 The ggsql package, soon to be available on CRAN, is an R sibling to the python package, providing the same level of direct bindings as the Python package does. In addition it provides a knitr engine that RMarkdown and Quarto can use which provides bidirectional data access between R, Python, and ggsql code blocks.
