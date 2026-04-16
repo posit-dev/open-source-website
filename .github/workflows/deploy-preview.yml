@@ -13,25 +13,15 @@ permissions:
   pull-requests: write
 
 jobs:
-  debug-association:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Log author association
-        run: |
-          echo "event_name: ${{ github.event_name }}"
-          echo "pr.author_association: ${{ github.event.pull_request.author_association }}"
-          echo "pr.user: ${{ github.event.pull_request.user.login }}"
-          echo "comment.author_association: ${{ github.event.comment.author_association }}"
-          echo "comment.user: ${{ github.event.comment.user.login }}"
-
   notify-fork-pr:
-    # Post a sticky comment on fork PRs from non-members explaining /deploy-preview.
+    # Post a sticky comment on every fork PR explaining /deploy-preview.
+    # Fork pushes get a read-only GITHUB_TOKEN with no access to secrets, so
+    # auto-deploy isn't possible regardless of the author's role. Every
+    # fork-PR author needs the same prompt — including members, who can
+    # self-trigger by commenting.
     if: >
       github.event_name == 'pull_request_target' &&
-      github.event.pull_request.head.repo.fork == true &&
-      github.event.pull_request.author_association != 'MEMBER' &&
-      github.event.pull_request.author_association != 'OWNER' &&
-      github.event.pull_request.author_association != 'COLLABORATOR'
+      github.event.pull_request.head.repo.fork == true
     runs-on: ubuntu-latest
     steps:
       - name: Post fork preview notice
@@ -42,13 +32,14 @@ jobs:
             ## Preview not available
 
             This PR is from a fork and cannot deploy a preview automatically.
-            A maintainer can comment `/deploy-preview` to trigger one.
+            A repository member can comment `/deploy-preview` to trigger one
+            (including you, if you have member access).
 
   build-and-deploy:
-    # Three paths to a preview deploy:
-    # 1. pull_request for non-fork PRs (workflow changes in PR are testable)
-    # 2. pull_request_target for fork PRs from org members (has secrets)
-    # 3. /deploy-preview comment from a maintainer (for external fork PRs)
+    # Two paths to a preview deploy:
+    # 1. pull_request for non-fork PRs (auto-deploy)
+    # 2. /deploy-preview comment from a member (covers fork PRs and anyone
+    #    without push access; members with fork PRs self-trigger this way)
     concurrency:
       group: deploy-preview-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number }}
       cancel-in-progress: true
@@ -56,15 +47,6 @@ jobs:
       (
         github.event_name == 'pull_request' &&
         github.event.pull_request.head.repo.fork != true
-      ) ||
-      (
-        github.event_name == 'pull_request_target' &&
-        github.event.pull_request.head.repo.fork == true &&
-        (
-          github.event.pull_request.author_association == 'MEMBER' ||
-          github.event.pull_request.author_association == 'OWNER' ||
-          github.event.pull_request.author_association == 'COLLABORATOR'
-        )
       ) ||
       (
         github.event.issue.pull_request &&
@@ -90,15 +72,6 @@ jobs:
       (
         github.event_name == 'pull_request' &&
         github.event.pull_request.head.repo.fork != true
-      ) ||
-      (
-        github.event_name == 'pull_request_target' &&
-        github.event.pull_request.head.repo.fork == true &&
-        (
-          github.event.pull_request.author_association == 'MEMBER' ||
-          github.event.pull_request.author_association == 'OWNER' ||
-          github.event.pull_request.author_association == 'COLLABORATOR'
-        )
       ) ||
       (
         github.event.issue.pull_request &&

@@ -368,7 +368,7 @@ See [`content/blog/_authoring-guide.md`](content/blog/_authoring-guide.md) for f
 
 **Quick start with Claude Code:**
 
-1. Clone this repository directly (don't fork — org members have Write access)
+1. Clone this repository directly if you're an org member (you have Write access via the Everyone team, so branch PRs get auto-preview). Working from a fork is supported too — you'll just comment `/deploy-preview` on your PR to trigger a preview build.
 2. Open Claude Code in the project root
 3. Run `/new-post` — it will guide you through scaffolding, frontmatter, branch creation, and environment setup interactively
 
@@ -459,6 +459,7 @@ The site uses GitHub Actions for CI/CD (`.github/workflows/deploy.yml`):
 1. **Pull Requests**: Automatically deploy preview builds with unique URLs
    - Preview URLs are posted as PR comments
    - Previews are cleaned up when PRs close
+   - Fork PRs don't auto-deploy (read-only token, no secrets). A member can comment `/deploy-preview` on the PR to trigger a preview build.
 
 2. **Main Branch**: Automatically deploy to production on Netlify
    - Triggers on push to `main`

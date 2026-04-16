@@ -7,17 +7,17 @@ Help the user create a new blog post for the Posit open-source website. Work thr
 
 ## Step 0: Preflight check
 
-Description: "Checking that you're working from a direct clone of the repo, not a fork"
+Description: "Checking whether you're working from a direct clone or a fork"
 
 ```sh
 git remote get-url origin
 ```
 
-If the remote URL does not contain `posit-dev/open-source-website`, warn the user:
+If the remote URL does not contain `posit-dev/open-source-website`, note to the user:
 
-> It looks like you're working from a fork rather than a direct clone. Members of the `posit-dev` org have Write access and should clone `posit-dev/open-source-website` directly — this ensures the deploy preview action works when you open a PR.
+> Looks like you're working from a fork. That's supported — you'll just need to comment `/deploy-preview` on your PR once to trigger the preview build (fork PRs can't auto-deploy because the workflow runs with a read-only token). If you're a member of the `posit-dev` org, the smoother path is to clone `posit-dev/open-source-website` directly so branch PRs get auto-deploy.
 
-Then ask whether they'd like to continue anyway or stop to re-clone.
+Then ask whether they'd like to continue from the fork or stop to re-clone.
 
 ## Step 1: Gather information
 
