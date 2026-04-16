@@ -170,6 +170,37 @@ A scheduled build runs daily at 8 AM UTC (3 AM EST / 4 AM EDT), so your post wil
 
 PR previews always use `--buildFuture`, so reviewers can see and check future-dated posts before they go live.
 
+## Validating your post
+
+A validation script checks frontmatter for required fields, valid taxonomy values, image existence, and other common issues.
+
+### Automatically on PRs
+
+Any PR that touches `content/blog/**` triggers a GitHub Actions workflow that validates changed posts and posts results as a comment on the PR. Errors block the check; warnings are advisory.
+
+### Locally
+
+Run the script against specific posts:
+
+```sh
+uv run scripts/validate-blog-posts.py content/blog/my-post/index.md
+```
+
+Or check all posts (skips the past-date warning since every published post would trigger it):
+
+```sh
+uv run scripts/validate-blog-posts.py --no-date-check
+```
+
+Other flags:
+
+- `--strict` — treat warnings as errors
+- `--format markdown` — output markdown (used by CI for PR comments)
+
+### With Claude Code
+
+The `/check-post` skill runs validation interactively and can offer to fix issues it finds.
+
 ## Content reference
 
 ### `.qmd` posts
