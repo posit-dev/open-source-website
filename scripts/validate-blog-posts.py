@@ -26,6 +26,8 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+import textwrap
+
 from rich.console import Console
 
 console = Console(stderr=True)
@@ -465,16 +467,26 @@ def display_issues_rich(
     for issue in all_issues:
         by_file.setdefault(issue.file, []).append(issue)
 
+    # "  ERROR  " and "  WARN   " are both 9 chars
+    prefix_width = 9
+    wrap_width = console.width or 80
+
     for file_path, issues in by_file.items():
         rel = _relative_path(file_path, project_root)
         console.print(f"\n[bold]{rel}[/bold]")
         for issue in issues:
             if issue.level == "error":
                 errors += 1
-                console.print(f"  [bold red]ERROR[/]  {issue.message}")
+                label = "[bold red]ERROR[/]"
             else:
                 warnings += 1
-                console.print(f"  [yellow]WARN[/]   {issue.message}")
+                label = "[yellow]WARN[/] "
+            wrapped = textwrap.fill(
+                issue.message,
+                width=wrap_width - prefix_width,
+                subsequent_indent=" " * prefix_width,
+            )
+            console.print(f"  {label}  {wrapped}")
 
     return errors, warnings
 
