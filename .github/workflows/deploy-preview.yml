@@ -13,6 +13,17 @@ permissions:
   pull-requests: write
 
 jobs:
+  debug-association:
+    if: >
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.head.repo.fork == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log author association
+        run: |
+          echo "author_association: ${{ github.event.pull_request.author_association }}"
+          echo "user: ${{ github.event.pull_request.user.login }}"
+
   notify-fork-pr:
     # Post a sticky comment on fork PRs from non-members explaining /deploy-preview.
     if: >
@@ -23,6 +34,10 @@ jobs:
       github.event.pull_request.author_association != 'COLLABORATOR'
     runs-on: ubuntu-latest
     steps:
+      - name: Log author association
+        run: |
+          echo "author_association: ${{ github.event.pull_request.author_association }}"
+          echo "user: ${{ github.event.pull_request.user.login }}"
       - name: Post fork preview notice
         uses: marocchino/sticky-pull-request-comment@v2
         with:
