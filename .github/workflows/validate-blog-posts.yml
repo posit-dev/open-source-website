@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
 
 jobs:
   validate:
@@ -48,13 +47,19 @@ jobs:
             $FILES > /tmp/validation-report.md || EXIT_CODE=$?
           echo "exit-code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
 
-      - name: Post results comment
+      - name: Stash PR number with report
         if: steps.changed.outputs.found == 'true'
-        uses: marocchino/sticky-pull-request-comment@v2
+        run: |
+          mkdir -p /tmp/report
+          cp /tmp/validation-report.md /tmp/report/report.md
+          echo "${{ github.event.pull_request.number }}" > /tmp/report/pr-number.txt
+
+      - name: Upload report
+        if: steps.changed.outputs.found == 'true'
+        uses: actions/upload-artifact@v4
         with:
-          header: blog-validation
-          recreate: true
-          path: /tmp/validation-report.md
+          name: blog-validation-report
+          path: /tmp/report/
 
       - name: Fail on errors
         if: steps.validate.outputs.exit-code != '0' && steps.changed.outputs.found == 'true'

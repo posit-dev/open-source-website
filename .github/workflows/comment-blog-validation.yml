@@ -1,0 +1,37 @@
+name: Comment Blog Validation
+
+on:
+  workflow_run:
+    workflows: ["Validate Blog Posts"]
+    types:
+      - completed
+
+permissions:
+  pull-requests: write
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    if: >
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion != 'cancelled'
+    steps:
+      - name: Download report
+        uses: actions/download-artifact@v4
+        with:
+          name: blog-validation-report
+          path: ./report
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Read PR number
+        id: pr
+        run: echo "number=$(cat ./report/pr-number.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Post results comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: blog-validation
+          recreate: true
+          path: ./report/report.md
+          number: ${{ steps.pr.outputs.number }}
