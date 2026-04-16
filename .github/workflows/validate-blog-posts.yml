@@ -44,12 +44,8 @@ jobs:
         run: |
           FILES=$(tr '\n' ' ' < /tmp/changed-posts.txt)
           EXIT_CODE=0
-          OUTPUT=$(uv run scripts/validate-blog-posts.py $FILES 2>&1) || EXIT_CODE=$?
-
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "output<<$EOF" >> "$GITHUB_OUTPUT"
-          echo "$OUTPUT" >> "$GITHUB_OUTPUT"
-          echo "$EOF" >> "$GITHUB_OUTPUT"
+          uv run --quiet scripts/validate-blog-posts.py --format markdown \
+            $FILES > /tmp/validation-report.md || EXIT_CODE=$?
           echo "exit-code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
 
       - name: Post results comment
@@ -57,14 +53,7 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: blog-validation
-          message: |
-            ## Blog post validation
-
-            ```
-            ${{ steps.validate.outputs.output }}
-            ```
-
-            ${{ steps.validate.outputs.exit-code == '0' && '✅ All checks passed.' || '❌ Some checks failed. Please review the errors above.' }}
+          path: /tmp/validation-report.md
 
       - name: Fail on errors
         if: steps.validate.outputs.exit-code != '0' && steps.changed.outputs.found == 'true'

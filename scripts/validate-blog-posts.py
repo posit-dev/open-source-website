@@ -446,8 +446,18 @@ def collect_posts(
     return [p for p in posts if p.name == "index.md"]
 
 
-def display_issues(all_issues: list[Issue], strict: bool) -> tuple[int, int]:
-    """Display issues grouped by file. Returns (error_count, warning_count)."""
+def _relative_path(file_path: Path, project_root: Path) -> Path:
+    """Return file_path relative to project_root, or as-is if not under it."""
+    try:
+        return file_path.relative_to(project_root)
+    except ValueError:
+        return file_path
+
+
+def display_issues_rich(
+    all_issues: list[Issue], project_root: Path
+) -> tuple[int, int]:
+    """Display issues with rich formatting. Returns (error_count, warning_count)."""
     errors = 0
     warnings = 0
 
@@ -456,7 +466,8 @@ def display_issues(all_issues: list[Issue], strict: bool) -> tuple[int, int]:
         by_file.setdefault(issue.file, []).append(issue)
 
     for file_path, issues in by_file.items():
-        console.print(f"\n[bold]{file_path}[/bold]")
+        rel = _relative_path(file_path, project_root)
+        console.print(f"\n[bold]{rel}[/bold]")
         for issue in issues:
             if issue.level == "error":
                 errors += 1
@@ -465,6 +476,45 @@ def display_issues(all_issues: list[Issue], strict: bool) -> tuple[int, int]:
                 warnings += 1
                 console.print(f"  [yellow]WARN[/]   {issue.message}")
 
+    return errors, warnings
+
+
+def display_issues_markdown(
+    all_issues: list[Issue], total: int, project_root: Path
+) -> tuple[int, int]:
+    """Display issues as markdown suitable for a PR comment. Returns (error_count, warning_count)."""
+    errors = 0
+    warnings = 0
+
+    by_file: dict[Path, list[Issue]] = {}
+    for issue in all_issues:
+        by_file.setdefault(issue.file, []).append(issue)
+
+    lines: list[str] = []
+    for file_path, issues in by_file.items():
+        rel = _relative_path(file_path, project_root)
+        lines.append(f"### `{rel}`")
+        lines.append("")
+        for issue in issues:
+            if issue.level == "error":
+                errors += 1
+                lines.append(f"- ❌ {issue.message}")
+            else:
+                warnings += 1
+                lines.append(f"- ⚠️ {issue.message}")
+        lines.append("")
+
+    if errors == 0 and warnings == 0:
+        lines.append(f"✅ All {total} posts passed validation.")
+    else:
+        parts = [f"{total} files checked"]
+        if errors:
+            parts.append(f"**{errors} errors**")
+        if warnings:
+            parts.append(f"{warnings} warnings")
+        lines.append(f"**Summary:** {', '.join(parts)}")
+
+    print("\n".join(lines))
     return errors, warnings
 
 
@@ -481,6 +531,12 @@ def main() -> int:
         "--strict",
         action="store_true",
         help="Treat warnings as errors",
+    )
+    parser.add_argument(
+        "--format",
+        choices=["rich", "markdown"],
+        default="rich",
+        help="Output format (default: rich)",
     )
     args = parser.parse_args()
 
@@ -506,20 +562,22 @@ def main() -> int:
         for check in ALL_CHECKS:
             all_issues.extend(check(post_path, fm, ctx))
 
-    errors, warnings = display_issues(all_issues, args.strict)
-
-    console.print()
     total = len(posts)
-    if errors == 0 and warnings == 0:
-        console.print(f"[green]All {total} posts passed validation.[/]")
-        return 0
 
-    parts = [f"{total} files checked"]
-    if errors:
-        parts.append(f"[bold red]{errors} errors[/]")
-    if warnings:
-        parts.append(f"[yellow]{warnings} warnings[/]")
-    console.print(f"Summary: {', '.join(parts)}")
+    if args.format == "markdown":
+        errors, warnings = display_issues_markdown(all_issues, total, project_root)
+    else:
+        errors, warnings = display_issues_rich(all_issues, project_root)
+        console.print()
+        if errors == 0 and warnings == 0:
+            console.print(f"[green]All {total} posts passed validation.[/]")
+        else:
+            parts = [f"{total} files checked"]
+            if errors:
+                parts.append(f"[bold red]{errors} errors[/]")
+            if warnings:
+                parts.append(f"[yellow]{warnings} warnings[/]")
+            console.print(f"Summary: {', '.join(parts)}")
 
     if errors > 0 or (args.strict and warnings > 0):
         return 1
