@@ -74,7 +74,9 @@ open-source-website/
 │   ├── update-software-frontmatter.py   # Update software YAML from github-repos.toml
 │   ├── download-software-images.py      # Download project logos
 │   ├── download-software-readmes.py     # Fetch README files
-│   └── summarize-software-readmes.py    # Generate AI summaries
+│   ├── summarize-software-readmes.py    # Generate AI summaries
+│   ├── validate-blog-posts.py           # Validate blog post frontmatter and placement
+│   └── test-validate-blog-posts.py      # Tests for validation script
 │
 ├── archetypes/                  # Content templates for hugo new
 │   ├── default.md
@@ -84,7 +86,8 @@ open-source-website/
 │
 ├── .github/workflows/           # CI/CD automation
 │   ├── deploy.yml              # Main deployment workflow
-│   └── netlify-cleanup.yml     # Preview cleanup on PR close
+│   ├── netlify-cleanup.yml     # Preview cleanup on PR close
+│   └── validate-blog-posts.yml # Blog post validation on PRs
 │
 └── Configuration Files
     ├── hugo.toml                # Hugo configuration
@@ -373,6 +376,20 @@ See [`content/blog/_authoring-guide.md`](content/blog/_authoring-guide.md) for f
 ```bash
 hugo new blog/my-post/index.md
 ```
+
+### Validating Blog Posts
+
+A CI workflow validates blog post frontmatter on every PR that touches `content/blog/**`, posting results as a comment. You can also run validation locally:
+
+```bash
+# Check specific posts
+uv run scripts/validate-blog-posts.py content/blog/my-post/index.md
+
+# Check all posts (skips past-date warning)
+uv run scripts/validate-blog-posts.py --no-date-check
+```
+
+If you're using Claude Code, the `/check-post` skill runs validation interactively and can offer fixes.
 
 ### Adding Team Members
 
