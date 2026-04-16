@@ -9,7 +9,7 @@ date: '2026-04-13'
 people:
   - Dianyi Yang
 topics:
-  - Publishing
+  - Some topic
   - Best Practices
 software:
   - quarto
