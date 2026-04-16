@@ -26,12 +26,12 @@ Today, we are super excited to formally announce the alpha-release of [ggsql](ht
 In this post we will go over some of the motivations that lead us to develop this tool, as well as give you ample examples of its use; so you can hopefully get as excited about it as we are (if you can't wait to get excited, [jump straight to the examples](#meet-ggsql)).
 
 ## Why ggsql?
-You may wonder why we have decided to spend time building a tool for SQL rather than pour our time and attention into our R and Python packages. Some of the reasons are:
+Writing a new visualization library from scratch is always a big task and you may wonder why we have decided on this endavour. Some of the reasons are:
 
 * We want to engage with and help data analysts and data scientists that predominantly work in SQL
+* SQL and the grammar of graphics just fits together extremely well
 * We want to create an extremely powerful, code-based, visualization tool that doesn't require a runtime
 * We have learned so much after 18 years of [ggplot2](https://ggplot2.tidyverse.org/) development and maintenance that it feels right to apply it to a blank canvas
-* SQL and the grammar of graphics just fits together extremely well
 
 Let's discuss each in turn.
 
@@ -49,23 +49,6 @@ Our goal when designing ggsql was that the syntax should immediately make sense 
 
 Apart from offering a better way to visualize their data, ggsql is also a way to invite SQL users into our rich ecosystem of code based report generation and sharing build on top of [Quarto](https://quarto.org/).
 
-### No runtime, no problem
-Why does it matter that [ggplot2](https://ggplot2.tidyverse.org/) and [plotnine](https://plotnine.org) requires R and Python installed respectively? Well, even if the situation has improved, R and Python are a much more complicated tech stack than a single small executable. If you spend most of your working day in one of those environments this is not an issue, but if you want to collaborate on a report with someone who doesn't it may well be. 
-
-There is another side to it as well. ggsql code cannot be malicious, in the way Python or R code (or code in any other programming language) can. There is no read-and-upload-all-environment-variables clause, nor an import-dubious-package query in ggsql — it can visualize and that's it. This makes the tool perfect for workflows where you are not the creator of the visualization code (👋 hello, AI agent).
-
-![](malicious.png)
-
-You may think we have had to swallow some bitter pills by moving away from an interpreted language, but it has also given us a lot. Most importantly, the rigid structure means that we can execute the whole data pipeline as a single SQL query per layer on the backend. This means that if you want to create a bar plot of 10 billion transactions you only ever fetch the count values for each bar from your data warehouse, not the 10 billion rows of data. The same is true for more complicated layer types such as boxplots and density plots.
-
-### We are now wise beyond our years
-
-![](age.gif)
-
-18 years of ggplot2 development and maintenance also means 18 years of thinking about data visualization syntax, use, and design. I am not a boastful person but I do believe that gives us some expert knowledge on the subject matter. However, not all of this knowledge can be poured back into ggplot2. There are decisions and expectations established many years ago that we have to honor, or at least only challenge very gradually (which we do on occasions).
-
-ggsql is a blank slate. Not only in the sense that we are building it from the ground up, but also in that it is built for an environment with no established expectations for a visualization tool. I cannot stress how liberating and invigorating this has felt, and I am positive that this shines through in how ggsql feels to the user.
-
 ### Declarative wrangling, declarative visualization
 If you are reading this with no prior knowledge of SQL, here's a very brief recap: SQL is a domain specific language for manipulating relational data stored in one or more tables. The syntax is based on the concept of relational algebra which is a structured way to think about data manipulation operations. The semantics defines a set of modular operations that are declarative rather than functional, allowing the user to compose very powerful and custom manipulations using a well-defined set of operations.
 
@@ -74,6 +57,24 @@ If you are reading this with no prior knowledge of the grammar of graphics, here
 ![](epic_handshake.png)
 
 From the above, slightly hyperbolic, overview it is clear that both SQL and the grammar of graphics have a lot of commonality in their approach to their respective domains. Together they can offer a very powerful and natural solution to the full pipeline from raw data to final visualization.
+
+### No runtime, no problem
+Why does it matter that [ggplot2](https://ggplot2.tidyverse.org/) and [plotnine](https://plotnine.org) requires R and Python installed respectively? There are clear benefits to a single, focused executable to handle data visualization:
+
+* Embedding a small executable in other tools are much easier than bundling R/Python (or requiring them to be installed)
+* Clear scope and need makes it easier to sandbox and prevent malicious code execution (either deliberately or in error)
+
+Both of the above points make ggsql a much more compelling option for integrating into tools such as AI agents assisting you in data analysis, or code based reporting tools that may execute code in different environments.
+
+You may think we have had to swallow some bitter pills by moving away from an interpreted language, but it has also given us a lot. Most importantly, the rigid structure means that we can execute the whole data pipeline as a single SQL query per layer on the backend. This means that if you want to create a bar plot of 10 billion transactions you only ever fetch the count values for each bar from your data warehouse, not the 10 billion rows of data. The same is true for more complicated layer types such as boxplots and density plots. This is in stark contrast to the situation in most visualization tools that first materializes the data (potentially chocking on the size), then perform the necessary computations on it, before proceeding to plot it.
+
+### We are now wise beyond our years
+
+![](age.gif){fig-align="center"}
+
+18 years of ggplot2 development and maintenance also means 18 years of thinking about data visualization syntax, use, and design. I am not a boastful person but I do believe that gives us some expert knowledge on the subject matter. However, not all of this knowledge can be poured back into ggplot2. There are decisions and expectations established many years ago that we have to honor, or at least only challenge very gradually (which we do on occasions).
+
+ggsql is a blank slate. Not only in the sense that we are building it from the ground up, but also in that it is built for an environment with no established expectations for a visualization tool. I cannot stress how liberating and invigorating this has felt, and I am positive that this shines through in how ggsql feels to the user.
 
 ## Meet ggsql
 That was a lot of words about the why. Hopefully you come away from it all with a sense of this whole thing being justified, ready to learn more about it. If so, read on!
@@ -199,7 +200,7 @@ As part of the standard installation we provide a ggsql [Jupyter](https://jupyte
 The second part of the standard installation is a command line tool for executing queries from the command line, either by providing the query in a file or directly in the call. It also provides parsing and validation tools.
 
 #### VS Code + Positron extension
-The [ggsql VS Code extension](https://open-vsx.org/extension/ggsql/ggsql) provides a tailored ggsql experience for [Visual Studio Code](https://code.visualstudio.com) and in particular for [Positron](https://positron.posit.co). In Positron you will get a ggsql console where you can write and execute queries, with the result appearing in the plot pane along with your R and Python plots. You also get cmd+enter support for sending commands from a ggsql script to the console for execution. Lastly, in Positron we interface with the Connection pane allowing you to hook up ggsql to any database you have there and immediately begin visualizing the data in your data warehouse. 
+The [ggsql VS Code extension](https://open-vsx.org/extension/ggsql/ggsql) provides a tailored ggsql experience for [Visual Studio Code](https://code.visualstudio.com) and in particular for [Positron](https://positron.posit.co). In Positron you will get a ggsql console where you can write and execute queries, with the result appearing in the plot pane along with your R and Python plots. You also get support for sending commands from a ggsql script to the console for execution, like you may know from R and Python. Lastly, in Positron we interface with the Connection pane allowing you to hook up ggsql to any database you have there and immediately begin visualizing the data in your data warehouse. 
 
 #### Python package
 The [ggsql package](https://pypi.org/project/ggsql/), available on PyPI, provides direct bindings to the rust library, allowing you to register data, send queries, and visualize the result.
