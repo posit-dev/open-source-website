@@ -37,7 +37,7 @@ Let's discuss each in turn.
 
 ### Hello, SQL user!
 
-![](greet.png){fig-alt="Humorous SQL query greeting SQL users that aren't R and Python users as well: SELECT 'Hello' AS greetings FROM SQL_users WHERE other_language NOT IN ('R', 'Python')"}
+<img src="greet.png" alt="Humorous SQL query greeting SQL users that aren't R and Python users as well: SELECT 'Hello' AS greetings FROM SQL_users WHERE other_language NOT IN ('R', 'Python')" />
 
 While first R and then Python captured all the attention of the data science revolution, SQL chucked along as the reliant and powerful workhorse beneath it all. We recognize that there are large portions of people that work with data that do so only or predominantly in SQL. The choice they have for visualizing their data are often suboptimal in our view:
 
@@ -54,7 +54,7 @@ If you are reading this with no prior knowledge of SQL, here's a very brief reca
 
 If you are reading this with no prior knowledge of the grammar of graphics, here's a very brief recap: The grammar of graphics is a theoretical deconstruction of the concepts of data visualization into its modular parts. While purely theoretical, tools such as ggplot2 have implemented the idea in practice. The semantics defines a set of modular operations that are declarative rather than functional, allowing the user to compose very powerful and custom visualizations using a well-defined set of operations.
 
-![](epic_handshake.png){fig-alt="Epic handshake meme showing SQL and the grammar of graphics agreeing on declarative, composable operations"}
+<img src="epic_handshake.png" alt="Epic handshake meme showing SQL and the grammar of graphics agreeing on declarative, composable operations" />
 
 From the above, slightly hyperbolic, overview it is clear that both SQL and the grammar of graphics have a lot of commonality in their approach to their respective domains. Together they can offer a very powerful and natural solution to the full pipeline from raw data to final visualization.
 
@@ -70,7 +70,7 @@ You may think we have had to swallow some bitter pills by moving away from an in
 
 ### We are now wise beyond our years
 
-![](age.gif){fig-align="center" fig-alt="Titanic meme showing aged Rose saying 'It's been 84 years'"}
+<img src="age.gif" style="display: block; margin: auto;" alt="Titanic meme showing aged Rose saying 'It's been 84 years'" />
 
 18 years of ggplot2 development and maintenance also means 18 years of thinking about data visualization syntax, use, and design. I am not a boastful person but I do believe that gives us some expert knowledge on the subject matter. However, not all of this knowledge can be poured back into ggplot2. There are decisions and expectations established many years ago that we have to honor, or at least only challenge very gradually (which we do on occasions).
 
@@ -202,7 +202,7 @@ The second part of the standard installation is a command line tool for executin
 #### VS Code + Positron extension
 The [ggsql VS Code extension](https://open-vsx.org/extension/ggsql/ggsql) provides a tailored ggsql experience for [Visual Studio Code](https://code.visualstudio.com) and in particular for [Positron](https://positron.posit.co) (see screenshot below). In Positron you will get a ggsql console where you can write and execute queries, with the result appearing in the plot pane along with your R and Python plots. You also get support for sending commands from a ggsql script to the console for execution, like you may know from R and Python. Lastly, in Positron we interface with the Connection pane allowing you to hook up ggsql to any database you have there and immediately begin visualizing the data in your data warehouse. 
 
-![](positron.png){fig-alt="A screenshot showing Positron running with the ggsql extension. In positron we have a ggsql file open with the code of the file also appearing in the ggsql console, along with the resulting plot shown in the plot pane. Also open is a qmd file containing ggsql blocks along with the rendered report shown next to it"}
+<img src="positron.png" alt="A screenshot showing Positron running with the ggsql extension. In positron we have a ggsql file open with the code of the file also appearing in the ggsql console, along with the resulting plot shown in the plot pane. Also open is a qmd file containing ggsql blocks along with the rendered report shown next to it" />
 
 #### Python package
 The [ggsql package](https://pypi.org/project/ggsql/), available on PyPI, provides direct bindings to the rust library, allowing you to register data, send queries, and visualize the result.
