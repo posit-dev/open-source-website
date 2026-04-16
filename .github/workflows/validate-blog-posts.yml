@@ -31,10 +31,7 @@ jobs:
             echo "found=false" >> "$GITHUB_OUTPUT"
           else
             echo "found=true" >> "$GITHUB_OUTPUT"
-            EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-            echo "files<<$EOF" >> "$GITHUB_OUTPUT"
-            echo "$CHANGED" >> "$GITHUB_OUTPUT"
-            echo "$EOF" >> "$GITHUB_OUTPUT"
+            echo "$CHANGED" > /tmp/changed-posts.txt
           fi
 
       - name: Install uv
@@ -45,8 +42,9 @@ jobs:
         if: steps.changed.outputs.found == 'true'
         id: validate
         run: |
+          FILES=$(tr '\n' ' ' < /tmp/changed-posts.txt)
           EXIT_CODE=0
-          OUTPUT=$(uv run scripts/validate-blog-posts.py ${{ steps.changed.outputs.files }} 2>&1) || EXIT_CODE=$?
+          OUTPUT=$(uv run scripts/validate-blog-posts.py $FILES 2>&1) || EXIT_CODE=$?
 
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           echo "output<<$EOF" >> "$GITHUB_OUTPUT"
