@@ -107,6 +107,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           ref: ${{ format('refs/pull/{0}/merge', github.event.pull_request.number || github.event.issue.number) }}
+          fetch-depth: 2
 
       - name: Detect content changes
         id: detect-content
