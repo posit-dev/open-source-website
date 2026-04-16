@@ -19,7 +19,6 @@ languages:
   - SQL
 nohero: false
 hidesubscription: false
-code-annotations: hover
 ---
 
 Today, we are super excited to formally announce the alpha-release of [ggsql](https://ggsql.org). As the name suggests, ggsql is an implementation of the grammar of graphics based on the SQL syntax, bringing rich, structured visualization support to SQL for the first time.
@@ -127,14 +126,6 @@ LABEL
   x => 'Age of astronaut (years)',
   fill => null
 ```
-
-1. A plain SQL query, the result of which will automatically be used in the visualization
-2. The start of the visual query. It includes global mappings that will be used by all layers ([Learn more](https://ggsql.org/syntax/clause/visualise.html))
-3. A histogram layer using the data from the SQL query ([Learn more](https://ggsql.org/syntax/clause/draw.html))
-4. A rule annotation layer using hard-coded data ([Learn more](https://ggsql.org/syntax/clause/place.html))
-5. A text annotation layer using hard-coded data ([Learn more](https://ggsql.org/syntax/clause/place.html))
-6. A scale clause modifying the default fill scale to use a different color palette A rule annotation layer using hard-coded data ([Learn more](https://ggsql.org/syntax/clause/scale.html))
-7. A label clause adding titles to the plot and modifying the default axes and legend titles A rule annotation layer using hard-coded data ([Learn more](https://ggsql.org/syntax/clause/label.html))
 
 That was a lot of code, but on the flip-side it allows us to cover a lot of the most important aspects of the syntax with one example.
 
