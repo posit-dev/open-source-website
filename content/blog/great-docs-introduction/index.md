@@ -11,15 +11,13 @@ image: assets/great-docs-logo.png
 image-alt: The Great Docs logo (GD)
 software:
   - great-docs
+  - quarto
 languages:
   - Python
-categories:
-  - Open Source
+topics:
+  - Publishing
+  - Best Practices
 tags:
-  - Great Docs
-  - Quarto
-  - Documentation
-ported_categories:
   - Documentation
   - Python Packages
 ---
@@ -38,7 +36,7 @@ Great Docs is a documentation site generator for Python packages. You point it a
 
 The entire workflow involves just a few commands:
 
-```{.bash filename="Terminal"}
+```bash
 great-docs init       # one-time: auto-detect your package, write config
 great-docs build      # build (or rebuild) the site
 great-docs preview    # open it in your browser
@@ -95,7 +93,7 @@ Great Docs ships with a set of styles and interactive features that cover most o
 - **Social cards** with automatic Open Graph and Twitter Card meta tags for rich link previews
 - **Page tags** for categorizing pages via YAML frontmatter, rendered as pill-shaped links above the title with an auto-generated tags index page
 - **Page status badges** marking pages as *new*, *beta*, *deprecated*, or *experimental*, with color-coded badges below the title and compact icons in the sidebar
-- **Inline icons** via the `{{< icon name >}}` shortcode, giving access to 1,900+ [Lucide](https://lucide.dev/) icons that scale with text and inherit color
+- **Inline icons** via the `{{</* icon name */>}}` shortcode, giving access to 1,900+ [Lucide](https://lucide.dev/) icons that scale with text and inherit color
 - **Navigation icons** via [Lucide](https://lucide.dev/) for navbar and sidebar labels
 - **Internationalization** with support for 23 languages via a single `site.language` config option
 - **JS Tooltips** replacing native browser tooltips with styled, theme-aware popovers
@@ -111,7 +109,7 @@ Every reference page also gets a parallel Markdown version, and a "Copy Page" wi
 
 Great Docs also supports the [Agent Skills](https://agentskills.io/) specification. If your project contains a `SKILL.md` file, Great Docs automatically discovers it, publishes the skill at `/.well-known/skills/`, and serves it for agent discovery without any configuration. If you do not have a hand-written skill, Great Docs generates one for you. Either way, coding agents like Claude Code, GitHub Copilot, Cursor, and Codex can find and install your package's skill with a single command:
 
-```{.bash filename="Terminal"}
+```bash
 npx skills add https://your-org.github.io/your-package/
 ```
 
@@ -127,14 +125,14 @@ If your package has a [Click](https://click.palletsprojects.com/)-based command-
 
 All you have to do is specify the CLI module in your configuration:
 
-```{.yaml filename="great-docs.yml"}
+```yaml
 cli:
   enabled: true
   module: my_package.cli
   name: cli
 ```
 
-![The CLI reference page for the `great-docs build` command, showing the command description, arguments, and options in a structured layout.](assets/cli-page.png)
+![The CLI reference page for the great-docs build command, showing the command description, arguments, and options in a structured layout.](assets/cli-page.png)
 
 Click is the starting point, but the [roadmap](https://posit-dev.github.io/great-docs/roadmap.html) includes support for Typer, argparse, and Fire, with a plugin interface for additional frameworks. The plan is also to move beyond raw `--help` output toward richer, API-reference-style rendering: styled parameter tables with type annotations and defaults, auto-generated usage examples, cross-references between subcommands and parent groups, environment variable documentation, and full search integration so CLI commands are indexed alongside API symbols.
 
@@ -146,7 +144,7 @@ Great Docs supports a `user_guide/` directory where you place `.qmd` or `.md` fi
 
 Beyond user guides, you can define arbitrary custom sections for recipes, tutorials, examples, or any other content grouping. And if you want a blog, Great Docs supports blog-type sections with chronological listings and Quarto's blog features built in.
 
-```{.yaml filename="great-docs.yml"}
+```yaml
 sections:
   - title: Recipes
     dir: recipes
@@ -161,7 +159,7 @@ Every documented class, method, and function gets an automatic link back to its 
 
 When your documentation is ready, deploying to GitHub Pages is a single command:
 
-```{.bash filename="Terminal"}
+```bash
 great-docs setup-github-pages
 ```
 
@@ -184,7 +182,7 @@ The `great-docs.yml` configuration file is the single source of truth for your d
 
 Here is what a configuration might look like for a well-established project:
 
-```{.yaml filename="great-docs.yml"}
+```yaml
 display_name: My Package
 
 announcement:
@@ -240,13 +238,13 @@ The `great-docs.yml` file and your `user_guide/` directory are the only things y
 
 ## What's Next
 
-Great Docs is under active development and has shipped seven releases (`v0.1` through `v0.7`) since its initial launch. The [roadmap](https://posit-dev.github.io/great-docs/roadmap.html) is quite ambitious. Near-term priorities include author attribution with GitHub-style avatars, reading time estimates, breadcrumb navigation, and an enhanced CLI reference supporting Typer, argparse, and Fire alongside Click.
+Great Docs is under active development and has shipped seven releases (`v0.1` through `v0.7`) since its initial launch. The [roadmap](https://posit-dev.github.io/great-docs/roadmap.html) is quite ambitious. Near-term priorities include author attribution with GitHub-style avatars, reading time estimates, breadcrumb navigation, and an enhanced CLI reference supporting Typer, argparse, and Fire alongside Click. Further out, the roadmap covers multi-version documentation with a version selector, multi-language API documentation spanning Python, R, Rust, and JavaScript, interactive examples powered by Pyodide or JupyterLite, notebook galleries, instant SPA-like page navigation, and a plugin system for third-party extensions.
 
 ## Get Started
 
 Great Docs is open source under the MIT license and available on [PyPI](https://pypi.org/project/great-docs/). To get started:
 
-```{.bash filename="Terminal"}
+```bash
 pip install great-docs
 cd your-python-project
 great-docs init
