@@ -1,5 +1,5 @@
 ---
-title: "RAG with raghilda"
+title: "RAG with raghilda TRIVIAL"
 date: '2026-04-14'
 description: |
   An introduction to building retrieval-augmented generation systems with raghilda.
