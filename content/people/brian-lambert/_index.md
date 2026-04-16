@@ -5,7 +5,7 @@ role: "Senior Principal Software Engineer"
 affiliation: "Posit, PBC"
 social:
   bluesky: ""
-  github: "LambdaBrian"
+  github: "softwarenerd"
   linkedin: ""
   mastodon: ""
   orcid: ""
