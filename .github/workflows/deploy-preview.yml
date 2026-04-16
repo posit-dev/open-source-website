@@ -15,14 +15,24 @@ permissions:
 jobs:
   debug-association:
     if: >
-      github.event_name == 'pull_request_target' &&
-      github.event.pull_request.head.repo.fork == true
+      (
+        github.event_name == 'pull_request_target' &&
+        github.event.pull_request.head.repo.fork == true
+      ) ||
+      (
+        github.event_name == 'issue_comment' &&
+        github.event.issue.pull_request &&
+        startsWith(github.event.comment.body, '/deploy-preview')
+      )
     runs-on: ubuntu-latest
     steps:
       - name: Log author association
         run: |
-          echo "author_association: ${{ github.event.pull_request.author_association }}"
-          echo "user: ${{ github.event.pull_request.user.login }}"
+          echo "event_name: ${{ github.event_name }}"
+          echo "pr.author_association: ${{ github.event.pull_request.author_association }}"
+          echo "pr.user: ${{ github.event.pull_request.user.login }}"
+          echo "comment.author_association: ${{ github.event.comment.author_association }}"
+          echo "comment.user: ${{ github.event.comment.user.login }}"
 
   notify-fork-pr:
     # Post a sticky comment on fork PRs from non-members explaining /deploy-preview.
