@@ -2,7 +2,9 @@
 
 All blog posts should be submitted as a pull request against `main` — don't push directly to the branch. This ensures every post gets a Netlify preview before it goes live.
 
-**Posit org members:** Clone the repo directly — don't fork it. You have Write access to `posit-dev/open-source-website`, so you can push branches straight to the main repo and open a PR from there.
+**Posit org members:** Clone the repo directly — don't fork it. As a member of the Everyone team you have Write access to `posit-dev/open-source-website`, so you can push branches straight to the main repo and open a PR from there. This is the smoothest path because branch PRs get a Netlify preview automatically.
+
+If you already work from a fork (your own preference, or a personal-fork-first workflow), that's fine too — you'll just need to comment `/deploy-preview` on your PR once to trigger the preview build. Fork PRs can't auto-deploy because GitHub gives the workflow a read-only token with no access to our Netlify secrets.
 
 If you're using Claude Code, the `/new-post` skill will handle scaffolding, frontmatter, branch creation, and environment setup interactively.
 
@@ -93,6 +95,8 @@ Reviewers and CI can build the site without re-executing your code.
 ### Option 1: PR preview (simplest)
 
 Open a pull request against `main`. GitHub Actions will build the site and post a Netlify preview URL as a comment on the PR — no local setup required.
+
+If your PR is from a fork, auto-deploy is disabled (fork workflows run with a read-only token). A member — including you, if you have member access — can comment `/deploy-preview` on the PR to trigger the build.
 
 The preview URL looks like `https://<hash>--posit-open-source.netlify.app`. All posts use the format `/blog/YYYY-MM-DD_slug/`, where date and slug come from frontmatter:
 

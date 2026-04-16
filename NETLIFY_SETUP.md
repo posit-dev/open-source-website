@@ -65,7 +65,8 @@ Once the secrets are added, you can trigger a deployment by:
 ## Expected Behavior
 
 - **Push to main**: Deploys to production at your Netlify site URL
-- **Pull requests**: Creates a unique preview URL and posts it as a comment on the PR
+- **Pull requests from a branch on this repo**: Creates a unique preview URL and posts it as a comment on the PR
+- **Pull requests from a fork**: Don't auto-deploy (fork workflows run with a read-only token and no access to secrets). A member can comment `/deploy-preview` on the PR to trigger a preview build.
 - **Manual trigger**: Can manually deploy from the Actions tab
 
 ## Troubleshooting
