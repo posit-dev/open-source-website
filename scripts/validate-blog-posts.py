@@ -502,7 +502,7 @@ def display_issues_markdown(
     for issue in all_issues:
         by_file.setdefault(issue.file, []).append(issue)
 
-    lines: list[str] = []
+    lines: list[str] = ["## Blog YAML Checks", ""]
     for file_path, issues in by_file.items():
         rel = _relative_path(file_path, project_root)
         lines.append(f"### `{rel}`")
@@ -517,7 +517,7 @@ def display_issues_markdown(
         lines.append("")
 
     if errors == 0 and warnings == 0:
-        lines.append(f"✅ All {total} posts passed validation.")
+        lines.append(f"✅ All {total} posts passed.")
     else:
         parts = [f"{total} files checked"]
         if errors:

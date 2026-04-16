@@ -1,11 +1,9 @@
 ---
 title: Test Post That Should Fail Validation
-date: April 16, 2026
+date: 2026-04-16
 people: Nobody Real
-categories:
-  - Testing
-image: missing-image.png
-image-alt: An image that does not exist.
+image: thumbnail.png
+image-alt: A placeholder image for testing purposes.
 topics:
   - Fake Topic
 software:
