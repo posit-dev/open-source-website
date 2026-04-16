@@ -216,13 +216,9 @@ def check_date_format(
         return []  # plain date object — valid
 
     if isinstance(date_val, datetime.datetime):
-        return [
-            Issue(
-                post_path,
-                f"`date` must be YYYY-MM-DD, not a timestamp. Found: `{date_val}`.",
-                sev,
-            )
-        ]
+        # Quarto rendering can turn YYYY-MM-DD into a full timestamp
+        # (e.g. 2026-04-09T00:00:00.000Z). Hugo handles these fine.
+        return []
 
     if isinstance(date_val, str):
         try:
