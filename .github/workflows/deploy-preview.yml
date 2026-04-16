@@ -14,16 +14,6 @@ permissions:
 
 jobs:
   debug-association:
-    if: >
-      (
-        github.event_name == 'pull_request_target' &&
-        github.event.pull_request.head.repo.fork == true
-      ) ||
-      (
-        github.event_name == 'issue_comment' &&
-        github.event.issue.pull_request &&
-        startsWith(github.event.comment.body, '/deploy-preview')
-      )
     runs-on: ubuntu-latest
     steps:
       - name: Log author association
