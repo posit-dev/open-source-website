@@ -35,6 +35,7 @@ See `CLAUDE.md` in this directory for the full metadata schema. A few things wor
 - **Authors** — use `people`, not `author`. List individuals by full name; don't use team names like "Shiny Team"
 - **Image** — 1920×1080 PNG or JPG recommended (16:9); GIF is supported and animation will play in the hero and listings
 - **Alt text** — describe what the image shows; "screenshot" or "logo" alone isn't enough
+- **Legacy blog listing** — if your post should appear on a legacy blog's listing page (e.g. `/blog/tidyverse/`), add `source: tidyverse`. Valid values: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`, `education`, `rstudio`. Most new posts won't need this.
 
 ## Setting up an environment
 
@@ -168,6 +169,37 @@ To publish a post on a specific future date, set `date` in frontmatter to that d
 A scheduled build runs daily at 8 AM UTC (3 AM EST / 4 AM EDT), so your post will go live automatically on the morning of its publish date. No manual action needed.
 
 PR previews always use `--buildFuture`, so reviewers can see and check future-dated posts before they go live.
+
+## Validating your post
+
+A validation script checks frontmatter for required fields, valid taxonomy values, image existence, and other common issues.
+
+### Automatically on PRs
+
+Any PR that touches `content/blog/**` triggers a GitHub Actions workflow that validates changed posts and posts results as a comment on the PR. Errors block the check; warnings are advisory.
+
+### Locally
+
+Run the script against specific posts:
+
+```sh
+uv run scripts/validate-blog-posts.py content/blog/my-post/index.md
+```
+
+Or check all posts (skips the past-date warning since every published post would trigger it):
+
+```sh
+uv run scripts/validate-blog-posts.py --no-date-check
+```
+
+Other flags:
+
+- `--strict` — treat warnings as errors
+- `--format markdown` — output markdown (used by CI for PR comments)
+
+### With Claude Code
+
+The `/check-post` skill runs validation interactively and can offer to fix issues it finds.
 
 ## Content reference
 
