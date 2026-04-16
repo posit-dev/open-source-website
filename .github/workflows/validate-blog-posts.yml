@@ -53,6 +53,7 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: blog-validation
+          recreate: true
           path: /tmp/validation-report.md
 
       - name: Fail on errors
