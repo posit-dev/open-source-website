@@ -5,7 +5,7 @@ role: "Manager, Security Operations"
 affiliation: "Posit, PBC"
 social:
   bluesky: ""
-  github: ""
+  github: "cak"
   linkedin: ""
   mastodon: ""
   orcid: ""

@@ -5,7 +5,7 @@ affiliation: "Posit, PBC"
 image: "cindy-tong.jpeg"
 social:
   bluesky: ""
-  github: ""
+  github: "cindyytong"
   linkedin: ""
   mastodon: ""
   orcid: ""

@@ -5,7 +5,7 @@ role: "Director, Engineering"
 affiliation: "Posit, PBC"
 social:
   bluesky: ""
-  github: "aholz"
+  github: "icarusz"
   linkedin: ""
   mastodon: ""
   orcid: ""
