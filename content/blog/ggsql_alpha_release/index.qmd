@@ -26,7 +26,7 @@ Today, we are super excited to announce the alpha-release of [ggsql](https://ggs
 In this post we will go over some of the motivations that lead us to develop this tool, as well as give you ample examples of its use; so you can hopefully get as excited about it as we are.
 
 ## Meet ggsql
-That was a lot of code, but it allows us to cover a lot of the most important aspects of the syntax with one example.
+Before we discuss the why, let's see what ggsql is all about with some examples.
 
 ### The first plot
 To get our feet wet, lets start with the hello-world of visualizations: A scatterplot, using the built-in penguins dataset:
@@ -36,7 +36,7 @@ VISUALIZE bill_len AS x, bill_dep AS y FROM ggsql:penguins
 DRAW point
 ```
 
-That wasn't too bad. Sure, it got the verbosity of SQL, but that also means that you can speak out your plot code and understand what it does. We can break down what is going on here line-by-line:
+That wasn't too bad. Sure, it has the verbosity of SQL, but that also means that you can speak your plot code out loud and understand what it does. We can break down what is going on here line-by-line:
 
 1. We initiate the visual query with `VISUALIZE` and provide a mapping from the built-in penguins dataset, relating `x` to the data in the `bill_len` column, and `y` in the `bill_dep` column.
 2. We draw a point layer that, by default, uses the mapping we defined at the top.
@@ -48,16 +48,15 @@ VISUALIZE bill_len AS x, bill_dep AS y, species AS color FROM ggsql:penguins
 DRAW point
 ```
 
-We see that a single addition to the mappings add colored categories to the plot. This gradual evolution of plot code is one of the biggest strengths of the grammar of graphics. There are no predefined plot types, only modular parts that can be combined, added, and removed. To further emphasize this, let's add a smooth regression line to the plot:
+We see that a single addition to the mappings adds colored categories to the plot. This gradual evolution of plot code is one of the biggest strengths of the grammar of graphics. There are no predefined plot types, only modular parts that can be combined, added, and removed. To further emphasize this, let's add a smooth regression line to the plot:
 
 ```{ggsql}
 VISUALIZE bill_len AS x, bill_dep AS y, species AS color FROM ggsql:penguins
 DRAW point
 DRAW smooth
-  MAPPING null AS color
 ```
 
-We add a new layer on top of the point layer. This layer also borrows the same mapping as the point layer but overrides the color mapping since we want a single smooth line for all data.
+We add a new layer on top of the point layer. This layer also borrows the same mapping as the point layer. Since we color by species, the smooth line is split into one for each species.
 
 We can continue doing this, adding more mappings, adding or swapping layers, controlling how scales are applied etc until we arrive at the plot we need, however simple or complicated it may be. In the above example we may well end up deciding we are more interested in looking at the distribution of species across the three islands the data was collected from:
 
@@ -142,7 +141,7 @@ That was a mouthful. But there are two very silvery linings to it all:
 1. You now know the most important aspects of the syntax (there are more, of course, but you can grow into that)
 2. Many visualization queries will be much simpler than the one above
 
-We have already seen examples of shorter visual queries above but let's delve on it a bit more with a boxplot of astronaut birth year split by sex:
+We have already seen examples of shorter visual queries above but let's continue with a boxplot of astronaut birth year split by sex:
 
 ```{ggsql}
 VISUALIZE sex AS x, year_of_birth AS y FROM 'astronauts.parquet'
