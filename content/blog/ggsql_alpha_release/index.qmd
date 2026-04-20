@@ -1,6 +1,6 @@
 ---
 title: "ggsql: A grammar of graphics for SQL"
-date: 2026-04-17
+date: 2026-04-20
 people:
   - Thomas Lin Pedersen
   - Teun Van den Brand
