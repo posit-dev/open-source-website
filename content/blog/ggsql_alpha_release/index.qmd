@@ -21,66 +21,55 @@ nohero: false
 hidesubscription: false
 ---
 
-Today, we are super excited to formally announce the alpha-release of [ggsql](https://ggsql.org). As the name suggests, ggsql is an implementation of the grammar of graphics based on the SQL syntax, bringing rich, structured visualization support to SQL for the first time.
+Today, we are super excited to announce the alpha-release of [ggsql](https://ggsql.org). As the name suggests, ggsql is an implementation of the grammar of graphics based on SQL syntax, bringing rich, structured visualization support to SQL. It is ready for use in Quarto, Jupyter notebooks, Positron and VS Code among others.
 
-In this post we will go over some of the motivations that lead us to develop this tool, as well as give you ample examples of its use; so you can hopefully get as excited about it as we are (if you can't wait to get excited, [jump straight to the examples](#meet-ggsql)).
-
-## Why ggsql?
-Writing a new visualization library from scratch is always a big task and you may wonder why we have decided on this endavour. Some of the reasons are:
-
-* We want to engage with and help data analysts and data scientists that predominantly work in SQL
-* SQL and the grammar of graphics just fits together extremely well
-* We want to create an extremely powerful, code-based, visualization tool that doesn't require a runtime
-* We have learned so much after 18 years of [ggplot2](https://ggplot2.tidyverse.org/) development and maintenance that it feels right to apply it to a blank canvas
-
-Let's discuss each in turn.
-
-### Hello, SQL user!
-
-<img src="greet.png" alt="Humorous SQL query greeting SQL users that aren't R and Python users as well: SELECT 'Hello' AS greetings FROM SQL_users WHERE other_language NOT IN ('R', 'Python')" />
-
-While first R and then Python captured all the attention of the data science revolution, SQL chucked along as the reliant and powerful workhorse beneath it all. We recognize that there are large portions of people that work with data that do so only or predominantly in SQL. The choice they have for visualizing their data are often suboptimal in our view:
-
-* Export the data and use R or Python which may not be within their comfort zone
-* Use a GUI-based BI tool with poor support for reproducibility
-* Rely on one of the few tools that exist for creating visualizations directly within the query that we feel are not powerful or ergonomic enough
-
-Our goal when designing ggsql was that the syntax should immediately make sense to SQL users, tapping into their expectation of composable, declarative clauses. 
-
-Apart from offering a better way to visualize their data, ggsql is also a way to invite SQL users into our rich ecosystem of code based report generation and sharing build on top of [Quarto](https://quarto.org/).
-
-### Declarative wrangling, declarative visualization
-If you are reading this with no prior knowledge of SQL, here's a very brief recap: SQL is a domain specific language for manipulating relational data stored in one or more tables. The syntax is based on the concept of relational algebra which is a structured way to think about data manipulation operations. The semantics defines a set of modular operations that are declarative rather than functional, allowing the user to compose very powerful and custom manipulations using a well-defined set of operations.
-
-If you are reading this with no prior knowledge of the grammar of graphics, here's a very brief recap: The grammar of graphics is a theoretical deconstruction of the concepts of data visualization into its modular parts. While purely theoretical, tools such as ggplot2 have implemented the idea in practice. The semantics defines a set of modular operations that are declarative rather than functional, allowing the user to compose very powerful and custom visualizations using a well-defined set of operations.
-
-<img src="epic_handshake.png" alt="Epic handshake meme showing SQL and the grammar of graphics agreeing on declarative, composable operations" />
-
-From the above, slightly hyperbolic, overview it is clear that both SQL and the grammar of graphics have a lot of commonality in their approach to their respective domains. Together they can offer a very powerful and natural solution to the full pipeline from raw data to final visualization.
-
-### No runtime, no problem
-Why does it matter that [ggplot2](https://ggplot2.tidyverse.org/) and [plotnine](https://plotnine.org) requires R and Python installed respectively? There are clear benefits to a single, focused executable to handle data visualization:
-
-* Embedding a small executable in other tools is much easier than bundling R/Python (or requiring them to be installed)
-* Clear scope and need makes it easier to sandbox and prevent malicious code execution (either deliberately or in error)
-
-Both of the above points make ggsql a much more compelling option for integrating into tools such as AI agents assisting you in data analysis, or code based reporting tools that may execute code in different environments.
-
-You may think we have had to swallow some bitter pills by moving away from an interpreted language, but it has also given us a lot. Most importantly, the rigid structure means that we can execute the whole data pipeline as a single SQL query per layer on the backend. This means that if you want to create a bar plot of 10 billion transactions you only ever fetch the count values for each bar from your data warehouse, not the 10 billion rows of data. The same is true for more complicated layer types such as boxplots and density plots. This is in stark contrast to the situation in most visualization tools that first materializes the data (potentially choking on the size), then perform the necessary computations on it, before proceeding to plot it.
-
-### We are now wise beyond our years
-
-<img src="age.gif" style="display: block; margin: auto;" alt="Titanic meme showing aged Rose saying 'It's been 84 years'" />
-
-18 years of ggplot2 development and maintenance also means 18 years of thinking about data visualization syntax, use, and design. I am not a boastful person but I do believe that gives us some expert knowledge on the subject matter. However, not all of this knowledge can be poured back into ggplot2. There are decisions and expectations established many years ago that we have to honor, or at least only challenge very gradually (which we do on occasions).
-
-ggsql is a blank slate. Not only in the sense that we are building it from the ground up, but also in that it is built for an environment with no established expectations for a visualization tool. I cannot stress how liberating and invigorating this has felt, and I am positive that this shines through in how ggsql feels to the user.
+In this post we will go over some of the motivations that lead us to develop this tool, as well as give you ample examples of its use; so you can hopefully get as excited about it as we are.
 
 ## Meet ggsql
-That was a lot of words about the why. Hopefully you come away from it all with a sense of this whole thing being justified, ready to learn more about it. If so, read on!
+That was a lot of code, but it allows us to cover a lot of the most important aspects of the syntax with one example.
 
-### A (simple) example
-Let's start with some code even though we haven't introduced the syntax yet. I promise we will go through it below. The example is an adaptation of a visualization created by [Jack Davison](https://jack-davison.github.io) for TidyTuesday.
+### The first plot
+To get our feet wet, lets start with the hello-world of visualizations: A scatterplot, using the built-in penguins dataset:
+
+```{ggsql}
+VISUALIZE bill_len AS x, bill_dep AS y FROM ggsql:penguins
+DRAW point
+```
+
+That wasn't too bad. Sure, it got the verbosity of SQL, but that also means that you can speak out your plot code and understand what it does. We can break down what is going on here line-by-line:
+
+1. We initiate the visual query with `VISUALIZE` and provide a mapping from the built-in penguins dataset, relating `x` to the data in the `bill_len` column, and `y` in the `bill_dep` column.
+2. We draw a point layer that, by default, uses the mapping we defined at the top.
+
+With this in place, we can begin to add to the visualization:
+
+```{ggsql}
+VISUALIZE bill_len AS x, bill_dep AS y, species AS color FROM ggsql:penguins
+DRAW point
+```
+
+We see that a single addition to the mappings add colored categories to the plot. This gradual evolution of plot code is one of the biggest strengths of the grammar of graphics. There are no predefined plot types, only modular parts that can be combined, added, and removed. To further emphasize this, let's add a smooth regression line to the plot:
+
+```{ggsql}
+VISUALIZE bill_len AS x, bill_dep AS y, species AS color FROM ggsql:penguins
+DRAW point
+DRAW smooth
+  MAPPING null AS color
+```
+
+We add a new layer on top of the point layer. This layer also borrows the same mapping as the point layer but overrides the color mapping since we want a single smooth line for all data.
+
+We can continue doing this, adding more mappings, adding or swapping layers, controlling how scales are applied etc until we arrive at the plot we need, however simple or complicated it may be. In the above example we may well end up deciding we are more interested in looking at the distribution of species across the three islands the data was collected from:
+
+```{ggsql}
+VISUALIZE island AS x, species AS color FROM ggsql:penguins
+DRAW bar
+```
+
+While a completely different plot, you can see how much of the code from the previous plot carries over. 
+
+### A complete example
+With our first couple of plots under the belt, let's move on to a complete example. It will contains parts we have not seen before, but don't worry, we will go through it below, even the parts we've already seen before. The example is an adaptation of a visualization created by [Jack Davison](https://jack-davison.github.io) for TidyTuesday.
 
 ```{ggsql}
 WITH astronauts AS (
@@ -127,19 +116,19 @@ LABEL
   fill => null
 ```
 
-That was a lot of code, but on the flip-side it allows us to cover a lot of the most important aspects of the syntax with one example.
+That was a lot of code, but on the flip-side we have now covered a lot of the most important aspects of the syntax with one example.
 
-At the topmost level there are two parts to an SQL query: The SQL query, and the visualization query. The SQL query is anything from the beginning to the `VISUALIZE` clause. It is your standard SQL, and it accepts anything your backend accepts (in this blog post we use a DuckDB backend). The result of the query is funnelled directly into the visualization rather than being returned as a table like you'd normally expect.
+At the topmost level there are two parts to this query: The SQL query, and the visualization query. The SQL query is anything from the beginning to the `VISUALIZE` clause. It is your standard SQL, and it accepts anything your backend accepts (in this blog post we use a DuckDB backend). The result of the query is funnelled directly into the visualization rather than being returned as a table like you'd normally expect.
 
 Since the point of this post is not to teach you SQL we won't spend much more time discussing the SQL query part. The main take away is that everything before the `VISUALIZE` clause is pure SQL, any resulting table is automatically used by your visualization, and any table or CTE created there is available for referencing in the visualization query.
 
-It should also be noted that the SQL query part is optional. If your data is already in the right shape for plotting you can skip it and instead name the source directly in the `VISUALIZE` clause:
+As we saw in the first examples, the SQL query part is optional. If your data is already in the right shape for plotting you can skip it and instead name the source directly in the `VISUALIZE` clause:
 
 ```ggsql
 VISUALIZE year_of_selection AS x, year_of_mission AS y FROM 'astronauts.parquet'
 ```
 
-Now, let's look at the new part — everything from `VISUALIZE` and onwards. `VISUALIZE` marks the end of the SQL query and the beginning of the visualization query (or `VISUALISE` for those who prefer UK spelling). It can stand on its own or, as we do here, have one or more mappings which will become defaults for every subsequent layer. Mappings are purely for relating data to abstract visual properties. A mapping is like a `SELECT` where you alias columns to a visual properties (called *aesthetics* in the grammar of graphics). In the visualization above we say that the age column holds the values used for `x` (position along the x axis) and the category column holds the values used for `fill` (the fill color of the entity). We do not say anything about how to draw it yet. 
+Now, let's look at the visual query — everything from `VISUALIZE` and onwards. `VISUALIZE` marks the end of the SQL query and the beginning of the visualization query (or `VISUALISE` for those who prefer UK spelling). It can stand on its own or, as we do here, have one or more mappings which will become defaults for every subsequent layer. Mappings are purely for relating data to abstract visual properties. A mapping is like a `SELECT` where you alias columns to a visual properties (called *aesthetics* in the grammar of graphics). In the visualization above we say that the age column holds the values used for `x` (position along the x axis) and the category column holds the values used for `fill` (the fill color of the entity). We do not say anything about how to draw it yet. 
 
 Following the `VISUALIZE` query we have a `DRAW` clause. `DRAW` is how we add layers to our visualization. There is a large selection of different layer types in ggsql. Some are straightforward: e.g. `point` for drawing a scatterplot. Some are more involved: `histogram` (which we use here) requires calculation of derived statistics like binned count. A visualization can have any number of layers and layers will be rendered in the sequence they are defined. `DRAW` has a sibling clause called `PLACE`. It is used for annotation and works like `DRAW` except it doesn't get data from a table but rather as provided literal values. It follows that our visualization above contains three layers: A histogram layer showing data from our table, a rule annotation layer showing precomputed mean values for each category, and a text annotation layer adding context to the visualization. It is worth mentioning that a layer does not correspond to a single graphical entity. Like with the text layer above, each layer can render multiple separate entities of its type so there is no need to have e.g. 3 line layers to render line plots for 3 different categories.
 
@@ -153,14 +142,14 @@ That was a mouthful. But there are two very silvery linings to it all:
 1. You now know the most important aspects of the syntax (there are more, of course, but you can grow into that)
 2. Many visualization queries will be much simpler than the one above
 
-To support the last claim, let's make a boxplot of astronaut birth year split by sex:
+We have already seen examples of shorter visual queries above but let's delve on it a bit more with a boxplot of astronaut birth year split by sex:
 
 ```{ggsql}
 VISUALIZE sex AS x, year_of_birth AS y FROM 'astronauts.parquet'
 DRAW boxplot
 ```
 
-That's much shorter but still, if you are coming from a different plotting system you may even think this is overly verbose (e.g. compared to something like `boxplot(astronauts.sex, astronauts.year_of_birth)`). Yes, it is longer, but it is also more structured, composable, and self-descriptive. These features (which are a direct result of its grammar of graphics lineage) means that both you and your future LLM coding buddy will have an easier time internalizing the workings of *all* types of plots that can be made. The 18 years of dominance of ggplot2 (which shares these features) in the R ecosystem is a testament to this.
+That's much shorter than the last plot code but still, if you are coming from a different plotting system you may even think this is overly verbose (e.g. compared to something like `boxplot(astronauts.sex, astronauts.year_of_birth)`). Yes, it is longer, but it is also more structured, composable, and self-descriptive. These features (which are a direct result of its grammar of graphics lineage) means that both you and your future LLM coding buddy will have an easier time internalizing the workings of *all* types of plots that can be made. The 18 years of dominance of ggplot2 (which shares these features) in the R ecosystem is a testament to this.
 
 As an example, let's change the above plot to instead show the same relationship as a jittered scatterplot.
 
@@ -180,40 +169,61 @@ DRAW point
 
 As you can see the syntax and composable nature makes visualization iteration very ergonomic, something that is extremely valuable in both explorative analyses and visualization design.
 
-## Behind the curtains
-With a passing understanding of how to use ggsql, let's discuss what goes on behind the scenes. At its core ggsql is a modular Rust library that is split into a Reader module, a Plot module, and a Writer module. Both the Reader and Writer can be swapped out, leaving the Plot module as the only constant.
+## Why ggsql?
+Writing a new visualization library from scratch is a big task and you might wonder why we're doing it again. Some of the reasons are:
 
-#### The Reader
-This module is responsible for communicating with your data backend, i.e. your SQL database. While this makes it sound like you need to have a complicated database setup in order to use ggsql, this is not the case. While ggsql ships with an [ODBC](https://wikipedia.org/wiki/Open_Database_Connectivity) and [Snowflake](https://www.snowflake.com/) reader, the default reader is [DuckDB](https://duckdb.org). DuckDB allows you to ingest e.g. parquet and csv files directly (no installation necessary) as we have done above, as well as talk to remote SQL databases through its rich [extension ecosystem](https://duckdb.org/docs/current/core_extensions/overview).
+* We want to engage with and help data analysts and data scientists that predominantly work in SQL
+* SQL and the grammar of graphics fit together extremely well
+* We want to create an extremely powerful, code-based, visualization tool that doesn't require an entire programming language (like R or python)
+* LLMs speak SQL very well and also presents a new interface to data visualization creation
+* We have learned so much from 18 years of [ggplot2](https://ggplot2.tidyverse.org/) development that we're excited to apply to a blank canvas
 
-#### The Plot
-The Reader module communicates with the Plot module in two ways. It tells the Plot module about it's particular flavor of SQL and allows it to execute queries on it, returning the resulting data. On the other hand, the Plot module is responsible for reading the visualize query and parse it into a plot representation that can be handed off to the Writer. Part of this is to construct a single query for each layer in the visualization (each `DRAW` query) that returns the data needed for that layer. All computations necessary for the layer are part of this query and are thus handled by the backend. For instance: the query for the boxplot layer includes logic for calculating quantiles which all happens in the database without the need for materializing the raw data.
+Let's discuss each in turn.
 
-#### The Writer
-This module is responsible for the output. It gets the structured representation of the visualization from the Plot module and converts it into the actual visual representation of it. Currently we only have a [Vega-Lite](https://vega.github.io/vega-lite/) writer but we are planning to expand this very soon to shed our reliance on Vega-Lite idioms.
+### Hello, SQL user!
 
-### Tooling
-More important than how it works underneath is perhaps how you use it. Recognizing that people may wish to use it in different ways we provide ggsql in a number of different distributions:
+<img src="greet.png" alt="Humorous SQL query greeting SQL users that aren't R and Python users as well: SELECT 'Hello' AS greetings FROM SQL_users WHERE other_language NOT IN ('R', 'Python')" />
 
-#### Jupyter kernel
-As part of the standard installation we provide a ggsql [Jupyter](https://jupyter.org) kernel. This allows you to use ggsql directly within Jupyter notebooks and [Quarto](https://quarto.org) documents, both for executing SQL and ggsql queries. It maintains a persistent connection throughout the document so that visual queries can reference tables and views created in earlier blocks.
+While first R and then Python captured all the attention of the data science revolution, SQL chugged along as the reliable and powerful workhorse beneath it all. There are many people who work with data that do so only or predominantly in SQL. The choice they have for visualizing their data are often suboptimal in our view:
 
-#### CLI
-The second part of the standard installation is a command line tool for executing queries from the command line, either by providing the query in a file or directly in the call. It also provides parsing and validation tools.
+* Export the data and use R or Python which may not be within their comfort zone
+* Use a GUI-based BI tool with poor support for reproducibility
+* Rely on one of the few tools that exist for creating visualizations directly within the query that we feel are not powerful or ergonomic enough
 
-#### VS Code + Positron extension
-The [ggsql VS Code extension](https://open-vsx.org/extension/ggsql/ggsql) provides a tailored ggsql experience for [Visual Studio Code](https://code.visualstudio.com) and in particular for [Positron](https://positron.posit.co) (see screenshot below). In Positron you will get a ggsql console where you can write and execute queries, with the result appearing in the plot pane along with your R and Python plots. You also get support for sending commands from a ggsql script to the console for execution, like you may know from R and Python. Lastly, in Positron we interface with the Connection pane allowing you to hook up ggsql to any database you have there and immediately begin visualizing the data in your data warehouse. 
+Our goal when designing ggsql was that the syntax should immediately make sense to SQL users, tapping into their expectation of composable, declarative clauses. 
 
-<img src="positron.png" alt="A screenshot showing Positron running with the ggsql extension. In positron we have a ggsql file open with the code of the file also appearing in the ggsql console, along with the resulting plot shown in the plot pane. Also open is a qmd file containing ggsql blocks along with the rendered report shown next to it" />
+Apart from offering a better way to visualize their data, ggsql is also a way to invite SQL users into our rich ecosystem of code based report generation and sharing build on top of [Quarto](https://quarto.org/).
 
-#### Python package
-The [ggsql package](https://pypi.org/project/ggsql/), available on PyPI, provides direct bindings to the Rust library, allowing you to register data, send queries, and visualize the result.
+### Declarative wrangling, declarative visualization
+If you are reading this with no prior knowledge of SQL, here's a very brief recap: SQL is a domain specific language for manipulating relational data stored in one or more tables. The syntax is based on the concept of relational algebra which is a structured way to think about data manipulation operations. The semantics defines a set of modular operations that are declarative rather than functional, allowing the user to compose very powerful and custom manipulations using a well-defined set of operations.
 
-#### R package
-The ggsql package, soon to be available on CRAN, is an R sibling to the python package, providing the same level of direct bindings as the Python package does. In addition it provides a knitr engine that RMarkdown and Quarto can use which provides bidirectional data access between R, Python, and ggsql code blocks.
+If you are reading this with no prior knowledge of the grammar of graphics, here's a very brief recap: The grammar of graphics is a theoretical deconstruction of the concepts of data visualization into its modular parts. While purely theoretical, tools such as ggplot2 have implemented the idea in practice. The semantics defines a set of modular operations that are declarative rather than functional, allowing the user to compose very powerful and custom visualizations using a well-defined set of operations.
 
-#### WASM binary
-ggsql compiles to WASM meaning that it can run in the browser. You can see this in effect at the [ggsql website](https://ggsql.org) where all code blocks are editable with instant updates of the visualization below. The wasm binary will be available on NPM in the near future.
+<img src="epic_handshake.png" alt="Epic handshake meme showing SQL and the grammar of graphics agreeing on declarative, composable operations" />
+
+From the above, slightly hyperbolic, overview it is clear that both SQL and the grammar of graphics have a lot of commonality in their approach to their respective domains. Together they can offer a very powerful and natural solution to the full pipeline from raw data to final visualization.
+
+### No runtime, no problem
+Why does it matter that [ggplot2](https://ggplot2.tidyverse.org/) and [plotnine](https://plotnine.org) requires R and Python installed respectively? There are clear benefits to a single, focused executable to handle data visualization:
+
+* Embedding a small executable in other tools is much easier than bundling R/Python (or requiring them to be installed)
+* A smaller scope makes it easier to sandbox and prevent malicious code execution (either deliberately or in error)
+
+Both of the above points make ggsql a much more compelling option for integrating into tools such as AI agents assisting you in data analysis, or code based reporting tools that may execute code in different environments.
+
+You may think we have had to swallow some bitter pills by moving away from an interpreted language, but it has also given us a lot. Most importantly, the rigid structure means that we can execute the whole data pipeline as a single SQL query per layer on the backend. This means that if you want to create a bar plot of 10 billion transactions you only ever fetch the count values for each bar from your data warehouse, not the 10 billion rows of data. The same is true for more complicated layer types such as boxplots and density plots. This is in stark contrast to most visualization which must first materialize the complete data, then perform the necessary computations on it, then plot it.
+
+### `SELECT pod_door FROM bay WHERE closed`
+LLMs have proven very effective at translating natural language into SQL, and we're bullish that they can be just as effective with ggsql. We've already seen evidence of this in [querychat](https://posit-dev.github.io/querychat/), where you can now visually explore data using natural language via ggsql. And, since ggsql is a much safer and lighter runtime than R or Python, you can much more confidently ship coding agents into a production environment.
+
+### We are now wise beyond our years
+
+<img src="age.gif" style="display: block; margin: auto;" alt="Titanic meme showing aged Rose saying 'It's been 84 years'" />
+
+18 years of ggplot2 development and maintenance also means 18 years of thinking about data visualization syntax, use, and design. While not trying to be boastful we do believe that gives us some expert knowledge on the subject matter. However, not all of this knowledge can be poured back into ggplot2. There are decisions and expectations established many years ago that we have to honor, or at least only challenge very gradually (which we do on occasions).
+
+ggsql is a blank slate. Not only in the sense that we are building it from the ground up, but also in that it is built for an environment with no established expectations for a visualization tool. I cannot stress how liberating and invigorating this has felt, and I am positive that this shines through in how ggsql feels to the user.
+
 
 ## The future
 We are nearing the end of a rather long announcement — thanks for sticking with us. In the very first line we called this an alpha-release which implies that we are not done yet. To get you as excited about the future as you hopefully are about the present state of ggsql, here is a non-exhaustive list of things we want to add.
