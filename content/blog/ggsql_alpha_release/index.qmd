@@ -95,19 +95,19 @@ VISUALIZE age AS x, category AS fill
 DRAW histogram
   SETTING binwidth => 1, position => 'identity'
 PLACE rule
-  SETTING x => [34, 44], linetype => 'dotted'
+  SETTING x => (34, 44), linetype => 'dotted'
 PLACE text
   SETTING
-    x => [34, 44, 60],
-    y => [66, 49, 20],
-    label => [
+    x => (34, 44, 60),
+    y => (66, 49, 20),
+    label => (
       'Mean age at selection = 34',
       'Mean age at mission = 44',
       'John Glenn was 77\non his last mission -\nthe oldest person to\ntravel in space!'
-    ],
+    ),
     hjust => 'left',
     vjust => 'top',
-    offset => [10, 0]
+    offset => (10, 0)
 SCALE fill TO accent
 LABEL
   title => 'How old are astronauts on their most recent mission?',
