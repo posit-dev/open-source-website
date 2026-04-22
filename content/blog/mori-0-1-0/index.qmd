@@ -97,7 +97,7 @@ Lists and data frames travel element-wise too: sending a single column of a shar
 ```{r}
 daemons(3)
 
-x <- list(a = rnorm(1e6), b = rnorm(1e6), c = rnorm(1e6)) |> share()
+x <- share(list(a = rnorm(1e6), b = rnorm(1e6), c = rnorm(1e6)))
 
 mirai_map(x, \(v) lobstr::obj_size(v) |> format())[.flat]
 
@@ -120,7 +120,7 @@ A shared data frame lives in a single shared region, but ALTREP columns are only
 
 Shared memory is tied to R's garbage collector. As long as the shared object (or anything extracted from it) is live in R, the shared region stays alive. When the last reference is dropped, the region is freed automatically — there are no lingering SHM segments to clean up.
 
-Shared data is mapped read-only in consumers, so accidental writes can't corrupt data another process is reading. Mutations go through R's normal copy-on-write: editing a value inside a shared vector produces a private copy of that one vector, leaving the rest of the shared region untouched.
+Mutations go through R's normal copy-on-write: editing a value inside a shared vector produces a private copy of that one vector, leaving the rest of the shared region untouched.
 
 ```{r}
 x <- share(rnorm(1e6))
@@ -159,4 +159,4 @@ mori is usable across any backend that plugs into R's standard serialization —
 
 mori is [available from CRAN](https://CRAN.R-project.org/package=mori). The [package website](https://shikokuchuo.net/mori/) has a walkthrough of the mirai integration and full reference documentation. mori is designed to slot quietly into existing parallel-R workflows — anywhere a worker currently receives a big dataset, `share()` it first and you're done. It complements [mirai](https://mirai.r-lib.org/): mirai handles async evaluation and daemon coordination, mori handles shared access to the data those daemons work on.
 
-The package is in the `experimental` lifecycle stage while the API settles, so feedback and issue reports on [GitHub](https://github.com/shikokuchuo/mori/issues) are very welcome.
+The package is in the experimental lifecycle stage while the API settles, so feedback and issue reports on [GitHub](https://github.com/shikokuchuo/mori/issues) are very welcome.
