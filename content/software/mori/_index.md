@@ -16,7 +16,7 @@ website: https://shikokuchuo.net/mori/
 external:  # updated automatically, do not edit
   description: Shared Memory for R Objects
   first_commit: '2026-04-16T12:27:58+01:00'
-  forks: 0
+  forks: 1
   languages:
   - R
   last_updated: '2026-04-22T00:00:00+00:00'
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   people:
   - Charlie Gao
   repo: shikokuchuo/mori
-  stars: 0
+  stars: 19
   title: mori
   website: https://shikokuchuo.net/mori/
 ---
