@@ -1,6 +1,7 @@
 ---
 title: "2026-04-24 AI Newsletter"
-date: 2026-04-22
+slug: ai-newsletter
+date: 2026-04-24
 people:
   - Sara Altman
   - Simon Couch
