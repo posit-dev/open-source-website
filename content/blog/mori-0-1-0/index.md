@@ -53,7 +53,7 @@ mean(x)
 
     [1] 0.0005737398
 
-`share()` works on atomic vector types, lists, and data frames --- it writes them directly into shared memory with attributes preserved. In practice that also covers tibbles, data.tables, factors, dates, and matrices, since they're built on those primitives. Environments, functions, S4 objects, and external pointers pass through unchanged, since their references don't map naturally to shared pages.
+`share()` works on atomic vector types, lists, and data frames --- it writes them directly into shared memory with attributes preserved. In practice that also covers tibbles, data.tables, factors, dates, and matrices, since they're built on those types. Environments, functions, S4 objects, and external pointers are passed through as the original object --- `share()` skips them, since their references don't map naturally to shared pages.
 
 The returned object is an ALTREP view into shared memory --- it costs no additional RAM beyond the original region. It also serializes compactly: instead of sending the full 8 MB payload, mori's ALTREP hooks serialize shared objects as their shared-memory name, just over 100 bytes on the wire.
 
@@ -75,43 +75,52 @@ Here's the motivating case --- a bootstrap across eight workers on a 200 MB data
 
 ``` r
 library(mirai)
+library(purrr)
 
 daemons(8)
 
 df <- as.data.frame(matrix(rnorm(25e6), ncol = 5))
 shared_df <- share(df)
 
-boot_mean <- \(i, data) colMeans(data[sample(nrow(data), replace = TRUE), ])
-
 # Without mori — each daemon deserializes its own copy
-mirai_map(1:8, boot_mean, data = df)[] |> system.time()
+fn <- in_parallel(
+  \(i) colMeans(data[sample(nrow(data), replace = TRUE), ]),
+  data = df
+)
+system.time(map(1:8, fn))
 ```
 
        user  system elapsed 
-      0.487   4.317   4.937 
+      0.429   3.188  10.175 
 
 ``` r
 # With mori — each daemon maps the same shared memory
-mirai_map(1:8, boot_mean, data = shared_df)[] |> system.time()
+fn <- in_parallel(
+  \(i) colMeans(data[sample(nrow(data), replace = TRUE), ]),
+  data = shared_df
+)
+system.time(map(1:8, fn))
 ```
 
        user  system elapsed 
-      0.000   0.001   0.031 
+      0.000   0.000   4.785 
 
 ``` r
 daemons(0)
 ```
 
-The payload each daemon receives is ~300 bytes instead of 200 MB --- roughly 700,000× smaller. That's well over 100× wall-clock on this run. The algorithm hasn't changed; the savings come from not copying data that's already in RAM. Eight workers share one copy, not eight.
+The payload each daemon receives is ~300 bytes instead of 200 MB --- roughly 700,000× smaller. That's about 2× wall-clock on this run, and eight workers now share a single 200 MB copy in memory instead of materializing one each. The function is the same, and the savings come from not copying data that's already in RAM.
 
-The gap shrinks as per-task compute grows: workloads where each worker does substantial work see proportionally smaller wall-clock wins, though never worse than the baseline. The headline number is what you see when data transfer dominates, which it often does in bootstrap, cross-validation, and parameter sweeps.
+`share()` itself is paid once upfront --- roughly the cost of one serialize pass to write into shared memory. Daemons don't pay a deserialize cost on the other end, since they read the same physical memory directly --- so even a single send is a net win, and the savings compound with every additional daemon.
+
+The wall-clock gap depends on how much of the run is data transfer versus compute. On cheap per-task work --- bootstrap, cross-validation, parameter sweeps --- serialization dominates and the wall-clock win is largest; as each task does more substantial work the ratio shrinks, although we always get the memory saving.
 
 Lists and data frames travel element-wise too: sending a single column of a shared data frame transmits only that element's reference, not the whole frame.
 
 ``` r
 daemons(3)
 
-x <- list(a = rnorm(1e6), b = rnorm(1e6), c = rnorm(1e6)) |> share()
+x <- share(list(a = rnorm(1e6), b = rnorm(1e6), c = rnorm(1e6)))
 
 mirai_map(x, \(v) lobstr::obj_size(v) |> format())[.flat]
 ```
@@ -127,9 +136,9 @@ daemons(0)
 
 Anywhere parallel R workers process the same large dataset, `share()` removes the per-worker copy:
 
-- A [Shiny](https://shiny.posit.co/) dashboard where every worker process reads from one shared reference dataset instead of loading its own
-- A [tidymodels](https://www.tidymodels.org/) `tune_grid()` sweep --- or a [targets](https://docs.ropensci.org/targets/) pipeline branching over model variants --- where every fit reads the same training data without copying it
-- Bootstrap, Monte Carlo, or permutation work dispatched across [mirai](https://mirai.r-lib.org/) or [crew](https://wlandau.github.io/crew/), where thousands of iterations all read from one shared dataset
+- A [Shiny](https://shiny.posit.co/) dashboard where every worker process reads from one shared reference dataset instead of loading its own.
+- A [tidymodels](https://www.tidymodels.org/) `tune_grid()` sweep --- or a [targets](https://docs.ropensci.org/targets/) pipeline branching over model variants --- where every fit reads the same training data without copying it.
+- Bootstrap, Monte Carlo, or permutation work dispatched across [mirai](https://mirai.r-lib.org/) or [crew](https://wlandau.github.io/crew/), where thousands of iterations all read from one shared dataset.
 
 The pattern is the same in each case: call `share()` on your dataset once, then pass the result wherever you'd normally pass the data. Parallel dispatches that hit the serialization path transmit only the reference, not the data.
 
@@ -137,9 +146,9 @@ The pattern is the same in each case: call `share()` on your dataset once, then 
 
 A shared data frame lives in a single shared region, but ALTREP columns are only materialized when touched. A task that reads three columns out of one hundred pays for three --- character vectors are lazier still, with per-element access. Workers only pay for the data they actually touch.
 
-Shared memory is tied to R's garbage collector. As long as the shared object (or anything extracted from it) is live in R, the shared region stays alive. When the last reference is dropped, the region is freed automatically --- there are no lingering SHM segments to clean up.
+Shared memory is tied to R's garbage collector. As long as the shared object (or anything extracted from it) is live in R, the data stays available; when the last reference is dropped, it's freed automatically with no manual cleanup. The process that called `share()` needs to hold its reference until a consumer has mapped a view --- from that point on, the view itself keeps the shared memory alive.
 
-Shared data is mapped read-only in consumers, so accidental writes can't corrupt data another process is reading. Mutations go through R's normal copy-on-write: editing a value inside a shared vector produces a private copy of that one vector, leaving the rest of the shared region untouched.
+Mutations go through R's normal copy-on-write: editing a value inside a shared vector produces a private copy of that one vector, leaving the rest of the shared region untouched.
 
 ``` r
 x <- share(rnorm(1e6))
@@ -155,8 +164,6 @@ lobstr::obj_size(x)
 
     8.00 MB
 
-**One thing to keep in mind:** always assign the result of `share()` to a variable. The lifetime of the shared region is governed by the R reference, and an unassigned result can be garbage-collected before a consumer process has mapped it.
-
 ## Sharing by name
 
 If you want to access a shared region from another process without going through serialization at all, you can pass its name directly:
@@ -168,7 +175,7 @@ nm <- shared_name(x)
 nm
 ```
 
-    [1] "/mori_12689_4"
+    [1] "/mori_10df5_4"
 
 ``` r
 # Works from another process; same session here to demonstrate
@@ -190,4 +197,4 @@ mori is usable across any backend that plugs into R's standard serialization ---
 
 mori is [available from CRAN](https://CRAN.R-project.org/package=mori). The [package website](https://shikokuchuo.net/mori/) has a walkthrough of the mirai integration and full reference documentation. mori is designed to slot quietly into existing parallel-R workflows --- anywhere a worker currently receives a big dataset, `share()` it first and you're done. It complements [mirai](https://mirai.r-lib.org/): mirai handles async evaluation and daemon coordination, mori handles shared access to the data those daemons work on.
 
-The package is in the `experimental` lifecycle stage while the API settles, so feedback and issue reports on [GitHub](https://github.com/shikokuchuo/mori/issues) are very welcome.
+The package is in the experimental lifecycle stage while the API settles, so feedback and issue reports on [GitHub](https://github.com/shikokuchuo/mori/issues) are very welcome.
