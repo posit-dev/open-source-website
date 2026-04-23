@@ -27,13 +27,14 @@ nohero: false
 hidesubscription: false
 ---
 
-We've released a sequence of tidymodels packages over the last few weeks: dials (1.4.3), parsnip (1.5.0), tune (2.1.0), and yardstick (1.4.0). You can install them via:
+We've released a sequence of tidymodels packages over the last few weeks: dials (1.4.3), parsnip (1.5.0), tune (2.1.0), yardstick (1.4.0), and tidymodels (1.5.0). You can install them via:
 
 ```{r}
 #| label: versions
 #| eval: false
 
-pak::pak(c("dials", "parsnip", "tune", "yardstick"))
+# tidymodels installs all of the new versions
+pak::pak("tidymodels")
 ```
 
 Let's first talk about the two biggest updates enabled by this group of releases then we'll cover some of the other changes for each package. 
@@ -284,4 +285,6 @@ Thanks to the following contributors: [&#x0040;edgararuiz](https://github.com/ed
 
 This release was mostly focused on internal changes to support the new version of tune.
 
-## Acknowledgements
+## tidymodels
+
+A basic release that updates the version numbers to require the latest releases of the core packages.
