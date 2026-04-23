@@ -36,7 +36,7 @@ We've released a sequence of tidymodels packages over the last few weeks: dials 
 pak::pak("tidymodels")
 ```
 
-Let's first talk about the two biggest updates enabled by this group of releases then we'll cover some of the other changes for each package. 
+Let's first talk about the two biggest updates enabled by this group of releases, then we'll cover some of the other changes for each package. 
 
 ## Ordered Outcomes
 
@@ -49,7 +49,7 @@ The [ordered package by Cory Brunson](https://github.com/corybrunson/ordered) is
 - `decision_tree()`: `"rpartScore"`
 - `rand_forest()`: `"ordinalForest"`
 
-These models can be fit, tuned, and evaluated with tidymodels. For the evaluation, we've added a specific performance metric for ordered categories: the [ranked probability score](https://aml4td.org/chapters/cls-metrics.html#sec-ordered-categories) (RPS). The function `ranked_prob_score()` is in the new yardstick release and requires an ordered factor for the outcome. 
+These models can be fitted, tuned, and evaluated with tidymodels. For the evaluation, we've added a specific performance metric for ordered categories: the [ranked probability score](https://aml4td.org/chapters/cls-metrics.html#sec-ordered-categories) (RPS). The function `ranked_prob_score()` is in the new yardstick release and requires an ordered factor for the outcome. 
 
 ## Quantile Regression
 
@@ -229,11 +229,11 @@ Now we'll describe various other improvements in the recently released versions.
 ## yardstick
 
 
-We are thankful to the developers who ocntributed to this version: [&#x0040;abichat](https://github.com/abichat), [&#x0040;astamm](https://github.com/astamm), [&#x0040;corybrunson](https://github.com/corybrunson), [&#x0040;DarioS](https://github.com/DarioS), [&#x0040;EmilHvitfeldt](https://github.com/EmilHvitfeldt), [&#x0040;FvD](https://github.com/FvD), [&#x0040;hfrick](https://github.com/hfrick), [&#x0040;JavOrraca](https://github.com/JavOrraca), [&#x0040;jeroenjanssens](https://github.com/jeroenjanssens), [&#x0040;jkylearmstrong-temple](https://github.com/jkylearmstrong-temple), [&#x0040;mle2718](https://github.com/mle2718), [&#x0040;nathant181](https://github.com/nathant181), [&#x0040;SimonDedman](https://github.com/SimonDedman), [&#x0040;topepo](https://github.com/topepo), and [&#x0040;tripartio](https://github.com/tripartio)
+We are thankful to the developers who contributed to this version: [&#x0040;abichat](https://github.com/abichat), [&#x0040;astamm](https://github.com/astamm), [&#x0040;corybrunson](https://github.com/corybrunson), [&#x0040;DarioS](https://github.com/DarioS), [&#x0040;EmilHvitfeldt](https://github.com/EmilHvitfeldt), [&#x0040;FvD](https://github.com/FvD), [&#x0040;hfrick](https://github.com/hfrick), [&#x0040;JavOrraca](https://github.com/JavOrraca), [&#x0040;jeroenjanssens](https://github.com/jeroenjanssens), [&#x0040;jkylearmstrong-temple](https://github.com/jkylearmstrong-temple), [&#x0040;mle2718](https://github.com/mle2718), [&#x0040;nathant181](https://github.com/nathant181), [&#x0040;SimonDedman](https://github.com/SimonDedman), [&#x0040;topepo](https://github.com/topepo), and [&#x0040;tripartio](https://github.com/tripartio)
 
 ## parsnip
 
-Version 1.5.0 of parsnip had a variety of changes. Besides the additions for the two new model types shownn above: 
+Version 1.5.0 of parsnip had a variety of changes. Besides the additions for the two new model types shown above: 
 
 - We enabled case weight usage for the `"nnet"` engines of `mlp()` and `bag_mlp()` as well as for the `"dbarts"` engine of `bart()`. 
 
