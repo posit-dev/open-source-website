@@ -32,7 +32,6 @@ We've released a sequence of tidymodels packages over the last few weeks: dials 
 ```{r}
 #| label: versions
 #| eval: false
-
 # tidymodels installs all of the new versions
 pak::pak("tidymodels")
 ```
@@ -59,7 +58,6 @@ We [previously reported](https://tidyverse.org/blog/2025/02/tidymodels-2025-q1/#
 ```{r}
 #| label: startup
 #| include: false
-
 library(tidymodels)
 library(future)
 
@@ -76,22 +74,21 @@ Here's a simple one-dimensional example using the Ames data; we'll predict the s
 #| fig-align: center
 #| out-width: 90%
 #| message: false
-
 library(tidymodels)
 # We'll also need the qrnn package for the neural network engine
 
 set.seed(1215)
-ames_split <- 
-  ames |> 
-  select(Latitude, Sale_Price) |> 
+ames_split <-
+  ames |>
+  select(Latitude, Sale_Price) |>
   initial_split(strata = Sale_Price)
 ames_train <- training(ames_split)
 ames_test <- testing(ames_split)
 ames_rs <- vfold_cv(ames_train, strata = Sale_Price)
 
-ames_train |> 
-  ggplot(aes(Latitude, Sale_Price)) + 
-  geom_point(alpha = 1 / 5) + 
+ames_train |>
+  ggplot(aes(Latitude, Sale_Price)) +
+  geom_point(alpha = 1 / 5) +
   geom_smooth(se = FALSE) +
   labs(x = "Latitude", y = "Sale Price (USD)")
 ```
@@ -102,22 +99,21 @@ There are a few engines for quantile regression, and we'll use a neural network 
 
 ```{r}
 #| label: quantile-spec
-
 # Pre-defined quantiles of interest
 qnt_lvls <- c(0.05, 0.25, 0.5, 0.75, 0.95)
 
-nnet_spec <- 
-  mlp(hidden_units = tune(), penalty = tune(), epochs = 10) |> 
+nnet_spec <-
+  mlp(hidden_units = tune(), penalty = tune(), epochs = 10) |>
   # Set the quantile levels with the mode:
-  set_mode("quantile regression", quantile_levels = qnt_lvls) |> 
-  # A new engine for quantile regression with neural networks via the 
-  # qrnn package. We'll add an engine argument to specify the 
+  set_mode("quantile regression", quantile_levels = qnt_lvls) |>
+  # A new engine for quantile regression with neural networks via the
+  # qrnn package. We'll add an engine argument to specify the
   # optimization method for training the model:
   set_engine("qrnn", method = "adam")
 
-# Scale the single predictor to help the model initialize its 
-# parameters. 
-nnet_rec <- recipe(Sale_Price ~ ., data = ames_train) |> 
+# Scale the single predictor to help the model initialize its
+# parameters.
+nnet_rec <- recipe(Sale_Price ~ ., data = ames_train) |>
   step_normalize(all_predictors())
 
 nnet_wflow <- workflow(nnet_rec, nnet_spec)
@@ -130,8 +126,8 @@ We'll use a small grid:
 ```{r}
 #| label: quantile-tune
 set.seed(971)
-nnet_res <- 
-  nnet_wflow |> 
+nnet_res <-
+  nnet_wflow |>
   tune_grid(
     resamples = ames_rs,
     grid = 25,
@@ -146,12 +142,11 @@ We can get the performance metric and visualize which tuning parameter combinati
 #| fig-width: 5
 #| fig-height: 5
 #| fig-align: center
-
 nnet_mtr <- collect_metrics(nnet_res)
 
-nnet_mtr |> 
-  ggplot(aes(penalty, hidden_units, size = mean)) + 
-  geom_point() + 
+nnet_mtr |>
+  ggplot(aes(penalty, hidden_units, size = mean)) +
+  geom_point() +
   scale_x_log10() +
   coord_fixed(ratio = 1) +
   labs(x = "Penalty", y = "# Hidden Units", size = "WIS")
@@ -178,9 +173,9 @@ worst_model <-
 
 set.seed(8281)
 mid_model <-
-  nnet_mtr |> 
+  nnet_mtr |>
   # Since we have an odd number of grid points:
-  filter(mean == median(mean)) |> 
+  filter(mean == median(mean)) |>
   select(hidden_units, penalty) |>
   finalize_workflow(nnet_wflow, parameters = _) |>
   fit(ames_train)
@@ -194,30 +189,30 @@ Now let's plot the results. We'll color the predicted quantiles: black indicates
 #| fig-height: 3
 #| fig-align: center
 bind_rows(
-    best_model  |> augment(ames_test) |> mutate(Model = "Best Results"),
-    mid_model   |> augment(ames_test) |> mutate(Model = "Meh Results"),
-    worst_model |> augment(ames_test) |> mutate(Model = "Worst Results")
-  ) |> 
+  best_model |> augment(ames_test) |> mutate(Model = "Best Results"),
+  mid_model |> augment(ames_test) |> mutate(Model = "Meh Results"),
+  worst_model |> augment(ames_test) |> mutate(Model = "Worst Results")
+) |>
   mutate(
     .pred_quantile = map(.pred_quantile, ~ as_tibble(.x))
-  ) |> 
-  unnest(.pred_quantile) |> 
-  arrange(Latitude) |> 
-  ggplot(aes(Latitude)) + 
-  geom_point(aes(y = Sale_Price), alpha = 1 / 30, cex = 3 / 4) + 
+  ) |>
+  unnest(.pred_quantile) |>
+  arrange(Latitude) |>
+  ggplot(aes(Latitude)) +
+  geom_point(aes(y = Sale_Price), alpha = 1 / 30, cex = 3 / 4) +
   geom_path(
     aes(
-      y = .pred_quantile, 
-      group = .quantile_levels, 
+      y = .pred_quantile,
+      group = .quantile_levels,
       col = factor(.quantile_levels)
-      ), 
+    ),
     show.legend = FALSE,
     linewidth = 1
   ) +
   scale_color_manual(
     values = c("#8785B2FF", "#D95F30FF", "black", "#D95F30FF", "#8785B2FF")
-  ) + 
-  facet_wrap(~ Model)
+  ) +
+  facet_wrap(~Model)
 ```
 
 These plots show that configurations with very large score values have poor fits (linear in this case). The "meh" model is nonlinear but not responsive enough to the datas' ups and downs. The best model, with more hidden units and a low penalty, appears to be flexible enough to model the data well. 
