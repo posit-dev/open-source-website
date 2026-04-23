@@ -1,5 +1,5 @@
 {{- $entries := slice -}}
-{{- range .RegularPages.ByDate.Reverse -}}
+{{- range .RegularPagesRecursive.ByDate.Reverse -}}
   {{- $entries = $entries | append (partial "item-index-entry.html" (dict "page" .)) -}}
 {{- end -}}
 {{- $entries | jsonify -}}

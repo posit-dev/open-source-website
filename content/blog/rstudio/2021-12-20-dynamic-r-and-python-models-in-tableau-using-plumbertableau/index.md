@@ -17,6 +17,7 @@ blogcategories:
   - Products and Technology
 image: thumbnail.png
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["plumbertableau"]
 languages: ["R", "Python"]

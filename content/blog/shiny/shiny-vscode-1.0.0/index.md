@@ -9,6 +9,7 @@ date: '2024-05-22'
 image: feature.png
 engine: markdown
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-vscode", "shiny-python", "shiny-r"]
 languages: ["R", "Python"]

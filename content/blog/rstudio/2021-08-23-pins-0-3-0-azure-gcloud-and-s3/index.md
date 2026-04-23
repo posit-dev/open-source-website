@@ -18,6 +18,7 @@ tags:
   - RStudio
 alttext: pins logo
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["pins-r"]
 languages: ["R"]

@@ -20,6 +20,7 @@ blogcategories:
 alttext: American Statistical Association DataFest logo
 image: thumbnail.png
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:

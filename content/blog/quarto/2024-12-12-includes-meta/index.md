@@ -13,6 +13,7 @@ date: '2024-12-12'
 image: thumbnail.jpg
 image-alt: Quarto logo with single source publishing icon.
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

@@ -11,7 +11,7 @@ tags:
   - Learn
   - Teaching
 people:
-  - alison
+  - Alison Hill
 photo:
   url: https://unsplash.com/photos/tVyrFo50iiI
   author: Susie Ho

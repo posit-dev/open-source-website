@@ -9,6 +9,7 @@ date: '2026-03-05'
 image: https://img.youtube.com/vi/sPZsH0eaUpQ/hqdefault.jpg
 image-alt: Talk Recording from R-Ladies Abuja
 ported_from: positron
+source: positron
 port_status: in-progress
 software:
   - positron

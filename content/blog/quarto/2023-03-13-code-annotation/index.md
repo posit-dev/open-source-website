@@ -14,6 +14,7 @@ image-alt: Screenshot a code chunk with annotations. Annotations appear in the c
   text content of the annotations.
 code-annotations: below
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

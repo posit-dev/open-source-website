@@ -12,6 +12,7 @@ image: embed.png
 image-alt: 'A screenshot of a Quarto page that includes a plot, below the plot is
   the phrase Source: penguins.ipynb.'
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

@@ -19,6 +19,7 @@ description: Many RStudio cheatsheets have been updated or reworked based on rec
 alttext: sticky notes
 image: thumbnail.jpg
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["cheatsheets"]
 languages: ["R"]

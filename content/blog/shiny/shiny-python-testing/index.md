@@ -9,6 +9,7 @@ people:
 date: '2024-10-29'
 image: testing-og.jpg
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - shiny-python

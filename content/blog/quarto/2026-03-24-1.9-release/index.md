@@ -10,6 +10,7 @@ date: '2026-03-24'
 image: thumbnail.png
 image-alt: Quarto 1.9
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto
@@ -99,33 +100,32 @@ See [Guide \> Brand](https://quarto.org/docs/authoring/brand.html#quarto-use-bra
 
 List tables provide a new syntax for creating tables with complex content---multiple paragraphs, code blocks, or nested lists---using familiar bullet syntax instead of grid table formatting:
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: {.list-table}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>- Function</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Description</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>- <span class="in">`sum()`</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Add values:</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="in">```python</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">sum</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="in">```</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>- <span class="in">`len()`</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Count items:</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Works on lists</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Works on strings</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-</div></td>
-<td style="text-align: center;"><div width="50.0%" data-layout-align="center">
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
+```` markdown
+::: {.list-table}
+- - Function
+  - Description
+
+- - `sum()`
+  - Add values:
+
+    ```python
+    sum([1, 2, 3])
+    ```
+
+- - `len()`
+  - Count items:
+
+    - Works on lists
+    - Works on strings
+:::
+````
+
+</div>
+<div class="prose max-w-none">
+
 <table>
 <thead>
 <tr>
@@ -137,7 +137,7 @@ List tables provide a new syntax for creating tables with complex content---mult
 <tr>
 <td><p><code>sum()</code></p></td>
 <td><p>Add values:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code></pre></div></td>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code></pre></div></td>
 </tr>
 <tr>
 <td><p><code>len()</code></p></td>
@@ -149,10 +149,9 @@ List tables provide a new syntax for creating tables with complex content---mult
 </tr>
 </tbody>
 </table>
-</div></td>
-</tr>
-</tbody>
-</table>
+
+</div>
+</div>
 
 Each top-level bullet represents a row; nested bullets represent cells. This syntax is much easier to maintain than grid tables, especially when cells contain code or other block elements.
 

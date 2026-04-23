@@ -19,6 +19,7 @@ description: This post introduces and walks through shinytableau, a package that
 image: thumbnail.png
 image-alt: Screenshot of Tableau visualization and ggviolin plot in a Tableau dashboard
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

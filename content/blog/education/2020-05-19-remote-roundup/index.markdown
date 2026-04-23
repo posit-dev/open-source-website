@@ -1,7 +1,7 @@
 ---
 title: A Remote Learning Roundup
 people:
-  - alison
+  - Alison Hill
 date: '2020-05-19'
 categories:
   - Community

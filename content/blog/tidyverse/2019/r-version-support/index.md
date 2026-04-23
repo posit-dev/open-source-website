@@ -13,6 +13,7 @@ photo:
   author: Ralph Howald
 image: r-version-support-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 languages: ["R"]
 ported_categories:

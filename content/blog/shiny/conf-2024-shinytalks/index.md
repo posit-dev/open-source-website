@@ -9,6 +9,7 @@ image-header-disable: yes
 image: shinytalks.jpg
 image-alt: Collage of speakers with Shiny talks at posit::conf(2024)
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-r", "shiny-python"]
 languages: ["R", "Python"]

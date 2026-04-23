@@ -9,8 +9,12 @@
     };
   }
 
+  function toRegex(pattern) {
+    try { return new RegExp(pattern); } catch (_) { return null; }
+  }
+
   function normalize(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[-_]/g, ' ').toLowerCase();
   }
 
   // Decode HTML entities produced by Hugo's html/template escaping in partials
@@ -31,6 +35,7 @@
     software:    '_qSoftware',
     language:    '_qLanguage',
     location:    '_qLocation',
+    source:      '_qSource',
   };
 
   const NUMERIC_FIELDS = {
@@ -84,9 +89,10 @@
         if (neg) tokens.push({ type: 'not' });
 
         if (m[4] !== undefined) {
-          // field:"quoted value"
+          // field:"quoted value" — supports regex syntax
           if (TEXT_FIELDS[field]) {
-            tokens.push({ type: 'field', kind: 'text', field, value: normalize(m[4]) });
+            const val = normalize(m[4]);
+            tokens.push({ type: 'field', kind: 'text', field, value: val, regex: toRegex(val) });
           }
         } else if (m[5] && m[6]) {
           // field:date..date
@@ -122,9 +128,9 @@
           }
         }
       } else if (m[12] !== undefined) {
-        // "quoted phrase"
+        // "quoted phrase" — supports regex syntax
         const val = normalize(m[12]);
-        if (val) tokens.push({ type: 'term', value: val });
+        if (val) tokens.push({ type: 'term', value: val, regex: toRegex(val) });
       } else if (m[13]) {
         const word = m[13];
         if (word === 'AND') {
@@ -255,11 +261,12 @@
     if (node.type === 'and') return evaluate(node.left, item) && evaluate(node.right, item);
     if (node.type === 'or') return evaluate(node.left, item) || evaluate(node.right, item);
     if (node.type === 'not') return !evaluate(node.operand, item);
-    if (node.type === 'term') return item._search.includes(node.value);
+    if (node.type === 'term') return node.regex ? node.regex.test(item._search) : item._search.includes(node.value);
     if (node.type === 'field') {
       if (node.kind === 'text') {
         const key = TEXT_FIELDS[node.field];
-        return key ? item[key].includes(node.value) : false;
+        if (!key) return false;
+        return node.regex ? node.regex.test(item[key]) : item[key].includes(node.value);
       }
       if (node.kind === 'numeric') return matchNumeric(node, item);
       if (node.kind === 'date') return matchDate(node, item);
@@ -356,6 +363,10 @@
       await this._hydrate();
       this._hidePagination();
       this._readURL();
+      if (this._hasActiveFilters()) {
+        const featured = this.container.parentElement?.querySelector('[data-featured]');
+        if (featured) featured.classList.add('hidden');
+      }
       if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
       this._updateShowBtnLabel();
       this._bindControls();
@@ -450,6 +461,7 @@
           tags.join(' '),
           authorNames,
           entry.location || '',
+          entry.source || '',
         ];
 
         return {
@@ -463,10 +475,11 @@
           _qSoftware:    normalize(software.join(' ')),
           _qLanguage:    normalize(languages.join(' ')),
           _qLocation:    normalize(entry.location || ''),
+          _qSource:      normalize(entry.source || ''),
           // Full-text search index
           _search: normalize(searchParts.join(' ')),
           // Sort keys
-          _sortTitle: normalize(entry.title || '').replace(/[-_]/g, ' ').replace(/[^a-z0-9 ]/g, '').trim(),
+          _sortTitle: normalize(entry.title || '').replace(/[^a-z0-9 ]/g, '').trim(),
           _idx: idx,
           _dateTs: entry.date ? new Date(entry.date).getTime() : 0,
           _firstCommitTs: entry.firstCommit ? new Date(entry.firstCommit).getTime() : 0,
@@ -524,14 +537,17 @@
         root.classList.add(...settings.row_class.split(' ').filter(Boolean));
       }
 
-      // Badge
+      // Badge — hide when the current page matches the item type's badge_hide_path
       const badgeEl = slot('badge');
       if (badgeEl && settings.badge_icon) {
-        badgeEl.classList.remove('hidden');
-        const badgeIcon = slot('badge-icon');
-        if (badgeIcon) badgeIcon.className = 'icon-[' + settings.badge_icon + ']';
-        const badgeText = slot('badge-text');
-        if (badgeText) badgeText.textContent = settings.badge_text || '';
+        const hidePath = settings.badge_hide_path || '';
+        if (!hidePath || !window.location.pathname.startsWith(hidePath)) {
+          badgeEl.classList.remove('hidden');
+          const badgeIcon = slot('badge-icon');
+          if (badgeIcon) badgeIcon.className = 'icon-[' + settings.badge_icon + ']';
+          const badgeText = slot('badge-text');
+          if (badgeText) badgeText.textContent = settings.badge_text || '';
+        }
       }
 
       // Image
@@ -549,6 +565,13 @@
           // Image class from settings
           const imgClass = settings.image_class || '';
           if (imgClass) imgClass.split(' ').filter(Boolean).forEach(c => img.classList.add(c));
+        }
+      } else if (settings.placeholder_image) {
+        const img = slot('image');
+        if (img) {
+          img.src = settings.placeholder_image;
+          img.alt = 'Avatar placeholder';
+          img.classList.add('object-contain', 'rounded-xl');
         }
       }
 

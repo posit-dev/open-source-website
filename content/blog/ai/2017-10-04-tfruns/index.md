@@ -12,9 +12,10 @@ author:
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com
 people:
-  - J.J. Allaire
+  - JJ Allaire
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["tfruns", "keras3", "tfestimators"]
 languages: ["R"]

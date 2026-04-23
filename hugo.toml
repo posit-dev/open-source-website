@@ -1,4 +1,4 @@
-baseURL = 'https://posit-open-source.netlify.app'
+baseURL = 'https://opensource.posit.co'
 languageCode = 'en-us'
 title = 'Posit Open Source'
 ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_authoring-guide\.md$', '_external-sources', 'blog/.*/renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/', '\.original$']

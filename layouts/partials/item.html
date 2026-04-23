@@ -55,6 +55,15 @@
   {{ errorf "item partial: no card_settings in data/items.yaml for card_type '%s' (slug: '%s')" $card_type $slug }}
 {{ end }}
 
+{{/* Auto-hide badge when item type matches the current page's section */}}
+{{ if not $hide_badge }}
+  {{ with $card_settings.badge_hide_path }}
+    {{ if hasPrefix (page).RelPermalink . }}
+      {{ $hide_badge = true }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 {{/* ============================================================
      TITLE
      ============================================================ */}}
@@ -287,6 +296,11 @@
           "tall"   160
           "grande" 160
         ) }}
+      {{ else if $is_person }}
+        {{ $placeholder := resources.Get "images/person-placeholder.svg" }}
+        {{ with $placeholder }}
+          <img src="{{ .RelPermalink }}" alt="Avatar placeholder" class="mx-auto h-full object-contain rounded-xl" />
+        {{ end }}
       {{ end }}
     </div>
 
@@ -558,6 +572,13 @@
   {{/* ---- PROFILE: image left, content right ---- */}}
   <div class="flex flex-col md:flex-row">
 
+    {{ if and $is_person (ne ($page.Params.affiliation | default "") "Posit, PBC") }}
+      <span class="card-badge absolute top-2 left-2 z-10 {{ if not $image }}bg-blue-700 text-white{{ end }}">
+        <span class="icon-[{{ $card_settings.badge_icon }}]"></span>
+        <span class="font-semibold uppercase tracking-wide">External Contributor</span>
+      </span>
+    {{ end }}
+
     {{/* -- Image area (same structure as card) -- */}}
     {{ if $hero_image_show }}
     <div class="w-full md:w-1/3 aspect-square flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
@@ -567,9 +588,14 @@
           "baseWidth" 342
           "baseHeight" 342
           "alt" $image_alt
-          "class" (printf "mx-auto h-full %s" $card_settings.image_class)
-          "method" "fit"
+          "class" (printf "mx-auto h-full %s" (cond $is_person "object-cover rounded-xl" $card_settings.image_class))
+          "method" (cond $is_person "fill" "fit")
         ) }}
+      {{ else if $is_person }}
+        {{ $placeholder := resources.Get "images/person-placeholder.svg" }}
+        {{ with $placeholder }}
+          <img src="{{ .RelPermalink }}" alt="Avatar placeholder" class="mx-auto h-full object-contain rounded-xl" />
+        {{ end }}
       {{ end }}
     </div>
     {{ end }}
@@ -581,7 +607,7 @@
       </h1>
 
       {{ with $description }}
-        <p class="text-lg text-gray-600">{{ . | safeHTML }}</p>
+        <p class="text-lg text-gray-600">{{ . | safeHTML }}{{ if $is_person }}{{ with $page.Params.affiliation }} at {{ . }}{{ end }}{{ end }}</p>
       {{ end }}
 
       {{/* Team membership — people */}}
@@ -685,7 +711,7 @@
         <span class="card-badge absolute top-2 @max-venti:right-2 @venti:left-2 z-10">
 
           <span class="icon-[{{ $card_settings.badge_icon }}]"></span>
-          <span class="font-semibold uppercase tracking-wide hidden @xs:inline">{{ $card_settings.badge_text }}</span>
+          <span class="font-semibold uppercase tracking-wide hidden @short:inline">{{ $card_settings.badge_text }}</span>
 
         </span>
       {{ end }}
@@ -702,6 +728,11 @@
           "tall"   320
           "grande" 640
         ) }}
+      {{ else if $is_person }}
+        {{ $placeholder := resources.Get "images/person-placeholder.svg" }}
+        {{ with $placeholder }}
+          <img src="{{ .RelPermalink }}" alt="Avatar placeholder" class="mx-auto h-full object-contain rounded-xl" />
+        {{ end }}
       {{ end }}
     </div>
 

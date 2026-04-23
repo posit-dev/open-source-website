@@ -13,6 +13,7 @@ image-alt: Shiny for Python 1.6 brings toolbars and OpenTelemetry
 lightbox:
   effect: fade
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - shiny-python

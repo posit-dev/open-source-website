@@ -12,6 +12,7 @@ image: table.png
 image-alt: 'Table 1: Example. Has two subtables: Subtable a, Cars, with columns for
   speed and dist; and subtable b, Pressure, with columns for temperature and pressure.'
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

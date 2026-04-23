@@ -13,10 +13,11 @@ listing:
     template: talks.ejs
     contents: talks.yml
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-python", "shiny-r"]
 languages: ["R", "Python"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

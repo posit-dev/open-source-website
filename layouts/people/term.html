@@ -5,8 +5,8 @@
   {{ $image := .Resources.Get .Params.image }}
   {{ if $image }}
   {{ if ne $image.MediaType.SubType "svg" }}
-  {{ $pagefindImg := $image.Fit "128x128" }}
-  <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
+  {{ if eq (getenv "HUGO_PROCESS_IMAGES") "true" }}{{ $pagefindImg := $image.Fit "128x128" }}
+  <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">{{ else }}<img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">{{ end }}
   {{ else }}
   <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
   {{ end }}
@@ -83,7 +83,7 @@
 
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-2 md:mx-0 mb-6">
     {{ range $software }}
-      {{ partial "item.html" (dict "page" . "hide-badge" true "hide-views" true) }}
+      {{ partial "item.html" (dict "page" . "hide-views" true) }}
     {{ end }}
   </div>
   {{ end }}

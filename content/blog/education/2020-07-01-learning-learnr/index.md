@@ -16,6 +16,7 @@ photo:
   url: https://unsplash.com/photos/z1c9juteR5c
 image: learning-learnr-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["learnr"]
 languages: ["R"]

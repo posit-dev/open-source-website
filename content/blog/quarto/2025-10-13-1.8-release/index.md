@@ -13,6 +13,7 @@ image: thumbnail.png
 image-alt: Quarto 1.8 with a lightbulb emoji
 css: /docs/output-formats/autodark.css
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

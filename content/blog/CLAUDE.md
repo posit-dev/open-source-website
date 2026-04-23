@@ -6,6 +6,10 @@ To create a new post, use the `/new-post` skill — it handles branch creation, 
 
 For porting guidance, see `_porting-notes.md` (how to port) and `_editing-ported-posts.md` (working with ported posts).
 
+## Validation
+
+Use the `/check-post` skill to validate a post's frontmatter interactively — it runs `scripts/validate-blog-posts.py`, reports issues, and can offer fixes. CI also runs this automatically on PRs that touch `content/blog/**`.
+
 ## Required Metadata
 
 Every post must have:
@@ -58,6 +62,12 @@ Freeform. Avoid duplicating `software` or `topics` values.
 | `nohero` | Boolean, hides the hero image |
 | `hidesubscription` | Boolean, hides the subscription CTA |
 | `photo.url` / `photo.author` | Stock photo attribution |
+
+## Legacy Blog Listing
+
+| Field | Purpose |
+|-------|---------|
+| `source` | Legacy blog this post should appear on: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`, `education`, `rstudio`. Drives inclusion on legacy blog landing pages (e.g. `/blog/tidyverse/`). Required for all ported posts (must match `ported_from`). Optional for new posts — only add if the post should appear on a legacy blog's listing page. |
 
 ## Porting Metadata
 

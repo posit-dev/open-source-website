@@ -3,7 +3,7 @@ title: Quarto at rstudio::conf(2022)
 subtitle: Quarto-related workshops and talks at rstudio::conf(2022)
 description: |
   [rstudio::conf(2022)](https://rstd.io/conf) will feature a variety of workshops and talks on Quarto. Join us in Washington DC this July 25-28 to learn more about Quarto and hear from folks using Quarto to create, share, and collaborate.
-categories:
+topics:
   - Publishing
 people:
   - Mine Çetinkaya-Rundel
@@ -12,6 +12,7 @@ image: conf2022.png
 image-alt: 'rstudio:conf(2022) logo: orange background with the outline of the Washington
   DC skyline.'
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

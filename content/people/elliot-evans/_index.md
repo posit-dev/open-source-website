@@ -5,7 +5,7 @@ role: "Senior Software Engineer"
 affiliation: "Posit, PBC"
 social:
   bluesky: ""
-  github: ""
+  github: "vezwork"
   linkedin: ""
   mastodon: ""
   orcid: ""

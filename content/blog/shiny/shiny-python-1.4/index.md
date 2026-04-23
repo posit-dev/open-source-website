@@ -10,6 +10,7 @@ image-alt: Shiny 1.4 brings bookmarking and Generative AI docs
 lightbox:
   effect: fade
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]

@@ -10,6 +10,7 @@ date: '2026-03-31'
 image: images/social.png
 image-alt: 'Comparison of Python type checkers: Pyrefly, ty, Basedpyright, and Zuban'
 ported_from: positron
+source: positron
 port_status: in-progress
 software:
   - positron

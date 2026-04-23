@@ -7,6 +7,7 @@ date: '2024-04-05'
 image: templates2.jpg
 image-alt: An illustration of a Shiny Template
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-python", "py-shiny-templates"]
 languages: ["Python"]

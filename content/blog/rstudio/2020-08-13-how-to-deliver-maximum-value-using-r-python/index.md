@@ -1,7 +1,7 @@
 ---
 title: 'How to Deliver Maximum Value Using R & Python '
 people:
-  - Dan Chen
+  - Daniel Chen
 date: '2020-08-13'
 slug: how-to-deliver-maximum-value-using-r-python
 tags:
@@ -13,6 +13,7 @@ description: For data science teams to be successful, they need to embrace both 
 image: thumbnail.jpeg
 image-alt: Lego characters coming together
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
 topics:
