@@ -1,6 +1,6 @@
 ---
 title: 'mori: Shared memory for R objects'
-date: 2026-04-22T00:00:00.000Z
+date: 2026-04-23T00:00:00.000Z
 people:
   - Charlie Gao
 description: >
@@ -91,7 +91,7 @@ system.time(
 ```
 
        user  system elapsed 
-      0.423   3.200  10.080 
+      0.409   3.102  10.015 
 
 ``` r
 # With mori — each daemon maps the same shared memory
@@ -101,7 +101,7 @@ system.time(
 ```
 
        user  system elapsed 
-      0.001   0.001   4.762 
+      0.001   0.001   4.784 
 
 ``` r
 daemons(0)
@@ -173,7 +173,7 @@ nm <- shared_name(x)
 nm
 ```
 
-    [1] "/mori_20ea_4"
+    [1] "/mori_2426_4"
 
 ``` r
 # Works from another process; same session here to demonstrate
