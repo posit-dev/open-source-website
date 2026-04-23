@@ -252,7 +252,9 @@ Thanks to those who contributed to parsnip since the last release: [&#x0040;Cere
 
 ## tune
 
-Hannah - do you want to write about the optimizations here?
+The core functionality of tune is to do all the model fitting (including pre- and postprocessing) and performance evaluation across various resamples and tuning parameter combinations. For grid search, we could take the full parameter grid, splice one parameter combination into the workflow at a time, and run with it. That can be pretty inefficient though. So what actually happens in tune are a few optimizations in how we do all that fitting and evaluating: 
+For preprocessing, we do it once for a resample (per preprocessing parameter combination) and then evaluate all model candidates on it. This lets us avoid unnecessarily repeating the same preprocessing multiple times.
+For model fitting, we make use of what Max calls ["the submodel trick"](https://parsnip.tidymodels.org/articles/Submodels.html): For certain models, like a boosted tree, you can use _a submodel_ to make predictions without having to refit the model. A boosted tree ensemble fitted with 20 trees can be used to make predictions for any number of trees up to the 20 used for fitting. That allows us to evaluate different tuning parameter candidates for, here, the number of trees, without having to refit the model. When we added postprocessing, we temporarily disabled this (to ensure we got the integration right) - now we've brought it back. We make use of this speedup for both the main model as well as the calibration model.
 
 One big update is that the Gaussian process model package was changed from GPfit to GauPro because the former is no longer actively maintained. There are some differences: 
 
