@@ -9,7 +9,7 @@ description: >
   The latest AI newsletter, covering AI cybersecurity
   efforts, improvements in local models, and a grammar of graphics for SQL.  
 image: "images/featured.png"
-image-alt: "On the left-hand side, three robot icons representing Posit's AI assistants. On the right, xex sticker logos for Posit's AI-related open source packages including mall, mcptools, vitals, ragnar, ellmer, chatlas, shinychat, and gander." 
+image-alt: "On the left-hand side, three robot icons representing Posit's AI assistants. On the right, hex sticker logos for Posit's AI-related open source packages including mall, mcptools, vitals, ragnar, ellmer, chatlas, shinychat, and gander." 
 topics:
   - Artificial Intelligence
 software: []
