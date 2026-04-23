@@ -41,7 +41,7 @@ mori is built on R's [ALTREP](https://svn.r-project.org/R/branches/ALTREP/ALTREP
 
 ## How it looks
 
-The entry point is `share()`. You pass it an R object, you get back a shared version of it that you can use the same way as the original:
+The entry point is `share()`. You pass it an R object, you get back a shared version that you can use in the same way as the original:
 
 ``` r
 library(mori)
@@ -53,7 +53,7 @@ mean(x)
 
     [1] 0.0005737398
 
-`share()` works on atomic vector types, lists, and data frames --- it writes them directly into shared memory with attributes preserved. In practice that also covers tibbles, data.tables, factors, dates, and matrices, since they're built on those types. Environments, functions, S4 objects, and external pointers are passed through as the original object --- `share()` skips them, since their references don't map naturally to shared pages.
+`share()` works on atomic vector types, lists, and data frames --- it writes them directly into shared memory with attributes preserved. In practice that also covers tibbles, data.tables, factors, dates, and matrices, since they're built on those types. Environments, functions, S4 objects, and external pointers are returned unchanged, since their state can't be meaningfully exposed as raw bytes in shared memory.
 
 The returned object is an ALTREP view into shared memory --- it costs no additional RAM beyond the original region. It also serializes compactly: instead of sending the full 8 MB payload, mori's ALTREP hooks serialize shared objects as their shared-memory name, just over 100 bytes on the wire.
 
@@ -61,7 +61,7 @@ The returned object is an ALTREP view into shared memory --- it costs no additio
 x |> serialize(NULL) |> length()
 ```
 
-    [1] 124
+    [1] 125
 
 That compact serialization is what makes the rest of the picture work.
 
@@ -91,7 +91,7 @@ system.time(
 ```
 
        user  system elapsed 
-      0.409   3.102  10.015 
+      0.445   3.338  10.454 
 
 ``` r
 # With mori — each daemon maps the same shared memory
@@ -101,17 +101,17 @@ system.time(
 ```
 
        user  system elapsed 
-      0.001   0.001   4.784 
+      0.001   0.000   4.959 
 
 ``` r
 daemons(0)
 ```
 
-The payload each daemon receives is ~300 bytes instead of 200 MB --- roughly 700,000× smaller. There's a ~2× wall-clock saving on this run, and eight workers now share a single 200 MB copy in memory instead of materializing one each. The function is the same; the savings come from not copying data that's already in RAM.
+The payload each daemon receives is ~300 bytes instead of 200 MB --- roughly 700,000× smaller. There's a ~2× wall-clock saving on this run, and eight workers now share a single 200 MB copy in memory instead of materializing one each. The function call is the same; the savings come from not copying data that's already in RAM.
 
 `share()` itself is paid once upfront --- roughly the cost of one serialization to write into shared memory. Daemons don't pay a deserialize cost on the other end, since they read the same physical memory directly --- so even a single send is a net win, and the savings compound with every additional daemon.
 
-The wall-clock gap depends on how much of the run is data transfer versus compute. On cheap per-task work --- bootstrap, cross-validation, parameter sweeps --- serialization dominates and the wall-clock win is largest; as each task involves more substantial compute, the ratio shrinks, although we always get the memory saving.
+The wall-clock gap depends on how much of the run is data transfer versus compute. On cheap per-task work --- bootstrap, cross-validation, parameter sweeps --- serialization dominates and the wall-clock win is largest; the ratio shrinks as each task starts to involve more substantial compute, although we always get the memory saving.
 
 Lists and data frames travel element-wise too: sending a single column of a shared data frame transmits only that element's reference, not the whole data frame.
 
@@ -173,7 +173,7 @@ nm <- shared_name(x)
 nm
 ```
 
-    [1] "/mori_2426_4"
+    [1] "/mori_113fe_4"
 
 ``` r
 # Works from another process; same session here to demonstrate
