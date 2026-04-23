@@ -223,6 +223,9 @@ Now we'll describe various other improvements in the recently released versions.
 
 ## dials
 
+The latest dials release contains several new parameters for new-ish models in parsnip: For the `ordinal_reg()` models, dials now contains `ordinal_link()` and `odds_link()`. For the `tab_pfn()`, dials contains `num_estimators()`, `softmax_temperature()`, `balance_probabilities()`, `average_before_softmax()`, and `training_set_limit()`.
+
+The other user-facing changes were related to input checking and related error messages. The most prominent example is that `parameters()` and the `grid_*()` functions now give more information in the error message when non-parameter objects are passed in: which inputs aren't a parameter object and what they are instead.
 
 [&#x0040;corybrunson](https://github.com/corybrunson), [&#x0040;daltonkw](https://github.com/daltonkw), [&#x0040;hfrick](https://github.com/hfrick), [&#x0040;jeroenjanssens](https://github.com/jeroenjanssens), [&#x0040;topepo](https://github.com/topepo), and [&#x0040;vmikk](https://github.com/vmikk) contributed to the package since the last release.
 
