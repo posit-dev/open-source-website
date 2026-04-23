@@ -28,7 +28,7 @@ hidesubscription: false
 
 We're pleased to announce the first CRAN release of [mori](https://shikokuchuo.net/mori/).
 
-Until now, parallel R has meant serializing your data to every worker and duplicating it in each worker's RAM. Eight workers × 1 GB is 8 GB, plus the serialization, transfer, and deserialization work to get it there. R processes don't share memory — each has its own heap, so data crosses between them through a serialization pipe.
+Until now, parallel R has meant serializing your data to every worker and duplicating it in each worker's RAM. Eight workers × 1 GB is 8 GB, plus the serialization, transfer, and deserialization cost to get it there. R processes don't share memory — each has its own heap, so data crosses between them through a serialization pipe.
 
 mori changes that. It places an R object once into OS-level shared memory and lets every process on the machine read the same physical pages directly — with no data copying between processes.
 
@@ -37,11 +37,11 @@ mori changes that. It places an R object once into OS-level shared memory and le
 install.packages("mori")
 ```
 
-mori is built on R's [ALTREP](https://svn.r-project.org/R/branches/ALTREP/ALTREP.html) (Alternative Representation) framework, which lets a package expose a custom vector backend that reads its data from somewhere other than ordinary R memory — a memory map, a database, a compressed store. Here, that somewhere is OS shared memory.
+mori is built on R's [ALTREP](https://svn.r-project.org/R/branches/ALTREP/ALTREP.html) (Alternative Representation) framework, which lets a package expose a custom vector backend that reads its data from somewhere other than ordinary R memory — a memory map, a database, a compressed store, or in this case, OS shared memory.
 
 ## How it looks
 
-The entry point is `share()`. You pass it an R object, you get back a shared version you can use like any other R vector:
+The entry point is `share()`. You pass it an R object, you get back a shared version of it that you can use the same way as the original:
 
 ```{r}
 library(mori)
@@ -78,30 +78,28 @@ daemons(8)
 df <- as.data.frame(matrix(rnorm(25e6), ncol = 5))
 shared_df <- share(df)
 
+boot <- \(i) colMeans(data[sample(nrow(data), replace = TRUE), ])
+
 # Without mori — each daemon deserializes its own copy
-fn <- in_parallel(
-  \(i) colMeans(data[sample(nrow(data), replace = TRUE), ]),
-  data = df
+system.time(
+  map(1:8, in_parallel(\(i) boot(i), boot = boot, data = df))
 )
-system.time(map(1:8, fn))
 
 # With mori — each daemon maps the same shared memory
-fn <- in_parallel(
-  \(i) colMeans(data[sample(nrow(data), replace = TRUE), ]),
-  data = shared_df
+system.time(
+  map(1:8, in_parallel(\(i) boot(i), boot = boot, data = shared_df))
 )
-system.time(map(1:8, fn))
 
 daemons(0)
 ```
 
-The payload each daemon receives is ~300 bytes instead of 200 MB — roughly 700,000× smaller. That's about 2× wall-clock on this run, and eight workers now share a single 200 MB copy in memory instead of materializing one each. The function is the same, and the savings come from not copying data that's already in RAM.
+The payload each daemon receives is ~300 bytes instead of 200 MB — roughly 700,000× smaller. There's a ~2× wall-clock saving on this run, and eight workers now share a single 200 MB copy in memory instead of materializing one each. The function is the same; the savings come from not copying data that's already in RAM.
 
-`share()` itself is paid once upfront — roughly the cost of one serialize pass to write into shared memory. Daemons don't pay a deserialize cost on the other end, since they read the same physical memory directly — so even a single send is a net win, and the savings compound with every additional daemon.
+`share()` itself is paid once upfront — roughly the cost of one serialization to write into shared memory. Daemons don't pay a deserialize cost on the other end, since they read the same physical memory directly — so even a single send is a net win, and the savings compound with every additional daemon.
 
-The wall-clock gap depends on how much of the run is data transfer versus compute. On cheap per-task work — bootstrap, cross-validation, parameter sweeps — serialization dominates and the wall-clock win is largest; as each task does more substantial work the ratio shrinks, although we always get the memory saving.
+The wall-clock gap depends on how much of the run is data transfer versus compute. On cheap per-task work — bootstrap, cross-validation, parameter sweeps — serialization dominates and the wall-clock win is largest; as each task involves more substantial compute, the ratio shrinks, although we always get the memory saving.
 
-Lists and data frames travel element-wise too: sending a single column of a shared data frame transmits only that element's reference, not the whole frame.
+Lists and data frames travel element-wise too: sending a single column of a shared data frame transmits only that element's reference, not the whole data frame.
 
 ```{r}
 daemons(3)
@@ -158,7 +156,7 @@ Handy when the consumer needs to attach by name rather than receive the shared o
 
 ## How mori fits
 
-R has had partial answers to cross-process data sharing before. [bigmemory](https://CRAN.R-project.org/package=bigmemory) offers shared `big.matrix` objects — effective, but limited to numeric matrices. [SharedObject](https://bioconductor.org/packages/SharedObject/) on Bioconductor targets a similar goal with its own memory-sharing machinery, oriented around BiocParallel workflows. [Arrow](https://arrow.apache.org/docs/r/)'s memory-mapped Parquet gives zero-copy columnar reads across processes, though the data lives on disk. On Unix, `parallel::mclapply` gets shared memory for free via fork copy-on-write — until a worker writes to a page, with the usual fork caveats (unsafe in GUI sessions, with open DB connections, or alongside multithreaded libraries), and with no equivalent on Windows.
+R has had partial answers to cross-process data sharing before. [bigmemory](https://CRAN.R-project.org/package=bigmemory) offers shared `big.matrix` objects — effective, but limited to numeric matrices. [SharedObject](https://bioconductor.org/packages/SharedObject/) on Bioconductor targets a similar goal with its own memory-sharing machinery, oriented around BiocParallel workflows. [Arrow](https://arrow.apache.org/docs/r/)'s memory-mapped Parquet gives zero-copy columnar reads across processes, though the data lives on disk. On Unix, `parallel::mclapply` gets shared memory via fork copy-on-write (until a worker writes to a page), with the usual fork caveats (unsafe in GUI sessions, with open DB connections, or alongside multithreaded libraries), and with no equivalent on Windows.
 
 mori is usable across any backend that plugs into R's standard serialization — mirai, future, parallel, foreach, callr — with no special cooperation required. Atomic vectors, lists, and character vectors are all supported, with lazy per-element access preserved in every process. Lifetimes are managed by R's garbage collector: shared regions are freed automatically when the last reference drops. And mori itself is pure C — POSIX shared memory on Linux and macOS, Win32 file mapping on Windows, nothing beyond the package to install.
 
