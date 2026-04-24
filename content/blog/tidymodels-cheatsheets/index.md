@@ -32,8 +32,8 @@ TODO:
 
 We are excited to share two new cheatsheets for [tidymodels](https://www.tidymodels.org/) — a collection of R packages for modeling and machine learning that shares the design principles of the tidyverse.
 
-{{< button url="https://rstudio.github.io/cheatsheets/html/ml-create-models.html" text="Create Models cheatsheet" >}}
-{{< button url="https://rstudio.github.io/cheatsheets/html/ml-preprocessing-data.html" text="Preprocessing Data cheatsheet" >}}
+{{< button url="/resources/cheatsheets/ml-create-models/" text="Create Models cheatsheet" >}}
+{{< button url="/resources/cheatsheets/ml-preprocessing-data/" text="Preprocessing Data cheatsheet" >}}
 
 ## Create Models with tidymodels
 
