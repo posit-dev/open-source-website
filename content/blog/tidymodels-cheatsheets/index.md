@@ -6,7 +6,7 @@ people:
 description: >
   Two new cheatsheets for tidymodels are now available: one for creating models
   with parsnip, and one for preprocessing data with recipes.
-image: "featured.png"
+image: "tidymodels-cheatsheets.png"
 image-alt: ""
 topics:
   - Machine Learning
