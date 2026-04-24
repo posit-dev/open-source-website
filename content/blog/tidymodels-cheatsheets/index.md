@@ -64,3 +64,27 @@ The last section covers the practical workflow of fitting and using a model:
 
 Each function is paired with a **quick runnable example**, so you can see exactly what the call looks like in practice. Notably, the examples build on each other, starting from the two lines of code right below the section title, making it easy to follow the full workflow from model specification to results.
 
+## Preprocessing Data with **recipes**
+
+After a quick Basics section covering the core workflow, the vast majority of the cheatsheet is dedicated to `step_*()` functions, the building blocks of any recipe. It finishes with an overview of role and type variable management.
+
+### Step catalog
+
+The step functions are listed with their arguments and a short description. The steps are organized into groups based on what they do:
+
+- **Filters:** steps for removing variables that are sparse, zero-variance, linearly dependent, highly correlated, or missing too many values
+- **In-place Transformations:** basis functions (splines, polynomials), discretization, and normalization steps
+- **Imputation:** a range of `step_impute_*()` strategies, from mean and median substitution to model-based approaches using bagged trees or k-nearest neighbors
+- **Encodings:** type converters (e.g. factor to string, numeric to factor), value converters, and other factor-handling steps
+- **Dummy Variables:** one-hot and binary encoding, text pattern matching, and conversion helpers
+- **Multivariate Transformations:** signal extraction (PCA, ICA, PLS, and friends) and centroid-based distance measures
+- **Date & Time:** steps for converting date and datetime columns into usable numeric or factor features
+- **Row operations:** sampling, shuffling, slicing, and removing rows with missing values
+- **Other:** interaction terms, renaming, rolling window statistics, geographic distances, and ratios
+
+As with the parsnip cheatsheet, each group of steps is paired with **small, carefully thought out illustrations** to help you visually locate a step family when scanning.
+
+### Role & type
+
+The last section focuses on the selection and management of variable roles and types within the recipe. The selection side covers ways to target variables by their role (outcome, predictor, or any custom role) as well as by their type (numeric, factor, logical, and so on), including a handy set of convenience selectors for the most common combinations. The management side covers functions for adding, updating, and removing roles, showing you how to gain fine-grained control over how each variable participates in the recipe.
+
