@@ -30,10 +30,7 @@ TODO:
 - [ ] Open a PR against main for a Netlify preview
 -->
 
-We are excited to share two new cheatsheets for [tidymodels](https://www.tidymodels.org/) — a collection of R packages for modeling and machine learning that shares the design principles of the tidyverse.
-
-{{< button url="/resources/cheatsheets/ml-create-models/" text="Create Models cheatsheet" >}}
-{{< button url="/resources/cheatsheets/ml-preprocessing-data/" text="Preprocessing Data cheatsheet" >}}
+Until recently, [tidymodels](https://www.tidymodels.org/) had not had a cheatsheet in its almost 8-year history. The first one, released earlier this year, focuses on [data preprocessing using `recipes`](/resources/cheatsheets/ml-preprocessing-data/). Today, we are excited to announce a second cheatsheet — this one focusing on [modeling using the `parsnip` package](/resources/cheatsheets/ml-create-models/).
 
 ## Create Models with tidymodels
 
