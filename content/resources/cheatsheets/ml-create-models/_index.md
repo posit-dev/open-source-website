@@ -59,85 +59,85 @@ show_engines("linear_reg")
 
 ### Engine Tags
 
-Engine tags show the engine name and mode support numbers. For example, `h2o` (1, 2) means engine `h2o` supports classification (1) and regression (2).
+Engine tags show the engine name and mode support numbers. For example, <span class="pill" style="text-transform: none">h2o 1, 2</span> means engine `h2o` supports classification (1) and regression (2).
 
 ## Classification Only
 
 -   `logistic_reg(mode = "classification", engine = "glm", penalty, mixture)` - Generalized linear model for binary outcomes. A linear combination of the predictors is used to model the log odds of an event.
 
-    *Engines:* `brulee` (1), `gee` (1), `glm` (1), `glmer` (1), `glmnet` (1), `h2o` (1), `keras` (1), `LiblineaR` (1), `spark` (1), `stan` (1), `stan_glmer` (1)
+    <span class="pill" style="text-transform: none">brulee 1</span> <span class="pill" style="text-transform: none">gee 1</span> <span class="pill" style="text-transform: none">glm 1</span> <span class="pill" style="text-transform: none">glmer 1</span> <span class="pill" style="text-transform: none">glmnet 1</span> <span class="pill" style="text-transform: none">h2o 1</span> <span class="pill" style="text-transform: none">keras 1</span> <span class="pill" style="text-transform: none">LiblineaR 1</span> <span class="pill" style="text-transform: none">spark 1</span> <span class="pill" style="text-transform: none">stan 1</span> <span class="pill" style="text-transform: none">stan_glmer 1</span>
 
 -   `multinom_reg(mode = "classification", engine = "nnet", penalty, mixture)` - Uses linear predictors to predict multiclass data using the multinomial distribution.
 
-    *Engines:* `brulee` (1), `glmnet` (1), `h2o` (1), `keras` (1), `nnet` (1), `spark` (1)
+    <span class="pill" style="text-transform: none">brulee 1</span> <span class="pill" style="text-transform: none">glmnet 1</span> <span class="pill" style="text-transform: none">h2o 1</span> <span class="pill" style="text-transform: none">keras 1</span> <span class="pill" style="text-transform: none">nnet 1</span> <span class="pill" style="text-transform: none">spark 1</span>
 
 -   `naive_Bayes(mode = "classification", smoothness, Laplace, engine = "klaR")` - Uses Bayes' theorem to compute the probability of each class, given the predictor values.
 
-    *Engines:* `h2o` (1), `klaR` (1), `naivebayes` (1)
+    <span class="pill" style="text-transform: none">h2o 1</span> <span class="pill" style="text-transform: none">klaR 1</span> <span class="pill" style="text-transform: none">naivebayes 1</span>
 
 -   `null_model(mode = "classification", engine = "parsnip")` - Fit a single mean or largest class model. This is the user-facing function for the null_model() specification.
 
-    *Engines:* `parsnip` (1)
+    <span class="pill" style="text-transform: none">parsnip 1</span>
 
 -   `ordinal_reg(mode = "classification", ordinal_link, odds_link, penalty, mixture, engine = "polr")` - Defines a generalized linear model that predicts an ordinal outcome.
 
-    *Engines:* `rpartScore` (1), `polr` (1), `vgam` (1), `vglm` (1)
+    <span class="pill" style="text-transform: none">rpartScore 1</span> <span class="pill" style="text-transform: none">polr 1</span> <span class="pill" style="text-transform: none">vgam 1</span> <span class="pill" style="text-transform: none">vglm 1</span>
 
 ## Regression Only
 
 -   `linear_reg(mode = "regression", engine = "lm", penalty, mixture)` - Defines a model that can predict numeric values from predictors using a linear function.
 
-    *Engines:* `brulee` (2), `gee` (2), `glm` (2), `glmer` (2), `glmnet` (2), `gls` (2), `h2o` (2), `keras` (2), `lm` (2), `lme` (2), `quantreg` (2), `spark` (2), `stan` (2), `stan_glmer` (2)
+    <span class="pill" style="text-transform: none">brulee 2</span> <span class="pill" style="text-transform: none">gee 2</span> <span class="pill" style="text-transform: none">glm 2</span> <span class="pill" style="text-transform: none">glmer 2</span> <span class="pill" style="text-transform: none">glmnet 2</span> <span class="pill" style="text-transform: none">gls 2</span> <span class="pill" style="text-transform: none">h2o 2</span> <span class="pill" style="text-transform: none">keras 2</span> <span class="pill" style="text-transform: none">lm 2</span> <span class="pill" style="text-transform: none">lme 2</span> <span class="pill" style="text-transform: none">quantreg 2</span> <span class="pill" style="text-transform: none">spark 2</span> <span class="pill" style="text-transform: none">stan 2</span> <span class="pill" style="text-transform: none">stan_glmer 2</span>
 
 -   `poisson_reg(mode = "regression", penalty, mixture, engine = "glm")` - Defines a generalized linear model for count data that follow a Poisson distribution.
 
-    *Engines:* `gee` (2), `glm` (2), `glmer` (2), `glmnet` (2), `h2o` (2), `hurdle` (2), `stan` (2), `stan_glmer` (2), `zeroinfl` (2)
+    <span class="pill" style="text-transform: none">gee 2</span> <span class="pill" style="text-transform: none">glm 2</span> <span class="pill" style="text-transform: none">glmer 2</span> <span class="pill" style="text-transform: none">glmnet 2</span> <span class="pill" style="text-transform: none">h2o 2</span> <span class="pill" style="text-transform: none">hurdle 2</span> <span class="pill" style="text-transform: none">stan 2</span> <span class="pill" style="text-transform: none">stan_glmer 2</span> <span class="pill" style="text-transform: none">zeroinfl 2</span>
 
 ## General Use
 
 -   `decision_tree(mode, engine = "rpart", cost_complexity, tree_depth, min_n)` - A set of if/then statements creates a tree-based structure.
 
-    *Engines:* `partykit` (1, 2, 3), `rpart` (1, 2, 3), `spark` (1, 2), `C5.0` (1)
+    <span class="pill" style="text-transform: none">partykit 1, 2, 3</span> <span class="pill" style="text-transform: none">rpart 1, 2, 3</span> <span class="pill" style="text-transform: none">spark 1, 2</span> <span class="pill" style="text-transform: none">C5.0 1</span>
 
 -   `mars(mode, engine = "earth", num_terms, prod_degree, prune_method)` - Uses artificial features for some predictors. These features resemble hinge functions and the result is a model that is a segmented regression in small dimensions.
 
-    *Engines:* `earth` (1, 2)
+    <span class="pill" style="text-transform: none">earth 1, 2</span>
 
 -   `mlp(mode, engine = "nnet", hidden_units, penalty, dropout, epochs, activation, learn_rate)` - Defines a multilayer perceptron model (a.k.a. a single layer, feed-forward neural network).
 
-    *Engines:* `nnet` (1, 2), `brulee` (1, 2), `brulee_two_layer` (1, 2), `keras` (1, 2), `grnn` (1, 2)
+    <span class="pill" style="text-transform: none">nnet 1, 2</span> <span class="pill" style="text-transform: none">brulee 1, 2</span> <span class="pill" style="text-transform: none">brulee_two_layer 1, 2</span> <span class="pill" style="text-transform: none">keras 1, 2</span> <span class="pill" style="text-transform: none">grnn 1, 2</span>
 
 -   `gen_additive_mod(mode, select_features, adjust_deg_free, engine = "mgcv")` - Uses smoothed functions of numeric predictors in a generalized linear model.
 
-    *Engines:* `mgcv` (1, 2)
+    <span class="pill" style="text-transform: none">mgcv 1, 2</span>
 
 -   `nearest_neighbor(mode, engine = "kknn", neighbors, weight_func, dist_power)` - Uses the K most similar data points from the training set to predict new samples.
 
-    *Engines:* `kknn` (1, 2)
+    <span class="pill" style="text-transform: none">kknn 1, 2</span>
 
 -   `pls(mode, predictor_prop, num_comp, engine = "mixOmics")` - Uses latent variables to model the data. Similar to a supervised version of PCA.
 
-    *Engines:* `mixOmics` (1, 2)
+    <span class="pill" style="text-transform: none">mixOmics 1, 2</span>
 
 ## Discriminant
 
 -   `discrim_flexible(mode = "classification", num_terms, prod_degree, prune_method, engine = "earth")` - Fits a discriminant analysis model that uses nonlinear features created using MARS.
 
-    *Engines:* `earth` (1)
+    <span class="pill" style="text-transform: none">earth 1</span>
 
 -   `discrim_regularized(mode = "classification", frac_common_cov, frac_identity, engine = "klaR")` - Estimates a multivariate distribution for the predictors separately for the data in each class. The model's structure can be LDA, QDA, or a combination. Each probability class is computed using Bayes's theorem, given the predictor values.
 
-    *Engines:* `klaR` (1)
+    <span class="pill" style="text-transform: none">klaR 1</span>
 
 Estimates a multivariate distribution for the predictors separately for the data in each class using a method described below. Each class' probability is computed using Bayes' theorem, given the predictor values.
 
 -   `discrim_linear(mode = "classification", regularization_method, engine = "MASS", penalty)` - Uses Gaussian with a common covariance matrix to perform the estimate.
 
-    *Engines:* `MASS` (1), `mda` (1), `sda` (1), `sparsediscrim` (1)
+    <span class="pill" style="text-transform: none">MASS 1</span> <span class="pill" style="text-transform: none">mda 1</span> <span class="pill" style="text-transform: none">sda 1</span> <span class="pill" style="text-transform: none">sparsediscrim 1</span>
 
 -   `discrim_quad(mode = "classification", regularization_method, engine = "MASS")` - Uses Gaussian with separate covariance matrices to perform the estimate.
 
-    *Engines:* `MASS` (1), `sparsediscrim` (1)
+    <span class="pill" style="text-transform: none">MASS 1</span> <span class="pill" style="text-transform: none">sparsediscrim 1</span>
 
 ## Support Vector Machine
 
@@ -147,29 +147,29 @@ Estimates a multivariate distribution for the predictors separately for the data
 
 -   `svm_linear(mode, cost, engine = "LiblineaR", margin)` - Classification: A linear class boundary. Regression: Uses a linear fit.
 
-    *Engines:* `kernlab` (1, 2), `LiblineaR` (1, 2)
+    <span class="pill" style="text-transform: none">kernlab 1, 2</span> <span class="pill" style="text-transform: none">LiblineaR 1, 2</span>
 
 -   `svm_poly(mode, cost, engine = "kernlab", degree, scale_factor)` - Classification: A polynomial class boundary. Regression: Uses polynomial functions of the predictors.
 
-    *Engines:* `kernlab` (1, 2)
+    <span class="pill" style="text-transform: none">kernlab 1, 2</span>
 
 -   `svm_rbf(mode, cost, engine = "kernlab", rbf_sigma)` - Classification: A nonlinear class boundary. Regression: Uses nonlinear functions of the predictors.
 
-    *Engines:* `kernlab` (1, 2)
+    <span class="pill" style="text-transform: none">kernlab 1, 2</span>
 
 ## Feature Rules
 
 -   `rule_fit(mode, mtry, trees, min_n, tree_depth, learn_rate, loss_reduction, sample_size, stop_iter, penalty, engine = "xrf")` - Derives simple feature rules from a tree ensemble and uses them as features in a regularized model.
 
-    *Engines:* `xrf` (1, 2), `h2o` (1)
+    <span class="pill" style="text-transform: none">xrf 1, 2</span> <span class="pill" style="text-transform: none">h2o 1</span>
 
 -   `C5_rules(mode = "classification", trees, min_n, engine = "C5.0")` - Derives feature rules from a tree for prediction. A single tree or boosted ensemble can be used.
 
-    *Engines:* `C5.0` (1)
+    <span class="pill" style="text-transform: none">C5.0 1</span>
 
 -   `cubist_rules(mode = "regression", committees, neighbors, max_rules, engine = "Cubist")` - Derives simple feature rules from a tree ensemble and creates regression models within each rule.
 
-    *Engines:* `Cubist` (2)
+    <span class="pill" style="text-transform: none">Cubist 2</span>
 
 ## Ensemble
 
@@ -177,37 +177,37 @@ Estimates a multivariate distribution for the predictors separately for the data
 
 -   `bag_mars(mode, num_terms, prod_degree, prune_method, engine = "earth")` - Ensemble of generalized linear models that use artificial features for some predictors. These features resemble hinge functions and the result is a model that is a segmented regression in small dimensions.
 
-    *Engines:* `earth` (1, 2)
+    <span class="pill" style="text-transform: none">earth 1, 2</span>
 
 -   `bag_mlp(mode, hidden_units, penalty, epochs, engine = "nnet")` - An ensemble of single layer, feed-forward neural networks.
 
-    *Engines:* `nnet` (1, 2)
+    <span class="pill" style="text-transform: none">nnet 1, 2</span>
 
 -   `bag_tree(mode, cost_complexity = 0, tree_depth, min_n = 2, class_cost, engine = "rpart")` - Ensemble of decision trees.
 
-    *Engines:* `C5.0` (1), `rpart` (1, 2, 3)
+    <span class="pill" style="text-transform: none">C5.0 1</span> <span class="pill" style="text-transform: none">rpart 1, 2, 3</span>
 
 -   `bart(mode, engine = "dbarts", trees, prior_terminal_node_coef, prior_terminal_node_expo, prior_outcome_range)` - Tree ensemble model that uses Bayesian analysis to assemble the ensemble.
 
-    *Engines:* `dbarts` (1, 2)
+    <span class="pill" style="text-transform: none">dbarts 1, 2</span>
 
 -   `boost_tree(mode, engine = "xgboost", mtry, trees, min_n, tree_depth, learn_rate, loss_reduction, sample_size, stop_iter)` - Creates a series of decision trees forming an ensemble. Each tree depends on the results of previous trees. All trees in the ensemble are combined to produce a final prediction.
 
-    *Engines:* `C5.0` (1), `catboost` (1, 2), `h2o` (1, 2), `lightgbm` (1, 2), `mboost` (3), `spark` (1, 2), `xgboost` (1, 2, 4)
+    <span class="pill" style="text-transform: none">C5.0 1</span> <span class="pill" style="text-transform: none">catboost 1, 2</span> <span class="pill" style="text-transform: none">h2o 1, 2</span> <span class="pill" style="text-transform: none">lightgbm 1, 2</span> <span class="pill" style="text-transform: none">mboost 3</span> <span class="pill" style="text-transform: none">spark 1, 2</span> <span class="pill" style="text-transform: none">xgboost 1, 2, 4</span>
 
 -   `rand_forest(mode, engine = "ranger", mtry, trees, min_n)` - Creates a large number of decision trees, each independent of the others. The final prediction uses all predictions from the individual trees and combines them.
 
-    *Engines:* `aorsf` (1, 2, 3), `grf` (1, 2, 4), `h2o` (1, 2), `partykit` (1, 2, 3), `randomForest` (1, 2), `ranger` (1, 2), `spark` (1, 2)
+    <span class="pill" style="text-transform: none">aorsf 1, 2, 3</span> <span class="pill" style="text-transform: none">grf 1, 2, 4</span> <span class="pill" style="text-transform: none">h2o 1, 2</span> <span class="pill" style="text-transform: none">partykit 1, 2, 3</span> <span class="pill" style="text-transform: none">randomForest 1, 2</span> <span class="pill" style="text-transform: none">ranger 1, 2</span> <span class="pill" style="text-transform: none">spark 1, 2</span>
 
 ## Survival
 
 -   `proportional_hazards(mode = "censored regression", engine = "survival", penalty, mixture)` - Defines a model for the hazard function as a multiplicative function of covariates times a baseline hazard.
 
-    *Engines:* `glmnet` (3), `survival` (3)
+    <span class="pill" style="text-transform: none">glmnet 3</span> <span class="pill" style="text-transform: none">survival 3</span>
 
 -   `survival_reg(mode = "censored regression", engine = "survival", dist)` - Defines a parametric survival model.
 
-    *Engines:* `flexsurv` (3), `flexsurvspline` (3), `survival` (3)
+    <span class="pill" style="text-transform: none">flexsurv 3</span> <span class="pill" style="text-transform: none">flexsurvspline 3</span> <span class="pill" style="text-transform: none">survival 3</span>
 
 ## Operations
 
