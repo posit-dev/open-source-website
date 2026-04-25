@@ -50,9 +50,17 @@ The largest section of the cheatsheet catalogs all models available through pars
 - **Feature rules:** `rule_fit()`, `C5_rules()`, `cubist_rules()`
 - **Survival models:** `proportional_hazards()`, `survival_reg()`
 
+{{< columns split="3,2" >}}
 One design choice in particular makes this section much easier to navigate: **pills**. Each model's compatible engines and supported modes are shown as small, visually distinct tags, so you can see at a glance which mode a given engine supports, without having to read through the description text. Each mode is encoded in the pill with a number: Classification (1), Regression (2), Censored Regression (3), and Quantile Regression (4). A legend mapping each number to its mode is available at the top of page one.
 
+---
+
+![Example of engine pills from the parsnip cheatsheet](tidymodels-cheatsheets-pills.png)
+{{< /columns >}}
+
 And true to the R cheatsheet tradition, individual models or groups of related models are paired with **small illustrations**, thoughtfully designed for visual impact to aid recall. Each one attempts to accurately represent the function or functions it accompanies, making them a genuine navigation aid rather than decoration, especially when you have a vague memory of "that tree-based ensemble that used Bayesian analysis" and need to scan quickly.
+
+
 
 ### Operations
 
