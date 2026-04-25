@@ -31,6 +31,8 @@ In this post we'll walk through what each cheatsheet covers, starting with the n
 
 ## Create Models with **parsnip**
 
+![The Create Models with parsnip cheatsheet](tidymodels-cheatsheets-parsnip.png)
+
 The cheatsheet is organized into three main parts: an introduction to parsnip's basics, a catalog of all models available through the package, and a hands-on operations reference for fitting and inspecting models.
 
 ### Basics
@@ -64,15 +66,11 @@ And true to the R cheatsheet tradition, individual models or groups of related m
 
 ### Operations
 
-The last section covers the practical workflow of fitting and using a model:
-
-- Methods for training and generating predictions, such as `fit()` and `predict()`
-- Tidiers for extracting results in a tidy format, such as `tidy()`, `glance()`, and `augment()`
-- Extract helpers for pulling engine-specific objects out of a fit, such as `extract_fit_engine()` and `extract_spec_parsnip()`
-
-Each function is paired with a **quick runnable example**, so you can see exactly what the call looks like in practice. Notably, the examples build on each other, starting from the two lines of code right below the section title, making it easy to follow the full workflow from model specification to results.
+The last section covers the practical workflow of fitting and using a model. Each function is paired with a **quick runnable example**, and the examples build on each other starting from the two lines of code right below the section title, making it easy to follow the full workflow from model specification to results.
 
 ## Preprocessing Data with **recipes**
+
+![The Preprocessing Data with recipes cheatsheet](tidymodels-cheatsheets-recipes.png)
 
 After a quick Basics section covering the core workflow, the vast majority of the cheatsheet is dedicated to `step_*()` functions, the building blocks of any recipe, before finishing with role and type management.
 
@@ -94,9 +92,66 @@ As with the parsnip cheatsheet, each group of steps is paired with **small, thou
 
 ### Role & type
 
+{{< columns split="3,2" >}}
 The last section focuses on the selection and management of variable roles and types within the recipe. The selection side covers ways to target variables by their role (outcome, predictor, or any custom role) as well as by their type (numeric, factor, logical, and so on), including a handy set of convenience selectors for the most common combinations. The management side shows how to add, update, and remove roles, showing you how to gain fine-grained control over how each variable participates in the recipe.
+
+---
+
+![Convenience selectors from the recipes cheatsheet](tidymodels-cheatsheets-selectors.png)
+{{< /columns >}}
 
 ## Final Thoughts
 
 A lot of care went into ensuring both cheatsheets hold up when printed, particularly in black and white. We know that many folks print cheatsheets to keep at their desk for quick reference, and we wanted to make sure they remain fully usable in that medium. That meant making sure font sizes and weights stay legible on paper, that the illustrations remain perceptible without color, and that contrast levels are strong enough that no text ends up too pale to read or too heavy to parse. Accessibility in print mattered to us just as much as clarity on screen.
+
+<script>
+(function() {
+  'use strict';
+  const lightbox = document.createElement('div');
+  lightbox.id = 'image-lightbox';
+  lightbox.className = 'fixed inset-0 z-50 hidden items-center justify-center bg-blue-100/80 transition-opacity';
+  lightbox.innerHTML = `
+    <button id="lightbox-close" class="absolute top-4 right-4 text-gray-700 text-4xl font-light hover:text-gray-900 transition-colors z-10" aria-label="Close lightbox">
+      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <img id="lightbox-image" class="max-w-[90vw] max-h-[90vh] object-contain" alt="">
+  `;
+  document.body.appendChild(lightbox);
+  const lightboxImg = document.getElementById('lightbox-image');
+  const closeBtn = document.getElementById('lightbox-close');
+  const proseImages = document.querySelectorAll('.prose img:not(a img)');
+  proseImages.forEach(img => {
+    img.style.cursor = 'pointer';
+    img.setAttribute('role', 'button');
+    img.setAttribute('tabindex', '0');
+    img.addEventListener('click', function() {
+      lightboxImg.src = this.src;
+      lightboxImg.alt = this.alt || '';
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+    img.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) { closeLightbox(); }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) { closeLightbox(); }
+  });
+})();
+</script>
 
