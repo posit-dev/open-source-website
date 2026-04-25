@@ -233,6 +233,29 @@ The other user-facing changes were related to input checking and related error m
 ## yardstick
 
 
+Beyond the two new metrics `ranked_prob_score()` and `weighted_interval_score()` described above, this release adds a further 8 metrics.
+
+Three new regression metrics:
+
+- `mse()` — mean squared error (the squared counterpart to the existing `rmse()`).
+- `rmse_relative()` — root mean squared error normalized by the observed value range.
+- `gini_coef()` — normalized Gini coefficient.
+
+Three new classification metrics:
+
+- `fall_out()` — false positive rate (1 − specificity).
+- `miss_rate()` — false negative rate (1 − sensitivity).
+- `markedness()` — predictive power of a classifier, computed as PPV + NPV − 1.
+
+Two new probability-based classification metrics:
+
+- `roc_dist()` — Euclidean distance from the perfect-classifier corner of ROC space.
+- `sedi()` — Symmetric Extremal Dependence Index.
+
+In addition to these new metrics, we have also updated the documention of all metrics. Now each metric shows the formula used to calculate it, as well as the valid values it can produce.
+
+we also have pages that list all metrics of the same type. These can be found with [?class-metrics](https://yardstick.tidymodels.org/reference/class-metrics.html), [?numeric-metrics](https://yardstick.tidymodels.org/reference/numeric-metrics.html) or linked within each metric documentation.
+
 We are thankful to the developers who contributed to this version: [&#x0040;abichat](https://github.com/abichat), [&#x0040;astamm](https://github.com/astamm), [&#x0040;corybrunson](https://github.com/corybrunson), [&#x0040;DarioS](https://github.com/DarioS), [&#x0040;EmilHvitfeldt](https://github.com/EmilHvitfeldt), [&#x0040;FvD](https://github.com/FvD), [&#x0040;hfrick](https://github.com/hfrick), [&#x0040;JavOrraca](https://github.com/JavOrraca), [&#x0040;jeroenjanssens](https://github.com/jeroenjanssens), [&#x0040;jkylearmstrong-temple](https://github.com/jkylearmstrong-temple), [&#x0040;mle2718](https://github.com/mle2718), [&#x0040;nathant181](https://github.com/nathant181), [&#x0040;SimonDedman](https://github.com/SimonDedman), [&#x0040;topepo](https://github.com/topepo), and [&#x0040;tripartio](https://github.com/tripartio)
 
 ## parsnip
