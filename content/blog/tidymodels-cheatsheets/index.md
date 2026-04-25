@@ -27,7 +27,7 @@ hidesubscription: false
 
 After almost 8 years, Tidymodels finally has its first cheatsheets, and not just one, but two! The [first one](/resources/cheatsheets/ml-preprocessing-data/), covering data preprocessing with `recipes`, was released a couple of months ago. Today, we are delighted to announce [a second cheatsheet](/resources/cheatsheets/ml-create-models/), this time focusing on modeling with `parsnip`.
 
-In this post we'll walk through what each cheatsheet covers, starting with the newest one.
+Both cheatsheets have a dedicated HTML version on the Posit Open Source site, so you can browse and search them without opening a PDF. In this post we'll walk through what each one covers, starting with the newest.
 
 ## Create Models with **parsnip**
 
@@ -64,6 +64,8 @@ And true to the R cheatsheet tradition, individual models or groups of related m
 
 The last section covers the practical workflow of fitting and using a model. Each function is paired with a **quick runnable example**, and the examples build on each other starting from the two lines of code right below the section title, making it easy to follow the full workflow from model specification to results.
 
+<div class="text-right">{{< button url="/resources/cheatsheets/ml-create-models/" text="Explore the parsnip cheatsheet" icon-right="boxicons--arrow-right" >}}</div>
+
 ## Preprocessing Data with **recipes**
 
 ![Both pages of the Preprocessing Data with recipes cheatsheet side by side, showing sections for Basics, Filters, In-place Transformations, Imputation, Encodings, Dummy Variables, Multivariate Transformations, Date and Time, Row operations, Other, and Role and type.](tidymodels-cheatsheets-recipes.png "The \"Preprocessing Data with recipes\" cheatsheet — click to enlarge")
@@ -96,7 +98,11 @@ The last section focuses on the selection and management of variable roles and t
 ![A close-up of the Role and type section of the recipes cheatsheet, showing the Selectors and Convenience Selectors subsections. Each convenience selector function is listed alongside colored pills indicating which variable types it targets.](tidymodels-cheatsheets-selectors.png "Easily find the right selector function with this at-a-glance guide")
 {{< /columns >}}
 
-## Final Thoughts
+<br/>
+
+<div class="text-right">{{< button url="/resources/cheatsheets/ml-preprocessing-data/" text="Explore the recipes cheatsheet" icon-right="boxicons--arrow-right" >}}</div>
+
+## Need them on the go? Print them!
 
 A lot of care went into ensuring both cheatsheets hold up when printed, particularly in black and white. We know that many folks print cheatsheets to keep at their desk for quick reference, and we wanted to make sure they remain fully usable in that medium. That meant making sure font sizes and weights stay legible on paper, that the illustrations remain perceptible without color, and that contrast levels are strong enough that no text ends up too pale to read or too heavy to parse. Accessibility in print mattered to us just as much as clarity on screen.
 
