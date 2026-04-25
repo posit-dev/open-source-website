@@ -37,6 +37,15 @@ We've released a sequence of tidymodels packages over the last few weeks: dials 
 pak::pak("tidymodels")
 ```
 
+Here are links to the NEWS files for each package:
+
+- [dials](https://dials.tidymodels.org/news/index.html#dials-143)
+- [parsnip](https://parsnip.tidymodels.org/news/index.html#parsnip-150)
+- [tune](https://tune.tidymodels.org/news/index.html#tune-210)
+- [yardstick](https://yardstick.tidymodels.org/news/index.html#yardstick-140)
+- [finetune](https://finetune.tidymodels.org/news/index.html#finetune-130)
+- [tidymodels](https://tidymodels.tidymodels.org/news/index.html#tidymodels-150)
+
 Let's first talk about the two biggest updates enabled by this group of releases, then we'll cover some of the other changes for each package. 
 
 ## Ordered Outcomes
