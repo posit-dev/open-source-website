@@ -25,7 +25,7 @@ hidesubscription: false
 
 
 
-After almost 8 years, Tidymodels finally has its first cheatsheets, and not just one, but two! The [first one](/resources/cheatsheets/ml-preprocessing-data/), covering data preprocessing with `recipes`, was released a couple of months ago. Today, we are delighted to announce [a second cheatsheet](/resources/cheatsheets/ml-create-models/), this time focusing on modeling with `parsnip`.
+After almost 8 years, tidymodels finally has its first cheatsheets, and not just one, but two! The [first one](/resources/cheatsheets/ml-preprocessing-data/), covering data preprocessing with `recipes`, was released a couple of months ago. Today, we are delighted to announce [a second cheatsheet](/resources/cheatsheets/ml-create-models/), this time focusing on modeling with `parsnip`.
 
 Both cheatsheets have a dedicated HTML version on the Posit Open Source site, so you can browse and search them without opening a PDF. In this post we'll walk through what each one covers, starting with the newest.
 
