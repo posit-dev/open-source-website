@@ -1,14 +1,16 @@
 ---
 title: New tidymodels Releases for April 2026
-date: 2026-04-22T00:00:00.000Z
+date: 2026-04-27T00:00:00.000Z
 people:
   - max-kuhn
   - hannah-frick
   - emil-hvitfeldt
 description: |
   A small cascade of CRAN releases brings new model types to tidymodels.
-image: featured.png
-image-alt: ''
+image: 2026-april-tidymodels.jpg
+image-alt: >-
+  A row of hex logos for dials, parsnip, tune, yardstick, finetune, and
+  tidymodels.
 topics:
   - Machine Learning
 software:
@@ -22,19 +24,31 @@ languages:
 tags:
   - quantile regression
   - ordinal outcomes
+  - Bayesian optimization
 source: tidyverse
 nohero: false
 hidesubscription: false
 ---
 
 
-We've released a sequence of tidymodels packages over the last few weeks: dials (1.4.3), parsnip (1.5.0), tune (2.1.0), and yardstick (1.4.0). You can install them via:
+We've released a sequence of tidymodels packages over the last few weeks: dials (1.4.3), parsnip (1.5.0), tune (2.1.0), yardstick (1.4.0), and tidymodels (1.5.0). You can install them via:
 
 ``` r
-pak::pak(c("dials", "parsnip", "tune", "yardstick"))
+# tidymodels installs all of the new versions
+require(pak)
+pak::pak("tidymodels")
 ```
 
-Let's first talk about the two biggest updates enabled by this group of releases then we'll cover some of the other changes for each package.
+Here are links to the NEWS files for each package:
+
+- [dials](https://dials.tidymodels.org/news/index.html#dials-143)
+- [parsnip](https://parsnip.tidymodels.org/news/index.html#parsnip-150)
+- [tune](https://tune.tidymodels.org/news/index.html#tune-210)
+- [yardstick](https://yardstick.tidymodels.org/news/index.html#yardstick-140)
+- [finetune](https://finetune.tidymodels.org/news/index.html#finetune-130)
+- [tidymodels](https://tidymodels.tidymodels.org/news/index.html#tidymodels-150)
+
+Let's first talk about the two biggest updates enabled by this group of releases, then we'll cover some of the other changes for each package.
 
 ## Ordered Outcomes
 
@@ -47,7 +61,7 @@ The [ordered package by Cory Brunson](https://github.com/corybrunson/ordered) is
 - `decision_tree()`: `"rpartScore"`
 - `rand_forest()`: `"ordinalForest"`
 
-These models can be fit, tuned, and evaluated with tidymodels. For the evaluation, we've added a specific performance metric for ordered categories: the [ranked probability score](https://aml4td.org/chapters/cls-metrics.html#sec-ordered-categories) (RPS). The function `ranked_prob_score()` is in the new yardstick release and requires an ordered factor for the outcome.
+These models can be fitted, tuned, and evaluated with tidymodels. For the evaluation, we've added a specific performance metric for ordered categories: the [ranked probability score](https://aml4td.org/chapters/cls-metrics.html#sec-ordered-categories) (RPS). The function `ranked_prob_score()` is in the new yardstick release and requires an ordered factor for the outcome.
 
 ## Quantile Regression
 
@@ -60,17 +74,17 @@ library(tidymodels)
 # We'll also need the qrnn package for the neural network engine
 
 set.seed(1215)
-ames_split <- 
-  ames |> 
-  select(Latitude, Sale_Price) |> 
+ames_split <-
+  ames |>
+  select(Latitude, Sale_Price) |>
   initial_split(strata = Sale_Price)
 ames_train <- training(ames_split)
 ames_test <- testing(ames_split)
 ames_rs <- vfold_cv(ames_train, strata = Sale_Price)
 
-ames_train |> 
-  ggplot(aes(Latitude, Sale_Price)) + 
-  geom_point(alpha = 1 / 5) + 
+ames_train |>
+  ggplot(aes(Latitude, Sale_Price)) +
+  geom_point(alpha = 1 / 5) +
   geom_smooth(se = FALSE) +
   labs(x = "Latitude", y = "Sale Price (USD)")
 ```
@@ -85,18 +99,18 @@ There are a few engines for quantile regression, and we'll use a neural network 
 # Pre-defined quantiles of interest
 qnt_lvls <- c(0.05, 0.25, 0.5, 0.75, 0.95)
 
-nnet_spec <- 
-  mlp(hidden_units = tune(), penalty = tune(), epochs = 10) |> 
+nnet_spec <-
+  mlp(hidden_units = tune(), penalty = tune(), epochs = 10) |>
   # Set the quantile levels with the mode:
-  set_mode("quantile regression", quantile_levels = qnt_lvls) |> 
-  # A new engine for quantile regression with neural networks via the 
-  # qrnn package. We'll add an engine argument to specify the 
+  set_mode("quantile regression", quantile_levels = qnt_lvls) |>
+  # A new engine for quantile regression with neural networks via the
+  # qrnn package. We'll add an engine argument to specify the
   # optimization method for training the model:
   set_engine("qrnn", method = "adam")
 
-# Scale the single predictor to help the model initialize its 
-# parameters. 
-nnet_rec <- recipe(Sale_Price ~ ., data = ames_train) |> 
+# Scale the single predictor to help the model initialize its
+# parameters.
+nnet_rec <- recipe(Sale_Price ~ ., data = ames_train) |>
   step_normalize(all_predictors())
 
 nnet_wflow <- workflow(nnet_rec, nnet_spec)
@@ -104,12 +118,12 @@ nnet_wflow <- workflow(nnet_rec, nnet_spec)
 
 From there, we can use any of our tuning functions to optimize the number of hidden units and the amount of weight decay. By default, the weighted interval score is used for this particular mode.
 
-We'll use a small grid:
+We'll consider 25 tuning parameter candidates to optimize model performance.
 
 ``` r
 set.seed(971)
-nnet_res <- 
-  nnet_wflow |> 
+nnet_res <-
+  nnet_wflow |>
   tune_grid(
     resamples = ames_rs,
     grid = 25,
@@ -122,9 +136,9 @@ We can get the performance metric and visualize which tuning parameter combinati
 ``` r
 nnet_mtr <- collect_metrics(nnet_res)
 
-nnet_mtr |> 
-  ggplot(aes(penalty, hidden_units, size = mean)) + 
-  geom_point() + 
+nnet_mtr |>
+  ggplot(aes(penalty, hidden_units, size = mean)) +
+  geom_point() +
   scale_x_log10() +
   coord_fixed(ratio = 1) +
   labs(x = "Penalty", y = "# Hidden Units", size = "WIS")
@@ -159,9 +173,9 @@ worst_model <-
 
 set.seed(8281)
 mid_model <-
-  nnet_mtr |> 
+  nnet_mtr |>
   # Since we have an odd number of grid points:
-  filter(mean == median(mean)) |> 
+  filter(mean == median(mean)) |>
   select(hidden_units, penalty) |>
   finalize_workflow(nnet_wflow, parameters = _) |>
   fit(ames_train)
@@ -171,30 +185,30 @@ Now let's plot the results. We'll color the predicted quantiles: black indicates
 
 ``` r
 bind_rows(
-    best_model  |> augment(ames_test) |> mutate(Model = "Best Results"),
-    mid_model   |> augment(ames_test) |> mutate(Model = "Meh Results"),
-    worst_model |> augment(ames_test) |> mutate(Model = "Worst Results")
-  ) |> 
+  best_model |> augment(ames_test) |> mutate(Model = "Best Results"),
+  mid_model |> augment(ames_test) |> mutate(Model = "Meh Results"),
+  worst_model |> augment(ames_test) |> mutate(Model = "Worst Results")
+) |>
   mutate(
     .pred_quantile = map(.pred_quantile, ~ as_tibble(.x))
-  ) |> 
-  unnest(.pred_quantile) |> 
-  arrange(Latitude) |> 
-  ggplot(aes(Latitude)) + 
-  geom_point(aes(y = Sale_Price), alpha = 1 / 30, cex = 3 / 4) + 
+  ) |>
+  unnest(.pred_quantile) |>
+  arrange(Latitude) |>
+  ggplot(aes(Latitude)) +
+  geom_point(aes(y = Sale_Price), alpha = 1 / 30, cex = 3 / 4) +
   geom_path(
     aes(
-      y = .pred_quantile, 
-      group = .quantile_levels, 
+      y = .pred_quantile,
+      group = .quantile_levels,
       col = factor(.quantile_levels)
-      ), 
+    ),
     show.legend = FALSE,
     linewidth = 1
   ) +
   scale_color_manual(
     values = c("#8785B2FF", "#D95F30FF", "black", "#D95F30FF", "#8785B2FF")
-  ) + 
-  facet_wrap(~ Model)
+  ) +
+  facet_wrap(~Model)
 ```
 
 <img src="index.markdown_strict_files/figure-markdown_strict/fit-plots-1.png" data-fig-align="center" width="576" />
@@ -207,15 +221,42 @@ Now we'll describe various other improvements in the recently released versions.
 
 ## dials
 
+The latest dials release contains several new parameters for new-ish models in parsnip: For the `ordinal_reg()` models, dials now contains `ordinal_link()` and `odds_link()`. For the `tab_pfn()`, dials contains `num_estimators()`, `softmax_temperature()`, `balance_probabilities()`, `average_before_softmax()`, and `training_set_limit()`.
+
+The other user-facing changes were related to input checking and related error messages. The most prominent example is that `parameters()` and the `grid_*()` functions now give more information in the error message when non-parameter objects are passed in: which inputs aren't a parameter object and what they are instead.
+
 [@corybrunson](https://github.com/corybrunson), [@daltonkw](https://github.com/daltonkw), [@hfrick](https://github.com/hfrick), [@jeroenjanssens](https://github.com/jeroenjanssens), [@topepo](https://github.com/topepo), and [@vmikk](https://github.com/vmikk) contributed to the package since the last release.
 
 ## yardstick
 
-We are thankful to the developers who ocntributed to this version: [@abichat](https://github.com/abichat), [@astamm](https://github.com/astamm), [@corybrunson](https://github.com/corybrunson), [@DarioS](https://github.com/DarioS), [@EmilHvitfeldt](https://github.com/EmilHvitfeldt), [@FvD](https://github.com/FvD), [@hfrick](https://github.com/hfrick), [@JavOrraca](https://github.com/JavOrraca), [@jeroenjanssens](https://github.com/jeroenjanssens), [@jkylearmstrong-temple](https://github.com/jkylearmstrong-temple), [@mle2718](https://github.com/mle2718), [@nathant181](https://github.com/nathant181), [@SimonDedman](https://github.com/SimonDedman), [@topepo](https://github.com/topepo), and [@tripartio](https://github.com/tripartio)
+Beyond the two new metrics `ranked_prob_score()` and `weighted_interval_score()` described above, this release adds a further 8 metrics.
+
+Three new regression metrics:
+
+- `mse()` --- mean squared error (the squared counterpart to the existing `rmse()`).
+- `rmse_relative()` --- root mean squared error normalized by the observed value range.
+- `gini_coef()` --- normalized Gini coefficient.
+
+Three new classification metrics:
+
+- `fall_out()` --- false positive rate (1 − specificity).
+- `miss_rate()` --- false negative rate (1 − sensitivity).
+- `markedness()` --- predictive power of a classifier, computed as PPV + NPV − 1.
+
+Two new probability-based classification metrics:
+
+- `roc_dist()` --- Euclidean distance from the perfect-classifier corner of ROC space.
+- `sedi()` --- Symmetric Extremal Dependence Index.
+
+In addition to these new metrics, we have also updated the documention of all metrics. Now each metric shows the formula used to calculate it, as well as the valid values it can produce.
+
+We also have pages that list all metrics of the same type. These can be found with [?class-metrics](https://yardstick.tidymodels.org/reference/class-metrics.html), [?numeric-metrics](https://yardstick.tidymodels.org/reference/numeric-metrics.html) or linked within each metric documentation.
+
+We are thankful to the developers who contributed to this version: [@abichat](https://github.com/abichat), [@astamm](https://github.com/astamm), [@corybrunson](https://github.com/corybrunson), [@DarioS](https://github.com/DarioS), [@EmilHvitfeldt](https://github.com/EmilHvitfeldt), [@FvD](https://github.com/FvD), [@hfrick](https://github.com/hfrick), [@JavOrraca](https://github.com/JavOrraca), [@jeroenjanssens](https://github.com/jeroenjanssens), [@jkylearmstrong-temple](https://github.com/jkylearmstrong-temple), [@mle2718](https://github.com/mle2718), [@nathant181](https://github.com/nathant181), [@SimonDedman](https://github.com/SimonDedman), [@topepo](https://github.com/topepo), and [@tripartio](https://github.com/tripartio)
 
 ## parsnip
 
-Version 1.5.0 of parsnip had a variety of changes. Besides the additions for the two new model types shownn above:
+Version 1.5.0 of parsnip had a variety of changes. Besides the additions for the two new model types shown above:
 
 - We enabled case weight usage for the `"nnet"` engines of `mlp()` and `bag_mlp()` as well as for the `"dbarts"` engine of `bart()`.
 
@@ -231,9 +272,11 @@ Thanks to those who contributed to parsnip since the last release: [@CeresBarros
 
 ## tune
 
-Hannah - do you want to write about the optimizations here?
+The core functionality of tune is to do all the model fitting (including pre- and postprocessing) and performance evaluation across various resamples and tuning parameter combinations. For grid search, we could take the full parameter grid, splice one parameter combination into the workflow at a time, and run with it. That can be pretty inefficient though. So what actually happens in tune are a few optimizations in how we do all that fitting and evaluating:
+For preprocessing, we do it once for a resample (per preprocessing parameter combination) and then evaluate all model candidates on it. This lets us avoid unnecessarily repeating the same preprocessing multiple times.
+For model fitting, we make use of what Max calls ["the submodel trick"](https://parsnip.tidymodels.org/articles/Submodels.html): For certain models, like a boosted tree, you can use *a submodel* to make predictions without having to refit the model. A boosted tree ensemble fitted with 20 trees can be used to make predictions for any number of trees up to the 20 used for fitting. That allows us to evaluate different tuning parameter candidates for, here, the number of trees, without having to refit the model. When we added postprocessing, we temporarily disabled this (to ensure we got the integration right) - now we've brought it back. We make use of this speedup for both the main model as well as the calibration model.
 
-One big update is that the Gaussian process model package was changed from GPfit to GauPro because the former is no longer actively maintained. There are some differences:
+Another big update is that the Gaussian process model package was changed from GPfit to GauPro because the former is no longer actively maintained. There are some differences:
 
 - Fit diagnostics are computed and reported. If the fit quality is poor, an "uncertainty sample" that is furthest away from the existing data is used as the new candidate.
 
@@ -261,4 +304,6 @@ Thanks to the following contributors: [@edgararuiz](https://github.com/edgararui
 
 This release was mostly focused on internal changes to support the new version of tune.
 
-## Acknowledgements
+## tidymodels
+
+A basic release that updates the version numbers to require the latest releases of the core packages.

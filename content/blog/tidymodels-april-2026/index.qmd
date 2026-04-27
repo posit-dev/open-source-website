@@ -1,14 +1,14 @@
 ---
 title: "New tidymodels Releases for April 2026"
-date: 2026-04-22
+date: 2026-04-27
 people:
   - max-kuhn
   - hannah-frick
   - emil-hvitfeldt
 description: >
   A small cascade of CRAN releases brings new model types to tidymodels.
-image: "featured.png"
-image-alt: ""
+image: "2026-april-tidymodels.jpg"
+image-alt: "A row of hex logos for dials, parsnip, tune, yardstick, finetune, and tidymodels."
 topics:
   - Machine Learning
 software:
@@ -34,6 +34,7 @@ We've released a sequence of tidymodels packages over the last few weeks: dials 
 #| label: versions
 #| eval: false
 # tidymodels installs all of the new versions
+require(pak)
 pak::pak("tidymodels")
 ```
 
@@ -131,7 +132,7 @@ nnet_wflow <- workflow(nnet_rec, nnet_spec)
 
 From there, we can use any of our tuning functions to optimize the number of hidden units and the amount of weight decay. By default, the weighted interval score is used for this particular mode. 
 
-We'll use a small grid: 
+We'll consider 25 tuning parameter candidates to optimize model performance. 
 
 ```{r}
 #| label: quantile-tune
@@ -263,7 +264,7 @@ Two new probability-based classification metrics:
 
 In addition to these new metrics, we have also updated the documention of all metrics. Now each metric shows the formula used to calculate it, as well as the valid values it can produce.
 
-we also have pages that list all metrics of the same type. These can be found with [?class-metrics](https://yardstick.tidymodels.org/reference/class-metrics.html), [?numeric-metrics](https://yardstick.tidymodels.org/reference/numeric-metrics.html) or linked within each metric documentation.
+We also have pages that list all metrics of the same type. These can be found with [?class-metrics](https://yardstick.tidymodels.org/reference/class-metrics.html), [?numeric-metrics](https://yardstick.tidymodels.org/reference/numeric-metrics.html) or linked within each metric documentation.
 
 We are thankful to the developers who contributed to this version: [&#x0040;abichat](https://github.com/abichat), [&#x0040;astamm](https://github.com/astamm), [&#x0040;corybrunson](https://github.com/corybrunson), [&#x0040;DarioS](https://github.com/DarioS), [&#x0040;EmilHvitfeldt](https://github.com/EmilHvitfeldt), [&#x0040;FvD](https://github.com/FvD), [&#x0040;hfrick](https://github.com/hfrick), [&#x0040;JavOrraca](https://github.com/JavOrraca), [&#x0040;jeroenjanssens](https://github.com/jeroenjanssens), [&#x0040;jkylearmstrong-temple](https://github.com/jkylearmstrong-temple), [&#x0040;mle2718](https://github.com/mle2718), [&#x0040;nathant181](https://github.com/nathant181), [&#x0040;SimonDedman](https://github.com/SimonDedman), [&#x0040;topepo](https://github.com/topepo), and [&#x0040;tripartio](https://github.com/tripartio)
 
@@ -289,7 +290,7 @@ The core functionality of tune is to do all the model fitting (including pre- an
 For preprocessing, we do it once for a resample (per preprocessing parameter combination) and then evaluate all model candidates on it. This lets us avoid unnecessarily repeating the same preprocessing multiple times.
 For model fitting, we make use of what Max calls ["the submodel trick"](https://parsnip.tidymodels.org/articles/Submodels.html): For certain models, like a boosted tree, you can use _a submodel_ to make predictions without having to refit the model. A boosted tree ensemble fitted with 20 trees can be used to make predictions for any number of trees up to the 20 used for fitting. That allows us to evaluate different tuning parameter candidates for, here, the number of trees, without having to refit the model. When we added postprocessing, we temporarily disabled this (to ensure we got the integration right) - now we've brought it back. We make use of this speedup for both the main model as well as the calibration model.
 
-One big update is that the Gaussian process model package was changed from GPfit to GauPro because the former is no longer actively maintained. There are some differences: 
+Another big update is that the Gaussian process model package was changed from GPfit to GauPro because the former is no longer actively maintained. There are some differences: 
 
 - Fit diagnostics are computed and reported. If the fit quality is poor, an "uncertainty sample" that is furthest away from the existing data is used as the new candidate. 
 
@@ -297,7 +298,7 @@ One big update is that the Gaussian process model package was changed from GPfit
 
 - For numeric predictors, the Matern 3/2 kernel is always used. 
 
-Some other changes of note: 
+Some other changes of note:
 
 - When calculating resampling estimates, we can now use a weighted mean based on the number of rows in the assessment set thanks to Tyler Burch. You can opt-in to this using the new `add_resample_weights()` function. See `?calculate_resample_weights` 
 
