@@ -106,7 +106,7 @@ The last section focuses on the selection and management of variable roles and t
 
 A lot of care went into ensuring both cheatsheets hold up when printed, particularly in black and white. We know that many folks print cheatsheets to keep at their desk for quick reference, and we wanted to make sure they remain fully usable in that medium. That meant making sure font sizes and weights stay legible on paper, that the illustrations remain perceptible without color, and that contrast levels are strong enough that no text ends up too pale to read or too heavy to parse. Accessibility in print mattered to us just as much as clarity on screen.
 
-![Both cheatsheets shown side by side in black and white, demonstrating that the text, illustrations, and layout remain clear and readable without color.](tidymodels-cheatsheets-bw.png "New Tidymodels cheatsheets are fully readable when printed")
+![Both cheatsheets shown side by side in black and white, demonstrating that the text, illustrations, and layout remain clear and readable without color.](tidymodels-cheatsheets-bw.png "New tidymodels cheatsheets are fully readable when printed")
 
 <script>
 (function() {
