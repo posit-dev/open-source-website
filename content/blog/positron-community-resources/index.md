@@ -1,6 +1,6 @@
 ---
 title: "Customize Positron with these community-curated resources"
-date: 2026-04-06
+date: 2026-04-28
 people:
   - Isabella Velásquez
   - Libby Heeren
