@@ -24,6 +24,8 @@ Connect to large language models with a unified interface across multiple provid
 - software/ellmer
 - software/chatlas
 - software/ragnar
+- software/raghila
+
 {{< /insert-items>}}
 
 
@@ -43,19 +45,8 @@ Create chat interfaces and query data with natural language in your Shiny applic
 
 - software/shinychat
 - software/querychat
+
 {{< /insert-items>}}
-
-{{< /columns >}}
-
-<br>
-
-{{< columns >}}
-
-## Streamline data tasks with AI
-
-Let AI handle repetitive data tasks so you can focus on analysis.
-
----
 
 {{< /columns >}}
 
