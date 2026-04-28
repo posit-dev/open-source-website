@@ -24,7 +24,7 @@ Connect to large language models with a unified interface across multiple provid
 - software/ellmer
 - software/chatlas
 - software/ragnar
-- software/raghila
+- software/raghilda
 
 {{< /insert-items>}}
 
