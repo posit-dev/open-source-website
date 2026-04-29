@@ -4,5 +4,7 @@ orgs = [
   "tidyverse",
   "tidymodels",
   "r-lib",
-  "r-dbi"
+  "r-dbi",
+  "sparklyr",
+  "mlverse"
 ]
