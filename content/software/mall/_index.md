@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#404041"
 description: Run multiple LLM predictions against a data frame with R and Python
 github: mlverse/mall
 languages:

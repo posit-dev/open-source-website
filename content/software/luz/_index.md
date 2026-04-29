@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#9A4665"
 description: Higher Level API for torch
 github: mlverse/luz
 languages:

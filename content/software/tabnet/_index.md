@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#E7B10A"
 description: An R implementation of TabNet
 github: mlverse/tabnet
 languages:

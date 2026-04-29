@@ -1,4 +1,6 @@
 ---
+image: logo.svg
+color: "#EE6331"
 description: R interface for Apache Spark
 github: sparklyr/sparklyr
 languages:
