@@ -1,5 +1,5 @@
 ---
-image: logo.svg
+image: torch.png
 color: "#9A4665"
 description: R Interface to Torch
 github: mlverse/torch

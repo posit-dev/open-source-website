@@ -1,5 +1,5 @@
 ---
-image: logo.svg
+image: chattr.png
 color: "#419599"
 description: ''
 github: mlverse/chattr
