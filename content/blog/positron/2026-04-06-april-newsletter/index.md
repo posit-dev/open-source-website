@@ -11,12 +11,15 @@ image: images/addins-support.png
 image-alt: Positron April Release Highlights
 slug: april-newsletter
 ported_from: positron
+source: positron
 port_status: in-progress
 software:
   - positron
 languages:
   - R
   - Python
+tags:
+  - Positron
 topics:
   - Best Practices
 ---
@@ -68,7 +71,7 @@ Here's a look at the key features that shipped with the April 2026 release.
 
 ### AI Next Steps in the Native Jupyter Notebook Editor
 
-{{< video src="images/notebook-next-step-suggestions.mov" >}}
+{{< video src="images/notebook-next-step-suggestions.mov" aria-label="Collaborate with Assistant on Suggested Next Steps in Notebooks" >}}
 
 **What we built:** AI Next Steps uses the Positron Assistant to analyze your current cell output and suggest a logical next step in a "ghost cell" at the bottom of your notebook. If you just loaded a CSV, it might suggest data cleaning steps or a visualization, without you needing to open a chat pane or write a prompt. Suggestions stay aligned with the notebook's live kernel state, updating as your code and outputs change.
 
@@ -108,7 +111,7 @@ You can opt out by updating your settings outlined [here](https://positron.posit
 
 **Why this matters:** This was one of our most upvoted issues this release (25 👍). Many R users rely on addins as part of their daily workflow for code formatting, generating reproducible examples, or launching Shiny tools.
 
-**Get started:** Open the Command Palette (`Ctrl-Shift-P` (windows), `Ctrl-Shift-P` (linux), `Command-Shift-P` (mac)) and search for *Run RStudio Addin*. You'll see a quick pick with all available addins from your installed packages.
+**Get started:** Open the Command Palette (`Command-Shift-P` (mac), `Ctrl-Shift-P` (linux), `Ctrl-Shift-P` (windows)) and search for *Run RStudio Addin*. You'll see a quick pick with all available addins from your installed packages.
 
 <img src="images/addins-support.png" data-fig-alt="RStudio Addins running in Positron" />
 
