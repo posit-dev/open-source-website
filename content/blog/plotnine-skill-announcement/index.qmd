@@ -1,13 +1,13 @@
 ---
 title: "A Plotnine Skill for AI Coding Agents"
-date: 2026-04-29
+date: 2026-04-30
 people:
   - Hassan Kibirige
 description: >
   An installable skill that helps coding Agents produce consistent,
   runnable plotnine code. It is usable from any Agent that supports the Agent Skills standard.
 image: "hero.jpg"
-image-alt: "The plotnine hex logo on the left — a UFO over a starry sky beaming a violet tractor beam onto small data-visualization icons, labelled 'plotnine'. The beam extends across a dark, starlit canvas to three minimalist robot faces representing AI agents. Wordmark on the right reads 'plotnine skill — for AI coding agents.'"
+image-alt: "The plotnine hex logo on the left — a UFO over a starry sky beaming a violet tractor beam onto small data-visualization icons, labelled 'plotnine'. The beam extends across a dark, starlit canvas to three minimalist robot faces representing AI agents getting progressively happier. Wordmark on the right reads 'plotnine skill — for AI coding agents.'"
 topics:
   - Visualization
   - Artificial Intelligence
@@ -30,8 +30,16 @@ It targets the [Agent Skills](https://agentskills.io) standard, so it works acro
 Install once:
 
 ```sh
+uvx skillsmd add has2k1/plotnine-skill
+```
+
+or
+
+```sh
 npx skills add has2k1/plotnine-skill
 ```
+
+With either option, you will be prompted to choose the specific agents you wish to configure.
 
 ## Try it
 
@@ -44,6 +52,8 @@ Compare the results for the above prompt _with_ skill and _without_ skill.
 ::: {.panel-tabset}
 
 ## With Skill
+
+{{< contents penguins-skill >}}
 
 ```{python}
 #| label: penguins-skill
@@ -70,20 +80,6 @@ from plotnine.data import penguins
 
 ## No Skill
 
-```python
-from plotnine import aes, geom_point, geom_smooth, ggplot, scale_color_brewer
-from plotnine.data import penguins
-
-p = (
-    ggplot(penguins, aes(x="bill_length_mm", y="bill_depth_mm", color="species"))
-    + geom_point(alpha=0.7)
-    + geom_smooth(method="lm", se=True)
-    + scale_color_brewer(type="qual", palette="Dark2")
-)
-                       
-p.save("scatter_penguins.png", width=8, height=6, dpi=100)
-```
-
 ```{python}
 #| label: penguins-no-skill
 #| echo: false
@@ -99,6 +95,21 @@ from plotnine.data import penguins
     + scale_color_brewer(type="qual", palette="Dark2")
 )
 ```
+
+```python
+from plotnine import aes, geom_point, geom_smooth, ggplot, scale_color_brewer
+from plotnine.data import penguins
+
+p = (
+    ggplot(penguins, aes(x="bill_length_mm", y="bill_depth_mm", color="species"))
+    + geom_point(alpha=0.7)
+    + geom_smooth(method="lm", se=True)
+    + scale_color_brewer(type="qual", palette="Dark2")
+)
+                       
+p.save("scatter_penguins.png", width=8, height=6, dpi=100)
+```
+
 :::
 
 Note that even without a skill, the Agent (Claude Code Opus 4.6) generates readable and idiomatic code.
@@ -115,5 +126,5 @@ The skill makes that experience tighter with fewer surprises, fewer fixes after 
 We want this skill to rock, hard, and this is only the beginning.
 The vibes may seem good but, with intent, we want to build a sense of where the skill reliably helps and where it does not, so that performance and improvements are grounded in more formal evidence rather than vibes.
 
-Your feedback can help. If you try it, tell us how it performs, the prompts it surprisingly handled well, the ones where it slipped and those where it can be exceptional.
+Your feedback can help. If you try it, tell us how it performs; the prompts it handled poorly, those were it was surprisingly exceptional, and even those where it was good but it can be exceptional.
 The show is still going on, and we will be glad to see what you show us at [the repo](https://github.com/has2k1/plotnine-skill/issues).

@@ -1,6 +1,6 @@
 ---
 title: A Plotnine Skill for AI Coding Agents
-date: 2026-04-29T00:00:00.000Z
+date: 2026-04-30T00:00:00.000Z
 people:
   - Hassan Kibirige
 description: >
@@ -12,8 +12,8 @@ image-alt: >-
   The plotnine hex logo on the left — a UFO over a starry sky beaming a violet
   tractor beam onto small data-visualization icons, labelled 'plotnine'. The
   beam extends across a dark, starlit canvas to three minimalist robot faces
-  representing AI agents. Wordmark on the right reads 'plotnine skill — for AI
-  coding agents.'
+  representing AI agents getting progressively happier. Wordmark on the right
+  reads 'plotnine skill — for AI coding agents.'
 topics:
   - Visualization
   - Artificial Intelligence
@@ -37,8 +37,16 @@ It targets the [Agent Skills](https://agentskills.io) standard, so it works acro
 Install once:
 
 ``` sh
+uvx skillsmd add has2k1/plotnine-skill
+```
+
+or
+
+``` sh
 npx skills add has2k1/plotnine-skill
 ```
+
+With either option, you will be prompted to choose the specific agents you wish to configure.
 
 ## Try it
 
@@ -54,6 +62,8 @@ Compare the results for the above prompt *with* skill and *without* skill.
 <li><a href="#tabset-1-2">No Skill</a></li>
 </ul>
 <div id="tabset-1-1">
+
+<img src="index_files/figure-markdown_strict/penguins-skill-output-1.png" id="penguins-skill" width="768" height="480" />
 
 ``` python
 from plotnine import ggplot, aes, geom_point, geom_smooth, scale_color_brewer, labs
@@ -76,10 +86,10 @@ from plotnine.data import penguins
 )
 ```
 
-<img src="index_files/figure-markdown_strict/penguins-skill-output-1.png" id="penguins-skill" width="768" height="480" />
-
 </div>
 <div id="tabset-1-2">
+
+<img src="index_files/figure-markdown_strict/penguins-no-skill-output-1.png" id="penguins-no-skill" width="768" height="480" />
 
 ``` python
 from plotnine import aes, geom_point, geom_smooth, ggplot, scale_color_brewer
@@ -94,8 +104,6 @@ p = (
                        
 p.save("scatter_penguins.png", width=8, height=6, dpi=100)
 ```
-
-<img src="index_files/figure-markdown_strict/penguins-no-skill-output-1.png" id="penguins-no-skill" width="768" height="480" />
 
 </div>
 </div>
@@ -114,5 +122,5 @@ The skill makes that experience tighter with fewer surprises, fewer fixes after 
 We want this skill to rock, hard, and this is only the beginning.
 The vibes may seem good but, with intent, we want to build a sense of where the skill reliably helps and where it does not, so that performance and improvements are grounded in more formal evidence rather than vibes.
 
-Your feedback can help. If you try it, tell us how it performs, the prompts it surprisingly handled well, the ones where it slipped and those where it can be exceptional.
+Your feedback can help. If you try it, tell us how it performs; the prompts it handled poorly, those were it was surprisingly exceptional, and even those where it was good but it can be exceptional.
 The show is still going on, and we will be glad to see what you show us at [the repo](https://github.com/has2k1/plotnine-skill/issues).
