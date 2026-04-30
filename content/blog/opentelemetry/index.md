@@ -38,7 +38,7 @@ nohero: false
 hidesubscription: false
 ---
 
-We're bringing [OpenTelemetry](https://opentelemetry.io/) to R. As a Posit-wide initiative across our open source packages, we've instrumented some of the most widely-used R packages for production workloads -- [Shiny](https://shiny.posit.co/), [plumber2](https://plumber2.posit.co/), [mirai](https://mirai.r-lib.org), [httr2](https://httr2.r-lib.org), [ellmer](https://ellmer.tidyverse.org), [knitr](https://pkg.yihui.org/knitr/), [testthat](https://testthat.r-lib.org) and [DBI](https://dbi.r-dbi.org) -- so that you can add observability to your R applications with **no code changes**. Set a few environment variables and you get traces, logs, and metrics flowing to the backend of your choice.
+We're bringing [OpenTelemetry](https://opentelemetry.io/) to R. As a Posit-wide initiative across our open source packages, we've instrumented some of the most widely-used R packages for production workloads -- [Shiny](https://shiny.posit.co/), [plumber2](https://plumber2.posit.co/), [mirai](https://mirai.r-lib.org), [httr2](https://httr2.r-lib.org), [ellmer](https://ellmer.tidyverse.org), [knitr](https://pkg.yihui.org/knitr/), [testthat](https://testthat.r-lib.org) and [DBI](https://dbi.r-dbi.org). You can add observability to your R applications with **no code changes**: set a few environment variables and you get traces, logs, and metrics flowing to the backend of your choice.
 
 This is part of our commitment to R in production. As R applications scale -- more users, more processes, more machines -- you need tools to understand what's happening across your entire system. That's what OpenTelemetry is built for, and it's now available for R.
 
@@ -65,10 +65,10 @@ The core concept in OpenTelemetry is a **trace**: the full path of a request thr
 
 This structure gives you four things that are hard to get any other way:
 
-- **Performance**: Which part of a request is slow? Span durations pinpoint exactly where time is spent -- and nesting reveals unnecessary overhead.
+- **Performance**: Which part of a request is slow? Span durations pinpoint where time is spent -- and nesting reveals unnecessary overhead.
 - **Errors**: In development and testing, you know where errors are -- you wrote the test, you control the inputs. In production, errors surface far from their root cause, across process boundaries and async operations, triggered by conditions you never anticipated. Traces show you the full chain of real operations that led to each failure, in the context where it actually happened.
 - **Centralized view**: When your application extends across multiple R processes or machines -- a Shiny app with mirai workers, or a plumber2 API behind a load balancer -- traces are aggregated into a single view across all of them.
-- **Real-time monitoring**: OTel is designed to be left on in production, not just enabled during testing or staging. With low overhead and built-in safety guarantees, it runs continuously so you see what's happening right now, not after the fact. Dashboards and alerts built on telemetry data let you catch problems as they emerge, not when users report them.
+- **Real-time monitoring**: OTel is designed to be left on in production, not just enabled during testing or staging. With low overhead, it runs continuously -- so you see what's happening as it happens, and dashboards and alerts catch problems before users report them.
 
 ## Instrumented packages
 
@@ -103,7 +103,7 @@ With OpenTelemetry enabled, every step is captured automatically. Here are the t
 
 ![Traces from the weather chat app, showing the full chain of operations from Shiny session through to HTTP requests. The second request shows an error (red) that's immediately visible in the trace.](otel-traces.png)
 
-The trace reveals the full chain of operations from user input through to the HTTP request, across process boundaries, with no manual logging. The nesting shows how each step triggered the next, and the durations show exactly where time was spent.
+The trace reveals the full chain of operations from user input through to the HTTP request, across process boundaries, with no manual logging. The nesting shows how each step triggered the next, and the durations show where time was spent.
 
 The second query failed. Without tracing, you'd see an error in your logs and start investigating. Here, the failure is immediately visible -- the red span pinpoints where it occurred and the surrounding context shows why. In a production system with many concurrent users, that's the difference between minutes and seconds of debugging.
 
@@ -153,7 +153,7 @@ otel::is_tracing_enabled()
 #> [1] TRUE
 ```
 
-Importantly, OpenTelemetry is designed to be safe in production. If anything goes wrong in the telemetry code itself, it will never crash your application -- errors are silently suppressed so your app keeps running.
+OpenTelemetry is designed to be safe in production. If anything goes wrong in the telemetry code itself, it will never crash your application -- errors are silently suppressed so your app keeps running.
 
 ## Zero-code instrumentation
 
@@ -201,4 +201,4 @@ OTel support across the ecosystem continues to expand. If you'd like to learn mo
 - [Shiny 1.12 OTel blog post](/blog/2025-12-10_shiny-r-1.12/) -- deep dive into Shiny's OpenTelemetry support
 - [OpenTelemetry project](https://opentelemetry.io/) -- the upstream standard
 
-We're excited about what this opens up for the R community. Whether you're running a Shiny dashboard for a small team, a plumber2 API serving thousands of requests, or a data pipeline distributed across a cluster -- you now have the tools to see exactly what's happening, in real time, with no code changes required.
+We're excited about what this opens up for the R community. Whether you're running a Shiny dashboard for a small team, a plumber2 API serving thousands of requests, or a data pipeline distributed across a cluster -- you now have the tools to see what's happening, in real time, with no code changes required.
