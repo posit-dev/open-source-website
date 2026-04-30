@@ -1,6 +1,6 @@
 ---
 title: "Bringing OpenTelemetry to R in production"
-date: 2026-04-30
+date: 2026-05-07
 people:
   - Charlie Gao
   - Aaron Jacobs
@@ -80,12 +80,10 @@ We've worked across teams to add OpenTelemetry instrumentation to the R packages
 | [plumber2](https://plumber2.posit.co/) | ≥ 0.2.0 | API request handling, routing, endpoint execution |
 | [mirai](https://mirai.r-lib.org) | ≥ 2.5.0 | Task dispatch, daemon execution, results |
 | [httr2](https://httr2.r-lib.org) | ≥ 1.2.2 | HTTP requests and responses |
-| [ellmer](https://ellmer.tidyverse.org) | ≥ 0.5.0\* | LLM API calls, tool execution, token usage |
+| [ellmer](https://ellmer.tidyverse.org) | ≥ 0.5.0 | LLM API calls, tool execution, token usage |
 | [knitr](https://pkg.yihui.org/knitr/) | ≥ 1.51 | Document rendering, chunk evaluation |
 | [testthat](https://testthat.r-lib.org) | ≥ 3.3.2 | Test execution |
 | [DBI](https://dbi.r-dbi.org) | ≥ 1.3.0 | Database queries and connections |
-
-<small>*\* pending release*</small>
 
 Together, these packages cover the most common production R workloads: web applications, APIs, parallel computing, HTTP clients, AI/LLM tools, report rendering pipelines, CI test runs, and database access. Because the instrumentation is built into the packages themselves, you benefit from it automatically -- no wrapper functions, nor modifications to existing code. If you already have a Shiny app or plumber2 API, your app will generate traces as soon as you enable OpenTelemetry. Your application code stays exactly as it is.
 
