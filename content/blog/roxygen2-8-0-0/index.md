@@ -40,8 +40,12 @@ You can read the full list of changes in the [release notes](https://github.com/
 
 ## Documenting S7
 
-The headline feature is initial support for [S7](https://rconsortium.github.io/S7/), R's next-generation object system.
-S7 generics, classes, and methods now all work with roxygen2:
+The headline feature is initial support for [S7](https://rconsortium.github.io/S7/).
+S7 is a new object-oriented programming system built to be a successor to S3 and S4.
+It's been designed and implemented collaboratively by the R Consortium Object-Oriented Programming Working Group, which includes representatives from R-Core, Bioconductor, the tidyverse/Posit, and the wider R community.
+It's still a work in progress, but it is useful today, and adding roxygen2 support makes it easier to use in packages.
+
+roxygen2 now supports documenting S7 generics, classes, and methods:
 
 - **Generics** are documented just like regular functions.
 - **Classes** are documented like regular functions (because S7 constructors are functions), but you can also use `@prop` to document properties that aren't constructor parameters.
