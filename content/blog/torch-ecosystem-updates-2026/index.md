@@ -69,10 +69,10 @@ Most of the other packages don't have significant changes, and the releases add 
 - **[luz](https://github.com/mlverse/luz/releases/tag/v0.5.2)** v0.5.2 — Higher-level API for torch with a Keras-like interface for training neural networks.
 - **[hfhub](https://github.com/mlverse/hfhub/releases/tag/v0.1.2)** v0.1.2 — Download and cache files from Hugging Face Hub repositories, making it easy to use pretrained models and datasets from R.
 - **[tok](https://github.com/mlverse/tok/releases/tag/v0.2.2)** v0.2.2 — Fast tokenizers for R, powered by the Hugging Face Tokenizers library written in Rust. Supports BPE, WordPiece, and other tokenization algorithms.
-- **[torchdatasets](https://github.com/mlverse/torchdatasets/releases/tag/v0.3.1)** v0.3.1 — Extra ready-to-use datasets for torch, complementing the built-in datasets in torchvision.
+- **[torchdatasets](https://github.com/mlverse/torchdatasets/releases/tag/v0.3.2)** v0.3.2 — Extra ready-to-use datasets for torch, complementing the built-in datasets in torchvision.
 - **[safetensors](https://github.com/mlverse/safetensors/releases/tag/v0.2.1)** v0.2.1 — Read and write the Safetensors file format, a safe and fast format for storing and loading tensors.
 - **[tfevents](https://github.com/mlverse/tfevents/releases/tag/v0.0.5)** v0.0.5 — Write event files compatible with TensorBoard from R for experiment tracking and visualization.
-- **[wav](https://github.com/mlverse/wav/releases/tag/v0.1.1)** v0.1.1 — Read and write WAV files in R.
+- **[wav](https://github.com/mlverse/wav/releases/tag/v0.2.0)** v0.2.0 — Read and write WAV files in R.
 
 ## New maintainer
 
