@@ -1,6 +1,6 @@
 ---
 title: "roxygen2 8.0.0"
-date: 2026-04-29
+date: 2026-05-01
 people:
   - Hadley Wickham
 description: >
@@ -36,12 +36,16 @@ This release has been a long time in the making and includes well over a hundred
 This post covers the highlights: new support for S7, a raft of improvements to R6 documentation, a more natural way to configure roxygen2 in your `DESCRIPTION`, the changes to rendered `.Rd` files you're most likely to see, and some other minor improvements, and a bunch of new vignettes.
 You can read the full list of changes in the [release notes](https://github.com/r-lib/roxygen2/releases/tag/v8.0.0).
 
+```{r}
+library(roxygen2)
+```
+
 ## Documenting S7
 
 The headline feature is initial support for [S7](https://rconsortium.github.io/S7/).
 S7 is a new object-oriented programming system built to be a successor to S3 and S4. 
-It's been designed and implemented collaboratively by the R Consortium Object-Oriented Programming Working Group, which includes representatives from R-Core, Bioconductor, the tidyverse/Posit, and the wider R community.
-It's still a work in progress, but it is useful today, and adding roxygen2 support makes it easier to use in packages.
+It's been designed and implemented collaboratively by the R Consortium Object-Oriented Programming Working Group, which includes representatives from R-Core, Bioconductor, tidyverse/Posit, and the wider R community.
+S7 is still a work in progress, but it is useful today, and adding roxygen2 support makes it easier to use in packages.
 
 roxygen2 now supports documenting S7 generics, classes, and methods:
 
