@@ -11,6 +11,7 @@ image: images/addins-support.png
 image-alt: Positron April Release Highlights
 slug: april-newsletter
 ported_from: positron
+source: positron
 port_status: in-progress
 software:
   - positron
@@ -68,7 +69,7 @@ Here's a look at the key features that shipped with the April 2026 release.
 
 ### AI Next Steps in the Native Jupyter Notebook Editor
 
-{{< video src="images/notebook-next-step-suggestions.mov" >}}
+{{< video src="images/notebook-next-step-suggestions.mov" aria-label="Collaborate with Assistant on Suggested Next Steps in Notebooks" >}}
 
 **What we built:** AI Next Steps uses the Positron Assistant to analyze your current cell output and suggest a logical next step in a "ghost cell" at the bottom of your notebook. If you just loaded a CSV, it might suggest data cleaning steps or a visualization, without you needing to open a chat pane or write a prompt. Suggestions stay aligned with the notebook's live kernel state, updating as your code and outputs change.
 
