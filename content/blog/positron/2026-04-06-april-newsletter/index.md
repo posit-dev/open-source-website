@@ -18,8 +18,6 @@ software:
 languages:
   - R
   - Python
-tags:
-  - Positron
 topics:
   - Best Practices
 ---
@@ -111,7 +109,7 @@ You can opt out by updating your settings outlined [here](https://positron.posit
 
 **Why this matters:** This was one of our most upvoted issues this release (25 👍). Many R users rely on addins as part of their daily workflow for code formatting, generating reproducible examples, or launching Shiny tools.
 
-**Get started:** Open the Command Palette (`Command-Shift-P` (mac), `Ctrl-Shift-P` (linux), `Ctrl-Shift-P` (windows)) and search for *Run RStudio Addin*. You'll see a quick pick with all available addins from your installed packages.
+**Get started:** Open the Command Palette (`Ctrl-Shift-P` (windows), `Ctrl-Shift-P` (linux), `Command-Shift-P` (mac)) and search for *Run RStudio Addin*. You'll see a quick pick with all available addins from your installed packages.
 
 <img src="images/addins-support.png" data-fig-alt="RStudio Addins running in Positron" />
 
