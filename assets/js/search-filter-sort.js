@@ -367,6 +367,7 @@
         const featured = this.container.parentElement?.querySelector('[data-featured]');
         if (featured) featured.classList.add('hidden');
       }
+      this._updateSourceAnnouncement();
       if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
       this._updateShowBtnLabel();
       this._bindControls();
@@ -946,6 +947,7 @@
       this._updateCount(filtered.length);
       this._updateEmpty(filtered.length === 0);
       this._updateResetBtn();
+      this._updateSourceAnnouncement();
       this._updateURL();
 
       if (this._interactive && this.controlsEl) {
@@ -1036,6 +1038,27 @@
     _updateEmpty(isEmpty) {
       const emptyEl = this.container.parentNode.querySelector('[data-filter-empty]');
       if (emptyEl) emptyEl.classList.toggle('hidden', !isEmpty);
+    }
+
+    _updateSourceAnnouncement() {
+      const parent = this.container.parentElement;
+      if (!parent) return;
+      const announcements = parent.querySelectorAll('[data-source-announcement]');
+      if (!announcements.length) return;
+
+      // Extract source value from search query (e.g. "source:quarto" → "quarto")
+      const match = this.state.search.match(/\bsource:(\S+)/i);
+      const source = match ? match[1].toLowerCase().replace(/^"(.*)"$/, '$1') : '';
+
+      announcements.forEach(el => {
+        el.classList.toggle('hidden', el.dataset.sourceAnnouncement !== source);
+      });
+
+      // Also hide featured when a source announcement is visible
+      const featured = parent.querySelector('[data-featured]');
+      if (featured && source) {
+        featured.classList.add('hidden');
+      }
     }
 
     _updateURL() {
