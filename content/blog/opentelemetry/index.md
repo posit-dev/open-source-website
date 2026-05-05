@@ -80,7 +80,7 @@ We've worked across teams to add OpenTelemetry instrumentation to the R packages
 | [plumber2](https://plumber2.posit.co/) | ≥ 0.2.0 | API request handling, routing, endpoint execution |
 | [mirai](https://mirai.r-lib.org) | ≥ 2.5.0 | Task dispatch, daemon execution, results |
 | [httr2](https://httr2.r-lib.org) | ≥ 1.2.2 | HTTP requests and responses |
-| [ellmer](https://ellmer.tidyverse.org) | ≥ 0.5.0 | LLM API calls, tool execution, token usage |
+| [ellmer](https://ellmer.tidyverse.org) | ≥ 0.4.1 | LLM API calls, tool execution, token usage |
 | [knitr](https://pkg.yihui.org/knitr/) | ≥ 1.51 | Document rendering, chunk evaluation |
 | [testthat](https://testthat.r-lib.org) | ≥ 3.3.2 | Test execution |
 | [DBI](https://dbi.r-dbi.org) | ≥ 1.3.0 | Database queries and connections |
