@@ -1,6 +1,6 @@
 ---
 title: A Plotnine Skill for AI Coding Agents
-date: 2026-04-30T00:00:00.000Z
+date: 2026-05-05T00:00:00.000Z
 people:
   - Hassan Kibirige
 description: >
@@ -47,6 +47,16 @@ npx skills add has2k1/plotnine-skill
 ```
 
 With either option, you will be prompted to choose the specific agents you wish to configure.
+
+For versions of `plotnine >= 0.15.4`, the skill is built-in and you can install it using [library-skills](https://library-skills.io/).
+
+``` sh
+# Install into .agents
+uvx library-skills install -s plotnine
+
+# Install for Claude (.claude)
+uvx library-skills install --claude -s plotnine
+```
 
 ## Try it
 
